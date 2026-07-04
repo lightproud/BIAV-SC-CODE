@@ -1,7 +1,7 @@
 ---
 type: "dataset"
 title: "reddit 社区全量档案"
-description: "reddit 平台全量档案层（分析镜头）：约 3405 条 / 4 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。"
+description: "reddit 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 4 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。"
 resource: "/Public-Info-Pool/Record/Community/reddit/"
 tags: ["data_layer:full_archive", "platform:reddit", "lens:analysis"]
 timestamp: "2026-07-04"
@@ -12,5 +12,5 @@ timestamp: "2026-07-04"
 > 放指针不放本体：本体权威在 `Public-Info-Pool/Record/Community/reddit/`，本 concept 仅描述与定位、不复刻正文。
 
 - 本体路径：`Public-Info-Pool/Record/Community/reddit/`
-- 摘要：reddit 平台全量档案层（分析镜头）：约 3405 条 / 4 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。
+- 摘要：reddit 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 4 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。
 - 标签：data_layer:full_archive · platform:reddit · lens:analysis
