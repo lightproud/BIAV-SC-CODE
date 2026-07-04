@@ -19,6 +19,7 @@ import { z } from 'zod';
 
 import { createSdkMcpServer, SdkMcpConnection, tool } from '../src/mcp/sdk-server.js';
 import { HttpMcpConnection } from '../src/mcp/http.js';
+import { parseResourcesList, parseResourceContents } from '../src/mcp/stdio.js';
 import { DefaultMcpRegistry } from '../src/mcp/registry.js';
 import type { CallToolResult, SdkMcpToolDefinition } from '../src/types.js';
 
@@ -760,5 +761,48 @@ describe('HttpMcpConnection server-initiated request over SSE (regression #19)',
     } finally {
       await srv.stop();
     }
+  });
+});
+
+describe('MCP resources wire parsing + registry aggregation', () => {
+  it('parseResourcesList picks well-formed resource descriptors', () => {
+    const parsed = parseResourcesList({
+      resources: [
+        { uri: 'file:///a', name: 'A', description: 'd', mimeType: 'text/plain' },
+        { uri: 'file:///b' },
+        { name: 'no-uri' }, // dropped: no uri
+        'garbage', // dropped
+      ],
+    });
+    expect(parsed).toEqual([
+      { uri: 'file:///a', name: 'A', description: 'd', mimeType: 'text/plain' },
+      { uri: 'file:///b' },
+    ]);
+    expect(parseResourcesList(null)).toEqual([]);
+    expect(parseResourcesList({})).toEqual([]);
+  });
+
+  it('parseResourceContents keeps text and blob variants', () => {
+    const parsed = parseResourceContents({
+      contents: [
+        { uri: 'file:///a', mimeType: 'text/plain', text: 'hi' },
+        { uri: 'file:///b', blob: 'YmFzZTY0' },
+        { mimeType: 'x' }, // dropped: no uri
+      ],
+    });
+    expect(parsed).toEqual([
+      { uri: 'file:///a', mimeType: 'text/plain', text: 'hi' },
+      { uri: 'file:///b', blob: 'YmFzZTY0' },
+    ]);
+  });
+
+  it('registry.listResources returns [] for an sdk server (tools-only)', async () => {
+    const t = tool('add', 'add', { a: z.number() }, async () => ({ content: [] }));
+    const cfg = createSdkMcpServer({ name: 'calc', tools: [t] });
+    const reg = new DefaultMcpRegistry({ servers: { calc: cfg }, debug: () => {} });
+    await reg.connectAll();
+    const list = await reg.listResources(undefined, new AbortController().signal);
+    expect(list).toEqual([]);
+    await reg.closeAll();
   });
 });

@@ -581,6 +581,24 @@ export type McpServerStatus = {
   scope?: 'user' | 'project' | 'local' | 'dynamic';
 };
 
+/** One MCP resource descriptor (resources/list entry). */
+export type McpResource = {
+  uri: string;
+  name?: string;
+  description?: string;
+  mimeType?: string;
+  /** Owning server name (populated by the registry when aggregating). */
+  server?: string;
+};
+
+/** One MCP resource's contents (resources/read entry). */
+export type McpResourceContent = {
+  uri: string;
+  mimeType?: string;
+  text?: string;
+  blob?: string;
+};
+
 /** MCP tool result content (subset of the MCP CallToolResult schema). */
 export type CallToolResultContent =
   | { type: 'text'; text: string }

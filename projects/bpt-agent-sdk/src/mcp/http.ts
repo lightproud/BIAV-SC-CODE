@@ -18,9 +18,12 @@ import type {
   ElicitationHandler,
   JSONSchema,
   McpHttpServerConfig,
+  McpResource,
+  McpResourceContent,
   McpSSEServerConfig,
 } from '../types.js';
 import { AbortError, NotImplementedError } from '../errors.js';
+import { parseResourcesList, parseResourceContents } from './stdio.js';
 import { resolveElicitation } from './elicitation.js';
 
 const MCP_PROTOCOL_VERSION = '2025-06-18';
@@ -142,6 +145,23 @@ export class HttpMcpConnection {
   ): Promise<CallToolResult> {
     const result = await this.rpcRequest('tools/call', { name, arguments: args }, signal);
     return normalizeCallToolResult(result);
+  }
+
+  /** resources/list (single page); [] when the server has no resources support. */
+  async listResources(signal?: AbortSignal): Promise<McpResource[]> {
+    try {
+      const result = await this.rpcRequest('resources/list', {}, signal);
+      return parseResourcesList(result);
+    } catch (err) {
+      if (err instanceof AbortError) throw err;
+      return [];
+    }
+  }
+
+  /** resources/read for one uri. */
+  async readResource(uri: string, signal?: AbortSignal): Promise<McpResourceContent[]> {
+    const result = await this.rpcRequest('resources/read', { uri }, signal);
+    return parseResourceContents(result);
   }
 
   /** Cancel all in-flight requests; further calls fail with AbortError. */

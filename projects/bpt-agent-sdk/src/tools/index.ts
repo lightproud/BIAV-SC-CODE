@@ -14,6 +14,7 @@ import { webFetchTool } from './webfetch.js';
 import { webSearchTool } from './websearch.js';
 import { askUserQuestionTool } from './askuserquestion.js';
 import { todoWriteTool } from './todo.js';
+import { listMcpResourcesTool, readMcpResourceTool } from './resources.js';
 
 /** Fresh Map per call so callers can filter without affecting others. */
 export function createBuiltinTools(): Map<string, BuiltinTool> {
@@ -28,6 +29,8 @@ export function createBuiltinTools(): Map<string, BuiltinTool> {
     webSearchTool,
     askUserQuestionTool,
     todoWriteTool,
+    listMcpResourcesTool,
+    readMcpResourceTool,
   ];
   return new Map(tools.map((t) => [t.name, t]));
 }

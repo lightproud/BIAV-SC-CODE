@@ -16,6 +16,8 @@ import type {
   HookInput,
   ImageBlockParam,
   JSONSchema,
+  McpResource,
+  McpResourceContent,
   McpServerConfig,
   McpServerStatus,
   McpSetServersResult,
@@ -94,6 +96,11 @@ export type ToolContext = {
   webSearch?: WebSearchHandler;
   /** v0.2 AskUserQuestion handler; undefined -> the tool returns a not-configured error. */
   askUser?: UserQuestionHandler;
+  /** MCP resources access; undefined when no MCP registry is wired. */
+  mcpResources?: {
+    list(server: string | undefined, signal: AbortSignal): Promise<McpResource[]>;
+    read(server: string, uri: string, signal: AbortSignal): Promise<McpResourceContent[]>;
+  };
   /** v0.2 WebFetch escape hatch for localhost/private hosts (default false). */
   allowPrivateWebFetch?: boolean;
   /** Injectable fetch for tests; defaults to globalThis.fetch when undefined. */
@@ -265,6 +272,10 @@ export interface McpRegistry {
     args: Record<string, unknown>,
     signal: AbortSignal,
   ): Promise<CallToolResult>;
+  /** List resources across connected servers (or one named server). */
+  listResources(server: string | undefined, signal: AbortSignal): Promise<McpResource[]>;
+  /** Read one resource's contents from a named server. */
+  readResource(server: string, uri: string, signal: AbortSignal): Promise<McpResourceContent[]>;
   reconnect(serverName: string): Promise<void>;
   setEnabled(serverName: string, enabled: boolean): void;
   /** Replace the live server set at runtime; returns the new statuses. */

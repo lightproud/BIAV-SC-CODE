@@ -14,6 +14,8 @@ import type {
   ElicitationHandler,
   JSONSchema,
   McpHttpServerConfig,
+  McpResource,
+  McpResourceContent,
   McpSSEServerConfig,
   McpSdkServerConfigWithInstance,
   McpServerConfig,
@@ -40,6 +42,8 @@ type McpConnectionLike = {
     args: Record<string, unknown>,
     signal?: AbortSignal,
   ): Promise<CallToolResult>;
+  listResources(signal?: AbortSignal): Promise<McpResource[]>;
+  readResource(uri: string, signal?: AbortSignal): Promise<McpResourceContent[]>;
   close(): Promise<void>;
 };
 
@@ -156,6 +160,40 @@ export class DefaultMcpRegistry implements McpRegistry {
       if (signal.aborted) throw new AbortError();
       return errorResult(`MCP tool '${qualifiedName}' failed: ${errMessage(err)}`);
     }
+  }
+
+  /** List resources across connected servers (or one named server). */
+  async listResources(
+    server: string | undefined,
+    signal: AbortSignal,
+  ): Promise<McpResource[]> {
+    const out: McpResource[] = [];
+    for (const entry of this.entries) {
+      if (server !== undefined && entry.name !== server) continue;
+      if (!entry.enabled || entry.baseStatus !== 'connected' || !entry.connection) continue;
+      try {
+        const list = await entry.connection.listResources(signal);
+        for (const r of list) out.push({ ...r, server: entry.name });
+      } catch (err) {
+        if (isAbortError(err)) throw err;
+        this.debug(`[mcp] listResources '${entry.name}' failed: ${errMessage(err)}`);
+      }
+    }
+    return out;
+  }
+
+  /** Read one resource's contents from a named, connected server. */
+  async readResource(
+    server: string,
+    uri: string,
+    signal: AbortSignal,
+  ): Promise<McpResourceContent[]> {
+    const entry = this.entries.find((e) => e.name === server);
+    if (!entry) throw new Error(`No such MCP server: ${server}`);
+    if (!entry.enabled || entry.baseStatus !== 'connected' || !entry.connection) {
+      throw new Error(`MCP server '${server}' is not connected`);
+    }
+    return await entry.connection.readResource(uri, signal);
   }
 
   /** Tear down and re-establish one server's connection. Never throws. */

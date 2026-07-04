@@ -15,6 +15,8 @@ import type {
   APIUserMessage,
   CallToolResult,
   ContentBlock,
+  McpResource,
+  McpResourceContent,
   McpServerConfig,
   McpServerStatus,
   McpSetServersResult,
@@ -171,6 +173,12 @@ class ToolFilterMcpRegistry implements McpRegistry {
     signal: AbortSignal,
   ): Promise<CallToolResult> {
     return this.inner.call(qualifiedName, args, signal);
+  }
+  listResources(server: string | undefined, signal: AbortSignal): Promise<McpResource[]> {
+    return this.inner.listResources(server, signal);
+  }
+  readResource(server: string, uri: string, signal: AbortSignal): Promise<McpResourceContent[]> {
+    return this.inner.readResource(server, uri, signal);
   }
   reconnect(serverName: string): Promise<void> {
     return this.inner.reconnect(serverName);
@@ -428,6 +436,13 @@ export function query(args: {
     }
   } else {
     builtinTools = allBuiltins;
+  }
+  // The MCP resource tools are only advertised by default when MCP servers
+  // exist (they are no-ops otherwise). An explicit options.tools selection is
+  // honored verbatim.
+  if (!Array.isArray(options.tools) && Object.keys(mergedServers).length === 0) {
+    builtinTools.delete('ListMcpResourcesTool');
+    builtinTools.delete('ReadMcpResourceTool');
   }
   // Drop bare-name-disallowed built-ins so their definitions never reach the
   // model (nor the system prompt tool list nor the init message).
@@ -1050,6 +1065,10 @@ export function query(args: {
           spawnSubagent: subagentRuntime.makeSpawnFn(0),
           webSearch: options.webSearch,
           askUser: options.onUserQuestion,
+          mcpResources: {
+            list: (server, signal) => mcpEff.listResources(server, signal),
+            read: (server, uri, signal) => mcpEff.readResource(server, uri, signal),
+          },
           allowPrivateWebFetch: options.allowPrivateWebFetch === true,
           recordFileChange: checkpointStore
             ? (abs, pre): void => checkpointStore!.record(abs, pre)

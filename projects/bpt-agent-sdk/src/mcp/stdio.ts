@@ -13,6 +13,8 @@ import type {
   CallToolResultContent,
   ElicitationHandler,
   JSONSchema,
+  McpResource,
+  McpResourceContent,
   McpStdioServerConfig,
 } from '../types.js';
 import { AbortError } from '../errors.js';
@@ -180,6 +182,24 @@ export class StdioMcpConnection {
   ): Promise<CallToolResult> {
     const result = await this.request('tools/call', { name, arguments: args }, signal);
     return normalizeCallToolResult(result);
+  }
+
+  /** resources/list (single page); [] when the server has no resources support. */
+  async listResources(signal?: AbortSignal): Promise<McpResource[]> {
+    try {
+      const result = await this.request('resources/list', {}, signal);
+      return parseResourcesList(result);
+    } catch (err) {
+      if (err instanceof AbortError) throw err;
+      this.debug(`[mcp:${this.label}] resources/list failed: ${String(err)}`);
+      return [];
+    }
+  }
+
+  /** resources/read for one uri. */
+  async readResource(uri: string, signal?: AbortSignal): Promise<McpResourceContent[]> {
+    const result = await this.request('resources/read', { uri }, signal);
+    return parseResourceContents(result);
   }
 
   /** Terminate the child: SIGTERM, then SIGKILL after a short grace period. */
@@ -397,6 +417,42 @@ function normalizeCallToolResult(raw: unknown): CallToolResult {
   const result: CallToolResult = { content };
   if (obj.isError === true) result.isError = true;
   return result;
+}
+
+/** Parse a resources/list JSON-RPC result into McpResource[]. */
+export function parseResourcesList(raw: unknown): McpResource[] {
+  const arr = (raw as { resources?: unknown } | null)?.resources;
+  if (!Array.isArray(arr)) return [];
+  const out: McpResource[] = [];
+  for (const item of arr) {
+    if (!item || typeof item !== 'object') continue;
+    const r = item as Record<string, unknown>;
+    if (typeof r.uri !== 'string') continue;
+    const res: McpResource = { uri: r.uri };
+    if (typeof r.name === 'string') res.name = r.name;
+    if (typeof r.description === 'string') res.description = r.description;
+    if (typeof r.mimeType === 'string') res.mimeType = r.mimeType;
+    out.push(res);
+  }
+  return out;
+}
+
+/** Parse a resources/read JSON-RPC result into McpResourceContent[]. */
+export function parseResourceContents(raw: unknown): McpResourceContent[] {
+  const arr = (raw as { contents?: unknown } | null)?.contents;
+  if (!Array.isArray(arr)) return [];
+  const out: McpResourceContent[] = [];
+  for (const item of arr) {
+    if (!item || typeof item !== 'object') continue;
+    const c = item as Record<string, unknown>;
+    if (typeof c.uri !== 'string') continue;
+    const content: McpResourceContent = { uri: c.uri };
+    if (typeof c.mimeType === 'string') content.mimeType = c.mimeType;
+    if (typeof c.text === 'string') content.text = c.text;
+    if (typeof c.blob === 'string') content.blob = c.blob;
+    out.push(content);
+  }
+  return out;
 }
 
 function normalizeContentItem(item: unknown): CallToolResultContent {
