@@ -1,7 +1,7 @@
 {
   "generated": "2026-07-04",
   "stats": {
-    "nodes": 296,
+    "nodes": 297,
     "edges": 96
   },
   "nodes": [
@@ -1499,7 +1499,17 @@
     {
       "id": "/memory/memory-ext-bpt-guidance-protocol.md",
       "type": "knowledge-pointer",
-      "title": "银芯指导 BPT 协议（v0.2）",
+      "title": "银芯指导 BPT 协议（v0.3）",
+      "tags": [
+        "memory",
+        "data_layer:curated"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/memory/memory-ext-bpt-positioning.md",
+      "type": "knowledge-pointer",
+      "title": "BPT 本体定位（现行档）",
       "tags": [
         "memory",
         "data_layer:curated"

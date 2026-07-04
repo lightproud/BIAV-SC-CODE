@@ -7,14 +7,14 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 296,
+    "concepts": 297,
     "edges": 96,
-    "terms": 5035,
+    "terms": 5052,
     "by_type": {
       "character": 72,
       "dataset": 109,
       "documentation": 53,
-      "knowledge-pointer": 42,
+      "knowledge-pointer": 43,
       "reference": 17,
       "research": 3
     },
@@ -23,7 +23,7 @@
       "characters": 72,
       "community": 19,
       "extracted": 4,
-      "memory": 46,
+      "memory": 47,
       "news-output": 23,
       "projects": 18,
       "resource": 34,
@@ -34,7 +34,7 @@
     },
     "by_tier": {
       "skeleton": 131,
-      "search": 165
+      "search": 166
     }
   },
   "sections": {
@@ -56,7 +56,7 @@
     },
     "memory": {
       "index": "/memory/index.md",
-      "count": 46
+      "count": 47
     },
     "news-output": {
       "index": "/news-output/index.md",
@@ -1910,9 +1910,22 @@
     },
     "/memory/memory-ext-bpt-guidance-protocol.md": {
       "type": "knowledge-pointer",
-      "title": "银芯指导 BPT 协议（v0.2）",
+      "title": "银芯指导 BPT 协议（v0.3）",
       "description": "银芯不再在仓库内承载 BPT 代码，但 BPT 的开发仍需要银芯提供的能力：战略视角、架构经验、方法论、事实圣经、踩坑记录。",
       "resource": "/memory/bpt-guidance-protocol.md",
+      "tags": [
+        "memory",
+        "data_layer:curated"
+      ],
+      "section": "memory",
+      "tier": "search",
+      "degree": 0
+    },
+    "/memory/memory-ext-bpt-positioning.md": {
+      "type": "knowledge-pointer",
+      "title": "BPT 本体定位（现行档）",
+      "description": "**BPT = 团队级在产的项目专用 agent 终端：元工具层 + 元知识层双主词，两层皆自持，",
+      "resource": "/memory/bpt-positioning.md",
       "tags": [
         "memory",
         "data_layer:curated"
@@ -5678,6 +5691,7 @@
       "/memory/memory-ext-bpt-architecture-summary-template.md",
       "/memory/memory-ext-bpt-guidance-log.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
+      "/memory/memory-ext-bpt-positioning.md",
       "/memory/memory-ext-collab-event-playbook.md",
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
@@ -5755,6 +5769,7 @@
     ],
     "agent": [
       "/README.md",
+      "/memory/memory-ext-bpt-positioning.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
       "/projects/bpt-sdk-doc-migration.md",
@@ -6222,6 +6237,7 @@
       "/memory/memory-ext-bpt-architecture-summary-template.md",
       "/memory/memory-ext-bpt-guidance-log.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
+      "/memory/memory-ext-bpt-positioning.md",
       "/memory/memory-ext-phase-d-plan.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
@@ -6527,6 +6543,7 @@
       "/memory/memory-ext-bpt-architecture-summary-template.md",
       "/memory/memory-ext-bpt-guidance-log.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
+      "/memory/memory-ext-bpt-positioning.md",
       "/memory/memory-ext-capability-annotations.md",
       "/memory/memory-ext-capability-registry.md",
       "/memory/memory-ext-collab-event-playbook.md",
@@ -6792,6 +6809,7 @@
       "/memory/memory-ext-bpt-architecture-summary-template.md",
       "/memory/memory-ext-bpt-guidance-log.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
+      "/memory/memory-ext-bpt-positioning.md",
       "/memory/memory-ext-capability-annotations.md",
       "/memory/memory-ext-capability-registry.md",
       "/memory/memory-ext-collab-event-playbook.md",
@@ -7035,6 +7053,7 @@
       "/memory/memory-ext-bpt-architecture-summary-template.md",
       "/memory/memory-ext-bpt-guidance-log.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
+      "/memory/memory-ext-bpt-positioning.md",
       "/memory/memory-ext-capability-annotations.md",
       "/memory/memory-ext-capability-registry.md",
       "/memory/memory-ext-collab-event-playbook.md",
@@ -8361,6 +8380,7 @@
       "/memory/memory-ext-bpt-architecture-summary-template.md",
       "/memory/memory-ext-bpt-guidance-log.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
+      "/memory/memory-ext-bpt-positioning.md",
       "/memory/memory-ext-capability-annotations.md",
       "/memory/memory-ext-capability-registry.md",
       "/memory/memory-ext-collab-event-playbook.md",
@@ -8818,6 +8838,7 @@
       "/memory/memory-ext-bpt-architecture-summary-template.md",
       "/memory/memory-ext-bpt-guidance-log.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
+      "/memory/memory-ext-bpt-positioning.md",
       "/memory/memory-ext-collab-event-playbook.md",
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
@@ -8931,6 +8952,7 @@
       "/memory/memory-ext-bpt-architecture-summary-template.md",
       "/memory/memory-ext-bpt-guidance-log.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
+      "/memory/memory-ext-bpt-positioning.md",
       "/memory/memory-ext-capability-annotations.md",
       "/memory/memory-ext-capability-registry.md",
       "/memory/memory-ext-collab-event-playbook.md",
@@ -9489,6 +9511,7 @@
       "/unpacked/unpacked-vue.md"
     ],
     "positioning": [
+      "/memory/memory-ext-bpt-positioning.md",
       "/projects/bpt-sdk-doc-positioning.md"
     ],
     "post": [
@@ -11437,6 +11460,7 @@
       "/memory/memory-ext-bpt-architecture-summary-template.md",
       "/memory/memory-ext-bpt-guidance-log.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
+      "/memory/memory-ext-bpt-positioning.md",
       "/memory/memory-ext-capability-annotations.md",
       "/memory/memory-ext-capability-registry.md",
       "/memory/memory-ext-collab-event-playbook.md",
@@ -11643,6 +11667,7 @@
       "/memory/memory-ext-bpt-architecture-summary-template.md",
       "/memory/memory-ext-bpt-guidance-log.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
+      "/memory/memory-ext-bpt-positioning.md",
       "/memory/memory-ext-capability-annotations.md",
       "/memory/memory-ext-capability-registry.md",
       "/memory/memory-ext-collab-event-playbook.md",
@@ -12082,6 +12107,9 @@
     "与黑": [
       "/memory/memory-ext-active-silver-blackpool-interface.md"
     ],
+    "专用": [
+      "/memory/memory-ext-bpt-positioning.md"
+    ],
     "且将": [
       "/characters/15586.md"
     ],
@@ -12110,6 +12138,7 @@
       "/memory/memory-research-discord-archive-backfill-conflict.md"
     ],
     "两层": [
+      "/memory/memory-ext-bpt-positioning.md",
       "/sources/appstore.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -12420,6 +12449,9 @@
     "主控": [
       "/memory/memory-ext-active-policy-direct-push-main.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md"
+    ],
+    "主词": [
+      "/memory/memory-ext-bpt-positioning.md"
     ],
     "丽的": [
       "/characters/15584.md"
@@ -12750,6 +12782,9 @@
     ],
     "产生": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md"
+    ],
+    "产的": [
+      "/memory/memory-ext-bpt-positioning.md"
     ],
     "产目": [
       "/assets/assets-images.md"
@@ -13692,6 +13727,9 @@
       "/story/story_search_index.md",
       "/story/story_units.md"
     ],
+    "体定": [
+      "/memory/memory-ext-bpt-positioning.md"
+    ],
     "体敌": [
       "/characters/15564.md"
     ],
@@ -13914,6 +13952,7 @@
       "/memory/memory-ext-bpt-architecture-summary-template.md",
       "/memory/memory-ext-bpt-guidance-log.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
+      "/memory/memory-ext-bpt-positioning.md",
       "/memory/memory-ext-capability-annotations.md",
       "/memory/memory-ext-capability-registry.md",
       "/memory/memory-ext-collab-event-playbook.md",
@@ -14470,8 +14509,14 @@
     "元信": [
       "/README.md"
     ],
+    "元工": [
+      "/memory/memory-ext-bpt-positioning.md"
+    ],
     "元数": [
       "/README.md"
+    ],
+    "元知": [
+      "/memory/memory-ext-bpt-positioning.md"
     ],
     "元脊": [
       "/story/story_units.md"
@@ -14727,6 +14772,7 @@
       "/memory/memory-ext-bpt-architecture-summary-template.md",
       "/memory/memory-ext-bpt-guidance-log.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
+      "/memory/memory-ext-bpt-positioning.md",
       "/memory/memory-ext-capability-annotations.md",
       "/memory/memory-ext-capability-registry.md",
       "/memory/memory-ext-collab-event-playbook.md",
@@ -14797,6 +14843,9 @@
     "具动": [
       "/README.md"
     ],
+    "具层": [
+      "/memory/memory-ext-bpt-positioning.md"
+    ],
     "具平": [
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md"
     ],
@@ -14849,6 +14898,7 @@
       "/memory/memory-ext-bpt-architecture-summary-template.md",
       "/memory/memory-ext-bpt-guidance-log.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
+      "/memory/memory-ext-bpt-positioning.md",
       "/memory/memory-ext-capability-annotations.md",
       "/memory/memory-ext-capability-registry.md",
       "/memory/memory-ext-collab-event-playbook.md",
@@ -15446,6 +15496,7 @@
       "/memory/memory-ext-bpt-architecture-summary-template.md",
       "/memory/memory-ext-bpt-guidance-log.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
+      "/memory/memory-ext-bpt-positioning.md",
       "/memory/memory-ext-capability-annotations.md",
       "/memory/memory-ext-capability-registry.md",
       "/memory/memory-ext-collab-event-playbook.md",
@@ -16372,6 +16423,9 @@
     ],
     "友的": [
       "/characters/15574.md"
+    ],
+    "双主": [
+      "/memory/memory-ext-bpt-positioning.md"
     ],
     "双击": [
       "/README.md"
@@ -17706,6 +17760,7 @@
     ],
     "团队": [
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
+      "/memory/memory-ext-bpt-positioning.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md"
     ],
     "园美": [
@@ -17791,6 +17846,9 @@
     "在中": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md"
+    ],
+    "在产": [
+      "/memory/memory-ext-bpt-positioning.md"
     ],
     "在仓": [
       "/memory/memory-ext-bpt-guidance-protocol.md"
@@ -18293,6 +18351,7 @@
       "/memory/memory-ext-bpt-architecture-summary-template.md",
       "/memory/memory-ext-bpt-guidance-log.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
+      "/memory/memory-ext-bpt-positioning.md",
       "/memory/memory-ext-capability-annotations.md",
       "/memory/memory-ext-capability-registry.md",
       "/memory/memory-ext-collab-event-playbook.md",
@@ -18991,6 +19050,7 @@
       "/memory/memory-ext-bpt-architecture-summary-template.md",
       "/memory/memory-ext-bpt-guidance-log.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
+      "/memory/memory-ext-bpt-positioning.md",
       "/memory/memory-ext-capability-annotations.md",
       "/memory/memory-ext-capability-registry.md",
       "/memory/memory-ext-collab-event-playbook.md",
@@ -19533,6 +19593,7 @@
       "/extracted/extracted-lua-tables.md",
       "/extracted/extracted-readme.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
+      "/memory/memory-ext-bpt-positioning.md",
       "/news-output/news-output-all.md",
       "/news-output/news-output-appstore.md",
       "/news-output/news-output-arca-live.md",
@@ -20154,6 +20215,9 @@
       "/sources/youtube.md",
       "/sources/youtube_comments.md"
     ],
+    "层双": [
+      "/memory/memory-ext-bpt-positioning.md"
+    ],
     "层只": [
       "/README.md"
     ],
@@ -20193,6 +20257,7 @@
       "/memory/memory-ext-bpt-architecture-summary-template.md",
       "/memory/memory-ext-bpt-guidance-log.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
+      "/memory/memory-ext-bpt-positioning.md",
       "/memory/memory-ext-capability-annotations.md",
       "/memory/memory-ext-capability-registry.md",
       "/memory/memory-ext-collab-event-playbook.md",
@@ -20282,6 +20347,9 @@
     ],
     "层的": [
       "/README.md"
+    ],
+    "层皆": [
+      "/memory/memory-ext-bpt-positioning.md"
     ],
     "层设": [
       "/memory/memory-ext-knowledge-layer-design.md"
@@ -20420,6 +20488,7 @@
     "工具": [
       "/README.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md",
+      "/memory/memory-ext-bpt-positioning.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md"
     ],
     "工对": [
@@ -21392,6 +21461,7 @@
       "/memory/memory-ext-bpt-architecture-summary-template.md",
       "/memory/memory-ext-bpt-guidance-log.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
+      "/memory/memory-ext-bpt-positioning.md",
       "/memory/memory-ext-capability-annotations.md",
       "/memory/memory-ext-capability-registry.md",
       "/memory/memory-ext-collab-event-playbook.md",
@@ -22875,6 +22945,7 @@
       "/memory/memory-ext-bpt-architecture-summary-template.md",
       "/memory/memory-ext-bpt-guidance-log.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
+      "/memory/memory-ext-bpt-positioning.md",
       "/memory/memory-ext-capability-annotations.md",
       "/memory/memory-ext-capability-registry.md",
       "/memory/memory-ext-collab-event-playbook.md",
@@ -23577,6 +23648,7 @@
       "/memory/memory-ext-bpt-architecture-summary-template.md",
       "/memory/memory-ext-bpt-guidance-log.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
+      "/memory/memory-ext-bpt-positioning.md",
       "/memory/memory-ext-capability-annotations.md",
       "/memory/memory-ext-capability-registry.md",
       "/memory/memory-ext-collab-event-playbook.md",
@@ -23871,6 +23943,7 @@
       "/memory/memory-ext-bpt-architecture-summary-template.md",
       "/memory/memory-ext-bpt-guidance-log.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
+      "/memory/memory-ext-bpt-positioning.md",
       "/memory/memory-ext-capability-annotations.md",
       "/memory/memory-ext-capability-registry.md",
       "/memory/memory-ext-collab-event-playbook.md",
@@ -24100,6 +24173,7 @@
       "/memory/memory-ext-bpt-architecture-summary-template.md",
       "/memory/memory-ext-bpt-guidance-log.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
+      "/memory/memory-ext-bpt-positioning.md",
       "/memory/memory-ext-capability-annotations.md",
       "/memory/memory-ext-capability-registry.md",
       "/memory/memory-ext-collab-event-playbook.md",
@@ -24575,6 +24649,7 @@
       "/memory/memory-ext-bpt-architecture-summary-template.md",
       "/memory/memory-ext-bpt-guidance-log.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
+      "/memory/memory-ext-bpt-positioning.md",
       "/memory/memory-ext-capability-annotations.md",
       "/memory/memory-ext-capability-registry.md",
       "/memory/memory-ext-collab-event-playbook.md",
@@ -25513,6 +25588,7 @@
       "/memory/memory-ext-bpt-architecture-summary-template.md",
       "/memory/memory-ext-bpt-guidance-log.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
+      "/memory/memory-ext-bpt-positioning.md",
       "/memory/memory-ext-capability-annotations.md",
       "/memory/memory-ext-capability-registry.md",
       "/memory/memory-ext-collab-event-playbook.md",
@@ -25862,6 +25938,7 @@
       "/memory/memory-ext-bpt-architecture-summary-template.md",
       "/memory/memory-ext-bpt-guidance-log.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
+      "/memory/memory-ext-bpt-positioning.md",
       "/memory/memory-ext-capability-annotations.md",
       "/memory/memory-ext-capability-registry.md",
       "/memory/memory-ext-collab-event-playbook.md",
@@ -27203,6 +27280,7 @@
       "/memory/memory-ext-bpt-architecture-summary-template.md",
       "/memory/memory-ext-bpt-guidance-log.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
+      "/memory/memory-ext-bpt-positioning.md",
       "/memory/memory-ext-capability-annotations.md",
       "/memory/memory-ext-capability-registry.md",
       "/memory/memory-ext-collab-event-playbook.md",
@@ -28646,7 +28724,8 @@
       "/README.md"
     ],
     "现行": [
-      "/memory/memory-ext-active-contribution-protocol.md"
+      "/memory/memory-ext-active-contribution-protocol.md",
+      "/memory/memory-ext-bpt-positioning.md"
     ],
     "珈伦": [
       "/characters/15571.md"
@@ -29853,6 +29932,9 @@
     "的音": [
       "/characters/54117.md"
     ],
+    "的项": [
+      "/memory/memory-ext-bpt-positioning.md"
+    ],
     "的飞": [
       "/characters/77923.md"
     ],
@@ -29871,6 +29953,9 @@
     "的黑": [
       "/characters/15579.md",
       "/characters/77923.md"
+    ],
+    "皆自": [
+      "/memory/memory-ext-bpt-positioning.md"
     ],
     "皮克曼": [
       "/characters/77926.md"
@@ -29911,6 +29996,9 @@
       "/projects/project-news.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md"
+    ],
+    "目专": [
+      "/memory/memory-ext-bpt-positioning.md"
     ],
     "目中": [
       "/memory/memory-ext-storage-discussion.md"
@@ -30092,6 +30180,7 @@
       "/README.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
+      "/memory/memory-ext-bpt-positioning.md",
       "/memory/memory-ext-knowledge-layer-design.md",
       "/projects/entry-readme.md",
       "/projects/project-site.md",
@@ -30939,6 +31028,9 @@
     "级后": [
       "/characters/15562.md"
     ],
+    "级在": [
+      "/memory/memory-ext-bpt-positioning.md"
+    ],
     "级存": [
       "/memory/memory-ext-discord-archiver-design.md"
     ],
@@ -31022,6 +31114,7 @@
     ],
     "终端": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md",
+      "/memory/memory-ext-bpt-positioning.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md"
     ],
     "终结": [
@@ -31707,6 +31800,9 @@
     "自愈": [
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md"
     ],
+    "自持": [
+      "/memory/memory-ext-bpt-positioning.md"
+    ],
     "自由": [
       "/assets/assets-chat-onboarding-snippet.md",
       "/characters/77923.md"
@@ -32127,6 +32223,9 @@
       "/README.md",
       "/projects/entry-claude-md.md"
     ],
+    "行档": [
+      "/memory/memory-ext-bpt-positioning.md"
+    ],
     "行覆": [
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md"
     ],
@@ -32512,6 +32611,7 @@
       "/memory/memory-ext-bpt-architecture-summary-template.md",
       "/memory/memory-ext-bpt-guidance-log.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
+      "/memory/memory-ext-bpt-positioning.md",
       "/memory/memory-ext-capability-annotations.md",
       "/memory/memory-ext-capability-registry.md",
       "/memory/memory-ext-collab-event-playbook.md",
@@ -32690,6 +32790,7 @@
     ],
     "识层": [
       "/README.md",
+      "/memory/memory-ext-bpt-positioning.md",
       "/memory/memory-ext-knowledge-layer-design.md"
     ],
     "识平": [
@@ -33183,6 +33284,7 @@
       "/memory/memory-ext-bpt-architecture-summary-template.md",
       "/memory/memory-ext-bpt-guidance-log.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
+      "/memory/memory-ext-bpt-positioning.md",
       "/memory/memory-ext-capability-annotations.md",
       "/memory/memory-ext-capability-registry.md",
       "/memory/memory-ext-collab-event-playbook.md",
@@ -34614,6 +34716,7 @@
       "/memory/memory-ext-bpt-architecture-summary-template.md",
       "/memory/memory-ext-bpt-guidance-log.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
+      "/memory/memory-ext-bpt-positioning.md",
       "/memory/memory-ext-capability-annotations.md",
       "/memory/memory-ext-capability-registry.md",
       "/memory/memory-ext-collab-event-playbook.md",
@@ -35191,6 +35294,7 @@
       "/characters/15585.md"
     ],
     "队级": [
+      "/memory/memory-ext-bpt-positioning.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md"
     ],
     "防兼": [
@@ -35519,6 +35623,7 @@
     ],
     "项目": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md",
+      "/memory/memory-ext-bpt-positioning.md",
       "/memory/memory-ext-storage-discussion.md",
       "/memory/project-status.md",
       "/projects/project-bpt-agent-sdk.md",
@@ -36125,6 +36230,7 @@
       "/memory/memory-ext-bpt-architecture-summary-template.md",
       "/memory/memory-ext-bpt-guidance-log.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
+      "/memory/memory-ext-bpt-positioning.md",
       "/memory/memory-ext-phase-d-plan.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
@@ -36311,6 +36417,7 @@
       "/memory/memory-ext-bpt-architecture-summary-template.md",
       "/memory/memory-ext-bpt-guidance-log.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
+      "/memory/memory-ext-bpt-positioning.md",
       "/memory/memory-ext-capability-annotations.md",
       "/memory/memory-ext-capability-registry.md",
       "/memory/memory-ext-collab-event-playbook.md",
@@ -36547,6 +36654,7 @@
       "/memory/memory-ext-bpt-architecture-summary-template.md",
       "/memory/memory-ext-bpt-guidance-log.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
+      "/memory/memory-ext-bpt-positioning.md",
       "/memory/memory-ext-capability-annotations.md",
       "/memory/memory-ext-capability-registry.md",
       "/memory/memory-ext-collab-event-playbook.md",
@@ -37232,6 +37340,7 @@
       "/memory/memory-ext-bpt-architecture-summary-template.md",
       "/memory/memory-ext-bpt-guidance-log.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
+      "/memory/memory-ext-bpt-positioning.md",
       "/memory/memory-ext-capability-annotations.md",
       "/memory/memory-ext-capability-registry.md",
       "/memory/memory-ext-collab-event-playbook.md",
@@ -37527,6 +37636,7 @@
       "/memory/memory-ext-bpt-architecture-summary-template.md",
       "/memory/memory-ext-bpt-guidance-log.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
+      "/memory/memory-ext-bpt-positioning.md",
       "/memory/memory-ext-capability-annotations.md",
       "/memory/memory-ext-capability-registry.md",
       "/memory/memory-ext-collab-event-playbook.md",
@@ -38506,6 +38616,9 @@
     "优花": [
       "/characters/15562.md"
     ],
+    "体定": [
+      "/memory/memory-ext-bpt-positioning.md"
+    ],
     "体量": [
       "/memory/memory-strategy-repo-slimming-plan.md"
     ],
@@ -38866,6 +38979,9 @@
     ],
     "安武": [
       "/characters/95786.md"
+    ],
+    "定位": [
+      "/memory/memory-ext-bpt-positioning.md"
     ],
     "宝图": [
       "/projects/releases-treasure-map.md"
@@ -39414,6 +39530,9 @@
       "/characters/78840.md",
       "/characters/78841.md"
     ],
+    "本体": [
+      "/memory/memory-ext-bpt-positioning.md"
+    ],
     "本多": [
       "/characters/15586.md"
     ],
@@ -39649,6 +39768,9 @@
     ],
     "环行": [
       "/characters/15568.md"
+    ],
+    "现行": [
+      "/memory/memory-ext-bpt-positioning.md"
     ],
     "珈伦": [
       "/characters/15571.md"
@@ -40115,6 +40237,9 @@
     ],
     "行时": [
       "/projects/entry-claude-md.md"
+    ],
+    "行档": [
+      "/memory/memory-ext-bpt-positioning.md"
     ],
     "表还": [
       "/unpacked/unpacked-lua-tables.md"
