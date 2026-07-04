@@ -701,6 +701,7 @@ def build_graph() -> dict:
     nodes, edges = [], []
     id_set = set()
     bodies: dict[str, str] = {}
+    resources: dict[str, str] = {}  # concept id -> resource 指针（供提及边扫正文源）
 
     for f in sorted(BUNDLE.rglob("*.md")):
         if f.name in RESERVED:
@@ -709,6 +710,7 @@ def build_graph() -> dict:
         text = f.read_text(encoding="utf-8")
         fm = _read_frontmatter(text)
         bodies[rel] = text
+        resources[rel] = fm.get("resource", "")
         id_set.add(rel)
         parts = rel.strip("/").split("/")
         node = {
@@ -779,6 +781,36 @@ def build_graph() -> dict:
         rep = cnode(members[0])
         for m in members[1:]:
             add_edge(rep, cnode(m), f"CV:{cv}", "cv")
+
+    # 提及边（Pillar A+，2026-07-04）：从策展正文里确定性抽「谁点名了谁」，把孤岛连进骨架。
+    # 白盒办法做联想（区别于向量黑盒）：概念指向的**策展正文源**若字面点名某角色（distinctive
+    # CJK 专名，≥2 字，最长优先），即建一条带类型 mention 边。只扫小的策展文本，绝不碰归档本体。
+    # 每条边可解释可单测；只连「真被点名」的，天然防噪声星。
+    _CURATED = ("memory/", "public-info-pool/resource/", "assets/",
+                "projects/wiki/data/processed/story/", "projects/", "docs/",
+                "claude.md", "readme.md", "releases.md")
+    names_by_len = sorted((n for n in by_name if len(n) >= 2), key=len, reverse=True)
+    for n in nodes:
+        nid = n["id"]
+        if nid.startswith("/characters/"):
+            continue  # 角色源已由 variant/lore 连；不扫角色互提及
+        res = (resources.get(nid, "") or "").lstrip("/")
+        if not res.endswith(".md") or not any(res.lower().startswith(p) for p in _CURATED):
+            continue
+        src = REPO / res
+        try:
+            if not src.exists() or src.stat().st_size > 500_000:
+                continue
+            text = src.read_text(encoding="utf-8")
+        except OSError:
+            continue
+        hit = 0
+        for name in names_by_len:
+            if name in text:
+                add_edge(nid, cnode(by_name[name]["id"]), f"提及:{name}", "mention")
+                hit += 1
+                if hit >= 12:  # 单概念提及边封顶，防超大文档连成星
+                    break
 
     # 模式化跨层关系边（全仓知识组织 2026-07-04）：让新增指针层可被 kb_neighbors 顺图导航，
     # 不沦为孤立节点。确定性 join，经 add_edge（#393 typed-edge + pair_seen 去重），rel_type=cross。
@@ -863,6 +895,7 @@ const EDGE_STYLE = {
   lore:   {color:"rgba(148,226,213,0.62)", w:2.0, z:1, label:"同篇提及"},
   link:   {color:"rgba(137,180,250,0.38)", w:1.4, z:1, label:"链接"},
   cross:  {color:"rgba(203,166,247,0.50)", w:1.6, z:1, label:"跨层"},
+  mention:{color:"rgba(166,227,161,0.42)", w:1.4, z:1, label:"提及"},
   cv:     {color:"rgba(120,130,160,0.10)", w:1.0, z:0, label:"同声优"},
 };
 const es = t => EDGE_STYLE[t] || EDGE_STYLE.cv;
