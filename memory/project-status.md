@@ -1,8 +1,8 @@
 # 项目状态一览
 
-> 最后更新：2026-07-04 by 艾瑞卡会话（bpt-agent-sdk v0.3 收尾：task #16 观测消息流扩容（#384）+
-> #17 P1/P2 长尾（Read 图像 #387 / 类型面尾批 #388）均合并 main，644 单测全绿，本档 bpt-agent-sdk
-> 行 + 专节已同步；早前同会话落交接锚点（子项目状态表行 + 专节，#382/#383）。
+> 最后更新：2026-07-04 by 艾瑞卡会话（bpt-agent-sdk v0.3 全线 + 桶1 收口：#16 观测流（#384）/
+> #17 长尾（#387/#388）/ 桶1 三项（PDF document 块 · 重试流桥接 · 只读工具并行，#391）均合并 main，
+> 648 单测全绿，本档 bpt-agent-sdk 行 + 专节已同步；早前同会话落交接锚点（#382/#383）。
 > 前次 2026-07-02 by 艾瑞卡会话（第三轮·体质改进批次，守密人授权动态编排执行：
 > ① `archive_layout.py` 归档布局单一真相源落地，写方读方全收编（含发现并修复
 > repair_gaps 仍扫已死旧根、backfill 写平级两颗雷）；② 平级历史 1,382+13 文件
@@ -44,7 +44,7 @@
 | news（新闻聚合 + 报告系统） | 自动化持续运行（采集 / 回填 / 评论 / 同人图） | Code-news | M2 信息齐备期任务见 `projects/news/CONTEXT.md`；dependabot #136-140 实际状态待核 |
 | wiki（数据集 + Wiki 站点） | **W2 基线已重建 + 数据桥已接回（2026-07-02）**：可信基线 `data/processed/characters.json`（72 真实角色，一手解包）→ 58 真实唤醒体页 + 运行时数据桥 `characters.runtime.json`（生成器单点产出）→ `characters.ts` 消费，CharacterGrid（72 卡片、界域/类目/搜索筛选）挂载图鉴页，SSR 构建验证通过 | 艾瑞卡会话 | 真实字段缺口推进（skills/命轮/立绘/三语）见 `wiki-phase-2-gap-inventory.md`；贡献流程（M3）待跑通 |
 | game（衍生游戏） | 暂缓 | 待创建 | 不主线派发 |
-| **bpt-agent-sdk**（Claude Agent SDK 干净重实现 · 银芯→黑池单向输出物） | **v0.2+v0.3 已合并 main（2026-07-04，本体 #380 @ 8bd4a54 + v0.3 收尾 #384/#387/#388）**：干净室 TypeScript 重实现，直驱 Anthropic Messages API（fetch+SSE，无 CLI 子进程），**644 单测全绿**，对官方 SDK 0.3.199 约 90%+ 表面等价（v0.3 两待办 #16 观测流 + #17 长尾均收口） | 艾瑞卡会话 | 遗留后续（需真 API/行为决策）：PDF document 块 / 并行执行接线 / rate_limit transport→stream 桥接；**动手前必读** `projects/bpt-agent-sdk/CONTEXT.md`，定位见 `projects/bpt-agent-sdk/docs/POSITIONING.md` |
+| **bpt-agent-sdk**（Claude Agent SDK 干净重实现 · 银芯→黑池单向输出物） | **v0.2+v0.3 已合并 main（2026-07-04，本体 #380 @ 8bd4a54 + v0.3 收尾 #384/#387/#388）**：干净室 TypeScript 重实现，直驱 Anthropic Messages API（fetch+SSE，无 CLI 子进程），**648 单测全绿**，对官方 SDK 0.3.199 约 90%+ 表面等价（v0.3 #16 观测流 + #17 长尾 + 桶1 三项均收口，#391） | 艾瑞卡会话 | 剩余遗留（更小/需真 API）：MCP readOnlyHint 注解链 / PDF base64 源 live-API 确认；**动手前必读** `projects/bpt-agent-sdk/CONTEXT.md`，定位见 `projects/bpt-agent-sdk/docs/POSITIONING.md` |
 
 > BPT 战线（bpt-web / bpt-desktop / bpt-next / graphify-ext / occ-local）已于 2026-04-19 战略转向中从银芯仓库删除，不再在银芯内部开发。银芯转为 BPT 指导者，协议见 `memory/bpt-guidance-protocol.md`。
 > **例外辨析（勿混淆）**：上表 `bpt-agent-sdk` **不属**上述被删 BPT 产品战线，**亦非**「银芯内部开发 BPT 产品」。它是银芯自有的**工程产物**（公开信息层），作为**银芯→黑池单向输出物**供 BPT Desktop 消费（令其脱离被禁的 `claude.exe` 子进程引擎）——方向与 §1.1-HC 防火墙一致（银芯→黑池单向输出），黑池数据从不回流。
@@ -150,8 +150,9 @@
 
 - **动手前必读**：`projects/bpt-agent-sdk/CONTEXT.md`（会话上下文 + 当前 milestone）
 - **当前状态（2026-07-04 实测）**：**v0.2 + v0.3 已合并 main**（本体 PR #380 @ `8bd4a54`；v0.3 收尾
-  #384 观测流 / #387 Read 图像 / #388 类型面尾批）。**v0.3 两待办 task #16 + #17 均已收口。**
-  `pytest` 无涉、Node 侧 **`npx vitest run` 644 单测全绿（18 文件）**；`tsc` + `build` exit 0
+  #384 观测流 / #387 Read 图像 / #388 类型面尾批 / #391 桶1 三项）。**v0.3 两待办 #16 + #17 +
+  「桶1」（PDF document 块 / 重试流桥接 / 只读工具并行）均已收口。**
+  `pytest` 无涉、Node 侧 **`npx vitest run` 648 单测全绿（18 文件）**；`tsc` + `build` exit 0
 - **完成度（表面等价）**：对官方 SDK **0.3.199 基线**约 **89.5%**（v0.1 基线 68.3% → v0.2+v0.3 补齐后重算）。
   审计矩阵与逐行台账落 `Public-Info-Pool/Resource/repo-engineering/bpt-agent-sdk-completion-audit-20260703.md`
   + 同名 `-matrix-20260703.json`（146 行）
@@ -175,8 +176,12 @@
     `permission_denied` 真发射（gate deny 时 yield，与 `result.permission_denials` 台账一致），余类型化待驱动源（COMPAT.md 记发射 vs 类型化）
   - **task #17 P1/P2 长尾**：Read 图像（#387，PNG/JPEG/GIF/WebP magic-byte 嗅探→image 块）+ tool() ToolAnnotations 转发 /
     mcpServerStatus 富化（config·tools[]） / listSessions option（dir 别名·limit） / Usage 字段（server_tool_use·service_tier）（#388）
-- **遗留后续（需真 API 或行为决策，非表面照抄）**：PDF document 块进 tool_result 的 API 形状验证 /
-  readOnlyHint→并行执行·自动批准的行为接线（依赖并行工具执行） / rate_limit·api_retry 的 transport→stream 桥接
+- **桶1 已收口（守密人「都先全面实现」，#391）**：① Read PDF→base64 `document` 块（claude-code-guide
+  核实官方文档：document 块可入 tool_result）；② `rate_limit_event`/`api_retry` 真发射（transport `onRetry`
+  桥接进流）；③ 连续≥2 只读内建工具**并行执行**（Promise.all，结果保序，stop/defer 覆盖同组后续为
+  「Not executed」，interrupt 语义保绿）。**648 单测全绿。**
+- **剩余遗留（更小/需真 API）**：MCP 工具 `readOnlyHint` 注解链（喂进 gate 自动放行 + 并行分组，
+  McpToolEntry 暂无 annotations）/ PDF base64 源在 tool_result 的 live-API 端到端确认（`secrets.ANTHROPIC_API_KEY`）
 - **沙箱**：按 BPT 高开放权限信任模型判定 **N/A-by-design**（云沙箱在 BPT 内部场景不适用，守密人 2026-07-03 认可）
 
 ## 当前阶段
