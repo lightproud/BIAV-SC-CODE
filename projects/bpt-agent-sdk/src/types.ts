@@ -93,6 +93,25 @@ export type ImageBlockParam = {
   cache_control?: { type: 'ephemeral' } | null;
 };
 
+/**
+ * A document content block (e.g. a base64 PDF). Valid at the top level of a
+ * user message AND inside a tool_result's content array (the API's
+ * handle-tool-calls docs list `document` among the allowed tool_result block
+ * types). The base64 source mirrors top-level PDF support; the docs' explicit
+ * tool_result example only shows a `text` source, so base64-in-tool_result is
+ * supported-but-not-demonstrated (see docs/COMPAT.md).
+ */
+export type DocumentBlockParam = {
+  type: 'document';
+  source:
+    | { type: 'base64'; media_type: 'application/pdf'; data: string }
+    | { type: 'text'; media_type: 'text/plain'; data: string }
+    | { type: 'url'; url: string };
+  title?: string;
+  context?: string;
+  cache_control?: { type: 'ephemeral' } | null;
+};
+
 export type ToolUseBlockParam = {
   type: 'tool_use';
   id: string;
@@ -103,7 +122,7 @@ export type ToolUseBlockParam = {
 export type ToolResultBlockParam = {
   type: 'tool_result';
   tool_use_id: string;
-  content?: string | Array<TextBlockParam | ImageBlockParam>;
+  content?: string | Array<TextBlockParam | ImageBlockParam | DocumentBlockParam>;
   is_error?: boolean;
   cache_control?: { type: 'ephemeral' } | null;
 };

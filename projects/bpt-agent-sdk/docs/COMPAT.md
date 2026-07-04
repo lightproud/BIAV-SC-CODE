@@ -113,7 +113,7 @@ SDK implements the agent loop directly against the public Messages API:
 
 | Tool | Tier | Notes |
 |---|---|---|
-| Read | PARTIAL | text files (cat -n) + images (PNG/JPEG/GIF/WebP, magic-byte sniffed → image block; task #17); PDF gives a precise "not yet inline" message (document-block-in-tool_result is a follow-up); notebooks not rendered; oversized files (>50MB) rejected with a Grep hint rather than buffered |
+| Read | PARTIAL | text files (cat -n) + images (PNG/JPEG/GIF/WebP → image block) + PDF (→ base64 `document` block; the API's handle-tool-calls docs allow `document` inside tool_result, though the base64 source there is supported-but-not-explicitly-demonstrated); all magic-byte sniffed (task #17); notebooks not rendered; oversized files (>50MB) rejected with a Grep hint rather than buffered |
 | Write / Edit | FULL | same input field names (`file_path`, `old_string`, …) |
 | Bash | PARTIAL | no persistent shell state across calls; no sandboxing; runs in its own process group (timeout/abort reap the whole group; background/daemon children do not hang the tool) |
 | Glob | FULL | fast-glob, mtime-sorted |

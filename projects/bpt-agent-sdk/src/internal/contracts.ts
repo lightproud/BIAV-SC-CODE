@@ -11,6 +11,7 @@ import type {
   APIToolDefinition,
   ApiKeySource,
   CallToolResult,
+  DocumentBlockParam,
   HookEvent,
   HookInput,
   ImageBlockParam,
@@ -60,7 +61,7 @@ export interface Transport {
 // ---------------------------------------------------------------------------
 
 export type ToolResultPayload = {
-  content: string | Array<TextBlockParam | ImageBlockParam>;
+  content: string | Array<TextBlockParam | ImageBlockParam | DocumentBlockParam>;
   isError?: boolean;
 };
 

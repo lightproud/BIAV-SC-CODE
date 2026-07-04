@@ -309,16 +309,24 @@ describe('Read tool', () => {
     expect(blocks[0]!.source.media_type).toBe('image/png');
   });
 
-  it('gives a precise PDF message rather than the generic binary refusal', async () => {
+  it('returns a base64 document block for a PDF file', async () => {
     const file = path.join(sandbox, 'doc.pdf');
-    await writeFile(file, Buffer.from('%PDF-1.7\n%binary\n', 'latin1'));
+    const bytes = Buffer.from('%PDF-1.7\n%binary\n', 'latin1');
+    await writeFile(file, bytes);
 
     const res = await readTool.execute({ file_path: file }, makeCtx(sandbox));
 
-    expect(res.isError).toBe(true);
-    const content = String(res.content);
-    expect(content).toMatch(/PDF/);
-    expect(content).not.toMatch(/appears to be a binary file/);
+    expect(res.isError).toBeFalsy();
+    expect(Array.isArray(res.content)).toBe(true);
+    const blocks = res.content as Array<{
+      type: string;
+      source: { type: string; media_type: string; data: string };
+    }>;
+    expect(blocks).toHaveLength(1);
+    expect(blocks[0]!.type).toBe('document');
+    expect(blocks[0]!.source.type).toBe('base64');
+    expect(blocks[0]!.source.media_type).toBe('application/pdf');
+    expect(blocks[0]!.source.data).toBe(bytes.toString('base64'));
   });
 });
 

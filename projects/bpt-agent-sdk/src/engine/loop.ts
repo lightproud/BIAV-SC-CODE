@@ -13,6 +13,7 @@ import type {
   APIToolDefinition,
   CallToolResult,
   ContentBlock,
+  DocumentBlockParam,
   ImageBlockParam,
   ModelUsage,
   NonNullableUsage,
@@ -167,9 +168,9 @@ function mapMcpResult(res: CallToolResult): ToolResultPayload {
 
 /** Append hook additionalContext entries after existing tool_result content. */
 function appendContext(
-  content: string | Array<TextBlockParam | ImageBlockParam>,
+  content: string | Array<TextBlockParam | ImageBlockParam | DocumentBlockParam>,
   extra: string[],
-): string | Array<TextBlockParam | ImageBlockParam> {
+): string | Array<TextBlockParam | ImageBlockParam | DocumentBlockParam> {
   if (extra.length === 0) return content;
   if (typeof content === 'string') {
     return content.length > 0 ? `${content}\n${extra.join('\n')}` : extra.join('\n');
