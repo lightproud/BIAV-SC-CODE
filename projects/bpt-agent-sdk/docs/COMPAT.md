@@ -133,10 +133,13 @@ SDK implements the agent loop directly against the public Messages API:
 |---|---|---|
 | Read | PARTIAL | text files (cat -n) + images (PNG/JPEG/GIF/WebP → image block) + PDF (→ base64 `document` block; the API's handle-tool-calls docs allow `document` inside tool_result, though the base64 source there is supported-but-not-explicitly-demonstrated); all magic-byte sniffed (task #17); notebooks not rendered; oversized files (>50MB) rejected with a Grep hint rather than buffered |
 | Write / Edit | FULL | same input field names (`file_path`, `old_string`, …) |
-| Bash | PARTIAL | no persistent shell state across calls; no sandboxing; runs in its own process group (timeout/abort reap the whole group; background/daemon children do not hang the tool) |
+| Bash | PARTIAL | v0.5: `cd` + exported env persist across calls (state-file replay — functions/aliases/unexported vars do NOT persist; not a long-lived shell process) and `run_in_background` launches a detached shell whose id feeds BashOutput/KillShell. Still no sandboxing; foreground runs in its own process group (timeout/abort reap the whole group) |
+| BashOutput | FULL | v0.5: incremental reads (new output since last call) + status/exit code; optional per-line regex `filter`; read-only (auto-approved, parallel-group eligible) |
+| KillShell | FULL | v0.5: SIGTERM then SIGKILL escalation on the background shell's process group |
 | Glob | FULL | fast-glob, mtime-sorted |
 | Grep | PARTIAL | pure-JS regex engine (no ripgrep binary); large-repo perf caveat |
-| WebFetch / WebSearch / Task / TodoWrite / NotebookEdit / MultiEdit / KillShell / BashOutput | UNSUPPORTED | not registered in v0.1 |
+| WebFetch / WebSearch / Task / TodoWrite | see notes | WebFetch/WebSearch/TodoWrite registered in v0.2; Task is the Agent tool |
+| NotebookEdit / MultiEdit | UNSUPPORTED | deliberately untracked (BPT has no notebook surface; MultiEdit retired upstream) |
 
 ## SDKMessage stream
 

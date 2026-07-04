@@ -27,6 +27,11 @@ on:
         description: 'Model id for the live real-API smoke test'
         required: false
         default: 'claude-haiku-4-5-20251001'
+      ab_benchmark:
+        description: 'Also run the A/B efficiency benchmark (7 tasks, spends more budget)'
+        required: false
+        type: boolean
+        default: false
 
 concurrency:
   group: bpt-agent-sdk-${{ github.ref }}
@@ -89,3 +94,36 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: node tests/integration/live-real-api.mjs "${{ github.event.inputs.model }}"
+
+  ab-benchmark:
+    # POSITIONING.md §7 measurement mandate: the representative-task efficiency
+    # benchmark. Manual dispatch with ab_benchmark=true only — spends real
+    # budget across 7 tasks. The JSON report uploads as a run artifact.
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.ab_benchmark == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          sparse-checkout: |
+            /*
+            !/Public-Info-Pool/Record/
+            !/Public-Info-Pool/Reference/
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: A/B efficiency benchmark (this SDK)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node tests/integration/ab-benchmark.mjs --engine=bpt "--model=${{ github.event.inputs.model }}" --out=ab-report-bpt.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ab-report
+          path: projects/bpt-agent-sdk/ab-report-*.json
+          if-no-files-found: ignore
