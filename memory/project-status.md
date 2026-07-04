@@ -170,6 +170,12 @@
   数字说话前不宣胜负。缓存 0% 已诊断为「前缀够不着 Haiku 2048 门槛、非 bug、不灌水」。组织级缓存红利设计留 host
   （多层注入 proposal 档）、SDK 只承接 `segments` 分段 seam。整条线综述见
   `Public-Info-Pool/Resource/repo-engineering/bpt-sdk-prompt-cache-milestone-20260704.md`
+- **Desktop UI 参考线（2026-07-04）**：BPT Desktop 前端参考情报档（守密人转交 GPT-5.5 搜索梗概 +
+  AnySearch 许可证逐项实锤 + UI 组件↔`SDKMessage` 流对接表）落
+  `Public-Info-Pool/Resource/repo-engineering/bpt-desktop-ui-reference-20260704.md`——
+  绿区（MIT/Apache 可借码：assistant-ui / AI Elements / Goose / LibreChat 等）/ 黄区（Open WebUI 品牌条款、
+  LobeChat 社区许可证）/ 红区（Cherry Studio AGPL 双许可、Chatbox GPLv3 只看不抄）三级红绿灯 +
+  净室边界（Claude Desktop 逆向产物零复制）
 - **完成度（表面等价）**：对官方 SDK **0.3.199 基线**约 **89.5%**（v0.1 基线 68.3% → v0.2+v0.3 补齐后重算）。
   审计矩阵与逐行台账落 `Public-Info-Pool/Resource/repo-engineering/bpt-agent-sdk-completion-audit-20260703.md`
   + 同名 `-matrix-20260703.json`（146 行）
