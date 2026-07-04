@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-04T22:54:54.680265+00:00",
+  "updated_at": "2026-07-04T23:58:59.178631+00:00",
   "seeded_from": "silent_sources_audit",
   "audit_window": {
     "start": "2016-02-03",
@@ -7,7 +7,7 @@
     "days": 3806
   },
   "validation_drops": {
-    "generated_at": "2026-07-04T22:54:14.114298+00:00",
+    "generated_at": "2026-07-04T23:58:17.952674+00:00",
     "total_dropped": 0,
     "by_source": {}
   },
@@ -81,7 +81,7 @@
       "last_success_date": "2026-07-05",
       "last_check_date": "2026-07-04",
       "consecutive_silent_days": 0,
-      "total_items": 8985,
+      "total_items": 8996,
       "errors": []
     },
     "bahamut": {
@@ -113,7 +113,7 @@
       "last_success_date": "2026-07-04",
       "last_check_date": "2026-07-04",
       "consecutive_silent_days": 1,
-      "total_items": 1215,
+      "total_items": 1217,
       "errors": []
     },
     "pixiv": {
@@ -153,7 +153,7 @@
       "last_success_date": "2026-07-03",
       "last_check_date": "2026-07-04",
       "consecutive_silent_days": 2,
-      "total_items": 6216,
+      "total_items": 6236,
       "errors": []
     },
     "twitter": {

@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-04T22:54:14.091739+00:00",
+  "collected_at": "2026-07-04T23:58:17.931484+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 140,
+  "item_count": 142,
   "items": [
     {
       "source": "google_play",
@@ -767,6 +767,16 @@
     },
     {
       "source": "google_play",
+      "time": "2026-07-03T23:20:00",
+      "lang": "id",
+      "title": "[Google Play 好评] ★5 ABSOLUTELY PEAK GAME, tapi walaupun visu",
+      "summary": "ABSOLUTELY PEAK GAME, tapi walaupun visual dan alur ceritanya bagus, peminatnya dikit a good underated game, tapi wajar sih.. berliankan susah dicari",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=id#gp-e5f2dd11-7ff1-4ec2-a81f-6f96ac9f2e58",
+      "author": "Light Cavalry",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
       "time": "2026-07-03T03:11:46",
       "lang": "id",
       "title": "[Google Play 好评] ★5 game nya bagus, niat banget sistem gacha",
@@ -1033,6 +1043,16 @@
       "summary": "incroyable",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=fr#gp-c3bca509-d292-442b-a8be-b9dfb3a137cf",
       "author": "martial bambara",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-03T23:15:49",
+      "lang": "es",
+      "title": "[Google Play 好评] ★5 El único juego de tipo gacha que me enca",
+      "summary": "El único juego de tipo gacha que me encantó.",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=es#gp-295de0a6-4866-415e-a065-951b4a182008",
+      "author": "Yeremi MolinaHernandez",
       "engagement": 0
     },
     {
