@@ -499,6 +499,17 @@ export async function* runAgentLoop(
   }
 
   /** Full pipeline for one tool_use block: hooks -> gate -> execute -> hooks. */
+  /** A tool is read-only if a builtin flags it, or a connected MCP tool's
+   * server annotation sets readOnlyHint. Feeds the gate's auto-approve
+   * (default/plan/acceptEdits read-only allow) and parallel grouping. */
+  const isReadOnlyTool = (name: string): boolean => {
+    const builtin = deps.builtinTools.get(name);
+    if (builtin !== undefined) return builtin.readOnly === true;
+    return deps.mcp
+      .allTools()
+      .some((t) => t.qualifiedName === name && t.annotations?.readOnlyHint === true);
+  };
+
   async function executeToolUse(block: ToolUseBlock): Promise<ToolExecOutcome> {
     const toolName = block.name;
     let input = block.input;
@@ -548,7 +559,7 @@ export async function* runAgentLoop(
     const check = await deps.permissions.check(toolName, input, {
       toolUseID: block.id,
       signal,
-      readOnly: builtin?.readOnly ?? false,
+      readOnly: isReadOnlyTool(toolName),
       isFileEdit: builtin?.isFileEdit ?? false,
       hook:
         pre !== undefined &&
@@ -860,15 +871,14 @@ export async function* runAgentLoop(
         let batchStop: ToolExecOutcome['stop'];
         let batchDefer: ToolExecOutcome['defer'];
         // Execute in content order, but run a maximal run of >= 2 consecutive
-        // read-only builtin tools CONCURRENTLY (they have no side effects and
-        // are order-independent). Non-read-only and lone read-only tools run
+        // read-only tools CONCURRENTLY (they have no side effects and are
+        // order-independent). Non-read-only and lone read-only tools run
         // sequentially, exactly as before. Results stay in tool_use order (the
         // API pairs by id; history keeps them ordered). A stop/defer from any
         // executed tool suppresses all LATER tools with a "Not executed"
-        // placeholder. MCP tools are treated as non-read-only (conservative);
-        // wiring their readOnlyHint annotation is a follow-up.
-        const isReadOnly = (b: ToolUseBlock): boolean =>
-          deps.builtinTools.get(b.name)?.readOnly === true;
+        // placeholder. "Read-only" covers builtins (readOnly flag) and MCP
+        // tools whose server annotation sets readOnlyHint (isReadOnlyTool).
+        const isReadOnly = (b: ToolUseBlock): boolean => isReadOnlyTool(b.name);
         let ti = 0;
         while (ti < toolUses.length) {
           if (batchStop !== undefined || batchDefer !== undefined) {

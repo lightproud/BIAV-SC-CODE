@@ -28,6 +28,7 @@ import type {
   SDKPermissionDenial,
   TextBlockParam,
   ThinkingConfigParam,
+  ToolAnnotations,
   UserQuestionHandler,
   WebSearchHandler,
 } from '../types.js';
@@ -258,6 +259,8 @@ export type McpToolEntry = {
   toolName: string;
   description?: string;
   inputSchema: JSONSchema;
+  /** Server-reported tool annotations (e.g. readOnlyHint), when provided. */
+  annotations?: ToolAnnotations;
 };
 
 export interface McpRegistry {
