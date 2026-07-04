@@ -1,50 +1,10 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-04T16:10:55.170927+00:00",
+  "collected_at": "2026-07-04T18:01:26.889681+00:00",
   "source": "appstore",
   "data_layer": "output",
-  "item_count": 18,
+  "item_count": 13,
   "items": [
-    {
-      "source": "appstore",
-      "time": "2026-06-19T04:33:54-07:00",
-      "lang": "en",
-      "title": "One of the best gacha games",
-      "summary": "Amazing gameplay, dev team, combat system, story, music and everything else. This is one of the most unique and bold gacha games i have ever seen and its amazing. Must play",
-      "url": "https://apps.apple.com/us/app/id6447354150?see-all=reviews#as-14200928298",
-      "author": "Huzi_loupe",
-      "engagement": 5
-    },
-    {
-      "source": "appstore",
-      "time": "2026-06-11T21:38:53-07:00",
-      "lang": "en",
-      "title": "Hands down the greatest Gacha game I’ve played, never been so addicted.",
-      "summary": "They had some problems at the start, but they are on their feet and very generous, incredible gameplay and character design is amazing. I only wish they would balance the gender ratio like they said they would. This needs more popularity.",
-      "url": "https://apps.apple.com/us/app/id6447354150?see-all=reviews#as-14172526753",
-      "author": "FernSylvan",
-      "engagement": 5
-    },
-    {
-      "source": "appstore",
-      "time": "2026-06-07T00:45:21-07:00",
-      "lang": "en",
-      "title": "Good game",
-      "summary": "In love with the gameplay, this game also has a very lovely artstyle and story. Can’t wait for full English translation!",
-      "url": "https://apps.apple.com/us/app/id6447354150?see-all=reviews#as-14153657556",
-      "author": "\\^3^/",
-      "engagement": 5
-    },
-    {
-      "source": "appstore",
-      "time": "2026-06-05T00:36:40-07:00",
-      "lang": "en",
-      "title": "What a pleasant surprise:)",
-      "summary": "Found this game by chance but what a good surprise. Really enjoying the game, graphics, sound, game play and despite being gacha got enough free polls to build teams ans get free SSR. Friendly community in discord as well helpful to build initial team and explain it.",
-      "url": "https://apps.apple.com/gb/app/id6447354150?see-all=reviews#as-14145829170",
-      "author": "hsantos18",
-      "engagement": 5
-    },
     {
       "source": "appstore",
       "time": "2026-06-30T00:23:21-07:00",
@@ -93,6 +53,16 @@
       "summary": "Nice story and design, super recommended for everyone and thank you for giving me such a fantastic experience.",
       "url": "https://apps.apple.com/th/app/id6447354150?see-all=reviews#as-14153720246",
       "author": "Fookfik_TH",
+      "engagement": 5
+    },
+    {
+      "source": "appstore",
+      "time": "2026-07-01T11:21:49-07:00",
+      "lang": "de",
+      "title": "Beautiful game",
+      "summary": "One of the most beautiful and catching mobile games. I love the atmosphere, character design, world-building and creepy story. Even though it is a gatcha, it is very generous with its ingame currency and pull rates.",
+      "url": "https://apps.apple.com/de/app/id6447354150?see-all=reviews#as-14250546734",
+      "author": "Starshade78",
       "engagement": 5
     },
     {
@@ -147,16 +117,6 @@
     },
     {
       "source": "appstore",
-      "time": "2026-06-04T12:30:42-07:00",
-      "lang": "en",
-      "title": "No sound?",
-      "summary": "I have sound when I initially open the game but after I download resources all sound goes away. I already tried the fix button and I get the same issue.",
-      "url": "https://apps.apple.com/us/app/id6447354150?see-all=reviews#as-14144100562",
-      "author": "Actic-Slash",
-      "engagement": 4
-    },
-    {
-      "source": "appstore",
       "time": "2026-06-07T01:01:16-07:00",
       "lang": "en",
       "title": "not bad",
@@ -174,16 +134,6 @@
       "url": "https://apps.apple.com/id/app/id6447354150?see-all=reviews#as-14146161219",
       "author": "Milesiya",
       "engagement": 4
-    },
-    {
-      "source": "appstore",
-      "time": "2026-07-02T05:39:29-07:00",
-      "lang": "en",
-      "title": "Fun but flawed",
-      "summary": "The game itself is very fun, but there are a few infuriating issues- I crash at the end of non-combat story stages, plus the game always launches upside down, needing me to manually rotate my phone to get it back to my desired screen orientation",
-      "url": "https://apps.apple.com/gb/app/id6447354150?see-all=reviews#as-14253562676",
-      "author": "Guy1771",
-      "engagement": 2
     }
   ]
 }

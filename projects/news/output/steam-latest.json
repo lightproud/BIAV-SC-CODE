@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-04T16:10:55.170927+00:00",
+  "collected_at": "2026-07-04T18:01:26.889681+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 7,
+  "item_count": 6,
   "items": [
     {
       "source": "steam",
@@ -94,21 +94,6 @@
       "review": "A captivating story, complemented by a beautiful soundtrack and a dark, Lovecraftian atmosphere.",
       "timestamp_created": 1783116367,
       "playtime_forever": 7587
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-03T17:27:16+00:00",
-      "lang": "danish",
-      "title": "[正面] game is a visual novel gacha with card battling sy...",
-      "summary": "game is a visual novel gacha with card battling system. The story and characters are quite intriguing and very good. This is my first gacha, but based on what i've heard it's kinda F2P friendly compared to other games in the genre. But overall a good game",
-      "url": "https://steamcommunity.com/profiles/76561198033035584/recommended/3052450",
-      "author": "76561198033035584",
-      "engagement": 0,
-      "language": "danish",
-      "voted_up": true,
-      "review": "game is a visual novel gacha with card battling system. The story and characters are quite intriguing and very good. This is my first gacha, but based on what i've heard it's kinda F2P friendly compared to other games in the genre. But overall a good game",
-      "timestamp_created": 1783099636,
-      "playtime_forever": 2371
     }
   ]
 }
