@@ -26,6 +26,13 @@ v0.2 implemented most of the P0/P1 gaps the audit flagged. Now **FULL / PARTIAL*
   API's 4-breakpoint max), `ttft_ms`/`deferred_tool_use` result extras, init
   fields, hook input `tool_use_id`/`duration_ms`, MCP audio/resource_link,
   `.mcp.json` loading, `thinking.budgetTokens` alias.
+  **Stable-prefix caching (v0.5+):** the system prompt is split into a stable
+  prefix (tool list + static guidance, byte-identical across runs) and a
+  volatile cwd tail; the cache breakpoint lands on the stable block so the cwd
+  rides after it and never invalidates the cached prefix. This lets independent
+  queries in an org reuse `tools + stable system` across the cache TTL —
+  measured to lift multi-turn cache hit toward the official engine's, where
+  before the per-run cwd broke every cross-query match.
 - **New builtin tools** — WebFetch (streamed + SSRF guard), WebSearch (host
   callback), AskUserQuestion (host callback), TodoWrite; MCP elicitation.
 - **Sessions** — external `SessionStore` mirror; file checkpointing +

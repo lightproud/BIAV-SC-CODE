@@ -14,22 +14,42 @@ type PromptContext = {
   toolNames: string[];
 };
 
-/** Short default used when the caller passes no systemPrompt at all. */
-function minimalDefault(ctx: PromptContext): string {
+/**
+ * A system prompt split into a STABLE prefix and a VOLATILE tail.
+ *
+ * The stable part is byte-identical across every run in an org (tool list +
+ * static guidance), so it is the segment worth prompt-caching: placing the
+ * cache breakpoint at the stable/volatile boundary lets independent queries
+ * share the cached prefix within the cache TTL (cross-query reuse). The
+ * volatile tail (the working directory, which varies per run) is sent AFTER
+ * the breakpoint so it never invalidates the cached prefix.
+ */
+export type SystemPromptParts = {
+  stable: string;
+  volatile: string;
+};
+
+/** The per-run volatile tail: the working directory + its path guidance. */
+function volatileTail(ctx: PromptContext, withPathGuidance: boolean): string {
+  const lines = [`Working directory: ${ctx.cwd}`];
+  if (withPathGuidance) {
+    lines.push('Treat relative paths as relative to this directory and prefer absolute paths in tool calls.');
+  }
+  return lines.join('\n');
+}
+
+/** Stable part of the minimal default (no cwd). */
+function minimalStable(): string {
   return [
     'You are a coding agent running inside the bpt-agent-sdk harness.',
-    `Working directory: ${ctx.cwd}`,
     'Use the available tools when they help you complete the task accurately, and report results concisely.',
   ].join('\n');
 }
 
-/** Full default harness prompt (selected by the `claude_code` preset). */
-function defaultHarnessPrompt(ctx: PromptContext): string {
+/** Stable part of the full default harness prompt (no cwd). */
+function defaultHarnessStable(ctx: PromptContext): string {
   const lines: string[] = [
     'You are an autonomous coding agent running inside the bpt-agent-sdk harness. You help the user by inspecting files, running commands, and making precise edits in their project.',
-    '',
-    `Working directory: ${ctx.cwd}`,
-    'Treat relative paths as relative to this directory and prefer absolute paths in tool calls.',
     '',
   ];
   if (ctx.toolNames.length > 0) {
@@ -48,25 +68,39 @@ function defaultHarnessPrompt(ctx: PromptContext): string {
 }
 
 /**
- * Build the system prompt string for the run.
- * - undefined        -> minimal default prompt
- * - string           -> used verbatim
- * - claude_code preset -> this SDK's default harness prompt, with the
- *   optional `append` text concatenated after two newlines.
+ * Build the system prompt split into stable prefix + volatile (cwd) tail.
+ * - undefined          -> minimal default (stable) + cwd tail
+ * - string             -> the caller's text is treated as entirely stable
+ *   (we cannot know which parts vary), with no volatile tail
+ * - claude_code preset -> this SDK's default harness prompt (stable) + cwd
+ *   tail, with the optional `append` concatenated into the stable segment
+ */
+export function buildSystemPromptParts(
+  opt: Options['systemPrompt'],
+  ctx: PromptContext,
+): SystemPromptParts {
+  if (opt === undefined) {
+    return { stable: minimalStable(), volatile: volatileTail(ctx, false) };
+  }
+  if (typeof opt === 'string') {
+    return { stable: opt, volatile: '' };
+  }
+  let stable = defaultHarnessStable(ctx);
+  if (opt.append !== undefined && opt.append.length > 0) {
+    stable = `${stable}\n\n${opt.append}`;
+  }
+  return { stable, volatile: volatileTail(ctx, true) };
+}
+
+/**
+ * Build the system prompt as one string (stable + volatile joined). Retained
+ * for callers/tests that want the flat prompt; the engine uses the split form
+ * so the stable prefix can be cached independently of the cwd tail.
  */
 export function buildSystemPrompt(
   opt: Options['systemPrompt'],
   ctx: PromptContext,
 ): string {
-  if (opt === undefined) {
-    return minimalDefault(ctx);
-  }
-  if (typeof opt === 'string') {
-    return opt;
-  }
-  const base = defaultHarnessPrompt(ctx);
-  if (opt.append !== undefined && opt.append.length > 0) {
-    return `${base}\n\n${opt.append}`;
-  }
-  return base;
+  const { stable, volatile } = buildSystemPromptParts(opt, ctx);
+  return volatile.length > 0 ? `${stable}\n${volatile}` : stable;
 }

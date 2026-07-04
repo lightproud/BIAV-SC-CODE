@@ -79,6 +79,22 @@ describe('applyCacheControl', () => {
     expect(out.system).not.toBe(system);
   });
 
+  it("cacheSystemBoundary:'first' caches the STABLE prefix block, not the cwd tail", () => {
+    // The engine's [stable, volatile-cwd] split: the breakpoint must land on
+    // block 0 so the per-run cwd tail (block 1) stays out of the cached prefix.
+    const system: TextBlockParam[] = [
+      { type: 'text', text: 'stable tools+guidance prefix' },
+      { type: 'text', text: 'Working directory: /tmp/run-xyz' },
+    ];
+    const out = applyCacheControl(baseReq({ system }), {
+      enabled: true,
+      cacheSystemBoundary: 'first',
+    });
+    const blocks = out.system as TextBlockParam[];
+    expect(blocks[0].cache_control).toEqual({ type: 'ephemeral' });
+    expect(blocks[1].cache_control).toBeUndefined();
+  });
+
   it('caches the last tool and does NOT mutate the passed-in tools array', () => {
     const tools: APIToolDefinition[] = [
       { name: 't1', input_schema: { type: 'object' } },
