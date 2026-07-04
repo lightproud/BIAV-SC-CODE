@@ -165,6 +165,10 @@ export const editTool: BuiltinTool = {
           newString +
           text.slice(firstIdx + oldString.length);
 
+      // Capture the pre-image BEFORE mutating so Query.rewindFiles() can
+      // restore it. `text` is the original content already read for the edit.
+      ctx.recordFileChange?.(abs, text);
+
       await writeFile(abs, updated, { encoding: 'utf8', signal: ctx.signal });
 
       const replaced = replaceAll ? count : 1;

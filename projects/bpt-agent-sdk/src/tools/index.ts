@@ -10,6 +10,10 @@ import { editTool } from './edit.js';
 import { bashTool } from './bash.js';
 import { globTool } from './glob.js';
 import { grepTool } from './grep.js';
+import { webFetchTool } from './webfetch.js';
+import { webSearchTool } from './websearch.js';
+import { askUserQuestionTool } from './askuserquestion.js';
+import { todoWriteTool } from './todo.js';
 
 /** Fresh Map per call so callers can filter without affecting others. */
 export function createBuiltinTools(): Map<string, BuiltinTool> {
@@ -20,6 +24,10 @@ export function createBuiltinTools(): Map<string, BuiltinTool> {
     bashTool,
     globTool,
     grepTool,
+    webFetchTool,
+    webSearchTool,
+    askUserQuestionTool,
+    todoWriteTool,
   ];
   return new Map(tools.map((t) => [t.name, t]));
 }

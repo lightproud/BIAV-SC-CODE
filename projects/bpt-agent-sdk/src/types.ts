@@ -81,6 +81,7 @@ export type ImageBlockParam = {
   source:
     | { type: 'base64'; media_type: string; data: string }
     | { type: 'url'; url: string };
+  cache_control?: { type: 'ephemeral' } | null;
 };
 
 export type ToolUseBlockParam = {
@@ -95,6 +96,7 @@ export type ToolResultBlockParam = {
   tool_use_id: string;
   content?: string | Array<TextBlockParam | ImageBlockParam>;
   is_error?: boolean;
+  cache_control?: { type: 'ephemeral' } | null;
 };
 
 export type ThinkingBlockParam = {
@@ -160,6 +162,8 @@ export type APIToolDefinition = {
   name: string;
   description?: string;
   input_schema: JSONSchema;
+  /** Prompt-cache breakpoint marker (set by the cache-control layer). */
+  cache_control?: { type: 'ephemeral' } | null;
 };
 
 // --- Streaming events (SSE) -------------------------------------------------
@@ -235,7 +239,9 @@ export type PermissionMode =
   /** Planning mode: only read-only tools are permitted. */
   | 'plan'
   /** Never prompt: deny anything that is not pre-approved by rules. */
-  | 'dontAsk';
+  | 'dontAsk'
+  /** v0.2: heuristic-classified approvals (src/permissions/classifier.ts). */
+  | 'auto';
 
 export type PermissionBehavior = 'allow' | 'deny' | 'ask';
 
@@ -352,6 +358,7 @@ export type PreToolUseHookInput = BaseHookInput & {
   hook_event_name: 'PreToolUse';
   tool_name: string;
   tool_input: unknown;
+  tool_use_id?: string;
 };
 
 export type PostToolUseHookInput = BaseHookInput & {
@@ -359,6 +366,8 @@ export type PostToolUseHookInput = BaseHookInput & {
   tool_name: string;
   tool_input: unknown;
   tool_response: unknown;
+  tool_use_id?: string;
+  duration_ms?: number;
 };
 
 export type PostToolUseFailureHookInput = BaseHookInput & {
@@ -366,6 +375,8 @@ export type PostToolUseFailureHookInput = BaseHookInput & {
   tool_name: string;
   tool_input: unknown;
   error: string;
+  tool_use_id?: string;
+  duration_ms?: number;
 };
 
 export type PostToolBatchHookInput = BaseHookInput & {
@@ -408,6 +419,7 @@ export type PermissionRequestHookInput = BaseHookInput & {
   hook_event_name: 'PermissionRequest';
   tool_name: string;
   tool_input: unknown;
+  tool_use_id?: string;
 };
 
 export type SessionStartHookInput = BaseHookInput & {
@@ -443,7 +455,7 @@ export type HookInput =
   | SessionEndHookInput
   | NotificationHookInput;
 
-export type HookPermissionDecision = 'allow' | 'deny' | 'ask';
+export type HookPermissionDecision = 'allow' | 'deny' | 'ask' | 'defer';
 
 export type HookJSONOutput = {
   /** When false, the agent stops after this hook. */
@@ -539,6 +551,14 @@ export type McpServerStatus = {
 export type CallToolResultContent =
   | { type: 'text'; text: string }
   | { type: 'image'; data: string; mimeType: string }
+  | { type: 'audio'; data: string; mimeType: string }
+  | {
+      type: 'resource_link';
+      uri: string;
+      name?: string;
+      description?: string;
+      mimeType?: string;
+    }
   | { type: 'resource'; resource: { uri: string; mimeType?: string; text?: string } };
 
 export type CallToolResult = {
@@ -582,6 +602,18 @@ export type AgentDefinition = {
   model?: string;
   maxTurns?: number;
   permissionMode?: PermissionMode;
+  /** v0.2: run this subagent as a non-blocking background task when invoked. */
+  background?: boolean;
+  /** Preload skills into the subagent context (ACCEPTED; no-op in v0.2). */
+  skills?: string[];
+  /** MCP servers for this subagent (ACCEPTED; v0.2 inherits parent servers). */
+  mcpServers?: string[];
+  /** First user turn when run as the MAIN thread; ignored for subagents. */
+  initialPrompt?: string;
+  /** Memory source (ACCEPTED; no-op in v0.2). */
+  memory?: 'user' | 'project' | 'local';
+  /** Reasoning effort (ACCEPTED; no-op in v0.2 - thinking inherited instead). */
+  effort?: 'low' | 'medium' | 'high' | 'xhigh' | 'max' | number;
 };
 
 // ---------------------------------------------------------------------------
@@ -605,11 +637,13 @@ export type ProviderConfig = {
   /** Per-request timeout in milliseconds (default 600000). */
   timeoutMs?: number;
   maxOutputTokens?: number;
+  /** Automatic prompt caching via cache_control breakpoints; default true. */
+  promptCaching?: boolean;
 };
 
 export type ThinkingConfigParam =
   | { type: 'adaptive' }
-  | { type: 'enabled'; budget_tokens?: number; budget?: number }
+  | { type: 'enabled'; budgetTokens?: number; budget_tokens?: number; budget?: number }
   | { type: 'disabled' };
 
 // ---------------------------------------------------------------------------
@@ -665,6 +699,29 @@ export type Options = {
   betas?: string[];
   /** Enable debug logging via stderr callback. */
   debug?: boolean;
+  /** BPT extension: context-compaction tuning (see docs/COMPAT.md). */
+  compaction?: CompactionOptions;
+  /** Require the final answer to be JSON validating against a JSON Schema;
+   *  the validated object is returned on the result as `structured_output`. */
+  outputFormat?: OutputFormatConfig;
+  /** BPT/v0.2: host web-search backend for the WebSearch tool. */
+  webSearch?: WebSearchHandler;
+  /** BPT/v0.2: collects answers for the AskUserQuestion tool. */
+  onUserQuestion?: UserQuestionHandler;
+  /** v0.2: answers MCP server elicitation requests (else auto-declined). */
+  onElicitation?: ElicitationHandler;
+  /** BPT extension: allow WebFetch to reach localhost/private IPs (default false). */
+  allowPrivateWebFetch?: boolean;
+  /** Mirror session transcripts to an external backend (S3/Redis/DB). */
+  sessionStore?: SessionStore;
+  /** Flush cadence for sessionStore mirror writes. Default 'batched'. */
+  sessionStoreFlush?: 'batched' | 'eager';
+  /** Timeout (ms) for each external sessionStore load on resume. Default 60000. */
+  loadTimeoutMs?: number;
+  /** Track Write/Edit pre-images so Query.rewindFiles() can restore files. */
+  enableFileCheckpointing?: boolean;
+  /** Defer MCP tool schemas behind a ToolSearch tool. undefined -> auto. */
+  toolSearch?: boolean;
 };
 
 // ---------------------------------------------------------------------------
@@ -706,6 +763,43 @@ export type SDKPartialAssistantMessage = {
   parent_tool_use_id: string | null;
 };
 
+/** Per-assistant-turn metrics (v0.3 budget instrumentation). */
+export type SDKTurnMetrics = {
+  index: number;
+  model: string;
+  usage: NonNullableUsage;
+  costUsd: number;
+  apiMs: number;
+  stopReason: StopReason;
+  toolCalls: number;
+};
+
+/** Per-tool aggregate metrics across a run (v0.3). */
+export type SDKToolMetrics = {
+  name: string;
+  calls: number;
+  totalMs: number;
+  errors: number;
+};
+
+/**
+ * Per-run budget/efficiency metrics (v0.3). A superset of the flat result
+ * fields, packaged for logging + A/B comparison. `cacheHitRatio` is
+ * cache_read / (input + cache_read + cache_creation), 0 when no caching.
+ */
+export type SDKRunMetrics = {
+  numTurns: number;
+  durationMs: number;
+  durationApiMs: number;
+  ttftMs?: number;
+  usage: NonNullableUsage;
+  totalCostUsd: number;
+  cacheHitRatio: number;
+  perTurn: SDKTurnMetrics[];
+  perTool: SDKToolMetrics[];
+  modelUsage: Record<string, ModelUsage>;
+};
+
 export type SDKResultMessage =
   | {
       type: 'result';
@@ -718,14 +812,27 @@ export type SDKResultMessage =
       num_turns: number;
       result: string;
       stop_reason?: StopReason;
+      /** Validated object when options.outputFormat was set and validation passed. */
+      structured_output?: unknown;
+      /** Present on a turn that ended because a tool call was deferred. */
+      deferred_tool_use?: SDKDeferredToolUse;
+      /** Time to first token (ms), when measured. */
+      ttft_ms?: number;
+      ttft_stream_ms?: number;
       total_cost_usd: number;
       usage: NonNullableUsage;
       modelUsage: Record<string, ModelUsage>;
       permission_denials: SDKPermissionDenial[];
+      /** v0.3 per-run budget/efficiency metrics. */
+      metrics?: SDKRunMetrics;
     }
   | {
       type: 'result';
-      subtype: 'error_max_turns' | 'error_during_execution' | 'error_max_budget_usd';
+      subtype:
+        | 'error_max_turns'
+        | 'error_during_execution'
+        | 'error_max_budget_usd'
+        | 'error_max_structured_output_retries';
       uuid: string;
       session_id: string;
       duration_ms: number;
@@ -737,6 +844,11 @@ export type SDKResultMessage =
       modelUsage: Record<string, ModelUsage>;
       permission_denials: SDKPermissionDenial[];
       errorMessage?: string;
+      /** Time to first token (ms); only present when a token actually arrived. */
+      ttft_ms?: number;
+      ttft_stream_ms?: number;
+      /** v0.3 per-run budget/efficiency metrics. */
+      metrics?: SDKRunMetrics;
     };
 
 export type SDKSystemMessage = {
@@ -753,6 +865,10 @@ export type SDKSystemMessage = {
   slash_commands: string[];
   output_style: string;
   agents?: string[];
+  claude_code_version?: string;
+  betas?: string[];
+  skills?: string[];
+  plugins?: string[];
 };
 
 export type SDKCompactBoundaryMessage = {
@@ -773,7 +889,150 @@ export type SDKMessage =
   | SDKResultMessage
   | SDKSystemMessage
   | SDKCompactBoundaryMessage
+  | SDKMirrorErrorMessage
   | SDKPartialAssistantMessage;
+
+// ---------------------------------------------------------------------------
+// v0.2 subsystem types
+// ---------------------------------------------------------------------------
+
+/** Structured-output configuration (Options.outputFormat). The SDK validates
+ *  the agent's final answer against `schema` and re-prompts on mismatch. */
+export type OutputFormatConfig = {
+  type: 'json_schema';
+  schema: JSONSchema;
+};
+
+/** BPT extension: context-compaction tuning. When the running request
+ *  history's estimated token count approaches the model context window,
+ *  older turns are folded into a synthetic summary. `enabled` defaults true. */
+export type CompactionOptions = {
+  enabled?: boolean;
+  /** Fraction of the (window - reserved output) budget at which auto-compaction fires. Default 0.85. */
+  autoThresholdRatio?: number;
+  /** Fraction of the input budget kept verbatim as the recent suffix. Default 0.30. */
+  keepRatio?: number;
+  /** Minimum number of genuine user turns kept in the suffix. Default 2. */
+  minRecentTurns?: number;
+  /** Use a real Messages API summarization call instead of the deterministic fold. Default false. */
+  useApiSummary?: boolean;
+  /** Treat a user turn whose text is `/compact [instructions]` as a manual compaction. Default true. */
+  recognizeCommand?: boolean;
+  /** Extra guidance appended to the summarizer instructions. */
+  customInstructions?: string;
+  /** Override the model context window (e.g. for a 1M-context beta). */
+  contextWindowTokens?: number;
+};
+
+/** The tool call a defer paused on (SDKResultMessage.deferred_tool_use). */
+export type SDKDeferredToolUse = {
+  tool_use_id: string;
+  tool_name: string;
+  tool_input: Record<string, unknown>;
+};
+
+/** One web search result surfaced to the model by a webSearch callback. */
+export type WebSearchResult = {
+  title: string;
+  url: string;
+  snippet?: string;
+};
+
+/** Host-provided web-search backend (this SDK ships no search engine). */
+export type WebSearchHandler = (
+  query: string,
+  options: { allowedDomains?: string[]; blockedDomains?: string[]; signal: AbortSignal },
+) => Promise<WebSearchResult[] | string>;
+
+/** One question posed to the user by the AskUserQuestion tool. */
+export type UserQuestion = {
+  question: string;
+  header: string;
+  options: Array<{ label: string; description?: string }>;
+  multiSelect?: boolean;
+};
+
+/** The user's answer to one question (selected option labels). */
+export type UserQuestionAnswer = {
+  header: string;
+  answers: string[];
+};
+
+/** Host handler that collects answers for AskUserQuestion. */
+export type UserQuestionHandler = (
+  questions: UserQuestion[],
+  options: { signal: AbortSignal },
+) => Promise<UserQuestionAnswer[] | null>;
+
+/** An MCP server's elicitation/create request (structured input it needs). */
+export type ElicitationRequest = {
+  message: string;
+  requestedSchema: JSONSchema;
+};
+
+/** The host's response to an elicitation request. */
+export type ElicitationResult =
+  | { action: 'accept'; content: Record<string, unknown> }
+  | { action: 'decline' }
+  | { action: 'cancel' };
+
+/** Host handler for MCP elicitation requests (omitted -> auto-declined). */
+export type ElicitationHandler = (
+  request: ElicitationRequest,
+  options: { signal: AbortSignal },
+) => Promise<ElicitationResult>;
+
+/** Result of Query.setMcpServers(). */
+export type McpSetServersResult = {
+  servers: McpServerStatus[];
+};
+
+/** External session store key (options.sessionStore). */
+export type SessionKey = {
+  projectKey: string;
+  sessionId: string;
+  subpath?: string;
+};
+
+export type SessionStoreEntry = { type: string; uuid?: string; [key: string]: unknown };
+
+export type SessionStoreListEntry = { sessionId: string; mtime: number };
+
+/** Public external session store (options.sessionStore). Distinct from the
+ *  INTERNAL contracts.ts transcript-store interface of the same name. */
+export type SessionStore = {
+  append(key: SessionKey, entries: SessionStoreEntry[]): Promise<void>;
+  load(key: SessionKey): Promise<SessionStoreEntry[] | null>;
+  listSessions?(projectKey: string): Promise<SessionStoreListEntry[]>;
+  delete?(key: SessionKey): Promise<void>;
+  listSubkeys?(key: { projectKey: string; sessionId: string }): Promise<string[]>;
+};
+
+/** A single message from a persisted transcript (getSessionMessages). */
+export type SessionMessage = {
+  type: 'user' | 'assistant';
+  uuid: string;
+  session_id: string;
+  message: unknown;
+  parent_tool_use_id: string | null;
+};
+
+/** Result of Query.rewindFiles(). */
+export type RewindFilesResult = {
+  checkpointId: string;
+  restoredFiles: string[];
+  deletedFiles: string[];
+  dryRun: boolean;
+};
+
+/** Best-effort external-store write failure surfaced on the stream. */
+export type SDKMirrorErrorMessage = {
+  type: 'system';
+  subtype: 'mirror_error';
+  uuid: string;
+  session_id: string;
+  error: string;
+};
 
 // ---------------------------------------------------------------------------
 // Query interface
@@ -825,6 +1084,20 @@ export interface Query extends AsyncGenerator<SDKMessage, void> {
   supportedAgents(): Promise<AgentInfo[]>;
   mcpServerStatus(): Promise<McpServerStatus[]>;
   accountInfo(): Promise<AccountInfo>;
+  /** Reconnect a configured MCP server by name. */
+  reconnectMcpServer(serverName: string): Promise<void>;
+  /** Enable/disable a configured MCP server at runtime. */
+  toggleMcpServer(serverName: string, enabled: boolean): Promise<void>;
+  /** Replace the live MCP server set; returns the new statuses. */
+  setMcpServers(servers: Record<string, McpServerConfig>): Promise<McpSetServersResult>;
+  /**
+   * Restore files to their state at the given user-message checkpoint.
+   * Requires options.enableFileCheckpointing. dryRun computes the plan
+   * without touching disk. Does NOT rewind the conversation.
+   */
+  rewindFiles(userMessageId: string, options?: { dryRun?: boolean }): Promise<RewindFilesResult>;
+  /** Stop a background subagent task by id (no-op + debug warn when unknown). */
+  stopTask(taskId: string): Promise<void>;
   /** Push an additional user-message stream into a streaming-input session. */
   streamInput(stream: AsyncIterable<SDKUserMessage>): Promise<void>;
   close(): void;

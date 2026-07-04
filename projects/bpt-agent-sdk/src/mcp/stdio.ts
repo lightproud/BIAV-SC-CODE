@@ -11,10 +11,12 @@ import process from 'node:process';
 import type {
   CallToolResult,
   CallToolResultContent,
+  ElicitationHandler,
   JSONSchema,
   McpStdioServerConfig,
 } from '../types.js';
 import { AbortError } from '../errors.js';
+import { resolveElicitation } from './elicitation.js';
 
 const MCP_PROTOCOL_VERSION = '2025-06-18';
 const CLIENT_INFO = { name: 'bpt-agent-sdk', version: '0.1.0' } as const;
@@ -56,6 +58,9 @@ export class StdioMcpConnection {
   private readonly pending = new Map<JsonRpcId, PendingRequest>();
   private closed = false;
   private info: { name: string; version: string } | undefined;
+  private readonly elicitation?: ElicitationHandler;
+  /** Aborts in-flight elicitation handlers when the connection closes. */
+  private readonly lifeController = new AbortController();
 
   constructor(
     config: McpStdioServerConfig,
@@ -66,6 +71,8 @@ export class StdioMcpConnection {
       /** Base environment; config.env is merged over it. Defaults to process.env. */
       env?: Record<string, string | undefined>;
       requestTimeoutMs?: number;
+      /** Host handler answering server-initiated elicitation/create requests. */
+      elicitation?: ElicitationHandler;
     } = {},
   ) {
     this.config = config;
@@ -73,6 +80,7 @@ export class StdioMcpConnection {
     this.debug = opts.debug ?? (() => {});
     this.baseEnv = opts.env ?? process.env;
     this.requestTimeoutMs = opts.requestTimeoutMs ?? DEFAULT_REQUEST_TIMEOUT_MS;
+    this.elicitation = opts.elicitation;
   }
 
   /** Spawn the server process and run the MCP initialize handshake. */
@@ -127,7 +135,7 @@ export class StdioMcpConnection {
       'initialize',
       {
         protocolVersion: MCP_PROTOCOL_VERSION,
-        capabilities: {},
+        capabilities: this.elicitation ? { elicitation: {} } : {},
         clientInfo: CLIENT_INFO,
       },
       signal,
@@ -176,6 +184,7 @@ export class StdioMcpConnection {
 
   /** Terminate the child: SIGTERM, then SIGKILL after a short grace period. */
   async close(): Promise<void> {
+    this.lifeController.abort();
     this.closed = true;
     this.failAllPending(new Error(`MCP stdio connection '${this.label}' closed`));
     const child = this.child;
@@ -232,8 +241,17 @@ export class StdioMcpConnection {
     }
 
     if (typeof msg.method === 'string' && hasId) {
-      // Server-initiated request: this client implements no server-callable
-      // methods, so answer with JSON-RPC "method not found".
+      // Server-initiated elicitation/create: resolve via the host handler and
+      // reply with the resulting action payload (fail-closed to 'decline').
+      if (msg.method === 'elicitation/create' && this.elicitation) {
+        const replyId = msg.id as JsonRpcId;
+        void resolveElicitation(msg.params, this.elicitation, this.lifeController.signal)
+          .then((result) => this.write({ jsonrpc: '2.0', id: replyId, result }))
+          .catch(() => this.write({ jsonrpc: '2.0', id: replyId, result: { action: 'decline' } }));
+        return;
+      }
+      // Other server-initiated requests: this client implements no server-
+      // callable methods, so answer with JSON-RPC "method not found".
       try {
         this.write({
           jsonrpc: '2.0',
@@ -395,6 +413,22 @@ function normalizeContentItem(item: unknown): CallToolResultContent {
     }
     if (t.type === 'image' && typeof t.data === 'string' && typeof t.mimeType === 'string') {
       return { type: 'image', data: t.data, mimeType: t.mimeType };
+    }
+    if (t.type === 'audio' && typeof t.data === 'string' && typeof t.mimeType === 'string') {
+      return { type: 'audio', data: t.data, mimeType: t.mimeType };
+    }
+    if (t.type === 'resource_link' && typeof (t as { uri?: unknown }).uri === 'string') {
+      const rl = t as {
+        uri: string;
+        name?: unknown;
+        description?: unknown;
+        mimeType?: unknown;
+      };
+      const out: CallToolResultContent = { type: 'resource_link', uri: rl.uri };
+      if (typeof rl.name === 'string') out.name = rl.name;
+      if (typeof rl.description === 'string') out.description = rl.description;
+      if (typeof rl.mimeType === 'string') out.mimeType = rl.mimeType;
+      return out;
     }
     if (t.type === 'resource' && t.resource && typeof t.resource === 'object') {
       const r = t.resource as { uri?: unknown; mimeType?: unknown; text?: unknown };

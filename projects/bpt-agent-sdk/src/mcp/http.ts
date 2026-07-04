@@ -15,11 +15,13 @@
 import type {
   CallToolResult,
   CallToolResultContent,
+  ElicitationHandler,
   JSONSchema,
   McpHttpServerConfig,
   McpSSEServerConfig,
 } from '../types.js';
 import { AbortError, NotImplementedError } from '../errors.js';
+import { resolveElicitation } from './elicitation.js';
 
 const MCP_PROTOCOL_VERSION = '2025-06-18';
 const CLIENT_INFO = { name: 'bpt-agent-sdk', version: '0.1.0' } as const;
@@ -56,6 +58,7 @@ export class HttpMcpConnection {
   private initialized = false;
   private protocolVersion = MCP_PROTOCOL_VERSION;
   private info: { name: string; version: string } | undefined;
+  private readonly elicitation?: ElicitationHandler;
 
   constructor(
     config: McpHttpServerConfig | McpSSEServerConfig,
@@ -64,6 +67,8 @@ export class HttpMcpConnection {
       name?: string;
       debug?: (msg: string) => void;
       requestTimeoutMs?: number;
+      /** Host handler answering server-initiated elicitation/create requests. */
+      elicitation?: ElicitationHandler;
     } = {},
   ) {
     if (config.type === 'sse') {
@@ -77,6 +82,7 @@ export class HttpMcpConnection {
     this.label = opts.name ?? config.url;
     this.debug = opts.debug ?? (() => {});
     this.requestTimeoutMs = opts.requestTimeoutMs ?? DEFAULT_REQUEST_TIMEOUT_MS;
+    this.elicitation = opts.elicitation;
   }
 
   /** Run the MCP initialize handshake over HTTP. */
@@ -85,7 +91,7 @@ export class HttpMcpConnection {
       'initialize',
       {
         protocolVersion: MCP_PROTOCOL_VERSION,
-        capabilities: {},
+        capabilities: this.elicitation ? { elicitation: {} } : {},
         clientInfo: CLIENT_INFO,
       },
       signal,
@@ -303,6 +309,27 @@ export class HttpMcpConnection {
       // notifications (no id) stay ignored.
       if (typeof msg.method === 'string' && msg.id !== undefined && msg.id !== null) {
         const replyId = msg.id;
+        // Server-initiated elicitation/create: resolve via the host handler and
+        // POST back the resulting action payload (fail-closed to 'decline').
+        if (msg.method === 'elicitation/create' && this.elicitation) {
+          void resolveElicitation(msg.params, this.elicitation, this.closeController.signal)
+            .then((result) => this.post({ jsonrpc: '2.0', id: replyId, result }, null))
+            .catch(() =>
+              this.post({ jsonrpc: '2.0', id: replyId, result: { action: 'decline' } }, null),
+            )
+            // The fallback decline POST can ITSELF reject (e.g. the connection
+            // is already closing -> post() throws AbortError). Without this
+            // terminal catch that second rejection is unhandled and can crash
+            // the process under a strict unhandledRejection policy.
+            .catch((err: unknown) => {
+              this.debug(
+                `[mcp:${this.label}] elicitation reply failed: ${
+                  err instanceof Error ? err.message : String(err)
+                }`,
+              );
+            });
+          return undefined;
+        }
         void this.post(
           {
             jsonrpc: '2.0',
@@ -459,6 +486,22 @@ function normalizeContentItem(item: unknown): CallToolResultContent {
     }
     if (t.type === 'image' && typeof t.data === 'string' && typeof t.mimeType === 'string') {
       return { type: 'image', data: t.data, mimeType: t.mimeType };
+    }
+    if (t.type === 'audio' && typeof t.data === 'string' && typeof t.mimeType === 'string') {
+      return { type: 'audio', data: t.data, mimeType: t.mimeType };
+    }
+    if (t.type === 'resource_link' && typeof (t as { uri?: unknown }).uri === 'string') {
+      const rl = t as {
+        uri: string;
+        name?: unknown;
+        description?: unknown;
+        mimeType?: unknown;
+      };
+      const out: CallToolResultContent = { type: 'resource_link', uri: rl.uri };
+      if (typeof rl.name === 'string') out.name = rl.name;
+      if (typeof rl.description === 'string') out.description = rl.description;
+      if (typeof rl.mimeType === 'string') out.mimeType = rl.mimeType;
+      return out;
     }
     if (t.type === 'resource' && t.resource && typeof t.resource === 'object') {
       const r = t.resource as { uri?: unknown; mimeType?: unknown; text?: unknown };

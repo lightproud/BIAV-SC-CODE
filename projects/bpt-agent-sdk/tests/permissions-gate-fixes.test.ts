@@ -11,10 +11,21 @@
 
 import { describe, expect, it, vi } from 'vitest';
 
-import { matchToolName, parseRule, ruleMatches } from '../src/permissions/rules.js';
+import {
+  buildPermissionSuggestions,
+  matchToolName,
+  parseRule,
+  requiresUserInteraction,
+  ruleMatches,
+} from '../src/permissions/rules.js';
 import { DefaultPermissionGate } from '../src/permissions/gate.js';
+import {
+  defaultAutoClassifier,
+  type AutoDecision,
+  type ToolClassifier,
+} from '../src/permissions/classifier.js';
 import type { PermissionCheckResult } from '../src/internal/contracts.js';
-import type { CanUseTool, PermissionResult } from '../src/types.js';
+import type { CanUseTool, PermissionResult, PermissionUpdate } from '../src/types.js';
 
 type CheckOpts = Parameters<DefaultPermissionGate['check']>[2];
 type GateConfig = ConstructorParameters<typeof DefaultPermissionGate>[0];
@@ -201,16 +212,18 @@ describe('#23 disallowedTools re-check on rewritten input', () => {
 // ---------------------------------------------------------------------------
 
 describe('AUDIT plan-mode allow ordering', () => {
-  it('plan mode denies a non-readOnly tool even with an allowedTools match', async () => {
+  it('plan mode never auto-approves a non-readOnly tool via allowedTools (denies with no canUseTool)', async () => {
+    // v0.2: plan routes writes to canUseTool; the allowedTools match must NOT
+    // auto-approve (step 5 is skipped). With no callback, the step-6 fallback
+    // denies.
     const gate = makeGate({ mode: 'plan', allowedTools: ['Bash'] });
     const res = asDeny(
       await gate.check('Bash', { command: 'ls' }, checkOpts({ readOnly: false })),
     );
-    expect(res.message).toContain('plan');
     expect(res.message).toContain('Bash');
   });
 
-  it('plan mode denies a write/edit tool even with an allowedTools match', async () => {
+  it('plan mode never auto-approves a write/edit tool via allowedTools', async () => {
     const gate = makeGate({ mode: 'plan', allowedTools: ['Write'] });
     const res = asDeny(
       await gate.check(
@@ -219,7 +232,7 @@ describe('AUDIT plan-mode allow ordering', () => {
         checkOpts({ readOnly: false, isFileEdit: true }),
       ),
     );
-    expect(res.message).toContain('plan');
+    expect(res.message).toContain('Write');
   });
 
   it('plan mode still allows a readOnly tool that matches an allowedTools rule', async () => {
@@ -230,9 +243,9 @@ describe('AUDIT plan-mode allow ordering', () => {
     expect(res.updatedInput).toEqual({ file_path: '/x' });
   });
 
-  it('plan mode routes a non-readOnly allowedTools tool to canUseTool when nothing denies', async () => {
-    // With canUseTool present, plan-mode non-readOnly is denied by step 6 before
-    // reaching step 9 (deny outranks), so canUseTool is not consulted.
+  it('plan mode routes a non-readOnly allowedTools tool to canUseTool (v0.2)', async () => {
+    // v0.2: plan-mode non-readOnly is routed to canUseTool (never a hard deny);
+    // the allowedTools match does not auto-approve, so the callback decides.
     const canUse = vi.fn(
       async (): Promise<PermissionResult | null> => ({ behavior: 'allow' }),
     );
@@ -241,8 +254,11 @@ describe('AUDIT plan-mode allow ordering', () => {
       allowedTools: ['Bash'],
       canUseTool: canUse as CanUseTool,
     });
-    asDeny(await gate.check('Bash', { command: 'ls' }, checkOpts({ readOnly: false })));
-    expect(canUse).not.toHaveBeenCalled();
+    const res = asAllow(
+      await gate.check('Bash', { command: 'ls' }, checkOpts({ readOnly: false })),
+    );
+    expect(res.updatedInput).toEqual({ command: 'ls' });
+    expect(canUse).toHaveBeenCalledTimes(1);
   });
 
   it('non-plan modes are unaffected: allowedTools still auto-approves a write', async () => {
@@ -251,5 +267,306 @@ describe('AUDIT plan-mode allow ordering', () => {
       await gate.check('Bash', { command: 'ls' }, checkOpts({ readOnly: false })),
     );
     expect(res.updatedInput).toEqual({ command: 'ls' });
+  });
+});
+
+// ---------------------------------------------------------------------------
+// v0.2 - classifier.ts (permissionMode 'auto' heuristic)
+// ---------------------------------------------------------------------------
+
+describe('defaultAutoClassifier', () => {
+  const cases: Array<{
+    label: string;
+    name: string;
+    meta: { readOnly: boolean; isFileEdit: boolean };
+    want: AutoDecision;
+  }> = [
+    { label: 'read-only tool', name: 'Read', meta: { readOnly: true, isFileEdit: false }, want: 'allow' },
+    { label: 'read-only Bash (unusual but honored)', name: 'Bash', meta: { readOnly: true, isFileEdit: false }, want: 'allow' },
+    { label: 'Write (isFileEdit)', name: 'Write', meta: { readOnly: false, isFileEdit: true }, want: 'prompt' },
+    { label: 'Edit (isFileEdit)', name: 'Edit', meta: { readOnly: false, isFileEdit: true }, want: 'prompt' },
+    { label: 'Bash (known-destructive by name)', name: 'Bash', meta: { readOnly: false, isFileEdit: false }, want: 'prompt' },
+    // #6: an unknown / MCP mutation of unassessable risk must PROMPT, never
+    // auto-allow (previously these asserted 'allow' - the confirmed defect).
+    { label: 'unknown non-readonly tool', name: 'mcp__srv__do', meta: { readOnly: false, isFileEdit: false }, want: 'prompt' },
+    { label: 'destructive MCP mutation (gmail send)', name: 'mcp__gmail__send', meta: { readOnly: false, isFileEdit: false }, want: 'prompt' },
+    { label: 'destructive MCP mutation (github delete_file)', name: 'mcp__github__delete_file', meta: { readOnly: false, isFileEdit: false }, want: 'prompt' },
+    { label: 'read-only MCP tool still auto-allows', name: 'mcp__github__get_me', meta: { readOnly: true, isFileEdit: false }, want: 'allow' },
+  ];
+  for (const c of cases) {
+    it(`classifies ${c.label} as ${c.want}`, () => {
+      expect(defaultAutoClassifier(c.name, {}, c.meta)).toBe(c.want);
+    });
+  }
+});
+
+describe('DefaultPermissionGate auto mode', () => {
+  it('auto: read-only tool auto-allows without canUseTool', async () => {
+    const canUse = vi.fn(async (): Promise<PermissionResult | null> => ({ behavior: 'deny', message: 'no' }));
+    const gate = makeGate({ mode: 'auto', canUseTool: canUse as CanUseTool });
+    asAllow(await gate.check('Read', { file_path: '/x' }, checkOpts({ readOnly: true })));
+    expect(canUse).not.toHaveBeenCalled();
+  });
+
+  // #6: an unknown non-readonly tool must NOT auto-execute in auto mode; it
+  // routes to canUseTool (and denies when no handler is present). This test
+  // previously asserted the buggy auto-allow behavior.
+  it('auto: an unknown non-readonly tool routes to canUseTool (allows via handler)', async () => {
+    const canUse = vi.fn(async (): Promise<PermissionResult | null> => ({ behavior: 'allow' }));
+    const gate = makeGate({ mode: 'auto', canUseTool: canUse as CanUseTool });
+    asAllow(
+      await gate.check('mcp__srv__do', { arg: 1 }, checkOpts({ readOnly: false })),
+    );
+    expect(canUse).toHaveBeenCalledTimes(1);
+  });
+
+  it('auto: an unknown non-readonly MCP mutation denies when no canUseTool handler exists (#6)', async () => {
+    const gate = makeGate({ mode: 'auto' });
+    const res = asDeny(
+      await gate.check('mcp__gmail__send', { to: 'x@y.z' }, checkOpts({ readOnly: false })),
+    );
+    expect(res.message).toContain('mcp__gmail__send');
+    expect(res.message).toContain('canUseTool');
+  });
+
+  it('auto: Write / Edit / Bash route to canUseTool', async () => {
+    const canUse = vi.fn(async (): Promise<PermissionResult | null> => ({ behavior: 'allow' }));
+    const gate = makeGate({ mode: 'auto', canUseTool: canUse as CanUseTool });
+    asAllow(await gate.check('Write', { file_path: '/x', content: 'y' }, checkOpts({ readOnly: false, isFileEdit: true })));
+    asAllow(await gate.check('Edit', { file_path: '/x' }, checkOpts({ readOnly: false, isFileEdit: true })));
+    asAllow(await gate.check('Bash', { command: 'ls' }, checkOpts({ readOnly: false })));
+    expect(canUse).toHaveBeenCalledTimes(3);
+  });
+
+  it('auto: a classifier that denies records a denial (stage "auto classifier")', async () => {
+    const classifier: ToolClassifier = () => 'deny';
+    const gate = makeGate({ mode: 'auto', classifier });
+    const res = asDeny(await gate.check('Bash', { command: 'ls' }, checkOpts({ readOnly: false })));
+    expect(res.message).toContain('auto classifier');
+    expect(gate.denials()).toHaveLength(1);
+  });
+
+  it('auto: an injected custom classifier overrides the default', async () => {
+    // Default would auto-allow an unknown tool; this classifier forces a prompt.
+    const canUse = vi.fn(async (): Promise<PermissionResult | null> => ({ behavior: 'allow' }));
+    const classifier: ToolClassifier = () => 'prompt';
+    const gate = makeGate({ mode: 'auto', classifier, canUseTool: canUse as CanUseTool });
+    asAllow(await gate.check('mcp__srv__do', {}, checkOpts({ readOnly: false })));
+    expect(canUse).toHaveBeenCalledTimes(1);
+  });
+
+  it('auto: a scoped deny rule still beats the classifier', async () => {
+    const gate = makeGate({ mode: 'auto', disallowedTools: ['Bash(rm*)'] });
+    const res = asDeny(await gate.check('Bash', { command: 'rm -rf /' }, checkOpts({ readOnly: false })));
+    expect(res.message).toContain('disallowedTools');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// v0.2 - ask rules (first-class) + requiresUserInteraction
+// ---------------------------------------------------------------------------
+
+describe('DefaultPermissionGate ask rules (v0.2)', () => {
+  it('a session ask rule routes to canUseTool even under bypassPermissions', async () => {
+    const canUse = vi.fn(async (): Promise<PermissionResult | null> => ({ behavior: 'allow' }));
+    const gate = makeGate({ mode: 'bypassPermissions', canUseTool: canUse as CanUseTool });
+    gate.applyUpdates([
+      { type: 'addRules', rules: [{ toolName: 'Bash' }], behavior: 'ask', destination: 'session' },
+    ]);
+    asAllow(await gate.check('Bash', { command: 'ls' }, checkOpts({ readOnly: false })));
+    expect(canUse).toHaveBeenCalledTimes(1);
+  });
+
+  it('a scoped session ask rule routes only its matching input', async () => {
+    const canUse = vi.fn(async (): Promise<PermissionResult | null> => ({ behavior: 'allow' }));
+    const gate = makeGate({ mode: 'bypassPermissions', canUseTool: canUse as CanUseTool });
+    gate.applyUpdates([
+      { type: 'addRules', rules: [{ toolName: 'Bash', ruleContent: 'git push:*' }], behavior: 'ask', destination: 'session' },
+    ]);
+    // Non-matching command: bypass auto-allows, no prompt.
+    asAllow(await gate.check('Bash', { command: 'ls' }, checkOpts({ readOnly: false })));
+    expect(canUse).not.toHaveBeenCalled();
+    // Matching command: routed to canUseTool.
+    asAllow(await gate.check('Bash', { command: 'git push origin' }, checkOpts({ readOnly: false })));
+    expect(canUse).toHaveBeenCalledTimes(1);
+  });
+
+  it('requiresUserInteraction (AskUserQuestion) forces canUseTool even in bypass', async () => {
+    const canUse = vi.fn(async (): Promise<PermissionResult | null> => ({ behavior: 'allow' }));
+    const gate = makeGate({ mode: 'bypassPermissions', canUseTool: canUse as CanUseTool });
+    asAllow(await gate.check('AskUserQuestion', { questions: [] }, checkOpts({ readOnly: false })));
+    expect(canUse).toHaveBeenCalledTimes(1);
+  });
+
+  it('dontAsk denies an ask-rule / requiresUserInteraction route (no prompt)', async () => {
+    const canUse = vi.fn(async (): Promise<PermissionResult | null> => ({ behavior: 'allow' }));
+    const gate = makeGate({ mode: 'dontAsk', canUseTool: canUse as CanUseTool });
+    const res = asDeny(await gate.check('AskUserQuestion', {}, checkOpts({ readOnly: false })));
+    expect(res.message).toContain('dontAsk');
+    expect(canUse).not.toHaveBeenCalled();
+  });
+
+  it('applyUpdates no longer emits the "ask rules are stored but not consulted" warning', async () => {
+    const debug = vi.fn();
+    const gate = makeGate({ mode: 'default', debug });
+    gate.applyUpdates([
+      { type: 'addRules', rules: [{ toolName: 'Bash' }], behavior: 'ask', destination: 'session' },
+    ]);
+    const logged = debug.mock.calls.map((c) => String(c[0])).join('\n');
+    expect(logged).not.toContain('not consulted');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// #5 - AskUserQuestion (requiresUserInteraction) must not be hard-denied in
+//      every mode when no canUseTool handler exists; it is answered by
+//      ctx.askUser at execute time, so a mode that would otherwise allow it
+//      must allow it (and the model can then reach the askUser handler).
+// ---------------------------------------------------------------------------
+
+describe('#5 AskUserQuestion permission without a canUseTool handler', () => {
+  // AskUserQuestion's real tool flag is readOnly:true; the earlier suite drives
+  // it with readOnly:false to isolate the interaction route. Cover both so the
+  // fix is not accidentally readOnly-dependent.
+  for (const readOnly of [true, false]) {
+    it(`bypassPermissions ALLOWS AskUserQuestion (no canUseTool, readOnly=${readOnly})`, async () => {
+      const gate = makeGate({ mode: 'bypassPermissions' });
+      asAllow(await gate.check('AskUserQuestion', { questions: [] }, checkOpts({ readOnly })));
+      expect(gate.denials()).toHaveLength(0);
+    });
+  }
+
+  it('default mode ALLOWS a readOnly AskUserQuestion (no canUseTool)', async () => {
+    const gate = makeGate({ mode: 'default' });
+    asAllow(await gate.check('AskUserQuestion', { questions: [] }, checkOpts({ readOnly: true })));
+  });
+
+  it('acceptEdits ALLOWS a readOnly AskUserQuestion (no canUseTool)', async () => {
+    const gate = makeGate({ mode: 'acceptEdits' });
+    asAllow(await gate.check('AskUserQuestion', { questions: [] }, checkOpts({ readOnly: true })));
+  });
+
+  it('auto mode ALLOWS a readOnly AskUserQuestion (no canUseTool)', async () => {
+    const gate = makeGate({ mode: 'auto' });
+    asAllow(await gate.check('AskUserQuestion', { questions: [] }, checkOpts({ readOnly: true })));
+  });
+
+  it('WITH a canUseTool handler, AskUserQuestion still routes to it even in bypass', async () => {
+    // The interaction route is a veto point when a handler exists; preserved.
+    const canUse = vi.fn(async (): Promise<PermissionResult | null> => ({ behavior: 'allow' }));
+    const gate = makeGate({ mode: 'bypassPermissions', canUseTool: canUse as CanUseTool });
+    asAllow(await gate.check('AskUserQuestion', { questions: [] }, checkOpts({ readOnly: true })));
+    expect(canUse).toHaveBeenCalledTimes(1);
+  });
+
+  it('dontAsk still denies AskUserQuestion (no canUseTool)', async () => {
+    const gate = makeGate({ mode: 'dontAsk' });
+    const res = asDeny(await gate.check('AskUserQuestion', { questions: [] }, checkOpts({ readOnly: false })));
+    expect(res.message).toContain('dontAsk');
+  });
+
+  it('a session ask rule still hard-routes (and denies with no canUseTool) regardless of the interaction fix', async () => {
+    const gate = makeGate({ mode: 'bypassPermissions' });
+    gate.applyUpdates([
+      { type: 'addRules', rules: [{ toolName: 'Bash' }], behavior: 'ask', destination: 'session' },
+    ]);
+    // No canUseTool: the ask rule route must still deny (not fall through to bypass allow).
+    asDeny(await gate.check('Bash', { command: 'ls' }, checkOpts({ readOnly: false })));
+  });
+});
+
+// ---------------------------------------------------------------------------
+// v0.2 - canUseTool full context (suggestions + requestId), skip, defer
+// ---------------------------------------------------------------------------
+
+describe('DefaultPermissionGate canUseTool context (v0.2)', () => {
+  it('passes suggestions (bare + scoped session allow rule) and a fresh requestId', async () => {
+    const seen: Array<{ suggestions?: PermissionUpdate[]; requestId?: string }> = [];
+    const canUse: CanUseTool = async (_t, _i, options) => {
+      seen.push({ suggestions: options.suggestions, requestId: options.requestId });
+      return { behavior: 'allow' };
+    };
+    const gate = makeGate({ mode: 'default', canUseTool: canUse });
+    await gate.check('Bash', { command: 'npm run build' }, checkOpts({ readOnly: false }));
+    await gate.check('Bash', { command: 'npm run test' }, checkOpts({ readOnly: false }));
+
+    expect(seen).toHaveLength(2);
+    const s = seen[0]?.suggestions ?? [];
+    expect(s[0]).toEqual({ type: 'addRules', rules: [{ toolName: 'Bash' }], behavior: 'allow', destination: 'session' });
+    expect(s[1]).toEqual({ type: 'addRules', rules: [{ toolName: 'Bash', ruleContent: 'npm:*' }], behavior: 'allow', destination: 'session' });
+    // requestId is a fresh uuid on every call.
+    expect(typeof seen[0]?.requestId).toBe('string');
+    expect(seen[0]?.requestId).toMatch(/^[0-9a-f-]{36}$/);
+    expect(seen[0]?.requestId).not.toBe(seen[1]?.requestId);
+  });
+
+  it('a null canUseTool return is a skip, not recorded as a denial', async () => {
+    const canUse: CanUseTool = async () => null;
+    const gate = makeGate({ mode: 'default', canUseTool: canUse });
+    const res = await gate.check('Bash', { command: 'ls' }, checkOpts({ readOnly: false }));
+    expect(res.decision).toBe('skip');
+    expect(gate.denials()).toHaveLength(0);
+  });
+
+  it('a hook defer yields a defer decision and is not recorded', async () => {
+    const gate = makeGate({ mode: 'default' });
+    const res = await gate.check(
+      'Bash',
+      { command: 'ls' },
+      checkOpts({ readOnly: false, hook: { decision: 'defer', reason: 'wait for human' } }),
+    );
+    expect(res.decision).toBe('defer');
+    if (res.decision === 'defer') expect(res.message).toContain('wait for human');
+    expect(gate.denials()).toHaveLength(0);
+  });
+
+  it('a hook defer beats even bypassPermissions and a matching deny is not reached', async () => {
+    const gate = makeGate({ mode: 'bypassPermissions' });
+    const res = await gate.check(
+      'Bash',
+      { command: 'ls' },
+      checkOpts({ readOnly: false, hook: { decision: 'defer' } }),
+    );
+    expect(res.decision).toBe('defer');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// v0.2 - rules.ts helpers
+// ---------------------------------------------------------------------------
+
+describe('buildPermissionSuggestions', () => {
+  it('Bash suggests bare + first-token command-prefix rule', () => {
+    expect(buildPermissionSuggestions('Bash', { command: 'npm run build' })).toEqual([
+      { type: 'addRules', rules: [{ toolName: 'Bash' }], behavior: 'allow', destination: 'session' },
+      { type: 'addRules', rules: [{ toolName: 'Bash', ruleContent: 'npm:*' }], behavior: 'allow', destination: 'session' },
+    ]);
+  });
+
+  it('Read suggests bare + the exact file_path', () => {
+    expect(buildPermissionSuggestions('Read', { file_path: '/etc/hosts' })).toEqual([
+      { type: 'addRules', rules: [{ toolName: 'Read' }], behavior: 'allow', destination: 'session' },
+      { type: 'addRules', rules: [{ toolName: 'Read', ruleContent: '/etc/hosts' }], behavior: 'allow', destination: 'session' },
+    ]);
+  });
+
+  it('an unknown / MCP tool gets only the bare-name suggestion', () => {
+    expect(buildPermissionSuggestions('mcp__srv__do', { url: 'https://x' })).toEqual([
+      { type: 'addRules', rules: [{ toolName: 'mcp__srv__do' }], behavior: 'allow', destination: 'session' },
+    ]);
+  });
+
+  it('a known tool with a missing/non-string primary arg gets only the bare suggestion', () => {
+    expect(buildPermissionSuggestions('Bash', {})).toEqual([
+      { type: 'addRules', rules: [{ toolName: 'Bash' }], behavior: 'allow', destination: 'session' },
+    ]);
+  });
+});
+
+describe('requiresUserInteraction', () => {
+  it('is true only for AskUserQuestion', () => {
+    expect(requiresUserInteraction('AskUserQuestion')).toBe(true);
+    expect(requiresUserInteraction('Bash')).toBe(false);
+    expect(requiresUserInteraction('mcp__srv__ask')).toBe(false);
   });
 });

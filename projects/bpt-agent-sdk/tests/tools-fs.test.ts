@@ -14,6 +14,10 @@ import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import { readTool } from '../src/tools/read.js';
 import { writeTool } from '../src/tools/write.js';
 import { editTool } from '../src/tools/edit.js';
+import {
+  FileCheckpointStore,
+  makeCheckpointRecorder,
+} from '../src/sessions/checkpoints.js';
 import { AbortError } from '../src/errors.js';
 import type { ToolContext } from '../src/internal/contracts.js';
 
@@ -313,6 +317,89 @@ describe('Write tool', () => {
     expect(String(res.content)).toMatch(/directory/i);
     // Directory must be left intact.
     expect((await stat(dir)).isDirectory()).toBe(true);
+  });
+
+  // -- finding 9: lossless checkpoint pre-image capture ----------------------
+
+  it('does not record a lossy UTF-8 pre-image when overwriting a binary file (finding 9)', async () => {
+    const file = path.join(sandbox, 'image.bin');
+    // Bytes that are NOT valid UTF-8 -> reading as 'utf8' would mangle them.
+    const original = Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x00, 0xff, 0xfe, 0x01]);
+    await writeFile(file, original);
+
+    const calls: Array<{ abs: string; preImage: string | null }> = [];
+    const ctx = makeCtx(sandbox, {
+      recordFileChange: (abs, preImage) => calls.push({ abs, preImage }),
+    });
+
+    const res = await writeTool.execute({ file_path: file, content: 'new text' }, ctx);
+    expect(res.isError).toBeFalsy();
+    // A binary/non-UTF-8 pre-image cannot round-trip through the UTF-8 blob
+    // pipeline, so it must NOT be recorded (recording mojibake would corrupt
+    // the file on rewind). Before the fix this recorded a U+FFFD-mangled string.
+    expect(calls).toEqual([]);
+  });
+
+  it('records the exact text pre-image for a UTF-8 file (finding 9)', async () => {
+    const file = path.join(sandbox, 'notes.txt');
+    const original = 'héllo 世界\nline2';
+    await writeFile(file, original, 'utf8');
+
+    const calls: Array<{ abs: string; preImage: string | null }> = [];
+    const ctx = makeCtx(sandbox, {
+      recordFileChange: (abs, preImage) => calls.push({ abs, preImage }),
+    });
+
+    await writeTool.execute({ file_path: file, content: 'REPLACED' }, ctx);
+    expect(calls).toEqual([{ abs: file, preImage: original }]);
+  });
+
+  it('records null (create) for a brand-new file (finding 9)', async () => {
+    const file = path.join(sandbox, 'fresh.txt');
+    const calls: Array<{ abs: string; preImage: string | null }> = [];
+    const ctx = makeCtx(sandbox, {
+      recordFileChange: (abs, preImage) => calls.push({ abs, preImage }),
+    });
+    await writeTool.execute({ file_path: file, content: 'x' }, ctx);
+    expect(calls).toEqual([{ abs: file, preImage: null }]);
+  });
+
+  it('rewind restores a text file exactly and never corrupts a binary file (finding 9)', async () => {
+    const ckptDir = await mkdtemp(path.join(os.tmpdir(), 'bpt-ckpt-'));
+    try {
+      const store = new FileCheckpointStore({ sessionDir: ckptDir });
+      store.bind('sess-1');
+      const turn = 'user-msg-1';
+      store.beginTurn(turn);
+      const ctx = makeCtx(sandbox, { recordFileChange: makeCheckpointRecorder(store) });
+
+      // Text with multibyte UTF-8 -> must round-trip byte-exact through rewind.
+      const textFile = path.join(sandbox, 'doc.txt');
+      const originalText = 'héllo 世界\nsecond';
+      await writeFile(textFile, originalText, 'utf8');
+
+      // Binary/non-UTF-8 -> pre-image is not capturable losslessly, so it must
+      // be left untouched by rewind (not restored to mojibake, not deleted).
+      const binFile = path.join(sandbox, 'blob.bin');
+      await writeFile(binFile, Buffer.from([0x00, 0xff, 0xfe, 0x89, 0x50]));
+
+      await writeTool.execute({ file_path: textFile, content: 'REPLACED' }, ctx);
+      await writeTool.execute({ file_path: binFile, content: 'REPLACED' }, ctx);
+
+      const result = await store.rewind(turn);
+
+      // Text restored to the exact original bytes.
+      expect(await readFile(textFile, 'utf8')).toBe(originalText);
+      expect(result.restoredFiles).toContain(textFile);
+
+      // Binary was never checkpointed -> not in the rewind plan -> the written
+      // content stays; before the fix rewind wrote a U+FFFD string back.
+      expect(result.restoredFiles).not.toContain(binFile);
+      expect(result.deletedFiles).not.toContain(binFile);
+      expect(await readFile(binFile, 'utf8')).toBe('REPLACED');
+    } finally {
+      await rm(ckptDir, { recursive: true, force: true });
+    }
   });
 });
 

@@ -11,6 +11,8 @@
  * that server).
  */
 
+import type { PermissionUpdate } from '../types.js';
+
 export type ParsedRule = { toolName: string; specifier?: string };
 
 /**
@@ -151,4 +153,55 @@ export function ruleMatches(
   const value = primaryArg(toolName, input);
   if (value === undefined) return false;
   return specifierMatches(rule.specifier, value);
+}
+
+/** The first whitespace-delimited token of a shell command (`npm run x` -> `npm`). */
+function firstToken(command: string): string {
+  const trimmed = command.trim();
+  const match = trimmed.match(/^\S+/);
+  return match ? match[0] : trimmed;
+}
+
+/**
+ * Build the `suggestions` array offered to a canUseTool callback at step 6 -
+ * "approve and remember" rule candidates the app can echo back via
+ * updatedPermissions.
+ *
+ * Always offers a bare tool-name allow rule. When the tool has a known string
+ * primary argument, a second, tighter session rule is added: for Bash the
+ * `${firstToken}:*` command-prefix style (e.g. `npm:*`), for the file/pattern
+ * tools the exact primary argument. Tools with no known primary field (unknown
+ * or MCP tools) get only the bare-name suggestion.
+ */
+export function buildPermissionSuggestions(
+  toolName: string,
+  input: Record<string, unknown>,
+): PermissionUpdate[] {
+  const suggestions: PermissionUpdate[] = [
+    { type: 'addRules', rules: [{ toolName }], behavior: 'allow', destination: 'session' },
+  ];
+  const field = PRIMARY_ARG_FIELD[toolName];
+  if (field !== undefined) {
+    const value = input[field];
+    if (typeof value === 'string' && value.length > 0) {
+      const ruleContent = toolName === 'Bash' ? `${firstToken(value)}:*` : value;
+      suggestions.push({
+        type: 'addRules',
+        rules: [{ toolName, ruleContent }],
+        behavior: 'allow',
+        destination: 'session',
+      });
+    }
+  }
+  return suggestions;
+}
+
+/**
+ * Whether a tool must always route to interactive approval (canUseTool),
+ * bypassing auto-allow outcomes. `AskUserQuestion` is inherently interactive;
+ * this is also the extension seam for the MCP `requiresUserInteraction`
+ * annotation.
+ */
+export function requiresUserInteraction(toolName: string): boolean {
+  return toolName === 'AskUserQuestion';
 }

@@ -51,7 +51,10 @@ src/
 
 ## 当前状态
 
-v0.1 建设中（2026-07-03 起）。进度以 `memory/project-status.md` 为唯一权威。
+v0.2 完成（2026-07-03）：v0.1 已合并入 main；v0.2 补齐上下文压缩 / 结构化输出 /
+子代理运行时 / 权限 v2 / 提示缓存 / 新工具（WebFetch·WebSearch·AskUserQuestion·
+TodoWrite）/ 外部会话存储 + 文件检查点 + 工具搜索。628 测试全绿。进度以
+`memory/project-status.md` 为唯一权威。
 
 ## v0.2 候选
 
