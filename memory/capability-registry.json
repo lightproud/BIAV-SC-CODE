@@ -7,17 +7,17 @@
     "reachability_method": "从活编排入口（工作流/MCP/命令/钩子/CLI 手动入口）沿 Python 模块级 import 图做传递闭包；带 __main__ 的脚本计为 cli 手动平面。status=orphaned 表示无任何活入口可达，建议隔离待裁，非自动删除。",
     "counts": {
       "workflows": 31,
-      "scripts_top": 31,
+      "scripts_top": 32,
       "scripts_news": 28,
       "scripts_wiki": 6,
       "mcp_tools": 9,
       "commands": 4,
       "skills": 4,
       "projects": 5,
-      "total": 118
+      "total": 119
     },
     "reachability": {
-      "live": 65,
+      "live": 66,
       "test-only": 0,
       "orphaned": 0
     }
@@ -436,6 +436,15 @@
       "id": "kb_eval.py",
       "path": "scripts/kb_eval.py",
       "summary": "kb_eval.py — 知识库需求侧有效性评分器（北极星评判体系 #1，黄金问题集）。",
+      "planes": [
+        "cli"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "kb_golden_gen.py",
+      "path": "scripts/kb_golden_gen.py",
+      "summary": "kb_golden_gen.py — 图驱动黄金集自动生成器（评判体系 #1 扩容）。",
       "planes": [
         "cli"
       ],
