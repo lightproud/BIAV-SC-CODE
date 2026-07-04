@@ -47,11 +47,11 @@ on:
         type: boolean
         default: false
       prompt_candidate:
-        description: 'Candidate harness-prompt variant for the prompt A/B baseline (v1) to run against'
+        description: 'Candidate harness-prompt variant for the prompt A/B baseline (v1) to run against (v4 = faithful official-prompt reproduction)'
         required: false
         type: choice
-        options: ['v2', 'v3']
-        default: 'v3'
+        options: ['v2', 'v3', 'v4']
+        default: 'v4'
       prompt_tasks:
         description: 'Task ids for the prompt A/B (e.g. 10,11 = the hard discriminating tasks; empty = all)'
         required: false

@@ -113,11 +113,30 @@ shell（BashOutput 增量读 + 按行 filter / KillShell 击杀，进程组 SIGT
 绝不读其提示词文本。官方 SDK 靠 spawn Claude Code CLI，无头 CI 起不来则官方臂跳过（exit 2），
 「官方引擎无头起不来」本身即结论（正是 BPT 换引擎的动机）。
 
-**Backlog（守密人「先存下来」，2026-07-04）——黑箱行为观测法收窄能力层差**：质量/行为差里，
-「能力层」（agent 环转数/决策对不对）可干净室安全地逼近官方，方法是**黑箱行为克隆**（Compaq 逆向 IBM BIOS 金标准）：
-跑官方当黑箱、只观测其输入→输出行为（选哪个工具/怎么分步/答案排版），据此**独立撰写本 SDK 自己的提示词**去逼近
-同样行为，全程不读官方提示词文本 + 拿自造提示词做 A/B 迭代爬坡。「秘方层」（专有提示词本体）仍是不可触碰的结构性天花板。
-**硬红线**：泄漏/流传的官方提示词文本一律不并入本仓（净室=MIT 合法性地基，泄漏≠公开文档，见 POSITIONING §2）。
+**v0.5 续 —— 公开信息再现转向 + 引擎机制加固（守密人 2026-07-04 裁定，范围认可，续入 v0.5）**：
+定位从 clean-room 反转为**公开信息再现**（明确署名）——**覆盖并作废上方旧 Backlog「全程不读官方提示词 /
+泄漏一律不并入」**（该段是转向前的黑箱克隆计划，现已不适用）。四条腿分工：官方提示词还原（Piebald 快照，
+公开 GitHub/MIT/逆向自公开分发 CLI）=行为规格 / 开源 CC 重实现（OpenCode/Codex/Gemini/goose/Cline，全宽松许可）
+=引擎机制 / 公开文档 + 自研引擎=兜底主权。**硬边界不变**：§1.1-HC 黑池防火墙、拒绝真正的内部未授权泄漏
+（「公开分发可逆向」≠「内部偷流出」）、不逐字大段克隆到会引用空气处、署名。
+
+- **已落**：v4 官方主循环提示词忠实再现（`harnessPromptVariant`）+ Bash 命令分解权限（安全，`decomposeBashCommand`）
+  + SSE 空闲看门狗（`streamIdleTimeoutMs`，默认 120s/0 关）。
+- **剩余目标（Tier 1）**：G1 压缩前置廉价层（逐结果预算→内容指针 + 去重，模型摘要前甩字节）/ G2 摘要·标题走 Haiku
+  （`compaction.model`）/ G3 双 system 缓存断点（用满第 4 断点）/ G4 子代理 Fork 模式（继承缓存共享上下文）+ sidechain 转录 /
+  G5 v4 补工具使用纪律片段（`bash-alternative-*`）/ G6 分类器·生成器提示词再现（标题/分支/描述、后台状态分类器）/
+  G7 定位反转全仓扫尾（POSITIONING/COMPAT/README/ARCHITECTURE/MIGRATION + 两轴行为天花板解封）/ G8 decisions.md 两条落档（仅守密人）。
+- **测试比对（守密人 2026-07-04「需增加测试比对」——本版一等目标）**：每项再现/采纳**必附对照测试证其效**，**不测不宣胜负**。
+  ① 提示词 A/B v1 vs v4（含硬任务 10/11，扩 `prompt-ab` job 支持 v4）；② vs-official 裸对比（再现是否收窄行为差）；
+  ③ 逐机制 before/after（压缩前置层的 input-token 削减 / 双断点的缓存命中率 / Haiku 摘要成本），benchmark 加各机制开关位；产对照报告。
+- **推迟到 v0.6+（全做 Tier 2/3）**：Plan 分阶段流水线 · 审查/三态验证器 · coordinator/同意不可转述 · Workflow DSL ·
+  做梦记忆（Claude 蓝本再现）· 沙箱再现 · 循环/调度 · 产品面大件。
+- **依据档**：`Public-Info-Pool/Resource/proposal/bpt-sdk-reproduction-scope-ledger-20260704.md`（全做路线图）/
+  `.../repo-engineering/oss-cc-engine-designs-survey-20260704.md`（开源引擎设计）/
+  `.../repo-engineering/official-cc-prompt-architecture-inference-20260704.md`（官方架构推断）。
+
+> **能力层仍可安全逼近官方**：转向后不仅可黑箱观测行为，更可直接研读公开还原的提示词结构与开源引擎机制。
+> 「秘方层」的**逐比特复刻**仍非目标，残余行为差主要由 BPT 主权模型选择决定（换模型换手感），非「拒看」。
 
 **缓存稳定前缀优化（v0.5+，守密人 2026-07-04「优化」裁定，已落地）**：裸对比 run #35 发现本 SDK 短任务缓存命中
 0%、长任务 45%——诊断为 cwd 焊进系统提示正中间致缓存前缀逐任务变（`prompts.ts`）。修法：系统提示拆
