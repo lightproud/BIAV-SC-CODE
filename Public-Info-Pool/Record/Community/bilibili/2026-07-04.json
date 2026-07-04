@@ -1,8 +1,8 @@
 {
   "date": "2026-07-04",
-  "archived_at": "2026-07-04T18:02:11.445971+00:00",
+  "archived_at": "2026-07-04T19:21:08.414923+00:00",
   "source": "bilibili",
-  "item_count": 15,
+  "item_count": 16,
   "items": [
     {
       "title": "【忘却前夜】神秘海洋尤乌......",
@@ -115,6 +115,29 @@
         "danmaku": 0
       },
       "media_url": "https://i0.hdslb.com/bfs/archive/2b4b49ce389e7e95090c5803d1b0986ba548f9a9.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "[那随风飘荡的 蒲公英的种子…]",
+      "summary": "-\n  └ -昆扬 (0赞): [魔法少女的魔女审判表情包_探头]",
+      "source": "bilibili",
+      "time": "2026-07-04T15:32:44+00:00",
+      "url": "https://www.bilibili.com/video/BV1rPMP6vEMr",
+      "engagement": 112,
+      "is_hot": true,
+      "author": "汉堡包爱吃汉堡包",
+      "tags": [
+        "仿妆cos"
+      ],
+      "metadata": {
+        "play": 111,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/fccd8912c727527e5b5866738442cdf9e8b56a5a.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

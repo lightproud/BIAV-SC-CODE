@@ -1,0 +1,34 @@
+{
+  "date": "2026-07-05",
+  "archived_at": "2026-07-04T19:21:08.528964+00:00",
+  "source": "steam",
+  "item_count": 1,
+  "items": [
+    {
+      "title": "[正面] Lo instalé por Saya, pero la historia y el gamepla...",
+      "summary": "Lo instalé por Saya, pero la historia y el gameplay me está encantando. 10/10 recomendado.",
+      "source": "steam_review",
+      "time": "2026-07-04T17:37:40+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198141518883/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198141518883",
+      "tags": [
+        "latam"
+      ],
+      "language": "latam",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 183,
+        "votes_up": 0,
+        "timestamp_created": 1783186660
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    }
+  ],
+  "region": "global",
+  "content_subtype": "review"
+}

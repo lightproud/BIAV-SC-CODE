@@ -1,8 +1,8 @@
 {
   "date": "2026-07-05",
-  "archived_at": "2026-07-04T18:02:11.450043+00:00",
+  "archived_at": "2026-07-04T19:21:08.415951+00:00",
   "source": "bilibili",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "title": "杜勒奥吉尔沙耶配队思路",
@@ -23,6 +23,29 @@
         "danmaku": 0
       },
       "media_url": "https://i0.hdslb.com/bfs/archive/da0592fce10f63ee2cd7ce724de2330e0b71aad6.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "欢迎回家 郁纪",
+      "summary": "",
+      "source": "bilibili",
+      "time": "2026-07-04T18:05:08+00:00",
+      "url": "https://www.bilibili.com/video/BV1FUMK6VEQP",
+      "engagement": 6,
+      "is_hot": false,
+      "author": "苹果朗姆",
+      "tags": [
+        "仿妆cos"
+      ],
+      "metadata": {
+        "play": 6,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/d3a94786d19291bcd7b6c747669cd1b6db95d15b.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

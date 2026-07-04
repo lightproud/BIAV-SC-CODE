@@ -1,10 +1,25 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-04T18:01:26.889681+00:00",
+  "collected_at": "2026-07-04T19:20:25.882487+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 6,
+  "item_count": 7,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-07-04T17:37:40+00:00",
+      "lang": "latam",
+      "title": "[正面] Lo instalé por Saya, pero la historia y el gamepla...",
+      "summary": "Lo instalé por Saya, pero la historia y el gameplay me está encantando. 10/10 recomendado.",
+      "url": "https://steamcommunity.com/profiles/76561198141518883/recommended/3052450",
+      "author": "76561198141518883",
+      "engagement": 0,
+      "language": "latam",
+      "voted_up": true,
+      "review": "Lo instalé por Saya, pero la historia y el gameplay me está encantando. 10/10 recomendado.",
+      "timestamp_created": 1783186660,
+      "playtime_forever": 183
+    },
     {
       "source": "steam",
       "time": "2026-07-04T14:00:29+00:00",
@@ -78,7 +93,7 @@
       "voted_up": true,
       "review": "great game, i really hope the community continues to grow",
       "timestamp_created": 1783137657,
-      "playtime_forever": 4364
+      "playtime_forever": 4454
     },
     {
       "source": "steam",
