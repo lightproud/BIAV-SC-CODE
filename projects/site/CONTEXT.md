@@ -49,6 +49,7 @@ Code-site 会话负责：
 
 - **主站导航页**：已上线，深黑金色调
   - 段落顺序：nav → hero → **mission**（D-mission 新增）→ features → world-strip → community → footer
+  - **知识库入口（D-kb，2026-07-04）**：nav 新增「知识库」链接 → `/kb/`；mission 段下方加底座入口卡（105 概念 · 104 关系，链 `/kb/`）；biav 页出口区同步加「知识库」。部署期 `cp okf/visualizer.html dist/kb/index.html`（放指针不放本体，okf/ 为真值源）。知识库定位为「二核心使命共用事实底座」，**非**第三使命（避免重蹈三卡对外漂移坑）
   - 合规基线：emoji 全清（D-fix + 自审），nav 全部链接可达且无重复，community 仅保留 4 真实 URL（Discord 国际服 / NGA / Reddit / TapTap）
   - SEO/可访问性基线：favicon（inline SVG 宋体「夜」字）+ canonical + og:locale 三语 + twitter:card；语言切换为可访问 details/summary（替代旧 select onchange 反模式）
   - 设计系统：`design/morimens-design-tokens.css` 为视觉 Token 真值源，`public/index.html` 与 `public/biav/index.html` 通过 `<link rel="stylesheet">` 引入并以 `var(--m-*, fallback)` 模式映射；改 design-tokens.css 即全站生效（D-token-unify 已落地）
@@ -66,6 +67,7 @@ https://lightproud.github.io/brain-in-a-vat/
 ├── /         ← projects/site/public/index.html（主站导航页，单文件 HTML，全内联 CSS）
 ├── /404.html ← projects/site/public/404.html（GitHub Pages 自动接管错误页）
 ├── /biav/    ← projects/site/public/biav/index.html（D-biav 项目说明页）
+├── /kb/      ← okf/visualizer.html（知识库关系图，部署期 cp 成 kb/index.html；okf/ 为唯一真值源，非 public/ 下本体）
 ├── /design/  ← projects/site/design/（设计系统 Token + 落地指南，对外可访问）
 ├── /wiki/    ← projects/wiki/docs/.vitepress/dist/*（Code-wiki 维护，VitePress base: /brain-in-a-vat/wiki/）
 ├── /news/    ← projects/news/index.html + 数据（Code-news 维护）
