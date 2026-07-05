@@ -20,6 +20,7 @@ import {
 } from '../src/subagents/agents.js';
 import { createAgentTool } from '../src/subagents/agent-tool.js';
 import {
+  buildForkSeed,
   createSubagentRuntime,
   type SubagentRuntimeOptions,
 } from '../src/subagents/runtime.js';
@@ -29,7 +30,9 @@ import type {
   BuiltinTool,
   EngineConfig,
   McpRegistry,
+  SessionStore,
   SpawnSubagentParams,
+  StoredSession,
   ToolContext,
 } from '../src/internal/contracts.js';
 import type {
@@ -71,6 +74,25 @@ class FakeMcp implements McpRegistry {
     return { servers: [] };
   }
   async closeAll(): Promise<void> {}
+}
+
+/** In-memory SessionStore that records every append under its session key. */
+class FakeStore implements SessionStore {
+  readonly entries = new Map<string, Array<Record<string, unknown>>>();
+  append(sessionId: string, entry: Record<string, unknown>): void {
+    const arr = this.entries.get(sessionId) ?? [];
+    arr.push(entry);
+    this.entries.set(sessionId, arr);
+  }
+  async load(): Promise<StoredSession | null> {
+    return null;
+  }
+  async list(): Promise<StoredSession[]> {
+    return [];
+  }
+  async latestSessionId(): Promise<string | null> {
+    return null;
+  }
 }
 
 /** Records every input it executes; returns a fixed payload. */
@@ -118,6 +140,8 @@ function makeRuntime(cfg: {
   engineConfig?: Partial<EngineConfig>;
   options?: Partial<Options>;
   withStartStopHooks?: boolean;
+  store?: SessionStore;
+  persist?: boolean;
 }): RuntimeHarness {
   const transport = new MockTransport(cfg.scripts);
   const starts: string[] = [];
@@ -166,6 +190,8 @@ function makeRuntime(cfg: {
     allowedTools: cfg.options?.allowedTools,
     disallowedTools: cfg.options?.disallowedTools,
     engineConfig,
+    store: cfg.store,
+    persist: cfg.persist,
     cwd: '/tmp/sub-test',
     env: {},
     additionalDirectories: [],
@@ -288,6 +314,7 @@ describe('createAgentTool', () => {
     const props = tool.inputSchema.properties ?? {};
     expect(Object.keys(props).sort()).toEqual([
       'description',
+      'fork',
       'prompt',
       'run_in_background',
       'subagent_type',
@@ -349,6 +376,92 @@ describe('createAgentTool', () => {
     expect(captured?.prompt).toBe('go');
     expect(captured?.description).toBe('task label');
     expect(captured?.runInBackground).toBe(true);
+  });
+
+  it('forwards fork + an eager parentHistory snapshot to spawn', async () => {
+    const parentCtx: APIMessageParam[] = [
+      { role: 'user', content: 'parent q' },
+      { role: 'assistant', content: 'parent a' },
+    ];
+    let captured: SpawnSubagentParams | undefined;
+    const spawn: ToolContext['spawnSubagent'] = async (params) => {
+      captured = params;
+      return { content: 'ok', isError: false, agentId: 'a', background: false };
+    };
+    const ctx: ToolContext = {
+      cwd: '/tmp',
+      additionalDirectories: [],
+      env: {},
+      signal: new AbortController().signal,
+      debug: () => {},
+      spawnSubagent: spawn,
+      getForkHistory: () => parentCtx.slice(),
+    };
+
+    await tool.execute(
+      {
+        description: 'x',
+        prompt: 'go',
+        subagent_type: 'general-purpose',
+        fork: true,
+      },
+      ctx,
+    );
+    expect(captured?.fork).toBe(true);
+    expect(captured?.parentHistory).toEqual(parentCtx);
+
+    // Without fork the flag is falsy (isolated), though the snapshot is still
+    // taken (the runtime, not the tool, decides whether to use it).
+    captured = undefined;
+    await tool.execute(
+      { description: 'x', prompt: 'go', subagent_type: 'general-purpose' },
+      ctx,
+    );
+    expect(captured?.fork).toBeFalsy();
+  });
+});
+
+describe('buildForkSeed', () => {
+  it('trims trailing tool_use / tool_result and appends the prompt', () => {
+    const parent: APIMessageParam[] = [
+      { role: 'user', content: 'q1' },
+      { role: 'assistant', content: 'a1' },
+      {
+        role: 'user',
+        content: [
+          { type: 'tool_result', tool_use_id: 't1', content: 'result' },
+        ],
+      },
+      {
+        role: 'assistant',
+        content: [
+          { type: 'tool_use', id: 't2', name: 'Read', input: {} },
+        ],
+      },
+    ];
+    const seed = buildForkSeed(parent, 'the task');
+    // The dangling tool_use assistant turn AND the trailing tool_result user
+    // turn are dropped; the seed ends at the clean assistant-text turn 'a1'
+    // followed by the appended user prompt.
+    expect(seed).toHaveLength(3);
+    expect(seed[1]).toEqual({ role: 'assistant', content: 'a1' });
+    expect(seed[2]).toEqual({ role: 'user', content: 'the task' });
+    // Never two consecutive user turns.
+    for (let i = 1; i < seed.length; i++) {
+      const prev = seed[i - 1];
+      const cur = seed[i];
+      expect(prev?.role === 'user' && cur?.role === 'user').toBe(false);
+    }
+  });
+
+  it('degrades an empty / fully-trimmed input to just the prompt', () => {
+    expect(buildForkSeed([], 'only')).toEqual([
+      { role: 'user', content: 'only' },
+    ]);
+    // A history that is nothing but a trailing user turn trims to empty.
+    expect(
+      buildForkSeed([{ role: 'user', content: 'dangling' }], 'only'),
+    ).toEqual([{ role: 'user', content: 'only' }]);
   });
 });
 
@@ -522,6 +635,176 @@ describe('subagent runtime — inherited turn/budget caps (finding #3)', () => {
     expect(res.isError).toBe(true);
     expect(res.content).toContain('maxTurns');
     expect(h.transport.requests).toHaveLength(2);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// FORK mode (G4)
+// ---------------------------------------------------------------------------
+
+/** A minimal two-turn parent context (clean assistant-text boundary). */
+const parentCtx = (): APIMessageParam[] => [
+  { role: 'user', content: 'ctx q' },
+  { role: 'assistant', content: 'ctx a' },
+];
+
+describe('subagent runtime — FORK mode', () => {
+  it('fork seeds the child with the parent history + inherits system/model', async () => {
+    const h = makeRuntime({
+      scripts: [textReplyEvents('forked answer', { model: 'claude-sonnet-4-5' })],
+    });
+    const res = await h.runtime.makeSpawnFn(0)(
+      baseParams({ fork: true, parentHistory: parentCtx(), prompt: 'do the task' }),
+    );
+    expect(res.isError).toBe(false);
+
+    const req = h.transport.requests[0];
+    // NOTE: req.messages is the live loop array (mutated post-request as the
+    // child appends its own reply), so assert on the SEEDED prefix + content,
+    // not the exact post-run length.
+    const msgs = req?.messages ?? [];
+    expect(msgs[0]?.role).toBe('user'); // inherited parent context at the head
+    expect(msgs[1]?.role).toBe('assistant');
+    expect(msgs[2]?.role).toBe('user'); // delegated task appended as a user turn
+    const serialized = JSON.stringify(msgs);
+    expect(serialized).toContain('ctx q');
+    expect(serialized).toContain('ctx a');
+    expect(serialized).toContain('do the task');
+    // Prefix inheritance for cache sharing: parent system + parent model, NOT
+    // the general-purpose subagent prompt.
+    expect(req?.system).toBe('parent');
+    expect(req?.model).toBe('claude-sonnet-4-5');
+  });
+
+  it('isolated (default) does NOT seed and keeps its own system prompt', async () => {
+    const h = makeRuntime({
+      scripts: [textReplyEvents('iso answer', { model: 'claude-sonnet-4-5' })],
+    });
+    // fork omitted -> isolated, even though a parentHistory snapshot is present.
+    await h.runtime.makeSpawnFn(0)(baseParams({ parentHistory: parentCtx() }));
+    const req = h.transport.requests[0];
+    const msgs = req?.messages ?? [];
+    // The first turn is the delegated prompt, not the inherited parent context.
+    expect(msgs[0]?.role).toBe('user');
+    const serialized = JSON.stringify(msgs);
+    expect(serialized).not.toContain('ctx a');
+    expect(serialized).not.toContain('ctx q');
+    expect(req?.system).toBe(GENERAL_PURPOSE_PROMPT);
+  });
+
+  it('AgentDefinition.fork enables fork with no input flag', async () => {
+    const h = makeRuntime({
+      scripts: [textReplyEvents('forked', { model: 'claude-sonnet-4-5' })],
+      agents: {
+        forker: { description: 'f', prompt: 'forker own system', fork: true },
+      },
+    });
+    // No params.fork -> the agentDef.fork path must still seed the child.
+    await h.runtime.makeSpawnFn(0)(
+      baseParams({ subagentType: 'forker', parentHistory: parentCtx(), prompt: 'go' }),
+    );
+    const req = h.transport.requests[0];
+    // The inherited parent context is present in the seed (fork was active).
+    expect(JSON.stringify(req?.messages)).toContain('ctx a');
+    // Fork ignores agentDef.prompt-as-system in favour of the parent system.
+    expect(req?.system).toBe('parent');
+  });
+
+  it('records a fork sidechain under the agentId only (parent transcript clean)', async () => {
+    const store = new FakeStore();
+    const h = makeRuntime({
+      scripts: [textReplyEvents('forked answer', { model: 'claude-sonnet-4-5' })],
+      store,
+      persist: true,
+    });
+    const res = await h.runtime.makeSpawnFn(0)(
+      baseParams({ fork: true, parentHistory: parentCtx(), prompt: 'do it' }),
+    );
+    const entries = store.entries.get(res.agentId) ?? [];
+    const start = entries.find((e) => e['type'] === 'sidechain_start');
+    expect(start).toBeDefined();
+    expect(start?.['fork']).toBe(true);
+    expect(start?.['parent_session_id']).toBe('parent-sess');
+    // The seed's delegated-task user turn is recorded (self-contained sidechain).
+    expect(
+      entries.some((e) => e['type'] === 'user' && e['isSidechain'] === true),
+    ).toBe(true);
+    // At least one child assistant turn is tagged as a sidechain turn.
+    expect(
+      entries.some((e) => e['type'] === 'assistant' && e['isSidechain'] === true),
+    ).toBe(true);
+    const end = entries.find((e) => e['type'] === 'sidechain_end');
+    expect(end).toBeDefined();
+    expect(end?.['is_error']).toBe(false);
+    // The parent session transcript received ZERO entries.
+    expect(store.entries.get('parent-sess')).toBeUndefined();
+  });
+
+  it('records a sidechain for an isolated child too (fork:false marker)', async () => {
+    const store = new FakeStore();
+    const h = makeRuntime({
+      scripts: [textReplyEvents('iso answer', { model: 'claude-sonnet-4-5' })],
+      store,
+      persist: true,
+    });
+    const res = await h.runtime.makeSpawnFn(0)(baseParams());
+    const entries = store.entries.get(res.agentId) ?? [];
+    const start = entries.find((e) => e['type'] === 'sidechain_start');
+    expect(start).toBeDefined();
+    expect(start?.['fork']).toBe(false);
+    expect(store.entries.get('parent-sess')).toBeUndefined();
+  });
+
+  it('still enforces the turn cap under fork', async () => {
+    const base = new Map<string, BuiltinTool>([
+      ['Read', recordingTool('Read', [], { readOnly: true })],
+    ]);
+    const scripts = Array.from({ length: 2 }, () =>
+      toolUseReplyEvents('Read', { file_path: '/loop' }, { model: 'claude-sonnet-4-5' }),
+    );
+    const h = makeRuntime({
+      scripts,
+      baseBuiltins: base,
+      agents: {
+        loopfork: { description: 'lf', prompt: 'loop', fork: true, maxTurns: 2 },
+      },
+    });
+    const res = await h.runtime.makeSpawnFn(0)(
+      baseParams({ subagentType: 'loopfork', parentHistory: parentCtx() }),
+    );
+    expect(res.isError).toBe(true);
+    expect(res.content).toContain('maxTurns');
+    expect(h.transport.requests).toHaveLength(2);
+  });
+
+  it('still enforces the budget cap under fork', async () => {
+    const base = new Map<string, BuiltinTool>([
+      ['Read', recordingTool('Read', [], { readOnly: true })],
+    ]);
+    const h = makeRuntime({
+      scripts: [
+        toolUseReplyEvents('Read', { file_path: '/a' }, { model: 'claude-sonnet-4-5' }),
+        textReplyEvents('done', { model: 'claude-sonnet-4-5' }),
+      ],
+      baseBuiltins: base,
+      engineConfig: { maxBudgetUsd: 1e-9 },
+    });
+    const res = await h.runtime.makeSpawnFn(0)(
+      baseParams({ fork: true, parentHistory: parentCtx() }),
+    );
+    expect(res.isError).toBe(true);
+    expect(res.content).toContain('maxBudgetUsd');
+    expect(h.transport.requests).toHaveLength(1);
+  });
+
+  it('still enforces the depth cap under fork (no transport call)', async () => {
+    const h = makeRuntime({ scripts: [] });
+    const res = await h.runtime.makeSpawnFn(MAX_SUBAGENT_DEPTH)(
+      baseParams({ fork: true, parentHistory: parentCtx() }),
+    );
+    expect(res.isError).toBe(true);
+    expect(res.content).toContain('nesting limit');
+    expect(h.transport.requests).toHaveLength(0);
   });
 });
 

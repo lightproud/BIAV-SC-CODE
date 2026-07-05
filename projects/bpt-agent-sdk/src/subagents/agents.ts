@@ -18,7 +18,8 @@ import type { AgentDefinition } from '../types.js';
  * at depth < MAX_SUBAGENT_DEPTH may spawn a child (at depth+1); a loop at depth
  * MAX_SUBAGENT_DEPTH cannot spawn further agents. Enforced structurally (the
  * Agent tool is removed from a depth-5 child's tool set) AND by a guard in the
- * spawn function.
+ * spawn function. A FORK child inherits the parent's full tool set but still
+ * loses Agent at the max depth, so fork cannot bypass the nesting limit either.
  */
 export const MAX_SUBAGENT_DEPTH = 5;
 

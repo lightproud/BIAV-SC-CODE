@@ -658,6 +658,17 @@ export type AgentDefinition = {
   permissionMode?: PermissionMode;
   /** v0.2: run this subagent as a non-blocking background task when invoked. */
   background?: boolean;
+  /**
+   * FORK mode (opt-in). When true, an invocation of this subagent type continues
+   * from the PARENT's context instead of a fresh isolated one: the child inherits
+   * the parent's model + system prompt + tool set and is seeded with a copy of the
+   * parent's message history (the delegated task appended as a trailing user turn),
+   * so it shares the parent's already-cached prefix. Trade-off: agentDef.model /
+   * tools / disallowedTools / permissionMode / prompt-as-system are INTENTIONALLY
+   * ignored in fork mode (they would break the cached prefix); a fork child is
+   * therefore as privileged as the parent. Default false -> isolated subagent.
+   */
+  fork?: boolean;
   /** Preload skills into the subagent context (ACCEPTED; no-op in v0.2). */
   skills?: string[];
   /** MCP servers for this subagent (ACCEPTED; v0.2 inherits parent servers). */

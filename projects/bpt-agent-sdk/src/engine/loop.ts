@@ -267,6 +267,12 @@ export async function* runAgentLoop(
     if (deps.requestView !== undefined) deps.requestView.messages.push(turn);
   };
 
+  // FORK support: expose the current parent context so the Agent tool can
+  // EAGERLY snapshot it at spawn time (a shallow copy; the runtime owns any
+  // sanitisation before seeding a fork child). query.ts builds a fresh
+  // toolContext per turn, so there is no cross-turn leakage of this getter.
+  deps.toolContext.getForkHistory = (): APIMessageParam[] => reqMsgs.slice();
+
   const baseHookFields = {
     session_id: config.sessionId,
     cwd: config.cwd,

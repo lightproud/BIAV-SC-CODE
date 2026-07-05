@@ -94,6 +94,14 @@ export type ToolContext = {
   debug: (msg: string) => void;
   /** v0.2 subagent spawn callback (wired by the subagent runtime). */
   spawnSubagent?: SpawnSubagentFn;
+  /**
+   * FORK support: return a shallow copy of the parent loop's CURRENT request
+   * messages so the Agent tool can EAGERLY snapshot the parent context at spawn
+   * time (a fork child continues from the parent's cached prefix). Installed by
+   * the engine loop on its own toolContext; absent when no live parent loop is
+   * wired (fork then degrades to isolated).
+   */
+  getForkHistory?: () => APIMessageParam[];
   /** v0.2 WebSearch backend; undefined -> the tool returns a not-configured error. */
   webSearch?: WebSearchHandler;
   /** v0.2 AskUserQuestion handler; undefined -> the tool returns a not-configured error. */
@@ -134,6 +142,19 @@ export type SpawnSubagentParams = {
   toolUseId: string;
   /** The calling tool's abort signal (foreground children chain off this). */
   signal: AbortSignal;
+  /**
+   * FORK: continue from the parent's context (shared cached prefix) instead of a
+   * fresh isolated one. AgentDefinition.fork forces true. Only takes effect when
+   * `parentHistory` is present + non-empty; otherwise degrades to isolated.
+   */
+  fork?: boolean;
+  /**
+   * FORK: an EAGER snapshot of the parent loop's request messages taken by the
+   * Agent tool at spawn time (a value copy, not a lazy thunk, so a background
+   * fork captures the parent context as it was at spawn). The runtime seeds the
+   * fork child from this. Absent -> no parent context to inherit (isolated).
+   */
+  parentHistory?: APIMessageParam[];
 };
 
 export type SpawnSubagentResult = {
