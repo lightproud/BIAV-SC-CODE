@@ -238,6 +238,15 @@ KD-12/KD-L4-01~04，3 条保红引擎发现=截断轮优雅降级缺口）；棋
 0.3.201 已发布待裁定）；L5 五维 18 任务 + 乙门禁（`run-l5.mjs`，真 API dispatch `conformance_l5`，
 `--smoke` 无钥自证，L6 公开流留痕）。M1-M4 封顶，799 单测全绿。
 
+**引擎对齐批 E1–E5（2026-07-05，L5 交接档
+`Public-Info-Pool/Resource/repo-engineering/bpt-sdk-engine-alignment-handoff-20260705.md` 派单）**：
+E1 preset 默认思考（4096 我方值、KD 登记、非 preset 零变化）；E4 Write 读前写门（逐字官方错误文案、
+`readFilePaths` 每 query 一份子代理共享、L3-WRITE-02 官方臂 CONTENT_MATCH、KD-L3-06 退役）；
+E5 预算执行前截停（工具零执行、L2 s12 转 MATCH、engineFinding 退役）；E3 截断轮优雅降级
+（整块挽救、完整 tool_use 照常执行续轮、未闭合绝不执行、L4 三红行全清、KD-L4-04 退役、
+KD-L4-02 收窄 errorPresent）；E2 result 口径对齐（num_turns/usage 逐 result、cost/apiMs 累计、
+**破坏性** MIGRATION 5e、run-l5 聚合并轨、KD-L5-04 退役）。1049 全绿。E1 验收待守密人派真 L5。
+
 进度以 `memory/project-status.md` 为唯一权威。
 
 ## v0.2 候选
