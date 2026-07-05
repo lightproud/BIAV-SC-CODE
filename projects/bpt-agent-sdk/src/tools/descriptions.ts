@@ -17,6 +17,9 @@
  *    sandbox backend is active (see createBashTool). When unsandboxed the Bash
  *    description is byte-identical to BASH_DESCRIPTION, with no sandbox content.
  *  - No PowerShell content.
+ *  - Read: the PDF and Jupyter bullets are ADAPTED to this SDK's actual
+ *    behavior (whole-document PDF reads, no pages slicing; notebooks as raw
+ *    JSON text) — the official wording describes capabilities not shipped here.
  *  - Background shells: launched via Bash `run_in_background: true`; read output
  *    with BashOutput; stop with KillShell.
  *  - Git guidance for Bash is retained (Bash can run git), with CLI-product-specific
@@ -144,8 +147,8 @@ Usage:
 - Results are returned using cat -n format, with line numbers starting at 1
 - You can optionally specify a line offset and limit (especially handy for long files), but it's recommended to read the whole file by not providing these parameters
 - This tool allows you to read images (eg PNG, JPG, etc). When reading an image file the contents are presented visually as this is a multimodal model.
-- This tool can read PDF files (.pdf). For large PDFs (more than 10 pages), you MUST provide the pages parameter to read specific page ranges (e.g., pages: "1-5"). Reading a large PDF without the pages parameter will fail. Maximum 20 pages per request.
-- This tool can read Jupyter notebooks (.ipynb files) and returns all cells with their outputs, combining code, text, and visualizations.
+- This tool can read PDF files (.pdf). The whole document is returned as a single PDF content block; page-range reads via the pages parameter are not supported (a read with pages set returns an explicit error), so omit pages and read the document whole.
+- Jupyter notebooks (.ipynb files) are returned as their raw JSON text; cells are not rendered individually.
 - This tool can only read files, not directories. To list files in a directory, use the Bash tool.
 - You will regularly be asked to read screenshots. If the user provides a path to a screenshot, ALWAYS use this tool to view the file at the path. This tool will work with all temporary file paths.
 - If you read a file that exists but has empty contents you will receive a system reminder warning in place of file contents.`;

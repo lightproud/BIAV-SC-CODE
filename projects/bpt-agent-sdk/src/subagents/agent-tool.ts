@@ -14,6 +14,7 @@ import type {
   ToolContext,
   ToolResultPayload,
 } from '../internal/contracts.js';
+import { GENERAL_PURPOSE_TYPE } from './agents.js';
 
 function errorResult(message: string): ToolResultPayload {
   return { content: message, isError: true };
@@ -23,9 +24,14 @@ function errorResult(message: string): ToolResultPayload {
  * Build the Agent tool. `agentNames` are the spawnable subagent_type values
  * (the keys of options.agents plus 'general-purpose'); they are enumerated in
  * the subagent_type field description so the model knows what it may request.
+ *
+ * E7-02 (official parity): required is [description, prompt] — subagent_type
+ * is optional and defaults to 'general-purpose'; `model` overrides the child
+ * model per call; `isolation: 'worktree'` runs the child in a temporary git
+ * worktree (auto-removed when left unchanged).
  */
 export function createAgentTool(agentNames: string[]): BuiltinTool {
-  const typeList = agentNames.length > 0 ? agentNames.join(', ') : 'general-purpose';
+  const typeList = agentNames.length > 0 ? agentNames.join(', ') : GENERAL_PURPOSE_TYPE;
   return {
     name: 'Agent',
     description:
@@ -35,6 +41,9 @@ export function createAgentTool(agentNames: string[]): BuiltinTool {
       'Provide a complete, standalone prompt: the subagent does not see the ' +
       'current conversation. Set run_in_background to true to launch the ' +
       'subagent without blocking; its result is delivered on a later turn. ' +
+      'Set isolation to "worktree" to give the subagent its own temporary ' +
+      'git worktree as its working directory (auto-cleaned if unchanged), ' +
+      'and model to override which model it runs on. ' +
       'Set fork to true to instead continue from the current context (shared ' +
       'cache, more privileged) rather than a fresh isolated one.',
     readOnly: false,
@@ -55,13 +64,32 @@ export function createAgentTool(agentNames: string[]): BuiltinTool {
         },
         subagent_type: {
           type: 'string',
-          description: `The type of subagent to spawn. One of: ${typeList}.`,
+          description:
+            `The type of subagent to spawn. One of: ${typeList}. ` +
+            `Defaults to ${GENERAL_PURPOSE_TYPE} when omitted.`,
+        },
+        model: {
+          type: 'string',
+          enum: ['sonnet', 'opus', 'haiku', 'fable'],
+          description:
+            'Optional model override for this subagent. Takes precedence ' +
+            'over the agent definition\'s model. Ignored when forking — a ' +
+            'fork always inherits the parent model.',
         },
         run_in_background: {
           type: 'boolean',
           description:
             'When true, launch the subagent as a non-blocking background task ' +
             'and return immediately; its result arrives on a subsequent turn.',
+        },
+        isolation: {
+          type: 'string',
+          enum: ['worktree'],
+          description:
+            '"worktree" creates a temporary git worktree of the current ' +
+            'repository and uses it as the subagent\'s working directory; ' +
+            'the worktree is removed automatically when the subagent leaves ' +
+            'it unchanged (uncommitted changes keep it alive).',
         },
         fork: {
           type: 'boolean',
@@ -72,7 +100,7 @@ export function createAgentTool(agentNames: string[]): BuiltinTool {
             'the parent. Default false.',
         },
       },
-      required: ['description', 'prompt', 'subagent_type'],
+      required: ['description', 'prompt'],
     },
     async execute(
       input: Record<string, unknown>,
@@ -89,10 +117,32 @@ export function createAgentTool(agentNames: string[]): BuiltinTool {
       if (typeof prompt !== 'string' || prompt.length === 0) {
         return errorResult('Agent failed: "prompt" must be a non-empty string.');
       }
-      const subagentType = input['subagent_type'];
-      if (typeof subagentType !== 'string' || subagentType.length === 0) {
+      // Optional (E7-02, official required set is [description, prompt]):
+      // omitted -> the default general-purpose agent type.
+      const subagentTypeRaw = input['subagent_type'];
+      if (
+        subagentTypeRaw !== undefined &&
+        (typeof subagentTypeRaw !== 'string' || subagentTypeRaw.length === 0)
+      ) {
         return errorResult(
-          'Agent failed: "subagent_type" must be a non-empty string.',
+          'Agent failed: "subagent_type" must be a non-empty string when provided.',
+        );
+      }
+      const subagentType =
+        (subagentTypeRaw as string | undefined) ?? GENERAL_PURPOSE_TYPE;
+      const modelRaw = input['model'];
+      if (
+        modelRaw !== undefined &&
+        (typeof modelRaw !== 'string' || modelRaw.length === 0)
+      ) {
+        return errorResult(
+          'Agent failed: "model" must be a non-empty string when provided.',
+        );
+      }
+      const isolationRaw = input['isolation'];
+      if (isolationRaw !== undefined && isolationRaw !== 'worktree') {
+        return errorResult(
+          'Agent failed: "isolation" must be "worktree" when provided.',
         );
       }
       const descRaw = input['description'];
@@ -114,6 +164,8 @@ export function createAgentTool(agentNames: string[]): BuiltinTool {
         prompt,
         description,
         runInBackground,
+        model: modelRaw as string | undefined,
+        isolation: isolationRaw as 'worktree' | undefined,
         fork,
         parentHistory,
         // The loop does not expose the spawning tool_use block id to the tool;

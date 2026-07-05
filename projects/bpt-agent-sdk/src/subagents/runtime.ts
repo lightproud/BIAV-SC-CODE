@@ -22,7 +22,12 @@
  * (context isolation).
  */
 
+import { execFile } from 'node:child_process';
 import { randomUUID } from 'node:crypto';
+import { mkdtemp, rm } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+import { promisify } from 'node:util';
 
 import { isAbortError } from '../errors.js';
 import type {
@@ -216,6 +221,54 @@ export function buildForkSeed(
     seed.push({ role: 'user', content: prompt });
   }
   return seed;
+}
+
+const execFileP = promisify(execFile);
+
+/**
+ * Worktree isolation (Agent tool `isolation: 'worktree'`, E7-02): create a
+ * temporary DETACHED git worktree of the repository at `repoCwd` for a child
+ * to use as its cwd. mkdtemp yields an empty dir, which `git worktree add`
+ * accepts as a target. Fails honestly (error string, temp dir removed) when
+ * git is unavailable or `repoCwd` is not inside a git repository.
+ */
+async function addWorktree(
+  repoCwd: string,
+): Promise<{ dir: string } | { error: string }> {
+  let dir: string;
+  try {
+    dir = await mkdtemp(join(tmpdir(), 'bpt-subagent-worktree-'));
+  } catch (err) {
+    return { error: err instanceof Error ? err.message : String(err) };
+  }
+  try {
+    await execFileP('git', ['worktree', 'add', '--detach', dir], { cwd: repoCwd });
+    return { dir };
+  } catch (err) {
+    await rm(dir, { recursive: true, force: true }).catch(() => undefined);
+    return { error: err instanceof Error ? err.message : String(err) };
+  }
+}
+
+/**
+ * Remove a temporary worktree IF the child left it unchanged (empty
+ * `git status --porcelain`: no modified, staged, or untracked files). A dirty
+ * worktree is KEPT — never destroy uncommitted child work — and any git
+ * failure also keeps it (fail-safe toward preservation). The caller logs a
+ * 'kept' outcome.
+ */
+async function removeWorktreeIfClean(
+  repoCwd: string,
+  dir: string,
+): Promise<'removed' | 'kept'> {
+  try {
+    const { stdout } = await execFileP('git', ['-C', dir, 'status', '--porcelain']);
+    if (stdout.trim().length > 0) return 'kept';
+    await execFileP('git', ['worktree', 'remove', dir], { cwd: repoCwd });
+    return 'removed';
+  } catch {
+    return 'kept';
+  }
 }
 
 /**
@@ -672,6 +725,38 @@ export function createSubagentRuntime(
       const agentId = randomUUID();
       const childDepth = depth + 1;
 
+      // Worktree isolation (E7-02): created BEFORE task_started so a creation
+      // failure is reported synchronously with no dangling lifecycle events.
+      // The worktree always derives from the runtime cwd (the root repo), even
+      // for nested spawns — the spawn closure does not track per-child cwds.
+      let childCwd = cwd;
+      let worktreeDir: string | undefined;
+      if (params.isolation === 'worktree') {
+        const wt = await addWorktree(cwd);
+        if ('error' in wt) {
+          return {
+            content: `Agent failed: could not create an isolation worktree: ${wt.error}`,
+            isError: true,
+            agentId: '',
+            background: false,
+          };
+        }
+        worktreeDir = wt.dir;
+        childCwd = wt.dir;
+        debug(`subagent ${agentId}: isolation worktree at ${worktreeDir}`);
+      }
+      /** Post-run worktree cleanup: removed only when left unchanged. */
+      const releaseWorktree = async (): Promise<void> => {
+        if (worktreeDir === undefined) return;
+        const outcome = await removeWorktreeIfClean(cwd, worktreeDir);
+        if (outcome === 'kept') {
+          debug(
+            `subagent ${agentId}: worktree ${worktreeDir} kept ` +
+              '(uncommitted changes or git failure)',
+          );
+        }
+      };
+
       emitTask({
         type: 'task_started',
         task_id: agentId,
@@ -744,11 +829,22 @@ export function createSubagentRuntime(
         debug,
       });
 
+      // Per-call model override (Agent tool `model`, E7-02): beats
+      // agentDef.model for an isolated child; a fork ALWAYS inherits the
+      // parent model (the cached prefix must byte-match), so the override is
+      // ignored there with a debug note.
+      if (params.model !== undefined && forkActive) {
+        debug(
+          `subagent "${resolved.type}": model override "${params.model}" ` +
+            'ignored in fork mode (fork inherits the parent model)',
+        );
+      }
       const childConfig: EngineConfig = {
-        // Fork inherits the parent model; isolated resolves agentDef.model.
+        // Fork inherits the parent model; isolated resolves the per-call
+        // override, then agentDef.model, through the same alias path.
         model: forkActive
           ? engineConfig.model
-          : resolveModelAlias(agentDef.model, engineConfig.model),
+          : resolveModelAlias(params.model ?? agentDef.model, engineConfig.model),
         fallbackModel,
         maxOutputTokens: engineConfig.maxOutputTokens,
         // Fork inherits the parent system prompt (prefix match); isolated uses
@@ -769,7 +865,8 @@ export function createSubagentRuntime(
         promptCaching: engineConfig.promptCaching,
         includePartialMessages: false,
         sessionId: agentId,
-        cwd,
+        // The isolation worktree (when requested) is the child's cwd.
+        cwd: childCwd,
         // The loop does not expose the spawning tool_use id to the tool; use a
         // stable correlation id (the child agentId) when the tool passed none.
         parentToolUseId:
@@ -780,14 +877,17 @@ export function createSubagentRuntime(
       const parentSignal = isBackground ? outerSignal : params.signal;
       const childSignal = AbortSignal.any([parentSignal, childController.signal]);
       const childToolContext: ToolContext = {
-        cwd,
+        cwd: childCwd,
         additionalDirectories,
         env,
         signal: childSignal,
         debug,
         spawnSubagent: makeSpawnFn(childDepth),
         // One shell session per query: children see the same background
-        // shells and persistent cwd/env as the root loop.
+        // shells and persistent cwd/env as the root loop. KNOWN LIMIT for
+        // worktree isolation: the shared persistent-state replay may `cd` a
+        // child Bash call back to the last recorded cwd (outside the
+        // worktree); Read/Write/Edit and childConfig.cwd stay confined.
         shells: opts.shells,
         // Children inherit the same sandbox as the root loop.
         sandbox: opts.sandbox,
@@ -864,6 +964,9 @@ export function createSubagentRuntime(
             }
           } finally {
             backgroundTasks.delete(agentId);
+            // Worktree cleanup runs on every exit path (incl. abort), before
+            // the stop hook; a dirty worktree is kept (never destroy work).
+            await releaseWorktree().catch(() => undefined);
             // Fresh signal: the stop hook must fire even after an outer abort.
             await fireSubagentStop(
               agentId,
@@ -883,14 +986,20 @@ export function createSubagentRuntime(
         };
       }
 
-      // Foreground: block until the child finishes.
-      const result = await runChildToCompletion(
-        childHistory,
-        childDeps,
-        childConfig,
-        agentId,
-        sidechainInfo,
-      );
+      // Foreground: block until the child finishes. Worktree cleanup runs on
+      // every exit path (finally covers an abort thrown out of the loop).
+      let result: { text: string; isError: boolean };
+      try {
+        result = await runChildToCompletion(
+          childHistory,
+          childDeps,
+          childConfig,
+          agentId,
+          sidechainInfo,
+        );
+      } finally {
+        await releaseWorktree().catch(() => undefined);
+      }
       emitTaskFinished(agentId, result);
       await fireSubagentStop(agentId, resolved.type, params.signal);
       return {

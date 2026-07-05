@@ -6,10 +6,12 @@
  * end-to-end without a network.
  */
 
-import { existsSync, readFileSync } from 'node:fs';
+import { spawnSync } from 'node:child_process';
+import { existsSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
-import { describe, expect, it } from 'vitest';
+import { afterEach, describe, expect, it } from 'vitest';
 
 import {
   GENERAL_PURPOSE_PROMPT,
@@ -146,6 +148,8 @@ function makeRuntime(cfg: {
   withStartStopHooks?: boolean;
   store?: SessionStore;
   persist?: boolean;
+  /** Runtime cwd (worktree-isolation tests point this at a real git repo). */
+  cwd?: string;
 }): RuntimeHarness {
   const transport = new MockTransport(cfg.scripts);
   const starts: string[] = [];
@@ -196,7 +200,7 @@ function makeRuntime(cfg: {
     engineConfig,
     store: cfg.store,
     persist: cfg.persist,
-    cwd: '/tmp/sub-test',
+    cwd: cfg.cwd ?? '/tmp/sub-test',
     env: {},
     additionalDirectories: [],
     outerSignal: new AbortController().signal,
@@ -306,19 +310,19 @@ describe('createAgentTool', () => {
     };
   }
 
-  it('has the documented input schema', () => {
+  it('has the documented input schema (E7-02: official params + required set)', () => {
     expect(tool.name).toBe('Agent');
     expect(tool.readOnly).toBe(false);
     expect(tool.isFileEdit).toBe(false);
-    expect(tool.inputSchema.required).toEqual([
-      'description',
-      'prompt',
-      'subagent_type',
-    ]);
+    // Official required set: subagent_type is optional (defaults to
+    // general-purpose in execute()).
+    expect(tool.inputSchema.required).toEqual(['description', 'prompt']);
     const props = tool.inputSchema.properties ?? {};
     expect(Object.keys(props).sort()).toEqual([
       'description',
       'fork',
+      'isolation',
+      'model',
       'prompt',
       'run_in_background',
       'subagent_type',
@@ -327,6 +331,14 @@ describe('createAgentTool', () => {
     expect(
       (props['subagent_type'] as { description: string }).description,
     ).toContain('researcher');
+    // isolation / model mirror the official enums.
+    expect((props['isolation'] as { enum: string[] }).enum).toEqual(['worktree']);
+    expect((props['model'] as { enum: string[] }).enum).toEqual([
+      'sonnet',
+      'opus',
+      'haiku',
+      'fable',
+    ]);
   });
 
   it('errors when no runtime is wired', async () => {
@@ -338,20 +350,57 @@ describe('createAgentTool', () => {
     expect(r.content).toContain('runtime not available');
   });
 
-  it('errors on a missing prompt / subagent_type', async () => {
-    const ctx = ctxWith(async () => ({
-      content: 'unused',
-      isError: false,
-      agentId: 'a',
-      background: false,
-    }));
+  it('errors on a missing prompt; a missing subagent_type defaults to general-purpose (E7-02)', async () => {
+    let captured: SpawnSubagentParams | undefined;
+    const ctx = ctxWith(async (params) => {
+      captured = params;
+      return { content: 'ok', isError: false, agentId: 'a', background: false };
+    });
     const noPrompt = await tool.execute(
       { description: 'x', subagent_type: 'general-purpose' },
       ctx,
     );
     expect(noPrompt.isError).toBe(true);
+    // subagent_type omitted -> spawn still happens, with the default type.
     const noType = await tool.execute({ description: 'x', prompt: 'p' }, ctx);
-    expect(noType.isError).toBe(true);
+    expect(noType.isError).toBe(false);
+    expect(captured?.subagentType).toBe('general-purpose');
+    // ...but an explicitly EMPTY subagent_type is still an input error.
+    const emptyType = await tool.execute(
+      { description: 'x', prompt: 'p', subagent_type: '' },
+      ctx,
+    );
+    expect(emptyType.isError).toBe(true);
+  });
+
+  it('validates and forwards model + isolation (E7-02)', async () => {
+    let captured: SpawnSubagentParams | undefined;
+    const ctx = ctxWith(async (params) => {
+      captured = params;
+      return { content: 'ok', isError: false, agentId: 'a', background: false };
+    });
+    // Invalid isolation value / empty model are input errors (spawn untouched).
+    const badIso = await tool.execute(
+      { description: 'x', prompt: 'p', isolation: 'container' },
+      ctx,
+    );
+    expect(badIso.isError).toBe(true);
+    expect(badIso.content).toContain('"isolation"');
+    const badModel = await tool.execute(
+      { description: 'x', prompt: 'p', model: '' },
+      ctx,
+    );
+    expect(badModel.isError).toBe(true);
+    expect(badModel.content).toContain('"model"');
+    expect(captured).toBeUndefined();
+    // Valid values pass through to spawn verbatim.
+    const ok = await tool.execute(
+      { description: 'x', prompt: 'p', model: 'opus', isolation: 'worktree' },
+      ctx,
+    );
+    expect(ok.isError).toBe(false);
+    expect(captured?.model).toBe('opus');
+    expect(captured?.isolation).toBe('worktree');
   });
 
   it('maps a SpawnSubagentResult onto the tool payload', async () => {
@@ -570,6 +619,37 @@ describe('subagent runtime — foreground', () => {
     expect(h.transport.requests[0]?.model).toBe('claude-opus-4-8');
   });
 
+  it('per-call model override beats agentDef.model for an isolated child (E7-02)', async () => {
+    const h = makeRuntime({
+      scripts: [textReplyEvents('ok', { model: 'claude-opus-4-8' })],
+      agents: {
+        small: { description: 's', prompt: 'haiku by default', model: 'haiku' },
+      },
+    });
+    await h.runtime.makeSpawnFn(0)(
+      baseParams({ subagentType: 'small', model: 'opus' }),
+    );
+    expect(h.transport.requests[0]?.model).toBe('claude-opus-4-8');
+  });
+
+  it('fork ignores the per-call model override (parent model inherited, E7-02)', async () => {
+    const h = makeRuntime({
+      scripts: [textReplyEvents('ok', { model: 'claude-sonnet-4-5' })],
+    });
+    await h.runtime.makeSpawnFn(0)(
+      baseParams({
+        fork: true,
+        parentHistory: [
+          { role: 'user', content: 'ctx q' },
+          { role: 'assistant', content: 'ctx a' },
+        ],
+        model: 'opus',
+      }),
+    );
+    // The parent engine model, NOT the override (cached-prefix byte-match).
+    expect(h.transport.requests[0]?.model).toBe('claude-sonnet-4-5');
+  });
+
   it('honors an agentDef.permissionMode override (plan denies a Write)', async () => {
     const writeInputs: Array<Record<string, unknown>> = [];
     const base = new Map<string, BuiltinTool>([
@@ -597,6 +677,110 @@ describe('subagent runtime — foreground', () => {
     expect(lastUserContent(h.transport.requests[1]?.messages ?? [])).toContain(
       'Permission denied',
     );
+  });
+});
+
+describe('subagent runtime — worktree isolation (E7-02)', () => {
+  /** Temp dirs created by the current test; removed in afterEach. */
+  let tempDirs: string[] = [];
+  afterEach(() => {
+    for (const d of tempDirs) rmSync(d, { recursive: true, force: true });
+    tempDirs = [];
+  });
+
+  /** A real throwaway git repo with one committed file. */
+  function makeGitRepo(): string {
+    const repo = mkdtempSync(join(tmpdir(), 'bpt-wt-repo-'));
+    tempDirs.push(repo);
+    const git = (...args: string[]): void => {
+      const r = spawnSync(
+        'git',
+        ['-c', 'user.email=t@test', '-c', 'user.name=t', ...args],
+        { cwd: repo, encoding: 'utf8' },
+      );
+      if (r.status !== 0) throw new Error(`git ${args.join(' ')}: ${r.stderr}`);
+    };
+    git('init', '-q');
+    writeFileSync(join(repo, 'seed.txt'), 'seed\n');
+    git('add', 'seed.txt');
+    git('commit', '-q', '-m', 'seed');
+    return repo;
+  }
+
+  /** Records ctx.cwd on every call; optionally dirties the worktree. */
+  function cwdProbe(seen: string[], mutate = false): BuiltinTool {
+    return {
+      name: 'Probe',
+      description: 'records ctx.cwd',
+      inputSchema: { type: 'object', properties: {} },
+      readOnly: true,
+      async execute(_input, ctx) {
+        seen.push(ctx.cwd);
+        if (mutate) writeFileSync(join(ctx.cwd, 'child-output.txt'), 'dirty\n');
+        return { content: 'probed' };
+      },
+    };
+  }
+
+  function isolationScripts() {
+    return [
+      toolUseReplyEvents('Probe', {}, { model: 'claude-sonnet-4-5' }),
+      textReplyEvents('done', { model: 'claude-sonnet-4-5' }),
+    ];
+  }
+
+  it('runs the child in a temp worktree and removes it when left unchanged', async () => {
+    const repo = makeGitRepo();
+    const seen: string[] = [];
+    const h = makeRuntime({
+      scripts: isolationScripts(),
+      baseBuiltins: new Map([['Probe', cwdProbe(seen)]]),
+      cwd: repo,
+    });
+    const res = await h.runtime.makeSpawnFn(0)(
+      baseParams({ isolation: 'worktree' }),
+    );
+    expect(res.isError).toBe(false);
+    // The child ran with a DIFFERENT cwd that was a real checkout of the repo.
+    expect(seen).toHaveLength(1);
+    const childCwd = seen[0]!;
+    expect(childCwd).not.toBe(repo);
+    // Unchanged after the run -> the worktree was removed.
+    expect(existsSync(childCwd)).toBe(false);
+  });
+
+  it('keeps the worktree when the child left uncommitted changes', async () => {
+    const repo = makeGitRepo();
+    const seen: string[] = [];
+    const h = makeRuntime({
+      scripts: isolationScripts(),
+      baseBuiltins: new Map([['Probe', cwdProbe(seen, true)]]),
+      cwd: repo,
+    });
+    const res = await h.runtime.makeSpawnFn(0)(
+      baseParams({ isolation: 'worktree' }),
+    );
+    expect(res.isError).toBe(false);
+    const childCwd = seen[0]!;
+    tempDirs.push(childCwd);
+    // Dirty (untracked child-output.txt) -> the worktree is preserved.
+    expect(existsSync(childCwd)).toBe(true);
+    expect(readFileSync(join(childCwd, 'child-output.txt'), 'utf8')).toBe('dirty\n');
+    // The checkout really contained the committed repo file.
+    expect(existsSync(join(childCwd, 'seed.txt'))).toBe(true);
+  });
+
+  it('fails honestly when the runtime cwd is not a git repository', async () => {
+    const plain = mkdtempSync(join(tmpdir(), 'bpt-wt-plain-'));
+    tempDirs.push(plain);
+    const h = makeRuntime({ scripts: [], cwd: plain });
+    const res = await h.runtime.makeSpawnFn(0)(
+      baseParams({ isolation: 'worktree' }),
+    );
+    expect(res.isError).toBe(true);
+    expect(res.content).toContain('worktree');
+    // No child loop ever started (no transport calls).
+    expect(h.transport.requests).toHaveLength(0);
   });
 });
 

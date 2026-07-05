@@ -158,6 +158,19 @@ export type SpawnSubagentParams = {
   description?: string;
   /** run_in_background input; AgentDefinition.background forces true. */
   runInBackground?: boolean;
+  /**
+   * The Agent tool's `model` input (E7-02): per-call model override for an
+   * ISOLATED child, resolved through the same alias path as (and taking
+   * precedence over) AgentDefinition.model. Ignored in fork mode — a fork
+   * must byte-match the parent's cached prefix, model included.
+   */
+  model?: string;
+  /**
+   * The Agent tool's `isolation` input (E7-02): 'worktree' runs the child in
+   * a temporary detached git worktree of the runtime cwd, removed after the
+   * child finishes ONLY when it left no uncommitted/untracked changes.
+   */
+  isolation?: 'worktree';
   /** tool_use id of the spawning Agent call -> child config.parentToolUseId. */
   toolUseId: string;
   /** The calling tool's abort signal (foreground children chain off this). */

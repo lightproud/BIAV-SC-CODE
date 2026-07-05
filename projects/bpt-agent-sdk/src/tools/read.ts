@@ -18,6 +18,13 @@ import { READ_DESCRIPTION } from './descriptions.js';
 const DEFAULT_LINE_LIMIT = 2000;
 
 /**
+ * Official cap for a `pages` PDF page-range request (E7-02 parity). Enforced
+ * at validation time even though page slicing itself is not shipped (below),
+ * so an over-long range fails with the same bound the official tool applies.
+ */
+const MAX_PDF_PAGES_PER_READ = 20;
+
+/**
  * Hard byte cap. Read buffers the whole file before applying offset/limit, so
  * without this guard a multi-GB text file (which slips past the 8KB binary
  * sniff) materializes entirely in memory and OOMs the process even with the
@@ -89,6 +96,15 @@ export const readTool: BuiltinTool = {
         type: 'number',
         description: 'Maximum number of lines to return (default 2000).',
       },
+      pages: {
+        type: 'string',
+        description:
+          'Page range for PDF files (e.g. "1-5" or "3"). Only applicable to ' +
+          `PDF files; maximum ${MAX_PDF_PAGES_PER_READ} pages per request. ` +
+          'This SDK returns PDFs whole and does not slice pages, so a PDF ' +
+          'read with pages set returns an explicit error — omit pages to ' +
+          'read the full document.',
+      },
     },
     required: ['file_path'],
   },
@@ -127,6 +143,37 @@ export const readTool: BuiltinTool = {
       // offset is a 1-based line number; 0/negative values clamp to line 1.
       const startLine = Math.max(1, Math.floor((offsetRaw as number | undefined) ?? 1));
 
+      // `pages` (E7-02, official parity): a PDF page range like "1-5" or "3".
+      // Validated to the official contract (1-based, ascending, <= 20 pages)
+      // BEFORE any file I/O so malformed input fails fast and identically for
+      // every file type. Applicability is checked after the type sniff below.
+      const pagesRaw = input['pages'];
+      if (pagesRaw !== undefined && typeof pagesRaw !== 'string') {
+        return errorResult('Read failed: "pages" must be a string when provided.');
+      }
+      let pageRange: { start: number; end: number } | undefined;
+      if (typeof pagesRaw === 'string') {
+        const m = /^(\d+)(?:-(\d+))?$/.exec(pagesRaw.trim());
+        if (m === null) {
+          return errorResult(
+            `Read failed: "pages" must be a page number or range like "3" or "1-5" (got "${pagesRaw}").`,
+          );
+        }
+        const start = Number(m[1]);
+        const end = m[2] !== undefined ? Number(m[2]) : start;
+        if (start < 1 || end < start) {
+          return errorResult(
+            `Read failed: "pages" must be a 1-based ascending range (got "${pagesRaw}").`,
+          );
+        }
+        if (end - start + 1 > MAX_PDF_PAGES_PER_READ) {
+          return errorResult(
+            `Read failed: "pages" spans ${end - start + 1} pages; maximum ${MAX_PDF_PAGES_PER_READ} pages per request.`,
+          );
+        }
+        pageRange = { start, end };
+      }
+
       const resolved = resolveWithin(ctx.cwd, ctx.additionalDirectories, filePath);
       if (!resolved.ok) {
         return errorResult(`Read failed: ${resolved.reason}`);
@@ -156,6 +203,18 @@ export const readTool: BuiltinTool = {
 
       const buf = await readFile(abs, { signal: ctx.signal });
 
+      const isPdf = buf.length >= 5 && buf.toString('latin1', 0, 5) === '%PDF-';
+
+      // `pages` applicability (behavior-honesty pin, E7-02): the parameter is
+      // PDF-only. On any non-PDF target a pages request is refused explicitly
+      // rather than silently ignored — the model asked for a page slice it
+      // would not be getting.
+      if (pageRange !== undefined && !isPdf) {
+        return errorResult(
+          `Read failed: "pages" only applies to PDF files, and "${abs}" is not a PDF. Retry without "pages".`,
+        );
+      }
+
       // Image files are returned as an image content block (base64), sniffed by
       // magic bytes so a mislabeled extension still renders. offset/limit do not
       // apply to images and are ignored.
@@ -180,7 +239,18 @@ export const readTool: BuiltinTool = {
       // PDF: returned as a base64 document content block. The API's
       // handle-tool-calls docs list `document` among the block types valid
       // inside a tool_result. offset/limit do not apply and are ignored.
-      if (buf.length >= 5 && buf.toString('latin1', 0, 5) === '%PDF-') {
+      //
+      // `pages` on a PDF (behavior-honesty pin, E7-02): the official tool
+      // slices the requested page range out of the document; this SDK ships
+      // no PDF page slicer (whole-document reads only), so a pages request is
+      // refused with an explicit error instead of silently returning the full
+      // document — never pretend an unshipped capability ran (red line).
+      if (isPdf) {
+        if (pageRange !== undefined) {
+          return errorResult(
+            `Read failed: page-range reads are not supported by this SDK — "${abs}" would be returned whole. Retry without "pages" to read the full PDF.`,
+          );
+        }
         ctx.debug(`Read: ${abs} as application/pdf (${buf.length} bytes)`);
         ctx.readFilePaths?.add(abs);
         return {

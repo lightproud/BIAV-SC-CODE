@@ -328,6 +328,90 @@ describe('Read tool', () => {
     expect(blocks[0]!.source.media_type).toBe('application/pdf');
     expect(blocks[0]!.source.data).toBe(bytes.toString('base64'));
   });
+
+  // E7-02: the `pages` param (official parity). Behavior-honesty pins: page
+  // slicing is NOT shipped, so PDF+pages fails explicitly (never silently
+  // returns the whole document) and non-PDF+pages fails as inapplicable.
+  describe('pages parameter (E7-02)', () => {
+    const writePdf = async (): Promise<string> => {
+      const file = path.join(sandbox, 'doc.pdf');
+      await writeFile(file, Buffer.from('%PDF-1.7\n%binary\n', 'latin1'));
+      return file;
+    };
+
+    it('is declared in the input schema (required set unchanged)', () => {
+      const props = readTool.inputSchema.properties ?? {};
+      expect(Object.keys(props).sort()).toEqual([
+        'file_path',
+        'limit',
+        'offset',
+        'pages',
+      ]);
+      expect(readTool.inputSchema.required).toEqual(['file_path']);
+    });
+
+    it('rejects a non-string pages value', async () => {
+      const file = await writePdf();
+      const res = await readTool.execute(
+        { file_path: file, pages: 5 },
+        makeCtx(sandbox),
+      );
+      expect(res.isError).toBe(true);
+      expect(res.content).toContain('"pages" must be a string');
+    });
+
+    it('rejects malformed / descending / zero-based ranges', async () => {
+      const file = await writePdf();
+      for (const pages of ['abc', '1-2-3', '5-3', '0', '0-4', '']) {
+        const res = await readTool.execute(
+          { file_path: file, pages },
+          makeCtx(sandbox),
+        );
+        expect(res.isError, `pages="${pages}"`).toBe(true);
+      }
+    });
+
+    it('rejects a range wider than 20 pages (official cap)', async () => {
+      const file = await writePdf();
+      const res = await readTool.execute(
+        { file_path: file, pages: '1-21' },
+        makeCtx(sandbox),
+      );
+      expect(res.isError).toBe(true);
+      expect(res.content).toContain('maximum 20 pages');
+    });
+
+    it('rejects pages on a non-PDF file with an explicit inapplicability error', async () => {
+      const file = path.join(sandbox, 'plain.txt');
+      await writeFile(file, 'one\ntwo\n');
+      const res = await readTool.execute(
+        { file_path: file, pages: '1-2' },
+        makeCtx(sandbox),
+      );
+      expect(res.isError).toBe(true);
+      expect(res.content).toContain('only applies to PDF files');
+    });
+
+    it('rejects pages on a PDF (slicing not shipped) instead of silently returning the whole document', async () => {
+      const file = await writePdf();
+      const res = await readTool.execute(
+        { file_path: file, pages: '1-5' },
+        makeCtx(sandbox),
+      );
+      expect(res.isError).toBe(true);
+      expect(res.content).toContain('page-range reads are not supported');
+      // The honest recovery path is spelled out.
+      expect(res.content).toContain('Retry without "pages"');
+    });
+
+    it('a PDF read WITHOUT pages still returns the whole document block', async () => {
+      const file = await writePdf();
+      const res = await readTool.execute({ file_path: file }, makeCtx(sandbox));
+      expect(res.isError).toBeFalsy();
+      const blocks = res.content as Array<{ type: string }>;
+      expect(blocks[0]!.type).toBe('document');
+    });
+  });
 });
 
 // ---------------------------------------------------------------------------

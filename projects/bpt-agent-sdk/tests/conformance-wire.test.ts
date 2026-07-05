@@ -150,15 +150,16 @@ const EXPECTED_SURFACE = new Set(['toolNames', 'toolCount']);
  *                         adaptive; explicit maxThinkingTokens keeps our
  *                         enabled/budget form)
  *   toolCacheBreakpoints- official 0 on tools; ours 1 (cache-strategy divergence)
- *   Agent/Bash/Read     - our tool input_schemas lag the official current params
- *                         (Agent: isolation/model + required set; Bash:
- *                         dangerouslyDisableSandbox; Read: pages)
+ *   Agent:params        - E7-02 landed: Bash (dangerouslyDisableSandbox) and
+ *                         Read (pages) cleared, Agent official params + required
+ *                         set aligned; the residual param delta is our BPT-only
+ *                         `fork` extension (worker-fork preset depends on it)
  *   cache-off system*   - promptCaching:false is a bpt-only option the official
  *                         arm ignores, so its reference stays cache-on: the
  *                         system-segmentation delta there is an artifact of the
  *                         asymmetric option, documented not chased.
  */
-const TOOL_GAPS = ['Agent:params+required', 'Bash:params', 'Read:params'];
+const TOOL_GAPS = ['Agent:params'];
 // systemSegments (A1): our cache breakpoint sits on the stable FIRST system
 // block; official's sits on the LAST - a cache-boundary PLACEMENT gap (E7-03
 // territory). Present on every scenario alongside thinking + toolCacheBreakpoints.
