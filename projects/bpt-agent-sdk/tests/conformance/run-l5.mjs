@@ -60,11 +60,11 @@
  * the streaming turn-release barrier are loud-fail settle barriers only.
  */
 
-import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { mkdirSync, mkdtempSync, readFileSync, rmSync, statSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { L5_TASKS } from './l5-tasks.mjs';
+import { L5_TASKS, L5_KNOWN_DIFFERENCES } from './l5-tasks.mjs';
 import { startEmulator, textReply, assertContentBlind } from './emulator.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
@@ -310,16 +310,49 @@ function smokeEnv(emulatorUrl) {
 // --- Single run -------------------------------------------------------------------
 
 /**
+ * S2 stray-artifact sweep (first-round dissection, KD-L5-01): the official
+ * arm sometimes anchors task-artifact writes at the tmpdir ROOT
+ * (/tmp/<name>) instead of the sandbox cwd. A leftover from repeat N then
+ * steers repeat N+1 into verifying at the wrong location - the
+ * read-before-write gate plus a pre-existing correct file removes the
+ * ENOENT self-rescue signal a clean tmpdir provides. Sweeping the
+ * task-declared basenames before AND after every run restores per-run
+ * independence; only exact, task-owned basenames are ever touched, and
+ * pass semantics stay byte-identical (checks still read only the sandbox).
+ */
+function sweepStrays(task) {
+  const removed = [];
+  for (const name of task.strays ?? []) {
+    const p = join(tmpdir(), name);
+    try {
+      if (statSync(p, { throwIfNoEntry: false })?.isFile()) {
+        rmSync(p, { force: true });
+        removed.push(p);
+      }
+    } catch {
+      // A sweep that cannot stat/remove must never fail the run - the worst
+      // case is the pre-fix behavior (a stray survives), which the post-run
+      // row surfaces via strayArtifacts on the NEXT run's pre-sweep.
+    }
+  }
+  return removed;
+}
+
+/**
  * One (arm, task, repeat) run in a throwaway mkdtemp cwd. Returns metrics +
  * the raw PUBLIC message array (for L6 retention; the caller drops it before
  * the row enters the report). The pass decision runs BEFORE cleanup because
  * fs-decidable checks read the sandbox.
  */
 async function runOne(arm, task) {
+  const preStrays = sweepStrays(task);
+  if (preStrays.length > 0)
+    console.warn(`run-l5: pre-run sweep removed stray artifact(s): ${preStrays.join(', ')}`);
   const dir = mkdtempSync(join(tmpdir(), `l5-${SMOKE ? 'smoke-' : ''}${arm}-${task.id}-`));
   if (typeof task.fixture === 'function') task.fixture(dir);
 
   const messages = [];
+  const resultMsgs = [];
   const sync = makeTurnSync(SMOKE ? 60_000 : 240_000);
   const ac = new AbortController();
   // Loud-fail run barrier only - never asserted on (deterministic-test
@@ -375,6 +408,7 @@ async function runOne(arm, task) {
         if (t.length > 0) finalText = t;
       } else if (msg.type === 'result') {
         lastResult = msg;
+        resultMsgs.push(msg);
       }
     }
     // Code tasks execute the produced module - must run while the sandbox
@@ -411,7 +445,29 @@ async function runOne(arm, task) {
     rmSync(dir, { recursive: true, force: true });
   }
 
-  const usage = lastResult?.usage ?? {};
+  // Post-run sweep doubles as an observation: anything removed here is
+  // positive evidence THIS run wrote a task artifact at the tmpdir root
+  // (the KD-L5-01 anchoring behavior), surfaced on the row instead of
+  // silently poisoning the next repeat.
+  const strayArtifacts = sweepStrays(task);
+  if (strayArtifacts.length > 0)
+    console.warn(`run-l5: [${arm}] ${task.id} left stray artifact(s) at tmpdir root (KD-L5-01): ${strayArtifacts.join(', ')}`);
+
+  // Multi-result aggregation (M1 metric-artifact fix, first-round
+  // dissection): BOTH engines emit one result per streamed user turn, so
+  // lastResult-only metrics under-reported official multi-turn runs
+  // (longconv showed turns=1 - misread as early termination). The two
+  // engines' per-result cumulative semantics DIVERGE (KD-L5-04, verified
+  // from run 28736460533 L6 traces + query.ts finding #33):
+  //   official: num_turns/usage PER-RESULT (sum), total_cost_usd and
+  //             duration_api_ms session-cumulative (take last);
+  //   bpt:      num_turns/usage/total_cost_usd session-cumulative on every
+  //             result (take last), duration_api_ms per-run (sum).
+  // Single-result runs are unchanged by construction either way.
+  const sumOf = (get) => resultMsgs.reduce((s, r) => s + (get(r) ?? 0), 0);
+  const lastOf = (get) => (lastResult ? (get(lastResult) ?? 0) : 0);
+  const perResultArm = arm === 'official';
+  const usageOf = (k) => (perResultArm ? sumOf((r) => r.usage?.[k]) : lastOf((r) => r.usage?.[k]));
   return {
     arm,
     task: task.id,
@@ -419,15 +475,17 @@ async function runOne(arm, task) {
     passed,
     subtype: lastResult?.subtype ?? 'no-result',
     error,
-    turns: lastResult?.num_turns ?? 0,
-    costUsd: lastResult?.total_cost_usd ?? 0,
-    inputTokens: usage.input_tokens ?? 0,
-    outputTokens: usage.output_tokens ?? 0,
-    cacheCreationTokens: usage.cache_creation_input_tokens ?? 0,
-    cacheReadTokens: usage.cache_read_input_tokens ?? 0,
+    turns: perResultArm ? sumOf((r) => r.num_turns) : lastOf((r) => r.num_turns),
+    results: resultMsgs.length,
+    costUsd: lastOf((r) => r.total_cost_usd),
+    inputTokens: usageOf('input_tokens'),
+    outputTokens: usageOf('output_tokens'),
+    cacheCreationTokens: usageOf('cache_creation_input_tokens'),
+    cacheReadTokens: usageOf('cache_read_input_tokens'),
     wallMs: Date.now() - started,
-    apiMs: lastResult?.duration_api_ms ?? 0,
+    apiMs: perResultArm ? lastOf((r) => r.duration_api_ms) : sumOf((r) => r.duration_api_ms),
     finalTextHead: finalText.slice(0, 160),
+    ...(strayArtifacts.length > 0 ? { strayArtifacts } : {}),
     messages, // dropped by the caller after L6 retention
   };
 }
@@ -626,6 +684,10 @@ const taskSummaries = selected.map((task) => {
     zh: task.zh === true,
     repeats: effRepeat(task),
     estTurns: task.estTurns,
+    // Standing per-task explanations (L5_KNOWN_DIFFERENCES) ride next to the
+    // pass counts so a report reader never mistakes a documented KD for a
+    // fresh regression. Report-only - gate B ignores them.
+    ...(Array.isArray(task.kd) && task.kd.length > 0 ? { kd: task.kd } : {}),
     arms: perArm,
   };
 });
@@ -677,6 +739,7 @@ const report = {
     aborted: budgetAborted,
   },
   aggregate,
+  knownDifferences: L5_KNOWN_DIFFERENCES,
   tasks: taskSummaries,
   runs: rows,
   cache,

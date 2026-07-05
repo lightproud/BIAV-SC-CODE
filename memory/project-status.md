@@ -241,6 +241,13 @@
   修复方案：Fix-1 claude_code preset 默认开 thinking（budget 4096 起步，管线 computeThinking 已就绪；预算值不可知——读官方请求体越
   内容盲边界，登记 KD）/ Fix-2 L5 双臂 maxThinkingTokens 显式同参拆变量；退出标准 chat-03 ≥2/3、code-01 ≥官方−1、乙门禁保 PASS。
   顺手实锤 B②规格：官方 Write 读前写门仅拦已存在文件、新建不拦。
+  **L5 测试用例层加固已落（2026-07-05，解剖挂账三项 + 附带新 KD）**：① S2 污染面封堵——任务库 11 个带档案产物任务加 `strays`
+  声明（任务自有文件名白名单），runner 每 run 前后在 tmpdir 根定点清扫（pre 恢复 ENOENT 自救信号 / post 把「本 run 写歪了」升为
+  行级观测字段 `strayArtifacts`，判分语义零变动）；② M1 度量修正——双臂流式多轮均逐轮发 result，按臂聚合（官方 num_turns/usage
+  逐 result 求和、cost/apiMs 取累计末值；我方全字段累计取末值、apiMs 逐 run 求和）；③ KD 表 `L5_KNOWN_DIFFERENCES` 落任务库并
+  透传报告 per-task 汇总（KD-L5-01 官方 /tmp 锚定 / KD-L5-02 官方注入误判方差 / KD-L5-03 思考不对称）。**附带发现 KD-L5-04**：
+  两引擎 result 累计口径本身分歧（官方 num_turns/usage 逐 result vs 我方 finding #33 全字段会话累计）——drop-in 面引擎对齐候选。
+  `--smoke` 3/3 绿 + 预置散落物清扫实测 + `npx vitest run` 981 全绿。
   （首轮 run 28735894053 因预算护栏冷启动外推误停 2/180，护栏已修 #447）。**一致性验证体系 M1-M4 全部封顶**
 - **完成度（表面等价）**：对官方 SDK **0.3.199 基线**约 **89.5%**（v0.1 基线 68.3% → v0.2+v0.3 补齐后重算）。
   审计矩阵与逐行台账落 `Public-Info-Pool/Resource/repo-engineering/bpt-agent-sdk-completion-audit-20260703.md`
