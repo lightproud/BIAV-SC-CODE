@@ -59,6 +59,8 @@ async function runOurArm(scenario: (typeof SCENARIOS)[number]): Promise<SDKMessa
         cwd,
         maxTurns: 4,
         sessionDir: join(cwd, '.sessions'),
+        // Deterministic Bash output regardless of host bwrap presence.
+        sandbox: false,
         env: {
           PATH: process.env.PATH,
           HOME: process.env.HOME,

@@ -18,6 +18,8 @@ import { mkdtempSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
+import { planShellSpawn } from '../sandbox/backend.js';
+import { detectSandboxEvidence, sandboxFailureHint } from '../sandbox/evidence.js';
 import type {
   BackgroundShell,
   BuiltinTool,
@@ -62,13 +64,17 @@ export function createShellManager(debug: (msg: string) => void): ShellManager {
   return {
     stateDir,
 
-    spawnBackground(shell, command, ctx) {
+    spawnBackground(shell, command, ctx, disableSandbox = false) {
       const id = `bash_${nextId++}`;
+      // Wrap through the sandbox backend (default-on) unless unsandboxed or the
+      // escape hatch is engaged for this launch.
+      const plan = planShellSpawn(shell, command, ctx, disableSandbox);
+      const sandboxCtx = disableSandbox ? undefined : ctx.sandbox;
       let child;
       try {
-        child = spawn(shell, ['-c', command], {
+        child = spawn(plan.command, plan.args, {
           cwd: ctx.cwd,
-          env: ctx.env as NodeJS.ProcessEnv,
+          env: { ...(ctx.env as NodeJS.ProcessEnv), ...plan.envOverlay },
           stdio: ['ignore', 'pipe', 'pipe'],
           detached: true,
         });
@@ -119,6 +125,15 @@ export function createShellManager(debug: (msg: string) => void): ShellManager {
         rec.exitSignal = signal;
         if (rec.status === 'running') {
           rec.status = code === 0 ? 'completed' : 'failed';
+        }
+        // Surface sandbox failure evidence (mirrors foreground): when a
+        // sandboxed background shell fails with a matching stderr signature,
+        // append the retry-path hint so the next BashOutput read shows it.
+        if (rec.status === 'failed' && sandboxCtx !== undefined) {
+          const sig = detectSandboxEvidence(code, rec.stderr, sandboxCtx.allowNetwork);
+          if (sig !== null) {
+            append(rec, 'stderr', '\n' + sandboxFailureHint(sig, sandboxCtx.allowEscape));
+          }
         }
       });
       // Never let a background shell keep the host process alive.

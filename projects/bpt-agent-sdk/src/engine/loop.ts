@@ -619,12 +619,27 @@ export async function* runAgentLoop(
       }
     }
 
+    // v0.6 G-SANDBOX: a Bash call requesting `dangerouslyDisableSandbox` under
+    // an active, escape-allowing sandbox must be gated as its OWN ask (see
+    // gate.check.sandboxEscape). Mandatory mode (allowEscape false) is refused
+    // inside the Bash tool, so it is not flagged here.
+    const sbx = deps.toolContext.sandbox;
+    const sandboxEscape =
+      toolName === 'Bash' &&
+      input['dangerouslyDisableSandbox'] === true &&
+      sbx !== undefined &&
+      sbx.allowEscape;
+
     // 2. Permission gate (hook decision folded in; gate records denials).
     const check = await deps.permissions.check(toolName, input, {
       toolUseID: block.id,
       signal,
       readOnly: isReadOnlyTool(toolName),
       isFileEdit: builtin?.isFileEdit ?? false,
+      sandboxEscape,
+      decisionReason: sandboxEscape
+        ? 'dangerouslyDisableSandbox requested (command will run OUTSIDE the sandbox)'
+        : pre?.decisionReason,
       hook:
         pre !== undefined &&
         (pre.decision !== undefined || pre.updatedInput !== undefined)
@@ -634,7 +649,6 @@ export async function* runAgentLoop(
               updatedInput: pre.updatedInput,
             }
           : undefined,
-      decisionReason: pre?.decisionReason,
     });
     if (check.decision === 'deny') {
       // Surface a permission_denied observability message (task #16) alongside

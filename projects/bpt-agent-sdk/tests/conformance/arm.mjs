@@ -206,6 +206,11 @@ export async function runScenario(armKind, scenario, { timeoutMs = 120_000 } = {
         cwd,
         maxTurns: scenario.maxTurns ?? 4,
         env,
+        // Conformance must be deterministic regardless of whether the CI image
+        // has bubblewrap: pin the bash sandbox OFF so the Bash tool bytes and
+        // tool_result outputs do not depend on host bwrap presence. (A scenario
+        // may re-enable it via options/buildOptions to test sandbox behavior.)
+        sandbox: false,
         // Session persistence is engine-internal state, not stream grammar;
         // keep this SDK's store inside the throwaway cwd.
         ...(armKind === 'bpt' ? { sessionDir: join(cwd, '.sessions') } : {}),

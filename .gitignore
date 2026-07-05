@@ -83,3 +83,6 @@ projects/news/data/media/
 mutants/
 .mutmut-cache
 mutmut-stats.json
+
+# Node deps (root-level tooling caches; subprojects have their own)
+node_modules/

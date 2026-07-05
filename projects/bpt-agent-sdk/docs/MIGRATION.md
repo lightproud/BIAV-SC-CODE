@@ -80,8 +80,15 @@ gap is structural, not a backlog):
 4. **Bash state** persists `cd` + exported vars via state-file replay, not a
    long-lived shell: functions/aliases/unexported vars reset per call.
 5. **No filesystem settings**: `settingSources` loads only a project
-   `.mcp.json`; CLAUDE.md / skills / plugins / sandbox are CLI-coupled and
-   deliberately absent. Everything is configured through `Options`.
+   `.mcp.json`; CLAUDE.md / skills / plugins are CLI-coupled and deliberately
+   absent. Everything is configured through `Options`.
+5b. **Bash sandbox** (v0.6) is ON by default when a backend resolves —
+   bubblewrap on Linux. On **Windows (BPT Desktop) and macOS no backend
+   resolves**, so Bash runs unsandboxed, no sandbox guidance is emitted, and no
+   isolation is claimed — the same honesty posture as official Claude Code on
+   Windows. Disable explicitly with `sandbox: false`; tune via the
+   `SandboxOptions` object (`allowNetwork`, `writablePaths`, `allowEscape`, a
+   custom `backend`).
 6. **Sessions** live in this SDK's own JSONL store (or your `sessionStore`
    backend); official CLI session files are not readable.
 7. **`sse` MCP transport** (legacy) is unsupported; stdio / http / sdk are.

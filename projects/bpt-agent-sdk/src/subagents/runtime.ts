@@ -37,6 +37,7 @@ import type {
   NonNullableUsage,
   SDKMessage,
   SDKTaskNotificationMessage,
+  SandboxContext,
   SDKTaskProgressMessage,
   SDKTaskStartedMessage,
   SDKTaskUpdatedMessage,
@@ -126,6 +127,8 @@ export type SubagentRuntimeOptions = {
   emitObservability?: (msg: SDKMessage) => void;
   /** v0.5 query-wide shell session (shared with children's ToolContext). */
   shells?: ShellManager;
+  /** v0.6 sandbox context (shared with children's ToolContext). */
+  sandbox?: SandboxContext;
 };
 
 /** task_updated.result carries a bounded preview, not the full child text
@@ -783,6 +786,8 @@ export function createSubagentRuntime(
         // One shell session per query: children see the same background
         // shells and persistent cwd/env as the root loop.
         shells: opts.shells,
+        // Children inherit the same sandbox as the root loop.
+        sandbox: opts.sandbox,
       };
       const childDeps: EngineDeps = {
         transport,

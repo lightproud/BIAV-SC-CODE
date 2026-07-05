@@ -9,7 +9,10 @@
 
 import { spawn } from 'node:child_process';
 import { AbortError } from '../errors.js';
-import { BASH_DESCRIPTION } from './descriptions.js';
+import { BASH_DESCRIPTION, buildBashSandboxNote } from './descriptions.js';
+import { planShellSpawn } from '../sandbox/backend.js';
+import { detectSandboxEvidence, sandboxFailureHint } from '../sandbox/evidence.js';
+import type { SandboxContext } from '../types.js';
 import type {
   BuiltinTool,
   ToolContext,
@@ -67,15 +70,19 @@ function runShell(
   command: string,
   ctx: ToolContext,
   timeoutMs: number,
+  disableSandbox: boolean,
 ): Promise<RunOutcome> {
   return new Promise((resolve) => {
-    // detached:true puts the shell in its own process group (pgid == pid) so
-    // termination can signal the WHOLE tree (shell + pipeline/background
-    // descendants), not just the direct shell. Without this, killing the
-    // shell orphans its children and leaves them running.
-    const child = spawn(shell, ['-c', command], {
+    // Wrap through the sandbox backend (default-on) unless unsandboxed or the
+    // escape hatch is engaged for this call. The wrapped argv still spawns with
+    // detached:true, so the process-group kill semantics below are unchanged.
+    const plan = planShellSpawn(shell, command, ctx, disableSandbox);
+    // detached:true puts the shell (or bwrap, which becomes the group leader)
+    // in its own process group so termination can signal the WHOLE tree, not
+    // just the direct child. --unshare-pid + SIGKILL escalation still reap it.
+    const child = spawn(plan.command, plan.args, {
       cwd: ctx.cwd,
-      env: ctx.env as NodeJS.ProcessEnv,
+      env: { ...(ctx.env as NodeJS.ProcessEnv), ...plan.envOverlay },
       stdio: ['ignore', 'pipe', 'pipe'],
       detached: true,
     });
@@ -243,37 +250,63 @@ function withPersistentState(command: string, stateDir: string): string {
   ].join('\n');
 }
 
-export const bashTool: BuiltinTool = {
-  name: 'Bash',
-  description: BASH_DESCRIPTION,
-  inputSchema: {
-    type: 'object',
-    properties: {
-      command: {
-        type: 'string',
-        description: 'The shell command to execute.',
-      },
-      timeout: {
-        type: 'number',
-        description: `Timeout in milliseconds (default ${DEFAULT_TIMEOUT_MS}, max ${MAX_TIMEOUT_MS}).`,
-      },
-      description: {
-        type: 'string',
-        description:
-          'Short human-readable description of what the command does.',
-      },
-      run_in_background: {
-        type: 'boolean',
-        description:
-          'Run the command in the background and return a shell id ' +
-          'immediately (read output with BashOutput, stop with KillShell).',
-      },
+/**
+ * Build the Bash tool, gated on the active sandbox (G-SANDBOX):
+ *   - description: BASH_DESCRIPTION alone when unsandboxed; + the faithful
+ *     sandbox note (default/mandatory mode) when a sandbox is active.
+ *   - schema: the `dangerouslyDisableSandbox` param is added ONLY when the
+ *     sandbox is active AND the escape hatch is allowed — the red line "never
+ *     describe a capability that isn't active" applies to the schema too.
+ * `createBashTool()` with no argument returns the byte-identical unsandboxed
+ * tool (locks tests that import `bashTool` directly).
+ */
+export function createBashTool(sandbox?: SandboxContext): BuiltinTool {
+  const active = sandbox !== undefined;
+  const mode = sandbox?.allowEscape === false ? 'mandatory' : 'default';
+  const description = active
+    ? BASH_DESCRIPTION + '\n\n' + buildBashSandboxNote(mode, sandbox.allowNetwork)
+    : BASH_DESCRIPTION;
+  const properties: Record<string, unknown> = {
+    command: {
+      type: 'string',
+      description: 'The shell command to execute.',
     },
-    required: ['command'],
-  },
-  readOnly: false,
+    timeout: {
+      type: 'number',
+      description: `Timeout in milliseconds (default ${DEFAULT_TIMEOUT_MS}, max ${MAX_TIMEOUT_MS}).`,
+    },
+    description: {
+      type: 'string',
+      description: 'Short human-readable description of what the command does.',
+    },
+    run_in_background: {
+      type: 'boolean',
+      description:
+        'Run the command in the background and return a shell id ' +
+        'immediately (read output with BashOutput, stop with KillShell).',
+    },
+  };
+  if (active && sandbox.allowEscape) {
+    properties['dangerouslyDisableSandbox'] = {
+      type: 'boolean',
+      description:
+        'Run this command OUTSIDE the sandbox. This will prompt the user for ' +
+        'permission.',
+    };
+  }
+  return {
+    name: 'Bash',
+    description,
+    inputSchema: { type: 'object', properties, required: ['command'] },
+    readOnly: false,
+    execute,
+  };
+}
 
-  async execute(
+/** The default (unsandboxed) Bash tool — byte-identical to pre-sandbox. */
+export const bashTool: BuiltinTool = createBashTool();
+
+async function execute(
     input: Record<string, unknown>,
     ctx: ToolContext,
   ): Promise<ToolResultPayload> {
@@ -285,6 +318,29 @@ export const bashTool: BuiltinTool = {
       };
     }
     if (ctx.signal.aborted) throw new AbortError();
+
+    // v0.6 sandbox escape hatch. By the time execute() runs, the permission
+    // gate has already routed a `dangerouslyDisableSandbox` Bash call to an ask
+    // (Bash is non-read-only, so it never auto-allows except under
+    // bypassPermissions or a matching allow rule) and it was authorized.
+    const escapeRequested = input['dangerouslyDisableSandbox'] === true;
+    if (escapeRequested && ctx.sandbox !== undefined && !ctx.sandbox.allowEscape) {
+      // Mandatory mode: the parameter is disabled by policy. Refuse the escape
+      // (a policy refusal) rather than silently running outside the sandbox.
+      return {
+        content:
+          'Bash: all commands must run in sandbox mode — the ' +
+          '`dangerouslyDisableSandbox` parameter is disabled by policy.',
+        isError: true,
+      };
+    }
+    // Only honor the escape when a sandbox is active AND the escape is allowed;
+    // a stale flag on an unsandboxed host is ignored (not an error).
+    const disableSandbox =
+      escapeRequested && ctx.sandbox !== undefined && ctx.sandbox.allowEscape;
+    if (escapeRequested && ctx.sandbox === undefined) {
+      ctx.debug('Bash: dangerouslyDisableSandbox ignored (no sandbox active on this context)');
+    }
 
     const rawTimeout = input['timeout'];
     const timeoutMs =
@@ -306,9 +362,9 @@ export const bashTool: BuiltinTool = {
           isError: true,
         };
       }
-      let launched = ctx.shells.spawnBackground('bash', command, ctx);
+      let launched = ctx.shells.spawnBackground('bash', command, ctx, disableSandbox);
       if ('error' in launched) {
-        launched = ctx.shells.spawnBackground('sh', command, ctx);
+        launched = ctx.shells.spawnBackground('sh', command, ctx, disableSandbox);
       }
       if ('error' in launched) {
         return {
@@ -329,11 +385,11 @@ export const bashTool: BuiltinTool = {
         ? withPersistentState(command, ctx.shells.stateDir)
         : command;
 
-    let outcome = await runShell('bash', effective, ctx, timeoutMs);
+    let outcome = await runShell('bash', effective, ctx, timeoutMs, disableSandbox);
     if (outcome.kind === 'spawn-error' && outcome.error.code === 'ENOENT') {
       if (ctx.signal.aborted) throw new AbortError();
       ctx.debug('Bash: bash not found, falling back to sh');
-      outcome = await runShell('sh', effective, ctx, timeoutMs);
+      outcome = await runShell('sh', effective, ctx, timeoutMs, disableSandbox);
     }
     if (outcome.kind === 'spawn-error') {
       // Spawn impossibility is the only legitimate throw for this tool.
@@ -363,9 +419,17 @@ export const bashTool: BuiltinTool = {
       outcome.code !== null
         ? `Command failed with exit code ${outcome.code}`
         : `Command terminated by signal ${outcome.signal ?? 'unknown'}`;
+    // When the command ran sandboxed and the failure matches a sandbox
+    // signature, surface the evidence + retry path (mirrors the official
+    // failure-with-evidence guidance). Timeouts are handled above and are not
+    // sandbox evidence.
+    let hint = '';
+    if (ctx.sandbox !== undefined && !disableSandbox) {
+      const sig = detectSandboxEvidence(outcome.code, outcome.stderr, ctx.sandbox.allowNetwork);
+      if (sig !== null) hint = '\n\n' + sandboxFailureHint(sig, ctx.sandbox.allowEscape);
+    }
     return {
-      content: failure + (streams.length > 0 ? `\n${streams}` : ''),
+      content: failure + (streams.length > 0 ? `\n${streams}` : '') + hint,
       isError: true,
     };
-  },
-};
+}

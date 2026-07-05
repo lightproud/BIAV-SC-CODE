@@ -25,6 +25,7 @@ import type {
   PermissionMode,
   PermissionUpdate,
   RawMessageStreamEvent,
+  SandboxContext,
   SDKMessage,
   SDKPermissionDenial,
   TextBlockParam,
@@ -126,6 +127,10 @@ export type ToolContext = {
    *  cwd/env). Wired per query; absent -> Bash is stateless and
    *  BashOutput/KillShell report unavailability. */
   shells?: ShellManager;
+  /** v0.6 sandbox state (G-SANDBOX). Present -> Bash wraps commands with the
+   *  resolved backend by default; absent -> Bash runs unsandboxed (no backend
+   *  on this platform, or explicitly disabled). */
+  sandbox?: SandboxContext;
 };
 
 // v0.2 subagent spawn contract (subagent runtime <-> Agent tool).
@@ -209,11 +214,14 @@ export interface ShellManager {
   /** Directory holding the persistent foreground cwd/env snapshot ('' when
    *  no tmp dir was available — persistence then degrades to stateless). */
   readonly stateDir: string;
-  /** Spawn a detached background shell; returns its bash id immediately. */
+  /** Spawn a detached background shell; returns its bash id immediately.
+   *  `disableSandbox` engages the escape hatch (skip the sandbox wrap) for
+   *  this launch; ignored when no sandbox is active on the context. */
   spawnBackground(
     shell: string,
     command: string,
-    ctx: Pick<ToolContext, 'cwd' | 'env'>,
+    ctx: Pick<ToolContext, 'cwd' | 'env' | 'sandbox'>,
+    disableSandbox?: boolean,
   ): { id: string } | { error: string };
   get(id: string): BackgroundShell | undefined;
   /** Kill one background shell (SIGTERM, then SIGKILL after a grace). */
@@ -272,6 +280,9 @@ export interface PermissionGate {
       isFileEdit: boolean;
       hook?: GateHookDecision;
       decisionReason?: string;
+      /** v0.6 G-SANDBOX: this call requested `dangerouslyDisableSandbox`; the
+       *  escape must route to an ask (never auto-allow) except bypassPermissions. */
+      sandboxEscape?: boolean;
     },
   ): Promise<PermissionCheckResult>;
   setMode(mode: PermissionMode): void;

@@ -264,7 +264,8 @@ export type PermissionMode =
   | 'acceptEdits'
   /** Bypass permission checks entirely. */
   | 'bypassPermissions'
-  /** Planning mode: only read-only tools are permitted. */
+  /** Planning mode: read-only tools are auto-allowed; writes ROUTE to
+   *  canUseTool (an ask) rather than being hard-denied. */
   | 'plan'
   /** Never prompt: deny anything that is not pre-approved by rules. */
   | 'dontAsk'
@@ -724,6 +725,73 @@ export type ProviderConfig = {
   promptCaching?: boolean;
 };
 
+/**
+ * Bash sandbox configuration (BPT-shaped object form of Options.sandbox).
+ * Restriction scope v1: write-denial outside allowed dirs + network isolation
+ * (binary) + sandbox-writable $TMPDIR — exactly what the archived guidance
+ * describes, nothing invented.
+ */
+export type SandboxOptions = {
+  /** Default true when a backend resolves. */
+  enabled?: boolean;
+  /** Sandboxed commands get network access (default false: `--unshare-net`). */
+  allowNetwork?: boolean;
+  /**
+   * Extra absolute directories writable inside the sandbox. cwd,
+   * additionalDirectories, the shell state dir and the sandbox tmp dir are
+   * always writable automatically.
+   */
+  writablePaths?: string[];
+  /**
+   * false = mandatory mode: the Bash `dangerouslyDisableSandbox` parameter is
+   * disabled by policy (removed from the schema; calls refused).
+   */
+  allowEscape?: boolean;
+  /**
+   * BPT extension: inject a custom sandbox backend (tests; a host-provided
+   * Seatbelt implementation). When set it is used verbatim, no probing.
+   */
+  backend?: SandboxBackend;
+};
+
+/** One shell invocation a sandbox backend wraps (foreground and background). */
+export type SandboxSpawnRequest = {
+  shell: string;
+  command: string;
+  cwd: string;
+  writablePaths: string[];
+  tmpDir: string;
+  allowNetwork: boolean;
+};
+
+/** The transformed spawn a backend returns: program + argv tail (+ env overlay). */
+export type SandboxSpawnPlan = {
+  command: string;
+  args: string[];
+  env?: Record<string, string>;
+};
+
+/** A pluggable sandbox implementation: pure argv transformation, no I/O. */
+export interface SandboxBackend {
+  readonly name: string;
+  wrap(req: SandboxSpawnRequest): SandboxSpawnPlan;
+}
+
+/**
+ * Resolved per-query sandbox state (threaded through ToolContext). Absent on a
+ * context means Bash runs unsandboxed — honestly, with no sandbox prompts.
+ */
+export type SandboxContext = {
+  backend: SandboxBackend;
+  /** Per-query sandbox-writable temp dir ($TMPDIR target). */
+  tmpDir: string;
+  /** cwd + additionalDirectories + writablePaths + shell state dir + tmpDir. */
+  writablePaths: string[];
+  allowNetwork: boolean;
+  /** false = mandatory mode: dangerouslyDisableSandbox is disabled by policy. */
+  allowEscape: boolean;
+};
+
 export type ThinkingConfigParam =
   | { type: 'adaptive' }
   | { type: 'enabled'; budgetTokens?: number; budget_tokens?: number; budget?: number }
@@ -789,6 +857,17 @@ export type Options = {
   persistSession?: boolean;
   /** BPT extension: direct Messages API connection settings. */
   provider?: ProviderConfig;
+  /**
+   * Bash sandbox (G-SANDBOX). Default ON when a backend resolves (bubblewrap
+   * on Linux); on platforms with no backend (win32/darwin) Bash runs
+   * unsandboxed and no sandbox guidance is emitted — the SDK never pretends
+   * isolation it does not have (official Claude Code ships no sandbox on
+   * Windows either). `false` disables explicitly. The object form is
+   * BPT-shaped (documented in docs/COMPAT.md); the per-call Bash escape input
+   * follows the official name `dangerouslyDisableSandbox` and routes through
+   * the permission gate as an ask.
+   */
+  sandbox?: boolean | SandboxOptions;
   /** Session id (UUID) to resume. */
   resume?: string;
   /** Use a specific session id for this session. */

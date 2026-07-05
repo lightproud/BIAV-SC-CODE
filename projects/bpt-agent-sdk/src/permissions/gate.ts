@@ -121,6 +121,15 @@ export class DefaultPermissionGate implements PermissionGate {
       isFileEdit: boolean;
       hook?: GateHookDecision;
       decisionReason?: string;
+      /**
+       * v0.6 G-SANDBOX: this call requested `dangerouslyDisableSandbox` (run
+       * OUTSIDE the sandbox). The escape is an INDEPENDENT permission dimension:
+       * it must ALWAYS route to an ask (never auto-allow) except under
+       * bypassPermissions — a command-level allow rule / hook-allow written to
+       * pre-approve the command IN the sandbox must not silently authorize
+       * escaping it. With no canUseTool handler (or dontAsk) it fails closed.
+       */
+      sandboxEscape?: boolean;
     },
   ): Promise<PermissionCheckResult> {
     const { toolUseID, signal, readOnly, isFileEdit, hook } = opts;
@@ -170,8 +179,16 @@ export class DefaultPermissionGate implements PermissionGate {
     // acceptEdits / default-readOnly / auto) does - instead of the blanket
     // step-6 "no canUseTool" deny firing in EVERY mode (including bypass).
     // hook-ask and session ask rules still hard-route regardless of canUseTool.
+    // A sandbox-escape request forces the prompt in every mode except
+    // bypassPermissions (the total-bypass contract). This is placed BEFORE the
+    // hook-allow short-circuit and the mode/allow-rule auto-allows so none of
+    // them can wave the escape through: the switch to run outside the sandbox
+    // is authorized on its OWN, not piggybacked on a command-level approval.
+    const escapeForcesPrompt =
+      opts.sandboxEscape === true && this.mode !== 'bypassPermissions';
     let routeToPrompt =
       hookAsk ||
+      escapeForcesPrompt ||
       // ask routes toward prompting, so a Bash chain routes if ANY sub-command
       // matches the ask specifier ('any').
       this.sessionAskRules.some((r) => ruleMatches(r, toolName, effectiveInput, 'any')) ||
