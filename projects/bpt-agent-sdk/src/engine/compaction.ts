@@ -67,6 +67,11 @@ const RECAP_CHAR_CAP = 4000;
 const RECAP_LINE_CHARS = 200;
 /** Chars of tool-call args kept per recap line. */
 const RECAP_ARGS_CHARS = 120;
+/**
+ * Default byte budget (chars) for a single string tool_result in the pre-tier.
+ * Mirrors RECAP_CHAR_CAP's scale: content beyond this is head/tail pointer-ized.
+ */
+const PRE_TIER_DEFAULT_MAX_TOOL_RESULT_CHARS = 4000;
 
 const SUMMARY_USER_PROMPT =
   'Please summarize our conversation so far, preserving key decisions, facts, ' +
@@ -132,6 +137,9 @@ export function buildCompactionConfig(
     customInstructions: opt?.customInstructions,
     contextWindowTokens: opt?.contextWindowTokens,
     model: opt?.model,
+    preTier: opt?.preTier ?? true,
+    preTierMaxToolResultChars:
+      opt?.preTierMaxToolResultChars ?? PRE_TIER_DEFAULT_MAX_TOOL_RESULT_CHARS,
   };
 }
 
@@ -254,6 +262,109 @@ export function partitionForCompaction(
   // summarized prefix and stops per-iteration churn / boundary spam.
   if (estimateMessagesTokens(prefix) < minFoldTokens) return null;
   return { prefix, suffix };
+}
+
+// ---------------------------------------------------------------------------
+// Pre-tier (G1): deterministic byte-shedding before the summarization fold
+// ---------------------------------------------------------------------------
+
+/**
+ * Cheap, deterministic PRE-TIER over the folded prefix: shed tool_result bulk
+ * BEFORE the (expensive) summarization step so fewer tokens reach the
+ * summarizer (foldViaApi) / deterministic recap. Two transforms, applied per
+ * STRING tool_result in prefix order:
+ *   1. DEDUPE — a tool_result whose exact content string already appeared
+ *      earlier is replaced with a `[…duplicate tool_result, N chars elided…]`
+ *      pointer (only when that nets savings, so tiny repeats like "ok" are not
+ *      inflated). Dedupe keys on the FULL original content, before truncation.
+ *   2. TRUNCATE — a string longer than the budget is pointer-ized to head+tail
+ *      with a `[…N chars elided…]` marker in the middle (only when it nets
+ *      savings). Codepoint-safe so a head/tail boundary never splits a
+ *      surrogate pair (important for the CJK workload).
+ *
+ * Guarantees: pure (never mutates the input), preserves message ordering and
+ * tool_use<->tool_result pairing (tool_use_id / is_error / cache_control kept,
+ * nothing removed or reordered), and NEVER touches user/assistant text or
+ * non-tool_result blocks. Array-form tool_result content (image/document) is
+ * left as-is (out of scope). Returns the same reference when nothing changes.
+ */
+export function preTierPrefix(
+  prefix: APIMessageParam[],
+  cfg: Pick<CompactionConfig, 'preTier' | 'preTierMaxToolResultChars'>,
+): APIMessageParam[] {
+  if (!cfg.preTier) return prefix;
+  const budget = cfg.preTierMaxToolResultChars;
+  const seen = new Set<string>();
+  let anyChanged = false;
+
+  const out = prefix.map((msg) => {
+    // Only messages carrying a string tool_result block are candidates. Every
+    // other message (string content, genuine prompt, assistant text/tool_use)
+    // passes through untouched by reference.
+    if (typeof msg.content === 'string') return msg;
+    const hasStringToolResult = msg.content.some(
+      (b) => b.type === 'tool_result' && typeof b.content === 'string',
+    );
+    if (!hasStringToolResult) return msg;
+
+    let msgChanged = false;
+    const blocks = msg.content.map((block) => {
+      if (block.type !== 'tool_result' || typeof block.content !== 'string') {
+        return block;
+      }
+      const original = block.content;
+      const shed = shedToolResultContent(original, budget, seen);
+      if (shed === original) return block;
+      msgChanged = true;
+      // Rebuild the tool_result preserving pairing + flags; only content changes.
+      const rebuilt: Extract<ContentBlockParam, { type: 'tool_result' }> = {
+        type: 'tool_result',
+        tool_use_id: block.tool_use_id,
+        content: shed,
+      };
+      if (block.is_error !== undefined) rebuilt.is_error = block.is_error;
+      if (block.cache_control !== undefined) rebuilt.cache_control = block.cache_control;
+      return rebuilt;
+    });
+    if (!msgChanged) return msg;
+    anyChanged = true;
+    return { role: msg.role, content: blocks };
+  });
+
+  return anyChanged ? out : prefix;
+}
+
+/**
+ * Shed one string tool_result: dedupe against `seen` first (keying on the full
+ * original), then truncate. Returns the original string when neither transform
+ * nets savings (so callers can detect "unchanged" by reference equality).
+ */
+function shedToolResultContent(
+  content: string,
+  budget: number,
+  seen: Set<string>,
+): string {
+  // 1. DEDUPE — identical to an earlier tool_result seen in prefix order.
+  if (seen.has(content)) {
+    const marker = `[…duplicate tool_result, ${content.length} chars elided…]`;
+    // Net-savings guard: never inflate a tiny repeat.
+    return marker.length < content.length ? marker : content;
+  }
+  seen.add(content);
+
+  // 2. TRUNCATE — head+tail pointer-ization for oversized content.
+  if (budget <= 0) return content;
+  const chars = Array.from(content); // codepoint array: no split surrogate pairs
+  if (chars.length <= budget) return content;
+  const headLen = Math.ceil(budget / 2);
+  const tailLen = budget - headLen;
+  const elided = chars.length - headLen - tailLen;
+  const marker = `[…${elided} chars elided…]`;
+  // Net-savings guard: skip when the marker would not shrink the content.
+  if (marker.length >= elided) return content;
+  const head = chars.slice(0, headLen).join('');
+  const tail = tailLen > 0 ? chars.slice(chars.length - tailLen).join('') : '';
+  return head + marker + tail;
 }
 
 // ---------------------------------------------------------------------------
@@ -471,9 +582,16 @@ async function* performCompaction(
     return; // no boundary, no mutation.
   }
 
+  // Pre-tier (G1): shed tool_result bulk from the prefix BEFORE summarizing so
+  // fewer tokens reach the fold. shedPrefix has the SAME length as part.prefix
+  // (only tool_result CONTENT changes), so the boundary/count math below is
+  // unchanged. The prefix is discarded and replaced by `synthetic` anyway, so
+  // this only shrinks what the summarizer / recap SEE, never what persists.
+  const shedPrefix = preTierPrefix(part.prefix, cfg);
+
   const synthetic = cfg.useApiSummary
-    ? await foldViaApi(part.prefix, deps, config, effectiveInstructions, signal, onSummaryCall)
-    : foldDeterministic(part.prefix, effectiveInstructions);
+    ? await foldViaApi(shedPrefix, deps, config, effectiveInstructions, signal, onSummaryCall)
+    : foldDeterministic(shedPrefix, effectiveInstructions);
 
   // In-place front replacement keeps the query layer's reference valid.
   view.messages.splice(0, part.prefix.length, ...synthetic);

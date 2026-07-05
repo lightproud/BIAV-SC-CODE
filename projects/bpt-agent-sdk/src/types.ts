@@ -1374,6 +1374,22 @@ export type CompactionOptions = {
   customInstructions?: string;
   /** Override the model context window (e.g. for a 1M-context beta). */
   contextWindowTokens?: number;
+  /**
+   * Run a cheap deterministic PRE-TIER over the folded prefix BEFORE the
+   * summarization step (G1): de-duplicate repeated identical tool_result blocks
+   * and pointer-ize oversized tool_result bulk, so fewer tokens reach the
+   * summarizer (foldViaApi) / deterministic recap. Only tool_result bulk is
+   * shed — user/assistant text is never touched, and message ordering /
+   * tool_use<->tool_result pairing are preserved. Default true (opt-out with false).
+   */
+  preTier?: boolean;
+  /**
+   * Byte budget (chars) for a single string tool_result in the pre-tier: content
+   * longer than this is truncated to head+tail with a `[…N chars elided…]`
+   * marker in the middle. Default 4000. Set 0 to disable truncation (dedupe of
+   * identical results still runs).
+   */
+  preTierMaxToolResultChars?: number;
 };
 
 /** The tool call a defer paused on (SDKResultMessage.deferred_tool_use). */

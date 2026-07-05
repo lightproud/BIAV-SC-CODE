@@ -347,6 +347,12 @@ export type CompactionConfig = {
   contextWindowTokens?: number;
   /** Model for the summarization call; absent -> the session model. */
   model?: string;
+  /** Run the deterministic pre-tier (dedupe + truncate tool_result bulk) before
+   *  the summarization fold. Default true. */
+  preTier: boolean;
+  /** Byte budget (chars) for a single string tool_result in the pre-tier; 0
+   *  disables truncation (dedupe still runs). Default 4000. */
+  preTierMaxToolResultChars: number;
 };
 
 export type EngineConfig = {
