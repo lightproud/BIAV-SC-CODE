@@ -282,6 +282,83 @@ describe('applyCacheControl', () => {
     expect(out.model).toBe('claude-test-1');
     expect(out.max_tokens).toBe(1024);
   });
+
+  // cacheTtl (BPT-EXTENSION): the marker on every breakpoint carries the chosen
+  // lifetime. Omitted / '5m' must stay byte-identical to the pre-cacheTtl
+  // default so the wire ratchet is unaffected; '1h' stamps ttl on all of them.
+  const tools: APIToolDefinition[] = [
+    { name: 't1', input_schema: { type: 'object' } },
+    { name: 't2', input_schema: { type: 'object' } },
+  ];
+  const dualSystem: TextBlockParam[] = [
+    { type: 'text', text: 'base harness prefix' },
+    { type: 'text', text: '\n\nproject tail' },
+    { type: 'text', text: 'Working directory: /tmp/run-xyz' },
+  ];
+
+  /** Collect every cache_control marker placed anywhere in the request. */
+  function allMarkers(req: StreamRequest): Array<Record<string, unknown>> {
+    const out: Array<Record<string, unknown>> = [];
+    if (Array.isArray(req.tools)) {
+      for (const t of req.tools) if (t.cache_control) out.push(t.cache_control as Record<string, unknown>);
+    }
+    if (Array.isArray(req.system)) {
+      for (const b of req.system) if (b.cache_control) out.push(b.cache_control as Record<string, unknown>);
+    }
+    for (const m of req.messages) {
+      if (Array.isArray(m.content)) {
+        for (const b of m.content) {
+          const cc = (b as { cache_control?: unknown }).cache_control;
+          if (cc) out.push(cc as Record<string, unknown>);
+        }
+      }
+    }
+    return out;
+  }
+
+  it('omitted cacheTtl yields the bare {type:ephemeral} marker (byte-identical default)', () => {
+    const out = applyCacheControl(baseReq({ tools, system: dualSystem }), {
+      enabled: true,
+      cacheSystemBoundary: 'dual',
+    });
+    const markers = allMarkers(out);
+    expect(markers.length).toBe(4);
+    for (const m of markers) expect(m).toEqual({ type: 'ephemeral' });
+  });
+
+  it("cacheTtl '5m' is treated as the default (no ttl field)", () => {
+    const out = applyCacheControl(baseReq({ tools, system: dualSystem }), {
+      enabled: true,
+      cacheSystemBoundary: 'dual',
+      cacheTtl: '5m',
+    });
+    for (const m of allMarkers(out)) expect(m).toEqual({ type: 'ephemeral' });
+  });
+
+  it("cacheTtl '1h' stamps ttl:'1h' on EVERY breakpoint (tools + dual system + message)", () => {
+    const out = applyCacheControl(baseReq({ tools, system: dualSystem }), {
+      enabled: true,
+      cacheSystemBoundary: 'dual',
+      cacheTtl: '1h',
+    });
+    const markers = allMarkers(out);
+    expect(markers.length).toBe(4);
+    for (const m of markers) expect(m).toEqual({ type: 'ephemeral', ttl: '1h' });
+  });
+
+  it('cacheTtl has no effect when caching is disabled (identity)', () => {
+    const req = baseReq({ tools, system: dualSystem });
+    const out = applyCacheControl(req, { enabled: false, cacheTtl: '1h' });
+    expect(out).toBe(req);
+  });
+
+  it("cacheTtl '1h' also stamps a string system and a string last message", () => {
+    const out = applyCacheControl(
+      baseReq({ system: 'You are helpful.', messages: [{ role: 'user', content: 'hi' }] }),
+      { enabled: true, cacheTtl: '1h' },
+    );
+    for (const m of allMarkers(out)) expect(m).toEqual({ type: 'ephemeral', ttl: '1h' });
+  });
 });
 
 describe('loadProjectMcpServers', () => {

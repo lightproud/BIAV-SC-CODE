@@ -43,11 +43,19 @@
 import type { StreamRequest } from '../internal/contracts.js';
 import type {
   APIToolDefinition,
+  CacheControlEphemeral,
   ContentBlockParam,
   TextBlockParam,
 } from '../types.js';
 
-const EPHEMERAL = { type: 'ephemeral' } as const;
+/**
+ * The cache_control marker for a breakpoint. `ttl` undefined / '5m' yields the
+ * bare `{ type: 'ephemeral' }` (byte-identical to the pre-cacheTtl default, so
+ * the wire ratchet is unaffected); '1h' adds `ttl: '1h'`.
+ */
+function ephemeral(cacheTtl?: '5m' | '1h'): CacheControlEphemeral {
+  return cacheTtl === '1h' ? { type: 'ephemeral', ttl: '1h' } : { type: 'ephemeral' };
+}
 
 /** Content-block param types that legally carry a cache_control breakpoint. */
 type CacheableLastBlock = 'text' | 'tool_result' | 'image';
@@ -87,10 +95,17 @@ export function applyCacheControl(
      *   breakpoints; the engine must not add or move any.
      */
     cacheSystemBoundary?: 'first' | 'last' | 'dual' | 'preserve';
+    /**
+     * Cache lifetime for every breakpoint placed here. Omitted / '5m' keeps the
+     * bare `{ type: 'ephemeral' }` marker (5-minute default); '1h' stamps
+     * `ttl: '1h'` on all of them. BPT-EXTENSION (Provider.cacheTtl).
+     */
+    cacheTtl?: '5m' | '1h';
   },
 ): StreamRequest {
   if (!opts.enabled) return req;
 
+  const marker = ephemeral(opts.cacheTtl);
   const next: StreamRequest = { ...req };
 
   // (a) TOOLS breakpoint - last tool.
@@ -98,20 +113,21 @@ export function applyCacheControl(
     const tools = req.tools.slice();
     const lastIdx = tools.length - 1;
     const lastTool = tools[lastIdx] as APIToolDefinition;
-    tools[lastIdx] = { ...lastTool, cache_control: EPHEMERAL };
+    tools[lastIdx] = { ...lastTool, cache_control: marker };
     next.tools = tools;
   }
 
   // (b) SYSTEM breakpoint - last text block (or first, for the engine split;
   // or preserve, when the caller authored the blocks + their own breakpoints).
   const boundary = opts.cacheSystemBoundary ?? 'last';
-  next.system = boundary === 'preserve' ? req.system : cacheSystem(req.system, boundary);
+  next.system =
+    boundary === 'preserve' ? req.system : cacheSystem(req.system, boundary, marker);
 
   // (c) MESSAGES breakpoint - last content block of the last message.
   const last =
     opts.cacheMessages !== false ? req.messages[req.messages.length - 1] : undefined;
   if (last !== undefined) {
-    const cachedContent = cacheMessageContent(last.content);
+    const cachedContent = cacheMessageContent(last.content, marker);
     if (cachedContent !== undefined) {
       const messages = req.messages.slice();
       messages[messages.length - 1] = { ...last, content: cachedContent };
@@ -130,10 +146,11 @@ export function applyCacheControl(
 function cacheSystem(
   system: string | TextBlockParam[] | undefined,
   boundary: 'first' | 'last' | 'dual',
+  marker: CacheControlEphemeral,
 ): string | TextBlockParam[] | undefined {
   if (typeof system === 'string') {
     if (system.length === 0) return system;
-    return [{ type: 'text', text: system, cache_control: EPHEMERAL }];
+    return [{ type: 'text', text: system, cache_control: marker }];
   }
   if (Array.isArray(system) && system.length > 0) {
     const blocks = system.slice();
@@ -143,10 +160,10 @@ function cacheSystem(
       // leaving block 2 (per-run cwd) uncached. Guard by existence so a
       // degenerate array only touches indices that exist.
       const base = blocks[0] as TextBlockParam;
-      blocks[0] = { ...base, cache_control: EPHEMERAL };
+      blocks[0] = { ...base, cache_control: marker };
       if (blocks.length > 1) {
         const project = blocks[1] as TextBlockParam;
-        blocks[1] = { ...project, cache_control: EPHEMERAL };
+        blocks[1] = { ...project, cache_control: marker };
       }
       return blocks;
     }
@@ -154,7 +171,7 @@ function cacheSystem(
     // 'last' caches the final block (default for caller-supplied systems).
     const idx = boundary === 'first' ? 0 : blocks.length - 1;
     const target = blocks[idx] as TextBlockParam;
-    blocks[idx] = { ...target, cache_control: EPHEMERAL };
+    blocks[idx] = { ...target, cache_control: marker };
     return blocks;
   }
   return system;
@@ -168,17 +185,18 @@ function cacheSystem(
  */
 function cacheMessageContent(
   content: string | ContentBlockParam[],
+  marker: CacheControlEphemeral,
 ): string | ContentBlockParam[] | undefined {
   if (typeof content === 'string') {
     if (content.length === 0) return undefined;
-    return [{ type: 'text', text: content, cache_control: EPHEMERAL }];
+    return [{ type: 'text', text: content, cache_control: marker }];
   }
   if (content.length === 0) return undefined;
   const lastIdx = content.length - 1;
   const lastBlock = content[lastIdx] as ContentBlockParam;
   if (!isCacheableLastBlock(lastBlock.type)) return undefined;
   const blocks = content.slice();
-  blocks[lastIdx] = { ...lastBlock, cache_control: EPHEMERAL } as ContentBlockParam;
+  blocks[lastIdx] = { ...lastBlock, cache_control: marker } as ContentBlockParam;
   return blocks;
 }
 

@@ -54,6 +54,39 @@ The keeper ruling 「全面实现」 drove a full-surface alignment pass. What l
   behavior-level reversal, would diverge from the pinned official arm, and awaits
   a keeper bump-pin decision.
 
+## Divergences from the official SDK (where we differ on purpose)
+
+A focused ledger of the INTENTIONAL differences between this SDK and
+`@anthropic-ai/claude-agent-sdk`. Four kinds: **BPT-EXTENSION** (we expose
+something official does not), **HONEST-SUBSET** (official has it; we do a
+scoped, truthfully-labeled version), **KEPT-DIVERGENCE** (measured, kept on
+purpose), **N/A-BY-DESIGN** (out of scope for a direct-API headless engine).
+Per-row detail lives in the sections below; this is the at-a-glance table.
+
+| Area | Kind | Official | Ours |
+|---|---|---|---|
+| **Engine model** | — | wraps the Claude Code CLI (black-box subprocess) | drives the Messages API directly (fetch+SSE, no CLI); this is the root of most divergences below |
+| `provider.cacheTtl` | BPT-EXTENSION | no cache-TTL knob (CLI decides 5m/1h internally; only reports the split in usage) | caller picks `'5m'`/`'1h'` per query (v0.7.1) |
+| `provider.promptCaching` | BPT-EXTENSION | no toggle (caching is internal) | caller can turn the whole breakpoint layer off |
+| tool-block cache breakpoint | KEPT-DIVERGENCE | 0 breakpoints on tool blocks | 1 (last tool) — measured to only ever gain cache hits on system-prompt divergence, never lose (E7-03) |
+| `compaction.model` / `preTier` | BPT-EXTENSION | fixed compaction | route summarization to a cheap model + deterministic pre-tier |
+| `sandbox` object form + bwrap backend | BPT-EXTENSION | CLI-managed sandbox | pluggable object-form config, default-on bwrap, network-off default |
+| worker-fork preset / Agent `fork` param | BPT-EXTENSION | no fork | prefix-sharing subagent fork (residual `Agent:params` wire delta) |
+| result `metrics` / `task_progress` superset | BPT-EXTENSION | — | extra observability fields (additive) |
+| Monitor | HONEST-SUBSET | pushes events into the conversation | background watch, read via BashOutput (no push channel) |
+| Workflow | HONEST-SUBSET | async background launch | synchronous execution, result returned inline |
+| MessageDisplay | HONEST-SUBSET | per-delta incremental | per-completed-message (final always true) |
+| Read PDF `pages` | HONEST-SUBSET | slices PDF pages | validates the param; page-slicing itself unsupported (no PDF dep), errors honestly |
+| Grep | HONEST-SUBSET | ripgrep binary | pure-JS regex (large-repo perf caveat) |
+| six new hooks (Setup/TeammateIdle/…) | HONEST-SUBSET | fire | typed-not-fired (no natural headless hook point) |
+| MCP subscription tools (4) | N/A-BY-DESIGN | subscribe + server push | absent (no push-to-conversation channel) |
+| NotebookEdit | N/A-BY-DESIGN | edits Jupyter cells | absent (no notebook surface) |
+| TaskOutput / TaskStop tools | N/A (candidate) | model-facing task tools | capability exists (stopTask/BashOutput) but not exposed as builtins yet |
+| full settings engine / OTel / 3P providers | N/A-BY-DESIGN | present | out of scope for a direct-API engine |
+| `reinitialize()` / `applyFlagSettings()` | N/A-BY-DESIGN | CLI control requests | no CLI to control |
+| `settingSources` default | PENDING | omit = load-all (live docs) | omit = load-nothing (pinned 0.3.199); flip awaits bump-pin |
+| KD-12 rate-limit encoding | KEPT-DIVERGENCE | `system/api_retry` on 429 | `rate_limit_event` on 429 (triaged) |
+
 ## v0.2 status (what graduated from the v0.1 audit)
 
 v0.2 implemented most of the P0/P1 gaps the audit flagged. Now **FULL / PARTIAL**
@@ -82,7 +115,8 @@ v0.2 implemented most of the P0/P1 gaps the audit flagged. Now **FULL / PARTIAL*
   `canUseTool` full context + `null`=skip, `defer` end-to-end.
 - **Prompt caching** — `cache_control` breakpoints **on by default** (matches
   the official SDK; disable via `provider.promptCaching: false`; capped at the
-  API's 4-breakpoint max), `ttft_ms`/`deferred_tool_use` result extras, init
+  API's 4-breakpoint max; **BPT-EXTENSION v0.7.1** `provider.cacheTtl: '1h'`
+  switches the breakpoints to the 1-hour cache, default `'5m'`), `ttft_ms`/`deferred_tool_use` result extras, init
   fields, hook input `tool_use_id`/`duration_ms`, MCP audio/resource_link,
   `.mcp.json` loading, `thinking.budgetTokens` alias.
   **Stable-prefix caching (v0.5+):** the system prompt is split into a stable

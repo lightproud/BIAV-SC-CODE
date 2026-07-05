@@ -8,6 +8,17 @@ and adds one line here. A CI guard (`scripts/check-version-bump.mjs`) reds
 any src-changing merge that forgets. 0.6.1 and 0.6.2 below are retroactive
 labels for builds that shipped under a duplicated "0.6.0".
 
+## 0.7.1 — 2026-07-05
+
+- **feat (BPT-EXTENSION)**: `provider.cacheTtl?: '5m' | '1h'` selects the
+  prompt-cache lifetime for the breakpoints this engine places. Omitted / '5m'
+  keeps the bare `{ type: 'ephemeral' }` marker (5-minute default, byte-
+  identical to before — wire ratchet unaffected); '1h' stamps `ttl: '1h'` on
+  every breakpoint (2x write price, GA — no beta header). The official Agent
+  SDK exposes NO cache-TTL knob (its wrapped CLI decides internally and only
+  reports the 5m/1h split in usage); this direct-API engine lets the caller
+  choose. No effect when `promptCaching` is false.
+
 ## 0.7.0 — 2026-07-05
 
 Completion-inventory full-implementation batch (keeper ruling 全面实现);
