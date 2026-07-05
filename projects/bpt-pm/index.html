@@ -153,7 +153,7 @@
   <button id="btnSave" title="写回已打开的数据文件；未用 API 打开则下载 JSON">写入数据源</button>
   <span style="width:1px;height:22px;background:var(--border);margin:0 2px"></span>
   <button id="btnNotionPull" title="经本地代理从 Notion 数据库拉取任务（需先起 proxy/server.mjs）">从 Notion 拉取</button>
-  <button id="btnNotionPush" title="经本地代理把当前排期结果写回 Notion（计算开始/结束/浮动/临界）">写回 Notion</button>
+  <button id="btnNotionPush" title="经本地代理把当前排期结果写回 Notion（计算开始/结束/松弛/关键路径）">写回 Notion</button>
   <button id="btnProxyCfg" title="设置本地代理地址">代理…</button>
   <span style="width:1px;height:22px;background:var(--border);margin:0 2px"></span>
   <button id="btnViewGantt" class="primary" title="甘特图视图">甘特图</button>
@@ -174,7 +174,7 @@
           <th>资源</th><th class="num" title="完成%">%</th>
           <th class="calc" title="计算开始">开始</th><th class="calc" title="计算结束">结束</th>
           <th class="calc" title="误期(工作日)：结束晚于截止的天数，正=误期">误期</th>
-          <th class="calc" title="总浮动(工作日)">浮动</th>
+          <th class="calc" title="总浮动/松弛(工作日)">松弛</th>
           <th class="calc" title="自由浮动(工作日)：不影响任何后继最早开始的可滑动余量；摘要行显示卷积跨度">自由</th>
           <th class="calc" title="相对基线结束偏差(工作日)，正=延后">偏差</th>
         </tr>
@@ -191,7 +191,7 @@
 <div class="status-bar" id="statusBar">
   <span class="chip" id="stTasks">任务 0</span>
   <span class="chip" id="stEnd">工期 —</span>
-  <span><span class="dot" style="background:var(--critical)"></span>临界路径</span>
+  <span><span class="dot" style="background:var(--critical)"></span>关键路径</span>
   <span><span class="dot" style="background:var(--baseline)"></span>基线</span>
   <span><span class="dot" style="background:var(--warn)"></span>今日/里程碑</span>
   <span class="chip" id="stWarn" style="display:none" title="点击展开告警清单">告警 0 项</span>
@@ -1001,7 +1001,7 @@ function renderGantt() {
       bar.className = "gbar" + (c.critical ? " critical" : "");
       bar.style.cssText = `left:${bx}px;top:${y + 11}px;width:${bw}px;`;
       if (c.late) bar.style.boxShadow = "0 0 0 1.5px var(--critical)"; // 误期条形描红边
-      bar.title = `${t.name}\n${c.start} → ${c.finish}｜工期 ${c.dur}d｜浮动 ${c.slack}d${c.critical ? "｜临界" : ""}${lateNote}`;
+      bar.title = `${t.name}\n${c.start} → ${c.finish}｜工期 ${c.dur}d｜松弛 ${c.slack}d${c.critical ? "｜关键路径" : ""}${lateNote}`;
       if (c.pct > 0) {
         const p = document.createElement("div");
         p.className = "prog"; p.style.width = Math.min(100, c.pct) + "%";
@@ -1248,7 +1248,7 @@ function renderOrdersView() {
   tbl.style.cssText = "border-collapse:collapse;font-size:12px;white-space:nowrap;";
   tbl.innerHTML = `<thead><tr>
     <th style="text-align:left">单号</th><th style="text-align:left">供应商</th><th style="text-align:left">资产</th>
-    <th style="text-align:left">PO日</th><th style="text-align:left">预计交付</th><th style="text-align:left">实际交付</th>
+    <th style="text-align:left">发单日</th><th style="text-align:left">预计交付</th><th style="text-align:left">实际交付</th>
     <th class="num">返修</th><th style="text-align:left">状态</th><th style="text-align:left">关联任务</th>
   </tr></thead>`;
   const tb = document.createElement("tbody");
@@ -1294,7 +1294,7 @@ function renderStatus() {
     const lateTxt = comp.lateCount ? ` · 误期 ${comp.lateCount} 项` : " · 无误期";
     const riskTxt = comp.ordersAtRisk ? ` · 发单风险 ${comp.ordersAtRisk} 项` : ((comp.orders && comp.orders.length) ? " · 发单无风险" : "");
     const warnTxt = comp.warningCount ? ` · 告警 ${comp.warningCount} 项` : "";
-    document.getElementById("stEnd").textContent = `总工期 ${comp.projEnd} 工作日 · 完工 ${fmtDate(last)} · 临界 ${critCount} 项${overTxt}${lateTxt}${riskTxt}${warnTxt}`;
+    document.getElementById("stEnd").textContent = `总工期 ${comp.projEnd} 工作日 · 完工 ${fmtDate(last)} · 关键路径 ${critCount} 项${overTxt}${lateTxt}${riskTxt}${warnTxt}`;
   } else {
     document.getElementById("stEnd").textContent = "工期 —";
   }
