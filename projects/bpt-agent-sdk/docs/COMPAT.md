@@ -135,7 +135,7 @@ SDK implements the agent loop directly against the public Messages API:
 | `hooks` | PARTIAL | see hook table |
 | `includePartialMessages` | FULL | raw stream events as `stream_event` |
 | `maxBudgetUsd` | PARTIAL | based on estimated cost; the stop lands AFTER the in-flight turn's tools complete (official 2.1.201 aborts the turn before executing its tools - same `error_max_budget_usd` subtype and POST count; conformance run-l2 s12-max-budget engine finding, 2026-07-05) |
-| `maxThinkingTokens` / `thinking` | PARTIAL | `thinking.type:'enabled'` maps to the Messages API `thinking` (budget clamped below `max_tokens`); `maxThinkingTokens` alone is only a budget fallback and sends no thinking param on its own; fields are `budget_tokens`/`budget`, not the official `budgetTokens` |
+| `maxThinkingTokens` / `thinking` | PARTIAL | `thinking.type:'enabled'` maps to the Messages API `thinking` (budget clamped below `max_tokens`); on the `claude_code` preset path thinking is DEFAULT-ON like the official CLI (all 54/54 official L5 traces carry thinking events; opt out with `maxThinkingTokens: 0` or `thinking: {type:'disabled'}`) — KD: the 4096 default budget is OUR chosen value, the official budget is request-body-internal and unobservable under the net-observation boundary; off the preset path `maxThinkingTokens` alone is only a budget fallback and sends no thinking param on its own; fields are `budget_tokens`/`budget`, not the official `budgetTokens` |
 | `maxTurns` | FULL | |
 | `mcpServers` | PARTIAL | stdio/http/sdk FULL; `sse` legacy transport UNSUPPORTED |
 | `model` | FULL | default `ANTHROPIC_MODEL` env or `claude-sonnet-4-5` |

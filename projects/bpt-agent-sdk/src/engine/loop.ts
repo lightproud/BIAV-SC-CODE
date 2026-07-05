@@ -400,6 +400,13 @@ export async function* runAgentLoop(
       config.thinking.budget ??
       config.maxThinkingTokens ??
       DEFAULT_THINKING_BUDGET;
+    // A resolved budget of 0 (or less) means "thinking off": it lets a live
+    // setMaxThinkingTokens(0) disable thinking mid-run (the preset default
+    // injects its budget via maxThinkingTokens precisely so this works), and
+    // the API would reject budget_tokens < 1024 anyway.
+    if (requested <= 0) {
+      return undefined;
+    }
     // The Messages API requires thinking.budget_tokens < max_tokens, otherwise
     // it 400s the request. The default budget (10000) exceeds the default
     // max_tokens (8192), so clamp the budget below max_tokens and warn.

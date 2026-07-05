@@ -962,6 +962,26 @@ describe('runAgentLoop', () => {
     });
   });
 
+  it('a resolved thinking budget of 0 sends NO thinking param (E1 live-disable guard)', async () => {
+    // thinking {type:'enabled'} with maxThinkingTokens 0 is what a live
+    // setMaxThinkingTokens(0) produces under the preset default (which injects
+    // its budget via maxThinkingTokens): 0 must mean OFF, not a 400ing
+    // budget_tokens: 0 request.
+    const transport = new MockTransport([textReplyEvents('ok')]);
+    const deps = makeDeps(transport);
+    const history: APIMessageParam[] = [{ role: 'user', content: 'go' }];
+
+    await collect(
+      runAgentLoop(
+        history,
+        deps,
+        makeConfig({ thinking: { type: 'enabled' }, maxThinkingTokens: 0 }),
+      ),
+    );
+
+    expect(transport.requests[0]!.thinking).toBeUndefined();
+  });
+
   // ----- finding #2: stop_reason tool_use with zero tool_use blocks -----
 
   it('stop_reason tool_use with no tool_use blocks ends as success without an empty user turn (#2)', async () => {

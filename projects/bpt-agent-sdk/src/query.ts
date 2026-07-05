@@ -74,6 +74,10 @@ import { loadProjectMcpServers } from './mcp/project-config.js';
 
 const DEFAULT_MODEL = 'claude-sonnet-4-5';
 const DEFAULT_MAX_OUTPUT_TOKENS = 8192;
+// Default thinking budget on the claude_code preset path (E1). OUR chosen
+// value: the official CLI observably defaults thinking ON, but its budget is
+// request-body-internal (never read under the net-observation boundary).
+const DEFAULT_PRESET_THINKING_BUDGET = 4096;
 const CLAUDE_CODE_VERSION = '0.1.0';
 
 /** Static model list surfaced by supportedModels()/initializationResult(). */
@@ -619,6 +623,39 @@ export function query(args: {
     systemPromptVolatile = promptParts.volatile;
   }
 
+  // Default-on extended thinking, claude_code preset path ONLY (E1). The
+  // official CLI enables thinking by default: every official-arm L5 trace
+  // (54/54) carries thinking events on the public stream. Only "thinking is
+  // on" is observable there — the official BUDGET rides in the (never read)
+  // request body, so 4096 is OUR chosen default, registered as a KD in
+  // docs/COMPAT.md. Injection rules:
+  //  - an explicit options.thinking always wins (passed through verbatim);
+  //  - maxThinkingTokens: 0 is the explicit opt-out (no thinking param);
+  //  - maxThinkingTokens > 0 enables thinking with that budget;
+  //  - both unset -> enable with the 4096 default budget.
+  // The default budget is injected via maxThinkingTokens (not a budget key on
+  // the thinking object) so computeThinking's precedence chain resolves it and
+  // a live setMaxThinkingTokens(0) can still switch thinking OFF mid-run.
+  // Non-preset paths (bare string / segments / no systemPrompt) are unchanged:
+  // the drop-in default remains "no thinking param".
+  const isClaudeCodePreset =
+    sp !== null &&
+    typeof sp === 'object' &&
+    'type' in sp &&
+    sp.type === 'preset' &&
+    sp.preset === 'claude_code';
+  let thinkingConfig = options.thinking;
+  let maxThinkingTokensConfig = options.maxThinkingTokens;
+  if (isClaudeCodePreset && thinkingConfig === undefined) {
+    if (maxThinkingTokensConfig === undefined) {
+      thinkingConfig = { type: 'enabled' };
+      maxThinkingTokensConfig = DEFAULT_PRESET_THINKING_BUDGET;
+    } else if (maxThinkingTokensConfig > 0) {
+      thinkingConfig = { type: 'enabled' };
+    }
+    // maxThinkingTokens <= 0: explicit opt-out, inject nothing.
+  }
+
   // Mutable engine config shared across turns; setModel/setMaxThinkingTokens
   // mutate it live (takes effect from the next assistant turn).
   const engineConfig: EngineConfig = {
@@ -640,8 +677,8 @@ export function query(args: {
     ...(systemBlocks !== undefined ? { systemBlocks } : {}),
     maxTurns: options.maxTurns,
     maxBudgetUsd: options.maxBudgetUsd,
-    thinking: options.thinking,
-    maxThinkingTokens: options.maxThinkingTokens,
+    thinking: thinkingConfig,
+    maxThinkingTokens: maxThinkingTokensConfig,
     compaction: buildCompactionConfig(options.compaction),
     outputFormat,
     // Prompt caching is ON by default (matches the official SDK and saves the
