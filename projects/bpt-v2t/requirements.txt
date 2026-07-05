@@ -1,8 +1,11 @@
 # BPT-V2T 依赖。分两层:内核(云端可装可测) vs 本地外壳(须本机、需声卡/权限)。
 
-# --- 转录内核(默认引擎) ---
-faster-whisper>=1.0        # 本地离线 whisper(CTranslate2 加速);首次用会下模型
+# --- 流式引擎(听记地基,默认引擎) ---
+sherpa-onnx>=1.10          # 本地流式 zipformer + 热词 + endpoint;模型另按 models.py 清单下载
 numpy>=1.24
+
+# --- 批处理引擎(语音代替输入,可选) ---
+faster-whisper>=1.0        # 本地离线 whisper(CTranslate2 加速);首次用会下模型
 
 # --- 本地外壳(麦克风 + 注入,云端容器装了也没麦克风) ---
 sounddevice>=0.4           # 麦克风采集

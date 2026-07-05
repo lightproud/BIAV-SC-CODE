@@ -1,0 +1,11 @@
+# 模型权重(onnx,数百 MB)绝不进 git;默认缓存在 ~/.cache/bpt-v2t 已在仓外,
+# 此处兜底防有人把 BPT_V2T_MODEL_DIR 指进仓内。
+models/
+*.onnx
+*.tar.bz2
+
+# 运行期生成的 sherpa 热词文件
+*.hotwords.txt
+
+__pycache__/
+*.pyc

@@ -3,10 +3,12 @@
 数据源不自造——复用 scripts/silver_tokenizer.domain_dict()(72 唤醒体名/称号 +
 卡牌术语 + 剧情单元 + 世界观固定词的自举集合),故仓库知识长、热词表跟着长。
 
-两种消费口(按后端能力选):
+三种消费口(按后端能力选):
 - hotword_list():全量热词表,供支持「词表」的后端(如 FunASR 热词);
 - bias_prompt(max_chars):按预算截断的偏置串,供 whisper 系 initial_prompt(约 224
-  token 上限,故按字符预算优先塞高优先词)。
+  token 上限,故按字符预算优先塞高优先词);
+- write_hotwords_file(dest):落 sherpa-onnx `hotwords_file`(中文每词空格分字,
+  cjkchar 建模单元约定),供流式 sherpa 后端上下文热词(contextual biasing)。
 
 优先级:世界观固定词 → 角色名/称号 → 其余词典词。口语里最常出现、最易被误识的
 专名排前面,确保预算有限时先保住它们。全程确定性、零 ML。
@@ -99,3 +101,30 @@ def bias_prompt(max_chars: int = 200) -> str:
     if not picked:
         return ""
     return "以下为可能出现的专有名词:" + sep.join(picked) + "。"
+
+
+def sherpa_hotwords_lines(modeling_unit: str = "cjkchar") -> list[str]:
+    """把专名转成 sherpa-onnx 热词文件的行。
+
+    sherpa cjkchar 建模单元约定:每行一个热词,词内 token(汉字)以空格分隔,
+    如「潘狄娅」→「潘 狄 娅」。含拉丁/数字的词按此简化实现仅切 CJK,故只收纯 CJK 词
+    (与 hotword_list 的领域词典本就以纯 CJK 专名为主,拉丁词交给模型本身)。
+    """
+    if modeling_unit != "cjkchar":
+        raise ValueError(f"暂只支持 modeling_unit=cjkchar,收到 {modeling_unit!r}")
+    lines: list[str] = []
+    for term in hotword_list():
+        if _PURE_CJK.match(term):
+            lines.append(" ".join(term))  # 逐字空格分隔
+    return lines
+
+
+def write_hotwords_file(dest, modeling_unit: str = "cjkchar"):
+    """把热词落成 sherpa-onnx `hotwords_file`,返回 Path。确定性、零 ML,云端可测。"""
+    from pathlib import Path as _Path
+
+    dest = _Path(dest)
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    lines = sherpa_hotwords_lines(modeling_unit)
+    dest.write_text("\n".join(lines) + ("\n" if lines else ""), encoding="utf-8")
+    return dest

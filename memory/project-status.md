@@ -298,15 +298,20 @@
 - **派发 + 三连降维（守密人 2026-07-05）**：原诉求「持续录音 + 声纹录入识别 + 专名增益、
   对标钉钉听记」，同会话守密人降维——① 转录引擎重决策（FunASR/云/sherpa）**暂缓**；
   ② 交付层收敛为**仅语音代替输入**（不做持续会议转录/听记完整体验）；③ 声纹**暂不做**。
-- **首期已落盘（2026-07-05）**：`projects/bpt-v2t/` 骨架。内核（云端可测）+ 本地薄壳两分：
-  内核 `hotwords.py`（复用 `scripts/silver_tokenizer.domain_dict()`，热词 **125 词**、
-  偏置串按世界观词→角色名优先级填 whisper `initial_prompt`）+ 可插拔后端 `backends/`
-  （`fake` 测试后端 + `faster-whisper` 默认离线引擎，惰性加载、注册表可 `register` 挂 FunASR）；
-  外壳 `recorder.py`（麦克风）/`injector.py`（print/clipboard/type）/`cli.py`（推挽循环），须本机跑。
-  **验证**：`pytest projects/bpt-v2t/tests -v` **13/13 全绿**（仅依赖内核 + 假后端，无需麦克风/真模型）。
-- **硬事实**：云端容器无麦克风，故内核云端可建可测、录音+注入外壳只能守密人本机跑。
-- **后续轮次候选**（守密人裁定后再动）：换/加真引擎（FunASR 热词+流式/云 API）、声纹录入识别、
-  持续录音+实时字幕+说话人分离（听记级）、VAD 断句 + 托盘壳 + 全局快捷键。
+- **首期已落盘（2026-07-05，PR #443 已并 main）**：骨架——热词桥（复用 `silver_tokenizer.domain_dict()`，
+  **125 词**）+ 可插拔后端（`fake` + `faster-whisper` 批处理）+ 录音/注入/CLI 薄壳。**13/13 测试全绿**。
+- **后续三决策（守密人 2026-07-05 第二轮讨论）**：优先级 = **真引擎落地（地基）**；引擎 =
+  **sherpa-onnx**（本地流式，一栈吃下流式+声纹+热词）；交付形态 = **本地 Web UI**。
+  分三期：Phase A 流式后端地基 → Phase B 本地 Web UI → Phase C 声纹。
+- **Phase A 已落盘（2026-07-05）**：sherpa-onnx 流式后端地基。
+  - **流式契约** `backends/streaming.py`（`StreamingTranscriber`/`Session`/`StreamResult`，与批处理契约并列、不动老接口）+ 确定性假流（云端可测）；
+  - **真引擎** `backends/sherpa_backend.py`（`OnlineRecognizer.from_transducer` modified_beam_search + hotwords_file + endpoint 断句，惰性加载、本地跑）；双注册表 `get_streaming_backend`；
+  - **热词桥升级** `hotwords.write_hotwords_file()`/`sherpa_hotwords_lines()`（sherpa `hotwords_file`，cjkchar 每词空格分字）；
+  - **模型管理** `models.py`（清单进 git、权重不进，`resolve`/`ensure`，缓存 `~/.cache/bpt-v2t`，`BPT_V2T_MODEL_DIR` 可覆盖）+ `scripts/fetch_model.py`；默认模型 `zh-streaming-zipformer-14m`；
+  - **管道** `config.py` 流式字段 + `recorder.stream_chunks()`（生产者-消费者队列）+ `cli --stream`（终端滚动字幕）/`--print-hotwords-file`；
+  - **验证**：`pytest projects/bpt-v2t/tests -v` **31/31 全绿**（原 13 + 新 18，仅依赖内核 + 假后端，无需麦克风/真模型）；`--print-hotwords-file` 云端冒烟通（125 词分字）。
+- **硬事实**：云端容器无麦克风，故内核（流式逻辑/热词文件/模型清单）云端可建可测，真 sherpa 引擎 + 麦克风 + 下模型（数百 MB）只能守密人本机跑。
+- **后续（路线）**：Phase B 本地 Web UI（FastAPI + WebSocket，服务端采麦、浏览器 live 字幕+归档）、Phase C 声纹（sherpa `SpeakerEmbeddingExtractor`+`Manager` 同栈，填 `StreamResult.speaker`）。
 
 ## 当前阶段
 

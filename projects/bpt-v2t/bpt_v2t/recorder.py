@@ -47,3 +47,39 @@ class MicRecorder:
         if not chunks:
             return np.zeros(0, dtype="float32"), self.sample_rate
         return np.squeeze(np.concatenate(chunks, axis=0)), self.sample_rate
+
+    def stream_chunks(self, block_ms: int = 100, stop=None):
+        """持续从麦克风取音,按 block_ms 分块产出 float32 单声道块(喂流式会话)。
+
+        stop:可选无参 callable,返回 True 时停止。默认 Ctrl+C 停。
+        用生产者-消费者队列把 sounddevice 回调线程的块搬到本生成器。
+        """
+        import queue
+
+        import numpy as np
+
+        sd = self._sd()
+        q: "queue.Queue" = queue.Queue()
+        blocksize = int(self.sample_rate * block_ms / 1000)
+
+        def _cb(indata, frames, time_info, status):  # noqa: ARG001
+            q.put(indata.copy())
+
+        with sd.InputStream(
+            samplerate=self.sample_rate,
+            channels=self.channels,
+            dtype="float32",
+            blocksize=blocksize,
+            callback=_cb,
+        ):
+            try:
+                while True:
+                    if stop is not None and stop():
+                        break
+                    try:
+                        block = q.get(timeout=0.5)
+                    except queue.Empty:
+                        continue
+                    yield np.squeeze(block), self.sample_rate
+            except KeyboardInterrupt:
+                return
