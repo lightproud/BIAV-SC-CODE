@@ -1,7 +1,7 @@
 {
   "generated": "2026-07-04",
   "stats": {
-    "nodes": 301,
+    "nodes": 304,
     "edges": 312
   },
   "nodes": [
@@ -2520,9 +2520,42 @@
       "tier": "search"
     },
     {
+      "id": "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
+      "type": "documentation",
+      "title": "bpt-desktop-ui-reference-20260704",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
       "id": "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "type": "documentation",
       "title": "bpt-sdk-prompt-cache-milestone-20260704",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "type": "documentation",
+      "title": "claude-desktop-ui-structure-20260704",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "type": "documentation",
+      "title": "claude-desktop-ui-wireframe-20260704",
       "tags": [
         "data_layer:curated",
         "deliverable",

@@ -41,6 +41,31 @@ def _concept_bodies() -> dict[str, str]:
     return out
 
 
+def grep_baseline_strong(question: str, k: int, bodies: dict[str, str]) -> list[str]:
+    """**最强 grep 基线**（反稻草人）：把朴素 grep 一切能占的便宜都给足——
+    整串短语命中大幅加权（`text.count(整问)`×10）+ 概念 id/标题字段命中加权（×5）+ 逐 token TF。
+    用意：即便把文本搜索放到最强，联想/token 脱节题上 KB 仍应严格胜——因为那是**结构**上的差距
+    （顺关系边遍历），非文本匹配强弱能补的。KB 赢在这条最强基线上，才彻底堵死「你的 grep 是稻草人」。"""
+    from silver_tokenizer import tokenize
+
+    q = question.lower().strip()
+    toks = [t for t in dict.fromkeys(tokenize(question)) if t]
+    scored = []
+    for cid, text in bodies.items():
+        score = 0
+        if q and q in text:                      # 整串短语命中：grep 能占的最大便宜
+            score += 10 * text.count(q)
+        cid_l = cid.lower()
+        for t in toks:                           # token TF + id/标题字段命中加权
+            score += text.count(t)
+            if t in cid_l:
+                score += 5
+        if score:
+            scored.append((score, cid))
+    scored.sort(key=lambda x: (-x[0], x[1]))
+    return [cid for _s, cid in scored[:k]]
+
+
 def grep_baseline(question: str, k: int, bodies: dict[str, str]) -> list[str]:
     """无 KB 时你会怎么做：把问题分词，在概念正文里数命中、按次数排序取 top-k。"""
     from silver_tokenizer import tokenize
@@ -65,16 +90,20 @@ def ab_evaluate(golden: dict | None = None, k: int | None = None) -> dict:
     bodies = _concept_bodies()
 
     per = []
-    agg = {"kb": 0, "grep": 0, "kb_win": 0, "grep_win": 0, "tie_hit": 0, "both_miss": 0}
+    agg = {"kb": 0, "grep": 0, "grep_strong": 0,
+           "kb_win": 0, "grep_win": 0, "tie_hit": 0, "both_miss": 0}
     by_mode: dict[str, dict] = {}
     for item in golden["questions"]:
         q, expect, mode = item["q"], item["expect"], item.get("mode", "search")
         a_ids = kb_eval._result_ids(q, mode, k)                 # A 臂：KB
         b_ids = grep_baseline(q, k, bodies)                     # B 臂：朴素 grep
+        s_ids = grep_baseline_strong(q, k, bodies)              # C 臂：最强 grep（反稻草人）
         a_hit = any(sub in rid for rid in a_ids for sub in expect)
         b_hit = any(sub in rid for rid in b_ids for sub in expect)
+        s_hit = any(sub in rid for rid in s_ids for sub in expect)
         agg["kb"] += int(a_hit)
         agg["grep"] += int(b_hit)
+        agg["grep_strong"] += int(s_hit)
         if a_hit and not b_hit:
             verdict = "KB_win"
         elif b_hit and not a_hit:
@@ -85,19 +114,22 @@ def ab_evaluate(golden: dict | None = None, k: int | None = None) -> dict:
             verdict = "both_miss"
         agg[{"KB_win": "kb_win", "grep_win": "grep_win",
              "tie_hit": "tie_hit", "both_miss": "both_miss"}[verdict]] += 1
-        m = by_mode.setdefault(mode, {"n": 0, "kb": 0, "grep": 0})
+        m = by_mode.setdefault(mode, {"n": 0, "kb": 0, "grep": 0, "grep_strong": 0})
         m["n"] += 1
         m["kb"] += int(a_hit)
         m["grep"] += int(b_hit)
+        m["grep_strong"] += int(s_hit)
         per.append({"q": q, "mode": mode, "verdict": verdict,
-                    "kb_hit": a_hit, "grep_hit": b_hit})
+                    "kb_hit": a_hit, "grep_hit": b_hit, "grep_strong_hit": s_hit})
 
     n = len(golden["questions"])
     return {
         "n": n, "k": k,
         "kb_hit_rate": round(agg["kb"] / n, 4) if n else 0.0,
         "grep_hit_rate": round(agg["grep"] / n, 4) if n else 0.0,
+        "grep_strong_hit_rate": round(agg["grep_strong"] / n, 4) if n else 0.0,
         "delta": round((agg["kb"] - agg["grep"]) / n, 4) if n else 0.0,
+        "delta_strong": round((agg["kb"] - agg["grep_strong"]) / n, 4) if n else 0.0,
         "verdicts": {kk: agg[kk] for kk in ("kb_win", "grep_win", "tie_hit", "both_miss")},
         "by_mode": by_mode,
         "per_question": per,
@@ -105,13 +137,15 @@ def ab_evaluate(golden: dict | None = None, k: int | None = None) -> dict:
 
 
 def _print(rep: dict) -> None:
-    print(f"KB vs 朴素 grep 反事实 A/B（同语料 okf 概念，hit@{rep['k']}）")
-    print(f"  KB   hit_rate = {rep['kb_hit_rate']:.2f}")
-    print(f"  grep hit_rate = {rep['grep_hit_rate']:.2f}   Δ(KB-grep) = {rep['delta']:+.2f}")
-    print(f"  裁决：{rep['verdicts']}")
-    print("  分模式（KB / grep 命中数）：")
+    print(f"KB vs grep 反事实 A/B（同语料 okf 概念，hit@{rep['k']}）")
+    print(f"  KB          hit_rate = {rep['kb_hit_rate']:.2f}")
+    print(f"  grep 朴素    hit_rate = {rep['grep_hit_rate']:.2f}   Δ(KB-grep) = {rep['delta']:+.2f}")
+    print(f"  grep 最强    hit_rate = {rep['grep_strong_hit_rate']:.2f}   Δ(KB-strong) = {rep['delta_strong']:+.2f}"
+          "   ← 反稻草人：grep 放到最强，KB 仍应在联想题胜")
+    print(f"  裁决（vs 朴素 grep）：{rep['verdicts']}")
+    print("  分模式（KB / grep朴素 / grep最强 命中数）：")
     for mode, m in sorted(rep["by_mode"].items()):
-        print(f"    {mode:10s} n={m['n']:2d}  KB={m['kb']}  grep={m['grep']}"
+        print(f"    {mode:10s} n={m['n']:2d}  KB={m['kb']}  grep={m['grep']}  strong={m['grep_strong']}"
               + ("   ← 联想/结构题，grep 无从遍历" if mode == "activate" else ""))
     wins = [p["q"] for p in rep["per_question"] if p["verdict"] == "KB_win"]
     if wins:
