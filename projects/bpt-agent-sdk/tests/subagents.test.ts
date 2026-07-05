@@ -15,6 +15,10 @@ import {
   GENERAL_PURPOSE_PROMPT,
   GENERAL_PURPOSE_PROMPT_PROVENANCE,
   MAX_SUBAGENT_DEPTH,
+  WORKER_FORK_AGENT,
+  WORKER_FORK_FRAMING,
+  WORKER_FORK_PROVENANCE,
+  buildWorkerForkPrompt,
   resolveAgentDefinition,
   resolveModelAlias,
 } from '../src/subagents/agents.js';
@@ -996,5 +1000,47 @@ describe('general-purpose prompt provenance (corpus-sync guard, Track B)', () =>
         .map((s) => s.slice(0, 45));
       expect(anchors.some((a) => desc.includes(a)), `${slug} not represented`).toBe(true);
     }
+  });
+});
+
+describe('worker-fork preset (O-B0)', () => {
+  const archive = join(
+    dirname(fileURLToPath(import.meta.url)),
+    '..',
+    '..',
+    '..',
+    'Public-Info-Pool',
+    'Reference',
+    'Claude-Code-System-Prompts',
+    'system-prompts',
+  );
+  const norm = (s: string) => s.replace(/\s+/g, ' ').trim();
+  const stripHeader = (md: string) => md.replace(/^<!--[\s\S]*?-->\n?/, '');
+
+  it('the preset rides fork mode with the official worker profile', () => {
+    expect(WORKER_FORK_AGENT.fork).toBe(true);
+    expect(WORKER_FORK_AGENT.maxTurns).toBe(200);
+    expect(WORKER_FORK_AGENT.prompt.length).toBeGreaterThan(0); // resolver requires non-empty
+  });
+  it('buildWorkerForkPrompt assembles <system> framing + directive + context', () => {
+    const p = buildWorkerForkPrompt('Audit src/tips for dead code.', '\n\nExtra: only report.');
+    expect(p.startsWith('<system>\n')).toBe(true);
+    expect(p).toContain('You are a worker fork.');
+    expect(p).toContain('</system>\n\nAudit src/tips for dead code.');
+    expect(p.endsWith('Extra: only report.')).toBe(true);
+  });
+  it.runIf(existsSync(archive))('the framing is faithful to its archived source', () => {
+    const body = norm(
+      stripHeader(readFileSync(join(archive, `${WORKER_FORK_PROVENANCE.slug}.md`), 'utf8')),
+    )
+      // normalize the archive's template variables to our adapted values
+      .replace(/\$\{AGENT_TOOL_NAME\}/g, 'Agent')
+      .replace(/\$\{""\}/g, '');
+    const drifted = norm(WORKER_FORK_FRAMING)
+      .split(/(?<=[.:])\s+/)
+      .map(norm)
+      .filter((s) => s.length >= 40)
+      .filter((s) => !body.includes(s.slice(0, 60)));
+    expect(drifted, `not found in archive:\n${drifted.join('\n')}`).toEqual([]);
   });
 });

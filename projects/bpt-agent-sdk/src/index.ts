@@ -86,6 +86,24 @@ export {
   type VerifierProvenance,
 } from './verifier/prompts.js';
 export {
+  // v0.6 hook-condition evaluator (condition-gated HookCallbackMatcher).
+  evaluateHookCondition,
+  parseHookCondition,
+  HOOK_CONDITION_SYSTEM,
+  HOOK_STOP_CONDITION_SYSTEM,
+  HOOK_CONDITION_PROVENANCE_TABLE,
+  type HookConditionResult,
+  type HookConditionInput,
+  type HookConditionProvenance,
+} from './hooks/condition.js';
+export {
+  // v0.6 worker-fork preset (rides the shipped G4 fork machinery).
+  WORKER_FORK_AGENT,
+  WORKER_FORK_FRAMING,
+  WORKER_FORK_PROVENANCE,
+  buildWorkerForkPrompt,
+} from './subagents/agents.js';
+export {
   AbortError,
   APIConnectionError,
   APIStatusError,

@@ -526,6 +526,16 @@ export type HookCallbackMatcher = {
    * unanchored regular expression. Omitted/'*'/'' matches everything.
    */
   matcher?: string;
+  /**
+   * v0.6: optional natural-language CONDITION gating this matcher. When set,
+   * the runner evaluates it with a bounded single-shot model call (the
+   * reproduced hook-condition evaluator; the stop variant for Stop /
+   * SubagentStop events) BEFORE firing this matcher's callbacks, and SKIPS
+   * them when the condition is not met. FAILS CLOSED: a garbled or errored
+   * evaluation counts as not met. Omitted -> the existing fully-deterministic
+   * path, zero model calls.
+   */
+  condition?: string;
   hooks: HookCallback[];
   /** Timeout in seconds for each callback (default 60). */
   timeout?: number;

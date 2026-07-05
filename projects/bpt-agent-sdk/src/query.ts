@@ -418,6 +418,10 @@ export function query(args: {
     hooks: options.hooks,
     debug,
     onLifecycleEvent: options.includeHookEvents === true ? emitObs : undefined,
+    // v0.6 condition-gated matchers: thread the session credentials so a
+    // matcher's `condition` can be evaluated (bounded single-shot call). A
+    // matcher without a condition never triggers a call.
+    conditionOptions: { provider: options.provider, betas: options.betas, env, debug },
   });
 
   // Bare-name disallowedTools entries (no `Tool(spec)` specifier) REMOVE the

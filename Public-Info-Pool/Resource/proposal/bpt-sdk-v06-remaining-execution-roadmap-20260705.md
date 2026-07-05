@@ -64,9 +64,13 @@ All four depend only on the confirmed-shipped v0.6 utility runtime (`runUtilityC
 - **记忆文件选择**（生成器族第 7 面）：`selectMemoryFilesToAttach`（忠实复现 determine-which-memory-files-to-attach；接 settingSources/记忆加载路径；**≤5、只返回可用集内文件名（幻觉丢弃）、去重、fail-safe 空表**、无文件零调用短路）。
 - 5 条新复现**字节级与归档一致**（reverse-diff 确认）。**930 单测全绿（+55）**。**云端 slug**（schedule-slash-command / cloud-first-scheduling / SearchSkills+SuggestSkills / managed-agents `/v1/skills`）仍 reference-only：本 SDK 为本地可嵌入引擎，凭空造云面=描述不存在能力（反成红线）；其可落的本地形态（本地 Skills 注册表 search/suggest、本地 Cron/schedule）归 Track 2/3 工具本体。
 
-## 未落（按上文依赖链推进，需守密人裁或先建工具本体）
+## 已落（本会话，Batch 2 续 —— G-HOOKCOND + O-B0）
 
-- **Batch 2**（ship-now，接线面更大）：G-HOOKCOND（hook-condition 评估器 pair + 同 PR 接 condition-gated matcher）+ O-B0 preset 切出（worker-fork/coordinator-worker AgentDefinition 挂已发货 forkActive 支）。
+- **G-HOOKCOND**：`HookCallbackMatcher.condition` 自然语言条件门控——runner 触发回调前用忠实复现的 hook-condition 评估器（base + stop 双变体，Stop/SubagentStop 自动 stop 变体、支持 `impossible`）做一次有界调用判定；**fail-closed**（不满足/乱码/评估出错含无凭据→跳过回调）；无 condition 零模型调用（存量行为逐字节不变）；凭据经 query.ts 线程。
+- **O-B0 worker-fork preset**：`WORKER_FORK_FRAMING`（忠实复现，AGENT_TOOL_NAME→Agent 适配）+ `buildWorkerForkPrompt`（framing 骑 fork 任务轮、不动缓存前缀，与官方装配一致）+ `WORKER_FORK_AGENT`（fork:true / maxTurns 200，挂 G4 fork 机制、runtime 零改动）。**coordinator/teams 刻意不发**（预设 SendMessage 本体，归 O-B2）。
+- 3 条新复现字节级一致（reverse-diff）。**952 单测全绿（+22）**。
+
+## 未落（按上文依赖链推进，需守密人裁或先建工具本体）
 - **Batch 3**（ship-now，隔离做）：G-SANDBOX（bwrap 默认开 + 沙箱指引，触 gate/spawn 11 文件，单独批）。
 - **编排链**（严格顺序，各需工具本体先落）：O-B1 plan-mode 只读门 → O-B2 SendMessage + 会话内路由 → O-B3 跨会话对等 + 结构化同意不可转述防火墙（过 escalation-rejection red-team 才接线；**刻意不复用 fork 特权继承**——同会话 fork 同意向下流 vs 跨会话对等同意不可越界的分界线）。
 - **Track 2/3 本体**（复用优先）：Task* CRUD + Monitor（v0.4 通知汇 + v0.5 ShellManager）· Skills 注册表+工具 · Cron 空闲门调度 · Loop skill 提示词（A+B 后）· Workflow DSL 引擎（最后，待守密人沙箱策略裁 + 确认 BPT Desktop 消费方；确定性重放为核心难点）。

@@ -186,6 +186,8 @@ shell（BashOutput 增量读 + 按行 filter / KillShell 击杀，进程组 SIGT
 ② **记忆文件选择**（生成器族第 7 面）：`selectMemoryFilesToAttach`（忠实复现 determine-which-memory-files-to-attach，接 settingSources/记忆加载路径，**≤5、只返回可用集内文件名（幻觉丢弃）、去重、fail-safe 空表**、无文件时零调用短路）。
 5 条新复现**字节级与归档一致**（reverse-diff 确认）。**930 单测全绿**（+55，含对抗审查 3 findings 修复回归）。原「3 分类器降级 design-only」判定被此裁定反转。
 
+**v0.6 剩余 Batch 2 续 —— G-HOOKCOND + O-B0（守密人「继续」，已落）**：① **hook 条件门控**：`HookCallbackMatcher` 加 `condition`（自然语言条件）——runner 在触发该 matcher 回调**之前**用忠实复现的 hook-condition 评估器（`src/hooks/condition.ts`，base + stop 双变体，Stop/SubagentStop 自动走 stop 变体、支持 `impossible` 逃生口）做一次有界模型调用判定，**fail-closed**：不满足/乱码/评估出错（含无凭据）一律跳过回调；无 condition 的 matcher 走原确定性路径**零模型调用**（存量配置行为逐字节不变）；凭据经 query.ts `conditionOptions` 线程。② **O-B0 worker-fork preset**：`WORKER_FORK_FRAMING`（忠实复现 agent-prompt-worker-fork，适配 AGENT_TOOL_NAME→Agent）+ `buildWorkerForkPrompt`（`<system>` framing + 指令 + 附加上下文，与官方装配一致——framing 骑在 fork 任务轮里、不动缓存前缀）+ `WORKER_FORK_AGENT` preset（fork:true / maxTurns 200，挂 G4 已发货 fork 机制、runtime 零改动）。**coordinator/teams preset 刻意不发**（预设 SendMessage/teams 工具本体，属 O-B2——先建本体再复现提示词）。3 条新复现字节级一致（reverse-diff）。**952 单测全绿**（+22）。
+
 **缓存稳定前缀优化（v0.5+，守密人 2026-07-04「优化」裁定，已落地）**：裸对比 run #35 发现本 SDK 短任务缓存命中
 0%、长任务 45%——诊断为 cwd 焊进系统提示正中间致缓存前缀逐任务变（`prompts.ts`）。修法：系统提示拆
 **稳定前缀**（工具表+静态开场白，逐字节稳定）+ **易变 cwd 尾块**，缓存断点落稳定块（`cacheSystemBoundary:'first'`
