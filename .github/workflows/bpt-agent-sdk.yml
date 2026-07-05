@@ -105,18 +105,19 @@ jobs:
       - name: Test (keyless, includes emulator e2e)
         run: npm test
 
-  conformance-l1:
-    # Conformance suite M1 (design final 2026-07-05): the L1 stream-grammar
-    # differential. Keyless AND free — both engines talk only to a local
+  conformance:
+    # Conformance suite M1+M2 (design final 2026-07-05): the full L1-L3
+    # differential — L1 stream grammar, L2 options semantics, L3 tool_result
+    # content. Keyless AND free — both engines talk only to a local
     # content-blind emulator (zero api.anthropic.com traffic). The official
     # arm installs the DUAL-PINNED packages transiently (--no-save, never a
-    # repo dependency; pins in tests/conformance/pins.json). M1 semantics:
+    # repo dependency; pins in tests/conformance/pins.json). M1/M2 semantics:
     # a DIVERGENT verdict is informational (M3 adds the ratchet gate); a
     # BPT-arm check failure fails the job (our own engine regression).
     # Clean-room: the emulator never reads request bodies (standing decision
-    # 2026-07-05 净室观测边界), and the runner self-audits its artifact.
+    # 2026-07-05 净室观测边界 r2), and every runner self-audits its artifact.
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v7
         with:
@@ -138,11 +139,18 @@ jobs:
           npm i --no-save $PINS
       - name: L1 stream-grammar differential (content-blind emulator)
         run: node tests/conformance/run-l1.mjs --out=conformance-l1.json
+      - name: L2 options-semantics differential
+        run: node tests/conformance/run-l2.mjs --out=conformance-l2.json
+      - name: L3 tool-behavior differential
+        run: node tests/conformance/run-l3.mjs --out=conformance-l3.json
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: conformance-l1-matrix
-          path: projects/bpt-agent-sdk/conformance-l1.json
+          name: conformance-matrix
+          path: |
+            projects/bpt-agent-sdk/conformance-l1.json
+            projects/bpt-agent-sdk/conformance-l2.json
+            projects/bpt-agent-sdk/conformance-l3.json
           if-no-files-found: ignore
 
   live-smoke:

@@ -3,4 +3,6 @@ dist/
 *.tsbuildinfo
 .vitest-cache/
 conformance-l1.json
+conformance-l2.json
+conformance-l3.json
 ab-report-*.json

@@ -201,7 +201,16 @@
   **M1 已落地**：`tests/conformance/`（内容盲仿真器正式版 + L1 差分 `run-l1.mjs` + 双包同钉 pins.json）
   + CI `conformance-l1` 无钥零费常跑 + vitest 流语法回归锁；**首份矩阵 3/3 MATCH_WITH_KNOWN_DIFFS、
   零未解释分歧**，KD-01~05 已知差异登记（KD-05 消息粒度 = 官方逐块/逐 tool_result 拆消息 vs 本 SDK 按轮合批，
-  引擎对齐候选）。708 单测全绿（+6）。M2-M4 待续（L2/L3 → L4/棘轮/漂移哨兵 → L5 五维任务库/乙门禁）
+  引擎对齐候选）。708 单测全绿（+6）。
+  **M2 已落地（2026-07-05，ultracode 编排：8 代理 / 测绘-实现-集成-对抗审查四阶段）**：L2 选项语义差分
+  15 场景（`run-l2.mjs`，12 已知差异内全等 + 2 条**有意保红引擎发现**：s6 bypass 互锁为 BPT 独有严格性
+  ——官方 0.3.199/2.1.201 实测不执行互锁；s12 maxBudgetUsd 我方在途工具执行后才截停、官方执行前截停
+  ——对齐候选）+ L2 单臂语义锁 16 条（`conformance-l2-locks.test.ts`）+ L3 工具行为差分 20 用例
+  （`run-l3.mjs`，tool_result 内容级，0 未解释分歧，KD-L3-01~21 登记；**Write 缺读前写门**为加固候选
+  ——官方拒绝覆写未读文件、我方直接覆写）。流 KD 表扩至 KD-01~11（含作用域限定机制防允许表泛化遮蔽）。
+  CI `conformance` 作业 L1-L3 三连无钥常跑。对抗审查 2 major + 4 minor 全部修复（s2/s3 空转改承重设计、
+  s14 会话继承污染清洗 + 存储级连续性证明、KD-10 归因模式校验、crossCompare 无 KD 豁免洞封死）。
+  **770 单测全绿（28 文件）**。M3-M4 待续（L4 故障注入/棘轮/漂移哨兵 → L5 五维任务库/乙门禁）
 - **完成度（表面等价）**：对官方 SDK **0.3.199 基线**约 **89.5%**（v0.1 基线 68.3% → v0.2+v0.3 补齐后重算）。
   审计矩阵与逐行台账落 `Public-Info-Pool/Resource/repo-engineering/bpt-agent-sdk-completion-audit-20260703.md`
   + 同名 `-matrix-20260703.json`（146 行）
