@@ -167,36 +167,48 @@ function hasToolUse(msg: APIMessageParam): boolean {
   );
 }
 
+/** Append a text instruction to a user turn (string or block-array content). */
+function appendUserText(msg: APIMessageParam, text: string): APIMessageParam {
+  if (typeof msg.content === 'string') {
+    return { role: 'user', content: `${msg.content}\n\n${text}` };
+  }
+  return { role: 'user', content: [...msg.content, { type: 'text', text }] };
+}
+
 /**
  * Build the seed history for a FORK child: a shallow copy of the parent history
- * trimmed to a clean assistant-text boundary, with the delegated task appended
- * as a trailing user turn.
+ * (which INHERITS the parent's context — the whole point of fork) with the
+ * delegated task added as the trailing instruction.
  *
- * Trailing turns are dropped while the last turn is EITHER a user turn OR an
- * assistant turn containing a tool_use block. This removes the parent's in-flight
- * assistant Agent tool_use turn and any trailing tool_result user turn, so the
- * seed never ends on a dangling tool_use (which would 400 against the Messages
- * API) and appending the prompt never yields two consecutive user turns. An
- * empty or fully-trimmed input degrades to a lone `[{user, prompt}]` (isolated
- * shape).
+ * The parent snapshot (reqMsgs at spawn time) is the messages the parent last
+ * sent, so it is already API-valid and ends on a user turn (it does not include
+ * the in-flight assistant Agent tool_use turn — the child should not see the
+ * call that spawned it). Two adjustments keep the seed valid WITHOUT discarding
+ * the inherited context:
+ *  - Drop ONLY a genuinely dangling trailing assistant tool_use (one with no
+ *    following tool_result, which would 400). Completed tool_use/tool_result
+ *    pairs are KEPT — the earlier version walked back through every pair and
+ *    collapsed the history to the isolated shape (the G4 blocker).
+ *  - Append the task. Consecutive user turns are invalid, so when the seed
+ *    already ends on a user turn (the common case) the task is MERGED into it;
+ *    otherwise it is added as a new user turn.
+ * An empty parent history degrades to a lone `[{user, prompt}]` (isolated shape).
  */
 export function buildForkSeed(
   parentHistory: APIMessageParam[],
   prompt: string,
 ): APIMessageParam[] {
   const seed = parentHistory.slice();
-  while (seed.length > 0) {
-    const last = seed[seed.length - 1];
-    if (last === undefined) break;
-    const trailingUser = last.role === 'user';
-    const inFlightAssistant = last.role === 'assistant' && hasToolUse(last);
-    if (trailingUser || inFlightAssistant) {
-      seed.pop();
-    } else {
-      break;
-    }
+  const last = seed[seed.length - 1];
+  if (last !== undefined && last.role === 'assistant' && hasToolUse(last)) {
+    seed.pop(); // dangling in-flight call at the tail — cannot be answered here
   }
-  seed.push({ role: 'user', content: prompt });
+  const tail = seed[seed.length - 1];
+  if (tail !== undefined && tail.role === 'user') {
+    seed[seed.length - 1] = appendUserText(tail, prompt);
+  } else {
+    seed.push({ role: 'user', content: prompt });
+  }
   return seed;
 }
 

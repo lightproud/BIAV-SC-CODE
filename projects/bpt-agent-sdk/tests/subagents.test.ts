@@ -422,46 +422,72 @@ describe('createAgentTool', () => {
 });
 
 describe('buildForkSeed', () => {
-  it('trims trailing tool_use / tool_result and appends the prompt', () => {
+  const noConsecutiveUsers = (seed: APIMessageParam[]) => {
+    for (let i = 1; i < seed.length; i++) {
+      expect(seed[i - 1]?.role === 'user' && seed[i]?.role === 'user', `consecutive users at ${i}`).toBe(false);
+    }
+  };
+
+  it('INHERITS the parent context — keeps completed tool_use/tool_result pairs (regression: G4 blocker)', () => {
+    // The realistic snapshot at Agent-tool spawn: a tool-call sequence ending on
+    // a tool_result user turn, with NO pure-text assistant turn at the tail.
+    // The old cascade collapsed this to [{user,prompt}]; it must NOT.
+    const parent: APIMessageParam[] = [
+      { role: 'user', content: 'do a big task' },
+      { role: 'assistant', content: [{ type: 'tool_use', id: 't1', name: 'Read', input: {} }] },
+      { role: 'user', content: [{ type: 'tool_result', tool_use_id: 't1', content: 'r1' }] },
+      { role: 'assistant', content: [{ type: 'tool_use', id: 't2', name: 'Grep', input: {} }] },
+      { role: 'user', content: [{ type: 'tool_result', tool_use_id: 't2', content: 'r2' }] },
+    ];
+    const seed = buildForkSeed(parent, 'the task');
+    // Every completed pair survives; the child truly inherits the parent context.
+    expect(seed).toHaveLength(5);
+    expect(seed[0]).toEqual({ role: 'user', content: 'do a big task' });
+    expect(seed[1]).toEqual(parent[1]);
+    expect(seed[3]).toEqual(parent[3]);
+    // The task is MERGED into the trailing tool_result user turn (not a dropped
+    // turn, not a second consecutive user turn).
+    const tail = seed[4]!;
+    expect(tail.role).toBe('user');
+    expect(tail.content).toEqual([
+      { type: 'tool_result', tool_use_id: 't2', content: 'r2' },
+      { type: 'text', text: 'the task' },
+    ]);
+    noConsecutiveUsers(seed);
+  });
+
+  it('appends a new user turn when the seed ends on an assistant text turn', () => {
     const parent: APIMessageParam[] = [
       { role: 'user', content: 'q1' },
       { role: 'assistant', content: 'a1' },
-      {
-        role: 'user',
-        content: [
-          { type: 'tool_result', tool_use_id: 't1', content: 'result' },
-        ],
-      },
-      {
-        role: 'assistant',
-        content: [
-          { type: 'tool_use', id: 't2', name: 'Read', input: {} },
-        ],
-      },
     ];
     const seed = buildForkSeed(parent, 'the task');
-    // The dangling tool_use assistant turn AND the trailing tool_result user
-    // turn are dropped; the seed ends at the clean assistant-text turn 'a1'
-    // followed by the appended user prompt.
-    expect(seed).toHaveLength(3);
-    expect(seed[1]).toEqual({ role: 'assistant', content: 'a1' });
-    expect(seed[2]).toEqual({ role: 'user', content: 'the task' });
-    // Never two consecutive user turns.
-    for (let i = 1; i < seed.length; i++) {
-      const prev = seed[i - 1];
-      const cur = seed[i];
-      expect(prev?.role === 'user' && cur?.role === 'user').toBe(false);
-    }
+    expect(seed).toEqual([
+      { role: 'user', content: 'q1' },
+      { role: 'assistant', content: 'a1' },
+      { role: 'user', content: 'the task' },
+    ]);
+    noConsecutiveUsers(seed);
   });
 
-  it('degrades an empty / fully-trimmed input to just the prompt', () => {
-    expect(buildForkSeed([], 'only')).toEqual([
-      { role: 'user', content: 'only' },
+  it('drops ONLY a genuinely dangling trailing assistant tool_use', () => {
+    const parent: APIMessageParam[] = [
+      { role: 'user', content: 'q1' },
+      { role: 'assistant', content: [{ type: 'tool_use', id: 't1', name: 'Read', input: {} }] },
+    ];
+    const seed = buildForkSeed(parent, 'the task');
+    // the dangling call is dropped, the task merges into the now-trailing user q1
+    expect(seed).toEqual([{ role: 'user', content: 'q1\n\nthe task' }]);
+  });
+
+  it('merges the task into a trailing string user turn (preserves it, no cascade)', () => {
+    expect(buildForkSeed([{ role: 'user', content: 'ctx' }], 'only')).toEqual([
+      { role: 'user', content: 'ctx\n\nonly' },
     ]);
-    // A history that is nothing but a trailing user turn trims to empty.
-    expect(
-      buildForkSeed([{ role: 'user', content: 'dangling' }], 'only'),
-    ).toEqual([{ role: 'user', content: 'only' }]);
+  });
+
+  it('degrades an empty parent history to just the prompt (isolated shape)', () => {
+    expect(buildForkSeed([], 'only')).toEqual([{ role: 'user', content: 'only' }]);
   });
 });
 
@@ -674,6 +700,35 @@ describe('subagent runtime — FORK mode', () => {
     // the general-purpose subagent prompt.
     expect(req?.system).toBe('parent');
     expect(req?.model).toBe('claude-sonnet-4-5');
+  });
+
+  it('fork inherits a REALISTIC tool-call-sequence parent (keeps pairs; regression: G4 blocker)', async () => {
+    const h = makeRuntime({
+      scripts: [textReplyEvents('forked answer', { model: 'claude-sonnet-4-5' })],
+    });
+    // The parent snapshot at a real Agent-tool spawn ends on a tool_result user
+    // turn with no pure-text assistant turn at the tail — the case the old
+    // buildForkSeed collapsed to the isolated shape.
+    const realistic: APIMessageParam[] = [
+      { role: 'user', content: 'do a big task' },
+      { role: 'assistant', content: [{ type: 'tool_use', id: 't1', name: 'Read', input: {} }] },
+      { role: 'user', content: [{ type: 'tool_result', tool_use_id: 't1', content: 'r1' }] },
+      { role: 'assistant', content: [{ type: 'tool_use', id: 't2', name: 'Grep', input: {} }] },
+      { role: 'user', content: [{ type: 'tool_result', tool_use_id: 't2', content: 'r2' }] },
+    ];
+    await h.runtime.makeSpawnFn(0)(
+      baseParams({ fork: true, parentHistory: realistic, prompt: 'the delegated task' }),
+    );
+    const req = h.transport.requests[0];
+    const seeded = (req?.messages ?? []).slice(0, 5); // the 5 seeded turns before the child's own reply
+    const serialized = JSON.stringify(seeded);
+    // The whole inherited chain is present — NOT collapsed to [{user,task}].
+    expect(seeded.length).toBeGreaterThanOrEqual(5);
+    expect(serialized).toContain('do a big task');
+    expect(serialized).toContain('r1');
+    expect(serialized).toContain('r2');
+    expect(serialized).toContain('the delegated task');
+    expect(req?.system).toBe('parent');
   });
 
   it('isolated (default) does NOT seed and keeps its own system prompt', async () => {
