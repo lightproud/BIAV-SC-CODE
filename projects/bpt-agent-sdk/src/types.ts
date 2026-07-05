@@ -12,7 +12,7 @@
  */
 
 // ---------------------------------------------------------------------------
-// Anthropic Messages API wire types (minimal clean-room subset)
+// Anthropic Messages API wire types (minimal independent subset)
 // ---------------------------------------------------------------------------
 
 /** Server-side tool invocation counts the API reports on a response usage. */
@@ -1022,7 +1022,7 @@ export type SDKCompactBoundaryMessage = {
 // TYPED for union exhaustiveness but have no source event in a headless engine
 // with no plugins/skills/CC-host/slash-command framework; see docs/COMPAT.md
 // for the emitted-vs-typed split. Field shapes the official leaves
-// undocumented are a self-consistent clean-room reconstruction.
+// undocumented are a self-consistent independent reconstruction.
 // ---------------------------------------------------------------------------
 
 /** A tool call the permission gate denied. EMITTED on every gate deny. */

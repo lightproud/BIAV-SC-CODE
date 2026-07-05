@@ -191,7 +191,7 @@ issue #181 has `SDKRateLimitEvent`/`SDKPromptSuggestionMessage`
 referenced-but-unexported). We model the arm with **top-level `type`**
 discriminators — the most likely consumer pattern (`msg.type === 'permission_denied'`)
 — except `status`, kept as `system/status`. Field shapes the official leaves
-undocumented are a self-consistent clean-room reconstruction. All carry the
+undocumented are a self-consistent independent reconstruction. All carry the
 house `uuid`/`session_id` envelope. Union: `SDKObservabilityMessage`.
 
 | Variant | Tier | Notes |

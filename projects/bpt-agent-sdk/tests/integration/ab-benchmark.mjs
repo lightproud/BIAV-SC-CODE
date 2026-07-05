@@ -65,7 +65,7 @@ if (!process.env.ANTHROPIC_API_KEY) {
 }
 
 // The official arm imports @anthropic-ai/claude-agent-sdk. It is NEVER a
-// dependency of this package (clean-room discipline); CI installs it with
+// dependency of this package (black-box comparison discipline); CI installs it with
 // `npm i --no-save` for the comparison run only. A missing package or a
 // CLI-startup failure is reported as a skip (exit 2), not a crash — "the
 // official engine could not start headless" is itself a finding (it is the

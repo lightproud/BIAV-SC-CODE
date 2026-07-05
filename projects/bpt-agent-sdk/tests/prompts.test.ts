@@ -51,7 +51,7 @@ describe('harness prompt v1/v2 variant', () => {
     expect(v1.length).toBeLessThan(v5.length);
   });
 
-  it('v2 is the richer clean-room prompt and is larger than v1', () => {
+  it('v2 is the richer self-authored prompt and is larger than v1', () => {
     const v1 = buildSystemPromptParts(preset, ctx('v1')).stable;
     const v2 = buildSystemPromptParts(preset, ctx('v2')).stable;
     expect(v2).not.toBe(v1);
