@@ -955,7 +955,8 @@ describe('runAgentLoop', () => {
       runAgentLoop(
         history,
         deps,
-        makeConfig({ maxOutputTokens: 8192, thinking: { type: 'enabled' } }),
+        // Pre-adaptive model: enabled+budget is the valid wire form to clamp.
+        makeConfig({ model: 'claude-haiku-4-5', maxOutputTokens: 8192, thinking: { type: 'enabled' } }),
       ),
     );
 
@@ -978,6 +979,7 @@ describe('runAgentLoop', () => {
         history,
         deps,
         makeConfig({
+          model: 'claude-haiku-4-5', // pre-adaptive: budget is honored verbatim
           maxOutputTokens: 8192,
           thinking: { type: 'enabled', budget_tokens: 2000 },
         }),

@@ -457,9 +457,15 @@
   靠「省略=不加载」旧默认的调用方须显式传 `[]`（MIGRATION 5m）。L2 锁 `conformance-l2-locks` 翻转追 live 语义
   （AHEAD of 钉版臂，属升钉预期）；wire 指纹不受影响（测试目录无 CLAUDE.md）、pin 已 0.3.201 故参考目标无需刷新。
   自验 tsc 净 / vitest **1321 全绿**。CHANGELOG 0.8.0 + COMPAT settingSources 行转 IMPLEMENTED。
-- **真 L5 已 dispatch（守密人「dispatch 真 L5」，2026-07-05）**：`bpt-agent-sdk.yml` workflow_dispatch
-  `conformance_l5=true` / `l5_repeat=5` / `l5_thinking=空`（各臂自身默认——本轮正为验 E7-01 自适应思考 vs 官方）
-  / haiku，在 main 上跑。目的：验 E7-01 自适应默认是否移动 code-01 残余（现 0/3）。结果待 run 完成回填。
+- **真 L5 已 dispatch（守密人「dispatch 真 L5」，2026-07-05，run 28753349435）——暴露 v0.7 确凿回归**：本轮跑在 haiku-4.5，
+  **我方臂 40/40 全 `error_during_execution`、turns=0、cost=$0**（gate B INCONCLUSIVE-PARTIAL，官方臂同 key 40/40 ok）。
+  根因：**E7-01 让 preset 默认无条件发 `thinking:{type:"adaptive"}`，但 adaptive 仅 4.6+ 代合法；haiku-4.5 等 pre-4.6 模型 400 拒**
+  （两向都 400：budget_tokens 在 4.7+ 也 400）。keyless 单测 stub 传输故照不到。**未查成 code-01——我方臂在 haiku 一题没真跑起来。**
+- **thinking 模型感知 fork 修复（v0.8.0→v0.8.1，2026-07-05）**：`computeThinking`（逐轮读 live model）按能力分叉线form——
+  4.6+ 发 adaptive、pre-4.6 发 `{type:"enabled",budget_tokens}`，覆盖 preset 默认 / 显式配置 / mid-run setModel 全路径。
+  单一真相源 `src/engine/thinking-model.ts supportsAdaptiveThinking`（pre-adaptive 家族 denylist、新模型默认 adaptive、denylist 有单测锁）。
+  wire 棘轮 thinking facet 升为全场景 KD（我方按模型对、官方结构参考恒 adaptive——我方更正确，非回归）。自验 tsc 净 / vitest **1326 全绿**
+  （新增 thinking-model 单测 + conformance-l2 逐 tier 线form 锁 + haiku preset 降级锁）。**待修复后重 dispatch 真 L5 在 haiku 实证我方臂恢复运行，届时才谈 code-01。**
 
 ## BPT-V2T 语音代替输入（`projects/bpt-v2t/`）
 

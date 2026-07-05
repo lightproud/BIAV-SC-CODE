@@ -40,6 +40,7 @@ import type {
 import { MessageAccumulator } from './accumulator.js';
 import { addUsage, estimateCostUsd, normalizeUsage } from './pricing.js';
 import { contextWindowFor } from './context-window.js';
+import { supportsAdaptiveThinking } from './thinking-model.js';
 import { estimateToolDefsTokens } from './tokens.js';
 import {
   maybeAutoCompact,
@@ -428,19 +429,17 @@ export async function* runAgentLoop(
   // takes effect on the next assistant sub-turn, mirroring the per-turn re-read
   // of config.model below (finding #12).
   const computeThinking = (): StreamRequest['thinking'] => {
-    if (config.thinking?.type === 'adaptive') {
-      // E7-01: pass adaptive through verbatim — the official wire shape is
-      // {type:'adaptive'} with NO budget_tokens (the model sizes its own
-      // thinking per request), so no budget resolution or clamping applies.
-      return { type: 'adaptive' };
+    const t = config.thinking;
+    if (t === undefined || t.type === 'disabled') {
+      return undefined; // unset / explicitly disabled -> omit the param entirely
     }
-    if (config.thinking?.type !== 'enabled') {
-      return undefined; // disabled/unset -> omit the param entirely
-    }
+    // Resolve "thinking on?" + a fallback budget from either an adaptive or an
+    // enabled config. `adaptive` carries no budget of its own; a budget only
+    // matters when the live model is pre-adaptive (below) or as the on/off gate.
     const requested =
-      config.thinking.budgetTokens ??
-      config.thinking.budget_tokens ??
-      config.thinking.budget ??
+      (t.type === 'enabled'
+        ? (t.budgetTokens ?? t.budget_tokens ?? t.budget)
+        : undefined) ??
       config.maxThinkingTokens ??
       DEFAULT_THINKING_BUDGET;
     // A resolved budget of 0 (or less) means "thinking off": it lets a live
@@ -450,9 +449,18 @@ export async function* runAgentLoop(
     if (requested <= 0) {
       return undefined;
     }
-    // The Messages API requires thinking.budget_tokens < max_tokens, otherwise
-    // it 400s the request. The default budget (10000) exceeds the default
-    // max_tokens (8192), so clamp the budget below max_tokens and warn.
+    // Model-aware wire form (root-cause fix for the v0.7 haiku 400 storm, run
+    // 28753349435): `{type:'adaptive'}` is valid ONLY on 4.6+ models and
+    // budget_tokens is REJECTED there; pre-4.6 models are the mirror image and
+    // 400 on `adaptive`. Emit whichever form the LIVE model accepts, regardless
+    // of which the caller/preset expressed. Recomputed per turn, so a mid-run
+    // setModel() to a different generation is handled. See thinking-model.ts.
+    if (supportsAdaptiveThinking(config.model)) {
+      return { type: 'adaptive' };
+    }
+    // Pre-adaptive model: enabled + clamped budget. The Messages API requires
+    // budget_tokens < max_tokens or it 400s; the default budget (10000) exceeds
+    // the default max_tokens (8192), so clamp below max_tokens and warn.
     const ceiling = config.maxOutputTokens - 1;
     const budget_tokens = requested > ceiling ? ceiling : requested;
     if (budget_tokens < requested) {

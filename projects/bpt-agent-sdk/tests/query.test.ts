@@ -1100,6 +1100,8 @@ describe('query() e2e - confirmed-finding regressions', () => {
     const q = query({
       prompt: inputs(),
       options: baseOptions({
+        // 4.6+ model so the preset default's adaptive form reaches the wire.
+        model: 'claude-opus-4-8',
         systemPrompt: { type: 'preset', preset: 'claude_code' },
       }),
     });
@@ -1115,15 +1117,19 @@ describe('query() e2e - confirmed-finding regressions', () => {
     }
 
     expect(fetchStub.requests).toHaveLength(2);
-    // Turn 1 = preset default adaptive (E7-01); turn 2 = disabled.
+    // Turn 1 = preset default adaptive (E7-01, opus-4-8); turn 2 = disabled.
     expect(fetchStub.requests[0]!.body.thinking).toEqual({ type: 'adaptive' });
     expect(fetchStub.requests[1]!.body).not.toHaveProperty('thinking');
   });
 
-  it('setMaxThinkingTokens(null) resets a fixed-budget preset session back to adaptive (E7-01 live-switch)', async () => {
+  it('setMaxThinkingTokens(null) resets a fixed-budget preset session back to the preset default (E7-01 live-switch)', async () => {
     // Preset session pinned to a fixed budget -> turn 1 sends enabled/2048.
-    // A live setMaxThinkingTokens(null) must restore the preset default
-    // (adaptive, the official wire shape) for turn 2.
+    // A live setMaxThinkingTokens(null) restores the preset default budget for
+    // turn 2. Asserted on a PRE-adaptive model (haiku-4.5) where the reset is
+    // observable at the enabled wire form: 2048 -> the larger preset default.
+    // (On a 4.6+ model both turns would render as {type:'adaptive'} — the wire
+    // form is model-determined post the thinking model-gate, so the budget
+    // switch is only visible on a model that takes budget_tokens.)
     const fetchStub = stubFetch(
       makeSSEFetch([textReplyEvents('r1'), textReplyEvents('r2')]),
     );
@@ -1140,6 +1146,7 @@ describe('query() e2e - confirmed-finding regressions', () => {
     const q = query({
       prompt: inputs(),
       options: baseOptions({
+        model: 'claude-haiku-4-5',
         systemPrompt: { type: 'preset', preset: 'claude_code' },
         maxThinkingTokens: 2048,
       }),
@@ -1160,7 +1167,10 @@ describe('query() e2e - confirmed-finding regressions', () => {
       type: 'enabled',
       budget_tokens: 2048,
     });
-    expect(fetchStub.requests[1]!.body.thinking).toEqual({ type: 'adaptive' });
+    // Reset restored the preset default budget (no longer pinned to 2048).
+    const t2 = fetchStub.requests[1]!.body.thinking;
+    expect(t2.type).toBe('enabled');
+    expect(t2.budget_tokens).toBeGreaterThan(2048);
   });
 
   it('reports per-result num_turns/usage with cumulative cost/apiMs across streaming turns (E2, KD-L5-04)', async () => {

@@ -31,7 +31,10 @@ The keeper ruling 「全面实现」 drove a full-surface alignment pass. What l
 - **Observability encoding migrated** to official `{type:'system', subtype:…}`
   for all ten reversed variants (was a v0.7 candidate; now done — see the
   Observability arm note). E8 subagent-lifecycle encoding aligned.
-- **Wire alignment (E7)**: thinking default `{type:"adaptive"}`; Read `pages`;
+- **Wire alignment (E7)**: thinking default is `{type:"adaptive"}` **on 4.6+
+  models only** — pre-4.6 models (haiku 4.5, sonnet 4.5, …) get
+  `{type:"enabled", budget_tokens}` instead, since adaptive 400s there (v0.8.1
+  model-gate fix; see `src/engine/thinking-model.ts`). Read `pages`;
   Bash `dangerouslyDisableSandbox` always in schema; Agent `model`/`isolation`.
   Wire ratchet shrinks to `Agent:params` (our BPT-only `fork` extension) plus
   placement/thinking residuals. E7-03 tool-block cache breakpoint kept as a
@@ -216,7 +219,7 @@ SDK implements the agent loop directly against the public Messages API:
 | `hooks` | PARTIAL | see hook table |
 | `includePartialMessages` | FULL | raw stream events as `stream_event` |
 | `maxBudgetUsd` | PARTIAL | based on estimated cost (a static price table, not billing truth); stop ORDERING matches official 2.1.201 (E5, 2026-07-05): a turn requesting tools past the cap stops BEFORE any tool executes (zero side effects, no tool_result user turn, terminal `error_max_budget_usd`), while a naturally ending turn still yields its completed success result (conformance run-l2 s12 converged) |
-| `maxThinkingTokens` / `thinking` | PARTIAL | `thinking.type:'enabled'` maps to the Messages API `thinking` (budget clamped below `max_tokens`); on the `claude_code` preset path thinking is DEFAULT-ON like the official CLI (all 54/54 official L5 traces carry thinking events; opt out with `maxThinkingTokens: 0` or `thinking: {type:'disabled'}`) — KD: the 4096 default budget is OUR chosen value, the official budget is request-body-internal and unobservable under the net-observation boundary; off the preset path `maxThinkingTokens` alone is only a budget fallback and sends no thinking param on its own. The official `budgetTokens` field name IS accepted (alongside the `budget_tokens`/`budget` aliases — the old "not the official budgetTokens" note was stale, docs-audit 2026-07-05); the official `display` sub-option ('summarized'\|'omitted') is not modeled (NEW-IN-DOCS); official docs mark `maxThinkingTokens` deprecated, our type carries no `@deprecated` tag yet |
+| `maxThinkingTokens` / `thinking` | PARTIAL | **Model-gated wire form (v0.8.1)**: `computeThinking` emits `{type:'adaptive'}` on 4.6+ models and `{type:'enabled', budget_tokens}` on pre-4.6 models — recomputed each turn from the live model, since the two forms 400 on the wrong tier (root-cause fix for the v0.7 haiku 400-storm, run 28753349435). On the `claude_code` preset path thinking is DEFAULT-ON like the official CLI (opt out with `maxThinkingTokens: 0` or `thinking: {type:'disabled'}`); off the preset path `maxThinkingTokens` alone is only a budget fallback and sends no thinking param on its own. The official `budgetTokens` field name IS accepted (alongside the `budget_tokens`/`budget` aliases — the old "not the official budgetTokens" note was stale, docs-audit 2026-07-05); the official `display` sub-option ('summarized'\|'omitted') is not modeled (NEW-IN-DOCS); official docs mark `maxThinkingTokens` deprecated, our type carries no `@deprecated` tag yet |
 | `maxTurns` | FULL | |
 | `mcpServers` | PARTIAL | stdio/http/sdk FULL; `sse` legacy transport UNSUPPORTED |
 | `model` | FULL | default `ANTHROPIC_MODEL` env or `claude-sonnet-4-5` |

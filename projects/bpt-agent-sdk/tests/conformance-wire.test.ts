@@ -143,12 +143,8 @@ const EXPECTED_SURFACE = new Set(['toolNames', 'toolCount']);
  * Documented wire-alignment gaps vs the official reference target. Each is a
  * concrete engine-alignment candidate handed to the engine team; DELETE the
  * entry when the engine closes it (the ratchet reds a stale entry).
- *   thinking            - E7-01 landed: preset default is now adaptive, so the
- *                         entry remains ONLY where a real gap persists —
- *                         thinking-off (official sends {type:'disabled'}, we
- *                         omit) and thinking-4096 (official still sends
- *                         adaptive; explicit maxThinkingTokens keeps our
- *                         enabled/budget form)
+ *   thinking            - model-gate divergence on every thinking scenario; see
+ *                         the block comment above WIRE_ALIGNMENT_GAPS for why.
  *   toolCacheBreakpoints- official 0 on tools; ours 1 (cache-strategy divergence)
  *   Agent:params        - E7-02 landed: Bash (dangerouslyDisableSandbox) and
  *                         Read (pages) cleared, Agent official params + required
@@ -163,13 +159,24 @@ const TOOL_GAPS = ['Agent:params'];
 // systemSegments (A1): our cache breakpoint sits on the stable FIRST system
 // block; official's sits on the LAST - a cache-boundary PLACEMENT gap (E7-03
 // territory). Present on every scenario alongside thinking + toolCacheBreakpoints.
+//
+// thinking (2026-07-05, model-gate fix): the wire harness uses the engine
+// DEFAULT_MODEL (claude-sonnet-4-5), which is PRE-4.6 and rejects
+// {type:'adaptive'} at the API — so our arm now correctly emits
+// {type:'enabled', budget_tokens} there. The official STRUCTURAL reference
+// builds {type:'adaptive'} unconditionally (it never validates against the
+// endpoint), so `thinking` is now an expected divergence on every scenario
+// that sends thinking. This is us being MORE correct (adaptive on sonnet-4-5
+// would 400), not a regression; the per-tier wire form is unit-locked in
+// conformance-l2-locks + thinking-model.test.ts. To retire it, recapture the
+// reference on a matched model tier.
 const WIRE_ALIGNMENT_GAPS: Record<string, { facets: string[]; tools: string[] }> = {
-  default: { facets: ['systemSegments', 'toolCacheBreakpoints'], tools: TOOL_GAPS },
+  default: { facets: ['systemSegments', 'thinking', 'toolCacheBreakpoints'], tools: TOOL_GAPS },
   'thinking-off': { facets: ['systemSegments', 'thinking', 'toolCacheBreakpoints'], tools: TOOL_GAPS },
   'thinking-4096': { facets: ['systemSegments', 'thinking', 'toolCacheBreakpoints'], tools: TOOL_GAPS },
-  'cache-off': { facets: ['systemBlocks', 'systemCacheBreakpoints', 'systemKind', 'systemSegments'], tools: TOOL_GAPS },
-  'tool-loop': { facets: ['systemSegments', 'toolCacheBreakpoints'], tools: TOOL_GAPS },
-  'mcp-added': { facets: ['systemSegments', 'toolCacheBreakpoints'], tools: TOOL_GAPS },
+  'cache-off': { facets: ['systemBlocks', 'systemCacheBreakpoints', 'systemKind', 'systemSegments', 'thinking'], tools: TOOL_GAPS },
+  'tool-loop': { facets: ['systemSegments', 'thinking', 'toolCacheBreakpoints'], tools: TOOL_GAPS },
+  'mcp-added': { facets: ['systemSegments', 'thinking', 'toolCacheBreakpoints'], tools: TOOL_GAPS },
 };
 
 interface WireScenario {
