@@ -13,8 +13,8 @@
       "mcp_tools": 9,
       "commands": 4,
       "skills": 4,
-      "projects": 5,
-      "total": 119
+      "projects": 6,
+      "total": 120
     },
     "reachability": {
       "live": 66,
@@ -1071,6 +1071,11 @@
       "id": "bpt-agent-sdk",
       "path": "projects/bpt-agent-sdk/",
       "summary": "BPT Agent SDK：净室（clean-room）实现的 TypeScript agent 框架，公开调用面"
+    },
+    {
+      "id": "bpt-v2t",
+      "path": "projects/bpt-v2t/",
+      "summary": "BPT-V2T:银芯**语音代替输入**(voice-as-input)工具。按热键说话 → 转成文字 →"
     },
     {
       "id": "game",
