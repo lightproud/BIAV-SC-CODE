@@ -10,7 +10,7 @@ For a full 146-row completion audit against the latest official surface
 For the FIELD-LEVEL reconciliation against the live official docs (snapshot
 2026-07-05: `Public-Info-Pool/Reference/Agent-SDK-Docs/typescript-20260705.md`),
 including the drop-in breaking-gap list and the NEW-IN-DOCS ledger
-(post-0.3.199 surface), see
+(surface above the pinned 0.3.201 baseline), see
 `Public-Info-Pool/Resource/repo-engineering/bpt-sdk-official-docs-interface-audit-20260705.md`.
 Stale rows flagged there were corrected in this file on 2026-07-05.
 
@@ -46,13 +46,16 @@ The keeper ruling 「全面实现」 drove a full-surface alignment pass. What l
   (docs/ERRORS.md), throw-discipline static guard.
 - **Resilience defaults**: maxRetries 4→10 (env-capped 15), stream watchdog
   120s→300s, new background-subagent stall watchdog.
-- **NEW-IN-DOCS (above the pinned 0.3.199/2.1.201 baseline)**: six new hook
-  events typed (typed-not-fired — no natural headless hook point), MessageDisplay
-  5-field incremental protocol emitted, plus additive optional types
-  (SDKMessageOrigin, error/terminal_reason enums, etc.). The **`settingSources`
-  default reversal** (omit = load-all) is deliberately NOT done — it is the one
-  behavior-level reversal, would diverge from the pinned official arm, and awaits
-  a keeper bump-pin decision.
+- **NEW-IN-DOCS (in the live 2026-07-05 docs above the pinned 0.3.201/2.1.201
+  baseline)**: six new hook events typed (typed-not-fired — no natural headless
+  hook point), MessageDisplay 5-field incremental protocol emitted, plus additive
+  optional types (SDKMessageOrigin, error/terminal_reason enums, etc.). The
+  **`settingSources` omit-default** (live docs: omit = load-all) is deliberately
+  KEPT at load-nothing — a keeper ruling: for a library-shaped direct-API engine,
+  not reading user/project/local settings off disk unless the caller explicitly
+  opts in is the safer, more predictable default. The conformance suite does not
+  exercise this option, so keeping it has zero differential impact at the 0.3.201
+  pin; it is a deliberate KEPT-DIVERGENCE, not a pending item.
 
 ## Divergences from the official SDK (where we differ on purpose)
 
@@ -84,7 +87,7 @@ Per-row detail lives in the sections below; this is the at-a-glance table.
 | TaskOutput / TaskStop tools | N/A (candidate) | model-facing task tools | capability exists (stopTask/BashOutput) but not exposed as builtins yet |
 | full settings engine / OTel / 3P providers | N/A-BY-DESIGN | present | out of scope for a direct-API engine |
 | `reinitialize()` / `applyFlagSettings()` | N/A-BY-DESIGN | CLI control requests | no CLI to control |
-| `settingSources` default | PENDING | omit = load-all (live docs) | omit = load-nothing (pinned 0.3.199); flip awaits bump-pin |
+| `settingSources` omit-default | KEPT-DIVERGENCE | omit = load-all (live docs) | omit = load-nothing — deliberate (keeper ruling: library-safe explicit opt-in); pinned at 0.3.201, not exercised by conformance, zero differential impact |
 | KD-12 rate-limit encoding | KEPT-DIVERGENCE | `system/api_retry` on 429 | `rate_limit_event` on 429 (triaged) |
 
 ## v0.2 status (what graduated from the v0.1 audit)
