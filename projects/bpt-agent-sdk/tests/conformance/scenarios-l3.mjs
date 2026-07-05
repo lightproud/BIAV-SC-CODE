@@ -740,6 +740,154 @@ export const L3_SCENARIOS = [
       },
     ],
   },
+
+  // --- MCP (in-process sdk server) - differential tranche 1 -------------------
+  // Completeness-push gap 2 (2026-07-05): L3 previously differentialized only
+  // the six built-in tools; the MCP tool chain (registration -> scripted
+  // tool_use -> handler -> tool_result encoding) had unit tests but ZERO
+  // official-arm comparison. Each arm builds the server with ITS OWN
+  // tool()/createSdkMcpServer via buildOptions(cwd, ctx, { sdk }) - the
+  // official arm bridges handlers over its control protocol, ours dispatches
+  // in-process; the tool_result text is the shared observable. Tranche 1 uses
+  // no-arg fixed-output tools only (zod schema-coercion semantics deferred to
+  // tranche 2 - a different failure axis).
+  {
+    id: 'L3-MCP-01',
+    tool: 'mcp__conf__ping',
+    prompt: 'Call the ping tool.',
+    buildOptions: (_cwd, _ctx, { sdk }) => ({
+      allowedTools: [...ALLOWED_TOOLS, 'mcp__conf__ping'],
+      mcpServers: {
+        conf: sdk.createSdkMcpServer({
+          name: 'conf',
+          version: '1.0.0',
+          tools: [
+            sdk.tool('ping', 'Return a fixed marker.', {}, async () => ({
+              content: [{ type: 'text', text: 'MCP-PING-OK' }],
+            })),
+          ],
+        }),
+      },
+    }),
+    fixtureFiles: {},
+    buildScripts: () => [
+      toolTurn(1, [{ name: 'mcp__conf__ping', input: {} }]),
+      { kind: 'sse', events: textReply('L3 MCP-01 DONE') },
+    ],
+    steps: [
+      {
+        tool: 'mcp__conf__ping',
+        isError: false,
+        locks: [/MCP-PING-OK/],
+      },
+    ],
+  },
+  {
+    id: 'L3-MCP-02',
+    tool: 'mcp__conf__fail_soft',
+    prompt: 'Call the failing tool.',
+    buildOptions: (_cwd, _ctx, { sdk }) => ({
+      allowedTools: [...ALLOWED_TOOLS, 'mcp__conf__fail_soft'],
+      mcpServers: {
+        conf: sdk.createSdkMcpServer({
+          name: 'conf',
+          version: '1.0.0',
+          tools: [
+            sdk.tool('fail_soft', 'Return an isError tool result.', {}, async () => ({
+              content: [{ type: 'text', text: 'MCP-SOFT-FAILURE' }],
+              isError: true,
+            })),
+          ],
+        }),
+      },
+    }),
+    fixtureFiles: {},
+    buildScripts: () => [
+      toolTurn(1, [{ name: 'mcp__conf__fail_soft', input: {} }]),
+      { kind: 'sse', events: textReply('L3 MCP-02 DONE') },
+    ],
+    steps: [
+      {
+        // The MCP protocol's soft-failure channel: handler returns
+        // isError: true. How each engine maps that onto the Messages API
+        // tool_result is_error flag is the differential payload.
+        tool: 'mcp__conf__fail_soft',
+        isError: true,
+        locks: [/MCP-SOFT-FAILURE/],
+      },
+    ],
+  },
+  {
+    id: 'L3-MCP-03',
+    tool: 'mcp__conf__crash',
+    prompt: 'Call the crashing tool.',
+    buildOptions: (_cwd, _ctx, { sdk }) => ({
+      allowedTools: [...ALLOWED_TOOLS, 'mcp__conf__crash'],
+      mcpServers: {
+        conf: sdk.createSdkMcpServer({
+          name: 'conf',
+          version: '1.0.0',
+          tools: [
+            sdk.tool('crash', 'Throw from the handler.', {}, async () => {
+              throw new Error('MCP-HANDLER-CRASH');
+            }),
+          ],
+        }),
+      },
+    }),
+    fixtureFiles: {},
+    buildScripts: () => [
+      toolTurn(1, [{ name: 'mcp__conf__crash', input: {} }]),
+      { kind: 'sse', events: textReply('L3 MCP-03 DONE') },
+    ],
+    steps: [
+      {
+        // A THROWN handler (vs the soft isError channel above): must surface
+        // as an error tool_result carrying the message - never a crashed run.
+        tool: 'mcp__conf__crash',
+        isError: true,
+        locks: [/MCP-HANDLER-CRASH/],
+        kd: ['KD-L3-22'],
+      },
+    ],
+  },
+  {
+    id: 'L3-MCP-04',
+    tool: 'mcp__conf__nope (unregistered)',
+    prompt: 'Call a tool that does not exist.',
+    buildOptions: (_cwd, _ctx, { sdk }) => ({
+      // The server registers ONLY ping; the script calls mcp__conf__nope.
+      allowedTools: [...ALLOWED_TOOLS, 'mcp__conf__nope'],
+      mcpServers: {
+        conf: sdk.createSdkMcpServer({
+          name: 'conf',
+          version: '1.0.0',
+          tools: [
+            sdk.tool('ping', 'Return a fixed marker.', {}, async () => ({
+              content: [{ type: 'text', text: 'MCP-PING-OK' }],
+            })),
+          ],
+        }),
+      },
+    }),
+    fixtureFiles: {},
+    buildScripts: () => [
+      toolTurn(1, [{ name: 'mcp__conf__nope', input: {} }]),
+      { kind: 'sse', events: textReply('L3 MCP-04 DONE') },
+    ],
+    steps: [
+      {
+        // Unknown-tool encoding is a discovery objective: both engines must
+        // refuse via an error tool_result (never execute, never crash the
+        // run); the wording is expected to differ and will be KD-triaged
+        // after first observation.
+        tool: 'mcp__conf__nope',
+        isError: true,
+        locks: [/nope|not found|unknown|no such|not available/i],
+        kd: ['KD-L3-23'],
+      },
+    ],
+  },
 ];
 
 /**

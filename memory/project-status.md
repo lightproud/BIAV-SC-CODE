@@ -261,6 +261,19 @@
   ② stop 前无 event 名非 JSON 帧跳过（debug 留片段）③ 有 event 名坏帧照抛且带现场（前 120 字符 + 已解析帧数
   ——交接单 **E6b 就地落地**，交接档 r2 已注记引擎侧勿重做）。5 条回归测试；`npx vitest run` **1030 全绿（35 文件）**、
   `tsc` + build exit 0。BPT 侧只需装新 build 验证。
+  **测试用例完备性全面推进已落（2026-07-05，守密人「全面推进」裁定，四缺口一批清）**：
+  ① **环境保真轴建轴**——仿真器加 `sse-gateway` 脚本类（`[DONE]` 尾卡 / 无 event 名帧，复刻 idealab 原始字节形状），
+  L4 新增 3 场景双臂差分：`[DONE]` 尾卡（文本轮 + 工具链轮）**双臂全绿**（#461 修复差分成立）；无名错误帧抓到**真发现
+  KD-L4-05**（两轮稳定）：官方 2.1.201 不认无名错误帧、当「空/畸形响应」**重试一次**并把失败编码成 assistant 文本 +
+  result/success——对 BPT 产线的实义：官方客户端在 idealab 后面会重试并 success 化 API 错误、我方快速失败带真错误类型；
+  ② **MCP 差分首批（L3 扩容）**——arm.mjs `buildOptions` 加每臂 SDK 句柄（各臂用自家 `tool()`/`createSdkMcpServer`
+  建进程内服务器），4 场景：ping/软失败 isError **双臂 CONTENT_MATCH**（结果编码逐字一致），抛异常/未注册工具措辞差
+  两轮稳定入 KD-L3-22/23（zod schema 语义留第二批）；③ **Fix-2 落地**——run-l5 `--thinking=N` 双臂同预算钉死
+  （拆引擎差 vs 思考差），workflow 加 `l5_thinking` dispatch 输入；④ **聚合自证**——runner 度量规则抽成
+  `l5-aggregate.mjs`，vitest 喂 run 28736460533 真实官方 result 序列锁定（多 result 求和/取末值、空跑、缺字段防 NaN）。
+  棘轮基线 +7 行全改进项锁入；L1-L4 双臂全跑收敛（L4 12/12、L3 零发散、零未分诊候选）；`npx vitest run` **1060 全绿**。
+  剩余挂账：MCP 差分第二批（schema 语义/annotations/stdio-http 传输）、子代理/hook 差分（L3.5，大活）、
+  E1 后首轮真 L5 复测（退出标准 chat-03 ≥2/3、code-01 ≥官方−1）。
   （首轮 run 28735894053 因预算护栏冷启动外推误停 2/180，护栏已修 #447）。**一致性验证体系 M1-M4 全部封顶**
 - **完成度（表面等价）**：对官方 SDK **0.3.199 基线**约 **89.5%**（v0.1 基线 68.3% → v0.2+v0.3 补齐后重算）。
   审计矩阵与逐行台账落 `Public-Info-Pool/Resource/repo-engineering/bpt-agent-sdk-completion-audit-20260703.md`

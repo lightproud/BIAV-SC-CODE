@@ -273,6 +273,30 @@
         ],
         "engineFinding": false
       },
+      "L3-MCP-01": {
+        "verdict": "CONTENT_MATCH",
+        "kdIds": [],
+        "engineFinding": false
+      },
+      "L3-MCP-02": {
+        "verdict": "CONTENT_MATCH",
+        "kdIds": [],
+        "engineFinding": false
+      },
+      "L3-MCP-03": {
+        "verdict": "CONTENT_KNOWN_DIFF",
+        "kdIds": [
+          "KD-L3-22"
+        ],
+        "engineFinding": false
+      },
+      "L3-MCP-04": {
+        "verdict": "CONTENT_KNOWN_DIFF",
+        "kdIds": [
+          "KD-L3-23"
+        ],
+        "engineFinding": false
+      },
       "L3-READ-01": {
         "verdict": "CONTENT_KNOWN_DIFF",
         "kdIds": [
@@ -354,6 +378,33 @@
           "KD-04",
           "KD-05",
           "KD-12"
+        ],
+        "engineFinding": false
+      },
+      "l4-gateway-done-appendix": {
+        "verdict": "FAULT_KNOWN_DIFF",
+        "kdIds": [
+          "KD-01",
+          "KD-02",
+          "KD-04"
+        ],
+        "engineFinding": false
+      },
+      "l4-gateway-done-tool-chain": {
+        "verdict": "FAULT_KNOWN_DIFF",
+        "kdIds": [
+          "KD-01",
+          "KD-02",
+          "KD-04"
+        ],
+        "engineFinding": false
+      },
+      "l4-gateway-eventless-error-frame": {
+        "verdict": "FAULT_KNOWN_DIFF",
+        "kdIds": [
+          "KD-01",
+          "KD-04",
+          "KD-L4-05"
         ],
         "engineFinding": false
       },
