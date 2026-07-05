@@ -149,8 +149,24 @@ export class AnthropicTransport implements Transport {
         try {
           parsed = JSON.parse(frame.data);
         } catch (err) {
+          // Anthropic-native frames ALWAYS carry an event name. An event-less
+          // frame that is not JSON is foreign framing noise from a translating
+          // gateway - the canonical case is an OpenAI-style `data: [DONE]`
+          // terminator appended after the Anthropic event stream (observed on
+          // a corporate gateway's /api/anthropic endpoint, 2026-07-05). The
+          // official client never trips on it because it stops consuming at
+          // message_stop; skipping here aligns tolerance without loosening
+          // anything on real Anthropic frames.
+          if (frame.event === undefined) {
+            this.debug(
+              `transport: skipping event-less non-JSON SSE frame after ${eventCount} event(s): ` +
+                frame.data.slice(0, 120),
+            );
+            continue;
+          }
           throw new APIConnectionError(
-            `Malformed SSE payload for event "${frame.event ?? '(none)'}"`,
+            `Malformed SSE payload for event "${frame.event}" after ${eventCount} event(s): ` +
+              frame.data.slice(0, 120),
             err,
           );
         }
@@ -168,6 +184,17 @@ export class AnthropicTransport implements Transport {
         }
         eventCount += 1;
         yield parsed as RawMessageStreamEvent;
+        // The Messages API streams exactly one message; message_stop is its
+        // terminal event. Stop consuming here - official-client lifecycle -
+        // so trailing gateway appendices (e.g. `data: [DONE]`) are never
+        // parsed at all and the connection is released promptly. parseSSE's
+        // finally cancels the underlying reader on early return.
+        if ((parsed as { type?: string }).type === 'message_stop') {
+          this.debug(
+            `transport: stream completed at message_stop after ${eventCount} event(s)`,
+          );
+          return;
+        }
       }
     } catch (err) {
       throw mapStreamError(

@@ -253,6 +253,13 @@
   透传报告 per-task 汇总（KD-L5-01 官方 /tmp 锚定 / KD-L5-02 官方注入误判方差 / KD-L5-03 思考不对称）。**附带发现 KD-L5-04**：
   两引擎 result 累计口径本身分歧（官方 num_turns/usage 逐 result vs 我方 finding #33 全字段会话累计）——drop-in 面引擎对齐候选。
   `--smoke` 3/3 绿 + 预置散落物清扫实测 + `npx vitest run` 981 全绿。
+  **SSE 网关方言容错已落（2026-07-05，BPT 产线故障闭环）**：BPT 实测「Malformed SSE payload for event "(none)"」
+  经双侧协作定型——BPT `curl -N` 抓原始字节实锤 idealab 网关 `/api/anthropic` 端点带 OpenAI 方言遗留
+  （流尾追加 `data: [DONE]`、错误帧无 event 行）；官方客户端 message_stop 即收工不碰尾卡、我方读到流关闭才撞上。
+  修复（`src/transport/anthropic.ts`）：① message_stop 即收工（官方同款生命周期，尾部废卡不进解析器）
+  ② stop 前无 event 名非 JSON 帧跳过（debug 留片段）③ 有 event 名坏帧照抛且带现场（前 120 字符 + 已解析帧数
+  ——交接单 **E6b 就地落地**，交接档 r2 已注记引擎侧勿重做）。5 条回归测试；`npx vitest run` **1030 全绿（35 文件）**、
+  `tsc` + build exit 0。BPT 侧只需装新 build 验证。
   （首轮 run 28735894053 因预算护栏冷启动外推误停 2/180，护栏已修 #447）。**一致性验证体系 M1-M4 全部封顶**
 - **完成度（表面等价）**：对官方 SDK **0.3.199 基线**约 **89.5%**（v0.1 基线 68.3% → v0.2+v0.3 补齐后重算）。
   审计矩阵与逐行台账落 `Public-Info-Pool/Resource/repo-engineering/bpt-agent-sdk-completion-audit-20260703.md`
