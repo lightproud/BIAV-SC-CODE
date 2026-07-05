@@ -435,6 +435,20 @@
   Grep offset·-o / bypass 联锁 / ModelInfo.value。）
 - **沙箱**：**再现且默认开启**（守密人 2026-07-04「全做、一样默认开启」裁定，**更新** 2026-07-03「N/A-by-design」旧裁定）。
   即 `bash-sandbox-*` 能力本体照官方再现、BPT 默认启用，与全做其余项一致
+- **v0.7.0 全面实现 + Windows 换装批已合并 main（2026-07-05）**：`#480`（`9260261e`，v0.6.2→**v0.7.0**）
+  「completion-inventory 全面实现」——内建工具面 15→20/24（Task 四件 / ExitPlanMode / EnterWorktree / Monitor /
+  Workflow）、观测编码迁官方 system+subtype（E8）、线缆对齐（thinking adaptive=E7-01 / Read pages·Bash sandbox flag·
+  Agent isolation+model=E7-02 主体）、result/type 形对齐、McpError 分类 + 稳定错误码 + 抛错纪律守卫（E6a/c/d）、
+  韧性默认（maxRetries 10 + watchdog=E3 域）；自验 vitest 1315 / pytest 2620 / tsc 净 / 棘轮全绿。另 Windows 换装线
+  `#479`（shell 解析）/ `#481`（版本纪律 + CI bump 守卫）/ `#482`（KillShell Windows 终止 + 诚实终态）/
+  `#483`（Read/Write/Edit 撤围栏对齐官方权限门）/ `#484`（前台 Bash kill 孪生修复 + posix-hazard 静态守卫）均已合并。
+- **引擎工单账目结算 r5（2026-07-05）**：隔壁引擎的状态基于交接档 **r4**（成文于 #480 之前）把 E1–E8 列为待领工单，
+  与 main 实况错位。逐工单核对（§4.2 R3 验代码非验 commit message）结论：**E1–E8 在 main 已全部落地**
+  （E1 于 #480 前验收轮 run 28741914245；其余随 #480/v0.7.0），两项非缺陷保留（E7-03 缓存策略差 KD、settingSources
+  默认反转需升钉裁定），E7-02 留一条 `Agent:params` 必填集残余。**隔壁无待领引擎工单**；结算档
+  `Public-Info-Pool/Resource/repo-engineering/bpt-sdk-engine-alignment-handoff-20260705-r5.md`（退役 r4 待办视图）。
+  **代码侧无挂账**；剩余三项纯花预算 / 需裁定的验收（真 L5 验 code-01 残余 / run-l35 双臂封印 KD-L35-02 / 升钉+参考目标刷新+settingSources 反转），
+  待守密人「dispatch 真 L5」或「升钉」信号，否则本线判定收官。
 
 ## BPT-V2T 语音代替输入（`projects/bpt-v2t/`）
 
