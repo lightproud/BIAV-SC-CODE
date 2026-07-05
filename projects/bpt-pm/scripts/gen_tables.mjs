@@ -19,7 +19,7 @@ import path from "node:path";
 const TABLES = {
   "项目表": { cols: ["项目名", "起算日", "调度方向", "完成日", "工作日", "节假日"], writeback: [] },
   "任务表": {
-    cols: ["任务ID", "名称", "工期", "前置依赖", "约束", "资源", "进度", "截止", "上级",
+    cols: ["任务ID", "名称", "工期", "前置依赖", "约束", "资源", "负责人", "进度", "截止", "上级",
       "计算开始", "计算结束", "松弛", "自由浮动", "临界", "误期"],
     writeback: ["计算开始", "计算结束", "松弛", "自由浮动", "临界", "误期"],
   },
@@ -51,7 +51,7 @@ function toTables(data) {
   }];
   t["任务表"] = (data.tasks || []).map(x => ({
     "任务ID": x.id, "名称": x.name || "", "工期": x.duration ?? 1, "前置依赖": predsToStr(x.predecessors),
-    "约束": constraintToStr(x.constraint), "资源": x.resource || "", "进度": x.percentComplete ?? 0,
+    "约束": constraintToStr(x.constraint), "资源": x.resource || "", "负责人": x.owner || "", "进度": x.percentComplete ?? 0,
     "截止": x.deadline || "", "上级": x.parent || "",
     "计算开始": "", "计算结束": "", "松弛": "", "自由浮动": "", "临界": "", "误期": "",
   }));

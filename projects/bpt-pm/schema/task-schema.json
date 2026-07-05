@@ -173,7 +173,8 @@
               }
             }
           },
-          "resource": { "type": "string", "description": "负责资源/人员（可选）。" },
+          "resource": { "type": "string", "description": "排期占用键（可选）：引用 resources.id，驱动冲突/错峰/负载；占用者可为外包 vendor。" },
+          "owner": { "type": "string", "description": "问责人（可选，v3 跨线收敛）：纯元数据，引擎不参与排期占用。与 resource 两义正交、不合一。" },
           "deadline": {
             "type": "string",
             "format": "date",

@@ -25,6 +25,7 @@ assert("资源表 外包A 产能2 vendor", seeded.tables["资源表"].some(r => 
 // 前置迷你语法摊平
 const t4 = seeded.tables["任务表"].find(r => r["任务ID"] === "X4");
 assert("任务表 X4 前置=X3", t4 && t4["前置依赖"] === "X3");
+assert("任务表含 负责人 列（跨线收敛，问责人与占用资源两义分列）", t4 && "负责人" in t4);
 // 写回列建表时为空
 assert("写回列(计算开始)建表留空", seeded.tables["任务表"].every(r => r["计算开始"] === ""));
 
