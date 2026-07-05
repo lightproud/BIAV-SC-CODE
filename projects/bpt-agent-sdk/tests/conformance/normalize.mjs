@@ -58,7 +58,7 @@ export function normalizeStream(messages) {
  * consumption - allowlisted means "known and documented", never "invisible".
  */
 export const KNOWN_DIVERGENCES = [
-  { id: 'KD-01', official: 'active_goal', note: 'official-only status variant (engine 2.1.x); outside the pinned 0.3.199 type surface, typed-not-emitted here' },
+  { id: 'KD-01', official: 'active_goal', note: 'official-only status variant (engine 2.1.x); outside the pinned agent-sdk type surface (observed at 0.3.199, unchanged at 0.3.201), typed-not-emitted here' },
   { id: 'KD-02', official: 'rate_limit_event', note: 'official broadcasts rate-limit STATUS even on success; this SDK emits rate_limit_event only on an actual 429' },
   { id: 'KD-03', official: 'system/api_retry', ours: 'api_retry', alias: true, note: 'same retry event; official wire shape is system+subtype, ours is a top-level discriminator (official docs are internally inconsistent here - see COMPAT observability note)' },
   { id: 'KD-04', ours: 'user/echo', note: 'this SDK yields a prompt-echo user message for string prompts; the official arm does not (spike S1 observation)' },
