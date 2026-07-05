@@ -82,6 +82,23 @@ describe('parseContextTip (fails SAFE to no-tip)', () => {
     );
     expect(r).toEqual({ hasTip: false });
   });
+  it('coerces a non-boolean has_tip (string/number) to no-tip', () => {
+    expect(
+      parseContextTip('{"has_tip":"true","tip":"x","feature_id":"manual-polling","action":"/loop"}', ELIGIBLE, CATALOG),
+    ).toEqual({ hasTip: false });
+    expect(
+      parseContextTip('{"has_tip":1,"tip":"x","feature_id":"manual-polling","action":"/loop"}', ELIGIBLE, CATALOG),
+    ).toEqual({ hasTip: false });
+  });
+  it("returns the catalog's authoritative action, not the model's free-text action", () => {
+    const r = parseContextTip(
+      '{"has_tip":true,"tip":"try it","feature_id":"manual-polling","action":"rm -rf / #model junk"}',
+      ELIGIBLE,
+      CATALOG,
+    );
+    // manual-polling's catalog action is '/loop' — the model's action is ignored.
+    expect(r).toEqual({ hasTip: true, tip: 'try it', featureId: 'manual-polling', action: '/loop' });
+  });
 });
 
 // ---------------------------------------------------------------------------
@@ -104,6 +121,10 @@ describe('parseTipReception (fails SAFE)', () => {
   it('is case-insensitive on reception', () => {
     expect(parseTipReception('{"acted_on":false,"reception":"NEGATIVE"}').reception).toBe('negative');
   });
+  it('coerces a non-boolean acted_on to false', () => {
+    expect(parseTipReception('{"acted_on":"true","reception":"neutral"}').actedOn).toBe(false);
+    expect(parseTipReception('{"acted_on":1,"reception":"neutral"}').actedOn).toBe(false);
+  });
 });
 
 // ---------------------------------------------------------------------------
@@ -125,6 +146,18 @@ describe('context-tips over a mock transport', () => {
     expect(system).toContain('manual-polling');
     expect(system).toContain('They are manually polling.');
     expect(t.requests[0]?.temperature).toBe(0);
+  });
+  it('inserts a catalog situation containing $ sequences LITERALLY (no replace-macro)', async () => {
+    const t = new MockTransport([textReplyEvents('{"has_tip":false}')]);
+    const catalog = [
+      { featureId: 'billing', action: '/bill', situation: 'User mentions costs $$$ and a $& token literally.' },
+    ];
+    await selectContextTip(
+      { transcript: 'x', eligibleIds: ['billing'], catalog },
+      { transport: t },
+    );
+    const system = t.requests[0]?.system as string;
+    expect(system).toContain('costs $$$ and a $& token literally.');
   });
   it('evaluateTipReception returns a structured verdict', async () => {
     const t = new MockTransport([textReplyEvents('{"acted_on":true,"reception":"positive"}')]);

@@ -184,7 +184,7 @@ shell（BashOutput 增量读 + 按行 filter / KillShell 击杀，进程组 SIGT
 ① **上下文提示**（`src/tips/`）：情境目录注册表（忠实复现 manual-polling/persistent-memory 两条情境、可扩展）+ `selectContextTip`（忠实复现 context-tip-selector，
 **fail-safe** 默认 no-tip、且只返回 eligible∩catalog 内 feature_id、幻觉/越权 id 一律丢弃）+ `evaluateTipReception`（忠实复现 reception-evaluator，默认 unknown/neutral）；
 ② **记忆文件选择**（生成器族第 7 面）：`selectMemoryFilesToAttach`（忠实复现 determine-which-memory-files-to-attach，接 settingSources/记忆加载路径，**≤5、只返回可用集内文件名（幻觉丢弃）、去重、fail-safe 空表**、无文件时零调用短路）。
-5 条新复现**字节级与归档一致**（reverse-diff 确认）。**923 单测全绿**（+48）。原「3 分类器降级 design-only」判定被此裁定反转。
+5 条新复现**字节级与归档一致**（reverse-diff 确认）。**930 单测全绿**（+55，含对抗审查 3 findings 修复回归）。原「3 分类器降级 design-only」判定被此裁定反转。
 
 **缓存稳定前缀优化（v0.5+，守密人 2026-07-04「优化」裁定，已落地）**：裸对比 run #35 发现本 SDK 短任务缓存命中
 0%、长任务 45%——诊断为 cwd 焊进系统提示正中间致缓存前缀逐任务变（`prompts.ts`）。修法：系统提示拆

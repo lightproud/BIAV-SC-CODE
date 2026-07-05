@@ -70,8 +70,10 @@ export async function selectContextTip(
   opts: UtilityCallOptions = {},
 ): Promise<ContextTipDecision> {
   const catalog = input.catalog ?? CONTEXT_TIP_CATALOG;
+  // Function-form replacement so a catalog situation containing `$$` / `$&` /
+  // `$\`` is inserted literally, not misread as a String.replace macro.
   const system =
-    CONTEXT_TIP_SELECTOR_SYSTEM.replace('{situations}', renderCatalog(catalog)) +
+    CONTEXT_TIP_SELECTOR_SYSTEM.replace('{situations}', () => renderCatalog(catalog)) +
     '\n\n' +
     CONTEXT_TIP_SELECTOR_OUTPUT_CONTRACT;
   const user = buildSelectorUserTurn(input);
@@ -104,14 +106,16 @@ export function parseContextTip(
   if (rec.has_tip !== true) return { hasTip: false };
   const tip = typeof rec.tip === 'string' ? rec.tip.trim() : '';
   const featureId = typeof rec.feature_id === 'string' ? rec.feature_id.trim() : '';
-  const action = typeof rec.action === 'string' ? rec.action.trim() : '';
   // A tip must name a feature_id that is BOTH eligible AND in the catalog, and
   // carry non-empty tip text. Anything else -> stay silent (never surface an
   // ineligible or hallucinated id).
   const eligible = eligibleIds.includes(featureId);
-  const known = catalog.some((s) => s.featureId === featureId);
-  if (tip.length === 0 || !eligible || !known) return { hasTip: false };
-  return { hasTip: true, tip, featureId, action };
+  const entry = catalog.find((s) => s.featureId === featureId);
+  if (tip.length === 0 || !eligible || entry === undefined) return { hasTip: false };
+  // Use the catalog's AUTHORITATIVE action for the chosen feature, not the
+  // model's free-text `action` field — a host may display/run this, so it must
+  // be the vetted catalog command, never unvalidated model output.
+  return { hasTip: true, tip, featureId, action: entry.action };
 }
 
 // ---------------------------------------------------------------------------

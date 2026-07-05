@@ -224,7 +224,10 @@ export async function generateTitleAndBranch(
   description: string,
   opts: UtilityCallOptions = {},
 ): Promise<TitleAndBranch> {
-  const system = TITLE_AND_BRANCH_SYSTEM.replace('{description}', description);
+  // Function-form replacement: the return value is inserted LITERALLY, so a
+  // description containing `$$` / `$&` / `$\`` is not misread as a replacement
+  // macro (which would silently drop a `$` or splice the prompt prefix in).
+  const system = TITLE_AND_BRANCH_SYSTEM.replace('{description}', () => description);
   // The description is already embedded in the (interpolated) system prompt;
   // the user turn just triggers generation.
   const raw = await runUtilityCall(
@@ -388,8 +391,33 @@ export function parseMemoryFileSelection(raw: string, availableFilenames: string
 function tryParseArray(raw: string): string[] | null {
   const trimmed = raw.trim().replace(/```[a-z]*\n?/gi, '').replace(/```/g, '').trim();
   const start = trimmed.indexOf('[');
-  const end = trimmed.lastIndexOf(']');
-  if (start < 0 || end <= start) return null;
+  if (start < 0) return null;
+  // Find the FIRST balanced ']' (honoring string literals) rather than the last
+  // ']' in the text — otherwise trailing prose like `["db.md"] (see config[env])`
+  // would extend the slice past the real array end and fail to parse.
+  let depth = 0;
+  let inString = false;
+  let escaped = false;
+  let end = -1;
+  for (let i = start; i < trimmed.length; i += 1) {
+    const ch = trimmed[i];
+    if (inString) {
+      if (escaped) escaped = false;
+      else if (ch === '\\') escaped = true;
+      else if (ch === '"') inString = false;
+      continue;
+    }
+    if (ch === '"') inString = true;
+    else if (ch === '[') depth += 1;
+    else if (ch === ']') {
+      depth -= 1;
+      if (depth === 0) {
+        end = i;
+        break;
+      }
+    }
+  }
+  if (end < 0) return null;
   try {
     const arr = JSON.parse(trimmed.slice(start, end + 1)) as unknown;
     if (!Array.isArray(arr)) return null;

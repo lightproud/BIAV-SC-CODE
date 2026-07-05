@@ -259,6 +259,17 @@ describe('generators over a mock transport', () => {
     expect(t.requests[0]?.system).not.toContain('{description}');
   });
 
+  it('generateTitleAndBranch interpolates a description with $ sequences LITERALLY', async () => {
+    const t = new MockTransport([textReplyEvents('{"title":"Track costs","branch":"track-costs"}')]);
+    await generateTitleAndBranch('reduce costs $$$ and audit the $& handler and $`prefix', {
+      transport: t,
+    });
+    const system = t.requests[0]?.system as string;
+    // The $$ / $& / $` must appear verbatim, not expanded as replace-macros.
+    expect(system).toContain('reduce costs $$$ and audit the $& handler and $`prefix');
+    expect(system).not.toContain('{description}');
+  });
+
   it('generateSessionName returns a kebab slug', async () => {
     const t = new MockTransport([textReplyEvents('{"name":"Fix Login Bug"}')]);
     const name = await generateSessionName('long conversation transcript', { transport: t });
@@ -308,6 +319,13 @@ describe('parseMemoryFileSelection (fails SAFE, drops hallucinations)', () => {
   });
   it('drops filenames not in the available set (hallucination guard)', () => {
     expect(parseMemoryFileSelection('["db.md","invented.md"]', avail)).toEqual(['db.md']);
+  });
+  it('rejects substring / superstring near-misses (exact match only)', () => {
+    expect(parseMemoryFileSelection('["db.m","db.md.bak"]', avail)).toEqual([]);
+  });
+  it('finds the array even when trailing prose contains a "]"', () => {
+    // lastIndexOf(']') would over-extend the slice and drop everything.
+    expect(parseMemoryFileSelection('["db.md"] (see config[env])', avail)).toEqual(['db.md']);
   });
   it('caps the selection at 5', () => {
     const many = ['a', 'b', 'c', 'd', 'e', 'f'];
