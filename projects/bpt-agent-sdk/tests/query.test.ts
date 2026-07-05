@@ -363,6 +363,57 @@ describe('query() e2e - happy path', () => {
   });
 });
 
+describe('prompt cache: stable prefix does not drift across turns (a read can hit)', () => {
+  it('the cached system prefix + tools are byte-identical between turn 1 and turn 2', async () => {
+    // Diagnostic for the observed "writes happen but reads miss" A/B result:
+    // if the cached prefix (everything up to its breakpoint) is byte-identical
+    // across turns, the API CAN read it on turn 2+, so a 0% read rate on a
+    // short task is a threshold/short-task artifact, NOT a prefix-drift bug.
+    const fetchStub = stubFetch(
+      makeSSEFetch([
+        toolUseReplyEvents('Bash', { command: 'echo hi' }),
+        textReplyEvents('done'),
+      ]),
+    );
+    const q = query({
+      prompt: 'run echo',
+      options: baseOptions({
+        provider: { apiKey: 'test-key' }, // caching ON (no promptCaching:false)
+        permissionMode: 'bypassPermissions',
+        allowDangerouslySkipPermissions: true,
+      }),
+    });
+    await collect(q);
+    expect(fetchStub.requests).toHaveLength(2);
+
+    type SysBlk = { text?: string; cache_control?: unknown };
+    // The cached prefix = blocks up to and including the last system breakpoint.
+    const cachedSystemPrefix = (body: { system: unknown }): string => {
+      const sys = body.system as SysBlk[];
+      let lastBp = -1;
+      sys.forEach((b, i) => {
+        if (b.cache_control !== undefined) lastBp = i;
+      });
+      return sys
+        .slice(0, lastBp + 1)
+        .map((b) => b.text ?? '')
+        .join(' ');
+    };
+    const toolsJson = (body: { tools?: unknown }): string => JSON.stringify(body.tools ?? null);
+
+    const p0 = cachedSystemPrefix(fetchStub.requests[0]!.body);
+    const p1 = cachedSystemPrefix(fetchStub.requests[1]!.body);
+    // A breakpoint must actually land on the stable prefix (not only the tail).
+    expect(p0.length).toBeGreaterThan(0);
+    // The cached system prefix and tools must not drift, or the API re-writes
+    // instead of reading on turn 2.
+    expect(p1).toBe(p0);
+    expect(toolsJson(fetchStub.requests[1]!.body)).toBe(
+      toolsJson(fetchStub.requests[0]!.body),
+    );
+  });
+});
+
 describe('query() e2e - tool roundtrip', () => {
   it('executes Bash and feeds tool_result back in the second request', async () => {
     const fetchStub = stubFetch(
