@@ -1,0 +1,5 @@
+{
+  "comment": "Dual-package pin for the conformance suite (design final 2026-07-05 §1): the official agent-sdk AND the claude-code engine it spawns are pinned SEPARATELY - the engine is otherwise a moving target that drifts the baseline (observed: CLI 2.1.201 emits variants outside the 0.3.199 type surface). Installed at run time with `npm i --no-save`; never a repo dependency (clean-room discipline).",
+  "agentSdk": "0.3.199",
+  "claudeCode": "2.1.201"
+}
