@@ -41,6 +41,10 @@ projects/bpt-pm/
 ├── schema/task-schema.json    # bpt-pm/v1 数据协议（JSON Schema）
 ├── data/sample-project.json   # 样例项目数据
 ├── scripts/schedule.mjs       # CPM 调度器 CLI（与网页内联引擎同算法，供外部数据源桥接复用）
+├── proxy/                     # 本地 Notion 代理（让网页按钮直连生效）
+│   ├── server.mjs            #   零依赖 Node 代理：GET /tasks 拉取 · POST /writeback 写回
+│   ├── .env.example         #   配置模板（NOTION_TOKEN / DATABASE_ID / 项目锚点），.env 被 gitignore
+│   └── README.md            #   设置 + 启动 + 接口契约
 ├── docs/screenshot.png        # 运行时截图
 ├── docs/notion-adapter.md     # Notion 作数据源的适配器（字段映射 + 读排写工作流 + 踩坑）
 ├── CONTEXT.md                 # 本文件
@@ -49,14 +53,18 @@ projects/bpt-pm/
 
 ## 外部数据源桥接
 
-`index.html` 是纯静态零后端页，不直连外部 API；外部数据源（如 **Notion**）经**适配器**在
-`数据源 ↔ bpt-pm/v1 JSON` 间搬运，排期复用 `scripts/schedule.mjs`（唯一算法真相）。
-Notion 适配器（字段映射 + 读→排→写闭环 + 计费墙/日期三段/复选框等踩坑）见
-`docs/notion-adapter.md`——已对真实工作区端到端跑通一次。命令：
+`index.html` 是纯静态零后端页，浏览器出于 CORS + 令牌暴露**不能直连** Notion。两条落地路径：
 
-```bash
-cat pulled.json | node projects/bpt-pm/scripts/schedule.mjs   # stdin bpt-pm/v1 → stdout 计算结果
-```
+1. **旁路同步（无后端）**：网页只碰本地 JSON；Notion 由艾瑞卡经 MCP 或带 token 的脚本搬运，
+   排期用 `scripts/schedule.mjs`（唯一算法真相）。字段映射与踩坑见 `docs/notion-adapter.md`。
+   ```bash
+   cat pulled.json | node projects/bpt-pm/scripts/schedule.mjs   # stdin bpt-pm/v1 → stdout 计算结果
+   ```
+2. **本地代理（网页按钮直连生效，守密人 2026-07-05 选定）**：起 `proxy/server.mjs`（持 token 跑
+   localhost），网页「从 Notion 拉取 / 写回 Notion」按钮经 `http://localhost:8787` 调它，代理走
+   Notion REST（`databases.query` / `pages.PATCH`，不撞 MCP 会员墙）。设置见 `proxy/README.md`。
+   端到端已验证（桩 Notion + 真 server + 浏览器：拉取→排期→写回 6 页载荷正确，零 JS 报错）；
+   唯一未跑真令牌那一跳（代码路径同桩，仅 API base 不同）。
 
 ## 用法
 

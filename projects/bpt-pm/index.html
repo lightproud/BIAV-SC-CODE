@@ -126,6 +126,10 @@
   <button id="btnSchedule" class="primary" title="按 CPM 前向/后向计算法自动排期">自动排期</button>
   <button id="btnBaseline" title="把当前排期结果捕获为基线快照">设为基线</button>
   <button id="btnSave" title="写回已打开的数据文件；未用 API 打开则下载 JSON">写入数据源</button>
+  <span style="width:1px;height:22px;background:var(--border);margin:0 2px"></span>
+  <button id="btnNotionPull" title="经本地代理从 Notion 数据库拉取任务（需先起 proxy/server.mjs）">从 Notion 拉取</button>
+  <button id="btnNotionPush" title="经本地代理把当前排期结果写回 Notion（计算开始/结束/浮动/临界）">写回 Notion</button>
+  <button id="btnProxyCfg" title="设置本地代理地址">代理…</button>
 </header>
 
 <div class="main">
@@ -661,6 +665,51 @@ function emptyProject() {
   return { protocol: "bpt-pm/v1", project: { name: "新项目", start: new Date().toISOString().slice(0, 10), calendar: { workdays: [1, 2, 3, 4, 5], holidays: [] } }, baseline: null, tasks: [] };
 }
 
+/* ---------- Notion 本地代理客户端 ----------
+   浏览器不能直连 Notion（CORS + 令牌暴露）；改调本地代理 proxy/server.mjs，
+   由代理持 token 走 Notion REST。代理地址存 localStorage。 */
+function proxyBase() { return localStorage.getItem("bptpm_proxy") || "http://localhost:8787"; }
+function setProxy() {
+  const cur = proxyBase();
+  const v = prompt("本地 Notion 代理地址（先起 proxy/server.mjs）：", cur);
+  if (v) { localStorage.setItem("bptpm_proxy", v.replace(/\/+$/, "")); toast("代理地址已保存：" + proxyBase()); }
+}
+async function doNotionPull() {
+  try {
+    toast("正在从 Notion 拉取…");
+    const r = await fetch(proxyBase() + "/tasks");
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    const data = await r.json();
+    if (data.error) throw new Error(data.error);
+    state.fileHandle = null;
+    loadData(data);
+    doSchedule();
+    toast(`已从 Notion 拉取 ${data.tasks.length} 项任务并排期`);
+  } catch (e) {
+    toast("拉取失败：" + e.message + "（代理是否已启动？）");
+  }
+}
+async function doNotionPush() {
+  if (!state.computed) { toast("请先自动排期，再写回 Notion"); return; }
+  const results = [...state.computed.result.values()].map(c => ({
+    id: c.id, start: c.start, finish: c.finish, slack: c.milestone ? 0 : c.slack, critical: c.critical,
+  }));
+  try {
+    toast("正在写回 Notion…");
+    const r = await fetch(proxyBase() + "/writeback", {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ tasks: results }),
+    });
+    const out = await r.json();
+    if (!r.ok || out.error) throw new Error(out.error || ("HTTP " + r.status));
+    let msg = `已写回 Notion ${out.updated} 项`;
+    if (out.missing && out.missing.length) msg += `；未匹配 ${out.missing.length} 项（${out.missing.join(",")}）`;
+    toast(msg);
+  } catch (e) {
+    toast("写回失败：" + e.message + "（代理是否已启动？）");
+  }
+}
+
 /* ---------- 载入样例（内嵌，双击即用无需网络） ---------- */
 const SAMPLE = {
   "protocol": "bpt-pm/v1",
@@ -710,6 +759,9 @@ document.getElementById("btnAddRow").onclick = doAddRow;
 document.getElementById("btnSchedule").onclick = doSchedule;
 document.getElementById("btnBaseline").onclick = doBaseline;
 document.getElementById("btnSave").onclick = doSave;
+document.getElementById("btnNotionPull").onclick = doNotionPull;
+document.getElementById("btnNotionPush").onclick = doNotionPush;
+document.getElementById("btnProxyCfg").onclick = setProxy;
 
 renderStatus();
 </script>
