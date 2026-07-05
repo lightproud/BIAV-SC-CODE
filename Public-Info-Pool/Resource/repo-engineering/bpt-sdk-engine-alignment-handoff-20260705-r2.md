@@ -1,7 +1,12 @@
 # BPT Agent SDK — 引擎侧修改交接清单（供引擎开发直接领工）
 
+> **r2（2026-07-05）**：追加 E6「错误面收口」——由 BPT 侧实测故障
+> `Malformed SSE payload for event "(none)"` 触发的错误体系审计产出（守密人裁定「追加」）。
+> E1–E5 内容不变。
+
 - 来源：L5 首轮真跑解剖（`bpt-sdk-l5-failure-dissection-20260705.md`，run 28736460533）
-  + 一致性套件 M2/M3 既有引擎发现（L2 s12 / KD-L3-06 / KD-L4-02~04）+ 测试用例层加固时新发现（KD-L5-04）。
+  + 一致性套件 M2/M3 既有引擎发现（L2 s12 / KD-L3-06 / KD-L4-02~04）+ 测试用例层加固时新发现（KD-L5-04）
+  + 错误面审计（r2 新增，见 E6）。
 - 范围：**只列引擎（`projects/bpt-agent-sdk/src/`）的活**。harness / 测试用例侧的活已由银芯完成
   （PR #453），不在此单。
 - 证据合规：全部规格来自**官方臂公开消息流 + 文件系统副作用 + 终态答案**（净室观测边界 r2，
@@ -10,8 +15,9 @@
   预期转绿的 KD/基线行用 `--update` 显式升基线（会带 RED-LOCK 警告，属预期）。E1 的最终验收要一轮
   真 API L5（`conformance_l5` dispatch，$1.5 帽内）。
 
-优先级建议：**E1 > E4 ≈ E5 > E3 > E2**（E1 修我方仅有的两个 L5 全败点；E4/E5 规格已钉死、改动面小；
-E3 中等；E2 是接口面对齐、有破坏性注意事项）。
+优先级建议：**E1 > E6b > E4 ≈ E5 > E3 > E2 > E6 其余**（E1 修我方仅有的两个 L5 全败点；
+E6b 一处改动、直接解 BPT 产线现行故障的定位之困；E4/E5 规格已钉死、改动面小；
+E3 中等；E2 是接口面对齐、有破坏性注意事项；E6a/c/d 是体系收口、不阻塞断供换装）。
 
 ---
 
@@ -104,6 +110,39 @@ E3 中等；E2 是接口面对齐、有破坏性注意事项）。
   超限 → 工具零执行、终态 error_max_budget_usd。
 - 比喻：钱包见底时，官方在收银台**扫码前**喊停；我们现在是扫完这单才发现超支。
 
+## E6 — 错误面收口（r2 追加，源自 BPT 实测故障 + 错误体系审计）
+
+**背景事件**：BPT 产线 agent 报「流中断 原因：Malformed SSE payload for event "(none)"」。
+该错误出自 `src/transport/anthropic.ts:153`，触发条件 =「一帧只有 `data:` 行、没有 `event:` 行，
+且 data 不是合法 JSON」。原生 Anthropic 端点每帧必带 `event:` 行，所以 "(none)" 指纹几乎
+断定是**端点格式或链路问题**：最可能是 OpenAI 风格网关（`data: [DONE]` 收尾、无 event 行——
+`[DONE]` 非 JSON 一解析就抛此错）或集团代理拦截重组流（长 data 行被截断 / event 与 data 行间
+被塞空行）。BPT 侧核实方向：查 baseUrl 指向、`curl -N` 抓原始帧、看死在第几帧。
+
+**审计结论**：错误体系**有设计**（五类类型化错误 `src/errors.ts` / 三通道分层：传输抛异常、
+工具错回 `tool_result is_error`、run 级终态走 result error 臂 / `mapStreamError` 五路分诊 /
+流阶段不重试防重放），但完成度不均——全仓 80 个抛出点里 12 个裸 `throw new Error`（11 个
+集中在 `src/mcp/`），且「错误现场携带」无统一标准。收口四件：
+
+- **E6a MCP 子系统错误归类**：`src/mcp/http.ts`（6 处）/ `stdio.ts`（3 处）/ `registry.ts`
+  （2 处）+ `src/tools/bash.ts`（1 处）的裸 `Error` 纳入类型体系——建议新增 `McpError`
+  （带 serverLabel / transport 类型 / 阶段字段）或明确归入 `APIConnectionError` 族，二选一
+  在 ARCHITECTURE.md 落笔为准。消费方（BPT Desktop）从此可 `instanceof` 分流。
+- **E6b Malformed SSE 带现场（建议先行单独落，一处改动）**：`anthropic.ts:153` 的
+  `APIConnectionError` 消息追加**出错帧 data 的前 ~120 字符 + 该流已成功解析的帧数**
+  （`mapStreamError` 其他分支已带 `eventCount`，唯独这条不带）。落地后 `[DONE]` 型
+  （网关格式错）与半截 JSON 型（代理截断）一眼分辨。
+- **E6c 稳定错误码**：错误对象加机器可读 `code` 枚举（如 `sse_malformed_frame` /
+  `stream_idle_timeout` / `mcp_connection_failed`……），name + 英文 message 保持不变
+  （drop-in 面只加不改）。供 Desktop 做 i18n 与「重试 / 换网关 / 报障」策略分流。
+- **E6d 层间抛错白名单守护**：ARCHITECTURE.md 的「模块只许抛哪些错误类」目前只是文档纪律，
+  加一条静态守护测试（扫 `src/` 各模块的 `throw new` 与错误类白名单对账），MCP 这类欠账
+  从此进不来。
+- **验收**：错误码表进 COMPAT.md 或 docs；E6a/c 各带单测；E6d 守护测试本身全绿；
+  存量单测保绿（错误 message 文本若有断言需同步）。
+- 比喻：消防系统本来有分级预案，但 MCP 那层楼贴的是手写便条、报警器响了不说着火点在哪；
+  这次统一制式并给每台报警器装上「现场快照」。
+
 ---
 
 ## 不归引擎的（留在银芯侧，勿重复做）
@@ -116,4 +155,5 @@ E3 中等；E2 是接口面对齐、有破坏性注意事项）。
 ## 完成后的联动
 
 E1/E2/E4/E5 任一落地 → 银芯重跑 run-l1~l4 + 棘轮升基线；E1 落地 → 银芯申请一轮真 L5
-（$1.5 帽内）验收退出标准；E2 落地 → 银芯同步简化 run-l5 聚合分支并退役 KD-L5-04。
+（$1.5 帽内）验收退出标准；E2 落地 → 银芯同步简化 run-l5 聚合分支并退役 KD-L5-04；
+E6b 落地 → BPT 侧把带现场的报错样本回传，即可对本次「Malformed SSE」故障直接判型收案。
