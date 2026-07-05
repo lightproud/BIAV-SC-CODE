@@ -298,5 +298,37 @@ def kb_overview() -> str:
         return json.dumps({"error": str(e)}, ensure_ascii=False, indent=2)
 
 
+@mcp.tool()
+def kb_vector_search(query: str, limit: int = 8) -> str:
+    """长尾语义召回（§八「厚锚撑向量」的向量腿）：对社区全量档案做模糊语义检索。
+
+    与 kb_search 分工：kb_search 走白盒脊柱（概念、带类型边、确定性），本工具走
+    黑盒向量（换了说法、脊柱与 grep 都到不了的散句）。合流用法（先锚后扩）：先用
+    kb_search / kb_activate 锚定身份与边界，再用本工具在锚周边捞长尾正文上色。
+
+    放指针不放本体：返回片段预览 + 指针（来源:日期），全文回落 dated 文件 ripgrep。
+    向量索引缺失 / 未配 VOYAGE_API_KEY 时**优雅降级**（返回 degraded 标记，改用 kb_search）。
+
+    Args:
+        query: 语义查询（如 "冰系奶妈技能被削的抱怨"）
+        limit: 返回条数上限（默认 8，封顶 50）
+
+    Returns:
+        JSON: {query, backend, degraded, returned, results:[{score,source,date,
+               preview,ref,data_layer}...]}
+    """
+    from kb_vector import search as vsearch
+
+    try:
+        result = vsearch(query, limit)
+        _log("kb_vector_search", query, [r.get("ref") for r in result.get("results", [])])
+        return json.dumps(result, ensure_ascii=False, indent=2)
+    except Exception as e:  # Voyage 网络/导入等异常 → 降级而非崩溃
+        return json.dumps(
+            {"query": query, "degraded": True, "reason": f"{type(e).__name__}: {e}",
+             "fallback": "改用 kb_search（关键词）白盒回退", "results": []},
+            ensure_ascii=False, indent=2)
+
+
 if __name__ == "__main__":
     mcp.run(transport="stdio")

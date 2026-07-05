@@ -10,7 +10,8 @@ UnityPy>=1.10.0
 # --- 可选依赖：缺失时相关功能优雅降级，不影响主流程 ---
 # AI 综合分析 / 做梦 Agent（memory_search.synthesize、dream_ai.py）
 anthropic>=0.40.0
-# 向量重排（memory_search.py rerank，未配置时回退关键词检索）
+# 向量检索腿嵌入（kb_vector.py / build_kb_vectors.py，§八「厚锚撑向量」；
+# 缺 VOYAGE_API_KEY 时优雅降级——桩后端可测、运行时回退 kb_search 关键词检索）
 voyageai>=0.3.0
 # 代码语义解析（memory_search.py，缺失时按文本检索）
 tree-sitter>=0.21.0
