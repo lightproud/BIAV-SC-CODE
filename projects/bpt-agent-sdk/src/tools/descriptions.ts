@@ -295,3 +295,60 @@ Usage notes:
 - Users will always be able to select "Other" to provide custom text input
 - Use multiSelect: true to allow multiple answers to be selected for a question
 - If you recommend a specific option, make that the first option in the list and add "(Recommended)" at the end of the label`;
+
+/**
+ * Provenance for the tool-description surface (Track B): which archive fragments
+ * each faithful description draws from. A corpus-sync guard
+ * (tests/tool-descriptions-provenance.test.ts) verifies each cited fragment's
+ * content still appears in the description, so upstream drift fails a test
+ * instead of diverging silently. `faithful` marks a reproduction assembled from
+ * the cited archive fragments (adapted only by the documented rules above — tool
+ * names, omitted sandbox/PowerShell, stripped CLI footers).
+ */
+export interface ToolDescriptionProvenance {
+  tool: string;
+  slugs: string[];
+  faithful: boolean;
+}
+
+export const TOOL_DESCRIPTION_PROVENANCE: ToolDescriptionProvenance[] = [
+  {
+    tool: 'Bash',
+    faithful: true,
+    slugs: [
+      'tool-description-bash-overview',
+      'tool-description-bash-maintain-cwd',
+      'tool-description-bash-timeout',
+      'tool-description-bash-quote-file-paths',
+      'tool-description-bash-verify-parent-directory',
+      'tool-description-bash-prefer-dedicated-tools',
+      'tool-description-bash-git-avoid-destructive-ops',
+      'tool-description-bash-git-never-skip-hooks',
+      'tool-description-bash-git-prefer-new-commits',
+      'tool-description-bash-git-commit-and-pr-creation-instructions',
+    ],
+  },
+  { tool: 'Read', faithful: true, slugs: ['tool-description-readfile'] },
+  { tool: 'Edit', faithful: true, slugs: ['tool-description-edit'] },
+  { tool: 'Write', faithful: true, slugs: ['tool-description-write', 'tool-description-write-read-existing-file-first'] },
+  { tool: 'Grep', faithful: true, slugs: ['tool-description-grep'] },
+  { tool: 'Glob', faithful: true, slugs: ['tool-description-glob'] },
+  { tool: 'TodoWrite', faithful: true, slugs: ['tool-description-todowrite'] },
+  { tool: 'WebFetch', faithful: true, slugs: ['tool-description-webfetch'] },
+  { tool: 'WebSearch', faithful: true, slugs: ['tool-description-websearch'] },
+  { tool: 'AskUserQuestion', faithful: true, slugs: ['tool-description-askuserquestion'] },
+];
+
+/** The description text for each provenance-tracked tool (for the corpus-sync guard). */
+export const TOOL_DESCRIPTION_TEXT: Record<string, string> = {
+  Bash: BASH_DESCRIPTION,
+  Read: READ_DESCRIPTION,
+  Edit: EDIT_DESCRIPTION,
+  Write: WRITE_DESCRIPTION,
+  Grep: GREP_DESCRIPTION,
+  Glob: GLOB_DESCRIPTION,
+  TodoWrite: TODOWRITE_DESCRIPTION,
+  WebFetch: WEBFETCH_DESCRIPTION,
+  WebSearch: WEBSEARCH_DESCRIPTION,
+  AskUserQuestion: ASKUSERQUESTION_DESCRIPTION,
+};
