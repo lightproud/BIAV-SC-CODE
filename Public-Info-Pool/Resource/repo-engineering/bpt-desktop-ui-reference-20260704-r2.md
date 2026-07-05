@@ -1,6 +1,8 @@
-# BPT Desktop UI 参考实现情报
+# BPT Desktop UI 参考实现情报（r2）
 
-- **日期**：2026-07-04
+- **日期**：2026-07-04；**r2 修订 2026-07-05**（自洽审视回填：权限模式清单补全、
+  对接表增 TodoWrite / AskUserQuestion / compact_boundary / thinking / 斜杠命令五行、
+  §6 底座三层辨析与 adapter 成本注记）
 - **来源**：守密人转交的 GPT-5.5 搜索梗概 + 银芯 AnySearch 实时核验（2026-07-04，许可证逐项实锤）+ `projects/bpt-agent-sdk/docs/COMPAT.md` 契约对照
 - **定位**：银芯 → 黑池**单向输出物**（§1.1-HC 同向）。消费方为 BPT Desktop（Electron/Node）前端线；本档案本体属银芯公开信息层，不含任何黑池数据。
 - **背景**：BPT Desktop 已有自研 UI 前端但开发不顺。本档案回答三个问题：该参考谁、哪些代码法律上能直接借、UI 组件怎么对上 bpt-agent-sdk 的消息流。
@@ -90,7 +92,9 @@ AppShell
 │  └─ Composer
 │     ├─ AttachmentBar（文件 chip）
 │     ├─ Textarea + Send / Stop ← Stop = query.interrupt() / AbortController
-│     └─ ModeSwitch*（permissionMode：default / acceptEdits / plan / dontAsk）
+│     └─ ModeSwitch*（permissionMode 全五档：default / acceptEdits / plan /
+│        dontAsk / bypassPermissions；Claude Desktop 另有 auto（分类器）档，
+│        SDK 不提供，选择器勿照抄）
 └─ RightPanel
    ├─ ArtifactPreview / FilePreview
    ├─ ToolTrace（全量工具时间线）
@@ -117,6 +121,11 @@ bpt-agent-sdk 的 `SDKMessage` 异步生成器。逐件对接（契约出处 `do
 | 停止按钮 | `query.interrupt()` / AbortController | FULL |
 | 后台 shell 面板 | Bash `run_in_background` + `BashOutput`（增量 + 按行 filter）/ `KillShell` | FULL（v0.5） |
 | 文件检查点 / 回滚 | 文件检查点（v0.2）——「改坏了一键回」的 UI 挂点 | 已落地 |
+| 任务清单（checklist） | `TodoWrite` 工具调用（v0.2 新工具）——入参即整份清单，渲染为待办 / 进行中 / 已完成三态列表，agent 客户端标配件 | FULL |
+| 选项问答卡 | `AskUserQuestion` 工具调用（v0.2 新工具）——渲染选项按钮组，用户点选结果作为 tool_result 回流 | FULL |
+| 上下文压缩指示 | `compact_boundary`（v0.2 上下文压缩）——消息流内插「对话已摘要」分隔条，并与用量仪表联动 | FULL |
+| 思考块 | assistant 消息 `thinking` 内容块（`thinking.type:'enabled'` 时产生）——默认折叠、点击展开，Claude Desktop 同款处理 | PARTIAL（字段名与官方有差，见 COMPAT） |
+| 斜杠命令菜单 | `supportedCommands()` 返回静态 / 空数据（无 CLI 命令框架可内省）——BPT 如要 `/` 菜单需自建命令注册表，SDK 只当执行器 | PARTIAL（static） |
 | Electron 主进程接线 | `examples/electron-host.mjs`（四个 host callback 接线范本）+ `docs/MIGRATION.md`（凭据 / 已知行为差异七条 / 试点验收清单） | v0.5 换装就绪包 |
 
 ## §6 技术栈建议
@@ -129,6 +138,25 @@ bpt-agent-sdk 的 `SDKMessage` 异步生成器。逐件对接（契约出处 `do
 | 状态 | Zustand（会话 / 设置）+ 组件内状态（流式缓冲） | 轻，样板少 |
 | 流式 | 直接迭代 SDK `query()` 生成器，renderer 经 IPC 订阅 | 主进程跑 SDK（持文件 / shell / 凭据权限），renderer 纯展示——天然进程隔离，别把 API key 放进 renderer |
 | 本地配置 | JSON 文件起步，量大再 SQLite | 会话本体 SDK 的 JSONL 存储已管 |
+
+### §6.1 底座三层辨析（r2 增补，防概念混装）
+
+「底座」在本线文档里出现过三个不同层，**互不替代**：
+
+1. **引擎底座 = bpt-agent-sdk**（Claude Agent SDK 净室重实现）：跑 agent 环、调模型、
+   执行工具、管权限与会话。住 Electron 主进程，是唯一的「大脑」，没有竞品选项。
+2. **UI 组件底座 = assistant-ui / AI Elements**：React 聊天组件库，只管把消息流画成
+   气泡 / 卡片 / 打字机。住 renderer 进程，是「脸」，可换可自研。
+3. **Vercel AI SDK（`ai` npm 包）= 不需要引入的第三方**：Vercel 家的开源 TS 工具包，
+   功能上是 bpt-agent-sdk 的同类但更薄（统一多家模型 API + React `useChat` hook 管
+   消息状态）。它与 BPT 的唯一关系是：上面两个组件库**默认按它的数据形状设计**。
+
+**adapter 成本（选型前须知）**：assistant-ui / AI Elements 接 bpt-agent-sdk 时，需要
+自写一层薄 adapter——把 `SDKMessage` union 翻译成组件库认识的消息形状（角色 / 内容块 /
+工具状态），并把发送 / 停止动作桥回 `query()` / `interrupt()`。assistant-ui 有自定义
+runtime 接口（ExternalStoreRuntime 一类，装前核实现名）专为「非 Vercel 引擎」预留，
+适配成本约数百行；AI Elements 是纯展示组件、本就不绑状态层，适配更薄但组件间联动
+需自己缝。**两条路都不需要安装 Vercel AI SDK 本体。**
 
 ## §7 净室与许可证硬边界（与 SDK 线共用地基）
 
