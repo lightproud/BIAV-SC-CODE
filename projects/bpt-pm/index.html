@@ -130,6 +130,8 @@
   <button id="btnNotionPull" title="经本地代理从 Notion 数据库拉取任务（需先起 proxy/server.mjs）">从 Notion 拉取</button>
   <button id="btnNotionPush" title="经本地代理把当前排期结果写回 Notion（计算开始/结束/浮动/临界）">写回 Notion</button>
   <button id="btnProxyCfg" title="设置本地代理地址">代理…</button>
+  <span style="width:1px;height:22px;background:var(--border);margin:0 2px"></span>
+  <button id="btnViewToggle" title="在甘特图与资源负载热力图之间切换">切到资源负载</button>
 </header>
 
 <div class="main">
@@ -181,6 +183,7 @@ const state = {
   data: null,        // 当前协议对象
   fileHandle: null,  // File System Access 句柄（可写回）
   computed: null,    // 排期结果 Map<id, {...}>
+  view: "gantt",     // 右侧视图：'gantt' | 'resource'
 };
 
 /* ---------- 日期工具（UTC 归一，避开时区漂移） ---------- */
@@ -262,6 +265,7 @@ function scheduleProject(data) {
     preds: (t.predecessors || []).map(p => ({ id: p.id, type: p.type || "FS", lag: Number(p.lag || 0) })),
     constraint: t.constraint || null,
     pct: Number(t.percentComplete || 0),
+    resource: t.resource || "",
   }));
   const byId = new Map(tasks.map(t => [t.id, t]));
 
@@ -342,7 +346,43 @@ function scheduleProject(data) {
       startDate, finishDate, preds: t.preds,
     });
   }
-  return { cal, result, projEnd, order, errors };
+  const resources = computeResourceLoad(tasks, data.resources, cal, projEnd);
+  return { cal, result, projEnd, order, errors, resources };
+}
+
+/* ---------- 资源负载 + 超载检测（与 scripts/schedule.mjs 同逻辑） ----------
+   每个 dur>0 的任务在其 [es, ef) 工作日索引区间占用其资源 1 个并发槽。
+   某工作日某资源承载任务数 > capacity 即超载。未登记资源按「人、产能1」处理。 */
+function computeResourceLoad(tasks, resourcesDef, cal, projEnd) {
+  const resMap = new Map();
+  (resourcesDef || []).forEach(r => resMap.set(r.id, { id: r.id, name: r.name || r.id, type: r.type || "person", capacity: Math.max(1, Number(r.capacity || 1)) }));
+  for (const t of tasks) { if (t.dur > 0 && t.resource && !resMap.has(t.resource)) resMap.set(t.resource, { id: t.resource, name: t.resource, type: "person", capacity: 1 }); }
+  const perRes = new Map();
+  for (const t of tasks) {
+    if (!(t.dur > 0) || !t.resource) continue;
+    if (!perRes.has(t.resource)) perRes.set(t.resource, new Map());
+    const m = perRes.get(t.resource);
+    for (let i = t.es; i < t.ef; i++) { if (!m.has(i)) m.set(i, []); m.get(i).push(t.id); }
+  }
+  const out = [];
+  for (const [id, meta] of resMap) {
+    const m = perRes.get(id) || new Map();
+    const idxs = [...m.keys()].sort((a, b) => a - b);
+    const loadByDate = {}; let peak = 0;
+    for (const i of idxs) { const arr = m.get(i); loadByDate[fmtDate(cal.fromIndex(i))] = { load: arr.length, tasks: arr }; if (arr.length > peak) peak = arr.length; }
+    const segs = []; let cur = null;
+    for (const i of idxs) {
+      const load = m.get(i).length;
+      if (load > meta.capacity) {
+        if (cur && i === cur.endIdx + 1) { cur.endIdx = i; cur.load = Math.max(cur.load, load); m.get(i).forEach(x => cur.tasks.add(x)); }
+        else { if (cur) segs.push(cur); cur = { startIdx: i, endIdx: i, load, tasks: new Set(m.get(i)) }; }
+      }
+    }
+    if (cur) segs.push(cur);
+    out.push({ id, name: meta.name, type: meta.type, capacity: meta.capacity, peakLoad: peak, loadByDate,
+      overloads: segs.map(s => ({ start: fmtDate(cal.fromIndex(s.startIdx)), end: fmtDate(cal.fromIndex(s.endIdx)), load: s.load, tasks: [...s.tasks] })) });
+  }
+  return out;
 }
 
 /* ---------- DOM 读表：把可编辑表格读回协议对象 ---------- */
@@ -570,6 +610,102 @@ function renderGantt() {
   g.appendChild(svg);
 }
 
+/* ---------- 右侧视图切换 ---------- */
+function renderRight() {
+  if (state.view === "resource") renderResourceView();
+  else renderGantt();
+  const btn = document.getElementById("btnViewToggle");
+  if (btn) btn.textContent = state.view === "resource" ? "切到甘特图" : "切到资源负载";
+}
+function toggleView() {
+  state.view = state.view === "resource" ? "gantt" : "resource";
+  renderRight();
+}
+
+/* ---------- 资源负载热力图（资源 × 日，超载标红） ---------- */
+function renderResourceView() {
+  const g = document.getElementById("gantt");
+  g.innerHTML = "";
+  const comp = state.computed;
+  if (!comp) { g.innerHTML = '<div class="hint">点击「自动排期」以生成资源负载。</div>'; return; }
+  const resources = comp.resources || [];
+  if (!resources.length) { g.innerHTML = '<div class="hint">当前项目未定义资源。在数据源加 <code>resources</code> 注册表，或给任务填「资源」列（未登记者按「人·产能1」处理）。</div>'; return; }
+  const cal = comp.cal;
+
+  // 时间窗（与甘特一致）
+  let minD = null, maxD = null;
+  const push = d => { if (!minD || d < minD) minD = d; if (!maxD || d > maxD) maxD = d; };
+  comp.result.forEach(c => { push(c.startDate); push(c.finishDate); });
+  if (!minD) return;
+  minD = addDays(minD, -1); maxD = addDays(maxD, 2);
+  const totalDays = Math.round((maxD - minD) / MS_DAY) + 1;
+  const width = LEFT + totalDays * DAY_W;
+  const height = HEAD_H + resources.length * ROW_H + 10;
+  g.style.width = width + "px"; g.style.height = height + "px";
+
+  // 表头：月 + 日
+  const head = document.createElement("div");
+  head.className = "gx-header";
+  head.style.cssText = `position:absolute;left:0;top:0;width:${width}px;height:${HEAD_H}px;`;
+  let monthStart = 0, monthLabel = null;
+  for (let i = 0; i < totalDays; i++) {
+    const d = addDays(minD, i);
+    const weekend = !cal.isWorking(d);
+    const day = document.createElement("div");
+    day.className = "gx-day" + (weekend ? " weekend" : "");
+    day.style.cssText = `left:${LEFT + i * DAY_W}px;width:${DAY_W}px;`;
+    day.textContent = d.getUTCDate();
+    head.appendChild(day);
+    const ml = d.getUTCFullYear() + "-" + String(d.getUTCMonth() + 1).padStart(2, "0");
+    if (monthLabel === null) { monthLabel = ml; monthStart = i; }
+    if (ml !== monthLabel || i === totalDays - 1) {
+      const span = document.createElement("div");
+      span.className = "gx-month";
+      const end = (ml !== monthLabel) ? i : i + 1;
+      span.style.cssText = `left:${LEFT + monthStart * DAY_W}px;width:${(end - monthStart) * DAY_W}px;top:0;`;
+      span.textContent = monthLabel; head.appendChild(span);
+      monthLabel = ml; monthStart = i;
+    }
+  }
+  g.appendChild(head);
+
+  // 每资源一行
+  resources.forEach((r, ri) => {
+    const y = HEAD_H + ri * ROW_H;
+    const over = r.overloads.length > 0;
+    // 行标签：名称 + 类型/产能 + 超载红点
+    const lbl = document.createElement("div");
+    lbl.style.cssText = `position:absolute;left:6px;top:${y + 4}px;width:${LEFT - 10}px;overflow:hidden;white-space:nowrap;`;
+    const tag = r.type === "vendor" ? "外包" : "人";
+    lbl.innerHTML = `<span style="color:var(--text)">${r.name}</span><br><span style="color:var(--muted);font-size:10px">${tag}·产能${r.capacity}${over ? ' · <span style="color:var(--critical)">超载</span>' : ''}</span>`;
+    g.appendChild(lbl);
+    // 每日单元格
+    for (let i = 0; i < totalDays; i++) {
+      const d = addDays(minD, i);
+      const date = fmtDate(d);
+      const working = cal.isWorking(d);
+      const cell = document.createElement("div");
+      cell.style.cssText = `position:absolute;left:${LEFT + i * DAY_W}px;top:${y}px;width:${DAY_W - 1}px;height:${ROW_H - 1}px;border-bottom:1px solid var(--grid);border-right:1px solid var(--grid);display:flex;align-items:center;justify-content:center;font-size:10px;`;
+      if (!working) { cell.style.background = "var(--weekend)"; }
+      else {
+        const ld = r.loadByDate[date];
+        const load = ld ? ld.load : 0;
+        if (load === 0) { cell.style.background = "transparent"; }
+        else if (load <= r.capacity) {
+          const ratio = 0.25 + 0.55 * (load / r.capacity);
+          cell.style.background = `rgba(91,191,138,${ratio.toFixed(2)})`;
+          cell.textContent = load; cell.style.color = "#08130d";
+        } else {
+          cell.style.background = "var(--critical)";
+          cell.textContent = load; cell.style.color = "#fff"; cell.style.fontWeight = "700";
+        }
+        if (ld) cell.title = `${r.name} ${date}：负载 ${load}/${r.capacity}\n任务：${ld.tasks.join(", ")}${load > r.capacity ? "（超载）" : ""}`;
+      }
+      g.appendChild(cell);
+    }
+  });
+}
+
 /* ---------- 状态栏 ---------- */
 function renderStatus() {
   const comp = state.computed;
@@ -578,7 +714,9 @@ function renderStatus() {
     let last = comp.cal.start;
     comp.result.forEach(c => { if (c.finishDate > last) last = c.finishDate; });
     const critCount = [...comp.result.values()].filter(c => c.critical).length;
-    document.getElementById("stEnd").textContent = `总工期 ${comp.projEnd} 工作日 · 完工 ${fmtDate(last)} · 临界 ${critCount} 项`;
+    const overRes = (comp.resources || []).filter(r => r.overloads.length);
+    const overTxt = overRes.length ? ` · 资源超载 ${overRes.length} 项（${overRes.map(r => r.name).join("、")}）` : " · 资源无冲突";
+    document.getElementById("stEnd").textContent = `总工期 ${comp.projEnd} 工作日 · 完工 ${fmtDate(last)} · 临界 ${critCount} 项${overTxt}`;
   } else {
     document.getElementById("stEnd").textContent = "工期 —";
   }
@@ -593,7 +731,7 @@ function doSchedule() {
   readTable();
   const comp = scheduleProject(state.data);
   state.computed = comp;
-  renderTable(); renderGantt(); renderStatus();
+  renderTable(); renderRight(); renderStatus();
   if (comp.errors.length) toast("排期完成，但有警告：" + comp.errors[0]);
   else toast(`排期完成：${state.data.tasks.length} 项任务，总工期 ${comp.projEnd} 工作日`);
 }
@@ -602,7 +740,7 @@ function doBaseline() {
   const tasks = {};
   state.computed.result.forEach((c, id) => { tasks[id] = { start: c.start, finish: c.finish, duration: c.dur }; });
   state.data.baseline = { capturedAt: new Date().toISOString(), tasks };
-  renderTable(); renderGantt();
+  renderTable(); renderRight();
   toast("已捕获基线：" + Object.keys(tasks).length + " 项");
 }
 function doAddRow() {
@@ -659,7 +797,7 @@ function loadData(data) {
   if (!data || data.protocol !== "bpt-pm/v1") { toast("非 bpt-pm/v1 协议数据"); return; }
   data.tasks = data.tasks || [];
   state.data = data; state.computed = null;
-  renderTable(); renderGantt(); renderStatus();
+  renderTable(); renderRight(); renderStatus();
 }
 function emptyProject() {
   return { protocol: "bpt-pm/v1", project: { name: "新项目", start: new Date().toISOString().slice(0, 10), calendar: { workdays: [1, 2, 3, 4, 5], holidays: [] } }, baseline: null, tasks: [] };
@@ -710,28 +848,40 @@ async function doNotionPush() {
   }
 }
 
-/* ---------- 载入样例（内嵌，双击即用无需网络） ---------- */
+/* ---------- 载入样例（内嵌，双击即用无需网络）：内容团队美术交付 + 外包 + 资源冲突 ---------- */
 const SAMPLE = {
   "protocol": "bpt-pm/v1",
-  "project": { "name": "银芯 Wiki 使命#2 冲刺样例", "start": "2026-07-06", "calendar": { "workdays": [1, 2, 3, 4, 5], "holidays": ["2026-07-20"] } },
+  "project": { "name": "版本 v2.4 双角色美术交付（外包建模）", "start": "2026-07-06", "calendar": { "workdays": [1, 2, 3, 4, 5], "holidays": ["2026-07-20"] } },
+  "resources": [
+    { "id": "主美", "name": "主美 / 艺术总监", "type": "person", "capacity": 1 },
+    { "id": "原画", "name": "原画师", "type": "person", "capacity": 1 },
+    { "id": "外包A", "name": "外包A（建模供应商）", "type": "vendor", "capacity": 2 },
+    { "id": "程序", "name": "程序接入", "type": "person", "capacity": 1 }
+  ],
   "baseline": {
     "capturedAt": "2026-07-05T00:00:00Z",
     "tasks": {
-      "T1": { "start": "2026-07-06", "finish": "2026-07-08", "duration": 3 },
-      "T2": { "start": "2026-07-09", "finish": "2026-07-14", "duration": 4 },
-      "T3": { "start": "2026-07-09", "finish": "2026-07-10", "duration": 2 },
-      "T4": { "start": "2026-07-15", "finish": "2026-07-21", "duration": 4 },
-      "T5": { "start": "2026-07-22", "finish": "2026-07-24", "duration": 3 },
-      "M1": { "start": "2026-07-27", "finish": "2026-07-27", "duration": 0 }
+      "X1": { "start": "2026-07-06", "finish": "2026-07-07", "duration": 2 },
+      "X2": { "start": "2026-07-08", "finish": "2026-07-08", "duration": 1 },
+      "X3": { "start": "2026-07-09", "finish": "2026-07-13", "duration": 3 },
+      "X4": { "start": "2026-07-14", "finish": "2026-07-15", "duration": 2 },
+      "Y1": { "start": "2026-07-06", "finish": "2026-07-07", "duration": 2 },
+      "Y2": { "start": "2026-07-08", "finish": "2026-07-08", "duration": 1 },
+      "Y3": { "start": "2026-07-09", "finish": "2026-07-13", "duration": 3 },
+      "Y4": { "start": "2026-07-14", "finish": "2026-07-15", "duration": 2 },
+      "M1": { "start": "2026-07-16", "finish": "2026-07-16", "duration": 0 }
     }
   },
   "tasks": [
-    { "id": "T1", "name": "解包 Lua → 原始字段", "duration": 3, "predecessors": [], "resource": "艾瑞卡", "percentComplete": 100 },
-    { "id": "T2", "name": "补齐 72 角色结构化基线", "duration": 5, "predecessors": [{ "id": "T1", "type": "FS", "lag": 0 }], "resource": "艾瑞卡", "percentComplete": 60 },
-    { "id": "T3", "name": "校验数据 schema", "duration": 2, "predecessors": [{ "id": "T1", "type": "FS", "lag": 0 }], "resource": "守密人", "percentComplete": 100 },
-    { "id": "T4", "name": "生成 VitePress 角色页", "duration": 4, "predecessors": [{ "id": "T2", "type": "FS", "lag": 0 }, { "id": "T3", "type": "FS", "lag": 0 }], "resource": "艾瑞卡", "percentComplete": 0 },
-    { "id": "T5", "name": "站点构建与联调", "duration": 3, "predecessors": [{ "id": "T4", "type": "FS", "lag": 0 }], "constraint": { "type": "SNET", "date": "2026-07-23" }, "resource": "艾瑞卡", "percentComplete": 0 },
-    { "id": "M1", "name": "W2 基线交付里程碑", "duration": 0, "predecessors": [{ "id": "T5", "type": "FS", "lag": 0 }], "resource": "守密人", "percentComplete": 0 }
+    { "id": "X1", "name": "角色X 概念草图", "duration": 2, "predecessors": [], "resource": "原画", "percentComplete": 100 },
+    { "id": "X2", "name": "角色X 原画终审", "duration": 1, "predecessors": [{ "id": "X1" }], "resource": "主美", "percentComplete": 0 },
+    { "id": "X3", "name": "角色X 建模（外包）", "duration": 4, "predecessors": [{ "id": "X2" }], "resource": "外包A", "percentComplete": 0 },
+    { "id": "X4", "name": "角色X 引擎接入", "duration": 2, "predecessors": [{ "id": "X3" }], "resource": "程序", "percentComplete": 0 },
+    { "id": "Y1", "name": "角色Y 概念草图", "duration": 2, "predecessors": [], "resource": "原画", "percentComplete": 100 },
+    { "id": "Y2", "name": "角色Y 原画终审", "duration": 1, "predecessors": [{ "id": "Y1" }], "resource": "主美", "percentComplete": 0 },
+    { "id": "Y3", "name": "角色Y 建模（外包）", "duration": 4, "predecessors": [{ "id": "Y2" }], "resource": "外包A", "percentComplete": 0 },
+    { "id": "Y4", "name": "角色Y 引擎接入", "duration": 2, "predecessors": [{ "id": "Y3" }], "resource": "程序", "percentComplete": 0 },
+    { "id": "M1", "name": "版本 v2.4 美术封板", "duration": 0, "predecessors": [{ "id": "X4" }, { "id": "Y4" }], "resource": "主美", "percentComplete": 0 }
   ]
 };
 
@@ -762,6 +912,7 @@ document.getElementById("btnSave").onclick = doSave;
 document.getElementById("btnNotionPull").onclick = doNotionPull;
 document.getElementById("btnNotionPush").onclick = doNotionPush;
 document.getElementById("btnProxyCfg").onclick = setProxy;
+document.getElementById("btnViewToggle").onclick = toggleView;
 
 renderStatus();
 </script>

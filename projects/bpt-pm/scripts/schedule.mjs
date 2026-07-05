@@ -34,6 +34,7 @@ export function scheduleProject(data) {
     preds: (t.predecessors || []).map(p => ({ id: p.id, type: p.type || "FS", lag: Number(p.lag || 0) })),
     constraint: t.constraint || null,
     pct: Number(t.percentComplete || 0),
+    resource: t.resource || "",
   }));
   const byId = new Map(tasks.map(t => [t.id, t]));
   const order = [], visiting = new Set(), done = new Set(), errors = [];
@@ -95,14 +96,65 @@ export function scheduleProject(data) {
     if (finishDate > completion) completion = finishDate;
     return { id: t.id, name: t.name, start: fmtDate(startDate), finish: fmtDate(finishDate), dur: t.dur, slack: t.slack, critical: t.critical, milestone: t.dur === 0 };
   });
-  return { projEnd, completion: fmtDate(completion), errors, tasks: out };
+  const resources = computeResourceLoad(tasks, data.resources, cal, projEnd);
+  return { projEnd, completion: fmtDate(completion), errors, tasks: out, resources };
+}
+
+/* ---------- 资源负载 + 超载检测 ----------
+   每个 dur>0 的任务在其 [es, ef) 工作日索引区间占用其资源 1 个并发槽。
+   某工作日某资源承载任务数 > capacity 即超载。未登记资源按「人、产能1」处理。 */
+export function computeResourceLoad(tasks, resourcesDef, cal, projEnd) {
+  const resMap = new Map();
+  (resourcesDef || []).forEach(r => resMap.set(r.id, {
+    id: r.id, name: r.name || r.id, type: r.type || "person", capacity: Math.max(1, Number(r.capacity || 1)),
+  }));
+  for (const t of tasks) { if (t.dur > 0 && t.resource && !resMap.has(t.resource)) resMap.set(t.resource, { id: t.resource, name: t.resource, type: "person", capacity: 1 }); }
+  const perRes = new Map(); // resId -> Map(dayIdx -> [taskIds])
+  for (const t of tasks) {
+    if (!(t.dur > 0) || !t.resource) continue;
+    if (!perRes.has(t.resource)) perRes.set(t.resource, new Map());
+    const m = perRes.get(t.resource);
+    for (let i = t.es; i < t.ef; i++) { if (!m.has(i)) m.set(i, []); m.get(i).push(t.id); }
+  }
+  const out = [];
+  for (const [id, meta] of resMap) {
+    const m = perRes.get(id) || new Map();
+    const idxs = [...m.keys()].sort((a, b) => a - b);
+    const loadByDate = {}; let peak = 0;
+    for (const i of idxs) { const arr = m.get(i); loadByDate[fmtDate(cal.fromIndex(i))] = { load: arr.length, tasks: arr }; if (arr.length > peak) peak = arr.length; }
+    const segs = []; let cur = null;
+    for (const i of idxs) {
+      const load = m.get(i).length;
+      if (load > meta.capacity) {
+        if (cur && i === cur.endIdx + 1) { cur.endIdx = i; cur.load = Math.max(cur.load, load); m.get(i).forEach(x => cur.tasks.add(x)); }
+        else { if (cur) segs.push(cur); cur = { startIdx: i, endIdx: i, load, tasks: new Set(m.get(i)) }; }
+      }
+    }
+    if (cur) segs.push(cur);
+    out.push({
+      id, name: meta.name, type: meta.type, capacity: meta.capacity, peakLoad: peak, loadByDate,
+      overloads: segs.map(s => ({ start: fmtDate(cal.fromIndex(s.startIdx)), end: fmtDate(cal.fromIndex(s.endIdx)), load: s.load, tasks: [...s.tasks] })),
+    });
+  }
+  return out;
 }
 
 // CLI 入口
 if (import.meta.url === `file://${process.argv[1]}`) {
   const fs = await import("fs");
-  const src = process.argv[2] ? fs.readFileSync(process.argv[2], "utf8") : fs.readFileSync(0, "utf8");
+  const fileArg = process.argv.slice(2).find(a => !a.startsWith("--"));
+  const src = fileArg ? fs.readFileSync(fileArg, "utf8") : fs.readFileSync(0, "utf8");
   const data = JSON.parse(src);
   const res = scheduleProject(data);
-  console.log(JSON.stringify(res, null, 2));
+  if (process.argv.includes("--summary")) {
+    console.log(`总工期 ${res.projEnd} 工作日 · 完工 ${res.completion}`);
+    res.tasks.forEach(t => console.log(`  ${t.id.padEnd(4)} ${t.start}→${t.finish} slack=${t.slack} ${t.critical ? "CRIT" : ""}`));
+    console.log("资源负载：");
+    res.resources.forEach(r => {
+      const flag = r.overloads.length ? `超载 ${r.overloads.map(o => `${o.start}..${o.end}(${o.load}/${r.capacity}:${o.tasks.join(",")})`).join(" ")}` : "无冲突";
+      console.log(`  ${r.name}（${r.type} 产能${r.capacity}｜峰值${r.peakLoad}）→ ${flag}`);
+    });
+  } else {
+    console.log(JSON.stringify(res, null, 2));
+  }
 }

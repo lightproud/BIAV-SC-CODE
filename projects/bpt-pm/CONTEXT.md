@@ -19,10 +19,12 @@ CPM）、**基线比对**，确认后**写回同一数据源**。零后端、零
 | 段 | 内容 |
 |----|------|
 | `project` | 项目名 + `start` 锚点日期 + `calendar`（workdays ISO 星期号集合 / holidays 节假日例外）|
-| `tasks[]` | `id` / `name` / `duration`(工作日,0=里程碑) / `predecessors[]`（{id,type,lag}，type∈FS/SS/FF/SF）/ `constraint`(ASAP/SNET/MSO) / `resource` / `percentComplete` |
+| `tasks[]` | `id` / `name` / `duration`(工作日,0=里程碑) / `predecessors[]`（{id,type,lag}，type∈FS/SS/FF/SF）/ `constraint`(ASAP/SNET/MSO) / `resource`(引用 resources.id) / `percentComplete` |
+| `resources[]` | **（v2）** 资源注册表：`id` / `name` / `type`(person/vendor) / `capacity`(并发产能，人=1、外包=N)。可选 |
 | `baseline` | 基线快照：`capturedAt` + `tasks{id→{start,finish,duration}}`，可为 null |
 
-样例数据：`data/sample-project.json`（亦内嵌于页面「载入样例」按钮，离线可用）。
+样例数据：`data/sample-content-team.json`（内容团队美术交付 + 外包 + 资源冲突，内嵌于「载入样例」按钮）；
+`data/sample-project.json`（早期 wiki 冲刺样例，无资源）。
 
 ## 排期引擎（CPM）
 
@@ -33,6 +35,20 @@ CPM）、**基线比对**，确认后**写回同一数据源**。零后端、零
 - **临界路径**：slack ≤ 0 即临界（表格行红字 + 甘特条红色 + 依赖连线红色）
 - **环检测 / 悬空依赖**：拓扑期报警告，不静默
 
+## 资源冲突可视化（v2-A，守密人 2026-07-05 定向）
+
+面向 60 人内容团队痛点「资源冲突」（含外包发单产能）。`computeResourceLoad`（引擎内联 +
+`scripts/schedule.mjs` 同逻辑）在排期后算每资源逐工作日负载：任务在 [es,ef) 占其资源 1 个并发槽，
+某工作日承载数 > `capacity` 即**超载**。网页「切到资源负载」按钮切出**资源 × 日热力图**：
+空=透明、未满=绿、超载=红并标数字；行标注类型/产能/超载红点；状态栏汇总超载资源数。
+
+- **两类资源语义**：`person`（产能常 1，如主美/绑定瓶颈岗）vs `vendor`（外包，产能=并发接单数）。
+  外包满载（load=capacity）显绿不报红——演示并发产能吸收，区别于人力超载。
+- 回归：`tests/resource_load.mjs`（主美/原画/程序超载、外包A 满载不冲突、超载资源数=3）。
+- 截图：`docs/screenshot-resource.png`。
+- **未来（D 阶段，外包发单尚无系统 → 从零建模）**：发单为一等对象（供应商/PO/返修轮次/验收/付款）
+  + 状态流水，关联排期；供应商产能喂给本冲突视图。规划见「按痛点选功能」分析（会话 2026-07-05）。
+
 ## 结构
 
 ```
@@ -40,7 +56,9 @@ projects/bpt-pm/
 ├── index.html                 # 单网页工作台（引擎 + 表格 + 甘特图，自包含）
 ├── schema/task-schema.json    # bpt-pm/v1 数据协议（JSON Schema）
 ├── data/sample-project.json   # 样例项目数据
-├── scripts/schedule.mjs       # CPM 调度器 CLI（与网页内联引擎同算法，供外部数据源桥接复用）
+├── data/sample-content-team.json # v2 样例：内容团队美术交付 + 外包 + 资源冲突（内嵌为默认样例）
+├── scripts/schedule.mjs       # CPM 调度器 CLI + 资源负载/超载检测（与网页内联引擎同算法）
+├── tests/                     # 纯 Node 端到端/单测：proxy_e2e.mjs · resource_load.mjs
 ├── proxy/                     # 本地 Notion 代理（让网页按钮直连生效）
 │   ├── server.mjs            #   零依赖 Node 代理：GET /tasks 拉取 · POST /writeback 写回
 │   ├── .env.example         #   配置模板（NOTION_TOKEN / DATABASE_ID / 项目锚点），.env 被 gitignore

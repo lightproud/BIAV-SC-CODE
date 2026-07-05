@@ -44,6 +44,31 @@
         }
       }
     },
+    "resources": {
+      "type": "array",
+      "description": "资源注册表（可选，v2）。为资源冲突/负载分析提供产能。任务经 resource 字段引用其 id；未登记的资源按「人、产能 1」隐式处理。",
+      "items": {
+        "type": "object",
+        "required": ["id"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "description": "资源唯一标识，任务 resource 字段引用它。" },
+          "name": { "type": "string", "description": "显示名（缺省用 id）。" },
+          "type": {
+            "type": "string",
+            "enum": ["person", "vendor"],
+            "default": "person",
+            "description": "person 内部人员（产能常为 1，如主美/绑定/特效瓶颈岗）；vendor 外包供应商（产能=可并发接单数）。"
+          },
+          "capacity": {
+            "type": "number",
+            "minimum": 1,
+            "default": 1,
+            "description": "并发产能：同一时间可承载的任务数。人默认 1，外包可 N。某工作日承载任务数 > capacity 即超载。"
+          }
+        }
+      }
+    },
     "baseline": {
       "type": ["object", "null"],
       "description": "基线快照（可选）。捕获某次排期结果作为对照基准，后续排期漂移与之比对得出偏差。为 null 或缺省表示尚未设基线。",
