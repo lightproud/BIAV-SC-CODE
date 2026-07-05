@@ -1,8 +1,8 @@
 {
   "date": "2026-07-05",
-  "archived_at": "2026-07-05T09:40:57.770602+00:00",
+  "archived_at": "2026-07-05T11:28:46.753436+00:00",
   "source": "steam",
-  "item_count": 5,
+  "item_count": 6,
   "items": [
     {
       "title": "[正面] Lo instalé por Saya, pero la historia y el gamepla...",
@@ -118,6 +118,30 @@
         "playtime_forever": 4006,
         "votes_up": 0,
         "timestamp_created": 1783232874
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[负面] Do not get fooled by my play time, as I don't play...",
+      "summary": "Do not get fooled by my play time, as I don't play a lot on steam but mostly mobile and use the other client on PC. I am playing since the 2nd anniversary and spent money on this game.\n\nMy conclusion is that the game is good, it's not a dead game and absolutely not the worst gacha out there, but I cannot recommend it in its state. I'm waiting more time after their half anniversary to see if there's some changes\n\n[h3]Good[/h3]\n\n- Chara design : monsters, humans, furry, milf, dilf. Yeah, you kinda get a bit of everything, I like it. I kinda wish for a bit more furries as there's only one\n\n- Lore : The lore is good, it's not the greatest story I've ever read but I really like it\n\n- Artstyle : not much to say, it's mostly subjective, but I like it\n\n- The gacha is okay, it's on the generous side, but it's even more generous as dolphin than F2P in my opinion. It does ask for *16* copies of the character if you want to max it tho, which is a lot !\n\n- Gameplay : I find it cool and interesting, it's my first Slay the Spire-like game and I never expected to like that. You can play with DoT like bleed and poison, you have discard teams, you have some \"pewpew\" teams that just use basic strikes but hurts like trucks, you can play with shield/counter... Lot of fun ways to play\n\n[h3]Bad[/h3]\n\n- Major patch length : for a VN gacha, you have a new main chapter every 4 months, which is very long in my opinion, outside of that, it's mostly rerun contents with a couple new characters stories\n\n- UI : the lack of information in combat and in the menu for your characters is annoying, you can't know what a generated card do for example except if you look for it on the internet or in combat\n\n- AI/Volunteer translators : yes, the game sadly uses AI, not for artworks but for translating texts. English is mostly translated by people now, outside of some side stories from character/wheel I think. Other language are still mostly AI (French has probably 3 words translated and that's it, the game is barely understandable).\nAnd if it's not AI, it's mostly volunteer translating the game. With how well the half-anni went, I now expect some paid translators for the game because in my opinion it's not a good image\n\n- Game changes : They recently added time limited pull that last for a major patch duration, saying that we will receive more of them compared than the non-time limited pull for non-standard characters. It's, uh... Not really happening so far, it's mostly the same value in paid packs\nThey also added more \"Absolute Axiom\", that is a buff to the character if you upgraded it to +12 (16 copies), it was supposed to be a buff for characters lacking strength because too old (mostly standard characters). Now everyone has it, even upcoming characters. The positive point is that it's not needed to progress in the story nor to do the endgame content, but it obviously makes it easier\n\n- Discord : This one is last because not directly related to the game, but I hate with a passion games that mostly communicate with Discord, because people there are often answering in the heat of the conversation, without thinking.\nThere's now a bit more moderators, but a month or two ago the Discord was a ♥♥♥♥ show, people insulting each other, even death threats, and everything was always swept under the rug or not addressed at all. I do want to thanks people that makes effort to keep everything civil",
+      "source": "steam_review",
+      "time": "2026-07-05T09:47:58+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198065473897/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198065473897",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": false,
+        "playtime_forever": 607,
+        "votes_up": 0,
+        "timestamp_created": 1783244878
       },
       "region": "global",
       "archive_subtype": "review",
