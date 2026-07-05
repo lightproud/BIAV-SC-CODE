@@ -1,8 +1,8 @@
 {
   "date": "2026-07-06",
-  "archived_at": "2026-07-05T21:58:35.334967+00:00",
+  "archived_at": "2026-07-05T22:59:40.676955+00:00",
   "source": "steam",
-  "item_count": 3,
+  "item_count": 4,
   "items": [
     {
       "title": "[正面] Une très belle surprise ce jeu !\r\nLes personnages...",
@@ -70,6 +70,30 @@
         "playtime_forever": 301,
         "votes_up": 0,
         "timestamp_created": 1783276056
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Very easy recommend for a spooky card game. There'...",
+      "summary": "Very easy recommend for a spooky card game. There's a lot of depth and builds you can make and there's every aspect of this game is fun.\n\nIt's gatcha but there's so much free stuff that you will probably get everything as a F2P within a few months.",
+      "source": "steam_review",
+      "time": "2026-07-05T21:53:39+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198156973409/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198156973409",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 991,
+        "votes_up": 0,
+        "timestamp_created": 1783288419
       },
       "region": "global",
       "archive_subtype": "review",

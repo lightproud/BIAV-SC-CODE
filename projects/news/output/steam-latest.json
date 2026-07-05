@@ -1,10 +1,25 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-05T21:57:50.043268+00:00",
+  "collected_at": "2026-07-05T22:58:54.065531+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 12,
+  "item_count": 13,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-07-05T21:53:39+00:00",
+      "lang": "english",
+      "title": "[正面] Very easy recommend for a spooky card game. There'...",
+      "summary": "Very easy recommend for a spooky card game. There's a lot of depth and builds you can make and there's every aspect of this game is fun.\n\nIt's gatcha but there's so much free stuff that you will probably get everything as a F2P within a few months.",
+      "url": "https://steamcommunity.com/profiles/76561198156973409/recommended/3052450",
+      "author": "76561198156973409",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Very easy recommend for a spooky card game. There's a lot of depth and builds you can make and there's every aspect of this game is fun.\n\nIt's gatcha but there's so much free stuff that you will probably get everything as a F2P within a few months.",
+      "timestamp_created": 1783288419,
+      "playtime_forever": 991
+    },
     {
       "source": "steam",
       "time": "2026-07-05T18:33:14+00:00",
