@@ -60,8 +60,14 @@ import { JsonlSessionStore } from './sessions/store.js';
 import { MirroringSessionStore, encodeProjectKey } from './sessions/store-adapter.js';
 import { FileCheckpointStore } from './sessions/checkpoints.js';
 import { DeferredMcpRegistry, makeToolSearchTool } from './tools/toolsearch.js';
+import { mkdtempSync, rmSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+
 import { createBuiltinTools } from './tools/index.js';
 import { createShellManager } from './tools/shells.js';
+import { resolveSandboxBackend } from './sandbox/backend.js';
+import type { SandboxContext } from './types.js';
 import { createSubagentRuntime } from './subagents/runtime.js';
 import { createAgentTool } from './subagents/agent-tool.js';
 import { loadProjectMcpServers } from './mcp/project-config.js';
@@ -98,7 +104,6 @@ const ACCEPTED_OPTION_KEYS: readonly string[] = [
   // effect when a .mcp.json is present; keep the compat diagnostic.
   'settingSources',
   'effort',
-  'sandbox',
   'plugins',
   'skills',
   'toolAliases',
@@ -414,6 +419,40 @@ export function query(args: {
   // Shared with subagents (one shell session per query); disposed on exit.
   const shells = createShellManager(debug);
 
+  // v0.6 sandbox (G-SANDBOX): resolve a backend (default-on when bwrap is
+  // available on Linux) and build the per-query sandbox context. Absent ->
+  // Bash runs unsandboxed and no sandbox guidance is emitted.
+  const sandboxBackend = resolveSandboxBackend(options.sandbox, debug);
+  let sandboxCtx: SandboxContext | undefined;
+  let sandboxTmpDir = '';
+  if (sandboxBackend !== null) {
+    try {
+      sandboxTmpDir = mkdtempSync(join(tmpdir(), 'bpt-sbx-'));
+    } catch {
+      sandboxTmpDir = '';
+    }
+    const sbxOpt = typeof options.sandbox === 'object' ? options.sandbox : undefined;
+    const writablePaths = [
+      cwd,
+      ...(options.additionalDirectories ?? []),
+      ...(sbxOpt?.writablePaths ?? []),
+      ...(shells.stateDir !== '' ? [shells.stateDir] : []),
+      ...(sandboxTmpDir !== '' ? [sandboxTmpDir] : []),
+    ];
+    sandboxCtx = {
+      backend: sandboxBackend,
+      tmpDir: sandboxTmpDir,
+      writablePaths,
+      allowNetwork: sbxOpt?.allowNetwork === true,
+      allowEscape: sbxOpt?.allowEscape !== false,
+    };
+    debug(
+      `sandbox: ACTIVE (backend=${sandboxBackend.name}, network=` +
+        `${sandboxCtx.allowNetwork ? 'on' : 'off'}, escape=` +
+        `${sandboxCtx.allowEscape ? 'allowed' : 'mandatory'})`,
+    );
+  }
+
   const hooks = new DefaultHookRunner({
     hooks: options.hooks,
     debug,
@@ -462,7 +501,7 @@ export function query(args: {
 
   // Built-in tools, optionally filtered by the array form of options.tools
   // (the claude_code preset and undefined both mean "all built-ins").
-  const allBuiltins = createBuiltinTools();
+  const allBuiltins = createBuiltinTools({ sandbox: sandboxCtx });
   let builtinTools: Map<string, BuiltinTool>;
   if (Array.isArray(options.tools)) {
     builtinTools = new Map();
@@ -640,6 +679,7 @@ export function query(args: {
     debug,
     emitObservability: emitObs,
     shells,
+    sandbox: sandboxCtx,
   });
 
   // --- Input queue (unified for string and streaming-input modes) -----------
@@ -1203,6 +1243,7 @@ export function query(args: {
             ? (abs, pre): void => checkpointStore!.record(abs, pre)
             : undefined,
           shells,
+          sandbox: sandboxCtx,
         };
         const deps: EngineDeps = {
           transport,
@@ -1323,6 +1364,14 @@ export function query(args: {
       // Kill background shells + drop the persistent cwd/env snapshot: shell
       // sessions live and die with the query.
       shells.dispose();
+      // Drop the per-query sandbox tmp dir (lives and dies with the query).
+      if (sandboxTmpDir !== '') {
+        try {
+          rmSync(sandboxTmpDir, { recursive: true, force: true });
+        } catch {
+          /* best-effort */
+        }
+      }
       if (!initDeferred.settled) {
         initDeferred.reject(
           new AbortError('query ended before initialization completed'),

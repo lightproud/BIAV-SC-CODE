@@ -69,6 +69,9 @@ function opts(extra: Record<string, unknown> = {}) {
     cwd: sandbox,
     env: { PATH: process.env.PATH, HOME: process.env.HOME },
     model: 'claude-conformance-l2',
+    // Pin the bash sandbox OFF so request bytes do not depend on host bwrap
+    // presence (deterministic locks regardless of the CI image).
+    sandbox: false,
     ...extra,
   };
 }

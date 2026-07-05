@@ -12,7 +12,10 @@
  *  - Only tools this SDK ships are referenced: Bash, BashOutput, KillShell, Read,
  *    Edit, Write, Grep, Glob, TodoWrite, WebFetch, WebSearch, AskUserQuestion.
  *    No Task/Agent, Workflow, NotebookEdit, MultiEdit, Skill, ExitPlanMode, etc.
- *  - No sandbox content (this SDK does not sandbox). All sandbox-* fragments omitted.
+ *  - Sandbox guidance (BASH_SANDBOX_FRAGMENTS / buildBashSandboxNote) is
+ *    reproduced but GATED: it is appended to the Bash description ONLY when a
+ *    sandbox backend is active (see createBashTool). When unsandboxed the Bash
+ *    description is byte-identical to BASH_DESCRIPTION, with no sandbox content.
  *  - No PowerShell content.
  *  - Background shells: launched via Bash `run_in_background: true`; read output
  *    with BashOutput; stop with KillShell.
@@ -352,3 +355,190 @@ export const TOOL_DESCRIPTION_TEXT: Record<string, string> = {
   WebSearch: WEBSEARCH_DESCRIPTION,
   AskUserQuestion: ASKUSERQUESTION_DESCRIPTION,
 };
+
+// ---------------------------------------------------------------------------
+// Bash sandbox note (G-SANDBOX) — faithful fragment store, GATED on an active
+// sandbox. Assembled by buildBashSandboxNote and appended to the Bash
+// description only when a backend resolves (createBashTool). Composition order
+// is ours (the official 438-token note's exact internal order is not
+// recoverable from the atomized archive); the corpus-sync guard checks
+// per-fragment fidelity, not order.
+// ---------------------------------------------------------------------------
+
+/** One reproduced sandbox-note fragment (Track B provenance shape). */
+export interface SandboxNoteFragment {
+  id: string;
+  /** Archive slug this fragment reproduces (empty for adapted glue). */
+  slug: string;
+  faithful: boolean;
+  text: string;
+}
+
+/** Every reproduced/adapted sandbox-note fragment, keyed by id. */
+export const BASH_SANDBOX_FRAGMENTS: SandboxNoteFragment[] = [
+  {
+    id: 'framing',
+    slug: '',
+    faithful: false,
+    text: 'Commands run inside a sandbox by default. Writes are limited to the working directory and approved paths.',
+  },
+  {
+    id: 'default-to-sandbox',
+    slug: 'tool-description-bash-sandbox-default-to-sandbox',
+    faithful: true,
+    text: 'You should always default to running commands within the sandbox. Do NOT attempt to set `dangerouslyDisableSandbox: true` unless:',
+  },
+  {
+    id: 'condition-user-request',
+    slug: '',
+    faithful: false,
+    text: 'The user explicitly asks you to run a command outside the sandbox.',
+  },
+  {
+    id: 'user-permission-prompt',
+    slug: 'tool-description-bash-sandbox-user-permission-prompt',
+    faithful: true,
+    text: 'This will prompt the user for permission',
+  },
+  {
+    id: 'failure-evidence-condition',
+    slug: 'tool-description-bash-sandbox-failure-evidence-condition',
+    faithful: true,
+    text: 'A specific command just failed and you see evidence of sandbox restrictions causing the failure. Note that commands can fail for many reasons unrelated to the sandbox (missing files, wrong arguments, network issues, etc.).',
+  },
+  {
+    id: 'evidence-list-header',
+    slug: 'tool-description-bash-sandbox-evidence-list-header',
+    faithful: true,
+    text: 'Evidence of sandbox-caused failures includes:',
+  },
+  {
+    id: 'evidence-access-denied',
+    slug: 'tool-description-bash-sandbox-evidence-access-denied',
+    faithful: true,
+    text: 'Access denied to specific paths outside allowed directories',
+  },
+  {
+    id: 'evidence-operation-not-permitted',
+    slug: 'tool-description-bash-sandbox-evidence-operation-not-permitted',
+    faithful: true,
+    text: '"Operation not permitted" errors for file/network operations',
+  },
+  {
+    id: 'evidence-network-failures',
+    slug: 'tool-description-bash-sandbox-evidence-network-failures',
+    faithful: true,
+    text: 'Network connection failures to non-whitelisted hosts',
+  },
+  {
+    id: 'evidence-unix-socket-errors',
+    slug: 'tool-description-bash-sandbox-evidence-unix-socket-errors',
+    faithful: true,
+    text: 'Unix socket connection errors',
+  },
+  {
+    id: 'response-header',
+    slug: 'tool-description-bash-sandbox-response-header',
+    faithful: true,
+    text: 'When you see evidence of sandbox-caused failure:',
+  },
+  {
+    id: 'retry-without-sandbox',
+    slug: 'tool-description-bash-sandbox-retry-without-sandbox',
+    faithful: true,
+    text: 'Immediately retry with `dangerouslyDisableSandbox: true` (don\'t ask, just do it)',
+  },
+  {
+    // ADAPTED: the archive's -explain-restriction second sentence points at a
+    // `/sandbox` command this SDK does NOT ship (red line: never reference an
+    // unshipped capability). Keep the faithful first sentence; the settings
+    // pointer is carried by the faithful -adjust-settings fragment below.
+    id: 'explain-restriction',
+    slug: '',
+    faithful: false,
+    text: 'Briefly explain what sandbox restriction likely caused the failure.',
+  },
+  {
+    id: 'adjust-settings',
+    slug: 'tool-description-bash-sandbox-adjust-settings',
+    faithful: true,
+    text: 'If a command fails due to sandbox restrictions, work with the user to adjust sandbox settings instead.',
+  },
+  {
+    id: 'per-command',
+    slug: 'tool-description-bash-sandbox-per-command',
+    faithful: true,
+    text: 'Treat each command you execute with `dangerouslyDisableSandbox: true` individually. Even if you have recently run a command with this setting, you should default to running future commands within the sandbox.',
+  },
+  {
+    id: 'no-sensitive-paths',
+    slug: 'tool-description-bash-sandbox-no-sensitive-paths',
+    faithful: true,
+    text: 'Do not suggest adding sensitive paths like ~/.bashrc, ~/.zshrc, ~/.ssh/*, or credential files to the sandbox allowlist.',
+  },
+  {
+    id: 'tmpdir',
+    slug: 'tool-description-bash-sandbox-tmpdir',
+    faithful: true,
+    text: 'For temporary files, always use the `$TMPDIR` environment variable. TMPDIR is automatically set to the correct sandbox-writable directory in sandbox mode. Do NOT use `/tmp` directly - use `$TMPDIR` instead.',
+  },
+  {
+    id: 'mandatory-mode',
+    slug: 'tool-description-bash-sandbox-mandatory-mode',
+    faithful: true,
+    text: 'All commands MUST run in sandbox mode - the `dangerouslyDisableSandbox` parameter is disabled by policy.',
+  },
+  {
+    id: 'no-exceptions',
+    slug: 'tool-description-bash-sandbox-no-exceptions',
+    faithful: true,
+    text: 'Commands cannot run outside the sandbox under any circumstances.',
+  },
+];
+
+const FRAG = new Map(BASH_SANDBOX_FRAGMENTS.map((f) => [f.id, f.text]));
+const frag = (id: string): string => FRAG.get(id) ?? '';
+
+/**
+ * Assemble the Bash sandbox note. `default` mode advertises the escape hatch
+ * (dangerouslyDisableSandbox); `mandatory` mode never mentions it (the param
+ * is disabled by policy). The network-failure evidence bullet is included ONLY
+ * when the sandbox actually isolates the network (allowNetwork false) — a red
+ * line: never describe a restriction that is not active.
+ */
+export function buildBashSandboxNote(
+  mode: 'default' | 'mandatory',
+  allowNetwork = false,
+): string {
+  if (mode === 'mandatory') {
+    return [
+      '# Sandbox',
+      frag('framing') + (allowNetwork ? '' : ' Network access is disabled.'),
+      frag('mandatory-mode'),
+      frag('no-exceptions'),
+      frag('adjust-settings'),
+      frag('no-sensitive-paths'),
+      frag('tmpdir'),
+    ].join('\n\n');
+  }
+  const evidence = [
+    '- ' + frag('evidence-access-denied'),
+    '- ' + frag('evidence-operation-not-permitted'),
+    ...(allowNetwork ? [] : ['- ' + frag('evidence-network-failures')]),
+    '- ' + frag('evidence-unix-socket-errors'),
+  ].join('\n');
+  return [
+    '# Sandbox',
+    frag('framing') + (allowNetwork ? '' : ' Network access is disabled.'),
+    frag('default-to-sandbox'),
+    '- ' + frag('condition-user-request') + ' ' + frag('user-permission-prompt') + '.',
+    '- ' + frag('failure-evidence-condition'),
+    frag('evidence-list-header') + '\n' + evidence,
+    frag('response-header'),
+    '- ' + frag('retry-without-sandbox'),
+    '- ' + frag('explain-restriction') + ' ' + frag('adjust-settings'),
+    frag('per-command'),
+    frag('no-sensitive-paths'),
+    frag('tmpdir'),
+  ].join('\n\n');
+}

@@ -125,6 +125,9 @@ describe('emulator end-to-end (real stack, scripted model)', () => {
         provider: { apiKey: 'test-key', baseUrl },
         cwd: sandbox,
         sessionDir,
+        // Pin the bash sandbox OFF: the Bash command here writes/reads in cwd,
+        // and the assertions on tool bytes must not depend on host bwrap.
+        sandbox: false,
         permissionMode: 'bypassPermissions',
         allowDangerouslySkipPermissions: true,
         mcpServers: { demo },

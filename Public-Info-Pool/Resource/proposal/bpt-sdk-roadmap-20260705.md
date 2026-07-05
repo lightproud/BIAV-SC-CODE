@@ -65,7 +65,8 @@ auto-mode 归档仅 guidance 片段、非独立整 prompt，暂缓。**46 新单
 **v0.6 剩余推进（守密人 2026-07-05「ultracode 推进 V0.6 剩余」裁定）**：ultracode 8 代理工作流产**执行路线图**
 `Public-Info-Pool/Resource/proposal/bpt-sdk-v06-remaining-execution-roadmap-20260705.md`（Tier 1 残项 + Tier 2/3 依赖排序、逐项过红线、红线批判 ADJUST）。
 **Batch 1 已落**：G-VERIFY（`src/verifier/` 三态验证器 CONFIRMED/PLAUSIBLE/REFUTED + `adversarialVerify` fail-closed 默认 REFUTED）+ G-SUMMARY（摘要器 no-tools/verbatim 守卫 + `generateAwaySummary` 第 6 面生成器）。**总 881 单测全绿（+43）**。
-后续批：Batch 2（G-HOOKCOND + O-B0 preset）· Batch 3（G-SANDBOX 隔离）· 编排链 O-B1→B2→B3 · Track 2/3 工具本体（Task*/Monitor/Skills/Cron/Loop/Workflow-DSL，末者待守密人沙箱策略裁）。
+已落：Batch 2（G-HOOKCOND + O-B0 preset）· **Batch 3 G-SANDBOX（bwrap 默认开、可插拔后端、Windows 如实降级；1011 全绿）+ 红线常驻守卫**——**v0.6 Tier-1 ship-now 批全部收官**。
+后续批：编排链 O-B1→B2→B3 · Track 2/3 工具本体（Task*/Monitor/Skills/Cron/Loop/Workflow-DSL，末者待守密人沙箱策略裁）。
 3 个无消费子系统的 hook 分类器 + 云端 slug 经批判**降级 design-only / reference-only**（未发货红线）。
 
 ---

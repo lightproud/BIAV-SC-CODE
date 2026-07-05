@@ -70,11 +70,15 @@ All four depend only on the confirmed-shipped v0.6 utility runtime (`runUtilityC
 - **O-B0 worker-fork preset**：`WORKER_FORK_FRAMING`（忠实复现，AGENT_TOOL_NAME→Agent 适配）+ `buildWorkerForkPrompt`（framing 骑 fork 任务轮、不动缓存前缀，与官方装配一致）+ `WORKER_FORK_AGENT`（fork:true / maxTurns 200，挂 G4 fork 机制、runtime 零改动）。**coordinator/teams 刻意不发**（预设 SendMessage 本体，归 O-B2）。
 - 3 条新复现字节级一致（reverse-diff）。**952 单测全绿（+22）**。
 
+## 已落（本会话，Batch 3 —— G-SANDBOX + 卫生批）
+
+- **G-SANDBOX**（守密人「G-SANDBOX 推荐 / 网络默认断网」裁定，已落）：默认开启的 Bash 沙箱、**可插拔后端**。① `src/sandbox/`：`resolveSandboxBackend`（Linux+bwrap→BwrapBackend，否则 null 优雅降级 + 诚实 debug；注入式后端接缝）+ `BwrapBackend`（纯 argv：`--ro-bind / /` + writablePath 逐条 rw-bind + `--unshare-net`（默认断网）+ `$TMPDIR` 重定向；限制范围只做归档描述的写盘/网络/tmpdir，不发明读隐藏/seccomp）+ `detectSandboxEvidence`/`sandboxFailureHint`（沙箱致败签名→`[sandbox]` 证据 + 重试路径）。② 双 spawn 位（前台 bash.ts / 后台 shells.ts）经 `planShellSpawn` 同一接缝；持久 cwd/env 在沙箱内仍工作（stateDir rw-bind）。③ `dangerouslyDisableSandbox` 经权限门走 ask（Bash 非只读天然不自动放行，除 bypass/allow 规则）；mandatory 模式（`allowEscape:false`）政策拒绝。④ 描述/schema 门控：未激活字节不变、无 param、不含 "sandbox"；激活加忠实指引（17 片段 provenance + corpus-sync 字节对齐）+ param；断网默认才装网络证据片段（红线）。⑤ **Windows/macOS 无后端→如实降级、不假装隔离**（同官方 CC Windows 姿态）。⑥ 卫生批：**红线常驻守卫** `tests/red-line-tool-names.test.ts`（任何复现提示词不得引用当版缺席工具）+ plan 注释修正。**conformance/emulator 钉 `sandbox:false`** 保确定性（不依赖 CI 机器 bwrap）。**1011 单测全绿 + 2 skipped（真 bwrap 隔离测试无 bwrap 时跳过）**。
+- **测量基建 G-cmp（任务#17）对账**：一致性套件 M1-M4 早已封顶（L1 流语法 / L2 选项 16 锁 / L3 工具差分 / L4 故障注入 / L5 五维真机 + 棘轮门 + 漂移哨兵），#17 陈旧 pending 标记订正为 completed（代码早已落，非缺口）。
+
 ## 未落（按上文依赖链推进，需守密人裁或先建工具本体）
-- **Batch 3**（ship-now，隔离做）：G-SANDBOX（bwrap 默认开 + 沙箱指引，触 gate/spawn 11 文件，单独批）。
-- **编排链**（严格顺序，各需工具本体先落）：O-B1 plan-mode 只读门 → O-B2 SendMessage + 会话内路由 → O-B3 跨会话对等 + 结构化同意不可转述防火墙（过 escalation-rejection red-team 才接线；**刻意不复用 fork 特权继承**——同会话 fork 同意向下流 vs 跨会话对等同意不可越界的分界线）。
+- **编排链**（严格顺序，各需工具本体先落）：O-B1 plan-mode 只读门（门已在、补分阶段流水线范例）→ O-B2 SendMessage + 会话内路由 → O-B3 跨会话对等 + 结构化同意不可转述防火墙（过 escalation-rejection red-team 才接线；**刻意不复用 fork 特权继承**）。
 - **Track 2/3 本体**（复用优先）：Task* CRUD + Monitor（v0.4 通知汇 + v0.5 ShellManager）· Skills 注册表+工具 · Cron 空闲门调度 · Loop skill 提示词（A+B 后）· Workflow DSL 引擎（最后，待守密人沙箱策略裁 + 确认 BPT Desktop 消费方；确定性重放为核心难点）。
-- **永不发货（reference-only）**：3 个无消费子系统的 hook 分类器（context-tip-selector / tip-reception-evaluator / memory-file-attach）+ 全部云端 slug——本 SDK 为本地可嵌入引擎，不发云面。建**红线回归测试**：任何复现提示词不得引用当版 builtin 注册表缺席的工具。
+- **永不发货（reference-only）**：全部云端 slug——本 SDK 为本地可嵌入引擎，不发云面。红线回归守卫**已建**（`tests/red-line-tool-names.test.ts`）。
 
 ## 依据档
 

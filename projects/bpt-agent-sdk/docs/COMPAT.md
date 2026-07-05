@@ -60,9 +60,10 @@ behind `includeHookEvents`); the rest are typed-not-emitted (see the
 Observability arm table below).
 
 Still deliberately out of scope (N/A-by-design): the CLI-coupled subsystems
-(CLI system prompt, settings engine, bubblewrap sandbox, Bedrock/Vertex/Foundry,
-OTel), and the WarmQuery/startup pre-warm lifecycle. See the audit for the
-rationale.
+(CLI system prompt, settings engine, Bedrock/Vertex/Foundry, OTel), and the
+WarmQuery/startup pre-warm lifecycle. See the audit for the rationale.
+(The bubblewrap bash sandbox is now IMPLEMENTED — see the `sandbox` option row
+and the Bash tool row below.)
 
 The per-field tiers below were reconciled against actual code as of the v0.1
 adversarial-review pass; the v0.2 graduations above supersede the "MISSING/
@@ -151,7 +152,8 @@ SDK implements the agent loop directly against the public Messages API:
 | `betas` | FULL | forwarded as `anthropic-beta` header |
 | `includeHookEvents` | FULL | v0.4: emits `hook_started` / `hook_response` pairs (per callback invocation, correlated by `hook_id`) into the stream |
 | `debug` / `debugFile` | PARTIAL | `debug` → stderr callback; `debugFile` ACCEPTED |
-| `agent`, `settings`, `permissionPromptToolName`, `extraArgs`, `effort`, `outputFormat`, `sandbox`, `plugins`, `skills`, `toolAliases`, `toolConfig`, `sessionStore*`, `managedSettings`, `enableFileCheckpointing`, `taskBudget`, `onElicitation`, `planModeInstructions`, `promptSuggestions`, `agentProgressSummaries`, `forwardSubagentText`, `loadTimeoutMs`, `title`, `resumeSessionAt` | ACCEPTED | each present key emits exactly one debug warning, then ignored |
+| `agent`, `settings`, `permissionPromptToolName`, `extraArgs`, `effort`, `outputFormat`, `plugins`, `skills`, `toolAliases`, `toolConfig`, `sessionStore*`, `managedSettings`, `enableFileCheckpointing`, `taskBudget`, `onElicitation`, `planModeInstructions`, `promptSuggestions`, `agentProgressSummaries`, `forwardSubagentText`, `loadTimeoutMs`, `title`, `resumeSessionAt` | ACCEPTED | each present key emits exactly one debug warning, then ignored |
+| `sandbox` (`boolean \| SandboxOptions`) | PARTIAL | v0.6 bash sandbox (G-SANDBOX). Default ON when a backend resolves — bubblewrap on Linux (`--ro-bind / /` + rw-bind cwd/additionalDirectories/state/tmp, `--unshare-net` unless `allowNetwork`, `$TMPDIR` redirect). Per-call Bash `dangerouslyDisableSandbox` routes through the permission gate as an ask (never auto-allowed except under `bypassPermissions` or a matching allow rule); `allowEscape:false` = mandatory mode (param disabled). Sandboxed failures matching a restriction signature carry `[sandbox]` evidence + the retry path. **Not implemented:** macOS Seatbelt, the domain-whitelist network proxy (network is binary on/off). **Windows: no backend resolves → Bash runs unsandboxed with NO sandbox guidance emitted — identical honesty posture to official Claude Code on Windows.** The object sub-shape (`enabled`/`allowNetwork`/`writablePaths`/`allowEscape`/`backend`) is BPT-shaped. |
 
 ## Built-in tools
 
@@ -159,7 +161,7 @@ SDK implements the agent loop directly against the public Messages API:
 |---|---|---|
 | Read | PARTIAL | text files (cat -n) + images (PNG/JPEG/GIF/WebP → image block) + PDF (→ base64 `document` block; the API's handle-tool-calls docs allow `document` inside tool_result, though the base64 source there is supported-but-not-explicitly-demonstrated); all magic-byte sniffed (task #17); notebooks not rendered; oversized files (>50MB) rejected with a Grep hint rather than buffered |
 | Write / Edit | PARTIAL | same input field names (`file_path`, `old_string`, …); official 2.1.201 enforces a read-before-write gate (a bare Write over an existing un-read file errors and leaves the file untouched) that this SDK does not - ours overwrites (conformance run-l3 L3-WRITE-02, KD-L3-06, 2026-07-05); success/error wording also differs (KD-L3-05/07/08) |
-| Bash | PARTIAL | v0.5: `cd` + exported env persist across calls (state-file replay — functions/aliases/unexported vars do NOT persist; not a long-lived shell process) and `run_in_background` launches a detached shell whose id feeds BashOutput/KillShell. Still no sandboxing; foreground runs in its own process group (timeout/abort reap the whole group) |
+| Bash | PARTIAL | v0.5: `cd` + exported env persist across calls (state-file replay — functions/aliases/unexported vars do NOT persist; not a long-lived shell process) and `run_in_background` launches a detached shell whose id feeds BashOutput/KillShell. v0.6: sandboxed by default when a backend resolves (see the `sandbox` option row); foreground and background both wrap through the backend and run in their own process group (timeout/abort reap the whole group; `--unshare-pid` + SIGKILL escalation reaps across the sandbox pid namespace). When the sandbox description is active the tool description carries the faithful sandbox guidance and the schema gains `dangerouslyDisableSandbox` (mandatory mode omits it) |
 | BashOutput | FULL | v0.5: incremental reads (new output since last call) + status/exit code; optional per-line regex `filter`; read-only (auto-approved, parallel-group eligible). FULL is vs the DOCUMENTED SDK lifecycle: live official 2.1.201 moved backgrounding to a task-file model and its own BashOutput answers "No task found" for the id its Bash advertised, so no official-arm parity evidence exists (conformance run-l3 L3-BG-01, KD-L3-19, 2026-07-05) |
 | KillShell | FULL | v0.5: SIGTERM then SIGKILL escalation on the background shell's process group. Same official-arm caveat as BashOutput (run-l3 L3-BG-01, KD-L3-19) |
 | Glob | PARTIAL | fast-glob, mtime-sorted newest-first; official 2.1.201 emitted ASCENDING order under ascending-utimes pins, so ordering parity with the live engine is not established - path sets agree (conformance run-l3 L3-GLOB-01, KD-L3-20, 2026-07-05) |
