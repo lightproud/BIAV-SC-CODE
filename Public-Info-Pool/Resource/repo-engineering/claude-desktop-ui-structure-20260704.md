@@ -21,7 +21,7 @@
 | 维度 | 事实 |
 |------|------|
 | 形态 | 桌面应用（Electron 系），macOS（Universal dmg）/ Windows（x64 + ARM64 setup，另有企业 MSIX）/ Linux beta（apt / .deb） |
-| 顶层结构 | **三标签**：**Chat**（对话）/ **Cowork**（Dispatch 与长时 agent 工作）/ **Code**（软件开发）。标签是应用的最高层导航，三者共用账号与登录态 |
+| 顶层结构 | **三标签**：**Chat**（对话）/ **Cowork**（Dispatch 与长时 agent 工作）/ **Code**（软件开发）。标签是应用的最高层导航，三者共用账号与登录态。另有 **Claude Design**（Labs 研究预览）经侧栏入口进入独立工作区（详见 §6，其导航割裂是社区公认反面教材） |
 | 账号 | 启动即登录（订阅制 Pro / Max / Team / Enterprise；Code 标签必须付费订阅）；企业可强制 SSO（SAML / OIDC） |
 | 更新 | macOS / Windows 启动自更新 + 菜单「Check for Updates」（macOS 在 Claude 菜单、Windows 在 Help 菜单）；About 页版本号点击即复制 |
 | 通知 | OS 级桌面通知：Code 会话完成任务且用户不在看该会话时发；CI 结束时发；Dispatch 完成 / 需审批时推手机 |
@@ -243,7 +243,57 @@ mode、Auto mode 开关、Preview 总开关、Persist preview sessions。
 - Desktop 不做的事：`--print` 脚本化 / 无 headless、inline 补全、agent teams（CLI 专属）、
   终端对话框类命令（/permissions、/config、/doctor 在 Code 标签回「不可用」）
 
-## §6 可提炼的设计模式（给 BPT 的结构性启示）
+## §6 Claude Design（Labs 视觉工作区）【官方公告 + 产品页 + 帮助中心 + 社区来源】
+
+2026-04-17 发布的 Anthropic Labs 研究预览产品，视觉设计协作工作区（Opus 4.7 驱动）；
+Web 端在 `claude.ai/design`，桌面应用经**侧栏入口**进入。Pro / Max / Team / Enterprise 可用
+（Enterprise 默认关、管理员在组织设置启用）；**无独立额度**——与 Chat / Code / Cowork
+共享同一计划用量池（与 Code 标签用量环的「plan usage 全平台共享」同一设计）。
+
+### §6.1 入口画面【社区来源（带截图的第三方评测）】
+
+进入即选起点：**Prototype / Slide deck / From template / Other** 四选一，
+并选保真度档位：**rough wireframes**（粗线框）或 **high-fidelity mockups**（高保真、带真实品牌元素）。
+
+### §6.2 工作区布局【帮助中心】
+
+**双区结构：左侧聊天区 + 右侧画布（canvas）**——对话驱动生成，画布承载结果并可直接编辑。
+与 Chat 标签的 Artifacts 面板是同族范式（对话 + 并排产物面板），但这里产物面板升级为
+可操作的编辑器而非只读预览。
+
+### §6.3 画布编辑能力【帮助中心】
+
+- 直接操作：拖拽元素、调整大小、对齐
+- **rich layout controls**：间距 / 颜色 / 布局的实时调整旋钮；文字可直接改
+- **行内评论**：点画布任意部位留评论请求定向修改（已知缺陷：评论偶尔未被读取，
+  官方兜底建议是把评论粘回聊天框——「画布批注回灌对话」链路尚不可靠）
+- 版本：对话指令式保存（"Save what we have and try a completely different approach"），
+  无独立版本树 UI（与 Artifacts 的版本切换器不同）
+
+### §6.4 输入与品牌系统【官方公告 + 产品页】
+
+- 输入四路：文本提示 / 上传图片与文档（DOCX / PPTX / XLSX）/ 指向代码库 / 网页元素捕获工具
+- **设计系统集成**：扫描代码库与设计文件自动构建组织设计系统（颜色 / 排版 / 组件），
+  后续项目自动套用——「品牌一次导入、处处生效」
+- 产出谱系：交互原型、线框与高保真 mockup、幻灯片 / pitch deck、单页、营销素材，
+  以及代码驱动原型（语音 / 视频 / 着色器 / 3D / 内嵌 AI）
+
+### §6.5 导出与交接【帮助中心】
+
+右上角 **Export** 按钮：.zip / PDF / PPTX / 独立 HTML，及 Canva、Adobe、Base44、Gamma、
+Lovable、Miro、Replit、Vercel、Wix 等集成导出；**交接 Claude Code**（本地或 Web）——
+Code 侧有 `/design-sync` 命令同步设计交付包。分享走组织内链接，
+**查看 / 评论 / 编辑**三档权限，支持群组对话协作。
+
+### §6.6 桌面集成的反面教材【社区来源，2026-06】
+
+Design 并入桌面应用后的社区批评（r/claude，高热帖）：入口**藏两层深**，进入后是
+「完全另一个世界」，**无法直接回到 Chat / Cowork / Code**——顶层导航在 Design 内消失。
+这与三标签「一壳三模式、随时切换」的骨架相悖，是「新表面硬塞进成熟壳」的典型集成失败。
+对 BPT 的教训：**新增工作面必须挂在顶层导航同级，进得去也要一步出得来**；
+宁可标签多一个，不可让用户掉进无返回键的子世界。
+
+## §7 可提炼的设计模式（给 BPT 的结构性启示）
 
 1. **会话 = 一等资源**：会话自带环境 + 工作区 + 变更集 + 上下文，侧栏是资源管理器而非聊天历史。
    比 BPT 现有「单对话窗」模型高一个维度，是 Code 标签一切并行能力的地基。
@@ -260,8 +310,13 @@ mode、Auto mode 开关、Preview 总开关、Persist preview sessions。
 9. **渐进披露**：工具调用默认折叠摘要、点击展开；子代理进 tasks pane 不刷屏主流。
 10. **失败兜底分级**：computer use 的「精确工具优先、屏控兜底」+ 按 app 类别封顶权限——
     能力越广、默认权限越窄。
+11. **对话 + 可编辑画布双平面**（Claude Design）：产物面板从只读预览（Artifacts）进化为
+    直接编辑器（画布拖拽 / 旋钮微调 / 行内批注回灌对话）。BPT 若做 artifact 面板，
+    该演进方向值得预留——先只读，但布局上给「产物侧可交互」留位。
+12. **反模式——子世界无返回**（Design 集成失败，§6.6）：新表面不进顶层导航 = 用户迷路。
+    顶层导航必须全程可达。
 
-## §7 与 BPT/SDK 的落差清单（结构性差异，非逐件映射）
+## §8 与 BPT/SDK 的落差清单（结构性差异，非逐件映射）
 
 逐件 UI↔SDK 对接表见姊妹档案 `bpt-desktop-ui-reference-20260704.md` §5。本节只列
 Code 标签新观察到、上一档未覆盖的映射：
@@ -277,11 +332,12 @@ Code 标签新观察到、上一档未覆盖的映射：
 | 用量环 | `result.metrics`（SDKRunMetrics）现成 |
 | Computer use | SDK 不含屏控工具；属宿主自定义工具线（canUseTool + 自注册工具可承载） |
 | 云会话 / SSH 环境切换 | SDK 是进程内库，无远程执行面；BPT 如需要属宿主架构议题 |
+| Design 画布（对话 + 可编辑产物双平面） | SDK 无涉（产物生成走普通 assistant 输出）；画布编辑器属纯前端重投资，BPT 近期建议只做 Artifacts 级只读预览 + 按模式 11 留位 |
 
-## §8 残余盲区（本档案没拿到实锤的）
+## §9 残余盲区（本档案没拿到实锤的）
 
 - Chat 标签侧栏与设置页的**逐像素级**现状（§3 大半为训练期知识，2026 年内可能已改版）
-- Claude Design（2026-04 Labs 新入口，社区反馈称藏得深、与三标签导航割裂）未展开
+- Claude Design 桌面入口的精确位置与层级（§6.6 只有社区「藏两层深」定性描述，无官方导航文档）
 - Cowork 移动端（iOS/Android）界面
 - 各弹窗的精确文案与空态 / 错误态插画
 
@@ -289,4 +345,4 @@ Code 标签新观察到、上一档未覆盖的映射：
 
 ---
 
-*来源清单：code.claude.com/docs/en/desktop（全文）；claude.com/resources/tutorials/navigating-the-claude-desktop-app；support.claude.com articles 13345190（Cowork 入门）/ 13947068（Dispatch)/ 9487310（Artifacts）；claude.com/product/cowork；anthropic.com/engineering/desktop-extensions；claude.com/blog/claude-code-desktop-redesign（2026-04-14 重设计公告）。*
+*来源清单：code.claude.com/docs/en/desktop（全文）；claude.com/resources/tutorials/navigating-the-claude-desktop-app；support.claude.com articles 13345190（Cowork 入门）/ 13947068（Dispatch)/ 9487310（Artifacts）/ 14604416（Claude Design 入门）；claude.com/product/cowork；claude.com/product/design；anthropic.com/news/claude-design-anthropic-labs（2026-04-17 发布公告）；anthropic.com/engineering/desktop-extensions；claude.com/blog/claude-code-desktop-redesign（2026-04-14 重设计公告）；r/claude Design 桌面集成讨论（2026-06，仅 §6.6 定性引用）。*

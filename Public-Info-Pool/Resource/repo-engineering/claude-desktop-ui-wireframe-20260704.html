@@ -48,6 +48,7 @@
   <button class="on" data-t="chat">Chat</button>
   <button data-t="cowork">Cowork</button>
   <button data-t="code">Code</button>
+  <button data-t="design">Design（Labs）</button>
 </div>
 
 <!-- ============ CHAT ============ -->
@@ -127,14 +128,35 @@
   </div>
 </div>
 
-<div class="note">交互提示：点上方 Chat / Cowork / Code 切换线框。快捷键 / 权限模式 / launch.json 字段等契约级明细见规格档 §5。</div>
+<!-- ============ DESIGN ============ -->
+<div class="frame hidden" id="t-design">
+  <div class="titlebar">Claude Design（Labs 研究预览 · 侧栏入口进入的独立工作区）<span class="seg">警示：顶层 Chat/Cowork/Code 导航在此消失（社区批评的集成反模式）</span></div>
+  <div class="lay">
+    <div class="side col">
+      <div class="box"><b>入口画面</b><span>Prototype / Slide deck / From template / Other 四选一</span></div>
+      <div class="box"><b>保真度档位</b><span>rough wireframes / high-fidelity mockups</span></div>
+      <div class="box grow"><b>输入四路</b><span>文本提示 · 上传 DOCX/PPTX/XLSX/图片 · 指向代码库 · 网页元素捕获</span></div>
+      <div class="box"><b>品牌系统</b><span>扫描代码库与设计文件自动建设计系统（色 / 排版 / 组件），项目间自动套用</span></div>
+    </div>
+    <div class="main col">
+      <div class="row grow">
+        <div class="box"><b>聊天区（左）</b><span>对话驱动生成与修改 · 版本以指令保存（无版本树 UI）</span></div>
+        <div class="box"><b>画布 canvas（右）</b><span>拖拽 / 缩放 / 对齐 · rich layout controls（间距 / 颜色 / 布局旋钮）· 文字直改 · 行内评论（回灌链路尚不可靠）</span></div>
+      </div>
+      <div class="box"><b>Export（右上角）</b><span>.zip / PDF / PPTX / 独立 HTML · Canva / Adobe / Miro / Vercel 等集成 · 交接 Claude Code（/design-sync）</span></div>
+      <div class="box"><b>分享</b><span>组织内链接 · 查看 / 评论 / 编辑三档权限 · 群组对话</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="note">交互提示：点上方 Chat / Cowork / Code / Design 切换线框。快捷键 / 权限模式 / launch.json 字段等契约级明细见规格档 §5，Claude Design 见 §6。</div>
 
 <script>
   document.querySelectorAll('.tabs button').forEach(function(b){
     b.addEventListener('click', function(){
       document.querySelectorAll('.tabs button').forEach(function(x){x.classList.remove('on')});
       b.classList.add('on');
-      ['chat','cowork','code'].forEach(function(t){
+      ['chat','cowork','code','design'].forEach(function(t){
         document.getElementById('t-'+t).classList.toggle('hidden', t!==b.dataset.t);
       });
     });
