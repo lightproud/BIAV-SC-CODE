@@ -1,0 +1,84 @@
+name: KB Semantic Proof
+
+# 向量腿语义铁证（§八「厚锚撑向量」Phase 2）：对语义黄金集跑 paraphrase-recall harness，
+# 证「换说法/零共享 token 的查询，向量独胜 grep+脊柱」。真胜负需 Voyage（key 只 CI 可用），
+# 故本 workflow 是唯一能出铁证数字的地方；现场嵌 golden（约百余条）≈$0、不依赖已建索引。
+# stub 负控与 voyage 并列，delta 即证据（高胜率纯来自语义、非管线假象）。
+on:
+  workflow_dispatch:
+    inputs:
+      min_win_rate:
+        description: voyage vector_exclusive_win_rate 阈（须显著高于 chance/stub）
+        required: false
+        default: '0.5'
+      min_delta:
+        description: voyage 须超 stub 的最小 margin
+        required: false
+        default: '0.2'
+
+concurrency:
+  group: kb-semantic-proof-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install embedding dep
+        run: pip install --quiet 'voyageai>=0.3.0'
+      - name: Guard — VOYAGE_API_KEY 必须已配置
+        env:
+          VOYAGE_API_KEY: ${{ secrets.VOYAGE_API_KEY }}
+        run: |
+          if [ -z "$VOYAGE_API_KEY" ]; then
+            echo "::error::secret VOYAGE_API_KEY 未配置——语义铁证需真 Voyage 嵌入。"
+            exit 1
+          fi
+          echo "VOYAGE_API_KEY 已注入，继续。"
+      - name: Run semantic proof (stub baseline + voyage) and assert
+        env:
+          VOYAGE_API_KEY: ${{ secrets.VOYAGE_API_KEY }}
+          MIN_WIN: ${{ github.event.inputs.min_win_rate || '0.5' }}
+          MIN_DELTA: ${{ github.event.inputs.min_delta || '0.2' }}
+        run: |
+          python - <<'PY'
+          import os, sys, json
+          sys.path.insert(0, "scripts")
+          import kb_semantic_ab as sab
+          stub = sab.evaluate(backend="stub")
+          voy = sab.evaluate(backend="voyage")
+          min_win = float(os.environ["MIN_WIN"]); min_delta = float(os.environ["MIN_DELTA"])
+          vw, sw = voy["vector_exclusive_win_rate"], stub["vector_exclusive_win_rate"]
+          delta = round(vw - sw, 4)
+          summary = os.environ.get("GITHUB_STEP_SUMMARY")
+          lines = [
+            "## 向量腿语义铁证（paraphrase-recall）",
+            f"- 黄金题数 {voy['rows']} · 语料 |C|={voy['corpus_size']} · chance 地板 {voy['chance_floor']}",
+            "",
+            "| 臂 | vector_hit | exclusive_win |",
+            "|----|-----------|---------------|",
+            f"| **voyage**（真语义）| {voy['vector_hit_rate']} | **{vw}** |",
+            f"| stub（词法袋·负控）| {stub['vector_hit_rate']} | {sw} |",
+            f"| grep / grep_strong / spine | — | 恒 0（黄金集不可达）|",
+            "",
+            f"- **delta（voyage − stub）= {delta}**（阈 min_win={min_win} / min_delta={min_delta}）",
+            f"- 分模式：{json.dumps(voy['by_mode'], ensure_ascii=False)}",
+          ]
+          if summary:
+              open(summary, "a", encoding="utf-8").write("\n".join(lines) + "\n")
+          print("\n".join(lines))
+          fail = []
+          if vw < min_win: fail.append(f"voyage 胜率 {vw} < 阈 {min_win}")
+          if delta < min_delta: fail.append(f"delta {delta} < margin {min_delta}（未显著超 stub）")
+          if fail:
+              print("::error::" + "；".join(fail)); sys.exit(1)
+          print("语义铁证通过：向量在 paraphrase 维度独胜、且显著超词法负控。")
+          PY

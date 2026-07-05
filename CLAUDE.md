@@ -352,6 +352,7 @@ brain-in-a-vat/
 | 知识库反事实 A/B | `python3 scripts/kb_ab.py`（KB 结构化检索 vs 朴素 grep 同语料对照，含**最强 grep** 反稻草人臂；回归见 `tests/test_kb_ab.py`：KB 不劣于 grep + 联想题即便对最强 grep 仍严格胜）|
 | 知识库质性能力 probe | `python3 scripts/kb_qual.py`（测 grep 给不了知识的四维：层判定/身份/边界/关系类型，hit@k 测不出的 KB 真价值；回归见 `tests/test_kb_qual.py`）|
 | 知识库黄金集图驱动生成 | `python3 scripts/kb_golden_gen.py`（从图的带类型边自动生成数百题黄金集，边即真值；规模化复现 KB vs grep 差距；回归见 `tests/test_kb_golden_generated.py`）|
+| 向量腿语义铁证 | `python3 scripts/kb_semantic_ab.py`（paraphrase-recall harness：换说法/零共享 token 查询，向量独胜 grep+脊柱；黄金集 `tests/kb_semantic_golden.jsonl`；stub 零网络验管线/负控，**真胜负需 CI Voyage** `kb-semantic-proof.yml`；回归 `tests/test_kb_semantic_ab.py`）|
 | 刷新 Claude Code 提示词参照 | `python3 scripts/refresh_claude_code_prompts.py`（浅克隆上游公开仓库、同步进 `Public-Info-Pool/Reference/Claude-Code-System-Prompts/`；每周定时 CI `refresh-claude-code-prompts.yml` 自动跑，手动亦可）|
 | 顶层脚本依赖 | `scripts/requirements.txt`；news 采集器依赖 `projects/news/requirements.txt` |
 
