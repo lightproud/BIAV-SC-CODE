@@ -7,6 +7,7 @@ conformance-l2.json
 conformance-l3.json
 conformance-l4.json
 conformance-l5.json
+conformance-wire.json
 l5-traces/
 drift-report.md
 ab-report-*.json
