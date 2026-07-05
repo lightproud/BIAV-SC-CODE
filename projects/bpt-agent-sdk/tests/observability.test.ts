@@ -126,26 +126,9 @@ function variantName(m: SDKObservabilityMessage): string {
       return 'tool_progress';
     case 'tool_use_summary':
       return 'tool_use_summary';
-    case 'task_started':
-      return 'task_started';
-    case 'task_progress':
-      return 'task_progress';
-    case 'task_updated':
-      return 'task_updated';
-    case 'task_notification':
-      return 'task_notification';
-    case 'hook_started':
-      return 'hook_started';
-    case 'hook_progress':
-      return 'hook_progress';
-    case 'hook_response':
-      return 'hook_response';
-    case 'files_persisted':
-      return 'files_persisted';
-    case 'local_command_output':
-      return 'local_command_output';
-    case 'commands_changed':
-      return 'commands_changed';
+    // v0.7 (B2a/E8): task_* / hook_* / files_persisted / local_command_output
+    // / commands_changed moved under the official `system`+subtype encoding —
+    // they route through the 'system' case below.
     case 'rate_limit_event':
       return 'rate_limit_event';
     case 'api_retry':
@@ -184,16 +167,61 @@ describe('v0.3 observability union completeness', () => {
       { type: 'permission_denied', ...env, tool_name: 'Bash', tool_use_id: 't', reason: 'no' },
       { type: 'tool_progress', ...env, tool_use_id: 't', progress: 50 },
       { type: 'tool_use_summary', ...env, tool_name: 'Bash', tool_use_id: 't', input_summary: 'i', result_summary: 'r' },
-      { type: 'task_started', ...env, task_id: 'k', task_name: 'n' },
-      { type: 'task_progress', ...env, task_id: 'k', progress: 10 },
-      { type: 'task_updated', ...env, task_id: 'k', status: 'completed' },
-      { type: 'task_notification', ...env, task_id: 'k', event: 'completed' },
-      { type: 'hook_started', ...env, hook_id: 'h', hook_event: 'PreToolUse' },
-      { type: 'hook_progress', ...env, hook_id: 'h', hook_event: 'PreToolUse' },
-      { type: 'hook_response', ...env, hook_id: 'h', hook_event: 'PreToolUse' },
-      { type: 'files_persisted', ...env, files: [{ path: 'a', operation: 'created' }] },
-      { type: 'local_command_output', ...env, command: '/x', output: 'o' },
-      { type: 'commands_changed', ...env, available_commands: [] },
+      // v0.7 official `system`+subtype encoding (official payload fields).
+      { type: 'system', subtype: 'task_started', ...env, task_id: 'k', description: 'n', task_type: 'local_agent' },
+      {
+        type: 'system',
+        subtype: 'task_progress',
+        ...env,
+        task_id: 'k',
+        description: 'n',
+        usage: { total_tokens: 1, tool_uses: 0, duration_ms: 5 },
+        progress: 10,
+      },
+      { type: 'system', subtype: 'task_updated', ...env, task_id: 'k', patch: { status: 'completed' } },
+      {
+        type: 'system',
+        subtype: 'task_notification',
+        ...env,
+        task_id: 'k',
+        status: 'completed',
+        output_file: '',
+        summary: 's',
+      },
+      { type: 'system', subtype: 'hook_started', ...env, hook_id: 'h', hook_name: 'cb', hook_event: 'PreToolUse' },
+      {
+        type: 'system',
+        subtype: 'hook_progress',
+        ...env,
+        hook_id: 'h',
+        hook_name: 'cb',
+        hook_event: 'PreToolUse',
+        stdout: '',
+        stderr: '',
+        output: '',
+      },
+      {
+        type: 'system',
+        subtype: 'hook_response',
+        ...env,
+        hook_id: 'h',
+        hook_name: 'cb',
+        hook_event: 'PreToolUse',
+        output: '{}',
+        stdout: '',
+        stderr: '',
+        outcome: 'success',
+      },
+      {
+        type: 'system',
+        subtype: 'files_persisted',
+        ...env,
+        files: [{ filename: 'a', file_id: 'f1' }],
+        failed: [],
+        processed_at: '2026-07-05T00:00:00Z',
+      },
+      { type: 'system', subtype: 'local_command_output', ...env, content: 'o' },
+      { type: 'system', subtype: 'commands_changed', ...env, commands: [] },
       { type: 'rate_limit_event', ...env, retry_after_ms: 100, limit_type: 'api' },
       { type: 'api_retry', ...env, attempt: 1, max_retries: 3 },
       { type: 'auth_status', ...env, status: 'authenticated' },
@@ -208,11 +236,13 @@ describe('v0.3 observability union completeness', () => {
       { type: 'system', subtype: 'status', ...env, status: 'pending' },
     ];
     const names = samples.map(variantName);
-    // 24 top-level variants + 1 system/status.
+    // 14 top-level variants + 11 system subtypes (v0.7 official encoding).
     expect(names).toHaveLength(25);
     expect(new Set(names).size).toBe(25);
     expect(names).toContain('permission_denied');
     expect(names).toContain('system/status');
+    expect(names).toContain('system/task_started');
+    expect(names).toContain('system/hook_response');
   });
 });
 

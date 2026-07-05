@@ -117,6 +117,46 @@ gap is structural, not a backlog):
    session-cumulative. A consumer that read the last result's `num_turns` or
    `usage` as session totals must now SUM across results (cost needs no
    change). Session-wide `maxTurns`/`maxBudgetUsd` enforcement is untouched.
+5f. **Observability lifecycle events re-encoded to the official
+   `system`+`subtype` form** (B2a/E8, v0.7, BREAKING for stream consumers):
+   `task_started` / `task_progress` / `task_updated` / `task_notification` /
+   `hook_started` / `hook_response` (and the typed-only `hook_progress` /
+   `files_persisted` / `local_command_output` / `commands_changed`) are no
+   longer top-level message types. They now arrive as
+   `{ type: 'system', subtype: '<name>', ... }`, matching the official docs'
+   discriminator split — a consumer that switched on
+   `msg.type === 'task_started'` must switch on
+   `msg.type === 'system' && msg.subtype === 'task_started'`. There is no
+   runtime dual-emit of the old shape. Payload fields moved to the official
+   names at the same time:
+   - `task_started`: `task_name` → `description`; gained `task_type`
+     (always `'local_agent'`) and `tool_use_id?`; house `agent_id` dropped
+     (it always equaled `task_id`).
+   - `task_progress`: gained official `description` / `subagent_type` /
+     `usage { total_tokens, tool_uses, duration_ms }` (required) /
+     `last_tool_name?`; keeps BPT `progress` (turn-budget share, 0..99) and
+     `status` (`turn N/M`) as a documented superset (E8b ruling — foreground
+     spawns still do NOT emit `task_notification`).
+   - `task_updated`: gained the official `patch` envelope — `status` moved to
+     `patch.status` (stopTask now reports the official `'killed'`, not
+     `'cancelled'`), `error` to `patch.error`, plus `patch.end_time` (epoch
+     ms). The bounded `result` preview stays top-level as a BPT extension.
+   - `task_notification`: `event` → `status`, `message` → `summary`; gained
+     required `output_file` (always `''` — this engine writes no task output
+     files) and `tool_use_id?`.
+   - `hook_started` / `hook_response`: gained `hook_name` (callback function
+     name, `'callback'` when anonymous); `hook_response` now reports
+     `output` / `stdout` / `stderr` / `outcome` — `result` → `output`,
+     `error` → `stderr` with `outcome: 'error'` (or `'cancelled'` on an
+     outer-signal abort); `stdout` is always `''` and `exit_code` absent
+     (in-process callbacks have no stdio). `includeHookEvents` semantics are
+     unchanged.
+   Type-name spelling now follows the official exports:
+   `SDKControlInitializeResponse`, `SDKFilesPersistedEvent`,
+   `SDKRateLimitEvent`, `SDKAPIRetryMessage` are the primary names; the old
+   `SDKInitializationResult`, `SDKFilesPersistedMessage`,
+   `SDKRateLimitEventMessage`, `SDKApiRetryMessage` remain as `@deprecated`
+   aliases (dual-track, types only).
 6. **Sessions** live in this SDK's own JSONL store (or your `sessionStore`
    backend); official CLI session files are not readable.
 7. **`sse` MCP transport** (legacy) is unsupported; stdio / http / sdk are.

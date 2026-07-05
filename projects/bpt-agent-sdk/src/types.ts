@@ -838,8 +838,10 @@ export type Options = {
   fallbackModel?: string;
   forkSession?: boolean;
   hooks?: Partial<Record<HookEvent, HookCallbackMatcher[]>>;
-  /** v0.4: surface hook execution as hook_started / hook_response stream
-   *  messages (default false; hooks otherwise report via debug only). */
+  /** v0.4: surface hook execution as system/hook_started + system/
+   *  hook_response stream messages (official encoding since v0.7; default
+   *  false — hooks otherwise report via debug only). Semantics unchanged by
+   *  the v0.7 re-encoding. */
   includeHookEvents?: boolean;
   includePartialMessages?: boolean;
   maxBudgetUsd?: number;
@@ -1105,26 +1107,28 @@ export type SDKCompactBoundaryMessage = {
 };
 
 // ---------------------------------------------------------------------------
-// Observability / status message variants (v0.3 — task #16)
+// Observability / status message variants (v0.3 — task #16; re-encoded v0.7)
 //
-// Drop-in surface for the official SDKMessage union's observability arm. The
-// published docs/types NAME these discriminators but leave several PAYLOAD
-// shapes unspecified (the SDK's own issue #181 has SDKRateLimitEvent /
-// SDKPromptSuggestionMessage referenced-but-unexported), and are internally
-// inconsistent about top-level `type` vs `type:'system'+subtype`. We model the
-// observability arm with TOP-LEVEL `type` discriminators — the most likely
-// consumer pattern (e.g. `msg.type === 'permission_denied'`) — except `status`,
-// which stays a `system` subtype since `system/status` is its canonical form.
+// Drop-in surface for the official SDKMessage union's observability arm.
+// v0.7 (B2a/E8, KD-L35-02 retirement): the live official docs fully specify
+// the discriminators — `type:'system'` + `subtype` for status /
+// task_notification / hook_started / hook_progress / hook_response /
+// task_started / task_progress / task_updated / files_persisted /
+// local_command_output / commands_changed; TOP-LEVEL `type` for
+// tool_use_summary / tool_progress / auth_status / rate_limit_event /
+// prompt_suggestion. This union follows that split exactly (the pre-v0.7
+// all-top-level encoding is gone — no runtime dual-emit; see
+// docs/MIGRATION.md §4 item 5f). Payload fields follow the official names;
+// BPT-only extras are marked as such per-field.
 // Every message carries our house `uuid`/`session_id` envelope.
 //
 // EMITTED by this engine today: permission_denied (gate deny), rate_limit_event
-// / api_retry (transport retries, v0.3), task_started / task_progress /
-// task_updated / task_notification (subagent lifecycle, v0.4), hook_started /
-// hook_response (hook lifecycle behind includeHookEvents, v0.4). The rest are
-// TYPED for union exhaustiveness but have no source event in a headless engine
-// with no plugins/skills/CC-host/slash-command framework; see docs/COMPAT.md
-// for the emitted-vs-typed split. Field shapes the official leaves
-// undocumented are a self-consistent independent reconstruction.
+// / api_retry (transport retries, v0.3), system/task_started / task_progress /
+// task_updated / task_notification (subagent lifecycle, v0.4), system/
+// hook_started / hook_response (hook lifecycle behind includeHookEvents, v0.4).
+// The rest are TYPED for union exhaustiveness but have no source event in a
+// headless engine with no plugins/skills/CC-host/slash-command framework; see
+// docs/COMPAT.md for the emitted-vs-typed split.
 // ---------------------------------------------------------------------------
 
 /** A tool call the permission gate denied. EMITTED on every gate deny. */
@@ -1162,126 +1166,198 @@ export type SDKToolUseSummaryMessage = {
   result_summary: string;
 };
 
-/** A background task / subagent started. EMITTED (v0.4) when the Agent tool
- *  spawns a subagent (foreground or background); task_id is the agentId. */
+/** A background task / subagent started (official `system`/`task_started`
+ *  encoding, v0.7). EMITTED when the Agent tool spawns a subagent (foreground
+ *  or background); task_id is the agentId. `task_type` is always
+ *  'local_agent' (this engine spawns no local_bash/remote_agent tasks). */
 export type SDKTaskStartedMessage = {
-  type: 'task_started';
+  type: 'system';
+  subtype: 'task_started';
   uuid: string;
   session_id: string;
   task_id: string;
-  task_name: string;
-  agent_id?: string;
+  tool_use_id?: string;
+  description: string;
+  task_type?: string;
 };
 
-/** Progress from a background task / subagent. EMITTED (v0.4) once per child
- *  assistant turn; `progress` is the share of the child's turn budget consumed
- *  (0..99), `status` is a human-readable `turn N/M`. */
+/** Progress from a background task / subagent (official `system`/
+ *  `task_progress` encoding, v0.7). EMITTED once per child assistant turn.
+ *
+ *  E8b ruling (2026-07-05): this message is a deliberate BPT SUPERSET of the
+ *  official shape — the official fields (`description` / `subagent_type` /
+ *  `usage` / `last_tool_name` / `summary`) are joined by BPT-only
+ *  `progress` (share of the child's turn budget consumed, 0..99) and
+ *  `status` (human-readable `turn N/M`). Foreground spawns do NOT
+ *  additionally emit task_notification to mirror the official vocabulary
+ *  (KD-L35-01 stands; COMPAT.md carries the ledger entry). */
 export type SDKTaskProgressMessage = {
-  type: 'task_progress';
+  type: 'system';
+  subtype: 'task_progress';
   uuid: string;
   session_id: string;
   task_id: string;
-  progress: number;
-  status?: string;
+  tool_use_id?: string;
+  description: string;
+  subagent_type?: string;
+  usage: {
+    total_tokens: number;
+    tool_uses: number;
+    duration_ms: number;
+  };
+  last_tool_name?: string;
   summary?: string;
+  /** BPT extension (E8b superset): turn-budget share consumed, 0..99. */
+  progress: number;
+  /** BPT extension (E8b superset): human-readable `turn N/M`. */
+  status?: string;
+  /** BPT extension (E8b superset). */
   blocked?: boolean;
 };
 
-/** Terminal update for a background task / subagent. EMITTED (v0.4) when a
- *  subagent finishes (completed/failed) or is stopped via stopTask (cancelled);
- *  `result` carries a bounded prefix of the child's final text. */
+/** Terminal update for a background task / subagent (official `system`/
+ *  `task_updated` encoding with the official `patch` envelope, v0.7).
+ *  EMITTED when a subagent finishes (patch.status completed/failed) or is
+ *  stopped via stopTask (patch.status 'killed' — the official value; the
+ *  pre-v0.7 'cancelled' is gone). Merge `patch` into a task map keyed by
+ *  task_id; `end_time` is a Unix epoch timestamp in ms. */
 export type SDKTaskUpdatedMessage = {
-  type: 'task_updated';
+  type: 'system';
+  subtype: 'task_updated';
   uuid: string;
   session_id: string;
   task_id: string;
-  status: 'completed' | 'failed' | 'cancelled';
+  patch: {
+    status?: 'pending' | 'running' | 'completed' | 'failed' | 'killed';
+    description?: string;
+    end_time?: number;
+    total_paused_ms?: number;
+    error?: string;
+    is_backgrounded?: boolean;
+  };
+  /** BPT extension: bounded preview of the child's final text (the full text
+   *  crosses via the Agent tool_result). */
   result?: string;
-  error?: string;
 };
 
-/** Background-task lifecycle notification. EMITTED (v0.4) for BACKGROUND
- *  subagents only (their terminal event otherwise has no stream anchor). */
+/** Background-task lifecycle notification (official `system`/
+ *  `task_notification` encoding, v0.7). EMITTED for BACKGROUND subagents only
+ *  (their terminal event otherwise has no stream anchor). `output_file` is
+ *  required by the official shape but this engine writes no task output
+ *  files, so it is always ''. */
 export type SDKTaskNotificationMessage = {
-  type: 'task_notification';
+  type: 'system';
+  subtype: 'task_notification';
   uuid: string;
   session_id: string;
   task_id: string;
-  event: 'completed' | 'failed' | 'stopped';
-  message?: string;
+  tool_use_id?: string;
+  status: 'completed' | 'failed' | 'stopped';
+  output_file: string;
+  summary: string;
+  usage?: {
+    total_tokens: number;
+    tool_uses: number;
+    duration_ms: number;
+  };
 };
 
-/** Hook execution began. EMITTED (v0.4) per hook callback invocation when
- *  options.includeHookEvents is true; hook_id pairs it with its hook_response. */
+/** Hook execution began (official `system`/`hook_started` encoding, v0.7).
+ *  EMITTED per hook callback invocation when options.includeHookEvents is
+ *  true; hook_id pairs it with its hook_response. `hook_name` is the callback
+ *  function's name ('callback' for anonymous callbacks — this engine runs
+ *  in-process callbacks, not named command hooks). */
 export type SDKHookStartedMessage = {
-  type: 'hook_started';
+  type: 'system';
+  subtype: 'hook_started';
   uuid: string;
   session_id: string;
   hook_id: string;
+  hook_name: string;
   hook_event: HookEvent;
 };
 
-/** Hook execution progress. Typed; not emitted (callbacks are opaque
- *  promises — there is no honest mid-callback progress source). */
+/** Hook execution progress (official `system`/`hook_progress` encoding,
+ *  v0.7). Typed; not emitted (callbacks are opaque promises — there is no
+ *  honest stdout/stderr/progress source mid-callback). */
 export type SDKHookProgressMessage = {
-  type: 'hook_progress';
+  type: 'system';
+  subtype: 'hook_progress';
   uuid: string;
   session_id: string;
   hook_id: string;
+  hook_name: string;
   hook_event: HookEvent;
-  progress?: number;
-  status?: string;
-};
-
-/** Hook execution finished. EMITTED (v0.4) when options.includeHookEvents is
- *  true; `result` is the callback output as JSON, `error` the failure/timeout. */
-export type SDKHookResponseMessage = {
-  type: 'hook_response';
-  uuid: string;
-  session_id: string;
-  hook_id: string;
-  hook_event: HookEvent;
-  result?: string;
-  error?: string;
-};
-
-/** Files written / changed during a turn. Typed; not emitted. */
-export type SDKFilesPersistedMessage = {
-  type: 'files_persisted';
-  uuid: string;
-  session_id: string;
-  files: Array<{
-    path: string;
-    operation: 'created' | 'modified' | 'deleted';
-    size?: number;
-  }>;
-};
-
-/** Official export name for SDKFilesPersistedMessage (payload shape is this
- *  SDK's reconstruction; see docs/COMPAT.md for the field-level differences). */
-export type SDKFilesPersistedEvent = SDKFilesPersistedMessage;
-
-/** Output of a local slash-command run. Typed; not emitted. */
-export type SDKLocalCommandOutputMessage = {
-  type: 'local_command_output';
-  uuid: string;
-  session_id: string;
-  command: string;
+  stdout: string;
+  stderr: string;
   output: string;
-  exit_code?: number;
 };
 
-/** The available slash-command set changed. Typed; not emitted. */
-export type SDKCommandsChangedMessage = {
-  type: 'commands_changed';
+/** Hook execution finished (official `system`/`hook_response` encoding,
+ *  v0.7). EMITTED when options.includeHookEvents is true. `output` is the
+ *  callback output as bounded JSON ('' for void outputs); a failure/timeout
+ *  surfaces on `stderr` with outcome 'error' (outer-signal cancellation:
+ *  'cancelled'). `stdout` is always '' and `exit_code` absent — in-process
+ *  callbacks have no stdio/exit code. */
+export type SDKHookResponseMessage = {
+  type: 'system';
+  subtype: 'hook_response';
   uuid: string;
   session_id: string;
-  available_commands: SlashCommand[];
+  hook_id: string;
+  hook_name: string;
+  hook_event: HookEvent;
+  output: string;
+  stdout: string;
+  stderr: string;
+  exit_code?: number;
+  outcome: 'success' | 'error' | 'cancelled';
+};
+
+/** File checkpoints persisted to disk (official `system`/`files_persisted`
+ *  encoding + official payload, v0.7). Typed; not emitted. */
+export type SDKFilesPersistedEvent = {
+  type: 'system';
+  subtype: 'files_persisted';
+  uuid: string;
+  session_id: string;
+  files: Array<{ filename: string; file_id: string }>;
+  failed: Array<{ filename: string; error: string }>;
+  processed_at: string;
+};
+
+/** @deprecated Use the official export name SDKFilesPersistedEvent (v0.7
+ *  spelling swap; the payload now follows the official shape). */
+export type SDKFilesPersistedMessage = SDKFilesPersistedEvent;
+
+/** Output of a local slash-command run (official `system`/
+ *  `local_command_output` encoding + official payload, v0.7). Typed; not
+ *  emitted. */
+export type SDKLocalCommandOutputMessage = {
+  type: 'system';
+  subtype: 'local_command_output';
+  uuid: string;
+  session_id: string;
+  content: string;
+};
+
+/** The available slash-command set changed (official `system`/
+ *  `commands_changed` encoding + official `commands` field, v0.7). Typed;
+ *  not emitted. */
+export type SDKCommandsChangedMessage = {
+  type: 'system';
+  subtype: 'commands_changed';
+  uuid: string;
+  session_id: string;
+  commands: SlashCommand[];
 };
 
 /** A rate limit was hit and a retry scheduled. EMITTED (v0.3) via the
- *  transport's per-request onRetry observer on each 429 retry. */
-export type SDKRateLimitEventMessage = {
+ *  transport's per-request onRetry observer on each 429 retry. Top-level
+ *  `type` matches the official discriminator; the payload/semantics still
+ *  differ from the official rate_limit_info envelope (KD-12 — the official
+ *  CLI emits api_retry on an actual 429; see docs/COMPAT.md). */
+export type SDKRateLimitEvent = {
   type: 'rate_limit_event';
   uuid: string;
   session_id: string;
@@ -1290,13 +1366,13 @@ export type SDKRateLimitEventMessage = {
   requests_remaining?: number;
 };
 
-/** Official export name for SDKRateLimitEventMessage (payload shape/semantics
- *  differ from the official rate_limit_info envelope; see docs/COMPAT.md). */
-export type SDKRateLimitEvent = SDKRateLimitEventMessage;
+/** @deprecated Use the official export name SDKRateLimitEvent (v0.7 spelling
+ *  swap). */
+export type SDKRateLimitEventMessage = SDKRateLimitEvent;
 
 /** An API call is being retried. EMITTED (v0.3) via the transport's onRetry
  *  observer on each non-429 (5xx/network) retry. */
-export type SDKApiRetryMessage = {
+export type SDKAPIRetryMessage = {
   type: 'api_retry';
   uuid: string;
   session_id: string;
@@ -1306,8 +1382,9 @@ export type SDKApiRetryMessage = {
   reason?: string;
 };
 
-/** Official export name (capitalization) for SDKApiRetryMessage. */
-export type SDKAPIRetryMessage = SDKApiRetryMessage;
+/** @deprecated Use the official export name SDKAPIRetryMessage (v0.7
+ *  capitalization swap). */
+export type SDKApiRetryMessage = SDKAPIRetryMessage;
 
 /** Authentication status. Typed; not emitted. */
 export type SDKAuthStatusMessage = {
@@ -1407,9 +1484,10 @@ export type SDKStatusMessage = {
 };
 
 /**
- * The observability / status arm of the SDKMessage union (task #16). Only
- * SDKPermissionDeniedMessage is emitted today; the rest are typed for drop-in
- * exhaustiveness (see docs/COMPAT.md).
+ * The observability / status arm of the SDKMessage union (task #16; official
+ * discriminator split since v0.7 — see the section banner above for the
+ * `system`+subtype vs top-level `type` partition and the emitted-vs-typed
+ * split in docs/COMPAT.md).
  */
 export type SDKObservabilityMessage =
   | SDKPermissionDeniedMessage
@@ -1422,11 +1500,11 @@ export type SDKObservabilityMessage =
   | SDKHookStartedMessage
   | SDKHookProgressMessage
   | SDKHookResponseMessage
-  | SDKFilesPersistedMessage
+  | SDKFilesPersistedEvent
   | SDKLocalCommandOutputMessage
   | SDKCommandsChangedMessage
-  | SDKRateLimitEventMessage
-  | SDKApiRetryMessage
+  | SDKRateLimitEvent
+  | SDKAPIRetryMessage
   | SDKAuthStatusMessage
   | SDKElicitationCompleteMessage
   | SDKInformationalMessage
@@ -1666,7 +1744,9 @@ export type AccountInfo = {
   tokenSource?: string;
 };
 
-export type SDKInitializationResult = {
+/** Payload of Query.initializationResult() / reinitialize() (official export
+ *  name since v0.7). */
+export type SDKControlInitializeResponse = {
   commands: SlashCommand[];
   agents: AgentInfo[];
   output_style: string;
@@ -1675,8 +1755,9 @@ export type SDKInitializationResult = {
   account: AccountInfo;
 };
 
-/** Official export name for SDKInitializationResult (Query.initializationResult()). */
-export type SDKControlInitializeResponse = SDKInitializationResult;
+/** @deprecated Use the official export name SDKControlInitializeResponse
+ *  (v0.7 spelling swap). */
+export type SDKInitializationResult = SDKControlInitializeResponse;
 
 export interface Query extends AsyncGenerator<SDKMessage, void> {
   /**
@@ -1690,7 +1771,7 @@ export interface Query extends AsyncGenerator<SDKMessage, void> {
   setPermissionMode(mode: PermissionMode): Promise<void>;
   setModel(model?: string): Promise<void>;
   setMaxThinkingTokens(maxThinkingTokens: number | null): Promise<void>;
-  initializationResult(): Promise<SDKInitializationResult>;
+  initializationResult(): Promise<SDKControlInitializeResponse>;
   supportedCommands(): Promise<SlashCommand[]>;
   supportedModels(): Promise<ModelInfo[]>;
   supportedAgents(): Promise<AgentInfo[]>;

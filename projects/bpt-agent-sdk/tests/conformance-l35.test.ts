@@ -13,12 +13,12 @@
  * KD-L35-01 (vocabulary): on a FOREGROUND subagent spawn, ours emits
  *   task_progress (official does not) and official emits task_notification
  *   (ours reserves that for BACKGROUND agents). Observed stable 2026-07-05
- *   (agent-sdk 0.3.199 / claude-code 2.1.201).
- * KD-L35-02 (encoding): the shared names (task_started / task_updated) are
- *   TOP-LEVEL message types on our arm ({type:'task_started'}) but system
- *   SUBTYPES on the official arm ({type:'system', subtype:'task_started'}) -
- *   the same type-vs-subtype granularity family as KD-05. An engine-alignment
- *   candidate for Desktop consumers that switch on message.type.
+ *   (agent-sdk 0.3.199 / claude-code 2.1.201). E8b ruling: task_progress
+ *   stays as a BPT superset; no foreground task_notification backfill.
+ * KD-L35-02 (encoding): RETIRED 2026-07-05 (B2a/E8, v0.7). Both arms now
+ *   emit the lifecycle events as system SUBTYPES ({type:'system',
+ *   subtype:'task_started'}); the lock below is FLIPPED to pin the official
+ *   encoding so a regression back to top-level types goes red.
  */
 
 import { mkdtemp, rm } from 'node:fs/promises';
@@ -55,7 +55,7 @@ function stub(scripts: ReadonlyArray<readonly object[]>): SSEFetchStub {
   return s;
 }
 
-async function lifecycleOf(): Promise<{ types: string[]; vocab: string[]; encoding: Record<string, string> }> {
+async function lifecycleOf(): Promise<{ names: string[]; vocab: string[]; encoding: Record<string, string> }> {
   const scripts = [
     toolUseReplyEvents('Agent', { subagent_type: 'general-purpose', description: 'demo', prompt: 'do work' }, { id: 'toolu_agent_1' }),
     textReplyEvents('SUBAGENT DONE'),
@@ -65,27 +65,33 @@ async function lifecycleOf(): Promise<{ types: string[]; vocab: string[]; encodi
   const q: Query = query({ prompt: 'Delegate to a subagent.', options: opts({ allowedTools: ['Agent'] }) });
   const messages: SDKMessage[] = [];
   for await (const m of q) messages.push(m);
-  const types = messages.map((m) => m.type);
+  // One ordered NAME per message: the lifecycle name (from type OR subtype)
+  // when present, else the top-level type — so ordering assertions survive
+  // the v0.7 system+subtype re-encoding.
+  const names: string[] = [];
   const vocab = new Set<string>();
   const encoding: Record<string, string> = {};
   for (const m of messages) {
+    let name = m.type as string;
     for (const c of [m.type, (m as { subtype?: string }).subtype]) {
       if (typeof c === 'string' && /^(task_|hook_)/.test(c)) {
+        name = c;
         vocab.add(c);
         encoding[c] = m.type === 'system' ? 'system-subtype' : 'top-level-type';
       }
     }
+    names.push(name);
   }
-  return { types, vocab: [...vocab].sort(), encoding };
+  return { names, vocab: [...vocab].sort(), encoding };
 }
 
 describe('L3.5 subagent lifecycle (our-arm lock)', () => {
   it('foreground spawn emits task_started -> task_progress -> task_updated before the result', async () => {
-    const { types } = await lifecycleOf();
-    expect(types.indexOf('task_started')).toBeGreaterThanOrEqual(0);
-    expect(types.indexOf('task_started')).toBeLessThan(types.indexOf('task_progress'));
-    expect(types.indexOf('task_progress')).toBeLessThan(types.indexOf('task_updated'));
-    expect(types.indexOf('task_updated')).toBeLessThan(types.indexOf('result'));
+    const { names } = await lifecycleOf();
+    expect(names.indexOf('task_started')).toBeGreaterThanOrEqual(0);
+    expect(names.indexOf('task_started')).toBeLessThan(names.indexOf('task_progress'));
+    expect(names.indexOf('task_progress')).toBeLessThan(names.indexOf('task_updated'));
+    expect(names.indexOf('task_updated')).toBeLessThan(names.indexOf('result'));
   });
 
   it('KD-L35-01: our foreground vocabulary is exactly {started, progress, updated} (no task_notification foreground)', async () => {
@@ -94,10 +100,10 @@ describe('L3.5 subagent lifecycle (our-arm lock)', () => {
     expect(vocab).not.toContain('task_notification'); // reserved for background agents on our arm
   });
 
-  it('KD-L35-02: our task_* events are TOP-LEVEL message types (not system subtypes)', async () => {
+  it('KD-L35-02 retired: task_* events are system SUBTYPES (official encoding, v0.7)', async () => {
     const { encoding } = await lifecycleOf();
-    expect(encoding.task_started).toBe('top-level-type');
-    expect(encoding.task_updated).toBe('top-level-type');
-    expect(encoding.task_progress).toBe('top-level-type');
+    expect(encoding.task_started).toBe('system-subtype');
+    expect(encoding.task_updated).toBe('system-subtype');
+    expect(encoding.task_progress).toBe('system-subtype');
   });
 });

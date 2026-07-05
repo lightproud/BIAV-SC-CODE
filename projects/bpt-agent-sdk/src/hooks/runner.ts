@@ -43,15 +43,16 @@ import { matcherMatches } from './matcher.js';
 
 const DEFAULT_TIMEOUT_SECONDS = 60;
 
-/** hook_response.result carries a bounded JSON preview of the output. */
+/** hook_response.output carries a bounded JSON preview of the callback output. */
 const HOOK_RESULT_PREVIEW_CHARS = 500;
 
 export type HookRunnerConfig = {
   hooks: Options['hooks'];
   debug: (msg: string) => void;
   /** v0.4: hook-lifecycle sink (options.includeHookEvents). When set, every
-   *  callback invocation emits a hook_started / hook_response pair (correlated
-   *  by hook_id) into the SDKMessage stream via the shared observability queue. */
+   *  callback invocation emits a system/hook_started + system/hook_response
+   *  pair (official `system`+subtype encoding since v0.7, correlated by
+   *  hook_id) into the SDKMessage stream via the shared observability queue. */
   onLifecycleEvent?: (msg: SDKHookStartedMessage | SDKHookResponseMessage) => void;
   /** v0.6: credentials/transport for `condition`-gated matchers (provider /
    *  betas threaded from query options; tests inject a mock transport).
@@ -62,7 +63,7 @@ export type HookRunnerConfig = {
 
 /** A promise that rejects when the signal aborts (used to bound callbacks
  *  that ignore their AbortSignal). Never resolves. */
-/** Bounded JSON preview of a hook output for hook_response.result. */
+/** Bounded JSON preview of a hook output for hook_response.output. */
 function previewJson(value: unknown): string {
   let text: string;
   try {
@@ -214,29 +215,47 @@ export class DefaultHookRunner implements HookRunner {
     signal: AbortSignal,
   ): Promise<HookJSONOutput | undefined> {
     const combined = AbortSignal.any([signal, AbortSignal.timeout(timeoutMs)]);
-    // v0.4 lifecycle emission (includeHookEvents): one started/response pair
-    // per callback invocation, correlated by a fresh hook_id. Every hook input
-    // carries session_id (baseHookFields), read defensively anyway.
+    // v0.4 lifecycle emission (includeHookEvents; official system+subtype
+    // encoding since v0.7): one started/response pair per callback invocation,
+    // correlated by a fresh hook_id. Every hook input carries session_id
+    // (baseHookFields), read defensively anyway. hook_name is the callback
+    // function's name — in-process callbacks have no command name.
     const hookId = this.onLifecycleEvent !== undefined ? randomUUID() : '';
+    const hookName = cb.name !== '' ? cb.name : 'callback';
     const sessionId =
       typeof (input as { session_id?: unknown }).session_id === 'string'
         ? (input as { session_id: string }).session_id
         : '';
     this.onLifecycleEvent?.({
-      type: 'hook_started',
+      type: 'system',
+      subtype: 'hook_started',
       uuid: randomUUID(),
       session_id: sessionId,
       hook_id: hookId,
+      hook_name: hookName,
       hook_event: event,
     });
-    const respond = (fields: { result?: string; error?: string }): void => {
+    // Official hook_response payload: `output` carries the (bounded JSON)
+    // callback output, a failure lands on `stderr` with outcome 'error' /
+    // 'cancelled'. stdout is always '' and exit_code absent — in-process
+    // callbacks have no stdio or exit code.
+    const respond = (fields: {
+      output: string;
+      stderr?: string;
+      outcome: 'success' | 'error' | 'cancelled';
+    }): void => {
       this.onLifecycleEvent?.({
-        type: 'hook_response',
+        type: 'system',
+        subtype: 'hook_response',
         uuid: randomUUID(),
         session_id: sessionId,
         hook_id: hookId,
+        hook_name: hookName,
         hook_event: event,
-        ...fields,
+        output: fields.output,
+        stdout: '',
+        stderr: fields.stderr ?? '',
+        outcome: fields.outcome,
       });
     };
     try {
@@ -246,7 +265,7 @@ export class DefaultHookRunner implements HookRunner {
         (async () => cb(input, toolUseID, { signal: combined }))(),
         abortRejection(combined),
       ]);
-      respond(result ? { result: previewJson(result) } : {});
+      respond({ output: result ? previewJson(result) : '', outcome: 'success' });
       if (!result) return undefined; // void (or any falsy) output -> neutral
       if (result.async === true) {
         // Fire-and-forget output: already settled, but by contract it
@@ -257,7 +276,13 @@ export class DefaultHookRunner implements HookRunner {
       return result;
     } catch (err) {
       const msg = err instanceof Error ? `${err.name}: ${err.message}` : String(err);
-      respond({ error: msg });
+      // Outer-signal cancellation is 'cancelled'; a callback failure or its
+      // own timeout is 'error'.
+      respond({
+        output: '',
+        stderr: msg,
+        outcome: signal.aborted ? 'cancelled' : 'error',
+      });
       this.debug(`hooks(${event}): callback failed or timed out, ignored (${msg})`);
       return undefined;
     }

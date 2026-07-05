@@ -27,7 +27,7 @@ import type {
   PermissionMode,
   Query,
   RewindFilesResult,
-  SDKInitializationResult,
+  SDKControlInitializeResponse,
   SDKMessage,
   SDKMirrorErrorMessage,
   SDKResultMessage,
@@ -760,7 +760,7 @@ export function query(args: {
   let sessionEndFired = false;
   let resolvedSessionId = '';
   let checkpointStore: FileCheckpointStore | null = null;
-  const initDeferred = createDeferred<SDKInitializationResult>();
+  const initDeferred = createDeferred<SDKControlInitializeResponse>();
 
   // Wake any pending input read when the outer controller aborts, and settle a
   // still-pending initializationResult() so awaiters never hang. A pre-aborted
@@ -1525,7 +1525,7 @@ export function query(args: {
         }
       }
     },
-    initializationResult(): Promise<SDKInitializationResult> {
+    initializationResult(): Promise<SDKControlInitializeResponse> {
       return initDeferred.promise;
     },
     async supportedCommands(): Promise<never[]> {

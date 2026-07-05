@@ -126,8 +126,9 @@ export type SubagentRuntimeOptions = {
   /** Resolved session id at spawn time (for hook input). */
   sessionId: () => string;
   debug: (msg: string) => void;
-  /** v0.4 task-lifecycle sink: task_started / task_progress / task_updated /
-   *  task_notification messages are pushed here (the runtime cannot yield);
+  /** v0.4 task-lifecycle sink: system/task_started / task_progress /
+   *  task_updated / task_notification messages (official `system`+subtype
+   *  encoding since v0.7) are pushed here (the runtime cannot yield);
    *  the query layer drains them into the SDKMessage stream. */
   emitObservability?: (msg: SDKMessage) => void;
   /** v0.5 query-wide shell session (shared with children's ToolContext). */
@@ -362,15 +363,19 @@ export function createSubagentRuntime(
     text.length > TASK_RESULT_PREVIEW_CHARS
       ? `${text.slice(0, TASK_RESULT_PREVIEW_CHARS)}...`
       : text;
-  /** Terminal task_updated for a finished (non-cancelled) child. */
+  /** Terminal task_updated for a finished (non-killed) child (official
+   *  `patch` envelope since v0.7). */
   const emitTaskFinished = (agentId: string, res: { text: string; isError: boolean }): void => {
     emitTask({
-      type: 'task_updated',
+      type: 'system',
+      subtype: 'task_updated',
       task_id: agentId,
-      status: res.isError ? 'failed' : 'completed',
-      ...(res.isError
-        ? { error: resultPreview(res.text) }
-        : { result: resultPreview(res.text) }),
+      patch: {
+        status: res.isError ? 'failed' : 'completed',
+        end_time: Date.now(),
+        ...(res.isError ? { error: resultPreview(res.text) } : {}),
+      },
+      ...(res.isError ? {} : { result: resultPreview(res.text) }),
     });
   };
 
@@ -583,6 +588,11 @@ export function createSubagentRuntime(
     agentType: string;
     fork: boolean;
     parentToolUseId: string | null | undefined;
+    /** Delegated-task description (task_progress.description, official field). */
+    description: string;
+    /** The RAW spawning tool_use id ('' when the tool passed none) — NOT the
+     *  agentId-fallback correlation id; task_*.tool_use_id must be honest. */
+    toolUseId: string;
   };
 
   async function runChildToCompletion(
@@ -600,6 +610,13 @@ export function createSubagentRuntime(
     // is a real cap, not a guess; capped at 99 (100 is the terminal update's).
     const turnCap = config.maxTurns ?? DEFAULT_SUBAGENT_MAX_TURNS;
     let childTurns = 0;
+    // Official task_progress.usage (required): cumulative real figures from
+    // the child's own stream — tokens from each assistant turn's API usage,
+    // tool_uses from its tool_use blocks, duration from the wall clock.
+    const startedAtMs = Date.now();
+    let childTokens = 0;
+    let childToolUses = 0;
+    let lastToolName: string | undefined;
 
     // SIDECHAIN: the child's turns are recorded under key=agentId (NEVER the
     // parent sessionId), tagged isSidechain, so they can be persisted/observed
@@ -634,9 +651,31 @@ export function createSubagentRuntime(
     for await (const msg of runAgentLoop(history, deps, config)) {
       if (msg.type === 'assistant') {
         childTurns += 1;
+        const u = msg.message.usage;
+        childTokens +=
+          (u?.input_tokens ?? 0) +
+          (u?.output_tokens ?? 0) +
+          (u?.cache_creation_input_tokens ?? 0) +
+          (u?.cache_read_input_tokens ?? 0);
+        for (const block of msg.message.content) {
+          if (block.type === 'tool_use') {
+            childToolUses += 1;
+            lastToolName = block.name;
+          }
+        }
         emitTask({
-          type: 'task_progress',
+          type: 'system',
+          subtype: 'task_progress',
           task_id: agentId,
+          ...(sidechain.toolUseId !== '' ? { tool_use_id: sidechain.toolUseId } : {}),
+          description: sidechain.description,
+          subagent_type: sidechain.agentType,
+          usage: {
+            total_tokens: childTokens,
+            tool_uses: childToolUses,
+            duration_ms: Date.now() - startedAtMs,
+          },
+          ...(lastToolName !== undefined ? { last_tool_name: lastToolName } : {}),
           progress: Math.min(99, Math.floor((childTurns / turnCap) * 100)),
           status: `turn ${childTurns}/${turnCap}`,
         });
@@ -757,11 +796,17 @@ export function createSubagentRuntime(
         }
       };
 
+      const taskDescription = params.description ?? resolved.type;
       emitTask({
-        type: 'task_started',
+        type: 'system',
+        subtype: 'task_started',
         task_id: agentId,
-        task_name: params.description ?? resolved.type,
-        agent_id: agentId,
+        ...(params.toolUseId !== '' ? { tool_use_id: params.toolUseId } : {}),
+        description: taskDescription,
+        // This engine only spawns in-process subagents (never local_bash /
+        // remote_agent tasks), so the official task_type is always
+        // 'local_agent'.
+        task_type: 'local_agent',
       });
       await fireSubagentStart(agentId, params.subagentType, params.signal);
 
@@ -914,6 +959,8 @@ export function createSubagentRuntime(
         agentType: resolved.type,
         fork: forkActive,
         parentToolUseId: childConfig.parentToolUseId,
+        description: taskDescription,
+        toolUseId: params.toolUseId,
       };
 
       if (isBackground) {
@@ -934,10 +981,14 @@ export function createSubagentRuntime(
             });
             emitTaskFinished(agentId, result);
             emitTask({
-              type: 'task_notification',
+              type: 'system',
+              subtype: 'task_notification',
               task_id: agentId,
-              event: result.isError ? 'failed' : 'completed',
-              message: `background subagent '${resolved.type}' ${result.isError ? 'failed' : 'completed'}`,
+              ...(params.toolUseId !== '' ? { tool_use_id: params.toolUseId } : {}),
+              status: result.isError ? 'failed' : 'completed',
+              // No task output files in this engine (official field, required).
+              output_file: '',
+              summary: `background subagent '${resolved.type}' ${result.isError ? 'failed' : 'completed'}`,
             });
           } catch (err) {
             debug(
@@ -950,16 +1001,23 @@ export function createSubagentRuntime(
             if (!isAbortError(err)) {
               const message = err instanceof Error ? err.message : String(err);
               emitTask({
-                type: 'task_updated',
+                type: 'system',
+                subtype: 'task_updated',
                 task_id: agentId,
-                status: 'failed',
-                error: resultPreview(message),
+                patch: {
+                  status: 'failed',
+                  end_time: Date.now(),
+                  error: resultPreview(message),
+                },
               });
               emitTask({
-                type: 'task_notification',
+                type: 'system',
+                subtype: 'task_notification',
                 task_id: agentId,
-                event: 'failed',
-                message: `background subagent '${resolved.type}' failed: ${resultPreview(message)}`,
+                ...(params.toolUseId !== '' ? { tool_use_id: params.toolUseId } : {}),
+                status: 'failed',
+                output_file: '',
+                summary: `background subagent '${resolved.type}' failed: ${resultPreview(message)}`,
               });
             }
           } finally {
@@ -1026,12 +1084,21 @@ export function createSubagentRuntime(
       }
       task.controller.abort();
       backgroundTasks.delete(taskId);
-      emitTask({ type: 'task_updated', task_id: taskId, status: 'cancelled' });
+      // Official patch.status vocabulary has 'killed' (not 'cancelled') for an
+      // externally stopped task; the paired notification uses 'stopped'.
       emitTask({
-        type: 'task_notification',
+        type: 'system',
+        subtype: 'task_updated',
         task_id: taskId,
-        event: 'stopped',
-        message: `background subagent "${taskId}" stopped via stopTask`,
+        patch: { status: 'killed', end_time: Date.now() },
+      });
+      emitTask({
+        type: 'system',
+        subtype: 'task_notification',
+        task_id: taskId,
+        status: 'stopped',
+        output_file: '',
+        summary: `background subagent "${taskId}" stopped via stopTask`,
       });
       debug(`stopTask: aborted background subagent "${taskId}"`);
     },
