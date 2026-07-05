@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-05T13:18:40.836507+00:00",
+  "collected_at": "2026-07-05T15:11:02.557064+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 141,
+  "item_count": 142,
   "items": [
     {
       "source": "google_play",
@@ -57,6 +57,16 @@
     },
     {
       "source": "google_play",
+      "time": "2026-06-23T09:39:12",
+      "lang": "ja",
+      "title": "[Google Play 中评] ★3 沙耶コラボで始めて2日で消しました。 ゲームデザインやストーリーは良かったのです",
+      "summary": "沙耶コラボで始めて2日で消しました。 ゲームデザインやストーリーは良かったのですが、目当てのコラボキャラがあまりにも手に入らないので萎えました。 配布条件は期限内に満たせるか見通しが立たず、ガチャは渋い上にすり抜けが多いために時間の無駄のように思わされました。 他にも魅力的なキャラや手頃な課金プランはありましたが、自分は目当てのキャラが手に入ってからがスタートという感覚なので続ける理由にはなりませんでした。 面白くはあったので続けるか悩みましたが、自分には合わなかったということで。",
+      "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-a3557c44-c23b-45da-8b59-f48b0ad4f2c9",
+      "author": "aki kim",
+      "engagement": 3
+    },
+    {
+      "source": "google_play",
       "time": "2026-06-14T14:25:01",
       "lang": "en",
       "title": "[Google Play 好评] ★5 It's been just over a month since I've s",
@@ -83,16 +93,6 @@
       "summary": "У этой игры увлекательный сюжет, который захватывает с самого начала. Мне очень нравятся графика, эстетика, персонажи и стиль игры. Я в восторге! Хотя русский язык в игре немного шероховат, суть понять можно. Главное, что он есть! В целом, я очень довольна.",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=ru#gp-22290d12-213d-4241-9052-b46dd3d7fda3",
       "author": "Хьулимат Газиева",
-      "engagement": 2
-    },
-    {
-      "source": "google_play",
-      "time": "2026-06-23T09:39:12",
-      "lang": "ja",
-      "title": "[Google Play 中评] ★3 沙耶コラボで始めて2日で消しました。 ゲームデザインやストーリーは良かったのです",
-      "summary": "沙耶コラボで始めて2日で消しました。 ゲームデザインやストーリーは良かったのですが、目当てのコラボキャラがあまりにも手に入らないので萎えました。 配布条件は期限内に満たせるか見通しが立たず、ガチャは渋い上にすり抜けが多いために時間の無駄のように思わされました。 他にも魅力的なキャラや手頃な課金プランはありましたが、自分は目当てのキャラが手に入ってからがスタートという感覚なので続ける理由にはなりませんでした。 面白くはあったので続けるか悩みましたが、自分には合わなかったということで。",
-      "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-a3557c44-c23b-45da-8b59-f48b0ad4f2c9",
-      "author": "aki kim",
       "engagement": 2
     },
     {
@@ -943,6 +943,16 @@
       "summary": "peak game",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=id#gp-b49bc414-6dba-4b23-84cd-13addf057a64",
       "author": "Si Hitam",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-04T15:01:32",
+      "lang": "vi",
+      "title": "[Google Play 好评] ★5 game hay, cốt truyện sợ vl nhưng hợp gu",
+      "summary": "game hay, cốt truyện sợ vl nhưng hợp gu mình 💀 khá thân thiện với newbie vì cho rolls như cơm bữa nhưng cũng khá kén người chơi vì bản dịch của AI rất tệ và dễ khiến người khác nhầm lẫn đặc biệt là phần nhiệm vụ cốt truyện nhé.",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=vi#gp-06ad2993-6934-42f7-a185-a0eabaa1821e",
+      "author": "Lâm Cảnh",
       "engagement": 0
     },
     {

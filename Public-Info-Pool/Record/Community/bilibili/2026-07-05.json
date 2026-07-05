@@ -1,8 +1,8 @@
 {
   "date": "2026-07-05",
-  "archived_at": "2026-07-05T13:19:31.683800+00:00",
+  "archived_at": "2026-07-05T15:11:49.766694+00:00",
   "source": "bilibili",
-  "item_count": 14,
+  "item_count": 17,
   "items": [
     {
       "title": "今天我要变成一个香喷喷的肉丸子",
@@ -74,6 +74,29 @@
       "platform_region": "cn"
     },
     {
+      "title": "如果沙耶和郁纪在古代。",
+      "summary": "-\n  └ 十御九肆 (2赞): 这期神了口牙\n  └ 栩砂 (1赞): [Mygo表情包_探头][Mygo表情包_Love]\n  └ 不会取名的末郁 (1赞): os：故事我还在写。",
+      "source": "bilibili",
+      "time": "2026-07-05T08:52:05+00:00",
+      "url": "https://www.bilibili.com/video/BV1hMTy6cEMY",
+      "engagement": 162,
+      "is_hot": false,
+      "author": "不会取名的末郁",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 156,
+        "comment_count": 6,
+        "comments_fetched": 3,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/7385624aa3a79385c7ec7d9a8de4c93fb7c11fbf.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
       "title": "半点心",
       "summary": "",
       "source": "bilibili",
@@ -115,6 +138,52 @@
         "danmaku": 0
       },
       "media_url": "https://i2.hdslb.com/bfs/archive/31202070e19cdbc1f90428209fe01489e7a186f0.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "？！拉拉！？",
+      "summary": "守守守守咪人，去去去去哪里了\n  └ Karsland_ (2赞): 拉蒙娜！！\n  └ 抽奖从不中啊啊啊 (1赞): ?！强强?！",
+      "source": "bilibili",
+      "time": "2026-07-05T07:37:13+00:00",
+      "url": "https://www.bilibili.com/video/BV1nbTy62Ema",
+      "engagement": 123,
+      "is_hot": false,
+      "author": "不要在取名了",
+      "tags": [
+        "绘画"
+      ],
+      "metadata": {
+        "play": 121,
+        "comment_count": 2,
+        "comments_fetched": 2,
+        "danmaku": 0
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/fc53975c2b91a12fb0ec09a7e67ce2783971c536.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "【忘却前夜】高手角色or高级挂件？庞托斯角色测评",
+      "summary": "主播的忘却前夜交流群：560011366\n  └ 美丽大叔ing (3赞): 我是第二[热]\n  └ 半醒的鱼yyy (3赞): 抽取建议：建议跳过，图鉴党抽0启，余波爱好者可抽3+3。\n忘却前夜交流群：560011366\n  └ 龢利喵 (3赞): 我是第一[doge]",
+      "source": "bilibili",
+      "time": "2026-07-05T14:54:56+00:00",
+      "url": "https://www.bilibili.com/video/BV1VCTy6TERe",
+      "engagement": 121,
+      "is_hot": false,
+      "author": "半醒的鱼yyy",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 104,
+        "comment_count": 17,
+        "comments_fetched": 3,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/0d4494085ec61bf4733407ab4622a82c5fc69b8c.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
