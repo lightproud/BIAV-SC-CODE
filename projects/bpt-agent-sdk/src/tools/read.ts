@@ -13,6 +13,7 @@ import type {
 } from '../internal/contracts.js';
 import { AbortError, isAbortError } from '../errors.js';
 import { formatCatN, looksBinary, resolveWithin } from './fsutil.js';
+import { READ_DESCRIPTION } from './descriptions.js';
 
 const DEFAULT_LINE_LIMIT = 2000;
 
@@ -70,15 +71,7 @@ function detectImageMediaType(buf: Buffer): string | undefined {
 
 export const readTool: BuiltinTool = {
   name: 'Read',
-  description:
-    'Read a file from the local filesystem. Text files return in cat -n style ' +
-    '(right-aligned line number, tab, line text), starting at line 1; reads up ' +
-    'to 2000 lines by default, use offset (1-based start line) and limit (max ' +
-    'lines) to page through larger files, and lines over 2000 characters are ' +
-    'truncated. Image files (PNG/JPEG/GIF/WebP) are detected by content and ' +
-    'returned as an image block, and PDF files are returned as a document ' +
-    'block. The path may be absolute or relative to the session working ' +
-    'directory.',
+  description: READ_DESCRIPTION,
   readOnly: true,
   inputSchema: {
     type: 'object',

@@ -85,8 +85,14 @@ SDK implements the agent loop directly against the public Messages API:
 - Credentials come from `options.provider` (BPT extension) or
   `ANTHROPIC_API_KEY` / `ANTHROPIC_AUTH_TOKEN` / `ANTHROPIC_BASE_URL`.
 - `total_cost_usd` is an **estimate** from a static price table.
-- No filesystem settings/CLAUDE.md/skills/plugins loading in v0.1
-  (`settingSources` ACCEPTED, loads nothing).
+- **`settingSources` loads CLAUDE.md / AGENTS.md** (v0.5): 'project'/'local'
+  walk up from cwd, 'user' reads ~/.claude/CLAUDE.md; the text is injected as a
+  cached system-reminder on the `claude_code` preset path. Empty/undefined loads
+  nothing (SDK default — opt in). Skills/plugins loading still not implemented.
+- **`<env>` runtime-context block** (v0.5): the `claude_code` preset injects an
+  official-style `<env>` block (working directory, git repo/branch, platform, OS
+  version, date) + the model line into the volatile tail, reproducing the
+  official runtime assembly. Toggle with `includeEnvironmentContext` (default true).
 - **Parallel read-only tool execution** (bucket-1): within one assistant turn,
   a maximal run of ≥2 consecutive **read-only** tools executes concurrently
   (`Promise.all`); non-read-only and lone tools stay sequential. Results stay in
@@ -124,7 +130,8 @@ SDK implements the agent loop directly against the public Messages API:
 | `allowDangerouslySkipPermissions` | FULL | safety interlock: `bypassPermissions` (initial or via `setPermissionMode`) throws `ConfigurationError` unless this is `true` |
 | `persistSession` / `sessionId` / `resume` | FULL | JSONL store |
 | `provider` | FULL | **BPT extension** — direct-API connection settings |
-| `settingSources` | ACCEPTED | no filesystem settings in v0.1 |
+| `settingSources` | PARTIAL | loads CLAUDE.md / AGENTS.md ('project'/'local'/'user'); skills/plugins not loaded |
+| `includeEnvironmentContext` | FULL | **BPT extension** — inject official-style `<env>` block (default true on the preset) |
 | `stderr` | PARTIAL | receives debug log lines (no subprocess stderr exists) |
 | `strictMcpConfig` | FULL | trivially: only options servers are ever used |
 | `systemPrompt` | PARTIAL | preset `claude_code` maps to this SDK's own harness prompt (+`append`); **BPT extension** `{ type: 'segments', segments: [{text, cache?}] }` forwards caller-composed blocks verbatim with per-segment cache breakpoints (the generic seam for host prompt layering — up to 3 cached system segments; message-caching off in this path). The host owns which layers/order/trust; the engine only places the wire breakpoints |

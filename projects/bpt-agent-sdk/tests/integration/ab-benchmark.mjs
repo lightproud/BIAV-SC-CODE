@@ -47,7 +47,7 @@ const MODEL = typeof args.model === 'string' ? args.model : 'claude-haiku-4-5-20
 const OUT = typeof args.out === 'string' ? args.out : `ab-report-${ENGINE}.json`;
 // --variant v1|v2: this SDK's harness-prompt variant (BPT experiment). Only
 // meaningful for --engine=bpt; ignored by the official engine.
-const VARIANT = ['v1', 'v2', 'v3'].includes(args.variant) ? args.variant : undefined;
+const VARIANT = ['v1', 'v2', 'v3', 'v4', 'v5'].includes(args.variant) ? args.variant : undefined;
 // --repeat N: run each task N times and report the MEDIAN of the metrics
 // (denoises single-sample outliers, e.g. one slow/retried turn). Default 1.
 const REPEAT = Math.max(1, Number.parseInt(args.repeat, 10) || 1);
@@ -306,8 +306,20 @@ async function runTask(task) {
         allowDangerouslySkipPermissions: true,
         maxTurns: 8,
         persistSession: false,
-        // BPT harness-prompt variant (ignored by the official engine).
-        ...(VARIANT && ENGINE === 'bpt' ? { harnessPromptVariant: VARIANT } : {}),
+        // The BPT arm runs the real shipped harness: the claude_code preset,
+        // whose default variant is v5 (the faithful official reproduction).
+        // This makes the standalone A/B and the vs-official comparison reflect
+        // what an actual integration gets, not a stripped-down prompt. A
+        // harnessPromptVariant only takes effect on this preset path, so the
+        // preset MUST be present (leaving it off silently ignored the variant —
+        // the bug that made an earlier v1-vs-v4 run look identical). The
+        // official engine ships its own prompt; we pass nothing extra to it.
+        ...(ENGINE === 'bpt'
+          ? {
+              systemPrompt: { type: 'preset', preset: 'claude_code' },
+              ...(VARIANT ? { harnessPromptVariant: VARIANT } : {}),
+            }
+          : {}),
         ...(task.options ?? {}),
       },
     });

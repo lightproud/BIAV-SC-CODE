@@ -47,15 +47,26 @@ on:
         type: boolean
         default: false
       prompt_candidate:
-        description: 'Candidate harness-prompt variant for the prompt A/B baseline (v1) to run against'
+        description: 'Candidate harness-prompt variant for the prompt A/B baseline (v1) to run against (v5 = comprehensive official-prompt reproduction)'
         required: false
         type: choice
-        options: ['v2', 'v3']
-        default: 'v3'
+        options: ['v2', 'v3', 'v4', 'v5']
+        default: 'v5'
       prompt_tasks:
         description: 'Task ids for the prompt A/B (e.g. 10,11 = the hard discriminating tasks; empty = all)'
         required: false
         default: '10,11'
+      cache_probe:
+        description: 'Controlled per-turn prompt-cache probe (one task run back-to-back N times; prints per-turn write/read)'
+        required: false
+        type: boolean
+        default: false
+      cache_probe_variant:
+        description: 'Harness-prompt variant for the cache probe (v5 = comprehensive official reproduction; needs systemPrompt preset — pass via the probe)'
+        required: false
+        type: choice
+        options: ['v1', 'v4', 'v5']
+        default: 'v1'
 
 concurrency:
   group: bpt-agent-sdk-${{ github.ref }}
@@ -263,3 +274,35 @@ jobs:
             projects/bpt-agent-sdk/ab-report-v1.json
             projects/bpt-agent-sdk/ab-report-cand.json
           if-no-files-found: ignore
+
+  cache-probe:
+    # Controlled per-turn prompt-cache probe: one task run back-to-back N times,
+    # printing per-turn cache write/read to settle whether the stable prefix is
+    # reused across turns/runs (the A/B could only show aggregate 0%). Dispatch
+    # with cache_probe=true.
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.cache_probe == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          sparse-checkout: |
+            /*
+            !/Public-Info-Pool/Record/
+            !/Public-Info-Pool/Reference/
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: Cache probe — normal prefix (per-turn write/read, back-to-back)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node tests/integration/cache-probe.mjs "--model=${{ github.event.inputs.model }}" --runs=3 "--variant=${{ github.event.inputs.cache_probe_variant }}"
+      - name: Cache probe — BIG prefix (isolates marginal-size zone from a deeper defect)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node tests/integration/cache-probe.mjs "--model=${{ github.event.inputs.model }}" --runs=3 --big

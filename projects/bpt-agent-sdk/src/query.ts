@@ -50,6 +50,7 @@ import { DefaultMcpRegistry } from './mcp/registry.js';
 import { matchToolName, parseRule } from './permissions/rules.js';
 import { runAgentLoop } from './engine/loop.js';
 import { buildSystemPromptParts } from './engine/prompts.js';
+import { gatherEnvironment, loadProjectInstructions } from './engine/runtime-context.js';
 import { buildCompactionConfig } from './engine/compaction.js';
 import {
   buildStructuredOutputInstruction,
@@ -538,15 +539,27 @@ export function query(args: {
       });
     }
   } else {
+    // Runtime-assembly context (open reproduction of the official runtime
+    // prompt): the <env> block (default-on for the preset) and CLAUDE.md /
+    // AGENTS.md codebase instructions (opt-in via settingSources). Gathered
+    // here because it needs I/O the pure prompt module avoids; both degrade to
+    // empty on any failure and never block query construction.
+    const includeEnv = options.includeEnvironmentContext !== false;
+    const environment = includeEnv
+      ? gatherEnvironment(cwd, initialModel, new Date().toISOString().slice(0, 10))
+      : undefined;
+    const projectInstructions = loadProjectInstructions(cwd, options.settingSources);
+    // Pass the variant through as-is: when harnessPromptVariant is unset,
+    // buildSystemPromptParts applies its default (v5, the faithful official
+    // reproduction) on the claude_code preset path. Resolving undefined to a
+    // concrete 'v1' here would override that default and pin the real API to
+    // the terse prompt regardless of the promoted default.
     const promptParts = buildSystemPromptParts(sp, {
       cwd,
       toolNames: [...builtinTools.keys()],
-      variant:
-        options.harnessPromptVariant === 'v3'
-          ? 'v3'
-          : options.harnessPromptVariant === 'v2'
-            ? 'v2'
-            : 'v1',
+      variant: options.harnessPromptVariant,
+      environment,
+      projectInstructions,
     });
     systemPromptStable = promptParts.stable;
     if (outputFormat !== undefined) {

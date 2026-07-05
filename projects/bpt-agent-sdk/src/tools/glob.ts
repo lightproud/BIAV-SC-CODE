@@ -9,6 +9,7 @@ import fg from 'fast-glob';
 import { promises as fs } from 'node:fs';
 import * as path from 'node:path';
 import { AbortError } from '../errors.js';
+import { GLOB_DESCRIPTION } from './descriptions.js';
 import type {
   BuiltinTool,
   ToolContext,
@@ -20,10 +21,7 @@ const IGNORE_PATTERNS = ['**/node_modules/**', '**/.git/**'];
 
 export const globTool: BuiltinTool = {
   name: 'Glob',
-  description:
-    'Fast file pattern matching. Supports glob patterns like "**/*.js" or ' +
-    '"src/**/*.ts". Returns matching file paths sorted by modification time ' +
-    '(newest first).',
+  description: GLOB_DESCRIPTION,
   inputSchema: {
     type: 'object',
     properties: {

@@ -690,6 +690,14 @@ export type ProviderConfig = {
   maxRetries?: number;
   /** Per-request timeout in milliseconds (default 600000). */
   timeoutMs?: number;
+  /**
+   * Idle watchdog for the streaming phase: abort the stream if no SSE event
+   * arrives for this many milliseconds (default 120000; `0` disables). Fires
+   * faster and more diagnosably than the whole-request timeout when a stream
+   * silently stalls — the API emits periodic `ping` events, so a gap this long
+   * means the connection is stuck, not merely slow.
+   */
+  streamIdleTimeoutMs?: number;
   maxOutputTokens?: number;
   /** Automatic prompt caching via cache_control breakpoints; default true. */
   promptCaching?: boolean;
@@ -766,8 +774,22 @@ export type Options = {
   sessionId?: string;
   /** Directory for session transcripts (default ~/.bpt-agent/sessions). */
   sessionDir?: string;
-  /** Accepted for compatibility; this SDK loads no filesystem settings in v0.1. */
+  /**
+   * Which on-disk instruction sources to load into the system prompt, matching
+   * @anthropic-ai/claude-agent-sdk. 'project'/'local' walk up from cwd for
+   * CLAUDE.md / AGENTS.md; 'user' reads ~/.claude/CLAUDE.md. Empty/undefined
+   * loads nothing (the SDK default — the caller opts in). Only consulted on the
+   * `claude_code` preset / default harness path.
+   */
   settingSources?: SettingSource[];
+  /**
+   * Inject the official-style `<env>` runtime-context block (working directory,
+   * git repo/branch, platform, OS version, date) plus the model line into the
+   * system prompt. Reproduces the official runtime assembly. Default true on the
+   * `claude_code` preset / default path; set false to omit it. Ignored for a
+   * string or segments systemPrompt (the caller owns those verbatim).
+   */
+  includeEnvironmentContext?: boolean;
   stderr?: (data: string) => void;
   /** Only use MCP servers passed in options (always true for this SDK). */
   strictMcpConfig?: boolean;
@@ -806,10 +828,13 @@ export type Options = {
   /** Defer MCP tool schemas behind a ToolSearch tool. undefined -> auto. */
   toolSearch?: boolean;
   /** BPT experiment: harness system-prompt variant for the `claude_code`
-   *  preset / default path. 'v1' (default) = the terse original; 'v2' = a
-   *  richer clean-room prompt (public prompt-engineering practice). A/B knob
-   *  for measuring quality/cost/cache before promoting a new default. */
-  harnessPromptVariant?: 'v1' | 'v2' | 'v3';
+   *  preset / default path. 'v1' (default) = the terse original; 'v2'/'v3' =
+   *  richer prompts composed from PUBLIC prompt-engineering practice; 'v4' = a
+   *  faithful reproduction of the official main-loop prompt from the PUBLIC
+   *  prompt reconstruction (open reproduction, tool refs adapted); 'v5' = a
+   *  COMPREHENSIVE faithful reproduction (fuller official main-loop clauses).
+   *  A/B knob for measuring quality/cost/cache before promoting a new default. */
+  harnessPromptVariant?: 'v1' | 'v2' | 'v3' | 'v4' | 'v5';
 };
 
 // ---------------------------------------------------------------------------

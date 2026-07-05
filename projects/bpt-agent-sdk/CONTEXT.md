@@ -113,11 +113,45 @@ shell（BashOutput 增量读 + 按行 filter / KillShell 击杀，进程组 SIGT
 绝不读其提示词文本。官方 SDK 靠 spawn Claude Code CLI，无头 CI 起不来则官方臂跳过（exit 2），
 「官方引擎无头起不来」本身即结论（正是 BPT 换引擎的动机）。
 
-**Backlog（守密人「先存下来」，2026-07-04）——黑箱行为观测法收窄能力层差**：质量/行为差里，
-「能力层」（agent 环转数/决策对不对）可干净室安全地逼近官方，方法是**黑箱行为克隆**（Compaq 逆向 IBM BIOS 金标准）：
-跑官方当黑箱、只观测其输入→输出行为（选哪个工具/怎么分步/答案排版），据此**独立撰写本 SDK 自己的提示词**去逼近
-同样行为，全程不读官方提示词文本 + 拿自造提示词做 A/B 迭代爬坡。「秘方层」（专有提示词本体）仍是不可触碰的结构性天花板。
-**硬红线**：泄漏/流传的官方提示词文本一律不并入本仓（净室=MIT 合法性地基，泄漏≠公开文档，见 POSITIONING §2）。
+**v0.5 续 —— 公开信息再现转向 + 引擎机制加固（守密人 2026-07-04 裁定，范围认可，续入 v0.5）**：
+定位从 clean-room 反转为**公开信息再现**（明确署名）——**覆盖并作废上方旧 Backlog「全程不读官方提示词 /
+泄漏一律不并入」**（该段是转向前的黑箱克隆计划，现已不适用）。四条腿分工：官方提示词还原（Piebald 快照，
+公开 GitHub/MIT/逆向自公开分发 CLI）=行为规格 / 开源 CC 重实现（OpenCode/Codex/Gemini/goose/Cline，全宽松许可）
+=引擎机制 / 公开文档 + 自研引擎=兜底主权。**硬边界不变**：§1.1-HC 黑池防火墙、拒绝真正的内部未授权泄漏
+（「公开分发可逆向」≠「内部偷流出」）、不逐字大段克隆到会引用空气处、署名。
+
+- **提示词装配层 Track B（守密人 2026-07-05 裁定「先设计落档、再实现 Track B」，进行中）**：设计档 `Public-Info-Pool/Resource/proposal/bpt-prompt-assembly-layer-design-20260705.md`（五层模型 + build-from-archive + 剔除清单）。
+  **Phase 0.5 已落**：修 R1——v5/v3 无条件引用 Agent 工具，但 Agent 仅在配置 subagents 时注册（`query.ts:498`）；现每条工具子句 gate 在该工具在场，红线测试锁定。
+  **Phase 1a 已落**：main-loop 从硬编码 `defaultHarnessStableV5` 迁入**片段库**（`src/engine/prompt-fragments.ts`，每片带 id+archive slug provenance+faithful 标+tool gate）+ **装配器**（`src/engine/prompt-assembler.ts` `assembleMainLoop`）；v5 变薄封装；**字节金标锁定**（`tests/fixtures/v5-mainloop-golden.json` 四工具集，装配器逐字节复现）。
+  **corpus-sync 校验器已落**：每 faithful 片段对上游归档逐锚点对账、漂移即 CI 报红（21 faithful 全过；provenance 曾乐观标注、已按内容匹配诚实校正为 21 faithful / 11 adapted）。
+  **各面 provenance + corpus-sync 已覆盖 SDK 实用 4 surface**：① main-loop（片段库+装配器+金标）② tool-descriptions（`descriptions.ts` `TOOL_DESCRIPTION_PROVENANCE`）③ general-purpose 子代理（`agents.ts`，净室→忠实复现官方 strengths+guidelines）④ compaction 摘要器（`compaction.ts` `SUMMARIZER_SYSTEM`，净室→忠实复现官方 5 节续接摘要）。
+  **范围边界（红线）**：归档剩的生成器/分类器（commit-msg/session-title/branch/bash-前缀检测/后台状态分类器/auto-mode）**属 SDK 未发货功能，不复现**（不得描述不存在的能力）。**待续（可选）**：build-from-archive 生成器（现有校验器已达「保真+抗漂移」核心，生成器为进一步自动化）。
+- **已落**：v4/v5 官方主循环提示词忠实再现（`harnessPromptVariant`，**v5 全面再现四节、已提为 claude_code preset 默认**，见下「提示词默认提升」）
+  + Bash 命令分解权限（安全，`decomposeBashCommand`）+ SSE 空闲看门狗（`streamIdleTimeoutMs`，默认 120s/0 关）。
+- **提示词默认提升 v1→v5（2026-07-05，守密人「2 模拟行为」+「目标是跟官方提示词一致」裁定，已落地）**：
+  claude_code preset 无 variant 时默认走 **v5**（~3774 tok 全面忠实再现官方主循环）。**决定性 A/B 实证**（run 28725983766，硬任务 10/11 median-of-3）：
+  v5 vs v1 **~3× 便宜**（$0.0089 vs $0.0272）、同正确（2/2）、略快，真因缓存（v5 95% 命中 vs v1 落尺寸死区 0%）。
+  **⚠ 连带修掉 A/B 测量 bug（踩坑 #44）**：harness 选 variant 却没设 `systemPrompt` preset → variant 只在 preset 路径生效被静默忽略，
+  早前「v2/v3/v4 无收益」两臂实际都跑极简默认，结论作废。v5 保真：对着归档官方还原逐段自审、补回两条漏收官方子句
+  （`act-when-ready` + 安全策略 `censoring-assistance`）；产品专属两条（反馈 URL / CLI harness 头）确认应省。v1–v4 保留为显式变体。
+- **剩余目标（Tier 1）**：G1 压缩前置廉价层（逐结果预算→内容指针 + 去重，模型摘要前甩字节）/ G2 摘要·标题走 Haiku
+  （`compaction.model`）/ G3 双 system 缓存断点（用满第 4 断点）/ G4 子代理 Fork 模式（继承缓存共享上下文）+ sidechain 转录 /
+  ~~G5 v4 补工具使用纪律片段~~（**已由 v5 涵盖**：Tool use 节含 dedicated-tools-over-bash 重定向「Use Grep (NOT grep or rg)」等全表）/ G6 分类器·生成器提示词再现（标题/分支/描述、后台状态分类器）/
+  G7 定位反转全仓扫尾（POSITIONING/COMPAT/README/ARCHITECTURE/MIGRATION + 两轴行为天花板解封）/ G8 decisions.md 两条落档（仅守密人）。
+- **测试比对（守密人 2026-07-04「需增加测试比对」——本版一等目标）**：每项再现/采纳**必附对照测试证其效**，**不测不宣胜负**。
+  ① 提示词 A/B v1 vs v5（含硬任务 10/11，`prompt-ab` job 支持 v2–v5，**已跑：v5 ~3× 便宜同正确、提为默认**）；② **vs-official 裸对比**（再现是否收窄行为差）；
+  ③ 逐机制 before/after（压缩前置层的 input-token 削减 / 双断点的缓存命中率 / Haiku 摘要成本），benchmark 加各机制开关位；产对照报告。
+- **vs-official 升为常规做法（守密人 2026-07-05 裁定）**：与官方 `@anthropic-ai/claude-agent-sdk` 的裸对比（`vs_official` job：
+  同模型同任务集、速度 + 正确性两客观轴，官方当黑箱、绝不读其提示词）**每里程碑必跑一次、计入退出标准、对照报告归档 Resource**。
+  不再是一次性探针——再现工作每推进一批，就重跑 vs-official 看行为差是否真被收窄（数据说话）。官方 CLI 无头起不来则官方臂跳过（本身即结论）。
+- **推迟到 v0.6+（全做 Tier 2/3）**：Plan 分阶段流水线 · 审查/三态验证器 · coordinator/同意不可转述 · Workflow DSL ·
+  做梦记忆（Claude 蓝本再现）· 沙箱再现 · 循环/调度 · 产品面大件。
+- **依据档**：`Public-Info-Pool/Resource/proposal/bpt-sdk-reproduction-scope-ledger-20260704.md`（全做路线图）/
+  `.../repo-engineering/oss-cc-engine-designs-survey-20260704.md`（开源引擎设计）/
+  `.../repo-engineering/official-cc-prompt-architecture-inference-20260704.md`（官方架构推断）。
+
+> **能力层仍可安全逼近官方**：转向后不仅可黑箱观测行为，更可直接研读公开还原的提示词结构与开源引擎机制。
+> 「秘方层」的**逐比特复刻**仍非目标，残余行为差主要由 BPT 主权模型选择决定（换模型换手感），非「拒看」。
 
 **缓存稳定前缀优化（v0.5+，守密人 2026-07-04「优化」裁定，已落地）**：裸对比 run #35 发现本 SDK 短任务缓存命中
 0%、长任务 45%——诊断为 cwd 焊进系统提示正中间致缓存前缀逐任务变（`prompts.ts`）。修法：系统提示拆

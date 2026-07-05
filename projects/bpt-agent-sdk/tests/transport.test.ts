@@ -677,6 +677,39 @@ describe('AnthropicTransport streaming', () => {
     expect(error).toBeInstanceOf(APIConnectionError);
     expect((error as Error).message).toMatch(/timed out after 40ms/);
   });
+
+  it('idle watchdog: a stalled stream aborts after streamIdleTimeoutMs (before the request timeout)', async () => {
+    stubFetch([
+      () =>
+        new Response(hangingStream(eventsToSse([{ type: 'ping' }])), {
+          status: 200,
+        }),
+    ]);
+    // Large whole-request timeout, small idle timeout -> idle fires first.
+    const t = makeTransport({
+      provider: { apiKey: 'k', timeoutMs: 5_000, streamIdleTimeoutMs: 30 },
+    });
+    const { events, error } = await collectWithError(t.stream(baseReq()));
+    expect(events).toEqual([{ type: 'ping' }]); // the one event before the stall
+    expect(error).toBeInstanceOf(APIConnectionError);
+    expect((error as Error).message).toMatch(/idle for 30ms/);
+  });
+
+  it('streamIdleTimeoutMs: 0 disables the idle watchdog (only the request timeout fires)', async () => {
+    stubFetch([
+      () =>
+        new Response(hangingStream(eventsToSse([{ type: 'ping' }])), {
+          status: 200,
+        }),
+    ]);
+    const t = makeTransport({
+      provider: { apiKey: 'k', timeoutMs: 40, streamIdleTimeoutMs: 0 },
+    });
+    const { error } = await collectWithError(t.stream(baseReq()));
+    expect(error).toBeInstanceOf(APIConnectionError);
+    // idle disabled -> the whole-request timeout is the terminal cause.
+    expect((error as Error).message).toMatch(/timed out after 40ms/);
+  });
 });
 
 // ---------------------------------------------------------------------------

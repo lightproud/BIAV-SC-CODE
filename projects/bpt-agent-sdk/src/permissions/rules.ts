@@ -148,19 +148,72 @@ function specifierMatches(spec: string, value: string): boolean {
 }
 
 /**
+ * Command-injection constructs that let a shell run an embedded command a
+ * prefix rule never inspects (command / process substitution, unbraced/braced
+ * expansions). Their presence must BLOCK an allow-rule match: `Bash(git:*)`
+ * must not auto-allow `git log $(rm -rf /)`. They do not block deny/ask.
+ */
+const INJECTION_MARKERS: readonly string[] = ['$(', '`', '${', '<(', '>('];
+
+/**
+ * Decompose a shell command into the independent sub-commands a permission
+ * rule must each be checked against, and flag command-injection constructs.
+ *
+ * Splits on the top-level chaining operators `&&`, `||`, `;`, `|`, `&` and
+ * newlines. NOT fully quote-aware — but the bias is safe for allow-matching:
+ * over-splitting (e.g. an operator inside a quoted string) only makes an allow
+ * rule LESS likely to match every segment, so it falls through to prompting,
+ * never to a wider allow. This is what stops `allowed && dangerous` from riding
+ * in on a prefix rule scoped to `allowed`.
+ */
+export function decomposeBashCommand(command: string): {
+  segments: string[];
+  hasInjection: boolean;
+} {
+  const hasInjection = INJECTION_MARKERS.some((m) => command.includes(m));
+  const segments = command
+    .split(/(?:&&|\|\||[;\n|&])/)
+    .map((s) => s.trim())
+    .filter((s) => s.length > 0);
+  return { segments: segments.length > 0 ? segments : [command.trim()], hasInjection };
+}
+
+/**
  * Full rule match for one tool call: tool name (with MCP wildcards) plus,
  * when the rule carries a specifier, the tool's primary string argument.
+ *
+ * `segmentMode` opts a Bash specifier into command decomposition (see
+ * decomposeBashCommand). The gate passes it so a chained command is judged by
+ * its parts, not by its leading token:
+ *   - `'all'` (allow position): EVERY sub-command must match the specifier AND
+ *     no injection construct may be present — otherwise the allow does not fire
+ *     and the call falls through to prompting. Closes the `git status && rm -rf /`
+ *     hole where a `Bash(git:*)` allow would match the whole string.
+ *   - `'any'` (deny / ask position): a match on ANY sub-command applies, so a
+ *     denied sub-command anywhere in a chain still denies.
+ * Omitting `segmentMode` keeps the legacy whole-string match (non-Bash tools,
+ * and any caller that has not opted in).
  */
 export function ruleMatches(
   rule: ParsedRule,
   toolName: string,
   input: Record<string, unknown>,
+  segmentMode?: 'all' | 'any',
 ): boolean {
   if (!matchToolName(rule.toolName, toolName)) return false;
-  if (rule.specifier === undefined) return true;
+  const spec = rule.specifier;
+  if (spec === undefined) return true;
   const value = primaryArg(toolName, input);
   if (value === undefined) return false;
-  return specifierMatches(rule.specifier, value);
+  if (toolName === 'Bash' && segmentMode !== undefined) {
+    const { segments, hasInjection } = decomposeBashCommand(value);
+    if (segmentMode === 'all') {
+      if (hasInjection) return false;
+      return segments.every((seg) => specifierMatches(spec, seg));
+    }
+    return segments.some((seg) => specifierMatches(spec, seg));
+  }
+  return specifierMatches(spec, value);
 }
 
 /** The first whitespace-delimited token of a shell command (`npm run x` -> `npm`). */

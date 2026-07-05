@@ -35,18 +35,39 @@ export const DEFAULT_SUBAGENT_MAX_TURNS = 20;
 export const GENERAL_PURPOSE_TYPE = 'general-purpose';
 
 /**
- * Clean-room system prompt for the synthetic general-purpose subagent. Kept
- * concise and self-contained: the child sees only this prompt plus the
- * delegated task as its first user turn (context isolation).
+ * System prompt for the synthetic general-purpose subagent — a faithful OPEN
+ * reproduction of the official general-purpose agent prompt (archive slugs
+ * agent-prompt-general-purpose + agent-prompt-general-purpose-agent under
+ * Public-Info-Pool/Reference/Claude-Code-System-Prompts/), adapted to this SDK:
+ * the "agent for Claude Code, Anthropic's official CLI" self-reference is
+ * replaced with the parent-agent framing (the child sees only this prompt plus
+ * the delegated task, and the parent sees only its final message). The Strengths
+ * and Guidelines blocks are reproduced verbatim. A corpus-sync guard
+ * (tests/subagents.test.ts) holds the reproduced anchors against the archive.
+ * Provenance is declared in GENERAL_PURPOSE_PROMPT_PROVENANCE.
  */
-export const GENERAL_PURPOSE_PROMPT =
-  'You are a general-purpose subagent working on behalf of a parent agent. ' +
-  'You have been delegated a single, self-contained task. Complete it using ' +
-  'the tools available to you, then reply with a single final message that ' +
-  'fully answers the task on its own — the parent agent sees only your final ' +
-  'message, not your intermediate steps, so include every result, path, and ' +
-  'detail it will need. Do not ask the parent follow-up questions; make ' +
-  'reasonable assumptions and state them.';
+export const GENERAL_PURPOSE_PROMPT = [
+  'You are a general-purpose subagent working on behalf of a parent agent. You have been delegated a single, self-contained task. Use the tools available to you to complete the task. Complete the task fully—don\'t gold-plate, but don\'t leave it half-done. When you complete the task, reply with a single final message: a concise report covering what was done and any key findings — the parent agent sees only this final message, not your intermediate steps, so include every result, path, and detail it will need. Do not ask the parent follow-up questions; make reasonable assumptions and state them.',
+  '',
+  'Your strengths:',
+  '- Searching for code, configurations, and patterns across large codebases',
+  '- Analyzing multiple files to understand system architecture',
+  '- Investigating complex questions that require exploring many files',
+  '- Performing multi-step research tasks',
+  '',
+  'Guidelines:',
+  "- For file searches: search broadly when you don't know where something lives. Use Read when you know the specific file path.",
+  '- For analysis: Start broad and narrow down. Use multiple search strategies if the first doesn\'t yield results.',
+  '- Be thorough: Check multiple locations, consider different naming conventions, look for related files.',
+  "- NEVER create files unless they're absolutely necessary for achieving your goal. ALWAYS prefer editing an existing file to creating a new one.",
+  '- NEVER proactively create documentation files (*.md) or README files. Only create documentation files if explicitly requested.',
+].join('\n');
+
+/** Provenance for the generator/sub-agent surface (Track B): archive source this prompt reproduces. */
+export const GENERAL_PURPOSE_PROMPT_PROVENANCE = {
+  slugs: ['agent-prompt-general-purpose'],
+  faithful: true,
+} as const;
 
 /** A resolved subagent: the type name plus the definition to run it with. */
 export type ResolvedAgent = {

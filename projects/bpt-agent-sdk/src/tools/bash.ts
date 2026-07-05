@@ -9,6 +9,7 @@
 
 import { spawn } from 'node:child_process';
 import { AbortError } from '../errors.js';
+import { BASH_DESCRIPTION } from './descriptions.js';
 import type {
   BuiltinTool,
   ToolContext,
@@ -244,14 +245,7 @@ function withPersistentState(command: string, stateDir: string): string {
 
 export const bashTool: BuiltinTool = {
   name: 'Bash',
-  description:
-    'Execute a shell command with bash -c (sh fallback) in the working ' +
-    'directory. `cd` and exported variables persist across Bash calls. ' +
-    'Returns captured stdout/stderr; non-zero exit codes are ' +
-    'reported as tool errors, not exceptions. Timeout in milliseconds ' +
-    `defaults to ${DEFAULT_TIMEOUT_MS} (max ${MAX_TIMEOUT_MS}). ` +
-    'Set run_in_background to true to launch the command detached and get ' +
-    'a shell id immediately; poll it with BashOutput and stop it with KillShell.',
+  description: BASH_DESCRIPTION,
   inputSchema: {
     type: 'object',
     properties: {

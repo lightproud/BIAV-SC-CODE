@@ -45,7 +45,7 @@
 | news（新闻聚合 + 报告系统） | 自动化持续运行（采集 / 回填 / 评论 / 同人图） | Code-news | M2 信息齐备期任务见 `projects/news/CONTEXT.md`；dependabot #136-140 实际状态待核 |
 | wiki（数据集 + Wiki 站点） | **W2 基线已重建 + 数据桥已接回（2026-07-02）**：可信基线 `data/processed/characters.json`（72 真实角色，一手解包）→ 58 真实唤醒体页 + 运行时数据桥 `characters.runtime.json`（生成器单点产出）→ `characters.ts` 消费，CharacterGrid（72 卡片、界域/类目/搜索筛选）挂载图鉴页，SSR 构建验证通过 | 艾瑞卡会话 | 真实字段缺口推进（skills/命轮/立绘/三语）见 `wiki-phase-2-gap-inventory.md`；贡献流程（M3）待跑通 |
 | game（衍生游戏） | 暂缓 | 待创建 | 不主线派发 |
-| **bpt-agent-sdk**（Claude Agent SDK 干净重实现 · 银芯→黑池单向输出物） | **v0.2+v0.3 已合并 main（2026-07-04，本体 #380 @ 8bd4a54 + v0.3 收尾 #384/#387/#388）**：干净室 TypeScript 重实现，直驱 Anthropic Messages API（fetch+SSE，无 CLI 子进程），**668 单测全绿**，对官方 SDK 0.3.199 约 90%+ 表面等价（v0.3 #16 观测流 + #17 长尾 + 桶1 三项 #391 + 桶1 遗留两项 #394 + 并发 surface-alignment #385 均收口） | 艾瑞卡会话 | 无阻塞待办；后续方向由守密人指派（可选：追 0.3.201 基线漂移 / 重跑审计出新记分牌 / 真 API 端到端验证）；**动手前必读** `projects/bpt-agent-sdk/CONTEXT.md`，定位见 `projects/bpt-agent-sdk/docs/POSITIONING.md` |
+| **bpt-agent-sdk**（Claude Agent SDK 公开信息再现 · 银芯→黑池单向输出物） | **v0.2+v0.3 已合并 main（2026-07-04，本体 #380 @ 8bd4a54 + v0.3 收尾 #384/#387/#388）**：TypeScript 重实现（公开信息再现、自研引擎），直驱 Anthropic Messages API（fetch+SSE，无 CLI 子进程），**668 单测全绿**，对官方 SDK 0.3.199 约 90%+ 表面等价（v0.3 #16 观测流 + #17 长尾 + 桶1 三项 #391 + 桶1 遗留两项 #394 + 并发 surface-alignment #385 均收口） | 艾瑞卡会话 | 无阻塞待办；后续方向由守密人指派（可选：追 0.3.201 基线漂移 / 重跑审计出新记分牌 / 真 API 端到端验证）；**动手前必读** `projects/bpt-agent-sdk/CONTEXT.md`，定位见 `projects/bpt-agent-sdk/docs/POSITIONING.md` |
 
 > BPT 战线（bpt-web / bpt-desktop / bpt-next / graphify-ext / occ-local）已于 2026-04-19 战略转向中从银芯仓库删除，不再在银芯内部开发。银芯转为 BPT 指导者，协议见 `memory/bpt-guidance-protocol.md`。
 > **例外辨析（勿混淆）**：上表 `bpt-agent-sdk` **不属**上述被删 BPT 产品战线，**亦非**「银芯内部开发 BPT 产品」。它是银芯自有的**工程产物**（公开信息层），作为**银芯→黑池单向输出物**供 BPT Desktop 消费（令其脱离被禁的 `claude.exe` 子进程引擎）——方向与 §1.1-HC 防火墙一致（银芯→黑池单向输出），黑池数据从不回流。
@@ -144,7 +144,7 @@
 
 ## BPT Agent SDK（`projects/bpt-agent-sdk/`）
 
-> **一句话**：官方 `@anthropic-ai/claude-agent-sdk` 的**干净室重实现**，drop-in 兼容公开接口，
+> **一句话**：官方 `@anthropic-ai/claude-agent-sdk` 的**公开信息再现**（自研引擎），drop-in 兼容公开接口，
 > 但引擎**直驱 Anthropic Messages API**（fetch + SSE，**不打包 CLI 子进程**）。用途：让 BPT Desktop
 > （Electron）脱离被禁的 `claude.exe` 子进程引擎。**定位辨析见「## 子项目状态」表下方例外辨析**——
 > 银芯→黑池单向输出物，与 §1.1-HC 防火墙同向，非 BPT 产品内部开发。
@@ -162,14 +162,19 @@
   子代理共享，query 结束清场）；② 换装就绪包 `docs/MIGRATION.md` + `examples/electron-host.mjs` +
   `npm pack` tarball 干净目录实测装通；③ A/B 七任务基准 `tests/integration/ab-benchmark.mjs`
   （含中文两项，offender 排序，POSITIONING §7 测量强制令）挂 `bpt-agent-sdk.yml` `ab_benchmark`
-  dispatch 输入。`pytest` 无涉、Node 侧 **`npx vitest run` 702 单测全绿（21 文件）**；`tsc` + `build` exit 0
-- **提示词线（2026-07-04）**：净室系统提示词三变体 v1/v2/v3（`src/engine/prompts.ts`，`harnessPromptVariant` 开关）。
-  v2 = v1 补真实行为纪律；v3 = v2 补公开最佳实践缺口四技法（改后自检 / 反硬编码 / 何时委派 / 收尾范例）。
-  A/B 基准加**会真失败的硬任务** id 10/11（`verify(dir)` 动态 import 跑产物代码、反硬编码边界用例、清理前跑）。
-  测量纪律：v2 简单基准无可测收益 → 正确扣住没提拔；v1-vs-v3 真 API 探针待 dispatch（`prompt_ab` 可选 candidate=v3/tasks=10,11），
-  数字说话前不宣胜负。缓存 0% 已诊断为「前缀够不着 Haiku 2048 门槛、非 bug、不灌水」。组织级缓存红利设计留 host
-  （多层注入 proposal 档）、SDK 只承接 `segments` 分段 seam。整条线综述见
-  `Public-Info-Pool/Resource/repo-engineering/bpt-sdk-prompt-cache-milestone-20260704.md`
+  dispatch 输入。`pytest` 无涉、Node 侧 **`npx vitest run` 715 单测全绿（21 文件）**；`tsc` + `build` exit 0
+- **提示词线（2026-07-04 起，2026-07-05 v5 提为默认）**：系统提示词五变体 v1–v5（公开信息再现，`src/engine/prompts.ts`，`harnessPromptVariant` 开关）。
+  v2=v1 补真实行为纪律；v3=v2 补公开最佳实践四技法；v4=忠实再现官方主循环核心；**v5=全面忠实再现官方主循环**（Doing tasks/Tool use/
+  Executing actions with care/Communicating 四节，工具引用适配本 SDK、不引未提供工具，~3774 tok）。**v5 已提为 claude_code preset 默认**
+  （守密人 2026-07-05「2 模拟行为」+「目标是跟官方提示词一致」裁定）；v1–v4 保留为显式变体（要极简可 `harnessPromptVariant:'v1'`）。
+  - **⚠ A/B 测量 bug 翻案（2026-07-05，踩坑 #44）**：早前判「v2/v3/v4 无可测收益」**作废**——A/B harness 选 variant 却没设 `systemPrompt` preset，
+    variant 只在 preset 路径生效被静默忽略，两臂实际都跑极简默认。修复后 v1-vs-v5 真对照：**v5 ~3× 便宜**（$0.0089 vs $0.0272）、同正确（2/2）、略快，
+    真因缓存（v5 95% 命中 vs v1 0%）。**反直觉正解：更大更忠实的提示词跨过缓存门槛反而更省**。
+  - **缓存根因定论（受控探针实证）**：Haiku **有效**缓存门槛远高于名义 2048；~3.5k 精简前缀落「过名义门槛却小到不被真正归档」的**死区**（写≈0/读=0），
+    v5 ~3.7k / --big ~8k 舒服落**可靠缓存区**（每轮+跨 request 命中 6000-8800 tok，同官方 99% 同构）。**非代码 bug**（wire 落位正确/跨轮累加无误/大前缀同路径完美缓存）。灌水非解、真实大而共享前缀（org 分层）才是。
+  - A/B 基准 `tests/integration/ab-benchmark.mjs` 加**会真失败的硬任务** id 10/11（`verify(dir)` 动态 import 跑产物代码）；受控缓存探针 `tests/integration/cache-probe.mjs`（背靠背 N 次，per-turn 写/读，`--big` 隔离尺寸死区）。
+  提示词架构综述见 `Public-Info-Pool/Resource/repo-engineering/bpt-sdk-prompt-cache-milestone-20260704.md`；对照实证见 `Public-Info-Pool/Resource/data-diagnostics/bpt-sdk-comparison-baseline-20260705.md`（§4 翻案 + §5 对齐重跑）
+  - **vs-official 对齐重跑（run 28726339967，我方 v5 默认 vs 官方，提示词轴对齐）**：我方缓存从旧的 0%(短)/45%(长) **跳到 95-98%**、与官方 96-99% **打平**；成本差从旧的 ~8% **拉大到 ~3.6×**（$0.0533 vs $0.1918，我方省 72%，因官方每轮重读巨大缓存上下文 967,958 tok + 我方轮数更少 39 vs 55）；速度 **2.8× 保持**（40.6s vs 112.8s）；正确性 **11/11 vs 10/11**（官方 #11 反硬编码 33%，极可能无头 CLI 噪声、不宣「更准」）。守密人「跟官方一致」在行为层兑现：既模拟官方提示词与缓存经济学、又保住自研引擎结构性省钱提速
 - **Desktop UI 参考线（2026-07-04，07-05 r2 修订 + 路线草案收口）**：BPT Desktop 前端参考情报档
   （守密人转交 GPT-5.5 搜索梗概 + AnySearch 许可证逐项实锤 + UI 组件↔`SDKMessage` 流对接表）落
   `Public-Info-Pool/Resource/repo-engineering/bpt-desktop-ui-reference-20260704-r2.md`——
@@ -192,14 +197,17 @@
   + 同名 `-matrix-20260703.json`（146 行）
 - **两轴保真模型（关键认知，勿混淆两轴）**：
   - **表面完整度（SURFACE）**：可收敛，约 90%+——接口、类型、消息变体、工具/MCP/hooks 面照抄公开契约即可补齐
-  - **行为保真度（BEHAVIORAL）**：**结构性封顶**——官方系统提示词是专有的，干净室纪律禁止复制，
-    故 agent 循环的「转数 / 决策」层永远无法逐比特对齐。追平只谈 SURFACE，BEHAVIORAL 天花板不可逾越
+  - **行为保真度（BEHAVIORAL）**：**可逼近、残余主要由模型选择决定**（2026-07-04 定位反转）——放弃 clean-room 后，
+    官方提示词结构可经公开还原研读、按自有工具适配，此前「因拒看专有而永补不平」的结构性封顶**解除**；残余行为差的主导项
+    是 BPT 主权模型选择（换模型换手感），非提示词。追平官方逐版行为仍非北极星（体验主权在 BPT 自己）
 - **v0.3 头号交付**：**per-run 预算/效率仪表**（`result.metrics` = `SDKRunMetrics`：perTurn / perTool /
   cacheHitRatio / 模型用量 / 成本 / API 耗时）。回应守密人「整体效率低下会累积成巨大差别」之忧——
   把「效率」从不可见变成每轮可量。A/B 演示 harness：`examples/ab-metrics.mjs`（缓存开/关对照表）
 - **默认配置决策**：**提示词缓存默认开**（`provider.promptCaching !== false`，v0.3 翻转，多轮对话省 input 账单）
-- **干净室纪律（硬约束，PR 安全声明 + 防火墙纪律双重要求）**：**绝不**复制官方专有代码 / 系统提示词。
-  接口面对照公开文档实现，引擎自研。这也是 BEHAVIORAL 天花板的根因
+- **公开信息再现纪律（2026-07-04 守密人裁定，覆盖原「干净室硬约束」）**：定位从 clean-room 反转为**公开信息再现、明确署名**。
+  四条腿构建：公开文档 + 提示词还原（Piebald 等，公开 GitHub/MIT/逆向自公开分发 CLI）+ 自研引擎 + 参考其他开源 CC 还原项目。
+  **不变**：§1.1-HC 黑池防火墙、拒绝真正的内部未授权泄漏、不逐字大段克隆（工程卫生 + 版权 + 他们提示词是给他们工具调的、照抄反劣化）。
+  裁定见 `memory/decisions.md`；架构推断成果见 `Public-Info-Pool/Resource/repo-engineering/official-cc-prompt-architecture-inference-20260704.md`
 - **定位/战略**：`docs/POSITIONING.md`（兼容表面 / 独立引擎 / 钉死基线 0.3.199 / 选择性追踪 +
   四档效率齿轮；含可粘贴进 `decisions.md` 的决策条）
 - **文档索引**：`CONTEXT.md`（上下文）/ `docs/POSITIONING.md`（战略）/ `docs/COMPAT.md`（兼容面 + 毕业清单）/
@@ -221,7 +229,8 @@
   加阶段2（生成合法最小 PDF→模型 Read→成功即 API 接受 document 块），随 live-smoke workflow 手动
   dispatch 用 `secrets.ANTHROPIC_API_KEY` 跑。（同期并发合并 #385 surface-alignment：MCP resources /
   Grep offset·-o / bypass 联锁 / ModelInfo.value。）
-- **沙箱**：按 BPT 高开放权限信任模型判定 **N/A-by-design**（云沙箱在 BPT 内部场景不适用，守密人 2026-07-03 认可）
+- **沙箱**：**再现且默认开启**（守密人 2026-07-04「全做、一样默认开启」裁定，**更新** 2026-07-03「N/A-by-design」旧裁定）。
+  即 `bash-sandbox-*` 能力本体照官方再现、BPT 默认启用，与全做其余项一致
 
 ## 当前阶段
 
