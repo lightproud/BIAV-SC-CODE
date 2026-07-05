@@ -1,8 +1,8 @@
 {
   "date": "2026-07-06",
-  "archived_at": "2026-07-05T18:13:25.420189+00:00",
+  "archived_at": "2026-07-05T20:12:31.452254+00:00",
   "source": "steam",
-  "item_count": 1,
+  "item_count": 3,
   "items": [
     {
       "title": "[正面] Une très belle surprise ce jeu !\r\nLes personnages...",
@@ -22,6 +22,54 @@
         "playtime_forever": 2305,
         "votes_up": 0,
         "timestamp_created": 1783272796
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] ♥♥♥♥♥ где сиськи",
+      "summary": "♥♥♥♥♥ где сиськи",
+      "source": "steam_review",
+      "time": "2026-07-05T18:33:14+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199210627729/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199210627729",
+      "tags": [
+        "russian"
+      ],
+      "language": "russian",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 354,
+        "votes_up": 0,
+        "timestamp_created": 1783276394
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] I'm still quite early game but it's super fun once...",
+      "summary": "I'm still quite early game but it's super fun once you get past the terminolgy, and i like the gacha system compared to others",
+      "source": "steam_review",
+      "time": "2026-07-05T18:27:36+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199853888541/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199853888541",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 301,
+        "votes_up": 0,
+        "timestamp_created": 1783276056
       },
       "region": "global",
       "archive_subtype": "review",

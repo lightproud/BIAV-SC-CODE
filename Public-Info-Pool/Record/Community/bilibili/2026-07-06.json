@@ -1,8 +1,8 @@
 {
   "date": "2026-07-06",
-  "archived_at": "2026-07-05T18:13:25.308082+00:00",
+  "archived_at": "2026-07-05T20:12:31.354900+00:00",
   "source": "bilibili",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "title": "【FGOx忘却前夜】联动预告（伪）",
@@ -23,6 +23,29 @@
         "danmaku": 0
       },
       "media_url": "https://i0.hdslb.com/bfs/archive/d4206d9f42de6b921197805a79072cf987cfe94c.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "37分钟425，被冬夜羊演了……",
+      "summary": "",
+      "source": "bilibili",
+      "time": "2026-07-05T20:09:04+00:00",
+      "url": "https://www.bilibili.com/video/BV1HYT26QEwX",
+      "engagement": 1,
+      "is_hot": false,
+      "author": "路过的耄耋",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 1,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/7baa6ac60c9b9f5df2c20221f627797b7f7dcf85.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
