@@ -100,10 +100,18 @@ export type ContentBlock =
   | RedactedThinkingBlock
   | ToolUseBlock;
 
+/**
+ * A prompt-cache breakpoint. `ttl` selects the cache lifetime: omitted / '5m'
+ * is the default 5-minute ephemeral cache (1.25x write price); '1h' is the
+ * 1-hour cache (2x write price, GA — no beta header needed). Read price is
+ * 0.1x either way.
+ */
+export type CacheControlEphemeral = { type: 'ephemeral'; ttl?: '5m' | '1h' };
+
 export type TextBlockParam = {
   type: 'text';
   text: string;
-  cache_control?: { type: 'ephemeral' } | null;
+  cache_control?: CacheControlEphemeral | null;
 };
 
 export type ImageBlockParam = {
@@ -111,7 +119,7 @@ export type ImageBlockParam = {
   source:
     | { type: 'base64'; media_type: string; data: string }
     | { type: 'url'; url: string };
-  cache_control?: { type: 'ephemeral' } | null;
+  cache_control?: CacheControlEphemeral | null;
 };
 
 /**
@@ -130,7 +138,7 @@ export type DocumentBlockParam = {
     | { type: 'url'; url: string };
   title?: string;
   context?: string;
-  cache_control?: { type: 'ephemeral' } | null;
+  cache_control?: CacheControlEphemeral | null;
 };
 
 export type ToolUseBlockParam = {
@@ -145,7 +153,7 @@ export type ToolResultBlockParam = {
   tool_use_id: string;
   content?: string | Array<TextBlockParam | ImageBlockParam | DocumentBlockParam>;
   is_error?: boolean;
-  cache_control?: { type: 'ephemeral' } | null;
+  cache_control?: CacheControlEphemeral | null;
 };
 
 export type ThinkingBlockParam = {
@@ -212,7 +220,7 @@ export type APIToolDefinition = {
   description?: string;
   input_schema: JSONSchema;
   /** Prompt-cache breakpoint marker (set by the cache-control layer). */
-  cache_control?: { type: 'ephemeral' } | null;
+  cache_control?: CacheControlEphemeral | null;
 };
 
 // --- Streaming events (SSE) -------------------------------------------------
@@ -893,6 +901,15 @@ export type ProviderConfig = {
   maxOutputTokens?: number;
   /** Automatic prompt caching via cache_control breakpoints; default true. */
   promptCaching?: boolean;
+  /**
+   * Cache lifetime for the prompt-cache breakpoints this engine places.
+   * '5m' (default when omitted) is the 5-minute ephemeral cache; '1h' is the
+   * 1-hour cache (2x write price, GA). BPT-EXTENSION: the official Agent SDK
+   * exposes NO cache-TTL knob (its wrapped CLI decides internally); this
+   * direct-API engine lets the caller choose. No effect when promptCaching is
+   * false.
+   */
+  cacheTtl?: '5m' | '1h';
 };
 
 /**

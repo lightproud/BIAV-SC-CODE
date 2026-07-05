@@ -582,6 +582,7 @@ export async function* runAgentLoop(
     // cache-control is the outermost request shaper; it never mutates `request`.
     const outgoing = applyCacheControl(request, {
       enabled: cachingOn,
+      cacheTtl: config.cacheTtl,
       // Caller-authored segments already carry their own breakpoints; don't add
       // a message breakpoint too or the request could exceed the 4-cap.
       cacheMessages: callerBlocks === undefined,

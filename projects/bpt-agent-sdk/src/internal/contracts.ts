@@ -451,6 +451,9 @@ export type EngineConfig = {
   maxStructuredOutputRetries?: number;
   /** Automatic prompt caching (cache_control breakpoints). */
   promptCaching?: boolean;
+  /** Cache lifetime for the breakpoints this engine places ('5m' default, '1h'
+   *  for the 1-hour cache). BPT-EXTENSION; no effect when promptCaching false. */
+  cacheTtl?: '5m' | '1h';
   /** tool_use id of the spawning Agent call; stamped on this loop's messages
    *  so subagent messages thread. Root loop leaves it undefined -> null. */
   parentToolUseId?: string | null;

@@ -693,6 +693,9 @@ export function query(args: {
     // provider.promptCaching = false to disable (e.g. for very short sessions
     // where the cache-write premium is not amortized).
     promptCaching: options.provider?.promptCaching !== false,
+    // Cache TTL: undefined/'5m' -> 5-minute default; '1h' -> 1-hour cache
+    // (BPT-EXTENSION; the official SDK has no such knob).
+    cacheTtl: options.provider?.cacheTtl,
     includePartialMessages: options.includePartialMessages === true,
     sessionId: '', // resolved when the run starts
     cwd,
