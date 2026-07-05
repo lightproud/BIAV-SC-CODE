@@ -8,6 +8,19 @@ and adds one line here. A CI guard (`scripts/check-version-bump.mjs`) reds
 any src-changing merge that forgets. 0.6.1 and 0.6.2 below are retroactive
 labels for builds that shipped under a duplicated "0.6.0".
 
+## 0.6.5 — 2026-07-05
+
+- **fix (Windows)**: foreground Bash termination (timeout/abort) used the same
+  POSIX-only `process.kill(-pid)` process-group call as the background
+  KillShell bug — a no-op on Windows with the failure swallowed. Now routes
+  through planProcessKill (win32 -> taskkill /T /F). Found by the new guard,
+  not a fourth pilot report.
+- **test/guard**: posix-hazard static guard (`tests/posix-hazard-guard.test.ts`)
+  scans src/ for engine-code Windows hazards below the tool interface
+  (`process.kill(-pid)`, bare `spawn('bash'/'sh')`, hardcoded `/tmp`); an
+  unmarked hit reds CI. Legit platform-branched sites carry a `win-ok:` marker.
+  Machine prevention for the POSIX-first-Windows-afterthought defect class.
+
 ## 0.6.4 — 2026-07-05
 
 - **behavior/security (keeper ruling, BPT report #2)**: Read/Write/Edit no

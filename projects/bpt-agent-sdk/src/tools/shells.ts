@@ -91,7 +91,7 @@ export function createShellManager(debug: (msg: string) => void): ShellManager {
         const plan = planProcessKill(child.pid, sig);
         try {
           if (plan.kind === 'group') {
-            process.kill(-plan.pid, plan.signal as NodeJS.Signals);
+            process.kill(-plan.pid, plan.signal as NodeJS.Signals); // win-ok: posix branch of planProcessKill
           } else if (plan.kind === 'child') {
             child.kill(plan.signal as NodeJS.Signals);
           } else {
