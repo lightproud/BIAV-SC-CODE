@@ -12,7 +12,7 @@ import type {
   ToolResultPayload,
 } from '../internal/contracts.js';
 import { AbortError, isAbortError } from '../errors.js';
-import { formatCatN, looksBinary, resolveWithin } from './fsutil.js';
+import { formatCatN, looksBinary, resolveAbs } from './fsutil.js';
 import { EDIT_DESCRIPTION } from './descriptions.js';
 
 /** Context lines shown around the first edit site in the success snippet. */
@@ -113,11 +113,7 @@ export const editTool: BuiltinTool = {
         );
       }
 
-      const resolved = resolveWithin(ctx.cwd, ctx.additionalDirectories, filePath);
-      if (!resolved.ok) {
-        return errorResult(`Edit failed: ${resolved.reason}`);
-      }
-      const abs = resolved.abs;
+      const abs = resolveAbs(ctx.cwd, filePath);
 
       try {
         const st = await stat(abs);

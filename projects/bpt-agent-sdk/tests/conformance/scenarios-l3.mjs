@@ -208,12 +208,17 @@ export const L3_SCENARIOS = [
     ],
     steps: [
       {
+        // Since the keeper's BPT-#2 ruling (2026-07-05) removed the BPT-only
+        // path fence, Read reaches the outside file on BOTH arms - a plain
+        // CONTENT_MATCH. The former per-arm split (ours denied / official
+        // read) and its KD-L3-04 are retired.
         tool: 'Read',
-        crossCompare: false,
-        behavioralKd: 'KD-L3-04',
-        isError: { ours: true, official: false },
-        oursLocks: [/outside the allowed directories/],
-        officialLocks: [/outside-content-token/],
+        isError: false,
+        locks: [/outside-content-token/],
+        // Now that both arms actually READ the file, the normal Read
+        // formatting KD surfaces: official numbers a phantom trailing empty
+        // line for a file ending in '\n', ours drops it (KD-L3-18).
+        kd: ['KD-L3-18'],
       },
     ],
   },
@@ -974,50 +979,11 @@ export const L3_SCENARIOS = [
  * by the dual-arm semantic invariants above.
  */
 export const L3_SINGLE_ARM = [
-  {
-    id: 'L3-SA-READ-CONTAIN',
-    tool: 'Read',
-    reason:
-      'containment reason STRING is BPT policy surface (fsutil.resolveWithin); the official arm has no equivalent knob (its --add-dir feeds a different permission model). The behavioral split itself is dual-arm L3-READ-03.',
-    prompt: 'Read the outside file without a whitelist.',
-    needsOutsideDir: true,
-    outsideFixtureFiles: { 'f.txt': 'secret outside content\n' },
-    fixtureFiles: {},
-    buildScripts: (_cwd, ctx) => [
-      toolTurn(1, [{ name: 'Read', input: { file_path: join(ctx.outsideDir, 'f.txt') } }]),
-      { kind: 'sse', events: textReply('L3 SA CONTAIN DONE') },
-    ],
-    steps: [
-      {
-        tool: 'Read',
-        isError: true,
-        exact:
-          'Read failed: Path "<OUTSIDE>/f.txt" is outside the allowed directories ("<CWD>").',
-      },
-    ],
-  },
-  {
-    id: 'L3-SA-READ-ADDDIR',
-    tool: 'Read',
-    reason:
-      'additionalDirectories whitelist flip - same policy surface as above; locks that the SAME path succeeds once whitelisted.',
-    prompt: 'Read the outside file with the directory whitelisted.',
-    needsOutsideDir: true,
-    outsideFixtureFiles: { 'f.txt': 'secret outside content\n' },
-    fixtureFiles: {},
-    buildOptions: (_cwd, ctx) => ({ additionalDirectories: [ctx.outsideDir] }),
-    buildScripts: (_cwd, ctx) => [
-      toolTurn(1, [{ name: 'Read', input: { file_path: join(ctx.outsideDir, 'f.txt') } }]),
-      { kind: 'sse', events: textReply('L3 SA ADDDIR DONE') },
-    ],
-    steps: [
-      {
-        tool: 'Read',
-        isError: false,
-        exact: '1|secret outside content',
-      },
-    ],
-  },
+  // L3-SA-READ-CONTAIN and L3-SA-READ-ADDDIR RETIRED (2026-07-05, keeper
+  // ruling on BPT #2): the BPT-only path fence they locked was removed
+  // (fsutil resolveWithin -> resolveAbs), aligning Read/Write/Edit with the
+  // official permission-gate model. Read now reaches outside cwd on both arms
+  // (dual-arm L3-READ-03 is a plain CONTENT_MATCH; KD-L3-04 retired).
   {
     id: 'L3-SA-WRITE-REWIND',
     tool: 'Write',

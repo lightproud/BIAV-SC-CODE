@@ -338,8 +338,12 @@
   （退出处理器据实定状态：kill 请求且非 0 退出→killed、退出 0→completed 即便请求过 kill、崩溃→failed）；`kill()` 只记
   `killRequested` 意图不再强改状态；空 catch 改 debug 记录（Windows 失败不再隐身）。10 条注入式单测（Linux 上覆盖 win32 分支
   + 6 条状态诚实矩阵 + 迟到 kill 不改写 completed 的集成回归）。版本 bump **0.6.3** + CHANGELOG。`npx vitest run` **1125 全绿**。
-  **另：BPT 报权限口子不一致（#2，Read/Write/Edit 有 resolveWithin 围栏、Grep/Glob/Bash 无）待守密人裁定设计意图**（关键洞见：
-  Bash 在场时路径围栏本就非硬安全边界）——已提问，未动手。
+  **BPT #2 权限口子已裁定并落地（2026-07-05，守密人裁定「Read/Write/Edit 过度保守、放宽」）**：移除 Read/Write/Edit 的
+  BPT 自有硬围栏（`fsutil.resolveWithin`→`resolveAbs` 只解析不设栏），向官方权限门模型看齐——路径访问由 permissionMode 门控、
+  非第二道文件系统栅栏（该围栏 Grep/Glob/Bash 本就没有、Bash 在场时更非硬边界，是安全错觉）。`additionalDirectories` 保留真实
+  作用（sandbox writablePaths）。**顺带消除一个 KD**：L3-READ-03 现双臂都读到仓外文件 → CONTENT_MATCH、**KD-L3-04 退役**（残余
+  只剩既有 Read 尾换行 KD-L3-18）；两条单臂围栏锁 L3-SA-READ-CONTAIN/ADDDIR 退役；5 条 fs 单测改为「无栏、官方对齐」正向断言。
+  版本 bump **0.6.4** + CHANGELOG + COMPAT additionalDirectories 行更新。棘轮基线 --update 锁入。`npx vitest run` **1125 全绿**。
   **版本纪律已立（2026-07-05，黑池「三拨构建同名 0.6.0」诉求）**：版本 bump 至 **0.6.2**（0.6.1/0.6.2 为对已发货
   三拨构建的追溯标号，台账见新增 `CHANGELOG.md`——随 npm pack tarball 发货，黑池箱内可读）；纪律 = 改发货运行时必 bump
   （修复 patch / 新能力 minor）+ CHANGELOG 一行；**CI 守卫** `scripts/check-version-bump.mjs`（bpt-agent-sdk.yml test job，

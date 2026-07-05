@@ -607,63 +607,46 @@ describe('Edit tool', () => {
 });
 
 // ---------------------------------------------------------------------------
-// Containment (resolveWithin behavior through the tools)
+// No path fence (official-aligned; keeper ruling on BPT report #2, 2026-07-05)
+// Read/Write/Edit reach any path the process can; the permission gate - not a
+// filesystem fence - is the access control (the v0.1 cwd fence was removed:
+// BPT-specific, inconsistent with Grep/Glob/Bash, and never a real boundary
+// with Bash present). additionalDirectories keeps its sandbox-writablePaths role.
 // ---------------------------------------------------------------------------
 
-describe('path containment', () => {
-  it('rejects absolute paths outside cwd for Read, Write and Edit, naming allowed roots', async () => {
+describe('no path fence (official-aligned)', () => {
+  it('reads a file OUTSIDE cwd (was denied under the old fence)', async () => {
     const outside = await makeSandbox('bpt-fs-outside-');
     const target = path.join(outside, 'secret.txt');
-    await writeFile(target, 'secret\n', 'utf8');
-    const ctx = makeCtx(sandbox);
+    await writeFile(target, 'outside content\n', 'utf8');
 
-    const readRes = await readTool.execute({ file_path: target }, ctx);
-    const writeRes = await writeTool.execute(
-      { file_path: target, content: 'x' },
-      ctx,
-    );
-    const editRes = await editTool.execute(
-      { file_path: target, old_string: 'secret', new_string: 'public' },
-      ctx,
-    );
-
-    for (const res of [readRes, writeRes, editRes]) {
-      expect(res.isError).toBe(true);
-      const content = String(res.content);
-      expect(content).toMatch(/outside the allowed directories/i);
-      // The deny message names the allowed roots (at least the cwd).
-      expect(content).toContain(sandbox);
-    }
-    // The outside file must be untouched by the denied Write/Edit.
-    expect(await readFile(target, 'utf8')).toBe('secret\n');
+    const readRes = await readTool.execute({ file_path: target }, makeCtx(sandbox));
+    expect(readRes.isError).toBeFalsy();
+    expect(String(readRes.content)).toContain('outside content');
   });
 
-  it('allows access inside an additionalDirectories entry', async () => {
-    const extra = await makeSandbox('bpt-fs-extra-');
-    const ctx = makeCtx(sandbox, { additionalDirectories: [extra] });
-    const target = path.join(extra, 'shared.txt');
+  it('writes and edits OUTSIDE cwd succeed (no "outside the allowed directories" error)', async () => {
+    const outside = await makeSandbox('bpt-fs-outside2-');
+    const target = path.join(outside, 'out.txt');
+    const ctx = makeCtx(sandbox);
 
-    const writeRes = await writeTool.execute(
-      { file_path: target, content: 'shared data' },
-      ctx,
-    );
+    const writeRes = await writeTool.execute({ file_path: target, content: 'hello outside' }, ctx);
     expect(writeRes.isError).toBeFalsy();
-
-    const readRes = await readTool.execute({ file_path: target }, ctx);
-    expect(readRes.isError).toBeFalsy();
-    expect(readRes.content).toBe(catLine(1, 'shared data'));
+    expect(await readFile(target, 'utf8')).toBe('hello outside');
 
     const editRes = await editTool.execute(
-      { file_path: target, old_string: 'shared', new_string: 'common' },
+      { file_path: target, old_string: 'hello', new_string: 'bye' },
       ctx,
     );
     expect(editRes.isError).toBeFalsy();
-    expect(await readFile(target, 'utf8')).toBe('common data');
+    expect(await readFile(target, 'utf8')).toBe('bye outside');
+
+    for (const res of [writeRes, editRes, await readTool.execute({ file_path: target }, ctx)]) {
+      expect(String(res.content)).not.toMatch(/outside the allowed directories/i);
+    }
   });
 
-  it('enforces path.sep boundaries: a sibling dir sharing a name prefix is NOT contained', async () => {
-    // cwd = <root>/proj ; sibling = <root>/projX — plain startsWith on the
-    // root string would wrongly admit the sibling.
+  it('a sibling dir sharing a name prefix is reachable too (no fence to trip on)', async () => {
     const root = await makeSandbox('bpt-fs-prefix-');
     const cwd = path.join(root, 'proj');
     const sibling = path.join(root, 'projX');
@@ -671,51 +654,31 @@ describe('path containment', () => {
     await mkdir(sibling);
     const target = path.join(sibling, 'file.txt');
     await writeFile(target, 'sibling content\n', 'utf8');
-    const ctx = makeCtx(cwd);
 
-    const readRes = await readTool.execute({ file_path: target }, ctx);
-    expect(readRes.isError).toBe(true);
-    expect(String(readRes.content)).toMatch(/outside the allowed directories/i);
-
-    const writeRes = await writeTool.execute(
-      { file_path: target, content: 'clobber' },
-      ctx,
-    );
-    expect(writeRes.isError).toBe(true);
-    expect(await readFile(target, 'utf8')).toBe('sibling content\n');
+    const readRes = await readTool.execute({ file_path: target }, makeCtx(cwd));
+    expect(readRes.isError).toBeFalsy();
+    expect(String(readRes.content)).toContain('sibling content');
   });
 
-  it('boundary check also applies to additionalDirectories entries', async () => {
-    const root = await makeSandbox('bpt-fs-prefix2-');
-    const allowed = path.join(root, 'data');
-    const lookalike = path.join(root, 'database');
-    await mkdir(allowed);
-    await mkdir(lookalike);
-    await writeFile(path.join(lookalike, 'f.txt'), 'x\n', 'utf8');
-    const ctx = makeCtx(sandbox, { additionalDirectories: [allowed] });
-
-    const res = await readTool.execute(
-      { file_path: path.join(lookalike, 'f.txt') },
-      ctx,
-    );
-
-    expect(res.isError).toBe(true);
-    expect(String(res.content)).toMatch(/outside the allowed directories/i);
-  });
-
-  it('relative traversal escaping cwd is rejected', async () => {
+  it('relative traversal escaping cwd resolves and succeeds', async () => {
     const outside = await makeSandbox('bpt-fs-escape-');
     const rel = path.relative(sandbox, path.join(outside, 'esc.txt'));
-    // Sanity: the relative path really escapes the sandbox.
-    expect(rel.startsWith('..')).toBe(true);
+    expect(rel.startsWith('..')).toBe(true); // sanity: really escapes
 
-    const res = await writeTool.execute(
-      { file_path: rel, content: 'escaped' },
-      makeCtx(sandbox),
-    );
+    const res = await writeTool.execute({ file_path: rel, content: 'escaped' }, makeCtx(sandbox));
+    expect(res.isError).toBeFalsy();
+    expect(await readFile(path.join(outside, 'esc.txt'), 'utf8')).toBe('escaped');
+  });
 
-    expect(res.isError).toBe(true);
-    expect(String(res.content)).toMatch(/outside the allowed directories/i);
+  it('additionalDirectories access still works (its surviving role is sandbox writablePaths)', async () => {
+    const extra = await makeSandbox('bpt-fs-extra-');
+    const ctx = makeCtx(sandbox, { additionalDirectories: [extra] });
+    const target = path.join(extra, 'shared.txt');
+
+    const writeRes = await writeTool.execute({ file_path: target, content: 'shared data' }, ctx);
+    expect(writeRes.isError).toBeFalsy();
+    const readRes = await readTool.execute({ file_path: target }, ctx);
+    expect(readRes.content).toBe(catLine(1, 'shared data'));
   });
 });
 

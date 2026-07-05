@@ -142,11 +142,10 @@ export const KNOWN_TOOL_DIVERGENCES = [
       /(does not exist|no such file|not found)/i.test(o) &&
       /^Read failed: file does not exist:/m.test(u),
   },
-  {
-    id: 'KD-L3-04',
-    tool: 'Read',
-    note: 'containment policy (behavioral): ours refuses paths outside cwd + additionalDirectories (fsutil.resolveWithin), the official arm reads an outside-cwd file under an allowedTools rule. Encoded as per-arm expectations in L3-READ-03.',
-  },
+  // KD-L3-04 RETIRED (2026-07-05, keeper ruling on BPT #2): the BPT-only path
+  // fence was removed (resolveWithin -> resolveAbs), so Read reaches an
+  // outside-cwd file on BOTH arms - L3-READ-03 is now a plain CONTENT_MATCH,
+  // no per-arm split. Id kept out of circulation.
   {
     id: 'KD-L3-05',
     tool: 'Write',
