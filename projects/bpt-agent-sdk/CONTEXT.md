@@ -123,7 +123,9 @@ shell（BashOutput 增量读 + 按行 filter / KillShell 击杀，进程组 SIGT
 - **提示词装配层 Track B（守密人 2026-07-05 裁定「先设计落档、再实现 Track B」，进行中）**：设计档 `Public-Info-Pool/Resource/proposal/bpt-prompt-assembly-layer-design-20260705.md`（五层模型 + build-from-archive + 剔除清单）。
   **Phase 0.5 已落**：修 R1——v5/v3 无条件引用 Agent 工具，但 Agent 仅在配置 subagents 时注册（`query.ts:498`）；现每条工具子句 gate 在该工具在场，红线测试锁定。
   **Phase 1a 已落**：main-loop 从硬编码 `defaultHarnessStableV5` 迁入**片段库**（`src/engine/prompt-fragments.ts`，每片带 id+archive slug provenance+faithful 标+tool gate）+ **装配器**（`src/engine/prompt-assembler.ts` `assembleMainLoop`）；v5 变薄封装；**字节金标锁定**（`tests/fixtures/v5-mainloop-golden.json` 四工具集，装配器逐字节复现）。
-  **待续 Track B**：build-from-archive 校验器（片段对上游还原逐字节对账、漂移即 CI 红）/ 工具描述面迁入片段库 / 子代理 + 生成器面（G6）。
+  **corpus-sync 校验器已落**：每 faithful 片段对上游归档逐锚点对账、漂移即 CI 报红（21 faithful 全过；provenance 曾乐观标注、已按内容匹配诚实校正为 21 faithful / 11 adapted）。
+  **各面 provenance + corpus-sync 已覆盖 SDK 实用 4 surface**：① main-loop（片段库+装配器+金标）② tool-descriptions（`descriptions.ts` `TOOL_DESCRIPTION_PROVENANCE`）③ general-purpose 子代理（`agents.ts`，净室→忠实复现官方 strengths+guidelines）④ compaction 摘要器（`compaction.ts` `SUMMARIZER_SYSTEM`，净室→忠实复现官方 5 节续接摘要）。
+  **范围边界（红线）**：归档剩的生成器/分类器（commit-msg/session-title/branch/bash-前缀检测/后台状态分类器/auto-mode）**属 SDK 未发货功能，不复现**（不得描述不存在的能力）。**待续（可选）**：build-from-archive 生成器（现有校验器已达「保真+抗漂移」核心，生成器为进一步自动化）。
 - **已落**：v4/v5 官方主循环提示词忠实再现（`harnessPromptVariant`，**v5 全面再现四节、已提为 claude_code preset 默认**，见下「提示词默认提升」）
   + Bash 命令分解权限（安全，`decomposeBashCommand`）+ SSE 空闲看门狗（`streamIdleTimeoutMs`，默认 120s/0 关）。
 - **提示词默认提升 v1→v5（2026-07-05，守密人「2 模拟行为」+「目标是跟官方提示词一致」裁定，已落地）**：
