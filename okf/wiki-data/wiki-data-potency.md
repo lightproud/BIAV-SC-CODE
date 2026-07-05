@@ -4,7 +4,7 @@ title: "potency"
 description: "AwakerPotency.lua (runtime memory extraction) · total_potencies=1035 · 生成 2026-04-25"
 resource: "/projects/wiki/data/processed/potency.json"
 tags: ["data_layer:curated", "unpacked-bootstrap", "domain:gameplay"]
-timestamp: "2026-07-04"
+timestamp: "2026-07-05"
 ---
 
 # 指针概念
