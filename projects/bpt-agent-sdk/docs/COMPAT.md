@@ -111,7 +111,7 @@ SDK implements the agent loop directly against the public Messages API:
 |---|---|---|
 | `abortController` | FULL | |
 | `additionalDirectories` | FULL | fs tools + additionalDirectories containment |
-| `agents` | ACCEPTED | subagents land in v0.2 |
+| `agents` | PARTIAL | executed since v0.2 (subagent runtime); the delegation tool is named `Agent` here vs official `Task`, and official 2.1.201 delegation made 4 POSTs vs our deterministic parent+child+parent 3 (conformance run-l2 s13-agents-task, KD-11, 2026-07-05) |
 | `allowedTools` / `disallowedTools` | FULL | `Tool(spec)` prefix rules + `mcp__srv__*` (exact server match) + `*` / `mcp__*` globs (v0.4); bare-name `disallowedTools` removes the tool definition from the request; plan mode never auto-approves writes via an allow rule; rewritten inputs re-checked against deny rules |
 | `canUseTool` | FULL | invoked on prompt-fallthrough with `signal`/`suggestions`/`requestId`/`toolUseID`; `updatedInput`/`updatedPermissions` honored (incl. hook-`ask` rewrite); `null` return = skip (app resolves out of band) |
 | `continue` | PARTIAL | resumes latest session from this SDK's store |
@@ -121,19 +121,19 @@ SDK implements the agent loop directly against the public Messages API:
 | `forkSession` | FULL | |
 | `hooks` | PARTIAL | see hook table |
 | `includePartialMessages` | FULL | raw stream events as `stream_event` |
-| `maxBudgetUsd` | FULL | based on estimated cost |
+| `maxBudgetUsd` | PARTIAL | based on estimated cost; the stop lands AFTER the in-flight turn's tools complete (official 2.1.201 aborts the turn before executing its tools - same `error_max_budget_usd` subtype and POST count; conformance run-l2 s12-max-budget engine finding, 2026-07-05) |
 | `maxThinkingTokens` / `thinking` | PARTIAL | `thinking.type:'enabled'` maps to the Messages API `thinking` (budget clamped below `max_tokens`); `maxThinkingTokens` alone is only a budget fallback and sends no thinking param on its own; fields are `budget_tokens`/`budget`, not the official `budgetTokens` |
 | `maxTurns` | FULL | |
 | `mcpServers` | PARTIAL | stdio/http/sdk FULL; `sse` legacy transport UNSUPPORTED |
 | `model` | FULL | default `ANTHROPIC_MODEL` env or `claude-sonnet-4-5` |
 | `permissionMode` | PARTIAL | `default`/`acceptEdits`/`bypassPermissions`/`plan`/`dontAsk`; `auto` (classifier) not offered. `bypassPermissions` requires the `allowDangerouslySkipPermissions` interlock (below) |
-| `allowDangerouslySkipPermissions` | FULL | safety interlock: `bypassPermissions` (initial or via `setPermissionMode`) throws `ConfigurationError` unless this is `true` |
+| `allowDangerouslySkipPermissions` | FULL | safety interlock: `bypassPermissions` (initial or via `setPermissionMode`) throws `ConfigurationError` unless this is `true`. BPT-only strictness: official 0.3.199/2.1.201 does NOT enforce the interlock live - it proceeds to the model without the flag (conformance run-l2 s6-bypass-interlock-refusal, 2026-07-05) |
 | `persistSession` / `sessionId` / `resume` | FULL | JSONL store |
 | `provider` | FULL | **BPT extension** — direct-API connection settings |
 | `settingSources` | PARTIAL | loads CLAUDE.md / AGENTS.md ('project'/'local'/'user'); skills/plugins not loaded |
 | `includeEnvironmentContext` | FULL | **BPT extension** — inject official-style `<env>` block (default true on the preset) |
 | `stderr` | PARTIAL | receives debug log lines (no subprocess stderr exists) |
-| `strictMcpConfig` | FULL | trivially: only options servers are ever used |
+| `strictMcpConfig` | ACCEPTED | typed but consulted nowhere in src; the old "only options servers are ever used" rationale is stale since v0.5 `settingSources` can load `.mcp.json` servers, and no strict/lax fork exists to lock (conformance-l2-locks reconciliation, 2026-07-05) |
 | `systemPrompt` | PARTIAL | preset `claude_code` maps to this SDK's own harness prompt (+`append`); **BPT extension** `{ type: 'segments', segments: [{text, cache?}] }` forwards caller-composed blocks verbatim with per-segment cache breakpoints (the generic seam for host prompt layering — up to 3 cached system segments; message-caching off in this path). The host owns which layers/order/trust; the engine only places the wire breakpoints |
 | `tools` | PARTIAL | string[] filters built-ins; preset = all built-ins |
 | `betas` | FULL | forwarded as `anthropic-beta` header |
@@ -146,11 +146,11 @@ SDK implements the agent loop directly against the public Messages API:
 | Tool | Tier | Notes |
 |---|---|---|
 | Read | PARTIAL | text files (cat -n) + images (PNG/JPEG/GIF/WebP → image block) + PDF (→ base64 `document` block; the API's handle-tool-calls docs allow `document` inside tool_result, though the base64 source there is supported-but-not-explicitly-demonstrated); all magic-byte sniffed (task #17); notebooks not rendered; oversized files (>50MB) rejected with a Grep hint rather than buffered |
-| Write / Edit | FULL | same input field names (`file_path`, `old_string`, …) |
+| Write / Edit | PARTIAL | same input field names (`file_path`, `old_string`, …); official 2.1.201 enforces a read-before-write gate (a bare Write over an existing un-read file errors and leaves the file untouched) that this SDK does not - ours overwrites (conformance run-l3 L3-WRITE-02, KD-L3-06, 2026-07-05); success/error wording also differs (KD-L3-05/07/08) |
 | Bash | PARTIAL | v0.5: `cd` + exported env persist across calls (state-file replay — functions/aliases/unexported vars do NOT persist; not a long-lived shell process) and `run_in_background` launches a detached shell whose id feeds BashOutput/KillShell. Still no sandboxing; foreground runs in its own process group (timeout/abort reap the whole group) |
-| BashOutput | FULL | v0.5: incremental reads (new output since last call) + status/exit code; optional per-line regex `filter`; read-only (auto-approved, parallel-group eligible) |
-| KillShell | FULL | v0.5: SIGTERM then SIGKILL escalation on the background shell's process group |
-| Glob | FULL | fast-glob, mtime-sorted |
+| BashOutput | FULL | v0.5: incremental reads (new output since last call) + status/exit code; optional per-line regex `filter`; read-only (auto-approved, parallel-group eligible). FULL is vs the DOCUMENTED SDK lifecycle: live official 2.1.201 moved backgrounding to a task-file model and its own BashOutput answers "No task found" for the id its Bash advertised, so no official-arm parity evidence exists (conformance run-l3 L3-BG-01, KD-L3-19, 2026-07-05) |
+| KillShell | FULL | v0.5: SIGTERM then SIGKILL escalation on the background shell's process group. Same official-arm caveat as BashOutput (run-l3 L3-BG-01, KD-L3-19) |
+| Glob | PARTIAL | fast-glob, mtime-sorted newest-first; official 2.1.201 emitted ASCENDING order under ascending-utimes pins, so ordering parity with the live engine is not established - path sets agree (conformance run-l3 L3-GLOB-01, KD-L3-20, 2026-07-05) |
 | Grep | PARTIAL | pure-JS regex engine (no ripgrep binary); large-repo perf caveat |
 | WebFetch / WebSearch / Task / TodoWrite | see notes | WebFetch/WebSearch/TodoWrite registered in v0.2; Task is the Agent tool |
 | NotebookEdit / MultiEdit | UNSUPPORTED | deliberately untracked (BPT has no notebook surface; MultiEdit retired upstream) |
