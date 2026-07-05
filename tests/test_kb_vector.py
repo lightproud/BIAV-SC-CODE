@@ -100,5 +100,62 @@ class TestGracefulDegrade(unittest.TestCase):
         self.assertIn("fallback", res)  # 指引调用方转 kb_search 白盒回退
 
 
+class TestWriteDeterminism(unittest.TestCase):
+    """同 rows 两次写出必须字节相同——否则索引入 git 会每次 CI 平白 churn。"""
+
+    def test_same_rows_byte_identical(self):
+        import tempfile
+        vecs = kv.embed_stub(["one two", "three four", "five six"])
+        items = [{"ref": f"s:{i}", "source": "discord", "date": f"d{i}",
+                  "preview": p, "vec": v}
+                 for i, (p, v) in enumerate(zip(["a", "b", "c"], vecs))]
+        meta = {"backend": "stub", "model": "stub", "dim": kv._STUB_DIM,
+                "count": 3, "data_layer": "full_archive"}
+        with tempfile.TemporaryDirectory() as d:
+            p1, p2 = Path(d) / "a.gz", Path(d) / "b.gz"
+            kv.write_index(p1, items, meta)
+            kv.write_index(p2, items, meta)
+            self.assertEqual(p1.read_bytes(), p2.read_bytes())
+
+
+class TestQueryEmbedDegrade(unittest.TestCase):
+    """查询嵌入失败（运行时无 voyageai 包 / 无 VOYAGE_API_KEY）须就地降级、不抛穿。
+
+    这是「有真 voyage 索引 + 运行时无 key」的真实降级场景——脊柱托底依赖此处
+    不把异常穿透（§八 8.3）。用 monkeypatch 强制 embed 抛异常，确定性、零网络。
+    """
+
+    def _voyage_meta_index(self, path):
+        # 模拟 CI 建的 voyage-backed 索引（meta.backend='voyage'），vec 用桩填充。
+        vecs = kv.embed_stub(["msg one", "msg two"])
+        items = [{"ref": f"discord:{i}", "source": "discord", "date": f"2026-01-0{i}",
+                  "preview": t, "vec": v}
+                 for i, (t, v) in enumerate(zip(["msg one", "msg two"], vecs), 1)]
+        kv.write_index(path, items, {"backend": "voyage", "model": "voyage-3-lite",
+                                     "dim": kv._STUB_DIM, "count": 2,
+                                     "data_layer": "full_archive"})
+        kv.load_index.cache_clear()
+
+    def test_embed_failure_degrades_not_raises(self):
+        import tempfile
+        orig = kv.embed
+        try:
+            def boom(*a, **k):
+                raise ImportError("No module named 'voyageai'")
+            kv.embed = boom
+            with tempfile.TemporaryDirectory() as d:
+                p = Path(d) / "vec.json.gz"
+                self._voyage_meta_index(p)
+                # 索引后端=voyage → q_backend 默认取 meta 'voyage' → embed 抛 → 须降级
+                res = kv.search("任何查询", path=str(p))
+                self.assertTrue(res["degraded"])
+                self.assertEqual(res["results"], [])
+                self.assertIn("voyageai", res["reason"])
+                self.assertIn("VOYAGE_API_KEY", res["reason"])
+        finally:
+            kv.embed = orig
+            kv.load_index.cache_clear()
+
+
 if __name__ == "__main__":
     unittest.main()
