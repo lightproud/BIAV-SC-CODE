@@ -9,16 +9,22 @@
  * SCOPE: only the members whose tool this SDK actually ships are defined
  * (Agent, AskUserQuestion, Bash, Edit, Read, Write, Glob, Grep,
  * ListMcpResourcesTool, ReadMcpResourceTool, TaskCreate, TaskGet, TaskList,
- * TaskUpdate, TodoWrite, WebFetch, WebSearch, and — B4b batch — Monitor,
- * ExitPlanMode, EnterWorktree). TodoWrite ships as the legacy
- * task surface behind CLAUDE_CODE_ENABLE_TASKS=0 (official 0.3.142 semantics;
- * see src/tools/index.ts), so both its types and the Task quartet's are kept.
+ * TaskUpdate, TodoWrite, WebFetch, WebSearch, — B4b batch — Monitor,
+ * ExitPlanMode, EnterWorktree, and — B4c batch — Workflow). TodoWrite ships
+ * as the legacy task surface behind CLAUDE_CODE_ENABLE_TASKS=0 (official
+ * 0.3.142 semantics; see src/tools/index.ts), so both its types and the Task
+ * quartet's are kept.
  * MonitorInput keeps the official `ws` member VERBATIM even though the shipped
  * tool supports only the `command` source (wire type over runtime subset —
  * same precedent as FileReadInput.pages; a `ws` call fails with an explicit
  * error, see src/tools/monitor.ts).
+ * WorkflowOutput likewise keeps the official async-launch member VERBATIM
+ * (status "async_launched" / taskId / transcriptDir) even though the shipped
+ * tool runs the workflow SYNCHRONOUSLY inside the tool call and returns the
+ * consolidated result directly (wire type over runtime subset; the runtime
+ * adaptation is documented in src/tools/workflow.ts).
  * Official members for tools this SDK does not ship (NotebookEdit,
- * Workflow, TaskStop, TaskOutput, the
+ * TaskStop, TaskOutput, the
  * Subscribe/Unsubscribe pairs, McpInput) are intentionally NOT fabricated, so
  * the two unions below are shipped-subset views of the official 27-input /
  * 22-output unions. The legacy BashOutput/KillShell shell tools have no
@@ -207,6 +213,18 @@ export type WebSearchInput = {
 };
 
 /**
+ * Input for the Workflow tool. Official: at least one of `script`, `name`, or
+ * `scriptPath` is required; `scriptPath` takes precedence over the other two.
+ */
+export type WorkflowInput = {
+  script?: string;
+  name?: string;
+  scriptPath?: string;
+  args?: unknown;
+  resumeFromRunId?: string;
+};
+
+/**
  * Union of the tool input types this SDK ships (official export name;
  * shipped-subset of the official 27-member union - see module header).
  */
@@ -230,7 +248,8 @@ export type ToolInputSchemas =
   | TaskUpdateInput
   | TodoWriteInput
   | WebFetchInput
-  | WebSearchInput;
+  | WebSearchInput
+  | WorkflowInput;
 
 // ---------------------------------------------------------------------------
 // Tool output types
@@ -551,6 +570,22 @@ export type WebSearchOutput = {
 };
 
 /**
+ * Output of the Workflow tool (official member VERBATIM). The official tool
+ * launches in the background; this SDK's runtime adaptation runs the workflow
+ * synchronously and returns the consolidated result in the tool-result text
+ * (see src/tools/workflow.ts) — the wire type is kept official regardless.
+ */
+export type WorkflowOutput = {
+  status: 'async_launched';
+  taskId: string;
+  runId?: string;
+  summary?: string;
+  transcriptDir?: string;
+  scriptPath?: string;
+  error?: string;
+};
+
+/**
  * Union of the tool output types this SDK ships (official export name;
  * shipped-subset of the official 22-member union - see module header).
  */
@@ -574,4 +609,5 @@ export type ToolOutputSchemas =
   | TaskUpdateOutput
   | TodoWriteOutput
   | WebFetchOutput
-  | WebSearchOutput;
+  | WebSearchOutput
+  | WorkflowOutput;

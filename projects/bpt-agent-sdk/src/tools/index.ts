@@ -15,6 +15,12 @@
  * monitor.ts); ExitPlanMode flips the plan permission mode via the optional
  * ToolContext.permissionGate bridge (see exitplanmode.ts); EnterWorktree
  * creates/enters git worktrees via src/internal/worktree.ts.
+ *
+ * B4c batch: Workflow is registered by default (in the official built-in
+ * toolset and input/output unions as of Agent SDK 0.3.149). It runs workflow
+ * scripts synchronously over the subagent runtime (agent() needs
+ * ctx.spawnSubagent, wired inside query(); a zero-agent script still runs
+ * bare). See src/tools/workflow.ts + src/internal/workflow-engine.ts.
  */
 
 import type { BuiltinTool } from '../internal/contracts.js';
@@ -35,6 +41,7 @@ import { bashOutputTool, killShellTool } from './shells.js';
 import { monitorTool } from './monitor.js';
 import { exitPlanModeTool } from './exitplanmode.js';
 import { enterWorktreeTool } from './enterworktree.js';
+import { workflowTool } from './workflow.js';
 
 /** Fresh Map per call so callers can filter without affecting others.
  *  When a sandbox is active (G-SANDBOX) the Bash tool is built with its
@@ -67,6 +74,7 @@ export function createBuiltinTools(cfg?: {
     readMcpResourceTool,
     exitPlanModeTool,
     enterWorktreeTool,
+    workflowTool,
   ];
   return new Map(tools.map((t) => [t.name, t]));
 }

@@ -65,6 +65,8 @@ import type {
   WebFetchOutput,
   WebSearchInput,
   WebSearchOutput,
+  WorkflowInput,
+  WorkflowOutput,
 } from '../src/index.js';
 
 // ---------------------------------------------------------------------------
@@ -177,6 +179,14 @@ const webSearchInput = {
   blocked_domains: [],
 } satisfies WebSearchInput;
 
+// B4c: Workflow input, official shape verbatim (all five fields optional at
+// the type level; "at least one of script/name/scriptPath" is runtime-checked).
+const workflowInput = {
+  script: "export const meta = { name: 'wf', description: 'd' }\nreturn 1",
+  args: ['a.ts', 'b.ts'],
+  resumeFromRunId: 'wf-run-1',
+} satisfies WorkflowInput;
+
 // Every member is assignable into the union.
 const inputUnionSamples: ToolInputSchemas[] = [
   agentInput,
@@ -196,6 +206,7 @@ const inputUnionSamples: ToolInputSchemas[] = [
   todoInput,
   webFetchInput,
   webSearchInput,
+  workflowInput,
 ];
 
 // @ts-expect-error GrepInput requires `pattern`.
@@ -375,6 +386,20 @@ const webSearchOutput = {
   durationSeconds: 1.2,
 } satisfies WebSearchOutput;
 
+// B4c: Workflow output, official async-launch member VERBATIM (wire type over
+// runtime subset — the shipped tool runs synchronously; see src/tool-types.ts).
+const workflowOutput = {
+  status: 'async_launched',
+  taskId: 'task_1',
+  runId: 'wf-run-1',
+  summary: 'Find flaky tests and propose fixes',
+  scriptPath: '/tmp/workflow.mjs',
+} satisfies WorkflowOutput;
+
+// @ts-expect-error WorkflowOutput.status is the official literal, not free text.
+const badWorkflowOutput: WorkflowOutput = { status: 'completed', taskId: 'task_1' };
+void badWorkflowOutput;
+
 const outputUnionSamples: ToolOutputSchemas[] = [
   agentOutput,
   agentAsyncOutput,
@@ -396,6 +421,7 @@ const outputUnionSamples: ToolOutputSchemas[] = [
   todoOutput,
   webFetchOutput,
   webSearchOutput,
+  workflowOutput,
 ];
 
 // ---------------------------------------------------------------------------
@@ -458,19 +484,20 @@ void optionsMissingRequestId;
 // ---------------------------------------------------------------------------
 
 describe('tool type surface (T1-1)', () => {
-  it('sample inputs cover all 17 shipped-tool input members', () => {
-    expect(inputUnionSamples).toHaveLength(17);
+  it('sample inputs cover all 18 shipped-tool input members (B4c adds Workflow)', () => {
+    expect(inputUnionSamples).toHaveLength(18);
     expect(grepInput['-C']).toBe(grepInput.context);
   });
 
-  it('sample outputs cover all 17 shipped-tool output members', () => {
-    // 20 samples over 17 member types (Agent + Read contribute two arms each;
+  it('sample outputs cover all 18 shipped-tool output members (B4c adds Workflow)', () => {
+    // 21 samples over 18 member types (Agent + Read contribute two arms each;
     // TaskGet contributes a found and a null sample).
-    expect(outputUnionSamples).toHaveLength(20);
+    expect(outputUnionSamples).toHaveLength(21);
     const statuses = outputUnionSamples
       .filter((o): o is AgentOutput => typeof o === 'object' && !Array.isArray(o) && 'status' in o)
       .map((o) => o.status);
-    expect(statuses).toEqual(['completed', 'async_launched']);
+    // Agent's two arms plus Workflow's official async-launch member.
+    expect(statuses).toEqual(['completed', 'async_launched', 'async_launched']);
   });
 });
 
