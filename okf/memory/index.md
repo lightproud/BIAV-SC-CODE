@@ -21,7 +21,7 @@
 * [BPT 架构快照（4-19 战略转向冻结点基线）](/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md) - BPT 实代码部署在内网 SVN，银芯（本仓库）够不到。Code-BPT 角色作为指导者只能基于「公开层留存的设计」给意见。这份文件把 8
 * [BPT 架构周报模板](/memory/memory-ext-bpt-architecture-summary-template.md) - 1. **保密**：不贴源代码片段、不贴敏感配置、不贴未发布功能名。仅贴**结构性事实**（模块名、文件数、行数、状态值、错误类型、toke
 * [BPT 指导搬运日志](/memory/memory-ext-bpt-guidance-log.md) - 不同性质的反馈走不同档案：
-* [银芯指导 BPT 协议（v0.3）](/memory/memory-ext-bpt-guidance-protocol.md) - 银芯不再在仓库内承载 BPT 代码，但 BPT 的开发仍需要银芯提供的能力：战略视角、架构经验、方法论、事实圣经、踩坑记录。
+* [银芯指导 BPT 协议（v0.4）](/memory/memory-ext-bpt-guidance-protocol.md) - 银芯不再在仓库内承载 BPT 代码，但 BPT 的开发仍需要银芯提供的能力：战略视角、架构经验、方法论、事实圣经、踩坑记录。
 * [BPT 本体定位（现行档）](/memory/memory-ext-bpt-positioning.md) - **BPT = 团队级在产的项目专用 agent 终端：元工具层 + 元知识层双主词，两层皆自持，
 * [联动事件响应手册](/memory/memory-ext-collab-event-playbook.md) - 2026-04 制作人采访确认：即将推出一个**单向联动**，对方为"一部影响深远、带有宇宙恐怖风味的经典作品"，角色联动形式。
 * [Discord 数据归档系统设计方案](/memory/memory-ext-discord-archiver-design.md) - 忘却前夜 Discord 服务器数据量远超预期——单个频道历史消息达 **76 万条**。纯 git 存储不可持续，需要设计分级存储 + 增
