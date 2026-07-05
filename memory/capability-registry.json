@@ -6,18 +6,18 @@
     "scope": "BIAV-SC 银芯（公开信息层）全功能盘点 + 动态编排可达性",
     "reachability_method": "从活编排入口（工作流/MCP/命令/钩子/CLI 手动入口）沿 Python 模块级 import 图做传递闭包；带 __main__ 的脚本计为 cli 手动平面。status=orphaned 表示无任何活入口可达，建议隔离待裁，非自动删除。",
     "counts": {
-      "workflows": 32,
-      "scripts_top": 32,
+      "workflows": 33,
+      "scripts_top": 34,
       "scripts_news": 28,
       "scripts_wiki": 6,
-      "mcp_tools": 9,
+      "mcp_tools": 10,
       "commands": 4,
       "skills": 4,
       "projects": 7,
-      "total": 122
+      "total": 126
     },
     "reachability": {
-      "live": 66,
+      "live": 68,
       "test-only": 0,
       "orphaned": 0
     }
@@ -80,6 +80,14 @@
         "manual"
       ],
       "note_zh": "功能源变动时自动重生成银芯功能目录。"
+    },
+    {
+      "id": "build-community-vectors.yml",
+      "name": "Build Community Vectors",
+      "path": ".github/workflows/build-community-vectors.yml",
+      "triggers": [
+        "manual"
+      ]
     },
     {
       "id": "build-okf-bundle.yml",
@@ -355,6 +363,16 @@
       "status": "live"
     },
     {
+      "id": "build_kb_vectors.py",
+      "path": "scripts/build_kb_vectors.py",
+      "summary": "build_kb_vectors.py — 构建银芯长尾向量索引（§八「厚锚撑向量」参照实现）。",
+      "planes": [
+        "cli",
+        "workflow"
+      ],
+      "status": "live"
+    },
+    {
       "id": "build_okf_bundle.py",
       "path": "scripts/build_okf_bundle.py",
       "summary": "Build an Open Knowledge Format (OKF v0.1) bundle for 银芯 (BIAV-SC).",
@@ -483,6 +501,15 @@
       "summary": "kb_telemetry.py — 知识库使用遥测（北极星评判体系 #2，「追踪」的地基）。",
       "planes": [
         "cli",
+        "mcp"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "kb_vector.py",
+      "path": "scripts/kb_vector.py",
+      "summary": "kb_vector.py — 银芯向量检索腿（长尾语义召回后端，import-only 库）。",
+      "planes": [
         "mcp"
       ],
       "status": "live"
@@ -1020,6 +1047,11 @@
       "id": "kb_overview",
       "module": "scripts/mcp_server.py",
       "summary": "知识库总览（LLMwiki 楼层平面图）：分区 / 类型分布 / 各分区入口索引 / 用法。"
+    },
+    {
+      "id": "kb_vector_search",
+      "module": "scripts/mcp_server.py",
+      "summary": "长尾语义召回（§八「厚锚撑向量」的向量腿）：对社区全量档案做模糊语义检索。"
     }
   ],
   "commands": [

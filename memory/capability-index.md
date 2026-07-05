@@ -4,18 +4,18 @@
 > 中文用途补注请改 `memory/capability-annotations.json`；机器权威数据见 `memory/capability-registry.json`。
 
 - 生成日期：2026-07-05
-- 功能总数：**122**
-- 脚本可达性：活 66 / 仅测试 0 / 孤儿 0
+- 功能总数：**126**
+- 脚本可达性：活 68 / 仅测试 0 / 孤儿 0
 
 ## 总览
 
 | 功能层 | 数量 |
 |------|------|
-| CI 自动化工作流（编排入口·定时/事件平面） | 32 |
-| 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 32 |
+| CI 自动化工作流（编排入口·定时/事件平面） | 33 |
+| 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 34 |
 | news 采集器脚本 | 28 |
 | wiki 数据脚本 | 6 |
-| MCP 知识层工具（编排入口·AI 动态平面） | 9 |
+| MCP 知识层工具（编排入口·AI 动态平面） | 10 |
 | Slash 命令（编排入口·人工平面） | 4 |
 | 仓内技能 | 4 |
 | 子项目 | 7 |
@@ -34,7 +34,7 @@
 
 可达性 = 从活编排入口沿 Python import 图传递闭包。`孤儿` = 无任何活入口可达，建议隔离待裁（§3.1 裁撤属守密人决策，工具只检测不删除）。
 
-## CI 自动化工作流（编排入口·定时/事件平面）（32）
+## CI 自动化工作流（编排入口·定时/事件平面）（33）
 
 - **`Backfill Data Gap`** _[manual]_ — 手动回填指定时间段的数据缺口。  
   `.github/workflows/backfill-gap.yml`
@@ -48,6 +48,8 @@
   `.github/workflows/build-analysis-index.yml`
 - **`Build Capability Registry`** _[push/manual]_ — 功能源变动时自动重生成银芯功能目录。  
   `.github/workflows/build-capability-registry.yml`
+- **`Build Community Vectors`** _[manual]_ —   
+  `.github/workflows/build-community-vectors.yml`
 - **`Build OKF Bundle`** _[push/manual]_ —   
   `.github/workflows/build-okf-bundle.yml`
 - **`Check Morimens Version Updates`** _[schedule/manual]_ — 定时检测 Morimens 客户端版本更新。  
@@ -101,7 +103,7 @@
 - **`Validate Wiki Data`** _[push/pull_request/manual]_ — 校验 wiki JSON 数据（push/PR 触发）。  
   `.github/workflows/validate-data.yml`
 
-## 顶层脚本（记忆 / 做梦 / 解包 / 运营）（32）
+## 顶层脚本（记忆 / 做梦 / 解包 / 运营）（34）
 
 - **`build_capability_registry.py`** _[活:cli+workflow]_ — build_capability_registry.py — 银芯功能目录 + 动态编排可达性分析器  
   `scripts/build_capability_registry.py`
@@ -109,6 +111,8 @@
   `scripts/build_community_index.py`
 - **`build_kb_index.py`** _[活:cli]_ — build_kb_index.py — 银芯知识库运行时导航索引（KB navigation index）生成器。  
   `scripts/build_kb_index.py`
+- **`build_kb_vectors.py`** _[活:cli+workflow]_ — build_kb_vectors.py — 构建银芯长尾向量索引（§八「厚锚撑向量」参照实现）。  
+  `scripts/build_kb_vectors.py`
 - **`build_okf_bundle.py`** _[活:cli+workflow]_ — Build an Open Knowledge Format (OKF v0.1) bundle for 银芯 (BIAV-SC).  
   `scripts/build_okf_bundle.py`
 - **`build_story_index.py`** _[活:cli+workflow]_ — Build a static story/lore search index over the unpacked story layer.  
@@ -137,6 +141,8 @@
   `scripts/kb_qual.py`
 - **`kb_telemetry.py`** _[活:cli+mcp]_ — kb_telemetry.py — 知识库使用遥测（北极星评判体系 #2，「追踪」的地基）。  
   `scripts/kb_telemetry.py`
+- **`kb_vector.py`** _[活:mcp]_ — kb_vector.py — 银芯向量检索腿（长尾语义召回后端，import-only 库）。  
+  `scripts/kb_vector.py`
 - **`lua_parse.py`** _[活:import]_ — 解包 Lua 表 dump 的共享解析库，供各 parse_* CLI 工具调用。  
   `scripts/lua_parse.py`
 - **`mcp_server.py`** _[活:cli+mcp]_ — MCP 服务端 biav-sc-memory，暴露 4 个平台互补工具。  
@@ -242,7 +248,7 @@
 - **`validate_data.py`** _[活:cli+command+workflow]_ — 校验 wiki 数据库全部 JSON。  
   `projects/wiki/scripts/validate_data.py`
 
-## MCP 知识层工具（编排入口·AI 动态平面）（9）
+## MCP 知识层工具（编排入口·AI 动态平面）（10）
 
 - **`character_persona`** — 激活角色人格模式，让AI以游戏角色的语气进行对话。  
   `scripts/mcp_server.py`
@@ -261,6 +267,8 @@
 - **`kb_activate`** — 扩散激活检索（联想召回）：从种子沿知识图谱多跳带衰减扩散，返回被点亮的相关概念子图。  
   `scripts/mcp_server.py`
 - **`kb_overview`** — 知识库总览（LLMwiki 楼层平面图）：分区 / 类型分布 / 各分区入口索引 / 用法。  
+  `scripts/mcp_server.py`
+- **`kb_vector_search`** — 长尾语义召回（§八「厚锚撑向量」的向量腿）：对社区全量档案做模糊语义检索。  
   `scripts/mcp_server.py`
 
 ## Slash 命令（编排入口·人工平面）（4）
