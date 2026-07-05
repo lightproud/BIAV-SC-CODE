@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 323,
-    "edges": 393,
-    "terms": 5576,
+    "concepts": 324,
+    "edges": 391,
+    "terms": 5585,
     "by_type": {
       "character": 72,
       "dataset": 110,
-      "documentation": 78,
+      "documentation": 79,
       "knowledge-pointer": 43,
       "reference": 17,
       "research": 3
@@ -25,7 +25,7 @@
       "extracted": 4,
       "memory": 47,
       "news-output": 23,
-      "projects": 18,
+      "projects": 19,
       "resource": 59,
       "sources": 17,
       "story": 11,
@@ -34,7 +34,7 @@
     },
     "by_tier": {
       "skeleton": 131,
-      "search": 192
+      "search": 193
     }
   },
   "sections": {
@@ -64,7 +64,7 @@
     },
     "projects": {
       "index": "/projects/index.md",
-      "count": 18
+      "count": 19
     },
     "resource": {
       "index": "/resource/index.md",
@@ -305,7 +305,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 33
+      "degree": 35
     },
     "/characters/130375.md": {
       "type": "character",
@@ -742,7 +742,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 3
+      "degree": 5
     },
     "/characters/15588.md": {
       "type": "character",
@@ -1080,7 +1080,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 12
+      "degree": 10
     },
     "/characters/77921.md": {
       "type": "character",
@@ -1122,7 +1122,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 4
+      "degree": 2
     },
     "/characters/77924.md": {
       "type": "character",
@@ -1249,7 +1249,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 5
+      "degree": 3
     },
     "/characters/94451.md": {
       "type": "character",
@@ -1502,7 +1502,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 7
+      "degree": 6
     },
     "/community/community-weixin.md": {
       "type": "dataset",
@@ -2603,6 +2603,20 @@
       "tier": "search",
       "degree": 0
     },
+    "/projects/bpt-sdk-doc-errors.md": {
+      "type": "documentation",
+      "title": "bpt-agent-sdk ERRORS",
+      "description": "Every error class in `src/errors.ts` carries a machine-readable, stable",
+      "resource": "/projects/bpt-agent-sdk/docs/ERRORS.md",
+      "tags": [
+        "data_layer:curated",
+        "design-doc",
+        "sub-project:bpt-agent-sdk"
+      ],
+      "section": "projects",
+      "tier": "search",
+      "degree": 0
+    },
     "/projects/bpt-sdk-doc-migration.md": {
       "type": "documentation",
       "title": "bpt-agent-sdk MIGRATION",
@@ -3667,7 +3681,7 @@
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 2533 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 2536 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -3723,7 +3737,7 @@
     "/sources/pixiv.md": {
       "type": "dataset",
       "title": "pixiv 社区数据源",
-      "description": "pixiv 平台采集档案，全量 547 条，健康度 active。",
+      "description": "pixiv 平台采集档案，全量 548 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/pixiv/",
       "tags": [
         "data_layer:full_archive",
@@ -3765,7 +3779,7 @@
     "/sources/steam.md": {
       "type": "dataset",
       "title": "steam 社区数据源",
-      "description": "steam 平台采集档案，全量 5108 条，健康度 active。",
+      "description": "steam 平台采集档案，全量 5110 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/review/",
       "tags": [
         "data_layer:full_archive",
@@ -3793,7 +3807,7 @@
     "/sources/stopgame.md": {
       "type": "dataset",
       "title": "stopgame 社区数据源",
-      "description": "stopgame 平台采集档案，全量 77 条，健康度 active。",
+      "description": "stopgame 平台采集档案，全量 78 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/stopgame/",
       "tags": [
         "data_layer:full_archive",
@@ -3835,7 +3849,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 9061 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 9084 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -3844,12 +3858,12 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 7
+      "degree": 6
     },
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 6356 条，健康度 active。",
+      "description": "weixin 平台采集档案，全量 6396 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -3863,7 +3877,7 @@
     "/sources/youtube.md": {
       "type": "dataset",
       "title": "youtube 社区数据源",
-      "description": "youtube 平台采集档案，全量 2616 条，健康度 active。",
+      "description": "youtube 平台采集档案，全量 2619 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -4666,6 +4680,11 @@
         "cv"
       ],
       [
+        "/community/community-bilibili.md",
+        "提及:沙耶",
+        "mention"
+      ],
+      [
         "/community/community-google-play.md",
         "提及:Saya",
         "mention"
@@ -4788,6 +4807,11 @@
       [
         "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
         "提及:Saya",
+        "mention"
+      ],
+      [
+        "/sources/bilibili.md",
+        "提及:沙耶",
         "mention"
       ],
       [
@@ -5582,7 +5606,17 @@
         "cv"
       ],
       [
+        "/community/community-bilibili.md",
+        "提及:希洛",
+        "mention"
+      ],
+      [
         "/resource/resource-daily-news-morimens-period-20260512-0603.md",
+        "提及:希洛",
+        "mention"
+      ],
+      [
+        "/sources/bilibili.md",
         "提及:希洛",
         "mention"
       ]
@@ -6418,11 +6452,6 @@
         "cv"
       ],
       [
-        "/community/community-bilibili.md",
-        "提及:阿拉克涅",
-        "mention"
-      ],
-      [
         "/community/community-weibo.md",
         "提及:阿拉克涅",
         "mention"
@@ -6458,11 +6487,6 @@
         "mention"
       ],
       [
-        "/sources/bilibili.md",
-        "提及:阿拉克涅",
-        "mention"
-      ],
-      [
         "/sources/weibo.md",
         "提及:阿拉克涅",
         "mention"
@@ -6494,17 +6518,7 @@
         "mention"
       ],
       [
-        "/community/community-weibo.md",
-        "提及:卡斯托尔",
-        "mention"
-      ],
-      [
         "/sources/bilibili.md",
-        "提及:卡斯托尔",
-        "mention"
-      ],
-      [
-        "/sources/weibo.md",
         "提及:卡斯托尔",
         "mention"
       ]
@@ -6617,22 +6631,12 @@
     ],
     "/characters/94450.md": [
       [
-        "/community/community-bilibili.md",
-        "提及:茉夏",
-        "mention"
-      ],
-      [
         "/community/community-youtube-comments.md",
         "提及:茉夏",
         "mention"
       ],
       [
         "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
-        "提及:茉夏",
-        "mention"
-      ],
-      [
-        "/sources/bilibili.md",
         "提及:茉夏",
         "mention"
       ],
@@ -6675,11 +6679,6 @@
       [
         "/characters/15589.md",
         "提及:诞妄·墨菲",
-        "mention"
-      ],
-      [
-        "/characters/77918.md",
-        "提及:阿拉克涅",
         "mention"
       ],
       [
@@ -6728,8 +6727,13 @@
         "mention"
       ],
       [
-        "/characters/94450.md",
-        "提及:茉夏",
+        "/characters/15587.md",
+        "提及:希洛",
+        "mention"
+      ],
+      [
+        "/characters/130226.md",
+        "提及:沙耶",
         "mention"
       ],
       [
@@ -6991,11 +6995,6 @@
       [
         "/characters/77918.md",
         "提及:阿拉克涅",
-        "mention"
-      ],
-      [
-        "/characters/77923.md",
-        "提及:卡斯托尔",
         "mention"
       ],
       [
@@ -8424,11 +8423,6 @@
         "mention"
       ],
       [
-        "/characters/77918.md",
-        "提及:阿拉克涅",
-        "mention"
-      ],
-      [
         "/characters/77923.md",
         "提及:卡斯托尔",
         "mention"
@@ -8474,8 +8468,13 @@
         "mention"
       ],
       [
-        "/characters/94450.md",
-        "提及:茉夏",
+        "/characters/15587.md",
+        "提及:希洛",
+        "mention"
+      ],
+      [
+        "/characters/130226.md",
+        "提及:沙耶",
         "mention"
       ],
       [
@@ -8650,11 +8649,6 @@
       [
         "/characters/77918.md",
         "提及:阿拉克涅",
-        "mention"
-      ],
-      [
-        "/characters/77923.md",
-        "提及:卡斯托尔",
         "mention"
       ],
       [
@@ -9145,6 +9139,7 @@
       "/extracted/extracted-readme.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
@@ -9324,6 +9319,7 @@
       "/memory/memory-ext-bpt-positioning.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/project-bpt-agent-sdk.md",
@@ -9830,6 +9826,7 @@
       "/memory/memory-ext-phase-d-plan.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/project-bpt-agent-sdk.md",
@@ -9894,6 +9891,9 @@
     "cards": [
       "/story/story_search_index.md"
     ],
+    "carries": [
+      "/projects/bpt-sdk-doc-errors.md"
+    ],
     "catalog": [
       "/README.md"
     ],
@@ -9941,6 +9941,9 @@
     "ci": [
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md"
+    ],
+    "class": [
+      "/projects/bpt-sdk-doc-errors.md"
     ],
     "classification": [
       "/memory/memory-ext-biav-info-classification.md"
@@ -10228,6 +10231,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
@@ -10502,6 +10506,7 @@
       "/memory/memory-strategy-repo-slimming-plan.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
@@ -10795,6 +10800,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
@@ -11040,6 +11046,7 @@
       "/memory/memory-ext-knowledge-layer-design.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/site-design-morimens-design-system-guide.md",
@@ -11113,6 +11120,7 @@
     "doc": [
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
@@ -11121,6 +11129,7 @@
     "docs": [
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
@@ -11250,11 +11259,20 @@
       "/assets/persona-erica-speech-canon.md",
       "/assets/persona-erica.md"
     ],
+    "error": [
+      "/projects/bpt-sdk-doc-errors.md"
+    ],
+    "errors": [
+      "/projects/bpt-sdk-doc-errors.md"
+    ],
     "evaluation": [
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md"
     ],
     "event": [
       "/memory/memory-ext-collab-event-playbook.md"
+    ],
+    "every": [
+      "/projects/bpt-sdk-doc-errors.md"
     ],
     "execution": [
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
@@ -12303,6 +12321,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
@@ -12673,7 +12692,8 @@
       "/memory/memory-ext-capability-annotations.md",
       "/memory/memory-ext-capability-registry.md",
       "/memory/memory-ext-facts.md",
-      "/memory/memory-ext-session-continuity.md"
+      "/memory/memory-ext-session-continuity.md",
+      "/projects/bpt-sdk-doc-errors.md"
     ],
     "main": [
       "/README.md",
@@ -12780,6 +12800,7 @@
       "/memory/style-guide.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
@@ -13578,6 +13599,7 @@
       "/memory/project-status.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/news-archive-sources-registry.md",
@@ -13623,6 +13645,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/news-archive-sources-registry.md",
@@ -13923,6 +13946,9 @@
     "raw": [
       "/assets/assets-chat-onboarding-snippet.md",
       "/projects/releases-treasure-map.md"
+    ],
+    "readable": [
+      "/projects/bpt-sdk-doc-errors.md"
     ],
     "readme": [
       "/README.md",
@@ -14291,6 +14317,7 @@
       "/README.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/project-bpt-agent-sdk.md",
@@ -14477,6 +14504,12 @@
     "sproto": [
       "/unpacked/unpacked-sproto.md"
     ],
+    "src": [
+      "/projects/bpt-sdk-doc-errors.md"
+    ],
+    "stable": [
+      "/projects/bpt-sdk-doc-errors.md"
+    ],
     "stage": [
       "/wiki-data/wiki-data-stages.md"
     ],
@@ -14630,6 +14663,7 @@
     "sub": [
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/news-archive-sources-registry.md",
@@ -14930,6 +14964,9 @@
     ],
     "trinkets": [
       "/wiki-data/wiki-schema-trinkets-schema.md"
+    ],
+    "ts": [
+      "/projects/bpt-sdk-doc-errors.md"
     ],
     "twitter": [
       "/news-output/news-output-twitter.md"
@@ -15801,6 +15838,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
@@ -16038,6 +16076,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
@@ -16314,6 +16353,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
@@ -17415,6 +17455,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
@@ -18299,6 +18340,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
@@ -18533,6 +18575,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
@@ -20258,6 +20301,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
@@ -23249,6 +23293,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
@@ -23991,6 +24036,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
@@ -24565,6 +24611,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
@@ -28163,6 +28210,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
@@ -28659,6 +28707,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
@@ -28962,6 +29011,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
@@ -29319,6 +29369,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
@@ -29575,6 +29626,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
@@ -31135,6 +31187,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
@@ -31522,6 +31575,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
@@ -32053,6 +32107,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
@@ -32682,6 +32737,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
@@ -33032,6 +33088,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
@@ -39593,6 +39650,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
@@ -40217,6 +40275,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
@@ -41168,6 +41227,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
@@ -41396,6 +41456,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
@@ -42523,6 +42584,7 @@
     "agent": [
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/project-bpt-agent-sdk.md",
@@ -42793,6 +42855,7 @@
       "/memory/memory-ext-phase-d-plan.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/project-bpt-agent-sdk.md",
@@ -43040,6 +43103,7 @@
       "/memory/memory-strategy-repo-slimming-plan.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
@@ -43326,6 +43390,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
@@ -43554,6 +43619,7 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-silver-blackpool-interface.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/site-design-morimens-design-system-guide.md",
@@ -43608,6 +43674,7 @@
     "doc": [
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
@@ -43716,6 +43783,9 @@
     "erica": [
       "/assets/persona-erica-speech-canon.md",
       "/assets/persona-erica.md"
+    ],
+    "errors": [
+      "/projects/bpt-sdk-doc-errors.md"
     ],
     "evaluation": [
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md"
@@ -44134,6 +44204,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
@@ -44772,6 +44843,7 @@
       "/memory/project-status.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/news-archive-sources-registry.md",
@@ -44986,6 +45058,7 @@
     "sdk": [
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/project-bpt-agent-sdk.md",
@@ -45119,6 +45192,7 @@
     "sub": [
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/news-archive-sources-registry.md",

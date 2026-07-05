@@ -14,6 +14,46 @@ including the drop-in breaking-gap list and the NEW-IN-DOCS ledger
 `Public-Info-Pool/Resource/repo-engineering/bpt-sdk-official-docs-interface-audit-20260705.md`.
 Stale rows flagged there were corrected in this file on 2026-07-05.
 
+## v0.7 status (completion-inventory full-implementation campaign, 2026-07-05)
+
+The keeper ruling 「全面实现」 drove a full-surface alignment pass. What landed
+(breaking items detailed in MIGRATION.md §4/5f–5l; per-row tiers below updated):
+
+- **Built-in tool surface 15 → 20 of 24 official tools**: Task quadruplet
+  (TaskCreate/TaskGet/TaskUpdate/TaskList) ships as the default task surface
+  (official 0.3.142 semantics: TodoWrite off by default, `CLAUDE_CODE_ENABLE_TASKS=0`
+  reverts); ExitPlanMode (real plan→default gate flip), EnterWorktree (named
+  worktrees + cross-turn cwd), Monitor (honest subset — background watch, no push
+  channel), and Workflow (restricted-vm orchestration engine, official
+  meta/agent()/parallel()/pipeline() and concurrency/lifetime caps) all ship.
+  Remaining absent: NotebookEdit (no notebook surface, by design); the 3
+  Task*-adjacent CLI-host tools with no headless source.
+- **Observability encoding migrated** to official `{type:'system', subtype:…}`
+  for all ten reversed variants (was a v0.7 candidate; now done — see the
+  Observability arm note). E8 subagent-lifecycle encoding aligned.
+- **Wire alignment (E7)**: thinking default `{type:"adaptive"}`; Read `pages`;
+  Bash `dangerouslyDisableSandbox` always in schema; Agent `model`/`isolation`.
+  Wire ratchet shrinks to `Agent:params` (our BPT-only `fork` extension) plus
+  placement/thinking residuals. E7-03 tool-block cache breakpoint kept as a
+  measured KD (dropping it never gains a byte; loses the tool prefix on
+  system-prompt divergence).
+- **Result/type shapes to official**: setMcpServers → added/removed/errors;
+  rewindFiles → canRewind/error/filesChanged; SDKResultMessage.stop_reason
+  required both arms; McpServerStatus.tools object array; ModelUsage
+  contextWindow/maxOutputTokens; 22 more Options fields typed; removeDirectories
+  and suppressOutput honored; session rename/tag round-trips.
+- **Errors**: McpError taxonomy, stable machine-readable `code` on every error
+  (docs/ERRORS.md), throw-discipline static guard.
+- **Resilience defaults**: maxRetries 4→10 (env-capped 15), stream watchdog
+  120s→300s, new background-subagent stall watchdog.
+- **NEW-IN-DOCS (above the pinned 0.3.199/2.1.201 baseline)**: six new hook
+  events typed (typed-not-fired — no natural headless hook point), MessageDisplay
+  5-field incremental protocol emitted, plus additive optional types
+  (SDKMessageOrigin, error/terminal_reason enums, etc.). The **`settingSources`
+  default reversal** (omit = load-all) is deliberately NOT done — it is the one
+  behavior-level reversal, would diverge from the pinned official arm, and awaits
+  a keeper bump-pin decision.
+
 ## v0.2 status (what graduated from the v0.1 audit)
 
 v0.2 implemented most of the P0/P1 gaps the audit flagged. Now **FULL / PARTIAL**
@@ -171,14 +211,21 @@ SDK implements the agent loop directly against the public Messages API:
 
 | Tool | Tier | Notes |
 |---|---|---|
-| Read | PARTIAL | text files (cat -n) + images (PNG/JPEG/GIF/WebP → image block) + PDF (→ base64 `document` block; the API's handle-tool-calls docs allow `document` inside tool_result, though the base64 source there is supported-but-not-explicitly-demonstrated); all magic-byte sniffed (task #17); notebooks not rendered; oversized files (>50MB) rejected with a Grep hint rather than buffered |
-| Write / Edit | PARTIAL | same input field names (`file_path`, `old_string`, …); Write enforces the official read-before-write gate (E4, 2026-07-05: a bare Write over an existing un-read file errors with the verbatim official text and leaves the file untouched; new files pass; a successful Read unlocks - pinned live, L5 code-03 r1 vs r2; KD-L3-06 retired). OUR chosen extensions where the pinned evidence is silent: a successful Write/Edit also registers its path (create-then-revise does not self-block), and the gate spans subagents (one read-set per query). Edit itself has no read-first gate (official Edit does); success/error wording differs elsewhere (KD-L3-05/07/08) |
-| Bash | PARTIAL | Windows: shell resolved via `CLAUDE_CODE_GIT_BASH_PATH` -> Git-for-Windows standard locations (official-parity posture; actionable error when absent, bare `bash`/WSL never tried). v0.5: `cd` + exported env persist across calls (state-file replay — functions/aliases/unexported vars do NOT persist; not a long-lived shell process) and `run_in_background` launches a detached shell whose id feeds BashOutput/KillShell. v0.6: sandboxed by default when a backend resolves (see the `sandbox` option row); foreground and background both wrap through the backend and run in their own process group (timeout/abort reap the whole group; `--unshare-pid` + SIGKILL escalation reaps across the sandbox pid namespace). When the sandbox description is active the tool description carries the faithful sandbox guidance and the schema gains `dangerouslyDisableSandbox` (mandatory mode omits it) |
+| Read | PARTIAL | text files (cat -n) + images (PNG/JPEG/GIF/WebP → image block) + PDF (→ base64 `document` block; the API's handle-tool-calls docs allow `document` inside tool_result, though the base64 source there is supported-but-not-explicitly-demonstrated); all magic-byte sniffed (task #17); notebooks not rendered; oversized files (>50MB) rejected with a Grep hint rather than buffered. v0.7: official `pages` param (PDF page range) validated to contract (1-based, ascending, ≤20); PDF page-slicing itself is HONEST-unsupported (no PDF dep) — a `pages` read of a PDF errors clearly rather than silently returning the whole document, and `pages` on a non-PDF errors. Path fence removed (#483 keeper ruling): resolves to any location the process can reach, permission gate is the sole access control |
+| Write / Edit | PARTIAL | same input field names (`file_path`, `old_string`, …); Write enforces the official read-before-write gate (E4, 2026-07-05: a bare Write over an existing un-read file errors with the verbatim official text and leaves the file untouched; new files pass; a successful Read unlocks - pinned live, L5 code-03 r1 vs r2; KD-L3-06 retired). OUR chosen extensions where the pinned evidence is silent: a successful Write/Edit also registers its path (create-then-revise does not self-block), and the gate spans subagents (one read-set per query). Edit itself has no read-first gate (official Edit does); success/error wording differs elsewhere (KD-L3-05/07/08). Path fence removed (#483) — same posture as Read |
+| Bash | PARTIAL | Windows: shell resolved via `CLAUDE_CODE_GIT_BASH_PATH` -> Git-for-Windows standard locations (official-parity posture; actionable error when absent, bare `bash`/WSL never tried; foreground+background termination route through planProcessKill so win32 taskkill is used, #482/#484). v0.5: `cd` + exported env persist across calls (state-file replay — functions/aliases/unexported vars do NOT persist; not a long-lived shell process) and `run_in_background` launches a detached shell whose id feeds BashOutput/KillShell. v0.6: sandboxed by default when a backend resolves (see the `sandbox` option row); foreground and background both wrap through the backend and run in their own process group (timeout/abort reap the whole group; `--unshare-pid` + SIGKILL escalation reaps across the sandbox pid namespace). v0.7: `dangerouslyDisableSandbox` is ALWAYS in the schema (official parity); it is a no-op without a sandbox and CANNOT bypass the gate (escape still needs sandbox active + allowEscape + an independent ask) |
+| Task quadruplet (TaskCreate/TaskGet/TaskUpdate/TaskList) | FULL | v0.7: the DEFAULT task surface (official 0.3.142: TodoWrite off by default, `CLAUDE_CODE_ENABLE_TASKS=0` reverts to TodoWrite-only). Symmetric dependency edges (blocks/blockedBy), owner/status workflow, session-shared store (parent + subagents see one list); TaskGet unknown-id returns null (not error) per official |
+| ExitPlanMode | FULL | v0.7: really flips the permission gate plan→default (main loop and subagents each flip their own gate); `allowedPrompts` echoed not applied (no NL prompt rules in this gate); honest errors when unbridged or not in plan mode |
+| EnterWorktree | FULL | v0.7: creates/enters named worktrees under `.claude/worktrees`; in-place cwd switch survives turn-boundary rebuilds (fs tools + subagent spawns; Bash follows via persistent state). `worktree.baseRef` not shipped (HEAD base) |
+| Monitor | PARTIAL | v0.7: honest subset — a background watch on the shared shell registry; events accumulate for BashOutput/KillShell reads. NO push-into-conversation channel (headless has none) and NO `ws` source; the schema and description say so |
+| Workflow | PARTIAL | v0.7: restricted-vm orchestration. All five official params (script/scriptPath/name/args/resumeFromRunId) + wire title/description; meta literal recursive-descent parsed (not eval'd); agent()/parallel()/pipeline()/phase()/log()/args/budget/workflow() with official concurrency (min(16,cores-2)), lifetime (1000), per-call (4096) caps and the Date.now/Math.random determinism ban. Structural adaptation: SYNCHRONOUS execution (no background task channel — same as Monitor); `budget` is a null-total stub (no token-metering source) |
 | BashOutput | FULL | v0.5: incremental reads (new output since last call) + status/exit code; optional per-line regex `filter`; read-only (auto-approved, parallel-group eligible). FULL is vs the DOCUMENTED SDK lifecycle: live official 2.1.201 moved backgrounding to a task-file model and its own BashOutput answers "No task found" for the id its Bash advertised, so no official-arm parity evidence exists (conformance run-l3 L3-BG-01, KD-L3-19, 2026-07-05) |
 | KillShell | FULL | v0.5: SIGTERM then SIGKILL escalation on the background shell's process group. Same official-arm caveat as BashOutput (run-l3 L3-BG-01, KD-L3-19) |
 | Glob | PARTIAL | fast-glob, mtime-sorted newest-first; official 2.1.201 emitted ASCENDING order under ascending-utimes pins, so ordering parity with the live engine is not established - path sets agree (conformance run-l3 L3-GLOB-01, KD-L3-20, 2026-07-05) |
 | Grep | PARTIAL | pure-JS regex engine (no ripgrep binary); large-repo perf caveat |
-| WebFetch / WebSearch / Task / TodoWrite | see notes | WebFetch/WebSearch/TodoWrite registered in v0.2; Task is the Agent tool |
+| WebFetch / WebSearch | FULL | registered in v0.2 |
+| TodoWrite | PARTIAL | v0.7: OFF by default (Task quadruplet is the default surface); `CLAUDE_CODE_ENABLE_TASKS=0` reverts to TodoWrite-only, per official 0.3.142 |
+| Agent | PARTIAL | the subagent spawn tool; v0.7 gains `model`/`isolation:'worktree'` and the official required set [description, prompt] (subagent_type defaults to general-purpose). Residual param delta = our BPT-only `fork` extension |
 | NotebookEdit / MultiEdit | UNSUPPORTED | deliberately untracked (BPT has no notebook surface; MultiEdit retired upstream) |
 
 ## SDKMessage stream
@@ -199,25 +246,21 @@ The official SDKMessage union carries a large observability/status arm. We add
 the full set of variant TYPES so drop-in consumers can switch exhaustively, and
 EMIT the subset this headless engine has a real source event for.
 
-Design note (updated 2026-07-05): the live official docs now FULLY specify
-these variants — 11 ride `type:'system'`+subtype (status, task_notification,
-hook_started, hook_progress, hook_response, task_started, task_progress,
-task_updated, files_persisted, local_command_output, commands_changed) and 5
-ride a top-level `type` (tool_use_summary, tool_progress, auth_status,
-rate_limit_event, prompt_suggestion). Our arm still models everything except
-`status` with top-level `type` discriminators and house payload shapes, i.e.
-**8 variants have a REVERSED discriminator and most payloads diverge
-field-by-field — 6 of them actually emitted** (task_started/progress/updated/
-notification, hook_started/hook_response). This is now a KNOWN DIVERGENCE,
-not a reconstruction of unspecified shapes; the earlier "official leaves these
-undocumented" premise is stale. Field-level diffs: interface audit 2026-07-05
-§6.E. Alignment is a v0.7 candidate (breaking — needs MIGRATION notes and the
-Desktop UI mapping table updated in lockstep). Three export names also differ:
-`SDKFilesPersistedMessage` (official `SDKFilesPersistedEvent`),
-`SDKRateLimitEventMessage` (official `SDKRateLimitEvent`),
-`SDKApiRetryMessage` (official `SDKAPIRetryMessage`); plus
-`SDKInitializationResult` (official `SDKControlInitializeResponse`). All carry
-the house `uuid`/`session_id` envelope. Union: `SDKObservabilityMessage`.
+Design note (updated 2026-07-05, v0.7 alignment DONE): the ten reversed
+variants now emit and type as official `{type:'system', subtype:…}`
+(task_started/progress/updated/notification, hook_started/progress/response,
+files_persisted, local_command_output, commands_changed), with payloads aligned
+to the 0.3.201 snapshot (`task_name`→`description`, `cancelled`→`killed`,
+official usage/patch envelopes, hook output/outcome fields; `task_progress`
+stays a documented BPT superset). The E8 subagent-lifecycle encoding aligned in
+lockstep (KD-L35-02 retired). This was a BREAKING change (MIGRATION 5f). The
+four former export-name differences now use the official spelling with
+deprecated aliases: `SDKFilesPersistedEvent`, `SDKRateLimitEvent`,
+`SDKAPIRetryMessage`, `SDKControlInitializeResponse`. All carry the house
+`uuid`/`session_id` envelope. Union: `SDKObservabilityMessage`. Remaining
+top-level-`type` variants (tool_use_summary, tool_progress, auth_status,
+prompt_suggestion) are unemitted-typed. `SDKRateLimitEvent` gains the official
+`rate_limit_info` envelope (KD-12 429-vs-api_retry semantics unchanged).
 
 | Variant | Tier | Notes |
 |---|---|---|
@@ -238,14 +281,15 @@ the house `uuid`/`session_id` envelope. Union: `SDKObservabilityMessage`.
 | PostToolUseFailure | FULL | |
 | PostToolBatch | PARTIAL | fires per batch; input is `{ tool_names }` not the official `{ tool_calls[] }`; `continue:false` honored |
 | UserPromptSubmit | PARTIAL | additionalContext appended; a block skips the prompt in streaming mode / ends the run in string mode |
-| MessageDisplay | PARTIAL | fires once per completed message (`message_text`), not per delta |
+| MessageDisplay | PARTIAL | v0.7: official 5-field incremental protocol emitted (turn_id/message_id/index/final/delta); fires once per completed message (so `final` is always true, `delta` is the whole message), not per true delta; `message_text` kept deprecated |
+| Setup / TeammateIdle / TaskCompleted / ConfigChange / WorktreeCreate / WorktreeRemove | TYPED (v0.7) | NEW-IN-DOCS hook events typed into HookEvent/HookInput but typed-not-fired — no natural runtime hook point in a headless engine (no setup phase / teammates / settings-merge engine; worktree + task-completed lifecycles have no honest hook site here) |
 | Stop | FULL | fired at natural end of a run |
 | SessionStart / SessionEnd | FULL | |
 | Notification | ACCEPTED | never fired in v0.1 (no code path emits it) |
-| SubagentStart / SubagentStop | PARTIAL | fire since v0.2 (the old "never fire" note was stale — docs-audit 2026-07-05); SubagentStop is emitted WITHOUT the official-required `agent_transcript_path` |
+| SubagentStart / SubagentStop | PARTIAL | fire since v0.2 (the old "never fire" note was stale — docs-audit 2026-07-05); SubagentStop is emitted WITHOUT the official-required `agent_transcript_path`. v0.7: input types gain optional `background_tasks`/`session_crons`/`last_assistant_message` (NEW-IN-DOCS, typed-not-populated) |
 | PreCompact | FULL | fires on manual `/compact` + auto-compaction since v0.2 (the old "never fires" note was stale — docs-audit 2026-07-05) |
 | PermissionRequest | ACCEPTED | never fires in v0.1 |
-| `defer` permission decision | PARTIAL | end-to-end since v0.2 (the old "UNSUPPORTED" row was stale — docs-audit 2026-07-05); NOTE our `deferred_tool_use` field names are `tool_use_id`/`tool_name`/`tool_input` vs official `id`/`name`/`input` (drop-in gap), and the official `stop_reason: "tool_deferred"` signal is not modeled; an unrecognized `permissionDecision` still fails closed as deny |
+| `defer` permission decision | PARTIAL | end-to-end since v0.2. v0.7: `deferred_tool_use` now carries the official `id`/`name`/`input` field names alongside the deprecated `tool_use_id`/`tool_name`/`tool_input` (dual-track), and the official `stop_reason: "tool_deferred"` IS modeled; an unrecognized `permissionDecision` still fails closed as deny |
 | legacy `decision: 'approve'`/`'block'` | FULL | mapped to allow/deny in aggregation (allow only when no explicit `permissionDecision` on the same output) |
 | Matcher semantics | FULL | exact-set vs regex rules per docs |
 | `async: true` outputs | FULL | fire-and-forget |
@@ -258,10 +302,10 @@ the house `uuid`/`session_id` envelope. Union: `SDKObservabilityMessage`.
 | `interrupt()` | FULL | |
 | `setPermissionMode()` / `setModel()` / `setMaxThinkingTokens()` | FULL | |
 | `initializationResult()` / `supportedModels()` / `supportedCommands()` / `supportedAgents()` | PARTIAL | static/empty data (no CLI to introspect) |
-| `mcpServerStatus()` | PARTIAL | carries `config` (echoed back) + per-server `tools[]` when connected; `scope` typed but not tracked (task #17); official `tools` is an OBJECT array with `annotations{readOnly/destructive/openWorld}`, ours is `string[]` (docs-audit 2026-07-05) |
+| `mcpServerStatus()` | PARTIAL | carries `config` (echoed back) + per-server `tools[]` when connected; `scope` typed but not tracked (task #17). v0.7: `tools` is the official OBJECT array (`{name, description?, annotations{readOnly/destructive/openWorld}?}`), assembled at the registry — the former `string[]` arm is gone |
 | `accountInfo()` | PARTIAL | apiKeySource only |
 | `streamInput()` | FULL | streaming-input mode |
 | `close()` | FULL | |
-| `rewindFiles()` / `reconnectMcpServer()` / `toggleMcpServer()` / `stopTask()` | FULL | implemented since v0.2 (the old "UNSUPPORTED in types v0.1" row was stale and contradicted the v0.2 section above — docs-audit 2026-07-05); NOTE `RewindFilesResult` is house-shaped `{checkpointId, restoredFiles, deletedFiles, dryRun}` vs official `{canRewind, error?, filesChanged?, insertions?, deletions?}` (zero shared fields) |
-| `setMcpServers()` | PARTIAL | implemented since v0.2; returns `{servers: McpServerStatus[]}` vs official `{added, removed, errors}` (zero shared fields; docs-audit 2026-07-05) |
+| `rewindFiles()` / `reconnectMcpServer()` / `toggleMcpServer()` / `stopTask()` | FULL | implemented since v0.2. v0.7: `RewindFilesResult` is the official `{canRewind, error?, filesChanged?, insertions?, deletions?}` (unknown ids soft-fail `{canRewind:false, error}` instead of throwing; `insertions`/`deletions` typed-not-populated — no diff engine); deprecated house fields kept |
+| `setMcpServers()` | FULL | v0.7: returns the official `{added, removed, errors}` from a real before/after diff (the deprecated `servers` status list rides along one more version) |
 | `reinitialize()` / `applyFlagSettings()` | UNSUPPORTED | no control_request wire protocol / no settings engine (N/A-by-design for a direct-API engine) |
