@@ -1,8 +1,8 @@
 {
   "date": "2026-07-05",
-  "archived_at": "2026-07-04T23:58:58.475420+00:00",
+  "archived_at": "2026-07-05T02:35:49.080733+00:00",
   "source": "youtube",
-  "item_count": 5,
+  "item_count": 7,
   "items": [
     {
       "title": "[Morimens] Coaching/Content Creation Stream Happy Jul 4",
@@ -51,6 +51,40 @@
       "lang": "",
       "platform_region": "global",
       "media_url": "https://i.ytimg.com/vi/_XDSlo2js-4/hqdefault.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    },
+    {
+      "title": "【忘却前夜】世の中結局大事なのは繁殖なのよ",
+      "summary": "子孫を、遺伝子を残さないと...... 軽く繁栄と対人 Twitter(X)→https://x.com/to_m4fuyu.",
+      "source": "youtube",
+      "time": "2026-07-05T01:46:29Z",
+      "url": "https://www.youtube.com/watch?v=wZPnhZTyOl0",
+      "engagement": 35,
+      "is_hot": false,
+      "author": "to真冬",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/wZPnhZTyOl0/hqdefault.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    },
+    {
+      "title": "Morimens Final Release Chapter maybe and some Pontons maybe",
+      "summary": "Stream almost daily whenever I have free time we multi-stream on twitch and only on twitch for things that might get us in trouble ...",
+      "source": "youtube",
+      "time": "2026-07-05T02:10:54Z",
+      "url": "https://www.youtube.com/watch?v=68RIizdklbM",
+      "engagement": 4,
+      "is_hot": false,
+      "author": "FluffeyPanda's World",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/68RIizdklbM/hqdefault_live.jpg",
       "content_type": "video",
       "region": "global",
       "archive_subtype": "video"

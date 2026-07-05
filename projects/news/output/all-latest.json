@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-04T23:58:17.931484+00:00",
+  "collected_at": "2026-07-05T02:35:07.292265+00:00",
   "source": "all",
   "data_layer": "output",
-  "item_count": 267,
+  "item_count": 266,
   "items": [
     {
       "source": "bilibili",
@@ -13,11 +13,11 @@
       "summary": "",
       "url": "https://www.bilibili.com/video/BV1ACMK62ExC",
       "author": "蹈海者",
-      "engagement": 324,
+      "engagement": 372,
       "media_url": "https://i0.hdslb.com/bfs/archive/852ad56274d92ee51881deaff0849715776ec835.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 324,
+        "play": 372,
         "comment_count": 0,
         "comments_fetched": 0,
         "danmaku": 0
@@ -31,11 +31,11 @@
       "summary": "-\n  └ -小南灯- (0赞): ?!萌萌!?[Afterglow_被迫下线]\n  └ 哈基沙大玉 (0赞): [鸣潮2周年同人绘画_纸飞机]\n  └ 睿雪zhao丰年 (0赞): up这么多库存？",
       "url": "https://www.bilibili.com/video/BV1mcTf6wEXv",
       "author": "你可以依赖我哟",
-      "engagement": 312,
+      "engagement": 315,
       "media_url": "https://i1.hdslb.com/bfs/archive/c8e3f8c7c24e8e7b4fc3e29925dc3f937bcb3cdc.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 307,
+        "play": 310,
         "comment_count": 5,
         "comments_fetched": 3,
         "danmaku": 0
@@ -46,15 +46,15 @@
       "time": "2026-07-04T03:23:26+00:00",
       "lang": "zh",
       "title": "24",
-      "summary": "-\n  └ playfisher (2赞): 刷到的时候刚好24播放\n  └ 御坂19131号 (1赞): 她真好看\n  └ 斯奈德不复活不改名 (1赞): 刷到5771了我号养成了[给心心]24好美好美好美",
+      "summary": "-\n  └ playfisher (2赞): 刷到的时候刚好24播放\n  └ 没有头的路易十六 (1赞): 24是个好人\n  └ 御坂19131号 (1赞): 她真好看",
       "url": "https://www.bilibili.com/video/BV13RTZ6TEVy",
       "author": "菜鸡玩意儿Newb",
-      "engagement": 291,
+      "engagement": 299,
       "media_url": "https://i0.hdslb.com/bfs/archive/5ea386006eb466193eab98e10730c945b72c733d.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 280,
-        "comment_count": 11,
+        "play": 287,
+        "comment_count": 12,
         "comments_fetched": 3,
         "danmaku": 0
       }
@@ -64,16 +64,34 @@
       "time": "2026-07-04T15:32:44+00:00",
       "lang": "zh",
       "title": "[那随风飘荡的 蒲公英的种子…]",
-      "summary": "-\n  └ -昆扬 (0赞): [魔法少女的魔女审判表情包_探头]",
+      "summary": "-\n  └ 不想玩刀 (0赞): 呼叫传奇调查员凉子小姐[doge]\n  └ -昆扬 (0赞): [魔法少女的魔女审判表情包_探头]\n  └ 鸮鸮不咕咕叫 (0赞): @哈基沙大玉",
       "url": "https://www.bilibili.com/video/BV1rPMP6vEMr",
       "author": "汉堡包爱吃汉堡包",
-      "engagement": 141,
+      "engagement": 226,
       "media_url": "https://i1.hdslb.com/bfs/archive/fccd8912c727527e5b5866738442cdf9e8b56a5a.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 140,
-        "comment_count": 1,
-        "comments_fetched": 1,
+        "play": 223,
+        "comment_count": 3,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-07-04T13:59:41+00:00",
+      "lang": "zh",
+      "title": "【杀戮尖塔2】我的无限小众又变态   沙耶MOD",
+      "summary": "恭喜你占领无人区\n\n在创意工坊发现沙耶mod后兴冲冲下载进行游玩，在一层boss达成伪无限，成功斩杀无限血阶段瀑布巨兽\n【反哺】（能力）打出”寄生“牌后抽1\n【你所挚爱的我】（攻击）（寄生）（永久进化）施加一层寄生，造成等同于本次施加寄生层数的伤害，你每在一回合内施加4（3）次寄生，将1张本牌放回手卡。打出这张卡时根据实际造成的寄生层数获得等量进化值：1.（70）额外施加目标当前寄生层数一半的寄生，向上取整。2.（740）额外施加等同于目标当前寄生层数的寄生。",
+      "url": "https://www.bilibili.com/video/BV1T8MP6mE5Z",
+      "author": "人类的落日",
+      "engagement": 110,
+      "media_url": "https://i1.hdslb.com/bfs/archive/9e0dadadeca69aba67da7996eb4e4b6cff5ceb6a.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 110,
+        "comment_count": 0,
+        "comments_fetched": 0,
         "danmaku": 0
       }
     },
@@ -85,11 +103,11 @@
       "summary": "既然有局内录像就补档一下吧，不过省略了很多我在烧烤的步骤（。）\n  └ 燃え落ちない翼 (2赞): 好萌的boss啊[Alice In Cradle 格拉提亚 表情包_真香][Alice In Cradle 格拉提亚 表情包_真香]",
       "url": "https://www.bilibili.com/video/BV1rjMc6fESj",
       "author": "SherbetWhite",
-      "engagement": 86,
+      "engagement": 106,
       "media_url": "https://i1.hdslb.com/bfs/archive/cd0a25044a0d853a1bff1fab6c9813c3b1133980.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 84,
+        "play": 104,
         "comment_count": 2,
         "comments_fetched": 1,
         "danmaku": 0
@@ -103,29 +121,11 @@
       "summary": "",
       "url": "https://www.bilibili.com/video/BV1JTMP6YE9o",
       "author": "枕头hh",
-      "engagement": 52,
+      "engagement": 61,
       "media_url": "https://i1.hdslb.com/bfs/archive/780c1338787b3c083c9c08a6aa5e676e730ceb2d.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 52,
-        "comment_count": 0,
-        "comments_fetched": 0,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-07-04T13:59:41+00:00",
-      "lang": "zh",
-      "title": "【杀戮尖塔2】我的无限小众又变态   沙耶MOD",
-      "summary": "恭喜你占领无人区\n\n在创意工坊发现沙耶mod后兴冲冲下载进行游玩，在一层boss达成伪无限，成功斩杀无限血阶段瀑布巨兽\n【反哺】（能力）打出”寄生“牌后抽1\n【你所挚爱的我】（攻击）（寄生）（永久进化）施加一层寄生，造成等同于本次施加寄生层数的伤害，你每在一回合内施加4（3）次寄生，将1张本牌放回手卡。打出这张卡时根据实际造成的寄生层数获得等量进化值：1.（70）额外施加目标当前寄生层数一半的寄生，向上取整。2.（740）额外施加等同于目标当前寄生层数的寄生。",
-      "url": "https://www.bilibili.com/video/BV1T8MP6mE5Z",
-      "author": "人类的落日",
-      "engagement": 52,
-      "media_url": "https://i1.hdslb.com/bfs/archive/9e0dadadeca69aba67da7996eb4e4b6cff5ceb6a.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 52,
+        "play": 61,
         "comment_count": 0,
         "comments_fetched": 0,
         "danmaku": 0
@@ -139,13 +139,49 @@
       "summary": "-\n  └ 谢屑老板 (0赞): 繁血奥吉尔的大招收益极高，+12奥吉尔觉醒爆死扛吃胎瞬起1800力，杜勒吃大力量直接启爆\n双黑印位道中发育能力很强，狂气精通抽牌胚胎都是优质造物\n血肉队特有的缺银钥机制推荐用真理之门/神言石板/慈悲的哺育一类有银钥加成的弥补，因为几乎绑定杜勒专钥还缺胎缺狂都需要造物去补（点名瘟疫诊断书）\n道中思路靠真理之门提供的银钥做到第二回合开觉醒，沙耶0费/吃血池配合杜勒技能压血，大招收割能秒\n因为输出机会很关键，暴击率一定要叠高\n  └ 炽烈的卡芙卡 (0赞): 虐个2-5闹麻",
       "url": "https://www.bilibili.com/video/BV14DMA65E5m",
       "author": "谢屑老板",
-      "engagement": 40,
+      "engagement": 54,
       "media_url": "https://i0.hdslb.com/bfs/archive/da0592fce10f63ee2cd7ce724de2330e0b71aad6.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 38,
+        "play": 52,
         "comment_count": 2,
         "comments_fetched": 2,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-07-04T18:05:08+00:00",
+      "lang": "zh",
+      "title": "欢迎回家 郁纪",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV1FUMK6VEQP",
+      "author": "苹果朗姆",
+      "engagement": 40,
+      "media_url": "https://i2.hdslb.com/bfs/archive/d3a94786d19291bcd7b6c747669cd1b6db95d15b.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 40,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-07-04T14:01:45+00:00",
+      "lang": "zh",
+      "title": "第四届N厨杯-第二十日录播",
+      "summary": "第二十日直播录播\n  └ 不知今世为何 (0赞): @何沐樱 @伊什卡尔_不要攻击我 @绘奇旅 @希宵是个社会废人 @惑星planetes @炽烈的卡芙卡",
+      "url": "https://www.bilibili.com/video/BV1GNMN69EMn",
+      "author": "God7777",
+      "engagement": 35,
+      "media_url": "https://i2.hdslb.com/bfs/archive/2df3521d8a74a5b8e6bdd4fecc3893f7b6567536.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 33,
+        "comment_count": 2,
+        "comments_fetched": 1,
         "danmaku": 0
       }
     },
@@ -168,40 +204,19 @@
       }
     },
     {
-      "source": "bilibili",
-      "time": "2026-07-04T18:05:08+00:00",
-      "lang": "zh",
-      "title": "欢迎回家 郁纪",
-      "summary": "",
-      "url": "https://www.bilibili.com/video/BV1FUMK6VEQP",
-      "author": "苹果朗姆",
-      "engagement": 23,
-      "media_url": "https://i2.hdslb.com/bfs/archive/d3a94786d19291bcd7b6c747669cd1b6db95d15b.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 23,
-        "comment_count": 0,
-        "comments_fetched": 0,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-07-04T14:01:45+00:00",
-      "lang": "zh",
-      "title": "第四届N厨杯-第二十日录播",
-      "summary": "第二十日直播录播\n  └ 不知今世为何 (0赞): @何沐樱 @伊什卡尔_不要攻击我 @绘奇旅 @希宵是个社会废人 @惑星planetes @炽烈的卡芙卡",
-      "url": "https://www.bilibili.com/video/BV1GNMN69EMn",
-      "author": "God7777",
-      "engagement": 18,
-      "media_url": "https://i2.hdslb.com/bfs/archive/2df3521d8a74a5b8e6bdd4fecc3893f7b6567536.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 16,
-        "comment_count": 2,
-        "comments_fetched": 1,
-        "danmaku": 0
-      }
+      "source": "steam",
+      "time": "2026-07-05T02:09:29+00:00",
+      "lang": "schinese",
+      "title": "[正面] 好耶我是牌佬",
+      "summary": "好耶我是牌佬",
+      "url": "https://steamcommunity.com/profiles/76561199202603459/recommended/3052450",
+      "author": "76561199202603459",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "好耶我是牌佬",
+      "timestamp_created": 1783217369,
+      "playtime_forever": 2553
     },
     {
       "source": "steam",
@@ -216,7 +231,7 @@
       "voted_up": true,
       "review": "Lo instalé por Saya, pero la historia y el gameplay me está encantando. 10/10 recomendado.",
       "timestamp_created": 1783186660,
-      "playtime_forever": 257
+      "playtime_forever": 282
     },
     {
       "source": "steam",
@@ -246,7 +261,7 @@
       "voted_up": true,
       "review": "nb",
       "timestamp_created": 1783168635,
-      "playtime_forever": 5187
+      "playtime_forever": 5198
     },
     {
       "source": "steam",
@@ -291,7 +306,7 @@
       "voted_up": true,
       "review": "great game, i really hope the community continues to grow",
       "timestamp_created": 1783137657,
-      "playtime_forever": 4557
+      "playtime_forever": 4767
     },
     {
       "source": "taptap",
@@ -321,20 +336,8 @@
       "summary": "『忘却前夜』、ついに最終章！ デッキ構築型のスマホゲームとしてはトップクラスの面白さ。 特色のある覚醒体、交換所に遺物、 ...",
       "url": "https://www.youtube.com/watch?v=otis7FT-IVM",
       "author": "COREGAMERS! コアな神ゲー紹介",
-      "engagement": 124906,
+      "engagement": 124999,
       "media_url": "https://i.ytimg.com/vi/otis7FT-IVM/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-07-04T01:43:35Z",
-      "lang": "",
-      "title": "Paint on your sketch layer, trust me ‼️‼️ #commission #speedpaint #morimens #anime",
-      "summary": "",
-      "url": "https://www.youtube.com/watch?v=yMFNBcKjhCc",
-      "author": "Yes-Hi-Hello",
-      "engagement": 2142,
-      "media_url": "https://i.ytimg.com/vi/yMFNBcKjhCc/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -345,7 +348,7 @@
       "summary": "",
       "url": "https://www.youtube.com/watch?v=_XDSlo2js-4",
       "author": "AnjutheMage",
-      "engagement": 753,
+      "engagement": 772,
       "media_url": "https://i.ytimg.com/vi/_XDSlo2js-4/hqdefault.jpg",
       "content_type": "video"
     },
@@ -357,7 +360,7 @@
       "summary": "Don't know how long.",
       "url": "https://www.youtube.com/watch?v=PkzZ8TrITks",
       "author": "Flares117",
-      "engagement": 519,
+      "engagement": 555,
       "media_url": "https://i.ytimg.com/vi/PkzZ8TrITks/hqdefault.jpg",
       "content_type": "video"
     },
@@ -369,7 +372,7 @@
       "summary": "",
       "url": "https://www.youtube.com/watch?v=dmvh_48JWG8",
       "author": "Zyocuh",
-      "engagement": 215,
+      "engagement": 236,
       "media_url": "https://i.ytimg.com/vi/dmvh_48JWG8/hqdefault.jpg",
       "content_type": "video"
     },
@@ -381,7 +384,7 @@
       "summary": "shorts #morimens I think I've found my favorite character in Morimens so far...Pontos is goated!",
       "url": "https://www.youtube.com/watch?v=jJFwbi6YuOM",
       "author": "DARKSTAR2551",
-      "engagement": 174,
+      "engagement": 178,
       "media_url": "https://i.ytimg.com/vi/jJFwbi6YuOM/hqdefault.jpg",
       "content_type": "video"
     },
@@ -417,31 +420,19 @@
       "summary": "",
       "url": "https://www.youtube.com/watch?v=URsTbB1DU5o",
       "author": "Zyocuh",
-      "engagement": 54,
+      "engagement": 60,
       "media_url": "https://i.ytimg.com/vi/URsTbB1DU5o/hqdefault.jpg",
       "content_type": "video"
     },
     {
       "source": "youtube",
-      "time": "2026-07-04T01:58:04Z",
-      "lang": "",
-      "title": "【#忘却前夜  】※ネタバレ注意！終章「長い夢の終わり」#９-3【#推し活】",
-      "summary": "忘却前夜やっていきます！ トゥルーくんが好きな初心者守秘者です！ ※本日の配信は、終章のネタバレが含まれますのでご注意 ...",
-      "url": "https://www.youtube.com/watch?v=YvQtMLW7M3E",
-      "author": "卯咲乃ぬい",
-      "engagement": 46,
-      "media_url": "https://i.ytimg.com/vi/YvQtMLW7M3E/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-07-04T11:44:36Z",
+      "time": "2026-07-05T01:46:29Z",
       "lang": "",
       "title": "【忘却前夜】世の中結局大事なのは繁殖なのよ",
       "summary": "子孫を、遺伝子を残さないと...... 軽く繁栄と対人 Twitter(X)→https://x.com/to_m4fuyu.",
       "url": "https://www.youtube.com/watch?v=wZPnhZTyOl0",
       "author": "to真冬",
-      "engagement": 31,
+      "engagement": 35,
       "media_url": "https://i.ytimg.com/vi/wZPnhZTyOl0/hqdefault.jpg",
       "content_type": "video"
     },
@@ -465,7 +456,7 @@
       "summary": "",
       "url": "https://www.youtube.com/watch?v=3Eac1vTgDN0",
       "author": "ularkanojo (flos)",
-      "engagement": 6,
+      "engagement": 8,
       "media_url": "https://i.ytimg.com/vi/3Eac1vTgDN0/hqdefault.jpg",
       "content_type": "video"
     },
@@ -477,8 +468,20 @@
       "summary": "Idea from https://www.youtube.com/watch?v=CQIZq82zDDE&t=169s.",
       "url": "https://www.youtube.com/watch?v=z6-Ysm-BVHo",
       "author": "Noir",
-      "engagement": 5,
+      "engagement": 7,
       "media_url": "https://i.ytimg.com/vi/z6-Ysm-BVHo/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-07-05T02:10:54Z",
+      "lang": "",
+      "title": "Morimens Final Release Chapter maybe and some Pontons maybe",
+      "summary": "Stream almost daily whenever I have free time we multi-stream on twitch and only on twitch for things that might get us in trouble ...",
+      "url": "https://www.youtube.com/watch?v=68RIizdklbM",
+      "author": "FluffeyPanda's World",
+      "engagement": 4,
+      "media_url": "https://i.ytimg.com/vi/68RIizdklbM/hqdefault_live.jpg",
       "content_type": "video"
     },
     {
@@ -630,18 +633,8 @@
       "engagement": 3
     },
     {
-      "source": "steam_discussion",
-      "time": "2026-07-04T02:16:51+00:00",
-      "lang": "en",
-      "title": "[Steam论坛] yoo",
-      "summary": "controller. support.",
-      "url": "https://steamcommunity.com/app/3052450/discussions/0/573794509062737526/",
-      "author": "Über Taaw",
-      "engagement": 0
-    },
-    {
       "source": "weibo",
-      "time": "2026-07-04T23:57:29.725458+00:00",
+      "time": "2026-07-05T02:34:19.317730+00:00",
       "lang": "zh",
       "title": "忘却前夜 之前给忘却前夜周年庆画的图解禁啦！",
       "summary": "忘却前夜 之前给忘却前夜周年庆画的图解禁啦！",
@@ -651,7 +644,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-07-04T23:57:29.738161+00:00",
+      "time": "2026-07-05T02:34:19.329103+00:00",
       "lang": "zh",
       "title": "最近没东西发了，来发一下这个。\n为忘却前夜设计的阿特拉克/阿拉克涅可以公开了，细化由项目内完成本人只负责初期设计。感谢项目组指导。\n做设计爽一直设计一直爽\n\n#",
       "summary": "最近没东西发了，来发一下这个。\n为忘却前夜设计的阿特拉克/阿拉克涅可以公开了，细化由项目内完成本人只负责初期设计。感谢项目组指导。\n做设计爽一直设计一直爽\n\n#忘却前夜#",
@@ -661,7 +654,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-07-04T23:57:29.751208+00:00",
+      "time": "2026-07-05T02:34:19.341071+00:00",
       "lang": "zh",
       "title": "忘却前夜丨唤醒体展示✦庞托斯\n\n「很好，抬起头，露出你的喉咙。再告诉我一次，你依然信奉你那肮脏的神吗？」\n「我，即此处唯一的神祇，深渊之主，庞托斯。」\n\n✦ 庞",
       "summary": "忘却前夜丨唤醒体展示✦庞托斯\n\n「很好，抬起头，露出你的喉咙。再告诉我一次，你依然信奉你那肮脏的神吗？」\n「我，即此处唯一的神祇，深渊之主，庞托斯。」\n\n✦ 庞托斯CV：诹访部顺一\n忘却前夜#忘却前夜##Morimens##庞托斯##诹访部顺一#",
@@ -671,7 +664,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-07-04T23:57:29.764682+00:00",
+      "time": "2026-07-05T02:34:19.352708+00:00",
       "lang": "zh",
       "title": "忘却前夜#忘却前夜#\n【V2.5.2 沉渊┊What the Abyss Keeps┊심연】\nV2.5.2 沉渊\n\n深渊比灾难更早地找上了他，\n他的一生也没有第",
       "summary": "忘却前夜#忘却前夜#\n【V2.5.2 沉渊┊What the Abyss Keeps┊심연】\nV2.5.2 沉渊\n\n深渊比灾难更早地找上了他，\n他的一生也没有第二种选择。\n古老的猎哨声响彻海岸线，\n穷途末路的他，终于得以留存一切。\n\n不会再有任何东西能够脱离他的掌控。\n不会再有任何事物能够让他面对分离。\n\n——✦—— ...全文",
@@ -691,17 +684,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-07-04T23:57:29.800505+00:00",
-      "lang": "zh",
-      "title": "12758【投稿】忘却前夜。我主任",
-      "summary": "12758【投稿】忘却前夜。我主任",
-      "url": "",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-07-04T23:57:29.811864+00:00",
+      "time": "2026-07-05T02:34:19.386166+00:00",
       "lang": "zh",
       "title": "给#忘却前夜# 设计的boss解禁了，认领一下，感谢项目组老师的细化和指导，我为能画蜘蛛母亲而喜悦",
       "summary": "给#忘却前夜# 设计的boss解禁了，认领一下，感谢项目组老师的细化和指导，我为能画蜘蛛母亲而喜悦",
@@ -711,7 +694,17 @@
     },
     {
       "source": "weibo",
-      "time": "2026-07-04T23:57:29.823382+00:00",
+      "time": "2026-07-05T02:34:19.396973+00:00",
+      "lang": "zh",
+      "title": "12758【投稿】忘却前夜。我主任",
+      "summary": "12758【投稿】忘却前夜。我主任",
+      "url": "",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weibo",
+      "time": "2026-07-05T02:34:19.407966+00:00",
       "lang": "zh",
       "title": "【海螺的回音】\n·私设ooc注意\n·有墨菲x弥利亚姆关系性\n·cpcb亲情可以自行理解与避雷\n\n你可曾听说过人鱼公主的故事？\n据说，生活在海洋中的她，孤身来到了",
       "summary": "【海螺的回音】\n·私设ooc注意\n·有墨菲x弥利亚姆关系性\n·cpcb亲情可以自行理解与避雷\n\n你可曾听说过人鱼公主的故事？\n据说，生活在海洋中的她，孤身来到了陌生的大地上。\n经历了丧失歌喉的苦楚，忍受过行走刀尖上的疼痛，却始终得不到心上人的爱。\n黎明破晓时，她的身影消散在金色的海平面上。\n\n...全文",
@@ -721,27 +714,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-07-04T23:57:29.839583+00:00",
-      "lang": "zh",
-      "title": "忘却前夜 有了+12杜勒和+12沙耶想必我能横行融灾口牙！（懒得配队懒得凹所以还是打350摸鱼\n助战挂的沙耶",
-      "summary": "忘却前夜 有了+12杜勒和+12沙耶想必我能横行融灾口牙！（懒得配队懒得凹所以还是打350摸鱼\n助战挂的沙耶",
-      "url": "",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-07-04T23:57:29.851035+00:00",
-      "lang": "zh",
-      "title": "忘却前夜#卡波##囚羽骨#\n\n「很久很久以后，他与他终于有了一首被传唱的吟游诗。\n关于死而复苏的救赎，关于一体双生的灵魂。」\n\n祝家产生日快乐！\n\n私人稿件 禁",
-      "summary": "忘却前夜#卡波##囚羽骨#\n\n「很久很久以后，他与他终于有了一首被传唱的吟游诗。\n关于死而复苏的救赎，关于一体双生的灵魂。」\n\n祝家产生日快乐！\n\n私人稿件 禁止使用\n\n专栏 · 免除被偏爱的罪",
-      "url": "",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-07-04T23:57:29.862310+00:00",
+      "time": "2026-07-05T02:34:19.422553+00:00",
       "lang": "zh",
       "title": "忘却前夜\n寶貝們剛回遊想問問怎麼配隊比較想讓神父上場 以及萊克現在強度怎麼樣呀？",
       "summary": "忘却前夜\n寶貝們剛回遊想問問怎麼配隊比較想讓神父上場 以及萊克現在強度怎麼樣呀？",
@@ -751,7 +724,27 @@
     },
     {
       "source": "weibo",
-      "time": "2026-07-04T23:57:29.873539+00:00",
+      "time": "2026-07-05T02:34:19.433703+00:00",
+      "lang": "zh",
+      "title": "忘却前夜 有了+12杜勒和+12沙耶想必我能横行融灾口牙！（懒得配队懒得凹所以还是打350摸鱼\n助战挂的沙耶",
+      "summary": "忘却前夜 有了+12杜勒和+12沙耶想必我能横行融灾口牙！（懒得配队懒得凹所以还是打350摸鱼\n助战挂的沙耶",
+      "url": "",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weibo",
+      "time": "2026-07-05T02:34:19.444760+00:00",
+      "lang": "zh",
+      "title": "忘却前夜#卡波##囚羽骨#\n\n「很久很久以后，他与他终于有了一首被传唱的吟游诗。\n关于死而复苏的救赎，关于一体双生的灵魂。」\n\n祝家产生日快乐！\n\n私人稿件 禁",
+      "summary": "忘却前夜#卡波##囚羽骨#\n\n「很久很久以后，他与他终于有了一首被传唱的吟游诗。\n关于死而复苏的救赎，关于一体双生的灵魂。」\n\n祝家产生日快乐！\n\n私人稿件 禁止使用\n\n专栏 · 免除被偏爱的罪",
+      "url": "",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weibo",
+      "time": "2026-07-05T02:34:19.456029+00:00",
       "lang": "zh",
       "title": "忘却前夜 这个越打越厚的家伙大家有什么头绪吗我要崩溃了，今天该不会打一百回合吧",
       "summary": "忘却前夜 这个越打越厚的家伙大家有什么头绪吗我要崩溃了，今天该不会打一百回合吧",
@@ -761,7 +754,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-07-04T23:57:29.885897+00:00",
+      "time": "2026-07-05T02:34:19.467337+00:00",
       "lang": "zh",
       "title": "忘却前夜#忘却前夜#\n◆ 角色活动唤醒「深渊猎主」& 命轮活动唤醒「渊壑囚牢」\n唤醒时间：6月29日 09:00 - 7月27日 09:00\n唤醒体「庞托斯」&",
       "summary": "忘却前夜#忘却前夜#\n◆ 角色活动唤醒「深渊猎主」& 命轮活动唤醒「渊壑囚牢」\n唤醒时间：6月29日 09:00 - 7月27日 09:00\n唤醒体「庞托斯」& 命轮「活囚笼」获取概率提升！\n\n◆「古旧渊影」角色试玩\n活动时间：6月29日 09:00 - 7月27日 09:00\n完成该唤醒体试玩之后可领取：\n流明之芯*1，银芯* ...全文",
@@ -771,17 +764,17 @@
     },
     {
       "source": "weibo",
-      "time": "2026-07-04T23:57:29.900542+00:00",
+      "time": "2026-07-05T02:34:19.482124+00:00",
       "lang": "zh",
-      "title": "忘却前夜 搬一些没发过的过来",
-      "summary": "忘却前夜 搬一些没发过的过来",
+      "title": "【tg】忘却前夜立绘是属于什么画法很喜欢那种风格，该怎么学习呢\n\n41807",
+      "summary": "【tg】忘却前夜立绘是属于什么画法很喜欢那种风格，该怎么学习呢\n\n41807",
       "url": "",
       "author": "",
       "engagement": 0
     },
     {
       "source": "weibo",
-      "time": "2026-07-04T23:57:29.911694+00:00",
+      "time": "2026-07-05T02:34:19.493467+00:00",
       "lang": "zh",
       "title": "忘却前夜 求填 FTJEYT5GYR",
       "summary": "忘却前夜 求填 FTJEYT5GYR",
@@ -841,12 +834,12 @@
     },
     {
       "source": "appstore",
-      "time": "2026-06-28T19:17:29-07:00",
-      "lang": "ko",
-      "title": "좋아! 좋아욤!",
-      "summary": "겜 재밌어욤!",
-      "url": "https://apps.apple.com/kr/app/id6447354150?see-all=reviews#as-14239124258",
-      "author": "ㄱ다드",
+      "time": "2026-06-16T02:49:31-07:00",
+      "lang": "en",
+      "title": "Amazing game",
+      "summary": "One of the best gacha games out there. The devs are incredibly talented and generous.",
+      "url": "https://apps.apple.com/au/app/id6447354150?see-all=reviews#as-14188874283",
+      "author": "Temiiiiiiii88",
       "engagement": 5
     },
     {
@@ -928,6 +921,16 @@
       "url": "https://apps.apple.com/jp/app/id6743462069?see-all=reviews#as-14152769127",
       "author": "ててててかさは",
       "engagement": 5
+    },
+    {
+      "source": "appstore",
+      "time": "2026-06-07T01:01:16-07:00",
+      "lang": "en",
+      "title": "not bad",
+      "summary": "objectively speaking, it's pretty good, they give out a lot of freebies. However, they've been intentionally skimping on resources lately, and the demands of character progression are rising. Think carefully before diving in",
+      "url": "https://apps.apple.com/au/app/id6447354150?see-all=reviews#as-14153694947",
+      "author": "navirebu",
+      "engagement": 4
     },
     {
       "source": "appstore",
@@ -1127,6 +1130,16 @@
       "summary": "El juego en si me encanta, mas que esta en español, y los personajes me encantan en si, si es que se puede en un futuro, quiciera que se pueda tener interacciones con los personajes, como citas, hablar mas de ellos, o interacciones romanticas y para mi ya estaria perfecto, obviamente asi como esta tambien me encanta.",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=es#gp-8fed1ea6-9216-40ad-a0f9-3483264e6a97",
       "author": "Elizabeth Britez Sosa",
+      "engagement": 1
+    },
+    {
+      "source": "google_play",
+      "time": "2026-06-28T07:51:18",
+      "lang": "ja",
+      "title": "[Google Play 好评] ★5 「融触」を終わらせたい気持ちと、ゲームとして終わってほしくない気持ちが同時に存在",
+      "summary": "「融触」を終わらせたい気持ちと、ゲームとして終わってほしくない気持ちが同時に存在する不思議なゲーム。　きっかけは皆さんご存知の沙耶の唄。正直コラボアイテムが手に入ればなんでも良かったので、ゲーム自体にあまりこだわりはなかった。 　が、いざやってみるとなんという衝撃。あまりにも作り込みがすごい。まず、突然の混乱から始まり、そのあとに世界観を掴ませるという、疾走感のあるチュートリアルが本当に良く考えられている。キャラ同士の関係をナチュラルにまとめ、甘えを出し抜いた本気の展開に感情移入が止まらず気付けば設定資料を1日中読み漁る日々。特にお気に入りのシルバーコア通信では、それぞれの一面が垣間見えほっこりする時もあれば真剣に眺めることもあり、毎日誰かからのメッセージを待ってしまう。デフォルメでありながら一切妥協しないモーションやカメラワーク、ストーリーの街をなぞらせるようにマス目の上で攻略を進めるシステムも他にはない新しい体験を得ることができる。 　何から何まで演出に富んだ忘却前夜、制作に当たった全てのスタッフには数え切れないぐらいの感謝と尊敬を心からを示したい。銀の鍵の導きがあらんことを。",
+      "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-5106d1bd-db6f-447c-95d7-668e8e07b9c9",
+      "author": "内田",
       "engagement": 1
     },
     {
@@ -2191,16 +2204,6 @@
     },
     {
       "source": "google_play",
-      "time": "2026-06-28T07:51:18",
-      "lang": "ja",
-      "title": "[Google Play 好评] ★5 「融触」を終わらせたい気持ちと、ゲームとして終わってほしくない気持ちが同時に存在",
-      "summary": "「融触」を終わらせたい気持ちと、ゲームとして終わってほしくない気持ちが同時に存在する不思議なゲーム。　きっかけは皆さんご存知の沙耶の唄。正直コラボアイテムが手に入ればなんでも良かったので、ゲーム自体にあまりこだわりはなかった。 　が、いざやってみるとなんという衝撃。あまりにも作り込みがすごい。まず、突然の混乱から始まり、そのあとに世界観を掴ませるという、疾走感のあるチュートリアルが本当に良く考えられている。キャラ同士の関係をナチュラルにまとめ、甘えを出し抜いた本気の展開に感情移入が止まらず気付けば設定資料を1日中読み漁る日々。特にお気に入りのシルバーコア通信では、それぞれの一面が垣間見えほっこりする時もあれば真剣に眺めることもあり、毎日誰かからのメッセージを待ってしまう。デフォルメでありながら一切妥協しないモーションやカメラワーク、ストーリーの街をなぞらせるようにマス目の上で攻略を進めるシステムも他にはない新しい体験を得ることができる。 　何から何まで演出に富んだ忘却前夜、制作に当たった全てのスタッフには数え切れないぐらいの感謝と尊敬を心からを示したい。銀の鍵の導きがあらんことを。",
-      "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-5106d1bd-db6f-447c-95d7-668e8e07b9c9",
-      "author": "内田",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
       "time": "2026-06-27T12:26:53",
       "lang": "ja",
       "title": "[Google Play 好评] ★5 クトゥルフ好きには堪らないゲーム",
@@ -2575,6 +2578,16 @@
     },
     {
       "source": "pixiv",
+      "time": "2026-07-05T02:34:20.783724+00:00",
+      "lang": "",
+      "title": "",
+      "summary": "",
+      "url": "https://www.pixiv.net/artworks/",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "pixiv",
       "time": "2026-06-11T13:49:08+09:00",
       "lang": "",
       "title": "拉娘",
@@ -2595,18 +2608,6 @@
       "author": "非我らぎ　Skeb募集中",
       "engagement": 0,
       "media_url": "https://i.pximg.net/c/250x250_80_a2/custom-thumb/img/2026/06/07/23/20/14/145737590_p0_custom1200.jpg",
-      "content_type": "image"
-    },
-    {
-      "source": "pixiv",
-      "time": "2026-06-06T19:18:35+09:00",
-      "lang": "",
-      "title": "忘却前夜ハーフアニバーサリー",
-      "summary": "",
-      "url": "https://www.pixiv.net/artworks/145679126",
-      "author": "れちゃん",
-      "engagement": 0,
-      "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/06/19/18/35/145679126_p0_square1200.jpg",
       "content_type": "image"
     },
     {
@@ -2742,18 +2743,6 @@
       "content_type": "image"
     },
     {
-      "source": "pixiv",
-      "time": "2026-06-15T02:59:16+09:00",
-      "lang": "",
-      "title": "熔朵",
-      "summary": "",
-      "url": "https://www.pixiv.net/artworks/146024746",
-      "author": "きよ",
-      "engagement": 0,
-      "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/15/02/59/16/146024746_p0_square1200.jpg",
-      "content_type": "image"
-    },
-    {
       "source": "ruliweb",
       "time": "2026-07-02T15:00:00+00:00",
       "lang": "ko",
@@ -2845,7 +2834,7 @@
     },
     {
       "source": "stopgame",
-      "time": "2026-07-04T23:57:30.995902+00:00",
+      "time": "2026-07-05T02:34:20.200084+00:00",
       "lang": "ru",
       "title": "[StopGame] Morimens — 3.9/10 (0 оценок)",
       "summary": "Всё об игре Morimens — описание, обзоры и отзывы, даты выхода, поддерживаемые платформы, официальный сайт и системные требования на нашем сайте",
@@ -2859,7 +2848,7 @@
       "lang": "zh",
       "title": "[微信] 《忘却前夜》韩语本地化志愿者招募",
       "summary": "",
-      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS-Ce7l9fToAf6FPtaIR86Rk-IgpTkBJJYlqXa8Fplpd9qTa8NL9TiPMpKfTJXxvGe05JXz-q_6742g4Ero1Ct4x6wfLKm3QnHxwNzyieJyzSa64BDXVEAJCn8PE6dKUTbGlbatUV9sBvlBns9GkOeAUj_SYMCf3LdwKo9Vc3mPobl4Kj3FQkcbxGYAacgObodJyY_5BH6o5c4JosGAdLalAY-UZGbO56rA..&amp;type=2&amp;query=%E5%BF%98%E5%8D%B4%E5%89%8D%E5%A4%9C&amp;token=151AA9C2ABBDCBA38B8DDE5A476947CB8B389F5A6A499DEB",
+      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS-Ce7l9fToAfLCAsvWAjBm8-IgpTkBJJYlqXa8Fplpd9qTa8NL9TiPMpKfTJXxvGe05JXz-q_6742g4Ero1Ct4x6wfLKm3QnH3jct2XindnkeDPnhclGeWeMyZvoWQkEkL7htwNi7T4dcEmqtEIWol4iYPD0NaawfIBdxpyQhrfjHrKGsd0WCYBigZf6Gkzy5laNoEVQv1GNQxe2RygIP1_RtmyIGw2VAg..&amp;type=2&amp;query=%E5%BF%98%E5%8D%B4%E5%89%8D%E5%A4%9C&amp;token=15CB3B2922422300141546C7EDD07D7B140C79F46A49C2AC",
       "author": "",
       "engagement": 0
     },
@@ -2869,7 +2858,7 @@
       "lang": "zh",
       "title": "[微信] 忘却前夜*沙耶之歌丨表情包",
       "summary": "",
-      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS-Ce7l9fToAf6FPtaIR86Rk-IgpTkBJJYlqXa8Fplpd9qTa8NL9TiPMpKfTJXxvGe05JXz-q_6742g4Ero1Ct4x6wfLKm3QnH2_4ts4drhDbyH6MgnQhpmrGwE9lbCvLUg07cpnqwM-LQj82_RuWYKHyUfhQsflzMKWnGWwO9RPEjp7PcVN-v5P7S7-qo-Rgl3sOzQ3_3lRlyCMxrcVtDf8tPujwwRB2Pw..&amp;type=2&amp;query=%E5%BF%98%E5%8D%B4%E5%89%8D%E5%A4%9C&amp;token=151AA9C2ABBDCBA38B8DDE5A476947CB8B389F5A6A499DEB",
+      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS-Ce7l9fToAfLCAsvWAjBm8-IgpTkBJJYlqXa8Fplpd9qTa8NL9TiPMpKfTJXxvGe05JXz-q_6742g4Ero1Ct4x6wfLKm3QnH91nKHeEh0pmgzbVN9B2PbZAW3Z2gj9dLakRvZMwT0U9S3DoZ1y9O5M1B8oJEufKsFAc5MNZNNZyzoPXM310gxCJlu5D_ySoCyxp3fMLFP079QgCXRdPIKzzAjcIGepUqA..&amp;type=2&amp;query=%E5%BF%98%E5%8D%B4%E5%89%8D%E5%A4%9C&amp;token=15CB3B2922422300141546C7EDD07D7B140C79F46A49C2AC",
       "author": "",
       "engagement": 0
     },
@@ -2879,7 +2868,7 @@
       "lang": "zh",
       "title": "[微信] 《忘却前夜》韩语本地化志愿者招募",
       "summary": "",
-      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS-Ce7l9fToAfAwprKKPW1ic-IgpTkBJJYlqXa8Fplpd9qTa8NL9TiPMpKfTJXxvGe05JXz-q_6742g4Ero1Ct4x6wfLKm3QnHxwNzyieJyzSa64BDXVEAJCn8PE6dKUTbOasTo7ut66BgQiuku4rn-6kar7V158K1oiw5_cWRee4Ig4LW812eLo4jDowj74QVh-bi11LpgoYtOYKdKV2vMhCy6umSSPEsg..&amp;type=2&amp;query=%E5%BF%98%E5%8D%BB%E5%89%8D%E5%A4%9C&amp;token=151AB0A82235432A020754D0CCF52079024EF8836A499DEC",
+      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS-Ce7l9fToAfOL2FfH718N8-IgpTkBJJYlqXa8Fplpd9qTa8NL9TiPMpKfTJXxvGe05JXz-q_6742g4Ero1Ct4x6wfLKm3QnH3jct2XindnkeDPnhclGeWeMyZvoWQkEkO-16KPgZAcTI4aV1GVTr7aCSFmEqT6z2DcVrcndfZWKC12gVZmNYlmykl61JHqYb75pu3iCdON4tASNOonL8WFj3x9Nw6p-Fg..&amp;type=2&amp;query=%E5%BF%98%E5%8D%BB%E5%89%8D%E5%A4%9C&amp;token=15CB421F4C2A4A697D7A28AF83A1570D7DF1BA636A49C2AE",
       "author": "",
       "engagement": 0
     },
@@ -2889,7 +2878,7 @@
       "lang": "zh",
       "title": "[微信] 忘却前夜*沙耶之歌丨表情包",
       "summary": "",
-      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS-Ce7l9fToAfAwprKKPW1ic-IgpTkBJJYlqXa8Fplpd9qTa8NL9TiPMpKfTJXxvGe05JXz-q_6742g4Ero1Ct4x6wfLKm3QnH2_4ts4drhDbyH6MgnQhpmrGwE9lbCvLUmddAjM3tjZj-Hx8QgHNsfD8PqVaVAP4m-St8t-Tja6dEWfI0FFVKrM5MmBTt6nnNzKJJ5mcPUe7OB8FqK5slBTRtmyIGw2VAg..&amp;type=2&amp;query=%E5%BF%98%E5%8D%BB%E5%89%8D%E5%A4%9C&amp;token=151AB0A82235432A020754D0CCF52079024EF8836A499DEC",
+      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS-Ce7l9fToAfOL2FfH718N8-IgpTkBJJYlqXa8Fplpd9qTa8NL9TiPMpKfTJXxvGe05JXz-q_6742g4Ero1Ct4x6wfLKm3QnH91nKHeEh0pmgzbVN9B2PbZAW3Z2gj9dLcGlXWf3WoB7i4ev0oOBoQL_DfVh6X9UmKeLwA_7GjQcfwoOYhl8uLsPa_vRaob-iLGnjqfXF9YE0U-oZKiSwUPvzHZXxeLdyg..&amp;type=2&amp;query=%E5%BF%98%E5%8D%BB%E5%89%8D%E5%A4%9C&amp;token=15CB421F4C2A4A697D7A28AF83A1570D7DF1BA636A49C2AE",
       "author": "",
       "engagement": 0
     }

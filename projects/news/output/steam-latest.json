@@ -1,10 +1,25 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-04T23:58:17.931484+00:00",
+  "collected_at": "2026-07-05T02:35:07.292265+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 6,
+  "item_count": 7,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-07-05T02:09:29+00:00",
+      "lang": "schinese",
+      "title": "[正面] 好耶我是牌佬",
+      "summary": "好耶我是牌佬",
+      "url": "https://steamcommunity.com/profiles/76561199202603459/recommended/3052450",
+      "author": "76561199202603459",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "好耶我是牌佬",
+      "timestamp_created": 1783217369,
+      "playtime_forever": 2553
+    },
     {
       "source": "steam",
       "time": "2026-07-04T17:37:40+00:00",
@@ -18,7 +33,7 @@
       "voted_up": true,
       "review": "Lo instalé por Saya, pero la historia y el gameplay me está encantando. 10/10 recomendado.",
       "timestamp_created": 1783186660,
-      "playtime_forever": 257
+      "playtime_forever": 282
     },
     {
       "source": "steam",
@@ -48,7 +63,7 @@
       "voted_up": true,
       "review": "nb",
       "timestamp_created": 1783168635,
-      "playtime_forever": 5187
+      "playtime_forever": 5198
     },
     {
       "source": "steam",
@@ -93,7 +108,7 @@
       "voted_up": true,
       "review": "great game, i really hope the community continues to grow",
       "timestamp_created": 1783137657,
-      "playtime_forever": 4557
+      "playtime_forever": 4767
     }
   ]
 }
