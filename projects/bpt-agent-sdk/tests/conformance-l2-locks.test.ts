@@ -316,6 +316,21 @@ describe('L2 lock: thinking / maxThinkingTokens mapping', () => {
     });
   });
 
+  it("thinking {type:'adaptive'} passes through verbatim, no budget_tokens (E7-01)", async () => {
+    const fetchStub = makeSSEFetch([textReplyEvents('ok')]);
+    vi.stubGlobal('fetch', fetchStub);
+
+    await collect(
+      query({
+        prompt: 'hi',
+        // Explicit adaptive on a non-preset path: transmitted as-is even with
+        // a maxThinkingTokens fallback present (budgets are enabled-only).
+        options: opts({ thinking: { type: 'adaptive' }, maxThinkingTokens: 2048 }),
+      }),
+    );
+    expect(fetchStub.requests[0]!.body.thinking).toEqual({ type: 'adaptive' });
+  });
+
   it('thinking budget is clamped below max_tokens (API requires budget_tokens < max_tokens)', async () => {
     const fetchStub = makeSSEFetch([textReplyEvents('ok')]);
     vi.stubGlobal('fetch', fetchStub);
@@ -356,21 +371,19 @@ describe('L2 lock: thinking / maxThinkingTokens mapping', () => {
   });
 });
 
-describe('L2 lock: claude_code preset defaults thinking ON (E1)', () => {
+describe('L2 lock: claude_code preset defaults thinking ON (E1/E7-01)', () => {
   const preset = { type: 'preset', preset: 'claude_code' } as const;
 
-  it('preset with no thinking options sends the 4096 default budget', async () => {
-    // The official CLI observably defaults thinking ON (every official-arm L5
-    // trace carries thinking events); 4096 is OUR chosen budget (the official
-    // value is request-body-internal and never read) - KD in docs/COMPAT.md.
+  it("preset with no thinking options sends adaptive thinking (official wire shape, E7-01)", async () => {
+    // The official CLI defaults thinking ON, and the r3 wire differential
+    // shows it sends {type:'adaptive'} with NO budget_tokens - the model
+    // sizes its own thinking. E7-01 aligns our preset default verbatim
+    // (replacing the earlier OUR-chosen fixed 4096 budget).
     const fetchStub = makeSSEFetch([textReplyEvents('ok')]);
     vi.stubGlobal('fetch', fetchStub);
 
     await collect(query({ prompt: 'hi', options: opts({ systemPrompt: preset }) }));
-    expect(fetchStub.requests[0]!.body.thinking).toEqual({
-      type: 'enabled',
-      budget_tokens: 4096,
-    });
+    expect(fetchStub.requests[0]!.body.thinking).toEqual({ type: 'adaptive' });
   });
 
   it('preset + maxThinkingTokens: 0 is the explicit opt-out (no thinking param)', async () => {

@@ -1006,6 +1006,25 @@ describe('runAgentLoop', () => {
     expect(transport.requests[0]!.thinking).toBeUndefined();
   });
 
+  it("thinking {type:'adaptive'} is transmitted verbatim with no budget_tokens (E7-01)", async () => {
+    // The official wire shape: {type:'adaptive'} and NOTHING else - no budget
+    // resolution, no clamp, and any maxThinkingTokens fallback is ignored
+    // (budgets are enabled-only).
+    const transport = new MockTransport([textReplyEvents('ok')]);
+    const deps = makeDeps(transport);
+    const history: APIMessageParam[] = [{ role: 'user', content: 'go' }];
+
+    await collect(
+      runAgentLoop(
+        history,
+        deps,
+        makeConfig({ thinking: { type: 'adaptive' }, maxThinkingTokens: 2048 }),
+      ),
+    );
+
+    expect(transport.requests[0]!.thinking).toEqual({ type: 'adaptive' });
+  });
+
   // ----- finding #2: stop_reason tool_use with zero tool_use blocks -----
 
   it('stop_reason tool_use with no tool_use blocks ends as success without an empty user turn (#2)', async () => {

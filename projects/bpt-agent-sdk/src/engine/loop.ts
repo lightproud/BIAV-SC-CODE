@@ -403,8 +403,14 @@ export async function* runAgentLoop(
   // takes effect on the next assistant sub-turn, mirroring the per-turn re-read
   // of config.model below (finding #12).
   const computeThinking = (): StreamRequest['thinking'] => {
+    if (config.thinking?.type === 'adaptive') {
+      // E7-01: pass adaptive through verbatim — the official wire shape is
+      // {type:'adaptive'} with NO budget_tokens (the model sizes its own
+      // thinking per request), so no budget resolution or clamping applies.
+      return { type: 'adaptive' };
+    }
     if (config.thinking?.type !== 'enabled') {
-      return undefined; // adaptive/disabled/unset -> omit the param entirely
+      return undefined; // disabled/unset -> omit the param entirely
     }
     const requested =
       config.thinking.budgetTokens ??

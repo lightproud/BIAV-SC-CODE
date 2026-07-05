@@ -74,10 +74,6 @@ import { loadProjectMcpServers } from './mcp/project-config.js';
 
 const DEFAULT_MODEL = 'claude-sonnet-4-5';
 const DEFAULT_MAX_OUTPUT_TOKENS = 8192;
-// Default thinking budget on the claude_code preset path (E1). OUR chosen
-// value: the official CLI observably defaults thinking ON, but its budget is
-// request-body-internal (never read under the net-observation boundary).
-const DEFAULT_PRESET_THINKING_BUDGET = 4096;
 const CLAUDE_CODE_VERSION = '0.1.0';
 
 /** Static model list surfaced by supportedModels()/initializationResult(). */
@@ -628,19 +624,16 @@ export function query(args: {
     systemPromptVolatile = promptParts.volatile;
   }
 
-  // Default-on extended thinking, claude_code preset path ONLY (E1). The
-  // official CLI enables thinking by default: every official-arm L5 trace
-  // (54/54) carries thinking events on the public stream. Only "thinking is
-  // on" is observable there — the official BUDGET rides in the (never read)
-  // request body, so 4096 is OUR chosen default, registered as a KD in
-  // docs/COMPAT.md. Injection rules:
+  // Default-on extended thinking, claude_code preset path ONLY (E1 + E7-01).
+  // The official CLI enables thinking by default and (per the r3 wire
+  // differential) sends `thinking: {type:"adaptive"}` with NO budget_tokens —
+  // the model sizes its own thinking per request. E7-01 aligns our preset
+  // default to that exact wire shape (replacing the earlier OUR-chosen fixed
+  // 4096 budget). Injection rules:
   //  - an explicit options.thinking always wins (passed through verbatim);
   //  - maxThinkingTokens: 0 is the explicit opt-out (no thinking param);
-  //  - maxThinkingTokens > 0 enables thinking with that budget;
-  //  - both unset -> enable with the 4096 default budget.
-  // The default budget is injected via maxThinkingTokens (not a budget key on
-  // the thinking object) so computeThinking's precedence chain resolves it and
-  // a live setMaxThinkingTokens(0) can still switch thinking OFF mid-run.
+  //  - maxThinkingTokens > 0 enables FIXED thinking with that budget;
+  //  - both unset -> adaptive thinking (official wire default).
   // Non-preset paths (bare string / segments / no systemPrompt) are unchanged:
   // the drop-in default remains "no thinking param".
   const isClaudeCodePreset =
@@ -653,8 +646,7 @@ export function query(args: {
   let maxThinkingTokensConfig = options.maxThinkingTokens;
   if (isClaudeCodePreset && thinkingConfig === undefined) {
     if (maxThinkingTokensConfig === undefined) {
-      thinkingConfig = { type: 'enabled' };
-      maxThinkingTokensConfig = DEFAULT_PRESET_THINKING_BUDGET;
+      thinkingConfig = { type: 'adaptive' };
     } else if (maxThinkingTokensConfig > 0) {
       thinkingConfig = { type: 'enabled' };
     }
@@ -1524,9 +1516,8 @@ export function query(args: {
       // their existing behavior (maxThinkingTokens is a budget fallback only).
       if (isClaudeCodePreset && options.thinking === undefined) {
         if (n === undefined) {
-          // Reset -> the preset default (re-enabled at the default budget).
-          engineConfig.thinking = { type: 'enabled' };
-          engineConfig.maxThinkingTokens = DEFAULT_PRESET_THINKING_BUDGET;
+          // Reset -> the preset default (adaptive, E7-01 official wire shape).
+          engineConfig.thinking = { type: 'adaptive' };
         } else if (n > 0) {
           engineConfig.thinking = { type: 'enabled' };
         } else {

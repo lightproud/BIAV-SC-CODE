@@ -58,7 +58,10 @@ export type StreamRequest = {
   system?: string | TextBlockParam[];
   messages: APIMessageParam[];
   tools?: APIToolDefinition[];
-  thinking?: { type: 'enabled'; budget_tokens: number } | { type: 'disabled' };
+  thinking?:
+    | { type: 'adaptive' }
+    | { type: 'enabled'; budget_tokens: number }
+    | { type: 'disabled' };
   temperature?: number;
   signal?: AbortSignal;
   /** Per-request retry observer; the transport calls it on each retry. Not
