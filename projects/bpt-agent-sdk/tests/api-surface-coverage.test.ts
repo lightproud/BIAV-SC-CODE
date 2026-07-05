@@ -53,16 +53,13 @@ function covered(name: string): boolean {
  * DELETE the entry when its test lands (the guard reds out stale entries).
  */
 const KNOWN_UNTESTED: Record<string, string> = {
-  // Options fields - white-box batch 2 (engine-level harness required):
-  includeEnvironmentContext: 'engine option; needs a mock-transport request-shape probe',
-  onElicitation: 'MCP elicitation host callback; needs an in-process server driving elicitation',
-  sessionStoreFlush: 'external-session-store flush hook; needs a store spy fixture',
-  toolSearch: 'deferred-tool search surface; needs a registry fixture with deferred tools',
-  // Query control methods - white-box batch 2 (runtime MCP control):
-  reconnectMcpServer: 'runtime MCP control; needs a restartable in-process server fixture',
-  toggleMcpServer: 'runtime MCP control; same fixture as reconnectMcpServer',
-  setMcpServers: 'runtime MCP reconfiguration; same fixture family',
-  streamInput: 'streaming-input push method; needs an open-ended AsyncIterable harness',
+  // The rest of white-box batch 2 (includeEnvironmentContext / toolSearch /
+  // streamInput / sessionStoreFlush / setMcpServers / toggleMcpServer /
+  // reconnectMcpServer) landed in api-surface-batch2.test.ts and were deleted
+  // from this list. Remaining gap:
+  onElicitation:
+    'MCP elicitation host callback; needs an in-process server that ISSUES an elicitation ' +
+    'request mid-tool-call (server->client) - a heavier fixture than batch 2. Deferred to batch 3.',
 };
 
 function parseBlock(source: string, re: RegExp): string {
