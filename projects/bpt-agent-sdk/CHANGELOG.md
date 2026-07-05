@@ -8,6 +8,21 @@ and adds one line here. A CI guard (`scripts/check-version-bump.mjs`) reds
 any src-changing merge that forgets. 0.6.1 and 0.6.2 below are retroactive
 labels for builds that shipped under a duplicated "0.6.0".
 
+## 0.8.0 — 2026-07-05
+
+- **feat (BEHAVIOR REVERSAL, bump-pin ruling)**: an OMITTED `settingSources`
+  now loads **user+project+local** (CLAUDE.md / AGENTS.md / project `.mcp.json`),
+  matching official Claude Code and the live `@anthropic-ai/claude-agent-sdk`
+  docs. This flips the earlier pinned-0.3.199 default (omitted = load nothing) —
+  the last behavior-level NEW-IN-DOCS hold, gated behind the keeper up-pin
+  decision because a default flip diverges from the pinned conformance arm.
+  An explicit array is honored verbatim: `settingSources: []` is the explicit
+  opt-OUT (load nothing); an explicit subset loads exactly that subset. Single
+  source of truth: `src/internal/setting-sources.ts` (`resolveSettingSources`).
+  Migration: callers who omitted the field to get "no on-disk sources" must now
+  pass `settingSources: []` to keep that behavior. See MIGRATION.md §5g.
+  (skills/plugins loading remains a separate PARTIAL — unchanged here.)
+
 ## 0.7.1 — 2026-07-05
 
 - **feat (BPT-EXTENSION)**: `provider.cacheTtl?: '5m' | '1h'` selects the

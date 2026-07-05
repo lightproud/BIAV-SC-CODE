@@ -1000,12 +1000,14 @@ export type ThinkingConfigParam =
 // ---------------------------------------------------------------------------
 
 export type SettingSource = 'user' | 'project' | 'local';
-// NEW-IN-DOCS default-semantics note (behavior deliberately NOT changed here):
-// live docs redefine an omitted `settingSources` as "load user+project+local"
-// (matching the CLI). This SDK follows the PINNED semantics — omitted = load
-// NOTHING — unchanged, because flipping the default is a behavior-level reversal
-// that would diverge from the pinned conformance arm. It is a keeper up-pin
-// decision, handled only when the pins move. This SDK touches nothing here.
+// Default semantics (bump-pin ruling 2026-07-05, keeper "确定升钉了"): an OMITTED
+// `settingSources` loads user+project+local — matching official Claude Code /
+// the live @anthropic-ai/claude-agent-sdk docs. This FLIPPED the earlier
+// pinned-0.3.199 default (omitted = load nothing); it was the last behavior-
+// level NEW-IN-DOCS hold, gated behind the up-pin because a default flip
+// diverges from the pinned conformance arm. An explicit array — including `[]`
+// — is honored verbatim: `[]` is the explicit opt-OUT. Resolver:
+// internal/setting-sources.ts (single source of truth).
 
 /**
  * One segment of a caller-composed system prompt (`systemPrompt` segments
@@ -1135,8 +1137,10 @@ export type Options = {
   /**
    * Which on-disk instruction sources to load into the system prompt, matching
    * @anthropic-ai/claude-agent-sdk. 'project'/'local' walk up from cwd for
-   * CLAUDE.md / AGENTS.md; 'user' reads ~/.claude/CLAUDE.md. Empty/undefined
-   * loads nothing (the SDK default — the caller opts in). Only consulted on the
+   * CLAUDE.md / AGENTS.md; 'user' reads ~/.claude/CLAUDE.md. OMITTED (undefined)
+   * loads all three — user+project+local — matching official Claude Code (the
+   * bump-pin default, 2026-07-05). An explicit `[]` loads nothing (opt-out); an
+   * explicit subset loads exactly that subset. Only consulted on the
    * `claude_code` preset / default harness path.
    */
   settingSources?: SettingSource[];

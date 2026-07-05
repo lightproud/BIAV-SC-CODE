@@ -14,20 +14,24 @@
 
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { resolveSettingSources } from '../internal/setting-sources.js';
 import type { McpServerConfig, SettingSource } from '../types.js';
 
 /**
- * Load the project .mcp.json when `settingSources` includes 'project'.
- * Returns the top-level `mcpServers` map (shallow-validated: each value must be
- * a non-null object). Returns {} when the source is not enabled, the file is
- * missing, or the file is unreadable/non-JSON. Never throws.
+ * Load the project .mcp.json when the effective `settingSources` includes
+ * 'project'. Omitted settingSources resolves to load-all (bump-pin ruling), so
+ * an absent field now enables the project source; an explicit array without
+ * 'project' (including `[]`) does not. Returns the top-level `mcpServers` map
+ * (shallow-validated: each value must be a non-null object). Returns {} when
+ * the source is not enabled, the file is missing, or the file is unreadable/
+ * non-JSON. Never throws.
  */
 export function loadProjectMcpServers(
   cwd: string,
   settingSources: SettingSource[] | undefined,
   debug: (msg: string) => void,
 ): Record<string, McpServerConfig> {
-  if (!Array.isArray(settingSources) || !settingSources.includes('project')) {
+  if (!resolveSettingSources(settingSources).includes('project')) {
     return {};
   }
 

@@ -374,14 +374,17 @@ describe('loadProjectMcpServers', () => {
 
   const noop = (): void => {};
 
-  it('returns {} when settingSources is undefined', () => {
+  it('loads .mcp.json when settingSources is undefined (bump-pin load-all default)', () => {
+    // Reversal 2026-07-05: undefined resolves to user+project+local, so the
+    // project .mcp.json is now loaded by default (matching official CLI).
     writeFileSync(join(dir, '.mcp.json'), JSON.stringify({ mcpServers: { a: { command: 'x' } } }));
-    expect(loadProjectMcpServers(dir, undefined, noop)).toEqual({});
+    expect(loadProjectMcpServers(dir, undefined, noop)).toEqual({ a: { command: 'x' } });
   });
 
-  it('returns {} when settingSources does not include project', () => {
+  it('returns {} when an explicit settingSources omits project (incl. [])', () => {
     writeFileSync(join(dir, '.mcp.json'), JSON.stringify({ mcpServers: { a: { command: 'x' } } }));
     expect(loadProjectMcpServers(dir, ['user', 'local'], noop)).toEqual({});
+    expect(loadProjectMcpServers(dir, [], noop)).toEqual({});
   });
 
   it('parses mcpServers when project is enabled', () => {

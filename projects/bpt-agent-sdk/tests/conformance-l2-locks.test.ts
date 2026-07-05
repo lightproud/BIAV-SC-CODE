@@ -266,12 +266,21 @@ describe('L2 lock: systemPrompt request mapping', () => {
 });
 
 describe('L2 lock: settingSources CLAUDE.md injection', () => {
-  it("['project'] injects cwd CLAUDE.md into the stable system-reminder; unset does not", async () => {
+  // Bump-pin reversal 2026-07-05 (keeper "确定升钉了"): omitted settingSources now
+  // loads all three sources (user+project+local), matching official Claude Code /
+  // live docs. This lock deliberately tracks the LIVE semantics — AHEAD of the
+  // pinned-0.3.199 arm — per the up-pin ruling. ['project'] AND unset both inject
+  // the cwd CLAUDE.md; an explicit [] is the opt-out that does NOT inject.
+  it('["project"] AND unset both inject cwd CLAUDE.md; explicit [] does not', async () => {
     fs.writeFileSync(
       path.join(sandbox, 'CLAUDE.md'),
       'CONF-L2-CLAUDEMD-MARKER: follow the conformance house rules.\n',
     );
-    const fetchStub = makeSSEFetch([textReplyEvents('ok'), textReplyEvents('ok')]);
+    const fetchStub = makeSSEFetch([
+      textReplyEvents('ok'),
+      textReplyEvents('ok'),
+      textReplyEvents('ok'),
+    ]);
     vi.stubGlobal('fetch', fetchStub);
     const preset = { type: 'preset', preset: 'claude_code' } as const;
 
@@ -294,8 +303,15 @@ describe('L2 lock: settingSources CLAUDE.md injection', () => {
     const volatileBlock = blocks[blocks.length - 1]!;
     expect(volatileBlock.text).not.toContain('CONF-L2-CLAUDEMD-MARKER');
 
+    // Unset now injects too (load-all default).
     await collect(query({ prompt: 'hi', options: opts({ systemPrompt: preset }) }));
-    expect(systemText(fetchStub.requests[1]!.body)).not.toContain('CONF-L2-CLAUDEMD-MARKER');
+    expect(systemText(fetchStub.requests[1]!.body)).toContain('CONF-L2-CLAUDEMD-MARKER');
+
+    // Explicit [] is the opt-out — nothing injected.
+    await collect(
+      query({ prompt: 'hi', options: opts({ systemPrompt: preset, settingSources: [] }) }),
+    );
+    expect(systemText(fetchStub.requests[2]!.body)).not.toContain('CONF-L2-CLAUDEMD-MARKER');
   });
 });
 

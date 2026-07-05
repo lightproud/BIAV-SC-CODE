@@ -52,10 +52,18 @@ describe('gatherEnvironment', () => {
 });
 
 describe('loadProjectInstructions', () => {
-  it('returns empty when no settingSources are requested', () => {
+  it('explicit [] loads nothing (opt-out), even with a CLAUDE.md present', () => {
     writeFileSync(join(dir, 'CLAUDE.md'), 'Do the thing.');
-    expect(loadProjectInstructions(dir, undefined)).toBe('');
     expect(loadProjectInstructions(dir, [])).toBe('');
+  });
+
+  it('omitted settingSources loads the cwd CLAUDE.md (bump-pin load-all default)', () => {
+    // Reversal 2026-07-05: undefined now defaults to user+project+local, so an
+    // absent field picks up the project CLAUDE.md (the deterministic marker),
+    // matching official Claude Code. (The 'user' source reads ~/.claude and is
+    // env-dependent, so this asserts on the project marker only.)
+    writeFileSync(join(dir, 'CLAUDE.md'), 'DEFAULT_LOADALL_MARKER');
+    expect(loadProjectInstructions(dir, undefined)).toContain('DEFAULT_LOADALL_MARKER');
   });
 
   it('loads CLAUDE.md from cwd when project is requested', () => {
