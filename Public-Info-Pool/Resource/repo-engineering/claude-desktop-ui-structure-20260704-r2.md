@@ -1,9 +1,10 @@
-# Claude Desktop UI 全结构设计文档（黑箱观察规格）
+# Claude Desktop UI 全结构设计文档（黑箱观察规格，r2）
 
-- **日期**：2026-07-04
+- **日期**：2026-07-04；**r2 修订 2026-07-05**（自洽审视回填：§7 模式 1 补「起步形态 vs
+  演进方向」调和句、§8 增 auto 模式落差行、§8 许可证表述补核验标签）
 - **对象版本**：Claude Desktop 三标签形态（Chat / Cowork / Code），官方文档标注部分能力需 v1.2581.0+
 - **定位**：银芯 → 黑池单向输出物，供 BPT Desktop 前端参考。姊妹档案：
-  `bpt-desktop-ui-reference-20260704.md`（开源许可证红绿灯 + UI↔SDK 消息流对接表）
+  `bpt-desktop-ui-reference-20260704-r2.md`（开源许可证红绿灯 + UI↔SDK 消息流对接表）
 - **方法与净室声明**：本档案为**自然语言黑箱观察规格**——全部内容来自公开文档 / 官方教程 /
   帮助中心 / 训练期公开知识的转写，**不含任何逆向代码、资产、提示词文本**。BPT 据此独立实现，
   法律路径与 bpt-agent-sdk 净室纪律（Compaq 金标准）完全一致。
@@ -297,6 +298,8 @@ Design 并入桌面应用后的社区批评（r/claude，高热帖）：入口**
 
 1. **会话 = 一等资源**：会话自带环境 + 工作区 + 变更集 + 上下文，侧栏是资源管理器而非聊天历史。
    比 BPT 现有「单对话窗」模型高一个维度，是 Code 标签一切并行能力的地基。
+   （与姊妹档案 §4 骨架**不矛盾**：那是起步形态——单活动会话 + 会话列表；本模式是演进方向，
+   起步骨架的 ConversationList 天然可升级为会话资源管理器，非两个互斥方案。）
 2. **权限渐进阶梯**：五档模式 + 会话中随时换挡 + 企业可锁档。BPT 有 SDK `permissionMode`
    现成对接（default/acceptEdits/plan/dontAsk/bypassPermissions 已实现，见姊妹档案对接表）。
 3. **计划先行**：Plan mode / Cowork 计划审批把「先给我看你要干嘛」做成一档模式而非一句提示词。
@@ -318,15 +321,16 @@ Design 并入桌面应用后的社区批评（r/claude，高热帖）：入口**
 
 ## §8 与 BPT/SDK 的落差清单（结构性差异，非逐件映射）
 
-逐件 UI↔SDK 对接表见姊妹档案 `bpt-desktop-ui-reference-20260704.md` §5。本节只列
+逐件 UI↔SDK 对接表见姊妹档案 `bpt-desktop-ui-reference-20260704-r2.md` §5。本节只列
 Code 标签新观察到、上一档未覆盖的映射：
 
 | Claude Desktop 结构 | BPT 对接可行性 |
 |--------------------|---------------|
-| pane 化工作区（八 pane 拖拽） | 纯前端工程（react-mosaic / dockview 类，均 MIT）；SDK 无涉 |
+| pane 化工作区（八 pane 拖拽） | 纯前端工程（react-mosaic / dockview 类，MIT——训练期知识，装前复核 LICENSE）；SDK 无涉 |
 | diff 视图 + 行级评论回灌 | SDK 侧文件检查点 + Read/Edit 已有；评论回灌 = 把评论拼成下一条 user 消息，纯前端 |
 | tasks pane | `task_started/progress/updated/notification`（v0.4 真发射）直接驱动 |
-| terminal pane | SDK v0.5 ShellManager（后台 shell + BashOutput/KillShell）是数据源，前端接 xterm.js（MIT） |
+| terminal pane | SDK v0.5 ShellManager（后台 shell + BashOutput/KillShell）是数据源，前端接 xterm.js（MIT——训练期知识，装前复核） |
+| 权限模式 **auto**（分类器，研究预览） | SDK 不提供（COMPAT：`auto` not offered）——BPT 选择器做 SDK 实有的五档（default / acceptEdits / plan / dontAsk / bypassPermissions），勿照抄 Desktop 含 auto 的六种形态 |
 | 视图模式三档 | `SDKMessage.type` 前端过滤即得 |
 | CI 状态条 / Auto-fix | SDK 无此内建；BPT 若要，走宿主层轮询 gh + 自动派新 query |
 | 用量环 | `result.metrics`（SDKRunMetrics）现成 |

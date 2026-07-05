@@ -170,17 +170,23 @@
   数字说话前不宣胜负。缓存 0% 已诊断为「前缀够不着 Haiku 2048 门槛、非 bug、不灌水」。组织级缓存红利设计留 host
   （多层注入 proposal 档）、SDK 只承接 `segments` 分段 seam。整条线综述见
   `Public-Info-Pool/Resource/repo-engineering/bpt-sdk-prompt-cache-milestone-20260704.md`
-- **Desktop UI 参考线（2026-07-04）**：BPT Desktop 前端参考情报档（守密人转交 GPT-5.5 搜索梗概 +
-  AnySearch 许可证逐项实锤 + UI 组件↔`SDKMessage` 流对接表）落
-  `Public-Info-Pool/Resource/repo-engineering/bpt-desktop-ui-reference-20260704.md`——
+- **Desktop UI 参考线（2026-07-04，07-05 r2 修订 + 路线草案收口）**：BPT Desktop 前端参考情报档
+  （守密人转交 GPT-5.5 搜索梗概 + AnySearch 许可证逐项实锤 + UI 组件↔`SDKMessage` 流对接表）落
+  `Public-Info-Pool/Resource/repo-engineering/bpt-desktop-ui-reference-20260704-r2.md`——
   绿区（MIT/Apache 可借码：assistant-ui / AI Elements / Goose / LibreChat 等）/ 黄区（Open WebUI 品牌条款、
   LobeChat 社区许可证）/ 红区（Cherry Studio AGPL 双许可、Chatbox GPLv3 只看不抄）三级红绿灯 +
   净室边界（Claude Desktop 逆向产物零复制）。**第二弹（同日）**：Claude Desktop 本体全结构黑箱观察规格
-  `Public-Info-Pool/Resource/repo-engineering/claude-desktop-ui-structure-20260704.md`（三标签 Chat/Cowork/Code
+  `Public-Info-Pool/Resource/repo-engineering/claude-desktop-ui-structure-20260704-r2.md`（三标签 Chat/Cowork/Code
   逐节结构；Code 标签为官方文档全文取证最高置信——会话/worktree 模型、权限五档、八 pane、diff 行评、
   CI 状态条、computer use 三档 app 权限、快捷键全表；附证据分级与残余盲区；同日修订融入
   **Claude Design** 节——Labs 视觉工作区双平面布局 / 画布编辑 / Export 交接 / 桌面集成反模式教训）
-  + 配套单文件线框图 `claude-desktop-ui-wireframe-20260704.html`（四线框：Chat/Cowork/Code/Design）
+  + 配套单文件线框图 `claude-desktop-ui-wireframe-20260704.html`（四线框：Chat/Cowork/Code/Design）。
+  **07-05 自洽审视后 r2**：两档 git mv 升 `-r2`（对接表补 TodoWrite/AskUserQuestion/compact_boundary/
+  thinking/斜杠命令五行、权限模式清单补全并标注 Desktop auto 档 SDK 不提供、底座三层辨析
+  ——引擎底座 bpt-agent-sdk / UI 组件底座 assistant-ui·AI Elements / Vercel AI SDK 不需引入仅涉 adapter）；
+  **第四弹落地路线草案** `Public-Info-Pool/Resource/repo-engineering/bpt-desktop-ui-roadmap-20260705.md`
+  （M0 引擎接线与 IPC 契约 → M1 最小可信对话环 → M2 agent 透明化 → M3 工程面 → M4 演进留位，
+  每 M 带行为级验收；待守密人回填 BPT 现状后升 r2 校准）
 - **完成度（表面等价）**：对官方 SDK **0.3.199 基线**约 **89.5%**（v0.1 基线 68.3% → v0.2+v0.3 补齐后重算）。
   审计矩阵与逐行台账落 `Public-Info-Pool/Resource/repo-engineering/bpt-agent-sdk-completion-audit-20260703.md`
   + 同名 `-matrix-20260703.json`（146 行）
