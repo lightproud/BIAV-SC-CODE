@@ -1,8 +1,8 @@
 {
   "date": "2026-07-04",
-  "archived_at": "2026-07-05T11:28:46.851212+00:00",
+  "archived_at": "2026-07-05T13:19:31.898599+00:00",
   "source": "google_play",
-  "item_count": 3,
+  "item_count": 4,
   "items": [
     {
       "title": "[Google Play 好评] ★5 ABSOLUTELY PEAK GAME, tapi walaupun visu",
@@ -44,6 +44,20 @@
       "tags": [],
       "lang": "it",
       "platform_region": "it",
+      "region": "global"
+    },
+    {
+      "title": "[Google Play 好评] ★5 I can't believe they got saya as Collab",
+      "summary": "I can't believe they got saya as Collab .",
+      "source": "google_play",
+      "time": "2026-07-04T12:49:20",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-235de32f-c281-450a-a5e6-e3b405618d80",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "Parmeet Singh",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "us",
       "region": "global"
     }
   ],

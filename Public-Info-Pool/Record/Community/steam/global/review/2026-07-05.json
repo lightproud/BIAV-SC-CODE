@@ -1,8 +1,8 @@
 {
   "date": "2026-07-05",
-  "archived_at": "2026-07-05T11:28:46.753436+00:00",
+  "archived_at": "2026-07-05T13:19:31.806518+00:00",
   "source": "steam",
-  "item_count": 6,
+  "item_count": 9,
   "items": [
     {
       "title": "[正面] Lo instalé por Saya, pero la historia y el gamepla...",
@@ -142,6 +142,78 @@
         "playtime_forever": 607,
         "votes_up": 0,
         "timestamp_created": 1783244878
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] I'm having a lot of fun.  And I unlocked Saya, whi...",
+      "summary": "I'm having a lot of fun.  And I unlocked Saya, which is all I really cared about.",
+      "source": "steam_review",
+      "time": "2026-07-05T11:51:08+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198028107095/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198028107095",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 1027,
+        "votes_up": 0,
+        "timestamp_created": 1783252268
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] banger game",
+      "summary": "banger game",
+      "source": "steam_review",
+      "time": "2026-07-05T10:56:41+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199249187221/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199249187221",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 1722,
+        "votes_up": 0,
+        "timestamp_created": 1783249001
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Pretty good for what it is.  I had fun.  Massive t...",
+      "summary": "Pretty good for what it is.  I had fun.  Massive time sink though.  Pulling the plug.",
+      "source": "steam_review",
+      "time": "2026-07-05T10:18:32+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198027374556/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198027374556",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 32007,
+        "votes_up": 0,
+        "timestamp_created": 1783246712
       },
       "region": "global",
       "archive_subtype": "review",

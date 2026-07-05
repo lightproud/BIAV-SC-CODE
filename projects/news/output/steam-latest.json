@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-05T11:27:58.328277+00:00",
+  "collected_at": "2026-07-05T13:18:40.836507+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 8,
+  "item_count": 10,
   "items": [
     {
       "source": "steam",
@@ -19,6 +19,51 @@
       "review": "иислоп",
       "timestamp_created": 1783173629,
       "playtime_forever": 55
+    },
+    {
+      "source": "steam",
+      "time": "2026-07-05T11:51:08+00:00",
+      "lang": "english",
+      "title": "[正面] I'm having a lot of fun.  And I unlocked Saya, whi...",
+      "summary": "I'm having a lot of fun.  And I unlocked Saya, which is all I really cared about.",
+      "url": "https://steamcommunity.com/profiles/76561198028107095/recommended/3052450",
+      "author": "76561198028107095",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "I'm having a lot of fun.  And I unlocked Saya, which is all I really cared about.",
+      "timestamp_created": 1783252268,
+      "playtime_forever": 1027
+    },
+    {
+      "source": "steam",
+      "time": "2026-07-05T10:56:41+00:00",
+      "lang": "english",
+      "title": "[正面] banger game",
+      "summary": "banger game",
+      "url": "https://steamcommunity.com/profiles/76561199249187221/recommended/3052450",
+      "author": "76561199249187221",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "banger game",
+      "timestamp_created": 1783249001,
+      "playtime_forever": 1722
+    },
+    {
+      "source": "steam",
+      "time": "2026-07-05T10:18:32+00:00",
+      "lang": "english",
+      "title": "[正面] Pretty good for what it is.  I had fun.  Massive t...",
+      "summary": "Pretty good for what it is.  I had fun.  Massive time sink though.  Pulling the plug.",
+      "url": "https://steamcommunity.com/profiles/76561198027374556/recommended/3052450",
+      "author": "76561198027374556",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Pretty good for what it is.  I had fun.  Massive time sink though.  Pulling the plug.",
+      "timestamp_created": 1783246712,
+      "playtime_forever": 32007
     },
     {
       "source": "steam",
@@ -48,7 +93,7 @@
       "voted_up": true,
       "review": "one of the best gacha",
       "timestamp_created": 1783238236,
-      "playtime_forever": 1090
+      "playtime_forever": 1101
     },
     {
       "source": "steam",
@@ -78,7 +123,7 @@
       "voted_up": true,
       "review": "非常不错",
       "timestamp_created": 1783230334,
-      "playtime_forever": 374
+      "playtime_forever": 383
     },
     {
       "source": "steam",
@@ -109,21 +154,6 @@
       "review": "Lo instalé por Saya, pero la historia y el gameplay me está encantando. 10/10 recomendado.",
       "timestamp_created": 1783186660,
       "playtime_forever": 394
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-04T12:37:15+00:00",
-      "lang": "schinese",
-      "title": "[正面] nb",
-      "summary": "nb",
-      "url": "https://steamcommunity.com/profiles/76561199873655467/recommended/3052450",
-      "author": "76561199873655467",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "nb",
-      "timestamp_created": 1783168635,
-      "playtime_forever": 5198
     }
   ]
 }

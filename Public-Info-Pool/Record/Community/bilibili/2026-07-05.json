@@ -1,8 +1,8 @@
 {
   "date": "2026-07-05",
-  "archived_at": "2026-07-05T11:28:46.670565+00:00",
+  "archived_at": "2026-07-05T13:19:31.683800+00:00",
   "source": "bilibili",
-  "item_count": 11,
+  "item_count": 14,
   "items": [
     {
       "title": "今天我要变成一个香喷喷的肉丸子",
@@ -97,6 +97,29 @@
       "platform_region": "cn"
     },
     {
+      "title": "[忘却前夜]融灾5–5，不拿造物全程满血的深海炖鸡皮克曼",
+      "summary": "-\n  └ 护林犬 (2赞): 配置\n  └ RomG龍肆 (1赞): 血条瞩目\n  └ 吽的星怒 (0赞): 神秘血量",
+      "source": "bilibili",
+      "time": "2026-07-05T11:39:30+00:00",
+      "url": "https://www.bilibili.com/video/BV1qFT265E6t",
+      "engagement": 137,
+      "is_hot": false,
+      "author": "护林犬",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 131,
+        "comment_count": 6,
+        "comments_fetched": 3,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/31202070e19cdbc1f90428209fe01489e7a186f0.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
       "title": "为何沙耶之歌让我恶心，史上最过誉的gal【宅说旮旯第11期】",
       "summary": "└ 雪夜Xy_Spike (1赞): 昨天是被下了吗（[樱花萌放表情_唔]\n  └ 十三月ye (0赞): 沙耶我勉强能理解一下，男主实在是受不了\n  └ 万象东来 (0赞): 第一部旮旯入坑作，对我幼小的心灵产生了极大的震撼[doge]",
       "source": "bilibili",
@@ -115,6 +138,29 @@
         "danmaku": 1
       },
       "media_url": "https://i0.hdslb.com/bfs/archive/ce78fea96ebca33d6e85f22b0d95d79e749ff77d.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "答辩之歌:fen海狂区结局",
+      "summary": "-\n  └ 动漫从业者厷 (5赞): @无鬼怨 如你所愿了\n  └ 无鬼怨 (1赞): 太高俗了",
+      "source": "bilibili",
+      "time": "2026-07-05T12:00:19+00:00",
+      "url": "https://www.bilibili.com/video/BV16QT16SEpb",
+      "engagement": 101,
+      "is_hot": false,
+      "author": "动漫从业者厷",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 96,
+        "comment_count": 5,
+        "comments_fetched": 2,
+        "danmaku": 0
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/d4f48292f9f952a46ed06529194d1d7f5e208b3c.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
@@ -253,6 +299,29 @@
         "danmaku": 0
       },
       "media_url": "https://i2.hdslb.com/bfs/archive/8d461b06a5828024f52f05ee584832c6c9e6e654.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "第四届N厨杯-第二十一日录播",
+      "summary": "第二十一日直播录播",
+      "source": "bilibili",
+      "time": "2026-07-05T13:08:17+00:00",
+      "url": "https://www.bilibili.com/video/BV1RsT16MECt",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "God7777",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 0,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/2df3521d8a74a5b8e6bdd4fecc3893f7b6567536.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
