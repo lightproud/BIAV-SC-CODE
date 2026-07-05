@@ -104,6 +104,23 @@ export const KD_L4 = [
   // COMPLETE tool_use blocks as actionable (execute, 2nd POST for the
   // tool_result, result/success) at either cut depth - every facet converged
   // in the dual-arm run, the engineFinding cleared. Id kept out of circulation.
+  {
+    id: 'KD-L4-05',
+    scenarios: ['l4-gateway-eventless-error-frame'],
+    facets: ['postCount', 'resultSubtype', 'errorPresent'],
+    coversTokens: true,
+    note:
+      'gateway-dialect EVENT-LESS error frame (bare `data: {error json}` + [DONE], the 2026-07-05 ' +
+      'production capture shape): official 2.1.201 does not recognize the frame as an error event ' +
+      'at all - it reports "API returned an empty or malformed response (HTTP 200) - check for a ' +
+      'proxy or gateway intercepting the request", RETRIES once (postCount 2; the retry response ' +
+      'never surfaces on its stream), then encodes the failure AS ASSISTANT TEXT with ' +
+      'result/success + a post-result iterator throw (the KD-L4-01 quirk family). This SDK maps ' +
+      'the error payload via isErrorPayload -> APIStatusError(400) -> clean ' +
+      'result/error_during_execution, NO retry (postCount 1). Stable across 2 runs. Practical ' +
+      'consequence for BPT production: behind such a gateway the official client retries and ' +
+      'success-encodes API errors; ours fails fast with the real error type.',
+  },
 ];
 
 async function loadQuery(armKind) {

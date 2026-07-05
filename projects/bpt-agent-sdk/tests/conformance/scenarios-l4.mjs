@@ -402,4 +402,141 @@ export const SCENARIOS_L4 = [
       'Mirrors l4-http400 mid-session; a stable encoding split shares KD-L4-01 (one KD covers ' +
       'both 400 positions).',
   },
+
+  // --- Gateway-dialect fidelity (2026-07-05 BPT production incident) -------------
+  // BPT runs behind a translating corporate gateway whose /api/anthropic
+  // endpoint keeps OpenAI framing habits: every response ends with a
+  // `data: [DONE]` appendix, and error frames arrive as bare `data:` lines
+  // with no event: name (raw curl -N capture). The three cases below replay
+  // that dialect through BOTH arms - the environment-fidelity axis L1-L4
+  // previously never exercised (clean framing only).
+  {
+    id: 'l4-gateway-done-appendix',
+    fault: "text turn followed by the gateway's OpenAI-style `data: [DONE]` appendix (not JSON)",
+    prompt: 'Say OK.',
+    timeoutMs: 45_000,
+    buildScripts: () => [
+      { kind: 'sse-gateway', events: textReply('GATEWAY APPENDIX OK') },
+      // Sentinel: a retry/re-request provoked by the appendix would consume it.
+      { kind: 'sse', events: textReply('UNEXPECTED GATEWAY RETRY') },
+    ],
+    sentinels: ['GATEWAY APPENDIX OK', 'UNEXPECTED GATEWAY RETRY'],
+    invariants: (run) => {
+      const f = [];
+      if (run.postCount !== 1) f.push(`postCount ${run.postCount} != 1 (appendix provoked a re-request)`);
+      if (run.unscriptedCalls !== 0) f.push(`unscriptedCalls ${run.unscriptedCalls} != 0`);
+      if (run.checks.resultSubtype !== 'success') f.push(`resultSubtype ${run.checks.resultSubtype} != success`);
+      if (!streamHas(run, 'GATEWAY APPENDIX OK')) f.push('resultText missing "GATEWAY APPENDIX OK"');
+      if (streamHas(run, 'UNEXPECTED GATEWAY RETRY')) f.push('retry sentinel leaked into the stream');
+      return f;
+    },
+    bptOnly: (run) => {
+      // #461 contract: message_stop ends consumption, the appendix is never
+      // parsed - the run must be CLEAN (no thrown error, no non-fatal notes).
+      const f = [];
+      if (run.error) f.push(`unexpected thrown error: ${run.error}`);
+      if ((run.resultErrors ?? []).length > 0) {
+        f.push(`unexpected result.errors notes: ${JSON.stringify(run.resultErrors)}`);
+      }
+      return f;
+    },
+    engineFindingIf: (bpt, off) =>
+      off.resultSubtype === 'success' && bpt.resultSubtype !== 'success'
+        ? 'gateway [DONE] appendix: official completes clean while our engine fails the run - ' +
+          'our tolerance regression (the exact 2026-07-05 production incident shape)'
+        : null,
+    notes:
+      'The exact production-incident shape: a full healthy reply that only differs from clean ' +
+      'framing by the trailing non-JSON appendix.',
+  },
+  {
+    id: 'l4-gateway-done-tool-chain',
+    fault: '[DONE] appendix on EVERY response across a tool chain (gateway appends unconditionally)',
+    prompt: 'Write the file.',
+    timeoutMs: 45_000,
+    options: { allowedTools: ['Write'] },
+    captureFiles: ['gw-out.txt'],
+    buildScripts: (cwd) => [
+      {
+        kind: 'sse-gateway',
+        events: toolUseReply([
+          { name: 'Write', input: { file_path: join(cwd, 'gw-out.txt'), content: 'GW-CHAIN' } },
+        ]),
+      },
+      { kind: 'sse-gateway', events: textReply('GATEWAY CHAIN DONE') },
+    ],
+    sentinels: ['GATEWAY CHAIN DONE'],
+    invariants: (run) => {
+      const f = [];
+      if (run.postCount !== 2) f.push(`postCount ${run.postCount} != 2 (tool_result delivery turn)`);
+      if (run.unscriptedCalls !== 0) f.push(`unscriptedCalls ${run.unscriptedCalls} != 0`);
+      if (run.checks.resultSubtype !== 'success') f.push(`resultSubtype ${run.checks.resultSubtype} != success`);
+      if (run.files['gw-out.txt'] !== 'GW-CHAIN') f.push('tool did not execute behind the gateway dialect');
+      if (!streamHas(run, 'GATEWAY CHAIN DONE')) f.push('final turn missing "GATEWAY CHAIN DONE"');
+      return f;
+    },
+    bptOnly: (run) => {
+      const f = [];
+      if (run.error) f.push(`unexpected thrown error: ${run.error}`);
+      if ((run.resultErrors ?? []).length > 0) {
+        f.push(`unexpected result.errors notes: ${JSON.stringify(run.resultErrors)}`);
+      }
+      return f;
+    },
+    engineFindingIf: (bpt, off) =>
+      (off.files['gw-out.txt'] === 'GW-CHAIN' && bpt.files['gw-out.txt'] !== 'GW-CHAIN') ||
+      (off.resultSubtype === 'success' && bpt.resultSubtype !== 'success')
+        ? 'gateway appendix across a tool chain: official survives while our engine drops the ' +
+          'chain - our tolerance regression'
+        : null,
+    notes:
+      'A realistic gateway appends [DONE] to every response, so the agent loop must survive it ' +
+      'on the tool_result delivery turn too, not just the final turn.',
+  },
+  {
+    id: 'l4-gateway-eventless-error-frame',
+    fault:
+      'gateway error dialect: a bare `data: {error json}` frame with NO event: name, then the ' +
+      '[DONE] appendix (byte-shape of the 2026-07-05 invalid-key capture)',
+    prompt: 'Say OK.',
+    timeoutMs: 30_000,
+    buildScripts: () => [
+      {
+        kind: 'sse-gateway',
+        eventless: true,
+        events: [
+          { type: 'error', error: { type: 'invalid_request_error', message: 'gateway: invalid api key' } },
+        ],
+      },
+      // Retry sentinel, same rationale as l4-http400.
+      { kind: 'sse', events: textReply('MUST NEVER BE REQUESTED GW') },
+    ],
+    sentinels: ['MUST NEVER BE REQUESTED GW'],
+    invariants: (run) => {
+      const f = [];
+      if (run.postCount !== 1) f.push(`postCount ${run.postCount} != 1 (an arm retried the in-stream error)`);
+      if (streamHas(run, 'MUST NEVER BE REQUESTED GW')) f.push('retry sentinel leaked into the stream');
+      if (run.checks.resultSubtype === 'success') f.push('resultSubtype success over an unrecovered gateway error');
+      return f;
+    },
+    // Observed stable across 2 runs (2026-07-05): official mis-parses the
+    // event-less error frame as an empty response, retries once and
+    // success-encodes the failure - triaged as KD-L4-05.
+    officialInvariantKd: 'KD-L4-05',
+    bptOnly: (run) => {
+      // Engine contract: isErrorPayload catches the event-less error JSON ->
+      // APIStatusError(400) -> engine wraps into result/error_during_execution
+      // (same encoding as the HTTP-400 family), query() does not throw.
+      const f = [];
+      if (run.checks.resultSubtype !== 'error_during_execution') {
+        f.push(`expected result/error_during_execution, got ${run.checks.resultSubtype}`);
+      }
+      if (run.error) f.push(`unexpected thrown error: ${run.error}`);
+      return f;
+    },
+    notes:
+      'Reproduces the raw idealab capture shape. Official terminal encoding under this dialect ' +
+      'is a discovery objective - if it lands in the KD-L4-01 success-subtype family, triage ' +
+      'extends that KD after 2-run stability.',
+  },
 ];

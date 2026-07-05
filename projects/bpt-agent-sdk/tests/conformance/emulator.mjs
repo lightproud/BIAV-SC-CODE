@@ -90,6 +90,16 @@ export function toolUseReply(calls, { id = 'msg_conf_tool' } = {}) {
  *     hangAfter event type (default 'message_start'), then the connection is
  *     held open forever: no end(), no further writes. close() destroys the
  *     registered hung sockets so shutdown cannot deadlock.
+ *   { kind: 'sse-gateway', events, eventless?, appendDone? } - OpenAI-dialect
+ *     framing quirks of a TRANSLATING GATEWAY's /api/anthropic endpoint,
+ *     reproduced from the 2026-07-05 BPT production capture (raw curl -N
+ *     bytes): `eventless: true` serializes frames as bare `data:` lines with
+ *     NO `event:` name (the gateway's error-frame shape); `appendDone`
+ *     (default true) terminates the stream with the OpenAI-style
+ *     `data: [DONE]` appendix - not valid JSON, present after message_stop
+ *     on every gateway response. Environment-fidelity axis: engines that
+ *     pass L1-L4 against clean framing can still differ behind such a
+ *     gateway, which is exactly where BPT runs in production.
  *
  * Returns { url, port, profile, close }.
  */
@@ -149,6 +159,18 @@ export function startEmulator(scripts) {
         res.write(sse(script.events.slice(0, upTo === -1 ? script.events.length : upTo + 1)));
         hungResponses.add(res);
         res.on('close', () => hungResponses.delete(res));
+        return;
+      }
+      if (script.kind === 'sse-gateway') {
+        const frames = script.events.map((e) =>
+          script.eventless === true
+            ? `data: ${JSON.stringify(e)}\n\n`
+            : `event: ${e.type}\ndata: ${JSON.stringify(e)}\n\n`,
+        );
+        let body = frames.join('');
+        if (script.appendDone !== false) body += 'data: [DONE]\n\n';
+        res.writeHead(200, { 'content-type': 'text/event-stream', 'cache-control': 'no-cache' });
+        res.end(body);
         return;
       }
       const body = sse(script.events);

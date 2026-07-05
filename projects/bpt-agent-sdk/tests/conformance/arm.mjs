@@ -27,7 +27,7 @@
  *     Discipline: a dynamic entry must not depend on the message emitted by
  *     the turn IMMEDIATELY before it (stdout delivery can race the next HTTP
  *     request); scenarios insert a settle-barrier turn in between.
- *   scenario.options / scenario.buildOptions(cwd, ctx) - extra Options merged
+ *   scenario.options / scenario.buildOptions(cwd, ctx, { armKind, sdk }) - extra Options merged
  *     into the query (e.g. allowedTools so both arms auto-approve write tools;
  *     preferred over bypassPermissions, which claude-code refuses when running
  *     as root without IS_SANDBOX=1 - a real CI risk).
@@ -56,13 +56,14 @@ import { normalizeStream } from './normalize.mjs';
 
 const DUMMY_KEY = 'sk-ant-api03-' + 'A'.repeat(95);
 
+async function loadSdk(armKind) {
+  return armKind === 'bpt'
+    ? import('../../dist/index.js')
+    : import('@anthropic-ai/claude-agent-sdk');
+}
+
 async function loadQuery(armKind) {
-  if (armKind === 'bpt') {
-    const mod = await import('../../dist/index.js');
-    return mod.query;
-  }
-  const mod = await import('@anthropic-ai/claude-agent-sdk');
-  return mod.query;
+  return (await loadSdk(armKind)).query;
 }
 
 /**
@@ -156,7 +157,8 @@ function safeRealpath(p) {
 }
 
 export async function runScenario(armKind, scenario, { timeoutMs = 120_000 } = {}) {
-  const query = await loadQuery(armKind);
+  const sdk = await loadSdk(armKind);
+  const query = sdk.query;
   const cwd = mkdtempSync(join(tmpdir(), `conf-${armKind}-`));
   const realCwd = safeRealpath(cwd);
   writeFixtures(cwd, scenario.fixtureFiles);
@@ -189,8 +191,11 @@ export async function runScenario(armKind, scenario, { timeoutMs = 120_000 } = {
     DISABLE_ERROR_REPORTING: '1',
   };
 
+  // Third arg gives per-arm construction access (L3-MCP tranche): in-process
+  // MCP servers must be built with EACH ARM'S OWN tool()/createSdkMcpServer,
+  // so the scenario factory receives { armKind, sdk }.
   const extraOptions = scenario.buildOptions
-    ? scenario.buildOptions(cwd, ctx)
+    ? scenario.buildOptions(cwd, ctx, { armKind, sdk })
     : (scenario.options ?? {});
 
   const ac = new AbortController();

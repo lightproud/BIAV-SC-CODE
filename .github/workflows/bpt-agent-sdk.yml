@@ -76,6 +76,10 @@ on:
         description: 'L5 repeats per task per engine (blueprint nominal 5; gate B takes the aggregate)'
         required: false
         default: '5'
+      l5_thinking:
+        description: 'Fix-2 variable isolation: pin maxThinkingTokens to this SAME budget on BOTH arms (empty = each engine its own default)'
+        required: false
+        default: ''
 
 concurrency:
   group: bpt-agent-sdk-${{ github.ref }}
@@ -379,7 +383,7 @@ jobs:
       - name: L5 dual-arm real-API round (gate B enforced)
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: node tests/conformance/run-l5.mjs --gate "--model=${{ github.event.inputs.model }}" "--repeat=${{ github.event.inputs.l5_repeat }}"
+        run: node tests/conformance/run-l5.mjs --gate "--model=${{ github.event.inputs.model }}" "--repeat=${{ github.event.inputs.l5_repeat }}" ${{ github.event.inputs.l5_thinking != '' && format('--thinking={0}', github.event.inputs.l5_thinking) || '' }}
       - uses: actions/upload-artifact@v4
         if: always()
         with:

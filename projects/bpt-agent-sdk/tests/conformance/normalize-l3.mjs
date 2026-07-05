@@ -288,6 +288,31 @@ export const KNOWN_TOOL_DIVERGENCES = [
       return t !== u && t === o;
     },
   },
+
+  {
+    id: 'KD-L3-22',
+    tool: 'mcp (sdk server)',
+    note:
+      'thrown MCP handler wording: official 2.1.201 relays the bare handler error message as the ' +
+      "error tool_result text; ours wraps it as \"Tool '<name>' failed: <msg>\" (registry " +
+      'encoding). Semantics identical: is_error true, handler message carried verbatim inside. ' +
+      'Stable across 2 runs (2026-07-05, L3-MCP tranche 1).',
+    applies: (o, u) => /^Tool '[^']+' failed: /.test(u) && u.endsWith(o),
+  },
+  {
+    id: 'KD-L3-23',
+    tool: 'mcp (sdk server)',
+    note:
+      'unknown-MCP-tool wording: official 2.1.201 emits "<tool_use_error>Error: No such tool ' +
+      'available: <name></tool_use_error>"; ours emits "No such tool: <name>" (no XMLish wrapper, ' +
+      'registry wording). Semantics identical: is_error true, refused without execution, tool ' +
+      'name carried. Stable across 2 runs (2026-07-05, L3-MCP tranche 1).',
+    applies: (o, u) => {
+      const om = o.match(/^<tool_use_error>Error: No such tool available: (.+)<\/tool_use_error>$/);
+      const um = u.match(/^No such tool: (.+)$/);
+      return om !== null && um !== null && om[1] === um[1];
+    },
+  },
 ];
 
 /** First `max` differing line pairs between two normalized texts. */

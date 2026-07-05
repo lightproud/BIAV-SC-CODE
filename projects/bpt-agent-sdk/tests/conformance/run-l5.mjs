@@ -17,7 +17,7 @@
  *   ANTHROPIC_API_KEY=... node tests/conformance/run-l5.mjs \
  *     [--model=claude-haiku-4-5-20251001] [--repeat=5] [--budget-usd=1.5] \
  *     [--gate] [--econ] [--tasks=chat-01,code-03|--tasks=code] \
- *     [--traces-bpt] [--out=path.json]
+ *     [--thinking=4096] [--traces-bpt] [--out=path.json]
  *
  * Keyless smoke (this is the only mode runnable without a key - proves the
  * harness end-to-end against the M1 content-blind emulator, zero spend):
@@ -65,6 +65,7 @@ import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { L5_TASKS, L5_KNOWN_DIFFERENCES } from './l5-tasks.mjs';
+import { aggregateRunMetrics } from './l5-aggregate.mjs';
 import { startEmulator, textReply, assertContentBlind } from './emulator.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
@@ -90,6 +91,14 @@ if (GATE && typeof args.tasks === 'string' && args['gate-shard'] !== true) {
   process.exit(1);
 }
 const ECON = args.econ === true;
+// Fix-2 (dissection 2026-07-05, KD-L5-03 variable isolation): --thinking=N
+// pins maxThinkingTokens to the SAME explicit budget on BOTH arms, so a
+// correctness delta can no longer hide behind the engines' different
+// thinking DEFAULTS (official CLI: on, undisclosed budget; ours since E1:
+// on, 4096 under the claude_code preset). Unset = each engine's own default
+// (the product-realistic comparison). Real mode only - smoke is scripted.
+const THINKING = Number.parseInt(args.thinking, 10);
+const THINKING_SET = Number.isFinite(THINKING) && THINKING >= 0;
 const TRACE_BPT = args['traces-bpt'] === true;
 const OUT = typeof args.out === 'string' ? args.out : join(HERE, '..', '..', 'conformance-l5.json');
 const TRACE_ROOT = join(HERE, '..', '..', 'l5-traces');
@@ -384,6 +393,8 @@ async function runOne(arm, task) {
         allowDangerouslySkipPermissions: true,
         persistSession: false,
         ...(arm === 'bpt' ? { systemPrompt: { type: 'preset', preset: 'claude_code' } } : {}),
+        // Fix-2: identical explicit thinking budget on BOTH arms when set.
+        ...(THINKING_SET ? { maxThinkingTokens: THINKING } : {}),
       };
     }
     const q = queryOf(arm)({
@@ -453,34 +464,18 @@ async function runOne(arm, task) {
   if (strayArtifacts.length > 0)
     console.warn(`run-l5: [${arm}] ${task.id} left stray artifact(s) at tmpdir root (KD-L5-01): ${strayArtifacts.join(', ')}`);
 
-  // Multi-result aggregation (M1 metric-artifact fix, first-round
-  // dissection): BOTH engines emit one result per streamed user turn, so
-  // lastResult-only metrics under-reported official multi-turn runs
-  // (longconv showed turns=1 - misread as early termination). Since E2
-  // (2026-07-05) BOTH arms share the official per-result semantics -
-  // num_turns/usage PER-RESULT (sum across results), total_cost_usd and
-  // duration_api_ms session-cumulative (take last) - so the former per-arm
-  // aggregation split (KD-L5-04, retired) collapses to one rule. Single-
-  // result runs are unchanged by construction.
-  const sumOf = (get) => resultMsgs.reduce((s, r) => s + (get(r) ?? 0), 0);
-  const lastOf = (get) => (lastResult ? (get(lastResult) ?? 0) : 0);
-  const usageOf = (k) => sumOf((r) => r.usage?.[k]);
+  // Multi-result aggregation: the rule lives in l5-aggregate.mjs (extracted
+  // 2026-07-05 so it is unit-tested against REAL trace sequences in
+  // tests/conformance-l5-aggregate.test.ts - the runner logic itself gets a
+  // self-test instead of first executing its sum path in a paid round).
   return {
     arm,
     task: task.id,
     dimension: task.dimension,
     passed,
-    subtype: lastResult?.subtype ?? 'no-result',
     error,
-    turns: sumOf((r) => r.num_turns),
-    results: resultMsgs.length,
-    costUsd: lastOf((r) => r.total_cost_usd),
-    inputTokens: usageOf('input_tokens'),
-    outputTokens: usageOf('output_tokens'),
-    cacheCreationTokens: usageOf('cache_creation_input_tokens'),
-    cacheReadTokens: usageOf('cache_read_input_tokens'),
+    ...aggregateRunMetrics(resultMsgs),
     wallMs: Date.now() - started,
-    apiMs: lastOf((r) => r.duration_api_ms),
     finalTextHead: finalText.slice(0, 160),
     ...(strayArtifacts.length > 0 ? { strayArtifacts } : {}),
     messages, // dropped by the caller after L6 retention
@@ -526,6 +521,7 @@ const runsPlanned = selected.reduce((s, t) => s + effRepeat(t), 0) * ARMS.length
 console.log(
   `run-l5 [${SMOKE ? 'SMOKE (emulator, zero spend)' : 'REAL API'}] model=${MODEL} ` +
     `tasks=${selected.length} arms=${ARMS.join('+')} plannedRuns=${runsPlanned}` +
+    (THINKING_SET ? ` thinking=${THINKING} (both arms pinned)` : '') +
     (SMOKE ? '' : ` repeat=${REPEAT}${ECON ? ' (econ overrides on)' : ''} budget=$${BUDGET_USD}`),
 );
 
@@ -719,6 +715,8 @@ const report = {
   model: MODEL,
   repeat: REPEAT,
   econ: ECON,
+  // Fix-2 audit trail: null = engines ran their own thinking defaults.
+  thinkingBudget: THINKING_SET ? THINKING : null,
   taskFilter: typeof args.tasks === 'string' ? args.tasks : null,
   gate: {
     rule: 'aggregate pass-rate over all task-repeats: bpt >= official - 5pp (single tasks may trade wins)',
