@@ -123,6 +123,7 @@
   <button id="btnOpen" title="用 File System Access API 打开本地数据文件（可写回同一文件）">打开数据源</button>
   <button id="btnSample">载入样例</button>
   <button id="btnAddRow">新增任务</button>
+  <button id="btnInstTemplate" title="从项目模板批量实例化流水线任务（含返修回环）">从模板实例化</button>
   <button id="btnSchedule" class="primary" title="按 CPM 前向/后向计算法自动排期">自动排期</button>
   <button id="btnBaseline" title="把当前排期结果捕获为基线快照">设为基线</button>
   <button id="btnSave" title="写回已打开的数据文件；未用 API 打开则下载 JSON">写入数据源</button>
@@ -131,7 +132,9 @@
   <button id="btnNotionPush" title="经本地代理把当前排期结果写回 Notion（计算开始/结束/浮动/临界）">写回 Notion</button>
   <button id="btnProxyCfg" title="设置本地代理地址">代理…</button>
   <span style="width:1px;height:22px;background:var(--border);margin:0 2px"></span>
-  <button id="btnViewToggle" title="在甘特图与资源负载热力图之间切换">切到资源负载</button>
+  <button id="btnViewGantt" class="primary" title="甘特图视图">甘特图</button>
+  <button id="btnViewRes" title="资源负载热力图视图">资源负载</button>
+  <button id="btnViewOrders" title="外包发单交付风险视图">外包发单</button>
 </header>
 
 <div class="main">
@@ -142,15 +145,17 @@
           <th>ID</th><th>任务名称</th><th class="num" title="工期(工作日)，0=里程碑">工期</th>
           <th title="前置依赖，如 T1、T2SS+2、T3FF-1，逗号分隔">前置</th>
           <th title="约束：ASAP / SNET&lt;日期&gt; / MSO&lt;日期&gt;">约束</th>
+          <th title="软截止线(YYYY-MM-DD)，只标记不移动任务，留空即无">截止</th>
           <th>资源</th><th class="num" title="完成%">%</th>
           <th class="calc" title="计算开始">开始</th><th class="calc" title="计算结束">结束</th>
+          <th class="calc" title="误期(工作日)：结束晚于截止的天数，正=误期">误期</th>
           <th class="calc" title="总浮动(工作日)">浮动</th>
           <th class="calc" title="相对基线结束偏差(工作日)，正=延后">偏差</th>
         </tr>
       </thead>
       <tbody id="taskBody"></tbody>
     </table>
-    <div class="hint" id="tableHint">载入样例或打开数据源以开始。前置依赖迷你语法：<code>T1</code>（默认 FS+0）、<code>T2SS+2</code>、<code>T3FF-1</code>、<code>T4SF</code>；多个用逗号分隔。约束填 <code>SNET 2026-07-23</code> 或 <code>MSO 2026-07-10</code>，留空即 ASAP。</div>
+    <div class="hint" id="tableHint">载入样例或打开数据源以开始。前置依赖迷你语法：<code>T1</code>（默认 FS+0）、<code>T2SS+2</code>、<code>T3FF-1</code>、<code>T4SF</code>；多个用逗号分隔。约束填 <code>SNET 2026-07-23</code> 或 <code>MSO 2026-07-10</code>，留空即 ASAP。截止列填软截止线 <code>2026-07-16</code>（只标记误期、不移动任务），留空即无。</div>
   </div>
   <div class="gantt-pane" id="ganttPane">
     <div id="gantt"></div>
@@ -183,7 +188,7 @@ const state = {
   data: null,        // 当前协议对象
   fileHandle: null,  // File System Access 句柄（可写回）
   computed: null,    // 排期结果 Map<id, {...}>
-  view: "gantt",     // 右侧视图：'gantt' | 'resource'
+  view: "gantt",     // 右侧视图：'gantt' | 'resource' | 'orders'
 };
 
 /* ---------- 日期工具（UTC 归一，避开时区漂移） ---------- */
@@ -266,6 +271,7 @@ function scheduleProject(data) {
     constraint: t.constraint || null,
     pct: Number(t.percentComplete || 0),
     resource: t.resource || "",
+    deadline: t.deadline || null,
   }));
   const byId = new Map(tasks.map(t => [t.id, t]));
 
@@ -339,15 +345,103 @@ function scheduleProject(data) {
   for (const t of tasks) {
     const startDate = cal.fromIndex(t.es);
     const finishDate = t.dur > 0 ? cal.fromIndex(t.ef - 1) : startDate;
+    // 周期守护（特性 B）：deadline 软截止叠加，不改 CPM slack/临界。
+    // 结束工作日索引：dur>0 用 ef-1（含尾工作日），里程碑用 es（结束=开始）。
+    const finishIdx = t.dur > 0 ? t.ef - 1 : t.es;
+    let late = false, lateDays = null;
+    if (t.deadline) {
+      const di = cal.toIndex(t.deadline);
+      lateDays = finishIdx - di;
+      late = lateDays > 0;
+    }
     result.set(t.id, {
       id: t.id, es: t.es, ef: t.ef, slack: t.slack, critical: t.critical,
       dur: t.dur, pct: t.pct, milestone: t.dur === 0,
       start: fmtDate(startDate), finish: fmtDate(finishDate),
       startDate, finishDate, preds: t.preds,
+      deadline: t.deadline || null, late, lateDays,
     });
   }
   const resources = computeResourceLoad(tasks, data.resources, cal, projEnd);
-  return { cal, result, projEnd, order, errors, resources };
+  const lateCount = [...result.values()].filter(c => c.late).length;
+  const orders = analyzeOrders(data.orders, result);
+  const ordersAtRisk = orders.filter(o => o.atRisk).length;
+  return { cal, result, projEnd, order, errors, resources, lateCount, orders, ordersAtRisk };
+}
+
+/* ---------- 流水线模板实例化（特性 C，纯函数，与 scripts/schedule.mjs 同实现） ----------
+   把一个模板展开成一串 FS 链接的 bpt-pm 任务：每 stage 一个主任务，
+   revisionRounds R>0 时在主任务后插入 R 轮「审核（dur1，revisionResource）+ 返修
+   （revisionDuration，沿用阶段 resource）」链；下一 stage 依赖本 stage 链的最后一个任务。 */
+function instantiateTemplate(template, opts) {
+  opts = opts || {};
+  const prefix = opts.prefix || "";
+  const assetName = opts.assetName || "";
+  const out = [];
+  let prevLastId = null; // 上一 stage 链的最后一个任务 id
+  (template.stages || []).forEach(stage => {
+    const type = stage.type || "FS";
+    const lag = Number(stage.lag || 0);
+    const mainId = `${prefix}_${stage.key}`;
+    const mainTask = {
+      id: mainId,
+      name: `${assetName} ${stage.name}`,
+      duration: Number(stage.duration ?? 1),
+      predecessors: prevLastId ? [{ id: prevLastId, type, lag }] : [],
+    };
+    if (stage.resource) mainTask.resource = stage.resource;
+    out.push(mainTask);
+    let chainLastId = mainId;
+    const R = Math.max(0, Number(stage.revisionRounds || 0));
+    if (R > 0) {
+      const revDur = stage.revisionDuration == null ? 1 : Number(stage.revisionDuration);
+      for (let r = 1; r <= R; r++) {
+        const reviewId = `${prefix}_${stage.key}_审${r}`;
+        const reviewTask = {
+          id: reviewId,
+          name: `${assetName} ${stage.name} 审核${r}`,
+          duration: 1,
+          predecessors: [{ id: chainLastId, type: "FS", lag: 0 }],
+        };
+        if (stage.revisionResource) reviewTask.resource = stage.revisionResource;
+        out.push(reviewTask);
+        const fixId = `${prefix}_${stage.key}_返${r}`;
+        const fixTask = {
+          id: fixId,
+          name: `${assetName} ${stage.name} 返修${r}`,
+          duration: revDur,
+          predecessors: [{ id: reviewId, type: "FS", lag: 0 }],
+        };
+        if (stage.resource) fixTask.resource = stage.resource;
+        out.push(fixTask);
+        chainLastId = fixId;
+      }
+    }
+    prevLastId = chainLastId;
+  });
+  return out;
+}
+
+/* ---------- 外包发单交付风险分析（特性 D，纯函数，与 scripts/schedule.mjs 同实现） ----------
+   每单加 atRisk：有 linkedTaskId 且该任务计算结束日晚于 expectedDelivery = 交付风险。
+   taskResults 兼容三形态：数组 [{id,finish}] / Map<id,{finish}> / 普通对象 {id:{finish}}。 */
+function analyzeOrders(orders, taskResults) {
+  const finishOf = id => {
+    if (!taskResults || !id) return null;
+    let r = null;
+    if (taskResults instanceof Map) r = taskResults.get(id);
+    else if (Array.isArray(taskResults)) r = taskResults.find(x => x.id === id);
+    else r = taskResults[id];
+    return r ? r.finish : null;
+  };
+  return (orders || []).map(o => {
+    let atRisk = false;
+    if (o.linkedTaskId) {
+      const fin = finishOf(o.linkedTaskId);
+      if (fin && o.expectedDelivery) atRisk = parseDate(fin) > parseDate(o.expectedDelivery);
+    }
+    return { ...o, atRisk };
+  });
 }
 
 /* ---------- 资源负载 + 超载检测（与 scripts/schedule.mjs 同逻辑） ----------
@@ -404,6 +498,8 @@ function readTable() {
     };
     const c = parseConstraint(g(".c-con"));
     if (c) t.constraint = c;
+    const dl = g(".c-deadline");           // 特性 B：软截止线，YYYY-MM-DD 或空
+    if (/^\d{4}-\d{2}-\d{2}$/.test(dl)) t.deadline = dl;
     const notesTask = state.data.tasks.find(x => x.id === id);
     if (notesTask && notesTask.notes) t.notes = notesTask.notes;
     tasks.push(t);
@@ -434,6 +530,9 @@ function renderTable() {
       if (dv !== 0) { varStr = (dv > 0 ? "+" : "") + dv + "d"; varCls = dv > 0 ? "var-pos" : "var-neg"; }
       else varStr = "0";
     }
+    // 误期列（特性 B）：有 deadline 且 late → 红字 +Nd；准时 → 0；无 deadline → —
+    let lateStr = "—";
+    if (c && c.deadline) lateStr = c.late ? `<span style="color:var(--critical)">+${c.lateDays}d</span>` : "0";
     const ms = (t.duration === 0) ? '<span class="milestone-badge"> ◆</span>' : "";
     tr.innerHTML =
       cell("c-id", t.id, true) +
@@ -441,10 +540,12 @@ function renderTable() {
       `<td class="editable num"><span class="c-dur" contenteditable="true">${t.duration ?? 1}</span></td>` +
       cell("c-pred", predsToStr(t.predecessors), true) +
       cell("c-con", constraintToStr(t.constraint), true) +
+      cell("c-deadline", t.deadline || "", true) +
       cell("c-res", t.resource || "", true) +
       `<td class="editable num"><span class="c-pct" contenteditable="true">${t.percentComplete ?? 0}</span></td>` +
       `<td class="calc">${c ? c.start : "—"}</td>` +
       `<td class="calc">${c ? c.finish : "—"}</td>` +
+      `<td class="calc">${lateStr}</td>` +
       `<td class="calc">${c ? (c.milestone ? "—" : c.slack + "d") : "—"}</td>` +
       `<td class="calc ${varCls}">${varStr || "—"}</td>`;
     body.appendChild(tr);
@@ -555,12 +656,15 @@ function renderGantt() {
       g.appendChild(bb);
     }
 
+    // 误期提示后缀（特性 B）：late 时附「误期 N 工作日」
+    const lateNote = c.late ? `｜误期 ${c.lateDays} 工作日` : "";
     // 任务条
     if (c.milestone) {
       const dm = document.createElement("div");
       dm.className = "gbar milestone" + (c.critical ? " critical" : "");
       dm.style.cssText = `left:${xOf(c.startDate) - 6}px;top:${y + 9}px;`;
-      dm.title = `${t.name}（里程碑）${c.start}`;
+      if (c.late) dm.style.background = "var(--critical)"; // 误期里程碑转红
+      dm.title = `${t.name}（里程碑）${c.start}${lateNote}`;
       g.appendChild(dm);
     } else {
       const bx = xOf(c.startDate);
@@ -568,7 +672,8 @@ function renderGantt() {
       const bar = document.createElement("div");
       bar.className = "gbar" + (c.critical ? " critical" : "");
       bar.style.cssText = `left:${bx}px;top:${y + 11}px;width:${bw}px;`;
-      bar.title = `${t.name}\n${c.start} → ${c.finish}｜工期 ${c.dur}d｜浮动 ${c.slack}d${c.critical ? "｜临界" : ""}`;
+      if (c.late) bar.style.boxShadow = "0 0 0 1.5px var(--critical)"; // 误期条形描红边
+      bar.title = `${t.name}\n${c.start} → ${c.finish}｜工期 ${c.dur}d｜浮动 ${c.slack}d${c.critical ? "｜临界" : ""}${lateNote}`;
       if (c.pct > 0) {
         const p = document.createElement("div");
         p.className = "prog"; p.style.width = Math.min(100, c.pct) + "%";
@@ -580,6 +685,20 @@ function renderGantt() {
       gl.style.cssText = `left:${bx + bw + 5}px;top:${y + 9}px;`;
       gl.textContent = c.pct > 0 ? c.pct + "%" : "";
       g.appendChild(gl);
+    }
+
+    // 截止标记（特性 B）：在 deadline 日期处画细竖线 + 顶部小旗；late 用 --critical，准时用 --warn
+    if (c.deadline) {
+      const dx = xOf(parseDate(c.deadline));
+      const col = c.late ? "var(--critical)" : "var(--warn)";
+      const mk = document.createElement("div");
+      mk.style.cssText = `position:absolute;left:${dx}px;top:${y + 2}px;width:2px;height:${ROW_H - 4}px;background:${col};opacity:.9;z-index:2;`;
+      mk.title = `截止 ${c.deadline}${c.late ? lateNote : "｜准时"}`;
+      g.appendChild(mk);
+      const flag = document.createElement("div");
+      flag.style.cssText = `position:absolute;left:${dx + 2}px;top:${y + 2}px;width:6px;height:5px;background:${col};opacity:.9;z-index:2;`;
+      flag.title = mk.title;
+      g.appendChild(flag);
     }
   });
 
@@ -610,15 +729,20 @@ function renderGantt() {
   g.appendChild(svg);
 }
 
-/* ---------- 右侧视图切换 ---------- */
+/* ---------- 右侧三视图切换（甘特 / 资源负载 / 外包发单） ---------- */
 function renderRight() {
   if (state.view === "resource") renderResourceView();
+  else if (state.view === "orders") renderOrdersView();
   else renderGantt();
-  const btn = document.getElementById("btnViewToggle");
-  if (btn) btn.textContent = state.view === "resource" ? "切到甘特图" : "切到资源负载";
+  // 当前视图按钮高亮
+  const map = { gantt: "btnViewGantt", resource: "btnViewRes", orders: "btnViewOrders" };
+  Object.entries(map).forEach(([v, id]) => {
+    const b = document.getElementById(id);
+    if (b) b.classList.toggle("primary", state.view === v);
+  });
 }
-function toggleView() {
-  state.view = state.view === "resource" ? "gantt" : "resource";
+function setView(v) {
+  state.view = v;
   renderRight();
 }
 
@@ -706,6 +830,82 @@ function renderResourceView() {
   });
 }
 
+/* ---------- 外包发单视图（特性 D）：发单表 + 交付风险标红 + 供应商产能对比 ---------- */
+const ORDER_STATUS_COLORS = {
+  "待发": "#8b97a6", "已发": "#5b8fd8", "画中": "#e0b15e", "回稿": "#6fa9d8",
+  "内审": "#c58ee0", "返修": "#e5686f", "已验收": "#5bbf8a", "入库": "#4a9d76",
+};
+function renderOrdersView() {
+  const g = document.getElementById("gantt");
+  g.style.width = ""; g.style.height = "";
+  g.innerHTML = "";
+  const comp = state.computed;
+  if (!comp) { g.innerHTML = '<div class="hint">点击「自动排期」以生成外包发单视图。</div>'; return; }
+  const orders = comp.orders || [];
+  if (!orders.length) { g.innerHTML = '<div class="hint">当前项目未定义外包发单。在数据源加 <code>orders</code> 数组（每单含 vendor / asset / expectedDelivery / status，可选 linkedTaskId 关联任务以算交付风险）。</div>'; return; }
+
+  const resList = comp.resources || [];
+  const capOf = id => { const r = resList.find(x => x.id === id); return r ? r.capacity : null; };
+
+  // 每供应商发单量统计
+  const perVendor = new Map();
+  orders.forEach(o => perVendor.set(o.vendor, (perVendor.get(o.vendor) || 0) + 1));
+
+  const wrap = document.createElement("div");
+  wrap.style.cssText = "padding:12px 16px;overflow:auto;";
+
+  // 供应商发单量 vs 产能条
+  const cap = document.createElement("div");
+  cap.style.cssText = "display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;";
+  [...perVendor.entries()].forEach(([vendor, count]) => {
+    const c = capOf(vendor);
+    const over = c != null && count > c;
+    const pill = document.createElement("span");
+    pill.style.cssText = `display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--border);border-radius:14px;font-size:12px;${over ? "border-color:var(--critical);color:var(--critical)" : "color:var(--text)"}`;
+    pill.innerHTML = `<span style="font-weight:600">${vendor}</span><span style="color:var(--muted)">发单 ${count} · 产能 ${c == null ? "—" : c}${over ? ' · <span style="color:var(--critical)">超产能</span>' : ""}</span>`;
+    pill.title = over ? `${vendor}：发单量 ${count} 超过产能 ${c}` : `${vendor}：发单量 ${count}，产能 ${c == null ? "未登记" : c}`;
+    cap.appendChild(pill);
+  });
+  wrap.appendChild(cap);
+
+  // 发单表
+  const tbl = document.createElement("table");
+  tbl.style.cssText = "border-collapse:collapse;font-size:12px;white-space:nowrap;";
+  tbl.innerHTML = `<thead><tr>
+    <th style="text-align:left">单号</th><th style="text-align:left">供应商</th><th style="text-align:left">资产</th>
+    <th style="text-align:left">PO日</th><th style="text-align:left">预计交付</th><th style="text-align:left">实际交付</th>
+    <th class="num">返修</th><th style="text-align:left">状态</th><th style="text-align:left">关联任务</th>
+  </tr></thead>`;
+  const tb = document.createElement("tbody");
+  orders.forEach(o => {
+    const tr = document.createElement("tr");
+    if (o.atRisk) {
+      tr.style.background = "var(--critical-dim)";
+      const linked = o.linkedTaskId ? comp.result.get(o.linkedTaskId) : null;
+      const finTxt = linked ? linked.finish : "?";
+      tr.title = `交付风险：排期结束 ${finTxt} 晚于预计交付 ${o.expectedDelivery || "?"}`;
+    }
+    const chipColor = ORDER_STATUS_COLORS[o.status] || "var(--muted)";
+    const chip = `<span style="display:inline-block;padding:1px 8px;border-radius:10px;background:${chipColor};color:#08130d;font-weight:600;font-size:11px">${o.status || "—"}</span>`;
+    const cells = [
+      o.id || "—", o.vendor || "—", o.asset || "—",
+      o.poDate || "—", o.expectedDelivery || "—", o.actualDelivery || "—",
+      o.revisionRounds != null ? String(o.revisionRounds) : "—", chip, o.linkedTaskId || "—",
+    ];
+    cells.forEach((html, i) => {
+      const td = document.createElement("td");
+      td.style.cssText = "padding:5px 10px;border-bottom:1px solid var(--grid);" + (i === 6 ? "text-align:center" : "");
+      td.innerHTML = html;
+      if (o.atRisk && i === 4) td.style.color = "var(--critical)", td.style.fontWeight = "700";
+      tr.appendChild(td);
+    });
+    tb.appendChild(tr);
+  });
+  tbl.appendChild(tb);
+  wrap.appendChild(tbl);
+  g.appendChild(wrap);
+}
+
 /* ---------- 状态栏 ---------- */
 function renderStatus() {
   const comp = state.computed;
@@ -716,7 +916,9 @@ function renderStatus() {
     const critCount = [...comp.result.values()].filter(c => c.critical).length;
     const overRes = (comp.resources || []).filter(r => r.overloads.length);
     const overTxt = overRes.length ? ` · 资源超载 ${overRes.length} 项（${overRes.map(r => r.name).join("、")}）` : " · 资源无冲突";
-    document.getElementById("stEnd").textContent = `总工期 ${comp.projEnd} 工作日 · 完工 ${fmtDate(last)} · 临界 ${critCount} 项${overTxt}`;
+    const lateTxt = comp.lateCount ? ` · 误期 ${comp.lateCount} 项` : " · 无误期";
+    const riskTxt = comp.ordersAtRisk ? ` · 发单风险 ${comp.ordersAtRisk} 项` : ((comp.orders && comp.orders.length) ? " · 发单无风险" : "");
+    document.getElementById("stEnd").textContent = `总工期 ${comp.projEnd} 工作日 · 完工 ${fmtDate(last)} · 临界 ${critCount} 项${overTxt}${lateTxt}${riskTxt}`;
   } else {
     document.getElementById("stEnd").textContent = "工期 —";
   }
@@ -749,6 +951,35 @@ function doAddRow() {
   let n = 1; while (state.data.tasks.some(t => t.id === "T" + n)) n++;
   state.data.tasks.push({ id: "T" + n, name: "新任务", duration: 1, predecessors: [], percentComplete: 0 });
   renderTable();
+}
+/* ---------- 从模板实例化流水线任务（特性 C UI，用内联 instantiateTemplate） ---------- */
+function doInstantiateTemplate() {
+  if (!state.data) { toast("请先载入数据"); return; }
+  readTable(); // 先把当前表格编辑回落到 state.data，避免实例化后 renderTable 覆盖未保存编辑
+  const templates = state.data.templates || [];
+  if (!templates.length) { toast("当前项目未定义任何模板（templates 为空）"); return; }
+  let tpl;
+  if (templates.length === 1) tpl = templates[0];
+  else {
+    const ids = templates.map(t => t.id).join(" / ");
+    const pick = prompt(`选择模板 id（可选：${ids}）`, templates[0].id);
+    if (pick == null) return;
+    tpl = templates.find(t => t.id === pick.trim());
+    if (!tpl) { toast(`未找到模板 id「${pick.trim()}」`); return; }
+  }
+  const prefix = prompt("资产前缀 prefix（如 Z）", "Z");
+  if (prefix == null || !prefix.trim()) { toast("已取消：前缀为空"); return; }
+  const assetName = prompt("资产名 assetName（如 角色Z）", "角色" + prefix.trim());
+  if (assetName == null) return;
+  const newTasks = instantiateTemplate(tpl, { prefix: prefix.trim(), assetName: assetName.trim() });
+  if (!newTasks.length) { toast("模板未生成任何任务（stages 为空）"); return; }
+  const existing = new Set(state.data.tasks.map(t => t.id));
+  const clash = newTasks.map(t => t.id).filter(id => existing.has(id));
+  if (clash.length) { toast(`id 冲突，已阻止实例化：${clash.slice(0, 4).join(", ")}${clash.length > 4 ? " …" : ""}`); return; }
+  state.data.tasks.push(...newTasks);
+  renderTable();
+  doSchedule();
+  toast(`已按模板「${tpl.name || tpl.id}」实例化 ${newTasks.length} 个任务`);
 }
 async function doSave() {
   if (!state.data) { toast("无数据可写"); return; }
@@ -876,12 +1107,28 @@ const SAMPLE = {
     { "id": "X1", "name": "角色X 概念草图", "duration": 2, "predecessors": [], "resource": "原画", "percentComplete": 100 },
     { "id": "X2", "name": "角色X 原画终审", "duration": 1, "predecessors": [{ "id": "X1" }], "resource": "主美", "percentComplete": 0 },
     { "id": "X3", "name": "角色X 建模（外包）", "duration": 4, "predecessors": [{ "id": "X2" }], "resource": "外包A", "percentComplete": 0 },
-    { "id": "X4", "name": "角色X 引擎接入", "duration": 2, "predecessors": [{ "id": "X3" }], "resource": "程序", "percentComplete": 0 },
+    { "id": "X4", "name": "角色X 引擎接入", "duration": 2, "predecessors": [{ "id": "X3" }], "resource": "程序", "deadline": "2026-07-16", "percentComplete": 0 },
     { "id": "Y1", "name": "角色Y 概念草图", "duration": 2, "predecessors": [], "resource": "原画", "percentComplete": 100 },
     { "id": "Y2", "name": "角色Y 原画终审", "duration": 1, "predecessors": [{ "id": "Y1" }], "resource": "主美", "percentComplete": 0 },
     { "id": "Y3", "name": "角色Y 建模（外包）", "duration": 4, "predecessors": [{ "id": "Y2" }], "resource": "外包A", "percentComplete": 0 },
     { "id": "Y4", "name": "角色Y 引擎接入", "duration": 2, "predecessors": [{ "id": "Y3" }], "resource": "程序", "percentComplete": 0 },
-    { "id": "M1", "name": "版本 v2.4 美术封板", "duration": 0, "predecessors": [{ "id": "X4" }, { "id": "Y4" }], "resource": "主美", "percentComplete": 0 }
+    { "id": "M1", "name": "版本 v2.4 美术封板", "duration": 0, "predecessors": [{ "id": "X4" }, { "id": "Y4" }], "resource": "主美", "deadline": "2026-07-16", "percentComplete": 0 }
+  ],
+  "templates": [
+    {
+      "id": "art",
+      "name": "角色美术流水线",
+      "stages": [
+        { "key": "concept", "name": "概念草图", "duration": 2, "resource": "原画" },
+        { "key": "review", "name": "原画终审", "duration": 1, "resource": "主美" },
+        { "key": "model", "name": "建模（外包）", "duration": 4, "resource": "外包A", "revisionRounds": 1, "revisionResource": "主美", "revisionDuration": 2 },
+        { "key": "integrate", "name": "引擎接入", "duration": 2, "resource": "程序" }
+      ]
+    }
+  ],
+  "orders": [
+    { "id": "PO-001", "vendor": "外包A", "asset": "角色X 建模", "poDate": "2026-07-06", "quoteAmount": 8000, "expectedDelivery": "2026-07-14", "revisionRounds": 1, "status": "画中", "linkedTaskId": "X3" },
+    { "id": "PO-002", "vendor": "外包A", "asset": "角色Y 建模", "poDate": "2026-07-06", "quoteAmount": 8000, "expectedDelivery": "2026-07-12", "status": "回稿", "linkedTaskId": "Y3" }
   ]
 };
 
@@ -906,13 +1153,16 @@ document.addEventListener("drop", async e => {
 document.getElementById("btnOpen").onclick = doOpen;
 document.getElementById("btnSample").onclick = () => { state.fileHandle = null; loadData(JSON.parse(JSON.stringify(SAMPLE))); doSchedule(); };
 document.getElementById("btnAddRow").onclick = doAddRow;
+document.getElementById("btnInstTemplate").onclick = doInstantiateTemplate;
 document.getElementById("btnSchedule").onclick = doSchedule;
 document.getElementById("btnBaseline").onclick = doBaseline;
 document.getElementById("btnSave").onclick = doSave;
 document.getElementById("btnNotionPull").onclick = doNotionPull;
 document.getElementById("btnNotionPush").onclick = doNotionPush;
 document.getElementById("btnProxyCfg").onclick = setProxy;
-document.getElementById("btnViewToggle").onclick = toggleView;
+document.getElementById("btnViewGantt").onclick = () => setView("gantt");
+document.getElementById("btnViewRes").onclick = () => setView("resource");
+document.getElementById("btnViewOrders").onclick = () => setView("orders");
 
 renderStatus();
 </script>

@@ -49,6 +49,27 @@ CPM）、**基线比对**，确认后**写回同一数据源**。零后端、零
 - **未来（D 阶段，外包发单尚无系统 → 从零建模）**：发单为一等对象（供应商/PO/返修轮次/验收/付款）
   + 状态流水，关联排期；供应商产能喂给本冲突视图。规划见「按痛点选功能」分析（会话 2026-07-05）。
 
+## v2 三特性 B/C/D（守密人 2026-07-05，全部 additive 向后兼容）
+
+面向内容团队交付痛点叠加三组能力，均**不改 CPM 主算法**（deadline 只做叠加，不动 slack/临界），
+协议字段一律 optional（`schema/task-schema.json`），旧数据零改动可读。引擎放置见 `scripts/schedule.mjs`，
+网页内联同实现（`index.html`），回归 `tests/v2_bcd.mjs`。
+
+- **B 版本周期守护**：任务级可选 `deadline`（ISO 日期，软截止线，**不移动任务**）。排期后引擎给有
+  deadline 的任务算 `late`（结束工作日 > deadline）与 `lateDays`（结束工作日索引 − deadline 工作日索引，
+  >0 即误期工作日数）；顶层汇总 `lateCount`。样例 M1（封板）deadline 07-16、实际 07-17 → late、lateDays=1。
+  小学生比喻：给作业本画一条「该交的红线」，越线几天一目了然，但不逼你提前写完。
+- **C 流水线模板 + 返修回环**：项目级可选 `templates[]`（`{id,name,stages[]}`，stage 含 `key/name/duration/
+  resource/type/lag/revisionRounds/revisionResource/revisionDuration`）。纯函数 `instantiateTemplate(tpl,{prefix,assetName})`
+  把模板展开成一串 FS 链接任务：每 stage 一主任务，`revisionRounds` R>0 时在主任务后插 R 轮「审核（dur1，
+  revisionResource）→ 返修（revisionDuration，沿用阶段 resource）」，下一 stage 依赖本 stage 链**最后一个**任务。
+  小学生比喻：一张「先打草稿→老师批→改→再交」的流程贴纸，贴到哪个角色身上就自动生成那一串待办。
+- **D 外包发单对象**：项目级可选 `orders[]`（`{id,vendor,asset,poDate,quoteAmount?,expectedDelivery,
+  actualDelivery?,revisionRounds?,status,linkedTaskId?,notes?}`，status∈待发/已发/画中/回稿/内审/返修/已验收/入库）。
+  纯函数 `analyzeOrders(orders,taskResults)` 给每单加 `atRisk`（有 linkedTaskId 且关联任务计算结束日 >
+  expectedDelivery = 交付风险）；顶层汇总 `ordersAtRisk`。样例 PO-002 预计交付 07-12 < Y3 结束 07-14 → 风险。
+  小学生比喻：给每张外包订单贴一张「说好哪天到货」的便签，排期一算发现真到货比说好的晚，便签就变红。
+
 ## 结构
 
 ```
@@ -58,7 +79,7 @@ projects/bpt-pm/
 ├── data/sample-project.json   # 样例项目数据
 ├── data/sample-content-team.json # v2 样例：内容团队美术交付 + 外包 + 资源冲突（内嵌为默认样例）
 ├── scripts/schedule.mjs       # CPM 调度器 CLI + 资源负载/超载检测（与网页内联引擎同算法）
-├── tests/                     # 纯 Node 端到端/单测：proxy_e2e.mjs · resource_load.mjs
+├── tests/                     # 纯 Node 端到端/单测：proxy_e2e.mjs · resource_load.mjs · v2_bcd.mjs
 ├── proxy/                     # 本地 Notion 代理（让网页按钮直连生效）
 │   ├── server.mjs            #   零依赖 Node 代理：GET /tasks 拉取 · POST /writeback 写回
 │   ├── .env.example         #   配置模板（NOTION_TOKEN / DATABASE_ID / 项目锚点），.env 被 gitignore

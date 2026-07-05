@@ -157,6 +157,12 @@
             }
           },
           "resource": { "type": "string", "description": "负责资源/人员（可选）。" },
+          "deadline": {
+            "type": "string",
+            "format": "date",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+            "description": "软截止线（可选，v2 特性 B）。ISO 日期。只做误期叠加判定（结束日晚于此 = late，lateDays 为工作日误期天数），不移动任务、不改 CPM slack/临界路径。"
+          },
           "percentComplete": {
             "type": "number",
             "minimum": 0,
@@ -164,6 +170,75 @@
             "default": 0,
             "description": "完成百分比（0–100）。用于甘特图进度条显示，不影响排期计算。"
           },
+          "notes": { "type": "string", "description": "备注（可选）。" }
+        }
+      }
+    },
+    "templates": {
+      "type": "array",
+      "description": "流水线模板（可选，v2 特性 C）。声明可复用的多阶段生产流水线（如「角色美术流水线」）。UI 经纯函数 instantiateTemplate 把一个模板实例化成一串 FS 链接的 bpt-pm 任务；含返修回环时在阶段主任务后插入「审核+返修」轮。模板本身不参与排期，仅作实例化蓝本。",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "stages"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "description": "模板唯一标识。" },
+          "name": { "type": "string", "description": "模板显示名。" },
+          "stages": {
+            "type": "array",
+            "description": "流水线阶段，按数组顺序 FS 首尾相接。",
+            "items": {
+              "type": "object",
+              "required": ["key", "name", "duration"],
+              "additionalProperties": false,
+              "properties": {
+                "key": { "type": "string", "description": "阶段短键，参与生成任务 id（`${prefix}_${key}`）。" },
+                "name": { "type": "string", "description": "阶段名，参与生成任务名（`${assetName} ${name}`）。" },
+                "duration": { "type": "number", "minimum": 0, "description": "阶段主任务工期（工作日）。" },
+                "resource": { "type": "string", "description": "阶段主任务的负责资源（可选）。" },
+                "type": {
+                  "type": "string",
+                  "enum": ["FS", "SS", "FF", "SF"],
+                  "default": "FS",
+                  "description": "本阶段依赖上一阶段的链接类型。缺省 FS。"
+                },
+                "lag": { "type": "number", "default": 0, "description": "本阶段依赖上一阶段的延时/提前量（工作日）。缺省 0。" },
+                "revisionRounds": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "default": 0,
+                  "description": "返修回环轮数（可选）。R>0 时在本阶段主任务后插入 R 轮「审核+返修」链。缺省 0。"
+                },
+                "revisionResource": { "type": "string", "description": "审核轮的负责资源（返修轮沿用阶段主任务的 resource）。" },
+                "revisionDuration": { "type": "number", "minimum": 0, "default": 1, "description": "返修任务工期（工作日）。缺省 1；审核任务工期恒为 1。" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "orders": {
+      "type": "array",
+      "description": "外包发单对象（可选，v2 特性 D）。跟踪外包供应商的采购单/交付状态，经纯函数 analyzeOrders 结合排期结果算交付风险（atRisk = 有 linkedTaskId 且该任务计算结束日晚于 expectedDelivery）。",
+      "items": {
+        "type": "object",
+        "required": ["id", "vendor", "asset", "poDate", "expectedDelivery", "status"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "description": "发单唯一标识（如 PO-001）。" },
+          "vendor": { "type": "string", "description": "供应商，引用某 resource.id（通常 type=vendor）。" },
+          "asset": { "type": "string", "description": "发单资产/内容描述。" },
+          "poDate": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$", "description": "发单日期（ISO）。" },
+          "quoteAmount": { "type": "number", "minimum": 0, "description": "报价金额（可选）。" },
+          "expectedDelivery": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$", "description": "预计交付日期（ISO）。用于交付风险判定。" },
+          "actualDelivery": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$", "description": "实际交付日期（可选，ISO）。" },
+          "revisionRounds": { "type": "integer", "minimum": 0, "description": "已发生的返修轮数（可选）。" },
+          "status": {
+            "type": "string",
+            "enum": ["待发", "已发", "画中", "回稿", "内审", "返修", "已验收", "入库"],
+            "description": "发单状态机取值。"
+          },
+          "linkedTaskId": { "type": "string", "description": "关联的排期任务 id（可选）。有此值才参与交付风险判定。" },
           "notes": { "type": "string", "description": "备注（可选）。" }
         }
       }
