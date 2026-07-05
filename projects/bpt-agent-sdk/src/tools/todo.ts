@@ -13,6 +13,7 @@ import type {
   ToolResultPayload,
 } from '../internal/contracts.js';
 import { AbortError } from '../errors.js';
+import { TODOWRITE_DESCRIPTION } from './descriptions.js';
 
 type TodoStatus = 'pending' | 'in_progress' | 'completed';
 const STATUSES: readonly TodoStatus[] = ['pending', 'in_progress', 'completed'];
@@ -29,13 +30,7 @@ function errorResult(message: string): ToolResultPayload {
 
 export const todoWriteTool: BuiltinTool = {
   name: 'TodoWrite',
-  description:
-    'Create and update a structured task list for the current session. Send ' +
-    'the COMPLETE list every time (the tool is stateless and replaces the ' +
-    'prior list). Each todo has: content (imperative form, e.g. "Run tests"), ' +
-    'status (pending | in_progress | completed), and activeForm (present ' +
-    'continuous form shown while in progress, e.g. "Running tests"). Keep ' +
-    'exactly one task in_progress at a time.',
+  description: TODOWRITE_DESCRIPTION,
   readOnly: true,
   inputSchema: {
     type: 'object',

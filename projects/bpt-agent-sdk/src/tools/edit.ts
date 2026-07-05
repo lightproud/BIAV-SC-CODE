@@ -13,6 +13,7 @@ import type {
 } from '../internal/contracts.js';
 import { AbortError, isAbortError } from '../errors.js';
 import { formatCatN, looksBinary, resolveWithin } from './fsutil.js';
+import { EDIT_DESCRIPTION } from './descriptions.js';
 
 /** Context lines shown around the first edit site in the success snippet. */
 const SNIPPET_CONTEXT_LINES = 2;
@@ -49,13 +50,7 @@ function buildSnippet(updated: string, firstEditIndex: number, newString: string
 
 export const editTool: BuiltinTool = {
   name: 'Edit',
-  description:
-    'Perform an exact string replacement in a UTF-8 text file. old_string ' +
-    'must match the file contents exactly (including whitespace and ' +
-    'indentation) and must be unique in the file unless replace_all is ' +
-    'true, in which case every occurrence is replaced. old_string and ' +
-    'new_string must differ. The path may be absolute or relative to the ' +
-    'session working directory.',
+  description: EDIT_DESCRIPTION,
   readOnly: false,
   isFileEdit: true,
   inputSchema: {

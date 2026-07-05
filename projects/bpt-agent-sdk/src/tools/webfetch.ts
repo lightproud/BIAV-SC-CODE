@@ -20,6 +20,7 @@ import type {
   ToolResultPayload,
 } from '../internal/contracts.js';
 import { AbortError, isAbortError } from '../errors.js';
+import { WEBFETCH_DESCRIPTION } from './descriptions.js';
 
 const FETCH_TIMEOUT_MS = 30_000;
 const MAX_REDIRECTS = 5;
@@ -256,12 +257,7 @@ function normalizeUrl(raw: string): { ok: true; url: URL } | { ok: false; messag
 
 export const webFetchTool: BuiltinTool = {
   name: 'WebFetch',
-  description:
-    'Fetch a URL and return its content converted to plain text. HTML is ' +
-    'stripped of scripts/styles/tags; JSON and plain text pass through. ' +
-    'Provide `url` and a `prompt` describing what you are looking for (the ' +
-    'prompt guides your own reading of the returned text). http URLs are ' +
-    'upgraded to https. Large pages are truncated.',
+  description: WEBFETCH_DESCRIPTION,
   readOnly: true,
   inputSchema: {
     type: 'object',

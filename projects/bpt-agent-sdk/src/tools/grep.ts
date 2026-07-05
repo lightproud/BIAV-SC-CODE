@@ -11,6 +11,7 @@ import fg from 'fast-glob';
 import { promises as fs } from 'node:fs';
 import * as path from 'node:path';
 import { AbortError } from '../errors.js';
+import { GREP_DESCRIPTION } from './descriptions.js';
 import type {
   BuiltinTool,
   ToolContext,
@@ -194,13 +195,7 @@ function asOptionalCount(v: unknown): number | undefined {
 
 export const grepTool: BuiltinTool = {
   name: 'Grep',
-  description:
-    'Search file contents with a regular expression (JavaScript RegExp ' +
-    'syntax). Output modes: "files_with_matches" (default, matching file ' +
-    'paths), "content" (matching lines, ripgrep-style), "count" (matching ' +
-    'line counts per file). Supports case-insensitive search (-i), line ' +
-    'numbers (-n), context lines (-A/-B/-C), file filtering by glob or ' +
-    'type, and multiline mode.',
+  description: GREP_DESCRIPTION,
   inputSchema: {
     type: 'object',
     properties: {

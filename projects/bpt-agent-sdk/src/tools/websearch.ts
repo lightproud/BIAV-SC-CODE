@@ -18,6 +18,7 @@ import type {
 } from '../internal/contracts.js';
 import type { WebSearchResult } from '../types.js';
 import { AbortError, isAbortError } from '../errors.js';
+import { WEBSEARCH_DESCRIPTION } from './descriptions.js';
 
 function errorResult(message: string): ToolResultPayload {
   return { content: message, isError: true };
@@ -78,11 +79,7 @@ function renderResults(results: WebSearchResult[]): string {
 
 export const webSearchTool: BuiltinTool = {
   name: 'WebSearch',
-  description:
-    'Search the web for a query and return a list of results. Supports ' +
-    'optional allowed_domains (only these domains are returned) and ' +
-    'blocked_domains (these domains are excluded); domain matching includes ' +
-    'subdomains. Requires a host-configured search backend.',
+  description: WEBSEARCH_DESCRIPTION,
   readOnly: true,
   inputSchema: {
     type: 'object',

@@ -16,6 +16,7 @@ import type {
 } from '../internal/contracts.js';
 import { AbortError, isAbortError } from '../errors.js';
 import { looksBinary, resolveWithin } from './fsutil.js';
+import { WRITE_DESCRIPTION } from './descriptions.js';
 
 function errorResult(message: string): ToolResultPayload {
   return { content: message, isError: true };
@@ -23,10 +24,7 @@ function errorResult(message: string): ToolResultPayload {
 
 export const writeTool: BuiltinTool = {
   name: 'Write',
-  description:
-    'Write a UTF-8 text file to the local filesystem, creating parent ' +
-    'directories as needed. Overwrites the file if it already exists. The ' +
-    'path may be absolute or relative to the session working directory.',
+  description: WRITE_DESCRIPTION,
   readOnly: false,
   isFileEdit: true,
   inputSchema: {

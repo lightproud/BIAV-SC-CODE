@@ -18,6 +18,7 @@ import type {
 } from '../internal/contracts.js';
 import type { UserQuestion, UserQuestionAnswer } from '../types.js';
 import { AbortError, isAbortError } from '../errors.js';
+import { ASKUSERQUESTION_DESCRIPTION } from './descriptions.js';
 
 function errorResult(message: string): ToolResultPayload {
   return { content: message, isError: true };
@@ -122,12 +123,7 @@ function renderAnswers(answers: UserQuestionAnswer[]): string {
 
 export const askUserQuestionTool: BuiltinTool = {
   name: 'AskUserQuestion',
-  description:
-    'Ask the user 1 to 4 structured multiple-choice questions and return ' +
-    'their selected answers. Each question has a short header, the question ' +
-    'text, a list of options (strings or {label, description}), and an ' +
-    'optional multiSelect flag. Use when you need the user to make a decision ' +
-    'before proceeding.',
+  description: ASKUSERQUESTION_DESCRIPTION,
   readOnly: true,
   inputSchema: {
     type: 'object',
