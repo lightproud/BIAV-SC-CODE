@@ -1,6 +1,6 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-05T20:11:37.508642+00:00",
+  "collected_at": "2026-07-05T21:57:50.043268+00:00",
   "source": "steam",
   "data_layer": "output",
   "item_count": 12,
@@ -48,7 +48,7 @@
       "voted_up": true,
       "review": "Une très belle surprise ce jeu !\r\nLes personnages sont vraiment attachants et bien designés ! L'histoire assez originale !\r\nJe m'amuse beaucoup ! Et depuis que j'ai eu Pontos, je m'éclate encore plus !! Son seiyuu est magnifique !!",
       "timestamp_created": 1783272796,
-      "playtime_forever": 2365
+      "playtime_forever": 2451
     },
     {
       "source": "steam",
@@ -78,7 +78,7 @@
       "voted_up": true,
       "review": "I'm having a lot of fun.  And I unlocked Saya, which is all I really cared about.",
       "timestamp_created": 1783252268,
-      "playtime_forever": 1297
+      "playtime_forever": 1388
     },
     {
       "source": "steam",
@@ -93,7 +93,7 @@
       "voted_up": true,
       "review": "banger game",
       "timestamp_created": 1783249001,
-      "playtime_forever": 1756
+      "playtime_forever": 1779
     },
     {
       "source": "steam",

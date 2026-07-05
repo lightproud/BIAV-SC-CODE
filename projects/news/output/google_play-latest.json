@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-05T20:11:37.508642+00:00",
+  "collected_at": "2026-07-05T21:57:50.043268+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 142,
+  "item_count": 143,
   "items": [
     {
       "source": "google_play",
@@ -1043,6 +1043,16 @@
       "summary": "incroyable",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=fr#gp-c3bca509-d292-442b-a8be-b9dfb3a137cf",
       "author": "martial bambara",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-04T21:34:47",
+      "lang": "es",
+      "title": "[Google Play 好评] ★5 El juego está muy bien diseñado, es fáci",
+      "summary": "El juego está muy bien diseñado, es fácil de entender y el gameplay es de lo mejor, además la colaboración con Saya no Uta es Absolute Peak",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=es#gp-82195a4f-68e8-43ce-91d1-6db51379a809",
+      "author": "Ricardo Hernadez",
       "engagement": 0
     },
     {

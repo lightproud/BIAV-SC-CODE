@@ -1,8 +1,8 @@
 {
   "date": "2026-07-06",
-  "archived_at": "2026-07-05T20:12:31.354900+00:00",
+  "archived_at": "2026-07-05T21:58:35.286221+00:00",
   "source": "bilibili",
-  "item_count": 2,
+  "item_count": 3,
   "items": [
     {
       "title": "【FGOx忘却前夜】联动预告（伪）",
@@ -23,6 +23,29 @@
         "danmaku": 0
       },
       "media_url": "https://i0.hdslb.com/bfs/archive/d4206d9f42de6b921197805a79072cf987cfe94c.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "[忘却前夜]融灾2–5沙朵血徐，生存拉满的大招蹲坑流血链",
+      "summary": "-\n  └ 护林犬 (0赞): 虽然对手是较弱的福袋，但5难能龟到15回合后不暴死扛的血链队还是蛮有趣的",
+      "source": "bilibili",
+      "time": "2026-07-05T21:31:45+00:00",
+      "url": "https://www.bilibili.com/video/BV1w7TS68Evp",
+      "engagement": 9,
+      "is_hot": false,
+      "author": "护林犬",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 8,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/e8b6132379cf7b675b0c07b09f4da6d893406fbe.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
