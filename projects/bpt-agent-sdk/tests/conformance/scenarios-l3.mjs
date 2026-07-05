@@ -29,10 +29,19 @@
  * IS_SANDBOX=1, a real CI risk) so both arms auto-approve non-readonly tools.
  */
 
-import { join } from 'node:path';
+import { dirname, join } from 'node:path';
 import { readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import { z } from 'zod';
 import { textReply } from './emulator.mjs';
+
+/** Real stdio MCP fixture (tests/fixtures) - the subprocess-transport probe. */
+const STDIO_FIXTURE = join(
+  dirname(fileURLToPath(import.meta.url)),
+  '..',
+  'fixtures',
+  'mcp-echo-server.mjs',
+);
 
 const ALLOWED_TOOLS = [
   'Read',
@@ -925,6 +934,34 @@ export const L3_SCENARIOS = [
     steps: [
       { tool: 'mcp__conf__ping', isError: false, locks: [/ROUTE-PING/], notLocks: [/ROUTE-ECHO/] },
       { tool: 'mcp__conf__echo', isError: false, locks: [/ROUTE-ECHO/], notLocks: [/ROUTE-PING/] },
+    ],
+  },
+
+  // --- MCP tranche 3: stdio SUBPROCESS transport (dual-arm) --------------------
+  // Tranches 1-2 exercised only the in-process sdk server; this drives a REAL
+  // spawned stdio server (tests/fixtures/mcp-echo-server.mjs, newline JSON-RPC)
+  // through both engines' subprocess transport plumbing. The echo tool returns
+  // the call args as JSON - server-produced content, so the tool_result text
+  // must relay identically through either arm.
+  {
+    id: 'L3-MCP-06',
+    tool: 'mcp__conf__echo (stdio transport)',
+    prompt: 'Call the stdio echo tool.',
+    buildOptions: () => ({
+      allowedTools: [...ALLOWED_TOOLS, 'mcp__conf__echo'],
+      mcpServers: { conf: { type: 'stdio', command: process.execPath, args: [STDIO_FIXTURE] } },
+    }),
+    fixtureFiles: {},
+    buildScripts: () => [
+      toolTurn(1, [{ name: 'mcp__conf__echo', input: { payload: 'L3MCP06-STDIO' } }]),
+      { kind: 'sse', events: textReply('L3 MCP-06 DONE') },
+    ],
+    steps: [
+      {
+        tool: 'mcp__conf__echo',
+        isError: false,
+        locks: [/L3MCP06-STDIO/],
+      },
     ],
   },
 ];
