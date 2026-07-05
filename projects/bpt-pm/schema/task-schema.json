@@ -1,0 +1,147 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "bpt-pm/v1/task-schema.json",
+  "title": "BPT-PM 项目排期数据协议 v1",
+  "description": "银芯 BPT PM 子项目的单文件项目排期数据协议。一份 JSON 描述一个项目：项目锚点日期 + 工作日历 + 任务列表 + 可选基线快照。排期引擎（index.html）读此文件做 CPM 自动排期与基线比对，确认后可写回同一文件。",
+  "type": "object",
+  "required": ["protocol", "project", "tasks"],
+  "additionalProperties": false,
+  "properties": {
+    "protocol": {
+      "type": "string",
+      "const": "bpt-pm/v1",
+      "description": "协议版本标识，锁死为 bpt-pm/v1。读方据此校验兼容性。"
+    },
+    "project": {
+      "type": "object",
+      "required": ["name", "start"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string", "description": "项目名称。" },
+        "start": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+          "description": "项目锚点开始日期（ISO YYYY-MM-DD）。排期从此日的第一个工作日起算。"
+        },
+        "calendar": {
+          "type": "object",
+          "description": "工作日历。定义哪些天算工作日，用于把「工期（工作日数）」映射成日历日期。缺省 = 周一至周五、无节假日。",
+          "additionalProperties": false,
+          "properties": {
+            "workdays": {
+              "type": "array",
+              "description": "工作日的 ISO 星期号集合（1=周一 … 7=周日）。缺省 [1,2,3,4,5]。",
+              "items": { "type": "integer", "minimum": 1, "maximum": 7 },
+              "uniqueItems": true
+            },
+            "holidays": {
+              "type": "array",
+              "description": "额外的非工作日（节假日）例外，即便落在 workdays 上也不计入工期。ISO 日期串。",
+              "items": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" }
+            }
+          }
+        }
+      }
+    },
+    "baseline": {
+      "type": ["object", "null"],
+      "description": "基线快照（可选）。捕获某次排期结果作为对照基准，后续排期漂移与之比对得出偏差。为 null 或缺省表示尚未设基线。",
+      "additionalProperties": false,
+      "required": ["capturedAt", "tasks"],
+      "properties": {
+        "capturedAt": {
+          "type": "string",
+          "description": "基线捕获时间戳（ISO 8601）。"
+        },
+        "tasks": {
+          "type": "object",
+          "description": "任务 id → 基线区间的映射。",
+          "additionalProperties": {
+            "type": "object",
+            "required": ["start", "finish"],
+            "additionalProperties": false,
+            "properties": {
+              "start": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$", "description": "基线开始日期。" },
+              "finish": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$", "description": "基线结束日期（含）。" },
+              "duration": { "type": "number", "description": "基线工期（工作日）。" }
+            }
+          }
+        }
+      }
+    },
+    "tasks": {
+      "type": "array",
+      "description": "任务列表。顺序无关，依赖由 predecessors 决定；排期引擎会拓扑排序。",
+      "items": {
+        "type": "object",
+        "required": ["id", "name"],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_.-]+$",
+            "description": "任务唯一标识（如 T1、DEV-3）。用于依赖引用，全项目唯一。"
+          },
+          "name": { "type": "string", "description": "任务名称。" },
+          "duration": {
+            "type": "number",
+            "minimum": 0,
+            "default": 1,
+            "description": "工期，单位工作日。0 = 里程碑（零工期，仅一个时间点）。缺省 1。"
+          },
+          "predecessors": {
+            "type": "array",
+            "description": "前置依赖链接。空 = 无依赖，从项目起点或约束日期起排。",
+            "items": {
+              "type": "object",
+              "required": ["id"],
+              "additionalProperties": false,
+              "properties": {
+                "id": { "type": "string", "description": "前置任务 id。" },
+                "type": {
+                  "type": "string",
+                  "enum": ["FS", "SS", "FF", "SF"],
+                  "default": "FS",
+                  "description": "依赖类型：FS 完成到开始 / SS 开始到开始 / FF 完成到完成 / SF 开始到完成。缺省 FS。"
+                },
+                "lag": {
+                  "type": "number",
+                  "default": 0,
+                  "description": "延时/提前量（工作日）。正为延时（lag），负为提前（lead）。缺省 0。"
+                }
+              }
+            }
+          },
+          "constraint": {
+            "type": ["object", "null"],
+            "description": "任务约束（可选）。缺省 = ASAP（尽早开始）。",
+            "additionalProperties": false,
+            "required": ["type"],
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": ["ASAP", "SNET", "MSO"],
+                "description": "ASAP 尽早开始（默认）/ SNET 不早于某日开始 / MSO 必须某日开始（硬约束）。"
+              },
+              "date": {
+                "type": "string",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                "description": "约束日期（SNET / MSO 必填）。"
+              }
+            }
+          },
+          "resource": { "type": "string", "description": "负责资源/人员（可选）。" },
+          "percentComplete": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100,
+            "default": 0,
+            "description": "完成百分比（0–100）。用于甘特图进度条显示，不影响排期计算。"
+          },
+          "notes": { "type": "string", "description": "备注（可选）。" }
+        }
+      }
+    }
+  }
+}

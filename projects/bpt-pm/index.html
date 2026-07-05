@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BPT PM — 项目排期工作台</title>
+<style>
+  :root {
+    --bg: #0f1216;
+    --panel: #161b22;
+    --panel-2: #1c232d;
+    --border: #2a333f;
+    --text: #d7dee7;
+    --muted: #8b97a6;
+    --accent: #6ea8fe;
+    --accent-dim: #3a5a8a;
+    --critical: #e5686f;
+    --critical-dim: #7a3a3f;
+    --baseline: #b08cc9;
+    --ok: #5bbf8a;
+    --warn: #e0b15e;
+    --grid: #222b36;
+    --weekend: #12161c;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; height: 100%; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-size: 13px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  header {
+    padding: 10px 16px;
+    background: var(--panel);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  header h1 { font-size: 15px; margin: 0; font-weight: 600; letter-spacing: 0.5px; }
+  header .proj { color: var(--muted); font-size: 12px; }
+  header .spacer { flex: 1; }
+  button {
+    background: var(--panel-2);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 6px 11px;
+    font-size: 12px;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  button:hover { border-color: var(--accent-dim); background: #222a35; }
+  button.primary { background: var(--accent-dim); border-color: var(--accent); color: #eaf2ff; }
+  button.primary:hover { background: #45689e; }
+  button:disabled { opacity: 0.4; cursor: not-allowed; }
+  .main { flex: 1; display: flex; min-height: 0; }
+  .table-pane { width: 54%; min-width: 380px; overflow: auto; border-right: 1px solid var(--border); }
+  .gantt-pane { flex: 1; overflow: auto; position: relative; }
+  table { border-collapse: collapse; width: 100%; font-size: 12px; }
+  th, td { border: 1px solid var(--grid); padding: 3px 6px; text-align: left; white-space: nowrap; }
+  th { background: var(--panel); position: sticky; top: 0; z-index: 2; font-weight: 600; color: var(--muted); }
+  tr.critical td.calc { color: var(--critical); font-weight: 600; }
+  td.calc { color: var(--muted); background: var(--panel); }
+  td.var-pos { color: var(--critical); }
+  td.var-neg { color: var(--ok); }
+  td [contenteditable] { outline: none; }
+  td.editable { cursor: text; }
+  td.editable:focus-within, td.editable:hover { background: #1e2732; }
+  .num { text-align: right; }
+  .milestone-badge { color: var(--warn); font-size: 10px; }
+  .status-bar {
+    padding: 5px 16px;
+    background: var(--panel);
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 11px;
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .status-bar .chip { color: var(--text); }
+  .status-bar .dot { display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 4px; vertical-align: middle; }
+  /* Gantt */
+  #gantt { position: relative; font-size: 11px; }
+  .gx-header { position: sticky; top: 0; z-index: 3; background: var(--panel); }
+  .gx-month { border-left: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 2px 4px; font-weight: 600; color: var(--muted); position: absolute; height: 20px; }
+  .gx-day { position: absolute; top: 20px; text-align: center; color: var(--muted); border-left: 1px solid var(--grid); height: 18px; line-height: 18px; font-size: 10px; }
+  .gx-day.weekend { background: var(--weekend); }
+  .grow { position: absolute; border-bottom: 1px solid var(--grid); }
+  .grow.weekend-col { background: var(--weekend); }
+  .gbar {
+    position: absolute; height: 12px; border-radius: 3px;
+    background: linear-gradient(var(--accent), var(--accent-dim));
+    box-shadow: 0 1px 2px rgba(0,0,0,.4);
+  }
+  .gbar.critical { background: linear-gradient(#f08088, var(--critical)); }
+  .gbar .prog { position: absolute; left: 0; top: 0; bottom: 0; background: rgba(255,255,255,.35); border-radius: 3px 0 0 3px; }
+  .gbar.milestone { width: 12px !important; height: 12px; transform: rotate(45deg); border-radius: 2px; background: var(--warn); }
+  .gbase { position: absolute; height: 5px; border-radius: 2px; background: var(--baseline); opacity: .8; }
+  .glabel { position: absolute; color: var(--text); font-size: 10px; white-space: nowrap; pointer-events: none; }
+  .gtoday { position: absolute; top: 0; bottom: 0; width: 2px; background: var(--warn); opacity: .6; z-index: 1; }
+  .glink { position: absolute; pointer-events: none; }
+  .hint { color: var(--muted); font-size: 11px; padding: 12px 16px; }
+  .drop-hint { position:absolute; inset:0; display:none; align-items:center; justify-content:center; background:rgba(20,26,34,.85); z-index:10; color:var(--accent); font-size:16px; border:2px dashed var(--accent-dim); }
+  body.dragging .drop-hint { display:flex; }
+  .toast { position: fixed; bottom: 46px; left: 50%; transform: translateX(-50%); background: var(--panel-2); border: 1px solid var(--accent-dim); color: var(--text); padding: 8px 16px; border-radius: 6px; z-index: 20; opacity: 0; transition: opacity .2s; pointer-events: none; }
+  .toast.show { opacity: 1; }
+  code { background: var(--panel-2); padding: 1px 4px; border-radius: 3px; color: var(--accent); }
+</style>
+</head>
+<body>
+<header>
+  <h1>BPT PM</h1>
+  <span class="proj" id="projName">未加载项目</span>
+  <span class="spacer"></span>
+  <button id="btnOpen" title="用 File System Access API 打开本地数据文件（可写回同一文件）">打开数据源</button>
+  <button id="btnSample">载入样例</button>
+  <button id="btnAddRow">新增任务</button>
+  <button id="btnSchedule" class="primary" title="按 CPM 前向/后向计算法自动排期">自动排期</button>
+  <button id="btnBaseline" title="把当前排期结果捕获为基线快照">设为基线</button>
+  <button id="btnSave" title="写回已打开的数据文件；未用 API 打开则下载 JSON">写入数据源</button>
+</header>
+
+<div class="main">
+  <div class="table-pane">
+    <table id="taskTable">
+      <thead>
+        <tr>
+          <th>ID</th><th>任务名称</th><th class="num" title="工期(工作日)，0=里程碑">工期</th>
+          <th title="前置依赖，如 T1、T2SS+2、T3FF-1，逗号分隔">前置</th>
+          <th title="约束：ASAP / SNET&lt;日期&gt; / MSO&lt;日期&gt;">约束</th>
+          <th>资源</th><th class="num" title="完成%">%</th>
+          <th class="calc" title="计算开始">开始</th><th class="calc" title="计算结束">结束</th>
+          <th class="calc" title="总浮动(工作日)">浮动</th>
+          <th class="calc" title="相对基线结束偏差(工作日)，正=延后">偏差</th>
+        </tr>
+      </thead>
+      <tbody id="taskBody"></tbody>
+    </table>
+    <div class="hint" id="tableHint">载入样例或打开数据源以开始。前置依赖迷你语法：<code>T1</code>（默认 FS+0）、<code>T2SS+2</code>、<code>T3FF-1</code>、<code>T4SF</code>；多个用逗号分隔。约束填 <code>SNET 2026-07-23</code> 或 <code>MSO 2026-07-10</code>，留空即 ASAP。</div>
+  </div>
+  <div class="gantt-pane" id="ganttPane">
+    <div id="gantt"></div>
+  </div>
+</div>
+
+<div class="status-bar" id="statusBar">
+  <span class="chip" id="stTasks">任务 0</span>
+  <span class="chip" id="stEnd">工期 —</span>
+  <span><span class="dot" style="background:var(--critical)"></span>临界路径</span>
+  <span><span class="dot" style="background:var(--baseline)"></span>基线</span>
+  <span><span class="dot" style="background:var(--warn)"></span>今日/里程碑</span>
+  <span class="chip" id="stSource">数据源：未连接</span>
+</div>
+
+<div class="drop-hint">松手以载入 JSON 数据文件</div>
+<div class="toast" id="toast"></div>
+
+<script>
+"use strict";
+/* ==========================================================================
+   BPT PM — 单网页 CPM 排期引擎
+   数据协议：bpt-pm/v1（见 schema/task-schema.json）
+   排期采用关键路径法（CPM）：前向计算早开始/早结束，后向计算晚开始/晚结束，
+   浮动=0 即临界路径。全部在「工作日索引」空间里算，再经工作日历映射回日历日期。
+   ========================================================================== */
+
+const MS_DAY = 86400000;
+const state = {
+  data: null,        // 当前协议对象
+  fileHandle: null,  // File System Access 句柄（可写回）
+  computed: null,    // 排期结果 Map<id, {...}>
+};
+
+/* ---------- 日期工具（UTC 归一，避开时区漂移） ---------- */
+function parseDate(s) { const [y, m, d] = s.split("-").map(Number); return new Date(Date.UTC(y, m - 1, d)); }
+function fmtDate(dt) { return dt.toISOString().slice(0, 10); }
+function addDays(dt, n) { return new Date(dt.getTime() + n * MS_DAY); }
+function isoWeekday(dt) { const w = dt.getUTCDay(); return w === 0 ? 7 : w; }
+
+/* ---------- 工作日历：把工期(工作日)映射成日历日期 ---------- */
+class WorkCalendar {
+  constructor(startStr, cal) {
+    cal = cal || {};
+    this.workdays = new Set((cal.workdays && cal.workdays.length ? cal.workdays : [1, 2, 3, 4, 5]));
+    this.holidays = new Set(cal.holidays || []);
+    this.start = this.forward(parseDate(startStr));
+  }
+  isWorking(dt) { return this.workdays.has(isoWeekday(dt)) && !this.holidays.has(fmtDate(dt)); }
+  forward(dt) { let d = dt, guard = 0; while (!this.isWorking(d) && guard++ < 4000) d = addDays(d, 1); return d; }
+  next(dt) { let d = addDays(dt, 1), guard = 0; while (!this.isWorking(d) && guard++ < 4000) d = addDays(d, 1); return d; }
+  // 工作日索引 → 日历日期。index 0 = 第一个工作日
+  fromIndex(n) {
+    if (n <= 0) return this.start;
+    let d = this.start;
+    for (let i = 0; i < n; i++) d = this.next(d);
+    return d;
+  }
+  // 日历日期 → 工作日索引（非工作日向后取整到下一个工作日）
+  toIndex(str) {
+    const target = this.forward(parseDate(str));
+    if (target <= this.start) return 0;
+    let d = this.start, idx = 0, guard = 0;
+    while (d < target && guard++ < 40000) { d = this.next(d); idx++; }
+    return idx;
+  }
+}
+
+/* ---------- 前置依赖迷你语法解析 ----------
+   "T1"→{id:T1,FS,0}  "T2SS+2"  "T3FF-1"  "T4SF"  逗号/分号分隔 */
+function parsePreds(str) {
+  if (!str || !str.trim()) return [];
+  return str.split(/[,;，；]/).map(s => s.trim()).filter(Boolean).map(tok => {
+    let m = tok.match(/([+-]\s*\d+)\s*$/);
+    let lag = 0;
+    if (m) { lag = parseInt(m[1].replace(/\s+/g, ""), 10); tok = tok.slice(0, m.index).trim(); }
+    m = tok.match(/(FS|SS|FF|SF)$/i);
+    let type = "FS";
+    if (m) { type = m[1].toUpperCase(); tok = tok.slice(0, m.index).trim(); }
+    return { id: tok, type, lag };
+  }).filter(p => p.id);
+}
+function predsToStr(preds) {
+  if (!preds || !preds.length) return "";
+  return preds.map(p => {
+    let s = p.id;
+    if (p.type && p.type !== "FS") s += p.type;
+    if (p.lag) s += (p.lag > 0 ? "+" : "") + p.lag;
+    return s;
+  }).join(", ");
+}
+function constraintToStr(c) {
+  if (!c || !c.type || c.type === "ASAP") return "";
+  return c.type + (c.date ? " " + c.date : "");
+}
+function parseConstraint(str) {
+  if (!str || !str.trim()) return null;
+  const m = str.trim().match(/^(ASAP|SNET|MSO)\s*(\d{4}-\d{2}-\d{2})?$/i);
+  if (!m) return null;
+  const type = m[1].toUpperCase();
+  if (type === "ASAP") return null;
+  return { type, date: m[2] || null };
+}
+
+/* ---------- CPM 排期核心 ---------- */
+function scheduleProject(data) {
+  const cal = new WorkCalendar(data.project.start, data.project.calendar);
+  const tasks = data.tasks.map(t => ({
+    id: t.id, name: t.name,
+    dur: Math.max(0, Number(t.duration ?? 1)),
+    preds: (t.predecessors || []).map(p => ({ id: p.id, type: p.type || "FS", lag: Number(p.lag || 0) })),
+    constraint: t.constraint || null,
+    pct: Number(t.percentComplete || 0),
+  }));
+  const byId = new Map(tasks.map(t => [t.id, t]));
+
+  // 拓扑排序（检测环）
+  const order = [], visiting = new Set(), done = new Set();
+  const errors = [];
+  function visit(t, stack) {
+    if (done.has(t.id)) return;
+    if (visiting.has(t.id)) { errors.push("依赖存在环：" + [...stack, t.id].join(" → ")); return; }
+    visiting.add(t.id);
+    for (const p of t.preds) {
+      const pt = byId.get(p.id);
+      if (!pt) { errors.push(`任务 ${t.id} 引用了不存在的前置 ${p.id}`); continue; }
+      visit(pt, [...stack, t.id]);
+    }
+    visiting.delete(t.id); done.add(t.id); order.push(t);
+  }
+  tasks.forEach(t => visit(t, []));
+
+  // 后继表
+  const succ = new Map(tasks.map(t => [t.id, []]));
+  tasks.forEach(t => t.preds.forEach(p => {
+    if (byId.has(p.id)) succ.get(p.id).push({ id: t.id, type: p.type, lag: p.lag });
+  }));
+
+  // 前向计算：早开始 es / 早结束 ef（索引空间，ef 为排他上界）
+  for (const t of order) {
+    let es = 0;
+    for (const p of t.preds) {
+      const pt = byId.get(p.id); if (!pt) continue;
+      switch (p.type) {
+        case "FS": es = Math.max(es, pt.ef + p.lag); break;
+        case "SS": es = Math.max(es, pt.es + p.lag); break;
+        case "FF": es = Math.max(es, pt.ef + p.lag - t.dur); break;
+        case "SF": es = Math.max(es, pt.es + p.lag - t.dur); break;
+      }
+    }
+    if (t.constraint && t.constraint.date) {
+      const ci = cal.toIndex(t.constraint.date);
+      if (t.constraint.type === "SNET") es = Math.max(es, ci);
+      else if (t.constraint.type === "MSO") es = ci;
+    }
+    es = Math.max(es, 0);
+    t.es = es; t.ef = es + t.dur;
+  }
+
+  const projEnd = tasks.reduce((m, t) => Math.max(m, t.ef), 0);
+
+  // 后向计算：晚结束 lf / 晚开始 ls（逆拓扑序）
+  for (let i = order.length - 1; i >= 0; i--) {
+    const t = order[i];
+    const outs = succ.get(t.id);
+    let lf = outs.length ? Infinity : Math.max(projEnd, t.ef);
+    for (const s of outs) {
+      const st = byId.get(s.id);
+      switch (s.type) {
+        case "FS": lf = Math.min(lf, st.ls - s.lag); break;
+        case "SS": lf = Math.min(lf, st.ls - s.lag + t.dur); break;
+        case "FF": lf = Math.min(lf, st.lf - s.lag); break;
+        case "SF": lf = Math.min(lf, st.lf - s.lag + t.dur); break;
+      }
+    }
+    if (!isFinite(lf)) lf = Math.max(projEnd, t.ef);
+    t.lf = lf; t.ls = lf - t.dur;
+    t.slack = t.ls - t.es;
+    t.critical = t.slack <= 0;
+  }
+
+  // 映射回日历日期
+  const result = new Map();
+  for (const t of tasks) {
+    const startDate = cal.fromIndex(t.es);
+    const finishDate = t.dur > 0 ? cal.fromIndex(t.ef - 1) : startDate;
+    result.set(t.id, {
+      id: t.id, es: t.es, ef: t.ef, slack: t.slack, critical: t.critical,
+      dur: t.dur, pct: t.pct, milestone: t.dur === 0,
+      start: fmtDate(startDate), finish: fmtDate(finishDate),
+      startDate, finishDate, preds: t.preds,
+    });
+  }
+  return { cal, result, projEnd, order, errors };
+}
+
+/* ---------- DOM 读表：把可编辑表格读回协议对象 ---------- */
+function readTable() {
+  if (!state.data) return;
+  const rows = document.querySelectorAll("#taskBody tr");
+  const tasks = [];
+  rows.forEach(tr => {
+    const g = sel => tr.querySelector(sel)?.textContent.trim() ?? "";
+    const id = g(".c-id");
+    if (!id) return;
+    const durRaw = g(".c-dur");
+    const t = {
+      id, name: g(".c-name"),
+      duration: durRaw === "" ? 1 : Number(durRaw),
+      predecessors: parsePreds(g(".c-pred")),
+      resource: g(".c-res"),
+      percentComplete: Number(g(".c-pct") || 0),
+    };
+    const c = parseConstraint(g(".c-con"));
+    if (c) t.constraint = c;
+    const notesTask = state.data.tasks.find(x => x.id === id);
+    if (notesTask && notesTask.notes) t.notes = notesTask.notes;
+    tasks.push(t);
+  });
+  state.data.tasks = tasks;
+}
+
+/* ---------- 渲染表格 ---------- */
+function renderTable() {
+  const body = document.getElementById("taskBody");
+  body.innerHTML = "";
+  const comp = state.computed;
+  const base = state.data.baseline;
+  state.data.tasks.forEach(t => {
+    const c = comp ? comp.result.get(t.id) : null;
+    const tr = document.createElement("tr");
+    if (c && c.critical) tr.classList.add("critical");
+    const cell = (cls, val, editable) =>
+      `<td class="${editable ? "editable" : ""} ${cls.startsWith("c-") ? "" : cls}"><span class="${cls}" ${editable ? 'contenteditable="true"' : ""}>${val ?? ""}</span></td>`;
+
+    // 基线偏差（结束日，工作日）
+    let varStr = "", varCls = "";
+    if (base && base.tasks[t.id] && c) {
+      const cal = comp.cal;
+      const bi = cal.toIndex(base.tasks[t.id].finish);
+      const ci = c.ef - (c.dur > 0 ? 1 : 0);
+      const dv = ci - bi;
+      if (dv !== 0) { varStr = (dv > 0 ? "+" : "") + dv + "d"; varCls = dv > 0 ? "var-pos" : "var-neg"; }
+      else varStr = "0";
+    }
+    const ms = (t.duration === 0) ? '<span class="milestone-badge"> ◆</span>' : "";
+    tr.innerHTML =
+      cell("c-id", t.id, true) +
+      `<td class="editable"><span class="c-name" contenteditable="true">${t.name || ""}</span>${ms}</td>` +
+      `<td class="editable num"><span class="c-dur" contenteditable="true">${t.duration ?? 1}</span></td>` +
+      cell("c-pred", predsToStr(t.predecessors), true) +
+      cell("c-con", constraintToStr(t.constraint), true) +
+      cell("c-res", t.resource || "", true) +
+      `<td class="editable num"><span class="c-pct" contenteditable="true">${t.percentComplete ?? 0}</span></td>` +
+      `<td class="calc">${c ? c.start : "—"}</td>` +
+      `<td class="calc">${c ? c.finish : "—"}</td>` +
+      `<td class="calc">${c ? (c.milestone ? "—" : c.slack + "d") : "—"}</td>` +
+      `<td class="calc ${varCls}">${varStr || "—"}</td>`;
+    body.appendChild(tr);
+  });
+  document.getElementById("tableHint").style.display = state.data.tasks.length ? "none" : "block";
+}
+
+/* ---------- 渲染甘特图（含基线叠加 + 依赖连线） ---------- */
+const DAY_W = 26, ROW_H = 26, LEFT = 150, HEAD_H = 40;
+function renderGantt() {
+  const g = document.getElementById("gantt");
+  g.innerHTML = "";
+  const comp = state.computed;
+  if (!comp) { g.innerHTML = '<div class="hint">点击「自动排期」以生成甘特图。</div>'; return; }
+  const base = state.data.baseline;
+
+  // 时间窗
+  let minD = null, maxD = null;
+  const push = d => { if (!minD || d < minD) minD = d; if (!maxD || d > maxD) maxD = d; };
+  comp.result.forEach(c => { push(c.startDate); push(c.finishDate); });
+  if (base) Object.values(base.tasks).forEach(b => { push(parseDate(b.start)); push(parseDate(b.finish)); });
+  if (!minD) return;
+  minD = addDays(minD, -1); maxD = addDays(maxD, 2);
+  const totalDays = Math.round((maxD - minD) / MS_DAY) + 1;
+  const rows = state.data.tasks;
+  const width = LEFT + totalDays * DAY_W;
+  const height = HEAD_H + rows.length * ROW_H + 10;
+  g.style.width = width + "px";
+  g.style.height = height + "px";
+  const xOf = d => LEFT + Math.round((d - minD) / MS_DAY) * DAY_W;
+  const cal = comp.cal;
+
+  // 表头：月 + 日
+  const head = document.createElement("div");
+  head.className = "gx-header";
+  head.style.cssText = `position:absolute;left:0;top:0;width:${width}px;height:${HEAD_H}px;`;
+  let monthStart = 0, monthLabel = null;
+  for (let i = 0; i < totalDays; i++) {
+    const d = addDays(minD, i);
+    const weekend = !cal.isWorking(d);
+    const day = document.createElement("div");
+    day.className = "gx-day" + (weekend ? " weekend" : "");
+    day.style.cssText = `left:${LEFT + i * DAY_W}px;width:${DAY_W}px;`;
+    day.textContent = d.getUTCDate();
+    head.appendChild(day);
+    const ml = d.getUTCFullYear() + "-" + String(d.getUTCMonth() + 1).padStart(2, "0");
+    if (monthLabel === null) { monthLabel = ml; monthStart = i; }
+    if (ml !== monthLabel || i === totalDays - 1) {
+      const span = document.createElement("div");
+      span.className = "gx-month";
+      const end = (ml !== monthLabel) ? i : i + 1;
+      span.style.cssText = `left:${LEFT + monthStart * DAY_W}px;width:${(end - monthStart) * DAY_W}px;top:0;`;
+      span.textContent = monthLabel;
+      head.appendChild(span);
+      monthLabel = ml; monthStart = i;
+    }
+  }
+  g.appendChild(head);
+
+  // 周末列底纹
+  for (let i = 0; i < totalDays; i++) {
+    const d = addDays(minD, i);
+    if (!cal.isWorking(d)) {
+      const col = document.createElement("div");
+      col.style.cssText = `position:absolute;left:${LEFT + i * DAY_W}px;top:${HEAD_H}px;width:${DAY_W}px;height:${rows.length * ROW_H}px;background:var(--weekend);`;
+      g.appendChild(col);
+    }
+  }
+
+  // 今日线
+  try {
+    const today = parseDate(new Date().toISOString().slice(0, 10));
+    if (today >= minD && today <= maxD) {
+      const line = document.createElement("div");
+      line.className = "gtoday";
+      line.style.left = (xOf(today) ) + "px";
+      line.style.top = HEAD_H + "px"; line.style.height = (rows.length * ROW_H) + "px";
+      g.appendChild(line);
+    }
+  } catch (e) {}
+
+  // 每行：行名 + 任务条 + 基线条
+  const yOf = {};
+  rows.forEach((t, i) => {
+    const y = HEAD_H + i * ROW_H;
+    yOf[t.id] = y;
+    const c = comp.result.get(t.id);
+    const row = document.createElement("div");
+    row.className = "grow";
+    row.style.cssText = `left:0;top:${y}px;width:${width}px;height:${ROW_H}px;`;
+    g.appendChild(row);
+    // 行标签
+    const lbl = document.createElement("div");
+    lbl.style.cssText = `position:absolute;left:6px;top:${y + 6}px;width:${LEFT - 10}px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--text);`;
+    lbl.textContent = t.id + " " + (t.name || "");
+    g.appendChild(lbl);
+    if (!c) return;
+
+    // 基线条（细，在上方）
+    if (base && base.tasks[t.id]) {
+      const b = base.tasks[t.id];
+      const bx = xOf(parseDate(b.start));
+      const bw = Math.max(DAY_W, (Math.round((parseDate(b.finish) - parseDate(b.start)) / MS_DAY) + 1) * DAY_W);
+      const bb = document.createElement("div");
+      bb.className = "gbase";
+      bb.style.cssText = `left:${bx}px;top:${y + 4}px;width:${bw}px;`;
+      bb.title = `基线 ${b.start} → ${b.finish}`;
+      g.appendChild(bb);
+    }
+
+    // 任务条
+    if (c.milestone) {
+      const dm = document.createElement("div");
+      dm.className = "gbar milestone" + (c.critical ? " critical" : "");
+      dm.style.cssText = `left:${xOf(c.startDate) - 6}px;top:${y + 9}px;`;
+      dm.title = `${t.name}（里程碑）${c.start}`;
+      g.appendChild(dm);
+    } else {
+      const bx = xOf(c.startDate);
+      const bw = Math.max(DAY_W - 2, (Math.round((c.finishDate - c.startDate) / MS_DAY) + 1) * DAY_W - 2);
+      const bar = document.createElement("div");
+      bar.className = "gbar" + (c.critical ? " critical" : "");
+      bar.style.cssText = `left:${bx}px;top:${y + 11}px;width:${bw}px;`;
+      bar.title = `${t.name}\n${c.start} → ${c.finish}｜工期 ${c.dur}d｜浮动 ${c.slack}d${c.critical ? "｜临界" : ""}`;
+      if (c.pct > 0) {
+        const p = document.createElement("div");
+        p.className = "prog"; p.style.width = Math.min(100, c.pct) + "%";
+        bar.appendChild(p);
+      }
+      g.appendChild(bar);
+      const gl = document.createElement("div");
+      gl.className = "glabel";
+      gl.style.cssText = `left:${bx + bw + 5}px;top:${y + 9}px;`;
+      gl.textContent = c.pct > 0 ? c.pct + "%" : "";
+      g.appendChild(gl);
+    }
+  });
+
+  // 依赖连线（SVG）
+  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  svg.setAttribute("style", `position:absolute;left:0;top:0;width:${width}px;height:${height}px;pointer-events:none;z-index:1;`);
+  rows.forEach(t => {
+    const c = comp.result.get(t.id); if (!c) return;
+    (c.preds || []).forEach(p => {
+      const pc = comp.result.get(p.id); if (!pc || yOf[p.id] === undefined) return;
+      const x1 = xOf(pc.finishDate) + (pc.milestone ? 6 : DAY_W - 2);
+      const y1 = yOf[p.id] + 17;
+      const x2 = xOf(c.startDate) - 2;
+      const y2 = yOf[t.id] + 17;
+      const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      const midx = Math.max(x1 + 8, x2 - 8);
+      path.setAttribute("d", `M${x1},${y1} L${midx},${y1} L${midx},${y2} L${x2},${y2}`);
+      path.setAttribute("fill", "none");
+      path.setAttribute("stroke", (c.critical && pc.critical) ? "var(--critical)" : "var(--accent-dim)");
+      path.setAttribute("stroke-width", "1.2");
+      svg.appendChild(path);
+      const arr = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      arr.setAttribute("d", `M${x2 - 5},${y2 - 3} L${x2},${y2} L${x2 - 5},${y2 + 3}`);
+      arr.setAttribute("fill", (c.critical && pc.critical) ? "var(--critical)" : "var(--accent-dim)");
+      svg.appendChild(arr);
+    });
+  });
+  g.appendChild(svg);
+}
+
+/* ---------- 状态栏 ---------- */
+function renderStatus() {
+  const comp = state.computed;
+  document.getElementById("stTasks").textContent = "任务 " + (state.data ? state.data.tasks.length : 0);
+  if (comp) {
+    let last = comp.cal.start;
+    comp.result.forEach(c => { if (c.finishDate > last) last = c.finishDate; });
+    const critCount = [...comp.result.values()].filter(c => c.critical).length;
+    document.getElementById("stEnd").textContent = `总工期 ${comp.projEnd} 工作日 · 完工 ${fmtDate(last)} · 临界 ${critCount} 项`;
+  } else {
+    document.getElementById("stEnd").textContent = "工期 —";
+  }
+  document.getElementById("stSource").textContent = "数据源：" +
+    (state.fileHandle ? state.fileHandle.name + "（可写回）" : (state.data ? "内存（写入将下载）" : "未连接"));
+  document.getElementById("projName").textContent = state.data ? state.data.project.name : "未加载项目";
+}
+
+/* ---------- 动作 ---------- */
+function doSchedule() {
+  if (!state.data) { toast("请先载入数据"); return; }
+  readTable();
+  const comp = scheduleProject(state.data);
+  state.computed = comp;
+  renderTable(); renderGantt(); renderStatus();
+  if (comp.errors.length) toast("排期完成，但有警告：" + comp.errors[0]);
+  else toast(`排期完成：${state.data.tasks.length} 项任务，总工期 ${comp.projEnd} 工作日`);
+}
+function doBaseline() {
+  if (!state.computed) { toast("请先自动排期，再设基线"); return; }
+  const tasks = {};
+  state.computed.result.forEach((c, id) => { tasks[id] = { start: c.start, finish: c.finish, duration: c.dur }; });
+  state.data.baseline = { capturedAt: new Date().toISOString(), tasks };
+  renderTable(); renderGantt();
+  toast("已捕获基线：" + Object.keys(tasks).length + " 项");
+}
+function doAddRow() {
+  if (!state.data) loadData(emptyProject());
+  readTable();
+  let n = 1; while (state.data.tasks.some(t => t.id === "T" + n)) n++;
+  state.data.tasks.push({ id: "T" + n, name: "新任务", duration: 1, predecessors: [], percentComplete: 0 });
+  renderTable();
+}
+async function doSave() {
+  if (!state.data) { toast("无数据可写"); return; }
+  readTable();
+  const json = JSON.stringify(state.data, null, 2);
+  if (state.fileHandle) {
+    try {
+      const w = await state.fileHandle.createWritable();
+      await w.write(json); await w.close();
+      toast("已写回：" + state.fileHandle.name);
+      return;
+    } catch (e) { toast("写回失败，改为下载：" + e.message); }
+  }
+  const blob = new Blob([json], { type: "application/json" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = (state.data.project.name || "bpt-pm") + ".json";
+  a.click(); URL.revokeObjectURL(a.href);
+  toast("已下载 JSON（浏览器不支持直接写回或未用 API 打开）");
+}
+async function doOpen() {
+  if (window.showOpenFilePicker) {
+    try {
+      const [h] = await window.showOpenFilePicker({
+        types: [{ description: "BPT-PM JSON", accept: { "application/json": [".json"] } }],
+      });
+      state.fileHandle = h;
+      const file = await h.getFile();
+      loadData(JSON.parse(await file.text()));
+      toast("已连接数据源：" + h.name);
+    } catch (e) { if (e.name !== "AbortError") toast("打开失败：" + e.message); }
+  } else {
+    // 回退：普通文件选择（不可写回，写入将下载）
+    const inp = document.createElement("input");
+    inp.type = "file"; inp.accept = ".json,application/json";
+    inp.onchange = async () => {
+      const f = inp.files[0]; if (!f) return;
+      state.fileHandle = null;
+      loadData(JSON.parse(await f.text()));
+      toast("已载入（浏览器不支持写回，写入将下载）");
+    };
+    inp.click();
+  }
+}
+function loadData(data) {
+  if (!data || data.protocol !== "bpt-pm/v1") { toast("非 bpt-pm/v1 协议数据"); return; }
+  data.tasks = data.tasks || [];
+  state.data = data; state.computed = null;
+  renderTable(); renderGantt(); renderStatus();
+}
+function emptyProject() {
+  return { protocol: "bpt-pm/v1", project: { name: "新项目", start: new Date().toISOString().slice(0, 10), calendar: { workdays: [1, 2, 3, 4, 5], holidays: [] } }, baseline: null, tasks: [] };
+}
+
+/* ---------- 载入样例（内嵌，双击即用无需网络） ---------- */
+const SAMPLE = {
+  "protocol": "bpt-pm/v1",
+  "project": { "name": "银芯 Wiki 使命#2 冲刺样例", "start": "2026-07-06", "calendar": { "workdays": [1, 2, 3, 4, 5], "holidays": ["2026-07-20"] } },
+  "baseline": {
+    "capturedAt": "2026-07-05T00:00:00Z",
+    "tasks": {
+      "T1": { "start": "2026-07-06", "finish": "2026-07-08", "duration": 3 },
+      "T2": { "start": "2026-07-09", "finish": "2026-07-14", "duration": 4 },
+      "T3": { "start": "2026-07-09", "finish": "2026-07-10", "duration": 2 },
+      "T4": { "start": "2026-07-15", "finish": "2026-07-21", "duration": 4 },
+      "T5": { "start": "2026-07-22", "finish": "2026-07-24", "duration": 3 },
+      "M1": { "start": "2026-07-27", "finish": "2026-07-27", "duration": 0 }
+    }
+  },
+  "tasks": [
+    { "id": "T1", "name": "解包 Lua → 原始字段", "duration": 3, "predecessors": [], "resource": "艾瑞卡", "percentComplete": 100 },
+    { "id": "T2", "name": "补齐 72 角色结构化基线", "duration": 5, "predecessors": [{ "id": "T1", "type": "FS", "lag": 0 }], "resource": "艾瑞卡", "percentComplete": 60 },
+    { "id": "T3", "name": "校验数据 schema", "duration": 2, "predecessors": [{ "id": "T1", "type": "FS", "lag": 0 }], "resource": "守密人", "percentComplete": 100 },
+    { "id": "T4", "name": "生成 VitePress 角色页", "duration": 4, "predecessors": [{ "id": "T2", "type": "FS", "lag": 0 }, { "id": "T3", "type": "FS", "lag": 0 }], "resource": "艾瑞卡", "percentComplete": 0 },
+    { "id": "T5", "name": "站点构建与联调", "duration": 3, "predecessors": [{ "id": "T4", "type": "FS", "lag": 0 }], "constraint": { "type": "SNET", "date": "2026-07-23" }, "resource": "艾瑞卡", "percentComplete": 0 },
+    { "id": "M1", "name": "W2 基线交付里程碑", "duration": 0, "predecessors": [{ "id": "T5", "type": "FS", "lag": 0 }], "resource": "守密人", "percentComplete": 0 }
+  ]
+};
+
+/* ---------- Toast ---------- */
+let toastTimer = null;
+function toast(msg) {
+  const el = document.getElementById("toast");
+  el.textContent = msg; el.classList.add("show");
+  clearTimeout(toastTimer); toastTimer = setTimeout(() => el.classList.remove("show"), 2600);
+}
+
+/* ---------- 拖放载入 ---------- */
+["dragenter", "dragover"].forEach(ev => document.addEventListener(ev, e => { e.preventDefault(); document.body.classList.add("dragging"); }));
+["dragleave", "drop"].forEach(ev => document.addEventListener(ev, e => { e.preventDefault(); if (ev === "drop" || e.relatedTarget === null) document.body.classList.remove("dragging"); }));
+document.addEventListener("drop", async e => {
+  const f = e.dataTransfer.files[0]; if (!f) return;
+  state.fileHandle = null;
+  try { loadData(JSON.parse(await f.text())); toast("已载入 " + f.name); } catch (err) { toast("解析失败：" + err.message); }
+});
+
+/* ---------- 绑定 ---------- */
+document.getElementById("btnOpen").onclick = doOpen;
+document.getElementById("btnSample").onclick = () => { state.fileHandle = null; loadData(JSON.parse(JSON.stringify(SAMPLE))); doSchedule(); };
+document.getElementById("btnAddRow").onclick = doAddRow;
+document.getElementById("btnSchedule").onclick = doSchedule;
+document.getElementById("btnBaseline").onclick = doBaseline;
+document.getElementById("btnSave").onclick = doSave;
+
+renderStatus();
+</script>
+</body>
+</html>
