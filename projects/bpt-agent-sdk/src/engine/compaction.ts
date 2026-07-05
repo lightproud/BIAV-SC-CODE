@@ -171,12 +171,23 @@ export const SUMMARIZER_VERBATIM_SAFETY_CLAUSE_PROVENANCE = {
  * unchanged.
  */
 export function extractSummaryFromReply(text: string): string {
-  const m = /<summary>([\s\S]*?)<\/summary>/i.exec(text);
-  if (m) return (m[1] ?? '').trim();
-  return text
-    .replace(/<analysis>[\s\S]*?<\/analysis>/gi, '')
-    .replace(/<\/?summary>/gi, '')
-    .trim();
+  // The <summary> block is authoritative ONLY when the full guard contract is
+  // present (an <analysis> scratchpad AND a <summary> block) — that is the
+  // shape the no-tools guard declares. In that case we deliberately keep just
+  // the summary block and drop the analysis scratchpad.
+  const hasAnalysis = /<analysis>[\s\S]*?<\/analysis>/i.test(text);
+  if (hasAnalysis) {
+    const m = /<summary>([\s\S]*?)<\/summary>/i.exec(text);
+    if (m) return (m[1] ?? '').trim();
+    return text
+      .replace(/<analysis>[\s\S]*?<\/analysis>/gi, '')
+      .replace(/<\/?summary>/gi, '')
+      .trim();
+  }
+  // No <analysis> block: behave EXACTLY like the old strip so this is a strict
+  // superset — a plain-text reply (or any reply without the full contract) is
+  // never truncated to a lone <summary> block, no surrounding text is lost.
+  return text.replace(/<\/?summary>/gi, '').trim();
 }
 
 // ---------------------------------------------------------------------------

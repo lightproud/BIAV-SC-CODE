@@ -1094,4 +1094,11 @@ describe('extractSummaryFromReply (G-SUMMARY consumer)', () => {
   it('strips stray <summary> tags with no analysis block', () => {
     expect(extractSummaryFromReply('<summary>Recap here</summary>')).toBe('Recap here');
   });
+  it('WITHOUT an analysis block, keeps text around a <summary> block (no data loss)', () => {
+    // The old strip returned "Use foo in details."; the new code must match it
+    // exactly when the full analysis+summary contract is NOT present.
+    expect(extractSummaryFromReply('Use <summary>foo</summary> in details.')).toBe(
+      'Use foo in details.',
+    );
+  });
 });

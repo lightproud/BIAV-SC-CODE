@@ -287,6 +287,14 @@ describe('parseAwaySummary', () => {
   it('passes a clean single-sentence reply through', () => {
     expect(parseAwaySummary('Running the migration next.')).toBe('Running the migration next.');
   });
+  it('preserves snake_case identifiers and file paths (no underscore mangling)', () => {
+    expect(parseAwaySummary('Refactoring run_query in db_client.py; next run the tests.')).toBe(
+      'Refactoring run_query in db_client.py; next run the tests.',
+    );
+  });
+  it('trims wrapping smart single quotes', () => {
+    expect(parseAwaySummary('‘Fixing the parser.’')).toBe('Fixing the parser.');
+  });
 
   it('a bare-string reply still yields a usable title (fallback path)', async () => {
     const t = new MockTransport([textReplyEvents('Fix the flaky test')]);

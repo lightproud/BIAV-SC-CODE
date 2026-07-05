@@ -89,6 +89,23 @@ describe('parseVerdict fails CLOSED (garbled/ambiguous -> REFUTED, never kept)',
   it('garbled/truncated JSON -> REFUTED', () => {
     expect(parseVerdict('{"verdict":"CONF').verdict).toBe('REFUTED');
   });
+  // The prose-scavenging fail-OPEN vector: a JSON reply is authoritative, so a
+  // verdict word buried in the rationale must NEVER forge a kept verdict.
+  it('JSON with absent verdict but a verdict word in the rationale -> REFUTED', () => {
+    const r = parseVerdict('{"rationale":"the concern is real and CONFIRMED by reading foo.ts"}');
+    expect(r.verdict).toBe('REFUTED');
+    expect(r.keep).toBe(false);
+  });
+  it('JSON with invalid verdict but a verdict word in the rationale -> REFUTED', () => {
+    const r = parseVerdict('{"verdict":"UNSURE","rationale":"clearly CONFIRMED at line 5"}');
+    expect(r.verdict).toBe('REFUTED');
+    expect(r.keep).toBe(false);
+  });
+  it('JSON truncated after a valid token -> REFUTED (not scavenged as CONFIRMED)', () => {
+    const r = parseVerdict('{"verdict":"CONFIRMED","quote":"a very long unterminated quote');
+    expect(r.verdict).toBe('REFUTED');
+    expect(r.keep).toBe(false);
+  });
 });
 
 // ---------------------------------------------------------------------------

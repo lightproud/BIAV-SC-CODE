@@ -309,8 +309,13 @@ export function parseAwaySummary(raw: string): string {
     .replace(/```[a-z]*\n?/gi, '')
     .replace(/```/g, '')
     .replace(/^\s*#{1,6}\s+/gm, '')
-    .replace(/[*_`]+/g, '')
-    .replace(/^["'“”]+|["'“”]+$/g, '')
+    // Strip markdown emphasis/code markers but NOT underscores: underscores are
+    // far more likely to be snake_case identifiers or file paths (run_query,
+    // db_client.py) in a plain recap than markdown emphasis, and blanket-
+    // stripping them silently corrupts real content.
+    .replace(/[*`]+/g, '')
+    // Trim wrapping quotes, incl. both smart double AND smart single quotes.
+    .replace(/^["'“”‘’]+|["'“”‘’]+$/g, '')
     .replace(/\s*\n+\s*/g, ' ')
     .replace(/\s{2,}/g, ' ')
     .trim();

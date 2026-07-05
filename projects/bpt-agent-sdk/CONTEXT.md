@@ -177,7 +177,7 @@ shell（BashOutput 增量读 + 按行 filter / KillShell 击杀，进程组 SIGT
 3 面 provenance + corpus-sync）；`adversarialVerify(finding)` 公开 API；`parseVerdict` **fail-closed**（乱码/歧义/空→REFUTED、绝不 keep 未验证发现）；
 默认 haiku（批判揪出 sonnet 未测赌注、改齐 utility 默认）、可覆盖。② **G-SUMMARY**：compaction 摘要器追加 no-tools 守卫 + verbatim 安全保全条
 （忠实复现，SUMMARIZER_SYSTEM 字节不变、旧金标保绿）+ `extractSummaryFromReply`（认 `<analysis>/<summary>` 契约、旧行为严格超集）；`generateAwaySummary`（第 6 面生成器）。
-**875 单测全绿**（+37）。红线批判确认零红线/零未发货能力/零黑池/零净室问题。3 个无消费子系统的 hook 分类器（context-tip/memory-file-attach）
+**881 单测全绿**（+43，含对抗审查 4 findings 修复回归）。红线批判确认零红线/零未发货能力/零黑池/零净室问题。3 个无消费子系统的 hook 分类器（context-tip/memory-file-attach）
 经批判**正确降级为 design-only**（未发货红线）；G-HOOKCOND/G-SANDBOX（ship-now 但接线面大）与编排/DSL/沙箱/技能（需工具本体）留后续批。
 
 **缓存稳定前缀优化（v0.5+，守密人 2026-07-04「优化」裁定，已落地）**：裸对比 run #35 发现本 SDK 短任务缓存命中

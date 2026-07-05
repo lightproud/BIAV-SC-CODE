@@ -54,7 +54,7 @@ All four depend only on the confirmed-shipped v0.6 utility runtime (`runUtilityC
 
 - **G-VERIFY**（`src/verifier/`）：三态验证器 CONFIRMED/PLAUSIBLE/REFUTED + recall-biased 忠实复现（part-4/part-5/skill keep-rule，3 面 provenance + corpus-sync）；`adversarialVerify(finding)` 公开 API；`parseVerdict` **fail-closed**（乱码/歧义/空→REFUTED、keep:false）；默认 haiku、可覆盖；23 单测。
 - **G-SUMMARY**：① compaction 摘要器追加 no-tools 守卫 + verbatim 安全保全条（忠实复现，SUMMARIZER_SYSTEM 字节不变、旧金标/provenance 测试保绿）+ `extractSummaryFromReply`（认 `<analysis>/<summary>` 契约、旧行为严格超集）；② `generateAwaySummary`（第 6 面生成器，「回来了」<40 词回顾）。
-- 验证：`npx vitest run` **875 全绿**（+37）、`tsc --noEmit` + `build` exit 0；对抗审查随后拷问实现。
+- 验证：`npx vitest run` **881 全绿**（+43）、`tsc --noEmit` + `build` exit 0；对抗审查随后拷问实现。
 
 ## 未落（按上文依赖链推进，需守密人裁或先建工具本体）
 

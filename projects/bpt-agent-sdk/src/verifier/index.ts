@@ -111,24 +111,38 @@ export async function adversarialVerify(
 
 /** Pure parser for the verdict reply (unit-testable, no I/O). FAILS CLOSED. */
 export function parseVerdict(raw: string): VerificationResult {
-  let verdict: Verdict | undefined;
-  let quote: string | undefined;
-  let rationale = '';
-  let confirms: string | undefined;
-
   const obj = extractJsonObject(raw);
   if (obj !== null && typeof obj === 'object') {
+    // A JSON reply is AUTHORITATIVE: the verdict is only what the `verdict`
+    // field says. An absent/invalid verdict fails CLOSED to REFUTED — we must
+    // NOT scavenge a verdict word out of the rationale prose (a rationale that
+    // merely mentions "CONFIRMED" must never forge a kept finding).
     const rec = obj as Record<string, unknown>;
     const v = typeof rec.verdict === 'string' ? rec.verdict.trim().toUpperCase() : '';
-    if (VERDICTS.has(v)) verdict = v as Verdict;
-    if (typeof rec.quote === 'string') quote = rec.quote;
-    if (typeof rec.rationale === 'string') rationale = rec.rationale;
-    if (typeof rec.confirms === 'string' && rec.confirms.length > 0) confirms = rec.confirms;
+    const verdict: Verdict = VERDICTS.has(v) ? (v as Verdict) : SAFE_VERDICT;
+    const quote = typeof rec.quote === 'string' ? rec.quote : undefined;
+    const rationale = typeof rec.rationale === 'string' ? rec.rationale : '';
+    const confirms =
+      typeof rec.confirms === 'string' && rec.confirms.length > 0 ? rec.confirms : undefined;
+    return buildResult(verdict, quote, rationale, confirms);
   }
-  // Bare-word fallback (reply was not JSON), then FAIL CLOSED to REFUTED.
-  if (verdict === undefined) verdict = parseBareVerdict(raw);
-  if (verdict === undefined) verdict = SAFE_VERDICT;
+  // extractJsonObject found nothing parseable. If the reply ATTEMPTED JSON (it
+  // contains a brace), a parse failure — e.g. a reply truncated at max_tokens
+  // right after a valid token — fails CLOSED rather than scavenging a word out
+  // of the broken JSON. Only a reply with no brace at all is treated as a
+  // genuine bare-word verdict.
+  if (raw.includes('{')) return buildResult(SAFE_VERDICT, undefined, '', undefined);
+  const verdict = parseBareVerdict(raw) ?? SAFE_VERDICT;
+  return buildResult(verdict, undefined, '', undefined);
+}
 
+/** Assemble a VerificationResult, encoding the keep rule + PLAUSIBLE-only confirms. */
+function buildResult(
+  verdict: Verdict,
+  quote: string | undefined,
+  rationale: string,
+  confirms: string | undefined,
+): VerificationResult {
   const result: VerificationResult = { verdict, keep: verdict !== 'REFUTED', rationale };
   if (quote !== undefined) result.quote = quote;
   if (confirms !== undefined && verdict === 'PLAUSIBLE') result.confirms = confirms;
