@@ -18,6 +18,29 @@ export {
 } from './sessions/session-functions.js';
 export { InMemorySessionStore, encodeProjectKey } from './sessions/store-adapter.js';
 export {
+  // v0.6 utility-call product features (generators / classifiers).
+  detectCommandPrefix,
+  parseCommandPrefix,
+  classifyBackgroundState,
+  parseBackgroundState,
+  generateSessionTitle,
+  generateTitleAndBranch,
+  generateSessionName,
+  normalizeBranch,
+  COMMAND_INJECTION_TOKEN,
+  DEFAULT_UTILITY_MODEL,
+  runUtilityCall,
+  extractJsonObject,
+  resolveUtilityTransport,
+  GENERATOR_PROVENANCE,
+  type CommandPrefixResult,
+  type BackgroundRunState,
+  type BackgroundStateResult,
+  type TitleAndBranch,
+  type UtilityCallOptions,
+  type GeneratorProvenance,
+} from './generators/index.js';
+export {
   AbortError,
   APIConnectionError,
   APIStatusError,

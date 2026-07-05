@@ -130,7 +130,10 @@ shell（BashOutput 增量读 + 按行 filter / KillShell 击杀，进程组 SIGT
   **Phase 1a 已落**：main-loop 从硬编码 `defaultHarnessStableV5` 迁入**片段库**（`src/engine/prompt-fragments.ts`，每片带 id+archive slug provenance+faithful 标+tool gate）+ **装配器**（`src/engine/prompt-assembler.ts` `assembleMainLoop`）；v5 变薄封装；**字节金标锁定**（`tests/fixtures/v5-mainloop-golden.json` 四工具集，装配器逐字节复现）。
   **corpus-sync 校验器已落**：每 faithful 片段对上游归档逐锚点对账、漂移即 CI 报红（21 faithful 全过；provenance 曾乐观标注、已按内容匹配诚实校正为 21 faithful / 11 adapted）。
   **各面 provenance + corpus-sync 已覆盖 SDK 实用 4 surface**：① main-loop（片段库+装配器+金标）② tool-descriptions（`descriptions.ts` `TOOL_DESCRIPTION_PROVENANCE`）③ general-purpose 子代理（`agents.ts`，原净室自撰→忠实复现官方 strengths+guidelines）④ compaction 摘要器（`compaction.ts` `SUMMARIZER_SYSTEM`，原净室自撰→忠实复现官方 5 节续接摘要）。
-  **范围边界（红线）**：归档剩的生成器/分类器（commit-msg/session-title/branch/bash-前缀检测/后台状态分类器/auto-mode）**属 SDK 未发货功能，不复现**（不得描述不存在的能力）。**待续（可选）**：build-from-archive 生成器（现有校验器已达「保真+抗漂移」核心，生成器为进一步自动化）。
+  **范围边界更新（守密人 2026-07-05「V0.6 加这些产品功能吧，这就是我们看到的黑盒」反转）**：归档的生成器/分类器
+  （session-title/branch/session-name/bash-前缀检测/后台状态分类器）不再列「未发货、不复现」——**v0.6 将其作为真实产品功能发货**
+  （见下「v0.6」段）。红线本质是「不得描述不存在的能力」；功能与其提示词一并发货后，能力即存在、红线自然满足（提示词有真实调用方）。
+  commit-msg 仍不单列（官方由主循环 tool-use 产出，非独立 utility 调用，不凭空造）；auto-mode 归档仅为 guidance 片段、非独立整prompt，暂缓。
 - **已落**：v4/v5 官方主循环提示词忠实再现（`harnessPromptVariant`，**v5 全面再现四节、已提为 claude_code preset 默认**，见下「提示词默认提升」）
   + Bash 命令分解权限（安全，`decomposeBashCommand`）+ SSE 空闲看门狗（`streamIdleTimeoutMs`，默认 120s/0 关）。
 - **提示词默认提升 v1→v5（2026-07-05，守密人「2 模拟行为」+「目标是跟官方提示词一致」裁定，已落地）**：
@@ -157,6 +160,16 @@ shell（BashOutput 增量读 + 按行 filter / KillShell 击杀，进程组 SIGT
 
 > **能力层仍可安全逼近官方**：转向后不仅可黑箱观测行为，更可直接研读公开还原的提示词结构与开源引擎机制。
 > 「秘方层」的**逐比特复刻**仍非目标，残余行为差主要由 BPT 主权模型选择决定（换模型换手感），非「拒看」。
+
+**v0.6 起步 —— 生成器/分类器产品功能（守密人 2026-07-05「V0.6 加这些产品功能吧，这就是我们看到的黑盒」裁定，已落）**：
+把 Claude Code 主循环**之外**触发的辅助 utility 模型调用作为**真实公开 SDK 功能**发货（`src/generators/`）——即用户在 Claude Code 里
+观测到的「黑盒」小调用。五件：① `detectCommandPrefix`（bash 命令前缀提取/命令注入判定，喂权限白名单匹配，**失败方向锁死 fail-closed**：
+空/乱回复一律判 injection，绝不误放行）② `classifyBackgroundState`（读后台运行转录尾判 working/blocked/done/failed 驱动手机通知门，
+**fail-safe**：不可解析回退 done，绝不伪造 blocked 假打扰，接 v0.5 后台 Bash）③ `generateSessionTitle`（会话标题）
+④ `generateTitleAndBranch`（标题 + `claude/` 分支名，分支强规整为合法 kebab）⑤ `generateSessionName`（`/rename` kebab 名）。
+每件 = 忠实复现提示词（`src/generators/prompts.ts`，5 面 provenance + corpus-sync 逐锚点守护）+ 一次性 utility 调用运行时
+（`runtime.ts`，默认 Haiku 便宜模型、temperature 0 确定性、注入式 transport 可离线单测）+ 健壮解析器（`extractJsonObject` 认字符串内花括号/转义）。
+公开 API 走 `src/index.ts` 导出 → BPT Desktop 等消费方即真实调用方（红线满足：能力与提示词一并发货）。**831 单测全绿**（+39）。
 
 **缓存稳定前缀优化（v0.5+，守密人 2026-07-04「优化」裁定，已落地）**：裸对比 run #35 发现本 SDK 短任务缓存命中
 0%、长任务 45%——诊断为 cwd 焊进系统提示正中间致缓存前缀逐任务变（`prompts.ts`）。修法：系统提示拆

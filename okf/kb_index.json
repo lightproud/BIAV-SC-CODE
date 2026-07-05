@@ -9,7 +9,7 @@
   "stats": {
     "concepts": 313,
     "edges": 317,
-    "terms": 5416,
+    "terms": 5396,
     "by_type": {
       "character": 72,
       "dataset": 109,
@@ -3191,7 +3191,7 @@
     "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md": {
       "type": "documentation",
       "title": "bpt-sdk-roadmap-20260705",
-      "description": "引擎主体（v0.1–v0.5）+ 提示词装配层（Track B）已成并入 main；G 系列（引擎效率机制 + 保真收尾）收官 v0.5；v0.6+ 是更大的行为/产品件（编排 / 记忆 / 沙箱 / Desktop 接线）。贯穿纪律：**不测不宣胜负**——每项再现/机制附 before/after，vs-official 每里程碑必跑。（格式：md）",
+      "description": "引擎主体（v0.1–v0.5）+ 提示词装配层（Track B）已成并入 main；G 系列（引擎效率机制 + 保真收尾，含 G8 决策落档）收官 v0.5；（格式：md）",
       "resource": "/Public-Info-Pool/Resource/proposal/bpt-sdk-roadmap-20260705.md",
       "tags": [
         "data_layer:curated",
@@ -8395,9 +8395,6 @@
       "/sources/youtube.md",
       "/sources/youtube_comments.md"
     ],
-    "after": [
-      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
-    ],
     "agent": [
       "/README.md",
       "/memory/memory-ext-bpt-positioning.md",
@@ -8686,9 +8683,6 @@
     ],
     "bash": [
       "/README.md"
-    ],
-    "before": [
-      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
     "behavioral": [
       "/memory/memory-ext-karpathy-coding-principles.md"
@@ -10059,7 +10053,6 @@
     "desktop": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-desktop-design-spec-ref.md",
       "/projects/bpt-sdk-doc-migration.md",
-      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -10440,6 +10433,9 @@
     ],
     "further": [
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md"
+    ],
+    "g8": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
     "gacha": [
       "/characters/122587.md",
@@ -12023,7 +12019,6 @@
       "/community/community-official.md",
       "/news-output/news-output-official.md",
       "/projects/bpt-sdk-doc-migration.md",
-      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/sources/official.md"
@@ -13998,8 +13993,7 @@
     ],
     "vs": [
       "/README.md",
-      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
-      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "vue": [
       "/unpacked/unpacked-vue.md"
@@ -14716,9 +14710,6 @@
       "/characters/15560.md",
       "/characters/15576.md"
     ],
-    "不宣": [
-      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
-    ],
     "不屈": [
       "/characters/77923.md"
     ],
@@ -14980,9 +14971,6 @@
     ],
     "不止": [
       "/characters/15600.md"
-    ],
-    "不测": [
-      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
     "不离": [
       "/README.md"
@@ -15959,9 +15947,6 @@
     ],
     "产出": [
       "/README.md"
-    ],
-    "产品": [
-      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
     "产物": [
       "/README.md",
@@ -18316,8 +18301,7 @@
     ],
     "再现": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
-      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
-      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
     ],
     "再让": [
       "/characters/15585.md"
@@ -18361,6 +18345,7 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
       "/memory/memory-ext-biav-info-classification.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
     ],
     "冷光": [
@@ -18828,9 +18813,6 @@
     ],
     "制裁": [
       "/characters/15563.md"
-    ],
-    "制附": [
-      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
     "刺反": [
       "/characters/15565.md"
@@ -21002,9 +20984,6 @@
     "咨询": [
       "/characters/77925.md"
     ],
-    "品件": [
-      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
-    ],
     "品能": [
       "/characters/77926.md"
     ],
@@ -22250,8 +22229,7 @@
       "/characters/15600.md",
       "/characters/15603.md",
       "/characters/77922.md",
-      "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
-      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
+      "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
     ],
     "大祭": [
       "/characters/15582.md"
@@ -23446,9 +23424,6 @@
       "/unpacked/unpacked-sproto.md",
       "/unpacked/unpacked-text-cn.md",
       "/unpacked/unpacked-vue.md"
-    ],
-    "宣胜": [
-      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
     "宣誓": [
       "/characters/15586.md"
@@ -25063,9 +25038,6 @@
     ],
     "必要": [
       "/characters/15573.md"
-    ],
-    "必跑": [
-      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
     "必须": [
       "/memory/memory-strategy-repo-slimming-plan.md",
@@ -27059,9 +27031,6 @@
     "接推": [
       "/memory/memory-ext-active-policy-direct-push-main.md"
     ],
-    "接线": [
-      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
-    ],
     "接表": [
       "/README.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md"
@@ -29012,9 +28981,6 @@
     "是方": [
       "/characters/15600.md"
     ],
-    "是更": [
-      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
-    ],
     "是最": [
       "/characters/15603.md"
     ],
@@ -29155,8 +29121,7 @@
       "/characters/77913.md"
     ],
     "更大": [
-      "/characters/77922.md",
-      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
+      "/characters/77922.md"
     ],
     "更少": [
       "/community/community-steam-discussion.md",
@@ -31610,12 +31575,6 @@
     "每步": [
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md"
     ],
-    "每里": [
-      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
-    ],
-    "每项": [
-      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
-    ],
     "毒和": [
       "/characters/15580.md"
     ],
@@ -31786,9 +31745,6 @@
     "沌的": [
       "/characters/15604.md"
     ],
-    "沙箱": [
-      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
-    ],
     "沙耶": [
       "/characters/130226.md",
       "/memory/memory-research-community-analysis-2026-05-18-26.md",
@@ -31928,9 +31884,6 @@
     ],
     "流能": [
       "/characters/130901.md"
-    ],
-    "测不": [
-      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
     "测到": [
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md"
@@ -34004,9 +33957,6 @@
     "的血": [
       "/characters/15563.md"
     ],
-    "的行": [
-      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
-    ],
     "的解": [
       "/characters/15602.md",
       "/characters/95786.md"
@@ -34595,9 +34545,6 @@
     "碎敌": [
       "/characters/15598.md"
     ],
-    "碑必": [
-      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
-    ],
     "磨对": [
       "/characters/15580.md"
     ],
@@ -34905,9 +34852,6 @@
     "程产": [
       "/README.md"
     ],
-    "程碑": [
-      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
-    ],
     "程质": [
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md"
     ],
@@ -34957,9 +34901,6 @@
     ],
     "穿来": [
       "/characters/15586.md"
-    ],
-    "穿纪": [
-      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
     "穿越": [
       "/characters/54116.md"
@@ -35128,6 +35069,9 @@
     ],
     "策直": [
       "/memory/memory-ext-active-contribution-protocol.md"
+    ],
+    "策落": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
     "策见": [
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
@@ -35357,7 +35301,6 @@
     ],
     "纪律": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-design.md",
-      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/sources/appstore.md",
       "/sources/bilibili.md",
@@ -35669,7 +35612,6 @@
     ],
     "编排": [
       "/memory/capability-index.md",
-      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md"
     ],
@@ -35926,9 +35868,6 @@
     ],
     "胚胎": [
       "/characters/15600.md"
-    ],
-    "胜负": [
-      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
     "能从": [
       "/characters/15599.md"
@@ -36470,6 +36409,9 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md"
     ],
+    "落档": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
+    ],
     "落的": [
       "/characters/15591.md",
       "/characters/15592.md",
@@ -36564,8 +36506,7 @@
       "/characters/15567.md"
     ],
     "行为": [
-      "/memory/memory-ext-karpathy-coding-principles.md",
-      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
+      "/memory/memory-ext-karpathy-coding-principles.md"
     ],
     "行代": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md"
@@ -37063,8 +37004,7 @@
       "/memory/morimens-context.md",
       "/memory/project-status.md",
       "/memory/strategic-plan-2026.md",
-      "/memory/style-guide.md",
-      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
+      "/memory/style-guide.md"
     ],
     "记载": [
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
@@ -37483,9 +37423,6 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md"
-    ],
-    "贯穿": [
-      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
     "贴敏": [
       "/memory/memory-ext-bpt-architecture-summary-template.md"
@@ -38932,9 +38869,6 @@
     "里榨": [
       "/memory/memory-ext-skill-authoring-standard.md"
     ],
-    "里程": [
-      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
-    ],
     "里花": [
       "/characters/15581.md"
     ],
@@ -40242,9 +40176,6 @@
     ],
     "页面": [
       "/README.md"
-    ],
-    "项再": [
-      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
     "项目": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md",

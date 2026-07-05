@@ -8,7 +8,9 @@
 
 ## 0. 一句话
 
-引擎主体（v0.1–v0.5）+ 提示词装配层（Track B）已成并入 main；G 系列（引擎效率机制 + 保真收尾）收官 v0.5；v0.6+ 是更大的行为/产品件（编排 / 记忆 / 沙箱 / Desktop 接线）。贯穿纪律：**不测不宣胜负**——每项再现/机制附 before/after，vs-official 每里程碑必跑。
+引擎主体（v0.1–v0.5）+ 提示词装配层（Track B）已成并入 main；G 系列（引擎效率机制 + 保真收尾，含 G8 决策落档）收官 v0.5；
+**v0.6 起步 —— 生成器/分类器产品功能已落**（守密人 2026-07-05 反转裁定「这就是我们看到的黑盒」，见 §2.1）；v0.6 余下是更大的行为/产品件
+（编排 / 记忆 / 沙箱 / Desktop 接线）。贯穿纪律：**不测不宣胜负**——每项再现/机制附 before/after，vs-official 每里程碑必跑。
 
 ---
 
@@ -34,11 +36,31 @@
 | G3 | 双 system 缓存断点（项目指令块存在时用满第 4 断点）| **已落（PR #435）** | 缓存命中 |
 | G4 | 子代理 Fork 模式（继承缓存共享上下文）+ sidechain 转录 | **已落（PR #435）**：对抗审查揪出的 blocker（fork seed 级联清空、退化 isolated）已修——不再级联、真继承父上下文（完成 pair 全留、任务并入尾部 user 轮）；测试重写覆盖真实 tool-call 序列 | 缓存复用 |
 | G5 | v4 补工具使用纪律片段 | **已落**（被 v5 全面涵盖）| — |
-| G6 | 分类器/生成器提示词再现 | **部分落**：SDK 真用的（general-purpose / 摘要器）随 Track B 落；其余属未发货功能，**红线不做** | — |
+| G6 | 分类器/生成器提示词再现 | **已落（v0.6，守密人 2026-07-05 反转裁定）**：原判「未发货、红线不做」，守密人「V0.6 加这些产品功能吧，这就是我们看到的黑盒」反转——作为真实公开功能发货（详见 §2.1）| 五件功能 |
 | G7 | 定位反转全仓文档扫尾（clean-room→公开信息再现，保留硬约束）| **已落（PR #435）** | — |
-| G8 | `decisions.md` 两条裁定落档 | 待守密人（决策档仅守密人权限）| — |
+| G8 | `decisions.md` 两条裁定落档 | **已落（守密人 2026-07-05 授权代写）**：定位反转 clean-room→公开信息再现 + 提示词装配层 Track B + v5 默认，两条入「当前有效决策」表 | — |
 
 > G1/G3/G4/G7 于 2026-07-05 经 ultracode 工作流并行推进（规划 → 隔离 worktree 实现 → 对抗审查）。**对抗审查发挥作用**：G1/G3 判 SHIP 直接 cherry-pick；G7 判 FIX_NEEDED、补修 package.json 等 findings 后合入；**G4 判 FIX_NEEDED（blocker）——审查揪出 fork seed 级联清空、退化 isolated，「看着能 fork 实则骗人」，故先不合、守密人裁「先修完整」**，据审查给的精确 repro+修法修好（不再级联、真继承父上下文）、测试重写覆盖真实场景后合入。四项全落，v0.5 引擎机制批完成。「不测不宣胜负」在此体现为「审查不过就不发、修好再合」。
+
+---
+
+## 2.1 v0.6 起步 —— 生成器/分类器产品功能（G6，已落）
+
+守密人 2026-07-05 反转裁定：「V0.6 加这些产品功能吧，这就是我们看到的黑盒」——原 G6 判「归档剩的生成器/分类器属未发货功能、红线不做」，
+现反转为**作为真实公开 SDK 功能发货**（`src/generators/`）。这些是 Claude Code 主循环**之外**触发的辅助 utility 模型调用，正是用户观测到的「黑盒」。
+
+| 功能 | 作用 | 真实调用方 | 安全方向 |
+|------|------|-----------|---------|
+| `detectCommandPrefix` | bash 命令前缀提取 / 命令注入判定 | 权限白名单匹配 | **fail-closed**：空/乱回复判 injection，绝不误放行 |
+| `classifyBackgroundState` | 后台运行转录尾判 working/blocked/done/failed | 手机通知门（接 v0.5 后台 Bash）| **fail-safe**：不可解析回退 done，绝不伪造 blocked 假打扰 |
+| `generateSessionTitle` | 会话标题（3-7 词 sentence-case）| 会话 UI 命名 | — |
+| `generateTitleAndBranch` | 标题 + `claude/` 分支名 | 会话创建 | 分支强规整为合法 kebab |
+| `generateSessionName` | `/rename` kebab 名 | 会话重命名 | — |
+
+工程要点：每件 = 忠实复现提示词（`prompts.ts`，5 面 provenance + corpus-sync 逐锚点守护、漂移即 CI 红）+ 一次性 utility 运行时
+（`runtime.ts`，默认 Haiku 便宜模型、temperature 0 确定性、注入式 transport 离线单测）+ 健壮解析器（`extractJsonObject` 认字符串内花括号/转义）。
+**红线满足**：能力与其提示词一并发货 → 提示词有真实调用方，非「描述不存在的能力」。commit-msg 不单列（官方由主循环 tool-use 产出、非独立 utility 调用）；
+auto-mode 归档仅 guidance 片段、非独立整 prompt，暂缓。**46 新单测全绿（总 838）**，含解析健壮性 / fail-closed·fail-safe / 5 面 corpus-sync。
 
 ---
 
