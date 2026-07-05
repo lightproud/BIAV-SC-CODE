@@ -298,6 +298,17 @@
   （Read `pages` / Bash `dangerouslyDisableSandbox` / Agent `isolation`+`model`+必填集，drop-in 硬伤、建议优先）/ E7-03 工具缓存断点策略
   （需实测收益、优先级最低）。每条附代码锚点 + 参考目标棘轮联动（修好须删 `WIRE_ALIGNMENT_GAPS` 条目否则报红）。优先级行更新为
   E1 > E7-02 ≈ E4 ≈ E5 > E7-01 > E3 > E2 > E7-03 > E6a/c/d。
+  **测试侧「全面实现」五缺口清零（2026-07-05，守密人「全面实现以上所有」裁定，四批合并）**：
+  **A1 系统分段**——指纹加 `systemSegments`（逐块 cache_control 位置），抓到断点位置差（我方 block0 稳定前缀 vs 官方 last，归 E7-03）；
+  **A2 多轮轨迹**——新 `tool-loop` 场景抓整条逐 POST 轨迹，检缓存前缀跨轮字节稳定（我方稳定、不变式成立，keyless 锁）；
+  **B1 MCP 差分二批**——L3-MCP-05 多工具路由双臂 CONTENT_MATCH + L3-SA-MCP-ZOD 单臂 zod 校验锁（跨包 zod 不兼容故不做差分，诚实单臂）；
+  stdio/http 传输 + readOnly annotation 自动放行记 tranche 3（需子进程 harness）；
+  **B2 白盒 batch 2**——7 接口真驱动补齐（includeEnvironmentContext/toolSearch/streamInput/sessionStoreFlush/setMcpServers/toggleMcpServer/reconnectMcpServer），
+  从覆盖守卫白名单删除，仅剩 onElicitation（需服务器发起 elicitation 的更重 fixture）；
+  **B3 L3.5 子代理/hook 差分**——我方生命周期本已 e2e 覆盖（observability-v04），真缺口是双臂差分；因两臂 POST 数不等（我方 3、官方 4+）
+  做成**报告制** `run-l35.mjs`（比生命周期事件词汇集非计数，规避脆弱）+ 我方 keyless 锁；**两真发现**：KD-L35-01 前台词汇差
+  （我方发 task_progress、官方发 task_notification）、KD-L35-02 编码差（task_started/updated：我方顶层 type、官方 system 子类型，类同 KD-05 粒度，drop-in 引擎对齐候选）。
+  棘轮 +2 L3 行；`tsc` + `npx vitest run` **1107 全绿（41 文件）**。测试侧挂账仅余：onElicitation、L3.5 双臂升门禁（版本稳定后）、MCP tranche 3 传输层。
   **SSE 网关方言容错已落（2026-07-05，BPT 产线故障闭环）**：BPT 实测「Malformed SSE payload for event "(none)"」
   经双侧协作定型——BPT `curl -N` 抓原始字节实锤 idealab 网关 `/api/anthropic` 端点带 OpenAI 方言遗留
   （流尾追加 `data: [DONE]`、错误帧无 event 行）；官方客户端 message_stop 即收工不碰尾卡、我方读到流关闭才撞上。
