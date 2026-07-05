@@ -13,8 +13,8 @@
       "mcp_tools": 9,
       "commands": 4,
       "skills": 4,
-      "projects": 6,
-      "total": 120
+      "projects": 7,
+      "total": 121
     },
     "reachability": {
       "live": 66,
@@ -1071,6 +1071,11 @@
       "id": "bpt-agent-sdk",
       "path": "projects/bpt-agent-sdk/",
       "summary": "BPT Agent SDK：净室（clean-room）实现的 TypeScript agent 框架，公开调用面"
+    },
+    {
+      "id": "bpt-pm",
+      "path": "projects/bpt-pm/",
+      "summary": "BPT PM：**单网页项目排期工作台**。一份 JSON 描述一个项目（锚点日期 + 工作日历 +"
     },
     {
       "id": "bpt-v2t",
