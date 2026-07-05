@@ -4,18 +4,18 @@
 > 中文用途补注请改 `memory/capability-annotations.json`；机器权威数据见 `memory/capability-registry.json`。
 
 - 生成日期：2026-07-05
-- 功能总数：**128**
-- 脚本可达性：活 69 / 仅测试 0 / 孤儿 0
+- 功能总数：**132**
+- 脚本可达性：活 72 / 仅测试 0 / 孤儿 0
 
 ## 总览
 
 | 功能层 | 数量 |
 |------|------|
 | CI 自动化工作流（编排入口·定时/事件平面） | 34 |
-| 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 35 |
+| 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 38 |
 | news 采集器脚本 | 28 |
 | wiki 数据脚本 | 6 |
-| MCP 知识层工具（编排入口·AI 动态平面） | 10 |
+| MCP 知识层工具（编排入口·AI 动态平面） | 11 |
 | Slash 命令（编排入口·人工平面） | 4 |
 | 仓内技能 | 4 |
 | 子项目 | 7 |
@@ -105,7 +105,7 @@
 - **`Validate Wiki Data`** _[push/pull_request/manual]_ — 校验 wiki JSON 数据（push/PR 触发）。  
   `.github/workflows/validate-data.yml`
 
-## 顶层脚本（记忆 / 做梦 / 解包 / 运营）（35）
+## 顶层脚本（记忆 / 做梦 / 解包 / 运营）（38）
 
 - **`build_capability_registry.py`** _[活:cli+workflow]_ — build_capability_registry.py — 银芯功能目录 + 动态编排可达性分析器  
   `scripts/build_capability_registry.py`
@@ -129,10 +129,14 @@
   `scripts/compact_discord_archive.py`
 - **`deliverable_path.py`** _[活:cli+command]_ — deliverable_path.py — 银芯产物路径生成器 / 注册表守卫  
   `scripts/deliverable_path.py`
+- **`extract_aliases.py`** _[活:cli]_ — extract_aliases.py — 厚锚别名生成期工作面（AI 自动识别的落表 CLI）。  
+  `scripts/extract_aliases.py`
 - **`generate_wiki_pages.py`** _[活:cli+workflow]_ — Generate VitePress Markdown pages from processed JSON data.  
   `scripts/generate_wiki_pages.py`
 - **`kb_ab.py`** _[活:cli]_ — kb_ab.py — 知识库 vs 朴素搜索 反事实 A/B（北极星评判体系 #3）。  
   `scripts/kb_ab.py`
+- **`kb_anchor.py`** _[活:mcp]_ — kb_anchor.py — 先锚后扩合流（§八 8.3「厚锚撑向量」检索侧合流，import-only 库）。  
+  `scripts/kb_anchor.py`
 - **`kb_eval.py`** _[活:cli]_ — kb_eval.py — 知识库需求侧有效性评分器（北极星评判体系 #1，黄金问题集）。  
   `scripts/kb_eval.py`
 - **`kb_golden_gen.py`** _[活:cli]_ — kb_golden_gen.py — 图驱动黄金集自动生成器（评判体系 #1 扩容）。  
@@ -173,6 +177,8 @@
   `scripts/report_render.py`
 - **`restore_release_data.py`** _[活:cli+workflow]_ — 构建期从 GitHub Releases 临时还原全量档案到工作树（用完即弃，不进 git）。  
   `scripts/restore_release_data.py`
+- **`silver_aliases.py`** _[活:import]_ — silver_aliases.py — 厚锚别名侧表读取层（import-only 库）。  
+  `scripts/silver_aliases.py`
 - **`silver_memory_tools.py`** _[活:cli+mcp]_ — 记忆写入工具库（current_continuity / record_decision / record_lesson），由 mcp_server 注册。  
   `scripts/silver_memory_tools.py`
 - **`silver_tokenizer.py`** _[活:import]_ — 银芯静态索引共用分词器:领域词典 + 正向最大匹配（FMM）。  
@@ -252,7 +258,7 @@
 - **`validate_data.py`** _[活:cli+command+workflow]_ — 校验 wiki 数据库全部 JSON。  
   `projects/wiki/scripts/validate_data.py`
 
-## MCP 知识层工具（编排入口·AI 动态平面）（10）
+## MCP 知识层工具（编排入口·AI 动态平面）（11）
 
 - **`character_persona`** — 激活角色人格模式，让AI以游戏角色的语气进行对话。  
   `scripts/mcp_server.py`
@@ -273,6 +279,8 @@
 - **`kb_overview`** — 知识库总览（LLMwiki 楼层平面图）：分区 / 类型分布 / 各分区入口索引 / 用法。  
   `scripts/mcp_server.py`
 - **`kb_vector_search`** — 长尾语义召回（§八「厚锚撑向量」的向量腿）：对社区全量档案做模糊语义检索。  
+  `scripts/mcp_server.py`
+- **`kb_anchor`** — 先锚后扩合流（§八 8.3「厚锚撑向量」）：脊柱锚定 + 别名扩词 + 向量捞长尾一次给全。  
   `scripts/mcp_server.py`
 
 ## Slash 命令（编排入口·人工平面）（4）

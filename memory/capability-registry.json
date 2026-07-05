@@ -7,17 +7,17 @@
     "reachability_method": "从活编排入口（工作流/MCP/命令/钩子/CLI 手动入口）沿 Python 模块级 import 图做传递闭包；带 __main__ 的脚本计为 cli 手动平面。status=orphaned 表示无任何活入口可达，建议隔离待裁，非自动删除。",
     "counts": {
       "workflows": 34,
-      "scripts_top": 35,
+      "scripts_top": 38,
       "scripts_news": 28,
       "scripts_wiki": 6,
-      "mcp_tools": 10,
+      "mcp_tools": 11,
       "commands": 4,
       "skills": 4,
       "projects": 7,
-      "total": 128
+      "total": 132
     },
     "reachability": {
-      "live": 69,
+      "live": 72,
       "test-only": 0,
       "orphaned": 0
     }
@@ -449,6 +449,15 @@
       "status": "live"
     },
     {
+      "id": "extract_aliases.py",
+      "path": "scripts/extract_aliases.py",
+      "summary": "extract_aliases.py — 厚锚别名生成期工作面（AI 自动识别的落表 CLI）。",
+      "planes": [
+        "cli"
+      ],
+      "status": "live"
+    },
+    {
       "id": "generate_wiki_pages.py",
       "path": "scripts/generate_wiki_pages.py",
       "summary": "Generate VitePress Markdown pages from processed JSON data.",
@@ -464,6 +473,15 @@
       "summary": "kb_ab.py — 知识库 vs 朴素搜索 反事实 A/B（北极星评判体系 #3）。",
       "planes": [
         "cli"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "kb_anchor.py",
+      "path": "scripts/kb_anchor.py",
+      "summary": "kb_anchor.py — 先锚后扩合流（§八 8.3「厚锚撑向量」检索侧合流，import-only 库）。",
+      "planes": [
+        "mcp"
       ],
       "status": "live"
     },
@@ -658,6 +676,15 @@
       "planes": [
         "cli",
         "workflow"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "silver_aliases.py",
+      "path": "scripts/silver_aliases.py",
+      "summary": "silver_aliases.py — 厚锚别名侧表读取层（import-only 库）。",
+      "planes": [
+        "import"
       ],
       "status": "live"
     },
@@ -1069,6 +1096,11 @@
       "id": "kb_vector_search",
       "module": "scripts/mcp_server.py",
       "summary": "长尾语义召回（§八「厚锚撑向量」的向量腿）：对社区全量档案做模糊语义检索。"
+    },
+    {
+      "id": "kb_anchor",
+      "module": "scripts/mcp_server.py",
+      "summary": "先锚后扩合流（§八 8.3「厚锚撑向量」）：脊柱锚定 + 别名扩词 + 向量捞长尾一次给全。"
     }
   ],
   "commands": [
