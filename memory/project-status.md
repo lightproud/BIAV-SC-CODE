@@ -199,6 +199,14 @@
   ACCEPTED 大杂烩行 5 项已毕业等）；③ NEW-IN-DOCS 挂账（settingSources 默认语义 live 反转为唯一行为级反转、
   六新 hook 事件、SDKMessageOrigin、claudeai-proxy 等，与漂移哨兵 0.3.201 同一升钉裁定点）。
   修复 backlog P0/P1/P2 建议在审计档 §5，待守密人裁定后开工（本轮纯文档、零代码改动）。
+  **三账合一完成度盘点（同日续，守密人「结合隔壁工单一起盘点」派发）**：
+  `Public-Info-Pool/Resource/repo-engineering/bpt-sdk-completion-inventory-20260705.md`——
+  ①07-03 特征级审计 + ②本接口审计 + ③引擎工单 r3（E6/E7）去重合并成单一台账：**T0 撞车四项**
+  （Agent 补参 isolation·model / Read pages / Bash 沙箱参恒入 schema / thinking 自适应默认——②③两账
+  独立方法同指、互为交叉验证、建议最先修）、T1 六项 drop-in P0、T2 形状对齐批（含 **TodoWrite→Task
+  路线 / 传输韧性默认 / 升钉 0.3.201 三个守密人裁定点**）、T3 引擎错误面残余（E6a/c/d + E7-03）、
+  T4 缺席工具（Monitor/Workflow/ExitPlanMode/EnterWorktree）。①账 16 个未建模子系统现 13 个已建成，
+  开工顺序建议见盘点档 §4。
 - **Desktop UI 参考线（2026-07-04，07-05 r2 修订 + 路线草案收口）**：BPT Desktop 前端参考情报档
   （守密人转交 GPT-5.5 搜索梗概 + AnySearch 许可证逐项实锤 + UI 组件↔`SDKMessage` 流对接表）落
   `Public-Info-Pool/Resource/repo-engineering/bpt-desktop-ui-reference-20260704-r2.md`——
