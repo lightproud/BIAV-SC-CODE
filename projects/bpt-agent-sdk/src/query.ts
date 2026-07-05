@@ -636,14 +636,18 @@ export function query(args: {
 
   // Default-on extended thinking, claude_code preset path ONLY (E1 + E7-01).
   // The official CLI enables thinking by default and (per the r3 wire
-  // differential) sends `thinking: {type:"adaptive"}` with NO budget_tokens —
-  // the model sizes its own thinking per request. E7-01 aligns our preset
-  // default to that exact wire shape (replacing the earlier OUR-chosen fixed
-  // 4096 budget). Injection rules:
+  // differential) sends `thinking: {type:"adaptive"}` on 4.6+ models. E7-01
+  // aligned our preset default to that. Injection rules (INTENT only — the
+  // engine normalizes the wire form per LIVE model in computeThinking):
   //  - an explicit options.thinking always wins (passed through verbatim);
   //  - maxThinkingTokens: 0 is the explicit opt-out (no thinking param);
   //  - maxThinkingTokens > 0 enables FIXED thinking with that budget;
-  //  - both unset -> adaptive thinking (official wire default).
+  //  - both unset -> adaptive thinking intent.
+  // The `adaptive` intent below is NOT the final wire shape: computeThinking
+  // (loop.ts + thinking-model.ts) emits `{type:'adaptive'}` on 4.6+ models but
+  // downgrades to `{type:'enabled', budget_tokens}` on pre-4.6 models (haiku
+  // 4.5, sonnet 4.5, etc.), which 400 on adaptive. This fork is why the v0.7
+  // "always adaptive" default 400'd the whole haiku conformance arm.
   // Non-preset paths (bare string / segments / no systemPrompt) are unchanged:
   // the drop-in default remains "no thinking param".
   const isClaudeCodePreset =

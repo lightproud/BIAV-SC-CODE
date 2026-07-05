@@ -8,6 +8,22 @@ and adds one line here. A CI guard (`scripts/check-version-bump.mjs`) reds
 any src-changing merge that forgets. 0.6.1 and 0.6.2 below are retroactive
 labels for builds that shipped under a duplicated "0.6.0".
 
+## 0.8.1 — 2026-07-05
+
+- **fix (CRITICAL — thinking model-gate)**: the `claude_code` preset default no
+  longer sends `thinking: {type:'adaptive'}` to models that reject it. Adaptive
+  is a 4.6-generation API capability; pre-4.6 models (Haiku 4.5, Sonnet 4.5/4,
+  Opus 4.5/4.1/4, 3.x) 400 on it and require `{type:'enabled', budget_tokens}` —
+  and 4.7+ models are the mirror image (budget_tokens 400s). v0.7's
+  unconditional-adaptive default (E7-01) therefore 400'd **every** request on
+  any pre-4.6 model: the first real L5 round on haiku-4.5 (run 28753349435) was
+  0/40, turns=0, cost=$0 while the official arm ran clean. `computeThinking` now
+  emits, per LIVE model (recomputed each turn), whichever form the API accepts;
+  the boundary is `src/engine/thinking-model.ts` (`supportsAdaptiveThinking`).
+  Keyless unit tests missed this because they stub the transport — added
+  thinking-model + conformance-l2 wire-form regression locks so the next one
+  reds CI. No public API change.
+
 ## 0.8.0 — 2026-07-05
 
 - **feat (BEHAVIOR REVERSAL, bump-pin ruling)**: an OMITTED `settingSources`

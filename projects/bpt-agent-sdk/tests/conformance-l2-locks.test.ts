@@ -316,14 +316,16 @@ describe('L2 lock: settingSources CLAUDE.md injection', () => {
 });
 
 describe('L2 lock: thinking / maxThinkingTokens mapping', () => {
-  it("thinking {type:'enabled', budgetTokens} maps to API thinking.budget_tokens", async () => {
+  it("thinking {type:'enabled', budgetTokens} maps to API thinking.budget_tokens (pre-adaptive model)", async () => {
     const fetchStub = makeSSEFetch([textReplyEvents('ok')]);
     vi.stubGlobal('fetch', fetchStub);
 
+    // budget_tokens is the wire form for PRE-4.6 models only (4.6+ reject it and
+    // require adaptive), so this mapping is asserted on haiku-4.5.
     await collect(
       query({
         prompt: 'hi',
-        options: opts({ thinking: { type: 'enabled', budgetTokens: 1234 } }),
+        options: opts({ model: 'claude-haiku-4-5', thinking: { type: 'enabled', budgetTokens: 1234 } }),
       }),
     );
     expect(fetchStub.requests[0]!.body.thinking).toEqual({
@@ -355,7 +357,8 @@ describe('L2 lock: thinking / maxThinkingTokens mapping', () => {
       query({
         prompt: 'hi',
         // Default max_tokens is 8192; a 50000 budget would 400 the real API.
-        options: opts({ thinking: { type: 'enabled', budgetTokens: 50_000 } }),
+        // Clamping is an enabled-form (pre-adaptive) concern, so pin haiku-4.5.
+        options: opts({ model: 'claude-haiku-4-5', thinking: { type: 'enabled', budgetTokens: 50_000 } }),
       }),
     );
     const body = fetchStub.requests[0]!.body;
@@ -370,14 +373,15 @@ describe('L2 lock: thinking / maxThinkingTokens mapping', () => {
     // COMPAT PARTIAL note (options table): "maxThinkingTokens alone is only a
     // budget fallback and sends no thinking param on its own".
     await collect(
-      query({ prompt: 'hi', options: opts({ maxThinkingTokens: 2048 }) }),
+      query({ prompt: 'hi', options: opts({ model: 'claude-haiku-4-5', maxThinkingTokens: 2048 }) }),
     );
     expect(fetchStub.requests[0]!.body).not.toHaveProperty('thinking');
 
     await collect(
       query({
         prompt: 'hi',
-        options: opts({ maxThinkingTokens: 2048, thinking: { type: 'enabled' } }),
+        // enabled-form budget fallback is a pre-adaptive concern -> haiku-4.5.
+        options: opts({ model: 'claude-haiku-4-5', maxThinkingTokens: 2048, thinking: { type: 'enabled' } }),
       }),
     );
     expect(fetchStub.requests[1]!.body.thinking).toEqual({
@@ -390,15 +394,41 @@ describe('L2 lock: thinking / maxThinkingTokens mapping', () => {
 describe('L2 lock: claude_code preset defaults thinking ON (E1/E7-01)', () => {
   const preset = { type: 'preset', preset: 'claude_code' } as const;
 
-  it("preset with no thinking options sends adaptive thinking (official wire shape, E7-01)", async () => {
+  it("preset with no thinking options sends adaptive thinking on a 4.6+ model (E7-01)", async () => {
     // The official CLI defaults thinking ON, and the r3 wire differential
-    // shows it sends {type:'adaptive'} with NO budget_tokens - the model
-    // sizes its own thinking. E7-01 aligns our preset default verbatim
-    // (replacing the earlier OUR-chosen fixed 4096 budget).
+    // shows it sends {type:'adaptive'} with NO budget_tokens on 4.6+ models.
     const fetchStub = makeSSEFetch([textReplyEvents('ok')]);
     vi.stubGlobal('fetch', fetchStub);
 
-    await collect(query({ prompt: 'hi', options: opts({ systemPrompt: preset }) }));
+    await collect(query({ prompt: 'hi', options: opts({ model: 'claude-opus-4-8', systemPrompt: preset }) }));
+    expect(fetchStub.requests[0]!.body.thinking).toEqual({ type: 'adaptive' });
+  });
+
+  it("preset default downgrades to enabled+budget on a PRE-adaptive model (haiku-4.5) — v0.7 400-storm regression lock", async () => {
+    // Root-cause lock (run 28753349435): the preset's adaptive INTENT must not
+    // reach a pre-4.6 model as {type:'adaptive'} (that 400s every request);
+    // computeThinking normalizes it to {type:'enabled', budget_tokens} which
+    // haiku-4.5 accepts. Guards against re-introducing "always adaptive".
+    const fetchStub = makeSSEFetch([textReplyEvents('ok')]);
+    vi.stubGlobal('fetch', fetchStub);
+
+    await collect(query({ prompt: 'hi', options: opts({ model: 'claude-haiku-4-5', systemPrompt: preset }) }));
+    const thinking = fetchStub.requests[0]!.body.thinking;
+    expect(thinking.type).toBe('enabled');
+    expect(thinking.budget_tokens).toBeGreaterThan(0);
+    expect(thinking.budget_tokens).toBeLessThan(fetchStub.requests[0]!.body.max_tokens);
+  });
+
+  it("explicit enabled+budget on a 4.6+ model normalizes to adaptive (budget_tokens 400s there)", async () => {
+    const fetchStub = makeSSEFetch([textReplyEvents('ok')]);
+    vi.stubGlobal('fetch', fetchStub);
+
+    await collect(
+      query({
+        prompt: 'hi',
+        options: opts({ model: 'claude-opus-4-8', thinking: { type: 'enabled', budgetTokens: 4096 } }),
+      }),
+    );
     expect(fetchStub.requests[0]!.body.thinking).toEqual({ type: 'adaptive' });
   });
 
@@ -428,14 +458,15 @@ describe('L2 lock: claude_code preset defaults thinking ON (E1/E7-01)', () => {
     expect(fetchStub.requests[0]!.body).not.toHaveProperty('thinking');
   });
 
-  it('preset + maxThinkingTokens > 0 enables thinking with that budget', async () => {
+  it('preset + maxThinkingTokens > 0 enables thinking with that budget (pre-adaptive model)', async () => {
     const fetchStub = makeSSEFetch([textReplyEvents('ok')]);
     vi.stubGlobal('fetch', fetchStub);
 
+    // Fixed budget is the enabled-form (pre-adaptive) wire; assert on haiku-4.5.
     await collect(
       query({
         prompt: 'hi',
-        options: opts({ systemPrompt: preset, maxThinkingTokens: 2048 }),
+        options: opts({ model: 'claude-haiku-4-5', systemPrompt: preset, maxThinkingTokens: 2048 }),
       }),
     );
     expect(fetchStub.requests[0]!.body.thinking).toEqual({
@@ -444,7 +475,7 @@ describe('L2 lock: claude_code preset defaults thinking ON (E1/E7-01)', () => {
     });
   });
 
-  it('preset + an explicit thinking config passes through verbatim (no 4096 override)', async () => {
+  it('preset + an explicit thinking config passes through verbatim on a pre-adaptive model (no 4096 override)', async () => {
     const fetchStub = makeSSEFetch([textReplyEvents('ok')]);
     vi.stubGlobal('fetch', fetchStub);
 
@@ -452,6 +483,7 @@ describe('L2 lock: claude_code preset defaults thinking ON (E1/E7-01)', () => {
       query({
         prompt: 'hi',
         options: opts({
+          model: 'claude-haiku-4-5',
           systemPrompt: preset,
           thinking: { type: 'enabled', budgetTokens: 1234 },
         }),
