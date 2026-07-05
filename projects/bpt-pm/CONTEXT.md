@@ -83,8 +83,14 @@ CPM）、**基线比对**，确认后**写回同一数据源**。零后端、零
 - **④ 冲突显式告警**：顶层 `warnings[]`/`warningCount`，聚合 cycle/missing-pred + 新增 `constraint-conflict`(MSO/MFO 与前置矛盾)/`negative-slack`(ls<es)/`infeasible-window`(倒排放不下)。
   比喻：排期表的「体检红灯」——硬约束打架、浮动变负、倒排塞不下各亮一盏。
 
-**UI 现状**：自由浮动列、8 约束解析、调度方向切换(#btnDir)、告警面板(#stWarn/#warnPanel + 行红旗)、错峰视图(#btnLevel)、第二样例(#btnSampleV3)均已落且无头冒烟零 JS 报错。
-**收尾待补**（工作流触账户消费上限中断）：WBS 折叠三角 + 甘特摘要条、错峰「应用建议」写回按钮。
+**UI 现状（已收尾）**：自由浮动列、8 约束解析、调度方向切换(#btnDir)、告警面板(#stWarn/#warnPanel + 行红旗)、错峰视图(#btnLevel)、第二样例(#btnSampleV3)；
+**WBS 折叠三角 + 甘特摘要条**（摘要行 ▶/▼ 折叠子任务、甘特摘要括号条）、**错峰「应用建议」按钮**（把移动任务写成 SNET 约束重排，实测超载 3→0）均已补齐，无头冒烟零 JS 报错。
+
+## 表格格式协议（bpt-pm/table-v1，数据源无关）
+
+把 bpt-pm/v1 拆成 5 张标准表（项目/任务/资源/外包单/模板），任何表格型数据源（阿里 AI 表格/alidocs、Notion、飞书多维表、Excel）
+按 `docs/table-formats.md` 建表即可对接；列名即协议、标注「输入 vs 写回」列。生成器 `scripts/gen_tables.mjs`：
+`--blank` 出空表模板（建新格式）、`<in.json>` 出填好样例的 CSV（UTF-8 BOM）。回归 `tests/tables.mjs`。
 
 ## 结构
 
