@@ -8,6 +8,38 @@ and adds one line here. A CI guard (`scripts/check-version-bump.mjs`) reds
 any src-changing merge that forgets. 0.6.1 and 0.6.2 below are retroactive
 labels for builds that shipped under a duplicated "0.6.0".
 
+## 0.7.0 — 2026-07-05
+
+Completion-inventory full-implementation batch (keeper ruling 全面实现);
+BREAKING items are detailed in MIGRATION.md §4/5f.
+
+- **BREAKING (observability)**: ten reversed discriminants (task_* /
+  hook_* / files_persisted / local_command_output / commands_changed)
+  now emit and type as official `{type:'system', subtype:...}` with
+  payloads aligned to the 0.3.201 snapshot; `cancelled`->`killed`; four
+  export names flip to official spelling (deprecated aliases kept).
+- **feat (wire, E7-01/E7-02)**: `claude_code` preset defaults thinking
+  to `{type:"adaptive"}`; Read gains `pages`, Bash always exposes
+  `dangerouslyDisableSandbox` (gate unchanged), Agent tool gains
+  `model`/`isolation:'worktree'` and the official required set.
+- **feat (tools)**: Task quadruplet (TaskCreate/TaskGet/TaskUpdate/
+  TaskList) ships as the default task surface per official 0.3.142
+  semantics (`CLAUDE_CODE_ENABLE_TASKS=0` reverts to TodoWrite).
+- **feat (types)**: ToolInputSchemas/ToolOutputSchemas exported (17
+  members each); official type-name aliases; deferred_tool_use official
+  id/name/input dual-track; CanUseTool requestId required; Grep
+  `context` alias; tool() accepts the official extras wrapper; session
+  rename/tag round-trips (SDKSessionInfo customTitle/tag/gitBranch).
+- **feat (resilience)**: maxRetries 4->10 (env-capped 15), stream
+  watchdog 120s->300s (env floor), new background-subagent stall
+  watchdog (600s default, env-tunable, reports stalls as failed).
+- **feat (errors)**: McpError taxonomy over 12 bare throws, stable
+  machine-readable `code` on every error (docs/ERRORS.md), throw-
+  discipline guard test; sse_malformed_frame/stream_idle_timeout wired.
+- E7-03 cache-breakpoint divergence measured and kept as a documented
+  KD (premise-locked); wire ratchet shrinks to Agent:params (BPT `fork`
+  extension) + placement/thinking residuals.
+
 ## 0.6.2 — 2026-07-05
 
 - **fix (Windows)**: Bash tool shell resolution — `CLAUDE_CODE_GIT_BASH_PATH`

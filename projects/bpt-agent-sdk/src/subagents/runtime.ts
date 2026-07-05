@@ -70,6 +70,10 @@ import { runAgentLoop } from '../engine/loop.js';
 import { matchToolName, parseRule } from '../permissions/rules.js';
 import { addUsage } from '../engine/pricing.js';
 import {
+  StallWatchdog,
+  resolveStallTimeoutMs,
+} from '../transport/stall-watchdog.js';
+import {
   DEFAULT_SUBAGENT_MAX_TURNS,
   MAX_SUBAGENT_DEPTH,
   resolveAgentDefinition,
@@ -601,6 +605,7 @@ export function createSubagentRuntime(
     config: EngineConfig,
     agentId: string,
     sidechain: SidechainInfo,
+    liveness?: { touch(): void },
   ): Promise<{ text: string; isError: boolean }> {
     let lastText = '';
     let sawError = false;
@@ -649,6 +654,7 @@ export function createSubagentRuntime(
     }
 
     for await (const msg of runAgentLoop(history, deps, config)) {
+      liveness?.touch();
       if (msg.type === 'assistant') {
         childTurns += 1;
         const u = msg.message.usage;
@@ -964,6 +970,13 @@ export function createSubagentRuntime(
       };
 
       if (isBackground) {
+        // T2-6 background stall watchdog: a child whose stream goes silent for
+        // the resolved window is aborted (env-tunable, 0 disables); touch()
+        // rides every stream message via the liveness hook.
+        const stallWatchdog = new StallWatchdog({
+          timeoutMs: resolveStallTimeoutMs(env),
+          onStall: () => childController.abort(),
+        });
         const promise = (async (): Promise<void> => {
           try {
             const result = await runChildToCompletion(
@@ -972,6 +985,7 @@ export function createSubagentRuntime(
               childConfig,
               agentId,
               sidechainInfo,
+              stallWatchdog,
             );
             completedBuffer.push({
               type: 'text',
@@ -996,10 +1010,15 @@ export function createSubagentRuntime(
                 `${err instanceof Error ? err.message : String(err)}`,
             );
             // An abort here is a stopTask()/query-close cancellation whose
-            // lifecycle events are emitted at the cancellation site; only a
-            // real failure is reported as failed.
-            if (!isAbortError(err)) {
-              const message = err instanceof Error ? err.message : String(err);
+            // lifecycle events are emitted at the cancellation site — EXCEPT a
+            // stall-watchdog abort, which has no cancellation site and must
+            // report as failed here; other real failures likewise.
+            if (!isAbortError(err) || stallWatchdog.stalled) {
+              const message = stallWatchdog.stalled
+                ? `stalled: no stream event for ${resolveStallTimeoutMs(env)}ms; aborted by the stall watchdog`
+                : err instanceof Error
+                  ? err.message
+                  : String(err);
               emitTask({
                 type: 'system',
                 subtype: 'task_updated',
@@ -1021,6 +1040,7 @@ export function createSubagentRuntime(
               });
             }
           } finally {
+            stallWatchdog.dispose();
             backgroundTasks.delete(agentId);
             // Worktree cleanup runs on every exit path (incl. abort), before
             // the stop hook; a dirty worktree is kept (never destroy work).

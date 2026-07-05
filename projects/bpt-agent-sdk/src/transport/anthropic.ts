@@ -179,6 +179,7 @@ export class AnthropicTransport implements Transport {
             `Malformed SSE payload for event "${frame.event}" after ${eventCount} event(s): ` +
               frame.data.slice(0, 120),
             err,
+            'sse_malformed_frame',
           );
         }
         if (frame.event === 'error' || isErrorPayload(parsed)) {
@@ -499,6 +500,7 @@ function mapStreamError(
       `Messages API stream idle for ${idleMs}ms with no server event after ` +
         `${eventCount} event(s); aborted`,
       err,
+      'stream_idle_timeout',
     );
   }
   if (timeoutSignal.aborted) {
