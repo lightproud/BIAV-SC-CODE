@@ -116,6 +116,52 @@ describe('harness prompt v1/v2 variant', () => {
     expect(v5).not.toContain('/tmp/run-xyz');
   });
 
+  it('an environment context renders the <env> block in the volatile tail', () => {
+    const { stable, volatile } = buildSystemPromptParts(preset, {
+      cwd: '/tmp/run-xyz',
+      toolNames: ['Read'],
+      environment: {
+        platform: 'linux',
+        osVersion: 'linux 6.1',
+        date: '2026-07-05',
+        model: 'claude-haiku-4-5-20251001',
+        isGitRepo: true,
+        gitBranch: 'main',
+      },
+    });
+    // env facts live in the volatile tail, never the cached stable prefix
+    expect(volatile).toContain('<env>');
+    expect(volatile).toContain('Working directory: /tmp/run-xyz');
+    expect(volatile).toContain('Is directory a git repo: Yes');
+    expect(volatile).toContain('Git branch: main');
+    expect(volatile).toContain("Today's date: 2026-07-05");
+    expect(volatile).toContain('You are powered by the model named claude-haiku-4-5-20251001.');
+    expect(stable).not.toContain('<env>');
+    expect(stable).not.toContain('2026-07-05');
+  });
+
+  it('a non-git cwd renders "Is directory a git repo: No" and no branch line', () => {
+    const { volatile } = buildSystemPromptParts(preset, {
+      cwd: '/tmp/x',
+      toolNames: ['Read'],
+      environment: { isGitRepo: false, gitBranch: 'ignored' },
+    });
+    expect(volatile).toContain('Is directory a git repo: No');
+    expect(volatile).not.toContain('Git branch:');
+  });
+
+  it('projectInstructions inject a system-reminder into the cached stable prefix', () => {
+    const { stable, volatile } = buildSystemPromptParts(preset, {
+      cwd: '/tmp/x',
+      toolNames: ['Read'],
+      projectInstructions: '# CLAUDE.md\n\nAlways use tabs.',
+    });
+    expect(stable).toContain('<system-reminder>');
+    expect(stable).toContain('Always use tabs.');
+    // instructions are cacheable (stable), not in the volatile tail
+    expect(volatile).not.toContain('Always use tabs.');
+  });
+
   it('append text lands in the stable segment for all variants', () => {
     const withAppend = { ...preset, append: 'EXTRA_INSTRUCTION' };
     for (const v of ['v1', 'v2', 'v3', 'v4', 'v5'] as const) {

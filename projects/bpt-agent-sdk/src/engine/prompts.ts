@@ -17,6 +17,23 @@
 
 import type { Options } from '../types.js';
 
+/**
+ * Runtime environment facts injected into the `<env>` block, reproducing the
+ * official Claude Code runtime-assembly context (open reproduction). All
+ * fields are optional; only those present are rendered. Gathered by the caller
+ * (query.ts) since they require I/O (git, os, clock) that this pure module avoids.
+ */
+export type EnvironmentContext = {
+  platform?: string;
+  osVersion?: string;
+  /** ISO date (YYYY-MM-DD). */
+  date?: string;
+  /** Model id the run is bound to. */
+  model?: string;
+  isGitRepo?: boolean;
+  gitBranch?: string;
+};
+
 type PromptContext = {
   cwd: string;
   toolNames: string[];
@@ -33,6 +50,18 @@ type PromptContext = {
    * Only affects the `claude_code` preset / default path. Default 'v1'.
    */
   variant?: 'v1' | 'v2' | 'v3' | 'v4' | 'v5';
+  /**
+   * Runtime environment facts. When present, an `<env>` block reproducing the
+   * official runtime-assembly context is rendered into the volatile tail.
+   */
+  environment?: EnvironmentContext;
+  /**
+   * Project/user instruction text (CLAUDE.md / AGENTS.md contents), loaded per
+   * `settingSources`. Injected into the STABLE prefix (stable per project, so
+   * cacheable) as a `<system-reminder>`-framed block, matching how the official
+   * runtime carries codebase instructions.
+   */
+  projectInstructions?: string;
 };
 
 /**
@@ -50,9 +79,41 @@ export type SystemPromptParts = {
   volatile: string;
 };
 
-/** The per-run volatile tail: the working directory + its path guidance. */
+/**
+ * The official-style `<env>` runtime-context block. Reproduces the public
+ * Claude Code runtime assembly: working directory, git-repo status/branch,
+ * platform, OS version, and date, followed by the model line. Only fields
+ * present in `env` are emitted. Lives in the volatile tail (it carries
+ * per-run/per-day facts) so it never invalidates the cached stable prefix.
+ */
+function environmentBlock(cwd: string, env: EnvironmentContext): string {
+  const inner = [`Working directory: ${cwd}`];
+  if (env.isGitRepo !== undefined) {
+    inner.push(`Is directory a git repo: ${env.isGitRepo ? 'Yes' : 'No'}`);
+  }
+  if (env.isGitRepo && env.gitBranch) inner.push(`Git branch: ${env.gitBranch}`);
+  if (env.platform) inner.push(`Platform: ${env.platform}`);
+  if (env.osVersion) inner.push(`OS Version: ${env.osVersion}`);
+  if (env.date) inner.push(`Today's date: ${env.date}`);
+  const lines = [
+    'Here is useful information about the environment you are running in:',
+    '<env>',
+    ...inner,
+    '</env>',
+  ];
+  if (env.model) lines.push(`You are powered by the model named ${env.model}.`);
+  return lines.join('\n');
+}
+
+/**
+ * The per-run volatile tail: the `<env>` context block when environment facts
+ * are supplied, else the bare working directory. Either way the cwd is present
+ * so relative-path guidance stays valid.
+ */
 function volatileTail(ctx: PromptContext, withPathGuidance: boolean): string {
-  const lines = [`Working directory: ${ctx.cwd}`];
+  const lines = ctx.environment
+    ? [environmentBlock(ctx.cwd, ctx.environment)]
+    : [`Working directory: ${ctx.cwd}`];
   if (withPathGuidance) {
     lines.push('Treat relative paths as relative to this directory and prefer absolute paths in tool calls.');
   }
@@ -387,6 +448,15 @@ export function buildSystemPromptParts(
             : ctx.variant === 'v1'
               ? defaultHarnessStable(ctx)
               : defaultHarnessStableV5(ctx);
+  // Codebase instructions (CLAUDE.md / AGENTS.md), loaded per settingSources.
+  // Framed as a system-reminder and kept in the STABLE prefix (stable per
+  // project -> cacheable), reproducing how the official runtime carries them.
+  if (ctx.projectInstructions !== undefined && ctx.projectInstructions.length > 0) {
+    stable =
+      `${stable}\n\n<system-reminder>\nThe following instructions come from ` +
+      `CLAUDE.md / AGENTS.md files in the project. Follow them as if the user ` +
+      `wrote them.\n\n${ctx.projectInstructions}\n</system-reminder>`;
+  }
   if (opt.append !== undefined && opt.append.length > 0) {
     stable = `${stable}\n\n${opt.append}`;
   }

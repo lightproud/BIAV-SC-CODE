@@ -774,8 +774,22 @@ export type Options = {
   sessionId?: string;
   /** Directory for session transcripts (default ~/.bpt-agent/sessions). */
   sessionDir?: string;
-  /** Accepted for compatibility; this SDK loads no filesystem settings in v0.1. */
+  /**
+   * Which on-disk instruction sources to load into the system prompt, matching
+   * @anthropic-ai/claude-agent-sdk. 'project'/'local' walk up from cwd for
+   * CLAUDE.md / AGENTS.md; 'user' reads ~/.claude/CLAUDE.md. Empty/undefined
+   * loads nothing (the SDK default — the caller opts in). Only consulted on the
+   * `claude_code` preset / default harness path.
+   */
   settingSources?: SettingSource[];
+  /**
+   * Inject the official-style `<env>` runtime-context block (working directory,
+   * git repo/branch, platform, OS version, date) plus the model line into the
+   * system prompt. Reproduces the official runtime assembly. Default true on the
+   * `claude_code` preset / default path; set false to omit it. Ignored for a
+   * string or segments systemPrompt (the caller owns those verbatim).
+   */
+  includeEnvironmentContext?: boolean;
   stderr?: (data: string) => void;
   /** Only use MCP servers passed in options (always true for this SDK). */
   strictMcpConfig?: boolean;
