@@ -460,10 +460,16 @@ function mapStreamError(
   if (isAbortError(err)) {
     return err instanceof AbortError ? err : new AbortError(errorMessage(err));
   }
-  return new APIConnectionError(
+  const failure = new APIConnectionError(
     `Messages API stream failed after ${eventCount} event(s): ${errorMessage(err)}`,
     err,
   );
+  // E3: a connection that dropped after delivering events is a TRUNCATED
+  // turn - the engine may salvage the completed blocks (official 2.1.201
+  // does; conformance run-l4 KD-L4-02/04). Timeout/idle/abort branches above
+  // never carry this flag.
+  failure.midStreamTruncation = eventCount > 0;
+  return failure;
 }
 
 function errorMessage(err: unknown): string {

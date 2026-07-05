@@ -30,6 +30,8 @@ type PendingBlock =
 export class MessageAccumulator {
   private message: APIAssistantMessage | undefined;
   private readonly blocks = new Map<number, PendingBlock>();
+  /** Indices whose content_block_stop arrived (E3 salvage: closed = whole). */
+  private readonly closedIndices = new Set<number>();
 
   /** Feed one raw stream event; call in arrival order. */
   feed(event: RawMessageStreamEvent): void {
@@ -123,6 +125,7 @@ export class MessageAccumulator {
         if (block.type === 'tool_use') {
           block.input = this.parseToolInput(event.index, block);
         }
+        this.closedIndices.add(event.index);
         return;
       }
 
@@ -208,6 +211,64 @@ export class MessageAccumulator {
           break;
       }
     }
+    msg.content = content;
+    return msg;
+  }
+
+  /**
+   * Salvage pass for a TRUNCATED stream (E3): build an assistant message from
+   * what the connection delivered WHOLE before dropping. Kept: closed blocks
+   * of every type; text blocks even when unclosed (the received prefix is the
+   * honest partial answer - the official arm surfaces it too). Dropped:
+   * unclosed tool_use (a mid-transmission input must never execute) and
+   * unclosed thinking (an incomplete signature would 400 any resend).
+   * Returns undefined when message_start never arrived or nothing whole
+   * remains - the caller then falls back to the error path.
+   */
+  salvageTruncated(): APIAssistantMessage | undefined {
+    if (this.message === undefined) {
+      return undefined;
+    }
+    const indices = [...this.blocks.keys()].sort((a, b) => a - b);
+    const content: ContentBlock[] = [];
+    for (const index of indices) {
+      const block = this.blocks.get(index) as PendingBlock;
+      const closed = this.closedIndices.has(index);
+      switch (block.type) {
+        case 'text':
+          if (block.text.length > 0) {
+            content.push({ type: 'text', text: block.text });
+          }
+          break;
+        case 'thinking':
+          if (closed) {
+            content.push({
+              type: 'thinking',
+              thinking: block.thinking,
+              signature: block.signature,
+            });
+          }
+          break;
+        case 'redacted_thinking':
+          // Delivered whole in content_block_start; safe either way.
+          content.push({ type: 'redacted_thinking', data: block.data });
+          break;
+        case 'tool_use':
+          if (closed && block.input !== undefined) {
+            content.push({
+              type: 'tool_use',
+              id: block.id,
+              name: block.name,
+              input: block.input,
+            });
+          }
+          break;
+      }
+    }
+    if (content.length === 0) {
+      return undefined;
+    }
+    const msg = this.message;
     msg.content = content;
     return msg;
   }
