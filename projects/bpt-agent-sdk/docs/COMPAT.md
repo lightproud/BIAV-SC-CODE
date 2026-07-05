@@ -7,6 +7,13 @@ For a full 146-row completion audit against the latest official surface
 (including the unmodeled subsystems and the roadmap), see
 `Public-Info-Pool/Resource/repo-engineering/bpt-agent-sdk-completion-audit-20260703.md`.
 
+For the FIELD-LEVEL reconciliation against the live official docs (snapshot
+2026-07-05: `Public-Info-Pool/Reference/Agent-SDK-Docs/typescript-20260705.md`),
+including the drop-in breaking-gap list and the NEW-IN-DOCS ledger
+(post-0.3.199 surface), see
+`Public-Info-Pool/Resource/repo-engineering/bpt-sdk-official-docs-interface-audit-20260705.md`.
+Stale rows flagged there were corrected in this file on 2026-07-05.
+
 ## v0.2 status (what graduated from the v0.1 audit)
 
 v0.2 implemented most of the P0/P1 gaps the audit flagged. Now **FULL / PARTIAL**
@@ -81,11 +88,11 @@ Tiers:
 | Export | Tier | Notes |
 |---|---|---|
 | `query()` | FULL | string and AsyncIterable prompt modes |
-| `tool()` | FULL | zod v4 raw shapes; JSON Schema derived via `z.toJSONSchema`; optional 5th `annotations` (ToolAnnotations) forwarded onto the definition (task #17) |
+| `tool()` | PARTIAL | zod v4 raw shapes; JSON Schema derived via `z.toJSONSchema`; 5th param SHAPE MISMATCH: official takes `extras?: { annotations?: ToolAnnotations }` (wrapper object), ours takes bare `annotations` — annotations passed the official way are silently dropped (docs-audit 2026-07-05) |
 | `createSdkMcpServer()` | FULL | in-process dispatch, no wire protocol |
-| `listSessions()` / `getSessionInfo()` | PARTIAL | reads this SDK's own JSONL store only; option bag accepts `dir` (alias for `sessionDir`) + `limit`; `includeWorkspace` typed but not honored (no Claude Code store interop) (task #17) |
+| `listSessions()` / `getSessionInfo()` | PARTIAL | reads this SDK's own JSONL store only; option bag accepts `dir` (alias for `sessionDir`) + `limit`; our `includeWorkspace` is typed-not-honored AND the official option is named `includeWorktrees` (naming mismatch); `getSessionInfo()` returns `null` vs official `undefined`; `SDKSessionInfo` lacks official `gitBranch`/`tag`, `customTitle` is typed-never-populated, summary has no customTitle > auto > firstPrompt precedence (docs-audit 2026-07-05) |
 | `startup()` / `WarmQuery` | UNSUPPORTED | no subprocess to pre-warm; direct API needs no warmup |
-| `getSessionMessages()` / `renameSession()` / `tagSession()` / `deleteSession()` / `forkSession()` | PARTIAL | implemented in v0.2 over this SDK's own JSONL store (or an external `sessionStore`); no Claude Code store interop |
+| `getSessionMessages()` / `renameSession()` / `tagSession()` / `deleteSession()` / `forkSession()` | PARTIAL | implemented in v0.2 over this SDK's own JSONL store (or an external `sessionStore`); no Claude Code store interop. Docs-audit 2026-07-05: rename/tag ROUND-TRIP IS BROKEN — they append `meta_update` records that `store.load` never reads back, so titles/tags are write-only; `getSessionMessages` lacks all three official options (`dir`/`limit`/`offset`); `renameSession` skips the official non-empty-title validation |
 | `resolveSettings()` | UNSUPPORTED | settings engine is CLI-coupled (N/A-by-design) |
 
 ## Engine difference (the point of this SDK)
@@ -135,11 +142,11 @@ SDK implements the agent loop directly against the public Messages API:
 | `hooks` | PARTIAL | see hook table |
 | `includePartialMessages` | FULL | raw stream events as `stream_event` |
 | `maxBudgetUsd` | PARTIAL | based on estimated cost (a static price table, not billing truth); stop ORDERING matches official 2.1.201 (E5, 2026-07-05): a turn requesting tools past the cap stops BEFORE any tool executes (zero side effects, no tool_result user turn, terminal `error_max_budget_usd`), while a naturally ending turn still yields its completed success result (conformance run-l2 s12 converged) |
-| `maxThinkingTokens` / `thinking` | PARTIAL | `thinking.type:'enabled'` maps to the Messages API `thinking` (budget clamped below `max_tokens`); on the `claude_code` preset path thinking is DEFAULT-ON like the official CLI (all 54/54 official L5 traces carry thinking events; opt out with `maxThinkingTokens: 0` or `thinking: {type:'disabled'}`) — KD: the 4096 default budget is OUR chosen value, the official budget is request-body-internal and unobservable under the net-observation boundary; off the preset path `maxThinkingTokens` alone is only a budget fallback and sends no thinking param on its own; fields are `budget_tokens`/`budget`, not the official `budgetTokens` |
+| `maxThinkingTokens` / `thinking` | PARTIAL | `thinking.type:'enabled'` maps to the Messages API `thinking` (budget clamped below `max_tokens`); on the `claude_code` preset path thinking is DEFAULT-ON like the official CLI (all 54/54 official L5 traces carry thinking events; opt out with `maxThinkingTokens: 0` or `thinking: {type:'disabled'}`) — KD: the 4096 default budget is OUR chosen value, the official budget is request-body-internal and unobservable under the net-observation boundary; off the preset path `maxThinkingTokens` alone is only a budget fallback and sends no thinking param on its own. The official `budgetTokens` field name IS accepted (alongside the `budget_tokens`/`budget` aliases — the old "not the official budgetTokens" note was stale, docs-audit 2026-07-05); the official `display` sub-option ('summarized'\|'omitted') is not modeled (NEW-IN-DOCS); official docs mark `maxThinkingTokens` deprecated, our type carries no `@deprecated` tag yet |
 | `maxTurns` | FULL | |
 | `mcpServers` | PARTIAL | stdio/http/sdk FULL; `sse` legacy transport UNSUPPORTED |
 | `model` | FULL | default `ANTHROPIC_MODEL` env or `claude-sonnet-4-5` |
-| `permissionMode` | PARTIAL | `default`/`acceptEdits`/`bypassPermissions`/`plan`/`dontAsk`; `auto` (classifier) not offered. `bypassPermissions` requires the `allowDangerouslySkipPermissions` interlock (below) |
+| `permissionMode` | PARTIAL | all 6 values incl. `auto` (the old "`auto` not offered" note was stale — offered since v0.2, docs-audit 2026-07-05); our `auto` is a HEURISTIC classifier while the official docs describe a model-driven classifier (semantics differ). `bypassPermissions` requires the `allowDangerouslySkipPermissions` interlock (below) |
 | `allowDangerouslySkipPermissions` | FULL | safety interlock: `bypassPermissions` (initial or via `setPermissionMode`) throws `ConfigurationError` unless this is `true`. BPT-only strictness: official 0.3.199/2.1.201 does NOT enforce the interlock live - it proceeds to the model without the flag (conformance run-l2 s6-bypass-interlock-refusal, 2026-07-05) |
 | `persistSession` / `sessionId` / `resume` | FULL | JSONL store |
 | `provider` | FULL | **BPT extension** — direct-API connection settings |
@@ -152,7 +159,12 @@ SDK implements the agent loop directly against the public Messages API:
 | `betas` | FULL | forwarded as `anthropic-beta` header |
 | `includeHookEvents` | FULL | v0.4: emits `hook_started` / `hook_response` pairs (per callback invocation, correlated by `hook_id`) into the stream |
 | `debug` / `debugFile` | PARTIAL | `debug` → stderr callback; `debugFile` ACCEPTED |
-| `agent`, `settings`, `permissionPromptToolName`, `extraArgs`, `effort`, `outputFormat`, `plugins`, `skills`, `toolAliases`, `toolConfig`, `sessionStore*`, `managedSettings`, `enableFileCheckpointing`, `taskBudget`, `onElicitation`, `planModeInstructions`, `promptSuggestions`, `agentProgressSummaries`, `forwardSubagentText`, `loadTimeoutMs`, `title`, `resumeSessionAt` | ACCEPTED | each present key emits exactly one debug warning, then ignored |
+| `outputFormat` | FULL | json_schema validate + re-prompt + `structured_output` result (v0.2; moved out of the stale ACCEPTED row, docs-audit 2026-07-05) |
+| `onElicitation` | FULL | MCP elicitation callback (v0.2); auto-decline when absent |
+| `sessionStore` / `sessionStoreFlush` | FULL | external store mirror (v0.2); flush modes `batched`/`eager`, default `batched` matches official |
+| `enableFileCheckpointing` | FULL | file checkpointing + `rewindFiles` (v0.2) |
+| `loadTimeoutMs` | FULL | default 60000 matches official |
+| `agent`, `settings`, `permissionPromptToolName`, `extraArgs`, `effort`, `plugins`, `skills`, `toolAliases`, `toolConfig`, `managedSettings`, `taskBudget`, `planModeInstructions`, `promptSuggestions`, `agentProgressSummaries`, `forwardSubagentText`, `title`, `resumeSessionAt` | ACCEPTED | each present key emits exactly one debug warning, then ignored. NOTE (docs-audit 2026-07-05): these are runtime-accepted but NOT declared on the TS `Options` type — TS callers passing object literals hit excess-property checks (previous stale entries `outputFormat`/`onElicitation`/`sessionStore*`/`enableFileCheckpointing`/`loadTimeoutMs` graduated in v0.2 and now have their own rows above) |
 | `sandbox` (`boolean \| SandboxOptions`) | PARTIAL | v0.6 bash sandbox (G-SANDBOX). Default ON when a backend resolves — bubblewrap on Linux (`--ro-bind / /` + rw-bind cwd/additionalDirectories/state/tmp, `--unshare-net` unless `allowNetwork`, `$TMPDIR` redirect). Per-call Bash `dangerouslyDisableSandbox` routes through the permission gate as an ask (never auto-allowed except under `bypassPermissions` or a matching allow rule); `allowEscape:false` = mandatory mode (param disabled). Sandboxed failures matching a restriction signature carry `[sandbox]` evidence + the retry path. **Not implemented:** macOS Seatbelt, the domain-whitelist network proxy (network is binary on/off). **Windows: no backend resolves → Bash runs unsandboxed with NO sandbox guidance emitted — identical honesty posture to official Claude Code on Windows.** The object sub-shape (`enabled`/`allowNetwork`/`writablePaths`/`allowEscape`/`backend`) is BPT-shaped. |
 
 ## Built-in tools
@@ -173,10 +185,10 @@ SDK implements the agent loop directly against the public Messages API:
 
 | Variant | Tier | Notes |
 |---|---|---|
-| `system/init` | PARTIAL | apiKeySource, tools, mcp_servers, model, permissionMode present; official `claude_code_version`/`betas`/`skills`/`plugins` absent; `slash_commands` always `[]` |
+| `system/init` | PARTIAL | apiKeySource, tools, mcp_servers, model, permissionMode, agents, claude_code_version, betas, skills, plugins ALL emitted (the old "claude_code_version/betas/skills/plugins absent" note was stale — docs-audit 2026-07-05); `slash_commands`/`skills` always `[]`; `plugins` element shape is `string[]` vs official `{name, path}[]`; `claude_code_version`/`skills`/`plugins` typed optional where official requires them |
 | `assistant` | FULL | full `APIAssistantMessage` |
 | `user` (echo + tool results) | FULL | prompt echo and tool_result user turns both yielded and persisted in order |
-| `stream_event` | FULL | behind `includePartialMessages` |
+| `stream_event` | PARTIAL | behind `includePartialMessages`; `SDKPartialAssistantMessage` lacks the official `ttft_ms?` field (docs-audit 2026-07-05) |
 | `result` success / error_max_turns / error_during_execution / `error_max_budget_usd` / `error_max_structured_output_retries` | PARTIAL | success arm carries ttft_ms + structured_output + deferred_tool_use + v0.3 `metrics`; error arm carries both `errorMessage: string` and the official-parallel `errors: string[]` (v0.4). Mid-stream SSE truncation degrades gracefully like official 2.1.201 (E3, 2026-07-05): the blocks the wire delivered whole are salvaged - partial text becomes the `success` answer, complete tool_use blocks EXECUTE (at either cut depth, with or without stop_reason) and the loop re-requests to deliver the tool_result; the connection error rides `errors` as a non-fatal note on the terminal result (former KD-L4-04 + all three truncation engine findings retired; residual KD-L4-02: official also appends the error as assistant text and throws from the iterator post-result - deliberately not replicated). An UNCLOSED tool_use (mid-transmission input) never executes; nothing salvageable falls back to `error_during_execution`. Remaining fault-path divergence: on a terminal non-retryable 400 ours ends with a clean `result/error_during_execution` where official surfaces the error as assistant text plus `result/success` then throws (KD-L4-01; run-l4 l4-http400-non-retryable, l4-script-exhausted-400-terminal). Reporting semantics on streamed multi-turn input match official (E2, 2026-07-05, KD-L5-04 retired): `num_turns`/`usage` are PER-RESULT (that turn's own figures), `total_cost_usd`/`duration_api_ms` are session-cumulative; `modelUsage` stays session-cumulative (official per-result semantics unobserved - our choice); internal `maxTurns`/`maxBudgetUsd` enforcement remains session-wide. Query-layer synthetic results (hook-block / pre-turn cap stop / interrupt) report `num_turns: 0` + zero `usage` (no engine turn ran for them; official shape unobserved) |
 | `system/compact_boundary` | FULL | emitted on manual `/compact` + auto-compaction (v0.2) |
 | `system/mirror_error` | FULL | emitted on a session-store mirror failure |
@@ -187,14 +199,25 @@ The official SDKMessage union carries a large observability/status arm. We add
 the full set of variant TYPES so drop-in consumers can switch exhaustively, and
 EMIT the subset this headless engine has a real source event for.
 
-Design note: the official docs/types are internally inconsistent about
-top-level `type` vs `type:'system'+subtype` for these variants (and its own
-issue #181 has `SDKRateLimitEvent`/`SDKPromptSuggestionMessage`
-referenced-but-unexported). We model the arm with **top-level `type`**
-discriminators — the most likely consumer pattern (`msg.type === 'permission_denied'`)
-— except `status`, kept as `system/status`. Field shapes the official leaves
-undocumented are a self-consistent independent reconstruction. All carry the
-house `uuid`/`session_id` envelope. Union: `SDKObservabilityMessage`.
+Design note (updated 2026-07-05): the live official docs now FULLY specify
+these variants — 11 ride `type:'system'`+subtype (status, task_notification,
+hook_started, hook_progress, hook_response, task_started, task_progress,
+task_updated, files_persisted, local_command_output, commands_changed) and 5
+ride a top-level `type` (tool_use_summary, tool_progress, auth_status,
+rate_limit_event, prompt_suggestion). Our arm still models everything except
+`status` with top-level `type` discriminators and house payload shapes, i.e.
+**8 variants have a REVERSED discriminator and most payloads diverge
+field-by-field — 6 of them actually emitted** (task_started/progress/updated/
+notification, hook_started/hook_response). This is now a KNOWN DIVERGENCE,
+not a reconstruction of unspecified shapes; the earlier "official leaves these
+undocumented" premise is stale. Field-level diffs: interface audit 2026-07-05
+§6.E. Alignment is a v0.7 candidate (breaking — needs MIGRATION notes and the
+Desktop UI mapping table updated in lockstep). Three export names also differ:
+`SDKFilesPersistedMessage` (official `SDKFilesPersistedEvent`),
+`SDKRateLimitEventMessage` (official `SDKRateLimitEvent`),
+`SDKApiRetryMessage` (official `SDKAPIRetryMessage`); plus
+`SDKInitializationResult` (official `SDKControlInitializeResponse`). All carry
+the house `uuid`/`session_id` envelope. Union: `SDKObservabilityMessage`.
 
 | Variant | Tier | Notes |
 |---|---|---|
@@ -210,8 +233,8 @@ house `uuid`/`session_id` envelope. Union: `SDKObservabilityMessage`.
 
 | Event | Tier | Notes |
 |---|---|---|
-| PreToolUse | FULL | allow/deny/ask + updatedInput (ask rewrite survives to canUseTool); deny > ask > allow; input lacks `tool_use_id` field (carried in the 2nd callback arg) |
-| PostToolUse | FULL | additionalContext + updatedToolOutput + `continue:false`; input lacks `tool_use_id`/`duration_ms` fields |
+| PreToolUse | FULL | allow/deny/ask + updatedInput (ask rewrite survives to canUseTool); deny > ask > allow; input carries `tool_use_id` (the old "lacks" note was stale — docs-audit 2026-07-05) |
+| PostToolUse | FULL | additionalContext + updatedToolOutput + `continue:false`; input carries `tool_use_id` + `duration_ms` (the old "lacks" note was stale — docs-audit 2026-07-05) |
 | PostToolUseFailure | FULL | |
 | PostToolBatch | PARTIAL | fires per batch; input is `{ tool_names }` not the official `{ tool_calls[] }`; `continue:false` honored |
 | UserPromptSubmit | PARTIAL | additionalContext appended; a block skips the prompt in streaming mode / ends the run in string mode |
@@ -219,10 +242,10 @@ house `uuid`/`session_id` envelope. Union: `SDKObservabilityMessage`.
 | Stop | FULL | fired at natural end of a run |
 | SessionStart / SessionEnd | FULL | |
 | Notification | ACCEPTED | never fired in v0.1 (no code path emits it) |
-| SubagentStart / SubagentStop | ACCEPTED | never fire (no subagents yet) |
-| PreCompact | ACCEPTED | never fires (no compaction yet) |
+| SubagentStart / SubagentStop | PARTIAL | fire since v0.2 (the old "never fire" note was stale — docs-audit 2026-07-05); SubagentStop is emitted WITHOUT the official-required `agent_transcript_path` |
+| PreCompact | FULL | fires on manual `/compact` + auto-compaction since v0.2 (the old "never fires" note was stale — docs-audit 2026-07-05) |
 | PermissionRequest | ACCEPTED | never fires in v0.1 |
-| `defer` permission decision | UNSUPPORTED | an unrecognized `permissionDecision` fails closed as deny with a debug warning |
+| `defer` permission decision | PARTIAL | end-to-end since v0.2 (the old "UNSUPPORTED" row was stale — docs-audit 2026-07-05); NOTE our `deferred_tool_use` field names are `tool_use_id`/`tool_name`/`tool_input` vs official `id`/`name`/`input` (drop-in gap), and the official `stop_reason: "tool_deferred"` signal is not modeled; an unrecognized `permissionDecision` still fails closed as deny |
 | legacy `decision: 'approve'`/`'block'` | FULL | mapped to allow/deny in aggregation (allow only when no explicit `permissionDecision` on the same output) |
 | Matcher semantics | FULL | exact-set vs regex rules per docs |
 | `async: true` outputs | FULL | fire-and-forget |
@@ -235,8 +258,10 @@ house `uuid`/`session_id` envelope. Union: `SDKObservabilityMessage`.
 | `interrupt()` | FULL | |
 | `setPermissionMode()` / `setModel()` / `setMaxThinkingTokens()` | FULL | |
 | `initializationResult()` / `supportedModels()` / `supportedCommands()` / `supportedAgents()` | PARTIAL | static/empty data (no CLI to introspect) |
-| `mcpServerStatus()` | FULL | now carries `config` (echoed back) + per-server `tools[]` when connected; `scope` typed but not tracked (task #17) |
+| `mcpServerStatus()` | PARTIAL | carries `config` (echoed back) + per-server `tools[]` when connected; `scope` typed but not tracked (task #17); official `tools` is an OBJECT array with `annotations{readOnly/destructive/openWorld}`, ours is `string[]` (docs-audit 2026-07-05) |
 | `accountInfo()` | PARTIAL | apiKeySource only |
 | `streamInput()` | FULL | streaming-input mode |
 | `close()` | FULL | |
-| `rewindFiles()` / `reinitialize()` / `applyFlagSettings()` / `setMcpServers()` / `reconnectMcpServer()` / `toggleMcpServer()` / `stopTask()` | UNSUPPORTED in types v0.1 | `reconnect/toggle` exist on the registry; surfacing on Query in v0.2 |
+| `rewindFiles()` / `reconnectMcpServer()` / `toggleMcpServer()` / `stopTask()` | FULL | implemented since v0.2 (the old "UNSUPPORTED in types v0.1" row was stale and contradicted the v0.2 section above — docs-audit 2026-07-05); NOTE `RewindFilesResult` is house-shaped `{checkpointId, restoredFiles, deletedFiles, dryRun}` vs official `{canRewind, error?, filesChanged?, insertions?, deletions?}` (zero shared fields) |
+| `setMcpServers()` | PARTIAL | implemented since v0.2; returns `{servers: McpServerStatus[]}` vs official `{added, removed, errors}` (zero shared fields; docs-audit 2026-07-05) |
+| `reinitialize()` / `applyFlagSettings()` | UNSUPPORTED | no control_request wire protocol / no settings engine (N/A-by-design for a direct-API engine) |
