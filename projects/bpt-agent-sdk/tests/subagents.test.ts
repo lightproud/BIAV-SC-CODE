@@ -6,10 +6,14 @@
  * end-to-end without a network.
  */
 
+import { existsSync, readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { dirname, join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 
 import {
   GENERAL_PURPOSE_PROMPT,
+  GENERAL_PURPOSE_PROMPT_PROVENANCE,
   MAX_SUBAGENT_DEPTH,
   resolveAgentDefinition,
   resolveModelAlias,
@@ -615,5 +619,44 @@ describe('subagent runtime — task control', () => {
       },
     });
     expect(h.runtime.agentNames()).toEqual(['a', 'b', 'general-purpose']);
+  });
+});
+
+describe('general-purpose prompt provenance (corpus-sync guard, Track B)', () => {
+  const archive = join(
+    dirname(fileURLToPath(import.meta.url)),
+    '..',
+    '..',
+    '..',
+    'Public-Info-Pool',
+    'Reference',
+    'Claude-Code-System-Prompts',
+    'system-prompts',
+  );
+  const norm = (s: string) => s.replace(/\s+/g, ' ').trim();
+  const stripHeader = (md: string) => md.replace(/^<!--[\s\S]*?-->\n?/, '');
+
+  it('reproduces the official Strengths + Guidelines substance', () => {
+    // adapted intro (parent-agent framing, not the Claude Code CLI self-ref)
+    expect(GENERAL_PURPOSE_PROMPT).toContain('parent agent');
+    expect(GENERAL_PURPOSE_PROMPT).not.toContain('official CLI');
+    // faithful blocks
+    expect(GENERAL_PURPOSE_PROMPT).toContain('Your strengths:');
+    expect(GENERAL_PURPOSE_PROMPT).toContain('NEVER proactively create documentation files');
+  });
+
+  it.runIf(existsSync(archive))('its cited archive source is still represented', () => {
+    const desc = norm(GENERAL_PURPOSE_PROMPT);
+    for (const slug of GENERAL_PURPOSE_PROMPT_PROVENANCE.slugs) {
+      const file = join(archive, `${slug}.md`);
+      expect(existsSync(file), slug).toBe(true);
+      const body = norm(stripHeader(readFileSync(file, 'utf8')));
+      const anchors = body
+        .split(/(?<=[.:])\s+/)
+        .map(norm)
+        .filter((s) => s.length >= 40 && !s.includes('${'))
+        .map((s) => s.slice(0, 45));
+      expect(anchors.some((a) => desc.includes(a)), `${slug} not represented`).toBe(true);
+    }
   });
 });
