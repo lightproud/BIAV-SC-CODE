@@ -324,6 +324,13 @@
   全差分栈对新版重跑——**L1-L4 记分牌与基线逐行一致（零新漂移、零新 KD）**、wire 缺口逐面一致（参考目标已按新钉刷新）、
   L3.5 两 KD 在 0.3.201 复现（**硬门禁等待条件的第一枚稳定性数据点：两版一致**）。COMPAT/CONTEXT 基线表述同步 0.3.201；
   KD-01 等历史注补「0.3.201 复验不变」。`npx vitest run` 1109 全绿。漂移哨兵挂账清零。
+  **Windows shell 解析已修（2026-07-05，BPT Windows 试点故障 #2 闭环）**：BPT 实测 Bash 工具全不可用
+  （`spawn sh ENOENT`——旧链按名裸猜 bash→sh，Windows 上两者皆无）。修 `src/tools/shell-resolve.ts`：
+  `CLAUDE_CODE_GIT_BASH_PATH`（官方同款旋钮）优先 → Git for Windows 标准安装位探测（Program Files ×3 + 每用户
+  LocalAppData）→ 全миss 时报可行动指引（装 Git Bash / 设旋钮）而非裸 ENOENT；**刻意不试裸名 bash**（System32 bash.exe
+  是 WSL、文件系统视图静默漂移，宁可响亮失败）。前台/后台链同修；非 Windows 行为不变（bash→sh 原链）。
+  6 条注入式单测（platform/probe 可注入，Linux 上全覆盖 win32 路径）；MIGRATION 5b-2 + COMPAT Bash 行同步。
+  `npx vitest run` **1115 全绿（43 文件）**。BPT 侧装新 build 后 Bash 应可用（前提装了 Git for Windows）。
   **SSE 网关方言容错已落（2026-07-05，BPT 产线故障闭环）**：BPT 实测「Malformed SSE payload for event "(none)"」
   经双侧协作定型——BPT `curl -N` 抓原始字节实锤 idealab 网关 `/api/anthropic` 端点带 OpenAI 方言遗留
   （流尾追加 `data: [DONE]`、错误帧无 event 行）；官方客户端 message_stop 即收工不碰尾卡、我方读到流关闭才撞上。
