@@ -9,6 +9,7 @@
 
 import { spawn } from 'node:child_process';
 import { resolvePosixShells, SHELL_NOT_FOUND_GUIDANCE } from './shell-resolve.js';
+import { planProcessKill } from './kill-plan.js';
 import { AbortError } from '../errors.js';
 import { BASH_DESCRIPTION, buildBashSandboxNote } from './descriptions.js';
 import { planShellSpawn } from '../sandbox/backend.js';
@@ -100,19 +101,29 @@ function runShell(
     let killTimer: NodeJS.Timeout | undefined;
     let flushTimer: NodeJS.Timeout | undefined;
 
-    // Signal the shell's entire process group; fall back to the direct child
-    // when the pid is unknown. ESRCH (group already gone) is expected and
-    // swallowed.
+    // Terminate the shell's whole tree, platform-correctly (planProcessKill):
+    // POSIX signals the process group (-pid); Windows uses taskkill /T /F
+    // (process groups/negative-pid do nothing there - the same latent bug the
+    // background KillShell had, surfaced by the posix-hazard guard 2026-07-05).
+    let winKilled = false;
     const killGroup = (sig: NodeJS.Signals): void => {
-      const pid = child.pid;
+      const plan = planProcessKill(child.pid, sig);
       try {
-        if (pid !== undefined) {
-          process.kill(-pid, sig);
+        if (plan.kind === 'group') {
+          process.kill(-plan.pid, plan.signal as NodeJS.Signals); // win-ok: posix branch of planProcessKill
+        } else if (plan.kind === 'child') {
+          child.kill(plan.signal as NodeJS.Signals);
         } else {
-          child.kill(sig);
+          if (winKilled) return;
+          winKilled = true;
+          const tk = spawn('taskkill', ['/PID', String(plan.pid), '/T', '/F'], { stdio: 'ignore' });
+          tk.on('error', (e) => ctx.debug(`Bash: taskkill failed for pid ${plan.pid}: ${e.message}`));
+          tk.unref();
         }
-      } catch {
-        /* group/process already gone or cannot be signalled */
+      } catch (err) {
+        // Benign when the tree already exited; anything else goes to debug
+        // rather than being swallowed (the old empty catch hid Windows misses).
+        ctx.debug(`Bash: kill(${sig}) failed: ${err instanceof Error ? err.message : String(err)}`);
       }
     };
 

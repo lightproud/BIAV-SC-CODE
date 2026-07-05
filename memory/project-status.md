@@ -331,6 +331,26 @@
   是 WSL、文件系统视图静默漂移，宁可响亮失败）。前台/后台链同修；非 Windows 行为不变（bash→sh 原链）。
   6 条注入式单测（platform/probe 可注入，Linux 上全覆盖 win32 路径）；MIGRATION 5b-2 + COMPAT Bash 行同步。
   `npx vitest run` **1115 全绿（43 文件）**。BPT 侧装新 build 后 Bash 应可用（前提装了 Git for Windows）。
+  **KillShell Windows 失效 + 谎报状态已修（2026-07-05，BPT 试点故障 #3，源码行级证据）**：两处真缺陷——① `kill()` 一调用即
+  强置 `status='killed'`、不等信号，exit 处理器因状态已非 running 不再纠正 → 进程跑完退出 0 仍永久标 killed；② 杀进程用
+  POSIX 专属 `process.kill(-pid)`（进程组），Windows 无效且被空 catch 静默吞。修：新 `src/tools/kill-plan.ts` 两纯函数——
+  `planProcessKill`（POSIX 进程组 / **Windows `taskkill /PID <pid> /T /F`** 杀树强制 / 无 pid 回退 child.kill）+ `terminalStatus`
+  （退出处理器据实定状态：kill 请求且非 0 退出→killed、退出 0→completed 即便请求过 kill、崩溃→failed）；`kill()` 只记
+  `killRequested` 意图不再强改状态；空 catch 改 debug 记录（Windows 失败不再隐身）。10 条注入式单测（Linux 上覆盖 win32 分支
+  + 6 条状态诚实矩阵 + 迟到 kill 不改写 completed 的集成回归）。版本 bump **0.6.3** + CHANGELOG。`npx vitest run` **1125 全绿**。
+  **BPT #2 权限口子已裁定并落地（2026-07-05，守密人裁定「Read/Write/Edit 过度保守、放宽」）**：移除 Read/Write/Edit 的
+  BPT 自有硬围栏（`fsutil.resolveWithin`→`resolveAbs` 只解析不设栏），向官方权限门模型看齐——路径访问由 permissionMode 门控、
+  非第二道文件系统栅栏（该围栏 Grep/Glob/Bash 本就没有、Bash 在场时更非硬边界，是安全错觉）。`additionalDirectories` 保留真实
+  作用（sandbox writablePaths）。**顺带消除一个 KD**：L3-READ-03 现双臂都读到仓外文件 → CONTENT_MATCH、**KD-L3-04 退役**（残余
+  只剩既有 Read 尾换行 KD-L3-18）；两条单臂围栏锁 L3-SA-READ-CONTAIN/ADDDIR 退役；5 条 fs 单测改为「无栏、官方对齐」正向断言。
+  版本 bump **0.6.4** + CHANGELOG + COMPAT additionalDirectories 行更新。棘轮基线 --update 锁入。`npx vitest run` **1125 全绿**。
+  **Windows 环境保真守卫已立 + 揪出第四潜伏 bug（2026-07-05，守密人「提示词按环境编排?」诊断问答）**：诊断结论——三起 Windows 故障
+  根因是**引擎代码 POSIX-first**（工具接口之下：负 PID 进程组 / 裸 spawn shell 名 / 硬编码 tmp），**非提示词编排**（`<env>` 本就注入
+  `Platform:`、工具指导本就引向平台中立内建工具）；提示词能改的余地为零，模型工具调用本身是对的。预防落为**静态守卫**
+  `tests/posix-hazard-guard.test.ts`：扫 src/ 的 POSIX-only 危险写法（`process.kill(-`/`spawn('bash'|'sh')`/`'/tmp'`），未标 `win-ok:`
+  即红。**守卫未建先还债**：揪出 `bash.ts` 前台 Bash 超时/abort 的 killGroup 是与 KillShell 同款未分支 `process.kill(-pid)`+空 catch
+  （Windows 前台命令杀不掉、错误被吞）——已复用 planProcessKill 修（win32→taskkill）。合法平台分支两处标 win-ok。版本 bump **0.6.5**
+  + CHANGELOG。`npx vitest run` **1128 全绿（45 文件）**。机器守卫累计四件：接口覆盖 / 参考目标棘轮 / 版本 bump / POSIX 危险。
   **版本纪律已立（2026-07-05，黑池「三拨构建同名 0.6.0」诉求）**：版本 bump 至 **0.6.2**（0.6.1/0.6.2 为对已发货
   三拨构建的追溯标号，台账见新增 `CHANGELOG.md`——随 npm pack tarball 发货，黑池箱内可读）；纪律 = 改发货运行时必 bump
   （修复 patch / 新能力 minor）+ CHANGELOG 一行；**CI 守卫** `scripts/check-version-bump.mjs`（bpt-agent-sdk.yml test job，

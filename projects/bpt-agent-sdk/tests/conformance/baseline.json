@@ -324,7 +324,7 @@
       "L3-READ-03": {
         "verdict": "CONTENT_KNOWN_DIFF",
         "kdIds": [
-          "KD-L3-04"
+          "KD-L3-18"
         ],
         "engineFinding": false
       },
@@ -334,16 +334,6 @@
         "engineFinding": false
       },
       "L3-SA-MCP-ZOD": {
-        "verdict": "LOCKED",
-        "kdIds": [],
-        "engineFinding": false
-      },
-      "L3-SA-READ-ADDDIR": {
-        "verdict": "LOCKED",
-        "kdIds": [],
-        "engineFinding": false
-      },
-      "L3-SA-READ-CONTAIN": {
         "verdict": "LOCKED",
         "kdIds": [],
         "engineFinding": false

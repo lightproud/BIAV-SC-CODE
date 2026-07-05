@@ -15,7 +15,7 @@ import type {
   ToolResultPayload,
 } from '../internal/contracts.js';
 import { AbortError, isAbortError } from '../errors.js';
-import { looksBinary, resolveWithin } from './fsutil.js';
+import { looksBinary, resolveAbs } from './fsutil.js';
 import { WRITE_DESCRIPTION } from './descriptions.js';
 
 function errorResult(message: string): ToolResultPayload {
@@ -59,11 +59,7 @@ export const writeTool: BuiltinTool = {
         return errorResult('Write failed: "content" must be a string.');
       }
 
-      const resolved = resolveWithin(ctx.cwd, ctx.additionalDirectories, filePath);
-      if (!resolved.ok) {
-        return errorResult(`Write failed: ${resolved.reason}`);
-      }
-      const abs = resolved.abs;
+      const abs = resolveAbs(ctx.cwd, filePath);
 
       // Determine created-vs-overwritten before writing; reject directories.
       let existedBefore = false;

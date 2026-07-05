@@ -1,8 +1,8 @@
 {
   "date": "2026-07-06",
-  "archived_at": "2026-07-05T17:03:34.509276+00:00",
+  "archived_at": "2026-07-05T18:13:25.378425+00:00",
   "source": "youtube",
-  "item_count": 2,
+  "item_count": 3,
   "items": [
     {
       "title": "Storybook Beginnings (Stream 21) MORIMENS",
@@ -17,6 +17,23 @@
       "lang": "",
       "platform_region": "global",
       "media_url": "https://i.ytimg.com/vi/ORfttPLABxo/hqdefault.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    },
+    {
+      "title": "Morimens- Chapter 9-11: Gaze of Birth (Corpo Lightning Spam)",
+      "summary": "That was satisfying.",
+      "source": "youtube",
+      "time": "2026-07-05T18:02:04Z",
+      "url": "https://www.youtube.com/watch?v=kkwP5lULgOc",
+      "engagement": 1,
+      "is_hot": false,
+      "author": "bamfbabybamf",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/kkwP5lULgOc/hqdefault.jpg",
       "content_type": "video",
       "region": "global",
       "archive_subtype": "video"

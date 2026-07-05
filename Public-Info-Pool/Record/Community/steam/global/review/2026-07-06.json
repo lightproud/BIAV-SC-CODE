@@ -1,0 +1,34 @@
+{
+  "date": "2026-07-06",
+  "archived_at": "2026-07-05T18:13:25.420189+00:00",
+  "source": "steam",
+  "item_count": 1,
+  "items": [
+    {
+      "title": "[正面] Une très belle surprise ce jeu !\r\nLes personnages...",
+      "summary": "Une très belle surprise ce jeu !\r\nLes personnages sont vraiment attachants et bien designés ! L'histoire assez originale !\r\nJe m'amuse beaucoup ! Et depuis que j'ai eu Pontos, je m'éclate encore plus !! Son seiyuu est magnifique !!",
+      "source": "steam_review",
+      "time": "2026-07-05T17:33:16+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198275952547/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198275952547",
+      "tags": [
+        "french"
+      ],
+      "language": "french",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 2305,
+        "votes_up": 0,
+        "timestamp_created": 1783272796
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    }
+  ],
+  "region": "global",
+  "content_subtype": "review"
+}

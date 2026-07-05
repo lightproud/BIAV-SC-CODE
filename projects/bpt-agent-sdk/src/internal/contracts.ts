@@ -230,6 +230,9 @@ export type BackgroundShell = {
   cursorOut: number;
   cursorErr: number;
   status: BackgroundShellStatus;
+  /** True once KillShell/dispose asked to terminate; the exit handler uses it
+   *  to decide the honest terminal status (killed vs completed-before-kill). */
+  killRequested: boolean;
   exitCode: number | null;
   exitSignal: string | null;
   kill: (sig: string) => void;

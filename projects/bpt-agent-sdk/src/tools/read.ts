@@ -12,7 +12,7 @@ import type {
   ToolResultPayload,
 } from '../internal/contracts.js';
 import { AbortError, isAbortError } from '../errors.js';
-import { formatCatN, looksBinary, resolveWithin } from './fsutil.js';
+import { formatCatN, looksBinary, resolveAbs } from './fsutil.js';
 import { READ_DESCRIPTION } from './descriptions.js';
 
 const DEFAULT_LINE_LIMIT = 2000;
@@ -174,11 +174,9 @@ export const readTool: BuiltinTool = {
         pageRange = { start, end };
       }
 
-      const resolved = resolveWithin(ctx.cwd, ctx.additionalDirectories, filePath);
-      if (!resolved.ok) {
-        return errorResult(`Read failed: ${resolved.reason}`);
-      }
-      const abs = resolved.abs;
+      // Path fence removed (#483 keeper ruling): resolve and reach any location
+      // the process can, with the permission gate as the sole access control.
+      const abs = resolveAbs(ctx.cwd, filePath);
 
       try {
         const st = await stat(abs);
