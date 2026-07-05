@@ -932,12 +932,14 @@ export async function* runAgentLoop(
       // --- Usage/cost tracking per response model. --------------------------
       recordUsage(assistant.model, normalizeUsage(assistant.usage));
 
-      // NOTE: the maxBudgetUsd check is intentionally NOT here. A turn that has
-      // just naturally ended (end_turn / stop_sequence / etc.) must still yield
-      // its completed answer as a success result even if its cost tipped the
-      // budget - the money is already spent and there is nothing further to
-      // bill. The budget is enforced below, ONLY when about to CONTINUE the
-      // loop with another (billable) API call.
+      // NOTE on budget placement: a turn that has just naturally ended
+      // (end_turn / stop_sequence / etc.) must still yield its completed
+      // answer as a success result even if its cost tipped the budget - the
+      // money is already spent and there is nothing further to bill. But a
+      // turn that REQUESTS TOOLS while the budget is already exceeded is
+      // stopped BEFORE any tool executes (E5 below), matching official
+      // 2.1.201 (conformance run-l2 s12: the official arm trips the cap
+      // before the tool's side effects, same subtype and POST count).
 
       // --- Tool dispatch or natural end. -------------------------------------
       const toolUses =
@@ -962,6 +964,26 @@ export async function* runAgentLoop(
       // rewritten response): treat as a natural end rather than pushing an
       // empty {role:'user',content:[]} turn that would poison the history.
       if (toolUses.length > 0) {
+        // E5: budget pre-stop. The turn's cost was recorded above; if it
+        // already exceeds maxBudgetUsd, the requested tools are NOT executed
+        // (no side effects past the cap) and the run ends terminally. No
+        // tool_result user turn is emitted - matching the official public
+        // stream shape (assistant tool_use -> result/error_max_budget_usd);
+        // the persisted trailing assistant tool_use is healed on resume by
+        // the session store's repairPairing.
+        if (config.maxBudgetUsd !== undefined && totalCostUsd > config.maxBudgetUsd) {
+          pushAssistant(assistant.content);
+          deps.debug(
+            `engine: budget pre-stop - ${toolUses.length} requested tool call(s) ` +
+              `not executed (estimated cost $${totalCostUsd.toFixed(6)} > ` +
+              `maxBudgetUsd $${config.maxBudgetUsd})`,
+          );
+          yield errorResult(
+            'error_max_budget_usd',
+            `Estimated cost $${totalCostUsd.toFixed(6)} exceeded maxBudgetUsd ($${config.maxBudgetUsd})`,
+          );
+          return;
+        }
         const results: ToolResultBlockParam[] = [];
         let batchStop: ToolExecOutcome['stop'];
         let batchDefer: ToolExecOutcome['defer'];

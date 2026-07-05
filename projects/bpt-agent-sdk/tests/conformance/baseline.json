@@ -65,12 +65,12 @@
         "engineFinding": false
       },
       "s12-max-budget": {
-        "verdict": "DIVERGENT",
+        "verdict": "MATCH_WITH_KNOWN_DIFFS",
         "kdIds": [
           "KD-01",
           "KD-04"
         ],
-        "engineFinding": true
+        "engineFinding": false
       },
       "s13-agents-task": {
         "verdict": "DEMOTED-SINGLE-ARM",

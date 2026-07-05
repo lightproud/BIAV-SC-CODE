@@ -798,10 +798,11 @@ describe('runAgentLoop', () => {
     expect(result.modelUsage['claude-sonnet-4-5']!.costUSD).toBeCloseTo(0.003105, 9);
   });
 
-  it('maxBudgetUsd fires only when about to continue after a tool_use turn, as error_max_budget_usd (findings #3 + rename)', async () => {
-    // Turn 1 is a tool_use turn (the loop wants to continue with another
-    // billable call); the accumulated cost exceeds the budget, so the run
-    // stops BEFORE the second API call with the renamed subtype.
+  it('maxBudgetUsd stops BEFORE executing a requested tool batch, as error_max_budget_usd (E5, findings #3 + rename)', async () => {
+    // Turn 1 is a tool_use turn whose own cost already exceeds the budget.
+    // Official 2.1.201 trips the cap BEFORE the tool's side effects
+    // (conformance run-l2 s12): zero tool executions, no tool_result user
+    // turn on the stream, one POST, terminal error_max_budget_usd.
     const transport = new MockTransport([
       toolUseReplyEvents('Read', { file_path: '/a.txt' }, { model: 'claude-sonnet-4-5' }),
       textReplyEvents('should never run'),
@@ -815,9 +816,11 @@ describe('runAgentLoop', () => {
       runAgentLoop(history, deps, makeConfig({ maxBudgetUsd: 0.000001 })),
     );
 
-    // The tool of turn 1 ran, but the second stream call never happened.
-    expect(executed).toEqual([{ file_path: '/a.txt' }]);
+    // The requested tool did NOT run and the second stream call never happened.
+    expect(executed).toEqual([]);
     expect(transport.requests).toHaveLength(1);
+    // No tool_result user turn is emitted past the cap (official stream shape).
+    expect(messages.some((m) => m.type === 'user')).toBe(false);
 
     const result = lastResult(messages);
     expect(result.subtype).toBe('error_max_budget_usd');
@@ -825,6 +828,27 @@ describe('runAgentLoop', () => {
     if (result.subtype === 'error_max_budget_usd') {
       expect(result.errorMessage).toContain('maxBudgetUsd');
     }
+  });
+
+  it('a tool batch under budget executes normally; the cap gates only the NEXT call (E5 boundary)', async () => {
+    // Turn 1 (cheap) requests a tool -> executes; turn 2 (natural end) still
+    // completes. The pre-stop must not fire when the budget is NOT exceeded.
+    const transport = new MockTransport([
+      toolUseReplyEvents('Read', { file_path: '/a.txt' }),
+      textReplyEvents('done'),
+    ]);
+    const executed: Array<Record<string, unknown>> = [];
+    const tools = new Map<string, BuiltinTool>([['Read', makeFakeReadTool(executed)]]);
+    const deps = makeDeps(transport, { builtinTools: tools });
+    const history = [{ role: 'user' as const, content: 'go' }];
+
+    const messages = await collect(
+      runAgentLoop(history, deps, makeConfig({ maxBudgetUsd: 5 })),
+    );
+
+    expect(executed).toEqual([{ file_path: '/a.txt' }]);
+    const result = lastResult(messages);
+    expect(result.subtype).toBe('success');
   });
 
   it('includePartialMessages: stream_event messages precede the assistant message', async () => {
