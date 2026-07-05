@@ -73,6 +73,8 @@ import {
   StallWatchdog,
   resolveStallTimeoutMs,
 } from '../transport/stall-watchdog.js';
+import { addWorktree, removeWorktreeIfClean } from '../internal/worktree.js';
+import type { ToolContextWithPermissionGate } from '../tools/exitplanmode.js';
 import {
   DEFAULT_SUBAGENT_MAX_TURNS,
   MAX_SUBAGENT_DEPTH,
@@ -233,48 +235,9 @@ const execFileP = promisify(execFile);
 /**
  * Worktree isolation (Agent tool `isolation: 'worktree'`, E7-02): create a
  * temporary DETACHED git worktree of the repository at `repoCwd` for a child
- * to use as its cwd. mkdtemp yields an empty dir, which `git worktree add`
- * accepts as a target. Fails honestly (error string, temp dir removed) when
- * git is unavailable or `repoCwd` is not inside a git repository.
+ * to use as its cwd. Shared with the EnterWorktree tool via
+ * src/internal/worktree.ts (extracted byte-equal from this module).
  */
-async function addWorktree(
-  repoCwd: string,
-): Promise<{ dir: string } | { error: string }> {
-  let dir: string;
-  try {
-    dir = await mkdtemp(join(tmpdir(), 'bpt-subagent-worktree-'));
-  } catch (err) {
-    return { error: err instanceof Error ? err.message : String(err) };
-  }
-  try {
-    await execFileP('git', ['worktree', 'add', '--detach', dir], { cwd: repoCwd });
-    return { dir };
-  } catch (err) {
-    await rm(dir, { recursive: true, force: true }).catch(() => undefined);
-    return { error: err instanceof Error ? err.message : String(err) };
-  }
-}
-
-/**
- * Remove a temporary worktree IF the child left it unchanged (empty
- * `git status --porcelain`: no modified, staged, or untracked files). A dirty
- * worktree is KEPT — never destroy uncommitted child work — and any git
- * failure also keeps it (fail-safe toward preservation). The caller logs a
- * 'kept' outcome.
- */
-async function removeWorktreeIfClean(
-  repoCwd: string,
-  dir: string,
-): Promise<'removed' | 'kept'> {
-  try {
-    const { stdout } = await execFileP('git', ['-C', dir, 'status', '--porcelain']);
-    if (stdout.trim().length > 0) return 'kept';
-    await execFileP('git', ['worktree', 'remove', dir], { cwd: repoCwd });
-    return 'removed';
-  } catch {
-    return 'kept';
-  }
-}
 
 /**
  * McpRegistry view that hides qualified tool names a subagent may not use: any
@@ -946,6 +909,11 @@ export function createSubagentRuntime(
         // satisfies a child's Write gate and vice versa.
         readFilePaths: opts.readFilePaths,
       };
+      // ExitPlanMode bridge: the child flips ITS OWN gate (childGate), never
+      // the parent's. Attached via the tool's context extension because the
+      // bridge is deliberately not part of the core ToolContext contract.
+      (childToolContext as ToolContextWithPermissionGate).permissionGate =
+        childGate;
       const childDeps: EngineDeps = {
         transport,
         builtinTools: childBuiltins,
