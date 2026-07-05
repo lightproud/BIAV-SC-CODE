@@ -127,8 +127,11 @@ shell（BashOutput 增量读 + 按行 filter / KillShell 击杀，进程组 SIGT
   G5 v4 补工具使用纪律片段（`bash-alternative-*`）/ G6 分类器·生成器提示词再现（标题/分支/描述、后台状态分类器）/
   G7 定位反转全仓扫尾（POSITIONING/COMPAT/README/ARCHITECTURE/MIGRATION + 两轴行为天花板解封）/ G8 decisions.md 两条落档（仅守密人）。
 - **测试比对（守密人 2026-07-04「需增加测试比对」——本版一等目标）**：每项再现/采纳**必附对照测试证其效**，**不测不宣胜负**。
-  ① 提示词 A/B v1 vs v4（含硬任务 10/11，扩 `prompt-ab` job 支持 v4）；② vs-official 裸对比（再现是否收窄行为差）；
+  ① 提示词 A/B v1 vs v4（含硬任务 10/11，扩 `prompt-ab` job 支持 v4）；② **vs-official 裸对比**（再现是否收窄行为差）；
   ③ 逐机制 before/after（压缩前置层的 input-token 削减 / 双断点的缓存命中率 / Haiku 摘要成本），benchmark 加各机制开关位；产对照报告。
+- **vs-official 升为常规做法（守密人 2026-07-05 裁定）**：与官方 `@anthropic-ai/claude-agent-sdk` 的裸对比（`vs_official` job：
+  同模型同任务集、速度 + 正确性两客观轴，官方当黑箱、绝不读其提示词）**每里程碑必跑一次、计入退出标准、对照报告归档 Resource**。
+  不再是一次性探针——再现工作每推进一批，就重跑 vs-official 看行为差是否真被收窄（数据说话）。官方 CLI 无头起不来则官方臂跳过（本身即结论）。
 - **推迟到 v0.6+（全做 Tier 2/3）**：Plan 分阶段流水线 · 审查/三态验证器 · coordinator/同意不可转述 · Workflow DSL ·
   做梦记忆（Claude 蓝本再现）· 沙箱再现 · 循环/调度 · 产品面大件。
 - **依据档**：`Public-Info-Pool/Resource/proposal/bpt-sdk-reproduction-scope-ledger-20260704.md`（全做路线图）/
