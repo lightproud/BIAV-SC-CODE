@@ -173,7 +173,8 @@
   - **缓存根因定论（受控探针实证）**：Haiku **有效**缓存门槛远高于名义 2048；~3.5k 精简前缀落「过名义门槛却小到不被真正归档」的**死区**（写≈0/读=0），
     v5 ~3.7k / --big ~8k 舒服落**可靠缓存区**（每轮+跨 request 命中 6000-8800 tok，同官方 99% 同构）。**非代码 bug**（wire 落位正确/跨轮累加无误/大前缀同路径完美缓存）。灌水非解、真实大而共享前缀（org 分层）才是。
   - A/B 基准 `tests/integration/ab-benchmark.mjs` 加**会真失败的硬任务** id 10/11（`verify(dir)` 动态 import 跑产物代码）；受控缓存探针 `tests/integration/cache-probe.mjs`（背靠背 N 次，per-turn 写/读，`--big` 隔离尺寸死区）。
-  提示词架构综述见 `Public-Info-Pool/Resource/repo-engineering/bpt-sdk-prompt-cache-milestone-20260704.md`；对照实证见 `Public-Info-Pool/Resource/data-diagnostics/bpt-sdk-comparison-baseline-20260705.md`（§4 翻案）
+  提示词架构综述见 `Public-Info-Pool/Resource/repo-engineering/bpt-sdk-prompt-cache-milestone-20260704.md`；对照实证见 `Public-Info-Pool/Resource/data-diagnostics/bpt-sdk-comparison-baseline-20260705.md`（§4 翻案 + §5 对齐重跑）
+  - **vs-official 对齐重跑（run 28726339967，我方 v5 默认 vs 官方，提示词轴对齐）**：我方缓存从旧的 0%(短)/45%(长) **跳到 95-98%**、与官方 96-99% **打平**；成本差从旧的 ~8% **拉大到 ~3.6×**（$0.0533 vs $0.1918，我方省 72%，因官方每轮重读巨大缓存上下文 967,958 tok + 我方轮数更少 39 vs 55）；速度 **2.8× 保持**（40.6s vs 112.8s）；正确性 **11/11 vs 10/11**（官方 #11 反硬编码 33%，极可能无头 CLI 噪声、不宣「更准」）。守密人「跟官方一致」在行为层兑现：既模拟官方提示词与缓存经济学、又保住自研引擎结构性省钱提速
 - **Desktop UI 参考线（2026-07-04，07-05 r2 修订 + 路线草案收口）**：BPT Desktop 前端参考情报档
   （守密人转交 GPT-5.5 搜索梗概 + AnySearch 许可证逐项实锤 + UI 组件↔`SDKMessage` 流对接表）落
   `Public-Info-Pool/Resource/repo-engineering/bpt-desktop-ui-reference-20260704-r2.md`——
