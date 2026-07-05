@@ -1,25 +1,27 @@
 {
   "date": "2026-07-05",
-  "messages": 347,
+  "messages": 354,
   "unique_authors": 20,
-  "reactions_total": 80,
-  "attachments": 31,
+  "reactions_total": 85,
+  "attachments": 33,
   "channel_activity": {
-    "なんでも雑談": 153,
+    "なんでも雑談": 157,
+    "つぶやき": 37,
+    "招待コード共有会": 1,
     "🔰初心者質問": 6,
     "誰でも質問": 59,
     "ここだけ肉体派守秘者の忘却前夜": 4,
     "自分が覚醒体になった時の性能を考えるスレ": 75,
     "ai進歩日記": 5,
     "ニムフィーアの毒パ研究日誌": 2,
-    "つぶやき": 35,
     "対人関係のあれこれ": 1,
     "誰でもOKグロ版野次馬スレ": 7
   },
   "hourly_activity": {
+    "11": 24,
+    "12": 2,
     "9": 71,
     "10": 82,
-    "11": 19,
     "6": 51,
     "7": 47,
     "8": 39,
@@ -30,8 +32,8 @@
     "0": 5
   },
   "message_types": {
-    "0": 118,
-    "19": 8
+    "0": 5,
+    "19": 2
   },
   "top_reacted_messages": [
     {
@@ -40,6 +42,14 @@
       "content": "# 月曜日が始Monday",
       "author": "ecstasyrb",
       "reactions": 7,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1523290968068198541",
+      "channel_id": "1377478664609857647",
+      "content": "これだけ盛れたらナウティラのドヤ顔も納得！",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 5,
       "channel": "なんでも雑談"
     },
     {
@@ -183,14 +193,6 @@
       "channel_id": "1377478664609857647",
       "content": "デカくするのは別だったはず忘れた！",
       "author": "namenemue3",
-      "reactions": 1,
-      "channel": "なんでも雑談"
-    },
-    {
-      "id": "1523284171609604096",
-      "channel_id": "1377478664609857647",
-      "content": "全然コピペしてお好きに使ってください💋\n小文字化は初めて知ったので、それいただきます！👌🏻\n\nこれ https://discord.com/channels/1",
-      "author": "ciocux",
       "reactions": 1,
       "channel": "なんでも雑談"
     }
