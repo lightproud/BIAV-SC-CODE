@@ -11,13 +11,17 @@ name: Build Community Vectors
 #   git 留指针」范式；索引确定性 gzip（GzipFile mtime=0）保证同内容不 churn 资产。
 #   运行时还原：scripts/restore_release_data.py --tag community-assets
 #   --pattern 'kb_vectors.json.gz' --dest okf。actions artifact 保留供 run 内检视。
+# 规模（守密人 2026-07-05「完全生成→扩到架构上限」裁定）：默认 60000 = 纯 Python
+#   架构实测水位（gz ≈ 92MB 单 Release 资产 / 全表扫描 ≈ 1.9s / array('f') 常驻 ≈ 140MB）。
+#   采样分层：非 discord 16 平台全量收编（~3.4 万）+ discord 确定性跨步填满剩余
+#   （见 build_kb_vectors.collect docstring）。全量 757 万 = 量产子工程，另行裁定。
 on:
   workflow_dispatch:
     inputs:
       limit:
-        description: 索引条数上限（有界原型；默认 1500 控成本）
+        description: 索引条数上限（分层采样；默认 60000 = 架构上限水位）
         required: false
-        default: '1500'
+        default: '60000'
 
 concurrency:
   group: community-vectors-${{ github.ref }}
@@ -29,7 +33,7 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 60  # 两遍流式采样 + 60k 条 Voyage 嵌入（~470 批）需富余
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-python@v5
@@ -55,7 +59,7 @@ jobs:
           # 桩索引污染 okf/），CI 建生产索引须落回 okf/ 供上传。
           python scripts/build_kb_vectors.py \
             --backend voyage \
-            --limit "${{ github.event.inputs.limit || '1500' }}" \
+            --limit "${{ github.event.inputs.limit || '60000' }}" \
             --out okf/kb_vectors.json.gz
       - name: Upload index to Release community-assets
         env:
