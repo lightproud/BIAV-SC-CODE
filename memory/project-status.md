@@ -192,6 +192,16 @@
   **第四弹落地路线草案** `Public-Info-Pool/Resource/repo-engineering/bpt-desktop-ui-roadmap-20260705.md`
   （M0 引擎接线与 IPC 契约 → M1 最小可信对话环 → M2 agent 透明化 → M3 工程面 → M4 演进留位，
   每 M 带行为级验收；待守密人回填 BPT 现状后升 r2 校准）
+- **一致性测试套件（2026-07-05 拷问定稿开工，设计蓝图
+  `Public-Info-Pool/Resource/repo-engineering/bpt-sdk-conformance-suite-design-20260705.md`）**：
+  五层金字塔（L1 流语法 / L2 选项语义 / L3 工具差分 / L4 故障注入 / L5 端到端统计带，L6 行为指纹后置留痕）；
+  硬约束「净室观测边界」已录 decisions.md（对照物白名单 / 内容盲纪律 / 泄漏衍生禁引 claw-code 系）。
+  **spike 三断点全通**（官方臂无头 + localhost 仿真器 + 协议面极窄，$0，剖面档
+  `bpt-sdk-official-arm-protocol-profile-20260705.md`）→ 活体差分架构成立。
+  **M1 已落地**：`tests/conformance/`（内容盲仿真器正式版 + L1 差分 `run-l1.mjs` + 双包同钉 pins.json）
+  + CI `conformance-l1` 无钥零费常跑 + vitest 流语法回归锁；**首份矩阵 3/3 MATCH_WITH_KNOWN_DIFFS、
+  零未解释分歧**，KD-01~05 已知差异登记（KD-05 消息粒度 = 官方逐块/逐 tool_result 拆消息 vs 本 SDK 按轮合批，
+  引擎对齐候选）。708 单测全绿（+6）。M2-M4 待续（L2/L3 → L4/棘轮/漂移哨兵 → L5 五维任务库/乙门禁）
 - **完成度（表面等价）**：对官方 SDK **0.3.199 基线**约 **89.5%**（v0.1 基线 68.3% → v0.2+v0.3 补齐后重算）。
   审计矩阵与逐行台账落 `Public-Info-Pool/Resource/repo-engineering/bpt-agent-sdk-completion-audit-20260703.md`
   + 同名 `-matrix-20260703.json`（146 行）

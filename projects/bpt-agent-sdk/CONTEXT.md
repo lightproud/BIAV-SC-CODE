@@ -169,6 +169,17 @@ shell（BashOutput 增量读 + 按行 filter / KillShell 击杀，进程组 SIGT
 repeat=1 便宜探针 ~$0.08）。验收标准=**净值**：v2 须成本持平/更省 + 质量/轮数改善才提拔，否则退回 v1。699 单测全绿（+6）。
 硬红线不变：只学公开材料、绝不读泄漏官方提示词文本。
 
+**一致性测试套件 M1（2026-07-05，设计定稿见
+`Public-Info-Pool/Resource/repo-engineering/bpt-sdk-conformance-suite-design-20260705.md`）**：
+`tests/conformance/` 落地——内容盲仿真器正式版（请求体零读取 + `assertContentBlind` 自审）、
+L1 流语法差分（`run-l1.mjs`，双臂活体对跑、归一化 token 序列 + KD 已知差异表比较）、
+双包同钉 `pins.json`（agent-sdk 0.3.199 + claude-code 2.1.201 分别锁死）、CI 作业
+`conformance-l1`（无钥零费常跑，官方臂 `--no-save` 临时装）。**首份矩阵：3/3
+MATCH_WITH_KNOWN_DIFFS、零未解释分歧**；KD-01~KD-05 五条已知差异全部登记在
+`normalize.mjs`（KD-05 = 消息粒度：官方按内容块/逐 tool_result 拆消息、本 SDK 按轮合批——
+未来引擎对齐候选，对逐消息渲染的 Desktop UI 可感知）。本 SDK 流语法另有 vitest 回归锁
+`tests/conformance-l1.test.ts`（无官方依赖、进常规 `npm test`）。
+
 进度以 `memory/project-status.md` 为唯一权威。
 
 ## v0.2 候选
