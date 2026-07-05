@@ -1,0 +1,55 @@
+{
+  "protocol": "bpt-pm/v1",
+  "project": {
+    "name": "版本 v2.4 双角色美术交付（外包建模）",
+    "start": "2026-07-06",
+    "calendar": { "workdays": [1, 2, 3, 4, 5], "holidays": ["2026-07-20"] }
+  },
+  "resources": [
+    { "id": "主美", "name": "主美 / 艺术总监", "type": "person", "capacity": 1 },
+    { "id": "原画", "name": "原画师", "type": "person", "capacity": 1 },
+    { "id": "外包A", "name": "外包A（建模供应商）", "type": "vendor", "capacity": 2 },
+    { "id": "程序", "name": "程序接入", "type": "person", "capacity": 1 }
+  ],
+  "baseline": {
+    "capturedAt": "2026-07-05T00:00:00Z",
+    "tasks": {
+      "X1": { "start": "2026-07-06", "finish": "2026-07-07", "duration": 2 },
+      "X2": { "start": "2026-07-08", "finish": "2026-07-08", "duration": 1 },
+      "X3": { "start": "2026-07-09", "finish": "2026-07-13", "duration": 3 },
+      "X4": { "start": "2026-07-14", "finish": "2026-07-15", "duration": 2 },
+      "Y1": { "start": "2026-07-06", "finish": "2026-07-07", "duration": 2 },
+      "Y2": { "start": "2026-07-08", "finish": "2026-07-08", "duration": 1 },
+      "Y3": { "start": "2026-07-09", "finish": "2026-07-13", "duration": 3 },
+      "Y4": { "start": "2026-07-14", "finish": "2026-07-15", "duration": 2 },
+      "M1": { "start": "2026-07-16", "finish": "2026-07-16", "duration": 0 }
+    }
+  },
+  "tasks": [
+    { "id": "X1", "name": "角色X 概念草图", "duration": 2, "predecessors": [], "resource": "原画", "percentComplete": 100 },
+    { "id": "X2", "name": "角色X 原画终审", "duration": 1, "predecessors": [{ "id": "X1" }], "resource": "主美", "percentComplete": 0 },
+    { "id": "X3", "name": "角色X 建模（外包）", "duration": 4, "predecessors": [{ "id": "X2" }], "resource": "外包A", "percentComplete": 0 },
+    { "id": "X4", "name": "角色X 引擎接入", "duration": 2, "predecessors": [{ "id": "X3" }], "resource": "程序", "deadline": "2026-07-16", "percentComplete": 0 },
+    { "id": "Y1", "name": "角色Y 概念草图", "duration": 2, "predecessors": [], "resource": "原画", "percentComplete": 100 },
+    { "id": "Y2", "name": "角色Y 原画终审", "duration": 1, "predecessors": [{ "id": "Y1" }], "resource": "主美", "percentComplete": 0 },
+    { "id": "Y3", "name": "角色Y 建模（外包）", "duration": 4, "predecessors": [{ "id": "Y2" }], "resource": "外包A", "percentComplete": 0 },
+    { "id": "Y4", "name": "角色Y 引擎接入", "duration": 2, "predecessors": [{ "id": "Y3" }], "resource": "程序", "percentComplete": 0 },
+    { "id": "M1", "name": "版本 v2.4 美术封板", "duration": 0, "predecessors": [{ "id": "X4" }, { "id": "Y4" }], "resource": "主美", "deadline": "2026-07-16", "percentComplete": 0 }
+  ],
+  "templates": [
+    {
+      "id": "art",
+      "name": "角色美术流水线",
+      "stages": [
+        { "key": "concept", "name": "概念草图", "duration": 2, "resource": "原画" },
+        { "key": "review", "name": "原画终审", "duration": 1, "resource": "主美" },
+        { "key": "model", "name": "建模（外包）", "duration": 4, "resource": "外包A", "revisionRounds": 1, "revisionResource": "主美", "revisionDuration": 2 },
+        { "key": "integrate", "name": "引擎接入", "duration": 2, "resource": "程序" }
+      ]
+    }
+  ],
+  "orders": [
+    { "id": "PO-001", "vendor": "外包A", "asset": "角色X 建模", "poDate": "2026-07-06", "quoteAmount": 8000, "expectedDelivery": "2026-07-14", "revisionRounds": 1, "status": "画中", "linkedTaskId": "X3" },
+    { "id": "PO-002", "vendor": "外包A", "asset": "角色Y 建模", "poDate": "2026-07-06", "quoteAmount": 8000, "expectedDelivery": "2026-07-12", "status": "回稿", "linkedTaskId": "Y3" }
+  ]
+}

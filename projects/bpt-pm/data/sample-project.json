@@ -1,0 +1,77 @@
+{
+  "protocol": "bpt-pm/v1",
+  "project": {
+    "name": "银芯 Wiki 使命#2 冲刺样例",
+    "start": "2026-07-06",
+    "calendar": {
+      "workdays": [1, 2, 3, 4, 5],
+      "holidays": ["2026-07-20"]
+    }
+  },
+  "baseline": {
+    "capturedAt": "2026-07-05T00:00:00Z",
+    "tasks": {
+      "T1": { "start": "2026-07-06", "finish": "2026-07-08", "duration": 3 },
+      "T2": { "start": "2026-07-09", "finish": "2026-07-14", "duration": 4 },
+      "T3": { "start": "2026-07-09", "finish": "2026-07-10", "duration": 2 },
+      "T4": { "start": "2026-07-15", "finish": "2026-07-21", "duration": 4 },
+      "T5": { "start": "2026-07-22", "finish": "2026-07-24", "duration": 3 },
+      "M1": { "start": "2026-07-27", "finish": "2026-07-27", "duration": 0 }
+    }
+  },
+  "tasks": [
+    {
+      "id": "T1",
+      "name": "解包 Lua → 原始字段",
+      "duration": 3,
+      "predecessors": [],
+      "resource": "艾瑞卡",
+      "percentComplete": 100,
+      "notes": "客户端解包，自举数据源。"
+    },
+    {
+      "id": "T2",
+      "name": "补齐 72 角色结构化基线",
+      "duration": 5,
+      "predecessors": [{ "id": "T1", "type": "FS", "lag": 0 }],
+      "resource": "艾瑞卡",
+      "percentComplete": 60
+    },
+    {
+      "id": "T3",
+      "name": "校验数据 schema",
+      "duration": 2,
+      "predecessors": [{ "id": "T1", "type": "FS", "lag": 0 }],
+      "resource": "守密人",
+      "percentComplete": 100
+    },
+    {
+      "id": "T4",
+      "name": "生成 VitePress 角色页",
+      "duration": 4,
+      "predecessors": [
+        { "id": "T2", "type": "FS", "lag": 0 },
+        { "id": "T3", "type": "FS", "lag": 0 }
+      ],
+      "resource": "艾瑞卡",
+      "percentComplete": 0
+    },
+    {
+      "id": "T5",
+      "name": "站点构建与联调",
+      "duration": 3,
+      "predecessors": [{ "id": "T4", "type": "FS", "lag": 0 }],
+      "constraint": { "type": "SNET", "date": "2026-07-23" },
+      "resource": "艾瑞卡",
+      "percentComplete": 0
+    },
+    {
+      "id": "M1",
+      "name": "W2 基线交付里程碑",
+      "duration": 0,
+      "predecessors": [{ "id": "T5", "type": "FS", "lag": 0 }],
+      "resource": "守密人",
+      "percentComplete": 0
+    }
+  ]
+}
