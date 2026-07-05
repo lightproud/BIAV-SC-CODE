@@ -1,7 +1,7 @@
 {
-  "generated": "2026-07-04",
+  "generated": "2026-07-05",
   "stats": {
-    "nodes": 304,
+    "nodes": 305,
     "edges": 312
   },
   "nodes": [
@@ -1499,7 +1499,7 @@
     {
       "id": "/memory/memory-ext-bpt-guidance-protocol.md",
       "type": "knowledge-pointer",
-      "title": "银芯指导 BPT 协议（v0.3）",
+      "title": "银芯指导 BPT 协议（v0.4）",
       "tags": [
         "memory",
         "data_layer:curated"
@@ -2520,9 +2520,20 @@
       "tier": "search"
     },
     {
-      "id": "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704.md",
+      "id": "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "type": "documentation",
-      "title": "bpt-desktop-ui-reference-20260704",
+      "title": "bpt-desktop-ui-reference-20260704-r2",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "type": "documentation",
+      "title": "bpt-desktop-ui-roadmap-20260705",
       "tags": [
         "data_layer:curated",
         "deliverable",
@@ -2542,9 +2553,9 @@
       "tier": "search"
     },
     {
-      "id": "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704.md",
+      "id": "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "type": "documentation",
-      "title": "claude-desktop-ui-structure-20260704",
+      "title": "claude-desktop-ui-structure-20260704-r2",
       "tags": [
         "data_layer:curated",
         "deliverable",

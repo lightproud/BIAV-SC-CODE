@@ -1,10 +1,10 @@
 ---
 type: "knowledge-pointer"
-title: "银芯指导 BPT 协议（v0.3）"
+title: "银芯指导 BPT 协议（v0.4）"
 description: "银芯不再在仓库内承载 BPT 代码，但 BPT 的开发仍需要银芯提供的能力：战略视角、架构经验、方法论、事实圣经、踩坑记录。"
 resource: "/memory/bpt-guidance-protocol.md"
 tags: ["memory", "data_layer:curated"]
-timestamp: "2026-07-04"
+timestamp: "2026-07-05"
 ---
 
 # 记忆层指针

@@ -4,7 +4,7 @@ title: "lua_tables"
 description: "一手可读解包源「lua_tables」：24 文件 / 18.7MB。processed/*.json 的上游权威（血缘：extracted 原始→processed 派生）。"
 resource: "/projects/wiki/data/extracted/lua_tables/"
 tags: ["data_layer:full_archive", "first-hand-unpack", "upstream-of:processed", "content:lua-tables"]
-timestamp: "2026-07-04"
+timestamp: "2026-07-05"
 ---
 
 # 指针概念
