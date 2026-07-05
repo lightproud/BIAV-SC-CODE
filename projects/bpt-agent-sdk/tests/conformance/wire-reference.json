@@ -1,0 +1,2095 @@
+{
+  "generated_for": "official-arm request-body wire reference targets (structural fingerprints)",
+  "pins": {
+    "agentSdk": "0.3.199",
+    "claudeCode": "2.1.201"
+  },
+  "note": "The official engine wire shape our engine aims to match (minus expected-surface tool-set gaps). Refresh via `node run-wire.mjs --update-reference`.",
+  "scenarios": {
+    "default": {
+      "present": true,
+      "systemKind": "blocks",
+      "systemBlocks": 2,
+      "systemCacheBreakpoints": 1,
+      "toolNames": [
+        "Agent",
+        "Bash",
+        "CronCreate",
+        "CronDelete",
+        "CronList",
+        "Edit",
+        "EnterWorktree",
+        "ExitWorktree",
+        "ListConnectors",
+        "ListPlugins",
+        "ListSkills",
+        "NotebookEdit",
+        "Read",
+        "ReportFindings",
+        "ScheduleWakeup",
+        "SearchMcpRegistry",
+        "SearchPlugins",
+        "SearchSkills",
+        "SendMessage",
+        "ShowOnboardingRolePicker",
+        "Skill",
+        "SuggestConnectors",
+        "SuggestPluginInstall",
+        "SuggestSkills",
+        "TaskCreate",
+        "TaskGet",
+        "TaskList",
+        "TaskOutput",
+        "TaskStop",
+        "TaskUpdate",
+        "WebFetch",
+        "WebSearch",
+        "Workflow",
+        "Write"
+      ],
+      "toolCount": 34,
+      "toolCacheBreakpoints": 0,
+      "toolSchemas": {
+        "Agent": {
+          "params": [
+            "description",
+            "isolation",
+            "model",
+            "prompt",
+            "run_in_background",
+            "subagent_type"
+          ],
+          "required": [
+            "description",
+            "prompt"
+          ],
+          "hasDescription": true
+        },
+        "Bash": {
+          "params": [
+            "command",
+            "dangerouslyDisableSandbox",
+            "description",
+            "run_in_background",
+            "timeout"
+          ],
+          "required": [
+            "command"
+          ],
+          "hasDescription": true
+        },
+        "CronCreate": {
+          "params": [
+            "cron",
+            "durable",
+            "prompt",
+            "recurring"
+          ],
+          "required": [
+            "cron",
+            "prompt"
+          ],
+          "hasDescription": true
+        },
+        "CronDelete": {
+          "params": [
+            "id"
+          ],
+          "required": [
+            "id"
+          ],
+          "hasDescription": true
+        },
+        "CronList": {
+          "params": [],
+          "required": [],
+          "hasDescription": true
+        },
+        "Edit": {
+          "params": [
+            "file_path",
+            "new_string",
+            "old_string",
+            "replace_all"
+          ],
+          "required": [
+            "file_path",
+            "new_string",
+            "old_string"
+          ],
+          "hasDescription": true
+        },
+        "EnterWorktree": {
+          "params": [
+            "name",
+            "path"
+          ],
+          "required": [],
+          "hasDescription": true
+        },
+        "ExitWorktree": {
+          "params": [
+            "action",
+            "discard_changes"
+          ],
+          "required": [
+            "action"
+          ],
+          "hasDescription": true
+        },
+        "ListConnectors": {
+          "params": [
+            "keywords"
+          ],
+          "required": [],
+          "hasDescription": true
+        },
+        "ListPlugins": {
+          "params": [
+            "keywords"
+          ],
+          "required": [],
+          "hasDescription": true
+        },
+        "ListSkills": {
+          "params": [
+            "keywords"
+          ],
+          "required": [],
+          "hasDescription": true
+        },
+        "NotebookEdit": {
+          "params": [
+            "cell_id",
+            "cell_type",
+            "edit_mode",
+            "new_source",
+            "notebook_path"
+          ],
+          "required": [
+            "new_source",
+            "notebook_path"
+          ],
+          "hasDescription": true
+        },
+        "Read": {
+          "params": [
+            "file_path",
+            "limit",
+            "offset",
+            "pages"
+          ],
+          "required": [
+            "file_path"
+          ],
+          "hasDescription": true
+        },
+        "ReportFindings": {
+          "params": [
+            "findings",
+            "level"
+          ],
+          "required": [
+            "findings"
+          ],
+          "hasDescription": true
+        },
+        "ScheduleWakeup": {
+          "params": [
+            "delaySeconds",
+            "prompt",
+            "reason"
+          ],
+          "required": [
+            "delaySeconds",
+            "prompt",
+            "reason"
+          ],
+          "hasDescription": true
+        },
+        "SearchMcpRegistry": {
+          "params": [
+            "keywords"
+          ],
+          "required": [
+            "keywords"
+          ],
+          "hasDescription": true
+        },
+        "SearchPlugins": {
+          "params": [
+            "keywords"
+          ],
+          "required": [
+            "keywords"
+          ],
+          "hasDescription": true
+        },
+        "SearchSkills": {
+          "params": [
+            "keywords"
+          ],
+          "required": [
+            "keywords"
+          ],
+          "hasDescription": true
+        },
+        "SendMessage": {
+          "params": [
+            "message",
+            "summary",
+            "to"
+          ],
+          "required": [
+            "message",
+            "to"
+          ],
+          "hasDescription": true
+        },
+        "ShowOnboardingRolePicker": {
+          "params": [],
+          "required": [],
+          "hasDescription": true
+        },
+        "Skill": {
+          "params": [
+            "args",
+            "skill"
+          ],
+          "required": [
+            "skill"
+          ],
+          "hasDescription": true
+        },
+        "SuggestConnectors": {
+          "params": [
+            "uuids"
+          ],
+          "required": [
+            "uuids"
+          ],
+          "hasDescription": true
+        },
+        "SuggestPluginInstall": {
+          "params": [
+            "contextLabel",
+            "plugins"
+          ],
+          "required": [
+            "contextLabel",
+            "plugins"
+          ],
+          "hasDescription": true
+        },
+        "SuggestSkills": {
+          "params": [
+            "contextLabel",
+            "keywords"
+          ],
+          "required": [
+            "keywords"
+          ],
+          "hasDescription": true
+        },
+        "TaskCreate": {
+          "params": [
+            "activeForm",
+            "description",
+            "metadata",
+            "subject"
+          ],
+          "required": [
+            "description",
+            "subject"
+          ],
+          "hasDescription": true
+        },
+        "TaskGet": {
+          "params": [
+            "taskId"
+          ],
+          "required": [
+            "taskId"
+          ],
+          "hasDescription": true
+        },
+        "TaskList": {
+          "params": [],
+          "required": [],
+          "hasDescription": true
+        },
+        "TaskOutput": {
+          "params": [
+            "block",
+            "task_id",
+            "timeout"
+          ],
+          "required": [
+            "block",
+            "task_id",
+            "timeout"
+          ],
+          "hasDescription": true
+        },
+        "TaskStop": {
+          "params": [
+            "shell_id",
+            "task_id"
+          ],
+          "required": [],
+          "hasDescription": true
+        },
+        "TaskUpdate": {
+          "params": [
+            "activeForm",
+            "addBlockedBy",
+            "addBlocks",
+            "description",
+            "metadata",
+            "owner",
+            "status",
+            "subject",
+            "taskId"
+          ],
+          "required": [
+            "taskId"
+          ],
+          "hasDescription": true
+        },
+        "WebFetch": {
+          "params": [
+            "prompt",
+            "url"
+          ],
+          "required": [
+            "prompt",
+            "url"
+          ],
+          "hasDescription": true
+        },
+        "WebSearch": {
+          "params": [
+            "allowed_domains",
+            "blocked_domains",
+            "query"
+          ],
+          "required": [
+            "query"
+          ],
+          "hasDescription": true
+        },
+        "Workflow": {
+          "params": [
+            "args",
+            "description",
+            "name",
+            "resumeFromRunId",
+            "script",
+            "scriptPath",
+            "title"
+          ],
+          "required": [],
+          "hasDescription": true
+        },
+        "Write": {
+          "params": [
+            "content",
+            "file_path"
+          ],
+          "required": [
+            "content",
+            "file_path"
+          ],
+          "hasDescription": true
+        }
+      },
+      "thinking": {
+        "type": "adaptive",
+        "budget_tokens": null
+      },
+      "hasTemperature": false,
+      "stream": true,
+      "topLevelKeys": [
+        "context_management",
+        "max_tokens",
+        "messages",
+        "metadata",
+        "model",
+        "output_config",
+        "stream",
+        "system",
+        "thinking",
+        "tools"
+      ]
+    },
+    "thinking-off": {
+      "present": true,
+      "systemKind": "blocks",
+      "systemBlocks": 2,
+      "systemCacheBreakpoints": 1,
+      "toolNames": [
+        "Agent",
+        "Bash",
+        "CronCreate",
+        "CronDelete",
+        "CronList",
+        "Edit",
+        "EnterWorktree",
+        "ExitWorktree",
+        "ListConnectors",
+        "ListPlugins",
+        "ListSkills",
+        "NotebookEdit",
+        "Read",
+        "ReportFindings",
+        "ScheduleWakeup",
+        "SearchMcpRegistry",
+        "SearchPlugins",
+        "SearchSkills",
+        "SendMessage",
+        "ShowOnboardingRolePicker",
+        "Skill",
+        "SuggestConnectors",
+        "SuggestPluginInstall",
+        "SuggestSkills",
+        "TaskCreate",
+        "TaskGet",
+        "TaskList",
+        "TaskOutput",
+        "TaskStop",
+        "TaskUpdate",
+        "WebFetch",
+        "WebSearch",
+        "Workflow",
+        "Write"
+      ],
+      "toolCount": 34,
+      "toolCacheBreakpoints": 0,
+      "toolSchemas": {
+        "Agent": {
+          "params": [
+            "description",
+            "isolation",
+            "model",
+            "prompt",
+            "run_in_background",
+            "subagent_type"
+          ],
+          "required": [
+            "description",
+            "prompt"
+          ],
+          "hasDescription": true
+        },
+        "Bash": {
+          "params": [
+            "command",
+            "dangerouslyDisableSandbox",
+            "description",
+            "run_in_background",
+            "timeout"
+          ],
+          "required": [
+            "command"
+          ],
+          "hasDescription": true
+        },
+        "CronCreate": {
+          "params": [
+            "cron",
+            "durable",
+            "prompt",
+            "recurring"
+          ],
+          "required": [
+            "cron",
+            "prompt"
+          ],
+          "hasDescription": true
+        },
+        "CronDelete": {
+          "params": [
+            "id"
+          ],
+          "required": [
+            "id"
+          ],
+          "hasDescription": true
+        },
+        "CronList": {
+          "params": [],
+          "required": [],
+          "hasDescription": true
+        },
+        "Edit": {
+          "params": [
+            "file_path",
+            "new_string",
+            "old_string",
+            "replace_all"
+          ],
+          "required": [
+            "file_path",
+            "new_string",
+            "old_string"
+          ],
+          "hasDescription": true
+        },
+        "EnterWorktree": {
+          "params": [
+            "name",
+            "path"
+          ],
+          "required": [],
+          "hasDescription": true
+        },
+        "ExitWorktree": {
+          "params": [
+            "action",
+            "discard_changes"
+          ],
+          "required": [
+            "action"
+          ],
+          "hasDescription": true
+        },
+        "ListConnectors": {
+          "params": [
+            "keywords"
+          ],
+          "required": [],
+          "hasDescription": true
+        },
+        "ListPlugins": {
+          "params": [
+            "keywords"
+          ],
+          "required": [],
+          "hasDescription": true
+        },
+        "ListSkills": {
+          "params": [
+            "keywords"
+          ],
+          "required": [],
+          "hasDescription": true
+        },
+        "NotebookEdit": {
+          "params": [
+            "cell_id",
+            "cell_type",
+            "edit_mode",
+            "new_source",
+            "notebook_path"
+          ],
+          "required": [
+            "new_source",
+            "notebook_path"
+          ],
+          "hasDescription": true
+        },
+        "Read": {
+          "params": [
+            "file_path",
+            "limit",
+            "offset",
+            "pages"
+          ],
+          "required": [
+            "file_path"
+          ],
+          "hasDescription": true
+        },
+        "ReportFindings": {
+          "params": [
+            "findings",
+            "level"
+          ],
+          "required": [
+            "findings"
+          ],
+          "hasDescription": true
+        },
+        "ScheduleWakeup": {
+          "params": [
+            "delaySeconds",
+            "prompt",
+            "reason"
+          ],
+          "required": [
+            "delaySeconds",
+            "prompt",
+            "reason"
+          ],
+          "hasDescription": true
+        },
+        "SearchMcpRegistry": {
+          "params": [
+            "keywords"
+          ],
+          "required": [
+            "keywords"
+          ],
+          "hasDescription": true
+        },
+        "SearchPlugins": {
+          "params": [
+            "keywords"
+          ],
+          "required": [
+            "keywords"
+          ],
+          "hasDescription": true
+        },
+        "SearchSkills": {
+          "params": [
+            "keywords"
+          ],
+          "required": [
+            "keywords"
+          ],
+          "hasDescription": true
+        },
+        "SendMessage": {
+          "params": [
+            "message",
+            "summary",
+            "to"
+          ],
+          "required": [
+            "message",
+            "to"
+          ],
+          "hasDescription": true
+        },
+        "ShowOnboardingRolePicker": {
+          "params": [],
+          "required": [],
+          "hasDescription": true
+        },
+        "Skill": {
+          "params": [
+            "args",
+            "skill"
+          ],
+          "required": [
+            "skill"
+          ],
+          "hasDescription": true
+        },
+        "SuggestConnectors": {
+          "params": [
+            "uuids"
+          ],
+          "required": [
+            "uuids"
+          ],
+          "hasDescription": true
+        },
+        "SuggestPluginInstall": {
+          "params": [
+            "contextLabel",
+            "plugins"
+          ],
+          "required": [
+            "contextLabel",
+            "plugins"
+          ],
+          "hasDescription": true
+        },
+        "SuggestSkills": {
+          "params": [
+            "contextLabel",
+            "keywords"
+          ],
+          "required": [
+            "keywords"
+          ],
+          "hasDescription": true
+        },
+        "TaskCreate": {
+          "params": [
+            "activeForm",
+            "description",
+            "metadata",
+            "subject"
+          ],
+          "required": [
+            "description",
+            "subject"
+          ],
+          "hasDescription": true
+        },
+        "TaskGet": {
+          "params": [
+            "taskId"
+          ],
+          "required": [
+            "taskId"
+          ],
+          "hasDescription": true
+        },
+        "TaskList": {
+          "params": [],
+          "required": [],
+          "hasDescription": true
+        },
+        "TaskOutput": {
+          "params": [
+            "block",
+            "task_id",
+            "timeout"
+          ],
+          "required": [
+            "block",
+            "task_id",
+            "timeout"
+          ],
+          "hasDescription": true
+        },
+        "TaskStop": {
+          "params": [
+            "shell_id",
+            "task_id"
+          ],
+          "required": [],
+          "hasDescription": true
+        },
+        "TaskUpdate": {
+          "params": [
+            "activeForm",
+            "addBlockedBy",
+            "addBlocks",
+            "description",
+            "metadata",
+            "owner",
+            "status",
+            "subject",
+            "taskId"
+          ],
+          "required": [
+            "taskId"
+          ],
+          "hasDescription": true
+        },
+        "WebFetch": {
+          "params": [
+            "prompt",
+            "url"
+          ],
+          "required": [
+            "prompt",
+            "url"
+          ],
+          "hasDescription": true
+        },
+        "WebSearch": {
+          "params": [
+            "allowed_domains",
+            "blocked_domains",
+            "query"
+          ],
+          "required": [
+            "query"
+          ],
+          "hasDescription": true
+        },
+        "Workflow": {
+          "params": [
+            "args",
+            "description",
+            "name",
+            "resumeFromRunId",
+            "script",
+            "scriptPath",
+            "title"
+          ],
+          "required": [],
+          "hasDescription": true
+        },
+        "Write": {
+          "params": [
+            "content",
+            "file_path"
+          ],
+          "required": [
+            "content",
+            "file_path"
+          ],
+          "hasDescription": true
+        }
+      },
+      "thinking": {
+        "type": "disabled",
+        "budget_tokens": null
+      },
+      "hasTemperature": false,
+      "stream": true,
+      "topLevelKeys": [
+        "max_tokens",
+        "messages",
+        "metadata",
+        "model",
+        "output_config",
+        "stream",
+        "system",
+        "thinking",
+        "tools"
+      ]
+    },
+    "thinking-4096": {
+      "present": true,
+      "systemKind": "blocks",
+      "systemBlocks": 2,
+      "systemCacheBreakpoints": 1,
+      "toolNames": [
+        "Agent",
+        "Bash",
+        "CronCreate",
+        "CronDelete",
+        "CronList",
+        "Edit",
+        "EnterWorktree",
+        "ExitWorktree",
+        "ListConnectors",
+        "ListPlugins",
+        "ListSkills",
+        "NotebookEdit",
+        "Read",
+        "ReportFindings",
+        "ScheduleWakeup",
+        "SearchMcpRegistry",
+        "SearchPlugins",
+        "SearchSkills",
+        "SendMessage",
+        "ShowOnboardingRolePicker",
+        "Skill",
+        "SuggestConnectors",
+        "SuggestPluginInstall",
+        "SuggestSkills",
+        "TaskCreate",
+        "TaskGet",
+        "TaskList",
+        "TaskOutput",
+        "TaskStop",
+        "TaskUpdate",
+        "WebFetch",
+        "WebSearch",
+        "Workflow",
+        "Write"
+      ],
+      "toolCount": 34,
+      "toolCacheBreakpoints": 0,
+      "toolSchemas": {
+        "Agent": {
+          "params": [
+            "description",
+            "isolation",
+            "model",
+            "prompt",
+            "run_in_background",
+            "subagent_type"
+          ],
+          "required": [
+            "description",
+            "prompt"
+          ],
+          "hasDescription": true
+        },
+        "Bash": {
+          "params": [
+            "command",
+            "dangerouslyDisableSandbox",
+            "description",
+            "run_in_background",
+            "timeout"
+          ],
+          "required": [
+            "command"
+          ],
+          "hasDescription": true
+        },
+        "CronCreate": {
+          "params": [
+            "cron",
+            "durable",
+            "prompt",
+            "recurring"
+          ],
+          "required": [
+            "cron",
+            "prompt"
+          ],
+          "hasDescription": true
+        },
+        "CronDelete": {
+          "params": [
+            "id"
+          ],
+          "required": [
+            "id"
+          ],
+          "hasDescription": true
+        },
+        "CronList": {
+          "params": [],
+          "required": [],
+          "hasDescription": true
+        },
+        "Edit": {
+          "params": [
+            "file_path",
+            "new_string",
+            "old_string",
+            "replace_all"
+          ],
+          "required": [
+            "file_path",
+            "new_string",
+            "old_string"
+          ],
+          "hasDescription": true
+        },
+        "EnterWorktree": {
+          "params": [
+            "name",
+            "path"
+          ],
+          "required": [],
+          "hasDescription": true
+        },
+        "ExitWorktree": {
+          "params": [
+            "action",
+            "discard_changes"
+          ],
+          "required": [
+            "action"
+          ],
+          "hasDescription": true
+        },
+        "ListConnectors": {
+          "params": [
+            "keywords"
+          ],
+          "required": [],
+          "hasDescription": true
+        },
+        "ListPlugins": {
+          "params": [
+            "keywords"
+          ],
+          "required": [],
+          "hasDescription": true
+        },
+        "ListSkills": {
+          "params": [
+            "keywords"
+          ],
+          "required": [],
+          "hasDescription": true
+        },
+        "NotebookEdit": {
+          "params": [
+            "cell_id",
+            "cell_type",
+            "edit_mode",
+            "new_source",
+            "notebook_path"
+          ],
+          "required": [
+            "new_source",
+            "notebook_path"
+          ],
+          "hasDescription": true
+        },
+        "Read": {
+          "params": [
+            "file_path",
+            "limit",
+            "offset",
+            "pages"
+          ],
+          "required": [
+            "file_path"
+          ],
+          "hasDescription": true
+        },
+        "ReportFindings": {
+          "params": [
+            "findings",
+            "level"
+          ],
+          "required": [
+            "findings"
+          ],
+          "hasDescription": true
+        },
+        "ScheduleWakeup": {
+          "params": [
+            "delaySeconds",
+            "prompt",
+            "reason"
+          ],
+          "required": [
+            "delaySeconds",
+            "prompt",
+            "reason"
+          ],
+          "hasDescription": true
+        },
+        "SearchMcpRegistry": {
+          "params": [
+            "keywords"
+          ],
+          "required": [
+            "keywords"
+          ],
+          "hasDescription": true
+        },
+        "SearchPlugins": {
+          "params": [
+            "keywords"
+          ],
+          "required": [
+            "keywords"
+          ],
+          "hasDescription": true
+        },
+        "SearchSkills": {
+          "params": [
+            "keywords"
+          ],
+          "required": [
+            "keywords"
+          ],
+          "hasDescription": true
+        },
+        "SendMessage": {
+          "params": [
+            "message",
+            "summary",
+            "to"
+          ],
+          "required": [
+            "message",
+            "to"
+          ],
+          "hasDescription": true
+        },
+        "ShowOnboardingRolePicker": {
+          "params": [],
+          "required": [],
+          "hasDescription": true
+        },
+        "Skill": {
+          "params": [
+            "args",
+            "skill"
+          ],
+          "required": [
+            "skill"
+          ],
+          "hasDescription": true
+        },
+        "SuggestConnectors": {
+          "params": [
+            "uuids"
+          ],
+          "required": [
+            "uuids"
+          ],
+          "hasDescription": true
+        },
+        "SuggestPluginInstall": {
+          "params": [
+            "contextLabel",
+            "plugins"
+          ],
+          "required": [
+            "contextLabel",
+            "plugins"
+          ],
+          "hasDescription": true
+        },
+        "SuggestSkills": {
+          "params": [
+            "contextLabel",
+            "keywords"
+          ],
+          "required": [
+            "keywords"
+          ],
+          "hasDescription": true
+        },
+        "TaskCreate": {
+          "params": [
+            "activeForm",
+            "description",
+            "metadata",
+            "subject"
+          ],
+          "required": [
+            "description",
+            "subject"
+          ],
+          "hasDescription": true
+        },
+        "TaskGet": {
+          "params": [
+            "taskId"
+          ],
+          "required": [
+            "taskId"
+          ],
+          "hasDescription": true
+        },
+        "TaskList": {
+          "params": [],
+          "required": [],
+          "hasDescription": true
+        },
+        "TaskOutput": {
+          "params": [
+            "block",
+            "task_id",
+            "timeout"
+          ],
+          "required": [
+            "block",
+            "task_id",
+            "timeout"
+          ],
+          "hasDescription": true
+        },
+        "TaskStop": {
+          "params": [
+            "shell_id",
+            "task_id"
+          ],
+          "required": [],
+          "hasDescription": true
+        },
+        "TaskUpdate": {
+          "params": [
+            "activeForm",
+            "addBlockedBy",
+            "addBlocks",
+            "description",
+            "metadata",
+            "owner",
+            "status",
+            "subject",
+            "taskId"
+          ],
+          "required": [
+            "taskId"
+          ],
+          "hasDescription": true
+        },
+        "WebFetch": {
+          "params": [
+            "prompt",
+            "url"
+          ],
+          "required": [
+            "prompt",
+            "url"
+          ],
+          "hasDescription": true
+        },
+        "WebSearch": {
+          "params": [
+            "allowed_domains",
+            "blocked_domains",
+            "query"
+          ],
+          "required": [
+            "query"
+          ],
+          "hasDescription": true
+        },
+        "Workflow": {
+          "params": [
+            "args",
+            "description",
+            "name",
+            "resumeFromRunId",
+            "script",
+            "scriptPath",
+            "title"
+          ],
+          "required": [],
+          "hasDescription": true
+        },
+        "Write": {
+          "params": [
+            "content",
+            "file_path"
+          ],
+          "required": [
+            "content",
+            "file_path"
+          ],
+          "hasDescription": true
+        }
+      },
+      "thinking": {
+        "type": "adaptive",
+        "budget_tokens": null
+      },
+      "hasTemperature": false,
+      "stream": true,
+      "topLevelKeys": [
+        "context_management",
+        "max_tokens",
+        "messages",
+        "metadata",
+        "model",
+        "output_config",
+        "stream",
+        "system",
+        "thinking",
+        "tools"
+      ]
+    },
+    "cache-off": {
+      "present": true,
+      "systemKind": "blocks",
+      "systemBlocks": 2,
+      "systemCacheBreakpoints": 1,
+      "toolNames": [
+        "Agent",
+        "Bash",
+        "CronCreate",
+        "CronDelete",
+        "CronList",
+        "Edit",
+        "EnterWorktree",
+        "ExitWorktree",
+        "ListConnectors",
+        "ListPlugins",
+        "ListSkills",
+        "NotebookEdit",
+        "Read",
+        "ReportFindings",
+        "ScheduleWakeup",
+        "SearchMcpRegistry",
+        "SearchPlugins",
+        "SearchSkills",
+        "SendMessage",
+        "ShowOnboardingRolePicker",
+        "Skill",
+        "SuggestConnectors",
+        "SuggestPluginInstall",
+        "SuggestSkills",
+        "TaskCreate",
+        "TaskGet",
+        "TaskList",
+        "TaskOutput",
+        "TaskStop",
+        "TaskUpdate",
+        "WebFetch",
+        "WebSearch",
+        "Workflow",
+        "Write"
+      ],
+      "toolCount": 34,
+      "toolCacheBreakpoints": 0,
+      "toolSchemas": {
+        "Agent": {
+          "params": [
+            "description",
+            "isolation",
+            "model",
+            "prompt",
+            "run_in_background",
+            "subagent_type"
+          ],
+          "required": [
+            "description",
+            "prompt"
+          ],
+          "hasDescription": true
+        },
+        "Bash": {
+          "params": [
+            "command",
+            "dangerouslyDisableSandbox",
+            "description",
+            "run_in_background",
+            "timeout"
+          ],
+          "required": [
+            "command"
+          ],
+          "hasDescription": true
+        },
+        "CronCreate": {
+          "params": [
+            "cron",
+            "durable",
+            "prompt",
+            "recurring"
+          ],
+          "required": [
+            "cron",
+            "prompt"
+          ],
+          "hasDescription": true
+        },
+        "CronDelete": {
+          "params": [
+            "id"
+          ],
+          "required": [
+            "id"
+          ],
+          "hasDescription": true
+        },
+        "CronList": {
+          "params": [],
+          "required": [],
+          "hasDescription": true
+        },
+        "Edit": {
+          "params": [
+            "file_path",
+            "new_string",
+            "old_string",
+            "replace_all"
+          ],
+          "required": [
+            "file_path",
+            "new_string",
+            "old_string"
+          ],
+          "hasDescription": true
+        },
+        "EnterWorktree": {
+          "params": [
+            "name",
+            "path"
+          ],
+          "required": [],
+          "hasDescription": true
+        },
+        "ExitWorktree": {
+          "params": [
+            "action",
+            "discard_changes"
+          ],
+          "required": [
+            "action"
+          ],
+          "hasDescription": true
+        },
+        "ListConnectors": {
+          "params": [
+            "keywords"
+          ],
+          "required": [],
+          "hasDescription": true
+        },
+        "ListPlugins": {
+          "params": [
+            "keywords"
+          ],
+          "required": [],
+          "hasDescription": true
+        },
+        "ListSkills": {
+          "params": [
+            "keywords"
+          ],
+          "required": [],
+          "hasDescription": true
+        },
+        "NotebookEdit": {
+          "params": [
+            "cell_id",
+            "cell_type",
+            "edit_mode",
+            "new_source",
+            "notebook_path"
+          ],
+          "required": [
+            "new_source",
+            "notebook_path"
+          ],
+          "hasDescription": true
+        },
+        "Read": {
+          "params": [
+            "file_path",
+            "limit",
+            "offset",
+            "pages"
+          ],
+          "required": [
+            "file_path"
+          ],
+          "hasDescription": true
+        },
+        "ReportFindings": {
+          "params": [
+            "findings",
+            "level"
+          ],
+          "required": [
+            "findings"
+          ],
+          "hasDescription": true
+        },
+        "ScheduleWakeup": {
+          "params": [
+            "delaySeconds",
+            "prompt",
+            "reason"
+          ],
+          "required": [
+            "delaySeconds",
+            "prompt",
+            "reason"
+          ],
+          "hasDescription": true
+        },
+        "SearchMcpRegistry": {
+          "params": [
+            "keywords"
+          ],
+          "required": [
+            "keywords"
+          ],
+          "hasDescription": true
+        },
+        "SearchPlugins": {
+          "params": [
+            "keywords"
+          ],
+          "required": [
+            "keywords"
+          ],
+          "hasDescription": true
+        },
+        "SearchSkills": {
+          "params": [
+            "keywords"
+          ],
+          "required": [
+            "keywords"
+          ],
+          "hasDescription": true
+        },
+        "SendMessage": {
+          "params": [
+            "message",
+            "summary",
+            "to"
+          ],
+          "required": [
+            "message",
+            "to"
+          ],
+          "hasDescription": true
+        },
+        "ShowOnboardingRolePicker": {
+          "params": [],
+          "required": [],
+          "hasDescription": true
+        },
+        "Skill": {
+          "params": [
+            "args",
+            "skill"
+          ],
+          "required": [
+            "skill"
+          ],
+          "hasDescription": true
+        },
+        "SuggestConnectors": {
+          "params": [
+            "uuids"
+          ],
+          "required": [
+            "uuids"
+          ],
+          "hasDescription": true
+        },
+        "SuggestPluginInstall": {
+          "params": [
+            "contextLabel",
+            "plugins"
+          ],
+          "required": [
+            "contextLabel",
+            "plugins"
+          ],
+          "hasDescription": true
+        },
+        "SuggestSkills": {
+          "params": [
+            "contextLabel",
+            "keywords"
+          ],
+          "required": [
+            "keywords"
+          ],
+          "hasDescription": true
+        },
+        "TaskCreate": {
+          "params": [
+            "activeForm",
+            "description",
+            "metadata",
+            "subject"
+          ],
+          "required": [
+            "description",
+            "subject"
+          ],
+          "hasDescription": true
+        },
+        "TaskGet": {
+          "params": [
+            "taskId"
+          ],
+          "required": [
+            "taskId"
+          ],
+          "hasDescription": true
+        },
+        "TaskList": {
+          "params": [],
+          "required": [],
+          "hasDescription": true
+        },
+        "TaskOutput": {
+          "params": [
+            "block",
+            "task_id",
+            "timeout"
+          ],
+          "required": [
+            "block",
+            "task_id",
+            "timeout"
+          ],
+          "hasDescription": true
+        },
+        "TaskStop": {
+          "params": [
+            "shell_id",
+            "task_id"
+          ],
+          "required": [],
+          "hasDescription": true
+        },
+        "TaskUpdate": {
+          "params": [
+            "activeForm",
+            "addBlockedBy",
+            "addBlocks",
+            "description",
+            "metadata",
+            "owner",
+            "status",
+            "subject",
+            "taskId"
+          ],
+          "required": [
+            "taskId"
+          ],
+          "hasDescription": true
+        },
+        "WebFetch": {
+          "params": [
+            "prompt",
+            "url"
+          ],
+          "required": [
+            "prompt",
+            "url"
+          ],
+          "hasDescription": true
+        },
+        "WebSearch": {
+          "params": [
+            "allowed_domains",
+            "blocked_domains",
+            "query"
+          ],
+          "required": [
+            "query"
+          ],
+          "hasDescription": true
+        },
+        "Workflow": {
+          "params": [
+            "args",
+            "description",
+            "name",
+            "resumeFromRunId",
+            "script",
+            "scriptPath",
+            "title"
+          ],
+          "required": [],
+          "hasDescription": true
+        },
+        "Write": {
+          "params": [
+            "content",
+            "file_path"
+          ],
+          "required": [
+            "content",
+            "file_path"
+          ],
+          "hasDescription": true
+        }
+      },
+      "thinking": {
+        "type": "adaptive",
+        "budget_tokens": null
+      },
+      "hasTemperature": false,
+      "stream": true,
+      "topLevelKeys": [
+        "context_management",
+        "max_tokens",
+        "messages",
+        "metadata",
+        "model",
+        "output_config",
+        "stream",
+        "system",
+        "thinking",
+        "tools"
+      ]
+    },
+    "mcp-added": {
+      "present": true,
+      "systemKind": "blocks",
+      "systemBlocks": 2,
+      "systemCacheBreakpoints": 1,
+      "toolNames": [
+        "Agent",
+        "Bash",
+        "CronCreate",
+        "CronDelete",
+        "CronList",
+        "Edit",
+        "EnterWorktree",
+        "ExitWorktree",
+        "ListConnectors",
+        "ListPlugins",
+        "ListSkills",
+        "NotebookEdit",
+        "Read",
+        "ReportFindings",
+        "ScheduleWakeup",
+        "SearchMcpRegistry",
+        "SearchPlugins",
+        "SearchSkills",
+        "SendMessage",
+        "ShowOnboardingRolePicker",
+        "Skill",
+        "SuggestConnectors",
+        "SuggestPluginInstall",
+        "SuggestSkills",
+        "TaskCreate",
+        "TaskGet",
+        "TaskList",
+        "TaskOutput",
+        "TaskStop",
+        "TaskUpdate",
+        "WebFetch",
+        "WebSearch",
+        "Workflow",
+        "Write",
+        "mcp__conf__ping"
+      ],
+      "toolCount": 35,
+      "toolCacheBreakpoints": 0,
+      "toolSchemas": {
+        "Agent": {
+          "params": [
+            "description",
+            "isolation",
+            "model",
+            "prompt",
+            "run_in_background",
+            "subagent_type"
+          ],
+          "required": [
+            "description",
+            "prompt"
+          ],
+          "hasDescription": true
+        },
+        "Bash": {
+          "params": [
+            "command",
+            "dangerouslyDisableSandbox",
+            "description",
+            "run_in_background",
+            "timeout"
+          ],
+          "required": [
+            "command"
+          ],
+          "hasDescription": true
+        },
+        "CronCreate": {
+          "params": [
+            "cron",
+            "durable",
+            "prompt",
+            "recurring"
+          ],
+          "required": [
+            "cron",
+            "prompt"
+          ],
+          "hasDescription": true
+        },
+        "CronDelete": {
+          "params": [
+            "id"
+          ],
+          "required": [
+            "id"
+          ],
+          "hasDescription": true
+        },
+        "CronList": {
+          "params": [],
+          "required": [],
+          "hasDescription": true
+        },
+        "Edit": {
+          "params": [
+            "file_path",
+            "new_string",
+            "old_string",
+            "replace_all"
+          ],
+          "required": [
+            "file_path",
+            "new_string",
+            "old_string"
+          ],
+          "hasDescription": true
+        },
+        "EnterWorktree": {
+          "params": [
+            "name",
+            "path"
+          ],
+          "required": [],
+          "hasDescription": true
+        },
+        "ExitWorktree": {
+          "params": [
+            "action",
+            "discard_changes"
+          ],
+          "required": [
+            "action"
+          ],
+          "hasDescription": true
+        },
+        "ListConnectors": {
+          "params": [
+            "keywords"
+          ],
+          "required": [],
+          "hasDescription": true
+        },
+        "ListPlugins": {
+          "params": [
+            "keywords"
+          ],
+          "required": [],
+          "hasDescription": true
+        },
+        "ListSkills": {
+          "params": [
+            "keywords"
+          ],
+          "required": [],
+          "hasDescription": true
+        },
+        "NotebookEdit": {
+          "params": [
+            "cell_id",
+            "cell_type",
+            "edit_mode",
+            "new_source",
+            "notebook_path"
+          ],
+          "required": [
+            "new_source",
+            "notebook_path"
+          ],
+          "hasDescription": true
+        },
+        "Read": {
+          "params": [
+            "file_path",
+            "limit",
+            "offset",
+            "pages"
+          ],
+          "required": [
+            "file_path"
+          ],
+          "hasDescription": true
+        },
+        "ReportFindings": {
+          "params": [
+            "findings",
+            "level"
+          ],
+          "required": [
+            "findings"
+          ],
+          "hasDescription": true
+        },
+        "ScheduleWakeup": {
+          "params": [
+            "delaySeconds",
+            "prompt",
+            "reason"
+          ],
+          "required": [
+            "delaySeconds",
+            "prompt",
+            "reason"
+          ],
+          "hasDescription": true
+        },
+        "SearchMcpRegistry": {
+          "params": [
+            "keywords"
+          ],
+          "required": [
+            "keywords"
+          ],
+          "hasDescription": true
+        },
+        "SearchPlugins": {
+          "params": [
+            "keywords"
+          ],
+          "required": [
+            "keywords"
+          ],
+          "hasDescription": true
+        },
+        "SearchSkills": {
+          "params": [
+            "keywords"
+          ],
+          "required": [
+            "keywords"
+          ],
+          "hasDescription": true
+        },
+        "SendMessage": {
+          "params": [
+            "message",
+            "summary",
+            "to"
+          ],
+          "required": [
+            "message",
+            "to"
+          ],
+          "hasDescription": true
+        },
+        "ShowOnboardingRolePicker": {
+          "params": [],
+          "required": [],
+          "hasDescription": true
+        },
+        "Skill": {
+          "params": [
+            "args",
+            "skill"
+          ],
+          "required": [
+            "skill"
+          ],
+          "hasDescription": true
+        },
+        "SuggestConnectors": {
+          "params": [
+            "uuids"
+          ],
+          "required": [
+            "uuids"
+          ],
+          "hasDescription": true
+        },
+        "SuggestPluginInstall": {
+          "params": [
+            "contextLabel",
+            "plugins"
+          ],
+          "required": [
+            "contextLabel",
+            "plugins"
+          ],
+          "hasDescription": true
+        },
+        "SuggestSkills": {
+          "params": [
+            "contextLabel",
+            "keywords"
+          ],
+          "required": [
+            "keywords"
+          ],
+          "hasDescription": true
+        },
+        "TaskCreate": {
+          "params": [
+            "activeForm",
+            "description",
+            "metadata",
+            "subject"
+          ],
+          "required": [
+            "description",
+            "subject"
+          ],
+          "hasDescription": true
+        },
+        "TaskGet": {
+          "params": [
+            "taskId"
+          ],
+          "required": [
+            "taskId"
+          ],
+          "hasDescription": true
+        },
+        "TaskList": {
+          "params": [],
+          "required": [],
+          "hasDescription": true
+        },
+        "TaskOutput": {
+          "params": [
+            "block",
+            "task_id",
+            "timeout"
+          ],
+          "required": [
+            "block",
+            "task_id",
+            "timeout"
+          ],
+          "hasDescription": true
+        },
+        "TaskStop": {
+          "params": [
+            "shell_id",
+            "task_id"
+          ],
+          "required": [],
+          "hasDescription": true
+        },
+        "TaskUpdate": {
+          "params": [
+            "activeForm",
+            "addBlockedBy",
+            "addBlocks",
+            "description",
+            "metadata",
+            "owner",
+            "status",
+            "subject",
+            "taskId"
+          ],
+          "required": [
+            "taskId"
+          ],
+          "hasDescription": true
+        },
+        "WebFetch": {
+          "params": [
+            "prompt",
+            "url"
+          ],
+          "required": [
+            "prompt",
+            "url"
+          ],
+          "hasDescription": true
+        },
+        "WebSearch": {
+          "params": [
+            "allowed_domains",
+            "blocked_domains",
+            "query"
+          ],
+          "required": [
+            "query"
+          ],
+          "hasDescription": true
+        },
+        "Workflow": {
+          "params": [
+            "args",
+            "description",
+            "name",
+            "resumeFromRunId",
+            "script",
+            "scriptPath",
+            "title"
+          ],
+          "required": [],
+          "hasDescription": true
+        },
+        "Write": {
+          "params": [
+            "content",
+            "file_path"
+          ],
+          "required": [
+            "content",
+            "file_path"
+          ],
+          "hasDescription": true
+        },
+        "mcp__conf__ping": {
+          "params": [],
+          "required": [],
+          "hasDescription": true
+        }
+      },
+      "thinking": {
+        "type": "adaptive",
+        "budget_tokens": null
+      },
+      "hasTemperature": false,
+      "stream": true,
+      "topLevelKeys": [
+        "context_management",
+        "max_tokens",
+        "messages",
+        "metadata",
+        "model",
+        "output_config",
+        "stream",
+        "system",
+        "thinking",
+        "tools"
+      ]
+    }
+  }
+}
