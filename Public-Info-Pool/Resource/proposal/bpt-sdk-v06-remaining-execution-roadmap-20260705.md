@@ -75,6 +75,15 @@ All four depend only on the confirmed-shipped v0.6 utility runtime (`runUtilityC
 - **G-SANDBOX**（守密人「G-SANDBOX 推荐 / 网络默认断网」裁定，已落）：默认开启的 Bash 沙箱、**可插拔后端**。① `src/sandbox/`：`resolveSandboxBackend`（Linux+bwrap→BwrapBackend，否则 null 优雅降级 + 诚实 debug；注入式后端接缝）+ `BwrapBackend`（纯 argv：`--ro-bind / /` + writablePath 逐条 rw-bind + `--unshare-net`（默认断网）+ `$TMPDIR` 重定向；限制范围只做归档描述的写盘/网络/tmpdir，不发明读隐藏/seccomp）+ `detectSandboxEvidence`/`sandboxFailureHint`（沙箱致败签名→`[sandbox]` 证据 + 重试路径）。② 双 spawn 位（前台 bash.ts / 后台 shells.ts）经 `planShellSpawn` 同一接缝；持久 cwd/env 在沙箱内仍工作（stateDir rw-bind）。③ `dangerouslyDisableSandbox` 经权限门走 ask（Bash 非只读天然不自动放行，除 bypass/allow 规则）；mandatory 模式（`allowEscape:false`）政策拒绝。④ 描述/schema 门控：未激活字节不变、无 param、不含 "sandbox"；激活加忠实指引（17 片段 provenance + corpus-sync 字节对齐）+ param；断网默认才装网络证据片段（红线）。⑤ **Windows/macOS 无后端→如实降级、不假装隔离**（同官方 CC Windows 姿态）。⑥ 卫生批：**红线常驻守卫** `tests/red-line-tool-names.test.ts`（任何复现提示词不得引用当版缺席工具）+ plan 注释修正。**conformance/emulator 钉 `sandbox:false`** 保确定性（不依赖 CI 机器 bwrap）。**1026 单测全绿 + 2 skipped（真 bwrap 隔离测试无 bwrap 时跳过）**。
 - **测量基建 G-cmp（任务#17）对账**：一致性套件 M1-M4 早已封顶（L1 流语法 / L2 选项 16 锁 / L3 工具差分 / L4 故障注入 / L5 五维真机 + 棘轮门 + 漂移哨兵），#17 陈旧 pending 标记订正为 completed（代码早已落，非缺口）。
 
+## 已落（后续会话，引擎对齐批 E1–E5）
+
+- **来源**：L5 首轮真跑解剖交接档 `Public-Info-Pool/Resource/repo-engineering/bpt-sdk-engine-alignment-handoff-20260705.md`（PR #456）。五条引擎侧官方对齐全部落地，关键行对**真官方臂**双臂实测收敛：
+- **E1** `claude_code` preset 默认开思考（4096 我方选定值、COMPAT 登记 KD；显式关闭口；非 preset 零变化；最终验收待守密人派一轮真 L5）。
+- **E4** Write 读前写门（逐字官方错误文案；`readFilePaths` 每 query 一份、子代理同引用；**L3-WRITE-02 官方臂 CONTENT_MATCH、KD-L3-06 退役**）。
+- **E5** maxBudgetUsd 执行前截停（工具零执行、无 tool_result 用户轮；**L2 s12 转 MATCH、engineFinding 退役**）。
+- **E3** 截断轮优雅降级（整块挽救；完整 tool_use 照常执行 + 续轮；未闭合绝不执行；**L4 三条保红行全清、KD-L4-04 退役、KD-L4-02 收窄 errorPresent**）。
+- **E2** result 口径对齐（num_turns/usage 逐 result、cost/apiMs 累计；**破坏性** MIGRATION 5e；run-l5 聚合并轨、**KD-L5-04 退役**）。
+
 ## 未落（按上文依赖链推进，需守密人裁或先建工具本体）
 - **编排链**（严格顺序，各需工具本体先落）：O-B1 plan-mode 只读门（门已在、补分阶段流水线范例）→ O-B2 SendMessage + 会话内路由 → O-B3 跨会话对等 + 结构化同意不可转述防火墙（过 escalation-rejection red-team 才接线；**刻意不复用 fork 特权继承**）。
 - **Track 2/3 本体**（复用优先）：Task* CRUD + Monitor（v0.4 通知汇 + v0.5 ShellManager）· Skills 注册表+工具 · Cron 空闲门调度 · Loop skill 提示词（A+B 后）· Workflow DSL 引擎（最后，待守密人沙箱策略裁 + 确认 BPT Desktop 消费方；确定性重放为核心难点）。

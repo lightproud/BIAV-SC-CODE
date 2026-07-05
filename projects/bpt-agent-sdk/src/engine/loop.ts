@@ -6,7 +6,7 @@
 
 import { randomUUID } from 'node:crypto';
 
-import { AbortError, APIStatusError, isAbortError } from '../errors.js';
+import { AbortError, APIConnectionError, APIStatusError, isAbortError } from '../errors.js';
 import type {
   APIAssistantMessage,
   APIMessageParam,
@@ -207,6 +207,14 @@ export async function* runAgentLoop(
   let durationApiMs = 0;
   let numTurns = 0;
   let structuredRetries = 0;
+  // E3: non-fatal stream-truncation notes for the terminal result's `errors`
+  // (a truncated turn degrades gracefully; the note keeps the fault visible).
+  const streamErrors: string[] = [];
+  // E3: set when the CURRENT turn's assistant message was salvaged from a
+  // truncated stream (per-attempt; consumed by the tool-dispatch decision -
+  // official 2.1.201 acts on complete tool_use blocks even when the cut
+  // landed before stop_reason arrived).
+  let turnTruncated = false;
   let firstTokenAtMs: number | undefined; // wall-clock of the first content event
   let firstStreamStartMs: number | undefined; // apiStart of the stream that produced it
   let totalCostUsd = 0;
@@ -305,6 +313,9 @@ export async function* runAgentLoop(
     permission_denials: deps.permissions.denials(),
     metrics: buildMetrics(),
     ...ttftFields(),
+    // E3: non-fatal truncation notes ride the terminal result (success
+    // included) so a degraded turn stays observable without voiding the run.
+    ...(streamErrors.length > 0 ? { errors: [...streamErrors] } : {}),
   });
 
   const errorResult = (
@@ -320,11 +331,12 @@ export async function* runAgentLoop(
     subtype,
     is_error: true,
     errorMessage,
-    // Official-surface parallel: the reference SDK reports error text as a
-    // string[]; this engine only ever has the one message.
-    errors: [errorMessage],
     ...(apiErrorStatus !== undefined ? { api_error_status: apiErrorStatus } : {}),
     ...resultBase(),
+    // Official-surface parallel: the reference SDK reports error text as a
+    // string[]. Placed AFTER the resultBase spread so the fatal message wins
+    // the field, with any E3 truncation notes appended.
+    errors: [errorMessage, ...streamErrors],
   });
 
   /** Fold one attempt's usage into the running totals + per-model ledger. */
@@ -400,6 +412,13 @@ export async function* runAgentLoop(
       config.thinking.budget ??
       config.maxThinkingTokens ??
       DEFAULT_THINKING_BUDGET;
+    // A resolved budget of 0 (or less) means "thinking off": it lets a live
+    // setMaxThinkingTokens(0) disable thinking mid-run (the preset default
+    // injects its budget via maxThinkingTokens precisely so this works), and
+    // the API would reject budget_tokens < 1024 anyway.
+    if (requested <= 0) {
+      return undefined;
+    }
     // The Messages API requires thinking.budget_tokens < max_tokens, otherwise
     // it 400s the request. The default budget (10000) exceeds the default
     // max_tokens (8192), so clamp the budget below max_tokens and warn.
@@ -535,6 +554,7 @@ export async function* runAgentLoop(
               : 'last',
     });
     const apiStart = Date.now();
+    turnTruncated = false;
     try {
       for await (const event of deps.transport.stream(outgoing)) {
         // Surface any retries that happened in the request phase (all buffered
@@ -556,6 +576,30 @@ export async function* runAgentLoop(
         }
         accumulator.feed(event);
       }
+    } catch (err) {
+      // E3: graceful degradation for a MID-STREAM connection drop (flagged by
+      // the transport; never a timeout/idle/abort). Salvage the blocks the
+      // wire delivered whole instead of voiding the turn - official 2.1.201
+      // keeps the partial text and even executes complete tool_use blocks
+      // (conformance run-l4 KD-L4-02/04). Nothing salvageable (no
+      // message_start, zero whole blocks) falls through to the error path.
+      if (
+        err instanceof APIConnectionError &&
+        err.midStreamTruncation === true &&
+        !signal.aborted
+      ) {
+        const salvaged = accumulator.salvageTruncated();
+        if (salvaged !== undefined) {
+          turnTruncated = true;
+          streamErrors.push(err.message);
+          deps.debug(
+            `engine: truncated stream salvaged (${salvaged.content.length} ` +
+              `whole block(s) kept): ${err.message}`,
+          );
+          return salvaged;
+        }
+      }
+      throw err;
     } finally {
       durationApiMs += Date.now() - apiStart;
     }
@@ -925,16 +969,22 @@ export async function* runAgentLoop(
       // --- Usage/cost tracking per response model. --------------------------
       recordUsage(assistant.model, normalizeUsage(assistant.usage));
 
-      // NOTE: the maxBudgetUsd check is intentionally NOT here. A turn that has
-      // just naturally ended (end_turn / stop_sequence / etc.) must still yield
-      // its completed answer as a success result even if its cost tipped the
-      // budget - the money is already spent and there is nothing further to
-      // bill. The budget is enforced below, ONLY when about to CONTINUE the
-      // loop with another (billable) API call.
+      // NOTE on budget placement: a turn that has just naturally ended
+      // (end_turn / stop_sequence / etc.) must still yield its completed
+      // answer as a success result even if its cost tipped the budget - the
+      // money is already spent and there is nothing further to bill. But a
+      // turn that REQUESTS TOOLS while the budget is already exceeded is
+      // stopped BEFORE any tool executes (E5 below), matching official
+      // 2.1.201 (conformance run-l2 s12: the official arm trips the cap
+      // before the tool's side effects, same subtype and POST count).
 
       // --- Tool dispatch or natural end. -------------------------------------
+      // E3: a salvaged truncated turn is actionable on its complete tool_use
+      // blocks even when the cut landed before message_delta delivered
+      // stop_reason (official 2.1.201 executes at either cut depth -
+      // conformance run-l4 l4-sse-truncated-tool-incomplete).
       const toolUses =
-        assistant.stop_reason === 'tool_use'
+        assistant.stop_reason === 'tool_use' || turnTruncated
           ? assistant.content.filter((b): b is ToolUseBlock => b.type === 'tool_use')
           : [];
 
@@ -955,6 +1005,26 @@ export async function* runAgentLoop(
       // rewritten response): treat as a natural end rather than pushing an
       // empty {role:'user',content:[]} turn that would poison the history.
       if (toolUses.length > 0) {
+        // E5: budget pre-stop. The turn's cost was recorded above; if it
+        // already exceeds maxBudgetUsd, the requested tools are NOT executed
+        // (no side effects past the cap) and the run ends terminally. No
+        // tool_result user turn is emitted - matching the official public
+        // stream shape (assistant tool_use -> result/error_max_budget_usd);
+        // the persisted trailing assistant tool_use is healed on resume by
+        // the session store's repairPairing.
+        if (config.maxBudgetUsd !== undefined && totalCostUsd > config.maxBudgetUsd) {
+          pushAssistant(assistant.content);
+          deps.debug(
+            `engine: budget pre-stop - ${toolUses.length} requested tool call(s) ` +
+              `not executed (estimated cost $${totalCostUsd.toFixed(6)} > ` +
+              `maxBudgetUsd $${config.maxBudgetUsd})`,
+          );
+          yield errorResult(
+            'error_max_budget_usd',
+            `Estimated cost $${totalCostUsd.toFixed(6)} exceeded maxBudgetUsd ($${config.maxBudgetUsd})`,
+          );
+          return;
+        }
         const results: ToolResultBlockParam[] = [];
         let batchStop: ToolExecOutcome['stop'];
         let batchDefer: ToolExecOutcome['defer'];

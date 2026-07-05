@@ -74,6 +74,10 @@ import { loadProjectMcpServers } from './mcp/project-config.js';
 
 const DEFAULT_MODEL = 'claude-sonnet-4-5';
 const DEFAULT_MAX_OUTPUT_TOKENS = 8192;
+// Default thinking budget on the claude_code preset path (E1). OUR chosen
+// value: the official CLI observably defaults thinking ON, but its budget is
+// request-body-internal (never read under the net-observation boundary).
+const DEFAULT_PRESET_THINKING_BUDGET = 4096;
 const CLAUDE_CODE_VERSION = '0.1.0';
 
 /** Static model list surfaced by supportedModels()/initializationResult(). */
@@ -453,6 +457,11 @@ export function query(args: {
     );
   }
 
+  // Read-before-write gate state (E4): one shared Set per query. The subagent
+  // runtime threads the SAME reference into child contexts (like shells /
+  // sandbox), so "this session has read the file" spans parent and children.
+  const readFilePaths = new Set<string>();
+
   const hooks = new DefaultHookRunner({
     hooks: options.hooks,
     debug,
@@ -619,6 +628,39 @@ export function query(args: {
     systemPromptVolatile = promptParts.volatile;
   }
 
+  // Default-on extended thinking, claude_code preset path ONLY (E1). The
+  // official CLI enables thinking by default: every official-arm L5 trace
+  // (54/54) carries thinking events on the public stream. Only "thinking is
+  // on" is observable there — the official BUDGET rides in the (never read)
+  // request body, so 4096 is OUR chosen default, registered as a KD in
+  // docs/COMPAT.md. Injection rules:
+  //  - an explicit options.thinking always wins (passed through verbatim);
+  //  - maxThinkingTokens: 0 is the explicit opt-out (no thinking param);
+  //  - maxThinkingTokens > 0 enables thinking with that budget;
+  //  - both unset -> enable with the 4096 default budget.
+  // The default budget is injected via maxThinkingTokens (not a budget key on
+  // the thinking object) so computeThinking's precedence chain resolves it and
+  // a live setMaxThinkingTokens(0) can still switch thinking OFF mid-run.
+  // Non-preset paths (bare string / segments / no systemPrompt) are unchanged:
+  // the drop-in default remains "no thinking param".
+  const isClaudeCodePreset =
+    sp !== null &&
+    typeof sp === 'object' &&
+    'type' in sp &&
+    sp.type === 'preset' &&
+    sp.preset === 'claude_code';
+  let thinkingConfig = options.thinking;
+  let maxThinkingTokensConfig = options.maxThinkingTokens;
+  if (isClaudeCodePreset && thinkingConfig === undefined) {
+    if (maxThinkingTokensConfig === undefined) {
+      thinkingConfig = { type: 'enabled' };
+      maxThinkingTokensConfig = DEFAULT_PRESET_THINKING_BUDGET;
+    } else if (maxThinkingTokensConfig > 0) {
+      thinkingConfig = { type: 'enabled' };
+    }
+    // maxThinkingTokens <= 0: explicit opt-out, inject nothing.
+  }
+
   // Mutable engine config shared across turns; setModel/setMaxThinkingTokens
   // mutate it live (takes effect from the next assistant turn).
   const engineConfig: EngineConfig = {
@@ -640,8 +682,8 @@ export function query(args: {
     ...(systemBlocks !== undefined ? { systemBlocks } : {}),
     maxTurns: options.maxTurns,
     maxBudgetUsd: options.maxBudgetUsd,
-    thinking: options.thinking,
-    maxThinkingTokens: options.maxThinkingTokens,
+    thinking: thinkingConfig,
+    maxThinkingTokens: maxThinkingTokensConfig,
     compaction: buildCompactionConfig(options.compaction),
     outputFormat,
     // Prompt caching is ON by default (matches the official SDK and saves the
@@ -680,6 +722,7 @@ export function query(args: {
     emitObservability: emitObs,
     shells,
     sandbox: sandboxCtx,
+    readFilePaths,
   });
 
   // --- Input queue (unified for string and streaming-input modes) -----------
@@ -888,19 +931,28 @@ export function query(args: {
 
     // Session-wide accumulators (finding #33). In streaming-input mode the
     // engine loop runs once per user turn with its own fresh per-turn counters;
-    // these carry the running totals across turns so maxBudgetUsd / maxTurns are
-    // enforced session-wide and every result message reports cumulative figures.
+    // these carry the running totals across turns so maxBudgetUsd / maxTurns
+    // are enforced SESSION-wide. Reporting follows the official per-result
+    // semantics (E2, KD-L5-04 pinned live from run 28736460533): num_turns and
+    // usage on each result are THAT turn's own figures, while total_cost_usd
+    // and duration_api_ms report the session-cumulative (strictly increasing)
+    // totals - enforcement stays cumulative, only the report fields differ.
     let sessionTurns = 0;
     let sessionCost = 0;
+    let sessionApiMs = 0;
     let sessionUsage = zeroUsage();
     const sessionModelUsage: Record<string, ModelUsage> = {};
 
+    // Common fields for QUERY-LAYER synthetic results (hook-block, pre-turn
+    // session-cap stop, interrupt): no engine turn ran for THIS result, so the
+    // per-result fields are zero (E2) and the cumulative fields report the
+    // session totals. The official shape for these paths is unobserved.
     const resultCommon = () => ({
       duration_ms: Date.now() - startedAt,
-      duration_api_ms: 0,
-      num_turns: sessionTurns,
+      duration_api_ms: sessionApiMs,
+      num_turns: 0,
       total_cost_usd: sessionCost,
-      usage: { ...sessionUsage },
+      usage: zeroUsage(),
       modelUsage: Object.fromEntries(
         Object.entries(sessionModelUsage).map(([k, v]) => [k, { ...v }]),
       ),
@@ -933,6 +985,7 @@ export function query(args: {
     const accumulateResult = (r: SDKResultMessage): void => {
       sessionTurns += r.num_turns;
       sessionCost += r.total_cost_usd;
+      sessionApiMs += r.duration_api_ms;
       sessionUsage = addUsageLocal(sessionUsage, r.usage);
       for (const [modelId, mu] of Object.entries(r.modelUsage)) {
         const prev = sessionModelUsage[modelId];
@@ -990,12 +1043,20 @@ export function query(args: {
       for (const m of drainObservability()) yield m;
     };
 
-    /** Rewrite an engine-turn result to report session-cumulative totals. */
+    /**
+     * Rewrite an engine-turn result to the OFFICIAL reporting semantics (E2,
+     * KD-L5-04): num_turns and usage pass through as THIS turn's own figures
+     * (the engine already reports per-run values); total_cost_usd and
+     * duration_api_ms are rewritten to the session-cumulative totals (the
+     * accumulators were just updated with this result, so the cumulative
+     * value includes it - deltas between consecutive results recover the
+     * per-turn figures). modelUsage stays session-cumulative: the official
+     * per-result semantics for it are unobserved (COMPAT notes our choice).
+     */
     const rewriteResult = (r: SDKResultMessage): SDKResultMessage => ({
       ...r,
-      num_turns: sessionTurns,
       total_cost_usd: sessionCost,
-      usage: { ...sessionUsage },
+      duration_api_ms: sessionApiMs,
       modelUsage: Object.fromEntries(
         Object.entries(sessionModelUsage).map(([k, v]) => [k, { ...v }]),
       ),
@@ -1244,6 +1305,7 @@ export function query(args: {
             : undefined,
           shells,
           sandbox: sandboxCtx,
+          readFilePaths,
         };
         const deps: EngineDeps = {
           transport,
@@ -1451,7 +1513,26 @@ export function query(args: {
       engineConfig.model = model ?? initialModel;
     },
     async setMaxThinkingTokens(maxThinkingTokens: number | null): Promise<void> {
-      engineConfig.maxThinkingTokens = maxThinkingTokens ?? undefined;
+      const n = maxThinkingTokens ?? undefined;
+      engineConfig.maxThinkingTokens = n;
+      // On the claude_code preset path (no explicit thinking config) the budget
+      // ALSO drives the on/off switch, mirroring the E1 initial-injection
+      // semantics: without this a live re-enable on a session that opted out
+      // (maxThinkingTokens: 0 -> config.thinking undefined) would be a silent
+      // no-op, since computeThinking only consults the budget when thinking is
+      // already enabled. Explicit thinking configs and non-preset paths keep
+      // their existing behavior (maxThinkingTokens is a budget fallback only).
+      if (isClaudeCodePreset && options.thinking === undefined) {
+        if (n === undefined) {
+          // Reset -> the preset default (re-enabled at the default budget).
+          engineConfig.thinking = { type: 'enabled' };
+          engineConfig.maxThinkingTokens = DEFAULT_PRESET_THINKING_BUDGET;
+        } else if (n > 0) {
+          engineConfig.thinking = { type: 'enabled' };
+        } else {
+          engineConfig.thinking = undefined; // 0 -> off
+        }
+      }
     },
     initializationResult(): Promise<SDKInitializationResult> {
       return initDeferred.promise;

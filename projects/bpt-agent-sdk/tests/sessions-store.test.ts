@@ -181,9 +181,51 @@ describe('JsonlSessionStore pairing repair (finding #37)', () => {
     const loaded = await store.load('s3');
     // Trailing orphan tool_use dropped -> history ends on the user turn.
     expect(loaded?.messages).toEqual([{ role: 'user', content: 'do it' }]);
-    expect(warnings.some((w) => w.includes('trailing assistant tool_use'))).toBe(
-      true,
+    expect(
+      warnings.some((w) => w.includes('dropped assistant tool_use turn')),
+    ).toBe(true);
+  });
+
+  it('drops a MID-transcript dangling assistant tool_use (E5 budget pre-stop + next input; adversarial review 2026-07-05)', async () => {
+    // The E5 budget pre-stop persists assistant(tool_use) with no
+    // tool_result; a subsequent user turn pushes it into the transcript
+    // MIDDLE, where the old trailing-only repair could not reach it, leaving
+    // a resumed session to 400 on every request. The two-pass repair drops
+    // the unanswered assistant turn wherever it sits.
+    writeLines('s3b', [
+      { type: 'meta', sessionId: 's3b', createdAt: 1 },
+      { type: 'user', message: { role: 'user', content: 'first' } },
+      {
+        type: 'assistant',
+        message: {
+          role: 'assistant',
+          content: [{ type: 'tool_use', id: 'toolu_mid', name: 'Bash', input: {} }],
+        },
+      },
+      { type: 'user', message: { role: 'user', content: 'second' } },
+    ]);
+    const { store, warnings } = makeStore();
+    const loaded = await store.load('s3b');
+    const msgs = loaded?.messages as APIMessageParam[];
+    // The dangling tool_use is gone; NO surviving assistant tool_use lacks a
+    // following tool_result (the resume request would be API-valid).
+    const hasDangling = msgs.some(
+      (m, i) =>
+        m.role === 'assistant' &&
+        Array.isArray(m.content) &&
+        m.content.some((b) => (b as { type?: string }).type === 'tool_use') &&
+        !(
+          msgs[i + 1]?.role === 'user' &&
+          Array.isArray(msgs[i + 1]?.content) &&
+          (msgs[i + 1]!.content as unknown[]).some(
+            (b) => (b as { type?: string }).type === 'tool_result',
+          )
+        ),
     );
+    expect(hasDangling).toBe(false);
+    expect(
+      warnings.some((w) => w.includes('dropped assistant tool_use turn')),
+    ).toBe(true);
   });
 
   it('produces a paired, API-valid history that partial results survive on', async () => {

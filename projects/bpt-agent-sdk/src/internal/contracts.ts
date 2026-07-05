@@ -131,6 +131,18 @@ export type ToolContext = {
    *  resolved backend by default; absent -> Bash runs unsandboxed (no backend
    *  on this platform, or explicitly disabled). */
   sandbox?: SandboxContext;
+  /**
+   * Read-before-write gate state (E4): absolute paths whose content this
+   * SESSION has seen. One shared Set per query - the subagent runtime threads
+   * the SAME reference into child contexts (like shells/sandbox), so a parent
+   * Read satisfies a child's gate and vice versa. Registered by a successful
+   * Read, and by Write/Edit after they mutate a file (the session knows the
+   * bytes it just wrote); Glob/Grep never register. Consulted only by Write:
+   * overwriting an EXISTING file whose path is not in the set is rejected
+   * with the official error text. Absent -> the gate is off (bare tool use
+   * outside query(), e.g. direct unit tests that opt out).
+   */
+  readFilePaths?: Set<string>;
 };
 
 // v0.2 subagent spawn contract (subagent runtime <-> Agent tool).

@@ -356,6 +356,100 @@ describe('L2 lock: thinking / maxThinkingTokens mapping', () => {
   });
 });
 
+describe('L2 lock: claude_code preset defaults thinking ON (E1)', () => {
+  const preset = { type: 'preset', preset: 'claude_code' } as const;
+
+  it('preset with no thinking options sends the 4096 default budget', async () => {
+    // The official CLI observably defaults thinking ON (every official-arm L5
+    // trace carries thinking events); 4096 is OUR chosen budget (the official
+    // value is request-body-internal and never read) - KD in docs/COMPAT.md.
+    const fetchStub = makeSSEFetch([textReplyEvents('ok')]);
+    vi.stubGlobal('fetch', fetchStub);
+
+    await collect(query({ prompt: 'hi', options: opts({ systemPrompt: preset }) }));
+    expect(fetchStub.requests[0]!.body.thinking).toEqual({
+      type: 'enabled',
+      budget_tokens: 4096,
+    });
+  });
+
+  it('preset + maxThinkingTokens: 0 is the explicit opt-out (no thinking param)', async () => {
+    const fetchStub = makeSSEFetch([textReplyEvents('ok')]);
+    vi.stubGlobal('fetch', fetchStub);
+
+    await collect(
+      query({
+        prompt: 'hi',
+        options: opts({ systemPrompt: preset, maxThinkingTokens: 0 }),
+      }),
+    );
+    expect(fetchStub.requests[0]!.body).not.toHaveProperty('thinking');
+  });
+
+  it("preset + thinking {type:'disabled'} stays off (explicit thinking wins)", async () => {
+    const fetchStub = makeSSEFetch([textReplyEvents('ok')]);
+    vi.stubGlobal('fetch', fetchStub);
+
+    await collect(
+      query({
+        prompt: 'hi',
+        options: opts({ systemPrompt: preset, thinking: { type: 'disabled' } }),
+      }),
+    );
+    expect(fetchStub.requests[0]!.body).not.toHaveProperty('thinking');
+  });
+
+  it('preset + maxThinkingTokens > 0 enables thinking with that budget', async () => {
+    const fetchStub = makeSSEFetch([textReplyEvents('ok')]);
+    vi.stubGlobal('fetch', fetchStub);
+
+    await collect(
+      query({
+        prompt: 'hi',
+        options: opts({ systemPrompt: preset, maxThinkingTokens: 2048 }),
+      }),
+    );
+    expect(fetchStub.requests[0]!.body.thinking).toEqual({
+      type: 'enabled',
+      budget_tokens: 2048,
+    });
+  });
+
+  it('preset + an explicit thinking config passes through verbatim (no 4096 override)', async () => {
+    const fetchStub = makeSSEFetch([textReplyEvents('ok')]);
+    vi.stubGlobal('fetch', fetchStub);
+
+    await collect(
+      query({
+        prompt: 'hi',
+        options: opts({
+          systemPrompt: preset,
+          thinking: { type: 'enabled', budgetTokens: 1234 },
+        }),
+      }),
+    );
+    expect(fetchStub.requests[0]!.body.thinking).toEqual({
+      type: 'enabled',
+      budget_tokens: 1234,
+    });
+  });
+
+  it('non-preset paths are unchanged: bare string / no systemPrompt send no thinking', async () => {
+    const fetchStub = makeSSEFetch([textReplyEvents('ok'), textReplyEvents('ok')]);
+    vi.stubGlobal('fetch', fetchStub);
+
+    // Drop-in default (no systemPrompt).
+    await collect(query({ prompt: 'hi', options: opts() }));
+    expect(fetchStub.requests[0]!.body).not.toHaveProperty('thinking');
+
+    // Bare-string systemPrompt.
+    await collect(
+      query({ prompt: 'hi', options: opts({ systemPrompt: 'custom prompt' }) }),
+    );
+    expect(fetchStub.requests[1]!.body).not.toHaveProperty('thinking');
+  });
+});
+
 describe('L2 lock: env passthrough to the transport', () => {
   it('options.env supplies base URL and credential (not process.env), apiKeySource reads project', async () => {
     const fetchStub = makeSSEFetch([textReplyEvents('ok')]);

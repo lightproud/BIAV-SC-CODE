@@ -67,12 +67,19 @@ function isToolResultBlock(
  * Repair a reconstructed message list so it is always API-valid regardless of
  * which lines a damaged transcript dropped. Two orphan classes make every
  * resumed request 400 and are healed here:
+ *  - An assistant message carrying tool_use blocks that are not ALL answered
+ *    by tool_result blocks in the immediately following user message (the
+ *    result line was lost, or the run ended before the tools executed - e.g.
+ *    the E5 budget pre-stop - and the session then took more input, pushing
+ *    the dangling turn into the MIDDLE of the transcript). The whole
+ *    assistant message is dropped, wherever it sits - a trailing-only check
+ *    misses the mid-transcript case and the session would 400 on every
+ *    resumed request forever (adversarial review 2026-07-05, HIGH).
  *  - A user tool_result block whose tool_use_id has no match in the
- *    immediately preceding assistant message (the tool_use line was lost, or
- *    two writers interleaved). The orphan block is dropped; if that empties
- *    the user message, the whole message is dropped.
- *  - A trailing assistant message carrying tool_use blocks with no following
- *    tool_result turn (the result line was lost). The whole message is dropped.
+ *    immediately preceding SURVIVING assistant message (the tool_use line was
+ *    lost, two writers interleaved, or its assistant turn was dropped above).
+ *    The orphan block is dropped; if that empties the user message, the whole
+ *    message is dropped.
  * Every repair is debug-logged.
  */
 function repairPairing(
@@ -80,12 +87,45 @@ function repairPairing(
   debug: (msg: string) => void,
   sessionId: string,
 ): APIMessageParam[] {
-  const repaired: APIMessageParam[] = [];
+  // Pass 1: drop any assistant tool_use turn whose tool calls are not all
+  // answered by the immediately following user message.
+  const paired: APIMessageParam[] = [];
   for (let i = 0; i < messages.length; i += 1) {
     const msg = messages[i];
     if (msg === undefined) continue;
+    if (msg.role === 'assistant' && Array.isArray(msg.content)) {
+      const toolUseIds: string[] = [];
+      for (const b of msg.content) {
+        if (isToolUseBlock(b)) toolUseIds.push(b.id);
+      }
+      if (toolUseIds.length > 0) {
+        const next = messages[i + 1];
+        const answered = new Set<string>();
+        if (next !== undefined && next.role === 'user' && Array.isArray(next.content)) {
+          for (const b of next.content) {
+            if (isToolResultBlock(b)) answered.add(b.tool_use_id);
+          }
+        }
+        if (!toolUseIds.every((id) => answered.has(id))) {
+          debug(
+            `session store: dropped assistant tool_use turn in ${sessionId}${JSONL_EXT} (tool_result(s) missing in the following message)`,
+          );
+          continue;
+        }
+      }
+    }
+    paired.push(msg);
+  }
+
+  // Pass 2: drop user tool_result blocks orphaned relative to the SURVIVING
+  // preceding assistant message (covers both lost tool_use lines and results
+  // whose assistant turn was dropped in pass 1).
+  const repaired: APIMessageParam[] = [];
+  for (let i = 0; i < paired.length; i += 1) {
+    const msg = paired[i];
+    if (msg === undefined) continue;
     if (msg.role === 'user' && Array.isArray(msg.content)) {
-      const prev = messages[i - 1];
+      const prev = repaired[repaired.length - 1];
       const allowed = new Set<string>();
       if (prev !== undefined && prev.role === 'assistant' && Array.isArray(prev.content)) {
         for (const b of prev.content) {
@@ -115,19 +155,6 @@ function repairPairing(
       continue;
     }
     repaired.push(msg);
-  }
-
-  const last = repaired[repaired.length - 1];
-  if (
-    last !== undefined &&
-    last.role === 'assistant' &&
-    Array.isArray(last.content) &&
-    last.content.some(isToolUseBlock)
-  ) {
-    debug(
-      `session store: dropped trailing assistant tool_use in ${sessionId}${JSONL_EXT} (no following tool_result)`,
-    );
-    repaired.pop();
   }
 
   return repaired;

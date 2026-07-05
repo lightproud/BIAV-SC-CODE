@@ -407,11 +407,10 @@ export const SCENARIOS_L2 = [
     fixtureFiles: { 'hello.txt': 'fixture alpha\n' },
     options: { maxBudgetUsd: 0.001 },
     droppable: true,
-    // Integrator triage (M2): NOT a KD - this SDK executes the in-flight
-    // turn's tool BEFORE tripping the budget (ours-only user/tool_result),
-    // official aborts the turn first. Side effects after budget exhaustion
-    // are a suspected OUR-engine gap; stays DIVERGENT + reported.
-    engineFinding: 'maxBudgetUsd stop ordering: this SDK executes the current turn\'s requested tool and THEN trips the budget (ours-only user/tool_result before result/error_max_budget_usd); official 2.1.201 trips BEFORE executing the tool. Same subtype and 1 POST on both arms, but ours performs tool side effects after the cap is already exceeded - suspected engine gap, kept DIVERGENT, never a KD.',
+    // CONVERGED (E5, 2026-07-05): both arms now trip the cap BEFORE the
+    // requested tool executes - no tool side effects past the budget, no
+    // tool_result user turn, 1 POST, terminal error_max_budget_usd. The
+    // former engineFinding (ours executed the tool first) is retired.
     buildScripts: (cwd) => {
       const events = toolUseReply([{ name: 'Read', input: { file_path: join(cwd, 'hello.txt') } }]);
       // Priced model + huge usage: ~$6 at sonnet input pricing >> $0.001.

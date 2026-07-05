@@ -13,6 +13,13 @@ export class AbortError extends Error {
 /** Network-level failure talking to the Messages API. */
 export class APIConnectionError extends Error {
   override name = 'APIConnectionError';
+  /**
+   * E3: set by the transport when the connection dropped MID-STREAM after at
+   * least one event was delivered (a truncated turn). The engine may salvage
+   * the completed content blocks instead of voiding the turn. Never set for
+   * timeouts, idle-watchdog aborts, or pre-stream failures.
+   */
+  midStreamTruncation?: boolean;
   constructor(
     message: string,
     override readonly cause?: unknown,

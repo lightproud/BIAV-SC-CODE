@@ -456,18 +456,15 @@ async function runOne(arm, task) {
   // Multi-result aggregation (M1 metric-artifact fix, first-round
   // dissection): BOTH engines emit one result per streamed user turn, so
   // lastResult-only metrics under-reported official multi-turn runs
-  // (longconv showed turns=1 - misread as early termination). The two
-  // engines' per-result cumulative semantics DIVERGE (KD-L5-04, verified
-  // from run 28736460533 L6 traces + query.ts finding #33):
-  //   official: num_turns/usage PER-RESULT (sum), total_cost_usd and
-  //             duration_api_ms session-cumulative (take last);
-  //   bpt:      num_turns/usage/total_cost_usd session-cumulative on every
-  //             result (take last), duration_api_ms per-run (sum).
-  // Single-result runs are unchanged by construction either way.
+  // (longconv showed turns=1 - misread as early termination). Since E2
+  // (2026-07-05) BOTH arms share the official per-result semantics -
+  // num_turns/usage PER-RESULT (sum across results), total_cost_usd and
+  // duration_api_ms session-cumulative (take last) - so the former per-arm
+  // aggregation split (KD-L5-04, retired) collapses to one rule. Single-
+  // result runs are unchanged by construction.
   const sumOf = (get) => resultMsgs.reduce((s, r) => s + (get(r) ?? 0), 0);
   const lastOf = (get) => (lastResult ? (get(lastResult) ?? 0) : 0);
-  const perResultArm = arm === 'official';
-  const usageOf = (k) => (perResultArm ? sumOf((r) => r.usage?.[k]) : lastOf((r) => r.usage?.[k]));
+  const usageOf = (k) => sumOf((r) => r.usage?.[k]);
   return {
     arm,
     task: task.id,
@@ -475,7 +472,7 @@ async function runOne(arm, task) {
     passed,
     subtype: lastResult?.subtype ?? 'no-result',
     error,
-    turns: perResultArm ? sumOf((r) => r.num_turns) : lastOf((r) => r.num_turns),
+    turns: sumOf((r) => r.num_turns),
     results: resultMsgs.length,
     costUsd: lastOf((r) => r.total_cost_usd),
     inputTokens: usageOf('input_tokens'),
@@ -483,7 +480,7 @@ async function runOne(arm, task) {
     cacheCreationTokens: usageOf('cache_creation_input_tokens'),
     cacheReadTokens: usageOf('cache_read_input_tokens'),
     wallMs: Date.now() - started,
-    apiMs: perResultArm ? lastOf((r) => r.duration_api_ms) : sumOf((r) => r.duration_api_ms),
+    apiMs: lastOf((r) => r.duration_api_ms),
     finalTextHead: finalText.slice(0, 160),
     ...(strayArtifacts.length > 0 ? { strayArtifacts } : {}),
     messages, // dropped by the caller after L6 retention

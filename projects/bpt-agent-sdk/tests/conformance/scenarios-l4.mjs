@@ -173,18 +173,25 @@ export const SCENARIOS_L4 = [
     },
     // Spike S4: official does NOT retry, surfaces the error AS ASSISTANT
     // TEXT and ends result/success (profiled quirk -> KD-L4-02). Our engine
-    // (observed, seed run 2026-07-05): transport APIConnectionError "stream
-    // failed after N event(s)" wrapped into result/error_during_execution,
-    // no retry, no thrown error. Losing the turn where official degrades to
-    // a success-shaped result is a suspected OUR-engine gap.
+    // since E3 (2026-07-05): the truncated turn is SALVAGED - the partial
+    // text becomes the answer, the run ends result/success, and the
+    // connection error rides result.errors as a non-fatal note (no fabricated
+    // assistant message, no thrown error - the spike-S4 throw quirk is
+    // deliberately not replicated).
     bptOnly: (run) => {
-      // Fault-manifest lock (review major, 2026-07-05): without the injected
-      // cut our engine would end result/success - pinning the observed
-      // error_during_execution contract makes silent fault removal (e.g. a
-      // dead cutMarker) fail LOUD on the BPT arm instead of passing vacuously.
+      // Fault-manifest lock (review major, 2026-07-05; E3 update): a dead
+      // cutMarker would also end result/success - the truncation note in
+      // result.errors is what distinguishes a REAL injected cut, so silent
+      // fault removal still fails LOUD on the BPT arm.
       const f = [];
-      if (run.checks.resultSubtype !== 'error_during_execution') {
-        f.push(`fault did not manifest: expected result/error_during_execution, got ${run.checks.resultSubtype}`);
+      if (run.checks.resultSubtype !== 'success') {
+        f.push(`expected result/success (E3 salvage), got ${run.checks.resultSubtype}`);
+      }
+      if (!(run.resultErrors ?? []).some((e) => /stream failed/.test(e))) {
+        f.push('fault did not manifest: no truncation note in result.errors (dead cutMarker?)');
+      }
+      if (!streamHas(run, 'PARTIAL TEXT')) {
+        f.push('salvaged partial text missing from the stream');
       }
       return f;
     },
@@ -229,13 +236,23 @@ export const SCENARIOS_L4 = [
     // re-request to deliver the tool_result (sentinel visible iff yes);
     // (3) toolResults count + terminal subtype.
     bptOnly: (run) => {
-      // Fault-manifest lock (review major, 2026-07-05): without the injected
-      // cut our engine would end result/success - pinning the observed
-      // error_during_execution contract makes silent fault removal (e.g. a
-      // dead cutMarker) fail LOUD on the BPT arm instead of passing vacuously.
+      // Fault-manifest lock (review major, 2026-07-05; E3 update): our engine
+      // now EXECUTES the salvaged complete tool_use blocks and re-requests to
+      // deliver the tool_result, ending result/success - same shape a dead
+      // cutMarker would produce, so the truncation note in result.errors is
+      // the fault-manifest discriminator (silent fault removal fails LOUD).
       const f = [];
-      if (run.checks.resultSubtype !== 'error_during_execution') {
-        f.push(`fault did not manifest: expected result/error_during_execution, got ${run.checks.resultSubtype}`);
+      if (run.checks.resultSubtype !== 'success') {
+        f.push(`expected result/success (E3 salvage), got ${run.checks.resultSubtype}`);
+      }
+      if (run.files['trunc-out.txt'] !== 'TRUNC-WRITE') {
+        f.push('salvaged tool_use did not execute (trunc-out.txt missing/wrong)');
+      }
+      if (!streamHas(run, 'POST-TRUNC TURN')) {
+        f.push('no recovery turn - the tool_result was not delivered on a 2nd POST');
+      }
+      if (!(run.resultErrors ?? []).some((e) => /stream failed/.test(e))) {
+        f.push('fault did not manifest: no truncation note in result.errors (dead cutMarker?)');
       }
       return f;
     },
@@ -280,13 +297,23 @@ export const SCENARIOS_L4 = [
     // Probes whether KD-L4-04's execution split hinges on stop_reason
     // delivery or on complete tool_use blocks alone.
     bptOnly: (run) => {
-      // Fault-manifest lock (review major, 2026-07-05): without the injected
-      // cut our engine would end result/success - pinning the observed
-      // error_during_execution contract makes silent fault removal (e.g. a
-      // dead cutMarker) fail LOUD on the BPT arm instead of passing vacuously.
+      // Fault-manifest lock (review major, 2026-07-05; E3 update): our engine
+      // now EXECUTES the salvaged complete tool_use blocks and re-requests to
+      // deliver the tool_result, ending result/success - same shape a dead
+      // cutMarker would produce, so the truncation note in result.errors is
+      // the fault-manifest discriminator (silent fault removal fails LOUD).
       const f = [];
-      if (run.checks.resultSubtype !== 'error_during_execution') {
-        f.push(`fault did not manifest: expected result/error_during_execution, got ${run.checks.resultSubtype}`);
+      if (run.checks.resultSubtype !== 'success') {
+        f.push(`expected result/success (E3 salvage), got ${run.checks.resultSubtype}`);
+      }
+      if (run.files['trunc-out.txt'] !== 'TRUNC-WRITE') {
+        f.push('salvaged tool_use did not execute (trunc-out.txt missing/wrong)');
+      }
+      if (!streamHas(run, 'POST-TRUNC TURN')) {
+        f.push('no recovery turn - the tool_result was not delivered on a 2nd POST');
+      }
+      if (!(run.resultErrors ?? []).some((e) => /stream failed/.test(e))) {
+        f.push('fault did not manifest: no truncation note in result.errors (dead cutMarker?)');
       }
       return f;
     },

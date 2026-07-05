@@ -155,11 +155,9 @@ export const KNOWN_TOOL_DIVERGENCES = [
       /^(Created new file|Overwrote existing file) "/m.test(u) &&
       /(file|written|updated|created|success)/i.test(o),
   },
-  {
-    id: 'KD-L3-06',
-    tool: 'Write',
-    note: 'official read-before-write gate (behavioral): a bare Write over an existing un-read file errors on the official arm and leaves the file untouched; ours overwrites. Encoded as per-arm expectations (incl. per-arm file bytes) in L3-WRITE-02.',
-  },
+  // KD-L3-06 RETIRED (2026-07-05, E4): ours now enforces the same
+  // read-before-write gate with the verbatim official error text, so
+  // L3-WRITE-02 converged to shared expectations. Id kept out of circulation.
   {
     id: 'KD-L3-07',
     tool: 'Edit',

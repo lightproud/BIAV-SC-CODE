@@ -1038,7 +1038,91 @@ describe('query() e2e - confirmed-finding regressions', () => {
     expect(fetchStub.requests[1]!.body.model).toBe('claude-opus-4-8');
   });
 
-  it('accumulates usage/cost/turns session-wide across streaming turns (#33)', async () => {
+  it('setMaxThinkingTokens re-enables thinking on a preset session that opted out (E1 live-switch, adversarial review 2026-07-05)', async () => {
+    // Preset session opted out with maxThinkingTokens: 0 -> turn 1 sends no
+    // thinking. A live setMaxThinkingTokens(4096) must turn it back ON for
+    // turn 2 (the bug: the setter only touched the budget, never the on/off
+    // switch, so the re-enable was a silent no-op).
+    const fetchStub = stubFetch(
+      makeSSEFetch([textReplyEvents('r1'), textReplyEvents('r2')]),
+    );
+    let releaseSecond!: () => void;
+    const secondGate = new Promise<void>((r) => {
+      releaseSecond = r;
+    });
+    async function* inputs(): AsyncGenerator<SDKUserMessage> {
+      yield userMsg('first');
+      await secondGate;
+      yield userMsg('second');
+    }
+
+    const q = query({
+      prompt: inputs(),
+      options: baseOptions({
+        systemPrompt: { type: 'preset', preset: 'claude_code' },
+        maxThinkingTokens: 0,
+      }),
+    });
+    let resultsSeen = 0;
+    for await (const m of q) {
+      if (m.type === 'result') {
+        resultsSeen += 1;
+        if (resultsSeen === 1) {
+          await q.setMaxThinkingTokens(4096);
+          releaseSecond();
+        }
+      }
+    }
+
+    expect(fetchStub.requests).toHaveLength(2);
+    expect(fetchStub.requests[0]!.body).not.toHaveProperty('thinking');
+    expect(fetchStub.requests[1]!.body.thinking).toEqual({
+      type: 'enabled',
+      budget_tokens: 4096,
+    });
+  });
+
+  it('setMaxThinkingTokens(0) disables thinking mid-run on a preset default session (E1 live-switch)', async () => {
+    const fetchStub = stubFetch(
+      makeSSEFetch([textReplyEvents('r1'), textReplyEvents('r2')]),
+    );
+    let releaseSecond!: () => void;
+    const secondGate = new Promise<void>((r) => {
+      releaseSecond = r;
+    });
+    async function* inputs(): AsyncGenerator<SDKUserMessage> {
+      yield userMsg('first');
+      await secondGate;
+      yield userMsg('second');
+    }
+
+    const q = query({
+      prompt: inputs(),
+      options: baseOptions({
+        systemPrompt: { type: 'preset', preset: 'claude_code' },
+      }),
+    });
+    let resultsSeen = 0;
+    for await (const m of q) {
+      if (m.type === 'result') {
+        resultsSeen += 1;
+        if (resultsSeen === 1) {
+          await q.setMaxThinkingTokens(0);
+          releaseSecond();
+        }
+      }
+    }
+
+    expect(fetchStub.requests).toHaveLength(2);
+    // Turn 1 = preset default 4096; turn 2 = disabled.
+    expect(fetchStub.requests[0]!.body.thinking).toEqual({
+      type: 'enabled',
+      budget_tokens: 4096,
+    });
+    expect(fetchStub.requests[1]!.body).not.toHaveProperty('thinking');
+  });
+
+  it('reports per-result num_turns/usage with cumulative cost/apiMs across streaming turns (E2, KD-L5-04)', async () => {
     const fetchStub = stubFetch(
       makeSSEFetch([
         textReplyEvents('r1', { model: 'claude-opus-4-8' }),
@@ -1053,16 +1137,25 @@ describe('query() e2e - confirmed-finding regressions', () => {
     const results = resultsOf(await collect(q));
 
     expect(results).toHaveLength(2);
-    // First result = turn-1 totals; second = cumulative (turn1 + turn2).
+    // Official reporting semantics (pinned live, run 28736460533): num_turns
+    // and usage are PER-RESULT (this turn's own figures), total_cost_usd and
+    // duration_api_ms are SESSION-cumulative (strictly increasing). Internal
+    // maxTurns/maxBudgetUsd enforcement stays session-wide (#33 unchanged -
+    // see the enforcement tests below).
     expect(results[0]!.num_turns).toBe(1);
-    expect(results[1]!.num_turns).toBe(2);
+    expect(results[1]!.num_turns).toBe(1);
+    expect(results[1]!.usage.input_tokens).toBe(results[0]!.usage.input_tokens);
     expect(results[1]!.total_cost_usd).toBeCloseTo(
       results[0]!.total_cost_usd * 2,
       9,
     );
-    expect(results[1]!.usage.input_tokens).toBe(
-      results[0]!.usage.input_tokens * 2,
+    expect(results[1]!.duration_api_ms).toBeGreaterThanOrEqual(
+      results[0]!.duration_api_ms,
     );
+    // modelUsage stays session-cumulative (official semantics unobserved).
+    expect(
+      results[1]!.modelUsage['claude-opus-4-8']!.inputTokens,
+    ).toBe(results[0]!.modelUsage['claude-opus-4-8']!.inputTokens * 2);
     expect(fetchStub.requests).toHaveLength(2);
   });
 

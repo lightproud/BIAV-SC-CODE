@@ -76,17 +76,17 @@ export const KD_L4 = [
   {
     id: 'KD-L4-02',
     scenarios: ['l4-sse-truncated-text-turn'],
-    facets: ['resultSubtype', 'errorPresent', 'sentinels'],
+    facets: ['errorPresent'],
     coversTokens: true,
     note:
       'TEXT-turn truncation (terminator missing after complete text blocks): NEITHER arm retries ' +
-      '(1 POST both). The official arm yields the partial assistant text, appends the connection ' +
-      'error as a second assistant message, ends result/SUCCESS, then throws "API Error: ' +
-      'Connection closed mid-response" from the iterator (spike-S4 quirk confirmed under the ' +
-      'agent engine); this SDK suppresses the partial assistant message and ends ' +
-      'result/error_during_execution cleanly. The session-outcome delta (success-shaped official ' +
-      'vs lost turn ours) is ALSO tracked as an engineFinding - the KD documents the stable ' +
-      'encoding, the finding keeps the gap red.',
+      '(1 POST both) and since E3 (2026-07-05) BOTH arms keep the partial text and end ' +
+      'result/success - resultSubtype and sentinels converged, the former engineFinding is ' +
+      'cleared. Residual split is the ERROR CHANNEL only: the official arm appends the ' +
+      'connection error as a second assistant message and then throws "API Error: Connection ' +
+      'closed mid-response" from the iterator (spike-S4 quirk); this SDK reports it as a ' +
+      'non-fatal note in result.errors and ends cleanly (deliberate - no fabricated assistant ' +
+      'message, no post-result throw).',
   },
   {
     id: 'KD-L4-03',
@@ -100,24 +100,10 @@ export const KD_L4 = [
       'mapStreamError callerSignal branch) vs official "Claude Code process aborted by user". ' +
       'Error strings are recorded per arm in the rows and deliberately not facet-compared.',
   },
-  {
-    id: 'KD-L4-04',
-    scenarios: ['l4-sse-truncated-tool-turn', 'l4-sse-truncated-tool-incomplete'],
-    facets: ['postCount', 'resultSubtype', 'errorPresent', 'toolResults', 'files', 'sentinels'],
-    coversTokens: true,
-    note:
-      'TOOL-turn truncation with complete tool_use blocks delivered: the official arm treats ' +
-      'the cut-off turn as actionable - executes the Write (trunc-out.txt materializes), ' +
-      're-requests to deliver the tool_result (2nd POST, recovery sentinel visible) and ' +
-      'completes result/success with no error; this SDK abandons the turn (no execution, no ' +
-      '2nd POST, result/error_during_execution). Holds IDENTICALLY whether the cut lands after ' +
-      "message_delta (stop_reason:'tool_use' delivered, terminator missing) or BEFORE it " +
-      '(incomplete message, no stop_reason) - the follow-up variant falsified the hypothesis ' +
-      'that the split hinges on stop_reason delivery: official 2.1.201 acts on complete ' +
-      'tool_use BLOCKS alone. The dropped-tool delta is ALSO tracked as an engineFinding (our ' +
-      'engine loses work official completes) - KD documents the stable encoding, finding keeps ' +
-      'it red.',
-  },
+  // KD-L4-04 RETIRED (2026-07-05, E3): both arms now treat a truncated turn's
+  // COMPLETE tool_use blocks as actionable (execute, 2nd POST for the
+  // tool_result, result/success) at either cut depth - every facet converged
+  // in the dual-arm run, the engineFinding cleared. Id kept out of circulation.
 ];
 
 async function loadQuery(armKind) {
@@ -212,11 +198,15 @@ async function runL4Scenario(armKind, scenario) {
   }
 
   const normalized = normalizeStream(messages);
+  const resultMsg = messages.filter((m) => m?.type === 'result').pop();
   return {
     arm: armKind,
     scenario: scenario.id,
     error,
     ...normalized,
+    // Non-fatal error notes on the terminal result (E3 truncation notes ride
+    // here on the BPT arm). Recorded per arm, deliberately NOT facet-compared.
+    resultErrors: Array.isArray(resultMsg?.errors) ? resultMsg.errors : null,
     toolResults: extractToolResults(messages),
     assistantTexts: assistantTextsOf(messages),
     files,

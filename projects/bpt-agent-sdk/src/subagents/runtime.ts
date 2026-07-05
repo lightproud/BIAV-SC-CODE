@@ -129,6 +129,9 @@ export type SubagentRuntimeOptions = {
   shells?: ShellManager;
   /** v0.6 sandbox context (shared with children's ToolContext). */
   sandbox?: SandboxContext;
+  /** E4 read-before-write gate: the query-wide read-paths Set (the SAME
+   *  reference as the root ToolContext, so the gate spans the session). */
+  readFilePaths?: Set<string>;
 };
 
 /** task_updated.result carries a bounded preview, not the full child text
@@ -788,6 +791,9 @@ export function createSubagentRuntime(
         shells: opts.shells,
         // Children inherit the same sandbox as the root loop.
         sandbox: opts.sandbox,
+        // Same SESSION for the read-before-write gate: a parent Read
+        // satisfies a child's Write gate and vice versa.
+        readFilePaths: opts.readFilePaths,
       };
       const childDeps: EngineDeps = {
         transport,

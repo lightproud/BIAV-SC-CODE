@@ -162,6 +162,7 @@ export const readTool: BuiltinTool = {
       const imageMediaType = detectImageMediaType(buf);
       if (imageMediaType !== undefined) {
         ctx.debug(`Read: ${abs} as ${imageMediaType} (${buf.length} bytes)`);
+        ctx.readFilePaths?.add(abs);
         return {
           content: [
             {
@@ -181,6 +182,7 @@ export const readTool: BuiltinTool = {
       // inside a tool_result. offset/limit do not apply and are ignored.
       if (buf.length >= 5 && buf.toString('latin1', 0, 5) === '%PDF-') {
         ctx.debug(`Read: ${abs} as application/pdf (${buf.length} bytes)`);
+        ctx.readFilePaths?.add(abs);
         return {
           content: [
             {
@@ -201,7 +203,9 @@ export const readTool: BuiltinTool = {
         );
       }
       if (buf.length === 0) {
-        // Not an error: surface as a system-reminder-style note.
+        // Not an error: surface as a system-reminder-style note. The session
+        // HAS seen the (empty) content, so the read still registers.
+        ctx.readFilePaths?.add(abs);
         return {
           content: `<system-reminder>The file "${abs}" exists but is empty (0 bytes).</system-reminder>`,
         };
@@ -217,6 +221,10 @@ export const readTool: BuiltinTool = {
       const selected = lines.slice(startLine - 1, startLine - 1 + limit);
       const lastShown = startLine + selected.length - 1;
       ctx.debug(`Read: ${abs} lines ${startLine}-${lastShown} of ${total}`);
+      // Read-before-write gate (E4): a successful Read (even a partial
+      // offset/limit window - matching the official gate, which unlocks on
+      // any successful Read of the file) registers the path.
+      ctx.readFilePaths?.add(abs);
 
       let content = formatCatN(selected, startLine);
       if (lastShown < total) {

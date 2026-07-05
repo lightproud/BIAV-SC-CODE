@@ -798,10 +798,11 @@ describe('runAgentLoop', () => {
     expect(result.modelUsage['claude-sonnet-4-5']!.costUSD).toBeCloseTo(0.003105, 9);
   });
 
-  it('maxBudgetUsd fires only when about to continue after a tool_use turn, as error_max_budget_usd (findings #3 + rename)', async () => {
-    // Turn 1 is a tool_use turn (the loop wants to continue with another
-    // billable call); the accumulated cost exceeds the budget, so the run
-    // stops BEFORE the second API call with the renamed subtype.
+  it('maxBudgetUsd stops BEFORE executing a requested tool batch, as error_max_budget_usd (E5, findings #3 + rename)', async () => {
+    // Turn 1 is a tool_use turn whose own cost already exceeds the budget.
+    // Official 2.1.201 trips the cap BEFORE the tool's side effects
+    // (conformance run-l2 s12): zero tool executions, no tool_result user
+    // turn on the stream, one POST, terminal error_max_budget_usd.
     const transport = new MockTransport([
       toolUseReplyEvents('Read', { file_path: '/a.txt' }, { model: 'claude-sonnet-4-5' }),
       textReplyEvents('should never run'),
@@ -815,9 +816,11 @@ describe('runAgentLoop', () => {
       runAgentLoop(history, deps, makeConfig({ maxBudgetUsd: 0.000001 })),
     );
 
-    // The tool of turn 1 ran, but the second stream call never happened.
-    expect(executed).toEqual([{ file_path: '/a.txt' }]);
+    // The requested tool did NOT run and the second stream call never happened.
+    expect(executed).toEqual([]);
     expect(transport.requests).toHaveLength(1);
+    // No tool_result user turn is emitted past the cap (official stream shape).
+    expect(messages.some((m) => m.type === 'user')).toBe(false);
 
     const result = lastResult(messages);
     expect(result.subtype).toBe('error_max_budget_usd');
@@ -825,6 +828,27 @@ describe('runAgentLoop', () => {
     if (result.subtype === 'error_max_budget_usd') {
       expect(result.errorMessage).toContain('maxBudgetUsd');
     }
+  });
+
+  it('a tool batch under budget executes normally; the cap gates only the NEXT call (E5 boundary)', async () => {
+    // Turn 1 (cheap) requests a tool -> executes; turn 2 (natural end) still
+    // completes. The pre-stop must not fire when the budget is NOT exceeded.
+    const transport = new MockTransport([
+      toolUseReplyEvents('Read', { file_path: '/a.txt' }),
+      textReplyEvents('done'),
+    ]);
+    const executed: Array<Record<string, unknown>> = [];
+    const tools = new Map<string, BuiltinTool>([['Read', makeFakeReadTool(executed)]]);
+    const deps = makeDeps(transport, { builtinTools: tools });
+    const history = [{ role: 'user' as const, content: 'go' }];
+
+    const messages = await collect(
+      runAgentLoop(history, deps, makeConfig({ maxBudgetUsd: 5 })),
+    );
+
+    expect(executed).toEqual([{ file_path: '/a.txt' }]);
+    const result = lastResult(messages);
+    expect(result.subtype).toBe('success');
   });
 
   it('includePartialMessages: stream_event messages precede the assistant message', async () => {
@@ -960,6 +984,26 @@ describe('runAgentLoop', () => {
       type: 'enabled',
       budget_tokens: 2000,
     });
+  });
+
+  it('a resolved thinking budget of 0 sends NO thinking param (E1 live-disable guard)', async () => {
+    // thinking {type:'enabled'} with maxThinkingTokens 0 is what a live
+    // setMaxThinkingTokens(0) produces under the preset default (which injects
+    // its budget via maxThinkingTokens): 0 must mean OFF, not a 400ing
+    // budget_tokens: 0 request.
+    const transport = new MockTransport([textReplyEvents('ok')]);
+    const deps = makeDeps(transport);
+    const history: APIMessageParam[] = [{ role: 'user', content: 'go' }];
+
+    await collect(
+      runAgentLoop(
+        history,
+        deps,
+        makeConfig({ thinking: { type: 'enabled' }, maxThinkingTokens: 0 }),
+      ),
+    );
+
+    expect(transport.requests[0]!.thinking).toBeUndefined();
   });
 
   // ----- finding #2: stop_reason tool_use with zero tool_use blocks -----
@@ -1381,5 +1425,155 @@ describe('dual system cache breakpoint', () => {
     // tools(1) + system base+project(2) + last message(1) = 4, at the API cap.
     expect(countBreakpoints(transport.requests[0]!)).toBe(4);
     expect(countBreakpoints(transport.requests[0]!)).toBeLessThanOrEqual(4);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// E3: truncated-turn graceful degradation (conformance run-l4 KD-L4-02/04).
+// A mid-stream connection drop (transport flags midStreamTruncation) salvages
+// the blocks the wire delivered whole instead of voiding the turn: partial
+// text becomes the answer (result/success + a non-fatal `errors` note);
+// complete tool_use blocks EXECUTE and the loop continues - even when the cut
+// landed before stop_reason arrived. Unclosed tool_use never executes.
+// ---------------------------------------------------------------------------
+
+/** Yields the scripted events then fails like a dropped connection. */
+class TruncatingTransport implements Transport {
+  readonly requests: StreamRequest[] = [];
+  private calls = 0;
+
+  constructor(
+    private readonly scripts: RawMessageStreamEvent[][],
+    /** 1-based call number that truncates; other calls complete normally. */
+    private readonly truncateCall = 1,
+    private readonly flag = true,
+  ) {}
+
+  apiKeySource(): 'user' {
+    return 'user';
+  }
+
+  async *stream(req: StreamRequest): AsyncGenerator<RawMessageStreamEvent, void> {
+    this.requests.push(req);
+    const call = ++this.calls;
+    const events = this.scripts[call - 1];
+    if (!events) throw new Error(`TruncatingTransport: unexpected call #${call}`);
+    for (const ev of events) yield ev;
+    if (call === this.truncateCall) {
+      const err = new APIConnectionError(
+        `Messages API stream failed after ${events.length} event(s): socket hang up`,
+      );
+      err.midStreamTruncation = this.flag;
+      throw err;
+    }
+  }
+}
+
+describe('engine loop - truncated-turn graceful degradation (E3)', () => {
+  it('text turn cut before message_stop: partial text becomes a success result with an errors note', async () => {
+    // textReplyEvents minus message_stop: text block closed, message_delta
+    // delivered (stop_reason end_turn), terminator missing.
+    const events = textReplyEvents('PARTIAL TEXT').slice(0, -1);
+    const transport = new TruncatingTransport([events]);
+    const deps = makeDeps(transport as unknown as MockTransport);
+    const history = [{ role: 'user' as const, content: 'go' }];
+
+    const messages = await collect(runAgentLoop(history, deps, makeConfig()));
+
+    expect(transport.requests).toHaveLength(1); // no retry
+    const assistantMsg = messages.find((m) => m.type === 'assistant');
+    expect(assistantMsg).toBeDefined();
+    const result = lastResult(messages);
+    expect(result.subtype).toBe('success');
+    expect(result.is_error).toBe(false);
+    if (result.subtype === 'success') expect(result.result).toBe('PARTIAL TEXT');
+    expect(result.errors?.some((e) => /stream failed/.test(e))).toBe(true);
+  });
+
+  it('tool turn cut after message_delta: the complete tool_use executes and the loop continues', async () => {
+    const events = toolUseReplyEvents('Read', { file_path: '/a.txt' }).slice(0, -1);
+    const transport = new TruncatingTransport([events, textReplyEvents('POST TRUNC')]);
+    const executed: Array<Record<string, unknown>> = [];
+    const tools = new Map<string, BuiltinTool>([['Read', makeFakeReadTool(executed)]]);
+    const deps = makeDeps(transport as unknown as MockTransport, { builtinTools: tools });
+    const history = [{ role: 'user' as const, content: 'go' }];
+
+    const messages = await collect(runAgentLoop(history, deps, makeConfig()));
+
+    expect(executed).toEqual([{ file_path: '/a.txt' }]);
+    expect(transport.requests).toHaveLength(2); // tool_result delivered on a 2nd POST
+    const result = lastResult(messages);
+    expect(result.subtype).toBe('success');
+    if (result.subtype === 'success') expect(result.result).toBe('POST TRUNC');
+    expect(result.errors?.some((e) => /stream failed/.test(e))).toBe(true);
+  });
+
+  it('tool turn cut BEFORE message_delta (no stop_reason): complete tool_use blocks still execute', async () => {
+    const events = toolUseReplyEvents('Read', { file_path: '/a.txt' }).slice(0, -2);
+    const transport = new TruncatingTransport([events, textReplyEvents('POST TRUNC')]);
+    const executed: Array<Record<string, unknown>> = [];
+    const tools = new Map<string, BuiltinTool>([['Read', makeFakeReadTool(executed)]]);
+    const deps = makeDeps(transport as unknown as MockTransport, { builtinTools: tools });
+    const history = [{ role: 'user' as const, content: 'go' }];
+
+    const messages = await collect(runAgentLoop(history, deps, makeConfig()));
+
+    expect(executed).toEqual([{ file_path: '/a.txt' }]);
+    expect(transport.requests).toHaveLength(2);
+    expect(lastResult(messages).subtype).toBe('success');
+  });
+
+  it('an UNCLOSED tool_use block never executes: nothing whole -> the turn still fails', async () => {
+    // Cut mid input_json_delta: content_block_stop never arrives, so the
+    // half-received input must not run. No other whole block -> no salvage.
+    const events = toolUseReplyEvents('Read', { file_path: '/a.txt' }).slice(0, -3);
+    const transport = new TruncatingTransport([events]);
+    const executed: Array<Record<string, unknown>> = [];
+    const tools = new Map<string, BuiltinTool>([['Read', makeFakeReadTool(executed)]]);
+    const deps = makeDeps(transport as unknown as MockTransport, { builtinTools: tools });
+    const history = [{ role: 'user' as const, content: 'go' }];
+
+    const messages = await collect(runAgentLoop(history, deps, makeConfig()));
+
+    expect(executed).toEqual([]);
+    const result = lastResult(messages);
+    expect(result.subtype).toBe('error_during_execution');
+  });
+
+  it('a connection error WITHOUT the truncation flag keeps the existing error path', async () => {
+    const events = textReplyEvents('SHOULD BE VOIDED').slice(0, -1);
+    const transport = new TruncatingTransport([events], 1, false);
+    const deps = makeDeps(transport as unknown as MockTransport);
+    const history = [{ role: 'user' as const, content: 'go' }];
+
+    const messages = await collect(runAgentLoop(history, deps, makeConfig()));
+
+    const result = lastResult(messages);
+    expect(result.subtype).toBe('error_during_execution');
+  });
+
+  it('mixed truncated turn: closed text is kept while the unclosed tool_use is dropped', async () => {
+    // leadingText closes a text block before the tool block opens; cutting
+    // before the tool's content_block_stop leaves text whole + tool partial.
+    const events = toolUseReplyEvents(
+      'Read',
+      { file_path: '/a.txt' },
+      { leadingText: 'KEPT PREFIX' },
+    ).slice(0, -3);
+    const transport = new TruncatingTransport([events]);
+    const executed: Array<Record<string, unknown>> = [];
+    const tools = new Map<string, BuiltinTool>([['Read', makeFakeReadTool(executed)]]);
+    const deps = makeDeps(transport as unknown as MockTransport, { builtinTools: tools });
+    const history = [{ role: 'user' as const, content: 'go' }];
+
+    const messages = await collect(runAgentLoop(history, deps, makeConfig()));
+
+    // The dropped tool never ran; the kept text degrades to a success answer.
+    expect(executed).toEqual([]);
+    expect(transport.requests).toHaveLength(1);
+    const result = lastResult(messages);
+    expect(result.subtype).toBe('success');
+    if (result.subtype === 'success') expect(result.result).toBe('KEPT PREFIX');
+    expect(result.errors?.some((e) => /stream failed/.test(e))).toBe(true);
   });
 });
