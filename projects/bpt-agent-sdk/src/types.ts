@@ -12,7 +12,7 @@
  */
 
 // ---------------------------------------------------------------------------
-// Anthropic Messages API wire types (minimal clean-room subset)
+// Anthropic Messages API wire types (minimal independent subset)
 // ---------------------------------------------------------------------------
 
 /** Server-side tool invocation counts the API reports on a response usage. */
@@ -526,6 +526,16 @@ export type HookCallbackMatcher = {
    * unanchored regular expression. Omitted/'*'/'' matches everything.
    */
   matcher?: string;
+  /**
+   * v0.6: optional natural-language CONDITION gating this matcher. When set,
+   * the runner evaluates it with a bounded single-shot model call (the
+   * reproduced hook-condition evaluator; the stop variant for Stop /
+   * SubagentStop events) BEFORE firing this matcher's callbacks, and SKIPS
+   * them when the condition is not met. FAILS CLOSED: a garbled or errored
+   * evaluation counts as not met. Omitted -> the existing fully-deterministic
+   * path, zero model calls.
+   */
+  condition?: string;
   hooks: HookCallback[];
   /** Timeout in seconds for each callback (default 60). */
   timeout?: number;
@@ -658,6 +668,17 @@ export type AgentDefinition = {
   permissionMode?: PermissionMode;
   /** v0.2: run this subagent as a non-blocking background task when invoked. */
   background?: boolean;
+  /**
+   * FORK mode (opt-in). When true, an invocation of this subagent type continues
+   * from the PARENT's context instead of a fresh isolated one: the child inherits
+   * the parent's model + system prompt + tool set and is seeded with a copy of the
+   * parent's message history (the delegated task appended as a trailing user turn),
+   * so it shares the parent's already-cached prefix. Trade-off: agentDef.model /
+   * tools / disallowedTools / permissionMode / prompt-as-system are INTENTIONALLY
+   * ignored in fork mode (they would break the cached prefix); a fork child is
+   * therefore as privileged as the parent. Default false -> isolated subagent.
+   */
+  fork?: boolean;
   /** Preload skills into the subagent context (ACCEPTED; no-op in v0.2). */
   skills?: string[];
   /** MCP servers for this subagent (ACCEPTED; v0.2 inherits parent servers). */
@@ -1022,7 +1043,7 @@ export type SDKCompactBoundaryMessage = {
 // TYPED for union exhaustiveness but have no source event in a headless engine
 // with no plugins/skills/CC-host/slash-command framework; see docs/COMPAT.md
 // for the emitted-vs-typed split. Field shapes the official leaves
-// undocumented are a self-consistent clean-room reconstruction.
+// undocumented are a self-consistent independent reconstruction.
 // ---------------------------------------------------------------------------
 
 /** A tool call the permission gate denied. EMITTED on every gate deny. */
@@ -1360,12 +1381,36 @@ export type CompactionOptions = {
   minRecentTurns?: number;
   /** Use a real Messages API summarization call instead of the deterministic fold. Default false. */
   useApiSummary?: boolean;
+  /**
+   * Model for the summarization call (only used when useApiSummary is true).
+   * Summarization is a cheap, mechanical task, so routing it to a small fast
+   * model (e.g. Haiku) cuts compaction cost without touching main-loop quality.
+   * Accepts a full model id or a short alias ('haiku'/'sonnet'/'opus'/'fable').
+   * Default: the session model.
+   */
+  model?: string;
   /** Treat a user turn whose text is `/compact [instructions]` as a manual compaction. Default true. */
   recognizeCommand?: boolean;
   /** Extra guidance appended to the summarizer instructions. */
   customInstructions?: string;
   /** Override the model context window (e.g. for a 1M-context beta). */
   contextWindowTokens?: number;
+  /**
+   * Run a cheap deterministic PRE-TIER over the folded prefix BEFORE the
+   * summarization step (G1): de-duplicate repeated identical tool_result blocks
+   * and pointer-ize oversized tool_result bulk, so fewer tokens reach the
+   * summarizer (foldViaApi) / deterministic recap. Only tool_result bulk is
+   * shed — user/assistant text is never touched, and message ordering /
+   * tool_use<->tool_result pairing are preserved. Default true (opt-out with false).
+   */
+  preTier?: boolean;
+  /**
+   * Byte budget (chars) for a single string tool_result in the pre-tier: content
+   * longer than this is truncated to head+tail with a `[…N chars elided…]`
+   * marker in the middle. Default 4000. Set 0 to disable truncation (dedupe of
+   * identical results still runs).
+   */
+  preTierMaxToolResultChars?: number;
 };
 
 /** The tool call a defer paused on (SDKResultMessage.deferred_tool_use). */

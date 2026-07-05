@@ -1,13 +1,19 @@
 # bpt-agent-sdk
 
-A clean-room TypeScript agent harness whose public surface is drop-in
+An independent TypeScript agent harness whose public surface is drop-in
 compatible with `@anthropic-ai/claude-agent-sdk`, but whose engine drives the
 **Anthropic Messages API directly** (`fetch` + SSE). There is no bundled CLI
 executable and no subprocess: the agent loop, tool dispatch, permissions,
 hooks, MCP and session persistence are all implemented in this package.
 
-Grounded exclusively in the public SDK documentation and the public Messages
-API documentation. No proprietary code was consulted.
+The **engine** is an independent reimplementation grounded in the public SDK
+documentation and the public Messages API documentation — no proprietary code
+copied. The **default system prompts** are an *open reproduction* of the
+official Claude Code prompts, assembled from a public reconstruction
+(reverse-engineered from the publicly distributed CLI, MIT-licensed) with
+attribution — not self-authored text. No genuinely internal or leaked material
+is used ("publicly distributed, reverse-engineerable" is not "an internal
+leak").
 
 ## Install
 

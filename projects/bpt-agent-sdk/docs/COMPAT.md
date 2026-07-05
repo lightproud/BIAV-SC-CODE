@@ -13,7 +13,19 @@ v0.2 implemented most of the P0/P1 gaps the audit flagged. Now **FULL / PARTIAL*
 (were MISSING/ACCEPTED in v0.1):
 
 - **Context compaction** — auto threshold + `/compact` + PreCompact hook +
-  `compact_boundary` emission (tokenizer-free, CJK-aware estimator).
+  `compact_boundary` emission (tokenizer-free, CJK-aware estimator). BPT
+  extension `compaction.model` routes the summarization call to a cheap model
+  (e.g. `'haiku'`, alias-resolved) to cut compaction cost; the summary usage is
+  billed to that model.
+  extension **`compaction.preTier`** (default true) runs a cheap deterministic
+  pre-tier over the folded prefix BEFORE the summarization step: it
+  de-duplicates repeated identical `tool_result` blocks and pointer-izes
+  oversized `tool_result` content to `compaction.preTierMaxToolResultChars`
+  (default 4000; head+tail kept, middle replaced with a `[…N chars elided…]`
+  marker), so fewer tokens reach the summarizer. It only sheds `tool_result`
+  bulk — user/assistant text is never touched, and message ordering /
+  tool_use↔tool_result pairing are preserved. Set `preTier:false` to opt out, or
+  `preTierMaxToolResultChars:0` to keep dedupe but disable truncation.
 - **Structured outputs** — `outputFormat` json_schema, validate + re-prompt,
   `structured_output` result, `error_max_structured_output_retries`.
 - **Subagent runtime** — Agent tool, `agents` executed, foreground + background
@@ -179,7 +191,7 @@ issue #181 has `SDKRateLimitEvent`/`SDKPromptSuggestionMessage`
 referenced-but-unexported). We model the arm with **top-level `type`**
 discriminators — the most likely consumer pattern (`msg.type === 'permission_denied'`)
 — except `status`, kept as `system/status`. Field shapes the official leaves
-undocumented are a self-consistent clean-room reconstruction. All carry the
+undocumented are a self-consistent independent reconstruction. All carry the
 house `uuid`/`session_id` envelope. Union: `SDKObservabilityMessage`.
 
 | Variant | Tier | Notes |

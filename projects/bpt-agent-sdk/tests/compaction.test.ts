@@ -22,10 +22,16 @@ import {
   foldDeterministic,
   maybeAutoCompact,
   partitionForCompaction,
+  preTierPrefix,
   runManualCompact,
   shouldAutoCompact,
   SUMMARIZER_SYSTEM,
   SUMMARIZER_SYSTEM_PROVENANCE,
+  SUMMARIZER_NO_TOOLS_GUARD,
+  SUMMARIZER_NO_TOOLS_GUARD_PROVENANCE,
+  SUMMARIZER_VERBATIM_SAFETY_CLAUSE,
+  SUMMARIZER_VERBATIM_SAFETY_CLAUSE_PROVENANCE,
+  extractSummaryFromReply,
 } from '../src/engine/compaction.js';
 import { existsSync, readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
@@ -284,6 +290,8 @@ describe('buildCompactionConfig', () => {
       recognizeCommand: true,
       customInstructions: undefined,
       contextWindowTokens: undefined,
+      preTier: true,
+      preTierMaxToolResultChars: 4000,
     });
   });
 
@@ -297,6 +305,8 @@ describe('buildCompactionConfig', () => {
       recognizeCommand: false,
       customInstructions: 'keep auth',
       contextWindowTokens: 1_000_000,
+      preTier: false,
+      preTierMaxToolResultChars: 500,
     });
     expect(cfg.enabled).toBe(false);
     expect(cfg.autoThresholdRatio).toBe(0.5);
@@ -306,6 +316,8 @@ describe('buildCompactionConfig', () => {
     expect(cfg.recognizeCommand).toBe(false);
     expect(cfg.customInstructions).toBe('keep auth');
     expect(cfg.contextWindowTokens).toBe(1_000_000);
+    expect(cfg.preTier).toBe(false);
+    expect(cfg.preTierMaxToolResultChars).toBe(500);
   });
 });
 
@@ -498,6 +510,209 @@ describe('foldDeterministic', () => {
     const text = (foldDeterministic(prefix, null)[1]!.content as Array<{ text: string }>)[0]!.text;
     expect(text).toContain('Tool results: 1 result(s) (some errors)');
     expect(text).toContain('Assistant called: Bash');
+  });
+});
+
+// ===========================================================================
+// preTierPrefix (G1: deterministic byte-shedding before the fold)
+// ===========================================================================
+
+describe('preTierPrefix', () => {
+  const on = { preTier: true, preTierMaxToolResultChars: 4000 };
+
+  /** Read the tool_result content string out of a user tool_result message. */
+  function trContent(msg: APIMessageParam, idx = 0): string {
+    const blocks = msg.content as ContentBlockParam[];
+    const tr = blocks.filter((b) => b.type === 'tool_result')[idx]!;
+    return (tr as { content: string }).content;
+  }
+  function trBlock(msg: APIMessageParam, idx = 0): Extract<ContentBlockParam, { type: 'tool_result' }> {
+    const blocks = msg.content as ContentBlockParam[];
+    return blocks.filter(
+      (b): b is Extract<ContentBlockParam, { type: 'tool_result' }> => b.type === 'tool_result',
+    )[idx]!;
+  }
+
+  it('DEDUPE: second identical long tool_result becomes a duplicate pointer; both preserved', () => {
+    const body = pad('shared result body', 6000);
+    const prefix: APIMessageParam[] = [
+      asstTool('Bash', { cmd: 'a' }, 'tu1'),
+      userToolResult('tu1', body),
+      asstTool('Bash', { cmd: 'b' }, 'tu2'),
+      userToolResult('tu2', body, true),
+    ];
+    const out = preTierPrefix(prefix, on);
+    // Both tool_result messages still present, ids preserved.
+    expect(trBlock(out[1]!).tool_use_id).toBe('tu1');
+    expect(trBlock(out[3]!).tool_use_id).toBe('tu2');
+    // First occurrence is not a duplicate marker (it was truncated instead).
+    expect(trContent(out[1]!)).not.toContain('duplicate tool_result');
+    // Second occurrence collapses to the dedup pointer, and is_error preserved.
+    expect(trContent(out[3]!)).toBe(`[…duplicate tool_result, ${body.length} chars elided…]`);
+    expect(trBlock(out[3]!).is_error).toBe(true);
+  });
+
+  it('DEDUPE net-savings guard: two identical SHORT results are left unchanged', () => {
+    const prefix: APIMessageParam[] = [
+      userToolResult('tu1', 'ok'),
+      userToolResult('tu2', 'ok'),
+    ];
+    const out = preTierPrefix(prefix, on);
+    expect(trContent(out[0]!)).toBe('ok');
+    expect(trContent(out[1]!)).toBe('ok'); // marker would inflate -> not applied
+    expect(JSON.stringify(out)).not.toContain('duplicate tool_result');
+  });
+
+  it('TRUNCATION: oversized content becomes head + marker + tail with exact elided count', () => {
+    const budget = 1000;
+    const original = pad('payload', 9000);
+    const prefix: APIMessageParam[] = [userToolResult('tu1', original)];
+    const out = preTierPrefix(prefix, { preTier: true, preTierMaxToolResultChars: budget });
+    const shed = trContent(out[0]!);
+    const headLen = Math.ceil(budget / 2);
+    const tailLen = budget - headLen;
+    const elided = original.length - budget;
+    const marker = `[…${elided} chars elided…]`;
+    expect(shed).toBe(original.slice(0, headLen) + marker + original.slice(original.length - tailLen));
+    expect(shed.startsWith(original.slice(0, headLen))).toBe(true);
+    expect(shed.endsWith(original.slice(original.length - tailLen))).toBe(true);
+    expect(shed).toContain(`${elided} chars elided`);
+    expect(shed.length).toBe(budget + marker.length);
+  });
+
+  it('TRUNCATION no-op: content shorter than budget is returned reference-equal', () => {
+    const prefix: APIMessageParam[] = [userToolResult('tu1', pad('small', 100))];
+    const out = preTierPrefix(prefix, on);
+    expect(out).toBe(prefix); // whole array unchanged by reference
+    expect(out[0]).toBe(prefix[0]);
+  });
+
+  it('PAIRING preserved: [user, asst(tool_use), user(tool_result huge), asst(text)] keeps order/ids/text', () => {
+    const asstBody = pad('assistant analysis that is itself quite long', 8000);
+    const prefix: APIMessageParam[] = [
+      userMsg(pad('the human prompt', 400)),
+      asstTool('Bash', { cmd: 'cat big' }, 'tu1'),
+      userToolResult('tu1', pad('huge tool output', 20000)),
+      asstText(asstBody),
+    ];
+    const out = preTierPrefix(prefix, on);
+    expect(out).toHaveLength(4);
+    expect(out[0]!.role).toBe('user');
+    expect(out[1]!.role).toBe('assistant');
+    expect(out[2]!.role).toBe('user');
+    expect(out[3]!.role).toBe('assistant');
+    // tool_use still in the assistant message, unchanged by reference.
+    expect(out[1]).toBe(prefix[1]);
+    // tool_result still carries tu1.
+    expect(trBlock(out[2]!).tool_use_id).toBe('tu1');
+    // assistant TEXT block is byte-identical (never shed).
+    const asstText0 = (out[3]!.content as Array<{ type: string; text: string }>)[0]!;
+    expect(asstText0.type).toBe('text');
+    expect(asstText0.text).toBe(asstBody);
+  });
+
+  it('NEVER touches long user prompt or long assistant text (only tool_result bulk)', () => {
+    const longUser = pad('a very long human prompt', 30000);
+    const longAsst = pad('a very long assistant answer', 30000);
+    const prefix: APIMessageParam[] = [userMsg(longUser), asstText(longAsst)];
+    const out = preTierPrefix(prefix, on);
+    expect(out).toBe(prefix); // no candidate messages -> reference-equal
+    expect(out[0]!.content).toBe(longUser);
+    expect((out[1]!.content as Array<{ text: string }>)[0]!.text).toBe(longAsst);
+  });
+
+  it('opt-out: preTier:false returns the input unchanged even with oversized/duplicate results', () => {
+    const body = pad('dup', 20000);
+    const prefix: APIMessageParam[] = [
+      userToolResult('tu1', body),
+      userToolResult('tu2', body),
+    ];
+    const out = preTierPrefix(prefix, { preTier: false, preTierMaxToolResultChars: 4000 });
+    expect(out).toBe(prefix);
+    expect(trContent(out[0]!)).toBe(body);
+    expect(trContent(out[1]!)).toBe(body);
+  });
+
+  it('purity: does not mutate the input prefix objects', () => {
+    const original = pad('payload', 9000);
+    const prefix: APIMessageParam[] = [userToolResult('tu1', original)];
+    const snapshot = JSON.parse(JSON.stringify(prefix));
+    const out = preTierPrefix(prefix, { preTier: true, preTierMaxToolResultChars: 1000 });
+    // input untouched
+    expect(prefix).toEqual(snapshot);
+    expect(trContent(prefix[0]!)).toBe(original);
+    // output actually changed (new object)
+    expect(out[0]).not.toBe(prefix[0]);
+    expect(trContent(out[0]!).length).toBeLessThan(original.length);
+  });
+
+  it('array/multimodal tool_result content is left untouched', () => {
+    const prefix: APIMessageParam[] = [
+      {
+        role: 'user',
+        content: [
+          {
+            type: 'tool_result',
+            tool_use_id: 'tu1',
+            content: [
+              { type: 'text', text: pad('caption', 8000) },
+              { type: 'image', source: { type: 'base64', media_type: 'image/png', data: 'x'.repeat(9000) } },
+            ],
+          },
+        ],
+      },
+    ];
+    const out = preTierPrefix(prefix, { preTier: true, preTierMaxToolResultChars: 100 });
+    expect(out).toBe(prefix); // array content is not a candidate -> reference-equal
+  });
+
+  it('CJK: codepoint-safe head/tail slicing never emits a lone surrogate', () => {
+    // Astral CJK Ext-B ideograph U+20000 is a surrogate PAIR (string length 2).
+    const original = '\u{20000}'.repeat(4000); // 4000 codepoints, 8000 UTF-16 units
+    const prefix: APIMessageParam[] = [userToolResult('tu1', original)];
+    const out = preTierPrefix(prefix, { preTier: true, preTierMaxToolResultChars: 1001 });
+    const shed = trContent(out[0]!);
+    // No unpaired surrogate anywhere in the shed output (a split pair would
+    // leave a lone high/low surrogate 0xD800-0xDFFF).
+    for (const ch of shed) {
+      const cp = ch.codePointAt(0)!;
+      expect(cp < 0xd800 || cp > 0xdfff).toBe(true);
+    }
+    expect(shed).toContain('chars elided');
+  });
+});
+
+// ===========================================================================
+// pre-tier integration: fewer bytes reach the summarizer (foldViaApi)
+// ===========================================================================
+
+describe('pre-tier via foldViaApi (fewer bytes to the summarizer)', () => {
+  it('the summarizer call sees the elided marker, not the full oversized body', async () => {
+    const huge = pad('OVERSIZED-TOOL-BODY', 20000);
+    const transport = new MockTransport([textReplyEvents('SUMMARY')]);
+    const deps = makeDeps({ transport });
+    const config = makeConfig(
+      buildCompactionConfig({ contextWindowTokens: 2000, useApiSummary: true }),
+    );
+    const view = {
+      messages: [
+        userMsg(pad('first prompt', 240)),
+        asstTool('Bash', { cmd: 'cat big' }, 'tu1'),
+        userToolResult('tu1', huge),
+        asstText(pad('analysis', 240)),
+        ...bigHistory(10),
+        userMsg('/compact'),
+      ],
+    };
+    await collect(runManualCompact(view, null, deps, config, 0, new AbortController().signal));
+
+    expect(transport.requests).toHaveLength(1);
+    const sent = JSON.stringify(transport.requests[0]!.messages);
+    // The oversized body was pointer-ized before reaching the summarizer.
+    expect(sent).toContain('chars elided');
+    expect(sent).not.toContain(huge);
+    // Pairing held: the (shed) tool_result still carries tu1.
+    expect(sent).toContain('"tool_use_id":"tu1"');
   });
 });
 
@@ -711,6 +926,70 @@ describe('foldViaApi (useApiSummary)', () => {
     expect(seen[0]!.apiMs).toBeGreaterThanOrEqual(0);
   });
 
+  it('attaches the no-tools guard + verbatim-safety clause to the summarizer system (G-SUMMARY)', async () => {
+    const transport = new MockTransport([textReplyEvents('SUMMARY')]);
+    const config = makeConfig(cfg);
+    const view = { messages: [...bigHistory(12), userMsg('/compact')] };
+    await collect(runManualCompact(view, null, makeDeps({ transport }), config, 0, new AbortController().signal));
+    const system = transport.requests[0]?.system as string;
+    expect(system).toContain(SUMMARIZER_SYSTEM);
+    expect(system).toContain(SUMMARIZER_VERBATIM_SAFETY_CLAUSE);
+    expect(system).toContain(SUMMARIZER_NO_TOOLS_GUARD);
+  });
+
+  it('folds only the <summary> block and drops the <analysis> scratchpad (G-SUMMARY)', async () => {
+    const reply = '<analysis>secret scratchpad reasoning</analysis>\n<summary>REAL RECAP</summary>';
+    const transport = new MockTransport([textReplyEvents(reply)]);
+    const config = makeConfig(cfg);
+    const view = { messages: [...bigHistory(12), userMsg('/compact')] };
+    await collect(runManualCompact(view, null, makeDeps({ transport }), config, 0, new AbortController().signal));
+    const text = (view.messages[1]!.content as Array<{ text: string }>)[0]!.text;
+    expect(text).toBe('REAL RECAP');
+    expect(text).not.toContain('secret scratchpad');
+  });
+
+  it('routes the summary call to compaction.model (alias resolved) when set (G2)', async () => {
+    const cheapCfg = buildCompactionConfig({
+      contextWindowTokens: 2000,
+      useApiSummary: true,
+      model: 'haiku',
+    });
+    const config = makeConfig(cheapCfg);
+    const view = { messages: [...bigHistory(12), userMsg('/compact')] };
+    const seen: string[] = [];
+    await collect(
+      runManualCompact(
+        view,
+        null,
+        makeDeps({ transport: new MockTransport([textReplyEvents('SUMMARY')]) }),
+        config,
+        0,
+        new AbortController().signal,
+        (m) => seen.push(m),
+      ),
+    );
+    // 'haiku' resolves to the concrete Haiku id; the summary bill is attributed to it
+    expect(seen).toEqual(['claude-haiku-4-5']);
+  });
+
+  it('uses the session model for the summary when compaction.model is unset (G2)', async () => {
+    const config = makeConfig(cfg);
+    const view = { messages: [...bigHistory(12), userMsg('/compact')] };
+    const seen: string[] = [];
+    await collect(
+      runManualCompact(
+        view,
+        null,
+        makeDeps({ transport: new MockTransport([textReplyEvents('SUMMARY')]) }),
+        config,
+        0,
+        new AbortController().signal,
+        (m) => seen.push(m),
+      ),
+    );
+    expect(seen).toEqual(['claude-sonnet-4-5']);
+  });
+
   it('falls back to the deterministic fold when the summary call throws', async () => {
     const throwing: EngineDeps['transport'] = {
       apiKeySource: () => 'user',
@@ -781,5 +1060,45 @@ describe('summarizer prompt provenance (corpus-sync guard, Track B)', () => {
       .filter((s) => !body.includes(s.slice(0, 60)));
     expect(drifted, `not found in archive:\n${drifted.join('\n')}`).toEqual([]);
     expect(desc.length).toBeGreaterThan(0);
+  });
+
+  const guards = [
+    { text: SUMMARIZER_NO_TOOLS_GUARD, prov: SUMMARIZER_NO_TOOLS_GUARD_PROVENANCE },
+    { text: SUMMARIZER_VERBATIM_SAFETY_CLAUSE, prov: SUMMARIZER_VERBATIM_SAFETY_CLAUSE_PROVENANCE },
+  ];
+  for (const { text, prov } of guards) {
+    it.runIf(existsSync(archive))(`${prov.slug} guard is faithful to its archived source`, () => {
+      const body = norm(stripHeader(readFileSync(join(archive, `${prov.slug}.md`), 'utf8')));
+      const drifted = norm(text)
+        .split(/(?<=[.:])\s+/)
+        .map(norm)
+        .filter((s) => s.length >= 40)
+        .filter((s) => !body.includes(s.slice(0, 60)));
+      expect(drifted, `not found in archive:\n${drifted.join('\n')}`).toEqual([]);
+    });
+  }
+});
+
+describe('extractSummaryFromReply (G-SUMMARY consumer)', () => {
+  it('prefers explicit <summary> block content', () => {
+    expect(extractSummaryFromReply('<analysis>x</analysis><summary>THE RECAP</summary>')).toBe(
+      'THE RECAP',
+    );
+  });
+  it('drops an <analysis> scratchpad when no <summary> block is present', () => {
+    expect(extractSummaryFromReply('<analysis>secret</analysis>\nThe recap.')).toBe('The recap.');
+  });
+  it('is a strict superset of the old strip: a plain-text reply passes through', () => {
+    expect(extractSummaryFromReply('PLAIN SUMMARY')).toBe('PLAIN SUMMARY');
+  });
+  it('strips stray <summary> tags with no analysis block', () => {
+    expect(extractSummaryFromReply('<summary>Recap here</summary>')).toBe('Recap here');
+  });
+  it('WITHOUT an analysis block, keeps text around a <summary> block (no data loss)', () => {
+    // The old strip returned "Use foo in details."; the new code must match it
+    // exactly when the full analysis+summary contract is NOT present.
+    expect(extractSummaryFromReply('Use <summary>foo</summary> in details.')).toBe(
+      'Use foo in details.',
+    );
   });
 });

@@ -27,6 +27,7 @@ import { randomUUID } from 'node:crypto';
 
 import type {
   HookCallback,
+  HookCallbackMatcher,
   HookEvent,
   HookInput,
   HookJSONOutput,
@@ -36,6 +37,8 @@ import type {
 } from '../types.js';
 import { AbortError } from '../errors.js';
 import type { AggregatedHookResult, HookRunner } from '../internal/contracts.js';
+import type { UtilityCallOptions } from '../generators/runtime.js';
+import { evaluateHookCondition } from './condition.js';
 import { matcherMatches } from './matcher.js';
 
 const DEFAULT_TIMEOUT_SECONDS = 60;
@@ -50,6 +53,11 @@ export type HookRunnerConfig = {
    *  callback invocation emits a hook_started / hook_response pair (correlated
    *  by hook_id) into the SDKMessage stream via the shared observability queue. */
   onLifecycleEvent?: (msg: SDKHookStartedMessage | SDKHookResponseMessage) => void;
+  /** v0.6: credentials/transport for `condition`-gated matchers (provider /
+   *  betas threaded from query options; tests inject a mock transport).
+   *  Absent AND a matcher carries a condition -> the evaluation fails closed
+   *  (no credential -> condition not met -> callbacks skipped). */
+  conditionOptions?: UtilityCallOptions;
 };
 
 /** A promise that rejects when the signal aborts (used to bound callbacks
@@ -87,11 +95,13 @@ export class DefaultHookRunner implements HookRunner {
   private readonly onLifecycleEvent?: (
     msg: SDKHookStartedMessage | SDKHookResponseMessage,
   ) => void;
+  private readonly conditionOptions?: UtilityCallOptions;
 
   constructor(cfg: HookRunnerConfig) {
     this.hooks = cfg.hooks ?? {};
     this.debug = cfg.debug;
     this.onLifecycleEvent = cfg.onLifecycleEvent;
+    this.conditionOptions = cfg.conditionOptions;
   }
 
   hasHooks(event: HookEvent): boolean {
@@ -108,10 +118,15 @@ export class DefaultHookRunner implements HookRunner {
   ): Promise<AggregatedHookResult> {
     if (signal.aborted) throw new AbortError();
 
-    // Collect every callback whose matcher pattern accepts the filter value.
+    // Pattern-match first, then admit through the (optional) condition gate.
+    const matched = (this.hooks[event] ?? []).filter((m) =>
+      matcherMatches(m.matcher, matchValue, this.debug),
+    );
+    const admitted = await this.filterByCondition(event, matched, input, signal);
+
+    // Collect every callback of every admitted matcher.
     const tasks: Array<{ cb: HookCallback; timeoutMs: number }> = [];
-    for (const matcher of this.hooks[event] ?? []) {
-      if (!matcherMatches(matcher.matcher, matchValue, this.debug)) continue;
+    for (const matcher of admitted) {
       const seconds =
         typeof matcher.timeout === 'number' &&
         Number.isFinite(matcher.timeout) &&
@@ -137,6 +152,56 @@ export class DefaultHookRunner implements HookRunner {
     if (signal.aborted) throw new AbortError();
 
     return this.aggregate(outputs);
+  }
+
+  /**
+   * v0.6 condition gate: matchers carrying a natural-language `condition` are
+   * admitted only when the reproduced hook-condition evaluator affirms it (the
+   * stop variant for Stop / SubagentStop events). Evaluations run in parallel,
+   * one bounded model call per conditioned matcher. FAILS CLOSED: a garbled or
+   * errored evaluation (including no credential) counts as not met and the
+   * matcher's callbacks are SKIPPED, with a debug line naming the reason.
+   * Matchers without a condition pass straight through — when NO matcher has a
+   * condition this returns synchronously with zero model calls, keeping
+   * existing configurations byte-identical in behavior.
+   */
+  private async filterByCondition(
+    event: HookEvent,
+    matched: HookCallbackMatcher[],
+    input: HookInput,
+    signal: AbortSignal,
+  ): Promise<HookCallbackMatcher[]> {
+    if (!matched.some((m) => typeof m.condition === 'string' && m.condition.length > 0)) {
+      return matched; // deterministic fast path: zero model calls
+    }
+    const stop = event === 'Stop' || event === 'SubagentStop';
+    const context = JSON.stringify(input);
+    const verdicts = await Promise.all(
+      matched.map(async (m) => {
+        if (typeof m.condition !== 'string' || m.condition.length === 0) return true;
+        try {
+          const r = await evaluateHookCondition(
+            { condition: m.condition, context, stop },
+            { ...this.conditionOptions, signal },
+          );
+          if (!r.ok) {
+            this.debug(
+              `hooks(${event}): condition not met, callbacks skipped ` +
+                `(${r.impossible === true ? 'impossible; ' : ''}${r.reason})`,
+            );
+          }
+          return r.ok;
+        } catch (err) {
+          // Abort propagates as cancellation of the whole run; anything else
+          // fails CLOSED (skip) so a hook never fires on an unverified condition.
+          if (signal.aborted) throw err;
+          const msg = err instanceof Error ? err.message : String(err);
+          this.debug(`hooks(${event}): condition evaluation failed, callbacks skipped (${msg})`);
+          return false;
+        }
+      }),
+    );
+    return matched.filter((_m, i) => verdicts[i] === true);
   }
 
   /** Run one callback with its own timeout; failures become debug warnings. */

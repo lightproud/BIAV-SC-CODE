@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 314,
-    "edges": 317,
-    "terms": 5396,
+    "concepts": 316,
+    "edges": 319,
+    "terms": 5432,
     "by_type": {
       "character": 72,
       "dataset": 109,
-      "documentation": 70,
+      "documentation": 72,
       "knowledge-pointer": 43,
       "reference": 17,
       "research": 3
@@ -26,7 +26,7 @@
       "memory": 47,
       "news-output": 23,
       "projects": 18,
-      "resource": 51,
+      "resource": 53,
       "sources": 17,
       "story": 11,
       "unpacked": 13,
@@ -34,7 +34,7 @@
     },
     "by_tier": {
       "skeleton": 131,
-      "search": 183
+      "search": 185
     }
   },
   "sections": {
@@ -68,7 +68,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 51
+      "count": 53
     },
     "sources": {
       "index": "/sources/index.md",
@@ -968,7 +968,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 72
+      "degree": 74
     },
     "/characters/15604.md": {
       "type": "character",
@@ -2578,7 +2578,7 @@
     "/projects/bpt-sdk-doc-architecture.md": {
       "type": "documentation",
       "title": "bpt-agent-sdk ARCHITECTURE",
-      "description": "Clean-room agent harness with a `@anthropic-ai/claude-agent-sdk`-compatible",
+      "description": "Independent agent harness with a `@anthropic-ai/claude-agent-sdk`-compatible",
       "resource": "/projects/bpt-agent-sdk/docs/ARCHITECTURE.md",
       "tags": [
         "data_layer:curated",
@@ -2715,7 +2715,7 @@
     "/projects/project-bpt-agent-sdk.md": {
       "type": "documentation",
       "title": "bpt-agent-sdk 子项目上下文",
-      "description": "BPT Agent SDK：净室（clean-room）实现的 TypeScript agent 框架，公开调用面",
+      "description": "BPT Agent SDK：独立重实现（independent reimplementation）的 TypeScript agent 框架，公开调用面",
       "resource": "/projects/bpt-agent-sdk/CONTEXT.md",
       "tags": [
         "data_layer:curated",
@@ -3193,6 +3193,34 @@
       "title": "bpt-sdk-reproduction-scope-ledger-20260704",
       "description": "**全做**。官方有的能力我们都在 BPT 引擎里再现一遍，用公开还原作蓝本、适配我们工具、明确署名。唯一的排序逻辑是**依赖**——（格式：md）",
       "resource": "/Public-Info-Pool/Resource/proposal/bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:proposal"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 1
+    },
+    "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md": {
+      "type": "documentation",
+      "title": "bpt-sdk-roadmap-20260705",
+      "description": "引擎主体（v0.1–v0.5）+ 提示词装配层（Track B）已成并入 main；G 系列（引擎效率机制 + 保真收尾，含 G8 决策落档）收官 v0.5；（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/proposal/bpt-sdk-roadmap-20260705.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:proposal"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 1
+    },
+    "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md": {
+      "type": "documentation",
+      "title": "bpt-sdk-v06-remaining-execution-roadmap-20260705",
+      "description": "**首批（本会话）已实现并全绿**：G-VERIFY（三态验证器）+ G-SUMMARY（摘要安全守卫 + away-summary）。详见下「## 已落」。（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/proposal/bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "tags": [
         "data_layer:curated",
         "deliverable",
@@ -5844,6 +5872,16 @@
         "mention"
       ],
       [
+        "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
         "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
         "提及:艾瑞卡",
         "mention"
@@ -7599,6 +7637,20 @@
         "mention"
       ]
     ],
+    "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
+    "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
     "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md": [
       [
         "/characters/15603.md",
@@ -8285,6 +8337,8 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -8680,6 +8734,9 @@
     "awakerpotency": [
       "/wiki-data/wiki-data-potency.md"
     ],
+    "away": [
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
+    ],
     "b3": [
       "/memory/memory-ext-wiki-characters-schema-v1.md"
     ],
@@ -8913,6 +8970,8 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
@@ -9041,8 +9100,6 @@
       "/sources/youtube_comments.md"
     ],
     "clean": [
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/project-bpt-agent-sdk.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
     ],
     "cloud": [
@@ -9335,6 +9392,8 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -9597,6 +9656,8 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -9881,6 +9942,8 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -10026,6 +10089,8 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -10267,6 +10332,9 @@
     "event": [
       "/memory/memory-ext-collab-event-playbook.md"
     ],
+    "execution": [
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
+    ],
     "extracted": [
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
@@ -10461,6 +10529,9 @@
     ],
     "further": [
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md"
+    ],
+    "g8": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
     "gacha": [
       "/characters/122587.md",
@@ -10830,6 +10901,10 @@
     "importing": [
       "/projects/bpt-sdk-doc-migration.md"
     ],
+    "independent": [
+      "/projects/bpt-sdk-doc-architecture.md",
+      "/projects/project-bpt-agent-sdk.md"
+    ],
     "index": [
       "/README.md",
       "/community/community-index.md",
@@ -10890,6 +10965,8 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -11314,6 +11391,8 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -11637,7 +11716,8 @@
     "main": [
       "/README.md",
       "/memory/memory-ext-active-contribution-protocol.md",
-      "/memory/memory-ext-active-policy-direct-push-main.md"
+      "/memory/memory-ext-active-policy-direct-push-main.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
     "maintenance": [
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -11774,6 +11854,8 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -12378,6 +12460,8 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -12639,6 +12723,8 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -12699,6 +12785,8 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -12934,6 +13022,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md"
     ],
     "reimplementation": [
+      "/projects/project-bpt-agent-sdk.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
     ],
     "rele": [
@@ -12945,6 +13034,9 @@
       "/memory/memory-strategy-repo-slimming-plan.md",
       "/projects/extracted-lua-inventory.md",
       "/projects/releases-treasure-map.md"
+    ],
+    "remaining": [
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
     ],
     "repo": [
       "/memory/memory-strategy-repo-slimming-plan.md",
@@ -13016,6 +13108,8 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -13073,14 +13167,14 @@
       "/sources/taptap_review.md"
     ],
     "roadmap": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md"
     ],
     "role": [
       "/resource/resource-game-analysis-role-action-recommendations-202605.md"
     ],
     "room": [
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/project-bpt-agent-sdk.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
     ],
     "round1": [
@@ -13187,6 +13281,8 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -13528,7 +13624,8 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
     ],
     "summary": [
-      "/memory/memory-ext-bpt-architecture-summary-template.md"
+      "/memory/memory-ext-bpt-architecture-summary-template.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
     ],
     "summon": [
       "/characters/125346.md",
@@ -13747,6 +13844,8 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -13789,6 +13888,9 @@
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md"
+    ],
+    "track": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
     "treasure": [
       "/projects/releases-treasure-map.md"
@@ -13916,7 +14018,11 @@
     "v0": [
       "/README.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-desktop-design-spec-ref.md",
-      "/memory/memory-ext-bpt-guidance-protocol.md"
+      "/memory/memory-ext-bpt-guidance-protocol.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
+    ],
+    "v06": [
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
     ],
     "v1": [
       "/memory/contribution-protocol.md",
@@ -13950,6 +14056,9 @@
     ],
     "verification": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-build-verification.md"
+    ],
+    "verify": [
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
     ],
     "version": [
       "/assets/assets-version.md",
@@ -14360,6 +14469,9 @@
     "三层": [
       "/projects/doc-testing-strategy.md"
     ],
+    "三态": [
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
+    ],
     "三条": [
       "/README.md"
     ],
@@ -14683,6 +14795,8 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -14907,6 +15021,8 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -15171,6 +15287,8 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -15639,7 +15757,8 @@
       "/characters/15602.md"
     ],
     "主体": [
-      "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md"
+      "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
     "主供": [
       "/README.md"
@@ -16245,6 +16364,8 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -16788,6 +16909,7 @@
       "/memory/memory-ext-active-contribution-protocol.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
       "/memory/memory-strategy-repo-slimming-plan.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
     ],
     "会转": [
@@ -17113,6 +17235,8 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -17338,6 +17462,8 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -17710,6 +17836,9 @@
     "保留": [
       "/README.md"
     ],
+    "保真": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
+    ],
     "保自": [
       "/characters/15580.md"
     ],
@@ -17961,6 +18090,9 @@
     "全功": [
       "/memory/capability-index.md"
     ],
+    "全守": [
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
+    ],
     "全平": [
       "/news-output/news-output-all.md"
     ],
@@ -17976,6 +18108,9 @@
     ],
     "全策": [
       "/memory/memory-ext-active-contribution-protocol.md"
+    ],
+    "全绿": [
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
     ],
     "全身": [
       "/characters/125346.md",
@@ -18391,6 +18526,7 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
       "/memory/memory-ext-biav-info-classification.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
     ],
     "冷光": [
@@ -18398,9 +18534,6 @@
     ],
     "冻结": [
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
-    ],
-    "净室": [
-      "/projects/project-bpt-agent-sdk.md"
     ],
     "净重": [
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
@@ -19034,6 +19167,8 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -21962,6 +22097,8 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -22691,6 +22828,8 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -22996,6 +23135,9 @@
     "宇宙": [
       "/memory/memory-ext-collab-event-playbook.md"
     ],
+    "守卫": [
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
+    ],
     "守密人": [
       "/README.md",
       "/characters/122587.md",
@@ -23027,7 +23169,8 @@
       "/characters/15591.md"
     ],
     "安全": [
-      "/memory/memory-ext-active-contribution-protocol.md"
+      "/memory/memory-ext-active-contribution-protocol.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
     ],
     "安武": [
       "/characters/95786.md"
@@ -23247,6 +23390,8 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -23387,7 +23532,8 @@
     "实现": [
       "/README.md",
       "/projects/project-bpt-agent-sdk.md",
-      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
     ],
     "实脱": [
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md"
@@ -24209,12 +24355,21 @@
     "已固": [
       "/resource/resource-community-analysis-jp-discord-insights-202606.md"
     ],
+    "已实": [
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
+    ],
     "已封": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-design.md"
+    ],
+    "已成": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
     "已有": [
       "/memory/memory-research-discord-archive-backfill-conflict.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
+    ],
+    "已落": [
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
     ],
     "已退": [
       "/memory/decisions-archive.md"
@@ -24473,8 +24628,12 @@
     "并使": [
       "/characters/15574.md"
     ],
+    "并入": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
+    ],
     "并全": [
-      "/news-output/news-output-newsjs.md"
+      "/news-output/news-output-newsjs.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
     ],
     "并变": [
       "/characters/15583.md",
@@ -24798,6 +24957,7 @@
       "/characters/15602.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
     ],
     "引流": [
@@ -25289,6 +25449,9 @@
     ],
     "态适": [
       "/characters/15601.md"
+    ],
+    "态验": [
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
     ],
     "怒火": [
       "/characters/15581.md"
@@ -25916,6 +26079,9 @@
     "成巨": [
       "/characters/130901.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
+    ],
+    "成并": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
     "成战": [
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md"
@@ -26754,6 +26920,8 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -27229,6 +27397,8 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -27345,6 +27515,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "提高": [
@@ -27518,6 +27689,8 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -27604,6 +27777,12 @@
       "/characters/54117.md",
       "/characters/77925.md"
     ],
+    "擎主": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
+    ],
+    "擎效": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
+    ],
     "擎每": [
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
     ],
@@ -27627,6 +27806,12 @@
     ],
     "收什": [
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md"
+    ],
+    "收官": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
+    ],
+    "收尾": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
     "收弃": [
       "/characters/15565.md"
@@ -27848,6 +28033,8 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -28095,6 +28282,8 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -28235,6 +28424,7 @@
       "/characters/77926.md"
     ],
     "效率": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
     ],
     "敌人": [
@@ -29459,7 +29649,8 @@
       "/projects/entry-readme.md"
     ],
     "本会": [
-      "/memory/memory-strategy-repo-slimming-plan.md"
+      "/memory/memory-strategy-repo-slimming-plan.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
     ],
     "本体": [
       "/README.md",
@@ -29613,6 +29804,8 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -29798,6 +29991,7 @@
       "/characters/15598.md"
     ],
     "机制": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md"
     ],
     "机器": [
@@ -29984,6 +30178,8 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -30503,6 +30699,8 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -30675,6 +30873,8 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -31107,6 +31307,8 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -31439,6 +31641,8 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -32647,7 +32851,8 @@
     ],
     "独立": [
       "/README.md",
-      "/projects/bpt-sdk-doc-positioning.md"
+      "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/project-bpt-agent-sdk.md"
     ],
     "猎出": [
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md"
@@ -32686,6 +32891,9 @@
     ],
     "率审": [
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
+    ],
+    "率机": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
     "率极": [
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
@@ -32861,14 +33069,14 @@
     "现实": [
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md"
     ],
+    "现并": [
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
+    ],
     "现有": [
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md"
     ],
     "现永": [
       "/characters/15589.md"
-    ],
-    "现的": [
-      "/projects/project-bpt-agent-sdk.md"
     ],
     "现精": [
       "/README.md"
@@ -34274,6 +34482,9 @@
     "真对": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
+    "真收": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
+    ],
     "真梨": [
       "/characters/15586.md"
     ],
@@ -34663,6 +34874,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "礼服": [
@@ -35038,6 +35250,9 @@
       "/assets/assets-images.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md"
     ],
+    "立重": [
+      "/projects/project-bpt-agent-sdk.md"
+    ],
     "章嗣": [
       "/characters/15564.md"
     ],
@@ -35123,6 +35338,9 @@
     ],
     "策直": [
       "/memory/memory-ext-active-contribution-protocol.md"
+    ],
+    "策落": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
     "策见": [
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
@@ -35221,6 +35439,9 @@
     ],
     "糕和": [
       "/characters/15576.md"
+    ],
+    "系列": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
     "系图": [
       "/README.md"
@@ -36466,6 +36687,9 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md"
     ],
+    "落档": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
+    ],
     "落的": [
       "/characters/15591.md",
       "/characters/15592.md",
@@ -36690,6 +36914,9 @@
     "装部": [
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
     ],
+    "装配": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
+    ],
     "裹噬": [
       "/characters/77913.md"
     ],
@@ -36704,6 +36931,9 @@
     ],
     "要向": [
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
+    ],
+    "要安": [
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
     ],
     "要时": [
       "/characters/15573.md"
@@ -36736,6 +36966,9 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md"
+    ],
+    "见下": [
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
     ],
     "见你": [
       "/characters/95786.md"
@@ -37113,6 +37346,9 @@
     "证世": [
       "/characters/77926.md"
     ],
+    "证器": [
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
+    ],
     "证场": [
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md"
     ],
@@ -37251,6 +37487,9 @@
     "词注": [
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
     ],
+    "词装": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
+    ],
     "译志": [
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
     ],
@@ -37338,6 +37577,9 @@
     ],
     "详情": [
       "/README.md"
+    ],
+    "详见": [
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
     ],
     "语义": [
       "/sources/appstore.md",
@@ -37823,6 +38065,8 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -38429,6 +38673,8 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -38844,6 +39090,9 @@
       "/characters/77922.md",
       "/extracted/extracted-readme.md"
     ],
+    "配层": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
+    ],
     "配我": [
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
     ],
@@ -38940,6 +39189,7 @@
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md"
     ],
     "重实": [
+      "/projects/project-bpt-agent-sdk.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
     ],
     "重度": [
@@ -39351,6 +39601,8 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -39570,6 +39822,8 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -40371,6 +40625,9 @@
     "馈走": [
       "/memory/memory-ext-bpt-guidance-log.md"
     ],
+    "首批": [
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
+    ],
     "首来": [
       "/characters/15582.md"
     ],
@@ -40403,6 +40660,7 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-build-verification.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-phase-d-plan.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md"
     ],
     "骨架": [
@@ -40878,6 +41136,8 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
@@ -41149,6 +41409,8 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -41426,6 +41688,8 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -41562,6 +41826,8 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -41745,6 +42011,9 @@
     ],
     "evaluation": [
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md"
+    ],
+    "execution": [
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
     ],
     "extracted": [
       "/extracted/extracted-readme.md"
@@ -42180,6 +42449,8 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -42789,6 +43060,8 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -42842,6 +43115,9 @@
       "/memory/memory-strategy-repo-slimming-plan.md",
       "/projects/releases-treasure-map.md"
     ],
+    "remaining": [
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
+    ],
     "repo": [
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -42894,6 +43170,8 @@
       "/sources/taptap_review.md"
     ],
     "roadmap": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md"
     ],
     "role": [
@@ -42966,6 +43244,8 @@
       "/projects/project-bpt-agent-sdk.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -43181,6 +43461,8 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -43296,6 +43578,9 @@
     "v0": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-desktop-design-spec-ref.md",
       "/memory/memory-ext-bpt-guidance-protocol.md"
+    ],
+    "v06": [
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
     ],
     "v1": [
       "/memory/memory-ext-biav-info-classification.md",

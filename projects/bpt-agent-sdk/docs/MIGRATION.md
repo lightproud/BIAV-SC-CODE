@@ -59,14 +59,19 @@ The four host callbacks a desktop app should implement are demonstrated in
 
 ## 4. What behaves differently (read before filing bugs)
 
-Surface is drop-in; behavior is not bit-identical — the engine and the system
-prompt are independent implementations (see POSITIONING.md §2 for why this is
-structural, not a backlog):
+Surface is drop-in; behavior is not bit-identical — the engine is an
+independent reimplementation and the default system prompt is a faithful open
+reproduction of the official one (see POSITIONING.md §2 for why the residual
+gap is structural, not a backlog):
 
-1. **Model "feel"**: the official CLI's proprietary system prompt is not
-   reproduced (clean-room discipline). Tool choice, formatting and refusal
-   edges can drift. `systemPrompt: { preset: 'claude_code' }` maps to this
-   SDK's own harness prompt.
+1. **Model "feel"**: `systemPrompt: { preset: 'claude_code' }` maps to the
+   `v5` faithful open reproduction of the official Claude Code main-loop prompt
+   (assembled from the public prompt reconstruction — reverse-engineered from
+   the publicly distributed CLI, MIT — with attribution). Any residual
+   feel-drift in tool choice, formatting and refusal edges comes from the
+   secret-sauce layer (the public reconstruction is not the live proprietary
+   prompt + undocumented CLI behavior) and from your model/provider choice
+   (change the model, change the feel) — not from a refusal to reproduce.
 2. **Costs are estimates**: `total_cost_usd` comes from a static price table.
    Per-run `result.metrics` (turns / tokens / cache hit ratio / per-tool
    timings) is the instrument to watch instead.

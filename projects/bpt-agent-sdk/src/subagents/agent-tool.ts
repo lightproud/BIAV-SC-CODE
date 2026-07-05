@@ -34,7 +34,9 @@ export function createAgentTool(agentNames: string[]): BuiltinTool {
       'out research or multi-step work without cluttering the main thread. ' +
       'Provide a complete, standalone prompt: the subagent does not see the ' +
       'current conversation. Set run_in_background to true to launch the ' +
-      'subagent without blocking; its result is delivered on a later turn.',
+      'subagent without blocking; its result is delivered on a later turn. ' +
+      'Set fork to true to instead continue from the current context (shared ' +
+      'cache, more privileged) rather than a fresh isolated one.',
     readOnly: false,
     isFileEdit: false,
     inputSchema: {
@@ -60,6 +62,14 @@ export function createAgentTool(agentNames: string[]): BuiltinTool {
           description:
             'When true, launch the subagent as a non-blocking background task ' +
             'and return immediately; its result arrives on a subsequent turn.',
+        },
+        fork: {
+          type: 'boolean',
+          description:
+            'When true, continue from the parent\'s context (shared cache) ' +
+            'instead of a fresh isolated context; the subagent inherits the ' +
+            'parent model, system prompt and tool set and is as privileged as ' +
+            'the parent. Default false.',
         },
       },
       required: ['description', 'prompt', 'subagent_type'],
@@ -88,12 +98,24 @@ export function createAgentTool(agentNames: string[]): BuiltinTool {
       const descRaw = input['description'];
       const description = typeof descRaw === 'string' ? descRaw : undefined;
       const runInBackground = input['run_in_background'] === true;
+      const fork = input['fork'] === true;
+
+      // EAGERLY snapshot the parent context here (a value copy, not a lazy
+      // thunk) so a background fork captures the parent as it was at spawn.
+      // Always snapshot when a getter is wired: the tool cannot see
+      // AgentDefinition.fork (the runtime resolves that), so the runtime needs
+      // the snapshot available whenever EITHER the input flag OR agentDef.fork
+      // may request a fork. The snapshot is a cheap shallow copy; the runtime
+      // decides whether to actually seed the child with it.
+      const parentHistory = ctx.getForkHistory?.();
 
       const result = await spawn({
         subagentType,
         prompt,
         description,
         runInBackground,
+        fork,
+        parentHistory,
         // The loop does not expose the spawning tool_use block id to the tool;
         // the runtime mints a stable correlation id (the child agentId) when
         // this is empty. See the runtime's parentToolUseId handling.

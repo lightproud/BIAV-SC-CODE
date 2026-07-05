@@ -18,7 +18,8 @@ import type { AgentDefinition } from '../types.js';
  * at depth < MAX_SUBAGENT_DEPTH may spawn a child (at depth+1); a loop at depth
  * MAX_SUBAGENT_DEPTH cannot spawn further agents. Enforced structurally (the
  * Agent tool is removed from a depth-5 child's tool set) AND by a guard in the
- * spawn function.
+ * spawn function. A FORK child inherits the parent's full tool set but still
+ * loses Agent at the max depth, so fork cannot bypass the nesting limit either.
  */
 export const MAX_SUBAGENT_DEPTH = 5;
 
@@ -68,6 +69,72 @@ export const GENERAL_PURPOSE_PROMPT_PROVENANCE = {
   slugs: ['agent-prompt-general-purpose'],
   faithful: true,
 } as const;
+
+// ---------------------------------------------------------------------------
+// Worker-fork preset (O-B0) — rides the ALREADY-SHIPPED fork branch (G4)
+// ---------------------------------------------------------------------------
+
+/**
+ * Worker-fork task framing — a faithful OPEN reproduction of the official
+ * worker-fork prompt body (archive slug agent-prompt-worker-fork), adapted for
+ * this SDK: the `${SYSTEM_TAG_NAME}` wrapper resolves to `system` (applied by
+ * buildWorkerForkPrompt) and `${AGENT_TOOL_NAME}` to `Agent`. In fork mode the
+ * child inherits the parent's REAL system prompt (AgentDefinition.prompt is
+ * intentionally ignored to preserve the cached prefix), so — exactly like the
+ * official — this framing rides IN the delegated task turn, not as a separate
+ * system prompt. Corpus-sync guard: tests/subagents.test.ts.
+ */
+export const WORKER_FORK_FRAMING = `You are a worker fork. The transcript above is the parent's history — inherited reference, not your situation. You are NOT a continuation of that agent. Execute ONE directive, then stop.
+
+Hard rules:
+- Do NOT spawn subagents with the Agent tool. The "default to forking" guidance is for the parent; you ARE the fork, execute directly.
+- One shot: report once and stop. No follow-up questions, no proposed next steps, no waiting for the user.
+
+Guidelines (your directive may override any of these):
+- Stay in scope. Other forks may be handling adjacent work; if you spot something outside your directive, note it in a sentence and move on.
+- Open with one line restating your task, so the parent can spot scope drift at a glance.
+- Be concise — as short as the answer allows, no shorter. Plain text, no preamble, no meta-commentary.
+- If you committed changes, list the paths and commit hashes in your report.`;
+
+/** Provenance for the worker-fork framing surface. */
+export const WORKER_FORK_PROVENANCE = {
+  slug: 'agent-prompt-worker-fork',
+  faithful: true,
+} as const;
+
+/**
+ * Assemble the delegated task prompt for a worker fork: the tagged framing
+ * block, then the directive, then optional additional context — mirroring the
+ * official `<system>…</system>\n\n${WORKER_DIRECTIVE}${ADDITIONAL_CONTEXT}`
+ * assembly. Pass the result as the Agent tool's `prompt` for a fork-mode type.
+ */
+export function buildWorkerForkPrompt(directive: string, additionalContext = ''): string {
+  return `<system>\n${WORKER_FORK_FRAMING}\n</system>\n\n${directive}${additionalContext}`;
+}
+
+/**
+ * Ready-made worker-fork AgentDefinition preset. Register it under a type name
+ * (e.g. `agents: { worker: WORKER_FORK_AGENT }`) and invoke the Agent tool with
+ * `prompt: buildWorkerForkPrompt(directive)` — the shipped fork machinery (G4)
+ * seeds the child with the parent's history + cached prefix, and this preset's
+ * metadata mirrors the official worker profile (maxTurns 200; prompt/tools are
+ * intentionally inherited from the parent in fork mode). The `prompt` field
+ * satisfies resolveAgentDefinition's non-empty requirement but is IGNORED at
+ * fork spawn time by design.
+ *
+ * NOTE: the coordinator/teams presets are deliberately NOT shipped here — they
+ * presuppose a SendMessage/teams tool body this SDK does not ship yet (O-B2);
+ * reproducing their prompts now would describe a non-existent capability.
+ */
+export const WORKER_FORK_AGENT: AgentDefinition = {
+  description:
+    'Worker fork: executes one delegated directive over the parent\'s inherited ' +
+    'context (shared cached prefix), reports once, then stops. For executing ' +
+    'tasks autonomously — research, implementation, or verification.',
+  prompt: WORKER_FORK_FRAMING, // ignored in fork mode (parent system inherited)
+  fork: true,
+  maxTurns: 200,
+};
 
 /** A resolved subagent: the type name plus the definition to run it with. */
 export type ResolvedAgent = {

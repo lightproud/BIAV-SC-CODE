@@ -2,7 +2,7 @@
 
 ## 定位
 
-BPT Agent SDK：净室（clean-room）实现的 TypeScript agent 框架，公开调用面
+BPT Agent SDK：独立重实现（independent reimplementation）的 TypeScript agent 框架，公开调用面
 drop-in 兼容 `@anthropic-ai/claude-agent-sdk`，引擎直连 Anthropic Messages API
 （fetch + SSE），**不捆绑任何专有 CLI 二进制**。银芯 → 黑池单向输出物：黑池
 （BPT Desktop, Electron/Node）换 import 即可摆脱对被禁 `claude.exe` 子进程引擎
@@ -113,7 +113,8 @@ shell（BashOutput 增量读 + 按行 filter / KillShell 击杀，进程组 SIGT
 （`vs_official` dispatch 输入）——同模型同 7 任务、本 SDK vs 官方 `@anthropic-ai/claude-agent-sdk` 两引擎各跑，
 `--compare` 出并排表。只比**客观两轴**：响应速度（墙钟/API ms/TTFT）+ 输出正确性（同 `check()` 通过率）；
 **质量不评判**（该轴被专有系统提示词混淆，属 POSITIONING §2/§4 结构性天花板）。官方包用 `npm i --no-save` 仅本次装、
-**绝不进 package.json/lockfile、绝不成本包依赖**（净室纪律）；官方引擎当**纯黑箱**计时+判分，读其输入输出行为、
+**绝不进 package.json/lockfile、绝不成本包依赖**（黑箱对比纪律：官方当纯黑箱、绝不读其提示词、
+绝不进 package.json/lockfile）；官方引擎当**纯黑箱**计时+判分，读其输入输出行为、
 绝不读其提示词文本。官方 SDK 靠 spawn Claude Code CLI，无头 CI 起不来则官方臂跳过（exit 2），
 「官方引擎无头起不来」本身即结论（正是 BPT 换引擎的动机）。
 
@@ -128,8 +129,11 @@ shell（BashOutput 增量读 + 按行 filter / KillShell 击杀，进程组 SIGT
   **Phase 0.5 已落**：修 R1——v5/v3 无条件引用 Agent 工具，但 Agent 仅在配置 subagents 时注册（`query.ts:498`）；现每条工具子句 gate 在该工具在场，红线测试锁定。
   **Phase 1a 已落**：main-loop 从硬编码 `defaultHarnessStableV5` 迁入**片段库**（`src/engine/prompt-fragments.ts`，每片带 id+archive slug provenance+faithful 标+tool gate）+ **装配器**（`src/engine/prompt-assembler.ts` `assembleMainLoop`）；v5 变薄封装；**字节金标锁定**（`tests/fixtures/v5-mainloop-golden.json` 四工具集，装配器逐字节复现）。
   **corpus-sync 校验器已落**：每 faithful 片段对上游归档逐锚点对账、漂移即 CI 报红（21 faithful 全过；provenance 曾乐观标注、已按内容匹配诚实校正为 21 faithful / 11 adapted）。
-  **各面 provenance + corpus-sync 已覆盖 SDK 实用 4 surface**：① main-loop（片段库+装配器+金标）② tool-descriptions（`descriptions.ts` `TOOL_DESCRIPTION_PROVENANCE`）③ general-purpose 子代理（`agents.ts`，净室→忠实复现官方 strengths+guidelines）④ compaction 摘要器（`compaction.ts` `SUMMARIZER_SYSTEM`，净室→忠实复现官方 5 节续接摘要）。
-  **范围边界（红线）**：归档剩的生成器/分类器（commit-msg/session-title/branch/bash-前缀检测/后台状态分类器/auto-mode）**属 SDK 未发货功能，不复现**（不得描述不存在的能力）。**待续（可选）**：build-from-archive 生成器（现有校验器已达「保真+抗漂移」核心，生成器为进一步自动化）。
+  **各面 provenance + corpus-sync 已覆盖 SDK 实用 4 surface**：① main-loop（片段库+装配器+金标）② tool-descriptions（`descriptions.ts` `TOOL_DESCRIPTION_PROVENANCE`）③ general-purpose 子代理（`agents.ts`，原净室自撰→忠实复现官方 strengths+guidelines）④ compaction 摘要器（`compaction.ts` `SUMMARIZER_SYSTEM`，原净室自撰→忠实复现官方 5 节续接摘要）。
+  **范围边界更新（守密人 2026-07-05「V0.6 加这些产品功能吧，这就是我们看到的黑盒」反转）**：归档的生成器/分类器
+  （session-title/branch/session-name/bash-前缀检测/后台状态分类器）不再列「未发货、不复现」——**v0.6 将其作为真实产品功能发货**
+  （见下「v0.6」段）。红线本质是「不得描述不存在的能力」；功能与其提示词一并发货后，能力即存在、红线自然满足（提示词有真实调用方）。
+  commit-msg 仍不单列（官方由主循环 tool-use 产出，非独立 utility 调用，不凭空造）；auto-mode 归档仅为 guidance 片段、非独立整prompt，暂缓。
 - **已落**：v4/v5 官方主循环提示词忠实再现（`harnessPromptVariant`，**v5 全面再现四节、已提为 claude_code preset 默认**，见下「提示词默认提升」）
   + Bash 命令分解权限（安全，`decomposeBashCommand`）+ SSE 空闲看门狗（`streamIdleTimeoutMs`，默认 120s/0 关）。
 - **提示词默认提升 v1→v5（2026-07-05，守密人「2 模拟行为」+「目标是跟官方提示词一致」裁定，已落地）**：
@@ -157,6 +161,33 @@ shell（BashOutput 增量读 + 按行 filter / KillShell 击杀，进程组 SIGT
 > **能力层仍可安全逼近官方**：转向后不仅可黑箱观测行为，更可直接研读公开还原的提示词结构与开源引擎机制。
 > 「秘方层」的**逐比特复刻**仍非目标，残余行为差主要由 BPT 主权模型选择决定（换模型换手感），非「拒看」。
 
+**v0.6 起步 —— 生成器/分类器产品功能（守密人 2026-07-05「V0.6 加这些产品功能吧，这就是我们看到的黑盒」裁定，已落）**：
+把 Claude Code 主循环**之外**触发的辅助 utility 模型调用作为**真实公开 SDK 功能**发货（`src/generators/`）——即用户在 Claude Code 里
+观测到的「黑盒」小调用。五件：① `detectCommandPrefix`（bash 命令前缀提取/命令注入判定，喂权限白名单匹配，**失败方向锁死 fail-closed**：
+空/乱回复一律判 injection，绝不误放行）② `classifyBackgroundState`（读后台运行转录尾判 working/blocked/done/failed 驱动手机通知门，
+**fail-safe**：不可解析回退 done，绝不伪造 blocked 假打扰，接 v0.5 后台 Bash）③ `generateSessionTitle`（会话标题）
+④ `generateTitleAndBranch`（标题 + `claude/` 分支名，分支强规整为合法 kebab）⑤ `generateSessionName`（`/rename` kebab 名）。
+每件 = 忠实复现提示词（`src/generators/prompts.ts`，5 面 provenance + corpus-sync 逐锚点守护）+ 一次性 utility 调用运行时
+（`runtime.ts`，默认 Haiku 便宜模型、temperature 0 确定性、注入式 transport 可离线单测）+ 健壮解析器（`extractJsonObject` 认字符串内花括号/转义）。
+公开 API 走 `src/index.ts` 导出 → BPT Desktop 等消费方即真实调用方（红线满足：能力与提示词一并发货）。**838 单测全绿**（+46）。
+
+**v0.6 剩余 Batch 1（守密人 2026-07-05「ultracode 推进 V0.6 剩余」裁定，已落）**：经 ultracode 8 代理工作流（6 设计 + 综合 + 红线批判 ADJUST）
+产执行路线图 `Public-Info-Pool/Resource/proposal/bpt-sdk-v06-remaining-execution-roadmap-20260705.md`（Tier 1 残项 + Tier 2/3 依赖排序、逐项过红线），
+首批实现两件：① **G-VERIFY**（`src/verifier/`）三态验证器 CONFIRMED/PLAUSIBLE/REFUTED + recall-biased 忠实复现（part-4/part-5/skill keep-rule，
+3 面 provenance + corpus-sync）；`adversarialVerify(finding)` 公开 API；`parseVerdict` **fail-closed**（乱码/歧义/空→REFUTED、绝不 keep 未验证发现）；
+默认 haiku（批判揪出 sonnet 未测赌注、改齐 utility 默认）、可覆盖。② **G-SUMMARY**：compaction 摘要器追加 no-tools 守卫 + verbatim 安全保全条
+（忠实复现，SUMMARIZER_SYSTEM 字节不变、旧金标保绿）+ `extractSummaryFromReply`（认 `<analysis>/<summary>` 契约、旧行为严格超集）；`generateAwaySummary`（第 6 面生成器）。
+**881 单测全绿**（+43，含对抗审查 4 findings 修复回归）。红线批判确认零红线/零未发货能力/零黑池/零净室问题。G-HOOKCOND/G-SANDBOX（ship-now 但接线面大）与编排/DSL/沙箱/技能（需工具本体）留后续批。
+
+**v0.6 剩余 Batch 2 —— 补 hook 分类器子系统（守密人「这意味着我们内部没有实现对应的功能，补！」裁定，已落）**：3 个 hook 分类器原被批判降级 design-only，
+**唯一原因是「无消费子系统」**；守密人裁定**把子系统建出来**、让分类器像 v0.6 生成器一样「功能与提示词一并发货」（红线自然满足）。两子系统：
+① **上下文提示**（`src/tips/`）：情境目录注册表（忠实复现 manual-polling/persistent-memory 两条情境、可扩展）+ `selectContextTip`（忠实复现 context-tip-selector，
+**fail-safe** 默认 no-tip、且只返回 eligible∩catalog 内 feature_id、幻觉/越权 id 一律丢弃）+ `evaluateTipReception`（忠实复现 reception-evaluator，默认 unknown/neutral）；
+② **记忆文件选择**（生成器族第 7 面）：`selectMemoryFilesToAttach`（忠实复现 determine-which-memory-files-to-attach，接 settingSources/记忆加载路径，**≤5、只返回可用集内文件名（幻觉丢弃）、去重、fail-safe 空表**、无文件时零调用短路）。
+5 条新复现**字节级与归档一致**（reverse-diff 确认）。**930 单测全绿**（+55，含对抗审查 3 findings 修复回归）。原「3 分类器降级 design-only」判定被此裁定反转。
+
+**v0.6 剩余 Batch 2 续 —— G-HOOKCOND + O-B0（守密人「继续」，已落）**：① **hook 条件门控**：`HookCallbackMatcher` 加 `condition`（自然语言条件）——runner 在触发该 matcher 回调**之前**用忠实复现的 hook-condition 评估器（`src/hooks/condition.ts`，base + stop 双变体，Stop/SubagentStop 自动走 stop 变体、支持 `impossible` 逃生口）做一次有界模型调用判定，**fail-closed**：不满足/乱码/评估出错（含无凭据）一律跳过回调；无 condition 的 matcher 走原确定性路径**零模型调用**（存量配置行为逐字节不变）；凭据经 query.ts `conditionOptions` 线程。② **O-B0 worker-fork preset**：`WORKER_FORK_FRAMING`（忠实复现 agent-prompt-worker-fork，适配 AGENT_TOOL_NAME→Agent）+ `buildWorkerForkPrompt`（`<system>` framing + 指令 + 附加上下文，与官方装配一致——framing 骑在 fork 任务轮里、不动缓存前缀）+ `WORKER_FORK_AGENT` preset（fork:true / maxTurns 200，挂 G4 已发货 fork 机制、runtime 零改动）。**coordinator/teams preset 刻意不发**（预设 SendMessage/teams 工具本体，属 O-B2——先建本体再复现提示词）。3 条新复现字节级一致（reverse-diff）。**952 单测全绿**（+22）。
+
 **缓存稳定前缀优化（v0.5+，守密人 2026-07-04「优化」裁定，已落地）**：裸对比 run #35 发现本 SDK 短任务缓存命中
 0%、长任务 45%——诊断为 cwd 焊进系统提示正中间致缓存前缀逐任务变（`prompts.ts`）。修法：系统提示拆
 **稳定前缀**（工具表+静态开场白，逐字节稳定）+ **易变 cwd 尾块**，缓存断点落稳定块（`cacheSystemBoundary:'first'`
@@ -166,7 +197,9 @@ shell（BashOutput 增量读 + 按行 filter / KillShell 击杀，进程组 SIGT
 （逐任务写/读原始数：短任务写0读0、长任务写读俱全）。稳定前缀优化在 Haiku 短任务非绑定约束、未显效，但在 Sonnet（门槛 1024）
 / 长会话仍有效、无害留门。**净成本本 SDK 仍便宜 ~24%**（$0.121 vs $0.158）、速度 2.55× 快、正确性 9/9 平——0% 是精简的影子非病。
 
-**v2 净室提示词 A/B（守密人 2026-07-04「学公开材料造自己提示词 + 顺便测缓存」裁定，探针进行中）**：
+**v2 自撰提示词 A/B（守密人 2026-07-04「学公开材料造自己提示词 + 顺便测缓存」裁定，历史探针）**
+[已被 v5 默认取代，见上「提示词默认提升 v1→v5」：`claude_code` preset 无 variant 现默认走 v5 忠实开放再现；
+v1–v4 保留为显式变体。下方为当时自撰路线的运行记录，保留作历史，不再是当前默认]：
 写 `defaultHarnessStableV2`（公开 prompt-engineering 实践驱动：规划/先取上下文/并行只读/改后验证/接地诚实/收尾/安全，
 因更能干而变大非灌水，~489 vs v1 ~229 est tok）；开关 `options.harnessPromptVariant:'v1'|'v2'`（默认 v1、不动生产），
 `prompts.ts` variant 路由 + `query.ts` 接线。benchmark 加 `--variant`、workflow 加 `prompt_ab` job（v1 vs v2 背靠背、无官方臂、

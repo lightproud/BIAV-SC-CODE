@@ -94,6 +94,14 @@ export type ToolContext = {
   debug: (msg: string) => void;
   /** v0.2 subagent spawn callback (wired by the subagent runtime). */
   spawnSubagent?: SpawnSubagentFn;
+  /**
+   * FORK support: return a shallow copy of the parent loop's CURRENT request
+   * messages so the Agent tool can EAGERLY snapshot the parent context at spawn
+   * time (a fork child continues from the parent's cached prefix). Installed by
+   * the engine loop on its own toolContext; absent when no live parent loop is
+   * wired (fork then degrades to isolated).
+   */
+  getForkHistory?: () => APIMessageParam[];
   /** v0.2 WebSearch backend; undefined -> the tool returns a not-configured error. */
   webSearch?: WebSearchHandler;
   /** v0.2 AskUserQuestion handler; undefined -> the tool returns a not-configured error. */
@@ -134,6 +142,19 @@ export type SpawnSubagentParams = {
   toolUseId: string;
   /** The calling tool's abort signal (foreground children chain off this). */
   signal: AbortSignal;
+  /**
+   * FORK: continue from the parent's context (shared cached prefix) instead of a
+   * fresh isolated one. AgentDefinition.fork forces true. Only takes effect when
+   * `parentHistory` is present + non-empty; otherwise degrades to isolated.
+   */
+  fork?: boolean;
+  /**
+   * FORK: an EAGER snapshot of the parent loop's request messages taken by the
+   * Agent tool at spawn time (a value copy, not a lazy thunk, so a background
+   * fork captures the parent context as it was at spawn). The runtime seeds the
+   * fork child from this. Absent -> no parent context to inherit (isolated).
+   */
+  parentHistory?: APIMessageParam[];
 };
 
 export type SpawnSubagentResult = {
@@ -345,6 +366,14 @@ export type CompactionConfig = {
   recognizeCommand: boolean;
   customInstructions?: string;
   contextWindowTokens?: number;
+  /** Model for the summarization call; absent -> the session model. */
+  model?: string;
+  /** Run the deterministic pre-tier (dedupe + truncate tool_result bulk) before
+   *  the summarization fold. Default true. */
+  preTier: boolean;
+  /** Byte budget (chars) for a single string tool_result in the pre-tier; 0
+   *  disables truncation (dedupe still runs). Default 4000. */
+  preTierMaxToolResultChars: number;
 };
 
 export type EngineConfig = {
@@ -357,6 +386,12 @@ export type EngineConfig = {
    *  so it never invalidates the cached stable prefix. Absent -> systemPrompt
    *  is sent as a single string (original behavior). */
   systemPromptSuffix?: string;
+  /** Char offset in systemPrompt where the base harness ends and the appended
+   *  stable tail (project instructions / append / structured-output) begins;
+   *  enables a 2nd system cache breakpoint so the shared base and the
+   *  per-project tail cache as two independently-reusable segments. Absent / 0 /
+   *  >= systemPrompt.length => single system breakpoint (original behavior). */
+  systemPromptBaseLen?: number;
   /** Caller-composed system blocks (segments form). When set, these are sent
    *  as the request `system` verbatim (their cache_control breakpoints are
    *  respected, the engine adds none) and take precedence over systemPrompt/

@@ -159,6 +159,59 @@ function concatText(content: ContentBlock[]): string {
   return out;
 }
 
+/** True when an assistant turn carries any tool_use block (an in-flight call). */
+function hasToolUse(msg: APIMessageParam): boolean {
+  if (typeof msg.content === 'string') return false;
+  return msg.content.some(
+    (block) => (block as { type?: string }).type === 'tool_use',
+  );
+}
+
+/** Append a text instruction to a user turn (string or block-array content). */
+function appendUserText(msg: APIMessageParam, text: string): APIMessageParam {
+  if (typeof msg.content === 'string') {
+    return { role: 'user', content: `${msg.content}\n\n${text}` };
+  }
+  return { role: 'user', content: [...msg.content, { type: 'text', text }] };
+}
+
+/**
+ * Build the seed history for a FORK child: a shallow copy of the parent history
+ * (which INHERITS the parent's context — the whole point of fork) with the
+ * delegated task added as the trailing instruction.
+ *
+ * The parent snapshot (reqMsgs at spawn time) is the messages the parent last
+ * sent, so it is already API-valid and ends on a user turn (it does not include
+ * the in-flight assistant Agent tool_use turn — the child should not see the
+ * call that spawned it). Two adjustments keep the seed valid WITHOUT discarding
+ * the inherited context:
+ *  - Drop ONLY a genuinely dangling trailing assistant tool_use (one with no
+ *    following tool_result, which would 400). Completed tool_use/tool_result
+ *    pairs are KEPT — the earlier version walked back through every pair and
+ *    collapsed the history to the isolated shape (the G4 blocker).
+ *  - Append the task. Consecutive user turns are invalid, so when the seed
+ *    already ends on a user turn (the common case) the task is MERGED into it;
+ *    otherwise it is added as a new user turn.
+ * An empty parent history degrades to a lone `[{user, prompt}]` (isolated shape).
+ */
+export function buildForkSeed(
+  parentHistory: APIMessageParam[],
+  prompt: string,
+): APIMessageParam[] {
+  const seed = parentHistory.slice();
+  const last = seed[seed.length - 1];
+  if (last !== undefined && last.role === 'assistant' && hasToolUse(last)) {
+    seed.pop(); // dangling in-flight call at the tail — cannot be answered here
+  }
+  const tail = seed[seed.length - 1];
+  if (tail !== undefined && tail.role === 'user') {
+    seed[seed.length - 1] = appendUserText(tail, prompt);
+  } else {
+    seed.push({ role: 'user', content: prompt });
+  }
+  return seed;
+}
+
 /**
  * McpRegistry view that hides qualified tool names a subagent may not use: any
  * name outside an explicit `tools` allowlist, or any name matched by a bare
@@ -466,11 +519,19 @@ export function createSubagentRuntime(
   }
 
   // --- Drive one child loop to completion ----------------------------------
+  /** Sidechain metadata: distinguishes fork vs isolated + threads correlation. */
+  type SidechainInfo = {
+    agentType: string;
+    fork: boolean;
+    parentToolUseId: string | null | undefined;
+  };
+
   async function runChildToCompletion(
     history: APIMessageParam[],
     deps: EngineDeps,
     config: EngineConfig,
     agentId: string,
+    sidechain: SidechainInfo,
   ): Promise<{ text: string; isError: boolean }> {
     let lastText = '';
     let sawError = false;
@@ -480,6 +541,36 @@ export function createSubagentRuntime(
     // is a real cap, not a guess; capped at 99 (100 is the terminal update's).
     const turnCap = config.maxTurns ?? DEFAULT_SUBAGENT_MAX_TURNS;
     let childTurns = 0;
+
+    // SIDECHAIN: the child's turns are recorded under key=agentId (NEVER the
+    // parent sessionId), tagged isSidechain, so they can be persisted/observed
+    // without polluting the parent transcript. Applies to BOTH fork + isolated
+    // children; the `fork` flag on the markers distinguishes them.
+    const recordSidechain = persist && store !== undefined;
+    const parentToolUseId = sidechain.parentToolUseId ?? null;
+    if (recordSidechain && store !== undefined) {
+      store.append(agentId, {
+        type: 'sidechain_start',
+        timestamp: new Date().toISOString(),
+        agent_type: sidechain.agentType,
+        fork: sidechain.fork,
+        parent_session_id: sessionId(),
+        parent_tool_use_id: parentToolUseId,
+        seeded_messages: history.length,
+      });
+      // Append the seed's final (delegated task) user turn so the recorded
+      // sidechain is self-contained.
+      const seedTurn = history[history.length - 1];
+      if (seedTurn !== undefined) {
+        store.append(agentId, {
+          type: 'user',
+          timestamp: new Date().toISOString(),
+          isSidechain: true,
+          parent_tool_use_id: parentToolUseId,
+          message: { role: seedTurn.role, content: seedTurn.content },
+        });
+      }
+    }
 
     for await (const msg of runAgentLoop(history, deps, config)) {
       if (msg.type === 'assistant') {
@@ -492,10 +583,12 @@ export function createSubagentRuntime(
         });
         const t = concatText(msg.message.content);
         if (t.length > 0) lastText = t;
-        if (persist && store !== undefined) {
+        if (recordSidechain && store !== undefined) {
           store.append(agentId, {
             type: 'assistant',
             timestamp: new Date().toISOString(),
+            isSidechain: true,
+            parent_tool_use_id: parentToolUseId,
             message: { role: 'assistant', content: msg.message.content },
           });
         }
@@ -508,19 +601,33 @@ export function createSubagentRuntime(
       }
     }
 
-    if (!sawError) return { text: lastText, isError: false };
-    // Partial-output handling: surface any produced text rather than dropping
-    // it, treating a non-empty partial as a soft (non-error) result.
-    if (lastText.length > 0) {
-      return {
+    let result: { text: string; isError: boolean };
+    if (!sawError) {
+      result = { text: lastText, isError: false };
+    } else if (lastText.length > 0) {
+      // Partial-output handling: surface any produced text rather than dropping
+      // it, treating a non-empty partial as a soft (non-error) result.
+      result = {
         text: `${lastText}\n\n(subagent did not finish: ${errMsg ?? 'unknown error'})`,
         isError: false,
       };
+    } else {
+      result = {
+        text: `Agent terminated early due to an API error: ${errMsg ?? 'unknown error'}`,
+        isError: true,
+      };
     }
-    return {
-      text: `Agent terminated early due to an API error: ${errMsg ?? 'unknown error'}`,
-      isError: true,
-    };
+
+    if (recordSidechain && store !== undefined) {
+      store.append(agentId, {
+        type: 'sidechain_end',
+        timestamp: new Date().toISOString(),
+        agent_type: sidechain.agentType,
+        fork: sidechain.fork,
+        is_error: result.isError,
+      });
+    }
+    return result;
   }
 
   // --- The spawn closure factory -------------------------------------------
@@ -578,28 +685,74 @@ export function createSubagentRuntime(
         );
       }
 
-      const childBuiltins = buildChildBuiltins(agentDef, childDepth);
-      const childMcp = buildChildMcp(agentDef);
+      // FORK mode: continue from the parent's context (shared cached prefix)
+      // instead of a fresh isolated one. Requested via the Agent tool input OR
+      // declared on the AgentDefinition; only ACTIVE when the tool eagerly
+      // snapshotted a non-empty parent history (otherwise it degrades to
+      // isolated). A prefix is only cache-shareable if tools + system + model +
+      // message-prefix all byte-match the parent, so a fork child INHERITS the
+      // parent model/system/tool set/permission mode and INTENTIONALLY ignores
+      // agentDef.model/tools/disallowedTools/permissionMode/prompt-as-system.
+      // This makes a fork child as privileged as the parent (documented
+      // trade-off, guarded by the opt-in flag).
+      const forkRequested = params.fork === true || agentDef.fork === true;
+      const forkActive =
+        forkRequested &&
+        Array.isArray(params.parentHistory) &&
+        params.parentHistory.length > 0;
+      if (forkRequested && !forkActive) {
+        debug(
+          `subagent "${resolved.type}": fork requested but no parent context ` +
+            'was available; running an isolated child instead',
+        );
+      }
+      if (forkActive && engineConfig.promptCaching === false) {
+        debug(
+          `subagent "${resolved.type}": fork with promptCaching disabled pays ` +
+            'the full parent-prefix input tokens with no cache read (more ' +
+            'expensive than an isolated child, not less)',
+        );
+      }
+
+      // Tool set: a fork child inherits the parent's FULL builtin set (losing
+      // only Agent at max depth so nesting stays bounded) so its tools block
+      // byte-matches the parent's cached prefix; an isolated child gets the
+      // agentDef-filtered set.
+      let childBuiltins: Map<string, BuiltinTool>;
+      if (forkActive) {
+        childBuiltins = new Map(baseBuiltins);
+        if (childDepth >= MAX_SUBAGENT_DEPTH) childBuiltins.delete('Agent');
+      } else {
+        childBuiltins = buildChildBuiltins(agentDef, childDepth);
+      }
+      const childMcp = forkActive ? mcp : buildChildMcp(agentDef);
       const childGate = new DefaultPermissionGate({
-        mode: agentDef.permissionMode ?? parentGate.getMode(),
+        mode: forkActive
+          ? parentGate.getMode()
+          : agentDef.permissionMode ?? parentGate.getMode(),
         allowedTools,
-        disallowedTools: [
-          ...(disallowedTools ?? []),
-          ...(agentDef.disallowedTools ?? []),
-        ],
+        disallowedTools: forkActive
+          ? [...(disallowedTools ?? [])]
+          : [...(disallowedTools ?? []), ...(agentDef.disallowedTools ?? [])],
         canUseTool,
         debug,
       });
 
       const childConfig: EngineConfig = {
-        model: resolveModelAlias(agentDef.model, engineConfig.model),
+        // Fork inherits the parent model; isolated resolves agentDef.model.
+        model: forkActive
+          ? engineConfig.model
+          : resolveModelAlias(agentDef.model, engineConfig.model),
         fallbackModel,
         maxOutputTokens: engineConfig.maxOutputTokens,
-        systemPrompt: agentDef.prompt,
+        // Fork inherits the parent system prompt (prefix match); isolated uses
+        // the agent's own prompt as its system.
+        systemPrompt: forkActive ? engineConfig.systemPrompt : agentDef.prompt,
         // Inherit a turn/cost ceiling so a delegated child cannot loop tool
         // calls unbounded (hanging the parent when foreground) or spend past the
         // parent's budget: maxTurns falls back agentDef -> parent -> a sane
         // default; maxBudgetUsd propagates from the live parent EngineConfig.
+        // These caps apply identically in fork mode.
         maxTurns:
           agentDef.maxTurns ??
           engineConfig.maxTurns ??
@@ -640,9 +793,17 @@ export function createSubagentRuntime(
         toolContext: childToolContext,
         debug,
       };
-      const childHistory: APIMessageParam[] = [
-        { role: 'user', content: params.prompt },
-      ];
+      // Fork seeds the child with a trimmed copy of the parent history plus the
+      // delegated task as a trailing user turn; isolated starts from just the
+      // prompt (byte-for-byte the pre-fork behaviour).
+      const childHistory: APIMessageParam[] = forkActive
+        ? buildForkSeed(params.parentHistory as APIMessageParam[], params.prompt)
+        : [{ role: 'user', content: params.prompt }];
+      const sidechainInfo: SidechainInfo = {
+        agentType: resolved.type,
+        fork: forkActive,
+        parentToolUseId: childConfig.parentToolUseId,
+      };
 
       if (isBackground) {
         const promise = (async (): Promise<void> => {
@@ -652,6 +813,7 @@ export function createSubagentRuntime(
               childDeps,
               childConfig,
               agentId,
+              sidechainInfo,
             );
             completedBuffer.push({
               type: 'text',
@@ -716,6 +878,7 @@ export function createSubagentRuntime(
         childDeps,
         childConfig,
         agentId,
+        sidechainInfo,
       );
       emitTaskFinished(agentId, result);
       await fireSubagentStop(agentId, resolved.type, params.signal);

@@ -37,6 +37,7 @@ import type {
   EngineDeps,
   StreamRequest,
 } from '../internal/contracts.js';
+import { resolveModelAlias } from '../subagents/agents.js';
 import { MessageAccumulator } from './accumulator.js';
 import { contextWindowFor } from './context-window.js';
 import { normalizeUsage } from './pricing.js';
@@ -66,6 +67,11 @@ const RECAP_CHAR_CAP = 4000;
 const RECAP_LINE_CHARS = 200;
 /** Chars of tool-call args kept per recap line. */
 const RECAP_ARGS_CHARS = 120;
+/**
+ * Default byte budget (chars) for a single string tool_result in the pre-tier.
+ * Mirrors RECAP_CHAR_CAP's scale: content beyond this is head/tail pointer-ized.
+ */
+const PRE_TIER_DEFAULT_MAX_TOOL_RESULT_CHARS = 4000;
 
 const SUMMARY_USER_PROMPT =
   'Please summarize our conversation so far, preserving key decisions, facts, ' +
@@ -113,6 +119,77 @@ export const SUMMARIZER_SYSTEM_PROVENANCE = {
   faithful: true,
 } as const;
 
+/**
+ * No-tools guard — verbatim OPEN reproduction of
+ * agent-prompt-summarization-no-tools-guard. Appended to the summarizer system
+ * prompt at the foldViaApi call site (SUMMARIZER_SYSTEM stays byte-identical).
+ * The summarization fold wires NO tools, so a tool_use reply is a real failure
+ * mode (it yields non-text blocks and forces the buildRecap fallback); this
+ * guard tells the model to answer in plain text only. Held to the archive by a
+ * corpus-sync guard in tests/compaction.test.ts.
+ */
+export const SUMMARIZER_NO_TOOLS_GUARD = [
+  'CRITICAL: Respond with TEXT ONLY. Do NOT call any tools.',
+  '',
+  '- Do NOT use Read, Bash, Grep, Glob, Edit, Write, or ANY other tool.',
+  '- You already have all the context you need in the conversation above.',
+  '- Tool calls will be REJECTED and will waste your only turn — you will fail the task.',
+  '- Your entire response must be plain text: an <analysis> block followed by a <summary> block.',
+].join('\n');
+
+/** Provenance for the no-tools guard surface. */
+export const SUMMARIZER_NO_TOOLS_GUARD_PROVENANCE = {
+  slug: 'agent-prompt-summarization-no-tools-guard',
+  faithful: true,
+} as const;
+
+/**
+ * Verbatim-preservation safety clause — verbatim OPEN reproduction of the
+ * security-constraint preservation rule in system-prompt-partial-compaction-
+ * instructions. Ensures user-stated security constraints survive the fold so
+ * they keep applying after compaction. Held to the archive by a corpus-sync
+ * guard in tests/compaction.test.ts.
+ */
+export const SUMMARIZER_VERBATIM_SAFETY_CLAUSE =
+  'Note any security-relevant instructions or constraints the user stated (e.g., sensitive files or data to avoid, operations that must not be performed, credential or secret handling rules). These MUST be preserved verbatim in the summary so they continue to apply after compaction.';
+
+/** Provenance for the verbatim-preservation safety clause surface. */
+export const SUMMARIZER_VERBATIM_SAFETY_CLAUSE_PROVENANCE = {
+  slug: 'system-prompt-partial-compaction-instructions',
+  faithful: true,
+} as const;
+
+/**
+ * Extract the fold text from a summarizer reply, honoring the no-tools guard's
+ * declared output contract (an <analysis> scratchpad followed by a <summary>
+ * block). Prefers explicit <summary> content; otherwise drops any <analysis>
+ * scratchpad and strips stray <summary> tags. When the reply carries a
+ * well-formed <summary> block, that block IS the summary (any stray text outside
+ * it is intentionally dropped — the guard contract puts the summary in that
+ * block). For a reply with NO <summary> block it is a strict superset of the old
+ * `.replace(/<\/?summary>/gi,'').trim()`, so plain-text replies pass through
+ * unchanged.
+ */
+export function extractSummaryFromReply(text: string): string {
+  // The <summary> block is authoritative ONLY when the full guard contract is
+  // present (an <analysis> scratchpad AND a <summary> block) — that is the
+  // shape the no-tools guard declares. In that case we deliberately keep just
+  // the summary block and drop the analysis scratchpad.
+  const hasAnalysis = /<analysis>[\s\S]*?<\/analysis>/i.test(text);
+  if (hasAnalysis) {
+    const m = /<summary>([\s\S]*?)<\/summary>/i.exec(text);
+    if (m) return (m[1] ?? '').trim();
+    return text
+      .replace(/<analysis>[\s\S]*?<\/analysis>/gi, '')
+      .replace(/<\/?summary>/gi, '')
+      .trim();
+  }
+  // No <analysis> block: behave EXACTLY like the old strip so this is a strict
+  // superset — a plain-text reply (or any reply without the full contract) is
+  // never truncated to a lone <summary> block, no surrounding text is lost.
+  return text.replace(/<\/?summary>/gi, '').trim();
+}
+
 // ---------------------------------------------------------------------------
 // Config
 // ---------------------------------------------------------------------------
@@ -130,6 +207,10 @@ export function buildCompactionConfig(
     recognizeCommand: opt?.recognizeCommand ?? true,
     customInstructions: opt?.customInstructions,
     contextWindowTokens: opt?.contextWindowTokens,
+    model: opt?.model,
+    preTier: opt?.preTier ?? true,
+    preTierMaxToolResultChars:
+      opt?.preTierMaxToolResultChars ?? PRE_TIER_DEFAULT_MAX_TOOL_RESULT_CHARS,
   };
 }
 
@@ -255,6 +336,109 @@ export function partitionForCompaction(
 }
 
 // ---------------------------------------------------------------------------
+// Pre-tier (G1): deterministic byte-shedding before the summarization fold
+// ---------------------------------------------------------------------------
+
+/**
+ * Cheap, deterministic PRE-TIER over the folded prefix: shed tool_result bulk
+ * BEFORE the (expensive) summarization step so fewer tokens reach the
+ * summarizer (foldViaApi) / deterministic recap. Two transforms, applied per
+ * STRING tool_result in prefix order:
+ *   1. DEDUPE — a tool_result whose exact content string already appeared
+ *      earlier is replaced with a `[…duplicate tool_result, N chars elided…]`
+ *      pointer (only when that nets savings, so tiny repeats like "ok" are not
+ *      inflated). Dedupe keys on the FULL original content, before truncation.
+ *   2. TRUNCATE — a string longer than the budget is pointer-ized to head+tail
+ *      with a `[…N chars elided…]` marker in the middle (only when it nets
+ *      savings). Codepoint-safe so a head/tail boundary never splits a
+ *      surrogate pair (important for the CJK workload).
+ *
+ * Guarantees: pure (never mutates the input), preserves message ordering and
+ * tool_use<->tool_result pairing (tool_use_id / is_error / cache_control kept,
+ * nothing removed or reordered), and NEVER touches user/assistant text or
+ * non-tool_result blocks. Array-form tool_result content (image/document) is
+ * left as-is (out of scope). Returns the same reference when nothing changes.
+ */
+export function preTierPrefix(
+  prefix: APIMessageParam[],
+  cfg: Pick<CompactionConfig, 'preTier' | 'preTierMaxToolResultChars'>,
+): APIMessageParam[] {
+  if (!cfg.preTier) return prefix;
+  const budget = cfg.preTierMaxToolResultChars;
+  const seen = new Set<string>();
+  let anyChanged = false;
+
+  const out = prefix.map((msg) => {
+    // Only messages carrying a string tool_result block are candidates. Every
+    // other message (string content, genuine prompt, assistant text/tool_use)
+    // passes through untouched by reference.
+    if (typeof msg.content === 'string') return msg;
+    const hasStringToolResult = msg.content.some(
+      (b) => b.type === 'tool_result' && typeof b.content === 'string',
+    );
+    if (!hasStringToolResult) return msg;
+
+    let msgChanged = false;
+    const blocks = msg.content.map((block) => {
+      if (block.type !== 'tool_result' || typeof block.content !== 'string') {
+        return block;
+      }
+      const original = block.content;
+      const shed = shedToolResultContent(original, budget, seen);
+      if (shed === original) return block;
+      msgChanged = true;
+      // Rebuild the tool_result preserving pairing + flags; only content changes.
+      const rebuilt: Extract<ContentBlockParam, { type: 'tool_result' }> = {
+        type: 'tool_result',
+        tool_use_id: block.tool_use_id,
+        content: shed,
+      };
+      if (block.is_error !== undefined) rebuilt.is_error = block.is_error;
+      if (block.cache_control !== undefined) rebuilt.cache_control = block.cache_control;
+      return rebuilt;
+    });
+    if (!msgChanged) return msg;
+    anyChanged = true;
+    return { role: msg.role, content: blocks };
+  });
+
+  return anyChanged ? out : prefix;
+}
+
+/**
+ * Shed one string tool_result: dedupe against `seen` first (keying on the full
+ * original), then truncate. Returns the original string when neither transform
+ * nets savings (so callers can detect "unchanged" by reference equality).
+ */
+function shedToolResultContent(
+  content: string,
+  budget: number,
+  seen: Set<string>,
+): string {
+  // 1. DEDUPE — identical to an earlier tool_result seen in prefix order.
+  if (seen.has(content)) {
+    const marker = `[…duplicate tool_result, ${content.length} chars elided…]`;
+    // Net-savings guard: never inflate a tiny repeat.
+    return marker.length < content.length ? marker : content;
+  }
+  seen.add(content);
+
+  // 2. TRUNCATE — head+tail pointer-ization for oversized content.
+  if (budget <= 0) return content;
+  const chars = Array.from(content); // codepoint array: no split surrogate pairs
+  if (chars.length <= budget) return content;
+  const headLen = Math.ceil(budget / 2);
+  const tailLen = budget - headLen;
+  const elided = chars.length - headLen - tailLen;
+  const marker = `[…${elided} chars elided…]`;
+  // Net-savings guard: skip when the marker would not shrink the content.
+  if (marker.length >= elided) return content;
+  const head = chars.slice(0, headLen).join('');
+  const tail = tailLen > 0 ? chars.slice(chars.length - tailLen).join('') : '';
+  return head + marker + tail;
+}
+
+// ---------------------------------------------------------------------------
 // Folds
 // ---------------------------------------------------------------------------
 
@@ -281,10 +465,23 @@ async function foldViaApi(
   signal: AbortSignal,
   onSummaryCall: SummaryCallSink | undefined,
 ): Promise<APIMessageParam[]> {
-  const system =
-    SUMMARIZER_SYSTEM + (customInstructions ? '\n' + customInstructions : '');
+  // Ordered assembly: structure -> what-to-preserve (security constraints) ->
+  // output/tool discipline (no-tools guard) last -> user custom instructions.
+  // SUMMARIZER_SYSTEM stays byte-identical; the guards live in their own
+  // constants so the existing provenance/byte-golden tests are untouched.
+  const system = [
+    SUMMARIZER_SYSTEM,
+    SUMMARIZER_VERBATIM_SAFETY_CLAUSE,
+    SUMMARIZER_NO_TOOLS_GUARD,
+    customInstructions ?? '',
+  ]
+    .filter((s) => s.length > 0)
+    .join('\n\n');
+  // Summarization is cheap and mechanical: route it to compaction.model (e.g.
+  // Haiku) when set, resolving a short alias, else the session model.
+  const summaryModel = resolveModelAlias(config.compaction?.model, config.model);
   const req: StreamRequest = {
-    model: config.model,
+    model: summaryModel,
     max_tokens: Math.min(4096, config.maxOutputTokens),
     system,
     messages: [
@@ -302,15 +499,15 @@ async function foldViaApi(
     }
     const final = acc.finalize();
     const apiMs = Date.now() - started;
-    onSummaryCall?.(config.model, normalizeUsage(final.usage), apiMs);
-    const summaryText = final.content
+    onSummaryCall?.(summaryModel, normalizeUsage(final.usage), apiMs);
+    const rawSummary = final.content
       .filter((b): b is { type: 'text'; text: string; citations?: unknown[] | null } => b.type === 'text')
       .map((b) => b.text)
-      .join('')
-      // Strip any <summary></summary> wrapper (the official prompt requests one;
-      // this SDK folds the raw summary text, so the tags are removed defensively).
-      .replace(/<\/?summary>/gi, '')
-      .trim();
+      .join('');
+    // Honor the no-tools guard's declared contract (<analysis> then <summary>):
+    // prefer explicit <summary> content, else drop the <analysis> scratchpad.
+    // Strict superset of the old tag-strip, so a plain-text reply is unchanged.
+    const summaryText = extractSummaryFromReply(rawSummary);
     const text = summaryText.length > 0 ? summaryText : buildRecap(prefix);
     return [
       { role: 'user', content: summaryUserContent(customInstructions) },
@@ -466,9 +663,16 @@ async function* performCompaction(
     return; // no boundary, no mutation.
   }
 
+  // Pre-tier (G1): shed tool_result bulk from the prefix BEFORE summarizing so
+  // fewer tokens reach the fold. shedPrefix has the SAME length as part.prefix
+  // (only tool_result CONTENT changes), so the boundary/count math below is
+  // unchanged. The prefix is discarded and replaced by `synthetic` anyway, so
+  // this only shrinks what the summarizer / recap SEE, never what persists.
+  const shedPrefix = preTierPrefix(part.prefix, cfg);
+
   const synthetic = cfg.useApiSummary
-    ? await foldViaApi(part.prefix, deps, config, effectiveInstructions, signal, onSummaryCall)
-    : foldDeterministic(part.prefix, effectiveInstructions);
+    ? await foldViaApi(shedPrefix, deps, config, effectiveInstructions, signal, onSummaryCall)
+    : foldDeterministic(shedPrefix, effectiveInstructions);
 
   // In-place front replacement keeps the query layer's reference valid.
   view.messages.splice(0, part.prefix.length, ...synthetic);

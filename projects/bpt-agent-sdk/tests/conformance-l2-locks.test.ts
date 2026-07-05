@@ -212,17 +212,22 @@ describe('L2 lock: systemPrompt request mapping', () => {
     );
     const body = fetchStub.requests[0]!.body;
     expect(Array.isArray(body.system)).toBe(true);
-    expect(body.system).toHaveLength(2);
-    const [stable, volatile_] = body.system as Array<Record<string, any>>;
-    // Cache breakpoint sits on the STABLE prefix ('first' boundary), so the
-    // per-run cwd tail cannot invalidate the cross-query cached prefix.
-    expect(stable!.cache_control).toEqual({ type: 'ephemeral' });
-    expect(stable!.text).toContain('CONF-L2-APPEND-MARKER');
-    expect(stable!.text.endsWith('CONF-L2-APPEND-MARKER')).toBe(true);
+    // G3 dual cache breakpoint (keeper-approved, loop.ts:485): the stable prefix
+    // splits into [base harness | appended tail] so the shared base and the
+    // per-caller tail cache as two reusable segments; the per-run cwd rides last,
+    // uncached. Both cached segments still sit on the stable prefix, so the
+    // volatile cwd tail cannot invalidate the cross-query cached prefix.
+    expect(body.system).toHaveLength(3);
+    const [base, appended, volatile_] = body.system as Array<Record<string, any>>;
+    expect(base!.cache_control).toEqual({ type: 'ephemeral' });
+    expect(appended!.cache_control).toEqual({ type: 'ephemeral' });
+    // The appended marker ends the per-caller tail segment.
+    expect(appended!.text.endsWith('CONF-L2-APPEND-MARKER')).toBe(true);
     expect(volatile_!.cache_control).toBeUndefined();
     expect(volatile_!.text).toContain(`Working directory: ${sandbox}`);
-    // The volatile facts must NOT leak into the stable (cached) segment.
-    expect(stable!.text).not.toContain(`Working directory: ${sandbox}`);
+    // The volatile cwd facts must NOT leak into EITHER cached segment.
+    expect(base!.text).not.toContain(`Working directory: ${sandbox}`);
+    expect(appended!.text).not.toContain(`Working directory: ${sandbox}`);
   });
 
   it('segments form: blocks forwarded verbatim, per-segment cache_control, cap of 3 cached segments', async () => {
@@ -276,10 +281,15 @@ describe('L2 lock: settingSources CLAUDE.md injection', () => {
     const withSource = systemText(fetchStub.requests[0]!.body);
     expect(withSource).toContain('CONF-L2-CLAUDEMD-MARKER');
     expect(withSource).toContain('<system-reminder>');
-    // Project instructions are stable-per-project: they live in the CACHED
-    // stable block, not the volatile tail.
-    const stableBlock = (fetchStub.requests[0]!.body.system as Array<Record<string, any>>)[0]!;
-    expect(stableBlock.text).toContain('CONF-L2-CLAUDEMD-MARKER');
+    // Project instructions are stable-per-project: they live in a CACHED stable
+    // segment — under G3's dual breakpoint, the [base | project tail] split puts
+    // them in the project-tail block (index 1), NOT the volatile cwd tail (last).
+    const blocks = fetchStub.requests[0]!.body.system as Array<Record<string, any>>;
+    const projectBlock = blocks[1]!;
+    expect(projectBlock.text).toContain('CONF-L2-CLAUDEMD-MARKER');
+    expect(projectBlock.cache_control).toEqual({ type: 'ephemeral' });
+    const volatileBlock = blocks[blocks.length - 1]!;
+    expect(volatileBlock.text).not.toContain('CONF-L2-CLAUDEMD-MARKER');
 
     await collect(query({ prompt: 'hi', options: opts({ systemPrompt: preset }) }));
     expect(systemText(fetchStub.requests[1]!.body)).not.toContain('CONF-L2-CLAUDEMD-MARKER');

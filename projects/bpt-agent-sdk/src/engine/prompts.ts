@@ -77,6 +77,21 @@ type PromptContext = {
  */
 export type SystemPromptParts = {
   stable: string;
+  /**
+   * The base harness portion of `stable` (the vN harness prompt only), WITHOUT
+   * the appended project-instructions / append tail. Shared across projects, so
+   * worth caching as its own reusable segment. Invariant: `base + project ===
+   * stable` byte-for-byte (project carries its own leading separators).
+   */
+  base: string;
+  /**
+   * The appended stable tail of `stable`: the CLAUDE.md / AGENTS.md
+   * `<system-reminder>` block and/or `append` text, INCLUDING the leading
+   * `\n\n` separators, or '' when there is no such tail. Per-project (so it
+   * caches independently of the shared base) — this is the second system cache
+   * segment. Invariant: `base + project === stable`.
+   */
+  project: string;
   volatile: string;
 };
 
@@ -346,15 +361,17 @@ export function buildSystemPromptParts(
   ctx: PromptContext,
 ): SystemPromptParts {
   if (opt === undefined) {
-    return { stable: minimalStable(), volatile: volatileTail(ctx, false) };
+    const stable = minimalStable();
+    return { stable, base: stable, project: '', volatile: volatileTail(ctx, false) };
   }
   if (typeof opt === 'string') {
-    return { stable: opt, volatile: '' };
+    return { stable: opt, base: opt, project: '', volatile: '' };
   }
   // Segments form is composed by the caller and handled upstream (query.ts);
   // if it ever reaches here, flatten it defensively rather than throw.
   if (opt.type === 'segments') {
-    return { stable: opt.segments.map((s) => s.text).join('\n\n'), volatile: '' };
+    const stable = opt.segments.map((s) => s.text).join('\n\n');
+    return { stable, base: stable, project: '', volatile: '' };
   }
   // Default (no explicit variant) emulates the official Claude Code harness:
   // v5 is the comprehensive faithful reproduction. A measured v1-vs-v5 A/B
@@ -363,7 +380,7 @@ export function buildSystemPromptParts(
   // every turn re-sends at full price; v5's big stable prefix caches and is
   // read back at ~10% cost) at equal correctness. Explicit v1-v4 remain
   // available as opt-in for a terser prompt.
-  let stable =
+  const base =
     ctx.variant === 'v5'
       ? defaultHarnessStableV5(ctx)
       : ctx.variant === 'v4'
@@ -375,19 +392,25 @@ export function buildSystemPromptParts(
             : ctx.variant === 'v1'
               ? defaultHarnessStable(ctx)
               : defaultHarnessStableV5(ctx);
+  // The appended stable tail (project instructions + append). Carries its own
+  // leading `\n\n` separators so `base + project === stable` byte-for-byte,
+  // and so it can cache as its own reusable segment (the 2nd system breakpoint)
+  // independently of the shared base harness.
+  let project = '';
   // Codebase instructions (CLAUDE.md / AGENTS.md), loaded per settingSources.
   // Framed as a system-reminder and kept in the STABLE prefix (stable per
   // project -> cacheable), reproducing how the official runtime carries them.
   if (ctx.projectInstructions !== undefined && ctx.projectInstructions.length > 0) {
-    stable =
-      `${stable}\n\n<system-reminder>\nThe following instructions come from ` +
+    project +=
+      `\n\n<system-reminder>\nThe following instructions come from ` +
       `CLAUDE.md / AGENTS.md files in the project. Follow them as if the user ` +
       `wrote them.\n\n${ctx.projectInstructions}\n</system-reminder>`;
   }
   if (opt.append !== undefined && opt.append.length > 0) {
-    stable = `${stable}\n\n${opt.append}`;
+    project += `\n\n${opt.append}`;
   }
-  return { stable, volatile: volatileTail(ctx, true) };
+  const stable = base + project;
+  return { stable, base, project, volatile: volatileTail(ctx, true) };
 }
 
 /**
