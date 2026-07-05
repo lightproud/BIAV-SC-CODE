@@ -123,8 +123,13 @@ def write_index(path: Path, items: list[dict], meta: dict) -> None:
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     payload = {"_meta": meta, "items": items}
-    with gzip.open(path, "wt", encoding="utf-8") as fh:
-        json.dump(payload, fh, ensure_ascii=False)
+    data = json.dumps(payload, ensure_ascii=False).encode("utf-8")
+    # 字节确定性：gzip 头默认内嵌 mtime + 源文件名，会让同内容两次写出字节不同
+    # → 若索引入 git，CI 的 `git diff --staged --quiet` 每次都判为变、平白 churn 历史。
+    # 固定 mtime=0 + 空 filename，令「同 rows → 同字节」，只在真内容变更时才产生 diff。
+    with open(path, "wb") as raw:
+        with gzip.GzipFile(filename="", mtime=0, fileobj=raw, mode="wb") as gz:
+            gz.write(data)
 
 
 @lru_cache(maxsize=2)
@@ -166,7 +171,20 @@ def search(query: str, limit: int = 8, path: str | None = None,
     # 查询嵌入必须与索引同后端/同模型，否则向量空间对不上。
     q_backend = backend or meta.get("backend") or default_backend()
     q_model = meta.get("model", _VOYAGE_MODEL)
-    qvec = embed([query], backend=q_backend, model=q_model, input_type="query")[0]
+    # 围栏**仅** embed 调用：voyage 后端索引在运行时若缺 voyageai 包或 VOYAGE_API_KEY，
+    # embed_voyage 会抛 ImportError/鉴权错——不捕获则穿透 search、把「脊柱托底」一起带崩
+    # （厚锚合流依赖此处就地降级，见 §八 8.3）。窄捕获不吞 cosine 等真 bug。
+    try:
+        qvec = embed([query], backend=q_backend, model=q_model, input_type="query")[0]
+    except Exception as e:
+        return {
+            "query": query,
+            "backend": q_backend,
+            "degraded": True,
+            "reason": f"查询嵌入不可用（需 voyageai 包 + VOYAGE_API_KEY）：{type(e).__name__}: {e}",
+            "fallback": "改用 kb_search（关键词）白盒回退",
+            "results": [],
+        }
 
     scored = []
     for it in items:

@@ -86,8 +86,9 @@ def main() -> int:
                     help="嵌入后端 voyage/stub（默认：有 VOYAGE_API_KEY 则 voyage）")
     ap.add_argument("--model", default=kb_vector._VOYAGE_MODEL,
                     help="Voyage 模型名（随索引 meta 落存）")
-    ap.add_argument("--out", default=str(kb_vector.DEFAULT_INDEX),
-                    help="索引输出路径（默认 okf/kb_vectors.json.gz）")
+    ap.add_argument("--out", default=str(REPO / "Public-Info-Pool" / "Rough" / "kb_vectors.json.gz"),
+                    help="索引输出路径（默认 gitignored Public-Info-Pool/Rough/，防本地桩索引污染 "
+                         "okf/；CI 建生产索引时显式传 --out okf/kb_vectors.json.gz --backend voyage）")
     args = ap.parse_args()
 
     backend = args.backend or kb_vector.default_backend()
