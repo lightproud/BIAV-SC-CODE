@@ -1,9 +1,55 @@
 {
   "date": "2026-07-05",
-  "archived_at": "2026-07-05T02:35:49.081135+00:00",
+  "archived_at": "2026-07-05T06:37:23.807385+00:00",
   "source": "bilibili",
-  "item_count": 3,
+  "item_count": 6,
   "items": [
+    {
+      "title": "今天我要变成一个香喷喷的肉丸子",
+      "summary": "-\n  └ 蓝桉寂雪 (50赞): 不用变，本来就是一坨生的四喜丸子\n  └ 我推及吧顶飞你推 (12赞): 如果按原本歌词来说的话，芝士球应该是脂肪了[星星眼]\n  └ 是蓉怜烟啊 (1赞): @拾柒酒 @叶隙间洒落的阳光-- @打打拳击  本来就是。",
+      "source": "bilibili",
+      "time": "2026-07-04T18:59:11+00:00",
+      "url": "https://www.bilibili.com/video/BV1pNMK6kEF8",
+      "engagement": 1888,
+      "is_hot": true,
+      "author": "soyo离",
+      "tags": [
+        "绘画"
+      ],
+      "metadata": {
+        "play": 1869,
+        "comment_count": 19,
+        "comments_fetched": 3,
+        "danmaku": 2
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/c929cd734383ad34b5e6e3a82fb71dbe485dd730.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "杀戮尖塔 2，但我玩的是 Black Souls 版沙耶之歌",
+      "summary": "最近和朋友双人n10打的很累 想着玩轻松的模组放松放松 于是就有了这期视频\n  └ 芸文奏 (0赞): @灼白呀 @曦之落羽 @FHx-y 喊些玩杀戮尖塔2的朋友吧(〜￣△￣)〜",
+      "source": "bilibili",
+      "time": "2026-07-05T04:56:09+00:00",
+      "url": "https://www.bilibili.com/video/BV1owMu63EGy",
+      "engagement": 163,
+      "is_hot": true,
+      "author": "芸文奏",
+      "tags": [
+        "单机游戏"
+      ],
+      "metadata": {
+        "play": 162,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/a9c74adc3e6256e1e5ec0e839947d06d6b407993.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
     {
       "title": "半点心",
       "summary": "",
@@ -23,6 +69,29 @@
         "danmaku": 0
       },
       "media_url": "https://i0.hdslb.com/bfs/archive/852ad56274d92ee51881deaff0849715776ec835.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "［相位/教学］大佬推荐，版本答案？诞墨哈姆林极致速攻！",
+      "summary": "-\n  └ Aeriff_ (2赞): 严肃学习[星星眼]\n  └ 一般杂鱼 (1赞): [星星眼]\n  └ 莱星Ligh (1赞): 相位对弈——编队分享\n守密人：&lt;#3af&gt;莱星（100364583）\n\n编队名：\n残忍的致意、哈姆林、珈伦、诞妄·墨菲、艾继丝\n纯白初遇、涌现、催眠灵摆、记忆症候、深海的呼唤\n\n@@xpVxHyWyAxJy0dztxB@@",
+      "source": "bilibili",
+      "time": "2026-07-05T06:14:03+00:00",
+      "url": "https://www.bilibili.com/video/BV1a8MM6PEGQ",
+      "engagement": 72,
+      "is_hot": false,
+      "author": "莱星Ligh",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 69,
+        "comment_count": 3,
+        "comments_fetched": 3,
+        "danmaku": 1
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/5f9b1cbb3450ea5f2017880bffed9f177191db58.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
