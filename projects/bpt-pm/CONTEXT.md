@@ -40,9 +40,22 @@ projects/bpt-pm/
 ├── index.html                 # 单网页工作台（引擎 + 表格 + 甘特图，自包含）
 ├── schema/task-schema.json    # bpt-pm/v1 数据协议（JSON Schema）
 ├── data/sample-project.json   # 样例项目数据
+├── scripts/schedule.mjs       # CPM 调度器 CLI（与网页内联引擎同算法，供外部数据源桥接复用）
 ├── docs/screenshot.png        # 运行时截图
+├── docs/notion-adapter.md     # Notion 作数据源的适配器（字段映射 + 读排写工作流 + 踩坑）
 ├── CONTEXT.md                 # 本文件
 └── README.md                  # 人类入口 + 使用说明
+```
+
+## 外部数据源桥接
+
+`index.html` 是纯静态零后端页，不直连外部 API；外部数据源（如 **Notion**）经**适配器**在
+`数据源 ↔ bpt-pm/v1 JSON` 间搬运，排期复用 `scripts/schedule.mjs`（唯一算法真相）。
+Notion 适配器（字段映射 + 读→排→写闭环 + 计费墙/日期三段/复选框等踩坑）见
+`docs/notion-adapter.md`——已对真实工作区端到端跑通一次。命令：
+
+```bash
+cat pulled.json | node projects/bpt-pm/scripts/schedule.mjs   # stdin bpt-pm/v1 → stdout 计算结果
 ```
 
 ## 用法
