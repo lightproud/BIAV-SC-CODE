@@ -285,6 +285,11 @@
   Bash 缺 `dangerouslyDisableSandbox`、Read 缺 `pages`（PDF 页范围）——五场景一致稳定。连同 thinking 自适应 + 工具缓存断点，
   构成引擎侧「对齐官方线缆」清单。cache-off 系统分段差属 bpt-only 选项非对称（官方忽略 promptCaching:false）已标注不追。
   `tsc` + `npx vitest run` **1091 全绿（+6）**。
+  **已补为正式工单 E7 系列（2026-07-05，守密人「补工单」裁定）**：交接档升 r3 `bpt-sdk-engine-alignment-handoff-20260705-r3.md`——
+  E7-01 thinking 默认改自适应（承接 E1、修正「4096 不可观测」为实读官方 adaptive、可能顺带解 code-01 残余）/ E7-02 工具 schema 补参
+  （Read `pages` / Bash `dangerouslyDisableSandbox` / Agent `isolation`+`model`+必填集，drop-in 硬伤、建议优先）/ E7-03 工具缓存断点策略
+  （需实测收益、优先级最低）。每条附代码锚点 + 参考目标棘轮联动（修好须删 `WIRE_ALIGNMENT_GAPS` 条目否则报红）。优先级行更新为
+  E1 > E7-02 ≈ E4 ≈ E5 > E7-01 > E3 > E2 > E7-03 > E6a/c/d。
   **SSE 网关方言容错已落（2026-07-05，BPT 产线故障闭环）**：BPT 实测「Malformed SSE payload for event "(none)"」
   经双侧协作定型——BPT `curl -N` 抓原始字节实锤 idealab 网关 `/api/anthropic` 端点带 OpenAI 方言遗留
   （流尾追加 `data: [DONE]`、错误帧无 event 行）；官方客户端 message_stop 即收工不碰尾卡、我方读到流关闭才撞上。
