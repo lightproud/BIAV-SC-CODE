@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 305,
-    "edges": 312,
-    "terms": 5169,
+    "concepts": 309,
+    "edges": 315,
+    "terms": 5294,
     "by_type": {
       "character": 72,
       "dataset": 109,
-      "documentation": 61,
+      "documentation": 65,
       "knowledge-pointer": 43,
       "reference": 17,
       "research": 3
@@ -26,7 +26,7 @@
       "memory": 47,
       "news-output": 23,
       "projects": 18,
-      "resource": 42,
+      "resource": 46,
       "sources": 17,
       "story": 11,
       "unpacked": 13,
@@ -34,7 +34,7 @@
     },
     "by_tier": {
       "skeleton": 131,
-      "search": 174
+      "search": 178
     }
   },
   "sections": {
@@ -68,7 +68,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 42
+      "count": 46
     },
     "sources": {
       "index": "/sources/index.md",
@@ -968,7 +968,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 67
+      "degree": 70
     },
     "/characters/15604.md": {
       "type": "character",
@@ -1910,7 +1910,7 @@
     },
     "/memory/memory-ext-bpt-guidance-protocol.md": {
       "type": "knowledge-pointer",
-      "title": "银芯指导 BPT 协议（v0.4）",
+      "title": "银芯指导 BPT 协议（v0.3）",
       "description": "银芯不再在仓库内承载 BPT 代码，但 BPT 的开发仍需要银芯提供的能力：战略视角、架构经验、方法论、事实圣经、踩坑记录。",
       "resource": "/memory/bpt-guidance-protocol.md",
       "tags": [
@@ -3020,6 +3020,20 @@
       "tier": "search",
       "degree": 3
     },
+    "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md": {
+      "type": "documentation",
+      "title": "bpt-sdk-comparison-baseline-20260705",
+      "description": "v4 忠实再现的官方提示词在硬任务上**无可测收益 → 不提为默认**；vs-official 显示本 SDK **快 ~2.7×、省 ~8%、正确性不劣（本轮 11/11 vs 官方 9/11，官方 2 失败带无头 CI 保留）**。**不测不宣胜负——本档只记量出来的。**（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/data-diagnostics/bpt-sdk-comparison-baseline-20260705.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:data-diagnostics"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 1
+    },
     "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md": {
       "type": "documentation",
       "title": "discord-compaction-further-savings-20260622",
@@ -3137,6 +3151,20 @@
       "title": "bpt-prompt-layering-design-20260704",
       "description": "BPT 在内网 SVN 免安装部署、按个人/团队目录分数据。提示词注入分多层（硬编码核心 → 团队 → 个人 → 项目工作目录），（格式：md）",
       "resource": "/Public-Info-Pool/Resource/proposal/bpt-prompt-layering-design-20260704.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:proposal"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 1
+    },
+    "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md": {
+      "type": "documentation",
+      "title": "bpt-sdk-reproduction-scope-ledger-20260704",
+      "description": "**全做**。官方有的能力我们都在 BPT 引擎里再现一遍，用公开还原作蓝本、适配我们工具、明确署名。唯一的排序逻辑是**依赖**——（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/proposal/bpt-sdk-reproduction-scope-ledger-20260704.md",
       "tags": [
         "data_layer:curated",
         "deliverable",
@@ -3305,6 +3333,34 @@
       "title": "news-collector-merge-plan-202606",
       "description": "日期：2026-06-02（格式：md）",
       "resource": "/Public-Info-Pool/Resource/repo-engineering/news-collector-merge-plan-202606.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 0
+    },
+    "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md": {
+      "type": "documentation",
+      "title": "official-cc-prompt-architecture-inference-20260704",
+      "description": "**能，而且能推断出相当完整的架构骨架。** 官方「系统提示词」不是一整块，而是 `tools/updatePrompts.js` 揭示的**片段合成树**——553 文件坍缩成 **~40 个不同调用点**，其余是主循环片段或逐工具描述。片段合成的粒度**本身就是架构**：系统提示词是按环境**在请求组装期条件拼接**出来的，不是存成整块的。（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/repo-engineering/official-cc-prompt-architecture-inference-20260704.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 1
+    },
+    "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md": {
+      "type": "documentation",
+      "title": "oss-cc-engine-designs-survey-20260704",
+      "description": "Research deliverable for `projects/bpt-agent-sdk`. Goal: survey notable open-source Claude Code（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/repo-engineering/oss-cc-engine-designs-survey-20260704.md",
       "tags": [
         "data_layer:curated",
         "deliverable",
@@ -5678,6 +5734,11 @@
         "mention"
       ],
       [
+        "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
         "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
         "提及:艾瑞卡",
         "mention"
@@ -5698,6 +5759,11 @@
         "mention"
       ],
       [
+        "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
         "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
         "提及:艾瑞卡",
         "mention"
@@ -5709,6 +5775,11 @@
       ],
       [
         "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
         "提及:艾瑞卡",
         "mention"
       ],
@@ -7347,6 +7418,13 @@
         "mention"
       ]
     ],
+    "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
     "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md": [
       [
         "/characters/15603.md",
@@ -7420,6 +7498,13 @@
         "mention"
       ]
     ],
+    "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
     "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md": [
       [
         "/characters/15603.md",
@@ -7435,6 +7520,13 @@
       ]
     ],
     "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
+    "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md": [
       [
         "/characters/15603.md",
         "提及:艾瑞卡",
@@ -8086,6 +8178,7 @@
       "/resource/resource-daily-news-morimens-daily-full-20260602.md",
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
@@ -8095,6 +8188,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -8107,6 +8201,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -8224,7 +8320,8 @@
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/project-bpt-agent-sdk.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
-      "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md"
+      "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
     ],
     "aggregate": [
       "/news-output/news-output-all.md",
@@ -8307,7 +8404,8 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
       "/memory/memory-ext-bpt-architecture-summary-template.md",
-      "/projects/bpt-sdk-doc-architecture.md"
+      "/projects/bpt-sdk-doc-architecture.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "archive": [
       "/assets/assets-archive-integrity.md",
@@ -8489,7 +8587,8 @@
       "/wiki-data/wiki-schema-banners-schema.md"
     ],
     "baseline": [
-      "/assets/assets-sentinel-baseline.md"
+      "/assets/assets-sentinel-baseline.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "bash": [
       "/README.md"
@@ -8702,12 +8801,15 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/project-bpt-agent-sdk.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
     ],
     "brain": [
       "/assets/assets-chat-onboarding-snippet.md",
@@ -8752,6 +8854,10 @@
     "categorized": [
       "/extracted/extracted-categorized.md"
     ],
+    "cc": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
+    ],
     "cd": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-build-verification.md"
     ],
@@ -8784,6 +8890,7 @@
       "/assets/assets-chat-onboarding-snippet.md"
     ],
     "ci": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md"
     ],
     "classification": [
@@ -8800,6 +8907,7 @@
       "/projects/project-wiki.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/sources/appstore.md",
       "/sources/bilibili.md",
@@ -8836,7 +8944,8 @@
     "code": [
       "/memory/memory-ext-active-policy-direct-push-main.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
-      "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
+      "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
     ],
     "codebase": [
       "/projects/bpt-sdk-doc-migration.md"
@@ -8944,6 +9053,9 @@
     ],
     "compaction": [
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md"
+    ],
+    "comparison": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "compat": [
       "/projects/bpt-sdk-doc-compat.md"
@@ -9094,6 +9206,7 @@
       "/resource/resource-daily-news-morimens-daily-full-20260602.md",
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
@@ -9103,6 +9216,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -9115,6 +9229,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -9340,6 +9456,7 @@
       "/resource/resource-daily-news-morimens-daily-full-20260602.md",
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
@@ -9349,6 +9466,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -9361,6 +9479,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -9615,6 +9735,7 @@
       "/resource/resource-daily-news-morimens-daily-full-20260602.md",
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
@@ -9624,6 +9745,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -9636,6 +9758,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -9751,6 +9875,7 @@
       "/resource/resource-daily-news-morimens-daily-full-20260602.md",
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
@@ -9760,6 +9885,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -9772,6 +9898,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -9801,6 +9929,9 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
     ],
+    "designs": [
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
+    ],
     "desktop": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-desktop-design-spec-ref.md",
       "/projects/bpt-sdk-doc-migration.md",
@@ -9818,6 +9949,7 @@
     "diagnostics": [
       "/assets/assets-archive-integrity.md",
       "/assets/assets-sentinel-baseline.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md"
@@ -9934,7 +10066,8 @@
       "/unpacked/unpacked-vue.md"
     ],
     "engine": [
-      "/projects/news-archive-sources-registry.md"
+      "/projects/news-archive-sources-registry.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
     ],
     "engineering": [
       "/projects/doc-testing-strategy.md",
@@ -9949,6 +10082,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -10365,6 +10500,9 @@
       "/sources/steam_discussion.md",
       "/sources/youtube.md"
     ],
+    "goal": [
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
+    ],
     "google": [
       "/README.md",
       "/community/community-google-play.md",
@@ -10543,6 +10681,9 @@
       "/story/story_search_index.md",
       "/wiki-data/wiki-data-character-index.md"
     ],
+    "inference": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
+    ],
     "info": [
       "/community/community-appstore.md",
       "/community/community-bilibili.md",
@@ -10577,6 +10718,7 @@
       "/resource/resource-daily-news-morimens-daily-full-20260602.md",
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
@@ -10586,6 +10728,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -10598,6 +10741,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -10683,6 +10828,9 @@
     ],
     "jp": [
       "/resource/resource-community-analysis-jp-discord-insights-202606.md"
+    ],
+    "js": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "json": [
       "/README.md",
@@ -10983,6 +11131,7 @@
       "/resource/resource-daily-news-morimens-daily-full-20260602.md",
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
@@ -10992,6 +11141,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -11004,6 +11154,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -11132,6 +11284,9 @@
     ],
     "learned": [
       "/memory/lessons-learned.md"
+    ],
+    "ledger": [
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
     ],
     "lens": [
       "/community/community-appstore.md",
@@ -11426,6 +11581,7 @@
       "/resource/resource-daily-news-morimens-daily-full-20260602.md",
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
@@ -11433,6 +11589,7 @@
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
@@ -11442,6 +11599,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -11675,6 +11834,9 @@
     "north": [
       "/memory/memory-ext-knowledge-layer-design.md"
     ],
+    "notable": [
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
+    ],
     "note": [
       "/news-output/news-output-note-com.md"
     ],
@@ -11697,6 +11859,8 @@
       "/community/community-official.md",
       "/news-output/news-output-official.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/sources/official.md"
     ],
     "okf": [
@@ -11709,13 +11873,17 @@
       "/assets/assets-chat-onboarding-snippet.md"
     ],
     "open": [
-      "/README.md"
+      "/README.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
     ],
     "orchestrated": [
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
     ],
     "origin": [
       "/memory/memory-ext-active-policy-direct-push-main.md"
+    ],
+    "oss": [
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
     ],
     "output": [
       "/news-output/news-output-all.md",
@@ -12009,6 +12177,7 @@
       "/resource/resource-daily-news-morimens-daily-full-20260602.md",
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
@@ -12018,6 +12187,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -12030,6 +12200,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -12199,6 +12371,7 @@
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/sources/appstore.md",
       "/sources/bilibili.md",
@@ -12257,12 +12430,14 @@
     ],
     "prompt": [
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
-      "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "proposal": [
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md"
@@ -12308,6 +12483,7 @@
       "/resource/resource-daily-news-morimens-daily-full-20260602.md",
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
@@ -12317,6 +12493,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -12329,6 +12506,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -12565,6 +12744,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -12579,10 +12760,14 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md"
     ],
+    "reproduction": [
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
+    ],
     "research": [
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-research-community-analysis-2026-05-18-26.md",
       "/memory/memory-research-discord-archive-backfill-conflict.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/story/STORY_RESEARCH.md",
       "/story/story_research_notes.md",
       "/story/story_research_todo.md"
@@ -12603,6 +12788,7 @@
       "/resource/resource-daily-news-morimens-daily-full-20260602.md",
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
@@ -12612,6 +12798,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -12624,6 +12811,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -12758,6 +12947,9 @@
       "/wiki-data/wiki-schema-stages-schema.md",
       "/wiki-data/wiki-schema-trinkets-schema.md"
     ],
+    "scope": [
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
+    ],
     "scripts": [
       "/README.md",
       "/projects/extracted-lua-inventory.md",
@@ -12771,9 +12963,12 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/project-bpt-agent-sdk.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
-      "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
     ],
     "search": [
       "/README.md",
@@ -12891,6 +13086,9 @@
     ],
     "snippet": [
       "/assets/assets-chat-onboarding-snippet.md"
+    ],
+    "source": [
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
     ],
     "sourced": [
       "/wiki-data/wiki-data-character-skills.md"
@@ -13152,6 +13350,9 @@
     "surface": [
       "/projects/bpt-sdk-doc-compat.md"
     ],
+    "survey": [
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
+    ],
     "svn": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
@@ -13269,6 +13470,9 @@
     "ton": [
       "/characters/15569.md"
     ],
+    "tools": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
+    ],
     "topic": [
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
@@ -13284,6 +13488,7 @@
       "/resource/resource-daily-news-morimens-daily-full-20260602.md",
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
@@ -13293,6 +13498,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -13305,6 +13511,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -13439,6 +13647,9 @@
     "updatenotices": [
       "/wiki-data/wiki-data-update-notices.md"
     ],
+    "updateprompts": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
+    ],
     "upstream": [
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
@@ -13468,6 +13679,9 @@
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-research-community-analysis-2026-05-18-26.md",
       "/projects/releases-treasure-map.md"
+    ],
+    "v4": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "validate": [
       "/assets/assets-readme.md"
@@ -13554,7 +13768,8 @@
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
     ],
     "vs": [
-      "/README.md"
+      "/README.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "vue": [
       "/unpacked/unpacked-vue.md"
@@ -13786,6 +14001,9 @@
     "一数": [
       "/projects/doc-testing-strategy.md"
     ],
+    "一整": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
+    ],
     "一文": [
       "/README.md"
     ],
@@ -13813,7 +14031,8 @@
     ],
     "一的": [
       "/README.md",
-      "/characters/15583.md"
+      "/characters/15583.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
     ],
     "一目": [
       "/README.md",
@@ -13836,6 +14055,9 @@
     ],
     "一行": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md"
+    ],
+    "一遍": [
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
     ],
     "一部": [
       "/characters/15592.md",
@@ -13996,6 +14218,9 @@
     "不到": [
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
     ],
+    "不劣": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+    ],
     "不动": [
       "/README.md"
     ],
@@ -14029,7 +14254,8 @@
       "/characters/15583.md",
       "/characters/15601.md",
       "/characters/77926.md",
-      "/memory/memory-ext-bpt-guidance-log.md"
+      "/memory/memory-ext-bpt-guidance-log.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "不吐": [
       "/projects/entry-claude-md.md"
@@ -14176,6 +14402,7 @@
       "/resource/resource-daily-news-morimens-daily-full-20260602.md",
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
@@ -14185,6 +14412,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -14197,6 +14425,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -14248,8 +14478,14 @@
       "/characters/15560.md",
       "/characters/15576.md"
     ],
+    "不宣": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+    ],
     "不屈": [
       "/characters/77923.md"
+    ],
+    "不提": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "不放": [
       "/README.md",
@@ -14391,6 +14627,7 @@
       "/resource/resource-daily-news-morimens-daily-full-20260602.md",
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
@@ -14400,6 +14637,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -14412,6 +14650,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -14501,6 +14741,9 @@
     ],
     "不止": [
       "/characters/15600.md"
+    ],
+    "不测": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "不离": [
       "/README.md"
@@ -14646,6 +14889,7 @@
       "/resource/resource-daily-news-morimens-daily-full-20260602.md",
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
@@ -14655,6 +14899,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -14667,6 +14912,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -14773,6 +15020,9 @@
     "且将": [
       "/characters/15586.md"
     ],
+    "且能": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
+    ],
     "世主": [
       "/characters/15599.md"
     ],
@@ -14838,6 +15088,9 @@
     "严重": [
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md"
+    ],
+    "个不": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "个人": [
       "/projects/project-game.md",
@@ -15098,6 +15351,9 @@
     "为队": [
       "/characters/15602.md"
     ],
+    "为默": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+    ],
     "主体": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md"
     ],
@@ -15109,6 +15365,9 @@
     ],
     "主卖": [
       "/README.md"
+    ],
+    "主循": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "主控": [
       "/memory/memory-ext-active-policy-direct-push-main.md",
@@ -15685,6 +15944,7 @@
       "/resource/resource-daily-news-morimens-daily-full-20260602.md",
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
@@ -15694,6 +15954,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -15706,6 +15967,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -16046,8 +16309,14 @@
     "们完": [
       "/projects/bpt-sdk-doc-positioning.md"
     ],
+    "们工": [
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
+    ],
     "们带": [
       "/characters/15599.md"
+    ],
+    "们都": [
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
     ],
     "仰最": [
       "/characters/15582.md"
@@ -16067,11 +16336,17 @@
     "件响": [
       "/memory/memory-ext-collab-event-playbook.md"
     ],
+    "件坍": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
+    ],
     "件存": [
       "/memory/memory-ext-storage-discussion.md"
     ],
     "件把": [
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
+    ],
+    "件拼": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "件数": [
       "/memory/memory-ext-bpt-architecture-summary-template.md"
@@ -16104,6 +16379,9 @@
       "/characters/15598.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-strategy-repo-slimming-plan.md"
+    ],
+    "任务": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "份归": [
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
@@ -16520,6 +16798,7 @@
       "/resource/resource-daily-news-morimens-daily-full-20260602.md",
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
@@ -16529,6 +16808,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -16541,6 +16821,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -16736,6 +17018,7 @@
       "/resource/resource-daily-news-morimens-daily-full-20260602.md",
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
@@ -16745,6 +17028,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -16757,6 +17041,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -16913,6 +17199,9 @@
     "何驱": [
       "/projects/news-archive-sources-registry.md"
     ],
+    "余是": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
+    ],
     "余波": [
       "/characters/77922.md"
     ],
@@ -16963,6 +17252,9 @@
     ],
     "作目": [
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
+    ],
+    "作蓝": [
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
     ],
     "作训": [
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md"
@@ -17077,7 +17369,8 @@
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
     ],
     "依赖": [
-      "/README.md"
+      "/README.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
     ],
     "侵蚀": [
       "/characters/77923.md"
@@ -17098,7 +17391,8 @@
       "/extracted/extracted-readme.md"
     ],
     "保留": [
-      "/README.md"
+      "/README.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "保自": [
       "/characters/15580.md"
@@ -17335,6 +17629,9 @@
     "全仓": [
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md"
     ],
+    "全做": [
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
+    ],
     "全功": [
       "/memory/capability-index.md"
     ],
@@ -17442,7 +17739,8 @@
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
       "/projects/entry-readme.md",
-      "/projects/project-bpt-agent-sdk.md"
+      "/projects/project-bpt-agent-sdk.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
     ],
     "兰提戈斯": [
       "/characters/77914.md"
@@ -17492,6 +17790,9 @@
     ],
     "其伤": [
       "/characters/77925.md"
+    ],
+    "其余": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "其作": [
       "/characters/77926.md"
@@ -17595,6 +17896,9 @@
     ],
     "具平": [
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md"
+    ],
+    "具描": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "具有": [
       "/characters/15592.md",
@@ -17712,6 +18016,10 @@
     "再在": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md",
       "/memory/memory-ext-bpt-guidance-protocol.md"
+    ],
+    "再现": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
     ],
     "再让": [
       "/characters/15585.md"
@@ -17859,8 +18167,15 @@
     "出惨": [
       "/characters/15593.md"
     ],
+    "出来": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
+    ],
     "出物": [
       "/README.md"
+    ],
+    "出相": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "出确": [
       "/memory/memory-ext-skill-authoring-standard.md"
@@ -18372,6 +18687,7 @@
       "/resource/resource-daily-news-morimens-daily-full-20260602.md",
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
@@ -18381,6 +18697,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -18393,6 +18710,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -18620,6 +18939,9 @@
     ],
     "加高": [
       "/characters/15577.md"
+    ],
+    "务上": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "务于": [
       "/memory/memory-ext-skill-authoring-standard.md"
@@ -19091,7 +19413,8 @@
     ],
     "原作": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
-      "/resource/resource-community-analysis-saya-collab-community-report-20260603.md"
+      "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
     ],
     "原则": [
       "/memory/memory-ext-karpathy-coding-principles.md"
@@ -19564,6 +19887,9 @@
     "只要": [
       "/characters/15565.md"
     ],
+    "只记": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+    ],
     "只返": [
       "/README.md"
     ],
@@ -19678,6 +20004,9 @@
     ],
     "可比": [
       "/characters/15583.md"
+    ],
+    "可测": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "可消": [
       "/README.md"
@@ -19974,6 +20303,9 @@
       "/news-output/news-output-newsjs.md",
       "/projects/releases-treasure-map.md"
     ],
+    "合成": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
+    ],
     "合海": [
       "/characters/15580.md"
     ],
@@ -20037,6 +20369,9 @@
     ],
     "同见": [
       "/characters/77926.md"
+    ],
+    "同调": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "名提": [
       "/characters/15602.md"
@@ -20437,7 +20772,8 @@
     "唯一": [
       "/README.md",
       "/memory/memory-ext-skill-authoring-standard.md",
-      "/memory/project-status.md"
+      "/memory/project-status.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
     ],
     "商中": [
       "/README.md"
@@ -20724,8 +21060,14 @@
     "在知": [
       "/memory/memory-ext-knowledge-layer-design.md"
     ],
+    "在硬": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+    ],
     "在确": [
       "/characters/15580.md"
+    ],
+    "在请": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "在超": [
       "/characters/15562.md"
@@ -20808,6 +21150,9 @@
     "均非": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md"
     ],
+    "坍缩": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
+    ],
     "坏人": [
       "/characters/130901.md"
     ],
@@ -20823,6 +21168,9 @@
     ],
     "块收": [
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
+    ],
+    "块的": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "块覆": [
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
@@ -21240,6 +21588,7 @@
       "/resource/resource-daily-news-morimens-daily-full-20260602.md",
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
@@ -21249,6 +21598,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -21261,6 +21611,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -21619,6 +21971,9 @@
     "失落": [
       "/characters/15592.md"
     ],
+    "失败": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+    ],
     "头补": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md"
     ],
@@ -21953,6 +22308,7 @@
       "/resource/resource-daily-news-morimens-daily-full-20260602.md",
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
@@ -21962,6 +22318,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -21974,6 +22331,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -22187,6 +22546,9 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/story/story_research_todo.md"
     ],
+    "存成": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
+    ],
     "存放": [
       "/sources/appstore.md",
       "/sources/bilibili.md",
@@ -22337,6 +22699,7 @@
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/sources/appstore.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -22365,7 +22728,10 @@
       "/README.md",
       "/projects/entry-readme.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
-      "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
+      "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "宙恐": [
       "/memory/memory-ext-collab-event-playbook.md"
@@ -22482,6 +22848,7 @@
       "/resource/resource-daily-news-morimens-daily-full-20260602.md",
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
@@ -22491,6 +22858,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -22503,6 +22871,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -22601,6 +22971,9 @@
     ],
     "实代": [
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
+    ],
+    "实再": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "实圣": [
       "/assets/assets-narrative-structure.md",
@@ -22713,6 +23086,9 @@
       "/unpacked/unpacked-sproto.md",
       "/unpacked/unpacked-text-cn.md",
       "/unpacked/unpacked-vue.md"
+    ],
+    "宣胜": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "宣誓": [
       "/characters/15586.md"
@@ -23339,7 +23715,9 @@
       "/README.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md",
       "/memory/memory-ext-bpt-positioning.md",
-      "/resource/resource-proposal-internal-ai-platform-plan-202604.md"
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "工对": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md",
@@ -23551,6 +23929,9 @@
     "带往": [
       "/characters/15599.md"
     ],
+    "带无": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+    ],
     "带有": [
       "/memory/memory-ext-collab-event-playbook.md"
     ],
@@ -23761,6 +24142,9 @@
     "序档": [
       "/README.md"
     ],
+    "序逻": [
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
+    ],
     "库内": [
       "/memory/memory-ext-bpt-guidance-protocol.md"
     ],
@@ -23946,6 +24330,9 @@
     "开资": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md"
     ],
+    "开还": [
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
+    ],
     "开页": [
       "/README.md"
     ],
@@ -23992,7 +24379,8 @@
     ],
     "引擎": [
       "/characters/15602.md",
-      "/projects/bpt-sdk-doc-positioning.md"
+      "/projects/bpt-sdk-doc-positioning.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
     ],
     "引流": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
@@ -24104,6 +24492,9 @@
     ],
     "当她": [
       "/characters/125346.md"
+    ],
+    "当完": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "当心": [
       "/characters/15583.md"
@@ -24234,7 +24625,8 @@
       "/characters/15603.md"
     ],
     "循环": [
-      "/characters/15562.md"
+      "/characters/15562.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "心使": [
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
@@ -24378,6 +24770,9 @@
     "忘卻": [
       "/projects/entry-readme.md"
     ],
+    "忠实": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+    ],
     "忧虑": [
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
     ],
@@ -24487,6 +24882,9 @@
     ],
     "急支": [
       "/characters/15599.md"
+    ],
+    "性不": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "性中": [
       "/characters/54116.md"
@@ -25100,6 +25498,9 @@
     "成战": [
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md"
     ],
+    "成整": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
+    ],
     "成方": [
       "/README.md"
     ],
@@ -25111,6 +25512,9 @@
     ],
     "成果": [
       "/characters/15570.md"
+    ],
+    "成树": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "成熟": [
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -25126,7 +25530,8 @@
       "/characters/15572.md",
       "/characters/15584.md",
       "/characters/15587.md",
-      "/characters/15588.md"
+      "/characters/15588.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "成簇": [
       "/README.md"
@@ -25194,6 +25599,9 @@
     ],
     "或超": [
       "/characters/15562.md"
+    ],
+    "或逐": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "战中": [
       "/characters/15602.md"
@@ -25719,6 +26127,9 @@
       "/characters/15601.md",
       "/characters/54116.md"
     ],
+    "拼接": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
+    ],
     "拿着": [
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md"
     ],
@@ -25905,6 +26316,7 @@
       "/resource/resource-daily-news-morimens-daily-full-20260602.md",
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
@@ -25914,6 +26326,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -25926,6 +26339,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -26003,6 +26418,9 @@
     ],
     "按个": [
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
+    ],
+    "按环": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "按画": [
       "/README.md"
@@ -26199,7 +26617,8 @@
       "/resource/resource-repo-engineering-repo-audit-20260603.md"
     ],
     "排序": [
-      "/README.md"
+      "/README.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
     ],
     "排扫": [
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md"
@@ -26250,6 +26669,9 @@
     ],
     "推出": [
       "/memory/memory-ext-collab-event-playbook.md"
+    ],
+    "推断": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "推测": [
       "/story/story_research_todo.md"
@@ -26355,6 +26777,7 @@
       "/resource/resource-daily-news-morimens-daily-full-20260602.md",
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
@@ -26364,6 +26787,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -26376,6 +26800,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -26440,6 +26866,9 @@
       "/wiki-data/wiki-schema-stages-schema.md",
       "/wiki-data/wiki-schema-trinkets-schema.md"
     ],
+    "提为": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+    ],
     "提交": [
       "/memory/memory-ext-biav-info-classification.md"
     ],
@@ -26472,7 +26901,9 @@
       "/characters/77917.md"
     ],
     "提示": [
-      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "提高": [
       "/characters/15575.md",
@@ -26480,6 +26911,9 @@
     ],
     "握所": [
       "/characters/54116.md"
+    ],
+    "揭示": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "揭露": [
       "/memory/memory-ext-wiki-characters-schema-v1.md"
@@ -26629,6 +27063,7 @@
       "/resource/resource-daily-news-morimens-daily-full-20260602.md",
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
@@ -26638,6 +27073,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -26650,6 +27086,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -26722,6 +27160,9 @@
     "擎终": [
       "/characters/15602.md"
     ],
+    "擎里": [
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
+    ],
     "攒猩": [
       "/characters/15599.md"
     ],
@@ -26745,7 +27186,8 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
     ],
     "收益": [
-      "/characters/15604.md"
+      "/characters/15604.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "改用": [
       "/news-output/news-output-appstore.md",
@@ -26940,6 +27382,7 @@
       "/resource/resource-daily-news-morimens-daily-full-20260602.md",
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
@@ -26949,6 +27392,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -26961,6 +27405,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -27178,6 +27624,7 @@
       "/resource/resource-daily-news-morimens-daily-full-20260602.md",
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
@@ -27187,6 +27634,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -27199,6 +27647,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -27464,6 +27914,9 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md"
     ],
+    "整块": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
+    ],
     "整套": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md"
     ],
@@ -27533,6 +27986,9 @@
       "/memory/memory-ext-karpathy-coding-principles.md",
       "/projects/entry-claude-md.md"
     ],
+    "整的": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
+    ],
     "文件": [
       "/README.md",
       "/assets/assets-chat-onboarding-snippet.md",
@@ -27545,6 +28001,7 @@
       "/memory/memory-ext-storage-discussion.md",
       "/memory/memory-research-discord-archive-backfill-conflict.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/unpacked/unpacked-config.md",
       "/unpacked/unpacked-ejoysdk-lua.md",
       "/unpacked/unpacked-foundation.md",
@@ -27651,6 +28108,9 @@
     "斩首": [
       "/characters/15564.md"
     ],
+    "断出": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
+    ],
     "断分": [
       "/characters/15573.md"
     ],
@@ -27756,10 +28216,14 @@
     ],
     "方提": [
       "/characters/15577.md",
-      "/characters/15579.md"
+      "/characters/15579.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "方最": [
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md"
+    ],
+    "方有": [
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
     ],
     "方案": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -27802,6 +28266,12 @@
     ],
     "无他": [
       "/characters/77922.md"
+    ],
+    "无可": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+    ],
+    "无头": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "无尽": [
       "/characters/15599.md"
@@ -28016,6 +28486,9 @@
     "明的": [
       "/characters/15589.md"
     ],
+    "明确": [
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
+    ],
     "易伤": [
       "/characters/15574.md",
       "/characters/15590.md",
@@ -28033,7 +28506,11 @@
     "是一": [
       "/README.md",
       "/characters/15602.md",
-      "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
+      "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
+    ],
+    "是主": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "是他": [
       "/characters/15594.md"
@@ -28050,6 +28527,9 @@
     "是好": [
       "/characters/15603.md"
     ],
+    "是存": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
+    ],
     "是守": [
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
     ],
@@ -28061,6 +28541,9 @@
     ],
     "是拍": [
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
+    ],
+    "是按": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "是攻": [
       "/characters/15603.md"
@@ -28076,6 +28559,9 @@
     ],
     "是本": [
       "/README.md"
+    ],
+    "是架": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "是模": [
       "/characters/15575.md"
@@ -28135,6 +28621,9 @@
     ],
     "显式": [
       "/README.md"
+    ],
+    "显示": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "显著": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
@@ -28376,7 +28865,8 @@
     ],
     "有的": [
       "/characters/54116.md",
-      "/characters/54117.md"
+      "/characters/54117.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
     ],
     "有着": [
       "/characters/15578.md",
@@ -28443,6 +28933,9 @@
     ],
     "期性": [
       "/characters/77917.md"
+    ],
+    "期条": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "期等": [
       "/memory/memory-ext-biav-info-classification.md"
@@ -28625,6 +29118,7 @@
       "/resource/resource-daily-news-morimens-daily-full-20260602.md",
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
@@ -28634,6 +29128,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -28646,6 +29141,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -28756,6 +29253,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md"
     ],
     "本档": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md"
     ],
     "本源": [
@@ -28782,9 +29280,11 @@
     ],
     "本身": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md"
     ],
     "本轮": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md"
     ],
     "术一": [
@@ -28986,6 +29486,7 @@
       "/resource/resource-daily-news-morimens-daily-full-20260602.md",
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
@@ -28995,6 +29496,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -29007,6 +29509,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -29082,6 +29586,9 @@
     ],
     "杠杆": [
       "/memory/memory-ext-skill-authoring-standard.md"
+    ],
+    "条件": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "条修": [
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md"
@@ -29214,7 +29721,9 @@
       "/characters/15594.md"
     ],
     "来的": [
-      "/characters/15564.md"
+      "/characters/15564.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "来破": [
       "/characters/15600.md"
@@ -29302,6 +29811,9 @@
     "构设": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md"
     ],
+    "构骨": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
+    ],
     "析台": [
       "/community/community-index.md"
     ],
@@ -29363,7 +29875,8 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-design.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
       "/memory/memory-ext-bpt-architecture-summary-template.md",
-      "/memory/memory-ext-bpt-guidance-protocol.md"
+      "/memory/memory-ext-bpt-guidance-protocol.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "枷锁": [
       "/characters/15574.md"
@@ -29477,6 +29990,7 @@
       "/resource/resource-daily-news-morimens-daily-full-20260602.md",
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
@@ -29486,6 +30000,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -29498,6 +30013,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -29637,6 +30154,7 @@
       "/resource/resource-daily-news-morimens-daily-full-20260602.md",
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
@@ -29646,6 +30164,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -29658,6 +30177,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -29754,6 +30275,9 @@
     ],
     "档到": [
       "/projects/news-archive-sources-registry.md"
+    ],
+    "档只": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "档回": [
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md"
@@ -30059,6 +30583,7 @@
       "/resource/resource-daily-news-morimens-daily-full-20260602.md",
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
@@ -30068,6 +30593,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -30080,6 +30606,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -30381,6 +30909,7 @@
       "/resource/resource-daily-news-morimens-daily-full-20260602.md",
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
@@ -30390,6 +30919,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -30402,6 +30932,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -30456,6 +30988,9 @@
     ],
     "正的": [
       "/characters/15602.md"
+    ],
+    "正确": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "此世": [
       "/characters/94450.md"
@@ -30523,8 +31058,14 @@
     "段伤": [
       "/characters/15594.md"
     ],
+    "段合": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
+    ],
     "段和": [
       "/characters/15590.md"
+    ],
+    "段或": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "段高": [
       "/characters/15587.md",
@@ -30679,6 +31220,9 @@
     "求的": [
       "/characters/15587.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md"
+    ],
+    "求组": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "池任": [
       "/memory/memory-ext-active-silver-blackpool-interface.md"
@@ -30869,8 +31413,14 @@
     "流能": [
       "/characters/130901.md"
     ],
+    "测不": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+    ],
     "测到": [
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md"
+    ],
+    "测收": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "测试": [
       "/projects/doc-testing-strategy.md",
@@ -31346,7 +31896,8 @@
       "/characters/15599.md"
     ],
     "片段": [
-      "/memory/memory-ext-bpt-architecture-summary-template.md"
+      "/memory/memory-ext-bpt-architecture-summary-template.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "版更": [
       "/projects/bpt-sdk-doc-positioning.md"
@@ -31741,11 +32292,20 @@
     "环乐": [
       "/characters/54117.md"
     ],
+    "环境": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
+    ],
     "环打": [
       "/characters/15567.md"
     ],
+    "环片": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
+    ],
     "环行": [
       "/characters/15568.md"
+    ],
+    "现一": [
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
     ],
     "现为": [
       "/memory/memory-ext-active-policy-direct-push-main.md"
@@ -31769,7 +32329,8 @@
       "/characters/15589.md"
     ],
     "现的": [
-      "/projects/project-bpt-agent-sdk.md"
+      "/projects/project-bpt-agent-sdk.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "现精": [
       "/README.md"
@@ -32033,7 +32594,8 @@
       "/sources/youtube_comments.md"
     ],
     "用公": [
-      "/projects/entry-readme.md"
+      "/projects/entry-readme.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
     ],
     "用出": [
       "/characters/15567.md"
@@ -32068,6 +32630,9 @@
     ],
     "用清": [
       "/memory/memory-ext-workflow-api-key-audit.md"
+    ],
+    "用点": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "用狂": [
       "/characters/15580.md"
@@ -32568,6 +33133,9 @@
     "的孤": [
       "/characters/77923.md"
     ],
+    "的官": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+    ],
     "的审": [
       "/characters/77917.md"
     ],
@@ -32639,6 +33207,9 @@
       "/characters/15568.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md"
     ],
+    "的排": [
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
+    ],
     "的提": [
       "/characters/77917.md"
     ],
@@ -32693,6 +33264,9 @@
     ],
     "的来": [
       "/characters/94450.md"
+    ],
+    "的架": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "的枷": [
       "/characters/15574.md"
@@ -32835,6 +33409,9 @@
       "/characters/15574.md",
       "/characters/54117.md"
     ],
+    "的粒": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
+    ],
     "的精": [
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
     ],
@@ -32877,7 +33454,8 @@
       "/characters/15579.md",
       "/characters/15594.md",
       "/characters/15600.md",
-      "/memory/memory-ext-bpt-guidance-protocol.md"
+      "/memory/memory-ext-bpt-guidance-protocol.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
     ],
     "的艺": [
       "/characters/15592.md"
@@ -33111,6 +33689,9 @@
     ],
     "直的": [
       "/characters/130901.md"
+    ],
+    "相当": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "相悖": [
       "/characters/15563.md"
@@ -33401,6 +33982,9 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md"
     ],
+    "硬任": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+    ],
     "硬约": [
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/sources/appstore.md",
@@ -33450,6 +34034,12 @@
     "确定": [
       "/README.md",
       "/memory/memory-ext-skill-authoring-standard.md"
+    ],
+    "确性": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+    ],
+    "确署": [
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
     ],
     "确认": [
       "/memory/memory-ext-collab-event-playbook.md",
@@ -33506,13 +34096,21 @@
       "/sources/youtube.md",
       "/sources/youtube_comments.md"
     ],
+    "示本": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+    ],
     "示用": [
       "/news-output/news-output-all.md",
       "/news-output/news-output-feed.md",
       "/news-output/news-output-newsjs.md"
     ],
+    "示的": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
+    ],
     "示词": [
-      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "礼服": [
       "/characters/15584.md"
@@ -34026,6 +34624,9 @@
     "类缺": [
       "/memory/memory-ext-wiki-characters-schema-v1.md"
     ],
+    "粒度": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
+    ],
     "精确": [
       "/community/community-appstore.md",
       "/community/community-bilibili.md",
@@ -34071,6 +34672,7 @@
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
     ],
@@ -34245,6 +34847,9 @@
       "/README.md",
       "/story/story_layer_readme.md"
     ],
+    "组装": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
+    ],
     "织互": [
       "/README.md"
     ],
@@ -34389,6 +34994,9 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
     ],
+    "统提": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
+    ],
     "统权": [
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md"
@@ -34494,6 +35102,9 @@
     "缩为": [
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
     ],
+    "缩成": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
+    ],
     "缩放": [
       "/README.md"
     ],
@@ -34530,6 +35141,9 @@
     ],
     "置的": [
       "/projects/extracted-lua-inventory.md"
+    ],
+    "署名": [
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
     ],
     "署在": [
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
@@ -34631,6 +35245,9 @@
     "者的": [
       "/characters/95786.md"
     ],
+    "而且": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
+    ],
     "而优": [
       "/characters/77925.md"
     ],
@@ -34644,7 +35261,8 @@
       "/characters/77917.md"
     ],
     "而是": [
-      "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "而最": [
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
@@ -34728,6 +35346,9 @@
     "胚胎": [
       "/characters/15600.md"
     ],
+    "胜负": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+    ],
     "能从": [
       "/characters/15599.md"
     ],
@@ -34765,7 +35386,8 @@
       "/characters/15599.md",
       "/characters/15600.md",
       "/characters/15602.md",
-      "/memory/memory-ext-bpt-guidance-protocol.md"
+      "/memory/memory-ext-bpt-guidance-protocol.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
     ],
     "能号": [
       "/characters/15582.md"
@@ -34809,6 +35431,9 @@
     ],
     "能持": [
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
+    ],
+    "能推": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "能更": [
       "/characters/15565.md"
@@ -35278,6 +35903,9 @@
     "蓝图": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-design.md"
     ],
+    "蓝本": [
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
+    ],
     "藏于": [
       "/characters/15570.md"
     ],
@@ -35467,6 +36095,9 @@
     ],
     "裂腺": [
       "/characters/15573.md"
+    ],
+    "装期": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "装部": [
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
@@ -35832,6 +36463,9 @@
     "记载": [
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
     ],
+    "记量": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+    ],
     "许写": [
       "/memory/memory-ext-active-silver-blackpool-interface.md"
     ],
@@ -36010,6 +36644,12 @@
       "/README.md",
       "/community/community-index.md"
     ],
+    "词在": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+    ],
+    "词是": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
+    ],
     "词检": [
       "/README.md"
     ],
@@ -36164,6 +36804,9 @@
     "请守": [
       "/story/story_research_todo.md"
     ],
+    "请求": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
+    ],
     "请通": [
       "/assets/assets-chat-onboarding-snippet.md"
     ],
@@ -36193,7 +36836,8 @@
     ],
     "调用": [
       "/projects/bpt-sdk-doc-positioning.md",
-      "/projects/project-bpt-agent-sdk.md"
+      "/projects/project-bpt-agent-sdk.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "谕中": [
       "/characters/15599.md"
@@ -36222,6 +36866,9 @@
     ],
     "责任": [
       "/characters/77922.md"
+    ],
+    "败带": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "账号": [
       "/README.md"
@@ -36568,6 +37215,7 @@
       "/resource/resource-daily-news-morimens-daily-full-20260602.md",
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
@@ -36577,6 +37225,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -36589,6 +37238,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -36681,6 +37332,9 @@
     ],
     "身体": [
       "/characters/130901.md"
+    ],
+    "身就": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "身并": [
       "/characters/95786.md"
@@ -36851,6 +37505,9 @@
     "辉之": [
       "/characters/77917.md"
     ],
+    "辑是": [
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
+    ],
     "输出": [
       "/README.md",
       "/characters/15599.md",
@@ -36984,6 +37641,7 @@
     "还原": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/unpacked/unpacked-lua-tables.md"
     ],
     "还能": [
@@ -37157,6 +37815,7 @@
       "/resource/resource-daily-news-morimens-daily-full-20260602.md",
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
@@ -37166,6 +37825,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -37178,6 +37838,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -37291,6 +37953,9 @@
     "适应": [
       "/characters/15601.md"
     ],
+    "适配": [
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
+    ],
     "逃离": [
       "/characters/77917.md"
     ],
@@ -37333,6 +37998,9 @@
     ],
     "逐光": [
       "/characters/77917.md"
+    ],
+    "逐工": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "逐条": [
       "/projects/extracted-lua-inventory.md"
@@ -37413,6 +38081,7 @@
       "/characters/77917.md"
     ],
     "逻辑": [
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md"
     ],
     "遍历": [
@@ -37534,7 +38203,8 @@
       "/characters/15604.md"
     ],
     "都在": [
-      "/characters/77925.md"
+      "/characters/77925.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
     ],
     "都将": [
       "/characters/125346.md",
@@ -37561,6 +38231,9 @@
     "配合": [
       "/characters/77922.md",
       "/extracted/extracted-readme.md"
+    ],
+    "配我": [
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
     ],
     "配置": [
       "/memory/memory-ext-biav-info-classification.md",
@@ -37619,6 +38292,9 @@
       "/characters/15562.md",
       "/characters/15601.md",
       "/characters/77925.md"
+    ],
+    "里再": [
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
     ],
     "里奏": [
       "/characters/15585.md",
@@ -37702,7 +38378,8 @@
       "/characters/15580.md"
     ],
     "量出": [
-      "/characters/15567.md"
+      "/characters/15567.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "量加": [
       "/characters/15564.md",
@@ -38035,6 +38712,7 @@
       "/resource/resource-daily-news-morimens-daily-full-20260602.md",
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
@@ -38044,6 +38722,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -38056,6 +38735,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -38245,6 +38926,7 @@
       "/resource/resource-daily-news-morimens-daily-full-20260602.md",
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
@@ -38254,6 +38936,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -38266,6 +38949,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -39071,7 +39756,8 @@
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md"
     ],
     "骨架": [
-      "/memory/memory-ext-knowledge-layer-design.md"
+      "/memory/memory-ext-knowledge-layer-design.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "骨毒": [
       "/characters/125346.md"
@@ -39218,6 +39904,9 @@
     "黑色": [
       "/characters/77923.md"
     ],
+    "默认": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+    ],
     "鼓舞": [
       "/characters/130901.md"
     ],
@@ -39335,7 +40024,8 @@
     ],
     "architecture": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md",
-      "/projects/bpt-sdk-doc-architecture.md"
+      "/projects/bpt-sdk-doc-architecture.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "archive": [
       "/assets/assets-archive-integrity.md",
@@ -39445,7 +40135,8 @@
       "/wiki-data/wiki-schema-banners-schema.md"
     ],
     "baseline": [
-      "/assets/assets-sentinel-baseline.md"
+      "/assets/assets-sentinel-baseline.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "best": [
       "/memory/memory-ext-research-best-wiki-features.md"
@@ -39523,7 +40214,9 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/project-bpt-agent-sdk.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
@@ -39555,6 +40248,10 @@
     ],
     "categorized": [
       "/extracted/extracted-categorized.md"
+    ],
+    "cc": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
     ],
     "cg": [
       "/wiki-data/wiki-data-cg-gallery.md"
@@ -39615,6 +40312,9 @@
     ],
     "compaction": [
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md"
+    ],
+    "comparison": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "compat": [
       "/projects/bpt-sdk-doc-compat.md"
@@ -39765,6 +40465,7 @@
       "/resource/resource-daily-news-morimens-daily-full-20260602.md",
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
@@ -39774,6 +40475,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -39786,6 +40488,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -40033,6 +40737,7 @@
       "/resource/resource-daily-news-morimens-daily-full-20260602.md",
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
@@ -40042,6 +40747,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -40054,6 +40760,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -40160,6 +40868,7 @@
       "/resource/resource-daily-news-morimens-daily-full-20260602.md",
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
@@ -40169,6 +40878,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -40181,6 +40891,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -40202,6 +40914,9 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
     ],
+    "designs": [
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
+    ],
     "desktop": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-desktop-design-spec-ref.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
@@ -40215,6 +40930,7 @@
     "diagnostics": [
       "/assets/assets-archive-integrity.md",
       "/assets/assets-sentinel-baseline.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md"
@@ -40299,6 +41015,9 @@
       "/unpacked/unpacked-text-cn.md",
       "/unpacked/unpacked-vue.md"
     ],
+    "engine": [
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
+    ],
     "engineering": [
       "/projects/doc-testing-strategy.md",
       "/projects/extracted-lua-readme.md",
@@ -40312,6 +41031,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -40563,6 +41284,9 @@
       "/story/story_search_index.md",
       "/wiki-data/wiki-data-character-index.md"
     ],
+    "inference": [
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
+    ],
     "insights": [
       "/resource/resource-community-analysis-jp-discord-insights-202606.md"
     ],
@@ -40752,6 +41476,7 @@
       "/resource/resource-daily-news-morimens-daily-full-20260602.md",
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
@@ -40761,6 +41486,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -40773,6 +41499,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -40852,6 +41580,9 @@
     ],
     "learned": [
       "/memory/lessons-learned.md"
+    ],
+    "ledger": [
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
     ],
     "lens": [
       "/community/community-appstore.md",
@@ -41090,6 +41821,7 @@
     "official": [
       "/community/community-official.md",
       "/news-output/news-output-official.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/sources/official.md"
     ],
     "okf": [
@@ -41100,6 +41832,9 @@
     ],
     "orchestrated": [
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
+    ],
+    "oss": [
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
     ],
     "output": [
       "/news-output/news-output-all.md",
@@ -41340,12 +42075,14 @@
     ],
     "prompt": [
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
-      "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "proposal": [
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md"
@@ -41406,6 +42143,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -41419,6 +42158,9 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md"
+    ],
+    "reproduction": [
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
     ],
     "research": [
       "/memory/memory-ext-research-best-wiki-features.md",
@@ -41502,12 +42244,17 @@
       "/wiki-data/wiki-schema-stages-schema.md",
       "/wiki-data/wiki-schema-trinkets-schema.md"
     ],
+    "scope": [
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
+    ],
     "sdk": [
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/project-bpt-agent-sdk.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
@@ -41637,6 +42384,9 @@
     "summon": [
       "/wiki-data/wiki-data-summon.md"
     ],
+    "survey": [
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
+    ],
     "system": [
       "/assets/assets-card-system.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md",
@@ -41698,6 +42448,7 @@
       "/resource/resource-daily-news-morimens-daily-full-20260602.md",
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
@@ -41707,6 +42458,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -41719,6 +42471,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",

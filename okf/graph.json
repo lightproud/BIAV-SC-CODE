@@ -1,8 +1,8 @@
 {
   "generated": "2026-07-05",
   "stats": {
-    "nodes": 305,
-    "edges": 312
+    "nodes": 309,
+    "edges": 315
   },
   "nodes": [
     {
@@ -1499,7 +1499,7 @@
     {
       "id": "/memory/memory-ext-bpt-guidance-protocol.md",
       "type": "knowledge-pointer",
-      "title": "银芯指导 BPT 协议（v0.4）",
+      "title": "银芯指导 BPT 协议（v0.3）",
       "tags": [
         "memory",
         "data_layer:curated"
@@ -2366,6 +2366,17 @@
       "tier": "search"
     },
     {
+      "id": "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "type": "documentation",
+      "title": "bpt-sdk-comparison-baseline-20260705",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:data-diagnostics"
+      ],
+      "tier": "search"
+    },
+    {
       "id": "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "type": "documentation",
       "title": "discord-compaction-further-savings-20260622",
@@ -2457,6 +2468,17 @@
       "id": "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "type": "documentation",
       "title": "bpt-prompt-layering-design-20260704",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:proposal"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "type": "documentation",
+      "title": "bpt-sdk-reproduction-scope-ledger-20260704",
       "tags": [
         "data_layer:curated",
         "deliverable",
@@ -2589,6 +2611,28 @@
       "id": "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "type": "documentation",
       "title": "news-collector-merge-plan-202606",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "type": "documentation",
+      "title": "official-cc-prompt-architecture-inference-20260704",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "type": "documentation",
+      "title": "oss-cc-engine-designs-survey-20260704",
       "tags": [
         "data_layer:curated",
         "deliverable",
@@ -4643,6 +4687,12 @@
       "rel_type": "mention"
     },
     {
+      "source": "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
       "source": "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
@@ -4721,6 +4771,12 @@
       "rel_type": "mention"
     },
     {
+      "source": "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
       "source": "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
@@ -4734,6 +4790,12 @@
     },
     {
       "source": "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
       "rel_type": "mention"
