@@ -13,6 +13,7 @@ import { existsSync, readFileSync, statSync } from 'node:fs';
 import { homedir, platform as osPlatform, release } from 'node:os';
 import { dirname, join, parse as parsePath } from 'node:path';
 
+import { resolveSettingSources } from '../internal/setting-sources.js';
 import type { EnvironmentContext } from './prompts.js';
 import type { SettingSource } from '../types.js';
 
@@ -50,23 +51,26 @@ export function gatherEnvironment(
 }
 
 /**
- * Load codebase instructions per `settingSources`. 'project'/'local' walk up
- * from cwd collecting CLAUDE.md/AGENTS.md (root-most first, so the most
+ * Load codebase instructions per the effective `settingSources`. Omitted
+ * settingSources resolves to load-all (bump-pin ruling), so an absent field
+ * loads user+project+local; an explicit `[]` loads nothing. 'project'/'local'
+ * walk up from cwd collecting CLAUDE.md/AGENTS.md (root-most first, so the most
  * specific file lands last); 'user' reads ~/.claude/CLAUDE.md. Returns '' when
- * no sources are requested or nothing is found. Total size is capped.
+ * no sources are effective or nothing is found. Total size is capped.
  */
 export function loadProjectInstructions(
   cwd: string,
   sources: SettingSource[] | undefined,
 ): string {
-  if (!sources || sources.length === 0) return '';
+  const effective = resolveSettingSources(sources);
+  if (effective.length === 0) return '';
   const parts: string[] = [];
-  if (sources.includes('user')) {
+  if (effective.includes('user')) {
     const userFile = join(homedir(), '.claude', 'CLAUDE.md');
     const txt = readIfFile(userFile);
     if (txt) parts.push(`# ${userFile}\n\n${txt}`);
   }
-  if (sources.includes('project') || sources.includes('local')) {
+  if (effective.includes('project') || effective.includes('local')) {
     for (const file of walkUpInstructionFiles(cwd)) {
       const txt = readIfFile(file);
       if (txt) parts.push(`# ${file}\n\n${txt}`);

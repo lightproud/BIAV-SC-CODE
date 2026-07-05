@@ -215,6 +215,16 @@ gap is structural, not a backlog):
    whereas the official CLI emits `api_retry` on an actual 429 and reserves
    `rate_limit_event` for quota-status updates it receives from the platform
    (a feed this engine does not have).
+5m. **`settingSources` default reversed to load-all** (bump-pin ruling, v0.8,
+   BREAKING for callers who relied on the silent default): OMITTING
+   `settingSources` now loads **user+project+local** on-disk sources
+   (CLAUDE.md / AGENTS.md, and the project `.mcp.json`), matching official
+   Claude Code and the live `@anthropic-ai/claude-agent-sdk` docs — the flip
+   from the earlier pinned-0.3.199 "omit = load nothing" default, held until
+   the up-pin because it diverges from the pinned conformance arm. To keep the
+   old "no on-disk sources" behavior, pass `settingSources: []` explicitly (the
+   empty array is the opt-out). An explicit subset still loads exactly that
+   subset. skills/plugins loading remains a separate PARTIAL, unchanged.
 6. **Sessions** live in this SDK's own JSONL store (or your `sessionStore`
    backend); official CLI session files are not readable.
 7. **`sse` MCP transport** (legacy) is unsupported; stdio / http / sdk are.

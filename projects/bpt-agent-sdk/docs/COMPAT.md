@@ -50,9 +50,9 @@ The keeper ruling 「全面实现」 drove a full-surface alignment pass. What l
   events typed (typed-not-fired — no natural headless hook point), MessageDisplay
   5-field incremental protocol emitted, plus additive optional types
   (SDKMessageOrigin, error/terminal_reason enums, etc.). The **`settingSources`
-  default reversal** (omit = load-all) is deliberately NOT done — it is the one
-  behavior-level reversal, would diverge from the pinned official arm, and awaits
-  a keeper bump-pin decision.
+  default reversal** (omit = load-all) is DONE as of v0.8 (keeper bump-pin ruling
+  2026-07-05): it was the one behavior-level reversal and deliberately tracks the
+  LIVE docs ahead of the pinned arm. Explicit `[]` is the opt-out.
 
 ## Divergences from the official SDK (where we differ on purpose)
 
@@ -84,7 +84,7 @@ Per-row detail lives in the sections below; this is the at-a-glance table.
 | TaskOutput / TaskStop tools | N/A (candidate) | model-facing task tools | capability exists (stopTask/BashOutput) but not exposed as builtins yet |
 | full settings engine / OTel / 3P providers | N/A-BY-DESIGN | present | out of scope for a direct-API engine |
 | `reinitialize()` / `applyFlagSettings()` | N/A-BY-DESIGN | CLI control requests | no CLI to control |
-| `settingSources` default | PENDING | omit = load-all (live docs) | omit = load-nothing (pinned 0.3.199); flip awaits bump-pin |
+| `settingSources` default | IMPLEMENTED | omit = load-all (live docs) | omit = load user+project+local (v0.8 bump-pin flip); explicit `[]` = opt-out |
 | KD-12 rate-limit encoding | KEPT-DIVERGENCE | `system/api_retry` on 429 | `rate_limit_event` on 429 (triaged) |
 
 ## v0.2 status (what graduated from the v0.1 audit)
@@ -224,7 +224,7 @@ SDK implements the agent loop directly against the public Messages API:
 | `allowDangerouslySkipPermissions` | FULL | safety interlock: `bypassPermissions` (initial or via `setPermissionMode`) throws `ConfigurationError` unless this is `true`. BPT-only strictness: official 0.3.199/2.1.201 does NOT enforce the interlock live - it proceeds to the model without the flag (conformance run-l2 s6-bypass-interlock-refusal, 2026-07-05) |
 | `persistSession` / `sessionId` / `resume` | FULL | JSONL store |
 | `provider` | FULL | **BPT extension** — direct-API connection settings |
-| `settingSources` | PARTIAL | loads CLAUDE.md / AGENTS.md ('project'/'local'/'user'); skills/plugins not loaded |
+| `settingSources` | PARTIAL | loads CLAUDE.md / AGENTS.md + project `.mcp.json` ('project'/'local'/'user'); **omit = load-all default (v0.8), explicit `[]` = opt-out**; skills/plugins not loaded |
 | `includeEnvironmentContext` | FULL | **BPT extension** — inject official-style `<env>` block (default true on the preset) |
 | `stderr` | PARTIAL | receives debug log lines (no subprocess stderr exists) |
 | `strictMcpConfig` | ACCEPTED | typed but consulted nowhere in src; the old "only options servers are ever used" rationale is stale since v0.5 `settingSources` can load `.mcp.json` servers, and no strict/lax fork exists to lock (conformance-l2-locks reconciliation, 2026-07-05) |

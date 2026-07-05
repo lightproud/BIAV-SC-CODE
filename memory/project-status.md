@@ -449,6 +449,17 @@
   `Public-Info-Pool/Resource/repo-engineering/bpt-sdk-engine-alignment-handoff-20260705-r5.md`（退役 r4 待办视图）。
   **代码侧无挂账**；剩余三项纯花预算 / 需裁定的验收（真 L5 验 code-01 残余 / run-l35 双臂封印 KD-L35-02 / 升钉+参考目标刷新+settingSources 反转），
   待守密人「dispatch 真 L5」或「升钉」信号，否则本线判定收官。
+- **升钉裁定落地 —— settingSources 默认反转（守密人「确定升钉了」，2026-07-05，v0.7.1→v0.8.0）**：唯一行为级
+  NEW-IN-DOCS 反转已做。**省略 `settingSources` 现默认加载 user+project+local**（CLAUDE.md / AGENTS.md + 项目
+  `.mcp.json`），对齐官方 Claude Code / live docs；**显式 `[]` = 显式退出（不加载）**、显式子集照旧。单一真相源
+  `src/internal/setting-sources.ts` `resolveSettingSources`（注入式纯函数，仿 shell-resolve/kill-plan）；两消费点
+  （`runtime-context.ts loadProjectInstructions` / `project-config.ts loadProjectMcpServers`）统一经其解析。破坏性——
+  靠「省略=不加载」旧默认的调用方须显式传 `[]`（MIGRATION 5m）。L2 锁 `conformance-l2-locks` 翻转追 live 语义
+  （AHEAD of 钉版臂，属升钉预期）；wire 指纹不受影响（测试目录无 CLAUDE.md）、pin 已 0.3.201 故参考目标无需刷新。
+  自验 tsc 净 / vitest **1321 全绿**。CHANGELOG 0.8.0 + COMPAT settingSources 行转 IMPLEMENTED。
+- **真 L5 已 dispatch（守密人「dispatch 真 L5」，2026-07-05）**：`bpt-agent-sdk.yml` workflow_dispatch
+  `conformance_l5=true` / `l5_repeat=5` / `l5_thinking=空`（各臂自身默认——本轮正为验 E7-01 自适应思考 vs 官方）
+  / haiku，在 main 上跑。目的：验 E7-01 自适应默认是否移动 code-01 残余（现 0/3）。结果待 run 完成回填。
 
 ## BPT-V2T 语音代替输入（`projects/bpt-v2t/`）
 
