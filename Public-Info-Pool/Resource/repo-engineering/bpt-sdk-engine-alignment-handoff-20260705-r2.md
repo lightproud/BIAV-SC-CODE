@@ -15,9 +15,9 @@
   预期转绿的 KD/基线行用 `--update` 显式升基线（会带 RED-LOCK 警告，属预期）。E1 的最终验收要一轮
   真 API L5（`conformance_l5` dispatch，$1.5 帽内）。
 
-优先级建议：**E1 > E6b > E4 ≈ E5 > E3 > E2 > E6 其余**（E1 修我方仅有的两个 L5 全败点；
-E6b 一处改动、直接解 BPT 产线现行故障的定位之困；E4/E5 规格已钉死、改动面小；
-E3 中等；E2 是接口面对齐、有破坏性注意事项；E6a/c/d 是体系收口、不阻塞断供换装）。
+优先级建议：**E1 > E4 ≈ E5 > E3 > E2 > E6a/c/d**（E1 修我方仅有的两个 L5 全败点；
+E4/E5 规格已钉死、改动面小；E3 中等；E2 是接口面对齐、有破坏性注意事项；
+E6a/c/d 是体系收口、不阻塞断供换装。**E6b 已由银芯落地**，见 E6 节，勿重做）。
 
 ---
 
@@ -128,10 +128,13 @@ E3 中等；E2 是接口面对齐、有破坏性注意事项；E6a/c/d 是体系
   （2 处）+ `src/tools/bash.ts`（1 处）的裸 `Error` 纳入类型体系——建议新增 `McpError`
   （带 serverLabel / transport 类型 / 阶段字段）或明确归入 `APIConnectionError` 族，二选一
   在 ARCHITECTURE.md 落笔为准。消费方（BPT Desktop）从此可 `instanceof` 分流。
-- **E6b Malformed SSE 带现场（建议先行单独落，一处改动）**：`anthropic.ts:153` 的
-  `APIConnectionError` 消息追加**出错帧 data 的前 ~120 字符 + 该流已成功解析的帧数**
-  （`mapStreamError` 其他分支已带 `eventCount`，唯独这条不带）。落地后 `[DONE]` 型
-  （网关格式错）与半截 JSON 型（代理截断）一眼分辨。
+- **E6b Malformed SSE 带现场 —— 已由银芯落地（2026-07-05，随 SSE 网关方言容错修复一并，勿重做）**：
+  BPT 侧 `curl -N` 抓到原始字节铁证——idealab 网关的 `/api/anthropic` 端点在 Anthropic 事件流
+  末尾追加 OpenAI 风格 `data: [DONE]`（且错误帧无 event 行）。银芯据此修 `anthropic.ts` 流消费：
+  ① **message_stop 即收工**（官方客户端同款生命周期，尾部废卡根本不进解析器）；② message_stop
+  之前的**无 event 名 + 非 JSON 帧跳过**（debug 记片段，典型 `[DONE]`）；③ **有 event 名的坏帧
+  照抛**，且错误消息带出错帧前 120 字符 + 已解析帧数（原 E6b 诉求）。附 5 条回归测试。
+  引擎团队只需知悉，无遗留工作。
 - **E6c 稳定错误码**：错误对象加机器可读 `code` 枚举（如 `sse_malformed_frame` /
   `stream_idle_timeout` / `mcp_connection_failed`……），name + 英文 message 保持不变
   （drop-in 面只加不改）。供 Desktop 做 i18n 与「重试 / 换网关 / 报障」策略分流。

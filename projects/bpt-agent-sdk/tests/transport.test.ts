@@ -664,6 +664,54 @@ describe('AnthropicTransport streaming', () => {
     expect(err).toBeInstanceOf(APIConnectionError);
   });
 
+  it('malformed frame WITH an event name carries the evidence: event, frame count, data snippet', async () => {
+    // E6b diagnosability: the error must distinguish gateway-format noise
+    // from a genuinely corrupted Anthropic frame at a glance.
+    const good = eventsToSse([{ type: 'ping' }]);
+    stubFetch([() => sseResponse(good + 'event: message_delta\ndata: {broken-json\n\n')]);
+    const t = makeTransport({ provider: { apiKey: 'k' } });
+    const err = await captureError(collect(t.stream(baseReq())));
+    expect(err).toBeInstanceOf(APIConnectionError);
+    expect((err as Error).message).toMatch(/event "message_delta"/);
+    expect((err as Error).message).toMatch(/after 1 event\(s\)/);
+    expect((err as Error).message).toContain('{broken-json');
+  });
+
+  // Gateway-dialect tolerance (2026-07-05 BPT production incident): a
+  // translating gateway's /api/anthropic endpoint appends an OpenAI-style
+  // `data: [DONE]` terminator after the Anthropic event stream. The official
+  // client never trips on it (it stops consuming at message_stop); ours must
+  // not either.
+  it('trailing `data: [DONE]` after message_stop -> stream completes cleanly (the incident regression)', async () => {
+    const events = textReplyEvents('Hello world');
+    stubFetch([() => sseResponse(eventsToSse(events) + 'data: [DONE]\n\n')]);
+    const t = makeTransport({ provider: { apiKey: 'k' } });
+    const received = await collect(t.stream(baseReq()));
+    expect(received).toEqual(events);
+  });
+
+  it('anything after message_stop is never parsed: even a corrupt NAMED frame cannot fail the run', async () => {
+    // Official-client lifecycle: message_stop is the terminal event of the
+    // single streamed message; consumption stops there.
+    const events = textReplyEvents('done');
+    stubFetch([
+      () => sseResponse(eventsToSse(events) + 'event: message_delta\ndata: {broken\n\n'),
+    ]);
+    const t = makeTransport({ provider: { apiKey: 'k' } });
+    const received = await collect(t.stream(baseReq()));
+    expect(received).toEqual(events);
+  });
+
+  it('an event-less non-JSON frame BEFORE message_stop is skipped; the stream continues', async () => {
+    const events = textReplyEvents('resume');
+    const head = eventsToSse(events.slice(0, 2));
+    const tail = eventsToSse(events.slice(2));
+    stubFetch([() => sseResponse(head + 'data: [DONE]\n\n' + tail)]);
+    const t = makeTransport({ provider: { apiKey: 'k' } });
+    const received = await collect(t.stream(baseReq()));
+    expect(received).toEqual(events);
+  });
+
   it('per-request timeout during the stream -> APIConnectionError (not AbortError)', async () => {
     stubFetch([
       () =>
