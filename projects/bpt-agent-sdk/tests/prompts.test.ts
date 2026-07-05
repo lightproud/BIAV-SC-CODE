@@ -92,6 +92,9 @@ describe('harness prompt v1/v2 variant', () => {
     // faithful official clauses
     expect(v5).toContain('Measure twice, cut once.');
     expect(v5).toContain('file_path:line_number');
+    // official main-loop clauses that must be reproduced (act-when-ready + safety)
+    expect(v5).toContain('When you have enough information to act, act.');
+    expect(v5).toContain('Assist with authorized security testing');
     // tool references adapted to THIS SDK (dedicated-tools-over-bash redirects)
     expect(v5).toContain('Use Grep (NOT grep or rg)');
     // does not reference tools this SDK does not ship
