@@ -449,6 +449,48 @@ describe('prompt cache: stable prefix does not drift across turns (a read can hi
     // the tools JSON alone is large (the dominant cacheable content)
     expect(JSON.stringify(tools).length).toBeGreaterThan(6000);
   });
+
+  it('claude_code preset with no explicit variant resolves to the v5 default on the wire', async () => {
+    // Locks the promoted default THROUGH the real query() path: query.ts must
+    // pass harnessPromptVariant through as-is so buildSystemPromptParts applies
+    // its v5 default. A regression that pins undefined -> 'v1' here would ship
+    // the terse prompt while the unit default claimed v5.
+    const fetchStub = stubFetch(makeSSEFetch([textReplyEvents('done')]));
+    const q = query({
+      prompt: 'hello',
+      options: baseOptions({
+        provider: { apiKey: 'test-key' },
+        systemPrompt: { type: 'preset', preset: 'claude_code' },
+        permissionMode: 'bypassPermissions',
+        allowDangerouslySkipPermissions: true,
+      }),
+    });
+    await collect(q);
+    const sys = fetchStub.requests[0]!.body.system as Array<{ text?: string }>;
+    const stable = sys[0]?.text ?? '';
+    expect(stable).toContain('Doing tasks:'); // v5 marker
+    expect(stable).toContain('Measure twice, cut once.'); // v5 marker
+    expect(stable).not.toContain('Tool guidance:'); // v1 marker absent
+  });
+
+  it('an explicit harnessPromptVariant:v1 still selects the terse prompt on the wire', async () => {
+    const fetchStub = stubFetch(makeSSEFetch([textReplyEvents('done')]));
+    const q = query({
+      prompt: 'hello',
+      options: baseOptions({
+        provider: { apiKey: 'test-key' },
+        systemPrompt: { type: 'preset', preset: 'claude_code' },
+        harnessPromptVariant: 'v1',
+        permissionMode: 'bypassPermissions',
+        allowDangerouslySkipPermissions: true,
+      }),
+    });
+    await collect(q);
+    const sys = fetchStub.requests[0]!.body.system as Array<{ text?: string }>;
+    const stable = sys[0]?.text ?? '';
+    expect(stable).toContain('Tool guidance:'); // v1 marker
+    expect(stable).not.toContain('Doing tasks:'); // v5 marker absent
+  });
 });
 
 describe('query() e2e - tool roundtrip', () => {

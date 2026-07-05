@@ -306,15 +306,18 @@ async function runTask(task) {
         allowDangerouslySkipPermissions: true,
         maxTurns: 8,
         persistSession: false,
-        // BPT harness-prompt variant (ignored by the official engine). It ONLY
-        // takes effect on the claude_code preset path, so we MUST also select
-        // the preset — otherwise the minimal default prompt is used and the
-        // variant is silently ignored (the bug that made an earlier v1-vs-v4
-        // run look identical).
-        ...(VARIANT && ENGINE === 'bpt'
+        // The BPT arm runs the real shipped harness: the claude_code preset,
+        // whose default variant is v5 (the faithful official reproduction).
+        // This makes the standalone A/B and the vs-official comparison reflect
+        // what an actual integration gets, not a stripped-down prompt. A
+        // harnessPromptVariant only takes effect on this preset path, so the
+        // preset MUST be present (leaving it off silently ignored the variant —
+        // the bug that made an earlier v1-vs-v4 run look identical). The
+        // official engine ships its own prompt; we pass nothing extra to it.
+        ...(ENGINE === 'bpt'
           ? {
-              harnessPromptVariant: VARIANT,
               systemPrompt: { type: 'preset', preset: 'claude_code' },
+              ...(VARIANT ? { harnessPromptVariant: VARIANT } : {}),
             }
           : {}),
         ...(task.options ?? {}),

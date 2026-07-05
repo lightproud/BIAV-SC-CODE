@@ -538,19 +538,15 @@ export function query(args: {
       });
     }
   } else {
+    // Pass the variant through as-is: when harnessPromptVariant is unset,
+    // buildSystemPromptParts applies its default (v5, the faithful official
+    // reproduction) on the claude_code preset path. Resolving undefined to a
+    // concrete 'v1' here would override that default and pin the real API to
+    // the terse prompt regardless of the promoted default.
     const promptParts = buildSystemPromptParts(sp, {
       cwd,
       toolNames: [...builtinTools.keys()],
-      variant:
-        options.harnessPromptVariant === 'v5'
-          ? 'v5'
-          : options.harnessPromptVariant === 'v4'
-            ? 'v4'
-            : options.harnessPromptVariant === 'v3'
-              ? 'v3'
-              : options.harnessPromptVariant === 'v2'
-                ? 'v2'
-                : 'v1',
+      variant: options.harnessPromptVariant,
     });
     systemPromptStable = promptParts.stable;
     if (outputFormat !== undefined) {
