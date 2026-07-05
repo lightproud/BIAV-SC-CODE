@@ -1,7 +1,7 @@
 {
   "generated": "2026-07-05",
   "stats": {
-    "nodes": 314,
+    "nodes": 313,
     "edges": 317
   },
   "nodes": [
@@ -1499,7 +1499,7 @@
     {
       "id": "/memory/memory-ext-bpt-guidance-protocol.md",
       "type": "knowledge-pointer",
-      "title": "银芯指导 BPT 协议（v0.7）",
+      "title": "银芯指导 BPT 协议（v0.4）",
       "tags": [
         "memory",
         "data_layer:curated"
@@ -2234,17 +2234,6 @@
       "tier": "search"
     },
     {
-      "id": "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
-      "type": "documentation",
-      "title": "light-selfreport-crosscheck-20260705",
-      "tags": [
-        "data_layer:curated",
-        "deliverable",
-        "topic:community-analysis"
-      ],
-      "tier": "search"
-    },
-    {
       "id": "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "type": "documentation",
       "title": "producer-light-evaluation-20260704",
@@ -2509,6 +2498,17 @@
       "tier": "search"
     },
     {
+      "id": "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "type": "documentation",
+      "title": "bpt-sdk-roadmap-20260705",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:proposal"
+      ],
+      "tier": "search"
+    },
+    {
       "id": "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "type": "documentation",
       "title": "internal-ai-platform-plan-202604",
@@ -2523,17 +2523,6 @@
       "id": "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "type": "documentation",
       "title": "silver-core-maintenance-cadence-20260702",
-      "tags": [
-        "data_layer:curated",
-        "deliverable",
-        "topic:proposal"
-      ],
-      "tier": "search"
-    },
-    {
-      "id": "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
-      "type": "documentation",
-      "title": "silver-core-vector-leg-design-20260705",
       "tags": [
         "data_layer:curated",
         "deliverable",
@@ -2597,9 +2586,9 @@
       "tier": "search"
     },
     {
-      "id": "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "id": "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "type": "documentation",
-      "title": "bpt-sdk-conformance-suite-design-20260705-r2",
+      "title": "bpt-sdk-conformance-suite-design-20260705",
       "tags": [
         "data_layer:curated",
         "deliverable",
@@ -4544,12 +4533,6 @@
       "rel_type": "mention"
     },
     {
-      "source": "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
-      "target": "/characters/15603.md",
-      "rel": "提及:艾瑞卡",
-      "rel_type": "mention"
-    },
-    {
       "source": "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
@@ -4839,6 +4822,12 @@
     },
     {
       "source": "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
       "rel_type": "mention"

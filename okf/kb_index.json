@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 314,
+    "concepts": 313,
     "edges": 317,
-    "terms": 5396,
+    "terms": 5416,
     "by_type": {
       "character": 72,
       "dataset": 109,
-      "documentation": 70,
+      "documentation": 69,
       "knowledge-pointer": 43,
       "reference": 17,
       "research": 3
@@ -26,7 +26,7 @@
       "memory": 47,
       "news-output": 23,
       "projects": 18,
-      "resource": 51,
+      "resource": 50,
       "sources": 17,
       "story": 11,
       "unpacked": 13,
@@ -34,7 +34,7 @@
     },
     "by_tier": {
       "skeleton": 131,
-      "search": 183
+      "search": 182
     }
   },
   "sections": {
@@ -68,7 +68,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 51
+      "count": 50
     },
     "sources": {
       "index": "/sources/index.md",
@@ -1910,7 +1910,7 @@
     },
     "/memory/memory-ext-bpt-guidance-protocol.md": {
       "type": "knowledge-pointer",
-      "title": "银芯指导 BPT 协议（v0.7）",
+      "title": "银芯指导 BPT 协议（v0.4）",
       "description": "银芯不再在仓库内承载 BPT 代码，但 BPT 的开发仍需要银芯提供的能力：战略视角、架构经验、方法论、事实圣经、踩坑记录。",
       "resource": "/memory/bpt-guidance-protocol.md",
       "tags": [
@@ -2852,20 +2852,6 @@
       "tier": "search",
       "degree": 2
     },
-    "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md": {
-      "type": "documentation",
-      "title": "light-selfreport-crosscheck-20260705",
-      "description": "未使用输出展示层。（格式：md）",
-      "resource": "/Public-Info-Pool/Resource/community-analysis/light-selfreport-crosscheck-20260705.md",
-      "tags": [
-        "data_layer:curated",
-        "deliverable",
-        "topic:community-analysis"
-      ],
-      "section": "resource",
-      "tier": "search",
-      "degree": 1
-    },
     "/resource/resource-community-analysis-producer-light-evaluation-20260704.md": {
       "type": "documentation",
       "title": "producer-light-evaluation-20260704",
@@ -3202,6 +3188,20 @@
       "tier": "search",
       "degree": 1
     },
+    "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md": {
+      "type": "documentation",
+      "title": "bpt-sdk-roadmap-20260705",
+      "description": "引擎主体（v0.1–v0.5）+ 提示词装配层（Track B）已成并入 main；G 系列（引擎效率机制 + 保真收尾）收官 v0.5；v0.6+ 是更大的行为/产品件（编排 / 记忆 / 沙箱 / Desktop 接线）。贯穿纪律：**不测不宣胜负**——每项再现/机制附 before/after，vs-official 每里程碑必跑。（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/proposal/bpt-sdk-roadmap-20260705.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:proposal"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 1
+    },
     "/resource/resource-proposal-internal-ai-platform-plan-202604.md": {
       "type": "documentation",
       "title": "internal-ai-platform-plan-202604",
@@ -3229,20 +3229,6 @@
       "section": "resource",
       "tier": "search",
       "degree": 1
-    },
-    "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md": {
-      "type": "documentation",
-      "title": "silver-core-vector-leg-design-20260705",
-      "description": "守密人 2026-07-05 裁定 **(A)**：银芯**解除「零 ML 红线」**、自建一条向量检索腿，嵌入源选 **Voyage API**。（格式：md）",
-      "resource": "/Public-Info-Pool/Resource/proposal/silver-core-vector-leg-design-20260705.md",
-      "tags": [
-        "data_layer:curated",
-        "deliverable",
-        "topic:proposal"
-      ],
-      "section": "resource",
-      "tier": "search",
-      "degree": 0
     },
     "/resource/resource-proposal-wiki-prototype-202603.md": {
       "type": "documentation",
@@ -3314,11 +3300,11 @@
       "tier": "search",
       "degree": 0
     },
-    "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md": {
+    "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md": {
       "type": "documentation",
-      "title": "bpt-sdk-conformance-suite-design-20260705-r2",
+      "title": "bpt-sdk-conformance-suite-design-20260705",
       "description": "**门禁按甲、覆盖按乙**：验收线与权重服务 **BPT Desktop 换装信心**（关键路径严格、（格式：md）",
-      "resource": "/Public-Info-Pool/Resource/repo-engineering/bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "resource": "/Public-Info-Pool/Resource/repo-engineering/bpt-sdk-conformance-suite-design-20260705.md",
       "tags": [
         "data_layer:curated",
         "deliverable",
@@ -3555,7 +3541,7 @@
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 2521 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 2518 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -3625,7 +3611,7 @@
     "/sources/reddit.md": {
       "type": "dataset",
       "title": "reddit 社区数据源",
-      "description": "reddit 平台采集档案，全量 3473 条，健康度 active。",
+      "description": "reddit 平台采集档案，全量 3455 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/reddit/",
       "tags": [
         "data_layer:full_archive",
@@ -3653,7 +3639,7 @@
     "/sources/steam.md": {
       "type": "dataset",
       "title": "steam 社区数据源",
-      "description": "steam 平台采集档案，全量 5102 条，健康度 active。",
+      "description": "steam 平台采集档案，全量 5101 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/review/",
       "tags": [
         "data_layer:full_archive",
@@ -3723,7 +3709,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 9018 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 9007 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -3737,7 +3723,7 @@
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 6276 条，健康度 active。",
+      "description": "weixin 平台采集档案，全量 6256 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -3751,7 +3737,7 @@
     "/sources/youtube.md": {
       "type": "dataset",
       "title": "youtube 社区数据源",
-      "description": "youtube 平台采集档案，全量 2602 条，健康度 active。",
+      "description": "youtube 平台采集档案，全量 2598 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -3765,7 +3751,7 @@
     "/sources/youtube_comments.md": {
       "type": "dataset",
       "title": "youtube_comments 社区数据源",
-      "description": "youtube_comments 平台采集档案，全量 1993 条，健康度 active。",
+      "description": "youtube_comments 平台采集档案，全量 1979 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube_comments/",
       "tags": [
         "data_layer:full_archive",
@@ -5769,11 +5755,6 @@
         "mention"
       ],
       [
-        "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
-        "提及:艾瑞卡",
-        "mention"
-      ],
-      [
         "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
         "提及:艾瑞卡",
         "mention"
@@ -5840,6 +5821,11 @@
       ],
       [
         "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
         "提及:艾瑞卡",
         "mention"
       ],
@@ -7313,13 +7299,6 @@
         "mention"
       ]
     ],
-    "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md": [
-      [
-        "/characters/15603.md",
-        "提及:艾瑞卡",
-        "mention"
-      ]
-    ],
     "/resource/resource-community-analysis-producer-light-evaluation-20260704.md": [
       [
         "/characters/15603.md",
@@ -7593,6 +7572,13 @@
       ]
     ],
     "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
+    "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md": [
       [
         "/characters/15603.md",
         "提及:艾瑞卡",
@@ -8260,7 +8246,6 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -8285,15 +8270,15 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -8410,6 +8395,9 @@
       "/sources/youtube.md",
       "/sources/youtube_comments.md"
     ],
+    "after": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
+    ],
     "agent": [
       "/README.md",
       "/memory/memory-ext-bpt-positioning.md",
@@ -8464,7 +8452,6 @@
       "/memory/memory-research-community-analysis-2026-05-18-26.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -8491,8 +8478,7 @@
     ],
     "api": [
       "/memory/memory-ext-workflow-api-key-audit.md",
-      "/projects/bpt-sdk-doc-compat.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
+      "/projects/bpt-sdk-doc-compat.md"
     ],
     "appstore": [
       "/community/community-appstore.md",
@@ -8700,6 +8686,9 @@
     ],
     "bash": [
       "/README.md"
+    ],
+    "before": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
     "behavioral": [
       "/memory/memory-ext-karpathy-coding-principles.md"
@@ -8913,11 +8902,12 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
@@ -9138,7 +9128,6 @@
       "/news-output/news-output-youtube.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -9310,7 +9299,6 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -9335,15 +9323,15 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -9435,7 +9423,7 @@
       "/memory/memory-research-discord-archive-backfill-conflict.md"
     ],
     "conformance": [
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md"
     ],
     "consistency": [
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md"
@@ -9485,15 +9473,11 @@
     ],
     "core": [
       "/memory/memory-ext-research-best-wiki-features.md",
-      "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
+      "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md"
     ],
     "coverage": [
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md"
-    ],
-    "crosscheck": [
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md"
     ],
     "css": [
       "/projects/site-design-morimens-design-tokens.md"
@@ -9572,7 +9556,6 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -9597,15 +9580,15 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -9856,7 +9839,6 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -9881,15 +9863,15 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -10001,7 +9983,6 @@
     "deliverable": [
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -10026,15 +10007,15 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -10072,8 +10053,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md"
     ],
     "designs": [
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
@@ -10081,9 +10061,10 @@
     "desktop": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-desktop-design-spec-ref.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md"
     ],
@@ -10227,7 +10208,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -10865,7 +10846,6 @@
       "/memory/memory-ext-research-best-wiki-features.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -10890,15 +10870,15 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -11289,7 +11269,6 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -11314,15 +11293,15 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -11463,9 +11442,6 @@
     "ledger": [
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
     ],
-    "leg": [
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
-    ],
     "lens": [
       "/community/community-appstore.md",
       "/community/community-bilibili.md",
@@ -11533,7 +11509,6 @@
     ],
     "light": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md",
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md"
     ],
@@ -11637,7 +11612,8 @@
     "main": [
       "/README.md",
       "/memory/memory-ext-active-contribution-protocol.md",
-      "/memory/memory-ext-active-policy-direct-push-main.md"
+      "/memory/memory-ext-active-policy-direct-push-main.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
     "maintenance": [
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -11752,7 +11728,6 @@
       "/projects/releases-treasure-map.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -11774,13 +11749,13 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -11922,8 +11897,7 @@
     "ml": [
       "/README.md",
       "/community/community-index.md",
-      "/community/community-timeline.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
+      "/community/community-timeline.md"
     ],
     "modules": [
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
@@ -12047,6 +12021,7 @@
       "/community/community-official.md",
       "/news-output/news-output-official.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/sources/official.md"
@@ -12353,7 +12328,6 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -12378,15 +12352,15 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -12639,9 +12613,9 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md"
     ],
     "protocol": [
@@ -12674,7 +12648,6 @@
       "/projects/bpt-sdk-doc-compat.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -12699,15 +12672,15 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -12788,7 +12761,6 @@
       "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
       "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md"
     ],
@@ -12952,7 +12924,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -12991,7 +12963,6 @@
       "/README.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -13016,15 +12987,15 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -13073,6 +13044,7 @@
       "/sources/taptap_review.md"
     ],
     "roadmap": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md"
     ],
     "role": [
@@ -13187,9 +13159,10 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
@@ -13200,9 +13173,6 @@
     ],
     "self": [
       "/story/story_search_index.md"
-    ],
-    "selfreport": [
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md"
     ],
     "sentinel": [
       "/assets/assets-sentinel-baseline.md"
@@ -13226,8 +13196,7 @@
     "silver": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-silver-blackpool-interface.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
-      "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
+      "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md"
     ],
     "single": [
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
@@ -13525,7 +13494,7 @@
       "/projects/site-design-morimens-design-tokens.md"
     ],
     "suite": [
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md"
     ],
     "summary": [
       "/memory/memory-ext-bpt-architecture-summary-template.md"
@@ -13722,7 +13691,6 @@
     "topic": [
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -13747,15 +13715,15 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -13789,6 +13757,9 @@
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md"
+    ],
+    "track": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
     "treasure": [
       "/projects/releases-treasure-map.md"
@@ -13916,7 +13887,8 @@
     "v0": [
       "/README.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-desktop-design-spec-ref.md",
-      "/memory/memory-ext-bpt-guidance-protocol.md"
+      "/memory/memory-ext-bpt-guidance-protocol.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
     "v1": [
       "/memory/contribution-protocol.md",
@@ -13944,9 +13916,6 @@
     "vat": [
       "/assets/assets-chat-onboarding-snippet.md",
       "/memory/memory-ext-biav-info-classification.md"
-    ],
-    "vector": [
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
     ],
     "verification": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-build-verification.md"
@@ -14025,12 +13994,10 @@
     "volunteer": [
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
     ],
-    "voyage": [
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
-    ],
     "vs": [
       "/README.md",
-      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
     "vue": [
       "/unpacked/unpacked-vue.md"
@@ -14273,9 +14240,6 @@
     ],
     "一权": [
       "/memory/project-status.md"
-    ],
-    "一条": [
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
     ],
     "一样": [
       "/characters/15572.md"
@@ -14658,7 +14622,6 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -14683,15 +14646,15 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -14750,6 +14713,9 @@
     "不定": [
       "/characters/15560.md",
       "/characters/15576.md"
+    ],
+    "不宣": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
     "不屈": [
       "/characters/77923.md"
@@ -14882,7 +14848,6 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -14907,15 +14872,15 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -15013,6 +14978,9 @@
     ],
     "不止": [
       "/characters/15600.md"
+    ],
+    "不测": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
     "不离": [
       "/README.md"
@@ -15146,7 +15114,6 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -15171,15 +15138,15 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -15265,7 +15232,7 @@
       "/characters/77925.md"
     ],
     "与权": [
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md"
     ],
     "与死": [
       "/characters/15564.md"
@@ -15367,7 +15334,7 @@
     ],
     "严格": [
       "/memory/memory-ext-active-silver-blackpool-interface.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md"
     ],
     "严重": [
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
@@ -15639,7 +15606,8 @@
       "/characters/15602.md"
     ],
     "主体": [
-      "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md"
+      "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
     "主供": [
       "/README.md"
@@ -15990,6 +15958,9 @@
     "产出": [
       "/README.md"
     ],
+    "产品": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
+    ],
     "产物": [
       "/README.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
@@ -16220,7 +16191,6 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -16245,15 +16215,15 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -17088,7 +17058,6 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -17113,15 +17082,15 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -17313,7 +17282,6 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -17338,15 +17306,15 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -17631,8 +17599,7 @@
       "/characters/15580.md",
       "/characters/15582.md",
       "/extracted/extracted-readme.md",
-      "/memory/memory-ext-workflow-api-key-audit.md",
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md"
+      "/memory/memory-ext-workflow-api-key-audit.md"
     ],
     "使莱": [
       "/characters/15604.md"
@@ -17710,6 +17677,9 @@
     "保留": [
       "/README.md"
     ],
+    "保真": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
+    ],
     "保自": [
       "/characters/15580.md"
     ],
@@ -17727,7 +17697,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md"
     ],
     "信心": [
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md"
     ],
     "信念": [
       "/characters/15594.md"
@@ -17942,9 +17912,6 @@
     "入毒": [
       "/characters/15600.md"
     ],
-    "入源": [
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
-    ],
     "入超": [
       "/characters/15590.md"
     ],
@@ -18099,7 +18066,7 @@
     "关键": [
       "/characters/15578.md",
       "/characters/15593.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md"
     ],
     "关闭": [
       "/README.md"
@@ -18347,7 +18314,8 @@
     ],
     "再现": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
-      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
     "再让": [
       "/characters/15585.md"
@@ -18474,7 +18442,6 @@
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/sources/appstore.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -18863,6 +18830,9 @@
     "制裁": [
       "/characters/15563.md"
     ],
+    "制附": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
+    ],
     "刺反": [
       "/characters/15565.md"
     ],
@@ -19009,7 +18979,6 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -19034,15 +19003,15 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -20827,9 +20796,6 @@
       "/README.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md"
     ],
-    "向量": [
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
-    ],
     "吞噬": [
       "/characters/15569.md",
       "/characters/15596.md",
@@ -21036,6 +21002,9 @@
     ],
     "咨询": [
       "/characters/77925.md"
+    ],
+    "品件": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
     "品能": [
       "/characters/77926.md"
@@ -21937,7 +21906,6 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -21962,15 +21930,15 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -22283,7 +22251,8 @@
       "/characters/15600.md",
       "/characters/15603.md",
       "/characters/77922.md",
-      "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
+      "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
     "大祭": [
       "/characters/15582.md"
@@ -22666,7 +22635,6 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -22691,15 +22659,15 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -23018,7 +22986,6 @@
       "/memory/memory-ext-active-policy-direct-push-main.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/projects/project-game.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/story/story_research_todo.md"
     ],
@@ -23222,7 +23189,6 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -23247,15 +23213,15 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -23481,6 +23447,9 @@
       "/unpacked/unpacked-sproto.md",
       "/unpacked/unpacked-text-cn.md",
       "/unpacked/unpacked-vue.md"
+    ],
+    "宣胜": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
     "宣誓": [
       "/characters/15586.md"
@@ -24041,7 +24010,6 @@
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/sources/appstore.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -24105,9 +24073,6 @@
     ],
     "崎瞳": [
       "/characters/15582.md"
-    ],
-    "嵌入": [
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
     ],
     "川明": [
       "/characters/15600.md"
@@ -24211,6 +24176,9 @@
     ],
     "已封": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-design.md"
+    ],
+    "已成": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
     "已有": [
       "/memory/memory-research-discord-archive-backfill-conflict.md",
@@ -24473,6 +24441,9 @@
     "并使": [
       "/characters/15574.md"
     ],
+    "并入": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
+    ],
     "并全": [
       "/news-output/news-output-newsjs.md"
     ],
@@ -24671,9 +24642,6 @@
       "/characters/15579.md",
       "/characters/15583.md"
     ],
-    "建一": [
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
-    ],
     "建与": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-build-verification.md"
     ],
@@ -24798,6 +24766,7 @@
       "/characters/15602.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
     ],
     "引流": [
@@ -24975,7 +24944,7 @@
       "/projects/entry-claude-md.md"
     ],
     "径严": [
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md"
     ],
     "待讨": [
       "/memory/memory-ext-pending-discussions.md"
@@ -25095,6 +25064,9 @@
     ],
     "必要": [
       "/characters/15573.md"
+    ],
+    "必跑": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
     "必须": [
       "/memory/memory-strategy-repo-slimming-plan.md",
@@ -25917,6 +25889,9 @@
       "/characters/130901.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
     ],
+    "成并": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
+    ],
     "成战": [
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md"
     ],
@@ -26729,7 +26704,6 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -26754,15 +26728,15 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -26850,13 +26824,13 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
     ],
     "按乙": [
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md"
     ],
     "按环": [
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "按甲": [
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md"
     ],
     "按画": [
       "/README.md"
@@ -26904,7 +26878,7 @@
       "/characters/15601.md"
     ],
     "换装": [
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md"
     ],
     "捣碎": [
       "/characters/15598.md"
@@ -27086,6 +27060,9 @@
     "接推": [
       "/memory/memory-ext-active-policy-direct-push-main.md"
     ],
+    "接线": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
+    ],
     "接表": [
       "/README.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md"
@@ -27204,7 +27181,6 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -27229,15 +27205,15 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -27345,6 +27321,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "提高": [
@@ -27493,7 +27470,6 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -27518,15 +27494,15 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -27604,6 +27580,12 @@
       "/characters/54117.md",
       "/characters/77925.md"
     ],
+    "擎主": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
+    ],
+    "擎效": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
+    ],
     "擎每": [
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
     ],
@@ -27628,6 +27610,12 @@
     "收什": [
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md"
     ],
+    "收官": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
+    ],
+    "收尾": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
+    ],
     "收弃": [
       "/characters/15565.md"
     ],
@@ -27640,7 +27628,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "收线": [
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md"
     ],
     "改用": [
       "/news-output/news-output-appstore.md",
@@ -27823,7 +27811,6 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -27848,15 +27835,15 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -28070,7 +28057,6 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -28095,15 +28081,15 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -28235,6 +28221,7 @@
       "/characters/77926.md"
     ],
     "效率": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
     ],
     "敌人": [
@@ -29026,6 +29013,9 @@
     "是方": [
       "/characters/15600.md"
     ],
+    "是更": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
+    ],
     "是最": [
       "/characters/15603.md"
     ],
@@ -29166,7 +29156,8 @@
       "/characters/77913.md"
     ],
     "更大": [
-      "/characters/77922.md"
+      "/characters/77922.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
     "更少": [
       "/community/community-steam-discussion.md",
@@ -29386,7 +29377,7 @@
     "服务": [
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-skill-authoring-standard.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md"
     ],
     "朗和": [
       "/characters/15578.md",
@@ -29418,9 +29409,6 @@
     ],
     "木下": [
       "/characters/15564.md"
-    ],
-    "未使": [
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md"
     ],
     "未发": [
       "/memory/memory-ext-bpt-architecture-summary-template.md"
@@ -29588,7 +29576,6 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -29613,15 +29600,15 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -29798,6 +29785,7 @@
       "/characters/15598.md"
     ],
     "机制": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md"
     ],
     "机器": [
@@ -29959,7 +29947,6 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -29984,15 +29971,15 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -30054,7 +30041,7 @@
     ],
     "权重": [
       "/memory/memory-ext-knowledge-layer-design.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md"
     ],
     "杆都": [
       "/memory/memory-ext-skill-authoring-standard.md"
@@ -30095,9 +30082,6 @@
     ],
     "条可": [
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md"
-    ],
-    "条向": [
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
     ],
     "条强": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md"
@@ -30478,7 +30462,6 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -30503,15 +30486,15 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -30650,7 +30633,6 @@
       "/extracted/extracted-readme.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -30675,15 +30657,15 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -30971,8 +30953,7 @@
       "/characters/15603.md",
       "/characters/78840.md",
       "/characters/78841.md",
-      "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
+      "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md"
     ],
     "棒的": [
       "/characters/54117.md"
@@ -31082,7 +31063,6 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -31107,15 +31087,15 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -31414,7 +31394,6 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -31439,15 +31418,15 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -31632,6 +31611,12 @@
     "每步": [
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md"
     ],
+    "每里": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
+    ],
+    "每项": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
+    ],
     "毒和": [
       "/characters/15580.md"
     ],
@@ -31802,6 +31787,9 @@
     "沌的": [
       "/characters/15604.md"
     ],
+    "沙箱": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
+    ],
     "沙耶": [
       "/characters/130226.md",
       "/memory/memory-research-community-analysis-2026-05-18-26.md",
@@ -31941,6 +31929,9 @@
     ],
     "流能": [
       "/characters/130901.md"
+    ],
+    "测不": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
     "测到": [
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md"
@@ -32179,9 +32170,6 @@
     ],
     "源源": [
       "/characters/15573.md"
-    ],
-    "源选": [
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
     ],
     "溯源": [
       "/README.md",
@@ -32687,6 +32675,9 @@
     "率审": [
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
     ],
+    "率机": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
+    ],
     "率极": [
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
     ],
@@ -33185,7 +33176,6 @@
       "/characters/15574.md"
     ],
     "用输": [
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/sources/appstore.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -34017,6 +34007,9 @@
     "的血": [
       "/characters/15563.md"
     ],
+    "的行": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
+    ],
     "的解": [
       "/characters/15602.md",
       "/characters/95786.md"
@@ -34165,7 +34158,7 @@
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md"
     ],
     "盖按": [
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md"
     ],
     "盖率": [
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
@@ -34273,6 +34266,9 @@
     ],
     "真对": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+    ],
+    "真收": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
     "真梨": [
       "/characters/15586.md"
@@ -34602,6 +34598,9 @@
     "碎敌": [
       "/characters/15598.md"
     ],
+    "碑必": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
+    ],
     "磨对": [
       "/characters/15580.md"
     ],
@@ -34632,7 +34631,6 @@
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/sources/appstore.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -34663,6 +34661,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "礼服": [
@@ -34768,7 +34767,7 @@
       "/characters/15582.md"
     ],
     "禁按": [
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md"
     ],
     "福与": [
       "/characters/15589.md"
@@ -34909,6 +34908,9 @@
     "程产": [
       "/README.md"
     ],
+    "程碑": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
+    ],
     "程质": [
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md"
     ],
@@ -34958,6 +34960,9 @@
     ],
     "穿来": [
       "/characters/15586.md"
+    ],
+    "穿纪": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
     "穿越": [
       "/characters/54116.md"
@@ -35222,6 +35227,9 @@
     "糕和": [
       "/characters/15576.md"
     ],
+    "系列": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
+    ],
     "系图": [
       "/README.md"
     ],
@@ -35270,9 +35278,6 @@
     "索概": [
       "/README.md"
     ],
-    "索腿": [
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
-    ],
     "索蕾尔": [
       "/characters/15584.md"
     ],
@@ -35284,9 +35289,6 @@
     ],
     "红熔": [
       "/characters/15599.md"
-    ],
-    "红线": [
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
     ],
     "约束": [
       "/projects/entry-claude-md.md",
@@ -35355,6 +35357,7 @@
     ],
     "纪律": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-design.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/sources/appstore.md",
       "/sources/bilibili.md",
@@ -35394,7 +35397,7 @@
       "/story/story_layer_readme.md"
     ],
     "线与": [
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md"
     ],
     "线回": [
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
@@ -35666,6 +35669,7 @@
     ],
     "编排": [
       "/memory/capability-index.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md"
     ],
@@ -35923,6 +35927,9 @@
     "胚胎": [
       "/characters/15600.md"
     ],
+    "胜负": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
+    ],
     "能从": [
       "/characters/15599.md"
     ],
@@ -36154,9 +36161,6 @@
     ],
     "自家": [
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md"
-    ],
-    "自建": [
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
     ],
     "自愈": [
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md"
@@ -36560,7 +36564,8 @@
       "/characters/15567.md"
     ],
     "行为": [
-      "/memory/memory-ext-karpathy-coding-principles.md"
+      "/memory/memory-ext-karpathy-coding-principles.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
     "行代": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md"
@@ -36672,7 +36677,6 @@
       "/characters/78840.md",
       "/characters/78841.md",
       "/characters/94451.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
     ],
     "裁敌": [
@@ -36682,13 +36686,16 @@
       "/characters/15573.md"
     ],
     "装信": [
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md"
     ],
     "装期": [
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "装部": [
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
+    ],
+    "装配": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
     "裹噬": [
       "/characters/77913.md"
@@ -36731,7 +36738,7 @@
       "/memory/memory-ext-active-contribution-protocol.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/projects/extracted-lua-readme.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
@@ -36863,9 +36870,6 @@
     "解脱": [
       "/characters/15602.md",
       "/characters/95786.md"
-    ],
-    "解除": [
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
     ],
     "触发": [
       "/characters/15580.md",
@@ -37059,7 +37063,8 @@
       "/memory/morimens-context.md",
       "/memory/project-status.md",
       "/memory/strategic-plan-2026.md",
-      "/memory/style-guide.md"
+      "/memory/style-guide.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
     "记载": [
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
@@ -37250,6 +37255,9 @@
     ],
     "词注": [
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
+    ],
+    "词装": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
     "译志": [
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
@@ -37475,6 +37483,9 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md"
+    ],
+    "贯穿": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
     "贴敏": [
       "/memory/memory-ext-bpt-architecture-summary-template.md"
@@ -37798,7 +37809,6 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -37823,15 +37833,15 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -38136,7 +38146,6 @@
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/sources/appstore.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -38404,7 +38413,6 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -38429,15 +38437,15 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -38844,6 +38852,9 @@
       "/characters/77922.md",
       "/extracted/extracted-readme.md"
     ],
+    "配层": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
+    ],
     "配我": [
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
     ],
@@ -38921,6 +38932,9 @@
     "里榨": [
       "/memory/memory-ext-skill-authoring-standard.md"
     ],
+    "里程": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
+    ],
     "里花": [
       "/characters/15581.md"
     ],
@@ -38958,7 +38972,7 @@
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
     ],
     "重服": [
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md"
     ],
     "重火": [
       "/characters/130901.md"
@@ -39158,9 +39172,6 @@
       "/sources/youtube.md",
       "/sources/youtube_comments.md"
     ],
-    "量检": [
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
-    ],
     "量爆": [
       "/characters/15564.md"
     ],
@@ -39326,7 +39337,6 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -39351,15 +39361,15 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -39545,7 +39555,6 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -39570,15 +39579,15 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -39666,8 +39675,7 @@
       "/projects/project-news.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
-      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md"
     ],
     "银钥": [
       "/characters/54116.md"
@@ -39713,7 +39721,7 @@
       "/characters/15593.md"
     ],
     "键路": [
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md"
     ],
     "镜头": [
       "/community/community-appstore.md",
@@ -39852,7 +39860,7 @@
       "/projects/project-site.md"
     ],
     "门禁": [
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md"
     ],
     "问题": [
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
@@ -40234,6 +40242,9 @@
     "页面": [
       "/README.md"
     ],
+    "项再": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
+    ],
     "项目": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md",
       "/memory/memory-ext-bpt-positioning.md",
@@ -40394,7 +40405,7 @@
     "验收": [
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md"
     ],
     "验标": [
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md"
@@ -40647,7 +40658,6 @@
       "/community/community-youtube.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -40878,11 +40888,12 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
     ],
@@ -40965,7 +40976,6 @@
     "community": [
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -40992,7 +41002,7 @@
       "/wiki-data/wiki-data-language-config.md"
     ],
     "conformance": [
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md"
     ],
     "consistency": [
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md"
@@ -41040,15 +41050,11 @@
       "/memory/contribution-protocol.md"
     ],
     "core": [
-      "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
+      "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md"
     ],
     "coverage": [
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md"
-    ],
-    "crosscheck": [
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md"
     ],
     "css": [
       "/projects/site-design-morimens-design-tokens.md"
@@ -41124,7 +41130,6 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -41149,15 +41154,15 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -41401,7 +41406,6 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -41426,15 +41430,15 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -41537,7 +41541,6 @@
     "deliverable": [
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -41562,15 +41565,15 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -41600,8 +41603,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md"
     ],
     "designs": [
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
@@ -41715,7 +41717,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -42155,7 +42157,6 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -42180,15 +42181,15 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -42280,9 +42281,6 @@
     "ledger": [
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
     ],
-    "leg": [
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
-    ],
     "lens": [
       "/community/community-appstore.md",
       "/community/community-bilibili.md",
@@ -42306,7 +42304,6 @@
       "/memory/lessons-learned.md"
     ],
     "light": [
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md"
     ],
     "lines": [
@@ -42789,9 +42786,9 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md"
     ],
     "protocol": [
@@ -42806,7 +42803,6 @@
       "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
       "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md"
     ],
@@ -42847,7 +42843,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -42894,6 +42890,7 @@
       "/sources/taptap_review.md"
     ],
     "roadmap": [
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md"
     ],
     "role": [
@@ -42966,17 +42963,15 @@
       "/projects/project-bpt-agent-sdk.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
     ],
     "search": [
       "/story/story_search_index.md"
-    ],
-    "selfreport": [
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md"
     ],
     "sentinel": [
       "/assets/assets-sentinel-baseline.md"
@@ -42988,8 +42983,7 @@
       "/unpacked/unpacked-share.md"
     ],
     "silver": [
-      "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
+      "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md"
     ],
     "site": [
       "/projects/project-site.md",
@@ -43099,7 +43093,7 @@
       "/projects/site-design-morimens-design-tokens.md"
     ],
     "suite": [
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md"
     ],
     "summon": [
       "/wiki-data/wiki-data-summon.md"
@@ -43156,7 +43150,6 @@
     "topic": [
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
-      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -43181,15 +43174,15 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -43305,9 +43298,6 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-research-community-analysis-2026-05-18-26.md"
-    ],
-    "vector": [
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
     ],
     "version": [
       "/assets/assets-version.md",
