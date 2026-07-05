@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 315,
+    "concepts": 316,
     "edges": 319,
-    "terms": 5417,
+    "terms": 5432,
     "by_type": {
       "character": 72,
       "dataset": 109,
-      "documentation": 71,
+      "documentation": 72,
       "knowledge-pointer": 43,
       "reference": 17,
       "research": 3
@@ -26,7 +26,7 @@
       "memory": 47,
       "news-output": 23,
       "projects": 18,
-      "resource": 52,
+      "resource": 53,
       "sources": 17,
       "story": 11,
       "unpacked": 13,
@@ -34,7 +34,7 @@
     },
     "by_tier": {
       "skeleton": 131,
-      "search": 184
+      "search": 185
     }
   },
   "sections": {
@@ -68,7 +68,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 52
+      "count": 53
     },
     "sources": {
       "index": "/sources/index.md",
@@ -1910,7 +1910,7 @@
     },
     "/memory/memory-ext-bpt-guidance-protocol.md": {
       "type": "knowledge-pointer",
-      "title": "银芯指导 BPT 协议（v0.4）",
+      "title": "银芯指导 BPT 协议（v0.7）",
       "description": "银芯不再在仓库内承载 BPT 代码，但 BPT 的开发仍需要银芯提供的能力：战略视角、架构经验、方法论、事实圣经、踩坑记录。",
       "resource": "/memory/bpt-guidance-protocol.md",
       "tags": [
@@ -3257,6 +3257,20 @@
       "section": "resource",
       "tier": "search",
       "degree": 1
+    },
+    "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md": {
+      "type": "documentation",
+      "title": "silver-core-vector-leg-design-20260705",
+      "description": "守密人 2026-07-05 裁定 **(A)**：银芯**解除「零 ML 红线」**、自建一条向量检索腿，嵌入源选 **Voyage API**。（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/proposal/silver-core-vector-leg-design-20260705.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:proposal"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 0
     },
     "/resource/resource-proposal-wiki-prototype-202603.md": {
       "type": "documentation",
@@ -8327,6 +8341,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -8530,7 +8545,8 @@
     ],
     "api": [
       "/memory/memory-ext-workflow-api-key-audit.md",
-      "/projects/bpt-sdk-doc-compat.md"
+      "/projects/bpt-sdk-doc-compat.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
     ],
     "appstore": [
       "/community/community-appstore.md",
@@ -9380,6 +9396,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -9527,7 +9544,8 @@
     ],
     "core": [
       "/memory/memory-ext-research-best-wiki-features.md",
-      "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md"
+      "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
     ],
     "coverage": [
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
@@ -9642,6 +9660,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -9927,6 +9946,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -10073,6 +10093,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -10116,6 +10137,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
     ],
     "designs": [
@@ -10947,6 +10969,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -11372,6 +11395,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -11517,6 +11541,9 @@
     ],
     "ledger": [
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
+    ],
+    "leg": [
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
     ],
     "lens": [
       "/community/community-appstore.md",
@@ -11831,6 +11858,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
@@ -11976,7 +12004,8 @@
     "ml": [
       "/README.md",
       "/community/community-index.md",
-      "/community/community-timeline.md"
+      "/community/community-timeline.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
     ],
     "modules": [
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
@@ -12435,6 +12464,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -12697,6 +12727,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md"
     ],
     "protocol": [
@@ -12758,6 +12789,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -13080,6 +13112,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -13289,7 +13322,8 @@
     "silver": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-silver-blackpool-interface.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
-      "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md"
+      "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
     ],
     "single": [
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
@@ -13814,6 +13848,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -14016,6 +14051,9 @@
       "/assets/assets-chat-onboarding-snippet.md",
       "/memory/memory-ext-biav-info-classification.md"
     ],
+    "vector": [
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
+    ],
     "verification": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-build-verification.md"
     ],
@@ -14095,6 +14133,9 @@
     ],
     "volunteer": [
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
+    ],
+    "voyage": [
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
     ],
     "vs": [
       "/README.md",
@@ -14341,6 +14382,9 @@
     ],
     "一权": [
       "/memory/project-status.md"
+    ],
+    "一条": [
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
     ],
     "一样": [
       "/characters/15572.md"
@@ -14755,6 +14799,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -14980,6 +15025,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -15245,6 +15291,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -16321,6 +16368,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -17191,6 +17239,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -17417,6 +17466,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -18020,6 +18070,9 @@
     ],
     "入毒": [
       "/characters/15600.md"
+    ],
+    "入源": [
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
     ],
     "入超": [
       "/characters/15590.md"
@@ -19118,6 +19171,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -20908,6 +20962,9 @@
       "/README.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md"
     ],
+    "向量": [
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
+    ],
     "吞噬": [
       "/characters/15569.md",
       "/characters/15596.md",
@@ -22044,6 +22101,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -22774,6 +22832,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -23101,6 +23160,7 @@
       "/memory/memory-ext-active-policy-direct-push-main.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/projects/project-game.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/story/story_research_todo.md"
     ],
@@ -23334,6 +23394,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -24191,6 +24252,9 @@
     "崎瞳": [
       "/characters/15582.md"
     ],
+    "嵌入": [
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
+    ],
     "川明": [
       "/characters/15600.md"
     ],
@@ -24765,6 +24829,9 @@
     "延迟": [
       "/characters/15579.md",
       "/characters/15583.md"
+    ],
+    "建一": [
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
     ],
     "建与": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-build-verification.md"
@@ -26857,6 +26924,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -27333,6 +27401,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -27624,6 +27693,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -27967,6 +28037,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -28215,6 +28286,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -29736,6 +29808,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -30109,6 +30182,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -30217,6 +30291,9 @@
     ],
     "条可": [
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md"
+    ],
+    "条向": [
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
     ],
     "条强": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md"
@@ -30626,6 +30703,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -30799,6 +30877,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -31092,7 +31171,8 @@
       "/characters/15603.md",
       "/characters/78840.md",
       "/characters/78841.md",
-      "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md"
+      "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
     ],
     "棒的": [
       "/characters/54117.md"
@@ -31231,6 +31311,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -31564,6 +31645,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -32301,6 +32383,9 @@
     ],
     "源源": [
       "/characters/15573.md"
+    ],
+    "源选": [
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
     ],
     "溯源": [
       "/README.md",
@@ -35406,6 +35491,9 @@
     "索概": [
       "/README.md"
     ],
+    "索腿": [
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
+    ],
     "索蕾尔": [
       "/characters/15584.md"
     ],
@@ -35417,6 +35505,9 @@
     ],
     "红熔": [
       "/characters/15599.md"
+    ],
+    "红线": [
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
     ],
     "约束": [
       "/projects/entry-claude-md.md",
@@ -36285,6 +36376,9 @@
     "自家": [
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md"
     ],
+    "自建": [
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
+    ],
     "自愈": [
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md"
     ],
@@ -36802,6 +36896,7 @@
       "/characters/78840.md",
       "/characters/78841.md",
       "/characters/94451.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
     ],
     "裁敌": [
@@ -37001,6 +37096,9 @@
     "解脱": [
       "/characters/15602.md",
       "/characters/95786.md"
+    ],
+    "解除": [
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
     ],
     "触发": [
       "/characters/15580.md",
@@ -37971,6 +38069,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -38578,6 +38677,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -39308,6 +39408,9 @@
       "/sources/youtube.md",
       "/sources/youtube_comments.md"
     ],
+    "量检": [
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
+    ],
     "量爆": [
       "/characters/15564.md"
     ],
@@ -39502,6 +39605,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -39722,6 +39826,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -39815,7 +39920,8 @@
       "/projects/project-news.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
-      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md"
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
     ],
     "银钥": [
       "/characters/54116.md"
@@ -41194,7 +41300,8 @@
       "/memory/contribution-protocol.md"
     ],
     "core": [
-      "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md"
+      "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
     ],
     "coverage": [
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
@@ -41306,6 +41413,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -41584,6 +41692,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -41721,6 +41830,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -41756,6 +41866,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
     ],
     "designs": [
@@ -42342,6 +42453,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -42438,6 +42550,9 @@
     ],
     "ledger": [
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
+    ],
+    "leg": [
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
     ],
     "lens": [
       "/community/community-appstore.md",
@@ -42949,6 +43064,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md"
     ],
     "protocol": [
@@ -43152,7 +43268,8 @@
       "/unpacked/unpacked-share.md"
     ],
     "silver": [
-      "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md"
+      "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
     ],
     "site": [
       "/projects/project-site.md",
@@ -43348,6 +43465,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -43472,6 +43590,9 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-research-community-analysis-2026-05-18-26.md"
+    ],
+    "vector": [
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
     ],
     "version": [
       "/assets/assets-version.md",
