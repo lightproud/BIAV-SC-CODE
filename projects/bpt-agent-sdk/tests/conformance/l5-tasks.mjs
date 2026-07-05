@@ -131,15 +131,20 @@ export const L5_KNOWN_DIFFERENCES = {
   },
   'KD-L5-03': {
     arm: 'bpt',
-    title: 'thinking asymmetry: official CLI defaults extended thinking ON, our engine OFF',
+    title: 'thinking asymmetry (E1 landed): chat-03 confirmed flipped; code-01 residual remains',
     note:
-      '54/54 official traces carry thinking_tokens events; our claude_code preset ' +
-      'sends no thinking block. Costs us pre-answer computation on chat-03 (reverse ' +
-      'alphabetical) and diligence probability on code-01 (even-length median). ' +
-      'RESOLVED by engine E1 (2026-07-05): the claude_code preset now defaults ' +
-      'thinking ON (4096 budget, our chosen value). Kept until the next real L5 ' +
-      'round confirms the fail points flip; harness Fix-2 (explicit equal ' +
-      'maxThinkingTokens on both arms) remains available for variable isolation.',
+      'Origin: 54/54 official traces carried thinking_tokens events while our claude_code ' +
+      'preset sent no thinking block (run 28736460533: chat-03 0/3, code-01 0/3). E1 ' +
+      '(preset default-on thinking, 4096) landed 2026-07-05; acceptance round ' +
+      '28741914245 (repeat=3, engines on own defaults): chat-03 FLIPPED 0/3 -> 3/3 ' +
+      '(the pre-answer-computation half of this KD is RESOLVED), code-01 stayed 0/3 ' +
+      '(sort-only fix all repeats; official 2/3 at ~3x our token spend). The residual ' +
+      'is diligence probability, not the thinking on/off bit - candidate isolators: ' +
+      'a --thinking equal-budget round (Fix-2, wired) and/or budget-size probes. ' +
+      'Do NOT tune the prompt to this check (anti-Goodhart; official carries no such ' +
+      'clause either). Side observation from the same round: with thinking on, our ' +
+      'chat-01 r3 ended turn with 202 output tokens but an EMPTY visible text block ' +
+      '(1/54) - thinking-only-reply edge, engine follow-up candidate.',
   },
   // KD-L5-04 RETIRED (2026-07-05, E2): the SDK now reports the official
   // per-result semantics (num_turns/usage per result, total_cost_usd and
