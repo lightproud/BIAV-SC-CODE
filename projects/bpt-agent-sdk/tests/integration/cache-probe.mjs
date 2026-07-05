@@ -30,6 +30,12 @@ const args = Object.fromEntries(
 const MODEL = typeof args.model === 'string' ? args.model : 'claude-haiku-4-5-20251001';
 const RUNS = Math.max(1, Number.parseInt(args.runs, 10) || 3);
 const VARIANT = ['v1', 'v2', 'v3', 'v4'].includes(args.variant) ? args.variant : undefined;
+// --big: inflate the system prompt COMFORTABLY above the 2048 Haiku floor
+// (~4500 tokens of filler) to test whether caching becomes reliable when the
+// stable prefix is big (like the official's), isolating "marginal-size zone"
+// from a deeper defect. Diagnostic only — never a shipped prompt.
+const BIG = args.big === true || args.big === 'true';
+const BIG_APPEND = 'Additional standing operating guidance for this session. '.repeat(600);
 
 if (!process.env.ANTHROPIC_API_KEY) {
   console.log('cache-probe: no ANTHROPIC_API_KEY, skipping (exit 2).');
@@ -65,7 +71,11 @@ async function runOnce(i) {
         allowDangerouslySkipPermissions: true,
         maxTurns: 8,
         persistSession: false,
-        ...(VARIANT ? { harnessPromptVariant: VARIANT } : {}),
+        ...(BIG
+          ? { systemPrompt: { type: 'preset', preset: 'claude_code', append: BIG_APPEND } }
+          : VARIANT
+            ? { harnessPromptVariant: VARIANT }
+            : {}),
       },
     });
     for await (const msg of q) {
@@ -78,7 +88,7 @@ async function runOnce(i) {
 }
 
 console.log(
-  `cache-probe: model=${MODEL} variant=${VARIANT ?? 'v1(default)'} runs=${RUNS}, back-to-back\n`,
+  `cache-probe: model=${MODEL} ${BIG ? 'BIG-prefix(~4.5k tok filler)' : `variant=${VARIANT ?? 'v1(default)'}`} runs=${RUNS}, back-to-back\n`,
 );
 let firstRunWroteAt = null;
 for (let i = 1; i <= RUNS; i++) {

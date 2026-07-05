@@ -298,7 +298,11 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
-      - name: Cache probe (per-turn write/read, back-to-back)
+      - name: Cache probe — normal prefix (per-turn write/read, back-to-back)
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: node tests/integration/cache-probe.mjs "--model=${{ github.event.inputs.model }}" --runs=3 "--variant=${{ github.event.inputs.cache_probe_variant }}"
+      - name: Cache probe — BIG prefix (isolates marginal-size zone from a deeper defect)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node tests/integration/cache-probe.mjs "--model=${{ github.event.inputs.model }}" --runs=3 --big

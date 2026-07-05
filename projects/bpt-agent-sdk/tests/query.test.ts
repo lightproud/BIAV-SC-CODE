@@ -412,6 +412,43 @@ describe('prompt cache: stable prefix does not drift across turns (a read can hi
       toolsJson(fetchStub.requests[0]!.body),
     );
   });
+
+  it('places cache_control on tools + stable system + last message (wire is correct)', async () => {
+    // Documents the wire truth found while root-causing the real-API 0-write:
+    // all three breakpoints ARE placed and the tools breakpoint alone dominates
+    // the cacheable prefix, so a 0 cache_creation is NOT a missing-breakpoint bug.
+    const fetchStub = stubFetch(
+      makeSSEFetch([
+        toolUseReplyEvents('Bash', { command: 'echo hi' }),
+        textReplyEvents('done'),
+      ]),
+    );
+    const q = query({
+      prompt: 'run echo',
+      options: baseOptions({
+        provider: { apiKey: 'test-key' }, // caching ON, minimal prompt (like the probe)
+        permissionMode: 'bypassPermissions',
+        allowDangerouslySkipPermissions: true,
+      }),
+    });
+    await collect(q);
+    const b = fetchStub.requests[0]!.body;
+    const tools = (b.tools ?? []) as Array<{ cache_control?: unknown }>;
+    const sys = b.system as Array<{ text?: string; cache_control?: unknown }>;
+    const lastMsg = (b.messages as Array<{ content: unknown }>).at(-1);
+    const lastBlocks = Array.isArray(lastMsg?.content)
+      ? (lastMsg!.content as Array<{ cache_control?: unknown }>)
+      : [];
+    // tools breakpoint on the last tool
+    expect(tools.filter((t) => t.cache_control !== undefined).length).toBe(1);
+    // system breakpoint on the STABLE block 0 (cwd rides in a later uncached block)
+    expect(sys[0]!.cache_control).toEqual({ type: 'ephemeral' });
+    expect(sys.at(-1)!.cache_control).toBeUndefined();
+    // message breakpoint on the last message's last block
+    expect(lastBlocks.filter((c) => c.cache_control !== undefined).length).toBe(1);
+    // the tools JSON alone is large (the dominant cacheable content)
+    expect(JSON.stringify(tools).length).toBeGreaterThan(6000);
+  });
 });
 
 describe('query() e2e - tool roundtrip', () => {
