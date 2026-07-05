@@ -2578,7 +2578,7 @@
     "/projects/bpt-sdk-doc-architecture.md": {
       "type": "documentation",
       "title": "bpt-agent-sdk ARCHITECTURE",
-      "description": "Clean-room agent harness with a `@anthropic-ai/claude-agent-sdk`-compatible",
+      "description": "Independent agent harness with a `@anthropic-ai/claude-agent-sdk`-compatible",
       "resource": "/projects/bpt-agent-sdk/docs/ARCHITECTURE.md",
       "tags": [
         "data_layer:curated",
@@ -2715,7 +2715,7 @@
     "/projects/project-bpt-agent-sdk.md": {
       "type": "documentation",
       "title": "bpt-agent-sdk 子项目上下文",
-      "description": "BPT Agent SDK：净室（clean-room）实现的 TypeScript agent 框架，公开调用面",
+      "description": "BPT Agent SDK：独立重实现（independent reimplementation）的 TypeScript agent 框架，公开调用面",
       "resource": "/projects/bpt-agent-sdk/CONTEXT.md",
       "tags": [
         "data_layer:curated",
@@ -9031,8 +9031,6 @@
       "/sources/youtube_comments.md"
     ],
     "clean": [
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/project-bpt-agent-sdk.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
     ],
     "cloud": [
@@ -10810,6 +10808,10 @@
     ],
     "importing": [
       "/projects/bpt-sdk-doc-migration.md"
+    ],
+    "independent": [
+      "/projects/bpt-sdk-doc-architecture.md",
+      "/projects/project-bpt-agent-sdk.md"
     ],
     "index": [
       "/README.md",
@@ -12906,6 +12908,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md"
     ],
     "reimplementation": [
+      "/projects/project-bpt-agent-sdk.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
     ],
     "rele": [
@@ -13051,8 +13054,6 @@
       "/resource/resource-game-analysis-role-action-recommendations-202605.md"
     ],
     "room": [
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/project-bpt-agent-sdk.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
     ],
     "round1": [
@@ -18366,9 +18367,6 @@
     ],
     "冻结": [
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
-    ],
-    "净室": [
-      "/projects/project-bpt-agent-sdk.md"
     ],
     "净重": [
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
@@ -32635,7 +32633,8 @@
     ],
     "独立": [
       "/README.md",
-      "/projects/bpt-sdk-doc-positioning.md"
+      "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/project-bpt-agent-sdk.md"
     ],
     "猎出": [
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md"
@@ -32857,9 +32856,6 @@
     ],
     "现永": [
       "/characters/15589.md"
-    ],
-    "现的": [
-      "/projects/project-bpt-agent-sdk.md"
     ],
     "现精": [
       "/README.md"
@@ -35042,6 +35038,9 @@
     "立绘": [
       "/assets/assets-images.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md"
+    ],
+    "立重": [
+      "/projects/project-bpt-agent-sdk.md"
     ],
     "章嗣": [
       "/characters/15564.md"
@@ -38954,6 +38953,7 @@
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md"
     ],
     "重实": [
+      "/projects/project-bpt-agent-sdk.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
     ],
     "重度": [
