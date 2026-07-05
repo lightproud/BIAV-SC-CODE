@@ -17,15 +17,15 @@ import path from "node:path";
 // —— 表定义（bpt-pm/table-v1）：列名(中文,数据源无关) + 是否写回列 ——
 // 写回列由排期工具算出后回填，建表时留空。
 const TABLES = {
-  "项目表": { cols: ["项目名", "起算日", "调度方向", "完成日", "工作日", "节假日"], writeback: [] },
+  "项目表": { cols: ["项目名", "起算日", "对外更新日期", "调度方向", "完成日", "工作日", "节假日"], writeback: [] },
   "任务表": {
-    cols: ["任务ID", "名称", "工期", "前置依赖", "约束", "资源", "进度", "截止", "上级",
-      "计算开始", "计算结束", "松弛", "自由浮动", "临界", "误期"],
-    writeback: ["计算开始", "计算结束", "松弛", "自由浮动", "临界", "误期"],
+    cols: ["任务ID", "名称", "工期", "前置依赖", "约束", "资源", "负责人", "进度", "父任务",
+      "计算开始", "计算结束", "对外更新余量", "版本交付余量", "任务交付余量", "关键路径"],
+    writeback: ["计算开始", "计算结束", "对外更新余量", "版本交付余量", "任务交付余量", "关键路径"],
   },
   "资源表": { cols: ["资源ID", "名称", "类型", "产能"], writeback: [] },
   "外包单表": {
-    cols: ["单号", "供应商", "资产", "PO日", "预计交付", "实际交付", "返修轮次", "状态", "关联任务", "交付风险"],
+    cols: ["单号", "供应商", "资产", "发单日", "预计交付", "实际交付", "返修轮次", "状态", "关联任务", "交付风险"],
     writeback: ["交付风险"],
   },
   "模板表": {
@@ -45,21 +45,21 @@ function toTables(data) {
   const t = {};
   const p = data.project || {};
   t["项目表"] = [{
-    "项目名": p.name || "", "起算日": p.start || "", "调度方向": p.scheduleFrom || "start",
+    "项目名": p.name || "", "起算日": p.start || "", "对外更新日期": p.updateDate || "", "调度方向": p.scheduleFrom || "start",
     "完成日": p.finish || "", "工作日": (p.calendar?.workdays || [1, 2, 3, 4, 5]).join(" "),
     "节假日": (p.calendar?.holidays || []).join(" "),
   }];
   t["任务表"] = (data.tasks || []).map(x => ({
     "任务ID": x.id, "名称": x.name || "", "工期": x.duration ?? 1, "前置依赖": predsToStr(x.predecessors),
-    "约束": constraintToStr(x.constraint), "资源": x.resource || "", "进度": x.percentComplete ?? 0,
-    "截止": x.deadline || "", "上级": x.parent || "",
-    "计算开始": "", "计算结束": "", "松弛": "", "自由浮动": "", "临界": "", "误期": "",
+    "约束": constraintToStr(x.constraint), "资源": x.resource || "", "负责人": x.owner || "", "进度": x.percentComplete ?? 0,
+    "父任务": x.parent || "",
+    "计算开始": "", "计算结束": "", "对外更新余量": "", "版本交付余量": "", "任务交付余量": "", "关键路径": "",
   }));
   t["资源表"] = (data.resources || []).map(r => ({
     "资源ID": r.id, "名称": r.name || "", "类型": r.type || "person", "产能": r.capacity ?? 1,
   }));
   t["外包单表"] = (data.orders || []).map(o => ({
-    "单号": o.id, "供应商": o.vendor || "", "资产": o.asset || "", "PO日": o.poDate || "",
+    "单号": o.id, "供应商": o.vendor || "", "资产": o.asset || "", "发单日": o.poDate || "",
     "预计交付": o.expectedDelivery || "", "实际交付": o.actualDelivery || "", "返修轮次": o.revisionRounds ?? "",
     "状态": o.status || "", "关联任务": o.linkedTaskId || "", "交付风险": "",
   }));

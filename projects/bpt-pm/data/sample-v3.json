@@ -4,6 +4,7 @@
     "name": "v3 演示项目：双角色 WBS + 约束 + 错峰",
     "start": "2026-07-06",
     "scheduleFrom": "start",
+    "updateDate": "2026-07-13",
     "calendar": { "workdays": [1, 2, 3, 4, 5], "holidays": [] }
   },
   "resources": [
@@ -21,6 +22,6 @@
 
     { "id": "Y1", "name": "角色Y 概念草图", "parent": "SUM_Y", "duration": 2, "predecessors": [], "resource": "主美" },
     { "id": "Y2", "name": "角色Y 精修建模", "parent": "SUM_Y", "duration": 3, "predecessors": [{ "id": "Y1", "type": "FS" }], "resource": "建模" },
-    { "id": "Y3", "name": "角色Y 引擎接入", "parent": "SUM_Y", "duration": 1, "predecessors": [{ "id": "Y2", "type": "FS" }], "resource": "程序", "deadline": "2026-07-13" }
+    { "id": "Y3", "name": "角色Y 引擎接入", "parent": "SUM_Y", "duration": 1, "predecessors": [{ "id": "Y2", "type": "FS" }], "resource": "程序" }
   ]
 }

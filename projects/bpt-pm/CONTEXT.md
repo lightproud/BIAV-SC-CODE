@@ -51,14 +51,15 @@ CPM）、**基线比对**，确认后**写回同一数据源**。零后端、零
 
 ## v2 三特性 B/C/D（守密人 2026-07-05，全部 additive 向后兼容）
 
-面向内容团队交付痛点叠加三组能力，均**不改 CPM 主算法**（deadline 只做叠加，不动 slack/临界），
+面向内容团队交付痛点叠加三组能力，均**不改 CPM 主算法**（余量只做叠加，不动 slack/临界），
 协议字段一律 optional（`schema/task-schema.json`），旧数据零改动可读。引擎放置见 `scripts/schedule.mjs`，
 网页内联同实现（`index.html`），回归 `tests/v2_bcd.mjs`。
 
-- **B 版本周期守护**：任务级可选 `deadline`（ISO 日期，软截止线，**不移动任务**）。排期后引擎给有
-  deadline 的任务算 `late`（结束工作日 > deadline）与 `lateDays`（结束工作日索引 − deadline 工作日索引，
-  >0 即误期工作日数）；顶层汇总 `lateCount`。样例 M1（封板）deadline 07-16、实际 07-17 → late、lateDays=1。
-  小学生比喻：给作业本画一条「该交的红线」，越线几天一目了然，但不逼你提前写完。
+- **B 版本周期守护（余量模型，2026-07-05 重构）**：项目级一个 `project.updateDate`（对外更新日期，
+  **不移动任务**）。排期后每任务写回 `externalMargin`（对外更新余量）= 对外更新日期工作日索引 − 任务结束索引；
+  正=有余量，负/0=会跳票；顶层汇总 `slipCount`。样例 M1（封板）结束 07-17、对外更新日期 07-16 → 余量 −1（会跳票）。
+  「误期/截止」旧概念已删，改用「余量为负=跳票」——与「版本交付余量/任务交付余量」统一为三个「余量」框架。
+  小学生比喻：给整版画一条「对外答应的更新日」，每件内容标「离那天还剩几天」，负数=赶不上、会跳票。
 - **C 流水线模板 + 返修回环**：项目级可选 `templates[]`（`{id,name,stages[]}`，stage 含 `key/name/duration/
   resource/type/lag/revisionRounds/revisionResource/revisionDuration`）。纯函数 `instantiateTemplate(tpl,{prefix,assetName})`
   把模板展开成一串 FS 链接任务：每 stage 一主任务，`revisionRounds` R>0 时在主任务后插 R 轮「审核（dur1，

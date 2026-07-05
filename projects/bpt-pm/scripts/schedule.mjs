@@ -4,8 +4,8 @@
    用途：桥接外部数据源（如 Notion）时复用同一套排期逻辑，避免算法漂移。
    用法：cat project.json | node schedule.mjs   # stdin 读 bpt-pm/v1，stdout 出计算结果
         node schedule.mjs project.json          # 或直接传文件
-   输出：{ projEnd, completion, errors, lateCount, ordersAtRisk,
-          tasks:[{id,start,finish,slack,critical,milestone,deadline,late,lateDays}], resources, orders }
+   输出：{ projEnd, completion, errors, slipCount, ordersAtRisk,
+          tasks:[{id,start,finish,slack,freeSlack,critical,milestone,externalMargin,isSummary,depth}], resources, orders }
    ========================================================================== */
 const MS_DAY = 86400000;
 const parseDate = s => { const [y, m, d] = s.split("-").map(Number); return new Date(Date.UTC(y, m - 1, d)); };
@@ -37,7 +37,6 @@ export function scheduleProject(data) {
     constraint: t.constraint || null,
     pct: Number(t.percentComplete || 0),
     resource: t.resource || "",
-    deadline: t.deadline || null,
     parent: (t.parent != null && t.parent !== "") ? t.parent : null,
   }));
   const allById = new Map(allTasks.map(t => [t.id, t]));
@@ -212,6 +211,8 @@ export function scheduleProject(data) {
     rolled.set(s.id, { startIdx: mn, finishIdx: mx });
   }
 
+  // 对外更新日期（项目级一个日期）：其工作日索引，供每任务算「对外更新余量」= 该日 − 结束（负=会跳票）
+  const updateIdx = data.project.updateDate ? cal.toIndex(data.project.updateDate) : null;
   let completion = cal.start;
   const out = data.tasks.map(orig => {
     const dp = depth.get(orig.id) ?? 0;
@@ -223,31 +224,26 @@ export function scheduleProject(data) {
       return {
         id: orig.id, name: orig.name, start: fmtDate(startDate), finish: fmtDate(finishDate),
         dur: r.finishIdx - r.startIdx + 1, slack: null, freeSlack: null, critical: false, milestone: false,
-        deadline: null, late: false, lateDays: null, isSummary: true, childIds: (childrenOf.get(orig.id) || []).slice(), depth: dp,
+        externalMargin: null, isSummary: true, childIds: (childrenOf.get(orig.id) || []).slice(), depth: dp,
       };
     }
     const t = byId.get(orig.id);
     const startDate = cal.fromIndex(t.es);
     const finishDate = t.dur > 0 ? cal.fromIndex(t.ef - 1) : startDate;
     if (finishDate > completion) completion = finishDate;
-    // 周期守护（特性 B）：deadline 软截止叠加，不改 CPM slack/临界。
     // 结束工作日索引：dur>0 用 ef-1（含尾工作日），里程碑用 es（结束=开始）。
     const finishIdx = t.dur > 0 ? t.ef - 1 : t.es;
-    let late = false, lateDays = null;
-    if (t.deadline) {
-      const di = cal.toIndex(t.deadline);
-      lateDays = finishIdx - di;
-      late = lateDays > 0;
-    }
-    return { id: t.id, name: t.name, start: fmtDate(startDate), finish: fmtDate(finishDate), dur: t.dur, slack: t.slack, freeSlack: t.freeSlack, critical: t.critical, milestone: t.dur === 0, deadline: t.deadline || null, late, lateDays, isSummary: false, depth: dp };
+    // 对外更新余量（工作日）：对外更新日期 − 任务结束；正=还有余量，负/0=会跳票。无对外更新日期则 null。
+    const externalMargin = updateIdx != null ? updateIdx - finishIdx : null;
+    return { id: t.id, name: t.name, start: fmtDate(startDate), finish: fmtDate(finishDate), dur: t.dur, slack: t.slack, freeSlack: t.freeSlack, critical: t.critical, milestone: t.dur === 0, externalMargin, isSummary: false, depth: dp };
   });
-  const lateCount = out.filter(t => t.late).length;
+  const slipCount = out.filter(t => t.externalMargin != null && t.externalMargin < 0).length;
   const resources = computeResourceLoad(tasks, data.resources, cal, projEnd);
   const orders = analyzeOrders(data.orders, out);
   const ordersAtRisk = orders.filter(o => o.atRisk).length;
   // 叶任务内部快照（索引空间，es/ef/preds/resource），供 suggestLeveling 与外部消费者（additive）
   const leaves = tasks.map(t => ({ id: t.id, es: t.es, ef: t.ef, dur: t.dur, resource: t.resource, slack: t.slack, preds: t.preds }));
-  return { projEnd, scheduleFrom, completion: fmtDate(completion), errors, warnings, warningCount: warnings.length, tasks: out, resources, lateCount, orders, ordersAtRisk, leaves };
+  return { projEnd, scheduleFrom, completion: fmtDate(completion), errors, warnings, warningCount: warnings.length, tasks: out, resources, slipCount, orders, ordersAtRisk, leaves };
 }
 
 /* ---------- 流水线模板实例化（特性 C，纯函数，与 index.html 内联版同实现） ----------
@@ -494,13 +490,10 @@ if (import.meta.url === `file://${process.argv[1]}`) {
       const flag = r.overloads.length ? `超载 ${r.overloads.map(o => `${o.start}..${o.end}(${o.load}/${r.capacity}:${o.tasks.join(",")})`).join(" ")}` : "无冲突";
       console.log(`  ${r.name}（${r.type} 产能${r.capacity}｜峰值${r.peakLoad}）→ ${flag}`);
     });
-    // 周期守护：误期任务（特性 B）
-    const lateTasks = res.tasks.filter(t => t.late);
-    if (lateTasks.length) {
-      console.log(`误期任务（${res.lateCount}）：`);
-      lateTasks.forEach(t => console.log(`  ${t.id.padEnd(4)} 结束 ${t.finish} 晚于 deadline ${t.deadline} · 误期 ${t.lateDays} 工作日`));
-    } else {
-      console.log("误期任务：无");
+    // 对外更新余量（项目级对外更新日期）：负=会跳票
+    if (res.tasks.some(t => t.externalMargin != null)) {
+      console.log(`对外更新余量（跳票风险 ${res.slipCount} 项）：`);
+      res.tasks.filter(t => t.externalMargin != null).forEach(t => console.log(`  ${t.id.padEnd(4)} 结束 ${t.finish} · 对外更新余量 ${t.externalMargin} 工作日${t.externalMargin < 0 ? "（会跳票）" : ""}`));
     }
     // 外包发单风险（特性 D）
     if (res.orders && res.orders.length) {

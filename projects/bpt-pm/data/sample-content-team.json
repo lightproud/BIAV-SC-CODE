@@ -3,6 +3,7 @@
   "project": {
     "name": "版本 v2.4 双角色美术交付（外包建模）",
     "start": "2026-07-06",
+    "updateDate": "2026-07-16",
     "calendar": { "workdays": [1, 2, 3, 4, 5], "holidays": ["2026-07-20"] }
   },
   "resources": [
@@ -29,12 +30,12 @@
     { "id": "X1", "name": "角色X 概念草图", "duration": 2, "predecessors": [], "resource": "原画", "percentComplete": 100 },
     { "id": "X2", "name": "角色X 原画终审", "duration": 1, "predecessors": [{ "id": "X1" }], "resource": "主美", "percentComplete": 0 },
     { "id": "X3", "name": "角色X 建模（外包）", "duration": 4, "predecessors": [{ "id": "X2" }], "resource": "外包A", "percentComplete": 0 },
-    { "id": "X4", "name": "角色X 引擎接入", "duration": 2, "predecessors": [{ "id": "X3" }], "resource": "程序", "deadline": "2026-07-16", "percentComplete": 0 },
+    { "id": "X4", "name": "角色X 引擎接入", "duration": 2, "predecessors": [{ "id": "X3" }], "resource": "程序", "percentComplete": 0 },
     { "id": "Y1", "name": "角色Y 概念草图", "duration": 2, "predecessors": [], "resource": "原画", "percentComplete": 100 },
     { "id": "Y2", "name": "角色Y 原画终审", "duration": 1, "predecessors": [{ "id": "Y1" }], "resource": "主美", "percentComplete": 0 },
     { "id": "Y3", "name": "角色Y 建模（外包）", "duration": 4, "predecessors": [{ "id": "Y2" }], "resource": "外包A", "percentComplete": 0 },
     { "id": "Y4", "name": "角色Y 引擎接入", "duration": 2, "predecessors": [{ "id": "Y3" }], "resource": "程序", "percentComplete": 0 },
-    { "id": "M1", "name": "版本 v2.4 美术封板", "duration": 0, "predecessors": [{ "id": "X4" }, { "id": "Y4" }], "resource": "主美", "deadline": "2026-07-16", "percentComplete": 0 }
+    { "id": "M1", "name": "版本 v2.4 美术封板", "duration": 0, "predecessors": [{ "id": "X4" }, { "id": "Y4" }], "resource": "主美", "percentComplete": 0 }
   ],
   "templates": [
     {
