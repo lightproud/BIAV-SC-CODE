@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 316,
+    "concepts": 318,
     "edges": 319,
-    "terms": 5432,
+    "terms": 5474,
     "by_type": {
       "character": 72,
       "dataset": 109,
-      "documentation": 72,
+      "documentation": 74,
       "knowledge-pointer": 43,
       "reference": 17,
       "research": 3
@@ -26,7 +26,7 @@
       "memory": 47,
       "news-output": 23,
       "projects": 18,
-      "resource": 53,
+      "resource": 55,
       "sources": 17,
       "story": 11,
       "unpacked": 13,
@@ -34,7 +34,7 @@
     },
     "by_tier": {
       "skeleton": 131,
-      "search": 185
+      "search": 187
     }
   },
   "sections": {
@@ -68,7 +68,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 53
+      "count": 55
     },
     "sources": {
       "index": "/sources/index.md",
@@ -3356,6 +3356,20 @@
       "tier": "search",
       "degree": 0
     },
+    "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md": {
+      "type": "documentation",
+      "title": "bpt-sdk-l5-failure-dissection-20260705",
+      "description": "含 `conformance-l5.json` + 54 份 L6 官方臂公开流留痕（`l5-traces/official/*.json`）。（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/repo-engineering/bpt-sdk-l5-failure-dissection-20260705.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 0
+    },
     "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md": {
       "type": "documentation",
       "title": "bpt-sdk-official-arm-protocol-profile-20260705",
@@ -3403,6 +3417,20 @@
       "title": "claude-desktop-ui-wireframe-20260704",
       "description": "repo-engineering 产物（html）（格式：html）",
       "resource": "/Public-Info-Pool/Resource/repo-engineering/claude-desktop-ui-wireframe-20260704.html",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 0
+    },
+    "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md": {
+      "type": "documentation",
+      "title": "kb-vector-remaining-handoff-20260705",
+      "description": "银芯已建向量检索腿（§八「厚锚撑向量」的活体参照实现，守密人 2026-07-05 裁定(A) 解除零 ML 红线，**scoped**：白盒脊柱仍零 ML，只加隔离 ML 向量长尾腿；§1.1-HC 黑池防火墙无涉，只吃银芯自有公开社区档案）。（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/repo-engineering/kb-vector-remaining-handoff-20260705.md",
       "tags": [
         "data_layer:curated",
         "deliverable",
@@ -3583,7 +3611,7 @@
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 2521 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 2525 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -3611,7 +3639,7 @@
     "/sources/google_play.md": {
       "type": "dataset",
       "title": "google_play 社区数据源",
-      "description": "google_play 平台采集档案，全量 1217 条，健康度 active。",
+      "description": "google_play 平台采集档案，全量 1218 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/google_play/global/",
       "tags": [
         "data_layer:full_archive",
@@ -3681,7 +3709,7 @@
     "/sources/steam.md": {
       "type": "dataset",
       "title": "steam 社区数据源",
-      "description": "steam 平台采集档案，全量 5102 条，健康度 active。",
+      "description": "steam 平台采集档案，全量 5104 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/review/",
       "tags": [
         "data_layer:full_archive",
@@ -3751,7 +3779,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 9018 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 9030 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -3765,7 +3793,7 @@
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 6276 条，健康度 active。",
+      "description": "weixin 平台采集档案，全量 6296 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -3779,7 +3807,7 @@
     "/sources/youtube.md": {
       "type": "dataset",
       "title": "youtube 社区数据源",
-      "description": "youtube 平台采集档案，全量 2602 条，健康度 active。",
+      "description": "youtube 平台采集档案，全量 2609 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -8348,10 +8376,12 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -8977,6 +9007,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
@@ -9403,10 +9434,12 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -9494,7 +9527,8 @@
       "/memory/memory-research-discord-archive-backfill-conflict.md"
     ],
     "conformance": [
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md"
     ],
     "consistency": [
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md"
@@ -9667,10 +9701,12 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -9953,10 +9989,12 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -10100,10 +10138,12 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -10194,6 +10234,9 @@
     ],
     "discussions": [
       "/memory/memory-ext-pending-discussions.md"
+    ],
+    "dissection": [
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md"
     ],
     "dive": [
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
@@ -10293,10 +10336,12 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -10370,6 +10415,9 @@
     ],
     "facts": [
       "/memory/memory-ext-facts.md"
+    ],
+    "failure": [
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md"
     ],
     "fallback": [
       "/story/story_search_index.md"
@@ -10779,6 +10827,9 @@
       "/unpacked/unpacked-text-cn.md",
       "/unpacked/unpacked-vue.md"
     ],
+    "handoff": [
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
+    ],
     "harness": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md",
       "/projects/bpt-sdk-doc-architecture.md",
@@ -10786,6 +10837,9 @@
     ],
     "harnesspromptvariant": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+    ],
+    "hc": [
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "health": [
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -10976,10 +11030,12 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -11118,6 +11174,7 @@
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/sources/appstore.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -11179,6 +11236,7 @@
       "/README.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/unpacked/unpacked-foundation.md",
       "/unpacked/unpacked-gamelauncher.md",
       "/unpacked/unpacked-gameupdate.md",
@@ -11202,6 +11260,12 @@
     ],
     "l4": [
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
+    ],
+    "l5": [
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md"
+    ],
+    "l6": [
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md"
     ],
     "language": [
       "/wiki-data/wiki-data-language-config.md"
@@ -11402,10 +11466,12 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -11863,9 +11929,11 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -12005,7 +12073,8 @@
       "/README.md",
       "/community/community-index.md",
       "/community/community-timeline.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "modules": [
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
@@ -12129,6 +12198,7 @@
       "/community/community-official.md",
       "/news-output/news-output-official.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/sources/official.md"
@@ -12471,10 +12541,12 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -12796,10 +12868,12 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -13036,7 +13110,8 @@
       "/projects/releases-treasure-map.md"
     ],
     "remaining": [
-      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "repo": [
       "/memory/memory-strategy-repo-slimming-plan.md",
@@ -13045,10 +13120,12 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -13119,10 +13196,12 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -13265,6 +13344,9 @@
     "scope": [
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
     ],
+    "scoped": [
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
+    ],
     "scripts": [
       "/README.md",
       "/projects/extracted-lua-inventory.md",
@@ -13286,6 +13368,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
@@ -13855,10 +13938,12 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -13888,6 +13973,9 @@
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md"
+    ],
+    "traces": [
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md"
     ],
     "track": [
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
@@ -14052,7 +14140,8 @@
       "/memory/memory-ext-biav-info-classification.md"
     ],
     "vector": [
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "verification": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-build-verification.md"
@@ -14806,10 +14895,12 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -15032,10 +15123,12 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -15298,10 +15391,12 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -16375,10 +16470,12 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -16473,6 +16570,9 @@
     ],
     "仍按": [
       "/memory/memory-ext-active-contribution-protocol.md"
+    ],
+    "仍零": [
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "仍需": [
       "/memory/memory-ext-bpt-guidance-protocol.md"
@@ -17096,6 +17196,9 @@
       "/unpacked/unpacked-text-cn.md",
       "/unpacked/unpacked-vue.md"
     ],
+    "体参": [
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
+    ],
     "体发": [
       "/characters/15573.md"
     ],
@@ -17246,10 +17349,12 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -17473,10 +17578,12 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -18201,7 +18308,9 @@
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
       "/projects/entry-readme.md",
       "/projects/project-bpt-agent-sdk.md",
-      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "兰提戈斯": [
       "/characters/77914.md"
@@ -19178,10 +19287,12 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -19411,6 +19522,9 @@
     "加藤": [
       "/characters/77923.md"
     ],
+    "加隔": [
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
+    ],
     "加高": [
       "/characters/15577.md"
     ],
@@ -19627,7 +19741,8 @@
       "/community/community-timeline.md"
     ],
     "区档": [
-      "/community/community-index.md"
+      "/community/community-index.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "区活": [
       "/community/community-timeline.md"
@@ -19879,6 +19994,9 @@
     "厌水": [
       "/characters/15563.md"
     ],
+    "厚锚": [
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
+    ],
     "原三": [
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md"
     ],
@@ -19982,6 +20100,9 @@
     ],
     "去大": [
       "/characters/77923.md"
+    ],
+    "参照": [
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "参考": [
       "/README.md",
@@ -20334,6 +20455,12 @@
     ],
     "只出": [
       "/README.md"
+    ],
+    "只加": [
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
+    ],
+    "只吃": [
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "只持": [
       "/README.md"
@@ -20762,6 +20889,9 @@
     "吃完": [
       "/projects/entry-claude-md.md"
     ],
+    "吃银": [
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
+    ],
     "各异": [
       "/characters/15583.md"
     ],
@@ -20963,7 +21093,8 @@
       "/memory/memory-ext-active-silver-blackpool-interface.md"
     ],
     "向量": [
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "吞噬": [
       "/characters/15569.md",
@@ -21797,6 +21928,9 @@
     "境之": [
       "/characters/15566.md"
     ],
+    "墙无": [
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
+    ],
     "增幅": [
       "/characters/15567.md",
       "/characters/15601.md"
@@ -22108,10 +22242,12 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -22839,10 +22975,12 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -23162,6 +23300,7 @@
       "/projects/project-game.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/story/story_research_todo.md"
     ],
     "守护": [
@@ -23260,6 +23399,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "宙恐": [
@@ -23401,10 +23541,12 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -23533,7 +23675,8 @@
       "/README.md",
       "/projects/project-bpt-agent-sdk.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
-      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "实脱": [
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md"
@@ -23936,6 +24079,9 @@
     ],
     "尽的": [
       "/characters/15599.md"
+    ],
+    "尾腿": [
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "尾须": [
       "/news-output/news-output-appstore.md",
@@ -24360,6 +24506,9 @@
     ],
     "已封": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-design.md"
+    ],
+    "已建": [
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "已成": [
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
@@ -24836,6 +24985,9 @@
     "建与": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-build-verification.md"
     ],
+    "建向": [
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
+    ],
     "建哪": [
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md"
     ],
@@ -24894,11 +25046,17 @@
     "开朗": [
       "/characters/130901.md"
     ],
+    "开流": [
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md"
+    ],
     "开源": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md"
     ],
     "开的": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md"
+    ],
+    "开社": [
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "开调": [
       "/projects/project-bpt-agent-sdk.md"
@@ -26931,10 +27089,12 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -27408,10 +27568,12 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -27700,10 +27862,12 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -27763,6 +27927,9 @@
     ],
     "摧毁": [
       "/characters/77925.md"
+    ],
+    "撑向": [
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "撒托古亚": [
       "/characters/130384.md"
@@ -28044,10 +28211,12 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -28293,10 +28462,12 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -28897,6 +29068,9 @@
       "/characters/77925.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
     ],
+    "方臂": [
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md"
+    ],
     "方还": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md"
     ],
@@ -28941,6 +29115,9 @@
       "/characters/130901.md",
       "/characters/15591.md",
       "/characters/54116.md"
+    ],
+    "无涉": [
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "无穷": [
       "/characters/54116.md"
@@ -29464,6 +29641,9 @@
     "有人": [
       "/characters/15602.md"
     ],
+    "有公": [
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
+    ],
     "有内": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-silver-blackpool-interface.md",
       "/memory/memory-ext-biav-info-classification.md"
@@ -29815,10 +29995,12 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -30189,10 +30371,12 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -30589,6 +30773,9 @@
     "查阅": [
       "/projects/entry-readme.md"
     ],
+    "柱仍": [
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
+    ],
     "标尺": [
       "/memory/memory-ext-skill-authoring-standard.md"
     ],
@@ -30710,10 +30897,12 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -30884,10 +31073,12 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -31120,6 +31311,7 @@
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/sources/appstore.md",
@@ -31172,7 +31364,8 @@
       "/characters/78840.md",
       "/characters/78841.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "棒的": [
       "/characters/54117.md"
@@ -31318,10 +31511,12 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -31652,10 +31847,12 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -31994,6 +32191,9 @@
     "池送": [
       "/projects/entry-claude-md.md"
     ],
+    "池防": [
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
+    ],
     "沉呢": [
       "/characters/15566.md"
     ],
@@ -32089,7 +32289,8 @@
       "/characters/94450.md"
     ],
     "活体": [
-      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "活动": [
       "/community/community-timeline.md"
@@ -32133,6 +32334,9 @@
     ],
     "流派": [
       "/resource/resource-repo-engineering-repo-audit-20260603.md"
+    ],
+    "流留": [
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md"
     ],
     "流的": [
       "/characters/77925.md"
@@ -32424,6 +32628,9 @@
     "火器": [
       "/characters/130901.md"
     ],
+    "火墙": [
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
+    ],
     "火山": [
       "/characters/15575.md"
     ],
@@ -32567,6 +32774,9 @@
     ],
     "然迸": [
       "/characters/125346.md"
+    ],
+    "照实": [
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "照翻": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
@@ -33615,6 +33825,9 @@
     "留有": [
       "/memory/memory-ext-wiki-characters-schema-v1.md"
     ],
+    "留痕": [
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md"
+    ],
     "略规": [
       "/memory/strategic-plan-2026.md"
     ],
@@ -33692,7 +33905,8 @@
       "/README.md"
     ],
     "白盒": [
-      "/memory/memory-ext-knowledge-layer-design.md"
+      "/memory/memory-ext-knowledge-layer-design.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "百万": [
       "/community/community-discord.md",
@@ -34046,7 +34260,8 @@
       "/characters/15584.md"
     ],
     "的活": [
-      "/characters/94450.md"
+      "/characters/94450.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "的测": [
       "/projects/doc-testing-strategy.md"
@@ -34362,6 +34577,9 @@
     ],
     "监修": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md"
+    ],
+    "盒脊": [
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "盒骨": [
       "/memory/memory-ext-knowledge-layer-design.md"
@@ -34910,6 +35128,7 @@
       "/projects/project-wiki.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/sources/appstore.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -35492,7 +35711,8 @@
       "/README.md"
     ],
     "索腿": [
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "索蕾尔": [
       "/characters/15584.md"
@@ -35507,7 +35727,8 @@
       "/characters/15599.md"
     ],
     "红线": [
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "约束": [
       "/projects/entry-claude-md.md",
@@ -36274,6 +36495,7 @@
       "/characters/15563.md"
     ],
     "脊柱": [
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/story/story_units.md"
     ],
     "脑缸": [
@@ -36346,6 +36568,9 @@
     "腺体": [
       "/characters/15573.md"
     ],
+    "臂公": [
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md"
+    ],
     "臂实": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
@@ -36384,6 +36609,9 @@
     ],
     "自持": [
       "/memory/memory-ext-bpt-positioning.md"
+    ],
+    "自有": [
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "自由": [
       "/assets/assets-chat-onboarding-snippet.md",
@@ -36565,6 +36793,9 @@
     "芯定": [
       "/README.md"
     ],
+    "芯已": [
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
+    ],
     "芯打": [
       "/README.md"
     ],
@@ -36584,6 +36815,9 @@
     "芯知": [
       "/README.md",
       "/memory/memory-ext-knowledge-layer-design.md"
+    ],
+    "芯自": [
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "芯转": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md"
@@ -36897,7 +37131,8 @@
       "/characters/78841.md",
       "/characters/94451.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "裁敌": [
       "/characters/15563.md"
@@ -37098,7 +37333,8 @@
       "/characters/95786.md"
     ],
     "解除": [
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "触发": [
       "/characters/15580.md",
@@ -38076,10 +38312,12 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -38684,10 +38922,12 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -39409,7 +39649,8 @@
       "/sources/youtube_comments.md"
     ],
     "量检": [
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "量爆": [
       "/characters/15564.md"
@@ -39442,6 +39683,9 @@
     ],
     "量都": [
       "/characters/15564.md"
+    ],
+    "量长": [
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "金丝": [
       "/characters/15574.md"
@@ -39612,10 +39856,12 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -39833,10 +40079,12 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -39921,7 +40169,8 @@
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "银钥": [
       "/characters/54116.md"
@@ -39961,6 +40210,9 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/story/story_research_todo.md"
+    ],
+    "锚撑": [
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "键助": [
       "/characters/15578.md",
@@ -40028,7 +40280,8 @@
       "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md"
+      "/news-output/news-output-youtube.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "长枪": [
       "/characters/15585.md"
@@ -40180,6 +40433,9 @@
       "/characters/15592.md",
       "/characters/15600.md"
     ],
+    "防火": [
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
+    ],
     "防腐": [
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md"
     ],
@@ -40225,6 +40481,9 @@
     "除此": [
       "/characters/77922.md"
     ],
+    "除零": [
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
+    ],
     "险嫌": [
       "/story/story_research_todo.md"
     ],
@@ -40244,6 +40503,9 @@
     ],
     "隐忍": [
       "/characters/15587.md"
+    ],
+    "隔离": [
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "障壁": [
       "/characters/15585.md"
@@ -40801,7 +41063,8 @@
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/project-news.md",
-      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md"
+      "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "黑法老": [
       "/characters/77927.md"
@@ -41143,6 +41406,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
     ],
@@ -41420,10 +41684,12 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -41699,10 +41965,12 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -41837,10 +42105,12 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -41904,6 +42174,9 @@
       "/community/community-steam-discussion.md",
       "/news-output/news-output-steam-discussion.md",
       "/sources/steam_discussion.md"
+    ],
+    "dissection": [
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md"
     ],
     "dive": [
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
@@ -41982,10 +42255,12 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -42032,6 +42307,9 @@
     ],
     "facts": [
       "/memory/memory-ext-facts.md"
+    ],
+    "failure": [
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md"
     ],
     "fault": [
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md"
@@ -42208,6 +42486,9 @@
       "/unpacked/unpacked-text-cn.md",
       "/unpacked/unpacked-vue.md"
     ],
+    "handoff": [
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
+    ],
     "health": [
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/sources/appstore.md",
@@ -42295,6 +42576,9 @@
     "karpathy": [
       "/memory/memory-ext-karpathy-coding-principles.md"
     ],
+    "kb": [
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
+    ],
     "key": [
       "/memory/memory-ext-workflow-api-key-audit.md"
     ],
@@ -42304,6 +42588,9 @@
     ],
     "knowledge": [
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md"
+    ],
+    "l5": [
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md"
     ],
     "language": [
       "/wiki-data/wiki-data-language-config.md"
@@ -42460,10 +42747,12 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -43116,7 +43405,8 @@
       "/projects/releases-treasure-map.md"
     ],
     "remaining": [
-      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "repo": [
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
@@ -43124,10 +43414,12 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -43249,6 +43541,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
     ],
@@ -43472,10 +43765,12 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -43592,7 +43887,8 @@
       "/memory/memory-research-community-analysis-2026-05-18-26.md"
     ],
     "vector": [
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "version": [
       "/assets/assets-version.md",
