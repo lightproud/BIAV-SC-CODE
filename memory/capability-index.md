@@ -295,7 +295,7 @@
 
 ## 子项目（7）
 
-- **`bpt-agent-sdk`** — BPT Agent SDK：净室（clean-room）实现的 TypeScript agent 框架，公开调用面  
+- **`bpt-agent-sdk`** — BPT Agent SDK：独立重实现（independent reimplementation）的 TypeScript agent 框架，公开调用面  
   `projects/bpt-agent-sdk/`
 - **`bpt-pm`** — BPT PM：**单网页项目排期工作台**。一份 JSON 描述一个项目（锚点日期 + 工作日历 +  
   `projects/bpt-pm/`
