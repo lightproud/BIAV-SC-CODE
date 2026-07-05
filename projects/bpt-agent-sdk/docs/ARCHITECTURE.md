@@ -1,12 +1,17 @@
 # BPT Agent SDK — Architecture & Module Contracts
 
-Clean-room agent harness with a `@anthropic-ai/claude-agent-sdk`-compatible
+Independent agent harness with a `@anthropic-ai/claude-agent-sdk`-compatible
 public surface. The engine drives the **Anthropic Messages API directly**
 (fetch + SSE); there is no bundled CLI executable and no subprocess engine.
 
-Inputs used for the design: the public SDK documentation
+Inputs used for the design: the **engine** is an independent reimplementation
+from the public SDK documentation
 (code.claude.com/docs/en/agent-sdk/{typescript,hooks,mcp,permissions}) and the
-public Messages API documentation. No proprietary code was consulted.
+public Messages API documentation — no proprietary code copied. The **default
+system prompts** are an open reproduction of the official Claude Code prompts,
+assembled from a public reconstruction (reverse-engineered from the publicly
+distributed CLI, MIT-licensed) with attribution — not self-authored text; no
+genuinely internal or leaked material is used.
 
 ## Ground rules (every module)
 
@@ -83,11 +88,17 @@ public Messages API documentation. No proprietary code was consulted.
 
 `engine/prompts.ts`
 - `export function buildSystemPrompt(opt: Options['systemPrompt'], ctx: { cwd: string; toolNames: string[] }): string`
-- Own text (clean-room, do NOT reproduce any known system prompt): concise
-  agent-harness prompt — role, cwd, tool-usage guidance, safety line about
-  destructive commands. `undefined` → minimal default. String → verbatim.
-  Preset `claude_code` → the default harness prompt; `append` concatenated
-  after two newlines.
+- Open reproduction from PUBLIC information, with attribution (see the
+  `prompts.ts` header). Variants `v1`-`v3` are original compositions from
+  public prompt-engineering guidance + open-source agent practice; `v4`/`v5`
+  are faithful open reproductions of the official Claude Code main-loop prompt,
+  assembled from the public prompt reconstruction (Piebald-AI snapshot, MIT,
+  reverse-engineered from the publicly distributed CLI; archived under
+  `Public-Info-Pool/Reference/Claude-Code-System-Prompts/`) with tool
+  references adapted to this SDK's tools and CLI-only fragments omitted.
+  `undefined` → minimal default. String → verbatim. Preset `claude_code` →
+  the default harness prompt (no explicit `variant` → `v5`, the comprehensive
+  faithful reproduction); `append` concatenated after two newlines.
 
 `engine/accumulator.ts`
 - `export class MessageAccumulator` — feed `RawMessageStreamEvent`s, produce
