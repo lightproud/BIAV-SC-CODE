@@ -12,7 +12,7 @@ import type {
   ToolResultPayload,
 } from '../internal/contracts.js';
 import { AbortError, isAbortError } from '../errors.js';
-import { formatCatN, looksBinary, resolveWithin } from './fsutil.js';
+import { formatCatN, looksBinary, resolveAbs } from './fsutil.js';
 import { READ_DESCRIPTION } from './descriptions.js';
 
 const DEFAULT_LINE_LIMIT = 2000;
@@ -127,11 +127,7 @@ export const readTool: BuiltinTool = {
       // offset is a 1-based line number; 0/negative values clamp to line 1.
       const startLine = Math.max(1, Math.floor((offsetRaw as number | undefined) ?? 1));
 
-      const resolved = resolveWithin(ctx.cwd, ctx.additionalDirectories, filePath);
-      if (!resolved.ok) {
-        return errorResult(`Read failed: ${resolved.reason}`);
-      }
-      const abs = resolved.abs;
+      const abs = resolveAbs(ctx.cwd, filePath);
 
       try {
         const st = await stat(abs);

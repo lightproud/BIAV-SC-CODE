@@ -130,7 +130,7 @@ SDK implements the agent loop directly against the public Messages API:
 | Field | Tier | Notes |
 |---|---|---|
 | `abortController` | FULL | |
-| `additionalDirectories` | FULL | fs tools + additionalDirectories containment |
+| `additionalDirectories` | FULL | sandbox writablePaths (Bash) + subagent inheritance. NOTE: since 0.6.4 (keeper ruling BPT #2) Read/Write/Edit have NO path fence — they reach any path the process can, gated by permission mode (official-aligned); additionalDirectories no longer gates fs-tool access, only sandbox write allowance. |
 | `agents` | PARTIAL | executed since v0.2 (subagent runtime); the delegation tool is named `Agent` here vs official `Task`, and official 2.1.201 delegation made 4 POSTs vs our deterministic parent+child+parent 3 (conformance run-l2 s13-agents-task, KD-11, 2026-07-05) |
 | `allowedTools` / `disallowedTools` | FULL | `Tool(spec)` prefix rules + `mcp__srv__*` (exact server match) + `*` / `mcp__*` globs (v0.4); bare-name `disallowedTools` removes the tool definition from the request; plan mode never auto-approves writes via an allow rule; rewritten inputs re-checked against deny rules |
 | `canUseTool` | FULL | invoked on prompt-fallthrough with `signal`/`suggestions`/`requestId`/`toolUseID`; `updatedInput`/`updatedPermissions` honored (incl. hook-`ask` rewrite); `null` return = skip (app resolves out of band) |

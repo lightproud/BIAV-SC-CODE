@@ -8,6 +8,18 @@ and adds one line here. A CI guard (`scripts/check-version-bump.mjs`) reds
 any src-changing merge that forgets. 0.6.1 and 0.6.2 below are retroactive
 labels for builds that shipped under a duplicated "0.6.0".
 
+## 0.6.4 — 2026-07-05
+
+- **behavior/security (keeper ruling, BPT report #2)**: Read/Write/Edit no
+  longer enforce a hard cwd+additionalDirectories path fence — they resolve
+  paths and reach any location the process can, with the PERMISSION GATE as
+  the sole access control (official Claude Code posture). The v0.1 fence was
+  BPT-specific, inconsistent (Grep/Glob/Bash never had it), and — with Bash
+  present — never a real security boundary, only a false sense of one.
+  `fsutil.resolveWithin` -> `resolveAbs`. `additionalDirectories` keeps its
+  real role (sandbox writablePaths). Consumers relying on the fence as a
+  security control must use `permissionMode` / `canUseTool` instead.
+
 ## 0.6.3 — 2026-07-05
 
 - **fix (Windows)**: KillShell now actually terminates background shells on

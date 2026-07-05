@@ -1,10 +1,15 @@
 /**
  * Shared filesystem helpers for the built-in FS tools (Read / Write / Edit).
  *
- * Containment model (v0.1): a path is accessible iff, after `path.resolve`,
- * it is lexically inside the session cwd or one of the configured additional
- * directories. The check is a prefix comparison on `path.sep` boundaries.
- * Symlink escapes are NOT resolved/blocked in v0.1 (documented limitation).
+ * Path model (2026-07-05, keeper ruling on BPT report #2): NO hard containment
+ * fence. A path is resolved cwd-relative and used as-is - the same posture as
+ * official Claude Code, where Read/Write/Edit reach any path the process can
+ * and the PERMISSION GATE (permissionMode) is the sole access control, not a
+ * second filesystem fence. The old cwd+additionalDirectories fence (v0.1) was
+ * BPT-specific, inconsistent (Grep/Glob/Bash never had it) and - with Bash in
+ * the tool set - never a real security boundary anyway, only a false sense of
+ * one. additionalDirectories retains its real role: sandbox writablePaths.
+ * (History: resolveWithin removed here; see CHANGELOG 0.6.4.)
  */
 
 import * as path from 'node:path';
@@ -19,32 +24,13 @@ const MAX_LINE_CHARS = 2000;
 const LINE_NUMBER_WIDTH = 6;
 
 /**
- * Resolve `p` (absolute or cwd-relative) and verify it falls inside the cwd
- * or one of the additional directories. Additional directory entries may
- * themselves be relative to cwd.
+ * Resolve `p` (absolute or cwd-relative) to an absolute path. No containment
+ * fence (keeper ruling 2026-07-05, BPT #2): the permission gate is the access
+ * control, aligning with official Claude Code. `additional` is accepted for a
+ * stable signature but does not gate access here.
  */
-export function resolveWithin(
-  cwd: string,
-  additional: string[],
-  p: string,
-): { ok: true; abs: string } | { ok: false; reason: string } {
-  const abs = path.resolve(cwd, p);
-  const roots = [cwd, ...additional].map((r) => path.resolve(cwd, r));
-  for (const root of roots) {
-    if (abs === root) {
-      return { ok: true, abs };
-    }
-    // Boundary-safe prefix check: '/a/bc' must not match root '/a/b'.
-    const prefix = root.endsWith(path.sep) ? root : root + path.sep;
-    if (abs.startsWith(prefix)) {
-      return { ok: true, abs };
-    }
-  }
-  const allowed = roots.map((r) => `"${r}"`).join(', ');
-  return {
-    ok: false,
-    reason: `Path "${abs}" is outside the allowed directories (${allowed}).`,
-  };
+export function resolveAbs(cwd: string, p: string): string {
+  return path.resolve(cwd, p);
 }
 
 /** Heuristic binary sniff: any NUL byte within the first 8KB. */
