@@ -86,9 +86,11 @@ const SUPPORTED_MODELS: readonly ModelInfo[] = [
 
 /**
  * Options accepted for @anthropic-ai/claude-agent-sdk type/runtime compat
- * but with no behavior in v0.1 (see docs/COMPAT.md). Each present key emits
- * exactly one debug warning. Untyped keys cover migration call sites that
- * pass reference-SDK-only fields through a widened object.
+ * but with no behavior (see docs/COMPAT.md). Each present key emits exactly
+ * one debug warning. Since B2b (T2-3, 2026-07-05) every key below is ALSO on
+ * the TS Options type with an honest support-level JSDoc, so official-SDK
+ * object literals pass excess-property checking; runtime semantics are
+ * unchanged (ACCEPTED-IGNORED).
  */
 const ACCEPTED_OPTION_KEYS: readonly string[] = [
   // Official @anthropic-ai/claude-agent-sdk Options fields this SDK accepts for
@@ -558,6 +560,11 @@ export function query(args: {
   let systemBlocks: TextBlockParam[] | undefined;
   let systemPromptStable = '';
   let systemPromptVolatile = '';
+  // Git branch of cwd at query construction, reused from the runtime-context
+  // probe below (no second git call) and persisted into the session meta line
+  // so listSessions/getSessionInfo report SDKSessionInfo.gitBranch. Absent on
+  // the segments path / when includeEnvironmentContext is false (no probe ran).
+  let sessionGitBranch: string | undefined;
   // Char offset splitting the stable prefix into [base harness | appended tail]
   // for the 2nd system cache breakpoint. Only set on the string/preset path.
   let systemPromptBaseLen: number | undefined;
@@ -599,6 +606,7 @@ export function query(args: {
     const environment = includeEnv
       ? gatherEnvironment(cwd, initialModel, new Date().toISOString().slice(0, 10))
       : undefined;
+    sessionGitBranch = environment?.gitBranch;
     const projectInstructions = loadProjectInstructions(cwd, options.settingSources);
     // Pass the variant through as-is: when harnessPromptVariant is unset,
     // buildSystemPromptParts applies its default (v5, the faithful official
@@ -868,6 +876,7 @@ export function query(args: {
               createdAt: Date.now(),
               cwd,
               firstPrompt: stored.firstPrompt,
+              ...(sessionGitBranch !== undefined ? { gitBranch: sessionGitBranch } : {}),
             });
             for (const m of stored.messages) {
               store.append(newId, { type: m.role, message: m });
@@ -962,6 +971,10 @@ export function query(args: {
       session_id: sessionId,
       is_error: true,
       errorMessage,
+      // Official surface: stop_reason is required on the error arm. These are
+      // QUERY-LAYER synthetic results (no engine turn ran), so null is the
+      // honest value — no API stop_reason exists for this result.
+      stop_reason: null,
       // Official-surface parallel of errorMessage (reference SDK: string[]).
       errors: [errorMessage],
       ...resultCommon(),
@@ -993,6 +1006,11 @@ export function query(args: {
                   prev.cacheCreationInputTokens + mu.cacheCreationInputTokens,
                 webSearchRequests: prev.webSearchRequests + mu.webSearchRequests,
                 costUSD: prev.costUSD + mu.costUSD,
+                // Static per-model figures (not additive): latest wins,
+                // falling back to the earlier value when the newer entry
+                // lacks them (e.g. a subagent-ledger merge).
+                contextWindow: mu.contextWindow ?? prev.contextWindow,
+                maxOutputTokens: mu.maxOutputTokens ?? prev.maxOutputTokens,
               };
       }
     };
@@ -1019,6 +1037,11 @@ export function query(args: {
                   prev.cacheCreationInputTokens + mu.cacheCreationInputTokens,
                 webSearchRequests: prev.webSearchRequests + mu.webSearchRequests,
                 costUSD: prev.costUSD + mu.costUSD,
+                // Static per-model figures (not additive): latest wins,
+                // falling back to the earlier value when the newer entry
+                // lacks them (e.g. a subagent-ledger merge).
+                contextWindow: mu.contextWindow ?? prev.contextWindow,
+                maxOutputTokens: mu.maxOutputTokens ?? prev.maxOutputTokens,
               };
       }
     };
@@ -1233,6 +1256,9 @@ export function query(args: {
             createdAt: Date.now(),
             cwd,
             firstPrompt: promptText,
+            // Persist the branch the runtime-context probe already computed so
+            // SDKSessionInfo.gitBranch reads back (store.load parses it).
+            ...(sessionGitBranch !== undefined ? { gitBranch: sessionGitBranch } : {}),
           });
           needMeta = false;
         }
@@ -1280,7 +1306,12 @@ export function query(args: {
         const turnSignal = AbortSignal.any([outer.signal, turnController.signal]);
         const toolContext: ToolContext = {
           cwd,
-          additionalDirectories: options.additionalDirectories ?? [],
+          // Recomputed per turn so session addDirectories / removeDirectories
+          // permission updates take real effect on the fs tools (T2-7:
+          // removeDirectories revokes; addDirectories grants).
+          additionalDirectories: gate.effectiveAdditionalDirectories(
+            options.additionalDirectories ?? [],
+          ),
           env,
           signal: turnSignal,
           debug,
@@ -1540,7 +1571,41 @@ export function query(args: {
       return Object.keys(agentDefs).map((name) => ({ name }));
     },
     async mcpServerStatus() {
-      return mcpEff.statuses();
+      // Normalize the registry's pre-alignment string[] tools arm into the
+      // OFFICIAL object form (T2-7), enriched with description/annotations
+      // from the live tool entries (realMcp: unfiltered + undeferred, so the
+      // full connected tool set is described). Statuses already carrying the
+      // object form pass through untouched.
+      return mcpEff.statuses().map((s) => {
+        const t = s.tools;
+        if (t === undefined || t.length === 0 || typeof t[0] !== 'string') return s;
+        const names = t as string[];
+        const entries = realMcp.allTools().filter((e) => e.serverName === s.name);
+        const tools = names.map((name) => {
+          const entry = entries.find((e) => e.toolName === name);
+          if (entry === undefined) return { name };
+          const a = entry.annotations;
+          const annotations =
+            a !== undefined &&
+            (a.readOnlyHint !== undefined ||
+              a.destructiveHint !== undefined ||
+              a.openWorldHint !== undefined)
+              ? {
+                  ...(a.readOnlyHint !== undefined ? { readOnly: a.readOnlyHint } : {}),
+                  ...(a.destructiveHint !== undefined
+                    ? { destructive: a.destructiveHint }
+                    : {}),
+                  ...(a.openWorldHint !== undefined ? { openWorld: a.openWorldHint } : {}),
+                }
+              : undefined;
+          return {
+            name,
+            ...(entry.description !== undefined ? { description: entry.description } : {}),
+            ...(annotations !== undefined ? { annotations } : {}),
+          };
+        });
+        return { ...s, tools };
+      });
     },
     async accountInfo() {
       return { apiKeySource: transport.apiKeySource() };
@@ -1560,7 +1625,21 @@ export function query(args: {
     async setMcpServers(
       servers: Record<string, McpServerConfig>,
     ): Promise<McpSetServersResult> {
-      return mcpEff.setServers(servers);
+      // Official result shape (T2-2): added/removed report the REAL diff of
+      // the registered server set; errors maps each failed server to its
+      // connect error. The registry's pre-alignment {servers} payload rides
+      // along as the deprecated dual-track field.
+      const before = new Set(mcpEff.statuses().map((s) => s.name));
+      const internal = await mcpEff.setServers(servers);
+      const after = mcpEff.statuses();
+      const afterNames = new Set(after.map((s) => s.name));
+      const added = after.filter((s) => !before.has(s.name)).map((s) => s.name);
+      const removed = [...before].filter((n) => !afterNames.has(n));
+      const errors: Record<string, string> = {};
+      for (const s of after) {
+        if (s.status === 'failed') errors[s.name] = s.error ?? 'connection failed';
+      }
+      return { added, removed, errors, servers: internal.servers ?? after };
     },
     async rewindFiles(
       userMessageId: string,

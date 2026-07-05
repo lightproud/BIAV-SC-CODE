@@ -11,6 +11,8 @@
  * Compatibility tiers per field/feature are documented in docs/COMPAT.md.
  */
 
+import type { Readable, Writable } from 'node:stream';
+
 // ---------------------------------------------------------------------------
 // Anthropic Messages API wire types (minimal independent subset)
 // ---------------------------------------------------------------------------
@@ -46,6 +48,25 @@ export type ModelUsage = {
   cacheCreationInputTokens: number;
   webSearchRequests: number;
   costUSD: number;
+  /**
+   * The model's maximum context window in tokens (REQUIRED on the official
+   * surface). Populated by the engine loop from the static public model-window
+   * table (engine/context-window.ts) — an ESTIMATE with the same provenance
+   * discipline as the price table, not an authoritative API value. Optional
+   * during the transition: the subagent usage-ledger merge
+   * (src/subagents/runtime.ts:407-419) does not propagate it yet, so entries
+   * folded through that path may lack it.
+   */
+  contextWindow?: number;
+  /**
+   * Max output tokens in force for requests to this model (REQUIRED on the
+   * official surface). This engine reports the ACTUAL per-request `max_tokens`
+   * cap it sends (provider.maxOutputTokens ?? 8192) — an honest runtime value,
+   * NOT the model's theoretical output ceiling (no public per-model
+   * max-output table is bundled). Optional during the transition (same
+   * subagent-ledger caveat as contextWindow).
+   */
+  maxOutputTokens?: number;
 };
 
 export type TextBlock = {
@@ -491,6 +512,13 @@ export type HookPermissionDecision = 'allow' | 'deny' | 'ask' | 'defer';
 export type HookJSONOutput = {
   /** When false, the agent stops after this hook. */
   continue?: boolean;
+  /**
+   * Official field (hide the hook's output from transcript display). TYPED,
+   * NOT HONORED by this engine: the hook aggregator (src/hooks/runner.ts,
+   * aggregate()) never reads it, so systemMessage/debug surfacing is
+   * unaffected. Kept on the type for drop-in compatibility; wiring is tracked
+   * as an open item (audit T2-7).
+   */
   suppressOutput?: boolean;
   stopReason?: string;
   /** Legacy-style decision field; 'block' behaves like a deny. */
@@ -581,6 +609,18 @@ export type McpServerConfig =
   | McpHttpServerConfig
   | McpSdkServerConfigWithInstance;
 
+/** Official per-tool entry of McpServerStatus.tools (name + optional
+ *  description and coarse behavior annotations). */
+export type McpServerToolInfo = {
+  name: string;
+  description?: string;
+  annotations?: {
+    readOnly?: boolean;
+    destructive?: boolean;
+    openWorld?: boolean;
+  };
+};
+
 export type McpServerStatus = {
   name: string;
   status: 'connected' | 'failed' | 'needs-auth' | 'pending' | 'disabled';
@@ -588,8 +628,15 @@ export type McpServerStatus = {
   error?: string;
   /** The config this server was registered with (echoed back; task #17). */
   config?: McpServerConfig;
-  /** Per-server tool names, present once the server is connected. */
-  tools?: string[];
+  /**
+   * Per-server tools, present once the server is connected. The OFFICIAL
+   * element shape is the McpServerToolInfo object (v0.7 alignment, T2-7);
+   * `Query.mcpServerStatus()` returns that shape. The `string[]` arm remains
+   * only because the internal registry (src/mcp/registry.ts:120) still
+   * assembles bare names — it is normalized at the Query surface and slated
+   * for removal once the registry assembly moves to the object form.
+   */
+  tools?: McpServerToolInfo[] | string[];
   /** Provenance of the config. Typed for compat; not tracked by this engine. */
   scope?: 'user' | 'project' | 'local' | 'dynamic';
 };
@@ -823,6 +870,58 @@ export type SystemPromptSegment = {
   cache?: boolean;
 };
 
+/** Official plugin config (Options.plugins element). ACCEPTED-IGNORED in this
+ *  SDK: no plugin loader exists; typed so drop-in callers compile. */
+export type SdkPluginConfig = {
+  type: 'local';
+  path: string;
+  skipMcpDiscovery?: boolean;
+};
+
+/** Official built-in-tool behavior config (Options.toolConfig).
+ *  ACCEPTED-IGNORED in this SDK: AskUserQuestion renders no preview layer. */
+export type ToolConfig = {
+  askUserQuestion?: {
+    previewFormat?: 'markdown' | 'html';
+  };
+};
+
+/** Official options handed to a custom spawnClaudeCodeProcess function.
+ *  N/A-by-design here (this SDK spawns no CLI subprocess); typed for drop-in
+ *  compatibility only. */
+export interface SpawnOptions {
+  command: string;
+  args: string[];
+  cwd?: string;
+  env: Record<string, string | undefined>;
+  signal: AbortSignal;
+}
+
+/** Official custom-spawn process handle (ChildProcess satisfies it).
+ *  N/A-by-design here; typed for drop-in compatibility only. */
+export interface SpawnedProcess {
+  stdin: Writable;
+  stdout: Readable;
+  readonly killed: boolean;
+  readonly exitCode: number | null;
+  kill(signal: NodeJS.Signals): boolean;
+  on(
+    event: 'exit',
+    listener: (code: number | null, signal: NodeJS.Signals | null) => void,
+  ): void;
+  on(event: 'error', listener: (error: Error) => void): void;
+  once(
+    event: 'exit',
+    listener: (code: number | null, signal: NodeJS.Signals | null) => void,
+  ): void;
+  once(event: 'error', listener: (error: Error) => void): void;
+  off(
+    event: 'exit',
+    listener: (code: number | null, signal: NodeJS.Signals | null) => void,
+  ): void;
+  off(event: 'error', listener: (error: Error) => void): void;
+}
+
 export type Options = {
   abortController?: AbortController;
   additionalDirectories?: string[];
@@ -939,6 +1038,83 @@ export type Options = {
    *  COMPREHENSIVE faithful reproduction (fuller official main-loop clauses).
    *  A/B knob for measuring quality/cost/cache before promoting a new default. */
   harnessPromptVariant?: 'v1' | 'v2' | 'v3' | 'v4' | 'v5';
+
+  // -------------------------------------------------------------------------
+  // Official Options fields ACCEPTED at runtime but NOT acted on (T2-3,
+  // 2026-07-05). Each was already in the runtime ACCEPTED whitelist
+  // (query.ts emits one debug warning per present key); they are typed here so
+  // an official-SDK caller's object literal passes excess-property checking.
+  // The per-field JSDoc states the HONEST support level — none of these
+  // change engine behavior today. See docs/COMPAT.md for the ledger.
+  // -------------------------------------------------------------------------
+
+  /** Official: agent name for the main thread. ACCEPTED-IGNORED (main-thread
+   *  agent selection is not implemented; agents run via the Agent tool). */
+  agent?: string;
+  /** Official: generate one-line subagent progress summaries onto
+   *  task_progress.summary. ACCEPTED-IGNORED (no summary generation source;
+   *  task_progress.summary is typed but never populated). */
+  agentProgressSummaries?: boolean;
+  /** Official: write debug logs to a file (implies debug). ACCEPTED-IGNORED
+   *  (debug output goes to the stderr callback / process.stderr only). */
+  debugFile?: string;
+  /** Official: response effort level. ACCEPTED-IGNORED (not forwarded to the
+   *  Messages API; use `thinking` to steer reasoning depth). */
+  effort?: 'low' | 'medium' | 'high' | 'xhigh' | 'max';
+  /** Official: JS runtime for the CLI subprocess. N/A-BY-DESIGN (this SDK
+   *  spawns no subprocess); accepted so migration call sites compile. */
+  executable?: 'bun' | 'deno' | 'node';
+  /** Official: argv for the CLI subprocess executable. N/A-BY-DESIGN. */
+  executableArgs?: string[];
+  /** Official: extra CLI flags. N/A-BY-DESIGN (no CLI argv exists). */
+  extraArgs?: Record<string, string | null>;
+  /** Official: forward subagent text/thinking blocks into the parent stream.
+   *  ACCEPTED-IGNORED (only tool_use/tool_result blocks cross today). */
+  forwardSubagentText?: boolean;
+  /** Official: policy-tier settings from the embedding host. ACCEPTED-IGNORED
+   *  (no settings merge engine). Official type is the Settings file shape;
+   *  typed loosely here because that shape is not reproduced. */
+  managedSettings?: Record<string, unknown>;
+  /** Official: path to the CLI executable. N/A-BY-DESIGN (no CLI). */
+  pathToClaudeCodeExecutable?: string;
+  /** Official: MCP tool name for permission prompts. ACCEPTED-IGNORED
+   *  (permission prompting goes through `canUseTool`). */
+  permissionPromptToolName?: string;
+  /** Official: replace the plan-mode workflow body. ACCEPTED-IGNORED (plan
+   *  mode uses this engine's fixed prompt fragment). */
+  planModeInstructions?: string;
+  /** Official: load local plugins. ACCEPTED-IGNORED (no plugin loader;
+   *  system/init `plugins` is always []). */
+  plugins?: SdkPluginConfig[];
+  /** Official: emit a prompt_suggestion message after each turn.
+   *  ACCEPTED-IGNORED (SDKPromptSuggestionMessage is typed, never emitted). */
+  promptSuggestions?: boolean;
+  /** Official: resume at a specific message UUID. ACCEPTED-IGNORED (resume
+   *  always materializes the full transcript). */
+  resumeSessionAt?: string;
+  /** Official: inline settings object or settings-file path (flag-settings
+   *  layer). ACCEPTED-IGNORED (no settings engine; `applyFlagSettings()` is
+   *  likewise absent from Query). Typed loosely — the official Settings file
+   *  shape is not reproduced. */
+  settings?: string | Record<string, unknown>;
+  /** Official: skills available to the session. ACCEPTED-IGNORED (no skills
+   *  subsystem; system/init `skills` is always []). */
+  skills?: string[] | 'all';
+  /** Official: custom process spawner for VMs/containers. N/A-BY-DESIGN
+   *  (no subprocess to spawn). */
+  spawnClaudeCodeProcess?: (options: SpawnOptions) => SpawnedProcess;
+  /** Official (alpha): API-side task token budget. ACCEPTED-IGNORED (the
+   *  model is not told a remaining-budget figure; use maxBudgetUsd for
+   *  client-side enforcement). */
+  taskBudget?: { total: number };
+  /** Official: display title for the session. ACCEPTED-IGNORED at query time
+   *  (use renameSession() to title a persisted session). */
+  title?: string;
+  /** Official: map built-in tool names to MCP replacements.
+   *  ACCEPTED-IGNORED (built-ins always run their own implementations). */
+  toolAliases?: Record<string, string>;
+  /** Official: built-in tool behavior config. ACCEPTED-IGNORED. */
+  toolConfig?: ToolConfig;
 };
 
 // ---------------------------------------------------------------------------
@@ -1028,7 +1204,14 @@ export type SDKResultMessage =
       is_error: boolean;
       num_turns: number;
       result: string;
-      stop_reason?: StopReason;
+      /**
+       * Why the final assistant turn stopped (REQUIRED on the official
+       * surface, `string | null`). Carries the API stop_reason of the final
+       * turn, or `'tool_deferred'` when a PreToolUse hook deferred a tool
+       * call (the official defer-detection protocol — pair it with
+       * `deferred_tool_use`).
+       */
+      stop_reason: string | null;
       /** Validated object when options.outputFormat was set and validation passed. */
       structured_output?: unknown;
       /** Present on a turn that ended because a tool call was deferred. */
@@ -1058,6 +1241,13 @@ export type SDKResultMessage =
       duration_api_ms: number;
       is_error: boolean;
       num_turns: number;
+      /**
+       * REQUIRED on the official surface (`string | null`). The last API
+       * stop_reason observed before the run ended in error, or null when no
+       * assistant turn completed (e.g. a pre-turn block or an API failure on
+       * the first turn).
+       */
+      stop_reason: string | null;
       total_cost_usd: number;
       usage: NonNullableUsage;
       modelUsage: Record<string, ModelUsage>;
@@ -1354,15 +1544,36 @@ export type SDKCommandsChangedMessage = {
 
 /** A rate limit was hit and a retry scheduled. EMITTED (v0.3) via the
  *  transport's per-request onRetry observer on each 429 retry. Top-level
- *  `type` matches the official discriminator; the payload/semantics still
- *  differ from the official rate_limit_info envelope (KD-12 — the official
- *  CLI emits api_retry on an actual 429; see docs/COMPAT.md). */
+ *  `type` matches the official discriminator and (since B2b, 2026-07-05) the
+ *  payload carries the official `rate_limit_info` envelope.
+ *
+ *  KD-12 note (semantics deliberately NOT force-aligned): the official CLI
+ *  emits this event for account/quota STATUS updates and emits `api_retry`
+ *  on an actual 429; this engine has no quota-status feed, so it emits this
+ *  event per 429 retry (status is therefore always 'rejected', with
+ *  `resetsAt` derived from the server's real Retry-After when present).
+ *  `utilization` / `errorCode` / credits fields have no data source here and
+ *  are honestly absent. See docs/COMPAT.md. */
 export type SDKRateLimitEvent = {
   type: 'rate_limit_event';
   uuid: string;
   session_id: string;
-  retry_after_ms: number;
-  limit_type: 'api' | 'token' | 'requests';
+  /** Official envelope. */
+  rate_limit_info: {
+    status: 'allowed' | 'allowed_warning' | 'rejected';
+    /** Unix seconds when the limit is expected to lift (from Retry-After). */
+    resetsAt?: number;
+    utilization?: number;
+    errorCode?: 'credits_required';
+    canUserPurchaseCredits?: boolean;
+    hasChargeableSavedPaymentMethod?: boolean;
+  };
+  /** @deprecated Pre-alignment flat field (dual-track); use
+   *  rate_limit_info.resetsAt. Still populated at the emit site. */
+  retry_after_ms?: number;
+  /** @deprecated Pre-alignment flat field (dual-track); always 'api'. */
+  limit_type?: 'api' | 'token' | 'requests';
+  /** @deprecated Pre-alignment flat field; never populated. */
   requests_remaining?: number;
 };
 
@@ -1658,9 +1869,26 @@ export type ElicitationHandler = (
   options: { signal: AbortSignal },
 ) => Promise<ElicitationResult>;
 
-/** Result of Query.setMcpServers(). */
+/**
+ * Result of Query.setMcpServers() — official shape (T2-2, 2026-07-05):
+ * `added` / `removed` / `errors` report the real before/after diff of the
+ * server set (errors maps a failed server's name to its connect error).
+ * `Query.setMcpServers()` always populates all three. They are typed OPTIONAL
+ * only during the transition: the internal registry
+ * (src/mcp/registry.ts:248-262) still returns the pre-alignment `{servers}`
+ * shape, which the Query layer augments; once the registry signature is
+ * decoupled these become required and `servers` is removed.
+ */
 export type McpSetServersResult = {
-  servers: McpServerStatus[];
+  /** Server names present after the call but not before. */
+  added?: string[];
+  /** Server names present before the call but not after. */
+  removed?: string[];
+  /** Failed server name -> connect error message. */
+  errors?: Record<string, string>;
+  /** @deprecated Pre-alignment payload (full status list); use
+   *  added/removed/errors, or call mcpServerStatus() for statuses. */
+  servers?: McpServerStatus[];
 };
 
 /** External session store key (options.sessionStore). */
@@ -1693,12 +1921,32 @@ export type SessionMessage = {
   parent_tool_use_id: string | null;
 };
 
-/** Result of Query.rewindFiles(). */
+/**
+ * Result of Query.rewindFiles() — official shape (T2-2, 2026-07-05).
+ * An unknown userMessageId resolves with `{ canRewind: false, error }`
+ * (soft-fail, official signature) instead of throwing; configuration misuse
+ * (checkpointing not enabled) still throws.
+ */
 export type RewindFilesResult = {
-  checkpointId: string;
-  restoredFiles: string[];
-  deletedFiles: string[];
-  dryRun: boolean;
+  /** Whether the rewind target exists and the plan could be (or was) applied. */
+  canRewind: boolean;
+  /** Why the rewind could not run (e.g. no checkpoint for that message id). */
+  error?: string;
+  /** Every file the rewind plan touches (restored + deleted). */
+  filesChanged?: string[];
+  /** Official line-diff stats. NOT computed by this engine (no diff layer
+   *  is bundled) — honestly absent rather than fabricated. */
+  insertions?: number;
+  /** See `insertions` — honestly absent. */
+  deletions?: number;
+  /** @deprecated Pre-alignment field (dual-track); the target message UUID. */
+  checkpointId?: string;
+  /** @deprecated Pre-alignment field (dual-track); use filesChanged. */
+  restoredFiles?: string[];
+  /** @deprecated Pre-alignment field (dual-track); use filesChanged. */
+  deletedFiles?: string[];
+  /** @deprecated Pre-alignment field (dual-track). */
+  dryRun?: boolean;
 };
 
 /** Best-effort external-store write failure surfaced on the stream. */

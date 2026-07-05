@@ -557,6 +557,10 @@ describe('runAgentLoop', () => {
       cacheCreationInputTokens: 0,
       webSearchRequests: 0,
       costUSD: 0,
+      // B2b/T2-4: static window-table estimate (unknown model -> default
+      // 200k) + the actual per-request max_tokens cap the engine sends.
+      contextWindow: 200_000,
+      maxOutputTokens: 1024,
     });
     expect(result.total_cost_usd).toBe(0);
     expect(result.permission_denials).toEqual([]);

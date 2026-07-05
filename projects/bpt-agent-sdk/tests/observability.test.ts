@@ -222,7 +222,13 @@ describe('v0.3 observability union completeness', () => {
       },
       { type: 'system', subtype: 'local_command_output', ...env, content: 'o' },
       { type: 'system', subtype: 'commands_changed', ...env, commands: [] },
-      { type: 'rate_limit_event', ...env, retry_after_ms: 100, limit_type: 'api' },
+      {
+        type: 'rate_limit_event',
+        ...env,
+        rate_limit_info: { status: 'rejected' },
+        retry_after_ms: 100,
+        limit_type: 'api',
+      },
       { type: 'api_retry', ...env, attempt: 1, max_retries: 3 },
       { type: 'auth_status', ...env, status: 'authenticated' },
       { type: 'elicitation_complete', ...env, elicitation_id: 'e', result: 'accepted' },
@@ -286,7 +292,15 @@ describe('v0.3 retry transport->stream bridge (task bucket-1)', () => {
 
     const rle = messages.filter((m) => m.type === 'rate_limit_event');
     expect(rle.length).toBeGreaterThanOrEqual(1);
-    expect((rle[0] as { limit_type: string }).limit_type).toBe('api');
+    // B2b: the official rate_limit_info envelope leads (a retried 429 IS a
+    // rejection; resetsAt derives from the real Retry-After header).
+    const info = (rle[0] as { rate_limit_info: { status: string; resetsAt?: number } })
+      .rate_limit_info;
+    expect(info.status).toBe('rejected');
+    expect(info.resetsAt).toBeGreaterThan(0);
+    // Deprecated dual-track flat fields still populated.
+    expect((rle[0] as { limit_type?: string }).limit_type).toBe('api');
+    expect((rle[0] as { retry_after_ms?: number }).retry_after_ms).toBe(0);
     // The retry event precedes the assistant message + terminal result.
     const idxRle = messages.findIndex((m) => m.type === 'rate_limit_event');
     const idxAsst = messages.findIndex((m) => m.type === 'assistant');

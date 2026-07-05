@@ -24,6 +24,7 @@ import type {
   SDKRunMetrics,
   SDKToolMetrics,
   SDKTurnMetrics,
+  StopReason,
   TextBlockParam,
   ToolResultBlockParam,
   ToolUseBlock,
@@ -38,6 +39,7 @@ import type {
 } from '../internal/contracts.js';
 import { MessageAccumulator } from './accumulator.js';
 import { addUsage, estimateCostUsd, normalizeUsage } from './pricing.js';
+import { contextWindowFor } from './context-window.js';
 import { estimateToolDefsTokens } from './tokens.js';
 import {
   maybeAutoCompact,
@@ -223,6 +225,10 @@ export async function* runAgentLoop(
   // official 2.1.201 acts on complete tool_use blocks even when the cut
   // landed before stop_reason arrived).
   let turnTruncated = false;
+  // Last API stop_reason observed across the run; carried onto error results
+  // (official surface: stop_reason is required on BOTH result arms). Null
+  // until the first assistant turn completes.
+  let lastStopReason: StopReason = null;
   let firstTokenAtMs: number | undefined; // wall-clock of the first content event
   let firstStreamStartMs: number | undefined; // apiStart of the stream that produced it
   let totalCostUsd = 0;
@@ -339,6 +345,9 @@ export async function* runAgentLoop(
     subtype,
     is_error: true,
     errorMessage,
+    // Official surface: stop_reason is required on the error arm too. Report
+    // the last API stop_reason observed, or null when no turn completed.
+    stop_reason: lastStopReason,
     ...(apiErrorStatus !== undefined ? { api_error_status: apiErrorStatus } : {}),
     ...resultBase(),
     // Official-surface parallel: the reference SDK reports error text as a
@@ -362,6 +371,11 @@ export async function* runAgentLoop(
         (prev?.cacheCreationInputTokens ?? 0) + usage.cache_creation_input_tokens,
       webSearchRequests: prev?.webSearchRequests ?? 0,
       costUSD: (prev?.costUSD ?? 0) + cost,
+      // Official ModelUsage fields (T2-4): the static public window table
+      // (an estimate, same provenance as the price table) and the ACTUAL
+      // per-request max_tokens cap this engine sends for this model.
+      contextWindow: contextWindowFor(responseModel),
+      maxOutputTokens: config.maxOutputTokens,
     };
   };
 
@@ -489,6 +503,16 @@ export async function* runAgentLoop(
         retryMessages.push({
           type: 'rate_limit_event',
           ...base,
+          // Official envelope (B2b): this 429 WAS a rejection; resetsAt is
+          // derived from the server's real Retry-After when present. KD-12
+          // trigger semantics unchanged (see the type's JSDoc).
+          rate_limit_info: {
+            status: 'rejected',
+            ...(info.retryAfterMs !== undefined
+              ? { resetsAt: Math.ceil((Date.now() + info.retryAfterMs) / 1000) }
+              : {}),
+          },
+          // Deprecated dual-track flat fields, still populated.
           retry_after_ms: info.retryAfterMs ?? 0,
           limit_type: 'api',
         });
@@ -965,6 +989,7 @@ export async function* runAgentLoop(
       }
 
       numTurns += 1;
+      lastStopReason = assistant.stop_reason;
 
       // --- Yield assistant message + MessageDisplay hooks. ------------------
       yield {
@@ -1130,7 +1155,9 @@ export async function* runAgentLoop(
             subtype: 'success',
             is_error: false,
             result: '',
-            stop_reason: assistant.stop_reason,
+            // Official defer protocol: consumers detect a deferred turn via
+            // stop_reason === 'tool_deferred' + deferred_tool_use.
+            stop_reason: 'tool_deferred',
             deferred_tool_use: batchDefer,
             ...resultBase(),
           };

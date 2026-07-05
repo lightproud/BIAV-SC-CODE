@@ -388,7 +388,12 @@ export type SessionListOptions = {
   dir?: string;
   /** Cap the number of sessions returned (newest first). Omit for all. */
   limit?: number;
-  /** Typed for compat; reading Claude Code's own session store is not supported. */
+  /** Official option name (include sessions from git worktree paths). Typed
+   *  for compat; a no-op here — this store reads only its own JSONL
+   *  directory, so there is no worktree expansion to perform. */
+  includeWorktrees?: boolean;
+  /** @deprecated Pre-alignment misspelling of the official includeWorktrees;
+   *  equally a no-op. */
   includeWorkspace?: boolean;
   env?: Record<string, string | undefined>;
 };
@@ -450,14 +455,15 @@ export async function listSessions(
   return infos;
 }
 
-/** Look up one persisted session by id; null when no transcript exists. */
+/** Look up one persisted session by id; `undefined` when no transcript
+ *  exists (official return shape — pre-B2b versions returned null). */
 export async function getSessionInfo(
   sessionId: string,
   options: SessionListOptions = {},
-): Promise<SDKSessionInfo | null> {
+): Promise<SDKSessionInfo | undefined> {
   const store = new JsonlSessionStore(resolveSessionDir(options));
   const loaded = await store.load(sessionId);
-  if (loaded === null) return null;
+  if (loaded === null) return undefined;
   let fileSize: number | undefined;
   try {
     fileSize = (await stat(store.filePath(sessionId))).size;

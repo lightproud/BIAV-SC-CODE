@@ -287,6 +287,13 @@ describe('FileCheckpointStore', () => {
     await writeFile(target, 'NEW', 'utf8');
 
     const res = await cp.rewind('m1', {});
+    // B2b/T2-2: official fields lead; insertions/deletions honestly absent.
+    expect(res.canRewind).toBe(true);
+    expect(res.error).toBeUndefined();
+    expect(res.filesChanged).toEqual([target]);
+    expect(res.insertions).toBeUndefined();
+    expect(res.deletions).toBeUndefined();
+    // Deprecated dual-track fields still populated.
     expect(res.restoredFiles).toEqual([target]);
     expect(res.deletedFiles).toEqual([]);
     expect(await readFile(target, 'utf8')).toBe('OLD');
@@ -348,12 +355,19 @@ describe('FileCheckpointStore', () => {
     expect(await readFile(target, 'utf8')).toBe('NEW'); // untouched
   });
 
-  it('throws for an unknown checkpoint id', async () => {
+  it('soft-fails for an unknown checkpoint id (official canRewind/error shape)', async () => {
     const cp = makeCheckpoints();
     cp.bind('sess-6');
     cp.beginTurn('m1');
     cp.record(join(dir, 'x.txt'), null);
-    await expect(cp.rewind('nope', {})).rejects.toBeInstanceOf(ConfigurationError);
+    // B2b/T2-2: an unknown id resolves with the official soft-fail shape
+    // instead of throwing (configuration misuse still throws elsewhere).
+    const res = await cp.rewind('nope', {});
+    expect(res.canRewind).toBe(false);
+    expect(res.error).toContain('No file checkpoint found for message nope');
+    expect(res.filesChanged).toBeUndefined();
+    expect(res.restoredFiles).toEqual([]);
+    expect(res.deletedFiles).toEqual([]);
   });
 
   it('survives a fresh bind (resume) via the on-disk index', async () => {

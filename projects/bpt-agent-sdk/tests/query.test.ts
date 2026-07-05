@@ -757,12 +757,13 @@ describe('query() e2e - persistence and resume', () => {
     expect(infos[0]!.lastModified).toBeGreaterThan(0);
 
     const info = await getSessionInfo(sid, { sessionDir });
-    expect(info).not.toBeNull();
+    expect(info).toBeDefined();
     expect(info!.sessionId).toBe(sid);
     expect(info!.cwd).toBe(cwd);
     expect(info!.createdAt).toBeGreaterThan(0);
 
-    expect(await getSessionInfo('no-such-session', { sessionDir })).toBeNull();
+    // B2b: official return shape — undefined (not null) for an unknown id.
+    expect(await getSessionInfo('no-such-session', { sessionDir })).toBeUndefined();
   });
 });
 

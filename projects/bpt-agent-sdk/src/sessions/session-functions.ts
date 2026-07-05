@@ -15,6 +15,8 @@ import { readFile, rm } from 'node:fs/promises';
 import process from 'node:process';
 import { join } from 'node:path';
 
+import { ConfigurationError } from '../errors.js';
+
 import type {
   SessionStore as ExternalSessionStore,
   SessionKey,
@@ -26,6 +28,9 @@ import { encodeProjectKey } from './store-adapter.js';
 
 export type SessionMutationOptions = {
   sessionDir?: string;
+  /** Official option name: the session/project directory. Alias of
+   *  sessionDir (sessionDir wins when both are set). */
+  dir?: string;
   env?: Record<string, string | undefined>;
   /** External store; when set, all operations target it instead of local disk. */
   sessionStore?: ExternalSessionStore;
@@ -33,7 +38,17 @@ export type SessionMutationOptions = {
   cwd?: string;
 };
 
-export type GetSessionMessagesOptions = SessionMutationOptions;
+export type GetSessionMessagesOptions = SessionMutationOptions & {
+  /** Official: maximum number of messages to return. */
+  limit?: number;
+  /** Official: number of messages to skip from the start. */
+  offset?: number;
+};
+
+/** Resolve the official `dir` alias onto sessionDir (sessionDir wins). */
+function sessionDirOf(options: SessionMutationOptions): string | undefined {
+  return options.sessionDir ?? options.dir;
+}
 
 function mainKey(sessionId: string, options: SessionMutationOptions): SessionKey {
   return { projectKey: encodeProjectKey(options.cwd ?? process.cwd()), sessionId };
@@ -45,7 +60,7 @@ async function readLocalEntries(
   options: SessionMutationOptions,
 ): Promise<Record<string, unknown>[]> {
   if (!isSafeSessionId(sessionId)) return [];
-  const dir = resolveSessionsDir(options.sessionDir, options.env);
+  const dir = resolveSessionsDir(sessionDirOf(options), options.env);
   const file = join(dir, `${sessionId}.jsonl`);
   let raw: string;
   try {
@@ -105,16 +120,28 @@ export async function getSessionMessages(
     const m = entryToSessionMessage(e, sessionId);
     if (m !== null) out.push(m);
   }
-  return out;
+  // Official pagination: skip `offset` from the start, cap at `limit`.
+  const offset = options.offset !== undefined && options.offset > 0 ? options.offset : 0;
+  const end =
+    options.limit !== undefined && options.limit >= 0 ? offset + options.limit : undefined;
+  return offset > 0 || end !== undefined ? out.slice(offset, end) : out;
 }
 
-/** Set the human-readable title for a session (last write wins). */
+/** Set the human-readable title for a session (last write wins). The official
+ *  contract requires the title to be non-empty after trimming whitespace; the
+ *  trimmed title is what gets persisted. */
 export async function renameSession(
   sessionId: string,
   title: string,
   options: SessionMutationOptions = {},
 ): Promise<void> {
-  await appendMeta(sessionId, { customTitle: title }, options);
+  const trimmed = typeof title === 'string' ? title.trim() : '';
+  if (trimmed.length === 0) {
+    throw new ConfigurationError(
+      'renameSession: title must be non-empty after trimming whitespace',
+    );
+  }
+  await appendMeta(sessionId, { customTitle: trimmed }, options);
 }
 
 /** Set (or clear, when tag is null) the session tag. */
@@ -136,7 +163,7 @@ async function appendMeta(
     await options.sessionStore.append(mainKey(sessionId, options), [entry as SessionStoreEntry]);
     return;
   }
-  const store = new JsonlSessionStore({ sessionDir: options.sessionDir, env: options.env });
+  const store = new JsonlSessionStore({ sessionDir: sessionDirOf(options), env: options.env });
   store.append(sessionId, entry);
 }
 
@@ -152,7 +179,7 @@ export async function deleteSession(
     return;
   }
   if (!isSafeSessionId(sessionId)) return;
-  const dir = resolveSessionsDir(options.sessionDir, options.env);
+  const dir = resolveSessionsDir(sessionDirOf(options), options.env);
   await rm(join(dir, `${sessionId}.jsonl`), { force: true });
   await rm(join(dir, 'checkpoints', sessionId), { recursive: true, force: true });
 }
@@ -176,7 +203,7 @@ export async function forkSession(
     return newId;
   }
   const entries = await readLocalEntries(sessionId, options);
-  const store = new JsonlSessionStore({ sessionDir: options.sessionDir, env: options.env });
+  const store = new JsonlSessionStore({ sessionDir: sessionDirOf(options), env: options.env });
   for (const e of entries) {
     store.append(newId, rewriteEntry(e, sessionId, newId));
   }
