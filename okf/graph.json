@@ -1,8 +1,8 @@
 {
   "generated": "2026-07-05",
   "stats": {
-    "nodes": 311,
-    "edges": 316
+    "nodes": 314,
+    "edges": 317
   },
   "nodes": [
     {
@@ -1499,7 +1499,7 @@
     {
       "id": "/memory/memory-ext-bpt-guidance-protocol.md",
       "type": "knowledge-pointer",
-      "title": "银芯指导 BPT 协议（v0.4）",
+      "title": "银芯指导 BPT 协议（v0.7）",
       "tags": [
         "memory",
         "data_layer:curated"
@@ -2234,6 +2234,17 @@
       "tier": "search"
     },
     {
+      "id": "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
+      "type": "documentation",
+      "title": "light-selfreport-crosscheck-20260705",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:community-analysis"
+      ],
+      "tier": "search"
+    },
+    {
       "id": "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "type": "documentation",
       "title": "producer-light-evaluation-20260704",
@@ -2520,6 +2531,17 @@
       "tier": "search"
     },
     {
+      "id": "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
+      "type": "documentation",
+      "title": "silver-core-vector-leg-design-20260705",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:proposal"
+      ],
+      "tier": "search"
+    },
+    {
       "id": "/resource/resource-proposal-wiki-prototype-202603.md",
       "type": "documentation",
       "title": "wiki-prototype-202603",
@@ -2567,6 +2589,17 @@
       "id": "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "type": "documentation",
       "title": "bpt-desktop-ui-roadmap-20260705",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "type": "documentation",
+      "title": "bpt-sdk-conformance-suite-design-20260705-r2",
       "tags": [
         "data_layer:curated",
         "deliverable",
@@ -4508,6 +4541,12 @@
       "source": "/resource/resource-community-analysis-jp-discord-insights-202606.md",
       "target": "/characters/130226.md",
       "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
       "rel_type": "mention"
     },
     {

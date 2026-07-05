@@ -90,10 +90,11 @@ site 维护稳定，game 暂缓。实时进度与子项目状态以 `memory/proj
    原自造的「会话蒸馏 + 语义召回 + 做梦」自动环与平台原生记忆定位冲突，已于
    2026-06-14 退役、2026-06-20 整套子系统（TF-IDF 检索 / 知识图谱 / MemRL / 事实库 /
    做梦 / 会话召回）连代码带数据一并删除（决策见 `memory/decisions.md`）；会话钩子现状见 §7.4。
-4. **AI 协作层**：艾瑞卡人格消费知识 + MCP `biav-sc-memory` 服务端 9 工具
+4. **AI 协作层**：艾瑞卡人格消费知识 + MCP `biav-sc-memory` 服务端 10 工具
    （记忆四件：`character_persona` / `record_decision` / `record_lesson` / `current_continuity`，
-   平台原生记忆互补；知识库导航五件：`kb_search` / `kb_get` / `kb_neighbors` / `kb_overview` +
-   `kb_activate`（扩散激活联想召回，Pillar D），见下条）；守密人经会话派发任务。
+   平台原生记忆互补；知识库导航六件：`kb_search` / `kb_get` / `kb_neighbors` / `kb_overview` +
+   `kb_activate`（扩散激活联想召回，Pillar D）+ `kb_vector_search`（长尾语义召回，向量腿，
+   2026-07-05 反转零 ML 后加，见下条），见下条）；守密人经会话派发任务。
 5. **知识库运行时导航**（动态编排，使命#2 底座之上；守密人 2026-06-21 定位公开、2026-07-04 裁定实现）：
    把静态 OKF bundle（§6.1）升级为**艾瑞卡运行时可动态导航的知识库**（思想溯源 OKF「一概念一文件 + 关系图」
    + LLMwiki「LLM 顺图逐跳导航、按需取概念」）。底座是 `scripts/build_kb_index.py` 从 bundle
@@ -199,7 +200,7 @@ git commit = 数据归档提交 / git push = 同步至远端存储 /
 - **腿路由**（三条腿各司其职，decisions.md 2026-07-04「知识库消费模式路由」）：
   - **身份 / 关键词查**（「X 是谁」「含某词」）→ `kb_search` / `kb_get`，或 `rg`（此维度 grep 就够，A/B 实测 KB=grep）；
   - **关系 / 探索 / 溯源题**（「X 与什么相关」「顺这条线还连着什么」「谁跟这个共现」）→ `kb_activate` / `kb_neighbors`（OKF 白盒联想，grep 结构上到不了）；
-  - **模糊语义召回**（向量腿）为 BPT 侧能力，银芯零 ML 不建（§八 8.1）。
+  - **模糊语义召回**（向量腿，换了说法、脊柱与 grep 都到不了的散句）→ `kb_vector_search`（长尾语义召回，`scripts/kb_vector.py` 后端）。**守密人 2026-07-05 裁定(A) 解除零 ML 红线**：银芯自建向量腿作 §八「厚锚撑向量」参照实现（Voyage 嵌入，缺 key 优雅降级回退 `kb_search`）。**反转是 scoped 的**：白盒脊柱仍确定性零 ML，只新增隔离 ML 向量腿；§1.1-HC 防火墙无涉（嵌入银芯自有公开档案）。进度见 `memory/project-status.md`。
 - **各小节性质**：§5.1 只留高频锚点指针（全清单 + 长描述在 OKF）；§5.2 / §5.3 含加载期操作规则与权威指定，OKF 指针替不掉，原文保留。
 
 ### §5.1 角色 + 叙事事实
