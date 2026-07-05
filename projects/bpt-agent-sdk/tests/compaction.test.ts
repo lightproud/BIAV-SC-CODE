@@ -27,6 +27,11 @@ import {
   shouldAutoCompact,
   SUMMARIZER_SYSTEM,
   SUMMARIZER_SYSTEM_PROVENANCE,
+  SUMMARIZER_NO_TOOLS_GUARD,
+  SUMMARIZER_NO_TOOLS_GUARD_PROVENANCE,
+  SUMMARIZER_VERBATIM_SAFETY_CLAUSE,
+  SUMMARIZER_VERBATIM_SAFETY_CLAUSE_PROVENANCE,
+  extractSummaryFromReply,
 } from '../src/engine/compaction.js';
 import { existsSync, readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
@@ -921,6 +926,28 @@ describe('foldViaApi (useApiSummary)', () => {
     expect(seen[0]!.apiMs).toBeGreaterThanOrEqual(0);
   });
 
+  it('attaches the no-tools guard + verbatim-safety clause to the summarizer system (G-SUMMARY)', async () => {
+    const transport = new MockTransport([textReplyEvents('SUMMARY')]);
+    const config = makeConfig(cfg);
+    const view = { messages: [...bigHistory(12), userMsg('/compact')] };
+    await collect(runManualCompact(view, null, makeDeps({ transport }), config, 0, new AbortController().signal));
+    const system = transport.requests[0]?.system as string;
+    expect(system).toContain(SUMMARIZER_SYSTEM);
+    expect(system).toContain(SUMMARIZER_VERBATIM_SAFETY_CLAUSE);
+    expect(system).toContain(SUMMARIZER_NO_TOOLS_GUARD);
+  });
+
+  it('folds only the <summary> block and drops the <analysis> scratchpad (G-SUMMARY)', async () => {
+    const reply = '<analysis>secret scratchpad reasoning</analysis>\n<summary>REAL RECAP</summary>';
+    const transport = new MockTransport([textReplyEvents(reply)]);
+    const config = makeConfig(cfg);
+    const view = { messages: [...bigHistory(12), userMsg('/compact')] };
+    await collect(runManualCompact(view, null, makeDeps({ transport }), config, 0, new AbortController().signal));
+    const text = (view.messages[1]!.content as Array<{ text: string }>)[0]!.text;
+    expect(text).toBe('REAL RECAP');
+    expect(text).not.toContain('secret scratchpad');
+  });
+
   it('routes the summary call to compaction.model (alias resolved) when set (G2)', async () => {
     const cheapCfg = buildCompactionConfig({
       contextWindowTokens: 2000,
@@ -1033,5 +1060,38 @@ describe('summarizer prompt provenance (corpus-sync guard, Track B)', () => {
       .filter((s) => !body.includes(s.slice(0, 60)));
     expect(drifted, `not found in archive:\n${drifted.join('\n')}`).toEqual([]);
     expect(desc.length).toBeGreaterThan(0);
+  });
+
+  const guards = [
+    { text: SUMMARIZER_NO_TOOLS_GUARD, prov: SUMMARIZER_NO_TOOLS_GUARD_PROVENANCE },
+    { text: SUMMARIZER_VERBATIM_SAFETY_CLAUSE, prov: SUMMARIZER_VERBATIM_SAFETY_CLAUSE_PROVENANCE },
+  ];
+  for (const { text, prov } of guards) {
+    it.runIf(existsSync(archive))(`${prov.slug} guard is faithful to its archived source`, () => {
+      const body = norm(stripHeader(readFileSync(join(archive, `${prov.slug}.md`), 'utf8')));
+      const drifted = norm(text)
+        .split(/(?<=[.:])\s+/)
+        .map(norm)
+        .filter((s) => s.length >= 40)
+        .filter((s) => !body.includes(s.slice(0, 60)));
+      expect(drifted, `not found in archive:\n${drifted.join('\n')}`).toEqual([]);
+    });
+  }
+});
+
+describe('extractSummaryFromReply (G-SUMMARY consumer)', () => {
+  it('prefers explicit <summary> block content', () => {
+    expect(extractSummaryFromReply('<analysis>x</analysis><summary>THE RECAP</summary>')).toBe(
+      'THE RECAP',
+    );
+  });
+  it('drops an <analysis> scratchpad when no <summary> block is present', () => {
+    expect(extractSummaryFromReply('<analysis>secret</analysis>\nThe recap.')).toBe('The recap.');
+  });
+  it('is a strict superset of the old strip: a plain-text reply passes through', () => {
+    expect(extractSummaryFromReply('PLAIN SUMMARY')).toBe('PLAIN SUMMARY');
+  });
+  it('strips stray <summary> tags with no analysis block', () => {
+    expect(extractSummaryFromReply('<summary>Recap here</summary>')).toBe('Recap here');
   });
 });

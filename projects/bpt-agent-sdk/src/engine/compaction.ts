@@ -119,6 +119,66 @@ export const SUMMARIZER_SYSTEM_PROVENANCE = {
   faithful: true,
 } as const;
 
+/**
+ * No-tools guard — verbatim OPEN reproduction of
+ * agent-prompt-summarization-no-tools-guard. Appended to the summarizer system
+ * prompt at the foldViaApi call site (SUMMARIZER_SYSTEM stays byte-identical).
+ * The summarization fold wires NO tools, so a tool_use reply is a real failure
+ * mode (it yields non-text blocks and forces the buildRecap fallback); this
+ * guard tells the model to answer in plain text only. Held to the archive by a
+ * corpus-sync guard in tests/compaction.test.ts.
+ */
+export const SUMMARIZER_NO_TOOLS_GUARD = [
+  'CRITICAL: Respond with TEXT ONLY. Do NOT call any tools.',
+  '',
+  '- Do NOT use Read, Bash, Grep, Glob, Edit, Write, or ANY other tool.',
+  '- You already have all the context you need in the conversation above.',
+  '- Tool calls will be REJECTED and will waste your only turn — you will fail the task.',
+  '- Your entire response must be plain text: an <analysis> block followed by a <summary> block.',
+].join('\n');
+
+/** Provenance for the no-tools guard surface. */
+export const SUMMARIZER_NO_TOOLS_GUARD_PROVENANCE = {
+  slug: 'agent-prompt-summarization-no-tools-guard',
+  faithful: true,
+} as const;
+
+/**
+ * Verbatim-preservation safety clause — verbatim OPEN reproduction of the
+ * security-constraint preservation rule in system-prompt-partial-compaction-
+ * instructions. Ensures user-stated security constraints survive the fold so
+ * they keep applying after compaction. Held to the archive by a corpus-sync
+ * guard in tests/compaction.test.ts.
+ */
+export const SUMMARIZER_VERBATIM_SAFETY_CLAUSE =
+  'Note any security-relevant instructions or constraints the user stated (e.g., sensitive files or data to avoid, operations that must not be performed, credential or secret handling rules). These MUST be preserved verbatim in the summary so they continue to apply after compaction.';
+
+/** Provenance for the verbatim-preservation safety clause surface. */
+export const SUMMARIZER_VERBATIM_SAFETY_CLAUSE_PROVENANCE = {
+  slug: 'system-prompt-partial-compaction-instructions',
+  faithful: true,
+} as const;
+
+/**
+ * Extract the fold text from a summarizer reply, honoring the no-tools guard's
+ * declared output contract (an <analysis> scratchpad followed by a <summary>
+ * block). Prefers explicit <summary> content; otherwise drops any <analysis>
+ * scratchpad and strips stray <summary> tags. When the reply carries a
+ * well-formed <summary> block, that block IS the summary (any stray text outside
+ * it is intentionally dropped — the guard contract puts the summary in that
+ * block). For a reply with NO <summary> block it is a strict superset of the old
+ * `.replace(/<\/?summary>/gi,'').trim()`, so plain-text replies pass through
+ * unchanged.
+ */
+export function extractSummaryFromReply(text: string): string {
+  const m = /<summary>([\s\S]*?)<\/summary>/i.exec(text);
+  if (m) return (m[1] ?? '').trim();
+  return text
+    .replace(/<analysis>[\s\S]*?<\/analysis>/gi, '')
+    .replace(/<\/?summary>/gi, '')
+    .trim();
+}
+
 // ---------------------------------------------------------------------------
 // Config
 // ---------------------------------------------------------------------------
@@ -394,8 +454,18 @@ async function foldViaApi(
   signal: AbortSignal,
   onSummaryCall: SummaryCallSink | undefined,
 ): Promise<APIMessageParam[]> {
-  const system =
-    SUMMARIZER_SYSTEM + (customInstructions ? '\n' + customInstructions : '');
+  // Ordered assembly: structure -> what-to-preserve (security constraints) ->
+  // output/tool discipline (no-tools guard) last -> user custom instructions.
+  // SUMMARIZER_SYSTEM stays byte-identical; the guards live in their own
+  // constants so the existing provenance/byte-golden tests are untouched.
+  const system = [
+    SUMMARIZER_SYSTEM,
+    SUMMARIZER_VERBATIM_SAFETY_CLAUSE,
+    SUMMARIZER_NO_TOOLS_GUARD,
+    customInstructions ?? '',
+  ]
+    .filter((s) => s.length > 0)
+    .join('\n\n');
   // Summarization is cheap and mechanical: route it to compaction.model (e.g.
   // Haiku) when set, resolving a short alias, else the session model.
   const summaryModel = resolveModelAlias(config.compaction?.model, config.model);
@@ -419,14 +489,14 @@ async function foldViaApi(
     const final = acc.finalize();
     const apiMs = Date.now() - started;
     onSummaryCall?.(summaryModel, normalizeUsage(final.usage), apiMs);
-    const summaryText = final.content
+    const rawSummary = final.content
       .filter((b): b is { type: 'text'; text: string; citations?: unknown[] | null } => b.type === 'text')
       .map((b) => b.text)
-      .join('')
-      // Strip any <summary></summary> wrapper (the official prompt requests one;
-      // this SDK folds the raw summary text, so the tags are removed defensively).
-      .replace(/<\/?summary>/gi, '')
-      .trim();
+      .join('');
+    // Honor the no-tools guard's declared contract (<analysis> then <summary>):
+    // prefer explicit <summary> content, else drop the <analysis> scratchpad.
+    // Strict superset of the old tag-strip, so a plain-text reply is unchanged.
+    const summaryText = extractSummaryFromReply(rawSummary);
     const text = summaryText.length > 0 ? summaryText : buildRecap(prefix);
     return [
       { role: 'user', content: summaryUserContent(customInstructions) },

@@ -26,6 +26,8 @@ export {
   generateSessionTitle,
   generateTitleAndBranch,
   generateSessionName,
+  generateAwaySummary,
+  parseAwaySummary,
   normalizeBranch,
   COMMAND_INJECTION_TOKEN,
   DEFAULT_UTILITY_MODEL,
@@ -40,6 +42,26 @@ export {
   type UtilityCallOptions,
   type GeneratorProvenance,
 } from './generators/index.js';
+export {
+  // v0.6 three-state adversarial verifier (CONFIRMED / PLAUSIBLE / REFUTED).
+  adversarialVerify,
+  runVerification,
+  parseVerdict,
+  buildVerifierUserTurn,
+  VERIFIER_DEFAULT_MODEL,
+  SAFE_VERDICT,
+  type Verdict,
+  type Finding,
+  type VerificationResult,
+} from './verifier/index.js';
+export {
+  VERIFIER_PROVENANCE,
+  VERIFY_VERDICT_SYSTEM,
+  THREE_STATE_VERDICT_DEFINITIONS,
+  RECALL_BIAS_GUIDANCE,
+  VERIFY_KEEP_RULE,
+  type VerifierProvenance,
+} from './verifier/prompts.js';
 export {
   AbortError,
   APIConnectionError,

@@ -13,14 +13,18 @@ import {
   classifyBackgroundState,
   detectCommandPrefix,
   extractJsonObject,
+  generateAwaySummary,
   generateSessionName,
   generateSessionTitle,
   generateTitleAndBranch,
   normalizeBranch,
+  parseAwaySummary,
   parseBackgroundState,
   parseCommandPrefix,
 } from '../src/generators/index.js';
 import {
+  AWAY_SUMMARY_PROVENANCE,
+  AWAY_SUMMARY_SYSTEM,
   BACKGROUND_STATE_SYSTEM,
   COMMAND_PREFIX_PROVENANCE,
   COMMAND_PREFIX_SYSTEM,
@@ -257,6 +261,33 @@ describe('generators over a mock transport', () => {
     expect(name).toBe('fix-login-bug');
   });
 
+  it('generateAwaySummary sends the tail as the user turn at the default model', async () => {
+    const t = new MockTransport([
+      textReplyEvents('Refactoring the auth module; next, run the test suite.'),
+    ]);
+    const recap = await generateAwaySummary('...transcript tail...', { transport: t });
+    expect(recap).toBe('Refactoring the auth module; next, run the test suite.');
+    expect(t.requests[0]?.system).toBe(AWAY_SUMMARY_SYSTEM);
+    expect(t.requests[0]?.messages[0]).toEqual({ role: 'user', content: '...transcript tail...' });
+    expect(t.requests[0]?.temperature).toBe(0);
+    expect(t.requests[0]?.model).toBe('claude-haiku-4-5');
+  });
+});
+
+describe('parseAwaySummary', () => {
+  it('strips code fences and markdown emphasis/headings', () => {
+    expect(parseAwaySummary('```\n## Goal: **fix** the `bug`\n```')).toBe('Goal: fix the bug');
+  });
+  it('collapses multi-line replies to a single line', () => {
+    expect(parseAwaySummary('Line one.\nLine two.')).toBe('Line one. Line two.');
+  });
+  it('trims wrapping quotes', () => {
+    expect(parseAwaySummary('"Fixing the parser."')).toBe('Fixing the parser.');
+  });
+  it('passes a clean single-sentence reply through', () => {
+    expect(parseAwaySummary('Running the migration next.')).toBe('Running the migration next.');
+  });
+
   it('a bare-string reply still yields a usable title (fallback path)', async () => {
     const t = new MockTransport([textReplyEvents('Fix the flaky test')]);
     const title = await generateSessionTitle('...', { transport: t });
@@ -312,10 +343,11 @@ describe('generator prompt provenance (corpus-sync guard, Track B parity)', () =
     { prompt: SESSION_TITLE_SYSTEM, prov: SESSION_TITLE_PROVENANCE },
     { prompt: TITLE_AND_BRANCH_SYSTEM, prov: TITLE_AND_BRANCH_PROVENANCE },
     { prompt: SESSION_NAME_SYSTEM, prov: SESSION_NAME_PROVENANCE },
+    { prompt: AWAY_SUMMARY_SYSTEM, prov: AWAY_SUMMARY_PROVENANCE },
   ];
 
   it('the provenance table has one entry per reproduced face, all faithful', () => {
-    expect(Object.keys(GENERATOR_PROVENANCE)).toHaveLength(5);
+    expect(Object.keys(GENERATOR_PROVENANCE)).toHaveLength(6);
     for (const p of Object.values(GENERATOR_PROVENANCE)) {
       expect(p.faithful).toBe(true);
       expect(p.slug.length).toBeGreaterThan(0);

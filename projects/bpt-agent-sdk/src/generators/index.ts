@@ -20,6 +20,7 @@
  */
 
 import {
+  AWAY_SUMMARY_SYSTEM,
   BACKGROUND_STATE_SYSTEM,
   COMMAND_PREFIX_SYSTEM,
   SESSION_NAME_SYSTEM,
@@ -279,6 +280,43 @@ export async function generateSessionName(
 }
 
 // ---------------------------------------------------------------------------
+// 6. Away-summary generator ("while you were away" recap)
+// ---------------------------------------------------------------------------
+
+/**
+ * Generate an under-40-word, 1-2 plain-sentence recap of a backgrounded run for
+ * a "welcome back" surface, from the transcript tail. Same away/notification
+ * family as classifyBackgroundState; the recap capability ships as this exported
+ * function alongside its prompt. The reply is normalized to plain text.
+ */
+export async function generateAwaySummary(
+  tail: string,
+  opts: UtilityCallOptions = {},
+): Promise<string> {
+  const raw = await runUtilityCall(AWAY_SUMMARY_SYSTEM, tail, opts, 128);
+  return parseAwaySummary(raw);
+}
+
+/**
+ * Pure parser for the away-summary reply (unit-testable, no I/O). Enforces the
+ * "no markdown, 1-2 plain sentences" contract by stripping code fences, heading
+ * markers, emphasis, and wrapping quotes, and collapsing whitespace/newlines to
+ * a single line. Non-lossy on words (no hard truncation — that is a model-side
+ * instruction, not something to silently enforce here).
+ */
+export function parseAwaySummary(raw: string): string {
+  return raw
+    .replace(/```[a-z]*\n?/gi, '')
+    .replace(/```/g, '')
+    .replace(/^\s*#{1,6}\s+/gm, '')
+    .replace(/[*_`]+/g, '')
+    .replace(/^["'“”]+|["'“”]+$/g, '')
+    .replace(/\s*\n+\s*/g, ' ')
+    .replace(/\s{2,}/g, ' ')
+    .trim();
+}
+
+// ---------------------------------------------------------------------------
 // Shared helpers
 // ---------------------------------------------------------------------------
 
@@ -313,4 +351,5 @@ export {
   SESSION_TITLE_SYSTEM,
   TITLE_AND_BRANCH_SYSTEM,
   SESSION_NAME_SYSTEM,
+  AWAY_SUMMARY_SYSTEM,
 } from './prompts.js';

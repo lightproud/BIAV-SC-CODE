@@ -169,7 +169,16 @@ shell（BashOutput 增量读 + 按行 filter / KillShell 击杀，进程组 SIGT
 ④ `generateTitleAndBranch`（标题 + `claude/` 分支名，分支强规整为合法 kebab）⑤ `generateSessionName`（`/rename` kebab 名）。
 每件 = 忠实复现提示词（`src/generators/prompts.ts`，5 面 provenance + corpus-sync 逐锚点守护）+ 一次性 utility 调用运行时
 （`runtime.ts`，默认 Haiku 便宜模型、temperature 0 确定性、注入式 transport 可离线单测）+ 健壮解析器（`extractJsonObject` 认字符串内花括号/转义）。
-公开 API 走 `src/index.ts` 导出 → BPT Desktop 等消费方即真实调用方（红线满足：能力与提示词一并发货）。**831 单测全绿**（+39）。
+公开 API 走 `src/index.ts` 导出 → BPT Desktop 等消费方即真实调用方（红线满足：能力与提示词一并发货）。**838 单测全绿**（+46）。
+
+**v0.6 剩余 Batch 1（守密人 2026-07-05「ultracode 推进 V0.6 剩余」裁定，已落）**：经 ultracode 8 代理工作流（6 设计 + 综合 + 红线批判 ADJUST）
+产执行路线图 `Public-Info-Pool/Resource/proposal/bpt-sdk-v06-remaining-execution-roadmap-20260705.md`（Tier 1 残项 + Tier 2/3 依赖排序、逐项过红线），
+首批实现两件：① **G-VERIFY**（`src/verifier/`）三态验证器 CONFIRMED/PLAUSIBLE/REFUTED + recall-biased 忠实复现（part-4/part-5/skill keep-rule，
+3 面 provenance + corpus-sync）；`adversarialVerify(finding)` 公开 API；`parseVerdict` **fail-closed**（乱码/歧义/空→REFUTED、绝不 keep 未验证发现）；
+默认 haiku（批判揪出 sonnet 未测赌注、改齐 utility 默认）、可覆盖。② **G-SUMMARY**：compaction 摘要器追加 no-tools 守卫 + verbatim 安全保全条
+（忠实复现，SUMMARIZER_SYSTEM 字节不变、旧金标保绿）+ `extractSummaryFromReply`（认 `<analysis>/<summary>` 契约、旧行为严格超集）；`generateAwaySummary`（第 6 面生成器）。
+**875 单测全绿**（+37）。红线批判确认零红线/零未发货能力/零黑池/零净室问题。3 个无消费子系统的 hook 分类器（context-tip/memory-file-attach）
+经批判**正确降级为 design-only**（未发货红线）；G-HOOKCOND/G-SANDBOX（ship-now 但接线面大）与编排/DSL/沙箱/技能（需工具本体）留后续批。
 
 **缓存稳定前缀优化（v0.5+，守密人 2026-07-04「优化」裁定，已落地）**：裸对比 run #35 发现本 SDK 短任务缓存命中
 0%、长任务 45%——诊断为 cwd 焊进系统提示正中间致缓存前缀逐任务变（`prompts.ts`）。修法：系统提示拆

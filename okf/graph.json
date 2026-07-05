@@ -1,8 +1,8 @@
 {
   "generated": "2026-07-05",
   "stats": {
-    "nodes": 313,
-    "edges": 317
+    "nodes": 315,
+    "edges": 319
   },
   "nodes": [
     {
@@ -2234,6 +2234,17 @@
       "tier": "search"
     },
     {
+      "id": "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
+      "type": "documentation",
+      "title": "light-selfreport-crosscheck-20260705",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:community-analysis"
+      ],
+      "tier": "search"
+    },
+    {
       "id": "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "type": "documentation",
       "title": "producer-light-evaluation-20260704",
@@ -2501,6 +2512,17 @@
       "id": "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "type": "documentation",
       "title": "bpt-sdk-roadmap-20260705",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:proposal"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "type": "documentation",
+      "title": "bpt-sdk-v06-remaining-execution-roadmap-20260705",
       "tags": [
         "data_layer:curated",
         "deliverable",
@@ -4533,6 +4555,12 @@
       "rel_type": "mention"
     },
     {
+      "source": "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
       "source": "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
@@ -4828,6 +4856,12 @@
     },
     {
       "source": "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
       "rel_type": "mention"

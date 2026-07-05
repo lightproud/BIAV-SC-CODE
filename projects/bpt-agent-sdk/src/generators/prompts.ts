@@ -388,6 +388,24 @@ export const SESSION_NAME_PROVENANCE: GeneratorProvenance = {
 };
 
 // ---------------------------------------------------------------------------
+// 6. Away-summary generator ("while you were away" recap)
+// ---------------------------------------------------------------------------
+
+/**
+ * System prompt for the "welcome back" recap: a <40-word, 1-2 plain-sentence
+ * summary of goal + current task + next action, fired when the user returns to
+ * a backgrounded run. Verbatim body of agent-prompt-away-summary-generation.
+ */
+export const AWAY_SUMMARY_SYSTEM =
+  'The user stepped away and is coming back. Recap in under 40 words, 1-2 plain sentences, no markdown. Lead with the overall goal and current task, then the one next action. Skip root-cause narrative, fix internals, secondary to-dos, and em-dash tangents.';
+
+/** Provenance for the away-summary generator surface. */
+export const AWAY_SUMMARY_PROVENANCE: GeneratorProvenance = {
+  slug: 'agent-prompt-away-summary-generation',
+  faithful: true,
+};
+
+// ---------------------------------------------------------------------------
 // Aggregate provenance table (Track B parity — one entry per reproduced face)
 // ---------------------------------------------------------------------------
 
@@ -398,4 +416,5 @@ export const GENERATOR_PROVENANCE: Record<string, GeneratorProvenance> = {
   sessionTitle: SESSION_TITLE_PROVENANCE,
   titleAndBranch: TITLE_AND_BRANCH_PROVENANCE,
   sessionName: SESSION_NAME_PROVENANCE,
+  awaySummary: AWAY_SUMMARY_PROVENANCE,
 };

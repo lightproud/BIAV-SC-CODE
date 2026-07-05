@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 313,
-    "edges": 317,
-    "terms": 5396,
+    "concepts": 315,
+    "edges": 319,
+    "terms": 5417,
     "by_type": {
       "character": 72,
       "dataset": 109,
-      "documentation": 69,
+      "documentation": 71,
       "knowledge-pointer": 43,
       "reference": 17,
       "research": 3
@@ -26,7 +26,7 @@
       "memory": 47,
       "news-output": 23,
       "projects": 18,
-      "resource": 50,
+      "resource": 52,
       "sources": 17,
       "story": 11,
       "unpacked": 13,
@@ -34,7 +34,7 @@
     },
     "by_tier": {
       "skeleton": 131,
-      "search": 182
+      "search": 184
     }
   },
   "sections": {
@@ -68,7 +68,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 50
+      "count": 52
     },
     "sources": {
       "index": "/sources/index.md",
@@ -968,7 +968,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 72
+      "degree": 74
     },
     "/characters/15604.md": {
       "type": "character",
@@ -2852,6 +2852,20 @@
       "tier": "search",
       "degree": 2
     },
+    "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md": {
+      "type": "documentation",
+      "title": "light-selfreport-crosscheck-20260705",
+      "description": "未使用输出展示层。（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/community-analysis/light-selfreport-crosscheck-20260705.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:community-analysis"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 1
+    },
     "/resource/resource-community-analysis-producer-light-evaluation-20260704.md": {
       "type": "documentation",
       "title": "producer-light-evaluation-20260704",
@@ -3202,6 +3216,20 @@
       "tier": "search",
       "degree": 1
     },
+    "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md": {
+      "type": "documentation",
+      "title": "bpt-sdk-v06-remaining-execution-roadmap-20260705",
+      "description": "**首批（本会话）已实现并全绿**：G-VERIFY（三态验证器）+ G-SUMMARY（摘要安全守卫 + away-summary）。详见下「## 已落」。（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/proposal/bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:proposal"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 1
+    },
     "/resource/resource-proposal-internal-ai-platform-plan-202604.md": {
       "type": "documentation",
       "title": "internal-ai-platform-plan-202604",
@@ -3541,7 +3569,7 @@
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 2518 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 2521 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -3611,7 +3639,7 @@
     "/sources/reddit.md": {
       "type": "dataset",
       "title": "reddit 社区数据源",
-      "description": "reddit 平台采集档案，全量 3455 条，健康度 active。",
+      "description": "reddit 平台采集档案，全量 3473 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/reddit/",
       "tags": [
         "data_layer:full_archive",
@@ -3639,7 +3667,7 @@
     "/sources/steam.md": {
       "type": "dataset",
       "title": "steam 社区数据源",
-      "description": "steam 平台采集档案，全量 5101 条，健康度 active。",
+      "description": "steam 平台采集档案，全量 5102 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/review/",
       "tags": [
         "data_layer:full_archive",
@@ -3709,7 +3737,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 9007 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 9018 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -3723,7 +3751,7 @@
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 6256 条，健康度 active。",
+      "description": "weixin 平台采集档案，全量 6276 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -3737,7 +3765,7 @@
     "/sources/youtube.md": {
       "type": "dataset",
       "title": "youtube 社区数据源",
-      "description": "youtube 平台采集档案，全量 2598 条，健康度 active。",
+      "description": "youtube 平台采集档案，全量 2602 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -3751,7 +3779,7 @@
     "/sources/youtube_comments.md": {
       "type": "dataset",
       "title": "youtube_comments 社区数据源",
-      "description": "youtube_comments 平台采集档案，全量 1979 条，健康度 active。",
+      "description": "youtube_comments 平台采集档案，全量 1993 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube_comments/",
       "tags": [
         "data_layer:full_archive",
@@ -5755,6 +5783,11 @@
         "mention"
       ],
       [
+        "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
         "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
         "提及:艾瑞卡",
         "mention"
@@ -5826,6 +5859,11 @@
       ],
       [
         "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
         "提及:艾瑞卡",
         "mention"
       ],
@@ -7299,6 +7337,13 @@
         "mention"
       ]
     ],
+    "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
     "/resource/resource-community-analysis-producer-light-evaluation-20260704.md": [
       [
         "/characters/15603.md",
@@ -7579,6 +7624,13 @@
       ]
     ],
     "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
+    "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md": [
       [
         "/characters/15603.md",
         "提及:艾瑞卡",
@@ -8246,6 +8298,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -8271,6 +8324,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -8449,6 +8503,7 @@
       "/memory/memory-research-community-analysis-2026-05-18-26.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -8662,6 +8717,9 @@
     ],
     "awakerpotency": [
       "/wiki-data/wiki-data-potency.md"
+    ],
+    "away": [
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
     ],
     "b3": [
       "/memory/memory-ext-wiki-characters-schema-v1.md"
@@ -8897,6 +8955,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
@@ -9120,6 +9179,7 @@
       "/news-output/news-output-youtube.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -9291,6 +9351,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -9316,6 +9377,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -9471,6 +9533,9 @@
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md"
     ],
+    "crosscheck": [
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md"
+    ],
     "css": [
       "/projects/site-design-morimens-design-tokens.md"
     ],
@@ -9548,6 +9613,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -9573,6 +9639,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -9831,6 +9898,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -9856,6 +9924,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -9975,6 +10044,7 @@
     "deliverable": [
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -10000,6 +10070,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -10238,6 +10309,9 @@
     ],
     "event": [
       "/memory/memory-ext-collab-event-playbook.md"
+    ],
+    "execution": [
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
     ],
     "extracted": [
       "/extracted/extracted-art-assets.md",
@@ -10844,6 +10918,7 @@
       "/memory/memory-ext-research-best-wiki-features.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -10869,6 +10944,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -11267,6 +11343,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -11292,6 +11369,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -11507,6 +11585,7 @@
     ],
     "light": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md",
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md"
     ],
@@ -11726,6 +11805,7 @@
       "/projects/releases-treasure-map.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -11748,6 +11828,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
@@ -12325,6 +12406,7 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -12350,6 +12432,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -12611,6 +12694,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md"
@@ -12645,6 +12729,7 @@
       "/projects/bpt-sdk-doc-compat.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -12670,6 +12755,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -12917,6 +13003,9 @@
       "/projects/extracted-lua-inventory.md",
       "/projects/releases-treasure-map.md"
     ],
+    "remaining": [
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
+    ],
     "repo": [
       "/memory/memory-strategy-repo-slimming-plan.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
@@ -12962,6 +13051,7 @@
       "/README.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -12987,6 +13077,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -13044,6 +13135,7 @@
     ],
     "roadmap": [
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md"
     ],
     "role": [
@@ -13157,6 +13249,7 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -13170,6 +13263,9 @@
     ],
     "self": [
       "/story/story_search_index.md"
+    ],
+    "selfreport": [
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md"
     ],
     "sentinel": [
       "/assets/assets-sentinel-baseline.md"
@@ -13494,7 +13590,8 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
     ],
     "summary": [
-      "/memory/memory-ext-bpt-architecture-summary-template.md"
+      "/memory/memory-ext-bpt-architecture-summary-template.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
     ],
     "summon": [
       "/characters/125346.md",
@@ -13688,6 +13785,7 @@
     "topic": [
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -13713,6 +13811,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -13887,6 +13986,9 @@
       "/memory/memory-ext-bpt-guidance-protocol.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
+    "v06": [
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
+    ],
     "v1": [
       "/memory/contribution-protocol.md",
       "/memory/memory-ext-active-contribution-protocol.md",
@@ -13916,6 +14018,9 @@
     ],
     "verification": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-build-verification.md"
+    ],
+    "verify": [
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
     ],
     "version": [
       "/assets/assets-version.md",
@@ -14320,6 +14425,9 @@
     "三层": [
       "/projects/doc-testing-strategy.md"
     ],
+    "三态": [
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
+    ],
     "三条": [
       "/README.md"
     ],
@@ -14618,6 +14726,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -14643,6 +14752,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -14841,6 +14951,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -14866,6 +14977,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -15104,6 +15216,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -15129,6 +15242,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -16178,6 +16292,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -16203,6 +16318,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -16745,6 +16861,7 @@
       "/memory/memory-ext-active-contribution-protocol.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
       "/memory/memory-strategy-repo-slimming-plan.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
     ],
     "会转": [
@@ -17045,6 +17162,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -17070,6 +17188,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -17269,6 +17388,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -17294,6 +17414,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -17586,7 +17707,8 @@
       "/characters/15580.md",
       "/characters/15582.md",
       "/extracted/extracted-readme.md",
-      "/memory/memory-ext-workflow-api-key-audit.md"
+      "/memory/memory-ext-workflow-api-key-audit.md",
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md"
     ],
     "使莱": [
       "/characters/15604.md"
@@ -17915,6 +18037,9 @@
     "全功": [
       "/memory/capability-index.md"
     ],
+    "全守": [
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
+    ],
     "全平": [
       "/news-output/news-output-all.md"
     ],
@@ -17930,6 +18055,9 @@
     ],
     "全策": [
       "/memory/memory-ext-active-contribution-protocol.md"
+    ],
+    "全绿": [
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
     ],
     "全身": [
       "/characters/125346.md",
@@ -18426,6 +18554,7 @@
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/sources/appstore.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -18960,6 +19089,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -18985,6 +19115,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -21884,6 +22015,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -21909,6 +22041,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -22612,6 +22745,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -22637,6 +22771,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -22941,6 +23076,9 @@
     "宇宙": [
       "/memory/memory-ext-collab-event-playbook.md"
     ],
+    "守卫": [
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
+    ],
     "守密人": [
       "/README.md",
       "/characters/122587.md",
@@ -22971,7 +23109,8 @@
       "/characters/15591.md"
     ],
     "安全": [
-      "/memory/memory-ext-active-contribution-protocol.md"
+      "/memory/memory-ext-active-contribution-protocol.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
     ],
     "安武": [
       "/characters/95786.md"
@@ -23166,6 +23305,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -23191,6 +23331,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -23330,7 +23471,8 @@
     "实现": [
       "/README.md",
       "/projects/project-bpt-agent-sdk.md",
-      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
     ],
     "实脱": [
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md"
@@ -23984,6 +24126,7 @@
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/sources/appstore.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -24148,6 +24291,9 @@
     "已固": [
       "/resource/resource-community-analysis-jp-discord-insights-202606.md"
     ],
+    "已实": [
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
+    ],
     "已封": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-design.md"
     ],
@@ -24157,6 +24303,9 @@
     "已有": [
       "/memory/memory-research-discord-archive-backfill-conflict.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
+    ],
+    "已落": [
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
     ],
     "已退": [
       "/memory/decisions-archive.md"
@@ -24419,7 +24568,8 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
     "并全": [
-      "/news-output/news-output-newsjs.md"
+      "/news-output/news-output-newsjs.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
     ],
     "并变": [
       "/characters/15583.md",
@@ -25232,6 +25382,9 @@
     ],
     "态适": [
       "/characters/15601.md"
+    ],
+    "态验": [
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
     ],
     "怒火": [
       "/characters/15581.md"
@@ -26675,6 +26828,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -26700,6 +26854,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -27149,6 +27304,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -27174,6 +27330,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -27438,6 +27595,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -27463,6 +27621,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -27779,6 +27938,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -27804,6 +27964,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -28025,6 +28186,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -28050,6 +28212,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -29374,6 +29537,9 @@
     "木下": [
       "/characters/15564.md"
     ],
+    "未使": [
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md"
+    ],
     "未发": [
       "/memory/memory-ext-bpt-architecture-summary-template.md"
     ],
@@ -29411,7 +29577,8 @@
       "/projects/entry-readme.md"
     ],
     "本会": [
-      "/memory/memory-strategy-repo-slimming-plan.md"
+      "/memory/memory-strategy-repo-slimming-plan.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
     ],
     "本体": [
       "/README.md",
@@ -29540,6 +29707,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -29565,6 +29733,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -29911,6 +30080,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -29936,6 +30106,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -30426,6 +30597,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -30451,6 +30623,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -30597,6 +30770,7 @@
       "/extracted/extracted-readme.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -30622,6 +30796,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -31027,6 +31202,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -31052,6 +31228,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -31358,6 +31535,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -31383,6 +31561,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -32805,6 +32984,9 @@
     "现实": [
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md"
     ],
+    "现并": [
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
+    ],
     "现有": [
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md"
     ],
@@ -33126,6 +33308,7 @@
       "/characters/15574.md"
     ],
     "用输": [
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/sources/appstore.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -34575,6 +34758,7 @@
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/sources/appstore.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -36653,6 +36837,9 @@
     "要向": [
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
     ],
+    "要安": [
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
+    ],
     "要时": [
       "/characters/15573.md"
     ],
@@ -36684,6 +36871,9 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md"
+    ],
+    "见下": [
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
     ],
     "见你": [
       "/characters/95786.md"
@@ -37058,6 +37248,9 @@
     "证世": [
       "/characters/77926.md"
     ],
+    "证器": [
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
+    ],
     "证场": [
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md"
     ],
@@ -37286,6 +37479,9 @@
     ],
     "详情": [
       "/README.md"
+    ],
+    "详见": [
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
     ],
     "语义": [
       "/sources/appstore.md",
@@ -37746,6 +37942,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -37771,6 +37968,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -38083,6 +38281,7 @@
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/sources/appstore.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -38350,6 +38549,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -38375,6 +38575,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -39272,6 +39473,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -39297,6 +39499,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -39490,6 +39693,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -39515,6 +39719,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -40314,6 +40519,9 @@
     "馈走": [
       "/memory/memory-ext-bpt-guidance-log.md"
     ],
+    "首批": [
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
+    ],
     "首来": [
       "/characters/15582.md"
     ],
@@ -40346,6 +40554,7 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-build-verification.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-phase-d-plan.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md"
     ],
     "骨架": [
@@ -40590,6 +40799,7 @@
       "/community/community-youtube.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -40821,6 +41031,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
@@ -40908,6 +41119,7 @@
     "community": [
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -40988,6 +41200,9 @@
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md"
     ],
+    "crosscheck": [
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md"
+    ],
     "css": [
       "/projects/site-design-morimens-design-tokens.md"
     ],
@@ -41062,6 +41277,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -41087,6 +41303,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -41338,6 +41555,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -41363,6 +41581,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -41473,6 +41692,7 @@
     "deliverable": [
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -41498,6 +41718,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -41679,6 +41900,9 @@
     ],
     "evaluation": [
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md"
+    ],
+    "execution": [
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
     ],
     "extracted": [
       "/extracted/extracted-readme.md"
@@ -42089,6 +42313,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -42114,6 +42339,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -42236,6 +42462,7 @@
       "/memory/lessons-learned.md"
     ],
     "light": [
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md"
     ],
     "lines": [
@@ -42719,6 +42946,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md"
@@ -42770,6 +42998,9 @@
     "releases": [
       "/memory/memory-strategy-repo-slimming-plan.md",
       "/projects/releases-treasure-map.md"
+    ],
+    "remaining": [
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
     ],
     "repo": [
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
@@ -42824,6 +43055,7 @@
     ],
     "roadmap": [
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md"
     ],
     "role": [
@@ -42897,6 +43129,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -42905,6 +43138,9 @@
     ],
     "search": [
       "/story/story_search_index.md"
+    ],
+    "selfreport": [
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md"
     ],
     "sentinel": [
       "/assets/assets-sentinel-baseline.md"
@@ -43083,6 +43319,7 @@
     "topic": [
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
+      "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
@@ -43108,6 +43345,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
@@ -43222,6 +43460,9 @@
     "v0": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-desktop-design-spec-ref.md",
       "/memory/memory-ext-bpt-guidance-protocol.md"
+    ],
+    "v06": [
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
     ],
     "v1": [
       "/memory/memory-ext-biav-info-classification.md",
