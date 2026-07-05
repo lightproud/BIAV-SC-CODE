@@ -167,6 +167,10 @@ export const editTool: BuiltinTool = {
       await writeFile(abs, updated, { encoding: 'utf8', signal: ctx.signal });
 
       const replaced = replaceAll ? count : 1;
+      // Read-before-write gate (E4): Edit read the full file to apply the
+      // replacement, so the session has seen its content - register the path
+      // so a follow-up Write is not blocked.
+      ctx.readFilePaths?.add(abs);
       ctx.debug(`Edit: ${abs} replaced ${replaced} occurrence(s)`);
       const snippet = buildSnippet(updated, firstIdx, newString);
       return {

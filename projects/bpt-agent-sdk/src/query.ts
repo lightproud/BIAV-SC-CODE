@@ -457,6 +457,11 @@ export function query(args: {
     );
   }
 
+  // Read-before-write gate state (E4): one shared Set per query. The subagent
+  // runtime threads the SAME reference into child contexts (like shells /
+  // sandbox), so "this session has read the file" spans parent and children.
+  const readFilePaths = new Set<string>();
+
   const hooks = new DefaultHookRunner({
     hooks: options.hooks,
     debug,
@@ -717,6 +722,7 @@ export function query(args: {
     emitObservability: emitObs,
     shells,
     sandbox: sandboxCtx,
+    readFilePaths,
   });
 
   // --- Input queue (unified for string and streaming-input modes) -----------
@@ -1281,6 +1287,7 @@ export function query(args: {
             : undefined,
           shells,
           sandbox: sandboxCtx,
+          readFilePaths,
         };
         const deps: EngineDeps = {
           transport,

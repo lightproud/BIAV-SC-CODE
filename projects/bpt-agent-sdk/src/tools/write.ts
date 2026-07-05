@@ -81,6 +81,20 @@ export const writeTool: BuiltinTool = {
         }
       }
 
+      // Read-before-write gate (E4): the official CLI refuses to overwrite an
+      // existing file this session has not Read (new files pass; a prior Read
+      // unlocks). Semantics + error text pinned live from the official arm
+      // (L5 code-03 r1 vs r2; KD-L3-06). The error text is verbatim official.
+      if (
+        existedBefore &&
+        ctx.readFilePaths !== undefined &&
+        !ctx.readFilePaths.has(abs)
+      ) {
+        return errorResult(
+          '<tool_use_error>File has not been read yet. Read it first before writing to it.</tool_use_error>',
+        );
+      }
+
       // Capture the pre-image BEFORE mutating so Query.rewindFiles() can
       // restore it (create -> null). Best-effort; the recorder never throws.
       //
@@ -123,6 +137,11 @@ export const writeTool: BuiltinTool = {
       await writeFile(abs, content, { encoding: 'utf8', signal: ctx.signal });
 
       const bytes = Buffer.byteLength(content, 'utf8');
+      // The session knows the bytes it just wrote: register the path so a
+      // follow-up Write (create-then-revise) does not self-block on the gate.
+      // OUR chosen semantics - the pinned official evidence covers only the
+      // read/unread/new branches (noted in docs/COMPAT.md).
+      ctx.readFilePaths?.add(abs);
       ctx.debug(
         `Write: ${existedBefore ? 'overwrote' : 'created'} ${abs} (${bytes} bytes)`,
       );

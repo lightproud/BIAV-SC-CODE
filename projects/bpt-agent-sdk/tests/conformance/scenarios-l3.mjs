@@ -247,20 +247,15 @@ export const L3_SCENARIOS = [
       ]),
       { kind: 'sse', events: textReply('L3 WRITE-02 DONE') },
     ],
-    // The ONE case where side effects legitimately differ per arm: the
-    // official read-before-write gate blocks the overwrite (KD-L3-06).
-    expectFilesPerArm: {
-      ours: { 'exists.txt': 'new\n' },
-      official: { 'exists.txt': 'old\n' },
-    },
+    // Both arms enforce the read-before-write gate (ours since E4,
+    // 2026-07-05; KD-L3-06 retired): the bare overwrite errors with the
+    // verbatim official text and leaves the file untouched on BOTH arms.
+    expectFiles: { 'exists.txt': 'old\n' },
     steps: [
       {
         tool: 'Write',
-        crossCompare: false,
-        behavioralKd: 'KD-L3-06',
-        isError: { ours: false, official: true },
-        oursLocks: [/^Overwrote existing file /],
-        officialLocks: [/read/i],
+        isError: true,
+        locks: [/File has not been read yet\. Read it first before writing to it\./],
       },
     ],
   },
@@ -809,10 +804,13 @@ export const L3_SINGLE_ARM = [
     fixtureFiles: { 'exists.txt': 'old\n' },
     maxTurns: 6,
     buildScripts: (cwd) => [
-      toolTurn(1, [
+      // Read first: the E4 read-before-write gate would otherwise reject the
+      // overwrite (this scenario tests CHECKPOINTING, not the gate).
+      toolTurn(1, [{ name: 'Read', input: { file_path: join(cwd, 'exists.txt') } }]),
+      toolTurn(2, [
         { name: 'Write', input: { file_path: join(cwd, 'exists.txt'), content: 'new\n' } },
       ]),
-      toolTurn(2, [
+      toolTurn(3, [
         {
           name: 'Write',
           input: { file_path: join(cwd, 'out', 'created.txt'), content: 'temp\n' },
@@ -852,6 +850,7 @@ export const L3_SINGLE_ARM = [
       return failures;
     },
     steps: [
+      { tool: 'Read (unlock gate)', isError: false, locks: [/old/] },
       { tool: 'Write (overwrite)', isError: false, locks: [/^Overwrote existing file /] },
       { tool: 'Write (create)', isError: false, locks: [/^Created new file /] },
     ],

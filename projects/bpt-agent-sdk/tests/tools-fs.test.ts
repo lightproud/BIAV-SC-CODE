@@ -760,3 +760,154 @@ describe('abort handling', () => {
     expect(await readFile(file, 'utf8')).toBe('original\n');
   });
 });
+
+// ---------------------------------------------------------------------------
+// E4: read-before-write gate (official semantics, pinned live in L5 code-03
+// r1 vs r2 + KD-L3-06): a Write over an EXISTING file the session has not
+// Read is rejected verbatim; new files pass; a prior Read unlocks. The gate
+// state is ctx.readFilePaths (one Set per query); absent -> gate off.
+// ---------------------------------------------------------------------------
+
+const GATE_ERROR =
+  '<tool_use_error>File has not been read yet. Read it first before writing to it.</tool_use_error>';
+
+describe('Write read-before-write gate (E4)', () => {
+  let sandbox: string;
+  let readPaths: Set<string>;
+
+  beforeEach(async () => {
+    sandbox = await makeSandbox('fs-gate-');
+    readPaths = new Set<string>();
+  });
+
+  const gatedCtx = (): ToolContext => makeCtx(sandbox, { readFilePaths: readPaths });
+
+  it('creating a NEW file passes the gate', async () => {
+    const res = await writeTool.execute(
+      { file_path: 'fresh.txt', content: 'hi' },
+      gatedCtx(),
+    );
+    expect(res.isError).toBeFalsy();
+    expect(await readFile(path.join(sandbox, 'fresh.txt'), 'utf8')).toBe('hi');
+  });
+
+  it('overwriting an existing un-read file is rejected with the verbatim official error and leaves the file untouched', async () => {
+    const file = path.join(sandbox, 'exists.txt');
+    await writeFile(file, 'old\n', 'utf8');
+
+    const res = await writeTool.execute(
+      { file_path: file, content: 'new\n' },
+      gatedCtx(),
+    );
+
+    expect(res.isError).toBe(true);
+    expect(res.content).toBe(GATE_ERROR);
+    expect(await readFile(file, 'utf8')).toBe('old\n');
+  });
+
+  it('a successful Read unlocks the overwrite', async () => {
+    const file = path.join(sandbox, 'exists.txt');
+    await writeFile(file, 'old\n', 'utf8');
+
+    const read = await readTool.execute({ file_path: file }, gatedCtx());
+    expect(read.isError).toBeFalsy();
+
+    const res = await writeTool.execute(
+      { file_path: file, content: 'new\n' },
+      gatedCtx(),
+    );
+    expect(res.isError).toBeFalsy();
+    expect(await readFile(file, 'utf8')).toBe('new\n');
+  });
+
+  it('reading an EMPTY file still registers (the session saw the content)', async () => {
+    const file = path.join(sandbox, 'empty.txt');
+    await writeFile(file, '', 'utf8');
+
+    const read = await readTool.execute({ file_path: file }, gatedCtx());
+    expect(read.isError).toBeFalsy();
+
+    const res = await writeTool.execute(
+      { file_path: file, content: 'filled\n' },
+      gatedCtx(),
+    );
+    expect(res.isError).toBeFalsy();
+  });
+
+  it('a FAILED Read (nonexistent file) does not register the path', async () => {
+    const file = path.join(sandbox, 'ghost.txt');
+    const read = await readTool.execute({ file_path: file }, gatedCtx());
+    expect(read.isError).toBe(true);
+
+    // Now create it out-of-band; the gate must still block (never read).
+    await writeFile(file, 'appeared\n', 'utf8');
+    const res = await writeTool.execute(
+      { file_path: file, content: 'clobber\n' },
+      gatedCtx(),
+    );
+    expect(res.isError).toBe(true);
+    expect(res.content).toBe(GATE_ERROR);
+  });
+
+  it('Write registers its own path: create-then-revise does not self-block', async () => {
+    const first = await writeTool.execute(
+      { file_path: 'draft.txt', content: 'v1' },
+      gatedCtx(),
+    );
+    expect(first.isError).toBeFalsy();
+
+    const second = await writeTool.execute(
+      { file_path: 'draft.txt', content: 'v2' },
+      gatedCtx(),
+    );
+    expect(second.isError).toBeFalsy();
+    expect(await readFile(path.join(sandbox, 'draft.txt'), 'utf8')).toBe('v2');
+  });
+
+  it('a successful Edit registers the path (Edit read the content to apply the change)', async () => {
+    const file = path.join(sandbox, 'editable.txt');
+    await writeFile(file, 'alpha beta\n', 'utf8');
+
+    const edit = await editTool.execute(
+      { file_path: file, old_string: 'alpha', new_string: 'gamma' },
+      gatedCtx(),
+    );
+    expect(edit.isError).toBeFalsy();
+
+    const res = await writeTool.execute(
+      { file_path: file, content: 'rewritten\n' },
+      gatedCtx(),
+    );
+    expect(res.isError).toBeFalsy();
+  });
+
+  it('the Set is shared by reference: a Read in one context unlocks a Write in another (subagent semantics)', async () => {
+    const file = path.join(sandbox, 'shared.txt');
+    await writeFile(file, 'old\n', 'utf8');
+
+    // "Parent" reads...
+    const parentCtx = makeCtx(sandbox, { readFilePaths: readPaths });
+    const read = await readTool.execute({ file_path: file }, parentCtx);
+    expect(read.isError).toBeFalsy();
+
+    // ..."child" (fresh context object, SAME Set reference) writes.
+    const childCtx = makeCtx(sandbox, { readFilePaths: readPaths });
+    const res = await writeTool.execute(
+      { file_path: file, content: 'new\n' },
+      childCtx,
+    );
+    expect(res.isError).toBeFalsy();
+  });
+
+  it('gate absent (no readFilePaths) keeps the legacy overwrite behavior', async () => {
+    const file = path.join(sandbox, 'legacy.txt');
+    await writeFile(file, 'old\n', 'utf8');
+
+    const res = await writeTool.execute(
+      { file_path: file, content: 'new\n' },
+      makeCtx(sandbox),
+    );
+    expect(res.isError).toBeFalsy();
+    expect(await readFile(file, 'utf8')).toBe('new\n');
+  });
+});

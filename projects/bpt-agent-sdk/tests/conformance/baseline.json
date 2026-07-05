@@ -322,10 +322,8 @@
         "engineFinding": false
       },
       "L3-WRITE-02": {
-        "verdict": "CONTENT_KNOWN_DIFF",
-        "kdIds": [
-          "KD-L3-06"
-        ],
+        "verdict": "CONTENT_MATCH",
+        "kdIds": [],
         "engineFinding": false
       },
       "L3-WRITE-03": {

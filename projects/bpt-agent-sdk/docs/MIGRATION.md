@@ -89,6 +89,19 @@ gap is structural, not a backlog):
    Windows. Disable explicitly with `sandbox: false`; tune via the
    `SandboxOptions` object (`allowNetwork`, `writablePaths`, `allowEscape`, a
    custom `backend`).
+5c. **Write enforces the official read-before-write gate** (E4, v0.6): a
+   Write over an existing file the session has not Read errors with
+   `<tool_use_error>File has not been read yet. Read it first before writing
+   to it.</tool_use_error>` and leaves the file untouched. New files pass; a
+   successful Read (or the session's own prior Write/Edit of that file)
+   unlocks. This is a deliberate behavior TIGHTENING to match official
+   2.1.201 — a caller that used to blind-overwrite must Read first.
+5d. **Extended thinking defaults ON with the `claude_code` preset** (E1,
+   v0.6), matching the observable official default. Budget defaults to 4096
+   (our chosen value — the official budget is unobservable); opt out with
+   `maxThinkingTokens: 0` or `thinking: { type: 'disabled' }`. Expect
+   slightly higher per-turn cost and thinking deltas in the stream. Non-preset
+   paths are unchanged.
 6. **Sessions** live in this SDK's own JSONL store (or your `sessionStore`
    backend); official CLI session files are not readable.
 7. **`sse` MCP transport** (legacy) is unsupported; stdio / http / sdk are.
