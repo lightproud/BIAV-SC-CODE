@@ -70,10 +70,16 @@ describe('harness prompt v1/v2 variant', () => {
     expect(v3).not.toBe(v2);
     expect(v3.length).toBeGreaterThan(v2.length);
     // the four techniques the public best-practices comparison flagged as missing
-    expect(v3).toContain('Delegation:'); // when-to-delegate guidance
     expect(v3).toContain('verify your work against'); // verify-before-finishing
     expect(v3).toContain('Do not hard-code'); // solve the general problem
     expect(v3).toContain('for example:'); // one concrete style example
+    // when-to-delegate guidance is present ONLY when the Agent tool is shipped
+    const v3Agent = buildSystemPromptParts(preset, {
+      cwd: '/tmp/run-xyz',
+      toolNames: ['Read', 'Write', 'Bash', 'Agent'],
+      variant: 'v3',
+    }).stable;
+    expect(v3Agent).toContain('Delegation:');
     // still keeps the cwd out of the cached (stable) segment
     expect(v3).not.toContain('/tmp/run-xyz');
   });
@@ -160,6 +166,35 @@ describe('harness prompt v1/v2 variant', () => {
     expect(stable).toContain('Always use tabs.');
     // instructions are cacheable (stable), not in the volatile tail
     expect(volatile).not.toContain('Always use tabs.');
+  });
+
+  it('RED LINE: never names the Agent tool when it is not in the tool set (v5 + v3)', () => {
+    // query.ts registers the Agent tool only when subagents are configured, so
+    // the default prompt must not instruct the model to use it.
+    const noAgent = { cwd: '/tmp/x', toolNames: ['Read', 'Write', 'Bash', 'TodoWrite'] };
+    for (const v of ['v3', 'v5'] as const) {
+      const stable = buildSystemPromptParts(preset, { ...noAgent, variant: v }).stable;
+      expect(stable).not.toContain('Agent tool');
+      expect(stable).not.toContain('via the Agent tool');
+      expect(stable).not.toContain('specialized agents');
+    }
+  });
+
+  it('includes the Agent guidance when the Agent tool IS in the set (v5 + v3)', () => {
+    const withAgent = { cwd: '/tmp/x', toolNames: ['Read', 'Bash', 'Agent'] };
+    expect(buildSystemPromptParts(preset, { ...withAgent, variant: 'v5' }).stable).toContain('Agent tool');
+    expect(buildSystemPromptParts(preset, { ...withAgent, variant: 'v3' }).stable).toContain('via the Agent tool');
+  });
+
+  it('gates each tool-specific clause on that tool being present (v5)', () => {
+    // A restricted tool set drops the clauses naming absent tools.
+    const minimal = { cwd: '/tmp/x', toolNames: ['Read', 'Bash'], variant: 'v5' as const };
+    const stable = buildSystemPromptParts(preset, minimal).stable;
+    expect(stable).not.toContain('TodoWrite tool');
+    expect(stable).not.toContain('AskUserQuestion tool');
+    expect(stable).not.toContain('WebFetch fetches');
+    // core prose (not tool-gated) stays
+    expect(stable).toContain('Doing tasks:');
   });
 
   it('append text lands in the stable segment for all variants', () => {

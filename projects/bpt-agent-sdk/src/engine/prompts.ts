@@ -223,9 +223,18 @@ function defaultHarnessStableV3(ctx: PromptContext): string {
     '- Base every statement on actual tool output. If a tool call fails or returns something unexpected, say so plainly and adjust; never fabricate a result or paper over an error.',
     '- If the task is ambiguous in a way that changes the outcome, state the assumption you are making and proceed with the most reasonable interpretation.',
     '',
-    'Delegation:',
-    '- Delegate to a subagent (via the Agent tool) only when a subtask is large or independent enough to benefit — broad multi-file exploration, or a self-contained unit that can run in parallel. For a quick lookup or a single search, do it directly; do not spawn a subagent when a direct tool call is faster.',
-    '',
+  );
+  // Delegation guidance names the Agent tool — include it only when subagents
+  // are configured (query.ts registers the Agent tool only then), else the
+  // prompt would reference a tool the run cannot call.
+  if (ctx.toolNames.includes('Agent')) {
+    lines.push(
+      'Delegation:',
+      '- Delegate to a subagent (via the Agent tool) only when a subtask is large or independent enough to benefit — broad multi-file exploration, or a self-contained unit that can run in parallel. For a quick lookup or a single search, do it directly; do not spawn a subagent when a direct tool call is faster.',
+      '',
+    );
+  }
+  lines.push(
     'Finishing:',
     '- Before finishing, verify your work against the task\'s success criteria: re-read the files you changed, and where a test or check exists, run it and confirm it passes.',
     '- Stop when the task is complete; do not perform work the user did not request.',
@@ -325,6 +334,37 @@ function defaultHarnessStableV5(ctx: PromptContext): string {
   if (ctx.toolNames.length > 0) {
     lines.push(`Available tools: ${ctx.toolNames.join(', ')}.`, '');
   }
+  // Tool-specific guidance clauses, each gated on the tool actually being in the
+  // set. A clause that names a tool the run does not ship (e.g. the Agent tool,
+  // which query.ts registers only when subagents are configured) must NOT be
+  // emitted — it would instruct the model to use a tool it cannot call. Each
+  // present clause is followed by a blank separator, matching the prose layout.
+  const has = (t: string) => ctx.toolNames.includes(t);
+  const toolClauses: string[] = [];
+  if (has('TodoWrite')) {
+    toolClauses.push(
+      'Break down and manage your work with the TodoWrite tool. It is helpful for planning your work and helping the user track your progress. Use it proactively and often; make sure that at least one task is in_progress at all times, and provide both content (imperative) and activeForm (present continuous) for each task. Mark each task as completed as soon as you are done with it. Do not batch up multiple tasks before marking them as completed.',
+      '',
+    );
+  }
+  if (has('Agent')) {
+    toolClauses.push(
+      "Use the Agent tool with specialized agents when the task at hand matches the agent's description. Subagents are valuable for parallelizing independent queries or for protecting the main context window from excessive results, but they should not be used excessively when not needed. Importantly, avoid duplicating work that subagents are already doing — if you delegate research to a subagent, do not also perform the same searches yourself.",
+      '',
+    );
+  }
+  if (has('AskUserQuestion')) {
+    toolClauses.push(
+      "Reserve the AskUserQuestion tool for decisions where the user's answer changes what you do next — not for choices with a conventional default or facts you can verify in the codebase yourself. In those cases pick the obvious option, mention it in your response, and proceed.",
+      '',
+    );
+  }
+  if (has('WebFetch') || has('WebSearch')) {
+    toolClauses.push(
+      'WebFetch fetches a URL, converts the page to markdown, and answers a prompt against it. It fails on authenticated or private URLs. HTTP is upgraded to HTTPS, and cross-host redirects are returned to you rather than followed — call again with the redirect URL. WebSearch searches the web and returns result blocks with titles and URLs; after answering from results, end with a "Sources:" list of the URLs you used as markdown links. Never generate or guess URLs unless you are confident they help the user with programming; prefer URLs the user provided or that appear in local files.',
+      '',
+    );
+  }
   lines.push(
     // censoring-assistance-with-malicious-activities (official safety clause)
     'IMPORTANT: Assist with authorized security testing, defensive security, CTF challenges, and educational contexts. Refuse requests for destructive techniques, DoS attacks, mass targeting, supply chain compromise, or detection evasion for malicious purposes. Dual-use security tools (C2 frameworks, credential testing, exploit development) require clear authorization context: pentesting engagements, CTF competitions, security research, or defensive use cases.',
@@ -361,14 +401,7 @@ function defaultHarnessStableV5(ctx: PromptContext): string {
     '',
     "Read a file before editing it, and read an existing file before overwriting it with Write; overwriting a file you have not read will fail. Use Write for creating a new file or fully replacing one you have already read, and Edit for partial changes. Keep an Edit's old_string minimal — usually 1-3 lines, only enough to be unique in the file; including excess context wastes tokens. The edit will FAIL if old_string is not unique, so add the minimum extra context needed for uniqueness, or use replace_all to change every instance.",
     '',
-    'Break down and manage your work with the TodoWrite tool. It is helpful for planning your work and helping the user track your progress. Use it proactively and often; make sure that at least one task is in_progress at all times, and provide both content (imperative) and activeForm (present continuous) for each task. Mark each task as completed as soon as you are done with it. Do not batch up multiple tasks before marking them as completed.',
-    '',
-    "Use the Agent tool with specialized agents when the task at hand matches the agent's description. Subagents are valuable for parallelizing independent queries or for protecting the main context window from excessive results, but they should not be used excessively when not needed. Importantly, avoid duplicating work that subagents are already doing — if you delegate research to a subagent, do not also perform the same searches yourself.",
-    '',
-    "Reserve the AskUserQuestion tool for decisions where the user's answer changes what you do next — not for choices with a conventional default or facts you can verify in the codebase yourself. In those cases pick the obvious option, mention it in your response, and proceed.",
-    '',
-    'WebFetch fetches a URL, converts the page to markdown, and answers a prompt against it. It fails on authenticated or private URLs. HTTP is upgraded to HTTPS, and cross-host redirects are returned to you rather than followed — call again with the redirect URL. WebSearch searches the web and returns result blocks with titles and URLs; after answering from results, end with a "Sources:" list of the URLs you used as markdown links. Never generate or guess URLs unless you are confident they help the user with programming; prefer URLs the user provided or that appear in local files.',
-    '',
+    ...toolClauses,
     'Base every claim on actual tool output. If a tool call fails, say so instead of guessing, and report outcomes faithfully: if tests fail, say so with the output; if a step was skipped, say that; when something is done and verified, state it plainly without hedging.',
     '',
     'Executing actions with care:',
