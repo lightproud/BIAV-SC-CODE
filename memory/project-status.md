@@ -231,6 +231,16 @@
   效率轴（只记分）本 SDK 几乎每任务更便宜更快（如 code-04：$0.0103 vs $0.0292、4 轮 vs 12 轮）；
   双臂缓存均 scenario a（首轮官方臂 scenario b 系单跑冷启动假象）；L6 官方臂留痕 54 份入 artifact。
   任务级线索（非门禁项，可选跟进）：本 SDK 稳定挂 chat-03/code-01、官方稳定挂 longconv-02(中文跨轮记忆)+code-03。
+  **L5 失败点解剖已收官（2026-07-05，挂账 A 完成）**：四点解剖档
+  `Public-Info-Pool/Resource/repo-engineering/bpt-sdk-l5-failure-dissection-20260705.md`——收敛到三系统变量 + 一度量伪影：
+  **S1 思考不对称**（官方 CLI 默认开 thinking，54/54 留痕含 thinking_tokens 事件计 1161 次；我方引擎默认关）= 我方 chat-03（逆字母序
+  8-token 抢答答成正序）与 code-01（只排序不处理偶数长度；官方带思考也仅 2/3）的共同真因；**S2 /tmp 锚定 + 跨 repeat 污染**（官方
+  Write 强制绝对路径→Haiku 猜 /tmp/<文件名>，r1 遗留物经读前写门把 r2/r3 引进死胡同）= 官方 code-03 r2/r3 + longconv-02 r3 真因，
+  无污染反事实官方 code-03 ≈ 3/3；**S3 官方安全姿态过敏**（把良性中文「记住 X 只需确认」判为注入拒绝）= 官方 longconv-02 r1/r2；
+  **M1 度量伪影**：官方臂流式多轮每轮各发 result、runOne 取 lastResult → 报表 turns=1，「提前终局」系误读（上下文实际跨轮保留）。
+  修复方案：Fix-1 claude_code preset 默认开 thinking（budget 4096 起步，管线 computeThinking 已就绪；预算值不可知——读官方请求体越
+  内容盲边界，登记 KD）/ Fix-2 L5 双臂 maxThinkingTokens 显式同参拆变量；退出标准 chat-03 ≥2/3、code-01 ≥官方−1、乙门禁保 PASS。
+  顺手实锤 B②规格：官方 Write 读前写门仅拦已存在文件、新建不拦。
   （首轮 run 28735894053 因预算护栏冷启动外推误停 2/180，护栏已修 #447）。**一致性验证体系 M1-M4 全部封顶**
 - **完成度（表面等价）**：对官方 SDK **0.3.199 基线**约 **89.5%**（v0.1 基线 68.3% → v0.2+v0.3 补齐后重算）。
   审计矩阵与逐行台账落 `Public-Info-Pool/Resource/repo-engineering/bpt-agent-sdk-completion-audit-20260703.md`
