@@ -9,11 +9,16 @@
  * SCOPE: only the members whose tool this SDK actually ships are defined
  * (Agent, AskUserQuestion, Bash, Edit, Read, Write, Glob, Grep,
  * ListMcpResourcesTool, ReadMcpResourceTool, TaskCreate, TaskGet, TaskList,
- * TaskUpdate, TodoWrite, WebFetch, WebSearch). TodoWrite ships as the legacy
+ * TaskUpdate, TodoWrite, WebFetch, WebSearch, and — B4b batch — Monitor,
+ * ExitPlanMode, EnterWorktree). TodoWrite ships as the legacy
  * task surface behind CLAUDE_CODE_ENABLE_TASKS=0 (official 0.3.142 semantics;
  * see src/tools/index.ts), so both its types and the Task quartet's are kept.
- * Official members for tools this SDK does not ship (Monitor, NotebookEdit,
- * Workflow, TaskStop, TaskOutput, EnterWorktree, ExitPlanMode, the
+ * MonitorInput keeps the official `ws` member VERBATIM even though the shipped
+ * tool supports only the `command` source (wire type over runtime subset —
+ * same precedent as FileReadInput.pages; a `ws` call fails with an explicit
+ * error, see src/tools/monitor.ts).
+ * Official members for tools this SDK does not ship (NotebookEdit,
+ * Workflow, TaskStop, TaskOutput, the
  * Subscribe/Unsubscribe pairs, McpInput) are intentionally NOT fabricated, so
  * the two unions below are shipped-subset views of the official 27-input /
  * 22-output unions. The legacy BashOutput/KillShell shell tools have no
@@ -61,6 +66,36 @@ export type BashInput = {
   description?: string;
   run_in_background?: boolean;
   dangerouslyDisableSandbox?: boolean;
+};
+
+/** Input for the EnterWorktree tool. `name` and `path` are mutually exclusive. */
+export type EnterWorktreeInput = {
+  name?: string;
+  path?: string;
+};
+
+/** Input for the ExitPlanMode tool. */
+export type ExitPlanModeInput = {
+  allowedPrompts?: Array<{
+    tool: 'Bash';
+    prompt: string;
+  }>;
+};
+
+/**
+ * Input for the Monitor tool. Official one-of: exactly one of `command` or
+ * `ws`. The shipped tool supports the `command` source only; a `ws` call is
+ * rejected with an explicit error (see the module header).
+ */
+export type MonitorInput = {
+  command?: string;
+  ws?: {
+    url: string;
+    protocols?: string[];
+  };
+  description: string;
+  timeout_ms?: number;
+  persistent?: boolean;
 };
 
 /** Input for the Edit tool (official member name: FileEditInput). */
@@ -179,6 +214,9 @@ export type ToolInputSchemas =
   | AgentInput
   | AskUserQuestionInput
   | BashInput
+  | EnterWorktreeInput
+  | ExitPlanModeInput
+  | MonitorInput
   | FileEditInput
   | FileReadInput
   | FileWriteInput
@@ -266,6 +304,33 @@ export type BashOutput = {
   structuredContent?: unknown[];
   persistedOutputPath?: string;
   persistedOutputSize?: number;
+};
+
+/** Output of the EnterWorktree tool. */
+export type EnterWorktreeOutput = {
+  worktreePath: string;
+  worktreeBranch?: string;
+  message: string;
+};
+
+/** Output of the ExitPlanMode tool. */
+export type ExitPlanModeOutput = {
+  plan: string | null;
+  isAgent: boolean;
+  filePath?: string;
+  hasTaskTool?: boolean;
+  awaitingLeaderApproval?: boolean;
+  requestId?: string;
+};
+
+/**
+ * Output of the Monitor tool. `taskId` identifies the running watch (this SDK
+ * reads it with BashOutput and stops it with KillShell).
+ */
+export type MonitorOutput = {
+  taskId: string;
+  timeoutMs: number;
+  persistent?: boolean;
 };
 
 /** Output of the Edit tool (official member name: FileEditOutput). */
@@ -493,6 +558,9 @@ export type ToolOutputSchemas =
   | AgentOutput
   | AskUserQuestionOutput
   | BashOutput
+  | EnterWorktreeOutput
+  | ExitPlanModeOutput
+  | MonitorOutput
   | FileEditOutput
   | FileReadOutput
   | FileWriteOutput

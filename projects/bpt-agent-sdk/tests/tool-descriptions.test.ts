@@ -22,6 +22,9 @@ const ALL = [
   D.WEBFETCH_DESCRIPTION,
   D.WEBSEARCH_DESCRIPTION,
   D.ASKUSERQUESTION_DESCRIPTION,
+  D.EXITPLANMODE_DESCRIPTION,
+  D.ENTERWORKTREE_DESCRIPTION,
+  D.MONITOR_DESCRIPTION,
 ];
 
 describe('faithful tool descriptions', () => {
@@ -43,7 +46,9 @@ describe('faithful tool descriptions', () => {
     const forbidden = [
       'NotebookEdit',
       'MultiEdit',
-      'ExitPlanMode',
+      // 'ExitPlanMode' removed 2026-07-05 (B4b): the tool now ships.
+      'ExitWorktree',
+      'TaskStop',
       'PowerShell',
       'SlashCommand',
       'computer use',
@@ -73,5 +78,9 @@ describe('faithful tool descriptions', () => {
     // ... TodoWrite stays wired behind the official revert gate.
     const legacy = createBuiltinTools({ env: { CLAUDE_CODE_ENABLE_TASKS: '0' } });
     expect(legacy.get('TodoWrite')?.description).toBe(D.TODOWRITE_DESCRIPTION);
+    // B4b batch: the three new tools ship by default with their descriptions.
+    expect(tools.get('Monitor')?.description).toBe(D.MONITOR_DESCRIPTION);
+    expect(tools.get('ExitPlanMode')?.description).toBe(D.EXITPLANMODE_DESCRIPTION);
+    expect(tools.get('EnterWorktree')?.description).toBe(D.ENTERWORKTREE_DESCRIPTION);
   });
 });

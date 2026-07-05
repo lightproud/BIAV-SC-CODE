@@ -12,9 +12,28 @@
  *  - Only tools this SDK ships are referenced: Bash, BashOutput, KillShell, Read,
  *    Edit, Write, Grep, Glob, TaskCreate, TaskGet, TaskUpdate, TaskList,
  *    TodoWrite (legacy, behind CLAUDE_CODE_ENABLE_TASKS=0 — see tools/index.ts),
- *    WebFetch, WebSearch, AskUserQuestion.
- *    No Agent-in-descriptions, Workflow, NotebookEdit, MultiEdit, Skill,
- *    ExitPlanMode, etc.
+ *    WebFetch, WebSearch, AskUserQuestion, Monitor, ExitPlanMode, EnterWorktree
+ *    (B4b batch).
+ *    No Agent-in-descriptions, Workflow, NotebookEdit, MultiEdit, Skill, etc.
+ *  - ExitPlanMode: the archive fragment's plan-FILE mechanics (write plan to the
+ *    plan file, tool reads it back) do not ship here — this SDK has a plan
+ *    permission MODE but no plan-file machinery, so those clauses are adapted
+ *    to "the plan you presented in the conversation". Approval mechanics are
+ *    honest: exiting switches the permission gate out of plan mode; hosts veto
+ *    via PreToolUse hooks / disallowedTools.
+ *  - EnterWorktree: references to the unshipped ExitWorktree tool, the
+ *    WorktreeCreate/WorktreeRemove hooks, the `worktree.baseRef` setting
+ *    (branching is always from the current local HEAD here), tmux and
+ *    session-exit prompts are removed (red line). Entry via `path` accepts any
+ *    registered worktree of the current repo (official restricts re-switch
+ *    targets to .claude/worktrees/ — documented widening).
+ *  - Monitor: this SDK does NOT push monitor events into the conversation (that
+ *    needs an engine-loop delivery channel it does not have). The description
+ *    is adapted to the shipped poll model: events accumulate on a background
+ *    task read via BashOutput, stopped via KillShell (official text says
+ *    TaskStop, unshipped). The `ws` source (2.1.195+) is unshipped and never
+ *    mentioned; notification-batching / auto-stop-on-volume clauses are
+ *    dropped. Script-quality and coverage guidance is reproduced faithfully.
  *  - Task tool descriptions: archive template variables for conditional
  *    teammate/notes blocks (CONDTIONAL_TEAMMATES_NOTE, CONDITIONAL_TASK_NOTES,
  *    TEAMMATE_TASKLIST_WHEN_TO_USE_NOTE, TEAMMATE_WORKFLOW_BLOCK) resolve to
@@ -469,6 +488,108 @@ Usage notes:
 - Use multiSelect: true to allow multiple answers to be selected for a question
 - If you recommend a specific option, make that the first option in the list and add "(Recommended)" at the end of the label`;
 
+export const EXITPLANMODE_DESCRIPTION = `Use this tool when you are in plan mode and have finished presenting your plan and are ready for user approval to begin implementing.
+
+## How This Tool Works
+- You should have already presented your complete plan in the conversation before calling this tool
+- This tool does NOT take the plan content as a parameter - it signals that you're done planning and ready to implement
+- On approval the session's permission mode exits plan mode, so implementation tools (Write, Edit, Bash) can run
+- Optionally pass allowedPrompts to declare the Bash permissions your plan will need
+
+## When to Use This Tool
+IMPORTANT: Only use this tool when the task requires planning the implementation steps of a task that requires writing code. For research tasks where you're gathering information, searching files, reading files or in general trying to understand the codebase - do NOT use this tool.
+
+## Before Using This Tool
+Ensure your plan is complete and unambiguous:
+- If you have unresolved questions about requirements or approach, use AskUserQuestion first (in earlier phases)
+- Once your plan is finalized, use THIS tool to request approval
+
+**Important:** Do NOT use AskUserQuestion to ask "Is this plan okay?" or "Should I proceed?" - that's exactly what THIS tool does. ExitPlanMode inherently requests user approval of your plan.
+
+## Examples
+
+1. Initial task: "Search for and understand the implementation of vim mode in the codebase" - Do not use the exit plan mode tool because you are not planning the implementation steps of a task.
+2. Initial task: "Help me implement yank mode for vim" - Use the exit plan mode tool after you have finished planning the implementation steps of the task.
+3. Initial task: "Add a new feature to handle user authentication" - If unsure about auth method (OAuth, JWT, etc.), use AskUserQuestion first, then use exit plan mode tool after clarifying the approach.`;
+
+export const ENTERWORKTREE_DESCRIPTION = `Use this tool ONLY when explicitly instructed to work in a worktree — either by the user directly, or by project instructions (CLAUDE.md / memory). This tool creates an isolated git worktree and switches the current session into it.
+
+## When to Use
+
+- The user explicitly says "worktree" (e.g., "start a worktree", "work in a worktree", "create a worktree", "use a worktree")
+- CLAUDE.md or memory instructions direct you to work in a worktree for the current task
+
+## When NOT to Use
+
+- The user asks to create a branch, switch branches, or work on a different branch — use git commands instead
+- The user asks to fix a bug or work on a feature — use normal git workflow unless worktrees are explicitly requested by the user or project instructions
+- Never use this tool unless "worktree" is explicitly mentioned by the user or in CLAUDE.md / memory instructions
+
+## Requirements
+
+- Must be in a git repository
+- Must not already be in a worktree session when creating a new worktree (\`name\`); switching into another existing worktree via \`path\` is allowed
+
+## Behavior
+
+- Creates a new git worktree inside \`.claude/worktrees/\` on a new branch, branched from your current local HEAD
+- Switches the session's working directory to the new worktree
+
+## Entering an existing worktree
+
+Pass \`path\` instead of \`name\` to switch the session into a worktree that already exists (e.g., one you just created with \`git worktree add\`). The path must appear in \`git worktree list\` for the current repository — paths that are not registered worktrees of this repo are rejected.
+
+## Parameters
+
+- \`name\` (optional): A name for a new worktree. If neither \`name\` nor \`path\` is provided, a random name is generated.
+- \`path\` (optional): Path to an existing worktree of the current repository to enter instead of creating one. Mutually exclusive with \`name\`.`;
+
+export const MONITOR_DESCRIPTION = `Start a background monitor that watches a long-running script. Each stdout line is an event. Events accumulate on the returned background task id — this SDK does not push them into the conversation. Read new events with BashOutput (pass the returned taskId as bash_id) and stop the watch with KillShell.
+
+Pick by how many events you need:
+- **One** ("tell me when the server is ready / the build finishes") → use **Bash with \`run_in_background\`** and a command that exits when the condition is true, e.g. \`until grep -q "Ready in" dev.log; do sleep 0.5; done\`. Its exit is the single event.
+- **One per occurrence, indefinitely** ("tell me every time an ERROR line appears") → Monitor with an unbounded command (\`tail -f\`, \`inotifywait -m\`, \`while true\`).
+- **One per occurrence, until a known end** ("emit each CI step result, stop when the run completes") → Monitor with a command that emits lines and then exits.
+
+Your script's stdout is the event stream. Each line is one event. Exit ends the watch.
+
+  # Each matching log line is an event
+  tail -f /var/log/app.log | grep --line-buffered "ERROR"
+
+  # Each file change is an event
+  inotifywait -m --format '%e %f' /watched/dir
+
+  # Poll GitHub for new PR comments and emit one line per new comment
+  last=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+  while true; do
+    now=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+    gh api "repos/owner/repo/issues/123/comments?since=$last" --jq '.[] | "\\(.user.login): \\(.body)"'
+    last=$now; sleep 30
+  done
+
+**Don't use an unbounded command for a single event.** \`tail -f\`, \`inotifywait -m\`, and \`while true\` never exit on their own, so the monitor stays armed until timeout even after the event has fired. For "tell me when X is ready," use Bash \`run_in_background\` with an \`until\` loop instead. Note that \`tail -f log | grep -m 1 ...\` does *not* fix this: if the log goes quiet after the match, \`tail\` never receives SIGPIPE and the pipeline hangs anyway.
+
+**Script quality:**
+- Every pipe stage must flush per line or matches sit in its buffer unseen: \`grep\` needs \`--line-buffered\`, \`awk\` needs \`fflush()\`. \`head\` cannot flush at all — \`| head -N\` delivers nothing until N matches accumulate, then ends the stream.
+- In poll loops, handle transient failures (\`curl ... || true\`) — one failed request shouldn't kill the monitor.
+- Poll intervals: 30s+ for remote APIs (rate limits), 0.5-1s for local checks.
+- Write a specific \`description\` — it labels the watch ("errors in deploy.log" not "watching logs").
+- Only stdout is the event stream. Stderr is captured separately (BashOutput shows it under [stderr]) — for a command you run directly (e.g. \`python train.py 2>&1 | grep --line-buffered ...\`), merge stderr with \`2>&1\` so its failures reach your filter. (No effect on \`tail -f\` of an existing log — that file only contains what its writer redirected.)
+
+**Coverage — silence is not success.** When watching a job or process for an outcome, your filter must match every terminal state, not just the happy path. A monitor that greps only for the success marker stays silent through a crashloop, a hung process, or an unexpected exit — and silence looks identical to "still running." Before arming, ask: *if this process crashed right now, would my filter emit anything?* If not, widen it.
+
+  # Wrong — silent on crash, hang, or any non-success exit
+  tail -f run.log | grep --line-buffered "elapsed_steps="
+
+  # Right — one alternation covering progress + the failure signatures you'd act on
+  tail -f run.log | grep -E --line-buffered "elapsed_steps=|Traceback|Error|FAILED|assert|Killed|OOM"
+
+For poll loops checking job state, emit on every terminal status (\`succeeded|failed|cancelled|timeout\`), not just success. If you cannot confidently enumerate the failure signatures, broaden the grep alternation rather than narrow it — some extra noise is better than missing a crashloop.
+
+**Output volume**: every stdout line accumulates toward the background-output cap, so the filter should be selective — but selective means "the lines you'd act on," not "only good news." Never pipe raw logs; filter to exactly the success and failure signals you care about.
+
+The script runs in the same shell environment as Bash. Exit ends the watch (exit code is reported). Timeout → killed (default 600000ms; \`persistent: true\` disables the timeout for session-length watches such as PR monitoring or log tails — the monitor then runs until KillShell or the session ends). Use KillShell to cancel early.`;
+
 /**
  * Provenance for the tool-description surface (Track B): which archive fragments
  * each faithful description draws from. A corpus-sync guard
@@ -514,6 +635,13 @@ export const TOOL_DESCRIPTION_PROVENANCE: ToolDescriptionProvenance[] = [
   { tool: 'WebFetch', faithful: true, slugs: ['tool-description-webfetch'] },
   { tool: 'WebSearch', faithful: true, slugs: ['tool-description-websearch'] },
   { tool: 'AskUserQuestion', faithful: true, slugs: ['tool-description-askuserquestion'] },
+  { tool: 'ExitPlanMode', faithful: true, slugs: ['tool-description-exitplanmode'] },
+  { tool: 'EnterWorktree', faithful: true, slugs: ['tool-description-enterworktree'] },
+  {
+    tool: 'Monitor',
+    faithful: true,
+    slugs: ['tool-description-background-monitor-streaming-events'],
+  },
 ];
 
 /** The description text for each provenance-tracked tool (for the corpus-sync guard). */
@@ -532,6 +660,9 @@ export const TOOL_DESCRIPTION_TEXT: Record<string, string> = {
   WebFetch: WEBFETCH_DESCRIPTION,
   WebSearch: WEBSEARCH_DESCRIPTION,
   AskUserQuestion: ASKUSERQUESTION_DESCRIPTION,
+  ExitPlanMode: EXITPLANMODE_DESCRIPTION,
+  EnterWorktree: ENTERWORKTREE_DESCRIPTION,
+  Monitor: MONITOR_DESCRIPTION,
 };
 
 // ---------------------------------------------------------------------------

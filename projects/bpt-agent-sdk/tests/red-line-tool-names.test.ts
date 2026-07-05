@@ -36,7 +36,9 @@ const UNSHIPPED_TOOL_TOKENS = [
   'NotebookEdit',
   'NotebookRead',
   'MultiEdit',
-  'ExitPlanMode',
+  // 'ExitPlanMode' removed 2026-07-05 (B4b): the tool now ships (src/tools/exitplanmode.ts).
+  'ExitWorktree',
+  'TaskStop',
   'SlashCommand',
   'WebFetchTool',
   'PowerShell',

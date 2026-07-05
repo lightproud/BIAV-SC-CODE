@@ -8,6 +8,13 @@
  * TodoWrite" — TS reference, 0.3.201 docs snapshot); when set, TodoWrite is
  * registered and the Task tools are not. The two surfaces are mutually
  * exclusive, mirroring the official toolset.
+ *
+ * B4b batch: Monitor / ExitPlanMode / EnterWorktree are registered by default
+ * (all three are in the official built-in toolset and input/output unions).
+ * Monitor is an honest command-source subset over the shell registry (see
+ * monitor.ts); ExitPlanMode flips the plan permission mode via the optional
+ * ToolContext.permissionGate bridge (see exitplanmode.ts); EnterWorktree
+ * creates/enters git worktrees via src/internal/worktree.ts.
  */
 
 import type { BuiltinTool } from '../internal/contracts.js';
@@ -25,6 +32,9 @@ import { todoWriteTool } from './todo.js';
 import { taskTools } from './task.js';
 import { listMcpResourcesTool, readMcpResourceTool } from './resources.js';
 import { bashOutputTool, killShellTool } from './shells.js';
+import { monitorTool } from './monitor.js';
+import { exitPlanModeTool } from './exitplanmode.js';
+import { enterWorktreeTool } from './enterworktree.js';
 
 /** Fresh Map per call so callers can filter without affecting others.
  *  When a sandbox is active (G-SANDBOX) the Bash tool is built with its
@@ -46,6 +56,7 @@ export function createBuiltinTools(cfg?: {
     cfg?.sandbox !== undefined ? createBashTool(cfg.sandbox) : bashTool,
     bashOutputTool,
     killShellTool,
+    monitorTool,
     globTool,
     grepTool,
     webFetchTool,
@@ -54,6 +65,8 @@ export function createBuiltinTools(cfg?: {
     ...(legacyTodo ? [todoWriteTool] : taskTools),
     listMcpResourcesTool,
     readMcpResourceTool,
+    exitPlanModeTool,
+    enterWorktreeTool,
   ];
   return new Map(tools.map((t) => [t.name, t]));
 }
