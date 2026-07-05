@@ -49,7 +49,8 @@ const outPath = typeof args.out === 'string' ? args.out : join(HERE, '..', '..',
 /**
  * L4-specific behavioral known divergences - facet-level splits between the
  * arms under injected faults, each observed stable across 2 differential
- * runs (2026-07-05, agent-sdk 0.3.199 + claude-code 2.1.201). Same contract
+ * runs (2026-07-05, agent-sdk 0.3.199 + claude-code 2.1.201; re-validated
+ * unchanged at agent-sdk 0.3.201 on the chase, same day). Same contract
  * as KNOWN_DIVERGENCES: every consumption is REPORTED in the row's kdHits,
  * never hidden; an entry scopes to specific scenarios and facet keys so it
  * can never excuse a drift elsewhere. `coversTokens: true` additionally

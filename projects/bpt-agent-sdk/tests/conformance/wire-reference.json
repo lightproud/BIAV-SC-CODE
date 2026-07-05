@@ -1,7 +1,7 @@
 {
   "generated_for": "official-arm request-body wire reference targets (structural fingerprints)",
   "pins": {
-    "agentSdk": "0.3.199",
+    "agentSdk": "0.3.201",
     "claudeCode": "2.1.201"
   },
   "note": "The official engine wire shape our engine aims to match (minus expected-surface tool-set gaps). Refresh via `node run-wire.mjs --update-reference`.",

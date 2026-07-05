@@ -320,6 +320,10 @@
   ② **MCP tranche 3 stdio 传输差分**——L3-MCP-06 真子进程 stdio 服务器过双臂传输管线，**CONTENT_MATCH**；棘轮 +1 行。
   ③ L3.5 双臂升硬门禁为**等待条件**（官方生命周期跨版本稳定后触发），非工作量，挂漂移哨兵联动。
   `tsc` + `npx vitest run` **1109 全绿（42 文件）**。
+  **官方 0.3.201 追版已收官（2026-07-05，守密人裁定「追」）**：pins agent-sdk 0.3.199→0.3.201（claude-code 2.1.201 已是最新不动），
+  全差分栈对新版重跑——**L1-L4 记分牌与基线逐行一致（零新漂移、零新 KD）**、wire 缺口逐面一致（参考目标已按新钉刷新）、
+  L3.5 两 KD 在 0.3.201 复现（**硬门禁等待条件的第一枚稳定性数据点：两版一致**）。COMPAT/CONTEXT 基线表述同步 0.3.201；
+  KD-01 等历史注补「0.3.201 复验不变」。`npx vitest run` 1109 全绿。漂移哨兵挂账清零。
   **SSE 网关方言容错已落（2026-07-05，BPT 产线故障闭环）**：BPT 实测「Malformed SSE payload for event "(none)"」
   经双侧协作定型——BPT `curl -N` 抓原始字节实锤 idealab 网关 `/api/anthropic` 端点带 OpenAI 方言遗留
   （流尾追加 `data: [DONE]`、错误帧无 event 行）；官方客户端 message_stop 即收工不碰尾卡、我方读到流关闭才撞上。

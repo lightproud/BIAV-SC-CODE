@@ -1,6 +1,6 @@
 # BPT Agent SDK — Compatibility Matrix
 
-Target surface: `@anthropic-ai/claude-agent-sdk` public API (npm 0.3.199) as
+Target surface: `@anthropic-ai/claude-agent-sdk` public API (npm 0.3.201; chased from the 0.3.199 baseline 2026-07-05, keeper ruling, zero conformance drift) as
 documented at code.claude.com/docs/en/agent-sdk/* (fetched 2026-07-03).
 
 For a full 146-row completion audit against the latest official surface
