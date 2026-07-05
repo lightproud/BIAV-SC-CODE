@@ -1,0 +1,69 @@
+name: Build Community Vectors
+
+# 构建银芯长尾向量索引（§八「厚锚撑向量」参照实现，Phase 2）。
+# 嵌入走 Voyage API（需 secret VOYAGE_API_KEY）——CI 是唯一能用该 key 的地方
+# （会话/本地取不到）。有界原型优先：默认 --limit 小，先证 key 有效 + 索引建得出。
+#
+# 触发：
+#   - push（**仅限本 feature 分支 + 相关路径**）：不合并即可跑一次，经验测试 key 是否
+#     还在（跑绿=key 有效；跑红且报「VOYAGE_API_KEY 未配置」=缺失，守密人补一把）。
+#     合并到 main 后此分支 push 触发自然失效，改用下面的 workflow_dispatch。
+#   - workflow_dispatch：合并后手动跑（带 limit 入参）。
+# 产物：先走 actions artifact（不污染生产 Release community-assets）；量产阶段再改
+#   为 gh release upload --clobber community-assets（照 fanart-archive.yml）。
+on:
+  push:
+    branches: [claude/bpt-llm-wiki-discussion-sbkmj7]
+    paths:
+      - .github/workflows/build-community-vectors.yml
+      - scripts/kb_vector.py
+      - scripts/build_kb_vectors.py
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: 索引条数上限（有界原型；默认 1500 控成本）
+        required: false
+        default: '1500'
+
+concurrency:
+  group: community-vectors-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install embedding dep
+        run: pip install --quiet 'voyageai>=0.3.0'
+      - name: Guard — VOYAGE_API_KEY 必须已配置
+        env:
+          VOYAGE_API_KEY: ${{ secrets.VOYAGE_API_KEY }}
+        run: |
+          if [ -z "$VOYAGE_API_KEY" ]; then
+            echo "::error::secret VOYAGE_API_KEY 未配置——退役向量栈的旧 key 可能已被删。"
+            echo "::error::请在 仓库 Settings → Secrets and variables → Actions 添加 VOYAGE_API_KEY。"
+            exit 1
+          fi
+          echo "VOYAGE_API_KEY 已注入（长度 ${#VOYAGE_API_KEY}）——key 存在，继续构建。"
+      - name: Build bounded community vector index (Voyage)
+        env:
+          VOYAGE_API_KEY: ${{ secrets.VOYAGE_API_KEY }}
+        run: |
+          python scripts/build_kb_vectors.py \
+            --backend voyage \
+            --limit "${{ github.event.inputs.limit || '1500' }}"
+      - name: Upload index artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: kb-vectors-bounded
+          path: okf/kb_vectors.json.gz
+          if-no-files-found: error
+          retention-days: 14
