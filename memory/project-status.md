@@ -273,6 +273,16 @@
   `l5-aggregate.mjs`，vitest 喂 run 28736460533 真实官方 result 序列锁定（多 result 求和/取末值、空跑、缺字段防 NaN）。
   棘轮基线 +7 行全改进项锁入；L1-L4 双臂全跑收敛（L4 12/12、L3 零发散、零未分诊候选）；`npx vitest run` **1060 全绿**。
   剩余挂账：MCP 差分第二批（schema 语义/annotations/stdio-http 传输）、子代理/hook 差分（L3.5，大活）。
+  **白盒接口覆盖计划已立（2026-07-05，守密人「针对每个接口白盒测试」裁定）**：现状厘清——黑盒差分（L1-L5）是官方臂
+  内容盲边界下的必然形态，我方自身侧本就有千余条白盒单测，但**测试随功能长、没人逐接口对过账**。对账结果：公开面
+  66 导出 + 48 Options 字段 + 17 Query 方法中，**15 个接口点全测试树零覆盖**。处置：① 7 个导出缺口当批补齐
+  （`tests/api-surface-gaps.test.ts`：NotImplementedError / COMMAND_INJECTION_TOKEN 哨兵契约 / DEFAULT_UTILITY_MODEL /
+  resolveUtilityTransport 注入席位 / runVerification fail-closed / renderCatalog / buildSelectorUserTurn）；
+  ② **永久性覆盖守卫**（`tests/api-surface-coverage.test.ts`）：枚举导出+Options+Query 三面对账全测试树，
+  新接口不带测试即红、白名单只减不增（陈旧条目自动红）——覆盖率地板制度化；③ 剩余 8 点挂守卫白名单可见化
+  （4 Options 字段 includeEnvironmentContext/onElicitation/sessionStoreFlush/toolSearch + 4 Query 方法
+  reconnectMcpServer/toggleMcpServer/setMcpServers/streamInput，各标欠账原因）= **白盒补齐 batch 2**。
+  `npx vitest run` **1079 全绿（37 文件，+19）**。
   **E1 后验收轮真 L5 已收官（2026-07-05，run 28741914245，repeat=3，108/108，$1.156 < $1.5 帽，双引擎各自默认）**：
   **乙门禁 PASS 且首次正向拉开——我方 50/54（92.6%）vs 官方 43/54（79.6%），差值 +13.0pp**（首轮为 88.9% 打平）。
   退出标准三过一未过：**chat-03 0/3→3/3 兑现**（E1 思考直接修复，KD-L5-03 的答前计算半边正式 RESOLVED）；econ 轴我方
