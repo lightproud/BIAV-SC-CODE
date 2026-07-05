@@ -49,6 +49,23 @@
  *
  * estTurns is the nominal per-repeat assistant-turn load used by the
  * blueprint budget estimate (~42 turns/engine/repeat total).
+ *
+ * strays: task-owned file basenames the model may misplace at the tmpdir
+ * ROOT instead of the sandbox cwd. First real round (run 28736460533,
+ * dissected in Public-Info-Pool/Resource/repo-engineering/
+ * bpt-sdk-l5-failure-dissection-20260705.md, S2): the official arm's Write
+ * requires absolute paths and Haiku guessed /tmp/<name>; the repeat-1
+ * leftover then steered repeats 2-3 into verifying at the wrong location
+ * (the read-before-write gate plus a pre-existing correct file removed the
+ * ENOENT self-rescue signal repeat 1 recovered on). run-l5.mjs sweeps these
+ * exact basenames at the tmpdir root before and after every run - restoring
+ * per-run independence without touching any pass semantics. Listed for
+ * every task that names a concrete artifact file (created or edited).
+ *
+ * kd: L5 known-difference tags (table: L5_KNOWN_DIFFERENCES below) carried
+ * into the report's per-task summaries so a reader of per-task pass counts
+ * sees the standing explanation next to the number instead of rediscovering
+ * it from traces.
  */
 
 import fs from 'node:fs';
@@ -87,6 +104,56 @@ function importFresh(dir, rel) {
   );
 }
 
+/**
+ * L5 known differences - task-level, REPORT-ONLY (gate B stays aggregate).
+ * Source: first real round run 28736460533 dissection (2026-07-05),
+ * Public-Info-Pool/Resource/repo-engineering/bpt-sdk-l5-failure-dissection-20260705.md.
+ * Every entry is grounded in L6 official-arm public-stream traces - the
+ * legal observation surface (净室观测边界 r2); request bodies were never read.
+ */
+export const L5_KNOWN_DIFFERENCES = {
+  'KD-L5-01': {
+    arm: 'official',
+    title: 'tmpdir-root path anchoring on new-file writes',
+    note:
+      'Official Write requires absolute paths; Haiku guesses /tmp/<name> instead of ' +
+      'the sandbox cwd. Recoverable via the ENOENT self-rescue signal on a clean ' +
+      'tmpdir (code-03 r1); the strays sweep keeps the signal available every run.',
+  },
+  'KD-L5-02': {
+    arm: 'official',
+    title: 'injection-suspicion refusal variance on benign multi-turn remember-X (zh)',
+    note:
+      'The official system prompt\'s injection wariness + Haiku sometimes judges ' +
+      '"记住：甲的值是 12。只需确认" as a prompt-injection attempt and refuses from ' +
+      'turn 1 (longconv-02 r1/r2 of run 28736460533). Model-level posture, not an ' +
+      'engine defect on either side; per-task numbers for longconv-02 are noisy.',
+  },
+  'KD-L5-03': {
+    arm: 'bpt',
+    title: 'thinking asymmetry: official CLI defaults extended thinking ON, our engine OFF',
+    note:
+      '54/54 official traces carry thinking_tokens events; our claude_code preset ' +
+      'sends no thinking block. Costs us pre-answer computation on chat-03 (reverse ' +
+      'alphabetical) and diligence probability on code-01 (even-length median). ' +
+      'Alignment candidates: engine Fix-1 (preset default-on thinking) and/or ' +
+      'harness Fix-2 (explicit equal maxThinkingTokens on both arms).',
+  },
+  'KD-L5-04': {
+    arm: 'both',
+    title: 'per-result cumulative semantics diverge between engines on streamed multi-turn input',
+    note:
+      'Both engines emit one result per streamed user turn, but the official arm ' +
+      'reports num_turns and usage PER RESULT with total_cost_usd/duration_api_ms ' +
+      'session-cumulative (verified from run 28736460533 longconv traces: ' +
+      'num_turns 1,1,2; costs strictly increasing with exact per-run deltas), while ' +
+      'our SDK rewrites EVERY field session-cumulative on every result except ' +
+      'duration_api_ms which stays per-run (query.ts finding #33 rewriteResult). ' +
+      'run-l5 aggregates per-arm accordingly. Engine alignment candidate: match ' +
+      'the official per-result semantics on the drop-in surface.',
+  },
+};
+
 export const L5_TASKS = [
   // --- chat: pure dialogue, zero tools --------------------------------------
   {
@@ -124,6 +191,7 @@ export const L5_TASKS = [
     zh: false,
     repeatOverride: 3,
     estTurns: 1,
+    kd: ['KD-L5-03'],
     prompt:
       'Without using any tools: list the three classical states of matter ' +
       '(solid, liquid, gas) in REVERSE alphabetical order, comma-separated, ' +
@@ -278,6 +346,7 @@ export const L5_TASKS = [
     zh: false,
     repeatOverride: 3,
     estTurns: 2,
+    strays: ['toc.md'],
     fixture(dir) {
       const body = (label, n) =>
         Array.from(
@@ -324,6 +393,7 @@ export const L5_TASKS = [
     zh: false,
     repeatOverride: 3,
     estTurns: 2,
+    strays: ['tasks.md'],
     fixture(dir) {
       seed(
         dir,
@@ -358,6 +428,7 @@ export const L5_TASKS = [
     zh: true,
     repeatOverride: 3,
     estTurns: 2,
+    strays: ['announcement_zh.md'],
     fixture(dir) {
       seed(
         dir,
@@ -399,6 +470,7 @@ export const L5_TASKS = [
     zh: false,
     repeatOverride: 3,
     estTurns: 2,
+    strays: ['RELEASES.md'],
     fixture(dir) {
       // Interleaved versions (a: 1.0.0 + 1.2.0, b: 1.1.0) force a real
       // ordering merge - plain concatenation in either order fails.
@@ -439,6 +511,8 @@ export const L5_TASKS = [
     dimension: 'code',
     zh: false,
     estTurns: 3,
+    strays: ['stats.mjs'],
+    kd: ['KD-L5-03'],
     options: { maxTurns: 12 },
     fixture(dir) {
       // BUG: indexes the middle of the UNSORTED input - median([3,1,2])
@@ -474,6 +548,7 @@ export const L5_TASKS = [
     dimension: 'code',
     zh: false,
     estTurns: 3,
+    strays: ['slug.mjs'],
     options: { maxTurns: 12 },
     prompt:
       'Create slug.mjs exporting slugify(s): lowercase the string, replace ' +
@@ -497,6 +572,8 @@ export const L5_TASKS = [
     dimension: 'code',
     zh: false,
     estTurns: 4,
+    strays: ['fizz.mjs'],
+    kd: ['KD-L5-01'],
     options: { maxTurns: 12 },
     prompt:
       'Create fizz.mjs exporting classify(n): return \'FizzBuzz\' if n is ' +
@@ -523,6 +600,7 @@ export const L5_TASKS = [
     dimension: 'code',
     zh: true,
     estTurns: 3,
+    strays: ['a.mjs', 'b.mjs'],
     options: { maxTurns: 12 },
     fixture(dir) {
       seed(dir, 'b.mjs', 'export function getData() {\n  return 42;\n}\n');
@@ -551,6 +629,7 @@ export const L5_TASKS = [
     dimension: 'code',
     zh: false,
     estTurns: 2,
+    strays: ['result.txt'],
     options: { maxTurns: 12 },
     prompt:
       'Using Bash, compute the sum of the integers from 1 to 100 (do not ' +
@@ -571,6 +650,7 @@ export const L5_TASKS = [
     dimension: 'long-conversation',
     zh: false,
     estTurns: 4,
+    strays: ['note.txt'],
     options: { maxTurns: 10 },
     // The runner wraps `turns` in an async generator; each turn is released
     // only after the previous turn's completion (result / end_turn) shows up
@@ -593,6 +673,8 @@ export const L5_TASKS = [
     dimension: 'long-conversation',
     zh: true,
     estTurns: 4,
+    strays: ['sum.txt'],
+    kd: ['KD-L5-01', 'KD-L5-02'],
     options: { maxTurns: 10 },
     turns: [
       '记住：甲的值是 12。只需确认，不要做别的。',
