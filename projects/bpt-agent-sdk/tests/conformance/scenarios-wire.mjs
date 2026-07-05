@@ -16,7 +16,11 @@
  *   buildOptions(sdk)          - per-arm option builder (MCP needs each arm's
  *                                own tool()/createSdkMcpServer); takes { sdk }
  *   notes                      - what this scenario probes
+ *   multiTurn / fixtureFiles / buildScripts(cwd) - A2 trajectory scenarios
+ *     that need >1 POST (a tool loop); buildScripts returns emulator scripts.
  */
+
+import { textReply, toolUseReply } from './emulator.mjs';
 
 export const WIRE_SCENARIOS = [
   {
@@ -38,6 +42,20 @@ export const WIRE_SCENARIOS = [
     id: 'cache-off',
     options: { provider: { promptCaching: false } },
     notes: 'prompt caching disabled - cache_control breakpoints should vanish from both arms',
+  },
+  {
+    id: 'tool-loop',
+    // A2 multi-turn trajectory: a Read tool turn then a text turn => 2 POSTs,
+    // so the runner can compare how system/tools prefix + cache breakpoints
+    // EVOLVE across turns (prefix must stay byte-stable for cache reuse).
+    options: { allowedTools: ['Read'] },
+    multiTurn: true,
+    fixtureFiles: { 'wire.txt': 'wire trajectory fixture\n' },
+    buildScripts: (cwd) => [
+      { kind: 'sse', events: toolUseReply([{ name: 'Read', input: { file_path: `${cwd}/wire.txt` } }]) },
+      { kind: 'sse', events: textReply('WIRE LOOP DONE') },
+    ],
+    notes: '2-turn tool loop: probes cache-prefix stability across turns (A2 trajectory)',
   },
   {
     id: 'mcp-added',

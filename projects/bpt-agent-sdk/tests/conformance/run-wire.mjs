@@ -69,24 +69,28 @@ function baseEnv(url) {
   return env;
 }
 
-/** Drive one arm through one scenario; fingerprint the first captured POST body. */
+/** Drive one arm through one scenario; return { fingerprint (first POST), trajectory }. */
 async function captureArm(armKind, scenario) {
   const query = await loadQuery(armKind);
   const sdk = await loadSdk(armKind);
   const cwd = mkdtempSync(join(tmpdir(), `conf-wire-${armKind}-`));
-  const emulator = await startEmulator([{ kind: 'sse', events: textReply('WIRE OK') }], {
-    captureBodies: true,
-  });
+  for (const [name, content] of Object.entries(scenario.fixtureFiles ?? {})) {
+    writeFileSync(join(cwd, name), content);
+  }
+  const scripts = scenario.buildScripts
+    ? scenario.buildScripts(cwd)
+    : [{ kind: 'sse', events: textReply('WIRE OK') }];
+  const emulator = await startEmulator(scripts, { captureBodies: true });
   const ac = new AbortController();
   const timer = setTimeout(() => ac.abort(), 60_000);
   const extra = scenario.buildOptions ? scenario.buildOptions({ sdk }) : (scenario.options ?? {});
   try {
     const q = query({
-      prompt: 'Say OK.',
+      prompt: scenario.multiTurn ? 'Read wire.txt then say done.' : 'Say OK.',
       options: {
         abortController: ac,
         cwd,
-        maxTurns: 2,
+        maxTurns: 3,
         env: baseEnv(emulator.url),
         ...(armKind === 'bpt'
           ? { sessionDir: join(cwd, '.sessions'), systemPrompt: { type: 'preset', preset: 'claude_code' } }
@@ -102,7 +106,31 @@ async function captureArm(armKind, scenario) {
     await emulator.close();
     rmSync(cwd, { recursive: true, force: true });
   }
-  return fingerprintRequestBody(emulator.profile.requestBodies[0]);
+  const bodies = emulator.profile.requestBodies;
+  return {
+    fingerprint: fingerprintRequestBody(bodies[0]),
+    // A2: per-POST fingerprints for the trajectory (cache-prefix stability).
+    trajectory: bodies.map((b) => fingerprintRequestBody(b)),
+    posts: bodies.length,
+  };
+}
+
+/**
+ * A2 cache-prefix stability: across a multi-turn trajectory the system + tool
+ * surface must stay byte-stable (only messages grow) or cross-turn cache reuse
+ * breaks. Returns the list of unstable facets (empty = stable).
+ */
+function prefixStability(trajectory) {
+  if (trajectory.length < 2) return [];
+  const first = trajectory[0];
+  const facets = ['systemKind', 'systemBlocks', 'systemSegments', 'toolCount', 'toolCacheBreakpoints', 'thinking'];
+  const unstable = [];
+  for (const fp of trajectory.slice(1)) {
+    for (const f of facets) {
+      if (JSON.stringify(fp?.[f]) !== JSON.stringify(first?.[f]) && !unstable.includes(f)) unstable.push(f);
+    }
+  }
+  return unstable;
 }
 
 const pins = JSON.parse(readFileSync(join(HERE, 'pins.json'), 'utf8'));
@@ -117,12 +145,20 @@ const report = {
 const referenceOut = {};
 
 for (const scenario of WIRE_SCENARIOS) {
-  const bpt = await captureArm('bpt', scenario);
-  const row = { id: scenario.id, notes: scenario.notes, bpt };
+  const bptCap = await captureArm('bpt', scenario);
+  const bpt = bptCap.fingerprint;
+  const bptStability = prefixStability(bptCap.trajectory);
+  const row = { id: scenario.id, notes: scenario.notes, bpt, bptPosts: bptCap.posts, bptPrefixUnstable: bptStability };
+  if (scenario.multiTurn) {
+    console.log(`[${scenario.id}] bpt trajectory posts=${bptCap.posts} prefixUnstable=${JSON.stringify(bptStability)}`);
+  }
   if (armMode !== 'bpt') {
     try {
-      const official = await captureArm('official', scenario);
+      const officialCap = await captureArm('official', scenario);
+      const official = officialCap.fingerprint;
       row.official = official;
+      row.officialPosts = officialCap.posts;
+      row.officialPrefixUnstable = prefixStability(officialCap.trajectory);
       referenceOut[scenario.id] = official;
       const facetDiff = diffFingerprints(official, bpt).map((d) => ({
         ...d,
