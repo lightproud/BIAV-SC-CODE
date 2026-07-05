@@ -3300,11 +3300,11 @@
       "tier": "search",
       "degree": 0
     },
-    "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md": {
+    "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md": {
       "type": "documentation",
-      "title": "bpt-sdk-conformance-suite-design-20260705",
+      "title": "bpt-sdk-conformance-suite-design-20260705-r2",
       "description": "**门禁按甲、覆盖按乙**：验收线与权重服务 **BPT Desktop 换装信心**（关键路径严格、（格式：md）",
-      "resource": "/Public-Info-Pool/Resource/repo-engineering/bpt-sdk-conformance-suite-design-20260705.md",
+      "resource": "/Public-Info-Pool/Resource/repo-engineering/bpt-sdk-conformance-suite-design-20260705-r2.md",
       "tags": [
         "data_layer:curated",
         "deliverable",
@@ -8278,7 +8278,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -8907,7 +8907,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
@@ -9329,7 +9329,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -9421,7 +9421,7 @@
       "/memory/memory-research-discord-archive-backfill-conflict.md"
     ],
     "conformance": [
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
     ],
     "consistency": [
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md"
@@ -9586,7 +9586,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -9869,7 +9869,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -10013,7 +10013,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -10051,7 +10051,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
     ],
     "designs": [
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
@@ -10062,7 +10062,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md"
     ],
@@ -10206,7 +10206,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -10880,7 +10880,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -11303,7 +11303,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -11757,7 +11757,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -12362,7 +12362,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -12682,7 +12682,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -12763,6 +12763,7 @@
       "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
       "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md"
     ],
@@ -12927,7 +12928,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -12998,7 +12999,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -13163,7 +13164,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
@@ -13495,7 +13496,7 @@
       "/projects/site-design-morimens-design-tokens.md"
     ],
     "suite": [
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
     ],
     "summary": [
       "/memory/memory-ext-bpt-architecture-summary-template.md"
@@ -13724,7 +13725,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -14655,7 +14656,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -14881,7 +14882,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -15147,7 +15148,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -15233,7 +15234,7 @@
       "/characters/77925.md"
     ],
     "与权": [
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
     ],
     "与死": [
       "/characters/15564.md"
@@ -15335,7 +15336,7 @@
     ],
     "严格": [
       "/memory/memory-ext-active-silver-blackpool-interface.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
     ],
     "严重": [
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
@@ -16224,7 +16225,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -17091,7 +17092,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -17315,7 +17316,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -17698,7 +17699,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md"
     ],
     "信心": [
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
     ],
     "信念": [
       "/characters/15594.md"
@@ -18067,7 +18068,7 @@
     "关键": [
       "/characters/15578.md",
       "/characters/15593.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
     ],
     "关闭": [
       "/README.md"
@@ -19009,7 +19010,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -21936,7 +21937,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -22665,7 +22666,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -23219,7 +23220,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -24942,7 +24943,7 @@
       "/projects/entry-claude-md.md"
     ],
     "径严": [
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
     ],
     "待讨": [
       "/memory/memory-ext-pending-discussions.md"
@@ -26734,7 +26735,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -26822,13 +26823,13 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
     ],
     "按乙": [
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
     ],
     "按环": [
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "按甲": [
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
     ],
     "按画": [
       "/README.md"
@@ -26876,7 +26877,7 @@
       "/characters/15601.md"
     ],
     "换装": [
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
     ],
     "捣碎": [
       "/characters/15598.md"
@@ -27211,7 +27212,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -27500,7 +27501,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -27626,7 +27627,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "收线": [
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
     ],
     "改用": [
       "/news-output/news-output-appstore.md",
@@ -27841,7 +27842,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -28087,7 +28088,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -29375,7 +29376,7 @@
     "服务": [
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-skill-authoring-standard.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
     ],
     "朗和": [
       "/characters/15578.md",
@@ -29606,7 +29607,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -29977,7 +29978,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -30039,7 +30040,7 @@
     ],
     "权重": [
       "/memory/memory-ext-knowledge-layer-design.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
     ],
     "杆都": [
       "/memory/memory-ext-skill-authoring-standard.md"
@@ -30492,7 +30493,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -30663,7 +30664,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -31093,7 +31094,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -31424,7 +31425,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -34154,7 +34155,7 @@
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md"
     ],
     "盖按": [
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
     ],
     "盖率": [
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
@@ -34763,7 +34764,7 @@
       "/characters/15582.md"
     ],
     "禁按": [
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
     ],
     "福与": [
       "/characters/15589.md"
@@ -35396,7 +35397,7 @@
       "/story/story_layer_readme.md"
     ],
     "线与": [
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
     ],
     "线回": [
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
@@ -36685,7 +36686,7 @@
       "/characters/15573.md"
     ],
     "装信": [
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
     ],
     "装期": [
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
@@ -36737,7 +36738,7 @@
       "/memory/memory-ext-active-contribution-protocol.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/projects/extracted-lua-readme.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
@@ -37840,7 +37841,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -38444,7 +38445,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -38972,7 +38973,7 @@
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
     ],
     "重服": [
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
     ],
     "重火": [
       "/characters/130901.md"
@@ -39369,7 +39370,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -39587,7 +39588,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -39721,7 +39722,7 @@
       "/characters/15593.md"
     ],
     "键路": [
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
     ],
     "镜头": [
       "/community/community-appstore.md",
@@ -39860,7 +39861,7 @@
       "/projects/project-site.md"
     ],
     "门禁": [
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
     ],
     "问题": [
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
@@ -40405,7 +40406,7 @@
     "验收": [
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
     ],
     "验标": [
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md"
@@ -40893,7 +40894,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
     ],
@@ -41002,7 +41003,7 @@
       "/wiki-data/wiki-data-language-config.md"
     ],
     "conformance": [
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
     ],
     "consistency": [
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md"
@@ -41162,7 +41163,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -41438,7 +41439,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -41573,7 +41574,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -41603,7 +41604,7 @@
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
     ],
     "designs": [
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
@@ -41717,7 +41718,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -42189,7 +42190,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -42803,6 +42804,7 @@
       "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
       "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md"
     ],
@@ -42843,7 +42845,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -42966,7 +42968,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
     ],
@@ -43093,7 +43095,7 @@
       "/projects/site-design-morimens-design-tokens.md"
     ],
     "suite": [
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
     ],
     "summon": [
       "/wiki-data/wiki-data-summon.md"
@@ -43182,7 +43184,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",

@@ -32,13 +32,13 @@
 | G1 | 压缩前置廉价层（摘要前去重 + 超大 tool_result 截断成内容指针，甩字节）| **已落（PR #435）** | input-token 削减 |
 | G2 | 摘要/标题走 Haiku 便宜模型（`compaction.model`）| **已落（PR #435）** | 摘要成本 |
 | G3 | 双 system 缓存断点（项目指令块存在时用满第 4 断点）| **已落（PR #435）** | 缓存命中 |
-| G4 | 子代理 Fork 模式（继承缓存共享上下文）+ sidechain 转录 | **延后**（对抗审查揪出 blocker：fork seed 过度裁剪、常见情形退化成 isolated，「继承父上下文」未兑现；审查给了精确 repro+修法，待专项跟进）| 缓存复用 |
+| G4 | 子代理 Fork 模式（继承缓存共享上下文）+ sidechain 转录 | **已落（PR #435）**：对抗审查揪出的 blocker（fork seed 级联清空、退化 isolated）已修——不再级联、真继承父上下文（完成 pair 全留、任务并入尾部 user 轮）；测试重写覆盖真实 tool-call 序列 | 缓存复用 |
 | G5 | v4 补工具使用纪律片段 | **已落**（被 v5 全面涵盖）| — |
 | G6 | 分类器/生成器提示词再现 | **部分落**：SDK 真用的（general-purpose / 摘要器）随 Track B 落；其余属未发货功能，**红线不做** | — |
 | G7 | 定位反转全仓文档扫尾（clean-room→公开信息再现，保留硬约束）| **已落（PR #435）** | — |
 | G8 | `decisions.md` 两条裁定落档 | 待守密人（决策档仅守密人权限）| — |
 
-> G1/G3/G4/G7 于 2026-07-05 经 ultracode 工作流并行推进（规划 → 隔离 worktree 实现 → 对抗审查）。**对抗审查发挥作用**：G1/G3 判 SHIP、由会话集成点 cherry-pick 进分支逐个跑全量把关（G1 解与 G2 的冲突、G7 补修 package.json 等审查 findings）；**G4 判 FIX_NEEDED（blocker），未合入**——发一个「看着能 fork 实则退化 isolated」的功能等于骗人，故延后而非硬塞。「不测不宣胜负」在此体现为「审查不过就不发」。
+> G1/G3/G4/G7 于 2026-07-05 经 ultracode 工作流并行推进（规划 → 隔离 worktree 实现 → 对抗审查）。**对抗审查发挥作用**：G1/G3 判 SHIP 直接 cherry-pick；G7 判 FIX_NEEDED、补修 package.json 等 findings 后合入；**G4 判 FIX_NEEDED（blocker）——审查揪出 fork seed 级联清空、退化 isolated，「看着能 fork 实则骗人」，故先不合、守密人裁「先修完整」**，据审查给的精确 repro+修法修好（不再级联、真继承父上下文）、测试重写覆盖真实场景后合入。四项全落，v0.5 引擎机制批完成。「不测不宣胜负」在此体现为「审查不过就不发、修好再合」。
 
 ---
 
