@@ -309,6 +309,10 @@
   做成**报告制** `run-l35.mjs`（比生命周期事件词汇集非计数，规避脆弱）+ 我方 keyless 锁；**两真发现**：KD-L35-01 前台词汇差
   （我方发 task_progress、官方发 task_notification）、KD-L35-02 编码差（task_started/updated：我方顶层 type、官方 system 子类型，类同 KD-05 粒度，drop-in 引擎对齐候选）。
   棘轮 +2 L3 行；`tsc` + `npx vitest run` **1107 全绿（41 文件）**。测试侧挂账仅余：onElicitation、L3.5 双臂升门禁（版本稳定后）、MCP tranche 3 传输层。
+  **KD-L35-02 已并入引擎工单 E8（2026-07-05，守密人「并入」裁定）**：交接档升 r4——子代理生命周期事件编码对齐
+  （顶层 type → system 子类型，E2 同族破坏性、MIGRATION 5f；`conformance-l35.test.ts` 旧编码锁为设计好的销账提醒，
+  引擎改完必须同步翻转）；KD-L35-01 词汇差列 E8b 裁定项（task_progress 保留超集、前台 notification 随 Desktop 真实需求定）。
+  优先级 E8 排 E7-01 后、E3 前。
   **SSE 网关方言容错已落（2026-07-05，BPT 产线故障闭环）**：BPT 实测「Malformed SSE payload for event "(none)"」
   经双侧协作定型——BPT `curl -N` 抓原始字节实锤 idealab 网关 `/api/anthropic` 端点带 OpenAI 方言遗留
   （流尾追加 `data: [DONE]`、错误帧无 event 行）；官方客户端 message_stop 即收工不碰尾卡、我方读到流关闭才撞上。
