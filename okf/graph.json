@@ -1,7 +1,7 @@
 {
   "generated": "2026-07-05",
   "stats": {
-    "nodes": 320,
+    "nodes": 323,
     "edges": 393
   },
   "nodes": [
@@ -2619,6 +2619,28 @@
       "tier": "search"
     },
     {
+      "id": "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
+      "type": "documentation",
+      "title": "bpt-sdk-completion-inventory-20260705",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
+      "type": "documentation",
+      "title": "bpt-sdk-conformance-campaign-report-20260705",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
       "id": "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "type": "documentation",
       "title": "bpt-sdk-conformance-suite-design-20260705-r2",
@@ -2630,9 +2652,9 @@
       "tier": "search"
     },
     {
-      "id": "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
+      "id": "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "type": "documentation",
-      "title": "bpt-sdk-engine-alignment-handoff-20260705",
+      "title": "bpt-sdk-engine-alignment-handoff-20260705-r4",
       "tags": [
         "data_layer:curated",
         "deliverable",
@@ -2655,6 +2677,17 @@
       "id": "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "type": "documentation",
       "title": "bpt-sdk-official-arm-protocol-profile-20260705",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
+      "type": "documentation",
+      "title": "bpt-sdk-official-docs-interface-audit-20260705",
       "tags": [
         "data_layer:curated",
         "deliverable",
@@ -3933,6 +3966,12 @@
     },
     {
       "source": "/community/community-bilibili.md",
+      "target": "/characters/77926.md",
+      "rel": "提及:皮克曼",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
       "target": "/characters/15571.md",
       "rel": "提及:珈伦",
       "rel_type": "mention"
@@ -3947,12 +3986,6 @@
       "source": "/community/community-bilibili.md",
       "target": "/characters/94450.md",
       "rel": "提及:茉夏",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/130226.md",
-      "rel": "提及:沙耶",
       "rel_type": "mention"
     },
     {
@@ -5283,6 +5316,12 @@
     },
     {
       "source": "/sources/bilibili.md",
+      "target": "/characters/77926.md",
+      "rel": "提及:皮克曼",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
       "target": "/characters/15571.md",
       "rel": "提及:珈伦",
       "rel_type": "mention"
@@ -5297,12 +5336,6 @@
       "source": "/sources/bilibili.md",
       "target": "/characters/94450.md",
       "rel": "提及:茉夏",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/130226.md",
-      "rel": "提及:沙耶",
       "rel_type": "mention"
     },
     {

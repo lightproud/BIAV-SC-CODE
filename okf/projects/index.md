@@ -12,7 +12,7 @@
 * [game 子项目上下文](/projects/project-game.md) - **game = 守密人个人兴趣项目（主）+ 未来扩展可能 ⓐⓒ（备）**
 * [bpt-agent-sdk 子项目上下文](/projects/project-bpt-agent-sdk.md) - BPT Agent SDK：独立重实现（independent reimplementation）的 TypeScript agent 框架，公开调用面
 * [bpt-agent-sdk ARCHITECTURE](/projects/bpt-sdk-doc-architecture.md) - Independent agent harness with a `@anthropic-ai/claude-agent-sdk`-compatible
-* [bpt-agent-sdk COMPAT](/projects/bpt-sdk-doc-compat.md) - Target surface: `@anthropic-ai/claude-agent-sdk` public API (npm 0.3.199) as
+* [bpt-agent-sdk COMPAT](/projects/bpt-sdk-doc-compat.md) - Target surface: `@anthropic-ai/claude-agent-sdk` public API (npm 0.3.201; chased
 * [bpt-agent-sdk MIGRATION](/projects/bpt-sdk-doc-migration.md) - Audience: the BPT Desktop (Electron) codebase currently importing the official
 * [bpt-agent-sdk POSITIONING](/projects/bpt-sdk-doc-positioning.md) - **BPT Agent SDK = 一套稳定兼容的调用「表面」 + 一个我们完全掌控、比原版更简单更可靠的独立「引擎」。**
 * [site design · morimens-design-system-guide.html](/projects/site-design-morimens-design-system-guide.md) - site 设计系统权威（morimens-design-system-guide.html，21.2KB）：设计令牌 / 组件规范来源。
