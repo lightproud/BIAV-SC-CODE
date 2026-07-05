@@ -120,6 +120,10 @@ shell（BashOutput 增量读 + 按行 filter / KillShell 击杀，进程组 SIGT
 =引擎机制 / 公开文档 + 自研引擎=兜底主权。**硬边界不变**：§1.1-HC 黑池防火墙、拒绝真正的内部未授权泄漏
 （「公开分发可逆向」≠「内部偷流出」）、不逐字大段克隆到会引用空气处、署名。
 
+- **提示词装配层 Track B（守密人 2026-07-05 裁定「先设计落档、再实现 Track B」，进行中）**：设计档 `Public-Info-Pool/Resource/proposal/bpt-prompt-assembly-layer-design-20260705.md`（五层模型 + build-from-archive + 剔除清单）。
+  **Phase 0.5 已落**：修 R1——v5/v3 无条件引用 Agent 工具，但 Agent 仅在配置 subagents 时注册（`query.ts:498`）；现每条工具子句 gate 在该工具在场，红线测试锁定。
+  **Phase 1a 已落**：main-loop 从硬编码 `defaultHarnessStableV5` 迁入**片段库**（`src/engine/prompt-fragments.ts`，每片带 id+archive slug provenance+faithful 标+tool gate）+ **装配器**（`src/engine/prompt-assembler.ts` `assembleMainLoop`）；v5 变薄封装；**字节金标锁定**（`tests/fixtures/v5-mainloop-golden.json` 四工具集，装配器逐字节复现）。
+  **待续 Track B**：build-from-archive 校验器（片段对上游还原逐字节对账、漂移即 CI 红）/ 工具描述面迁入片段库 / 子代理 + 生成器面（G6）。
 - **已落**：v4/v5 官方主循环提示词忠实再现（`harnessPromptVariant`，**v5 全面再现四节、已提为 claude_code preset 默认**，见下「提示词默认提升」）
   + Bash 命令分解权限（安全，`decomposeBashCommand`）+ SSE 空闲看门狗（`streamIdleTimeoutMs`，默认 120s/0 关）。
 - **提示词默认提升 v1→v5（2026-07-05，守密人「2 模拟行为」+「目标是跟官方提示词一致」裁定，已落地）**：
