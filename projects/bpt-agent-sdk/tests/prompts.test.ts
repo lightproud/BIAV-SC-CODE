@@ -5,7 +5,7 @@
 import { describe, expect, it } from 'vitest';
 import { buildSystemPromptParts, buildSystemPrompt } from '../src/engine/prompts.js';
 
-const ctx = (variant?: 'v1' | 'v2' | 'v3' | 'v4') => ({
+const ctx = (variant?: 'v1' | 'v2' | 'v3' | 'v4' | 'v5') => ({
   cwd: '/tmp/run-xyz',
   toolNames: ['Read', 'Write', 'Bash'],
   variant,
@@ -80,9 +80,30 @@ describe('harness prompt v1/v2 variant', () => {
     expect(v4).not.toContain('Workflow');
   });
 
+  it('v5 is a comprehensive faithful reproduction, larger than v4, tool-adapted, cwd out', () => {
+    const v4 = buildSystemPromptParts(preset, ctx('v4')).stable;
+    const v5 = buildSystemPromptParts(preset, ctx('v5')).stable;
+    expect(v5.length).toBeGreaterThan(v4.length);
+    // fuller official main-loop sections present in v5
+    expect(v5).toContain('Doing tasks:');
+    expect(v5).toContain('Tool use:');
+    expect(v5).toContain('Executing actions with care:');
+    expect(v5).toContain('Communicating with the user:');
+    // faithful official clauses
+    expect(v5).toContain('Measure twice, cut once.');
+    expect(v5).toContain('file_path:line_number');
+    // tool references adapted to THIS SDK (dedicated-tools-over-bash redirects)
+    expect(v5).toContain('Use Grep (NOT grep or rg)');
+    // does not reference tools this SDK does not ship
+    expect(v5).not.toContain('Workflow');
+    expect(v5).not.toContain('computer-use');
+    // cwd stays out of the cached stable segment
+    expect(v5).not.toContain('/tmp/run-xyz');
+  });
+
   it('append text lands in the stable segment for all variants', () => {
     const withAppend = { ...preset, append: 'EXTRA_INSTRUCTION' };
-    for (const v of ['v1', 'v2', 'v3', 'v4'] as const) {
+    for (const v of ['v1', 'v2', 'v3', 'v4', 'v5'] as const) {
       expect(buildSystemPromptParts(withAppend, ctx(v)).stable).toContain('EXTRA_INSTRUCTION');
     }
   });

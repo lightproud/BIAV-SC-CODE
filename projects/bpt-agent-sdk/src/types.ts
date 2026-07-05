@@ -817,9 +817,10 @@ export type Options = {
    *  preset / default path. 'v1' (default) = the terse original; 'v2'/'v3' =
    *  richer prompts composed from PUBLIC prompt-engineering practice; 'v4' = a
    *  faithful reproduction of the official main-loop prompt from the PUBLIC
-   *  prompt reconstruction (open reproduction, tool refs adapted). A/B knob for
-   *  measuring quality/cost/cache before promoting a new default. */
-  harnessPromptVariant?: 'v1' | 'v2' | 'v3' | 'v4';
+   *  prompt reconstruction (open reproduction, tool refs adapted); 'v5' = a
+   *  COMPREHENSIVE faithful reproduction (fuller official main-loop clauses).
+   *  A/B knob for measuring quality/cost/cache before promoting a new default. */
+  harnessPromptVariant?: 'v1' | 'v2' | 'v3' | 'v4' | 'v5';
 };
 
 // ---------------------------------------------------------------------------

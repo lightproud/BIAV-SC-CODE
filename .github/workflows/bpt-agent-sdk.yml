@@ -47,11 +47,11 @@ on:
         type: boolean
         default: false
       prompt_candidate:
-        description: 'Candidate harness-prompt variant for the prompt A/B baseline (v1) to run against (v4 = faithful official-prompt reproduction)'
+        description: 'Candidate harness-prompt variant for the prompt A/B baseline (v1) to run against (v5 = comprehensive official-prompt reproduction)'
         required: false
         type: choice
-        options: ['v2', 'v3', 'v4']
-        default: 'v4'
+        options: ['v2', 'v3', 'v4', 'v5']
+        default: 'v5'
       prompt_tasks:
         description: 'Task ids for the prompt A/B (e.g. 10,11 = the hard discriminating tasks; empty = all)'
         required: false
@@ -62,10 +62,10 @@ on:
         type: boolean
         default: false
       cache_probe_variant:
-        description: 'Harness-prompt variant for the cache probe'
+        description: 'Harness-prompt variant for the cache probe (v5 = comprehensive official reproduction; needs systemPrompt preset — pass via the probe)'
         required: false
         type: choice
-        options: ['v1', 'v4']
+        options: ['v1', 'v4', 'v5']
         default: 'v1'
 
 concurrency:

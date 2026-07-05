@@ -542,13 +542,15 @@ export function query(args: {
       cwd,
       toolNames: [...builtinTools.keys()],
       variant:
-        options.harnessPromptVariant === 'v4'
-          ? 'v4'
-          : options.harnessPromptVariant === 'v3'
-            ? 'v3'
-            : options.harnessPromptVariant === 'v2'
-              ? 'v2'
-              : 'v1',
+        options.harnessPromptVariant === 'v5'
+          ? 'v5'
+          : options.harnessPromptVariant === 'v4'
+            ? 'v4'
+            : options.harnessPromptVariant === 'v3'
+              ? 'v3'
+              : options.harnessPromptVariant === 'v2'
+                ? 'v2'
+                : 'v1',
     });
     systemPromptStable = promptParts.stable;
     if (outputFormat !== undefined) {
