@@ -39,6 +39,7 @@ import type {
   SDKPermissionDenial,
 } from '../types.js';
 import { randomUUID } from 'node:crypto';
+import { resolve } from 'node:path';
 import { AbortError, isAbortError } from '../errors.js';
 import type {
   GateHookDecision,
@@ -99,6 +100,11 @@ export class DefaultPermissionGate implements PermissionGate {
 
   /** Directories granted via addDirectories updates (session scope). */
   private sessionDirectories: string[] = [];
+  /** Directories revoked via removeDirectories updates (session scope).
+   *  Applies to BOTH session-added dirs and the base additionalDirectories
+   *  (subtracted in effectiveAdditionalDirectories). A later addDirectories
+   *  for the same path clears the revocation. */
+  private removedDirs: string[] = [];
 
   private readonly recordedDenials: SDKPermissionDenial[] = [];
 
@@ -352,13 +358,28 @@ export class DefaultPermissionGate implements PermissionGate {
         }
         case 'addDirectories': {
           for (const dir of update.directories) {
-            if (!this.sessionDirectories.includes(dir)) this.sessionDirectories.push(dir);
+            const target = resolve(dir);
+            // Re-granting a previously removed directory clears the revocation.
+            this.removedDirs = this.removedDirs.filter((d) => resolve(d) !== target);
+            if (!this.sessionDirectories.some((d) => resolve(d) === target)) {
+              this.sessionDirectories.push(dir);
+            }
           }
           break;
         }
-        default: {
-          // removeDirectories (and future types) are not supported in v0.1.
-          this.debug(`permissions: unsupported update type "${update.type}", ignored`);
+        case 'removeDirectories': {
+          // Real revocation (T2-7): drop session-added grants and record the
+          // path so effectiveAdditionalDirectories() subtracts it from the
+          // base additionalDirectories too. Paths compare resolved.
+          for (const dir of update.directories) {
+            const target = resolve(dir);
+            this.sessionDirectories = this.sessionDirectories.filter(
+              (d) => resolve(d) !== target,
+            );
+            if (!this.removedDirs.some((d) => resolve(d) === target)) {
+              this.removedDirs.push(dir);
+            }
+          }
           break;
         }
       }
@@ -372,6 +393,38 @@ export class DefaultPermissionGate implements PermissionGate {
   /** Directories granted via session addDirectories updates (read by the host). */
   addedDirectories(): string[] {
     return [...this.sessionDirectories];
+  }
+
+  /** Directories revoked via session removeDirectories updates. */
+  removedDirectories(): string[] {
+    return [...this.removedDirs];
+  }
+
+  /**
+   * Effective additional working directories for tool access:
+   * (base additionalDirectories MINUS removeDirectories revocations) PLUS
+   * session addDirectories grants. Resolved-path comparison; original
+   * spellings are preserved in the output. The query layer feeds this into
+   * each turn's ToolContext so add/removeDirectories updates take real
+   * effect at runtime.
+   */
+  effectiveAdditionalDirectories(base: string[]): string[] {
+    const removed = new Set(this.removedDirs.map((d) => resolve(d)));
+    const out: string[] = [];
+    const seen = new Set<string>();
+    for (const d of base) {
+      const r = resolve(d);
+      if (removed.has(r) || seen.has(r)) continue;
+      seen.add(r);
+      out.push(d);
+    }
+    for (const d of this.sessionDirectories) {
+      const r = resolve(d);
+      if (removed.has(r) || seen.has(r)) continue;
+      seen.add(r);
+      out.push(d);
+    }
+    return out;
   }
 
   // -------------------------------------------------------------------------

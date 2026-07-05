@@ -266,11 +266,18 @@ function withPersistentState(command: string, stateDir: string): string {
  * Build the Bash tool, gated on the active sandbox (G-SANDBOX):
  *   - description: BASH_DESCRIPTION alone when unsandboxed; + the faithful
  *     sandbox note (default/mandatory mode) when a sandbox is active.
- *   - schema: the `dangerouslyDisableSandbox` param is added ONLY when the
- *     sandbox is active AND the escape hatch is allowed — the red line "never
- *     describe a capability that isn't active" applies to the schema too.
- * `createBashTool()` with no argument returns the byte-identical unsandboxed
- * tool (locks tests that import `bashTool` directly).
+ *   - schema: `dangerouslyDisableSandbox` is ALWAYS present (E7-02, official
+ *     parity — the official tool ships it unconditionally). Its semantics are
+ *     state-honest, so the always-on schema never opens a silent escape:
+ *       - no sandbox active: the flag is a no-op (nothing to escape);
+ *       - sandbox active + allowEscape: the engine routes the call through the
+ *         permission gate as its OWN ask (see loop.ts sandboxEscape — never
+ *         auto-allowed except under bypassPermissions);
+ *       - mandatory mode (allowEscape false): execute() refuses by policy.
+ *     The gating red line still applies to the DESCRIPTION: the sandbox note
+ *     (and mandatory-mode "disabled by policy" wording) stays state-gated.
+ * `createBashTool()` with no argument returns the unsandboxed tool with a
+ * byte-identical description (locks tests that import `bashTool` directly).
  */
 export function createBashTool(sandbox?: SandboxContext): BuiltinTool {
   const active = sandbox !== undefined;
@@ -297,15 +304,15 @@ export function createBashTool(sandbox?: SandboxContext): BuiltinTool {
         'Run the command in the background and return a shell id ' +
         'immediately (read output with BashOutput, stop with KillShell).',
     },
-  };
-  if (active && sandbox.allowEscape) {
-    properties['dangerouslyDisableSandbox'] = {
+    // Always in the schema (official parity); state-honest at runtime — see
+    // the createBashTool docstring for the per-state semantics.
+    dangerouslyDisableSandbox: {
       type: 'boolean',
       description:
-        'Run this command OUTSIDE the sandbox. This will prompt the user for ' +
-        'permission.',
-    };
-  }
+        'Set this to true to dangerously override sandbox mode and run ' +
+        'commands without sandboxing.',
+    },
+  };
   return {
     name: 'Bash',
     description,
@@ -315,7 +322,8 @@ export function createBashTool(sandbox?: SandboxContext): BuiltinTool {
   };
 }
 
-/** The default (unsandboxed) Bash tool — byte-identical to pre-sandbox. */
+/** The default (unsandboxed) Bash tool — description byte-identical to
+ *  pre-sandbox; the schema carries the always-on escape param (no-op here). */
 export const bashTool: BuiltinTool = createBashTool();
 
 async function execute(

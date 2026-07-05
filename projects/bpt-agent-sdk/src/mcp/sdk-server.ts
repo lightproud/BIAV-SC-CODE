@@ -20,18 +20,57 @@ import type {
 import { AbortError, isAbortError } from '../errors.js';
 
 /**
+ * Resolve tool()'s fifth parameter, which is accepted in two forms:
+ *  - official extras wrapper: `{ annotations: { readOnlyHint: true } }`
+ *  - legacy bare annotations: `{ readOnlyHint: true }`
+ * Detection is unambiguous at runtime: ToolAnnotations has no `annotations`
+ * field, so an object carrying that key can only be the extras wrapper. An
+ * empty object carries no information in either reading and normalizes to
+ * undefined.
+ */
+function resolveToolAnnotations(
+  arg?: ToolAnnotations | { annotations?: ToolAnnotations },
+): ToolAnnotations | undefined {
+  if (arg === undefined) return undefined;
+  if ('annotations' in arg) {
+    return (arg as { annotations?: ToolAnnotations }).annotations;
+  }
+  const bare = arg as ToolAnnotations;
+  return Object.keys(bare).length === 0 ? undefined : bare;
+}
+
+/**
  * Define one SDK MCP tool. The zod raw shape is converted to JSON Schema at
  * creation time (zod v4 native conversion, $schema marker stripped) and the
  * handler is wrapped with zod validation: invalid arguments produce an
  * isError text result instead of reaching the handler.
+ *
+ * The fifth parameter accepts both the official extras wrapper
+ * (`{ annotations: {...} }`) and the legacy bare ToolAnnotations form; see
+ * resolveToolAnnotations for the runtime detection rule.
  */
 export function tool<S extends z.ZodRawShape>(
   name: string,
   description: string,
   inputSchema: S,
   handler: (args: z.infer<z.ZodObject<S>>, extra: unknown) => Promise<CallToolResult>,
+  extras?: { annotations?: ToolAnnotations },
+): SdkMcpToolDefinition<z.infer<z.ZodObject<S>>>;
+export function tool<S extends z.ZodRawShape>(
+  name: string,
+  description: string,
+  inputSchema: S,
+  handler: (args: z.infer<z.ZodObject<S>>, extra: unknown) => Promise<CallToolResult>,
   annotations?: ToolAnnotations,
+): SdkMcpToolDefinition<z.infer<z.ZodObject<S>>>;
+export function tool<S extends z.ZodRawShape>(
+  name: string,
+  description: string,
+  inputSchema: S,
+  handler: (args: z.infer<z.ZodObject<S>>, extra: unknown) => Promise<CallToolResult>,
+  annotationsOrExtras?: ToolAnnotations | { annotations?: ToolAnnotations },
 ): SdkMcpToolDefinition<z.infer<z.ZodObject<S>>> {
+  const annotations = resolveToolAnnotations(annotationsOrExtras);
   const schema = z.object(inputSchema);
   // io: 'input' generates the INPUT-side JSON schema, which is what both the
   // Messages API tools[].input_schema and MCP tools/list inputSchema describe.

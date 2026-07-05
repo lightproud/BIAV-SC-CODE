@@ -117,6 +117,104 @@ gap is structural, not a backlog):
    session-cumulative. A consumer that read the last result's `num_turns` or
    `usage` as session totals must now SUM across results (cost needs no
    change). Session-wide `maxTurns`/`maxBudgetUsd` enforcement is untouched.
+5f. **Observability lifecycle events re-encoded to the official
+   `system`+`subtype` form** (B2a/E8, v0.7, BREAKING for stream consumers):
+   `task_started` / `task_progress` / `task_updated` / `task_notification` /
+   `hook_started` / `hook_response` (and the typed-only `hook_progress` /
+   `files_persisted` / `local_command_output` / `commands_changed`) are no
+   longer top-level message types. They now arrive as
+   `{ type: 'system', subtype: '<name>', ... }`, matching the official docs'
+   discriminator split — a consumer that switched on
+   `msg.type === 'task_started'` must switch on
+   `msg.type === 'system' && msg.subtype === 'task_started'`. There is no
+   runtime dual-emit of the old shape. Payload fields moved to the official
+   names at the same time:
+   - `task_started`: `task_name` → `description`; gained `task_type`
+     (always `'local_agent'`) and `tool_use_id?`; house `agent_id` dropped
+     (it always equaled `task_id`).
+   - `task_progress`: gained official `description` / `subagent_type` /
+     `usage { total_tokens, tool_uses, duration_ms }` (required) /
+     `last_tool_name?`; keeps BPT `progress` (turn-budget share, 0..99) and
+     `status` (`turn N/M`) as a documented superset (E8b ruling — foreground
+     spawns still do NOT emit `task_notification`).
+   - `task_updated`: gained the official `patch` envelope — `status` moved to
+     `patch.status` (stopTask now reports the official `'killed'`, not
+     `'cancelled'`), `error` to `patch.error`, plus `patch.end_time` (epoch
+     ms). The bounded `result` preview stays top-level as a BPT extension.
+   - `task_notification`: `event` → `status`, `message` → `summary`; gained
+     required `output_file` (always `''` — this engine writes no task output
+     files) and `tool_use_id?`.
+   - `hook_started` / `hook_response`: gained `hook_name` (callback function
+     name, `'callback'` when anonymous); `hook_response` now reports
+     `output` / `stdout` / `stderr` / `outcome` — `result` → `output`,
+     `error` → `stderr` with `outcome: 'error'` (or `'cancelled'` on an
+     outer-signal abort); `stdout` is always `''` and `exit_code` absent
+     (in-process callbacks have no stdio). `includeHookEvents` semantics are
+     unchanged.
+   Type-name spelling now follows the official exports:
+   `SDKControlInitializeResponse`, `SDKFilesPersistedEvent`,
+   `SDKRateLimitEvent`, `SDKAPIRetryMessage` are the primary names; the old
+   `SDKInitializationResult`, `SDKFilesPersistedMessage`,
+   `SDKRateLimitEventMessage`, `SDKApiRetryMessage` remain as `@deprecated`
+   aliases (dual-track, types only).
+5g. **`Query.setMcpServers()` result officialized** (B2b/T2-2, v0.7,
+   BREAKING): `McpSetServersResult` now leads with the official `added` /
+   `removed` / `errors` fields — computed from the real before/after registry
+   diff (errors maps a failed server's name to its connect error). The
+   pre-alignment `servers` status array remains as a `@deprecated` dual-track
+   field. The official fields are typed optional during the transition (the
+   internal registry still returns the legacy shape; the Query layer always
+   populates all three) — read `added`/`removed`/`errors`, not `servers`.
+5h. **`Query.rewindFiles()` result officialized** (B2b/T2-2, v0.7, BREAKING):
+   `RewindFilesResult` now leads with official `canRewind` / `error?` /
+   `filesChanged?`. An unknown `userMessageId` now resolves with
+   `{ canRewind: false, error }` instead of THROWING (soft-fail, official
+   signature); checkpointing-not-enabled still throws. `insertions` /
+   `deletions` are typed but never populated (no diff engine is bundled —
+   honestly absent, not fabricated). Legacy `checkpointId` / `restoredFiles` /
+   `deletedFiles` / `dryRun` stay populated as `@deprecated` dual-track
+   fields.
+5i. **`SDKResultMessage.stop_reason` on both arms + `ModelUsage` metering
+   fields** (B2b/T2-4, v0.7, BREAKING for strict type consumers): the success
+   arm's `stop_reason` is now REQUIRED `string | null` (was an optional
+   enum) and reports the official `'tool_deferred'` on a deferred turn (pair
+   with `deferred_tool_use` — the official defer-detection protocol); the
+   error arm gained required `stop_reason` (the last API stop_reason observed
+   before the failure, or `null` when no turn completed). `ModelUsage` gained
+   `contextWindow` (static public window table — an estimate) and
+   `maxOutputTokens` (the ACTUAL per-request max_tokens cap in force, not the
+   model's theoretical ceiling); both optional during the transition (the
+   subagent usage-ledger merge does not propagate them yet).
+5j. **`McpServerStatus.tools` element shape** (B2b/T2-7, v0.7, BREAKING):
+   officially an object array `{ name, description?, annotations? }`.
+   `Query.mcpServerStatus()` now returns that shape (names enriched from the
+   live tool entries). The TS type keeps a transitional `string[]` arm because
+   the internal registry still assembles bare names; narrow on
+   `typeof tools[0]` until it is removed.
+5k. **Session-surface alignments** (B2b, small BREAKING items):
+   `getSessionInfo()` returns `undefined` (was `null`) for an unknown id;
+   `renameSession()` now REJECTS a title that is empty after trimming (throws
+   `ConfigurationError`) and persists the trimmed title; the session functions
+   accept the official `dir` option (alias of `sessionDir`, which wins);
+   `getSessionMessages()` honors official `limit`/`offset`; `listSessions()`
+   types the official `includeWorktrees` name (no-op — own JSONL store only;
+   `includeWorkspace` is deprecated). Session meta now persists `gitBranch`
+   (from the runtime-context probe at query construction; absent on the
+   segments path / `includeEnvironmentContext:false`), so
+   `SDKSessionInfo.gitBranch` reads back. `PermissionUpdate`
+   `removeDirectories` is now HONORED at runtime: the main thread's effective
+   tool directories are `additionalDirectories` − removed + session-added,
+   recomputed each turn (subagents still receive the static base list).
+5l. **`SDKRateLimitEvent` payload officialized** (B2a tail, v0.7, BREAKING):
+   the event now carries the official `rate_limit_info` envelope —
+   `{ status: 'rejected', resetsAt? }`, with `resetsAt` (unix seconds)
+   derived from the server's real 429 Retry-After. The flat `retry_after_ms`
+   / `limit_type` fields remain populated as `@deprecated` dual-track;
+   `requests_remaining` was never populated. Trigger semantics are
+   deliberately UNCHANGED (KD-12): this engine emits the event per 429 retry,
+   whereas the official CLI emits `api_retry` on an actual 429 and reserves
+   `rate_limit_event` for quota-status updates it receives from the platform
+   (a feed this engine does not have).
 6. **Sessions** live in this SDK's own JSONL store (or your `sessionStore`
    backend); official CLI session files are not readable.
 7. **`sse` MCP transport** (legacy) is unsupported; stdio / http / sdk are.

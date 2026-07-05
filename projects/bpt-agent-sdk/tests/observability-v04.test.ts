@@ -1,10 +1,11 @@
 /**
  * v0.4 — lifecycle emission + contract-alignment increments.
  *
- *  1. Subagent task lifecycle: task_started / task_progress / task_updated
- *     (foreground + background) and task_notification (background only) are
- *     EMITTED, both at the runtime seam and end-to-end through the stream.
- *  2. Hook lifecycle: hook_started / hook_response pairs behind
+ *  1. Subagent task lifecycle: system/task_started / task_progress /
+ *     task_updated (foreground + background) and task_notification
+ *     (background only) are EMITTED — official `system`+subtype encoding
+ *     since v0.7 (B2a/E8) — both at the runtime seam and end-to-end.
+ *  2. Hook lifecycle: system/hook_started + system/hook_response pairs behind
  *     options.includeHookEvents (off by default).
  *  3. Error results carry the official-parallel `errors: string[]`.
  *  4. matchToolName supports the `*` and `mcp__*` globs (deny-position use).
@@ -129,6 +130,24 @@ function ofType<T extends SDKMessage['type']>(
   return msgs.filter((m): m is Extract<SDKMessage, { type: T }> => m.type === type);
 }
 
+/** v0.7: lifecycle events are official `system`+subtype encoded. */
+function ofSubtype<S extends Extract<SDKMessage, { type: 'system' }>['subtype']>(
+  msgs: SDKMessage[],
+  subtype: S,
+): Array<Extract<SDKMessage, { type: 'system'; subtype: S }>> {
+  return msgs.filter(
+    (m): m is Extract<SDKMessage, { type: 'system'; subtype: S }> =>
+      m.type === 'system' && (m as { subtype?: string }).subtype === subtype,
+  );
+}
+
+/** Ordered stream names with system subtypes unwrapped (for ordering checks). */
+function namesOf(msgs: SDKMessage[]): string[] {
+  return msgs.map((m) =>
+    m.type === 'system' ? (m as { subtype: string }).subtype : m.type,
+  );
+}
+
 // ---------------------------------------------------------------------------
 // 1. Task lifecycle — runtime seam
 // ---------------------------------------------------------------------------
@@ -141,37 +160,46 @@ describe('v0.4 task lifecycle (runtime)', () => {
     );
     expect(res.isError).toBe(false);
 
-    const started = ofType(h.emitted, 'task_started');
+    const started = ofSubtype(h.emitted, 'task_started');
     expect(started).toHaveLength(1);
-    expect(started[0]!.task_name).toBe('my delegated task');
+    expect(started[0]!.description).toBe('my delegated task');
+    expect(started[0]!.task_type).toBe('local_agent');
     expect(started[0]!.task_id).toBe(res.agentId);
     expect(started[0]!.session_id).toBe('parent-sess');
 
-    const progress = ofType(h.emitted, 'task_progress');
+    const progress = ofSubtype(h.emitted, 'task_progress');
     expect(progress.length).toBeGreaterThanOrEqual(1);
     expect(progress[0]!.task_id).toBe(res.agentId);
+    expect(progress[0]!.description).toBe('my delegated task');
+    expect(progress[0]!.subagent_type).toBe('general-purpose');
+    // Official required usage: real cumulative figures.
+    expect(progress[0]!.usage.duration_ms).toBeGreaterThanOrEqual(0);
+    expect(progress[0]!.usage.tool_uses).toBe(0);
+    expect(progress[0]!.usage.total_tokens).toBeGreaterThanOrEqual(0);
+    // BPT superset extensions (E8b): budget-share progress + turn status.
     expect(progress[0]!.progress).toBeGreaterThanOrEqual(0);
     expect(progress[0]!.progress).toBeLessThanOrEqual(99);
     expect(progress[0]!.status).toMatch(/^turn 1\/\d+$/);
 
-    const updated = ofType(h.emitted, 'task_updated');
+    const updated = ofSubtype(h.emitted, 'task_updated');
     expect(updated).toHaveLength(1);
-    expect(updated[0]!.status).toBe('completed');
+    expect(updated[0]!.patch.status).toBe('completed');
+    expect(updated[0]!.patch.end_time).toBeGreaterThan(0);
     expect(updated[0]!.result).toBe('child answer');
 
     // Foreground children never notify (their result returns inline).
-    expect(ofType(h.emitted, 'task_notification')).toHaveLength(0);
+    expect(ofSubtype(h.emitted, 'task_notification')).toHaveLength(0);
 
     // Ordering: started before progress before updated.
-    const order = h.emitted.map((m) => m.type);
+    const order = namesOf(h.emitted);
     expect(order.indexOf('task_started')).toBeLessThan(order.indexOf('task_progress'));
     expect(order.indexOf('task_progress')).toBeLessThan(order.indexOf('task_updated'));
   });
 
-  it('task_name falls back to the resolved agent type without a description', async () => {
+  it('description falls back to the resolved agent type without a description', async () => {
     const h = makeRuntime({ scripts: [textReplyEvents('ok')] });
     await h.runtime.makeSpawnFn(0)(baseParams());
-    expect(ofType(h.emitted, 'task_started')[0]!.task_name).toBe('general-purpose');
+    expect(ofSubtype(h.emitted, 'task_started')[0]!.description).toBe('general-purpose');
   });
 
   it('background: terminal task_updated + task_notification(completed)', async () => {
@@ -184,21 +212,23 @@ describe('v0.4 task lifecycle (runtime)', () => {
 
     // Started is synchronous with the spawn; the terminal events land when the
     // detached child finishes.
-    expect(ofType(h.emitted, 'task_started')).toHaveLength(1);
-    for (let i = 0; i < 200 && ofType(h.emitted, 'task_notification').length === 0; i++) {
+    expect(ofSubtype(h.emitted, 'task_started')).toHaveLength(1);
+    for (let i = 0; i < 200 && ofSubtype(h.emitted, 'task_notification').length === 0; i++) {
       await tick(1);
     }
-    const updated = ofType(h.emitted, 'task_updated');
+    const updated = ofSubtype(h.emitted, 'task_updated');
     expect(updated).toHaveLength(1);
-    expect(updated[0]!.status).toBe('completed');
+    expect(updated[0]!.patch.status).toBe('completed');
     expect(updated[0]!.result).toBe('bg result');
-    const notes = ofType(h.emitted, 'task_notification');
+    const notes = ofSubtype(h.emitted, 'task_notification');
     expect(notes).toHaveLength(1);
-    expect(notes[0]!.event).toBe('completed');
+    expect(notes[0]!.status).toBe('completed');
+    expect(notes[0]!.output_file).toBe(''); // official required field; no task output files here
+    expect(notes[0]!.summary).toContain('completed');
     expect(notes[0]!.task_id).toBe(res.agentId);
   });
 
-  it('stopTask: task_updated(cancelled) + task_notification(stopped), no failed double-report', async () => {
+  it('stopTask: task_updated(patch.status killed) + task_notification(stopped), no failed double-report', async () => {
     // The child's (only) stream call hangs on the outer signal via a script
     // function that defers until abort: simulate with a script whose events are
     // produced lazily AFTER stopTask by never being consumed — instead, use a
@@ -214,21 +244,22 @@ describe('v0.4 task lifecycle (runtime)', () => {
     h.runtime.stopTask(res.agentId);
     await tick(20);
 
-    const updated = ofType(h.emitted, 'task_updated');
-    const cancelled = updated.filter((u) => u.status === 'cancelled');
-    expect(cancelled).toHaveLength(1);
-    expect(cancelled[0]!.task_id).toBe(res.agentId);
-    const notes = ofType(h.emitted, 'task_notification');
-    expect(notes.some((n) => n.event === 'stopped')).toBe(true);
+    const updated = ofSubtype(h.emitted, 'task_updated');
+    // Official patch.status vocabulary: an externally stopped task is 'killed'.
+    const killed = updated.filter((u) => u.patch.status === 'killed');
+    expect(killed).toHaveLength(1);
+    expect(killed[0]!.task_id).toBe(res.agentId);
+    const notes = ofSubtype(h.emitted, 'task_notification');
+    expect(notes.some((n) => n.status === 'stopped')).toBe(true);
     // The aborted child must NOT also surface as failed.
-    expect(updated.filter((u) => u.status === 'failed')).toHaveLength(0);
+    expect(updated.filter((u) => u.patch.status === 'failed')).toHaveLength(0);
   });
 
   it('task_updated.result is bounded to a preview', async () => {
     const long = 'x'.repeat(2000);
     const h = makeRuntime({ scripts: [textReplyEvents(long)] });
     await h.runtime.makeSpawnFn(0)(baseParams());
-    const updated = ofType(h.emitted, 'task_updated')[0]!;
+    const updated = ofSubtype(h.emitted, 'task_updated')[0]!;
     expect(updated.result!.length).toBeLessThanOrEqual(503); // 500 + '...'
     expect(updated.result!.startsWith('xxx')).toBe(true);
   });
@@ -283,16 +314,21 @@ describe('v0.4 task lifecycle (end-to-end stream)', () => {
       query({ prompt: 'go', options: opts({ allowedTools: ['Agent'] }) }),
     );
 
-    const started = ofType(messages, 'task_started');
+    const started = ofSubtype(messages, 'task_started');
     expect(started).toHaveLength(1);
-    expect(started[0]!.task_name).toBe('sub work');
-    const updated = ofType(messages, 'task_updated');
+    expect(started[0]!.description).toBe('sub work');
+    // tool_use_id (official optional) is currently never populated: the loop
+    // does not expose the spawning tool_use block id to the Agent tool
+    // (agent-tool.ts passes toolUseId: ''), and the runtime omits the field
+    // rather than emit a dishonest fallback id.
+    expect(started[0]!.tool_use_id).toBeUndefined();
+    const updated = ofSubtype(messages, 'task_updated');
     expect(updated).toHaveLength(1);
-    expect(updated[0]!.status).toBe('completed');
+    expect(updated[0]!.patch.status).toBe('completed');
     expect(updated[0]!.result).toBe('child says hi');
-    expect(ofType(messages, 'task_progress').length).toBeGreaterThanOrEqual(1);
+    expect(ofSubtype(messages, 'task_progress').length).toBeGreaterThanOrEqual(1);
 
-    const types = messages.map((m) => m.type);
+    const types = namesOf(messages);
     expect(types.indexOf('task_started')).toBeLessThan(types.indexOf('task_updated'));
     expect(types.indexOf('task_updated')).toBeLessThan(types.indexOf('result'));
 
@@ -326,17 +362,20 @@ describe('v0.4 hook lifecycle (includeHookEvents)', () => {
         options: opts({ includeHookEvents: true, hooks: hookSet() }),
       }),
     );
-    const started = ofType(messages, 'hook_started');
-    const responded = ofType(messages, 'hook_response');
+    const started = ofSubtype(messages, 'hook_started');
+    const responded = ofSubtype(messages, 'hook_response');
     expect(started).toHaveLength(1);
     expect(responded).toHaveLength(1);
     expect(started[0]!.hook_event).toBe('PreToolUse');
+    expect(started[0]!.hook_name).toBeTruthy(); // official field: callback name or 'callback'
     expect(responded[0]!.hook_event).toBe('PreToolUse');
-    // Correlated by hook_id; response carries the output JSON.
+    // Correlated by hook_id; response carries the output JSON on `output`.
     expect(responded[0]!.hook_id).toBe(started[0]!.hook_id);
-    expect(responded[0]!.result).toContain('seen');
+    expect(responded[0]!.output).toContain('seen');
+    expect(responded[0]!.outcome).toBe('success');
+    expect(responded[0]!.stdout).toBe(''); // in-process callbacks: no stdio
     // Ordering: the pair surfaces before the terminal result.
-    const types = messages.map((m) => m.type);
+    const types = namesOf(messages);
     expect(types.indexOf('hook_response')).toBeLessThan(types.indexOf('result'));
   });
 
@@ -351,8 +390,8 @@ describe('v0.4 hook lifecycle (includeHookEvents)', () => {
     const messages = await collect(
       query({ prompt: 'go', options: opts({ hooks: hookSet() }) }),
     );
-    expect(ofType(messages, 'hook_started')).toHaveLength(0);
-    expect(ofType(messages, 'hook_response')).toHaveLength(0);
+    expect(ofSubtype(messages, 'hook_started')).toHaveLength(0);
+    expect(ofSubtype(messages, 'hook_response')).toHaveLength(0);
   });
 
   it('a failing hook callback reports its error on hook_response', async () => {
@@ -382,10 +421,12 @@ describe('v0.4 hook lifecycle (includeHookEvents)', () => {
         }),
       }),
     );
-    const responded = ofType(messages, 'hook_response');
+    const responded = ofSubtype(messages, 'hook_response');
     expect(responded).toHaveLength(1);
-    expect(responded[0]!.error).toContain('boom');
-    expect(responded[0]!.result).toBeUndefined();
+    // Official shape: the failure lands on stderr with outcome 'error'.
+    expect(responded[0]!.stderr).toContain('boom');
+    expect(responded[0]!.outcome).toBe('error');
+    expect(responded[0]!.output).toBe('');
   });
 });
 

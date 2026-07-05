@@ -20,11 +20,10 @@ import type {
   McpSdkServerConfigWithInstance,
   McpServerConfig,
   McpServerStatus,
-  McpSetServersResult,
   McpStdioServerConfig,
   ToolAnnotations,
 } from '../types.js';
-import { AbortError, ConfigurationError, isAbortError } from '../errors.js';
+import { AbortError, ConfigurationError, McpError, isAbortError } from '../errors.js';
 import { StdioMcpConnection } from './stdio.js';
 import { HttpMcpConnection } from './http.js';
 import { SdkMcpConnection } from './sdk-server.js';
@@ -115,9 +114,30 @@ export class DefaultMcpRegistry implements McpRegistry {
       };
       if (entry.serverInfo) status.serverInfo = entry.serverInfo;
       if (entry.error) status.error = entry.error;
-      // Per-server tool names, once the server is connected (task #17).
+      // Per-server tools, once the server is connected (task #17; official
+      // object form since v0.7 T2-7 — name + description + mapped hints).
       if (entry.enabled && entry.baseStatus === 'connected' && entry.tools.length > 0) {
-        status.tools = entry.tools.map((t) => t.toolName);
+        status.tools = entry.tools.map((t) => {
+          const a = t.annotations;
+          const annotations =
+            a !== undefined &&
+            (a.readOnlyHint !== undefined ||
+              a.destructiveHint !== undefined ||
+              a.openWorldHint !== undefined)
+              ? {
+                  ...(a.readOnlyHint !== undefined ? { readOnly: a.readOnlyHint } : {}),
+                  ...(a.destructiveHint !== undefined
+                    ? { destructive: a.destructiveHint }
+                    : {}),
+                  ...(a.openWorldHint !== undefined ? { openWorld: a.openWorldHint } : {}),
+                }
+              : undefined;
+          return {
+            name: t.toolName,
+            ...(t.description !== undefined ? { description: t.description } : {}),
+            ...(annotations !== undefined ? { annotations } : {}),
+          };
+        });
       }
       return status;
     });
@@ -197,9 +217,16 @@ export class DefaultMcpRegistry implements McpRegistry {
     signal: AbortSignal,
   ): Promise<McpResourceContent[]> {
     const entry = this.entries.find((e) => e.name === server);
-    if (!entry) throw new Error(`No such MCP server: ${server}`);
+    if (!entry) {
+      throw new McpError('mcp_unknown_server', `No such MCP server: ${server}`, {
+        serverLabel: server,
+      });
+    }
     if (!entry.enabled || entry.baseStatus !== 'connected' || !entry.connection) {
-      throw new Error(`MCP server '${server}' is not connected`);
+      throw new McpError('mcp_not_connected', `MCP server '${server}' is not connected`, {
+        serverLabel: server,
+        phase: 'request',
+      });
     }
     return await entry.connection.readResource(uri, signal);
   }
@@ -237,10 +264,9 @@ export class DefaultMcpRegistry implements McpRegistry {
   }
 
   /** Replace the live server set: tear down current connections, swap in the
-   *  new configs, connect them, and return the resulting statuses. */
-  async setServers(
-    servers: Record<string, McpServerConfig>,
-  ): Promise<McpSetServersResult> {
+   *  new configs, and connect them. The caller reads statuses()/diffs for the
+   *  public McpSetServersResult (query.ts owns the official shape). */
+  async setServers(servers: Record<string, McpServerConfig>): Promise<void> {
     await this.closeAll();
     const next: ServerEntry[] = Object.entries(servers).map(([name, config]) => ({
       name,
@@ -252,7 +278,6 @@ export class DefaultMcpRegistry implements McpRegistry {
     }));
     this.entries.splice(0, this.entries.length, ...next);
     await this.connectAll();
-    return { servers: this.statuses() };
   }
 
   /** Close every connection (best-effort, parallel). */
@@ -295,7 +320,12 @@ export class DefaultMcpRegistry implements McpRegistry {
       const tools = await raceWithAbort(
         work,
         controller.signal,
-        `MCP server '${entry.name}' timed out after ${CONNECT_TIMEOUT_MS}ms while connecting`,
+        () =>
+          new McpError(
+            'mcp_connect_timeout',
+            `MCP server '${entry.name}' timed out after ${CONNECT_TIMEOUT_MS}ms while connecting`,
+            { serverLabel: entry.name, phase: 'connect', timeoutMs: CONNECT_TIMEOUT_MS },
+          ),
       );
       entry.connection = conn;
       entry.serverInfo = conn.serverInfo();
@@ -384,13 +414,18 @@ function errMessage(err: unknown): string {
 }
 
 /**
- * Resolve with the work promise, or reject with timeoutMessage when the
- * signal fires first. The work promise always keeps a rejection handler
- * attached, so a late failure never becomes an unhandled rejection.
+ * Resolve with the work promise, or reject with the caller-built timeout
+ * error when the signal fires first. The work promise always keeps a
+ * rejection handler attached, so a late failure never becomes an unhandled
+ * rejection.
  */
-function raceWithAbort<T>(work: Promise<T>, signal: AbortSignal, timeoutMessage: string): Promise<T> {
+function raceWithAbort<T>(
+  work: Promise<T>,
+  signal: AbortSignal,
+  timeoutError: () => Error,
+): Promise<T> {
   return new Promise<T>((resolve, reject) => {
-    const onAbort = (): void => reject(new Error(timeoutMessage));
+    const onAbort = (): void => reject(timeoutError());
     if (signal.aborted) {
       onAbort();
     } else {

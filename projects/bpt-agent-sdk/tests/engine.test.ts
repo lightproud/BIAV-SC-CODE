@@ -557,6 +557,10 @@ describe('runAgentLoop', () => {
       cacheCreationInputTokens: 0,
       webSearchRequests: 0,
       costUSD: 0,
+      // B2b/T2-4: static window-table estimate (unknown model -> default
+      // 200k) + the actual per-request max_tokens cap the engine sends.
+      contextWindow: 200_000,
+      maxOutputTokens: 1024,
     });
     expect(result.total_cost_usd).toBe(0);
     expect(result.permission_denials).toEqual([]);
@@ -1004,6 +1008,25 @@ describe('runAgentLoop', () => {
     );
 
     expect(transport.requests[0]!.thinking).toBeUndefined();
+  });
+
+  it("thinking {type:'adaptive'} is transmitted verbatim with no budget_tokens (E7-01)", async () => {
+    // The official wire shape: {type:'adaptive'} and NOTHING else - no budget
+    // resolution, no clamp, and any maxThinkingTokens fallback is ignored
+    // (budgets are enabled-only).
+    const transport = new MockTransport([textReplyEvents('ok')]);
+    const deps = makeDeps(transport);
+    const history: APIMessageParam[] = [{ role: 'user', content: 'go' }];
+
+    await collect(
+      runAgentLoop(
+        history,
+        deps,
+        makeConfig({ thinking: { type: 'adaptive' }, maxThinkingTokens: 2048 }),
+      ),
+    );
+
+    expect(transport.requests[0]!.thinking).toEqual({ type: 'adaptive' });
   });
 
   // ----- finding #2: stop_reason tool_use with zero tool_use blocks -----

@@ -22,7 +22,12 @@
  * (context isolation).
  */
 
+import { execFile } from 'node:child_process';
 import { randomUUID } from 'node:crypto';
+import { mkdtemp, rm } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+import { promisify } from 'node:util';
 
 import { isAbortError } from '../errors.js';
 import type {
@@ -64,6 +69,12 @@ import { DefaultPermissionGate } from '../permissions/gate.js';
 import { runAgentLoop } from '../engine/loop.js';
 import { matchToolName, parseRule } from '../permissions/rules.js';
 import { addUsage } from '../engine/pricing.js';
+import {
+  StallWatchdog,
+  resolveStallTimeoutMs,
+} from '../transport/stall-watchdog.js';
+import { addWorktree, removeWorktreeIfClean } from '../internal/worktree.js';
+import type { ToolContextWithPermissionGate } from '../tools/exitplanmode.js';
 import {
   DEFAULT_SUBAGENT_MAX_TURNS,
   MAX_SUBAGENT_DEPTH,
@@ -121,8 +132,9 @@ export type SubagentRuntimeOptions = {
   /** Resolved session id at spawn time (for hook input). */
   sessionId: () => string;
   debug: (msg: string) => void;
-  /** v0.4 task-lifecycle sink: task_started / task_progress / task_updated /
-   *  task_notification messages are pushed here (the runtime cannot yield);
+  /** v0.4 task-lifecycle sink: system/task_started / task_progress /
+   *  task_updated / task_notification messages (official `system`+subtype
+   *  encoding since v0.7) are pushed here (the runtime cannot yield);
    *  the query layer drains them into the SDKMessage stream. */
   emitObservability?: (msg: SDKMessage) => void;
   /** v0.5 query-wide shell session (shared with children's ToolContext). */
@@ -218,6 +230,15 @@ export function buildForkSeed(
   return seed;
 }
 
+const execFileP = promisify(execFile);
+
+/**
+ * Worktree isolation (Agent tool `isolation: 'worktree'`, E7-02): create a
+ * temporary DETACHED git worktree of the repository at `repoCwd` for a child
+ * to use as its cwd. Shared with the EnterWorktree tool via
+ * src/internal/worktree.ts (extracted byte-equal from this module).
+ */
+
 /**
  * McpRegistry view that hides qualified tool names a subagent may not use: any
  * name outside an explicit `tools` allowlist, or any name matched by a bare
@@ -309,15 +330,19 @@ export function createSubagentRuntime(
     text.length > TASK_RESULT_PREVIEW_CHARS
       ? `${text.slice(0, TASK_RESULT_PREVIEW_CHARS)}...`
       : text;
-  /** Terminal task_updated for a finished (non-cancelled) child. */
+  /** Terminal task_updated for a finished (non-killed) child (official
+   *  `patch` envelope since v0.7). */
   const emitTaskFinished = (agentId: string, res: { text: string; isError: boolean }): void => {
     emitTask({
-      type: 'task_updated',
+      type: 'system',
+      subtype: 'task_updated',
       task_id: agentId,
-      status: res.isError ? 'failed' : 'completed',
-      ...(res.isError
-        ? { error: resultPreview(res.text) }
-        : { result: resultPreview(res.text) }),
+      patch: {
+        status: res.isError ? 'failed' : 'completed',
+        end_time: Date.now(),
+        ...(res.isError ? { error: resultPreview(res.text) } : {}),
+      },
+      ...(res.isError ? {} : { result: resultPreview(res.text) }),
     });
   };
 
@@ -354,6 +379,14 @@ export function createSubagentRuntime(
                 prev.cacheCreationInputTokens + mu.cacheCreationInputTokens,
               webSearchRequests: prev.webSearchRequests + mu.webSearchRequests,
               costUSD: prev.costUSD + mu.costUSD,
+              // Static per-model metering (T2-4): same model -> same values;
+              // keep the freshest non-undefined ones across merges.
+              ...(mu.contextWindow ?? prev.contextWindow
+                ? { contextWindow: mu.contextWindow ?? prev.contextWindow }
+                : {}),
+              ...(mu.maxOutputTokens ?? prev.maxOutputTokens
+                ? { maxOutputTokens: mu.maxOutputTokens ?? prev.maxOutputTokens }
+                : {}),
             };
     }
   };
@@ -530,6 +563,11 @@ export function createSubagentRuntime(
     agentType: string;
     fork: boolean;
     parentToolUseId: string | null | undefined;
+    /** Delegated-task description (task_progress.description, official field). */
+    description: string;
+    /** The RAW spawning tool_use id ('' when the tool passed none) — NOT the
+     *  agentId-fallback correlation id; task_*.tool_use_id must be honest. */
+    toolUseId: string;
   };
 
   async function runChildToCompletion(
@@ -538,6 +576,7 @@ export function createSubagentRuntime(
     config: EngineConfig,
     agentId: string,
     sidechain: SidechainInfo,
+    liveness?: { touch(): void },
   ): Promise<{ text: string; isError: boolean }> {
     let lastText = '';
     let sawError = false;
@@ -547,6 +586,13 @@ export function createSubagentRuntime(
     // is a real cap, not a guess; capped at 99 (100 is the terminal update's).
     const turnCap = config.maxTurns ?? DEFAULT_SUBAGENT_MAX_TURNS;
     let childTurns = 0;
+    // Official task_progress.usage (required): cumulative real figures from
+    // the child's own stream — tokens from each assistant turn's API usage,
+    // tool_uses from its tool_use blocks, duration from the wall clock.
+    const startedAtMs = Date.now();
+    let childTokens = 0;
+    let childToolUses = 0;
+    let lastToolName: string | undefined;
 
     // SIDECHAIN: the child's turns are recorded under key=agentId (NEVER the
     // parent sessionId), tagged isSidechain, so they can be persisted/observed
@@ -579,11 +625,34 @@ export function createSubagentRuntime(
     }
 
     for await (const msg of runAgentLoop(history, deps, config)) {
+      liveness?.touch();
       if (msg.type === 'assistant') {
         childTurns += 1;
+        const u = msg.message.usage;
+        childTokens +=
+          (u?.input_tokens ?? 0) +
+          (u?.output_tokens ?? 0) +
+          (u?.cache_creation_input_tokens ?? 0) +
+          (u?.cache_read_input_tokens ?? 0);
+        for (const block of msg.message.content) {
+          if (block.type === 'tool_use') {
+            childToolUses += 1;
+            lastToolName = block.name;
+          }
+        }
         emitTask({
-          type: 'task_progress',
+          type: 'system',
+          subtype: 'task_progress',
           task_id: agentId,
+          ...(sidechain.toolUseId !== '' ? { tool_use_id: sidechain.toolUseId } : {}),
+          description: sidechain.description,
+          subagent_type: sidechain.agentType,
+          usage: {
+            total_tokens: childTokens,
+            tool_uses: childToolUses,
+            duration_ms: Date.now() - startedAtMs,
+          },
+          ...(lastToolName !== undefined ? { last_tool_name: lastToolName } : {}),
           progress: Math.min(99, Math.floor((childTurns / turnCap) * 100)),
           status: `turn ${childTurns}/${turnCap}`,
         });
@@ -672,11 +741,49 @@ export function createSubagentRuntime(
       const agentId = randomUUID();
       const childDepth = depth + 1;
 
+      // Worktree isolation (E7-02): created BEFORE task_started so a creation
+      // failure is reported synchronously with no dangling lifecycle events.
+      // The worktree always derives from the runtime cwd (the root repo), even
+      // for nested spawns — the spawn closure does not track per-child cwds.
+      let childCwd = cwd;
+      let worktreeDir: string | undefined;
+      if (params.isolation === 'worktree') {
+        const wt = await addWorktree(cwd);
+        if ('error' in wt) {
+          return {
+            content: `Agent failed: could not create an isolation worktree: ${wt.error}`,
+            isError: true,
+            agentId: '',
+            background: false,
+          };
+        }
+        worktreeDir = wt.dir;
+        childCwd = wt.dir;
+        debug(`subagent ${agentId}: isolation worktree at ${worktreeDir}`);
+      }
+      /** Post-run worktree cleanup: removed only when left unchanged. */
+      const releaseWorktree = async (): Promise<void> => {
+        if (worktreeDir === undefined) return;
+        const outcome = await removeWorktreeIfClean(cwd, worktreeDir);
+        if (outcome === 'kept') {
+          debug(
+            `subagent ${agentId}: worktree ${worktreeDir} kept ` +
+              '(uncommitted changes or git failure)',
+          );
+        }
+      };
+
+      const taskDescription = params.description ?? resolved.type;
       emitTask({
-        type: 'task_started',
+        type: 'system',
+        subtype: 'task_started',
         task_id: agentId,
-        task_name: params.description ?? resolved.type,
-        agent_id: agentId,
+        ...(params.toolUseId !== '' ? { tool_use_id: params.toolUseId } : {}),
+        description: taskDescription,
+        // This engine only spawns in-process subagents (never local_bash /
+        // remote_agent tasks), so the official task_type is always
+        // 'local_agent'.
+        task_type: 'local_agent',
       });
       await fireSubagentStart(agentId, params.subagentType, params.signal);
 
@@ -744,11 +851,22 @@ export function createSubagentRuntime(
         debug,
       });
 
+      // Per-call model override (Agent tool `model`, E7-02): beats
+      // agentDef.model for an isolated child; a fork ALWAYS inherits the
+      // parent model (the cached prefix must byte-match), so the override is
+      // ignored there with a debug note.
+      if (params.model !== undefined && forkActive) {
+        debug(
+          `subagent "${resolved.type}": model override "${params.model}" ` +
+            'ignored in fork mode (fork inherits the parent model)',
+        );
+      }
       const childConfig: EngineConfig = {
-        // Fork inherits the parent model; isolated resolves agentDef.model.
+        // Fork inherits the parent model; isolated resolves the per-call
+        // override, then agentDef.model, through the same alias path.
         model: forkActive
           ? engineConfig.model
-          : resolveModelAlias(agentDef.model, engineConfig.model),
+          : resolveModelAlias(params.model ?? agentDef.model, engineConfig.model),
         fallbackModel,
         maxOutputTokens: engineConfig.maxOutputTokens,
         // Fork inherits the parent system prompt (prefix match); isolated uses
@@ -769,7 +887,8 @@ export function createSubagentRuntime(
         promptCaching: engineConfig.promptCaching,
         includePartialMessages: false,
         sessionId: agentId,
-        cwd,
+        // The isolation worktree (when requested) is the child's cwd.
+        cwd: childCwd,
         // The loop does not expose the spawning tool_use id to the tool; use a
         // stable correlation id (the child agentId) when the tool passed none.
         parentToolUseId:
@@ -780,14 +899,17 @@ export function createSubagentRuntime(
       const parentSignal = isBackground ? outerSignal : params.signal;
       const childSignal = AbortSignal.any([parentSignal, childController.signal]);
       const childToolContext: ToolContext = {
-        cwd,
+        cwd: childCwd,
         additionalDirectories,
         env,
         signal: childSignal,
         debug,
         spawnSubagent: makeSpawnFn(childDepth),
         // One shell session per query: children see the same background
-        // shells and persistent cwd/env as the root loop.
+        // shells and persistent cwd/env as the root loop. KNOWN LIMIT for
+        // worktree isolation: the shared persistent-state replay may `cd` a
+        // child Bash call back to the last recorded cwd (outside the
+        // worktree); Read/Write/Edit and childConfig.cwd stay confined.
         shells: opts.shells,
         // Children inherit the same sandbox as the root loop.
         sandbox: opts.sandbox,
@@ -795,6 +917,11 @@ export function createSubagentRuntime(
         // satisfies a child's Write gate and vice versa.
         readFilePaths: opts.readFilePaths,
       };
+      // ExitPlanMode bridge: the child flips ITS OWN gate (childGate), never
+      // the parent's. Attached via the tool's context extension because the
+      // bridge is deliberately not part of the core ToolContext contract.
+      (childToolContext as ToolContextWithPermissionGate).permissionGate =
+        childGate;
       const childDeps: EngineDeps = {
         transport,
         builtinTools: childBuiltins,
@@ -814,9 +941,18 @@ export function createSubagentRuntime(
         agentType: resolved.type,
         fork: forkActive,
         parentToolUseId: childConfig.parentToolUseId,
+        description: taskDescription,
+        toolUseId: params.toolUseId,
       };
 
       if (isBackground) {
+        // T2-6 background stall watchdog: a child whose stream goes silent for
+        // the resolved window is aborted (env-tunable, 0 disables); touch()
+        // rides every stream message via the liveness hook.
+        const stallWatchdog = new StallWatchdog({
+          timeoutMs: resolveStallTimeoutMs(env),
+          onStall: () => childController.abort(),
+        });
         const promise = (async (): Promise<void> => {
           try {
             const result = await runChildToCompletion(
@@ -825,6 +961,7 @@ export function createSubagentRuntime(
               childConfig,
               agentId,
               sidechainInfo,
+              stallWatchdog,
             );
             completedBuffer.push({
               type: 'text',
@@ -834,10 +971,14 @@ export function createSubagentRuntime(
             });
             emitTaskFinished(agentId, result);
             emitTask({
-              type: 'task_notification',
+              type: 'system',
+              subtype: 'task_notification',
               task_id: agentId,
-              event: result.isError ? 'failed' : 'completed',
-              message: `background subagent '${resolved.type}' ${result.isError ? 'failed' : 'completed'}`,
+              ...(params.toolUseId !== '' ? { tool_use_id: params.toolUseId } : {}),
+              status: result.isError ? 'failed' : 'completed',
+              // No task output files in this engine (official field, required).
+              output_file: '',
+              summary: `background subagent '${resolved.type}' ${result.isError ? 'failed' : 'completed'}`,
             });
           } catch (err) {
             debug(
@@ -845,25 +986,41 @@ export function createSubagentRuntime(
                 `${err instanceof Error ? err.message : String(err)}`,
             );
             // An abort here is a stopTask()/query-close cancellation whose
-            // lifecycle events are emitted at the cancellation site; only a
-            // real failure is reported as failed.
-            if (!isAbortError(err)) {
-              const message = err instanceof Error ? err.message : String(err);
+            // lifecycle events are emitted at the cancellation site — EXCEPT a
+            // stall-watchdog abort, which has no cancellation site and must
+            // report as failed here; other real failures likewise.
+            if (!isAbortError(err) || stallWatchdog.stalled) {
+              const message = stallWatchdog.stalled
+                ? `stalled: no stream event for ${resolveStallTimeoutMs(env)}ms; aborted by the stall watchdog`
+                : err instanceof Error
+                  ? err.message
+                  : String(err);
               emitTask({
-                type: 'task_updated',
+                type: 'system',
+                subtype: 'task_updated',
                 task_id: agentId,
-                status: 'failed',
-                error: resultPreview(message),
+                patch: {
+                  status: 'failed',
+                  end_time: Date.now(),
+                  error: resultPreview(message),
+                },
               });
               emitTask({
-                type: 'task_notification',
+                type: 'system',
+                subtype: 'task_notification',
                 task_id: agentId,
-                event: 'failed',
-                message: `background subagent '${resolved.type}' failed: ${resultPreview(message)}`,
+                ...(params.toolUseId !== '' ? { tool_use_id: params.toolUseId } : {}),
+                status: 'failed',
+                output_file: '',
+                summary: `background subagent '${resolved.type}' failed: ${resultPreview(message)}`,
               });
             }
           } finally {
+            stallWatchdog.dispose();
             backgroundTasks.delete(agentId);
+            // Worktree cleanup runs on every exit path (incl. abort), before
+            // the stop hook; a dirty worktree is kept (never destroy work).
+            await releaseWorktree().catch(() => undefined);
             // Fresh signal: the stop hook must fire even after an outer abort.
             await fireSubagentStop(
               agentId,
@@ -883,14 +1040,20 @@ export function createSubagentRuntime(
         };
       }
 
-      // Foreground: block until the child finishes.
-      const result = await runChildToCompletion(
-        childHistory,
-        childDeps,
-        childConfig,
-        agentId,
-        sidechainInfo,
-      );
+      // Foreground: block until the child finishes. Worktree cleanup runs on
+      // every exit path (finally covers an abort thrown out of the loop).
+      let result: { text: string; isError: boolean };
+      try {
+        result = await runChildToCompletion(
+          childHistory,
+          childDeps,
+          childConfig,
+          agentId,
+          sidechainInfo,
+        );
+      } finally {
+        await releaseWorktree().catch(() => undefined);
+      }
       emitTaskFinished(agentId, result);
       await fireSubagentStop(agentId, resolved.type, params.signal);
       return {
@@ -917,12 +1080,21 @@ export function createSubagentRuntime(
       }
       task.controller.abort();
       backgroundTasks.delete(taskId);
-      emitTask({ type: 'task_updated', task_id: taskId, status: 'cancelled' });
+      // Official patch.status vocabulary has 'killed' (not 'cancelled') for an
+      // externally stopped task; the paired notification uses 'stopped'.
       emitTask({
-        type: 'task_notification',
+        type: 'system',
+        subtype: 'task_updated',
         task_id: taskId,
-        event: 'stopped',
-        message: `background subagent "${taskId}" stopped via stopTask`,
+        patch: { status: 'killed', end_time: Date.now() },
+      });
+      emitTask({
+        type: 'system',
+        subtype: 'task_notification',
+        task_id: taskId,
+        status: 'stopped',
+        output_file: '',
+        summary: `background subagent "${taskId}" stopped via stopTask`,
       });
       debug(`stopTask: aborted background subagent "${taskId}"`);
     },

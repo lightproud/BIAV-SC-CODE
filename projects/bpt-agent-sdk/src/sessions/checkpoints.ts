@@ -134,9 +134,17 @@ export class FileCheckpointStore {
     const changes = this.readIndex();
     const startIdx = changes.findIndex((c) => c.userMessageId === userMessageId);
     if (startIdx === -1) {
-      throw new ConfigurationError(
-        `No file checkpoint found for message ${userMessageId}`,
-      );
+      // Official soft-fail shape: an unknown checkpoint resolves with
+      // canRewind:false + error (T2-2) instead of throwing. Configuration
+      // misuse (store not bound) still throws above.
+      return {
+        canRewind: false,
+        error: `No file checkpoint found for message ${userMessageId}`,
+        checkpointId: userMessageId,
+        restoredFiles: [],
+        deletedFiles: [],
+        dryRun,
+      };
     }
     const window = changes.slice(startIdx);
     const plan = new Map<string, string | null>();
@@ -171,7 +179,17 @@ export class FileCheckpointStore {
       }
     }
 
-    return { checkpointId: userMessageId, restoredFiles, deletedFiles, dryRun };
+    // Official fields lead (canRewind/filesChanged); insertions/deletions are
+    // deliberately absent (no diff engine — see the type's JSDoc). The
+    // pre-alignment fields ride along as deprecated dual-track.
+    return {
+      canRewind: true,
+      filesChanged: [...restoredFiles, ...deletedFiles],
+      checkpointId: userMessageId,
+      restoredFiles,
+      deletedFiles,
+      dryRun,
+    };
   }
 
   // -- internals -------------------------------------------------------------

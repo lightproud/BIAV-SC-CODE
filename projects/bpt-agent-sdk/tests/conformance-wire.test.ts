@@ -143,27 +143,33 @@ const EXPECTED_SURFACE = new Set(['toolNames', 'toolCount']);
  * Documented wire-alignment gaps vs the official reference target. Each is a
  * concrete engine-alignment candidate handed to the engine team; DELETE the
  * entry when the engine closes it (the ratchet reds a stale entry).
- *   thinking            - official sends {type:'adaptive'}; ours enabled/fixed (KD-L5-03)
+ *   thinking            - E7-01 landed: preset default is now adaptive, so the
+ *                         entry remains ONLY where a real gap persists —
+ *                         thinking-off (official sends {type:'disabled'}, we
+ *                         omit) and thinking-4096 (official still sends
+ *                         adaptive; explicit maxThinkingTokens keeps our
+ *                         enabled/budget form)
  *   toolCacheBreakpoints- official 0 on tools; ours 1 (cache-strategy divergence)
- *   Agent/Bash/Read     - our tool input_schemas lag the official current params
- *                         (Agent: isolation/model + required set; Bash:
- *                         dangerouslyDisableSandbox; Read: pages)
+ *   Agent:params        - E7-02 landed: Bash (dangerouslyDisableSandbox) and
+ *                         Read (pages) cleared, Agent official params + required
+ *                         set aligned; the residual param delta is our BPT-only
+ *                         `fork` extension (worker-fork preset depends on it)
  *   cache-off system*   - promptCaching:false is a bpt-only option the official
  *                         arm ignores, so its reference stays cache-on: the
  *                         system-segmentation delta there is an artifact of the
  *                         asymmetric option, documented not chased.
  */
-const TOOL_GAPS = ['Agent:params+required', 'Bash:params', 'Read:params'];
+const TOOL_GAPS = ['Agent:params'];
 // systemSegments (A1): our cache breakpoint sits on the stable FIRST system
 // block; official's sits on the LAST - a cache-boundary PLACEMENT gap (E7-03
 // territory). Present on every scenario alongside thinking + toolCacheBreakpoints.
 const WIRE_ALIGNMENT_GAPS: Record<string, { facets: string[]; tools: string[] }> = {
-  default: { facets: ['systemSegments', 'thinking', 'toolCacheBreakpoints'], tools: TOOL_GAPS },
+  default: { facets: ['systemSegments', 'toolCacheBreakpoints'], tools: TOOL_GAPS },
   'thinking-off': { facets: ['systemSegments', 'thinking', 'toolCacheBreakpoints'], tools: TOOL_GAPS },
   'thinking-4096': { facets: ['systemSegments', 'thinking', 'toolCacheBreakpoints'], tools: TOOL_GAPS },
-  'cache-off': { facets: ['systemBlocks', 'systemCacheBreakpoints', 'systemKind', 'systemSegments', 'thinking'], tools: TOOL_GAPS },
-  'tool-loop': { facets: ['systemSegments', 'thinking', 'toolCacheBreakpoints'], tools: TOOL_GAPS },
-  'mcp-added': { facets: ['systemSegments', 'thinking', 'toolCacheBreakpoints'], tools: TOOL_GAPS },
+  'cache-off': { facets: ['systemBlocks', 'systemCacheBreakpoints', 'systemKind', 'systemSegments'], tools: TOOL_GAPS },
+  'tool-loop': { facets: ['systemSegments', 'toolCacheBreakpoints'], tools: TOOL_GAPS },
+  'mcp-added': { facets: ['systemSegments', 'toolCacheBreakpoints'], tools: TOOL_GAPS },
 };
 
 interface WireScenario {

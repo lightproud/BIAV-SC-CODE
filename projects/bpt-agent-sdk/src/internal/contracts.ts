@@ -20,7 +20,6 @@ import type {
   McpResourceContent,
   McpServerConfig,
   McpServerStatus,
-  McpSetServersResult,
   OutputFormatConfig,
   PermissionMode,
   PermissionUpdate,
@@ -58,7 +57,10 @@ export type StreamRequest = {
   system?: string | TextBlockParam[];
   messages: APIMessageParam[];
   tools?: APIToolDefinition[];
-  thinking?: { type: 'enabled'; budget_tokens: number } | { type: 'disabled' };
+  thinking?:
+    | { type: 'adaptive' }
+    | { type: 'enabled'; budget_tokens: number }
+    | { type: 'disabled' };
   temperature?: number;
   signal?: AbortSignal;
   /** Per-request retry observer; the transport calls it on each retry. Not
@@ -155,6 +157,19 @@ export type SpawnSubagentParams = {
   description?: string;
   /** run_in_background input; AgentDefinition.background forces true. */
   runInBackground?: boolean;
+  /**
+   * The Agent tool's `model` input (E7-02): per-call model override for an
+   * ISOLATED child, resolved through the same alias path as (and taking
+   * precedence over) AgentDefinition.model. Ignored in fork mode — a fork
+   * must byte-match the parent's cached prefix, model included.
+   */
+  model?: string;
+  /**
+   * The Agent tool's `isolation` input (E7-02): 'worktree' runs the child in
+   * a temporary detached git worktree of the runtime cwd, removed after the
+   * child finishes ONLY when it left no uncommitted/untracked changes.
+   */
+  isolation?: 'worktree';
   /** tool_use id of the spawning Agent call -> child config.parentToolUseId. */
   toolUseId: string;
   /** The calling tool's abort signal (foreground children chain off this). */
@@ -373,8 +388,9 @@ export interface McpRegistry {
   readResource(server: string, uri: string, signal: AbortSignal): Promise<McpResourceContent[]>;
   reconnect(serverName: string): Promise<void>;
   setEnabled(serverName: string, enabled: boolean): void;
-  /** Replace the live server set at runtime; returns the new statuses. */
-  setServers(servers: Record<string, McpServerConfig>): Promise<McpSetServersResult>;
+  /** Replace the live server set at runtime; callers read statuses() for
+   *  the outcome (query.ts owns the public McpSetServersResult shape). */
+  setServers(servers: Record<string, McpServerConfig>): Promise<void>;
   closeAll(): Promise<void>;
 }
 

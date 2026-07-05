@@ -27,7 +27,7 @@ import type {
   PermissionMode,
   Query,
   RewindFilesResult,
-  SDKInitializationResult,
+  SDKControlInitializeResponse,
   SDKMessage,
   SDKMirrorErrorMessage,
   SDKResultMessage,
@@ -66,6 +66,8 @@ import { join } from 'node:path';
 
 import { createBuiltinTools } from './tools/index.js';
 import { createShellManager } from './tools/shells.js';
+import { peekWorktreeSession } from './tools/enterworktree.js';
+import type { ToolContextWithPermissionGate } from './tools/exitplanmode.js';
 import { resolveSandboxBackend } from './sandbox/backend.js';
 import type { SandboxContext } from './types.js';
 import { createSubagentRuntime } from './subagents/runtime.js';
@@ -74,10 +76,6 @@ import { loadProjectMcpServers } from './mcp/project-config.js';
 
 const DEFAULT_MODEL = 'claude-sonnet-4-5';
 const DEFAULT_MAX_OUTPUT_TOKENS = 8192;
-// Default thinking budget on the claude_code preset path (E1). OUR chosen
-// value: the official CLI observably defaults thinking ON, but its budget is
-// request-body-internal (never read under the net-observation boundary).
-const DEFAULT_PRESET_THINKING_BUDGET = 4096;
 const CLAUDE_CODE_VERSION = '0.1.0';
 
 /** Static model list surfaced by supportedModels()/initializationResult(). */
@@ -90,9 +88,11 @@ const SUPPORTED_MODELS: readonly ModelInfo[] = [
 
 /**
  * Options accepted for @anthropic-ai/claude-agent-sdk type/runtime compat
- * but with no behavior in v0.1 (see docs/COMPAT.md). Each present key emits
- * exactly one debug warning. Untyped keys cover migration call sites that
- * pass reference-SDK-only fields through a widened object.
+ * but with no behavior (see docs/COMPAT.md). Each present key emits exactly
+ * one debug warning. Since B2b (T2-3, 2026-07-05) every key below is ALSO on
+ * the TS Options type with an honest support-level JSDoc, so official-SDK
+ * object literals pass excess-property checking; runtime semantics are
+ * unchanged (ACCEPTED-IGNORED).
  */
 const ACCEPTED_OPTION_KEYS: readonly string[] = [
   // Official @anthropic-ai/claude-agent-sdk Options fields this SDK accepts for
@@ -195,7 +195,7 @@ class ToolFilterMcpRegistry implements McpRegistry {
   setEnabled(serverName: string, enabled: boolean): void {
     this.inner.setEnabled(serverName, enabled);
   }
-  setServers(servers: Record<string, McpServerConfig>): Promise<McpSetServersResult> {
+  setServers(servers: Record<string, McpServerConfig>): Promise<void> {
     return this.inner.setServers(servers);
   }
   closeAll(): Promise<void> {
@@ -562,6 +562,11 @@ export function query(args: {
   let systemBlocks: TextBlockParam[] | undefined;
   let systemPromptStable = '';
   let systemPromptVolatile = '';
+  // Git branch of cwd at query construction, reused from the runtime-context
+  // probe below (no second git call) and persisted into the session meta line
+  // so listSessions/getSessionInfo report SDKSessionInfo.gitBranch. Absent on
+  // the segments path / when includeEnvironmentContext is false (no probe ran).
+  let sessionGitBranch: string | undefined;
   // Char offset splitting the stable prefix into [base harness | appended tail]
   // for the 2nd system cache breakpoint. Only set on the string/preset path.
   let systemPromptBaseLen: number | undefined;
@@ -603,6 +608,7 @@ export function query(args: {
     const environment = includeEnv
       ? gatherEnvironment(cwd, initialModel, new Date().toISOString().slice(0, 10))
       : undefined;
+    sessionGitBranch = environment?.gitBranch;
     const projectInstructions = loadProjectInstructions(cwd, options.settingSources);
     // Pass the variant through as-is: when harnessPromptVariant is unset,
     // buildSystemPromptParts applies its default (v5, the faithful official
@@ -628,19 +634,16 @@ export function query(args: {
     systemPromptVolatile = promptParts.volatile;
   }
 
-  // Default-on extended thinking, claude_code preset path ONLY (E1). The
-  // official CLI enables thinking by default: every official-arm L5 trace
-  // (54/54) carries thinking events on the public stream. Only "thinking is
-  // on" is observable there — the official BUDGET rides in the (never read)
-  // request body, so 4096 is OUR chosen default, registered as a KD in
-  // docs/COMPAT.md. Injection rules:
+  // Default-on extended thinking, claude_code preset path ONLY (E1 + E7-01).
+  // The official CLI enables thinking by default and (per the r3 wire
+  // differential) sends `thinking: {type:"adaptive"}` with NO budget_tokens —
+  // the model sizes its own thinking per request. E7-01 aligns our preset
+  // default to that exact wire shape (replacing the earlier OUR-chosen fixed
+  // 4096 budget). Injection rules:
   //  - an explicit options.thinking always wins (passed through verbatim);
   //  - maxThinkingTokens: 0 is the explicit opt-out (no thinking param);
-  //  - maxThinkingTokens > 0 enables thinking with that budget;
-  //  - both unset -> enable with the 4096 default budget.
-  // The default budget is injected via maxThinkingTokens (not a budget key on
-  // the thinking object) so computeThinking's precedence chain resolves it and
-  // a live setMaxThinkingTokens(0) can still switch thinking OFF mid-run.
+  //  - maxThinkingTokens > 0 enables FIXED thinking with that budget;
+  //  - both unset -> adaptive thinking (official wire default).
   // Non-preset paths (bare string / segments / no systemPrompt) are unchanged:
   // the drop-in default remains "no thinking param".
   const isClaudeCodePreset =
@@ -653,8 +656,7 @@ export function query(args: {
   let maxThinkingTokensConfig = options.maxThinkingTokens;
   if (isClaudeCodePreset && thinkingConfig === undefined) {
     if (maxThinkingTokensConfig === undefined) {
-      thinkingConfig = { type: 'enabled' };
-      maxThinkingTokensConfig = DEFAULT_PRESET_THINKING_BUDGET;
+      thinkingConfig = { type: 'adaptive' };
     } else if (maxThinkingTokensConfig > 0) {
       thinkingConfig = { type: 'enabled' };
     }
@@ -768,7 +770,7 @@ export function query(args: {
   let sessionEndFired = false;
   let resolvedSessionId = '';
   let checkpointStore: FileCheckpointStore | null = null;
-  const initDeferred = createDeferred<SDKInitializationResult>();
+  const initDeferred = createDeferred<SDKControlInitializeResponse>();
 
   // Wake any pending input read when the outer controller aborts, and settle a
   // still-pending initializationResult() so awaiters never hang. A pre-aborted
@@ -876,6 +878,7 @@ export function query(args: {
               createdAt: Date.now(),
               cwd,
               firstPrompt: stored.firstPrompt,
+              ...(sessionGitBranch !== undefined ? { gitBranch: sessionGitBranch } : {}),
             });
             for (const m of stored.messages) {
               store.append(newId, { type: m.role, message: m });
@@ -970,6 +973,10 @@ export function query(args: {
       session_id: sessionId,
       is_error: true,
       errorMessage,
+      // Official surface: stop_reason is required on the error arm. These are
+      // QUERY-LAYER synthetic results (no engine turn ran), so null is the
+      // honest value — no API stop_reason exists for this result.
+      stop_reason: null,
       // Official-surface parallel of errorMessage (reference SDK: string[]).
       errors: [errorMessage],
       ...resultCommon(),
@@ -1001,6 +1008,11 @@ export function query(args: {
                   prev.cacheCreationInputTokens + mu.cacheCreationInputTokens,
                 webSearchRequests: prev.webSearchRequests + mu.webSearchRequests,
                 costUSD: prev.costUSD + mu.costUSD,
+                // Static per-model figures (not additive): latest wins,
+                // falling back to the earlier value when the newer entry
+                // lacks them (e.g. a subagent-ledger merge).
+                contextWindow: mu.contextWindow ?? prev.contextWindow,
+                maxOutputTokens: mu.maxOutputTokens ?? prev.maxOutputTokens,
               };
       }
     };
@@ -1027,6 +1039,11 @@ export function query(args: {
                   prev.cacheCreationInputTokens + mu.cacheCreationInputTokens,
                 webSearchRequests: prev.webSearchRequests + mu.webSearchRequests,
                 costUSD: prev.costUSD + mu.costUSD,
+                // Static per-model figures (not additive): latest wins,
+                // falling back to the earlier value when the newer entry
+                // lacks them (e.g. a subagent-ledger merge).
+                contextWindow: mu.contextWindow ?? prev.contextWindow,
+                maxOutputTokens: mu.maxOutputTokens ?? prev.maxOutputTokens,
               };
       }
     };
@@ -1241,6 +1258,9 @@ export function query(args: {
             createdAt: Date.now(),
             cwd,
             firstPrompt: promptText,
+            // Persist the branch the runtime-context probe already computed so
+            // SDKSessionInfo.gitBranch reads back (store.load parses it).
+            ...(sessionGitBranch !== undefined ? { gitBranch: sessionGitBranch } : {}),
           });
           needMeta = false;
         }
@@ -1287,8 +1307,18 @@ export function query(args: {
         }
         const turnSignal = AbortSignal.any([outer.signal, turnController.signal]);
         const toolContext: ToolContext = {
-          cwd,
-          additionalDirectories: options.additionalDirectories ?? [],
+          // EnterWorktree survives turn-boundary context rebuilds: the session
+          // state is keyed on the shared readFilePaths Set, so the per-turn
+          // context picks the active worktree up again (Bash follows via its
+          // persistent state; this covers the fs tools and subagent spawns).
+          cwd:
+            peekWorktreeSession({ readFilePaths } as ToolContext)?.dir ?? cwd,
+          // Recomputed per turn so session addDirectories / removeDirectories
+          // permission updates take real effect on the fs tools (T2-7:
+          // removeDirectories revokes; addDirectories grants).
+          additionalDirectories: gate.effectiveAdditionalDirectories(
+            options.additionalDirectories ?? [],
+          ),
           env,
           signal: turnSignal,
           debug,
@@ -1307,6 +1337,10 @@ export function query(args: {
           sandbox: sandboxCtx,
           readFilePaths,
         };
+        // ExitPlanMode bridge: the tool flips this query's own gate. Attached
+        // via the tool's context extension (deliberately not part of the core
+        // ToolContext contract).
+        (toolContext as ToolContextWithPermissionGate).permissionGate = gate;
         const deps: EngineDeps = {
           transport,
           builtinTools,
@@ -1524,9 +1558,8 @@ export function query(args: {
       // their existing behavior (maxThinkingTokens is a budget fallback only).
       if (isClaudeCodePreset && options.thinking === undefined) {
         if (n === undefined) {
-          // Reset -> the preset default (re-enabled at the default budget).
-          engineConfig.thinking = { type: 'enabled' };
-          engineConfig.maxThinkingTokens = DEFAULT_PRESET_THINKING_BUDGET;
+          // Reset -> the preset default (adaptive, E7-01 official wire shape).
+          engineConfig.thinking = { type: 'adaptive' };
         } else if (n > 0) {
           engineConfig.thinking = { type: 'enabled' };
         } else {
@@ -1534,7 +1567,7 @@ export function query(args: {
         }
       }
     },
-    initializationResult(): Promise<SDKInitializationResult> {
+    initializationResult(): Promise<SDKControlInitializeResponse> {
       return initDeferred.promise;
     },
     async supportedCommands(): Promise<never[]> {
@@ -1549,6 +1582,8 @@ export function query(args: {
       return Object.keys(agentDefs).map((name) => ({ name }));
     },
     async mcpServerStatus() {
+      // The registry assembles the official McpServerToolInfo object form
+      // directly (T2-7 close-out) — no normalization layer needed.
       return mcpEff.statuses();
     },
     async accountInfo() {
@@ -1569,7 +1604,21 @@ export function query(args: {
     async setMcpServers(
       servers: Record<string, McpServerConfig>,
     ): Promise<McpSetServersResult> {
-      return mcpEff.setServers(servers);
+      // Official result shape (T2-2): added/removed report the REAL diff of
+      // the registered server set; errors maps each failed server to its
+      // connect error. The registry's pre-alignment {servers} payload rides
+      // along as the deprecated dual-track field.
+      const before = new Set(mcpEff.statuses().map((s) => s.name));
+      await mcpEff.setServers(servers);
+      const after = mcpEff.statuses();
+      const afterNames = new Set(after.map((s) => s.name));
+      const added = after.filter((s) => !before.has(s.name)).map((s) => s.name);
+      const removed = [...before].filter((n) => !afterNames.has(n));
+      const errors: Record<string, string> = {};
+      for (const s of after) {
+        if (s.status === 'failed') errors[s.name] = s.error ?? 'connection failed';
+      }
+      return { added, removed, errors, servers: after };
     },
     async rewindFiles(
       userMessageId: string,

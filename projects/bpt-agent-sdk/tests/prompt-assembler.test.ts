@@ -72,6 +72,22 @@ describe('fragment store invariants', () => {
     expect(picked).toContain('safety-destructive-commands');
     expect(picked).not.toContain('agent');
     expect(picked).not.toContain('todowrite');
+    expect(picked).not.toContain('task-tools');
     expect(picked).not.toContain('webfetch-websearch');
+  });
+
+  it('task-tools clause is gated on TaskCreate; mutually exclusive with todowrite', () => {
+    // Default task surface: Task quartet in the set -> task-tools clause only.
+    const taskSet = ['Read', 'Bash', 'TaskCreate', 'TaskGet', 'TaskUpdate', 'TaskList'];
+    const withTasks = selectMainLoopFragments({ toolNames: taskSet }).map((f) => f.id);
+    expect(withTasks).toContain('task-tools');
+    expect(withTasks).not.toContain('todowrite');
+    expect(assembleMainLoop({ toolNames: taskSet })).toContain('TaskCreate, TaskGet, TaskUpdate, and TaskList');
+    // Without the Task tools the prompt must not name them (red line).
+    expect(assembleMainLoop({ toolNames: ['Read', 'Bash'] })).not.toContain('TaskCreate');
+    // Legacy revert (CLAUDE_CODE_ENABLE_TASKS=0): TodoWrite in, Task out.
+    const legacy = selectMainLoopFragments({ toolNames: ['Read', 'Bash', 'TodoWrite'] }).map((f) => f.id);
+    expect(legacy).toContain('todowrite');
+    expect(legacy).not.toContain('task-tools');
   });
 });

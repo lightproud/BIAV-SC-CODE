@@ -757,12 +757,13 @@ describe('query() e2e - persistence and resume', () => {
     expect(infos[0]!.lastModified).toBeGreaterThan(0);
 
     const info = await getSessionInfo(sid, { sessionDir });
-    expect(info).not.toBeNull();
+    expect(info).toBeDefined();
     expect(info!.sessionId).toBe(sid);
     expect(info!.cwd).toBe(cwd);
     expect(info!.createdAt).toBeGreaterThan(0);
 
-    expect(await getSessionInfo('no-such-session', { sessionDir })).toBeNull();
+    // B2b: official return shape — undefined (not null) for an unknown id.
+    expect(await getSessionInfo('no-such-session', { sessionDir })).toBeUndefined();
   });
 });
 
@@ -1114,12 +1115,52 @@ describe('query() e2e - confirmed-finding regressions', () => {
     }
 
     expect(fetchStub.requests).toHaveLength(2);
-    // Turn 1 = preset default 4096; turn 2 = disabled.
+    // Turn 1 = preset default adaptive (E7-01); turn 2 = disabled.
+    expect(fetchStub.requests[0]!.body.thinking).toEqual({ type: 'adaptive' });
+    expect(fetchStub.requests[1]!.body).not.toHaveProperty('thinking');
+  });
+
+  it('setMaxThinkingTokens(null) resets a fixed-budget preset session back to adaptive (E7-01 live-switch)', async () => {
+    // Preset session pinned to a fixed budget -> turn 1 sends enabled/2048.
+    // A live setMaxThinkingTokens(null) must restore the preset default
+    // (adaptive, the official wire shape) for turn 2.
+    const fetchStub = stubFetch(
+      makeSSEFetch([textReplyEvents('r1'), textReplyEvents('r2')]),
+    );
+    let releaseSecond!: () => void;
+    const secondGate = new Promise<void>((r) => {
+      releaseSecond = r;
+    });
+    async function* inputs(): AsyncGenerator<SDKUserMessage> {
+      yield userMsg('first');
+      await secondGate;
+      yield userMsg('second');
+    }
+
+    const q = query({
+      prompt: inputs(),
+      options: baseOptions({
+        systemPrompt: { type: 'preset', preset: 'claude_code' },
+        maxThinkingTokens: 2048,
+      }),
+    });
+    let resultsSeen = 0;
+    for await (const m of q) {
+      if (m.type === 'result') {
+        resultsSeen += 1;
+        if (resultsSeen === 1) {
+          await q.setMaxThinkingTokens(null);
+          releaseSecond();
+        }
+      }
+    }
+
+    expect(fetchStub.requests).toHaveLength(2);
     expect(fetchStub.requests[0]!.body.thinking).toEqual({
       type: 'enabled',
-      budget_tokens: 4096,
+      budget_tokens: 2048,
     });
-    expect(fetchStub.requests[1]!.body).not.toHaveProperty('thinking');
+    expect(fetchStub.requests[1]!.body.thinking).toEqual({ type: 'adaptive' });
   });
 
   it('reports per-result num_turns/usage with cumulative cost/apiMs across streaming turns (E2, KD-L5-04)', async () => {

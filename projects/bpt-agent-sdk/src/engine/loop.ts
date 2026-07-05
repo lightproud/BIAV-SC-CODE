@@ -24,6 +24,7 @@ import type {
   SDKRunMetrics,
   SDKToolMetrics,
   SDKTurnMetrics,
+  StopReason,
   TextBlockParam,
   ToolResultBlockParam,
   ToolUseBlock,
@@ -38,6 +39,7 @@ import type {
 } from '../internal/contracts.js';
 import { MessageAccumulator } from './accumulator.js';
 import { addUsage, estimateCostUsd, normalizeUsage } from './pricing.js';
+import { contextWindowFor } from './context-window.js';
 import { estimateToolDefsTokens } from './tokens.js';
 import {
   maybeAutoCompact,
@@ -98,7 +100,15 @@ function mkToolError(toolUseId: string, message: string): ToolResultBlockParam {
 type ToolExecOutcome = {
   result: ToolResultBlockParam;
   stop?: { reason: string };
-  defer?: { tool_use_id: string; tool_name: string; tool_input: Record<string, unknown> };
+  defer?: {
+    // Official field names (canonical) + legacy names, dual-track per T1-4.
+    id: string;
+    name: string;
+    input: Record<string, unknown>;
+    tool_use_id: string;
+    tool_name: string;
+    tool_input: Record<string, unknown>;
+  };
   /** Observability messages (e.g. permission_denied) to yield before the batch
    * continues. Sourced inside executeToolUse, which cannot yield itself. */
   observability?: SDKMessage[];
@@ -206,6 +216,9 @@ export async function* runAgentLoop(
 
   let durationApiMs = 0;
   let numTurns = 0;
+  // Monotonic index across MessageDisplay emits (NEW-IN-DOCS incremental
+  // protocol). We fire once per completed message, so this counts messages.
+  let messageDisplayIndex = 0;
   let structuredRetries = 0;
   // E3: non-fatal stream-truncation notes for the terminal result's `errors`
   // (a truncated turn degrades gracefully; the note keeps the fault visible).
@@ -215,6 +228,10 @@ export async function* runAgentLoop(
   // official 2.1.201 acts on complete tool_use blocks even when the cut
   // landed before stop_reason arrived).
   let turnTruncated = false;
+  // Last API stop_reason observed across the run; carried onto error results
+  // (official surface: stop_reason is required on BOTH result arms). Null
+  // until the first assistant turn completes.
+  let lastStopReason: StopReason = null;
   let firstTokenAtMs: number | undefined; // wall-clock of the first content event
   let firstStreamStartMs: number | undefined; // apiStart of the stream that produced it
   let totalCostUsd = 0;
@@ -331,6 +348,9 @@ export async function* runAgentLoop(
     subtype,
     is_error: true,
     errorMessage,
+    // Official surface: stop_reason is required on the error arm too. Report
+    // the last API stop_reason observed, or null when no turn completed.
+    stop_reason: lastStopReason,
     ...(apiErrorStatus !== undefined ? { api_error_status: apiErrorStatus } : {}),
     ...resultBase(),
     // Official-surface parallel: the reference SDK reports error text as a
@@ -354,6 +374,11 @@ export async function* runAgentLoop(
         (prev?.cacheCreationInputTokens ?? 0) + usage.cache_creation_input_tokens,
       webSearchRequests: prev?.webSearchRequests ?? 0,
       costUSD: (prev?.costUSD ?? 0) + cost,
+      // Official ModelUsage fields (T2-4): the static public window table
+      // (an estimate, same provenance as the price table) and the ACTUAL
+      // per-request max_tokens cap this engine sends for this model.
+      contextWindow: contextWindowFor(responseModel),
+      maxOutputTokens: config.maxOutputTokens,
     };
   };
 
@@ -403,8 +428,14 @@ export async function* runAgentLoop(
   // takes effect on the next assistant sub-turn, mirroring the per-turn re-read
   // of config.model below (finding #12).
   const computeThinking = (): StreamRequest['thinking'] => {
+    if (config.thinking?.type === 'adaptive') {
+      // E7-01: pass adaptive through verbatim — the official wire shape is
+      // {type:'adaptive'} with NO budget_tokens (the model sizes its own
+      // thinking per request), so no budget resolution or clamping applies.
+      return { type: 'adaptive' };
+    }
     if (config.thinking?.type !== 'enabled') {
-      return undefined; // adaptive/disabled/unset -> omit the param entirely
+      return undefined; // disabled/unset -> omit the param entirely
     }
     const requested =
       config.thinking.budgetTokens ??
@@ -475,6 +506,16 @@ export async function* runAgentLoop(
         retryMessages.push({
           type: 'rate_limit_event',
           ...base,
+          // Official envelope (B2b): this 429 WAS a rejection; resetsAt is
+          // derived from the server's real Retry-After when present. KD-12
+          // trigger semantics unchanged (see the type's JSDoc).
+          rate_limit_info: {
+            status: 'rejected',
+            ...(info.retryAfterMs !== undefined
+              ? { resetsAt: Math.ceil((Date.now() + info.retryAfterMs) / 1000) }
+              : {}),
+          },
+          // Deprecated dual-track flat fields, still populated.
           retry_after_ms: info.retryAfterMs ?? 0,
           limit_type: 'api',
         });
@@ -727,7 +768,14 @@ export async function* runAgentLoop(
     if (check.decision === 'defer') {
       return {
         result: errorToolResult(check.message),
-        defer: { tool_use_id: block.id, tool_name: toolName, tool_input: input },
+        defer: {
+          id: block.id,
+          name: toolName,
+          input,
+          tool_use_id: block.id,
+          tool_name: toolName,
+          tool_input: input,
+        },
       };
     }
     input = check.updatedInput; // union now narrows to {decision:'allow'; updatedInput}
@@ -944,11 +992,13 @@ export async function* runAgentLoop(
       }
 
       numTurns += 1;
+      lastStopReason = assistant.stop_reason;
 
       // --- Yield assistant message + MessageDisplay hooks. ------------------
+      const assistantUuid = randomUUID();
       yield {
         type: 'assistant',
-        uuid: randomUUID(),
+        uuid: assistantUuid,
         session_id: config.sessionId,
         message: assistant,
         parent_tool_use_id: config.parentToolUseId ?? null,
@@ -956,9 +1006,22 @@ export async function* runAgentLoop(
       const text = concatText(assistant.content);
       if (deps.hooks.hasHooks('MessageDisplay')) {
         // Non-blocking semantics: outcome only surfaces via debug logging.
+        // NEW-IN-DOCS incremental protocol: this engine is NOT a true delta
+        // stream — one emit per COMPLETED message, so final is always true and
+        // delta carries the whole segment; index is monotonic across emits.
+        const displayIndex = messageDisplayIndex++;
         const agg = await deps.hooks.run(
           'MessageDisplay',
-          { ...baseHookFields, hook_event_name: 'MessageDisplay', message_text: text },
+          {
+            ...baseHookFields,
+            hook_event_name: 'MessageDisplay',
+            turn_id: String(numTurns),
+            message_id: assistant.id ?? assistantUuid,
+            index: displayIndex,
+            final: true,
+            delta: text,
+            message_text: text,
+          },
           undefined,
           undefined,
           signal,
@@ -1109,7 +1172,9 @@ export async function* runAgentLoop(
             subtype: 'success',
             is_error: false,
             result: '',
-            stop_reason: assistant.stop_reason,
+            // Official defer protocol: consumers detect a deferred turn via
+            // stop_reason === 'tool_deferred' + deferred_tool_use.
+            stop_reason: 'tool_deferred',
             deferred_tool_use: batchDefer,
             ...resultBase(),
           };

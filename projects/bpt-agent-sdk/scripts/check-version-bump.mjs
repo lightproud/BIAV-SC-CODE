@@ -39,7 +39,10 @@ const runtimeChanged = changed.some(
 let depsChanged = false;
 let versionChanged = false;
 if (changed.includes('projects/bpt-agent-sdk/package.json')) {
-  const patch = git('diff HEAD~1 HEAD -- projects/bpt-agent-sdk/package.json');
+  // ":(top)" anchors the pathspec at the repo root: this script runs with
+  // cwd = projects/bpt-agent-sdk in CI, where a bare repo-root-relative
+  // pathspec silently matches nothing (empty patch -> false negative).
+  const patch = git('diff HEAD~1 HEAD -- ":(top)projects/bpt-agent-sdk/package.json"');
   versionChanged = /^[+-]\s*"version":/m.test(patch);
   depsChanged = /^[+-]\s*"[^"]+":\s*"[^"]+"/m.test(
     patch

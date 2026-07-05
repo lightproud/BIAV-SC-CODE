@@ -17,6 +17,7 @@ import {
   listSessions,
   getSessionInfo,
 } from '../src/sessions/store.js';
+import { renameSession, tagSession } from '../src/sessions/session-functions.js';
 import type { APIMessageParam } from '../src/types.js';
 
 let dir: string;
@@ -290,5 +291,111 @@ describe('listSessions option shape (task #17)', () => {
     expect(limited).toHaveLength(2);
     // The two returned are a prefix of the full newest-first ordering.
     expect(limited.map((s) => s.sessionId)).toEqual(all.slice(0, 2).map((s) => s.sessionId));
+  });
+});
+
+describe('rename/tag round trip via meta_update (T1-6)', () => {
+  const SID = 'rt-1';
+
+  function seed(): void {
+    const file = join(dir, `${SID}.jsonl`);
+    appendFileSync(
+      file,
+      `${JSON.stringify({ type: 'meta', sessionId: SID, createdAt: 1, cwd: '/w', firstPrompt: 'first prompt line' })}\n` +
+        `${JSON.stringify({ type: 'user', message: { role: 'user', content: 'first prompt line' } })}\n`,
+      'utf8',
+    );
+  }
+
+  it('renameSession writes meta_update and store.load reads customTitle back', async () => {
+    seed();
+    await renameSession(SID, 'My renamed session', { sessionDir: dir });
+
+    const { store, warnings } = makeStore();
+    const loaded = await store.load(SID);
+    expect(loaded?.customTitle).toBe('My renamed session');
+    // meta_update lines are consumed, not skipped as unrecognized.
+    expect(warnings.filter((w) => w.includes('unrecognized'))).toEqual([]);
+    // Transcript messages survive untouched.
+    expect(loaded?.messages).toEqual([{ role: 'user', content: 'first prompt line' }]);
+  });
+
+  it('tagSession writes meta_update and store.load reads the tag back', async () => {
+    seed();
+    await tagSession(SID, 'experiment', { sessionDir: dir });
+    const { store } = makeStore();
+    const loaded = await store.load(SID);
+    expect(loaded?.tag).toBe('experiment');
+  });
+
+  it('last write wins for repeated rename/tag; tag null clears', async () => {
+    seed();
+    await renameSession(SID, 'title one', { sessionDir: dir });
+    await renameSession(SID, 'title two', { sessionDir: dir });
+    await tagSession(SID, 'tag-a', { sessionDir: dir });
+    await tagSession(SID, 'tag-b', { sessionDir: dir });
+
+    const { store } = makeStore();
+    let loaded = await store.load(SID);
+    expect(loaded?.customTitle).toBe('title two');
+    expect(loaded?.tag).toBe('tag-b');
+
+    await tagSession(SID, null, { sessionDir: dir });
+    loaded = await store.load(SID);
+    expect(loaded?.tag).toBeUndefined();
+    expect(loaded?.customTitle).toBe('title two');
+  });
+
+  it('getSessionInfo surfaces customTitle/tag and prefers customTitle for summary', async () => {
+    seed();
+    await renameSession(SID, 'Curated title', { sessionDir: dir });
+    await tagSession(SID, 'nightly', { sessionDir: dir });
+
+    const info = await getSessionInfo(SID, { sessionDir: dir });
+    expect(info?.customTitle).toBe('Curated title');
+    expect(info?.tag).toBe('nightly');
+    expect(info?.summary).toBe('Curated title');
+    expect(info?.firstPrompt).toBe('first prompt line');
+  });
+
+  it('summary falls back to the first prompt line when no customTitle is set', async () => {
+    seed();
+    const info = await getSessionInfo(SID, { sessionDir: dir });
+    expect(info?.customTitle).toBeUndefined();
+    expect(info?.summary).toBe('first prompt line');
+  });
+
+  it('listSessions carries customTitle/tag through', async () => {
+    seed();
+    await renameSession(SID, 'Listed title', { sessionDir: dir });
+    await tagSession(SID, 'listed', { sessionDir: dir });
+
+    const list = await listSessions({ sessionDir: dir });
+    const entry = list.find((s) => s.sessionId === SID);
+    expect(entry?.customTitle).toBe('Listed title');
+    expect(entry?.tag).toBe('listed');
+    expect(entry?.summary).toBe('Listed title');
+  });
+
+  it('gitBranch is read back from meta and meta_update records', async () => {
+    const file = join(dir, `${SID}.jsonl`);
+    appendFileSync(
+      file,
+      `${JSON.stringify({ type: 'meta', sessionId: SID, createdAt: 1, gitBranch: 'main' })}\n`,
+      'utf8',
+    );
+    const { store } = makeStore();
+    let loaded = await store.load(SID);
+    expect(loaded?.gitBranch).toBe('main');
+
+    appendFileSync(
+      file,
+      `${JSON.stringify({ type: 'meta_update', uuid: 'u1', gitBranch: 'feature/x' })}\n`,
+      'utf8',
+    );
+    loaded = await store.load(SID);
+    expect(loaded?.gitBranch).toBe('feature/x');
+    const info = await getSessionInfo(SID, { sessionDir: dir });
+    expect(info?.gitBranch).toBe('feature/x');
   });
 });

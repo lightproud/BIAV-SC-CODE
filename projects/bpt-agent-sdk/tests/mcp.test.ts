@@ -106,6 +106,49 @@ describe('mcp/sdk-server tool()', () => {
     expect(noAnn.annotations).toBeUndefined();
   });
 
+  it('accepts the official extras wrapper form { annotations: {...} } (T1-2)', () => {
+    const wrapped = tool(
+      'wrapped',
+      'official extras form',
+      { q: z.string() },
+      async () => ({ content: [] }),
+      { annotations: { readOnlyHint: true, openWorldHint: true } },
+    );
+    expect(wrapped.annotations).toEqual({ readOnlyHint: true, openWorldHint: true });
+
+    // Wrapper present but annotations omitted: no annotations on the definition.
+    const emptyWrapper = tool(
+      'empty-wrapper',
+      'extras without annotations',
+      {},
+      async () => ({ content: [] }),
+      {},
+    );
+    expect(emptyWrapper.annotations).toBeUndefined();
+  });
+
+  it('still accepts the legacy bare ToolAnnotations form alongside the wrapper (T1-2)', () => {
+    const bare = tool(
+      'bare',
+      'legacy bare form',
+      { q: z.string() },
+      async () => ({ content: [] }),
+      { readOnlyHint: true, title: 'Bare' },
+    );
+    expect(bare.annotations).toEqual({ readOnlyHint: true, title: 'Bare' });
+
+    // Detection rule: an object carrying an 'annotations' key is always the
+    // wrapper, even when the inner object is empty.
+    const wrappedEmpty = tool(
+      'wrapped-empty',
+      'wrapper with empty annotations',
+      {},
+      async () => ({ content: [] }),
+      { annotations: {} },
+    );
+    expect(wrappedEmpty.annotations).toEqual({});
+  });
+
   it('passes zod-validated args (defaults applied) to the handler', async () => {
     let seen: unknown;
     const def = tool(
@@ -231,12 +274,11 @@ describe('DefaultMcpRegistry with an sdk instance', () => {
       name: 'calc',
       status: 'connected',
       serverInfo: { name: 'calc', version: '1.0.0' },
-      tools: ['add'],
     });
     // task #17: status carries the config it was registered with + per-server
-    // tool names once connected.
+    // tools once connected (official object form since v0.7 T2-7).
     expect(statuses[0]!.config).toBeDefined();
-    expect(statuses[0]!.tools).toEqual(['add']);
+    expect(statuses[0]!.tools?.map((t) => t.name)).toEqual(['add']);
 
     const tools = reg.allTools();
     expect(tools.map((t) => t.qualifiedName)).toEqual(['mcp__calc__add']);

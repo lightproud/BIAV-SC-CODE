@@ -245,6 +245,12 @@ export const grepTool: BuiltinTool = {
         description:
           'Lines of context before and after each match (content mode).',
       },
+      context: {
+        type: 'number',
+        description:
+          'Alias for "-C": lines of context before and after each match ' +
+          '(content mode). "-C" wins when both are given.',
+      },
       '-o': {
         type: 'boolean',
         description:
@@ -303,7 +309,9 @@ export const grepTool: BuiltinTool = {
     const showLineNumbers = input['-n'] !== false; // default true
     const multiline = input['multiline'] === true;
     const onlyMatching = input['-o'] === true;
-    const bothContext = asOptionalCount(input['-C']);
+    // `context` is the official alias for '-C'; '-C' takes precedence.
+    const bothContext =
+      asOptionalCount(input['-C']) ?? asOptionalCount(input['context']);
     const before = asOptionalCount(input['-B']) ?? bothContext ?? 0;
     const after = asOptionalCount(input['-A']) ?? bothContext ?? 0;
     const rawLimit = input['head_limit'];

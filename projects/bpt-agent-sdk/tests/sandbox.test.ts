@@ -181,6 +181,14 @@ describe('Bash foreground execute over a fake backend', () => {
     expect(content(res).trim()).toBe('hi');
     expect((sbx.backend as ReturnType<typeof makeFake>).calls).toHaveLength(0);
   });
+  it('no sandbox on the context: the escape flag is a no-op, not an error (E7-02)', async () => {
+    const res = await createBashTool().execute(
+      { command: 'echo hi', dangerouslyDisableSandbox: true },
+      makeCtx('/tmp'),
+    );
+    expect(res.isError).not.toBe(true);
+    expect(content(res).trim()).toBe('hi');
+  });
 });
 
 // ---------------------------------------------------------------------------
@@ -255,11 +263,14 @@ describe('Bash surfaces the evidence hint on a sandboxed failure', () => {
 // ---------------------------------------------------------------------------
 
 describe('Bash description + schema gating', () => {
-  it('unsandboxed tool is byte-identical and mentions no sandbox', () => {
+  // E7-02: the escape param is ALWAYS in the schema (official parity); the
+  // red-line gating now applies to the DESCRIPTION only. Runtime semantics per
+  // state are covered by the execute() tests above/below.
+  it('unsandboxed tool: description byte-identical + mentions no sandbox; schema keeps the (no-op) escape param', () => {
     const tool = createBashTool();
     expect(tool.description).toBe(BASH_DESCRIPTION);
     expect(tool.description.toLowerCase()).not.toContain('sandbox');
-    expect(tool.inputSchema.properties).not.toHaveProperty('dangerouslyDisableSandbox');
+    expect(tool.inputSchema.properties).toHaveProperty('dangerouslyDisableSandbox');
   });
   it('createBuiltinTools() default Bash is byte-identical', () => {
     expect(createBuiltinTools().get('Bash')!.description).toBe(BASH_DESCRIPTION);
@@ -271,11 +282,21 @@ describe('Bash description + schema gating', () => {
     expect(tool.description).toContain('default to running commands within the sandbox');
     expect(tool.inputSchema.properties).toHaveProperty('dangerouslyDisableSandbox');
   });
-  it('mandatory mode: no retry fragment, no escape param', () => {
+  it('mandatory mode: no retry fragment in the description; param stays in the schema (policy-refused at run time)', () => {
     const tool = createBashTool(fakeCtx({ allowEscape: false }));
     expect(tool.description).toContain('disabled by policy');
     expect(tool.description).not.toContain("retry with `dangerouslyDisableSandbox: true` (don't ask");
-    expect(tool.inputSchema.properties).not.toHaveProperty('dangerouslyDisableSandbox');
+    expect(tool.inputSchema.properties).toHaveProperty('dangerouslyDisableSandbox');
+  });
+  it('the four base params + the escape param form the full schema (official set)', () => {
+    const props = createBashTool().inputSchema.properties ?? {};
+    expect(Object.keys(props).sort()).toEqual([
+      'command',
+      'dangerouslyDisableSandbox',
+      'description',
+      'run_in_background',
+      'timeout',
+    ]);
   });
   it('network-open sandbox omits the network-failure evidence bullet (red line)', () => {
     const note = buildBashSandboxNote('default', true);
