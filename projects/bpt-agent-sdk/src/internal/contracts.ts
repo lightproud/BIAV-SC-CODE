@@ -365,6 +365,12 @@ export type EngineConfig = {
    *  so it never invalidates the cached stable prefix. Absent -> systemPrompt
    *  is sent as a single string (original behavior). */
   systemPromptSuffix?: string;
+  /** Char offset in systemPrompt where the base harness ends and the appended
+   *  stable tail (project instructions / append / structured-output) begins;
+   *  enables a 2nd system cache breakpoint so the shared base and the
+   *  per-project tail cache as two independently-reusable segments. Absent / 0 /
+   *  >= systemPrompt.length => single system breakpoint (original behavior). */
+  systemPromptBaseLen?: number;
   /** Caller-composed system blocks (segments form). When set, these are sent
    *  as the request `system` verbatim (their cache_control breakpoints are
    *  respected, the engine adds none) and take precedence over systemPrompt/

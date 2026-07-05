@@ -44,6 +44,7 @@ import type {
   SDKPartialAssistantMessage,
   SDKPermissionDenial,
   SDKResultMessage,
+  TextBlockParam,
   ToolResultBlockParam,
   ToolUseBlockParam,
 } from '../src/types.js';
@@ -1276,5 +1277,109 @@ describe('runAgentLoop', () => {
     const toolResults = userTurn.content as ToolResultBlockParam[];
     expect(toolResults[0]!.content).toBe('original output');
     expect(lastResult(messages).subtype).toBe('success');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Dual system cache breakpoint (wire-level via runAgentLoop + MockTransport)
+// ---------------------------------------------------------------------------
+
+describe('dual system cache breakpoint', () => {
+  const BASE = 'base harness prefix';
+  const TAIL = '\n\n<system-reminder>project instructions</system-reminder>';
+  const CWD = 'Working directory: /tmp/run-xyz';
+
+  /** Count every cache_control breakpoint anywhere in the request. */
+  function countBreakpoints(req: StreamRequest): number {
+    let n = 0;
+    if (Array.isArray(req.tools)) for (const t of req.tools) if (t.cache_control) n += 1;
+    if (Array.isArray(req.system)) for (const b of req.system) if (b.cache_control) n += 1;
+    for (const m of req.messages) {
+      if (Array.isArray(m.content)) {
+        for (const b of m.content) {
+          if ((b as { cache_control?: unknown }).cache_control) n += 1;
+        }
+      }
+    }
+    return n;
+  }
+
+  it('emits a 3-block [base, project, cwd] system with cache_control on 0 and 1 only', async () => {
+    const transport = new MockTransport([textReplyEvents('ok')]);
+    const deps = makeDeps(transport);
+    const config = makeConfig({
+      promptCaching: true,
+      systemPrompt: BASE + TAIL,
+      systemPromptSuffix: CWD,
+      systemPromptBaseLen: BASE.length,
+    });
+    await collect(runAgentLoop([{ role: 'user', content: 'hi' }], deps, config));
+
+    const system = transport.requests[0]!.system as TextBlockParam[];
+    expect(system).toHaveLength(3);
+    expect(system[0]!.text).toBe(BASE);
+    expect(system[1]!.text).toBe(TAIL);
+    expect(system[2]!.text).toBe(CWD);
+    expect(system[0]!.cache_control).toEqual({ type: 'ephemeral' });
+    expect(system[1]!.cache_control).toEqual({ type: 'ephemeral' });
+    expect(system[2]!.cache_control).toBeUndefined();
+    // slice(baseLen) round-trips to the tail bytes
+    expect((BASE + TAIL).slice(BASE.length)).toBe(TAIL);
+  });
+
+  it('degrades to the old 2-block [stable, cwd] single breakpoint when baseLen is unset', async () => {
+    const transport = new MockTransport([textReplyEvents('ok')]);
+    const deps = makeDeps(transport);
+    const config = makeConfig({
+      promptCaching: true,
+      systemPrompt: BASE + TAIL,
+      systemPromptSuffix: CWD,
+      // systemPromptBaseLen omitted -> no project tail known
+    });
+    await collect(runAgentLoop([{ role: 'user', content: 'hi' }], deps, config));
+
+    const system = transport.requests[0]!.system as TextBlockParam[];
+    expect(system).toHaveLength(2);
+    expect(system[0]!.text).toBe(BASE + TAIL);
+    expect(system[1]!.text).toBe(CWD);
+    expect(system[0]!.cache_control).toEqual({ type: 'ephemeral' });
+    expect(system[1]!.cache_control).toBeUndefined();
+  });
+
+  it('guards degrade to single breakpoint: baseLen 0 and baseLen >= length', async () => {
+    for (const baseLen of [0, (BASE + TAIL).length, (BASE + TAIL).length + 5]) {
+      const transport = new MockTransport([textReplyEvents('ok')]);
+      const deps = makeDeps(transport);
+      const config = makeConfig({
+        promptCaching: true,
+        systemPrompt: BASE + TAIL,
+        systemPromptSuffix: CWD,
+        systemPromptBaseLen: baseLen,
+      });
+      await collect(runAgentLoop([{ role: 'user', content: 'hi' }], deps, config));
+
+      const system = transport.requests[0]!.system as TextBlockParam[];
+      expect(system).toHaveLength(2);
+      expect(system[0]!.text).toBe(BASE + TAIL);
+      expect(system[0]!.cache_control).toEqual({ type: 'ephemeral' });
+      expect(system[1]!.cache_control).toBeUndefined();
+    }
+  });
+
+  it('total breakpoints stay <= 4 with dual split + tools + cacheable last message', async () => {
+    const transport = new MockTransport([textReplyEvents('ok')]);
+    const tools = new Map<string, BuiltinTool>([['Read', makeFakeReadTool([])]]);
+    const deps = makeDeps(transport, { builtinTools: tools });
+    const config = makeConfig({
+      promptCaching: true,
+      systemPrompt: BASE + TAIL,
+      systemPromptSuffix: CWD,
+      systemPromptBaseLen: BASE.length,
+    });
+    await collect(runAgentLoop([{ role: 'user', content: 'hi' }], deps, config));
+
+    // tools(1) + system base+project(2) + last message(1) = 4, at the API cap.
+    expect(countBreakpoints(transport.requests[0]!)).toBe(4);
+    expect(countBreakpoints(transport.requests[0]!)).toBeLessThanOrEqual(4);
   });
 });

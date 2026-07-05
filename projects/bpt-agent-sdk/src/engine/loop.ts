@@ -476,17 +476,33 @@ export async function* runAgentLoop(
     const hasSuffix =
       config.systemPromptSuffix !== undefined && config.systemPromptSuffix.length > 0;
     const splitSystem = cachingOn && hasSuffix && callerBlocks === undefined;
+    // Dual-split: when the stable prompt has a [base harness | project tail]
+    // boundary, emit a THREE-block [base, project, cwd] system so the shared
+    // base and the per-project tail cache as two reusable segments (the 4th
+    // breakpoint). The strict 0 < baseLen < length guard degrades cleanly to
+    // the old [stable, cwd] layout (and protects against a stale/oversized
+    // offset from any caller).
+    const baseLen = config.systemPromptBaseLen;
+    const hasProjectTail =
+      baseLen !== undefined && baseLen > 0 && baseLen < config.systemPrompt.length;
+    const dualSplit = splitSystem && hasProjectTail;
     const systemField: string | TextBlockParam[] =
       callerBlocks !== undefined
         ? callerBlocks
-        : splitSystem
+        : dualSplit
           ? [
-              { type: 'text', text: config.systemPrompt },
+              { type: 'text', text: config.systemPrompt.slice(0, baseLen) },
+              { type: 'text', text: config.systemPrompt.slice(baseLen) },
               { type: 'text', text: config.systemPromptSuffix! },
             ]
-          : hasSuffix
-            ? `${config.systemPrompt}\n${config.systemPromptSuffix}`
-            : config.systemPrompt;
+          : splitSystem
+            ? [
+                { type: 'text', text: config.systemPrompt },
+                { type: 'text', text: config.systemPromptSuffix! },
+              ]
+            : hasSuffix
+              ? `${config.systemPrompt}\n${config.systemPromptSuffix}`
+              : config.systemPrompt;
     const request: StreamRequest = {
       model: useModel,
       max_tokens: config.maxOutputTokens,
@@ -504,7 +520,13 @@ export async function* runAgentLoop(
       // a message breakpoint too or the request could exceed the 4-cap.
       cacheMessages: callerBlocks === undefined,
       cacheSystemBoundary:
-        callerBlocks !== undefined ? 'preserve' : splitSystem ? 'first' : 'last',
+        callerBlocks !== undefined
+          ? 'preserve'
+          : dualSplit
+            ? 'dual'
+            : splitSystem
+              ? 'first'
+              : 'last',
     });
     const apiStart = Date.now();
     try {

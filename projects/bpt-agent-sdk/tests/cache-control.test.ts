@@ -95,6 +95,69 @@ describe('applyCacheControl', () => {
     expect(blocks[1].cache_control).toBeUndefined();
   });
 
+  it("cacheSystemBoundary:'dual' caches BOTH base and project blocks, not the cwd tail", () => {
+    // The engine's three-block [base, project, cwd] layout: block 0 (shared
+    // base harness) and block 1 (per-project tail) each get a breakpoint —
+    // two reusable segments — while block 2 (per-run cwd) stays uncached.
+    const system: TextBlockParam[] = [
+      { type: 'text', text: 'base harness prefix' },
+      { type: 'text', text: '\n\n<system-reminder>project instructions</system-reminder>' },
+      { type: 'text', text: 'Working directory: /tmp/run-xyz' },
+    ];
+    const out = applyCacheControl(baseReq({ system }), {
+      enabled: true,
+      cacheSystemBoundary: 'dual',
+    });
+    const blocks = out.system as TextBlockParam[];
+    expect(blocks[0].cache_control).toEqual({ type: 'ephemeral' });
+    expect(blocks[1].cache_control).toEqual({ type: 'ephemeral' });
+    expect(blocks[2].cache_control).toBeUndefined();
+    // input array untouched
+    expect(system[0].cache_control).toBeUndefined();
+    expect(system[1].cache_control).toBeUndefined();
+    expect(out.system).not.toBe(system);
+  });
+
+  it("cacheSystemBoundary:'dual' on a degenerate 2-block array only touches indices 0 and 1", () => {
+    // The loop passes 'dual' SOLELY for the 3-block layout; document that on a
+    // shorter array it caches whatever indices exist (0 and 1) and never reads
+    // past the end. Identity/no-mutation of the input array still holds.
+    const system: TextBlockParam[] = [
+      { type: 'text', text: 'a' },
+      { type: 'text', text: 'b' },
+    ];
+    const out = applyCacheControl(baseReq({ system }), {
+      enabled: true,
+      cacheSystemBoundary: 'dual',
+    });
+    const blocks = out.system as TextBlockParam[];
+    expect(blocks).toHaveLength(2);
+    expect(blocks[0].cache_control).toEqual({ type: 'ephemeral' });
+    expect(blocks[1].cache_control).toEqual({ type: 'ephemeral' });
+    expect(system[0].cache_control).toBeUndefined();
+    expect(system[1].cache_control).toBeUndefined();
+    expect(out.system).not.toBe(system);
+  });
+
+  it('full dual request (tools + 3-block dual system + string last message) yields exactly 4 breakpoints, never more', () => {
+    const tools: APIToolDefinition[] = [
+      { name: 't1', input_schema: { type: 'object' } },
+      { name: 't2', input_schema: { type: 'object' } },
+    ];
+    const system: TextBlockParam[] = [
+      { type: 'text', text: 'base harness prefix' },
+      { type: 'text', text: '\n\nproject tail' },
+      { type: 'text', text: 'Working directory: /tmp/run-xyz' },
+    ];
+    const out = applyCacheControl(baseReq({ tools, system }), {
+      enabled: true,
+      cacheSystemBoundary: 'dual',
+    });
+    // tools(1) + system base+project(2) + last message(1) = 4, at the API cap.
+    expect(countBreakpoints(out)).toBe(4);
+    expect(countBreakpoints(out)).toBeLessThanOrEqual(4);
+  });
+
   it('caches the last tool and does NOT mutate the passed-in tools array', () => {
     const tools: APIToolDefinition[] = [
       { name: 't1', input_schema: { type: 'object' } },

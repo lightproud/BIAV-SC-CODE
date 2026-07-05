@@ -10,12 +10,15 @@
  * corrupt the transcript / resumes. Every level shallow-clones before adding a
  * breakpoint.
  *
- * The API allows up to 4 ephemeral breakpoints; this layer places at most 3
- * (tools, system, last message), honoring the documented prefix hierarchy.
- * Writes happen only at a breakpoint; reads match the longest prior prefix
- * automatically within a 20-block lookback, so the moving last-message
- * breakpoint yields incremental conversation caching without touching the
- * earlier (tools/system) breakpoints.
+ * The API allows up to 4 ephemeral breakpoints; this layer places at most 4
+ * (tools, up to TWO system breakpoints, last message), honoring the documented
+ * prefix hierarchy. The 2nd system breakpoint is used only for the engine's
+ * three-block [base, project, cwd] layout (boundary 'dual'): the shared base
+ * harness and the per-project instructions/append tail then cache as two
+ * independently-reusable segments. Writes happen only at a breakpoint; reads
+ * match the longest prior prefix automatically within a 20-block lookback, so
+ * the moving last-message breakpoint yields incremental conversation caching
+ * without touching the earlier (tools/system) breakpoints.
  */
 
 import type { StreamRequest } from '../internal/contracts.js';
@@ -34,10 +37,10 @@ type CacheableLastBlock = 'text' | 'tool_result' | 'image';
  * Return a new StreamRequest with automatic prompt-caching breakpoints.
  *
  * When `enabled` is false, the input is returned unchanged (identity). When
- * enabled, up to three breakpoints are attached without mutating the input:
+ * enabled, up to four breakpoints are attached without mutating the input:
  *  - tools:    last tool gets cache_control (skipped when no tools);
  *  - system:   string -> single cached text block; TextBlockParam[] -> last
- *              block cached (skipped when empty/undefined);
+ *              (or first / first-two) block cached (skipped when empty/undefined);
  *  - messages: (only when cacheMessages !== false) the last message's last
  *              content block gets cache_control when it is text/tool_result/
  *              image; skipped when it is thinking/tool_use/redacted_thinking.
@@ -55,11 +58,16 @@ export function applyCacheControl(
      *   [stable, volatile-cwd] split so the stable prefix is cached and the
      *   per-run cwd tail (block 2) stays out of the cached prefix, enabling
      *   cross-query reuse of the stable prefix.
+     * - 'dual': cache the FIRST TWO blocks. Used only for the engine's
+     *   three-block [base, project, cwd] layout: block 0 (shared base harness)
+     *   and block 1 (per-project instructions/append tail) each get a
+     *   breakpoint so they cache as two independently-reusable segments, while
+     *   the per-run cwd tail (block 2) stays uncached.
      * - 'preserve': leave the system untouched. Used for the segments seam,
      *   where the CALLER authored the blocks and their own cache_control
      *   breakpoints; the engine must not add or move any.
      */
-    cacheSystemBoundary?: 'first' | 'last' | 'preserve';
+    cacheSystemBoundary?: 'first' | 'last' | 'dual' | 'preserve';
   },
 ): StreamRequest {
   if (!opts.enabled) return req;
@@ -102,7 +110,7 @@ export function applyCacheControl(
  */
 function cacheSystem(
   system: string | TextBlockParam[] | undefined,
-  boundary: 'first' | 'last',
+  boundary: 'first' | 'last' | 'dual',
 ): string | TextBlockParam[] | undefined {
   if (typeof system === 'string') {
     if (system.length === 0) return system;
@@ -110,6 +118,19 @@ function cacheSystem(
   }
   if (Array.isArray(system) && system.length > 0) {
     const blocks = system.slice();
+    if (boundary === 'dual') {
+      // Engine's three-block [base, project, cwd] layout: cache block 0 (shared
+      // base harness) AND block 1 (per-project tail) — two reusable segments —
+      // leaving block 2 (per-run cwd) uncached. Guard by existence so a
+      // degenerate array only touches indices that exist.
+      const base = blocks[0] as TextBlockParam;
+      blocks[0] = { ...base, cache_control: EPHEMERAL };
+      if (blocks.length > 1) {
+        const project = blocks[1] as TextBlockParam;
+        blocks[1] = { ...project, cache_control: EPHEMERAL };
+      }
+      return blocks;
+    }
     // 'first' caches the stable prefix block (engine's [stable, cwd] split);
     // 'last' caches the final block (default for caller-supplied systems).
     const idx = boundary === 'first' ? 0 : blocks.length - 1;

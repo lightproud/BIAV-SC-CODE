@@ -204,3 +204,59 @@ describe('harness prompt v1/v2 variant', () => {
     }
   });
 });
+
+describe('base/project split (2nd system cache breakpoint)', () => {
+  it('base + project === stable, with the reminder/append in project only', () => {
+    const parts = buildSystemPromptParts(
+      { ...preset, append: 'EXTRA_INSTRUCTION' },
+      {
+        cwd: '/tmp/x',
+        toolNames: ['Read', 'Write', 'Bash'],
+        projectInstructions: '# CLAUDE.md\n\nAlways use tabs.',
+      },
+    );
+    // invariant: the split reconstructs the full stable byte-for-byte
+    expect(parts.base + parts.project).toBe(parts.stable);
+    // base is the shared harness only — no per-project tail bytes
+    expect(parts.base).toContain('Doing tasks:');
+    expect(parts.base).not.toContain('<system-reminder>');
+    expect(parts.base).not.toContain('EXTRA_INSTRUCTION');
+    // project carries the reminder + append WITH its leading separators
+    expect(parts.project.startsWith('\n\n')).toBe(true);
+    expect(parts.project).toContain('<system-reminder>');
+    expect(parts.project).toContain('Always use tabs.');
+    expect(parts.project).toContain('EXTRA_INSTRUCTION');
+  });
+
+  it('projectInstructions alone populate project; append alone populate project', () => {
+    const onlyReminder = buildSystemPromptParts(preset, {
+      cwd: '/tmp/x',
+      toolNames: ['Read'],
+      projectInstructions: 'PROJECT_RULES',
+    });
+    expect(onlyReminder.base + onlyReminder.project).toBe(onlyReminder.stable);
+    expect(onlyReminder.project).toContain('PROJECT_RULES');
+    expect(onlyReminder.base).not.toContain('PROJECT_RULES');
+
+    const onlyAppend = buildSystemPromptParts(
+      { ...preset, append: 'JUST_APPEND' },
+      { cwd: '/tmp/x', toolNames: ['Read'] },
+    );
+    expect(onlyAppend.base + onlyAppend.project).toBe(onlyAppend.stable);
+    expect(onlyAppend.project).toBe('\n\nJUST_APPEND');
+  });
+
+  it("project === '' for a bare preset, a string prompt, and undefined", () => {
+    const barePreset = buildSystemPromptParts(preset, ctx());
+    expect(barePreset.project).toBe('');
+    expect(barePreset.base).toBe(barePreset.stable);
+
+    const stringPrompt = buildSystemPromptParts('custom prompt', ctx());
+    expect(stringPrompt.project).toBe('');
+    expect(stringPrompt.base).toBe('custom prompt');
+
+    const undef = buildSystemPromptParts(undefined, ctx());
+    expect(undef.project).toBe('');
+    expect(undef.base).toBe(undef.stable);
+  });
+});

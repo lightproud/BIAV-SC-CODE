@@ -510,6 +510,9 @@ export function query(args: {
   let systemBlocks: TextBlockParam[] | undefined;
   let systemPromptStable = '';
   let systemPromptVolatile = '';
+  // Char offset splitting the stable prefix into [base harness | appended tail]
+  // for the 2nd system cache breakpoint. Only set on the string/preset path.
+  let systemPromptBaseLen: number | undefined;
   const sp = options.systemPrompt;
   if (sp !== null && typeof sp === 'object' && 'type' in sp && sp.type === 'segments') {
     // 4 API breakpoints total; reserve 1 for the tool schemas -> up to 3 here.
@@ -562,6 +565,11 @@ export function query(args: {
       projectInstructions,
     });
     systemPromptStable = promptParts.stable;
+    // Boundary between the shared base harness and the appended stable tail
+    // (project instructions / append). The structured-output instruction is
+    // appended AFTER `base`, so it lands in the slice(baseLen) tail and the
+    // offset stays valid.
+    systemPromptBaseLen = promptParts.base.length;
     if (outputFormat !== undefined) {
       systemPromptStable += `\n\n${buildStructuredOutputInstruction(outputFormat.schema)}`;
     }
@@ -580,6 +588,10 @@ export function query(args: {
     ...(systemPromptVolatile.length > 0
       ? { systemPromptSuffix: systemPromptVolatile }
       : {}),
+    // Base/tail split offset for the 2nd system cache breakpoint (string/preset
+    // path only; the loop guards 0 < baseLen < systemPrompt.length so it
+    // degrades to a single breakpoint when there is no appended tail).
+    ...(systemPromptBaseLen !== undefined ? { systemPromptBaseLen } : {}),
     // Caller-composed segments (host layering) take precedence over the
     // string/preset path when present.
     ...(systemBlocks !== undefined ? { systemBlocks } : {}),
