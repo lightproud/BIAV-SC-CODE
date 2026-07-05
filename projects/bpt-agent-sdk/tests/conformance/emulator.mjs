@@ -18,7 +18,9 @@
  *
  * Protocol surface implemented per the spike profile: POST /v1/messages
  * (SSE) only; every other path gets a tolerated 404. Fault injection:
- * http429 and sse-truncated script kinds.
+ * http429 (param retryAfter), sse-truncated (param cutMarker), http500,
+ * http400 and sse-hang script kinds (L4 differential; every fault branch
+ * sits after req.resume() - the content-blind boundary is unchanged).
  */
 
 import { createServer } from 'node:http';
@@ -74,8 +76,20 @@ export function toolUseReply(calls, { id = 'msg_conf_tool' } = {}) {
  *
  * scripts: consumed one per POST /v1/messages, each one of
  *   { kind: 'sse', events }            - full SSE reply
- *   { kind: 'sse-truncated', events }  - stream cut before message_stop
- *   { kind: 'http429' }                - 429 + retry-after: 1
+ *   { kind: 'sse-truncated', events, cutMarker? } - stream cut before the
+ *     cutMarker frame (default 'event: message_stop' - byte-identical for
+ *     pre-L4 callers); e.g. 'event: message_delta' cuts a tool turn before
+ *     stop_reason delivery ("incomplete message" vs "missing terminator")
+ *   { kind: 'http429', retryAfter? }   - 429 + retry-after (default '1')
+ *   { kind: 'http500' }                - 500 api_error + retry-after: 1
+ *     (pinned to 1s so BOTH arms' backoff stays CI-fast on the recover case)
+ *   { kind: 'http400' }                - 400 invalid_request_error; scripted
+ *     counterpart of the queue-exhaustion fallback so a non-retryable-fault
+ *     case does not consume the unscriptedCalls sentinel L4 asserts on
+ *   { kind: 'sse-hang', events, hangAfter? } - 200 + SSE frames through the
+ *     hangAfter event type (default 'message_start'), then the connection is
+ *     held open forever: no end(), no further writes. close() destroys the
+ *     registered hung sockets so shutdown cannot deadlock.
  *
  * Returns { url, port, profile, close }.
  */
@@ -88,6 +102,9 @@ export function startEmulator(scripts) {
     unscriptedCalls: 0,
   };
   let messagesCalls = 0;
+  // sse-hang responses deliberately held open; close() destroys them FIRST
+  // so server.close() cannot deadlock waiting on a hung stream.
+  const hungResponses = new Set();
 
   const server = createServer((req, res) => {
     req.resume(); // content-blind: drain the body without buffering a byte
@@ -107,17 +124,49 @@ export function startEmulator(scripts) {
         return;
       }
       if (script.kind === 'http429') {
-        res.writeHead(429, { 'content-type': 'application/json', 'retry-after': '1' });
+        res.writeHead(429, { 'content-type': 'application/json', 'retry-after': script.retryAfter ?? '1' });
         res.end(JSON.stringify({ type: 'error', error: { type: 'rate_limit_error', message: 'emulated rate limit' } }));
         return;
       }
-      res.writeHead(200, { 'content-type': 'text/event-stream', 'cache-control': 'no-cache' });
+      if (script.kind === 'http500') {
+        // retry-after: 1 deliberately bounds BOTH arms' exponential backoff
+        // so the 5xx-recover differential stays CI-fast.
+        res.writeHead(500, { 'content-type': 'application/json', 'retry-after': '1' });
+        res.end(JSON.stringify({ type: 'error', error: { type: 'api_error', message: 'emulated internal error' } }));
+        return;
+      }
+      if (script.kind === 'http400') {
+        res.writeHead(400, { 'content-type': 'application/json' });
+        res.end(JSON.stringify({ type: 'error', error: { type: 'invalid_request_error', message: 'emulated invalid request' } }));
+        return;
+      }
+      if (script.kind === 'sse-hang') {
+        // Frames through the hangAfter event type, then silence forever -
+        // the client sees a live but stalled stream. The response is
+        // registered for forced destruction at close() time.
+        res.writeHead(200, { 'content-type': 'text/event-stream', 'cache-control': 'no-cache' });
+        const upTo = script.events.findIndex((e) => e.type === (script.hangAfter ?? 'message_start'));
+        res.write(sse(script.events.slice(0, upTo === -1 ? script.events.length : upTo + 1)));
+        hungResponses.add(res);
+        res.on('close', () => hungResponses.delete(res));
+        return;
+      }
       const body = sse(script.events);
       if (script.kind === 'sse-truncated') {
-        const cut = body.lastIndexOf('event: message_stop');
-        res.write(body.slice(0, cut === -1 ? body.length : cut));
+        const cut = body.lastIndexOf(script.cutMarker ?? 'event: message_stop');
+        if (cut === -1) {
+          // Review major (2026-07-05): a mistyped or upstream-renamed
+          // cutMarker must never silently convert the fault into a healthy
+          // complete reply - fail LOUD so the scenario dies visibly.
+          res.writeHead(500, { 'content-type': 'application/json' });
+          res.end(JSON.stringify({ type: 'error', error: { type: 'api_error', message: `emulator: sse-truncated cutMarker not found: ${script.cutMarker ?? 'event: message_stop'}` } }));
+          return;
+        }
+        res.writeHead(200, { 'content-type': 'text/event-stream', 'cache-control': 'no-cache' });
+        res.write(body.slice(0, cut));
         setTimeout(() => res.destroy(), 100);
       } else {
+        res.writeHead(200, { 'content-type': 'text/event-stream', 'cache-control': 'no-cache' });
         res.end(body);
       }
       return;
@@ -137,7 +186,14 @@ export function startEmulator(scripts) {
         url: `http://127.0.0.1:${port}`,
         port,
         profile,
-        close: () => new Promise((r) => server.close(r)),
+        close: () =>
+          new Promise((r) => {
+            // Destroy deliberately-hung streams (sse-hang) before close():
+            // server.close() waits on active responses and would deadlock.
+            for (const hung of hungResponses) hung.destroy();
+            hungResponses.clear();
+            server.close(r);
+          }),
       });
     });
   });

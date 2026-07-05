@@ -67,6 +67,15 @@ on:
         type: choice
         options: ['v1', 'v4', 'v5']
         default: 'v1'
+      conformance_l5:
+        description: 'Run the L5 five-dimension real-API round with gate B enforced (dual-arm, spends budget ~$1.5/round on haiku)'
+        required: false
+        type: boolean
+        default: false
+      l5_repeat:
+        description: 'L5 repeats per task per engine (blueprint nominal 5; gate B takes the aggregate)'
+        required: false
+        default: '5'
 
 concurrency:
   group: bpt-agent-sdk-${{ github.ref }}
@@ -106,14 +115,17 @@ jobs:
         run: npm test
 
   conformance:
-    # Conformance suite M1+M2 (design final 2026-07-05): the full L1-L3
+    # Conformance suite M1-M3 (design final 2026-07-05): the full L1-L4
     # differential — L1 stream grammar, L2 options semantics, L3 tool_result
-    # content. Keyless AND free — both engines talk only to a local
-    # content-blind emulator (zero api.anthropic.com traffic). The official
-    # arm installs the DUAL-PINNED packages transiently (--no-save, never a
-    # repo dependency; pins in tests/conformance/pins.json). M1/M2 semantics:
-    # a DIVERGENT verdict is informational (M3 adds the ratchet gate); a
-    # BPT-arm check failure fails the job (our own engine regression).
+    # content, L4 fault injection — plus the M3 scoreboard ratchet and the
+    # keyless L5 harness smoke. Keyless AND free — both engines talk only to
+    # a local content-blind emulator (zero api.anthropic.com traffic). The
+    # official arm installs the DUAL-PINNED packages transiently (--no-save,
+    # never a repo dependency; pins in tests/conformance/pins.json).
+    # Semantics: a DIVERGENT verdict is informational at the runner level,
+    # but the RATCHET IS A GATE — any scoreboard regression against the
+    # committed tests/conformance/baseline.json (green only grows) fails the
+    # job; a BPT-arm check failure fails the job (our own engine regression).
     # Clean-room: the emulator never reads request bodies (standing decision
     # 2026-07-05 净室观测边界 r2), and every runner self-audits its artifact.
     runs-on: ubuntu-latest
@@ -143,6 +155,12 @@ jobs:
         run: node tests/conformance/run-l2.mjs --out=conformance-l2.json
       - name: L3 tool-behavior differential
         run: node tests/conformance/run-l3.mjs --out=conformance-l3.json
+      - name: L4 fault-injection differential
+        run: node tests/conformance/run-l4.mjs --out=conformance-l4.json
+      - name: Scoreboard ratchet (M3 GATE — green only grows vs committed baseline.json)
+        run: node tests/conformance/ratchet.mjs conformance-l1.json conformance-l2.json conformance-l3.json conformance-l4.json
+      - name: L5 harness smoke (keyless — scripted emulator round proves the M4 harness end-to-end)
+        run: node tests/conformance/run-l5.mjs --smoke
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -151,6 +169,8 @@ jobs:
             projects/bpt-agent-sdk/conformance-l1.json
             projects/bpt-agent-sdk/conformance-l2.json
             projects/bpt-agent-sdk/conformance-l3.json
+            projects/bpt-agent-sdk/conformance-l4.json
+            projects/bpt-agent-sdk/conformance-l5.json
           if-no-files-found: ignore
 
   live-smoke:
@@ -321,6 +341,52 @@ jobs:
           path: |
             projects/bpt-agent-sdk/ab-report-v1.json
             projects/bpt-agent-sdk/ab-report-cand.json
+          if-no-files-found: ignore
+
+  conformance-l5:
+    # Conformance suite M4: the L5 five-dimension task-library round against
+    # the REAL api.anthropic.com, both arms, with gate B ENFORCED (--gate):
+    # aggregate pass-rate non-inferiority, ours >= official minus 5pp,
+    # repeat median semantics per the blueprint (~$1.5/round on haiku).
+    # Manual dispatch with conformance_l5=true only — spends real budget.
+    # The official arm installs the dual-pinned packages transiently
+    # (--no-save, never a repo dependency; pins in tests/conformance/
+    # pins.json). L6 rides along at zero marginal cost: every official-arm
+    # PUBLIC SDKMessage stream is retained under l5-traces/ (content-blind
+    # audited — never request bodies) and uploaded as a run artifact.
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.conformance_l5 == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          sparse-checkout: |
+            /*
+            !/Public-Info-Pool/Record/
+            !/Public-Info-Pool/Reference/
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: Install pinned official arm (transient, --no-save, never a repo dep)
+        run: |
+          PINS=$(node -e "const p=require('./tests/conformance/pins.json');process.stdout.write('@anthropic-ai/claude-agent-sdk@'+p.agentSdk+' @anthropic-ai/claude-code@'+p.claudeCode)")
+          npm i --no-save $PINS
+      - name: L5 dual-arm real-API round (gate B enforced)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node tests/conformance/run-l5.mjs --gate "--model=${{ github.event.inputs.model }}" "--repeat=${{ github.event.inputs.l5_repeat }}"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: conformance-l5-report
+          path: |
+            projects/bpt-agent-sdk/conformance-l5.json
+            projects/bpt-agent-sdk/l5-traces/
           if-no-files-found: ignore
 
   cache-probe:

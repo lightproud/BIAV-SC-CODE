@@ -5,4 +5,8 @@ dist/
 conformance-l1.json
 conformance-l2.json
 conformance-l3.json
+conformance-l4.json
+conformance-l5.json
+l5-traces/
+drift-report.md
 ab-report-*.json
