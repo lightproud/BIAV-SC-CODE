@@ -1513,7 +1513,26 @@ export function query(args: {
       engineConfig.model = model ?? initialModel;
     },
     async setMaxThinkingTokens(maxThinkingTokens: number | null): Promise<void> {
-      engineConfig.maxThinkingTokens = maxThinkingTokens ?? undefined;
+      const n = maxThinkingTokens ?? undefined;
+      engineConfig.maxThinkingTokens = n;
+      // On the claude_code preset path (no explicit thinking config) the budget
+      // ALSO drives the on/off switch, mirroring the E1 initial-injection
+      // semantics: without this a live re-enable on a session that opted out
+      // (maxThinkingTokens: 0 -> config.thinking undefined) would be a silent
+      // no-op, since computeThinking only consults the budget when thinking is
+      // already enabled. Explicit thinking configs and non-preset paths keep
+      // their existing behavior (maxThinkingTokens is a budget fallback only).
+      if (isClaudeCodePreset && options.thinking === undefined) {
+        if (n === undefined) {
+          // Reset -> the preset default (re-enabled at the default budget).
+          engineConfig.thinking = { type: 'enabled' };
+          engineConfig.maxThinkingTokens = DEFAULT_PRESET_THINKING_BUDGET;
+        } else if (n > 0) {
+          engineConfig.thinking = { type: 'enabled' };
+        } else {
+          engineConfig.thinking = undefined; // 0 -> off
+        }
+      }
     },
     initializationResult(): Promise<SDKInitializationResult> {
       return initDeferred.promise;

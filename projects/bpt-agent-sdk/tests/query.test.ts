@@ -1038,6 +1038,90 @@ describe('query() e2e - confirmed-finding regressions', () => {
     expect(fetchStub.requests[1]!.body.model).toBe('claude-opus-4-8');
   });
 
+  it('setMaxThinkingTokens re-enables thinking on a preset session that opted out (E1 live-switch, adversarial review 2026-07-05)', async () => {
+    // Preset session opted out with maxThinkingTokens: 0 -> turn 1 sends no
+    // thinking. A live setMaxThinkingTokens(4096) must turn it back ON for
+    // turn 2 (the bug: the setter only touched the budget, never the on/off
+    // switch, so the re-enable was a silent no-op).
+    const fetchStub = stubFetch(
+      makeSSEFetch([textReplyEvents('r1'), textReplyEvents('r2')]),
+    );
+    let releaseSecond!: () => void;
+    const secondGate = new Promise<void>((r) => {
+      releaseSecond = r;
+    });
+    async function* inputs(): AsyncGenerator<SDKUserMessage> {
+      yield userMsg('first');
+      await secondGate;
+      yield userMsg('second');
+    }
+
+    const q = query({
+      prompt: inputs(),
+      options: baseOptions({
+        systemPrompt: { type: 'preset', preset: 'claude_code' },
+        maxThinkingTokens: 0,
+      }),
+    });
+    let resultsSeen = 0;
+    for await (const m of q) {
+      if (m.type === 'result') {
+        resultsSeen += 1;
+        if (resultsSeen === 1) {
+          await q.setMaxThinkingTokens(4096);
+          releaseSecond();
+        }
+      }
+    }
+
+    expect(fetchStub.requests).toHaveLength(2);
+    expect(fetchStub.requests[0]!.body).not.toHaveProperty('thinking');
+    expect(fetchStub.requests[1]!.body.thinking).toEqual({
+      type: 'enabled',
+      budget_tokens: 4096,
+    });
+  });
+
+  it('setMaxThinkingTokens(0) disables thinking mid-run on a preset default session (E1 live-switch)', async () => {
+    const fetchStub = stubFetch(
+      makeSSEFetch([textReplyEvents('r1'), textReplyEvents('r2')]),
+    );
+    let releaseSecond!: () => void;
+    const secondGate = new Promise<void>((r) => {
+      releaseSecond = r;
+    });
+    async function* inputs(): AsyncGenerator<SDKUserMessage> {
+      yield userMsg('first');
+      await secondGate;
+      yield userMsg('second');
+    }
+
+    const q = query({
+      prompt: inputs(),
+      options: baseOptions({
+        systemPrompt: { type: 'preset', preset: 'claude_code' },
+      }),
+    });
+    let resultsSeen = 0;
+    for await (const m of q) {
+      if (m.type === 'result') {
+        resultsSeen += 1;
+        if (resultsSeen === 1) {
+          await q.setMaxThinkingTokens(0);
+          releaseSecond();
+        }
+      }
+    }
+
+    expect(fetchStub.requests).toHaveLength(2);
+    // Turn 1 = preset default 4096; turn 2 = disabled.
+    expect(fetchStub.requests[0]!.body.thinking).toEqual({
+      type: 'enabled',
+      budget_tokens: 4096,
+    });
+    expect(fetchStub.requests[1]!.body).not.toHaveProperty('thinking');
+  });
+
   it('reports per-result num_turns/usage with cumulative cost/apiMs across streaming turns (E2, KD-L5-04)', async () => {
     const fetchStub = stubFetch(
       makeSSEFetch([
