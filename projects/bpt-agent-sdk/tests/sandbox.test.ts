@@ -111,8 +111,9 @@ describe('BwrapBackend.wrap (argv)', () => {
     expect(plan.command).toBe('bwrap');
     expect(plan.args.slice(0, 8)).toEqual(['--ro-bind', '/', '/', '--dev', '/dev', '--proc', '/proc', '--unshare-pid']);
     expect(plan.args).toContain('--unshare-net');
-    expect(plan.args.join(' ')).toContain('--bind /work /work');
-    expect(plan.args.join(' ')).toContain('--bind /data /data');
+    // --bind-try (not --bind): a missing writable path is skipped, never bricks.
+    expect(plan.args.join(' ')).toContain('--bind-try /work /work');
+    expect(plan.args.join(' ')).toContain('--bind-try /data /data');
     expect(plan.args.slice(-6)).toEqual(['--chdir', '/work', '--', 'bash', '-c', 'echo hi']);
     expect(plan.args).toContain('--die-with-parent');
     expect(plan.env).toEqual({ TMPDIR: '/tmp/x' });
@@ -123,7 +124,7 @@ describe('BwrapBackend.wrap (argv)', () => {
   });
   it('dedupes repeated writable paths', () => {
     const plan = new BwrapBackend().wrap({ ...base, writablePaths: ['/work', '/work'], allowNetwork: false });
-    expect(plan.args.join(' ').match(/--bind \/work \/work/g)).toHaveLength(1);
+    expect(plan.args.join(' ').match(/--bind-try \/work \/work/g)).toHaveLength(1);
   });
 });
 

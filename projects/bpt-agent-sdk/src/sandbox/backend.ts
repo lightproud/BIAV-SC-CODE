@@ -37,7 +37,16 @@ export type BwrapProbe = () => boolean;
 
 const defaultBwrapProbe: BwrapProbe = () => {
   try {
-    return spawnSync('bwrap', ['--version'], { stdio: 'ignore' }).status === 0;
+    // FUNCTIONAL probe, not just `--version`: on hardened kernels with
+    // unprivileged user namespaces disabled, bwrap is installed and
+    // `--version` exits 0 but every real spawn fails at namespace setup. Run a
+    // trivial sandbox that exercises the same namespaces wrap() uses; only a
+    // 0 exit means real sandboxing works here.
+    return (
+      spawnSync('bwrap', ['--ro-bind', '/', '/', '--unshare-pid', '--die-with-parent', 'true'], {
+        stdio: 'ignore',
+      }).status === 0
+    );
   } catch {
     return false;
   }

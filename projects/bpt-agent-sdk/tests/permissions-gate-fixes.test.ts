@@ -634,3 +634,70 @@ describe('requiresUserInteraction', () => {
     expect(requiresUserInteraction('mcp__srv__ask')).toBe(false);
   });
 });
+
+// ---------------------------------------------------------------------------
+// G-SANDBOX: dangerouslyDisableSandbox escape routing (F1 fail-open fix)
+// ---------------------------------------------------------------------------
+
+describe('sandbox escape is gated as its own ask (never piggybacks a command approval)', () => {
+  const escape = () => checkOpts({ sandboxEscape: true });
+  const canUse: CanUseTool = async () => ({ behavior: 'allow', updatedInput: {} });
+
+  it('forces a prompt in default mode even with a matching command allow rule', async () => {
+    // The allow rule pre-approved `git status` IN the sandbox; it must NOT
+    // silently authorize running it OUTSIDE the sandbox.
+    const gate = makeGate({ mode: 'default', allowedTools: ['Bash(git:*)'], canUseTool: canUse });
+    const spy = vi.fn(canUse);
+    const g2 = makeGate({ mode: 'default', allowedTools: ['Bash(git:*)'], canUseTool: spy });
+    const res = await g2.check('Bash', { command: 'git status' }, escape());
+    expect(res.decision).toBe('allow'); // via the ask, not the rule
+    expect(spy).toHaveBeenCalledTimes(1);
+    void gate;
+  });
+
+  it('forces a prompt even when a PreToolUse hook allowed the command', async () => {
+    const spy = vi.fn(canUse);
+    const gate = makeGate({ mode: 'default', canUseTool: spy });
+    const res = await gate.check(
+      'Bash',
+      { command: 'git push' },
+      checkOpts({ sandboxEscape: true, hook: { decision: 'allow' } }),
+    );
+    expect(res.decision).toBe('allow');
+    expect(spy).toHaveBeenCalledTimes(1); // routed to the ask, not the hook-allow shortcut
+  });
+
+  it('denies the escape in dontAsk mode (fail-closed, no prompt available)', async () => {
+    const gate = makeGate({ mode: 'dontAsk' });
+    const res = await gate.check('Bash', { command: 'git push' }, escape());
+    expect(res.decision).toBe('deny');
+  });
+
+  it('denies the escape when no canUseTool handler exists (fail-closed)', async () => {
+    const gate = makeGate({ mode: 'default' });
+    const res = await gate.check('Bash', { command: 'git push' }, escape());
+    expect(res.decision).toBe('deny');
+  });
+
+  it('bypassPermissions still allows the escape without a prompt (total-bypass contract)', async () => {
+    const spy = vi.fn(canUse);
+    const gate = makeGate({ mode: 'bypassPermissions', canUseTool: spy });
+    const res = await gate.check('Bash', { command: 'git push' }, escape());
+    expect(res.decision).toBe('allow');
+    expect(spy).not.toHaveBeenCalled();
+  });
+
+  it('a deny rule still denies the escape first', async () => {
+    const gate = makeGate({ mode: 'default', disallowedTools: ['Bash(git push:*)'], canUseTool: canUse });
+    const res = await gate.check('Bash', { command: 'git push origin' }, escape());
+    expect(res.decision).toBe('deny');
+  });
+
+  it('a NON-escape Bash call is unaffected (allow rule still auto-allows in-sandbox)', async () => {
+    const spy = vi.fn(canUse);
+    const gate = makeGate({ mode: 'default', allowedTools: ['Bash(git:*)'], canUseTool: spy });
+    const res = await gate.check('Bash', { command: 'git status' }, checkOpts());
+    expect(res.decision).toBe('allow');
+    expect(spy).not.toHaveBeenCalled(); // allowed by rule, no prompt
+  });
+});

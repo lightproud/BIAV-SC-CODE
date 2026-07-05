@@ -280,6 +280,9 @@ export interface PermissionGate {
       isFileEdit: boolean;
       hook?: GateHookDecision;
       decisionReason?: string;
+      /** v0.6 G-SANDBOX: this call requested `dangerouslyDisableSandbox`; the
+       *  escape must route to an ask (never auto-allow) except bypassPermissions. */
+      sandboxEscape?: boolean;
     },
   ): Promise<PermissionCheckResult>;
   setMode(mode: PermissionMode): void;

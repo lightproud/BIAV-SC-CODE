@@ -36,9 +36,13 @@ export class BwrapBackend implements SandboxBackend {
     ];
     if (!req.allowNetwork) args.push('--unshare-net');
     // Later binds override the read-only root; dedupe to keep argv tidy.
+    // `--bind-try` (not `--bind`): a writable path that does not exist on disk
+    // (e.g. an additionalDirectories entry the agent intends to create) is
+    // skipped rather than aborting the whole spawn — otherwise ONE missing
+    // path would brick every sandboxed command.
     for (const p of [...new Set(req.writablePaths)]) {
       if (p.length === 0) continue;
-      args.push('--bind', p, p);
+      args.push('--bind-try', p, p);
     }
     args.push('--die-with-parent', '--chdir', req.cwd, '--', req.shell, '-c', req.command);
     return { command: 'bwrap', args, env: { TMPDIR: req.tmpDir } };
