@@ -98,7 +98,15 @@ function mkToolError(toolUseId: string, message: string): ToolResultBlockParam {
 type ToolExecOutcome = {
   result: ToolResultBlockParam;
   stop?: { reason: string };
-  defer?: { tool_use_id: string; tool_name: string; tool_input: Record<string, unknown> };
+  defer?: {
+    // Official field names (canonical) + legacy names, dual-track per T1-4.
+    id: string;
+    name: string;
+    input: Record<string, unknown>;
+    tool_use_id: string;
+    tool_name: string;
+    tool_input: Record<string, unknown>;
+  };
   /** Observability messages (e.g. permission_denied) to yield before the batch
    * continues. Sourced inside executeToolUse, which cannot yield itself. */
   observability?: SDKMessage[];
@@ -733,7 +741,14 @@ export async function* runAgentLoop(
     if (check.decision === 'defer') {
       return {
         result: errorToolResult(check.message),
-        defer: { tool_use_id: block.id, tool_name: toolName, tool_input: input },
+        defer: {
+          id: block.id,
+          name: toolName,
+          input,
+          tool_use_id: block.id,
+          tool_name: toolName,
+          tool_input: input,
+        },
       };
     }
     input = check.updatedInput; // union now narrows to {decision:'allow'; updatedInput}

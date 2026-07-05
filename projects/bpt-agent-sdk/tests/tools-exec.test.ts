@@ -487,6 +487,40 @@ describe('Grep tool', () => {
     );
   });
 
+  it('context is an alias for -C (official parameter name)', async () => {
+    const dir = await makeDir('grep-ctx-alias');
+    const file = path.join(dir, 'ctx.txt');
+    await writeFile(file, contextBody);
+    const viaAlias = await grepTool.execute(
+      { pattern: 'MATCH', path: 'ctx.txt', output_mode: 'content', context: 1 },
+      makeCtx(dir),
+    );
+    const viaDash = await grepTool.execute(
+      { pattern: 'MATCH', path: 'ctx.txt', output_mode: 'content', '-C': 1 },
+      makeCtx(dir),
+    );
+    expect(viaAlias.isError).toBeFalsy();
+    expect(text(viaAlias)).toBe(text(viaDash));
+  });
+
+  it('-C takes precedence over context when both are given', async () => {
+    const dir = await makeDir('grep-ctx-both');
+    const file = path.join(dir, 'ctx.txt');
+    await writeFile(file, contextBody);
+    const res = await grepTool.execute(
+      {
+        pattern: 'MATCH',
+        path: 'ctx.txt',
+        output_mode: 'content',
+        '-C': 0,
+        context: 2,
+      },
+      makeCtx(dir),
+    );
+    // '-C': 0 wins -> no context lines at all.
+    expect(text(res)).toBe([`${file}:2:two MATCH`, `${file}:6:six MATCH`].join('\n'));
+  });
+
   it('-A adds after-context only', async () => {
     const dir = await makeDir('grep-ctx-a');
     const file = path.join(dir, 'ctx.txt');

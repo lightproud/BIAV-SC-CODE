@@ -344,7 +344,9 @@ export type CanUseTool = (
     decisionReason?: string;
     toolUseID: string;
     agentID?: string;
-    requestId?: string;
+    /** Unique id of this permission request (required on the official surface;
+     *  the gate generates one per canUseTool consultation). */
+    requestId: string;
   },
 ) => Promise<PermissionResult | null>;
 
@@ -1255,6 +1257,10 @@ export type SDKFilesPersistedMessage = {
   }>;
 };
 
+/** Official export name for SDKFilesPersistedMessage (payload shape is this
+ *  SDK's reconstruction; see docs/COMPAT.md for the field-level differences). */
+export type SDKFilesPersistedEvent = SDKFilesPersistedMessage;
+
 /** Output of a local slash-command run. Typed; not emitted. */
 export type SDKLocalCommandOutputMessage = {
   type: 'local_command_output';
@@ -1284,6 +1290,10 @@ export type SDKRateLimitEventMessage = {
   requests_remaining?: number;
 };
 
+/** Official export name for SDKRateLimitEventMessage (payload shape/semantics
+ *  differ from the official rate_limit_info envelope; see docs/COMPAT.md). */
+export type SDKRateLimitEvent = SDKRateLimitEventMessage;
+
 /** An API call is being retried. EMITTED (v0.3) via the transport's onRetry
  *  observer on each non-429 (5xx/network) retry. */
 export type SDKApiRetryMessage = {
@@ -1295,6 +1305,9 @@ export type SDKApiRetryMessage = {
   status?: number;
   reason?: string;
 };
+
+/** Official export name (capitalization) for SDKApiRetryMessage. */
+export type SDKAPIRetryMessage = SDKApiRetryMessage;
 
 /** Authentication status. Typed; not emitted. */
 export type SDKAuthStatusMessage = {
@@ -1492,10 +1505,27 @@ export type CompactionOptions = {
   preTierMaxToolResultChars?: number;
 };
 
-/** The tool call a defer paused on (SDKResultMessage.deferred_tool_use). */
+/**
+ * The tool call a defer paused on (SDKResultMessage.deferred_tool_use).
+ *
+ * The official field names are `id` / `name` / `input` — those are the
+ * authoritative surface. The `tool_use_id` / `tool_name` / `tool_input`
+ * spellings are this SDK's pre-alignment names, kept during a dual-track
+ * transition (both sets are meant to be populated at the emit site) and
+ * slated for removal once consumers migrate.
+ */
 export type SDKDeferredToolUse = {
+  /** Official name for the deferred tool_use id (canonical). */
+  id?: string;
+  /** Official name for the deferred tool name (canonical). */
+  name?: string;
+  /** Official name for the deferred tool input (canonical). */
+  input?: Record<string, unknown>;
+  /** @deprecated Use `id` (official field name). */
   tool_use_id: string;
+  /** @deprecated Use `name` (official field name). */
   tool_name: string;
+  /** @deprecated Use `input` (official field name). */
   tool_input: Record<string, unknown>;
 };
 
@@ -1645,6 +1675,9 @@ export type SDKInitializationResult = {
   account: AccountInfo;
 };
 
+/** Official export name for SDKInitializationResult (Query.initializationResult()). */
+export type SDKControlInitializeResponse = SDKInitializationResult;
+
 export interface Query extends AsyncGenerator<SDKMessage, void> {
   /**
    * Interrupt the running turn. In streaming-input mode this aborts the
@@ -1693,6 +1726,8 @@ export type SDKSessionInfo = {
   fileSize?: number;
   customTitle?: string;
   firstPrompt?: string;
+  gitBranch?: string;
   cwd?: string;
+  tag?: string;
   createdAt?: number;
 };
