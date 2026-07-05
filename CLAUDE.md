@@ -192,23 +192,26 @@ git commit = 数据归档提交 / git push = 同步至远端存储 /
 
 ## §5 知识模块索引
 
-按需 fetch。
+**本节是路由器，不是目录**（§八 脊柱↔长尾范例，2026-07-05 守密人裁定「OKF 取代目录、CLAUDE.md 缩成路由器」）：
+逐文件枚举 + 每文件长描述已交给 OKF 知识库本体（全仓 12 层，`kb_search`/`kb_get`/`kb_neighbors`/`kb_activate`
+运行时导航，`kb_overview` 报层清单 / 概念数 / 消费路由）。本节只留三样 OKF 指针替不掉的东西：**入口 + 腿路由 + 加载期操作规则**。
+
+- **腿路由**（三条腿各司其职，decisions.md 2026-07-04「知识库消费模式路由」）：
+  - **身份 / 关键词查**（「X 是谁」「含某词」）→ `kb_search` / `kb_get`，或 `rg`（此维度 grep 就够，A/B 实测 KB=grep）；
+  - **关系 / 探索 / 溯源题**（「X 与什么相关」「顺这条线还连着什么」「谁跟这个共现」）→ `kb_activate` / `kb_neighbors`（OKF 白盒联想，grep 结构上到不了）；
+  - **模糊语义召回**（向量腿）为 BPT 侧能力，银芯零 ML 不建（§八 8.1）。
+- **各小节性质**：§5.1 只留高频锚点指针（全清单 + 长描述在 OKF）；§5.2 / §5.3 含加载期操作规则与权威指定，OKF 指针替不掉，原文保留。
 
 ### §5.1 角色 + 叙事事实
 
-| 文件 | 内容 |
-|------|------|
-| `assets/data/character-personas/erica.json` | 艾瑞卡角色卡 v1.1 |
-| `assets/data/character-personas/erica-speech-canon.md` | Voice.lua 一手语音原文 + 8 节归纳 |
-| `assets/data/interview-2026-04.json` | 53 问制作人深度采访（Light + 主文案霁月） |
-| `assets/data/narrative-structure.json` | 三部叙事结构、各章压缩细节、角色线 |
-| `assets/data/design-decisions.json` | 设计哲学、被砍机制、平衡理念 |
-| `assets/data/card-system.json` | 卡牌系统术语（指令卡等，解包字面验证） |
-| `projects/wiki/data/extracted/categorized/character_data.txt` | 72 角色基线原始字段（客户端解包，自举数据源；旧 data/db/ 占位结构化层 2026-06-15 清空，W2 可信基线已重建于 `projects/wiki/data/processed/characters.json`（72 真实角色），58 真实角色页已生成，仅余数据桥接回；进度见 `memory/project-status.md`）|
-| `memory/morimens-context.md` | 世界观术语 + 历史时间线 |
-| `projects/wiki/data/processed/story/STORY_RESEARCH.md` | **剧情/世界观/神话原型深度研究综述**（autoresearch 5 轮，逐条带【已证实】/【推测】+来源）：忘却篇1-9章+星辰篇剧情、终章真相（守密人=至高意志碎片/缸中之脑兑现）、7 阵营、35+ 角色↔克苏鲁原型、意识潜游个人剧情、A.F.编年史、OST/广播剧/CV、制作秘辛。社区源（非解包），采信前看置信标签 |
-| `projects/wiki/data/processed/story/` | 解包故事**结构层**（机器可读）：`story_units`（剧情单元脊柱）/ `lore_entries`（1026 lore 含正文）/ `index`（章节↔lore↔关卡↔角色聚合）/ `README.md`；由 `scripts/build_story_layer.py` 可复现生成 |
-| `projects/wiki/data/processed/story/story_search_index.json` | 剧情**静态检索索引**（构建期生成，零 ML）：1026 lore 倒排表（词→lore，秒查「某剧情讲什么」）+ 单元画像 + 角色↔剧情链；服务「对剧情怎么看」类分析。重建：`python3 scripts/build_story_index.py`。分词用领域词典 FMM（`scripts/silver_tokenizer.py`，自举自角色/卡牌/剧情专名），画像仍为粗粒度 |
+一手源全清单 + 逐条长描述已进 OKF `characters`（72 唤醒体，唯一本体层）+ `assets`（事实圣经）+ `story` 层，
+经 `kb_search` / `kb_get` 导航。此处只留高频锚点路径（长描述不再手抄，防漂移）：
+
+- 人格：`assets/data/character-personas/erica.json`（角色卡 v1.1）+ `assets/data/character-personas/erica-speech-canon.md`（Voice.lua 一手 + 8 节归纳）
+- 采访 / 叙事 / 设计：`assets/data/interview-2026-04.json`（53 问）· `assets/data/narrative-structure.json` · `assets/data/design-decisions.json` · `assets/data/card-system.json`
+- 角色基线（自举源）：`projects/wiki/data/extracted/categorized/character_data.txt`（72 角色原始字段）；W2 可信基线 `projects/wiki/data/processed/characters.json`，进度见 `memory/project-status.md`
+- 剧情结构层：`projects/wiki/data/processed/story/`（`story_units` / `lore_entries` / `index`，`scripts/build_story_layer.py` 生成）+ `STORY_RESEARCH.md`（社区源深研，采信看置信标签）+ `story_search_index.json`（`scripts/build_story_index.py` 重建，分词 `scripts/silver_tokenizer.py`）
+- 世界观：`memory/morimens-context.md`（术语 + 历史时间线）
 
 ### §5.2 社区情报（先读 §4 数据纪律）
 
@@ -292,11 +295,9 @@ brain-in-a-vat/
 - **三条铁律**：(1) 一概念一文件（`okf/characters/` 72 角色，唯一本体层）；(2) **放指针不放本体**
   （除 characters 外所有层仅持 `resource` 指针，本体原地不动，呼应 RELEASES.md「藏宝图」与
   「只指针不复刻」）；(3) **全量 vs 输出层不可互换**（指针用 `tags: data_layer:*` 标层，防 lesson #30）。
-- **全仓知识组织（12 层 / ~293 概念，守密人 2026-07-04「用 ultracode 组织整个仓库所有知识」裁定）**：
-  bundle 从 4 层扩到覆盖全仓知识域——原生 `characters`/`sources`/`memory`/`story`（后二已扩至全层）
-  + 新增 `assets`(事实圣经)/`wiki-data`(解包结构化数据集)/`community`(**归档社区全量档案分析镜头**，
-  full_archive)/`news-output`(输出展示层，output)/`unpacked`(解包 text，full_archive)/`extracted`
-  (processed 上游一手解包，full_archive)/`resource`(正式产物)/`projects`(子项目 CONTEXT + RELEASES 藏宝图 + 工程文档)。
+- **全仓知识组织（守密人 2026-07-04「用 ultracode 组织整个仓库所有知识」裁定）**：
+  bundle 从 4 层扩到覆盖全仓知识域（characters 唯一本体层，余层放指针）。
+  **精确层清单 / 概念数 / tier 归属以 `kb_overview` 运行时为准**（不在此手抄——层随源数据增长、手抄即漂移，2026-07-05 §八 范例）。
   新层由 import-only 库 `scripts/okf_pointer_layers.py` 确定性生成（声明式 per-layer builder，
   community/news-output 归档路径**共用 `archive_layout` 单一真相源**防漂移）；跨层关系边（community↔sources
   同平台、news-output↔sources 抽样自、community→分析索引聚合）令新层可被 `kb_neighbors` 顺图导航。
