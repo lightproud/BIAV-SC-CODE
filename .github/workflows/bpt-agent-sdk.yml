@@ -106,6 +106,9 @@ jobs:
             !/Public-Info-Pool/Record/
             !/Public-Info-Pool/Reference/
           sparse-checkout-cone-mode: false
+          # fetch-depth 2: the version-bump guard diffs HEAD~1 (squash merge =
+          # one commit; the guard skips gracefully when no parent exists).
+          fetch-depth: 2
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
@@ -117,6 +120,8 @@ jobs:
         run: npm run build
       - name: Test (keyless, includes emulator e2e)
         run: npm test
+      - name: Version-bump guard (BPT tarball pinning, 2026-07-05)
+        run: node scripts/check-version-bump.mjs
 
   conformance:
     # Conformance suite M1-M3 (design final 2026-07-05): the full L1-L4
