@@ -22,9 +22,10 @@ kb_ab 的 grep 打分零件与 kb_vector 的嵌入后端。
 铁证主分 vector_exclusive_win = vec_hit ∧ ¬grep ∧ ¬grep_strong ∧ ¬spine。
 
 诚实边界：**stub 后端证不了语义胜**（词法袋无语义），只证「黄金真零词法重叠 + 管线正确」；
-真胜负（voyage_win_rate − stub_win_rate ≥ margin）是 **CI-only** 断言（kb-semantic-proof.yml，
-现场嵌 golden ≈百余条 ≈$0，不依赖已建索引）。stub 负控口径：与 chance 地板 k/|C| 比、非 ==0
-（_STUB_DIM=64 哈希碰撞偶有虚命中，见 test）。
+真胜负是 **CI-only** 断言（kb-semantic-proof.yml：voyage_exclusive_win ≥ 阈 且 超 chance 地板
+margin，stub 并列作参照）。现场嵌 golden（**当前种子约 20 条，JSONL append 可扩至百条量级——
+统计功效随规模上升**）≈$0，不依赖已建索引。stub 负控口径：与 chance 地板 k/|C| 比（_STUB_DIM=512
+压碰撞后 stub 应贴地板，见 test）。
 
 本模块 import-only 库 + __main__（CLI 供 CI 门控）。
 """

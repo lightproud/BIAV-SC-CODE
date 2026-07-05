@@ -25,8 +25,9 @@ class TestGoldenSchemaAndFirewall(unittest.TestCase):
     def setUp(self):
         self.rows = sab.load_golden()
 
-    def test_nonempty(self):
-        self.assertGreaterEqual(len(self.rows), 5, "语义黄金集过小")
+    def test_nonempty_ratchet(self):
+        # ratchet：只增不减（当前 17 种子）。功效随规模上升，reviewer C1 要求向百条量级长。
+        self.assertGreaterEqual(len(self.rows), 15, "语义黄金集缩水了——应只增不减、向百条量级长")
 
     def test_required_fields_and_provenance(self):
         for r in self.rows:
@@ -64,13 +65,14 @@ class TestHonestyInvariant(unittest.TestCase):
 class TestStubNegativeControl(unittest.TestCase):
     """stub（词法袋、无语义）赢不大——证 CI 里的高胜率纯来自 Voyage 语义。"""
 
-    def test_stub_win_rate_stays_low(self):
+    def test_stub_win_rate_hugs_chance_floor(self):
         rep = sab.evaluate(backend="stub")
         wr = rep["vector_exclusive_win_rate"]
-        # stub 有 _STUB_DIM 哈希碰撞噪声（略高于 chance），但绝到不了语义级高分。
-        # 用宽松上界证「无语义→赢不大」；真语义胜（CI voyage）应远超此。
-        self.assertLess(wr, 0.6, f"stub 胜率 {wr} 过高——疑管线泄露词法/结构线索给向量臂")
-        self.assertIn("chance_floor", rep)
+        floor = rep["chance_floor"]
+        # _STUB_DIM=512 压碰撞后，词法袋（无语义）胜率应**贴 chance 地板**——不再是 dim=64 时
+        # 的 2× 碰撞底噪（reviewer C2）。收紧到「地板 + 小容差」，底噪一抬升 CI 就抓得住。
+        self.assertLessEqual(wr, floor + 0.1,
+                             f"stub 胜率 {wr} 显著高于 chance 地板 {floor}——疑碰撞底噪回潮/管线泄露")
 
 
 class TestPipeline(unittest.TestCase):

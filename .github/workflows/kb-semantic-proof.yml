@@ -2,19 +2,20 @@ name: KB Semantic Proof
 
 # 向量腿语义铁证（§八「厚锚撑向量」Phase 2）：对语义黄金集跑 paraphrase-recall harness，
 # 证「换说法/零共享 token 的查询，向量独胜 grep+脊柱」。真胜负需 Voyage（key 只 CI 可用），
-# 故本 workflow 是唯一能出铁证数字的地方；现场嵌 golden（约百余条）≈$0、不依赖已建索引。
-# stub 负控与 voyage 并列，delta 即证据（高胜率纯来自语义、非管线假象）。
+# 故本 workflow 是唯一能出铁证数字的地方；现场嵌 golden（种子约 20 条、可 append 扩，统计
+# 功效随规模上升）≈$0、不依赖已建索引。门控用 voyage 绝对胜率 + 超 chance 地板 margin
+# （不以飘忽 stub 为减数）；stub 负控与 voyage 并列作参照（应贴 chance 地板）。
 on:
   workflow_dispatch:
     inputs:
       min_win_rate:
-        description: voyage vector_exclusive_win_rate 阈（须显著高于 chance/stub）
+        description: voyage vector_exclusive_win_rate 阈
         required: false
         default: '0.5'
-      min_delta:
-        description: voyage 须超 stub 的最小 margin
+      min_margin:
+        description: voyage 须超 chance 地板的最小 margin
         required: false
-        default: '0.2'
+        default: '0.3'
 
 concurrency:
   group: kb-semantic-proof-${{ github.ref }}
@@ -47,7 +48,7 @@ jobs:
         env:
           VOYAGE_API_KEY: ${{ secrets.VOYAGE_API_KEY }}
           MIN_WIN: ${{ github.event.inputs.min_win_rate || '0.5' }}
-          MIN_DELTA: ${{ github.event.inputs.min_delta || '0.2' }}
+          MIN_MARGIN: ${{ github.event.inputs.min_margin || '0.3' }}
         run: |
           python - <<'PY'
           import os, sys, json
@@ -55,21 +56,24 @@ jobs:
           import kb_semantic_ab as sab
           stub = sab.evaluate(backend="stub")
           voy = sab.evaluate(backend="voyage")
-          min_win = float(os.environ["MIN_WIN"]); min_delta = float(os.environ["MIN_DELTA"])
+          min_win = float(os.environ["MIN_WIN"]); min_margin = float(os.environ["MIN_MARGIN"])
           vw, sw = voy["vector_exclusive_win_rate"], stub["vector_exclusive_win_rate"]
-          delta = round(vw - sw, 4)
+          floor = voy["chance_floor"]
+          over_floor = round(vw - floor, 4)          # 门控主量：voyage 超随机地板多少（不减飘 stub）
+          delta_stub = round(vw - sw, 4)             # 参照：voyage vs 词法负控
           summary = os.environ.get("GITHUB_STEP_SUMMARY")
           lines = [
             "## 向量腿语义铁证（paraphrase-recall）",
-            f"- 黄金题数 {voy['rows']} · 语料 |C|={voy['corpus_size']} · chance 地板 {voy['chance_floor']}",
+            f"- 黄金题数 {voy['rows']} · 语料 |C|={voy['corpus_size']} · chance 地板 {floor}",
             "",
             "| 臂 | vector_hit | exclusive_win |",
             "|----|-----------|---------------|",
             f"| **voyage**（真语义）| {voy['vector_hit_rate']} | **{vw}** |",
-            f"| stub（词法袋·负控）| {stub['vector_hit_rate']} | {sw} |",
+            f"| stub（词法袋·负控，应贴地板）| {stub['vector_hit_rate']} | {sw} |",
             f"| grep / grep_strong / spine | — | 恒 0（黄金集不可达）|",
             "",
-            f"- **delta（voyage − stub）= {delta}**（阈 min_win={min_win} / min_delta={min_delta}）",
+            f"- **voyage 超 chance 地板 = {over_floor}**（门控量，阈 min_win={min_win} / min_margin={min_margin}）",
+            f"- 参照 delta（voyage − stub）= {delta_stub}",
             f"- 分模式：{json.dumps(voy['by_mode'], ensure_ascii=False)}",
           ]
           if summary:
@@ -77,8 +81,8 @@ jobs:
           print("\n".join(lines))
           fail = []
           if vw < min_win: fail.append(f"voyage 胜率 {vw} < 阈 {min_win}")
-          if delta < min_delta: fail.append(f"delta {delta} < margin {min_delta}（未显著超 stub）")
+          if over_floor < min_margin: fail.append(f"voyage 超地板 {over_floor} < margin {min_margin}")
           if fail:
               print("::error::" + "；".join(fail)); sys.exit(1)
-          print("语义铁证通过：向量在 paraphrase 维度独胜、且显著超词法负控。")
+          print("语义铁证通过：向量在 paraphrase 维度独胜、且显著超随机地板与词法负控。")
           PY

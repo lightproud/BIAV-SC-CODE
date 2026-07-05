@@ -35,8 +35,10 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parent.parent
 DEFAULT_INDEX = REPO / "okf" / "kb_vectors.json.gz"
 
-# 桩后端维度（小；仅供离线测试的确定性伪嵌入，非语义）。
-_STUB_DIM = 64
+# 桩后端维度：仅供离线测试的确定性伪嵌入（token 哈希袋、非语义）。取 512 而非小值——
+# 维度太小（如 64）哈希桶碰撞重，会让零共享 token 的文本也出虚相似，抬高 stub 负控底噪
+# （kb_semantic_ab 的 CI delta 门以 stub 为减数，底噪飘忽会污染铁证）。512 压碰撞、贴近真 chance。
+_STUB_DIM = 512
 # Voyage 默认模型（可被 build_kb_vectors 覆盖；随索引 meta 落存以便查询对齐）。
 _VOYAGE_MODEL = "voyage-3-lite"
 
