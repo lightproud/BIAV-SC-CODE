@@ -18,7 +18,7 @@ import type {
   McpStdioServerConfig,
   ToolAnnotations,
 } from '../types.js';
-import { AbortError } from '../errors.js';
+import { AbortError, McpError } from '../errors.js';
 import { resolveElicitation } from './elicitation.js';
 
 const MCP_PROTOCOL_VERSION = '2025-06-18';
@@ -89,10 +89,18 @@ export class StdioMcpConnection {
   /** Spawn the server process and run the MCP initialize handshake. */
   async connect(signal?: AbortSignal): Promise<void> {
     if (this.closed) {
-      throw new Error(`MCP stdio connection '${this.label}' is closed`);
+      throw new McpError(
+        'mcp_connection_closed',
+        `MCP stdio connection '${this.label}' is closed`,
+        { serverLabel: this.label, transport: 'stdio', phase: 'connect' },
+      );
     }
     if (this.child) {
-      throw new Error(`MCP stdio connection '${this.label}' is already connected`);
+      throw new McpError(
+        'mcp_already_connected',
+        `MCP stdio connection '${this.label}' is already connected`,
+        { serverLabel: this.label, transport: 'stdio', phase: 'connect' },
+      );
     }
 
     // Merged environment: config.env entries win over the inherited base env.
@@ -121,7 +129,11 @@ export class StdioMcpConnection {
     });
     child.on('error', (err: Error) => {
       this.failAllPending(
-        new Error(`MCP server '${this.label}' process error: ${err.message}`),
+        new McpError(
+          'mcp_process_error',
+          `MCP server '${this.label}' process error: ${err.message}`,
+          { serverLabel: this.label, transport: 'stdio' },
+        ),
       );
     });
     child.on('exit', (code, sig) => {
@@ -130,7 +142,11 @@ export class StdioMcpConnection {
       );
       this.closed = true;
       this.failAllPending(
-        new Error(`MCP server '${this.label}' exited before responding`),
+        new McpError(
+          'mcp_server_exited',
+          `MCP server '${this.label}' exited before responding`,
+          { serverLabel: this.label, transport: 'stdio' },
+        ),
       );
     });
 
@@ -207,7 +223,13 @@ export class StdioMcpConnection {
   async close(): Promise<void> {
     this.lifeController.abort();
     this.closed = true;
-    this.failAllPending(new Error(`MCP stdio connection '${this.label}' closed`));
+    this.failAllPending(
+      new McpError(
+        'mcp_connection_closed',
+        `MCP stdio connection '${this.label}' closed`,
+        { serverLabel: this.label, transport: 'stdio', phase: 'close' },
+      ),
+    );
     const child = this.child;
     this.child = null;
     if (!child || child.exitCode !== null || child.signalCode !== null) return;
@@ -303,7 +325,13 @@ export class StdioMcpConnection {
   private request(method: string, params: unknown, signal?: AbortSignal): Promise<unknown> {
     return new Promise<unknown>((resolve, reject) => {
       if (this.closed || !this.child) {
-        reject(new Error(`MCP stdio connection '${this.label}' is not open`));
+        reject(
+          new McpError(
+            'mcp_not_connected',
+            `MCP stdio connection '${this.label}' is not open`,
+            { serverLabel: this.label, transport: 'stdio', phase: 'request' },
+          ),
+        );
         return;
       }
       if (signal?.aborted) {
@@ -324,8 +352,15 @@ export class StdioMcpConnection {
       const timer = setTimeout(() => {
         finish(() =>
           reject(
-            new Error(
+            new McpError(
+              'mcp_request_timeout',
               `MCP request '${method}' to server '${this.label}' timed out after ${this.requestTimeoutMs}ms`,
+              {
+                serverLabel: this.label,
+                transport: 'stdio',
+                phase: 'request',
+                timeoutMs: this.requestTimeoutMs,
+              },
             ),
           ),
         );
@@ -353,7 +388,11 @@ export class StdioMcpConnection {
   private write(msg: Record<string, unknown>): void {
     const child = this.child;
     if (!child || this.closed) {
-      throw new Error(`MCP stdio connection '${this.label}' is not open`);
+      throw new McpError(
+        'mcp_not_connected',
+        `MCP stdio connection '${this.label}' is not open`,
+        { serverLabel: this.label, transport: 'stdio', phase: 'request' },
+      );
     }
     child.stdin.write(`${JSON.stringify(msg)}\n`);
   }
@@ -529,8 +568,15 @@ function normalizeContentItem(item: unknown): CallToolResultContent {
 
 function rpcErrorToError(label: string, error: { code?: number; message?: string }): Error {
   const code = typeof error.code === 'number' ? ` ${String(error.code)}` : '';
-  return new Error(
+  return new McpError(
+    'mcp_rpc_error',
     `MCP server '${label}' returned JSON-RPC error${code}: ${error.message ?? 'unknown error'}`,
+    {
+      serverLabel: label,
+      transport: 'stdio',
+      phase: 'request',
+      ...(typeof error.code === 'number' ? { rpcCode: error.code } : {}),
+    },
   );
 }
 

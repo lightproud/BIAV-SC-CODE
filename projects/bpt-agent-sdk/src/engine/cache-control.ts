@@ -19,6 +19,25 @@
  * match the longest prior prefix automatically within a 20-block lookback, so
  * the moving last-message breakpoint yields incremental conversation caching
  * without touching the earlier (tools/system) breakpoints.
+ *
+ * KD (E7-03, kept divergence, 2026-07-05): the official arm sends ZERO
+ * cache_control breakpoints on tool blocks; we keep ONE (last tool). Offline
+ * strategy replay over real captured request bodies
+ * (tests/cache-breakpoint-analysis.test.ts) measured:
+ *  - same-session / same-cwd / cross-cwd traces: identical cache hits either
+ *    way (the system breakpoints already cover the tools prefix);
+ *  - same tools + DIFFERENT system (custom systemPrompt consumers; the shape
+ *    subagent presets take): only the tool breakpoint salvages the serialized
+ *    tools prefix - measured 33,907 bytes (~8.5k tokens) read vs 0, and
+ *    48,340 vs 82,247 bytes re-written on the divergent request.
+ * Aligning would therefore never gain a byte and strictly lose the shared
+ * tools prefix whenever the system diverges, so the divergence is kept and
+ * `toolCacheBreakpoints` stays a documented entry in WIRE_ALIGNMENT_GAPS
+ * (tests/conformance-wire.test.ts). Cost: one of the four breakpoint slots
+ * (we sit exactly at 4 with boundary 'dual' + message; callers of the
+ * 'preserve' seam get 3 slots for their own system breakpoints, see the
+ * cacheMessages note in engine/loop.ts). Re-examine if the premise tests
+ * ever go red.
  */
 
 import type { StreamRequest } from '../internal/contracts.js';

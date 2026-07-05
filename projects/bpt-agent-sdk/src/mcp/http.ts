@@ -23,7 +23,7 @@ import type {
   McpSSEServerConfig,
   ToolAnnotations,
 } from '../types.js';
-import { AbortError, NotImplementedError } from '../errors.js';
+import { AbortError, McpError, NotImplementedError } from '../errors.js';
 import { parseResourcesList, parseResourceContents } from './stdio.js';
 import { resolveElicitation } from './elicitation.js';
 
@@ -232,10 +232,17 @@ export class HttpMcpConnection {
 
       if (!response.ok) {
         const detail = await safeReadText(response);
-        throw new Error(
+        throw new McpError(
+          'mcp_http_status',
           `MCP server '${this.label}' returned HTTP ${response.status}${
             detail ? `: ${truncate(detail)}` : ''
           }`,
+          {
+            serverLabel: this.label,
+            transport: 'http',
+            phase: 'request',
+            httpStatus: response.status,
+          },
         );
       }
 
@@ -248,7 +255,11 @@ export class HttpMcpConnection {
       const contentType = (response.headers.get('content-type') ?? '').toLowerCase();
       if (contentType.includes('text/event-stream')) {
         if (!response.body) {
-          throw new Error(`MCP server '${this.label}' returned an SSE response without a body`);
+          throw new McpError(
+            'mcp_invalid_response',
+            `MCP server '${this.label}' returned an SSE response without a body`,
+            { serverLabel: this.label, transport: 'http', phase: 'request' },
+          );
         }
         return await this.readSseResponse(response.body, expectId);
       }
@@ -257,7 +268,11 @@ export class HttpMcpConnection {
       try {
         data = await response.json();
       } catch {
-        throw new Error(`MCP server '${this.label}' returned an invalid JSON response body`);
+        throw new McpError(
+          'mcp_invalid_response',
+          `MCP server '${this.label}' returned an invalid JSON response body`,
+          { serverLabel: this.label, transport: 'http', phase: 'request' },
+        );
       }
       return extractResponse(data, expectId, this.label);
     } catch (err) {
@@ -266,8 +281,15 @@ export class HttpMcpConnection {
         throw new AbortError(`MCP HTTP connection '${this.label}' closed`);
       }
       if (abortCause === 'timeout') {
-        throw new Error(
+        throw new McpError(
+          'mcp_request_timeout',
           `MCP request '${String(payload.method ?? '?')}' to server '${this.label}' timed out after ${this.requestTimeoutMs}ms`,
+          {
+            serverLabel: this.label,
+            transport: 'http',
+            phase: 'request',
+            timeoutMs: this.requestTimeoutMs,
+          },
         );
       }
       throw err;
@@ -409,8 +431,10 @@ export class HttpMcpConnection {
         const outcome = handleEvent(dataLines.join('\n'));
         if (outcome) return outcome.value;
       }
-      throw new Error(
+      throw new McpError(
+        'mcp_invalid_response',
         `MCP server '${this.label}' SSE stream ended without a response for request ${String(id)}`,
+        { serverLabel: this.label, transport: 'http', phase: 'request' },
       );
     } finally {
       try {
@@ -435,8 +459,10 @@ function extractResponse(data: unknown, id: JsonRpcId, label: string): unknown {
       return msg.result;
     }
   }
-  throw new Error(
+  throw new McpError(
+    'mcp_invalid_response',
     `MCP server '${label}' response did not include an answer for request ${String(id)}`,
+    { serverLabel: label, transport: 'http', phase: 'request' },
   );
 }
 
@@ -566,8 +592,15 @@ function normalizeContentItem(item: unknown): CallToolResultContent {
 
 function rpcErrorToError(label: string, error: { code?: number; message?: string }): Error {
   const code = typeof error.code === 'number' ? ` ${String(error.code)}` : '';
-  return new Error(
+  return new McpError(
+    'mcp_rpc_error',
     `MCP server '${label}' returned JSON-RPC error${code}: ${error.message ?? 'unknown error'}`,
+    {
+      serverLabel: label,
+      transport: 'http',
+      phase: 'request',
+      ...(typeof error.code === 'number' ? { rpcCode: error.code } : {}),
+    },
   );
 }
 

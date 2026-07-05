@@ -24,7 +24,7 @@ import type {
   McpStdioServerConfig,
   ToolAnnotations,
 } from '../types.js';
-import { AbortError, ConfigurationError, isAbortError } from '../errors.js';
+import { AbortError, ConfigurationError, McpError, isAbortError } from '../errors.js';
 import { StdioMcpConnection } from './stdio.js';
 import { HttpMcpConnection } from './http.js';
 import { SdkMcpConnection } from './sdk-server.js';
@@ -197,9 +197,16 @@ export class DefaultMcpRegistry implements McpRegistry {
     signal: AbortSignal,
   ): Promise<McpResourceContent[]> {
     const entry = this.entries.find((e) => e.name === server);
-    if (!entry) throw new Error(`No such MCP server: ${server}`);
+    if (!entry) {
+      throw new McpError('mcp_unknown_server', `No such MCP server: ${server}`, {
+        serverLabel: server,
+      });
+    }
     if (!entry.enabled || entry.baseStatus !== 'connected' || !entry.connection) {
-      throw new Error(`MCP server '${server}' is not connected`);
+      throw new McpError('mcp_not_connected', `MCP server '${server}' is not connected`, {
+        serverLabel: server,
+        phase: 'request',
+      });
     }
     return await entry.connection.readResource(uri, signal);
   }
@@ -295,7 +302,12 @@ export class DefaultMcpRegistry implements McpRegistry {
       const tools = await raceWithAbort(
         work,
         controller.signal,
-        `MCP server '${entry.name}' timed out after ${CONNECT_TIMEOUT_MS}ms while connecting`,
+        () =>
+          new McpError(
+            'mcp_connect_timeout',
+            `MCP server '${entry.name}' timed out after ${CONNECT_TIMEOUT_MS}ms while connecting`,
+            { serverLabel: entry.name, phase: 'connect', timeoutMs: CONNECT_TIMEOUT_MS },
+          ),
       );
       entry.connection = conn;
       entry.serverInfo = conn.serverInfo();
@@ -384,13 +396,18 @@ function errMessage(err: unknown): string {
 }
 
 /**
- * Resolve with the work promise, or reject with timeoutMessage when the
- * signal fires first. The work promise always keeps a rejection handler
- * attached, so a late failure never becomes an unhandled rejection.
+ * Resolve with the work promise, or reject with the caller-built timeout
+ * error when the signal fires first. The work promise always keeps a
+ * rejection handler attached, so a late failure never becomes an unhandled
+ * rejection.
  */
-function raceWithAbort<T>(work: Promise<T>, signal: AbortSignal, timeoutMessage: string): Promise<T> {
+function raceWithAbort<T>(
+  work: Promise<T>,
+  signal: AbortSignal,
+  timeoutError: () => Error,
+): Promise<T> {
   return new Promise<T>((resolve, reject) => {
-    const onAbort = (): void => reject(new Error(timeoutMessage));
+    const onAbort = (): void => reject(timeoutError());
     if (signal.aborted) {
       onAbort();
     } else {

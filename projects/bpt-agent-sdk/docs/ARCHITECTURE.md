@@ -360,6 +360,44 @@ relative `../src/index.js` — use relative for runnable-without-publish.
 (`@anthropic-ai/claude-agent-sdk` → `bpt-agent-sdk`), env vars, compat
 pointer to docs/COMPAT.md, ESM-only note.
 
+## Error discipline (E6)
+
+Five core error classes (`src/errors.ts`: `AbortError`, `APIConnectionError`,
+`APIStatusError`, `NotImplementedError`, `ConfigurationError`) plus the MCP
+subsystem's typed error. E6a decision (the handoff offered `McpError` vs
+folding into the `APIConnectionError` family - this is the written-down
+choice): the MCP subsystem uses a dedicated **`McpError`** carrying
+`code` / `serverLabel` / `transport` / `phase` context, because MCP failures
+are per-server, recoverable-in-registry events, not Messages-API connectivity
+failures - consumers must be able to `instanceof`-route them separately.
+
+Every error class carries a stable machine-readable `code` (E6c); the full
+code table lives in `docs/ERRORS.md`. Codes are append-only.
+
+### Error-class whitelist (guarded by `tests/error-discipline.test.ts`)
+
+Which error classes each layer may CONSTRUCT (thrown or handed to a promise
+reject). `AbortError` is legal everywhere (ground rule 6). The foreign-error
+wrap idiom `new Error(String(err))` is legal everywhere (normalizing an
+unknown rejection into an Error, never minting a new failure), as are
+module-private sentinel error classes declared in the same file (e.g.
+`MirrorTimeoutError` in `sessions/store-adapter.ts`). Everything else must
+match this table - a new `throw new Error(...)` anywhere in `src/` turns the
+build red.
+
+| Path prefix | Additional allowed error classes |
+|-------------|----------------------------------|
+| `src/transport/` | `APIConnectionError`, `APIStatusError`, `ConfigurationError` |
+| `src/engine/` | `APIConnectionError` |
+| `src/mcp/` | `McpError`, `NotImplementedError`, `ConfigurationError` |
+| `src/sessions/` | `ConfigurationError` |
+| `src/query.ts` | `ConfigurationError` |
+| `src/tools/bash.ts` | `Error` |
+
+(`src/tools/bash.ts` keeps one bare `Error` for spawn impossibility - the
+only legitimate throw documented in module D; typing it is deferred to the
+tools owner.)
+
 ## Testing contract (phase after integration)
 
 Unit tests live in `tests/`, vitest, node env. Transport is mocked with

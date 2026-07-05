@@ -108,9 +108,12 @@ export {
   APIConnectionError,
   APIStatusError,
   ConfigurationError,
+  McpError,
   NotImplementedError,
+  errorCodeOf,
   isAbortError,
 } from './errors.js';
+export type { ErrorCode, McpErrorCode, McpPhase, McpTransportKind } from './errors.js';
 export type * from './types.js';
 // Official tool input/output schema types (ToolInputSchemas / ToolOutputSchemas
 // and their members) — the drop-in consumer surface for typed tool interactions.
