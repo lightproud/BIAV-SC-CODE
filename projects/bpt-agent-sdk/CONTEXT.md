@@ -120,14 +120,20 @@ shell（BashOutput 增量读 + 按行 filter / KillShell 击杀，进程组 SIGT
 =引擎机制 / 公开文档 + 自研引擎=兜底主权。**硬边界不变**：§1.1-HC 黑池防火墙、拒绝真正的内部未授权泄漏
 （「公开分发可逆向」≠「内部偷流出」）、不逐字大段克隆到会引用空气处、署名。
 
-- **已落**：v4 官方主循环提示词忠实再现（`harnessPromptVariant`）+ Bash 命令分解权限（安全，`decomposeBashCommand`）
-  + SSE 空闲看门狗（`streamIdleTimeoutMs`，默认 120s/0 关）。
+- **已落**：v4/v5 官方主循环提示词忠实再现（`harnessPromptVariant`，**v5 全面再现四节、已提为 claude_code preset 默认**，见下「提示词默认提升」）
+  + Bash 命令分解权限（安全，`decomposeBashCommand`）+ SSE 空闲看门狗（`streamIdleTimeoutMs`，默认 120s/0 关）。
+- **提示词默认提升 v1→v5（2026-07-05，守密人「2 模拟行为」+「目标是跟官方提示词一致」裁定，已落地）**：
+  claude_code preset 无 variant 时默认走 **v5**（~3774 tok 全面忠实再现官方主循环）。**决定性 A/B 实证**（run 28725983766，硬任务 10/11 median-of-3）：
+  v5 vs v1 **~3× 便宜**（$0.0089 vs $0.0272）、同正确（2/2）、略快，真因缓存（v5 95% 命中 vs v1 落尺寸死区 0%）。
+  **⚠ 连带修掉 A/B 测量 bug（踩坑 #44）**：harness 选 variant 却没设 `systemPrompt` preset → variant 只在 preset 路径生效被静默忽略，
+  早前「v2/v3/v4 无收益」两臂实际都跑极简默认，结论作废。v5 保真：对着归档官方还原逐段自审、补回两条漏收官方子句
+  （`act-when-ready` + 安全策略 `censoring-assistance`）；产品专属两条（反馈 URL / CLI harness 头）确认应省。v1–v4 保留为显式变体。
 - **剩余目标（Tier 1）**：G1 压缩前置廉价层（逐结果预算→内容指针 + 去重，模型摘要前甩字节）/ G2 摘要·标题走 Haiku
   （`compaction.model`）/ G3 双 system 缓存断点（用满第 4 断点）/ G4 子代理 Fork 模式（继承缓存共享上下文）+ sidechain 转录 /
-  G5 v4 补工具使用纪律片段（`bash-alternative-*`）/ G6 分类器·生成器提示词再现（标题/分支/描述、后台状态分类器）/
+  ~~G5 v4 补工具使用纪律片段~~（**已由 v5 涵盖**：Tool use 节含 dedicated-tools-over-bash 重定向「Use Grep (NOT grep or rg)」等全表）/ G6 分类器·生成器提示词再现（标题/分支/描述、后台状态分类器）/
   G7 定位反转全仓扫尾（POSITIONING/COMPAT/README/ARCHITECTURE/MIGRATION + 两轴行为天花板解封）/ G8 decisions.md 两条落档（仅守密人）。
 - **测试比对（守密人 2026-07-04「需增加测试比对」——本版一等目标）**：每项再现/采纳**必附对照测试证其效**，**不测不宣胜负**。
-  ① 提示词 A/B v1 vs v4（含硬任务 10/11，扩 `prompt-ab` job 支持 v4）；② **vs-official 裸对比**（再现是否收窄行为差）；
+  ① 提示词 A/B v1 vs v5（含硬任务 10/11，`prompt-ab` job 支持 v2–v5，**已跑：v5 ~3× 便宜同正确、提为默认**）；② **vs-official 裸对比**（再现是否收窄行为差）；
   ③ 逐机制 before/after（压缩前置层的 input-token 削减 / 双断点的缓存命中率 / Haiku 摘要成本），benchmark 加各机制开关位；产对照报告。
 - **vs-official 升为常规做法（守密人 2026-07-05 裁定）**：与官方 `@anthropic-ai/claude-agent-sdk` 的裸对比（`vs_official` job：
   同模型同任务集、速度 + 正确性两客观轴，官方当黑箱、绝不读其提示词）**每里程碑必跑一次、计入退出标准、对照报告归档 Resource**。

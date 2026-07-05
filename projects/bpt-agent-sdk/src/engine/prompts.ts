@@ -368,6 +368,13 @@ export function buildSystemPromptParts(
   if (opt.type === 'segments') {
     return { stable: opt.segments.map((s) => s.text).join('\n\n'), volatile: '' };
   }
+  // Default (no explicit variant) emulates the official Claude Code harness:
+  // v5 is the comprehensive faithful reproduction. A measured v1-vs-v5 A/B
+  // showed v5 is ~3x CHEAPER in multi-turn (95% vs 0% cache hit — v1's tiny
+  // prompt sits below the effective cache threshold, so nothing caches and
+  // every turn re-sends at full price; v5's big stable prefix caches and is
+  // read back at ~10% cost) at equal correctness. Explicit v1-v4 remain
+  // available as opt-in for a terser prompt.
   let stable =
     ctx.variant === 'v5'
       ? defaultHarnessStableV5(ctx)
@@ -377,7 +384,9 @@ export function buildSystemPromptParts(
           ? defaultHarnessStableV3(ctx)
           : ctx.variant === 'v2'
             ? defaultHarnessStableV2(ctx)
-            : defaultHarnessStable(ctx);
+            : ctx.variant === 'v1'
+              ? defaultHarnessStable(ctx)
+              : defaultHarnessStableV5(ctx);
   if (opt.append !== undefined && opt.append.length > 0) {
     stable = `${stable}\n\n${opt.append}`;
   }

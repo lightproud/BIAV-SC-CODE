@@ -162,14 +162,18 @@
   子代理共享，query 结束清场）；② 换装就绪包 `docs/MIGRATION.md` + `examples/electron-host.mjs` +
   `npm pack` tarball 干净目录实测装通；③ A/B 七任务基准 `tests/integration/ab-benchmark.mjs`
   （含中文两项，offender 排序，POSITIONING §7 测量强制令）挂 `bpt-agent-sdk.yml` `ab_benchmark`
-  dispatch 输入。`pytest` 无涉、Node 侧 **`npx vitest run` 702 单测全绿（21 文件）**；`tsc` + `build` exit 0
-- **提示词线（2026-07-04）**：自研系统提示词三变体 v1/v2/v3（公开信息再现，`src/engine/prompts.ts`，`harnessPromptVariant` 开关）。
-  v2 = v1 补真实行为纪律；v3 = v2 补公开最佳实践缺口四技法（改后自检 / 反硬编码 / 何时委派 / 收尾范例）。
-  A/B 基准加**会真失败的硬任务** id 10/11（`verify(dir)` 动态 import 跑产物代码、反硬编码边界用例、清理前跑）。
-  测量纪律：v2 简单基准无可测收益 → 正确扣住没提拔；v1-vs-v3 真 API 探针待 dispatch（`prompt_ab` 可选 candidate=v3/tasks=10,11），
-  数字说话前不宣胜负。缓存 0% 已诊断为「前缀够不着 Haiku 2048 门槛、非 bug、不灌水」。组织级缓存红利设计留 host
-  （多层注入 proposal 档）、SDK 只承接 `segments` 分段 seam。整条线综述见
-  `Public-Info-Pool/Resource/repo-engineering/bpt-sdk-prompt-cache-milestone-20260704.md`
+  dispatch 输入。`pytest` 无涉、Node 侧 **`npx vitest run` 715 单测全绿（21 文件）**；`tsc` + `build` exit 0
+- **提示词线（2026-07-04 起，2026-07-05 v5 提为默认）**：系统提示词五变体 v1–v5（公开信息再现，`src/engine/prompts.ts`，`harnessPromptVariant` 开关）。
+  v2=v1 补真实行为纪律；v3=v2 补公开最佳实践四技法；v4=忠实再现官方主循环核心；**v5=全面忠实再现官方主循环**（Doing tasks/Tool use/
+  Executing actions with care/Communicating 四节，工具引用适配本 SDK、不引未提供工具，~3774 tok）。**v5 已提为 claude_code preset 默认**
+  （守密人 2026-07-05「2 模拟行为」+「目标是跟官方提示词一致」裁定）；v1–v4 保留为显式变体（要极简可 `harnessPromptVariant:'v1'`）。
+  - **⚠ A/B 测量 bug 翻案（2026-07-05，踩坑 #44）**：早前判「v2/v3/v4 无可测收益」**作废**——A/B harness 选 variant 却没设 `systemPrompt` preset，
+    variant 只在 preset 路径生效被静默忽略，两臂实际都跑极简默认。修复后 v1-vs-v5 真对照：**v5 ~3× 便宜**（$0.0089 vs $0.0272）、同正确（2/2）、略快，
+    真因缓存（v5 95% 命中 vs v1 0%）。**反直觉正解：更大更忠实的提示词跨过缓存门槛反而更省**。
+  - **缓存根因定论（受控探针实证）**：Haiku **有效**缓存门槛远高于名义 2048；~3.5k 精简前缀落「过名义门槛却小到不被真正归档」的**死区**（写≈0/读=0），
+    v5 ~3.7k / --big ~8k 舒服落**可靠缓存区**（每轮+跨 request 命中 6000-8800 tok，同官方 99% 同构）。**非代码 bug**（wire 落位正确/跨轮累加无误/大前缀同路径完美缓存）。灌水非解、真实大而共享前缀（org 分层）才是。
+  - A/B 基准 `tests/integration/ab-benchmark.mjs` 加**会真失败的硬任务** id 10/11（`verify(dir)` 动态 import 跑产物代码）；受控缓存探针 `tests/integration/cache-probe.mjs`（背靠背 N 次，per-turn 写/读，`--big` 隔离尺寸死区）。
+  提示词架构综述见 `Public-Info-Pool/Resource/repo-engineering/bpt-sdk-prompt-cache-milestone-20260704.md`；对照实证见 `Public-Info-Pool/Resource/data-diagnostics/bpt-sdk-comparison-baseline-20260705.md`（§4 翻案）
 - **Desktop UI 参考线（2026-07-04，07-05 r2 修订 + 路线草案收口）**：BPT Desktop 前端参考情报档
   （守密人转交 GPT-5.5 搜索梗概 + AnySearch 许可证逐项实锤 + UI 组件↔`SDKMessage` 流对接表）落
   `Public-Info-Pool/Resource/repo-engineering/bpt-desktop-ui-reference-20260704-r2.md`——

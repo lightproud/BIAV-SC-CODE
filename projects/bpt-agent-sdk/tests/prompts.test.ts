@@ -32,11 +32,23 @@ describe('system prompt split', () => {
 });
 
 describe('harness prompt v1/v2 variant', () => {
-  it('defaults to v1 (terse) when no variant is given', () => {
-    const v1 = buildSystemPromptParts(preset, ctx()).stable;
-    const explicitV1 = buildSystemPromptParts(preset, ctx('v1')).stable;
-    expect(v1).toBe(explicitV1);
+  it('defaults to v5 (faithful official reproduction) when no variant is given', () => {
+    // The claude_code preset with no explicit variant emulates the official
+    // harness: a measured A/B showed v5 is ~3x cheaper in multi-turn at equal
+    // correctness (95% vs 0% cache hit), so it is the default.
+    const def = buildSystemPromptParts(preset, ctx()).stable;
+    const explicitV5 = buildSystemPromptParts(preset, ctx('v5')).stable;
+    expect(def).toBe(explicitV5);
+    expect(def).toContain('Doing tasks:');
+    expect(def).not.toContain('/tmp/run-xyz');
+  });
+
+  it('v1 is still available as an explicit terse opt-in', () => {
+    const v1 = buildSystemPromptParts(preset, ctx('v1')).stable;
     expect(v1).toContain('Tool guidance:');
+    // and it is meaningfully smaller than the v5 default
+    const v5 = buildSystemPromptParts(preset, ctx('v5')).stable;
+    expect(v1.length).toBeLessThan(v5.length);
   });
 
   it('v2 is the richer clean-room prompt and is larger than v1', () => {
