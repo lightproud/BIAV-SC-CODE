@@ -5,10 +5,12 @@ name: Build Community Vectors
 # （会话/本地取不到）。有界原型优先：默认 --limit 小，先证 key 有效 + 索引建得出。
 #
 # 触发：workflow_dispatch（手动，带 limit 入参）。需 workflow 在默认分支才可 dispatch，
-#   故合并后可用；合并前的 key 经验测试已由一次性 push 探针完成（2026-07-05：guard 判定
-#   VOYAGE_API_KEY 缺失 → 待守密人在 仓库 Settings → Secrets → Actions 添加后再 dispatch）。
-# 产物：先走 actions artifact（不污染生产 Release community-assets）；量产阶段再改
-#   为 gh release upload --clobber community-assets（照 fanart-archive.yml）。
+#   故合并后可用；key 有效性 + 索引建得出已实测跑绿（2026-07-05：1500×512 voyage-3-lite）。
+# 产物（chunk2，守密人 2026-07-05 裁定 1）：真索引上传 Release community-assets
+#   （gh release upload --clobber，照 fanart-archive.yml）——合本仓「二进制→Release、
+#   git 留指针」范式；索引确定性 gzip（GzipFile mtime=0）保证同内容不 churn 资产。
+#   运行时还原：scripts/restore_release_data.py --tag community-assets
+#   --pattern 'kb_vectors.json.gz' --dest okf。actions artifact 保留供 run 内检视。
 on:
   workflow_dispatch:
     inputs:
@@ -22,7 +24,7 @@ concurrency:
   cancel-in-progress: false
 
 permissions:
-  contents: read
+  contents: write  # gh release upload 需要（仅传 Release 资产，不 push git）
 
 jobs:
   build:
@@ -49,10 +51,20 @@ jobs:
         env:
           VOYAGE_API_KEY: ${{ secrets.VOYAGE_API_KEY }}
         run: |
+          # --out 必须显式传：#449 后默认落 gitignored Public-Info-Pool/Rough/（防本地
+          # 桩索引污染 okf/），CI 建生产索引须落回 okf/ 供上传。
           python scripts/build_kb_vectors.py \
             --backend voyage \
-            --limit "${{ github.event.inputs.limit || '1500' }}"
-      - name: Upload index artifact
+            --limit "${{ github.event.inputs.limit || '1500' }}" \
+            --out okf/kb_vectors.json.gz
+      - name: Upload index to Release community-assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release upload community-assets okf/kb_vectors.json.gz --clobber \
+            --repo "${{ github.repository }}"
+          echo "已上传 kb_vectors.json.gz → Release community-assets（--clobber 覆盖旧版）"
+      - name: Upload index artifact (run 内检视用)
         uses: actions/upload-artifact@v4
         with:
           name: kb-vectors-bounded

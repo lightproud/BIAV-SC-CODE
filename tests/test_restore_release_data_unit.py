@@ -141,6 +141,31 @@ def test_restore_downloads_and_extracts(tmp_path, monkeypatch):
     assert extracted.read_bytes() == b'{"x":1}\n'
 
 
+def test_restore_non_tar_asset_copied_verbatim(tmp_path, monkeypatch):
+    """非 tarball 资产（如 kb_vectors.json.gz 纯 gzip JSON）须按原名平拷贝、不走 tarfile。"""
+    import gzip
+
+    blob = gzip.compress(b'{"_meta":{"backend":"voyage"},"items":[]}')
+    assets = [{
+        "name": "kb_vectors.json.gz",
+        "size": float(len(blob)),
+        "browser_download_url": "https://example/dl",
+    }]
+    monkeypatch.setattr(rrd, "list_assets", lambda tag: assets)
+
+    def fake_download(url, dest_path):
+        dest_path.write_bytes(blob)
+
+    monkeypatch.setattr(rrd, "download", fake_download)
+    monkeypatch.setattr(rrd, "REPO", tmp_path)
+
+    n = rrd.restore("community-assets", "kb_vectors.json.gz", Path("okf"), force=False)
+    assert n == 1
+    restored = tmp_path / "okf" / "kb_vectors.json.gz"
+    assert restored.exists()
+    assert restored.read_bytes() == blob  # 逐字节原样落位（tarfile 解包会直接炸 ReadError）
+
+
 def test_restore_api_unreachable_without_months_raises(tmp_path, monkeypatch):
     def boom(tag):
         raise OSError("api blocked")

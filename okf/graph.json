@@ -1,8 +1,8 @@
 {
   "generated": "2026-07-05",
   "stats": {
-    "nodes": 318,
-    "edges": 319
+    "nodes": 319,
+    "edges": 393
   },
   "nodes": [
     {
@@ -3309,6 +3309,17 @@
       "tier": "search"
     },
     {
+      "id": "/wiki-data/wiki-data-aliases.md",
+      "type": "dataset",
+      "title": "aliases",
+      "tags": [
+        "data_layer:curated",
+        "unpacked-bootstrap",
+        "domain:index"
+      ],
+      "tier": "search"
+    },
+    {
       "id": "/wiki-data/wiki-data-banners-by-character.md",
       "type": "dataset",
       "title": "banners_by_character",
@@ -3862,6 +3873,186 @@
       "rel_type": "mention"
     },
     {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/15589.md",
+      "rel": "提及:诞妄·墨菲",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/77918.md",
+      "rel": "提及:阿拉克涅",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/77923.md",
+      "rel": "提及:卡斯托尔",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/77925.md",
+      "rel": "提及:克莱门汀",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/15585.md",
+      "rel": "提及:奥吉尔",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/15591.md",
+      "rel": "提及:艾继丝",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/15595.md",
+      "rel": "提及:拉蒙娜",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/54117.md",
+      "rel": "提及:哈姆林",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/15571.md",
+      "rel": "提及:珈伦",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/15576.md",
+      "rel": "提及:墨菲",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/94450.md",
+      "rel": "提及:茉夏",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-google-play.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:Saya",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-reddit.md",
+      "target": "/characters/15560.md",
+      "rel": "提及:Pandia",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-reddit.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:Saya",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-steam.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:Saya",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-weibo.md",
+      "target": "/characters/15582.md",
+      "rel": "提及:弥利亚姆",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-weibo.md",
+      "target": "/characters/77918.md",
+      "rel": "提及:阿拉克涅",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-weibo.md",
+      "target": "/characters/77923.md",
+      "rel": "提及:卡斯托尔",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-weibo.md",
+      "target": "/characters/15576.md",
+      "rel": "提及:墨菲",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-weibo.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-weixin.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-youtube-comments.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-youtube-comments.md",
+      "target": "/characters/15581.md",
+      "rel": "提及:莉莉",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-youtube-comments.md",
+      "target": "/characters/54116.md",
+      "rel": "提及:塔薇",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-youtube-comments.md",
+      "target": "/characters/94450.md",
+      "rel": "提及:茉夏",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-youtube-comments.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-youtube-comments.md",
+      "target": "/characters/15560.md",
+      "rel": "提及:Pandia",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-youtube-comments.md",
+      "target": "/characters/15595.md",
+      "rel": "提及:Ramona",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-youtube.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
       "source": "/memory/capability-index.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
@@ -3893,6 +4084,12 @@
     },
     {
       "source": "/memory/decisions.md",
+      "target": "/characters/15602.md",
+      "rel": "提及:熔毁·朵尔",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/decisions.md",
       "target": "/characters/15585.md",
       "rel": "提及:奥吉尔",
       "rel_type": "mention"
@@ -3917,8 +4114,20 @@
     },
     {
       "source": "/memory/decisions.md",
+      "target": "/characters/15570.md",
+      "rel": "提及:朵尔",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/decisions.md",
       "target": "/characters/130226.md",
       "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/decisions.md",
+      "target": "/characters/15560.md",
+      "rel": "提及:Pandia",
       "rel_type": "mention"
     },
     {
@@ -4391,6 +4600,12 @@
     },
     {
       "source": "/memory/project-status.md",
+      "target": "/characters/15602.md",
+      "rel": "提及:熔毁·朵尔",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/project-status.md",
       "target": "/characters/15560.md",
       "rel": "提及:潘狄娅",
       "rel_type": "mention"
@@ -4411,6 +4626,24 @@
       "source": "/memory/project-status.md",
       "target": "/characters/15569.md",
       "rel": "提及:萝坦",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/project-status.md",
+      "target": "/characters/15570.md",
+      "rel": "提及:朵尔",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/project-status.md",
+      "target": "/characters/15595.md",
+      "rel": "提及:Ramona",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/project-status.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:Saya",
       "rel_type": "mention"
     },
     {
@@ -4648,6 +4881,18 @@
       "rel_type": "mention"
     },
     {
+      "source": "/resource/resource-daily-news-morimens-daily-20260601.md",
+      "target": "/characters/15560.md",
+      "rel": "提及:Pandia",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-daily-news-morimens-daily-20260601.md",
+      "target": "/characters/15595.md",
+      "rel": "提及:Ramona",
+      "rel_type": "mention"
+    },
+    {
       "source": "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
@@ -4699,6 +4944,18 @@
       "source": "/resource/resource-daily-news-morimens-daily-full-20260602.md",
       "target": "/characters/130226.md",
       "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-daily-news-morimens-daily-full-20260602.md",
+      "target": "/characters/15560.md",
+      "rel": "提及:Pandia",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-daily-news-morimens-daily-full-20260602.md",
+      "target": "/characters/15595.md",
+      "rel": "提及:Ramona",
       "rel_type": "mention"
     },
     {
@@ -4801,6 +5058,12 @@
       "source": "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
+      "target": "/characters/15560.md",
+      "rel": "提及:Pandia",
       "rel_type": "mention"
     },
     {
@@ -4936,15 +5199,207 @@
       "rel_type": "mention"
     },
     {
+      "source": "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
+      "target": "/characters/15560.md",
+      "rel": "提及:Pandia",
+      "rel_type": "mention"
+    },
+    {
       "source": "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "target": "/characters/15572.md",
       "rel": "提及:卡茜亚",
       "rel_type": "mention"
     },
     {
+      "source": "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:Saya",
+      "rel_type": "mention"
+    },
+    {
       "source": "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/15589.md",
+      "rel": "提及:诞妄·墨菲",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/77918.md",
+      "rel": "提及:阿拉克涅",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/77923.md",
+      "rel": "提及:卡斯托尔",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/77925.md",
+      "rel": "提及:克莱门汀",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/15585.md",
+      "rel": "提及:奥吉尔",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/15591.md",
+      "rel": "提及:艾继丝",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/15595.md",
+      "rel": "提及:拉蒙娜",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/54117.md",
+      "rel": "提及:哈姆林",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/15571.md",
+      "rel": "提及:珈伦",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/15576.md",
+      "rel": "提及:墨菲",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/94450.md",
+      "rel": "提及:茉夏",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/google_play.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:Saya",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/reddit.md",
+      "target": "/characters/15560.md",
+      "rel": "提及:Pandia",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/reddit.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:Saya",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/steam.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:Saya",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/weibo.md",
+      "target": "/characters/15582.md",
+      "rel": "提及:弥利亚姆",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/weibo.md",
+      "target": "/characters/77918.md",
+      "rel": "提及:阿拉克涅",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/weibo.md",
+      "target": "/characters/77923.md",
+      "rel": "提及:卡斯托尔",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/weibo.md",
+      "target": "/characters/15576.md",
+      "rel": "提及:墨菲",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/weibo.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/weixin.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/youtube.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/youtube_comments.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/youtube_comments.md",
+      "target": "/characters/15581.md",
+      "rel": "提及:莉莉",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/youtube_comments.md",
+      "target": "/characters/54116.md",
+      "rel": "提及:塔薇",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/youtube_comments.md",
+      "target": "/characters/94450.md",
+      "rel": "提及:茉夏",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/youtube_comments.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/youtube_comments.md",
+      "target": "/characters/15560.md",
+      "rel": "提及:Pandia",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/youtube_comments.md",
+      "target": "/characters/15595.md",
+      "rel": "提及:Ramona",
       "rel_type": "mention"
     },
     {

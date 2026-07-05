@@ -10,7 +10,7 @@
 * [记忆 memory](/memory/index.md) - 47 concept · 记忆层全层指针
 * [剧情 story](/story/index.md) - 11 concept · 剧情结构层指针
 * [事实圣经 assets](/assets/index.md) - 12 concept · 角色卡/采访/叙事/设计决策指针
-* [wiki 数据 wiki-data](/wiki-data/index.md) - 26 concept · 解包自举结构化数据集指针
+* [wiki 数据 wiki-data](/wiki-data/index.md) - 27 concept · 解包自举结构化数据集指针
 * [社区档案 community](/community/index.md) - 19 concept · 全量档案分析镜头（full_archive）
 * [输出展示 news-output](/news-output/index.md) - 23 concept · 抽样展示层（output）
 * [解包 unpacked](/unpacked/index.md) - 13 concept · 客户端一手 text 指针（full_archive）

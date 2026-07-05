@@ -1,0 +1,105 @@
+{
+  "_meta": {
+    "description": "厚锚别名侧表（§八 8.2 节 6「厚锚词表 AI 自动识别」银芯参照实现，守密人 2026-07-05 裁定 chunk3）。sibling 侧表、不改 characters.json。三墙：每条带出身牌（provenance 记哪条社区消息推断）+ 可单条撤回（删该条即撤）+ 惰性确认态（confirmed=false 压权重：不进 domain_dict、不建 mention 边）。生成期由 AI 会话抽取（scripts/extract_aliases.py），人只留近零成本最终否决。严禁伪造 provenance——quote 必须是社区档案里真实存在的原文。",
+    "schema": {
+      "concept_id": "角色 id（characters.json 的 id，对应 okf/characters/{id}.md）",
+      "alias": "社区真实使用的别称（异写 / 缩称 / 英文名）",
+      "provenance": {
+        "source": "平台（discord / bilibili / …）",
+        "ref": "档案定位（discord 为 channel:message_id；其他平台为 归档文件:行位）",
+        "quote": "推断依据的原文片段（真实引文，可回查）",
+        "inferred_by": "谁在何时推断（AI 会话标识）"
+      },
+      "confirmed": "布尔确认态；false=未确认（压权重），true=已确认（进 domain_dict / mention 边）",
+      "added": "落表日期 YYYY-MM-DD"
+    },
+    "version": 1,
+    "generated_by": "manual-seed 2026-07-05 向量腿 chunk3 会话（端到端验证种子；后续由 extract_aliases.py 生成期喂大）"
+  },
+  "aliases": [
+    {
+      "concept_id": "15602",
+      "alias": "融朵",
+      "provenance": {
+        "source": "bilibili",
+        "ref": "Public-Info-Pool/Record/Community/bilibili/2026-02-22.json",
+        "quote": "双子Boss跳转24:00 融朵Boss跳转01:23:30 再也不打癫狂列车了",
+        "inferred_by": "2026-07-05 向量腿 chunk3 会话（艾瑞卡）：癫狂列车 Boss 语境下「融朵」指熔毁·朵尔，bilibili 17 个归档文件复现"
+      },
+      "confirmed": true,
+      "added": "2026-07-05"
+    },
+    {
+      "concept_id": "15602",
+      "alias": "熔朵",
+      "provenance": {
+        "source": "bilibili",
+        "ref": "Public-Info-Pool/Record/Community/bilibili/2026-07-01.json",
+        "quote": "癫狂列车 宙音汀天仙下凡输出占比90% 忘却前夜 打熔朵",
+        "inferred_by": "2026-07-05 向量腿 chunk3 会话（艾瑞卡）：同「融朵」语境的正字异写，bilibili 10 个归档文件复现"
+      },
+      "confirmed": true,
+      "added": "2026-07-05"
+    },
+    {
+      "concept_id": "15595",
+      "alias": "Ramona",
+      "provenance": {
+        "source": "discord",
+        "ref": "1300659662311526512:1309717119113625651",
+        "quote": "Lo uso en pj de soporte como Tawil, Ramona o Hamel",
+        "inferred_by": "2026-07-05 向量腿 chunk3 会话（艾瑞卡）：英文服角色名，discord 讨论正文高频使用（≥50 归档文件）"
+      },
+      "confirmed": true,
+      "added": "2026-07-05"
+    },
+    {
+      "concept_id": "15560",
+      "alias": "Pandia",
+      "provenance": {
+        "source": "discord",
+        "ref": "1300659662311526512:1309763500662591548",
+        "quote": "¿O crees que Pandia es mejor en ultra en caso de usar a 24 en otro equipo?",
+        "inferred_by": "2026-07-05 向量腿 chunk3 会话（艾瑞卡）：英文服角色名，配队讨论语境（与「24」同队比较），discord ≥50 归档文件"
+      },
+      "confirmed": true,
+      "added": "2026-07-05"
+    },
+    {
+      "concept_id": "130226",
+      "alias": "Saya",
+      "provenance": {
+        "source": "discord",
+        "ref": "1436913827571695898:1519308877743657081",
+        "quote": "Saya guides: Kaly - https://youtu.be/74kwJnNMXOk",
+        "inferred_by": "2026-07-05 向量腿 chunk3 会话（艾瑞卡）：英文服角色名，攻略帖标题级使用，discord ≥50 归档文件"
+      },
+      "confirmed": true,
+      "added": "2026-07-05"
+    },
+    {
+      "concept_id": "15560",
+      "alias": "潘迪娅",
+      "provenance": {
+        "source": "bilibili",
+        "ref": "Public-Info-Pool/Record/Community/bilibili/2026-06-21.json",
+        "quote": "技能接打击触发镜中人，完全不怕对面潘迪娅吸狂气",
+        "inferred_by": "2026-07-05 向量腿 chunk3 会话（艾瑞卡）：「吸狂气」为潘狄娅机制，判为异写；仅 1 个归档文件出现 → 留未确认压权重"
+      },
+      "confirmed": false,
+      "added": "2026-07-05"
+    },
+    {
+      "concept_id": "15577",
+      "alias": "菲英特",
+      "provenance": {
+        "source": "bilibili",
+        "ref": "Public-Info-Pool/Record/Community/bilibili/2026-05-14.json",
+        "quote": "又比如旺达菲英特，也是低配利好玩家的",
+        "inferred_by": "2026-07-05 向量腿 chunk3 会话（艾瑞卡）：「旺达+菲英特」配队语境，判为菲茵特异写；仅 1 个归档文件出现 → 留未确认压权重"
+      },
+      "confirmed": false,
+      "added": "2026-07-05"
+    }
+  ]
+}

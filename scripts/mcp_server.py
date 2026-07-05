@@ -15,9 +15,10 @@ persona activation and decision/lesson write-back to the curated archives.
 navigation surface (kb_*) over okf/kb_index.json — the only runtime-dynamic
 orchestration plane gains a way to search / open / traverse the knowledge graph.
 
-Tools (9):
+Tools (11):
   memory:      character_persona, record_decision, record_lesson, current_continuity
-  kb-navigate: kb_search, kb_get, kb_neighbors, kb_overview, kb_activate（扩散激活检索）
+  kb-navigate: kb_search, kb_get, kb_neighbors, kb_overview, kb_activate（扩散激活检索）,
+               kb_vector_search（长尾语义召回，向量腿）, kb_anchor（先锚后扩合流）
 
 Usage:
   python scripts/mcp_server.py              # Start server (stdio transport)
@@ -51,6 +52,8 @@ except ImportError:
         {"name": "kb_neighbors", "description": "顺关系图遍历概念邻居"},
         {"name": "kb_overview", "description": "知识库总览（分区/类型/两层结构）"},
         {"name": "kb_activate", "description": "扩散激活检索（联想召回）"},
+        {"name": "kb_vector_search", "description": "长尾语义召回（向量腿）"},
+        {"name": "kb_anchor", "description": "先锚后扩合流（脊柱锚定+别名扩词+向量捞长尾）"},
     ]
     print(json.dumps(tools, ensure_ascii=False, indent=2))
     sys.exit(0)
@@ -327,6 +330,40 @@ def kb_vector_search(query: str, limit: int = 8) -> str:
         return json.dumps(
             {"query": query, "degraded": True, "reason": f"{type(e).__name__}: {e}",
              "fallback": "改用 kb_search（关键词）白盒回退", "results": []},
+            ensure_ascii=False, indent=2)
+
+
+@mcp.tool()
+def kb_anchor(query: str, anchor_limit: int = 3, tail_limit: int = 8) -> str:
+    """先锚后扩合流（§八 8.3「厚锚撑向量」）：脊柱锚定 + 别名扩词 + 向量捞长尾一次给全。
+
+    与单腿工具的分工：kb_search 只给脊柱概念、kb_vector_search 只给长尾散句；本工具
+    把「先锚（身份 / 边界 / 厚锚别名）后扩（向量在锚周边捞正文 + 据锚去杂标记）」
+    编排成一次调用。锚附带侧表别名（已确认进扩词、未确认标注供掂量）；tail 命中含
+    锚词者标 anchored 排前、未命中降序不删（最终判杂的是调用方）。
+
+    任何一条腿垮掉只降级自己：向量索引 / VOYAGE_API_KEY 缺失时 tail.degraded=true，
+    锚 + 别名照常返回；零锚查询自动喂入别名候选闭环（alias_gaps.jsonl）。
+
+    Args:
+        query: 查询（本名 / 黑话别名 / 换说法散句皆可，如 "融朵怎么打"）
+        anchor_limit: 脊柱锚数上限（默认 3，封顶 10）
+        tail_limit: 长尾返回上限（默认 8，封顶 50）
+
+    Returns:
+        JSON: {query, anchors:[{id,title,aliases:[{alias,confirmed}]}...], expansion_terms,
+               spine_degraded, tail:{degraded, results:[{score,preview,ref,anchored,...}]}}
+    """
+    from kb_anchor import anchor_expand
+
+    try:
+        result = anchor_expand(query, anchor_limit, tail_limit)
+        _log("kb_anchor", query, [a.get("id") for a in result.get("anchors", [])])
+        return json.dumps(result, ensure_ascii=False, indent=2)
+    except Exception as e:  # 合流层再兜一道：绝不因单腿异常崩工具面
+        return json.dumps(
+            {"query": query, "degraded": True, "reason": f"{type(e).__name__}: {e}",
+             "fallback": "改用 kb_search（关键词）白盒回退", "anchors": [], "results": []},
             ensure_ascii=False, indent=2)
 
 

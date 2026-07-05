@@ -10,11 +10,19 @@ RELEASES.md）。但「全量档案层」分析索引（build_community_index.py
 幂等：已存在且非空的目标目录默认跳过下载（--force 覆盖）。无第三方依赖（urllib +
 tarfile）。公开 repo 的 release 资产可匿名下载；私有 repo 在 CI 用 GITHUB_TOKEN。
 
+资产形态两类：``.tar.gz``/``.tgz`` 解包进 dest；其余（如向量索引 ``kb_vectors.json.gz``
+——纯 gzip JSON，非 tarball）按原名平拷贝进 dest（勿对非 tar 资产走 tarfile，会炸
+ReadError）。
+
 用法：
     # 还原 community-data 里的 discord 月归档到 discord 数据目录
     python3 scripts/restore_release_data.py \\
         --tag community-data --pattern 'discord-archive-*.tar.gz' \\
         --dest Public-Info-Pool/Record/Community/discord
+
+    # 还原向量腿真索引（chunk2，守密人 2026-07-05 裁定 1）
+    python3 scripts/restore_release_data.py \\
+        --tag community-assets --pattern 'kb_vectors.json.gz' --dest okf
 """
 from __future__ import annotations
 
@@ -22,6 +30,7 @@ import argparse
 import fnmatch
 import json
 import os
+import shutil
 import tarfile
 import tempfile
 import urllib.request
@@ -105,10 +114,14 @@ def restore(tag: str, pattern: str, dest: Path, force: bool,
             tgz = Path(tmp) / a["name"]
             print(f"[restore] {a['name']} ({a['size'] / 1e6:.1f} MB)")
             download(a["browser_download_url"], tgz)
-            with tarfile.open(tgz, "r:gz") as tar:
-                tar.extractall(dest)          # 归档内是相对路径 channels/{id}/*.jsonl
+            if a["name"].endswith((".tar.gz", ".tgz")):
+                with tarfile.open(tgz, "r:gz") as tar:
+                    tar.extractall(dest)      # 归档内是相对路径 channels/{id}/*.jsonl
+            else:
+                # 非 tarball 资产（如 kb_vectors.json.gz 纯 gzip JSON）：按原名平拷贝。
+                shutil.copy2(tgz, dest / a["name"])
             n += 1
-    print(f"[restore] extracted {n} archive(s) into {dest.relative_to(REPO)}/")
+    print(f"[restore] restored {n} asset(s) into {dest.relative_to(REPO)}/")
     return n
 
 
