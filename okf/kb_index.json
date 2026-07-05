@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 319,
+    "concepts": 320,
     "edges": 393,
-    "terms": 5487,
+    "terms": 5490,
     "by_type": {
       "character": 72,
       "dataset": 110,
-      "documentation": 74,
+      "documentation": 75,
       "knowledge-pointer": 43,
       "reference": 17,
       "research": 3
@@ -26,7 +26,7 @@
       "memory": 47,
       "news-output": 23,
       "projects": 18,
-      "resource": 55,
+      "resource": 56,
       "sources": 17,
       "story": 11,
       "unpacked": 13,
@@ -34,7 +34,7 @@
     },
     "by_tier": {
       "skeleton": 131,
-      "search": 188
+      "search": 189
     }
   },
   "sections": {
@@ -68,7 +68,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 55
+      "count": 56
     },
     "sources": {
       "index": "/sources/index.md",
@@ -3347,6 +3347,20 @@
       "title": "bpt-sdk-conformance-suite-design-20260705-r2",
       "description": "**门禁按甲、覆盖按乙**：验收线与权重服务 **BPT Desktop 换装信心**（关键路径严格、（格式：md）",
       "resource": "/Public-Info-Pool/Resource/repo-engineering/bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 0
+    },
+    "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md": {
+      "type": "documentation",
+      "title": "bpt-sdk-engine-alignment-handoff-20260705",
+      "description": "（PR #453），不在此单。（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/repo-engineering/bpt-sdk-engine-alignment-handoff-20260705.md",
       "tags": [
         "data_layer:curated",
         "deliverable",
@@ -9141,6 +9155,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -9293,6 +9308,9 @@
     ],
     "aliases": [
       "/wiki-data/wiki-data-aliases.md"
+    ],
+    "alignment": [
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md"
     ],
     "analysis": [
       "/community/community-appstore.md",
@@ -9776,6 +9794,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -10203,6 +10222,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -10471,6 +10491,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -10760,6 +10781,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -10910,6 +10932,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -11098,6 +11121,7 @@
     ],
     "engine": [
       "/projects/news-archive-sources-registry.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
     ],
     "engineering": [
@@ -11109,6 +11133,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -11601,6 +11626,7 @@
       "/unpacked/unpacked-vue.md"
     ],
     "handoff": [
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "harness": [
@@ -11804,6 +11830,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -12241,6 +12268,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -12705,6 +12733,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -13320,6 +13349,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -13384,7 +13414,8 @@
     ],
     "pr": [
       "/memory/memory-ext-active-contribution-protocol.md",
-      "/memory/memory-ext-active-policy-direct-push-main.md"
+      "/memory/memory-ext-active-policy-direct-push-main.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md"
     ],
     "predictability": [
       "/memory/memory-ext-skill-authoring-standard.md"
@@ -13649,6 +13680,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -13904,6 +13936,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -13980,6 +14013,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -14153,6 +14187,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -14723,6 +14758,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -15519,6 +15555,9 @@
     "不回": [
       "/README.md"
     ],
+    "不在": [
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md"
+    ],
     "不复": [
       "/README.md",
       "/assets/assets-archive-integrity.md",
@@ -15682,6 +15721,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -15911,6 +15951,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -16180,6 +16221,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -17260,6 +17302,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -18140,6 +18183,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -18370,6 +18414,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -20087,6 +20132,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -22478,7 +22524,8 @@
       "/characters/54116.md"
     ],
     "在此": [
-      "/characters/94450.md"
+      "/characters/94450.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md"
     ],
     "在浏": [
       "/README.md"
@@ -23050,6 +23097,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -23784,6 +23832,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -24351,6 +24400,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -27900,6 +27950,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -28383,6 +28434,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -28678,6 +28730,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -29028,6 +29081,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -29280,6 +29334,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -30819,6 +30874,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -31196,6 +31252,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -31723,6 +31780,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -31900,6 +31958,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -32338,6 +32397,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -32675,6 +32735,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -32765,6 +32826,9 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md"
+    ],
+    "此单": [
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md"
     ],
     "此线": [
       "/README.md"
@@ -39163,6 +39227,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -39777,6 +39842,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -40712,6 +40778,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -40936,6 +41003,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -42008,6 +42076,9 @@
     "aliases": [
       "/wiki-data/wiki-data-aliases.md"
     ],
+    "alignment": [
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md"
+    ],
     "analysis": [
       "/community/community-appstore.md",
       "/community/community-bilibili.md",
@@ -42268,6 +42339,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
@@ -42546,6 +42618,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -42828,6 +42901,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -42969,6 +43043,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -43109,6 +43184,7 @@
       "/unpacked/unpacked-vue.md"
     ],
     "engine": [
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
     ],
     "engineering": [
@@ -43120,6 +43196,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -43352,6 +43429,7 @@
       "/unpacked/unpacked-vue.md"
     ],
     "handoff": [
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "health": [
@@ -43613,6 +43691,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -44281,6 +44360,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -44408,6 +44488,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
@@ -44632,6 +44713,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",

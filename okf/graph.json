@@ -1,7 +1,7 @@
 {
   "generated": "2026-07-05",
   "stats": {
-    "nodes": 319,
+    "nodes": 320,
     "edges": 393
   },
   "nodes": [
@@ -2622,6 +2622,17 @@
       "id": "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "type": "documentation",
       "title": "bpt-sdk-conformance-suite-design-20260705-r2",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
+      "type": "documentation",
+      "title": "bpt-sdk-engine-alignment-handoff-20260705",
       "tags": [
         "data_layer:curated",
         "deliverable",
