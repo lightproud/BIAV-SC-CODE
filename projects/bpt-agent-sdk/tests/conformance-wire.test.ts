@@ -9,7 +9,7 @@
  * in the normal keyless `npm test`.
  */
 
-import { mkdtemp, rm, mkdir } from 'node:fs/promises';
+import { mkdtemp, rm, mkdir, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
@@ -153,33 +153,45 @@ const EXPECTED_SURFACE = new Set(['toolNames', 'toolCount']);
  *                         system-segmentation delta there is an artifact of the
  *                         asymmetric option, documented not chased.
  */
+const TOOL_GAPS = ['Agent:params+required', 'Bash:params', 'Read:params'];
+// systemSegments (A1): our cache breakpoint sits on the stable FIRST system
+// block; official's sits on the LAST - a cache-boundary PLACEMENT gap (E7-03
+// territory). Present on every scenario alongside thinking + toolCacheBreakpoints.
 const WIRE_ALIGNMENT_GAPS: Record<string, { facets: string[]; tools: string[] }> = {
-  default: { facets: ['thinking', 'toolCacheBreakpoints'], tools: ['Agent:params+required', 'Bash:params', 'Read:params'] },
-  'thinking-off': { facets: ['thinking', 'toolCacheBreakpoints'], tools: ['Agent:params+required', 'Bash:params', 'Read:params'] },
-  'thinking-4096': { facets: ['thinking', 'toolCacheBreakpoints'], tools: ['Agent:params+required', 'Bash:params', 'Read:params'] },
-  'cache-off': { facets: ['systemBlocks', 'systemCacheBreakpoints', 'systemKind', 'thinking'], tools: ['Agent:params+required', 'Bash:params', 'Read:params'] },
-  'mcp-added': { facets: ['thinking', 'toolCacheBreakpoints'], tools: ['Agent:params+required', 'Bash:params', 'Read:params'] },
+  default: { facets: ['systemSegments', 'thinking', 'toolCacheBreakpoints'], tools: TOOL_GAPS },
+  'thinking-off': { facets: ['systemSegments', 'thinking', 'toolCacheBreakpoints'], tools: TOOL_GAPS },
+  'thinking-4096': { facets: ['systemSegments', 'thinking', 'toolCacheBreakpoints'], tools: TOOL_GAPS },
+  'cache-off': { facets: ['systemBlocks', 'systemCacheBreakpoints', 'systemKind', 'systemSegments', 'thinking'], tools: TOOL_GAPS },
+  'tool-loop': { facets: ['systemSegments', 'thinking', 'toolCacheBreakpoints'], tools: TOOL_GAPS },
+  'mcp-added': { facets: ['systemSegments', 'thinking', 'toolCacheBreakpoints'], tools: TOOL_GAPS },
 };
 
 interface WireScenario {
   id: string;
   options?: Record<string, unknown>;
   buildOptions?: (ctx: { sdk: unknown }) => Record<string, unknown>;
+  multiTurn?: boolean;
+  fixtureFiles?: Record<string, string>;
+  buildScripts?: (cwd: string) => unknown[];
 }
 
-async function ourFingerprint(scenario: WireScenario) {
+async function ourCapture(scenario: WireScenario) {
   await mkdir(join(cwd, '.sessions'), { recursive: true });
-  const emulator = await startEmulator([{ kind: 'sse', events: textReply('WIRE OK') }], {
-    captureBodies: true,
-  });
+  for (const [name, content] of Object.entries(scenario.fixtureFiles ?? {})) {
+    await writeFile(join(cwd, name), content);
+  }
+  const scripts = scenario.buildScripts
+    ? scenario.buildScripts(cwd)
+    : [{ kind: 'sse', events: textReply('WIRE OK') }];
+  const emulator = await startEmulator(scripts, { captureBodies: true });
   const sdk = await import('../src/index.js');
   const extra = scenario.buildOptions ? scenario.buildOptions({ sdk }) : (scenario.options ?? {});
   try {
     const q: Query = query({
-      prompt: 'Say OK.',
+      prompt: scenario.multiTurn ? 'Read wire.txt then say done.' : 'Say OK.',
       options: {
         cwd,
-        maxTurns: 2,
+        maxTurns: 3,
         sessionDir: join(cwd, '.sessions'),
         sandbox: false,
         systemPrompt: { type: 'preset', preset: 'claude_code' },
@@ -197,7 +209,12 @@ async function ourFingerprint(scenario: WireScenario) {
   } finally {
     await emulator.close();
   }
-  return fingerprintRequestBody(emulator.profile.requestBodies[0]);
+  const bodies = emulator.profile.requestBodies as unknown[];
+  return { fingerprint: fingerprintRequestBody(bodies[0]), trajectory: bodies.map((b) => fingerprintRequestBody(b)) };
+}
+
+async function ourFingerprint(scenario: WireScenario) {
+  return (await ourCapture(scenario)).fingerprint;
 }
 
 describe('wire reference-target ratchet (our arm vs official reference)', () => {
@@ -226,4 +243,30 @@ describe('wire reference-target ratchet (our arm vs official reference)', () => 
       expect(toolGaps, `tool-schema gaps drifted for ${scenario.id}`).toEqual([...expected.tools].sort());
     });
   }
+});
+
+// A2: cache-prefix stability across a multi-turn trajectory. Our system + tool
+// surface must stay byte-stable turn-over-turn or cross-turn prompt-cache reuse
+// breaks (the economics win). Regression lock on OUR arm (keyless).
+describe('wire trajectory: cache-prefix stability (A2)', () => {
+  const loop = (WIRE_SCENARIOS as WireScenario[]).find((s) => s.id === 'tool-loop');
+
+  it('the tool-loop scenario exists and is multi-turn', () => {
+    expect(loop?.multiTurn).toBe(true);
+  });
+
+  it('system + tool prefix is byte-stable across every turn (cache reuse holds)', async () => {
+    const { trajectory } = await ourCapture(loop as WireScenario);
+    expect(trajectory.length, 'expected >= 2 POSTs from the tool loop').toBeGreaterThanOrEqual(2);
+    const first = trajectory[0];
+    const facets = ['systemKind', 'systemBlocks', 'systemSegments', 'toolCount', 'toolCacheBreakpoints', 'thinking'] as const;
+    for (let i = 1; i < trajectory.length; i++) {
+      for (const f of facets) {
+        expect(
+          JSON.stringify(trajectory[i][f]),
+          `prefix facet ${f} drifted at turn ${i + 1} - cross-turn cache reuse would break`,
+        ).toBe(JSON.stringify(first[f]));
+      }
+    }
+  });
 });

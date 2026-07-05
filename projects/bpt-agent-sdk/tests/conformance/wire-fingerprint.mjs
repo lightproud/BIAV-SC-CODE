@@ -79,6 +79,10 @@ export function fingerprintRequestBody(body) {
     systemKind,
     systemBlocks: systemKind === 'blocks' ? sys.length : systemKind === 'string' ? 1 : 0,
     systemCacheBreakpoints: systemKind === 'blocks' ? cacheBreakpoints(sys) : 0,
+    // A1: per-block cache_control PRESENCE (position-aware) - captures the
+    // cache-breakpoint PLACEMENT (which block carries it), a cache-economics
+    // signal size/count alone misses. Text prose is deliberately excluded.
+    systemSegments: systemKind === 'blocks' ? sys.map((b) => ({ cc: !!(b && b.cache_control) })) : [],
     toolNames: tools
       .map((t) => t && t.name)
       .filter((n) => typeof n === 'string')
@@ -107,6 +111,7 @@ export function diffFingerprints(a, b) {
     'systemKind',
     'systemBlocks',
     'systemCacheBreakpoints',
+    'systemSegments',
     'toolCount',
     'toolCacheBreakpoints',
     'thinking',
