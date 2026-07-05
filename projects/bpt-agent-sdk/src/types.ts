@@ -1360,6 +1360,14 @@ export type CompactionOptions = {
   minRecentTurns?: number;
   /** Use a real Messages API summarization call instead of the deterministic fold. Default false. */
   useApiSummary?: boolean;
+  /**
+   * Model for the summarization call (only used when useApiSummary is true).
+   * Summarization is a cheap, mechanical task, so routing it to a small fast
+   * model (e.g. Haiku) cuts compaction cost without touching main-loop quality.
+   * Accepts a full model id or a short alias ('haiku'/'sonnet'/'opus'/'fable').
+   * Default: the session model.
+   */
+  model?: string;
   /** Treat a user turn whose text is `/compact [instructions]` as a manual compaction. Default true. */
   recognizeCommand?: boolean;
   /** Extra guidance appended to the summarizer instructions. */

@@ -711,6 +711,48 @@ describe('foldViaApi (useApiSummary)', () => {
     expect(seen[0]!.apiMs).toBeGreaterThanOrEqual(0);
   });
 
+  it('routes the summary call to compaction.model (alias resolved) when set (G2)', async () => {
+    const cheapCfg = buildCompactionConfig({
+      contextWindowTokens: 2000,
+      useApiSummary: true,
+      model: 'haiku',
+    });
+    const config = makeConfig(cheapCfg);
+    const view = { messages: [...bigHistory(12), userMsg('/compact')] };
+    const seen: string[] = [];
+    await collect(
+      runManualCompact(
+        view,
+        null,
+        makeDeps({ transport: new MockTransport([textReplyEvents('SUMMARY')]) }),
+        config,
+        0,
+        new AbortController().signal,
+        (m) => seen.push(m),
+      ),
+    );
+    // 'haiku' resolves to the concrete Haiku id; the summary bill is attributed to it
+    expect(seen).toEqual(['claude-haiku-4-5']);
+  });
+
+  it('uses the session model for the summary when compaction.model is unset (G2)', async () => {
+    const config = makeConfig(cfg);
+    const view = { messages: [...bigHistory(12), userMsg('/compact')] };
+    const seen: string[] = [];
+    await collect(
+      runManualCompact(
+        view,
+        null,
+        makeDeps({ transport: new MockTransport([textReplyEvents('SUMMARY')]) }),
+        config,
+        0,
+        new AbortController().signal,
+        (m) => seen.push(m),
+      ),
+    );
+    expect(seen).toEqual(['claude-sonnet-4-5']);
+  });
+
   it('falls back to the deterministic fold when the summary call throws', async () => {
     const throwing: EngineDeps['transport'] = {
       apiKeySource: () => 'user',

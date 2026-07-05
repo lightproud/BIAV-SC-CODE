@@ -345,6 +345,8 @@ export type CompactionConfig = {
   recognizeCommand: boolean;
   customInstructions?: string;
   contextWindowTokens?: number;
+  /** Model for the summarization call; absent -> the session model. */
+  model?: string;
 };
 
 export type EngineConfig = {

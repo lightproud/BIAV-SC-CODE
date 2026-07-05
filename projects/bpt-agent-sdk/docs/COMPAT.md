@@ -13,7 +13,10 @@ v0.2 implemented most of the P0/P1 gaps the audit flagged. Now **FULL / PARTIAL*
 (were MISSING/ACCEPTED in v0.1):
 
 - **Context compaction** — auto threshold + `/compact` + PreCompact hook +
-  `compact_boundary` emission (tokenizer-free, CJK-aware estimator).
+  `compact_boundary` emission (tokenizer-free, CJK-aware estimator). BPT
+  extension `compaction.model` routes the summarization call to a cheap model
+  (e.g. `'haiku'`, alias-resolved) to cut compaction cost; the summary usage is
+  billed to that model.
 - **Structured outputs** — `outputFormat` json_schema, validate + re-prompt,
   `structured_output` result, `error_max_structured_output_retries`.
 - **Subagent runtime** — Agent tool, `agents` executed, foreground + background

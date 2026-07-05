@@ -37,6 +37,7 @@ import type {
   EngineDeps,
   StreamRequest,
 } from '../internal/contracts.js';
+import { resolveModelAlias } from '../subagents/agents.js';
 import { MessageAccumulator } from './accumulator.js';
 import { contextWindowFor } from './context-window.js';
 import { normalizeUsage } from './pricing.js';
@@ -130,6 +131,7 @@ export function buildCompactionConfig(
     recognizeCommand: opt?.recognizeCommand ?? true,
     customInstructions: opt?.customInstructions,
     contextWindowTokens: opt?.contextWindowTokens,
+    model: opt?.model,
   };
 }
 
@@ -283,8 +285,11 @@ async function foldViaApi(
 ): Promise<APIMessageParam[]> {
   const system =
     SUMMARIZER_SYSTEM + (customInstructions ? '\n' + customInstructions : '');
+  // Summarization is cheap and mechanical: route it to compaction.model (e.g.
+  // Haiku) when set, resolving a short alias, else the session model.
+  const summaryModel = resolveModelAlias(config.compaction?.model, config.model);
   const req: StreamRequest = {
-    model: config.model,
+    model: summaryModel,
     max_tokens: Math.min(4096, config.maxOutputTokens),
     system,
     messages: [
@@ -302,7 +307,7 @@ async function foldViaApi(
     }
     const final = acc.finalize();
     const apiMs = Date.now() - started;
-    onSummaryCall?.(config.model, normalizeUsage(final.usage), apiMs);
+    onSummaryCall?.(summaryModel, normalizeUsage(final.usage), apiMs);
     const summaryText = final.content
       .filter((b): b is { type: 'text'; text: string; citations?: unknown[] | null } => b.type === 'text')
       .map((b) => b.text)
