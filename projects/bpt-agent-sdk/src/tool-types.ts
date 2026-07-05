@@ -8,15 +8,18 @@
  *
  * SCOPE: only the members whose tool this SDK actually ships are defined
  * (Agent, AskUserQuestion, Bash, Edit, Read, Write, Glob, Grep,
- * ListMcpResourcesTool, ReadMcpResourceTool, TodoWrite, WebFetch, WebSearch).
+ * ListMcpResourcesTool, ReadMcpResourceTool, TaskCreate, TaskGet, TaskList,
+ * TaskUpdate, TodoWrite, WebFetch, WebSearch). TodoWrite ships as the legacy
+ * task surface behind CLAUDE_CODE_ENABLE_TASKS=0 (official 0.3.142 semantics;
+ * see src/tools/index.ts), so both its types and the Task quartet's are kept.
  * Official members for tools this SDK does not ship (Monitor, NotebookEdit,
- * Workflow, TaskCreate/TaskGet/TaskList/TaskStop/TaskUpdate/TaskOutput,
- * EnterWorktree, ExitPlanMode, the Subscribe/Unsubscribe pairs, McpInput) are
- * intentionally NOT fabricated, so the two unions below are shipped-subset
- * views of the official 27-input / 22-output unions. The legacy
- * BashOutput/KillShell shell tools have no official 0.3.201 type members
- * (the official docs type their successors TaskOutput/TaskStop instead) and
- * the ToolSearch builtin is absent from the official union entirely.
+ * Workflow, TaskStop, TaskOutput, EnterWorktree, ExitPlanMode, the
+ * Subscribe/Unsubscribe pairs, McpInput) are intentionally NOT fabricated, so
+ * the two unions below are shipped-subset views of the official 27-input /
+ * 22-output unions. The legacy BashOutput/KillShell shell tools have no
+ * official 0.3.201 type members (the official docs type their successors
+ * TaskOutput/TaskStop instead) and the ToolSearch builtin is absent from the
+ * official union entirely.
  *
  * These are CONSUMER-FACING wire types: they describe the official schema a
  * drop-in host programs against, independent of the internal BuiltinTool
@@ -117,6 +120,35 @@ export type ReadMcpResourceInput = {
   uri: string;
 };
 
+/** Input for the TaskCreate tool. */
+export type TaskCreateInput = {
+  subject: string;
+  description: string;
+  activeForm?: string;
+  metadata?: Record<string, unknown>;
+};
+
+/** Input for the TaskGet tool. */
+export type TaskGetInput = {
+  taskId: string;
+};
+
+/** Input for the TaskList tool (official member: an empty object). */
+export type TaskListInput = {};
+
+/** Input for the TaskUpdate tool. */
+export type TaskUpdateInput = {
+  taskId: string;
+  status?: 'pending' | 'in_progress' | 'completed' | 'deleted';
+  subject?: string;
+  description?: string;
+  activeForm?: string;
+  addBlocks?: string[];
+  addBlockedBy?: string[];
+  owner?: string;
+  metadata?: Record<string, unknown>;
+};
+
 /** Input for the TodoWrite tool. */
 export type TodoWriteInput = {
   todos: Array<{
@@ -154,6 +186,10 @@ export type ToolInputSchemas =
   | GrepInput
   | ListMcpResourcesInput
   | ReadMcpResourceInput
+  | TaskCreateInput
+  | TaskGetInput
+  | TaskListInput
+  | TaskUpdateInput
   | TodoWriteInput
   | WebFetchInput
   | WebSearchInput;
@@ -369,6 +405,49 @@ export type ReadMcpResourceOutput = {
   }>;
 };
 
+/** Output of the TaskCreate tool. */
+export type TaskCreateOutput = {
+  task: {
+    id: string;
+    subject: string;
+  };
+};
+
+/** Output of the TaskGet tool. `task` is null when the ID is not found. */
+export type TaskGetOutput = {
+  task: {
+    id: string;
+    subject: string;
+    description: string;
+    status: 'pending' | 'in_progress' | 'completed';
+    blocks: string[];
+    blockedBy: string[];
+  } | null;
+};
+
+/** Output of the TaskList tool. */
+export type TaskListOutput = {
+  tasks: Array<{
+    id: string;
+    subject: string;
+    status: 'pending' | 'in_progress' | 'completed';
+    owner?: string;
+    blockedBy: string[];
+  }>;
+};
+
+/** Output of the TaskUpdate tool. */
+export type TaskUpdateOutput = {
+  success: boolean;
+  taskId: string;
+  updatedFields: string[];
+  error?: string;
+  statusChange?: {
+    from: string;
+    to: string;
+  };
+};
+
 /** Output of the TodoWrite tool. */
 export type TodoWriteOutput = {
   oldTodos: Array<{
@@ -421,6 +500,10 @@ export type ToolOutputSchemas =
   | GrepOutput
   | ListMcpResourcesOutput
   | ReadMcpResourceOutput
+  | TaskCreateOutput
+  | TaskGetOutput
+  | TaskListOutput
+  | TaskUpdateOutput
   | TodoWriteOutput
   | WebFetchOutput
   | WebSearchOutput;

@@ -1,6 +1,13 @@
 /**
- * Built-in tool registry: the six v0.1 tools keyed by their public names
- * (Read, Write, Edit, Bash, Glob, Grep).
+ * Built-in tool registry, keyed by public tool names.
+ *
+ * Task tracking (official 0.3.142 semantics): the TaskCreate / TaskGet /
+ * TaskUpdate / TaskList quartet is the DEFAULT task surface and TodoWrite is
+ * disabled by default. The official revert gate is the environment variable
+ * `CLAUDE_CODE_ENABLE_TASKS=0` ("set CLAUDE_CODE_ENABLE_TASKS=0 to revert to
+ * TodoWrite" — TS reference, 0.3.201 docs snapshot); when set, TodoWrite is
+ * registered and the Task tools are not. The two surfaces are mutually
+ * exclusive, mirroring the official toolset.
  */
 
 import type { BuiltinTool } from '../internal/contracts.js';
@@ -15,14 +22,23 @@ import { webFetchTool } from './webfetch.js';
 import { webSearchTool } from './websearch.js';
 import { askUserQuestionTool } from './askuserquestion.js';
 import { todoWriteTool } from './todo.js';
+import { taskTools } from './task.js';
 import { listMcpResourcesTool, readMcpResourceTool } from './resources.js';
 import { bashOutputTool, killShellTool } from './shells.js';
 
 /** Fresh Map per call so callers can filter without affecting others.
  *  When a sandbox is active (G-SANDBOX) the Bash tool is built with its
  *  sandbox-aware description + schema; absent, it is the byte-identical
- *  unsandboxed `bashTool`. */
-export function createBuiltinTools(cfg?: { sandbox?: SandboxContext }): Map<string, BuiltinTool> {
+ *  unsandboxed `bashTool`.
+ *  `env` selects the task surface (CLAUDE_CODE_ENABLE_TASKS=0 reverts to
+ *  TodoWrite); absent it falls back to process.env, so hosts that do not
+ *  thread options.env still get the official env-var gate. */
+export function createBuiltinTools(cfg?: {
+  sandbox?: SandboxContext;
+  env?: Record<string, string | undefined>;
+}): Map<string, BuiltinTool> {
+  const env = cfg?.env ?? process.env;
+  const legacyTodo = env['CLAUDE_CODE_ENABLE_TASKS'] === '0';
   const tools: BuiltinTool[] = [
     readTool,
     writeTool,
@@ -35,7 +51,7 @@ export function createBuiltinTools(cfg?: { sandbox?: SandboxContext }): Map<stri
     webFetchTool,
     webSearchTool,
     askUserQuestionTool,
-    todoWriteTool,
+    ...(legacyTodo ? [todoWriteTool] : taskTools),
     listMcpResourcesTool,
     readMcpResourceTool,
   ];

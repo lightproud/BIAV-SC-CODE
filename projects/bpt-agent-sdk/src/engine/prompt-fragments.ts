@@ -142,6 +142,17 @@ export const MAIN_LOOP_BODY: PromptFragment[] = [
   },
   // --- tool-gated clauses (exact official position) ---
   {
+    // Task quartet guidance (official task surface since 0.3.142); occupies the
+    // official task-management slot. Mutually exclusive with the todowrite
+    // fragment below: the registry ships either the Task tools or TodoWrite
+    // (CLAUDE_CODE_ENABLE_TASKS=0), never both, so exactly one gate fires.
+    id: 'task-tools',
+    slug: 'system-prompt-tool-usage-task-management',
+    faithful: false, // adapted: ${TODOWRITE_TOOL_NAME} resolved to the shipped Task tools
+    gate: (has) => has('TaskCreate'),
+    text: 'Break down and manage your work with the TaskCreate, TaskGet, TaskUpdate, and TaskList tools. These tools are helpful for planning your work and helping the user track your progress. Use them proactively for multi-step work: create tasks with both subject (imperative) and activeForm (present continuous), mark a task as in_progress before starting it, and set up dependencies with addBlocks/addBlockedBy when order matters. Mark each task as completed as soon as you are done with the task. Do not batch up multiple tasks before marking them as completed.',
+  },
+  {
     id: 'todowrite',
     slug: 'adapted',
     faithful: false,

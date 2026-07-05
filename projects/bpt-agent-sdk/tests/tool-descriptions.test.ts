@@ -15,6 +15,10 @@ const ALL = [
   D.GREP_DESCRIPTION,
   D.GLOB_DESCRIPTION,
   D.TODOWRITE_DESCRIPTION,
+  D.TASKCREATE_DESCRIPTION,
+  D.TASKGET_DESCRIPTION,
+  D.TASKUPDATE_DESCRIPTION,
+  D.TASKLIST_DESCRIPTION,
   D.WEBFETCH_DESCRIPTION,
   D.WEBSEARCH_DESCRIPTION,
   D.ASKUSERQUESTION_DESCRIPTION,
@@ -39,7 +43,6 @@ describe('faithful tool descriptions', () => {
     const forbidden = [
       'NotebookEdit',
       'MultiEdit',
-      'Workflow',
       'ExitPlanMode',
       'PowerShell',
       'SlashCommand',
@@ -50,6 +53,9 @@ describe('faithful tool descriptions', () => {
       for (const bad of forbidden) {
         expect(desc).not.toContain(bad);
       }
+      // The unshipped Workflow TOOL must not appear; the official TaskUpdate
+      // description's "## Status Workflow" heading is legit prose, not a tool.
+      expect(desc).not.toMatch(/(?<!Status )\bWorkflow\b/);
       // "Task tool" / "Agent tool" must not appear (subagents aren't a shipped tool)
       expect(desc).not.toMatch(/\bTask tool\b/);
       expect(desc).not.toMatch(/\bAgent tool\b/);
@@ -57,9 +63,15 @@ describe('faithful tool descriptions', () => {
   });
 
   it('are actually wired onto the built-in tools', () => {
-    const tools = createBuiltinTools();
+    const tools = createBuiltinTools({ env: {} });
     expect(tools.get('Bash')?.description).toBe(D.BASH_DESCRIPTION);
     expect(tools.get('Grep')?.description).toBe(D.GREP_DESCRIPTION);
-    expect(tools.get('TodoWrite')?.description).toBe(D.TODOWRITE_DESCRIPTION);
+    // Task quartet is the default task surface (TodoWrite off by default) ...
+    expect(tools.get('TaskCreate')?.description).toBe(D.TASKCREATE_DESCRIPTION);
+    expect(tools.get('TaskList')?.description).toBe(D.TASKLIST_DESCRIPTION);
+    expect(tools.has('TodoWrite')).toBe(false);
+    // ... TodoWrite stays wired behind the official revert gate.
+    const legacy = createBuiltinTools({ env: { CLAUDE_CODE_ENABLE_TASKS: '0' } });
+    expect(legacy.get('TodoWrite')?.description).toBe(D.TODOWRITE_DESCRIPTION);
   });
 });

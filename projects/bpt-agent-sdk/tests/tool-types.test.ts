@@ -49,6 +49,14 @@ import type {
   SDKInitializationResult,
   SDKRateLimitEvent,
   SDKRateLimitEventMessage,
+  TaskCreateInput,
+  TaskCreateOutput,
+  TaskGetInput,
+  TaskGetOutput,
+  TaskListInput,
+  TaskListOutput,
+  TaskUpdateInput,
+  TaskUpdateOutput,
   TodoWriteInput,
   TodoWriteOutput,
   ToolInputSchemas,
@@ -134,6 +142,33 @@ const todoInput = {
   todos: [{ content: 'x', status: 'pending', activeForm: 'doing x' }],
 } satisfies TodoWriteInput;
 
+const taskCreateInput = {
+  subject: 'Fix bug',
+  description: 'Fix the login bug',
+  activeForm: 'Fixing bug',
+  metadata: { pr: 42 },
+} satisfies TaskCreateInput;
+
+const taskGetInput = { taskId: '1' } satisfies TaskGetInput;
+
+const taskListInput = {} satisfies TaskListInput;
+
+const taskUpdateInput = {
+  taskId: '1',
+  status: 'in_progress',
+  subject: 'Run tests',
+  description: 'Run the suite',
+  activeForm: 'Running tests',
+  addBlocks: ['2'],
+  addBlockedBy: ['3'],
+  owner: 'agent-a',
+  metadata: { note: null },
+} satisfies TaskUpdateInput;
+
+// @ts-expect-error TaskUpdateInput.status is the official literal union (incl. deleted), not free text.
+const badTaskUpdateInput: TaskUpdateInput = { taskId: '1', status: 'done' };
+void badTaskUpdateInput;
+
 const webFetchInput = { url: 'https://example.com', prompt: 'summarize' } satisfies WebFetchInput;
 
 const webSearchInput = {
@@ -154,6 +189,10 @@ const inputUnionSamples: ToolInputSchemas[] = [
   grepInput,
   listResInput,
   readResInput,
+  taskCreateInput,
+  taskGetInput,
+  taskListInput,
+  taskUpdateInput,
   todoInput,
   webFetchInput,
   webSearchInput,
@@ -286,6 +325,38 @@ const todoOutput = {
   newTodos: [{ content: 'x', status: 'in_progress', activeForm: 'doing x' }],
 } satisfies TodoWriteOutput;
 
+const taskCreateOutput = {
+  task: { id: '1', subject: 'Fix bug' },
+} satisfies TaskCreateOutput;
+
+const taskGetOutput = {
+  task: {
+    id: '1',
+    subject: 'Fix bug',
+    description: 'Fix the login bug',
+    status: 'pending',
+    blocks: ['2'],
+    blockedBy: [],
+  },
+} satisfies TaskGetOutput;
+
+// Official semantics: an unknown ID yields task: null, not an error.
+const taskGetNullOutput = { task: null } satisfies TaskGetOutput;
+
+const taskListOutput = {
+  tasks: [
+    { id: '1', subject: 'Fix bug', status: 'in_progress', owner: 'agent-a', blockedBy: [] },
+    { id: '2', subject: 'Run tests', status: 'pending', blockedBy: ['1'] },
+  ],
+} satisfies TaskListOutput;
+
+const taskUpdateOutput = {
+  success: true,
+  taskId: '1',
+  updatedFields: ['status'],
+  statusChange: { from: 'pending', to: 'in_progress' },
+} satisfies TaskUpdateOutput;
+
 const webFetchOutput = {
   bytes: 10,
   code: 200,
@@ -317,6 +388,11 @@ const outputUnionSamples: ToolOutputSchemas[] = [
   grepOutput,
   listResOutput,
   readResOutput,
+  taskCreateOutput,
+  taskGetOutput,
+  taskGetNullOutput,
+  taskListOutput,
+  taskUpdateOutput,
   todoOutput,
   webFetchOutput,
   webSearchOutput,
@@ -382,14 +458,15 @@ void optionsMissingRequestId;
 // ---------------------------------------------------------------------------
 
 describe('tool type surface (T1-1)', () => {
-  it('sample inputs cover all 13 shipped-tool input members', () => {
-    expect(inputUnionSamples).toHaveLength(13);
+  it('sample inputs cover all 17 shipped-tool input members', () => {
+    expect(inputUnionSamples).toHaveLength(17);
     expect(grepInput['-C']).toBe(grepInput.context);
   });
 
-  it('sample outputs cover all 13 shipped-tool output members', () => {
-    // 15 samples over 13 member types (Agent + Read contribute two arms each).
-    expect(outputUnionSamples).toHaveLength(15);
+  it('sample outputs cover all 17 shipped-tool output members', () => {
+    // 20 samples over 17 member types (Agent + Read contribute two arms each;
+    // TaskGet contributes a found and a null sample).
+    expect(outputUnionSamples).toHaveLength(20);
     const statuses = outputUnionSamples
       .filter((o): o is AgentOutput => typeof o === 'object' && !Array.isArray(o) && 'status' in o)
       .map((o) => o.status);

@@ -25,9 +25,16 @@ import { parseSSE } from './sse.js';
 const DEFAULT_BASE_URL = 'https://api.anthropic.com';
 const DEFAULT_API_VERSION = '2023-06-01';
 const DEFAULT_TIMEOUT_MS = 600_000;
-/** Default idle watchdog: abort a stalled stream after this gap with no event. */
-const DEFAULT_STREAM_IDLE_MS = 120_000;
-const DEFAULT_MAX_RETRIES = 4;
+/** Default idle watchdog: abort a stalled stream after this gap with no event.
+ *  Official default AND minimum for the env override (CLAUDE_STREAM_IDLE_TIMEOUT_MS
+ *  "defaults to 300000 and is clamped to that minimum"); provider option
+ *  overrides are NOT clamped (explicit override semantics unchanged). */
+export const DEFAULT_STREAM_IDLE_MS = 300_000;
+/** Official default retry count (CLAUDE_CODE_MAX_RETRIES "Default 10"). */
+export const DEFAULT_MAX_RETRIES = 10;
+/** Official cap applied to the CLAUDE_CODE_MAX_RETRIES env override ("capped
+ *  at 15"); provider.maxRetries overrides are NOT capped. */
+const ENV_MAX_RETRIES_CAP = 15;
 const USER_AGENT = 'bpt-agent-sdk/0.1.0';
 const BACKOFF_BASE_MS = 1_000;
 const BACKOFF_FACTOR = 2;
@@ -66,6 +73,7 @@ type TransportConfig = {
 
 export class AnthropicTransport implements Transport {
   private readonly provider: ProviderConfig;
+  private readonly env: Record<string, string | undefined>;
   private readonly debug: (m: string) => void;
   private readonly betas: string[] | undefined;
   private readonly credential: ResolvedCredential | null;
@@ -73,6 +81,7 @@ export class AnthropicTransport implements Transport {
 
   constructor(cfg: TransportConfig) {
     this.provider = cfg.provider ?? {};
+    this.env = cfg.env;
     this.debug = cfg.debug;
     this.betas = cfg.betas;
     this.credential = resolveCredential(this.provider, cfg.env);
@@ -105,7 +114,7 @@ export class AnthropicTransport implements Transport {
     const bodyJson = JSON.stringify({ ...requestBody, stream: true });
     const headers = this.buildHeaders(this.credential);
     const timeoutMs = this.provider.timeoutMs ?? DEFAULT_TIMEOUT_MS;
-    const maxRetries = Math.max(0, this.provider.maxRetries ?? DEFAULT_MAX_RETRIES);
+    const maxRetries = resolveMaxRetries(this.provider, this.env);
 
     // ---- request phase: retries allowed -----------------------------------
     const { response, signal, timeoutSignal } = await this.requestWithRetries(
@@ -125,9 +134,11 @@ export class AnthropicTransport implements Transport {
     // Idle watchdog: abort a silently-stalled stream after `idleMs` with no
     // server event — faster and more diagnosable than the whole-request
     // timeout. Anthropic emits periodic `ping` events, so a gap this long means
-    // the connection is stuck. `0` disables. (Design ref: Codex
+    // the connection is stuck. `0` disables. Official env analogs
+    // (CLAUDE_ENABLE_STREAM_WATCHDOG / CLAUDE_STREAM_IDLE_TIMEOUT_MS) are
+    // honored below the provider option. (Design ref: Codex
     // `stream_idle_timeout`; reimplemented, no code copied.)
-    const idleMs = this.provider.streamIdleTimeoutMs ?? DEFAULT_STREAM_IDLE_MS;
+    const idleMs = resolveStreamIdleMs(this.provider, this.env);
     const idleController = idleMs > 0 ? new AbortController() : undefined;
     const streamSignal = idleController
       ? AbortSignal.any([signal, idleController.signal])
@@ -334,6 +345,46 @@ export class AnthropicTransport implements Transport {
 
 function nonEmpty(value: string | undefined): string | undefined {
   return value !== undefined && value.length > 0 ? value : undefined;
+}
+
+function envInt(value: string | undefined): number | undefined {
+  if (value === undefined || value.trim() === '') return undefined;
+  const n = Number(value);
+  return Number.isInteger(n) && n >= 0 ? n : undefined;
+}
+
+/**
+ * Retry-count resolution: provider.maxRetries (explicit override, uncapped) >
+ * CLAUDE_CODE_MAX_RETRIES env (official semantics: capped at 15) > official
+ * default 10.
+ */
+export function resolveMaxRetries(
+  provider: ProviderConfig,
+  env: Record<string, string | undefined>,
+): number {
+  if (provider.maxRetries !== undefined) return Math.max(0, provider.maxRetries);
+  const fromEnv = envInt(env.CLAUDE_CODE_MAX_RETRIES);
+  if (fromEnv !== undefined) return Math.min(fromEnv, ENV_MAX_RETRIES_CAP);
+  return DEFAULT_MAX_RETRIES;
+}
+
+/**
+ * Stream idle-watchdog resolution: provider.streamIdleTimeoutMs (explicit
+ * override, unclamped; 0 disables) > CLAUDE_ENABLE_STREAM_WATCHDOG=0 (official
+ * off switch) > CLAUDE_STREAM_IDLE_TIMEOUT_MS env (official semantics: clamped
+ * to the 300000 minimum) > official default 300000.
+ */
+export function resolveStreamIdleMs(
+  provider: ProviderConfig,
+  env: Record<string, string | undefined>,
+): number {
+  if (provider.streamIdleTimeoutMs !== undefined) {
+    return Math.max(0, provider.streamIdleTimeoutMs);
+  }
+  if (env.CLAUDE_ENABLE_STREAM_WATCHDOG === '0') return 0;
+  const fromEnv = envInt(env.CLAUDE_STREAM_IDLE_TIMEOUT_MS);
+  if (fromEnv !== undefined) return Math.max(fromEnv, DEFAULT_STREAM_IDLE_MS);
+  return DEFAULT_STREAM_IDLE_MS;
 }
 
 /**
