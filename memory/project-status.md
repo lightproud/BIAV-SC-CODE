@@ -331,6 +331,11 @@
   是 WSL、文件系统视图静默漂移，宁可响亮失败）。前台/后台链同修；非 Windows 行为不变（bash→sh 原链）。
   6 条注入式单测（platform/probe 可注入，Linux 上全覆盖 win32 路径）；MIGRATION 5b-2 + COMPAT Bash 行同步。
   `npx vitest run` **1115 全绿（43 文件）**。BPT 侧装新 build 后 Bash 应可用（前提装了 Git for Windows）。
+  **版本纪律已立（2026-07-05，黑池「三拨构建同名 0.6.0」诉求）**：版本 bump 至 **0.6.2**（0.6.1/0.6.2 为对已发货
+  三拨构建的追溯标号，台账见新增 `CHANGELOG.md`——随 npm pack tarball 发货，黑池箱内可读）；纪律 = 改发货运行时必 bump
+  （修复 patch / 新能力 minor）+ CHANGELOG 一行；**CI 守卫** `scripts/check-version-bump.mjs`（bpt-agent-sdk.yml test job，
+  fetch-depth 2 diff HEAD~1）：改 src/依赖不 bump 版本即红——同名不同货从此进不了 main。tarball 名随版本唯一
+  （`bpt-agent-sdk-0.6.2.tgz`），黑池可精确 pin/回退/对账。
   **SSE 网关方言容错已落（2026-07-05，BPT 产线故障闭环）**：BPT 实测「Malformed SSE payload for event "(none)"」
   经双侧协作定型——BPT `curl -N` 抓原始字节实锤 idealab 网关 `/api/anthropic` 端点带 OpenAI 方言遗留
   （流尾追加 `data: [DONE]`、错误帧无 event 行）；官方客户端 message_stop 即收工不碰尾卡、我方读到流关闭才撞上。
