@@ -6,6 +6,8 @@
  *   { type: 'meta', sessionId, createdAt, cwd, firstPrompt }
  * Subsequent lines are the persisted user/assistant messages:
  *   { type: 'user' | 'assistant', message: { role, content }, ... }
+ * renameSession/tagSession append meta_update records (last write wins):
+ *   { type: 'meta_update', uuid, customTitle? | tag? | gitBranch? }
  * Corrupt or unrecognized lines are skipped with a debug warning so a
  * damaged transcript never blocks a resume.
  */
@@ -160,6 +162,21 @@ function repairPairing(
   return repaired;
 }
 
+/**
+ * Sessions-layer meta fields recovered from meta / meta_update records.
+ * renameSession/tagSession write meta_update; load() reads them back so the
+ * rename/tag round trip closes. Kept here (not in internal/contracts.ts) on
+ * purpose: only the sessions layer produces and consumes these.
+ */
+export type StoredSessionMeta = {
+  customTitle?: string;
+  tag?: string;
+  gitBranch?: string;
+};
+
+/** What JsonlSessionStore.load actually returns: StoredSession plus meta. */
+export type LoadedSession = StoredSession & StoredSessionMeta;
+
 export type JsonlSessionStoreConfig = {
   /** Explicit directory override (options.sessionDir). */
   sessionDir?: string;
@@ -218,7 +235,7 @@ export class JsonlSessionStore implements SessionStore {
     }
   }
 
-  async load(sessionId: string): Promise<StoredSession | null> {
+  async load(sessionId: string): Promise<LoadedSession | null> {
     if (!isSafeSessionId(sessionId)) {
       this.debug(
         `session store: refusing load for unsafe session id ${JSON.stringify(sessionId)} (would escape the sessions directory)`,
@@ -236,6 +253,9 @@ export class JsonlSessionStore implements SessionStore {
     let createdAt: number | undefined;
     let firstPrompt: string | undefined;
     let cwd: string | undefined;
+    let customTitle: string | undefined;
+    let tag: string | undefined;
+    let gitBranch: string | undefined;
     const messages: APIMessageParam[] = [];
 
     const lines = raw.split('\n');
@@ -264,6 +284,16 @@ export class JsonlSessionStore implements SessionStore {
         if (typeof entry.createdAt === 'number') createdAt = entry.createdAt;
         if (typeof entry.firstPrompt === 'string') firstPrompt = entry.firstPrompt;
         if (typeof entry.cwd === 'string') cwd = entry.cwd;
+        if (typeof entry.gitBranch === 'string') gitBranch = entry.gitBranch;
+        continue;
+      }
+
+      // renameSession/tagSession appends; later records win (last write wins).
+      if (entry.type === 'meta_update') {
+        if (typeof entry.customTitle === 'string') customTitle = entry.customTitle;
+        if (typeof entry.tag === 'string') tag = entry.tag;
+        else if (entry.tag === null) tag = undefined;
+        if (typeof entry.gitBranch === 'string') gitBranch = entry.gitBranch;
         continue;
       }
 
@@ -302,17 +332,20 @@ export class JsonlSessionStore implements SessionStore {
       lastModified,
       firstPrompt,
       cwd,
+      customTitle,
+      tag,
+      gitBranch,
     };
   }
 
-  async list(): Promise<StoredSession[]> {
+  async list(): Promise<LoadedSession[]> {
     let names: string[];
     try {
       names = await readdir(this.dir);
     } catch {
       return [];
     }
-    const sessions: StoredSession[] = [];
+    const sessions: LoadedSession[] = [];
     for (const name of names) {
       if (!name.endsWith(JSONL_EXT)) continue;
       const loaded = await this.load(name.slice(0, -JSONL_EXT.length));
@@ -368,19 +401,27 @@ function resolveSessionDir(options: SessionListOptions): SessionListOptions {
   return options;
 }
 
-function toSessionInfo(s: StoredSession, fileSize?: number): SDKSessionInfo {
+function toSessionInfo(s: LoadedSession, fileSize?: number): SDKSessionInfo {
   const firstLine = (s.firstPrompt ?? '').split('\n', 1)[0] ?? '';
-  const summary =
+  const fromPrompt =
     firstLine.length > SUMMARY_MAX_CHARS
       ? `${firstLine.slice(0, SUMMARY_MAX_CHARS)}...`
       : firstLine;
+  // Official summary priority: customTitle > auto-generated summary > first
+  // prompt. This store keeps no auto-generated summaries, so the middle tier
+  // is skipped.
+  const summary =
+    s.customTitle !== undefined && s.customTitle.length > 0 ? s.customTitle : fromPrompt;
   return {
     sessionId: s.sessionId,
     summary,
     lastModified: s.lastModified,
     fileSize,
+    customTitle: s.customTitle,
     firstPrompt: s.firstPrompt,
+    gitBranch: s.gitBranch,
     cwd: s.cwd,
+    tag: s.tag,
     createdAt: s.createdAt,
   };
 }
