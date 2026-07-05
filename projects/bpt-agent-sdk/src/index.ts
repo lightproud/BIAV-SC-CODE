@@ -28,6 +28,8 @@ export {
   generateSessionName,
   generateAwaySummary,
   parseAwaySummary,
+  selectMemoryFilesToAttach,
+  parseMemoryFileSelection,
   normalizeBranch,
   COMMAND_INJECTION_TOKEN,
   DEFAULT_UTILITY_MODEL,
@@ -39,9 +41,30 @@ export {
   type BackgroundRunState,
   type BackgroundStateResult,
   type TitleAndBranch,
+  type MemoryFileDescriptor,
   type UtilityCallOptions,
   type GeneratorProvenance,
 } from './generators/index.js';
+export {
+  // v0.6 context-tips subsystem (selector + reception evaluator).
+  selectContextTip,
+  parseContextTip,
+  buildSelectorUserTurn,
+  evaluateTipReception,
+  parseTipReception,
+  CONTEXT_TIP_CATALOG,
+  renderCatalog,
+  TIP_PROVENANCE,
+  CONTEXT_TIP_SELECTOR_SYSTEM,
+  TIP_RECEPTION_SYSTEM,
+  type ContextTipSituation,
+  type ContextTipDecision,
+  type SelectContextTipInput,
+  type TipSessionMetadata,
+  type TipReception,
+  type TipReceptionResult,
+  type TipProvenance,
+} from './tips/index.js';
 export {
   // v0.6 three-state adversarial verifier (CONFIRMED / PLAUSIBLE / REFUTED).
   adversarialVerify,

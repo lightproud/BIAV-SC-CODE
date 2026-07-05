@@ -177,8 +177,14 @@ shell（BashOutput 增量读 + 按行 filter / KillShell 击杀，进程组 SIGT
 3 面 provenance + corpus-sync）；`adversarialVerify(finding)` 公开 API；`parseVerdict` **fail-closed**（乱码/歧义/空→REFUTED、绝不 keep 未验证发现）；
 默认 haiku（批判揪出 sonnet 未测赌注、改齐 utility 默认）、可覆盖。② **G-SUMMARY**：compaction 摘要器追加 no-tools 守卫 + verbatim 安全保全条
 （忠实复现，SUMMARIZER_SYSTEM 字节不变、旧金标保绿）+ `extractSummaryFromReply`（认 `<analysis>/<summary>` 契约、旧行为严格超集）；`generateAwaySummary`（第 6 面生成器）。
-**881 单测全绿**（+43，含对抗审查 4 findings 修复回归）。红线批判确认零红线/零未发货能力/零黑池/零净室问题。3 个无消费子系统的 hook 分类器（context-tip/memory-file-attach）
-经批判**正确降级为 design-only**（未发货红线）；G-HOOKCOND/G-SANDBOX（ship-now 但接线面大）与编排/DSL/沙箱/技能（需工具本体）留后续批。
+**881 单测全绿**（+43，含对抗审查 4 findings 修复回归）。红线批判确认零红线/零未发货能力/零黑池/零净室问题。G-HOOKCOND/G-SANDBOX（ship-now 但接线面大）与编排/DSL/沙箱/技能（需工具本体）留后续批。
+
+**v0.6 剩余 Batch 2 —— 补 hook 分类器子系统（守密人「这意味着我们内部没有实现对应的功能，补！」裁定，已落）**：3 个 hook 分类器原被批判降级 design-only，
+**唯一原因是「无消费子系统」**；守密人裁定**把子系统建出来**、让分类器像 v0.6 生成器一样「功能与提示词一并发货」（红线自然满足）。两子系统：
+① **上下文提示**（`src/tips/`）：情境目录注册表（忠实复现 manual-polling/persistent-memory 两条情境、可扩展）+ `selectContextTip`（忠实复现 context-tip-selector，
+**fail-safe** 默认 no-tip、且只返回 eligible∩catalog 内 feature_id、幻觉/越权 id 一律丢弃）+ `evaluateTipReception`（忠实复现 reception-evaluator，默认 unknown/neutral）；
+② **记忆文件选择**（生成器族第 7 面）：`selectMemoryFilesToAttach`（忠实复现 determine-which-memory-files-to-attach，接 settingSources/记忆加载路径，**≤5、只返回可用集内文件名（幻觉丢弃）、去重、fail-safe 空表**、无文件时零调用短路）。
+5 条新复现**字节级与归档一致**（reverse-diff 确认）。**923 单测全绿**（+48）。原「3 分类器降级 design-only」判定被此裁定反转。
 
 **缓存稳定前缀优化（v0.5+，守密人 2026-07-04「优化」裁定，已落地）**：裸对比 run #35 发现本 SDK 短任务缓存命中
 0%、长任务 45%——诊断为 cwd 焊进系统提示正中间致缓存前缀逐任务变（`prompts.ts`）。修法：系统提示拆

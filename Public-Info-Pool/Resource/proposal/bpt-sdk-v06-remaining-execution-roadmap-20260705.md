@@ -56,6 +56,14 @@ All four depend only on the confirmed-shipped v0.6 utility runtime (`runUtilityC
 - **G-SUMMARY**：① compaction 摘要器追加 no-tools 守卫 + verbatim 安全保全条（忠实复现，SUMMARIZER_SYSTEM 字节不变、旧金标/provenance 测试保绿）+ `extractSummaryFromReply`（认 `<analysis>/<summary>` 契约、旧行为严格超集）；② `generateAwaySummary`（第 6 面生成器，「回来了」<40 词回顾）。
 - 验证：`npx vitest run` **881 全绿**（+43）、`tsc --noEmit` + `build` exit 0；对抗审查随后拷问实现。
 
+## 已落（本会话，Batch 2 —— 补 hook 分类器子系统）
+
+守密人「这意味着我们内部没有实现对应的功能，补！」裁定：反转原批判的「3 hook 分类器降级 design-only」——降级**唯一原因是「无消费子系统」**，故建子系统、让分类器「功能与提示词一并发货」，红线自然满足。
+
+- **上下文提示子系统**（`src/tips/`）：情境目录注册表（忠实复现 manual-polling / persistent-memory 两条、可扩展）+ `selectContextTip`（忠实复现 context-tip-selector；**fail-safe** 默认 no-tip、只返回 eligible∩catalog 内 feature_id、幻觉/越权 id 丢弃）+ `evaluateTipReception`（忠实复现 reception-evaluator；默认 unknown/neutral）。
+- **记忆文件选择**（生成器族第 7 面）：`selectMemoryFilesToAttach`（忠实复现 determine-which-memory-files-to-attach；接 settingSources/记忆加载路径；**≤5、只返回可用集内文件名（幻觉丢弃）、去重、fail-safe 空表**、无文件零调用短路）。
+- 5 条新复现**字节级与归档一致**（reverse-diff 确认）。**923 单测全绿（+48）**。**云端 slug**（schedule-slash-command / cloud-first-scheduling / SearchSkills+SuggestSkills / managed-agents `/v1/skills`）仍 reference-only：本 SDK 为本地可嵌入引擎，凭空造云面=描述不存在能力（反成红线）；其可落的本地形态（本地 Skills 注册表 search/suggest、本地 Cron/schedule）归 Track 2/3 工具本体。
+
 ## 未落（按上文依赖链推进，需守密人裁或先建工具本体）
 
 - **Batch 2**（ship-now，接线面更大）：G-HOOKCOND（hook-condition 评估器 pair + 同 PR 接 condition-gated matcher）+ O-B0 preset 切出（worker-fork/coordinator-worker AgentDefinition 挂已发货 forkActive 支）。

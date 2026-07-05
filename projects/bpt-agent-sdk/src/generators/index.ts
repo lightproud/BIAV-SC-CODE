@@ -23,6 +23,8 @@ import {
   AWAY_SUMMARY_SYSTEM,
   BACKGROUND_STATE_SYSTEM,
   COMMAND_PREFIX_SYSTEM,
+  MEMORY_FILES_OUTPUT_CONTRACT,
+  MEMORY_FILES_SYSTEM,
   SESSION_NAME_SYSTEM,
   SESSION_TITLE_SYSTEM,
   TITLE_AND_BRANCH_SYSTEM,
@@ -322,6 +324,82 @@ export function parseAwaySummary(raw: string): string {
 }
 
 // ---------------------------------------------------------------------------
+// 7. Determine which memory files to attach (query-time memory selection)
+// ---------------------------------------------------------------------------
+
+/** One available memory file the selector can choose from. */
+export interface MemoryFileDescriptor {
+  filename: string;
+  description: string;
+}
+
+/**
+ * Select which memory files are clearly useful for a user's query (up to 5).
+ * The consuming path is memory/settingSources loading: when many memory files
+ * exist, attach only the relevant ones instead of all. Fails SAFE to an EMPTY
+ * selection (attach nothing) on a garbled reply, caps at 5, and — critically —
+ * only ever returns filenames that are in the provided `available` set, so a
+ * hallucinated filename can never be attached.
+ */
+export async function selectMemoryFilesToAttach(
+  input: { available: MemoryFileDescriptor[]; query: string },
+  opts: UtilityCallOptions = {},
+): Promise<string[]> {
+  if (input.available.length === 0) return [];
+  const system = MEMORY_FILES_SYSTEM + '\n\n' + MEMORY_FILES_OUTPUT_CONTRACT;
+  const listing = input.available
+    .map((m) => `- ${m.filename}: ${m.description}`)
+    .join('\n');
+  const user = `Available memory files:\n${listing}\n\nUser query:\n${input.query}`;
+  const raw = await runUtilityCall(system, user, opts, 256);
+  return parseMemoryFileSelection(raw, input.available.map((m) => m.filename));
+}
+
+/**
+ * Pure parser for the memory-file selection reply (unit-testable, no I/O).
+ * Accepts a JSON array of filenames (or a newline/comma list as a fallback),
+ * keeps only names present in `availableFilenames` (drops hallucinations and
+ * duplicates), and caps the result at 5. Fails SAFE to [].
+ */
+export function parseMemoryFileSelection(raw: string, availableFilenames: string[]): string[] {
+  const allowed = new Set(availableFilenames);
+  let names: string[] = [];
+  const parsed = tryParseArray(raw);
+  if (parsed !== null) {
+    names = parsed;
+  } else {
+    // Fallback: split a bare list on newlines/commas, strip bullets/quotes.
+    names = raw
+      .replace(/```[a-z]*\n?/gi, '')
+      .replace(/```/g, '')
+      .split(/[\n,]/)
+      .map((s) => s.replace(/^[\s*\-•]+/, '').replace(/^["'`]+|["'`]+$/g, '').trim())
+      .filter((s) => s.length > 0);
+  }
+  const out: string[] = [];
+  for (const n of names) {
+    if (allowed.has(n) && !out.includes(n)) out.push(n);
+    if (out.length >= 5) break;
+  }
+  return out;
+}
+
+/** Parse a JSON array of strings from a reply, or null. */
+function tryParseArray(raw: string): string[] | null {
+  const trimmed = raw.trim().replace(/```[a-z]*\n?/gi, '').replace(/```/g, '').trim();
+  const start = trimmed.indexOf('[');
+  const end = trimmed.lastIndexOf(']');
+  if (start < 0 || end <= start) return null;
+  try {
+    const arr = JSON.parse(trimmed.slice(start, end + 1)) as unknown;
+    if (!Array.isArray(arr)) return null;
+    return arr.filter((x): x is string => typeof x === 'string').map((s) => s.trim());
+  } catch {
+    return null;
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Shared helpers
 // ---------------------------------------------------------------------------
 
@@ -357,4 +435,5 @@ export {
   TITLE_AND_BRANCH_SYSTEM,
   SESSION_NAME_SYSTEM,
   AWAY_SUMMARY_SYSTEM,
+  MEMORY_FILES_SYSTEM,
 } from './prompts.js';

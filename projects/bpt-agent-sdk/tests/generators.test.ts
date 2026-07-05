@@ -21,10 +21,14 @@ import {
   parseAwaySummary,
   parseBackgroundState,
   parseCommandPrefix,
+  parseMemoryFileSelection,
+  selectMemoryFilesToAttach,
 } from '../src/generators/index.js';
 import {
   AWAY_SUMMARY_PROVENANCE,
   AWAY_SUMMARY_SYSTEM,
+  MEMORY_FILES_PROVENANCE,
+  MEMORY_FILES_SYSTEM,
   BACKGROUND_STATE_SYSTEM,
   COMMAND_PREFIX_PROVENANCE,
   COMMAND_PREFIX_SYSTEM,
@@ -295,6 +299,58 @@ describe('parseAwaySummary', () => {
   it('trims wrapping smart single quotes', () => {
     expect(parseAwaySummary('‘Fixing the parser.’')).toBe('Fixing the parser.');
   });
+});
+
+describe('parseMemoryFileSelection (fails SAFE, drops hallucinations)', () => {
+  const avail = ['db.md', 'style.md', 'user.md'];
+  it('parses a JSON array of allowed filenames', () => {
+    expect(parseMemoryFileSelection('["db.md","style.md"]', avail)).toEqual(['db.md', 'style.md']);
+  });
+  it('drops filenames not in the available set (hallucination guard)', () => {
+    expect(parseMemoryFileSelection('["db.md","invented.md"]', avail)).toEqual(['db.md']);
+  });
+  it('caps the selection at 5', () => {
+    const many = ['a', 'b', 'c', 'd', 'e', 'f'];
+    expect(parseMemoryFileSelection('["a","b","c","d","e","f"]', many)).toHaveLength(5);
+  });
+  it('dedupes repeated filenames', () => {
+    expect(parseMemoryFileSelection('["db.md","db.md"]', avail)).toEqual(['db.md']);
+  });
+  it('falls back to a newline/comma list when not JSON', () => {
+    expect(parseMemoryFileSelection('- db.md\n- style.md', avail)).toEqual(['db.md', 'style.md']);
+  });
+  it('fails SAFE to [] on a garbled reply', () => {
+    expect(parseMemoryFileSelection('I could not decide', avail)).toEqual([]);
+  });
+  it('empty JSON array selects none', () => {
+    expect(parseMemoryFileSelection('[]', avail)).toEqual([]);
+  });
+});
+
+describe('selectMemoryFilesToAttach over a mock transport', () => {
+  it('lists the available files and returns the validated selection', async () => {
+    const t = new MockTransport([textReplyEvents('["db.md"]')]);
+    const out = await selectMemoryFilesToAttach(
+      {
+        available: [
+          { filename: 'db.md', description: 'database schema notes' },
+          { filename: 'style.md', description: 'code style guide' },
+        ],
+        query: 'why is the query slow?',
+      },
+      { transport: t },
+    );
+    expect(out).toEqual(['db.md']);
+    const user = t.requests[0]?.messages[0]?.content;
+    expect(typeof user === 'string' && user.includes('db.md: database schema notes')).toBe(true);
+    expect(t.requests[0]?.system).toContain(MEMORY_FILES_SYSTEM);
+  });
+  it('short-circuits to [] with no model call when there are no available files', async () => {
+    const t = new MockTransport([]);
+    const out = await selectMemoryFilesToAttach({ available: [], query: 'x' }, { transport: t });
+    expect(out).toEqual([]);
+    expect(t.requests).toHaveLength(0);
+  });
 
   it('a bare-string reply still yields a usable title (fallback path)', async () => {
     const t = new MockTransport([textReplyEvents('Fix the flaky test')]);
@@ -352,10 +408,11 @@ describe('generator prompt provenance (corpus-sync guard, Track B parity)', () =
     { prompt: TITLE_AND_BRANCH_SYSTEM, prov: TITLE_AND_BRANCH_PROVENANCE },
     { prompt: SESSION_NAME_SYSTEM, prov: SESSION_NAME_PROVENANCE },
     { prompt: AWAY_SUMMARY_SYSTEM, prov: AWAY_SUMMARY_PROVENANCE },
+    { prompt: MEMORY_FILES_SYSTEM, prov: MEMORY_FILES_PROVENANCE },
   ];
 
   it('the provenance table has one entry per reproduced face, all faithful', () => {
-    expect(Object.keys(GENERATOR_PROVENANCE)).toHaveLength(6);
+    expect(Object.keys(GENERATOR_PROVENANCE)).toHaveLength(7);
     for (const p of Object.values(GENERATOR_PROVENANCE)) {
       expect(p.faithful).toBe(true);
       expect(p.slug.length).toBeGreaterThan(0);
