@@ -1,0 +1,58 @@
+name: Conformance pin drift sentinel
+
+# B3 drift sentinel (conformance suite M3, design final 2026-07-05): weekly
+# REPORT-ONLY check of whether upstream @anthropic-ai/claude-agent-sdk /
+# @anthropic-ai/claude-code have published past the dual pins in
+# projects/bpt-agent-sdk/tests/conformance/pins.json.
+#
+# Standing rule (选择性追踪): the pins move ONLY by keeper ruling after a
+# manual conformance re-run against the candidate versions. This workflow
+# therefore NEVER commits, NEVER opens issues, NEVER bumps pins - it surfaces
+# drift in the step summary and an artifact, nothing else. Drift is
+# information (exit 0); only a lookup failure fails the job (exit 2).
+
+on:
+  schedule:
+    - cron: '7 5 * * 1'   # Mondays 05:07 UTC - hour/minute distinct from all other repo crons
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    working-directory: projects/bpt-agent-sdk
+
+jobs:
+  drift-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          # Sparse checkout excludes the 2.4G archive/reference layers so the
+          # Node job only pulls the ~100MB of code it needs.
+          sparse-checkout: |
+            /*
+            !/Public-Info-Pool/Record/
+            !/Public-Info-Pool/Reference/
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Check pinned vs latest published versions (report-only)
+        run: node tests/conformance/drift-check.mjs --out=drift-report.md
+      - name: Publish report to the run summary
+        if: always()
+        run: |
+          if [ -f drift-report.md ]; then
+            cat drift-report.md >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "drift-check produced no report (lookup failed before writing)" >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: conformance-drift-report
+          path: projects/bpt-agent-sdk/drift-report.md
+          if-no-files-found: ignore
