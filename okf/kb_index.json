@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 318,
-    "edges": 319,
-    "terms": 5474,
+    "concepts": 320,
+    "edges": 393,
+    "terms": 5490,
     "by_type": {
       "character": 72,
-      "dataset": 109,
-      "documentation": 74,
+      "dataset": 110,
+      "documentation": 75,
       "knowledge-pointer": 43,
       "reference": 17,
       "research": 3
@@ -26,15 +26,15 @@
       "memory": 47,
       "news-output": 23,
       "projects": 18,
-      "resource": 55,
+      "resource": 56,
       "sources": 17,
       "story": 11,
       "unpacked": 13,
-      "wiki-data": 26
+      "wiki-data": 27
     },
     "by_tier": {
       "skeleton": 131,
-      "search": 187
+      "search": 189
     }
   },
   "sections": {
@@ -68,7 +68,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 55
+      "count": 56
     },
     "sources": {
       "index": "/sources/index.md",
@@ -84,7 +84,7 @@
     },
     "wiki-data": {
       "index": "/wiki-data/index.md",
-      "count": 26
+      "count": 27
     }
   },
   "concepts": {
@@ -305,7 +305,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 17
+      "degree": 35
     },
     "/characters/130375.md": {
       "type": "character",
@@ -361,7 +361,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 7
+      "degree": 16
     },
     "/characters/15561.md": {
       "type": "character",
@@ -504,7 +504,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 6
+      "degree": 8
     },
     "/characters/15571.md": {
       "type": "character",
@@ -518,7 +518,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 1
+      "degree": 3
     },
     "/characters/15572.md": {
       "type": "character",
@@ -588,7 +588,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 5
+      "degree": 9
     },
     "/characters/15577.md": {
       "type": "character",
@@ -658,7 +658,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 3
+      "degree": 5
     },
     "/characters/15582.md": {
       "type": "character",
@@ -672,7 +672,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 3
+      "degree": 5
     },
     "/characters/15583.md": {
       "type": "character",
@@ -714,7 +714,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 7
+      "degree": 9
     },
     "/characters/15586.md": {
       "type": "character",
@@ -771,7 +771,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 5
+      "degree": 7
     },
     "/characters/15590.md": {
       "type": "character",
@@ -799,7 +799,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 0
+      "degree": 2
     },
     "/characters/15592.md": {
       "type": "character",
@@ -855,7 +855,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 10
+      "degree": 17
     },
     "/characters/15596.md": {
       "type": "character",
@@ -954,7 +954,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 3
+      "degree": 5
     },
     "/characters/15603.md": {
       "type": "character",
@@ -968,7 +968,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 74
+      "degree": 76
     },
     "/characters/15604.md": {
       "type": "character",
@@ -996,7 +996,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 5
+      "degree": 7
     },
     "/characters/54117.md": {
       "type": "character",
@@ -1010,7 +1010,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 0
+      "degree": 2
     },
     "/characters/77911.md": {
       "type": "character",
@@ -1080,7 +1080,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 8
+      "degree": 12
     },
     "/characters/77921.md": {
       "type": "character",
@@ -1122,7 +1122,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 0
+      "degree": 4
     },
     "/characters/77924.md": {
       "type": "character",
@@ -1150,7 +1150,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 3
+      "degree": 5
     },
     "/characters/77926.md": {
       "type": "character",
@@ -1249,7 +1249,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 1
+      "degree": 5
     },
     "/characters/94451.md": {
       "type": "character",
@@ -1306,7 +1306,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 14
     },
     "/community/community-discord.md": {
       "type": "dataset",
@@ -1334,7 +1334,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 3
     },
     "/community/community-index.md": {
       "type": "dataset",
@@ -1390,7 +1390,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 4
     },
     "/community/community-ruliweb.md": {
       "type": "dataset",
@@ -1432,7 +1432,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 3
     },
     "/community/community-stopgame.md": {
       "type": "dataset",
@@ -1502,7 +1502,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 7
     },
     "/community/community-weixin.md": {
       "type": "dataset",
@@ -1516,7 +1516,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 3
     },
     "/community/community-youtube-comments.md": {
       "type": "dataset",
@@ -1530,7 +1530,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 9
     },
     "/community/community-youtube.md": {
       "type": "dataset",
@@ -1544,7 +1544,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 3
     },
     "/extracted/extracted-art-assets.md": {
       "type": "dataset",
@@ -1654,7 +1654,7 @@
       ],
       "section": "memory",
       "tier": "search",
-      "degree": 5
+      "degree": 8
     },
     "/memory/lessons-learned.md": {
       "type": "knowledge-pointer",
@@ -2225,7 +2225,7 @@
       ],
       "section": "memory",
       "tier": "search",
-      "degree": 4
+      "degree": 8
     },
     "/memory/strategic-plan-2026.md": {
       "type": "knowledge-pointer",
@@ -2976,7 +2976,7 @@
       ],
       "section": "resource",
       "tier": "search",
-      "degree": 3
+      "degree": 5
     },
     "/resource/resource-daily-news-morimens-daily-20260602-r2.md": {
       "type": "documentation",
@@ -3004,7 +3004,7 @@
       ],
       "section": "resource",
       "tier": "search",
-      "degree": 6
+      "degree": 8
     },
     "/resource/resource-daily-news-morimens-period-20260512-0603.md": {
       "type": "documentation",
@@ -3088,7 +3088,7 @@
       ],
       "section": "resource",
       "tier": "search",
-      "degree": 0
+      "degree": 1
     },
     "/resource/resource-game-analysis-bug-fault-report-20260518-26.md": {
       "type": "documentation",
@@ -3356,6 +3356,20 @@
       "tier": "search",
       "degree": 0
     },
+    "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md": {
+      "type": "documentation",
+      "title": "bpt-sdk-engine-alignment-handoff-20260705",
+      "description": "（PR #453），不在此单。（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/repo-engineering/bpt-sdk-engine-alignment-handoff-20260705.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 0
+    },
     "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md": {
       "type": "documentation",
       "title": "bpt-sdk-l5-failure-dissection-20260705",
@@ -3536,7 +3550,7 @@
       ],
       "section": "resource",
       "tier": "search",
-      "degree": 0
+      "degree": 1
     },
     "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md": {
       "type": "documentation",
@@ -3550,7 +3564,7 @@
       ],
       "section": "resource",
       "tier": "search",
-      "degree": 1
+      "degree": 2
     },
     "/resource/resource-repo-engineering-retired-modules-audit-202606.md": {
       "type": "documentation",
@@ -3620,7 +3634,7 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 14
     },
     "/sources/discord.md": {
       "type": "dataset",
@@ -3648,7 +3662,7 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 3
     },
     "/sources/official.md": {
       "type": "dataset",
@@ -3690,7 +3704,7 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 4
     },
     "/sources/ruliweb.md": {
       "type": "dataset",
@@ -3718,7 +3732,7 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 3
     },
     "/sources/steam_discussion.md": {
       "type": "dataset",
@@ -3788,7 +3802,7 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 7
     },
     "/sources/weixin.md": {
       "type": "dataset",
@@ -3802,7 +3816,7 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 3
     },
     "/sources/youtube.md": {
       "type": "dataset",
@@ -3816,7 +3830,7 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 3
     },
     "/sources/youtube_comments.md": {
       "type": "dataset",
@@ -3830,7 +3844,7 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 1
+      "degree": 8
     },
     "/story/STORY_RESEARCH.md": {
       "type": "research",
@@ -4178,6 +4192,20 @@
         "first-hand-unpack"
       ],
       "section": "unpacked",
+      "tier": "search",
+      "degree": 0
+    },
+    "/wiki-data/wiki-data-aliases.md": {
+      "type": "dataset",
+      "title": "aliases",
+      "description": "aliases 数据集",
+      "resource": "/projects/wiki/data/processed/aliases.json",
+      "tags": [
+        "data_layer:curated",
+        "unpacked-bootstrap",
+        "domain:index"
+      ],
+      "section": "wiki-data",
       "tier": "search",
       "degree": 0
     },
@@ -4596,6 +4624,46 @@
         "cv"
       ],
       [
+        "/community/community-bilibili.md",
+        "提及:沙耶",
+        "mention"
+      ],
+      [
+        "/community/community-google-play.md",
+        "提及:Saya",
+        "mention"
+      ],
+      [
+        "/community/community-reddit.md",
+        "提及:Saya",
+        "mention"
+      ],
+      [
+        "/community/community-steam.md",
+        "提及:Saya",
+        "mention"
+      ],
+      [
+        "/community/community-weibo.md",
+        "提及:沙耶",
+        "mention"
+      ],
+      [
+        "/community/community-weixin.md",
+        "提及:沙耶",
+        "mention"
+      ],
+      [
+        "/community/community-youtube-comments.md",
+        "提及:沙耶",
+        "mention"
+      ],
+      [
+        "/community/community-youtube.md",
+        "提及:沙耶",
+        "mention"
+      ],
+      [
         "/memory/decisions-archive.md",
         "提及:沙耶",
         "mention"
@@ -4618,6 +4686,11 @@
       [
         "/memory/memory-research-community-analysis-2026-05-18-26.md",
         "提及:沙耶",
+        "mention"
+      ],
+      [
+        "/memory/project-status.md",
+        "提及:Saya",
         "mention"
       ],
       [
@@ -4674,6 +4747,51 @@
         "/resource/resource-game-analysis-role-action-recommendations-202605.md",
         "提及:沙耶",
         "mention"
+      ],
+      [
+        "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
+        "提及:Saya",
+        "mention"
+      ],
+      [
+        "/sources/bilibili.md",
+        "提及:沙耶",
+        "mention"
+      ],
+      [
+        "/sources/google_play.md",
+        "提及:Saya",
+        "mention"
+      ],
+      [
+        "/sources/reddit.md",
+        "提及:Saya",
+        "mention"
+      ],
+      [
+        "/sources/steam.md",
+        "提及:Saya",
+        "mention"
+      ],
+      [
+        "/sources/weibo.md",
+        "提及:沙耶",
+        "mention"
+      ],
+      [
+        "/sources/weixin.md",
+        "提及:沙耶",
+        "mention"
+      ],
+      [
+        "/sources/youtube.md",
+        "提及:沙耶",
+        "mention"
+      ],
+      [
+        "/sources/youtube_comments.md",
+        "提及:沙耶",
+        "mention"
       ]
     ],
     "/characters/130375.md": [
@@ -4719,6 +4837,21 @@
         "cv"
       ],
       [
+        "/community/community-reddit.md",
+        "提及:Pandia",
+        "mention"
+      ],
+      [
+        "/community/community-youtube-comments.md",
+        "提及:Pandia",
+        "mention"
+      ],
+      [
+        "/memory/decisions.md",
+        "提及:Pandia",
+        "mention"
+      ],
+      [
         "/memory/memory-research-community-analysis-2026-05-18-26.md",
         "提及:潘狄娅",
         "mention"
@@ -4741,6 +4874,36 @@
       [
         "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
         "提及:潘狄娅",
+        "mention"
+      ],
+      [
+        "/resource/resource-daily-news-morimens-daily-20260601.md",
+        "提及:Pandia",
+        "mention"
+      ],
+      [
+        "/resource/resource-daily-news-morimens-daily-full-20260602.md",
+        "提及:Pandia",
+        "mention"
+      ],
+      [
+        "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
+        "提及:Pandia",
+        "mention"
+      ],
+      [
+        "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
+        "提及:Pandia",
+        "mention"
+      ],
+      [
+        "/sources/reddit.md",
+        "提及:Pandia",
+        "mention"
+      ],
+      [
+        "/sources/youtube_comments.md",
+        "提及:Pandia",
         "mention"
       ],
       [
@@ -4982,7 +5145,17 @@
         "variant"
       ],
       [
+        "/memory/decisions.md",
+        "提及:朵尔",
+        "mention"
+      ],
+      [
         "/memory/morimens-context.md",
+        "提及:朵尔",
+        "mention"
+      ],
+      [
+        "/memory/project-status.md",
         "提及:朵尔",
         "mention"
       ],
@@ -5012,6 +5185,16 @@
         "/characters/15588.md",
         "CV:二宫雪乃",
         "cv"
+      ],
+      [
+        "/community/community-bilibili.md",
+        "提及:珈伦",
+        "mention"
+      ],
+      [
+        "/sources/bilibili.md",
+        "提及:珈伦",
+        "mention"
       ]
     ],
     "/characters/15572.md": [
@@ -5074,6 +5257,16 @@
         "variant"
       ],
       [
+        "/community/community-bilibili.md",
+        "提及:墨菲",
+        "mention"
+      ],
+      [
+        "/community/community-weibo.md",
+        "提及:墨菲",
+        "mention"
+      ],
+      [
         "/memory/memory-research-community-analysis-2026-05-18-26.md",
         "提及:墨菲",
         "mention"
@@ -5085,6 +5278,16 @@
       ],
       [
         "/resource/resource-daily-news-morimens-period-20260512-0603.md",
+        "提及:墨菲",
+        "mention"
+      ],
+      [
+        "/sources/bilibili.md",
+        "提及:墨菲",
+        "mention"
+      ],
+      [
+        "/sources/weibo.md",
         "提及:墨菲",
         "mention"
       ],
@@ -5212,6 +5415,11 @@
     ],
     "/characters/15581.md": [
       [
+        "/community/community-youtube-comments.md",
+        "提及:莉莉",
+        "mention"
+      ],
+      [
         "/memory/memory-research-community-analysis-2026-05-18-26.md",
         "提及:莉莉",
         "mention"
@@ -5225,11 +5433,26 @@
         "/resource/resource-daily-news-morimens-period-20260512-0603.md",
         "提及:莉莉",
         "mention"
+      ],
+      [
+        "/sources/youtube_comments.md",
+        "提及:莉莉",
+        "mention"
       ]
     ],
     "/characters/15582.md": [
       [
+        "/community/community-weibo.md",
+        "提及:弥利亚姆",
+        "mention"
+      ],
+      [
         "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
+        "提及:弥利亚姆",
+        "mention"
+      ],
+      [
+        "/sources/weibo.md",
         "提及:弥利亚姆",
         "mention"
       ],
@@ -5290,6 +5513,11 @@
         "cv"
       ],
       [
+        "/community/community-bilibili.md",
+        "提及:奥吉尔",
+        "mention"
+      ],
+      [
         "/memory/decisions.md",
         "提及:奥吉尔",
         "mention"
@@ -5301,6 +5529,11 @@
       ],
       [
         "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
+        "提及:奥吉尔",
+        "mention"
+      ],
+      [
+        "/sources/bilibili.md",
         "提及:奥吉尔",
         "mention"
       ]
@@ -5341,7 +5574,17 @@
         "variant"
       ],
       [
+        "/community/community-bilibili.md",
+        "提及:诞妄·墨菲",
+        "mention"
+      ],
+      [
         "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
+        "提及:诞妄·墨菲",
+        "mention"
+      ],
+      [
+        "/sources/bilibili.md",
         "提及:诞妄·墨菲",
         "mention"
       ],
@@ -5385,6 +5628,18 @@
       [
         "/wiki-data/wiki-data-character-skills.md",
         "提及:达芙黛尔",
+        "mention"
+      ]
+    ],
+    "/characters/15591.md": [
+      [
+        "/community/community-bilibili.md",
+        "提及:艾继丝",
+        "mention"
+      ],
+      [
+        "/sources/bilibili.md",
+        "提及:艾继丝",
         "mention"
       ]
     ],
@@ -5436,6 +5691,16 @@
         "lore"
       ],
       [
+        "/community/community-bilibili.md",
+        "提及:拉蒙娜",
+        "mention"
+      ],
+      [
+        "/community/community-youtube-comments.md",
+        "提及:Ramona",
+        "mention"
+      ],
+      [
         "/memory/decisions.md",
         "提及:拉蒙娜",
         "mention"
@@ -5451,6 +5716,11 @@
         "mention"
       ],
       [
+        "/memory/project-status.md",
+        "提及:Ramona",
+        "mention"
+      ],
+      [
         "/memory/strategic-plan-2026.md",
         "提及:拉蒙娜",
         "mention"
@@ -5461,8 +5731,28 @@
         "mention"
       ],
       [
+        "/resource/resource-daily-news-morimens-daily-20260601.md",
+        "提及:Ramona",
+        "mention"
+      ],
+      [
+        "/resource/resource-daily-news-morimens-daily-full-20260602.md",
+        "提及:Ramona",
+        "mention"
+      ],
+      [
         "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
         "提及:拉蒙娜",
+        "mention"
+      ],
+      [
+        "/sources/bilibili.md",
+        "提及:拉蒙娜",
+        "mention"
+      ],
+      [
+        "/sources/youtube_comments.md",
+        "提及:Ramona",
         "mention"
       ],
       [
@@ -5568,7 +5858,17 @@
         "variant"
       ],
       [
+        "/memory/decisions.md",
+        "提及:熔毁·朵尔",
+        "mention"
+      ],
+      [
         "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
+        "提及:熔毁·朵尔",
+        "mention"
+      ],
+      [
+        "/memory/project-status.md",
         "提及:熔毁·朵尔",
         "mention"
       ],
@@ -5586,6 +5886,11 @@
       ],
       [
         "/assets/persona-erica-speech-canon.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/community/community-youtube-comments.md",
         "提及:艾瑞卡",
         "mention"
       ],
@@ -5945,6 +6250,11 @@
         "mention"
       ],
       [
+        "/sources/youtube_comments.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
         "/story/story_research_todo.md",
         "提及:艾瑞卡",
         "mention"
@@ -5974,6 +6284,11 @@
         "cv"
       ],
       [
+        "/community/community-youtube-comments.md",
+        "提及:塔薇",
+        "mention"
+      ],
+      [
         "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
         "提及:塔薇",
         "mention"
@@ -5989,8 +6304,25 @@
         "mention"
       ],
       [
+        "/sources/youtube_comments.md",
+        "提及:塔薇",
+        "mention"
+      ],
+      [
         "/story/story_research_notes.md",
         "提及:塔薇",
+        "mention"
+      ]
+    ],
+    "/characters/54117.md": [
+      [
+        "/community/community-bilibili.md",
+        "提及:哈姆林",
+        "mention"
+      ],
+      [
+        "/sources/bilibili.md",
+        "提及:哈姆林",
         "mention"
       ]
     ],
@@ -6054,6 +6386,16 @@
         "cv"
       ],
       [
+        "/community/community-bilibili.md",
+        "提及:阿拉克涅",
+        "mention"
+      ],
+      [
+        "/community/community-weibo.md",
+        "提及:阿拉克涅",
+        "mention"
+      ],
+      [
         "/memory/lessons-learned.md",
         "提及:阿拉克涅",
         "mention"
@@ -6084,6 +6426,16 @@
         "mention"
       ],
       [
+        "/sources/bilibili.md",
+        "提及:阿拉克涅",
+        "mention"
+      ],
+      [
+        "/sources/weibo.md",
+        "提及:阿拉克涅",
+        "mention"
+      ],
+      [
         "/story/STORY_RESEARCH.md",
         "提及:阿拉克涅",
         "mention"
@@ -6101,6 +6453,28 @@
         "/characters/15578.md",
         "CV:山田真瑠奈",
         "cv"
+      ]
+    ],
+    "/characters/77923.md": [
+      [
+        "/community/community-bilibili.md",
+        "提及:卡斯托尔",
+        "mention"
+      ],
+      [
+        "/community/community-weibo.md",
+        "提及:卡斯托尔",
+        "mention"
+      ],
+      [
+        "/sources/bilibili.md",
+        "提及:卡斯托尔",
+        "mention"
+      ],
+      [
+        "/sources/weibo.md",
+        "提及:卡斯托尔",
+        "mention"
       ]
     ],
     "/characters/77924.md": [
@@ -6122,7 +6496,17 @@
         "cv"
       ],
       [
+        "/community/community-bilibili.md",
+        "提及:克莱门汀",
+        "mention"
+      ],
+      [
         "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
+        "提及:克莱门汀",
+        "mention"
+      ],
+      [
+        "/sources/bilibili.md",
         "提及:克莱门汀",
         "mention"
       ],
@@ -6191,7 +6575,27 @@
     ],
     "/characters/94450.md": [
       [
+        "/community/community-bilibili.md",
+        "提及:茉夏",
+        "mention"
+      ],
+      [
+        "/community/community-youtube-comments.md",
+        "提及:茉夏",
+        "mention"
+      ],
+      [
         "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
+        "提及:茉夏",
+        "mention"
+      ],
+      [
+        "/sources/bilibili.md",
+        "提及:茉夏",
+        "mention"
+      ],
+      [
+        "/sources/youtube_comments.md",
         "提及:茉夏",
         "mention"
       ]
@@ -6227,6 +6631,66 @@
     ],
     "/community/community-bilibili.md": [
       [
+        "/characters/15589.md",
+        "提及:诞妄·墨菲",
+        "mention"
+      ],
+      [
+        "/characters/77918.md",
+        "提及:阿拉克涅",
+        "mention"
+      ],
+      [
+        "/characters/77923.md",
+        "提及:卡斯托尔",
+        "mention"
+      ],
+      [
+        "/characters/77925.md",
+        "提及:克莱门汀",
+        "mention"
+      ],
+      [
+        "/characters/15585.md",
+        "提及:奥吉尔",
+        "mention"
+      ],
+      [
+        "/characters/15591.md",
+        "提及:艾继丝",
+        "mention"
+      ],
+      [
+        "/characters/15595.md",
+        "提及:拉蒙娜",
+        "mention"
+      ],
+      [
+        "/characters/54117.md",
+        "提及:哈姆林",
+        "mention"
+      ],
+      [
+        "/characters/15571.md",
+        "提及:珈伦",
+        "mention"
+      ],
+      [
+        "/characters/15576.md",
+        "提及:墨菲",
+        "mention"
+      ],
+      [
+        "/characters/94450.md",
+        "提及:茉夏",
+        "mention"
+      ],
+      [
+        "/characters/130226.md",
+        "提及:沙耶",
+        "mention"
+      ],
+      [
         "/community/community-index.md",
         "聚合于",
         "cross"
@@ -6250,6 +6714,11 @@
       ]
     ],
     "/community/community-google-play.md": [
+      [
+        "/characters/130226.md",
+        "提及:Saya",
+        "mention"
+      ],
       [
         "/community/community-index.md",
         "聚合于",
@@ -6374,6 +6843,16 @@
     ],
     "/community/community-reddit.md": [
       [
+        "/characters/15560.md",
+        "提及:Pandia",
+        "mention"
+      ],
+      [
+        "/characters/130226.md",
+        "提及:Saya",
+        "mention"
+      ],
+      [
         "/community/community-index.md",
         "聚合于",
         "cross"
@@ -6409,6 +6888,11 @@
       ]
     ],
     "/community/community-steam.md": [
+      [
+        "/characters/130226.md",
+        "提及:Saya",
+        "mention"
+      ],
       [
         "/community/community-index.md",
         "聚合于",
@@ -6458,6 +6942,31 @@
     ],
     "/community/community-weibo.md": [
       [
+        "/characters/15582.md",
+        "提及:弥利亚姆",
+        "mention"
+      ],
+      [
+        "/characters/77918.md",
+        "提及:阿拉克涅",
+        "mention"
+      ],
+      [
+        "/characters/77923.md",
+        "提及:卡斯托尔",
+        "mention"
+      ],
+      [
+        "/characters/15576.md",
+        "提及:墨菲",
+        "mention"
+      ],
+      [
+        "/characters/130226.md",
+        "提及:沙耶",
+        "mention"
+      ],
+      [
         "/community/community-index.md",
         "聚合于",
         "cross"
@@ -6469,6 +6978,11 @@
       ]
     ],
     "/community/community-weixin.md": [
+      [
+        "/characters/130226.md",
+        "提及:沙耶",
+        "mention"
+      ],
       [
         "/community/community-index.md",
         "聚合于",
@@ -6482,6 +6996,41 @@
     ],
     "/community/community-youtube-comments.md": [
       [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/characters/15581.md",
+        "提及:莉莉",
+        "mention"
+      ],
+      [
+        "/characters/54116.md",
+        "提及:塔薇",
+        "mention"
+      ],
+      [
+        "/characters/94450.md",
+        "提及:茉夏",
+        "mention"
+      ],
+      [
+        "/characters/130226.md",
+        "提及:沙耶",
+        "mention"
+      ],
+      [
+        "/characters/15560.md",
+        "提及:Pandia",
+        "mention"
+      ],
+      [
+        "/characters/15595.md",
+        "提及:Ramona",
+        "mention"
+      ],
+      [
         "/community/community-index.md",
         "聚合于",
         "cross"
@@ -6493,6 +7042,11 @@
       ]
     ],
     "/community/community-youtube.md": [
+      [
+        "/characters/130226.md",
+        "提及:沙耶",
+        "mention"
+      ],
       [
         "/community/community-index.md",
         "聚合于",
@@ -6537,6 +7091,11 @@
     ],
     "/memory/decisions.md": [
       [
+        "/characters/15602.md",
+        "提及:熔毁·朵尔",
+        "mention"
+      ],
+      [
         "/characters/15585.md",
         "提及:奥吉尔",
         "mention"
@@ -6557,8 +7116,18 @@
         "mention"
       ],
       [
+        "/characters/15570.md",
+        "提及:朵尔",
+        "mention"
+      ],
+      [
         "/characters/130226.md",
         "提及:沙耶",
+        "mention"
+      ],
+      [
+        "/characters/15560.md",
+        "提及:Pandia",
         "mention"
       ]
     ],
@@ -7018,6 +7587,11 @@
     ],
     "/memory/project-status.md": [
       [
+        "/characters/15602.md",
+        "提及:熔毁·朵尔",
+        "mention"
+      ],
+      [
         "/characters/15560.md",
         "提及:潘狄娅",
         "mention"
@@ -7035,6 +7609,21 @@
       [
         "/characters/15569.md",
         "提及:萝坦",
+        "mention"
+      ],
+      [
+        "/characters/15570.md",
+        "提及:朵尔",
+        "mention"
+      ],
+      [
+        "/characters/15595.md",
+        "提及:Ramona",
+        "mention"
+      ],
+      [
+        "/characters/130226.md",
+        "提及:Saya",
         "mention"
       ]
     ],
@@ -7441,6 +8030,16 @@
         "/characters/130226.md",
         "提及:沙耶",
         "mention"
+      ],
+      [
+        "/characters/15560.md",
+        "提及:Pandia",
+        "mention"
+      ],
+      [
+        "/characters/15595.md",
+        "提及:Ramona",
+        "mention"
       ]
     ],
     "/resource/resource-daily-news-morimens-daily-20260602-r2.md": [
@@ -7489,6 +8088,16 @@
       [
         "/characters/130226.md",
         "提及:沙耶",
+        "mention"
+      ],
+      [
+        "/characters/15560.md",
+        "提及:Pandia",
+        "mention"
+      ],
+      [
+        "/characters/15595.md",
+        "提及:Ramona",
         "mention"
       ]
     ],
@@ -7582,6 +8191,13 @@
       [
         "/characters/15603.md",
         "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
+    "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md": [
+      [
+        "/characters/15560.md",
+        "提及:Pandia",
         "mention"
       ]
     ],
@@ -7721,10 +8337,22 @@
         "mention"
       ]
     ],
+    "/resource/resource-repo-engineering-repo-health-assessment-20260602.md": [
+      [
+        "/characters/15560.md",
+        "提及:Pandia",
+        "mention"
+      ]
+    ],
     "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md": [
       [
         "/characters/15572.md",
         "提及:卡茜亚",
+        "mention"
+      ],
+      [
+        "/characters/130226.md",
+        "提及:Saya",
         "mention"
       ]
     ],
@@ -7749,6 +8377,66 @@
     ],
     "/sources/bilibili.md": [
       [
+        "/characters/15589.md",
+        "提及:诞妄·墨菲",
+        "mention"
+      ],
+      [
+        "/characters/77918.md",
+        "提及:阿拉克涅",
+        "mention"
+      ],
+      [
+        "/characters/77923.md",
+        "提及:卡斯托尔",
+        "mention"
+      ],
+      [
+        "/characters/77925.md",
+        "提及:克莱门汀",
+        "mention"
+      ],
+      [
+        "/characters/15585.md",
+        "提及:奥吉尔",
+        "mention"
+      ],
+      [
+        "/characters/15591.md",
+        "提及:艾继丝",
+        "mention"
+      ],
+      [
+        "/characters/15595.md",
+        "提及:拉蒙娜",
+        "mention"
+      ],
+      [
+        "/characters/54117.md",
+        "提及:哈姆林",
+        "mention"
+      ],
+      [
+        "/characters/15571.md",
+        "提及:珈伦",
+        "mention"
+      ],
+      [
+        "/characters/15576.md",
+        "提及:墨菲",
+        "mention"
+      ],
+      [
+        "/characters/94450.md",
+        "提及:茉夏",
+        "mention"
+      ],
+      [
+        "/characters/130226.md",
+        "提及:沙耶",
+        "mention"
+      ],
+      [
         "/community/community-bilibili.md",
         "同平台",
         "cross"
@@ -7772,6 +8460,11 @@
       ]
     ],
     "/sources/google_play.md": [
+      [
+        "/characters/130226.md",
+        "提及:Saya",
+        "mention"
+      ],
       [
         "/community/community-google-play.md",
         "同平台",
@@ -7809,6 +8502,16 @@
     ],
     "/sources/reddit.md": [
       [
+        "/characters/15560.md",
+        "提及:Pandia",
+        "mention"
+      ],
+      [
+        "/characters/130226.md",
+        "提及:Saya",
+        "mention"
+      ],
+      [
         "/community/community-reddit.md",
         "同平台",
         "cross"
@@ -7832,6 +8535,11 @@
       ]
     ],
     "/sources/steam.md": [
+      [
+        "/characters/130226.md",
+        "提及:Saya",
+        "mention"
+      ],
       [
         "/community/community-steam.md",
         "同平台",
@@ -7893,6 +8601,31 @@
     ],
     "/sources/weibo.md": [
       [
+        "/characters/15582.md",
+        "提及:弥利亚姆",
+        "mention"
+      ],
+      [
+        "/characters/77918.md",
+        "提及:阿拉克涅",
+        "mention"
+      ],
+      [
+        "/characters/77923.md",
+        "提及:卡斯托尔",
+        "mention"
+      ],
+      [
+        "/characters/15576.md",
+        "提及:墨菲",
+        "mention"
+      ],
+      [
+        "/characters/130226.md",
+        "提及:沙耶",
+        "mention"
+      ],
+      [
         "/community/community-weibo.md",
         "同平台",
         "cross"
@@ -7904,6 +8637,11 @@
       ]
     ],
     "/sources/weixin.md": [
+      [
+        "/characters/130226.md",
+        "提及:沙耶",
+        "mention"
+      ],
       [
         "/community/community-weixin.md",
         "同平台",
@@ -7917,6 +8655,11 @@
     ],
     "/sources/youtube.md": [
       [
+        "/characters/130226.md",
+        "提及:沙耶",
+        "mention"
+      ],
+      [
         "/community/community-youtube.md",
         "同平台",
         "cross"
@@ -7928,6 +8671,41 @@
       ]
     ],
     "/sources/youtube_comments.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/characters/15581.md",
+        "提及:莉莉",
+        "mention"
+      ],
+      [
+        "/characters/54116.md",
+        "提及:塔薇",
+        "mention"
+      ],
+      [
+        "/characters/94450.md",
+        "提及:茉夏",
+        "mention"
+      ],
+      [
+        "/characters/130226.md",
+        "提及:沙耶",
+        "mention"
+      ],
+      [
+        "/characters/15560.md",
+        "提及:Pandia",
+        "mention"
+      ],
+      [
+        "/characters/15595.md",
+        "提及:Ramona",
+        "mention"
+      ],
       [
         "/community/community-youtube-comments.md",
         "同平台",
@@ -8300,6 +9078,7 @@
       "/unpacked/unpacked-sproto.md",
       "/unpacked/unpacked-text-cn.md",
       "/unpacked/unpacked-vue.md",
+      "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
       "/wiki-data/wiki-data-character-index.md",
@@ -8376,6 +9155,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -8525,6 +9305,12 @@
       "/projects/entry-readme.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md"
+    ],
+    "aliases": [
+      "/wiki-data/wiki-data-aliases.md"
+    ],
+    "alignment": [
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md"
     ],
     "analysis": [
       "/community/community-appstore.md",
@@ -8950,6 +9736,7 @@
       "/memory/memory-ext-research-best-wiki-features.md"
     ],
     "bootstrap": [
+      "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
       "/wiki-data/wiki-data-character-index.md",
@@ -9007,6 +9794,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -9434,6 +10222,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -9492,6 +10281,7 @@
       "/unpacked/unpacked-sproto.md",
       "/unpacked/unpacked-text-cn.md",
       "/unpacked/unpacked-vue.md",
+      "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
       "/wiki-data/wiki-data-character-index.md",
@@ -9701,6 +10491,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -9721,6 +10512,7 @@
       "/story/story_layer_readme.md",
       "/story/story_research_notes.md",
       "/story/story_research_todo.md",
+      "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
       "/wiki-data/wiki-data-character-index.md",
@@ -9989,6 +10781,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -10047,6 +10840,7 @@
       "/unpacked/unpacked-sproto.md",
       "/unpacked/unpacked-text-cn.md",
       "/unpacked/unpacked-vue.md",
+      "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
       "/wiki-data/wiki-data-character-index.md",
@@ -10138,6 +10932,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -10266,6 +11061,7 @@
     ],
     "domain": [
       "/story/story_search_index.md",
+      "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
       "/wiki-data/wiki-data-character-index.md",
@@ -10325,6 +11121,7 @@
     ],
     "engine": [
       "/projects/news-archive-sources-registry.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
     ],
     "engineering": [
@@ -10336,6 +11133,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -10828,6 +11626,7 @@
       "/unpacked/unpacked-vue.md"
     ],
     "handoff": [
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "harness": [
@@ -10967,6 +11766,7 @@
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/story/story_index.md",
       "/story/story_search_index.md",
+      "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-character-index.md"
     ],
     "inference": [
@@ -11030,6 +11830,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -11199,6 +12000,7 @@
       "/story/story_index.md",
       "/story/story_search_index.md",
       "/story/story_units.md",
+      "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
       "/wiki-data/wiki-data-character-index.md",
@@ -11466,6 +12268,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -11523,6 +12326,7 @@
       "/unpacked/unpacked-sproto.md",
       "/unpacked/unpacked-text-cn.md",
       "/unpacked/unpacked-vue.md",
+      "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
       "/wiki-data/wiki-data-character-index.md",
@@ -11929,6 +12733,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -12270,6 +13075,9 @@
     "overview": [
       "/README.md"
     ],
+    "pandia": [
+      "/characters/15560.md"
+    ],
     "panel": [
       "/wiki-data/wiki-data-panel-text.md"
     ],
@@ -12541,6 +13349,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -12605,7 +13414,8 @@
     ],
     "pr": [
       "/memory/memory-ext-active-contribution-protocol.md",
-      "/memory/memory-ext-active-policy-direct-push-main.md"
+      "/memory/memory-ext-active-policy-direct-push-main.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md"
     ],
     "predictability": [
       "/memory/memory-ext-skill-authoring-standard.md"
@@ -12637,6 +13447,7 @@
       "/story/story_research_todo.md",
       "/story/story_search_index.md",
       "/story/story_units.md",
+      "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
       "/wiki-data/wiki-data-character-index.md",
@@ -12756,6 +13567,7 @@
       "/story/story_research_todo.md",
       "/story/story_search_index.md",
       "/story/story_units.md",
+      "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
       "/wiki-data/wiki-data-character-index.md",
@@ -12868,6 +13680,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -12956,6 +13769,9 @@
     ],
     "r3": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md"
+    ],
+    "ramona": [
+      "/characters/15595.md"
     ],
     "rate": [
       "/assets/assets-chat-onboarding-snippet.md"
@@ -13120,6 +13936,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -13196,6 +14013,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -13315,6 +14133,7 @@
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md"
     ],
     "saya": [
+      "/characters/130226.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
@@ -13368,6 +14187,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -13938,6 +14758,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -14050,6 +14871,7 @@
       "/unpacked/unpacked-sproto.md",
       "/unpacked/unpacked-text-cn.md",
       "/unpacked/unpacked-vue.md",
+      "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
       "/wiki-data/wiki-data-character-index.md",
@@ -14272,6 +15094,7 @@
       "/story/story_research_todo.md",
       "/story/story_search_index.md",
       "/story/story_units.md",
+      "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
       "/wiki-data/wiki-data-character-index.md",
@@ -14732,6 +15555,9 @@
     "不回": [
       "/README.md"
     ],
+    "不在": [
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md"
+    ],
     "不复": [
       "/README.md",
       "/assets/assets-archive-integrity.md",
@@ -14895,6 +15721,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -14925,6 +15752,7 @@
       "/unpacked/unpacked-sproto.md",
       "/unpacked/unpacked-text-cn.md",
       "/unpacked/unpacked-vue.md",
+      "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
       "/wiki-data/wiki-data-character-index.md",
@@ -15123,6 +15951,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -15181,6 +16010,7 @@
       "/unpacked/unpacked-sproto.md",
       "/unpacked/unpacked-text-cn.md",
       "/unpacked/unpacked-vue.md",
+      "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
       "/wiki-data/wiki-data-character-index.md",
@@ -15391,6 +16221,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -15438,6 +16269,7 @@
       "/unpacked/unpacked-sproto.md",
       "/unpacked/unpacked-text-cn.md",
       "/unpacked/unpacked-vue.md",
+      "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
       "/wiki-data/wiki-data-character-index.md",
@@ -16470,6 +17302,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -16517,6 +17350,7 @@
       "/unpacked/unpacked-sproto.md",
       "/unpacked/unpacked-text-cn.md",
       "/unpacked/unpacked-vue.md",
+      "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
       "/wiki-data/wiki-data-character-index.md",
@@ -17349,6 +18183,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -17379,6 +18214,7 @@
       "/unpacked/unpacked-sproto.md",
       "/unpacked/unpacked-text-cn.md",
       "/unpacked/unpacked-vue.md",
+      "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
       "/wiki-data/wiki-data-character-index.md",
@@ -17578,6 +18414,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -17619,6 +18456,7 @@
       "/unpacked/unpacked-sproto.md",
       "/unpacked/unpacked-text-cn.md",
       "/unpacked/unpacked-vue.md",
+      "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
       "/wiki-data/wiki-data-character-index.md",
@@ -19057,6 +19895,13 @@
     "利而": [
       "/characters/15592.md"
     ],
+    "别名": [
+      "/characters/130226.md",
+      "/characters/15560.md",
+      "/characters/15577.md",
+      "/characters/15595.md",
+      "/characters/15602.md"
+    ],
     "别无": [
       "/characters/77922.md"
     ],
@@ -19287,6 +20132,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -19317,6 +20163,7 @@
       "/unpacked/unpacked-sproto.md",
       "/unpacked/unpacked-text-cn.md",
       "/unpacked/unpacked-vue.md",
+      "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
       "/wiki-data/wiki-data-character-index.md",
@@ -19703,6 +20550,13 @@
     ],
     "区分": [
       "/memory/memory-research-community-analysis-2026-05-18-26.md"
+    ],
+    "区别": [
+      "/characters/130226.md",
+      "/characters/15560.md",
+      "/characters/15577.md",
+      "/characters/15595.md",
+      "/characters/15602.md"
     ],
     "区原": [
       "/memory/memory-ext-biav-info-classification.md"
@@ -21670,7 +22524,8 @@
       "/characters/54116.md"
     ],
     "在此": [
-      "/characters/94450.md"
+      "/characters/94450.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md"
     ],
     "在浏": [
       "/README.md"
@@ -22242,6 +23097,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -22272,6 +23128,7 @@
       "/unpacked/unpacked-sproto.md",
       "/unpacked/unpacked-text-cn.md",
       "/unpacked/unpacked-vue.md",
+      "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
       "/wiki-data/wiki-data-character-index.md",
@@ -22975,6 +23832,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -23005,6 +23863,7 @@
       "/unpacked/unpacked-sproto.md",
       "/unpacked/unpacked-text-cn.md",
       "/unpacked/unpacked-vue.md",
+      "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
       "/wiki-data/wiki-data-character-index.md",
@@ -23541,6 +24400,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -23599,6 +24459,7 @@
       "/unpacked/unpacked-sproto.md",
       "/unpacked/unpacked-text-cn.md",
       "/unpacked/unpacked-vue.md",
+      "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
       "/wiki-data/wiki-data-character-index.md",
@@ -27089,6 +27950,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -27147,6 +28009,7 @@
       "/unpacked/unpacked-sproto.md",
       "/unpacked/unpacked-text-cn.md",
       "/unpacked/unpacked-vue.md",
+      "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
       "/wiki-data/wiki-data-character-index.md",
@@ -27360,6 +28223,9 @@
     "据量": [
       "/memory/memory-ext-discord-archiver-design.md"
     ],
+    "据集": [
+      "/wiki-data/wiki-data-aliases.md"
+    ],
     "掀起": [
       "/characters/15569.md"
     ],
@@ -27568,6 +28434,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -27615,6 +28482,7 @@
       "/unpacked/unpacked-sproto.md",
       "/unpacked/unpacked-text-cn.md",
       "/unpacked/unpacked-vue.md",
+      "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
       "/wiki-data/wiki-data-character-index.md",
@@ -27862,6 +28730,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -27898,6 +28767,7 @@
       "/unpacked/unpacked-sproto.md",
       "/unpacked/unpacked-text-cn.md",
       "/unpacked/unpacked-vue.md",
+      "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
       "/wiki-data/wiki-data-character-index.md",
@@ -28211,6 +29081,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -28269,6 +29140,7 @@
       "/unpacked/unpacked-sproto.md",
       "/unpacked/unpacked-text-cn.md",
       "/unpacked/unpacked-vue.md",
+      "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
       "/wiki-data/wiki-data-character-index.md",
@@ -28462,6 +29334,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -28520,6 +29393,7 @@
       "/unpacked/unpacked-sproto.md",
       "/unpacked/unpacked-text-cn.md",
       "/unpacked/unpacked-vue.md",
+      "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
       "/wiki-data/wiki-data-character-index.md",
@@ -28712,6 +29586,7 @@
       "/sources/youtube_comments.md",
       "/story/story_layer_readme.md",
       "/unpacked/unpacked-game-data-all.md",
+      "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-schema-banners-schema.md",
       "/wiki-data/wiki-schema-characters-processed-schema.md",
       "/wiki-data/wiki-schema-characters-schema.md",
@@ -29810,6 +30685,10 @@
       "/characters/15603.md",
       "/characters/54116.md"
     ],
+    "未确": [
+      "/characters/15560.md",
+      "/characters/15577.md"
+    ],
     "未设": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
@@ -29995,6 +30874,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -30053,6 +30933,7 @@
       "/unpacked/unpacked-sproto.md",
       "/unpacked/unpacked-text-cn.md",
       "/unpacked/unpacked-vue.md",
+      "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
       "/wiki-data/wiki-data-character-index.md",
@@ -30371,6 +31252,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -30401,6 +31283,7 @@
       "/unpacked/unpacked-sproto.md",
       "/unpacked/unpacked-text-cn.md",
       "/unpacked/unpacked-vue.md",
+      "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
       "/wiki-data/wiki-data-character-index.md",
@@ -30897,6 +31780,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -30928,6 +31812,7 @@
       "/unpacked/unpacked-sproto.md",
       "/unpacked/unpacked-text-cn.md",
       "/unpacked/unpacked-vue.md",
+      "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
       "/wiki-data/wiki-data-character-index.md",
@@ -31073,6 +31958,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -31511,6 +32397,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -31541,6 +32428,7 @@
       "/unpacked/unpacked-sproto.md",
       "/unpacked/unpacked-text-cn.md",
       "/unpacked/unpacked-vue.md",
+      "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
       "/wiki-data/wiki-data-character-index.md",
@@ -31847,6 +32735,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -31878,6 +32767,7 @@
       "/unpacked/unpacked-sproto.md",
       "/unpacked/unpacked-text-cn.md",
       "/unpacked/unpacked-vue.md",
+      "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
       "/wiki-data/wiki-data-character-index.md",
@@ -31936,6 +32826,9 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md"
+    ],
+    "此单": [
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md"
     ],
     "此线": [
       "/README.md"
@@ -32616,6 +33509,9 @@
     "潘狄娅": [
       "/characters/15560.md"
     ],
+    "潘迪": [
+      "/characters/15560.md"
+    ],
     "潜力": [
       "/characters/15563.md",
       "/characters/77922.md"
@@ -32786,6 +33682,9 @@
     ],
     "照聚": [
       "/news-output/news-output-all.md"
+    ],
+    "熔朵": [
+      "/characters/15602.md"
     ],
     "熔毁": [
       "/characters/15602.md"
@@ -35025,6 +35924,8 @@
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
     ],
     "确认": [
+      "/characters/15560.md",
+      "/characters/15577.md",
       "/memory/memory-ext-collab-event-playbook.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md"
     ],
@@ -35100,6 +36001,11 @@
     ],
     "社区": [
       "/assets/assets-chat-onboarding-snippet.md",
+      "/characters/130226.md",
+      "/characters/15560.md",
+      "/characters/15577.md",
+      "/characters/15595.md",
+      "/characters/15602.md",
       "/community/community-appstore.md",
       "/community/community-bilibili.md",
       "/community/community-discord.md",
@@ -36841,6 +37747,9 @@
     "英三": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md"
     ],
+    "英特": [
+      "/characters/15577.md"
+    ],
     "英翻": [
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
     ],
@@ -36897,6 +37806,9 @@
     ],
     "菜菜": [
       "/characters/130901.md"
+    ],
+    "菲英": [
+      "/characters/15577.md"
     ],
     "菲茵特": [
       "/characters/15577.md"
@@ -36986,6 +37898,9 @@
     ],
     "融合": [
       "/characters/15600.md"
+    ],
+    "融朵": [
+      "/characters/15602.md"
     ],
     "螺壳": [
       "/characters/15565.md"
@@ -38312,6 +39227,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -38353,6 +39269,7 @@
       "/unpacked/unpacked-sproto.md",
       "/unpacked/unpacked-text-cn.md",
       "/unpacked/unpacked-vue.md",
+      "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
       "/wiki-data/wiki-data-character-index.md",
@@ -38807,6 +39724,9 @@
     "迟抽": [
       "/characters/15579.md"
     ],
+    "迪娅": [
+      "/characters/15560.md"
+    ],
     "述与": [
       "/assets/assets-archive-integrity.md",
       "/assets/assets-card-system.md",
@@ -38922,6 +39842,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -38969,6 +39890,7 @@
       "/unpacked/unpacked-sproto.md",
       "/unpacked/unpacked-text-cn.md",
       "/unpacked/unpacked-vue.md",
+      "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
       "/wiki-data/wiki-data-character-index.md",
@@ -39856,6 +40778,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -39914,6 +40837,7 @@
       "/unpacked/unpacked-sproto.md",
       "/unpacked/unpacked-text-cn.md",
       "/unpacked/unpacked-vue.md",
+      "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
       "/wiki-data/wiki-data-character-index.md",
@@ -40079,6 +41003,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -40109,6 +41034,7 @@
       "/unpacked/unpacked-sproto.md",
       "/unpacked/unpacked-text-cn.md",
       "/unpacked/unpacked-vue.md",
+      "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
       "/wiki-data/wiki-data-character-index.md",
@@ -41147,6 +42073,12 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md"
     ],
+    "aliases": [
+      "/wiki-data/wiki-data-aliases.md"
+    ],
+    "alignment": [
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md"
+    ],
     "analysis": [
       "/community/community-appstore.md",
       "/community/community-bilibili.md",
@@ -41357,6 +42289,7 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-silver-blackpool-interface.md"
     ],
     "bootstrap": [
+      "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
       "/wiki-data/wiki-data-character-index.md",
@@ -41406,6 +42339,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
@@ -41684,6 +42618,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -41704,6 +42639,7 @@
       "/story/story_layer_readme.md",
       "/story/story_research_notes.md",
       "/story/story_research_todo.md",
+      "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
       "/wiki-data/wiki-data-character-index.md",
@@ -41965,6 +42901,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -42022,6 +42959,7 @@
       "/unpacked/unpacked-sproto.md",
       "/unpacked/unpacked-text-cn.md",
       "/unpacked/unpacked-vue.md",
+      "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
       "/wiki-data/wiki-data-character-index.md",
@@ -42105,6 +43043,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -42195,6 +43134,7 @@
       "/story/story_layer_readme.md"
     ],
     "domain": [
+      "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
       "/wiki-data/wiki-data-character-index.md",
@@ -42244,6 +43184,7 @@
       "/unpacked/unpacked-vue.md"
     ],
     "engine": [
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
     ],
     "engineering": [
@@ -42255,6 +43196,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -42487,6 +43429,7 @@
       "/unpacked/unpacked-vue.md"
     ],
     "handoff": [
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "health": [
@@ -42523,6 +43466,7 @@
       "/memory/capability-index.md",
       "/story/story_index.md",
       "/story/story_search_index.md",
+      "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-character-index.md"
     ],
     "inference": [
@@ -42747,6 +43691,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -42804,6 +43749,7 @@
       "/unpacked/unpacked-sproto.md",
       "/unpacked/unpacked-text-cn.md",
       "/unpacked/unpacked-vue.md",
+      "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
       "/wiki-data/wiki-data-character-index.md",
@@ -43414,6 +44360,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -43541,6 +44488,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
@@ -43765,6 +44713,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
@@ -43827,6 +44776,7 @@
       "/unpacked/unpacked-vue.md"
     ],
     "unpacked": [
+      "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
       "/wiki-data/wiki-data-character-index.md",

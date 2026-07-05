@@ -51,6 +51,6 @@ def test_import_error_fallback_lists_tools(capsys, monkeypatch):
     assert names == {"character_persona", "record_decision",
                      "record_lesson", "current_continuity",
                      "kb_search", "kb_get", "kb_neighbors", "kb_overview",
-                     "kb_activate"}
+                     "kb_activate", "kb_vector_search", "kb_anchor"}
     # The fallback advisory lines go to stderr.
     assert "mcp package not installed" in out.err

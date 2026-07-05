@@ -35,6 +35,7 @@ sys.path.insert(0, str(REPO / "projects" / "news" / "scripts"))
 import archive_layout  # noqa: E402  归档布局单一真相源（source 指针落点推导）
 import build_kb_index  # noqa: E402  运行时导航索引生成器（消费本 bundle，跑在末尾）
 import okf_pointer_layers as opl  # noqa: E402  全仓知识组织：新增指针概念层（放指针不放本体）
+import silver_aliases  # noqa: E402  厚锚别名侧表（chunk3；缺表优雅返空，构建不炸）
 
 CHARACTERS_SRC = REPO / "projects/wiki/data/processed/characters.json"
 SOURCE_HEALTH = REPO / "projects/news/output/source-health.json"
@@ -141,6 +142,12 @@ def build_characters() -> int:
             ("特性", characteristic),
             ("分类", c.get("category")),
             ("人工裁定", c.get("confirmed_by")),
+            # 厚锚别名（侧表 aliases.json，chunk3）：已确认照列；未确认显式标注压权重
+            # （不进 domain_dict / mention 边，仅浮出供检索与人工否决）。
+            ("社区别名", "、".join(
+                a["alias"] + ("" if a["confirmed"] else "（未确认）")
+                for a in silver_aliases.aliases_for(cid, include_unconfirmed=True)
+            ) or None),
         ]
         body = ["# 基础档案", "", "| 字段 | 值 |", "|------|------|"]
         for k, v in rows:
@@ -783,27 +790,75 @@ def build_graph() -> dict:
             add_edge(rep, cnode(m), f"CV:{cv}", "cv")
 
     # 提及边（Pillar A+，2026-07-04）：从策展正文里确定性抽「谁点名了谁」，把孤岛连进骨架。
-    # 白盒办法做联想（区别于向量黑盒）：概念指向的**策展正文源**若字面点名某角色（distinctive
-    # CJK 专名，≥2 字，最长优先），即建一条带类型 mention 边。只扫小的策展文本，绝不碰归档本体。
+    # 白盒办法做联想（区别于向量黑盒）：概念指向的正文源若字面点名某角色（distinctive
+    # CJK 专名，≥2 字，最长优先），即建一条带类型 mention 边。
+    # 3-甲（守密人 2026-07-05 裁定）：mention 边**不刻意排除社区档案**——原白名单把
+    # Public-Info-Pool/Record/Community/ 挡在外，真实黑话进不了别名边。现允许社区归档
+    # 作扫描源：文件指针直读（text 后缀），目录指针做**有界确定性抽样**（文件名字典序
+    # 取最新 ≤3 个 text 文件、单文件 ≤500KB——只为让高频黑话可见，绝不全量扫归档本体）。
     # 每条边可解释可单测；只连「真被点名」的，天然防噪声星。
     _CURATED = ("memory/", "public-info-pool/resource/", "assets/",
                 "projects/wiki/data/processed/story/", "projects/", "docs/",
                 "claude.md", "readme.md", "releases.md")
+    _COMMUNITY_REC = "public-info-pool/record/community/"
+    _TEXT_SUFFIX = (".md", ".json", ".jsonl")
+    _SCAN_SIZE_CAP = 500_000
+    _ARCHIVE_SAMPLE_CAP = 3
+
+    def _sample_archive_files(d: Path) -> list[Path]:
+        files = [p for p in d.rglob("*")
+                 if p.suffix in _TEXT_SUFFIX and p.is_file()]
+        files.sort(key=lambda p: (p.name, str(p)))  # 文件名多为日期 → 尾部=最新
+        return files[-_ARCHIVE_SAMPLE_CAP:]
+
+    def _mention_texts(res: str) -> list[str]:
+        """概念 resource 指针 → 可扫正文块（有界；读不了就返空，绝不炸构建）。"""
+        low = res.lower()
+        src = REPO / res
+        out: list[str] = []
+        try:
+            if low.startswith(_COMMUNITY_REC):
+                if src.is_dir():
+                    for p in _sample_archive_files(src):
+                        if p.stat().st_size <= _SCAN_SIZE_CAP:
+                            out.append(p.read_text(encoding="utf-8"))
+                elif (src.suffix in _TEXT_SUFFIX and src.exists()
+                      and src.stat().st_size <= _SCAN_SIZE_CAP):
+                    out.append(src.read_text(encoding="utf-8"))
+            elif low.endswith(".md") and any(low.startswith(p) for p in _CURATED):
+                if src.exists() and src.stat().st_size <= _SCAN_SIZE_CAP:
+                    out.append(src.read_text(encoding="utf-8"))
+        except OSError:
+            pass
+        return out
+
     names_by_len = sorted((n for n in by_name if len(n) >= 2), key=len, reverse=True)
+    # 别名提及边（chunk3 厚锚）：只用侧表**已确认**别名（未确认压权重、不进图）。
+    # 拉丁别名按整词边界匹配（防 'Saya' 撞 'Sayaka' 之类子串误连）；CJK 别名照
+    # 专名子串匹配。这就是「从只写别名的文档跳到角色概念」的关系腿（裁定 3-乙）。
+    known_ids = {str(c["id"]) for c in cdata}
+    alias_matchers: list[tuple[str, str, re.Pattern | None]] = []
+    for alias, target in sorted(silver_aliases.alias_map(confirmed_only=True).items()):
+        if target not in known_ids:
+            continue
+        if re.fullmatch(r"[A-Za-z0-9 .'\-]+", alias):
+            pat = re.compile(
+                rf"(?<![A-Za-z0-9]){re.escape(alias)}(?![A-Za-z0-9])", re.IGNORECASE)
+            alias_matchers.append((alias, target, pat))
+        else:
+            alias_matchers.append((alias, target, None))
+
     for n in nodes:
         nid = n["id"]
         if nid.startswith("/characters/"):
             continue  # 角色源已由 variant/lore 连；不扫角色互提及
         res = (resources.get(nid, "") or "").lstrip("/")
-        if not res.endswith(".md") or not any(res.lower().startswith(p) for p in _CURATED):
+        if not res:
             continue
-        src = REPO / res
-        try:
-            if not src.exists() or src.stat().st_size > 500_000:
-                continue
-            text = src.read_text(encoding="utf-8")
-        except OSError:
+        texts = _mention_texts(res)
+        if not texts:
             continue
+        text = "\n".join(texts)
         hit = 0
         for name in names_by_len:
             if name in text:
@@ -811,6 +866,12 @@ def build_graph() -> dict:
                 hit += 1
                 if hit >= 12:  # 单概念提及边封顶，防超大文档连成星
                     break
+        for alias, target, pat in alias_matchers:
+            if hit >= 12:
+                break
+            if pat.search(text) if pat else (alias in text):
+                add_edge(nid, cnode(target), f"提及:{alias}", "mention")
+                hit += 1
 
     # 模式化跨层关系边（全仓知识组织 2026-07-04）：让新增指针层可被 kb_neighbors 顺图导航，
     # 不沦为孤立节点。确定性 join，经 add_edge（#393 typed-edge + pair_seen 去重），rel_type=cross。

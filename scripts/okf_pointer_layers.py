@@ -284,6 +284,7 @@ _WIKI_DOMAIN = {
     "cg_gallery": "gameplay", "feature_unlock": "gameplay", "tasks": "gameplay",
     "banners_by_character": "gameplay", "drops_by_item": "gameplay",
     "character_index": "index",
+    "aliases": "index",  # 厚锚别名侧表（chunk3）：角色索引的 sibling 扩展
     "language_config": "localization", "panel_text": "localization",
     "update_notices": "localization",
 }

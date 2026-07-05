@@ -84,6 +84,15 @@ def domain_dict() -> tuple[frozenset[str], int]:
         for t in acc:
             add(t)
 
+    # 2.5) 厚锚别名侧表（守密人 2026-07-05 chunk3）：只吸收 **confirmed 且纯 CJK**
+    # 别名（FMM 整词只对 CJK 有意义；未确认压权重、不进词典）。侧表缺失优雅跳过。
+    try:
+        from silver_aliases import confirmed_cjk_aliases
+        for a in confirmed_cjk_aliases():
+            add(a)
+    except Exception:
+        pass
+
     # 3) 剧情单元名 / 简称
     uf = REPO / "projects/wiki/data/processed/story/story_units.json"
     if uf.exists():

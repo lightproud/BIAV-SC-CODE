@@ -1,9 +1,10 @@
-# wiki 结构化数据集（解包自举） (26)
+# wiki 结构化数据集（解包自举） (27)
 
 projects/wiki/data/processed/ 下非角色结构化数据集与 schema 契约的指针（角色本体见 characters/）。
 
 ## 概念
 
+* [aliases](/wiki-data/wiki-data-aliases.md) - aliases 数据集
 * [banners_by_character](/wiki-data/wiki-data-banners-by-character.md) - 生成 2026-04-26T15:18:18+00:00
 * [cg_gallery](/wiki-data/wiki-data-cg-gallery.md) - art_assets/manifest.json (UnityPy extraction) · total_cg=404 · 生成 2026-04-12
 * [character_index](/wiki-data/wiki-data-character-index.md) - 生成 2026-06-17
