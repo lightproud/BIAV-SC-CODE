@@ -136,22 +136,15 @@ export const L5_KNOWN_DIFFERENCES = {
       '54/54 official traces carry thinking_tokens events; our claude_code preset ' +
       'sends no thinking block. Costs us pre-answer computation on chat-03 (reverse ' +
       'alphabetical) and diligence probability on code-01 (even-length median). ' +
-      'Alignment candidates: engine Fix-1 (preset default-on thinking) and/or ' +
-      'harness Fix-2 (explicit equal maxThinkingTokens on both arms).',
+      'RESOLVED by engine E1 (2026-07-05): the claude_code preset now defaults ' +
+      'thinking ON (4096 budget, our chosen value). Kept until the next real L5 ' +
+      'round confirms the fail points flip; harness Fix-2 (explicit equal ' +
+      'maxThinkingTokens on both arms) remains available for variable isolation.',
   },
-  'KD-L5-04': {
-    arm: 'both',
-    title: 'per-result cumulative semantics diverge between engines on streamed multi-turn input',
-    note:
-      'Both engines emit one result per streamed user turn, but the official arm ' +
-      'reports num_turns and usage PER RESULT with total_cost_usd/duration_api_ms ' +
-      'session-cumulative (verified from run 28736460533 longconv traces: ' +
-      'num_turns 1,1,2; costs strictly increasing with exact per-run deltas), while ' +
-      'our SDK rewrites EVERY field session-cumulative on every result except ' +
-      'duration_api_ms which stays per-run (query.ts finding #33 rewriteResult). ' +
-      'run-l5 aggregates per-arm accordingly. Engine alignment candidate: match ' +
-      'the official per-result semantics on the drop-in surface.',
-  },
+  // KD-L5-04 RETIRED (2026-07-05, E2): the SDK now reports the official
+  // per-result semantics (num_turns/usage per result, total_cost_usd and
+  // duration_api_ms session-cumulative), so the per-arm aggregation split in
+  // run-l5 collapsed to a single rule. Id kept out of circulation.
 };
 
 export const L5_TASKS = [

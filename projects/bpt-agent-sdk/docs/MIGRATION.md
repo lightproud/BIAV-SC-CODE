@@ -102,6 +102,13 @@ gap is structural, not a backlog):
    `maxThinkingTokens: 0` or `thinking: { type: 'disabled' }`. Expect
    slightly higher per-turn cost and thinking deltas in the stream. Non-preset
    paths are unchanged.
+5e. **`result` reporting semantics changed on streamed multi-turn input**
+   (E2, v0.6, BREAKING for metric consumers): each result's `num_turns` and
+   `usage` are now that turn's OWN figures (official semantics), no longer
+   session-cumulative; `total_cost_usd` and `duration_api_ms` are
+   session-cumulative. A consumer that read the last result's `num_turns` or
+   `usage` as session totals must now SUM across results (cost needs no
+   change). Session-wide `maxTurns`/`maxBudgetUsd` enforcement is untouched.
 6. **Sessions** live in this SDK's own JSONL store (or your `sessionStore`
    backend); official CLI session files are not readable.
 7. **`sse` MCP transport** (legacy) is unsupported; stdio / http / sdk are.

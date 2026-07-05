@@ -1038,7 +1038,7 @@ describe('query() e2e - confirmed-finding regressions', () => {
     expect(fetchStub.requests[1]!.body.model).toBe('claude-opus-4-8');
   });
 
-  it('accumulates usage/cost/turns session-wide across streaming turns (#33)', async () => {
+  it('reports per-result num_turns/usage with cumulative cost/apiMs across streaming turns (E2, KD-L5-04)', async () => {
     const fetchStub = stubFetch(
       makeSSEFetch([
         textReplyEvents('r1', { model: 'claude-opus-4-8' }),
@@ -1053,16 +1053,25 @@ describe('query() e2e - confirmed-finding regressions', () => {
     const results = resultsOf(await collect(q));
 
     expect(results).toHaveLength(2);
-    // First result = turn-1 totals; second = cumulative (turn1 + turn2).
+    // Official reporting semantics (pinned live, run 28736460533): num_turns
+    // and usage are PER-RESULT (this turn's own figures), total_cost_usd and
+    // duration_api_ms are SESSION-cumulative (strictly increasing). Internal
+    // maxTurns/maxBudgetUsd enforcement stays session-wide (#33 unchanged -
+    // see the enforcement tests below).
     expect(results[0]!.num_turns).toBe(1);
-    expect(results[1]!.num_turns).toBe(2);
+    expect(results[1]!.num_turns).toBe(1);
+    expect(results[1]!.usage.input_tokens).toBe(results[0]!.usage.input_tokens);
     expect(results[1]!.total_cost_usd).toBeCloseTo(
       results[0]!.total_cost_usd * 2,
       9,
     );
-    expect(results[1]!.usage.input_tokens).toBe(
-      results[0]!.usage.input_tokens * 2,
+    expect(results[1]!.duration_api_ms).toBeGreaterThanOrEqual(
+      results[0]!.duration_api_ms,
     );
+    // modelUsage stays session-cumulative (official semantics unobserved).
+    expect(
+      results[1]!.modelUsage['claude-opus-4-8']!.inputTokens,
+    ).toBe(results[0]!.modelUsage['claude-opus-4-8']!.inputTokens * 2);
     expect(fetchStub.requests).toHaveLength(2);
   });
 

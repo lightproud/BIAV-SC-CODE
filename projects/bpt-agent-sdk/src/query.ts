@@ -931,19 +931,28 @@ export function query(args: {
 
     // Session-wide accumulators (finding #33). In streaming-input mode the
     // engine loop runs once per user turn with its own fresh per-turn counters;
-    // these carry the running totals across turns so maxBudgetUsd / maxTurns are
-    // enforced session-wide and every result message reports cumulative figures.
+    // these carry the running totals across turns so maxBudgetUsd / maxTurns
+    // are enforced SESSION-wide. Reporting follows the official per-result
+    // semantics (E2, KD-L5-04 pinned live from run 28736460533): num_turns and
+    // usage on each result are THAT turn's own figures, while total_cost_usd
+    // and duration_api_ms report the session-cumulative (strictly increasing)
+    // totals - enforcement stays cumulative, only the report fields differ.
     let sessionTurns = 0;
     let sessionCost = 0;
+    let sessionApiMs = 0;
     let sessionUsage = zeroUsage();
     const sessionModelUsage: Record<string, ModelUsage> = {};
 
+    // Common fields for QUERY-LAYER synthetic results (hook-block, pre-turn
+    // session-cap stop, interrupt): no engine turn ran for THIS result, so the
+    // per-result fields are zero (E2) and the cumulative fields report the
+    // session totals. The official shape for these paths is unobserved.
     const resultCommon = () => ({
       duration_ms: Date.now() - startedAt,
-      duration_api_ms: 0,
-      num_turns: sessionTurns,
+      duration_api_ms: sessionApiMs,
+      num_turns: 0,
       total_cost_usd: sessionCost,
-      usage: { ...sessionUsage },
+      usage: zeroUsage(),
       modelUsage: Object.fromEntries(
         Object.entries(sessionModelUsage).map(([k, v]) => [k, { ...v }]),
       ),
@@ -976,6 +985,7 @@ export function query(args: {
     const accumulateResult = (r: SDKResultMessage): void => {
       sessionTurns += r.num_turns;
       sessionCost += r.total_cost_usd;
+      sessionApiMs += r.duration_api_ms;
       sessionUsage = addUsageLocal(sessionUsage, r.usage);
       for (const [modelId, mu] of Object.entries(r.modelUsage)) {
         const prev = sessionModelUsage[modelId];
@@ -1033,12 +1043,20 @@ export function query(args: {
       for (const m of drainObservability()) yield m;
     };
 
-    /** Rewrite an engine-turn result to report session-cumulative totals. */
+    /**
+     * Rewrite an engine-turn result to the OFFICIAL reporting semantics (E2,
+     * KD-L5-04): num_turns and usage pass through as THIS turn's own figures
+     * (the engine already reports per-run values); total_cost_usd and
+     * duration_api_ms are rewritten to the session-cumulative totals (the
+     * accumulators were just updated with this result, so the cumulative
+     * value includes it - deltas between consecutive results recover the
+     * per-turn figures). modelUsage stays session-cumulative: the official
+     * per-result semantics for it are unobserved (COMPAT notes our choice).
+     */
     const rewriteResult = (r: SDKResultMessage): SDKResultMessage => ({
       ...r,
-      num_turns: sessionTurns,
       total_cost_usd: sessionCost,
-      usage: { ...sessionUsage },
+      duration_api_ms: sessionApiMs,
       modelUsage: Object.fromEntries(
         Object.entries(sessionModelUsage).map(([k, v]) => [k, { ...v }]),
       ),
