@@ -71,11 +71,47 @@ const SUMMARY_USER_PROMPT =
   'Please summarize our conversation so far, preserving key decisions, facts, ' +
   'file paths, tool results, and open tasks.';
 
-const SUMMARIZER_SYSTEM =
-  'You are a conversation summarizer. Produce a concise but complete ' +
-  'third-person summary of the conversation, preserving the goals, decisions, ' +
-  'facts, file paths, meaningful tool results, and any unfinished tasks. Do ' +
-  'not add new information or speculate.';
+/**
+ * Summarizer system prompt — a faithful OPEN reproduction of the official
+ * context-compaction summary prompt (archive slug
+ * system-prompt-context-compaction-summary under
+ * Public-Info-Pool/Reference/Claude-Code-System-Prompts/): the structured
+ * 5-section continuation summary. Reproduced verbatim; the only adaptation is
+ * that the `<summary></summary>` wrapper the official asks for is stripped by
+ * the consumer (foldViaApi) since this SDK folds the raw summary text. Its
+ * provenance is SUMMARIZER_SYSTEM_PROVENANCE and a corpus-sync guard
+ * (tests/compaction.test.ts) holds it to the archive.
+ */
+export const SUMMARIZER_SYSTEM = [
+  'You have been working on the task described above but have not yet completed it. Write a continuation summary that will allow you (or another instance of yourself) to resume work efficiently in a future context window where the conversation history will be replaced with this summary. Your summary should be structured, concise, and actionable. Include:',
+  '1. Task Overview',
+  "The user's core request and success criteria",
+  'Any clarifications or constraints they specified',
+  '2. Current State',
+  'What has been completed so far',
+  'Files created, modified, or analyzed (with paths if relevant)',
+  'Key outputs or artifacts produced',
+  '3. Important Discoveries',
+  'Technical constraints or requirements uncovered',
+  'Decisions made and their rationale',
+  'Errors encountered and how they were resolved',
+  "What approaches were tried that didn't work (and why)",
+  '4. Next Steps',
+  'Specific actions needed to complete the task',
+  'Any blockers or open questions to resolve',
+  'Priority order if multiple steps remain',
+  '5. Context to Preserve',
+  'User preferences or style requirements',
+  "Domain-specific details that aren't obvious",
+  'Any promises made to the user',
+  'Be concise but complete—err on the side of including information that would prevent duplicate work or repeated mistakes. Write in a way that enables immediate resumption of the task.',
+].join('\n');
+
+/** Provenance for the compaction summarizer surface (Track B). */
+export const SUMMARIZER_SYSTEM_PROVENANCE = {
+  slug: 'system-prompt-context-compaction-summary',
+  faithful: true,
+} as const;
 
 // ---------------------------------------------------------------------------
 // Config
@@ -271,6 +307,9 @@ async function foldViaApi(
       .filter((b): b is { type: 'text'; text: string; citations?: unknown[] | null } => b.type === 'text')
       .map((b) => b.text)
       .join('')
+      // Strip any <summary></summary> wrapper (the official prompt requests one;
+      // this SDK folds the raw summary text, so the tags are removed defensively).
+      .replace(/<\/?summary>/gi, '')
       .trim();
     const text = summaryText.length > 0 ? summaryText : buildRecap(prefix);
     return [

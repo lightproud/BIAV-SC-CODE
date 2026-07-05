@@ -24,7 +24,12 @@ import {
   partitionForCompaction,
   runManualCompact,
   shouldAutoCompact,
+  SUMMARIZER_SYSTEM,
+  SUMMARIZER_SYSTEM_PROVENANCE,
 } from '../src/engine/compaction.js';
+import { existsSync, readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { dirname, join } from 'node:path';
 import type {
   CompactionConfig,
   EngineConfig,
@@ -739,5 +744,42 @@ describe('foldViaApi (useApiSummary)', () => {
     await expect(
       collect(runManualCompact(view, null, deps, config, 0, new AbortController().signal)),
     ).rejects.toBeInstanceOf(AbortError);
+  });
+});
+
+describe('summarizer prompt provenance (corpus-sync guard, Track B)', () => {
+  const archive = join(
+    dirname(fileURLToPath(import.meta.url)),
+    '..',
+    '..',
+    '..',
+    'Public-Info-Pool',
+    'Reference',
+    'Claude-Code-System-Prompts',
+    'system-prompts',
+  );
+  const norm = (s: string) => s.replace(/\s+/g, ' ').trim();
+  const stripHeader = (md: string) => md.replace(/^<!--[\s\S]*?-->\n?/, '');
+
+  it('reproduces the official 5-section continuation-summary structure', () => {
+    for (const h of ['Task Overview', 'Current State', 'Important Discoveries', 'Next Steps', 'Context to Preserve']) {
+      expect(SUMMARIZER_SYSTEM).toContain(h);
+    }
+    expect(SUMMARIZER_SYSTEM).toContain('continuation summary');
+    // adaptation: the <summary> wrapper the official requests is omitted (we fold raw text)
+    expect(SUMMARIZER_SYSTEM).not.toContain('<summary>');
+  });
+
+  it.runIf(existsSync(archive))('is faithful to its cited archive source', () => {
+    const body = norm(stripHeader(readFileSync(join(archive, `${SUMMARIZER_SYSTEM_PROVENANCE.slug}.md`), 'utf8')));
+    const desc = norm(SUMMARIZER_SYSTEM);
+    // every non-variable sentence of our reproduction must appear in the archive
+    const drifted = norm(SUMMARIZER_SYSTEM)
+      .split(/(?<=[.:])\s+/)
+      .map(norm)
+      .filter((s) => s.length >= 40 && !s.includes('${'))
+      .filter((s) => !body.includes(s.slice(0, 60)));
+    expect(drifted, `not found in archive:\n${drifted.join('\n')}`).toEqual([]);
+    expect(desc.length).toBeGreaterThan(0);
   });
 });
