@@ -537,11 +537,28 @@ outer: for (const task of selected) {
           `cache(w/r)=${run.cacheCreationTokens}/${run.cacheReadTokens}` +
           (run.error ? ` error: ${run.error}` : ''),
       );
-      // Budget guard from ACTUAL usage: abort cleanly with a partial report
-      // the moment the linear projection crosses the cap.
+      // Budget guard from ACTUAL usage. First-round CI lesson (run
+      // 28735894053, 2026-07-05): a naive linear projection from the first
+      // TWO cache-cold runs extrapolated $2.58 and aborted a round whose
+      // warm-cache reality fits the cap - so (1) never project before a
+      // minimum sample, only hard-stop on ACTUAL spend; (2) past the sample,
+      // extrapolate from the MEDIAN of the most recent half of runs (the
+      // cache-warm representative), not the all-time mean.
       if (!SMOKE && runsDone < runsPlanned) {
-        const projected = (spentUsd / runsDone) * runsPlanned;
-        if (projected > BUDGET_USD) {
+        const MIN_PROJECTION_SAMPLE = 8;
+        let projected = null;
+        if (spentUsd >= BUDGET_USD) {
+          projected = spentUsd;
+        } else if (runsDone >= MIN_PROJECTION_SAMPLE) {
+          const recent = rows
+            .slice(-Math.ceil(rows.length / 2))
+            .map((x) => x.costUsd || 0)
+            .filter((c) => c > 0)
+            .sort((a, b) => a - b);
+          const perRun = recent.length > 0 ? recent[Math.floor(recent.length / 2)] : spentUsd / runsDone;
+          projected = spentUsd + perRun * (runsPlanned - runsDone);
+        }
+        if (projected !== null && projected > BUDGET_USD) {
           budgetAborted = true;
           console.error(
             `\nBUDGET GUARD: spent $${spentUsd.toFixed(4)} after ${runsDone}/${runsPlanned} runs ` +
@@ -739,7 +756,15 @@ if (SMOKE) {
   }
 }
 if (GATE && gateVerdict !== 'PASS') {
-  console.error(`\nGATE B BREACH: verdict ${gateVerdict} with --gate enabled - exiting 1.`);
-  process.exit(1);
+  // A budget stop is a RESOURCE decision, not a conformance verdict - first
+  // CI round conflated the two (exit 1 on INCONCLUSIVE-PARTIAL read as a
+  // gate breach). Only a real FAIL, or an inconclusive round that was NOT
+  // budget-bounded, reds the job.
+  if (budgetAborted && gateVerdict === 'INCONCLUSIVE-PARTIAL') {
+    console.error(`\nGATE B: verdict ${gateVerdict} due to the budget stop - partial evidence reported, NOT a breach (exit 0). Re-run with --econ / lower repeat / sharding for a full round.`);
+  } else {
+    console.error(`\nGATE B BREACH: verdict ${gateVerdict} with --gate enabled - exiting 1.`);
+    process.exit(1);
+  }
 }
 process.exit(0);
