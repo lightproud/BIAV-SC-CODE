@@ -1,7 +1,7 @@
 {
   "generated": "2026-07-05",
   "stats": {
-    "nodes": 316,
+    "nodes": 318,
     "edges": 319
   },
   "nodes": [
@@ -2630,6 +2630,17 @@
       "tier": "search"
     },
     {
+      "id": "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
+      "type": "documentation",
+      "title": "bpt-sdk-l5-failure-dissection-20260705",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
       "id": "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "type": "documentation",
       "title": "bpt-sdk-official-arm-protocol-profile-20260705",
@@ -2666,6 +2677,17 @@
       "id": "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "type": "documentation",
       "title": "claude-desktop-ui-wireframe-20260704",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "type": "documentation",
+      "title": "kb-vector-remaining-handoff-20260705",
       "tags": [
         "data_layer:curated",
         "deliverable",
