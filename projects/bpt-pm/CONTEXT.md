@@ -70,6 +70,22 @@ CPM）、**基线比对**，确认后**写回同一数据源**。零后端、零
   expectedDelivery = 交付风险）；顶层汇总 `ordersAtRisk`。样例 PO-002 预计交付 07-12 < Y3 结束 07-14 → 风险。
   小学生比喻：给每张外包订单贴一张「说好哪天到货」的便签，排期一算发现真到货比说好的晚，便签就变红。
 
+## v3 四组（守密人 2026-07-05 Ultracode 全做，工作流编排，全部 additive）
+
+引擎四组均在 `scripts/schedule.mjs` 与 `index.html` 内联版同实现，回归 `tests/v3.mjs`（20 断言全过）。
+
+- **① 引擎完备性**：`freeSlack` 自由浮动（后继 headroom min，clamp≥0，无后继=总浮动）；约束补齐 **8 型**（新增 ALAP/SNLT/FNET/FNLT/MFO，`forwardConstraint` 抬前向 + `capBackward` 后向 cap + ALAP 后处理浮到最晚）；**从完成日倒排** `project.scheduleFrom="finish"`+`finish`（后向锚定，末任务落在 finish，窗口不足报 `infeasible-window`）。
+  比喻：自由浮动=「你一个人能偷懒几天不连累任何人」；倒排=「定死交付日往前倒推每步最晚该动手」。
+- **② 资源错峰建议**：纯函数 `suggestLeveling(leaves,resources,cal)` 贪心串行——按(浮动升,es升,id)排，每资源产能内并发提交、撞车者右移。只出建议不改排期。返回 `{suggested,newProjEnd,movedCount,residualOverloads}`；content-team 三处单资源撞车全消解、残余超载 0。`scheduleProject` 新增 additive `leaves`（叶内部快照）供其消费。
+  比喻：一台打印机前两人同按，让第二个往后挪到打完再打；产能2 的外包=两台打印机，两人同按不用挪。
+- **③ WBS 层级摘要**：`task.parent` 引用摘要；被引用者=summary，**排除出** CPM/资源/错峰，改由子任务卷积（start=min子/finish=max子/dur=跨度，支持嵌套）；每任务加 `depth`，摘要加 `isSummary`/`childIds`。无 parent 的样例零摘要、行为不变。
+  比喻：摘要像文件夹，自己不干活，只把里头文件的最早最晚框成一个大区间。
+- **④ 冲突显式告警**：顶层 `warnings[]`/`warningCount`，聚合 cycle/missing-pred + 新增 `constraint-conflict`(MSO/MFO 与前置矛盾)/`negative-slack`(ls<es)/`infeasible-window`(倒排放不下)。
+  比喻：排期表的「体检红灯」——硬约束打架、浮动变负、倒排塞不下各亮一盏。
+
+**UI 现状**：自由浮动列、8 约束解析、调度方向切换(#btnDir)、告警面板(#stWarn/#warnPanel + 行红旗)、错峰视图(#btnLevel)、第二样例(#btnSampleV3)均已落且无头冒烟零 JS 报错。
+**收尾待补**（工作流触账户消费上限中断）：WBS 折叠三角 + 甘特摘要条、错峰「应用建议」写回按钮。
+
 ## 结构
 
 ```

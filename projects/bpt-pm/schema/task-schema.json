@@ -24,6 +24,18 @@
           "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
           "description": "项目锚点开始日期（ISO YYYY-MM-DD）。排期从此日的第一个工作日起算。"
         },
+        "scheduleFrom": {
+          "type": "string",
+          "enum": ["start", "finish"],
+          "default": "start",
+          "description": "调度方向（可选，v3）。start 前向调度（从 start 起尽早排，默认）；finish 倒排（从 project.finish 起后向排、默认 ALAP 取向）。缺省 start，向后兼容。"
+        },
+        "finish": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+          "description": "项目锚点结束日期（可选，v3）。仅 scheduleFrom=finish 时使用：倒排把项目末端钉在此日、向前推算各任务窗口。"
+        },
         "calendar": {
           "type": "object",
           "description": "工作日历。定义哪些天算工作日，用于把「工期（工作日数）」映射成日历日期。缺省 = 周一至周五、无节假日。",
@@ -109,6 +121,11 @@
             "description": "任务唯一标识（如 T1、DEV-3）。用于依赖引用，全项目唯一。"
           },
           "name": { "type": "string", "description": "任务名称。" },
+          "parent": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_.-]+$",
+            "description": "父任务 id（可选，v3 WBS）。指向某任务，构成层级树。被别的任务当 parent 引用者即成为摘要任务（summary），只做子任务卷积（start=min 子 start / finish=max 子 finish / dur=跨度工作日），不参与 CPM/资源/错峰；支持嵌套（parent 链）。缺省无父，为顶层任务。"
+          },
           "duration": {
             "type": "number",
             "minimum": 0,
@@ -146,13 +163,13 @@
             "properties": {
               "type": {
                 "type": "string",
-                "enum": ["ASAP", "SNET", "MSO"],
-                "description": "ASAP 尽早开始（默认）/ SNET 不早于某日开始 / MSO 必须某日开始（硬约束）。"
+                "enum": ["ASAP", "ALAP", "SNET", "SNLT", "FNET", "FNLT", "MSO", "MFO"],
+                "description": "任务约束类型（v3 补全至 8 型）。ASAP 尽早开始（默认）/ ALAP 尽晚开始（前后向算完后置后处理浮到最晚）/ SNET 不早于某日开始 / SNLT 不晚于某日开始（晚限，可致负浮动/冲突）/ FNET 不早于某日结束 / FNLT 不晚于某日结束（晚限）/ MSO 必须某日开始（硬约束）/ MFO 必须某日结束（硬约束）。日期类约束（除 ASAP/ALAP）均需 date。"
               },
               "date": {
                 "type": "string",
                 "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
-                "description": "约束日期（SNET / MSO 必填）。"
+                "description": "约束日期（除 ASAP / ALAP 外的日期型约束必填）。"
               }
             }
           },

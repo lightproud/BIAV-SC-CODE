@@ -113,6 +113,28 @@
   .toast { position: fixed; bottom: 46px; left: 50%; transform: translateX(-50%); background: var(--panel-2); border: 1px solid var(--accent-dim); color: var(--text); padding: 8px 16px; border-radius: 6px; z-index: 20; opacity: 0; transition: opacity .2s; pointer-events: none; }
   .toast.show { opacity: 1; }
   code { background: var(--panel-2); padding: 1px 4px; border-radius: 3px; color: var(--accent); }
+  /* 告警（层5-④）：红旗标记 + 行左红边 + 状态栏可点 chip + 浮层面板 */
+  .warn-flag { color: var(--critical); font-weight: 700; margin-left: 5px; cursor: default; }
+  tr.has-warn > td:first-child { border-left: 3px solid var(--critical); }
+  #stWarn { cursor: pointer; user-select: none; }
+  #stWarn:hover { color: var(--critical); }
+  .warn-panel {
+    position: fixed; right: 16px; bottom: 42px; width: 400px; max-height: 52vh; overflow: auto;
+    background: var(--panel-2); border: 1px solid var(--critical); border-radius: 8px;
+    z-index: 30; display: none; box-shadow: 0 6px 22px rgba(0,0,0,.55);
+  }
+  .warn-panel.show { display: block; }
+  .warn-panel h3 {
+    margin: 0; padding: 8px 12px; font-size: 12px; color: var(--critical);
+    border-bottom: 1px solid var(--border); display: flex; justify-content: space-between;
+    align-items: center; position: sticky; top: 0; background: var(--panel-2);
+  }
+  .warn-panel .wp-close { cursor: pointer; color: var(--muted); font-weight: 400; }
+  .warn-panel .wp-close:hover { color: var(--text); }
+  .warn-panel ul { list-style: none; margin: 0; padding: 6px 0; }
+  .warn-panel li { padding: 6px 12px; border-bottom: 1px solid var(--grid); font-size: 11px; line-height: 1.55; }
+  .warn-panel li:last-child { border-bottom: none; }
+  .warn-panel .wtype { display: inline-block; padding: 0 6px; border-radius: 8px; background: var(--critical-dim); color: #ffd9db; font-size: 10px; margin-right: 6px; }
 </style>
 </head>
 <body>
@@ -122,9 +144,11 @@
   <span class="spacer"></span>
   <button id="btnOpen" title="用 File System Access API 打开本地数据文件（可写回同一文件）">打开数据源</button>
   <button id="btnSample">载入样例</button>
+  <button id="btnSampleV3" title="载入 v3 演示：WBS 摘要卷积 + 8 型约束 + 自由浮动 + 倒排/错峰">载入v3样例</button>
   <button id="btnAddRow">新增任务</button>
   <button id="btnInstTemplate" title="从项目模板批量实例化流水线任务（含返修回环）">从模板实例化</button>
   <button id="btnSchedule" class="primary" title="按 CPM 前向/后向计算法自动排期">自动排期</button>
+  <button id="btnDir" title="调度方向：从开始(前向 ASAP) ↔ 从完成(倒排 ALAP)。切到从完成会询问项目完成日期 project.finish">方向：从开始</button>
   <button id="btnBaseline" title="把当前排期结果捕获为基线快照">设为基线</button>
   <button id="btnSave" title="写回已打开的数据文件；未用 API 打开则下载 JSON">写入数据源</button>
   <span style="width:1px;height:22px;background:var(--border);margin:0 2px"></span>
@@ -135,6 +159,7 @@
   <button id="btnViewGantt" class="primary" title="甘特图视图">甘特图</button>
   <button id="btnViewRes" title="资源负载热力图视图">资源负载</button>
   <button id="btnViewOrders" title="外包发单交付风险视图">外包发单</button>
+  <button id="btnLevel" title="资源错峰建议：贪心串行把撞车任务串到不超产能（只出建议，不改排期）">错峰建议</button>
 </header>
 
 <div class="main">
@@ -144,18 +169,19 @@
         <tr>
           <th>ID</th><th>任务名称</th><th class="num" title="工期(工作日)，0=里程碑">工期</th>
           <th title="前置依赖，如 T1、T2SS+2、T3FF-1，逗号分隔">前置</th>
-          <th title="约束：ASAP / SNET&lt;日期&gt; / MSO&lt;日期&gt;">约束</th>
+          <th title="约束(8型)：ASAP/ALAP；早限 SNET/FNET/MSO/MFO；晚限 SNLT/FNLT。后接日期如 SNET 2026-07-23">约束</th>
           <th title="软截止线(YYYY-MM-DD)，只标记不移动任务，留空即无">截止</th>
           <th>资源</th><th class="num" title="完成%">%</th>
           <th class="calc" title="计算开始">开始</th><th class="calc" title="计算结束">结束</th>
           <th class="calc" title="误期(工作日)：结束晚于截止的天数，正=误期">误期</th>
           <th class="calc" title="总浮动(工作日)">浮动</th>
+          <th class="calc" title="自由浮动(工作日)：不影响任何后继最早开始的可滑动余量；摘要行显示卷积跨度">自由</th>
           <th class="calc" title="相对基线结束偏差(工作日)，正=延后">偏差</th>
         </tr>
       </thead>
       <tbody id="taskBody"></tbody>
     </table>
-    <div class="hint" id="tableHint">载入样例或打开数据源以开始。前置依赖迷你语法：<code>T1</code>（默认 FS+0）、<code>T2SS+2</code>、<code>T3FF-1</code>、<code>T4SF</code>；多个用逗号分隔。约束填 <code>SNET 2026-07-23</code> 或 <code>MSO 2026-07-10</code>，留空即 ASAP。截止列填软截止线 <code>2026-07-16</code>（只标记误期、不移动任务），留空即无。</div>
+    <div class="hint" id="tableHint">载入样例或打开数据源以开始。前置依赖迷你语法：<code>T1</code>（默认 FS+0）、<code>T2SS+2</code>、<code>T3FF-1</code>、<code>T4SF</code>；多个用逗号分隔。约束支持 8 型：<code>ASAP</code>/<code>ALAP</code>、早限 <code>SNET 2026-07-23</code>/<code>FNET</code>/<code>MSO</code>/<code>MFO</code>、晚限 <code>SNLT</code>/<code>FNLT</code>，留空即 ASAP。截止列填软截止线 <code>2026-07-16</code>（只标记误期、不移动任务），留空即无。</div>
   </div>
   <div class="gantt-pane" id="ganttPane">
     <div id="gantt"></div>
@@ -168,11 +194,13 @@
   <span><span class="dot" style="background:var(--critical)"></span>临界路径</span>
   <span><span class="dot" style="background:var(--baseline)"></span>基线</span>
   <span><span class="dot" style="background:var(--warn)"></span>今日/里程碑</span>
+  <span class="chip" id="stWarn" style="display:none" title="点击展开告警清单">告警 0 项</span>
   <span class="chip" id="stSource">数据源：未连接</span>
 </div>
 
 <div class="drop-hint">松手以载入 JSON 数据文件</div>
 <div class="toast" id="toast"></div>
+<div class="warn-panel" id="warnPanel"></div>
 
 <script>
 "use strict";
@@ -254,17 +282,19 @@ function constraintToStr(c) {
 }
 function parseConstraint(str) {
   if (!str || !str.trim()) return null;
-  const m = str.trim().match(/^(ASAP|SNET|MSO)\s*(\d{4}-\d{2}-\d{2})?$/i);
+  const m = str.trim().match(/^(ASAP|ALAP|SNET|SNLT|FNET|FNLT|MSO|MFO)\s*(\d{4}-\d{2}-\d{2})?$/i);
   if (!m) return null;
   const type = m[1].toUpperCase();
   if (type === "ASAP") return null;
+  if (type === "ALAP") return { type: "ALAP", date: m[2] || null };
   return { type, date: m[2] || null };
 }
 
 /* ---------- CPM 排期核心 ---------- */
 function scheduleProject(data) {
   const cal = new WorkCalendar(data.project.start, data.project.calendar);
-  const tasks = data.tasks.map(t => ({
+  // 全体任务（含摘要）先解析；WBS 层据 parent 引用识别摘要，摘要不入 CPM/资源/错峰。
+  const allTasks = data.tasks.map(t => ({
     id: t.id, name: t.name,
     dur: Math.max(0, Number(t.duration ?? 1)),
     preds: (t.predecessors || []).map(p => ({ id: p.id, type: p.type || "FS", lag: Number(p.lag || 0) })),
@@ -272,19 +302,38 @@ function scheduleProject(data) {
     pct: Number(t.percentComplete || 0),
     resource: t.resource || "",
     deadline: t.deadline || null,
+    parent: (t.parent != null && t.parent !== "") ? t.parent : null,
   }));
+  const allById = new Map(allTasks.map(t => [t.id, t]));
+
+  // WBS（契约③）：被别的任务当 parent 引用者 = 摘要任务；depth = parent 链层级（缩进用）；childrenOf 卷积用。
+  const summaryIds = new Set();
+  const childrenOf = new Map();
+  for (const t of allTasks) {
+    if (t.parent && allById.has(t.parent)) {
+      summaryIds.add(t.parent);
+      if (!childrenOf.has(t.parent)) childrenOf.set(t.parent, []);
+      childrenOf.get(t.parent).push(t.id);
+    }
+  }
+  const depthOf = t => { let d = 0, cur = t, g = 0; while (cur.parent && allById.has(cur.parent) && g++ < 10000) { d++; cur = allById.get(cur.parent); } return d; };
+  const depth = new Map(allTasks.map(t => [t.id, depthOf(t)]));
+
+  // 叶任务（非 summary）才参与 CPM / computeResourceLoad / suggestLeveling。
+  const tasks = allTasks.filter(t => !summaryIds.has(t.id));
   const byId = new Map(tasks.map(t => [t.id, t]));
 
+  const warnings = [];   // 契约④：聚合 cycle/missing-pred + constraint-conflict/negative-slack/infeasible-window
   // 拓扑排序（检测环）
   const order = [], visiting = new Set(), done = new Set();
   const errors = [];
   function visit(t, stack) {
     if (done.has(t.id)) return;
-    if (visiting.has(t.id)) { errors.push("依赖存在环：" + [...stack, t.id].join(" → ")); return; }
+    if (visiting.has(t.id)) { const desc = "依赖存在环：" + [...stack, t.id].join(" → "); errors.push(desc); warnings.push({ type: "cycle", taskId: t.id, desc }); return; }
     visiting.add(t.id);
     for (const p of t.preds) {
       const pt = byId.get(p.id);
-      if (!pt) { errors.push(`任务 ${t.id} 引用了不存在的前置 ${p.id}`); continue; }
+      if (!pt) { const desc = `任务 ${t.id} 引用了不存在的前置 ${p.id}`; errors.push(desc); warnings.push({ type: "missing-pred", taskId: t.id, desc }); continue; }
       visit(pt, [...stack, t.id]);
     }
     visiting.delete(t.id); done.add(t.id); order.push(t);
@@ -297,52 +346,167 @@ function scheduleProject(data) {
     if (byId.has(p.id)) succ.get(p.id).push({ id: t.id, type: p.type, lag: p.lag });
   }));
 
-  // 前向计算：早开始 es / 早结束 ef（索引空间，ef 为排他上界）
-  for (const t of order) {
-    let es = 0;
-    for (const p of t.preds) {
-      const pt = byId.get(p.id); if (!pt) continue;
-      switch (p.type) {
-        case "FS": es = Math.max(es, pt.ef + p.lag); break;
-        case "SS": es = Math.max(es, pt.es + p.lag); break;
-        case "FF": es = Math.max(es, pt.ef + p.lag - t.dur); break;
-        case "SF": es = Math.max(es, pt.es + p.lag - t.dur); break;
+  // 约束助手（v3 8 型完备）：前向抬早开始 / 后向 cap 晚限（见契约①，与 scripts/schedule.mjs 同实现）
+  const forwardConstraint = (es, t) => {
+    const c = t.constraint; if (!c || !c.date) return es;
+    const di = cal.toIndex(c.date);
+    switch (c.type) {
+      case "SNET": return Math.max(es, di);          // 不早于某日开始
+      case "FNET": return Math.max(es, di - t.dur);  // 不早于某日结束 ⇒ es≥di−dur
+      case "MSO": return di;                          // 必须某日开始（硬）
+      case "MFO": return di - t.dur;                  // 必须某日结束（硬）⇒ es=di−dur
+      default: return es;                             // ASAP/ALAP/SNLT/FNLT 不抬前向
+    }
+  };
+  const capBackward = (lf, t) => {
+    const c = t.constraint; if (!c || !c.date) return lf;
+    const di = cal.toIndex(c.date);
+    if (c.type === "SNLT") return Math.min(lf, di + t.dur); // ls≤di ⇒ lf≤di+dur
+    if (c.type === "FNLT") return Math.min(lf, di);          // lf≤di
+    return lf;
+  };
+
+  const scheduleFrom = data.project.scheduleFrom === "finish" ? "finish" : "start";
+  let projEnd;
+
+  if (scheduleFrom === "finish") {
+    // 倒排（scheduleFrom=finish）：projEnd 锚在 project.finish，后向优先，es=ls（默认 ALAP 取向）。
+    // projEnd 用排他上界空间：finish 当日工作日索引 +1，令末任务 ef=projEnd → 结束落在 project.finish。
+    const finishStr = data.project.finish || data.project.start;
+    projEnd = cal.toIndex(finishStr) + 1;
+    for (let i = order.length - 1; i >= 0; i--) {
+      const t = order[i];
+      const outs = succ.get(t.id);
+      let lf = outs.length ? Infinity : projEnd;
+      for (const s of outs) {
+        const st = byId.get(s.id);
+        switch (s.type) {
+          case "FS": lf = Math.min(lf, st.ls - s.lag); break;
+          case "SS": lf = Math.min(lf, st.ls - s.lag + t.dur); break;
+          case "FF": lf = Math.min(lf, st.lf - s.lag); break;
+          case "SF": lf = Math.min(lf, st.lf - s.lag + t.dur); break;
+        }
+      }
+      if (!isFinite(lf)) lf = projEnd;
+      lf = capBackward(lf, t);
+      t.lf = lf; t.ls = lf - t.dur;
+      let es = t.ls;
+      if (es < 0) { warnings.push({ type: "infeasible-window", taskId: t.id, desc: `任务 ${t.id} 倒排窗口放不下（早开始 ${es}<0），已 clamp 0` }); es = 0; }
+      t.es = es; t.ef = es + t.dur; t.slack = t.ls - t.es; t.critical = t.slack <= 0;
+    }
+  } else {
+    // 前向计算：早开始 es / 早结束 ef（索引空间，ef 为排他上界）
+    for (const t of order) {
+      let es = 0;
+      for (const p of t.preds) {
+        const pt = byId.get(p.id); if (!pt) continue;
+        switch (p.type) {
+          case "FS": es = Math.max(es, pt.ef + p.lag); break;
+          case "SS": es = Math.max(es, pt.es + p.lag); break;
+          case "FF": es = Math.max(es, pt.ef + p.lag - t.dur); break;
+          case "SF": es = Math.max(es, pt.es + p.lag - t.dur); break;
+        }
+      }
+      const esNatural = es;
+      es = forwardConstraint(es, t);
+      // 硬约束冲突（契约④）：MSO/MFO 把 es 钉死，但前置要求更晚（前置派生 es > 约束钉死值）。
+      if (t.constraint && (t.constraint.type === "MSO" || t.constraint.type === "MFO") && t.constraint.date && esNatural > es) {
+        warnings.push({ type: "constraint-conflict", taskId: t.id, desc: `任务 ${t.id} 硬约束 ${t.constraint.type} 与前置矛盾（前置要求早开始 ${esNatural} > 约束钉死 ${es}）` });
+      }
+      es = Math.max(es, 0);
+      t.es = es; t.ef = es + t.dur;
+    }
+
+    projEnd = tasks.reduce((m, t) => Math.max(m, t.ef), 0);
+
+    // 后向计算：晚结束 lf / 晚开始 ls（逆拓扑序）
+    for (let i = order.length - 1; i >= 0; i--) {
+      const t = order[i];
+      const outs = succ.get(t.id);
+      let lf = outs.length ? Infinity : Math.max(projEnd, t.ef);
+      for (const s of outs) {
+        const st = byId.get(s.id);
+        switch (s.type) {
+          case "FS": lf = Math.min(lf, st.ls - s.lag); break;
+          case "SS": lf = Math.min(lf, st.ls - s.lag + t.dur); break;
+          case "FF": lf = Math.min(lf, st.lf - s.lag); break;
+          case "SF": lf = Math.min(lf, st.lf - s.lag + t.dur); break;
+        }
+      }
+      if (!isFinite(lf)) lf = Math.max(projEnd, t.ef);
+      lf = capBackward(lf, t);
+      t.lf = lf; t.ls = lf - t.dur;
+      t.slack = t.ls - t.es;
+      t.critical = t.slack <= 0;
+    }
+
+    // ALAP 后处理：把 ALAP 任务浮到最晚（es←ls / ef←lf），随后 freeSlack 重算
+    for (const t of tasks) {
+      if (t.constraint && t.constraint.type === "ALAP") {
+        t.es = t.ls; t.ef = t.lf; t.slack = t.ls - t.es; t.critical = t.slack <= 0;
       }
     }
-    if (t.constraint && t.constraint.date) {
-      const ci = cal.toIndex(t.constraint.date);
-      if (t.constraint.type === "SNET") es = Math.max(es, ci);
-      else if (t.constraint.type === "MSO") es = ci;
-    }
-    es = Math.max(es, 0);
-    t.es = es; t.ef = es + t.dur;
   }
 
-  const projEnd = tasks.reduce((m, t) => Math.max(m, t.ef), 0);
-
-  // 后向计算：晚结束 lf / 晚开始 ls（逆拓扑序）
-  for (let i = order.length - 1; i >= 0; i--) {
-    const t = order[i];
-    const outs = succ.get(t.id);
-    let lf = outs.length ? Infinity : Math.max(projEnd, t.ef);
-    for (const s of outs) {
-      const st = byId.get(s.id);
-      switch (s.type) {
-        case "FS": lf = Math.min(lf, st.ls - s.lag); break;
-        case "SS": lf = Math.min(lf, st.ls - s.lag + t.dur); break;
-        case "FF": lf = Math.min(lf, st.lf - s.lag); break;
-        case "SF": lf = Math.min(lf, st.lf - s.lag + t.dur); break;
-      }
-    }
-    if (!isFinite(lf)) lf = Math.max(projEnd, t.ef);
-    t.lf = lf; t.ls = lf - t.dur;
-    t.slack = t.ls - t.es;
-    t.critical = t.slack <= 0;
-  }
-
-  // 映射回日历日期
-  const result = new Map();
+  // 负浮动检测（契约④）：ls<es（多由 SNLT/FNLT 晚限约束致），已报 infeasible-window 的不重复报。
+  const infeasibleSet = new Set(warnings.filter(w => w.type === "infeasible-window").map(w => w.taskId));
   for (const t of tasks) {
+    if (t.slack < 0 && !infeasibleSet.has(t.id)) warnings.push({ type: "negative-slack", taskId: t.id, desc: `任务 ${t.id} 负浮动（ls ${t.ls} < es ${t.es}，晚限约束致冲突）` });
+  }
+
+  // 自由浮动 freeSlack（每任务，工作日，≥0）：对每条后继链路算 headroom=es_后继 − minEsFromLink，
+  // minEsFromLink: FS=ef_i+lag / SS=es_i+lag / FF=ef_i+lag−dur_后继 / SF=es_i+lag−dur_后继；min clamp≥0；无后继=totalSlack。
+  for (const t of tasks) {
+    const outs = succ.get(t.id);
+    if (!outs.length) { t.freeSlack = t.slack; continue; }
+    let fs = Infinity;
+    for (const s of outs) {
+      const st = byId.get(s.id); if (!st) continue;
+      let minEs;
+      switch (s.type) {
+        case "FS": minEs = t.ef + s.lag; break;
+        case "SS": minEs = t.es + s.lag; break;
+        case "FF": minEs = t.ef + s.lag - st.dur; break;
+        case "SF": minEs = t.es + s.lag - st.dur; break;
+        default: minEs = t.ef + s.lag;
+      }
+      fs = Math.min(fs, st.es - minEs);
+    }
+    t.freeSlack = isFinite(fs) ? Math.max(0, fs) : t.slack;
+  }
+
+  // WBS 卷积（契约③）：叶任务工作日索引区间入 rolled；摘要按 depth 深者优先自底向上卷积
+  // start=min(子 start)、finish=max(子 finish)、dur=跨度工作日（支持嵌套 parent 链）。
+  const rolled = new Map(); // id -> { startIdx, finishIdx }
+  for (const t of tasks) rolled.set(t.id, { startIdx: t.es, finishIdx: t.dur > 0 ? t.ef - 1 : t.es });
+  const summaryList = allTasks.filter(t => summaryIds.has(t.id)).sort((a, b) => depth.get(b.id) - depth.get(a.id));
+  for (const s of summaryList) {
+    const kids = childrenOf.get(s.id) || [];
+    let mn = Infinity, mx = -Infinity;
+    for (const k of kids) { const r = rolled.get(k); if (!r) continue; if (r.startIdx < mn) mn = r.startIdx; if (r.finishIdx > mx) mx = r.finishIdx; }
+    if (!isFinite(mn)) { mn = 0; mx = 0; }
+    rolled.set(s.id, { startIdx: mn, finishIdx: mx });
+  }
+
+  // 映射回日历日期（叶任务照常 CPM 结果；摘要用卷积区间，isSummary/childIds 标注）
+  const result = new Map();
+  for (const orig of allTasks) {
+    const dp = depth.get(orig.id) ?? 0;
+    if (summaryIds.has(orig.id)) {
+      const r = rolled.get(orig.id);
+      const startDate = cal.fromIndex(r.startIdx);
+      const finishDate = cal.fromIndex(r.finishIdx);
+      result.set(orig.id, {
+        id: orig.id, es: r.startIdx, ef: r.finishIdx + 1, slack: null, freeSlack: null, critical: false,
+        dur: r.finishIdx - r.startIdx + 1, pct: 0, milestone: false,
+        start: fmtDate(startDate), finish: fmtDate(finishDate),
+        startDate, finishDate, preds: [],
+        deadline: null, late: false, lateDays: null,
+        isSummary: true, childIds: (childrenOf.get(orig.id) || []).slice(), depth: dp,
+      });
+      continue;
+    }
+    const t = byId.get(orig.id);
     const startDate = cal.fromIndex(t.es);
     const finishDate = t.dur > 0 ? cal.fromIndex(t.ef - 1) : startDate;
     // 周期守护（特性 B）：deadline 软截止叠加，不改 CPM slack/临界。
@@ -355,18 +519,19 @@ function scheduleProject(data) {
       late = lateDays > 0;
     }
     result.set(t.id, {
-      id: t.id, es: t.es, ef: t.ef, slack: t.slack, critical: t.critical,
+      id: t.id, es: t.es, ef: t.ef, slack: t.slack, freeSlack: t.freeSlack, critical: t.critical,
       dur: t.dur, pct: t.pct, milestone: t.dur === 0,
       start: fmtDate(startDate), finish: fmtDate(finishDate),
       startDate, finishDate, preds: t.preds,
       deadline: t.deadline || null, late, lateDays,
+      isSummary: false, depth: dp,
     });
   }
   const resources = computeResourceLoad(tasks, data.resources, cal, projEnd);
   const lateCount = [...result.values()].filter(c => c.late).length;
   const orders = analyzeOrders(data.orders, result);
   const ordersAtRisk = orders.filter(o => o.atRisk).length;
-  return { cal, result, projEnd, order, errors, resources, lateCount, orders, ordersAtRisk };
+  return { cal, result, projEnd, scheduleFrom, order, errors, warnings, warningCount: warnings.length, resources, lateCount, orders, ordersAtRisk };
 }
 
 /* ---------- 流水线模板实例化（特性 C，纯函数，与 scripts/schedule.mjs 同实现） ----------
@@ -444,6 +609,118 @@ function analyzeOrders(orders, taskResults) {
   });
 }
 
+/* ---------- 资源错峰建议（层3 引擎②，纯函数、只算不改，与 scripts/schedule.mjs 同实现） ----------
+   贪心串行错峰：把撞车任务在其资源上串成不超产能的排布，输出「建议」而不改原排期。
+   入参 leafTasks：叶任务归一化数组 [{id, es, ef, dur, resource, slack, preds:[{id,type,lag}]}]（索引空间）。
+   算法：拓扑就绪帧内按 (总浮动升, es 升, id 升) 选任务（保证前置先落 + 优先级）；
+        每资源维护已提交半开区间 [a,b)，产能=capacity 允许并发；
+        逐任务取 earliestStart=前置在建议表中的完成派生下界（按链接类型 FS/SS/FF/SF），
+        再向后找该资源窗口内并发<capacity 的最早可行 start 提交。
+   返回 {suggested:[{id,start,finish,shifted,shiftDays}], newProjEnd, movedCount, residualOverloads}。
+   目标残余超载=0；依赖/单资源本身不可解时如实报 residualOverloads。 */
+function suggestLeveling(leafTasks, resourcesDef, cal) {
+  const resMap = new Map();
+  (resourcesDef || []).forEach(r => resMap.set(r.id, {
+    id: r.id, name: r.name || r.id, type: r.type || "person", capacity: Math.max(1, Number(r.capacity || 1)),
+  }));
+  const tasks = (leafTasks || []).map(t => {
+    const dur = Math.max(0, Number(t.dur ?? 0));
+    const es = Number(t.es || 0);
+    return {
+      id: t.id, dur, es,
+      ef: t.ef != null ? Number(t.ef) : es + dur,
+      resource: t.resource || "",
+      slack: Number(t.slack || 0),
+      preds: (t.preds || []).map(p => ({ id: p.id, type: p.type || "FS", lag: Number(p.lag || 0) })),
+    };
+  });
+  tasks.forEach(t => { if (t.dur > 0 && t.resource && !resMap.has(t.resource)) resMap.set(t.resource, { id: t.resource, name: t.resource, type: "person", capacity: 1 }); });
+  const byId = new Map(tasks.map(t => [t.id, t]));
+  const placed = new Map();        // id -> { startIdx, dur }
+  const committed = new Map();     // resId -> [{ a, b }] 已提交半开区间
+
+  const loadInWindow = (intervals, a, b) => {
+    let peak = 0;
+    for (let i = a; i < b; i++) {
+      let c = 0;
+      for (const iv of intervals) if (i >= iv.a && i < iv.b) c++;
+      if (c > peak) peak = c;
+    }
+    return peak;
+  };
+  const earliestFrom = t => {
+    let est = 0;
+    for (const p of t.preds) {
+      const pl = placed.get(p.id), src = byId.get(p.id);
+      let ps, pe;
+      if (pl) { ps = pl.startIdx; pe = pl.startIdx + pl.dur; }
+      else if (src) { ps = src.es; pe = src.ef; }
+      else continue;
+      switch (p.type) {
+        case "SS": est = Math.max(est, ps + p.lag); break;
+        case "FF": est = Math.max(est, pe + p.lag - t.dur); break;
+        case "SF": est = Math.max(est, ps + p.lag - t.dur); break;
+        default: est = Math.max(est, pe + p.lag); // FS
+      }
+    }
+    return Math.max(0, est);
+  };
+  const priorityLess = (a, b) => (a.slack - b.slack) || (a.es - b.es) || (a.id < b.id ? -1 : a.id > b.id ? 1 : 0);
+  const remaining = new Set(tasks.map(t => t.id));
+  let guard = 0;
+  while (remaining.size && guard++ < 100000) {
+    let ready = [...remaining].map(id => byId.get(id)).filter(t => t.preds.every(p => !byId.has(p.id) || placed.has(p.id)));
+    if (!ready.length) ready = [...remaining].map(id => byId.get(id)); // 环/缺前置兜底
+    ready.sort(priorityLess);
+    const t = ready[0];
+    remaining.delete(t.id);
+    let start = earliestFrom(t);
+    if (t.dur > 0 && t.resource) {
+      const cap = (resMap.get(t.resource) || { capacity: 1 }).capacity;
+      if (!committed.has(t.resource)) committed.set(t.resource, []);
+      const intervals = committed.get(t.resource);
+      let g2 = 0;
+      while (loadInWindow(intervals, start, start + t.dur) >= cap && g2++ < 100000) start++;
+      intervals.push({ a: start, b: start + t.dur });
+    }
+    placed.set(t.id, { startIdx: start, dur: t.dur });
+  }
+
+  const suggested = tasks.map(t => {
+    const pl = placed.get(t.id);
+    const startIdx = pl ? pl.startIdx : t.es;
+    const shiftDays = startIdx - t.es;
+    const startDate = cal.fromIndex(startIdx);
+    const finishDate = t.dur > 0 ? cal.fromIndex(startIdx + t.dur - 1) : startDate;
+    return { id: t.id, start: fmtDate(startDate), finish: fmtDate(finishDate), shifted: shiftDays !== 0, shiftDays };
+  });
+  const movedCount = suggested.filter(s => s.shifted).length;
+  let newProjEnd = 0;
+  for (const t of tasks) { const pl = placed.get(t.id); const ef = (pl ? pl.startIdx : t.es) + t.dur; if (ef > newProjEnd) newProjEnd = ef; }
+
+  const residualOverloads = [];
+  for (const [resId, meta] of resMap) {
+    const intervals = committed.get(resId) || [];
+    if (!intervals.length) continue;
+    const idxs = new Set();
+    intervals.forEach(iv => { for (let i = iv.a; i < iv.b; i++) idxs.add(i); });
+    let cur = null;
+    for (const i of [...idxs].sort((a, b) => a - b)) {
+      let load = 0; intervals.forEach(iv => { if (i >= iv.a && i < iv.b) load++; });
+      if (load > meta.capacity) {
+        if (cur && i === cur.endIdx + 1) { cur.endIdx = i; cur.load = Math.max(cur.load, load); }
+        else { if (cur) residualOverloads.push(cur); cur = { resource: resId, startIdx: i, endIdx: i, load }; }
+      }
+    }
+    if (cur) residualOverloads.push(cur);
+  }
+  const residual = residualOverloads.map(s => ({
+    resource: s.resource, start: fmtDate(cal.fromIndex(s.startIdx)), end: fmtDate(cal.fromIndex(s.endIdx)),
+    load: s.load, capacity: (resMap.get(s.resource) || {}).capacity,
+  }));
+  return { suggested, newProjEnd, movedCount, residualOverloads: residual };
+}
+
 /* ---------- 资源负载 + 超载检测（与 scripts/schedule.mjs 同逻辑） ----------
    每个 dur>0 的任务在其 [es, ef) 工作日索引区间占用其资源 1 个并发槽。
    某工作日某资源承载任务数 > capacity 即超载。未登记资源按「人、产能1」处理。 */
@@ -502,6 +779,8 @@ function readTable() {
     if (/^\d{4}-\d{2}-\d{2}$/.test(dl)) t.deadline = dl;
     const notesTask = state.data.tasks.find(x => x.id === id);
     if (notesTask && notesTask.notes) t.notes = notesTask.notes;
+    // WBS：表格无 parent 列，从原数据保留 parent（否则 readTable 会抹掉摘要关系、并在保存时丢 WBS）
+    if (notesTask && notesTask.parent != null && notesTask.parent !== "") t.parent = notesTask.parent;
     tasks.push(t);
   });
   state.data.tasks = tasks;
@@ -513,10 +792,19 @@ function renderTable() {
   body.innerHTML = "";
   const comp = state.computed;
   const base = state.data.baseline;
+  // 告警索引（层5-④）：taskId → 该任务命中的告警，供行左红边 + 红旗标记
+  const warnByTask = new Map();
+  if (comp && comp.warnings) comp.warnings.forEach(w => {
+    if (!w.taskId) return;
+    if (!warnByTask.has(w.taskId)) warnByTask.set(w.taskId, []);
+    warnByTask.get(w.taskId).push(w);
+  });
   state.data.tasks.forEach(t => {
     const c = comp ? comp.result.get(t.id) : null;
     const tr = document.createElement("tr");
     if (c && c.critical) tr.classList.add("critical");
+    const rowWarns = warnByTask.get(t.id);
+    if (rowWarns) tr.classList.add("has-warn");
     const cell = (cls, val, editable) =>
       `<td class="${editable ? "editable" : ""} ${cls.startsWith("c-") ? "" : cls}"><span class="${cls}" ${editable ? 'contenteditable="true"' : ""}>${val ?? ""}</span></td>`;
 
@@ -534,9 +822,19 @@ function renderTable() {
     let lateStr = "—";
     if (c && c.deadline) lateStr = c.late ? `<span style="color:var(--critical)">+${c.lateDays}d</span>` : "0";
     const ms = (t.duration === 0) ? '<span class="milestone-badge"> ◆</span>' : "";
+    // WBS：摘要行加标记 + 按 depth 缩进；摘要 slack 不适用（显示 —）
+    const isSum = !!(c && c.isSummary);
+    if (isSum) tr.classList.add("summary-row");
+    const dep = c ? (c.depth || 0) : 0;
+    const indent = dep > 0 ? `style="padding-left:${dep * 16}px"` : "";
+    const sumMark = isSum ? '<span style="color:var(--muted);font-weight:700"> ▸摘要</span>' : "";
+    // 红旗标记（层5-④）：命中告警的任务行在任务名后挂红色告警旗，悬停显所有告警描述
+    const warnMark = rowWarns
+      ? `<span class="warn-flag" title="${rowWarns.map(w => w.desc.replace(/[<>&"]/g, "")).join(" / ")}">▲告警</span>`
+      : "";
     tr.innerHTML =
       cell("c-id", t.id, true) +
-      `<td class="editable"><span class="c-name" contenteditable="true">${t.name || ""}</span>${ms}</td>` +
+      `<td class="editable" ${indent}><span class="c-name" contenteditable="true" style="${isSum ? 'font-weight:700' : ''}">${t.name || ""}</span>${ms}${sumMark}${warnMark}</td>` +
       `<td class="editable num"><span class="c-dur" contenteditable="true">${t.duration ?? 1}</span></td>` +
       cell("c-pred", predsToStr(t.predecessors), true) +
       cell("c-con", constraintToStr(t.constraint), true) +
@@ -546,7 +844,8 @@ function renderTable() {
       `<td class="calc">${c ? c.start : "—"}</td>` +
       `<td class="calc">${c ? c.finish : "—"}</td>` +
       `<td class="calc">${lateStr}</td>` +
-      `<td class="calc">${c ? (c.milestone ? "—" : c.slack + "d") : "—"}</td>` +
+      `<td class="calc">${c ? (c.isSummary || c.milestone ? "—" : c.slack + "d") : "—"}</td>` +
+      `<td class="calc">${c ? (c.isSummary ? c.dur + "d 跨" : (c.freeSlack != null ? c.freeSlack + "d" : "—")) : "—"}</td>` +
       `<td class="calc ${varCls}">${varStr || "—"}</td>`;
     body.appendChild(tr);
   });
@@ -733,9 +1032,10 @@ function renderGantt() {
 function renderRight() {
   if (state.view === "resource") renderResourceView();
   else if (state.view === "orders") renderOrdersView();
+  else if (state.view === "leveling") renderLevelingView();
   else renderGantt();
   // 当前视图按钮高亮
-  const map = { gantt: "btnViewGantt", resource: "btnViewRes", orders: "btnViewOrders" };
+  const map = { gantt: "btnViewGantt", resource: "btnViewRes", orders: "btnViewOrders", leveling: "btnLevel" };
   Object.entries(map).forEach(([v, id]) => {
     const b = document.getElementById(id);
     if (b) b.classList.toggle("primary", state.view === v);
@@ -830,6 +1130,39 @@ function renderResourceView() {
   });
 }
 
+/* ---------- 资源错峰建议视图（层3 引擎②）：只出建议、不改排期 ---------- */
+function renderLevelingView() {
+  const g = document.getElementById("gantt");
+  g.innerHTML = "";
+  g.style.width = ""; g.style.height = "";
+  const comp = state.computed;
+  if (!comp) { g.innerHTML = '<div class="hint">点击「自动排期」后再看错峰建议。</div>'; return; }
+  // 用排期内部 order（含 es/ef/resource/preds/slack）构建叶任务快照
+  const leaf = (comp.order || []).map(t => ({ id: t.id, es: t.es, ef: t.ef, dur: t.dur, resource: t.resource, slack: t.slack, preds: t.preds }));
+  const lev = suggestLeveling(leaf, state.data.resources, comp.cal);
+  state.leveling = lev;
+  const solved = lev.residualOverloads.length === 0;
+  const rows = lev.suggested.filter(s => s.shifted)
+    .map(s => `<tr><td>${s.id}</td><td>${s.start} → ${s.finish}</td><td style="color:var(--critical)">右移 ${s.shiftDays} 工作日</td></tr>`).join("");
+  const resRows = solved ? "" : lev.residualOverloads
+    .map(o => `<tr><td>${o.resource}</td><td>${o.start} → ${o.end}</td><td style="color:var(--critical)">并发 ${o.load} / 产能 ${o.capacity}</td></tr>`).join("");
+  g.innerHTML = `
+    <div style="padding:14px;max-width:720px;font-size:13px;line-height:1.7">
+      <div style="font-weight:700;margin-bottom:8px">资源错峰建议（贪心串行 · 只出建议不改排期）</div>
+      <div style="margin-bottom:10px">
+        原总工期 <b>${comp.projEnd}</b> 工作日 → 错峰后 <b>${lev.newProjEnd}</b> 工作日 ·
+        建议移动 <b>${lev.movedCount}</b> 项 ·
+        残余超载 <b style="color:${solved ? 'var(--ok,#5bbf8a)' : 'var(--critical)'}">${lev.residualOverloads.length}</b> 段${solved ? '（已消解全部资源冲突）' : ''}
+      </div>
+      ${rows ? `<table style="border-collapse:collapse;width:100%;margin-bottom:12px">
+        <thead><tr style="text-align:left;color:var(--muted)"><th style="padding:3px 8px">任务</th><th style="padding:3px 8px">建议区间</th><th style="padding:3px 8px">位移</th></tr></thead>
+        <tbody>${rows}</tbody></table>` : '<div class="hint">无需移动任何任务：当前排期已无资源超载。</div>'}
+      ${resRows ? `<div style="font-weight:600;margin:6px 0">残余超载（依赖/单资源本身不可解）：</div>
+        <table style="border-collapse:collapse;width:100%"><tbody>${resRows}</tbody></table>` : ''}
+      <div class="hint" style="margin-top:12px">错峰是独立按需建议，不写回任务表。手动采纳请据此调整任务约束或依赖。</div>
+    </div>`;
+}
+
 /* ---------- 外包发单视图（特性 D）：发单表 + 交付风险标红 + 供应商产能对比 ---------- */
 const ORDER_STATUS_COLORS = {
   "待发": "#8b97a6", "已发": "#5b8fd8", "画中": "#e0b15e", "回稿": "#6fa9d8",
@@ -918,13 +1251,84 @@ function renderStatus() {
     const overTxt = overRes.length ? ` · 资源超载 ${overRes.length} 项（${overRes.map(r => r.name).join("、")}）` : " · 资源无冲突";
     const lateTxt = comp.lateCount ? ` · 误期 ${comp.lateCount} 项` : " · 无误期";
     const riskTxt = comp.ordersAtRisk ? ` · 发单风险 ${comp.ordersAtRisk} 项` : ((comp.orders && comp.orders.length) ? " · 发单无风险" : "");
-    document.getElementById("stEnd").textContent = `总工期 ${comp.projEnd} 工作日 · 完工 ${fmtDate(last)} · 临界 ${critCount} 项${overTxt}${lateTxt}${riskTxt}`;
+    const warnTxt = comp.warningCount ? ` · 告警 ${comp.warningCount} 项` : "";
+    document.getElementById("stEnd").textContent = `总工期 ${comp.projEnd} 工作日 · 完工 ${fmtDate(last)} · 临界 ${critCount} 项${overTxt}${lateTxt}${riskTxt}${warnTxt}`;
   } else {
     document.getElementById("stEnd").textContent = "工期 —";
   }
+  // 告警 chip（层5-④）：有告警才显示，可点击展开面板
+  const warnEl = document.getElementById("stWarn");
+  const wc = comp ? comp.warningCount : 0;
+  if (wc) {
+    warnEl.style.display = "";
+    warnEl.innerHTML = `<span class="dot" style="background:var(--critical)"></span>告警 ${wc} 项 ▸`;
+  } else {
+    warnEl.style.display = "none";
+    document.getElementById("warnPanel").classList.remove("show");
+  }
+  // 面板若开着则同步刷新内容
+  if (document.getElementById("warnPanel").classList.contains("show")) renderWarnPanel();
   document.getElementById("stSource").textContent = "数据源：" +
     (state.fileHandle ? state.fileHandle.name + "（可写回）" : (state.data ? "内存（写入将下载）" : "未连接"));
   document.getElementById("projName").textContent = state.data ? state.data.project.name : "未加载项目";
+  updateDirBtn();
+}
+
+/* ---------- 调度方向控件（层5-③）：从开始(前向) ↔ 从完成(倒排) ---------- */
+function currentScheduleFrom() {
+  return (state.data && state.data.project && state.data.project.scheduleFrom === "finish") ? "finish" : "start";
+}
+function updateDirBtn() {
+  const b = document.getElementById("btnDir");
+  if (!b) return;
+  const sf = currentScheduleFrom();
+  b.textContent = sf === "finish" ? "方向：从完成" : "方向：从开始";
+  b.classList.toggle("primary", sf === "finish");
+}
+function doToggleDir() {
+  if (!state.data) { toast("请先载入数据"); return; }
+  readTable();
+  const proj = state.data.project;
+  const cur = currentScheduleFrom();
+  if (cur === "start") {
+    // 切到倒排：询问项目完成日期 project.finish，写入后重排
+    const def = proj.finish || proj.start || new Date().toISOString().slice(0, 10);
+    const v = prompt("倒排（从完成反推）：请输入项目完成日期 project.finish（YYYY-MM-DD）", def);
+    if (v == null) return;
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(v.trim())) { toast("日期格式须为 YYYY-MM-DD，已取消切换"); return; }
+    proj.scheduleFrom = "finish";
+    proj.finish = v.trim();
+  } else {
+    proj.scheduleFrom = "start";
+  }
+  updateDirBtn();
+  doSchedule();
+  toast(cur === "start" ? `已切到倒排（从完成 ${proj.finish}）` : "已切到前向（从开始）");
+}
+
+/* ---------- 告警面板（层5-④）：列出全部 warnings（红），可关闭 ---------- */
+const WARN_LABEL = {
+  cycle: "依赖环", "missing-pred": "缺前置", "constraint-conflict": "约束冲突",
+  "negative-slack": "负浮动", "infeasible-window": "窗口不可行",
+};
+function renderWarnPanel() {
+  const el = document.getElementById("warnPanel");
+  const comp = state.computed;
+  const ws = (comp && comp.warnings) ? comp.warnings : [];
+  const esc = s => String(s).replace(/[<>&]/g, m => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;" }[m]));
+  el.innerHTML =
+    `<h3><span>告警清单 · ${ws.length} 项</span><span class="wp-close" id="wpClose">关闭</span></h3>` +
+    (ws.length
+      ? `<ul>${ws.map(w => `<li><span class="wtype">${WARN_LABEL[w.type] || esc(w.type)}</span>${w.taskId ? `<b>${esc(w.taskId)}</b> ` : ""}${esc(w.desc)}</li>`).join("")}</ul>`
+      : `<div style="padding:14px;color:var(--muted)">当前无告警。</div>`);
+  const cl = document.getElementById("wpClose");
+  if (cl) cl.onclick = () => el.classList.remove("show");
+}
+function toggleWarnPanel() {
+  const el = document.getElementById("warnPanel");
+  if (el.classList.contains("show")) { el.classList.remove("show"); return; }
+  renderWarnPanel();
+  el.classList.add("show");
 }
 
 /* ---------- 动作 ---------- */
@@ -935,6 +1339,7 @@ function doSchedule() {
   state.computed = comp;
   renderTable(); renderRight(); renderStatus();
   if (comp.errors.length) toast("排期完成，但有警告：" + comp.errors[0]);
+  else if (comp.warningCount) toast(`排期完成，检出 ${comp.warningCount} 项告警：${comp.warnings[0].desc}`);
   else toast(`排期完成：${state.data.tasks.length} 项任务，总工期 ${comp.projEnd} 工作日`);
 }
 function doBaseline() {
@@ -1132,6 +1537,32 @@ const SAMPLE = {
   ]
 };
 
+/* ---------- v3 演示样例（内嵌，等价 data/sample-v3.json）：双角色 WBS 摘要 + 8 型约束 + 自由浮动 ---------- */
+const SAMPLE_V3 = {
+  "protocol": "bpt-pm/v1",
+  "project": {
+    "name": "v3 演示项目：双角色 WBS + 约束 + 错峰",
+    "start": "2026-07-06",
+    "scheduleFrom": "start",
+    "calendar": { "workdays": [1, 2, 3, 4, 5], "holidays": [] }
+  },
+  "resources": [
+    { "id": "主美", "name": "主美 / 艺术总监", "type": "person", "capacity": 1 },
+    { "id": "建模", "name": "建模师", "type": "person", "capacity": 1 },
+    { "id": "程序", "name": "程序接入", "type": "person", "capacity": 1 }
+  ],
+  "tasks": [
+    { "id": "SUM_X", "name": "角色X 工作包（摘要）" },
+    { "id": "SUM_Y", "name": "角色Y 工作包（摘要）" },
+    { "id": "X1", "name": "角色X 概念草图", "parent": "SUM_X", "duration": 2, "predecessors": [], "resource": "主美" },
+    { "id": "X2", "name": "角色X 精修建模", "parent": "SUM_X", "duration": 3, "predecessors": [{ "id": "X1", "type": "FS" }], "resource": "建模" },
+    { "id": "X3", "name": "角色X 引擎接入", "parent": "SUM_X", "duration": 2, "predecessors": [{ "id": "X2", "type": "FS" }], "resource": "程序", "constraint": { "type": "SNLT", "date": "2026-07-15" } },
+    { "id": "Y1", "name": "角色Y 概念草图", "parent": "SUM_Y", "duration": 2, "predecessors": [], "resource": "主美" },
+    { "id": "Y2", "name": "角色Y 精修建模", "parent": "SUM_Y", "duration": 3, "predecessors": [{ "id": "Y1", "type": "FS" }], "resource": "建模" },
+    { "id": "Y3", "name": "角色Y 引擎接入", "parent": "SUM_Y", "duration": 1, "predecessors": [{ "id": "Y2", "type": "FS" }], "resource": "程序", "deadline": "2026-07-13" }
+  ]
+};
+
 /* ---------- Toast ---------- */
 let toastTimer = null;
 function toast(msg) {
@@ -1152,10 +1583,13 @@ document.addEventListener("drop", async e => {
 /* ---------- 绑定 ---------- */
 document.getElementById("btnOpen").onclick = doOpen;
 document.getElementById("btnSample").onclick = () => { state.fileHandle = null; loadData(JSON.parse(JSON.stringify(SAMPLE))); doSchedule(); };
+document.getElementById("btnSampleV3").onclick = () => { state.fileHandle = null; loadData(JSON.parse(JSON.stringify(SAMPLE_V3))); doSchedule(); };
 document.getElementById("btnAddRow").onclick = doAddRow;
 document.getElementById("btnInstTemplate").onclick = doInstantiateTemplate;
 document.getElementById("btnSchedule").onclick = doSchedule;
+document.getElementById("btnDir").onclick = doToggleDir;
 document.getElementById("btnBaseline").onclick = doBaseline;
+document.getElementById("stWarn").onclick = toggleWarnPanel;
 document.getElementById("btnSave").onclick = doSave;
 document.getElementById("btnNotionPull").onclick = doNotionPull;
 document.getElementById("btnNotionPush").onclick = doNotionPush;
@@ -1163,6 +1597,14 @@ document.getElementById("btnProxyCfg").onclick = setProxy;
 document.getElementById("btnViewGantt").onclick = () => setView("gantt");
 document.getElementById("btnViewRes").onclick = () => setView("resource");
 document.getElementById("btnViewOrders").onclick = () => setView("orders");
+document.getElementById("btnLevel").onclick = () => {
+  if (!state.computed) { if (!state.data) { toast("请先载入数据"); return; } doSchedule(); }
+  setView("leveling");
+  const lev = state.leveling;
+  if (lev) toast(lev.residualOverloads.length === 0
+    ? `错峰完成：移动 ${lev.movedCount} 项，残余超载 0，新工期 ${lev.newProjEnd} 工作日`
+    : `错峰完成：移动 ${lev.movedCount} 项，仍有 ${lev.residualOverloads.length} 段残余超载`);
+};
 
 renderStatus();
 </script>
