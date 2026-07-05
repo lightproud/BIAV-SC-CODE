@@ -12,6 +12,15 @@ drop-in 兼容 `@anthropic-ai/claude-agent-sdk`，引擎直连 Anthropic Message
   BPT 需自有引擎）。
 - 净室纪律：唯一输入为公开文档（code.claude.com/docs/en/agent-sdk/* 与公开
   Messages API 文档），零复制专有代码；本包 MIT 许可。
+- **净室观测边界（硬约束，守密人 2026-07-05 裁定，全文见 `memory/decisions.md`）**：
+  ① 行为对照仅限**官方发行渠道产物 + 官方公开文档**，第三方复刻不得作参照；
+  ② **内容盲纪律**——官方臂请求体（内含专有系统提示词）任何工具/仿真器/日志/档案
+  **不得读取、不得持久化**；合法观测面 = 公开消息流 + 文件系统副作用 + 终态答案 +
+  线缆元数据（方法/路径/头名 + 协议元数据头值白名单）；内容盲组件必须自带自审断言；
+  ③ **泄漏衍生禁引**——claw-code / Nano-Claude-Code / claurst 及 2026-03 泄漏事件
+  同源衍生物一律不读不引（泄漏≠公开文档，转写/查重清零/转手均不洗白）。
+  官方臂协议剖面（首个合规执行范例）：
+  `Public-Info-Pool/Resource/repo-engineering/bpt-sdk-official-arm-protocol-profile-20260705.md`。
 - 兼容矩阵（实现 / 部分 / 仅接受 / 不支持 四档）：`docs/COMPAT.md`
 - 模块施工图与内部契约：`docs/ARCHITECTURE.md` + `src/internal/contracts.ts`
 
