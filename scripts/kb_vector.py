@@ -143,7 +143,16 @@ def load_index(path: str | None = None) -> dict:
             "或从 Release 还原（scripts/restore_release_data.py）。"
         )
     with gzip.open(p, "rt", encoding="utf-8") as fh:
-        return json.load(fh)
+        idx = json.load(fh)
+    # 常驻内存压缩：list[float]（每行 ~16KB Python 对象开销）→ array('f')（~2KB）。
+    # 60k 行量级从 ~1GB 压到 ~140MB；zip 迭代照常，cosine 不改。float32 舍入
+    # 对分数的扰动在 1e-7 量级，远小于 4 位小数的展示舍入。
+    from array import array
+    for it in idx.get("items", []):
+        v = it.get("vec")
+        if isinstance(v, list):
+            it["vec"] = array("f", v)
+    return idx
 
 
 # --------------------------------------------------------------------------- #

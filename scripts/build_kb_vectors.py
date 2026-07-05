@@ -35,15 +35,79 @@ _PREVIEW_LEN = 200
 _EMBED_BATCH = 128  # Voyage 单次批量上限量级
 
 
+def _eligible_counts(max_files: int | None, min_len: int) -> dict[str, int]:
+    """第一遍：各源合格（非空、够长）条数。只数数、零存储。"""
+    from build_community_index import iter_records
+
+    counts: dict[str, int] = {}
+    for source, _day, text, _lang, _eng in iter_records(max_files=max_files):
+        if len((text or "").strip()) < min_len:
+            continue
+        counts[source] = counts.get(source, 0) + 1
+    return counts
+
+
+def _quotas(counts: dict[str, int], limit: int) -> dict[str, int]:
+    """水填配额（确定性）：小源全收、盈余滚给大源，大源均分剩余。
+
+    语料结构极端偏斜（discord 753 万 = 99.5%，其余 16 平台合计 ~3.4 万）：均匀水位
+    先让所有装得下的小源**全量收编**，省下的配额全滚给 discord 这类大源。
+    纯算术、无随机——同 counts + 同 limit 必得同配额。
+    """
+    quotas: dict[str, int] = {}
+    remaining, active = max(0, int(limit)), dict(counts)
+    while active:
+        share = remaining // len(active)
+        small = {s: c for s, c in active.items() if c <= share}
+        if not small:
+            # 只剩大源：均分（余数按源名字典序发放，确定性）
+            names = sorted(active)
+            base, extra = remaining // len(names), remaining % len(names)
+            for i, s in enumerate(names):
+                quotas[s] = base + (1 if i < extra else 0)
+            return quotas
+        for s, c in small.items():
+            quotas[s] = c
+            remaining -= c
+            del active[s]
+        if remaining <= 0:
+            for s in active:
+                quotas[s] = 0
+            return quotas
+    return quotas
+
+
 def collect(limit: int, max_files: int | None, min_len: int) -> list[dict]:
-    """流式取有界切片：非空、够长的 text，攒到 limit 即停。"""
+    """分层有界采样（两遍流式，确定性零随机）。
+
+    v1「取前 limit 条」在几万量级是抽样失真（lesson #30 同源）：源按名迭代、
+    discord 排第三——前缀切片会把 discord 之后的 14 个平台全排除，discord 自身
+    也只取到最早几个频道。v2 改两遍：第一遍数各源合格条数 → 水填配额
+    （小源全收、大源吃剩余）；第二遍按**跨步抽样**取样（步长 = 合格数 // 配额，
+    在源内跨全频道全时间均匀落点），攒满配额即止。
+    """
     from build_community_index import iter_records  # 复用流式 emitter
 
+    counts = _eligible_counts(max_files, min_len)
+    if not counts:
+        return []
+    quotas = _quotas(counts, limit)
+    strides = {s: max(1, counts[s] // q) for s, q in quotas.items() if q > 0}
+    seen = {s: 0 for s in counts}
+    taken = {s: 0 for s in counts}
     rows: list[dict] = []
     for source, day, text, _lang, _eng in iter_records(max_files=max_files):
         text = (text or "").strip()
         if len(text) < min_len:
             continue
+        q = quotas.get(source, 0)
+        if q <= 0 or taken[source] >= q:
+            continue
+        k = seen[source]
+        seen[source] += 1
+        if k % strides[source]:
+            continue
+        taken[source] += 1
         rows.append({
             "source": source,
             "date": day,
@@ -51,8 +115,6 @@ def collect(limit: int, max_files: int | None, min_len: int) -> list[dict]:
             "_text": text,
             "ref": f"{source}:{day}",  # 指针：回落 dated 文件 ripgrep
         })
-        if len(rows) >= limit:
-            break
     return rows
 
 
@@ -103,12 +165,17 @@ def main() -> int:
 
     items = embed_rows(rows, backend, args.model)
     dim = len(items[0]["vec"]) if items else 0
+    per_source: dict[str, int] = {}
+    for it in items:
+        per_source[it["source"]] = per_source.get(it["source"], 0) + 1
     meta = {
         "backend": backend,
         "model": args.model if backend == "voyage" else "stub",
         "dim": dim,
         "count": len(items),
         "data_layer": "full_archive",
+        "sampling": "stratified",  # 分层：小源全收 + 大源跨步（见 collect docstring）
+        "per_source": dict(sorted(per_source.items())),
         "note": "长尾语义召回索引；放指针不放本体，全文回落 dated 文件 ripgrep",
     }
     kb_vector.write_index(Path(args.out), items, meta)
