@@ -252,7 +252,8 @@ brain-in-a-vat/
 │   ├── wiki/   # 使命#2 社区知识底座：VitePress 站点 + 72 角色数据库
 │   ├── site/   # 对外门户：静态站（public/）+ 设计令牌（design/）
 │   ├── game/   # 衍生游戏（退主线，守密人个人兴趣，不主线派发）
-│   └── bpt-agent-sdk/  # 银芯→黑池单向输出物（非使命线）：Claude Agent SDK 干净重实现，见 project-status「## BPT Agent SDK」
+│   ├── bpt-agent-sdk/  # 银芯→黑池单向输出物（非使命线）：Claude Agent SDK 干净重实现，见 project-status「## BPT Agent SDK」
+│   └── bpt-v2t/  # 语音代替输入（非使命线）：本地 STT 语音输入工具 + 专名热词桥，见 project-status「## BPT-V2T」
 ├── memory/                        # 银芯记忆层（决策 / 方法论 / 踩坑 / active hub）
 │   ├── active/                    # 主题入口卡（4 个高频 hub，优先读这里再下钻）
 │   ├── archive/ research/ strategy/
