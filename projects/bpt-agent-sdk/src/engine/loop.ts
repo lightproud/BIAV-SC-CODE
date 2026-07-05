@@ -216,6 +216,9 @@ export async function* runAgentLoop(
 
   let durationApiMs = 0;
   let numTurns = 0;
+  // Monotonic index across MessageDisplay emits (NEW-IN-DOCS incremental
+  // protocol). We fire once per completed message, so this counts messages.
+  let messageDisplayIndex = 0;
   let structuredRetries = 0;
   // E3: non-fatal stream-truncation notes for the terminal result's `errors`
   // (a truncated turn degrades gracefully; the note keeps the fault visible).
@@ -992,9 +995,10 @@ export async function* runAgentLoop(
       lastStopReason = assistant.stop_reason;
 
       // --- Yield assistant message + MessageDisplay hooks. ------------------
+      const assistantUuid = randomUUID();
       yield {
         type: 'assistant',
-        uuid: randomUUID(),
+        uuid: assistantUuid,
         session_id: config.sessionId,
         message: assistant,
         parent_tool_use_id: config.parentToolUseId ?? null,
@@ -1002,9 +1006,22 @@ export async function* runAgentLoop(
       const text = concatText(assistant.content);
       if (deps.hooks.hasHooks('MessageDisplay')) {
         // Non-blocking semantics: outcome only surfaces via debug logging.
+        // NEW-IN-DOCS incremental protocol: this engine is NOT a true delta
+        // stream — one emit per COMPLETED message, so final is always true and
+        // delta carries the whole segment; index is monotonic across emits.
+        const displayIndex = messageDisplayIndex++;
         const agg = await deps.hooks.run(
           'MessageDisplay',
-          { ...baseHookFields, hook_event_name: 'MessageDisplay', message_text: text },
+          {
+            ...baseHookFields,
+            hook_event_name: 'MessageDisplay',
+            turn_id: String(numTurns),
+            message_id: assistant.id ?? assistantUuid,
+            index: displayIndex,
+            final: true,
+            delta: text,
+            message_text: text,
+          },
           undefined,
           undefined,
           signal,

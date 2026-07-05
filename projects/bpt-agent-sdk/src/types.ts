@@ -395,7 +395,18 @@ export type HookEvent =
   | 'PermissionRequest'
   | 'SessionStart'
   | 'SessionEnd'
-  | 'Notification';
+  | 'Notification'
+  // NEW-IN-DOCS (live docs, above pins agent-sdk 0.3.199): six additional hook
+  // events. All are typed-not-fired here — this SDK has no natural runtime hook
+  // point for any of them (no Setup phase / agent-teams / Task four-piece /
+  // settings engine / worktree lifecycle), so they are declared for drop-in
+  // type compatibility only and never emitted. See each input type below.
+  | 'Setup'
+  | 'TeammateIdle'
+  | 'TaskCompleted'
+  | 'ConfigChange'
+  | 'WorktreeCreate'
+  | 'WorktreeRemove';
 
 export type BaseHookInput = {
   session_id: string;
@@ -404,6 +415,16 @@ export type BaseHookInput = {
   transcript_path?: string;
   agent_id?: string;
   agent_type?: string;
+  /**
+   * NEW-IN-DOCS: UUID of the user prompt currently being processed (matches the
+   * OpenTelemetry `prompt.id`). Official requires Claude Code v2.1.196+; absent
+   * until the first user input. typed-not-populated in this engine.
+   */
+  prompt_id?: string;
+  /** NEW-IN-DOCS: active permission mode at hook time. typed-not-populated. */
+  permission_mode?: string;
+  /** NEW-IN-DOCS: reasoning-effort level at hook time. typed-not-populated. */
+  effort?: { level: string };
 };
 
 export type PreToolUseHookInput = BaseHookInput & {
@@ -443,12 +464,59 @@ export type UserPromptSubmitHookInput = BaseHookInput & {
 
 export type MessageDisplayHookInput = BaseHookInput & {
   hook_event_name: 'MessageDisplay';
+  /**
+   * NEW-IN-DOCS: official incremental-render protocol. NOTE this engine is NOT
+   * a true incremental delta stream — it fires MessageDisplay ONCE per COMPLETED
+   * assistant message (same honest-subset stance as the Monitor tool). Therefore
+   * `final` is always true, `delta` carries the whole message segment, and
+   * `index` is monotonic across emits. Hosts that expect mid-message deltas will
+   * simply receive one final delta per message.
+   */
+  turn_id: string;
+  message_id: string;
+  index: number;
+  final: boolean;
+  delta: string;
+  /**
+   * @deprecated Superseded by the official `delta` field (NEW-IN-DOCS). Kept on
+   * a dual track so existing consumers keep compiling; carries the same whole
+   * message text as `delta`.
+   */
   message_text: string;
+};
+
+/** NEW-IN-DOCS: summary of a live background task, attached to Stop /
+ *  SubagentStop inputs. typed-not-populated in this engine. */
+export type BackgroundTaskSummary = {
+  id: string;
+  type: string;
+  status: string;
+  description: string;
+  command?: string;
+  agent_type?: string;
+  server?: string;
+  tool?: string;
+  name?: string;
+};
+
+/** NEW-IN-DOCS: summary of a session cron, attached to Stop / SubagentStop
+ *  inputs. typed-not-populated in this engine. */
+export type SessionCronSummary = {
+  id: string;
+  schedule: string;
+  recurring: boolean;
+  prompt: string;
 };
 
 export type StopHookInput = BaseHookInput & {
   hook_event_name: 'Stop';
   stop_hook_active: boolean;
+  /** NEW-IN-DOCS. typed-not-populated. */
+  last_assistant_message?: string;
+  /** NEW-IN-DOCS. typed-not-populated. */
+  background_tasks?: BackgroundTaskSummary[];
+  /** NEW-IN-DOCS. typed-not-populated. */
+  session_crons?: SessionCronSummary[];
 };
 
 export type SubagentStartHookInput = BaseHookInput & {
@@ -459,6 +527,12 @@ export type SubagentStopHookInput = BaseHookInput & {
   hook_event_name: 'SubagentStop';
   stop_hook_active: boolean;
   agent_transcript_path?: string;
+  /** NEW-IN-DOCS. typed-not-populated. */
+  last_assistant_message?: string;
+  /** NEW-IN-DOCS. typed-not-populated. */
+  background_tasks?: BackgroundTaskSummary[];
+  /** NEW-IN-DOCS. typed-not-populated. */
+  session_crons?: SessionCronSummary[];
 };
 
 export type PreCompactHookInput = BaseHookInput & {
@@ -491,6 +565,52 @@ export type NotificationHookInput = BaseHookInput & {
   notification_type?: string;
 };
 
+// NEW-IN-DOCS hook input types (all typed-not-fired; see HookEvent note). Field
+// shapes track the live docs verbatim for drop-in compatibility.
+
+export type SetupHookInput = BaseHookInput & {
+  hook_event_name: 'Setup';
+  trigger: 'init' | 'maintenance';
+};
+
+export type TeammateIdleHookInput = BaseHookInput & {
+  hook_event_name: 'TeammateIdle';
+  teammate_name: string;
+  /** @deprecated since v2.1.178. Carries the session-derived team name. */
+  team_name: string;
+};
+
+export type TaskCompletedHookInput = BaseHookInput & {
+  hook_event_name: 'TaskCompleted';
+  task_id: string;
+  task_subject: string;
+  task_description?: string;
+  teammate_name?: string;
+  /** @deprecated since v2.1.178. Carries the session-derived team name. */
+  team_name?: string;
+};
+
+export type ConfigChangeHookInput = BaseHookInput & {
+  hook_event_name: 'ConfigChange';
+  source:
+    | 'user_settings'
+    | 'project_settings'
+    | 'local_settings'
+    | 'policy_settings'
+    | 'skills';
+  file_path?: string;
+};
+
+export type WorktreeCreateHookInput = BaseHookInput & {
+  hook_event_name: 'WorktreeCreate';
+  name: string;
+};
+
+export type WorktreeRemoveHookInput = BaseHookInput & {
+  hook_event_name: 'WorktreeRemove';
+  worktree_path: string;
+};
+
 export type HookInput =
   | PreToolUseHookInput
   | PostToolUseHookInput
@@ -505,7 +625,13 @@ export type HookInput =
   | PermissionRequestHookInput
   | SessionStartHookInput
   | SessionEndHookInput
-  | NotificationHookInput;
+  | NotificationHookInput
+  | SetupHookInput
+  | TeammateIdleHookInput
+  | TaskCompletedHookInput
+  | ConfigChangeHookInput
+  | WorktreeCreateHookInput
+  | WorktreeRemoveHookInput;
 
 export type HookPermissionDecision = 'allow' | 'deny' | 'ask' | 'defer';
 
@@ -836,9 +962,20 @@ export type SandboxContext = {
   allowEscape: boolean;
 };
 
+/** NEW-IN-DOCS: how reasoning content is surfaced (Options.thinking `display`).
+ *  typed-not-populated in this engine — no summarization/omission layer wired. */
+export type ThinkingDisplay = 'summarized' | 'omitted';
+
 export type ThinkingConfigParam =
-  | { type: 'adaptive' }
-  | { type: 'enabled'; budgetTokens?: number; budget_tokens?: number; budget?: number }
+  | { type: 'adaptive'; display?: ThinkingDisplay }
+  | {
+      type: 'enabled';
+      budgetTokens?: number;
+      budget_tokens?: number;
+      budget?: number;
+      /** NEW-IN-DOCS. typed-not-populated. */
+      display?: ThinkingDisplay;
+    }
   | { type: 'disabled' };
 
 // ---------------------------------------------------------------------------
@@ -846,6 +983,12 @@ export type ThinkingConfigParam =
 // ---------------------------------------------------------------------------
 
 export type SettingSource = 'user' | 'project' | 'local';
+// NEW-IN-DOCS default-semantics note (behavior deliberately NOT changed here):
+// live docs redefine an omitted `settingSources` as "load user+project+local"
+// (matching the CLI). This SDK follows the PINNED semantics — omitted = load
+// NOTHING — unchanged, because flipping the default is a behavior-level reversal
+// that would diverge from the pinned conformance arm. It is a keeper up-pin
+// decision, handled only when the pins move. This SDK touches nothing here.
 
 /**
  * One segment of a caller-composed system prompt (`systemPrompt` segments
@@ -993,7 +1136,17 @@ export type Options = {
   strictMcpConfig?: boolean;
   systemPrompt?:
     | string
-    | { type: 'preset'; preset: 'claude_code'; append?: string }
+    | {
+        type: 'preset';
+        preset: 'claude_code';
+        append?: string;
+        /**
+         * NEW-IN-DOCS: move per-session dynamic context into the first user
+         * message for better prompt-cache reuse across machines.
+         * typed-not-populated in this engine.
+         */
+        excludeDynamicSections?: boolean;
+      }
     | { type: 'segments'; segments: SystemPromptSegment[] };
   thinking?: ThinkingConfigParam;
   /** Restrict built-in tools by name; defaults to all built-ins. */
@@ -1116,7 +1269,36 @@ export type Options = {
 // SDK messages
 // ---------------------------------------------------------------------------
 
-export type ApiKeySource = 'user' | 'project' | 'org' | 'temporary' | 'none';
+// 'oauth' is NEW-IN-DOCS (live docs value); 'none' is a BPT-local extension.
+export type ApiKeySource = 'user' | 'project' | 'org' | 'temporary' | 'oauth' | 'none';
+
+/**
+ * NEW-IN-DOCS: provenance of a user-role message, forwarded onto the
+ * corresponding result so hosts can tell what triggered a turn. typed-not-
+ * populated in this engine (all turns here are effectively `human`; an absent
+ * `origin` already means human input per the official contract). */
+export type SDKMessageOrigin =
+  | { kind: 'human' }
+  | { kind: 'channel'; server: string }
+  | { kind: 'peer'; from: string; name?: string; senderTaskId?: string }
+  | { kind: 'task-notification' }
+  | { kind: 'coordinator' }
+  | { kind: 'auto-continuation' };
+
+/**
+ * NEW-IN-DOCS: coarse error class attached to an assistant message. typed-not-
+ * populated in this engine (error detail surfaces via SDKResultMessage). */
+export type SDKAssistantMessageError =
+  | 'authentication_failed'
+  | 'oauth_org_not_allowed'
+  | 'billing_error'
+  | 'rate_limit'
+  | 'overloaded'
+  | 'invalid_request'
+  | 'model_not_found'
+  | 'server_error'
+  | 'max_output_tokens'
+  | 'unknown';
 
 export type SDKUserMessage = {
   type: 'user';
@@ -1124,6 +1306,8 @@ export type SDKUserMessage = {
   session_id: string;
   message: APIUserMessage;
   parent_tool_use_id: string | null;
+  /** NEW-IN-DOCS. typed-not-populated. */
+  origin?: SDKMessageOrigin;
 };
 
 export type SDKUserMessageReplay = {
@@ -1133,6 +1317,8 @@ export type SDKUserMessageReplay = {
   message: APIUserMessage;
   parent_tool_use_id: string | null;
   isReplay: true;
+  /** NEW-IN-DOCS. typed-not-populated. */
+  origin?: SDKMessageOrigin;
 };
 
 export type SDKAssistantMessage = {
@@ -1141,6 +1327,8 @@ export type SDKAssistantMessage = {
   session_id: string;
   message: APIAssistantMessage;
   parent_tool_use_id: string | null;
+  /** NEW-IN-DOCS. typed-not-populated. */
+  error?: SDKAssistantMessageError;
 };
 
 export type SDKPartialAssistantMessage = {
@@ -1188,6 +1376,26 @@ export type SDKRunMetrics = {
   modelUsage: Record<string, ModelUsage>;
 };
 
+/** NEW-IN-DOCS: why the agent loop ended (SDKResultMessage.terminal_reason).
+ *  typed-not-populated in this engine — `stop_reason`/`subtype` remain the
+ *  authoritative termination signals. */
+export type TerminalReason =
+  | 'completed'
+  | 'max_turns'
+  | 'tool_deferred'
+  | 'aborted_streaming'
+  | 'aborted_tools'
+  | 'hook_stopped'
+  | 'stop_hook_prevented'
+  | 'blocking_limit'
+  | 'rapid_refill_breaker'
+  | 'prompt_too_long'
+  | 'image_error'
+  | 'model_error';
+
+/** NEW-IN-DOCS: fast-mode state on the result. typed-not-populated. */
+export type FastModeState = 'on' | 'off' | 'cooldown';
+
 export type SDKResultMessage =
   | {
       type: 'result';
@@ -1220,6 +1428,12 @@ export type SDKResultMessage =
       permission_denials: SDKPermissionDenial[];
       /** HTTP status of the last API error observed during the run, if any. */
       api_error_status?: number;
+      /** NEW-IN-DOCS. typed-not-populated. */
+      terminal_reason?: TerminalReason;
+      /** NEW-IN-DOCS. typed-not-populated. */
+      fast_mode_state?: FastModeState;
+      /** NEW-IN-DOCS. typed-not-populated. */
+      origin?: SDKMessageOrigin;
       /** v0.3 per-run budget/efficiency metrics. */
       metrics?: SDKRunMetrics;
     }
@@ -1256,6 +1470,12 @@ export type SDKResultMessage =
       /** Time to first token (ms); only present when a token actually arrived. */
       ttft_ms?: number;
       ttft_stream_ms?: number;
+      /** NEW-IN-DOCS. typed-not-populated. */
+      terminal_reason?: TerminalReason;
+      /** NEW-IN-DOCS. typed-not-populated. */
+      fast_mode_state?: FastModeState;
+      /** NEW-IN-DOCS. typed-not-populated. */
+      origin?: SDKMessageOrigin;
       /** v0.3 per-run budget/efficiency metrics. */
       metrics?: SDKRunMetrics;
     };
@@ -1993,6 +2213,8 @@ export type SDKControlInitializeResponse = {
   available_output_styles: string[];
   models: ModelInfo[];
   account: AccountInfo;
+  /** NEW-IN-DOCS. typed-not-populated. */
+  fast_mode_state?: FastModeState;
 };
 
 /** @deprecated Use the official export name SDKControlInitializeResponse
