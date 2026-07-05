@@ -1,8 +1,8 @@
 {
   "date": "2026-07-05",
-  "archived_at": "2026-07-05T06:37:23.886248+00:00",
+  "archived_at": "2026-07-05T09:40:57.770602+00:00",
   "source": "steam",
-  "item_count": 3,
+  "item_count": 5,
   "items": [
     {
       "title": "[正面] Lo instalé por Saya, pero la historia y el gamepla...",
@@ -70,6 +70,54 @@
         "playtime_forever": 328,
         "votes_up": 0,
         "timestamp_created": 1783230334
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] one of the best gacha",
+      "summary": "one of the best gacha",
+      "source": "steam_review",
+      "time": "2026-07-05T07:57:16+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198110627976/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198110627976",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 1077,
+        "votes_up": 0,
+        "timestamp_created": 1783238236
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 玩法大致杀戮尖塔二次元mod",
+      "summary": "玩法大致杀戮尖塔二次元mod",
+      "source": "steam_review",
+      "time": "2026-07-05T06:27:54+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199859216131/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199859216131",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 4006,
+        "votes_up": 0,
+        "timestamp_created": 1783232874
       },
       "region": "global",
       "archive_subtype": "review",

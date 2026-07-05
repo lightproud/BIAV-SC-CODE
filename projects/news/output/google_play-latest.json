@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-05T06:36:33.573927+00:00",
+  "collected_at": "2026-07-05T09:40:09.715867+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 142,
+  "item_count": 143,
   "items": [
     {
       "source": "google_play",
@@ -1113,6 +1113,16 @@
       "summary": "Muy buen juego, la vdd, se lo sugiero",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=es#gp-fe89f6f2-994e-4cb9-84c1-b44f1d787c36",
       "author": "Daniel Miller",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-04T07:26:08",
+      "lang": "it",
+      "title": "[Google Play 好评] ★5 5 stelle perché è un gioco multilingue c",
+      "summary": "5 stelle perché è un gioco multilingue compreso l'italiano cosa che ormai dovrebbero fare tutti giochi grazie all'IA",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=it#gp-d2764bc5-5216-46e4-9594-094a54585b86",
+      "author": "Daniele",
       "engagement": 0
     },
     {

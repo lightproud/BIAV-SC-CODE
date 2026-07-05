@@ -1,24 +1,24 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-05T06:36:33.573927+00:00",
+  "collected_at": "2026-07-05T09:40:09.715867+00:00",
   "source": "bilibili",
   "data_layer": "output",
-  "item_count": 11,
+  "item_count": 14,
   "items": [
     {
       "source": "bilibili",
       "time": "2026-07-04T18:59:11+00:00",
       "lang": "zh",
       "title": "今天我要变成一个香喷喷的肉丸子",
-      "summary": "-\n  └ 蓝桉寂雪 (50赞): 不用变，本来就是一坨生的四喜丸子\n  └ 我推及吧顶飞你推 (12赞): 如果按原本歌词来说的话，芝士球应该是脂肪了[星星眼]\n  └ 是蓉怜烟啊 (1赞): @拾柒酒 @叶隙间洒落的阳光-- @打打拳击  本来就是。",
+      "summary": "-\n  └ 蓝桉寂雪 (54赞): 不用变，本来就是一坨生的四喜丸子\n  └ 我推及吧顶飞你推 (14赞): 如果按原本歌词来说的话，芝士球应该是脂肪了[星星眼]\n  └ 是蓉怜烟啊 (1赞): @拾柒酒 @叶隙间洒落的阳光-- @打打拳击  本来就是。",
       "url": "https://www.bilibili.com/video/BV1pNMK6kEF8",
       "author": "soyo离",
-      "engagement": 1888,
+      "engagement": 1973,
       "media_url": "https://i2.hdslb.com/bfs/archive/c929cd734383ad34b5e6e3a82fb71dbe485dd730.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 1869,
-        "comment_count": 19,
+        "play": 1952,
+        "comment_count": 21,
         "comments_fetched": 3,
         "danmaku": 2
       }
@@ -31,13 +31,49 @@
       "summary": "",
       "url": "https://www.bilibili.com/video/BV1ACMK62ExC",
       "author": "蹈海者",
-      "engagement": 463,
+      "engagement": 494,
       "media_url": "https://i0.hdslb.com/bfs/archive/852ad56274d92ee51881deaff0849715776ec835.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 463,
+        "play": 494,
         "comment_count": 0,
         "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-07-05T06:14:03+00:00",
+      "lang": "zh",
+      "title": "［相位/教学］大佬推荐，版本答案？诞墨哈姆林极致速攻！",
+      "summary": "-\n  └ 归于喧嚣海洋吧 (7赞): 补充亿点点说明\n1、起手留牌默认留淡墨的打击和群体20狂，零费的嘲讽（后手打医生就赶紧洗下去别被扔）看对方阵容留下悲怆，女仆的甜点，小艾的虚弱，深海的呼唤\n2、这套重点就是活过前两个回合，凑够全员40狂就可以考虑启动了（这就导致这套先手反而比后手更有优势）因为哈姆林和女仆是自带狂气回复，加上带的灵摆可以考虑变速去吸对面一手（这套打慢速两个淡墨的二加上一个三可以打otk的，所以不用担心说太缺伤害）\n3、这套除了女仆都可以吃致意，可以根据场上情况来，有的时候哈姆林如果能成功哈两下的话，伤害不比淡墨低（但是淡墨能开大一定是最高优先级）\n4、纯白的用法除了找牌提速之外，还有提质量，打的时候一定要知道你这个纯白是为了什么，以及舍弃手上的牌之后接下来的回合要怎么应对（如果实在不想想那么多的话，换成特殊治疗也是可以的）\n  └ 莱星Ligh (3赞): 相位对弈——编队分享\n守密人：&lt;#3af&gt;莱星（100364583）\n\n编队名：\n残忍的致意、哈姆林、珈伦、诞妄·墨菲、艾继丝\n纯白初遇、涌现、催眠灵摆、记忆症候、深海的呼唤\n\n@@xpVxHyWyAxJy0dztxB@@\n  └ 一般杂鱼 (2赞): [星星眼]",
+      "url": "https://www.bilibili.com/video/BV1a8MM6PEGQ",
+      "author": "莱星Ligh",
+      "engagement": 489,
+      "media_url": "https://i0.hdslb.com/bfs/archive/5f9b1cbb3450ea5f2017880bffed9f177191db58.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 467,
+        "comment_count": 22,
+        "comments_fetched": 3,
+        "danmaku": 2
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-07-05T04:56:09+00:00",
+      "lang": "zh",
+      "title": "杀戮尖塔 2，但我玩的是 Black Souls 版沙耶之歌",
+      "summary": "最近和朋友双人n10打的很累 想着玩轻松的模组放松放松 于是就有了这期视频\n  └ 芸文奏 (1赞): @灼白呀 @曦之落羽 @FHx-y 喊些玩杀戮尖塔2的朋友吧(〜￣△￣)〜",
+      "url": "https://www.bilibili.com/video/BV1owMu63EGy",
+      "author": "芸文奏",
+      "engagement": 461,
+      "media_url": "https://i1.hdslb.com/bfs/archive/a9c74adc3e6256e1e5ec0e839947d06d6b407993.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 459,
+        "comment_count": 2,
+        "comments_fetched": 1,
         "danmaku": 0
       }
     },
@@ -46,52 +82,70 @@
       "time": "2026-07-04T15:32:44+00:00",
       "lang": "zh",
       "title": "[那随风飘荡的 蒲公英的种子…]",
-      "summary": "-\n  └ 鸮鸮不咕咕叫 (0赞): @哈基沙大玉\n  └ 不想玩刀 (0赞): 呼叫传奇调查员凉子小姐[doge]\n  └ -昆扬 (0赞): [魔法少女的魔女审判表情包_探头]",
+      "summary": "-\n  └ 鸮鸮不咕咕叫 (1赞): @哈基沙大玉\n  └ 曾几何时天魔の黑兔 (0赞): [樱花萌放表情_藏]\n  └ 不想玩刀 (0赞): 呼叫传奇调查员凉子小姐[doge]",
       "url": "https://www.bilibili.com/video/BV1rPMP6vEMr",
       "author": "汉堡包爱吃汉堡包",
-      "engagement": 349,
+      "engagement": 450,
       "media_url": "https://i1.hdslb.com/bfs/archive/fccd8912c727527e5b5866738442cdf9e8b56a5a.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 346,
-        "comment_count": 3,
+        "play": 444,
+        "comment_count": 6,
         "comments_fetched": 3,
         "danmaku": 0
       }
     },
     {
       "source": "bilibili",
-      "time": "2026-07-05T04:56:09+00:00",
+      "time": "2026-07-05T08:09:32+00:00",
       "lang": "zh",
-      "title": "杀戮尖塔 2，但我玩的是 Black Souls 版沙耶之歌",
-      "summary": "最近和朋友双人n10打的很累 想着玩轻松的模组放松放松 于是就有了这期视频\n  └ 芸文奏 (0赞): @灼白呀 @曦之落羽 @FHx-y 喊些玩杀戮尖塔2的朋友吧(〜￣△￣)〜",
-      "url": "https://www.bilibili.com/video/BV1owMu63EGy",
-      "author": "芸文奏",
-      "engagement": 163,
-      "media_url": "https://i1.hdslb.com/bfs/archive/a9c74adc3e6256e1e5ec0e839947d06d6b407993.jpg",
+      "title": "【两句话剧场】“求你不要再说谐音梗了，观众要看腻了”",
+      "summary": "久违的两句话小剧场~\n群号：1051266875\n欢迎来玩！\n  └ 某不知名老法师 (3赞): 请各位百官珍惜这来之不易的更新[doge]\n  └ 神秘冥卫一 (3赞): 等了半个世纪，终于等到百合子更两句话剧场了[星星眼]\n  └ _未_闻_花_名_ (3赞): 最喜欢的小剧场[喜欢]",
+      "url": "https://www.bilibili.com/video/BV1JXTC6GEAF",
+      "author": "百合子堂堂登场",
+      "engagement": 304,
+      "media_url": "https://i0.hdslb.com/bfs/archive/82dcda4b9395b900a5e969a5bdb9592e6a36cafe.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 162,
-        "comment_count": 1,
-        "comments_fetched": 1,
+        "play": 288,
+        "comment_count": 16,
+        "comments_fetched": 3,
+        "danmaku": 3
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-07-04T10:07:07+00:00",
+      "lang": "zh",
+      "title": "【771OvO1】我的最新作品，快来一睹为快！",
+      "summary": "-\n  └ 萊羽千梦 (2赞): 妈妈好美，喜欢你喵[香奈美·追寻那道光 应援装扮_打call]\n  └ Coldkalewisp (2赞): 刷了一天肉块终于看到人类了[嘟嘟]\n  └ 钩的鹅天黑是我 (1赞): [打call]",
+      "url": "https://www.bilibili.com/video/BV1MTMA6yEE3",
+      "author": "老鼠药大王77",
+      "engagement": 238,
+      "media_url": "https://i2.hdslb.com/bfs/archive/edf1c2007aa0e004372c4b5218b2049d61d62160.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 218,
+        "comment_count": 20,
+        "comments_fetched": 3,
         "danmaku": 0
       }
     },
     {
       "source": "bilibili",
-      "time": "2026-07-04T14:01:45+00:00",
+      "time": "2026-07-04T15:04:00+00:00",
       "lang": "zh",
-      "title": "第四届N厨杯-第二十日录播",
-      "summary": "第二十日直播录播\n  └ 不知今世为何 (0赞): @何沐樱 @伊什卡尔_不要攻击我 @绘奇旅 @希宵是个社会废人 @惑星planetes @炽烈的卡芙卡",
-      "url": "https://www.bilibili.com/video/BV1GNMN69EMn",
-      "author": "God7777",
-      "engagement": 160,
-      "media_url": "https://i2.hdslb.com/bfs/archive/2df3521d8a74a5b8e6bdd4fecc3893f7b6567536.jpg",
+      "title": "i wanna see the sunshine after the rain",
+      "summary": "-\n  └ 耕司青海瑶 (1赞): [喜欢][喜欢][喜欢][喜欢]\n  └ -昆扬 (1赞): [魔法少女的魔女审判表情包_探头]\n  └ 世界第一的沙耶小姐 (1赞): 萌萌",
+      "url": "https://www.bilibili.com/video/BV1JTMP6YE9o",
+      "author": "枕头hh",
+      "engagement": 196,
+      "media_url": "https://i1.hdslb.com/bfs/archive/780c1338787b3c083c9c08a6aa5e676e730ceb2d.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 158,
-        "comment_count": 2,
-        "comments_fetched": 1,
+        "play": 193,
+        "comment_count": 3,
+        "comments_fetched": 3,
         "danmaku": 0
       }
     },
@@ -103,13 +157,31 @@
       "summary": "-\n  └ 桀骜的身影 (1赞): @哈基沙大玉\n  └ 世界第一的沙耶小姐 (0赞): 萌萌\n  └ -昆扬 (0赞): [魔法少女的魔女审判表情包_探头]",
       "url": "https://www.bilibili.com/video/BV1FUMK6VEQP",
       "author": "苹果朗姆",
-      "engagement": 131,
+      "engagement": 173,
       "media_url": "https://i2.hdslb.com/bfs/archive/d3a94786d19291bcd7b6c747669cd1b6db95d15b.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 127,
+        "play": 169,
         "comment_count": 4,
         "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-07-04T14:01:45+00:00",
+      "lang": "zh",
+      "title": "第四届N厨杯-第二十日录播",
+      "summary": "第二十日直播录播\n  └ 不知今世为何 (0赞): @何沐樱 @伊什卡尔_不要攻击我 @绘奇旅 @希宵是个社会废人 @惑星planetes @炽烈的卡芙卡",
+      "url": "https://www.bilibili.com/video/BV1GNMN69EMn",
+      "author": "God7777",
+      "engagement": 167,
+      "media_url": "https://i2.hdslb.com/bfs/archive/2df3521d8a74a5b8e6bdd4fecc3893f7b6567536.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 165,
+        "comment_count": 2,
+        "comments_fetched": 1,
         "danmaku": 0
       }
     },
@@ -121,11 +193,11 @@
       "summary": "恭喜你占领无人区\n\n在创意工坊发现沙耶mod后兴冲冲下载进行游玩，在一层boss达成伪无限，成功斩杀无限血阶段瀑布巨兽\n【反哺】（能力）打出”寄生“牌后抽1\n【你所挚爱的我】（攻击）（寄生）（永久进化）施加一层寄生，造成等同于本次施加寄生层数的伤害，你每在一回合内施加4（3）次寄生，将1张本牌放回手卡。打出这张卡时根据实际造成的寄生层数获得等量进化值：1.（70）额外施加目标当前寄生层数一半的寄生，向上取整。2.（740）额外施加等同于目标当前寄生层数的寄生。",
       "url": "https://www.bilibili.com/video/BV1T8MP6mE5Z",
       "author": "人类的落日",
-      "engagement": 119,
+      "engagement": 138,
       "media_url": "https://i1.hdslb.com/bfs/archive/9e0dadadeca69aba67da7996eb4e4b6cff5ceb6a.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 119,
+        "play": 138,
         "comment_count": 0,
         "comments_fetched": 0,
         "danmaku": 0
@@ -133,20 +205,20 @@
     },
     {
       "source": "bilibili",
-      "time": "2026-07-04T15:04:00+00:00",
+      "time": "2026-07-05T08:17:36+00:00",
       "lang": "zh",
-      "title": "i wanna see the sunshine after the rain",
-      "summary": "-\n  └ 世界第一的沙耶小姐 (0赞): 萌萌\n  └ -昆扬 (0赞): [魔法少女的魔女审判表情包_探头]",
-      "url": "https://www.bilibili.com/video/BV1JTMP6YE9o",
-      "author": "枕头hh",
-      "engagement": 115,
-      "media_url": "https://i1.hdslb.com/bfs/archive/780c1338787b3c083c9c08a6aa5e676e730ceb2d.jpg",
+      "title": "为何沙耶之歌让我恶心，史上最过誉的gal【宅说旮旯第11期】",
+      "summary": "└ 雪夜Xy_Spike (1赞): 昨天是被下了吗（[樱花萌放表情_唔]\n  └ 十三月ye (0赞): 沙耶我勉强能理解一下，男主实在是受不了\n  └ 万象东来 (0赞): 第一部旮旯入坑作，对我幼小的心灵产生了极大的震撼[doge]",
+      "url": "https://www.bilibili.com/video/BV1qoTC6BELp",
+      "author": "小宅宅是也",
+      "engagement": 117,
+      "media_url": "https://i0.hdslb.com/bfs/archive/ce78fea96ebca33d6e85f22b0d95d79e749ff77d.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 113,
-        "comment_count": 2,
-        "comments_fetched": 2,
-        "danmaku": 0
+        "play": 112,
+        "comment_count": 5,
+        "comments_fetched": 3,
+        "danmaku": 1
       }
     },
     {
@@ -157,11 +229,11 @@
       "summary": "-\n  └ 谢屑老板 (2赞): 繁血奥吉尔的大招收益极高，+12奥吉尔觉醒爆死扛吃胎瞬起1800力，杜勒吃大力量直接启爆\n双黑印位道中发育能力很强，狂气精通抽牌胚胎都是优质造物\n血肉队特有的缺银钥机制推荐用真理之门/神言石板/慈悲的哺育一类有银钥加成的弥补，因为几乎绑定杜勒专钥还缺胎缺狂都需要造物去补（点名瘟疫诊断书）\n道中思路靠真理之门提供的银钥做到第二回合开觉醒，沙耶0费/吃血池配合杜勒技能压血，大招收割能秒\n因为输出机会很关键，暴击率一定要叠高\n  └ ゚景元゚ (1赞): 有科研总是好的\n  └ 炽烈的卡芙卡 (0赞): 虐个2-5闹麻",
       "url": "https://www.bilibili.com/video/BV14DMA65E5m",
       "author": "谢屑老板",
-      "engagement": 92,
+      "engagement": 107,
       "media_url": "https://i0.hdslb.com/bfs/archive/da0592fce10f63ee2cd7ce724de2330e0b71aad6.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 88,
+        "play": 103,
         "comment_count": 4,
         "comments_fetched": 3,
         "danmaku": 0
@@ -169,35 +241,17 @@
     },
     {
       "source": "bilibili",
-      "time": "2026-07-05T06:14:03+00:00",
+      "time": "2026-07-05T07:35:18+00:00",
       "lang": "zh",
-      "title": "［相位/教学］大佬推荐，版本答案？诞墨哈姆林极致速攻！",
-      "summary": "-\n  └ Aeriff_ (2赞): 严肃学习[星星眼]\n  └ 一般杂鱼 (1赞): [星星眼]\n  └ 莱星Ligh (1赞): 相位对弈——编队分享\n守密人：&lt;#3af&gt;莱星（100364583）\n\n编队名：\n残忍的致意、哈姆林、珈伦、诞妄·墨菲、艾继丝\n纯白初遇、涌现、催眠灵摆、记忆症候、深海的呼唤\n\n@@xpVxHyWyAxJy0dztxB@@",
-      "url": "https://www.bilibili.com/video/BV1a8MM6PEGQ",
-      "author": "莱星Ligh",
-      "engagement": 72,
-      "media_url": "https://i0.hdslb.com/bfs/archive/5f9b1cbb3450ea5f2017880bffed9f177191db58.jpg",
+      "title": "70级三启杜勒·零死抗三星H5-11轻如松拿下大蜘蛛",
+      "summary": "沙耶对杜勒的提升是全方位的，尤其体现在治疗量。沙耶入队后杜勒推荐带36室密契进一步增幅治疗能力，银钥缺口由双银钥手补，此玩法日常回合的战损基本可以无视，重击回合克莱门汀减伤即可。\n  └ iq2233 (1赞): 医生得了mvp，杜勒是力量拐[doge]",
+      "url": "https://www.bilibili.com/video/BV1bVTy6oEwW",
+      "author": "法兰雀丝卡-",
+      "engagement": 31,
+      "media_url": "https://i1.hdslb.com/bfs/archive/69c73a89058ca50d1df0ec2033155095186d6feb.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 69,
-        "comment_count": 3,
-        "comments_fetched": 3,
-        "danmaku": 1
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-07-04T08:19:57+00:00",
-      "lang": "zh",
-      "title": "“我们约好了……这就是我……给你最后的礼物。”——《沙耶之歌》",
-      "summary": "-\n  └ Yoshikoi由鲤 (0赞): 啊啊啊啊头发和饰品都尽量选了最接近的\n不喜欢请不要骂我🥹",
-      "url": "https://www.bilibili.com/video/BV1rHMA6PEPe",
-      "author": "Yoshikoi由鲤",
-      "engagement": 26,
-      "media_url": "https://i2.hdslb.com/bfs/archive/da808ec62f6f556c9e871846bbe00099c7e86198.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 25,
+        "play": 30,
         "comment_count": 1,
         "comments_fetched": 1,
         "danmaku": 0
