@@ -216,7 +216,8 @@ const state = {
   data: null,        // 当前协议对象
   fileHandle: null,  // File System Access 句柄（可写回）
   computed: null,    // 排期结果 Map<id, {...}>
-  view: "gantt",     // 右侧视图：'gantt' | 'resource' | 'orders'
+  view: "gantt",     // 右侧视图：'gantt' | 'resource'
+  collapsed: new Set(), // WBS 已折叠的摘要 id | 'orders'
 };
 
 /* ---------- 日期工具（UTC 归一，避开时区漂移） ---------- */
@@ -787,6 +788,18 @@ function readTable() {
 }
 
 /* ---------- 渲染表格 ---------- */
+/* ---------- WBS 折叠辅助 ---------- */
+function wbsHidden(t) {
+  const by = new Map(state.data.tasks.map(x => [x.id, x]));
+  let cur = t, g = 0;
+  while (cur && cur.parent && g++ < 10000) { if (state.collapsed.has(cur.parent)) return true; cur = by.get(cur.parent); }
+  return false;
+}
+function toggleCollapse(id) {
+  if (state.collapsed.has(id)) state.collapsed.delete(id); else state.collapsed.add(id);
+  renderTable(); renderRight();
+}
+
 function renderTable() {
   const body = document.getElementById("taskBody");
   body.innerHTML = "";
@@ -800,6 +813,7 @@ function renderTable() {
     warnByTask.get(w.taskId).push(w);
   });
   state.data.tasks.forEach(t => {
+    if (wbsHidden(t)) return; // WBS：折叠的摘要下的子任务不渲染
     const c = comp ? comp.result.get(t.id) : null;
     const tr = document.createElement("tr");
     if (c && c.critical) tr.classList.add("critical");
@@ -827,14 +841,16 @@ function renderTable() {
     if (isSum) tr.classList.add("summary-row");
     const dep = c ? (c.depth || 0) : 0;
     const indent = dep > 0 ? `style="padding-left:${dep * 16}px"` : "";
-    const sumMark = isSum ? '<span style="color:var(--muted);font-weight:700"> ▸摘要</span>' : "";
+    // WBS 折叠三角（仅摘要行）：▶ 折叠 / ▼ 展开，点击切换
+    const triMark = isSum ? `<span onclick="toggleCollapse('${t.id.replace(/'/g, "")}')" style="cursor:pointer;user-select:none;color:var(--accent);margin-right:3px" title="折叠/展开子任务">${state.collapsed.has(t.id) ? "▶" : "▼"}</span>` : "";
+    const sumMark = isSum ? '<span style="color:var(--muted);font-weight:700"> 摘要</span>' : "";
     // 红旗标记（层5-④）：命中告警的任务行在任务名后挂红色告警旗，悬停显所有告警描述
     const warnMark = rowWarns
       ? `<span class="warn-flag" title="${rowWarns.map(w => w.desc.replace(/[<>&"]/g, "")).join(" / ")}">▲告警</span>`
       : "";
     tr.innerHTML =
       cell("c-id", t.id, true) +
-      `<td class="editable" ${indent}><span class="c-name" contenteditable="true" style="${isSum ? 'font-weight:700' : ''}">${t.name || ""}</span>${ms}${sumMark}${warnMark}</td>` +
+      `<td class="editable" ${indent}>${triMark}<span class="c-name" contenteditable="true" style="${isSum ? 'font-weight:700' : ''}">${t.name || ""}</span>${ms}${sumMark}${warnMark}</td>` +
       `<td class="editable num"><span class="c-dur" contenteditable="true">${t.duration ?? 1}</span></td>` +
       cell("c-pred", predsToStr(t.predecessors), true) +
       cell("c-con", constraintToStr(t.constraint), true) +
@@ -869,7 +885,7 @@ function renderGantt() {
   if (!minD) return;
   minD = addDays(minD, -1); maxD = addDays(maxD, 2);
   const totalDays = Math.round((maxD - minD) / MS_DAY) + 1;
-  const rows = state.data.tasks;
+  const rows = state.data.tasks.filter(t => !wbsHidden(t)); // WBS：折叠子任务不占甘特行
   const width = LEFT + totalDays * DAY_W;
   const height = HEAD_H + rows.length * ROW_H + 10;
   g.style.width = width + "px";
@@ -965,6 +981,19 @@ function renderGantt() {
       if (c.late) dm.style.background = "var(--critical)"; // 误期里程碑转红
       dm.title = `${t.name}（里程碑）${c.start}${lateNote}`;
       g.appendChild(dm);
+    } else if (c.isSummary) {
+      // WBS 摘要条：细横条 + 两端下折角括号，跨子任务范围
+      const bx = xOf(c.startDate);
+      const bw = Math.max(DAY_W, (Math.round((c.finishDate - c.startDate) / MS_DAY) + 1) * DAY_W);
+      const sb = document.createElement("div");
+      sb.style.cssText = `position:absolute;left:${bx}px;top:${y + 12}px;width:${bw}px;height:4px;background:var(--text);opacity:.85;`;
+      sb.title = `${t.name}（摘要）${c.start} → ${c.finish}｜跨度 ${c.dur} 工作日｜子 ${(c.childIds || []).join(",")}`;
+      g.appendChild(sb);
+      for (const ex of [bx, bx + bw - 3]) {
+        const cap = document.createElement("div");
+        cap.style.cssText = `position:absolute;left:${ex}px;top:${y + 12}px;width:3px;height:9px;background:var(--text);opacity:.85;`;
+        g.appendChild(cap);
+      }
     } else {
       const bx = xOf(c.startDate);
       const bw = Math.max(DAY_W - 2, (Math.round((c.finishDate - c.startDate) / MS_DAY) + 1) * DAY_W - 2);
@@ -1159,8 +1188,21 @@ function renderLevelingView() {
         <tbody>${rows}</tbody></table>` : '<div class="hint">无需移动任何任务：当前排期已无资源超载。</div>'}
       ${resRows ? `<div style="font-weight:600;margin:6px 0">残余超载（依赖/单资源本身不可解）：</div>
         <table style="border-collapse:collapse;width:100%"><tbody>${resRows}</tbody></table>` : ''}
-      <div class="hint" style="margin-top:12px">错峰是独立按需建议，不写回任务表。手动采纳请据此调整任务约束或依赖。</div>
+      ${lev.movedCount > 0 ? `<button onclick="doApplyLeveling()" class="primary" style="margin-top:6px">应用建议（给移动任务加 SNET 约束并重排）</button>` : ''}
+      <div class="hint" style="margin-top:12px">错峰是按需建议。「应用」把每个被移动任务的开始写成 SNET 约束（不早于建议日）后重排以落实错峰；可再手动微调。</div>
     </div>`;
+}
+function doApplyLeveling() {
+  const lev = state.leveling;
+  if (!lev || !lev.suggested) { toast("请先切到错峰视图生成建议"); return; }
+  readTable();
+  const byId = new Map(state.data.tasks.map(t => [t.id, t]));
+  let n = 0;
+  lev.suggested.filter(s => s.shifted).forEach(s => { const t = byId.get(s.id); if (t) { t.constraint = { type: "SNET", date: s.start }; n++; } });
+  renderTable(); // 先把新约束刷进 DOM 表格，doSchedule 内的 readTable 才不会用旧 DOM 覆盖
+  state.view = "resource"; // 应用后切资源视图看超载下降
+  doSchedule();
+  toast(`已应用错峰：为 ${n} 个任务加 SNET 约束并重排`);
 }
 
 /* ---------- 外包发单视图（特性 D）：发单表 + 交付风险标红 + 供应商产能对比 ---------- */
