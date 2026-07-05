@@ -513,11 +513,9 @@ export type HookJSONOutput = {
   /** When false, the agent stops after this hook. */
   continue?: boolean;
   /**
-   * Official field (hide the hook's output from transcript display). TYPED,
-   * NOT HONORED by this engine: the hook aggregator (src/hooks/runner.ts,
-   * aggregate()) never reads it, so systemMessage/debug surfacing is
-   * unaffected. Kept on the type for drop-in compatibility; wiring is tracked
-   * as an open item (audit T2-7).
+   * Official field: hide this output's systemMessage from the conversation
+   * surface. Honored by the hook aggregator since v0.7 (T2-7 close-out);
+   * permission decisions and continue:false still apply regardless.
    */
   suppressOutput?: boolean;
   stopReason?: string;
@@ -629,14 +627,11 @@ export type McpServerStatus = {
   /** The config this server was registered with (echoed back; task #17). */
   config?: McpServerConfig;
   /**
-   * Per-server tools, present once the server is connected. The OFFICIAL
-   * element shape is the McpServerToolInfo object (v0.7 alignment, T2-7);
-   * `Query.mcpServerStatus()` returns that shape. The `string[]` arm remains
-   * only because the internal registry (src/mcp/registry.ts:120) still
-   * assembles bare names — it is normalized at the Query surface and slated
-   * for removal once the registry assembly moves to the object form.
+   * Per-server tools, present once the server is connected — the official
+   * McpServerToolInfo object shape (v0.7 alignment, T2-7), assembled at the
+   * registry with description and mapped annotation hints.
    */
-  tools?: McpServerToolInfo[] | string[];
+  tools?: McpServerToolInfo[];
   /** Provenance of the config. Typed for compat; not tracked by this engine. */
   scope?: 'user' | 'project' | 'local' | 'dynamic';
 };
@@ -1873,19 +1868,16 @@ export type ElicitationHandler = (
  * Result of Query.setMcpServers() — official shape (T2-2, 2026-07-05):
  * `added` / `removed` / `errors` report the real before/after diff of the
  * server set (errors maps a failed server's name to its connect error).
- * `Query.setMcpServers()` always populates all three. They are typed OPTIONAL
- * only during the transition: the internal registry
- * (src/mcp/registry.ts:248-262) still returns the pre-alignment `{servers}`
- * shape, which the Query layer augments; once the registry signature is
- * decoupled these become required and `servers` is removed.
+ * The registry mutation is decoupled (void), so all three are required;
+ * the deprecated `servers` status list still rides along for one version.
  */
 export type McpSetServersResult = {
   /** Server names present after the call but not before. */
-  added?: string[];
+  added: string[];
   /** Server names present before the call but not after. */
-  removed?: string[];
+  removed: string[];
   /** Failed server name -> connect error message. */
-  errors?: Record<string, string>;
+  errors: Record<string, string>;
   /** @deprecated Pre-alignment payload (full status list); use
    *  added/removed/errors, or call mcpServerStatus() for statuses. */
   servers?: McpServerStatus[];

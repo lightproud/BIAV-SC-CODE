@@ -1130,6 +1130,34 @@ describe('DefaultHookRunner', () => {
     expect(agg.additionalContext).toEqual(['ctx-a']);
   });
 
+  it('suppressOutput:true hides that output systemMessage; decisions still apply (T2-7)', async () => {
+    const r = makeRunner({
+      PreToolUse: [
+        {
+          matcher: '*',
+          hooks: [
+            async (): Promise<HookJSONOutput> => ({
+              systemMessage: 'visible',
+            }),
+            async (): Promise<HookJSONOutput> => ({
+              systemMessage: 'hidden',
+              suppressOutput: true,
+              hookSpecificOutput: {
+                hookEventName: 'PreToolUse',
+                permissionDecision: 'deny',
+                permissionDecisionReason: 'nope',
+              },
+            }),
+          ],
+        },
+      ],
+    });
+    const agg = await r.run('PreToolUse', PRE_TOOL_INPUT, 'toolu_r7b', 'Bash', freshSignal());
+    expect(agg.systemMessages).toEqual(['visible']);
+    // The suppressed output's permission decision is NOT suppressed.
+    expect(agg.decision).toBe('deny');
+  });
+
   it('updatedInput comes from the LAST allow output in completion order', async () => {
     const r = makeRunner({
       PreToolUse: [

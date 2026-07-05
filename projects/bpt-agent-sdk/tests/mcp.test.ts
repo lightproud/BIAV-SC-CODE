@@ -274,12 +274,11 @@ describe('DefaultMcpRegistry with an sdk instance', () => {
       name: 'calc',
       status: 'connected',
       serverInfo: { name: 'calc', version: '1.0.0' },
-      tools: ['add'],
     });
     // task #17: status carries the config it was registered with + per-server
-    // tool names once connected.
+    // tools once connected (official object form since v0.7 T2-7).
     expect(statuses[0]!.config).toBeDefined();
-    expect(statuses[0]!.tools).toEqual(['add']);
+    expect(statuses[0]!.tools?.map((t) => t.name)).toEqual(['add']);
 
     const tools = reg.allTools();
     expect(tools.map((t) => t.qualifiedName)).toEqual(['mcp__calc__add']);

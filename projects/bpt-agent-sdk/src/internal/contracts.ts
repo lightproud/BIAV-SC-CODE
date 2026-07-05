@@ -20,7 +20,6 @@ import type {
   McpResourceContent,
   McpServerConfig,
   McpServerStatus,
-  McpSetServersResult,
   OutputFormatConfig,
   PermissionMode,
   PermissionUpdate,
@@ -386,8 +385,9 @@ export interface McpRegistry {
   readResource(server: string, uri: string, signal: AbortSignal): Promise<McpResourceContent[]>;
   reconnect(serverName: string): Promise<void>;
   setEnabled(serverName: string, enabled: boolean): void;
-  /** Replace the live server set at runtime; returns the new statuses. */
-  setServers(servers: Record<string, McpServerConfig>): Promise<McpSetServersResult>;
+  /** Replace the live server set at runtime; callers read statuses() for
+   *  the outcome (query.ts owns the public McpSetServersResult shape). */
+  setServers(servers: Record<string, McpServerConfig>): Promise<void>;
   closeAll(): Promise<void>;
 }
 

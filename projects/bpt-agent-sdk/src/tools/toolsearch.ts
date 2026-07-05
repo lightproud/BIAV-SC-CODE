@@ -85,7 +85,7 @@ export class DeferredMcpRegistry implements McpRegistry {
     this.inner.setEnabled(serverName, enabled);
   }
 
-  setServers(servers: Record<string, McpServerConfig>): Promise<McpSetServersResult> {
+  setServers(servers: Record<string, McpServerConfig>): Promise<void> {
     return this.inner.setServers(servers);
   }
 

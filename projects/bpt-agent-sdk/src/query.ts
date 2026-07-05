@@ -195,7 +195,7 @@ class ToolFilterMcpRegistry implements McpRegistry {
   setEnabled(serverName: string, enabled: boolean): void {
     this.inner.setEnabled(serverName, enabled);
   }
-  setServers(servers: Record<string, McpServerConfig>): Promise<McpSetServersResult> {
+  setServers(servers: Record<string, McpServerConfig>): Promise<void> {
     return this.inner.setServers(servers);
   }
   closeAll(): Promise<void> {
@@ -1582,41 +1582,9 @@ export function query(args: {
       return Object.keys(agentDefs).map((name) => ({ name }));
     },
     async mcpServerStatus() {
-      // Normalize the registry's pre-alignment string[] tools arm into the
-      // OFFICIAL object form (T2-7), enriched with description/annotations
-      // from the live tool entries (realMcp: unfiltered + undeferred, so the
-      // full connected tool set is described). Statuses already carrying the
-      // object form pass through untouched.
-      return mcpEff.statuses().map((s) => {
-        const t = s.tools;
-        if (t === undefined || t.length === 0 || typeof t[0] !== 'string') return s;
-        const names = t as string[];
-        const entries = realMcp.allTools().filter((e) => e.serverName === s.name);
-        const tools = names.map((name) => {
-          const entry = entries.find((e) => e.toolName === name);
-          if (entry === undefined) return { name };
-          const a = entry.annotations;
-          const annotations =
-            a !== undefined &&
-            (a.readOnlyHint !== undefined ||
-              a.destructiveHint !== undefined ||
-              a.openWorldHint !== undefined)
-              ? {
-                  ...(a.readOnlyHint !== undefined ? { readOnly: a.readOnlyHint } : {}),
-                  ...(a.destructiveHint !== undefined
-                    ? { destructive: a.destructiveHint }
-                    : {}),
-                  ...(a.openWorldHint !== undefined ? { openWorld: a.openWorldHint } : {}),
-                }
-              : undefined;
-          return {
-            name,
-            ...(entry.description !== undefined ? { description: entry.description } : {}),
-            ...(annotations !== undefined ? { annotations } : {}),
-          };
-        });
-        return { ...s, tools };
-      });
+      // The registry assembles the official McpServerToolInfo object form
+      // directly (T2-7 close-out) — no normalization layer needed.
+      return mcpEff.statuses();
     },
     async accountInfo() {
       return { apiKeySource: transport.apiKeySource() };
@@ -1641,7 +1609,7 @@ export function query(args: {
       // connect error. The registry's pre-alignment {servers} payload rides
       // along as the deprecated dual-track field.
       const before = new Set(mcpEff.statuses().map((s) => s.name));
-      const internal = await mcpEff.setServers(servers);
+      await mcpEff.setServers(servers);
       const after = mcpEff.statuses();
       const afterNames = new Set(after.map((s) => s.name));
       const added = after.filter((s) => !before.has(s.name)).map((s) => s.name);
@@ -1650,7 +1618,7 @@ export function query(args: {
       for (const s of after) {
         if (s.status === 'failed') errors[s.name] = s.error ?? 'connection failed';
       }
-      return { added, removed, errors, servers: internal.servers ?? after };
+      return { added, removed, errors, servers: after };
     },
     async rewindFiles(
       userMessageId: string,

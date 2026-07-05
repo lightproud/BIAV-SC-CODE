@@ -379,6 +379,14 @@ export function createSubagentRuntime(
                 prev.cacheCreationInputTokens + mu.cacheCreationInputTokens,
               webSearchRequests: prev.webSearchRequests + mu.webSearchRequests,
               costUSD: prev.costUSD + mu.costUSD,
+              // Static per-model metering (T2-4): same model -> same values;
+              // keep the freshest non-undefined ones across merges.
+              ...(mu.contextWindow ?? prev.contextWindow
+                ? { contextWindow: mu.contextWindow ?? prev.contextWindow }
+                : {}),
+              ...(mu.maxOutputTokens ?? prev.maxOutputTokens
+                ? { maxOutputTokens: mu.maxOutputTokens ?? prev.maxOutputTokens }
+                : {}),
             };
     }
   };

@@ -318,7 +318,13 @@ export class DefaultHookRunner implements HookRunner {
           agg.stopReason = out.stopReason;
         }
       }
-      if (typeof out.systemMessage === 'string' && out.systemMessage.length > 0) {
+      // suppressOutput:true hides this output's systemMessage from the
+      // conversation surface (official semantics); decisions still apply.
+      if (
+        typeof out.systemMessage === 'string' &&
+        out.systemMessage.length > 0 &&
+        out.suppressOutput !== true
+      ) {
         agg.systemMessages.push(out.systemMessage);
       }
 
