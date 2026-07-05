@@ -1,8 +1,8 @@
 {
   "generated": "2026-07-05",
   "stats": {
-    "nodes": 309,
-    "edges": 315
+    "nodes": 311,
+    "edges": 316
   },
   "nodes": [
     {
@@ -2465,6 +2465,17 @@
       "tier": "search"
     },
     {
+      "id": "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
+      "type": "documentation",
+      "title": "bpt-prompt-assembly-layer-design-20260705",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:proposal"
+      ],
+      "tier": "search"
+    },
+    {
       "id": "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "type": "documentation",
       "title": "bpt-prompt-layering-design-20260704",
@@ -2556,6 +2567,17 @@
       "id": "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "type": "documentation",
       "title": "bpt-desktop-ui-roadmap-20260705",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
+      "type": "documentation",
+      "title": "bpt-sdk-official-arm-protocol-profile-20260705",
       "tags": [
         "data_layer:curated",
         "deliverable",
@@ -4762,6 +4784,12 @@
       "source": "/resource/resource-game-analysis-role-action-recommendations-202605.md",
       "target": "/characters/130226.md",
       "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
       "rel_type": "mention"
     },
     {

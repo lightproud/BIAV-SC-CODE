@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 309,
-    "edges": 315,
-    "terms": 5294,
+    "concepts": 311,
+    "edges": 316,
+    "terms": 5362,
     "by_type": {
       "character": 72,
       "dataset": 109,
-      "documentation": 65,
+      "documentation": 67,
       "knowledge-pointer": 43,
       "reference": 17,
       "research": 3
@@ -26,7 +26,7 @@
       "memory": 47,
       "news-output": 23,
       "projects": 18,
-      "resource": 46,
+      "resource": 48,
       "sources": 17,
       "story": 11,
       "unpacked": 13,
@@ -34,7 +34,7 @@
     },
     "by_tier": {
       "skeleton": 131,
-      "search": 178
+      "search": 180
     }
   },
   "sections": {
@@ -68,7 +68,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 46
+      "count": 48
     },
     "sources": {
       "index": "/sources/index.md",
@@ -968,7 +968,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 70
+      "degree": 71
     },
     "/characters/15604.md": {
       "type": "character",
@@ -3023,7 +3023,7 @@
     "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md": {
       "type": "documentation",
       "title": "bpt-sdk-comparison-baseline-20260705",
-      "description": "v4 忠实再现的官方提示词在硬任务上**无可测收益 → 不提为默认**；vs-official 显示本 SDK **快 ~2.7×、省 ~8%、正确性不劣（本轮 11/11 vs 官方 9/11，官方 2 失败带无头 CI 保留）**。**不测不宣胜负——本档只记量出来的。**（格式：md）",
+      "description": "**⚠ 重大更正（2026-07-05 晚，见 §4）**：第 1 节「v4 无可测收益」结论**作废**——发现 A/B harness 有测量 bug（未设 `systemPrompt` preset，`harnessPromptVariant` 被静默忽略），**两臂实际都跑了极简默认提示词**，故「无差异」是假象。修复后 v1-vs-**v5** 真对照翻案：v5（忠实再现官方主循环、~3774 tok）在硬任务上 **~3× 便宜**（$0.0089 vs $0.0（格式：md）",
       "resource": "/Public-Info-Pool/Resource/data-diagnostics/bpt-sdk-comparison-baseline-20260705.md",
       "tags": [
         "data_layer:curated",
@@ -3146,6 +3146,20 @@
       "tier": "search",
       "degree": 0
     },
+    "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md": {
+      "type": "documentation",
+      "title": "bpt-prompt-assembly-layer-design-20260705",
+      "description": "bpt-agent-sdk 是官方 Claude Code / Claude Agent SDK 的干净重实现（clean-room reimplementation）。它的 agent-loop 要向模型发系统提示词。官方的系统提示词**不是一根字符串**——上游 README 明确写「Claude Code doesn't just have one single string」。它是一个**片段库（fragment store）**：553 个带 HTML 注释头的 m（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/proposal/bpt-prompt-assembly-layer-design-20260705.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:proposal"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 1
+    },
     "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md": {
       "type": "documentation",
       "title": "bpt-prompt-layering-design-20260704",
@@ -3263,6 +3277,20 @@
       "title": "bpt-desktop-ui-roadmap-20260705",
       "description": "怎么接」，本档回答「先建哪块、每步验收什么」。（格式：md）",
       "resource": "/Public-Info-Pool/Resource/repo-engineering/bpt-desktop-ui-roadmap-20260705.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 0
+    },
+    "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md": {
+      "type": "documentation",
+      "title": "bpt-sdk-official-arm-protocol-profile-20260705",
+      "description": "**架构裁定：活体差分成立。** L1-L4 可让两引擎每次 CI 都对同一台内容盲仿真器活体对跑，（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/repo-engineering/bpt-sdk-official-arm-protocol-profile-20260705.md",
       "tags": [
         "data_layer:curated",
         "deliverable",
@@ -3583,7 +3611,7 @@
     "/sources/steam.md": {
       "type": "dataset",
       "title": "steam 社区数据源",
-      "description": "steam 平台采集档案，全量 5100 条，健康度 active。",
+      "description": "steam 平台采集档案，全量 5101 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/review/",
       "tags": [
         "data_layer:full_archive",
@@ -3653,7 +3681,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 8996 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 9007 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -3667,7 +3695,7 @@
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 6236 条，健康度 active。",
+      "description": "weixin 平台采集档案，全量 6256 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -3681,7 +3709,7 @@
     "/sources/youtube.md": {
       "type": "dataset",
       "title": "youtube 社区数据源",
-      "description": "youtube 平台采集档案，全量 2596 条，健康度 active。",
+      "description": "youtube 平台采集档案，全量 2598 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -5754,6 +5782,11 @@
         "mention"
       ],
       [
+        "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
         "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
         "提及:艾瑞卡",
         "mention"
@@ -7491,6 +7524,13 @@
         "mention"
       ]
     ],
+    "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
     "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md": [
       [
         "/characters/15603.md",
@@ -8187,6 +8227,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -8196,6 +8237,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -8319,6 +8361,7 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/project-bpt-agent-sdk.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
@@ -8507,6 +8550,9 @@
     "arkaether": [
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
     ],
+    "arm": [
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
+    ],
     "art": [
       "/extracted/extracted-art-assets.md",
       "/projects/releases-treasure-map.md",
@@ -8514,6 +8560,9 @@
     ],
     "askuserquestion": [
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md"
+    ],
+    "assembly": [
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
     ],
     "assessment": [
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md"
@@ -8802,12 +8851,14 @@
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/project-bpt-agent-sdk.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
     ],
@@ -8816,6 +8867,7 @@
       "/memory/memory-ext-biav-info-classification.md"
     ],
     "bug": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md"
     ],
     "build": [
@@ -8890,7 +8942,7 @@
       "/assets/assets-chat-onboarding-snippet.md"
     ],
     "ci": [
-      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md"
     ],
     "classification": [
@@ -8905,6 +8957,7 @@
       "/projects/entry-claude-md.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
@@ -8929,7 +8982,8 @@
     ],
     "clean": [
       "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/project-bpt-agent-sdk.md"
+      "/projects/project-bpt-agent-sdk.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
     ],
     "cloud": [
       "/README.md"
@@ -8945,6 +8999,7 @@
       "/memory/memory-ext-active-policy-direct-push-main.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
     ],
     "codebase": [
@@ -9215,6 +9270,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -9224,6 +9280,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -9465,6 +9522,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -9474,6 +9532,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -9744,6 +9803,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -9753,6 +9813,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -9884,6 +9945,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -9893,6 +9955,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -9927,6 +9990,7 @@
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
     ],
     "designs": [
@@ -10006,6 +10070,9 @@
       "/extracted/extracted-readme.md",
       "/story/story_layer_readme.md"
     ],
+    "doesn't": [
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
+    ],
     "domain": [
       "/story/story_search_index.md",
       "/wiki-data/wiki-data-banners-by-character.md",
@@ -10077,6 +10144,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -10204,6 +10272,9 @@
     ],
     "foundation": [
       "/unpacked/unpacked-foundation.md"
+    ],
+    "fragment": [
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
     ],
     "frontmatter": [
       "/README.md",
@@ -10555,7 +10626,11 @@
     ],
     "harness": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md",
-      "/projects/bpt-sdk-doc-architecture.md"
+      "/projects/bpt-sdk-doc-architecture.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+    ],
+    "harnesspromptvariant": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "health": [
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -10727,6 +10802,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -10736,6 +10812,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -10956,6 +11033,12 @@
       "/memory/memory-ext-knowledge-layer-design.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md"
     ],
+    "l1": [
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
+    ],
+    "l4": [
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
+    ],
     "language": [
       "/wiki-data/wiki-data-language-config.md"
     ],
@@ -11140,6 +11223,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -11149,6 +11233,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -11389,6 +11474,9 @@
       "/README.md",
       "/memory/memory-ext-bpt-guidance-log.md"
     ],
+    "loop": [
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
+    ],
     "lore": [
       "/story/lore_by_unit.md",
       "/story/lore_entries.md",
@@ -11588,6 +11676,7 @@
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -11595,6 +11684,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -11859,7 +11949,7 @@
       "/community/community-official.md",
       "/news-output/news-output-official.md",
       "/projects/bpt-sdk-doc-migration.md",
-      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/sources/official.md"
     ],
@@ -12186,6 +12276,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -12195,6 +12286,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -12261,6 +12353,9 @@
     "predictability": [
       "/memory/memory-ext-skill-authoring-standard.md"
     ],
+    "preset": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+    ],
     "prime": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-design.md"
     ],
@@ -12307,6 +12402,9 @@
     ],
     "producer": [
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md"
+    ],
+    "profile": [
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
     ],
     "project": [
       "/memory/memory-ext-karpathy-coding-principles.md",
@@ -12429,6 +12527,7 @@
       "/wiki-data/wiki-schema-trinkets-schema.md"
     ],
     "prompt": [
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
@@ -12436,6 +12535,7 @@
     "proposal": [
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -12445,7 +12545,8 @@
     "protocol": [
       "/memory/contribution-protocol.md",
       "/memory/memory-ext-active-contribution-protocol.md",
-      "/memory/memory-ext-bpt-guidance-protocol.md"
+      "/memory/memory-ext-bpt-guidance-protocol.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
     ],
     "prototype": [
       "/resource/resource-proposal-wiki-prototype-202603.md"
@@ -12492,6 +12593,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -12501,6 +12603,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -12639,6 +12742,7 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md",
       "/projects/entry-readme.md",
       "/projects/extracted-lua-readme.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/story/story_layer_readme.md"
     ],
     "realms": [
@@ -12723,6 +12827,9 @@
       "/projects/news-archive-sources-registry.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md"
     ],
+    "reimplementation": [
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
+    ],
     "rele": [
       "/community/community-index.md"
     ],
@@ -12739,6 +12846,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -12797,6 +12905,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -12806,6 +12915,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -12860,7 +12970,8 @@
     ],
     "room": [
       "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/project-bpt-agent-sdk.md"
+      "/projects/project-bpt-agent-sdk.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
     ],
     "round1": [
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md"
@@ -12964,9 +13075,11 @@
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/project-bpt-agent-sdk.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
     ],
@@ -13000,6 +13113,9 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-silver-blackpool-interface.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md"
+    ],
+    "single": [
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
     ],
     "site": [
       "/projects/project-site.md",
@@ -13169,6 +13285,9 @@
     "storage": [
       "/memory/memory-ext-storage-discussion.md"
     ],
+    "store": [
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
+    ],
     "stories": [
       "/wiki-data/wiki-data-item-stories.md"
     ],
@@ -13261,6 +13380,9 @@
     "strategy": [
       "/memory/memory-strategy-repo-slimming-plan.md",
       "/projects/doc-testing-strategy.md"
+    ],
+    "string": [
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
     ],
     "structure": [
       "/assets/assets-narrative-structure.md",
@@ -13365,6 +13487,9 @@
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md"
     ],
+    "systemprompt": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+    ],
     "t15": [
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-drops-by-item.md"
@@ -13456,6 +13581,9 @@
     "todowrite": [
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md"
     ],
+    "tok": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+    ],
     "token": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-design.md",
       "/memory/memory-ext-bpt-architecture-summary-template.md",
@@ -13497,6 +13625,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -13506,6 +13635,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -13672,7 +13802,8 @@
       "/memory/memory-ext-active-contribution-protocol.md",
       "/memory/memory-ext-biav-info-classification.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
-      "/projects/releases-treasure-map.md"
+      "/projects/releases-treasure-map.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "v2": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md",
@@ -13681,6 +13812,9 @@
       "/projects/releases-treasure-map.md"
     ],
     "v4": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+    ],
+    "v5": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "validate": [
@@ -13946,6 +14080,9 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
     ],
+    "一台": [
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
+    ],
     "一同": [
       "/characters/77926.md",
       "/characters/95786.md"
@@ -14012,6 +14149,9 @@
     ],
     "一样": [
       "/characters/15572.md"
+    ],
+    "一根": [
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
     ],
     "一概": [
       "/README.md"
@@ -14141,7 +14281,8 @@
     "上游": [
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md"
+      "/extracted/extracted-lua-tables.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
     ],
     "上烈": [
       "/characters/15575.md"
@@ -14217,9 +14358,6 @@
     ],
     "不到": [
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
-    ],
-    "不劣": [
-      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "不动": [
       "/README.md"
@@ -14411,6 +14549,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -14420,6 +14559,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -14478,14 +14618,8 @@
       "/characters/15560.md",
       "/characters/15576.md"
     ],
-    "不宣": [
-      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
-    ],
     "不屈": [
       "/characters/77923.md"
-    ],
-    "不提": [
-      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "不放": [
       "/README.md",
@@ -14636,6 +14770,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -14645,6 +14780,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -14741,9 +14877,6 @@
     ],
     "不止": [
       "/characters/15600.md"
-    ],
-    "不测": [
-      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "不离": [
       "/README.md"
@@ -14898,6 +15031,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -14907,6 +15041,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -15067,6 +15202,9 @@
       "/sources/youtube.md",
       "/sources/youtube_comments.md"
     ],
+    "两引": [
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
+    ],
     "两点": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md"
     ],
@@ -15078,6 +15216,9 @@
     ],
     "两类": [
       "/memory/memory-ext-storage-discussion.md"
+    ],
+    "两臂": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "严宣": [
       "/characters/15586.md"
@@ -15103,6 +15244,9 @@
     ],
     "个和": [
       "/characters/15564.md"
+    ],
+    "个带": [
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
     ],
     "个忧": [
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
@@ -15351,9 +15495,6 @@
     "为队": [
       "/characters/15602.md"
     ],
-    "为默": [
-      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
-    ],
     "主体": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md"
     ],
@@ -15367,6 +15508,7 @@
       "/README.md"
     ],
     "主循": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "主控": [
@@ -15540,6 +15682,9 @@
     ],
     "了接": [
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md"
+    ],
+    "了极": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "了海": [
       "/characters/15580.md"
@@ -15953,6 +16098,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -15962,6 +16108,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -16395,6 +16542,9 @@
     "仿友": [
       "/characters/15596.md"
     ],
+    "仿真": [
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
+    ],
     "伊藤": [
       "/characters/15577.md",
       "/characters/15601.md"
@@ -16701,6 +16851,12 @@
     "体定": [
       "/memory/memory-ext-bpt-positioning.md"
     ],
+    "体对": [
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
+    ],
+    "体差": [
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
+    ],
     "体效": [
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
     ],
@@ -16807,6 +16963,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -16816,6 +16973,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -17027,6 +17185,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -17036,6 +17195,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -17230,7 +17390,8 @@
       "/memory/memory-ext-skill-authoring-standard.md"
     ],
     "作废": [
-      "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
+      "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "作战": [
       "/memory/memory-ext-phase-d-plan.md"
@@ -17375,6 +17536,9 @@
     "侵蚀": [
       "/characters/77923.md"
     ],
+    "便宜": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+    ],
     "促使": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md"
     ],
@@ -17391,8 +17555,7 @@
       "/extracted/extracted-readme.md"
     ],
     "保留": [
-      "/README.md",
-      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+      "/README.md"
     ],
     "保自": [
       "/characters/15580.md"
@@ -17434,6 +17597,7 @@
       "/characters/15560.md"
     ],
     "修复": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md"
     ],
     "修角": [
@@ -17474,6 +17638,9 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md"
+    ],
+    "假象": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "假阳": [
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md"
@@ -17974,7 +18141,8 @@
       "/memory/project-status.md",
       "/memory/strategic-plan-2026.md",
       "/memory/style-guide.md",
-      "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md"
+      "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
     ],
     "内找": [
       "/memory/memory-ext-knowledge-layer-design.md"
@@ -18074,6 +18242,9 @@
     "净室": [
       "/projects/project-bpt-agent-sdk.md"
     ],
+    "净重": [
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
+    ],
     "凝结": [
       "/characters/15585.md",
       "/characters/15591.md"
@@ -18168,7 +18339,6 @@
       "/characters/15593.md"
     ],
     "出来": [
-      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "出物": [
@@ -18269,6 +18439,9 @@
       "/memory/memory-ext-knowledge-layer-design.md",
       "/memory/memory-research-community-analysis-2026-05-18-26.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md"
+    ],
+    "分成": [
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
     ],
     "分支": [
       "/memory/memory-ext-active-policy-direct-push-main.md"
@@ -18696,6 +18869,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -18705,6 +18879,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -19641,7 +19816,11 @@
       "/characters/15563.md"
     ],
     "发现": [
-      "/projects/project-site.md"
+      "/projects/project-site.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+    ],
+    "发系": [
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
     ],
     "发能": [
       "/characters/15590.md"
@@ -19887,9 +20066,6 @@
     "只要": [
       "/characters/15565.md"
     ],
-    "只记": [
-      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
-    ],
     "只返": [
       "/README.md"
     ],
@@ -20095,6 +20271,9 @@
     "可视": [
       "/README.md"
     ],
+    "可让": [
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
+    ],
     "可证": [
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md"
     ],
@@ -20145,6 +20324,9 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md"
+    ],
+    "台内": [
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
     ],
     "台双": [
       "/memory/memory-ext-active-silver-blackpool-interface.md"
@@ -20321,6 +20503,9 @@
     "合结": [
       "/characters/15562.md"
     ],
+    "同一": [
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
+    ],
     "同享": [
       "/characters/95786.md"
     ],
@@ -20458,6 +20643,9 @@
     "向接": [
       "/README.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-silver-blackpool-interface.md"
+    ],
+    "向模": [
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
     ],
     "向流": [
       "/memory/memory-ext-active-silver-blackpool-interface.md"
@@ -20792,6 +20980,9 @@
       "/memory/memory-ext-capability-registry.md",
       "/memory/memory-ext-facts.md",
       "/memory/memory-ext-session-continuity.md"
+    ],
+    "器活": [
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
     ],
     "器看": [
       "/README.md"
@@ -21183,6 +21374,9 @@
     ],
     "坚毅": [
       "/characters/77922.md"
+    ],
+    "型发": [
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
     ],
     "型深": [
       "/story/STORY_RESEARCH.md"
@@ -21597,6 +21791,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -21606,6 +21801,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -21667,6 +21863,7 @@
       "/README.md"
     ],
     "复后": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md"
     ],
     "复和": [
@@ -21898,6 +22095,9 @@
     "大文": [
       "/memory/memory-ext-storage-discussion.md"
     ],
+    "大更": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+    ],
     "大的": [
       "/characters/130901.md",
       "/characters/15565.md",
@@ -21971,8 +22171,8 @@
     "失落": [
       "/characters/15592.md"
     ],
-    "失败": [
-      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+    "头的": [
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
     ],
     "头补": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md"
@@ -22317,6 +22517,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -22326,6 +22527,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -22525,6 +22727,9 @@
       "/characters/95786.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md"
     ],
+    "字符": [
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
+    ],
     "字节": [
       "/extracted/extracted-readme.md",
       "/projects/extracted-lua-inventory.md",
@@ -22608,6 +22813,12 @@
     ],
     "它既": [
       "/memory/memory-ext-knowledge-layer-design.md"
+    ],
+    "它是": [
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
+    ],
+    "它的": [
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
     ],
     "宇宙": [
       "/memory/memory-ext-collab-event-playbook.md"
@@ -22730,6 +22941,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
@@ -22857,6 +23069,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -22866,6 +23079,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -22995,10 +23209,14 @@
     ],
     "实现": [
       "/README.md",
-      "/projects/project-bpt-agent-sdk.md"
+      "/projects/project-bpt-agent-sdk.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
     ],
     "实脱": [
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md"
+    ],
+    "实际": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "実久": [
       "/characters/15565.md",
@@ -23087,9 +23305,6 @@
       "/unpacked/unpacked-text-cn.md",
       "/unpacked/unpacked-vue.md"
     ],
-    "宣胜": [
-      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
-    ],
     "宣誓": [
       "/characters/15586.md"
     ],
@@ -23129,6 +23344,9 @@
     "容的": [
       "/projects/bpt-sdk-doc-positioning.md"
     ],
+    "容盲": [
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
+    ],
     "容错": [
       "/characters/15575.md"
     ],
@@ -23146,6 +23364,9 @@
     ],
     "对单": [
       "/characters/15564.md"
+    ],
+    "对同": [
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
     ],
     "对外": [
       "/README.md",
@@ -23183,6 +23404,9 @@
     "对死": [
       "/characters/77922.md"
     ],
+    "对照": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+    ],
     "对联": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md"
     ],
@@ -23190,6 +23414,9 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-ext-phase-d-plan.md"
+    ],
+    "对跑": [
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
     ],
     "对银": [
       "/README.md"
@@ -23768,8 +23995,14 @@
     "巨浪": [
       "/characters/15569.md"
     ],
+    "差分": [
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
+    ],
     "差别": [
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
+    ],
+    "差异": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "差行": [
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md"
@@ -23929,9 +24162,6 @@
     "带往": [
       "/characters/15599.md"
     ],
-    "带无": [
-      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
-    ],
     "带有": [
       "/memory/memory-ext-collab-event-playbook.md"
     ],
@@ -23969,6 +24199,9 @@
     "幅提": [
       "/characters/15587.md",
       "/characters/77913.md"
+    ],
+    "干净": [
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
     ],
     "干活": [
       "/projects/news-archive-sources-registry.md",
@@ -24380,7 +24613,8 @@
     "引擎": [
       "/characters/15602.md",
       "/projects/bpt-sdk-doc-positioning.md",
-      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
     ],
     "引流": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
@@ -24626,6 +24860,7 @@
     ],
     "循环": [
       "/characters/15562.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "心使": [
@@ -24836,6 +25071,9 @@
     "念全": [
       "/README.md"
     ],
+    "忽略": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+    ],
     "怀抱": [
       "/characters/15580.md"
     ],
@@ -24882,9 +25120,6 @@
     ],
     "急支": [
       "/characters/15599.md"
-    ],
-    "性不": [
-      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "性中": [
       "/characters/54116.md"
@@ -25532,6 +25767,9 @@
       "/characters/15587.md",
       "/characters/15588.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
+    ],
+    "成立": [
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
     ],
     "成簇": [
       "/README.md"
@@ -26325,6 +26563,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -26334,6 +26573,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -26786,6 +27026,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -26795,6 +27036,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -26866,9 +27108,6 @@
       "/wiki-data/wiki-schema-stages-schema.md",
       "/wiki-data/wiki-schema-trinkets-schema.md"
     ],
-    "提为": [
-      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
-    ],
     "提交": [
       "/memory/memory-ext-biav-info-classification.md"
     ],
@@ -26902,6 +27141,7 @@
     ],
     "提示": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
@@ -27072,6 +27312,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -27081,6 +27322,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -27156,6 +27398,9 @@
     "操纵": [
       "/characters/54117.md",
       "/characters/77925.md"
+    ],
+    "擎每": [
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
     ],
     "擎终": [
       "/characters/15602.md"
@@ -27391,6 +27636,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -27400,6 +27646,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -27633,6 +27880,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -27642,6 +27890,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -28193,7 +28442,8 @@
       "/memory/memory-ext-collab-event-playbook.md"
     ],
     "方主": [
-      "/README.md"
+      "/README.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "方公": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md"
@@ -28216,8 +28466,7 @@
     ],
     "方提": [
       "/characters/15577.md",
-      "/characters/15579.md",
-      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+      "/characters/15579.md"
     ],
     "方最": [
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md"
@@ -28241,7 +28490,8 @@
     ],
     "方的": [
       "/characters/15576.md",
-      "/characters/77925.md"
+      "/characters/77925.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
     ],
     "方还": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md"
@@ -28270,11 +28520,11 @@
     "无可": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
-    "无头": [
-      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
-    ],
     "无尽": [
       "/characters/15599.md"
+    ],
+    "无差": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "无形": [
       "/characters/15574.md",
@@ -28487,6 +28737,7 @@
       "/characters/15589.md"
     ],
     "明确": [
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
     ],
     "易伤": [
@@ -28507,6 +28758,7 @@
       "/README.md",
       "/characters/15602.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "是主": [
@@ -28517,6 +28769,9 @@
     ],
     "是倔": [
       "/characters/77923.md"
+    ],
+    "是假": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "是创": [
       "/characters/77925.md"
@@ -28532,6 +28787,9 @@
     ],
     "是守": [
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
+    ],
+    "是官": [
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
     ],
     "是弥": [
       "/characters/15603.md"
@@ -28622,9 +28880,6 @@
     "显式": [
       "/README.md"
     ],
-    "显示": [
-      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
-    ],
     "显著": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md"
@@ -28711,6 +28966,9 @@
     ],
     "更换": [
       "/characters/15572.md"
+    ],
+    "更正": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "更简": [
       "/projects/bpt-sdk-doc-positioning.md"
@@ -28857,6 +29115,9 @@
     "有无": [
       "/characters/54116.md"
     ],
+    "有测": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+    ],
     "有独": [
       "/characters/15576.md",
       "/characters/15582.md",
@@ -28960,6 +29221,9 @@
     "未知": [
       "/characters/15603.md",
       "/characters/54116.md"
+    ],
+    "未设": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "未逐": [
       "/story/story_research_todo.md"
@@ -29127,6 +29391,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -29136,6 +29401,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -29253,7 +29519,6 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md"
     ],
     "本档": [
-      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md"
     ],
     "本源": [
@@ -29284,7 +29549,6 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md"
     ],
     "本轮": [
-      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md"
     ],
     "术一": [
@@ -29495,6 +29759,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -29504,6 +29769,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -29722,7 +29988,6 @@
     ],
     "来的": [
       "/characters/15564.md",
-      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "来破": [
@@ -29754,6 +30019,9 @@
     ],
     "极奥": [
       "/characters/54116.md"
+    ],
+    "极简": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "极脆": [
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
@@ -29807,6 +30075,9 @@
     ],
     "构蓝": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-design.md"
+    ],
+    "构裁": [
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
     ],
     "构设": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md"
@@ -29876,6 +30147,7 @@
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
       "/memory/memory-ext-bpt-architecture-summary-template.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "枷锁": [
@@ -29999,6 +30271,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -30008,6 +30281,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -30125,6 +30399,9 @@
     "核验": [
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md"
     ],
+    "根字": [
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
+    ],
     "根据": [
       "/characters/77926.md"
     ],
@@ -30163,6 +30440,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -30172,6 +30450,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -30275,9 +30554,6 @@
     ],
     "档到": [
       "/projects/news-archive-sources-registry.md"
-    ],
-    "档只": [
-      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "档回": [
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md"
@@ -30592,6 +30868,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -30601,6 +30878,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -30670,6 +30948,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
     ],
     "模型": [
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/wiki-data/wiki-schema-banners-schema.md",
       "/wiki-data/wiki-schema-characters-processed-schema.md",
       "/wiki-data/wiki-schema-characters-schema.md",
@@ -30918,6 +31197,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -30927,6 +31207,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -30988,9 +31269,6 @@
     ],
     "正的": [
       "/characters/15602.md"
-    ],
-    "正确": [
-      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "此世": [
       "/characters/94450.md"
@@ -31064,6 +31342,9 @@
     "段和": [
       "/characters/15590.md"
     ],
+    "段库": [
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
+    ],
     "段或": [
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
@@ -31104,7 +31385,8 @@
       "/memory/memory-ext-skill-authoring-standard.md"
     ],
     "每次": [
-      "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
+      "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
     ],
     "每步": [
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md"
@@ -31346,6 +31628,9 @@
     "注视": [
       "/characters/125346.md"
     ],
+    "注释": [
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
+    ],
     "泰旖丝": [
       "/characters/15596.md"
     ],
@@ -31357,6 +31642,9 @@
     ],
     "洗重": [
       "/characters/94450.md"
+    ],
+    "活体": [
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
     ],
     "活动": [
       "/community/community-timeline.md"
@@ -31413,9 +31701,6 @@
     "流能": [
       "/characters/130901.md"
     ],
-    "测不": [
-      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
-    ],
     "测到": [
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md"
     ],
@@ -31426,6 +31711,9 @@
       "/projects/doc-testing-strategy.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md"
+    ],
+    "测量": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "济纪": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-design.md"
@@ -31832,6 +32120,9 @@
     "然迸": [
       "/characters/125346.md"
     ],
+    "照翻": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+    ],
     "照耀": [
       "/characters/77917.md"
     ],
@@ -31897,6 +32188,7 @@
     ],
     "片段": [
       "/memory/memory-ext-bpt-architecture-summary-template.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "版更": [
@@ -32319,6 +32611,9 @@
     "现存": [
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md"
     ],
+    "现官": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+    ],
     "现实": [
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md"
     ],
@@ -32329,8 +32624,7 @@
       "/characters/15589.md"
     ],
     "现的": [
-      "/projects/project-bpt-agent-sdk.md",
-      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+      "/projects/project-bpt-agent-sdk.md"
     ],
     "现精": [
       "/README.md"
@@ -33133,9 +33427,6 @@
     "的孤": [
       "/characters/77923.md"
     ],
-    "的官": [
-      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
-    ],
     "的审": [
       "/characters/77917.md"
     ],
@@ -33151,6 +33442,9 @@
     ],
     "的尖": [
       "/characters/15565.md"
+    ],
+    "的干": [
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
     ],
     "的床": [
       "/characters/15576.md"
@@ -33415,6 +33709,9 @@
     "的精": [
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
     ],
+    "的系": [
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
+    ],
     "的线": [
       "/README.md"
     ],
@@ -33671,6 +33968,9 @@
     "目的": [
       "/memory/memory-ext-skill-authoring-standard.md"
     ],
+    "盲仿": [
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
+    ],
     "盲信": [
       "/characters/15560.md"
     ],
@@ -33717,8 +34017,14 @@
     "看详": [
       "/README.md"
     ],
+    "真器": [
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
+    ],
     "真实": [
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
+    ],
+    "真对": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "真梨": [
       "/characters/15586.md"
@@ -34031,12 +34337,12 @@
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md"
     ],
+    "确写": [
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
+    ],
     "确定": [
       "/README.md",
       "/memory/memory-ext-skill-authoring-standard.md"
-    ],
-    "确性": [
-      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "确署": [
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
@@ -34096,9 +34402,6 @@
       "/sources/youtube.md",
       "/sources/youtube_comments.md"
     ],
-    "示本": [
-      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
-    ],
     "示用": [
       "/news-output/news-output-all.md",
       "/news-output/news-output-feed.md",
@@ -34109,6 +34412,7 @@
     ],
     "示词": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
@@ -34519,6 +34823,9 @@
     "笑着": [
       "/characters/15565.md"
     ],
+    "符串": [
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
+    ],
     "符号": [
       "/memory/memory-ext-knowledge-layer-design.md"
     ],
@@ -34573,6 +34880,9 @@
     ],
     "简单": [
       "/projects/bpt-sdk-doc-positioning.md"
+    ],
+    "简默": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "算什": [
       "/characters/15572.md"
@@ -34672,6 +34982,7 @@
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
@@ -34954,6 +35265,7 @@
     "结论": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md"
     ],
     "结障": [
@@ -34995,6 +35307,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
     ],
     "统提": [
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "统权": [
@@ -35200,6 +35513,9 @@
     "翠色": [
       "/characters/15562.md"
     ],
+    "翻案": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+    ],
     "翻档": [
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
     ],
@@ -35345,9 +35661,6 @@
     ],
     "胚胎": [
       "/characters/15600.md"
-    ],
-    "胜负": [
-      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "能从": [
       "/characters/15599.md"
@@ -35550,6 +35863,9 @@
     ],
     "腺体": [
       "/characters/15573.md"
+    ],
+    "臂实": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "臣民": [
       "/characters/15589.md"
@@ -36068,6 +36384,9 @@
     "被系": [
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
     ],
+    "被静": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+    ],
     "裁决": [
       "/characters/77917.md"
     ],
@@ -36088,7 +36407,8 @@
       "/characters/78754.md",
       "/characters/78840.md",
       "/characters/78841.md",
-      "/characters/94451.md"
+      "/characters/94451.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
     ],
     "裁敌": [
       "/characters/15563.md"
@@ -36113,6 +36433,9 @@
     ],
     "要付": [
       "/characters/15593.md"
+    ],
+    "要向": [
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
     ],
     "要时": [
       "/characters/15573.md"
@@ -36362,6 +36685,9 @@
     "认可": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md"
     ],
+    "认提": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+    ],
     "认知": [
       "/characters/15563.md"
     ],
@@ -36375,6 +36701,9 @@
     ],
     "让一": [
       "/characters/130901.md"
+    ],
+    "让两": [
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
     ],
     "让人": [
       "/characters/15602.md",
@@ -36462,9 +36791,6 @@
     ],
     "记载": [
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
-    ],
-    "记量": [
-      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "许写": [
       "/memory/memory-ext-active-silver-blackpool-interface.md"
@@ -36643,9 +36969,6 @@
     "词典": [
       "/README.md",
       "/community/community-index.md"
-    ],
-    "词在": [
-      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "词是": [
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
@@ -36867,9 +37190,6 @@
     "责任": [
       "/characters/77922.md"
     ],
-    "败带": [
-      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
-    ],
     "账号": [
       "/README.md"
     ],
@@ -37056,6 +37376,9 @@
       "/characters/15583.md",
       "/characters/15586.md"
     ],
+    "跑了": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+    ],
     "跑稳": [
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md"
     ],
@@ -37224,6 +37547,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -37233,6 +37557,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -37824,6 +38149,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -37833,6 +38159,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -38206,6 +38533,9 @@
       "/characters/77925.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
     ],
+    "都对": [
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
+    ],
     "都将": [
       "/characters/125346.md",
       "/characters/54117.md"
@@ -38224,6 +38554,9 @@
     ],
     "都能": [
       "/characters/15571.md"
+    ],
+    "都跑": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "都重": [
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
@@ -38287,6 +38620,9 @@
       "/sources/youtube.md",
       "/sources/youtube_comments.md"
     ],
+    "释头": [
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
+    ],
     "释放": [
       "/characters/130901.md",
       "/characters/15562.md",
@@ -38318,8 +38654,14 @@
     "重叠": [
       "/resource/resource-repo-engineering-repo-audit-20260603.md"
     ],
+    "重大": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+    ],
     "重定": [
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md"
+    ],
+    "重实": [
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
     ],
     "重度": [
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md"
@@ -38378,8 +38720,7 @@
       "/characters/15580.md"
     ],
     "量出": [
-      "/characters/15567.md",
-      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+      "/characters/15567.md"
     ],
     "量加": [
       "/characters/15564.md",
@@ -38721,6 +39062,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -38730,6 +39072,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -38935,6 +39278,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -38944,6 +39288,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -39304,6 +39649,9 @@
     "附加": [
       "/characters/15577.md"
     ],
+    "际都": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+    ],
     "降低": [
       "/characters/15574.md",
       "/characters/15596.md",
@@ -39472,6 +39820,9 @@
     "静态": [
       "/README.md",
       "/community/community-index.md"
+    ],
+    "静默": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "非以": [
       "/README.md"
@@ -39904,6 +40255,9 @@
     "黑色": [
       "/characters/77923.md"
     ],
+    "默忽": [
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+    ],
     "默认": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
@@ -40099,8 +40453,14 @@
       "/unpacked/unpacked-text-cn.md",
       "/unpacked/unpacked-vue.md"
     ],
+    "arm": [
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
+    ],
     "art": [
       "/extracted/extracted-art-assets.md"
+    ],
+    "assembly": [
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
     ],
     "assessment": [
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md"
@@ -40215,12 +40575,14 @@
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/project-bpt-agent-sdk.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
     ],
     "bug": [
@@ -40474,6 +40836,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -40483,6 +40846,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -40746,6 +41110,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -40755,6 +41120,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -40877,6 +41243,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -40886,6 +41253,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -40912,6 +41280,7 @@
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
     ],
     "designs": [
@@ -41026,6 +41395,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -41485,6 +41855,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -41494,6 +41865,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -41821,6 +42193,7 @@
     "official": [
       "/community/community-official.md",
       "/news-output/news-output-official.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/sources/official.md"
     ],
@@ -42057,6 +42430,9 @@
     "producer": [
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md"
     ],
+    "profile": [
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
+    ],
     "project": [
       "/memory/project-status.md",
       "/projects/bpt-sdk-doc-architecture.md",
@@ -42074,6 +42450,7 @@
       "/resource/resource-proposal-biav-project-plan-202603.md"
     ],
     "prompt": [
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
@@ -42081,6 +42458,7 @@
     "proposal": [
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -42088,7 +42466,8 @@
       "/resource/resource-proposal-wiki-prototype-202603.md"
     ],
     "protocol": [
-      "/memory/contribution-protocol.md"
+      "/memory/contribution-protocol.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
     ],
     "prototype": [
       "/resource/resource-proposal-wiki-prototype-202603.md"
@@ -42138,6 +42517,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -42257,6 +42637,7 @@
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
     ],
     "search": [
@@ -42457,6 +42838,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -42466,6 +42848,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",

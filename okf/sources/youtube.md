@@ -1,10 +1,10 @@
 ---
 type: "dataset"
 title: "youtube 社区数据源"
-description: "youtube 平台采集档案，全量 2596 条，健康度 active。"
+description: "youtube 平台采集档案，全量 2598 条，健康度 active。"
 resource: "/Public-Info-Pool/Record/Community/youtube/global/video/"
 tags: ["data_layer:full_archive", "platform:youtube", "health:active"]
-timestamp: "2026-07-04T23:58:59.178631+00:00"
+timestamp: "2026-07-05T02:35:49.783883+00:00"
 ---
 
 # 数据层指针
@@ -16,7 +16,7 @@ timestamp: "2026-07-04T23:58:59.178631+00:00"
 | 平台 | youtube |
 | 全量档案层（本体） | `Public-Info-Pool/Record/Community/youtube/global/video/` |
 | 输出展示层（抽样） | `projects/news/output/youtube-latest.json` |
-| 全量条数 | 2596 |
+| 全量条数 | 2598 |
 | 采集健康度 | active |
 | 最后成功 | 2026-07-05 |
 
