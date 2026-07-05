@@ -66,6 +66,8 @@ import { join } from 'node:path';
 
 import { createBuiltinTools } from './tools/index.js';
 import { createShellManager } from './tools/shells.js';
+import { peekWorktreeSession } from './tools/enterworktree.js';
+import type { ToolContextWithPermissionGate } from './tools/exitplanmode.js';
 import { resolveSandboxBackend } from './sandbox/backend.js';
 import type { SandboxContext } from './types.js';
 import { createSubagentRuntime } from './subagents/runtime.js';
@@ -1305,7 +1307,12 @@ export function query(args: {
         }
         const turnSignal = AbortSignal.any([outer.signal, turnController.signal]);
         const toolContext: ToolContext = {
-          cwd,
+          // EnterWorktree survives turn-boundary context rebuilds: the session
+          // state is keyed on the shared readFilePaths Set, so the per-turn
+          // context picks the active worktree up again (Bash follows via its
+          // persistent state; this covers the fs tools and subagent spawns).
+          cwd:
+            peekWorktreeSession({ readFilePaths } as ToolContext)?.dir ?? cwd,
           // Recomputed per turn so session addDirectories / removeDirectories
           // permission updates take real effect on the fs tools (T2-7:
           // removeDirectories revokes; addDirectories grants).
@@ -1330,6 +1337,10 @@ export function query(args: {
           sandbox: sandboxCtx,
           readFilePaths,
         };
+        // ExitPlanMode bridge: the tool flips this query's own gate. Attached
+        // via the tool's context extension (deliberately not part of the core
+        // ToolContext contract).
+        (toolContext as ToolContextWithPermissionGate).permissionGate = gate;
         const deps: EngineDeps = {
           transport,
           builtinTools,
