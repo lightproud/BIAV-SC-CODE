@@ -1,10 +1,25 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-05T15:11:02.557064+00:00",
+  "collected_at": "2026-07-05T17:02:47.335668+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 9,
+  "item_count": 10,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-07-05T14:58:52+00:00",
+      "lang": "english",
+      "title": "[正面] Great game and i have been enjoying it but sometim...",
+      "summary": "Great game and i have been enjoying it but sometimes the rolls can be straight BS. For example, there is a banner that lets you choose 4 units to have increased odds for, which i chose helot catena for one and not the regular helot, but for some reason i havent been able to get a single catena but have gotten 7 copies of the regular. It's pissing me off and feels rigged at this point, i wanted to spend money on it but with things like this, it feels like it would be a waste. Not to mention how many others i have gotten from that banner that i also did not choose, so the boosted odds do not feel that way at all.",
+      "url": "https://steamcommunity.com/profiles/76561198114560622/recommended/3052450",
+      "author": "76561198114560622",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Great game and i have been enjoying it but sometimes the rolls can be straight BS. For example, there is a banner that lets you choose 4 units to have increased odds for, which i chose helot catena for one and not the regular helot, but for some reason i havent been able to get a single catena but have gotten 7 copies of the regular. It's pissing me off and feels rigged at this point, i wanted to spend money on it but with things like this, it feels like it would be a waste. Not to mention how many others i have gotten from that banner that i also did not choose, so the boosted odds do not feel that way at all.",
+      "timestamp_created": 1783263532,
+      "playtime_forever": 1965
+    },
     {
       "source": "steam",
       "time": "2026-07-05T11:51:08+00:00",
@@ -18,7 +33,7 @@
       "voted_up": true,
       "review": "I'm having a lot of fun.  And I unlocked Saya, which is all I really cared about.",
       "timestamp_created": 1783252268,
-      "playtime_forever": 1027
+      "playtime_forever": 1147
     },
     {
       "source": "steam",
@@ -78,7 +93,7 @@
       "voted_up": true,
       "review": "one of the best gacha",
       "timestamp_created": 1783238236,
-      "playtime_forever": 1101
+      "playtime_forever": 1113
     },
     {
       "source": "steam",
@@ -108,7 +123,7 @@
       "voted_up": true,
       "review": "非常不错",
       "timestamp_created": 1783230334,
-      "playtime_forever": 448
+      "playtime_forever": 552
     },
     {
       "source": "steam",

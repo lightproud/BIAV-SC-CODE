@@ -1,0 +1,44 @@
+{
+  "date": "2026-07-06",
+  "archived_at": "2026-07-05T17:03:34.509276+00:00",
+  "source": "youtube",
+  "item_count": 2,
+  "items": [
+    {
+      "title": "Storybook Beginnings (Stream 21) MORIMENS",
+      "summary": "In which it sounds like a kid's book, right?",
+      "source": "youtube",
+      "time": "2026-07-05T16:00:02Z",
+      "url": "https://www.youtube.com/watch?v=ORfttPLABxo",
+      "engagement": 1,
+      "is_hot": false,
+      "author": "GhotiVT",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/ORfttPLABxo/hqdefault.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    },
+    {
+      "title": "day 28 of doodling N til #Morimens makes him playable. #fanart #speedpaint",
+      "summary": "",
+      "source": "youtube",
+      "time": "2026-07-05T17:00:02Z",
+      "url": "https://www.youtube.com/watch?v=NqqSSV0a9Z0",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "AnjutheMage",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/NqqSSV0a9Z0/hqdefault.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    }
+  ],
+  "region": "global",
+  "content_subtype": "video"
+}

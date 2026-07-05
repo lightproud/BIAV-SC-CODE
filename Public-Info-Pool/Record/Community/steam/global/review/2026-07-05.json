@@ -1,8 +1,8 @@
 {
   "date": "2026-07-05",
-  "archived_at": "2026-07-05T15:11:49.872663+00:00",
+  "archived_at": "2026-07-05T17:03:34.531949+00:00",
   "source": "steam",
-  "item_count": 9,
+  "item_count": 10,
   "items": [
     {
       "title": "[正面] Lo instalé por Saya, pero la historia y el gamepla...",
@@ -214,6 +214,30 @@
         "playtime_forever": 32007,
         "votes_up": 0,
         "timestamp_created": 1783246712
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Great game and i have been enjoying it but sometim...",
+      "summary": "Great game and i have been enjoying it but sometimes the rolls can be straight BS. For example, there is a banner that lets you choose 4 units to have increased odds for, which i chose helot catena for one and not the regular helot, but for some reason i havent been able to get a single catena but have gotten 7 copies of the regular. It's pissing me off and feels rigged at this point, i wanted to spend money on it but with things like this, it feels like it would be a waste. Not to mention how many others i have gotten from that banner that i also did not choose, so the boosted odds do not feel that way at all.",
+      "source": "steam_review",
+      "time": "2026-07-05T14:58:52+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198114560622/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198114560622",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 1965,
+        "votes_up": 0,
+        "timestamp_created": 1783263532
       },
       "region": "global",
       "archive_subtype": "review",

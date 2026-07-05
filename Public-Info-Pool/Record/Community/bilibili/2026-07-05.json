@@ -1,8 +1,8 @@
 {
   "date": "2026-07-05",
-  "archived_at": "2026-07-05T15:11:49.766694+00:00",
+  "archived_at": "2026-07-05T17:03:34.415331+00:00",
   "source": "bilibili",
-  "item_count": 17,
+  "item_count": 19,
   "items": [
     {
       "title": "今天我要变成一个香喷喷的肉丸子",
@@ -253,6 +253,52 @@
         "danmaku": 1
       },
       "media_url": "https://i0.hdslb.com/bfs/archive/5f9b1cbb3450ea5f2017880bffed9f177191db58.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "【忘却前夜】徐珈莉融灾禁区1-5一镜到底",
+      "summary": "初始造物银钥有点多，极夜有点浪费了，哺育不带少手牌上限比较伤\n这期除了3不好打以外都很简单",
+      "source": "bilibili",
+      "time": "2026-07-05T15:53:02+00:00",
+      "url": "https://www.bilibili.com/video/BV1GmTy6eEmq",
+      "engagement": 57,
+      "is_hot": false,
+      "author": "朝星-",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 57,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/1518f9719a772433a17837a3f801c4f4f3ae5e2e.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "[忘却前夜]迎合沙耶版本的开大流]血链希洛，但手感比想象中要厉害很多",
+      "summary": "血链觉醒有每回合15的基础伤害永久成长，思路和鸟弟一样龟到一定程度一套带走，但血链多了可以自己搓链球回血，沙耶的神血肉又鼓励压低血量获取熔炉收益，实际体验下来生存会轻松很多。配队除了沙耶剩下的带生存或医生这种帮忙道中减轻压力的角色，蹲到15回合伤害已经溢出很多了，一堆可以触发流血的链球还有高额侵蚀都还没消耗掉。这种流派的血链为玩而玩也还算不错。\n  └ 护林犬 (0赞): 各种配置都高了，除了沙耶外不带其他拐，触发一下侵蚀补两颗球伤害也就溢出了，玩着像鸟弟版杜勒，不过留球的血链还蛮能生存的，详细见简介。",
+      "source": "bilibili",
+      "time": "2026-07-05T15:54:46+00:00",
+      "url": "https://www.bilibili.com/video/BV1gXTy6cEPm",
+      "engagement": 48,
+      "is_hot": false,
+      "author": "护林犬",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 47,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/9e8b3fc721c4c356dffb0e0b9efdae853a92bc86.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
