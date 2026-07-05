@@ -144,7 +144,15 @@ export const L5_KNOWN_DIFFERENCES = {
       'Do NOT tune the prompt to this check (anti-Goodhart; official carries no such ' +
       'clause either). Side observation from the same round: with thinking on, our ' +
       'chat-01 r3 ended turn with 202 output tokens but an EMPTY visible text block ' +
-      '(1/54) - thinking-only-reply edge, engine follow-up candidate.',
+      '(1/54) - thinking-only-reply edge, engine follow-up candidate. ' +
+      'UPDATE (2026-07-05, r3 content-blind lifted -> request-body wire differential): ' +
+      'the official thinking budget, previously declared UNOBSERVABLE (forcing E1 to pick ' +
+      '4096 as our own value), is now read directly off the wire - official sends ' +
+      'thinking {type:"adaptive"} (no fixed budget); we send {type:"enabled", ' +
+      'budget_tokens:4096}. Engine-alignment candidate: switch our claude_code default to ' +
+      'adaptive thinking to match. This may also move the code-01 residual (adaptive lets ' +
+      'the model spend more on the harder even-length case) - a cleaner isolator than a ' +
+      'fixed --thinking probe. See conformance-wire.json.',
   },
   // KD-L5-04 RETIRED (2026-07-05, E2): the SDK now reports the official
   // per-result semantics (num_turns/usage per result, total_cost_usd and

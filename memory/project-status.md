@@ -254,6 +254,16 @@
   透传报告 per-task 汇总（KD-L5-01 官方 /tmp 锚定 / KD-L5-02 官方注入误判方差 / KD-L5-03 思考不对称）。**附带发现 KD-L5-04**：
   两引擎 result 累计口径本身分歧（官方 num_turns/usage 逐 result vs 我方 finding #33 全字段会话累计）——drop-in 面引擎对齐候选。
   `--smoke` 3/3 绿 + 预置散落物清扫实测 + `npx vitest run` 981 全绿。
+  **净室 r3 内容盲解除 + 请求体线缆差分已落（2026-07-05，守密人「放弃净室规定」裁定，范围问答定为「仅解除内容盲(②)」）**：
+  decisions.md r3 修订——一致性观测中官方臂请求体现允许读取对照（内容按 #421 已属公开、读之不泄新信息），①对照物白名单/③泄漏禁引/
+  §1.1-HC 防火墙三者不变永久保留。工程：`emulator.mjs` 请求体从无缓冲丢弃升级为**可选捕获**（`{captureBodies}`，默认仍丢弃、
+  既有 L1-L5 逐字节不变），`assertContentBlind` 降级为产物体积卫生检查（既有报告仍无请求体故仍 PASS）；新增结构指纹
+  `wire-fingerprint.mjs`（系统分段/缓存断点/工具集/thinking 配置）+ 双臂差分 `run-wire.mjs`（keyless，两臂各驱一轮、
+  对比请求体结构）+ 机制自证 `tests/conformance-wire.test.ts`（6 用例，无需官方臂）。**首跑真发现（本地官方臂 0.3.199/2.1.201）**：
+  官方 thinking **`{type:"adaptive"}` 无固定预算**——推翻解剖「预算不可观测、只能猜 4096」的判断（内容盲解除后直接读到），
+  引擎对齐候选=claude_code 默认改自适应思考（可能顺带移动 code-01 残余，比固定 --thinking 探针更干净）；另官方工具 cache_control
+  断点 0 vs 我方 1（缓存策略差）。工具集 34 vs 13 归「预期表面差」（CLI 自带 Cron*/Task*/Workflow/Skills 等产品工具、SDK 不发）。
+  `tsc` + `npx vitest run` **1085 全绿**。
   **SSE 网关方言容错已落（2026-07-05，BPT 产线故障闭环）**：BPT 实测「Malformed SSE payload for event "(none)"」
   经双侧协作定型——BPT `curl -N` 抓原始字节实锤 idealab 网关 `/api/anthropic` 端点带 OpenAI 方言遗留
   （流尾追加 `data: [DONE]`、错误帧无 event 行）；官方客户端 message_stop 即收工不碰尾卡、我方读到流关闭才撞上。

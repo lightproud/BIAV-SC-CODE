@@ -8,13 +8,18 @@
  * local server. The model side becomes a deterministic shared script, so any
  * difference in the emitted SDKMessage stream is a real engine difference.
  *
- * CLEAN-ROOM / CONTENT-BLIND DISCIPLINE (standing decision, memory/
- * decisions.md 2026-07-05 "净室观测边界"): the official arm's request bodies
- * carry the proprietary system prompt. This server NEVER reads request
- * bodies - `req.resume()` drains them unbuffered - routes purely by
- * (method, path, arrival order), logs header NAMES only, and whitelists just
- * four protocol-metadata header values. `assertContentBlind()` is the
- * mandatory self-audit every consumer must run over its own outputs.
+ * REQUEST-BODY POLICY (standing decision, memory/decisions.md 2026-07-05
+ * "净室观测边界" r3 - clause ② content-blind LIFTED): the official arm's
+ * request body content is public-equivalent (#421 positioning; reproduced
+ * from Piebald public snapshots), so reading it is now permitted and opens
+ * the request-body wire-differential axis. This server DEFAULTS to draining
+ * bodies unbuffered (`req.resume()`) - keeping every existing L1-L5 caller
+ * byte-for-byte unchanged - and captures the parsed body into
+ * profile.requestBodies ONLY when started with { captureBodies: true } (the
+ * wire-differential path). Clause ③ (leak-derivative ban) and the §1.1-HC
+ * black-pool firewall are UNAFFECTED and remain permanent. `assertContentBlind()`
+ * is now an artifact-size hygiene check (existing reports still carry no
+ * request bodies, so it still passes), not a clean-room mandate.
  *
  * Protocol surface implemented per the spike profile: POST /v1/messages
  * (SSE) only; every other path gets a tolerated 404. Fault injection:
@@ -101,15 +106,21 @@ export function toolUseReply(calls, { id = 'msg_conf_tool' } = {}) {
  *     pass L1-L4 against clean framing can still differ behind such a
  *     gateway, which is exactly where BPT runs in production.
  *
+ * opts.captureBodies (default false): when true, POST /v1/messages bodies
+ * are buffered and parsed into profile.requestBodies[] (the request-body
+ * wire-differential axis, r3). Default false preserves the drain-unbuffered
+ * behavior every existing L1-L5 caller relies on.
+ *
  * Returns { url, port, profile, close }.
  */
-export function startEmulator(scripts) {
+export function startEmulator(scripts, { captureBodies = false } = {}) {
   const profile = {
     requests: [], // "METHOD /path" in arrival order - never content
     otherEndpoints: {},
     headerNames: new Set(),
     protocolMeta: {},
     unscriptedCalls: 0,
+    requestBodies: [], // populated only when captureBodies is true (r3)
   };
   let messagesCalls = 0;
   // sse-hang responses deliberately held open; close() destroys them FIRST
@@ -117,7 +128,23 @@ export function startEmulator(scripts) {
   const hungResponses = new Set();
 
   const server = createServer((req, res) => {
-    req.resume(); // content-blind: drain the body without buffering a byte
+    if (captureBodies && req.method === 'POST') {
+      // r3 (content-blind lifted): buffer the body and record the parsed JSON
+      // for the wire differential. Parse failures store the raw text so a
+      // malformed body is still observable rather than silently dropped.
+      const chunks = [];
+      req.on('data', (c) => chunks.push(c));
+      req.on('end', () => {
+        const raw = Buffer.concat(chunks).toString('utf8');
+        try {
+          profile.requestBodies.push(JSON.parse(raw));
+        } catch {
+          profile.requestBodies.push({ __unparsed: raw.slice(0, 2000) });
+        }
+      });
+    } else {
+      req.resume(); // default: drain the body without buffering a byte
+    }
     for (const name of Object.keys(req.headers)) {
       profile.headerNames.add(name);
       if (HEADER_VALUE_WHITELIST.has(name)) profile.protocolMeta[name] = req.headers[name];
@@ -222,10 +249,14 @@ export function startEmulator(scripts) {
 }
 
 /**
- * Mandatory self-audit (standing-decision clause 2): assert a serialized
- * output artifact contains no request-body-derived content. We never read
- * bodies, so the strongest structural markers of a leak are the system/
- * messages fields of a Messages API request. Throws on failure.
+ * Artifact-hygiene self-audit (r3: clause ② content-blind LIFTED, so this is
+ * no longer a clean-room mandate). It still guards the L1-L5 REPORT artifacts,
+ * which by design carry only behavior differentials - never request bodies -
+ * so the system/messages markers must stay absent and the check still passes
+ * unchanged. The request-body wire-differential path deliberately does NOT run
+ * its captured bodies through this check (it is allowed to hold them); it keeps
+ * bodies in-memory / in its own report field rather than dumping full prompts.
+ * Name kept for call-site stability across every runner.
  */
 export function assertContentBlind(artifactJsonString) {
   const markers = ['"system":', '"messages":', 'You are Claude'];
