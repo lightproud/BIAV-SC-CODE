@@ -276,6 +276,15 @@
   引擎对齐候选=claude_code 默认改自适应思考（可能顺带移动 code-01 残余，比固定 --thinking 探针更干净）；另官方工具 cache_control
   断点 0 vs 我方 1（缓存策略差）。工具集 34 vs 13 归「预期表面差」（CLI 自带 Cron*/Task*/Workflow/Skills 等产品工具、SDK 不发）。
   `tsc` + `npx vitest run` **1085 全绿**。
+  **逐接口全覆盖 + 参考目标固化（2026-07-05 续，守密人「对着接口全部测试一轮、作为参考目标」裁定）**：run-wire 扩为
+  **场景矩阵**（`scenarios-wire.mjs` 5 场景：default / thinking-off / thinking-4096 / cache-off / mcp-added）+ **逐工具
+  input_schema 差分**（`diffToolSchemas`，比对两臂共有工具的参数/必填集——「每个接口」的真信号）。官方结构指纹固化为
+  **参考目标** `tests/conformance/wire-reference.json`（`--update-reference` 刷新，纯结构无提示词正文）；our-arm 回归锁
+  升级为**参考目标棘轮**（`conformance-wire.test.ts` 12 用例：实际缺口须精确等于登记缺口，新漂移即红 / 缺口修复须删条目）。
+  **全覆盖新发现——我方工具 schema 落后官方当前参数**（引擎对齐候选，交引擎团队）：Agent 缺 `isolation`/`model` 且必填集不同、
+  Bash 缺 `dangerouslyDisableSandbox`、Read 缺 `pages`（PDF 页范围）——五场景一致稳定。连同 thinking 自适应 + 工具缓存断点，
+  构成引擎侧「对齐官方线缆」清单。cache-off 系统分段差属 bpt-only 选项非对称（官方忽略 promptCaching:false）已标注不追。
+  `tsc` + `npx vitest run` **1091 全绿（+6）**。
   **SSE 网关方言容错已落（2026-07-05，BPT 产线故障闭环）**：BPT 实测「Malformed SSE payload for event "(none)"」
   经双侧协作定型——BPT `curl -N` 抓原始字节实锤 idealab 网关 `/api/anthropic` 端点带 OpenAI 方言遗留
   （流尾追加 `data: [DONE]`、错误帧无 event 行）；官方客户端 message_stop 即收工不碰尾卡、我方读到流关闭才撞上。

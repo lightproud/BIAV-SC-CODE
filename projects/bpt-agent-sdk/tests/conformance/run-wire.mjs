@@ -1,23 +1,22 @@
 /**
- * Request-body wire differential (conformance input-axis, enabled by
+ * Request-body wire differential (conformance INPUT axis, enabled by
  * decisions.md 2026-07-05 净室观测边界 r3 - clause ② content-blind LIFTED).
  *
- * Points BOTH arms at a capturing emulator, drives one scripted turn each,
- * captures what each engine puts ON THE WIRE (the Messages API request body),
- * and compares the STRUCTURAL fingerprint (system segmentation, cache
- * breakpoints, tool set, thinking config). L1-L5 observe outputs; this
- * observes inputs - the other half of the differential the clean-room rule
- * previously forbade.
+ * Iterates WIRE_SCENARIOS: for each, points BOTH arms at a capturing emulator,
+ * drives one scripted turn, captures each engine's first Messages API request
+ * body, and compares STRUCTURAL fingerprints (system segmentation, cache
+ * breakpoints, tool set, thinking config) plus PER-TOOL input_schema for the
+ * shared tool set. L1-L5 observe outputs; this observes inputs - the half the
+ * clean-room rule previously forbade. The official arm's fingerprints are the
+ * REFERENCE TARGET (--update-reference writes wire-reference.json).
  *
  * Usage:
- *   node tests/conformance/run-wire.mjs [--arm=both|bpt] [--out=path.json]
+ *   node tests/conformance/run-wire.mjs [--arm=both|bpt] [--update-reference] [--out=path.json]
  *
  * Prereqs: dist/ built; official pkg installed transiently per pins.json
- * (`npm i --no-save`, never a repo dependency). Keyless - the emulator
- * scripts a fixed reply, so no real API is hit.
+ * (`npm i --no-save`, never a repo dependency). Keyless - scripted reply.
  *
- * Exit: 0 always (report-only, like the pre-ratchet M2/M3 runners); the
- * structural differences are the finding, triaged into the report.
+ * Exit: 0 always (report-only; the structural diffs are the finding).
  */
 
 import { mkdtempSync, rmSync, writeFileSync, readFileSync } from 'node:fs';
@@ -25,10 +24,12 @@ import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { startEmulator, textReply, assertContentBlind } from './emulator.mjs';
-import { fingerprintRequestBody, diffFingerprints } from './wire-fingerprint.mjs';
+import { fingerprintRequestBody, diffFingerprints, diffToolSchemas } from './wire-fingerprint.mjs';
+import { WIRE_SCENARIOS } from './scenarios-wire.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const DUMMY_KEY = 'sk-ant-api03-' + 'A'.repeat(95);
+const REFERENCE_PATH = join(HERE, 'wire-reference.json');
 const args = Object.fromEntries(
   process.argv.slice(2).map((a) => {
     const m = a.match(/^--([^=]+)(?:=(.*))?$/);
@@ -36,11 +37,19 @@ const args = Object.fromEntries(
   }),
 );
 const armMode = args.arm ?? 'both';
+const updateReference = args['update-reference'] === true;
 const outPath = typeof args.out === 'string' ? args.out : join(HERE, '..', '..', 'conformance-wire.json');
+
+// Tool-set size/name gaps are EXPECTED-SURFACE: the CLI advertises its own
+// product tools (Cron*/Task*/Workflow/Skills/...) the SDK deliberately omits.
+const EXPECTED_SURFACE = new Set(['toolNames', 'toolCount']);
 
 async function loadQuery(armKind) {
   const mod = armKind === 'bpt' ? await import('../../dist/index.js') : await import('@anthropic-ai/claude-agent-sdk');
   return mod.query;
+}
+async function loadSdk(armKind) {
+  return armKind === 'bpt' ? import('../../dist/index.js') : import('@anthropic-ai/claude-agent-sdk');
 }
 
 function baseEnv(url) {
@@ -60,15 +69,17 @@ function baseEnv(url) {
   return env;
 }
 
-/** Drive one arm one scripted turn against a capturing emulator; fingerprint the first POST body. */
-async function captureArm(armKind) {
+/** Drive one arm through one scenario; fingerprint the first captured POST body. */
+async function captureArm(armKind, scenario) {
   const query = await loadQuery(armKind);
+  const sdk = await loadSdk(armKind);
   const cwd = mkdtempSync(join(tmpdir(), `conf-wire-${armKind}-`));
   const emulator = await startEmulator([{ kind: 'sse', events: textReply('WIRE OK') }], {
     captureBodies: true,
   });
   const ac = new AbortController();
   const timer = setTimeout(() => ac.abort(), 60_000);
+  const extra = scenario.buildOptions ? scenario.buildOptions({ sdk }) : (scenario.options ?? {});
   try {
     const q = query({
       prompt: 'Say OK.',
@@ -77,7 +88,10 @@ async function captureArm(armKind) {
         cwd,
         maxTurns: 2,
         env: baseEnv(emulator.url),
-        ...(armKind === 'bpt' ? { sessionDir: join(cwd, '.sessions'), systemPrompt: { type: 'preset', preset: 'claude_code' } } : {}),
+        ...(armKind === 'bpt'
+          ? { sessionDir: join(cwd, '.sessions'), systemPrompt: { type: 'preset', preset: 'claude_code' } }
+          : {}),
+        ...extra,
       },
     });
     for await (const _m of q) void _m;
@@ -88,8 +102,7 @@ async function captureArm(armKind) {
     await emulator.close();
     rmSync(cwd, { recursive: true, force: true });
   }
-  const body = emulator.profile.requestBodies[0];
-  return { arm: armKind, fingerprint: fingerprintRequestBody(body), posts: emulator.profile.requestBodies.length };
+  return fingerprintRequestBody(emulator.profile.requestBodies[0]);
 }
 
 const pins = JSON.parse(readFileSync(join(HERE, 'pins.json'), 'utf8'));
@@ -97,46 +110,65 @@ const report = {
   generated_for: 'bpt-agent-sdk conformance request-body wire differential (input axis, r3)',
   pins: { agentSdk: pins.agentSdk, claudeCode: pins.claudeCode },
   boundary:
-    'content-blind clause LIFTED (decisions.md 2026-07-05 r3); request bodies read for the input differential. Fingerprints are STRUCTURAL (no prompt prose dumped).',
+    'content-blind clause LIFTED (decisions.md 2026-07-05 r3); request bodies read for the input differential. Fingerprints are STRUCTURAL (no prompt prose).',
   armMode,
+  scenarios: [],
 };
+const referenceOut = {};
 
-const bpt = await captureArm('bpt');
-report.bpt = bpt;
-console.log(`[bpt] tools=${bpt.fingerprint.toolCount} systemKind=${bpt.fingerprint.systemKind} sysCache=${bpt.fingerprint.systemCacheBreakpoints} thinking=${JSON.stringify(bpt.fingerprint.thinking)}`);
-
-if (armMode !== 'bpt') {
-  try {
-    const official = await captureArm('official');
-    report.official = official;
-    console.log(`[official] tools=${official.fingerprint.toolCount} systemKind=${official.fingerprint.systemKind} sysCache=${official.fingerprint.systemCacheBreakpoints} thinking=${JSON.stringify(official.fingerprint.thinking)}`);
-    const diff = diffFingerprints(official.fingerprint, bpt.fingerprint);
-    // Triage: the CLI advertises its own PRODUCT tool surface (Cron*, Task*,
-    // Workflow, Skills, Plugins, ...) that the SDK deliberately does not ship,
-    // so tool-set size/name gaps are EXPECTED-SURFACE, not alignment defects.
-    // Everything else (thinking config, cache-breakpoint strategy, system
-    // segmentation) is an ALIGNMENT-CANDIDATE the engine can act on - now
-    // observable because clause ② was lifted.
-    const EXPECTED_SURFACE = new Set(['toolNames', 'toolCount']);
-    for (const d of diff) d.kind = EXPECTED_SURFACE.has(d.facet) ? 'expected-surface' : 'alignment-candidate';
-    report.diff = diff;
-    const candidates = diff.filter((d) => d.kind === 'alignment-candidate');
-    report.alignmentCandidates = candidates.map((d) => d.facet);
-    report.verdict = diff.length === 0 ? 'WIRE_MATCH' : candidates.length === 0 ? 'WIRE_KNOWN_DIFF' : 'WIRE_DIFF';
-    console.log(`\nwire diff (official vs bpt): ${diff.length} facet(s), ${candidates.length} alignment-candidate(s)`);
-    for (const d of diff) console.log(`   [${d.kind}]`, JSON.stringify(d));
-  } catch (err) {
-    report.official = { unavailable: String(err?.message ?? err).slice(0, 200) };
-    report.verdict = 'OFFICIAL-ARM-UNAVAILABLE';
-    console.log(`[official] unavailable: ${report.official.unavailable}`);
+for (const scenario of WIRE_SCENARIOS) {
+  const bpt = await captureArm('bpt', scenario);
+  const row = { id: scenario.id, notes: scenario.notes, bpt };
+  if (armMode !== 'bpt') {
+    try {
+      const official = await captureArm('official', scenario);
+      row.official = official;
+      referenceOut[scenario.id] = official;
+      const facetDiff = diffFingerprints(official, bpt).map((d) => ({
+        ...d,
+        kind: EXPECTED_SURFACE.has(d.facet) ? 'expected-surface' : 'alignment-candidate',
+      }));
+      const schemaDiff = diffToolSchemas(official, bpt);
+      row.facetDiff = facetDiff;
+      row.toolSchemaDiff = schemaDiff;
+      const candidates = facetDiff.filter((d) => d.kind === 'alignment-candidate');
+      row.verdict =
+        facetDiff.length === 0 && schemaDiff.length === 0
+          ? 'WIRE_MATCH'
+          : candidates.length === 0 && schemaDiff.length === 0
+            ? 'WIRE_KNOWN_DIFF'
+            : 'WIRE_DIFF';
+      console.log(
+        `[${scenario.id}] ${row.verdict} | facets:${facetDiff.length}(cand ${candidates.length}) toolSchema:${schemaDiff.length}` +
+          (candidates.length ? ` | ${candidates.map((c) => c.facet).join(',')}` : ''),
+      );
+      for (const s of schemaDiff) console.log(`    tool ${s.tool}: ${JSON.stringify(s.diffs)}`);
+    } catch (err) {
+      row.official = { unavailable: String(err?.message ?? err).slice(0, 200) };
+      row.verdict = 'OFFICIAL-ARM-UNAVAILABLE';
+      console.log(`[${scenario.id}] official unavailable: ${row.official.unavailable}`);
+    }
+  } else {
+    row.verdict = 'single-arm';
+    console.log(`[${scenario.id}] single-arm (bpt) tools=${bpt.toolCount} thinking=${JSON.stringify(bpt.thinking)}`);
   }
-} else {
-  report.verdict = 'single-arm';
+  report.scenarios.push(row);
 }
 
 const serialized = JSON.stringify(report, null, 2);
-assertContentBlind(serialized); // fingerprints are structural, so this still passes
+assertContentBlind(serialized); // structural fingerprints carry no prompt prose
 writeFileSync(outPath, serialized);
 console.log(`\nreport: ${outPath}`);
-console.log('content-blind self-audit: PASS (structural fingerprints carry no prompt prose)');
+
+if (updateReference && armMode !== 'bpt' && Object.keys(referenceOut).length > 0) {
+  const ref = {
+    generated_for: 'official-arm request-body wire reference targets (structural fingerprints)',
+    pins: { agentSdk: pins.agentSdk, claudeCode: pins.claudeCode },
+    note: 'The official engine wire shape our engine aims to match (minus expected-surface tool-set gaps). Refresh via `node run-wire.mjs --update-reference`.',
+    scenarios: referenceOut,
+  };
+  writeFileSync(REFERENCE_PATH, JSON.stringify(ref, null, 2));
+  console.log(`reference targets written: ${REFERENCE_PATH}`);
+}
+console.log('content-blind self-audit: PASS (structural fingerprints, no prompt prose)');
 process.exit(0);
