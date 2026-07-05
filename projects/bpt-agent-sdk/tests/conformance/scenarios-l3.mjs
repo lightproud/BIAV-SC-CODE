@@ -31,6 +31,7 @@
 
 import { join } from 'node:path';
 import { readFileSync } from 'node:fs';
+import { z } from 'zod';
 import { textReply } from './emulator.mjs';
 
 const ALLOWED_TOOLS = [
@@ -888,6 +889,44 @@ export const L3_SCENARIOS = [
       },
     ],
   },
+
+  // --- MCP tranche 2: multi-tool server routing (dual-arm) --------------------
+  // A server registering >1 tool must route each mcp__server__name to the RIGHT
+  // handler. Empty schemas keep this a clean differential (the zod-coercion
+  // path is a cross-package-zod artifact between arms, so it is a single-arm
+  // lock below, not a differential).
+  {
+    id: 'L3-MCP-05',
+    tool: 'mcp__conf__two (routing)',
+    prompt: 'Call ping then echo.',
+    buildOptions: (_cwd, _ctx, { sdk }) => ({
+      allowedTools: [...ALLOWED_TOOLS, 'mcp__conf__ping', 'mcp__conf__echo'],
+      mcpServers: {
+        conf: sdk.createSdkMcpServer({
+          name: 'conf',
+          version: '1.0.0',
+          tools: [
+            sdk.tool('ping', 'Return the ping marker.', {}, async () => ({
+              content: [{ type: 'text', text: 'ROUTE-PING' }],
+            })),
+            sdk.tool('echo', 'Return the echo marker.', {}, async () => ({
+              content: [{ type: 'text', text: 'ROUTE-ECHO' }],
+            })),
+          ],
+        }),
+      },
+    }),
+    fixtureFiles: {},
+    buildScripts: () => [
+      toolTurn(1, [{ name: 'mcp__conf__ping', input: {} }]),
+      toolTurn(2, [{ name: 'mcp__conf__echo', input: {} }]),
+      { kind: 'sse', events: textReply('L3 MCP-05 DONE') },
+    ],
+    steps: [
+      { tool: 'mcp__conf__ping', isError: false, locks: [/ROUTE-PING/], notLocks: [/ROUTE-ECHO/] },
+      { tool: 'mcp__conf__echo', isError: false, locks: [/ROUTE-ECHO/], notLocks: [/ROUTE-PING/] },
+    ],
+  },
 ];
 
 /**
@@ -1023,6 +1062,49 @@ export const L3_SINGLE_ARM = [
         tool: 'Bash (timeout)',
         isError: true,
         locks: [/^Command timed out after 500ms/],
+      },
+    ],
+  },
+
+  // --- MCP tranche 2: zod input validation (single-arm) -----------------------
+  // Our tool() validates args via zod safeParse and returns an is_error
+  // tool_result on mismatch. This is a SINGLE-ARM lock, not a differential:
+  // passing OUR zod-v4 shape to the official arm's tool() hits its own bundled
+  // zod's converter, which does not recognize the instance and emits a
+  // malformed inputSchema - a cross-package artifact, not a real behavior
+  // split. So the official side is deliberately not compared; our validation
+  // contract is pinned here.
+  {
+    id: 'L3-SA-MCP-ZOD',
+    tool: 'mcp__conf__needs_number',
+    reason:
+      'zod arg validation is BPT tool() internal contract; a cross-arm differential is polluted by the official arm using its own bundled zod on our shape (malformed schema, not a behavior diff).',
+    prompt: 'Call the tool with a wrong-typed argument.',
+    buildOptions: (_cwd, _ctx, { sdk }) => ({
+      allowedTools: [...ALLOWED_TOOLS, 'mcp__conf__needs_number'],
+      mcpServers: {
+        conf: sdk.createSdkMcpServer({
+          name: 'conf',
+          version: '1.0.0',
+          tools: [
+            sdk.tool('needs_number', 'Requires a numeric n.', { n: z.number() }, async (args) => ({
+              content: [{ type: 'text', text: `n=${args.n}` }],
+            })),
+          ],
+        }),
+      },
+    }),
+    fixtureFiles: {},
+    buildScripts: () => [
+      // Scripted tool_use sends a STRING where a number is required.
+      toolTurn(1, [{ name: 'mcp__conf__needs_number', input: { n: 'not-a-number' } }]),
+      { kind: 'sse', events: textReply('L3 SA ZOD DONE') },
+    ],
+    steps: [
+      {
+        tool: 'mcp__conf__needs_number',
+        isError: true,
+        locks: [/Invalid arguments for tool 'needs_number'/, /n:/],
       },
     ],
   },

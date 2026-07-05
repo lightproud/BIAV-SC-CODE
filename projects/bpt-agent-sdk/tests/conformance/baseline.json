@@ -297,6 +297,11 @@
         ],
         "engineFinding": false
       },
+      "L3-MCP-05": {
+        "verdict": "CONTENT_MATCH",
+        "kdIds": [],
+        "engineFinding": false
+      },
       "L3-READ-01": {
         "verdict": "CONTENT_KNOWN_DIFF",
         "kdIds": [
@@ -319,6 +324,11 @@
         "engineFinding": false
       },
       "L3-SA-BASH-HOUSE": {
+        "verdict": "LOCKED",
+        "kdIds": [],
+        "engineFinding": false
+      },
+      "L3-SA-MCP-ZOD": {
         "verdict": "LOCKED",
         "kdIds": [],
         "engineFinding": false
