@@ -52,15 +52,12 @@ function covered(name: string): boolean {
  * Deferred gaps - each entry names the follow-up batch that owns it.
  * DELETE the entry when its test lands (the guard reds out stale entries).
  */
-const KNOWN_UNTESTED: Record<string, string> = {
-  // The rest of white-box batch 2 (includeEnvironmentContext / toolSearch /
-  // streamInput / sessionStoreFlush / setMcpServers / toggleMcpServer /
-  // reconnectMcpServer) landed in api-surface-batch2.test.ts and were deleted
-  // from this list. Remaining gap:
-  onElicitation:
-    'MCP elicitation host callback; needs an in-process server that ISSUES an elicitation ' +
-    'request mid-tool-call (server->client) - a heavier fixture than batch 2. Deferred to batch 3.',
-};
+// Batch 2 (7 interfaces -> api-surface-batch2.test.ts) and batch 3
+// (onElicitation -> api-surface-batch3.test.ts, real stdio server issuing
+// elicitation/create) cleared every entry. The list is EMPTY by design: any
+// new public interface without a test now fails the guard with no escape
+// hatch until a reasoned entry is added here.
+const KNOWN_UNTESTED: Record<string, string> = {};
 
 function parseBlock(source: string, re: RegExp): string {
   const m = source.match(re);

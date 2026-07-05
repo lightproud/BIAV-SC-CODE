@@ -264,7 +264,11 @@ export class StdioMcpConnection {
     if (typeof msg.method === 'string' && hasId) {
       // Server-initiated elicitation/create: resolve via the host handler and
       // reply with the resulting action payload (fail-closed to 'decline').
-      if (msg.method === 'elicitation/create' && this.elicitation) {
+      if (msg.method === 'elicitation/create') {
+        // NOTE: no `&& this.elicitation` guard - resolveElicitation itself maps a
+        // missing handler to { action: 'decline' } (the documented auto-decline);
+        // guarding here made that branch dead and replied -32601 instead
+        // (found by the batch-3 onElicitation test, 2026-07-05).
         const replyId = msg.id as JsonRpcId;
         void resolveElicitation(msg.params, this.elicitation, this.lifeController.signal)
           .then((result) => this.write({ jsonrpc: '2.0', id: replyId, result }))

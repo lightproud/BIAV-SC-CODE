@@ -313,6 +313,13 @@
   （顶层 type → system 子类型，E2 同族破坏性、MIGRATION 5f；`conformance-l35.test.ts` 旧编码锁为设计好的销账提醒，
   引擎改完必须同步翻转）；KD-L35-01 词汇差列 E8b 裁定项（task_progress 保留超集、前台 notification 随 Desktop 真实需求定）。
   优先级 E8 排 E7-01 后、E3 前。
+  **测试侧挂账再清二（2026-07-05，守密人「测试剩余挂账能继续完成嘛」→ 能，即做）**：① **onElicitation 补齐**——新 fixture
+  `tests/fixtures/mcp-elicit-server.mjs`（真 stdio 服务器工具调用中途发起 elicitation/create），全 query() 链路测 accept 回填与
+  无 handler 自动 decline；**顺手修一处引擎真缺陷**：stdio/http 调用点 `&& this.elicitation` 守卫使文档承诺的自动 decline 成死代码、
+  实际回 -32601——去守卫让 resolveElicitation 兜底（mcp.test.ts 37 测保绿）。覆盖守卫白名单**清零**（新接口无测试即红、无豁免口）。
+  ② **MCP tranche 3 stdio 传输差分**——L3-MCP-06 真子进程 stdio 服务器过双臂传输管线，**CONTENT_MATCH**；棘轮 +1 行。
+  ③ L3.5 双臂升硬门禁为**等待条件**（官方生命周期跨版本稳定后触发），非工作量，挂漂移哨兵联动。
+  `tsc` + `npx vitest run` **1109 全绿（42 文件）**。
   **SSE 网关方言容错已落（2026-07-05，BPT 产线故障闭环）**：BPT 实测「Malformed SSE payload for event "(none)"」
   经双侧协作定型——BPT `curl -N` 抓原始字节实锤 idealab 网关 `/api/anthropic` 端点带 OpenAI 方言遗留
   （流尾追加 `data: [DONE]`、错误帧无 event 行）；官方客户端 message_stop 即收工不碰尾卡、我方读到流关闭才撞上。

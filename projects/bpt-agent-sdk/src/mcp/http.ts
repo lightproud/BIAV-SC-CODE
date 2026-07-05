@@ -332,7 +332,11 @@ export class HttpMcpConnection {
         const replyId = msg.id;
         // Server-initiated elicitation/create: resolve via the host handler and
         // POST back the resulting action payload (fail-closed to 'decline').
-        if (msg.method === 'elicitation/create' && this.elicitation) {
+        if (msg.method === 'elicitation/create') {
+          // NOTE: no `&& this.elicitation` guard - resolveElicitation itself maps a
+          // missing handler to { action: 'decline' } (the documented auto-decline);
+          // guarding here made that branch dead and replied -32601 instead
+          // (found by the batch-3 onElicitation test, 2026-07-05).
           void resolveElicitation(msg.params, this.elicitation, this.closeController.signal)
             .then((result) => this.post({ jsonrpc: '2.0', id: replyId, result }, null))
             .catch(() =>
