@@ -73,6 +73,18 @@ describe('ShellManager', () => {
     expect(manager!.get(id)!.status).toBe('killed');
   });
 
+  it('kill() AFTER the process already completed reports completed, not a false killed (BPT incident #3)', async () => {
+    const ctx = makeCtx(true);
+    const { id } = manager!.spawnBackground('bash', 'echo quick', ctx) as { id: string };
+    // Let it finish on its own first.
+    await until(() => manager!.get(id)!.status === 'completed');
+    expect(manager!.get(id)!.exitCode).toBe(0);
+    // A late kill request must NOT rewrite a completed run to 'killed'.
+    manager!.kill(id);
+    await new Promise((r) => setTimeout(r, 50));
+    expect(manager!.get(id)!.status).toBe('completed');
+  });
+
   it('dispose() removes the state dir', () => {
     makeCtx(true);
     const dir = manager!.stateDir;

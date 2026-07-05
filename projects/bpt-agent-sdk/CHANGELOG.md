@@ -8,6 +8,19 @@ and adds one line here. A CI guard (`scripts/check-version-bump.mjs`) reds
 any src-changing merge that forgets. 0.6.1 and 0.6.2 below are retroactive
 labels for builds that shipped under a duplicated "0.6.0".
 
+## 0.6.3 — 2026-07-05
+
+- **fix (Windows)**: KillShell now actually terminates background shells on
+  Windows (`taskkill /PID <pid> /T /F`) instead of the POSIX-only
+  `process.kill(-pid)` that silently no-op'd; the swallowing empty catch is
+  gone (failures go to debug). (BPT Windows pilot incident #3)
+- **fix (honesty)**: background-shell terminal status is decided at exit from
+  what actually happened, never forced to 'killed' when kill() is called — a
+  job that runs to completion reports `completed` even if a kill lost the
+  race (previously marked 'killed' forever). New `kill-plan.ts` pure
+  functions (`planProcessKill`, `terminalStatus`) unit-test both the Windows
+  branch and the status rule on any host.
+
 ## 0.6.2 — 2026-07-05
 
 - **fix (Windows)**: Bash tool shell resolution — `CLAUDE_CODE_GIT_BASH_PATH`

@@ -19,6 +19,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
 import { planShellSpawn } from '../sandbox/backend.js';
+import { planProcessKill, terminalStatus } from './kill-plan.js';
 import { detectSandboxEvidence, sandboxFailureHint } from '../sandbox/evidence.js';
 import type {
   BackgroundShell,
@@ -82,14 +83,32 @@ export function createShellManager(debug: (msg: string) => void): ShellManager {
         return { error: err instanceof Error ? err.message : String(err) };
       }
 
+      // Windows has no POSIX process groups/signals: taskkill /T /F is one
+      // forcible pass over the whole tree, so the SIGTERM->SIGKILL escalation
+      // collapses to a single call (a second is a harmless no-op once gone).
+      let winKilled = false;
       const killGroup = (sig: string): void => {
-        const pid = child.pid;
-        const signal = sig as NodeJS.Signals;
+        const plan = planProcessKill(child.pid, sig);
         try {
-          if (pid !== undefined) process.kill(-pid, signal);
-          else child.kill(signal);
-        } catch {
-          /* group already gone */
+          if (plan.kind === 'group') {
+            process.kill(-plan.pid, plan.signal as NodeJS.Signals);
+          } else if (plan.kind === 'child') {
+            child.kill(plan.signal as NodeJS.Signals);
+          } else {
+            // taskkill (Windows): fire once, best-effort, never blocks.
+            if (winKilled) return;
+            winKilled = true;
+            const tk = spawn('taskkill', ['/PID', String(plan.pid), '/T', '/F'], {
+              stdio: 'ignore',
+            });
+            tk.on('error', (e) => debug(`Bash: taskkill failed for pid ${plan.pid}: ${e.message}`));
+            tk.unref();
+          }
+        } catch (err) {
+          // Benign when the process/group already exited; surface anything
+          // else to debug instead of swallowing it (the old empty catch hid
+          // the Windows failure that made KillShell a silent no-op).
+          debug(`Bash: kill(${sig}) failed for shell ${id}: ${err instanceof Error ? err.message : String(err)}`);
         }
       };
 
@@ -104,6 +123,7 @@ export function createShellManager(debug: (msg: string) => void): ShellManager {
         cursorOut: 0,
         cursorErr: 0,
         status: 'running',
+        killRequested: false,
         exitCode: null,
         exitSignal: null,
         kill: killGroup,
@@ -123,8 +143,12 @@ export function createShellManager(debug: (msg: string) => void): ShellManager {
       child.on('exit', (code, signal) => {
         rec.exitCode = code;
         rec.exitSignal = signal;
+        // HONEST terminal status, decided from what actually happened - never
+        // eagerly at the kill request. A process that ran to completion is
+        // 'completed' even if a kill was requested but lost the race (the
+        // BPT-reported lie: killed-forever despite exit 0).
         if (rec.status === 'running') {
-          rec.status = code === 0 ? 'completed' : 'failed';
+          rec.status = terminalStatus(rec.killRequested, code);
         }
         // Surface sandbox failure evidence (mirrors foreground): when a
         // sandboxed background shell fails with a matching stderr signature,
@@ -149,7 +173,10 @@ export function createShellManager(debug: (msg: string) => void): ShellManager {
     kill(id) {
       const rec = shells.get(id);
       if (rec === undefined) return false;
-      if (rec.status === 'running') rec.status = 'killed';
+      // Record intent only; the terminal status is set by the exit handler
+      // (terminalStatus) from what actually happens - not forced to 'killed'
+      // here before the signal has even landed.
+      rec.killRequested = true;
       rec.kill('SIGTERM');
       const t = setTimeout(() => rec.kill('SIGKILL'), KILL_GRACE_MS);
       t.unref?.();
@@ -159,6 +186,9 @@ export function createShellManager(debug: (msg: string) => void): ShellManager {
     dispose() {
       for (const rec of shells.values()) {
         if (rec.status === 'running') {
+          // Query teardown: force-kill and mark killed. Records are discarded
+          // immediately below, so this status is not observed post-dispose.
+          rec.killRequested = true;
           rec.status = 'killed';
           rec.kill('SIGKILL');
         }
