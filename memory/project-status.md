@@ -193,7 +193,7 @@
   （M0 引擎接线与 IPC 契约 → M1 最小可信对话环 → M2 agent 透明化 → M3 工程面 → M4 演进留位，
   每 M 带行为级验收；待守密人回填 BPT 现状后升 r2 校准）
 - **一致性测试套件（2026-07-05 拷问定稿开工，设计蓝图
-  `Public-Info-Pool/Resource/repo-engineering/bpt-sdk-conformance-suite-design-20260705.md`）**：
+  `Public-Info-Pool/Resource/repo-engineering/bpt-sdk-conformance-suite-design-20260705-r2.md`）**：
   五层金字塔（L1 流语法 / L2 选项语义 / L3 工具差分 / L4 故障注入 / L5 端到端统计带，L6 行为指纹后置留痕）；
   硬约束「净室观测边界」已录 decisions.md（对照物白名单 / 内容盲纪律 / 泄漏衍生禁引 claw-code 系）。
   **spike 三断点全通**（官方臂无头 + localhost 仿真器 + 协议面极窄，$0，剖面档
