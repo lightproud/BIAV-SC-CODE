@@ -89,6 +89,14 @@ gap is structural, not a backlog):
    Windows. Disable explicitly with `sandbox: false`; tune via the
    `SandboxOptions` object (`allowNetwork`, `writablePaths`, `allowEscape`, a
    custom `backend`).
+5b-2. **Bash on Windows needs Git Bash** (2026-07-05 pilot incident fix):
+   the tool resolves its shell Windows-aware — `CLAUDE_CODE_GIT_BASH_PATH`
+   (the official client's knob) wins when set, then Git for Windows is probed
+   at its standard install locations (Program Files / per-user). Without
+   either, Bash fails with actionable guidance instead of `spawn sh ENOENT`.
+   The bare `bash` name is deliberately NOT tried on Windows — System32's
+   bash.exe launches WSL, whose filesystem view silently diverges. Glob /
+   Grep / Read / Write / Edit are pure-Node and unaffected.
 5c. **Write enforces the official read-before-write gate** (E4, v0.6): a
    Write over an existing file the session has not Read errors with
    `<tool_use_error>File has not been read yet. Read it first before writing

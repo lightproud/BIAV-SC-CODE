@@ -8,6 +8,7 @@
  */
 
 import { spawn } from 'node:child_process';
+import { resolvePosixShells, SHELL_NOT_FOUND_GUIDANCE } from './shell-resolve.js';
 import { AbortError } from '../errors.js';
 import { BASH_DESCRIPTION, buildBashSandboxNote } from './descriptions.js';
 import { planShellSpawn } from '../sandbox/backend.js';
@@ -362,9 +363,15 @@ async function execute(
           isError: true,
         };
       }
-      let launched = ctx.shells.spawnBackground('bash', command, ctx, disableSandbox);
-      if ('error' in launched) {
-        launched = ctx.shells.spawnBackground('sh', command, ctx, disableSandbox);
+      // Windows-aware shell resolution (see shell-resolve.ts): candidates are
+      // tried in order; an empty list means no POSIX shell on this host.
+      const bgShells = resolvePosixShells(ctx.env as Record<string, string | undefined>);
+      let launched: ReturnType<typeof ctx.shells.spawnBackground> | { error: string } = {
+        error: SHELL_NOT_FOUND_GUIDANCE,
+      };
+      for (const shell of bgShells) {
+        launched = ctx.shells.spawnBackground(shell, command, ctx, disableSandbox);
+        if (!('error' in launched)) break;
       }
       if ('error' in launched) {
         return {
@@ -385,17 +392,27 @@ async function execute(
         ? withPersistentState(command, ctx.shells.stateDir)
         : command;
 
-    let outcome = await runShell('bash', effective, ctx, timeoutMs, disableSandbox);
-    if (outcome.kind === 'spawn-error' && outcome.error.code === 'ENOENT') {
+    // Windows-aware shell resolution (2026-07-05 BPT Windows pilot: bare
+    // 'bash'/'sh' names ENOENT on a stock Windows box). Candidates are tried
+    // in order; ENOENT falls through to the next, any other spawn error is
+    // terminal for that attempt chain.
+    const shells = resolvePosixShells(ctx.env as Record<string, string | undefined>);
+    let outcome: RunOutcome = {
+      kind: 'spawn-error',
+      error: Object.assign(new Error(SHELL_NOT_FOUND_GUIDANCE), { code: 'ENOENT' }),
+    };
+    for (const shell of shells) {
       if (ctx.signal.aborted) throw new AbortError();
-      ctx.debug('Bash: bash not found, falling back to sh');
-      outcome = await runShell('sh', effective, ctx, timeoutMs, disableSandbox);
+      outcome = await runShell(shell, effective, ctx, timeoutMs, disableSandbox);
+      if (!(outcome.kind === 'spawn-error' && outcome.error.code === 'ENOENT')) break;
+      ctx.debug(`Bash: ${shell} not found, trying the next shell candidate`);
     }
     if (outcome.kind === 'spawn-error') {
-      // Spawn impossibility is the only legitimate throw for this tool.
-      throw new Error(
-        `Bash: failed to spawn a shell: ${outcome.error.message}`,
-      );
+      // Spawn impossibility is the only legitimate throw for this tool. When
+      // the whole candidate chain missed, the message carries the actionable
+      // guidance (Git Bash / CLAUDE_CODE_GIT_BASH_PATH) instead of raw ENOENT.
+      const detail = outcome.error.code === 'ENOENT' ? SHELL_NOT_FOUND_GUIDANCE : outcome.error.message;
+      throw new Error(`Bash: failed to spawn a shell: ${detail}`);
     }
 
     if (outcome.aborted || ctx.signal.aborted) throw new AbortError();
