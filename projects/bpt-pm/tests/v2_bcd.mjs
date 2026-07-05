@@ -10,16 +10,16 @@ import { scheduleProject, instantiateTemplate, analyzeOrders } from "../scripts/
 const __dir = path.dirname(fileURLToPath(import.meta.url));
 function assert(name, cond) { console.log(`${cond ? "PASS" : "FAIL"}  ${name}`); if (!cond) process.exitCode = 1; }
 
-// ---------- B 周期守护：deadline 软截止叠加 ----------
+// ---------- B 版本周期守护：项目级对外更新日期 → 每任务对外更新余量（负=跳票）----------
 const data = JSON.parse(fs.readFileSync(path.join(__dir, "..", "data", "sample-content-team.json"), "utf8"));
 const res = scheduleProject(data);
 const T = Object.fromEntries(res.tasks.map(t => [t.id, t]));
 
-console.log("== B 周期守护 ==");
-assert("M1 late===true", T["M1"]?.late === true);
-assert("M1 lateDays===1", T["M1"]?.lateDays === 1);
-assert("X4 late===false", T["X4"]?.late === false);
-assert("顶层 lateCount>=1", res.lateCount >= 1);
+console.log("== B 版本周期守护（对外更新余量）==");
+assert("M1 对外更新余量===-1（会跳票）", T["M1"]?.externalMargin === -1);
+assert("X4 对外更新余量===0（踩线）", T["X4"]?.externalMargin === 0);
+assert("X1 对外更新余量>0（有余量）", T["X1"]?.externalMargin > 0);
+assert("顶层 slipCount>=1", res.slipCount >= 1);
 
 // ---------- C 流水线模板 + 返修回环 ----------
 console.log("== C 流水线模板 ==");

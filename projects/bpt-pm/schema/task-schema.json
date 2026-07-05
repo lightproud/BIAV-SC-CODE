@@ -24,6 +24,12 @@
           "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
           "description": "项目锚点开始日期（ISO YYYY-MM-DD）。排期从此日的第一个工作日起算。"
         },
+        "updateDate": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+          "description": "对外更新日期（可选）：对外公布的整版更新/上线日。任务表据此算「对外更新余量」= 该日 − 任务结束（工作日，负=会跳票）。"
+        },
         "scheduleFrom": {
           "type": "string",
           "enum": ["start", "finish"],
@@ -175,12 +181,6 @@
           },
           "resource": { "type": "string", "description": "排期占用键（可选）：引用 resources.id，驱动冲突/错峰/负载；占用者可为外包 vendor。" },
           "owner": { "type": "string", "description": "问责人（可选，v3 跨线收敛）：纯元数据，引擎不参与排期占用。与 resource 两义正交、不合一。" },
-          "deadline": {
-            "type": "string",
-            "format": "date",
-            "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
-            "description": "软截止线（可选，v2 特性 B）。ISO 日期。只做误期叠加判定（结束日晚于此 = late，lateDays 为工作日误期天数），不移动任务、不改 CPM slack/临界路径。"
-          },
           "percentComplete": {
             "type": "number",
             "minimum": 0,

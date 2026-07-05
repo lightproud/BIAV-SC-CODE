@@ -149,6 +149,7 @@
   <button id="btnInstTemplate" title="从项目模板批量实例化流水线任务（含返修回环）">从模板实例化</button>
   <button id="btnSchedule" class="primary" title="按 CPM 前向/后向计算法自动排期">自动排期</button>
   <button id="btnDir" title="调度方向：从开始(前向 ASAP) ↔ 从完成(倒排 ALAP)。切到从完成会询问项目完成日期 project.finish">方向：从开始</button>
+  <label style="font-size:12px;color:var(--muted);display:inline-flex;align-items:center;gap:4px" title="项目级：对外承诺的版本更新日；任务表按它算「对外更新余量」（负=会跳票）">对外更新日<input type="date" id="inpUpdate" style="background:var(--panel-2);color:var(--text);border:1px solid var(--border);border-radius:4px;padding:3px 5px;font-family:inherit;font-size:12px"></label>
   <button id="btnBaseline" title="把当前排期结果捕获为基线快照">设为基线</button>
   <button id="btnSave" title="写回已打开的数据文件；未用 API 打开则下载 JSON">写入数据源</button>
   <span style="width:1px;height:22px;background:var(--border);margin:0 2px"></span>
@@ -170,18 +171,17 @@
           <th>ID</th><th>任务名称</th><th class="num" title="工期(工作日)，0=里程碑">工期</th>
           <th title="前置依赖，如 T1、T2SS+2、T3FF-1，逗号分隔">前置</th>
           <th title="约束(8型)：ASAP/ALAP；早限 SNET/FNET/MSO/MFO；晚限 SNLT/FNLT。后接日期如 SNET 2026-07-23">约束</th>
-          <th title="软截止线(YYYY-MM-DD)，只标记不移动任务，留空即无">截止</th>
           <th>资源</th><th class="num" title="完成%">%</th>
           <th class="calc" title="计算开始">开始</th><th class="calc" title="计算结束">结束</th>
-          <th class="calc" title="误期(工作日)：结束晚于截止的天数，正=误期">误期</th>
-          <th class="calc" title="总浮动/松弛(工作日)">松弛</th>
-          <th class="calc" title="自由浮动(工作日)：不影响任何后继最早开始的可滑动余量；摘要行显示卷积跨度">自由</th>
+          <th class="calc" title="对外更新余量(工作日)：项目「对外更新日期」− 任务结束；正=还有余量，负/0=会跳票">对外更新余量</th>
+          <th class="calc" title="版本交付余量(工作日)：此任务能拖几天而不推迟整个版本交付；0=关键路径">版本交付余量</th>
+          <th class="calc" title="任务交付余量(工作日)：此任务能拖几天而不惊动紧邻的下一个任务；摘要行显示卷积跨度">任务交付余量</th>
           <th class="calc" title="相对基线结束偏差(工作日)，正=延后">偏差</th>
         </tr>
       </thead>
       <tbody id="taskBody"></tbody>
     </table>
-    <div class="hint" id="tableHint">载入样例或打开数据源以开始。前置依赖迷你语法：<code>T1</code>（默认 FS+0）、<code>T2SS+2</code>、<code>T3FF-1</code>、<code>T4SF</code>；多个用逗号分隔。约束支持 8 型：<code>ASAP</code>/<code>ALAP</code>、早限 <code>SNET 2026-07-23</code>/<code>FNET</code>/<code>MSO</code>/<code>MFO</code>、晚限 <code>SNLT</code>/<code>FNLT</code>，留空即 ASAP。截止列填软截止线 <code>2026-07-16</code>（只标记误期、不移动任务），留空即无。</div>
+    <div class="hint" id="tableHint">载入样例或打开数据源以开始。前置依赖迷你语法：<code>T1</code>（默认 FS+0）、<code>T2SS+2</code>、<code>T3FF-1</code>、<code>T4SF</code>；多个用逗号分隔。约束支持 8 型：<code>ASAP</code>/<code>ALAP</code>、早限 <code>SNET 2026-07-23</code>/<code>FNET</code>/<code>MSO</code>/<code>MFO</code>、晚限 <code>SNLT</code>/<code>FNLT</code>，留空即 ASAP。对外更新日期列填 <code>2026-07-16</code>（对外公布的版本更新日，只标记不移动任务），留空即无。</div>
   </div>
   <div class="gantt-pane" id="ganttPane">
     <div id="gantt"></div>
@@ -302,7 +302,6 @@ function scheduleProject(data) {
     constraint: t.constraint || null,
     pct: Number(t.percentComplete || 0),
     resource: t.resource || "",
-    deadline: t.deadline || null,
     parent: (t.parent != null && t.parent !== "") ? t.parent : null,
   }));
   const allById = new Map(allTasks.map(t => [t.id, t]));
@@ -489,6 +488,8 @@ function scheduleProject(data) {
     rolled.set(s.id, { startIdx: mn, finishIdx: mx });
   }
 
+  // 对外更新日期（项目级一个日期）→ 工作日索引，供每任务算「对外更新余量」= 该日 − 结束（负=跳票）
+  const updateIdx = data.project.updateDate ? cal.toIndex(data.project.updateDate) : null;
   // 映射回日历日期（叶任务照常 CPM 结果；摘要用卷积区间，isSummary/childIds 标注）
   const result = new Map();
   for (const orig of allTasks) {
@@ -502,7 +503,7 @@ function scheduleProject(data) {
         dur: r.finishIdx - r.startIdx + 1, pct: 0, milestone: false,
         start: fmtDate(startDate), finish: fmtDate(finishDate),
         startDate, finishDate, preds: [],
-        deadline: null, late: false, lateDays: null,
+        externalMargin: null,
         isSummary: true, childIds: (childrenOf.get(orig.id) || []).slice(), depth: dp,
       });
       continue;
@@ -510,29 +511,24 @@ function scheduleProject(data) {
     const t = byId.get(orig.id);
     const startDate = cal.fromIndex(t.es);
     const finishDate = t.dur > 0 ? cal.fromIndex(t.ef - 1) : startDate;
-    // 周期守护（特性 B）：deadline 软截止叠加，不改 CPM slack/临界。
     // 结束工作日索引：dur>0 用 ef-1（含尾工作日），里程碑用 es（结束=开始）。
     const finishIdx = t.dur > 0 ? t.ef - 1 : t.es;
-    let late = false, lateDays = null;
-    if (t.deadline) {
-      const di = cal.toIndex(t.deadline);
-      lateDays = finishIdx - di;
-      late = lateDays > 0;
-    }
+    // 对外更新余量（工作日）：对外更新日期 − 任务结束；正=有余量，负/0=会跳票。无对外更新日期则 null。
+    const externalMargin = updateIdx != null ? updateIdx - finishIdx : null;
     result.set(t.id, {
       id: t.id, es: t.es, ef: t.ef, slack: t.slack, freeSlack: t.freeSlack, critical: t.critical,
       dur: t.dur, pct: t.pct, milestone: t.dur === 0,
       start: fmtDate(startDate), finish: fmtDate(finishDate),
       startDate, finishDate, preds: t.preds,
-      deadline: t.deadline || null, late, lateDays,
+      externalMargin,
       isSummary: false, depth: dp,
     });
   }
   const resources = computeResourceLoad(tasks, data.resources, cal, projEnd);
-  const lateCount = [...result.values()].filter(c => c.late).length;
+  const slipCount = [...result.values()].filter(c => c.externalMargin != null && c.externalMargin < 0).length;
   const orders = analyzeOrders(data.orders, result);
   const ordersAtRisk = orders.filter(o => o.atRisk).length;
-  return { cal, result, projEnd, scheduleFrom, order, errors, warnings, warningCount: warnings.length, resources, lateCount, orders, ordersAtRisk };
+  return { cal, result, projEnd, scheduleFrom, order, errors, warnings, warningCount: warnings.length, resources, slipCount, orders, ordersAtRisk };
 }
 
 /* ---------- 流水线模板实例化（特性 C，纯函数，与 scripts/schedule.mjs 同实现） ----------
@@ -776,8 +772,6 @@ function readTable() {
     };
     const c = parseConstraint(g(".c-con"));
     if (c) t.constraint = c;
-    const dl = g(".c-deadline");           // 特性 B：软截止线，YYYY-MM-DD 或空
-    if (/^\d{4}-\d{2}-\d{2}$/.test(dl)) t.deadline = dl;
     const notesTask = state.data.tasks.find(x => x.id === id);
     if (notesTask && notesTask.notes) t.notes = notesTask.notes;
     // WBS：表格无 parent 列，从原数据保留 parent（否则 readTable 会抹掉摘要关系、并在保存时丢 WBS）
@@ -832,9 +826,6 @@ function renderTable() {
       if (dv !== 0) { varStr = (dv > 0 ? "+" : "") + dv + "d"; varCls = dv > 0 ? "var-pos" : "var-neg"; }
       else varStr = "0";
     }
-    // 误期列（特性 B）：有 deadline 且 late → 红字 +Nd；准时 → 0；无 deadline → —
-    let lateStr = "—";
-    if (c && c.deadline) lateStr = c.late ? `<span style="color:var(--critical)">+${c.lateDays}d</span>` : "0";
     const ms = (t.duration === 0) ? '<span class="milestone-badge"> ◆</span>' : "";
     // WBS：摘要行加标记 + 按 depth 缩进；摘要 slack 不适用（显示 —）
     const isSum = !!(c && c.isSummary);
@@ -854,12 +845,11 @@ function renderTable() {
       `<td class="editable num"><span class="c-dur" contenteditable="true">${t.duration ?? 1}</span></td>` +
       cell("c-pred", predsToStr(t.predecessors), true) +
       cell("c-con", constraintToStr(t.constraint), true) +
-      cell("c-deadline", t.deadline || "", true) +
       cell("c-res", t.resource || "", true) +
       `<td class="editable num"><span class="c-pct" contenteditable="true">${t.percentComplete ?? 0}</span></td>` +
       `<td class="calc">${c ? c.start : "—"}</td>` +
       `<td class="calc">${c ? c.finish : "—"}</td>` +
-      `<td class="calc">${lateStr}</td>` +
+      `<td class="calc">${c && c.externalMargin != null ? `<span style="color:${c.externalMargin < 0 ? 'var(--critical)' : 'var(--ok,#5bbf8a)'}">${c.externalMargin}d</span>` : "—"}</td>` +
       `<td class="calc">${c ? (c.isSummary || c.milestone ? "—" : c.slack + "d") : "—"}</td>` +
       `<td class="calc">${c ? (c.isSummary ? c.dur + "d 跨" : (c.freeSlack != null ? c.freeSlack + "d" : "—")) : "—"}</td>` +
       `<td class="calc ${varCls}">${varStr || "—"}</td>`;
@@ -942,6 +932,23 @@ function renderGantt() {
     }
   } catch (e) {}
 
+  // 对外更新日期线（项目级一条竖线：整版对外承诺的更新日）
+  if (state.data.project && state.data.project.updateDate) {
+    try {
+      const ud = parseDate(state.data.project.updateDate);
+      if (ud >= minD && ud <= maxD) {
+        const ln = document.createElement("div");
+        ln.style.cssText = `position:absolute;left:${xOf(ud)}px;top:${HEAD_H}px;width:2px;height:${rows.length * ROW_H}px;background:var(--warn);opacity:.85;z-index:2;`;
+        ln.title = `对外更新日期 ${state.data.project.updateDate}`;
+        g.appendChild(ln);
+        const fl = document.createElement("div");
+        fl.style.cssText = `position:absolute;left:${xOf(ud) + 2}px;top:${HEAD_H}px;width:7px;height:6px;background:var(--warn);opacity:.85;z-index:2;`;
+        fl.title = ln.title;
+        g.appendChild(fl);
+      }
+    } catch (e) {}
+  }
+
   // 每行：行名 + 任务条 + 基线条
   const yOf = {};
   rows.forEach((t, i) => {
@@ -971,15 +978,12 @@ function renderGantt() {
       g.appendChild(bb);
     }
 
-    // 误期提示后缀（特性 B）：late 时附「误期 N 工作日」
-    const lateNote = c.late ? `｜误期 ${c.lateDays} 工作日` : "";
     // 任务条
     if (c.milestone) {
       const dm = document.createElement("div");
       dm.className = "gbar milestone" + (c.critical ? " critical" : "");
       dm.style.cssText = `left:${xOf(c.startDate) - 6}px;top:${y + 9}px;`;
-      if (c.late) dm.style.background = "var(--critical)"; // 误期里程碑转红
-      dm.title = `${t.name}（里程碑）${c.start}${lateNote}`;
+      dm.title = `${t.name}（里程碑）${c.start}`;
       g.appendChild(dm);
     } else if (c.isSummary) {
       // WBS 摘要条：细横条 + 两端下折角括号，跨子任务范围
@@ -1000,8 +1004,7 @@ function renderGantt() {
       const bar = document.createElement("div");
       bar.className = "gbar" + (c.critical ? " critical" : "");
       bar.style.cssText = `left:${bx}px;top:${y + 11}px;width:${bw}px;`;
-      if (c.late) bar.style.boxShadow = "0 0 0 1.5px var(--critical)"; // 误期条形描红边
-      bar.title = `${t.name}\n${c.start} → ${c.finish}｜工期 ${c.dur}d｜松弛 ${c.slack}d${c.critical ? "｜关键路径" : ""}${lateNote}`;
+      bar.title = `${t.name}\n${c.start} → ${c.finish}｜工期 ${c.dur}d｜版本交付余量 ${c.slack}d${c.critical ? "｜关键路径" : ""}`;
       if (c.pct > 0) {
         const p = document.createElement("div");
         p.className = "prog"; p.style.width = Math.min(100, c.pct) + "%";
@@ -1015,19 +1018,6 @@ function renderGantt() {
       g.appendChild(gl);
     }
 
-    // 截止标记（特性 B）：在 deadline 日期处画细竖线 + 顶部小旗；late 用 --critical，准时用 --warn
-    if (c.deadline) {
-      const dx = xOf(parseDate(c.deadline));
-      const col = c.late ? "var(--critical)" : "var(--warn)";
-      const mk = document.createElement("div");
-      mk.style.cssText = `position:absolute;left:${dx}px;top:${y + 2}px;width:2px;height:${ROW_H - 4}px;background:${col};opacity:.9;z-index:2;`;
-      mk.title = `截止 ${c.deadline}${c.late ? lateNote : "｜准时"}`;
-      g.appendChild(mk);
-      const flag = document.createElement("div");
-      flag.style.cssText = `position:absolute;left:${dx + 2}px;top:${y + 2}px;width:6px;height:5px;background:${col};opacity:.9;z-index:2;`;
-      flag.title = mk.title;
-      g.appendChild(flag);
-    }
   });
 
   // 依赖连线（SVG）
@@ -1291,7 +1281,7 @@ function renderStatus() {
     const critCount = [...comp.result.values()].filter(c => c.critical).length;
     const overRes = (comp.resources || []).filter(r => r.overloads.length);
     const overTxt = overRes.length ? ` · 资源超载 ${overRes.length} 项（${overRes.map(r => r.name).join("、")}）` : " · 资源无冲突";
-    const lateTxt = comp.lateCount ? ` · 误期 ${comp.lateCount} 项` : " · 无误期";
+    const lateTxt = (state.data.project && state.data.project.updateDate) ? (comp.slipCount ? ` · 跳票风险 ${comp.slipCount} 项` : " · 对外更新无跳票") : "";
     const riskTxt = comp.ordersAtRisk ? ` · 发单风险 ${comp.ordersAtRisk} 项` : ((comp.orders && comp.orders.length) ? " · 发单无风险" : "");
     const warnTxt = comp.warningCount ? ` · 告警 ${comp.warningCount} 项` : "";
     document.getElementById("stEnd").textContent = `总工期 ${comp.projEnd} 工作日 · 完工 ${fmtDate(last)} · 关键路径 ${critCount} 项${overTxt}${lateTxt}${riskTxt}${warnTxt}`;
@@ -1475,6 +1465,7 @@ function loadData(data) {
   if (!data || data.protocol !== "bpt-pm/v1") { toast("非 bpt-pm/v1 协议数据"); return; }
   data.tasks = data.tasks || [];
   state.data = data; state.computed = null;
+  const up = document.getElementById("inpUpdate"); if (up) up.value = (data.project && data.project.updateDate) || "";
   renderTable(); renderRight(); renderStatus();
 }
 function emptyProject() {
@@ -1529,7 +1520,7 @@ async function doNotionPush() {
 /* ---------- 载入样例（内嵌，双击即用无需网络）：内容团队美术交付 + 外包 + 资源冲突 ---------- */
 const SAMPLE = {
   "protocol": "bpt-pm/v1",
-  "project": { "name": "版本 v2.4 双角色美术交付（外包建模）", "start": "2026-07-06", "calendar": { "workdays": [1, 2, 3, 4, 5], "holidays": ["2026-07-20"] } },
+  "project": { "name": "版本 v2.4 双角色美术交付（外包建模）", "start": "2026-07-06", "updateDate": "2026-07-16", "calendar": { "workdays": [1, 2, 3, 4, 5], "holidays": ["2026-07-20"] } },
   "resources": [
     { "id": "主美", "name": "主美 / 艺术总监", "type": "person", "capacity": 1 },
     { "id": "原画", "name": "原画师", "type": "person", "capacity": 1 },
@@ -1554,12 +1545,12 @@ const SAMPLE = {
     { "id": "X1", "name": "角色X 概念草图", "duration": 2, "predecessors": [], "resource": "原画", "percentComplete": 100 },
     { "id": "X2", "name": "角色X 原画终审", "duration": 1, "predecessors": [{ "id": "X1" }], "resource": "主美", "percentComplete": 0 },
     { "id": "X3", "name": "角色X 建模（外包）", "duration": 4, "predecessors": [{ "id": "X2" }], "resource": "外包A", "percentComplete": 0 },
-    { "id": "X4", "name": "角色X 引擎接入", "duration": 2, "predecessors": [{ "id": "X3" }], "resource": "程序", "deadline": "2026-07-16", "percentComplete": 0 },
+    { "id": "X4", "name": "角色X 引擎接入", "duration": 2, "predecessors": [{ "id": "X3" }], "resource": "程序", "percentComplete": 0 },
     { "id": "Y1", "name": "角色Y 概念草图", "duration": 2, "predecessors": [], "resource": "原画", "percentComplete": 100 },
     { "id": "Y2", "name": "角色Y 原画终审", "duration": 1, "predecessors": [{ "id": "Y1" }], "resource": "主美", "percentComplete": 0 },
     { "id": "Y3", "name": "角色Y 建模（外包）", "duration": 4, "predecessors": [{ "id": "Y2" }], "resource": "外包A", "percentComplete": 0 },
     { "id": "Y4", "name": "角色Y 引擎接入", "duration": 2, "predecessors": [{ "id": "Y3" }], "resource": "程序", "percentComplete": 0 },
-    { "id": "M1", "name": "版本 v2.4 美术封板", "duration": 0, "predecessors": [{ "id": "X4" }, { "id": "Y4" }], "resource": "主美", "deadline": "2026-07-16", "percentComplete": 0 }
+    { "id": "M1", "name": "版本 v2.4 美术封板", "duration": 0, "predecessors": [{ "id": "X4" }, { "id": "Y4" }], "resource": "主美", "percentComplete": 0 }
   ],
   "templates": [
     {
@@ -1586,6 +1577,7 @@ const SAMPLE_V3 = {
     "name": "v3 演示项目：双角色 WBS + 约束 + 错峰",
     "start": "2026-07-06",
     "scheduleFrom": "start",
+    "updateDate": "2026-07-13",
     "calendar": { "workdays": [1, 2, 3, 4, 5], "holidays": [] }
   },
   "resources": [
@@ -1601,7 +1593,7 @@ const SAMPLE_V3 = {
     { "id": "X3", "name": "角色X 引擎接入", "parent": "SUM_X", "duration": 2, "predecessors": [{ "id": "X2", "type": "FS" }], "resource": "程序", "constraint": { "type": "SNLT", "date": "2026-07-15" } },
     { "id": "Y1", "name": "角色Y 概念草图", "parent": "SUM_Y", "duration": 2, "predecessors": [], "resource": "主美" },
     { "id": "Y2", "name": "角色Y 精修建模", "parent": "SUM_Y", "duration": 3, "predecessors": [{ "id": "Y1", "type": "FS" }], "resource": "建模" },
-    { "id": "Y3", "name": "角色Y 引擎接入", "parent": "SUM_Y", "duration": 1, "predecessors": [{ "id": "Y2", "type": "FS" }], "resource": "程序", "deadline": "2026-07-13" }
+    { "id": "Y3", "name": "角色Y 引擎接入", "parent": "SUM_Y", "duration": 1, "predecessors": [{ "id": "Y2", "type": "FS" }], "resource": "程序" }
   ]
 };
 
@@ -1630,6 +1622,7 @@ document.getElementById("btnAddRow").onclick = doAddRow;
 document.getElementById("btnInstTemplate").onclick = doInstantiateTemplate;
 document.getElementById("btnSchedule").onclick = doSchedule;
 document.getElementById("btnDir").onclick = doToggleDir;
+document.getElementById("inpUpdate").onchange = e => { if (!state.data) return; state.data.project.updateDate = e.target.value || undefined; doSchedule(); };
 document.getElementById("btnBaseline").onclick = doBaseline;
 document.getElementById("stWarn").onclick = toggleWarnPanel;
 document.getElementById("btnSave").onclick = doSave;
