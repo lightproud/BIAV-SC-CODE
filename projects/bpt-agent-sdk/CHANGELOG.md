@@ -11,6 +11,25 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.11.0 — 2026-07-06
+
+- **feat (public built-in tool metadata, black-pool ContextRing request
+  2026-07-06)**: new package export `enumerateBuiltinToolMetadata(cfg?)` — a
+  zero-side-effect, read-only projection of the default built-in tools as
+  `{ name, description, inputJsonSchema }[]`. Internally it constructs the same
+  set as `createBuiltinTools()` and maps each entry; no `execute` is ever
+  called, no MCP server connects, no filesystem or network is touched. The
+  `inputJsonSchema` field name (not `inputSchema`) matches the SDK MCP tool
+  metadata shape, so a host can size the built-in tool block through the SAME
+  token-estimation / context-composition path it already uses for MCP tools —
+  turning what was a ~60K "residual" estimate into a per-tool breakdown.
+  - `cfg` mirrors `createBuiltinTools`: `env` selects the task surface
+    (`CLAUDE_CODE_ENABLE_TASKS=0` → TodoWrite instead of the Task quartet,
+    changing which tools appear), `sandbox` swaps Bash's description+schema for
+    the sandbox-aware form, `readLimits` is accepted for signature parity.
+  - Exported type `BuiltinToolMetadata` rides the package entry. No source
+    behavior changes — additive read surface only.
+
 ## 0.10.0 — 2026-07-06
 
 - **feat (Read total-output cap, BPT request 2026-07-06)**: Read now caps the
