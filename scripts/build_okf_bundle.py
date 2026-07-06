@@ -666,31 +666,46 @@ def _node_url(rel: str) -> str | None:
     return None
 
 
-def structural_fingerprint(bundle: Path) -> str:
-    """规范化结构哈希：只覆盖**结构**（concept id→type/resource/排序 tags + 排序边），
-    **排除易变量**（timestamp、描述里的活计数）。
+def structural_parts(bundle: Path) -> "tuple[dict, set]":
+    """返回 bundle 的**结构组件**（未哈希）：concept 映射 `rel → (type, resource, tags元组)`
+    + 边集合 `{(source, target, rel_type)}`。只覆盖结构、排除易变量（timestamp/活计数）。
 
-    北极星命令二（`memory/knowledge-layer-design.md`）的落地：让「结构漂移」可被断言，
-    又不被每日时间戳/活数据漂移误报——committed bundle 的结构指纹应恒等于源重建的结构指纹，
-    否则=有人改了源结构却忘了重建（stale commit）或生成器非幂等。
+    暴露未哈希组件是为让治理测试做**子集**比对（守密人 2026-07-06 乙裁定：sources 层派生自
+    每小时更新的社区档案，fresh 重建可合法地比 committed 多出概念，定时重建（丙）随后同步——
+    治理测试改为「committed ⊆ fresh + 公共概念结构相等」，仍抓丢失/改名/结构变/非幂等，
+    但容忍源集增长）。`structural_fingerprint` 仍在其上取整包哈希，供需精确相等的场景。
     """
-    import hashlib
-
-    concepts = []
+    concepts: dict = {}
     for f in sorted(bundle.rglob("*.md")):
         if f.name in RESERVED:
             continue
         rel = "/" + str(f.relative_to(bundle))
         fm = _read_frontmatter(f.read_text(encoding="utf-8"))
-        tags = sorted(fm.get("tags", [])) if isinstance(fm.get("tags"), list) else []
-        concepts.append([rel, fm.get("type", ""), fm.get("resource", ""), tags])
-    concepts.sort()
-    edges = []
+        tags = tuple(sorted(fm.get("tags", []))) if isinstance(fm.get("tags"), list) else ()
+        concepts[rel] = (fm.get("type", ""), fm.get("resource", ""), tags)
+    edges: set = set()
     gp = bundle / "graph.json"
     if gp.exists():
         g = json.loads(gp.read_text(encoding="utf-8"))
-        edges = sorted([e["source"], e["target"], e.get("rel_type", e.get("rel", ""))]
-                       for e in g.get("edges", []))
+        edges = {
+            (e["source"], e["target"], e.get("rel_type", e.get("rel", "")))
+            for e in g.get("edges", [])
+        }
+    return concepts, edges
+
+
+def structural_fingerprint(bundle: Path) -> str:
+    """规范化结构哈希：只覆盖**结构**（concept id→type/resource/排序 tags + 排序边），
+    **排除易变量**（timestamp、描述里的活计数）。整包精确相等场景用；容忍增长的分层比对见
+    `structural_parts` + 治理测试。哈希格式与历史一致（未哈希组件由 structural_parts 提供）。
+    """
+    import hashlib
+
+    concepts_map, edges_set = structural_parts(bundle)
+    concepts = sorted(
+        [rel, t, r, list(tags)] for rel, (t, r, tags) in concepts_map.items()
+    )
+    edges = sorted([s, t, rt] for (s, t, rt) in edges_set)
     blob = json.dumps({"concepts": concepts, "edges": edges}, ensure_ascii=False, sort_keys=True)
     return hashlib.sha256(blob.encode("utf-8")).hexdigest()
 
