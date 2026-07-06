@@ -73,6 +73,11 @@
  *    doctrine, caps, quality patterns) is reproduced faithfully — the shipped
  *    engine implements those semantics (official caps verbatim: min(16,
  *    cores-2) concurrent, 1000 lifetime, 4096 items per call).
+ *  - Read (BPT request 2026-07-06): adapted glue, not archive text. One line is
+ *    appended documenting this SDK's TOTAL-output character cap (default ~50000)
+ *    — a shipped mechanism the public archive does not describe. The existing
+ *    "up to 2000 lines" / "lines longer than 2000 characters" clauses are
+ *    archive text, retained verbatim; only the total-cap sentence is added.
  *  - Background shells: launched via Bash `run_in_background: true`; read output
  *    with BashOutput; stop with KillShell.
  *  - Git guidance for Bash is retained (Bash can run git), with CLI-product-specific
@@ -211,6 +216,7 @@ Usage:
 - The file_path parameter must be an absolute path, not a relative path
 - By default, it reads up to 2000 lines starting from the beginning of the file
 - Any lines longer than 2000 characters will be truncated
+- Output is also capped at ~50000 characters total; when truncated, a footer shows the exact line range returned and the offset to continue reading from
 - Results are returned using cat -n format, with line numbers starting at 1
 - You can optionally specify a line offset and limit (especially handy for long files), but it's recommended to read the whole file by not providing these parameters
 - This tool allows you to read images (eg PNG, JPG, etc). When reading an image file the contents are presented visually as this is a multimodal model.

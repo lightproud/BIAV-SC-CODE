@@ -17,11 +17,38 @@ import * as path from 'node:path';
 /** Number of leading bytes sniffed when deciding whether a file is binary. */
 const BINARY_SNIFF_BYTES = 8192;
 
-/** Maximum characters kept per line in cat -n style output. */
-const MAX_LINE_CHARS = 2000;
+/** Default maximum characters kept per line in cat -n style output. */
+export const MAX_LINE_CHARS = 2000;
+
+/**
+ * Default cap on the TOTAL characters one Read returns (BPT request 2026-07-06).
+ * The line limit (2000) and per-line cap (2000) bound rows and row-width but
+ * not the AGGREGATE — a 2000-line file of medium-length lines can still flood
+ * the context. This cap is applied on a LINE BOUNDARY (never mid-line) during
+ * formatting; because every line is already <= MAX_LINE_CHARS, 50000 > 2000
+ * guarantees at least ~25 lines are emitted, so the output is never empty and
+ * an offset continuation never dead-loops. ~50K aligns with the WebFetch cap.
+ */
+export const MAX_READ_OUTPUT_CHARS = 50000;
 
 /** Width of the right-aligned line-number column. */
 const LINE_NUMBER_WIDTH = 6;
+
+/** Structured result of formatCatN: the text plus what bounded it, so the Read
+ *  tool can build a footer that reflects the cap that actually took effect. */
+export type FormatCatNResult = {
+  /** The assembled cat -n output. */
+  text: string;
+  /** How many of the input lines were emitted (< lines.length when the total-
+   *  character cap stopped assembly early on a line boundary). */
+  linesEmitted: number;
+  /** True when the total-character cap stopped assembly before all input lines
+   *  fit (distinct from the caller's line-count limit). */
+  charCapped: boolean;
+  /** Count of emitted lines that exceeded the per-line cap and were truncated
+   *  (each carries a `…[line truncated: N chars total]` marker). */
+  truncatedLines: number;
+};
 
 /**
  * Resolve `p` (absolute or cwd-relative) to an absolute path. No containment
@@ -45,15 +72,44 @@ export function looksBinary(buf: Buffer): boolean {
 }
 
 /**
- * Format lines in `cat -n` style: right-aligned 6-char line number, a tab,
- * then the line text truncated at 2000 characters.
+ * Format lines in `cat -n` style: right-aligned 6-char line number, a tab, then
+ * the line text. Two caps apply: each line is truncated at `maxLineChars` (a
+ * `…[line truncated: N chars total]` marker replaces the silent slice so the
+ * model knows the row is incomplete), and the TOTAL output is capped at
+ * `maxOutputChars` on a line boundary (never mid-line). The first line is
+ * always emitted, so the result is never empty even if that line alone exceeds
+ * the total cap. Returns what bounded the output so the caller can footer it.
  */
-export function formatCatN(lines: string[], startLine: number): string {
+export function formatCatN(
+  lines: string[],
+  startLine: number,
+  opts?: { maxLineChars?: number; maxOutputChars?: number },
+): FormatCatNResult {
+  const maxLineChars = opts?.maxLineChars ?? MAX_LINE_CHARS;
+  const maxOutputChars = opts?.maxOutputChars ?? MAX_READ_OUTPUT_CHARS;
   const out: string[] = [];
+  let running = 0;
+  let truncatedLines = 0;
+  let charCapped = false;
   for (let i = 0; i < lines.length; i++) {
     const raw = lines[i] ?? '';
-    const text = raw.length > MAX_LINE_CHARS ? raw.slice(0, MAX_LINE_CHARS) : raw;
-    out.push(`${String(startLine + i).padStart(LINE_NUMBER_WIDTH)}\t${text}`);
+    let text: string;
+    if (raw.length > maxLineChars) {
+      text = `${raw.slice(0, maxLineChars)}…[line truncated: ${raw.length} chars total]`;
+      truncatedLines += 1;
+    } else {
+      text = raw;
+    }
+    const formatted = `${String(startLine + i).padStart(LINE_NUMBER_WIDTH)}\t${text}`;
+    // Cost of appending this line = the '\n' join separator (none before the
+    // first line) + the formatted text. The first line always goes in.
+    const addition = (out.length === 0 ? 0 : 1) + formatted.length;
+    if (out.length > 0 && running + addition > maxOutputChars) {
+      charCapped = true;
+      break;
+    }
+    out.push(formatted);
+    running += addition;
   }
-  return out.join('\n');
+  return { text: out.join('\n'), linesEmitted: out.length, charCapped, truncatedLines };
 }

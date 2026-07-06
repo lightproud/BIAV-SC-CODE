@@ -45,7 +45,12 @@ function buildSnippet(updated: string, firstEditIndex: number, newString: string
   const editSpan = newString.split('\n').length;
   const from = Math.max(1, editLine - SNIPPET_CONTEXT_LINES);
   const to = Math.min(display.length, editLine + editSpan - 1 + SNIPPET_CONTEXT_LINES);
-  return formatCatN(display.slice(from - 1, to), from);
+  // Edit shows a bounded diff-context snippet, not a paginated read: disable
+  // the total-output cap so a large edit context is never truncated (the small
+  // snippet never approaches it anyway); the per-line marker still applies.
+  return formatCatN(display.slice(from - 1, to), from, {
+    maxOutputChars: Number.MAX_SAFE_INTEGER,
+  }).text;
 }
 
 export const editTool: BuiltinTool = {

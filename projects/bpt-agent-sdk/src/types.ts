@@ -1079,9 +1079,24 @@ export interface SpawnedProcess {
   off(event: 'error', listener: (error: Error) => void): void;
 }
 
+/**
+ * BPT-EXTENSION: tunable Read output limits (spec 2026-07-06). The MECHANISM
+ * (total-char cap on a line boundary, a footer that reflects the cap, per-line
+ * truncation markers, the Grep hint) lives in the SDK; only the NUMBERS are the
+ * caller's. Both default when omitted (50000 total chars / 2000 per line).
+ */
+export type ReadLimits = {
+  /** Total characters one Read returns before truncating on a line boundary. */
+  maxOutputChars?: number;
+  /** Characters kept per line before the per-line truncation marker. */
+  maxLineChars?: number;
+};
+
 export type Options = {
   abortController?: AbortController;
   additionalDirectories?: string[];
+  /** Read output limits (BPT-EXTENSION); omit for the defaults. */
+  readLimits?: ReadLimits;
   /** Programmatic subagent definitions (type-compatible; execution in v0.2). */
   agents?: Record<string, AgentDefinition>;
   allowedTools?: string[];
