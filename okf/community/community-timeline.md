@@ -4,7 +4,7 @@ title: "社区活动时序（全量）"
 description: "全量社区月度时序：2016-02..2026-07（81 月），vol_index 抓量异常（本月量÷前6月中位数）。"
 resource: "/projects/news/index/community_index.json"
 tags: ["data_layer:full_archive", "kind:timeseries", "zero-ml"]
-timestamp: "2026-07-05"
+timestamp: "2026-07-06"
 ---
 
 # 指针概念

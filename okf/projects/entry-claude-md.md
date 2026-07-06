@@ -4,7 +4,7 @@ title: "CLAUDE.md（AI 统一入口 · 运行时强约束权威）"
 description: "银芯是黑池的「眼睛和耳朵」：采集 + 整理外部信息往黑池送，黑池吃完不吐回。"
 resource: "/CLAUDE.md"
 tags: ["data_layer:curated", "entry-point", "runtime-authority"]
-timestamp: "2026-07-05"
+timestamp: "2026-07-06"
 ---
 
 # 指针概念

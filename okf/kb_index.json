@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-05",
+  "generated": "2026-07-06",
   "meta": {
     "data_layer": "curated_knowledge",
     "source": "okf/ bundle (concept frontmatter + body + graph edges)",
@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 324,
-    "edges": 391,
-    "terms": 5585,
+    "concepts": 326,
+    "edges": 390,
+    "terms": 5614,
     "by_type": {
       "character": 72,
       "dataset": 110,
-      "documentation": 79,
+      "documentation": 81,
       "knowledge-pointer": 43,
       "reference": 17,
       "research": 3
@@ -26,7 +26,7 @@
       "memory": 47,
       "news-output": 23,
       "projects": 19,
-      "resource": 59,
+      "resource": 61,
       "sources": 17,
       "story": 11,
       "unpacked": 13,
@@ -34,7 +34,7 @@
     },
     "by_tier": {
       "skeleton": 131,
-      "search": 193
+      "search": 195
     }
   },
   "sections": {
@@ -68,7 +68,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 59
+      "count": 61
     },
     "sources": {
       "index": "/sources/index.md",
@@ -361,7 +361,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 16
+      "degree": 14
     },
     "/characters/15561.md": {
       "type": "character",
@@ -968,7 +968,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 76
+      "degree": 77
     },
     "/characters/15604.md": {
       "type": "character",
@@ -1390,7 +1390,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 4
+      "degree": 3
     },
     "/community/community-ruliweb.md": {
       "type": "dataset",
@@ -3230,6 +3230,20 @@
       "tier": "search",
       "degree": 1
     },
+    "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md": {
+      "type": "documentation",
+      "title": "bpt-sdk-session-manager-20260706",
+      "description": "**痛点一：连接浪费（无共享）。** 现状每个 `query()` 自带一份 `AnthropicTransport`（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/proposal/bpt-sdk-session-manager-20260706.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:proposal"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 1
+    },
     "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md": {
       "type": "documentation",
       "title": "bpt-sdk-v06-remaining-execution-roadmap-20260705",
@@ -3403,6 +3417,20 @@
       "title": "bpt-sdk-engine-alignment-handoff-20260705-r4",
       "description": "（PR #453 / #463 / #466 / #467 / #469），不在此单。（格式：md）",
       "resource": "/Public-Info-Pool/Resource/repo-engineering/bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 0
+    },
+    "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md": {
+      "type": "documentation",
+      "title": "bpt-sdk-engine-alignment-handoff-20260705-r5",
+      "description": "其实只是便签没跟着更新。本档就是把便签换成「已完工验收单」。（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/repo-engineering/bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "tags": [
         "data_layer:curated",
         "deliverable",
@@ -3681,7 +3709,7 @@
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 2536 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 2537 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -3695,7 +3723,7 @@
     "/sources/discord.md": {
       "type": "dataset",
       "title": "discord 社区数据源",
-      "description": "discord 平台采集档案，全量 7939809 条，健康度 active。",
+      "description": "discord 平台采集档案，全量 7954469 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/discord/",
       "tags": [
         "data_layer:full_archive",
@@ -3709,7 +3737,7 @@
     "/sources/google_play.md": {
       "type": "dataset",
       "title": "google_play 社区数据源",
-      "description": "google_play 平台采集档案，全量 1220 条，健康度 active。",
+      "description": "google_play 平台采集档案，全量 1221 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/google_play/global/",
       "tags": [
         "data_layer:full_archive",
@@ -3751,7 +3779,7 @@
     "/sources/reddit.md": {
       "type": "dataset",
       "title": "reddit 社区数据源",
-      "description": "reddit 平台采集档案，全量 3473 条，健康度 active。",
+      "description": "reddit 平台采集档案，全量 3486 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/reddit/",
       "tags": [
         "data_layer:full_archive",
@@ -3760,7 +3788,7 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 4
+      "degree": 3
     },
     "/sources/ruliweb.md": {
       "type": "dataset",
@@ -3779,7 +3807,7 @@
     "/sources/steam.md": {
       "type": "dataset",
       "title": "steam 社区数据源",
-      "description": "steam 平台采集档案，全量 5110 条，健康度 active。",
+      "description": "steam 平台采集档案，全量 5112 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/review/",
       "tags": [
         "data_layer:full_archive",
@@ -3849,7 +3877,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 9084 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 9096 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -3863,7 +3891,7 @@
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 6396 条，健康度 active。",
+      "description": "weixin 平台采集档案，全量 6416 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -3877,7 +3905,7 @@
     "/sources/youtube.md": {
       "type": "dataset",
       "title": "youtube 社区数据源",
-      "description": "youtube 平台采集档案，全量 2619 条，健康度 active。",
+      "description": "youtube 平台采集档案，全量 2622 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -4893,11 +4921,6 @@
         "cv"
       ],
       [
-        "/community/community-reddit.md",
-        "提及:Pandia",
-        "mention"
-      ],
-      [
         "/community/community-youtube-comments.md",
         "提及:Pandia",
         "mention"
@@ -4949,11 +4972,6 @@
       ],
       [
         "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
-        "提及:Pandia",
-        "mention"
-      ],
-      [
-        "/sources/reddit.md",
         "提及:Pandia",
         "mention"
       ],
@@ -6276,6 +6294,11 @@
         "mention"
       ],
       [
+        "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
         "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
         "提及:艾瑞卡",
         "mention"
@@ -6888,11 +6911,6 @@
       ]
     ],
     "/community/community-reddit.md": [
-      [
-        "/characters/15560.md",
-        "提及:Pandia",
-        "mention"
-      ],
       [
         "/characters/130226.md",
         "提及:Saya",
@@ -8329,6 +8347,13 @@
         "mention"
       ]
     ],
+    "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
     "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md": [
       [
         "/characters/15603.md",
@@ -8542,11 +8567,6 @@
       ]
     ],
     "/sources/reddit.md": [
-      [
-        "/characters/15560.md",
-        "提及:Pandia",
-        "mention"
-      ],
       [
         "/characters/130226.md",
         "提及:Saya",
@@ -9182,6 +9202,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -9195,6 +9216,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -9351,7 +9373,8 @@
       "/wiki-data/wiki-data-aliases.md"
     ],
     "alignment": [
-      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md"
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md"
     ],
     "analysis": [
       "/community/community-appstore.md",
@@ -9399,6 +9422,9 @@
     "anthropic": [
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md"
+    ],
+    "anthropictransport": [
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md"
     ],
     "api": [
       "/memory/memory-ext-workflow-api-key-audit.md",
@@ -9835,6 +9861,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -9844,6 +9871,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -10276,6 +10304,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -10289,6 +10318,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -10551,6 +10581,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -10564,6 +10595,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -10845,6 +10877,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -10858,6 +10891,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -10999,6 +11033,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -11012,6 +11047,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -11209,6 +11245,7 @@
     "engine": [
       "/projects/news-archive-sources-registry.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
     ],
     "engineering": [
@@ -11223,6 +11260,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -11726,6 +11764,7 @@
     ],
     "handoff": [
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "harness": [
@@ -11919,6 +11958,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -11932,6 +11972,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -12366,6 +12407,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -12379,6 +12421,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -12708,6 +12751,9 @@
     "management": [
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
     ],
+    "manager": [
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md"
+    ],
     "manifest": [
       "/projects/extracted-lua-inventory.md",
       "/wiki-data/wiki-data-cg-gallery.md"
@@ -12838,6 +12884,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -12849,6 +12896,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -13456,6 +13504,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -13469,6 +13518,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -13730,6 +13780,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -13792,6 +13843,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -13805,6 +13857,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -13878,7 +13931,8 @@
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md"
     ],
     "query": [
-      "/README.md"
+      "/README.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md"
     ],
     "questions": [
       "/assets/assets-interview-2026-04.md"
@@ -13897,6 +13951,9 @@
     ],
     "r4": [
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md"
+    ],
+    "r5": [
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md"
     ],
     "ramona": [
       "/characters/15595.md"
@@ -14070,6 +14127,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -14138,6 +14196,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -14151,6 +14210,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -14325,6 +14385,7 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -14332,6 +14393,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -14352,7 +14414,8 @@
       "/assets/assets-sentinel-baseline.md"
     ],
     "session": [
-      "/memory/memory-ext-session-continuity.md"
+      "/memory/memory-ext-session-continuity.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md"
     ],
     "share": [
       "/unpacked/unpacked-share.md"
@@ -14900,6 +14963,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -14913,6 +14977,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -15353,7 +15418,8 @@
       "/projects/doc-testing-strategy.md"
     ],
     "一份": [
-      "/README.md"
+      "/README.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md"
     ],
     "一使": [
       "/projects/project-site.md"
@@ -15883,6 +15949,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -15896,6 +15963,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -16121,6 +16189,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -16134,6 +16203,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -16398,6 +16468,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -16411,6 +16482,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -17500,6 +17572,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -17513,6 +17586,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -18385,6 +18459,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -18398,6 +18473,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -18620,6 +18696,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -18633,6 +18710,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -18984,6 +19062,9 @@
     ],
     "便宜": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+    ],
+    "便签": [
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md"
     ],
     "促使": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md"
@@ -19377,6 +19458,7 @@
       "/characters/77914.md"
     ],
     "共享": [
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
     ],
@@ -20346,6 +20428,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -20359,6 +20442,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -21560,7 +21644,8 @@
     ],
     "只是": [
       "/characters/15574.md",
-      "/characters/15590.md"
+      "/characters/15590.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md"
     ],
     "只有": [
       "/characters/15584.md",
@@ -23338,6 +23423,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -23351,6 +23437,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -24081,6 +24168,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -24094,6 +24182,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -24446,6 +24535,9 @@
     "完全": [
       "/projects/bpt-sdk-doc-positioning.md"
     ],
+    "完工": [
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md"
+    ],
     "完成": [
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md"
     ],
@@ -24656,6 +24748,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -24669,6 +24762,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -24782,6 +24876,9 @@
     ],
     "实再": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+    ],
+    "实只": [
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md"
     ],
     "实圣": [
       "/assets/assets-narrative-structure.md",
@@ -25585,6 +25682,9 @@
       "/characters/78841.md",
       "/characters/94451.md"
     ],
+    "工验": [
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md"
+    ],
     "巧连": [
       "/characters/15567.md"
     ],
@@ -25642,6 +25742,9 @@
     ],
     "已固": [
       "/resource/resource-community-analysis-jp-discord-insights-202606.md"
+    ],
+    "已完": [
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md"
     ],
     "已实": [
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
@@ -25776,6 +25879,9 @@
     ],
     "帚还": [
       "/characters/15571.md"
+    ],
+    "带一": [
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md"
     ],
     "带你": [
       "/characters/77926.md"
@@ -27735,6 +27841,9 @@
       "/memory/memory-ext-skill-authoring-standard.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md"
     ],
+    "把便": [
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md"
+    ],
     "把如": [
       "/characters/15604.md"
     ],
@@ -28255,6 +28364,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -28268,6 +28378,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -28411,6 +28522,9 @@
     ],
     "换姿": [
       "/characters/15601.md"
+    ],
+    "换成": [
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md"
     ],
     "换的": [
       "/characters/15601.md"
@@ -28607,6 +28721,9 @@
     "接法": [
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md"
     ],
+    "接浪": [
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md"
+    ],
     "接表": [
       "/README.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md"
@@ -28752,6 +28869,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -28765,6 +28883,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -29056,6 +29175,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -29069,6 +29189,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -29184,7 +29305,8 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md"
     ],
     "收单": [
-      "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md"
+      "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md"
     ],
     "收官": [
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
@@ -29414,6 +29536,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -29427,6 +29550,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -29671,6 +29795,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -29684,6 +29809,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -30327,6 +30453,9 @@
     "无他": [
       "/characters/77922.md"
     ],
+    "无共": [
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md"
+    ],
     "无可": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
@@ -30581,6 +30710,9 @@
     "是他": [
       "/characters/15594.md"
     ],
+    "是便": [
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md"
+    ],
     "是倔": [
       "/characters/77923.md"
     ],
@@ -30610,6 +30742,9 @@
     ],
     "是扫": [
       "/characters/15571.md"
+    ],
+    "是把": [
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md"
     ],
     "是拍": [
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
@@ -30786,6 +30921,9 @@
     ],
     "更换": [
       "/characters/15572.md"
+    ],
+    "更新": [
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md"
     ],
     "更正": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
@@ -31232,6 +31370,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -31245,6 +31384,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -31367,7 +31507,8 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md"
     ],
     "本档": [
-      "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md"
+      "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md"
     ],
     "本次": [
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md"
@@ -31620,6 +31761,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -31633,6 +31775,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -32152,6 +32295,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -32165,6 +32309,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -32339,6 +32484,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -32352,6 +32498,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -32468,6 +32615,9 @@
     ],
     "档定": [
       "/memory/memory-ext-biav-info-classification.md"
+    ],
+    "档就": [
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md"
     ],
     "档层": [
       "/memory/decisions-archive.md"
@@ -32782,6 +32932,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -32795,6 +32946,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -33133,6 +33285,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -33146,6 +33299,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -33323,6 +33477,7 @@
     ],
     "每个": [
       "/README.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md"
     ],
@@ -33530,6 +33685,9 @@
       "/characters/15584.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md"
     ],
+    "没跟": [
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md"
+    ],
     "没通": [
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md"
     ],
@@ -33695,6 +33853,9 @@
     ],
     "浪吧": [
       "/characters/15569.md"
+    ],
+    "浪费": [
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md"
     ],
     "海幻": [
       "/characters/15575.md"
@@ -34016,6 +34177,9 @@
     ],
     "炉能": [
       "/characters/15599.md"
+    ],
+    "点一": [
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md"
     ],
     "点名": [
       "/story/story_research_todo.md"
@@ -34347,6 +34511,9 @@
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
     ],
+    "状每": [
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md"
+    ],
     "狂两": [
       "/characters/15601.md"
     ],
@@ -34621,6 +34788,9 @@
     ],
     "现永": [
       "/characters/15589.md"
+    ],
+    "现状": [
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md"
     ],
     "现精": [
       "/README.md"
@@ -35215,6 +35385,9 @@
     ],
     "痛楚": [
       "/characters/15597.md"
+    ],
+    "痛点": [
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md"
     ],
     "痛苦": [
       "/characters/15581.md",
@@ -36115,6 +36288,9 @@
     "着所": [
       "/characters/15589.md"
     ],
+    "着更": [
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md"
+    ],
     "着臣": [
       "/characters/15589.md"
     ],
@@ -36921,6 +37097,12 @@
     ],
     "策速": [
       "/memory/decisions.md"
+    ],
+    "签换": [
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md"
+    ],
+    "签没": [
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md"
     ],
     "简单": [
       "/projects/bpt-sdk-doc-positioning.md"
@@ -37974,6 +38156,9 @@
     ],
     "自家": [
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md"
+    ],
+    "自带": [
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md"
     ],
     "自建": [
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
@@ -39530,6 +39715,9 @@
     "跟官": [
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md"
     ],
+    "跟着": [
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md"
+    ],
     "跨组": [
       "/README.md"
     ],
@@ -39695,6 +39883,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -39708,6 +39897,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -40195,6 +40385,9 @@
       "/characters/15567.md",
       "/characters/15600.md"
     ],
+    "连接": [
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md"
+    ],
     "连环": [
       "/characters/15567.md"
     ],
@@ -40320,6 +40513,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -40333,6 +40527,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -41272,6 +41467,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -41285,6 +41481,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -41501,6 +41698,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -41514,6 +41712,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -42361,7 +42560,8 @@
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md"
     ],
     "验标": [
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md"
@@ -42606,7 +42806,8 @@
       "/wiki-data/wiki-data-aliases.md"
     ],
     "alignment": [
-      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md"
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md"
     ],
     "analysis": [
       "/community/community-appstore.md",
@@ -42864,6 +43065,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -42873,6 +43075,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -43148,6 +43351,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -43161,6 +43365,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -43435,6 +43640,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -43448,6 +43654,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -43580,6 +43787,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -43593,6 +43801,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -43740,6 +43949,7 @@
     ],
     "engine": [
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
     ],
     "engineering": [
@@ -43754,6 +43964,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -43991,6 +44202,7 @@
     ],
     "handoff": [
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "health": [
@@ -44249,6 +44461,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -44262,6 +44475,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -44435,6 +44649,9 @@
     ],
     "management": [
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
+    ],
+    "manager": [
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md"
     ],
     "manifest": [
       "/projects/extracted-lua-inventory.md"
@@ -44869,6 +45086,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -44896,6 +45114,9 @@
     ],
     "r4": [
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md"
+    ],
+    "r5": [
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md"
     ],
     "readme": [
       "/README.md",
@@ -44939,6 +45160,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -45065,6 +45287,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -45072,6 +45295,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -45087,7 +45311,8 @@
       "/assets/assets-sentinel-baseline.md"
     ],
     "session": [
-      "/memory/memory-ext-session-continuity.md"
+      "/memory/memory-ext-session-continuity.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md"
     ],
     "share": [
       "/unpacked/unpacked-share.md"
@@ -45288,6 +45513,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -45301,6 +45527,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",

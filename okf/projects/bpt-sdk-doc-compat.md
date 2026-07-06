@@ -4,7 +4,7 @@ title: "bpt-agent-sdk COMPAT"
 description: "Target surface: `@anthropic-ai/claude-agent-sdk` public API (npm 0.3.201; chased from the 0.3.199 baseline 2026-07-05, keeper ruling, zero conformance drift) as"
 resource: "/projects/bpt-agent-sdk/docs/COMPAT.md"
 tags: ["data_layer:curated", "design-doc", "sub-project:bpt-agent-sdk"]
-timestamp: "2026-07-05"
+timestamp: "2026-07-06"
 ---
 
 # 指针概念
