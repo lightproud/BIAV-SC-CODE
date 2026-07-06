@@ -28,7 +28,7 @@ import { createReadTool, readTool } from './read.js';
 import { writeTool } from './write.js';
 import { editTool } from './edit.js';
 import { bashTool, createBashTool } from './bash.js';
-import type { ReadLimits, SandboxContext } from '../types.js';
+import type { JSONSchema, ReadLimits, SandboxContext } from '../types.js';
 import { globTool } from './glob.js';
 import { grepTool } from './grep.js';
 import { webFetchTool } from './webfetch.js';
@@ -79,4 +79,54 @@ export function createBuiltinTools(cfg?: {
     workflowTool,
   ];
   return new Map(tools.map((t) => [t.name, t]));
+}
+
+/**
+ * Lightweight, read-only view of a built-in tool's definition: just the
+ * wire-facing metadata (name + description + input JSON Schema), with no
+ * `execute` and no `readOnly`/`isFileEdit` policy flags. Field-identical to the
+ * SDK MCP tool metadata (`{ name, description, inputJsonSchema }`) so a host can
+ * feed built-in and MCP tools through ONE token-estimation / context-composition
+ * path.
+ */
+export type BuiltinToolMetadata = {
+  name: string;
+  description: string;
+  /** The tool's advertised input JSON Schema — the same object sent as the
+   *  Messages API `tools[].input_schema` for this tool. */
+  inputJsonSchema: JSONSchema;
+};
+
+/**
+ * Enumerate the default built-in tools' definition metadata: a ZERO-SIDE-EFFECT,
+ * read-only projection of createBuiltinTools(). It constructs the same tool set
+ * and maps each entry to `{ name, description, inputJsonSchema }` — no `execute`
+ * is ever called, no MCP server connects, no filesystem or network is touched
+ * (construction is pure object assembly). Public, stable seam for a host that
+ * needs the built-in tools' resident definition cost (their name+description+
+ * schema, always present in the request `tools`) — e.g. a context-composition
+ * breakdown that today can only estimate this block as a residual.
+ *
+ * `cfg` mirrors createBuiltinTools so the enumerated set matches what a given
+ * host would actually run:
+ *  - `env` selects the task surface (`CLAUDE_CODE_ENABLE_TASKS=0` -> TodoWrite
+ *    instead of the Task quartet), changing which tools appear;
+ *  - `sandbox` swaps Bash's description + schema for the sandbox-aware form;
+ *  - `readLimits` is accepted for signature parity (it changes Read's runtime
+ *    limits, not its advertised name/description/schema).
+ * Absent `env` falls back to process.env (same default as createBuiltinTools).
+ *
+ * The `inputJsonSchema` field name (not `inputSchema`) matches the SDK MCP tool
+ * metadata shape so both tool kinds estimate through the same host code path.
+ */
+export function enumerateBuiltinToolMetadata(cfg?: {
+  sandbox?: SandboxContext;
+  env?: Record<string, string | undefined>;
+  readLimits?: ReadLimits;
+}): BuiltinToolMetadata[] {
+  return [...createBuiltinTools(cfg).values()].map((t) => ({
+    name: t.name,
+    description: t.description,
+    inputJsonSchema: t.inputSchema,
+  }));
 }

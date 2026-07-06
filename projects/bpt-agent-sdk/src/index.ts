@@ -14,6 +14,13 @@ export { createBptSession } from './session-manager.js';
 // SessionManager's `store` option and options.sessionStore recovery.
 export { FileSessionStore, fileSessionStore } from './sessions/file-store.js';
 export { tool, createSdkMcpServer } from './mcp/sdk-server.js';
+// BPT-EXTENSION (2026-07-06, black-pool ContextRing request): a public,
+// read-only enumeration of the built-in tools' definition metadata
+// (`{ name, description, inputJsonSchema }`), zero side effects — mirrors the
+// SDK MCP tool metadata shape so a host can size the built-in tool block the
+// same way it sizes MCP tools.
+export { enumerateBuiltinToolMetadata } from './tools/index.js';
+export type { BuiltinToolMetadata } from './tools/index.js';
 export { getSessionInfo, listSessions } from './sessions/store.js';
 export {
   getSessionMessages,
