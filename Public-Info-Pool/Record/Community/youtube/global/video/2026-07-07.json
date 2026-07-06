@@ -1,8 +1,8 @@
 {
   "date": "2026-07-07",
-  "archived_at": "2026-07-06T19:49:45.567684+00:00",
+  "archived_at": "2026-07-06T21:26:24.755843+00:00",
   "source": "youtube",
-  "item_count": 5,
+  "item_count": 7,
   "items": [
     {
       "title": "망각전야Morimens) (대리뽑,상담시청가능)융재 초기화됐네......",
@@ -17,6 +17,23 @@
       "lang": "",
       "platform_region": "global",
       "media_url": "https://i.ytimg.com/vi/Xe8uyi9z31I/hqdefault.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    },
+    {
+      "title": "siapa itu Lily [Morimens]",
+      "summary": "halo semuanya, perkenalkan namaku Akari akabar. aku adalah seorang pengurus guild petualangan yang telah ditinggalkan dan ...",
+      "source": "youtube",
+      "time": "2026-07-06T21:06:49Z",
+      "url": "https://www.youtube.com/watch?v=znha0PfMctE",
+      "engagement": 33,
+      "is_hot": false,
+      "author": "Akari Akabar",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/znha0PfMctE/hqdefault.jpg",
       "content_type": "video",
       "region": "global",
       "archive_subtype": "video"
@@ -85,6 +102,23 @@
       "lang": "",
       "platform_region": "global",
       "media_url": "https://i.ytimg.com/vi/Ddn52V_ZI0A/hqdefault.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    },
+    {
+      "title": "[18+] All I know is this game has Saya | Morimens (FIRST TIME) | !lurk !throne !tip !discord",
+      "summary": "Broadcasted live on Twitch -- Watch live at https://www.twitch.tv/huanyavt.",
+      "source": "youtube",
+      "time": "2026-07-06T21:01:34Z",
+      "url": "https://www.youtube.com/watch?v=t_xK-q75eGg",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "Huanya Thagosteil Ch.",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/t_xK-q75eGg/hqdefault.jpg",
       "content_type": "video",
       "region": "global",
       "archive_subtype": "video"

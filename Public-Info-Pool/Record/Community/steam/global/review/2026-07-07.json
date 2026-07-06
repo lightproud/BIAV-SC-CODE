@@ -1,8 +1,8 @@
 {
   "date": "2026-07-07",
-  "archived_at": "2026-07-06T19:49:45.660111+00:00",
+  "archived_at": "2026-07-06T21:26:24.868560+00:00",
   "source": "steam",
-  "item_count": 3,
+  "item_count": 6,
   "items": [
     {
       "title": "[正面] muito cool",
@@ -70,6 +70,78 @@
         "playtime_forever": 691,
         "votes_up": 0,
         "timestamp_created": 1783360792
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[负面] Very decent game that I can't recommend at the cur...",
+      "summary": "Very decent game that I can't recommend at the current time.\nEvery stage is pretty much a mini roguelite where you collect relics and power up your party's cards, and then you fight the final boss.\nThe different factions and synergies were pretty interesting.\nThere even is a pvp mode where each character has a different card for this mode.\nThe devs are also pretty generous with pulls.\n\nAs for the negative points, only the prologue has any voice acting, aside from combat.\nThe story was unreadable to me, because the text were very obviously machine-translated and did not make any sense.\nThe skill cards and mechanics are also machine translated and were inconsistent in some places.\nI couldn't get invested in the story or character, since I had no idea what was going on, and the bosses were starting to get unreasonably hard, so I just dipped, would not recommend unless they actually get human translation for everything.",
+      "source": "steam_review",
+      "time": "2026-07-06T20:05:17+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198803467446/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198803467446",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": false,
+        "playtime_forever": 2473,
+        "votes_up": 0,
+        "timestamp_created": 1783368317
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] When I first downloaded this game I wan't expectin...",
+      "summary": "When I first downloaded this game I wan't expecting anything amazing, but I'm glad I was wrong!\r\n\r\nThis game is great and scratches that card game itch I keep having. The game is similar to other card games on Steam (mainly Slay the Spire), but it adds progression and gacha mechanics into the mix. The game doesn't feel overly monetized or pay to win though, as I've had a very nice f2p experience, and have been able to progress at a pretty good rate. \r\n\r\nThe art and the feel of the game are also very good plus the game also just always has something to do. So I definitively recommend trying this game if you like card games, especially since it's free!",
+      "source": "steam_review",
+      "time": "2026-07-06T19:57:12+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198834659734/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198834659734",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 2408,
+        "votes_up": 0,
+        "timestamp_created": 1783367832
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] It is a little bit criminal that this game is free...",
+      "summary": "It is a little bit criminal that this game is free to play. One of the most appealing interfaces and atmospheres that I have found.",
+      "source": "steam_review",
+      "time": "2026-07-06T19:56:56+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198018386467/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198018386467",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 197,
+        "votes_up": 0,
+        "timestamp_created": 1783367816
       },
       "region": "global",
       "archive_subtype": "review",
