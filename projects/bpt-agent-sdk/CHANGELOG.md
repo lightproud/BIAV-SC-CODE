@@ -6,7 +6,10 @@ merge that changes shipped runtime code (`src/` or runtime dependencies)
 bumps the version** — bug fixes bump patch, new capability bumps minor —
 and adds one line here. A CI guard (`scripts/check-version-bump.mjs`) reds
 any src-changing merge that forgets. 0.6.1 and 0.6.2 below are retroactive
-labels for builds that shipped under a duplicated "0.6.0".
+labels for builds that shipped under a duplicated "0.6.0". The **0.1–0.5**
+entries at the bottom are likewise retroactive — reconstructed from the commit
+sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
+granularity stops at the commit-title level.
 
 ## 0.9.0 — 2026-07-06
 
@@ -206,3 +209,43 @@ branch merged main's 0.6.3–0.6.5 Windows/path-fence work below).
   memory-file selection, hook condition gating, worker-fork preset, default-on
   Bash sandbox (pluggable bwrap backend), prompt assembly layer Track B with
   v5 as the `claude_code` preset default.
+
+---
+
+_The 0.1–0.5 entries below are retroactive: the foundational series shipped on
+2026-07-04 without a per-merge ledger, so these are reconstructed from the
+commit sequence and their granularity stops at the commit-title level. 0.6+ above
+is the real per-merge record._
+
+## 0.5 — 2026-07-04
+
+- Productization + docs series: generators + classifiers scaffolding
+  (`src/generators/`); verifier + context tips; the prompt-assembly layer with
+  the `v5` `claude_code` preset (open reproduction of the official main-loop
+  prompt); the COMPAT compatibility matrix, the MIGRATION guide, and the
+  positioning docs.
+
+## 0.4 — 2026-07-04
+
+- Interaction + subagents: AskUserQuestion + WebSearch + host callbacks
+  (`onUserQuestion` / `webSearch` / `onElicitation`); tool permission
+  specifiers with `allowedTools` / `disallowedTools` rule-level gating;
+  subagent Task tool + worker fork.
+
+## 0.3 — 2026-07-04
+
+- Persistence + credentials: JSONL session store (`resume` / `continue` /
+  `forkSession`); the `provider` extension + gateway (Bearer-token) auth —
+  connection settings the official SDK does not expose.
+
+## 0.2 — 2026-07-04
+
+- Gating + external tools: permissions + hooks + `canUseTool` gating; MCP
+  client with stdio + streamable-HTTP transports.
+
+## 0.1 — 2026-07-04
+
+- Engine skeleton: clean-room scaffold; the direct Messages-API transport
+  (`fetch` + SSE) + agent engine loop; the six built-in tools
+  (Read/Write/Edit/Bash/Glob/Grep). No filesystem settings are loaded
+  (`settingSources` accepted but inert).
