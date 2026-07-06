@@ -742,7 +742,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 5
+      "degree": 3
     },
     "/characters/15588.md": {
       "type": "character",
@@ -1080,7 +1080,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 10
+      "degree": 12
     },
     "/characters/77921.md": {
       "type": "character",
@@ -3723,7 +3723,7 @@
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 2539 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 2545 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -3779,7 +3779,7 @@
     "/sources/pixiv.md": {
       "type": "dataset",
       "title": "pixiv 社区数据源",
-      "description": "pixiv 平台采集档案，全量 548 条，健康度 active。",
+      "description": "pixiv 平台采集档案，全量 550 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/pixiv/",
       "tags": [
         "data_layer:full_archive",
@@ -3821,7 +3821,7 @@
     "/sources/steam.md": {
       "type": "dataset",
       "title": "steam 社区数据源",
-      "description": "steam 平台采集档案，全量 5113 条，健康度 active。",
+      "description": "steam 平台采集档案，全量 5115 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/review/",
       "tags": [
         "data_layer:full_archive",
@@ -3877,7 +3877,7 @@
     "/sources/taptap_review.md": {
       "type": "dataset",
       "title": "taptap_review 社区数据源",
-      "description": "taptap_review 平台采集档案，全量 675 条，健康度 active。",
+      "description": "taptap_review 平台采集档案，全量 683 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/taptap/cn/review/",
       "tags": [
         "data_layer:full_archive",
@@ -3891,7 +3891,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 9129 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 9142 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -3905,7 +3905,7 @@
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 6476 条，健康度 active。",
+      "description": "weixin 平台采集档案，全量 6496 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -3919,7 +3919,7 @@
     "/sources/youtube.md": {
       "type": "dataset",
       "title": "youtube 社区数据源",
-      "description": "youtube 平台采集档案，全量 2627 条，健康度 active。",
+      "description": "youtube 平台采集档案，全量 2629 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -5628,17 +5628,7 @@
         "cv"
       ],
       [
-        "/community/community-bilibili.md",
-        "提及:希洛",
-        "mention"
-      ],
-      [
         "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-        "提及:希洛",
-        "mention"
-      ],
-      [
-        "/sources/bilibili.md",
         "提及:希洛",
         "mention"
       ]
@@ -6489,6 +6479,11 @@
         "cv"
       ],
       [
+        "/community/community-bilibili.md",
+        "提及:阿拉克涅",
+        "mention"
+      ],
+      [
         "/community/community-weibo.md",
         "提及:阿拉克涅",
         "mention"
@@ -6520,6 +6515,11 @@
       ],
       [
         "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
+        "提及:阿拉克涅",
+        "mention"
+      ],
+      [
+        "/sources/bilibili.md",
         "提及:阿拉克涅",
         "mention"
       ],
@@ -6719,6 +6719,11 @@
         "mention"
       ],
       [
+        "/characters/77918.md",
+        "提及:阿拉克涅",
+        "mention"
+      ],
+      [
         "/characters/77923.md",
         "提及:卡斯托尔",
         "mention"
@@ -6766,11 +6771,6 @@
       [
         "/characters/15576.md",
         "提及:墨菲",
-        "mention"
-      ],
-      [
-        "/characters/15587.md",
-        "提及:希洛",
         "mention"
       ],
       [
@@ -8462,6 +8462,11 @@
         "mention"
       ],
       [
+        "/characters/77918.md",
+        "提及:阿拉克涅",
+        "mention"
+      ],
+      [
         "/characters/77923.md",
         "提及:卡斯托尔",
         "mention"
@@ -8509,11 +8514,6 @@
       [
         "/characters/15576.md",
         "提及:墨菲",
-        "mention"
-      ],
-      [
-        "/characters/15587.md",
-        "提及:希洛",
         "mention"
       ],
       [
