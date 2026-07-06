@@ -11,7 +11,7 @@ import { spawn } from 'node:child_process';
 import { resolvePosixShells, SHELL_NOT_FOUND_GUIDANCE } from './shell-resolve.js';
 import { planProcessKill } from './kill-plan.js';
 import { AbortError } from '../errors.js';
-import { BASH_DESCRIPTION, buildBashSandboxNote } from './descriptions.js';
+import { BASH_DESCRIPTION, BASH_WIN32_NOTE, buildBashSandboxNote } from './descriptions.js';
 import { planShellSpawn } from '../sandbox/backend.js';
 import { detectSandboxEvidence, sandboxFailureHint } from '../sandbox/evidence.js';
 import type { SandboxContext } from '../types.js';
@@ -263,6 +263,63 @@ function withPersistentState(command: string, stateDir: string): string {
 }
 
 /**
+ * Windows-cmd habit correction (BPT pilot incident 2026-07-06: on Windows
+ * hosts the model kept writing cmd.exe spellings — copy/move/del/findstr —
+ * into the Bash tool, burning turns on retries). Two layers:
+ *   - description layer: BASH_WIN32_NOTE is appended to the Bash description
+ *     ONLY when the platform is win32 (createBashTool below — same
+ *     conditional-assembly pattern as the sandbox note; non-win32
+ *     descriptions stay byte-identical).
+ *   - error layer (all platforms): when a command exits 127 (command not
+ *     found) and its FIRST command word is a cmd.exe-only word, the error
+ *     text gains a one-line correction (windowsCmdHint below).
+ *
+ * The word list is high-confidence only, to avoid false positives:
+ * `dir` and `type` are deliberately EXCLUDED — `dir` is a real GNU coreutils
+ * command and `type` is a bash builtin, so both succeed in bash and must not
+ * be steered away from.
+ */
+const CMD_ONLY_WORDS = new Set([
+  'copy',
+  'move',
+  'del',
+  'erase',
+  'xcopy',
+  'robocopy',
+  'findstr',
+  'cls',
+  'md',
+  'rd',
+  'ren',
+]);
+
+const CMD_NOT_FOUND_HINT =
+  'Note: this shell is POSIX bash, not Windows cmd — use cp/mv/rm/grep ' +
+  'instead of copy/move/del/findstr.';
+
+/**
+ * Return the cmd-habit correction to append to a failure, or '' when it does
+ * not apply. Fires only on exit code 127 (command not found) with the first
+ * command word in CMD_ONLY_WORDS. First-word extraction is deliberately
+ * simple: trim, skip leading VAR=value env assignments, take the first
+ * whitespace-delimited token (matched case-insensitively — cmd habits often
+ * arrive uppercased). Compound commands (`&&`, `;`, pipes) are only checked
+ * at the very front of the string: a cmd word later in the line does not
+ * trigger the hint (kept simple by design; the 127 still surfaces normally).
+ */
+export function windowsCmdHint(command: string, exitCode: number | null): string {
+  if (exitCode !== 127) return '';
+  let first = '';
+  for (const token of command.trim().split(/\s+/)) {
+    // Skip leading environment assignments (FOO=bar cmd ...).
+    if (/^[A-Za-z_][A-Za-z0-9_]*=/.test(token)) continue;
+    first = token;
+    break;
+  }
+  return CMD_ONLY_WORDS.has(first.toLowerCase()) ? '\n\n' + CMD_NOT_FOUND_HINT : '';
+}
+
+/**
  * Build the Bash tool, gated on the active sandbox (G-SANDBOX):
  *   - description: BASH_DESCRIPTION alone when unsandboxed; + the faithful
  *     sandbox note (default/mandatory mode) when a sandbox is active.
@@ -277,14 +334,22 @@ function withPersistentState(command: string, stateDir: string): string {
  *     The gating red line still applies to the DESCRIPTION: the sandbox note
  *     (and mandatory-mode "disabled by policy" wording) stays state-gated.
  * `createBashTool()` with no argument returns the unsandboxed tool with a
- * byte-identical description (locks tests that import `bashTool` directly).
+ * byte-identical description on non-win32 hosts (locks tests that import
+ * `bashTool` directly). On win32 the platform note (BASH_WIN32_NOTE) is
+ * appended — same gated-assembly pattern as the sandbox note; `platform` is
+ * injectable for tests only.
  */
-export function createBashTool(sandbox?: SandboxContext): BuiltinTool {
+export function createBashTool(
+  sandbox?: SandboxContext,
+  platform: NodeJS.Platform = process.platform,
+): BuiltinTool {
   const active = sandbox !== undefined;
   const mode = sandbox?.allowEscape === false ? 'mandatory' : 'default';
-  const description = active
-    ? BASH_DESCRIPTION + '\n\n' + buildBashSandboxNote(mode, sandbox.allowNetwork)
-    : BASH_DESCRIPTION;
+  let description = BASH_DESCRIPTION;
+  // Gated like the sandbox note: appended ONLY on win32, so the non-win32
+  // description stays byte-identical (conformance wire runs on Linux CI).
+  if (platform === 'win32') description += '\n\n' + BASH_WIN32_NOTE;
+  if (active) description += '\n\n' + buildBashSandboxNote(mode, sandbox.allowNetwork);
   const properties: Record<string, unknown> = {
     command: {
       type: 'string',
@@ -323,7 +388,8 @@ export function createBashTool(sandbox?: SandboxContext): BuiltinTool {
 }
 
 /** The default (unsandboxed) Bash tool — description byte-identical to
- *  pre-sandbox; the schema carries the always-on escape param (no-op here). */
+ *  pre-sandbox on non-win32 hosts (win32 gains the gated platform note);
+ *  the schema carries the always-on escape param (no-op here). */
 export const bashTool: BuiltinTool = createBashTool();
 
 async function execute(
@@ -464,8 +530,12 @@ async function execute(
       const sig = detectSandboxEvidence(outcome.code, outcome.stderr, ctx.sandbox.allowNetwork);
       if (sig !== null) hint = '\n\n' + sandboxFailureHint(sig, ctx.sandbox.allowEscape);
     }
+    // cmd-habit correction (all platforms): 127 + a cmd.exe-only first word
+    // gets a one-line steer to the POSIX spellings. Checked against the
+    // MODEL's command, not the persistent-state wrapper.
+    const cmdHint = windowsCmdHint(command, outcome.code);
     return {
-      content: failure + (streams.length > 0 ? `\n${streams}` : '') + hint,
+      content: failure + (streams.length > 0 ? `\n${streams}` : '') + hint + cmdHint,
       isError: true,
     };
 }

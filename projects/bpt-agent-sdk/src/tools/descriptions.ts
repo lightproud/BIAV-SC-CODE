@@ -45,6 +45,15 @@
  *    sandbox backend is active (see createBashTool). When unsandboxed the Bash
  *    description is byte-identical to BASH_DESCRIPTION, with no sandbox content.
  *  - No PowerShell content.
+ *  - Bash win32 platform note (BPT pilot 2026-07-06): BASH_WIN32_NOTE is
+ *    adapted glue (not archive text) appended to the Bash description ONLY
+ *    when the host platform is win32 (createBashTool — same conditional
+ *    assembly pattern as the sandbox note). It states that commands run in
+ *    POSIX bash (Git Bash), not cmd.exe or PowerShell, and steers cmd habits
+ *    (copy/move/del/findstr) to POSIX equivalents. cmd.exe / PowerShell are
+ *    named only as a NEGATIVE disclaimer (what the shell is NOT) — no
+ *    PowerShell capability is described. On non-win32 platforms the Bash
+ *    description stays byte-identical.
  *  - Read: the PDF and Jupyter bullets are ADAPTED to this SDK's actual
  *    behavior (whole-document PDF reads, no pages slicing; notebooks as raw
  *    JSON text) — the official wording describes capabilities not shipped here.
@@ -180,6 +189,20 @@ Important:
 
 # Other common operations
 - View comments on a Github PR: gh api repos/foo/bar/pulls/123/comments`;
+
+/**
+ * Platform note appended to the Bash description ONLY on win32 hosts (see
+ * createBashTool — the same conditional-assembly pattern as the sandbox
+ * note). Adapted glue, not archive text: the archive has no Git-Bash-on-
+ * Windows note. It exists because models habitually reach for cmd.exe
+ * spellings on Windows hosts (BPT pilot incident 2026-07-06) even though this
+ * SDK always runs commands through POSIX bash (Git Bash, via
+ * shell-resolve.ts). cmd.exe / PowerShell are named only as a negative
+ * disclaimer (what the shell is NOT); no unshipped capability is described.
+ * Gated so non-win32 descriptions stay byte-identical (the conformance wire
+ * runs on Linux CI).
+ */
+export const BASH_WIN32_NOTE = `Note: on Windows this tool still runs POSIX bash (Git Bash), not cmd.exe or PowerShell. Use POSIX commands — ls, cp, mv, rm, grep — instead of dir, copy, move, del, findstr, and write paths with forward slashes.`;
 
 export const READ_DESCRIPTION = `Reads a file from the local filesystem. You can access any file directly by using this tool.
 Assume this tool is able to read all files on the machine. If the User provides a path to a file assume that path is valid. It is okay to read a file that does not exist; an error will be returned.

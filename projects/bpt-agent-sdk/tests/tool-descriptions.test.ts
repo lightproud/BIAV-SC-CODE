@@ -84,7 +84,13 @@ describe('faithful tool descriptions', () => {
 
   it('are actually wired onto the built-in tools', () => {
     const tools = createBuiltinTools({ env: {} });
-    expect(tools.get('Bash')?.description).toBe(D.BASH_DESCRIPTION);
+    // Bash is byte-identical to the base description everywhere except win32,
+    // where the gated platform note is appended (see createBashTool).
+    const expectedBash =
+      process.platform === 'win32'
+        ? D.BASH_DESCRIPTION + '\n\n' + D.BASH_WIN32_NOTE
+        : D.BASH_DESCRIPTION;
+    expect(tools.get('Bash')?.description).toBe(expectedBash);
     expect(tools.get('Grep')?.description).toBe(D.GREP_DESCRIPTION);
     // Task quartet is the default task surface (TodoWrite off by default) ...
     expect(tools.get('TaskCreate')?.description).toBe(D.TASKCREATE_DESCRIPTION);
