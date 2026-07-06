@@ -11,8 +11,14 @@ import type {
   ToolContext,
   ToolResultPayload,
 } from '../internal/contracts.js';
+import type { ReadLimits } from '../types.js';
 import { AbortError, isAbortError } from '../errors.js';
-import { formatCatN, looksBinary, resolveAbs } from './fsutil.js';
+import {
+  MAX_READ_OUTPUT_CHARS,
+  formatCatN,
+  looksBinary,
+  resolveAbs,
+} from './fsutil.js';
 import { READ_DESCRIPTION } from './descriptions.js';
 
 const DEFAULT_LINE_LIMIT = 2000;
@@ -76,7 +82,15 @@ function detectImageMediaType(buf: Buffer): string | undefined {
   return undefined;
 }
 
-export const readTool: BuiltinTool = {
+/** File byte size above which a char-capped read with long lines nudges toward
+ *  Grep instead of paging (spec §D): a big file whose rows are also long is
+ *  usually a "search, don't read" signal. */
+const GREP_HINT_FILE_BYTES = 256 * 1024;
+
+/** Build a Read tool bound to the given output limits (spec §E). `readTool`
+ *  below is the default-limits instance for direct imports / no-config use. */
+export function createReadTool(limits?: ReadLimits): BuiltinTool {
+  return {
   name: 'Read',
   description: READ_DESCRIPTION,
   readOnly: true,
@@ -294,9 +308,36 @@ export const readTool: BuiltinTool = {
       // any successful Read of the file) registers the path.
       ctx.readFilePaths?.add(abs);
 
-      let content = formatCatN(selected, startLine);
-      if (lastShown < total) {
-        content += `\n\n(Showing lines ${startLine}-${lastShown} of ${total}. Use offset=${lastShown + 1} to continue reading.)`;
+      const maxOutputChars = limits?.maxOutputChars ?? MAX_READ_OUTPUT_CHARS;
+      const fmt = formatCatN(selected, startLine, {
+        maxOutputChars,
+        maxLineChars: limits?.maxLineChars,
+      });
+      // The char cap may bound the output BEFORE the line window does, so the
+      // real last line shown is what formatCatN actually emitted (spec §B: the
+      // footer must reflect whichever cap took effect — never claim more lines
+      // than were returned).
+      const shownLines = fmt.linesEmitted;
+      const realLastShown = startLine + shownLines - 1;
+      let content = fmt.text;
+      if (fmt.charCapped) {
+        // Total-character cap took effect (may be tighter than the line limit).
+        let footer =
+          `\n\n(Showing lines ${startLine}-${realLastShown} of ${total}; ` +
+          `output truncated at ${maxOutputChars} chars. ` +
+          `Use offset=${realLastShown + 1} to continue reading.)`;
+        // §D: a big file whose rows are also long — Grep is usually the better
+        // tool than paging through it. read.ts holds the byte size + long-line
+        // signal that an app-layer hook could only guess at.
+        if (fmt.truncatedLines > 0 && buf.length > GREP_HINT_FILE_BYTES) {
+          footer +=
+            '\n(This file is large and has very long lines; consider the Grep ' +
+            'tool to search it instead of reading page by page.)';
+        }
+        content += footer;
+      } else if (realLastShown < total) {
+        // Line-count limit (or offset window) bounded the output, chars did not.
+        content += `\n\n(Showing lines ${startLine}-${realLastShown} of ${total}. Use offset=${realLastShown + 1} to continue reading.)`;
       }
       return { content };
     } catch (e) {
@@ -306,4 +347,8 @@ export const readTool: BuiltinTool = {
       return errorResult(`Read failed: ${(e as Error).message}`);
     }
   },
-};
+  };
+}
+
+/** Default-limits Read tool (50000 total / 2000 per line). */
+export const readTool: BuiltinTool = createReadTool();

@@ -572,7 +572,10 @@ export function query(args: {
 
   // Built-in tools, optionally filtered by the array form of options.tools
   // (the claude_code preset and undefined both mean "all built-ins").
-  const allBuiltins = createBuiltinTools({ sandbox: sandboxCtx });
+  const allBuiltins = createBuiltinTools({
+    sandbox: sandboxCtx,
+    readLimits: options.readLimits,
+  });
   let builtinTools: Map<string, BuiltinTool>;
   if (Array.isArray(options.tools)) {
     builtinTools = new Map();

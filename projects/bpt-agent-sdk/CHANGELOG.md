@@ -11,6 +11,32 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.10.0 — 2026-07-06
+
+- **feat (Read total-output cap, BPT request 2026-07-06)**: Read now caps the
+  TOTAL characters it returns (default 50000), closing the tail gap where a
+  2000-line file of medium-length lines could flood the context past the line
+  and per-line limits (observed p99 ~90K chars; ~2% of reads exceed 50K). The
+  cap applies on a LINE BOUNDARY (never mid-line); since every line is already
+  ≤2000 chars, 50000 > 2000 guarantees ≥~25 lines, so output is never empty and
+  offset continuation never dead-loops.
+  - **footer consistency**: when the char cap (or the line limit) truncates, the
+    footer reflects the REAL last line returned and the reason —
+    `(Showing lines 1-N of Z; output truncated at 50000 chars. Use offset=N+1 to
+    continue reading.)` — never claiming more lines than were emitted.
+  - **per-line truncation is now marked**: an over-long line carries
+    `…[line truncated: N chars total]` instead of a silent 2000-char slice, so
+    the model doesn't mistake a half-line for the whole (correctness, not tokens).
+  - **Grep hint**: a large file (>256KB) truncated with long lines nudges toward
+    Grep instead of paging.
+  - **configurable (§E)**: `options.readLimits: { maxOutputChars?, maxLineChars? }`
+    (mechanism in the SDK, numbers are the caller's); also `createReadTool(limits)`
+    / `createBuiltinTools({ readLimits })`. `SDKResultMessage` unaffected.
+  - **Behavior note**: consumers that relied on Read returning >50000 chars in
+    one call now get a truncated window + a continue footer; pass
+    `readLimits: { maxOutputChars: <large> }` to opt out. Image/PDF/binary/empty
+    reads are exempt (they return before the cap logic).
+
 ## 0.9.0 — 2026-07-06
 
 - **feat (BPT-EXTENSION): SessionManager — in-process shared coordination +
