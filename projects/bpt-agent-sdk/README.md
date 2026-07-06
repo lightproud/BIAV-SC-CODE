@@ -15,6 +15,9 @@ attribution — not self-authored text. No genuinely internal or leaked material
 is used ("publicly distributed, reverse-engineerable" is not "an internal
 leak").
 
+> **New maintainer?** [docs/ONBOARDING.md](./docs/ONBOARDING.md) gets you from
+> zero to a safe, verified change in ~30 minutes.
+
 ## Install
 
 ```bash

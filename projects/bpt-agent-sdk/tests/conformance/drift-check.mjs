@@ -16,6 +16,20 @@
  *
  * Usage:
  *   node tests/conformance/drift-check.mjs [--out=path.md]
+ *     [--github-output] [--emit-proposed-pins=path.json]
+ *
+ *   --github-output          append drift/candidate facts to $GITHUB_OUTPUT so
+ *                            the workflow can decide whether to open a draft PR
+ *                            (keys: drift, lookup_failed, agent_sdk_latest,
+ *                            claude_code_latest).
+ *   --emit-proposed-pins=P   when (and only when) drift is detected, write a
+ *                            PROPOSED pins.json to P with the candidate latest
+ *                            versions and a PROPOSED-not-ratified comment. It
+ *                            still moves nothing on its own — the keeper rules
+ *                            after a conformance re-run against the candidates.
+ *   --emit-pr-body=P         when (and only when) drift is detected, write the
+ *                            markdown body of the auto-drafted alignment PR to P
+ *                            (kept in JS to avoid fragile shell heredocs).
  *
  * Exit semantics: 0 when every lookup succeeded (drifted or not - the report
  * carries the verdict); 2 when any lookup failed through all three fallbacks
@@ -23,7 +37,7 @@
  */
 
 import { execSync } from 'node:child_process';
-import { readFileSync, writeFileSync } from 'node:fs';
+import { appendFileSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -133,6 +147,90 @@ console.log(report);
 if (typeof args.out === 'string') {
   writeFileSync(args.out, report);
   console.log(`report written: ${args.out}`);
+}
+
+/** Look up the candidate (latest) version for one pin key from the rows. */
+function latestFor(key) {
+  const pkg = PACKAGES.find((p) => p.key === key)?.pkg;
+  return rows.find((r) => r.pkg === pkg)?.latest ?? null;
+}
+
+// --github-output: machine-readable facts for the workflow's PR-draft gate.
+if (args['github-output'] && typeof process.env.GITHUB_OUTPUT === 'string') {
+  const out = [
+    `drift=${anyDrift && lookupFailures === 0 ? 'true' : 'false'}`,
+    `lookup_failed=${lookupFailures > 0 ? 'true' : 'false'}`,
+    `agent_sdk_latest=${latestFor('agentSdk') ?? ''}`,
+    `claude_code_latest=${latestFor('claudeCode') ?? ''}`,
+  ].join('\n');
+  appendFileSync(process.env.GITHUB_OUTPUT, `${out}\n`);
+}
+
+// --emit-proposed-pins: write a PROPOSED pins.json (candidate versions) ONLY on
+// clean-lookup drift. This is the alignment-PR draft body; it ratifies nothing.
+if (
+  typeof args['emit-proposed-pins'] === 'string' &&
+  anyDrift &&
+  lookupFailures === 0
+) {
+  const agentSdk = latestFor('agentSdk') ?? pins.agentSdk;
+  const claudeCode = latestFor('claudeCode') ?? pins.claudeCode;
+  const proposed = {
+    comment:
+      `PROPOSED chase ${pins.agentSdk} -> ${agentSdk} / ${pins.claudeCode} -> ${claudeCode}, ` +
+      `auto-drafted by the drift sentinel on ${new Date().toISOString()}. ` +
+      `NOT RATIFIED: the standing rule (选择性追踪) is that pins move ONLY by keeper ruling ` +
+      `after a conformance re-run against these candidates. Merging this PR is that ruling; ` +
+      `do not merge until the conformance suite (L1-L4 + ratchet) has run green against these ` +
+      `versions. Prior comment preserved below.\nPRIOR: ${pins.comment}`,
+    agentSdk,
+    claudeCode,
+  };
+  writeFileSync(args['emit-proposed-pins'], `${JSON.stringify(proposed, null, 2)}\n`);
+  console.log(`proposed pins written: ${args['emit-proposed-pins']}`);
+}
+
+// --emit-pr-body: markdown body of the auto-drafted alignment PR (drift only).
+if (
+  typeof args['emit-pr-body'] === 'string' &&
+  anyDrift &&
+  lookupFailures === 0
+) {
+  const agentSdk = latestFor('agentSdk') ?? pins.agentSdk;
+  const claudeCode = latestFor('claudeCode') ?? pins.claudeCode;
+  const body = [
+    '## Auto-drafted alignment proposal (drift sentinel)',
+    '',
+    'The weekly drift sentinel detected that upstream has published past the',
+    'conformance pins:',
+    '',
+    `- \`@anthropic-ai/claude-agent-sdk\`: **${pins.agentSdk} -> ${agentSdk}**`,
+    `- \`@anthropic-ai/claude-code\`: **${pins.claudeCode} -> ${claudeCode}**`,
+    '',
+    'This **draft** bumps `projects/bpt-agent-sdk/tests/conformance/pins.json` to',
+    'those candidates with a PROPOSED-not-ratified comment. It ratifies nothing.',
+    '',
+    '### Standing rule (选择性追踪) — unchanged',
+    'Pins move ONLY by keeper ruling after a conformance re-run against the',
+    'candidates. **Merging this PR is that ruling.**',
+    '',
+    '### How to rule',
+    '1. Trigger the `conformance` job against this branch (push any commit, or',
+    '   re-run the `BPT Agent SDK` workflow). Because this branch\'s pins.json is',
+    '   already the candidates, that job installs the candidate official arm and',
+    '   runs L1-L4 + the ratchet against them. (A PR opened by the bot token does',
+    '   not auto-start CI; a human push does.)',
+    '2. Green ratchet -> candidates introduce no new divergences -> mark ready +',
+    '   merge to ratify the chase (also re-run any budgeted L5). Red ratchet ->',
+    '   candidates need engine alignment first -> keep this draft, do the work,',
+    '   then re-run.',
+    '',
+    '_Auto-generated weekly; force-refreshed to the latest candidates each run.',
+    'Close it to decline the chase._',
+    '',
+  ].join('\n');
+  writeFileSync(args['emit-pr-body'], body);
+  console.log(`PR body written: ${args['emit-pr-body']}`);
 }
 
 // Exit semantics: drift is information (0); a blind sentinel is a failed
