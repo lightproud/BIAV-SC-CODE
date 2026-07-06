@@ -475,9 +475,13 @@
     "1520927797961298110": {
       "forbidden": true,
       "name": "chat-with-staff"
+    },
+    "1523627042451750912": {
+      "forbidden": true,
+      "name": "korean-한국어"
     }
   },
   "historical_month": null,
-  "last_run": "2026-07-06T09:11:14.520458+00:00",
+  "last_run": "2026-07-06T12:59:17.952172+00:00",
   "history_backfill_complete": true
 }
