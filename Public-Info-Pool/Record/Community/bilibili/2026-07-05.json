@@ -1,8 +1,8 @@
 {
   "date": "2026-07-05",
-  "archived_at": "2026-07-05T22:59:40.555434+00:00",
+  "archived_at": "2026-07-06T00:05:42.161382+00:00",
   "source": "bilibili",
-  "item_count": 19,
+  "item_count": 20,
   "items": [
     {
       "title": "今天我要变成一个香喷喷的肉丸子",
@@ -207,6 +207,29 @@
         "danmaku": 1
       },
       "media_url": "https://i0.hdslb.com/bfs/archive/ce78fea96ebca33d6e85f22b0d95d79e749ff77d.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "忘却前夜 艾瑞卡打大虫子 癫狂列车",
+      "summary": "这个副手最好应该是带隐没的痛楚或藏品\n但孩子没那么高级的东西好玩\n时至今日艾瑞卡助战依旧是0\n\n背景音乐：Offenbach - &quot;Orpheus in the Underworld Overture&quot;\n  └ Baqba (0赞): 大佬别吓我\n  └ iq2233 (0赞): 12雷娅给的力量真多啊",
+      "source": "bilibili",
+      "time": "2026-07-05T11:17:54+00:00",
+      "url": "https://www.bilibili.com/video/BV1vnTC6PEMw",
+      "engagement": 116,
+      "is_hot": false,
+      "author": "夢遊遊遊遊",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 114,
+        "comment_count": 2,
+        "comments_fetched": 2,
+        "danmaku": 0
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/d4568772141964343cab891331cc50c105d52961.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

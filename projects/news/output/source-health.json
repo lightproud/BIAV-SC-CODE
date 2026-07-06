@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-05T22:59:41.303837+00:00",
+  "updated_at": "2026-07-06T00:05:42.881776+00:00",
   "seeded_from": "silent_sources_audit",
   "audit_window": {
     "start": "2016-02-03",
@@ -7,7 +7,7 @@
     "days": 3807
   },
   "validation_drops": {
-    "generated_at": "2026-07-05T22:58:54.091090+00:00",
+    "generated_at": "2026-07-06T00:04:57.507052+00:00",
     "total_dropped": 0,
     "by_source": {}
   },
@@ -17,7 +17,7 @@
       "last_success_date": "2026-07-06",
       "last_check_date": "2026-06-20",
       "consecutive_silent_days": 0,
-      "total_items": 2538,
+      "total_items": 2539,
       "errors": []
     },
     "steam": {
@@ -47,7 +47,7 @@
     "youtube": {
       "level": "active",
       "last_success_date": "2026-07-06",
-      "last_check_date": "2026-07-05",
+      "last_check_date": "2026-07-06",
       "consecutive_silent_days": 0,
       "total_items": 2627,
       "errors": []
@@ -79,15 +79,15 @@
     "weibo": {
       "level": "active",
       "last_success_date": "2026-07-06",
-      "last_check_date": "2026-07-05",
+      "last_check_date": "2026-07-06",
       "consecutive_silent_days": 0,
-      "total_items": 9118,
+      "total_items": 9129,
       "errors": []
     },
     "bahamut": {
       "level": "active",
       "last_success_date": null,
-      "last_check_date": "2026-07-05",
+      "last_check_date": "2026-07-06",
       "consecutive_silent_days": 0,
       "total_items": 0,
       "errors": []
@@ -95,7 +95,7 @@
     "arca_live": {
       "level": "active",
       "last_success_date": null,
-      "last_check_date": "2026-07-05",
+      "last_check_date": "2026-07-06",
       "consecutive_silent_days": 0,
       "total_items": 0,
       "errors": []
@@ -103,7 +103,7 @@
     "appstore": {
       "level": "active",
       "last_success_date": "2026-07-04",
-      "last_check_date": "2026-07-05",
+      "last_check_date": "2026-07-06",
       "consecutive_silent_days": 2,
       "total_items": 686,
       "errors": []
@@ -111,7 +111,7 @@
     "google_play": {
       "level": "active",
       "last_success_date": "2026-07-05",
-      "last_check_date": "2026-07-05",
+      "last_check_date": "2026-07-06",
       "consecutive_silent_days": 1,
       "total_items": 1222,
       "errors": []
@@ -119,7 +119,7 @@
     "pixiv": {
       "level": "active",
       "last_success_date": "2026-07-06",
-      "last_check_date": "2026-07-05",
+      "last_check_date": "2026-07-06",
       "consecutive_silent_days": 0,
       "total_items": 548,
       "errors": []
@@ -127,7 +127,7 @@
     "note_com": {
       "level": "active",
       "last_success_date": null,
-      "last_check_date": "2026-07-05",
+      "last_check_date": "2026-07-06",
       "consecutive_silent_days": 0,
       "total_items": 0,
       "errors": []
@@ -135,7 +135,7 @@
     "ruliweb": {
       "level": "active",
       "last_success_date": "2026-07-05",
-      "last_check_date": "2026-07-05",
+      "last_check_date": "2026-07-06",
       "consecutive_silent_days": 1,
       "total_items": 385,
       "errors": []
@@ -143,7 +143,7 @@
     "stopgame": {
       "level": "active",
       "last_success_date": "2026-07-06",
-      "last_check_date": "2026-07-05",
+      "last_check_date": "2026-07-06",
       "consecutive_silent_days": 0,
       "total_items": 78,
       "errors": []
@@ -151,15 +151,15 @@
     "weixin": {
       "level": "active",
       "last_success_date": "2026-07-05",
-      "last_check_date": "2026-07-05",
+      "last_check_date": "2026-07-06",
       "consecutive_silent_days": 1,
-      "total_items": 6456,
+      "total_items": 6476,
       "errors": []
     },
     "twitter": {
       "level": "active",
       "last_success_date": null,
-      "last_check_date": "2026-07-05",
+      "last_check_date": "2026-07-06",
       "consecutive_silent_days": 0,
       "total_items": 0,
       "errors": []
@@ -169,7 +169,7 @@
       "last_success_date": "2026-07-06",
       "last_check_date": null,
       "consecutive_silent_days": 0,
-      "total_items": 667,
+      "total_items": 675,
       "errors": []
     },
     "youtube_comments": {
