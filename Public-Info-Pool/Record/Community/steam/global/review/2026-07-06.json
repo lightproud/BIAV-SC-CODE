@@ -1,8 +1,8 @@
 {
   "date": "2026-07-06",
-  "archived_at": "2026-07-06T05:08:18.251744+00:00",
+  "archived_at": "2026-07-06T10:05:06.917350+00:00",
   "source": "steam",
-  "item_count": 6,
+  "item_count": 7,
   "items": [
     {
       "title": "[正面] Une très belle surprise ce jeu !\r\nLes personnages...",
@@ -142,6 +142,30 @@
         "playtime_forever": 18293,
         "votes_up": 0,
         "timestamp_created": 1783309047
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Increíble juego de construcción de mazos, historia...",
+      "summary": "Increíble juego de construcción de mazos, historia sobresaliente con tema de horror cósmico, música espectacular y apartado artístico único, incluso si no te gusta el género, deberías darle una oportunidad.",
+      "source": "steam_review",
+      "time": "2026-07-06T05:51:35+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198842351223/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198842351223",
+      "tags": [
+        "spanish"
+      ],
+      "language": "spanish",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 5529,
+        "votes_up": 0,
+        "timestamp_created": 1783317095
       },
       "region": "global",
       "archive_subtype": "review",
