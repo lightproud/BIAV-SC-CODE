@@ -8,6 +8,49 @@ and adds one line here. A CI guard (`scripts/check-version-bump.mjs`) reds
 any src-changing merge that forgets. 0.6.1 and 0.6.2 below are retroactive
 labels for builds that shipped under a duplicated "0.6.0".
 
+## 0.9.0 — 2026-07-06
+
+- **feat (BPT-EXTENSION): SessionManager — in-process shared coordination +
+  supervised recovery** (proposal `Public-Info-Pool/Resource/proposal/
+  bpt-sdk-session-manager-20260706.md`). `createBptSession(options)` returns a
+  manager that hosts multiple `mgr.query()` conversations over ONE shared
+  transport + ONE shared MCP registry (connect once, multiplex — no more N×
+  connections for N conversations); `mgr.usage()` aggregates cost/tokens
+  read-only; `mgr.close()` is the single reaper. Ownership contract: queries
+  BORROW shared connections and never tear them down; a borrowed registry
+  no-ops closeAll and rejects setServers. Standalone `query()` is unchanged
+  (sugar over a private manager). Per-query `provider`/`mcpServers` on a
+  managed query are rejected (D1: shared-only in v1). The official Agent SDK
+  has no in-process coordinator (its coordination lives in the wrapped CLI).
+- **feat: supervised auto-resume**. When a managed query has a `sessionStore`
+  and `recovery.autoResume !== false`, a RECOVERABLE failure (APIConnectionError,
+  MCP connection-class McpError, or APIStatusError 429/5xx — classified by the
+  stable E6c error `code`, never message text) is transparently re-driven from
+  the store via resume, up to `recovery.maxResumes` (default 2). Terminal
+  failures (abort/config/4xx/unknown — fail-closed) are forwarded/rethrown
+  untouched; on exhaustion the last error carries `resumeAttempts`. A
+  `system/status` observability message is emitted before each re-drive. The
+  engine surfaces API failures as an `error_during_execution` RESULT (not a
+  throw), so the supervisor watches error results; `SDKResultMessage` gains an
+  additive `error_code` field carrying the underlying stable code.
+- **feat: write-ahead turn checkpoints**. A persisting query brackets each
+  engine turn with `pending_turn` / `turn_complete` store records; a resume
+  whose transcript ends with a dangling `pending_turn` re-drives that request
+  segment before consuming new input — never replaying already-executed tools
+  (their tool_results are already paired in the replayed history).
+- **feat: built-in `fileSessionStore(dir)` / `FileSessionStore`** — durable
+  JSONL session store (one file per session, reversible path-safe encoding,
+  torn-tail tolerant) satisfying the public `SessionStore` contract, so
+  durable persistence + crash recovery is a one-line opt-in.
+- **feat (DX): Bash cmd-habit correction**. On Windows the Bash description
+  gains a registered note (POSIX bash, not cmd — ls/cp/mv, forward slashes);
+  on any platform an exit-127 failure whose first command word is cmd-only
+  (copy/move/del/erase/xcopy/robocopy/findstr/cls/md/rd/ren) gets a corrective
+  hint appended (dir/type excluded — real coreutils/builtin, zero false
+  positives).
+- Migration: none required — all additions are additive. Consumers switching
+  on `SDKResultMessage` may read the new optional `error_code`.
+
 ## 0.8.1 — 2026-07-05
 
 - **fix (CRITICAL — thinking model-gate)**: the `claude_code` preset default no

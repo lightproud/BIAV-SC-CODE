@@ -1488,6 +1488,14 @@ export type SDKResultMessage =
       errors?: string[];
       /** HTTP status when the run ended on an API error (e.g. 429, 529). */
       api_error_status?: number;
+      /**
+       * BPT-EXTENSION (SM-乙b): stable machine `code` of the underlying SDK
+       * error (E6c ErrorCode string, e.g. 'api_connection_failed') on an
+       * `error_during_execution` result. Lets a SessionManager classify a
+       * recoverable-vs-terminal API failure by code, not by message text.
+       * Absent for codeless failures and on non-error results.
+       */
+      error_code?: string;
       /** Time to first token (ms); only present when a token actually arrived. */
       ttft_ms?: number;
       ttft_stream_ms?: number;
@@ -2277,6 +2285,83 @@ export interface Query extends AsyncGenerator<SDKMessage, void> {
   /** Push an additional user-message stream into a streaming-input session. */
   streamInput(stream: AsyncIterable<SDKUserMessage>): Promise<void>;
   close(): void;
+}
+
+// ---------------------------------------------------------------------------
+// SessionManager (BPT-EXTENSION: in-process multi-conversation coordinator)
+// ---------------------------------------------------------------------------
+
+/**
+ * BPT-EXTENSION: recovery/supervision knobs for a SessionManager (SM-乙b,
+ * proposal §6). Effective on mgr.query() when ALL of the following hold:
+ * an external `sessionStore` is attached (shared options or per-query — no
+ * store means nowhere to resume from, R2), the prompt is a string (v1 scope:
+ * streaming-input conversations own their input channel and are not
+ * supervised), and `autoResume` is not false. A supervised query that fails
+ * with a RECOVERABLE error (§6.1: APIConnectionError, MCP connection-class
+ * McpError, or APIStatusError 429/5xx after transport retries) is transparently
+ * re-driven from the store via resume, up to `maxResumes` times; terminal
+ * errors (abort/config/4xx/unknown) always rethrow untouched. When the bound
+ * is exhausted the LAST error is rethrown with a `resumeAttempts` field
+ * attached (same error object, never re-wrapped).
+ */
+export type SessionRecoveryOptions = {
+  /** Auto-resume recoverable failures (default on once a store is attached). */
+  autoResume?: boolean;
+  /** Bounded resume attempts per query (supervision default: 2). */
+  maxResumes?: number;
+};
+
+/**
+ * BPT-EXTENSION: options for createBptSession(). The official
+ * @anthropic-ai/claude-agent-sdk has no in-process multi-conversation
+ * coordinator — its coordination lives inside the CLI host process, invisible
+ * to SDK callers. Here the shared layer (one transport + one MCP connection
+ * pool) is configured once and every mgr.query() borrows it.
+ */
+export type SessionManagerOptions = Options & {
+  /** Supervised auto-resume knobs (SM-乙b, proposal §6). See
+   *  SessionRecoveryOptions for the activation conditions. */
+  recovery?: SessionRecoveryOptions;
+};
+
+/** BPT-EXTENSION: read-only cross-conversation usage aggregate (D2: view
+ *  only — no hard cross-conversation budget cap in v1). */
+export type SessionManagerUsage = {
+  /** Sum of every managed conversation's cumulative estimated cost (USD). */
+  totalCostUsd: number;
+  /** Token totals summed across all managed conversations. */
+  usage: NonNullableUsage;
+  /** Per-model totals merged across all managed conversations. */
+  modelUsage: Record<string, ModelUsage>;
+  /** Number of mgr.query() calls issued so far (open or finished). */
+  queries: number;
+};
+
+/**
+ * BPT-EXTENSION: in-process object-level coordinator (proposal
+ * bpt-sdk-session-manager-20260706, 层一). Owns one shared AnthropicTransport
+ * and one shared MCP registry; queries created through it borrow both.
+ * Lifecycle contract (§4.2): the manager owns the shared connections —
+ * queries never close them; close() is the single teardown point.
+ */
+export interface SessionManager {
+  /**
+   * Start a managed conversation. Same shape as the standalone query();
+   * per-query options may override per-conversation knobs, but `provider` and
+   * `mcpServers` come from the shared layer — passing either throws
+   * ConfigurationError (D1: no private per-query MCP overlay in v1).
+   * Throws ConfigurationError after close().
+   */
+  query(args: {
+    prompt: string | AsyncIterable<SDKUserMessage>;
+    options?: Options;
+  }): Query;
+  /** Read-only aggregated usage/cost across all managed conversations. */
+  usage(): SessionManagerUsage;
+  /** Tear down the shared connections. Idempotent. After it resolves,
+   *  further query() calls throw ConfigurationError. */
+  close(): Promise<void>;
 }
 
 // ---------------------------------------------------------------------------

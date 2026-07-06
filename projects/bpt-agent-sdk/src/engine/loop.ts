@@ -6,7 +6,13 @@
 
 import { randomUUID } from 'node:crypto';
 
-import { AbortError, APIConnectionError, APIStatusError, isAbortError } from '../errors.js';
+import {
+  AbortError,
+  APIConnectionError,
+  APIStatusError,
+  errorCodeOf,
+  isAbortError,
+} from '../errors.js';
 import type {
   APIAssistantMessage,
   APIMessageParam,
@@ -344,6 +350,11 @@ export async function* runAgentLoop(
       | 'error_max_structured_output_retries',
     errorMessage: string,
     apiErrorStatus?: number,
+    // SM-乙b: stable machine code of the underlying SDK error (E6c), carried so
+    // a SessionManager can classify a recoverable-vs-terminal API failure by
+    // CODE rather than by parsing errorMessage. Absent for non-SDK / codeless
+    // failures. Additive; does not touch the request wire.
+    errorCode?: string,
   ): SDKResultMessage => ({
     type: 'result',
     subtype,
@@ -353,6 +364,7 @@ export async function* runAgentLoop(
     // the last API stop_reason observed, or null when no turn completed.
     stop_reason: lastStopReason,
     ...(apiErrorStatus !== undefined ? { api_error_status: apiErrorStatus } : {}),
+    ...(errorCode !== undefined ? { error_code: errorCode } : {}),
     ...resultBase(),
     // Official-surface parallel: the reference SDK reports error text as a
     // string[]. Placed AFTER the resultBase spread so the fatal message wins
@@ -1357,7 +1369,7 @@ export async function* runAgentLoop(
     const message = err instanceof Error ? err.message : String(err);
     deps.debug(`engine: error during execution: ${message}`);
     const apiStatus = err instanceof APIStatusError ? err.status : undefined;
-    yield errorResult('error_during_execution', message, apiStatus);
+    yield errorResult('error_during_execution', message, apiStatus, errorCodeOf(err));
     return;
   }
 }

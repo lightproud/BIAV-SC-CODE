@@ -69,6 +69,7 @@ Per-row detail lives in the sections below; this is the at-a-glance table.
 | Area | Kind | Official | Ours |
 |---|---|---|---|
 | **Engine model** | — | wraps the Claude Code CLI (black-box subprocess) | drives the Messages API directly (fetch+SSE, no CLI); this is the root of most divergences below |
+| `createBptSession` (SessionManager) | BPT-EXTENSION | no in-process coordinator (coordination lives in the wrapped CLI host) | one manager hosts many `mgr.query()` conversations over a shared transport + shared MCP pool; supervised auto-resume from a store; `error_code` on result (v0.9.0) |
 | `provider.cacheTtl` | BPT-EXTENSION | no cache-TTL knob (CLI decides 5m/1h internally; only reports the split in usage) | caller picks `'5m'`/`'1h'` per query (v0.7.1) |
 | `provider.promptCaching` | BPT-EXTENSION | no toggle (caching is internal) | caller can turn the whole breakpoint layer off |
 | tool-block cache breakpoint | KEPT-DIVERGENCE | 0 breakpoints on tool blocks | 1 (last tool) — measured to only ever gain cache hits on system-prompt divergence, never lose (E7-03) |

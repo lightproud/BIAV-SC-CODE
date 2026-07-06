@@ -8,6 +8,10 @@
  *   { type: 'user' | 'assistant', message: { role, content }, ... }
  * renameSession/tagSession append meta_update records (last write wins):
  *   { type: 'meta_update', uuid, customTitle? | tag? | gitBranch? }
+ * SM-乙b §5.2 write-ahead checkpoints bracket each turn's API request segment
+ * (they are control records, never replayed as conversation messages):
+ *   { type: 'pending_turn', uuid, timestamp, turn_ref }
+ *   { type: 'turn_complete', uuid, timestamp, pending_uuid }
  * Corrupt or unrecognized lines are skipped with a debug warning so a
  * damaged transcript never blocks a resume.
  */
@@ -257,6 +261,10 @@ export class JsonlSessionStore implements SessionStore {
     let tag: string | undefined;
     let gitBranch: string | undefined;
     const messages: APIMessageParam[] = [];
+    // SM-乙b §5.2 write-ahead checkpoints: pending_turn opens a request
+    // segment, turn_complete settles it. Insertion order is preserved so the
+    // LAST unsettled entry is the most recent interruption.
+    const openPending = new Map<string, string | undefined>();
 
     const lines = raw.split('\n');
     for (let i = 0; i < lines.length; i += 1) {
@@ -297,6 +305,26 @@ export class JsonlSessionStore implements SessionStore {
         continue;
       }
 
+      // SM-乙b §5.2: write-ahead checkpoint records are transcript-control
+      // lines, NOT conversation messages — recognized here so they are (a)
+      // filtered out of the replayed message list (like meta/meta_update) and
+      // (b) folded into the dangling-interruption evidence resume consumes.
+      if (entry.type === 'pending_turn') {
+        if (typeof entry.uuid === 'string') {
+          openPending.set(
+            entry.uuid,
+            typeof entry.turn_ref === 'string' ? entry.turn_ref : undefined,
+          );
+        }
+        continue;
+      }
+      if (entry.type === 'turn_complete') {
+        if (typeof entry.pending_uuid === 'string') {
+          openPending.delete(entry.pending_uuid);
+        }
+        continue;
+      }
+
       if (entry.type === 'user' || entry.type === 'assistant') {
         const message = entry.message as { content?: unknown } | undefined;
         const content = message?.content;
@@ -325,6 +353,14 @@ export class JsonlSessionStore implements SessionStore {
       // File raced away between read and stat; keep what we parsed.
     }
 
+    // Most recent dangling pending_turn (insertion order; last wins).
+    let pendingTurnUuid: string | undefined;
+    let pendingTurnRef: string | undefined;
+    for (const [uuid, ref] of openPending) {
+      pendingTurnUuid = uuid;
+      pendingTurnRef = ref;
+    }
+
     return {
       sessionId,
       messages: repairPairing(messages, this.debug, sessionId),
@@ -335,6 +371,13 @@ export class JsonlSessionStore implements SessionStore {
       customTitle,
       tag,
       gitBranch,
+      ...(pendingTurnUuid !== undefined
+        ? {
+            pendingTurnInterrupted: true,
+            pendingTurnUuid,
+            ...(pendingTurnRef !== undefined ? { pendingTurnRef } : {}),
+          }
+        : {}),
     };
   }
 

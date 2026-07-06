@@ -42,6 +42,7 @@ import type {
   McpRegistry,
   McpToolEntry,
   ToolContext,
+  Transport,
 } from './internal/contracts.js';
 import { AnthropicTransport } from './transport/anthropic.js';
 import { DefaultPermissionGate } from './permissions/gate.js';
@@ -318,15 +319,52 @@ type ResolvedSession = {
   resumed: boolean;
   /** True when the meta line still needs to be written on first persist. */
   needMeta: boolean;
+  /**
+   * SM-乙b §5.2: the resumed transcript carries a dangling pending_turn
+   * (crash inside the request segment). When the replayed history also ends
+   * with a user turn, run() re-drives exactly that API request segment before
+   * consuming new input — tools are NEVER replayed (their execution state is
+   * whatever tool_result records reached disk).
+   */
+  redrivePending?: boolean;
+  /** uuid of the dangling pending_turn record (settled after the re-drive). */
+  pendingTurnUuid?: string;
+  /** turn_ref of the dangling pending_turn (the interrupted user turn uuid). */
+  pendingTurnRef?: string;
 };
 
 // ---------------------------------------------------------------------------
 // query()
 // ---------------------------------------------------------------------------
 
+/**
+ * @internal Shared-collaborator injection seam for the SessionManager
+ * (src/session-manager.ts). NOT public API — the public Options surface is
+ * unchanged and standalone query() behavior is byte-identical when this is
+ * absent.
+ *
+ * Ownership contract (谁拥有谁拆 / "whoever constructs it closes it"):
+ * a field left undefined means query() constructs its OWN collaborator and
+ * tears it down exactly as before; a field provided means the collaborator is
+ * BORROWED — the injector (the SessionManager) owns its lifecycle and this
+ * query must never close it. Query-scoped resources (shells, sandbox tmp dir,
+ * checkpoint store) are always owned and reclaimed by the query itself.
+ */
+export type QueryInternalInjection = {
+  /** Shared Messages-API transport. Stateless per-request (each stream() is an
+   *  independent fetch+SSE) so borrowing needs no teardown at all. */
+  transport?: Transport;
+  /** Shared MCP registry (manager-owned, already connect-coalesced). The query
+   *  must NOT closeAll() it — sibling conversations are multiplexing the same
+   *  server connections. */
+  mcpRegistry?: McpRegistry;
+};
+
 export function query(args: {
   prompt: string | AsyncIterable<SDKUserMessage>;
   options?: Options;
+  /** @internal See QueryInternalInjection. Absent for all public callers. */
+  _internal?: QueryInternalInjection;
 }): Query {
   const { prompt } = args;
   const options: Options = args.options ?? {};
@@ -381,12 +419,18 @@ export function query(args: {
           debug,
         })
       : localStore;
-  const transport = new AnthropicTransport({
-    provider: options.provider,
-    env,
-    debug,
-    betas: options.betas,
-  });
+  // Shared-coordination seam (SessionManager 甲): an injected transport is
+  // borrowed (manager-owned, stateless requester — nothing to tear down);
+  // otherwise construct our own exactly as before.
+  const injected = args._internal;
+  const transport: Transport =
+    injected?.transport ??
+    new AnthropicTransport({
+      provider: options.provider,
+      env,
+      debug,
+      betas: options.betas,
+    });
   // Safety interlock: bypassPermissions must be explicitly unlocked with
   // allowDangerouslySkipPermissions (matches @anthropic-ai/claude-agent-sdk).
   // Enforced for the initial mode here and for setPermissionMode() below.
@@ -484,17 +528,35 @@ export function query(args: {
 
   // Merge project .mcp.json servers (when settingSources includes 'project')
   // under the explicit options.mcpServers (which win on key collision).
-  const projectServers = loadProjectMcpServers(cwd, options.settingSources, debug);
+  //
+  // Shared-coordination seam (SessionManager 甲): an injected registry replaces
+  // local construction entirely — the server set comes from the shared layer
+  // (D1: no per-query private MCP overlay in v1), so no local merge happens
+  // and `ownsMcp` gates every teardown site below (谁拥有谁拆: the query only
+  // closes a registry it constructed itself; a borrowed one stays connected
+  // for sibling conversations and is closed by SessionManager.close() alone).
+  const ownsMcp = injected?.mcpRegistry === undefined;
+  const projectServers = ownsMcp
+    ? loadProjectMcpServers(cwd, options.settingSources, debug)
+    : {};
   const mergedServers: Record<string, McpServerConfig> = {
     ...projectServers,
-    ...(options.mcpServers ?? {}),
+    ...(ownsMcp ? (options.mcpServers ?? {}) : {}),
   };
-  const realMcp = new DefaultMcpRegistry({
-    servers: mergedServers,
-    env,
-    debug,
-    elicitation: options.onElicitation,
-  });
+  const realMcp: McpRegistry =
+    injected?.mcpRegistry ??
+    new DefaultMcpRegistry({
+      servers: mergedServers,
+      env,
+      debug,
+      elicitation: options.onElicitation,
+    });
+  // Configured MCP server count: drives ToolSearch deferral and MCP resource
+  // tool visibility. On the borrowed path the shared registry is the source of
+  // truth (statuses() lists every registered server, connected or not).
+  const mcpServerCount = ownsMcp
+    ? Object.keys(mergedServers).length
+    : realMcp.statuses().length;
   const mcp: McpRegistry =
     bareDisallowed.length > 0
       ? new ToolFilterMcpRegistry(realMcp, isBareDisallowed)
@@ -503,7 +565,7 @@ export function query(args: {
   // servers are configured (auto-activates past the threshold, or forced by
   // options.toolSearch). When null, mcpEff === mcp (exact v0.1 behavior).
   const deferred =
-    options.toolSearch !== false && Object.keys(mergedServers).length > 0
+    options.toolSearch !== false && mcpServerCount > 0
       ? new DeferredMcpRegistry(mcp, { debug })
       : null;
   const mcpEff: McpRegistry = deferred ?? mcp;
@@ -525,7 +587,7 @@ export function query(args: {
   // The MCP resource tools are only advertised by default when MCP servers
   // exist (they are no-ops otherwise). An explicit options.tools selection is
   // honored verbatim.
-  if (!Array.isArray(options.tools) && Object.keys(mergedServers).length === 0) {
+  if (!Array.isArray(options.tools) && mcpServerCount === 0) {
     builtinTools.delete('ListMcpResourcesTool');
     builtinTools.delete('ReadMcpResourceTool');
   }
@@ -855,6 +917,40 @@ export function query(args: {
   }
 
   /**
+   * §5.2 write-ahead checkpoint: mark that a turn is entering its API request
+   * segment. A crash before the matching turn_complete leaves this record
+   * dangling, which a later resume reads as "the interruption happened in the
+   * request segment — re-drive it". turn_ref references the already-persisted
+   * user turn's uuid (no content copied). Always on when the query persists:
+   * the record is tiny and it is what makes the crash point diagnosable.
+   */
+  function persistPendingTurn(
+    sessionId: string,
+    pendingUuid: string,
+    turnRef: string,
+  ): void {
+    if (!persist) return;
+    store.append(sessionId, {
+      type: 'pending_turn',
+      uuid: pendingUuid,
+      timestamp: new Date().toISOString(),
+      turn_ref: turnRef,
+    });
+  }
+
+  /** §5.2: settle a pending_turn (append-only — the pending line stays, the
+   *  pairing makes it logically closed). */
+  function persistTurnComplete(sessionId: string, pendingUuid: string): void {
+    if (!persist) return;
+    store.append(sessionId, {
+      type: 'turn_complete',
+      uuid: randomUUID(),
+      timestamp: new Date().toISOString(),
+      pending_uuid: pendingUuid,
+    });
+  }
+
+  /**
    * Session resolution:
    *   - resume / continue-latest -> load and replay the prior transcript (the
    *     explicit resume path). forkSession copies it under a fresh id.
@@ -873,6 +969,17 @@ export function query(args: {
     if (resumeSource !== undefined) {
       const stored = await store.load(resumeSource);
       if (stored !== null) {
+        // §5.2: carry the dangling-checkpoint evidence into the run so the
+        // interrupted request segment is re-driven before new input.
+        const pendingFields = {
+          ...(stored.pendingTurnInterrupted === true ? { redrivePending: true } : {}),
+          ...(stored.pendingTurnUuid !== undefined
+            ? { pendingTurnUuid: stored.pendingTurnUuid }
+            : {}),
+          ...(stored.pendingTurnRef !== undefined
+            ? { pendingTurnRef: stored.pendingTurnRef }
+            : {}),
+        };
         if (options.forkSession === true) {
           // Copy the transcript under a new id; the original stays untouched.
           // The fork's future turns run under the CURRENT query's cwd, so the
@@ -903,6 +1010,10 @@ export function query(args: {
           history: [...stored.messages],
           resumed: true,
           needMeta: false,
+          // §5.2: a dangling pending_turn on the resumed transcript arms the
+          // redrive-on-resume in run() (fork deliberately omits this — a fork
+          // is a clean copy under a fresh id, not a crash recovery).
+          ...pendingFields,
         };
       }
       // Resume target has no stored transcript.
@@ -1109,6 +1220,183 @@ export function query(args: {
       // by the engine for its own turns, and compacted in place by the engine.
       const requestView = { messages: [...history] };
 
+      /**
+       * Drive ONE user turn's engine loop: build the per-turn deps, bracket
+       * the API request segment with the §5.2 write-ahead checkpoint, run the
+       * engine, and yield/persist its output exactly as the input loop did
+       * before SM-乙b (byte-identical message stream — the full suite is the
+       * regression guard). Shared by the input loop (fresh pending_turn) AND
+       * the redrive-on-resume path (settles an EXISTING dangling pending_turn
+       * without writing a new one). Returns 'stop' to end run() (string-mode
+       * interrupt) or 'continue' to proceed to the next input.
+       */
+      async function* driveTurn(
+        userUuid: string,
+        existingPendingUuid?: string,
+      ): AsyncGenerator<SDKMessage, 'stop' | 'continue'> {
+        checkpointStore?.beginTurn(userUuid);
+        turnController = new AbortController();
+        // A cancel requested while no turn was active (interrupt() between turns
+        // or right after init) aborts THIS turn immediately (finding #36).
+        if (interruptRequested) {
+          interruptRequested = false;
+          turnController.abort(new AbortError('The turn was interrupted'));
+        }
+        const turnSignal = AbortSignal.any([outer.signal, turnController.signal]);
+        const toolContext: ToolContext = {
+          // EnterWorktree survives turn-boundary context rebuilds: the session
+          // state is keyed on the shared readFilePaths Set, so the per-turn
+          // context picks the active worktree up again (Bash follows via its
+          // persistent state; this covers the fs tools and subagent spawns).
+          cwd:
+            peekWorktreeSession({ readFilePaths } as ToolContext)?.dir ?? cwd,
+          // Recomputed per turn so session addDirectories / removeDirectories
+          // permission updates take real effect on the fs tools (T2-7:
+          // removeDirectories revokes; addDirectories grants).
+          additionalDirectories: gate.effectiveAdditionalDirectories(
+            options.additionalDirectories ?? [],
+          ),
+          env,
+          signal: turnSignal,
+          debug,
+          spawnSubagent: subagentRuntime.makeSpawnFn(0),
+          webSearch: options.webSearch,
+          askUser: options.onUserQuestion,
+          mcpResources: {
+            list: (server, signal) => mcpEff.listResources(server, signal),
+            read: (server, uri, signal) => mcpEff.readResource(server, uri, signal),
+          },
+          allowPrivateWebFetch: options.allowPrivateWebFetch === true,
+          recordFileChange: checkpointStore
+            ? (abs, pre): void => checkpointStore!.record(abs, pre)
+            : undefined,
+          shells,
+          sandbox: sandboxCtx,
+          readFilePaths,
+        };
+        // ExitPlanMode bridge: the tool flips this query's own gate. Attached
+        // via the tool's context extension (deliberately not part of the core
+        // ToolContext contract).
+        (toolContext as ToolContextWithPermissionGate).permissionGate = gate;
+        const deps: EngineDeps = {
+          transport,
+          builtinTools,
+          mcp: mcpEff,
+          permissions: gate,
+          hooks,
+          toolContext,
+          debug,
+          requestView,
+          drainSubagentResults: () => subagentRuntime.drainCompletedResults(),
+          drainObservability,
+        };
+
+        // The engine appends assistant + tool_result-user messages to `history`
+        // in place. It YIELDS assistant messages (persisted here at yield time,
+        // finding #34) but NOT the tool_result user turns, so we surface each
+        // appended user turn as an SDKUserMessage (finding #27) and persist it,
+        // in order, before the engine message that follows it.
+        let historyTail = history.length;
+        const flushToolResultUsers = function* (): Generator<SDKUserMessage> {
+          while (historyTail < history.length) {
+            const entry = history[historyTail];
+            historyTail += 1;
+            // Assistant entries are persisted at their own yield time; only the
+            // engine-appended tool_result user turns need surfacing here.
+            if (entry !== undefined && entry.role === 'user') {
+              persistParam(sess.sessionId, entry);
+              yield {
+                type: 'user',
+                uuid: randomUUID(),
+                session_id: sess.sessionId,
+                message: { role: 'user', content: entry.content },
+                parent_tool_use_id: null,
+              };
+            }
+          }
+        };
+
+        // §5.2 write-ahead checkpoint: open a pending_turn just before the
+        // request segment (fresh id for a normal turn; the redrive path passes
+        // the EXISTING dangling id so it does not double-write the record).
+        const pendingUuid = existingPendingUuid ?? randomUUID();
+        if (existingPendingUuid === undefined) {
+          persistPendingTurn(sess.sessionId, pendingUuid, userUuid);
+        }
+        // Track whether the turn ended in an ERROR result. The engine converts
+        // API/connection failures into an is_error `error_during_execution`
+        // result (only AbortError is thrown), so a "successful iteration" can
+        // still be a failed turn — in which case the pending_turn is left
+        // dangling so a resume re-drives the interrupted request segment.
+        let turnErrored = false;
+
+        try {
+          for await (const msg of runAgentLoop(history, deps, engineConfig)) {
+            yield* flushToolResultUsers();
+            yield* drainMirror();
+            yield* drainObs();
+            if (msg.type === 'assistant') {
+              persistAssistant(sess.sessionId, msg.message.content);
+              yield msg;
+            } else if (msg.type === 'result') {
+              if (msg.is_error === true) turnErrored = true;
+              // Fold any completed subagent usage into the session totals before
+              // the result is rewritten so subagent tokens/cost are reported.
+              foldSubagentUsage(subagentRuntime.drainUsageLedger());
+              accumulateResult(msg);
+              yield rewriteResult(msg);
+            } else {
+              yield msg;
+            }
+          }
+          yield* flushToolResultUsers();
+          yield* drainMirror();
+          // Trailing lifecycle events (a background subagent that finished as
+          // the turn ended, Stop-hook responses) surface before the next turn.
+          yield* drainObs();
+          // §5.2: settle the pending_turn ONLY when the request segment
+          // actually completed. An errored turn leaves it dangling so a later
+          // resume re-drives it.
+          if (!turnErrored) {
+            persistTurnComplete(sess.sessionId, pendingUuid);
+          }
+        } catch (err) {
+          // Persist (but do not re-yield on error) any trailing tool_result
+          // user turn so the transcript stays durable across the failure. The
+          // pending_turn is deliberately LEFT dangling: a resume re-drives it.
+          while (historyTail < history.length) {
+            const entry = history[historyTail];
+            historyTail += 1;
+            if (entry !== undefined && entry.role === 'user') {
+              persistParam(sess.sessionId, entry);
+            }
+          }
+          if (isAbortError(err)) {
+            if (outer.signal.aborted) {
+              throw err instanceof AbortError ? err : new AbortError();
+            }
+            // Turn-level interrupt(): streaming mode keeps accepting input;
+            // string mode ends the run WITH a terminal result so an awaiting
+            // consumer is not left hanging with no explanation (finding #36).
+            debug('query: turn interrupted');
+            if (!streamingMode) {
+              endReason = 'interrupt';
+              yield terminalResult(
+                'error_during_execution',
+                sess.sessionId,
+                'The turn was interrupted',
+              );
+              return 'stop';
+            }
+            return 'continue';
+          }
+          throw err;
+        } finally {
+          turnController = null;
+        }
+        return 'continue';
+      }
+
       // 1. SessionStart hooks (matchValue is the start source).
       const source: 'startup' | 'resume' = sess.resumed ? 'resume' : 'startup';
       let sessionStartContext: string[] = [];
@@ -1187,6 +1475,32 @@ export function query(args: {
       if (sessionStartBlocked !== undefined) {
         yield blockedResult(sess.sessionId, sessionStartBlocked);
         return;
+      }
+
+      // 2b. Redrive-on-resume (SM-乙b §5.2/§6): a resumed transcript whose
+      // last replayed message is a user turn AND that carries a dangling
+      // pending_turn means the prior run crashed inside that turn's API
+      // request segment. Re-drive exactly that segment ONCE against the
+      // existing history before consuming new input. Correctness: the engine
+      // never re-runs a tool that already has a tool_result on disk — history
+      // only carries settled tool calls, and repairPairing already healed any
+      // trailing unpaired tool_use — so this re-issues only the interrupted
+      // API request, never a side-effecting tool. driveTurn settles the
+      // existing pending_turn on completion; a 'stop' outcome ends the run.
+      if (
+        sess.redrivePending === true &&
+        sess.pendingTurnUuid !== undefined &&
+        history.length > 0 &&
+        history[history.length - 1]?.role === 'user'
+      ) {
+        debug(
+          `query: redriving interrupted request segment (pending ${sess.pendingTurnUuid})`,
+        );
+        const outcome = yield* driveTurn(
+          sess.pendingTurnRef ?? randomUUID(),
+          sess.pendingTurnUuid,
+        );
+        if (outcome === 'stop') return;
       }
 
       // 3. Consume user turns until the input queue closes.
@@ -1303,145 +1617,12 @@ export function query(args: {
           engineConfig.maxTurns = options.maxTurns - sessionTurns;
         }
 
-        // Delegate to the engine loop for this turn.
-        checkpointStore?.beginTurn(userUuid);
-        turnController = new AbortController();
-        // A cancel requested while no turn was active (interrupt() between turns
-        // or right after init) aborts THIS turn immediately (finding #36).
-        if (interruptRequested) {
-          interruptRequested = false;
-          turnController.abort(new AbortError('The turn was interrupted'));
-        }
-        const turnSignal = AbortSignal.any([outer.signal, turnController.signal]);
-        const toolContext: ToolContext = {
-          // EnterWorktree survives turn-boundary context rebuilds: the session
-          // state is keyed on the shared readFilePaths Set, so the per-turn
-          // context picks the active worktree up again (Bash follows via its
-          // persistent state; this covers the fs tools and subagent spawns).
-          cwd:
-            peekWorktreeSession({ readFilePaths } as ToolContext)?.dir ?? cwd,
-          // Recomputed per turn so session addDirectories / removeDirectories
-          // permission updates take real effect on the fs tools (T2-7:
-          // removeDirectories revokes; addDirectories grants).
-          additionalDirectories: gate.effectiveAdditionalDirectories(
-            options.additionalDirectories ?? [],
-          ),
-          env,
-          signal: turnSignal,
-          debug,
-          spawnSubagent: subagentRuntime.makeSpawnFn(0),
-          webSearch: options.webSearch,
-          askUser: options.onUserQuestion,
-          mcpResources: {
-            list: (server, signal) => mcpEff.listResources(server, signal),
-            read: (server, uri, signal) => mcpEff.readResource(server, uri, signal),
-          },
-          allowPrivateWebFetch: options.allowPrivateWebFetch === true,
-          recordFileChange: checkpointStore
-            ? (abs, pre): void => checkpointStore!.record(abs, pre)
-            : undefined,
-          shells,
-          sandbox: sandboxCtx,
-          readFilePaths,
-        };
-        // ExitPlanMode bridge: the tool flips this query's own gate. Attached
-        // via the tool's context extension (deliberately not part of the core
-        // ToolContext contract).
-        (toolContext as ToolContextWithPermissionGate).permissionGate = gate;
-        const deps: EngineDeps = {
-          transport,
-          builtinTools,
-          mcp: mcpEff,
-          permissions: gate,
-          hooks,
-          toolContext,
-          debug,
-          requestView,
-          drainSubagentResults: () => subagentRuntime.drainCompletedResults(),
-          drainObservability,
-        };
-
-        // The engine appends assistant + tool_result-user messages to `history`
-        // in place. It YIELDS assistant messages (persisted here at yield time,
-        // finding #34) but NOT the tool_result user turns, so we surface each
-        // appended user turn as an SDKUserMessage (finding #27) and persist it,
-        // in order, before the engine message that follows it.
-        let historyTail = history.length;
-        const flushToolResultUsers = function* (): Generator<SDKUserMessage> {
-          while (historyTail < history.length) {
-            const entry = history[historyTail];
-            historyTail += 1;
-            // Assistant entries are persisted at their own yield time; only the
-            // engine-appended tool_result user turns need surfacing here.
-            if (entry !== undefined && entry.role === 'user') {
-              persistParam(sess.sessionId, entry);
-              yield {
-                type: 'user',
-                uuid: randomUUID(),
-                session_id: sess.sessionId,
-                message: { role: 'user', content: entry.content },
-                parent_tool_use_id: null,
-              };
-            }
-          }
-        };
-
-        try {
-          for await (const msg of runAgentLoop(history, deps, engineConfig)) {
-            yield* flushToolResultUsers();
-            yield* drainMirror();
-            yield* drainObs();
-            if (msg.type === 'assistant') {
-              persistAssistant(sess.sessionId, msg.message.content);
-              yield msg;
-            } else if (msg.type === 'result') {
-              // Fold any completed subagent usage into the session totals before
-              // the result is rewritten so subagent tokens/cost are reported.
-              foldSubagentUsage(subagentRuntime.drainUsageLedger());
-              accumulateResult(msg);
-              yield rewriteResult(msg);
-            } else {
-              yield msg;
-            }
-          }
-          yield* flushToolResultUsers();
-          yield* drainMirror();
-          // Trailing lifecycle events (a background subagent that finished as
-          // the turn ended, Stop-hook responses) surface before the next turn.
-          yield* drainObs();
-        } catch (err) {
-          // Persist (but do not re-yield on error) any trailing tool_result
-          // user turn so the transcript stays durable across the failure.
-          while (historyTail < history.length) {
-            const entry = history[historyTail];
-            historyTail += 1;
-            if (entry !== undefined && entry.role === 'user') {
-              persistParam(sess.sessionId, entry);
-            }
-          }
-          if (isAbortError(err)) {
-            if (outer.signal.aborted) {
-              throw err instanceof AbortError ? err : new AbortError();
-            }
-            // Turn-level interrupt(): streaming mode keeps accepting input;
-            // string mode ends the run WITH a terminal result so an awaiting
-            // consumer is not left hanging with no explanation (finding #36).
-            debug('query: turn interrupted');
-            if (!streamingMode) {
-              endReason = 'interrupt';
-              yield terminalResult(
-                'error_during_execution',
-                sess.sessionId,
-                'The turn was interrupted',
-              );
-              return;
-            }
-            continue;
-          }
-          throw err;
-        } finally {
-          turnController = null;
-        }
+        // Delegate this turn to the shared engine driver (SM-乙b §5.2 wires
+        // the write-ahead checkpoint inside it). A 'stop' outcome (string-mode
+        // interrupt) ends the run; anything else falls through to the next
+        // input (streaming-mode interrupt or normal completion).
+        const outcome = yield* driveTurn(userUuid);
+        if (outcome === 'stop') return;
       }
     } catch (err) {
       if (isAbortError(err)) {
@@ -1491,12 +1672,20 @@ export function query(args: {
           );
         }
       }
-      try {
-        await mcpEff.closeAll();
-      } catch (err) {
-        debug(
-          `mcp closeAll failed: ${err instanceof Error ? err.message : String(err)}`,
-        );
+      // Lifecycle contract (SessionManager 甲, proposal §4.2): whoever
+      // constructed the MCP registry closes it. A standalone query owns its
+      // registry and tears it down here exactly as before; a managed query
+      // only BORROWS the shared registry — sibling conversations are still
+      // multiplexing those connections, so closing them here is the design's
+      // #1 regression red line. mgr.close() is the single teardown point.
+      if (ownsMcp) {
+        try {
+          await mcpEff.closeAll();
+        } catch (err) {
+          debug(
+            `mcp closeAll failed: ${err instanceof Error ? err.message : String(err)}`,
+          );
+        }
       }
     }
   }
@@ -1680,11 +1869,15 @@ export function query(args: {
       if (!outer.signal.aborted) outer.abort(reason);
       subagentRuntime.abortAll();
       void inner.return(undefined).catch(() => undefined);
-      void mcpEff.closeAll().catch((err) => {
-        debug(
-          `mcp closeAll failed: ${err instanceof Error ? err.message : String(err)}`,
-        );
-      });
+      // Ownership contract: only close a registry this query constructed. A
+      // borrowed (SessionManager-shared) registry outlives any single query.
+      if (ownsMcp) {
+        void mcpEff.closeAll().catch((err) => {
+          debug(
+            `mcp closeAll failed: ${err instanceof Error ? err.message : String(err)}`,
+          );
+        });
+      }
     },
   };
 

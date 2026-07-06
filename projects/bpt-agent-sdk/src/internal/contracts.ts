@@ -497,6 +497,18 @@ export type StoredSession = {
   lastModified: number;
   firstPrompt?: string;
   cwd?: string;
+  /**
+   * SM-乙b §5.2 write-ahead checkpoint: true when the transcript carries a
+   * `pending_turn` record with no matching `turn_complete` — evidence the
+   * prior run crashed inside a turn's API request segment. Resume re-drives
+   * that request segment (never its tools: their execution state is whatever
+   * tool_result records made it to disk).
+   */
+  pendingTurnInterrupted?: boolean;
+  /** uuid of the dangling pending_turn (the recovery re-drive settles it). */
+  pendingTurnUuid?: string;
+  /** turn_ref of the dangling pending_turn (the interrupted user turn's uuid). */
+  pendingTurnRef?: string;
 };
 
 export interface SessionStore {
