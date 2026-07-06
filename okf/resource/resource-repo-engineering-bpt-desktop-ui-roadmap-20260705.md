@@ -4,7 +4,7 @@ title: "bpt-desktop-ui-roadmap-20260705"
 description: "怎么接」，本档回答「先建哪块、每步验收什么」。（格式：md）"
 resource: "/Public-Info-Pool/Resource/repo-engineering/bpt-desktop-ui-roadmap-20260705.md"
 tags: ["data_layer:curated", "deliverable", "topic:repo-engineering"]
-timestamp: "2026-07-05"
+timestamp: "2026-07-06"
 ---
 
 # 指针概念

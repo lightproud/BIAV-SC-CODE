@@ -4,7 +4,7 @@ title: "gamelauncher"
 description: "客户端解包lua 字节码子集（binary，非明文）「gamelauncher」：3 文件 / 8.2KB。一手解包，本体原地。"
 resource: "/Public-Info-Pool/Reference/Game-Unpacked/gamelauncher/"
 tags: ["data_layer:full_archive", "content:gamelauncher", "encoding:luac", "first-hand-unpack"]
-timestamp: "2026-07-05"
+timestamp: "2026-07-06"
 ---
 
 # 指针概念

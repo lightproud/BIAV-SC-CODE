@@ -4,7 +4,7 @@ title: "sproto"
 description: "客户端解包text 子集（明文）「sproto」：1 文件 / 2.7KB。一手解包，本体原地。"
 resource: "/Public-Info-Pool/Reference/Game-Unpacked/sproto/"
 tags: ["data_layer:full_archive", "content:sproto", "encoding:text", "first-hand-unpack"]
-timestamp: "2026-07-05"
+timestamp: "2026-07-06"
 ---
 
 # 指针概念
