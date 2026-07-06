@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-06T10:04:29.481639+00:00",
+  "collected_at": "2026-07-06T14:24:26.881500+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 137,
+  "item_count": 138,
   "items": [
     {
       "source": "google_play",
@@ -14,16 +14,6 @@
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=es#gp-46217986-5c13-4399-8eac-0eb5b304757e",
       "author": "Reed",
       "engagement": 11
-    },
-    {
-      "source": "google_play",
-      "time": "2026-06-06T13:05:28",
-      "lang": "en",
-      "title": "[Google Play 差评] ★1 another disaster pull session why do we",
-      "summary": "another disaster pull session why do we need to lost twice and not just make 50/50 your ten pulls is expensive than main stream games but u have lower rate of getting banner characters. the game is good though outside of its very predatory gacha.",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-2e4926de-2b3f-4f29-b92c-01cf3606b69c",
-      "author": "Vermy Balasuela",
-      "engagement": 5
     },
     {
       "source": "google_play",
@@ -897,6 +887,16 @@
     },
     {
       "source": "google_play",
+      "time": "2026-07-05T11:30:32",
+      "lang": "vi",
+      "title": "[Google Play 好评] ★5 Cốt truyện peak, cực cuốn",
+      "summary": "Cốt truyện peak, cực cuốn",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=vi#gp-4eb05881-8b69-428c-92fb-dd432db19607",
+      "author": "Minh Hoàng Nguyên",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
       "time": "2026-07-04T15:01:32",
       "lang": "vi",
       "title": "[Google Play 好评] ★5 game hay, cốt truyện sợ vl nhưng hợp gu",
@@ -963,6 +963,16 @@
       "summary": "Mega Spiel, Ich liebe es! Man merkt richtig, dass man sich vorallem bei der Story Mühe gegeben hat, auch wenn die deutsche Übersetzung mit KI ist. Das Gameplay kann kompliziert sein aber sobald man drinne ist macht es richtig Spaß zu spielen. Charaktere und Lore sind unglaublich gut gestaltet, mir gefällt auch der art style. Teilweise erinnert es mich an Reverse1999. Gacha ist ganz nice und Belohnungen sind sehr großzügig. Ich kann das Spiel nur weiterempfehlen!!!",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=de#gp-297fe1cb-5165-4458-a73f-db2da5328aa2",
       "author": "Aylin Bilen",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-05T10:22:19",
+      "lang": "fr",
+      "title": "[Google Play 中评] ★3 c'est dommage car le jeu en soit mériter",
+      "summary": "c'est dommage car le jeu en soit mériterait 5 étoiles, mais il bug tellement souvent que c'en est énervant ! sinon, l'histoire et les personnages sont super !",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=fr#gp-959d35cd-4ef3-400a-8551-9ef19938afca",
+      "author": "Miguel Macedo",
       "engagement": 0
     },
     {

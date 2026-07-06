@@ -1,8 +1,8 @@
 {
   "date": "2026-07-05",
-  "archived_at": "2026-07-06T10:05:07.009753+00:00",
+  "archived_at": "2026-07-06T14:25:04.687760+00:00",
   "source": "google_play",
-  "item_count": 2,
+  "item_count": 4,
   "items": [
     {
       "title": "[Google Play 好评] ★5 크툴루 신화+슬더스+씹덕 다 해당되는데 돌파가 15까지라는 말만 듣고 안",
@@ -30,6 +30,34 @@
       "tags": [],
       "lang": "es",
       "platform_region": "es",
+      "region": "global"
+    },
+    {
+      "title": "[Google Play 好评] ★5 Cốt truyện peak, cực cuốn",
+      "summary": "Cốt truyện peak, cực cuốn",
+      "source": "google_play",
+      "time": "2026-07-05T11:30:32",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=vi#gp-4eb05881-8b69-428c-92fb-dd432db19607",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "Minh Hoàng Nguyên",
+      "tags": [],
+      "lang": "vi",
+      "platform_region": "vn",
+      "region": "global"
+    },
+    {
+      "title": "[Google Play 中评] ★3 c'est dommage car le jeu en soit mériter",
+      "summary": "c'est dommage car le jeu en soit mériterait 5 étoiles, mais il bug tellement souvent que c'en est énervant ! sinon, l'histoire et les personnages sont super !",
+      "source": "google_play",
+      "time": "2026-07-05T10:22:19",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=fr#gp-959d35cd-4ef3-400a-8551-9ef19938afca",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "Miguel Macedo",
+      "tags": [],
+      "lang": "fr",
+      "platform_region": "fr",
       "region": "global"
     }
   ],

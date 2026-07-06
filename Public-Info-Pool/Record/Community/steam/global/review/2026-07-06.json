@@ -1,8 +1,8 @@
 {
   "date": "2026-07-06",
-  "archived_at": "2026-07-06T10:05:06.917350+00:00",
+  "archived_at": "2026-07-06T14:25:04.588875+00:00",
   "source": "steam",
-  "item_count": 7,
+  "item_count": 9,
   "items": [
     {
       "title": "[正面] Une très belle surprise ce jeu !\r\nLes personnages...",
@@ -166,6 +166,54 @@
         "playtime_forever": 5529,
         "votes_up": 0,
         "timestamp_created": 1783317095
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[负面] Since Morimens disclosed whether AI/Machine transl...",
+      "summary": "Since Morimens disclosed whether AI/Machine translattion was used in your language I was surprised and disappointed to discover there is AI generated images used as well with 0 disclosure. I ignored numerous mild flags until it was blatantly AI (like Nautilia's nonsensical 'tentacles' that merge into eachother, begin and end in unnatural ways, random hair like projections in spots they shouldn't be, seperate cords having random smaller projections connecting them together in odd areas that are, again, nonsensical. \n\nNow I'm assuming all the mild AI flags I've deliberately ignored to give the benefit of the doubt are AI as well... undisclosed AI. \n\nThe story and concept are actually good so to see the game cheapened like this alongside the dishonesty leaves a sour taste. Can't recommend now.",
+      "source": "steam_review",
+      "time": "2026-07-06T13:01:44+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198141140538/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198141140538",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": false,
+        "playtime_forever": 463,
+        "votes_up": 0,
+        "timestamp_created": 1783342904
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 好玩",
+      "summary": "好玩",
+      "source": "steam_review",
+      "time": "2026-07-06T09:13:37+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199878178561/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199878178561",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 3157,
+        "votes_up": 0,
+        "timestamp_created": 1783329217
       },
       "region": "global",
       "archive_subtype": "review",
