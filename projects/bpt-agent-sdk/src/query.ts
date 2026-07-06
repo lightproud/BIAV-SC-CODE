@@ -61,7 +61,7 @@ import { JsonlSessionStore } from './sessions/store.js';
 import { MirroringSessionStore, encodeProjectKey } from './sessions/store-adapter.js';
 import { FileCheckpointStore } from './sessions/checkpoints.js';
 import { DeferredMcpRegistry, makeToolSearchTool } from './tools/toolsearch.js';
-import { mkdtempSync, rmSync } from 'node:fs';
+import { appendFileSync, mkdtempSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
@@ -121,7 +121,6 @@ const ACCEPTED_OPTION_KEYS: readonly string[] = [
   'forwardSubagentText',
   'title',
   'resumeSessionAt',
-  'debugFile',
   'pathToClaudeCodeExecutable',
   'executable',
   'executableArgs',
@@ -375,11 +374,22 @@ export function query(args: {
 
   const debugEnabled = options.debug === true;
   const stderrCb = options.stderr;
+  const debugFilePath = options.debugFile;
   const debug = (msg: string): void => {
     if (!debugEnabled) return;
     const line = `[bpt-agent-sdk] ${msg}\n`;
     if (stderrCb !== undefined) stderrCb(line);
     else process.stderr.write(line);
+    // P2 parity: when `debugFile` is set, also persist each debug line to it.
+    // Best-effort append (mirrors the session store): a debug-write failure must
+    // never crash the run, so errors are swallowed.
+    if (debugFilePath !== undefined) {
+      try {
+        appendFileSync(debugFilePath, line, 'utf8');
+      } catch {
+        // ignore — debug file is a diagnostic aid, not load-bearing
+      }
+    }
   };
 
   for (const key of ACCEPTED_OPTION_KEYS) {
@@ -543,6 +553,17 @@ export function query(args: {
     ...projectServers,
     ...(ownsMcp ? (options.mcpServers ?? {}) : {}),
   };
+  // P2 parity: track config provenance for mcpServerStatus().scope. `.mcp.json`
+  // servers are 'project'; programmatic options.mcpServers are 'local' (they win
+  // over a same-named project entry, matching the merge order above). A server
+  // that appears in statuses() but not here (added later via setMcpServers) is
+  // reported 'dynamic'.
+  const mcpScopeByName = new Map<string, 'project' | 'local'>();
+  for (const name of Object.keys(projectServers)) mcpScopeByName.set(name, 'project');
+  if (ownsMcp) {
+    for (const name of Object.keys(options.mcpServers ?? {}))
+      mcpScopeByName.set(name, 'local');
+  }
   const realMcp: McpRegistry =
     injected?.mcpRegistry ??
     new DefaultMcpRegistry({
@@ -1782,8 +1803,13 @@ export function query(args: {
     },
     async mcpServerStatus() {
       // The registry assembles the official McpServerToolInfo object form
-      // directly (T2-7 close-out) — no normalization layer needed.
-      return mcpEff.statuses();
+      // directly (T2-7 close-out) — no normalization layer needed. P2 parity:
+      // attach `scope` provenance ('project'/'local' from config source, else
+      // 'dynamic' for servers added after construction via setMcpServers).
+      return mcpEff.statuses().map((s) => ({
+        ...s,
+        scope: mcpScopeByName.get(s.name) ?? 'dynamic',
+      }));
     },
     async accountInfo() {
       return { apiKeySource: transport.apiKeySource() };

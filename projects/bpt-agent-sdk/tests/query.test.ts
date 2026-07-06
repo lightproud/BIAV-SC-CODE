@@ -12,12 +12,16 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
+import { z } from 'zod';
+
 import {
   ConfigurationError,
+  createSdkMcpServer,
   getSessionInfo,
   isAbortError,
   listSessions,
   query,
+  tool,
 } from '../src/index.js';
 import type {
   APIMessageParam,
@@ -851,6 +855,61 @@ describe('query() e2e - compat options, budget, control surface', () => {
     expect(init.available_output_styles).toContain('default');
     expect(init.models.length).toBeGreaterThan(0);
     expect(init.account).toEqual({ apiKeySource: 'user' });
+  });
+});
+
+describe('P2 query-level closures', () => {
+  it('debugFile: debug lines are appended to the configured file', async () => {
+    stubFetch(makeSSEFetch([textReplyEvents('ok')]));
+    const debugPath = join(cwd, 'bpt-debug.log');
+    const q = query({
+      prompt: 'go',
+      // `title` is an accepted-ignored option → guarantees ≥1 debug line even
+      // before the loop runs; the engine emits many more during the run.
+      options: baseOptions({ debug: true, debugFile: debugPath, title: 't' }),
+    });
+    await collect(q);
+
+    const contents = await readFile(debugPath, 'utf8');
+    expect(contents).toContain('[bpt-agent-sdk]');
+    expect(contents.trim().split('\n').length).toBeGreaterThan(0);
+  });
+
+  it('debugFile: not written when debug is off', async () => {
+    stubFetch(makeSSEFetch([textReplyEvents('ok')]));
+    const debugPath = join(cwd, 'bpt-debug-off.log');
+    const q = query({
+      prompt: 'go',
+      options: baseOptions({ debug: false, debugFile: debugPath, title: 't' }),
+    });
+    await collect(q);
+
+    await expect(readFile(debugPath, 'utf8')).rejects.toMatchObject({
+      code: 'ENOENT',
+    });
+  });
+
+  it('mcpServerStatus: scope is "local" for a programmatic options.mcpServers server', async () => {
+    stubFetch(makeSSEFetch([textReplyEvents('ok')]));
+    const srv = createSdkMcpServer({
+      name: 'inproc',
+      tools: [
+        tool('ping', 'ping', { msg: z.string() }, async () => ({
+          content: [{ type: 'text', text: 'pong' }],
+        })),
+      ],
+    });
+    const q = query({
+      prompt: 'go',
+      options: baseOptions({ mcpServers: { inproc: srv } }),
+    });
+
+    const statuses = await q.mcpServerStatus();
+    const inproc = statuses.find((s) => s.name === 'inproc');
+    expect(inproc).toBeDefined();
+    expect(inproc!.scope).toBe('local');
+
+    await collect(q);
   });
 });
 

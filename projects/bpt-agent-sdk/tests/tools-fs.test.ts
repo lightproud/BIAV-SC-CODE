@@ -915,6 +915,8 @@ describe('Write read-before-write gate (E4)', () => {
     const file = path.join(sandbox, 'editable.txt');
     await writeFile(file, 'alpha beta\n', 'utf8');
 
+    // P2: Edit now enforces the read-first gate too, so unlock with a Read.
+    await readTool.execute({ file_path: file }, gatedCtx());
     const edit = await editTool.execute(
       { file_path: file, old_string: 'alpha', new_string: 'gamma' },
       gatedCtx(),
@@ -926,6 +928,51 @@ describe('Write read-before-write gate (E4)', () => {
       gatedCtx(),
     );
     expect(res.isError).toBeFalsy();
+  });
+
+  it('P2: editing an existing un-read file is rejected with the verbatim official gate error and leaves the file untouched', async () => {
+    const file = path.join(sandbox, 'unread.txt');
+    await writeFile(file, 'alpha beta\n', 'utf8');
+
+    const edit = await editTool.execute(
+      { file_path: file, old_string: 'alpha', new_string: 'gamma' },
+      gatedCtx(),
+    );
+    expect(edit.isError).toBe(true);
+    expect(edit.content).toBe(GATE_ERROR);
+    // Untouched.
+    expect(await readFile(file, 'utf8')).toBe('alpha beta\n');
+  });
+
+  it('P2: a successful Read unlocks the Edit', async () => {
+    const file = path.join(sandbox, 'unlockme.txt');
+    await writeFile(file, 'alpha beta\n', 'utf8');
+
+    await readTool.execute({ file_path: file }, gatedCtx());
+    const edit = await editTool.execute(
+      { file_path: file, old_string: 'alpha', new_string: 'gamma' },
+      gatedCtx(),
+    );
+    expect(edit.isError).toBeFalsy();
+    expect(await readFile(file, 'utf8')).toBe('gamma beta\n');
+  });
+
+  it('P2: a prior Edit unlocks a subsequent Edit (edit registers its own path)', async () => {
+    const file = path.join(sandbox, 'twoedits.txt');
+    await writeFile(file, 'alpha beta gamma\n', 'utf8');
+
+    await readTool.execute({ file_path: file }, gatedCtx());
+    const first = await editTool.execute(
+      { file_path: file, old_string: 'alpha', new_string: 'one' },
+      gatedCtx(),
+    );
+    expect(first.isError).toBeFalsy();
+    const second = await editTool.execute(
+      { file_path: file, old_string: 'gamma', new_string: 'three' },
+      gatedCtx(),
+    );
+    expect(second.isError).toBeFalsy();
+    expect(await readFile(file, 'utf8')).toBe('one beta three\n');
   });
 
   it('the Set is shared by reference: a Read in one context unlocks a Write in another (subagent semantics)', async () => {

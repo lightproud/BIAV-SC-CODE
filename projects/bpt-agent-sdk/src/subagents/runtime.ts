@@ -460,6 +460,16 @@ export function createSubagentRuntime(
     signal: AbortSignal,
   ): Promise<void> => {
     if (!hooks.hasHooks('SubagentStop')) return;
+    // P2 parity: populate the official-required `agent_transcript_path` when the
+    // child transcript was persisted to a path-backed store (child transcripts
+    // append under {agentId}). filePath is a JsonlSessionStore concretion, not on
+    // the SessionStore interface, so duck-type it; external stores stay absent.
+    const filePathFn = (store as { filePath?: (id: string) => string } | undefined)
+      ?.filePath;
+    const transcriptPath =
+      persist && typeof filePathFn === 'function'
+        ? filePathFn.call(store, agentId)
+        : undefined;
     try {
       const agg = await hooks.run(
         'SubagentStop',
@@ -470,6 +480,9 @@ export function createSubagentRuntime(
           stop_hook_active: false,
           agent_id: agentId,
           agent_type: type,
+          ...(transcriptPath !== undefined
+            ? { agent_transcript_path: transcriptPath }
+            : {}),
         },
         undefined,
         type,

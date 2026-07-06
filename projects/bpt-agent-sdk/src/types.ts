@@ -460,8 +460,25 @@ export type PostToolUseFailureHookInput = BaseHookInput & {
   duration_ms?: number;
 };
 
+/** One tool invocation in a PostToolBatch, official `tool_calls[]` element shape. */
+export type PostToolBatchToolCall = {
+  tool_name: string;
+  tool_input: unknown;
+  tool_use_id?: string;
+};
+
 export type PostToolBatchHookInput = BaseHookInput & {
   hook_event_name: 'PostToolBatch';
+  /**
+   * Official field (P2 parity): the full tool_use blocks that ran in the batch,
+   * each carrying `tool_name`/`tool_input`/`tool_use_id`.
+   */
+  tool_calls: PostToolBatchToolCall[];
+  /**
+   * @deprecated Superseded by the official `tool_calls` field. Kept on a dual
+   * track so existing consumers keep compiling; carries the same tool names as
+   * `tool_calls.map(c => c.tool_name)`.
+   */
   tool_names: string[];
 };
 
@@ -766,7 +783,8 @@ export type McpServerStatus = {
    * registry with description and mapped annotation hints.
    */
   tools?: McpServerToolInfo[];
-  /** Provenance of the config. Typed for compat; not tracked by this engine. */
+  /** Provenance of the config (P2): 'project' (.mcp.json) / 'local'
+   *  (programmatic options.mcpServers) / 'dynamic' (added via setMcpServers). */
   scope?: 'user' | 'project' | 'local' | 'dynamic';
 };
 
@@ -980,7 +998,8 @@ export type SandboxContext = {
 };
 
 /** NEW-IN-DOCS: how reasoning content is surfaced (Options.thinking `display`).
- *  typed-not-populated in this engine — no summarization/omission layer wired. */
+ *  Forwarded verbatim to the wire thinking param (P2); the API owns the actual
+ *  summarize/omit behavior. */
 export type ThinkingDisplay = 'summarized' | 'omitted';
 
 export type ThinkingConfigParam =
@@ -990,7 +1009,7 @@ export type ThinkingConfigParam =
       budgetTokens?: number;
       budget_tokens?: number;
       budget?: number;
-      /** NEW-IN-DOCS. typed-not-populated. */
+      /** NEW-IN-DOCS. Forwarded to the wire thinking param (P2). */
       display?: ThinkingDisplay;
     }
   | { type: 'disabled' };
@@ -1116,6 +1135,11 @@ export type Options = {
   includeHookEvents?: boolean;
   includePartialMessages?: boolean;
   maxBudgetUsd?: number;
+  /**
+   * @deprecated Official docs mark `maxThinkingTokens` deprecated in favor of
+   * the structured `thinking` config. Still honored here as a budget fallback
+   * (see `thinking`); prefer `thinking: { type, budget_tokens }`.
+   */
   maxThinkingTokens?: number;
   maxTurns?: number;
   mcpServers?: Record<string, McpServerConfig>;
@@ -1373,6 +1397,12 @@ export type SDKPartialAssistantMessage = {
   session_id: string;
   event: RawMessageStreamEvent;
   parent_tool_use_id: string | null;
+  /**
+   * Official field (P2 parity): milliseconds from turn start to the first
+   * streamed token, attached once known (i.e. from the event that latches the
+   * first token onward). Absent on events emitted before the first token.
+   */
+  ttft_ms?: number;
 };
 
 /** Per-assistant-turn metrics (v0.3 budget instrumentation). */

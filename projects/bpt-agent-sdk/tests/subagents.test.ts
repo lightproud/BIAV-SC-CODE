@@ -45,6 +45,7 @@ import type {
   AgentDefinition,
   APIMessageParam,
   CallToolResult,
+  HookInput,
   McpServerStatus,
   Options,
   RawMessageStreamEvent,
@@ -137,6 +138,7 @@ type RuntimeHarness = {
   transport: MockTransport;
   starts: string[];
   stops: string[];
+  stopInputs: HookInput[];
 };
 
 function makeRuntime(cfg: {
@@ -154,6 +156,7 @@ function makeRuntime(cfg: {
   const transport = new MockTransport(cfg.scripts);
   const starts: string[] = [];
   const stops: string[] = [];
+  const stopInputs: HookInput[] = [];
   const hooks = new DefaultHookRunner({
     hooks: cfg.withStartStopHooks
       ? {
@@ -171,6 +174,7 @@ function makeRuntime(cfg: {
               hooks: [
                 async (input) => {
                   stops.push(input.agent_id ?? '?');
+                  stopInputs.push(input);
                 },
               ],
             },
@@ -207,7 +211,7 @@ function makeRuntime(cfg: {
     sessionId: () => engineConfig.sessionId,
     debug: () => {},
   };
-  return { runtime: createSubagentRuntime(opts), transport, starts, stops };
+  return { runtime: createSubagentRuntime(opts), transport, starts, stops, stopInputs };
 }
 
 const baseParams = (over: Partial<SpawnSubagentParams> = {}): SpawnSubagentParams => ({
@@ -996,6 +1000,47 @@ describe('subagent runtime — FORK mode', () => {
     expect(start).toBeDefined();
     expect(start?.['fork']).toBe(false);
     expect(store.entries.get('parent-sess')).toBeUndefined();
+  });
+
+  it('P2: SubagentStop carries agent_transcript_path for a path-backed persisted store', async () => {
+    class PathStore extends FakeStore {
+      filePath(id: string): string {
+        return `/fake/sessions/${id}.jsonl`;
+      }
+    }
+    const store = new PathStore();
+    const h = makeRuntime({
+      scripts: [textReplyEvents('child answer', { model: 'claude-sonnet-4-5' })],
+      store,
+      persist: true,
+      withStartStopHooks: true,
+    });
+    const res = await h.runtime.makeSpawnFn(0)(baseParams());
+    const stop = h.stopInputs.find(
+      (i) => (i as { agent_id?: string }).agent_id === res.agentId,
+    );
+    expect(stop).toBeDefined();
+    expect((stop as { agent_transcript_path?: string }).agent_transcript_path).toBe(
+      `/fake/sessions/${res.agentId}.jsonl`,
+    );
+  });
+
+  it('P2: SubagentStop omits agent_transcript_path when the store is not path-backed', async () => {
+    const store = new FakeStore();
+    const h = makeRuntime({
+      scripts: [textReplyEvents('child answer', { model: 'claude-sonnet-4-5' })],
+      store,
+      persist: true,
+      withStartStopHooks: true,
+    });
+    const res = await h.runtime.makeSpawnFn(0)(baseParams());
+    const stop = h.stopInputs.find(
+      (i) => (i as { agent_id?: string }).agent_id === res.agentId,
+    );
+    expect(stop).toBeDefined();
+    expect(
+      (stop as { agent_transcript_path?: string }).agent_transcript_path,
+    ).toBeUndefined();
   });
 
   it('still enforces the turn cap under fork', async () => {
