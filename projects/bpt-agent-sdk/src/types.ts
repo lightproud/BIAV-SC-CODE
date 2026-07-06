@@ -1488,6 +1488,14 @@ export type SDKResultMessage =
       errors?: string[];
       /** HTTP status when the run ended on an API error (e.g. 429, 529). */
       api_error_status?: number;
+      /**
+       * BPT-EXTENSION (SM-乙b): stable machine `code` of the underlying SDK
+       * error (E6c ErrorCode string, e.g. 'api_connection_failed') on an
+       * `error_during_execution` result. Lets a SessionManager classify a
+       * recoverable-vs-terminal API failure by code, not by message text.
+       * Absent for codeless failures and on non-error results.
+       */
+      error_code?: string;
       /** Time to first token (ms); only present when a token actually arrived. */
       ttft_ms?: number;
       ttft_stream_ms?: number;
@@ -2284,11 +2292,18 @@ export interface Query extends AsyncGenerator<SDKMessage, void> {
 // ---------------------------------------------------------------------------
 
 /**
- * BPT-EXTENSION: recovery/supervision knobs for a SessionManager.
- *
- * ACCEPTED (typed) but not yet effective in SM-甲 — supervision lands in the
- * next batch (SM-乙b: persistence hardening + crash auto-resume, proposal
- * §5/§6). Passing it today emits one debug notice and changes nothing.
+ * BPT-EXTENSION: recovery/supervision knobs for a SessionManager (SM-乙b,
+ * proposal §6). Effective on mgr.query() when ALL of the following hold:
+ * an external `sessionStore` is attached (shared options or per-query — no
+ * store means nowhere to resume from, R2), the prompt is a string (v1 scope:
+ * streaming-input conversations own their input channel and are not
+ * supervised), and `autoResume` is not false. A supervised query that fails
+ * with a RECOVERABLE error (§6.1: APIConnectionError, MCP connection-class
+ * McpError, or APIStatusError 429/5xx after transport retries) is transparently
+ * re-driven from the store via resume, up to `maxResumes` times; terminal
+ * errors (abort/config/4xx/unknown) always rethrow untouched. When the bound
+ * is exhausted the LAST error is rethrown with a `resumeAttempts` field
+ * attached (same error object, never re-wrapped).
  */
 export type SessionRecoveryOptions = {
   /** Auto-resume recoverable failures (default on once a store is attached). */
@@ -2305,7 +2320,8 @@ export type SessionRecoveryOptions = {
  * pool) is configured once and every mgr.query() borrows it.
  */
 export type SessionManagerOptions = Options & {
-  /** Typed for SM-乙b; supervision lands in the next batch. */
+  /** Supervised auto-resume knobs (SM-乙b, proposal §6). See
+   *  SessionRecoveryOptions for the activation conditions. */
   recovery?: SessionRecoveryOptions;
 };
 

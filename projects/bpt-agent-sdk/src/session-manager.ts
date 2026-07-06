@@ -21,8 +21,9 @@
  */
 
 import process from 'node:process';
+import { randomUUID } from 'node:crypto';
 
-import { ConfigurationError } from './errors.js';
+import { APIStatusError, ConfigurationError, errorCodeOf, isAbortError } from './errors.js';
 import { AnthropicTransport } from './transport/anthropic.js';
 import { DefaultMcpRegistry } from './mcp/registry.js';
 import { loadProjectMcpServers } from './mcp/project-config.js';
@@ -40,6 +41,7 @@ import type {
   Query,
   SDKMessage,
   SDKResultMessage,
+  SDKStatusMessage,
   SDKUserMessage,
   SessionManager,
   SessionManagerOptions,
@@ -49,6 +51,14 @@ import type {
 // ---------------------------------------------------------------------------
 // Usage accounting
 // ---------------------------------------------------------------------------
+
+/** An input stream that closes immediately: a resume re-drive replays nothing
+ *  from the caller — the resumed query's §5.2 redrive continues the
+ *  interrupted turn from the persisted transcript, then the empty stream ends
+ *  the run. */
+async function* emptyInputStream(): AsyncGenerator<SDKUserMessage, void> {
+  // Intentionally yields nothing.
+}
 
 const zeroUsage = (): NonNullableUsage => ({
   input_tokens: 0,
@@ -104,6 +114,10 @@ type QueryLedger = {
   costUsd: number;
   modelUsage: Record<string, ModelUsage>;
 };
+
+/** The error arm of the SDKResultMessage union (carries error_code /
+ *  api_error_status / errorMessage — the fields supervision classifies on). */
+type SDKResultErrorMessage = Exclude<SDKResultMessage, { subtype: 'success' }>;
 
 // ---------------------------------------------------------------------------
 // Shared registry facade
@@ -212,13 +226,6 @@ export function createBptSession(options: SessionManagerOptions = {}): SessionMa
     else process.stderr.write(line);
   };
 
-  if (recovery !== undefined) {
-    debug(
-      'options.recovery is accepted but has no effect yet: supervision lands ' +
-        'in the next batch (SM-乙b)',
-    );
-  }
-
   // --- Shared collaborators (§4.1) -----------------------------------------
   // One transport per manager: a stateless requester (each stream() call is an
   // independent fetch+SSE holding only config), safe to share across
@@ -314,17 +321,221 @@ export function createBptSession(options: SessionManagerOptions = {}): SessionMa
   }
 
   /**
-   * Single wrap point for every managed query run (the SM-乙b seam).
-   *
-   * SM-乙b (supervision/auto-resume, proposal §6) lands HERE in the next
-   * batch: it will wrap `start` in a bounded supervision loop — classify the
-   * failure via the stable error codes, re-invoke `start` with resume
-   * arguments up to recovery.maxResumes, and emit observability messages.
-   * SM-甲 only instruments usage accounting around the single run.
+   * §6.1 recovery decision — classification is by the stable machine `code`
+   * (E6c) / HTTP status, never by message text.
+   *   - recoverable: APIConnectionError (network / malformed SSE / idle
+   *     watchdog), MCP connection-class McpError, APIStatusError 429 or >=500
+   *     (transport already exhausted its own retries before surfacing);
+   *   - terminal: AbortError (user), ConfigurationError, NotImplementedError,
+   *     APIStatusError 4xx (non-429), and — fail-closed — any UNKNOWN /
+   *     codeless failure (never auto-resumed).
    */
-  function runManaged(start: () => Query, ledger: QueryLedger): Query {
-    const q = start();
-    return instrumentUsage(q, ledger);
+  function isRecoverableCode(code: string | undefined): boolean {
+    switch (code) {
+      case 'api_connection_failed':
+      case 'sse_malformed_frame':
+      case 'stream_idle_timeout':
+      case 'mcp_connect_timeout':
+      case 'mcp_connection_closed':
+      case 'mcp_server_exited':
+      case 'mcp_process_error':
+        return true;
+      default:
+        // Fail-closed: an unknown / codeless failure is never auto-resumed.
+        return false;
+    }
+  }
+
+  /** Classify a THROWN error. AbortError is the only failure this engine throws
+   *  to the query layer; API/connection failures surface as error RESULTS
+   *  (classified by isRecoverableResult). */
+  function isRecoverableError(err: unknown): boolean {
+    if (isAbortError(err)) return false;
+    if (err instanceof APIStatusError) return err.status === 429 || err.status >= 500;
+    return isRecoverableCode(errorCodeOf(err));
+  }
+
+  /** Classify an is_error RESULT (the engine's actual API-failure surface):
+   *  by HTTP status when present (429|>=500 recoverable, other 4xx terminal),
+   *  else by the stable error_code the engine stamps on the result. */
+  function isRecoverableResult(r: SDKResultErrorMessage): boolean {
+    if (r.api_error_status !== undefined) {
+      return r.api_error_status === 429 || r.api_error_status >= 500;
+    }
+    return isRecoverableCode(r.error_code);
+  }
+
+  /** §6.2 observability: one status message per auto-resume, carrying the
+   *  attempt count and the classified failure so the resume leaves a trace in
+   *  the consumer's own message stream (SDKStatusMessage — an existing
+   *  observability variant, no new type). */
+  function resumeObservation(
+    sessionId: string,
+    attempt: number,
+    maxResumes: number,
+    code: string,
+    reason: string,
+  ): SDKStatusMessage {
+    return {
+      type: 'system',
+      subtype: 'status',
+      uuid: randomUUID(),
+      session_id: sessionId,
+      status: 'auto-resume',
+      details: { attempt, maxResumes, code, reason },
+    };
+  }
+
+  /**
+   * Single wrap point for every managed query run. When `supervise` is off
+   * (no store, streaming input, or autoResume:false) this only instruments
+   * usage — behaviourally identical to SM-甲.
+   *
+   * When on, it merges usage instrumentation with the §6 supervision loop into
+   * ONE wrapped generator. DESIGN RECORD: the engine surfaces API / connection
+   * failures as an is_error RESULT message (only AbortError is thrown), so
+   * supervision keys off recoverable error RESULTS, not only throws:
+   *   - a recoverable error result is SWALLOWED (not forwarded); a status
+   *     observation is emitted and `start` is re-invoked with a resume arg so
+   *     the §5.2 redrive continues the interrupted turn — up to `maxResumes`;
+   *   - a terminal error result is FORWARDED unchanged (the honest terminal
+   *     outcome), never resumed;
+   *   - on exhaustion the last recoverable error result is forwarded with a
+   *     `resumeAttempts` field attached (the result-surface analog of the
+   *     spec's "rethrow with resumeAttempts" — preserving the engine's
+   *     result-not-throw surface keeps managed and standalone consumers
+   *     interoperable);
+   *   - a genuine THROW (AbortError) is rethrown, with `resumeAttempts`
+   *     attached iff at least one resume was tried.
+   * Standalone query() is untouched (no manager, no supervision).
+   */
+  function runManaged(
+    start: (resume?: { sessionId: string }) => Query,
+    ledger: QueryLedger,
+    supervise: boolean,
+  ): Query {
+    let q = start();
+    if (!supervise) {
+      return instrumentUsage(q, ledger);
+    }
+
+    const maxResumes = recovery?.maxResumes ?? 2;
+    let sessionId: string | undefined;
+    let attempts = 0;
+    // Status observations queued to surface (in the consumer's stream) just
+    // before the retried query's first message.
+    const observations: SDKMessage[] = [];
+
+    /** Arm a transparent resume: emit the observation, re-drive, bump count. */
+    const scheduleResume = (code: string, reason: string): void => {
+      attempts += 1;
+      debug(
+        `[session-manager] auto-resume ${attempts}/${maxResumes} ` +
+          `(session ${sessionId}, code ${code})`,
+      );
+      observations.push(
+        resumeObservation(sessionId!, attempts, maxResumes, code, reason),
+      );
+      // No prompt is re-sent (the resumed query's §5.2 redrive continues the
+      // interrupted turn against the persisted history).
+      q = start({ sessionId: sessionId! });
+    };
+
+    const wrapped: Query = {
+      async next(
+        ...nextArgs: [] | [unknown]
+      ): Promise<IteratorResult<SDKMessage, void>> {
+        for (;;) {
+          const obs = observations.shift();
+          if (obs !== undefined) return { done: false, value: obs };
+
+          let r: IteratorResult<SDKMessage, void>;
+          try {
+            r = await q.next(...nextArgs);
+          } catch (err) {
+            // The engine throws only AbortError (terminal); classify anyway.
+            if (
+              isRecoverableError(err) &&
+              sessionId !== undefined &&
+              attempts < maxResumes
+            ) {
+              scheduleResume(
+                errorCodeOf(err) ?? 'unknown',
+                err instanceof Error ? err.message : String(err),
+              );
+              continue;
+            }
+            if (attempts > 0 && err !== null && typeof err === 'object') {
+              throw Object.assign(err, { resumeAttempts: attempts });
+            }
+            throw err;
+          }
+
+          if (r.done === true) return r;
+
+          const v = r.value;
+          if (v.type === 'system' && v.subtype === 'init') {
+            sessionId = v.session_id;
+          }
+
+          // The `subtype` discriminant (not is_error) narrows to the error arm.
+          if (v.type === 'result' && v.subtype !== 'success') {
+            record(ledger, v);
+            if (
+              isRecoverableResult(v) &&
+              sessionId !== undefined &&
+              attempts < maxResumes
+            ) {
+              // Swallow this error result and re-drive transparently.
+              scheduleResume(
+                v.error_code ?? `http_${v.api_error_status ?? 'error'}`,
+                v.errorMessage ?? 'recoverable error',
+              );
+              continue;
+            }
+            // Terminal or exhausted: forward the result, annotated with the
+            // resume scene when at least one resume was tried.
+            if (attempts > 0) {
+              return {
+                done: false,
+                value: Object.assign({ ...v }, { resumeAttempts: attempts }) as SDKMessage,
+              };
+            }
+            return r;
+          }
+
+          if (v.type === 'result') record(ledger, v);
+          return r;
+        }
+      },
+      // Iterator + control plane all delegate to the CURRENT q (it is
+      // reassigned on each transparent resume), so a consumer that calls
+      // return()/throw()/interrupt()/... after a resume reaches the live query,
+      // not the abandoned one.
+      return: (value) => q.return(value),
+      throw: (err?: unknown) => q.throw(err),
+      [Symbol.asyncIterator](): Query {
+        return wrapped;
+      },
+      interrupt: () => q.interrupt(),
+      setPermissionMode: (mode) => q.setPermissionMode(mode),
+      setModel: (model) => q.setModel(model),
+      setMaxThinkingTokens: (n) => q.setMaxThinkingTokens(n),
+      initializationResult: () => q.initializationResult(),
+      supportedCommands: () => q.supportedCommands(),
+      supportedModels: () => q.supportedModels(),
+      supportedAgents: () => q.supportedAgents(),
+      mcpServerStatus: () => q.mcpServerStatus(),
+      accountInfo: () => q.accountInfo(),
+      reconnectMcpServer: (name) => q.reconnectMcpServer(name),
+      toggleMcpServer: (name, enabled) => q.toggleMcpServer(name, enabled),
+      setMcpServers: (servers) => q.setMcpServers(servers),
+      rewindFiles: (id, opts) => q.rewindFiles(id, opts),
+      stopTask: (taskId) => q.stopTask(taskId),
+      streamInput: (stream) => q.streamInput(stream),
+      close: () => q.close(),
+    };
+    return wrapped;
   }
 
   const mgr: SessionManager = {
@@ -345,14 +556,29 @@ export function createBptSession(options: SessionManagerOptions = {}): SessionMa
         modelUsage: {},
       };
       ledgers.push(ledger);
+      // §6.2 activation gate: supervise only when a store is attached (nowhere
+      // to resume from otherwise, R2), autoResume is not disabled, and the
+      // prompt is a string (v1 scope — a streaming-input conversation owns its
+      // own input channel and is not supervised).
+      const supervise =
+        effective.sessionStore !== undefined &&
+        recovery?.autoResume !== false &&
+        typeof queryArgs.prompt === 'string';
       return runManaged(
-        () =>
+        (resume) =>
           query({
-            prompt: queryArgs.prompt,
-            options: effective,
+            // On a resume re-drive no prompt is re-sent: an immediately-closing
+            // input stream lets the resumed query's §5.2 redrive continue the
+            // interrupted turn, then end.
+            prompt: resume !== undefined ? emptyInputStream() : queryArgs.prompt,
+            options:
+              resume !== undefined
+                ? { ...effective, resume: resume.sessionId }
+                : effective,
             _internal: { transport, mcpRegistry: shared },
           }),
         ledger,
+        supervise,
       );
     },
 
