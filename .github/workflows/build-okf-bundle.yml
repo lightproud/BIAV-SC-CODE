@@ -7,6 +7,11 @@ on:
       - 'scripts/build_okf_bundle.py'
       - 'projects/wiki/data/processed/characters.json'
       - 'projects/news/output/source-health.json'
+  # 丙（守密人 2026-07-06）：sources 层派生自每小时更新的社区档案，push-path 触发盖不住
+  # 数据演进带来的层漂移（新平台/新档案指针）。每日重建一次把 committed bundle 同步上来，
+  # 兜住 test_kb_governance（该测试在 sparse-checkout CI 下跳过、只本地全量现形，见其注释）。
+  schedule:
+    - cron: '17 6 * * *'
   workflow_dispatch:
 
 concurrency:
