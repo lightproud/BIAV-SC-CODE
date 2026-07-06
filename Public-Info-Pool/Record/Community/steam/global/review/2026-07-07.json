@@ -1,8 +1,8 @@
 {
   "date": "2026-07-07",
-  "archived_at": "2026-07-06T17:40:57.133877+00:00",
+  "archived_at": "2026-07-06T19:49:45.660111+00:00",
   "source": "steam",
-  "item_count": 1,
+  "item_count": 3,
   "items": [
     {
       "title": "[正面] muito cool",
@@ -22,6 +22,54 @@
         "playtime_forever": 152,
         "votes_up": 0,
         "timestamp_created": 1783354976
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] very good",
+      "summary": "very good",
+      "source": "steam_review",
+      "time": "2026-07-06T18:34:43+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199768239385/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199768239385",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 32428,
+        "votes_up": 0,
+        "timestamp_created": 1783362883
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[负面] 没吃过sh的可以试一下，无限逼氪，nt出金概率，歪两次才能有保底，还必须吃满得到。资源扣扣搜搜而且打...",
+      "summary": "没吃过sh的可以试一下，无限逼氪，nt出金概率，歪两次才能有保底，还必须吃满得到。资源扣扣搜搜而且打一关耗时非常长。想当M的可以试试被这游戏调的感觉",
+      "source": "steam_review",
+      "time": "2026-07-06T17:59:52+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199482720848/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199482720848",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": false,
+        "playtime_forever": 691,
+        "votes_up": 0,
+        "timestamp_created": 1783360792
       },
       "region": "global",
       "archive_subtype": "review",

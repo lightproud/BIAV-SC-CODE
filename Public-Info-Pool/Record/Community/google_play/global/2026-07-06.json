@@ -1,8 +1,8 @@
 {
   "date": "2026-07-06",
-  "archived_at": "2026-07-06T17:40:57.205802+00:00",
+  "archived_at": "2026-07-06T19:49:45.737539+00:00",
   "source": "google_play",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "title": "[Google Play 好评] ★5 I really love this game! The stories are",
@@ -16,6 +16,20 @@
       "tags": [],
       "lang": "en",
       "platform_region": "us",
+      "region": "global"
+    },
+    {
+      "title": "[Google Play 好评] ★5 赞✨👍！",
+      "summary": "赞✨👍！",
+      "source": "google_play",
+      "time": "2026-07-05T17:46:38",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=zh_CN#gp-76f8661b-513b-45d0-b27c-a667dc06df2f",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "Zhi Shao Tan",
+      "tags": [],
+      "lang": "zh",
+      "platform_region": "cn",
       "region": "global"
     }
   ],

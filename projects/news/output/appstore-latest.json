@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-06T17:40:03.366362+00:00",
+  "collected_at": "2026-07-06T19:48:50.690880+00:00",
   "source": "appstore",
   "data_layer": "output",
-  "item_count": 9,
+  "item_count": 11,
   "items": [
     {
       "source": "appstore",
@@ -57,33 +57,53 @@
     },
     {
       "source": "appstore",
-      "time": "2026-06-16T02:49:31-07:00",
-      "lang": "en",
-      "title": "Amazing game",
-      "summary": "One of the best gacha games out there. The devs are incredibly talented and generous.",
-      "url": "https://apps.apple.com/au/app/id6447354150?see-all=reviews#as-14188874283",
-      "author": "Temiiiiiiii88",
+      "time": "2026-06-07T01:18:16-07:00",
+      "lang": "th",
+      "title": "Hidden Gem Game!!!?",
+      "summary": "เกมดีมากครับ เนื้อเรื่อวน่าติดตาม",
+      "url": "https://apps.apple.com/th/app/id6447354150?see-all=reviews#as-14153734950",
+      "author": "BoBoss375",
       "engagement": 5
     },
     {
       "source": "appstore",
-      "time": "2026-06-28T19:17:29-07:00",
-      "lang": "ko",
-      "title": "좋아! 좋아욤!",
-      "summary": "겜 재밌어욤!",
-      "url": "https://apps.apple.com/kr/app/id6447354150?see-all=reviews#as-14239124258",
-      "author": "ㄱ다드",
+      "time": "2026-06-07T01:11:59-07:00",
+      "lang": "th",
+      "title": "Best Game Ever",
+      "summary": "Nice story and design, super recommended for everyone and thank you for giving me such a fantastic experience.",
+      "url": "https://apps.apple.com/th/app/id6447354150?see-all=reviews#as-14153720246",
+      "author": "Fookfik_TH",
       "engagement": 5
     },
     {
       "source": "appstore",
-      "time": "2026-06-07T01:01:16-07:00",
-      "lang": "en",
-      "title": "not bad",
-      "summary": "objectively speaking, it's pretty good, they give out a lot of freebies. However, they've been intentionally skimping on resources lately, and the demands of character progression are rising. Think carefully before diving in",
-      "url": "https://apps.apple.com/au/app/id6447354150?see-all=reviews#as-14153694947",
-      "author": "navirebu",
-      "engagement": 4
+      "time": "2026-06-09T19:52:22-07:00",
+      "lang": "ja",
+      "title": "最高",
+      "summary": "よくここまでダークなストーリーでソシャゲをやろうと思ったなというくらいにダーク（褒め言葉",
+      "url": "https://apps.apple.com/jp/app/id6743462069?see-all=reviews#as-14164514269",
+      "author": "ゆっくりまりちゃ",
+      "engagement": 5
+    },
+    {
+      "source": "appstore",
+      "time": "2026-06-08T03:56:03-07:00",
+      "lang": "ja",
+      "title": "面白いが人を選ぶのは確か",
+      "summary": "クトゥルフ系モチーフが好きな人にはお勧めできるが、そうでない人にはキツい描写が多いかもしれない\nあと課金しなくても全然遊べるので、逆に運営が心配になる",
+      "url": "https://apps.apple.com/jp/app/id6743462069?see-all=reviews#as-14157905936",
+      "author": "つよいぞ僕らのGファルセイバー",
+      "engagement": 5
+    },
+    {
+      "source": "appstore",
+      "time": "2026-06-06T18:25:42-07:00",
+      "lang": "ja",
+      "title": "おもろい",
+      "summary": "雰囲気が良い。\nチャラくて軽い物語が嫌いな人はやってみてください。",
+      "url": "https://apps.apple.com/jp/app/id6743462069?see-all=reviews#as-14152769127",
+      "author": "ててててかさは",
+      "engagement": 5
     },
     {
       "source": "appstore",
