@@ -1,7 +1,7 @@
 {
   "generated": "2026-07-06",
   "stats": {
-    "nodes": 326,
+    "nodes": 327,
     "edges": 390
   },
   "nodes": [
@@ -2707,6 +2707,17 @@
       "tier": "search"
     },
     {
+      "id": "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
+      "type": "documentation",
+      "title": "bpt-sdk-l5-fullround-report-20260705",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
       "id": "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "type": "documentation",
       "title": "bpt-sdk-official-arm-protocol-profile-20260705",
@@ -3987,6 +3998,12 @@
     },
     {
       "source": "/community/community-bilibili.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
       "target": "/characters/54117.md",
       "rel": "提及:哈姆林",
       "rel_type": "mention"
@@ -4013,12 +4030,6 @@
       "source": "/community/community-bilibili.md",
       "target": "/characters/15587.md",
       "rel": "提及:希洛",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/130226.md",
-      "rel": "提及:沙耶",
       "rel_type": "mention"
     },
     {
@@ -5331,6 +5342,12 @@
     },
     {
       "source": "/sources/bilibili.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
       "target": "/characters/54117.md",
       "rel": "提及:哈姆林",
       "rel_type": "mention"
@@ -5357,12 +5374,6 @@
       "source": "/sources/bilibili.md",
       "target": "/characters/15587.md",
       "rel": "提及:希洛",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/130226.md",
-      "rel": "提及:沙耶",
       "rel_type": "mention"
     },
     {
