@@ -42,6 +42,7 @@ import type {
   McpRegistry,
   McpToolEntry,
   ToolContext,
+  Transport,
 } from './internal/contracts.js';
 import { AnthropicTransport } from './transport/anthropic.js';
 import { DefaultPermissionGate } from './permissions/gate.js';
@@ -324,9 +325,34 @@ type ResolvedSession = {
 // query()
 // ---------------------------------------------------------------------------
 
+/**
+ * @internal Shared-collaborator injection seam for the SessionManager
+ * (src/session-manager.ts). NOT public API — the public Options surface is
+ * unchanged and standalone query() behavior is byte-identical when this is
+ * absent.
+ *
+ * Ownership contract (谁拥有谁拆 / "whoever constructs it closes it"):
+ * a field left undefined means query() constructs its OWN collaborator and
+ * tears it down exactly as before; a field provided means the collaborator is
+ * BORROWED — the injector (the SessionManager) owns its lifecycle and this
+ * query must never close it. Query-scoped resources (shells, sandbox tmp dir,
+ * checkpoint store) are always owned and reclaimed by the query itself.
+ */
+export type QueryInternalInjection = {
+  /** Shared Messages-API transport. Stateless per-request (each stream() is an
+   *  independent fetch+SSE) so borrowing needs no teardown at all. */
+  transport?: Transport;
+  /** Shared MCP registry (manager-owned, already connect-coalesced). The query
+   *  must NOT closeAll() it — sibling conversations are multiplexing the same
+   *  server connections. */
+  mcpRegistry?: McpRegistry;
+};
+
 export function query(args: {
   prompt: string | AsyncIterable<SDKUserMessage>;
   options?: Options;
+  /** @internal See QueryInternalInjection. Absent for all public callers. */
+  _internal?: QueryInternalInjection;
 }): Query {
   const { prompt } = args;
   const options: Options = args.options ?? {};
@@ -381,12 +407,18 @@ export function query(args: {
           debug,
         })
       : localStore;
-  const transport = new AnthropicTransport({
-    provider: options.provider,
-    env,
-    debug,
-    betas: options.betas,
-  });
+  // Shared-coordination seam (SessionManager 甲): an injected transport is
+  // borrowed (manager-owned, stateless requester — nothing to tear down);
+  // otherwise construct our own exactly as before.
+  const injected = args._internal;
+  const transport: Transport =
+    injected?.transport ??
+    new AnthropicTransport({
+      provider: options.provider,
+      env,
+      debug,
+      betas: options.betas,
+    });
   // Safety interlock: bypassPermissions must be explicitly unlocked with
   // allowDangerouslySkipPermissions (matches @anthropic-ai/claude-agent-sdk).
   // Enforced for the initial mode here and for setPermissionMode() below.
@@ -484,17 +516,35 @@ export function query(args: {
 
   // Merge project .mcp.json servers (when settingSources includes 'project')
   // under the explicit options.mcpServers (which win on key collision).
-  const projectServers = loadProjectMcpServers(cwd, options.settingSources, debug);
+  //
+  // Shared-coordination seam (SessionManager 甲): an injected registry replaces
+  // local construction entirely — the server set comes from the shared layer
+  // (D1: no per-query private MCP overlay in v1), so no local merge happens
+  // and `ownsMcp` gates every teardown site below (谁拥有谁拆: the query only
+  // closes a registry it constructed itself; a borrowed one stays connected
+  // for sibling conversations and is closed by SessionManager.close() alone).
+  const ownsMcp = injected?.mcpRegistry === undefined;
+  const projectServers = ownsMcp
+    ? loadProjectMcpServers(cwd, options.settingSources, debug)
+    : {};
   const mergedServers: Record<string, McpServerConfig> = {
     ...projectServers,
-    ...(options.mcpServers ?? {}),
+    ...(ownsMcp ? (options.mcpServers ?? {}) : {}),
   };
-  const realMcp = new DefaultMcpRegistry({
-    servers: mergedServers,
-    env,
-    debug,
-    elicitation: options.onElicitation,
-  });
+  const realMcp: McpRegistry =
+    injected?.mcpRegistry ??
+    new DefaultMcpRegistry({
+      servers: mergedServers,
+      env,
+      debug,
+      elicitation: options.onElicitation,
+    });
+  // Configured MCP server count: drives ToolSearch deferral and MCP resource
+  // tool visibility. On the borrowed path the shared registry is the source of
+  // truth (statuses() lists every registered server, connected or not).
+  const mcpServerCount = ownsMcp
+    ? Object.keys(mergedServers).length
+    : realMcp.statuses().length;
   const mcp: McpRegistry =
     bareDisallowed.length > 0
       ? new ToolFilterMcpRegistry(realMcp, isBareDisallowed)
@@ -503,7 +553,7 @@ export function query(args: {
   // servers are configured (auto-activates past the threshold, or forced by
   // options.toolSearch). When null, mcpEff === mcp (exact v0.1 behavior).
   const deferred =
-    options.toolSearch !== false && Object.keys(mergedServers).length > 0
+    options.toolSearch !== false && mcpServerCount > 0
       ? new DeferredMcpRegistry(mcp, { debug })
       : null;
   const mcpEff: McpRegistry = deferred ?? mcp;
@@ -525,7 +575,7 @@ export function query(args: {
   // The MCP resource tools are only advertised by default when MCP servers
   // exist (they are no-ops otherwise). An explicit options.tools selection is
   // honored verbatim.
-  if (!Array.isArray(options.tools) && Object.keys(mergedServers).length === 0) {
+  if (!Array.isArray(options.tools) && mcpServerCount === 0) {
     builtinTools.delete('ListMcpResourcesTool');
     builtinTools.delete('ReadMcpResourceTool');
   }
@@ -1491,12 +1541,20 @@ export function query(args: {
           );
         }
       }
-      try {
-        await mcpEff.closeAll();
-      } catch (err) {
-        debug(
-          `mcp closeAll failed: ${err instanceof Error ? err.message : String(err)}`,
-        );
+      // Lifecycle contract (SessionManager 甲, proposal §4.2): whoever
+      // constructed the MCP registry closes it. A standalone query owns its
+      // registry and tears it down here exactly as before; a managed query
+      // only BORROWS the shared registry — sibling conversations are still
+      // multiplexing those connections, so closing them here is the design's
+      // #1 regression red line. mgr.close() is the single teardown point.
+      if (ownsMcp) {
+        try {
+          await mcpEff.closeAll();
+        } catch (err) {
+          debug(
+            `mcp closeAll failed: ${err instanceof Error ? err.message : String(err)}`,
+          );
+        }
       }
     }
   }
@@ -1680,11 +1738,15 @@ export function query(args: {
       if (!outer.signal.aborted) outer.abort(reason);
       subagentRuntime.abortAll();
       void inner.return(undefined).catch(() => undefined);
-      void mcpEff.closeAll().catch((err) => {
-        debug(
-          `mcp closeAll failed: ${err instanceof Error ? err.message : String(err)}`,
-        );
-      });
+      // Ownership contract: only close a registry this query constructed. A
+      // borrowed (SessionManager-shared) registry outlives any single query.
+      if (ownsMcp) {
+        void mcpEff.closeAll().catch((err) => {
+          debug(
+            `mcp closeAll failed: ${err instanceof Error ? err.message : String(err)}`,
+          );
+        });
+      }
     },
   };
 

@@ -392,6 +392,7 @@ build red.
 | `src/mcp/` | `McpError`, `NotImplementedError`, `ConfigurationError` |
 | `src/sessions/` | `ConfigurationError` |
 | `src/query.ts` | `ConfigurationError` |
+| `src/session-manager.ts` | `ConfigurationError` |
 | `src/tools/bash.ts` | `Error` |
 
 (`src/tools/bash.ts` keeps one bare `Error` for spawn impossibility - the

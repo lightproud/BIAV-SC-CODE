@@ -7,6 +7,9 @@
  */
 
 export { query } from './query.js';
+// BPT-EXTENSION: in-process multi-conversation coordinator (SessionManager /
+// SessionManagerOptions / SessionManagerUsage types ride the types.js export).
+export { createBptSession } from './session-manager.js';
 export { tool, createSdkMcpServer } from './mcp/sdk-server.js';
 export { getSessionInfo, listSessions } from './sessions/store.js';
 export {

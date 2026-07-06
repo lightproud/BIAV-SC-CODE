@@ -2280,6 +2280,75 @@ export interface Query extends AsyncGenerator<SDKMessage, void> {
 }
 
 // ---------------------------------------------------------------------------
+// SessionManager (BPT-EXTENSION: in-process multi-conversation coordinator)
+// ---------------------------------------------------------------------------
+
+/**
+ * BPT-EXTENSION: recovery/supervision knobs for a SessionManager.
+ *
+ * ACCEPTED (typed) but not yet effective in SM-甲 — supervision lands in the
+ * next batch (SM-乙b: persistence hardening + crash auto-resume, proposal
+ * §5/§6). Passing it today emits one debug notice and changes nothing.
+ */
+export type SessionRecoveryOptions = {
+  /** Auto-resume recoverable failures (default on once a store is attached). */
+  autoResume?: boolean;
+  /** Bounded resume attempts per query (supervision default: 2). */
+  maxResumes?: number;
+};
+
+/**
+ * BPT-EXTENSION: options for createBptSession(). The official
+ * @anthropic-ai/claude-agent-sdk has no in-process multi-conversation
+ * coordinator — its coordination lives inside the CLI host process, invisible
+ * to SDK callers. Here the shared layer (one transport + one MCP connection
+ * pool) is configured once and every mgr.query() borrows it.
+ */
+export type SessionManagerOptions = Options & {
+  /** Typed for SM-乙b; supervision lands in the next batch. */
+  recovery?: SessionRecoveryOptions;
+};
+
+/** BPT-EXTENSION: read-only cross-conversation usage aggregate (D2: view
+ *  only — no hard cross-conversation budget cap in v1). */
+export type SessionManagerUsage = {
+  /** Sum of every managed conversation's cumulative estimated cost (USD). */
+  totalCostUsd: number;
+  /** Token totals summed across all managed conversations. */
+  usage: NonNullableUsage;
+  /** Per-model totals merged across all managed conversations. */
+  modelUsage: Record<string, ModelUsage>;
+  /** Number of mgr.query() calls issued so far (open or finished). */
+  queries: number;
+};
+
+/**
+ * BPT-EXTENSION: in-process object-level coordinator (proposal
+ * bpt-sdk-session-manager-20260706, 层一). Owns one shared AnthropicTransport
+ * and one shared MCP registry; queries created through it borrow both.
+ * Lifecycle contract (§4.2): the manager owns the shared connections —
+ * queries never close them; close() is the single teardown point.
+ */
+export interface SessionManager {
+  /**
+   * Start a managed conversation. Same shape as the standalone query();
+   * per-query options may override per-conversation knobs, but `provider` and
+   * `mcpServers` come from the shared layer — passing either throws
+   * ConfigurationError (D1: no private per-query MCP overlay in v1).
+   * Throws ConfigurationError after close().
+   */
+  query(args: {
+    prompt: string | AsyncIterable<SDKUserMessage>;
+    options?: Options;
+  }): Query;
+  /** Read-only aggregated usage/cost across all managed conversations. */
+  usage(): SessionManagerUsage;
+  /** Tear down the shared connections. Idempotent. After it resolves,
+   *  further query() calls throw ConfigurationError. */
+  close(): Promise<void>;
+}
+
+// ---------------------------------------------------------------------------
 // Session info (listSessions surface)
 // ---------------------------------------------------------------------------
 
