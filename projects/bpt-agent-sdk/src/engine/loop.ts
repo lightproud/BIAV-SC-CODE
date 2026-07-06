@@ -445,6 +445,9 @@ export async function* runAgentLoop(
     if (t === undefined || t.type === 'disabled') {
       return undefined; // unset / explicitly disabled -> omit the param entirely
     }
+    // Forward the caller's `display` ('summarized'|'omitted') sub-option onto
+    // whichever wire form the model takes (P2 parity: was typed-not-populated).
+    const display = t.display;
     // Resolve "thinking on?" + a fallback budget from either an adaptive or an
     // enabled config. `adaptive` carries no budget of its own; a budget only
     // matters when the live model is pre-adaptive (below) or as the on/off gate.
@@ -468,7 +471,7 @@ export async function* runAgentLoop(
     // of which the caller/preset expressed. Recomputed per turn, so a mid-run
     // setModel() to a different generation is handled. See thinking-model.ts.
     if (supportsAdaptiveThinking(config.model)) {
-      return { type: 'adaptive' };
+      return { type: 'adaptive', ...(display !== undefined ? { display } : {}) };
     }
     // Pre-adaptive model: enabled + clamped budget. The Messages API requires
     // budget_tokens < max_tokens or it 400s; the default budget (10000) exceeds
@@ -481,7 +484,11 @@ export async function* runAgentLoop(
           `${config.maxOutputTokens}; clamped to ${budget_tokens} to satisfy the API`,
       );
     }
-    return { type: 'enabled', budget_tokens };
+    return {
+      type: 'enabled',
+      budget_tokens,
+      ...(display !== undefined ? { display } : {}),
+    };
   };
 
   // Per-request overhead folded into the compaction token estimate. The system
@@ -634,6 +641,11 @@ export async function* runAgentLoop(
             session_id: config.sessionId,
             event,
             parent_tool_use_id: config.parentToolUseId ?? null,
+            // P2 parity: attach ttft once the first token has been latched
+            // (same figure as the result's ttft_ms); absent on earlier events.
+            ...(firstTokenAtMs !== undefined
+              ? { ttft_ms: firstTokenAtMs - startedAt }
+              : {}),
           };
         }
         accumulator.feed(event);
@@ -1215,6 +1227,13 @@ export async function* runAgentLoop(
             {
               ...baseHookFields,
               hook_event_name: 'PostToolBatch',
+              // Official field (P2): full tool_use blocks. `tool_names` rides
+              // along deprecated for existing consumers.
+              tool_calls: toolUses.map((b) => ({
+                tool_name: b.name,
+                tool_input: b.input,
+                tool_use_id: b.id,
+              })),
               tool_names: toolUses.map((b) => b.name),
             },
             undefined,

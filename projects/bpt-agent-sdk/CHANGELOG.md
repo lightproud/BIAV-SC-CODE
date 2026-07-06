@@ -11,6 +11,33 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.12.0 — 2026-07-06
+
+- **P2 PARTIAL-closure pass**: a row-by-row re-audit of every `docs/COMPAT.md`
+  PARTIAL entry against the current source reconciled the stale rows to FULL
+  (code was already at parity, mostly from the v0.7 campaign) and closed 8
+  implementable REAL-GAPs with code + tests:
+  - **feat**: Edit now enforces the official read-before-write gate (refuses to
+    edit a file this session has not Read, matching Write and the official Edit
+    tool). **Behavioral change** — see MIGRATION §P2.
+  - **feat**: `stream_event` (`SDKPartialAssistantMessage`) carries the official
+    `ttft_ms?`, attached once the first token latches.
+  - **feat**: the `PostToolBatch` hook input carries the official `tool_calls[]`
+    (`{tool_name, tool_input, tool_use_id}` each) alongside the now-deprecated
+    `tool_names` (additive/dual-track).
+  - **feat**: `SubagentStop` populates the official-required
+    `agent_transcript_path` when the child transcript is on a path-backed store.
+  - **feat**: `thinking.display` ('summarized'|'omitted') is forwarded onto the
+    wire thinking param (adaptive + enabled forms).
+  - **feat**: `debugFile` is now honored — debug lines are best-effort appended
+    to the file (was accepted-and-ignored).
+  - **feat**: `mcpServerStatus().scope` tracks config provenance
+    ('project' / 'local' / 'dynamic').
+  - **chore**: `maxThinkingTokens` carries the official `@deprecated` tag.
+  - Deferred (honest, non-structural): Read `.ipynb` cell rendering (still raw
+    JSON) and the legacy `sse` MCP transport (being retired upstream).
+  - +13 tests (1427 total green); `tsc`/`build` exit 0.
+
 ## 0.11.0 — 2026-07-06
 
 - **feat (public built-in tool metadata, black-pool ContextRing request

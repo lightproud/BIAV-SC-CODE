@@ -70,7 +70,8 @@ function pendingInput(): AsyncIterable<SDKUserMessage> {
 }
 
 // ---------------------------------------------------------------------------
-// T2-3: 22 official runtime-ACCEPTED Options fields now on the type surface
+// T2-3: official runtime-ACCEPTED Options fields on the type surface (21 warn;
+// debugFile graduated to honored in P2, so it no longer warns)
 // ---------------------------------------------------------------------------
 
 describe('T2-3: official ACCEPTED Options fields are typed + warn once each', () => {
@@ -86,7 +87,7 @@ describe('T2-3: official ACCEPTED Options fields are typed + warn once each', ()
       provider: { apiKey: 'test-key' },
       cwd,
       env: { PATH: process.env.PATH, HOME: process.env.HOME },
-      // --- the 22 T2-3 fields ---
+      // --- the T2-3 fields (debugFile now honored, not warned) ---
       agent: 'main-agent',
       agentProgressSummaries: true,
       debugFile: join(cwd, 'debug.log'),
@@ -117,7 +118,8 @@ describe('T2-3: official ACCEPTED Options fields are typed + warn once each', ()
     const accepted = [
       'agent',
       'agentProgressSummaries',
-      'debugFile',
+      // debugFile graduated out of ACCEPTED-IGNORED in P2 — it is now honored
+      // (debug lines appended to the file), so it no longer warns.
       'effort',
       'executable',
       'executableArgs',
@@ -138,7 +140,7 @@ describe('T2-3: official ACCEPTED Options fields are typed + warn once each', ()
       'toolAliases',
       'toolConfig',
     ];
-    expect(accepted).toHaveLength(22);
+    expect(accepted).toHaveLength(21);
     for (const key of accepted) {
       expect(
         lines.some((l) => l.includes(`option '${key}' is accepted for compatibility`)),

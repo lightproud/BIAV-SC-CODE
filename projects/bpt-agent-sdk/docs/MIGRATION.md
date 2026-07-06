@@ -244,3 +244,23 @@ Prompt caching is ON by default (matches the official SDK); disable with
    app uses (fs / Bash / MCP), one resume (`resume: sessionId`).
 5. Compare `result.metrics` across a few representative tasks against the old
    engine (see `tests/integration/ab-benchmark.mjs`).
+
+## 6. P2 partial-closure changes (0.12.0) {#p2}
+
+The 0.12.0 PARTIAL-closure pass is drop-in-safe except for ONE behavioral
+change; the rest are additive:
+
+- **BEHAVIORAL — Edit read-before-write gate.** The `Edit` tool now refuses to
+  edit an existing file this session has not `Read` first, returning the verbatim
+  official error (`<tool_use_error>File has not been read yet. Read it first
+  before writing to it.</tool_use_error>`) and leaving the file untouched. This
+  matches the official Edit tool and the existing Write gate. A prior successful
+  `Read` — or a prior successful `Edit`/`Write` of the same path (which register
+  it) — unlocks the edit. If your harness previously relied on Edit mutating an
+  un-read file, insert a `Read` first. (The gate only engages when the engine
+  supplies a read-set, i.e. inside `query()`; it is off for direct unit calls
+  that pass no `readFilePaths`.)
+- **ADDITIVE — no action needed.** `stream_event.ttft_ms`, `PostToolBatch.tool_calls[]`
+  (the old `tool_names` still rides along, now deprecated), `SubagentStop.agent_transcript_path`,
+  `thinking.display` forwarding, `debugFile` writing, and `mcpServerStatus().scope`
+  are all new/populated fields — existing consumers keep working unchanged.

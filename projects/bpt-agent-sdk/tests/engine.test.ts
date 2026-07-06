@@ -1602,3 +1602,107 @@ describe('engine loop - truncated-turn graceful degradation (E3)', () => {
     expect(result.errors?.some((e) => /stream failed/.test(e))).toBe(true);
   });
 });
+
+// ---------------------------------------------------------------------------
+// P2 partial-closure (engine level): ttft_ms on stream_event, thinking.display
+// forwarding, PostToolBatch tool_calls[]. See docs/COMPAT.md.
+// ---------------------------------------------------------------------------
+
+describe('P2: stream_event ttft_ms', () => {
+  it('attaches ttft_ms once the first token is latched (absent on earlier events)', async () => {
+    const transport = new MockTransport([textReplyEvents('hi there')]);
+    const deps = makeDeps(transport);
+    const history = [{ role: 'user' as const, content: 'go' }];
+
+    const messages = await collect(
+      runAgentLoop(history, deps, makeConfig({ includePartialMessages: true })),
+    );
+
+    const partials = messages.filter(
+      (m): m is SDKPartialAssistantMessage => m.type === 'stream_event',
+    );
+    expect(partials.length).toBeGreaterThan(0);
+    // message_start precedes the first token → no ttft yet.
+    const first = partials[0]!;
+    expect(first.event.type).toBe('message_start');
+    expect(first.ttft_ms).toBeUndefined();
+    // From the content_block_start onward ttft is present and non-negative.
+    const withTtft = partials.filter((p) => p.ttft_ms !== undefined);
+    expect(withTtft.length).toBeGreaterThan(0);
+    for (const p of withTtft) expect(p.ttft_ms).toBeGreaterThanOrEqual(0);
+  });
+});
+
+describe('P2: thinking.display forwarding', () => {
+  it('forwards display onto the adaptive wire form (4.6+ model)', async () => {
+    const transport = new MockTransport([textReplyEvents('ok')]);
+    const deps = makeDeps(transport);
+    await collect(
+      runAgentLoop([{ role: 'user' as const, content: 'go' }], deps,
+        makeConfig({ thinking: { type: 'adaptive', display: 'summarized' } }),
+      ),
+    );
+    expect(transport.requests[0]!.thinking).toEqual({
+      type: 'adaptive',
+      display: 'summarized',
+    });
+  });
+
+  it('forwards display onto the enabled wire form (pre-4.6 model)', async () => {
+    const transport = new MockTransport([textReplyEvents('ok')]);
+    const deps = makeDeps(transport);
+    await collect(
+      runAgentLoop([{ role: 'user' as const, content: 'go' }], deps,
+        makeConfig({
+          model: 'claude-haiku-4-5',
+          maxOutputTokens: 8192,
+          thinking: { type: 'enabled', budget_tokens: 2000, display: 'omitted' },
+        }),
+      ),
+    );
+    expect(transport.requests[0]!.thinking).toEqual({
+      type: 'enabled',
+      budget_tokens: 2000,
+      display: 'omitted',
+    });
+  });
+
+  it('omits display when the caller did not set it', async () => {
+    const transport = new MockTransport([textReplyEvents('ok')]);
+    const deps = makeDeps(transport);
+    await collect(
+      runAgentLoop([{ role: 'user' as const, content: 'go' }], deps,
+        makeConfig({ thinking: { type: 'adaptive' } }),
+      ),
+    );
+    expect(transport.requests[0]!.thinking).toEqual({ type: 'adaptive' });
+  });
+});
+
+describe('P2: PostToolBatch tool_calls[]', () => {
+  it('the hook input carries official tool_calls[] alongside deprecated tool_names', async () => {
+    const transport = new MockTransport([
+      toolUseReplyEvents('Read', { file_path: '/a.txt' }, { id: 'toolu_x' }),
+      textReplyEvents('done'),
+    ]);
+    const executed: Array<Record<string, unknown>> = [];
+    const tools = new Map<string, BuiltinTool>([['Read', makeFakeReadTool(executed)]]);
+    const hooks = new FakeHookRunner({ PostToolBatch: {} });
+    const deps = makeDeps(transport, { builtinTools: tools, hooks });
+
+    await collect(
+      runAgentLoop([{ role: 'user' as const, content: 'go' }], deps, makeConfig()),
+    );
+
+    const batch = hooks.runs.find((r) => r.event === 'PostToolBatch');
+    expect(batch).toBeDefined();
+    const input = batch!.input as {
+      tool_calls: Array<{ tool_name: string; tool_input: unknown; tool_use_id?: string }>;
+      tool_names: string[];
+    };
+    expect(input.tool_names).toEqual(['Read']);
+    expect(input.tool_calls).toEqual([
+      { tool_name: 'Read', tool_input: { file_path: '/a.txt' }, tool_use_id: 'toolu_x' },
+    ]);
+  });
+});

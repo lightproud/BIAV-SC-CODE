@@ -58,8 +58,8 @@ export type StreamRequest = {
   messages: APIMessageParam[];
   tools?: APIToolDefinition[];
   thinking?:
-    | { type: 'adaptive' }
-    | { type: 'enabled'; budget_tokens: number }
+    | { type: 'adaptive'; display?: 'summarized' | 'omitted' }
+    | { type: 'enabled'; budget_tokens: number; display?: 'summarized' | 'omitted' }
     | { type: 'disabled' };
   temperature?: number;
   signal?: AbortSignal;

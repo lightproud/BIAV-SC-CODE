@@ -14,6 +14,35 @@ including the drop-in breaking-gap list and the NEW-IN-DOCS ledger
 `Public-Info-Pool/Resource/repo-engineering/bpt-sdk-official-docs-interface-audit-20260705.md`.
 Stale rows flagged there were corrected in this file on 2026-07-05.
 
+## v0.12 status (P2 PARTIAL-closure pass, 2026-07-06)
+
+A row-by-row re-audit of every PARTIAL entry against the CURRENT source (four
+parallel read-only audits) sorted them into three buckets: (a) STALE — code was
+already at parity, only the note lagged (esp. the v0.7 campaign); (b) GENUINE —
+an intrinsic/structural divergence of a headless direct-API engine (no
+subprocess/CLI/ripgrep/PDF-dep/plugins); (c) REAL-GAP — implementable. This pass
+**closed 8 REAL-GAPs with code + tests** and reconciled the stale rows to FULL:
+
+- **Edit read-before-write gate** — Edit now refuses to edit a file this session
+  has not Read (matches Write / the official Edit tool). *Behavioral change* —
+  see MIGRATION §P2.
+- **stream_event `ttft_ms`** — attached once the first token latches.
+- **PostToolBatch `tool_calls[]`** — the official full-block shape now rides
+  alongside the deprecated `tool_names`.
+- **SubagentStop `agent_transcript_path`** — populated for a path-backed
+  persisted store.
+- **thinking `display`** ('summarized'|'omitted') — forwarded onto the wire.
+- **`maxThinkingTokens`** carries the official `@deprecated` tag.
+- **`debugFile`** — debug lines are now appended to it (was accepted-ignored).
+- **mcpServerStatus `scope`** — provenance ('project'/'local'/'dynamic') tracked.
+
+Deferred (honest, non-structural, not yet done): Read `.ipynb` cell rendering
+(currently returned as raw JSON — usable, not cell-formatted) and the legacy
+`sse` MCP transport (being retired upstream). Structural PARTIALs (continue,
+agents name/POST, permissionMode auto-heuristic, stderr, sandbox platform
+backends, Monitor/Workflow push channel, Grep no-ripgrep, Read PDF-slice,
+accountInfo, supportedCommands) stay PARTIAL by design.
+
 ## v0.7 status (completion-inventory full-implementation campaign, 2026-07-05)
 
 The keeper ruling 「全面实现」 drove a full-surface alignment pass. What landed
@@ -168,11 +197,11 @@ Tiers:
 | Export | Tier | Notes |
 |---|---|---|
 | `query()` | FULL | string and AsyncIterable prompt modes |
-| `tool()` | PARTIAL | zod v4 raw shapes; JSON Schema derived via `z.toJSONSchema`; 5th param SHAPE MISMATCH: official takes `extras?: { annotations?: ToolAnnotations }` (wrapper object), ours takes bare `annotations` — annotations passed the official way are silently dropped (docs-audit 2026-07-05) |
+| `tool()` | FULL | zod v4 raw shapes; JSON Schema derived via `z.toJSONSchema`; 5th param accepts BOTH the official `extras?: { annotations?: ToolAnnotations }` wrapper (primary overload) and the legacy bare `ToolAnnotations` — resolved by the `'annotations' in arg` key test (P2 re-audit: the old "silently dropped" note was stale, fixed in v0.7 #480; test mcp.test.ts) |
 | `createSdkMcpServer()` | FULL | in-process dispatch, no wire protocol |
-| `listSessions()` / `getSessionInfo()` | PARTIAL | reads this SDK's own JSONL store only; option bag accepts `dir` (alias for `sessionDir`) + `limit`; our `includeWorkspace` is typed-not-honored AND the official option is named `includeWorktrees` (naming mismatch); `getSessionInfo()` returns `null` vs official `undefined`; `SDKSessionInfo` lacks official `gitBranch`/`tag`, `customTitle` is typed-never-populated, summary has no customTitle > auto > firstPrompt precedence (docs-audit 2026-07-05) |
+| `listSessions()` / `getSessionInfo()` | FULL | reads this SDK's own JSONL store (structural scope). Option is `includeWorktrees` (`includeWorkspace` kept as a `@deprecated` alias); `getSessionInfo()` returns `undefined` for a miss; `SDKSessionInfo` carries `gitBranch`/`tag`, `customTitle` is populated from `meta_update`, summary follows customTitle > firstPrompt precedence (no auto tier — this store keeps no auto summaries). P2 re-audit: every docs-audit sub-claim was stale, fixed in v0.7 #480 (tests sessions-store / b2b-alignment) |
 | `startup()` / `WarmQuery` | UNSUPPORTED | no subprocess to pre-warm; direct API needs no warmup |
-| `getSessionMessages()` / `renameSession()` / `tagSession()` / `deleteSession()` / `forkSession()` | PARTIAL | implemented in v0.2 over this SDK's own JSONL store (or an external `sessionStore`); no Claude Code store interop. Docs-audit 2026-07-05: rename/tag ROUND-TRIP IS BROKEN — they append `meta_update` records that `store.load` never reads back, so titles/tags are write-only; `getSessionMessages` lacks all three official options (`dir`/`limit`/`offset`); `renameSession` skips the official non-empty-title validation |
+| `getSessionMessages()` / `renameSession()` / `tagSession()` / `deleteSession()` / `forkSession()` | FULL | over this SDK's own JSONL store (or an external `sessionStore`); no Claude Code store interop (structural). P2 re-audit — all three docs-audit sub-claims were stale, fixed in v0.7 #480: rename/tag round-trip WORKS (`meta_update` records are read back last-write-wins by `store.load`, incl. tag-clear on `null`); `getSessionMessages` has `dir`/`limit`/`offset`; `renameSession` validates non-empty title (`ConfigurationError`). Tests sessions-store / b2b-alignment |
 | `resolveSettings()` | UNSUPPORTED | settings engine is CLI-coupled (N/A-by-design) |
 
 ## Engine difference (the point of this SDK)
@@ -217,14 +246,14 @@ SDK implements the agent loop directly against the public Messages API:
 | `continue` | PARTIAL | resumes latest session from this SDK's store |
 | `cwd` | FULL | |
 | `env` | FULL | used for transport + Bash tool |
-| `fallbackModel` | PARTIAL | one retry per turn on 429/5xx |
+| `fallbackModel` | FULL | on a 429/5xx the turn retries once on the fallback model, then stays switched for the rest of the run (official intent; P2 re-audit confirmed complete — test conformance-l2-locks) |
 | `forkSession` | FULL | |
 | `hooks` | PARTIAL | see hook table |
 | `includePartialMessages` | FULL | raw stream events as `stream_event` |
 | `maxBudgetUsd` | PARTIAL | based on estimated cost (a static price table, not billing truth); stop ORDERING matches official 2.1.201 (E5, 2026-07-05): a turn requesting tools past the cap stops BEFORE any tool executes (zero side effects, no tool_result user turn, terminal `error_max_budget_usd`), while a naturally ending turn still yields its completed success result (conformance run-l2 s12 converged) |
-| `maxThinkingTokens` / `thinking` | PARTIAL | **Model-gated wire form (v0.8.1)**: `computeThinking` emits `{type:'adaptive'}` on 4.6+ models and `{type:'enabled', budget_tokens}` on pre-4.6 models — recomputed each turn from the live model, since the two forms 400 on the wrong tier (root-cause fix for the v0.7 haiku 400-storm, run 28753349435). On the `claude_code` preset path thinking is DEFAULT-ON like the official CLI (opt out with `maxThinkingTokens: 0` or `thinking: {type:'disabled'}`); off the preset path `maxThinkingTokens` alone is only a budget fallback and sends no thinking param on its own. The official `budgetTokens` field name IS accepted (alongside the `budget_tokens`/`budget` aliases — the old "not the official budgetTokens" note was stale, docs-audit 2026-07-05); the official `display` sub-option ('summarized'\|'omitted') is not modeled (NEW-IN-DOCS); official docs mark `maxThinkingTokens` deprecated, our type carries no `@deprecated` tag yet |
+| `maxThinkingTokens` / `thinking` | FULL | **Model-gated wire form (v0.8.1)**: `computeThinking` emits `{type:'adaptive'}` on 4.6+ models and `{type:'enabled', budget_tokens}` on pre-4.6 models — recomputed each turn from the live model, since the two forms 400 on the wrong tier (root-cause fix for the v0.7 haiku 400-storm, run 28753349435). On the `claude_code` preset path thinking is DEFAULT-ON like the official CLI (opt out with `maxThinkingTokens: 0` or `thinking: {type:'disabled'}`); off the preset path `maxThinkingTokens` alone is only a budget fallback and sends no thinking param on its own. The official `budgetTokens` field name IS accepted (alongside the `budget_tokens`/`budget` aliases). **P2**: the official `display` sub-option ('summarized'\|'omitted') is now forwarded onto the wire thinking param (adaptive + enabled forms; test engine.test.ts), and `maxThinkingTokens` now carries the official `@deprecated` tag |
 | `maxTurns` | FULL | |
-| `mcpServers` | PARTIAL | stdio/http/sdk FULL; `sse` legacy transport UNSUPPORTED |
+| `mcpServers` | PARTIAL | stdio/http/sdk FULL; `sse` legacy transport UNSUPPORTED (throws NotImplementedError → `failed` status). P2 re-audit: `sse` is being retired upstream — implementable (an SSE MCP client, src/mcp/http.ts) but deferred; the three modern transports are complete |
 | `model` | FULL | default `ANTHROPIC_MODEL` env or `claude-sonnet-4-5` |
 | `permissionMode` | PARTIAL | all 6 values incl. `auto` (the old "`auto` not offered" note was stale — offered since v0.2, docs-audit 2026-07-05); our `auto` is a HEURISTIC classifier while the official docs describe a model-driven classifier (semantics differ). `bypassPermissions` requires the `allowDangerouslySkipPermissions` interlock (below) |
 | `allowDangerouslySkipPermissions` | FULL | safety interlock: `bypassPermissions` (initial or via `setPermissionMode`) throws `ConfigurationError` unless this is `true`. BPT-only strictness: official 0.3.199/2.1.201 does NOT enforce the interlock live - it proceeds to the model without the flag (conformance run-l2 s6-bypass-interlock-refusal, 2026-07-05) |
@@ -234,11 +263,11 @@ SDK implements the agent loop directly against the public Messages API:
 | `includeEnvironmentContext` | FULL | **BPT extension** — inject official-style `<env>` block (default true on the preset) |
 | `stderr` | PARTIAL | receives debug log lines (no subprocess stderr exists) |
 | `strictMcpConfig` | ACCEPTED | typed but consulted nowhere in src; the old "only options servers are ever used" rationale is stale since v0.5 `settingSources` can load `.mcp.json` servers, and no strict/lax fork exists to lock (conformance-l2-locks reconciliation, 2026-07-05) |
-| `systemPrompt` | PARTIAL | preset `claude_code` maps to this SDK's own harness prompt (+`append`); **BPT extension** `{ type: 'segments', segments: [{text, cache?}] }` forwards caller-composed blocks verbatim with per-segment cache breakpoints (the generic seam for host prompt layering — up to 3 cached system segments; message-caching off in this path). The host owns which layers/order/trust; the engine only places the wire breakpoints |
-| `tools` | PARTIAL | string[] filters built-ins; preset = all built-ins |
+| `systemPrompt` | FULL | preset `claude_code` maps to this SDK's own harness prompt (+`append`); the proprietary CLI prompt is unobtainable, so the preset is the open reproduction (P2 re-audit: both paths implemented, additive segments seam below — not a capability gap); **BPT extension** `{ type: 'segments', segments: [{text, cache?}] }` forwards caller-composed blocks verbatim with per-segment cache breakpoints (the generic seam for host prompt layering — up to 3 cached system segments; message-caching off in this path). The host owns which layers/order/trust; the engine only places the wire breakpoints |
+| `tools` | FULL | string[] restricts built-ins by name (unknown names warned+ignored); preset/undefined = all built-ins; the Agent + MCP-resource tools fold into the same filter (P2 re-audit: matches official semantics exactly — no behavioral gap) |
 | `betas` | FULL | forwarded as `anthropic-beta` header |
 | `includeHookEvents` | FULL | v0.4: emits `hook_started` / `hook_response` pairs (per callback invocation, correlated by `hook_id`) into the stream |
-| `debug` / `debugFile` | PARTIAL | `debug` → stderr callback; `debugFile` ACCEPTED |
+| `debug` / `debugFile` | FULL | `debug` → stderr callback (or process.stderr); **P2**: `debugFile` now honored — each debug line is best-effort appended to the file (was accepted-ignored; test query.test.ts) |
 | `outputFormat` | FULL | json_schema validate + re-prompt + `structured_output` result (v0.2; moved out of the stale ACCEPTED row, docs-audit 2026-07-05) |
 | `onElicitation` | FULL | MCP elicitation callback (v0.2); auto-decline when absent |
 | `sessionStore` / `sessionStoreFlush` | FULL | external store mirror (v0.2); flush modes `batched`/`eager`, default `batched` matches official |
@@ -251,8 +280,8 @@ SDK implements the agent loop directly against the public Messages API:
 
 | Tool | Tier | Notes |
 |---|---|---|
-| Read | PARTIAL | text files (cat -n) + images (PNG/JPEG/GIF/WebP → image block) + PDF (→ base64 `document` block; the API's handle-tool-calls docs allow `document` inside tool_result, though the base64 source there is supported-but-not-explicitly-demonstrated); all magic-byte sniffed (task #17); notebooks not rendered; oversized files (>50MB) rejected with a Grep hint rather than buffered. v0.7: official `pages` param (PDF page range) validated to contract (1-based, ascending, ≤20); PDF page-slicing itself is HONEST-unsupported (no PDF dep) — a `pages` read of a PDF errors clearly rather than silently returning the whole document, and `pages` on a non-PDF errors. Path fence removed (#483 keeper ruling): resolves to any location the process can reach, permission gate is the sole access control |
-| Write / Edit | PARTIAL | same input field names (`file_path`, `old_string`, …); Write enforces the official read-before-write gate (E4, 2026-07-05: a bare Write over an existing un-read file errors with the verbatim official text and leaves the file untouched; new files pass; a successful Read unlocks - pinned live, L5 code-03 r1 vs r2; KD-L3-06 retired). OUR chosen extensions where the pinned evidence is silent: a successful Write/Edit also registers its path (create-then-revise does not self-block), and the gate spans subagents (one read-set per query). Edit itself has no read-first gate (official Edit does); success/error wording differs elsewhere (KD-L3-05/07/08). Path fence removed (#483) — same posture as Read |
+| Read | PARTIAL | text files (cat -n) + images (PNG/JPEG/GIF/WebP → image block) + PDF (→ base64 `document` block; the API's handle-tool-calls docs allow `document` inside tool_result, though the base64 source there is supported-but-not-explicitly-demonstrated); all magic-byte sniffed (task #17); notebooks returned as raw JSON text — cells not rendered individually (P2: a closable, NON-structural sub-gap — deferred, not yet done); oversized files (>50MB) rejected with a Grep hint rather than buffered. v0.7: official `pages` param (PDF page range) validated to contract (1-based, ascending, ≤20); PDF page-slicing itself is HONEST-unsupported (no PDF dep) — a `pages` read of a PDF errors clearly rather than silently returning the whole document, and `pages` on a non-PDF errors. Path fence removed (#483 keeper ruling): resolves to any location the process can reach, permission gate is the sole access control |
+| Write / Edit | FULL | same input field names (`file_path`, `old_string`, …); BOTH enforce the official read-before-write gate — a bare Write/Edit over an existing un-read file errors with the verbatim official text and leaves the file untouched; new files pass (Write); a successful Read unlocks (Write E4 2026-07-05 pinned live L5 code-03 r1 vs r2; **Edit gate added in P2** to match the official Edit tool — behavioral change, MIGRATION §P2; test tools-fs.test.ts). OUR chosen extensions where the pinned evidence is silent: a successful Write/Edit also registers its path (create-then-revise does not self-block), and the gate spans subagents (one read-set per query). Success/error wording differs elsewhere (KD-L3-05/07/08). Path fence removed (#483) — same posture as Read |
 | Bash | PARTIAL | Windows: shell resolved via `CLAUDE_CODE_GIT_BASH_PATH` -> Git-for-Windows standard locations (official-parity posture; actionable error when absent, bare `bash`/WSL never tried; foreground+background termination route through planProcessKill so win32 taskkill is used, #482/#484). v0.5: `cd` + exported env persist across calls (state-file replay — functions/aliases/unexported vars do NOT persist; not a long-lived shell process) and `run_in_background` launches a detached shell whose id feeds BashOutput/KillShell. v0.6: sandboxed by default when a backend resolves (see the `sandbox` option row); foreground and background both wrap through the backend and run in their own process group (timeout/abort reap the whole group; `--unshare-pid` + SIGKILL escalation reaps across the sandbox pid namespace). v0.7: `dangerouslyDisableSandbox` is ALWAYS in the schema (official parity); it is a no-op without a sandbox and CANNOT bypass the gate (escape still needs sandbox active + allowEscape + an independent ask) |
 | Task quadruplet (TaskCreate/TaskGet/TaskUpdate/TaskList) | FULL | v0.7: the DEFAULT task surface (official 0.3.142: TodoWrite off by default, `CLAUDE_CODE_ENABLE_TASKS=0` reverts to TodoWrite-only). Symmetric dependency edges (blocks/blockedBy), owner/status workflow, session-shared store (parent + subagents see one list); TaskGet unknown-id returns null (not error) per official |
 | ExitPlanMode | FULL | v0.7: really flips the permission gate plan→default (main loop and subagents each flip their own gate); `allowedPrompts` echoed not applied (no NL prompt rules in this gate); honest errors when unbridged or not in plan mode |
@@ -275,7 +304,7 @@ SDK implements the agent loop directly against the public Messages API:
 | `system/init` | PARTIAL | apiKeySource, tools, mcp_servers, model, permissionMode, agents, claude_code_version, betas, skills, plugins ALL emitted (the old "claude_code_version/betas/skills/plugins absent" note was stale — docs-audit 2026-07-05); `slash_commands`/`skills` always `[]`; `plugins` element shape is `string[]` vs official `{name, path}[]`; `claude_code_version`/`skills`/`plugins` typed optional where official requires them |
 | `assistant` | FULL | full `APIAssistantMessage` |
 | `user` (echo + tool results) | FULL | prompt echo and tool_result user turns both yielded and persisted in order |
-| `stream_event` | PARTIAL | behind `includePartialMessages`; `SDKPartialAssistantMessage` lacks the official `ttft_ms?` field (docs-audit 2026-07-05) |
+| `stream_event` | FULL | behind `includePartialMessages`; **P2**: `SDKPartialAssistantMessage` now carries the official `ttft_ms?` field, attached from the event that latches the first token onward (test engine.test.ts) |
 | `result` success / error_max_turns / error_during_execution / `error_max_budget_usd` / `error_max_structured_output_retries` | PARTIAL | success arm carries ttft_ms + structured_output + deferred_tool_use + v0.3 `metrics`; error arm carries both `errorMessage: string` and the official-parallel `errors: string[]` (v0.4). Mid-stream SSE truncation degrades gracefully like official 2.1.201 (E3, 2026-07-05): the blocks the wire delivered whole are salvaged - partial text becomes the `success` answer, complete tool_use blocks EXECUTE (at either cut depth, with or without stop_reason) and the loop re-requests to deliver the tool_result; the connection error rides `errors` as a non-fatal note on the terminal result (former KD-L4-04 + all three truncation engine findings retired; residual KD-L4-02: official also appends the error as assistant text and throws from the iterator post-result - deliberately not replicated). An UNCLOSED tool_use (mid-transmission input) never executes; nothing salvageable falls back to `error_during_execution`. Remaining fault-path divergence: on a terminal non-retryable 400 ours ends with a clean `result/error_during_execution` where official surfaces the error as assistant text plus `result/success` then throws (KD-L4-01; run-l4 l4-http400-non-retryable, l4-script-exhausted-400-terminal). Reporting semantics on streamed multi-turn input match official (E2, 2026-07-05, KD-L5-04 retired): `num_turns`/`usage` are PER-RESULT (that turn's own figures), `total_cost_usd`/`duration_api_ms` are session-cumulative; `modelUsage` stays session-cumulative (official per-result semantics unobserved - our choice); internal `maxTurns`/`maxBudgetUsd` enforcement remains session-wide. Query-layer synthetic results (hook-block / pre-turn cap stop / interrupt) report `num_turns: 0` + zero `usage` (no engine turn ran for them; official shape unobserved) |
 | `system/compact_boundary` | FULL | emitted on manual `/compact` + auto-compaction (v0.2) |
 | `system/mirror_error` | FULL | emitted on a session-store mirror failure |
@@ -319,17 +348,17 @@ prompt_suggestion) are unemitted-typed. `SDKRateLimitEvent` gains the official
 | PreToolUse | FULL | allow/deny/ask + updatedInput (ask rewrite survives to canUseTool); deny > ask > allow; input carries `tool_use_id` (the old "lacks" note was stale — docs-audit 2026-07-05) |
 | PostToolUse | FULL | additionalContext + updatedToolOutput + `continue:false`; input carries `tool_use_id` + `duration_ms` (the old "lacks" note was stale — docs-audit 2026-07-05) |
 | PostToolUseFailure | FULL | |
-| PostToolBatch | PARTIAL | fires per batch; input is `{ tool_names }` not the official `{ tool_calls[] }`; `continue:false` honored |
-| UserPromptSubmit | PARTIAL | additionalContext appended; a block skips the prompt in streaming mode / ends the run in string mode |
+| PostToolBatch | FULL | fires per batch; **P2**: input carries the official `tool_calls[]` (each `{tool_name, tool_input, tool_use_id}`) alongside the deprecated `tool_names`; `continue:false` honored (test engine.test.ts) |
+| UserPromptSubmit | FULL | additionalContext appended; a block skips the prompt in streaming mode / ends the run in string mode (one prompt to skip — matches official semantics; P2 re-audit — tests query.test.ts) |
 | MessageDisplay | PARTIAL | v0.7: official 5-field incremental protocol emitted (turn_id/message_id/index/final/delta); fires once per completed message (so `final` is always true, `delta` is the whole message), not per true delta; `message_text` kept deprecated |
 | Setup / TeammateIdle / TaskCompleted / ConfigChange / WorktreeCreate / WorktreeRemove | TYPED (v0.7) | NEW-IN-DOCS hook events typed into HookEvent/HookInput but typed-not-fired — no natural runtime hook point in a headless engine (no setup phase / teammates / settings-merge engine; worktree + task-completed lifecycles have no honest hook site here) |
 | Stop | FULL | fired at natural end of a run |
 | SessionStart / SessionEnd | FULL | |
 | Notification | ACCEPTED | never fired in v0.1 (no code path emits it) |
-| SubagentStart / SubagentStop | PARTIAL | fire since v0.2 (the old "never fire" note was stale — docs-audit 2026-07-05); SubagentStop is emitted WITHOUT the official-required `agent_transcript_path`. v0.7: input types gain optional `background_tasks`/`session_crons`/`last_assistant_message` (NEW-IN-DOCS, typed-not-populated) |
+| SubagentStart / SubagentStop | PARTIAL | fire since v0.2 (the old "never fire" note was stale — docs-audit 2026-07-05); **P2**: SubagentStop now populates the official-required `agent_transcript_path` for a path-backed persisted store (absent for a non-path store — test subagents.test.ts). v0.7: input types gain optional `background_tasks`/`session_crons`/`last_assistant_message` (NEW-IN-DOCS, typed-not-populated — no headless source, keeps this row PARTIAL) |
 | PreCompact | FULL | fires on manual `/compact` + auto-compaction since v0.2 (the old "never fires" note was stale — docs-audit 2026-07-05) |
 | PermissionRequest | ACCEPTED | never fires in v0.1 |
-| `defer` permission decision | PARTIAL | end-to-end since v0.2. v0.7: `deferred_tool_use` now carries the official `id`/`name`/`input` field names alongside the deprecated `tool_use_id`/`tool_name`/`tool_input` (dual-track), and the official `stop_reason: "tool_deferred"` IS modeled; an unrecognized `permissionDecision` still fails closed as deny |
+| `defer` permission decision | FULL | end-to-end since v0.2. v0.7: `deferred_tool_use` carries the official `id`/`name`/`input` field names alongside the deprecated `tool_use_id`/`tool_name`/`tool_input` (dual-track), and the official `stop_reason: "tool_deferred"` IS modeled; an unrecognized `permissionDecision` fails closed as deny (P2 re-audit — effectively full; test tool-types.test.ts) |
 | legacy `decision: 'approve'`/`'block'` | FULL | mapped to allow/deny in aggregation (allow only when no explicit `permissionDecision` on the same output) |
 | Matcher semantics | FULL | exact-set vs regex rules per docs |
 | `async: true` outputs | FULL | fire-and-forget |
@@ -341,8 +370,8 @@ prompt_suggestion) are unemitted-typed. `SDKRateLimitEvent` gains the official
 |---|---|---|
 | `interrupt()` | FULL | |
 | `setPermissionMode()` / `setModel()` / `setMaxThinkingTokens()` | FULL | |
-| `initializationResult()` / `supportedModels()` / `supportedCommands()` / `supportedAgents()` | PARTIAL | static/empty data (no CLI to introspect) |
-| `mcpServerStatus()` | PARTIAL | carries `config` (echoed back) + per-server `tools[]` when connected; `scope` typed but not tracked (task #17). v0.7: `tools` is the official OBJECT array (`{name, description?, annotations{readOnly/destructive/openWorld}?}`), assembled at the registry — the former `string[]` arm is gone |
+| `initializationResult()` / `supportedModels()` / `supportedCommands()` / `supportedAgents()` | PARTIAL | P2 re-audit: `supportedModels` returns a real known-model list, `supportedAgents` returns the configured agents, `initializationResult` returns real agents/models/account — all NON-empty. Only `supportedCommands` is genuinely `[]` (no slash-command framework — structural), which keeps this grouped row PARTIAL |
+| `mcpServerStatus()` | FULL | carries `config` (echoed back) + per-server `tools[]` when connected; **P2**: `scope` now tracked — 'project' (`.mcp.json`) / 'local' (programmatic `options.mcpServers`) / 'dynamic' (added via `setMcpServers`); test query.test.ts. v0.7: `tools` is the official OBJECT array (`{name, description?, annotations{readOnly/destructive/openWorld}?}`), assembled at the registry |
 | `accountInfo()` | PARTIAL | apiKeySource only |
 | `streamInput()` | FULL | streaming-input mode |
 | `close()` | FULL | |

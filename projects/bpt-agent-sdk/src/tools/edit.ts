@@ -132,6 +132,17 @@ export const editTool: BuiltinTool = {
         throw e;
       }
 
+      // Read-before-write gate (P2 parity): the official Edit tool refuses to
+      // edit a file this session has not Read first, exactly as Write does
+      // (write.ts). The file necessarily exists here (ENOENT rejected above);
+      // a prior Read — or a prior successful Edit/Write, which register the
+      // path below — unlocks it. Error text is verbatim official.
+      if (ctx.readFilePaths !== undefined && !ctx.readFilePaths.has(abs)) {
+        return errorResult(
+          '<tool_use_error>File has not been read yet. Read it first before writing to it.</tool_use_error>',
+        );
+      }
+
       const buf = await readFile(abs, { signal: ctx.signal });
       if (looksBinary(buf)) {
         return errorResult(
