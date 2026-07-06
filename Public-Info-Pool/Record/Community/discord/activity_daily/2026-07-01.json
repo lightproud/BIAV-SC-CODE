@@ -1,11 +1,11 @@
 {
   "date": "2026-07-01",
-  "messages": 12089,
+  "messages": 13598,
   "unique_authors": 458,
-  "reactions_total": 1571,
-  "attachments": 691,
+  "reactions_total": 1584,
+  "attachments": 762,
   "channel_activity": {
-    "🔸general-chat": 2200,
+    "🔸general-chat": 3709,
     "🔸game-question": 2959,
     "🔸綜合討論": 1206,
     "🔸晒卡分享": 30,
@@ -83,6 +83,11 @@
     "Help Needed: Team Building": 6
   },
   "hourly_activity": {
+    "19": 435,
+    "20": 673,
+    "21": 1018,
+    "22": 732,
+    "23": 167,
     "0": 367,
     "1": 639,
     "2": 439,
@@ -101,17 +106,12 @@
     "15": 517,
     "16": 413,
     "17": 181,
-    "18": 202,
-    "19": 158,
-    "20": 298,
-    "21": 472,
-    "22": 424,
-    "23": 164
+    "18": 202
   },
   "message_types": {
-    "19": 770,
-    "0": 1423,
-    "20": 7
+    "0": 1014,
+    "19": 494,
+    "20": 1
   },
   "top_reacted_messages": [
     {

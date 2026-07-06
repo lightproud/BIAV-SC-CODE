@@ -1,10 +1,11 @@
 {
   "date": "2026-07-02",
-  "messages": 10340,
+  "messages": 13831,
   "unique_authors": 374,
-  "reactions_total": 916,
-  "attachments": 543,
+  "reactions_total": 1095,
+  "attachments": 684,
   "channel_activity": {
+    "🔸general-chat": 3491,
     "🔸綜合討論": 762,
     "🔸课间休息闲聊": 91,
     "🔸русский-канал": 136,
@@ -76,35 +77,34 @@
     "Help Needed: Team Building": 1
   },
   "hourly_activity": {
+    "0": 192,
+    "1": 455,
+    "2": 417,
+    "3": 245,
+    "4": 311,
+    "5": 724,
+    "6": 750,
+    "7": 728,
+    "8": 813,
+    "9": 989,
+    "10": 1386,
+    "11": 1163,
+    "12": 786,
+    "13": 1221,
+    "14": 1058,
+    "15": 964,
     "19": 189,
     "21": 248,
     "23": 187,
     "20": 41,
     "22": 192,
-    "0": 96,
-    "1": 436,
-    "2": 318,
-    "3": 215,
-    "4": 256,
-    "5": 564,
-    "6": 529,
-    "7": 651,
-    "8": 608,
-    "9": 511,
-    "10": 761,
-    "11": 590,
-    "12": 760,
-    "13": 1089,
-    "14": 687,
-    "15": 640,
     "16": 197,
     "17": 410,
     "18": 165
   },
   "message_types": {
-    "0": 2642,
-    "19": 910,
-    "20": 28
+    "0": 2366,
+    "19": 1125
   },
   "top_reacted_messages": [
     {
@@ -236,6 +236,14 @@
       "channel": "🛍️ 周边速报：「沉渊渡影」唤醒体徽章预售开启┊Merch News: \"Shadows Adrift\" Awakener Badges Pre-order Opens!"
     },
     {
+      "id": "1522165509271978124",
+      "channel_id": "1400750050208125010",
+      "content": "Damn, I was right",
+      "author": "xiii_c",
+      "reactions": 6,
+      "channel": "🔸general-chat"
+    },
+    {
       "id": "1522048393021751336",
       "channel_id": "1131839817982947429",
       "content": "",
@@ -256,14 +264,6 @@
       "channel_id": "1326453763355185215",
       "content": "ugh i love him",
       "author": "xyrileus",
-      "reactions": 6,
-      "channel": "🔸lore-chat"
-    },
-    {
-      "id": "1522153407270617208",
-      "channel_id": "1326453763355185215",
-      "content": "",
-      "author": "_venush",
       "reactions": 6,
       "channel": "🔸lore-chat"
     }
