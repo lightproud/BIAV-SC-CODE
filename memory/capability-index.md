@@ -50,7 +50,7 @@
   `.github/workflows/build-capability-registry.yml`
 - **`Build Community Vectors`** _[manual]_ —   
   `.github/workflows/build-community-vectors.yml`
-- **`Build OKF Bundle`** _[push/manual]_ —   
+- **`Build OKF Bundle`** _[schedule/push/manual]_ —   
   `.github/workflows/build-okf-bundle.yml`
 - **`Check Morimens Version Updates`** _[schedule/manual]_ — 定时检测 Morimens 客户端版本更新。  
   `.github/workflows/check-version.yml`

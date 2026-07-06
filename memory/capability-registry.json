@@ -94,6 +94,7 @@
       "name": "Build OKF Bundle",
       "path": ".github/workflows/build-okf-bundle.yml",
       "triggers": [
+        "schedule",
         "push",
         "manual"
       ]
