@@ -80,6 +80,10 @@ on:
         description: 'Fix-2 variable isolation: pin maxThinkingTokens to this SAME budget on BOTH arms (empty = each engine its own default)'
         required: false
         default: ''
+      l5_budget:
+        description: 'L5 spend cap in USD (default 1.5; a full 18-task round projects ~$1.55, so raise this to reach the later code/longconv tasks before the budget-abort)'
+        required: false
+        default: '1.5'
 
 concurrency:
   group: bpt-agent-sdk-${{ github.ref }}
@@ -388,7 +392,7 @@ jobs:
       - name: L5 dual-arm real-API round (gate B enforced)
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: node tests/conformance/run-l5.mjs --gate "--model=${{ github.event.inputs.model }}" "--repeat=${{ github.event.inputs.l5_repeat }}" ${{ github.event.inputs.l5_thinking != '' && format('--thinking={0}', github.event.inputs.l5_thinking) || '' }}
+        run: node tests/conformance/run-l5.mjs --gate "--model=${{ github.event.inputs.model }}" "--repeat=${{ github.event.inputs.l5_repeat }}" "--budget-usd=${{ github.event.inputs.l5_budget }}" ${{ github.event.inputs.l5_thinking != '' && format('--thinking={0}', github.event.inputs.l5_thinking) || '' }}
       - uses: actions/upload-artifact@v4
         if: always()
         with:

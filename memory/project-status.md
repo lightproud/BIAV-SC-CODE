@@ -465,7 +465,13 @@
   4.6+ 发 adaptive、pre-4.6 发 `{type:"enabled",budget_tokens}`，覆盖 preset 默认 / 显式配置 / mid-run setModel 全路径。
   单一真相源 `src/engine/thinking-model.ts supportsAdaptiveThinking`（pre-adaptive 家族 denylist、新模型默认 adaptive、denylist 有单测锁）。
   wire 棘轮 thinking facet 升为全场景 KD（我方按模型对、官方结构参考恒 adaptive——我方更正确，非回归）。自验 tsc 净 / vitest **1326 全绿**
-  （新增 thinking-model 单测 + conformance-l2 逐 tier 线form 锁 + haiku preset 降级锁）。**待修复后重 dispatch 真 L5 在 haiku 实证我方臂恢复运行，届时才谈 code-01。**
+  （新增 thinking-model 单测 + conformance-l2 逐 tier 线form 锁 + haiku preset 降级锁）。
+- **修复实证 + 全量真 L5 收官（2026-07-05）**：修复轮（run 28754264349，haiku）我方臂 40/40 恢复运行（vs 坏轮 0/40），gate B bpt 40/40==官方 39/39 delta 0.0pp——**回归修复实证**。
+  随后为触达 code-01 给 L5 workflow 加 `l5_budget` 输入（透传 `--budget-usd`，默认 1.5；PR #490）、打一轮 **$5 全量轮**（run 28759190419，180/180 跑满、花 $2.21、不再中途截断）：
+  **Gate B bpt 88/90 (97.8%) vs 官方 76/90 (84.4%)，delta +13.3pp → PASS**（全量轮首次正向大胜）。
+  **code-01：bpt 3/5 vs 官方 5/5——守密人最初问题有答案：残余从历史 0/3 移动到 3/5**（思考开+更大预算把 code-01 从全败推到多数通过，未全解）。
+  官方本轮被 KD-L5-01（/tmp 散落物，官方 CLI 自身怪癖）拉低：longconv-01 官方 1/5、code-03 官方 0/5；bpt 对应 5/5、5/5。
+  econ：bpt 多数题更省（code-01 $0.0108 vs 官方 $0.0266、retrieval-01 $0.0058 vs $0.0291）。**BPT SDK 换装线本阶段收官**：v0.8.1 在 main、真 L5 全量 gate B 正向、code-01 残余部分移动已判定。
 
 ## BPT-V2T 语音代替输入（`projects/bpt-v2t/`）
 
