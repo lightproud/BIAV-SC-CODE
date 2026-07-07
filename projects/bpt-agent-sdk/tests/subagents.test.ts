@@ -1254,16 +1254,18 @@ describe('general-purpose prompt provenance (corpus-sync guard, Track B)', () =>
   const norm = (s: string) => s.replace(/\s+/g, ' ').trim();
   const stripHeader = (md: string) => md.replace(/^<!--[\s\S]*?-->\n?/, '');
 
-  it('reproduces the official Strengths + Guidelines substance', () => {
-    // adapted intro (parent-agent framing, not the Claude Code CLI self-ref)
-    expect(GENERAL_PURPOSE_PROMPT).toContain('parent agent');
+  it('reproduces the official Strengths + Guidelines substance (translated)', () => {
+    // i18n-zh Phase 2 batch B: the prompt is Chinese; parent-agent framing +
+    // Strengths/Guidelines substance are asserted against the translated wording.
+    expect(GENERAL_PURPOSE_PROMPT).toContain('父代理'); // parent agent
     expect(GENERAL_PURPOSE_PROMPT).not.toContain('official CLI');
-    // faithful blocks
-    expect(GENERAL_PURPOSE_PROMPT).toContain('Your strengths:');
-    expect(GENERAL_PURPOSE_PROMPT).toContain('NEVER proactively create documentation files');
+    expect(GENERAL_PURPOSE_PROMPT).toContain('你的强项：'); // Your strengths:
+    expect(GENERAL_PURPOSE_PROMPT).toContain('绝不主动创建文档文件'); // NEVER proactively create documentation files
+    expect(GENERAL_PURPOSE_PROMPT).toContain('用 Read'); // the Read wire token survives
   });
 
-  it.runIf(existsSync(archive))('its cited archive source is still represented', () => {
+  // Translated (faithful:false): Chinese prose can't anchor-match the English archive.
+  it.runIf(existsSync(archive) && GENERAL_PURPOSE_PROMPT_PROVENANCE.faithful)('its cited archive source is still represented', () => {
     const desc = norm(GENERAL_PURPOSE_PROMPT);
     for (const slug of GENERAL_PURPOSE_PROMPT_PROVENANCE.slugs) {
       const file = join(archive, `${slug}.md`);
@@ -1301,11 +1303,12 @@ describe('worker-fork preset (O-B0)', () => {
   it('buildWorkerForkPrompt assembles <system> framing + directive + context', () => {
     const p = buildWorkerForkPrompt('Audit src/tips for dead code.', '\n\nExtra: only report.');
     expect(p.startsWith('<system>\n')).toBe(true);
-    expect(p).toContain('You are a worker fork.');
+    expect(p).toContain('你是一个工作分叉'); // "You are a worker fork." (translated)
     expect(p).toContain('</system>\n\nAudit src/tips for dead code.');
     expect(p.endsWith('Extra: only report.')).toBe(true);
   });
-  it.runIf(existsSync(archive))('the framing is faithful to its archived source', () => {
+  // Translated (faithful:false): skip the English-archive anchor match.
+  it.runIf(existsSync(archive) && WORKER_FORK_PROVENANCE.faithful)('the framing is faithful to its archived source', () => {
     const body = norm(
       stripHeader(readFileSync(join(archive, `${WORKER_FORK_PROVENANCE.slug}.md`), 'utf8')),
     )
