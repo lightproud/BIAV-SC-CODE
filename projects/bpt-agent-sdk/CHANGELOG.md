@@ -11,6 +11,35 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.16.0 — 2026-07-07
+
+Official-semantics audit fixes, batch 2 (pricing + streaming + replay repair).
+
+- **fix (C1): 1h cache writes were billed at the 5-minute rate** (1.25x instead
+  of 2x base) — undercounting cost ~37.5% and letting a run overshoot
+  `maxBudgetUsd`. `estimateCostUsd` now takes the run's `cacheTtl` (sourced from
+  config; our SDK sets one TTL per request) and prices 1h at input×2.
+- **fix (S1): cloud-provider model ids costed $0** — `us.anthropic.claude-…`
+  (Bedrock) and `claude-…@vertex` (Vertex) matched no price prefix, so cost was
+  0 and `maxBudgetUsd` was silently unenforced. `normalizeModelId` strips the
+  cloud prefix/suffix before matching.
+- **fix (S5): `claude-fable-*` costed $0** — added a Fable price entry (input
+  $10 / output $50 per MTok).
+- **fix (S2): `citations_delta` was silently dropped** — citations now collect
+  onto the text block (`TextBlock.citations`).
+- **fix (S3): a missing `partial_json` fragment poisoned tool input** — a
+  non-conformant frame appended the literal `"undefined"`, breaking JSON.parse;
+  now guarded (`?? ''`).
+- **fix (C7): API-summary compaction to a distinct model silently 400'd** — the
+  summary prefix carried session-model-signed thinking blocks that the (deliberately
+  different) `compaction.model` rejected, so `useApiSummary` degraded to the
+  deterministic fold every time. Thinking is now stripped from the summary prefix.
+- **fix (C8/S4): `repairPairing` could manufacture a role-alternation 400** —
+  dropping a mid-transcript assistant turn welded two user turns together (and a
+  dropped user turn could weld two assistant turns). A new pass 3 merges
+  consecutive same-role turns so a resumed history always alternates.
+- +8 tests. `tsc`/`build` exit 0; full suite 1469 green.
+
 ## 0.15.0 — 2026-07-07
 
 Official-semantics audit fixes, batch 1 (stop-reason + model alias). See

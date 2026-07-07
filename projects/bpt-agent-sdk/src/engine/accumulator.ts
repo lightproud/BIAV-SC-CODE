@@ -12,7 +12,7 @@ import type {
 
 /** In-progress content block state, keyed by stream index. */
 type PendingBlock =
-  | { type: 'text'; text: string }
+  | { type: 'text'; text: string; citations?: unknown[] }
   | { type: 'thinking'; thinking: string; signature: string }
   | { type: 'redacted_thinking'; data: string }
   | {
@@ -86,6 +86,18 @@ export class MessageAccumulator {
           );
         }
         const delta = event.delta;
+        // S2 (BPT audit 2026-07-07): citations arrive as their own delta type
+        // (not in the typed union) and must be collected onto the text block
+        // instead of silently dropped. Handled before the typed switch.
+        if ((delta as { type?: string }).type === 'citations_delta') {
+          if (block.type === 'text') {
+            const citation = (delta as { citation?: unknown }).citation;
+            if (citation !== undefined) {
+              (block.citations ??= []).push(citation);
+            }
+          }
+          return;
+        }
         switch (delta.type) {
           case 'text_delta':
             if (block.type !== 'text') {
@@ -109,7 +121,10 @@ export class MessageAccumulator {
             if (block.type !== 'tool_use') {
               throw this.mismatch(event.index, block.type, delta.type);
             }
-            block.partialJson += delta.partial_json;
+            // S3 (BPT audit 2026-07-07): a non-conformant / gateway-rewritten
+            // frame may omit partial_json; `+= undefined` would append the
+            // literal "undefined" and poison the buffer (JSON.parse then throws).
+            block.partialJson += delta.partial_json ?? '';
             return;
         }
         return;
@@ -187,7 +202,11 @@ export class MessageAccumulator {
       const block = this.blocks.get(index) as PendingBlock;
       switch (block.type) {
         case 'text':
-          content.push({ type: 'text', text: block.text });
+          content.push({
+              type: 'text',
+              text: block.text,
+              ...(block.citations !== undefined ? { citations: block.citations } : {}),
+            });
           break;
         case 'thinking':
           content.push({
@@ -237,7 +256,11 @@ export class MessageAccumulator {
       switch (block.type) {
         case 'text':
           if (block.text.length > 0) {
-            content.push({ type: 'text', text: block.text });
+            content.push({
+              type: 'text',
+              text: block.text,
+              ...(block.citations !== undefined ? { citations: block.citations } : {}),
+            });
           }
           break;
         case 'thinking':
