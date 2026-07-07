@@ -1,6 +1,6 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-07T18:59:06.008978+00:00",
+  "collected_at": "2026-07-07T20:50:32.454015+00:00",
   "source": "pixiv",
   "data_layer": "output",
   "item_count": 31,
@@ -367,13 +367,15 @@
     },
     {
       "source": "pixiv",
-      "time": "2026-07-07T18:58:19.504802+00:00",
+      "time": "2026-06-16T01:37:45+09:00",
       "lang": "",
-      "title": "",
+      "title": "doodling N til Morimens... 1-8",
       "summary": "",
-      "url": "https://www.pixiv.net/artworks/",
-      "author": "",
-      "engagement": 0
+      "url": "https://www.pixiv.net/artworks/146060911",
+      "author": "Anju",
+      "engagement": 0,
+      "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/16/01/37/45/146060911_p0_square1200.jpg",
+      "content_type": "image"
     }
   ]
 }
