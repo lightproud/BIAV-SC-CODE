@@ -190,7 +190,7 @@ const MODEL_ALIASES: Readonly<Record<string, string>> = {
   opus: 'claude-opus-4-8',
   sonnet: 'claude-sonnet-4-5',
   haiku: 'claude-haiku-4-5',
-  fable: 'claude-sonnet-5',
+  fable: 'claude-fable-5',
 };
 
 /**

@@ -11,6 +11,30 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.15.0 — 2026-07-07
+
+Official-semantics audit fixes, batch 1 (stop-reason + model alias). See
+`Public-Info-Pool/Resource/repo-engineering/bpt-sdk-official-semantics-audit-20260707.md`.
+
+- **fix (C3): `fable` model alias resolved to `claude-sonnet-5`** — a silent
+  wrong-model substitution (wrong price tier + capabilities). Now resolves to
+  `claude-fable-5`.
+- **fix (C4): `pause_turn` was dropped as a completed success** — a long
+  agentic / server-tool turn paused by the API was reported as done, silently
+  truncating the answer. The engine now persists the partial turn and RE-STREAMS
+  to continue it (bounded by `maxTurns` so a runaway pause can't loop forever).
+- **fix (C5): `refusal` was surfaced as a normal `success`** — a safety decline
+  (Fable 5 / newer, HTTP 200 + `stop_reason: refusal`) was handed back as a
+  valid answer and, in structured-output mode, retried against the still-refusing
+  model until the retry cap. It now yields a dedicated ERROR result
+  (`error_code: 'refusal'`), never a success. **Behavioral change** — a refusal
+  is now an error result, not a success with empty text.
+- **fix (C6): a `max_tokens` cut mid-tool-use persisted an unpaired `tool_use`** —
+  poisoning the next same-session request with a 400 ("tool_use ids without
+  tool_result"). The orphan `tool_use` is now dropped from the persisted
+  natural-end turn (the yielded message is unchanged).
+- +4 engine tests. `tsc`/`build` exit 0.
+
 ## 0.14.0 — 2026-07-07
 
 - **fix (cross-model thinking-signature 400, BPT request 2026-07-07)**: root-cause

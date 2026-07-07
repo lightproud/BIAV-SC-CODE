@@ -248,7 +248,7 @@ describe('resolveModelAlias', () => {
     expect(resolveModelAlias('opus', 'parent')).toBe('claude-opus-4-8');
     expect(resolveModelAlias('sonnet', 'parent')).toBe('claude-sonnet-4-5');
     expect(resolveModelAlias('haiku', 'parent')).toBe('claude-haiku-4-5');
-    expect(resolveModelAlias('fable', 'parent')).toBe('claude-sonnet-5');
+    expect(resolveModelAlias('fable', 'parent')).toBe('claude-fable-5');
     expect(resolveModelAlias('inherit', 'parent-model')).toBe('parent-model');
     expect(resolveModelAlias(undefined, 'parent-model')).toBe('parent-model');
     expect(resolveModelAlias('claude-custom-9', 'parent')).toBe('claude-custom-9');

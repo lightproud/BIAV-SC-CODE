@@ -1302,6 +1302,64 @@ describe('runAgentLoop', () => {
     expect(result.subtype).toBe('error_during_execution');
   });
 
+  // ----- BPT audit 2026-07-07: stop-reason semantics (C4/C5/C6) -----
+
+  it('C4: pause_turn continues the turn instead of ending as a success', async () => {
+    const transport = new MockTransport([
+      textReplyEvents('partial…', { stopReason: 'pause_turn' }),
+      textReplyEvents('final answer', { stopReason: 'end_turn' }),
+    ]);
+    const deps = makeDeps(transport);
+    const history: APIMessageParam[] = [{ role: 'user', content: 'go' }];
+    const messages = await collect(runAgentLoop(history, deps, makeConfig()));
+    expect(transport.requests).toHaveLength(2); // re-streamed to continue the paused turn
+    const result = lastResult(messages);
+    expect(result.subtype).toBe('success');
+    expect(result.subtype === 'success' && result.result).toBe('final answer');
+  });
+
+  it('C4: a runaway pause_turn is bounded by maxTurns', async () => {
+    const transport = new MockTransport([
+      textReplyEvents('p1', { stopReason: 'pause_turn' }),
+      textReplyEvents('p2', { stopReason: 'pause_turn' }),
+      textReplyEvents('p3', { stopReason: 'pause_turn' }),
+    ]);
+    const deps = makeDeps(transport);
+    const history: APIMessageParam[] = [{ role: 'user', content: 'go' }];
+    const messages = await collect(runAgentLoop(history, deps, makeConfig({ maxTurns: 2 })));
+    expect(lastResult(messages).subtype).toBe('error_max_turns');
+  });
+
+  it('C5: refusal surfaces as an ERROR result (not success) with error_code refusal', async () => {
+    const transport = new MockTransport([textReplyEvents('', { stopReason: 'refusal' })]);
+    const deps = makeDeps(transport);
+    const history: APIMessageParam[] = [{ role: 'user', content: 'go' }];
+    const messages = await collect(runAgentLoop(history, deps, makeConfig()));
+    expect(transport.requests).toHaveLength(1);
+    const result = lastResult(messages);
+    expect(result.subtype).toBe('error_during_execution');
+    expect(result.is_error).toBe(true);
+    expect((result as { error_code?: string }).error_code).toBe('refusal');
+  });
+
+  it('C6: a max_tokens orphan tool_use is dropped from the persisted turn', async () => {
+    const events = toolUseReplyEvents('Read', { file_path: '/a' }, { leadingText: 'hmm' });
+    const md = events.find((e) => e.type === 'message_delta') as {
+      delta: { stop_reason: string };
+    };
+    md.delta.stop_reason = 'max_tokens'; // tool_use block present, but cut by max_tokens
+    const transport = new MockTransport([events]);
+    const deps = makeDeps(transport);
+    const history: APIMessageParam[] = [{ role: 'user', content: 'go' }];
+    const messages = await collect(runAgentLoop(history, deps, makeConfig()));
+    expect(lastResult(messages).subtype).toBe('success'); // natural end, no dispatch
+    // the PERSISTED assistant turn must not carry the unpaired tool_use
+    const persisted = history.find((m) => m.role === 'assistant')!;
+    const kinds = (persisted.content as ContentBlockParam[]).map((b) => b.type);
+    expect(kinds).not.toContain('tool_use');
+    expect(kinds).toContain('text');
+  });
+
   it('records api_error_status on an unrecovered APIStatusError result', async () => {
     const transport = new MockTransport([
       () => {
