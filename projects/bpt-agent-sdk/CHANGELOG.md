@@ -11,6 +11,23 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.22.0 — 2026-07-08
+
+i18n-zh batch 4 (keeper ruling B): the Workflow tool description to Chinese.
+
+- **change: Workflow description is now Chinese** (on the wire). This is the
+  longest tool description (~148 lines) — all prose is translated: the opt-in
+  rules, the Understand/Design/Review/Migrate patterns, the Ultracode section,
+  the `agent()`/`pipeline()`/`parallel()`/`log()`/`phase()`/`args`/`budget`/
+  `workflow()` API bullets, the barrier doctrine, and the quality-pattern
+  catalogue. Every script/meta code block, function signature, and inline
+  identifier stays verbatim — the honest synchronous-adaptation clauses
+  (synchronous run, `budget.total` always null, the min(16, cpu-2) / 1000 /
+  4096 caps) are preserved in the translated wording. Removed from
+  `TOOL_DESCRIPTION_PROVENANCE`; covered by the i18n structural guard. Now the
+  only English tool description left is **Bash** (+ its git protocol + sandbox
+  fragments), held for a later, safety-critical batch. See docs/COMPAT.md.
+
 ## 0.21.0 — 2026-07-08
 
 i18n-zh batch 3 (keeper ruling B): the Monitor tool description to Chinese.
