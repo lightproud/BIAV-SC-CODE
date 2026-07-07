@@ -1184,6 +1184,58 @@ describe('runAgentLoop', () => {
     expect(transport.requests[0]!.tool_choice).toBeUndefined();
   });
 
+  // ----- C9: native structured outputs on the output_config wire -----
+
+  it('forwards output_config when outputFormat.native is true (C9)', async () => {
+    const transport = new MockTransport([textReplyEvents('{}')]);
+    const deps = makeDeps(transport);
+    const history: APIMessageParam[] = [{ role: 'user', content: 'go' }];
+    const schema = { type: 'object' as const };
+
+    const messages = await collect(
+      runAgentLoop(
+        history,
+        deps,
+        makeConfig({ outputFormat: { type: 'json_schema', schema, native: true } }),
+      ),
+    );
+
+    expect(transport.requests[0]!.output_config).toEqual({
+      format: { type: 'json_schema', schema },
+    });
+    // Local validation still runs and yields the structured_output result.
+    const result = lastResult(messages);
+    expect(result.subtype).toBe('success');
+    if (result.subtype === 'success') expect(result.structured_output).toEqual({});
+  });
+
+  it('OMITS output_config when outputFormat is set but native is not (C9 default)', async () => {
+    const transport = new MockTransport([textReplyEvents('{}')]);
+    const deps = makeDeps(transport);
+    const history: APIMessageParam[] = [{ role: 'user', content: 'go' }];
+
+    await collect(
+      runAgentLoop(
+        history,
+        deps,
+        makeConfig({ outputFormat: { type: 'json_schema', schema: { type: 'object' } } }),
+      ),
+    );
+
+    // Default local-only path never touches the wire.
+    expect(transport.requests[0]!.output_config).toBeUndefined();
+  });
+
+  it('sends NO output_config when outputFormat is unset (C9)', async () => {
+    const transport = new MockTransport([textReplyEvents('done')]);
+    const deps = makeDeps(transport);
+    const history: APIMessageParam[] = [{ role: 'user', content: 'go' }];
+
+    await collect(runAgentLoop(history, deps, makeConfig()));
+
+    expect(transport.requests[0]!.output_config).toBeUndefined();
+  });
+
   // ----- finding #2: stop_reason tool_use with zero tool_use blocks -----
 
   it('stop_reason tool_use with no tool_use blocks ends as success without an empty user turn (#2)', async () => {

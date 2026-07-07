@@ -515,6 +515,18 @@ describe('AnthropicTransport request construction', () => {
       disable_parallel_tool_use: true,
     });
   });
+
+  it('serializes output_config into the wire body verbatim (C9)', async () => {
+    const fetchMock = stubFetch([() => sseResponse(okSse())]);
+    const t = makeTransport({ provider: { apiKey: 'k' } });
+    const schema = { type: 'object', properties: { name: { type: 'string' } } };
+    await collect(
+      t.stream(baseReq({ output_config: { format: { type: 'json_schema', schema } } })),
+    );
+    const { init } = callArgs(fetchMock);
+    const body = JSON.parse(String(init.body)) as Record<string, unknown>;
+    expect(body.output_config).toEqual({ format: { type: 'json_schema', schema } });
+  });
 });
 
 // ---------------------------------------------------------------------------

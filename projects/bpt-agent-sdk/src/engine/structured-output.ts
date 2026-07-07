@@ -58,7 +58,13 @@ export function normalizeOutputFormat(
     debug('outputFormat ignored: schema must be a JSON Schema object');
     return undefined;
   }
-  return { type: 'json_schema', schema: o.schema as JSONSchema };
+  // Preserve `native` ONLY when explicitly true, so the default (local-only)
+  // config stays exactly { type, schema } — the wire opt-in is off by default.
+  return {
+    type: 'json_schema',
+    schema: o.schema as JSONSchema,
+    ...(o.native === true ? { native: true } : {}),
+  };
 }
 
 // ---------------------------------------------------------------------------

@@ -621,6 +621,18 @@ export async function* runAgentLoop(
       ...(config.toolChoice !== undefined && toolDefs.length > 0
         ? { tool_choice: config.toolChoice }
         : {}),
+      // Native structured outputs (C9): forward the schema as the official
+      // `output_config.format` ONLY when the caller opted in — the wire path is
+      // supported-models-only and constrains the schema, so an unconditional
+      // send would 400 elsewhere. Local validation still runs regardless (the
+      // complement / fallback), so opting in never loses a constraint.
+      ...(config.outputFormat?.native === true
+        ? {
+            output_config: {
+              format: { type: 'json_schema' as const, schema: config.outputFormat.schema },
+            },
+          }
+        : {}),
       thinking: computeThinking(),
       signal,
       onRetry,

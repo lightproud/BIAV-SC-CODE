@@ -11,6 +11,30 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.18.0 — 2026-07-07
+
+Official-semantics audit follow-up: structured outputs — COMPAT honesty +
+native `output_config` on the wire (finding C9).
+
+- **docs (C9): `outputFormat` was mislabeled `FULL` in COMPAT.** It was actually
+  enforced OFF the wire (system-prompt instruction + a local lenient validator +
+  a bounded re-prompt), with no server-side guarantee — the official feature is
+  `output_config: { format }` + `messages.parse()`. The COMPAT row is now
+  `PARTIAL` and states this plainly.
+- **feat (C9): native `output_config.format` on the wire, opt-in.** A new
+  `outputFormat.native: true` ALSO forwards the schema as the official Messages
+  API `output_config: { format: { type:'json_schema', schema } }`, for the
+  server-side format guarantee. Threads `OutputFormatConfig.native →
+  EngineConfig.outputFormat → StreamRequest.output_config`; the transport already
+  serializes any request field verbatim. It is **off by default**: native
+  structured outputs are supported-models-only (Fable 5 / Opus 4.8 / Sonnet 5 /
+  Haiku 4.5 / Opus 4.5·4.1) and constrain the schema to a documented subset, so
+  an unconditional send would 400 on older models / richer schemas. The local
+  validator keeps running as the complement/fallback, so opting in never loses a
+  constraint (`minLength`/`minimum`/… that the native subset doesn't enforce are
+  still caught locally). Tests in engine.test.ts (wire assembly, opt-in gating)
+  and structured-output.test.ts (`native` normalization).
+
 ## 0.17.0 — 2026-07-07
 
 Official-semantics audit follow-up: `tool_choice` on the wire (finding C10).
