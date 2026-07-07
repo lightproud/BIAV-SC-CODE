@@ -539,4 +539,153 @@ export const SCENARIOS_L4 = [
       'is a discovery objective - if it lands in the KD-L4-01 success-subtype family, triage ' +
       'extends that KD after 2-run stability.',
   },
+
+  // --- Stop-reason / frame-semantics differential (BPT official-semantics ---
+  // audit 2026-07-07) ----------------------------------------------------------
+  // The audit (#508) found the engine mis-handled three non-happy-path
+  // stop_reasons that fixed-lock unit tests now cover (C4/C5/C6, v0.15.0); the
+  // cases below PROMOTE that contract into the conformance net so a regression
+  // reds CI differentially against the official arm, not just in isolation.
+  // These are valid 200 SSE streams (not transport faults) whose only unusual
+  // property is the terminal stop_reason - the emulator scripts them via the
+  // stopReason knob on textReply, so the content-blind boundary is unchanged.
+  // Official-arm handling of each is a DISCOVERY objective (behavior unknown
+  // on that arm), triaged into a KD or an official-engine note after 2-run
+  // stability - the same protocol the truncated-tool cases followed.
+  {
+    id: 'l4-stop-refusal',
+    fault:
+      "200 OK stream terminated by stop_reason:'refusal' (a safety decline; " +
+      'Fable 5 / newer models return this at HTTP 200, not as an error status)',
+    prompt: 'Say OK.',
+    timeoutMs: 30_000,
+    buildScripts: () => [
+      { kind: 'sse', events: textReply('I can’t help with that.', { stopReason: 'refusal' }) },
+      // Sentinel: a refusal must be TERMINAL - a re-request would consume this
+      // and leak the marker, proving an illegal retry-on-refusal.
+      { kind: 'sse', events: textReply('MUST NEVER BE REQUESTED AFTER REFUSAL') },
+    ],
+    sentinels: ['MUST NEVER BE REQUESTED AFTER REFUSAL'],
+    invariants: (run) => {
+      const f = [];
+      if (run.postCount !== 1) f.push(`postCount ${run.postCount} != 1 (an arm retried a refusal)`);
+      if (run.unscriptedCalls !== 0) f.push(`unscriptedCalls ${run.unscriptedCalls} != 0`);
+      if (streamHas(run, 'MUST NEVER BE REQUESTED AFTER REFUSAL')) f.push('retry sentinel leaked into the stream');
+      return f;
+    },
+    bptOnly: (run) => {
+      // C5 contract (v0.15.0): a refusal is a dedicated ERROR result, never a
+      // success with empty text. The engine ends result/error_during_execution
+      // (error_code 'refusal' internally); query() does not throw.
+      const f = [];
+      if (run.checks.resultSubtype !== 'error_during_execution') {
+        f.push(`expected result/error_during_execution (C5), got ${run.checks.resultSubtype}`);
+      }
+      if (run.checks.resultSubtype === 'success') f.push('refusal encoded as success (the exact C5 defect)');
+      if (run.error) f.push(`unexpected thrown error: ${run.error}`);
+      return f;
+    },
+    engineFindingIf: (bpt, off) =>
+      off.resultSubtype !== 'success' && bpt.resultSubtype === 'success'
+        ? 'refusal: our engine encodes a stop_reason:refusal as success where official surfaces a ' +
+          'non-success terminal - the C5 defect regressed'
+        : null,
+    notes:
+      'The no-retry invariant is arm-neutral (a refusal is terminal on both arms). Official ' +
+      'terminal ENCODING of a refusal frame is the discovery objective: if it success-encodes ' +
+      '(the KD-L4-01 quirk family), triage extends a KD after 2-run stability; our arm is locked ' +
+      'to the C5 error result via bptOnly.',
+  },
+  {
+    id: 'l4-stop-pause-turn',
+    fault:
+      "long agentic turn paused by the API (stop_reason:'pause_turn') then continued - the engine " +
+      'must RE-STREAM to finish it, not report the partial turn as done',
+    prompt: 'Do the long thing.',
+    timeoutMs: 30_000,
+    buildScripts: () => [
+      { kind: 'sse', events: textReply('working so far…', { stopReason: 'pause_turn' }) },
+      { kind: 'sse', events: textReply('PAUSE-CONTINUED FINAL', { stopReason: 'end_turn' }) },
+    ],
+    sentinels: ['PAUSE-CONTINUED FINAL'],
+    invariants: (run) => {
+      const f = [];
+      if (run.unscriptedCalls !== 0) f.push(`unscriptedCalls ${run.unscriptedCalls} != 0`);
+      if (run.postCount > 2) f.push(`postCount ${run.postCount} > 2 (runaway pause continuation)`);
+      return f;
+    },
+    bptOnly: (run) => {
+      // C4 contract (v0.15.0): pause_turn persists the partial turn and
+      // re-streams to continue (bounded by maxTurns) - exactly 2 POSTs, the
+      // continuation lands, result/success.
+      const f = [];
+      if (run.postCount !== 2) f.push(`expected postCount 2 (re-stream to continue), got ${run.postCount}`);
+      if (run.checks.resultSubtype !== 'success') f.push(`expected result/success (C4), got ${run.checks.resultSubtype}`);
+      if (!streamHas(run, 'PAUSE-CONTINUED FINAL')) f.push('continuation turn missing - the paused turn was not resumed');
+      return f;
+    },
+    engineFindingIf: (bpt, off) =>
+      // Our-arm degradation only: official continues (2 POSTs) but we stall at
+      // the pause. If official ALSO stalls, that is its behavior, not our gap.
+      off.postCount === 2 && bpt.postCount < 2
+        ? 'pause_turn: official re-streams to continue a paused turn where our engine ends early - ' +
+          'the C4 defect regressed'
+        : null,
+    notes:
+      'Behavior unknown on the official arm (whether its CLI re-streams a pause_turn is a ' +
+      'discovery objective). Arm-neutral invariants stay minimal (no unscripted calls, no ' +
+      'runaway); our C4 re-stream contract is locked in bptOnly.',
+  },
+  {
+    id: 'l4-max-tokens-orphan-tool',
+    fault:
+      "turn cut by stop_reason:'max_tokens' AFTER a complete tool_use block - the unpaired " +
+      'tool_use must be dropped (not executed, not persisted) so the next same-session request ' +
+      'does not 400 on an orphan',
+    prompt: 'Read the file.',
+    timeoutMs: 30_000,
+    options: { allowedTools: ['Read'] }, // dispatch is PERMITTED, so a wrong dispatch shows as a 2nd POST
+    fixtureFiles: { 'mt.txt': 'the magic word is BEACON\n' },
+    buildScripts: (cwd) => [
+      {
+        kind: 'sse',
+        events: [
+          { type: 'message_start', message: { id: 'msg_conf_maxtok', type: 'message', role: 'assistant', model: 'claude-conformance-1', content: [], stop_reason: null, stop_sequence: null, usage: { input_tokens: 10, output_tokens: 1 } } },
+          { type: 'content_block_start', index: 0, content_block: { type: 'text', text: '' } },
+          { type: 'content_block_delta', index: 0, delta: { type: 'text_delta', text: 'partial answer before the cutoff' } },
+          { type: 'content_block_stop', index: 0 },
+          { type: 'content_block_start', index: 1, content_block: { type: 'tool_use', id: 'toolu_conf_mt', name: 'Read', input: {} } },
+          { type: 'content_block_delta', index: 1, delta: { type: 'input_json_delta', partial_json: JSON.stringify({ file_path: join(cwd, 'mt.txt') }) } },
+          { type: 'content_block_stop', index: 1 },
+          { type: 'message_delta', delta: { stop_reason: 'max_tokens', stop_sequence: null }, usage: { output_tokens: 20 } },
+          { type: 'message_stop' },
+        ],
+      },
+    ],
+    sentinels: [],
+    invariants: (run) => {
+      const f = [];
+      // A dispatch of the orphan tool_use would need a 2nd POST to deliver the
+      // tool_result; only one script is queued, so a dispatch shows as an
+      // unscripted call. Arm-neutral: neither arm should execute the orphan.
+      if (run.unscriptedCalls !== 0) f.push(`unscriptedCalls ${run.unscriptedCalls} != 0 (the max_tokens orphan tool_use was dispatched)`);
+      if (run.postCount !== 1) f.push(`postCount ${run.postCount} != 1 (a 2nd POST means the orphan was executed)`);
+      return f;
+    },
+    bptOnly: (run) => {
+      // C6 contract (v0.15.0): the orphan tool_use is dropped from the
+      // persisted turn and the turn ends naturally (no dispatch). The
+      // no-downstream-400 guarantee itself is engine-locked in
+      // engine.test.ts (the persisted assistant turn carries text, not
+      // tool_use); L4 observes the terminal shape + no dispatch.
+      const f = [];
+      if (run.checks.resultSubtype !== 'success') f.push(`expected result/success (C6 natural end), got ${run.checks.resultSubtype}`);
+      if (run.error) f.push(`unexpected thrown error: ${run.error}`);
+      return f;
+    },
+    notes:
+      'The pairing boundary (the orphan must not poison the next request) is locked at the engine ' +
+      'level; here the arm-neutral observable is "neither arm executes a max_tokens-truncated ' +
+      'tool_use" (postCount 1, no unscripted call). Official handling is a discovery objective.',
+  },
 ];

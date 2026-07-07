@@ -35,10 +35,23 @@
  *     requires a turn-1 value to materialize in an fs artifact at turn 3 -
  *     context retention decided from the filesystem, not from wording.
  *
- * Deliberately absent (blueprint §三 rulings): refusal-boundary tasks
- * (拒绝类不进门禁 - proprietary-prompt shadow, observation only) and
- * image-generation tasks (生图射程外 - Desktop routes it host/MCP-side,
- * no official-engine behavior to compare against).
+ * Refusal boundary (blueprint §三 ruling REFINED 2026-07-07, keeper-authorized
+ * reversal of the blanket exclusion): the original ruling kept ALL refusal
+ * tasks out of the gate as "拒绝类不进门禁 - proprietary-prompt shadow". That
+ * reasoning is SOUND only for the real-API refusal PROPENSITY (whether the
+ * official prompt's safety posture makes a model decline where our leaner
+ * prompt would not) - it stays observation-only here, tracked by KD-L5-02.
+ * But the BPT official-semantics audit (#508) exposed a SEPARATE refusal
+ * boundary the blanket exclusion wrongly shadowed: the ENGINE'S handling of a
+ * stop_reason:refusal FRAME (C5 - it must yield a dedicated error result, not
+ * a false success). That contract is DETERMINISTIC and prompt-independent, so
+ * it is now locked at L4 (scenarios-l4.mjs l4-stop-refusal, emulator-scripted,
+ * $0) rather than left a blind spot. Net: refusal is no longer absent from the
+ * conformance net - its engine-contract half is a first-class L4 boundary; only
+ * its prompt-driven-propensity half remains out of the real-API gate.
+ *
+ * Still deliberately absent: image-generation tasks (生图射程外 - Desktop
+ * routes it host/MCP-side, no official-engine behavior to compare against).
  *
  * repeatOverride: budget lever, honored by run-l5.mjs ONLY under --econ.
  * The 11 low-variance tasks (chat/retrieval/document) carry
