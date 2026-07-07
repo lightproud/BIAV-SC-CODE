@@ -11,6 +11,22 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.17.0 — 2026-07-07
+
+Official-semantics audit follow-up: `tool_choice` on the wire (finding C10).
+
+- **feat (C10): `tool_choice` / `disable_parallel_tool_use` now reach the wire.**
+  `Options.toolChoice` (new) is forwarded verbatim as the Messages API
+  `tool_choice` param on every request that advertises tools, so a caller can
+  force a specific tool (`{type:'tool', name}`), force some tool (`{type:'any'}`),
+  forbid tools (`{type:'none'}`), or cap a turn at one tool call
+  (`disable_parallel_tool_use: true`). It is omitted when the request carries no
+  tools (the API 400s on `tool_choice` with an empty tool set). Threads
+  `Options.toolChoice → EngineConfig.toolChoice → StreamRequest.tool_choice`; the
+  transport already serializes any request field verbatim. Tests in
+  engine.test.ts (loop assembly + the empty-tools guard) and transport.test.ts
+  (wire-body serialization).
+
 ## 0.16.0 — 2026-07-07
 
 Official-semantics audit fixes, batch 2 (pricing + streaming + replay repair).

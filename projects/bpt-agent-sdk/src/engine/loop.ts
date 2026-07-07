@@ -616,6 +616,11 @@ export async function* runAgentLoop(
       // different model would otherwise 400 forever on the stale signature.
       messages: stripStaleThinking(reqMsgs, useModel),
       tools: toolDefs.length > 0 ? toolDefs : undefined,
+      // tool_choice rides only when tools are actually advertised — the API
+      // 400s on a tool_choice with no tools, so an empty tool set omits it.
+      ...(config.toolChoice !== undefined && toolDefs.length > 0
+        ? { tool_choice: config.toolChoice }
+        : {}),
       thinking: computeThinking(),
       signal,
       onRetry,

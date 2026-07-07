@@ -1111,6 +1111,79 @@ describe('runAgentLoop', () => {
     expect(transport.requests[0]!.thinking).toEqual({ type: 'adaptive' });
   });
 
+  // ----- C10: tool_choice / disable_parallel_tool_use -----
+
+  it('forwards tool_choice verbatim when tools are advertised (C10)', async () => {
+    const transport = new MockTransport([textReplyEvents('ok')]);
+    const tools = new Map<string, BuiltinTool>([['Read', makeFakeReadTool([])]]);
+    const deps = makeDeps(transport, { builtinTools: tools });
+    const history: APIMessageParam[] = [{ role: 'user', content: 'go' }];
+
+    await collect(
+      runAgentLoop(
+        history,
+        deps,
+        makeConfig({ toolChoice: { type: 'tool', name: 'Read', disable_parallel_tool_use: true } }),
+      ),
+    );
+
+    expect(transport.requests[0]!.tool_choice).toEqual({
+      type: 'tool',
+      name: 'Read',
+      disable_parallel_tool_use: true,
+    });
+  });
+
+  it('forwards tool_choice {type:auto, disable_parallel_tool_use} verbatim (C10)', async () => {
+    const transport = new MockTransport([textReplyEvents('ok')]);
+    const tools = new Map<string, BuiltinTool>([['Read', makeFakeReadTool([])]]);
+    const deps = makeDeps(transport, { builtinTools: tools });
+    const history: APIMessageParam[] = [{ role: 'user', content: 'go' }];
+
+    await collect(
+      runAgentLoop(
+        history,
+        deps,
+        makeConfig({ toolChoice: { type: 'auto', disable_parallel_tool_use: true } }),
+      ),
+    );
+
+    expect(transport.requests[0]!.tool_choice).toEqual({
+      type: 'auto',
+      disable_parallel_tool_use: true,
+    });
+  });
+
+  it('OMITS tool_choice when no tools are advertised (the API 400s on tool_choice with no tools) (C10)', async () => {
+    const transport = new MockTransport([textReplyEvents('ok')]);
+    // No builtinTools -> toolDefs empty -> tools field omitted -> tool_choice omitted.
+    const deps = makeDeps(transport);
+    const history: APIMessageParam[] = [{ role: 'user', content: 'go' }];
+
+    await collect(
+      runAgentLoop(
+        history,
+        deps,
+        makeConfig({ toolChoice: { type: 'any' } }),
+      ),
+    );
+
+    expect(transport.requests[0]!.tools).toBeUndefined();
+    expect(transport.requests[0]!.tool_choice).toBeUndefined();
+  });
+
+  it('sends NO tool_choice when unset, even with tools present (C10 default)', async () => {
+    const transport = new MockTransport([textReplyEvents('ok')]);
+    const tools = new Map<string, BuiltinTool>([['Read', makeFakeReadTool([])]]);
+    const deps = makeDeps(transport, { builtinTools: tools });
+    const history: APIMessageParam[] = [{ role: 'user', content: 'go' }];
+
+    await collect(runAgentLoop(history, deps, makeConfig()));
+
+    expect(transport.requests[0]!.tools).toBeDefined();
+    expect(transport.requests[0]!.tool_choice).toBeUndefined();
+  });
+
   // ----- finding #2: stop_reason tool_use with zero tool_use blocks -----
 
   it('stop_reason tool_use with no tool_use blocks ends as success without an empty user turn (#2)', async () => {
