@@ -13,17 +13,27 @@ granularity stops at the commit-title level.
 
 ## 0.14.0 — 2026-07-07
 
-- **fix (cross-model thinking-signature replay)**: strip
-  `thinking`/`redacted_thinking` blocks from CLOSED history turns whose signing
-  model differs from the target model, at the single outgoing choke point —
-  root-causing the invalid-signature 400 when a conversation switches models
-  mid-history. Each assistant turn is stamped with its signing model (a
-  non-enumerable Symbol); same-model replay passes through byte-identical,
-  unstamped (resumed) turns are treated as stale, and a mid-tool-loop fallback
-  switch is withheld with a clean error instead of retrying into a guaranteed
-  400. Mirrors Anthropic's replay contract. No consumer action required.
-  (Shipped in #505; this entry + the package.json bump to 0.14.0 reconcile the
-  version artifacts, which #505 left at 0.13.0.)
+- **fix (cross-model thinking-signature 400, BPT request 2026-07-07)**: root-cause
+  fix for `400 invalid_request_error: Invalid signature in thinking block`, which
+  killed a conversation on every turn once the run switched models (fallback) or
+  resumed under a different model — the historical `thinking` blocks were signed
+  by the original model and fail verification on any other. The engine now tracks
+  each assistant turn's SIGNING model (a non-enumerable Symbol stamp that never
+  reaches the wire) and, at the single outgoing-assembly choke point, strips
+  `thinking`/`redacted_thinking` from every CLOSED history turn whose signer ≠ the
+  target model. This mirrors Anthropic's own replay contract (same model → pass
+  back as-is; different model → drop). `text`/`tool_use`/`tool_result` are never
+  touched; same-model turns pass through byte-identical (cache-safe). Covers both
+  the in-run fallback switch and the resume-to-another-model path (an unstamped
+  resumed turn is treated as stale and stripped).
+  - **hard edge (mid-tool-loop switch)**: the in-flight tool-loop turn's thinking
+    is API-REQUIRED (can't be stripped) yet would fail signature verification on
+    the fallback model. Rather than retry into a guaranteed 400, the engine now
+    WITHHOLDS the fallback switch mid-tool-loop and surfaces the original error as
+    a clean `error_during_execution` result — no 400 loop, no double tool
+    execution. (Auto-recovering read-only rewind-restart is a scoped follow-up.)
+  - No consumer action required — previously-failing cross-model conversations now
+    just work. +13 tests; full suite 1460 green; `tsc`/`build` exit 0.
 
 ## 0.13.0 — 2026-07-07
 

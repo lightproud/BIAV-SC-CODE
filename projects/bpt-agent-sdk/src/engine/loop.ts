@@ -58,6 +58,12 @@ import {
   evaluateStructuredOutput,
 } from './structured-output.js';
 import { applyCacheControl } from './cache-control.js';
+import {
+  protectedTurnIndex,
+  signingModelOf,
+  stampSigningModel,
+  stripStaleThinking,
+} from './thinking-provenance.js';
 
 const DEFAULT_THINKING_BUDGET = 10_000;
 
@@ -401,7 +407,7 @@ export async function* runAgentLoop(
    * {role:'assistant',content:[]} turn would make the next request (a
    * follow-up turn or a resume) 400 with "content must not be empty".
    */
-  const pushAssistant = (content: ContentBlock[]): void => {
+  const pushAssistant = (content: ContentBlock[], signingModel: string): void => {
     const filtered = nonEmptyContent(content);
     if (filtered.length === 0) {
       deps.debug(
@@ -411,6 +417,10 @@ export async function* runAgentLoop(
       return;
     }
     const turn: APIMessageParam = { role: 'assistant', content: filtered };
+    // Record which model SIGNED this turn's thinking blocks, so a later
+    // cross-model replay (fallback switch / resume to another model) strips the
+    // now-unverifiable signatures instead of 400-ing forever (BPT 2026-07-07).
+    stampSigningModel(turn, signingModel);
     history.push(turn);
     mirror(turn);
   };
@@ -600,7 +610,11 @@ export async function* runAgentLoop(
       model: useModel,
       max_tokens: config.maxOutputTokens,
       system: systemField,
-      messages: reqMsgs,
+      // Strip cross-model thinking signatures from CLOSED history turns before
+      // they replay (BPT 2026-07-07): same-model turns pass through untouched
+      // (identity return -> cache intact); a fallback switch or a resume to a
+      // different model would otherwise 400 forever on the stale signature.
+      messages: stripStaleThinking(reqMsgs, useModel),
       tools: toolDefs.length > 0 ? toolDefs : undefined,
       thinking: computeThinking(),
       signal,
@@ -1002,6 +1016,23 @@ export async function* runAgentLoop(
           err instanceof APIStatusError &&
           isFallbackStatus(err.status)
         ) {
+          // §4 hard edge: if we are mid-tool-loop, the in-flight assistant turn
+          // (its thinking is API-REQUIRED before its tool_use, so it can't be
+          // stripped) was signed by the now-failing model. Retrying it on the
+          // fallback model would 400 on its stale signature — trading one
+          // failure for a worse, un-strippable one. Withhold the switch and
+          // surface the ORIGINAL error instead: no invalid-signature 400 loop,
+          // no double tool execution. (Auto-recovering read-only rewind-restart
+          // is a scoped follow-up; clean-fail is the stable choice for now.)
+          const protIdx = protectedTurnIndex(reqMsgs);
+          if (protIdx >= 0 && signingModelOf(reqMsgs[protIdx]!) !== config.fallbackModel) {
+            deps.debug(
+              `engine: fallback to ${config.fallbackModel} withheld — the in-flight ` +
+                `tool-loop turn is signed by the failing model ${model} and its thinking ` +
+                `is API-required; surfacing the original error to avoid an invalid-signature 400`,
+            );
+            throw err;
+          }
           deps.debug(
             `engine: model ${model} failed with status ${err.status}; retrying turn with fallback model ${config.fallbackModel}`,
           );
@@ -1109,7 +1140,7 @@ export async function* runAgentLoop(
         // the persisted trailing assistant tool_use is healed on resume by
         // the session store's repairPairing.
         if (config.maxBudgetUsd !== undefined && totalCostUsd > config.maxBudgetUsd) {
-          pushAssistant(assistant.content);
+          pushAssistant(assistant.content, assistant.model);
           deps.debug(
             `engine: budget pre-stop - ${toolUses.length} requested tool call(s) ` +
               `not executed (estimated cost $${totalCostUsd.toFixed(6)} > ` +
@@ -1191,7 +1222,7 @@ export async function* runAgentLoop(
           // the next group runs.
           yield* drainObs();
         }
-        pushAssistant(assistant.content);
+        pushAssistant(assistant.content, assistant.model);
         const userTurn: APIMessageParam = { role: 'user', content: results };
         history.push(userTurn);
         mirror(userTurn);
@@ -1286,7 +1317,7 @@ export async function* runAgentLoop(
       if (config.outputFormat !== undefined) {
         const outcome = evaluateStructuredOutput(text, config.outputFormat.schema);
         if (outcome.status === 'invalid') {
-          pushAssistant(assistant.content); // keep the invalid answer in history
+          pushAssistant(assistant.content, assistant.model); // keep the invalid answer in history
           const maxRetries =
             config.maxStructuredOutputRetries ?? DEFAULT_STRUCTURED_OUTPUT_RETRIES;
           if (structuredRetries >= maxRetries) {
@@ -1334,7 +1365,7 @@ export async function* runAgentLoop(
       if (deps.drainSubagentResults !== undefined) {
         const extra = deps.drainSubagentResults();
         if (extra.length > 0) {
-          pushAssistant(assistant.content); // keep this turn's answer in history
+          pushAssistant(assistant.content, assistant.model); // keep this turn's answer in history
           const bgTurn: APIMessageParam = { role: 'user', content: extra };
           history.push(bgTurn);
           mirror(bgTurn);
@@ -1361,7 +1392,7 @@ export async function* runAgentLoop(
 
       // Natural end: keep history complete for follow-up turns in the same
       // session, fire Stop hooks, emit the success result.
-      pushAssistant(assistant.content);
+      pushAssistant(assistant.content, assistant.model);
       if (deps.hooks.hasHooks('Stop')) {
         const stopAgg = await deps.hooks.run(
           'Stop',

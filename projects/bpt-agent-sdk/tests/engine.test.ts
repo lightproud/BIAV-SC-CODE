@@ -53,6 +53,7 @@ import {
   textReplyEvents,
   toolUseReplyEvents,
 } from './helpers/mock-transport.js';
+import { stampSigningModel } from '../src/engine/thinking-provenance.js';
 
 // ---------------------------------------------------------------------------
 // Fakes
@@ -1213,6 +1214,92 @@ describe('runAgentLoop', () => {
     // Both models appear in the per-model ledger.
     expect(result.modelUsage['claude-primary']!.inputTokens).toBe(100);
     expect(result.modelUsage['claude-fallback']!.inputTokens).toBe(50);
+  });
+
+  // ----- BPT 2026-07-07: cross-model thinking-signature hygiene -----
+
+  it('strips a cross-model CLOSED thinking block from the outgoing replay', async () => {
+    const transport = new MockTransport([textReplyEvents('ok', { model: 'model-b' })]);
+    const deps = makeDeps(transport);
+    const closed: APIMessageParam = {
+      role: 'assistant',
+      content: [
+        { type: 'thinking', thinking: 'draft', signature: 'sig-a' } as ContentBlockParam,
+        { type: 'text', text: 'answer' } as ContentBlockParam,
+      ],
+    };
+    stampSigningModel(closed, 'model-a');
+    const history: APIMessageParam[] = [
+      { role: 'user', content: 'go' },
+      closed,
+      { role: 'user', content: 'again' },
+    ];
+    await collect(runAgentLoop(history, deps, makeConfig({ model: 'model-b' })));
+    const sent = transport.requests[0]!.messages[1]!;
+    const kinds = (sent.content as ContentBlockParam[]).map((b) => b.type);
+    expect(kinds).toEqual(['text']); // thinking stripped cross-model; text kept
+  });
+
+  it('KEEPS the in-flight tool-loop turn thinking even cross-model (protected)', async () => {
+    const transport = new MockTransport([textReplyEvents('done', { model: 'model-b' })]);
+    const deps = makeDeps(transport);
+    const inflight: APIMessageParam = {
+      role: 'assistant',
+      content: [
+        { type: 'thinking', thinking: 'draft', signature: 'sig-a' } as ContentBlockParam,
+        { type: 'tool_use', id: 't1', name: 'Read', input: {} } as ContentBlockParam,
+      ],
+    };
+    stampSigningModel(inflight, 'model-a');
+    const history: APIMessageParam[] = [
+      { role: 'user', content: 'go' },
+      inflight,
+      {
+        role: 'user',
+        content: [{ type: 'tool_result', tool_use_id: 't1', content: 'ok' } as ContentBlockParam],
+      },
+    ];
+    await collect(runAgentLoop(history, deps, makeConfig({ model: 'model-b' })));
+    const sent = transport.requests[0]!.messages[1]!;
+    const kinds = (sent.content as ContentBlockParam[]).map((b) => b.type);
+    expect(kinds).toEqual(['thinking', 'tool_use']); // protected -> thinking retained
+  });
+
+  it('WITHHOLDS a fallback switch mid-tool-loop to avoid an invalid-signature 400', async () => {
+    const transport = new MockTransport([
+      () => {
+        throw new APIStatusError(529, 'overloaded_error', 'overloaded');
+      },
+    ]);
+    const deps = makeDeps(transport);
+    const inflight: APIMessageParam = {
+      role: 'assistant',
+      content: [
+        { type: 'thinking', thinking: 'draft', signature: 'sig-p' } as ContentBlockParam,
+        { type: 'tool_use', id: 't1', name: 'Read', input: {} } as ContentBlockParam,
+      ],
+    };
+    stampSigningModel(inflight, 'claude-primary');
+    const history: APIMessageParam[] = [
+      { role: 'user', content: 'go' },
+      inflight,
+      {
+        role: 'user',
+        content: [{ type: 'tool_result', tool_use_id: 't1', content: 'ok' } as ContentBlockParam],
+      },
+    ];
+    const messages = await collect(
+      runAgentLoop(
+        history,
+        deps,
+        makeConfig({ model: 'claude-primary', fallbackModel: 'claude-fallback' }),
+      ),
+    );
+    // The guard fired: NO second attempt on the fallback model...
+    expect(transport.requests).toHaveLength(1);
+    // ...and the original overload surfaces as a clean error result (not a 400 loop).
+    const result = lastResult(messages);
+    expect(result.subtype).toBe('error_during_execution');
   });
 
   it('records api_error_status on an unrecovered APIStatusError result', async () => {
