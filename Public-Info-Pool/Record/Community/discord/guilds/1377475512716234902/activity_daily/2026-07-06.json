@@ -1,11 +1,11 @@
 {
   "date": "2026-07-06",
-  "messages": 328,
+  "messages": 329,
   "unique_authors": 20,
   "reactions_total": 73,
   "attachments": 35,
   "channel_activity": {
-    "なんでも雑談": 286,
+    "なんでも雑談": 287,
     "🔰初心者質問": 3,
     "誰でも質問": 28,
     "自分が覚醒体になった時の性能を考えるスレ": 4,
@@ -13,6 +13,7 @@
     "つぶやき": 5
   },
   "hourly_activity": {
+    "22": 1,
     "20": 2,
     "13": 25,
     "14": 58,
@@ -33,7 +34,7 @@
     "2": 2
   },
   "message_types": {
-    "0": 2
+    "0": 1
   },
   "top_reacted_messages": [
     {
