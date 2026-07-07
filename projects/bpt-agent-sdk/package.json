@@ -1,6 +1,6 @@
 {
   "name": "bpt-agent-sdk",
-  "version": "0.18.0",
+  "version": "0.18.1",
   "description": "BPT Agent SDK - independent agent harness with a claude-agent-sdk compatible surface, driving the Anthropic Messages API directly (no bundled CLI binary).",
   "license": "MIT",
   "type": "module",

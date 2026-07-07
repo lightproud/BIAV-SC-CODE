@@ -17,7 +17,12 @@ import { mkdir, mkdtemp, rm } from 'node:fs/promises';
 import * as os from 'node:os';
 import * as path from 'node:path';
 
-import { bashTool, createBashTool, windowsCmdHint } from '../src/tools/bash.js';
+import {
+  bashTool,
+  createBashTool,
+  windowsCmdHint,
+  withPersistentState,
+} from '../src/tools/bash.js';
 import { BASH_DESCRIPTION, BASH_WIN32_NOTE } from '../src/tools/descriptions.js';
 import type { SandboxContext } from '../src/types.js';
 import type {
@@ -205,5 +210,42 @@ describe('Bash description win32 platform note (gated assembly)', () => {
     const desc = createBashTool(fakeSandbox, 'linux').description;
     expect(desc).not.toContain(BASH_WIN32_NOTE);
     expect(desc).toContain('# Sandbox');
+  });
+});
+
+// BPT Windows incident 2026-07-08: mkdtemp returns a backslash path on Windows
+// (C:\Users\…\bpt-shell-X); embedded verbatim into the wrapper, the backslashes
+// corrupt the double-quoted "$__bpt_state/cwd" expansion, and every foreground
+// Bash call fails with `cat: '"/cwd"': No such file` + exit 127. The fix
+// forward-slashes the state dir for the SCRIPT form only.
+describe('withPersistentState state-dir separator normalization (Windows)', () => {
+  it('forward-slashes a Windows backslash state dir in the wrapper assignment', () => {
+    const winDir = 'C:\\Users\\ASTERIA\\AppData\\Local\\Temp\\bpt-shell-PJ7Z1V';
+    const script = withPersistentState('node -e "1"', winDir);
+    // The assignment carries the normalized forward-slash path...
+    expect(script).toContain(
+      "__bpt_state='C:/Users/ASTERIA/AppData/Local/Temp/bpt-shell-PJ7Z1V'",
+    );
+    // ...and no backslash survives anywhere in the generated script (the state
+    // path was the only source of them here).
+    expect(script).not.toContain('\\');
+  });
+
+  it('leaves a POSIX forward-slash state dir untouched (no-op)', () => {
+    const posixDir = '/tmp/bpt-shell-abc123';
+    const script = withPersistentState('echo hi', posixDir);
+    expect(script).toContain(`__bpt_state='${posixDir}'`);
+  });
+
+  it('preserves the replay/capture prologue and appends the command last', () => {
+    const script = withPersistentState('node -e "1"', 'C:\\T\\bpt-shell-1');
+    const lines = script.split('\n');
+    // Assignment first, command last, EXIT trap wiring intact.
+    expect(lines[0]).toBe("__bpt_state='C:/T/bpt-shell-1'");
+    expect(lines[lines.length - 1]).toBe('node -e "1"');
+    expect(script).toContain('trap __bpt_persist EXIT');
+    // The double-quoted state references remain the variable form, not inlined.
+    expect(script).toContain('"$__bpt_state/cwd"');
+    expect(script).toContain('"$__bpt_state/env"');
   });
 });
