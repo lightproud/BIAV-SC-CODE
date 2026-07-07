@@ -9,7 +9,8 @@
 export { query } from './query.js';
 // BPT-EXTENSION: in-process multi-conversation coordinator (SessionManager /
 // SessionManagerOptions / SessionManagerUsage types ride the types.js export).
-export { createBptSession } from './session-manager.js';
+export { createBptSession, runConcurrent } from './session-manager.js';
+export type { ManagedTask, RunConcurrentOutcome } from './session-manager.js';
 // Built-in durable session store (SM-乙a): fileSessionStore(dir) for the
 // SessionManager's `store` option and options.sessionStore recovery.
 export { FileSessionStore, fileSessionStore } from './sessions/file-store.js';

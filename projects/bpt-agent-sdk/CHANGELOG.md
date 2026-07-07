@@ -11,6 +11,39 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.13.0 — 2026-07-07
+
+Five keeper-directed optimizations (correctness + concurrency + DX), each with
+tests. Full suite 1447 green; `tsc`/`build` exit 0.
+
+- **fix (Grep — no more silent truncation)**: `count` and `files_with_matches`
+  now default to COMPLETE results (they emit one small entry per file, so the
+  old flat 250-cap silently reported a WRONG count / partial file list on repos
+  with >250 matching files). `content` keeps the 250 flood guard. ALL modes now
+  ANNOUNCE cap-induced truncation with a footer (`results truncated at
+  head_limit=N; … set head_limit=0 for the complete result`) instead of quietly
+  returning a prefix. Explicit `head_limit` still bounds every mode.
+- **feat (Grep full-scan telemetry)**: each Grep emits a `grep.scan mode=…
+  files_total=… files_scanned=… full_scan=… early_stop=…` line on the debug
+  channel, so a host can measure the full-scan share of its Grep traffic (the
+  driver of the pure-JS-vs-ripgrep cost).
+- **feat (BPT-EXTENSION): `runConcurrent(mgr, tasks, opts)`** — drives many
+  `mgr.query()` conversations in parallel (bounded by `concurrency`, default 8)
+  with per-task failure isolation and index-aligned outcomes. Closes the
+  pull-driven footgun where `for (…) { for await (…mgr.query()) }` runs
+  sequentially. Exports `ManagedTask` / `RunConcurrentOutcome`; see
+  `docs/CONCURRENCY.md`.
+- **feat (BPT-EXTENSION): `provider.maxConcurrentRequests`** (env
+  `BPT_MAX_CONCURRENT_REQUESTS`, default 0 = unlimited) — a FIFO counting
+  semaphore in the transport caps concurrent in-flight Messages API requests, so
+  a large multi-conversation fan-out over one shared transport does not thrash
+  the rate limit. A request holds its slot for the whole streaming lifetime.
+- **test (MCP concurrency hardening)**: a stress test proves 50 concurrent
+  `callTool` over ONE stdio connection each route to their own response by
+  JSON-RPC id (no cross-talk), and that one rejected id never corrupts sibling
+  responses — confirming the shared-MCP-pool multiplexing that SessionManager
+  relies on. (Mechanism was already correct; this locks it.)
+
 ## 0.12.0 — 2026-07-06
 
 - **P2 PARTIAL-closure pass**: a row-by-row re-audit of every `docs/COMPAT.md`
