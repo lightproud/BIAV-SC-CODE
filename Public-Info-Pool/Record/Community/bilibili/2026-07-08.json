@@ -1,9 +1,32 @@
 {
   "date": "2026-07-08",
-  "archived_at": "2026-07-07T22:10:32.410042+00:00",
+  "archived_at": "2026-07-07T23:55:51.822497+00:00",
   "source": "bilibili",
-  "item_count": 1,
+  "item_count": 3,
   "items": [
+    {
+      "title": "沙耶の唄 // 命よ息吹いて安らぎの色に",
+      "summary": "《沙耶の唄》-\tいとうかなこ\n  └ 毛绒熊崽 (0赞): [桃源_乖巧]",
+      "source": "bilibili",
+      "time": "2026-07-07T16:31:36+00:00",
+      "url": "https://www.bilibili.com/video/BV1YbMh6AEJN",
+      "engagement": 95,
+      "is_hot": false,
+      "author": "橘猫烛",
+      "tags": [
+        "单机游戏"
+      ],
+      "metadata": {
+        "play": 93,
+        "comment_count": 2,
+        "comments_fetched": 1,
+        "danmaku": 0
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/d68f92f65e5e33a071dbebffbcfa8f7b83c57c9d.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
     {
       "title": "分享给郁纪的随拍",
       "summary": "",
@@ -23,6 +46,29 @@
         "danmaku": 0
       },
       "media_url": "https://i1.hdslb.com/bfs/archive/719ef6eaf4a3539338c7640ded237637a084e60d.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "【沙耶之歌】Soul Below",
+      "summary": "",
+      "source": "bilibili",
+      "time": "2026-07-07T23:51:18+00:00",
+      "url": "https://www.bilibili.com/video/BV1DfMe6uEDa",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "薄-荷-猫",
+      "tags": [
+        "宅舞"
+      ],
+      "metadata": {
+        "play": 0,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/15f88aea423d9189aa72e06e2114ccbafe016df3.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

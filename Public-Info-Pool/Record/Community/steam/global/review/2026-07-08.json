@@ -1,8 +1,8 @@
 {
   "date": "2026-07-08",
-  "archived_at": "2026-07-07T22:10:32.521805+00:00",
+  "archived_at": "2026-07-07T23:55:51.926443+00:00",
   "source": "steam",
-  "item_count": 2,
+  "item_count": 3,
   "items": [
     {
       "title": "[正面] peak",
@@ -46,6 +46,30 @@
         "playtime_forever": 2492,
         "votes_up": 0,
         "timestamp_created": 1783442352
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] saya is in the game what more can you ask for real...",
+      "summary": "saya is in the game what more can you ask for really",
+      "source": "steam_review",
+      "time": "2026-07-07T23:47:27+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198796214122/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198796214122",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 389,
+        "votes_up": 0,
+        "timestamp_created": 1783468047
       },
       "region": "global",
       "archive_subtype": "review",
