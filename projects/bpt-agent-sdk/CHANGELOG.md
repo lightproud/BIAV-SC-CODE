@@ -11,6 +11,35 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.25.0 — 2026-07-08
+
+i18n-zh **Phase 2 batch B** (keeper ruling B): the **auxiliary generator
+prompts** — the judge/verdict/delegate group — to Chinese.
+
+- **change: three internal generator prompts are now Chinese** (on the wire):
+  the hook-condition evaluators (`HOOK_CONDITION_SYSTEM`,
+  `HOOK_STOP_CONDITION_SYSTEM`), the adversarial verifier prompt
+  (`VERIFY_VERDICT_SYSTEM` + `THREE_STATE_VERDICT_DEFINITIONS` +
+  `RECALL_BIAS_GUIDANCE`), and the subagent framing (`GENERAL_PURPOSE_PROMPT`,
+  `WORKER_FORK_FRAMING` + the two subagent descriptions).
+- **Output contracts preserved verbatim** — these prompts drive PARSED output,
+  so only instructional prose is translated: the hook JSON keys/booleans
+  (`ok`/`reason`/`impossible`/`true`/`false`), the verifier verdict enum
+  (`CONFIRMED`/`PLAUSIBLE`/`REFUTED`) and JSON keys
+  (`verdict`/`quote`/`rationale`/`confirms`), and tool tokens (`Agent`, `Read`,
+  `*.md`, `README`) stay English. The parsers are unchanged; their unit tests
+  (which feed English JSON) still pass untouched.
+- `VERIFY_KEEP_RULE` is a doc/anchor constant (never sent to the model), so it
+  stays English + `faithful:true`; only the on-the-wire fragments flip
+  `faithful:false`. The archive corpus-sync guards go inert for translated
+  fragments (they skip on `!faithful`) while staying wired for English ones.
+- New `tests/aux-prompts-i18n-zh.test.ts`: each translated prompt is Chinese +
+  emoji-free + output-contract-token-preserving.
+- **Still English (later Phase-2 batch):** the larger `src/generators/prompts.ts`
+  set (command-prefix / background-state / session-title / title-and-branch /
+  session-name / away-summary / memory-files) and `src/tips/prompts.ts`, plus
+  the opt-in v1–v4 harness variants and the runtime `<env>` block. See COMPAT.
+
 ## 0.24.0 — 2026-07-08
 
 i18n-zh **Phase 2 batch A** (keeper ruling B, 全部推进 including main-loop): the

@@ -225,10 +225,12 @@ describe('hook-condition prompt provenance (corpus-sync guard, Track B parity)',
   const norm = (s: string) => s.replace(/\s+/g, ' ').trim();
   const stripHeader = (md: string) => md.replace(/^<!--[\s\S]*?-->\n?/, '');
 
-  it('the provenance table has 2 faithful entries', () => {
+  it('the provenance table has 2 entries, now translated (faithful:false)', () => {
     expect(Object.keys(HOOK_CONDITION_PROVENANCE_TABLE)).toHaveLength(2);
+    // i18n-zh Phase 2 batch B: both prompts translated to Chinese (JSON contract
+    // — ok/reason/impossible keys + booleans — kept English), so faithful:false.
     for (const p of Object.values(HOOK_CONDITION_PROVENANCE_TABLE)) {
-      expect(p.faithful).toBe(true);
+      expect(p.faithful).toBe(false);
     }
   });
 
@@ -237,7 +239,8 @@ describe('hook-condition prompt provenance (corpus-sync guard, Track B parity)',
     { text: HOOK_STOP_CONDITION_SYSTEM, prov: HOOK_STOP_CONDITION_PROVENANCE },
   ];
   for (const { text, prov } of faces) {
-    it.runIf(existsSync(archive))(`${prov.slug} is faithful to its archived source`, () => {
+    // Translated (faithful:false): Chinese prose can't anchor-match the English archive.
+    it.runIf(existsSync(archive) && prov.faithful)(`${prov.slug} is faithful to its archived source`, () => {
       const body = norm(stripHeader(readFileSync(join(archive, `${prov.slug}.md`), 'utf8')));
       const drifted = norm(text)
         .split(/(?<=[.:])\s+/)

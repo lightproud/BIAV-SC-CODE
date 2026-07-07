@@ -205,12 +205,17 @@ describe('verifier prompt provenance (corpus-sync guard, Track B parity)', () =>
   const norm = (s: string) => s.replace(/\s+/g, ' ').trim();
   const stripHeader = (md: string) => md.replace(/^<!--[\s\S]*?-->\n?/, '');
 
-  it('the provenance table has 3 faithful entries with non-empty slugs', () => {
+  it('the provenance table has 3 entries with non-empty slugs; translated wire fragments are faithful:false', () => {
     expect(Object.keys(VERIFIER_PROVENANCE)).toHaveLength(3);
     for (const p of Object.values(VERIFIER_PROVENANCE)) {
-      expect(p.faithful).toBe(true);
       expect(p.slug.length).toBeGreaterThan(0);
     }
+    // i18n-zh Phase 2 batch B: the two ON-THE-WIRE fragments (verdict definitions,
+    // recall-bias) are translated to Chinese -> faithful:false. VERIFY_KEEP_RULE is
+    // a doc/anchor constant (NOT sent to the model), so it stays English + true.
+    expect(VERDICT_DEFINITIONS_PROVENANCE.faithful).toBe(false);
+    expect(RECALL_BIAS_PROVENANCE.faithful).toBe(false);
+    expect(VERIFY_PHASE_PROVENANCE.faithful).toBe(true);
   });
 
   const fragments = [
@@ -218,7 +223,9 @@ describe('verifier prompt provenance (corpus-sync guard, Track B parity)', () =>
     { text: RECALL_BIAS_GUIDANCE, prov: RECALL_BIAS_PROVENANCE },
   ];
   for (const { text, prov } of fragments) {
-    it.runIf(existsSync(archive))(`${prov.slug} is faithful to its archived source`, () => {
+    // Translated (faithful:false) fragments can't be anchor-matched against the
+    // English archive; the archive check runs only for still-faithful fragments.
+    it.runIf(existsSync(archive) && prov.faithful)(`${prov.slug} is faithful to its archived source`, () => {
       const body = norm(stripHeader(readFileSync(join(archive, `${prov.slug}.md`), 'utf8')));
       const drifted = norm(text)
         .split(/(?<=[.:])\s+/)
