@@ -1,22 +1,28 @@
 /**
  * Tool descriptions for the BPT Agent SDK.
  *
- * i18n-zh CAMPAIGN IN PROGRESS (keeper ruling B, 2026-07-08): the built-in
- * tool descriptions are being TRANSLATED TO CHINESE IN-PLACE and shipped on the
- * wire — a DELIBERATE divergence from the official English surface (see
- * docs/COMPAT.md; the keeper accepted that this breaks the faithful-reproduction
- * axis and its provenance guard). Done: batch 1 (Read/Edit/Write/Grep/Glob) +
- * batch 2 (Task-tools/TodoWrite/WebFetch/WebSearch/AskUserQuestion/ExitPlanMode/
- * EnterWorktree) + batch 3 (Monitor) + batch 4 (Workflow). Still English: Bash
- * (+ git protocol + sandbox fragments) — a later, safety-critical batch.
- * Translated tools are
- * removed from TOOL_DESCRIPTION_PROVENANCE (the English corpus-sync guard) and
- * covered by tests/tool-descriptions-i18n-zh.test.ts (structural: is-Chinese,
- * no emoji, tool/param tokens preserved). Tool NAMES and wire PARAMETER names
- * stay English (they are identifiers); only prose is translated.
+ * i18n-zh CAMPAIGN COMPLETE for the tool-description surface (keeper ruling B,
+ * 2026-07-08): EVERY built-in tool description is TRANSLATED TO CHINESE IN-PLACE
+ * and shipped on the wire — a DELIBERATE divergence from the official English
+ * surface (see docs/COMPAT.md; the keeper accepted that this breaks the
+ * faithful-reproduction axis and its provenance guard). Batches: b1 (Read/Edit/
+ * Write/Grep/Glob) + b2 (Task-tools/TodoWrite/WebFetch/WebSearch/AskUserQuestion/
+ * ExitPlanMode/EnterWorktree) + b3 (Monitor) + b4 (Workflow) + b5 (Bash + its git
+ * protocol + sandbox fragments — the safety-critical batch, translated with the
+ * git-safety and dangerouslyDisableSandbox logic preserved exactly). All tools
+ * are removed from TOOL_DESCRIPTION_PROVENANCE (the English corpus-sync guard,
+ * now empty) and covered by tests/tool-descriptions-i18n-zh.test.ts (structural:
+ * is-Chinese, no emoji, tool/param tokens preserved). Tool NAMES and wire
+ * PARAMETER names stay English (they are identifiers); only prose is translated.
  *
- * The entries BELOW that are still ENGLISH remain FAITHFUL OPEN REPRODUCTIONS of
- * the official Claude Code agent tool descriptions, assembled/adapted from the
+ * NOTE ON SCOPE: runtime execution feedback (the sandbox-failure stderr hint in
+ * src/sandbox/evidence.ts, the win32 cmd-habit hint and the mandatory-mode
+ * refusal in src/tools/bash.ts) is a DISTINCT surface — model-visible only on
+ * failure, not a "tool description" — and is intentionally left English by this
+ * batch. Translating it would be a separate follow-up.
+ *
+ * The Chinese below was translated FROM FAITHFUL OPEN REPRODUCTIONS of the
+ * official Claude Code agent tool descriptions, assembled/adapted from the
  * public reconstruction archived under
  * `Public-Info-Pool/Reference/Claude-Code-System-Prompts/system-prompts/`
  * (attribution, not clean-room). Template variables in the source fragments have
@@ -99,75 +105,75 @@
  *    co-author / session-link footer boilerplate stripped.
  */
 
-export const BASH_DESCRIPTION = `Executes a given bash command and returns its output.
+export const BASH_DESCRIPTION = `执行给定的 bash 命令并返回其输出。
 
-The working directory persists between commands, but shell state does not. The shell environment is initialized from the user's profile (bash or zsh).
+工作目录在命令之间保持不变，但 shell 状态不保留。shell 环境由用户的 profile（bash 或 zsh）初始化。
 
-Try to maintain your current working directory throughout the session by using absolute paths and avoiding usage of \`cd\`. You may use \`cd\` if the User explicitly requests it. In particular, never prepend \`cd <current-directory>\` to a \`git\` command — \`git\` already operates on the current working tree, and the compound triggers a permission prompt.
+尽量在整个会话中保持你当前的工作目录：使用绝对路径、避免使用 \`cd\`。若用户明确要求，你可以使用 \`cd\`。尤其是，绝不要在 \`git\` 命令前加 \`cd <current-directory>\`——\`git\` 本就在当前工作树上操作，而这个组合会触发权限提示。
 
-Always quote file paths that contain spaces with double quotes in your command (e.g., cd "path with spaces/file.txt").
+命令中含空格的文件路径务必用双引号括起（例如 cd "path with spaces/file.txt"）。
 
-If your command will create new directories or files, first use this tool to run \`ls\` to verify the parent directory exists and is the correct location.
+若你的命令会创建新目录或文件，先用本工具运行 \`ls\` 确认父目录存在且位置正确。
 
-You may specify an optional timeout in milliseconds (up to 600000ms / 10 minutes). By default, your command will timeout after 120000ms (2 minutes).
+你可以指定一个可选的超时（毫秒，至多 600000ms / 10 分钟）。默认情况下，命令会在 120000ms（2 分钟）后超时。
 
-Set run_in_background: true to launch the command as a background shell that keeps running while you continue working. Read its accumulating output with the BashOutput tool, and stop it with the KillShell tool. Do not run background commands with a trailing \`&\`; use run_in_background instead.
+设 run_in_background: true 可把命令作为后台 shell 启动，它会在你继续工作时保持运行。用 BashOutput 工具读取其累积的输出，用 KillShell 工具停止它。不要给后台命令加尾随的 \`&\`；改用 run_in_background。
 
-IMPORTANT: Avoid using this tool to run find, grep, cat, head, tail, ls, sed, awk commands, unless explicitly instructed or after you have verified that a dedicated tool cannot accomplish your task. Instead, use the appropriate dedicated tool as this will provide a much better experience for the user:
-- File search: Use Glob (NOT find or ls)
-- Content search: Use Grep (NOT grep or rg)
-- Read files: Use Read (NOT cat/head/tail)
-- Edit files: Use Edit (NOT sed/awk)
-- Write files: Use Write (NOT echo >/cat <<EOF)
-- Communication: Output text directly (NOT echo/printf)
+重要：避免用本工具运行 find、grep、cat、head、tail、ls、sed、awk 命令，除非被明确指示、或你已确认没有专用工具能完成你的任务。应改用相应的专用工具，因为这会给用户带来好得多的体验：
+- 文件查找：用 Glob（而非 find 或 ls）
+- 内容搜索：用 Grep（而非 grep 或 rg）
+- 读取文件：用 Read（而非 cat/head/tail）
+- 编辑文件：用 Edit（而非 sed/awk）
+- 写入文件：用 Write（而非 echo >/cat <<EOF）
+- 沟通交流：直接输出文本（而非 echo/printf）
 
-While the Bash tool can do similar things, it's better to use the built-in tools as they provide a better user experience and make it easier to review tool calls and give permission.
+虽然 Bash 工具能做类似的事，但更宜使用内置工具：它们带来更好的用户体验，也让工具调用更易于审阅与授权。
 
 # Git
-- Before running destructive operations (e.g., git reset --hard, git push --force, git checkout --), consider whether there is a safer alternative that achieves the same goal. Only use destructive operations when they are truly the best approach.
-- Never skip hooks (--no-verify) or bypass signing (--no-gpg-sign, -c commit.gpgsign=false) unless the user has explicitly asked for it. If a hook fails, investigate and fix the underlying issue.
-- Prefer to create a new commit rather than amending an existing commit.
-- Never use git commands with the -i flag (like git rebase -i or git add -i) since they require interactive input which is not supported.
+- 在运行破坏性操作（如 git reset --hard、git push --force、git checkout --）之前，先考虑是否有能达成同样目标的更安全替代方案。只有当破坏性操作确实是最佳做法时才使用它。
+- 绝不跳过钩子（--no-verify）或绕过签名（--no-gpg-sign、-c commit.gpgsign=false），除非用户明确要求。若某个钩子失败，排查并修复其根本问题。
+- 优先创建新提交，而非修补（amend）已有提交。
+- 绝不使用带 -i 标志的 git 命令（如 git rebase -i 或 git add -i），因为它们需要交互式输入，而这不受支持。
 
-# Committing changes with git
+# 用 git 提交更改
 
-Only create commits when requested by the user. If unclear, ask first. When the user asks you to create a new git commit, follow these steps carefully:
+只有在用户要求时才创建提交。若不明确，先询问。当用户要求你创建一个新的 git 提交时，谨慎地遵循以下步骤：
 
-You can call multiple tools in a single response. When multiple independent pieces of information are requested and all commands are likely to succeed, run multiple tool calls in parallel for optimal performance. The numbered steps below indicate which commands should be batched in parallel.
+你可以在单次回复中调用多个工具。当请求多个相互独立的信息、且所有命令都很可能成功时，并行地运行多个工具调用以获得最佳性能。下面带编号的步骤指明了哪些命令应当并行批处理。
 
-Git Safety Protocol:
-- NEVER update the git config
-- NEVER run destructive git commands (push --force, reset --hard, checkout ., restore ., clean -f, branch -D) unless the user explicitly requests these actions. Taking unauthorized destructive actions is unhelpful and can result in lost work, so it's best to ONLY run these commands when given direct instructions
-- NEVER skip hooks (--no-verify, --no-gpg-sign, etc) unless the user explicitly requests it
-- NEVER run force push to main/master, warn the user if they request it
-- CRITICAL: Always create NEW commits rather than amending, unless the user explicitly requests a git amend. When a pre-commit hook fails, the commit did NOT happen — so --amend would modify the PREVIOUS commit, which may result in destroying work or losing previous changes. Instead, after hook failure, fix the issue, re-stage, and create a NEW commit
-- When staging files, prefer adding specific files by name rather than using "git add -A" or "git add .", which can accidentally include sensitive files (.env, credentials) or large binaries
-- NEVER commit changes unless the user explicitly asks you to. It is VERY IMPORTANT to only commit when explicitly asked, otherwise the user will feel that you are being too proactive
+Git 安全协议：
+- 绝不更新 git config
+- 绝不运行破坏性 git 命令（push --force、reset --hard、checkout .、restore .、clean -f、branch -D），除非用户明确要求这些操作。擅自采取破坏性操作没有帮助、且可能导致工作丢失，因此最好只在收到直接指示时才运行这些命令
+- 绝不跳过钩子（--no-verify、--no-gpg-sign 等），除非用户明确要求
+- 绝不对 main/master 执行强制推送；若用户要求，向其发出警告
+- 关键：始终创建新提交而非修补（amend），除非用户明确要求 git amend。当 pre-commit 钩子失败时，提交并没有发生——因此 --amend 会修改上一个提交，这可能毁掉工作或丢失先前的更改。正确做法是：钩子失败后，修复问题、重新暂存，再创建一个新提交
+- 暂存文件时，优先按名字添加具体文件，而非用 "git add -A" 或 "git add ."，后者可能意外纳入敏感文件（.env、凭据）或大二进制文件
+- 绝不在用户明确要求之前提交更改。只在被明确要求时才提交，这非常重要，否则用户会觉得你过于主动
 
-1. Run the following bash commands in parallel, each using the Bash tool:
-  - Run a git status command to see all untracked files. IMPORTANT: Never use the -uall flag as it can cause memory issues on large repos.
-  - Run a git diff command to see both staged and unstaged changes that will be committed.
-  - Run a git log command to see recent commit messages, so that you can follow this repository's commit message style.
-2. Analyze all staged changes (both previously staged and newly added) and draft a commit message:
-  - Summarize the nature of the changes (eg. new feature, enhancement to an existing feature, bug fix, refactoring, test, docs, etc.). Ensure the message accurately reflects the changes and their purpose (i.e. "add" means a wholly new feature, "update" means an enhancement to an existing feature, "fix" means a bug fix, etc.).
-  - Do not commit files that likely contain secrets (.env, credentials.json, etc). Warn the user if they specifically request to commit those files
-  - Draft a concise (1-2 sentences) commit message that focuses on the "why" rather than the "what"
-  - Ensure it accurately reflects the changes and their purpose
-3. Run the following commands in parallel:
-   - Add relevant untracked files to the staging area.
-   - Create the commit.
-   - Run git status after the commit completes to verify success.
-   Note: git status depends on the commit completing, so run it sequentially after the commit.
-4. If the commit fails due to pre-commit hook: fix the issue and create a NEW commit
+1. 用 Bash 工具并行运行以下 bash 命令：
+  - 运行 git status 命令查看所有未跟踪文件。重要：绝不使用 -uall 标志，它在大仓库上可能引发内存问题。
+  - 运行 git diff 命令查看将被提交的已暂存与未暂存更改。
+  - 运行 git log 命令查看近期的提交信息，以便你遵循本仓库的提交信息风格。
+2. 分析所有已暂存的更改（先前已暂存的与新添加的），并起草一条提交信息：
+  - 概括更改的性质（如新功能、对既有功能的增强、缺陷修复、重构、测试、文档等）。确保信息准确反映更改及其目的（即 "add" 表示全新功能，"update" 表示对既有功能的增强，"fix" 表示缺陷修复，等等）。
+  - 不要提交很可能含机密的文件（.env、credentials.json 等）。若用户明确要求提交这些文件，向其发出警告
+  - 起草一条简洁（1-2 句）的提交信息，聚焦于"为什么"而非"是什么"
+  - 确保它准确反映更改及其目的
+3. 并行运行以下命令：
+   - 将相关的未跟踪文件添加到暂存区。
+   - 创建提交。
+   - 提交完成后运行 git status 以验证成功。
+   注意：git status 依赖提交的完成，故在提交之后顺序运行它。
+4. 若提交因 pre-commit 钩子而失败：修复问题并创建一个新提交
 
-Important notes:
-- NEVER run additional commands to read or explore code, besides git bash commands
-- NEVER use the TodoWrite tool
-- DO NOT push to the remote repository unless the user explicitly asks you to do so
-- IMPORTANT: Never use git commands with the -i flag (like git rebase -i or git add -i) since they require interactive input which is not supported.
-- IMPORTANT: Do not use --no-edit with git rebase commands, as the --no-edit flag is not a valid option for git rebase.
-- If there are no changes to commit (i.e., no untracked files and no modifications), do not create an empty commit
-- In order to ensure good formatting, ALWAYS pass the commit message via a HEREDOC, a la this example:
+重要事项：
+- 除 git bash 命令外，绝不运行额外的命令去读取或探索代码
+- 绝不使用 TodoWrite 工具
+- 除非用户明确要求，不要推送到远程仓库
+- 重要：绝不使用带 -i 标志的 git 命令（如 git rebase -i 或 git add -i），因为它们需要交互式输入，而这不受支持。
+- 重要：不要在 git rebase 命令中使用 --no-edit，因为 --no-edit 标志不是 git rebase 的有效选项。
+- 若没有可提交的更改（即既无未跟踪文件也无修改），不要创建空提交
+- 为确保格式良好，始终通过 HEREDOC 传入提交信息，如下例：
 <example>
 git commit -m "\$(cat <<'EOF'
    Commit message here.
@@ -175,23 +181,23 @@ git commit -m "\$(cat <<'EOF'
    )"
 </example>
 
-# Creating pull requests
-Use the gh command via the Bash tool for ALL GitHub-related tasks including working with issues, pull requests, checks, and releases. If given a Github URL use the gh command to get the information needed.
+# 创建拉取请求
+所有与 GitHub 相关的任务——包括处理 issue、拉取请求、检查和发布——都通过 Bash 工具使用 gh 命令。若给出一个 Github URL，用 gh 命令获取所需信息。
 
-IMPORTANT: When the user asks you to create a pull request, follow these steps carefully:
+重要：当用户要求你创建拉取请求时，谨慎地遵循以下步骤：
 
-1. Run the following bash commands in parallel using the Bash tool, in order to understand the current state of the branch since it diverged from the main branch:
-   - Run a git status command to see all untracked files (never use -uall flag)
-   - Run a git diff command to see both staged and unstaged changes that will be committed
-   - Check if the current branch tracks a remote branch and is up to date with the remote, so you know if you need to push to the remote
-   - Run a git log command and \`git diff [base-branch]...HEAD\` to understand the full commit history for the current branch (from the time it diverged from the base branch)
-2. Analyze all changes that will be included in the pull request, making sure to look at all relevant commits (NOT just the latest commit, but ALL commits that will be included in the pull request!!!), and draft a pull request title and summary:
-   - Keep the PR title short (under 70 characters)
-   - Use the description/body for details, not the title
-3. Run the following commands in parallel:
-   - Create new branch if needed
-   - Push to remote with -u flag if needed
-   - Create PR using gh pr create with the format below. Use a HEREDOC to pass the body to ensure correct formatting.
+1. 用 Bash 工具并行运行以下 bash 命令，以了解当前分支自其从主分支分叉以来的状态：
+   - 运行 git status 命令查看所有未跟踪文件（绝不使用 -uall 标志）
+   - 运行 git diff 命令查看将被提交的已暂存与未暂存更改
+   - 检查当前分支是否跟踪某个远程分支、且与远程保持同步，以便你知道是否需要推送到远程
+   - 运行 git log 命令和 \`git diff [base-branch]...HEAD\` 以了解当前分支的完整提交历史（自其从基分支分叉之时起）
+2. 分析将被纳入拉取请求的所有更改，务必查看所有相关提交（不只是最新那个提交，而是将被纳入拉取请求的所有提交！！！），并起草拉取请求的标题与摘要：
+   - 保持 PR 标题简短（少于 70 个字符）
+   - 细节放在描述/正文里，而非标题
+3. 并行运行以下命令：
+   - 若需要，创建新分支
+   - 若需要，用 -u 标志推送到远程
+   - 用下述格式的 gh pr create 创建 PR。用 HEREDOC 传入正文以确保格式正确。
 <example>
 gh pr create --title "the pr title" --body "\$(cat <<'EOF'
 ## Summary
@@ -203,12 +209,12 @@ EOF
 )"
 </example>
 
-Important:
-- DO NOT use the TodoWrite tool
-- Return the PR URL when you're done, so the user can see it
+重要：
+- 不要使用 TodoWrite 工具
+- 完成后返回 PR 的 URL，以便用户查看
 
-# Other common operations
-- View comments on a Github PR: gh api repos/foo/bar/pulls/123/comments`;
+# 其他常见操作
+- 查看某个 Github PR 上的评论：gh api repos/foo/bar/pulls/123/comments`;
 
 /**
  * Platform note appended to the Bash description ONLY on win32 hosts (see
@@ -222,7 +228,7 @@ Important:
  * Gated so non-win32 descriptions stay byte-identical (the conformance wire
  * runs on Linux CI).
  */
-export const BASH_WIN32_NOTE = `Note: on Windows this tool still runs POSIX bash (Git Bash), not cmd.exe or PowerShell. Use POSIX commands — ls, cp, mv, rm, grep — instead of dir, copy, move, del, findstr, and write paths with forward slashes.`;
+export const BASH_WIN32_NOTE = `注意：在 Windows 上本工具仍运行 POSIX bash (Git Bash)，而非 cmd.exe 或 PowerShell。请使用 POSIX 命令——ls、cp、mv、rm、grep——而非 dir、copy、move、del、findstr，并用正斜杠书写路径。`;
 
 export const READ_DESCRIPTION = `从本地文件系统读取一个文件。你可以用此工具直接访问任意文件。
 假定此工具能读取本机上的所有文件。若用户提供了文件路径，就假定该路径有效。读取一个不存在的文件也没关系——会返回一个错误。
@@ -816,32 +822,16 @@ export interface ToolDescriptionProvenance {
 }
 
 export const TOOL_DESCRIPTION_PROVENANCE: ToolDescriptionProvenance[] = [
-  {
-    tool: 'Bash',
-    faithful: true,
-    slugs: [
-      'tool-description-bash-overview',
-      'tool-description-bash-maintain-cwd',
-      'tool-description-bash-timeout',
-      'tool-description-bash-quote-file-paths',
-      'tool-description-bash-verify-parent-directory',
-      'tool-description-bash-prefer-dedicated-tools',
-      'tool-description-bash-git-avoid-destructive-ops',
-      'tool-description-bash-git-never-skip-hooks',
-      'tool-description-bash-git-prefer-new-commits',
-      'tool-description-bash-git-commit-and-pr-creation-instructions',
-    ],
-  },
-  // Read / Edit / Write / Grep / Glob: TRANSLATED to Chinese in-place (i18n-zh
-  // batch 1, keeper 2026-07-08 ruling B). No longer faithful English
-  // reproductions, so removed from the English corpus-sync guard — their
-  // Chinese descriptions are covered by tests/tool-descriptions-i18n-zh.test.ts.
-  // TodoWrite / TaskCreate / TaskGet / TaskUpdate / TaskList / WebFetch /
-  // WebSearch / AskUserQuestion / ExitPlanMode / EnterWorktree: TRANSLATED to
-  // Chinese in-place (i18n-zh batch 2). Monitor: TRANSLATED (i18n-zh batch 3).
-  // Workflow: TRANSLATED (i18n-zh batch 4). All removed from the English
-  // corpus-sync guard; covered by tests/tool-descriptions-i18n-zh.test.ts.
-  // Bash stays English (later batch — safety-critical git/sandbox prose).
+  // i18n-zh CAMPAIGN COMPLETE for the tool-description surface (keeper 2026-07-08
+  // ruling B): EVERY built-in tool description — Read/Edit/Write/Grep/Glob (b1),
+  // Task*/TodoWrite/Web*/AskUserQuestion/ExitPlanMode/EnterWorktree (b2), Monitor
+  // (b3), Workflow (b4), and Bash + its git protocol + sandbox fragments (b5) —
+  // is now TRANSLATED to Chinese in-place. None is a faithful English
+  // reproduction any longer, so this English corpus-sync guard tracks nothing;
+  // the translations are covered by tests/tool-descriptions-i18n-zh.test.ts
+  // (structural: is-Chinese, no emoji, wire tokens preserved). The array is kept
+  // (not deleted) so a future re-added English tool has a home and the guard
+  // wiring stays intact.
 ];
 
 /** The description text for each provenance-tracked tool (for the corpus-sync guard). */
@@ -867,96 +857,106 @@ export const TOOL_DESCRIPTION_TEXT: Record<string, string> = {
 };
 
 // ---------------------------------------------------------------------------
-// Bash sandbox note (G-SANDBOX) — faithful fragment store, GATED on an active
-// sandbox. Assembled by buildBashSandboxNote and appended to the Bash
-// description only when a backend resolves (createBashTool). Composition order
-// is ours (the official 438-token note's exact internal order is not
-// recoverable from the atomized archive); the corpus-sync guard checks
-// per-fragment fidelity, not order.
+// Bash sandbox note (G-SANDBOX) — fragment store, GATED on an active sandbox.
+// Assembled by buildBashSandboxNote and appended to the Bash description only
+// when a backend resolves (createBashTool). Composition order is ours (the
+// official 438-token note's exact internal order is not recoverable from the
+// atomized archive). i18n-zh batch 5 (2026-07-08): fragments are TRANSLATED to
+// Chinese in-place, so `faithful` is false throughout and the archive-verbatim
+// corpus-sync guard no longer applies; the i18n structural guard covers them.
 // ---------------------------------------------------------------------------
 
-/** One reproduced sandbox-note fragment (Track B provenance shape). */
+/** One sandbox-note fragment (Track B provenance shape; text i18n-zh-translated). */
 export interface SandboxNoteFragment {
   id: string;
-  /** Archive slug this fragment reproduces (empty for adapted glue). */
+  /** Archive slug this fragment was translated FROM (empty for adapted glue). */
   slug: string;
+  /** True only for a faithful English reproduction; false once translated. */
   faithful: boolean;
   text: string;
 }
 
-/** Every reproduced/adapted sandbox-note fragment, keyed by id. */
+/**
+ * Every sandbox-note fragment, keyed by id. i18n-zh batch 5 (keeper ruling B,
+ * 2026-07-08): TRANSLATED to Chinese in-place. `faithful` is now false for all
+ * — a translation is not a faithful English reproduction, so the archive-
+ * verbatim corpus-sync guard (tests/sandbox.test.ts) skips them; the `slug`
+ * still records the English archive fragment each was translated FROM. Code
+ * tokens (`dangerouslyDisableSandbox`, `$TMPDIR`, `/tmp`, `~/.ssh/*`,
+ * "Operation not permitted") stay verbatim; only prose is translated.
+ */
 export const BASH_SANDBOX_FRAGMENTS: SandboxNoteFragment[] = [
   {
     id: 'framing',
     slug: '',
     faithful: false,
-    text: 'Commands run inside a sandbox by default. Writes are limited to the working directory and approved paths.',
+    text: '命令默认在沙箱内运行。写入被限制在工作目录和已批准的路径内。',
   },
   {
     id: 'default-to-sandbox',
     slug: 'tool-description-bash-sandbox-default-to-sandbox',
-    faithful: true,
-    text: 'You should always default to running commands within the sandbox. Do NOT attempt to set `dangerouslyDisableSandbox: true` unless:',
+    faithful: false,
+    text: '你应始终默认在沙箱内运行命令。不要试图设置 `dangerouslyDisableSandbox: true`，除非：',
   },
   {
     id: 'condition-user-request',
     slug: '',
     faithful: false,
-    text: 'The user explicitly asks you to run a command outside the sandbox.',
+    text: '用户明确要求你在沙箱外运行某条命令。',
   },
   {
     id: 'user-permission-prompt',
     slug: 'tool-description-bash-sandbox-user-permission-prompt',
-    faithful: true,
-    text: 'This will prompt the user for permission',
+    faithful: false,
+    text: '这会向用户请求权限',
   },
   {
     id: 'failure-evidence-condition',
     slug: 'tool-description-bash-sandbox-failure-evidence-condition',
-    faithful: true,
-    text: 'A specific command just failed and you see evidence of sandbox restrictions causing the failure. Note that commands can fail for many reasons unrelated to the sandbox (missing files, wrong arguments, network issues, etc.).',
+    faithful: false,
+    text: '某条具体命令刚刚失败，且你看到证据表明是沙箱限制导致了失败。注意：命令失败可能有许多与沙箱无关的原因（文件缺失、参数错误、网络问题等）。',
   },
   {
     id: 'evidence-list-header',
     slug: 'tool-description-bash-sandbox-evidence-list-header',
-    faithful: true,
-    text: 'Evidence of sandbox-caused failures includes:',
+    faithful: false,
+    text: '沙箱所致失败的证据包括：',
   },
   {
     id: 'evidence-access-denied',
     slug: 'tool-description-bash-sandbox-evidence-access-denied',
-    faithful: true,
-    text: 'Access denied to specific paths outside allowed directories',
+    faithful: false,
+    text: '访问被拒：指向允许目录之外的特定路径',
   },
   {
     id: 'evidence-operation-not-permitted',
     slug: 'tool-description-bash-sandbox-evidence-operation-not-permitted',
-    faithful: true,
-    text: '"Operation not permitted" errors for file/network operations',
+    faithful: false,
+    text: '文件/网络操作出现 "Operation not permitted" 错误',
   },
   {
     id: 'evidence-network-failures',
     slug: 'tool-description-bash-sandbox-evidence-network-failures',
-    faithful: true,
-    text: 'Network connection failures to non-whitelisted hosts',
+    faithful: false,
+    text: '连接到非白名单主机的网络失败',
   },
   {
     id: 'evidence-unix-socket-errors',
     slug: 'tool-description-bash-sandbox-evidence-unix-socket-errors',
-    faithful: true,
-    text: 'Unix socket connection errors',
+    faithful: false,
+    text: 'Unix socket 连接错误',
   },
   {
     id: 'response-header',
     slug: 'tool-description-bash-sandbox-response-header',
-    faithful: true,
-    text: 'When you see evidence of sandbox-caused failure:',
+    faithful: false,
+    text: '当你看到沙箱所致失败的证据时：',
   },
   {
     id: 'retry-without-sandbox',
     slug: 'tool-description-bash-sandbox-retry-without-sandbox',
-    faithful: true,
-    text: 'Immediately retry with `dangerouslyDisableSandbox: true` (don\'t ask, just do it)',
+    faithful: false,
+    text: '立即以 `dangerouslyDisableSandbox: true` 重试（不必询问，直接执行）',
   },
   {
     // ADAPTED: the archive's -explain-restriction second sentence points at a
@@ -966,43 +966,43 @@ export const BASH_SANDBOX_FRAGMENTS: SandboxNoteFragment[] = [
     id: 'explain-restriction',
     slug: '',
     faithful: false,
-    text: 'Briefly explain what sandbox restriction likely caused the failure.',
+    text: '简要说明可能是哪条沙箱限制导致了失败。',
   },
   {
     id: 'adjust-settings',
     slug: 'tool-description-bash-sandbox-adjust-settings',
-    faithful: true,
-    text: 'If a command fails due to sandbox restrictions, work with the user to adjust sandbox settings instead.',
+    faithful: false,
+    text: '若某条命令因沙箱限制而失败，转而与用户一起调整沙箱设置。',
   },
   {
     id: 'per-command',
     slug: 'tool-description-bash-sandbox-per-command',
-    faithful: true,
-    text: 'Treat each command you execute with `dangerouslyDisableSandbox: true` individually. Even if you have recently run a command with this setting, you should default to running future commands within the sandbox.',
+    faithful: false,
+    text: '对每一条你以 `dangerouslyDisableSandbox: true` 执行的命令都单独对待。即使你最近以此设置运行过某条命令，之后的命令你仍应默认在沙箱内运行。',
   },
   {
     id: 'no-sensitive-paths',
     slug: 'tool-description-bash-sandbox-no-sensitive-paths',
-    faithful: true,
-    text: 'Do not suggest adding sensitive paths like ~/.bashrc, ~/.zshrc, ~/.ssh/*, or credential files to the sandbox allowlist.',
+    faithful: false,
+    text: '不要建议把 ~/.bashrc、~/.zshrc、~/.ssh/* 等敏感路径或凭据文件加入沙箱白名单。',
   },
   {
     id: 'tmpdir',
     slug: 'tool-description-bash-sandbox-tmpdir',
-    faithful: true,
-    text: 'For temporary files, always use the `$TMPDIR` environment variable. TMPDIR is automatically set to the correct sandbox-writable directory in sandbox mode. Do NOT use `/tmp` directly - use `$TMPDIR` instead.',
+    faithful: false,
+    text: '临时文件一律使用 `$TMPDIR` 环境变量。在沙箱模式下，TMPDIR 会被自动设为正确的、沙箱可写的目录。不要直接使用 `/tmp`——改用 `$TMPDIR`。',
   },
   {
     id: 'mandatory-mode',
     slug: 'tool-description-bash-sandbox-mandatory-mode',
-    faithful: true,
-    text: 'All commands MUST run in sandbox mode - the `dangerouslyDisableSandbox` parameter is disabled by policy.',
+    faithful: false,
+    text: '所有命令都必须在沙箱模式下运行——`dangerouslyDisableSandbox` 参数已按策略禁用。',
   },
   {
     id: 'no-exceptions',
     slug: 'tool-description-bash-sandbox-no-exceptions',
-    faithful: true,
-    text: 'Commands cannot run outside the sandbox under any circumstances.',
+    faithful: false,
+    text: '任何情况下命令都不能在沙箱外运行。',
   },
 ];
 
@@ -1022,8 +1022,8 @@ export function buildBashSandboxNote(
 ): string {
   if (mode === 'mandatory') {
     return [
-      '# Sandbox',
-      frag('framing') + (allowNetwork ? '' : ' Network access is disabled.'),
+      '# 沙箱',
+      frag('framing') + (allowNetwork ? '' : '网络访问已禁用。'),
       frag('mandatory-mode'),
       frag('no-exceptions'),
       frag('adjust-settings'),
@@ -1038,15 +1038,15 @@ export function buildBashSandboxNote(
     '- ' + frag('evidence-unix-socket-errors'),
   ].join('\n');
   return [
-    '# Sandbox',
-    frag('framing') + (allowNetwork ? '' : ' Network access is disabled.'),
+    '# 沙箱',
+    frag('framing') + (allowNetwork ? '' : '网络访问已禁用。'),
     frag('default-to-sandbox'),
-    '- ' + frag('condition-user-request') + ' ' + frag('user-permission-prompt') + '.',
+    '- ' + frag('condition-user-request') + frag('user-permission-prompt') + '。',
     '- ' + frag('failure-evidence-condition'),
     frag('evidence-list-header') + '\n' + evidence,
     frag('response-header'),
     '- ' + frag('retry-without-sandbox'),
-    '- ' + frag('explain-restriction') + ' ' + frag('adjust-settings'),
+    '- ' + frag('explain-restriction') + frag('adjust-settings'),
     frag('per-command'),
     frag('no-sensitive-paths'),
     frag('tmpdir'),
