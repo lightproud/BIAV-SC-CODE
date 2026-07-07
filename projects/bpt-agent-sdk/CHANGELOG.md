@@ -11,6 +11,33 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.24.0 — 2026-07-08
+
+i18n-zh **Phase 2 batch A** (keeper ruling B, 全部推进 including main-loop): the
+**main-loop system prompt** — the agent's core behavioral contract — to Chinese.
+
+- **change: the v5 default main-loop system prompt is now Chinese** (on the
+  wire). All 30 fragments in `prompt-fragments.ts` (security-assistance,
+  doing-tasks discipline, tool-use, executing-actions-with-care, outcome-first
+  communication, code style, emoji-avoidance, safety) are translated in-place,
+  plus the `可用工具：` (Available tools) assembler label. Tool names, wire
+  parameter names (`old_string`/`replace_all`/`subject`/`activeForm`/`content`/
+  `in_progress`/`completed`/`addBlocks`/`addBlockedBy`), and command/code tokens
+  (`git status`, `--no-verify`, `git reset --hard`, `rm -rf`, `-u`,
+  `file_path:line_number`, `A -> B -> fails`, `"Sources:"`, `CLAUDE.md`) stay
+  English; only prose is translated. Tool-gating and red-line invariants are
+  unchanged (the Agent clause still only appears when the Agent tool ships).
+- All fragments flip `faithful: true → false`; the English corpus-sync guard
+  (`prompt-fragments-provenance.test.ts`) goes inert for translated (CJK) text
+  while staying wired for any future re-added English fragment.
+- The byte-identity golden fixture (`tests/fixtures/v5-mainloop-golden.json`) is
+  regenerated from the translated fragments; the assembler byte-lock still holds.
+- New `tests/prompt-fragments-i18n-zh.test.ts`: every fragment Chinese +
+  emoji-free + wire-token-preserving; the assembled prompt keeps `可用工具：`
+  and its gated clauses.
+- Opt-in variants v1–v4 (terser / older reproductions) and the runtime `<env>`
+  block remain English — later Phase-2 batches. See docs/COMPAT.md.
+
 ## 0.23.0 — 2026-07-08
 
 i18n-zh batch 5 (keeper ruling B): the Bash tool description — the last and most

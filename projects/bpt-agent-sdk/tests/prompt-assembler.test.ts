@@ -60,10 +60,11 @@ describe('fragment store invariants', () => {
     // The Agent tool is registered only when subagents are configured.
     const agent = MAIN_LOOP_BODY.find((f) => f.id === 'agent');
     expect(agent?.gate).toBeDefined();
-    // Assembled without Agent, the prompt must not name the Agent tool.
-    expect(assembleMainLoop({ toolNames: ['Read', 'Bash', 'TodoWrite'] })).not.toContain('Agent tool');
+    // Assembled without Agent, the prompt must not name the Agent tool (Chinese
+    // main-loop, i18n-zh Phase 2 batch A — the clause reads "Agent 工具").
+    expect(assembleMainLoop({ toolNames: ['Read', 'Bash', 'TodoWrite'] })).not.toContain('Agent 工具');
     // Assembled with Agent, it appears.
-    expect(assembleMainLoop({ toolNames: ['Read', 'Bash', 'Agent'] })).toContain('Agent tool');
+    expect(assembleMainLoop({ toolNames: ['Read', 'Bash', 'Agent'] })).toContain('Agent 工具');
   });
 
   it('selectMainLoopFragments drops gated fragments whose tool is absent', () => {
@@ -82,7 +83,8 @@ describe('fragment store invariants', () => {
     const withTasks = selectMainLoopFragments({ toolNames: taskSet }).map((f) => f.id);
     expect(withTasks).toContain('task-tools');
     expect(withTasks).not.toContain('todowrite');
-    expect(assembleMainLoop({ toolNames: taskSet })).toContain('TaskCreate, TaskGet, TaskUpdate, and TaskList');
+    // Chinese main-loop (i18n-zh): tool names stay English, joined in Chinese prose.
+    expect(assembleMainLoop({ toolNames: taskSet })).toContain('用 TaskCreate、TaskGet、TaskUpdate 和 TaskList 工具');
     // Without the Task tools the prompt must not name them (red line).
     expect(assembleMainLoop({ toolNames: ['Read', 'Bash'] })).not.toContain('TaskCreate');
     // Legacy revert (CLAUDE_CODE_ENABLE_TASKS=0): TodoWrite in, Task out.
