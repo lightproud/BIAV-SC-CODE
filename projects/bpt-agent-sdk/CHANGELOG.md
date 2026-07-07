@@ -11,6 +11,16 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.21.0 — 2026-07-08
+
+i18n-zh batch 3 (keeper ruling B): the Monitor tool description to Chinese.
+
+- **change: Monitor description is now Chinese** (on the wire). Shell command
+  examples, inline code, and the tool references (BashOutput/KillShell/
+  run_in_background) stay verbatim; only prose is translated. Removed from
+  `TOOL_DESCRIPTION_PROVENANCE`; covered by the i18n structural guard. Still
+  English: Bash (+ git protocol + sandbox fragments), Workflow (later batches).
+
 ## 0.20.0 — 2026-07-08
 
 i18n-zh batch 2 (keeper ruling B): 10 more tool descriptions to Chinese in-place.

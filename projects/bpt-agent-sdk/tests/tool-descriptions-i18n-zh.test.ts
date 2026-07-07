@@ -26,6 +26,7 @@ import {
   ASKUSERQUESTION_DESCRIPTION,
   EXITPLANMODE_DESCRIPTION,
   ENTERWORKTREE_DESCRIPTION,
+  MONITOR_DESCRIPTION,
 } from '../src/tools/descriptions.js';
 
 // Any CJK ideograph -> the description is actually Chinese.
@@ -69,9 +70,15 @@ const TRANSLATED: Array<[string, string, string[]]> = [
     ['allowedPrompts', 'Bash', 'AskUserQuestion', 'ExitPlanMode', 'OAuth', 'JWT'],
   ],
   ['EnterWorktree', ENTERWORKTREE_DESCRIPTION, ['worktree', 'name', 'path', 'git', 'HEAD', '.claude/worktrees/']],
+  // batch 3
+  [
+    'Monitor',
+    MONITOR_DESCRIPTION,
+    ['BashOutput', 'taskId', 'bash_id', 'KillShell', 'run_in_background', '--line-buffered', 'persistent', 'stdout'],
+  ],
 ];
 
-describe('tool descriptions i18n-zh (batches 1-2)', () => {
+describe('tool descriptions i18n-zh (batches 1-3)', () => {
   it.each(TRANSLATED)(
     '%s description is non-empty Chinese, emoji-free, and keeps its wire tokens',
     (name, desc, tokens) => {
