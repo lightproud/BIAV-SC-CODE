@@ -30,8 +30,9 @@ const ALL = [
 
 describe('faithful tool descriptions', () => {
   it('reproduce official signature phrasing', () => {
-    expect(D.BASH_DESCRIPTION).toContain('Executes a given bash command');
-    // dedicated-tools-over-bash redirects reference only shipped tools
+    // Bash is now Chinese (i18n-zh batch 5); assert the translated opening.
+    expect(D.BASH_DESCRIPTION).toContain('执行给定的 bash 命令');
+    // dedicated-tools-over-bash redirects reference only shipped tools (tokens)
     expect(D.BASH_DESCRIPTION).toMatch(/BashOutput/);
     expect(D.BASH_DESCRIPTION).toMatch(/KillShell/);
     // (The English-size heuristic on TODOWRITE_DESCRIPTION was retired in the
@@ -42,8 +43,11 @@ describe('faithful tool descriptions', () => {
   });
 
   it('are substantially richer than a terse stub (fidelity implies size)', () => {
-    // Bash is the largest official description; ours reproduces it faithfully.
-    expect(D.BASH_DESCRIPTION.length).toBeGreaterThan(4000);
+    // Bash is the largest description; the Chinese translation (i18n-zh batch 5)
+    // is denser than the ~5.5k-char English original — the multi-section whole
+    // (usage + Git + commit + PR + sandbox-free base) still lands near 3.8k, so
+    // the guard is retuned to catch truncation without over-fitting a byte count.
+    expect(D.BASH_DESCRIPTION.length).toBeGreaterThan(2500);
   });
 
   it('RED LINE: never reference a tool or capability this SDK does not ship', () => {

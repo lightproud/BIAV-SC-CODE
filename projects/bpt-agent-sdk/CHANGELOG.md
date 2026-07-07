@@ -11,6 +11,35 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.23.0 — 2026-07-08
+
+i18n-zh batch 5 (keeper ruling B): the Bash tool description — the last and most
+safety-critical one — to Chinese. **The tool-description surface is now fully
+Chinese.**
+
+- **change: Bash description + win32 note + all 18 sandbox-note fragments are now
+  Chinese** (on the wire). Translated with the safety-critical logic preserved
+  exactly: the Git Safety Protocol negations ("NEVER …" → "绝不…"), every git
+  command (`git reset --hard`, `git push --force`, `--no-verify`, `--amend`,
+  `git add -A`, …), the HEREDOC and `gh pr create` example blocks, and the
+  sandbox escape rules (`dangerouslyDisableSandbox: true`, `$TMPDIR`, `/tmp`,
+  `~/.ssh/*`, `"Operation not permitted"`) stay verbatim; only prose is
+  translated.
+- All 18 `BASH_SANDBOX_FRAGMENTS` flip `faithful: true → false` (a translation is
+  not a faithful English reproduction), so the archive-verbatim corpus-sync guard
+  in `tests/sandbox.test.ts` skips them; the `slug` still records the English
+  source each was translated from.
+- Bash removed from `TOOL_DESCRIPTION_PROVENANCE` — the English corpus-sync guard
+  now tracks nothing (array kept as a home for any future re-added English tool).
+- New coverage in `tests/tool-descriptions-i18n-zh.test.ts`: the Bash description,
+  the win32 note, and the assembled sandbox note in all three forms (default
+  net-on/off, mandatory) — asserted Chinese, emoji-free, safety-token-preserving.
+- **Scope boundary (kept English):** runtime execution feedback — the
+  sandbox-failure stderr hint (`src/sandbox/evidence.ts`) and the win32 cmd-habit
+  hint / mandatory-mode refusal (`src/tools/bash.ts`) — is a distinct
+  failure-time surface, not a tool description, and is left English by this batch.
+  Translating it would be a separate follow-up. See docs/COMPAT.md.
+
 ## 0.22.0 — 2026-07-08
 
 i18n-zh batch 4 (keeper ruling B): the Workflow tool description to Chinese.
