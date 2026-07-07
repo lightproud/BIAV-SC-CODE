@@ -1,8 +1,8 @@
 {
   "date": "2026-07-06",
-  "archived_at": "2026-07-07T06:42:22.326759+00:00",
+  "archived_at": "2026-07-07T10:23:49.791180+00:00",
   "source": "google_play",
-  "item_count": 4,
+  "item_count": 5,
   "items": [
     {
       "title": "[Google Play 好评] ★5 I really love this game! The stories are",
@@ -58,6 +58,20 @@
       "tags": [],
       "lang": "id",
       "platform_region": "id",
+      "region": "global"
+    },
+    {
+      "title": "[Google Play 好评] ★5 actually kinda banger of a game",
+      "summary": "actually kinda banger of a game",
+      "source": "google_play",
+      "time": "2026-07-06T09:23:54",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-17e21c68-bf48-4236-b28b-506fd36f24bd",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "broccoli vegetable",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "us",
       "region": "global"
     }
   ],

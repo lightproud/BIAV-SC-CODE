@@ -1,8 +1,8 @@
 {
   "date": "2026-07-07",
-  "archived_at": "2026-07-07T06:42:22.194752+00:00",
+  "archived_at": "2026-07-07T10:23:49.684955+00:00",
   "source": "steam",
-  "item_count": 8,
+  "item_count": 9,
   "items": [
     {
       "title": "[正面] It's Peak",
@@ -190,6 +190,30 @@
         "playtime_forever": 37,
         "votes_up": 0,
         "timestamp_created": 1783386665
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 好玩٩(•̤̀ᵕ•̤́๑)",
+      "summary": "好玩٩(•̤̀ᵕ•̤́๑)",
+      "source": "steam_review",
+      "time": "2026-07-07T07:35:31+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199193197269/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199193197269",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 803,
+        "votes_up": 0,
+        "timestamp_created": 1783409731
       },
       "region": "global",
       "archive_subtype": "review",

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-07T06:42:22.918446+00:00",
+  "updated_at": "2026-07-07T10:23:50.329215+00:00",
   "seeded_from": "silent_sources_audit",
   "audit_window": {
     "start": "2016-02-03",
@@ -7,7 +7,7 @@
     "days": 3808
   },
   "validation_drops": {
-    "generated_at": "2026-07-07T06:41:45.454189+00:00",
+    "generated_at": "2026-07-07T10:22:55.023931+00:00",
     "total_dropped": 0,
     "by_source": {}
   },
@@ -17,7 +17,7 @@
       "last_success_date": "2026-07-07",
       "last_check_date": "2026-06-20",
       "consecutive_silent_days": 0,
-      "total_items": 2571,
+      "total_items": 2585,
       "errors": []
     },
     "steam": {
@@ -25,7 +25,7 @@
       "last_success_date": "2026-07-07",
       "last_check_date": null,
       "consecutive_silent_days": 0,
-      "total_items": 5127,
+      "total_items": 5128,
       "errors": []
     },
     "taptap": {
@@ -49,7 +49,7 @@
       "last_success_date": "2026-07-07",
       "last_check_date": "2026-07-07",
       "consecutive_silent_days": 0,
-      "total_items": 2662,
+      "total_items": 2669,
       "errors": []
     },
     "reddit": {
@@ -81,7 +81,7 @@
       "last_success_date": "2026-07-07",
       "last_check_date": "2026-07-07",
       "consecutive_silent_days": 0,
-      "total_items": 9237,
+      "total_items": 9250,
       "errors": []
     },
     "bahamut": {
@@ -113,7 +113,7 @@
       "last_success_date": "2026-07-06",
       "last_check_date": "2026-07-07",
       "consecutive_silent_days": 1,
-      "total_items": 1228,
+      "total_items": 1229,
       "errors": []
     },
     "pixiv": {
@@ -153,7 +153,7 @@
       "last_success_date": "2026-07-05",
       "last_check_date": "2026-07-07",
       "consecutive_silent_days": 2,
-      "total_items": 6656,
+      "total_items": 6676,
       "errors": []
     },
     "twitter": {
@@ -169,7 +169,7 @@
       "last_success_date": "2026-07-07",
       "last_check_date": null,
       "consecutive_silent_days": 0,
-      "total_items": 780,
+      "total_items": 788,
       "errors": []
     },
     "youtube_comments": {
