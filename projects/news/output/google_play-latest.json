@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-07T02:29:15.855751+00:00",
+  "collected_at": "2026-07-07T06:41:45.429900+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 139,
+  "item_count": 140,
   "items": [
     {
       "source": "google_play",
@@ -717,12 +717,12 @@
     },
     {
       "source": "google_play",
-      "time": "2026-06-07T05:11:43",
-      "lang": "ko",
-      "title": "[Google Play 好评] ★4 발열이 너무 심해서 폰이 터질뻔했습니다, 폰으로는 하지 마세요.",
-      "summary": "발열이 너무 심해서 폰이 터질뻔했습니다, 폰으로는 하지 마세요.",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=ko#gp-482168c7-dee2-44c3-9991-413ee7b51847",
-      "author": "돈땃쥐 와타베, 저스트룩 와타메",
+      "time": "2026-07-06T06:39:24",
+      "lang": "th",
+      "title": "[Google Play 中评] ★3 The game is very fun, the character is g",
+      "summary": "The game is very fun, the character is great. Many things are awesome. But the biggest problem is once you clear the story mode, the content left for you to play with is pitiful. I wish to see more content than this. Its been a good 2.5 years journey but I might have to quit cuz nothing left to do. I dont even have a reason to spend and pull more stuff cuz I have nowhere to use them.",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=th#gp-3c7b33ae-891c-4e36-930e-189bdc097f1b",
+      "author": "Thirat Kuakulkitjaroen",
       "engagement": 0
     },
     {
@@ -743,6 +743,16 @@
       "summary": "ชอบเกมนี้มากๆเลยครับ 5 ดาวไปเลย :DDDD",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=th#gp-b790cb16-d367-4426-b648-333e6f90f982",
       "author": "Thanabodi Ronkrathok",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-06T05:46:47",
+      "lang": "id",
+      "title": "[Google Play 好评] ★5 great gameplay and story also nice graph",
+      "summary": "great gameplay and story also nice graphics, just minus on my luck🙂",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=id#gp-74e54d0f-47a3-4993-8cb7-1395e5834d6c",
+      "author": "Sienielend",
       "engagement": 0
     },
     {
