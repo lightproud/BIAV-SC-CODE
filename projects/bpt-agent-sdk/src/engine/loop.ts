@@ -1128,6 +1128,40 @@ export async function* runAgentLoop(
           toolCalls: toolUses.length,
         });
       }
+      // C5 (refusal, BPT audit 2026-07-07): a safety decline (Fable 5 / newer
+      // models) returns stop_reason 'refusal' on a 200 with possibly-empty /
+      // partial content. It is NOT a valid answer — surface a dedicated ERROR
+      // result (never a success, so it can't be mistaken for a real reply nor
+      // fed into the structured-output retry loop below). error_code 'refusal'
+      // lets a host classify + opt into a fallback. Partial content is dropped.
+      if (assistant.stop_reason === 'refusal') {
+        pushAssistant(assistant.content, assistant.model);
+        deps.debug('engine: model declined (stop_reason: refusal)');
+        yield errorResult(
+          'error_during_execution',
+          'The model declined to respond (stop_reason: refusal).',
+          undefined,
+          'refusal',
+        );
+        return;
+      }
+
+      // C4 (pause_turn, BPT audit 2026-07-07): the API paused a long agentic /
+      // server-tool turn. It is NOT complete — persist the partial assistant
+      // content and RE-STREAM so the model continues it (no user turn appended,
+      // no success emitted). The maxTurns guard bounds the continuation (this
+      // for(;;) has no top-of-loop turn check, so a runaway pause loop would
+      // otherwise never terminate).
+      if (assistant.stop_reason === 'pause_turn') {
+        pushAssistant(assistant.content, assistant.model);
+        if (config.maxTurns !== undefined && numTurns >= config.maxTurns) {
+          yield errorResult('error_max_turns', `Reached maxTurns limit (${config.maxTurns})`);
+          return;
+        }
+        deps.debug('engine: turn paused (stop_reason: pause_turn); continuing the turn');
+        continue;
+      }
+
       // stop_reason tool_use but ZERO tool_use blocks (malformed / gateway-
       // rewritten response): treat as a natural end rather than pushing an
       // empty {role:'user',content:[]} turn that would poison the history.
@@ -1392,7 +1426,16 @@ export async function* runAgentLoop(
 
       // Natural end: keep history complete for follow-up turns in the same
       // session, fire Stop hooks, emit the success result.
-      pushAssistant(assistant.content, assistant.model);
+      // C6 (max_tokens mid-tool-use, BPT audit 2026-07-07): a natural-end turn
+      // (end_turn / stop_sequence / max_tokens) should carry no actionable
+      // tool_use — an actionable one would have set stop_reason 'tool_use' and
+      // been dispatched above. A tool_use present here is an ORPHAN (typically a
+      // max_tokens cut mid-tool-use) that was never executed; persisting it
+      // unpaired 400s the next same-session request ("tool_use ids without
+      // tool_result"). Drop such orphans from the PERSISTED turn (the yielded
+      // assistant message already carried the raw content).
+      const naturalEndContent = assistant.content.filter((b) => b.type !== 'tool_use');
+      pushAssistant(naturalEndContent, assistant.model);
       if (deps.hooks.hasHooks('Stop')) {
         const stopAgg = await deps.hooks.run(
           'Stop',
