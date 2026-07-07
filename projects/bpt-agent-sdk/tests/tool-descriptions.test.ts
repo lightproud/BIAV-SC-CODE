@@ -34,7 +34,10 @@ describe('faithful tool descriptions', () => {
     // dedicated-tools-over-bash redirects reference only shipped tools
     expect(D.BASH_DESCRIPTION).toMatch(/BashOutput/);
     expect(D.BASH_DESCRIPTION).toMatch(/KillShell/);
-    expect(D.TODOWRITE_DESCRIPTION.length).toBeGreaterThan(1500);
+    // (The English-size heuristic on TODOWRITE_DESCRIPTION was retired in the
+    //  i18n-zh campaign — TodoWrite is now Chinese, ~compact, and its adequacy
+    //  is asserted structurally in tool-descriptions-i18n-zh.test.ts.)
+    // old_string is a preserved wire token, so it survives Edit's translation.
     expect(D.EDIT_DESCRIPTION).toContain('old_string');
   });
 

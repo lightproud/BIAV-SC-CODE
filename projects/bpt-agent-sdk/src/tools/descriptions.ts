@@ -5,8 +5,10 @@
  * tool descriptions are being TRANSLATED TO CHINESE IN-PLACE and shipped on the
  * wire — a DELIBERATE divergence from the official English surface (see
  * docs/COMPAT.md; the keeper accepted that this breaks the faithful-reproduction
- * axis and its provenance guard). Batch 1 (Read/Edit/Write/Grep/Glob) is done;
- * remaining tools stay English until their batch lands. Translated tools are
+ * axis and its provenance guard). Done: batch 1 (Read/Edit/Write/Grep/Glob) +
+ * batch 2 (Task-tools/TodoWrite/WebFetch/WebSearch/AskUserQuestion/ExitPlanMode/
+ * EnterWorktree). Still English: Bash (+ git protocol + sandbox fragments),
+ * Monitor, Workflow — later batches. Translated tools are
  * removed from TOOL_DESCRIPTION_PROVENANCE (the English corpus-sync guard) and
  * covered by tests/tool-descriptions-i18n-zh.test.ts (structural: is-Chinese,
  * no emoji, tool/param tokens preserved). Tool NAMES and wire PARAMETER names
@@ -274,332 +276,332 @@ export const GLOB_DESCRIPTION = `- 快速的文件模式匹配工具，适用于
 - 返回按修改时间排序的匹配文件路径
 - 当你需要按名称模式查找文件时使用此工具`;
 
-export const TODOWRITE_DESCRIPTION = `Use this tool to create and manage a structured task list for your current coding session. This helps you track progress, organize complex tasks, and demonstrate thoroughness to the user.
-It also helps the user understand the progress of the task and overall progress of their requests.
+export const TODOWRITE_DESCRIPTION = `用此工具为你当前的编码会话创建并管理一份结构化的任务列表。这有助于你跟踪进度、组织复杂任务、并向用户展示周密。
+它也帮助用户理解该任务的进展以及其请求的总体进度。
 
-## When to Use This Tool
-Use this tool proactively in these scenarios:
+## 何时使用此工具
+在以下情形中主动使用此工具：
 
-1. Complex multi-step tasks - When a task requires 3 or more distinct steps or actions
-2. Non-trivial and complex tasks - Tasks that require careful planning or multiple operations
-3. User explicitly requests todo list - When the user directly asks you to use the todo list
-4. User provides multiple tasks - When users provide a list of things to be done (numbered or comma-separated)
-5. After receiving new instructions - Immediately capture user requirements as todos
-6. When you start working on a task - Mark it as in_progress BEFORE beginning work. Ideally you should only have one todo as in_progress at a time
-7. After completing a task - Mark it as completed and add any new follow-up tasks discovered during implementation
+1. 复杂的多步骤任务——当一个任务需要 3 个或更多不同的步骤或动作时
+2. 非平凡且复杂的任务——需要仔细规划或多次操作的任务
+3. 用户明确要求待办列表——当用户直接要求你使用待办列表时
+4. 用户提供了多个任务——当用户提供一份待办事项清单（编号或逗号分隔）时
+5. 收到新指令后——立即把用户需求记录为待办
+6. 当你开始处理某任务时——在开工之前将其标记为 in_progress。理想情况下，同一时间应只有一个待办处于 in_progress
+7. 完成一个任务后——将其标记为 completed，并补上实施过程中发现的任何新的后续任务
 
-## When NOT to Use This Tool
+## 何时不要使用此工具
 
-Skip using this tool when:
-1. There is only a single, straightforward task
-2. The task is trivial and tracking it provides no organizational benefit
-3. The task can be completed in less than 3 trivial steps
-4. The task is purely conversational or informational
+在以下情况跳过此工具：
+1. 只有单个、直截了当的任务
+2. 任务微不足道，跟踪它无组织上的收益
+3. 任务可在少于 3 个琐碎步骤内完成
+4. 任务纯属对话性或信息性
 
-NOTE that you should not use this tool if there is only one trivial task to do. In this case you are better off just doing the task directly.
+注意：若只有一个琐碎任务要做，你不应使用此工具。此时你直接去做那个任务更好。
 
-## Task States and Management
+## 任务状态与管理
 
-1. **Task States**: Use these states to track progress:
-   - pending: Task not yet started
-   - in_progress: Currently working on (limit to ONE task at a time)
-   - completed: Task finished successfully
+1. **任务状态**：用这些状态来跟踪进度：
+   - pending：任务尚未开始
+   - in_progress：正在处理（同一时间限一个任务）
+   - completed：任务已成功完成
 
-   **IMPORTANT**: Task descriptions must have two forms:
-   - content: The imperative form describing what needs to be done (e.g., "Run tests", "Build the project")
-   - activeForm: The present continuous form shown during execution (e.g., "Running tests", "Building the project")
+   **重要**：任务描述必须有两种形式：
+   - content：描述需要做什么的祈使句形式（如 "Run tests"、"Build the project"）
+   - activeForm：执行期间显示的现在进行时形式（如 "Running tests"、"Building the project"）
 
-2. **Task Management**:
-   - Update task status in real-time as you work
-   - Mark tasks complete IMMEDIATELY after finishing (don't batch completions)
-   - Exactly ONE task must be in_progress at any time (not less, not more)
-   - Complete current tasks before starting new ones
-   - Remove tasks that are no longer relevant from the list entirely
+2. **任务管理**：
+   - 工作时实时更新任务状态
+   - 完成后立即把任务标记为完成（不要攒着批量标记）
+   - 任何时刻必须恰好有一个任务处于 in_progress（不多也不少）
+   - 先完成当前任务，再开始新任务
+   - 把不再相关的任务从列表中彻底移除
 
-3. **Task Completion Requirements**:
-   - ONLY mark a task as completed when you have FULLY accomplished it
-   - If you encounter errors, blockers, or cannot finish, keep the task as in_progress
-   - When blocked, create a new task describing what needs to be resolved
-   - Never mark a task as completed if:
-     - Tests are failing
-     - Implementation is partial
-     - You encountered unresolved errors
-     - You couldn't find necessary files or dependencies
+3. **任务完成要求**：
+   - 只有当你已**完全**完成某任务时才将其标记为 completed
+   - 若你遇到错误、阻塞、或无法完成，保持任务为 in_progress
+   - 被阻塞时，创建一个新任务，描述需要解决什么
+   - 在以下情况下绝不要把任务标记为 completed：
+     - 测试正在失败
+     - 实现只完成了一部分
+     - 你遇到了未解决的错误
+     - 你找不到必需的文件或依赖
 
-4. **Task Breakdown**:
-   - Create specific, actionable items
-   - Break complex tasks into smaller, manageable steps
-   - Use clear, descriptive task names
-   - Always provide both forms:
-     - content: "Fix authentication bug"
-     - activeForm: "Fixing authentication bug"
+4. **任务拆解**：
+   - 创建具体、可行动的条目
+   - 把复杂任务拆成更小、可管理的步骤
+   - 使用清晰、有描述性的任务名
+   - 始终提供两种形式：
+     - content："Fix authentication bug"
+     - activeForm："Fixing authentication bug"
 
-When in doubt, use this tool. Being proactive with task management demonstrates attentiveness and ensures you complete all requirements successfully.`;
+拿不准时，就用此工具。主动进行任务管理体现了专注，并确保你成功完成所有要求。`;
 
-export const TASKCREATE_DESCRIPTION = `Use this tool to create a structured task list for your current coding session. This helps you track progress, organize complex tasks, and demonstrate thoroughness to the user.
-It also helps the user understand the progress of the task and overall progress of their requests.
+export const TASKCREATE_DESCRIPTION = `用此工具为你当前的编码会话创建一份结构化的任务列表。这有助于你跟踪进度、组织复杂任务、并向用户展示周密。
+它也帮助用户理解该任务的进展以及其请求的总体进度。
 
-## When to Use This Tool
+## 何时使用此工具
 
-Use this tool proactively in these scenarios:
+在以下情形中主动使用此工具：
 
-- Complex multi-step tasks - When a task requires 3 or more distinct steps or actions
-- Non-trivial and complex tasks - Tasks that require careful planning or multiple operations
-- Plan mode - When using plan mode, create a task list to track the work
-- User explicitly requests todo list - When the user directly asks you to use the todo list
-- User provides multiple tasks - When users provide a list of things to be done (numbered or comma-separated)
-- After receiving new instructions - Immediately capture user requirements as tasks
-- When you start working on a task - Mark it as in_progress BEFORE beginning work
-- After completing a task - Mark it as completed and add any new follow-up tasks discovered during implementation
+- 复杂的多步骤任务——当一个任务需要 3 个或更多不同的步骤或动作时
+- 非平凡且复杂的任务——需要仔细规划或多次操作的任务
+- 计划模式——使用计划模式时，创建一份任务列表来跟踪工作
+- 用户明确要求待办列表——当用户直接要求你使用待办列表时
+- 用户提供了多个任务——当用户提供一份待办事项清单（编号或逗号分隔）时
+- 收到新指令后——立即把用户需求记录为任务
+- 当你开始处理某任务时——在开工之前将其标记为 in_progress
+- 完成一个任务后——将其标记为 completed，并补上实施过程中发现的任何新的后续任务
 
-## When NOT to Use This Tool
+## 何时不要使用此工具
 
-Skip using this tool when:
-- There is only a single, straightforward task
-- The task is trivial and tracking it provides no organizational benefit
-- The task can be completed in less than 3 trivial steps
-- The task is purely conversational or informational
+在以下情况跳过此工具：
+- 只有单个、直截了当的任务
+- 任务微不足道，跟踪它无组织上的收益
+- 任务可在少于 3 个琐碎步骤内完成
+- 任务纯属对话性或信息性
 
-NOTE that you should not use this tool if there is only one trivial task to do. In this case you are better off just doing the task directly.
+注意：若只有一个琐碎任务要做，你不应使用此工具。此时你直接去做那个任务更好。
 
-## Task Fields
+## 任务字段
 
-- **subject**: A brief, actionable title in imperative form (e.g., "Fix authentication bug in login flow")
-- **description**: What needs to be done
-- **activeForm** (optional): Present continuous form shown in the spinner when the task is in_progress (e.g., "Fixing authentication bug"). If omitted, the spinner shows the subject instead.
+- **subject**：一个简短、可行动的祈使句标题（如 "Fix authentication bug in login flow"）
+- **description**：需要做什么
+- **activeForm**（可选）：任务处于 in_progress 时在加载动画中显示的现在进行时形式（如 "Fixing authentication bug"）。若省略，加载动画改显 subject。
 
-All tasks are created with status \`pending\`.
+所有任务创建时的 status 均为 \`pending\`。
 
-## Tips
+## 提示
 
-- Create tasks with clear, specific subjects that describe the outcome
-- After creating tasks, use TaskUpdate to set up dependencies (blocks/blockedBy) if needed
-- Check TaskList first to avoid creating duplicate tasks`;
+- 用清晰、具体、能描述结果的 subject 创建任务
+- 创建任务后，如需依赖关系（blocks/blockedBy），用 TaskUpdate 来设置
+- 先查 TaskList，避免创建重复任务`;
 
-export const TASKGET_DESCRIPTION = `Use this tool to retrieve a task by its ID from the task list.
+export const TASKGET_DESCRIPTION = `用此工具按 ID 从任务列表中取回一个任务。
 
-## When to Use This Tool
+## 何时使用此工具
 
-- When you need the full description and context before starting work on a task
-- To understand task dependencies (what it blocks, what blocks it)
-- After being assigned a task, to get complete requirements
+- 当你在开始处理一个任务前需要其完整描述与上下文时
+- 用于理解任务依赖（它阻塞了什么、什么阻塞了它）
+- 被指派一个任务后，用于拿到完整需求
 
-## Output
+## 输出
 
-Returns full task details:
-- **subject**: Task title
-- **description**: Detailed requirements and context
-- **status**: 'pending', 'in_progress', or 'completed'
-- **blocks**: Tasks waiting on this one to complete
-- **blockedBy**: Tasks that must complete before this one can start
+返回完整的任务详情：
+- **subject**：任务标题
+- **description**：详细需求与上下文
+- **status**：'pending'、'in_progress' 或 'completed'
+- **blocks**：正等待此任务完成的任务
+- **blockedBy**：必须先完成、此任务才能开始的任务
 
-## Tips
+## 提示
 
-- After fetching a task, verify its blockedBy list is empty before beginning work.
-- Use TaskList to see all tasks in summary form.`;
+- 取回一个任务后，开始工作前先确认其 blockedBy 列表为空。
+- 用 TaskList 以摘要形式查看所有任务。`;
 
-export const TASKUPDATE_DESCRIPTION = `Use this tool to update a task in the task list.
+export const TASKUPDATE_DESCRIPTION = `用此工具更新任务列表中的一个任务。
 
-## When to Use This Tool
+## 何时使用此工具
 
-**Mark tasks as resolved:**
-- When you have completed the work described in a task
-- When a task is no longer needed or has been superseded
-- IMPORTANT: Always mark your assigned tasks as resolved when you finish them
-- After resolving, call TaskList to find your next task
+**把任务标记为已了结：**
+- 当你已完成某任务所描述的工作时
+- 当某任务不再需要、或已被取代时
+- 重要：完成你被指派的任务时，务必将其标记为已了结
+- 了结后，调用 TaskList 找你的下一个任务
 
-- ONLY mark a task as completed when you have FULLY accomplished it
-- If you encounter errors, blockers, or cannot finish, keep the task as in_progress
-- When blocked, create a new task describing what needs to be resolved
-- Never mark a task as completed if:
-  - Tests are failing
-  - Implementation is partial
-  - You encountered unresolved errors
-  - You couldn't find necessary files or dependencies
+- 只有当你已**完全**完成某任务时才将其标记为 completed
+- 若你遇到错误、阻塞、或无法完成，保持任务为 in_progress
+- 被阻塞时，创建一个新任务，描述需要解决什么
+- 在以下情况下绝不要把任务标记为 completed：
+  - 测试正在失败
+  - 实现只完成了一部分
+  - 你遇到了未解决的错误
+  - 你找不到必需的文件或依赖
 
-**Delete tasks:**
-- When a task is no longer relevant or was created in error
-- Setting status to \`deleted\` permanently removes the task
+**删除任务：**
+- 当某任务不再相关、或是误建时
+- 把 status 设为 \`deleted\` 会永久移除该任务
 
-**Update task details:**
-- When requirements change or become clearer
-- When establishing dependencies between tasks
+**更新任务详情：**
+- 当需求变化或变得更清晰时
+- 当在任务间建立依赖关系时
 
-## Fields You Can Update
+## 你可以更新的字段
 
-- **status**: The task status (see Status Workflow below)
-- **subject**: Change the task title (imperative form, e.g., "Run tests")
-- **description**: Change the task description
-- **activeForm**: Present continuous form shown in spinner when in_progress (e.g., "Running tests")
-- **owner**: Change the task owner (agent name)
-- **metadata**: Merge metadata keys into the task (set a key to null to delete it)
-- **addBlocks**: Mark tasks that cannot start until this one completes
-- **addBlockedBy**: Mark tasks that must complete before this one can start
+- **status**：任务状态（见下方"状态流转"）
+- **subject**：更改任务标题（祈使句形式，如 "Run tests"）
+- **description**：更改任务描述
+- **activeForm**：in_progress 时在加载动画中显示的现在进行时形式（如 "Running tests"）
+- **owner**：更改任务负责人（agent 名）
+- **metadata**：把 metadata 键并入任务（把某键设为 null 以删除它）
+- **addBlocks**：标记那些必须等此任务完成才能开始的任务
+- **addBlockedBy**：标记那些必须先完成、此任务才能开始的任务
 
-## Status Workflow
+## 状态流转
 
-Status progresses: \`pending\` → \`in_progress\` → \`completed\`
+状态推进顺序：\`pending\` → \`in_progress\` → \`completed\`
 
-Use \`deleted\` to permanently remove a task.
+用 \`deleted\` 永久移除一个任务。
 
-## Staleness
+## 陈旧性
 
-Make sure to read a task's latest state using \`TaskGet\` before updating it.
+更新一个任务前，务必用 \`TaskGet\` 读取它的最新状态。
 
-## Examples
+## 示例
 
-Mark task as in progress when starting work:
+开工时把任务标记为进行中：
 \`\`\`json
 {"taskId": "1", "status": "in_progress"}
 \`\`\`
 
-Mark task as completed after finishing work:
+完工后把任务标记为已完成：
 \`\`\`json
 {"taskId": "1", "status": "completed"}
 \`\`\`
 
-Delete a task:
+删除一个任务：
 \`\`\`json
 {"taskId": "1", "status": "deleted"}
 \`\`\`
 
-Claim a task by setting owner:
+通过设置 owner 认领一个任务：
 \`\`\`json
 {"taskId": "1", "owner": "my-name"}
 \`\`\`
 
-Set up task dependencies:
+建立任务依赖：
 \`\`\`json
 {"taskId": "2", "addBlockedBy": ["1"]}
 \`\`\``;
 
-export const TASKLIST_DESCRIPTION = `Use this tool to list all tasks in the task list.
+export const TASKLIST_DESCRIPTION = `用此工具列出任务列表中的所有任务。
 
-## When to Use This Tool
+## 何时使用此工具
 
-- To see what tasks are available to work on (status: 'pending', no owner, not blocked)
-- To check overall progress on the project
-- To find tasks that are blocked and need dependencies resolved
-- After completing a task, to check for newly unblocked work or claim the next available task
-- **Prefer working on tasks in ID order** (lowest ID first) when multiple tasks are available, as earlier tasks often set up context for later ones
+- 查看有哪些任务可供处理（status 为 'pending'、无 owner、未被阻塞）
+- 检查项目的总体进度
+- 找出被阻塞、需要先解决依赖的任务
+- 完成一个任务后，检查是否有新解锁的工作，或认领下一个可用任务
+- 当有多个任务可用时，**优先按 ID 顺序处理**（ID 最小者优先），因为较早的任务往往为较晚的任务铺设上下文
 
-## Output
+## 输出
 
-Returns a summary of each task:
-- **id**: Unique task identifier
-- **subject**: Brief description of the task
-- **status**: 'pending', 'in_progress', or 'completed'
-- **owner**: Agent ID if assigned, empty if available
-- **blockedBy**: List of open task IDs that must be resolved first (tasks with blockedBy cannot be claimed until dependencies resolve)
+返回每个任务的摘要：
+- **id**：任务的唯一标识
+- **subject**：任务的简要描述
+- **status**：'pending'、'in_progress' 或 'completed'
+- **owner**：已指派则为 Agent ID，可认领则为空
+- **blockedBy**：必须先解决的未决任务 ID 列表（带 blockedBy 的任务在其依赖解决前无法被认领）
 
-Use TaskGet with a specific task ID to view full details including description.`;
+用 TaskGet 加某个具体任务 ID 来查看含 description 在内的完整详情。`;
 
-export const WEBFETCH_DESCRIPTION = `- Fetches content from a specified URL and processes it using an AI model
-- Takes a URL and a prompt as input
-- Fetches the URL content, converts HTML to markdown
-- Processes the content with the prompt using a small, fast model
-- Returns the model's response about the content
-- Use this tool when you need to retrieve and analyze web content
+export const WEBFETCH_DESCRIPTION = `- 从指定 URL 抓取内容，并用一个 AI 模型对其进行处理
+- 以一个 URL 和一段 prompt 作为输入
+- 抓取该 URL 的内容，把 HTML 转成 markdown
+- 用一个小而快的模型、按 prompt 处理内容
+- 返回该模型关于内容的回应
+- 当你需要检索并分析网页内容时使用此工具
 
-Usage notes:
-- IMPORTANT: If an MCP-provided web fetch tool is available, prefer using that tool instead of this one, as it may have fewer restrictions.
-- The URL must be a fully-formed valid URL
-- HTTP URLs will be automatically upgraded to HTTPS
-- The prompt should describe what information you want to extract from the page
-- This tool is read-only and does not modify any files
-- Results may be summarized if the content is very large
-- Includes a self-cleaning 15-minute cache for faster responses when repeatedly accessing the same URL
-- When a URL redirects to a different host, the tool will inform you and provide the redirect URL in a special format. You should then make a new WebFetch request with the redirect URL to fetch the content.
-- For GitHub URLs, prefer using the gh CLI via Bash instead (e.g., gh pr view, gh issue view, gh api).`;
+使用说明：
+- 重要：若有 MCP 提供的网页抓取工具可用，优先用那个而非本工具，因为它可能限制更少。
+- URL 必须是一个格式完整、有效的 URL
+- HTTP 的 URL 会被自动升级为 HTTPS
+- prompt 应描述你想从页面中提取什么信息
+- 此工具为只读，不修改任何文件
+- 若内容非常大，结果可能被摘要
+- 内置一个自清理的 15 分钟缓存，反复访问同一 URL 时响应更快
+- 当某 URL 重定向到不同主机时，工具会告知你，并以一种特殊格式提供重定向后的 URL。你随后应以该重定向 URL 发起一次新的 WebFetch 请求来抓取内容。
+- 对于 GitHub 的 URL，优先改用经 Bash 调用的 gh CLI（如 gh pr view、gh issue view、gh api）。`;
 
-export const WEBSEARCH_DESCRIPTION = `- Allows the model to search the web and use the results to inform responses
-- Provides up-to-date information for current events and recent data
-- Returns search result information formatted as search result blocks, including links as markdown hyperlinks
-- Use this tool for accessing information beyond the model's knowledge cutoff
-- Searches are performed automatically within a single API call
+export const WEBSEARCH_DESCRIPTION = `- 允许模型搜索网络，并用结果为回应提供依据
+- 为时事与近期数据提供最新信息
+- 以搜索结果块的格式返回搜索结果信息，其中链接为 markdown 超链接
+- 用此工具获取超出模型知识截止时间的信息
+- 搜索在单次 API 调用内自动完成
 
-CRITICAL REQUIREMENT - You MUST follow this:
-- After answering the user's question, you MUST include a "Sources:" section at the end of your response
-- In the Sources section, list all relevant URLs from the search results as markdown hyperlinks: [Title](URL)
-- This is MANDATORY - never skip including sources in your response
-- Example format:
+关键要求——你必须遵守：
+- 在回答完用户的问题后，你必须在回应末尾附上一个 "Sources:" 小节
+- 在 Sources 小节中，把搜索结果里所有相关 URL 列为 markdown 超链接：[Title](URL)
+- 这是强制的——绝不要在回应中省略来源
+- 格式示例：
 
-    [Your answer here]
+    [你的答案写在这里]
 
     Sources:
     - [Source Title 1](https://example.com/1)
     - [Source Title 2](https://example.com/2)
 
-Usage notes:
-- Domain filtering is supported to include or block specific websites
-- Web search is only available in the US
+使用说明：
+- 支持按域名筛选，以纳入或屏蔽特定网站
+- 网络搜索仅在美国可用
 
-IMPORTANT - Use the correct year in search queries:
-- You MUST use the current year when searching for recent information, documentation, or current events.
-- Example: If the user asks for "latest React docs", search for "React documentation" with the current year, NOT last year`;
+重要——在搜索查询中使用正确的年份：
+- 搜索近期信息、文档或时事时，你必须使用当前年份。
+- 示例：若用户要 "latest React docs"，请以当前年份搜索 "React documentation"，而不是去年`;
 
-export const ASKUSERQUESTION_DESCRIPTION = `Use this tool only when you are blocked on a decision that is genuinely the user's to make: one you cannot resolve from the request, the code, or sensible defaults.
+export const ASKUSERQUESTION_DESCRIPTION = `仅在你卡在一个真正该由用户来做的决定上时才使用此工具：一个你无法从请求、代码或合理默认值中自行解决的决定。
 
-Usage notes:
-- Users will always be able to select "Other" to provide custom text input
-- Use multiSelect: true to allow multiple answers to be selected for a question
-- If you recommend a specific option, make that the first option in the list and add "(Recommended)" at the end of the label`;
+使用说明：
+- 用户始终可以选择 "Other" 来提供自定义文本输入
+- 用 multiSelect: true 允许一个问题被选择多个答案
+- 若你推荐某个特定选项，请把它放在列表首位，并在其 label 末尾加上 "(Recommended)"`;
 
-export const EXITPLANMODE_DESCRIPTION = `Use this tool when you are in plan mode and have finished presenting your plan and are ready for user approval to begin implementing.
+export const EXITPLANMODE_DESCRIPTION = `当你处于计划模式、已讲完你的计划、准备请用户批准以开始实施时，使用此工具。
 
-## How This Tool Works
-- You should have already presented your complete plan in the conversation before calling this tool
-- This tool does NOT take the plan content as a parameter - it signals that you're done planning and ready to implement
-- On approval the session's permission mode exits plan mode, so implementation tools (Write, Edit, Bash) can run
-- Optionally pass allowedPrompts to declare the Bash permissions your plan will need
+## 此工具如何运作
+- 在调用此工具前，你应当已经在对话中呈现了完整的计划
+- 此工具不以计划内容作为参数——它只是发出信号：你计划已毕、准备实施
+- 一经批准，会话的权限模式便退出计划模式，实施类工具（Write、Edit、Bash）随之可运行
+- 可选择性传入 allowedPrompts 来声明你的计划将需要的 Bash 权限
 
-## When to Use This Tool
-IMPORTANT: Only use this tool when the task requires planning the implementation steps of a task that requires writing code. For research tasks where you're gathering information, searching files, reading files or in general trying to understand the codebase - do NOT use this tool.
+## 何时使用此工具
+重要：仅当任务需要为一项需写代码的工作规划实施步骤时才使用此工具。对于你在收集信息、搜索文件、读取文件、或总体上试图理解代码库的研究类任务——不要使用此工具。
 
-## Before Using This Tool
-Ensure your plan is complete and unambiguous:
-- If you have unresolved questions about requirements or approach, use AskUserQuestion first (in earlier phases)
-- Once your plan is finalized, use THIS tool to request approval
+## 使用此工具之前
+确保你的计划完整且无歧义：
+- 若你对需求或方案仍有未决问题，先用 AskUserQuestion（在更早的阶段）
+- 计划一旦定稿，用本工具请求批准
 
-**Important:** Do NOT use AskUserQuestion to ask "Is this plan okay?" or "Should I proceed?" - that's exactly what THIS tool does. ExitPlanMode inherently requests user approval of your plan.
+**重要：** 不要用 AskUserQuestion 去问"这个计划可以吗？"或"我该继续吗？"——那正是本工具所做的事。ExitPlanMode 本身就是在请求用户批准你的计划。
 
-## Examples
+## 示例
 
-1. Initial task: "Search for and understand the implementation of vim mode in the codebase" - Do not use the exit plan mode tool because you are not planning the implementation steps of a task.
-2. Initial task: "Help me implement yank mode for vim" - Use the exit plan mode tool after you have finished planning the implementation steps of the task.
-3. Initial task: "Add a new feature to handle user authentication" - If unsure about auth method (OAuth, JWT, etc.), use AskUserQuestion first, then use exit plan mode tool after clarifying the approach.`;
+1. 初始任务："搜索并理解代码库中 vim 模式的实现"——不要用退出计划模式工具，因为你并未在为一项工作规划实施步骤。
+2. 初始任务："帮我实现 vim 的 yank 模式"——在你规划完该工作的实施步骤后，使用退出计划模式工具。
+3. 初始任务："新增一个处理用户认证的功能"——若对认证方式（OAuth、JWT 等）不确定，先用 AskUserQuestion，待方案厘清后再用退出计划模式工具。`;
 
-export const ENTERWORKTREE_DESCRIPTION = `Use this tool ONLY when explicitly instructed to work in a worktree — either by the user directly, or by project instructions (CLAUDE.md / memory). This tool creates an isolated git worktree and switches the current session into it.
+export const ENTERWORKTREE_DESCRIPTION = `仅当被明确指示在 worktree 中工作时才使用此工具——无论是用户直接指示，还是项目指令（CLAUDE.md / memory）指示。此工具会创建一个隔离的 git worktree，并把当前会话切入其中。
 
-## When to Use
+## 何时使用
 
-- The user explicitly says "worktree" (e.g., "start a worktree", "work in a worktree", "create a worktree", "use a worktree")
-- CLAUDE.md or memory instructions direct you to work in a worktree for the current task
+- 用户明确说了 "worktree"（如 "start a worktree"、"work in a worktree"、"create a worktree"、"use a worktree"）
+- CLAUDE.md 或 memory 指令要求你为当前任务在 worktree 中工作
 
-## When NOT to Use
+## 何时不要使用
 
-- The user asks to create a branch, switch branches, or work on a different branch — use git commands instead
-- The user asks to fix a bug or work on a feature — use normal git workflow unless worktrees are explicitly requested by the user or project instructions
-- Never use this tool unless "worktree" is explicitly mentioned by the user or in CLAUDE.md / memory instructions
+- 用户要求创建分支、切换分支、或在另一分支上工作——请改用 git 命令
+- 用户要求修 bug 或开发某功能——除非用户或项目指令明确要求 worktree，否则走常规 git 工作流
+- 除非用户或 CLAUDE.md / memory 指令中明确提到 "worktree"，否则绝不使用此工具
 
-## Requirements
+## 前提条件
 
-- Must be in a git repository
-- Must not already be in a worktree session when creating a new worktree (\`name\`); switching into another existing worktree via \`path\` is allowed
+- 必须处于一个 git 仓库中
+- 创建新 worktree（\`name\`）时，当前不能已处于某个 worktree 会话中；通过 \`path\` 切入另一个已存在的 worktree 是允许的
 
-## Behavior
+## 行为
 
-- Creates a new git worktree inside \`.claude/worktrees/\` on a new branch, branched from your current local HEAD
-- Switches the session's working directory to the new worktree
+- 在 \`.claude/worktrees/\` 内、以你当前本地 HEAD 为基点，在一个新分支上创建一个新的 git worktree
+- 把会话的工作目录切换到该新 worktree
 
-## Entering an existing worktree
+## 进入一个已存在的 worktree
 
-Pass \`path\` instead of \`name\` to switch the session into a worktree that already exists (e.g., one you just created with \`git worktree add\`). The path must appear in \`git worktree list\` for the current repository — paths that are not registered worktrees of this repo are rejected.
+传入 \`path\`（而非 \`name\`）以把会话切入一个已经存在的 worktree（如你刚用 \`git worktree add\` 创建的那个）。该路径必须出现在当前仓库的 \`git worktree list\` 中——不是本仓库已注册 worktree 的路径会被拒绝。
 
-## Parameters
+## 参数
 
-- \`name\` (optional): A name for a new worktree. If neither \`name\` nor \`path\` is provided, a random name is generated.
-- \`path\` (optional): Path to an existing worktree of the current repository to enter instead of creating one. Mutually exclusive with \`name\`.`;
+- \`name\`（可选）：新 worktree 的名字。若 \`name\` 与 \`path\` 都未提供，会生成一个随机名字。
+- \`path\`（可选）：要进入的、当前仓库某个已存在 worktree 的路径（而非新建一个）。与 \`name\` 互斥。`;
 
 export const MONITOR_DESCRIPTION = `Start a background monitor that watches a long-running script. Each stdout line is an event. Events accumulate on the returned background task id — this SDK does not push them into the conversation. Read new events with BashOutput (pass the returned taskId as bash_id) and stop the watch with KillShell.
 
@@ -833,16 +835,11 @@ export const TOOL_DESCRIPTION_PROVENANCE: ToolDescriptionProvenance[] = [
   // batch 1, keeper 2026-07-08 ruling B). No longer faithful English
   // reproductions, so removed from the English corpus-sync guard — their
   // Chinese descriptions are covered by tests/tool-descriptions-i18n-zh.test.ts.
-  { tool: 'TodoWrite', faithful: true, slugs: ['tool-description-todowrite'] },
-  { tool: 'TaskCreate', faithful: true, slugs: ['tool-description-taskcreate'] },
-  { tool: 'TaskGet', faithful: true, slugs: ['tool-description-task-get'] },
-  { tool: 'TaskUpdate', faithful: true, slugs: ['tool-description-taskupdate'] },
-  { tool: 'TaskList', faithful: true, slugs: ['tool-description-tasklist'] },
-  { tool: 'WebFetch', faithful: true, slugs: ['tool-description-webfetch'] },
-  { tool: 'WebSearch', faithful: true, slugs: ['tool-description-websearch'] },
-  { tool: 'AskUserQuestion', faithful: true, slugs: ['tool-description-askuserquestion'] },
-  { tool: 'ExitPlanMode', faithful: true, slugs: ['tool-description-exitplanmode'] },
-  { tool: 'EnterWorktree', faithful: true, slugs: ['tool-description-enterworktree'] },
+  // TodoWrite / TaskCreate / TaskGet / TaskUpdate / TaskList / WebFetch /
+  // WebSearch / AskUserQuestion / ExitPlanMode / EnterWorktree: TRANSLATED to
+  // Chinese in-place (i18n-zh batch 2). Removed from the English corpus-sync
+  // guard; covered by tests/tool-descriptions-i18n-zh.test.ts. Bash / Monitor /
+  // Workflow stay English (later batches).
   {
     tool: 'Monitor',
     faithful: true,
