@@ -73,16 +73,18 @@ describe('faithful tool descriptions', () => {
   it('Workflow description states the honest synchronous adaptation and the shipped caps', () => {
     // The official tool is async (task-notification delivery); ours runs the
     // workflow synchronously inside the tool call — the description must say
-    // so and must not promise the unshipped async machinery.
-    expect(D.WORKFLOW_DESCRIPTION).toContain('runs synchronously inside the tool call');
+    // so and must not promise the unshipped async machinery. Prose is now
+    // Chinese (i18n-zh batch 4): the honest-adaptation intent is asserted
+    // against the translated wording; code/number tokens stay verbatim.
+    expect(D.WORKFLOW_DESCRIPTION).toContain('在工具调用内**同步**运行');
     expect(D.WORKFLOW_DESCRIPTION).not.toContain('task-notification');
     expect(D.WORKFLOW_DESCRIPTION).not.toContain('/workflows to watch');
     // budget is honestly described as the null stub (no token-target channel).
-    expect(D.WORKFLOW_DESCRIPTION).toContain('`budget.total` is ALWAYS null');
-    // Official caps are reproduced verbatim (the engine implements them).
-    expect(D.WORKFLOW_DESCRIPTION).toContain('min(16, cpu cores - 2)');
-    expect(D.WORKFLOW_DESCRIPTION).toContain('capped at 1000');
-    expect(D.WORKFLOW_DESCRIPTION).toContain('at most 4096 items');
+    expect(D.WORKFLOW_DESCRIPTION).toContain('`budget.total` **永远为 null**');
+    // Official caps are reproduced (the engine implements them); numbers verbatim.
+    expect(D.WORKFLOW_DESCRIPTION).toContain('min(16, cpu 核数 - 2)');
+    expect(D.WORKFLOW_DESCRIPTION).toContain('上限为 1000');
+    expect(D.WORKFLOW_DESCRIPTION).toContain('4096 个条目');
   });
 
   it('are actually wired onto the built-in tools', () => {

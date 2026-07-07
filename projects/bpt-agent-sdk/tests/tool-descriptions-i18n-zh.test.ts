@@ -27,6 +27,7 @@ import {
   EXITPLANMODE_DESCRIPTION,
   ENTERWORKTREE_DESCRIPTION,
   MONITOR_DESCRIPTION,
+  WORKFLOW_DESCRIPTION,
 } from '../src/tools/descriptions.js';
 
 // Any CJK ideograph -> the description is actually Chinese.
@@ -76,9 +77,15 @@ const TRANSLATED: Array<[string, string, string[]]> = [
     MONITOR_DESCRIPTION,
     ['BashOutput', 'taskId', 'bash_id', 'KillShell', 'run_in_background', '--line-buffered', 'persistent', 'stdout'],
   ],
+  // batch 4
+  [
+    'Workflow',
+    WORKFLOW_DESCRIPTION,
+    ['agent(', 'pipeline(', 'parallel(', 'phase(', 'log(', 'meta', 'scriptPath', 'runId', 'budget.total', 'JavaScript', 'resumeFromRunId'],
+  ],
 ];
 
-describe('tool descriptions i18n-zh (batches 1-3)', () => {
+describe('tool descriptions i18n-zh (batches 1-4)', () => {
   it.each(TRANSLATED)(
     '%s description is non-empty Chinese, emoji-free, and keeps its wire tokens',
     (name, desc, tokens) => {
