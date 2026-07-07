@@ -429,16 +429,27 @@ describe('generator prompt provenance (corpus-sync guard, Track B parity)', () =
     { prompt: MEMORY_FILES_SYSTEM, prov: MEMORY_FILES_PROVENANCE },
   ];
 
-  it('the provenance table has one entry per reproduced face, all faithful', () => {
+  it('the provenance table has one entry per reproduced face; batch-C prompts translated', () => {
     expect(Object.keys(GENERATOR_PROVENANCE)).toHaveLength(7);
     for (const p of Object.values(GENERATOR_PROVENANCE)) {
-      expect(p.faithful).toBe(true);
       expect(p.slug.length).toBeGreaterThan(0);
     }
+    // i18n-zh Phase 2 batch C: 5 small generators translated to Chinese
+    // (faithful:false); the two big classifiers (command-prefix, background-state)
+    // stay English + faithful:true for a later batch.
+    expect(COMMAND_PREFIX_PROVENANCE.faithful).toBe(true);
+    expect(BACKGROUND_STATE_PROVENANCE.faithful).toBe(true);
+    expect(SESSION_TITLE_PROVENANCE.faithful).toBe(false);
+    expect(TITLE_AND_BRANCH_PROVENANCE.faithful).toBe(false);
+    expect(SESSION_NAME_PROVENANCE.faithful).toBe(false);
+    expect(AWAY_SUMMARY_PROVENANCE.faithful).toBe(false);
+    expect(MEMORY_FILES_PROVENANCE.faithful).toBe(false);
   });
 
   for (const { prompt, prov } of faces) {
-    it.runIf(existsSync(archive))(`${prov.slug} is faithful to its archived source`, () => {
+    // Translated (faithful:false) prompts can't be anchor-matched against the
+    // English archive; the archive check runs only for still-faithful faces.
+    it.runIf(existsSync(archive) && prov.faithful)(`${prov.slug} is faithful to its archived source`, () => {
       const body = norm(stripHeader(readFileSync(join(archive, `${prov.slug}.md`), 'utf8')));
       const drifted = norm(prompt)
         .split(/(?<=[.:])\s+/)
