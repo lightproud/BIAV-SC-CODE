@@ -1,0 +1,58 @@
+{
+  "date": "2026-07-08",
+  "archived_at": "2026-07-07T19:00:00.460642+00:00",
+  "source": "steam",
+  "item_count": 2,
+  "items": [
+    {
+      "title": "[正面] peak",
+      "summary": "peak",
+      "source": "steam_review",
+      "time": "2026-07-07T17:41:22+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198756713854/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198756713854",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 335,
+        "votes_up": 0,
+        "timestamp_created": 1783446082
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 不错",
+      "summary": "不错",
+      "source": "steam_review",
+      "time": "2026-07-07T16:39:12+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199868690789/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199868690789",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 2492,
+        "votes_up": 0,
+        "timestamp_created": 1783442352
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    }
+  ],
+  "region": "global",
+  "content_subtype": "review"
+}

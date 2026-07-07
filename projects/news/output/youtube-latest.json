@@ -1,34 +1,10 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-07T16:25:07.738317+00:00",
+  "collected_at": "2026-07-07T18:59:06.008978+00:00",
   "source": "youtube",
   "data_layer": "output",
-  "item_count": 22,
+  "item_count": 21,
   "items": [
-    {
-      "source": "youtube",
-      "time": "2026-07-07T14:29:26Z",
-      "lang": "",
-      "title": "Morimens \\\\ Прохождение д-зоны от 06.07.26",
-      "summary": "Соцсети: Стримы на твич: https://twitch.tv/closetom Информация по стримам \\\\ Ирл контент \\\\ Общаемся по игре: ...",
-      "url": "https://www.youtube.com/watch?v=pVE7aBA8YtE",
-      "author": "Closetom",
-      "engagement": 101,
-      "media_url": "https://i.ytimg.com/vi/pVE7aBA8YtE/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-07-07T12:54:51Z",
-      "lang": "",
-      "title": "망각전야Morimens) (대리뽑,상담시청가능)쓰고싶은 캐릭알려드립니다",
-      "summary": "망각전야 #Morimens #이터널리턴.",
-      "url": "https://www.youtube.com/watch?v=NiSiTw_vlKg",
-      "author": "박현(Muyeong)",
-      "engagement": 66,
-      "media_url": "https://i.ytimg.com/vi/NiSiTw_vlKg/hqdefault_live.jpg",
-      "content_type": "video"
-    },
     {
       "source": "youtube",
       "time": "2026-07-07T16:00:27Z",
@@ -37,8 +13,32 @@
       "summary": "",
       "url": "https://www.youtube.com/watch?v=E3sGReHQHoI",
       "author": "AnjutheMage",
-      "engagement": 56,
+      "engagement": 427,
       "media_url": "https://i.ytimg.com/vi/E3sGReHQHoI/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-07-07T14:29:26Z",
+      "lang": "",
+      "title": "Morimens \\\\ Прохождение д-зоны от 06.07.26",
+      "summary": "Соцсети: Стримы на твич: https://twitch.tv/closetom Информация по стримам \\\\ Ирл контент \\\\ Общаемся по игре: ...",
+      "url": "https://www.youtube.com/watch?v=pVE7aBA8YtE",
+      "author": "Closetom",
+      "engagement": 102,
+      "media_url": "https://i.ytimg.com/vi/pVE7aBA8YtE/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-07-07T18:23:03Z",
+      "lang": "",
+      "title": "망각전야Morimens) (대리뽑,상담시청가능)쓰고싶은 캐릭알려드립니다",
+      "summary": "망각전야 #Morimens #이터널리턴.",
+      "url": "https://www.youtube.com/watch?v=NiSiTw_vlKg",
+      "author": "박현(Muyeong)",
+      "engagement": 77,
+      "media_url": "https://i.ytimg.com/vi/NiSiTw_vlKg/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -49,7 +49,7 @@
       "summary": "『忘却前夜』オンラインプレイヤーとの対戦動画です！ 新シーズンは色々な編成を試したいということで、 初めてリッツさんを ...",
       "url": "https://www.youtube.com/watch?v=6n2FEZimgmg",
       "author": "薄めの『ゆゆ』",
-      "engagement": 28,
+      "engagement": 40,
       "media_url": "https://i.ytimg.com/vi/6n2FEZimgmg/hqdefault.jpg",
       "content_type": "video"
     },
@@ -61,8 +61,20 @@
       "summary": "忘却前夜やっていきます！ トゥルーくんが好きな初心者守秘者です！ ※本日の配信は、終章のネタバレが含まれますのでご注意 ...",
       "url": "https://www.youtube.com/watch?v=nb6-ttSmUIE",
       "author": "卯咲乃ぬい",
-      "engagement": 17,
-      "media_url": "https://i.ytimg.com/vi/nb6-ttSmUIE/hqdefault_live.jpg",
+      "engagement": 32,
+      "media_url": "https://i.ytimg.com/vi/nb6-ttSmUIE/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-07-07T16:48:44Z",
+      "lang": "",
+      "title": "Lỡ tay x1 banner thường ra Tawil và bạn muốn dùng cổ??????? | Morimens",
+      "summary": "Morimens #deckbuilding #Roguelike #Roguelike #Morimens #deckbuilding #cardgame #strategy C1 : Command card 1 C2 ...",
+      "url": "https://www.youtube.com/watch?v=2uPZUyUIJts",
+      "author": "Mr.NextMonday",
+      "engagement": 21,
+      "media_url": "https://i.ytimg.com/vi/2uPZUyUIJts/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -73,20 +85,8 @@
       "summary": "Zora's Dono (Indonesia) : Saweria : https://saweria.co/RushboltAuzora Sociabuzz : https://sociabuzz.com/rushbolt678/donate .",
       "url": "https://www.youtube.com/watch?v=sMmGOSmpzXI",
       "author": "Rushbolt Auzora (オーゾラ)",
-      "engagement": 15,
+      "engagement": 16,
       "media_url": "https://i.ytimg.com/vi/sMmGOSmpzXI/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-07-06T16:42:54Z",
-      "lang": "",
-      "title": "【Morimens】忘却前夜",
-      "summary": "reverse1999 #リバース1999 #리버스1999 #重返未来1999 #重返未來1999 #重返未來#limbuscompany #pathtonowhere #無期 ...",
-      "url": "https://www.youtube.com/watch?v=yxtG9mRISYk",
-      "author": "ぽんぽん",
-      "engagement": 9,
-      "media_url": "https://i.ytimg.com/vi/yxtG9mRISYk/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -97,8 +97,20 @@
       "summary": "Reading and attempting to voice the summer event that just came out in Morimens. Stream almost daily whenever I have free time ...",
       "url": "https://www.youtube.com/watch?v=1ZdbGRVYedg",
       "author": "FluffeyPanda's World",
-      "engagement": 7,
+      "engagement": 13,
       "media_url": "https://i.ytimg.com/vi/1ZdbGRVYedg/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-07-07T16:13:58Z",
+      "lang": "",
+      "title": "미리암 개인스토리】모독 (+세라핌님) : 망각전야(MORIMENS)",
+      "summary": "매일 저녁 5시 치지직에서 뵙겠습니다! 메일주소 : room007@naver.com 치지직 페이지 ...",
+      "url": "https://www.youtube.com/watch?v=1RopkwTYxVM",
+      "author": "TobBab 톱밥",
+      "engagement": 8,
+      "media_url": "https://i.ytimg.com/vi/1RopkwTYxVM/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -109,7 +121,7 @@
       "summary": "忘卻前夜#morimens 7月6日~7月20日融災更新. Regional D-Effect Zone Update (July 6 – July 20). 抱歉!這支影片中把角色名稱說錯 ...",
       "url": "https://www.youtube.com/watch?v=W85MJ47uIVM",
       "author": "Noir",
-      "engagement": 7,
+      "engagement": 8,
       "media_url": "https://i.ytimg.com/vi/W85MJ47uIVM/hqdefault.jpg",
       "content_type": "video"
     },
@@ -121,8 +133,20 @@
       "summary": "I absolutely love this game and it's OST, but couldn't find it anywhere on YouTube so I took it upon myself to upload some themes.",
       "url": "https://www.youtube.com/watch?v=AK2KAeKkERw",
       "author": "SeaLily",
-      "engagement": 4,
+      "engagement": 6,
       "media_url": "https://i.ytimg.com/vi/AK2KAeKkERw/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-07-07T14:09:47Z",
+      "lang": "",
+      "title": "Morimens OST- The Moon",
+      "summary": "I absolutely love this game and it's OST, but couldn't find it anywhere on YouTube so I took it upon myself to upload some themes.",
+      "url": "https://www.youtube.com/watch?v=DjmVTjZNwqU",
+      "author": "SeaLily",
+      "engagement": 5,
+      "media_url": "https://i.ytimg.com/vi/DjmVTjZNwqU/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -151,26 +175,14 @@
     },
     {
       "source": "youtube",
-      "time": "2026-07-07T16:13:58Z",
+      "time": "2026-07-07T10:00:20Z",
       "lang": "",
-      "title": "미리암 개인스토리】모독 (+세라핌님) : 망각전야(MORIMENS)",
-      "summary": "매일 저녁 5시 치지직에서 뵙겠습니다! 메일주소 : room007@naver.com 치지직 페이지 ...",
-      "url": "https://www.youtube.com/watch?v=1RopkwTYxVM",
-      "author": "TobBab 톱밥",
+      "title": "#忘卻前夜 #morimens 無聊開個小號來玩一下~007",
+      "summary": "忘卻前夜#morimens 這隻目前可能不定期更新,有時間再玩一下我都懷疑這樣能打得贏0.0.",
+      "url": "https://www.youtube.com/watch?v=MPC_HTBU8Xk",
+      "author": "Noir",
       "engagement": 3,
-      "media_url": "https://i.ytimg.com/vi/1RopkwTYxVM/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-07-07T07:13:27Z",
-      "lang": "",
-      "title": "MORIMENS【Psyche Deepdive】Ramona: Timeworn - One Step Away | Keeper Archive",
-      "summary": "Ramona: Timeworn Psyche Deepdive! 「 \"You take one step forward and cross into another time and space.\" 」",
-      "url": "https://www.youtube.com/watch?v=HMI6eb67LUY",
-      "author": "Keeper Archive",
-      "engagement": 3,
-      "media_url": "https://i.ytimg.com/vi/HMI6eb67LUY/hqdefault.jpg",
+      "media_url": "https://i.ytimg.com/vi/MPC_HTBU8Xk/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -187,37 +199,13 @@
     },
     {
       "source": "youtube",
-      "time": "2026-07-07T14:09:47Z",
-      "lang": "",
-      "title": "Morimens OST- The Moon",
-      "summary": "I absolutely love this game and it's OST, but couldn't find it anywhere on YouTube so I took it upon myself to upload some themes.",
-      "url": "https://www.youtube.com/watch?v=DjmVTjZNwqU",
-      "author": "SeaLily",
-      "engagement": 2,
-      "media_url": "https://i.ytimg.com/vi/DjmVTjZNwqU/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-07-07T10:00:20Z",
-      "lang": "",
-      "title": "#忘卻前夜 #morimens 無聊開個小號來玩一下~007",
-      "summary": "忘卻前夜#morimens 這隻目前可能不定期更新,有時間再玩一下我都懷疑這樣能打得贏0.0.",
-      "url": "https://www.youtube.com/watch?v=MPC_HTBU8Xk",
-      "author": "Noir",
-      "engagement": 2,
-      "media_url": "https://i.ytimg.com/vi/MPC_HTBU8Xk/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
       "time": "2026-07-07T14:18:12Z",
       "lang": "",
       "title": "Morimens OST- Home",
       "summary": "I absolutely love this game and it's OST, but couldn't find it anywhere on YouTube so I took it upon myself to upload some themes.",
       "url": "https://www.youtube.com/watch?v=6iVHREqRGQc",
       "author": "SeaLily",
-      "engagement": 1,
+      "engagement": 2,
       "media_url": "https://i.ytimg.com/vi/6iVHREqRGQc/hqdefault.jpg",
       "content_type": "video"
     },
