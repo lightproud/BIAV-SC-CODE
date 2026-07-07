@@ -591,10 +591,10 @@ export const SCENARIOS_L4 = [
           'non-success terminal - the C5 defect regressed'
         : null,
     notes:
-      'The no-retry invariant is arm-neutral (a refusal is terminal on both arms). Official ' +
-      'terminal ENCODING of a refusal frame is the discovery objective: if it success-encodes ' +
-      '(the KD-L4-01 quirk family), triage extends a KD after 2-run stability; our arm is locked ' +
-      'to the C5 error result via bptOnly.',
+      'The no-retry invariant is arm-neutral (a refusal is terminal on both arms). Dual-arm ' +
+      'discovery (2026-07-07, stable 2 runs): the official CLI emits system/model_refusal_no_fallback ' +
+      'then success-encodes the decline and throws from the iterator (KD-L4-06); our arm yields a ' +
+      'clean C5 error result (bptOnly-locked) - the more correct side.',
   },
   {
     id: 'l4-stop-pause-turn',
@@ -632,9 +632,10 @@ export const SCENARIOS_L4 = [
           'the C4 defect regressed'
         : null,
     notes:
-      'Behavior unknown on the official arm (whether its CLI re-streams a pause_turn is a ' +
-      'discovery objective). Arm-neutral invariants stay minimal (no unscripted calls, no ' +
-      'runaway); our C4 re-stream contract is locked in bptOnly.',
+      'Dual-arm discovery (2026-07-07, stable 2 runs): the official CLI does NOT re-stream a ' +
+      'pause_turn (postCount 1, the partial reported as done - silent truncation); our engine ' +
+      're-streams to continue (postCount 2, KD-L4-07) - the more correct side. Arm-neutral ' +
+      'invariants stay minimal (no unscripted calls, no runaway); C4 contract locked in bptOnly.',
   },
   {
     id: 'l4-max-tokens-orphan-tool',
@@ -665,27 +666,31 @@ export const SCENARIOS_L4 = [
     sentinels: [],
     invariants: (run) => {
       const f = [];
-      // A dispatch of the orphan tool_use would need a 2nd POST to deliver the
-      // tool_result; only one script is queued, so a dispatch shows as an
-      // unscripted call. Arm-neutral: neither arm should execute the orphan.
-      if (run.unscriptedCalls !== 0) f.push(`unscriptedCalls ${run.unscriptedCalls} != 0 (the max_tokens orphan tool_use was dispatched)`);
-      if (run.postCount !== 1) f.push(`postCount ${run.postCount} != 1 (a 2nd POST means the orphan was executed)`);
+      // Arm-neutral no-runaway bound only. The "no orphan dispatch" contract is
+      // OURS (C6): the official arm legitimately DOES execute the truncated
+      // tool_use (KD-L4-08, observed stable), so that assertion lives in
+      // bptOnly, not here - else official's correct-by-its-own-design behavior
+      // would read as an untriaged invariant miss forever.
+      if (run.postCount > 2) f.push(`postCount ${run.postCount} > 2 (runaway)`);
       return f;
     },
     bptOnly: (run) => {
-      // C6 contract (v0.15.0): the orphan tool_use is dropped from the
-      // persisted turn and the turn ends naturally (no dispatch). The
-      // no-downstream-400 guarantee itself is engine-locked in
+      // C6 contract (v0.15.0): the orphan tool_use is dropped, the turn ends
+      // naturally, NOTHING is dispatched - postCount 1, no 2nd POST, no tool
+      // execution. The no-downstream-400 guarantee is engine-locked in
       // engine.test.ts (the persisted assistant turn carries text, not
-      // tool_use); L4 observes the terminal shape + no dispatch.
+      // tool_use); the official arm instead executes the orphan (KD-L4-08).
       const f = [];
       if (run.checks.resultSubtype !== 'success') f.push(`expected result/success (C6 natural end), got ${run.checks.resultSubtype}`);
+      if (run.postCount !== 1) f.push(`expected postCount 1 (orphan dropped, no dispatch), got ${run.postCount}`);
+      if (run.unscriptedCalls !== 0) f.push(`unscriptedCalls ${run.unscriptedCalls} != 0 (we dispatched the orphan)`);
       if (run.error) f.push(`unexpected thrown error: ${run.error}`);
       return f;
     },
     notes:
       'The pairing boundary (the orphan must not poison the next request) is locked at the engine ' +
-      'level; here the arm-neutral observable is "neither arm executes a max_tokens-truncated ' +
-      'tool_use" (postCount 1, no unscripted call). Official handling is a discovery objective.',
+      'level. Dual-arm discovery (2026-07-07, stable 2 runs): the official CLI EXECUTES the ' +
+      'max_tokens-truncated tool_use (postCount 2, tool_result delivered) - KD-L4-08; our engine ' +
+      'drops it (postCount 1), the safer side.',
   },
 ];

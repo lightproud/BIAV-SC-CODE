@@ -122,6 +122,51 @@ export const KD_L4 = [
       'consequence for BPT production: behind such a gateway the official client retries and ' +
       'success-encodes API errors; ours fails fast with the real error type.',
   },
+  // --- Stop-reason / frame-semantics KDs (BPT official-semantics audit ---
+  // 2026-07-07; observed stable across 2 dual-arm runs at the pinned stack
+  // agent-sdk 0.3.201 + claude-code 2.1.201). In all three our arm is the more
+  // conservative / more correct side - the fixed-lock unit tests (C4/C5/C6,
+  // v0.15.0) are the contract; these KDs pin how the OFFICIAL CLI differs.
+  {
+    id: 'KD-L4-06',
+    scenarios: ['l4-stop-refusal'],
+    facets: ['resultSubtype', 'errorPresent'],
+    coversTokens: true,
+    note:
+      "stop_reason:'refusal' terminal ENCODING: the official arm emits a " +
+      'system/model_refusal_no_fallback message, ends result/SUCCESS, then throws from the ' +
+      'iterator (the KD-L4-01 / KD-10 success-subtype-over-failure quirk family). This SDK ' +
+      'yields a dedicated clean result/error_during_execution (error_code refusal, C5) with no ' +
+      'post-result throw. The no-retry invariant (postCount 1) holds identically on both arms - ' +
+      'only the terminal encoding differs; our error result is the more correct side.',
+  },
+  {
+    id: 'KD-L4-07',
+    scenarios: ['l4-stop-pause-turn'],
+    facets: ['postCount', 'sentinels'],
+    coversTokens: false,
+    note:
+      "stop_reason:'pause_turn' continuation: the official arm does NOT re-stream a paused turn " +
+      '(postCount 1) - it reports the partial turn as done, silently truncating the remaining ' +
+      'work. This SDK persists the partial turn and re-streams to continue it (postCount 2, the ' +
+      'continuation delivered; C4, bounded by maxTurns). Both end result/success; the split is ' +
+      'whether the paused turn is finished. Our continuation is the more correct side.',
+  },
+  {
+    id: 'KD-L4-08',
+    scenarios: ['l4-max-tokens-orphan-tool'],
+    facets: ['postCount', 'unscriptedCalls', 'toolResults', 'errorPresent'],
+    coversTokens: true,
+    note:
+      "max_tokens-truncated tool_use execution: the official arm EXECUTES a complete tool_use " +
+      'block cut by stop_reason:max_tokens (dispatches it, delivers the tool_result on a 2nd ' +
+      'POST) - the same "complete tool_use blocks are actionable" behavior as the truncated-tool ' +
+      'family (former KD-L4-04). This SDK DROPS the max_tokens orphan (no dispatch, postCount 1; ' +
+      'C6), which is exactly what keeps the next same-session request from 400ing on an unpaired ' +
+      'tool_use. The official errorPresent + token tail follow from its 2nd POST hitting the ' +
+      'scripted queue-exhaustion 400 (the KD-L4-01 success-over-failure quirk). Our drop is the ' +
+      'safer side.',
+  },
 ];
 
 async function loadQuery(armKind) {

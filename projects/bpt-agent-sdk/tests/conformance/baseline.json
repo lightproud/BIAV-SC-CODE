@@ -440,6 +440,17 @@
         ],
         "engineFinding": false
       },
+      "l4-max-tokens-orphan-tool": {
+        "verdict": "FAULT_KNOWN_DIFF",
+        "kdIds": [
+          "KD-01",
+          "KD-02",
+          "KD-04",
+          "KD-05",
+          "KD-L4-08"
+        ],
+        "engineFinding": false
+      },
       "l4-script-exhausted-400-terminal": {
         "verdict": "FAULT_KNOWN_DIFF",
         "kdIds": [
@@ -477,6 +488,27 @@
           "KD-02",
           "KD-04",
           "KD-05"
+        ],
+        "engineFinding": false
+      },
+      "l4-stop-pause-turn": {
+        "verdict": "FAULT_KNOWN_DIFF",
+        "kdIds": [
+          "KD-01",
+          "KD-02",
+          "KD-04",
+          "KD-05",
+          "KD-L4-07"
+        ],
+        "engineFinding": false
+      },
+      "l4-stop-refusal": {
+        "verdict": "FAULT_KNOWN_DIFF",
+        "kdIds": [
+          "KD-01",
+          "KD-02",
+          "KD-04",
+          "KD-L4-06"
         ],
         "engineFinding": false
       }
