@@ -11,7 +11,27 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
-## 0.18.2 — 2026-07-08
+## 0.18.3 — 2026-07-08
+
+Hook parity: populate the official base `transcript_path` on every hook.
+
+- **fix: `BaseHookInput.transcript_path` was never populated on any hook.** The
+  official hook base carries `transcript_path` (the transcript of the session
+  that fired the hook) as a required field; this SDK left it absent everywhere,
+  a divergence separate from the `agent_transcript_path` gap fixed in 0.18.2.
+  Now resolved from the store for a path-backed persisted session:
+  - engine-layer hooks (PreToolUse / PostToolUse / PostToolBatch / Stop / …) via
+    a new `EngineConfig.transcriptPath` threaded into `baseHookFields`;
+  - query-layer hooks (SessionStart / UserPromptSubmit / SessionEnd);
+  - the subagent runtime: SubagentStart / SubagentStop now carry the MAIN
+    session's `transcript_path` alongside the subagent's `agent_transcript_path`
+    (the two are distinct), and a subagent's own internal hooks carry the child
+    transcript.
+  New single-source duck-typed helper `resolveTranscriptPath(store, sessionId)`
+  (also now backing `agent_transcript_path`); absent for non-path stores /
+  persistence off, so nothing is fabricated. Tests in engine.test.ts,
+  subagents.test.ts, sessions-v2.test.ts.
+
 
 Bug fix: `agent_transcript_path` was undefined on SubagentStop under an injected
 external session store.

@@ -1043,6 +1043,53 @@ describe('subagent runtime — FORK mode', () => {
     ).toBeUndefined();
   });
 
+  it('SubagentStop carries base transcript_path (MAIN session) distinct from agent_transcript_path (v0.18.3)', async () => {
+    class PathStore extends FakeStore {
+      filePath(id: string): string {
+        return `/fake/sessions/${id}.jsonl`;
+      }
+    }
+    const store = new PathStore();
+    const h = makeRuntime({
+      scripts: [textReplyEvents('child answer', { model: 'claude-sonnet-4-5' })],
+      store,
+      persist: true,
+      withStartStopHooks: true,
+    });
+    const res = await h.runtime.makeSpawnFn(0)(baseParams());
+    const stop = h.stopInputs.find(
+      (i) => (i as { agent_id?: string }).agent_id === res.agentId,
+    );
+    expect(stop).toBeDefined();
+    // Base transcript_path = the MAIN session's transcript (session_id = parent-sess).
+    expect((stop as { transcript_path?: string }).transcript_path).toBe(
+      '/fake/sessions/parent-sess.jsonl',
+    );
+    // agent_transcript_path stays the SUBAGENT's own transcript — the two differ.
+    expect((stop as { agent_transcript_path?: string }).agent_transcript_path).toBe(
+      `/fake/sessions/${res.agentId}.jsonl`,
+    );
+    expect((stop as { transcript_path?: string }).transcript_path).not.toBe(
+      (stop as { agent_transcript_path?: string }).agent_transcript_path,
+    );
+  });
+
+  it('SubagentStop omits base transcript_path when the store is not path-backed (v0.18.3)', async () => {
+    const store = new FakeStore();
+    const h = makeRuntime({
+      scripts: [textReplyEvents('child answer', { model: 'claude-sonnet-4-5' })],
+      store,
+      persist: true,
+      withStartStopHooks: true,
+    });
+    const res = await h.runtime.makeSpawnFn(0)(baseParams());
+    const stop = h.stopInputs.find(
+      (i) => (i as { agent_id?: string }).agent_id === res.agentId,
+    );
+    expect(stop).toBeDefined();
+    expect((stop as { transcript_path?: string }).transcript_path).toBeUndefined();
+  });
+
   it('still enforces the turn cap under fork', async () => {
     const base = new Map<string, BuiltinTool>([
       ['Read', recordingTool('Read', [], { readOnly: true })],

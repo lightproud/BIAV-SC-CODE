@@ -69,6 +69,7 @@ import { DefaultPermissionGate } from '../permissions/gate.js';
 import { runAgentLoop } from '../engine/loop.js';
 import { matchToolName, parseRule } from '../permissions/rules.js';
 import { addUsage } from '../engine/pricing.js';
+import { resolveTranscriptPath } from '../sessions/store.js';
 import {
   StallWatchdog,
   resolveStallTimeoutMs,
@@ -424,12 +425,16 @@ export function createSubagentRuntime(
     signal: AbortSignal,
   ): Promise<void> => {
     if (!hooks.hasHooks('SubagentStart')) return;
+    // Base `transcript_path` = the MAIN session transcript (the subagent's own
+    // transcript may not exist yet at start, so no agent_transcript_path here).
+    const transcriptPath = persist ? resolveTranscriptPath(store, sessionId()) : undefined;
     try {
       const agg = await hooks.run(
         'SubagentStart',
         {
           session_id: sessionId(),
           cwd,
+          ...(transcriptPath !== undefined ? { transcript_path: transcriptPath } : {}),
           hook_event_name: 'SubagentStart',
           agent_id: agentId,
           agent_type: type,
@@ -460,28 +465,26 @@ export function createSubagentRuntime(
     signal: AbortSignal,
   ): Promise<void> => {
     if (!hooks.hasHooks('SubagentStop')) return;
-    // P2 parity: populate the official-required `agent_transcript_path` when the
-    // child transcript was persisted to a path-backed store (child transcripts
-    // append under {agentId}). filePath is a JsonlSessionStore concretion, not on
-    // the SessionStore interface, so duck-type it; external stores stay absent.
-    const filePathFn = (store as { filePath?: (id: string) => string } | undefined)
-      ?.filePath;
-    const transcriptPath =
-      persist && typeof filePathFn === 'function'
-        ? filePathFn.call(store, agentId)
-        : undefined;
+    // Official parity: `agent_transcript_path` = the SUBAGENT's transcript (child
+    // transcripts append under {agentId}); base `transcript_path` = the MAIN
+    // session's transcript (the session_id this hook reports). Both are path-
+    // backed-store concretions duck-typed via resolveTranscriptPath; absent for
+    // non-path stores / persistence off.
+    const agentTranscriptPath = persist ? resolveTranscriptPath(store, agentId) : undefined;
+    const transcriptPath = persist ? resolveTranscriptPath(store, sessionId()) : undefined;
     try {
       const agg = await hooks.run(
         'SubagentStop',
         {
           session_id: sessionId(),
           cwd,
+          ...(transcriptPath !== undefined ? { transcript_path: transcriptPath } : {}),
           hook_event_name: 'SubagentStop',
           stop_hook_active: false,
           agent_id: agentId,
           agent_type: type,
-          ...(transcriptPath !== undefined
-            ? { agent_transcript_path: transcriptPath }
+          ...(agentTranscriptPath !== undefined
+            ? { agent_transcript_path: agentTranscriptPath }
             : {}),
         },
         undefined,
@@ -900,6 +903,9 @@ export function createSubagentRuntime(
         promptCaching: engineConfig.promptCaching,
         includePartialMessages: false,
         sessionId: agentId,
+        // The child's own transcript, so hooks fired INSIDE the subagent loop
+        // (PreToolUse/Stop/…) carry the official base `transcript_path`.
+        transcriptPath: persist ? resolveTranscriptPath(store, agentId) : undefined,
         // The isolation worktree (when requested) is the child's cwd.
         cwd: childCwd,
         // The loop does not expose the spawning tool_use id to the tool; use a
