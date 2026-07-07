@@ -1,8 +1,20 @@
 /**
  * Tool descriptions for the BPT Agent SDK.
  *
- * These are FAITHFUL OPEN REPRODUCTIONS of the official Claude Code agent tool
- * descriptions, assembled/adapted from the public reconstruction archived under
+ * i18n-zh CAMPAIGN IN PROGRESS (keeper ruling B, 2026-07-08): the built-in
+ * tool descriptions are being TRANSLATED TO CHINESE IN-PLACE and shipped on the
+ * wire — a DELIBERATE divergence from the official English surface (see
+ * docs/COMPAT.md; the keeper accepted that this breaks the faithful-reproduction
+ * axis and its provenance guard). Batch 1 (Read/Edit/Write/Grep/Glob) is done;
+ * remaining tools stay English until their batch lands. Translated tools are
+ * removed from TOOL_DESCRIPTION_PROVENANCE (the English corpus-sync guard) and
+ * covered by tests/tool-descriptions-i18n-zh.test.ts (structural: is-Chinese,
+ * no emoji, tool/param tokens preserved). Tool NAMES and wire PARAMETER names
+ * stay English (they are identifiers); only prose is translated.
+ *
+ * The entries BELOW that are still ENGLISH remain FAITHFUL OPEN REPRODUCTIONS of
+ * the official Claude Code agent tool descriptions, assembled/adapted from the
+ * public reconstruction archived under
  * `Public-Info-Pool/Reference/Claude-Code-System-Prompts/system-prompts/`
  * (attribution, not clean-room). Template variables in the source fragments have
  * been resolved to this SDK's concrete values, and tool/parameter names have been
@@ -209,58 +221,58 @@ Important:
  */
 export const BASH_WIN32_NOTE = `Note: on Windows this tool still runs POSIX bash (Git Bash), not cmd.exe or PowerShell. Use POSIX commands — ls, cp, mv, rm, grep — instead of dir, copy, move, del, findstr, and write paths with forward slashes.`;
 
-export const READ_DESCRIPTION = `Reads a file from the local filesystem. You can access any file directly by using this tool.
-Assume this tool is able to read all files on the machine. If the User provides a path to a file assume that path is valid. It is okay to read a file that does not exist; an error will be returned.
+export const READ_DESCRIPTION = `从本地文件系统读取一个文件。你可以用此工具直接访问任意文件。
+假定此工具能读取本机上的所有文件。若用户提供了文件路径，就假定该路径有效。读取一个不存在的文件也没关系——会返回一个错误。
 
-Usage:
-- The file_path parameter must be an absolute path, not a relative path
-- By default, it reads up to 2000 lines starting from the beginning of the file
-- Any lines longer than 2000 characters will be truncated
-- Output is also capped at ~50000 characters total; when truncated, a footer shows the exact line range returned and the offset to continue reading from
-- Results are returned using cat -n format, with line numbers starting at 1
-- You can optionally specify a line offset and limit (especially handy for long files), but it's recommended to read the whole file by not providing these parameters
-- This tool allows you to read images (eg PNG, JPG, etc). When reading an image file the contents are presented visually as this is a multimodal model.
-- This tool can read PDF files (.pdf). The whole document is returned as a single PDF content block; page-range reads via the pages parameter are not supported (a read with pages set returns an explicit error), so omit pages and read the document whole.
-- Jupyter notebooks (.ipynb files) are returned as their raw JSON text; cells are not rendered individually.
-- This tool can only read files, not directories. To list files in a directory, use the Bash tool.
-- You will regularly be asked to read screenshots. If the user provides a path to a screenshot, ALWAYS use this tool to view the file at the path. This tool will work with all temporary file paths.
-- If you read a file that exists but has empty contents you will receive a system reminder warning in place of file contents.`;
+用法：
+- file_path 参数必须是绝对路径，不能是相对路径
+- 默认从文件开头起最多读取 2000 行
+- 任何超过 2000 字符的行都会被截断
+- 输出总量也限制在约 50000 字符；发生截断时，末尾会附一段脚注，标明本次返回的确切行号区间以及继续读取所用的 offset
+- 结果以 cat -n 格式返回，行号从 1 开始
+- 你可以选择性地指定行 offset 和 limit（对长文件尤为方便），但推荐不传这两个参数、直接读整个文件
+- 此工具可读取图像（如 PNG、JPG 等）。读取图像文件时，内容以视觉方式呈现，因为本模型是多模态的。
+- 此工具可读取 PDF 文件（.pdf）。整个文档作为单个 PDF 内容块返回；不支持通过 pages 参数按页读取（带 pages 的读取会返回明确的错误），因此请省略 pages、整份读取。
+- Jupyter 笔记本（.ipynb 文件）以其原始 JSON 文本返回；单元格不会逐个渲染。
+- 此工具只能读取文件，不能读取目录。要列出目录中的文件，请用 Bash 工具。
+- 你会经常被要求读取截图。若用户提供了截图路径，务必用此工具查看该路径的文件。此工具适用于所有临时文件路径。
+- 若你读取的文件存在但内容为空，你会收到一条系统提醒警告来替代文件内容。`;
 
-export const EDIT_DESCRIPTION = `Performs exact string replacements in files.
+export const EDIT_DESCRIPTION = `对文件执行精确的字符串替换。
 
-Usage:
-- You must use your Read tool at least once in the conversation before editing. This tool will error if you attempt an edit without reading the file.
-- When editing text from Read tool output, ensure you preserve the exact indentation (tabs/spaces) as it appears AFTER the line number prefix. The line number prefix format is: spaces + line number + tab. Everything after that is the actual file content to match. Never include any part of the line number prefix in the old_string or new_string.
-- ALWAYS prefer editing existing files in the codebase. NEVER write new files unless explicitly required.
-- Only use emojis if the user explicitly requests it. Avoid adding emojis to files unless asked.
-- Keep \`old_string\` minimal — usually 1-3 lines, only enough to be unique in the file. Including excess context wastes tokens and is an error.
-- The edit will FAIL if \`old_string\` is not unique in the file. In that case, add the minimum extra context needed for uniqueness, or use \`replace_all\` to change every instance.
-- Use \`replace_all\` for replacing and renaming strings across the file. This parameter is useful if you want to rename a variable for instance.`;
+用法：
+- 编辑前，你必须在本次对话中至少用过一次 Read 工具。若未读取文件就尝试编辑，此工具会报错。
+- 编辑来自 Read 工具输出的文本时，务必保留行号前缀之后的精确缩进（制表符/空格）。行号前缀的格式为：空格 + 行号 + 制表符。其后的一切才是要匹配的实际文件内容。切勿把行号前缀的任何部分包含进 old_string 或 new_string。
+- 始终优先编辑代码库中已有的文件。除非明确必要，切勿新建文件。
+- 仅在用户明确要求时才使用 emoji。除非被要求，避免向文件中添加 emoji。
+- 让 \`old_string\` 尽量精简——通常 1-3 行，足以在文件中唯一即可。包含多余上下文既浪费 token 也是错误做法。
+- 若 \`old_string\` 在文件中不唯一，编辑会失败。此时请补上达成唯一所需的最少额外上下文，或用 \`replace_all\` 替换每一处。
+- 用 \`replace_all\` 在整个文件范围内替换或重命名字符串。比如你想重命名一个变量时，此参数很有用。`;
 
-export const WRITE_DESCRIPTION = `Writes a file to the local filesystem, overwriting if one exists.
+export const WRITE_DESCRIPTION = `向本地文件系统写入一个文件，若已存在则覆盖。
 
-When to use: creating a new file, or fully replacing one you've already Read. Overwriting an existing file you haven't Read will fail. For partial changes, use Edit instead.
+何时使用：新建一个文件，或完全替换一个你已经 Read 过的文件。覆盖一个你尚未 Read 过的已有文件会失败。若只是局部改动，请改用 Edit。
 
-Usage:
-- This tool will overwrite the existing file if there is one at the provided path.
-- Prefer the Edit tool for modifying existing files — it only sends the diff. Only use this tool to create new files or for complete rewrites.
-- NEVER create documentation files (*.md) or README files unless explicitly requested by the User.
-- Only use emojis if the user explicitly requests it. Avoid writing emojis to files unless asked.`;
+用法：
+- 若所给路径处已有文件，此工具会覆盖它。
+- 修改已有文件时优先用 Edit 工具——它只发送 diff。仅在新建文件或整体重写时才用此工具。
+- 除非用户明确要求，切勿创建文档文件（*.md）或 README 文件。
+- 仅在用户明确要求时才使用 emoji。除非被要求，避免向文件中写入 emoji。`;
 
-export const GREP_DESCRIPTION = `A powerful search tool built on ripgrep
+export const GREP_DESCRIPTION = `一个基于 ripgrep 构建的强大搜索工具
 
-Usage:
-- ALWAYS use Grep for search tasks. NEVER invoke \`grep\` or \`rg\` as a Bash command. The Grep tool has been optimized for correct permissions and access.
-- Supports full regex syntax (e.g., "log.*Error", "function\\s+\\w+")
-- Filter files with glob parameter (e.g., "*.js", "**/*.tsx") or type parameter (e.g., "js", "py", "rust")
-- Output modes: "content" shows matching lines, "files_with_matches" shows only file paths (default), "count" shows match counts
-- Pattern syntax: Uses ripgrep (not grep) - literal braces need escaping (use \`interface\\{\\}\` to find \`interface{}\` in Go code)
-- Multiline matching: By default patterns match within single lines only. For cross-line patterns like \`struct \\{[\\s\\S]*?field\`, use \`multiline: true\``;
+用法：
+- 搜索任务始终用 Grep。切勿以 Bash 命令方式调用 \`grep\` 或 \`rg\`。Grep 工具已针对正确的权限与访问做过优化。
+- 支持完整正则语法（如 "log.*Error"、"function\\s+\\w+"）
+- 用 glob 参数（如 "*.js"、"**/*.tsx"）或 type 参数（如 "js"、"py"、"rust"）筛选文件
+- 输出模式："content" 显示匹配行，"files_with_matches" 仅显示文件路径（默认），"count" 显示匹配计数
+- 模式语法：使用 ripgrep（非 grep）——字面花括号需转义（用 \`interface\\{\\}\` 来查找 Go 代码中的 \`interface{}\`）
+- 多行匹配：默认模式仅在单行内匹配。对于像 \`struct \\{[\\s\\S]*?field\` 这样的跨行模式，请用 \`multiline: true\``;
 
-export const GLOB_DESCRIPTION = `- Fast file pattern matching tool that works with any codebase size
-- Supports glob patterns like "**/*.js" or "src/**/*.ts"
-- Returns matching file paths sorted by modification time
-- Use this tool when you need to find files by name patterns`;
+export const GLOB_DESCRIPTION = `- 快速的文件模式匹配工具，适用于任意规模的代码库
+- 支持诸如 "**/*.js" 或 "src/**/*.ts" 的 glob 模式
+- 返回按修改时间排序的匹配文件路径
+- 当你需要按名称模式查找文件时使用此工具`;
 
 export const TODOWRITE_DESCRIPTION = `Use this tool to create and manage a structured task list for your current coding session. This helps you track progress, organize complex tasks, and demonstrate thoroughness to the user.
 It also helps the user understand the progress of the task and overall progress of their requests.
@@ -817,11 +829,10 @@ export const TOOL_DESCRIPTION_PROVENANCE: ToolDescriptionProvenance[] = [
       'tool-description-bash-git-commit-and-pr-creation-instructions',
     ],
   },
-  { tool: 'Read', faithful: true, slugs: ['tool-description-readfile'] },
-  { tool: 'Edit', faithful: true, slugs: ['tool-description-edit'] },
-  { tool: 'Write', faithful: true, slugs: ['tool-description-write', 'tool-description-write-read-existing-file-first'] },
-  { tool: 'Grep', faithful: true, slugs: ['tool-description-grep'] },
-  { tool: 'Glob', faithful: true, slugs: ['tool-description-glob'] },
+  // Read / Edit / Write / Grep / Glob: TRANSLATED to Chinese in-place (i18n-zh
+  // batch 1, keeper 2026-07-08 ruling B). No longer faithful English
+  // reproductions, so removed from the English corpus-sync guard — their
+  // Chinese descriptions are covered by tests/tool-descriptions-i18n-zh.test.ts.
   { tool: 'TodoWrite', faithful: true, slugs: ['tool-description-todowrite'] },
   { tool: 'TaskCreate', faithful: true, slugs: ['tool-description-taskcreate'] },
   { tool: 'TaskGet', faithful: true, slugs: ['tool-description-task-get'] },
