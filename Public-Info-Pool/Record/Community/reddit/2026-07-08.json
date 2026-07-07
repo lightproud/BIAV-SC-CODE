@@ -1,8 +1,8 @@
 {
   "date": "2026-07-08",
-  "archived_at": "2026-07-07T20:51:27.333081+00:00",
+  "archived_at": "2026-07-07T22:10:32.520310+00:00",
   "source": "reddit",
-  "item_count": 6,
+  "item_count": 7,
   "items": [
     {
       "title": "odds are pretty generous for a gacha",
@@ -103,6 +103,24 @@
       "metadata": {
         "via": "rss"
       },
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "Smol Caecus",
+      "summary": "I&#39;ve asked my mainland China relatives to scour Taobao for me for official merch, but when it comes to fanmerch, I&#39;m doing my part!  &#32; submitted by &#32;  /u/somnonym   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-07-07T21:47:47+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1uq96ys/smol_caecus/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/somnonym",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "media_url": "https://preview.redd.it/025hn81unvbh1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=728ee838e103d1fc1ec66b7234a43725770a99d4",
+      "content_type": "image",
       "lang": "en",
       "platform_region": "global"
     }

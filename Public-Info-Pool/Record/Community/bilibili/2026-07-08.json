@@ -1,0 +1,31 @@
+{
+  "date": "2026-07-08",
+  "archived_at": "2026-07-07T22:10:32.410042+00:00",
+  "source": "bilibili",
+  "item_count": 1,
+  "items": [
+    {
+      "title": "分享给郁纪的随拍",
+      "summary": "",
+      "source": "bilibili",
+      "time": "2026-07-07T21:21:47+00:00",
+      "url": "https://www.bilibili.com/video/BV1ucMY6cEdw",
+      "engagement": 9,
+      "is_hot": false,
+      "author": "续子姜姜酱喵",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 9,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/719ef6eaf4a3539338c7640ded237637a084e60d.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    }
+  ]
+}
