@@ -246,11 +246,23 @@ function formatStreams(stdout: string, stderr: string): string {
  * its exported env. After it (EXIT trap, so `exit N` still persists): capture
  * cwd + `export -p`. Functions/aliases/unexported vars do NOT persist — this
  * is a state-file replay, not a long-lived shell process (docs/COMPAT.md).
- * The state dir comes from mkdtemp, so single-quoting it is safe.
+ *
+ * The state dir comes from mkdtemp, so single-quoting it is safe against word
+ * splitting. But on Windows mkdtemp returns a BACKSLASH path
+ * (`C:\Users\…\bpt-shell-X`); embedded verbatim, those backslashes corrupt
+ * `$__bpt_state` when it later expands inside the double-quoted `"$__bpt_state/cwd"`
+ * references, so the replay/capture reads/writes a mangled path and the whole
+ * wrapper fails — the command line degrades to `cat: '"/cwd"': No such file` and
+ * exit 127 (BPT Windows incident 2026-07-08). bash/msys accept forward-slash
+ * paths on Windows, so we normalize `\` -> `/` for the SCRIPT form ONLY. The
+ * Node layer (shells.ts mkdtemp/rm/`join`) keeps the original OS path — those
+ * APIs take either separator, and rewriting them risks an rmSync mismatch.
+ * No-op on POSIX (mkdtemp paths have no backslashes there).
  */
-function withPersistentState(command: string, stateDir: string): string {
+export function withPersistentState(command: string, stateDir: string): string {
+  const bashStateDir = stateDir.replace(/\\/g, '/');
   return [
-    `__bpt_state='${stateDir}'`,
+    `__bpt_state='${bashStateDir}'`,
     'if [ -f "$__bpt_state/cwd" ]; then cd -- "$(cat "$__bpt_state/cwd")" 2>/dev/null || true; fi',
     'if [ -f "$__bpt_state/env" ]; then { . "$__bpt_state/env"; } 2>/dev/null || true; fi',
     '__bpt_persist() {',

@@ -11,6 +11,22 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.18.1 — 2026-07-08
+
+Windows bug fix: Bash persistent-state wrapper corrupted by backslash state dir.
+
+- **fix: every foreground Bash call failed on Windows with `cat: '"/cwd"': No
+  such file` + exit 127.** `withPersistentState` embedded the mkdtemp state dir
+  into its bash wrapper verbatim; on Windows mkdtemp returns a backslash path
+  (`C:\Users\…\bpt-shell-X`), and those backslashes corrupt the double-quoted
+  `"$__bpt_state/cwd"` expansion, so the cwd/env replay-capture read/wrote a
+  mangled path and the whole wrapper (and the wrapped command) failed. The state
+  dir is now forward-slashed (`\` → `/`) for the SCRIPT form only — bash/msys
+  accept forward-slash paths on Windows. The Node layer keeps the original OS
+  path (mkdtemp/rmSync/`join` take either separator). No-op on POSIX. Reported
+  by BPT (2026-07-08). Tests in bash-dx.test.ts; existing spawn-level persistence
+  tests (shells.test.ts) cover the POSIX regression.
+
 ## 0.18.0 — 2026-07-07
 
 Official-semantics audit follow-up: structured outputs — COMPAT honesty +
