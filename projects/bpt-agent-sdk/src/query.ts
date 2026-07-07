@@ -776,6 +776,9 @@ export function query(args: {
     maxBudgetUsd: options.maxBudgetUsd,
     thinking: thinkingConfig,
     maxThinkingTokens: maxThinkingTokensConfig,
+    // tool_choice steer/constraint; forwarded to each request when tools are
+    // present (loop guards the empty-tools case). Absent -> API default (auto).
+    toolChoice: options.toolChoice,
     compaction: buildCompactionConfig(options.compaction),
     outputFormat,
     // Prompt caching is ON by default (matches the official SDK and saves the

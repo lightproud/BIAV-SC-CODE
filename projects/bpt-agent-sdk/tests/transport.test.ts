@@ -495,6 +495,26 @@ describe('AnthropicTransport request construction', () => {
     expect('system' in body).toBe(false);
     expect('tools' in body).toBe(false);
   });
+
+  it('serializes tool_choice into the wire body verbatim (C10)', async () => {
+    const fetchMock = stubFetch([() => sseResponse(okSse())]);
+    const t = makeTransport({ provider: { apiKey: 'k' } });
+    await collect(
+      t.stream(
+        baseReq({
+          tools: [{ name: 'Read', input_schema: { type: 'object' } }],
+          tool_choice: { type: 'tool', name: 'Read', disable_parallel_tool_use: true },
+        }),
+      ),
+    );
+    const { init } = callArgs(fetchMock);
+    const body = JSON.parse(String(init.body)) as Record<string, unknown>;
+    expect(body.tool_choice).toEqual({
+      type: 'tool',
+      name: 'Read',
+      disable_parallel_tool_use: true,
+    });
+  });
 });
 
 // ---------------------------------------------------------------------------

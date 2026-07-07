@@ -30,6 +30,7 @@ import type {
   TextBlockParam,
   ThinkingConfigParam,
   ToolAnnotations,
+  ToolChoice,
   UserQuestionHandler,
   WebSearchHandler,
 } from '../types.js';
@@ -57,6 +58,9 @@ export type StreamRequest = {
   system?: string | TextBlockParam[];
   messages: APIMessageParam[];
   tools?: APIToolDefinition[];
+  /** Messages API `tool_choice`; forwarded verbatim by the transport. Only set
+   *  when `tools` is non-empty (the API 400s on tool_choice without tools). */
+  tool_choice?: ToolChoice;
   thinking?:
     | { type: 'adaptive'; display?: 'summarized' | 'omitted' }
     | { type: 'enabled'; budget_tokens: number; display?: 'summarized' | 'omitted' }
@@ -443,6 +447,9 @@ export type EngineConfig = {
   maxBudgetUsd?: number;
   thinking?: ThinkingConfigParam;
   maxThinkingTokens?: number;
+  /** Messages API `tool_choice` steer/constraint; forwarded to each request
+   *  when tools are present. Absent -> the API default (`auto`). */
+  toolChoice?: ToolChoice;
   /** Context-compaction tunables; absent -> never compact. */
   compaction?: CompactionConfig;
   /** Structured-output schema; when set the engine validates + re-prompts. */

@@ -223,6 +223,23 @@ export type APIToolDefinition = {
   cache_control?: CacheControlEphemeral | null;
 };
 
+/**
+ * Messages API `tool_choice` param (Options.toolChoice; forwarded verbatim to
+ * the wire — snake_case `disable_parallel_tool_use` is the API field name). The
+ * four variants are the official shape:
+ *  - `auto`  : the model decides whether to call tools (API default).
+ *  - `any`   : the model MUST call one of the available tools.
+ *  - `tool`  : the model MUST call the named tool (`name` required).
+ *  - `none`  : the model will NOT call any tool.
+ * `disable_parallel_tool_use: true` caps the turn at a single tool call; it is
+ * only meaningful for auto/any/tool (a `none` turn calls nothing).
+ */
+export type ToolChoice =
+  | { type: 'auto'; disable_parallel_tool_use?: boolean }
+  | { type: 'any'; disable_parallel_tool_use?: boolean }
+  | { type: 'tool'; name: string; disable_parallel_tool_use?: boolean }
+  | { type: 'none' };
+
 // --- Streaming events (SSE) -------------------------------------------------
 
 export type MessageStartEvent = {
@@ -1222,6 +1239,15 @@ export type Options = {
   thinking?: ThinkingConfigParam;
   /** Restrict built-in tools by name; defaults to all built-ins. */
   tools?: string[] | { type: 'preset'; preset: 'claude_code' };
+  /**
+   * Steer or constrain tool use for every request in this session. Forwarded
+   * verbatim as the Messages API `tool_choice` param when tools are present
+   * (an empty tool set omits it, since the API rejects `tool_choice` with no
+   * tools). `{ type: 'tool', name }` forces a specific tool; `{ type: 'any' }`
+   * forces some tool; `{ type: 'none' }` forbids tools; and
+   * `disable_parallel_tool_use: true` caps the turn at one tool call. Omitted ->
+   * the API default (`auto`). */
+  toolChoice?: ToolChoice;
   /** Extra beta flags forwarded via the anthropic-beta header. */
   betas?: string[];
   /** Enable debug logging via stderr callback. */
