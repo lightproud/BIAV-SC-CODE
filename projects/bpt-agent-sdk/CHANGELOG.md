@@ -11,7 +11,23 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
-## 0.18.1 — 2026-07-08
+## 0.18.2 — 2026-07-08
+
+Bug fix: `agent_transcript_path` was undefined on SubagentStop under an injected
+external session store.
+
+- **fix: `MirroringSessionStore` did not forward `filePath` to its wrapped local
+  store.** `runtime.ts` populates the SubagentStop hook's `agent_transcript_path`
+  by duck-typing `store.filePath(agentId)` — a `JsonlSessionStore` concretion
+  that is not on the `InternalTranscriptStore` interface. `MirroringSessionStore`
+  (the wrapper used whenever an external `sessionStore` is injected) lacked
+  `filePath` and never forwarded, so the field stayed `undefined` for those
+  consumers even though the local `JsonlSessionStore` had written the transcript
+  under `<agentId>.jsonl`. Added a duck-typed `filePath(sessionId)` passthrough
+  that forwards to `this.local` when it exposes `filePath` and returns
+  `undefined` otherwise (InMemorySessionStore / bare stubs unaffected), mirroring
+  the exact cast shape `runtime.ts` uses. Tests in sessions-v2.test.ts.
+
 
 Windows bug fix: Bash persistent-state wrapper corrupted by backslash state dir.
 
