@@ -39,7 +39,8 @@ describe('harness prompt v1/v2 variant', () => {
     const def = buildSystemPromptParts(preset, ctx()).stable;
     const explicitV5 = buildSystemPromptParts(preset, ctx('v5')).stable;
     expect(def).toBe(explicitV5);
-    expect(def).toContain('Doing tasks:');
+    // v5 main-loop is Chinese (i18n-zh Phase 2 batch A): "执行任务：" == "Doing tasks:".
+    expect(def).toContain('执行任务：');
     expect(def).not.toContain('/tmp/run-xyz');
   });
 
@@ -98,24 +99,28 @@ describe('harness prompt v1/v2 variant', () => {
     expect(v4).not.toContain('Workflow');
   });
 
-  it('v5 is a comprehensive faithful reproduction, larger than v4, tool-adapted, cwd out', () => {
+  it('v5 is a comprehensive faithful reproduction, more sections than v4, tool-adapted, cwd out', () => {
     const v4 = buildSystemPromptParts(preset, ctx('v4')).stable;
     const v5 = buildSystemPromptParts(preset, ctx('v5')).stable;
-    expect(v5.length).toBeGreaterThan(v4.length);
-    // fuller official main-loop sections present in v5
-    expect(v5).toContain('Doing tasks:');
-    expect(v5).toContain('Tool use:');
-    expect(v5).toContain('Executing actions with care:');
-    expect(v5).toContain('Communicating with the user:');
-    // faithful official clauses
-    expect(v5).toContain('Measure twice, cut once.');
-    expect(v5).toContain('file_path:line_number');
-    // official main-loop clauses that must be reproduced (act-when-ready + safety)
-    expect(v5).toContain('When you have enough information to act, act.');
-    expect(v5).toContain('Assist with authorized security testing');
+    // v5 is now Chinese (i18n-zh Phase 2 batch A) and v4 is still English, so a
+    // raw char-length comparison is meaningless (Chinese is denser). Comprehensive-
+    // ness is instead shown structurally: v5 carries executing-actions-with-care /
+    // act-when-ready sections that v4 does not.
+    expect(v5).toContain('谨慎地执行操作：'); // executing actions with care
+    expect(v4).not.toContain('Executing actions with care:');
+    expect(v5).toContain('当你有足够信息去行动时，就行动。'); // act-when-ready
+    // fuller official main-loop sections present in v5 (Chinese headers)
+    expect(v5).toContain('执行任务：'); // Doing tasks:
+    expect(v5).toContain('工具使用：'); // Tool use:
+    expect(v5).toContain('与用户沟通：'); // Communicating with the user:
+    // faithful official clauses (translated)
+    expect(v5).toContain('量两次，剪一次。'); // Measure twice, cut once.
+    expect(v5).toContain('file_path:line_number'); // wire token, verbatim
+    // security-assistance clause reproduced (translated)
+    expect(v5).toContain('为经授权的安全测试'); // Assist with authorized security testing
     // tool references adapted to THIS SDK (dedicated-tools-over-bash redirects)
-    expect(v5).toContain('Use Grep (NOT grep or rg)');
-    // does not reference tools this SDK does not ship
+    expect(v5).toContain('用 Grep（而非 grep 或 rg）'); // Use Grep (NOT grep or rg)
+    // does not reference tools this SDK does not ship (tokens stay absent)
     expect(v5).not.toContain('Workflow');
     expect(v5).not.toContain('computer-use');
     // cwd stays out of the cached stable segment
@@ -170,31 +175,34 @@ describe('harness prompt v1/v2 variant', () => {
 
   it('RED LINE: never names the Agent tool when it is not in the tool set (v5 + v3)', () => {
     // query.ts registers the Agent tool only when subagents are configured, so
-    // the default prompt must not instruct the model to use it.
+    // the default prompt must not instruct the model to use it. v3 is English,
+    // v5 is Chinese (i18n-zh) — check the Agent clause is absent in each language.
     const noAgent = { cwd: '/tmp/x', toolNames: ['Read', 'Write', 'Bash', 'TodoWrite'] };
-    for (const v of ['v3', 'v5'] as const) {
-      const stable = buildSystemPromptParts(preset, { ...noAgent, variant: v }).stable;
-      expect(stable).not.toContain('Agent tool');
-      expect(stable).not.toContain('via the Agent tool');
-      expect(stable).not.toContain('specialized agents');
-    }
+    const v3 = buildSystemPromptParts(preset, { ...noAgent, variant: 'v3' }).stable;
+    expect(v3).not.toContain('Agent tool');
+    expect(v3).not.toContain('via the Agent tool');
+    expect(v3).not.toContain('Delegation:');
+    const v5 = buildSystemPromptParts(preset, { ...noAgent, variant: 'v5' }).stable;
+    expect(v5).not.toContain('Agent 工具');
+    expect(v5).not.toContain('专门代理'); // specialized agents
   });
 
   it('includes the Agent guidance when the Agent tool IS in the set (v5 + v3)', () => {
     const withAgent = { cwd: '/tmp/x', toolNames: ['Read', 'Bash', 'Agent'] };
-    expect(buildSystemPromptParts(preset, { ...withAgent, variant: 'v5' }).stable).toContain('Agent tool');
+    // v5 clause is Chinese ("Agent 工具"); v3 clause is English ("via the Agent tool").
+    expect(buildSystemPromptParts(preset, { ...withAgent, variant: 'v5' }).stable).toContain('Agent 工具');
     expect(buildSystemPromptParts(preset, { ...withAgent, variant: 'v3' }).stable).toContain('via the Agent tool');
   });
 
   it('gates each tool-specific clause on that tool being present (v5)', () => {
-    // A restricted tool set drops the clauses naming absent tools.
+    // A restricted tool set drops the clauses naming absent tools (v5 is Chinese).
     const minimal = { cwd: '/tmp/x', toolNames: ['Read', 'Bash'], variant: 'v5' as const };
     const stable = buildSystemPromptParts(preset, minimal).stable;
-    expect(stable).not.toContain('TodoWrite tool');
-    expect(stable).not.toContain('AskUserQuestion tool');
-    expect(stable).not.toContain('WebFetch fetches');
+    expect(stable).not.toContain('TodoWrite 工具');
+    expect(stable).not.toContain('AskUserQuestion 工具');
+    expect(stable).not.toContain('WebFetch 抓取');
     // core prose (not tool-gated) stays
-    expect(stable).toContain('Doing tasks:');
+    expect(stable).toContain('执行任务：');
   });
 
   it('append text lands in the stable segment for all variants', () => {
@@ -217,8 +225,8 @@ describe('base/project split (2nd system cache breakpoint)', () => {
     );
     // invariant: the split reconstructs the full stable byte-for-byte
     expect(parts.base + parts.project).toBe(parts.stable);
-    // base is the shared harness only — no per-project tail bytes
-    expect(parts.base).toContain('Doing tasks:');
+    // base is the shared harness only — no per-project tail bytes (v5 Chinese)
+    expect(parts.base).toContain('执行任务：');
     expect(parts.base).not.toContain('<system-reminder>');
     expect(parts.base).not.toContain('EXTRA_INSTRUCTION');
     // project carries the reminder + append WITH its leading separators

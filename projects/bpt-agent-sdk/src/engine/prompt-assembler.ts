@@ -42,7 +42,8 @@ export function assembleMainLoop(ctx: AssembleContext): string {
   const has = (t: string) => ctx.toolNames.includes(t);
   const blocks: string[] = [MAIN_LOOP_INTRO.text];
   if (ctx.toolNames.length > 0) {
-    blocks.push(`Available tools: ${ctx.toolNames.join(', ')}.`);
+    // i18n-zh Phase 2 batch A: the "可用工具" label is Chinese; tool names stay English.
+    blocks.push(`可用工具：${ctx.toolNames.join(', ')}。`);
   }
   for (const f of MAIN_LOOP_BODY) {
     if (f.gate && !f.gate(has)) continue;
