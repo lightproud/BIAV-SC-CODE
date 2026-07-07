@@ -228,6 +228,23 @@ export function resolveSessionsDir(
   return join(homedir(), '.bpt-agent', 'sessions');
 }
 
+/**
+ * Duck-typed transcript-path resolver for a session id. `filePath` is a
+ * JsonlSessionStore concretion (also forwarded by MirroringSessionStore) that
+ * is NOT on the InternalTranscriptStore interface, so cast-and-check rather than
+ * require it. Returns the absolute transcript path when the store exposes
+ * `filePath`, else undefined (InMemorySessionStore / bare stubs / no store).
+ * Single source for populating the official hook fields `transcript_path` (the
+ * session that fired the hook) and `agent_transcript_path` (a subagent).
+ */
+export function resolveTranscriptPath(
+  store: unknown,
+  sessionId: string,
+): string | undefined {
+  const fn = (store as { filePath?: (id: string) => string } | undefined)?.filePath;
+  return typeof fn === 'function' ? fn.call(store, sessionId) : undefined;
+}
+
 export class JsonlSessionStore implements SessionStore {
   private readonly dir: string;
   private readonly debug: (msg: string) => void;

@@ -314,7 +314,12 @@ export async function* runAgentLoop(
   const baseHookFields = {
     session_id: config.sessionId,
     cwd: config.cwd,
-  } as const;
+    // Official BaseHookInput.transcript_path: this loop's own transcript path
+    // (path-backed stores only; query.ts / the subagent runtime resolve it).
+    ...(config.transcriptPath !== undefined
+      ? { transcript_path: config.transcriptPath }
+      : {}),
+  };
 
   /** Time-to-first-token fields; empty when no content token ever arrived. */
   const ttftFields = (): { ttft_ms?: number; ttft_stream_ms?: number } => {

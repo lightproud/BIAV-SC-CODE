@@ -29,7 +29,7 @@ import {
   makeToolSearchTool,
   shouldActivate,
 } from '../src/tools/toolsearch.js';
-import { JsonlSessionStore } from '../src/sessions/store.js';
+import { JsonlSessionStore, resolveTranscriptPath } from '../src/sessions/store.js';
 import { ConfigurationError } from '../src/errors.js';
 import type {
   SessionKey,
@@ -655,5 +655,22 @@ describe('session helpers (external store)', () => {
     const forked = await store.load({ projectKey: PK, sessionId: newId });
     expect(forked?.[0]?.session_id).toBe(newId);
     expect(forked?.[0]?.uuid).not.toBe('o1');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// resolveTranscriptPath (hook transcript_path / agent_transcript_path source)
+// ---------------------------------------------------------------------------
+
+describe('resolveTranscriptPath', () => {
+  it('forwards to a store that exposes filePath (JsonlSessionStore)', () => {
+    const local = new JsonlSessionStore({ sessionDir: dir });
+    expect(resolveTranscriptPath(local, 'sess-x')).toBe(local.filePath('sess-x'));
+  });
+
+  it('returns undefined for a store without filePath, and for undefined', () => {
+    const bare = { append() {}, async load() { return null; }, async list() { return []; }, async latestSessionId() { return null; } };
+    expect(resolveTranscriptPath(bare, 'sess-x')).toBeUndefined();
+    expect(resolveTranscriptPath(undefined, 'sess-x')).toBeUndefined();
   });
 });

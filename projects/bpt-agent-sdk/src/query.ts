@@ -57,7 +57,7 @@ import {
   buildStructuredOutputInstruction,
   normalizeOutputFormat,
 } from './engine/structured-output.js';
-import { JsonlSessionStore } from './sessions/store.js';
+import { JsonlSessionStore, resolveTranscriptPath } from './sessions/store.js';
 import { MirroringSessionStore, encodeProjectKey } from './sessions/store-adapter.js';
 import { FileCheckpointStore } from './sessions/checkpoints.js';
 import { DeferredMcpRegistry, makeToolSearchTool } from './tools/toolsearch.js';
@@ -866,6 +866,12 @@ export function query(args: {
   let sessionEndFired = false;
   let resolvedSessionId = '';
   let checkpointStore: FileCheckpointStore | null = null;
+  // Official BaseHookInput.transcript_path for a query-layer hook: the main
+  // session's transcript when persisted to a path-backed store, else omitted.
+  const transcriptField = (sid: string): { transcript_path?: string } => {
+    const tp = persist ? resolveTranscriptPath(store, sid) : undefined;
+    return tp !== undefined ? { transcript_path: tp } : {};
+  };
   const initDeferred = createDeferred<SDKControlInitializeResponse>();
 
   // Wake any pending input read when the outer controller aborts, and settle a
@@ -898,6 +904,7 @@ export function query(args: {
         {
           session_id: resolvedSessionId,
           cwd,
+          ...transcriptField(resolvedSessionId),
           hook_event_name: 'SessionEnd',
           reason,
         },
@@ -1228,6 +1235,11 @@ export function query(args: {
       const sess = await resolveSession();
       resolvedSessionId = sess.sessionId;
       engineConfig.sessionId = sess.sessionId;
+      // Resolve the main-session transcript path so every engine-layer hook
+      // (via baseHookFields) carries the official base `transcript_path`.
+      engineConfig.transcriptPath = persist
+        ? resolveTranscriptPath(store, sess.sessionId)
+        : undefined;
       const history = sess.history;
       let needMeta = sess.needMeta;
 
@@ -1434,6 +1446,7 @@ export function query(args: {
           {
             session_id: sess.sessionId,
             cwd,
+            ...transcriptField(sess.sessionId),
             hook_event_name: 'SessionStart',
             source,
           },
@@ -1563,6 +1576,7 @@ export function query(args: {
             {
               session_id: sess.sessionId,
               cwd,
+              ...transcriptField(sess.sessionId),
               hook_event_name: 'UserPromptSubmit',
               prompt: promptText,
             },

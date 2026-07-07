@@ -472,6 +472,11 @@ export type EngineConfig = {
   includePartialMessages: boolean;
   sessionId: string;
   cwd: string;
+  /** Absolute transcript path of THIS loop's session, when it was persisted to a
+   *  path-backed store. Populates the official hook base field `transcript_path`
+   *  on every hook this loop fires (via baseHookFields). Absent -> the store is
+   *  not path-backed or persistence is off; the field is then omitted. */
+  transcriptPath?: string;
 };
 
 export type EngineDeps = {

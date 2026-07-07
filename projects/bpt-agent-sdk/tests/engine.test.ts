@@ -1277,6 +1277,42 @@ describe('runAgentLoop', () => {
     expect(transport.requests[0]!.output_config).toBeUndefined();
   });
 
+  // ----- base transcript_path on every engine-layer hook (BaseHookInput) -----
+
+  it('engine hooks carry the official base transcript_path when config has one', async () => {
+    const transport = new MockTransport([textReplyEvents('ok')]);
+    const hooks = new FakeHookRunner({ Stop: {} });
+    const deps = makeDeps(transport, { hooks });
+    const history: APIMessageParam[] = [{ role: 'user', content: 'go' }];
+
+    await collect(
+      runAgentLoop(
+        history,
+        deps,
+        makeConfig({ transcriptPath: '/fake/sessions/main.jsonl' }),
+      ),
+    );
+
+    const stop = hooks.runs.find((r) => r.event === 'Stop');
+    expect(stop).toBeDefined();
+    expect((stop!.input as { transcript_path?: string }).transcript_path).toBe(
+      '/fake/sessions/main.jsonl',
+    );
+  });
+
+  it('engine hooks omit transcript_path when config has none (non-path store / no persist)', async () => {
+    const transport = new MockTransport([textReplyEvents('ok')]);
+    const hooks = new FakeHookRunner({ Stop: {} });
+    const deps = makeDeps(transport, { hooks });
+    const history: APIMessageParam[] = [{ role: 'user', content: 'go' }];
+
+    await collect(runAgentLoop(history, deps, makeConfig()));
+
+    const stop = hooks.runs.find((r) => r.event === 'Stop');
+    expect(stop).toBeDefined();
+    expect('transcript_path' in (stop!.input as object)).toBe(false);
+  });
+
   // ----- finding #2: stop_reason tool_use with zero tool_use blocks -----
 
   it('stop_reason tool_use with no tool_use blocks ends as success without an empty user turn (#2)', async () => {
