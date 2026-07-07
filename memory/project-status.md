@@ -479,6 +479,11 @@
 - **v0.10.0 回归验收(2026-07-06)**：0.9.0(SessionManager 共享协调 + 监督式 resume + 文件 session store)、0.10.0(Read 总输出上限 50000、行边界截断)两批新功能后,先 keyless 全绿(tsc 净 / vitest **1405 passed / 2 skipped / 61 files**),再全量真 L5(run 28770219412,main=0.10.0,haiku,$5 帽,180/180 跑满 $2.13):
   **Gate B bpt 86/90 (95.6%) vs 官方 74/90 (82.2%),delta +13.3pp → PASS——与 0.8.1 轮同 delta,gate B 零回归**。chat/retrieval/document 全 11 题 + code-03/04/05 + longconv-01/02 我方全 5/5(与 0.8.1 一致);官方仍被 KD-L5-01(/tmp 散落物)拉低。
   **唯一变动：code-01 我方 1/5(0.8.1 为 3/5)**——code-01 是已知的 diligence 概率残余(非思考开关位),两轮独立采样 3/5 与 1/5 皆 >0(off 历史 0/3);0.10.0 的 Read 上限(50000 字符)不触及 code-01 的小输入,故极不可能是 Read 截断致因,判为**残余噪声**而非回归(单轮无法区分噪声与微小真移)。结论:**0.9.0/0.10.0 未回归 gate B**;code-01 残余仍在 0↔多数通过间浮动。
+- **v0.14.0 回归轮 —— API 余额耗尽,本轮无效不可采信(2026-07-07,run 28880617614,head=`db94cbc9`=#505 合并即 #504 五项优化+#505 跨模型 thinking signature 剥离,haiku,$5 帽)**:
+  **判定 INVALID/inconclusive——非 bpt 回归,是基础设施故障(账户余额跑空)**。180 run 只有前 ~14 题(chat×3/retrieval×4/document×4 + code-01/02/03)在有效额度内真跑,**尾部 4 题(code-04/code-05/longconv-01/longconv-02)双臂全 0/5、turns=0、cost=$0.0000**,官方臂逐行明写 `Credit balance is too low`(bpt 臂同账户→同耗尽,surfaced 为 error_during_execution)。
+  Gate B **名义** bpt 63/90(70.0%)vs 官方 64/90(71.1%),delta -1.1pp,名义 PASS——**但此数字建立在被腰斩的降级轮上,绝不可与 0.8.1/0.10.0 的干净 +13.3pp 轮相提并论,不作回归结论依据**(§4.2:两臂尾部被同等清零 40 run,绝对通过率被拉低)。
+  **能采信的部分**:真跑的 14 题**无回归信号**——chat/retrieval/document 全 11 题 bpt 5/5==官方 5/5(与前两轮一致);code-02 bpt 5/5、code-03 bpt 3/5(官方 0/5)。**code-01 本轮 bpt 0/5**(官方 5/5)——仍是那条已知 diligence 概率残余(历轮 3/5→1/5→0/5,off 历史 0/3,0/5 在其已知区间内),非 v0.14 引入的新退化。
+  **结论:本轮不能确认 #504/#505 未回归 gate B**(尾部 4 题从未在有额度账户上跑,而前两轮它们 bpt 全 5/5)。**需在有额度账户上重跑一轮全量 L5 才能真验收**。版本号差异(#505 声明 v0.14 但 package.json 曾滞留 0.13.0)已由 #506 修复,与本轮无涉。
 
 ## BPT-V2T 语音代替输入（`projects/bpt-v2t/`）
 
