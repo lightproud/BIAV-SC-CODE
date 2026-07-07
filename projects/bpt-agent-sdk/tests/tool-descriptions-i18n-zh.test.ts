@@ -16,6 +16,16 @@ import {
   WRITE_DESCRIPTION,
   GREP_DESCRIPTION,
   GLOB_DESCRIPTION,
+  TODOWRITE_DESCRIPTION,
+  TASKCREATE_DESCRIPTION,
+  TASKGET_DESCRIPTION,
+  TASKUPDATE_DESCRIPTION,
+  TASKLIST_DESCRIPTION,
+  WEBFETCH_DESCRIPTION,
+  WEBSEARCH_DESCRIPTION,
+  ASKUSERQUESTION_DESCRIPTION,
+  EXITPLANMODE_DESCRIPTION,
+  ENTERWORKTREE_DESCRIPTION,
 } from '../src/tools/descriptions.js';
 
 // Any CJK ideograph -> the description is actually Chinese.
@@ -36,9 +46,32 @@ const TRANSLATED: Array<[string, string, string[]]> = [
     ['ripgrep', 'glob', 'type', 'multiline', 'content', 'files_with_matches', 'count'],
   ],
   ['Glob', GLOB_DESCRIPTION, ['glob', '**/*.js', 'src/**/*.ts']],
+  // batch 2
+  ['TodoWrite', TODOWRITE_DESCRIPTION, ['content', 'activeForm', 'pending', 'in_progress', 'completed']],
+  [
+    'TaskCreate',
+    TASKCREATE_DESCRIPTION,
+    ['subject', 'description', 'activeForm', 'in_progress', 'pending', 'TaskUpdate', 'TaskList'],
+  ],
+  ['TaskGet', TASKGET_DESCRIPTION, ['subject', 'description', 'status', 'blocks', 'blockedBy', 'TaskList']],
+  [
+    'TaskUpdate',
+    TASKUPDATE_DESCRIPTION,
+    ['taskId', 'status', 'in_progress', 'completed', 'deleted', 'owner', 'addBlockedBy', 'TaskGet'],
+  ],
+  ['TaskList', TASKLIST_DESCRIPTION, ['id', 'subject', 'status', 'owner', 'blockedBy', 'TaskGet']],
+  ['WebFetch', WEBFETCH_DESCRIPTION, ['URL', 'HTTPS', 'prompt', 'MCP', 'markdown', 'WebFetch', 'gh']],
+  ['WebSearch', WEBSEARCH_DESCRIPTION, ['Sources:', 'URL', 'markdown', 'API']],
+  ['AskUserQuestion', ASKUSERQUESTION_DESCRIPTION, ['multiSelect', 'Other', 'Recommended', 'label']],
+  [
+    'ExitPlanMode',
+    EXITPLANMODE_DESCRIPTION,
+    ['allowedPrompts', 'Bash', 'AskUserQuestion', 'ExitPlanMode', 'OAuth', 'JWT'],
+  ],
+  ['EnterWorktree', ENTERWORKTREE_DESCRIPTION, ['worktree', 'name', 'path', 'git', 'HEAD', '.claude/worktrees/']],
 ];
 
-describe('tool descriptions i18n-zh (batch 1: Read/Edit/Write/Grep/Glob)', () => {
+describe('tool descriptions i18n-zh (batches 1-2)', () => {
   it.each(TRANSLATED)(
     '%s description is non-empty Chinese, emoji-free, and keeps its wire tokens',
     (name, desc, tokens) => {

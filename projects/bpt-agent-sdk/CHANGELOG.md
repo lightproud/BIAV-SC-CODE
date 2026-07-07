@@ -11,6 +11,19 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.20.0 — 2026-07-08
+
+i18n-zh batch 2 (keeper ruling B): 10 more tool descriptions to Chinese in-place.
+
+- **change: TaskCreate / TaskGet / TaskUpdate / TaskList / TodoWrite / WebFetch /
+  WebSearch / AskUserQuestion / ExitPlanMode / EnterWorktree descriptions are now
+  Chinese** (on the wire). Same discipline as batch 1: tool names + wire
+  parameter/field names + status enum values (`pending`/`in_progress`/
+  `completed`/`deleted`) + JSON examples stay English; only prose is translated.
+  Removed from `TOOL_DESCRIPTION_PROVENANCE`, covered by the structural guard
+  `tests/tool-descriptions-i18n-zh.test.ts`. Still English: Bash (+ git protocol
+  + sandbox fragments), Monitor, Workflow (later batches). See docs/COMPAT.md.
+
 ## 0.19.0 — 2026-07-08
 
 i18n-zh (keeper ruling B): translate built-in tool descriptions to Chinese
