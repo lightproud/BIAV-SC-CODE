@@ -1,8 +1,8 @@
 {
   "date": "2026-07-07",
-  "archived_at": "2026-07-06T23:04:05.643344+00:00",
+  "archived_at": "2026-07-07T02:30:11.484413+00:00",
   "source": "bilibili",
-  "item_count": 5,
+  "item_count": 7,
   "items": [
     {
       "title": "忘卻前夜 Morimens 融灾7.6-7.20 超低配400 拼好队",
@@ -23,6 +23,29 @@
         "danmaku": 0
       },
       "media_url": "https://i1.hdslb.com/bfs/archive/e87927a031a932bc9d0ccf9979d4b08e0679f424.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "出号，350",
+      "summary": "-\n  └ iiias5 (0赞): 宝.回关聊\n  └ qutyy_ (0赞): 背包有回溯可以回溯杜勒[抱拳]\n  └ 燃え落ちない翼 (0赞): 这才卖350啊[冬日树下_言叶][冬日树下_言叶]",
+      "source": "bilibili",
+      "time": "2026-07-06T23:34:28+00:00",
+      "url": "https://www.bilibili.com/video/BV1XeMW61EC1",
+      "engagement": 123,
+      "is_hot": false,
+      "author": "qutyy_",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 115,
+        "comment_count": 8,
+        "comments_fetched": 3,
+        "danmaku": 0
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/b006e263e879e97536bdf8eca4076e73783dcc86.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
@@ -92,6 +115,29 @@
         "danmaku": 0
       },
       "media_url": "https://i0.hdslb.com/bfs/archive/9c68ab0f91bb57ee8c2f669407a1996ca5d2dd68.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "沙耶之歌",
+      "summary": "",
+      "source": "bilibili",
+      "time": "2026-07-07T01:32:16+00:00",
+      "url": "https://www.bilibili.com/video/BV1GCMx6EEmY",
+      "engagement": 5,
+      "is_hot": false,
+      "author": "KAWOKO",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 5,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/650a50237d1a1f138c904bf1bd584310d8b833db.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

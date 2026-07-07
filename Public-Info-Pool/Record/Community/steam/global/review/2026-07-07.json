@@ -1,8 +1,8 @@
 {
   "date": "2026-07-07",
-  "archived_at": "2026-07-06T23:04:05.752973+00:00",
+  "archived_at": "2026-07-07T02:30:11.601697+00:00",
   "source": "steam",
-  "item_count": 6,
+  "item_count": 7,
   "items": [
     {
       "title": "[正面] muito cool",
@@ -142,6 +142,30 @@
         "playtime_forever": 197,
         "votes_up": 0,
         "timestamp_created": 1783367816
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Buen arte e historia, puedes llegar a armar un equ...",
+      "summary": "Buen arte e historia, puedes llegar a armar un equipo roto algo fácil, lo recomiendo para quitar el aburrimiento",
+      "source": "steam_review",
+      "time": "2026-07-07T01:11:05+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198800122301/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198800122301",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 37,
+        "votes_up": 0,
+        "timestamp_created": 1783386665
       },
       "region": "global",
       "archive_subtype": "review",

@@ -1,8 +1,8 @@
 {
   "date": "2026-07-07",
-  "archived_at": "2026-07-06T23:04:05.643078+00:00",
+  "archived_at": "2026-07-07T02:30:11.484891+00:00",
   "source": "steam",
-  "item_count": 1,
+  "item_count": 3,
   "items": [
     {
       "title": "[Steam论坛] Invitation Code",
@@ -13,6 +13,40 @@
       "engagement": 205,
       "is_hot": true,
       "author": "Znye",
+      "tags": [
+        "steam_forum"
+      ],
+      "region": "global",
+      "archive_subtype": "discussion",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "[Steam论坛] New invite code! 300 silver.",
+      "summary": "Code: TEAHFONZM5\nEnter it in the new Mythag Invite / Bind Invitation tab on the left.",
+      "source": "steam_discussion",
+      "time": "2026-07-06T23:17:10+00:00",
+      "url": "https://steamcommunity.com/app/3052450/discussions/0/807952734599809739/",
+      "engagement": 162,
+      "is_hot": true,
+      "author": "mengluo123",
+      "tags": [
+        "steam_forum"
+      ],
+      "region": "global",
+      "archive_subtype": "discussion",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "[Steam论坛] Invite code for anyone who wants",
+      "summary": "SCNLGVWJMZ\nI am level 60+ if it matters.",
+      "source": "steam_discussion",
+      "time": "2026-07-06T23:17:21+00:00",
+      "url": "https://steamcommunity.com/app/3052450/discussions/0/573794767996996319/",
+      "engagement": 1,
+      "is_hot": false,
+      "author": "Victor66",
       "tags": [
         "steam_forum"
       ],
