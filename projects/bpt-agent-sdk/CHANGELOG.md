@@ -11,6 +11,20 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.14.0 — 2026-07-07
+
+- **fix (cross-model thinking-signature replay)**: strip
+  `thinking`/`redacted_thinking` blocks from CLOSED history turns whose signing
+  model differs from the target model, at the single outgoing choke point —
+  root-causing the invalid-signature 400 when a conversation switches models
+  mid-history. Each assistant turn is stamped with its signing model (a
+  non-enumerable Symbol); same-model replay passes through byte-identical,
+  unstamped (resumed) turns are treated as stale, and a mid-tool-loop fallback
+  switch is withheld with a clean error instead of retrying into a guaranteed
+  400. Mirrors Anthropic's replay contract. No consumer action required.
+  (Shipped in #505; this entry + the package.json bump to 0.14.0 reconcile the
+  version artifacts, which #505 left at 0.13.0.)
+
 ## 0.13.0 — 2026-07-07
 
 Five keeper-directed optimizations (correctness + concurrency + DX), each with
