@@ -227,6 +227,12 @@ describe('JsonlSessionStore pairing repair (finding #37)', () => {
     expect(
       warnings.some((w) => w.includes('dropped assistant tool_use turn')),
     ).toBe(true);
+    // C8/S4 (BPT audit 2026-07-07): dropping the middle assistant turn left
+    // [user, user] — pass 3 must merge them so roles alternate (else resume
+    // 400s "roles must alternate").
+    const consecutiveSameRole = msgs.some((m, i) => i > 0 && msgs[i - 1]!.role === m.role);
+    expect(consecutiveSameRole).toBe(false);
+    expect(warnings.some((w) => w.includes('merged consecutive'))).toBe(true);
   });
 
   it('produces a paired, API-valid history that partial results survive on', async () => {

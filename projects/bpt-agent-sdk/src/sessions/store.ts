@@ -163,7 +163,31 @@ function repairPairing(
     repaired.push(msg);
   }
 
-  return repaired;
+  // Pass 3 (C8/S4, BPT audit 2026-07-07): passes 1-2 can weld two same-role
+  // turns together — dropping a mid-transcript assistant turn leaves [user,
+  // user]; dropping an emptied user turn can leave [assistant, assistant].
+  // Either 400s the resumed request with "roles must alternate". Merge
+  // consecutive same-role turns by concatenating their content (both stay
+  // valid: multiple text/tool blocks per turn are legal).
+  const toBlocks = (c: APIMessageParam['content']): ContentBlockParam[] =>
+    typeof c === 'string' ? [{ type: 'text', text: c }] : c;
+  const alternating: APIMessageParam[] = [];
+  for (const msg of repaired) {
+    const prev = alternating[alternating.length - 1];
+    if (prev !== undefined && prev.role === msg.role) {
+      alternating[alternating.length - 1] = {
+        role: prev.role,
+        content: [...toBlocks(prev.content), ...toBlocks(msg.content)],
+      };
+      debug(
+        `session store: merged consecutive ${msg.role} turns in ${sessionId}${JSONL_EXT} to preserve role alternation`,
+      );
+      continue;
+    }
+    alternating.push(msg);
+  }
+
+  return alternating;
 }
 
 /**

@@ -304,6 +304,46 @@ describe('MessageAccumulator', () => {
     expect(msg.model).toBe('claude-test-1');
   });
 
+  it('S2: collects citations_delta onto the text block instead of dropping it', () => {
+    const acc = new MessageAccumulator();
+    acc.feed(startEvent());
+    acc.feed({ type: 'content_block_start', index: 0, content_block: { type: 'text', text: '' } });
+    acc.feed({ type: 'content_block_delta', index: 0, delta: { type: 'text_delta', text: 'cited' } });
+    acc.feed({
+      type: 'content_block_delta',
+      index: 0,
+      delta: { type: 'citations_delta', citation: { type: 'char_location', start: 0 } },
+    } as unknown as RawMessageStreamEvent);
+    acc.feed({ type: 'content_block_stop', index: 0 });
+    acc.feed({ type: 'message_delta', delta: { stop_reason: 'end_turn', stop_sequence: null }, usage: { output_tokens: 2 } });
+    acc.feed({ type: 'message_stop' });
+    const block = acc.finalize().content[0] as { type: string; text: string; citations?: unknown[] };
+    expect(block.text).toBe('cited');
+    expect(block.citations).toEqual([{ type: 'char_location', start: 0 }]);
+  });
+
+  it('S3: a missing partial_json fragment does not poison the tool input with "undefined"', () => {
+    const acc = new MessageAccumulator();
+    acc.feed(startEvent());
+    acc.feed({
+      type: 'content_block_start',
+      index: 0,
+      content_block: { type: 'tool_use', id: 'toolu_1', name: 'Read', input: {} },
+    });
+    acc.feed({ type: 'content_block_delta', index: 0, delta: { type: 'input_json_delta', partial_json: '{"file_path":"/a"}' } });
+    // a non-conformant trailing frame with no partial_json
+    acc.feed({
+      type: 'content_block_delta',
+      index: 0,
+      delta: { type: 'input_json_delta' },
+    } as unknown as RawMessageStreamEvent);
+    acc.feed({ type: 'content_block_stop', index: 0 });
+    acc.feed({ type: 'message_delta', delta: { stop_reason: 'tool_use', stop_sequence: null }, usage: { output_tokens: 2 } });
+    acc.feed({ type: 'message_stop' });
+    const block = acc.finalize().content[0] as { type: string; input: unknown };
+    expect(block.input).toEqual({ file_path: '/a' }); // no "undefined" corruption -> parses cleanly
+  });
+
   it('parses tool_use input_json_delta split across chunks', () => {
     const acc = new MessageAccumulator();
     acc.feed(startEvent());
@@ -470,6 +510,45 @@ describe('pricing', () => {
     // Old-style id does not match the documented 'claude-opus-' prefix.
     expect(estimateCostUsd('claude-3-opus-latest', usage)).toBe(0);
     expect(estimateCostUsd('', usage)).toBe(0);
+  });
+
+  // ----- BPT audit 2026-07-07: pricing fixes (C1 / S1 / S5) -----
+
+  it('C1: a 1h cache write is billed at 2x base, not the 5m 1.25x rate', () => {
+    const usage: NonNullableUsage = {
+      input_tokens: 0,
+      output_tokens: 0,
+      cache_creation_input_tokens: 1_000_000,
+      cache_read_input_tokens: 0,
+    };
+    // opus base input = 15; 5m = 15*1.25 = 18.75, 1h = 15*2 = 30
+    expect(estimateCostUsd('claude-opus-4-8', usage, '5m')).toBe(18.75);
+    expect(estimateCostUsd('claude-opus-4-8', usage, '1h')).toBe(30);
+    // default (omitted) stays the 5m rate — byte-compatible with old callers
+    expect(estimateCostUsd('claude-opus-4-8', usage)).toBe(18.75);
+  });
+
+  it('S1: cloud-provider model ids (Bedrock / Vertex) still price (not $0)', () => {
+    const usage: NonNullableUsage = {
+      input_tokens: 1_000_000,
+      output_tokens: 0,
+      cache_creation_input_tokens: 0,
+      cache_read_input_tokens: 0,
+    };
+    expect(estimateCostUsd('us.anthropic.claude-opus-4-8', usage)).toBe(15);
+    expect(estimateCostUsd('anthropic.claude-sonnet-4-5', usage)).toBe(3);
+    expect(estimateCostUsd('claude-haiku-4-5@vertex', usage)).toBe(1);
+  });
+
+  it('S5: claude-fable-* prices instead of costing $0', () => {
+    const usage: NonNullableUsage = {
+      input_tokens: 1_000_000,
+      output_tokens: 1_000_000,
+      cache_creation_input_tokens: 0,
+      cache_read_input_tokens: 0,
+    };
+    // fable input 10 + output 50 = 60
+    expect(estimateCostUsd('claude-fable-5', usage)).toBe(60);
   });
 
   it('normalizeUsage maps null/undefined cache fields to 0', () => {

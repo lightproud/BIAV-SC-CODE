@@ -480,12 +480,28 @@ async function foldViaApi(
   // Summarization is cheap and mechanical: route it to compaction.model (e.g.
   // Haiku) when set, resolving a short alias, else the session model.
   const summaryModel = resolveModelAlias(config.compaction?.model, config.model);
+  // C7 (BPT audit 2026-07-07): the prefix carries assistant turns whose thinking
+  // blocks were signed by the SESSION model. This summary request routes to
+  // summaryModel — deliberately a DIFFERENT model (e.g. Haiku) — which would 400
+  // on the foreign signatures (previously caught + silently degraded to the
+  // deterministic fold, so useApiSummary never worked with a distinct model).
+  // The summary is mechanical and needs no thinking, so strip it unconditionally.
+  const summaryPrefix = prefix.map((m) =>
+    m.role === 'assistant' && Array.isArray(m.content)
+      ? {
+          ...m,
+          content: m.content.filter(
+            (b) => b.type !== 'thinking' && b.type !== 'redacted_thinking',
+          ),
+        }
+      : m,
+  );
   const req: StreamRequest = {
     model: summaryModel,
     max_tokens: Math.min(4096, config.maxOutputTokens),
     system,
     messages: [
-      ...prefix,
+      ...summaryPrefix,
       { role: 'user', content: 'Summarize the conversation above per the instructions.' },
     ],
     signal,

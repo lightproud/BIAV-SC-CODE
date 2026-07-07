@@ -381,7 +381,7 @@ export async function* runAgentLoop(
   /** Fold one attempt's usage into the running totals + per-model ledger. */
   const recordUsage = (responseModel: string, usage: NonNullableUsage): void => {
     totalUsage = addUsage(totalUsage, usage);
-    const cost = estimateCostUsd(responseModel, usage);
+    const cost = estimateCostUsd(responseModel, usage, config.cacheTtl);
     totalCostUsd += cost;
     const prev = modelUsage[responseModel];
     modelUsage[responseModel] = {
@@ -1122,7 +1122,7 @@ export async function* runAgentLoop(
           index: numTurns - 1,
           model: assistant.model,
           usage: turnUsage,
-          costUsd: estimateCostUsd(assistant.model, turnUsage),
+          costUsd: estimateCostUsd(assistant.model, turnUsage, config.cacheTtl),
           apiMs: durationApiMs - apiMsBefore,
           stopReason: assistant.stop_reason,
           toolCalls: toolUses.length,
