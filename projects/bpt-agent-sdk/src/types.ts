@@ -2069,10 +2069,28 @@ export type SDKMessage =
 // ---------------------------------------------------------------------------
 
 /** Structured-output configuration (Options.outputFormat). The SDK validates
- *  the agent's final answer against `schema` and re-prompts on mismatch. */
+ *  the agent's final answer against `schema` and re-prompts on mismatch.
+ *
+ *  By default this is enforced OFF the wire: a system-prompt instruction plus a
+ *  local lenient validator with a bounded re-prompt — no server-side guarantee,
+ *  but it works on every model and enforces the full local constraint set
+ *  (minLength/minimum/… that the native path does not).
+ *
+ *  `native: true` (C9) ALSO forwards the schema on the wire as the official
+ *  Messages API `output_config: { format: { type:'json_schema', schema } }`,
+ *  for the server-side format guarantee. Native structured outputs are only
+ *  available on supported models (Fable 5 / Opus 4.8 / Sonnet 5 / Haiku 4.5 /
+ *  Opus 4.5 / Opus 4.1) and constrain the schema to a documented subset
+ *  (objects need `additionalProperties: false`; `minLength`/`minimum`/… are not
+ *  enforced server-side). The local validator keeps running as the complement /
+ *  fallback, so opting in never LOSES a constraint — it adds the wire guarantee
+ *  on top. Leave it unset on older models or unsupported schemas. */
 export type OutputFormatConfig = {
   type: 'json_schema';
   schema: JSONSchema;
+  /** Also send the schema on the wire as `output_config.format` (server-side
+   *  guarantee, supported models only). Absent/false -> local-only (default). */
+  native?: boolean;
 };
 
 /** BPT extension: context-compaction tuning. When the running request

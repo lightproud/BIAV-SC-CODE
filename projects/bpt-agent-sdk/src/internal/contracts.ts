@@ -61,6 +61,11 @@ export type StreamRequest = {
   /** Messages API `tool_choice`; forwarded verbatim by the transport. Only set
    *  when `tools` is non-empty (the API 400s on tool_choice without tools). */
   tool_choice?: ToolChoice;
+  /** Messages API `output_config` (structured outputs). Set only when the
+   *  caller opts into native structured outputs (`outputFormat.native`);
+   *  forwarded verbatim by the transport. The old top-level `output_format`
+   *  param is deprecated — `output_config.format` is the current wire shape. */
+  output_config?: { format: { type: 'json_schema'; schema: JSONSchema } };
   thinking?:
     | { type: 'adaptive'; display?: 'summarized' | 'omitted' }
     | { type: 'enabled'; budget_tokens: number; display?: 'summarized' | 'omitted' }

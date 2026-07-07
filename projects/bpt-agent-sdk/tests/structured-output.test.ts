@@ -383,6 +383,28 @@ describe('normalizeOutputFormat', () => {
     expect(normalizeOutputFormat({ type: 'json_schema', schema: [] }, debug)).toBeUndefined();
     expect(debug).toHaveBeenCalledTimes(1);
   });
+
+  it('preserves native:true for the wire opt-in (C9)', () => {
+    const debug = vi.fn();
+    const schema: JSONSchema = { type: 'object' };
+    const result = normalizeOutputFormat({ type: 'json_schema', schema, native: true }, debug);
+    expect(result).toEqual({ type: 'json_schema', schema, native: true });
+    expect(debug).not.toHaveBeenCalled();
+  });
+
+  it('does not add native for a local-only config (native false/absent) (C9)', () => {
+    const debug = vi.fn();
+    const schema: JSONSchema = { type: 'object' };
+    // absent -> no native key at all (stays exactly { type, schema })
+    expect(normalizeOutputFormat({ type: 'json_schema', schema }, debug)).toEqual({
+      type: 'json_schema',
+      schema,
+    });
+    // explicit false -> also omitted (only true opts into the wire)
+    expect(
+      normalizeOutputFormat({ type: 'json_schema', schema, native: false }, debug),
+    ).toEqual({ type: 'json_schema', schema });
+  });
 });
 
 describe('buildStructuredOutputInstruction', () => {
