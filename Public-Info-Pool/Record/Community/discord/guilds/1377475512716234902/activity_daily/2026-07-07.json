@@ -1,11 +1,11 @@
 {
   "date": "2026-07-07",
-  "messages": 1207,
+  "messages": 1217,
   "unique_authors": 35,
-  "reactions_total": 158,
-  "attachments": 87,
+  "reactions_total": 163,
+  "attachments": 88,
   "channel_activity": {
-    "なんでも雑談": 1129,
+    "なんでも雑談": 1139,
     "誰でも質問": 21,
     "🔰初心者質問": 28,
     "つぶやき": 12,
@@ -21,6 +21,8 @@
     "ニムフィーアの毒パ研究日誌": 1
   },
   "hourly_activity": {
+    "21": 4,
+    "22": 6,
     "18": 51,
     "19": 17,
     "20": 1,
@@ -43,8 +45,7 @@
     "0": 1
   },
   "message_types": {
-    "0": 21,
-    "19": 3
+    "0": 10
   },
   "top_reacted_messages": [
     {
@@ -69,6 +70,14 @@
       "content": "やっとゆーさい350までできたぁ…\n期限ギリギリ…",
       "author": "mu0240_87003",
       "reactions": 6,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1524176923280801822",
+      "channel_id": "1377478664609857647",
+      "content": "夜勤終わらない…ﾉｺｼﾃﾃ…ﾃ……😭🫸🏻🫷🏻",
+      "author": "ciocux",
+      "reactions": 5,
       "channel": "なんでも雑談"
     },
     {
@@ -196,14 +205,6 @@
       "channel_id": "1377478664609857647",
       "content": "ぶっちゃけ極限タイスだけでi",
       "author": "0w04250",
-      "reactions": 2,
-      "channel": "なんでも雑談"
-    },
-    {
-      "id": "1524030228027019387",
-      "channel_id": "1377478664609857647",
-      "content": "こんばんは",
-      "author": "tianmoheizi_16992",
       "reactions": 2,
       "channel": "なんでも雑談"
     }
