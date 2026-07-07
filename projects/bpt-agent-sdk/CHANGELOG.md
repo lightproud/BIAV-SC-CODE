@@ -11,7 +11,22 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
-## 0.18.3 — 2026-07-08
+## 0.19.0 — 2026-07-08
+
+i18n-zh (keeper ruling B): translate built-in tool descriptions to Chinese
+IN-PLACE, on the wire — batch 1 of N.
+
+- **change: Read / Edit / Write / Grep / Glob descriptions are now Chinese.**
+  A DELIBERATE divergence from the official English tool surface (keeper chose
+  in-place replacement over a selectable variant). Tool NAMES and wire PARAMETER
+  names stay English (identifiers); only prose is translated. The five tools are
+  removed from `TOOL_DESCRIPTION_PROVENANCE` (the English corpus-sync guard,
+  which no longer applies) and covered by a new structural guard
+  `tests/tool-descriptions-i18n-zh.test.ts` (is-Chinese, emoji-free, wire tokens
+  preserved). Remaining tools (Bash + git protocol, Task*, TodoWrite, Web*,
+  AskUserQuestion, ExitPlanMode, EnterWorktree, Monitor, Workflow, sandbox
+  fragments) stay English until later batches land. See docs/COMPAT.md.
+
 
 Hook parity: populate the official base `transcript_path` on every hook.
 
