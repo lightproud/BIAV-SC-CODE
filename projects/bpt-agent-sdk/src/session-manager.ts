@@ -607,3 +607,92 @@ export function createBptSession(options: SessionManagerOptions = {}): SessionMa
 
   return mgr;
 }
+
+// ---------------------------------------------------------------------------
+// runConcurrent — the missing "drive N conversations in parallel" helper
+// ---------------------------------------------------------------------------
+
+/** One conversation to run: the same args shape as SessionManager.query(). */
+export type ManagedTask = {
+  prompt: string | AsyncIterable<SDKUserMessage>;
+  options?: Options;
+};
+
+/** Outcome of one task in runConcurrent, tagged by its input index. */
+export type RunConcurrentOutcome = {
+  /** Index into the input `tasks` array (results are index-tagged, not
+   *  completion-ordered). */
+  index: number;
+  /** The conversation's terminal result message, or null if it produced none
+   *  (e.g. the drive threw before any result). */
+  result: SDKResultMessage | null;
+  /** All messages, in order — only when `collectMessages` is set (off by
+   *  default to keep memory flat for large fan-outs). */
+  messages?: SDKMessage[];
+  /** Set when driving this conversation threw (the batch never rejects — one
+   *  bad task does not sink its siblings). */
+  error?: unknown;
+};
+
+/**
+ * Drive many managed conversations CONCURRENTLY over one SessionManager, at most
+ * `concurrency` in flight at a time. This is the helper that closes the
+ * pull-driven footgun: `SessionManager.query()` only advances when its iterator
+ * is pulled, so `for (const t of tasks) { for await (…mgr.query(t)) {} }` runs
+ * them SEQUENTIALLY even though the manager supports true parallelism. This
+ * function pulls up to `concurrency` iterators at once, so the conversations
+ * actually overlap on the shared transport + MCP pool.
+ *
+ * Failure isolation: a task whose drive throws resolves to an outcome with
+ * `error` set (and `result: null`); the batch as a whole never rejects. Results
+ * are returned index-aligned with `tasks`, regardless of completion order.
+ *
+ * `concurrency` defaults to min(tasks.length, 8). Pair it with the transport's
+ * `maxConcurrentRequests` (provider-level) so a large fan-out does not thrash
+ * the API rate limit — this bounds *conversations*, that bounds *requests*.
+ */
+export async function runConcurrent(
+  mgr: SessionManager,
+  tasks: ManagedTask[],
+  opts?: {
+    concurrency?: number;
+    collectMessages?: boolean;
+    /** Observe every message as it arrives, tagged by task index. */
+    onMessage?: (index: number, message: SDKMessage) => void;
+  },
+): Promise<RunConcurrentOutcome[]> {
+  const outcomes = new Array<RunConcurrentOutcome>(tasks.length);
+  const collect = opts?.collectMessages === true;
+  const onMessage = opts?.onMessage;
+  const concurrency = Math.max(
+    1,
+    Math.min(opts?.concurrency ?? 8, tasks.length || 1),
+  );
+
+  let next = 0;
+  async function worker(): Promise<void> {
+    for (;;) {
+      const index = next;
+      next += 1;
+      if (index >= tasks.length) return;
+      const task = tasks[index]!;
+      const messages: SDKMessage[] = [];
+      let result: SDKResultMessage | null = null;
+      try {
+        for await (const message of mgr.query(task)) {
+          if (onMessage) onMessage(index, message);
+          if (collect) messages.push(message);
+          if (message.type === 'result') result = message;
+        }
+        outcomes[index] = collect ? { index, result, messages } : { index, result };
+      } catch (error) {
+        outcomes[index] = collect
+          ? { index, result, messages, error }
+          : { index, result, error };
+      }
+    }
+  }
+
+  await Promise.all(Array.from({ length: concurrency }, () => worker()));
+  return outcomes;
+}

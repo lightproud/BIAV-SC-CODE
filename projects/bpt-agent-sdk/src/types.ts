@@ -916,6 +916,17 @@ export type ProviderConfig = {
    * means the connection is stuck, not merely slow.
    */
   streamIdleTimeoutMs?: number;
+  /**
+   * Cap on concurrently in-flight Messages API requests through THIS transport
+   * (default 0 = unlimited). When many conversations share one transport (a
+   * SessionManager), N concurrent `mgr.query()` drives open N streams at once
+   * and can thrash the API rate limit; set this to bound the API concurrency
+   * while `runConcurrent`'s `concurrency` bounds the conversations. Excess
+   * requests queue (FIFO) until a slot frees; a request holds its slot for the
+   * whole streaming lifetime. Env fallback: `BPT_MAX_CONCURRENT_REQUESTS`.
+   * BPT-EXTENSION: the official SDK has no such knob (its CLI owns concurrency).
+   */
+  maxConcurrentRequests?: number;
   maxOutputTokens?: number;
   /** Automatic prompt caching via cache_control breakpoints; default true. */
   promptCaching?: boolean;

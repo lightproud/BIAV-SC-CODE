@@ -78,6 +78,10 @@ export class AnthropicTransport implements Transport {
   private readonly betas: string[] | undefined;
   private readonly credential: ResolvedCredential | null;
   private readonly endpoint: string;
+  /** Concurrency gate; null when maxConcurrentRequests resolves to 0
+   *  (unlimited — the default, so existing single-conversation callers see
+   *  zero behavior change). */
+  private readonly slots: RequestSemaphore | null;
 
   constructor(cfg: TransportConfig) {
     this.provider = cfg.provider ?? {};
@@ -85,6 +89,8 @@ export class AnthropicTransport implements Transport {
     this.debug = cfg.debug;
     this.betas = cfg.betas;
     this.credential = resolveCredential(this.provider, cfg.env);
+    const maxConcurrent = resolveMaxConcurrent(this.provider, cfg.env);
+    this.slots = maxConcurrent > 0 ? new RequestSemaphore(maxConcurrent) : null;
     const base = (
       this.provider.baseUrl ??
       nonEmpty(cfg.env.ANTHROPIC_BASE_URL) ??
@@ -97,7 +103,30 @@ export class AnthropicTransport implements Transport {
     return this.credential?.source ?? 'none';
   }
 
+  /**
+   * Stream one Messages API call, gated by the optional concurrency semaphore.
+   * When a cap is set, the permit is held for the WHOLE streaming lifetime
+   * (acquire before the request, release when the generator finishes, returns,
+   * throws, or is closed early by the consumer) — so a slow consumer keeps its
+   * slot exactly as long as its HTTP stream stays open. No cap -> straight
+   * passthrough, zero overhead.
+   */
   async *stream(req: StreamRequest): AsyncGenerator<RawMessageStreamEvent, void> {
+    if (!this.slots) {
+      yield* this.streamRequest(req);
+      return;
+    }
+    const release = await this.slots.acquire();
+    try {
+      yield* this.streamRequest(req);
+    } finally {
+      release();
+    }
+  }
+
+  private async *streamRequest(
+    req: StreamRequest,
+  ): AsyncGenerator<RawMessageStreamEvent, void> {
     if (!this.credential) {
       throw new ConfigurationError(
         'No Anthropic credential found. Set options.provider.apiKey / ' +
@@ -367,6 +396,57 @@ export function resolveMaxRetries(
   const fromEnv = envInt(env.CLAUDE_CODE_MAX_RETRIES);
   if (fromEnv !== undefined) return Math.min(fromEnv, ENV_MAX_RETRIES_CAP);
   return DEFAULT_MAX_RETRIES;
+}
+
+/**
+ * Concurrency-cap resolution: provider.maxConcurrentRequests (explicit
+ * override) > BPT_MAX_CONCURRENT_REQUESTS env > 0 (unlimited).
+ */
+export function resolveMaxConcurrent(
+  provider: ProviderConfig,
+  env: Record<string, string | undefined>,
+): number {
+  if (provider.maxConcurrentRequests !== undefined) {
+    return Math.max(0, Math.floor(provider.maxConcurrentRequests));
+  }
+  return envInt(env.BPT_MAX_CONCURRENT_REQUESTS) ?? 0;
+}
+
+/**
+ * Minimal FIFO counting semaphore. `acquire()` resolves once a permit is free
+ * and returns the matching `release`; excess acquirers queue in order. Used to
+ * bound concurrent in-flight streams through one transport. A permit handed
+ * directly to the next waiter never round-trips through the counter, so no
+ * permit is lost under contention.
+ */
+export class RequestSemaphore {
+  private permits: number;
+  private readonly waiters: Array<() => void> = [];
+  constructor(permits: number) {
+    this.permits = permits;
+  }
+  acquire(): Promise<() => void> {
+    return new Promise<() => void>((resolve) => {
+      let released = false;
+      const releaseOnce = (): void => {
+        if (released) return;
+        released = true;
+        this.release();
+      };
+      const grant = (): void => resolve(releaseOnce);
+      if (this.permits > 0) {
+        this.permits -= 1;
+        grant();
+      } else {
+        this.waiters.push(grant);
+      }
+    });
+  }
+  private release(): void {
+    const next = this.waiters.shift();
+    if (next) next();
+    else this.permits += 1;
+  }
 }
 
 /**

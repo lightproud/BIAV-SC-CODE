@@ -112,7 +112,9 @@ Per-row detail lives in the sections below; this is the at-a-glance table.
 | Workflow | HONEST-SUBSET | async background launch | synchronous execution, result returned inline |
 | MessageDisplay | HONEST-SUBSET | per-delta incremental | per-completed-message (final always true) |
 | Read PDF `pages` | HONEST-SUBSET | slices PDF pages | validates the param; page-slicing itself unsupported (no PDF dep), errors honestly |
-| Grep | HONEST-SUBSET | ripgrep binary | pure-JS regex (large-repo perf caveat) |
+| Grep | HONEST-SUBSET | ripgrep binary | pure-JS regex (large-repo perf caveat; see the crossover diagnostic 2026-07-07). v0.13.0: `count`/`files_with_matches` default to COMPLETE (no silent 250-cap truncation), all modes announce cap-induced truncation, and a `grep.scan` debug line reports full-scan coverage |
+| `runConcurrent` (SessionManager) | BPT-EXTENSION | no in-process fan-out driver | drives many `mgr.query()` conversations in parallel with a concurrency bound + per-task failure isolation, closing the pull-driven "sequential-await" footgun (v0.13.0) |
+| `provider.maxConcurrentRequests` | BPT-EXTENSION | CLI owns request concurrency | caps concurrent in-flight Messages API requests through a shared transport (FIFO queue), so a large multi-conversation fan-out does not thrash the rate limit (v0.13.0) |
 | six new hooks (Setup/TeammateIdle/…) | HONEST-SUBSET | fire | typed-not-fired (no natural headless hook point) |
 | MCP subscription tools (4) | N/A-BY-DESIGN | subscribe + server push | absent (no push-to-conversation channel) |
 | NotebookEdit | N/A-BY-DESIGN | edits Jupyter cells | absent (no notebook surface) |
@@ -291,7 +293,7 @@ SDK implements the agent loop directly against the public Messages API:
 | BashOutput | FULL | v0.5: incremental reads (new output since last call) + status/exit code; optional per-line regex `filter`; read-only (auto-approved, parallel-group eligible). FULL is vs the DOCUMENTED SDK lifecycle: live official 2.1.201 moved backgrounding to a task-file model and its own BashOutput answers "No task found" for the id its Bash advertised, so no official-arm parity evidence exists (conformance run-l3 L3-BG-01, KD-L3-19, 2026-07-05) |
 | KillShell | FULL | v0.5: SIGTERM then SIGKILL escalation on the background shell's process group. Same official-arm caveat as BashOutput (run-l3 L3-BG-01, KD-L3-19) |
 | Glob | PARTIAL | fast-glob, mtime-sorted newest-first; official 2.1.201 emitted ASCENDING order under ascending-utimes pins, so ordering parity with the live engine is not established - path sets agree (conformance run-l3 L3-GLOB-01, KD-L3-20, 2026-07-05) |
-| Grep | PARTIAL | pure-JS regex engine (no ripgrep binary); large-repo perf caveat |
+| Grep | PARTIAL | pure-JS regex engine (no ripgrep binary); large-repo perf caveat (crossover diagnostic 2026-07-07). v0.13.0 fixed the silent 250-cap truncation: `count`/`files_with_matches` default COMPLETE, all modes announce truncation, `grep.scan` debug telemetry added. The ripgrep-vs-pure-JS decision itself is pending (keeper) |
 | WebFetch / WebSearch | FULL | registered in v0.2 |
 | TodoWrite | PARTIAL | v0.7: OFF by default (Task quadruplet is the default surface); `CLAUDE_CODE_ENABLE_TASKS=0` reverts to TodoWrite-only, per official 0.3.142 |
 | Agent | PARTIAL | the subagent spawn tool; v0.7 gains `model`/`isolation:'worktree'` and the official required set [description, prompt] (subagent_type defaults to general-purpose). Residual param delta = our BPT-only `fork` extension |

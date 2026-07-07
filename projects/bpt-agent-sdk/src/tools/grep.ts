@@ -315,11 +315,18 @@ export const grepTool: BuiltinTool = {
     const before = asOptionalCount(input['-B']) ?? bothContext ?? 0;
     const after = asOptionalCount(input['-A']) ?? bothContext ?? 0;
     const rawLimit = input['head_limit'];
-    // 0 (or negative) = unlimited; undefined -> default 250.
+    // 0 (or negative) = unlimited; undefined -> a MODE-DEPENDENT default.
+    // `content` can flood (many lines per file) so it keeps the 250 guard.
+    // `count` and `files_with_matches` emit ONE small entry per file, and a
+    // truncated result there is a WRONG count / an incomplete file list — a
+    // correctness bug, not a flood — so they default to COMPLETE (unlimited).
+    // An explicit head_limit still bounds every mode. (OPT-1, 2026-07-07:
+    // decoupled from the flat 250 that silently truncated counts.)
+    const defaultLimit = outputMode === 'content' ? DEFAULT_HEAD_LIMIT : 0;
     const headLimit =
       typeof rawLimit === 'number' && Number.isFinite(rawLimit)
         ? Math.max(0, Math.floor(rawLimit))
-        : DEFAULT_HEAD_LIMIT;
+        : defaultLimit;
     const limited = headLimit > 0;
     // Skip the first `offset` entries before head_limit (pagination). When
     // limited we must collect offset+headLimit rows before we can stop.
@@ -400,10 +407,19 @@ export const grepTool: BuiltinTool = {
     const useContext = before > 0 || after > 0;
     let anyMatch = false;
     let firstContentFile = true;
+    // OPT-5 telemetry: how much of the corpus this call actually scanned, so a
+    // host can measure the "full-scan share" of its Grep traffic (the driver of
+    // the pure-JS vs ripgrep cost — see the crossover diagnostic 2026-07-07).
+    let scannedFiles = 0;
+    let scanStoppedEarly = false;
 
     for (const file of files) {
       if (ctx.signal.aborted) throw new AbortError();
-      if (out.length >= collectCap) break;
+      if (out.length >= collectCap) {
+        scanStoppedEarly = true;
+        break;
+      }
+      scannedFiles += 1;
 
       const scan = await scanFile(file, pattern, flags, multiline);
       if (scan === null || scan.matches.length === 0) continue;
@@ -460,6 +476,16 @@ export const grepTool: BuiltinTool = {
       }
     }
 
+    // OPT-5: emit the scan-coverage signal on the debug channel (the host taps
+    // options.stderr). full_scan=true means no early stop -> this call paid the
+    // full corpus cost; a host can aggregate the ratio to decide the ripgrep
+    // question empirically instead of guessing.
+    ctx.debug(
+      `grep.scan mode=${outputMode} files_total=${files.length} ` +
+        `files_scanned=${scannedFiles} full_scan=${!scanStoppedEarly} ` +
+        `early_stop=${scanStoppedEarly}`,
+    );
+
     if (!anyMatch) {
       return { content: 'No matches found' };
     }
@@ -469,6 +495,16 @@ export const grepTool: BuiltinTool = {
     if (capped.length === 0) {
       return { content: 'No matches found' };
     }
-    return { content: capped.join('\n') };
+    // OPT-1: never truncate silently. When the head_limit cap cut the scan or
+    // the display short, say so, so a caller does not mistake a partial listing
+    // (or a partial per-file count) for the complete result.
+    const displayTruncated = limited && out.length > offset + headLimit;
+    let content = capped.join('\n');
+    if (scanStoppedEarly || displayTruncated) {
+      content +=
+        `\n(results truncated at head_limit=${headLimit}; more matches may exist` +
+        ` — raise head_limit or set head_limit=0 for the complete result)`;
+    }
+    return { content };
   },
 };
