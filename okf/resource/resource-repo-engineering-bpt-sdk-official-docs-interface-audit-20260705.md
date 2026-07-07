@@ -4,7 +4,7 @@ title: "bpt-sdk-official-docs-interface-audit-20260705"
 description: "小学生比喻：上次（07-03）是清点「家里每样电器有没有」，这次是拿着说明书核对「每个插头的针脚形状对不对」——电器基本都添齐了，这次专挑针脚不合的。（格式：md）"
 resource: "/Public-Info-Pool/Resource/repo-engineering/bpt-sdk-official-docs-interface-audit-20260705.md"
 tags: ["data_layer:curated", "deliverable", "topic:repo-engineering"]
-timestamp: "2026-07-06"
+timestamp: "2026-07-07"
 ---
 
 # 指针概念

@@ -4,7 +4,7 @@ title: "bpt-agent-sdk ARCHITECTURE"
 description: "Independent agent harness with a `@anthropic-ai/claude-agent-sdk`-compatible"
 resource: "/projects/bpt-agent-sdk/docs/ARCHITECTURE.md"
 tags: ["data_layer:curated", "design-doc", "sub-project:bpt-agent-sdk"]
-timestamp: "2026-07-06"
+timestamp: "2026-07-07"
 ---
 
 # 指针概念

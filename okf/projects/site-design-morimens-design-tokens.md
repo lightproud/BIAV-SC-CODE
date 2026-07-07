@@ -4,7 +4,7 @@ title: "site design · morimens-design-tokens.css"
 description: "site 设计系统权威（morimens-design-tokens.css，6.7KB）：设计令牌 / 组件规范来源。"
 resource: "/projects/site/design/morimens-design-tokens.css"
 tags: ["data_layer:curated", "design-system", "sub-project:site"]
-timestamp: "2026-07-06"
+timestamp: "2026-07-07"
 ---
 
 # 指针概念

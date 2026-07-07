@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-06",
+  "generated": "2026-07-07",
   "meta": {
     "data_layer": "curated_knowledge",
     "source": "okf/ bundle (concept frontmatter + body + graph edges)",
@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 327,
-    "edges": 390,
-    "terms": 5627,
+    "concepts": 326,
+    "edges": 399,
+    "terms": 5646,
     "by_type": {
       "character": 72,
-      "dataset": 110,
-      "documentation": 82,
+      "dataset": 107,
+      "documentation": 84,
       "knowledge-pointer": 43,
       "reference": 17,
       "research": 3
@@ -21,20 +21,20 @@
     "sections": {
       "assets": 12,
       "characters": 72,
-      "community": 19,
+      "community": 16,
       "extracted": 4,
       "memory": 47,
       "news-output": 23,
-      "projects": 19,
-      "resource": 62,
+      "projects": 20,
+      "resource": 63,
       "sources": 17,
       "story": 11,
       "unpacked": 13,
       "wiki-data": 27
     },
     "by_tier": {
-      "skeleton": 131,
-      "search": 196
+      "skeleton": 128,
+      "search": 198
     }
   },
   "sections": {
@@ -48,7 +48,7 @@
     },
     "community": {
       "index": "/community/index.md",
-      "count": 19
+      "count": 16
     },
     "extracted": {
       "index": "/extracted/index.md",
@@ -64,11 +64,11 @@
     },
     "projects": {
       "index": "/projects/index.md",
-      "count": 19
+      "count": 20
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 62
+      "count": 63
     },
     "sources": {
       "index": "/sources/index.md",
@@ -361,7 +361,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 14
+      "degree": 16
     },
     "/characters/15561.md": {
       "type": "character",
@@ -602,7 +602,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 3
+      "degree": 5
     },
     "/characters/15578.md": {
       "type": "character",
@@ -742,7 +742,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 3
+      "degree": 5
     },
     "/characters/15588.md": {
       "type": "character",
@@ -911,7 +911,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 3
+      "degree": 5
     },
     "/characters/15600.md": {
       "type": "character",
@@ -954,7 +954,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 5
+      "degree": 7
     },
     "/characters/15603.md": {
       "type": "character",
@@ -968,7 +968,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 79
+      "degree": 80
     },
     "/characters/15604.md": {
       "type": "character",
@@ -1010,7 +1010,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 4
     },
     "/characters/77911.md": {
       "type": "character",
@@ -1066,7 +1066,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 1
+      "degree": 3
     },
     "/characters/77918.md": {
       "type": "character",
@@ -1122,7 +1122,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 0
     },
     "/characters/77924.md": {
       "type": "character",
@@ -1278,12 +1278,12 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 0
+      "degree": 2
     },
     "/community/community-appstore.md": {
       "type": "dataset",
       "title": "appstore 社区全量档案",
-      "description": "appstore 平台全量档案层（分析镜头）：百级条（精确值见指针本体）/ 32 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "appstore 平台全量档案层（分析镜头）：百级条（精确值见指针本体）/ 33 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/appstore/global/",
       "tags": [
         "data_layer:full_archive",
@@ -1325,7 +1325,7 @@
     "/community/community-google-play.md": {
       "type": "dataset",
       "title": "google_play 社区全量档案",
-      "description": "google_play 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 31 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "google_play 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 32 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/google_play/global/",
       "tags": [
         "data_layer:full_archive",
@@ -1339,7 +1339,7 @@
     "/community/community-index.md": {
       "type": "dataset",
       "title": "社区全量档案分析索引",
-      "description": "全量社区档案静态分析台账：百万级 条（精确值见指针本体）/ 17 平台，词典法零 ML。discord 全量历史 2026-06-21 de-tier 后永驻 git（Record/Community/discord/），直接读取，无需从 Rele",
+      "description": "全量社区档案静态分析台账：百万级 条（精确值见指针本体）/ 14 平台，词典法零 ML。discord 全量历史 2026-06-21 de-tier 后永驻 git（Record/Community/discord/），直接读取，无需从 Rele",
       "resource": "/projects/news/index/community_index.json",
       "tags": [
         "data_layer:full_archive",
@@ -1348,21 +1348,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 17
-    },
-    "/community/community-official.md": {
-      "type": "dataset",
-      "title": "official 社区全量档案",
-      "description": "official 平台全量档案层（分析镜头）：百级条（精确值见指针本体）/ 4 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
-      "resource": "/Public-Info-Pool/Record/Community/steam/global/news/",
-      "tags": [
-        "data_layer:full_archive",
-        "platform:official",
-        "lens:analysis"
-      ],
-      "section": "community",
-      "tier": "skeleton",
-      "degree": 2
+      "degree": 14
     },
     "/community/community-pixiv.md": {
       "type": "dataset",
@@ -1395,25 +1381,11 @@
     "/community/community-ruliweb.md": {
       "type": "dataset",
       "title": "ruliweb 社区全量档案",
-      "description": "ruliweb 平台全量档案层（分析镜头）：百级条（精确值见指针本体）/ 8 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "ruliweb 平台全量档案层（分析镜头）：百级条（精确值见指针本体）/ 9 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/ruliweb/",
       "tags": [
         "data_layer:full_archive",
         "platform:ruliweb",
-        "lens:analysis"
-      ],
-      "section": "community",
-      "tier": "skeleton",
-      "degree": 2
-    },
-    "/community/community-steam-discussion.md": {
-      "type": "dataset",
-      "title": "steam_discussion 社区全量档案",
-      "description": "steam_discussion 平台全量档案层（分析镜头）：几十条或更少条（精确值见指针本体）/ 1 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
-      "resource": "/Public-Info-Pool/Record/Community/steam/global/discussion/",
-      "tags": [
-        "data_layer:full_archive",
-        "platform:steam_discussion",
         "lens:analysis"
       ],
       "section": "community",
@@ -1448,24 +1420,10 @@
       "tier": "skeleton",
       "degree": 2
     },
-    "/community/community-taptap-review.md": {
-      "type": "dataset",
-      "title": "taptap_review 社区全量档案",
-      "description": "taptap_review 平台全量档案层（分析镜头）：百级条（精确值见指针本体）/ 1 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
-      "resource": "/Public-Info-Pool/Record/Community/taptap/cn/review/",
-      "tags": [
-        "data_layer:full_archive",
-        "platform:taptap_review",
-        "lens:analysis"
-      ],
-      "section": "community",
-      "tier": "skeleton",
-      "degree": 2
-    },
     "/community/community-taptap.md": {
       "type": "dataset",
       "title": "taptap 社区全量档案",
-      "description": "taptap 平台全量档案层（分析镜头）：几十条或更少条（精确值见指针本体）/ 1 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "taptap 平台全量档案层（分析镜头）：百级条（精确值见指针本体）/ 2 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/taptap/cn/post/",
       "tags": [
         "data_layer:full_archive",
@@ -1502,12 +1460,12 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 6
+      "degree": 12
     },
     "/community/community-weixin.md": {
       "type": "dataset",
       "title": "weixin 社区全量档案",
-      "description": "weixin 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 56 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "weixin 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 57 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -1521,7 +1479,7 @@
     "/community/community-youtube-comments.md": {
       "type": "dataset",
       "title": "youtube_comments 社区全量档案",
-      "description": "youtube_comments 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 2 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "youtube_comments 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 4 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/youtube_comments/",
       "tags": [
         "data_layer:full_archive",
@@ -1544,7 +1502,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 3
+      "degree": 4
     },
     "/extracted/extracted-art-assets.md": {
       "type": "dataset",
@@ -2631,6 +2589,20 @@
       "tier": "search",
       "degree": 0
     },
+    "/projects/bpt-sdk-doc-onboarding.md": {
+      "type": "documentation",
+      "title": "bpt-agent-sdk ONBOARDING",
+      "description": "Goal: get a new maintainer from zero to \\\"I can make a change safely and prove",
+      "resource": "/projects/bpt-agent-sdk/docs/ONBOARDING.md",
+      "tags": [
+        "data_layer:curated",
+        "design-doc",
+        "sub-project:bpt-agent-sdk"
+      ],
+      "section": "projects",
+      "tier": "search",
+      "degree": 0
+    },
     "/projects/bpt-sdk-doc-positioning.md": {
       "type": "documentation",
       "title": "bpt-agent-sdk POSITIONING",
@@ -3342,6 +3314,20 @@
       "tier": "search",
       "degree": 0
     },
+    "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md": {
+      "type": "documentation",
+      "title": "bpt-agent-sdk-evaluation-20260706",
+      "description": "**健康度：优。** 这是银芯迄今工程完成度最高的产物——1414 单测全绿、类型与构建零错、（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/repo-engineering/bpt-agent-sdk-evaluation-20260706.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 1
+    },
     "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md": {
       "type": "documentation",
       "title": "bpt-desktop-ui-reference-20260704-r2",
@@ -3723,7 +3709,7 @@
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 2545 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 2571 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -3737,7 +3723,7 @@
     "/sources/discord.md": {
       "type": "dataset",
       "title": "discord 社区数据源",
-      "description": "discord 平台采集档案，全量 7954469 条，健康度 active。",
+      "description": "discord 平台采集档案，全量 7967208 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/discord/",
       "tags": [
         "data_layer:full_archive",
@@ -3751,7 +3737,7 @@
     "/sources/google_play.md": {
       "type": "dataset",
       "title": "google_play 社区数据源",
-      "description": "google_play 平台采集档案，全量 1222 条，健康度 active。",
+      "description": "google_play 平台采集档案，全量 1228 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/google_play/global/",
       "tags": [
         "data_layer:full_archive",
@@ -3774,12 +3760,12 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 1
     },
     "/sources/pixiv.md": {
       "type": "dataset",
       "title": "pixiv 社区数据源",
-      "description": "pixiv 平台采集档案，全量 550 条，健康度 active。",
+      "description": "pixiv 平台采集档案，全量 551 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/pixiv/",
       "tags": [
         "data_layer:full_archive",
@@ -3793,7 +3779,7 @@
     "/sources/reddit.md": {
       "type": "dataset",
       "title": "reddit 社区数据源",
-      "description": "reddit 平台采集档案，全量 3486 条，健康度 active。",
+      "description": "reddit 平台采集档案，全量 3506 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/reddit/",
       "tags": [
         "data_layer:full_archive",
@@ -3807,7 +3793,7 @@
     "/sources/ruliweb.md": {
       "type": "dataset",
       "title": "ruliweb 社区数据源",
-      "description": "ruliweb 平台采集档案，全量 385 条，健康度 active。",
+      "description": "ruliweb 平台采集档案，全量 387 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/ruliweb/",
       "tags": [
         "data_layer:full_archive",
@@ -3821,7 +3807,7 @@
     "/sources/steam.md": {
       "type": "dataset",
       "title": "steam 社区数据源",
-      "description": "steam 平台采集档案，全量 5115 条，健康度 active。",
+      "description": "steam 平台采集档案，全量 5127 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/review/",
       "tags": [
         "data_layer:full_archive",
@@ -3835,7 +3821,7 @@
     "/sources/steam_discussion.md": {
       "type": "dataset",
       "title": "steam_discussion 社区数据源",
-      "description": "steam_discussion 平台采集档案，全量 80 条，健康度 active。",
+      "description": "steam_discussion 平台采集档案，全量 86 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/discussion/",
       "tags": [
         "data_layer:full_archive",
@@ -3844,12 +3830,12 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 1
     },
     "/sources/stopgame.md": {
       "type": "dataset",
       "title": "stopgame 社区数据源",
-      "description": "stopgame 平台采集档案，全量 78 条，健康度 active。",
+      "description": "stopgame 平台采集档案，全量 79 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/stopgame/",
       "tags": [
         "data_layer:full_archive",
@@ -3877,7 +3863,7 @@
     "/sources/taptap_review.md": {
       "type": "dataset",
       "title": "taptap_review 社区数据源",
-      "description": "taptap_review 平台采集档案，全量 683 条，健康度 active。",
+      "description": "taptap_review 平台采集档案，全量 780 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/taptap/cn/review/",
       "tags": [
         "data_layer:full_archive",
@@ -3886,12 +3872,12 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 1
     },
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 9142 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 9237 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -3900,12 +3886,12 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 6
+      "degree": 12
     },
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 6496 条，健康度 active。",
+      "description": "weixin 平台采集档案，全量 6656 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -3919,7 +3905,7 @@
     "/sources/youtube.md": {
       "type": "dataset",
       "title": "youtube 社区数据源",
-      "description": "youtube 平台采集档案，全量 2629 条，健康度 active。",
+      "description": "youtube 平台采集档案，全量 2662 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -3928,12 +3914,12 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 3
+      "degree": 4
     },
     "/sources/youtube_comments.md": {
       "type": "dataset",
       "title": "youtube_comments 社区数据源",
-      "description": "youtube_comments 平台采集档案，全量 1993 条，健康度 active。",
+      "description": "youtube_comments 平台采集档案，全量 2031 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube_comments/",
       "tags": [
         "data_layer:full_archive",
@@ -4930,6 +4916,11 @@
         "mention"
       ],
       [
+        "/community/community-youtube.md",
+        "提及:Pandia",
+        "mention"
+      ],
+      [
         "/memory/decisions.md",
         "提及:Pandia",
         "mention"
@@ -4976,6 +4967,11 @@
       ],
       [
         "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
+        "提及:Pandia",
+        "mention"
+      ],
+      [
+        "/sources/youtube.md",
         "提及:Pandia",
         "mention"
       ],
@@ -5382,12 +5378,22 @@
         "cv"
       ],
       [
+        "/community/community-weibo.md",
+        "提及:菲茵特",
+        "mention"
+      ],
+      [
         "/memory/morimens-context.md",
         "提及:菲茵特",
         "mention"
       ],
       [
         "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
+        "提及:菲茵特",
+        "mention"
+      ],
+      [
+        "/sources/weibo.md",
         "提及:菲茵特",
         "mention"
       ]
@@ -5628,7 +5634,17 @@
         "cv"
       ],
       [
+        "/community/community-bilibili.md",
+        "提及:希洛",
+        "mention"
+      ],
+      [
         "/resource/resource-daily-news-morimens-period-20260512-0603.md",
+        "提及:希洛",
+        "mention"
+      ],
+      [
+        "/sources/bilibili.md",
         "提及:希洛",
         "mention"
       ]
@@ -5875,7 +5891,17 @@
     ],
     "/characters/15599.md": [
       [
+        "/community/community-weibo.md",
+        "提及:萨尔瓦多",
+        "mention"
+      ],
+      [
         "/resource/resource-daily-news-morimens-period-20260512-0603.md",
+        "提及:萨尔瓦多",
+        "mention"
+      ],
+      [
+        "/sources/weibo.md",
         "提及:萨尔瓦多",
         "mention"
       ],
@@ -5936,6 +5962,11 @@
         "variant"
       ],
       [
+        "/community/community-weibo.md",
+        "提及:融朵",
+        "mention"
+      ],
+      [
         "/memory/decisions.md",
         "提及:熔毁·朵尔",
         "mention"
@@ -5948,6 +5979,11 @@
       [
         "/memory/project-status.md",
         "提及:熔毁·朵尔",
+        "mention"
+      ],
+      [
+        "/sources/weibo.md",
+        "提及:融朵",
         "mention"
       ],
       [
@@ -6308,6 +6344,11 @@
         "mention"
       ],
       [
+        "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
         "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
         "提及:艾瑞卡",
         "mention"
@@ -6414,7 +6455,17 @@
         "mention"
       ],
       [
+        "/community/community-weibo.md",
+        "提及:哈姆林",
+        "mention"
+      ],
+      [
         "/sources/bilibili.md",
+        "提及:哈姆林",
+        "mention"
+      ],
+      [
+        "/sources/weibo.md",
         "提及:哈姆林",
         "mention"
       ]
@@ -6466,6 +6517,16 @@
       ]
     ],
     "/characters/77917.md": [
+      [
+        "/community/community-weibo.md",
+        "提及:波吕克斯",
+        "mention"
+      ],
+      [
+        "/sources/weibo.md",
+        "提及:波吕克斯",
+        "mention"
+      ],
       [
         "/story/STORY_RESEARCH.md",
         "提及:波吕克斯",
@@ -6546,18 +6607,6 @@
         "/characters/15578.md",
         "CV:山田真瑠奈",
         "cv"
-      ]
-    ],
-    "/characters/77923.md": [
-      [
-        "/community/community-bilibili.md",
-        "提及:卡斯托尔",
-        "mention"
-      ],
-      [
-        "/sources/bilibili.md",
-        "提及:卡斯托尔",
-        "mention"
       ]
     ],
     "/characters/77924.md": [
@@ -6700,6 +6749,18 @@
         "mention"
       ]
     ],
+    "/characters/95786.md": [
+      [
+        "/community/community-weibo.md",
+        "提及:杜勒赛因",
+        "mention"
+      ],
+      [
+        "/sources/weibo.md",
+        "提及:杜勒赛因",
+        "mention"
+      ]
+    ],
     "/community/community-appstore.md": [
       [
         "/community/community-index.md",
@@ -6721,11 +6782,6 @@
       [
         "/characters/77918.md",
         "提及:阿拉克涅",
-        "mention"
-      ],
-      [
-        "/characters/77923.md",
-        "提及:卡斯托尔",
         "mention"
       ],
       [
@@ -6771,6 +6827,11 @@
       [
         "/characters/15576.md",
         "提及:墨菲",
+        "mention"
+      ],
+      [
+        "/characters/15587.md",
+        "提及:希洛",
         "mention"
       ],
       [
@@ -6835,11 +6896,6 @@
         "cross"
       ],
       [
-        "/community/community-official.md",
-        "聚合于",
-        "cross"
-      ],
-      [
         "/community/community-pixiv.md",
         "聚合于",
         "cross"
@@ -6855,22 +6911,12 @@
         "cross"
       ],
       [
-        "/community/community-steam-discussion.md",
-        "聚合于",
-        "cross"
-      ],
-      [
         "/community/community-steam.md",
         "聚合于",
         "cross"
       ],
       [
         "/community/community-stopgame.md",
-        "聚合于",
-        "cross"
-      ],
-      [
-        "/community/community-taptap-review.md",
         "聚合于",
         "cross"
       ],
@@ -6897,18 +6943,6 @@
       [
         "/community/community-youtube.md",
         "聚合于",
-        "cross"
-      ]
-    ],
-    "/community/community-official.md": [
-      [
-        "/community/community-index.md",
-        "聚合于",
-        "cross"
-      ],
-      [
-        "/sources/official.md",
-        "同平台",
         "cross"
       ]
     ],
@@ -6953,18 +6987,6 @@
         "cross"
       ]
     ],
-    "/community/community-steam-discussion.md": [
-      [
-        "/community/community-index.md",
-        "聚合于",
-        "cross"
-      ],
-      [
-        "/sources/steam_discussion.md",
-        "同平台",
-        "cross"
-      ]
-    ],
     "/community/community-steam.md": [
       [
         "/characters/130226.md",
@@ -6994,18 +7016,6 @@
         "cross"
       ]
     ],
-    "/community/community-taptap-review.md": [
-      [
-        "/community/community-index.md",
-        "聚合于",
-        "cross"
-      ],
-      [
-        "/sources/taptap_review.md",
-        "同平台",
-        "cross"
-      ]
-    ],
     "/community/community-taptap.md": [
       [
         "/community/community-index.md",
@@ -7025,8 +7035,33 @@
         "mention"
       ],
       [
+        "/characters/15599.md",
+        "提及:萨尔瓦多",
+        "mention"
+      ],
+      [
+        "/characters/77917.md",
+        "提及:波吕克斯",
+        "mention"
+      ],
+      [
         "/characters/77918.md",
         "提及:阿拉克涅",
+        "mention"
+      ],
+      [
+        "/characters/95786.md",
+        "提及:杜勒赛因",
+        "mention"
+      ],
+      [
+        "/characters/15577.md",
+        "提及:菲茵特",
+        "mention"
+      ],
+      [
+        "/characters/54117.md",
+        "提及:哈姆林",
         "mention"
       ],
       [
@@ -7037,6 +7072,11 @@
       [
         "/characters/130226.md",
         "提及:沙耶",
+        "mention"
+      ],
+      [
+        "/characters/15602.md",
+        "提及:融朵",
         "mention"
       ],
       [
@@ -7118,6 +7158,11 @@
       [
         "/characters/130226.md",
         "提及:沙耶",
+        "mention"
+      ],
+      [
+        "/characters/15560.md",
+        "提及:Pandia",
         "mention"
       ],
       [
@@ -8382,6 +8427,13 @@
         "mention"
       ]
     ],
+    "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
     "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md": [
       [
         "/characters/15603.md",
@@ -8467,11 +8519,6 @@
         "mention"
       ],
       [
-        "/characters/77923.md",
-        "提及:卡斯托尔",
-        "mention"
-      ],
-      [
         "/characters/77925.md",
         "提及:克莱门汀",
         "mention"
@@ -8517,6 +8564,11 @@
         "mention"
       ],
       [
+        "/characters/15587.md",
+        "提及:希洛",
+        "mention"
+      ],
+      [
         "/community/community-bilibili.md",
         "同平台",
         "cross"
@@ -8557,11 +8609,6 @@
       ]
     ],
     "/sources/official.md": [
-      [
-        "/community/community-official.md",
-        "同平台",
-        "cross"
-      ],
       [
         "/news-output/news-output-official.md",
         "抽样自",
@@ -8628,11 +8675,6 @@
     ],
     "/sources/steam_discussion.md": [
       [
-        "/community/community-steam-discussion.md",
-        "同平台",
-        "cross"
-      ],
-      [
         "/news-output/news-output-steam-discussion.md",
         "抽样自",
         "cross"
@@ -8664,11 +8706,6 @@
     ],
     "/sources/taptap_review.md": [
       [
-        "/community/community-taptap-review.md",
-        "同平台",
-        "cross"
-      ],
-      [
         "/news-output/news-output-taptap-review.md",
         "抽样自",
         "cross"
@@ -8681,8 +8718,33 @@
         "mention"
       ],
       [
+        "/characters/15599.md",
+        "提及:萨尔瓦多",
+        "mention"
+      ],
+      [
+        "/characters/77917.md",
+        "提及:波吕克斯",
+        "mention"
+      ],
+      [
         "/characters/77918.md",
         "提及:阿拉克涅",
+        "mention"
+      ],
+      [
+        "/characters/95786.md",
+        "提及:杜勒赛因",
+        "mention"
+      ],
+      [
+        "/characters/15577.md",
+        "提及:菲茵特",
+        "mention"
+      ],
+      [
+        "/characters/54117.md",
+        "提及:哈姆林",
         "mention"
       ],
       [
@@ -8693,6 +8755,11 @@
       [
         "/characters/130226.md",
         "提及:沙耶",
+        "mention"
+      ],
+      [
+        "/characters/15602.md",
+        "提及:融朵",
         "mention"
       ],
       [
@@ -8727,6 +8794,11 @@
       [
         "/characters/130226.md",
         "提及:沙耶",
+        "mention"
+      ],
+      [
+        "/characters/15560.md",
+        "提及:Pandia",
         "mention"
       ],
       [
@@ -9065,14 +9137,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-timeline.md",
       "/community/community-weibo.md",
@@ -9175,6 +9244,7 @@
       "/projects/bpt-sdk-doc-compat.md",
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -9224,6 +9294,7 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -9358,11 +9429,13 @@
       "/projects/bpt-sdk-doc-compat.md",
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/project-bpt-agent-sdk.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
     ],
     "aggregate": [
@@ -9397,14 +9470,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-weibo.md",
       "/community/community-weixin.md",
@@ -9468,14 +9538,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-timeline.md",
       "/community/community-weibo.md",
@@ -9869,6 +9936,7 @@
       "/projects/bpt-sdk-doc-compat.md",
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/project-bpt-agent-sdk.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
@@ -9880,6 +9948,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -9954,6 +10023,9 @@
     "cg": [
       "/assets/assets-images.md",
       "/wiki-data/wiki-data-cg-gallery.md"
+    ],
+    "change": [
+      "/projects/bpt-sdk-doc-onboarding.md"
     ],
     "channels": [
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md"
@@ -10031,7 +10103,6 @@
       "/README.md"
     ],
     "cn": [
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/sources/taptap.md",
       "/sources/taptap_review.md",
@@ -10083,14 +10154,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-timeline.md",
       "/community/community-weibo.md",
@@ -10185,14 +10253,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-timeline.md",
       "/community/community-weibo.md",
@@ -10277,6 +10342,7 @@
       "/projects/bpt-sdk-doc-compat.md",
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -10328,6 +10394,7 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -10555,6 +10622,7 @@
       "/projects/bpt-sdk-doc-compat.md",
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -10606,6 +10674,7 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -10770,14 +10839,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-timeline.md",
       "/community/community-weibo.md",
@@ -10852,6 +10918,7 @@
       "/projects/bpt-sdk-doc-compat.md",
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -10903,6 +10970,7 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -11060,6 +11128,7 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -11104,6 +11173,7 @@
       "/projects/bpt-sdk-doc-compat.md",
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
@@ -11159,7 +11229,6 @@
       "/sources/discord.md"
     ],
     "discussion": [
-      "/community/community-steam-discussion.md",
       "/memory/memory-ext-storage-discussion.md",
       "/news-output/news-output-steam-discussion.md",
       "/sources/steam_discussion.md"
@@ -11178,6 +11247,7 @@
       "/projects/bpt-sdk-doc-compat.md",
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/extracted-lua-readme.md"
@@ -11187,6 +11257,7 @@
       "/projects/bpt-sdk-doc-compat.md",
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md"
@@ -11274,6 +11345,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -11325,7 +11397,8 @@
       "/projects/bpt-sdk-doc-errors.md"
     ],
     "evaluation": [
-      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md"
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md"
     ],
     "event": [
       "/memory/memory-ext-collab-event-playbook.md"
@@ -11452,14 +11525,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-timeline.md",
       "/community/community-weibo.md",
@@ -11725,8 +11795,6 @@
     "global": [
       "/community/community-appstore.md",
       "/community/community-google-play.md",
-      "/community/community-official.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-youtube.md",
       "/sources/appstore.md",
@@ -11737,6 +11805,7 @@
       "/sources/youtube.md"
     ],
     "goal": [
+      "/projects/bpt-sdk-doc-onboarding.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
     ],
     "google": [
@@ -11942,14 +12011,11 @@
       "/community/community-bilibili.md",
       "/community/community-discord.md",
       "/community/community-google-play.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-weibo.md",
       "/community/community-weixin.md",
@@ -11993,6 +12059,7 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -12311,14 +12378,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-timeline.md",
       "/community/community-weibo.md",
@@ -12393,6 +12457,7 @@
       "/projects/bpt-sdk-doc-compat.md",
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -12444,6 +12509,7 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -12604,14 +12670,11 @@
       "/community/community-bilibili.md",
       "/community/community-discord.md",
       "/community/community-google-play.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-weibo.md",
       "/community/community-weixin.md",
@@ -12774,9 +12837,15 @@
       "/memory/memory-ext-active-policy-direct-push-main.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
+    "maintainer": [
+      "/projects/bpt-sdk-doc-onboarding.md"
+    ],
     "maintenance": [
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/wiki-data/wiki-data-update-notices.md"
+    ],
+    "make": [
+      "/projects/bpt-sdk-doc-onboarding.md"
     ],
     "management": [
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
@@ -12878,6 +12947,7 @@
       "/projects/bpt-sdk-doc-compat.md",
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -12920,6 +12990,7 @@
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -13107,9 +13178,11 @@
     "neighbors": [
       "/README.md"
     ],
+    "new": [
+      "/projects/bpt-sdk-doc-onboarding.md"
+    ],
     "news": [
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-timeline.md",
       "/news-output/news-output-all.md",
       "/news-output/news-output-appstore.md",
@@ -13198,7 +13271,6 @@
       "/characters/15582.md"
     ],
     "official": [
-      "/community/community-official.md",
       "/news-output/news-output-official.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
@@ -13214,7 +13286,8 @@
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
     ],
     "onboarding": [
-      "/assets/assets-chat-onboarding-snippet.md"
+      "/assets/assets-chat-onboarding-snippet.md",
+      "/projects/bpt-sdk-doc-onboarding.md"
     ],
     "open": [
       "/README.md",
@@ -13343,14 +13416,11 @@
       "/community/community-bilibili.md",
       "/community/community-discord.md",
       "/community/community-google-play.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-weibo.md",
       "/community/community-weixin.md",
@@ -13494,14 +13564,11 @@
       "/community/community-bilibili.md",
       "/community/community-discord.md",
       "/community/community-google-play.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-weibo.md",
       "/community/community-weixin.md",
@@ -13546,6 +13613,7 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -13686,6 +13754,7 @@
       "/projects/bpt-sdk-doc-compat.md",
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/news-archive-sources-registry.md",
       "/projects/project-bpt-agent-sdk.md",
@@ -13732,6 +13801,7 @@
       "/projects/bpt-sdk-doc-compat.md",
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/news-archive-sources-registry.md",
       "/projects/project-bpt-agent-sdk.md",
@@ -13831,19 +13901,19 @@
     "prototype": [
       "/resource/resource-proposal-wiki-prototype-202603.md"
     ],
+    "prove": [
+      "/projects/bpt-sdk-doc-onboarding.md"
+    ],
     "public": [
       "/community/community-appstore.md",
       "/community/community-bilibili.md",
       "/community/community-discord.md",
       "/community/community-google-play.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-weibo.md",
       "/community/community-weixin.md",
@@ -13886,6 +13956,7 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -14068,14 +14139,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-weibo.md",
       "/community/community-weixin.md",
@@ -14157,6 +14225,7 @@
       "/memory/memory-strategy-repo-slimming-plan.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -14242,6 +14311,7 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -14294,7 +14364,6 @@
     ],
     "review": [
       "/community/community-steam.md",
-      "/community/community-taptap-review.md",
       "/news-output/news-output-taptap-review.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/sources/steam.md",
@@ -14346,6 +14415,9 @@
     ],
     "rust": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-build-verification.md"
+    ],
+    "safely": [
+      "/projects/bpt-sdk-doc-onboarding.md"
     ],
     "sampled": [
       "/news-output/news-output-all.md",
@@ -14421,6 +14493,7 @@
       "/projects/bpt-sdk-doc-compat.md",
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/project-bpt-agent-sdk.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
@@ -14431,6 +14504,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -14638,8 +14712,6 @@
       "/memory/project-status.md"
     ],
     "steam": [
-      "/community/community-official.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/memory/memory-research-community-analysis-2026-05-18-26.md",
       "/news-output/news-output-steam-discussion.md",
@@ -14771,6 +14843,7 @@
       "/projects/bpt-sdk-doc-compat.md",
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/news-archive-sources-registry.md",
       "/projects/project-bpt-agent-sdk.md",
@@ -14881,7 +14954,6 @@
       "/README.md"
     ],
     "taptap": [
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
@@ -15014,6 +15086,7 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -15426,7 +15499,8 @@
     "zero": [
       "/community/community-index.md",
       "/community/community-timeline.md",
-      "/projects/bpt-sdk-doc-compat.md"
+      "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-onboarding.md"
     ],
     "に固": [
       "/resource/resource-community-analysis-jp-discord-insights-202606.md"
@@ -15860,14 +15934,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-timeline.md",
       "/community/community-weibo.md",
@@ -15952,6 +16023,7 @@
       "/projects/bpt-sdk-doc-compat.md",
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -16003,6 +16075,7 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -16101,14 +16174,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-timeline.md",
       "/community/community-weibo.md",
@@ -16193,6 +16263,7 @@
       "/projects/bpt-sdk-doc-compat.md",
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -16244,6 +16315,7 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -16428,14 +16500,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-timeline.md",
       "/community/community-weibo.md",
@@ -16473,6 +16542,7 @@
       "/projects/bpt-sdk-doc-compat.md",
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -16524,6 +16594,7 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -16622,6 +16693,9 @@
     ],
     "与权": [
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
+    ],
+    "与构": [
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md"
     ],
     "与死": [
       "/characters/15564.md"
@@ -16768,14 +16842,11 @@
       "/community/community-bilibili.md",
       "/community/community-discord.md",
       "/community/community-google-play.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-weibo.md",
       "/community/community-weixin.md",
@@ -17370,6 +17441,7 @@
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md"
     ],
@@ -17533,14 +17605,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-timeline.md",
       "/community/community-weibo.md",
@@ -17578,6 +17647,7 @@
       "/projects/bpt-sdk-doc-compat.md",
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -17629,6 +17699,7 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -17727,6 +17798,9 @@
     ],
     "仇者": [
       "/characters/15587.md"
+    ],
+    "今工": [
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md"
     ],
     "仍原": [
       "/README.md"
@@ -18424,14 +18498,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-timeline.md",
       "/community/community-weibo.md",
@@ -18469,6 +18540,7 @@
       "/projects/bpt-sdk-doc-compat.md",
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -18520,6 +18592,7 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -18615,14 +18688,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-timeline.md",
       "/community/community-weibo.md",
@@ -18707,6 +18777,7 @@
       "/projects/bpt-sdk-doc-compat.md",
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -18758,6 +18829,7 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -19213,14 +19285,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-weibo.md",
       "/community/community-weixin.md",
@@ -19249,6 +19318,7 @@
       "/README.md"
     ],
     "健康": [
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/sources/appstore.md",
@@ -19414,7 +19484,8 @@
       "/memory/memory-ext-active-contribution-protocol.md"
     ],
     "全绿": [
-      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md"
     ],
     "全身": [
       "/characters/125346.md",
@@ -19432,14 +19503,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-timeline.md",
       "/community/community-weibo.md",
@@ -19853,9 +19921,7 @@
       "/characters/15579.md"
     ],
     "几十": [
-      "/community/community-steam-discussion.md",
-      "/community/community-stopgame.md",
-      "/community/community-taptap.md"
+      "/community/community-stopgame.md"
     ],
     "凯刻斯": [
       "/characters/15594.md"
@@ -20057,14 +20123,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-weibo.md",
       "/community/community-weixin.md",
@@ -20398,14 +20461,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-timeline.md",
       "/community/community-weibo.md",
@@ -20443,6 +20503,7 @@
       "/projects/bpt-sdk-doc-compat.md",
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -20494,6 +20555,7 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -20899,14 +20961,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-weibo.md",
       "/community/community-weixin.md",
@@ -20993,9 +21052,7 @@
       "/characters/15571.md"
     ],
     "十条": [
-      "/community/community-steam-discussion.md",
-      "/community/community-stopgame.md",
-      "/community/community-taptap.md"
+      "/community/community-stopgame.md"
     ],
     "千级": [
       "/community/community-bilibili.md",
@@ -21089,6 +21146,9 @@
       "/characters/15587.md",
       "/characters/15601.md",
       "/characters/15602.md"
+    ],
+    "单测": [
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md"
     ],
     "单页": [
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
@@ -21602,14 +21662,11 @@
       "/community/community-bilibili.md",
       "/community/community-discord.md",
       "/community/community-google-play.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-weibo.md",
       "/community/community-weixin.md",
@@ -21968,14 +22025,11 @@
       "/community/community-bilibili.md",
       "/community/community-discord.md",
       "/community/community-google-play.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-weibo.md",
       "/community/community-weixin.md",
@@ -23055,6 +23109,9 @@
     "坚毅": [
       "/characters/77922.md"
     ],
+    "型与": [
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md"
+    ],
     "型发": [
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
     ],
@@ -23348,14 +23405,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-timeline.md",
       "/community/community-weibo.md",
@@ -23440,6 +23494,7 @@
       "/projects/bpt-sdk-doc-compat.md",
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -23491,6 +23546,7 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -24097,14 +24153,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-timeline.md",
       "/community/community-weibo.md",
@@ -24189,6 +24242,7 @@
       "/projects/bpt-sdk-doc-compat.md",
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -24240,6 +24294,7 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -24604,21 +24659,19 @@
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md"
     ],
     "完成": [
-      "/memory/memory-ext-active-mission-v2-0-three-pillars.md"
+      "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md"
     ],
     "完整": [
       "/community/community-appstore.md",
       "/community/community-bilibili.md",
       "/community/community-discord.md",
       "/community/community-google-play.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-weibo.md",
       "/community/community-weixin.md",
@@ -24724,14 +24777,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-timeline.md",
       "/community/community-weibo.md",
@@ -24771,6 +24821,7 @@
       "/projects/bpt-sdk-doc-compat.md",
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -24822,6 +24873,7 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -24995,14 +25047,11 @@
       "/community/community-bilibili.md",
       "/community/community-discord.md",
       "/community/community-google-play.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-weibo.md",
       "/community/community-weixin.md",
@@ -25339,9 +25388,7 @@
       "/characters/94450.md"
     ],
     "少条": [
-      "/community/community-steam-discussion.md",
-      "/community/community-stopgame.md",
-      "/community/community-taptap.md"
+      "/community/community-stopgame.md"
     ],
     "尖刺": [
       "/characters/15565.md"
@@ -25729,6 +25776,7 @@
     "工程": [
       "/README.md",
       "/memory/memory-ext-biav-info-classification.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md"
     ],
     "工裁": [
@@ -26013,14 +26061,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-weibo.md",
       "/community/community-weixin.md",
@@ -26248,6 +26293,9 @@
     "度时": [
       "/community/community-timeline.md"
     ],
+    "度最": [
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md"
+    ],
     "度榜": [
       "/sources/appstore.md",
       "/sources/bilibili.md",
@@ -26274,6 +26322,7 @@
       "/story/STORY_RESEARCH.md"
     ],
     "康度": [
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/sources/appstore.md",
       "/sources/bilibili.md",
@@ -26325,6 +26374,9 @@
     ],
     "建设": [
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md"
+    ],
+    "建零": [
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md"
     ],
     "开信": [
       "/README.md",
@@ -27054,14 +27106,11 @@
       "/community/community-bilibili.md",
       "/community/community-discord.md",
       "/community/community-google-play.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-weibo.md",
       "/community/community-weixin.md",
@@ -27292,14 +27341,11 @@
       "/community/community-bilibili.md",
       "/community/community-discord.md",
       "/community/community-google-play.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-weibo.md",
       "/community/community-weixin.md",
@@ -27392,14 +27438,11 @@
       "/community/community-bilibili.md",
       "/community/community-discord.md",
       "/community/community-google-play.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-weibo.md",
       "/community/community-weixin.md",
@@ -27581,6 +27624,9 @@
     "成并": [
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
+    "成度": [
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md"
+    ],
     "成战": [
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md"
     ],
@@ -27676,9 +27722,7 @@
     ],
     "或更": [
       "/characters/15572.md",
-      "/community/community-steam-discussion.md",
-      "/community/community-stopgame.md",
-      "/community/community-taptap.md"
+      "/community/community-stopgame.md"
     ],
     "或植": [
       "/characters/77925.md"
@@ -28299,14 +28343,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-timeline.md",
       "/community/community-weibo.md",
@@ -28391,6 +28432,7 @@
       "/projects/bpt-sdk-doc-compat.md",
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -28442,6 +28484,7 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -28852,14 +28895,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-timeline.md",
       "/community/community-weibo.md",
@@ -28897,6 +28937,7 @@
       "/projects/bpt-sdk-doc-compat.md",
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -28948,6 +28989,7 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -29122,14 +29164,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-timeline.md",
       "/community/community-weibo.md",
@@ -29204,6 +29243,7 @@
       "/projects/bpt-sdk-doc-compat.md",
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -29255,6 +29295,7 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -29477,14 +29518,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-timeline.md",
       "/community/community-weibo.md",
@@ -29569,6 +29607,7 @@
       "/projects/bpt-sdk-doc-compat.md",
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -29620,6 +29659,7 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -29737,14 +29777,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-timeline.md",
       "/community/community-weibo.md",
@@ -29829,6 +29866,7 @@
       "/projects/bpt-sdk-doc-compat.md",
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -29880,6 +29918,7 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -30182,14 +30221,11 @@
       "/community/community-bilibili.md",
       "/community/community-discord.md",
       "/community/community-google-play.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-weibo.md",
       "/community/community-weixin.md",
@@ -30898,7 +30934,8 @@
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md"
     ],
     "是银": [
-      "/README.md"
+      "/README.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md"
     ],
     "是防": [
       "/characters/15603.md"
@@ -30989,9 +31026,7 @@
       "/characters/77922.md"
     ],
     "更少": [
-      "/community/community-steam-discussion.md",
-      "/community/community-stopgame.md",
-      "/community/community-taptap.md"
+      "/community/community-stopgame.md"
     ],
     "更强": [
       "/characters/15598.md",
@@ -31078,6 +31113,9 @@
     ],
     "最需": [
       "/characters/15595.md"
+    ],
+    "最高": [
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md"
     ],
     "月中": [
       "/community/community-timeline.md"
@@ -31314,14 +31352,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-timeline.md",
       "/community/community-weibo.md",
@@ -31406,6 +31441,7 @@
       "/projects/bpt-sdk-doc-compat.md",
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -31457,6 +31493,7 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -31706,14 +31743,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-timeline.md",
       "/community/community-weibo.md",
@@ -31798,6 +31832,7 @@
       "/projects/bpt-sdk-doc-compat.md",
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -31849,6 +31884,7 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -31971,9 +32007,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md"
     ],
     "条或": [
-      "/community/community-steam-discussion.md",
-      "/community/community-stopgame.md",
-      "/community/community-taptap.md"
+      "/community/community-stopgame.md"
     ],
     "条战": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md"
@@ -32143,7 +32177,8 @@
     ],
     "构建": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-build-verification.md",
-      "/news-output/news-output-newsjs.md"
+      "/news-output/news-output-newsjs.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md"
     ],
     "构快": [
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
@@ -32195,14 +32230,11 @@
       "/community/community-bilibili.md",
       "/community/community-discord.md",
       "/community/community-google-play.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-weibo.md",
       "/community/community-weixin.md",
@@ -32288,14 +32320,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-timeline.md",
       "/community/community-weibo.md",
@@ -32333,6 +32362,7 @@
       "/projects/bpt-sdk-doc-compat.md",
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -32384,6 +32414,7 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -32574,6 +32605,7 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -32627,14 +32659,11 @@
       "/community/community-bilibili.md",
       "/community/community-discord.md",
       "/community/community-google-play.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-weibo.md",
       "/community/community-weixin.md",
@@ -32784,14 +32813,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-weibo.md",
       "/community/community-weixin.md",
@@ -32926,14 +32952,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-timeline.md",
       "/community/community-weibo.md",
@@ -32972,6 +32995,7 @@
       "/projects/bpt-sdk-doc-compat.md",
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -33023,6 +33047,7 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -33234,14 +33259,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-timeline.md",
       "/community/community-weibo.md",
@@ -33326,6 +33348,7 @@
       "/projects/bpt-sdk-doc-compat.md",
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -33377,6 +33400,7 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -33463,14 +33487,11 @@
       "/community/community-bilibili.md",
       "/community/community-discord.md",
       "/community/community-google-play.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-weibo.md",
       "/community/community-weixin.md",
@@ -33909,6 +33930,9 @@
     ],
     "流能": [
       "/characters/130901.md"
+    ],
+    "测全": [
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md"
     ],
     "测到": [
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md"
@@ -35514,10 +35538,9 @@
     ],
     "百级": [
       "/community/community-appstore.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-ruliweb.md",
-      "/community/community-taptap-review.md"
+      "/community/community-taptap.md"
     ],
     "的一": [
       "/characters/15577.md",
@@ -35541,6 +35564,9 @@
     ],
     "的乐": [
       "/characters/54117.md"
+    ],
+    "的产": [
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md"
     ],
     "的仁": [
       "/characters/15599.md"
@@ -36612,14 +36638,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-weibo.md",
       "/community/community-weixin.md",
@@ -36724,14 +36747,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-timeline.md",
       "/community/community-weibo.md",
@@ -36959,6 +36979,9 @@
     "程产": [
       "/README.md"
     ],
+    "程完": [
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md"
+    ],
     "程质": [
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md"
     ],
@@ -37026,14 +37049,11 @@
       "/community/community-bilibili.md",
       "/community/community-discord.md",
       "/community/community-google-play.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-weibo.md",
       "/community/community-weixin.md",
@@ -37234,7 +37254,8 @@
     ],
     "类型": [
       "/README.md",
-      "/memory/memory-ext-bpt-architecture-summary-template.md"
+      "/memory/memory-ext-bpt-architecture-summary-template.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md"
     ],
     "类大": [
       "/memory/memory-ext-storage-discussion.md"
@@ -37266,14 +37287,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-weibo.md",
       "/community/community-weixin.md",
@@ -37415,12 +37433,11 @@
       "/community/community-bilibili.md",
       "/community/community-discord.md",
       "/community/community-google-play.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
       "/community/community-steam.md",
-      "/community/community-taptap-review.md",
+      "/community/community-taptap.md",
       "/community/community-weibo.md",
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
@@ -38476,6 +38493,9 @@
     "芯转": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md"
     ],
+    "芯迄": [
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md"
+    ],
     "芯采": [
       "/memory/memory-ext-active-silver-blackpool-interface.md"
     ],
@@ -38884,14 +38904,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-weibo.md",
       "/community/community-weixin.md",
@@ -39073,14 +39090,11 @@
       "/community/community-bilibili.md",
       "/community/community-discord.md",
       "/community/community-google-play.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-weibo.md",
       "/community/community-weixin.md",
@@ -39698,14 +39712,11 @@
       "/community/community-bilibili.md",
       "/community/community-discord.md",
       "/community/community-google-play.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-weibo.md",
       "/community/community-weixin.md",
@@ -39844,14 +39855,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-timeline.md",
       "/community/community-weibo.md",
@@ -39936,6 +39944,7 @@
       "/projects/bpt-sdk-doc-compat.md",
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -39987,6 +39996,7 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -40343,6 +40353,9 @@
     "迁的": [
       "/characters/15586.md"
     ],
+    "迄今": [
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md"
+    ],
     "迅疾": [
       "/characters/15595.md"
     ],
@@ -40429,7 +40442,8 @@
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
     ],
     "这是": [
-      "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
+      "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md"
     ],
     "这条": [
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
@@ -40522,14 +40536,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-timeline.md",
       "/community/community-weibo.md",
@@ -40567,6 +40578,7 @@
       "/projects/bpt-sdk-doc-compat.md",
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -40618,6 +40630,7 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -41246,14 +41259,11 @@
       "/community/community-bilibili.md",
       "/community/community-discord.md",
       "/community/community-google-play.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-weibo.md",
       "/community/community-weixin.md",
@@ -41315,14 +41325,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-weibo.md",
       "/community/community-weixin.md",
@@ -41433,14 +41440,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-timeline.md",
       "/community/community-weibo.md",
@@ -41525,6 +41529,7 @@
       "/projects/bpt-sdk-doc-compat.md",
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -41576,6 +41581,7 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -41680,14 +41686,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-weibo.md",
       "/community/community-weixin.md",
@@ -41712,14 +41715,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-timeline.md",
       "/community/community-weibo.md",
@@ -41757,6 +41757,7 @@
       "/projects/bpt-sdk-doc-compat.md",
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -41808,6 +41809,7 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -41913,6 +41915,7 @@
       "/projects/project-wiki.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "银钥": [
@@ -41969,14 +41972,11 @@
       "/community/community-bilibili.md",
       "/community/community-discord.md",
       "/community/community-google-play.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-weibo.md",
       "/community/community-weixin.md",
@@ -41991,14 +41991,11 @@
       "/community/community-bilibili.md",
       "/community/community-discord.md",
       "/community/community-google-play.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-weibo.md",
       "/community/community-weixin.md",
@@ -42041,14 +42038,11 @@
       "/community/community-bilibili.md",
       "/community/community-discord.md",
       "/community/community-google-play.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-weibo.md",
       "/community/community-weixin.md",
@@ -42348,6 +42342,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md"
     ],
     "零错": [
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
     ],
     "雷娅": [
@@ -42724,7 +42719,8 @@
     ],
     "高的": [
       "/characters/15562.md",
-      "/characters/15586.md"
+      "/characters/15586.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md"
     ],
     "高知": [
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
@@ -42891,10 +42887,12 @@
       "/projects/bpt-sdk-doc-compat.md",
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/project-bpt-agent-sdk.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
-      "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md"
+      "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md"
     ],
     "aggregate": [
       "/news-output/news-output-all.md",
@@ -42920,14 +42918,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-weibo.md",
       "/community/community-weixin.md",
@@ -42976,14 +42971,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-timeline.md",
       "/community/community-weibo.md",
@@ -43163,6 +43155,7 @@
       "/projects/bpt-sdk-doc-compat.md",
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/project-bpt-agent-sdk.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
@@ -43174,6 +43167,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -43414,6 +43408,7 @@
       "/projects/bpt-sdk-doc-compat.md",
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -43465,6 +43460,7 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -43622,14 +43618,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-timeline.md",
       "/community/community-weibo.md",
@@ -43704,6 +43697,7 @@
       "/projects/bpt-sdk-doc-compat.md",
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -43755,6 +43749,7 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -43903,6 +43898,7 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -43939,6 +43935,7 @@
       "/projects/bpt-sdk-doc-compat.md",
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
@@ -43979,7 +43976,6 @@
       "/sources/discord.md"
     ],
     "discussion": [
-      "/community/community-steam-discussion.md",
       "/news-output/news-output-steam-discussion.md",
       "/sources/steam_discussion.md"
     ],
@@ -43994,6 +43990,7 @@
       "/projects/bpt-sdk-doc-compat.md",
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/extracted-lua-readme.md"
@@ -44067,6 +44064,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -44109,7 +44107,8 @@
       "/projects/bpt-sdk-doc-errors.md"
     ],
     "evaluation": [
-      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md"
+      "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md"
     ],
     "execution": [
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
@@ -44184,14 +44183,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-timeline.md",
       "/community/community-weibo.md",
@@ -44450,14 +44446,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-timeline.md",
       "/community/community-weibo.md",
@@ -44532,6 +44525,7 @@
       "/projects/bpt-sdk-doc-compat.md",
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
@@ -44583,6 +44577,7 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -44694,14 +44689,11 @@
       "/community/community-bilibili.md",
       "/community/community-discord.md",
       "/community/community-google-play.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-weibo.md",
       "/community/community-weixin.md",
@@ -44928,7 +44920,6 @@
       "/wiki-data/wiki-data-update-notices.md"
     ],
     "official": [
-      "/community/community-official.md",
       "/news-output/news-output-official.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -44939,7 +44930,8 @@
       "/README.md"
     ],
     "onboarding": [
-      "/assets/assets-chat-onboarding-snippet.md"
+      "/assets/assets-chat-onboarding-snippet.md",
+      "/projects/bpt-sdk-doc-onboarding.md"
     ],
     "orchestrated": [
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
@@ -45005,14 +44997,11 @@
       "/community/community-bilibili.md",
       "/community/community-discord.md",
       "/community/community-google-play.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-weibo.md",
       "/community/community-weixin.md",
@@ -45177,6 +45166,7 @@
       "/projects/bpt-sdk-doc-compat.md",
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/news-archive-sources-registry.md",
       "/projects/project-bpt-agent-sdk.md",
@@ -45269,6 +45259,7 @@
     "repo": [
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -45322,7 +45313,6 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
     ],
     "review": [
-      "/community/community-taptap-review.md",
       "/news-output/news-output-taptap-review.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/sources/taptap_review.md"
@@ -45399,6 +45389,7 @@
       "/projects/bpt-sdk-doc-compat.md",
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/project-bpt-agent-sdk.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
@@ -45408,6 +45399,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -45486,7 +45478,6 @@
       "/memory/project-status.md"
     ],
     "steam": [
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/news-output/news-output-steam-discussion.md",
       "/news-output/news-output-steam.md",
@@ -45537,6 +45528,7 @@
       "/projects/bpt-sdk-doc-compat.md",
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/news-archive-sources-registry.md",
       "/projects/project-bpt-agent-sdk.md",
@@ -45567,7 +45559,6 @@
       "/unpacked/unpacked-lua-tables.md"
     ],
     "taptap": [
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/news-output/news-output-taptap-review.md",
       "/news-output/news-output-taptap.md",
@@ -45639,6 +45630,7 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
+      "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -46018,14 +46010,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-timeline.md",
       "/community/community-weibo.md",
@@ -46128,14 +46117,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-weibo.md",
       "/community/community-weixin.md",
@@ -46968,14 +46954,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-weibo.md",
       "/community/community-weixin.md",
@@ -47361,14 +47344,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-timeline.md",
       "/community/community-weibo.md",
@@ -47760,14 +47740,11 @@
       "/community/community-discord.md",
       "/community/community-google-play.md",
       "/community/community-index.md",
-      "/community/community-official.md",
       "/community/community-pixiv.md",
       "/community/community-reddit.md",
       "/community/community-ruliweb.md",
-      "/community/community-steam-discussion.md",
       "/community/community-steam.md",
       "/community/community-stopgame.md",
-      "/community/community-taptap-review.md",
       "/community/community-taptap.md",
       "/community/community-weibo.md",
       "/community/community-weixin.md",

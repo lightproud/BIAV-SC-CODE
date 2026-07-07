@@ -4,7 +4,7 @@ title: "bpt-agent-sdk POSITIONING"
 description: "**BPT Agent SDK = 一套稳定兼容的调用「表面」 + 一个我们完全掌控、比原版更简单更可靠的独立「引擎」。**"
 resource: "/projects/bpt-agent-sdk/docs/POSITIONING.md"
 tags: ["data_layer:curated", "design-doc", "sub-project:bpt-agent-sdk"]
-timestamp: "2026-07-06"
+timestamp: "2026-07-07"
 ---
 
 # 指针概念

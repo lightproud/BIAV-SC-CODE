@@ -1,8 +1,8 @@
 {
-  "generated": "2026-07-06",
+  "generated": "2026-07-07",
   "stats": {
-    "nodes": 327,
-    "edges": 390
+    "nodes": 326,
+    "edges": 399
   },
   "nodes": [
     {
@@ -1056,17 +1056,6 @@
       "tier": "skeleton"
     },
     {
-      "id": "/community/community-official.md",
-      "type": "dataset",
-      "title": "official 社区全量档案",
-      "tags": [
-        "data_layer:full_archive",
-        "platform:official",
-        "lens:analysis"
-      ],
-      "tier": "skeleton"
-    },
-    {
       "id": "/community/community-pixiv.md",
       "type": "dataset",
       "title": "pixiv 社区全量档案",
@@ -1100,17 +1089,6 @@
       "tier": "skeleton"
     },
     {
-      "id": "/community/community-steam-discussion.md",
-      "type": "dataset",
-      "title": "steam_discussion 社区全量档案",
-      "tags": [
-        "data_layer:full_archive",
-        "platform:steam_discussion",
-        "lens:analysis"
-      ],
-      "tier": "skeleton"
-    },
-    {
       "id": "/community/community-steam.md",
       "type": "dataset",
       "title": "steam 社区全量档案",
@@ -1128,17 +1106,6 @@
       "tags": [
         "data_layer:full_archive",
         "platform:stopgame",
-        "lens:analysis"
-      ],
-      "tier": "skeleton"
-    },
-    {
-      "id": "/community/community-taptap-review.md",
-      "type": "dataset",
-      "title": "taptap_review 社区全量档案",
-      "tags": [
-        "data_layer:full_archive",
-        "platform:taptap_review",
         "lens:analysis"
       ],
       "tier": "skeleton"
@@ -2061,6 +2028,17 @@
       "tier": "search"
     },
     {
+      "id": "/projects/bpt-sdk-doc-onboarding.md",
+      "type": "documentation",
+      "title": "bpt-agent-sdk ONBOARDING",
+      "tags": [
+        "data_layer:curated",
+        "design-doc",
+        "sub-project:bpt-agent-sdk"
+      ],
+      "tier": "search"
+    },
+    {
       "id": "/projects/bpt-sdk-doc-positioning.md",
       "type": "documentation",
       "title": "bpt-agent-sdk POSITIONING",
@@ -2611,6 +2589,17 @@
       "id": "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "type": "documentation",
       "title": "bpt-agent-sdk-completion-matrix-20260703",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "type": "documentation",
+      "title": "bpt-agent-sdk-evaluation-20260706",
       "tags": [
         "data_layer:curated",
         "deliverable",
@@ -3974,12 +3963,6 @@
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/77923.md",
-      "rel": "提及:卡斯托尔",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
       "target": "/characters/77925.md",
       "rel": "提及:克莱门汀",
       "rel_type": "mention"
@@ -4033,6 +4016,12 @@
       "rel_type": "mention"
     },
     {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/15587.md",
+      "rel": "提及:希洛",
+      "rel_type": "mention"
+    },
+    {
       "source": "/community/community-google-play.md",
       "target": "/characters/130226.md",
       "rel": "提及:Saya",
@@ -4058,8 +4047,38 @@
     },
     {
       "source": "/community/community-weibo.md",
+      "target": "/characters/15599.md",
+      "rel": "提及:萨尔瓦多",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-weibo.md",
+      "target": "/characters/77917.md",
+      "rel": "提及:波吕克斯",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-weibo.md",
       "target": "/characters/77918.md",
       "rel": "提及:阿拉克涅",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-weibo.md",
+      "target": "/characters/95786.md",
+      "rel": "提及:杜勒赛因",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-weibo.md",
+      "target": "/characters/15577.md",
+      "rel": "提及:菲茵特",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-weibo.md",
+      "target": "/characters/54117.md",
+      "rel": "提及:哈姆林",
       "rel_type": "mention"
     },
     {
@@ -4072,6 +4091,12 @@
       "source": "/community/community-weibo.md",
       "target": "/characters/130226.md",
       "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-weibo.md",
+      "target": "/characters/15602.md",
+      "rel": "提及:融朵",
       "rel_type": "mention"
     },
     {
@@ -4126,6 +4151,12 @@
       "source": "/community/community-youtube.md",
       "target": "/characters/130226.md",
       "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-youtube.md",
+      "target": "/characters/15560.md",
+      "rel": "提及:Pandia",
       "rel_type": "mention"
     },
     {
@@ -5251,6 +5282,12 @@
       "rel_type": "mention"
     },
     {
+      "source": "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
       "source": "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
@@ -5318,12 +5355,6 @@
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/77923.md",
-      "rel": "提及:卡斯托尔",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
       "target": "/characters/77925.md",
       "rel": "提及:克莱门汀",
       "rel_type": "mention"
@@ -5377,6 +5408,12 @@
       "rel_type": "mention"
     },
     {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/15587.md",
+      "rel": "提及:希洛",
+      "rel_type": "mention"
+    },
+    {
       "source": "/sources/google_play.md",
       "target": "/characters/130226.md",
       "rel": "提及:Saya",
@@ -5402,8 +5439,38 @@
     },
     {
       "source": "/sources/weibo.md",
+      "target": "/characters/15599.md",
+      "rel": "提及:萨尔瓦多",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/weibo.md",
+      "target": "/characters/77917.md",
+      "rel": "提及:波吕克斯",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/weibo.md",
       "target": "/characters/77918.md",
       "rel": "提及:阿拉克涅",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/weibo.md",
+      "target": "/characters/95786.md",
+      "rel": "提及:杜勒赛因",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/weibo.md",
+      "target": "/characters/15577.md",
+      "rel": "提及:菲茵特",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/weibo.md",
+      "target": "/characters/54117.md",
+      "rel": "提及:哈姆林",
       "rel_type": "mention"
     },
     {
@@ -5419,6 +5486,12 @@
       "rel_type": "mention"
     },
     {
+      "source": "/sources/weibo.md",
+      "target": "/characters/15602.md",
+      "rel": "提及:融朵",
+      "rel_type": "mention"
+    },
+    {
       "source": "/sources/weixin.md",
       "target": "/characters/130226.md",
       "rel": "提及:沙耶",
@@ -5428,6 +5501,12 @@
       "source": "/sources/youtube.md",
       "target": "/characters/130226.md",
       "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/youtube.md",
+      "target": "/characters/15560.md",
+      "rel": "提及:Pandia",
       "rel_type": "mention"
     },
     {
@@ -5725,12 +5804,6 @@
       "rel_type": "cross"
     },
     {
-      "source": "/community/community-official.md",
-      "target": "/community/community-index.md",
-      "rel": "聚合于",
-      "rel_type": "cross"
-    },
-    {
       "source": "/community/community-pixiv.md",
       "target": "/community/community-index.md",
       "rel": "聚合于",
@@ -5749,12 +5822,6 @@
       "rel_type": "cross"
     },
     {
-      "source": "/community/community-steam-discussion.md",
-      "target": "/community/community-index.md",
-      "rel": "聚合于",
-      "rel_type": "cross"
-    },
-    {
       "source": "/community/community-steam.md",
       "target": "/community/community-index.md",
       "rel": "聚合于",
@@ -5762,12 +5829,6 @@
     },
     {
       "source": "/community/community-stopgame.md",
-      "target": "/community/community-index.md",
-      "rel": "聚合于",
-      "rel_type": "cross"
-    },
-    {
-      "source": "/community/community-taptap-review.md",
       "target": "/community/community-index.md",
       "rel": "聚合于",
       "rel_type": "cross"
@@ -5851,12 +5912,6 @@
       "rel_type": "cross"
     },
     {
-      "source": "/community/community-official.md",
-      "target": "/sources/official.md",
-      "rel": "同平台",
-      "rel_type": "cross"
-    },
-    {
       "source": "/news-output/news-output-official.md",
       "target": "/sources/official.md",
       "rel": "抽样自",
@@ -5911,12 +5966,6 @@
       "rel_type": "cross"
     },
     {
-      "source": "/community/community-steam-discussion.md",
-      "target": "/sources/steam_discussion.md",
-      "rel": "同平台",
-      "rel_type": "cross"
-    },
-    {
       "source": "/news-output/news-output-steam-discussion.md",
       "target": "/sources/steam_discussion.md",
       "rel": "抽样自",
@@ -5944,12 +5993,6 @@
       "source": "/news-output/news-output-taptap.md",
       "target": "/sources/taptap.md",
       "rel": "抽样自",
-      "rel_type": "cross"
-    },
-    {
-      "source": "/community/community-taptap-review.md",
-      "target": "/sources/taptap_review.md",
-      "rel": "同平台",
       "rel_type": "cross"
     },
     {
