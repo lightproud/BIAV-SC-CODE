@@ -265,6 +265,44 @@ describe('MirroringSessionStore', () => {
     // Materialized: the plain local store now has it on disk.
     expect((await local.load('sess-remote'))?.messages.length).toBe(1);
   });
+
+  it('filePath delegates to the wrapped JsonlSessionStore and matches its path (v0.18.2)', async () => {
+    const local = makeLocal();
+    const mirror = new MirroringSessionStore(local, new SpyStore(), {
+      projectKey: PK,
+      flush: 'eager',
+      backoffBaseMs: 1,
+    });
+    // Same path the raw local store reports — this is what runtime.ts reads to
+    // populate the SubagentStop hook's agent_transcript_path.
+    expect(mirror.filePath('agent-x')).toBe(local.filePath('agent-x'));
+    // And the transcript is really materialized on disk after a write.
+    mirror.append('agent-x', userEntry('u1'));
+    await mirror.flushAll();
+    expect(existsSync(local.filePath('agent-x'))).toBe(true);
+  });
+
+  it('filePath returns undefined when the wrapped local store lacks it (v0.18.2)', () => {
+    // A bare InternalTranscriptStore stub with no filePath concretion
+    // (mirrors InMemorySessionStore-style locals): the duck-type must not throw.
+    const mirror = new MirroringSessionStore(
+      {
+        append() {},
+        async load() {
+          return null;
+        },
+        async list() {
+          return [];
+        },
+        async latestSessionId() {
+          return null;
+        },
+      },
+      new SpyStore(),
+      { projectKey: PK },
+    );
+    expect(mirror.filePath('agent-x')).toBeUndefined();
+  });
 });
 
 // ---------------------------------------------------------------------------
