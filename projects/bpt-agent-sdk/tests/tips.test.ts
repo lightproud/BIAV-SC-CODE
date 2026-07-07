@@ -195,14 +195,17 @@ describe('context-tip prompt provenance (corpus-sync guard, Track B parity)', ()
       .filter((s) => !body.includes(s.slice(0, 60)));
   };
 
-  it('the provenance table has 2 faithful entries', () => {
+  it('the provenance table has 2 entries, now translated (faithful:false)', () => {
     expect(Object.keys(TIP_PROVENANCE)).toHaveLength(2);
-    for (const p of Object.values(TIP_PROVENANCE)) expect(p.faithful).toBe(true);
+    // i18n-zh Phase 2 batch C: both tip prompts translated (examples/tokens/JSON
+    // enum kept English), so faithful:false; catalog situations stay faithful.
+    for (const p of Object.values(TIP_PROVENANCE)) expect(p.faithful).toBe(false);
   });
-  it.runIf(existsSync(archive))('selector is faithful to its archive', () => {
+  // Translated (faithful:false): Chinese prose can't anchor-match the English archive.
+  it.runIf(existsSync(archive) && CONTEXT_TIP_SELECTOR_PROVENANCE.faithful)('selector is faithful to its archive', () => {
     expect(faithful(CONTEXT_TIP_SELECTOR_SYSTEM, CONTEXT_TIP_SELECTOR_PROVENANCE.slug)).toEqual([]);
   });
-  it.runIf(existsSync(archive))('reception evaluator is faithful to its archive', () => {
+  it.runIf(existsSync(archive) && TIP_RECEPTION_PROVENANCE.faithful)('reception evaluator is faithful to its archive', () => {
     expect(faithful(TIP_RECEPTION_SYSTEM, TIP_RECEPTION_PROVENANCE.slug)).toEqual([]);
   });
   it.runIf(existsSync(archive))('catalog situations are faithful to their archive', () => {

@@ -11,6 +11,34 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.26.0 — 2026-07-08
+
+i18n-zh **Phase 2 batch C** (keeper ruling B): the **small generator + context-tip
+prompts** to Chinese.
+
+- **change: seven more utility prompts are now Chinese** (on the wire): the five
+  small generators — session-title (`SESSION_TITLE_SYSTEM`), title+branch
+  (`TITLE_AND_BRANCH_SYSTEM`), session-name (`SESSION_NAME_SYSTEM`), away-summary
+  (`AWAY_SUMMARY_SYSTEM`), memory-file selection (`MEMORY_FILES_SYSTEM` +
+  contract) — and the two context-tip prompts (`CONTEXT_TIP_SELECTOR_SYSTEM`,
+  `TIP_RECEPTION_SYSTEM` + contracts).
+- **Output contracts + few-shot demonstrations kept verbatim** — only prose is
+  translated: JSON keys/fields (`title`/`branch`/`name`/`has_tip`/`feature_id`/
+  `action`/`acted_on`/`reception`), enum values
+  (`positive`/`neutral`/`negative`/`unknown`), the `claude/` branch prefix, the
+  `{description}` / `{situations}` placeholders, `<session>`/`<description>` tags,
+  `[user]`/`[project]` memory markers, and the JSON/`Decision:` few-shot examples
+  stay English. Parsers unchanged; their unit tests pass untouched.
+- The 5 generators + 2 tips flip `faithful:false`; their archive corpus-sync
+  guards go inert for translated fragments (skip on `!faithful`) while the two
+  big classifiers (command-prefix, background-state) stay English + checked.
+- New `tests/gen-tips-i18n-zh.test.ts`: each translated prompt Chinese +
+  emoji-free + output-contract-token-preserving.
+- **Still English (final Phase-2 batches):** the two big classifiers
+  (`COMMAND_PREFIX_SYSTEM` — command-injection detection; `BACKGROUND_STATE_SYSTEM`
+  — the phone-notification state classifier), the opt-in v1–v4 harness variants,
+  and the runtime `<env>` block. See COMPAT.
+
 ## 0.25.0 — 2026-07-08
 
 i18n-zh **Phase 2 batch B** (keeper ruling B): the **auxiliary generator
