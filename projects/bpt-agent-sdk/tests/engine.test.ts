@@ -935,6 +935,47 @@ describe('runAgentLoop', () => {
     expect(result.subtype).toBe('success');
   });
 
+  it('C1 enforcement boundary: a 1h-cache turn trips maxBudgetUsd that the same turn at the 5m rate stays under', async () => {
+    // The audit consequence of C1 (not just the price calc at 517): a 1h cache
+    // write undercounted at the 5m 1.25x rate let a run silently overshoot
+    // maxBudgetUsd. opus 1M cache_creation tokens = $18.75 at 5m, $30 at 1h;
+    // a $25 cap must FIRE at 1h and NOT at 5m - proving enforcement, not math.
+    const buildToolTurn = () => {
+      const events = toolUseReplyEvents('Read', { file_path: '/a.txt' }, { model: 'claude-opus-4-8' });
+      const ms = events.find((e) => e.type === 'message_start') as {
+        message: { usage: { cache_creation_input_tokens: number } };
+      };
+      ms.message.usage.cache_creation_input_tokens = 1_000_000;
+      return events;
+    };
+
+    // 1h: $30 > $25 cap -> gated BEFORE the tool, terminal error_max_budget_usd.
+    {
+      const executed: Array<Record<string, unknown>> = [];
+      const tools = new Map<string, BuiltinTool>([['Read', makeFakeReadTool(executed)]]);
+      const transport = new MockTransport([buildToolTurn(), textReplyEvents('should never run')]);
+      const deps = makeDeps(transport, { builtinTools: tools });
+      const messages = await collect(
+        runAgentLoop([{ role: 'user', content: 'go' }], deps, makeConfig({ maxBudgetUsd: 25, cacheTtl: '1h' })),
+      );
+      expect(executed).toEqual([]); // the (correct) 2x price gated the tool
+      expect(lastResult(messages).subtype).toBe('error_max_budget_usd');
+    }
+
+    // 5m: $18.75 < $25 cap -> the tool executes (the old under-count behavior).
+    {
+      const executed: Array<Record<string, unknown>> = [];
+      const tools = new Map<string, BuiltinTool>([['Read', makeFakeReadTool(executed)]]);
+      const transport = new MockTransport([buildToolTurn(), textReplyEvents('done')]);
+      const deps = makeDeps(transport, { builtinTools: tools });
+      const messages = await collect(
+        runAgentLoop([{ role: 'user', content: 'go' }], deps, makeConfig({ maxBudgetUsd: 25, cacheTtl: '5m' })),
+      );
+      expect(executed).toEqual([{ file_path: '/a.txt' }]);
+      expect(lastResult(messages).subtype).not.toBe('error_max_budget_usd');
+    }
+  });
+
   it('includePartialMessages: stream_event messages precede the assistant message', async () => {
     const events = textReplyEvents('partial run');
     const transport = new MockTransport([events]);
