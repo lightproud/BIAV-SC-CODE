@@ -1,0 +1,58 @@
+{
+  "date": "2026-07-09",
+  "archived_at": "2026-07-08T17:26:26.994996+00:00",
+  "source": "steam",
+  "item_count": 2,
+  "items": [
+    {
+      "title": "[正面] Story is REALLY good, very f2p friendly, no need t...",
+      "summary": "Story is REALLY good, very f2p friendly, no need to open your wallet they throw so much stuff at you.",
+      "source": "steam_review",
+      "time": "2026-07-08T16:01:20+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198079665654/recommended/3052450",
+      "engagement": 1,
+      "is_hot": false,
+      "author": "76561198079665654",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 621,
+        "votes_up": 1,
+        "timestamp_created": 1783526480
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 忘却前夜真好玩",
+      "summary": "忘却前夜真好玩",
+      "source": "steam_review",
+      "time": "2026-07-08T17:11:29+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198745072862/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198745072862",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 272,
+        "votes_up": 0,
+        "timestamp_created": 1783530689
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    }
+  ],
+  "region": "global",
+  "content_subtype": "review"
+}
