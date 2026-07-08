@@ -1,6 +1,6 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-08T08:16:17.630080+00:00",
+  "collected_at": "2026-07-08T10:59:58.159288+00:00",
   "source": "steam",
   "data_layer": "output",
   "item_count": 7,
@@ -63,7 +63,7 @@
       "voted_up": true,
       "review": "peak",
       "timestamp_created": 1783446082,
-      "playtime_forever": 395
+      "playtime_forever": 426
     },
     {
       "source": "steam",

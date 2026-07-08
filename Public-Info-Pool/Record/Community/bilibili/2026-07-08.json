@@ -1,8 +1,8 @@
 {
   "date": "2026-07-08",
-  "archived_at": "2026-07-08T08:17:09.860452+00:00",
+  "archived_at": "2026-07-08T11:00:49.520570+00:00",
   "source": "bilibili",
-  "item_count": 9,
+  "item_count": 14,
   "items": [
     {
       "title": "沙耶不擅长 但努力做了面包 不吃的话身体会受不了的",
@@ -69,6 +69,29 @@
         "danmaku": 0
       },
       "media_url": "https://i0.hdslb.com/bfs/archive/505132217435a25045cce31f2c2637230a0c0471.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "【忘却前夜】融灾攻略（7.6-7.19）",
+      "summary": "前面是对庞托斯简单吐槽，只看攻略可跳到1分钟\n  └ 泪奔菌 (0赞): 封面吸引了我……是官图吗？\n  └ 青青子衿-隐 (0赞): [打call][打call][打call]",
+      "source": "bilibili",
+      "time": "2026-07-08T07:13:02+00:00",
+      "url": "https://www.bilibili.com/video/BV1wFMi6bE3p",
+      "engagement": 140,
+      "is_hot": false,
+      "author": "迷拟透",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 137,
+        "comment_count": 3,
+        "comments_fetched": 2,
+        "danmaku": 1
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/471c4365bfce984643028e77d961b09990e335ba.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
@@ -166,6 +189,52 @@
       "platform_region": "cn"
     },
     {
+      "title": "融灾（7.6-7.19） 梦到哪张出哪张",
+      "summary": "梦游也能吃400\n  └ 闰土和他的偷瓜猹 (0赞): 好快的发",
+      "source": "bilibili",
+      "time": "2026-07-08T09:49:34+00:00",
+      "url": "https://www.bilibili.com/video/BV1duM365EFg",
+      "engagement": 19,
+      "is_hot": false,
+      "author": "Akra",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 17,
+        "comment_count": 2,
+        "comments_fetched": 1,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/2ae2a857f9d2e66695e05ccf5c57049f08f9610f.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "柔弱蜘蛛女子肘击3-5爱复活墨菲",
+      "summary": "因为全堆伤害了所以没死扛（）\n我们蜘蛛是操作角色，tv大人才是数值怪",
+      "source": "bilibili",
+      "time": "2026-07-08T10:05:35+00:00",
+      "url": "https://www.bilibili.com/video/BV1u6Mg6NEHW",
+      "engagement": 16,
+      "is_hot": false,
+      "author": "椋-喵",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 16,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/1bb937228089ac0756b22695f940bfe12bef1252.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
       "title": "分享给郁纪的随拍",
       "summary": "",
       "source": "bilibili",
@@ -184,6 +253,52 @@
         "danmaku": 0
       },
       "media_url": "https://i1.hdslb.com/bfs/archive/719ef6eaf4a3539338c7640ded237637a084e60d.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "冷门神作？《忘却前夜》试玩",
+      "summary": "",
+      "source": "bilibili",
+      "time": "2026-07-08T10:33:00+00:00",
+      "url": "https://www.bilibili.com/video/BV1gTT96XEUQ",
+      "engagement": 3,
+      "is_hot": false,
+      "author": "不可燃抹茶果冻",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 3,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/2342de44469a047455ec49a86418cec7b4d14a9a.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "当你仰望天空",
+      "summary": "仔细画了一下\n  └ 猪妞真的很可爱 (1赞): [吃瓜][吃瓜][吃瓜]",
+      "source": "bilibili",
+      "time": "2026-07-08T10:52:55+00:00",
+      "url": "https://www.bilibili.com/video/BV1p9Mg6xE5F",
+      "engagement": 2,
+      "is_hot": false,
+      "author": "猪妞真的很可爱",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 1,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/c1025dbcbbcd3d8aa40a4fc43bb27253c611be63.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

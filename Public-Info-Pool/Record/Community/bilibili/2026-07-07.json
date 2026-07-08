@@ -1,8 +1,8 @@
 {
   "date": "2026-07-07",
-  "archived_at": "2026-07-08T08:17:09.858529+00:00",
+  "archived_at": "2026-07-08T11:00:49.519413+00:00",
   "source": "bilibili",
-  "item_count": 31,
+  "item_count": 32,
   "items": [
     {
       "title": "【沙耶之歌】震碎三观的邪作，如何成为玩家心中的意难平？",
@@ -69,6 +69,29 @@
         "danmaku": 0
       },
       "media_url": "https://i2.hdslb.com/bfs/archive/56cefbd610c528a539a6d4a30bb5b9e287acbc5d.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "第一次无助战400",
+      "summary": "",
+      "source": "bilibili",
+      "time": "2026-07-07T14:37:42+00:00",
+      "url": "https://www.bilibili.com/video/BV13VMa6AEFC",
+      "engagement": 239,
+      "is_hot": false,
+      "author": "酸辣柠檬苦汁",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 239,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/6f9a7231eeb6afbbdf7d217acef951d62318bd48.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
