@@ -10,10 +10,10 @@
  * (Agent, AskUserQuestion, Bash, Edit, Read, Write, Glob, Grep,
  * ListMcpResourcesTool, ReadMcpResourceTool, TaskCreate, TaskGet, TaskList,
  * TaskUpdate, TodoWrite, WebFetch, WebSearch, — B4b batch — Monitor,
- * ExitPlanMode, EnterWorktree, and — B4c batch — Workflow). TodoWrite ships
- * as the legacy task surface behind CLAUDE_CODE_ENABLE_TASKS=0 (official
- * 0.3.142 semantics; see src/tools/index.ts), so both its types and the Task
- * quartet's are kept.
+ * ExitPlanMode, EnterWorktree, — B4c batch — Workflow, and — 2026-07-08 —
+ * TaskOutput / TaskStop). TodoWrite ships as the legacy task surface behind
+ * CLAUDE_CODE_ENABLE_TASKS=0 (official 0.3.142 semantics; see
+ * src/tools/index.ts), so both its types and the Task quartet's are kept.
  * MonitorInput keeps the official `ws` member VERBATIM even though the shipped
  * tool supports only the `command` source (wire type over runtime subset —
  * same precedent as FileReadInput.pages; a `ws` call fails with an explicit
@@ -23,14 +23,19 @@
  * tool runs the workflow SYNCHRONOUSLY inside the tool call and returns the
  * consolidated result directly (wire type over runtime subset; the runtime
  * adaptation is documented in src/tools/workflow.ts).
- * Official members for tools this SDK does not ship (NotebookEdit,
- * TaskStop, TaskOutput, the
+ * Official members for tools this SDK does not ship (NotebookEdit, the
  * Subscribe/Unsubscribe pairs, McpInput) are intentionally NOT fabricated, so
  * the two unions below are shipped-subset views of the official 27-input /
- * 22-output unions. The legacy BashOutput/KillShell shell tools have no
- * official 0.3.201 type members (the official docs type their successors
- * TaskOutput/TaskStop instead) and the ToolSearch builtin is absent from the
- * official union entirely.
+ * 22-output unions. TaskOutput / TaskStop now ship (2026-07-08 name alignment,
+ * see src/tools/shells.ts) so their official members are present:
+ * TaskOutputInput (task_id/block/timeout) and TaskStopInput
+ * (task_id + deprecated shell_id) join ToolInputSchemas, and TaskStopOutput
+ * joins ToolOutputSchemas — TaskOutput has no official output member and so is
+ * absent from ToolOutputSchemas (matching the official union). The legacy
+ * BashOutput/KillShell shell tools remain the reproduced-prompt surface but
+ * have no official 0.3.201 type members of their own (the official docs type
+ * their successors TaskOutput/TaskStop instead), and the ToolSearch builtin is
+ * absent from the official union entirely.
  *
  * These are CONSUMER-FACING wire types: they describe the official schema a
  * drop-in host programs against, independent of the internal BuiltinTool
@@ -177,6 +182,28 @@ export type TaskGetInput = {
 /** Input for the TaskList tool (official member: an empty object). */
 export type TaskListInput = {};
 
+/**
+ * Input for the TaskOutput tool (official 0.3.201 member; the successor name
+ * for reading a background task's output). This SDK's background tasks are
+ * background shells, so at runtime `task_id` is a Bash/Monitor shell id.
+ */
+export type TaskOutputInput = {
+  task_id: string;
+  block: boolean;
+  timeout: number;
+};
+
+/**
+ * Input for the TaskStop tool (official 0.3.201 member; the successor name for
+ * stopping a background task or shell). `shell_id` is the deprecated alias for
+ * `task_id`.
+ */
+export type TaskStopInput = {
+  task_id?: string;
+  /** Deprecated: use task_id. */
+  shell_id?: string;
+};
+
 /** Input for the TaskUpdate tool. */
 export type TaskUpdateInput = {
   taskId: string;
@@ -245,6 +272,8 @@ export type ToolInputSchemas =
   | TaskCreateInput
   | TaskGetInput
   | TaskListInput
+  | TaskOutputInput
+  | TaskStopInput
   | TaskUpdateInput
   | TodoWriteInput
   | WebFetchInput
@@ -532,6 +561,18 @@ export type TaskUpdateOutput = {
   };
 };
 
+/**
+ * Output of the TaskStop tool (official 0.3.201 member). Confirmation after
+ * stopping the background task. (TaskOutput has no official output member — it
+ * is absent from the official ToolOutputSchemas union, mirrored here.)
+ */
+export type TaskStopOutput = {
+  message: string;
+  task_id: string;
+  task_type: string;
+  command?: string;
+};
+
 /** Output of the TodoWrite tool. */
 export type TodoWriteOutput = {
   oldTodos: Array<{
@@ -606,6 +647,7 @@ export type ToolOutputSchemas =
   | TaskCreateOutput
   | TaskGetOutput
   | TaskListOutput
+  | TaskStopOutput
   | TaskUpdateOutput
   | TodoWriteOutput
   | WebFetchOutput

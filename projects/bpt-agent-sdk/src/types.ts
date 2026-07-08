@@ -1252,6 +1252,10 @@ export type Options = {
   betas?: string[];
   /** Enable debug logging via stderr callback. */
   debug?: boolean;
+  /** Official: write debug logs to a file (implies debug). FULL (P2): each
+   *  debug line is best-effort appended to this file in addition to the stderr
+   *  callback / process.stderr. See docs/COMPAT.md. */
+  debugFile?: string;
   /** BPT extension: context-compaction tuning (see docs/COMPAT.md). */
   compaction?: CompactionOptions;
   /** Require the final answer to be JSON validating against a JSON Schema;
@@ -1300,9 +1304,6 @@ export type Options = {
    *  task_progress.summary. ACCEPTED-IGNORED (no summary generation source;
    *  task_progress.summary is typed but never populated). */
   agentProgressSummaries?: boolean;
-  /** Official: write debug logs to a file (implies debug). ACCEPTED-IGNORED
-   *  (debug output goes to the stderr callback / process.stderr only). */
-  debugFile?: string;
   /** Official: response effort level. ACCEPTED-IGNORED (not forwarded to the
    *  Messages API; use `thinking` to steer reasoning depth). */
   effort?: 'low' | 'medium' | 'high' | 'xhigh' | 'max';

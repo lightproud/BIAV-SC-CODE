@@ -31,7 +31,9 @@
  *    needs an engine-loop delivery channel it does not have). The description
  *    is adapted to the shipped poll model: events accumulate on a background
  *    task read via BashOutput, stopped via KillShell (official text says
- *    TaskStop, unshipped). The `ws` source (2.1.195+) is unshipped and never
+ *    TaskStop; this SDK now ships TaskStop/TaskOutput too — 2026-07-08 — but
+ *    Monitor's reproduced description deliberately keeps the BashOutput/
+ *    KillShell poll surface). The `ws` source (2.1.195+) is unshipped and never
  *    mentioned; notification-batching / auto-stop-on-volume clauses are
  *    dropped. Script-quality and coverage guidance is reproduced faithfully.
  *  - Task tool descriptions: archive template variables for conditional

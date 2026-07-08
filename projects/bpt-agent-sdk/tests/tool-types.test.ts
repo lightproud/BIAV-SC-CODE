@@ -55,6 +55,9 @@ import type {
   TaskGetOutput,
   TaskListInput,
   TaskListOutput,
+  TaskOutputInput,
+  TaskStopInput,
+  TaskStopOutput,
   TaskUpdateInput,
   TaskUpdateOutput,
   TodoWriteInput,
@@ -155,6 +158,20 @@ const taskGetInput = { taskId: '1' } satisfies TaskGetInput;
 
 const taskListInput = {} satisfies TaskListInput;
 
+// 2026-07-08: official-named background-task surface (successors to
+// BashOutput/KillShell). TaskOutputInput's block/timeout are required in the
+// official type; TaskStopInput carries the deprecated shell_id alias.
+const taskOutputInput = {
+  task_id: 'bash_1',
+  block: true,
+  timeout: 5_000,
+} satisfies TaskOutputInput;
+
+const taskStopInput = {
+  task_id: 'bash_1',
+  shell_id: 'bash_1',
+} satisfies TaskStopInput;
+
 const taskUpdateInput = {
   taskId: '1',
   status: 'in_progress',
@@ -202,6 +219,8 @@ const inputUnionSamples: ToolInputSchemas[] = [
   taskCreateInput,
   taskGetInput,
   taskListInput,
+  taskOutputInput,
+  taskStopInput,
   taskUpdateInput,
   todoInput,
   webFetchInput,
@@ -368,6 +387,15 @@ const taskUpdateOutput = {
   statusChange: { from: 'pending', to: 'in_progress' },
 } satisfies TaskUpdateOutput;
 
+// TaskStop has an official output member (TaskOutput does not — it is absent
+// from the official ToolOutputSchemas union, mirrored in tool-types.ts).
+const taskStopOutput = {
+  message: 'Stopped background task bash_1',
+  task_id: 'bash_1',
+  task_type: 'shell',
+  command: 'sleep 30',
+} satisfies TaskStopOutput;
+
 const webFetchOutput = {
   bytes: 10,
   code: 200,
@@ -417,6 +445,7 @@ const outputUnionSamples: ToolOutputSchemas[] = [
   taskGetOutput,
   taskGetNullOutput,
   taskListOutput,
+  taskStopOutput,
   taskUpdateOutput,
   todoOutput,
   webFetchOutput,
@@ -484,15 +513,15 @@ void optionsMissingRequestId;
 // ---------------------------------------------------------------------------
 
 describe('tool type surface (T1-1)', () => {
-  it('sample inputs cover all 18 shipped-tool input members (B4c adds Workflow)', () => {
-    expect(inputUnionSamples).toHaveLength(18);
+  it('sample inputs cover the shipped-tool input members (B4c adds Workflow; 2026-07-08 adds TaskOutput/TaskStop)', () => {
+    expect(inputUnionSamples).toHaveLength(20);
     expect(grepInput['-C']).toBe(grepInput.context);
   });
 
-  it('sample outputs cover all 18 shipped-tool output members (B4c adds Workflow)', () => {
-    // 21 samples over 18 member types (Agent + Read contribute two arms each;
-    // TaskGet contributes a found and a null sample).
-    expect(outputUnionSamples).toHaveLength(21);
+  it('sample outputs cover the shipped-tool output members (B4c adds Workflow; 2026-07-08 adds TaskStop)', () => {
+    // 22 samples: Agent + Read contribute two arms each, TaskGet a found and a
+    // null sample, and TaskStop a single arm (TaskOutput has no output member).
+    expect(outputUnionSamples).toHaveLength(22);
     const statuses = outputUnionSamples
       .filter((o): o is AgentOutput => typeof o === 'object' && !Array.isArray(o) && 'status' in o)
       .map((o) => o.status);

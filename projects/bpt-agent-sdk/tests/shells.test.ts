@@ -9,7 +9,13 @@ import os from 'node:os';
 import path from 'node:path';
 import fs from 'node:fs';
 
-import { createShellManager, bashOutputTool, killShellTool } from '../src/tools/shells.js';
+import {
+  createShellManager,
+  bashOutputTool,
+  killShellTool,
+  taskOutputTool,
+  taskStopTool,
+} from '../src/tools/shells.js';
 import { bashTool } from '../src/tools/bash.js';
 import type { ShellManager, ToolContext } from '../src/internal/contracts.js';
 
@@ -163,6 +169,97 @@ describe('Bash run_in_background + BashOutput + KillShell', () => {
       bare,
     );
     expect(noMgrBg.isError).toBe(true);
+  });
+});
+
+describe('TaskOutput / TaskStop (official-name background-task surface)', () => {
+  it('TaskOutput reads new output + status, then advances the cursor', async () => {
+    const ctx = makeCtx(true);
+    const { id } = manager!.spawnBackground('bash', 'echo alpha; echo beta', ctx) as { id: string };
+    await until(() => manager!.get(id)!.status !== 'running');
+
+    const read1 = await taskOutputTool.execute({ task_id: id }, ctx);
+    const t1 = text(read1.content);
+    expect(read1.isError).not.toBe(true);
+    expect(t1).toContain('status: completed');
+    expect(t1).toContain('alpha');
+    expect(t1).toContain('beta');
+
+    const read2 = await taskOutputTool.execute({ task_id: id }, ctx);
+    expect(text(read2.content)).toContain('(no new output)');
+  });
+
+  it('TaskOutput has NO filter param (official schema); a filter is ignored, not applied', async () => {
+    const ctx = makeCtx(true);
+    const { id } = manager!.spawnBackground('bash', 'echo keep-me; echo drop-me', ctx) as {
+      id: string;
+    };
+    await until(() => manager!.get(id)!.status !== 'running');
+    // Passing `filter` (a BashOutput-only param) must not filter — both lines return.
+    const read = await taskOutputTool.execute({ task_id: id, filter: '^keep' }, ctx);
+    const t = text(read.content);
+    expect(t).toContain('keep-me');
+    expect(t).toContain('drop-me');
+  });
+
+  it('TaskOutput block:true returns quickly when new output arrives', async () => {
+    const ctx = makeCtx(true);
+    const { id } = manager!.spawnBackground('bash', 'sleep 0.15; echo late', ctx) as { id: string };
+    const read = await taskOutputTool.execute({ task_id: id, block: true, timeout: 5000 }, ctx);
+    expect(read.isError).not.toBe(true);
+    expect(text(read.content)).toContain('late');
+  });
+
+  it('TaskOutput block:true honors timeout on an idle running task', async () => {
+    const ctx = makeCtx(true);
+    const { id } = manager!.spawnBackground('bash', 'echo now; sleep 30', ctx) as { id: string };
+    await until(() => manager!.get(id)!.stdout.includes('now'));
+    // Drain the initial output.
+    await taskOutputTool.execute({ task_id: id }, ctx);
+    // Now block with a short timeout: the task is still running but emits nothing.
+    const start = Date.now();
+    const read = await taskOutputTool.execute({ task_id: id, block: true, timeout: 250 }, ctx);
+    expect(Date.now() - start).toBeGreaterThanOrEqual(200);
+    expect(text(read.content)).toContain('(no new output)');
+  });
+
+  it('TaskStop stops a running task by task_id', async () => {
+    const ctx = makeCtx(true);
+    const { id } = manager!.spawnBackground('bash', 'sleep 30', ctx) as { id: string };
+    const stopped = await taskStopTool.execute({ task_id: id }, ctx);
+    expect(stopped.isError).not.toBe(true);
+    expect(text(stopped.content)).toContain(`Stopped background task ${id}`);
+    await until(() => manager!.get(id)!.exitSignal !== null || manager!.get(id)!.exitCode !== null);
+    expect(manager!.get(id)!.status).toBe('killed');
+  });
+
+  it('TaskStop accepts the deprecated shell_id alias', async () => {
+    const ctx = makeCtx(true);
+    const { id } = manager!.spawnBackground('bash', 'sleep 30', ctx) as { id: string };
+    const stopped = await taskStopTool.execute({ shell_id: id }, ctx);
+    expect(stopped.isError).not.toBe(true);
+    expect(text(stopped.content)).toContain(`Stopped background task ${id}`);
+  });
+
+  it('TaskStop on an already-terminal task reports status without erroring', async () => {
+    const ctx = makeCtx(true);
+    const { id } = manager!.spawnBackground('bash', 'echo done', ctx) as { id: string };
+    await until(() => manager!.get(id)!.status === 'completed');
+    const stopped = await taskStopTool.execute({ task_id: id }, ctx);
+    expect(stopped.isError).not.toBe(true);
+    expect(text(stopped.content)).toContain('already completed');
+  });
+
+  it('unknown ids, missing id, and missing manager are tool errors', async () => {
+    const withMgr = makeCtx(true);
+    expect((await taskOutputTool.execute({ task_id: 'bash_999' }, withMgr)).isError).toBe(true);
+    expect((await taskStopTool.execute({ task_id: 'bash_999' }, withMgr)).isError).toBe(true);
+    // TaskStop with neither task_id nor shell_id.
+    expect((await taskStopTool.execute({}, withMgr)).isError).toBe(true);
+
+    const bare = makeCtx(false);
+    expect((await taskOutputTool.execute({ task_id: 'bash_1' }, bare)).isError).toBe(true);
+    expect((await taskStopTool.execute({ task_id: 'bash_1' }, bare)).isError).toBe(true);
   });
 });
 

@@ -38,7 +38,9 @@ const UNSHIPPED_TOOL_TOKENS = [
   'MultiEdit',
   // 'ExitPlanMode' removed 2026-07-05 (B4b): the tool now ships (src/tools/exitplanmode.ts).
   'ExitWorktree',
-  'TaskStop',
+  // 'TaskStop' removed 2026-07-08: the tool now ships (src/tools/shells.ts);
+  // TaskOutput ships alongside it. Both are the official names for the
+  // background-task read/stop surface.
   'SlashCommand',
   'WebFetchTool',
   'PowerShell',
