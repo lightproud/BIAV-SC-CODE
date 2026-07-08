@@ -1,8 +1,8 @@
 {
   "date": "2026-07-08",
-  "archived_at": "2026-07-08T12:23:29.165364+00:00",
+  "archived_at": "2026-07-08T15:16:29.053319+00:00",
   "source": "bilibili",
-  "item_count": 17,
+  "item_count": 18,
   "items": [
     {
       "title": "沙耶不擅长 但努力做了面包 不吃的话身体会受不了的",
@@ -138,6 +138,29 @@
         "danmaku": 0
       },
       "media_url": "https://i0.hdslb.com/bfs/archive/acb7f93bd9b92692b6f259f71847724ed0851c62.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "鸟弟划脸meme",
+      "summary": "视频里没有任何一个小鸟受到伤害\n  └ 某不明飞行物体 (0赞): 👁️",
+      "source": "bilibili",
+      "time": "2026-07-08T06:42:57+00:00",
+      "url": "https://www.bilibili.com/video/BV1U2Mv6TEth",
+      "engagement": 128,
+      "is_hot": false,
+      "author": "蛇缠死骨",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 127,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/9609e2daa38fd140b1480099d41a8bc236fd08af.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

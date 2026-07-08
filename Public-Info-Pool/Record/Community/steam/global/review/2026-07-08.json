@@ -1,9 +1,33 @@
 {
   "date": "2026-07-08",
-  "archived_at": "2026-07-08T12:23:29.277384+00:00",
+  "archived_at": "2026-07-08T15:16:29.055954+00:00",
   "source": "steam",
-  "item_count": 5,
+  "item_count": 8,
   "items": [
+    {
+      "title": "[正面] + gacha, except a lot generous than expected\n+ int...",
+      "summary": "+ gacha, except a lot generous than expected\n+ interesting story\n+ reading comprehension required\n+ fun gameplay\n+ endless content\n\n- not a lot of men",
+      "source": "steam_review",
+      "time": "2026-07-08T12:05:44+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199556109102/recommended/3052450",
+      "engagement": 14,
+      "is_hot": true,
+      "author": "76561199556109102",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 17874,
+        "votes_up": 14,
+        "timestamp_created": 1783512344
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
     {
       "title": "[正面] peak",
       "summary": "peak",
@@ -118,6 +142,54 @@
         "playtime_forever": 1968,
         "votes_up": 0,
         "timestamp_created": 1783476209
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[负面] 吞了奖励不返还……",
+      "summary": "吞了奖励不返还……",
+      "source": "steam_review",
+      "time": "2026-07-08T14:21:52+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198743376478/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198743376478",
+      "tags": [
+        "japanese"
+      ],
+      "language": "japanese",
+      "metadata": {
+        "voted_up": false,
+        "playtime_forever": 89,
+        "votes_up": 0,
+        "timestamp_created": 1783520512
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Provavelmente a melhor experiencia em gacha que já...",
+      "summary": "Provavelmente a melhor experiencia em gacha que já tive na minha vida. O único ponto negativo é a tradução em português ser automática, estou ansioso pelo dia que receba uma tradução oficial.",
+      "source": "steam_review",
+      "time": "2026-07-08T13:08:11+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198156134489/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198156134489",
+      "tags": [
+        "brazilian"
+      ],
+      "language": "brazilian",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 5050,
+        "votes_up": 0,
+        "timestamp_created": 1783516091
       },
       "region": "global",
       "archive_subtype": "review",
