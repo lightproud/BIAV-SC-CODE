@@ -33,8 +33,13 @@ reproductions**, undoing the on-the-wire divergence documented in `docs/COMPAT.m
 - **provenance:** reproduced fragments are once again byte-faithful English
   reproductions of the archived Claude Code prompts (`faithful: true`),
   re-establishing the official-parity claim without the translation layer.
-- unchanged: the i18n token-cost probes under `tests/integration/` (v0.19–0.23
-  investigation harness) are left in place; they exercise no shipped runtime path.
+- **also retired:** the now-inert i18n token-cost probes
+  (`tests/integration/token-probe.mjs` + `token-probe-perfile.mjs` + the
+  `i18n-*` fixtures) and their `token_probe` job / dispatch input in
+  `.github/workflows/bpt-agent-sdk.yml`. The harness compared EN-vs-ZH prompt
+  token cost, moot once both sides are English again; the unrelated
+  `ab-benchmark` / `cache-probe` / `live-real-api` / `emulator-e2e` integration
+  probes are kept.
 
 ## 0.28.0 — 2026-07-08
 
