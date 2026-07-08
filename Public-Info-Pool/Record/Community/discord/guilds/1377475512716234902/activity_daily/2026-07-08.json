@@ -1,0 +1,35 @@
+{
+  "date": "2026-07-08",
+  "messages": 9,
+  "unique_authors": 7,
+  "reactions_total": 2,
+  "attachments": 1,
+  "channel_activity": {
+    "なんでも雑談": 9
+  },
+  "hourly_activity": {
+    "0": 5,
+    "1": 4
+  },
+  "message_types": {
+    "0": 9
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1524219265295847676",
+      "channel_id": "1377478664609857647",
+      "content": "残業本当にお疲れ様です！！！酷ですがまぁまぁ少ないのでやれそうな体力あるならやるといいかもです…！",
+      "author": "ykras_pl",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1524219721564553257",
+      "channel_id": "1377478664609857647",
+      "content": "赤い石の方残ってる😭😭😭😭😭\nゲーム内でも見ました！行ってきます！！3回は狩りたい🌭😭🥖",
+      "author": "ciocux",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    }
+  ]
+}
