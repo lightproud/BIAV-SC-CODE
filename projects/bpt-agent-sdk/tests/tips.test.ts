@@ -17,13 +17,7 @@ import {
   parseTipReception,
   selectContextTip,
 } from '../src/tips/index.js';
-import {
-  CONTEXT_TIP_SELECTOR_PROVENANCE,
-  CONTEXT_TIP_SELECTOR_SYSTEM,
-  TIP_PROVENANCE,
-  TIP_RECEPTION_PROVENANCE,
-  TIP_RECEPTION_SYSTEM,
-} from '../src/tips/prompts.js';
+import { TIP_PROVENANCE } from '../src/tips/prompts.js';
 import {
   SITUATION_MANUAL_POLLING,
   SITUATION_PERSISTENT_MEMORY,
@@ -195,19 +189,20 @@ describe('context-tip prompt provenance (corpus-sync guard, Track B parity)', ()
       .filter((s) => !body.includes(s.slice(0, 60)));
   };
 
-  it('the provenance table has 2 entries, now translated (faithful:false)', () => {
+  it('the provenance table has 2 entries, translated in-place with source slugs retained', () => {
     expect(Object.keys(TIP_PROVENANCE)).toHaveLength(2);
     // i18n-zh Phase 2 batch C: both tip prompts translated (examples/tokens/JSON
     // enum kept English), so faithful:false; catalog situations stay faithful.
-    for (const p of Object.values(TIP_PROVENANCE)) expect(p.faithful).toBe(false);
+    // The per-prompt English-archive drift check is RETIRED (it could only skip);
+    // the CJK guard in tests/gen-tips-i18n-zh.test.ts covers reversion, and the
+    // slug provenance (attribution) is asserted here.
+    for (const p of Object.values(TIP_PROVENANCE)) {
+      expect(p.faithful).toBe(false);
+      expect(p.slug.length).toBeGreaterThan(0);
+    }
   });
-  // Translated (faithful:false): Chinese prose can't anchor-match the English archive.
-  it.runIf(existsSync(archive) && CONTEXT_TIP_SELECTOR_PROVENANCE.faithful)('selector is faithful to its archive', () => {
-    expect(faithful(CONTEXT_TIP_SELECTOR_SYSTEM, CONTEXT_TIP_SELECTOR_PROVENANCE.slug)).toEqual([]);
-  });
-  it.runIf(existsSync(archive) && TIP_RECEPTION_PROVENANCE.faithful)('reception evaluator is faithful to its archive', () => {
-    expect(faithful(TIP_RECEPTION_SYSTEM, TIP_RECEPTION_PROVENANCE.slug)).toEqual([]);
-  });
+  // The catalog SITUATION data is NOT translated (still English), so its
+  // corpus-sync archive check stays active.
   it.runIf(existsSync(archive))('catalog situations are faithful to their archive', () => {
     expect(faithful(SITUATION_MANUAL_POLLING, 'data-context-tip-situation-manual-polling')).toEqual([]);
     expect(faithful(SITUATION_PERSISTENT_MEMORY, 'data-context-tip-situation-persistent-memory')).toEqual([]);
