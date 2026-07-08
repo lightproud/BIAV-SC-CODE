@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-07T23:55:52.532178+00:00",
+  "updated_at": "2026-07-08T02:04:13.606475+00:00",
   "seeded_from": "silent_sources_audit",
   "audit_window": {
     "start": "2016-02-03",
@@ -7,7 +7,7 @@
     "days": 3809
   },
   "validation_drops": {
-    "generated_at": "2026-07-07T23:54:59.613211+00:00",
+    "generated_at": "2026-07-08T02:03:17.346648+00:00",
     "total_dropped": 0,
     "by_source": {}
   },
@@ -17,7 +17,7 @@
       "last_success_date": "2026-07-08",
       "last_check_date": "2026-06-20",
       "consecutive_silent_days": 0,
-      "total_items": 2598,
+      "total_items": 2601,
       "errors": []
     },
     "steam": {
@@ -47,9 +47,9 @@
     "youtube": {
       "level": "active",
       "last_success_date": "2026-07-08",
-      "last_check_date": "2026-07-07",
+      "last_check_date": "2026-07-08",
       "consecutive_silent_days": 0,
-      "total_items": 2690,
+      "total_items": 2694,
       "errors": []
     },
     "reddit": {
@@ -79,15 +79,15 @@
     "weibo": {
       "level": "active",
       "last_success_date": "2026-07-08",
-      "last_check_date": "2026-07-07",
+      "last_check_date": "2026-07-08",
       "consecutive_silent_days": 0,
-      "total_items": 9321,
+      "total_items": 9333,
       "errors": []
     },
     "bahamut": {
       "level": "active",
       "last_success_date": null,
-      "last_check_date": "2026-07-07",
+      "last_check_date": "2026-07-08",
       "consecutive_silent_days": 0,
       "total_items": 0,
       "errors": []
@@ -95,7 +95,7 @@
     "arca_live": {
       "level": "active",
       "last_success_date": null,
-      "last_check_date": "2026-07-07",
+      "last_check_date": "2026-07-08",
       "consecutive_silent_days": 0,
       "total_items": 0,
       "errors": []
@@ -103,7 +103,7 @@
     "appstore": {
       "level": "active",
       "last_success_date": "2026-07-04",
-      "last_check_date": "2026-07-07",
+      "last_check_date": "2026-07-08",
       "consecutive_silent_days": 4,
       "total_items": 686,
       "errors": []
@@ -111,7 +111,7 @@
     "google_play": {
       "level": "active",
       "last_success_date": "2026-07-06",
-      "last_check_date": "2026-07-07",
+      "last_check_date": "2026-07-08",
       "consecutive_silent_days": 2,
       "total_items": 1232,
       "errors": []
@@ -119,7 +119,7 @@
     "pixiv": {
       "level": "active",
       "last_success_date": "2026-07-08",
-      "last_check_date": "2026-07-07",
+      "last_check_date": "2026-07-08",
       "consecutive_silent_days": 0,
       "total_items": 552,
       "errors": []
@@ -127,7 +127,7 @@
     "note_com": {
       "level": "active",
       "last_success_date": null,
-      "last_check_date": "2026-07-07",
+      "last_check_date": "2026-07-08",
       "consecutive_silent_days": 0,
       "total_items": 0,
       "errors": []
@@ -135,7 +135,7 @@
     "ruliweb": {
       "level": "active",
       "last_success_date": "2026-07-08",
-      "last_check_date": "2026-07-07",
+      "last_check_date": "2026-07-08",
       "consecutive_silent_days": 0,
       "total_items": 388,
       "errors": []
@@ -143,7 +143,7 @@
     "stopgame": {
       "level": "active",
       "last_success_date": "2026-07-08",
-      "last_check_date": "2026-07-07",
+      "last_check_date": "2026-07-08",
       "consecutive_silent_days": 0,
       "total_items": 80,
       "errors": []
@@ -151,15 +151,15 @@
     "weixin": {
       "level": "active",
       "last_success_date": "2026-07-07",
-      "last_check_date": "2026-07-07",
+      "last_check_date": "2026-07-08",
       "consecutive_silent_days": 1,
-      "total_items": 6796,
+      "total_items": 6816,
       "errors": []
     },
     "twitter": {
       "level": "active",
       "last_success_date": null,
-      "last_check_date": "2026-07-07",
+      "last_check_date": "2026-07-08",
       "consecutive_silent_days": 0,
       "total_items": 0,
       "errors": []
@@ -169,7 +169,7 @@
       "last_success_date": "2026-07-08",
       "last_check_date": null,
       "consecutive_silent_days": 0,
-      "total_items": 869,
+      "total_items": 877,
       "errors": []
     },
     "youtube_comments": {
