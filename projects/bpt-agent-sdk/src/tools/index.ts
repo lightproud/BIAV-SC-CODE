@@ -21,6 +21,13 @@
  * scripts synchronously over the subagent runtime (agent() needs
  * ctx.spawnSubagent, wired inside query(); a zero-agent script still runs
  * bare). See src/tools/workflow.ts + src/internal/workflow-engine.ts.
+ *
+ * Background-task name alignment (2026-07-08): TaskOutput / TaskStop are the
+ * official 0.3.201 names for reading and stopping a background task. This SDK's
+ * background tasks ARE background shells, so both delegate to the same
+ * ShellManager as the legacy BashOutput / KillShell tools; all four ship during
+ * the transition (the reproduced Bash / Monitor descriptions still steer the
+ * model to BashOutput / KillShell). See src/tools/shells.ts.
  */
 
 import type { BuiltinTool } from '../internal/contracts.js';
@@ -37,7 +44,7 @@ import { askUserQuestionTool } from './askuserquestion.js';
 import { todoWriteTool } from './todo.js';
 import { taskTools } from './task.js';
 import { listMcpResourcesTool, readMcpResourceTool } from './resources.js';
-import { bashOutputTool, killShellTool } from './shells.js';
+import { bashOutputTool, killShellTool, taskOutputTool, taskStopTool } from './shells.js';
 import { monitorTool } from './monitor.js';
 import { exitPlanModeTool } from './exitplanmode.js';
 import { enterWorktreeTool } from './enterworktree.js';
@@ -65,6 +72,8 @@ export function createBuiltinTools(cfg?: {
     cfg?.sandbox !== undefined ? createBashTool(cfg.sandbox) : bashTool,
     bashOutputTool,
     killShellTool,
+    taskOutputTool,
+    taskStopTool,
     monitorTool,
     globTool,
     grepTool,

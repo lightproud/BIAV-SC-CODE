@@ -334,3 +334,158 @@ export const killShellTool: BuiltinTool = {
     return { content: `Killed background shell ${id}.` };
   },
 };
+
+// ---------------------------------------------------------------------------
+// TaskOutput / TaskStop built-in tools (official 0.3.201 names)
+//
+// These are the official-named surface for reading and stopping a background
+// task. In this SDK a "background task" IS a background shell (spawned by Bash
+// run_in_background or by Monitor), so both tools delegate to the SAME
+// ShellManager that backs the legacy BashOutput / KillShell tools. Both
+// surfaces ship during the transition: the reproduced Bash / Monitor tool
+// descriptions steer the model to BashOutput / KillShell, while TaskOutput /
+// TaskStop close the official drop-in tool-NAME gap (audit 2026-07-08). The
+// official input schemas are reproduced (TaskOutput: task_id/block/timeout;
+// TaskStop: task_id + deprecated shell_id alias); the runtime tolerates
+// omitted block/timeout the way the CLI defaults them.
+// ---------------------------------------------------------------------------
+
+/** Blocking wait for TaskOutput when `timeout` is absent/invalid (ms). */
+const TASK_OUTPUT_DEFAULT_TIMEOUT_MS = 60_000;
+/** Poll granularity while TaskOutput blocks for new output (ms). */
+const TASK_OUTPUT_POLL_MS = 50;
+
+/** Drain output accumulated since the last read and advance the cursors. */
+function drainNewOutput(rec: BackgroundShell): string {
+  const newOut = rec.stdout.slice(rec.cursorOut);
+  const newErr = rec.stderr.slice(rec.cursorErr);
+  rec.cursorOut = rec.stdout.length;
+  rec.cursorErr = rec.stderr.length;
+  const parts: string[] = [describeStatus(rec)];
+  if (newOut.length > 0) parts.push(newOut);
+  if (newErr.length > 0) parts.push(`[stderr]\n${newErr}`);
+  if (newOut.length === 0 && newErr.length === 0) parts.push('(no new output)');
+  if (rec.stdoutTruncated || rec.stderrTruncated) {
+    parts.push('[output truncated at the accumulation cap]');
+  }
+  return parts.join('\n');
+}
+
+export const taskOutputTool: BuiltinTool = {
+  name: 'TaskOutput',
+  description:
+    'Retrieve output from a running or completed background task (started with ' +
+    'Bash run_in_background or Monitor), plus its current status. Returns the ' +
+    'output accumulated since the previous TaskOutput read. Set `block: true` to ' +
+    'wait up to `timeout` ms for new output before returning.',
+  inputSchema: {
+    type: 'object',
+    properties: {
+      task_id: {
+        type: 'string',
+        description: 'The background task id (returned by Bash run_in_background or Monitor).',
+      },
+      block: {
+        type: 'boolean',
+        description: 'Wait for new output (up to `timeout` ms) before returning. Defaults to false.',
+      },
+      timeout: {
+        type: 'number',
+        description: 'Maximum time to wait when `block` is true, in milliseconds.',
+      },
+    },
+    // Official 0.3.201 marks all three required (wire parity, conformance
+    // run-wire TaskOutput facet). The runtime still tolerates omitted
+    // block/timeout defensively (block defaults off, timeout to 60000ms).
+    required: ['task_id', 'block', 'timeout'],
+  },
+  readOnly: true,
+
+  async execute(
+    input: Record<string, unknown>,
+    ctx: ToolContext,
+  ): Promise<ToolResultPayload> {
+    const id = input['task_id'];
+    if (typeof id !== 'string' || id.length === 0) {
+      return { content: "TaskOutput: 'task_id' must be a non-empty string.", isError: true };
+    }
+    if (ctx.shells === undefined) {
+      return { content: `TaskOutput: ${NO_MANAGER}`, isError: true };
+    }
+    const rec = ctx.shells.get(id);
+    if (rec === undefined) {
+      return { content: `TaskOutput: no background task with id "${id}".`, isError: true };
+    }
+    if (input['block'] === true) {
+      const timeout =
+        typeof input['timeout'] === 'number' && input['timeout'] > 0
+          ? input['timeout']
+          : TASK_OUTPUT_DEFAULT_TIMEOUT_MS;
+      const maxWaits = Math.max(1, Math.ceil(timeout / TASK_OUTPUT_POLL_MS));
+      for (let i = 0; i < maxWaits; i++) {
+        const hasNew = rec.stdout.length > rec.cursorOut || rec.stderr.length > rec.cursorErr;
+        if (hasNew || rec.status !== 'running') break;
+        await new Promise<void>((resolve) => {
+          const t = setTimeout(resolve, TASK_OUTPUT_POLL_MS);
+          t.unref?.();
+        });
+      }
+    }
+    return { content: drainNewOutput(rec) };
+  },
+};
+
+export const taskStopTool: BuiltinTool = {
+  name: 'TaskStop',
+  description:
+    'Stop a running background task or shell by id (started with Bash ' +
+    'run_in_background or Monitor). Pass `task_id`; `shell_id` is a deprecated ' +
+    'alias for the same id.',
+  inputSchema: {
+    type: 'object',
+    properties: {
+      task_id: {
+        type: 'string',
+        description: 'The background task id to stop.',
+      },
+      shell_id: {
+        type: 'string',
+        description: 'Deprecated: use task_id.',
+      },
+    },
+  },
+  readOnly: false,
+
+  async execute(
+    input: Record<string, unknown>,
+    ctx: ToolContext,
+  ): Promise<ToolResultPayload> {
+    const taskId =
+      typeof input['task_id'] === 'string' && input['task_id'].length > 0
+        ? input['task_id']
+        : undefined;
+    const shellId =
+      typeof input['shell_id'] === 'string' && input['shell_id'].length > 0
+        ? input['shell_id']
+        : undefined;
+    const id = taskId ?? shellId;
+    if (id === undefined) {
+      return {
+        content: "TaskStop: provide a non-empty 'task_id' (or the deprecated 'shell_id').",
+        isError: true,
+      };
+    }
+    if (ctx.shells === undefined) {
+      return { content: `TaskStop: ${NO_MANAGER}`, isError: true };
+    }
+    const rec = ctx.shells.get(id);
+    if (rec === undefined) {
+      return { content: `TaskStop: no background task with id "${id}".`, isError: true };
+    }
+    if (rec.status !== 'running') {
+      return { content: `TaskStop: task ${id} already ${rec.status}.` };
+    }
+    ctx.shells.kill(id);
+    return { content: `Stopped background task ${id}.` };
+  },
+};

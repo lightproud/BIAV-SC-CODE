@@ -11,6 +11,36 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.31.0 — 2026-07-08
+
+- **feat (TaskOutput / TaskStop built-in tools — official-name alignment)**: the
+  official 0.3.201 names for reading and stopping a background task now ship as
+  registered built-in tools, closing the last drop-in tool-surface gap besides
+  the deliberate NotebookEdit omission (built-in tools 21/24 → 23/24). A
+  background task in this SDK IS a background shell, so both delegate to the same
+  per-query `ShellManager` that backs the legacy `BashOutput` / `KillShell`
+  tools — all four ship during the transition, and the reproduced Bash / Monitor
+  tool descriptions still steer the model to `BashOutput` / `KillShell`.
+  - `TaskOutput` (`{ task_id, block, timeout }`): reads output accumulated since
+    the previous read plus status; `block: true` polls up to `timeout` ms
+    (default 60000) for new output or a terminal status. No `filter` param (not
+    in the official schema — use `BashOutput` for per-line filtering).
+  - `TaskStop` (`{ task_id, shell_id? }`, `shell_id` deprecated): SIGTERM→SIGKILL
+    on the background shell's process group; already-terminal tasks report their
+    status without re-killing.
+  - Drop-in types added to `src/tool-types.ts` and re-exported: `TaskOutputInput`,
+    `TaskStopInput`, `TaskStopOutput` (TaskOutput has no official output member, so
+    it is absent from `ToolOutputSchemas`, matching the official union).
+- **docs (documentation-lag fixes surfaced by the 2026-07-08 interface re-audit)**:
+  - `debugFile` moved out of the runtime-ACCEPTED-IGNORED block in `src/types.ts`
+    and re-documented as FULL (it has been honored since the P2 pass); the
+    `debug`/`debugFile` COMPAT row is unchanged, only the type JSDoc caught up.
+  - `docs/COMPAT.md`: the ACCEPTED-Options row note claiming those 22 fields are
+    "NOT declared on the TS Options type" was stale (they were typed in T2-3);
+    corrected to state they are typed-but-inert.
+  - `tests/red-line-tool-names.test.ts`: `TaskStop` removed from the
+    unshipped-tool denylist (it now ships), mirroring the ExitPlanMode precedent.
+
 ## 0.30.0 — 2026-07-08
 
 - **feat (public harness-base constructor export, black-pool ContextRing request
