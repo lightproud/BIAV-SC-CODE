@@ -1,8 +1,8 @@
 {
   "date": "2026-07-09",
-  "archived_at": "2026-07-08T21:02:40.482489+00:00",
+  "archived_at": "2026-07-08T22:14:40.108797+00:00",
   "source": "youtube",
-  "item_count": 7,
+  "item_count": 8,
   "items": [
     {
       "title": "망각전야Morimens) (대리뽑,상담시청가능) 이번융재 설명회",
@@ -119,6 +119,23 @@
       "lang": "",
       "platform_region": "global",
       "media_url": "https://i.ytimg.com/vi/r8eBkLYXTJk/hqdefault.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    },
+    {
+      "title": "F2P MORIMENS! Hardmode 1-1.",
+      "summary": "",
+      "source": "youtube",
+      "time": "2026-07-08T22:00:34Z",
+      "url": "https://www.youtube.com/watch?v=BG9XmcZL7oI",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "Koka",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/BG9XmcZL7oI/hqdefault.jpg",
       "content_type": "video",
       "region": "global",
       "archive_subtype": "video"
