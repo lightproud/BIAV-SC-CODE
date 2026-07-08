@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-08T17:25:37.058226+00:00",
+  "collected_at": "2026-07-08T19:16:03.730796+00:00",
   "source": "reddit",
   "data_layer": "output",
-  "item_count": 19,
+  "item_count": 16,
   "items": [
     {
       "source": "reddit",
@@ -30,6 +30,21 @@
       "author": "/u/Independent-Baby-577",
       "engagement": 0,
       "media_url": "https://preview.redd.it/ksnmsh4syybh1.png?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=a1964f5f9b16b39c927d638a034e724e9a1bb109",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-07-08T17:13:41+00:00",
+      "lang": "en",
+      "title": "New player",
+      "summary": "Just started playing and i like caecus very much!  What would be a good team for him?  &#32; submitted by &#32;  /u/Lime_epepe_Luna   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1uqz137/new_player/",
+      "author": "/u/Lime_epepe_Luna",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/s394klmtg1ch1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=ed1cd4d57308cdec5940e896a10d24e56d27df18",
       "content_type": "image",
       "metadata": {
         "via": "rss"
@@ -97,14 +112,14 @@
     },
     {
       "source": "reddit",
-      "time": "2026-07-08T17:13:41+00:00",
+      "time": "2026-07-08T17:29:51+00:00",
       "lang": "en",
-      "title": "New player",
-      "summary": "Just started playing and i like caecus very much!  What would be a good team for him?  &#32; submitted by &#32;  /u/Lime_epepe_Luna   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1uqz137/new_player/",
-      "author": "/u/Lime_epepe_Luna",
+      "title": "just started yesterday, at which point should I stop pulling at Aequor Realm and which Realm to go for next?",
+      "summary": "https://preview.redd.it/2bedtw88j1ch1.png?width=1440&amp;format=png&amp;auto=webp&amp;s=79798f1e0d799d3d2221cf3dbf6a3f3d7985e2f4  &#32; submitted by &#32;  /u/Shalnark_Rioda   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1uqzhyf/just_started_yesterday_at_which_point_should_i/",
+      "author": "/u/Shalnark_Rioda",
       "engagement": 0,
-      "media_url": "https://preview.redd.it/s394klmtg1ch1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=ed1cd4d57308cdec5940e896a10d24e56d27df18",
+      "media_url": "https://preview.redd.it/2bedtw88j1ch1.png?width=140&amp;height=87&amp;auto=webp&amp;s=0fbf343a8625d0b35b2f4d9903a15c2249ea8ec6",
       "content_type": "image",
       "metadata": {
         "via": "rss"
@@ -222,62 +237,6 @@
       "engagement": 0,
       "media_url": "https://preview.redd.it/re86bcbgewbh1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=1b8632079b71246db89ea3a4c66232dd1149cfce",
       "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-07-07T18:38:31+00:00",
-      "lang": "en",
-      "title": "odds are pretty generous for a gacha",
-      "summary": "Also is there a reason the second character has the potential maxed out? is it automatic just for silver tier characters. coming in from slay the spire, just finished the prologue but things are similar enough its easy to get a hang of the basics.  &#32; submitted by &#32;  /u/RespondUsed3259   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1uq3uk6/odds_are_pretty_generous_for_a_gacha/",
-      "author": "/u/RespondUsed3259",
-      "engagement": 0,
-      "media_url": "https://preview.redd.it/c0t1svn2pubh1.png?width=140&amp;height=73&amp;auto=webp&amp;s=0ed7b5a76f309680dce841476b9a4bcbdc439de6",
-      "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-07-07T18:47:02+00:00",
-      "lang": "en",
-      "title": "I really like this team",
-      "summary": "This team has been really fun to use because of aurita, though I wish there was some space for an ultra or a Caro unit for the extra heals/card reuse  &#32; submitted by &#32;  /u/thebindingofcat   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1uq43sp/i_really_like_this_team/",
-      "author": "/u/thebindingofcat",
-      "engagement": 0,
-      "media_url": "https://external-preview.redd.it/ZncxbWVvb2pzdWJoMRtNjcmjxP4S4VXDo6deh6z149jLoJyJVZ-JkeM5tngl.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=85068d6be698af61dc44c547d1f9c493720918b1",
-      "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-07-07T17:53:32+00:00",
-      "lang": "en",
-      "title": "Which characters should be 60+lvl?",
-      "summary": "Hi! For a while i was investing more or less into all my dps or characters i really like. But as they&#39;re not a lot of resources for leveling up characters over 60 lvl, i started wondering if there&#39;s any guide about which characters work well enough at lvl 60 and which should be lvl up as much as possible?  &#32; submitted by &#32;  /u/Ok_Entertainment8145   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1uq2k1i/which_characters_should_be_60lvl/",
-      "author": "/u/Ok_Entertainment8145",
-      "engagement": 0,
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-07-07T19:57:53+00:00",
-      "lang": "en",
-      "title": "How does Gmurphy work?",
-      "summary": "Okay so I have Gmurphy and I have no clue how she works (I have a team with hameln, murphy &amp; G and tawil. but I also won miriam, tulu, goliath etc.) can anyone explain (in simple language) how she works? and how I should use her/in what team  &#32; submitted by &#32;  /u/IsJackback   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1uq666z/how_does_gmurphy_work/",
-      "author": "/u/IsJackback",
-      "engagement": 0,
       "metadata": {
         "via": "rss"
       }

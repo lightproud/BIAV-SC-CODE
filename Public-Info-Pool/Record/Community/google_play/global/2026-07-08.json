@@ -1,8 +1,8 @@
 {
   "date": "2026-07-08",
-  "archived_at": "2026-07-08T17:26:27.126503+00:00",
+  "archived_at": "2026-07-08T19:16:50.496818+00:00",
   "source": "google_play",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "title": "[Google Play 好评] ★4 gamenya bagus, tapi pas di in game(battl",
@@ -16,6 +16,20 @@
       "tags": [],
       "lang": "id",
       "platform_region": "id",
+      "region": "global"
+    },
+    {
+      "title": "[Google Play 好评] ★5 Wonderful little gacha with very generou",
+      "summary": "Wonderful little gacha with very generous rates and very attentive devs. F2P friendly enough.",
+      "source": "google_play",
+      "time": "2026-07-07T18:04:59",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-56c3a327-6563-4583-ac83-cc3789651b53",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "DavidUnderscore",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "us",
       "region": "global"
     }
   ],

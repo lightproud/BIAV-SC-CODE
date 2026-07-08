@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-08T17:25:37.058226+00:00",
+  "collected_at": "2026-07-08T19:16:03.730796+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 135,
+  "item_count": 136,
   "items": [
     {
       "source": "google_play",
@@ -243,6 +243,16 @@
       "summary": "觉得还行",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=zh_CN#gp-57f4f9db-558e-4842-b184-3a7e848970ad",
       "author": "元气豆芽（YQBean）",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-07T18:04:59",
+      "lang": "en",
+      "title": "[Google Play 好评] ★5 Wonderful little gacha with very generou",
+      "summary": "Wonderful little gacha with very generous rates and very attentive devs. F2P friendly enough.",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-56c3a327-6563-4583-ac83-cc3789651b53",
+      "author": "DavidUnderscore",
       "engagement": 0
     },
     {

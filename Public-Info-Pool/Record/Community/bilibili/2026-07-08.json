@@ -1,8 +1,8 @@
 {
   "date": "2026-07-08",
-  "archived_at": "2026-07-08T17:26:26.912887+00:00",
+  "archived_at": "2026-07-08T19:16:50.287358+00:00",
   "source": "bilibili",
-  "item_count": 18,
+  "item_count": 19,
   "items": [
     {
       "title": "沙耶不擅长 但努力做了面包 不吃的话身体会受不了的",
@@ -115,6 +115,29 @@
         "danmaku": 0
       },
       "media_url": "https://i0.hdslb.com/bfs/archive/c41ee2c2a2adb0af9803b8b108867a2c88bd2559.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "[杀戮尖塔2]假如我是沙耶",
+      "summary": "└ Matthias--k (0赞): 哎我太帅了～[初音未来三连快乐表情包_棒棒哒][初音未来三连快乐表情包_棒棒哒][初音未来_干杯]\n  └ 小犹start (0赞): 太有数值了",
+      "source": "bilibili",
+      "time": "2026-07-08T11:14:18+00:00",
+      "url": "https://www.bilibili.com/video/BV16LMg6HEv8",
+      "engagement": 135,
+      "is_hot": false,
+      "author": "太阳神教万岁",
+      "tags": [
+        "单机游戏"
+      ],
+      "metadata": {
+        "play": 130,
+        "comment_count": 5,
+        "comments_fetched": 2,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/ffb63ccb4c0d6373bbb9148f73f3791f9693d8da.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
