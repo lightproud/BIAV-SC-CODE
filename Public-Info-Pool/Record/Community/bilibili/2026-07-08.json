@@ -1,8 +1,8 @@
 {
   "date": "2026-07-08",
-  "archived_at": "2026-07-08T11:00:49.520570+00:00",
+  "archived_at": "2026-07-08T12:23:29.165364+00:00",
   "source": "bilibili",
-  "item_count": 14,
+  "item_count": 17,
   "items": [
     {
       "title": "沙耶不擅长 但努力做了面包 不吃的话身体会受不了的",
@@ -166,6 +166,29 @@
       "platform_region": "cn"
     },
     {
+      "title": "【忘却前夜】庞水船7t3-5，猜猜伤害都是谁打的",
+      "summary": "-\n  └ 嘎啦嘎啦果 (0赞): 正常配置\n  └ 嘎啦嘎啦果 (0赞): 触手打的",
+      "source": "bilibili",
+      "time": "2026-07-08T11:31:09+00:00",
+      "url": "https://www.bilibili.com/video/BV1WuMg6xEGb",
+      "engagement": 104,
+      "is_hot": false,
+      "author": "嘎啦嘎啦果",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 102,
+        "comment_count": 2,
+        "comments_fetched": 2,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/2cdce75300a9f6692aa34a32ada27c8ce3e7d57e.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
       "title": "沙耶の唄 // 命よ息吹いて安らぎの色に",
       "summary": "《沙耶の唄》-\tいとうかなこ\n  └ 毛绒熊崽 (0赞): [桃源_乖巧]",
       "source": "bilibili",
@@ -184,6 +207,29 @@
         "danmaku": 0
       },
       "media_url": "https://i0.hdslb.com/bfs/archive/d68f92f65e5e33a071dbebffbcfa8f7b83c57c9d.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "孢子结局绘画过程",
+      "summary": "沙耶之歌\n  └ 野生彻索_LXだよ (1赞): 捧场\n  └ miyatoka (0赞): 喜欢可以拿走[给心心]",
+      "source": "bilibili",
+      "time": "2026-07-08T11:25:20+00:00",
+      "url": "https://www.bilibili.com/video/BV1JjMg6DEzf",
+      "engagement": 32,
+      "is_hot": false,
+      "author": "miyatoka",
+      "tags": [
+        "绘画"
+      ],
+      "metadata": {
+        "play": 29,
+        "comment_count": 3,
+        "comments_fetched": 2,
+        "danmaku": 0
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/b5dc8731042ad407be8dddb7bb7420cf1abca602.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
@@ -253,6 +299,29 @@
         "danmaku": 0
       },
       "media_url": "https://i1.hdslb.com/bfs/archive/719ef6eaf4a3539338c7640ded237637a084e60d.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "在古代，穷人拥有高配攻瓜有多爽？",
+      "summary": "这集依然拉拉了\n  └ 密斯卡托尼克的银猫 (0赞): 封面原图",
+      "source": "bilibili",
+      "time": "2026-07-08T12:17:36+00:00",
+      "url": "https://www.bilibili.com/video/BV1qpMg62E57",
+      "engagement": 4,
+      "is_hot": false,
+      "author": "密斯卡托尼克的银猫",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 3,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/03f4301164b9be33fab4e3fa09d3ad73a840fc29.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
