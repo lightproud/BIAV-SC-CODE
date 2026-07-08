@@ -4,6 +4,10 @@
  * corpus-sync guards holding both reproduced prompts to their archive.
  */
 
+import { existsSync, readFileSync } from 'node:fs';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
 import { describe, expect, it, vi } from 'vitest';
 
 import {
@@ -204,19 +208,43 @@ describe('DefaultHookRunner condition gate', () => {
 });
 
 // ---------------------------------------------------------------------------
-// Provenance — attribution + translation state
+// Corpus-sync guard
 // ---------------------------------------------------------------------------
-// The English-archive drift check is RETIRED (2026-07-08): both prompts are
-// translated to Chinese (i18n-zh batch B), faithful:false, so it could only
-// skip. The CJK structural guard in tests/aux-prompts-i18n-zh.test.ts covers
-// reversion; the slug provenance (attribution) is retained on the table entries.
 
-describe('hook-condition prompt provenance (attribution + translation state)', () => {
-  it('the provenance table has 2 entries, translated in-place with source slugs retained', () => {
+describe('hook-condition prompt provenance (corpus-sync guard, Track B parity)', () => {
+  const archive = join(
+    dirname(fileURLToPath(import.meta.url)),
+    '..',
+    '..',
+    '..',
+    'Public-Info-Pool',
+    'Reference',
+    'Claude-Code-System-Prompts',
+    'system-prompts',
+  );
+  const norm = (s: string) => s.replace(/\s+/g, ' ').trim();
+  const stripHeader = (md: string) => md.replace(/^<!--[\s\S]*?-->\n?/, '');
+
+  it('the provenance table has 2 faithful entries', () => {
     expect(Object.keys(HOOK_CONDITION_PROVENANCE_TABLE)).toHaveLength(2);
     for (const p of Object.values(HOOK_CONDITION_PROVENANCE_TABLE)) {
-      expect(p.faithful).toBe(false); // translated (JSON ok/reason/impossible kept English)
-      expect(p.slug.length).toBeGreaterThan(0); // English source (attribution)
+      expect(p.faithful).toBe(true);
     }
   });
+
+  const faces = [
+    { text: HOOK_CONDITION_SYSTEM, prov: HOOK_CONDITION_PROVENANCE },
+    { text: HOOK_STOP_CONDITION_SYSTEM, prov: HOOK_STOP_CONDITION_PROVENANCE },
+  ];
+  for (const { text, prov } of faces) {
+    it.runIf(existsSync(archive))(`${prov.slug} is faithful to its archived source`, () => {
+      const body = norm(stripHeader(readFileSync(join(archive, `${prov.slug}.md`), 'utf8')));
+      const drifted = norm(text)
+        .split(/(?<=[.:])\s+/)
+        .map(norm)
+        .filter((s) => s.length >= 40)
+        .filter((s) => !body.includes(s.slice(0, 60)));
+      expect(drifted, `not found in archive:\n${drifted.join('\n')}`).toEqual([]);
+    });
+  }
 });

@@ -11,6 +11,31 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.29.0 — 2026-07-08
+
+**Revert the entire i18n-zh prompt campaign back to English** (keeper ruling,
+2026-07-08). The v0.19.0–0.28.0 batches translated every shipped prompt surface
+to Chinese; this release restores them all to their prior **faithful English
+reproductions**, undoing the on-the-wire divergence documented in `docs/COMPAT.md`.
+
+- **restored to English (on the wire):** every built-in **tool description**
+  (`src/tools/descriptions.ts`, was v0.19.0–0.23.0) and every **system / utility
+  prompt** — the main-loop fragment store (`prompt-fragments.ts` +
+  `prompt-assembler.ts`), the opt-in harness variants and `<env>` assembly
+  (`prompts.ts`), the subagent + worker-fork framing (`subagents/agents.ts`), the
+  hook-condition evaluators (`hooks/condition.ts`), the adversarial verifier
+  (`verifier/prompts.ts`), the context-tip surfaces (`tips/prompts.ts`), and the
+  utility-call generators (`generators/prompts.ts`, was v0.24.0–0.28.0).
+- **tests:** the five `*-i18n-zh.test.ts` structural suites (which asserted the
+  prompts were Chinese) are removed; the **English-archive corpus-sync guards**
+  retired as inert during the campaign are restored alongside the reverted test
+  files; the `v5-mainloop-golden.json` byte-lock is regenerated back to English.
+- **provenance:** reproduced fragments are once again byte-faithful English
+  reproductions of the archived Claude Code prompts (`faithful: true`),
+  re-establishing the official-parity claim without the translation layer.
+- unchanged: the i18n token-cost probes under `tests/integration/` (v0.19–0.23
+  investigation harness) are left in place; they exercise no shipped runtime path.
+
 ## 0.28.0 — 2026-07-08
 
 i18n-zh **Phase 2 batch E** (keeper ruling B): the **opt-in harness prompt

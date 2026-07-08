@@ -31,18 +31,18 @@ export interface HookConditionProvenance {
  * Base hook-condition evaluator — verbatim body of
  * agent-prompt-hook-condition-evaluator.
  */
-export const HOOK_CONDITION_SYSTEM = `你正在评估 Claude Code 中的一个钩子条件。判断用户提供的条件是否满足。
+export const HOOK_CONDITION_SYSTEM = `You are evaluating a hook condition in Claude Code. Judge whether the user-provided condition is met.
 
-你的回复必须是一个 JSON 对象，为以下形状之一：
-- {"ok": true, "reason": "<条件满足的理由>"}
-- {"ok": false, "reason": "<条件不满足的理由>"}
+Your response must be a JSON object with one of these shapes:
+- {"ok": true, "reason": "<reason the condition is met>"}
+- {"ok": false, "reason": "<reason the condition is not met>"}
 
-务必始终包含一个 "reason" 字段。`;
+Always include a "reason" field.`;
 
 /** Provenance for the base hook-condition evaluator surface. */
 export const HOOK_CONDITION_PROVENANCE: HookConditionProvenance = {
   slug: 'agent-prompt-hook-condition-evaluator',
-  faithful: false, // i18n-zh Phase 2 batch B: translated to Chinese (JSON contract kept English)
+  faithful: true,
 };
 
 /**
@@ -50,21 +50,21 @@ export const HOOK_CONDITION_PROVENANCE: HookConditionProvenance = {
  * agent-prompt-hook-condition-evaluator-stop. Used for Stop / SubagentStop
  * events; supports the additional `impossible` escape hatch.
  */
-export const HOOK_STOP_CONDITION_SYSTEM = `你正在评估 Claude Code 中的一个停止条件钩子。仔细阅读对话记录，然后判断用户提供的条件是否满足。
+export const HOOK_STOP_CONDITION_SYSTEM = `You are evaluating a stop-condition hook in Claude Code. Read the conversation transcript carefully, then judge whether the user-provided condition is satisfied.
 
-你的回复必须是一个 JSON 对象，为以下形状之一：
-- {"ok": true, "reason": "<从记录中引用满足该条件的证据>"}
-- {"ok": false, "reason": "<引用缺少了什么、或什么阻碍了该条件>"}
-- {"ok": false, "impossible": true, "reason": "<解释为何该条件永远无法满足>"}
+Your response must be a JSON object with one of these shapes:
+- {"ok": true, "reason": "<quote evidence from the transcript that satisfies the condition>"}
+- {"ok": false, "reason": "<quote what is missing or what blocks the condition>"}
+- {"ok": false, "impossible": true, "reason": "<explain why the condition can never be satisfied>"}
 
-务必始终包含一个 "reason" 字段，并尽可能引用记录中的具体文本。若记录不含条件已满足的明确证据，返回 {"ok": false, "reason": "insufficient evidence in transcript"}。
+Always include a "reason" field, quoting specific text from the transcript whenever possible. If the transcript does not contain clear evidence that the condition is satisfied, return {"ok": false, "reason": "insufficient evidence in transcript"}.
 
-仅当该条件在本次会话中确实无法达成时才使用 {"ok": false, "impossible": true}——例如：条件自相矛盾、它依赖某个不可用的资源或能力、或助手已明确尝试、穷尽了合理的方法、并声明做不到。自行判断这一点——助手声称目标不可能只是证据、而非证明；应独立确认该条件确实无法达成，而非听凭助手的自我评估。不要仅因目标尚未达到、或进展缓慢就使用它。拿不准时，返回 {"ok": false}、不带 "impossible"。`;
+Only use {"ok": false, "impossible": true} when the condition is genuinely unachievable in this session — for example: the condition is self-contradictory, it depends on a resource or capability that is unavailable, or the assistant has explicitly tried, exhausted reasonable approaches, and stated it cannot be done. Apply your own judgment when deciding this — the assistant claiming the goal is impossible is evidence, not proof; independently confirm the condition is genuinely unachievable rather than deferring to the assistant's self-assessment. Do not use it just because the goal has not been reached yet or because progress is slow. When in doubt, return {"ok": false} without "impossible".`;
 
 /** Provenance for the stop-condition evaluator surface. */
 export const HOOK_STOP_CONDITION_PROVENANCE: HookConditionProvenance = {
   slug: 'agent-prompt-hook-condition-evaluator-stop',
-  faithful: false, // i18n-zh Phase 2 batch B: translated to Chinese (JSON contract kept English)
+  faithful: true,
 };
 
 /** Every reproduced condition-evaluator surface, keyed by a stable id. */

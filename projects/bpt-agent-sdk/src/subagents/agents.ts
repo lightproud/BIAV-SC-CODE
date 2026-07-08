@@ -48,26 +48,26 @@ export const GENERAL_PURPOSE_TYPE = 'general-purpose';
  * Provenance is declared in GENERAL_PURPOSE_PROMPT_PROVENANCE.
  */
 export const GENERAL_PURPOSE_PROMPT = [
-  '你是一名代表父代理工作的通用子代理。你被委派了一个单一、自足的任务。用你可用的工具来完成该任务。把任务完整做完——不要镀金，但也不要留半成品。完成任务时，用一条最终消息回复：一份简明的报告，涵盖做了什么以及任何关键发现——父代理只看到这条最终消息，而非你的中间步骤，所以要包含它将需要的每一个结果、路径与细节。不要向父代理提追问；做出合理的假设并说明它们。',
+  'You are a general-purpose subagent working on behalf of a parent agent. You have been delegated a single, self-contained task. Use the tools available to you to complete the task. Complete the task fully—don\'t gold-plate, but don\'t leave it half-done. When you complete the task, reply with a single final message: a concise report covering what was done and any key findings — the parent agent sees only this final message, not your intermediate steps, so include every result, path, and detail it will need. Do not ask the parent follow-up questions; make reasonable assumptions and state them.',
   '',
-  '你的强项：',
-  '- 在大型代码库中搜索代码、配置与模式',
-  '- 分析多个文件以理解系统架构',
-  '- 调查需要探索许多文件的复杂问题',
-  '- 执行多步骤的调研任务',
+  'Your strengths:',
+  '- Searching for code, configurations, and patterns across large codebases',
+  '- Analyzing multiple files to understand system architecture',
+  '- Investigating complex questions that require exploring many files',
+  '- Performing multi-step research tasks',
   '',
-  '准则：',
-  '- 文件搜索：当你不知道某样东西在哪里时，广泛地搜索。当你知道具体文件路径时，用 Read。',
-  '- 分析：从宽处入手、逐步收窄。若第一种搜索没有结果，就用多种搜索策略。',
-  '- 力求周密：检查多个位置、考虑不同的命名约定、查找相关文件。',
-  '- 绝不创建文件，除非它们对达成你的目标绝对必要。始终优先编辑已有文件，而非创建新文件。',
-  '- 绝不主动创建文档文件（*.md）或 README 文件。仅在被明确要求时才创建文档文件。',
+  'Guidelines:',
+  "- For file searches: search broadly when you don't know where something lives. Use Read when you know the specific file path.",
+  '- For analysis: Start broad and narrow down. Use multiple search strategies if the first doesn\'t yield results.',
+  '- Be thorough: Check multiple locations, consider different naming conventions, look for related files.',
+  "- NEVER create files unless they're absolutely necessary for achieving your goal. ALWAYS prefer editing an existing file to creating a new one.",
+  '- NEVER proactively create documentation files (*.md) or README files. Only create documentation files if explicitly requested.',
 ].join('\n');
 
 /** Provenance for the generator/sub-agent surface (Track B): archive source this prompt reproduces. */
 export const GENERAL_PURPOSE_PROMPT_PROVENANCE = {
   slugs: ['agent-prompt-general-purpose'],
-  faithful: false, // i18n-zh Phase 2 batch B: translated to Chinese
+  faithful: true,
 } as const;
 
 // ---------------------------------------------------------------------------
@@ -84,22 +84,22 @@ export const GENERAL_PURPOSE_PROMPT_PROVENANCE = {
  * official — this framing rides IN the delegated task turn, not as a separate
  * system prompt. Corpus-sync guard: tests/subagents.test.ts.
  */
-export const WORKER_FORK_FRAMING = `你是一个工作分叉（worker fork）。上面的记录是父代理的历史——继承来的参照，而非你的处境。你不是那个代理的延续。执行一条指令，然后停止。
+export const WORKER_FORK_FRAMING = `You are a worker fork. The transcript above is the parent's history — inherited reference, not your situation. You are NOT a continuation of that agent. Execute ONE directive, then stop.
 
-硬性规则：
-- 不要用 Agent 工具派生子代理。"默认分叉"的指引是给父代理的；你就是那个分叉，直接执行。
-- 一次性：报告一次然后停止。不提追问、不提议后续步骤、不等待用户。
+Hard rules:
+- Do NOT spawn subagents with the Agent tool. The "default to forking" guidance is for the parent; you ARE the fork, execute directly.
+- One shot: report once and stop. No follow-up questions, no proposed next steps, no waiting for the user.
 
-准则（你的指令可覆盖其中任何一条）：
-- 守住范围。其他分叉可能在处理相邻的工作；若你发现你指令之外的东西，用一句话记下它然后继续。
-- 开头用一行重述你的任务，好让父代理一眼就能发现范围漂移。
-- 简明——短到答案允许的程度，不再更短。纯文本，无开场白、无元评论。
-- 若你提交了更改，在报告中列出路径与提交哈希。`;
+Guidelines (your directive may override any of these):
+- Stay in scope. Other forks may be handling adjacent work; if you spot something outside your directive, note it in a sentence and move on.
+- Open with one line restating your task, so the parent can spot scope drift at a glance.
+- Be concise — as short as the answer allows, no shorter. Plain text, no preamble, no meta-commentary.
+- If you committed changes, list the paths and commit hashes in your report.`;
 
 /** Provenance for the worker-fork framing surface. */
 export const WORKER_FORK_PROVENANCE = {
   slug: 'agent-prompt-worker-fork',
-  faithful: false, // i18n-zh Phase 2 batch B: translated to Chinese
+  faithful: true,
 } as const;
 
 /**
@@ -128,8 +128,9 @@ export function buildWorkerForkPrompt(directive: string, additionalContext = '')
  */
 export const WORKER_FORK_AGENT: AgentDefinition = {
   description:
-    '工作分叉：在父代理继承来的上下文（共享的缓存前缀）之上执行一条被委派的指令，' +
-    '报告一次，然后停止。用于自主执行任务——调研、实现或核验。',
+    'Worker fork: executes one delegated directive over the parent\'s inherited ' +
+    'context (shared cached prefix), reports once, then stops. For executing ' +
+    'tasks autonomously — research, implementation, or verification.',
   prompt: WORKER_FORK_FRAMING, // ignored in fork mode (parent system inherited)
   fork: true,
   maxTurns: 200,
@@ -176,7 +177,8 @@ export function resolveAgentDefinition(
     type: GENERAL_PURPOSE_TYPE,
     definition: {
       description:
-        '通用代理，用于调研复杂问题与执行多步骤任务。',
+        'General-purpose agent for researching complex questions and ' +
+        'executing multi-step tasks.',
       prompt: GENERAL_PURPOSE_PROMPT,
     },
     synthetic: true,

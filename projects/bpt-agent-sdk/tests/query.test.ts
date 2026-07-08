@@ -472,8 +472,8 @@ describe('prompt cache: stable prefix does not drift across turns (a read can hi
     await collect(q);
     const sys = fetchStub.requests[0]!.body.system as Array<{ text?: string }>;
     const stable = sys[0]?.text ?? '';
-    expect(stable).toContain('执行任务：'); // v5 marker (Chinese, i18n-zh Phase 2 batch A)
-    expect(stable).toContain('量两次，剪一次。'); // v5 marker (Measure twice, cut once.)
+    expect(stable).toContain('Doing tasks:'); // v5 marker
+    expect(stable).toContain('Measure twice, cut once.'); // v5 marker
     expect(stable).not.toContain('Tool guidance:'); // v1 marker absent
   });
 
@@ -492,8 +492,8 @@ describe('prompt cache: stable prefix does not drift across turns (a read can hi
     await collect(q);
     const sys = fetchStub.requests[0]!.body.system as Array<{ text?: string }>;
     const stable = sys[0]?.text ?? '';
-    expect(stable).toContain('工具指引：'); // v1 marker (Chinese, i18n-zh batch E)
-    expect(stable).not.toContain('执行任务：'); // v5 marker absent (Chinese)
+    expect(stable).toContain('Tool guidance:'); // v1 marker
+    expect(stable).not.toContain('Doing tasks:'); // v5 marker absent
   });
 });
 

@@ -196,22 +196,20 @@ describe('Bash description win32 platform note (gated assembly)', () => {
   it('win32 appends BASH_WIN32_NOTE after the base description', () => {
     const desc = createBashTool(undefined, 'win32').description;
     expect(desc).toBe(BASH_DESCRIPTION + '\n\n' + BASH_WIN32_NOTE);
-    // win32 note is Chinese (i18n-zh batch 5); 'POSIX bash (Git Bash)' is a
-    // preserved token, the forward-slash guidance is translated to 正斜杠.
     expect(desc).toContain('POSIX bash (Git Bash)');
-    expect(desc).toContain('正斜杠');
+    expect(desc).toContain('forward slashes');
   });
 
   it('win32 + sandbox carries both the platform note and the sandbox note', () => {
     const desc = createBashTool(fakeSandbox, 'win32').description;
     expect(desc.startsWith(BASH_DESCRIPTION + '\n\n' + BASH_WIN32_NOTE)).toBe(true);
-    expect(desc).toContain('# 沙箱');
+    expect(desc).toContain('# Sandbox');
   });
 
   it('sandbox without win32 stays exactly as before (no platform note)', () => {
     const desc = createBashTool(fakeSandbox, 'linux').description;
     expect(desc).not.toContain(BASH_WIN32_NOTE);
-    expect(desc).toContain('# 沙箱');
+    expect(desc).toContain('# Sandbox');
   });
 });
 

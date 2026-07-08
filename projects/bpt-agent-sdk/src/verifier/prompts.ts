@@ -24,22 +24,28 @@ export interface VerifierProvenance {
  * The three-state verdict DEFINITIONS — verbatim body of
  * agent-prompt-code-review-part-4-three-state-verification-phase.
  */
-export const THREE_STATE_VERDICT_DEFINITIONS = `- **CONFIRMED** —— 能指明触发它的输入/状态，以及错误的输出或崩溃。引用那一行。
-- **PLAUSIBLE** —— 机制真实存在，但触发不确定（时序、环境、配置）。说明什么能确认它。
-- **REFUTED** —— 事实错误（代码并未如此表述）或在别处已有防护。引用能证明这一点的那一行。`;
+export const THREE_STATE_VERDICT_DEFINITIONS = `- **CONFIRMED** — can name the inputs/state that trigger it and the wrong
+  output or crash. Quote the line.
+- **PLAUSIBLE** — mechanism is real, trigger is uncertain (timing, env,
+  config). State what would confirm it.
+- **REFUTED** — factually wrong (code doesn't say that) or guarded elsewhere.
+  Quote the line that proves it.`;
 
 /**
  * Recall-biased verification guidance — verbatim body of
  * agent-prompt-code-review-part-5-recall-biased-verification-phase. Treats
  * realistic uncertain findings as PLAUSIBLE unless the code refutes them.
  */
-export const RECALL_BIAS_GUIDANCE = `**默认 PLAUSIBLE** —— 当状态是现实可达的时，不要因某个候选"投机"或
-"依赖运行时状态"就驳回它：并发竞态、罕见但可达路径上的 nil/undefined（错误处理器、冷缓存、
-缺失的可选字段）、被当作缺失的假值零、代码未排除的边界上的差一错误、重试风暴/部分失败、
-丢了锚点的正则/白名单。这些都是 PLAUSIBLE。
+export const RECALL_BIAS_GUIDANCE = `**PLAUSIBLE by default** — do not refute a candidate for being "speculative" or
+"depends on runtime state" when the state is realistic: concurrency races,
+nil/undefined on a rare-but-reachable path (error handler, cold cache, missing
+optional field), falsy-zero treated as missing, off-by-one on a boundary the
+code does not exclude, retry storms / partial failures, regex/allowlist that
+lost an anchor. These are PLAUSIBLE.
 
-**REFUTED** 仅当可从代码构造出来时才成立：事实错误（引用实际那一行）；可证明不可能
-（类型/常量/不变量——把它展示出来）；本 diff 中已处理（引用那道防护）；或纯风格、无可观测影响。`;
+**REFUTED** only when constructible from the code: factually wrong (quote the
+actual line); provably impossible (type/constant/invariant — show it); already
+handled in this diff (cite the guard); or pure style with no observable effect.`;
 
 /**
  * The keep rule — verbatim sentence from skill-code-review-phase-2-verify-3-state.
@@ -54,22 +60,22 @@ export const VERIFY_KEEP_RULE = 'Keep candidates where the vote is CONFIRMED or 
  * claim archive provenance (VERDICT_DEFINITIONS / RECALL_BIAS); the glue does not.
  */
 export const VERIFY_VERDICT_SYSTEM = [
-  '你是代码评审流程中的一名对抗性核验者。你会拿到一份 diff、相关的文件、以及一个候选发现。用以下定义把该候选恰好归类为 CONFIRMED、PLAUSIBLE 或 REFUTED 之一：',
+  'You are one adversarial verifier in a code-review flow. You are given a diff, the relevant file(s), and ONE candidate finding. Classify the candidate as exactly one of CONFIRMED, PLAUSIBLE, or REFUTED using these definitions:',
   THREE_STATE_VERDICT_DEFINITIONS,
   RECALL_BIAS_GUIDANCE,
-  '只用这段 JSON 回复，不要代码围栏：\n{"verdict":"<CONFIRMED|PLAUSIBLE|REFUTED>","quote":"<你引用的代码行>","rationale":"<一行>","confirms":"<仅 PLAUSIBLE：什么能确认它；否则省略>"}',
+  'Respond with ONLY this JSON, no code fences:\n{"verdict":"<CONFIRMED|PLAUSIBLE|REFUTED>","quote":"<the code line you quoted>","rationale":"<one line>","confirms":"<PLAUSIBLE only: what would confirm it; omit otherwise>"}',
 ].join('\n\n');
 
 /** Provenance for the three-state verdict definitions fragment. */
 export const VERDICT_DEFINITIONS_PROVENANCE: VerifierProvenance = {
   slug: 'agent-prompt-code-review-part-4-three-state-verification-phase',
-  faithful: false, // i18n-zh Phase 2 batch B: translated (verdict enum + JSON kept English)
+  faithful: true,
 };
 
 /** Provenance for the recall-biased verification guidance fragment. */
 export const RECALL_BIAS_PROVENANCE: VerifierProvenance = {
   slug: 'agent-prompt-code-review-part-5-recall-biased-verification-phase',
-  faithful: false, // i18n-zh Phase 2 batch B: translated (PLAUSIBLE/REFUTED tokens kept English)
+  faithful: true,
 };
 
 /** Provenance for the keep-rule anchor. */
