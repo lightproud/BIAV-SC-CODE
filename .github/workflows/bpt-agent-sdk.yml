@@ -84,6 +84,11 @@ on:
         description: 'L5 spend cap in USD (default 1.5; a full 18-task round projects ~$1.55, so raise this to reach the later code/longconv tasks before the budget-abort)'
         required: false
         default: '1.5'
+      token_probe:
+        description: 'Cross-model tokenizer probe: count_tokens the EN vs ZH tool-description prose under each model (no generation, $0). Settles whether Haiku inflates Chinese vs newer tokenizers.'
+        required: false
+        type: boolean
+        default: false
 
 concurrency:
   group: bpt-agent-sdk-${{ github.ref }}
@@ -433,3 +438,29 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: node tests/integration/cache-probe.mjs "--model=${{ github.event.inputs.model }}" --runs=3 --big
+
+  token-probe:
+    # Cross-model tokenizer probe: count_tokens (NO generation, $0) the EN vs ZH
+    # tool-description prose under each model's own tokenizer, to settle whether
+    # Haiku inflates Chinese vs the newer Sonnet 5 / Opus 4.8 / Fable 5
+    # tokenizers (the +50% i18n cost finding, 2026-07-08). Dispatch with
+    # token_probe=true. No build needed — the probe is standalone node (fetch +
+    # a committed fixture).
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.token_probe == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          sparse-checkout: |
+            /*
+            !/Public-Info-Pool/Record/
+            !/Public-Info-Pool/Reference/
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Tokenizer probe — count_tokens EN vs ZH across model tokenizers
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node tests/integration/token-probe.mjs
