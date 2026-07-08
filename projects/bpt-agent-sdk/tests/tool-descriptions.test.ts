@@ -30,24 +30,17 @@ const ALL = [
 
 describe('faithful tool descriptions', () => {
   it('reproduce official signature phrasing', () => {
-    // Bash is now Chinese (i18n-zh batch 5); assert the translated opening.
-    expect(D.BASH_DESCRIPTION).toContain('执行给定的 bash 命令');
-    // dedicated-tools-over-bash redirects reference only shipped tools (tokens)
+    expect(D.BASH_DESCRIPTION).toContain('Executes a given bash command');
+    // dedicated-tools-over-bash redirects reference only shipped tools
     expect(D.BASH_DESCRIPTION).toMatch(/BashOutput/);
     expect(D.BASH_DESCRIPTION).toMatch(/KillShell/);
-    // (The English-size heuristic on TODOWRITE_DESCRIPTION was retired in the
-    //  i18n-zh campaign — TodoWrite is now Chinese, ~compact, and its adequacy
-    //  is asserted structurally in tool-descriptions-i18n-zh.test.ts.)
-    // old_string is a preserved wire token, so it survives Edit's translation.
+    expect(D.TODOWRITE_DESCRIPTION.length).toBeGreaterThan(1500);
     expect(D.EDIT_DESCRIPTION).toContain('old_string');
   });
 
   it('are substantially richer than a terse stub (fidelity implies size)', () => {
-    // Bash is the largest description; the Chinese translation (i18n-zh batch 5)
-    // is denser than the ~5.5k-char English original — the multi-section whole
-    // (usage + Git + commit + PR + sandbox-free base) still lands near 3.8k, so
-    // the guard is retuned to catch truncation without over-fitting a byte count.
-    expect(D.BASH_DESCRIPTION.length).toBeGreaterThan(2500);
+    // Bash is the largest official description; ours reproduces it faithfully.
+    expect(D.BASH_DESCRIPTION.length).toBeGreaterThan(4000);
   });
 
   it('RED LINE: never reference a tool or capability this SDK does not ship', () => {
@@ -77,18 +70,16 @@ describe('faithful tool descriptions', () => {
   it('Workflow description states the honest synchronous adaptation and the shipped caps', () => {
     // The official tool is async (task-notification delivery); ours runs the
     // workflow synchronously inside the tool call — the description must say
-    // so and must not promise the unshipped async machinery. Prose is now
-    // Chinese (i18n-zh batch 4): the honest-adaptation intent is asserted
-    // against the translated wording; code/number tokens stay verbatim.
-    expect(D.WORKFLOW_DESCRIPTION).toContain('在工具调用内**同步**运行');
+    // so and must not promise the unshipped async machinery.
+    expect(D.WORKFLOW_DESCRIPTION).toContain('runs synchronously inside the tool call');
     expect(D.WORKFLOW_DESCRIPTION).not.toContain('task-notification');
     expect(D.WORKFLOW_DESCRIPTION).not.toContain('/workflows to watch');
     // budget is honestly described as the null stub (no token-target channel).
-    expect(D.WORKFLOW_DESCRIPTION).toContain('`budget.total` **永远为 null**');
-    // Official caps are reproduced (the engine implements them); numbers verbatim.
-    expect(D.WORKFLOW_DESCRIPTION).toContain('min(16, cpu 核数 - 2)');
-    expect(D.WORKFLOW_DESCRIPTION).toContain('上限为 1000');
-    expect(D.WORKFLOW_DESCRIPTION).toContain('4096 个条目');
+    expect(D.WORKFLOW_DESCRIPTION).toContain('`budget.total` is ALWAYS null');
+    // Official caps are reproduced verbatim (the engine implements them).
+    expect(D.WORKFLOW_DESCRIPTION).toContain('min(16, cpu cores - 2)');
+    expect(D.WORKFLOW_DESCRIPTION).toContain('capped at 1000');
+    expect(D.WORKFLOW_DESCRIPTION).toContain('at most 4096 items');
   });
 
   it('are actually wired onto the built-in tools', () => {

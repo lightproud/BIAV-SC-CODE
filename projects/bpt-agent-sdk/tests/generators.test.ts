@@ -1,9 +1,11 @@
 /**
- * v0.6 generators/classifiers — parser robustness, wiring, and provenance
- * (attribution + translation state). The former English-archive corpus-sync
- * guard is retired now that every generator prompt is translated to Chinese
- * (i18n-zh Phase 2); reversion is caught by the structural i18n guards.
+ * v0.6 generators/classifiers — parser robustness, wiring, and a corpus-sync
+ * guard holding every reproduced prompt faithful to its archived source.
  */
+
+import { existsSync, readFileSync } from 'node:fs';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 import { describe, expect, it } from 'vitest';
 
@@ -23,13 +25,20 @@ import {
   selectMemoryFilesToAttach,
 } from '../src/generators/index.js';
 import {
+  AWAY_SUMMARY_PROVENANCE,
   AWAY_SUMMARY_SYSTEM,
+  MEMORY_FILES_PROVENANCE,
   MEMORY_FILES_SYSTEM,
   BACKGROUND_STATE_SYSTEM,
+  COMMAND_PREFIX_PROVENANCE,
   COMMAND_PREFIX_SYSTEM,
+  BACKGROUND_STATE_PROVENANCE,
   GENERATOR_PROVENANCE,
+  SESSION_NAME_PROVENANCE,
   SESSION_NAME_SYSTEM,
+  SESSION_TITLE_PROVENANCE,
   SESSION_TITLE_SYSTEM,
+  TITLE_AND_BRANCH_PROVENANCE,
   TITLE_AND_BRANCH_SYSTEM,
 } from '../src/generators/prompts.js';
 import { MockTransport, textReplyEvents } from './helpers/mock-transport.js';
@@ -393,23 +402,51 @@ describe('selectMemoryFilesToAttach over a mock transport', () => {
 });
 
 // ---------------------------------------------------------------------------
-// Provenance — attribution + translation state
+// Corpus-sync guard — every reproduced prompt is faithful to the archive
 // ---------------------------------------------------------------------------
-// The former per-face English-archive drift check (Track B corpus-sync guard) is
-// RETIRED here (2026-07-08): every generator prompt is now translated to Chinese
-// (i18n-zh Phase 2 batches C+D), so faithful:false throughout and that check
-// could only ever skip. A revert-to-English is instead caught by the structural
-// i18n guards (tests/gen-tips-i18n-zh.test.ts, tests/classifiers-i18n-zh.test.ts,
-// which assert CJK.test===true). The `slug` provenance is kept below as the
-// open-reproduction attribution: it records the English archive source each
-// Chinese prompt was translated FROM.
 
-describe('generator prompt provenance (attribution + translation state)', () => {
-  it('every reproduced face keeps its source slug and is translated (faithful:false)', () => {
+describe('generator prompt provenance (corpus-sync guard, Track B parity)', () => {
+  const archive = join(
+    dirname(fileURLToPath(import.meta.url)),
+    '..',
+    '..',
+    '..',
+    'Public-Info-Pool',
+    'Reference',
+    'Claude-Code-System-Prompts',
+    'system-prompts',
+  );
+  const norm = (s: string) => s.replace(/\s+/g, ' ').trim();
+  const stripHeader = (md: string) => md.replace(/^<!--[\s\S]*?-->\n?/, '');
+
+  const faces = [
+    { prompt: COMMAND_PREFIX_SYSTEM, prov: COMMAND_PREFIX_PROVENANCE },
+    { prompt: BACKGROUND_STATE_SYSTEM, prov: BACKGROUND_STATE_PROVENANCE },
+    { prompt: SESSION_TITLE_SYSTEM, prov: SESSION_TITLE_PROVENANCE },
+    { prompt: TITLE_AND_BRANCH_SYSTEM, prov: TITLE_AND_BRANCH_PROVENANCE },
+    { prompt: SESSION_NAME_SYSTEM, prov: SESSION_NAME_PROVENANCE },
+    { prompt: AWAY_SUMMARY_SYSTEM, prov: AWAY_SUMMARY_PROVENANCE },
+    { prompt: MEMORY_FILES_SYSTEM, prov: MEMORY_FILES_PROVENANCE },
+  ];
+
+  it('the provenance table has one entry per reproduced face, all faithful', () => {
     expect(Object.keys(GENERATOR_PROVENANCE)).toHaveLength(7);
     for (const p of Object.values(GENERATOR_PROVENANCE)) {
-      expect(p.slug.length).toBeGreaterThan(0); // attribution: the English source
-      expect(p.faithful).toBe(false); // translated in-place (prose Chinese, contracts English)
+      expect(p.faithful).toBe(true);
+      expect(p.slug.length).toBeGreaterThan(0);
     }
   });
+
+  for (const { prompt, prov } of faces) {
+    it.runIf(existsSync(archive))(`${prov.slug} is faithful to its archived source`, () => {
+      const body = norm(stripHeader(readFileSync(join(archive, `${prov.slug}.md`), 'utf8')));
+      const drifted = norm(prompt)
+        .split(/(?<=[.:])\s+/)
+        .map(norm)
+        // skip short/boilerplate lines and the interpolation placeholder line
+        .filter((s) => s.length >= 40 && !s.includes('{description}'))
+        .filter((s) => !body.includes(s.slice(0, 60)));
+      expect(drifted, `not found in archive:\n${drifted.join('\n')}`).toEqual([]);
+    });
+  }
 });

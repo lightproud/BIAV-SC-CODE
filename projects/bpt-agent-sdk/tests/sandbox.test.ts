@@ -278,15 +278,14 @@ describe('Bash description + schema gating', () => {
   it('active sandbox: description carries the note + schema has the escape param', () => {
     const tool = createBashTool(fakeCtx());
     expect(tool.description).toContain(BASH_DESCRIPTION);
-    // sandbox note is Chinese (i18n-zh batch 5); header + default-to-sandbox line
-    expect(tool.description).toContain('# 沙箱');
-    expect(tool.description).toContain('默认在沙箱内运行命令');
+    expect(tool.description).toContain('# Sandbox');
+    expect(tool.description).toContain('default to running commands within the sandbox');
     expect(tool.inputSchema.properties).toHaveProperty('dangerouslyDisableSandbox');
   });
   it('mandatory mode: no retry fragment in the description; param stays in the schema (policy-refused at run time)', () => {
     const tool = createBashTool(fakeCtx({ allowEscape: false }));
-    expect(tool.description).toContain('已按策略禁用');
-    expect(tool.description).not.toContain('重试（不必询问');
+    expect(tool.description).toContain('disabled by policy');
+    expect(tool.description).not.toContain("retry with `dangerouslyDisableSandbox: true` (don't ask");
     expect(tool.inputSchema.properties).toHaveProperty('dangerouslyDisableSandbox');
   });
   it('the four base params + the escape param form the full schema (official set)', () => {
@@ -301,10 +300,9 @@ describe('Bash description + schema gating', () => {
   });
   it('network-open sandbox omits the network-failure evidence bullet (red line)', () => {
     const note = buildBashSandboxNote('default', true);
-    // note is Chinese (i18n-zh batch 5); the network-restriction lines are gated
-    expect(note).not.toContain('连接到非白名单主机的网络失败');
-    expect(note).not.toContain('网络访问已禁用');
-    expect(buildBashSandboxNote('default', false)).toContain('连接到非白名单主机的网络失败');
+    expect(note).not.toContain('Network connection failures to non-whitelisted hosts');
+    expect(note).not.toContain('Network access is disabled');
+    expect(buildBashSandboxNote('default', false)).toContain('Network connection failures to non-whitelisted hosts');
   });
 });
 

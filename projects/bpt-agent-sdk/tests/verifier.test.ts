@@ -17,7 +17,9 @@ import {
   parseVerdict,
 } from '../src/verifier/index.js';
 import {
+  RECALL_BIAS_GUIDANCE,
   RECALL_BIAS_PROVENANCE,
+  THREE_STATE_VERDICT_DEFINITIONS,
   VERDICT_DEFINITIONS_PROVENANCE,
   VERIFIER_PROVENANCE,
   VERIFY_KEEP_RULE,
@@ -189,12 +191,7 @@ describe('adversarialVerify over a mock transport', () => {
 // Corpus-sync guard — reproduced fragments faithful to the archive
 // ---------------------------------------------------------------------------
 
-describe('verifier prompt provenance (attribution + translation state)', () => {
-  // The per-fragment English-archive drift check is RETIRED for the two ON-THE-WIRE
-  // fragments (2026-07-08): they are translated to Chinese (i18n-zh batch B),
-  // faithful:false, so it could only skip; the CJK guard in
-  // tests/aux-prompts-i18n-zh.test.ts covers reversion. VERIFY_KEEP_RULE stays
-  // English (a doc anchor, never sent to the model) and is still archive-checked.
+describe('verifier prompt provenance (corpus-sync guard, Track B parity)', () => {
   const archive = join(
     dirname(fileURLToPath(import.meta.url)),
     '..',
@@ -205,19 +202,32 @@ describe('verifier prompt provenance (attribution + translation state)', () => {
     'Claude-Code-System-Prompts',
     'system-prompts',
   );
+  const norm = (s: string) => s.replace(/\s+/g, ' ').trim();
+  const stripHeader = (md: string) => md.replace(/^<!--[\s\S]*?-->\n?/, '');
 
-  it('the provenance table has 3 entries with non-empty slugs; translated wire fragments are faithful:false', () => {
+  it('the provenance table has 3 faithful entries with non-empty slugs', () => {
     expect(Object.keys(VERIFIER_PROVENANCE)).toHaveLength(3);
     for (const p of Object.values(VERIFIER_PROVENANCE)) {
+      expect(p.faithful).toBe(true);
       expect(p.slug.length).toBeGreaterThan(0);
     }
-    // i18n-zh Phase 2 batch B: the two ON-THE-WIRE fragments (verdict definitions,
-    // recall-bias) are translated to Chinese -> faithful:false. VERIFY_KEEP_RULE is
-    // a doc/anchor constant (NOT sent to the model), so it stays English + true.
-    expect(VERDICT_DEFINITIONS_PROVENANCE.faithful).toBe(false);
-    expect(RECALL_BIAS_PROVENANCE.faithful).toBe(false);
-    expect(VERIFY_PHASE_PROVENANCE.faithful).toBe(true);
   });
+
+  const fragments = [
+    { text: THREE_STATE_VERDICT_DEFINITIONS, prov: VERDICT_DEFINITIONS_PROVENANCE },
+    { text: RECALL_BIAS_GUIDANCE, prov: RECALL_BIAS_PROVENANCE },
+  ];
+  for (const { text, prov } of fragments) {
+    it.runIf(existsSync(archive))(`${prov.slug} is faithful to its archived source`, () => {
+      const body = norm(stripHeader(readFileSync(join(archive, `${prov.slug}.md`), 'utf8')));
+      const drifted = norm(text)
+        .split(/(?<=[.:])\s+/)
+        .map(norm)
+        .filter((s) => s.length >= 40)
+        .filter((s) => !body.includes(s.slice(0, 60)));
+      expect(drifted, `not found in archive:\n${drifted.join('\n')}`).toEqual([]);
+    });
+  }
 
   it.runIf(existsSync(archive))('VERIFY_KEEP_RULE appears verbatim in the skill file', () => {
     const body = readFileSync(join(archive, `${VERIFY_PHASE_PROVENANCE.slug}.md`), 'utf8');

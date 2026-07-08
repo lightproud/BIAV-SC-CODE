@@ -9,7 +9,8 @@
 import { spawnSync } from 'node:child_process';
 import { existsSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
-import { join } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { dirname, join } from 'node:path';
 import { afterEach, describe, expect, it } from 'vitest';
 
 import {
@@ -1239,27 +1240,59 @@ describe('subagent runtime — task control', () => {
   });
 });
 
-describe('general-purpose prompt provenance (attribution + translation state)', () => {
-  // The English-archive drift check is RETIRED (2026-07-08): GENERAL_PURPOSE_PROMPT
-  // is translated to Chinese (i18n-zh batch B), faithful:false, so it could only
-  // skip. Reversion-to-English is caught by the CJK structural guard in
-  // tests/aux-prompts-i18n-zh.test.ts; the slug provenance (attribution) is
-  // retained on GENERAL_PURPOSE_PROMPT_PROVENANCE.
-  it('reproduces the official Strengths + Guidelines substance (translated)', () => {
-    expect(GENERAL_PURPOSE_PROMPT).toContain('父代理'); // parent agent
+describe('general-purpose prompt provenance (corpus-sync guard, Track B)', () => {
+  const archive = join(
+    dirname(fileURLToPath(import.meta.url)),
+    '..',
+    '..',
+    '..',
+    'Public-Info-Pool',
+    'Reference',
+    'Claude-Code-System-Prompts',
+    'system-prompts',
+  );
+  const norm = (s: string) => s.replace(/\s+/g, ' ').trim();
+  const stripHeader = (md: string) => md.replace(/^<!--[\s\S]*?-->\n?/, '');
+
+  it('reproduces the official Strengths + Guidelines substance', () => {
+    // adapted intro (parent-agent framing, not the Claude Code CLI self-ref)
+    expect(GENERAL_PURPOSE_PROMPT).toContain('parent agent');
     expect(GENERAL_PURPOSE_PROMPT).not.toContain('official CLI');
-    expect(GENERAL_PURPOSE_PROMPT).toContain('你的强项：'); // Your strengths:
-    expect(GENERAL_PURPOSE_PROMPT).toContain('绝不主动创建文档文件'); // NEVER proactively create documentation files
-    expect(GENERAL_PURPOSE_PROMPT).toContain('用 Read'); // the Read wire token survives
-    expect(GENERAL_PURPOSE_PROMPT_PROVENANCE.faithful).toBe(false); // translated
-    expect(GENERAL_PURPOSE_PROMPT_PROVENANCE.slugs.length).toBeGreaterThan(0); // attribution
+    // faithful blocks
+    expect(GENERAL_PURPOSE_PROMPT).toContain('Your strengths:');
+    expect(GENERAL_PURPOSE_PROMPT).toContain('NEVER proactively create documentation files');
+  });
+
+  it.runIf(existsSync(archive))('its cited archive source is still represented', () => {
+    const desc = norm(GENERAL_PURPOSE_PROMPT);
+    for (const slug of GENERAL_PURPOSE_PROMPT_PROVENANCE.slugs) {
+      const file = join(archive, `${slug}.md`);
+      expect(existsSync(file), slug).toBe(true);
+      const body = norm(stripHeader(readFileSync(file, 'utf8')));
+      const anchors = body
+        .split(/(?<=[.:])\s+/)
+        .map(norm)
+        .filter((s) => s.length >= 40 && !s.includes('${'))
+        .map((s) => s.slice(0, 45));
+      expect(anchors.some((a) => desc.includes(a)), `${slug} not represented`).toBe(true);
+    }
   });
 });
 
 describe('worker-fork preset (O-B0)', () => {
-  // English-archive drift check retired (2026-07-08): WORKER_FORK_FRAMING is
-  // translated (i18n-zh batch B), faithful:false; the CJK structural guard in
-  // tests/aux-prompts-i18n-zh.test.ts covers reversion, slug is retained.
+  const archive = join(
+    dirname(fileURLToPath(import.meta.url)),
+    '..',
+    '..',
+    '..',
+    'Public-Info-Pool',
+    'Reference',
+    'Claude-Code-System-Prompts',
+    'system-prompts',
+  );
+  const norm = (s: string) => s.replace(/\s+/g, ' ').trim();
+  const stripHeader = (md: string) => md.replace(/^<!--[\s\S]*?-->\n?/, '');
+
   it('the preset rides fork mode with the official worker profile', () => {
     expect(WORKER_FORK_AGENT.fork).toBe(true);
     expect(WORKER_FORK_AGENT.maxTurns).toBe(200);
@@ -1268,12 +1301,22 @@ describe('worker-fork preset (O-B0)', () => {
   it('buildWorkerForkPrompt assembles <system> framing + directive + context', () => {
     const p = buildWorkerForkPrompt('Audit src/tips for dead code.', '\n\nExtra: only report.');
     expect(p.startsWith('<system>\n')).toBe(true);
-    expect(p).toContain('你是一个工作分叉'); // "You are a worker fork." (translated)
+    expect(p).toContain('You are a worker fork.');
     expect(p).toContain('</system>\n\nAudit src/tips for dead code.');
     expect(p.endsWith('Extra: only report.')).toBe(true);
   });
-  it('is translated in-place, with its source slug retained (attribution)', () => {
-    expect(WORKER_FORK_PROVENANCE.faithful).toBe(false); // translated (i18n-zh)
-    expect(WORKER_FORK_PROVENANCE.slug.length).toBeGreaterThan(0); // English source
+  it.runIf(existsSync(archive))('the framing is faithful to its archived source', () => {
+    const body = norm(
+      stripHeader(readFileSync(join(archive, `${WORKER_FORK_PROVENANCE.slug}.md`), 'utf8')),
+    )
+      // normalize the archive's template variables to our adapted values
+      .replace(/\$\{AGENT_TOOL_NAME\}/g, 'Agent')
+      .replace(/\$\{""\}/g, '');
+    const drifted = norm(WORKER_FORK_FRAMING)
+      .split(/(?<=[.:])\s+/)
+      .map(norm)
+      .filter((s) => s.length >= 40)
+      .filter((s) => !body.includes(s.slice(0, 60)));
+    expect(drifted, `not found in archive:\n${drifted.join('\n')}`).toEqual([]);
   });
 });
