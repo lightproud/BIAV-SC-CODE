@@ -1,0 +1,27 @@
+{
+  "date": "2026-07-09",
+  "archived_at": "2026-07-08T21:02:40.562218+00:00",
+  "source": "steam",
+  "item_count": 1,
+  "items": [
+    {
+      "title": "[Steam论坛] Invitation Code if anyone can !!",
+      "summary": "Z323T1DHSL",
+      "source": "steam_discussion",
+      "time": "2026-07-08T19:39:03+00:00",
+      "url": "https://steamcommunity.com/app/3052450/discussions/0/573794767997174473/",
+      "engagement": 1,
+      "is_hot": false,
+      "author": "mikey",
+      "tags": [
+        "steam_forum"
+      ],
+      "region": "global",
+      "archive_subtype": "discussion",
+      "lang": "en",
+      "platform_region": "global"
+    }
+  ],
+  "region": "global",
+  "content_subtype": "discussion"
+}

@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-08T19:16:03.730796+00:00",
+  "collected_at": "2026-07-08T21:01:59.767495+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 136,
+  "item_count": 135,
   "items": [
     {
       "source": "google_play",
@@ -1353,16 +1353,6 @@
       "summary": "微妙でした。",
       "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-e3cab66e-3ccb-4ded-b733-9097c3052432",
       "author": "なるパンダ",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-06-08T20:57:46",
-      "lang": "ja",
-      "title": "[Google Play 好评] ★4 まだやり始めたばかり。 独自の言葉が多く、理解するのに時間がかかる。 リアルタイ",
-      "summary": "まだやり始めたばかり。 独自の言葉が多く、理解するのに時間がかかる。 リアルタイムの爽快感は無いが、 戦略を練り、ゆっくりじっくり遊ぶのが好きな人には 凄く刺さるゲーム。 これから楽しんで行こうと思います。",
-      "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-b21f381c-21e0-4400-b976-6e12962742f1",
-      "author": "ジョー島村",
       "engagement": 0
     }
   ]
