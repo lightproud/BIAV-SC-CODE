@@ -464,3 +464,7 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: node tests/integration/token-probe.mjs
+      - name: Per-file probe — count_tokens EN vs ZH of each translated source file
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node tests/integration/token-probe-perfile.mjs
