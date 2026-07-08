@@ -11,6 +11,34 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.27.0 — 2026-07-08
+
+i18n-zh **Phase 2 batch D** (keeper ruling B): the **two big classifier prompts**
+— the most output-contract-sensitive prompts in the SDK — to Chinese.
+
+- **change: `COMMAND_PREFIX_SYSTEM` and `BACKGROUND_STATE_SYSTEM` are now Chinese**
+  (on the wire).
+  - `COMMAND_PREFIX_SYSTEM` (Bash command-injection detection, a SECURITY prompt):
+    the framing + definitions + safety instructions are translated; the entire
+    `<policy_spec>` `command => prefix` few-shot example block and the output
+    values (`none` / `command_injection_detected`) are kept verbatim.
+  - `BACKGROUND_STATE_SYSTEM` (the ~180-line phone-notification state classifier):
+    the framing, the four-state definitions, the hard-boundary rules, the marker /
+    error / disambiguation guidance, and the output-contract explanations are
+    translated; the state enum (`working`/`blocked`/`done`/`failed`), the tempo
+    enum (`active`/`idle`/`blocked`), the JSON template + keys, and ALL few-shot
+    example tails + the CONTRASTIVE PAIRS block are kept verbatim (they are the
+    demonstration data that carries the classifier's signal, and the tails match
+    real English agent output).
+- Both flip `faithful:false` — **all 7 entries of `GENERATOR_PROVENANCE` are now
+  translated**, so the English corpus-sync guard is fully inert (skips on
+  `!faithful`).
+- New `tests/classifiers-i18n-zh.test.ts`: both prompts Chinese + emoji-free +
+  every output-contract/enum/JSON token preserved, with explicit verbatim checks
+  on the command-injection example block and the background-state JSON template.
+- **Still English (final Phase-2 batch):** the opt-in v1–v4 harness variants and
+  the runtime `<env>` block in `src/engine/prompts.ts`.
+
 ## 0.26.0 — 2026-07-08
 
 i18n-zh **Phase 2 batch C** (keeper ruling B): the **small generator + context-tip
