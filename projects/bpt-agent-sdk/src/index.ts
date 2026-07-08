@@ -22,6 +22,16 @@ export { tool, createSdkMcpServer } from './mcp/sdk-server.js';
 // same way it sizes MCP tools.
 export { enumerateBuiltinToolMetadata } from './tools/index.js';
 export type { BuiltinToolMetadata } from './tools/index.js';
+// BPT-EXTENSION (2026-07-08, black-pool ContextRing request): expose the harness
+// system-prompt base constructor so a host can size the built-in harness base —
+// the ~2.9k-token V5 preset prose injected on the `claude_code` preset path — the
+// SAME way the engine does. `buildSystemPromptParts(opt, ctx).base` returns the
+// vN harness prose only (no caller `append` / project instructions / `<env>`
+// tail), which is exactly the segment query.ts measures as `base`. Read-only,
+// zero side effects — same rationale as enumerateBuiltinToolMetadata (ADR 0014),
+// so a host no longer has to reach into dist/engine/prompts.js by file path.
+export { buildSystemPromptParts, buildSystemPrompt } from './engine/prompts.js';
+export type { SystemPromptParts, EnvironmentContext, PromptContext } from './engine/prompts.js';
 export { getSessionInfo, listSessions } from './sessions/store.js';
 export {
   getSessionMessages,

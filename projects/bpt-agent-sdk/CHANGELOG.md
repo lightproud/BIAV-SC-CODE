@@ -11,6 +11,25 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.30.0 — 2026-07-08
+
+- **feat (public harness-base constructor export, black-pool ContextRing request
+  2026-07-08)**: the package entry now re-exports `buildSystemPromptParts` and
+  `buildSystemPrompt` (plus the `SystemPromptParts` / `EnvironmentContext` /
+  `PromptContext` types) from `engine/prompts.js`. A host can now size the
+  built-in harness base — the V5 preset prose (~11.7k chars ≈ ~2.9k tokens)
+  injected on the `claude_code` preset path — via the public API:
+  `buildSystemPromptParts(opt, ctx).base`. `.base` is the vN harness prose ONLY
+  (no caller `append`, project instructions, or `<env>` tail), the exact segment
+  the engine measures as `base` in `query.ts` — so with the same `toolNames` /
+  `variant` it is byte-identical to what preset mode injects. Read-only, zero side
+  effects; same rationale as `enumerateBuiltinToolMetadata` (ADR 0014), retiring
+  the host-side `dist/engine/prompts.js` file-path stopgap.
+- **temp (one-off token-accounting diagnostic)**: `engine/loop.ts` prints each
+  turn's raw `input_tokens` / `cache_read_input_tokens` /
+  `cache_creation_input_tokens` to stderr (`[bpt-usage] …`). Throwaway — to be
+  removed once the cache-behavior numbers are captured.
+
 ## 0.29.0 — 2026-07-08
 
 **Revert the entire i18n-zh prompt campaign back to English** (keeper ruling,

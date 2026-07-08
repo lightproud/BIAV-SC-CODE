@@ -35,7 +35,7 @@ export type EnvironmentContext = {
   gitBranch?: string;
 };
 
-type PromptContext = {
+export type PromptContext = {
   cwd: string;
   toolNames: string[];
   /**
