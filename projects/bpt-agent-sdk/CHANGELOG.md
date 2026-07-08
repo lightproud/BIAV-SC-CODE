@@ -11,6 +11,41 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.28.0 — 2026-07-08
+
+i18n-zh **Phase 2 batch E** (keeper ruling B): the **opt-in harness prompt
+variants** to Chinese. **This completes the i18n-zh prompt campaign.**
+
+- **change: the opt-in harness variants are now Chinese** (on the wire):
+  `minimalStable` (the `undefined`-systemPrompt default) and v1–v4
+  (`defaultHarnessStable` / `V2` / `V3` / `V4`). Tool names, the
+  `file_path:line_number` token, and the `calc.mjs:12` / `total([1,2,3,4])`
+  example are kept English; the `可用工具：` label replaces `Available tools:`.
+  v5 (the production default) was already Chinese since batch A.
+- **DELIBERATELY STILL ENGLISH — a documented scope boundary:** the runtime
+  `<env>` context block (`environmentBlock` / the `volatileTail` path-guidance)
+  and the CLAUDE.md/AGENTS.md `<system-reminder>` wrapper. These are not tool
+  descriptions or system prompts but a **conformance-LOCKED** reproduction of the
+  official Claude Code runtime-context assembly (working directory, git status,
+  date, model line), byte-asserted by `conformance-l2-locks` / `api-surface` /
+  `engine` / `cache-control`. Translating them would break the SDK's
+  official-parity claim (its core design property), so they stay English — the
+  same scope boundary drawn for the runtime stderr hints in batch 5.
+- `tests/prompts.test.ts` / `query.test.ts`: v1–v4 English-marker assertions
+  retargeted to the translated wording; the `<env>`-block assertions are
+  unchanged (block stays English).
+
+### i18n-zh campaign summary (batches → this release)
+
+Every built-in **tool description** (v0.19.0–0.23.0) and every **system /
+generator / classifier prompt** (v0.24.0–0.28.0) that this SDK ships on the wire
+is now Chinese, with all tool names, wire parameter names, output-contract tokens
+(JSON keys, enums), code/command tokens, and few-shot example blocks preserved
+English verbatim. The only surfaces intentionally left English are the
+conformance-locked runtime `<env>` block and the runtime execution-feedback hints
+(sandbox-failure stderr, win32 cmd-habit hint) — both distinct from "descriptions
+and prompts". See docs/COMPAT.md.
+
 ## 0.27.0 — 2026-07-08
 
 i18n-zh **Phase 2 batch D** (keeper ruling B): the **two big classifier prompts**

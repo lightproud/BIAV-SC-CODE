@@ -46,7 +46,8 @@ describe('harness prompt v1/v2 variant', () => {
 
   it('v1 is still available as an explicit terse opt-in', () => {
     const v1 = buildSystemPromptParts(preset, ctx('v1')).stable;
-    expect(v1).toContain('Tool guidance:');
+    // v1-v4 harness variants are Chinese (i18n-zh Phase 2 batch E).
+    expect(v1).toContain('工具指引：'); // Tool guidance:
     // and it is meaningfully smaller than the v5 default
     const v5 = buildSystemPromptParts(preset, ctx('v5')).stable;
     expect(v1.length).toBeLessThan(v5.length);
@@ -57,10 +58,10 @@ describe('harness prompt v1/v2 variant', () => {
     const v2 = buildSystemPromptParts(preset, ctx('v2')).stable;
     expect(v2).not.toBe(v1);
     expect(v2.length).toBeGreaterThan(v1.length);
-    // v2 encodes real behavioral discipline, not padding.
-    expect(v2).toContain('Approach:');
-    expect(v2).toContain('Grounding and honesty:');
-    expect(v2).toContain('Finishing:');
+    // v2 encodes real behavioral discipline, not padding (Chinese, i18n-zh batch E).
+    expect(v2).toContain('方法：'); // Approach:
+    expect(v2).toContain('基于事实与诚实：'); // Grounding and honesty:
+    expect(v2).toContain('收尾：'); // Finishing:
     // both keep the cwd out of the cached (stable) segment
     expect(v2).not.toContain('/tmp/run-xyz');
   });
@@ -71,28 +72,29 @@ describe('harness prompt v1/v2 variant', () => {
     expect(v3).not.toBe(v2);
     expect(v3.length).toBeGreaterThan(v2.length);
     // the four techniques the public best-practices comparison flagged as missing
-    expect(v3).toContain('verify your work against'); // verify-before-finishing
-    expect(v3).toContain('Do not hard-code'); // solve the general problem
-    expect(v3).toContain('for example:'); // one concrete style example
+    // (Chinese, i18n-zh batch E)
+    expect(v3).toContain('核实你的工作'); // verify-before-finishing
+    expect(v3).toContain('硬编码'); // solve the general problem (Do not hard-code)
+    expect(v3).toContain('例如：'); // one concrete style example (for example:)
     // when-to-delegate guidance is present ONLY when the Agent tool is shipped
     const v3Agent = buildSystemPromptParts(preset, {
       cwd: '/tmp/run-xyz',
       toolNames: ['Read', 'Write', 'Bash', 'Agent'],
       variant: 'v3',
     }).stable;
-    expect(v3Agent).toContain('Delegation:');
+    expect(v3Agent).toContain('委派：'); // Delegation:
     // still keeps the cwd out of the cached (stable) segment
     expect(v3).not.toContain('/tmp/run-xyz');
   });
 
   it('v4 faithfully reproduces official main-loop clauses, tool refs adapted, cwd out', () => {
     const v4 = buildSystemPromptParts(preset, ctx('v4')).stable;
-    // faithful official clauses (reproduced from the public reconstruction)
-    expect(v4).toContain('You are an interactive agent that helps users with software engineering tasks.');
-    expect(v4).toContain('Lead with the outcome.');
-    expect(v4).toContain('file_path:line_number');
-    // tool references adapted to THIS SDK's tools
-    expect(v4).toContain('Read, Write, Edit, Glob, Grep');
+    // faithful official clauses, translated (Chinese, i18n-zh batch E)
+    expect(v4).toContain('你是一个交互式代理，帮助用户完成软件工程任务。');
+    expect(v4).toContain('以结果开头。'); // Lead with the outcome.
+    expect(v4).toContain('file_path:line_number'); // wire token, verbatim
+    // tool references adapted to THIS SDK's tools (names verbatim, Chinese comma join)
+    expect(v4).toContain('Read、Write、Edit、Glob、Grep');
     // cwd stays out of the cached (stable) segment
     expect(v4).not.toContain('/tmp/run-xyz');
     // and it does not reference tools this SDK does not ship
@@ -175,13 +177,12 @@ describe('harness prompt v1/v2 variant', () => {
 
   it('RED LINE: never names the Agent tool when it is not in the tool set (v5 + v3)', () => {
     // query.ts registers the Agent tool only when subagents are configured, so
-    // the default prompt must not instruct the model to use it. v3 is English,
-    // v5 is Chinese (i18n-zh) — check the Agent clause is absent in each language.
+    // the default prompt must not instruct the model to use it. Both v3 and v5
+    // are Chinese now (i18n-zh) — check the Agent clause is absent in each.
     const noAgent = { cwd: '/tmp/x', toolNames: ['Read', 'Write', 'Bash', 'TodoWrite'] };
     const v3 = buildSystemPromptParts(preset, { ...noAgent, variant: 'v3' }).stable;
-    expect(v3).not.toContain('Agent tool');
-    expect(v3).not.toContain('via the Agent tool');
-    expect(v3).not.toContain('Delegation:');
+    expect(v3).not.toContain('Agent 工具'); // "via the Agent tool" (translated)
+    expect(v3).not.toContain('委派：'); // Delegation:
     const v5 = buildSystemPromptParts(preset, { ...noAgent, variant: 'v5' }).stable;
     expect(v5).not.toContain('Agent 工具');
     expect(v5).not.toContain('专门代理'); // specialized agents
@@ -189,9 +190,9 @@ describe('harness prompt v1/v2 variant', () => {
 
   it('includes the Agent guidance when the Agent tool IS in the set (v5 + v3)', () => {
     const withAgent = { cwd: '/tmp/x', toolNames: ['Read', 'Bash', 'Agent'] };
-    // v5 clause is Chinese ("Agent 工具"); v3 clause is English ("via the Agent tool").
+    // both v5 and v3 clauses are Chinese now ("Agent 工具"); i18n-zh batch A/E.
     expect(buildSystemPromptParts(preset, { ...withAgent, variant: 'v5' }).stable).toContain('Agent 工具');
-    expect(buildSystemPromptParts(preset, { ...withAgent, variant: 'v3' }).stable).toContain('via the Agent tool');
+    expect(buildSystemPromptParts(preset, { ...withAgent, variant: 'v3' }).stable).toContain('Agent 工具');
   });
 
   it('gates each tool-specific clause on that tool being present (v5)', () => {

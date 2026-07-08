@@ -492,7 +492,7 @@ describe('prompt cache: stable prefix does not drift across turns (a read can hi
     await collect(q);
     const sys = fetchStub.requests[0]!.body.system as Array<{ text?: string }>;
     const stable = sys[0]?.text ?? '';
-    expect(stable).toContain('Tool guidance:'); // v1 marker
+    expect(stable).toContain('工具指引：'); // v1 marker (Chinese, i18n-zh batch E)
     expect(stable).not.toContain('执行任务：'); // v5 marker absent (Chinese)
   });
 });
