@@ -429,21 +429,18 @@ describe('generator prompt provenance (corpus-sync guard, Track B parity)', () =
     { prompt: MEMORY_FILES_SYSTEM, prov: MEMORY_FILES_PROVENANCE },
   ];
 
-  it('the provenance table has one entry per reproduced face; batch-C prompts translated', () => {
+  it('the provenance table has one entry per reproduced face; all generators translated', () => {
     expect(Object.keys(GENERATOR_PROVENANCE)).toHaveLength(7);
     for (const p of Object.values(GENERATOR_PROVENANCE)) {
       expect(p.slug.length).toBeGreaterThan(0);
     }
-    // i18n-zh Phase 2 batch C: 5 small generators translated to Chinese
-    // (faithful:false); the two big classifiers (command-prefix, background-state)
-    // stay English + faithful:true for a later batch.
-    expect(COMMAND_PREFIX_PROVENANCE.faithful).toBe(true);
-    expect(BACKGROUND_STATE_PROVENANCE.faithful).toBe(true);
-    expect(SESSION_TITLE_PROVENANCE.faithful).toBe(false);
-    expect(TITLE_AND_BRANCH_PROVENANCE.faithful).toBe(false);
-    expect(SESSION_NAME_PROVENANCE.faithful).toBe(false);
-    expect(AWAY_SUMMARY_PROVENANCE.faithful).toBe(false);
-    expect(MEMORY_FILES_PROVENANCE.faithful).toBe(false);
+    // i18n-zh Phase 2: batch C translated the 5 small generators; batch D
+    // translated the two big classifiers (command-prefix, background-state) —
+    // prose only, with output enums / JSON / example blocks kept English. All
+    // seven are now faithful:false, so the English corpus-sync guard is inert.
+    for (const p of Object.values(GENERATOR_PROVENANCE)) {
+      expect(p.faithful).toBe(false);
+    }
   });
 
   for (const { prompt, prov } of faces) {

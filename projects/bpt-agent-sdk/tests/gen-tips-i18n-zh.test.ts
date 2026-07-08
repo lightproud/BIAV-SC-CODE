@@ -6,8 +6,8 @@
  * few-shot demonstrations, so the guard asserts the instructional prose is
  * Chinese + emoji-free while the output-contract tokens (JSON keys, enum values,
  * placeholders, `claude/` branch prefix) survive verbatim. The two big
- * classifiers (command-prefix, background-state) are a later batch and stay
- * English — they are intentionally NOT covered here.
+ * classifiers (command-prefix, background-state) are covered separately in
+ * tests/classifiers-i18n-zh.test.ts (Phase 2 batch D).
  */
 
 import { describe, expect, it } from 'vitest';

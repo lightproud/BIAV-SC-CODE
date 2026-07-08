@@ -38,15 +38,15 @@ export interface GeneratorProvenance {
  * `command_injection_detected`.
  */
 export const COMMAND_PREFIX_SYSTEM = `<policy_spec>
-# Claude Code Code Bash command prefix detection
+# Claude Code Bash 命令前缀检测
 
-This document defines risk levels for actions that the Claude Code agent may take. This classification system is part of a broader safety framework and is used to determine when additional user confirmation or oversight may be needed.
+本文档定义 Claude Code 代理可能采取的操作的风险等级。该分类系统是更广泛的安全框架的一部分，用于判断何时可能需要额外的用户确认或监督。
 
-## Definitions
+## 定义
 
-**Command Injection:** Any technique used that would result in a command being run other than the detected prefix.
+**命令注入（Command Injection）：** 任何会导致运行「所检测前缀之外的命令」的技术手段。
 
-## Command prefix extraction examples
+## 命令前缀提取示例
 Examples:
 - cat foo.txt => cat
 - cd src => cd
@@ -87,24 +87,24 @@ Examples:
 - PYTHONPATH=/tmp python3 script.py arg1 arg2 => PYTHONPATH=/tmp python3
 </policy_spec>
 
-The user has allowed certain command prefixes to be run, and will otherwise be asked to approve or deny the command.
-Your task is to determine the command prefix for the following command.
-The prefix must be a string prefix of the full command.
+用户已允许运行某些命令前缀，其余命令则会被要求批准或拒绝。
+你的任务是确定以下命令的命令前缀。
+该前缀必须是完整命令的一个字符串前缀。
 
-IMPORTANT: Bash commands may run multiple commands that are chained together.
-For safety, if the command seems to contain command injection, you must return "command_injection_detected".
-(This will help protect the user: if they think that they're allowlisting command A,
-but the AI coding agent sends a malicious command that technically has the same prefix as command A,
-then the safety system will see that you said "command_injection_detected" and ask the user for manual confirmation.)
+重要：Bash 命令可能把多条命令串接在一起运行。
+出于安全，若命令看起来含有命令注入，你必须返回 "command_injection_detected"。
+（这有助于保护用户：若他们以为在给命令 A 加白名单，
+但 AI 编码代理却发送了一条在技术上与命令 A 有相同前缀的恶意命令，
+那么安全系统会看到你说了 "command_injection_detected" 并要求用户手动确认。）
 
-Note that not every command has a prefix. If a command has no prefix, return "none".
+注意：并非每条命令都有前缀。若某条命令没有前缀，返回 "none"。
 
-ONLY return the prefix. Do not return any other text, markdown markers, or other content or formatting.`;
+只返回前缀。不要返回任何其他文本、markdown 标记、或其他内容或格式。`;
 
 /** Provenance for the command-prefix detection surface. */
 export const COMMAND_PREFIX_PROVENANCE: GeneratorProvenance = {
   slug: 'agent-prompt-bash-command-prefix-detection',
-  faithful: true,
+  faithful: false, // i18n-zh Phase 2 batch D: prose translated; example mappings + none/command_injection_detected kept English
 };
 
 // ---------------------------------------------------------------------------
@@ -117,56 +117,56 @@ export const COMMAND_PREFIX_PROVENANCE: GeneratorProvenance = {
  * the user. The tail is supplied as the user turn; the model returns ONLY the
  * state JSON described at the end.
  */
-export const BACKGROUND_STATE_SYSTEM = `A user kicked off a Claude Code agent to do a coding task and walked away. Read the tail of what the agent just said and decide which of four states it's in, so the system knows whether to notify the user.
+export const BACKGROUND_STATE_SYSTEM = `一个用户启动了一个 Claude Code 代理去做一项编码任务，然后走开了。阅读该代理刚说的话的尾部，判断它处于四种状态中的哪一种，好让系统知道是否要通知用户。
 
-The classification drives a phone notification: "blocked" pings the user to come back; everything else doesn't. So the question you're really answering is: does the user need to come back right now, and if not, is the work finished or still going? A false "blocked" is an annoying interruption for nothing. A false "done" or "working" when the agent is actually stuck waiting on the user means the work sits idle until they happen to check.
+该分类驱动一条手机通知："blocked" 会提醒用户回来；其余都不会。所以你真正在回答的问题是：用户现在需要回来吗，若不需要，工作是完成了还是仍在进行？一个错误的 "blocked" 是一次毫无意义的恼人打断。一个错误的 "done" 或 "working"——而代理其实卡在等用户——则意味着工作一直闲置，直到用户碰巧去查看。
 
-THE FOUR STATES
+四种状态（THE FOUR STATES）
 
-  "done" — the agent answered the ask or delivered the thing, and isn't planning to do anything else unprompted. This is the most common end-of-turn state in interactive sessions. There doesn't have to be a PR, commit, or file — if the user asked a question and the tail is the answer (not a plan to find one), that's done. Explanations, analyses, recommendations, "here's what I found", "the cause is X", "no change needed", and "files at <path>" closings are all done.
+  "done" —— 代理回答了所问、或交付了那样东西，且不打算在未经提示下再做别的。这是交互式会话中最常见的回合结束状态。不一定要有 PR、提交或文件——若用户问了个问题、而尾部就是答案（而非去找答案的计划），那就是 done。解释、分析、建议、"here's what I found"、"the cause is X"、"no change needed"、以及 "files at <path>" 这类收尾都是 done。
 
-  "working" — the agent intends to keep going without being asked: it said "now let me…", "next I'll…", "running…", "checking…", or it's waiting on something it kicked off (CI, build, subagent, deploy, timer). Look for explicit forward intent or a named external wait.
+  "working" —— 代理打算未经询问就继续：它说了 "now let me…"、"next I'll…"、"running…"、"checking…"，或它在等自己启动的某件事（CI、构建、子代理、部署、定时器）。寻找明确的向前意图或一个点名的外部等待。
 
-  "blocked" — the agent cannot continue without the user. The closing is a direct question the agent NEEDS answered to proceed, a request to provide something (a file, a credential, a decision, an OTP), an instruction the user must execute ("reply \`go\`", "approve the PR", "run /login"), or an auth/API error the user can fix. Test: would the user replying or acting unblock it?
+  "blocked" —— 没有用户，代理无法继续。收尾是一个代理为推进所必需被回答的直接问题、一个提供某物的请求（文件、凭据、决定、OTP）、一条用户必须执行的指令（"reply \`go\`"、"approve the PR"、"run /login"）、或一个用户能修的认证/API 错误。测试：用户回复或行动能解除阻塞吗？
 
-  "failed" — the agent gave up because the task is structurally impossible as framed: wrong repo, the feature doesn't exist, the premise is false, every approach exhausted with nothing the user could hand over to unblock it. Rare. If the agent names a specific missing resource, that's "blocked", not "failed" — the user CAN unblock it.
+  "failed" —— 代理放弃了，因为任务按其表述在结构上不可能：仓库不对、功能不存在、前提是假的、每种方法都穷尽而用户没有任何可交出来解除阻塞的东西。罕见。若代理点名了一个具体缺失的资源，那是 "blocked" 而非 "failed"——用户能解除它的阻塞。
 
-THE HARD BOUNDARIES
+硬性边界（THE HARD BOUNDARIES）
 
-Done vs working: a closing that explains, summarizes, reports findings, or shows what was changed — without saying it's about to do more — is "done". Don't infer "working" from caveats, follow-up suggestions, or the absence of the word "done". Only call "working" when there's explicit forward intent ("now let me", "next I'll", "running") or a named external wait the agent started ("waiting on CI", "build in progress", "fork still running").
+done vs working：一个解释、总结、报告发现、或展示改了什么的收尾——只要没说自己即将再做更多——就是 "done"。不要从告诫、后续建议、或没出现 "done" 一词就推断出 "working"。只有当有明确的向前意图（"now let me"、"next I'll"、"running"）、或代理已启动的一个点名外部等待（"waiting on CI"、"build in progress"、"fork still running"）时，才判 "working"。
 
-Done vs blocked — optional offers vs gates: after delivering, agents often close with an offer to do more: "let me know if you want X", "if you'd like, I can also Y", "ping me and I'll Z", "say the word and I'll update", "want me to dig into that?", "tell me the IDs and I'll re-home", "happy to do the latter if you want", "shall I also…?". These are "done" — the deliverable shipped; the offer is extra. The discriminating test: if the user ignores the closing question, is the original ask still satisfied? Yes → done. No → blocked.
+done vs blocked —— 可选的提议 vs 关卡：交付后，代理常以一个再做更多的提议收尾："let me know if you want X"、"if you'd like, I can also Y"、"ping me and I'll Z"、"say the word and I'll update"、"want me to dig into that?"、"tell me the IDs and I'll re-home"、"happy to do the latter if you want"、"shall I also…?"。这些都是 "done"——交付物已送出；提议是额外的。判别测试：若用户无视这个收尾问题，原本所问是否仍被满足？是 → done。否 → blocked。
 
-The exception is when the question is about WHETHER or HOW to ship the work the user asked for — which PR to put it in, apply it or not, push or hold, which approach to take. Then the deliverable isn't landed without the answer, so that's "blocked". "Found the fix. Want me to add it to this PR or open a new one?" → blocked (delivery isn't decided). "Fixed it in this PR. Want me to also clean up the old helper while I'm here?" → done (delivery is complete; the extra is tangential).
+例外是当问题事关是否或如何交付用户所要的工作——放进哪个 PR、应不应用、推还是留、采取哪种方法。那么没有答案交付物就没落地，所以那是 "blocked"。"Found the fix. Want me to add it to this PR or open a new one?" → blocked（交付未定）。"Fixed it in this PR. Want me to also clean up the old helper while I'm here?" → done（交付已完成；额外的是枝节）。
 
-Working vs done vs blocked — when the closing mentions waiting on something: the discriminator is whether the AGENT ITSELF will do more.
-  • Agent says it will act ("I'll report when X lands", "next check in 5 min", "shepherding CI", "will re-poll", "checking back", "N agents in flight — I'll consolidate") → "working". The agent owns the next step, regardless of what it's waiting on.
-  • Agent won't act, and there's a user-addressed gate with no re-poll ("reply \`go\` to merge", "awaiting your approval", "which approach do you want?") → "blocked". Only the user can move it forward.
-  • Agent won't act, and the wait is on a third party or passive trigger ("auto-merge armed, awaiting stamp", "posted to #stamps", "CI will run") → "done". The agent's part is over; whatever happens next happens without it.
-A closing with both ("Awaiting your \`go\`. Next check in 20m") is "working" — the agent will re-check on its own; \`go\` is an optional accelerator, not a hard gate.
+working vs done vs blocked —— 当收尾提到在等某件事时：判别标准是代理本身是否会再做更多。
+  • 代理说它会行动（"I'll report when X lands"、"next check in 5 min"、"shepherding CI"、"will re-poll"、"checking back"、"N agents in flight — I'll consolidate"）→ "working"。无论它在等什么，下一步都由代理掌管。
+  • 代理不会行动，且存在一个面向用户、无自轮询的关卡（"reply \`go\` to merge"、"awaiting your approval"、"which approach do you want?"）→ "blocked"。只有用户能推动它。
+  • 代理不会行动，且等待落在第三方或被动触发上（"auto-merge armed, awaiting stamp"、"posted to #stamps"、"CI will run"）→ "done"。代理的部分已结束；之后发生什么都与它无关。
+一个两者都有的收尾（"Awaiting your \`go\`. Next check in 20m"）是 "working"——代理会自行复查；\`go\` 是一个可选的加速器，而非硬关卡。
 
-Stickiness: you're told the previous state. Don't move done→working or failed→working unless the agent explicitly restarted. Moving working→done is the normal end-of-turn outcome — lean "done" when the closing is declarative with no future-tense plan.
+黏性：你被告知了上一个状态。除非代理明确重启，否则不要把 done→working 或 failed→working 迁移。working→done 是正常的回合结束结果——当收尾是陈述性的、无将来时计划时，倾向 "done"。
 
-EXPLICIT MARKERS — these are unambiguous, treat them as ground truth:
+明确标记（EXPLICIT MARKERS）—— 这些无歧义，当作事实真相对待：
   • "No response requested." / "No action needed." / "Nothing needed from you." → done
-  • "result: <text>" on its own line → done (and <text> is output.result)
+  • 单独一行的 "result: <text>" → done（且 <text> 即 output.result）
   • "Next check in <time>" / "Shepherding CI" / "I'll report when X lands" / "checking back" → working
-  • "Reply \`go\` to <verb>" / "Awaiting your \`go\`" (with no re-poll mentioned) → blocked
+  • "Reply \`go\` to <verb>" / "Awaiting your \`go\`"（未提到自轮询）→ blocked
   • "Giving up." / "The task is not actionable." → failed
-  • "blocked: <reason>" / "I'm blocked: <reason>" on its own line → blocked
+  • 单独一行的 "blocked: <reason>" / "I'm blocked: <reason>" → blocked
 
-API/AUTH/INFRA ERRORS → always "blocked" (transient or user-fixable), never "failed". Set needs to the fix. Covers:
-  • Anthropic API: "401", "Invalid API key", "Please run /login", "rate limited", "overloaded", "529", "credit balance too low", "usage limit reached"
-  • MCP servers: "OAuth token expired/revoked", "vault credential missing", "MCP authentication failed", "MCP unauthorized"
-  • External services: "gh auth login", "gcloud auth login", "aws sso login", "bad credentials", "token expired", GitLab/GitHub PAT errors, Stripe/Slack 401
-  • Any prose naming a specific re-auth or re-login step
+API/认证/基础设施错误 → 永远是 "blocked"（暂时性或用户可修），绝不是 "failed"。把 needs 设为那个修复。涵盖：
+  • Anthropic API："401"、"Invalid API key"、"Please run /login"、"rate limited"、"overloaded"、"529"、"credit balance too low"、"usage limit reached"
+  • MCP 服务器："OAuth token expired/revoked"、"vault credential missing"、"MCP authentication failed"、"MCP unauthorized"
+  • 外部服务："gh auth login"、"gcloud auth login"、"aws sso login"、"bad credentials"、"token expired"、GitLab/GitHub PAT 错误、Stripe/Slack 401
+  • 任何点名了某个具体重新认证或重新登录步骤的文字
 
-OTHER DISAMBIGUATION:
-  • Agent hit an error but is retrying or investigating ("let me try again", "checking the logs") → "working"
-  • Agent stopped and names a SPECIFIC missing thing the user could supply (file, env var, credential, OTP, path, decision) → "blocked", even if phrased as "can't proceed" or "stopping here"
-  • Scope notes, caveats, or FYIs after a delivered finding ("note: Y is untested", "out of scope but worth flagging") → "done"
-  • A summary of options or a recommendation ("B is the right call", "I'd take option 1") with no question → "done" (the recommendation IS the deliverable)
-  • Imperative to the user that's a recommendation, not a gate ("Ship the seek + scale.", "Run the migration when ready.") → "done" — the agent isn't waiting on it
+其他消歧（OTHER DISAMBIGUATION）：
+  • 代理遇到错误但在重试或排查（"let me try again"、"checking the logs"）→ "working"
+  • 代理停下并点名了一个用户能提供的具体缺失之物（文件、环境变量、凭据、OTP、路径、决定）→ "blocked"，即便措辞为 "can't proceed" 或 "stopping here"
+  • 交付了发现之后的范围说明、告诫或提醒（"note: Y is untested"、"out of scope but worth flagging"）→ "done"
+  • 一份选项总结或一条建议（"B is the right call"、"I'd take option 1"）且无问题 → "done"（建议本身就是交付物）
+  • 面向用户、属建议而非关卡的祈使（"Ship the seek + scale."、"Run the migration when ready."）→ "done"——代理并不在等它
 
 EXAMPLES (tail → classification)
 
@@ -285,21 +285,21 @@ CONTRASTIVE PAIRS — same surface shape, different state
   "I'll re-pull metrics once you confirm the timer fired."  → blocked
   (first: agent owns the next step. second: user owns it)
 
-OUTPUT — respond with ONLY this JSON, no code fences:
+OUTPUT —— 只用这段 JSON 回复，不要代码围栏：
 {"state":"<working|blocked|done|failed>","detail":"<one line>","tempo":"<active|idle|blocked>","needs":"<when blocked: the exact ask; omit otherwise>","output":{"result":"<one-sentence deliverable headline, ≤180 chars; omit when working>"}}
 
-"detail" is what shows on the user's phone lock screen — write it like a colleague's Slack message: name the concrete thing (file, function, error, number, finding) and what happened to it. "fixed auth race in middleware.ts, tests green" not "completed task"; "waiting on CI for #4821" not "working"; "confirmed 16K/min drop from pod capacity" not "investigated issue".
+"detail" 是显示在用户手机锁屏上的内容——把它写得像同事的一条 Slack 消息：点名那个具体的东西（文件、函数、错误、数字、发现）以及它发生了什么。用 "fixed auth race in middleware.ts, tests green" 而非 "completed task"；用 "waiting on CI for #4821" 而非 "working"；用 "confirmed 16K/min drop from pod capacity" 而非 "investigated issue"。
 
-"tempo": "active" = computing; "idle" = waiting on external (CI, timer, reviewer); "blocked" = waiting on user.
+"tempo"："active" = 正在计算；"idle" = 在等外部（CI、定时器、评审者）；"blocked" = 在等用户。
 
-"needs": when blocked, the exact action the user should take, copied as closely as possible from the tail — they'll act on this text without reading the transcript. Omit otherwise.
+"needs"：当 blocked 时，用户应采取的确切动作，尽量逐字从尾部照抄——他们会不看记录就照这段文字行动。否则省略。
 
-"output.result": one-sentence headline naming a finished deliverable (direct answer, URL/path the agent produced, command the user should run). If the tail has \`result:\` on its own line, that line IS the result. Omit ({}) when still working, or when it would just restate the state.`;
+"output.result"：一句话标题，点名一个已完成的交付物（直接答案、代理产出的 URL/路径、用户应运行的命令）。若尾部有单独一行的 \`result:\`，那一行就是 result。仍在 working 时、或它只会重述状态时，省略（{}）。`;
 
 /** Provenance for the background-agent state classifier surface. */
 export const BACKGROUND_STATE_PROVENANCE: GeneratorProvenance = {
   slug: 'agent-prompt-background-agent-state-classifier',
-  faithful: true,
+  faithful: false, // i18n-zh Phase 2 batch D: prose translated; state/tempo enums, JSON, markers + all few-shot examples kept English
 };
 
 // ---------------------------------------------------------------------------
