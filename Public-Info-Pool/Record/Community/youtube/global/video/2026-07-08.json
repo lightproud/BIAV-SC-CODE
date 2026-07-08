@@ -1,8 +1,8 @@
 {
   "date": "2026-07-08",
-  "archived_at": "2026-07-08T05:47:03.175103+00:00",
+  "archived_at": "2026-07-08T08:17:09.859848+00:00",
   "source": "youtube",
-  "item_count": 16,
+  "item_count": 17,
   "items": [
     {
       "title": "[Morimens] Double Gelot Coaching on how to Aigis Dog Cheese with Gelot Alert 5.",
@@ -136,6 +136,23 @@
       "lang": "",
       "platform_region": "global",
       "media_url": "https://i.ytimg.com/vi/sMmGOSmpzXI/hqdefault.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    },
+    {
+      "title": "Morimens \\\\ Создаю гайдо-карточки, отвечаю на вопросы по игре (5)",
+      "summary": "Соцсети: Стримы на твич: https://twitch.tv/closetom Информация по стримам \\\\ Ирл контент \\\\ Общаемся по игре: ...",
+      "source": "youtube",
+      "time": "2026-07-08T07:46:43Z",
+      "url": "https://www.youtube.com/watch?v=6MyjJWqFKFM",
+      "engagement": 8,
+      "is_hot": false,
+      "author": "Closetom",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/6MyjJWqFKFM/hqdefault_live.jpg",
       "content_type": "video",
       "region": "global",
       "archive_subtype": "video"

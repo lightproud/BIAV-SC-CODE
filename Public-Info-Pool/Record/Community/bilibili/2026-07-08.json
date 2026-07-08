@@ -1,9 +1,55 @@
 {
   "date": "2026-07-08",
-  "archived_at": "2026-07-08T05:47:03.175641+00:00",
+  "archived_at": "2026-07-08T08:17:09.860452+00:00",
   "source": "bilibili",
-  "item_count": 6,
+  "item_count": 9,
   "items": [
+    {
+      "title": "沙耶不擅长 但努力做了面包 不吃的话身体会受不了的",
+      "summary": "-\n  └ 琪芽我能站一辈子丶 (0赞): 我嘞个沙耶之歌...这什么上古ip\n  └ 勇往直前的尼克 (0赞): 第三[桃源_乖巧]\n  └ 羽生薄叶 (0赞): 豪，很有精神！",
+      "source": "bilibili",
+      "time": "2026-07-08T06:48:43+00:00",
+      "url": "https://www.bilibili.com/video/BV1xDMv6eESM",
+      "engagement": 381,
+      "is_hot": true,
+      "author": "三两米粉",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 376,
+        "comment_count": 5,
+        "comments_fetched": 3,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/33a4f67efc547fdbb27da0a66e5173dd5a0d579f.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "分享给预计的随拍喵(´∀`)",
+      "summary": "-\n  └ 哈基沙大玉 (2赞): [鸣潮2周年同人绘画_纸飞机]\n  └ Ace_Tuffy (0赞): 好可爱\n  └ 顶针第一深情 (0赞): 萌萌喜欢你宝宝[烛灵儿表情包_亲]",
+      "source": "bilibili",
+      "time": "2026-07-07T21:23:18+00:00",
+      "url": "https://www.bilibili.com/video/BV1mNMY64E37",
+      "engagement": 378,
+      "is_hot": false,
+      "author": "续子姜姜酱",
+      "tags": [
+        "仿妆cos"
+      ],
+      "metadata": {
+        "play": 372,
+        "comment_count": 6,
+        "comments_fetched": 3,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/719ef6eaf4a3539338c7640ded237637a084e60d.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
     {
       "title": "克总还不轮椅啊",
       "summary": "-\n  └ 燃え落ちない翼 (0赞): 看了一下主页，我嘞个还打雀啊[冬日树下_啊？][冬日树下_啊？]话说这个阵容应该到星辰也能打吧[冬日树下_思考][冬日树下_思考]",
@@ -69,6 +115,29 @@
         "danmaku": 0
       },
       "media_url": "https://i0.hdslb.com/bfs/archive/acb7f93bd9b92692b6f259f71847724ed0851c62.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "打PVP以来最爽的翻盘 ˃̶͈ ꇴ ˂̶͈",
+      "summary": "-\n  └ 枯井戒 (0赞): 官方赶紧重做自由啊！四费还要等角色启动直接烂手上了[辣眼睛]",
+      "source": "bilibili",
+      "time": "2026-07-07T19:38:09+00:00",
+      "url": "https://www.bilibili.com/video/BV1kGMY6QEaV",
+      "engagement": 107,
+      "is_hot": false,
+      "author": "不知今世为何",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 105,
+        "comment_count": 2,
+        "comments_fetched": 1,
+        "danmaku": 0
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/269baf95f02770e50a441ccfc3be30c420848952.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
