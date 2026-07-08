@@ -385,6 +385,14 @@ export async function* runAgentLoop(
 
   /** Fold one attempt's usage into the running totals + per-model ledger. */
   const recordUsage = (responseModel: string, usage: NonNullableUsage): void => {
+    // TEMP one-off diagnostic (black-pool token-accounting, 2026-07-08): print
+    // each turn's raw input_tokens / cache_read / cache_creation verbatim to
+    // stderr. Remove once the cache-behavior numbers are captured.
+    console.error(
+      `[bpt-usage] input_tokens=${usage.input_tokens} ` +
+        `cache_read_input_tokens=${usage.cache_read_input_tokens} ` +
+        `cache_creation_input_tokens=${usage.cache_creation_input_tokens}`,
+    );
     totalUsage = addUsage(totalUsage, usage);
     const cost = estimateCostUsd(responseModel, usage, config.cacheTtl);
     totalCostUsd += cost;
