@@ -1,4 +1,4 @@
-# 入口文档 + 子项目上下文 + 藏宝图 + 设计/工程文档 (20)
+# 入口文档 + 子项目上下文 + 藏宝图 + 设计/工程文档 (21)
 
 仓库最高权威入口（CLAUDE.md / README.md）+ 各子项目 CONTEXT.md（动手前必读）+ RELEASES.md 藏宝图 + bpt-agent-sdk/site 设计文档 + 工程文档 + 归档注册表的导航指针。
 
@@ -13,6 +13,7 @@
 * [bpt-agent-sdk 子项目上下文](/projects/project-bpt-agent-sdk.md) - BPT Agent SDK：独立重实现（independent reimplementation）的 TypeScript agent 框架，公开调用面
 * [bpt-agent-sdk ARCHITECTURE](/projects/bpt-sdk-doc-architecture.md) - Independent agent harness with a `@anthropic-ai/claude-agent-sdk`-compatible
 * [bpt-agent-sdk COMPAT](/projects/bpt-sdk-doc-compat.md) - Target surface: `@anthropic-ai/claude-agent-sdk` public API (npm 0.3.201; chased
+* [bpt-agent-sdk CONCURRENCY](/projects/bpt-sdk-doc-concurrency.md) - The SDK supports true parallelism at three levels: **many conversations** over
 * [bpt-agent-sdk ERRORS](/projects/bpt-sdk-doc-errors.md) - Every error class in `src/errors.ts` carries a machine-readable, stable
 * [bpt-agent-sdk MIGRATION](/projects/bpt-sdk-doc-migration.md) - Audience: the BPT Desktop (Electron) codebase currently importing the official
 * [bpt-agent-sdk ONBOARDING](/projects/bpt-sdk-doc-onboarding.md) - Goal: get a new maintainer from zero to "I can make a change safely and prove

@@ -4,7 +4,7 @@ title: "facts.json"
 description: "facts 机器权威数据"
 resource: "/memory/facts.json"
 tags: ["memory", "data_layer:curated", "machine-authority"]
-timestamp: "2026-07-07"
+timestamp: "2026-07-08"
 ---
 
 # 记忆层指针

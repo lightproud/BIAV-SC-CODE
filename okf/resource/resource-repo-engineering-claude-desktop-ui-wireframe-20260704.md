@@ -4,7 +4,7 @@ title: "claude-desktop-ui-wireframe-20260704"
 description: "repo-engineering 产物（html）（格式：html）"
 resource: "/Public-Info-Pool/Resource/repo-engineering/claude-desktop-ui-wireframe-20260704.html"
 tags: ["data_layer:curated", "deliverable", "topic:repo-engineering"]
-timestamp: "2026-07-07"
+timestamp: "2026-07-08"
 ---
 
 # 指针概念

@@ -4,7 +4,7 @@ title: "测试策略"
 description: "银芯的测试不靠单一数字护城。三层护栏各管一件事，互相补盲："
 resource: "/docs/testing-strategy.md"
 tags: ["data_layer:curated", "engineering-doc"]
-timestamp: "2026-07-07"
+timestamp: "2026-07-08"
 ---
 
 # 指针概念

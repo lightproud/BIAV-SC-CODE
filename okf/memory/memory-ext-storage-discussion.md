@@ -4,7 +4,7 @@ title: "大文件存储方案讨论"
 description: "项目中有两类大文件存储需求："
 resource: "/memory/storage-discussion.md"
 tags: ["memory", "data_layer:curated"]
-timestamp: "2026-07-07"
+timestamp: "2026-07-08"
 ---
 
 # 记忆层指针

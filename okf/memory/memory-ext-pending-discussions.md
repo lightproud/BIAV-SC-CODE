@@ -4,7 +4,7 @@ title: "待讨论事项"
 description: "待讨论事项"
 resource: "/memory/pending-discussions.md"
 tags: ["memory", "data_layer:curated"]
-timestamp: "2026-07-07"
+timestamp: "2026-07-08"
 ---
 
 # 记忆层指针

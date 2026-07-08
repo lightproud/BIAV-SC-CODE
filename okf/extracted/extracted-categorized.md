@@ -4,7 +4,7 @@ title: "categorized"
 description: "一手可读解包源「categorized」：14 文件 / 22.8MB。processed/*.json 的上游权威（血缘：extracted 原始→processed 派生）。"
 resource: "/projects/wiki/data/extracted/categorized/"
 tags: ["data_layer:full_archive", "first-hand-unpack", "upstream-of:processed", "content:categorized"]
-timestamp: "2026-07-07"
+timestamp: "2026-07-08"
 ---
 
 # 指针概念
