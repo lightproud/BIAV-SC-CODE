@@ -1,9 +1,32 @@
 {
   "date": "2026-07-08",
-  "archived_at": "2026-07-08T02:04:13.033834+00:00",
+  "archived_at": "2026-07-08T05:47:03.175641+00:00",
   "source": "bilibili",
-  "item_count": 4,
+  "item_count": 6,
   "items": [
+    {
+      "title": "克总还不轮椅啊",
+      "summary": "-\n  └ 燃え落ちない翼 (0赞): 看了一下主页，我嘞个还打雀啊[冬日树下_啊？][冬日树下_啊？]话说这个阵容应该到星辰也能打吧[冬日树下_思考][冬日树下_思考]",
+      "source": "bilibili",
+      "time": "2026-07-07T18:20:20+00:00",
+      "url": "https://www.bilibili.com/video/BV12mMY6ZEmR",
+      "engagement": 220,
+      "is_hot": false,
+      "author": "招牌烤肉鸡排双拼饭",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 219,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/505132217435a25045cce31f2c2637230a0c0471.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
     {
       "title": "来自遗忘—呼唤我的名字 即使时间停滞",
       "summary": "-\n  └ 沐凇羲 (0赞): 大大厉害！！！\n  └ 绫の稚 (0赞): 双声道[吃瓜]",
@@ -23,6 +46,29 @@
         "danmaku": 0
       },
       "media_url": "https://i0.hdslb.com/bfs/archive/c41ee2c2a2adb0af9803b8b108867a2c88bd2559.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "建新号结果抽卡全歪被迫回归大群开荒发现成新玩家了",
+      "summary": "",
+      "source": "bilibili",
+      "time": "2026-07-07T17:47:29+00:00",
+      "url": "https://www.bilibili.com/video/BV1yTMh67E5k",
+      "engagement": 132,
+      "is_hot": false,
+      "author": "招牌烤肉鸡排双拼饭",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 132,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/acb7f93bd9b92692b6f259f71847724ed0851c62.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
