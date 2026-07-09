@@ -454,11 +454,10 @@ describe('prompt cache: stable prefix does not drift across turns (a read can hi
     expect(JSON.stringify(tools).length).toBeGreaterThan(6000);
   });
 
-  it('claude_code preset with no explicit variant resolves to the v5 default on the wire', async () => {
-    // Locks the promoted default THROUGH the real query() path: query.ts must
-    // pass harnessPromptVariant through as-is so buildSystemPromptParts applies
-    // its v5 default. A regression that pins undefined -> 'v1' here would ship
-    // the terse prompt while the unit default claimed v5.
+  it('the claude_code preset resolves to the default harness on the wire', async () => {
+    // Locks the single default harness THROUGH the real query() path: the v1-v4
+    // variant ladder was collapsed (2026-07-08), so the preset always ships the
+    // comprehensive faithful reproduction.
     const fetchStub = stubFetch(makeSSEFetch([textReplyEvents('done')]));
     const q = query({
       prompt: 'hello',
@@ -472,19 +471,18 @@ describe('prompt cache: stable prefix does not drift across turns (a read can hi
     await collect(q);
     const sys = fetchStub.requests[0]!.body.system as Array<{ text?: string }>;
     const stable = sys[0]?.text ?? '';
-    expect(stable).toContain('Doing tasks:'); // v5 marker
-    expect(stable).toContain('Measure twice, cut once.'); // v5 marker
-    expect(stable).not.toContain('Tool guidance:'); // v1 marker absent
+    expect(stable).toContain('Doing tasks:');
+    expect(stable).toContain('Measure twice, cut once.');
   });
 
-  it('an explicit harnessPromptVariant:v1 still selects the terse prompt on the wire', async () => {
+  it('an unset systemPrompt resolves to the SAME default harness on the wire', async () => {
+    // Post-collapse: undefined no longer ships the minimal 2-line prompt; it
+    // converges to the same comprehensive default as the preset.
     const fetchStub = stubFetch(makeSSEFetch([textReplyEvents('done')]));
     const q = query({
       prompt: 'hello',
       options: baseOptions({
         provider: { apiKey: 'test-key' },
-        systemPrompt: { type: 'preset', preset: 'claude_code' },
-        harnessPromptVariant: 'v1',
         permissionMode: 'bypassPermissions',
         allowDangerouslySkipPermissions: true,
       }),
@@ -492,8 +490,8 @@ describe('prompt cache: stable prefix does not drift across turns (a read can hi
     await collect(q);
     const sys = fetchStub.requests[0]!.body.system as Array<{ text?: string }>;
     const stable = sys[0]?.text ?? '';
-    expect(stable).toContain('Tool guidance:'); // v1 marker
-    expect(stable).not.toContain('Doing tasks:'); // v5 marker absent
+    expect(stable).toContain('Doing tasks:');
+    expect(stable).toContain('Measure twice, cut once.');
   });
 });
 

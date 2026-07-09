@@ -13,7 +13,7 @@
  * short-single-run artifact. No theorizing — the per-turn numbers decide.
  *
  * Usage: ANTHROPIC_API_KEY=... node tests/integration/cache-probe.mjs \
- *   [--model=claude-haiku-4-5-20251001] [--runs=3] [--variant=v1|v4]
+ *   [--model=claude-haiku-4-5-20251001] [--runs=3] [--big]
  * Exit: 0 ok, 2 no key (skipped).
  */
 
@@ -29,7 +29,6 @@ const args = Object.fromEntries(
 );
 const MODEL = typeof args.model === 'string' ? args.model : 'claude-haiku-4-5-20251001';
 const RUNS = Math.max(1, Number.parseInt(args.runs, 10) || 3);
-const VARIANT = ['v1', 'v2', 'v3', 'v4', 'v5'].includes(args.variant) ? args.variant : undefined;
 // --big: inflate the system prompt COMFORTABLY above the 2048 Haiku floor
 // (~4500 tokens of filler) to test whether caching becomes reliable when the
 // stable prefix is big (like the official's), isolating "marginal-size zone"
@@ -71,17 +70,11 @@ async function runOnce(i) {
         allowDangerouslySkipPermissions: true,
         maxTurns: 8,
         persistSession: false,
-        // A harnessPromptVariant only takes effect on the claude_code preset
-        // path, so selecting a variant REQUIRES also selecting the preset (else
-        // the minimal default prompt is used and the variant is ignored).
+        // --big appends filler to push the stable prefix well above the Haiku
+        // cache floor; otherwise the plain default harness prompt is used.
         ...(BIG
           ? { systemPrompt: { type: 'preset', preset: 'claude_code', append: BIG_APPEND } }
-          : VARIANT
-            ? {
-                harnessPromptVariant: VARIANT,
-                systemPrompt: { type: 'preset', preset: 'claude_code' },
-              }
-            : {}),
+          : {}),
       },
     });
     for await (const msg of q) {
@@ -94,7 +87,7 @@ async function runOnce(i) {
 }
 
 console.log(
-  `cache-probe: model=${MODEL} ${BIG ? 'BIG-prefix(~4.5k tok filler)' : `variant=${VARIANT ?? 'v1(default)'}`} runs=${RUNS}, back-to-back\n`,
+  `cache-probe: model=${MODEL} ${BIG ? 'BIG-prefix(~4.5k tok filler)' : 'default-harness'} runs=${RUNS}, back-to-back\n`,
 );
 let firstRunWroteAt = null;
 for (let i = 1; i <= RUNS; i++) {

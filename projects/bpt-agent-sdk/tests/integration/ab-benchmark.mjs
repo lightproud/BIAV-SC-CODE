@@ -45,9 +45,6 @@ if (args.compare === true && positional.length === 2) {
 const ENGINE = args.engine === 'official' ? 'official' : 'bpt';
 const MODEL = typeof args.model === 'string' ? args.model : 'claude-haiku-4-5-20251001';
 const OUT = typeof args.out === 'string' ? args.out : `ab-report-${ENGINE}.json`;
-// --variant v1|v2: this SDK's harness-prompt variant (BPT experiment). Only
-// meaningful for --engine=bpt; ignored by the official engine.
-const VARIANT = ['v1', 'v2', 'v3', 'v4', 'v5'].includes(args.variant) ? args.variant : undefined;
 // --repeat N: run each task N times and report the MEDIAN of the metrics
 // (denoises single-sample outliers, e.g. one slow/retried turn). Default 1.
 const REPEAT = Math.max(1, Number.parseInt(args.repeat, 10) || 1);
@@ -307,18 +304,12 @@ async function runTask(task) {
         maxTurns: 8,
         persistSession: false,
         // The BPT arm runs the real shipped harness: the claude_code preset,
-        // whose default variant is v5 (the faithful official reproduction).
-        // This makes the standalone A/B and the vs-official comparison reflect
-        // what an actual integration gets, not a stripped-down prompt. A
-        // harnessPromptVariant only takes effect on this preset path, so the
-        // preset MUST be present (leaving it off silently ignored the variant —
-        // the bug that made an earlier v1-vs-v4 run look identical). The
-        // official engine ships its own prompt; we pass nothing extra to it.
+        // the single comprehensive faithful reproduction of the official main
+        // loop. This makes the standalone A/B and the vs-official comparison
+        // reflect what an actual integration gets. The official engine ships its
+        // own prompt; we pass nothing extra to it.
         ...(ENGINE === 'bpt'
-          ? {
-              systemPrompt: { type: 'preset', preset: 'claude_code' },
-              ...(VARIANT ? { harnessPromptVariant: VARIANT } : {}),
-            }
+          ? { systemPrompt: { type: 'preset', preset: 'claude_code' } }
           : {}),
         ...(task.options ?? {}),
       },
@@ -438,7 +429,6 @@ for (const task of selected) {
 const report = {
   engine: ENGINE,
   model: MODEL,
-  variant: VARIANT,
   repeat: REPEAT,
   at: new Date().toISOString(),
   tasks: rows,
@@ -517,9 +507,7 @@ function compareReports(fileA, fileB) {
   const byId = (rep) => new Map(rep.tasks.map((t) => [t.id, t]));
   const mb = byId(b);
   const rn = a.repeat || b.repeat ? ` (median of ${a.repeat ?? 1}/${b.repeat ?? 1})` : '';
-  const va = a.variant ? `/${a.variant}` : '';
-  const vb = b.variant ? `/${b.variant}` : '';
-  console.log(`A=${a.engine}${va}(${a.model})  B=${b.engine}${vb}(${b.model})${rn}\n`);
+  console.log(`A=${a.engine}(${a.model})  B=${b.engine}(${b.model})${rn}\n`);
   console.log('| # | task | ok A/B | turns A/B | cost A/B | wall ms A/B | cacheHit A/B |');
   console.log('|---|------|--------|-----------|----------|-------------|--------------|');
   for (const ta of a.tasks) {

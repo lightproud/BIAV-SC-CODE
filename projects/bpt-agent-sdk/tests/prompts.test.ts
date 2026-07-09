@@ -1,14 +1,14 @@
 /**
- * Harness system-prompt construction: stable/volatile split + v1/v2/v3 variant.
+ * Harness system-prompt construction: stable/volatile split + the single
+ * default harness prompt (the v1-v4 variant ladder was collapsed, 2026-07-08).
  */
 
 import { describe, expect, it } from 'vitest';
 import { buildSystemPromptParts, buildSystemPrompt } from '../src/engine/prompts.js';
 
-const ctx = (variant?: 'v1' | 'v2' | 'v3' | 'v4' | 'v5') => ({
+const ctx = () => ({
   cwd: '/tmp/run-xyz',
   toolNames: ['Read', 'Write', 'Bash'],
-  variant,
 });
 const preset = { type: 'preset' as const, preset: 'claude_code' as const };
 
@@ -31,95 +31,37 @@ describe('system prompt split', () => {
   });
 });
 
-describe('harness prompt v1/v2 variant', () => {
-  it('defaults to v5 (faithful official reproduction) when no variant is given', () => {
-    // The claude_code preset with no explicit variant emulates the official
-    // harness: a measured A/B showed v5 is ~3x cheaper in multi-turn at equal
-    // correctness (95% vs 0% cache hit), so it is the default.
-    const def = buildSystemPromptParts(preset, ctx()).stable;
-    const explicitV5 = buildSystemPromptParts(preset, ctx('v5')).stable;
-    expect(def).toBe(explicitV5);
-    expect(def).toContain('Doing tasks:');
-    expect(def).not.toContain('/tmp/run-xyz');
+describe('the default harness prompt', () => {
+  it('undefined and the claude_code preset resolve to the SAME single default', () => {
+    // The v1-v4 variant ladder was collapsed (keeper ruling 2026-07-08): both an
+    // unset systemPrompt and the preset produce ONE comprehensive harness prompt.
+    const fromUndefined = buildSystemPromptParts(undefined, ctx()).base;
+    const fromPreset = buildSystemPromptParts(preset, ctx()).base;
+    expect(fromUndefined).toBe(fromPreset);
+    expect(fromPreset).toContain('Doing tasks:');
+    expect(fromPreset).not.toContain('/tmp/run-xyz');
   });
 
-  it('v1 is still available as an explicit terse opt-in', () => {
-    const v1 = buildSystemPromptParts(preset, ctx('v1')).stable;
-    expect(v1).toContain('Tool guidance:');
-    // and it is meaningfully smaller than the v5 default
-    const v5 = buildSystemPromptParts(preset, ctx('v5')).stable;
-    expect(v1.length).toBeLessThan(v5.length);
-  });
-
-  it('v2 is the richer self-authored prompt and is larger than v1', () => {
-    const v1 = buildSystemPromptParts(preset, ctx('v1')).stable;
-    const v2 = buildSystemPromptParts(preset, ctx('v2')).stable;
-    expect(v2).not.toBe(v1);
-    expect(v2.length).toBeGreaterThan(v1.length);
-    // v2 encodes real behavioral discipline, not padding.
-    expect(v2).toContain('Approach:');
-    expect(v2).toContain('Grounding and honesty:');
-    expect(v2).toContain('Finishing:');
-    // both keep the cwd out of the cached (stable) segment
-    expect(v2).not.toContain('/tmp/run-xyz');
-  });
-
-  it('v3 adds the four flagged disciplines on top of v2 and is larger still', () => {
-    const v2 = buildSystemPromptParts(preset, ctx('v2')).stable;
-    const v3 = buildSystemPromptParts(preset, ctx('v3')).stable;
-    expect(v3).not.toBe(v2);
-    expect(v3.length).toBeGreaterThan(v2.length);
-    // the four techniques the public best-practices comparison flagged as missing
-    expect(v3).toContain('verify your work against'); // verify-before-finishing
-    expect(v3).toContain('Do not hard-code'); // solve the general problem
-    expect(v3).toContain('for example:'); // one concrete style example
-    // when-to-delegate guidance is present ONLY when the Agent tool is shipped
-    const v3Agent = buildSystemPromptParts(preset, {
-      cwd: '/tmp/run-xyz',
-      toolNames: ['Read', 'Write', 'Bash', 'Agent'],
-      variant: 'v3',
-    }).stable;
-    expect(v3Agent).toContain('Delegation:');
-    // still keeps the cwd out of the cached (stable) segment
-    expect(v3).not.toContain('/tmp/run-xyz');
-  });
-
-  it('v4 faithfully reproduces official main-loop clauses, tool refs adapted, cwd out', () => {
-    const v4 = buildSystemPromptParts(preset, ctx('v4')).stable;
-    // faithful official clauses (reproduced from the public reconstruction)
-    expect(v4).toContain('You are an interactive agent that helps users with software engineering tasks.');
-    expect(v4).toContain('Lead with the outcome.');
-    expect(v4).toContain('file_path:line_number');
-    // tool references adapted to THIS SDK's tools
-    expect(v4).toContain('Read, Write, Edit, Glob, Grep');
-    // cwd stays out of the cached (stable) segment
-    expect(v4).not.toContain('/tmp/run-xyz');
-    // and it does not reference tools this SDK does not ship
-    expect(v4).not.toContain('Workflow');
-  });
-
-  it('v5 is a comprehensive faithful reproduction, larger than v4, tool-adapted, cwd out', () => {
-    const v4 = buildSystemPromptParts(preset, ctx('v4')).stable;
-    const v5 = buildSystemPromptParts(preset, ctx('v5')).stable;
-    expect(v5.length).toBeGreaterThan(v4.length);
-    // fuller official main-loop sections present in v5
-    expect(v5).toContain('Doing tasks:');
-    expect(v5).toContain('Tool use:');
-    expect(v5).toContain('Executing actions with care:');
-    expect(v5).toContain('Communicating with the user:');
+  it('is the comprehensive faithful reproduction of the official main loop', () => {
+    const stable = buildSystemPromptParts(preset, ctx()).stable;
+    // fuller official main-loop sections
+    expect(stable).toContain('Doing tasks:');
+    expect(stable).toContain('Tool use:');
+    expect(stable).toContain('Executing actions with care:');
+    expect(stable).toContain('Communicating with the user:');
     // faithful official clauses
-    expect(v5).toContain('Measure twice, cut once.');
-    expect(v5).toContain('file_path:line_number');
-    // official main-loop clauses that must be reproduced (act-when-ready + safety)
-    expect(v5).toContain('When you have enough information to act, act.');
-    expect(v5).toContain('Assist with authorized security testing');
+    expect(stable).toContain('You are an interactive agent that helps users with software engineering tasks.');
+    expect(stable).toContain('Measure twice, cut once.');
+    expect(stable).toContain('When you have enough information to act, act.');
+    expect(stable).toContain('Assist with authorized security testing');
+    expect(stable).toContain('file_path:line_number');
     // tool references adapted to THIS SDK (dedicated-tools-over-bash redirects)
-    expect(v5).toContain('Use Grep (NOT grep or rg)');
+    expect(stable).toContain('Use Grep (NOT grep or rg)');
     // does not reference tools this SDK does not ship
-    expect(v5).not.toContain('Workflow');
-    expect(v5).not.toContain('computer-use');
+    expect(stable).not.toContain('Workflow');
+    expect(stable).not.toContain('computer-use');
     // cwd stays out of the cached stable segment
-    expect(v5).not.toContain('/tmp/run-xyz');
+    expect(stable).not.toContain('/tmp/run-xyz');
   });
 
   it('an environment context renders the <env> block in the volatile tail', () => {
@@ -168,27 +110,24 @@ describe('harness prompt v1/v2 variant', () => {
     expect(volatile).not.toContain('Always use tabs.');
   });
 
-  it('RED LINE: never names the Agent tool when it is not in the tool set (v5 + v3)', () => {
+  it('RED LINE: never names the Agent tool when it is not in the tool set', () => {
     // query.ts registers the Agent tool only when subagents are configured, so
     // the default prompt must not instruct the model to use it.
     const noAgent = { cwd: '/tmp/x', toolNames: ['Read', 'Write', 'Bash', 'TodoWrite'] };
-    for (const v of ['v3', 'v5'] as const) {
-      const stable = buildSystemPromptParts(preset, { ...noAgent, variant: v }).stable;
-      expect(stable).not.toContain('Agent tool');
-      expect(stable).not.toContain('via the Agent tool');
-      expect(stable).not.toContain('specialized agents');
-    }
+    const stable = buildSystemPromptParts(preset, noAgent).stable;
+    expect(stable).not.toContain('Agent tool');
+    expect(stable).not.toContain('via the Agent tool');
+    expect(stable).not.toContain('specialized agents');
   });
 
-  it('includes the Agent guidance when the Agent tool IS in the set (v5 + v3)', () => {
+  it('includes the Agent guidance when the Agent tool IS in the set', () => {
     const withAgent = { cwd: '/tmp/x', toolNames: ['Read', 'Bash', 'Agent'] };
-    expect(buildSystemPromptParts(preset, { ...withAgent, variant: 'v5' }).stable).toContain('Agent tool');
-    expect(buildSystemPromptParts(preset, { ...withAgent, variant: 'v3' }).stable).toContain('via the Agent tool');
+    expect(buildSystemPromptParts(preset, withAgent).stable).toContain('Agent tool');
   });
 
-  it('gates each tool-specific clause on that tool being present (v5)', () => {
+  it('gates each tool-specific clause on that tool being present', () => {
     // A restricted tool set drops the clauses naming absent tools.
-    const minimal = { cwd: '/tmp/x', toolNames: ['Read', 'Bash'], variant: 'v5' as const };
+    const minimal = { cwd: '/tmp/x', toolNames: ['Read', 'Bash'] };
     const stable = buildSystemPromptParts(preset, minimal).stable;
     expect(stable).not.toContain('TodoWrite tool');
     expect(stable).not.toContain('AskUserQuestion tool');
@@ -197,11 +136,9 @@ describe('harness prompt v1/v2 variant', () => {
     expect(stable).toContain('Doing tasks:');
   });
 
-  it('append text lands in the stable segment for all variants', () => {
+  it('append text lands in the stable segment', () => {
     const withAppend = { ...preset, append: 'EXTRA_INSTRUCTION' };
-    for (const v of ['v1', 'v2', 'v3', 'v4', 'v5'] as const) {
-      expect(buildSystemPromptParts(withAppend, ctx(v)).stable).toContain('EXTRA_INSTRUCTION');
-    }
+    expect(buildSystemPromptParts(withAppend, ctx()).stable).toContain('EXTRA_INSTRUCTION');
   });
 });
 

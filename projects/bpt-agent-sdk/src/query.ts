@@ -720,15 +720,11 @@ export function query(args: {
       : undefined;
     sessionGitBranch = environment?.gitBranch;
     const projectInstructions = loadProjectInstructions(cwd, options.settingSources);
-    // Pass the variant through as-is: when harnessPromptVariant is unset,
-    // buildSystemPromptParts applies its default (v5, the faithful official
-    // reproduction) on the claude_code preset path. Resolving undefined to a
-    // concrete 'v1' here would override that default and pin the real API to
-    // the terse prompt regardless of the promoted default.
+    // There is one harness prompt: buildSystemPromptParts resolves both an unset
+    // systemPrompt and the claude_code preset to the same comprehensive default.
     const promptParts = buildSystemPromptParts(sp, {
       cwd,
       toolNames: [...builtinTools.keys()],
-      variant: options.harnessPromptVariant,
       environment,
       projectInstructions,
     });

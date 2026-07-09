@@ -16,8 +16,8 @@
  * red-line tests). Fragments with a `gate` are emitted only when the gate holds
  * (e.g. the Agent clause only when the Agent tool is in the set).
  *
- * This is the initial migration of defaultHarnessStableV5 into the store; the
- * assembler reproduces v5 byte-for-byte (golden-locked in tests). Adding the
+ * This is the initial migration of the default harness prompt into the store;
+ * the assembler reproduces it byte-for-byte (golden-locked in tests). Adding the
  * build-from-archive generator + tool-description / sub-agent / generator
  * surfaces are subsequent Track B phases.
  */
