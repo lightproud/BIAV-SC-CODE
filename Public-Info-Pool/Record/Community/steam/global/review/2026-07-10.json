@@ -1,8 +1,8 @@
 {
   "date": "2026-07-10",
-  "archived_at": "2026-07-09T19:30:29.669827+00:00",
+  "archived_at": "2026-07-09T21:19:15.628889+00:00",
   "source": "steam",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "title": "[正面] Entretenido el juego, me gusto su gameplay aunque...",
@@ -22,6 +22,30 @@
         "playtime_forever": 1927,
         "votes_up": 0,
         "timestamp_created": 1783620210
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] The game runs very smooth on my rog ally. While a...",
+      "summary": "The game runs very smooth on my rog ally. While a gacha i don't feel like you have to spend money to play the game. Combat is challenging enough but not so much time feel like you can't progress at all. It's an all around solid game",
+      "source": "steam_review",
+      "time": "2026-07-09T20:26:53+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198699890439/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198699890439",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 333,
+        "votes_up": 0,
+        "timestamp_created": 1783628813
       },
       "region": "global",
       "archive_subtype": "review",

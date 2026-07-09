@@ -1,6 +1,6 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-09T19:29:45.139280+00:00",
+  "collected_at": "2026-07-09T21:18:31.222082+00:00",
   "source": "steam",
   "data_layer": "output",
   "item_count": 5,
@@ -19,6 +19,21 @@
       "review": "放给任何一个不是键帽的运营来做，你游都会是无可置疑的成功\r\n一个夸张的说法来说明键帽到底让你游经历过多少能死几次的灾难性事件\r\n\r\n虽说类尖塔二游无可避免的要解决养成和肉鸽的天然矛盾问题\r\n但你游在这一点上处理的还是相当不错的，尽管有着玩家等级这种短时间难以逾越的练度压制，但是越级带来的高难度战斗还是非常考验角色/密契/造物理解的，特别是此游戏独特的钥令机制与上述角色套牌的结合（尽管近期钥令明显更加和角色绑定了）带来了非常独特的体验，玩法上可以说碾压一众打牌二游，你游也是少数同角色在不同玩家手里通过操作打出天差地别的结果的游戏，甚至哪怕同一关通过多次的sl都能找到一个更加刁钻的路线解决，我想这大概才是这种游戏的乐趣所在，比起肉鸽中让人刺激的随机要素更多的是在随机中寻求解法的理解考验\r\n美术也是独具一格的，几乎稳定吸引小众猎奇爱好者虽然并非彻底猎奇但仍然保留大部分艺术气息，而不是纯粹追求猎奇的小众变态心理，有效避免你游涌入各种恶臭圈子的小众哥\r\n最后游戏剧情来说克苏鲁式的表达方式确实某种程度上不利于商业化表达，后续剧情也显然做了一部分妥协，不过问题不大，总体来说你游的玩法驱动已经远远大于剧情驱动了\r\n\r\n其实原本这游戏能活到现在也是很让人惊讶吧，但至少玩家们仍然在努力挽救着自己热爱的那个游戏不是吗，所以当时看见小猫的那个兑换码确实感觉有点感动，最后祝你游蒸蒸日上吧",
       "timestamp_created": 1783559007,
       "playtime_forever": 29195
+    },
+    {
+      "source": "steam",
+      "time": "2026-07-09T20:26:53+00:00",
+      "lang": "english",
+      "title": "[正面] The game runs very smooth on my rog ally. While a...",
+      "summary": "The game runs very smooth on my rog ally. While a gacha i don't feel like you have to spend money to play the game. Combat is challenging enough but not so much time feel like you can't progress at all. It's an all around solid game",
+      "url": "https://steamcommunity.com/profiles/76561198699890439/recommended/3052450",
+      "author": "76561198699890439",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "The game runs very smooth on my rog ally. While a gacha i don't feel like you have to spend money to play the game. Combat is challenging enough but not so much time feel like you can't progress at all. It's an all around solid game",
+      "timestamp_created": 1783628813,
+      "playtime_forever": 333
     },
     {
       "source": "steam",
@@ -63,22 +78,7 @@
       "voted_up": true,
       "review": "Very fun game with an interesting story and setting.",
       "timestamp_created": 1783557706,
-      "playtime_forever": 1193
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-08T20:14:07+00:00",
-      "lang": "german",
-      "title": "[正面] 10/10",
-      "summary": "10/10",
-      "url": "https://steamcommunity.com/profiles/76561199099492007/recommended/3052450",
-      "author": "76561199099492007",
-      "engagement": 0,
-      "language": "german",
-      "voted_up": true,
-      "review": "10/10",
-      "timestamp_created": 1783541647,
-      "playtime_forever": 970
+      "playtime_forever": 1313
     }
   ]
 }
