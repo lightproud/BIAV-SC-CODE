@@ -11,6 +11,17 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.34.1 — 2026-07-09
+
+**Remove the leftover `[bpt-usage]` diagnostic probe** (black-pool request). A
+one-off token-accounting probe added 2026-07-08 printed each turn's raw
+`input_tokens` / `cache_read` / `cache_creation` to stderr via `console.error`,
+which downstream log layers surface as a spurious ERROR-level red line every
+turn. Its own comment scoped it to "remove once the cache-behavior numbers are
+captured" — they were. Deleted the comment + `console.error` call in
+`recordUsage()` (src/engine/loop.ts); the accounting logic (`totalUsage` /
+`modelUsage` / cost) is untouched. `src/` now contains no `console.*` calls.
+
 ## 0.34.0 — 2026-07-09
 
 **Unified tool-search: defer COLD BUILT-IN schemas, not just MCP tools** (keeper
