@@ -1,8 +1,8 @@
 {
   "date": "2026-07-09",
-  "archived_at": "2026-07-09T14:42:55.587897+00:00",
+  "archived_at": "2026-07-09T17:18:19.603975+00:00",
   "source": "steam",
-  "item_count": 5,
+  "item_count": 6,
   "items": [
     {
       "title": "[正面] Story is REALLY good, very f2p friendly, no need t...",
@@ -118,6 +118,30 @@
         "playtime_forever": 713,
         "votes_up": 0,
         "timestamp_created": 1783557706
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Jogo equilibrado, com dificuldade rasuavel, ponto...",
+      "summary": "Jogo equilibrado, com dificuldade rasuavel, ponto negativo; a legenda não é exata porém isso não interfere na jogabilidade, sujestão; poderiam por mecanicas de clãs e pvp.",
+      "source": "steam_review",
+      "time": "2026-07-09T15:40:39+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199829588283/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199829588283",
+      "tags": [
+        "brazilian"
+      ],
+      "language": "brazilian",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 2075,
+        "votes_up": 0,
+        "timestamp_created": 1783611639
       },
       "region": "global",
       "archive_subtype": "review",

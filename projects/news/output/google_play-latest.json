@@ -1,20 +1,10 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-09T14:42:08.900903+00:00",
+  "collected_at": "2026-07-09T17:17:39.192532+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 130,
+  "item_count": 128,
   "items": [
-    {
-      "source": "google_play",
-      "time": "2026-06-09T14:59:28",
-      "lang": "es",
-      "title": "[Google Play 好评] ★4 actualizó mi reseña, llevo ya meses juga",
-      "summary": "actualizó mi reseña, llevo ya meses jugando a este maravilloso juego y la verdad, Es Cine 😎, aunque claro aún falta mucho que pulir y es en el rendimiento, ya que ha estado muy pesado actualmente y llega a tener bajones y trabarse 😓, cosa que antes no me pasaba, le bajé la cálida y vídeo y aún así se traba 😑, cosa que hace meses no me pasaba en realidad, el juego sigue siendo una maravilla increíble, pero por favor mejoren el rendimiento, sería bueno para disfrutar más este juego. 👋😎💯",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=es#gp-46217986-5c13-4399-8eac-0eb5b304757e",
-      "author": "Reed",
-      "engagement": 11
-    },
     {
       "source": "google_play",
       "time": "2026-07-03T16:19:54",
@@ -1293,16 +1283,6 @@
       "summary": "カードゲーム的に遊ぶコマンドRPGだと思う。デッキ構築みたいな要素はかなり薄味。",
       "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-c8a7fd83-ec29-4162-9739-9e42c03412d0",
       "author": "うに",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-06-09T15:22:37",
-      "lang": "ja",
-      "title": "[Google Play 好评] ★5 物語もゲーム性も何もかも最高",
-      "summary": "物語もゲーム性も何もかも最高",
-      "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-9e9a10ef-a9cf-4004-84d7-9b3f04b0fff3",
-      "author": "ミヒ0505",
       "engagement": 0
     }
   ]

@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-09T14:42:55.817417+00:00",
-  "total_gaps": 135,
+  "generated_at": "2026-07-09T17:18:19.839434+00:00",
+  "total_gaps": 136,
   "platforms": {
     "appstore": {
       "missing_dates": [
@@ -182,9 +182,10 @@
         "2026-07-01",
         "2026-07-02",
         "2026-07-04",
-        "2026-07-06"
+        "2026-07-06",
+        "2026-07-08"
       ],
-      "count": 31
+      "count": 32
     },
     "youtube_comments": {
       "missing_dates": [
