@@ -439,18 +439,23 @@ export async function* runAgentLoop(
     mirror(turn);
   };
 
-  /** Built-in tool defs are static; MCP tool defs are rebuilt each attempt so
-   *  tool-search "load on demand" surfaces newly-loaded schemas per turn. */
-  const builtinToolDefs: APIToolDefinition[] = [];
-  for (const tool of deps.builtinTools.values()) {
-    builtinToolDefs.push({
-      name: tool.name,
-      description: tool.description,
-      input_schema: tool.inputSchema,
-    });
-  }
+  /** Tool defs are rebuilt each attempt so tool-search "load on demand"
+   *  surfaces newly-loaded schemas per turn — for BOTH deferred MCP tools
+   *  (via deps.mcp.allTools() filtering) and deferred COLD built-ins (via
+   *  deps.isBuiltinDeferred). A cold-and-unloaded built-in is skipped here so
+   *  its schema is not written this turn; it reappears the turn after a
+   *  ToolSearch load. Absent isBuiltinDeferred -> every built-in is inline
+   *  (exact pre-unification behavior). */
   const buildToolDefs = (): APIToolDefinition[] => {
-    const defs = [...builtinToolDefs];
+    const defs: APIToolDefinition[] = [];
+    for (const tool of deps.builtinTools.values()) {
+      if (deps.isBuiltinDeferred?.(tool.name) === true) continue;
+      defs.push({
+        name: tool.name,
+        description: tool.description,
+        input_schema: tool.inputSchema,
+      });
+    }
     for (const entry of deps.mcp.allTools()) {
       defs.push({
         name: entry.qualifiedName,

@@ -139,3 +139,70 @@ export function enumerateBuiltinToolMetadata(cfg?: {
     inputJsonSchema: t.inputSchema,
   }));
 }
+
+/**
+ * The default COLD set: built-in names whose (often large) schemas are
+ * withheld from the request `tools[]` and lazily loaded via the ToolSearch
+ * builtin when unified tool-search is active (options.toolSearch === true).
+ *
+ * Selection principle (mirrors upstream Claude Code's own resident/deferred
+ * split): the reflexively-used core — Read / Write / Edit / Bash / Glob / Grep,
+ * plus Agent, AskUserQuestion and ToolSearch itself — stays HOT (advertised
+ * inline every turn), because deferring a tool the model reaches for on nearly
+ * every turn only trades a fixed schema cost for an extra round-trip. Everything
+ * here is comparatively cold: its schema is dead weight on the turns it is not
+ * used, and one ToolSearch round-trip is cheap on the turns it is. `Workflow`
+ * is the single largest built-in schema (~4.9k tokens) and leads the set.
+ *
+ * A name here is deferred only if it is actually present in the running
+ * built-in map (e.g. the Task quartet XOR TodoWrite, per CLAUDE_CODE_ENABLE_TASKS),
+ * so listing both surfaces is safe. Deferring NEVER removes a tool — it stays in
+ * createBuiltinTools() (faithful) and still executes if called (has()-stays-true),
+ * exactly like a deferred MCP tool.
+ */
+export const DEFAULT_DEFERRED_BUILTINS: readonly string[] = [
+  'Workflow',
+  'Monitor',
+  'ExitPlanMode',
+  'EnterWorktree',
+  'WebFetch',
+  'WebSearch',
+  'BashOutput',
+  'KillShell',
+  'TaskOutput',
+  'TaskStop',
+  'TaskCreate',
+  'TaskGet',
+  'TaskUpdate',
+  'TaskList',
+  'TodoWrite',
+  'ListMcpResourcesTool',
+  'ReadMcpResourceTool',
+];
+
+/**
+ * The 银芯 (silver-core) / SVN-world tool VARIANT, as a partial `Options` bundle
+ * a deployment spreads into query(). This is the "different calling function"
+ * for the special variant — the faithful `createBuiltinTools()` factory is
+ * UNCHANGED and the SDK's default behavior is untouched; opting into the
+ * variant is a caller decision, not a factory edit.
+ *
+ * It does two things, both through general, already-tested SDK option seams:
+ *  - `toolSearch: true` turns on unified lazy tool-loading (the DEFAULT_DEFERRED_BUILTINS
+ *    cold set defers behind ToolSearch, even with zero MCP servers);
+ *  - `disallowedTools: ['EnterWorktree']` (default on) drops the git-worktree
+ *    tool, which is structurally unusable in an SVN checkout — via the same bare
+ *    disallowedTools path that removes any tool from the request entirely.
+ *
+ * Pass `{ disableWorktree: false }` to keep EnterWorktree (deferred, not removed).
+ */
+export function silverCoreToolOptions(opts: { disableWorktree?: boolean } = {}): {
+  toolSearch: true;
+  disallowedTools?: string[];
+} {
+  const disableWorktree = opts.disableWorktree ?? true;
+  return {
+    toolSearch: true,
+    ...(disableWorktree ? { disallowedTools: ['EnterWorktree'] } : {}),
+  };
+}

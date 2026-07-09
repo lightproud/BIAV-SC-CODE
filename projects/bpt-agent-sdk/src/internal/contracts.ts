@@ -524,6 +524,18 @@ export type EngineDeps = {
   hooks: HookRunner;
   toolContext: ToolContext;
   debug: (msg: string) => void;
+  /**
+   * Unified tool-search (lazy loading): returns true when a built-in tool's
+   * schema is currently WITHHELD from the request `tools[]` — it is in the
+   * cold set, deferral is active, and the model has not yet loaded it via the
+   * ToolSearch builtin. buildToolDefs() skips such tools so their (often large)
+   * schemas are not cold-written every turn; they resurface the turn after a
+   * ToolSearch load. Absent -> no built-in is ever deferred (every built-in's
+   * schema is advertised inline, the exact pre-unification behavior). The tool
+   * still EXECUTES if called while deferred (has()-stays-true, context-saving
+   * not access control), mirroring deferred MCP tools.
+   */
+  isBuiltinDeferred?: (name: string) => boolean;
   /** Shared, cross-turn request-message view. When present the engine streams
    *  from this array (compactable) instead of `history`, mirrors its own
    *  appended turns into it, and compaction splices it in place. `history`

@@ -22,6 +22,11 @@ export { tool, createSdkMcpServer } from './mcp/sdk-server.js';
 // same way it sizes MCP tools.
 export { enumerateBuiltinToolMetadata } from './tools/index.js';
 export type { BuiltinToolMetadata } from './tools/index.js';
+// Unified tool-search (lazy loading): the default cold built-in set (schemas
+// deferred behind the ToolSearch builtin when options.toolSearch === true) and
+// the 银芯/SVN-world variant options bundle. The faithful createBuiltinTools()
+// factory is unchanged; both of these are opt-in caller surfaces.
+export { DEFAULT_DEFERRED_BUILTINS, silverCoreToolOptions } from './tools/index.js';
 // BPT-EXTENSION (2026-07-08, black-pool ContextRing request): expose the harness
 // system-prompt base constructor so a host can size the built-in harness base —
 // the ~2.9k-token V5 preset prose injected on the `claude_code` preset path — the

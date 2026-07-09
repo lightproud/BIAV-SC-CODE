@@ -63,12 +63,16 @@ import {
 import { JsonlSessionStore, resolveTranscriptPath } from './sessions/store.js';
 import { MirroringSessionStore, encodeProjectKey } from './sessions/store-adapter.js';
 import { FileCheckpointStore } from './sessions/checkpoints.js';
-import { DeferredMcpRegistry, makeToolSearchTool } from './tools/toolsearch.js';
+import {
+  DeferredMcpRegistry,
+  makeToolSearchTool,
+  type DeferredBuiltinEntry,
+} from './tools/toolsearch.js';
 import { appendFileSync, mkdtempSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
-import { createBuiltinTools } from './tools/index.js';
+import { createBuiltinTools, DEFAULT_DEFERRED_BUILTINS } from './tools/index.js';
 import { createShellManager } from './tools/shells.js';
 import { peekWorktreeSession } from './tools/enterworktree.js';
 import type { ToolContextWithPermissionGate } from './tools/exitplanmode.js';
@@ -585,11 +589,15 @@ export function query(args: {
     bareDisallowed.length > 0
       ? new ToolFilterMcpRegistry(realMcp, isBareDisallowed)
       : realMcp;
-  // Tool-search: defer MCP tool schemas behind a ToolSearch builtin when
-  // servers are configured (auto-activates past the threshold, or forced by
-  // options.toolSearch). When null, mcpEff === mcp (exact v0.1 behavior).
+  // Tool-search: defer tool schemas behind a ToolSearch builtin. MCP tools
+  // defer when servers are configured (auto-activates past the threshold, or
+  // forced by options.toolSearch). Unified extension: `toolSearch: true` ALSO
+  // defers the cold built-in set (attached below), so it must construct the
+  // registry even with zero MCP servers — that is where the ~16k of resident
+  // built-in schemas is reclaimed. When null, mcpEff === mcp (exact v0.1
+  // behavior: every tool inline).
   const deferred =
-    options.toolSearch !== false && mcpServerCount > 0
+    options.toolSearch !== false && (mcpServerCount > 0 || options.toolSearch === true)
       ? new DeferredMcpRegistry(mcp, { debug })
       : null;
   const mcpEff: McpRegistry = deferred ?? mcp;
@@ -637,6 +645,24 @@ export function query(args: {
     !isBareDisallowed('Agent') &&
     (!Array.isArray(options.tools) || options.tools.includes('Agent'));
   if (wantAgent) builtinTools.set('Agent', createAgentTool(agentNames));
+
+  // Unified tool-search: register the cold built-in set on the deferred registry
+  // so the ONE ToolSearch builtin can lazily load them. Only when the caller
+  // opted in (`toolSearch: true`) — the default path (undefined) never defers a
+  // built-in, keeping the drop-in request shape byte-identical. Built from the
+  // FINAL map, so a bare-disallowed tool is never offered here, and only names
+  // actually present are deferred (the Task quartet XOR TodoWrite). ToolSearch
+  // and Agent are absent from the cold set, so they always stay inline.
+  if (deferred !== null && options.toolSearch === true) {
+    const cold: DeferredBuiltinEntry[] = [];
+    for (const name of DEFAULT_DEFERRED_BUILTINS) {
+      const t = builtinTools.get(name);
+      if (t !== undefined) {
+        cold.push({ name: t.name, description: t.description, inputSchema: t.inputSchema });
+      }
+    }
+    deferred.attachColdBuiltins(cold);
+  }
 
   // Structured-output: normalize the schema option and append the instruction
   // to the STABLE system segment so the requirement survives tool turns and
@@ -1373,6 +1399,12 @@ export function query(args: {
           requestView,
           drainSubagentResults: () => subagentRuntime.drainCompletedResults(),
           drainObservability,
+          // Unified tool-search: withhold a cold built-in's schema from this
+          // turn's tools[] while deferral is active and it is unloaded. Absent
+          // when no deferred registry exists -> every built-in stays inline.
+          ...(deferred !== null
+            ? { isBuiltinDeferred: (name: string) => deferred.isBuiltinDeferred(name) }
+            : {}),
         };
 
         // The engine appends assistant + tool_result-user messages to `history`

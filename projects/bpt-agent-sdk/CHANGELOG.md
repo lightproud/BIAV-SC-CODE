@@ -11,6 +11,40 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.34.0 — 2026-07-09
+
+**Unified tool-search: defer COLD BUILT-IN schemas, not just MCP tools** (keeper
+ruling 2026-07-09). Tool-search previously deferred only MCP tool schemas; the
+built-in schemas were always advertised inline every turn (~16k tokens, cold-written
+at the start of every conversation — the single largest fixed request cost, and the
+one the prompt cache does not amortize on a fresh conversation). The ONE `ToolSearch`
+builtin now searches and lazily loads a cold BUILT-IN set through the same registry:
+one shared `loaded` namespace, one catalog. `Workflow` (~4.9k tokens, the largest
+built-in schema) leads the cold set.
+
+- **new: unified deferral, opt-in via `toolSearch: true`.** When set, the cold set
+  (`DEFAULT_DEFERRED_BUILTINS` — Workflow / Monitor / ExitPlanMode / EnterWorktree /
+  WebFetch / WebSearch / the background-shell + task tools / MCP-resource tools) is
+  withheld from the request `tools[]` and lazily loaded on demand — **even with zero
+  MCP servers configured**. The reflexive core (Read/Write/Edit/Bash/Glob/Grep, plus
+  Agent, AskUserQuestion and ToolSearch itself) stays hot. A withheld built-in still
+  EXECUTES if called (has()-stays-true — context-saving, not access control), exactly
+  like a deferred MCP tool, and its schema resurfaces the turn after a ToolSearch load.
+- **unchanged default (drop-in safe): `toolSearch` undefined defers nothing built-in.**
+  Every built-in stays inline exactly as before; MCP-only deferral past the threshold
+  is untouched. `toolSearch: false` still disables all deferral. The conformance wire
+  surface is byte-identical on the default path (`toolNames`/`toolCount` were already
+  excluded from the reference ratchet).
+- **new export: `silverCoreToolOptions()`** — the SVN-world variant bundle
+  (`{ toolSearch: true, disallowedTools: ['EnterWorktree'] }`). The faithful
+  `createBuiltinTools()` factory is UNCHANGED; the variant is a separate opt-in caller
+  surface that additionally REMOVES `EnterWorktree` (git worktrees are unusable under
+  SVN) via the existing bare-`disallowedTools` path — removed, not merely deferred.
+  Pass `{ disableWorktree: false }` to keep it (deferred).
+- **new exports: `DEFAULT_DEFERRED_BUILTINS`** (the cold set) and the
+  `DeferredBuiltinEntry` type / the `DeferredMcpRegistry` cold-built-in surface
+  (`attachColdBuiltins` / `isBuiltinDeferred` / `coldBuiltinCatalog`).
+
 ## 0.33.0 — 2026-07-09
 
 **Collapse the harness-prompt variant ladder to a single default** (keeper ruling
