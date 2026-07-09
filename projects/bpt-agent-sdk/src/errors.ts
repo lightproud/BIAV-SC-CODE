@@ -34,16 +34,21 @@ export type McpErrorCode =
   | 'mcp_unknown_server';
 
 /**
- * All stable error codes. The two `APIConnectionError` scenario codes
- * (`sse_malformed_frame`, `stream_idle_timeout`) are defined here for the
- * transport layer to attach at its throw sites; until wired, transport errors
- * carry the class default `api_connection_failed`.
+ * All stable error codes. The three `APIConnectionError` scenario codes
+ * (`sse_malformed_frame`, `stream_idle_timeout`, `empty_stream`) are defined
+ * here for the transport layer to attach at its throw sites; until wired,
+ * transport errors carry the class default `api_connection_failed`.
  */
 export type ErrorCode =
   | 'aborted'
   | 'api_connection_failed'
   | 'sse_malformed_frame'
   | 'stream_idle_timeout'
+  /** HTTP 200 but the SSE body carried zero events (not even message_start) —
+   *  a replay-safe non-start (observed as an upstream-throttle shape under
+   *  concurrent fan-out). The transport retries internally; this code surfaces
+   *  only after the retry budget is exhausted. */
+  | 'empty_stream'
   | 'api_status_error'
   | 'not_implemented'
   | 'config_invalid'
@@ -74,7 +79,10 @@ export class APIConnectionError extends Error {
     override readonly cause?: unknown,
     code: Extract<
       ErrorCode,
-      'api_connection_failed' | 'sse_malformed_frame' | 'stream_idle_timeout'
+      | 'api_connection_failed'
+      | 'sse_malformed_frame'
+      | 'stream_idle_timeout'
+      | 'empty_stream'
     > = 'api_connection_failed',
   ) {
     super(message);
