@@ -39,6 +39,19 @@ granularity stops at the commit-title level.
     serialized; wire output byte-identical to passing the same text via `append`),
     so the breakdown can attribute each append bucket (e.g. Root / Runtime /
     Memory) separately.
+  - **Serves the ContextRing "Skills" bucket too** (2nd black-pool request,
+    keeper ruling 2026-07-09 "复用 systemAppend label"): an active skill whose
+    instructions persist as a re-injected SYSTEM-PROMPT segment (via
+    `appendSegments` / `append` / the `segments` form) is now attributable —
+    label the segment (e.g. `skill:<id>`) and its per-turn resident tokens land
+    in `systemAppend`, so the host can lift persistent skill occupancy out of the
+    panel's Unknown residual. Boundary: this SDK has NO skills subsystem (session
+    `skills` is ACCEPTED-IGNORED, no `load_skill` tool), so first-load `tool_result`
+    tokens stay in the `messages` bucket (the host already sees that via the
+    transcript), and a skill that persists as re-injected MESSAGE content (not a
+    system segment) falls in the aggregate `messages` bucket — the host authored
+    that injection and can meter it directly; per-message-segment attribution is a
+    separate future request.
   - Same lineage as `buildSystemPromptParts` / `enumerateBuiltinToolMetadata`
     (ADR 0014 / ADR 0022): the SDK surfaces what it knows at build time.
     Complements — does NOT replace — per-segment EXACT truth, which still needs
