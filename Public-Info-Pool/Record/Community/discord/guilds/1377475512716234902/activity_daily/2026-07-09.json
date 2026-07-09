@@ -1,11 +1,11 @@
 {
   "date": "2026-07-09",
-  "messages": 1088,
+  "messages": 1090,
   "unique_authors": 25,
   "reactions_total": 257,
   "attachments": 50,
   "channel_activity": {
-    "なんでも雑談": 1008,
+    "なんでも雑談": 1010,
     "🔰初心者質問": 12,
     "対戦募集": 5,
     "ほぼラフ": 1,
@@ -19,6 +19,7 @@
     "日替わり召喚「宿願の残響」開催のお知らせ": 1
   },
   "hourly_activity": {
+    "19": 2,
     "17": 12,
     "14": 250,
     "15": 16,
@@ -39,8 +40,7 @@
     "2": 1
   },
   "message_types": {
-    "0": 7,
-    "19": 1
+    "0": 2
   },
   "top_reacted_messages": [
     {
