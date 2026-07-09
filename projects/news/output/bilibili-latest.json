@@ -1,62 +1,44 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-09T11:52:24.233188+00:00",
+  "collected_at": "2026-07-09T14:42:08.900903+00:00",
   "source": "bilibili",
   "data_layer": "output",
   "item_count": 13,
   "items": [
     {
       "source": "bilibili",
-      "time": "2026-07-08T22:55:16+00:00",
-      "lang": "zh",
-      "title": "她明明最想吃……",
-      "summary": "-\n  └ 大小姐娅 (7赞): 她明明最馋第一口....但总想着郁纪....😭😭\n  └ zaizai502 (8赞): 依旧是我画的[吃瓜]\n  └ 是太行啦 (4赞): 她明明最馋，第一次却给了郁纪[大哭]",
-      "url": "https://www.bilibili.com/video/BV1zQML6wEGS",
-      "author": "哈基沙大玉",
-      "engagement": 1185,
-      "media_url": "https://i2.hdslb.com/bfs/archive/c293b386a8e7a495b3518c37ba85f45a8531a0a6.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 1160,
-        "comment_count": 25,
-        "comments_fetched": 3,
-        "danmaku": 1
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-07-08T12:17:36+00:00",
-      "lang": "zh",
-      "title": "在古代，穷人拥有高配攻瓜有多爽？",
-      "summary": "这集依然拉拉了\n  └ 密斯卡托尼克的银猫 (2赞): 封面原图\n  └ 玖玖_子 (0赞): 好像是我的瓜[doge]",
-      "url": "https://www.bilibili.com/video/BV1qpMg62E57",
-      "author": "密斯卡托尼克的银猫",
-      "engagement": 777,
-      "media_url": "https://i2.hdslb.com/bfs/archive/03f4301164b9be33fab4e3fa09d3ad73a840fc29.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 774,
-        "comment_count": 3,
-        "comments_fetched": 2,
-        "danmaku": 3
-      }
-    },
-    {
-      "source": "bilibili",
       "time": "2026-07-09T10:19:14+00:00",
       "lang": "zh",
       "title": "【忘却前夜】鸟弟是区？新手不推荐抽？情况究竟如何？",
-      "summary": "加强……鸟弟……\n  └ 立誓0氪吃400 (3赞): 做的很用心[打call]\n  └ _andZZ (3赞): 鸟弟就是区，新手不要抽\n  └ _未_闻_花_名_ (7赞): 我们鸟弟……会变成什么样子",
+      "summary": "加强……鸟弟……\n  └ 笙歌沸天引 (8赞): 问题是现在新手入坑不抽鸟弟还想抽谁？拿着常驻c打主线吗，那很会过日子了。其次三启以下鸟弟凑融灾队伍也很好用，考虑抽不抽一个角色是得综合考虑的。坦白来说你游大部分人都没这个水平去嫌弃鸟弟\n  └ 浪沫之翻涌 (3赞): 额难的不会，开荒嘛我作为萌新可能勉强能说一点，感觉鸟弟开荒挺不错的。当时0启1叠鸟弟，0启0叠鸟哥，神父和菲打到了星辰4王关前，就吃了星辰1王关，星辰2-12，星辰3三个和星辰4两个，感觉还是挺好用的。也不知道是不是操作问题或者什么，蜘蛛打不过去的\n  └ 龢利喵 (13赞): 我就说应该XP抽卡[doge]，强度抽卡总要面对不同情况的（暴论）",
       "url": "https://www.bilibili.com/video/BV1tEME6HEbA",
       "author": "花岚天音Amane",
-      "engagement": 620,
+      "engagement": 1514,
       "media_url": "https://i0.hdslb.com/bfs/archive/42376f2989b1fc4524cceb7143a2eab85c217644.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 583,
-        "comment_count": 37,
+        "play": 1423,
+        "comment_count": 91,
         "comments_fetched": 3,
         "danmaku": 3
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-07-08T22:55:16+00:00",
+      "lang": "zh",
+      "title": "她明明最想吃……",
+      "summary": "-\n  └ zaizai502 (9赞): 依旧是我画的[吃瓜]\n  └ 大小姐娅 (7赞): 她明明最馋第一口....但总想着郁纪....😭😭\n  └ 是太行啦 (4赞): 她明明最馋，第一次却给了郁纪[大哭]",
+      "url": "https://www.bilibili.com/video/BV1zQML6wEGS",
+      "author": "哈基沙大玉",
+      "engagement": 1320,
+      "media_url": "https://i2.hdslb.com/bfs/archive/c293b386a8e7a495b3518c37ba85f45a8531a0a6.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 1292,
+        "comment_count": 28,
+        "comments_fetched": 3,
+        "danmaku": 1
       }
     },
     {
@@ -64,16 +46,34 @@
       "time": "2026-07-09T02:31:59+00:00",
       "lang": "zh",
       "title": "【忘却前夜】7.6-7.20融灾400个人通关记录（低配24、血希羊皮杜、徐朵、水船庞卡）",
-      "summary": "吃了一下，吃得头疼，虽然我挺喜欢血肉戒指的，让我杜勒血希爽玩……\n同样是425配队但打不打425随缘\n有几个记录算是凹了时间线，但也不是不凹死扛过不了，跟我的死扛概率说去吧……\n1-5的boss攻击欲望低，有盾，适合血希，但是道中还是打的我很痛苦，可能是我带豪赌的问题（\n建议稍微做一下状态，不要像我一样第一回合就把船妹复活爆了\n2-5超绝痛苦长道中毒队，但是有戒指的徐真的强，反正每个回合就是觉得要死了但又美美活下来了\n建议带点死扛和银钥，或者进去选银钥造物，回狂、银钥这些会让回转很舒服，以及生存造物\n试玩",
+      "summary": "吃了一下，吃得头疼，虽然我挺喜欢血肉戒指的，让我杜勒血希爽玩……\n同样是425配队但打不打425随缘\n有几个记录算是凹了时间线，但也不是不凹死扛过不了，跟我的死扛概率说去吧……\n1-5的boss攻击欲望低，有盾，适合血希，但是道中还是打的我很痛苦，可能是我带豪赌的问题（\n建议稍微做一下状态，不要像我一样第一回合就把船妹复活爆了\n2-5超绝痛苦长道中毒队，但是有戒指的徐真的强，反正每个回合就是觉得要死了但又美美活下来了\n建议带点死扛和银钥，或者进去选银钥造物，回狂、银钥这些会让回转很舒服，以及生存造物\n试玩\n  └ 罗伊R95 (0赞): 哇你好厉害啊 我真打不过 看见你低配都能打400真的好厉害👍",
       "url": "https://www.bilibili.com/video/BV1ooM76iEgh",
       "author": "青灯不弈",
-      "engagement": 494,
+      "engagement": 557,
       "media_url": "https://i1.hdslb.com/bfs/archive/f7304d9d3d8e10bcf06c5eca1d2fa4b262b7d503.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 494,
-        "comment_count": 0,
-        "comments_fetched": 0,
+        "play": 556,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-07-09T08:33:08+00:00",
+      "lang": "zh",
+      "title": "［相位/教学］快速启动，爆发压制，女仆哈姆林又回来了！",
+      "summary": "感谢维克多分享构筑，主播打一晚上就上到6000多分\n  └ 归于喧嚣海洋吧 (4赞): 这次怎么不说是我的构筑了ᔦ ° ꒳ ° ᔨ ̖́-我要向你收取使用这套阵容的税（不是）\n  └ 红髮厨 (2赞): 好了我看完了，主播你快撤回[妙啊]\n  └ 用小号回我说明暗恋我 (2赞): 不好，我一直偷偷玩的刷牌队被公之于众了[大哭]（bushi）",
+      "url": "https://www.bilibili.com/video/BV1dHMJ6MEzU",
+      "author": "莱星Ligh",
+      "engagement": 464,
+      "media_url": "https://i1.hdslb.com/bfs/archive/b74b0214f30c1301db46d8df4525bea97e34af26.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 448,
+        "comment_count": 16,
+        "comments_fetched": 3,
         "danmaku": 0
       }
     },
@@ -85,31 +85,13 @@
       "summary": "-\n  └ 子夜微雪 (6赞): 环娜和珈伦的启灵无所谓，环娜的灵塑记得点一下\n需要+2手牌所以最好有哺育，没有也能玩。四个命轮位置在哺育/极夜与破晓/樱花下的迷思/阿库特之春/聚首时刻/专注精神里选择。如果有莱克也可以进行替换，命轮携带任意精通即可\n核心玩法就是在地瓜觉醒以后，1-2轮攒火攒银钥攒算，保证银钥能开2钥令的回合使用x费进行输出。银钥和火不够可以多攒一回合，最后回合数是来得及的\n2钥令第一个优先选择24钥令，以后在尤乌钥令、鲨鱼钥令、奥尔拉钥令、地瓜钥令、达芙戴尔钥令、莱克钥令、脑中之音和真理的门扉中里进行选择。前期力量钥令选的越多，后面输出越舒适\n地瓜珈伦就开普大，莱克环娜在缺地瓜指令卡是开大，需要注意环娜开大的时候上回合最后3张指令卡需要是地瓜的指令卡（或者意外收获/超越之目来找地瓜的牌）。出牌逻辑就是地瓜的千兆以外的牌有火就打（没法传火的最后1/2张不打），剩下出环娜的牌攒银钥，酌情为下回合留2-5点算力，注意算力上限是12点。\n  └ 冠军祝福 (0赞): 这个什么时候改了可以换命轮密契的，我以前拿官方给的预设打了一星。还浪费我一个灵芝[笑哭]",
       "url": "https://www.bilibili.com/video/BV1voML6ZEZt",
       "author": "子夜唯雪",
-      "engagement": 402,
+      "engagement": 452,
       "media_url": "https://i1.hdslb.com/bfs/archive/d18537cbfde53ce6952cfa8f62e245aaf9e93e67.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 399,
+        "play": 449,
         "comment_count": 3,
         "comments_fetched": 2,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-07-09T08:33:08+00:00",
-      "lang": "zh",
-      "title": "［相位/教学］快速启动，爆发压制，女仆哈姆林又回来了！",
-      "summary": "感谢维克多分享构筑，主播打一晚上就上到6000多分\n  └ 归于喧嚣海洋吧 (4赞): 这次怎么不说是我的构筑了ᔦ ° ꒳ ° ᔨ ̖́-我要向你收取使用这套阵容的税（不是）\n  └ 用小号回我说明暗恋我 (2赞): 不好，我一直偷偷玩的刷牌队被公之于众了[大哭]（bushi）\n  └ 不知今世为何 (2赞): 第一",
-      "url": "https://www.bilibili.com/video/BV1dHMJ6MEzU",
-      "author": "莱星Ligh",
-      "engagement": 345,
-      "media_url": "https://i1.hdslb.com/bfs/archive/b74b0214f30c1301db46d8df4525bea97e34af26.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 329,
-        "comment_count": 16,
-        "comments_fetched": 3,
         "danmaku": 0
       }
     },
@@ -121,11 +103,11 @@
       "summary": "只刚需沙耶本体和舅舅三启，增益卡有很多弃牌+钥令触发余波很频繁，没有船长问题不大；没有普墨可换诞墨挂机加银钥但要注意献祭；都没有找个羊妈挂银钥/胚胎/复制舅舅二费。没有命轮你我终将重逢可以考虑带一个法洛斯抓牌或把入药给沙耶。\n  └ 红茶喜欢喝红茶 (0赞): 全程，失误了一回合所以超了一回合[大哭][大哭][大哭]主包全程没开怒涛是因为没想到能过就懒得开了[笑哭][笑哭][笑哭]本质上是打着玩，本来是想用沙耶莫丝过的[笑哭][笑哭][笑哭]\n\n調查行動-永恆面紗——戰鬥回放\n守密人：查莉兹（100391812）\n\n沙耶、願世界化作芬芳、你我終將重逢、埋骨地絮語\n龐托斯、活囚籠、待到雪山消融、入藥之夢\n墨菲、櫻花下的迷思、溯洄時計、生機榨取\n克珀珊特、記憶螺旋、極夜與破曉、無垢啟示錄\n純白初遇\n\n1119a33f-af72-3d30-8d9a-6dd926842e9e#E#a",
       "url": "https://www.bilibili.com/video/BV1suMG6PEUH",
       "author": "红茶喜欢喝红茶",
-      "engagement": 270,
+      "engagement": 296,
       "media_url": "https://i2.hdslb.com/bfs/archive/9c1964840c044be3796d0a56d1fe1b89c8e41b05.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 269,
+        "play": 295,
         "comment_count": 1,
         "comments_fetched": 1,
         "danmaku": 0
@@ -136,14 +118,14 @@
       "time": "2026-07-09T05:48:13+00:00",
       "lang": "zh",
       "title": "【血肉戒】53分钟425练习，这期图有点长",
-      "summary": "-\n  └ 缄默2373 (2赞): 地图长了氨神都没法直接进去秒boss\n  └ 伊莎玛拉-大群来了 (1赞): 氨神别吓我\n  └ 翱翔呀 (1赞): 恐怖氨神",
+      "summary": "-\n  └ 车轱辘轧脸上了 (2赞): 呼吸佬我可以黯啄了吗[大哭]\n  └ 缄默2373 (2赞): 地图长了氨神都没法直接进去秒boss\n  └ 伊莎玛拉-大群来了 (1赞): 氨神别吓我",
       "url": "https://www.bilibili.com/video/BV1uDMj6QEog",
       "author": "路过的耄耋",
-      "engagement": 200,
+      "engagement": 261,
       "media_url": "https://i1.hdslb.com/bfs/archive/2f20c02c69e1a72e07fc2a227d4bb0e2c0c0d205.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 190,
+        "play": 251,
         "comment_count": 10,
         "comments_fetched": 3,
         "danmaku": 0
@@ -169,17 +151,35 @@
     },
     {
       "source": "bilibili",
+      "time": "2026-07-09T02:55:48+00:00",
+      "lang": "zh",
+      "title": "忘却前夜 鸟弟1t 融灾5-5于丽的狗",
+      "summary": "不知道 乱打的\n\n背景音乐：0 K - &quot;Avontuure&quot;\n  └ 上好佳薯片丶 (0赞): 偷学中\n  └ bian_loratadine (0赞): 佬别吓我\n  └ 伊莎玛拉-大群来了 (0赞): 大佬…",
+      "url": "https://www.bilibili.com/video/BV1VMME6FE5z",
+      "author": "夢遊遊遊遊",
+      "engagement": 133,
+      "media_url": "https://i0.hdslb.com/bfs/archive/dd8b6a43d65a4fbebedb8b1a199787a14a14737f.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 130,
+        "comment_count": 3,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
       "time": "2026-07-08T19:23:54+00:00",
       "lang": "zh",
       "title": "牢大我们往池子里砸了上百抽了怎么还是没有2命沙耶",
       "summary": "锄大地快锄不动了\n  └ iq2233 (0赞): 有一只沙耶吃了我81抽，中间歪了两个雷娅[委屈]",
       "url": "https://www.bilibili.com/video/BV19ZMV6JEvR",
       "author": "招牌烤肉鸡排双拼饭",
-      "engagement": 130,
+      "engagement": 132,
       "media_url": "https://i2.hdslb.com/bfs/archive/d5d6b528db9012b70c874caf55a1e2fc0a67b3f6.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 129,
+        "play": 131,
         "comment_count": 1,
         "comments_fetched": 1,
         "danmaku": 0
@@ -193,11 +193,11 @@
       "summary": "",
       "url": "https://www.bilibili.com/video/BV13CM56UES7",
       "author": "招牌烤肉鸡排双拼饭",
-      "engagement": 125,
+      "engagement": 127,
       "media_url": "https://i0.hdslb.com/bfs/archive/e9b5705c59b8355aca8831df96d86a8a3be862b0.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 125,
+        "play": 127,
         "comment_count": 0,
         "comments_fetched": 0,
         "danmaku": 0
@@ -205,19 +205,19 @@
     },
     {
       "source": "bilibili",
-      "time": "2026-07-09T02:55:48+00:00",
+      "time": "2026-07-09T13:58:45+00:00",
       "lang": "zh",
-      "title": "忘却前夜 鸟弟1t 融灾5-5于丽的狗",
-      "summary": "不知道 乱打的\n\n背景音乐：0 K - &quot;Avontuure&quot;\n  └ bian_loratadine (0赞): 佬别吓我\n  └ 上好佳薯片丶 (0赞): 偷学中",
-      "url": "https://www.bilibili.com/video/BV1VMME6FE5z",
-      "author": "夢遊遊遊遊",
-      "engagement": 115,
-      "media_url": "https://i0.hdslb.com/bfs/archive/dd8b6a43d65a4fbebedb8b1a199787a14a14737f.jpg",
+      "title": "【忘却前夜】鸟弟1T 5-5阴影的忠犬 7.6融灾",
+      "summary": "-\n  └ 上好佳薯片丶 (0赞): 感谢@跳段木偶舞老大的指导喵\n前排预警：这把打的很烂[捂脸]\n碎碎念：凹了三天，但是真的打的很烂[跪了]本来想着给阿拉克涅弄个超限大多印几张肉汁的，但是道中小怪太脆了[捂脸]肉汁接鸟弟大直接秒了[捂脸]导致到王关了鸟弟没超限大阿拉克涅也没大[捂脸]......但是想着这把刷到专造和金沙漏了可以尝试一下.........总之就是打的很烂的一个1T(&#34;▔□▔)/\n思路大概就是直伤灌掉一阶段，肉汁灌掉二阶段，流血灌掉三阶段，其实很简单嗯.....",
+      "url": "https://www.bilibili.com/video/BV1orMn65E9k",
+      "author": "上好佳薯片丶",
+      "engagement": 16,
+      "media_url": "https://i1.hdslb.com/bfs/archive/885104ea67f3bb901ba423ae2bf0f3ae77e18cd5.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 114,
+        "play": 15,
         "comment_count": 1,
-        "comments_fetched": 2,
+        "comments_fetched": 1,
         "danmaku": 0
       }
     },
@@ -226,16 +226,16 @@
       "time": "2026-07-09T10:36:00+00:00",
       "lang": "zh",
       "title": "《忘却前夜》第一章东区秘事P1",
-      "summary": "",
+      "summary": "-\n  └ 燃え落ちない翼 (0赞): 可以可以，支持一下，这个无垢是用来抽常驻的，抽完角色抽命轮就行[冬日树下_言叶][冬日树下_言叶]顺带一提，虽然我也不想说这个，因为这游戏前边几章剧情就已经很公式很无聊了，但这确实也几乎是这游戏的巅峰水准了，后边好像是换人了，反正越来越无聊[冬日树下_小忆][冬日树下_小忆]",
       "url": "https://www.bilibili.com/video/BV1gTT96XEyd",
       "author": "不可燃抹茶果冻",
-      "engagement": 1,
+      "engagement": 13,
       "media_url": "https://i1.hdslb.com/bfs/archive/955aa181459d0af8a726f789a6cb06c7f87bbddd.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 1,
-        "comment_count": 0,
-        "comments_fetched": 0,
+        "play": 12,
+        "comment_count": 1,
+        "comments_fetched": 1,
         "danmaku": 0
       }
     }
