@@ -1,8 +1,8 @@
 {
   "date": "2026-07-08",
-  "archived_at": "2026-07-09T00:06:32.356607+00:00",
+  "archived_at": "2026-07-09T04:48:20.276364+00:00",
   "source": "bilibili",
-  "item_count": 20,
+  "item_count": 21,
   "items": [
     {
       "title": "沙耶不擅长 但努力做了面包 不吃的话身体会受不了的",
@@ -69,6 +69,29 @@
         "danmaku": 0
       },
       "media_url": "https://i0.hdslb.com/bfs/archive/505132217435a25045cce31f2c2637230a0c0471.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "她们说毒女子不是天才，是地才",
+      "summary": "-\n  └ 阿川Mutter (0赞): 奖励UP5771的热度！",
+      "source": "bilibili",
+      "time": "2026-07-08T10:45:56+00:00",
+      "url": "https://www.bilibili.com/video/BV1NDMg6tEwc",
+      "engagement": 143,
+      "is_hot": false,
+      "author": "木字良",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 141,
+        "comment_count": 2,
+        "comments_fetched": 1,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/d972748e72c6c6f1af636d1fda168f31a8bf3e65.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

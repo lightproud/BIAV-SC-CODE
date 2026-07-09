@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-09T00:05:50.292508+00:00",
+  "collected_at": "2026-07-09T04:47:32.946973+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 134,
+  "item_count": 133,
   "items": [
     {
       "source": "google_play",
@@ -243,6 +243,16 @@
       "summary": "觉得还行",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=zh_CN#gp-57f4f9db-558e-4842-b184-3a7e848970ad",
       "author": "元气豆芽（YQBean）",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-08T00:55:04",
+      "lang": "en",
+      "title": "[Google Play 差评] ★1 gameplay wise its an auto-battler(or rat",
+      "summary": "gameplay wise its an auto-battler(or rather it can be) which in ANY game if you have an auto mode it's just kind of lame cuz it removes the fun out of it. \"dont use it then\" is just stupid, if its in the game and is supposed to make my experience with the game easier then im going to use it. gacha is pretty bad too where 6☆ char just dont exist. game is somewhat generous. idc abt the story i js skip it. overall its just mid",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-5e0a32bc-1060-411e-92e3-95803c377855",
+      "author": "Ivana Popovic",
       "engagement": 0
     },
     {
@@ -717,16 +727,6 @@
     },
     {
       "source": "google_play",
-      "time": "2026-07-07T16:27:51",
-      "lang": "id",
-      "title": "[Google Play 好评] ★4 gamenya bagus, tapi pas di in game(battl",
-      "summary": "gamenya bagus, tapi pas di in game(battle) suka freeze gitu, dan itu ngeganggu pengalaman saya bermain, aku harap bisa di fix Dan di optimalkan lagi ya, dan aku akan kasih bintang 5 kalo udah di fix, soalnya ngeganggu",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=id#gp-09bbfef2-78b9-42e8-a6c6-9fa42310415a",
-      "author": "Ziad Graphic",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
       "time": "2026-07-06T05:46:47",
       "lang": "id",
       "title": "[Google Play 好评] ★5 great gameplay and story also nice graph",
@@ -743,16 +743,6 @@
       "summary": "ABSOLUTELY PEAK GAME, tapi walaupun visual dan alur ceritanya bagus, peminatnya dikit a good underated game, tapi wajar sih.. berliankan susah dicari",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=id#gp-e5f2dd11-7ff1-4ec2-a81f-6f96ac9f2e58",
       "author": "Light Cavalry",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-07-03T02:31:54",
-      "lang": "id",
-      "title": "[Google Play 好评] ★5 story nya angst",
-      "summary": "story nya angst",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=id#gp-665ceb31-7a13-45f0-a915-2bff927ca33d",
-      "author": "reisya aulia",
       "engagement": 0
     },
     {

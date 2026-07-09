@@ -1,8 +1,8 @@
 {
   "date": "2026-07-08",
-  "archived_at": "2026-07-09T00:06:32.560738+00:00",
+  "archived_at": "2026-07-09T04:48:20.431887+00:00",
   "source": "google_play",
-  "item_count": 2,
+  "item_count": 3,
   "items": [
     {
       "title": "[Google Play 好评] ★4 gamenya bagus, tapi pas di in game(battl",
@@ -27,6 +27,20 @@
       "engagement": 0,
       "is_hot": false,
       "author": "DavidUnderscore",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "us",
+      "region": "global"
+    },
+    {
+      "title": "[Google Play 差评] ★1 gameplay wise its an auto-battler(or rat",
+      "summary": "gameplay wise its an auto-battler(or rather it can be) which in ANY game if you have an auto mode it's just kind of lame cuz it removes the fun out of it. \"dont use it then\" is just stupid, if its in the game and is supposed to make my experience with the game easier then im going to use it. gacha is pretty bad too where 6☆ char just dont exist. game is somewhat generous. idc abt the story i js skip it. overall its just mid",
+      "source": "google_play",
+      "time": "2026-07-08T00:55:04",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-5e0a32bc-1060-411e-92e3-95803c377855",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "Ivana Popovic",
       "tags": [],
       "lang": "en",
       "platform_region": "us",
