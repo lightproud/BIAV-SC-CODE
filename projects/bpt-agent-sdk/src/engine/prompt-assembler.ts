@@ -6,7 +6,7 @@
  * the ordered body, dropping any fragment whose tool gate is not satisfied.
  * Same context in => byte-identical output out (the cached-prefix invariant).
  *
- * This reproduces defaultHarnessStableV5 byte-for-byte (golden-locked in
+ * This reproduces the default harness prompt byte-for-byte (golden-locked in
  * tests/prompt-assembler.test.ts). Fragments carry provenance + a faithful flag
  * so a build-from-archive check (subsequent Track B phase) can hold them to the
  * upstream reconstruction.

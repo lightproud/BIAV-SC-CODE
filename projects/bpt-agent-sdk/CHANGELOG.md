@@ -11,6 +11,32 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.33.0 — 2026-07-09
+
+**Collapse the harness-prompt variant ladder to a single default** (keeper ruling
+2026-07-08). The v1-v4 opt-in variants (a BPT A/B experiment) and the minimal
+`undefined`-systemPrompt fallback are removed; there is now ONE harness prompt —
+the comprehensive faithful reproduction of the official Claude Code main loop
+(the former v5). A measured A/B had already shown it is ~3x cheaper in multi-turn
+than the terse variants (its large stable prefix caches; the tiny ones fell below
+the cache threshold), so it is the sole default.
+
+- **removed (breaking): `Options.harnessPromptVariant`.** The variant-selection
+  knob is gone; callers that passed `'v1'..'v4'` now get the single default.
+  `PromptContext.variant` (on the `buildSystemPromptParts` export) is removed too.
+- **behavior change: an unset `systemPrompt` now resolves to the full default
+  harness**, not the prior 2-line minimal prompt — `undefined` and the
+  `claude_code` preset converge to the same prompt. A string systemPrompt is
+  still owned verbatim; `append` remains preset-only.
+- `src/engine/prompts.ts`: deleted `minimalStable` / `defaultHarnessStable` (v1) /
+  `V2` / `V3` / `V4`; the sole builder is renamed `defaultHarnessStable` and
+  composes from the fragment store (`assembleMainLoop`, byte-locked by
+  `prompt-assembler.test` / `v5-mainloop-golden.json`, unchanged).
+- tests/docs: `prompts.test.ts` / `query.test.ts` / `harness-base-export.test.ts`
+  retargeted to the single default (+ new locks that `undefined` and the preset
+  match); `ARCHITECTURE.md` updated; the `--variant` dimension removed from the
+  `cache-probe` / `ab-benchmark` integration probes.
+
 ## 0.32.0 — 2026-07-09
 
 - **feat (prompt-composition observability — black-pool ContextRing "上下文构成"

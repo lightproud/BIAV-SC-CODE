@@ -7,8 +7,8 @@
  *
  * These tests pin the acceptance criteria: the export is reachable from the
  * entry, it IS the same function the engine uses (so `.base` matches what preset
- * mode injects), `.base` is the vN harness prose only (no append / project /
- * <env> tail), and toolNames / variant flow through.
+ * mode injects), `.base` is the harness prose only (no append / project /
+ * <env> tail), and toolNames flow through.
  */
 
 import { describe, expect, it } from 'vitest';
@@ -42,20 +42,17 @@ describe('harness-base constructor export', () => {
     expect(buildSystemPromptParts).toBe(engineBuildParts);
   });
 
-  it('.base is the V5 default harness prose for the claude_code preset', () => {
+  it('.base is the default harness prose for the claude_code preset', () => {
     const { base } = buildSystemPromptParts(PRESET, { cwd: '', toolNames: TOOLS });
     expect(base).toContain(
       'You are an interactive agent that helps users with software engineering tasks.',
     );
-    // V5 is the comprehensive reproduction — comfortably large (the ~11.7k-char
-    // preset base the request sizes), far bigger than the terse v1.
+    // The comprehensive reproduction — comfortably large (the ~11.7k-char preset
+    // base the request sizes).
     expect(base.length).toBeGreaterThan(5000);
-    const v1 = buildSystemPromptParts(PRESET, {
-      cwd: '',
-      toolNames: TOOLS,
-      variant: 'v1',
-    }).base;
-    expect(v1.length).toBeLessThan(base.length);
+    // undefined resolves to the SAME single default (the variant ladder is gone).
+    const fromUndefined = buildSystemPromptParts(undefined, { cwd: '', toolNames: TOOLS }).base;
+    expect(fromUndefined).toBe(base);
   });
 
   it('flows toolNames into the base (Available-tools line + tool-gated fragments)', () => {

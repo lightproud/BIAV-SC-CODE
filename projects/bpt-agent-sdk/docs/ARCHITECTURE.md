@@ -96,9 +96,10 @@ genuinely internal or leaked material is used.
   reverse-engineered from the publicly distributed CLI; archived under
   `Public-Info-Pool/Reference/Claude-Code-System-Prompts/`) with tool
   references adapted to this SDK's tools and CLI-only fragments omitted.
-  `undefined` → minimal default. String → verbatim. Preset `claude_code` →
-  the default harness prompt (no explicit `variant` → `v5`, the comprehensive
-  faithful reproduction); `append` concatenated after two newlines.
+  String → verbatim. Both `undefined` and the `claude_code` preset → the single
+  default harness prompt (a comprehensive faithful reproduction of the official
+  main loop; there is no variant selection); `append` (preset only) is
+  concatenated after two newlines.
 
 `engine/accumulator.ts`
 - `export class MessageAccumulator` — feed `RawMessageStreamEvent`s, produce

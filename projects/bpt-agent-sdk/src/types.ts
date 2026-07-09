@@ -1311,14 +1311,6 @@ export type Options = {
   enableFileCheckpointing?: boolean;
   /** Defer MCP tool schemas behind a ToolSearch tool. undefined -> auto. */
   toolSearch?: boolean;
-  /** BPT experiment: harness system-prompt variant for the `claude_code`
-   *  preset / default path. 'v1' (default) = the terse original; 'v2'/'v3' =
-   *  richer prompts composed from PUBLIC prompt-engineering practice; 'v4' = a
-   *  faithful reproduction of the official main-loop prompt from the PUBLIC
-   *  prompt reconstruction (open reproduction, tool refs adapted); 'v5' = a
-   *  COMPREHENSIVE faithful reproduction (fuller official main-loop clauses).
-   *  A/B knob for measuring quality/cost/cache before promoting a new default. */
-  harnessPromptVariant?: 'v1' | 'v2' | 'v3' | 'v4' | 'v5';
 
   // -------------------------------------------------------------------------
   // Official Options fields ACCEPTED at runtime but NOT acted on (T2-3,
