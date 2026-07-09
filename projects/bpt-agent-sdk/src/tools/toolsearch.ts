@@ -39,9 +39,27 @@ export function shouldActivate(opt: boolean | undefined, count: number): boolean
   return count > DEFERRED_THRESHOLD;
 }
 
+/**
+ * A cold (deferrable) built-in tool's wire metadata, registered on the deferred
+ * registry so the ONE ToolSearch builtin can search + load it exactly like a
+ * deferred MCP tool. `name` shares the single `loaded` namespace with MCP
+ * qualified names (built-in names never start with `mcp__`, so no collision).
+ */
+export type DeferredBuiltinEntry = {
+  name: string;
+  description: string;
+  inputSchema: JSONSchema;
+};
+
 export class DeferredMcpRegistry implements McpRegistry {
   private active = false;
+  /** ONE loaded namespace shared by deferred MCP tools (qualified names) and
+   *  deferred cold built-ins (bare names) — the unification seam. */
   private readonly loaded = new Set<string>();
+  /** Cold (deferrable) built-ins, by bare name. Empty -> this registry defers
+   *  MCP only (the exact pre-unification behavior). Attached by query.ts when
+   *  the caller opts into unified tool-search (options.toolSearch === true). */
+  private readonly coldBuiltins = new Map<string, DeferredBuiltinEntry>();
   private readonly debug: (msg: string) => void;
 
   constructor(
@@ -49,6 +67,33 @@ export class DeferredMcpRegistry implements McpRegistry {
     opts: { debug?: (msg: string) => void } = {},
   ) {
     this.debug = opts.debug ?? (() => undefined);
+  }
+
+  /** Register cold built-ins whose schemas defer behind ToolSearch while
+   *  active. Idempotent-additive; call after the final built-in set is known
+   *  (post disallowedTools removal, so a denied tool is never offered here). */
+  attachColdBuiltins(entries: readonly DeferredBuiltinEntry[]): void {
+    for (const e of entries) this.coldBuiltins.set(e.name, e);
+  }
+
+  /** True when a built-in's schema is currently WITHHELD from the request:
+   *  deferral is active, the tool is cold, and it has not been loaded yet.
+   *  buildToolDefs() consults this to skip the tool's schema. */
+  isBuiltinDeferred(name: string): boolean {
+    return this.active && this.coldBuiltins.has(name) && !this.loaded.has(name);
+  }
+
+  /** The cold-built-in catalog ToolSearch searches (union'd with the MCP
+   *  catalog). Every cold built-in stays searchable regardless of load state. */
+  coldBuiltinCatalog(): DeferredBuiltinEntry[] {
+    return [...this.coldBuiltins.values()];
+  }
+
+  /** True when this registry has anything to defer at all (MCP tools or cold
+   *  built-ins) — lets query.ts decide whether ToolSearch is worth wiring even
+   *  with zero MCP servers. */
+  hasDeferrableTools(): boolean {
+    return this.inner.allTools().length > 0 || this.coldBuiltins.size > 0;
   }
 
   // -- pass-through delegation -----------------------------------------------
@@ -120,45 +165,87 @@ export class DeferredMcpRegistry implements McpRegistry {
     return this.active;
   }
 
-  /** Decide activation from the option and the live real-tool count. */
+  /** Decide activation from the option and the live real-tool count. Cold
+   *  built-ins never lower the bar on their own (they are attached only when
+   *  the caller passed toolSearch:true, which shouldActivate already forces
+   *  active), so the MCP-count threshold governs the undefined-option case
+   *  exactly as before. */
   activateIfNeeded(opt: boolean | undefined): void {
     this.active = shouldActivate(opt, this.inner.allTools().length);
-    if (this.active) this.debug(`[toolsearch] active (${this.inner.allTools().length} MCP tools deferred)`);
+    if (this.active) {
+      this.debug(
+        `[toolsearch] active (${this.inner.allTools().length} MCP tools, ` +
+          `${this.coldBuiltins.size} cold built-ins deferred)`,
+      );
+    }
   }
 }
 
-function describeCatalog(catalog: McpToolEntry[]): string {
-  if (catalog.length === 0) return 'No MCP tools are available.';
-  const byServer = new Map<string, string[]>();
+/** A ToolSearch-searchable entry, normalized across the two deferred kinds
+ *  (MCP tools and cold built-ins) so ONE search path covers both — the
+ *  unification. */
+type UnifiedEntry = {
+  /** Key marked loaded + the exact name the model then calls: an MCP qualified
+   *  name or a bare built-in name. */
+  loadKey: string;
+  description?: string;
+  schema: JSONSchema;
+  /** Grouping label for the no-match guidance: the MCP server, or 'built-in'. */
+  group: string;
+};
+
+/** Union of the deferred MCP catalog and the cold-built-in catalog. */
+function unifiedCatalog(reg: DeferredMcpRegistry): UnifiedEntry[] {
+  const entries: UnifiedEntry[] = reg.catalog().map((t) => ({
+    loadKey: t.qualifiedName,
+    description: t.description,
+    schema: t.inputSchema,
+    group: t.serverName,
+  }));
+  for (const b of reg.coldBuiltinCatalog()) {
+    entries.push({
+      loadKey: b.name,
+      description: b.description,
+      schema: b.inputSchema,
+      group: 'built-in',
+    });
+  }
+  return entries;
+}
+
+function describeCatalog(catalog: UnifiedEntry[]): string {
+  if (catalog.length === 0) return 'No additional tools are available to load.';
+  const byGroup = new Map<string, string[]>();
   for (const t of catalog) {
-    let list = byServer.get(t.serverName);
+    let list = byGroup.get(t.group);
     if (list === undefined) {
       list = [];
-      byServer.set(t.serverName, list);
+      byGroup.set(t.group, list);
     }
-    list.push(t.qualifiedName);
+    list.push(t.loadKey);
   }
-  const lines: string[] = ['No tools matched. Available servers and tools:'];
-  for (const [server, names] of byServer) {
-    lines.push(`- ${server}: ${names.join(', ')}`);
+  const lines: string[] = ['No tools matched. Available tools to load:'];
+  for (const [group, names] of byGroup) {
+    lines.push(`- ${group}: ${names.join(', ')}`);
   }
   return lines.join('\n');
 }
 
-function renderMatch(t: McpToolEntry): string {
-  const schema: JSONSchema = t.inputSchema;
+function renderMatch(t: UnifiedEntry): string {
   return (
-    `## ${t.qualifiedName}\n` +
+    `## ${t.loadKey}\n` +
     `${t.description ?? '(no description)'}\n` +
-    `input_schema: ${JSON.stringify(schema)}`
+    `input_schema: ${JSON.stringify(t.schema)}`
   );
 }
 
 /**
- * Build the ToolSearch builtin. execute({query?,names?}) filters the deferred
- * registry's full catalog (substring match on qualifiedName/description, or an
- * exact names[] match), marks the matches loaded, and returns their schemas so
- * the model can call them on the next turn.
+ * Build the ONE ToolSearch builtin. execute({query?,names?}) filters the
+ * unified catalog — deferred MCP tools AND cold built-ins — by substring
+ * (name/description) or an exact names[] match, marks the matches loaded (one
+ * shared namespace), and returns their schemas so the model can call them on
+ * the next turn. A built-in and an MCP tool are loaded through the exact same
+ * path; the caller need not know which kind a name is.
  */
 export function makeToolSearchTool(reg: DeferredMcpRegistry): BuiltinTool {
   return {
@@ -179,7 +266,7 @@ export function makeToolSearchTool(reg: DeferredMcpRegistry): BuiltinTool {
         names: {
           type: 'array',
           items: { type: 'string' },
-          description: 'Exact fully-qualified tool names to load.',
+          description: 'Exact tool names to load (MCP qualified names or built-in names).',
         },
       },
     },
@@ -187,21 +274,21 @@ export function makeToolSearchTool(reg: DeferredMcpRegistry): BuiltinTool {
       input: Record<string, unknown>,
       _ctx: ToolContext,
     ): Promise<ToolResultPayload> {
-      const catalog = reg.catalog();
+      const catalog = unifiedCatalog(reg);
       const names = Array.isArray(input.names)
         ? input.names.filter((n): n is string => typeof n === 'string')
         : undefined;
       const query = typeof input.query === 'string' ? input.query.trim() : '';
 
-      let matched: McpToolEntry[];
+      let matched: UnifiedEntry[];
       if (names !== undefined && names.length > 0) {
         const set = new Set(names);
-        matched = catalog.filter((t) => set.has(t.qualifiedName));
+        matched = catalog.filter((t) => set.has(t.loadKey));
       } else if (query.length > 0) {
         const q = query.toLowerCase();
         matched = catalog.filter(
           (t) =>
-            t.qualifiedName.toLowerCase().includes(q) ||
+            t.loadKey.toLowerCase().includes(q) ||
             (t.description ?? '').toLowerCase().includes(q),
         );
       } else {
@@ -213,7 +300,7 @@ export function makeToolSearchTool(reg: DeferredMcpRegistry): BuiltinTool {
         return { content: describeCatalog(catalog) };
       }
 
-      reg.markLoaded(matched.map((t) => t.qualifiedName));
+      reg.markLoaded(matched.map((t) => t.loadKey));
       const body = matched.map(renderMatch).join('\n\n');
       return {
         content:

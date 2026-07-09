@@ -167,7 +167,8 @@ v0.2 implemented most of the P0/P1 gaps the audit flagged. Now **FULL / PARTIAL*
 - **New builtin tools** — WebFetch (streamed + SSRF guard), WebSearch (host
   callback), AskUserQuestion (host callback), TodoWrite; MCP elicitation.
 - **Sessions** — external `SessionStore` mirror; file checkpointing +
-  `rewindFiles`; tool search (deferred MCP schemas); standalone session
+  `rewindFiles`; tool search (deferred MCP schemas + cold built-in schemas via
+  `toolSearch: true`, `silverCoreToolOptions()` variant); standalone session
   functions; Query methods (reconnect/toggle/setMcpServers/rewindFiles/stopTask).
 
 The full observability/status message arm was TYPED in v0.3 (task #16) so the
