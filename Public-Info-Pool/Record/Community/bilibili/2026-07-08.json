@@ -1,8 +1,8 @@
 {
   "date": "2026-07-08",
-  "archived_at": "2026-07-08T22:14:40.108174+00:00",
+  "archived_at": "2026-07-09T00:06:32.356607+00:00",
   "source": "bilibili",
-  "item_count": 19,
+  "item_count": 20,
   "items": [
     {
       "title": "沙耶不擅长 但努力做了面包 不吃的话身体会受不了的",
@@ -138,6 +138,29 @@
         "danmaku": 0
       },
       "media_url": "https://i2.hdslb.com/bfs/archive/ffb63ccb4c0d6373bbb9148f73f3791f9693d8da.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "tv 24 5-5",
+      "summary": "24成长有点太快了\n  └ 上好佳薯片丶 (3赞): 我了，恐怖24\n  └ 静寂夏至 (3赞): 已严肃学习[脱单doge]",
+      "source": "bilibili",
+      "time": "2026-07-08T06:44:47+00:00",
+      "url": "https://www.bilibili.com/video/BV1gHMi6VEQd",
+      "engagement": 135,
+      "is_hot": false,
+      "author": "寂榕",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 133,
+        "comment_count": 2,
+        "comments_fetched": 2,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/f26de542fdb7e8082e4674c56e3aba0c8ee34fa6.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

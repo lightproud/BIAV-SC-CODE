@@ -1,6 +1,6 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-08T22:13:58.311441+00:00",
+  "collected_at": "2026-07-09T00:05:50.292508+00:00",
   "source": "steam",
   "data_layer": "output",
   "item_count": 9,
@@ -19,21 +19,6 @@
       "review": "+ gacha, except a lot generous than expected\n+ interesting story\n+ reading comprehension required\n+ fun gameplay\n+ endless content\n\n- not a lot of men",
       "timestamp_created": 1783512344,
       "playtime_forever": 17874
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-07T23:47:27+00:00",
-      "lang": "english",
-      "title": "[正面] saya is in the game what more can you ask for real...",
-      "summary": "saya is in the game what more can you ask for really",
-      "url": "https://steamcommunity.com/profiles/76561198796214122/recommended/3052450",
-      "author": "76561198796214122",
-      "engagement": 2,
-      "language": "english",
-      "voted_up": true,
-      "review": "saya is in the game what more can you ask for really",
-      "timestamp_created": 1783468047,
-      "playtime_forever": 530
     },
     {
       "source": "steam",
@@ -64,6 +49,21 @@
       "review": "Provavelmente a melhor experiencia em gacha que já tive na minha vida. O único ponto negativo é a tradução em português ser automática, estou ansioso pelo dia que receba uma tradução oficial.",
       "timestamp_created": 1783516091,
       "playtime_forever": 5050
+    },
+    {
+      "source": "steam",
+      "time": "2026-07-08T20:14:07+00:00",
+      "lang": "german",
+      "title": "[正面] 10/10",
+      "summary": "10/10",
+      "url": "https://steamcommunity.com/profiles/76561199099492007/recommended/3052450",
+      "author": "76561199099492007",
+      "engagement": 0,
+      "language": "german",
+      "voted_up": true,
+      "review": "10/10",
+      "timestamp_created": 1783541647,
+      "playtime_forever": 970
     },
     {
       "source": "steam",

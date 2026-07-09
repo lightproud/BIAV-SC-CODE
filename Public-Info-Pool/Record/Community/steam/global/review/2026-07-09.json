@@ -1,8 +1,8 @@
 {
   "date": "2026-07-09",
-  "archived_at": "2026-07-08T22:14:40.159935+00:00",
+  "archived_at": "2026-07-09T00:06:32.438841+00:00",
   "source": "steam",
-  "item_count": 2,
+  "item_count": 3,
   "items": [
     {
       "title": "[正面] Story is REALLY good, very f2p friendly, no need t...",
@@ -46,6 +46,30 @@
         "playtime_forever": 272,
         "votes_up": 0,
         "timestamp_created": 1783530689
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 10/10",
+      "summary": "10/10",
+      "source": "steam_review",
+      "time": "2026-07-08T20:14:07+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199099492007/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199099492007",
+      "tags": [
+        "german"
+      ],
+      "language": "german",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 970,
+        "votes_up": 0,
+        "timestamp_created": 1783541647
       },
       "region": "global",
       "archive_subtype": "review",
