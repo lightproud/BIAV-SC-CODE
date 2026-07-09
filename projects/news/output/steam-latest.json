@@ -1,6 +1,6 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-09T04:47:32.946973+00:00",
+  "collected_at": "2026-07-09T08:24:25.428433+00:00",
   "source": "steam",
   "data_layer": "output",
   "item_count": 8,
@@ -33,7 +33,7 @@
       "voted_up": true,
       "review": "Story is REALLY good, very f2p friendly, no need to open your wallet they throw so much stuff at you.",
       "timestamp_created": 1783526480,
-      "playtime_forever": 621
+      "playtime_forever": 681
     },
     {
       "source": "steam",

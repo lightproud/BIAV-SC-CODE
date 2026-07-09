@@ -1,8 +1,8 @@
 {
   "date": "2026-07-08",
-  "archived_at": "2026-07-09T04:48:20.431887+00:00",
+  "archived_at": "2026-07-09T08:25:06.459950+00:00",
   "source": "google_play",
-  "item_count": 3,
+  "item_count": 4,
   "items": [
     {
       "title": "[Google Play 好评] ★4 gamenya bagus, tapi pas di in game(battl",
@@ -44,6 +44,20 @@
       "tags": [],
       "lang": "en",
       "platform_region": "us",
+      "region": "global"
+    },
+    {
+      "title": "[Google Play 好评] ★5 好歹比崩铁膨胀好一点",
+      "summary": "好歹比崩铁膨胀好一点",
+      "source": "google_play",
+      "time": "2026-07-08T07:29:28",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=zh_CN#gp-59d11405-e934-4f34-912a-f7ce534cafd8",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "张亚林",
+      "tags": [],
+      "lang": "zh",
+      "platform_region": "cn",
       "region": "global"
     }
   ],

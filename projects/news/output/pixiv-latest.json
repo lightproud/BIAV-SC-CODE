@@ -1,6 +1,6 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-09T04:47:32.946973+00:00",
+  "collected_at": "2026-07-09T08:24:25.428433+00:00",
   "source": "pixiv",
   "data_layer": "output",
   "item_count": 29,
@@ -151,6 +151,16 @@
     },
     {
       "source": "pixiv",
+      "time": "2026-07-09T08:23:38.900547+00:00",
+      "lang": "",
+      "title": "",
+      "summary": "",
+      "url": "https://www.pixiv.net/artworks/",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "pixiv",
       "time": "2026-06-28T17:59:45+09:00",
       "lang": "",
       "title": "ラモンナ",
@@ -231,18 +241,6 @@
       "author": "どうどう",
       "engagement": 0,
       "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/24/20/14/01/146403994_p0_square1200.jpg",
-      "content_type": "image"
-    },
-    {
-      "source": "pixiv",
-      "time": "2026-06-17T21:30:41+09:00",
-      "lang": "",
-      "title": "ゴリリオつめ",
-      "summary": "",
-      "url": "https://www.pixiv.net/artworks/146125348",
-      "author": "非我らぎ　Skeb募集中",
-      "engagement": 0,
-      "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/06/17/21/30/41/146125348_p0_square1200.jpg",
       "content_type": "image"
     },
     {

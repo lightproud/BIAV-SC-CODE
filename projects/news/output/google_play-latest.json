@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-09T04:47:32.946973+00:00",
+  "collected_at": "2026-07-09T08:24:25.428433+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 133,
+  "item_count": 132,
   "items": [
     {
       "source": "google_play",
@@ -224,6 +224,16 @@
       "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-5aa92f00-6b79-4f68-b924-a5233ee19e64",
       "author": "ハルマルかも",
       "engagement": 1
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-08T07:29:28",
+      "lang": "zh",
+      "title": "[Google Play 好评] ★5 好歹比崩铁膨胀好一点",
+      "summary": "好歹比崩铁膨胀好一点",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=zh_CN#gp-59d11405-e934-4f34-912a-f7ce534cafd8",
+      "author": "张亚林",
+      "engagement": 0
     },
     {
       "source": "google_play",
@@ -627,16 +637,6 @@
     },
     {
       "source": "google_play",
-      "time": "2026-06-09T07:17:54",
-      "lang": "en",
-      "title": "[Google Play 好评] ★5 So, like, I was just scrolling and happe",
-      "summary": "So, like, I was just scrolling and happened upon this game and ever since I've been hooked. at first I was like, 'meh this looks boring.' and tbh idek why I'm hooked. the story is good tbh, they claim its translated, but I cant even tell. The characters have very intriguing stories with their own stages to clear diving deeper into that characters lore and lifestyle. I admit the the Monsters we fight could use work. sometimes I look at these and wonder, 'tf is this is cant even tell.'",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-80aaaaf0-bf8e-406e-8df5-3b9619c2697d",
-      "author": "Nathan Hernandez",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
       "time": "2026-07-06T12:21:34",
       "lang": "ko",
       "title": "[Google Play 好评] ★4 재밌긴한데 스토리 영상 보고오면 화면이 멈춰요. 그것만 고쳐주세요",
@@ -1033,16 +1033,6 @@
       "summary": "Se agradece que aún si es con GPT se pongan otros idiomas como el Español, siempre es bueno entender que intenta contar un juego, sumado a éso en el rato que lo eh jugado es muy interesante y muy generoso, muchas recompensas para lograr armar un buen equipo al empezar, sumado a su complejidad según que facción uses, muy buen juego la verdad.",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=es#gp-d3a3dbb7-09db-41c0-b7f9-73bc17945225",
       "author": "Roxeren",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-06-09T05:10:36",
-      "lang": "es",
-      "title": "[Google Play 好评] ★5 Muy buen juego, la vdd, se lo sugiero",
-      "summary": "Muy buen juego, la vdd, se lo sugiero",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=es#gp-fe89f6f2-994e-4cb9-84c1-b44f1d787c36",
-      "author": "Daniel Miller",
       "engagement": 0
     },
     {

@@ -1,8 +1,8 @@
 {
   "date": "2026-07-09",
-  "archived_at": "2026-07-09T04:48:20.277685+00:00",
+  "archived_at": "2026-07-09T08:25:06.311560+00:00",
   "source": "bilibili",
-  "item_count": 5,
+  "item_count": 8,
   "items": [
     {
       "title": "【忘却前夜】7.6-7.20融灾400个人通关记录（低配24、血希羊皮杜、徐朵）",
@@ -74,6 +74,29 @@
       "platform_region": "cn"
     },
     {
+      "title": "啦啦啦 这个小妹妹应该是原创吧 口恩又寸",
+      "summary": "啦啦啦 这个小妹妹应该是原创吧 致歉一切",
+      "source": "bilibili",
+      "time": "2026-07-09T03:15:18+00:00",
+      "url": "https://www.bilibili.com/video/BV1N6M76EE4N",
+      "engagement": 153,
+      "is_hot": false,
+      "author": "天下第一婼",
+      "tags": [
+        "动画综合"
+      ],
+      "metadata": {
+        "play": 153,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/2e12f1d829dcb7df3ec970add4701e943654b387.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
       "title": "我想起来了，原来我是因为体力给太少而退坑的啊",
       "summary": "",
       "source": "bilibili",
@@ -92,6 +115,52 @@
         "danmaku": 0
       },
       "media_url": "https://i0.hdslb.com/bfs/archive/e9b5705c59b8355aca8831df96d86a8a3be862b0.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "【血肉戒】53分钟425练习，这期图有点长",
+      "summary": "-\n  └ 缄默2373 (2赞): 地图长了氨神都没法直接进去秒boss\n  └ 翱翔呀 (1赞): 恐怖氨神\n  └ 车轱辘轧脸上了 (1赞): 呼吸佬我可以黯啄了吗[大哭]",
+      "source": "bilibili",
+      "time": "2026-07-09T05:48:13+00:00",
+      "url": "https://www.bilibili.com/video/BV1uDMj6QEog",
+      "engagement": 113,
+      "is_hot": false,
+      "author": "路过的耄耋",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 105,
+        "comment_count": 8,
+        "comments_fetched": 3,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/2f20c02c69e1a72e07fc2a227d4bb0e2c0c0d205.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "牢大我们往池子里砸了上百抽了怎么还是没有2命沙耶",
+      "summary": "锄大地快锄不动了\n  └ iq2233 (0赞): 有一只沙耶吃了我81抽，中间歪了两个雷娅[委屈]",
+      "source": "bilibili",
+      "time": "2026-07-08T19:23:54+00:00",
+      "url": "https://www.bilibili.com/video/BV19ZMV6JEvR",
+      "engagement": 104,
+      "is_hot": false,
+      "author": "招牌烤肉鸡排双拼饭",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 103,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/d5d6b528db9012b70c874caf55a1e2fc0a67b3f6.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
