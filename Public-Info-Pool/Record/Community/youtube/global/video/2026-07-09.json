@@ -1,8 +1,8 @@
 {
   "date": "2026-07-09",
-  "archived_at": "2026-07-09T21:19:15.508462+00:00",
+  "archived_at": "2026-07-09T23:07:59.456864+00:00",
   "source": "youtube",
-  "item_count": 22,
+  "item_count": 23,
   "items": [
     {
       "title": "망각전야Morimens) (대리뽑,상담시청가능) 이번융재 설명회",
@@ -153,6 +153,23 @@
       "lang": "",
       "platform_region": "global",
       "media_url": "https://i.ytimg.com/vi/KD_XYgqmFOo/hqdefault.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    },
+    {
+      "title": "Childish Delirium",
+      "summary": "Provided to YouTube by DistroKid Childish Delirium · B.I.A.V. Studio · B.I.A.V. Studio Morimens OST┊Aurita EP: Innocent Horror ...",
+      "source": "youtube",
+      "time": "2026-07-09T03:59:36Z",
+      "url": "https://www.youtube.com/watch?v=bmuuQNv_hGU",
+      "engagement": 9,
+      "is_hot": false,
+      "author": "B.I.A.V. Studio - Topic",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/bmuuQNv_hGU/hqdefault.jpg",
       "content_type": "video",
       "region": "global",
       "archive_subtype": "video"
