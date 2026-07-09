@@ -1,10 +1,22 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-09T17:17:39.192532+00:00",
+  "collected_at": "2026-07-09T19:29:45.139280+00:00",
   "source": "youtube",
   "data_layer": "output",
-  "item_count": 19,
+  "item_count": 20,
   "items": [
+    {
+      "source": "youtube",
+      "time": "2026-07-09T17:00:37Z",
+      "lang": "",
+      "title": "Day 32 of doodling N til #Morimens makes him playable. #fanart #speedpaint",
+      "summary": "",
+      "url": "https://www.youtube.com/watch?v=NVIoYJ0PYLM",
+      "author": "AnjutheMage",
+      "engagement": 306,
+      "media_url": "https://i.ytimg.com/vi/NVIoYJ0PYLM/hqdefault.jpg",
+      "content_type": "video"
+    },
     {
       "source": "youtube",
       "time": "2026-07-09T14:34:11Z",
@@ -13,7 +25,7 @@
       "summary": "https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord ...",
       "url": "https://www.youtube.com/watch?v=KD_XYgqmFOo",
       "author": "Flares117",
-      "engagement": 134,
+      "engagement": 184,
       "media_url": "https://i.ytimg.com/vi/KD_XYgqmFOo/hqdefault.jpg",
       "content_type": "video"
     },
@@ -25,20 +37,20 @@
       "summary": "",
       "url": "https://www.youtube.com/watch?v=6bpRzmiTq0s",
       "author": "The Himanshu",
-      "engagement": 129,
+      "engagement": 160,
       "media_url": "https://i.ytimg.com/vi/6bpRzmiTq0s/hqdefault.jpg",
       "content_type": "video"
     },
     {
       "source": "youtube",
-      "time": "2026-07-08T20:41:23Z",
+      "time": "2026-07-09T02:29:19Z",
       "lang": "",
-      "title": "망각전야Morimens) (대리뽑,상담시청가능) 이번융재 설명회",
-      "summary": "망각전야 #Morimens #이터널리턴.",
-      "url": "https://www.youtube.com/watch?v=G4uWCJw7UNA",
-      "author": "박현(Muyeong)",
-      "engagement": 123,
-      "media_url": "https://i.ytimg.com/vi/G4uWCJw7UNA/hqdefault.jpg",
+      "title": "忘卻前夜 Morimens Ebwynnos Evermore Event - The Whistle Madness",
+      "summary": "It occurred to me that this event likes strikes and defends and who better than to use Lotan for such an environment, and she ...",
+      "url": "https://www.youtube.com/watch?v=tRJVAjkS4UM",
+      "author": "Kiro Takahashi",
+      "engagement": 32,
+      "media_url": "https://i.ytimg.com/vi/tRJVAjkS4UM/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -55,38 +67,14 @@
     },
     {
       "source": "youtube",
-      "time": "2026-07-09T02:29:19Z",
-      "lang": "",
-      "title": "忘卻前夜 Morimens Ebwynnos Evermore Event - The Whistle Madness",
-      "summary": "It occurred to me that this event likes strikes and defends and who better than to use Lotan for such an environment, and she ...",
-      "url": "https://www.youtube.com/watch?v=tRJVAjkS4UM",
-      "author": "Kiro Takahashi",
-      "engagement": 25,
-      "media_url": "https://i.ytimg.com/vi/tRJVAjkS4UM/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
       "time": "2026-07-09T14:47:43Z",
       "lang": "",
       "title": "【#忘却前夜  】※ネタバレ注意！終章「長い夢の終わり」#９- ５【#推し活】",
       "summary": "忘却前夜やっていきます！ トゥルーくんが好きな初心者守秘者です！ ※本日の配信は、終章のネタバレが含まれますのでご注意 ...",
       "url": "https://www.youtube.com/watch?v=QbKWPlIn384",
       "author": "卯咲乃ぬい",
-      "engagement": 24,
-      "media_url": "https://i.ytimg.com/vi/QbKWPlIn384/hqdefault_live.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-07-09T00:41:35Z",
-      "lang": "",
-      "title": "【MORIMENS】 Holy Mother!| MORIMENS CHAPTER 7",
-      "summary": "I uh. um hmm what were we talking about again? Game: Morimens __Follow me on Social Media!__ Bluesky: ...",
-      "url": "https://www.youtube.com/watch?v=MkiKIZZVhBk",
-      "author": "AdagioVT",
-      "engagement": 14,
-      "media_url": "https://i.ytimg.com/vi/MkiKIZZVhBk/hqdefault.jpg",
+      "engagement": 26,
+      "media_url": "https://i.ytimg.com/vi/QbKWPlIn384/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -97,20 +85,44 @@
       "summary": "2026/7/8 라이브 다시보기 입니다. 플레이한 게임 : 망각전야 (Morimens) 젠틀스컬의 스트리밍 방송이 궁금하시다면? 치지직 ...",
       "url": "https://www.youtube.com/watch?v=StQWtVC9gZ0",
       "author": "젠틀스컬",
-      "engagement": 12,
+      "engagement": 24,
       "media_url": "https://i.ytimg.com/vi/StQWtVC9gZ0/hqdefault.jpg",
       "content_type": "video"
     },
     {
       "source": "youtube",
-      "time": "2026-07-09T17:00:37Z",
+      "time": "2026-07-09T00:41:35Z",
       "lang": "",
-      "title": "Day 32 of doodling N til #Morimens makes him playable. #fanart #speedpaint",
+      "title": "【MORIMENS】 Holy Mother!| MORIMENS CHAPTER 7",
+      "summary": "I uh. um hmm what were we talking about again? Game: Morimens __Follow me on Social Media!__ Bluesky: ...",
+      "url": "https://www.youtube.com/watch?v=MkiKIZZVhBk",
+      "author": "AdagioVT",
+      "engagement": 15,
+      "media_url": "https://i.ytimg.com/vi/MkiKIZZVhBk/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-07-09T14:00:06Z",
+      "lang": "",
+      "title": "Chill with me #忘卻前夜 #Morimens #SayaNoUta #cosplay",
       "summary": "",
-      "url": "https://www.youtube.com/watch?v=NVIoYJ0PYLM",
-      "author": "AnjutheMage",
-      "engagement": 4,
-      "media_url": "https://i.ytimg.com/vi/NVIoYJ0PYLM/hqdefault.jpg",
+      "url": "https://www.youtube.com/watch?v=vCNKDeNtT-c",
+      "author": "SAKURA",
+      "engagement": 9,
+      "media_url": "https://i.ytimg.com/vi/vCNKDeNtT-c/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-07-09T14:00:05Z",
+      "lang": "",
+      "title": "Let’s walk together #忘卻前夜 #Morimens #SayaNoUta #cosplay",
+      "summary": "",
+      "url": "https://www.youtube.com/watch?v=Ei5hzNTE8AA",
+      "author": "SAKURA",
+      "engagement": 3,
+      "media_url": "https://i.ytimg.com/vi/Ei5hzNTE8AA/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -123,18 +135,6 @@
       "author": "Noir",
       "engagement": 3,
       "media_url": "https://i.ytimg.com/vi/_cyMexQ5ZSU/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-07-09T14:00:06Z",
-      "lang": "",
-      "title": "Chill with me #忘卻前夜 #Morimens #SayaNoUta #cosplay",
-      "summary": "",
-      "url": "https://www.youtube.com/watch?v=vCNKDeNtT-c",
-      "author": "SAKURA",
-      "engagement": 2,
-      "media_url": "https://i.ytimg.com/vi/vCNKDeNtT-c/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -163,14 +163,26 @@
     },
     {
       "source": "youtube",
-      "time": "2026-07-08T21:00:02Z",
+      "time": "2026-07-09T18:17:00Z",
       "lang": "",
-      "title": "Morimens - Capítulo 2 parte 3",
-      "summary": "Capítulo 2 - Un museo de cera que ofrece entrada gratuita. Solo abre sus oscuras y profundas puertas a la medianoche, dando la ...",
-      "url": "https://www.youtube.com/watch?v=r8eBkLYXTJk",
-      "author": "Pablo Carajo",
+      "title": "【忘却前夜】融災禁区・第5波・Ⅴ級警報（2026/07/10）",
+      "summary": "忘却前夜 よければお使いください。 招待コード：GCWESC27JR.",
+      "url": "https://www.youtube.com/watch?v=z3y8_65wABY",
+      "author": "霏憂【ひゅう】",
       "engagement": 1,
-      "media_url": "https://i.ytimg.com/vi/r8eBkLYXTJk/hqdefault.jpg",
+      "media_url": "https://i.ytimg.com/vi/z3y8_65wABY/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-07-09T17:05:38Z",
+      "lang": "",
+      "title": "【忘却前夜】融災禁区・第3波・Ⅴ級警報（2026/07/10）",
+      "summary": "忘却前夜 よければお使いください。 招待コード：GCWESC27JR.",
+      "url": "https://www.youtube.com/watch?v=DEgWP1xueng",
+      "author": "霏憂【ひゅう】",
+      "engagement": 1,
+      "media_url": "https://i.ytimg.com/vi/DEgWP1xueng/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -187,14 +199,26 @@
     },
     {
       "source": "youtube",
-      "time": "2026-07-09T14:00:05Z",
+      "time": "2026-07-09T17:17:25Z",
       "lang": "",
-      "title": "Let’s walk together #忘卻前夜 #Morimens #SayaNoUta #cosplay",
-      "summary": "",
-      "url": "https://www.youtube.com/watch?v=Ei5hzNTE8AA",
-      "author": "SAKURA",
+      "title": "Chapter 2-5 until 2-13  [Morimens]",
+      "summary": "Story Chapter 2 Waxen Legacy 2-7 Medic's Manual 2-8 Get 'em! Brown! 2-9 Cedarwood 2-10 Anatomical Melancholy 2-11 ...",
+      "url": "https://www.youtube.com/watch?v=xL4uajUIjGo",
+      "author": "Rin Sae🍉",
       "engagement": 0,
-      "media_url": "https://i.ytimg.com/vi/Ei5hzNTE8AA/hqdefault.jpg",
+      "media_url": "https://i.ytimg.com/vi/xL4uajUIjGo/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-07-09T13:28:28Z",
+      "lang": "",
+      "title": "망각전야 / Morimens - 잠들기 힘들어서",
+      "summary": "노마이크.",
+      "url": "https://www.youtube.com/watch?v=94v4d7YySC8",
+      "author": "때까치",
+      "engagement": 0,
+      "media_url": "https://i.ytimg.com/vi/94v4d7YySC8/hqdefault_live.jpg",
       "content_type": "video"
     },
     {
@@ -207,18 +231,6 @@
       "author": "vy",
       "engagement": 0,
       "media_url": "https://i.ytimg.com/vi/PbaM518JXec/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-07-09T17:05:38Z",
-      "lang": "",
-      "title": "【忘却前夜】融災禁区・第3波・Ⅴ級警報（2026/07/10）",
-      "summary": "忘却前夜 よければお使いください。 招待コード：GCWESC27JR.",
-      "url": "https://www.youtube.com/watch?v=DEgWP1xueng",
-      "author": "霏憂【ひゅう】",
-      "engagement": 0,
-      "media_url": "https://i.ytimg.com/vi/DEgWP1xueng/hqdefault.jpg",
       "content_type": "video"
     },
     {

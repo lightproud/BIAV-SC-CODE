@@ -1,6 +1,6 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-09T17:17:39.192532+00:00",
+  "collected_at": "2026-07-09T19:29:45.139280+00:00",
   "source": "google_play",
   "data_layer": "output",
   "item_count": 128,
@@ -627,16 +627,6 @@
     },
     {
       "source": "google_play",
-      "time": "2026-06-09T17:17:45",
-      "lang": "en",
-      "title": "[Google Play 好评] ★5 best game and community ever",
-      "summary": "best game and community ever",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-793ada62-5d5e-4770-8862-942a22cceb90",
-      "author": "Gon Gon",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
       "time": "2026-07-06T12:21:34",
       "lang": "ko",
       "title": "[Google Play 好评] ★4 재밌긴한데 스토리 영상 보고오면 화면이 멈춰요. 그것만 고쳐주세요",
@@ -953,6 +943,16 @@
       "summary": "Exceptionnel",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=fr#gp-2c58416b-48d3-4c1b-88a1-907ca7e5d4a3",
       "author": "Jawed HADJI",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-08T17:53:44",
+      "lang": "es",
+      "title": "[Google Play 差评] ★1 no se puede jugar, solo se para y me ech",
+      "summary": "no se puede jugar, solo se para y me echa del juego",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=es#gp-ce6a56b1-598f-4ea8-8d53-7002217bb5a9",
+      "author": "jose dorado",
       "engagement": 0
     },
     {

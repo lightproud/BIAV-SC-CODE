@@ -1,8 +1,8 @@
 {
   "date": "2026-07-10",
-  "archived_at": "2026-07-09T17:18:19.635310+00:00",
+  "archived_at": "2026-07-09T19:30:29.674801+00:00",
   "source": "pixiv",
-  "item_count": 3,
+  "item_count": 4,
   "items": [
     {
       "title": "ゴリリオつめ②",
@@ -59,6 +59,24 @@
       "lang": "",
       "platform_region": "global",
       "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/07/09/21/00/37/147007369_p0_square1200.jpg",
+      "content_type": "image"
+    },
+    {
+      "title": "Untitled",
+      "summary": "",
+      "source": "pixiv",
+      "time": "2026-07-10T02:31:19+09:00",
+      "url": "https://www.pixiv.net/artworks/147019903",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "mikori",
+      "tags": [
+        "忘却前夜",
+        "Morimens"
+      ],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/07/10/02/31/19/147019903_p0_square1200.jpg",
       "content_type": "image"
     }
   ]
