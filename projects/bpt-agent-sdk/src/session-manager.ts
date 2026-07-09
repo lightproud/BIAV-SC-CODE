@@ -24,7 +24,7 @@ import process from 'node:process';
 import { randomUUID } from 'node:crypto';
 
 import { APIStatusError, ConfigurationError, errorCodeOf, isAbortError } from './errors.js';
-import { AnthropicTransport } from './transport/anthropic.js';
+import { createProviderTransport } from './transport/factory.js';
 import { DefaultMcpRegistry } from './mcp/registry.js';
 import { loadProjectMcpServers } from './mcp/project-config.js';
 import { query } from './query.js';
@@ -230,7 +230,7 @@ export function createBptSession(options: SessionManagerOptions = {}): SessionMa
   // One transport per manager: a stateless requester (each stream() call is an
   // independent fetch+SSE holding only config), safe to share across
   // concurrent conversations.
-  const transport = new AnthropicTransport({
+  const transport = createProviderTransport({
     provider: base.provider,
     env,
     debug,

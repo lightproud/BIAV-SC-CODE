@@ -46,7 +46,7 @@ import type {
   ToolContext,
   Transport,
 } from './internal/contracts.js';
-import { AnthropicTransport } from './transport/anthropic.js';
+import { createProviderTransport } from './transport/factory.js';
 import { DefaultPermissionGate } from './permissions/gate.js';
 import { DefaultHookRunner } from './hooks/runner.js';
 import { DefaultMcpRegistry } from './mcp/registry.js';
@@ -442,7 +442,7 @@ export function query(args: {
   const injected = args._internal;
   const transport: Transport =
     injected?.transport ??
-    new AnthropicTransport({
+    createProviderTransport({
       provider: options.provider,
       env,
       debug,

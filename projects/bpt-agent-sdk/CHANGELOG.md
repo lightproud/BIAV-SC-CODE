@@ -11,6 +11,26 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.35.0 — 2026-07-09
+
+**OpenAI protocol support** (`provider.protocol: 'openai-chat'`, BPT-EXTENSION).
+A translating transport (`src/transport/openai.ts`) drives any OpenAI-compatible
+Chat Completions endpoint (api.openai.com / DeepSeek / vLLM / one-api gateways)
+while the engine keeps speaking Messages API shapes end to end — requests are
+encoded (system/tools/tool_choice/images/tool_result fan-out/response_format),
+`chat.completion.chunk` streams are synthesized back into Anthropic stream
+events (text, tool_calls -> tool_use + input_json_delta, DeepSeek
+`reasoning_content` -> thinking blocks, finish_reason/usage mapping with
+cached-token split). Same retry/backoff/idle-watchdog/concurrency policy as the
+Anthropic transport; errors normalize to Messages API error-type vocabulary.
+New `ProviderConfig.protocol` + `provider.openai` tuning
+(`maxTokensParam`/`reasoningEffort`/`extraBody`); `OPENAI_API_KEY` /
+`OPENAI_BASE_URL` env fallbacks. All transport construction sites (query /
+session manager / generators) route through a shared factory
+(`src/transport/factory.ts`); default stays 'anthropic' — zero behavior change
+for existing consumers. Docs: `docs/OPENAI-PROTOCOL.md`. +21 unit tests
+(1548 green).
+
 ## 0.34.1 — 2026-07-09
 
 **Remove the leftover `[bpt-usage]` diagnostic probe** (black-pool request). A

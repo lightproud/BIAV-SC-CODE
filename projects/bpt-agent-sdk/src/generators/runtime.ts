@@ -16,7 +16,7 @@
  */
 
 import { AbortError } from '../errors.js';
-import { AnthropicTransport } from '../transport/anthropic.js';
+import { createProviderTransport } from '../transport/factory.js';
 import { MessageAccumulator } from '../engine/accumulator.js';
 import { resolveModelAlias } from '../subagents/agents.js';
 import type { APIMessageParam, ProviderConfig } from '../types.js';
@@ -59,7 +59,7 @@ export interface UtilityCallOptions {
 /** Resolve (or build) the transport a utility call will drive. */
 export function resolveUtilityTransport(opts: UtilityCallOptions): Transport {
   if (opts.transport !== undefined) return opts.transport;
-  return new AnthropicTransport({
+  return createProviderTransport({
     provider: opts.provider,
     env: opts.env ?? process.env,
     debug: opts.debug ?? (() => {}),
