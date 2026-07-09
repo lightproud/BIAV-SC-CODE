@@ -16,7 +16,9 @@
  */
 
 import type { Options } from '../types.js';
+import type { SystemCompositionPart } from '../internal/contracts.js';
 import { assembleMainLoop } from './prompt-assembler.js';
+import { estimateTextTokens } from './tokens.js';
 
 /**
  * Runtime environment facts injected into the `<env>` block, reproducing the
@@ -93,6 +95,15 @@ export type SystemPromptParts = {
    */
   project: string;
   volatile: string;
+  /**
+   * BPT-EXTENSION (prompt-composition, 2026-07-09): the stable prompt decomposed
+   * into labeled parts (base harness, then each appended tail piece), each with
+   * a token estimate. Feeds the prompt-composition breakdown's 需求 A
+   * systemBase/systemAppend split. Excludes the volatile (cwd/env) tail and the
+   * structured-output instruction, which the caller (query.ts) appends since it
+   * owns those; order matches the assembled `stable` string.
+   */
+  parts: SystemCompositionPart[];
 };
 
 /**
@@ -362,16 +373,38 @@ export function buildSystemPromptParts(
 ): SystemPromptParts {
   if (opt === undefined) {
     const stable = minimalStable();
-    return { stable, base: stable, project: '', volatile: volatileTail(ctx, false) };
+    return {
+      stable,
+      base: stable,
+      project: '',
+      volatile: volatileTail(ctx, false),
+      parts: [{ role: 'base', label: 'base', estTokens: estimateTextTokens(stable) }],
+    };
   }
   if (typeof opt === 'string') {
-    return { stable: opt, base: opt, project: '', volatile: '' };
+    return {
+      stable: opt,
+      base: opt,
+      project: '',
+      volatile: '',
+      parts: [{ role: 'base', label: 'base', estTokens: estimateTextTokens(opt) }],
+    };
   }
   // Segments form is composed by the caller and handled upstream (query.ts);
   // if it ever reaches here, flatten it defensively rather than throw.
   if (opt.type === 'segments') {
     const stable = opt.segments.map((s) => s.text).join('\n\n');
-    return { stable, base: stable, project: '', volatile: '' };
+    return {
+      stable,
+      base: stable,
+      project: '',
+      volatile: '',
+      parts: opt.segments.map((s) => ({
+        role: 'segment',
+        label: s.label,
+        estTokens: estimateTextTokens(s.text),
+      })),
+    };
   }
   // Default (no explicit variant) emulates the official Claude Code harness:
   // v5 is the comprehensive faithful reproduction. A measured v1-vs-v5 A/B
@@ -397,20 +430,41 @@ export function buildSystemPromptParts(
   // and so it can cache as its own reusable segment (the 2nd system breakpoint)
   // independently of the shared base harness.
   let project = '';
+  const parts: SystemCompositionPart[] = [
+    { role: 'base', label: 'base', estTokens: estimateTextTokens(base) },
+  ];
   // Codebase instructions (CLAUDE.md / AGENTS.md), loaded per settingSources.
   // Framed as a system-reminder and kept in the STABLE prefix (stable per
   // project -> cacheable), reproducing how the official runtime carries them.
   if (ctx.projectInstructions !== undefined && ctx.projectInstructions.length > 0) {
-    project +=
+    const block =
       `\n\n<system-reminder>\nThe following instructions come from ` +
       `CLAUDE.md / AGENTS.md files in the project. Follow them as if the user ` +
       `wrote them.\n\n${ctx.projectInstructions}\n</system-reminder>`;
+    project += block;
+    parts.push({
+      role: 'codebase-instructions',
+      label: 'codebase-instructions',
+      estTokens: estimateTextTokens(block),
+    });
   }
   if (opt.append !== undefined && opt.append.length > 0) {
     project += `\n\n${opt.append}`;
+    parts.push({ role: 'append', label: 'append', estTokens: estimateTextTokens(opt.append) });
+  }
+  // BPT-EXTENSION: labeled append segments, emitted after `append`, in order.
+  // Byte-identical to concatenating their text via `append`; labels are metadata
+  // that flow only into `parts` (never onto the wire).
+  if (Array.isArray(opt.appendSegments)) {
+    for (const seg of opt.appendSegments) {
+      if (seg !== null && typeof seg.text === 'string' && seg.text.length > 0) {
+        project += `\n\n${seg.text}`;
+        parts.push({ role: 'append', label: seg.label, estTokens: estimateTextTokens(seg.text) });
+      }
+    }
   }
   const stable = base + project;
-  return { stable, base, project, volatile: volatileTail(ctx, true) };
+  return { stable, base, project, volatile: volatileTail(ctx, true), parts };
 }
 
 /**

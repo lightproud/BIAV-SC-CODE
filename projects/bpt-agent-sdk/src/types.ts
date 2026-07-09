@@ -1072,6 +1072,14 @@ export type SettingSource = 'user' | 'project' | 'local';
 export type SystemPromptSegment = {
   text: string;
   cache?: boolean;
+  /**
+   * BPT-EXTENSION (prompt-composition, 2026-07-09): an optional human label for
+   * this layer (e.g. 'core' / 'team' / 'memory'). Metadata only — it is NEVER
+   * serialized onto the wire; it flows through solely so the prompt-composition
+   * breakdown (Options.includePromptComposition) can attribute this segment's
+   * tokens to the caller's own bucket.
+   */
+  label?: string;
 };
 
 /** Official plugin config (Options.plugins element). ACCEPTED-IGNORED in this
@@ -1161,6 +1169,19 @@ export type Options = {
    *  false — hooks otherwise report via debug only). Semantics unchanged by
    *  the v0.7 re-encoding. */
   includeHookEvents?: boolean;
+  /**
+   * BPT-EXTENSION (prompt-composition, 2026-07-09): emit a `system` /
+   * `prompt_composition` observability message just before each request is sent,
+   * carrying the SDK's own per-part token estimate (systemBase / systemAppend /
+   * toolDefs / messages) and the request's cache_control breakpoint map (each
+   * with the estimated size of the prefix it seals). Lets a downstream "context
+   * composition" panel use the SDK's exact segmentation + context-window
+   * accounting口径 instead of reverse-engineering a transcript, and map the
+   * API's real usage counts onto content buckets. Default false (zero cost when
+   * off; the wire request is never affected). The same data is available
+   * synchronously via the exported `analyzeRequestComposition`.
+   */
+  includePromptComposition?: boolean;
   includePartialMessages?: boolean;
   maxBudgetUsd?: number;
   /**
@@ -1228,6 +1249,17 @@ export type Options = {
         type: 'preset';
         preset: 'claude_code';
         append?: string;
+        /**
+         * BPT-EXTENSION (prompt-composition, 2026-07-09): labeled append
+         * segments layered after the preset base, in order. Their `text` is
+         * concatenated into the appended stable tail exactly as `append` would
+         * be (byte-identical wire output, so caching/conformance are
+         * unaffected) — the `label`s are metadata only and let the
+         * prompt-composition breakdown (includePromptComposition) attribute
+         * each bucket (e.g. Root / Runtime / Memory) separately. When both are
+         * present, `append` is emitted first, then these in order.
+         */
+        appendSegments?: { label: string; text: string }[];
         /**
          * NEW-IN-DOCS: move per-session dynamic context into the first user
          * message for better prompt-cache reuse across machines.
@@ -2021,6 +2053,70 @@ export type SDKStatusMessage = {
   details?: Record<string, unknown>;
 };
 
+// ---------------------------------------------------------------------------
+// Prompt composition (BPT-EXTENSION, spec 2026-07-09)
+// ---------------------------------------------------------------------------
+
+/** One estimated per-part entry of a prompt composition. */
+export type PromptCompositionPart = {
+  /** Caller/role label, when known (e.g. 'append', 'environment', a host layer). */
+  label?: string;
+  estTokens: number;
+};
+
+/**
+ * 需求 A: the request decomposed into estimated per-part token counts, using
+ * the SDK's own estimator (engine/tokens.ts) so the numbers share the same
+ * context-window accounting the compaction layer uses. Every count is an
+ * ESTIMATE (exact per-segment truth needs the API `count_tokens` endpoint).
+ */
+export type PromptComposition = {
+  /** The preset/base harness (or a bare string systemPrompt). 0 for the host
+   *  `segments` form, which has no engine-owned base. */
+  systemBase: { estTokens: number };
+  /** Each appended stable/volatile system part, in wire order, with its label. */
+  systemAppend: PromptCompositionPart[];
+  toolDefs: { estTokens: number; count: number };
+  messages: { estTokens: number; count: number };
+  /** Sum of every bucket above. */
+  totalEstTokens: number;
+};
+
+/** 需求 B: one cache_control breakpoint and the estimated size of the prefix
+ *  it seals (tools → system → messages prefix order). */
+export type CacheBreakpoint = {
+  /** Which part the sealed prefix ends at: 'toolDefs' | 'systemBase' |
+   *  'systemAppend[i]' | 'messages[last]'. */
+  afterPart: string;
+  /** Estimated tokens in the whole prefix up to and including `afterPart`. */
+  prefixEstTokens: number;
+};
+
+/** The full build-time description of a request: per-part estimate + cache map. */
+export type RequestComposition = {
+  promptComposition: PromptComposition;
+  cacheBreakpoints: CacheBreakpoint[];
+};
+
+/**
+ * BPT-EXTENSION: emitted just before each request is sent when
+ * `options.includePromptComposition` is true. Carries the SDK's own per-part
+ * token estimate (需求 A) and the request's cache-breakpoint map (需求 B), so a
+ * "context composition" panel can use the SDK's exact segmentation instead of
+ * reverse-engineering a transcript, and map the API's real usage counts onto
+ * content buckets. The wire request is unaffected by this message.
+ */
+export type SDKPromptCompositionMessage = {
+  type: 'system';
+  subtype: 'prompt_composition';
+  uuid: string;
+  session_id: string;
+  /** Model this request targets (the composition is per-request). */
+  model: string;
+  promptComposition: PromptComposition;
+  cacheBreakpoints: CacheBreakpoint[];
+};
+
 /**
  * The observability / status arm of the SDKMessage union (task #16; official
  * discriminator split since v0.7 — see the section banner above for the
@@ -2052,6 +2148,7 @@ export type SDKObservabilityMessage =
   | SDKWorkerShuttingDownMessage
   | SDKPluginInstallMessage
   | SDKSessionStateChangedMessage
+  | SDKPromptCompositionMessage
   | SDKStatusMessage;
 
 export type SDKMessage =
