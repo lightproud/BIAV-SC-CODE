@@ -4,7 +4,7 @@ title: "producer-light-evaluation-20260704"
 description: "（7,565,639 条 / 17 平台，索引 `projects/news/index/community_index.json`，（格式：md）"
 resource: "/Public-Info-Pool/Resource/community-analysis/producer-light-evaluation-20260704.md"
 tags: ["data_layer:curated", "deliverable", "topic:community-analysis"]
-timestamp: "2026-07-08"
+timestamp: "2026-07-09"
 ---
 
 # 指针概念

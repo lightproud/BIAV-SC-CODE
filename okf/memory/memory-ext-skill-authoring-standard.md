@@ -4,7 +4,7 @@ title: "技能写作审计标尺"
 description: "技能存在的唯一目的：**从随机的 AI 里榨出确定性（predictability）——同样的「过程」，而非同样的「输出」**。下文每条杠杆都服务于此。"
 resource: "/memory/skill-authoring-standard.md"
 tags: ["memory", "data_layer:curated"]
-timestamp: "2026-07-08"
+timestamp: "2026-07-09"
 ---
 
 # 记忆层指针

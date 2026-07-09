@@ -4,7 +4,7 @@ title: "bpt-agent-sdk 子项目上下文"
 description: "BPT Agent SDK：独立重实现（independent reimplementation）的 TypeScript agent 框架，公开调用面"
 resource: "/projects/bpt-agent-sdk/CONTEXT.md"
 tags: ["data_layer:curated", "sub-project-context", "milestone"]
-timestamp: "2026-07-08"
+timestamp: "2026-07-09"
 ---
 
 # 指针概念

@@ -4,7 +4,7 @@ title: "社区全量档案分析索引"
 description: "全量社区档案静态分析台账：百万级 条（精确值见指针本体）/ 14 平台，词典法零 ML。discord 全量历史 2026-06-21 de-tier 后永驻 git（Record/Community/discord/），直接读取，无需从 Rele"
 resource: "/projects/news/index/community_index.json"
 tags: ["data_layer:full_archive", "kind:analysis-index", "zero-ml"]
-timestamp: "2026-07-08"
+timestamp: "2026-07-09"
 ---
 
 # 指针概念

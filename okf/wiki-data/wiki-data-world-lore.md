@@ -4,7 +4,7 @@ title: "world_lore"
 description: "CollectionHall.lua (runtime memory extraction) · total_entries=1026 · 生成 2026-04-12"
 resource: "/projects/wiki/data/processed/world_lore.json"
 tags: ["data_layer:curated", "unpacked-bootstrap", "domain:story"]
-timestamp: "2026-07-08"
+timestamp: "2026-07-09"
 ---
 
 # 指针概念

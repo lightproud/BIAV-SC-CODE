@@ -4,7 +4,7 @@ title: "bpt-agent-sdk-completion-audit-20260703"
 description: "小学生比喻：拿着对方最新出厂说明书逐页清点自家仿制机——「有」「有一半」「只留了接口没通电」「压根没有」「本来就故意不装」五种贴纸逐个零件贴。（格式：md）"
 resource: "/Public-Info-Pool/Resource/repo-engineering/bpt-agent-sdk-completion-audit-20260703.md"
 tags: ["data_layer:curated", "deliverable", "topic:repo-engineering"]
-timestamp: "2026-07-08"
+timestamp: "2026-07-09"
 ---
 
 # 指针概念

@@ -1,10 +1,10 @@
 ---
 type: "dataset"
 title: "steam_discussion 社区数据源"
-description: "steam_discussion 平台采集档案，全量 88 条，健康度 active。"
+description: "steam_discussion 平台采集档案，全量 92 条，健康度 active。"
 resource: "/Public-Info-Pool/Record/Community/steam/global/discussion/"
 tags: ["data_layer:full_archive", "platform:steam_discussion", "health:active"]
-timestamp: "2026-07-08T08:17:10.533034+00:00"
+timestamp: "2026-07-09T08:25:06.994835+00:00"
 ---
 
 # 数据层指针
@@ -16,9 +16,9 @@ timestamp: "2026-07-08T08:17:10.533034+00:00"
 | 平台 | steam_discussion |
 | 全量档案层（本体） | `Public-Info-Pool/Record/Community/steam/global/discussion/` |
 | 输出展示层（抽样） | `projects/news/output/steam_discussion-latest.json` |
-| 全量条数 | 88 |
+| 全量条数 | 92 |
 | 采集健康度 | active |
-| 最后成功 | 2026-07-08 |
+| 最后成功 | 2026-07-09 |
 
 # 数据纪律（硬约束）
 

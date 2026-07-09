@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-08",
+  "generated": "2026-07-09",
   "meta": {
     "data_layer": "curated_knowledge",
     "source": "okf/ bundle (concept frontmatter + body + graph edges)",
@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 331,
-    "edges": 404,
-    "terms": 5777,
+    "concepts": 336,
+    "edges": 401,
+    "terms": 5805,
     "by_type": {
       "character": 72,
       "dataset": 107,
-      "documentation": 89,
+      "documentation": 94,
       "knowledge-pointer": 43,
       "reference": 17,
       "research": 3
@@ -25,8 +25,8 @@
       "extracted": 4,
       "memory": 47,
       "news-output": 23,
-      "projects": 21,
-      "resource": 67,
+      "projects": 22,
+      "resource": 71,
       "sources": 17,
       "story": 11,
       "unpacked": 13,
@@ -34,7 +34,7 @@
     },
     "by_tier": {
       "skeleton": 128,
-      "search": 203
+      "search": 208
     }
   },
   "sections": {
@@ -64,11 +64,11 @@
     },
     "projects": {
       "index": "/projects/index.md",
-      "count": 21
+      "count": 22
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 67
+      "count": 71
     },
     "sources": {
       "index": "/sources/index.md",
@@ -305,7 +305,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 33
+      "degree": 31
     },
     "/characters/130375.md": {
       "type": "character",
@@ -361,7 +361,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 16
+      "degree": 14
     },
     "/characters/15561.md": {
       "type": "character",
@@ -390,7 +390,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 0
+      "degree": 2
     },
     "/characters/15563.md": {
       "type": "character",
@@ -686,7 +686,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 3
+      "degree": 5
     },
     "/characters/15584.md": {
       "type": "character",
@@ -742,7 +742,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 5
+      "degree": 3
     },
     "/characters/15588.md": {
       "type": "character",
@@ -855,7 +855,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 23
+      "degree": 25
     },
     "/characters/15596.md": {
       "type": "character",
@@ -883,7 +883,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 0
+      "degree": 2
     },
     "/characters/15598.md": {
       "type": "character",
@@ -954,7 +954,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 7
+      "degree": 5
     },
     "/characters/15603.md": {
       "type": "character",
@@ -968,7 +968,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 81
+      "degree": 82
     },
     "/characters/15604.md": {
       "type": "character",
@@ -982,7 +982,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 5
+      "degree": 3
     },
     "/characters/54116.md": {
       "type": "character",
@@ -996,7 +996,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 9
+      "degree": 7
     },
     "/characters/54117.md": {
       "type": "character",
@@ -1038,7 +1038,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 4
     },
     "/characters/77914.md": {
       "type": "character",
@@ -1108,7 +1108,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 1
+      "degree": 3
     },
     "/characters/77923.md": {
       "type": "character",
@@ -1249,7 +1249,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 5
+      "degree": 3
     },
     "/characters/94451.md": {
       "type": "character",
@@ -1278,7 +1278,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 0
     },
     "/community/community-appstore.md": {
       "type": "dataset",
@@ -1362,7 +1362,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 3
     },
     "/community/community-reddit.md": {
       "type": "dataset",
@@ -1460,7 +1460,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 13
+      "degree": 11
     },
     "/community/community-weixin.md": {
       "type": "dataset",
@@ -1502,7 +1502,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 5
+      "degree": 4
     },
     "/extracted/extracted-art-assets.md": {
       "type": "dataset",
@@ -2631,6 +2631,20 @@
       "tier": "search",
       "degree": 0
     },
+    "/projects/bpt-sdk-doc-subagents.md": {
+      "type": "documentation",
+      "title": "bpt-agent-sdk SUBAGENTS",
+      "description": "Goal: wire a host (BPT) to the SDK's subagent surface the way Claude Code uses",
+      "resource": "/projects/bpt-agent-sdk/docs/SUBAGENTS.md",
+      "tags": [
+        "data_layer:curated",
+        "design-doc",
+        "sub-project:bpt-agent-sdk"
+      ],
+      "section": "projects",
+      "tier": "search",
+      "degree": 0
+    },
     "/projects/doc-testing-strategy.md": {
       "type": "documentation",
       "title": "测试策略",
@@ -3048,6 +3062,20 @@
       "tier": "search",
       "degree": 1
     },
+    "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md": {
+      "type": "documentation",
+      "title": "bpt-sdk-i18n-cost-investigation-20260708",
+      "description": "守密人两次「不对劲」都对;艾瑞卡据实纠正。（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/data-diagnostics/bpt-sdk-i18n-cost-investigation-20260708.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:data-diagnostics"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 1
+    },
     "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md": {
       "type": "documentation",
       "title": "bpt-sdk-l5-revalidation-v0182-20260707",
@@ -3179,6 +3207,20 @@
       "title": "biav-project-plan-202603",
       "description": "proposal 产物（html/pdf）（格式：html/pdf）",
       "resource": "/Public-Info-Pool/Resource/proposal/biav-project-plan-202603.html",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:proposal"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 0
+    },
+    "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md": {
+      "type": "documentation",
+      "title": "bpt-desktop-cowork-experience-design-20260708",
+      "description": "**不含任何黑池数据**；产品本体（BPT Desktop）在黑池侧构建，银芯只出**设计情报 + 对接缝**。（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/proposal/bpt-desktop-cowork-experience-design-20260708.md",
       "tags": [
         "data_layer:curated",
         "deliverable",
@@ -3482,6 +3524,20 @@
       "tier": "search",
       "degree": 0
     },
+    "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md": {
+      "type": "documentation",
+      "title": "bpt-sdk-harness-utils-20260708",
+      "description": "repo-engineering 产物（html）（格式：html）",
+      "resource": "/Public-Info-Pool/Resource/repo-engineering/bpt-sdk-harness-utils-20260708.html",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 0
+    },
     "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md": {
       "type": "documentation",
       "title": "bpt-sdk-l5-failure-dissection-20260705",
@@ -3565,6 +3621,20 @@
       "section": "resource",
       "tier": "search",
       "degree": 1
+    },
+    "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md": {
+      "type": "documentation",
+      "title": "bpt-sdk-prompt-corpus-20260708",
+      "description": "repo-engineering 产物（html）（格式：html）",
+      "resource": "/Public-Info-Pool/Resource/repo-engineering/bpt-sdk-prompt-corpus-20260708.html",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 0
     },
     "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md": {
       "type": "documentation",
@@ -3779,7 +3849,7 @@
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 2607 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 2628 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -3793,7 +3863,7 @@
     "/sources/discord.md": {
       "type": "dataset",
       "title": "discord 社区数据源",
-      "description": "discord 平台采集档案，全量 7980092 条，健康度 active。",
+      "description": "discord 平台采集档案，全量 7991736 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/discord/",
       "tags": [
         "data_layer:full_archive",
@@ -3807,7 +3877,7 @@
     "/sources/google_play.md": {
       "type": "dataset",
       "title": "google_play 社区数据源",
-      "description": "google_play 平台采集档案，全量 1232 条，健康度 active。",
+      "description": "google_play 平台采集档案，全量 1237 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/google_play/global/",
       "tags": [
         "data_layer:full_archive",
@@ -3835,7 +3905,7 @@
     "/sources/pixiv.md": {
       "type": "dataset",
       "title": "pixiv 社区数据源",
-      "description": "pixiv 平台采集档案，全量 552 条，健康度 active。",
+      "description": "pixiv 平台采集档案，全量 556 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/pixiv/",
       "tags": [
         "data_layer:full_archive",
@@ -3844,12 +3914,12 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 3
     },
     "/sources/reddit.md": {
       "type": "dataset",
       "title": "reddit 社区数据源",
-      "description": "reddit 平台采集档案，全量 3528 条，健康度 active。",
+      "description": "reddit 平台采集档案，全量 3542 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/reddit/",
       "tags": [
         "data_layer:full_archive",
@@ -3863,7 +3933,7 @@
     "/sources/ruliweb.md": {
       "type": "dataset",
       "title": "ruliweb 社区数据源",
-      "description": "ruliweb 平台采集档案，全量 389 条，健康度 active。",
+      "description": "ruliweb 平台采集档案，全量 392 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/ruliweb/",
       "tags": [
         "data_layer:full_archive",
@@ -3877,7 +3947,7 @@
     "/sources/steam.md": {
       "type": "dataset",
       "title": "steam 社区数据源",
-      "description": "steam 平台采集档案，全量 5135 条，健康度 active。",
+      "description": "steam 平台采集档案，全量 5143 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/review/",
       "tags": [
         "data_layer:full_archive",
@@ -3891,7 +3961,7 @@
     "/sources/steam_discussion.md": {
       "type": "dataset",
       "title": "steam_discussion 社区数据源",
-      "description": "steam_discussion 平台采集档案，全量 88 条，健康度 active。",
+      "description": "steam_discussion 平台采集档案，全量 92 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/discussion/",
       "tags": [
         "data_layer:full_archive",
@@ -3905,7 +3975,7 @@
     "/sources/stopgame.md": {
       "type": "dataset",
       "title": "stopgame 社区数据源",
-      "description": "stopgame 平台采集档案，全量 80 条，健康度 active。",
+      "description": "stopgame 平台采集档案，全量 81 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/stopgame/",
       "tags": [
         "data_layer:full_archive",
@@ -3919,7 +3989,7 @@
     "/sources/taptap.md": {
       "type": "dataset",
       "title": "taptap 社区数据源",
-      "description": "taptap 平台采集档案，全量 9 条，健康度 active。",
+      "description": "taptap 平台采集档案，全量 10 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/taptap/cn/post/",
       "tags": [
         "data_layer:full_archive",
@@ -3933,7 +4003,7 @@
     "/sources/taptap_review.md": {
       "type": "dataset",
       "title": "taptap_review 社区数据源",
-      "description": "taptap_review 平台采集档案，全量 893 条，健康度 active。",
+      "description": "taptap_review 平台采集档案，全量 990 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/taptap/cn/review/",
       "tags": [
         "data_layer:full_archive",
@@ -3947,7 +4017,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 9358 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 9475 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -3956,12 +4026,12 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 13
+      "degree": 11
     },
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 6856 条，健康度 active。",
+      "description": "weixin 平台采集档案，全量 7056 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -3975,7 +4045,7 @@
     "/sources/youtube.md": {
       "type": "dataset",
       "title": "youtube 社区数据源",
-      "description": "youtube 平台采集档案，全量 2699 条，健康度 active。",
+      "description": "youtube 平台采集档案，全量 2721 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -3984,12 +4054,12 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 5
+      "degree": 4
     },
     "/sources/youtube_comments.md": {
       "type": "dataset",
       "title": "youtube_comments 社区数据源",
-      "description": "youtube_comments 平台采集档案，全量 2036 条，健康度 active。",
+      "description": "youtube_comments 平台采集档案，全量 2044 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube_comments/",
       "tags": [
         "data_layer:full_archive",
@@ -4778,11 +4848,6 @@
         "cv"
       ],
       [
-        "/community/community-bilibili.md",
-        "提及:沙耶",
-        "mention"
-      ],
-      [
         "/community/community-google-play.md",
         "提及:Saya",
         "mention"
@@ -4903,11 +4968,6 @@
         "mention"
       ],
       [
-        "/sources/bilibili.md",
-        "提及:沙耶",
-        "mention"
-      ],
-      [
         "/sources/google_play.md",
         "提及:Saya",
         "mention"
@@ -4986,11 +5046,6 @@
         "mention"
       ],
       [
-        "/community/community-youtube.md",
-        "提及:Pandia",
-        "mention"
-      ],
-      [
         "/memory/decisions.md",
         "提及:Pandia",
         "mention"
@@ -5041,11 +5096,6 @@
         "mention"
       ],
       [
-        "/sources/youtube.md",
-        "提及:Pandia",
-        "mention"
-      ],
-      [
         "/sources/youtube_comments.md",
         "提及:Pandia",
         "mention"
@@ -5070,6 +5120,18 @@
       [
         "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
         "提及:本源汀克特",
+        "mention"
+      ]
+    ],
+    "/characters/15562.md": [
+      [
+        "/community/community-bilibili.md",
+        "提及:莉兹",
+        "mention"
+      ],
+      [
+        "/sources/bilibili.md",
+        "提及:莉兹",
         "mention"
       ]
     ],
@@ -5638,12 +5700,22 @@
         "cv"
       ],
       [
+        "/community/community-bilibili.md",
+        "提及:奥尔拉",
+        "mention"
+      ],
+      [
         "/memory/morimens-context.md",
         "提及:奥尔拉",
         "mention"
       ],
       [
         "/resource/resource-daily-news-morimens-period-20260512-0603.md",
+        "提及:奥尔拉",
+        "mention"
+      ],
+      [
+        "/sources/bilibili.md",
         "提及:奥尔拉",
         "mention"
       ]
@@ -5704,17 +5776,7 @@
         "cv"
       ],
       [
-        "/community/community-bilibili.md",
-        "提及:希洛",
-        "mention"
-      ],
-      [
         "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-        "提及:希洛",
-        "mention"
-      ],
-      [
-        "/sources/bilibili.md",
         "提及:希洛",
         "mention"
       ]
@@ -5838,6 +5900,11 @@
         "mention"
       ],
       [
+        "/community/community-pixiv.md",
+        "提及:Ramona",
+        "mention"
+      ],
+      [
         "/community/community-reddit.md",
         "提及:Ramona",
         "mention"
@@ -5908,6 +5975,11 @@
         "mention"
       ],
       [
+        "/sources/pixiv.md",
+        "提及:Ramona",
+        "mention"
+      ],
+      [
         "/sources/reddit.md",
         "提及:Ramona",
         "mention"
@@ -5947,6 +6019,18 @@
       [
         "/resource/resource-daily-news-morimens-period-20260512-0603.md",
         "提及:泰旖丝",
+        "mention"
+      ]
+    ],
+    "/characters/15597.md": [
+      [
+        "/community/community-bilibili.md",
+        "提及:雷娅",
+        "mention"
+      ],
+      [
+        "/sources/bilibili.md",
+        "提及:雷娅",
         "mention"
       ]
     ],
@@ -6040,11 +6124,6 @@
         "variant"
       ],
       [
-        "/community/community-weibo.md",
-        "提及:融朵",
-        "mention"
-      ],
-      [
         "/memory/decisions.md",
         "提及:熔毁·朵尔",
         "mention"
@@ -6057,11 +6136,6 @@
       [
         "/memory/project-status.md",
         "提及:熔毁·朵尔",
-        "mention"
-      ],
-      [
-        "/sources/weibo.md",
-        "提及:融朵",
         "mention"
       ],
       [
@@ -6372,6 +6446,11 @@
         "mention"
       ],
       [
+        "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
         "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
         "提及:艾瑞卡",
         "mention"
@@ -6479,11 +6558,6 @@
     ],
     "/characters/15604.md": [
       [
-        "/community/community-bilibili.md",
-        "提及:莱克",
-        "mention"
-      ],
-      [
         "/resource/resource-daily-news-morimens-daily-full-20260602.md",
         "提及:莱克",
         "mention"
@@ -6497,11 +6571,6 @@
         "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
         "提及:莱克",
         "mention"
-      ],
-      [
-        "/sources/bilibili.md",
-        "提及:莱克",
-        "mention"
       ]
     ],
     "/characters/54116.md": [
@@ -6509,11 +6578,6 @@
         "/characters/15568.md",
         "CV:山本亚衣",
         "cv"
-      ],
-      [
-        "/community/community-bilibili.md",
-        "提及:塔薇",
-        "mention"
       ],
       [
         "/community/community-youtube-comments.md",
@@ -6532,11 +6596,6 @@
       ],
       [
         "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-        "提及:塔薇",
-        "mention"
-      ],
-      [
-        "/sources/bilibili.md",
         "提及:塔薇",
         "mention"
       ],
@@ -6576,6 +6635,16 @@
       ]
     ],
     "/characters/77913.md": [
+      [
+        "/community/community-bilibili.md",
+        "提及:凯蒂古拉",
+        "mention"
+      ],
+      [
+        "/sources/bilibili.md",
+        "提及:凯蒂古拉",
+        "mention"
+      ],
       [
         "/story/STORY_RESEARCH.md",
         "提及:凯蒂古拉",
@@ -6700,6 +6769,16 @@
         "/characters/15578.md",
         "CV:山田真瑠奈",
         "cv"
+      ],
+      [
+        "/community/community-bilibili.md",
+        "提及:克珀珊特",
+        "mention"
+      ],
+      [
+        "/sources/bilibili.md",
+        "提及:克珀珊特",
+        "mention"
       ]
     ],
     "/characters/77924.md": [
@@ -6800,22 +6879,12 @@
     ],
     "/characters/94450.md": [
       [
-        "/community/community-bilibili.md",
-        "提及:茉夏",
-        "mention"
-      ],
-      [
         "/community/community-youtube-comments.md",
         "提及:茉夏",
         "mention"
       ],
       [
         "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
-        "提及:茉夏",
-        "mention"
-      ],
-      [
-        "/sources/bilibili.md",
         "提及:茉夏",
         "mention"
       ],
@@ -6842,18 +6911,6 @@
         "mention"
       ]
     ],
-    "/characters/95786.md": [
-      [
-        "/community/community-weibo.md",
-        "提及:杜勒赛因",
-        "mention"
-      ],
-      [
-        "/sources/weibo.md",
-        "提及:杜勒赛因",
-        "mention"
-      ]
-    ],
     "/community/community-appstore.md": [
       [
         "/community/community-index.md",
@@ -6868,13 +6925,28 @@
     ],
     "/community/community-bilibili.md": [
       [
+        "/characters/77913.md",
+        "提及:凯蒂古拉",
+        "mention"
+      ],
+      [
         "/characters/77918.md",
         "提及:阿拉克涅",
         "mention"
       ],
       [
+        "/characters/77922.md",
+        "提及:克珀珊特",
+        "mention"
+      ],
+      [
         "/characters/77925.md",
         "提及:克莱门汀",
+        "mention"
+      ],
+      [
+        "/characters/15583.md",
+        "提及:奥尔拉",
         "mention"
       ],
       [
@@ -6885,6 +6957,11 @@
       [
         "/characters/15603.md",
         "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/characters/15562.md",
+        "提及:莉兹",
         "mention"
       ],
       [
@@ -6903,28 +6980,8 @@
         "mention"
       ],
       [
-        "/characters/15587.md",
-        "提及:希洛",
-        "mention"
-      ],
-      [
-        "/characters/15604.md",
-        "提及:莱克",
-        "mention"
-      ],
-      [
-        "/characters/54116.md",
-        "提及:塔薇",
-        "mention"
-      ],
-      [
-        "/characters/94450.md",
-        "提及:茉夏",
-        "mention"
-      ],
-      [
-        "/characters/130226.md",
-        "提及:沙耶",
+        "/characters/15597.md",
+        "提及:雷娅",
         "mention"
       ],
       [
@@ -7041,6 +7098,11 @@
     ],
     "/community/community-pixiv.md": [
       [
+        "/characters/15595.md",
+        "提及:Ramona",
+        "mention"
+      ],
+      [
         "/community/community-index.md",
         "聚合于",
         "cross"
@@ -7148,11 +7210,6 @@
         "mention"
       ],
       [
-        "/characters/95786.md",
-        "提及:杜勒赛因",
-        "mention"
-      ],
-      [
         "/characters/15577.md",
         "提及:菲茵特",
         "mention"
@@ -7175,11 +7232,6 @@
       [
         "/characters/130226.md",
         "提及:沙耶",
-        "mention"
-      ],
-      [
-        "/characters/15602.md",
-        "提及:融朵",
         "mention"
       ],
       [
@@ -7253,11 +7305,6 @@
       ]
     ],
     "/community/community-youtube.md": [
-      [
-        "/characters/15560.md",
-        "提及:Pandia",
-        "mention"
-      ],
       [
         "/characters/15595.md",
         "提及:Ramona",
@@ -8408,6 +8455,13 @@
         "mention"
       ]
     ],
+    "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
     "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md": [
       [
         "/characters/15603.md",
@@ -8619,13 +8673,28 @@
     ],
     "/sources/bilibili.md": [
       [
+        "/characters/77913.md",
+        "提及:凯蒂古拉",
+        "mention"
+      ],
+      [
         "/characters/77918.md",
         "提及:阿拉克涅",
         "mention"
       ],
       [
+        "/characters/77922.md",
+        "提及:克珀珊特",
+        "mention"
+      ],
+      [
         "/characters/77925.md",
         "提及:克莱门汀",
+        "mention"
+      ],
+      [
+        "/characters/15583.md",
+        "提及:奥尔拉",
         "mention"
       ],
       [
@@ -8636,6 +8705,11 @@
       [
         "/characters/15603.md",
         "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/characters/15562.md",
+        "提及:莉兹",
         "mention"
       ],
       [
@@ -8654,28 +8728,8 @@
         "mention"
       ],
       [
-        "/characters/15587.md",
-        "提及:希洛",
-        "mention"
-      ],
-      [
-        "/characters/15604.md",
-        "提及:莱克",
-        "mention"
-      ],
-      [
-        "/characters/54116.md",
-        "提及:塔薇",
-        "mention"
-      ],
-      [
-        "/characters/94450.md",
-        "提及:茉夏",
-        "mention"
-      ],
-      [
-        "/characters/130226.md",
-        "提及:沙耶",
+        "/characters/15597.md",
+        "提及:雷娅",
         "mention"
       ],
       [
@@ -8726,6 +8780,11 @@
       ]
     ],
     "/sources/pixiv.md": [
+      [
+        "/characters/15595.md",
+        "提及:Ramona",
+        "mention"
+      ],
       [
         "/community/community-pixiv.md",
         "同平台",
@@ -8848,11 +8907,6 @@
         "mention"
       ],
       [
-        "/characters/95786.md",
-        "提及:杜勒赛因",
-        "mention"
-      ],
-      [
         "/characters/15577.md",
         "提及:菲茵特",
         "mention"
@@ -8875,11 +8929,6 @@
       [
         "/characters/130226.md",
         "提及:沙耶",
-        "mention"
-      ],
-      [
-        "/characters/15602.md",
-        "提及:融朵",
         "mention"
       ],
       [
@@ -8906,11 +8955,6 @@
       ]
     ],
     "/sources/youtube.md": [
-      [
-        "/characters/15560.md",
-        "提及:Pandia",
-        "mention"
-      ],
       [
         "/characters/15595.md",
         "提及:Ramona",
@@ -9367,6 +9411,7 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -9395,6 +9440,7 @@
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
@@ -9405,6 +9451,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
@@ -9426,12 +9473,14 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -9557,6 +9606,7 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/project-bpt-agent-sdk.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
@@ -10067,9 +10117,12 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/project-bpt-agent-sdk.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
@@ -10087,12 +10140,14 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
     ],
     "brain": [
@@ -10203,6 +10258,7 @@
       "/memory/memory-ext-karpathy-coding-principles.md",
       "/projects/bpt-sdk-doc-architecture.md",
       "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/entry-claude-md.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
@@ -10245,6 +10301,7 @@
       "/memory/memory-ext-active-policy-direct-push-main.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
+      "/projects/bpt-sdk-doc-subagents.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
     ],
@@ -10482,6 +10539,7 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -10512,6 +10570,7 @@
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
@@ -10522,6 +10581,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
@@ -10543,12 +10603,14 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -10702,12 +10764,21 @@
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
     ],
+    "corpus": [
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md"
+    ],
+    "cost": [
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md"
+    ],
     "count": [
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md"
     ],
     "coverage": [
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md"
+    ],
+    "cowork": [
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md"
     ],
     "crosscheck": [
       "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md"
@@ -10779,6 +10850,7 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -10809,6 +10881,7 @@
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
@@ -10819,6 +10892,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
@@ -10840,12 +10914,14 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -11080,6 +11156,7 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -11110,6 +11187,7 @@
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
@@ -11120,6 +11198,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
@@ -11141,12 +11220,14 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -11272,6 +11353,7 @@
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
@@ -11282,6 +11364,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
@@ -11303,12 +11386,14 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -11347,8 +11432,10 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -11360,6 +11447,7 @@
     "desktop": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-desktop-design-spec-ref.md",
       "/projects/bpt-sdk-doc-migration.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -11376,6 +11464,7 @@
       "/assets/assets-archive-integrity.md",
       "/assets/assets-sentinel-baseline.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
@@ -11427,6 +11516,7 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/extracted-lua-readme.md"
     ],
@@ -11438,6 +11528,7 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md"
     ],
@@ -11533,12 +11624,14 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -11589,6 +11682,9 @@
     ],
     "execution": [
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
+    ],
+    "experience": [
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md"
     ],
     "extracted": [
       "/extracted/extracted-art-assets.md",
@@ -11991,6 +12087,7 @@
     ],
     "goal": [
       "/projects/bpt-sdk-doc-onboarding.md",
+      "/projects/bpt-sdk-doc-subagents.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
     ],
     "google": [
@@ -12052,7 +12149,8 @@
     "harness": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md",
       "/projects/bpt-sdk-doc-architecture.md",
-      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md"
     ],
     "harnesspromptvariant": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
@@ -12086,11 +12184,17 @@
     "helper": [
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md"
     ],
+    "host": [
+      "/projects/bpt-sdk-doc-subagents.md"
+    ],
     "hub": [
       "/memory/memory-ext-active-contribution-protocol.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md"
+    ],
+    "i18n": [
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md"
     ],
     "id": [
       "/README.md",
@@ -12228,6 +12332,7 @@
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
@@ -12238,6 +12343,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
@@ -12259,12 +12365,14 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -12340,6 +12448,9 @@
     ],
     "inverted": [
       "/story/story_search_index.md"
+    ],
+    "investigation": [
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md"
     ],
     "io": [
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
@@ -12654,6 +12765,7 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -12684,6 +12796,7 @@
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
@@ -12694,6 +12807,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
@@ -12715,12 +12829,14 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -13158,6 +13274,7 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -13183,6 +13300,7 @@
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
@@ -13191,6 +13309,7 @@
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
@@ -13819,6 +13938,7 @@
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
@@ -13829,6 +13949,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
@@ -13850,12 +13971,14 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -13994,6 +14117,7 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/news-archive-sources-registry.md",
       "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
@@ -14042,6 +14166,7 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/news-archive-sources-registry.md",
       "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
@@ -14115,11 +14240,13 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "proposal": [
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
@@ -14179,6 +14306,7 @@
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
@@ -14189,6 +14317,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
@@ -14210,12 +14339,14 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -14485,12 +14616,14 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -14544,6 +14677,7 @@
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
@@ -14554,6 +14688,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
@@ -14575,12 +14710,14 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -14759,8 +14896,10 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/project-bpt-agent-sdk.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
@@ -14776,13 +14915,18 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
+    ],
+    "sdk's": [
+      "/projects/bpt-sdk-doc-subagents.md"
     ],
     "search": [
       "/README.md",
@@ -15120,6 +15264,7 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/news-archive-sources-registry.md",
       "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
@@ -15128,6 +15273,12 @@
       "/projects/project-wiki.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md"
+    ],
+    "subagent": [
+      "/projects/bpt-sdk-doc-subagents.md"
+    ],
+    "subagents": [
+      "/projects/bpt-sdk-doc-subagents.md"
     ],
     "suite": [
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
@@ -15197,7 +15348,8 @@
       "/projects/bpt-sdk-doc-concurrency.md"
     ],
     "surface": [
-      "/projects/bpt-sdk-doc-compat.md"
+      "/projects/bpt-sdk-doc-compat.md",
+      "/projects/bpt-sdk-doc-subagents.md"
     ],
     "survey": [
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
@@ -15346,6 +15498,7 @@
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
@@ -15356,6 +15509,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
@@ -15377,12 +15531,14 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -15549,7 +15705,11 @@
       "/extracted/extracted-categorized.md",
       "/extracted/extracted-lua-tables.md"
     ],
+    "uses": [
+      "/projects/bpt-sdk-doc-subagents.md"
+    ],
     "utils": [
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md"
     ],
@@ -15691,6 +15851,9 @@
     "vue": [
       "/unpacked/unpacked-vue.md"
     ],
+    "way": [
+      "/projects/bpt-sdk-doc-subagents.md"
+    ],
     "weibo": [
       "/community/community-weibo.md",
       "/memory/memory-research-community-analysis-2026-05-18-26.md",
@@ -15762,6 +15925,7 @@
       "/resource/resource-daily-news-morimens-window-20260602.md"
     ],
     "wire": [
+      "/projects/bpt-sdk-doc-subagents.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md"
     ],
     "wireframe": [
@@ -16213,6 +16377,7 @@
       "/projects/entry-claude-md.md"
     ],
     "不含": [
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
     ],
     "不回": [
@@ -16333,6 +16498,7 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -16363,6 +16529,7 @@
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
@@ -16373,6 +16540,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
@@ -16394,12 +16562,14 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -16460,6 +16630,7 @@
       "/characters/15576.md"
     ],
     "不对": [
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md"
     ],
@@ -16578,6 +16749,7 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -16608,6 +16780,7 @@
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
@@ -16618,6 +16791,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
@@ -16639,12 +16813,14 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -16872,6 +17048,7 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -16902,6 +17079,7 @@
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
@@ -16912,6 +17090,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
@@ -16933,12 +17112,14 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -17111,6 +17292,9 @@
     ],
     "两引": [
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
+    ],
+    "两次": [
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md"
     ],
     "两点": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md"
@@ -17789,6 +17973,9 @@
     "产出": [
       "/README.md"
     ],
+    "产品": [
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md"
+    ],
     "产物": [
       "/README.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
@@ -17798,6 +17985,8 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md"
     ],
     "产生": [
@@ -18005,6 +18194,7 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -18035,6 +18225,7 @@
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
@@ -18045,6 +18236,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
@@ -18066,12 +18258,14 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -18507,7 +18701,8 @@
       "/characters/15585.md",
       "/characters/15598.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
-      "/memory/memory-strategy-repo-slimming-plan.md"
+      "/memory/memory-strategy-repo-slimming-plan.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md"
     ],
     "任务": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
@@ -18912,6 +19107,7 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -18942,6 +19138,7 @@
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
@@ -18952,6 +19149,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
@@ -18973,12 +19171,14 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -19154,6 +19354,7 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -19184,6 +19385,7 @@
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
@@ -19194,6 +19396,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
@@ -19215,12 +19418,14 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -19387,6 +19592,9 @@
     ],
     "何驱": [
       "/projects/news-archive-sources-registry.md"
+    ],
+    "何黑": [
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md"
     ],
     "余是": [
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
@@ -19563,6 +19771,9 @@
     "依赖": [
       "/README.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
+    ],
+    "侧构": [
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md"
     ],
     "侵蚀": [
       "/characters/77923.md"
@@ -20914,6 +21125,7 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -20944,6 +21156,7 @@
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
@@ -20954,6 +21167,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
@@ -20975,12 +21189,14 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -22168,7 +22384,8 @@
       "/characters/15602.md"
     ],
     "只出": [
-      "/README.md"
+      "/README.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md"
     ],
     "只剩": [
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
@@ -22839,6 +23056,9 @@
     "含义": [
       "/memory/memory-strategy-repo-slimming-plan.md"
     ],
+    "含任": [
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md"
+    ],
     "含可": [
       "/README.md"
     ],
@@ -23040,6 +23260,9 @@
     ],
     "咨询": [
       "/characters/77925.md"
+    ],
+    "品本": [
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md"
     ],
     "品能": [
       "/characters/77926.md"
@@ -23474,6 +23697,9 @@
     "在面": [
       "/characters/15594.md",
       "/characters/77922.md"
+    ],
+    "在黑": [
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md"
     ],
     "圭吾": [
       "/characters/15594.md"
@@ -23962,6 +24188,7 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -23992,6 +24219,7 @@
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
@@ -24002,6 +24230,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
@@ -24023,12 +24252,14 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -24724,6 +24955,7 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -24754,6 +24986,7 @@
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
@@ -24764,6 +24997,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
@@ -24785,12 +25019,14 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -25120,6 +25356,7 @@
       "/memory/memory-ext-active-policy-direct-push-main.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/projects/project-game.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -25316,6 +25553,7 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -25346,6 +25584,7 @@
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
@@ -25356,6 +25595,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
@@ -25377,12 +25617,14 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -25520,6 +25762,9 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
+    ],
+    "实纠": [
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md"
     ],
     "实脱": [
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md"
@@ -25681,6 +25926,9 @@
     "对剩": [
       "/characters/95786.md"
     ],
+    "对劲": [
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md"
+    ],
     "对单": [
       "/characters/15564.md"
     ],
@@ -25709,6 +25957,7 @@
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md"
     ],
     "对接": [
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md"
     ],
     "对敌": [
@@ -27893,6 +28142,9 @@
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md"
     ],
+    "情报": [
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md"
+    ],
     "情的": [
       "/characters/130901.md",
       "/characters/15560.md"
@@ -28969,6 +29221,7 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -28999,6 +29252,7 @@
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
@@ -29009,6 +29263,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
@@ -29030,12 +29285,14 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -29219,6 +29476,9 @@
     "据另": [
       "/README.md"
     ],
+    "据实": [
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md"
+    ],
     "据局": [
       "/characters/77926.md"
     ],
@@ -29377,6 +29637,9 @@
     "接浪": [
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md"
     ],
+    "接缝": [
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md"
+    ],
     "接表": [
       "/README.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md"
@@ -29483,6 +29746,7 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -29513,6 +29777,7 @@
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
@@ -29523,6 +29788,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
@@ -29544,12 +29810,14 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -29795,6 +30063,7 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -29825,6 +30094,7 @@
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
@@ -29835,6 +30105,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
@@ -29856,12 +30127,14 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -30170,6 +30443,7 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -30200,6 +30474,7 @@
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
@@ -30210,6 +30485,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
@@ -30231,12 +30507,14 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -30434,6 +30712,7 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -30464,6 +30743,7 @@
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
@@ -30474,6 +30754,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
@@ -30495,12 +30776,14 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -30728,6 +31011,7 @@
       "/memory/memory-research-discord-archive-backfill-conflict.md",
       "/projects/news-archive-sources-registry.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
@@ -32040,6 +32324,7 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -32070,6 +32355,7 @@
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
@@ -32080,6 +32366,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
@@ -32101,12 +32388,14 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -32439,6 +32728,7 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -32469,6 +32759,7 @@
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
@@ -32479,6 +32770,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
@@ -32500,12 +32792,14 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -32790,6 +33084,7 @@
     "构建": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-build-verification.md",
       "/news-output/news-output-newsjs.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md"
     ],
     "构快": [
@@ -32983,6 +33278,7 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -33013,6 +33309,7 @@
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
@@ -33023,6 +33320,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
@@ -33044,12 +33342,14 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -33208,6 +33508,7 @@
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
@@ -33218,6 +33519,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
@@ -33239,12 +33541,14 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -33625,6 +33929,7 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -33655,6 +33960,7 @@
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
@@ -33665,6 +33971,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
@@ -33686,12 +33993,14 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -33989,6 +34298,7 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -34019,6 +34329,7 @@
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
@@ -34029,6 +34340,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
@@ -34050,12 +34362,14 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -34372,6 +34686,9 @@
     "池优": [
       "/characters/15562.md"
     ],
+    "池侧": [
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md"
+    ],
     "池信": [
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/projects/entry-readme.md",
@@ -34386,7 +34703,8 @@
     ],
     "池数": [
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
-      "/memory/memory-ext-active-silver-blackpool-interface.md"
+      "/memory/memory-ext-active-silver-blackpool-interface.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md"
     ],
     "池是": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md"
@@ -38058,6 +38376,9 @@
     "累积": [
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
     ],
+    "纠正": [
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md"
+    ],
     "红熔": [
       "/characters/15599.md"
     ],
@@ -39095,6 +39416,7 @@
       "/memory/memory-ext-active-policy-direct-push-main.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
       "/memory/memory-strategy-repo-slimming-plan.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/story/story_research_todo.md"
     ],
     "艾继丝": [
@@ -39152,6 +39474,9 @@
     ],
     "芯内": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md"
+    ],
+    "芯只": [
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md"
     ],
     "芯基": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md"
@@ -39769,6 +40094,9 @@
     "计哲": [
       "/memory/memory-ext-knowledge-layer-design.md"
     ],
+    "计情": [
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md"
+    ],
     "计方": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
       "/memory/memory-ext-discord-archiver-design.md"
@@ -39959,7 +40287,8 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-knowledge-layer-design.md",
       "/projects/site-design-morimens-design-system-guide.md",
-      "/projects/site-design-morimens-design-tokens.md"
+      "/projects/site-design-morimens-design-tokens.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md"
     ],
     "访确": [
       "/memory/memory-ext-collab-event-playbook.md"
@@ -40666,6 +40995,7 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -40696,6 +41026,7 @@
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
@@ -40706,6 +41037,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
@@ -40727,12 +41059,14 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -41307,6 +41641,7 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -41337,6 +41672,7 @@
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
@@ -41347,6 +41683,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
@@ -41368,12 +41705,14 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -41761,6 +42100,7 @@
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
     ],
     "都对": [
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
     ],
     "都将": [
@@ -42278,6 +42618,7 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -42308,6 +42649,7 @@
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
@@ -42318,6 +42660,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
@@ -42339,12 +42682,14 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -42511,6 +42856,7 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -42541,6 +42887,7 @@
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
@@ -42551,6 +42898,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
@@ -42572,12 +42920,14 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -42671,6 +43021,7 @@
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
@@ -43579,6 +43930,7 @@
       "/projects/entry-readme.md",
       "/projects/project-news.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "黑法老": [
@@ -43656,6 +44008,7 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/project-bpt-agent-sdk.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -43926,9 +44279,12 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/project-bpt-agent-sdk.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
@@ -43946,12 +44302,14 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
-      "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md"
     ],
     "bug": [
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md"
@@ -44119,9 +44477,18 @@
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
     ],
+    "corpus": [
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md"
+    ],
+    "cost": [
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md"
+    ],
     "coverage": [
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md"
+    ],
+    "cowork": [
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md"
     ],
     "crosscheck": [
       "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md"
@@ -44190,6 +44557,7 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -44220,6 +44588,7 @@
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
@@ -44230,6 +44599,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
@@ -44251,12 +44621,14 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -44484,6 +44856,7 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -44514,6 +44887,7 @@
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
@@ -44524,6 +44898,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
@@ -44545,12 +44920,14 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -44667,6 +45044,7 @@
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
@@ -44677,6 +45055,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
@@ -44698,12 +45077,14 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -44731,8 +45112,10 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -44743,6 +45126,7 @@
     ],
     "desktop": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-desktop-design-spec-ref.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -44755,6 +45139,7 @@
       "/assets/assets-archive-integrity.md",
       "/assets/assets-sentinel-baseline.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
@@ -44789,6 +45174,7 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/extracted-lua-readme.md"
     ],
@@ -44869,12 +45255,14 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -44910,6 +45298,9 @@
     ],
     "execution": [
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
+    ],
+    "experience": [
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md"
     ],
     "extracted": [
       "/extracted/extracted-readme.md"
@@ -45115,6 +45506,9 @@
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
+    "harness": [
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md"
+    ],
     "health": [
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/sources/appstore.md",
@@ -45140,6 +45534,9 @@
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md"
+    ],
+    "i18n": [
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md"
     ],
     "image": [
       "/assets/assets-images.md"
@@ -45172,6 +45569,9 @@
     ],
     "inventory": [
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md"
+    ],
+    "investigation": [
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md"
     ],
     "item": [
       "/wiki-data/wiki-data-drops-by-item.md",
@@ -45330,6 +45730,7 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
@@ -45360,6 +45761,7 @@
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
@@ -45370,6 +45772,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
@@ -45391,12 +45794,14 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -45980,6 +46385,7 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/news-archive-sources-registry.md",
       "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
@@ -45994,11 +46400,13 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "proposal": [
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
@@ -46080,12 +46488,14 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -46212,8 +46622,10 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/project-bpt-agent-sdk.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
@@ -46228,12 +46640,14 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
-      "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md"
     ],
     "search": [
       "/story/story_search_index.md"
@@ -46358,6 +46772,7 @@
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
       "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/news-archive-sources-registry.md",
       "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
@@ -46366,6 +46781,9 @@
       "/projects/project-wiki.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md"
+    ],
+    "subagents": [
+      "/projects/bpt-sdk-doc-subagents.md"
     ],
     "suite": [
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
@@ -46438,6 +46856,7 @@
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
@@ -46448,6 +46867,7 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
@@ -46469,12 +46889,14 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -46574,6 +46996,9 @@
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
       "/extracted/extracted-lua-tables.md"
+    ],
+    "utils": [
+      "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md"
     ],
     "ux": [
       "/memory/memory-ext-research-best-wiki-features.md"

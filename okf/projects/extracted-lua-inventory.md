@@ -4,7 +4,7 @@ title: "解包 lua 清单"
 description: "逐条列 .luac 本体位置的清单（1608 条），字节码本体在 Releases「解包」桶。"
 resource: "/extracted_lua/lua_scripts_inventory.csv"
 tags: ["data_layer:curated", "manifest", "binary-assets-pointer"]
-timestamp: "2026-07-08"
+timestamp: "2026-07-09"
 ---
 
 # 指针概念
