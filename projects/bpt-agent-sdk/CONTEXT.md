@@ -255,6 +255,16 @@ KD-L4-02 收窄 errorPresent）；E2 result 口径对齐（num_turns/usage 逐 r
 （drop-in 破坏级 15 项总榜 + COMPAT.md 15 处陈旧行修订 + NEW-IN-DOCS 挂账 + P0/P1/P2 修复 backlog）。
 COMPAT.md 头部已挂该档指针；修复 backlog 待守密人裁定后开工。
 
+**透传上下文构成明细（v0.32.0，2026-07-09，黑池 ContextRing「上下文构成」面板派单）**：SDK 在装配请求那一刻
+把它本就掌握、且不依赖网关的两块信息暴露出来，让黑池面板不再事后从转录反解 + 字符估算。**需求 A（逐部分估算）**：
+`analyzeRequestComposition(request, system?)` 出 `promptComposition = { systemBase / systemAppend[] / toolDefs / messages / totalEstTokens }`，
+每桶用 SDK 自己的 `engine/tokens.ts`（与判上下文窗口同口径），`systemAppend` 带回黑池传入的 label；**需求 B（缓存断点内容映射）**：
+`cacheBreakpoints = [{ afterPart, prefixEstTokens }]`——逐个 `cache_control` 断点标注它封的前缀估算 token（tools→system→messages 序），
+黑池据此把真实 usage（`cache_read` 真=命中缓存前缀 / `input`+`cache_creation` 真=本轮新增）零调用映射进构成桶。交付：`analyzeRequestComposition`
+导出可同步调；同一份数据在 `options.includePromptComposition` 开时经 `system`/`prompt_composition` 观测消息每请求发一次（默认关、零成本、绝不动线缆请求）。
+「带 label」理想面：preset `systemPrompt` 增 `appendSegments: {label,text}[]`、`SystemPromptSegment` 增 `label?`（均元数据、线缆字节不变），使 Root/Runtime/Memory 各桶可分别归位。
+与 `buildSystemPromptParts` / `enumerateBuiltinToolMetadata` 同血统（ADR 0014/0022）；逐段精确真值仍待 `count_tokens`（互补，非本需求范围）。**1521 单测全绿**（+14）。
+
 进度以 `memory/project-status.md` 为唯一权威。
 
 ## v0.2 候选

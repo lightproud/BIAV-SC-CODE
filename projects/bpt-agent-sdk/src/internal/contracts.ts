@@ -427,6 +427,34 @@ export type CompactionConfig = {
   preTierMaxToolResultChars: number;
 };
 
+/** Role of a system-prompt part in the prompt-composition decomposition
+ *  (BPT-EXTENSION, 2026-07-09). */
+export type SystemPartRole =
+  | 'base'
+  | 'codebase-instructions'
+  | 'append'
+  | 'structured-output'
+  | 'environment'
+  | 'segment';
+
+/** One labeled part of the system prompt, as the engine knows it at build time
+ *  (before the parts are concatenated into wire blocks). `label` defaults to the
+ *  role but carries a caller-supplied label for `append` segments / host
+ *  `segments`, so a panel can re-bucket parts (e.g. Root / Runtime / Memory). */
+export type SystemCompositionPart = {
+  role: SystemPartRole;
+  label?: string;
+  estTokens: number;
+};
+
+/** The static (per-request-invariant) system half of the composition, built by
+ *  the query layer where the parts still exist as separate strings and passed to
+ *  analyzeRequestComposition. */
+export type SystemComposition = {
+  /** Ordered parts; the `base` part (when present) is the systemBase bucket. */
+  parts: SystemCompositionPart[];
+};
+
 export type EngineConfig = {
   model: string;
   fallbackModel?: string;
@@ -470,6 +498,15 @@ export type EngineConfig = {
    *  so subagent messages thread. Root loop leaves it undefined -> null. */
   parentToolUseId?: string | null;
   includePartialMessages: boolean;
+  /** BPT-EXTENSION (prompt-composition, 2026-07-09): when true, the loop emits a
+   *  `system`/`prompt_composition` observability message before each request.
+   *  Default false. */
+  includePromptComposition?: boolean;
+  /** Static (per-request-invariant) labeled system-part breakdown, used to give
+   *  the prompt-composition message its 需求 A systemBase/systemAppend split.
+   *  Built by the query layer; absent -> the analyzer derives a best-effort
+   *  split from the wire `system` field. */
+  systemComposition?: SystemComposition;
   sessionId: string;
   cwd: string;
   /** Absolute transcript path of THIS loop's session, when it was persisted to a

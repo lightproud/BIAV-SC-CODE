@@ -58,6 +58,7 @@ import {
   evaluateStructuredOutput,
 } from './structured-output.js';
 import { applyCacheControl } from './cache-control.js';
+import { analyzeRequestComposition } from './prompt-composition.js';
 import {
   protectedTurnIndex,
   signingModelOf,
@@ -666,6 +667,29 @@ export async function* runAgentLoop(
               ? 'first'
               : 'last',
     });
+    // Prompt-composition observability (BPT-EXTENSION): describe the request the
+    // SDK is about to send — its per-part token estimate (需求 A) and its
+    // cache_control breakpoint map (需求 B) — computed from `outgoing` (the final
+    // wire request) so the breakpoint walk reads the real markers. Read-only; the
+    // request is unchanged. Off by default.
+    if (config.includePromptComposition === true) {
+      // 需求 A estimates the pre-cache `request` (matches the compaction口径);
+      // 需求 B walks `outgoing` for the real cache_control markers.
+      const { promptComposition, cacheBreakpoints } = analyzeRequestComposition(
+        request,
+        config.systemComposition,
+        outgoing,
+      );
+      yield {
+        type: 'system',
+        subtype: 'prompt_composition',
+        uuid: randomUUID(),
+        session_id: config.sessionId,
+        model: useModel,
+        promptComposition,
+        cacheBreakpoints,
+      };
+    }
     const apiStart = Date.now();
     turnTruncated = false;
     try {

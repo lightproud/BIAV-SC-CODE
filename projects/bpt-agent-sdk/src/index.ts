@@ -32,6 +32,20 @@ export type { BuiltinToolMetadata } from './tools/index.js';
 // so a host no longer has to reach into dist/engine/prompts.js by file path.
 export { buildSystemPromptParts, buildSystemPrompt } from './engine/prompts.js';
 export type { SystemPromptParts, EnvironmentContext, PromptContext } from './engine/prompts.js';
+// BPT-EXTENSION (2026-07-09, black-pool ContextRing "上下文构成" panel request):
+// describe a request's per-part token estimate (需求 A) + cache_control
+// breakpoint map (需求 B). Same lineage as buildSystemPromptParts
+// (ADR 0014/0022) — the SDK exposes what it knows at request-build time (its own
+// tokens.ts estimator + the real cache markers) so the panel stops reverse-
+// engineering the transcript. Also emitted per-request as the
+// system/prompt_composition observability message when
+// options.includePromptComposition is set.
+export { analyzeRequestComposition } from './engine/prompt-composition.js';
+export type {
+  SystemComposition,
+  SystemCompositionPart,
+  SystemPartRole,
+} from './internal/contracts.js';
 export { getSessionInfo, listSessions } from './sessions/store.js';
 export {
   getSessionMessages,

@@ -11,6 +11,39 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.32.0 — 2026-07-09
+
+- **feat (prompt-composition observability — black-pool ContextRing "上下文构成"
+  panel request)**: the SDK now exposes the two pieces it knows for certain the
+  moment it assembles a request, so a downstream context-composition panel stops
+  reverse-engineering the transcript with character estimates.
+  - **需求 A — per-part estimate**: `analyzeRequestComposition(request, system?)`
+    returns `promptComposition` = `{ systemBase, systemAppend[], toolDefs, messages,
+    totalEstTokens }`, each with a token estimate from the SDK's OWN estimator
+    (`engine/tokens.ts`) — the same one the compaction layer uses to size the
+    context window, so the panel shares the SDK's accounting口径 instead of a
+    re-implemented tokenizer. `systemAppend` entries carry the caller's label.
+  - **需求 B — cache-breakpoint map**: `cacheBreakpoints` = `[{ afterPart,
+    prefixEstTokens }]`, one per `cache_control` marker on the outgoing request,
+    each annotated with the estimated size of the prefix it seals (tools → system
+    → messages order). Lets the panel map the API's REAL `usage` counts onto
+    content buckets at zero extra calls (`cache_read_input_tokens` ≈ a matched
+    cached prefix; `input_tokens` + `cache_creation` ≈ this turn's new tail).
+  - **Delivery**: `analyzeRequestComposition` is exported for synchronous use, and
+    the same payload is emitted per-request as a `system` / `prompt_composition`
+    observability message when `options.includePromptComposition` is set (default
+    off — zero cost when off; the wire request is never affected).
+  - **Labeled append segments (the "带 label" ideal)**: the `claude_code` preset
+    `systemPrompt` gains `appendSegments?: { label, text }[]` (BPT-EXTENSION) and
+    `SystemPromptSegment` gains `label?` — labels are metadata only (never
+    serialized; wire output byte-identical to passing the same text via `append`),
+    so the breakdown can attribute each append bucket (e.g. Root / Runtime /
+    Memory) separately.
+  - Same lineage as `buildSystemPromptParts` / `enumerateBuiltinToolMetadata`
+    (ADR 0014 / ADR 0022): the SDK surfaces what it knows at build time.
+    Complements — does NOT replace — per-segment EXACT truth, which still needs
+    the Messages API `count_tokens` endpoint (out of scope here).
+
 ## 0.31.0 — 2026-07-08
 
 - **feat (TaskOutput / TaskStop built-in tools — official-name alignment)**: the

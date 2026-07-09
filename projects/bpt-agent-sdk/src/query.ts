@@ -41,6 +41,8 @@ import type {
   EngineDeps,
   McpRegistry,
   McpToolEntry,
+  SystemComposition,
+  SystemCompositionPart,
   ToolContext,
   Transport,
 } from './internal/contracts.js';
@@ -51,6 +53,7 @@ import { DefaultMcpRegistry } from './mcp/registry.js';
 import { matchToolName, parseRule } from './permissions/rules.js';
 import { runAgentLoop } from './engine/loop.js';
 import { buildSystemPromptParts } from './engine/prompts.js';
+import { estimateTextTokens } from './engine/tokens.js';
 import { gatherEnvironment, loadProjectInstructions } from './engine/runtime-context.js';
 import { buildCompactionConfig } from './engine/compaction.js';
 import {
@@ -656,6 +659,9 @@ export function query(args: {
   // Char offset splitting the stable prefix into [base harness | appended tail]
   // for the 2nd system cache breakpoint. Only set on the string/preset path.
   let systemPromptBaseLen: number | undefined;
+  // Labeled per-part system breakdown for the prompt-composition message
+  // (BPT-EXTENSION); built here where the parts are still separate strings.
+  let systemComposition: SystemComposition | undefined;
   const sp = options.systemPrompt;
   if (sp !== null && typeof sp === 'object' && 'type' in sp && sp.type === 'segments') {
     // 4 API breakpoints total; reserve 1 for the tool schemas -> up to 3 here.
@@ -684,6 +690,24 @@ export function query(args: {
         text: buildStructuredOutputInstruction(outputFormat.schema),
       });
     }
+    // Labeled composition for the prompt-composition message: each host segment
+    // is its own append part (segments form has no engine-owned base), plus the
+    // trailing structured-output block when present.
+    const segParts: SystemCompositionPart[] = (Array.isArray(sp.segments) ? sp.segments : [])
+      .filter((s) => s !== null && typeof s.text === 'string' && s.text.length > 0)
+      .map((s) => ({
+        role: 'segment' as const,
+        label: s.label,
+        estTokens: estimateTextTokens(s.text),
+      }));
+    if (outputFormat !== undefined && segParts.length > 0) {
+      segParts.push({
+        role: 'structured-output',
+        label: 'structured-output',
+        estTokens: estimateTextTokens(buildStructuredOutputInstruction(outputFormat.schema)),
+      });
+    }
+    systemComposition = { parts: segParts };
   } else {
     // Runtime-assembly context (open reproduction of the official runtime
     // prompt): the <env> block (default-on for the preset) and CLAUDE.md /
@@ -714,10 +738,28 @@ export function query(args: {
     // appended AFTER `base`, so it lands in the slice(baseLen) tail and the
     // offset stays valid.
     systemPromptBaseLen = promptParts.base.length;
+    // Prompt-composition breakdown: the stable parts (base + codebase-instructions
+    // + append segments), then the structured-output instruction, then the
+    // volatile (cwd/env) tail — in wire order.
+    const compositionParts: SystemCompositionPart[] = [...promptParts.parts];
     if (outputFormat !== undefined) {
-      systemPromptStable += `\n\n${buildStructuredOutputInstruction(outputFormat.schema)}`;
+      const instr = buildStructuredOutputInstruction(outputFormat.schema);
+      systemPromptStable += `\n\n${instr}`;
+      compositionParts.push({
+        role: 'structured-output',
+        label: 'structured-output',
+        estTokens: estimateTextTokens(instr),
+      });
     }
     systemPromptVolatile = promptParts.volatile;
+    if (systemPromptVolatile.length > 0) {
+      compositionParts.push({
+        role: 'environment',
+        label: 'environment',
+        estTokens: estimateTextTokens(systemPromptVolatile),
+      });
+    }
+    systemComposition = { parts: compositionParts };
   }
 
   // Default-on extended thinking, claude_code preset path ONLY (E1 + E7-01).
@@ -790,6 +832,13 @@ export function query(args: {
     // (BPT-EXTENSION; the official SDK has no such knob).
     cacheTtl: options.provider?.cacheTtl,
     includePartialMessages: options.includePartialMessages === true,
+    // Prompt-composition observability (BPT-EXTENSION): emit a per-request
+    // system/prompt_composition message; off by default (zero cost, wire
+    // request unaffected). The labeled system breakdown feeds its 需求 A split.
+    ...(options.includePromptComposition === true
+      ? { includePromptComposition: true }
+      : {}),
+    ...(systemComposition !== undefined ? { systemComposition } : {}),
     sessionId: '', // resolved when the run starts
     cwd,
   };
