@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-09T08:24:25.428433+00:00",
+  "collected_at": "2026-07-09T11:52:24.233188+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 132,
+  "item_count": 130,
   "items": [
     {
       "source": "google_play",
@@ -137,6 +137,26 @@
     },
     {
       "source": "google_play",
+      "time": "2026-06-12T21:19:07",
+      "lang": "en",
+      "title": "[Google Play 好评] ★5 I really love this game! I love how it d",
+      "summary": "I really love this game! I love how it doesn't force you to grind and isn't very time capped like other games. you can play at your own pace and get any character you want! the story is also really interesting! but I wish every chapter was voiced like the prologue.... it's still very nice though!",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-4a43006a-1ec4-4854-b740-883e20e8fa1b",
+      "author": "WHO R U",
+      "engagement": 1
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-04T18:34:42",
+      "lang": "ko",
+      "title": "[Google Play 好评] ★5 크툴루 신화+슬더스+씹덕 다 해당되는데 돌파가 15까지라는 말만 듣고 안",
+      "summary": "크툴루 신화+슬더스+씹덕 다 해당되는데 돌파가 15까지라는 말만 듣고 안하다가 사야 콜라보 때 맨땅으로 시작했음. 메인스 8장 밀고 있는데 무과금으로 충분히 할 만함. 풀돌해야 성능 나오는 것도 아니라서 명함~저돌파로도 잘만 밀고, 재화 잘 퍼주고, 무엇보다 게임 자체가 재밌음. 간혹 모르면 죽어야지 식으로 기믹 설명이 불친절한 부분이 있고, 내 스펙으로는 난이도가 너무 빡빡해서 죽지 않으면 안될 것 같은 때가 있지만, 그렇기 때문에 하루에 5번 부활할 수 있는 응급 영지체가 있는 것 같다. 이제 막 한 달 됐는데 애착이 가고 앞으로 잘 됐으면 하는 게임.",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=ko#gp-78d6f7ad-d6fd-47e6-976b-8a2f5c883e44",
+      "author": "미낼",
+      "engagement": 1
+    },
+    {
+      "source": "google_play",
       "time": "2026-07-03T03:11:46",
       "lang": "id",
       "title": "[Google Play 好评] ★5 game nya bagus, niat banget sistem gacha",
@@ -253,6 +273,16 @@
       "summary": "觉得还行",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=zh_CN#gp-57f4f9db-558e-4842-b184-3a7e848970ad",
       "author": "元气豆芽（YQBean）",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-08T11:00:58",
+      "lang": "en",
+      "title": "[Google Play 中评] ★3 I'm starting to like the game but the su",
+      "summary": "I'm starting to like the game but the subtitles ruined the story and sometimes it's just too fast to read. it ruined the Aigis story ending for me.",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-66ed8864-af87-4a5a-9b51-53fd9dc816a0",
+      "author": "Gabriel Gazo",
       "engagement": 0
     },
     {
@@ -527,16 +557,6 @@
     },
     {
       "source": "google_play",
-      "time": "2026-06-12T21:19:07",
-      "lang": "en",
-      "title": "[Google Play 好评] ★5 I really love this game! I love how it d",
-      "summary": "I really love this game! I love how it doesn't force you to grind and isn't very time capped like other games. you can play at your own pace and get any character you want! the story is also really interesting! but I wish every chapter was voiced like the prologue.... it's still very nice though!",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-4a43006a-1ec4-4854-b740-883e20e8fa1b",
-      "author": "WHO R U",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
       "time": "2026-06-12T19:42:53",
       "lang": "en",
       "title": "[Google Play 好评] ★5 Top tier tactical game!!",
@@ -627,32 +647,12 @@
     },
     {
       "source": "google_play",
-      "time": "2026-06-09T11:00:28",
-      "lang": "en",
-      "title": "[Google Play 好评] ★5 This Game Is Too Good. So much f2p. I st",
-      "summary": "This Game Is Too Good. So much f2p. I started early and have most of the characters.",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-483bac53-ca3b-4138-954b-39d89c66b787",
-      "author": "Akash Kumar Sharma",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
       "time": "2026-07-06T12:21:34",
       "lang": "ko",
       "title": "[Google Play 好评] ★4 재밌긴한데 스토리 영상 보고오면 화면이 멈춰요. 그것만 고쳐주세요",
       "summary": "재밌긴한데 스토리 영상 보고오면 화면이 멈춰요. 그것만 고쳐주세요",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=ko#gp-ea3efa69-914f-40ac-b463-299e5cf194f2",
       "author": "김나연",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-07-04T18:34:42",
-      "lang": "ko",
-      "title": "[Google Play 好评] ★5 크툴루 신화+슬더스+씹덕 다 해당되는데 돌파가 15까지라는 말만 듣고 안",
-      "summary": "크툴루 신화+슬더스+씹덕 다 해당되는데 돌파가 15까지라는 말만 듣고 안하다가 사야 콜라보 때 맨땅으로 시작했음. 메인스 8장 밀고 있는데 무과금으로 충분히 할 만함. 풀돌해야 성능 나오는 것도 아니라서 명함~저돌파로도 잘만 밀고, 재화 잘 퍼주고, 무엇보다 게임 자체가 재밌음. 간혹 모르면 죽어야지 식으로 기믹 설명이 불친절한 부분이 있고, 내 스펙으로는 난이도가 너무 빡빡해서 죽지 않으면 안될 것 같은 때가 있지만, 그렇기 때문에 하루에 5번 부활할 수 있는 응급 영지체가 있는 것 같다. 이제 막 한 달 됐는데 애착이 가고 앞으로 잘 됐으면 하는 게임.",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=ko#gp-78d6f7ad-d6fd-47e6-976b-8a2f5c883e44",
-      "author": "미낼",
       "engagement": 0
     },
     {
@@ -723,6 +723,16 @@
       "summary": "ชอบเกมนี้มากๆเลยครับ 5 ดาวไปเลย :DDDD",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=th#gp-b790cb16-d367-4426-b648-333e6f90f982",
       "author": "Thanabodi Ronkrathok",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-08T08:25:04",
+      "lang": "id",
+      "title": "[Google Play 好评] ★5 Menarik banget ceritanya. Nuansa gelap d",
+      "summary": "Menarik banget ceritanya. Nuansa gelap dan game nya cukup kreatif. Semoga terus berkembang dan karakternya terus bertambah.",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=id#gp-3a219a1e-6aa4-48fd-9a08-402115e02c10",
+      "author": "Adveka Bassar",
       "engagement": 0
     },
     {
@@ -927,16 +937,6 @@
     },
     {
       "source": "google_play",
-      "time": "2026-06-09T11:01:01",
-      "lang": "ms",
-      "title": "[Google Play 好评] ★5 peak artstyle",
-      "summary": "peak artstyle",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=ms#gp-4a405ed1-6483-401f-ba9b-7081e6a3bc85",
-      "author": "Hajar Basri",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
       "time": "2026-07-05T10:22:19",
       "lang": "fr",
       "title": "[Google Play 中评] ★3 c'est dommage car le jeu en soit mériter",
@@ -963,16 +963,6 @@
       "summary": "Exceptionnel",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=fr#gp-2c58416b-48d3-4c1b-88a1-907ca7e5d4a3",
       "author": "Jawed HADJI",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-06-09T11:40:23",
-      "lang": "fr",
-      "title": "[Google Play 好评] ★5 incroyable",
-      "summary": "incroyable",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=fr#gp-c3bca509-d292-442b-a8be-b9dfb3a137cf",
-      "author": "martial bambara",
       "engagement": 0
     },
     {
@@ -1313,16 +1303,6 @@
       "summary": "物語もゲーム性も何もかも最高",
       "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-9e9a10ef-a9cf-4004-84d7-9b3f04b0fff3",
       "author": "ミヒ0505",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-06-09T09:43:21",
-      "lang": "ja",
-      "title": "[Google Play 差评] ★2 微妙でした。",
-      "summary": "微妙でした。",
-      "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-e3cab66e-3ccb-4ded-b733-9097c3052432",
-      "author": "なるパンダ",
       "engagement": 0
     }
   ]

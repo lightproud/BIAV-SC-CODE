@@ -1,8 +1,8 @@
 {
   "date": "2026-07-08",
-  "archived_at": "2026-07-09T08:25:06.459950+00:00",
+  "archived_at": "2026-07-09T11:53:04.551446+00:00",
   "source": "google_play",
-  "item_count": 4,
+  "item_count": 6,
   "items": [
     {
       "title": "[Google Play 好评] ★4 gamenya bagus, tapi pas di in game(battl",
@@ -58,6 +58,34 @@
       "tags": [],
       "lang": "zh",
       "platform_region": "cn",
+      "region": "global"
+    },
+    {
+      "title": "[Google Play 中评] ★3 I'm starting to like the game but the su",
+      "summary": "I'm starting to like the game but the subtitles ruined the story and sometimes it's just too fast to read. it ruined the Aigis story ending for me.",
+      "source": "google_play",
+      "time": "2026-07-08T11:00:58",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-66ed8864-af87-4a5a-9b51-53fd9dc816a0",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "Gabriel Gazo",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "us",
+      "region": "global"
+    },
+    {
+      "title": "[Google Play 好评] ★5 Menarik banget ceritanya. Nuansa gelap d",
+      "summary": "Menarik banget ceritanya. Nuansa gelap dan game nya cukup kreatif. Semoga terus berkembang dan karakternya terus bertambah.",
+      "source": "google_play",
+      "time": "2026-07-08T08:25:04",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=id#gp-3a219a1e-6aa4-48fd-9a08-402115e02c10",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "Adveka Bassar",
+      "tags": [],
+      "lang": "id",
+      "platform_region": "id",
       "region": "global"
     }
   ],
