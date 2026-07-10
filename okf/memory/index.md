@@ -1,4 +1,4 @@
-# 银芯记忆层指针 (47)
+# 银芯记忆层指针 (48)
 
 每张卡是一份**指针** concept，正文权威在 `memory/**`，此处不复刻。核心 10 份 + 全层扩展。
 
@@ -32,6 +32,7 @@
 * [Best Game Wiki Features & UX Patterns Research](/memory/memory-ext-research-best-wiki-features.md) - **Core Info Block (Infobox)**
 * [技能写作审计标尺](/memory/memory-ext-skill-authoring-standard.md) - 技能存在的唯一目的：**从随机的 AI 里榨出确定性（predictability）——同样的「过程」，而非同样的「输出」**。下文每条杠杆
 * [大文件存储方案讨论](/memory/memory-ext-storage-discussion.md) - 项目中有两类大文件存储需求：
+* [挂账台账（待办 / 待裁唯一权威）](/memory/memory-ext-todo.md) - *建档：2026-07-10 全仓扫描清点（`rg "待守密人|待裁|挂账"` + 逐条溯源实证），艾瑞卡会话。*
 * [Wiki characters.json Schema v1.0.1](/memory/memory-ext-wiki-characters-schema-v1.md) - 1. 覆盖 72 角色全部可预见字段，并为 B3 揭露的四类缺口留有表达位：技能引导、背景故事、命轮、立绘
 * [Wiki Phase 2 缺口清单](/memory/memory-ext-wiki-phase-2-gap-inventory.md) - 艾瑞卡在扫描仓库时检测到**严重的记忆-现实脱节**：
 * [Workflow API Key 使用清查](/memory/memory-ext-workflow-api-key-audit.md) - **说明**：

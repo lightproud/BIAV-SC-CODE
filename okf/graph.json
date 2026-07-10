@@ -1,8 +1,8 @@
 {
   "generated": "2026-07-10",
   "stats": {
-    "nodes": 348,
-    "edges": 403
+    "nodes": 349,
+    "edges": 404
   },
   "nodes": [
     {
@@ -1611,6 +1611,16 @@
       "id": "/memory/memory-ext-storage-discussion.md",
       "type": "knowledge-pointer",
       "title": "大文件存储方案讨论",
+      "tags": [
+        "memory",
+        "data_layer:curated"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/memory/memory-ext-todo.md",
+      "type": "knowledge-pointer",
+      "title": "挂账台账（待办 / 待裁唯一权威）",
       "tags": [
         "memory",
         "data_layer:curated"
@@ -4680,6 +4690,12 @@
     },
     {
       "source": "/memory/memory-ext-storage-discussion.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-ext-todo.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
       "rel_type": "mention"
