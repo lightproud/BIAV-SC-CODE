@@ -1,4 +1,4 @@
-# 社区情报数据源 (17)
+# 社区情报数据源 (18)
 
 源：`projects/news/output/source-health.json`。每个平台一份**指针** concept；
 本体（JSONL/JSON 时序档案）原地不动，concept 仅持 `resource` 指针。
@@ -7,6 +7,7 @@
 ## 平台
 
 * [appstore](/sources/appstore.md) - 全量 688 条 / active
+* [arca_live](/sources/arca_live.md) - 全量 0 条 / active
 * [bilibili](/sources/bilibili.md) - 全量 2648 条 / active
 * [discord](/sources/discord.md) - 全量 8004183 条 / active
 * [google_play](/sources/google_play.md) - 全量 1247 条 / active

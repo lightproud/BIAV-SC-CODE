@@ -1,8 +1,8 @@
 {
   "generated": "2026-07-10",
   "stats": {
-    "nodes": 347,
-    "edges": 402
+    "nodes": 348,
+    "edges": 403
   },
   "nodes": [
     {
@@ -3137,6 +3137,18 @@
       "url": "news/"
     },
     {
+      "id": "/sources/arca_live.md",
+      "type": "dataset",
+      "title": "arca_live 社区数据源",
+      "tags": [
+        "data_layer:full_archive",
+        "platform:arca_live",
+        "health:active"
+      ],
+      "tier": "skeleton",
+      "url": "news/"
+    },
+    {
       "id": "/sources/bilibili.md",
       "type": "dataset",
       "title": "bilibili 社区数据源",
@@ -6121,6 +6133,12 @@
     {
       "source": "/news-output/news-output-appstore.md",
       "target": "/sources/appstore.md",
+      "rel": "抽样自",
+      "rel_type": "cross"
+    },
+    {
+      "source": "/news-output/news-output-arca-live.md",
+      "target": "/sources/arca_live.md",
       "rel": "抽样自",
       "rel_type": "cross"
     },
