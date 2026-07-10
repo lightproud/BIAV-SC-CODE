@@ -145,112 +145,162 @@ export class AnthropicTransport implements Transport {
     const timeoutMs = this.provider.timeoutMs ?? DEFAULT_TIMEOUT_MS;
     const maxRetries = resolveMaxRetries(this.provider, this.env);
 
-    // ---- request phase: retries allowed -----------------------------------
-    const { response, signal, timeoutSignal } = await this.requestWithRetries(
-      bodyJson,
-      headers,
-      callerSignal,
-      timeoutMs,
-      maxRetries,
-      onRetry,
-    );
-
-    // ---- streaming phase: NEVER retried ------------------------------------
-    const requestId = response.headers.get('request-id') ?? undefined;
-    if (!response.body) {
-      throw new APIConnectionError('Messages API response has no body');
-    }
-    // Idle watchdog: abort a silently-stalled stream after `idleMs` with no
-    // server event — faster and more diagnosable than the whole-request
-    // timeout. Anthropic emits periodic `ping` events, so a gap this long means
-    // the connection is stuck. `0` disables. Official env analogs
-    // (CLAUDE_ENABLE_STREAM_WATCHDOG / CLAUDE_STREAM_IDLE_TIMEOUT_MS) are
-    // honored below the provider option. (Design ref: Codex
-    // `stream_idle_timeout`; reimplemented, no code copied.)
-    const idleMs = resolveStreamIdleMs(this.provider, this.env);
-    const idleController = idleMs > 0 ? new AbortController() : undefined;
-    const streamSignal = idleController
-      ? AbortSignal.any([signal, idleController.signal])
-      : signal;
-    let idleTimer: ReturnType<typeof setTimeout> | undefined;
-    const resetIdle = (): void => {
-      if (!idleController) return;
-      if (idleTimer) clearTimeout(idleTimer);
-      idleTimer = setTimeout(() => idleController.abort(), idleMs);
-      // Don't let the watchdog alone keep the process alive.
-      (idleTimer as { unref?: () => void }).unref?.();
-    };
-    let eventCount = 0;
-    try {
-      resetIdle();
-      for await (const frame of parseSSE(response.body, streamSignal)) {
-        resetIdle();
-        let parsed: unknown;
-        try {
-          parsed = JSON.parse(frame.data);
-        } catch (err) {
-          // Anthropic-native frames ALWAYS carry an event name. An event-less
-          // frame that is not JSON is foreign framing noise from a translating
-          // gateway - the canonical case is an OpenAI-style `data: [DONE]`
-          // terminator appended after the Anthropic event stream (observed on
-          // a corporate gateway's /api/anthropic endpoint, 2026-07-05). The
-          // official client never trips on it because it stops consuming at
-          // message_stop; skipping here aligns tolerance without loosening
-          // anything on real Anthropic frames.
-          if (frame.event === undefined) {
-            this.debug(
-              `transport: skipping event-less non-JSON SSE frame after ${eventCount} event(s): ` +
-                frame.data.slice(0, 120),
-            );
-            continue;
-          }
-          throw new APIConnectionError(
-            `Malformed SSE payload for event "${frame.event}" after ${eventCount} event(s): ` +
-              frame.data.slice(0, 120),
-            err,
-            'sse_malformed_frame',
-          );
-        }
-        if (frame.event === 'error' || isErrorPayload(parsed)) {
-          const info = extractErrorPayload(parsed) ?? {
-            type: 'api_error',
-            message: frame.data,
-          };
-          throw new APIStatusError(
-            statusForErrorType(info.type),
-            info.type,
-            info.message,
-            requestId,
-          );
-        }
-        eventCount += 1;
-        yield parsed as RawMessageStreamEvent;
-        // The Messages API streams exactly one message; message_stop is its
-        // terminal event. Stop consuming here - official-client lifecycle -
-        // so trailing gateway appendices (e.g. `data: [DONE]`) are never
-        // parsed at all and the connection is released promptly. parseSSE's
-        // finally cancels the underlying reader on early return.
-        if ((parsed as { type?: string }).type === 'message_stop') {
-          this.debug(
-            `transport: stream completed at message_stop after ${eventCount} event(s)`,
-          );
-          return;
-        }
-      }
-    } catch (err) {
-      throw mapStreamError(
-        err,
+    // Empty-stream retry: an HTTP 200 whose SSE body carries ZERO events (not
+    // even message_start) before closing is a replay-SAFE non-start — the
+    // gateway accepted the request but delivered nothing (an observed idealab
+    // throttle shape under concurrent fan-out). Unlike a mid-stream drop (which
+    // must never replay a partially consumed turn), zero events means zero
+    // consumption, so re-issuing the whole request is safe. We retry it HERE,
+    // inside the transport, so BOTH the main conversation and subagents (which
+    // run on this same transport, out of reach of any host-level retry) self-
+    // heal without the caller ever seeing the empty stream. Bounded by the same
+    // maxRetries budget; on exhaustion we surface a retryable-class
+    // `empty_stream` APIConnectionError rather than returning a zero-event
+    // stream and letting the engine fall through to accumulator.finalize()'s
+    // raw `Protocol error: finalize before message_start`.
+    let emptyStreamRetries = 0;
+    for (;;) {
+      // ---- request phase: retries allowed ---------------------------------
+      const { response, signal, timeoutSignal } = await this.requestWithRetries(
+        bodyJson,
+        headers,
         callerSignal,
-        timeoutSignal,
         timeoutMs,
-        eventCount,
-        idleController?.signal,
-        idleMs,
+        maxRetries,
+        onRetry,
       );
-    } finally {
-      if (idleTimer) clearTimeout(idleTimer);
+
+      // ---- streaming phase: NEVER retried once an event is delivered -------
+      const requestId = response.headers.get('request-id') ?? undefined;
+      if (!response.body) {
+        throw new APIConnectionError('Messages API response has no body');
+      }
+      // Idle watchdog: abort a silently-stalled stream after `idleMs` with no
+      // server event — faster and more diagnosable than the whole-request
+      // timeout. Anthropic emits periodic `ping` events, so a gap this long
+      // means the connection is stuck. `0` disables. Official env analogs
+      // (CLAUDE_ENABLE_STREAM_WATCHDOG / CLAUDE_STREAM_IDLE_TIMEOUT_MS) are
+      // honored below the provider option. (Design ref: Codex
+      // `stream_idle_timeout`; reimplemented, no code copied.) A STALLED stream
+      // (connected, then silent) is distinct from an EMPTY one (closed at once,
+      // no event): the watchdog handles the former, the eventCount check below
+      // handles the latter.
+      const idleMs = resolveStreamIdleMs(this.provider, this.env);
+      const idleController = idleMs > 0 ? new AbortController() : undefined;
+      const streamSignal = idleController
+        ? AbortSignal.any([signal, idleController.signal])
+        : signal;
+      let idleTimer: ReturnType<typeof setTimeout> | undefined;
+      const resetIdle = (): void => {
+        if (!idleController) return;
+        if (idleTimer) clearTimeout(idleTimer);
+        idleTimer = setTimeout(() => idleController.abort(), idleMs);
+        // Don't let the watchdog alone keep the process alive.
+        (idleTimer as { unref?: () => void }).unref?.();
+      };
+      let eventCount = 0;
+      try {
+        resetIdle();
+        for await (const frame of parseSSE(response.body, streamSignal)) {
+          resetIdle();
+          let parsed: unknown;
+          try {
+            parsed = JSON.parse(frame.data);
+          } catch (err) {
+            // Anthropic-native frames ALWAYS carry an event name. An event-less
+            // frame that is not JSON is foreign framing noise from a translating
+            // gateway - the canonical case is an OpenAI-style `data: [DONE]`
+            // terminator appended after the Anthropic event stream (observed on
+            // a corporate gateway's /api/anthropic endpoint, 2026-07-05). The
+            // official client never trips on it because it stops consuming at
+            // message_stop; skipping here aligns tolerance without loosening
+            // anything on real Anthropic frames.
+            if (frame.event === undefined) {
+              this.debug(
+                `transport: skipping event-less non-JSON SSE frame after ${eventCount} event(s): ` +
+                  frame.data.slice(0, 120),
+              );
+              continue;
+            }
+            throw new APIConnectionError(
+              `Malformed SSE payload for event "${frame.event}" after ${eventCount} event(s): ` +
+                frame.data.slice(0, 120),
+              err,
+              'sse_malformed_frame',
+            );
+          }
+          if (frame.event === 'error' || isErrorPayload(parsed)) {
+            const info = extractErrorPayload(parsed) ?? {
+              type: 'api_error',
+              message: frame.data,
+            };
+            throw new APIStatusError(
+              statusForErrorType(info.type),
+              info.type,
+              info.message,
+              requestId,
+            );
+          }
+          eventCount += 1;
+          yield parsed as RawMessageStreamEvent;
+          // The Messages API streams exactly one message; message_stop is its
+          // terminal event. Stop consuming here - official-client lifecycle -
+          // so trailing gateway appendices (e.g. `data: [DONE]`) are never
+          // parsed at all and the connection is released promptly. parseSSE's
+          // finally cancels the underlying reader on early return.
+          if ((parsed as { type?: string }).type === 'message_stop') {
+            this.debug(
+              `transport: stream completed at message_stop after ${eventCount} event(s)`,
+            );
+            return;
+          }
+        }
+      } catch (err) {
+        throw mapStreamError(
+          err,
+          callerSignal,
+          timeoutSignal,
+          timeoutMs,
+          eventCount,
+          idleController?.signal,
+          idleMs,
+        );
+      } finally {
+        if (idleTimer) clearTimeout(idleTimer);
+      }
+
+      // The stream ended without a terminal message_stop. Zero events => the
+      // body was empty (replay-safe): retry the whole request within the shared
+      // budget instead of returning an unusable zero-event stream. Any caller
+      // abort observed here wins over the retry.
+      if (eventCount === 0) {
+        if (callerSignal?.aborted) throw new AbortError();
+        if (emptyStreamRetries < maxRetries) {
+          emptyStreamRetries += 1;
+          this.debug(
+            `transport: empty stream (HTTP 200, zero SSE events); ` +
+              `retry ${emptyStreamRetries}/${maxRetries}`,
+          );
+          // Surface it like a network-level retry (no HTTP status) so the loop
+          // emits an api_retry observability message, same as a dropped socket.
+          onRetry?.({ attempt: emptyStreamRetries, maxRetries });
+          await this.backoff(emptyStreamRetries, undefined, callerSignal);
+          continue;
+        }
+        throw new APIConnectionError(
+          `Messages API returned an empty stream (HTTP 200, zero SSE events) ` +
+            `after ${emptyStreamRetries + 1} attempt(s)`,
+          undefined,
+          'empty_stream',
+        );
+      }
+
+      // A non-empty stream that ended without message_stop (server closed after
+      // delivering some events): complete normally — the engine finalizes /
+      // salvages whatever arrived. Unchanged from the original single attempt.
+      this.debug(`transport: stream completed after ${eventCount} event(s)`);
+      return;
     }
-    this.debug(`transport: stream completed after ${eventCount} event(s)`);
   }
 
   /**

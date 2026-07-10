@@ -4,9 +4,10 @@
  * hook runner and MCP registry are minimal recordable fakes.
  */
 
-import { describe, expect, it } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import { MessageAccumulator } from '../src/engine/accumulator.js';
+import { AnthropicTransport } from '../src/transport/anthropic.js';
 import {
   addUsage,
   estimateCostUsd,
@@ -53,6 +54,7 @@ import {
   textReplyEvents,
   toolUseReplyEvents,
 } from './helpers/mock-transport.js';
+import { makeSSEFetch } from './helpers/sse-fetch.js';
 import { stampSigningModel } from '../src/engine/thinking-provenance.js';
 
 // ---------------------------------------------------------------------------
@@ -598,6 +600,50 @@ describe('pricing', () => {
 // ---------------------------------------------------------------------------
 // runAgentLoop
 // ---------------------------------------------------------------------------
+
+describe('runAgentLoop empty-stream self-heal (transport-level retry)', () => {
+  afterEach(() => {
+    vi.unstubAllGlobals();
+    vi.restoreAllMocks();
+  });
+
+  // Regression for the idealab concurrent-fan-out crash: an HTTP 200 with a
+  // zero-event SSE body used to fall through to accumulator.finalize() and
+  // throw a raw `Protocol error: finalize before message_start`, crashing the
+  // turn (and, for subagents on the same transport, the whole child). The
+  // transport now retries the replay-safe empty stream internally, so the loop
+  // self-heals with no host involvement.
+  it('an empty first stream self-heals: the loop retries and yields the assistant reply', async () => {
+    // Pin backoff jitter so the single empty-stream retry waits ~500ms.
+    vi.spyOn(Math, 'random').mockReturnValue(0);
+    // 1st fetch: 200 + empty SSE body (zero events). 2nd: a normal text reply.
+    const fetch = makeSSEFetch([[], textReplyEvents('Hello world')]);
+    vi.stubGlobal('fetch', fetch);
+    const transport = new AnthropicTransport({
+      provider: { apiKey: 'k' },
+      env: {},
+      debug: () => {},
+    });
+    const deps = makeDeps(transport);
+    const history = [{ role: 'user' as const, content: 'hi' }];
+
+    const messages = await collect(runAgentLoop(history, deps, makeConfig()));
+
+    const assistant = messages.find((m) => m.type === 'assistant') as
+      | SDKAssistantMessage
+      | undefined;
+    expect(assistant).toBeDefined();
+    expect(assistant!.message.content).toEqual([{ type: 'text', text: 'Hello world' }]);
+    const result = lastResult(messages);
+    expect(result.subtype).toBe('success');
+    if (result.subtype === 'success') expect(result.result).toBe('Hello world');
+    // The empty stream + the healed retry = exactly two fetches, one turn.
+    expect(fetch.requests).toHaveLength(2);
+    expect(result.num_turns).toBe(1);
+    // The empty-stream retry surfaced an api_retry observability message.
+    expect(messages.some((m) => m.type === 'api_retry')).toBe(true);
+  });
+});
 
 describe('runAgentLoop', () => {
   it('happy path: yields assistant message then a success result', async () => {

@@ -14,7 +14,7 @@ import {
   APIStatusError,
   ConfigurationError,
 } from '../src/errors.js';
-import type { StreamRequest } from '../src/internal/contracts.js';
+import type { RetryInfo, StreamRequest } from '../src/internal/contracts.js';
 import type { ProviderConfig, RawMessageStreamEvent } from '../src/types.js';
 import { textReplyEvents } from './helpers/mock-transport.js';
 
@@ -98,6 +98,19 @@ function sseResponse(text: string, headers: Record<string, string> = {}): Respon
     status: 200,
     headers: { 'content-type': 'text/event-stream', ...headers },
   });
+}
+
+/** A 200 response whose SSE body closes immediately with ZERO events - the
+ *  "HTTP 200 + empty stream" idealab-throttle shape. */
+function emptySseResponse(): Response {
+  return new Response(
+    new ReadableStream<Uint8Array>({
+      start(controller) {
+        controller.close();
+      },
+    }),
+    { status: 200, headers: { 'content-type': 'text/event-stream' } },
+  );
 }
 
 /** Minimal successful stream body: ping + message_stop. */
@@ -789,6 +802,78 @@ describe('AnthropicTransport streaming', () => {
     expect(error).toBeInstanceOf(APIConnectionError);
     // idle disabled -> the whole-request timeout is the terminal cause.
     expect((error as Error).message).toMatch(/timed out after 40ms/);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// AnthropicTransport - empty-stream retry (idealab throttle self-heal)
+// ---------------------------------------------------------------------------
+
+describe('AnthropicTransport empty-stream retry', () => {
+  it('retries an empty stream (HTTP 200, zero SSE events) then completes on the healed retry', async () => {
+    // Pin backoff jitter so the single retry waits a deterministic ~500ms.
+    vi.spyOn(Math, 'random').mockReturnValue(0);
+    const fetchMock = stubFetch([
+      () => emptySseResponse(), // 200, empty body -> replay-safe non-start
+      () => sseResponse(okSse()), // healed: a real stream
+    ]);
+    const t = makeTransport({ provider: { apiKey: 'k' } });
+    const events = await collect(t.stream(baseReq()));
+    expect(events).toEqual(OK_EVENTS);
+    expect(fetchMock).toHaveBeenCalledTimes(2);
+  });
+
+  it('never returns normally on an empty stream: persistent empties exhaust the budget into an empty_stream APIConnectionError', async () => {
+    vi.spyOn(Math, 'random').mockReturnValue(0);
+    const fetchMock = stubFetch([
+      () => emptySseResponse(),
+      () => emptySseResponse(),
+    ]);
+    const t = makeTransport({ provider: { apiKey: 'k', maxRetries: 1 } });
+    const err = await captureError(collect(t.stream(baseReq())));
+    // The crux: a diagnosable retryable-class error, NOT a raw
+    // `Protocol error: finalize before message_start` bubbling out of the loop.
+    expect(err).toBeInstanceOf(APIConnectionError);
+    expect((err as APIConnectionError).code).toBe('empty_stream');
+    expect((err as Error).message).toMatch(/empty stream/i);
+    expect((err as Error).message).toMatch(/after 2 attempt\(s\)/);
+    expect(fetchMock).toHaveBeenCalledTimes(2); // initial + 1 retry
+  });
+
+  it('with maxRetries 0 an empty stream is not retried but STILL becomes empty_stream (finalize raw-throw is unreachable)', async () => {
+    const fetchMock = stubFetch([() => emptySseResponse()]);
+    const t = makeTransport({ provider: { apiKey: 'k', maxRetries: 0 } });
+    const err = await captureError(collect(t.stream(baseReq())));
+    expect(err).toBeInstanceOf(APIConnectionError);
+    expect((err as APIConnectionError).code).toBe('empty_stream');
+    expect((err as Error).message).toMatch(/after 1 attempt\(s\)/);
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+  });
+
+  it('an empty-stream retry fires onRetry with a network-level shape (no HTTP status), like a dropped socket', async () => {
+    vi.spyOn(Math, 'random').mockReturnValue(0);
+    stubFetch([() => emptySseResponse(), () => sseResponse(okSse())]);
+    const t = makeTransport({ provider: { apiKey: 'k' } });
+    const retries: RetryInfo[] = [];
+    const events = await collect(
+      t.stream(baseReq({ onRetry: (info) => retries.push(info) })),
+    );
+    expect(events).toEqual(OK_EVENTS);
+    expect(retries).toHaveLength(1);
+    expect(retries[0]).toMatchObject({ attempt: 1 });
+    expect(retries[0]!.status).toBeUndefined();
+  });
+
+  it('a caller abort during the empty-stream backoff wins over the retry', async () => {
+    vi.spyOn(Math, 'random').mockReturnValue(0);
+    const fetchMock = stubFetch([() => emptySseResponse(), () => sseResponse(okSse())]);
+    const t = makeTransport({ provider: { apiKey: 'k' } });
+    const ac = new AbortController();
+    // Abort while the transport is backing off before the retry fetch.
+    const onRetry = (): void => ac.abort();
+    const err = await captureError(collect(t.stream(baseReq({ signal: ac.signal, onRetry }))));
+    expect(err).toBeInstanceOf(AbortError);
+    expect(fetchMock).toHaveBeenCalledTimes(1); // never reached the retry fetch
   });
 });
 

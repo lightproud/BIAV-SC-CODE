@@ -11,6 +11,56 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.36.0 — 2026-07-09
+
+**Retry an empty stream (HTTP 200, zero SSE events) instead of crashing the turn**
+(black-pool request). Under concurrent fan-out the idealab gateway occasionally
+answered a request with HTTP 200 but a body that closed with ZERO SSE events —
+not even `message_start`. The transport's streaming loop `for await`-ed nothing,
+returned normally, and the engine fell through to `accumulator.finalize()`, which
+threw a raw `Protocol error: finalize before message_start` OUTSIDE the streaming
+try/catch — an uncaught crash of the whole `query()` turn. Subagents run on the
+same transport out of reach of any host-level retry, so a fan-out child that hit
+this died outright (the black-pool `streamSdkPinned` symptom patch only covered
+the main conversation).
+
+- **root cause: empty stream ≠ mid-stream truncation.** A drop *after* events
+  (`eventCount > 0`) is a truncated turn — never replayable, salvaged by E3. An
+  empty stream (`eventCount === 0`) is a replay-SAFE non-start: zero events
+  consumed, zero yielded. It had no dedicated handling and fell to finalize's
+  raw throw.
+- **fix: transport-internal empty-stream retry.** `AnthropicTransport.streamRequest`
+  now wraps the request+stream in a retry loop: a stream that ends with zero
+  events is re-issued (exponential backoff + jitter, honoring the caller abort),
+  bounded by the same `maxRetries` budget. Because the retry lives INSIDE the
+  transport, both the main conversation AND subagents self-heal with no host
+  involvement. The transport now NEVER returns a zero-event stream normally —
+  it either heals to a real stream or, on budget exhaustion, throws a
+  retryable-class `APIConnectionError` with the new stable code `empty_stream`
+  (message: "empty stream (HTTP 200, zero SSE events) after N attempt(s)"). The
+  finalize raw-throw is therefore unreachable from empty streams even at
+  `maxRetries: 0`.
+- **observability: an empty-stream retry fires `onRetry`** with a network-level
+  shape (no HTTP status), so the loop emits an `api_retry` message exactly like a
+  dropped socket.
+- **new error code:** `empty_stream` added to the `ErrorCode` union (append-only;
+  attached by the transport at its throw site).
+- **unchanged:** normal streams, real mid-stream truncation (E3 salvage,
+  `eventCount > 0`), caller abort, and idle-watchdog timeout all keep their exact
+  behavior — a stalled stream (connected then silent) is still the idle
+  watchdog's job (`stream_idle_timeout`), distinct from an empty stream (closed
+  at once with no event).
+- **deferred (deliberate scope):** the related "subagent stuck on a silent
+  stream" ask — a shorter, per-loop/per-subagent `streamIdleTimeoutMs` — is a
+  separate change to the `StreamRequest` contract + subagent runtime and is NOT
+  in this build. Filed as a follow-up; the current transport-wide
+  `streamIdleTimeoutMs` (default 300000ms) is unchanged.
+- Tests: `tests/transport.test.ts` (empty-stream retry + heal, exhaustion →
+  `empty_stream`, `maxRetries: 0` still throws not returns, `onRetry` shape,
+  abort-during-backoff); `tests/engine.test.ts` (end-to-end: an empty first
+  stream self-heals and the loop yields the assistant reply — the black-pool
+  crash regression). Full suite 1554 pass / 2 skip (rebased onto 0.35.0's
+  OpenAI translating transport; no interaction).
 ## 0.35.0 — 2026-07-09
 
 **OpenAI protocol support** (`provider.protocol: 'openai-chat'`, BPT-EXTENSION).
