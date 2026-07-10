@@ -1,5 +1,10 @@
 # 诊断备忘：discord 全量 3.2G 仍在 git —— 状态与瘦身下一步
 
+> **⚠ 已被覆盖（2026-07-10 对账补）**：本备忘描述 2026-06-20 时点状态（discord 在
+> `projects/news/data/discord/channels/`）。次日 2026-06-21 守密人裁定 de-tier / text 全量
+> 迁入 `Public-Info-Pool/Record/Community/discord/` 永驻 git，本档「瘦身下一步」议题已闭合。
+> 仅供历史追溯。
+>
 > 2026-06-20 /grill 会话。承接 RELEASES.md §三与 lesson #40。
 > **守密人 2026-06-19 已澄清**：下方「history backfill」是守密人从笔记本一次性手动回填、
 > 已完成、永不再跑。**不存在管线对冲，无 workflow 需修**（艾瑞卡早先「两条 CI 管线对冲」

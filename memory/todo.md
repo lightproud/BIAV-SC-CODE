@@ -16,7 +16,6 @@
 
 | ID | 账目 | 类别 | 源出处 | 状态 |
 |----|------|------|--------|------|
-| T3 | CI required `test` 检查是否重启（与 §7.6「自查自合」现行政策二选一：重启即部分回退 2026-06-21 撤检查裁定） | 裁定 | `memory/project-status.md` 2026-07-02 批次注③ | 开 |
 | T4 | dispatch 一轮真 L5（验 code-01 残余 + run-l35 双臂封印 KD-L35-02，$ 帽内）；不派则一致性线判定收官 | 预算 | `memory/project-status.md`「引擎工单账目结算 r5」段 | 开 |
 | T5 | /goal 提示词快照待上游露出（每周参照刷新 CI `refresh-claude-code-prompts.yml` 自动观察） | 观察 | `memory/project-status.md` v0.38 段挂账注 | 开 |
 | T6 | 测试长尾：L3.5 双臂升门禁（自注「版本稳定后」）+ MCP 差分第二批（schema 语义 / annotations / stdio-http 传输） | 观察 | `memory/project-status.md` 一致性测试段 | 开 |
@@ -42,6 +41,7 @@
 | C4 | settingSources 默认语义反转升钉 | v0.8.0（守密人「确定升钉了」，2026-07-05） |
 | C5 | B 类官方骨架提示词再现裁定 | `decisions.md` 2026-07-10（「结构再现 + 文本自写」默认，随 v0.39 工单落档） |
 | C6 | 委派引擎四缝（coordinator/SendMessage、ExitPlanMode、调度归宿、通知面） | ExitPlanMode/Monitor/Workflow 等随 PR #480；O-B2 SendMessage + coordinator 预设随 PR #567（v0.42.0，2026-07-10） |
+| T3 | CI required `test` 检查是否重启 | `decisions.md` 2026-07-10 维护态节拍表条③：重启获批（Ruleset 恢复 required test + up-to-date），待守密人手动勾选生效、勾选前过渡期仍按自查自合 |
 
 ---
 

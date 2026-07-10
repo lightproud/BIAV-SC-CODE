@@ -42,6 +42,8 @@
 | 游戏世界观 | `memory/morimens-context.md` | 黑池消费的领域知识 |
 | 设计决策 | `assets/data/design-decisions.json` | 黑池消费的产品哲学 |
 | 卡牌系统 | `assets/data/card-system.json` | 黑池消费的机制结构化 |
+| 策展知识层打包 | `python3 scripts/build_okf_bundle.py --tarball <path>` 产出 OKF bundle `.tar.gz` | 黑池消费的知识层单向线格式（2026-07-04 起，见 CLAUDE.md §6.1）|
+| 工程产物 SDK | `silver-core-sdk-<version>.tgz`（`npm pack` 产物，原名 bpt-agent-sdk、2026-07-10 更名）| 黑池 BPT Desktop pin 消费的引擎（非使命线，方向同 §1.1-HC 单向输出）|
 
 ### 黑池输入至银芯（禁止清单）
 

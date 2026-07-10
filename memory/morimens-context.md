@@ -205,4 +205,4 @@ Murphy: Fauxborn、Xu
 
 ---
 
-> **维护说明**：此文件由各子项目会话在获得新信息时更新。主控制台负责审核一致性。原始角色字段数据请查阅 `projects/wiki/data/extracted/categorized/character_data.txt`；加工数据在 `projects/wiki/data/processed/*.json`；结构化归档 `projects/wiki/data/db/` 基线待 Phase 2 W1 自举。采访原始提取数据见 `assets/data/interview-2026-04.json`。
+> **维护说明**：此文件由各子项目会话在获得新信息时更新。主控制台负责审核一致性。原始角色字段数据请查阅 `projects/wiki/data/extracted/categorized/character_data.txt`；加工数据在 `projects/wiki/data/processed/*.json`（原 `data/db/` 结构化层 2026-06-15 整层清空，可信基线现为 `processed/characters.json`，与本文头部勘误一致）。采访原始提取数据见 `assets/data/interview-2026-04.json`。
