@@ -1,11 +1,11 @@
 {
   "date": "2026-07-10",
-  "messages": 488,
+  "messages": 498,
   "unique_authors": 23,
-  "reactions_total": 141,
+  "reactions_total": 143,
   "attachments": 35,
   "channel_activity": {
-    "なんでも雑談": 413,
+    "なんでも雑談": 423,
     "誰でも質問": 38,
     "🔰初心者質問": 3,
     "つぶやき": 28,
@@ -14,9 +14,10 @@
     "ニムフィーアの毒パ研究日誌": 3
   },
   "hourly_activity": {
+    "18": 11,
+    "19": 1,
     "16": 28,
     "17": 16,
-    "18": 2,
     "13": 24,
     "14": 68,
     "15": 30,
@@ -34,8 +35,7 @@
     "1": 1
   },
   "message_types": {
-    "0": 44,
-    "19": 1
+    "0": 10
   },
   "top_reacted_messages": [
     {
