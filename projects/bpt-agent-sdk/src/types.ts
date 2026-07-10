@@ -2227,6 +2227,44 @@ export type SDKPromptCompositionMessage = {
   cacheBreakpoints: CacheBreakpoint[];
 };
 
+/** The full live background-task set after a membership change (official
+ *  `system`/`background_tasks_changed` encoding, NEW-IN-DOCS 0.3.203). REPLACE
+ *  semantics: a consumer swaps its whole task set for `tasks`. TYPED, not
+ *  emitted — this engine's background tasks are shells (BashOutput/TaskOutput
+ *  over the ShellManager), the candidate source, but no membership-change emit
+ *  is wired (the shell registry has no change-notification channel into the
+ *  pull-based stream; task lifecycle rides task_started/task_updated instead). */
+export type SDKBackgroundTasksChangedMessage = {
+  type: 'system';
+  subtype: 'background_tasks_changed';
+  uuid: string;
+  session_id: string;
+  tasks: {
+    task_id: string;
+    task_type: string;
+    description: string;
+  }[];
+};
+
+/** Progress on an in-flight control_request (official `system`/
+ *  `control_request_progress` encoding, NEW-IN-DOCS 0.3.205). TYPED, not
+ *  emitted — this direct-API engine has no control_request wire protocol
+ *  (N/A-by-design, like reinitialize/applyFlagSettings), so there is no
+ *  in-flight control request to report progress for. */
+export type SDKControlRequestProgressMessage = {
+  type: 'system';
+  subtype: 'control_request_progress';
+  uuid: string;
+  session_id: string;
+  /** request_id of the in-flight control_request this progress belongs to. */
+  request_id: string;
+  status: 'started' | 'api_retry';
+  attempt?: number;
+  max_retries?: number;
+  retry_delay_ms?: number;
+  error_status?: number | null;
+};
+
 /**
  * The observability / status arm of the SDKMessage union (task #16; official
  * discriminator split since v0.7 — see the section banner above for the
@@ -2259,7 +2297,36 @@ export type SDKObservabilityMessage =
   | SDKPluginInstallMessage
   | SDKSessionStateChangedMessage
   | SDKPromptCompositionMessage
+  | SDKBackgroundTasksChangedMessage
+  | SDKControlRequestProgressMessage
   | SDKStatusMessage;
+
+/** The engine's active goal loop state (official `active_goal` encoding,
+ *  NEW-IN-DOCS 0.3.205; `value: null` clears it). TYPED, not emitted — this
+ *  headless engine runs no persistent goal/condition loop to report. */
+export type SDKActiveGoalMessage = {
+  type: 'active_goal';
+  uuid: string;
+  session_id: string;
+  value: {
+    condition: string;
+    iterations: number;
+    set_at: number;
+    tokens_at_start: number;
+    last_reason?: string;
+  } | null;
+};
+
+/** A conversation-reset boundary carrying the id of the fresh conversation
+ *  (official `conversation_reset` encoding, NEW-IN-DOCS 0.3.205). TYPED, not
+ *  emitted — this engine does not reset a conversation mid-stream (a new
+ *  conversation is a new query()/session, not an in-stream boundary). */
+export type SDKConversationResetMessage = {
+  type: 'conversation_reset';
+  uuid: string;
+  session_id: string;
+  new_conversation_id: string;
+};
 
 export type SDKMessage =
   | SDKAssistantMessage
@@ -2270,6 +2337,8 @@ export type SDKMessage =
   | SDKCompactBoundaryMessage
   | SDKMirrorErrorMessage
   | SDKPartialAssistantMessage
+  | SDKActiveGoalMessage
+  | SDKConversationResetMessage
   | SDKObservabilityMessage;
 
 // ---------------------------------------------------------------------------
@@ -2468,6 +2537,14 @@ export type SessionMessage = {
   session_id: string;
   message: unknown;
   parent_tool_use_id: string | null;
+  /**
+   * agentId of the subagent that spawned this subagent, or null when the
+   * message belongs to a depth-1 subagent (spawned by the main loop) or to the
+   * main session itself (official field, NEW-IN-DOCS 0.3.202 — enables
+   * building depth-2+ agent trees from disk-persisted metadata). Transcripts
+   * whose persisted metadata lacks the field report null.
+   */
+  parent_agent_id: string | null;
 };
 
 /**
@@ -2560,6 +2637,37 @@ export type SDKControlInitializeResponse = {
  *  (v0.7 spelling swap). */
 export type SDKInitializationResult = SDKControlInitializeResponse;
 
+/** Control request: fetch the current plan (official control-protocol subtype
+ *  `get_plan`, NEW-IN-DOCS 0.3.205). Typed for surface parity; N/A-by-design —
+ *  this direct-API engine has no control_request wire protocol to receive it
+ *  (same posture as reinitialize/applyFlagSettings). */
+export type SDKControlGetPlanRequest = {
+  subtype: 'get_plan';
+};
+
+/** Control request: fetch the current workspace diff (official control-protocol
+ *  subtype `get_workspace_diff`, NEW-IN-DOCS 0.3.205). Typed for surface parity;
+ *  N/A-by-design — no control_request wire protocol here, and no diff engine. */
+export type SDKControlGetWorkspaceDiffRequest = {
+  subtype: 'get_workspace_diff';
+};
+
+/** Payload of Query.interrupt() (official control-response shape, NEW-IN-DOCS
+ *  0.3.205 — interrupt() moved from `void` to this typed receipt).
+ *
+ *  `still_queued` lists the uuids of async user messages that survive the
+ *  interrupt (queued commands, plus a batch already dequeued for the imminent
+ *  turn). In this direct-API engine there is no uuid-stamped async message
+ *  queue surviving an abort — interrupt() aborts the active turn (or arms the
+ *  next-turn cancel) and there is nothing left queued — so the receipt is
+ *  always `{ still_queued: [] }`. The field is present for drop-in consumers
+ *  that read it; an empty array does not mean "nothing will run" (per the
+ *  official coverage caveat), it means this engine tracks no surviving async
+ *  messages by uuid. */
+export type SDKControlInterruptResponse = {
+  still_queued: string[];
+};
+
 export interface Query extends AsyncGenerator<SDKMessage, void> {
   /**
    * Interrupt the running turn. In streaming-input mode this aborts the
@@ -2567,8 +2675,14 @@ export interface Query extends AsyncGenerator<SDKMessage, void> {
    * aborts the run and the generator yields a terminal
    * `error_during_execution` result. Honored between turns via an
    * interrupt-requested flag when no turn is currently active.
+   *
+   * Returns the official interrupt receipt (0.3.205): `still_queued` lists the
+   * uuids of async user messages that survive the interrupt. This engine keeps
+   * no uuid-stamped async message queue, so the receipt is always
+   * `{ still_queued: [] }` (see SDKControlInterruptResponse). Callers that
+   * `await q.interrupt()` and ignore the result are unaffected.
    */
-  interrupt(): Promise<void>;
+  interrupt(): Promise<SDKControlInterruptResponse>;
   setPermissionMode(mode: PermissionMode): Promise<void>;
   setModel(model?: string): Promise<void>;
   setMaxThinkingTokens(maxThinkingTokens: number | null): Promise<void>;

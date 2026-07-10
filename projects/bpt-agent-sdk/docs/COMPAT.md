@@ -1,6 +1,6 @@
 # BPT Agent SDK — Compatibility Matrix
 
-Target surface: `@anthropic-ai/claude-agent-sdk` public API (npm 0.3.201; chased from the 0.3.199 baseline 2026-07-05, keeper ruling, zero conformance drift) as
+Target surface: `@anthropic-ai/claude-agent-sdk` public API (npm 0.3.205; chased from the 0.3.201 baseline 2026-07-10, keeper ruling, zero conformance drift — 0.3.199 -> 0.3.201 chased 2026-07-05) as
 documented at code.claude.com/docs/en/agent-sdk/* (fetched 2026-07-03).
 
 For a full 146-row completion audit against the latest official surface
@@ -13,6 +13,31 @@ including the drop-in breaking-gap list and the NEW-IN-DOCS ledger
 (post-0.3.199 surface), see
 `Public-Info-Pool/Resource/repo-engineering/bpt-sdk-official-docs-interface-audit-20260705.md`.
 Stale rows flagged there were corrected in this file on 2026-07-05.
+
+## 0.3.201 -> 0.3.205 chase (2026-07-10, keeper ruling 「追」)
+
+A type-surface diff of the official tarballs (`sdk.d.ts` + `package.json`, not
+the external changelog) found the pinned 0.3.201 baseline drifted 4 patch
+versions behind npm latest `0.3.205` (published 2026-07-08); `claudeCodeVersion`
+`2.1.201` -> `2.1.205`. Seven new exported types, zero removed. All were
+reconciled onto this SDK following the established NEW-IN-DOCS posture — **typed
+for drop-in exhaustiveness, emitted only where a headless direct-API engine has
+an honest source** (none here):
+
+- **`SDKActiveGoalMessage`** (`type:'active_goal'`) — top-level variant, TYPED-not-emitted (no persistent goal/condition loop to report). Added to `SDKMessage`.
+- **`SDKConversationResetMessage`** (`type:'conversation_reset'`) — top-level variant, TYPED-not-emitted (a new conversation is a new `query()`/session here, not an in-stream boundary). Added to `SDKMessage`.
+- **`SDKBackgroundTasksChangedMessage`** (`system`/`background_tasks_changed`, 0.3.203) — observability arm, TYPED-not-emitted. The candidate source is the ShellManager background-task set (BashOutput/TaskOutput), but no membership-change channel feeds the pull-based stream; task lifecycle rides `task_started`/`task_updated`.
+- **`SDKControlRequestProgressMessage`** (`system`/`control_request_progress`, 0.3.205) — observability arm, TYPED-not-emitted (N/A-by-design: no control_request wire protocol, like reinitialize/applyFlagSettings).
+- **`SDKControlGetPlanRequest`** / **`SDKControlGetWorkspaceDiffRequest`** (`get_plan` / `get_workspace_diff`, 0.3.205) — control-protocol request subtypes, typed for parity; N/A-by-design (no control_request protocol here; no diff engine).
+- **`SDKControlInterruptResponse`** (`{ still_queued }`, 0.3.205) — `Query.interrupt()` moved from `Promise<void>` to this typed receipt. Implemented: interrupt() returns `{ still_queued: [] }` (this engine keeps no uuid-stamped async message queue surviving an abort). Source-compatible — an `await q.interrupt()` that ignores the result is unaffected.
+
+Also folded in **`SessionMessage.parent_agent_id`** (0.3.202): the spawning
+subagent's agentId, surfaced by `getSessionMessages` from persisted metadata
+(null when the transcript's metadata lacks it — official contract). No package
+`version` change to the tracked-Claude-Code number: this SDK keeps its own
+independent version (see CHANGELOG). Tests: `tests/compat-0-3-205.test.ts`
+(new-type assignability, interrupt receipt, parent_agent_id round-trip) +
+`tests/observability.test.ts` (union completeness, 25 -> 27 sampled variants).
 
 ## v0.12 status (P2 PARTIAL-closure pass, 2026-07-06)
 
@@ -208,7 +233,7 @@ Tiers:
 | `createSdkMcpServer()` | FULL | in-process dispatch, no wire protocol |
 | `listSessions()` / `getSessionInfo()` | FULL | reads this SDK's own JSONL store (structural scope). Option is `includeWorktrees` (`includeWorkspace` kept as a `@deprecated` alias); `getSessionInfo()` returns `undefined` for a miss; `SDKSessionInfo` carries `gitBranch`/`tag`, `customTitle` is populated from `meta_update`, summary follows customTitle > firstPrompt precedence (no auto tier — this store keeps no auto summaries). P2 re-audit: every docs-audit sub-claim was stale, fixed in v0.7 #480 (tests sessions-store / b2b-alignment) |
 | `startup()` / `WarmQuery` | UNSUPPORTED | no subprocess to pre-warm; direct API needs no warmup |
-| `getSessionMessages()` / `renameSession()` / `tagSession()` / `deleteSession()` / `forkSession()` | FULL | over this SDK's own JSONL store (or an external `sessionStore`); no Claude Code store interop (structural). P2 re-audit — all three docs-audit sub-claims were stale, fixed in v0.7 #480: rename/tag round-trip WORKS (`meta_update` records are read back last-write-wins by `store.load`, incl. tag-clear on `null`); `getSessionMessages` has `dir`/`limit`/`offset`; `renameSession` validates non-empty title (`ConfigurationError`). Tests sessions-store / b2b-alignment |
+| `getSessionMessages()` / `renameSession()` / `tagSession()` / `deleteSession()` / `forkSession()` | FULL | over this SDK's own JSONL store (or an external `sessionStore`); no Claude Code store interop (structural). P2 re-audit — all three docs-audit sub-claims were stale, fixed in v0.7 #480: rename/tag round-trip WORKS (`meta_update` records are read back last-write-wins by `store.load`, incl. tag-clear on `null`); `getSessionMessages` has `dir`/`limit`/`offset`, and (0.3.205 chase) surfaces the official `SessionMessage.parent_agent_id` (0.3.202) from persisted metadata — null when the transcript lacks it; `renameSession` validates non-empty title (`ConfigurationError`). Tests sessions-store / b2b-alignment / compat-0-3-205 |
 | `resolveSettings()` | UNSUPPORTED | settings engine is CLI-coupled (N/A-by-design) |
 | `analyzeRequestComposition()` | BPT-EXTENSION | v0.32.0: pure build-time descriptor of a request — `{ promptComposition, cacheBreakpoints }` (需求 A per-part estimate + 需求 B cache-breakpoint map), using `engine/tokens.ts`. Zero side effects; complements `buildSystemPromptParts` / `enumerateBuiltinToolMetadata` |
 | `buildSystemPromptParts()` | BPT-EXTENSION | returns the stable prompt split (`base`/`project`/`volatile`) plus, since v0.32.0, the labeled per-part decomposition (`parts`) that feeds the prompt-composition breakdown |
@@ -325,6 +350,8 @@ SDK implements the agent loop directly against the public Messages API:
 | `result` success / error_max_turns / error_during_execution / `error_max_budget_usd` / `error_max_structured_output_retries` | PARTIAL | success arm carries ttft_ms + structured_output + deferred_tool_use + v0.3 `metrics`; error arm carries both `errorMessage: string` and the official-parallel `errors: string[]` (v0.4). Mid-stream SSE truncation degrades gracefully like official 2.1.201 (E3, 2026-07-05): the blocks the wire delivered whole are salvaged - partial text becomes the `success` answer, complete tool_use blocks EXECUTE (at either cut depth, with or without stop_reason) and the loop re-requests to deliver the tool_result; the connection error rides `errors` as a non-fatal note on the terminal result (former KD-L4-04 + all three truncation engine findings retired; residual KD-L4-02: official also appends the error as assistant text and throws from the iterator post-result - deliberately not replicated). An UNCLOSED tool_use (mid-transmission input) never executes; nothing salvageable falls back to `error_during_execution`. Remaining fault-path divergence: on a terminal non-retryable 400 ours ends with a clean `result/error_during_execution` where official surfaces the error as assistant text plus `result/success` then throws (KD-L4-01; run-l4 l4-http400-non-retryable, l4-script-exhausted-400-terminal). Reporting semantics on streamed multi-turn input match official (E2, 2026-07-05, KD-L5-04 retired): `num_turns`/`usage` are PER-RESULT (that turn's own figures), `total_cost_usd`/`duration_api_ms` are session-cumulative; `modelUsage` stays session-cumulative (official per-result semantics unobserved - our choice); internal `maxTurns`/`maxBudgetUsd` enforcement remains session-wide. Query-layer synthetic results (hook-block / pre-turn cap stop / interrupt) report `num_turns: 0` + zero `usage` (no engine turn ran for them; official shape unobserved) |
 | `system/compact_boundary` | FULL | emitted on manual `/compact` + auto-compaction (v0.2) |
 | `system/mirror_error` | FULL | emitted on a session-store mirror failure |
+| `active_goal` | TYPED | NEW-IN-DOCS 0.3.205; no persistent goal/condition loop in a headless engine (`value:null` clears) |
+| `conversation_reset` | TYPED | NEW-IN-DOCS 0.3.205; a new conversation is a new `query()`/session here, not an in-stream boundary |
 
 ### Observability arm (v0.3 — task #16)
 
@@ -357,6 +384,8 @@ prompt_suggestion) are unemitted-typed. `SDKRateLimitEvent` gains the official
 | `hook_progress` | TYPED | callbacks are opaque promises; no honest mid-callback progress source |
 | `rate_limit_event`, `api_retry` | FULL (emitted) | the transport's per-request `onRetry` observer bridges each 429/5xx/network retry into the stream: a `rate_limit_event` on 429 (with `retry_after_ms`), an `api_retry` otherwise (with `status`/`reason`), yielded just before the retried attempt's stream. Shape split vs official: 2.1.201 encodes the per-429-retry notification as `system/api_retry` too - it emits no `rate_limit_event` on 429 (triaged KD-12; conformance run-l4 l4-429-retry-after-recover / l4-429-storm-two-vs-budget, 2026-07-05) |
 | `files_persisted`, `local_command_output`, `commands_changed`, `auth_status`, `elicitation_complete`, `notification`, `prompt_suggestion`, `memory_recall`, `worker_shutting_down`, `plugin_install`, `session_state_changed`, `system/status` | TYPED | no source event in a headless engine with no plugins/skills/CC-host. `commands_changed` specifically: custom commands (v0.38) load ONCE at query construction — the set never changes mid-query, so there is still no change source; `local_command_output` covers CC-host LOCAL commands (`/voice`, `/usage`), which have no engine equivalent |
+| `system/background_tasks_changed` | TYPED | NEW-IN-DOCS 0.3.203; candidate source is the ShellManager background-task set (BashOutput/TaskOutput) but no membership-change channel feeds the pull-based stream (task lifecycle rides task_started/task_updated). REPLACE semantics: the payload is the full live set |
+| `system/control_request_progress` | TYPED | NEW-IN-DOCS 0.3.205; no control_request wire protocol (N/A-by-design) so no in-flight control request to report progress for |
 | `system/prompt_composition` | FULL (emitted, v0.32.0) | **BPT-EXTENSION**; behind `options.includePromptComposition` (default off): one message per request, just before it is sent, carrying `promptComposition` (需求 A per-part estimate) + `cacheBreakpoints` (需求 B cache-prefix map) + `model`. Read-only — the wire request is never affected |
 
 ## Custom slash commands (`.claude/commands`) — v0.38
@@ -407,7 +436,7 @@ EXPANDED body, `UserPromptSubmit` hooks see the RAW typed text, and the
 
 | Method | Tier | Notes |
 |---|---|---|
-| `interrupt()` | FULL | |
+| `interrupt()` | FULL | 0.3.205: returns the official `SDKControlInterruptResponse` receipt (`{ still_queued }`) instead of `void`; this engine keeps no uuid-stamped async message queue surviving an abort, so the receipt is always `{ still_queued: [] }`. Source-compatible for callers that ignore the return |
 | `setPermissionMode()` / `setModel()` / `setMaxThinkingTokens()` | FULL | |
 | `initializationResult()` / `supportedModels()` / `supportedCommands()` / `supportedAgents()` | PARTIAL | P2 re-audit: `supportedModels` returns a real known-model list, `supportedAgents` returns the configured agents, `initializationResult` returns real agents/models/account — all NON-empty. `supportedCommands` REAL since v0.38 (the old "genuinely `[]` — structural" note is retired): built-in `compact` + loaded custom commands in the official `SlashCommand` shape (`name`/`description`/`argumentHint`). Still PARTIAL as a row: official lists the full CC host command set (`/clear`, `/help`, …) that has no engine equivalent here |
 | `mcpServerStatus()` | FULL | carries `config` (echoed back) + per-server `tools[]` when connected; **P2**: `scope` now tracked — 'project' (`.mcp.json`) / 'local' (programmatic `options.mcpServers`) / 'dynamic' (added via `setMcpServers`); test query.test.ts. v0.7: `tools` is the official OBJECT array (`{name, description?, annotations{readOnly/destructive/openWorld}?}`), assembled at the registry |
