@@ -11,6 +11,37 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.40.0 — 2026-07-10
+
+**Chase the official surface 0.3.201 -> 0.3.205** (keeper ruling 「追」). A
+type-surface diff of the official tarballs (`sdk.d.ts` + `package.json`) found
+the pinned baseline 4 patch versions behind npm latest `0.3.205` (published
+2026-07-08); seven new exported types, zero removed. Reconciled onto this SDK
+following the NEW-IN-DOCS posture — typed for drop-in exhaustiveness, emitted
+only where a headless direct-API engine has an honest source (none here):
+
+- **`Query.interrupt()` now returns the official `{ still_queued }` receipt**
+  (`SDKControlInterruptResponse`) instead of `void`. This engine keeps no
+  uuid-stamped async message queue surviving an abort, so the receipt is always
+  `{ still_queued: [] }`. Source-compatible: `await q.interrupt()` that ignores
+  the return is unaffected.
+- **`SessionMessage.parent_agent_id`** (0.3.202) — the spawning subagent's
+  agentId, surfaced by `getSessionMessages` from persisted metadata (null when
+  the transcript lacks it, per the official contract).
+- **New typed-not-emitted variants**: `SDKActiveGoalMessage`
+  (`active_goal`), `SDKConversationResetMessage` (`conversation_reset`) added to
+  the `SDKMessage` union; `SDKBackgroundTasksChangedMessage`
+  (`system`/`background_tasks_changed`, 0.3.203),
+  `SDKControlRequestProgressMessage` (`system`/`control_request_progress`) added
+  to the observability arm. Plus the control-protocol request types
+  `SDKControlGetPlanRequest` / `SDKControlGetWorkspaceDiffRequest` (N/A-by-design
+  — no control_request wire protocol here).
+
+Tests: `tests/compat-0-3-205.test.ts` (new — assignability, interrupt receipt,
+`parent_agent_id` round-trip) and `tests/observability.test.ts` (union
+completeness, 25 -> 27 sampled variants). `docs/COMPAT.md` baseline bumped to
+0.3.205. No runtime behavior change beyond the additive interrupt return value.
+
 ## 0.39.0 — 2026-07-10
 
 **Stop-hook block semantics** (keeper's "/goal 线" dispatch — the goal-gating

@@ -28,6 +28,7 @@ import type {
   Query,
   RewindFilesResult,
   SDKControlInitializeResponse,
+  SDKControlInterruptResponse,
   SDKMessage,
   SDKMirrorErrorMessage,
   SDKResultMessage,
@@ -1394,7 +1395,7 @@ export function query(args: {
       return q;
     },
 
-    async interrupt(): Promise<void> {
+    async interrupt(): Promise<SDKControlInterruptResponse> {
       // Abort the active turn if one is running; otherwise queue the cancel so
       // the NEXT turn to start is aborted immediately, instead of being a
       // silent no-op when interrupt() lands between turns or right after init
@@ -1404,6 +1405,9 @@ export function query(args: {
       } else {
         interruptRequested = true;
       }
+      // Official interrupt receipt (0.3.205). This engine keeps no uuid-stamped
+      // async message queue that survives an abort, so nothing is still queued.
+      return { still_queued: [] };
     },
     async setPermissionMode(mode: PermissionMode): Promise<void> {
       assertBypassUnlocked(mode);

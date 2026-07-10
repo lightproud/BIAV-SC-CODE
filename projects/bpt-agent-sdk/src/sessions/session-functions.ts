@@ -96,6 +96,10 @@ function entryToSessionMessage(
     message: e.message,
     parent_tool_use_id:
       typeof e.parent_tool_use_id === 'string' ? e.parent_tool_use_id : null,
+    // Official field (0.3.202): read the persisted agentId of the spawning
+    // subagent when present; transcripts whose metadata lacks it report null.
+    parent_agent_id:
+      typeof e.parent_agent_id === 'string' ? e.parent_agent_id : null,
   };
 }
 

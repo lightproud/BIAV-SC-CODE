@@ -222,6 +222,20 @@ describe('v0.3 observability union completeness', () => {
       },
       { type: 'system', subtype: 'local_command_output', ...env, content: 'o' },
       { type: 'system', subtype: 'commands_changed', ...env, commands: [] },
+      // 0.3.205 chase — two NEW-IN-DOCS system subtypes (typed-not-emitted).
+      {
+        type: 'system',
+        subtype: 'background_tasks_changed',
+        ...env,
+        tasks: [{ task_id: 'k', task_type: 'local_agent', description: 'n' }],
+      },
+      {
+        type: 'system',
+        subtype: 'control_request_progress',
+        ...env,
+        request_id: 'r',
+        status: 'started',
+      },
       {
         type: 'rate_limit_event',
         ...env,
@@ -242,13 +256,16 @@ describe('v0.3 observability union completeness', () => {
       { type: 'system', subtype: 'status', ...env, status: 'pending' },
     ];
     const names = samples.map(variantName);
-    // 14 top-level variants + 11 system subtypes (v0.7 official encoding).
-    expect(names).toHaveLength(25);
-    expect(new Set(names).size).toBe(25);
+    // 14 top-level variants + 13 system subtypes (v0.7 official encoding +
+    // the two 0.3.205 NEW-IN-DOCS subtypes).
+    expect(names).toHaveLength(27);
+    expect(new Set(names).size).toBe(27);
     expect(names).toContain('permission_denied');
     expect(names).toContain('system/status');
     expect(names).toContain('system/task_started');
     expect(names).toContain('system/hook_response');
+    expect(names).toContain('system/background_tasks_changed');
+    expect(names).toContain('system/control_request_progress');
   });
 });
 
