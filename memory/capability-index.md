@@ -42,8 +42,6 @@
   `.github/workflows/backfill-media.yml`
 - **`Backfill Historical News`** _[schedule/manual]_ — 定时回填历史社区新闻。  
   `.github/workflows/backfill-news.yml`
-- **`BPT Agent SDK`** _[schedule/push/pull_request/manual]_ —   
-  `.github/workflows/bpt-agent-sdk.yml`
 - **`Build Analysis Index`** _[schedule/manual]_ —   
   `.github/workflows/build-analysis-index.yml`
 - **`Build Capability Registry`** _[push/manual]_ — 功能源变动时自动重生成银芯功能目录。  
@@ -96,6 +94,8 @@
   `.github/workflows/recover-fanart.yml`
 - **`Refresh Claude Code Prompts`** _[schedule/manual]_ —   
   `.github/workflows/refresh-claude-code-prompts.yml`
+- **`Silver Core SDK`** _[schedule/push/pull_request/manual]_ —   
+  `.github/workflows/silver-core-sdk.yml`
 - **`Test All Data Collectors`** _[manual]_ — 运行采集器单元测试。  
   `.github/workflows/test-collectors.yml`
 - **`Run Tests`** _[push/pull_request/manual]_ — 运行全量 pytest 单元测试。  
@@ -307,8 +307,6 @@
 
 ## 子项目（7）
 
-- **`bpt-agent-sdk`** — BPT Agent SDK：独立重实现（independent reimplementation）的 TypeScript agent 框架，公开调用面  
-  `projects/bpt-agent-sdk/`
 - **`bpt-pm`** — BPT PM：**单网页项目排期工作台**。一份 JSON 描述一个项目（锚点日期 + 工作日历 +  
   `projects/bpt-pm/`
 - **`bpt-v2t`** — BPT-V2T:银芯**语音代替输入**(voice-as-input)工具。按热键说话 → 转成文字 →  
@@ -317,6 +315,8 @@
   `projects/game/`
 - **`news`** — 使命#1 黑池信息入口：采集器 + 全量档案层 + 输出展示层，单向送黑池。  
   `projects/news/`
+- **`silver-core-sdk`** — Silver Core SDK：独立重实现（independent reimplementation）的 TypeScript agent 框架，公开调用面  
+  `projects/silver-core-sdk/`
 - **`site`** — 对外门户：静态站 public/ + 设计令牌 design/。  
   `projects/site/`
 - **`wiki`** — 使命#2 社区知识底座：VitePress 站点 + 72 角色数据库（客户端解包自举）。  

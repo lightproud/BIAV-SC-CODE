@@ -53,17 +53,6 @@
       "note_zh": "定时回填历史社区新闻。"
     },
     {
-      "id": "bpt-agent-sdk.yml",
-      "name": "BPT Agent SDK",
-      "path": ".github/workflows/bpt-agent-sdk.yml",
-      "triggers": [
-        "schedule",
-        "push",
-        "pull_request",
-        "manual"
-      ]
-    },
-    {
       "id": "build-analysis-index.yml",
       "name": "Build Analysis Index",
       "path": ".github/workflows/build-analysis-index.yml",
@@ -297,6 +286,17 @@
       "path": ".github/workflows/refresh-claude-code-prompts.yml",
       "triggers": [
         "schedule",
+        "manual"
+      ]
+    },
+    {
+      "id": "silver-core-sdk.yml",
+      "name": "Silver Core SDK",
+      "path": ".github/workflows/silver-core-sdk.yml",
+      "triggers": [
+        "schedule",
+        "push",
+        "pull_request",
         "manual"
       ]
     },
@@ -1161,11 +1161,6 @@
   ],
   "projects": [
     {
-      "id": "bpt-agent-sdk",
-      "path": "projects/bpt-agent-sdk/",
-      "summary": "BPT Agent SDK：独立重实现（independent reimplementation）的 TypeScript agent 框架，公开调用面"
-    },
-    {
       "id": "bpt-pm",
       "path": "projects/bpt-pm/",
       "summary": "BPT PM：**单网页项目排期工作台**。一份 JSON 描述一个项目（锚点日期 + 工作日历 +"
@@ -1186,6 +1181,11 @@
       "path": "projects/news/",
       "summary": "> 启动时请先阅读根目录 `CLAUDE.md` 了解全局。",
       "note_zh": "使命#1 黑池信息入口：采集器 + 全量档案层 + 输出展示层，单向送黑池。"
+    },
+    {
+      "id": "silver-core-sdk",
+      "path": "projects/silver-core-sdk/",
+      "summary": "Silver Core SDK：独立重实现（independent reimplementation）的 TypeScript agent 框架，公开调用面"
     },
     {
       "id": "site",

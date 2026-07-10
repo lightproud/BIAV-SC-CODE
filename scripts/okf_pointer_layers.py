@@ -571,7 +571,7 @@ def build_projects() -> list[dict]:
                 "id": cid, "type": "documentation", "title": title,
                 "description": blurb or title, "resource": _rel(p), "tags": tags,
             })
-    for name in ("news", "wiki", "site", "game", "bpt-agent-sdk"):
+    for name in ("news", "wiki", "site", "game", "silver-core-sdk"):
         ctx = REPO / "projects" / name / "CONTEXT.md"
         if ctx.exists():
             _t, blurb = md_title_blurb(ctx)
@@ -580,13 +580,13 @@ def build_projects() -> list[dict]:
                 "description": blurb or f"{name} 子项目会话上下文与当前 milestone（动手前必读）。",
                 "resource": _rel(ctx), "tags": ["data_layer:curated", "sub-project-context", "milestone"],
             })
-    # 子项目设计知识（评审 medium 修复）：bpt-agent-sdk/docs/*.md + site/design/*
-    for f in sorted((REPO / "projects" / "bpt-agent-sdk" / "docs").glob("*.md")):
+    # 子项目设计知识（评审 medium 修复）：silver-core-sdk/docs/*.md + site/design/*
+    for f in sorted((REPO / "projects" / "silver-core-sdk" / "docs").glob("*.md")):
         _t, blurb = md_title_blurb(f)
         entries.append({
-            "id": f"bpt-sdk-doc-{slug(f.stem)}", "type": "documentation", "title": f"bpt-agent-sdk {f.stem}",
-            "description": blurb or f"bpt-agent-sdk 设计文档 {f.name}", "resource": _rel(f),
-            "tags": ["data_layer:curated", "design-doc", "sub-project:bpt-agent-sdk"],
+            "id": f"silver-core-sdk-doc-{slug(f.stem)}", "type": "documentation", "title": f"silver-core-sdk {f.stem}",
+            "description": blurb or f"silver-core-sdk 设计文档 {f.name}", "resource": _rel(f),
+            "tags": ["data_layer:curated", "design-doc", "sub-project:silver-core-sdk"],
         })
     for f in sorted((REPO / "projects" / "site" / "design").glob("*")):
         if f.is_file() and f.suffix in (".html", ".css", ".md"):
@@ -640,7 +640,7 @@ def build_projects() -> list[dict]:
         })
     return write_layer("projects", entries, "入口文档 + 子项目上下文 + 藏宝图 + 设计/工程文档",
                        "仓库最高权威入口（CLAUDE.md / README.md）+ 各子项目 CONTEXT.md（动手前必读）+ "
-                       "RELEASES.md 藏宝图 + bpt-agent-sdk/site 设计文档 + 工程文档 + 归档注册表的导航指针。")
+                       "RELEASES.md 藏宝图 + silver-core-sdk/site 设计文档 + 工程文档 + 归档注册表的导航指针。")
 
 
 # ---------------------------------------------------------------------------

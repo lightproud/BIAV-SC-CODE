@@ -22,7 +22,7 @@
     {"q": "releases 藏宝图 二进制", "expect": ["releases-treasure-map"], "mode": "search", "capability": "keyword", "distinctive": false, "probe": "关键词控制组"},
     {"q": "世界观术语 历史时间线", "expect": ["morimens-context"], "mode": "search", "capability": "keyword", "distinctive": false, "probe": "关键词控制组"},
     {"q": "解包的游戏文本", "expect": ["unpacked-game-text"], "mode": "search", "capability": "keyword", "distinctive": false, "probe": "关键词控制组"},
-    {"q": "bpt-agent-sdk 定位", "expect": ["project-bpt-agent-sdk", "bpt-sdk-doc"], "mode": "search", "capability": "keyword", "distinctive": false, "probe": "关键词控制组"},
+    {"q": "silver-core-sdk 定位", "expect": ["project-silver-core-sdk", "silver-core-sdk-doc"], "mode": "search", "capability": "keyword", "distinctive": false, "probe": "关键词控制组"},
     {"q": "剧情 lore 正文", "expect": ["/story/lore"], "mode": "search", "capability": "keyword", "distinctive": false, "probe": "关键词控制组"},
     {"q": "news 输出展示层 抽样", "expect": ["news-output"], "mode": "search", "capability": "keyword", "distinctive": false, "probe": "关键词控制组"},
     {"q": "决策 为什么这么定", "expect": ["/memory/decisions"], "mode": "search", "capability": "keyword", "distinctive": false, "probe": "关键词控制组"}

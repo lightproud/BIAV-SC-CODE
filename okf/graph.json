@@ -1984,105 +1984,6 @@
       "tier": "skeleton"
     },
     {
-      "id": "/projects/bpt-sdk-doc-architecture.md",
-      "type": "documentation",
-      "title": "bpt-agent-sdk ARCHITECTURE",
-      "tags": [
-        "data_layer:curated",
-        "design-doc",
-        "sub-project:bpt-agent-sdk"
-      ],
-      "tier": "search"
-    },
-    {
-      "id": "/projects/bpt-sdk-doc-compat.md",
-      "type": "documentation",
-      "title": "bpt-agent-sdk COMPAT",
-      "tags": [
-        "data_layer:curated",
-        "design-doc",
-        "sub-project:bpt-agent-sdk"
-      ],
-      "tier": "search"
-    },
-    {
-      "id": "/projects/bpt-sdk-doc-concurrency.md",
-      "type": "documentation",
-      "title": "bpt-agent-sdk CONCURRENCY",
-      "tags": [
-        "data_layer:curated",
-        "design-doc",
-        "sub-project:bpt-agent-sdk"
-      ],
-      "tier": "search"
-    },
-    {
-      "id": "/projects/bpt-sdk-doc-errors.md",
-      "type": "documentation",
-      "title": "bpt-agent-sdk ERRORS",
-      "tags": [
-        "data_layer:curated",
-        "design-doc",
-        "sub-project:bpt-agent-sdk"
-      ],
-      "tier": "search"
-    },
-    {
-      "id": "/projects/bpt-sdk-doc-migration.md",
-      "type": "documentation",
-      "title": "bpt-agent-sdk MIGRATION",
-      "tags": [
-        "data_layer:curated",
-        "design-doc",
-        "sub-project:bpt-agent-sdk"
-      ],
-      "tier": "search"
-    },
-    {
-      "id": "/projects/bpt-sdk-doc-onboarding.md",
-      "type": "documentation",
-      "title": "bpt-agent-sdk ONBOARDING",
-      "tags": [
-        "data_layer:curated",
-        "design-doc",
-        "sub-project:bpt-agent-sdk"
-      ],
-      "tier": "search"
-    },
-    {
-      "id": "/projects/bpt-sdk-doc-openai-protocol.md",
-      "type": "documentation",
-      "title": "bpt-agent-sdk OPENAI-PROTOCOL",
-      "tags": [
-        "data_layer:curated",
-        "design-doc",
-        "sub-project:bpt-agent-sdk"
-      ],
-      "tier": "search"
-    },
-    {
-      "id": "/projects/bpt-sdk-doc-positioning.md",
-      "type": "documentation",
-      "title": "bpt-agent-sdk POSITIONING",
-      "tags": [
-        "data_layer:curated",
-        "design-doc",
-        "sub-project:bpt-agent-sdk"
-      ],
-      "tier": "search"
-    },
-    {
-      "id": "/projects/bpt-sdk-doc-subagents.md",
-      "type": "documentation",
-      "title": "bpt-agent-sdk SUBAGENTS",
-      "tags": [
-        "data_layer:curated",
-        "design-doc",
-        "sub-project:bpt-agent-sdk"
-      ],
-      "tier": "search"
-    },
-    {
       "id": "/projects/doc-testing-strategy.md",
       "type": "documentation",
       "title": "测试策略",
@@ -2146,17 +2047,6 @@
       "tier": "search"
     },
     {
-      "id": "/projects/project-bpt-agent-sdk.md",
-      "type": "documentation",
-      "title": "bpt-agent-sdk 子项目上下文",
-      "tags": [
-        "data_layer:curated",
-        "sub-project-context",
-        "milestone"
-      ],
-      "tier": "search"
-    },
-    {
       "id": "/projects/project-game.md",
       "type": "documentation",
       "title": "game 子项目上下文",
@@ -2171,6 +2061,17 @@
       "id": "/projects/project-news.md",
       "type": "documentation",
       "title": "news 子项目上下文",
+      "tags": [
+        "data_layer:curated",
+        "sub-project-context",
+        "milestone"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/projects/project-silver-core-sdk.md",
+      "type": "documentation",
+      "title": "silver-core-sdk 子项目上下文",
       "tags": [
         "data_layer:curated",
         "sub-project-context",
@@ -2208,6 +2109,105 @@
         "data_layer:curated",
         "treasure-map",
         "binary-assets-pointer"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/projects/silver-core-sdk-doc-architecture.md",
+      "type": "documentation",
+      "title": "silver-core-sdk ARCHITECTURE",
+      "tags": [
+        "data_layer:curated",
+        "design-doc",
+        "sub-project:silver-core-sdk"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/projects/silver-core-sdk-doc-compat.md",
+      "type": "documentation",
+      "title": "silver-core-sdk COMPAT",
+      "tags": [
+        "data_layer:curated",
+        "design-doc",
+        "sub-project:silver-core-sdk"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/projects/silver-core-sdk-doc-concurrency.md",
+      "type": "documentation",
+      "title": "silver-core-sdk CONCURRENCY",
+      "tags": [
+        "data_layer:curated",
+        "design-doc",
+        "sub-project:silver-core-sdk"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/projects/silver-core-sdk-doc-errors.md",
+      "type": "documentation",
+      "title": "silver-core-sdk ERRORS",
+      "tags": [
+        "data_layer:curated",
+        "design-doc",
+        "sub-project:silver-core-sdk"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/projects/silver-core-sdk-doc-migration.md",
+      "type": "documentation",
+      "title": "silver-core-sdk MIGRATION",
+      "tags": [
+        "data_layer:curated",
+        "design-doc",
+        "sub-project:silver-core-sdk"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/projects/silver-core-sdk-doc-onboarding.md",
+      "type": "documentation",
+      "title": "silver-core-sdk ONBOARDING",
+      "tags": [
+        "data_layer:curated",
+        "design-doc",
+        "sub-project:silver-core-sdk"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "type": "documentation",
+      "title": "silver-core-sdk OPENAI-PROTOCOL",
+      "tags": [
+        "data_layer:curated",
+        "design-doc",
+        "sub-project:silver-core-sdk"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/projects/silver-core-sdk-doc-positioning.md",
+      "type": "documentation",
+      "title": "silver-core-sdk POSITIONING",
+      "tags": [
+        "data_layer:curated",
+        "design-doc",
+        "sub-project:silver-core-sdk"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/projects/silver-core-sdk-doc-subagents.md",
+      "type": "documentation",
+      "title": "silver-core-sdk SUBAGENTS",
+      "tags": [
+        "data_layer:curated",
+        "design-doc",
+        "sub-project:silver-core-sdk"
       ],
       "tier": "search"
     },
@@ -6267,12 +6267,6 @@
     },
     {
       "source": "/projects/entry-claude-md.md",
-      "target": "/projects/project-bpt-agent-sdk.md",
-      "rel": "入口→上下文",
-      "rel_type": "cross"
-    },
-    {
-      "source": "/projects/entry-claude-md.md",
       "target": "/projects/project-game.md",
       "rel": "入口→上下文",
       "rel_type": "cross"
@@ -6280,6 +6274,12 @@
     {
       "source": "/projects/entry-claude-md.md",
       "target": "/projects/project-news.md",
+      "rel": "入口→上下文",
+      "rel_type": "cross"
+    },
+    {
+      "source": "/projects/entry-claude-md.md",
+      "target": "/projects/project-silver-core-sdk.md",
       "rel": "入口→上下文",
       "rel_type": "cross"
     },

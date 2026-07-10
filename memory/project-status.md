@@ -53,11 +53,11 @@
 | news（新闻聚合 + 报告系统） | 自动化持续运行（采集 / 回填 / 评论 / 同人图） | Code-news | M2 信息齐备期任务见 `projects/news/CONTEXT.md`；dependabot #136-140 实际状态待核 |
 | wiki（数据集 + Wiki 站点） | **W2 基线已重建 + 数据桥已接回（2026-07-02）**：可信基线 `data/processed/characters.json`（72 真实角色，一手解包）→ 58 真实唤醒体页 + 运行时数据桥 `characters.runtime.json`（生成器单点产出）→ `characters.ts` 消费，CharacterGrid（72 卡片、界域/类目/搜索筛选）挂载图鉴页，SSR 构建验证通过 | 艾瑞卡会话 | 真实字段缺口推进（skills/命轮/立绘/三语）见 `wiki-phase-2-gap-inventory.md`；贡献流程 2026-07-10 裁定取消（社区单向可读，见 decisions.md） |
 | game（衍生游戏） | 暂缓 | 待创建 | 不主线派发 |
-| **bpt-agent-sdk**（Claude Agent SDK 公开信息再现 · 银芯→黑池单向输出物） | **v0.12.0 已发货（2026-07-06 P2 收官）**：TypeScript 重实现（公开信息再现、自研引擎），直驱 Anthropic Messages API（fetch+SSE，无 CLI 子进程），**1427 单测全绿 + 2 skipped（真 bwrap 隔离）、tsc/build exit 0**（实机取证）；对官方 SDK **0.3.205** 约 90%+ 表面等价（对标基线 2026-07-10 由 0.3.201 追齐至 0.3.205，见 `docs/COMPAT.md`「0.3.201 -> 0.3.205 chase」；v0.40.0 落 7 个新类型 + interrupt 收据 + parent_agent_id，全类型化、诚实源外 typed-not-emitted），一致性金字塔 L1–L5 全封顶、首轮真 API L5 两臂打平 88.9%。**评估 backlog P2/P3/P4 全落（2026-07-06）**：**P2**（PR #501）逐条过 COMPAT 39 项 PARTIAL 分诊——~14 行「文档滞后」收敛为 FULL + 8 个真缺口闭合各带测试（Edit 读前写门 / stream_event ttft_ms / PostToolBatch tool_calls[] / SubagentStop agent_transcript_path / thinking.display / debugFile / mcpServerStatus scope / maxThinkingTokens @deprecated；notebook·sse 显式暂缓）；**P3** 漂移哨兵升「报+自动开草稿 PR」（`conformance-drift.yml` + `drift-check.mjs --emit-*`，选择性追踪纪律不动、绝不自动改基线）；**P4** `docs/ONBOARDING.md` 新维护者 30 分钟上手（降总线因子）。中间里程碑（v0.4→v0.11）详见下方专节 | 艾瑞卡会话 | 无阻塞待办；评估全文 `Public-Info-Pool/Resource/repo-engineering/bpt-agent-sdk-evaluation-20260706.md`；**动手前必读** `projects/bpt-agent-sdk/CONTEXT.md` + `docs/ONBOARDING.md`，定位见 `docs/POSITIONING.md` |
+| **silver-core-sdk**（原名 bpt-agent-sdk，2026-07-10 更名 · Claude Agent SDK 公开信息再现 · 银芯→黑池单向输出物） | **v0.12.0 已发货（2026-07-06 P2 收官）**：TypeScript 重实现（公开信息再现、自研引擎），直驱 Anthropic Messages API（fetch+SSE，无 CLI 子进程），**1427 单测全绿 + 2 skipped（真 bwrap 隔离）、tsc/build exit 0**（实机取证）；对官方 SDK **0.3.205** 约 90%+ 表面等价（对标基线 2026-07-10 由 0.3.201 追齐至 0.3.205，见 `docs/COMPAT.md`「0.3.201 -> 0.3.205 chase」；v0.40.0 落 7 个新类型 + interrupt 收据 + parent_agent_id，全类型化、诚实源外 typed-not-emitted），一致性金字塔 L1–L5 全封顶、首轮真 API L5 两臂打平 88.9%。**评估 backlog P2/P3/P4 全落（2026-07-06）**：**P2**（PR #501）逐条过 COMPAT 39 项 PARTIAL 分诊——~14 行「文档滞后」收敛为 FULL + 8 个真缺口闭合各带测试（Edit 读前写门 / stream_event ttft_ms / PostToolBatch tool_calls[] / SubagentStop agent_transcript_path / thinking.display / debugFile / mcpServerStatus scope / maxThinkingTokens @deprecated；notebook·sse 显式暂缓）；**P3** 漂移哨兵升「报+自动开草稿 PR」（`conformance-drift.yml` + `drift-check.mjs --emit-*`，选择性追踪纪律不动、绝不自动改基线）；**P4** `docs/ONBOARDING.md` 新维护者 30 分钟上手（降总线因子）。中间里程碑（v0.4→v0.11）详见下方专节 | 艾瑞卡会话 | 无阻塞待办；评估全文 `Public-Info-Pool/Resource/repo-engineering/bpt-agent-sdk-evaluation-20260706.md`；**动手前必读** `projects/silver-core-sdk/CONTEXT.md` + `docs/ONBOARDING.md`，定位见 `docs/POSITIONING.md` |
 | **bpt-pm**（项目排期工作台 · 非使命线工程产物） | **v1 首版已建（2026-07-05）**：单网页 `index.html` 零依赖零后端，数据协议 `bpt-pm/v1`（`schema/task-schema.json`），CPM 前向/后向自动排期 + 临界路径 + 4 依赖类型（FS/SS/FF/SF）+ 工作日历 + SNET/MSO 约束 + 基线比对甘特图；File System Access 读写回写。CPM 离线复算 + 无头 Chromium 冒烟均通过。**Notion 数据源已端到端实测（2026-07-05）**：适配器 `docs/notion-adapter.md` + CLI `scripts/schedule.mjs`，对真实工作区跑通建库→拉取→CPM→写回→抽验闭环。**本地 Notion 代理已建**（`proxy/server.mjs` 持 token 跑 localhost，网页按钮直连 Notion，端到端 12 项契约通过）。**v2-A 资源冲突可视化已落（2026-07-05，面向 60 人内容团队痛点）**：协议加 `resources`（人/外包 + 并发产能），引擎算逐日负载 + 超载检测，网页资源×日热力图（超载红/满载绿），`tests/resource_load.mjs` 全过。**v2 B/C/D 三特性已实现（2026-07-05，全部 additive 向后兼容，CPM 主算法不改）**：B 版本周期守护（任务级 `deadline` 软截止 → `late`/`lateDays`/顶层 `lateCount`）/ C 流水线模板+返修回环（项目级 `templates` + 纯函数 `instantiateTemplate`，stage FS 链 + R 轮审核→返修）/ D 外包发单对象（项目级 `orders` + 纯函数 `analyzeOrders` → `atRisk`/顶层 `ordersAtRisk`）；三函数在 `scripts/schedule.mjs` 导出、`index.html` 内联同实现，回归 `tests/v2_bcd.mjs`（15 断言全过）。**v3 引擎四组已实现（2026-07-05，工作流编排，全 additive）**：① 完备性（自由浮动 `freeSlack` + 约束补齐 8 型 ALAP/SNLT/FNET/FNLT/MFO + 从完成日倒排 `scheduleFrom=finish`）/ ② 资源错峰建议（纯函数 `suggestLeveling` 贪心串行，残余超载消解）/ ③ WBS 层级摘要（`parent` + 卷积 `isSummary`/`depth`/`childIds`，摘要排除出 CPM/资源/错峰）/ ④ 冲突显式告警（`warnings`/`warningCount`：constraint-conflict/negative-slack/infeasible-window）；引擎两处同实现，回归 `tests/v3.mjs`（20 断言全过）。UI 全部收尾：自由浮动列/8约束/调度方向切换/告警面板/#btnSampleV3/错峰视图/**WBS 折叠三角+甘特摘要条**/**错峰应用建议按钮**（实测超载 3→0）。**表格格式协议 bpt-pm/table-v1 已加（2026-07-05）**：`docs/table-formats.md`（5 张数据源无关标准表：项目/任务/资源/外包单/模板，列名即协议、标输入vs写回）+ 生成器 `scripts/gen_tables.mjs`（空表模板/样例 CSV）+ `tests/tables.mjs`；服务阿里 AI 表格/Notion/飞书多维表等任意 base 建新格式 | 艾瑞卡会话 | 无阻塞待办；可选：消费上限恢复后重跑 v3 对抗验证工作流二次背书；**动手前必读** `projects/bpt-pm/CONTEXT.md` |
 
 > BPT 战线（bpt-web / bpt-desktop / bpt-next / graphify-ext / occ-local）已于 2026-04-19 战略转向中从银芯仓库删除，不再在银芯内部开发。银芯转为 BPT 指导者，协议见 `memory/bpt-guidance-protocol.md`。
-> **例外辨析（勿混淆）**：上表 `bpt-agent-sdk` **不属**上述被删 BPT 产品战线，**亦非**「银芯内部开发 BPT 产品」。它是银芯自有的**工程产物**（公开信息层），作为**银芯→黑池单向输出物**供 BPT Desktop 消费（令其脱离被禁的 `claude.exe` 子进程引擎）——方向与 §1.1-HC 防火墙一致（银芯→黑池单向输出），黑池数据从不回流。
+> **例外辨析（勿混淆）**：上表 `silver-core-sdk`（原名 bpt-agent-sdk） **不属**上述被删 BPT 产品战线，**亦非**「银芯内部开发 BPT 产品」。它是银芯自有的**工程产物**（公开信息层），作为**银芯→黑池单向输出物**供 BPT Desktop 消费（令其脱离被禁的 `claude.exe` 子进程引擎）——方向与 §1.1-HC 防火墙一致（银芯→黑池单向输出），黑池数据从不回流。
 
 ## News 新闻聚合 + 报告系统
 
@@ -151,14 +151,18 @@
 - **已完成**：无
 - **待决策**：游戏类型、技术选型、美术方向
 
-## BPT Agent SDK（`projects/bpt-agent-sdk/`）
+## Silver Core SDK（`projects/silver-core-sdk/`，原名 BPT Agent SDK，2026-07-10 守密人裁定更名）
 
+> **更名注**：包名 `bpt-agent-sdk` → `silver-core-sdk`（0.41.0 起，含目录 / UA / clientInfo /
+> 日志前缀 / CI 工作流 `silver-core-sdk.yml`）。本节及决策档中 2026-07-10 前的历史叙述保留旧名，
+> 归档产物文件名（`Public-Info-Pool/Resource/**/bpt-*`）不追溯改名。
+>
 > **一句话**：官方 `@anthropic-ai/claude-agent-sdk` 的**公开信息再现**（自研引擎），drop-in 兼容公开接口，
 > 但引擎**直驱 Anthropic Messages API**（fetch + SSE，**不打包 CLI 子进程**）。用途：让 BPT Desktop
 > （Electron）脱离被禁的 `claude.exe` 子进程引擎。**定位辨析见「## 子项目状态」表下方例外辨析**——
 > 银芯→黑池单向输出物，与 §1.1-HC 防火墙同向，非 BPT 产品内部开发。
 
-- **动手前必读**：`projects/bpt-agent-sdk/CONTEXT.md`（会话上下文 + 当前 milestone）
+- **动手前必读**：`projects/silver-core-sdk/CONTEXT.md`（会话上下文 + 当前 milestone）
 - **命令自体试用观测 + 落成方案（2026-07-10，守密人 /goal「你自己试一下所有命令，
   然后分析命令的实现，落成方案」，已落）**：艾瑞卡自触 8 组命令/工具族（Skill 族
   validate-data/keybindings-help/loop/code-review-low + 调度双平面 Cron 三连与服务端
@@ -201,7 +205,7 @@
   形状、翻译只在线缆边界（请求编码 + 流事件合成，DeepSeek `reasoning_content`→thinking 块、usage 含缓存
   token 拆分）；三处传输构造点统一走工厂 `src/transport/factory.ts`，默认 'anthropic' 零行为变化。
   诚实边界（thinking 配置不上线缆 / cache_control 剥除 / 非 Claude 模型成本估算 0）见
-  `projects/bpt-agent-sdk/docs/OPENAI-PROTOCOL.md`。**1548 单测全绿（+21）**、`tsc` + `build` exit 0。
+  `projects/silver-core-sdk/docs/OPENAI-PROTOCOL.md`。**1548 单测全绿（+21）**、`tsc` + `build` exit 0。
 - **当前状态（2026-07-04 实测）**：**v0.2 + v0.3 已合并 main**（本体 PR #380 @ `8bd4a54`；v0.3 收尾
   #384 观测流 / #387 Read 图像 / #388 类型面尾批 / #391 桶1 三项）。**v0.3 两待办 #16 + #17 +
   「桶1」（PDF document 块 / 重试流桥接 / 只读工具并行）均已收口。**
@@ -213,7 +217,7 @@
   ① Bash `run_in_background` + BashOutput/KillShell + 前台 cwd/env 状态档持久（ShellManager 每 query 一个，
   子代理共享，query 结束清场）；② 换装就绪包 `docs/MIGRATION.md` + `examples/electron-host.mjs` +
   `npm pack` tarball 干净目录实测装通；③ A/B 七任务基准 `tests/integration/ab-benchmark.mjs`
-  （含中文两项，offender 排序，POSITIONING §7 测量强制令）挂 `bpt-agent-sdk.yml` `ab_benchmark`
+  （含中文两项，offender 排序，POSITIONING §7 测量强制令）挂 `silver-core-sdk.yml` `ab_benchmark`
   dispatch 输入。`pytest` 无涉、Node 侧 **`npx vitest run` 715 单测全绿（21 文件）**；`tsc` + `build` exit 0
 - **提示词线（2026-07-04 起，2026-07-05 v5 提为默认）**：系统提示词五变体 v1–v5（公开信息再现，`src/engine/prompts.ts`，`harnessPromptVariant` 开关）。
   v2=v1 补真实行为纪律；v3=v2 补公开最佳实践四技法；v4=忠实再现官方主循环核心；**v5=全面忠实再现官方主循环**（Doing tasks/Tool use/
@@ -400,7 +404,7 @@
   + CHANGELOG。`npx vitest run` **1128 全绿（45 文件）**。机器守卫累计四件：接口覆盖 / 参考目标棘轮 / 版本 bump / POSIX 危险。
   **版本纪律已立（2026-07-05，黑池「三拨构建同名 0.6.0」诉求）**：版本 bump 至 **0.6.2**（0.6.1/0.6.2 为对已发货
   三拨构建的追溯标号，台账见新增 `CHANGELOG.md`——随 npm pack tarball 发货，黑池箱内可读）；纪律 = 改发货运行时必 bump
-  （修复 patch / 新能力 minor）+ CHANGELOG 一行；**CI 守卫** `scripts/check-version-bump.mjs`（bpt-agent-sdk.yml test job，
+  （修复 patch / 新能力 minor）+ CHANGELOG 一行；**CI 守卫** `scripts/check-version-bump.mjs`（silver-core-sdk.yml test job，
   fetch-depth 2 diff HEAD~1）：改 src/依赖不 bump 版本即红——同名不同货从此进不了 main。tarball 名随版本唯一
   （`bpt-agent-sdk-0.6.2.tgz`），黑池可精确 pin/回退/对账。
   **SSE 网关方言容错已落（2026-07-05，BPT 产线故障闭环）**：BPT 实测「Malformed SSE payload for event "(none)"」
@@ -463,7 +467,7 @@
   四档效率齿轮；含可粘贴进 `decisions.md` 的决策条）
 - **文档索引**：`CONTEXT.md`（上下文）/ `docs/POSITIONING.md`（战略）/ `docs/COMPAT.md`（兼容面 + 毕业清单）/
   `docs/ARCHITECTURE.md`（架构）/ `README.md`（总览）
-- **CI**：`.github/workflows/bpt-agent-sdk.yml`（Node 单测无钥常跑 + live-smoke 手动 dispatch 用 `secrets.ANTHROPIC_API_KEY`）
+- **CI**：`.github/workflows/silver-core-sdk.yml`（Node 单测无钥常跑 + live-smoke 手动 dispatch 用 `secrets.ANTHROPIC_API_KEY`）
 - **v0.3 收尾已完成**：
   - **task #16 观测消息流扩容**（#384）：`SDKMessage` union 补齐观测臂 25 变体（`SDKObservabilityMessage`），
     `permission_denied` 真发射（gate deny 时 yield，与 `result.permission_denials` 台账一致），余类型化待驱动源（COMPAT.md 记发射 vs 类型化）
@@ -528,7 +532,7 @@
   **能采信的部分**:真跑的 14 题**无回归信号**——chat/retrieval/document 全 11 题 bpt 5/5==官方 5/5(与前两轮一致);code-02 bpt 5/5、code-03 bpt 3/5(官方 0/5)。**code-01 本轮 bpt 0/5**(官方 5/5)——仍是那条已知 diligence 概率残余(历轮 3/5→1/5→0/5,off 历史 0/3,0/5 在其已知区间内),非 v0.14 引入的新退化。
   **结论:本轮不能确认 #504/#505 未回归 gate B**(尾部 4 题从未在有额度账户上跑,而前两轮它们 bpt 全 5/5)。**需在有额度账户上重跑一轮全量 L5 才能真验收**。版本号差异(#505 声明 v0.14 但 package.json 曾滞留 0.13.0)已由 #506 修复,与本轮无涉。
 - **v0.18.2 重跑真验收 —— 未回归 gate B,守密人最初问题有真答案(2026-07-07,run 28888199011,head=`b2f7f862`=v0.18.2,haiku,$5 帽,账户已充值)**:承 v0.14.0 无效轮的「需在有额度账户上重跑」挂账,守密人「真 API 全量 L5 revalidation」派单重跑。**这次账户有额度**(同 run `live-smoke` 真 API 冒烟 success,非上轮耗尽),**180/180 跑满、花 $2.1920 < $5 帽**,两臂缓存均 scenario a(设计点)。**Gate B bpt 88/90 (97.8%) vs 官方 77/90 (85.6%),delta +12.2pp → PASS**——与 0.8.1/0.10.0 干净轮(+13.3pp、bpt 88/86)同量级,**gate B 零回归实锤**。本轮覆盖自上次干净轮 v0.10.0 以来全部代码变更(#504 v0.13 五优化 / #505+#507 v0.14 thinking-signature / #509 v0.15 stop-reason / #512 v0.16 计价流式 / #515 v0.18 C9 结构化输出 / #516 v0.18.1 Windows bash / #519 v0.18.2 SubagentStop),**均未回归**。bpt 除 code-01 外**全题 5/5**;**code-01 bpt 3/5**(官方 4/5)——回到 0.8.1 轮的 3/5(已知 diligence 概率残余,历轮 3/5→1/5→0/5→**3/5**,在已知区间高端,非新退化)。官方本轮仍被 KD-L5-01(/tmp 散落物)拉低:code-03 官方 0/5、longconv-01/02 官方各 2/5(bpt 对应 5/5/5/5)。同 run `conformance` 作业(L1-L4 差分 + 棘轮 GATE)亦 success,印证新登记的 KD-L4-06/07/08 + baseline 在 CI 真实双臂下门禁全绿。**BPT SDK 换装线 L5 revalidation 收官:最新 v0.18.2 在 main、真 L5 全量 gate B 正向零回归。**报告 artifact `conformance-l5-report`(run 28888199011)。
-- **代码里程碑回填 v0.11–v0.16（2026-07-07，交接缺口补全）**：上方回归验收线聚焦 L5 门禁轮，代码能力叙述在 v0.10.0（Read 上限）后断档；此处补全 v0.11–v0.16 各版**发货了什么**，**权威账本以 `projects/bpt-agent-sdk/CHANGELOG.md` 为准**（0.6.2 起「改 src 必升版 + CI `check-version-bump.mjs` 守卫」纪律，本节只做指针式速览、不复刻逐条）：
+- **代码里程碑回填 v0.11–v0.16（2026-07-07，交接缺口补全）**：上方回归验收线聚焦 L5 门禁轮，代码能力叙述在 v0.10.0（Read 上限）后断档；此处补全 v0.11–v0.16 各版**发货了什么**，**权威账本以 `projects/silver-core-sdk/CHANGELOG.md` 为准**（0.6.2 起「改 src 必升版 + CI `check-version-bump.mjs` 守卫」纪律，本节只做指针式速览、不复刻逐条）：
   - **v0.11.0（黑池 ContextRing 请求 2026-07-06）**：新导出 `enumerateBuiltinToolMetadata(cfg?)`——内建工具面只读投影 `{name,description,inputJsonSchema}[]`，零副作用（不 execute / 不连 MCP / 不碰 fs·网络），让宿主用与 MCP 工具同一条 token 估算路径给内建工具块定尺（把 ~60K「残值」估算拆成逐工具明细）；纯新增读面、零行为改动。
   - **v0.12.0（#501）**：P2 PARTIAL-closure——逐行重审 COMPAT.md 每条 PARTIAL、陈旧行对齐回 FULL（代码多已随 v0.7 达标）+ 落 8 个可实现 REAL-GAP：Edit 补读前写门（**破坏性**，同 Write / 官方 Edit）/ `stream_event` 带官方 `ttft_ms` / `PostToolBatch` 带官方 `tool_calls[]`（旧 `tool_names` 双轨弃用）/ `SubagentStop` 补 `agent_transcript_path` / `thinking.display` 上线 / `debugFile` 真落盘 / `mcpServerStatus().scope` 溯源 / `maxThinkingTokens` 挂 `@deprecated`。+13 单测（1427 绿）。
   - **v0.13.0（#504）**：五项守密人指派优化——Grep `count`/`files_with_matches` 默认返完整结果（旧 250 平帽会静默报错数 / 漏文件）+ 全模式截断响亮页脚 / Grep 全扫遥测行 / `runConcurrent(mgr,tasks,opts)` 并行驱动多会话（默认 8 并发、逐任务失败隔离，闭合「串行拉链」脚枪）/ `provider.maxConcurrentRequests` FIFO 计数信号量护速率 / MCP 并发加固（50 并发 callTool 单连接无串扰）。1447 绿。

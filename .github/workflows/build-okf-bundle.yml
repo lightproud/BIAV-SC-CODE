@@ -30,7 +30,7 @@ on:
       - 'Public-Info-Pool/Reference/Game-Unpacked/**'
       # projects 入口文档层
       - 'projects/*/CONTEXT.md'
-      - 'projects/bpt-agent-sdk/docs/**'
+      - 'projects/silver-core-sdk/docs/**'
       - 'projects/site/design/**'
       - 'RELEASES.md'
       - 'docs/testing-strategy.md'
