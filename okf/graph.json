@@ -1,8 +1,8 @@
 {
   "generated": "2026-07-10",
   "stats": {
-    "nodes": 345,
-    "edges": 402
+    "nodes": 346,
+    "edges": 403
   },
   "nodes": [
     {
@@ -3081,6 +3081,17 @@
       "tier": "search"
     },
     {
+      "id": "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "type": "documentation",
+      "title": "silver-core-sdk-rename-review-20260710",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
       "id": "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "type": "documentation",
       "title": "test-coverage-analysis-202606",
@@ -5582,6 +5593,12 @@
     },
     {
       "source": "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
       "rel_type": "mention"

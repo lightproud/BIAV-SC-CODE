@@ -8,7 +8,7 @@
   },
   "stats": {
     "concepts": 346,
-    "edges": 402,
+    "edges": 403,
     "terms": 5974,
     "by_type": {
       "character": 72,
@@ -968,7 +968,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 86
+      "degree": 87
     },
     "/characters/15604.md": {
       "type": "character",
@@ -3942,7 +3942,7 @@
       ],
       "section": "resource",
       "tier": "search",
-      "degree": 0
+      "degree": 1
     },
     "/resource/resource-repo-engineering-test-coverage-analysis-202606.md": {
       "type": "documentation",
@@ -6681,6 +6681,11 @@
         "mention"
       ],
       [
+        "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
         "/sources/youtube_comments.md",
         "提及:艾瑞卡",
         "mention"
@@ -8830,6 +8835,13 @@
       ]
     ],
     "/resource/resource-repo-engineering-retired-modules-audit-202606.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
+    "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md": [
       [
         "/characters/15603.md",
         "提及:艾瑞卡",
