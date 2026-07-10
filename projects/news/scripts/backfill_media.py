@@ -117,7 +117,10 @@ def collect_urls(include_discord):
             if isinstance(it, dict) and it.get("media_url"):
                 urls.append((it["media_url"], src, d))
     if include_discord:
-        for fp in glob.glob(f"{SRC}/discord/channels/*/*.jsonl"):
+        # 三区服全量遍历（2026-07-10 方案甲布局，新旧布局经 SSOT 回落）
+        import archive_layout
+        for fpath in archive_layout.iter_discord_message_files(Path(SRC) / "discord"):
+            fp = str(fpath)
             d = os.path.basename(fp)[:-6]
             if len(d) != 10:
                 continue

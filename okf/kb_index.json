@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 342,
-    "edges": 401,
-    "terms": 5931,
+    "concepts": 344,
+    "edges": 404,
+    "terms": 5959,
     "by_type": {
       "character": 72,
       "dataset": 107,
-      "documentation": 100,
+      "documentation": 102,
       "knowledge-pointer": 43,
       "reference": 17,
       "research": 3
@@ -26,7 +26,7 @@
       "memory": 47,
       "news-output": 23,
       "projects": 23,
-      "resource": 76,
+      "resource": 78,
       "sources": 17,
       "story": 11,
       "unpacked": 13,
@@ -34,7 +34,7 @@
     },
     "by_tier": {
       "skeleton": 128,
-      "search": 214
+      "search": 216
     }
   },
   "sections": {
@@ -68,7 +68,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 76
+      "count": 78
     },
     "sources": {
       "index": "/sources/index.md",
@@ -305,7 +305,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 33
+      "degree": 34
     },
     "/characters/130375.md": {
       "type": "character",
@@ -968,7 +968,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 84
+      "degree": 86
     },
     "/characters/15604.md": {
       "type": "character",
@@ -1423,7 +1423,7 @@
     "/community/community-taptap.md": {
       "type": "dataset",
       "title": "taptap 社区全量档案",
-      "description": "taptap 平台全量档案层（分析镜头）：百级条（精确值见指针本体）/ 2 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
+      "description": "taptap 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 2 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。",
       "resource": "/Public-Info-Pool/Record/Community/taptap/cn/post/",
       "tags": [
         "data_layer:full_archive",
@@ -2550,7 +2550,7 @@
     "/projects/bpt-sdk-doc-compat.md": {
       "type": "documentation",
       "title": "bpt-agent-sdk COMPAT",
-      "description": "Target surface: `@anthropic-ai/claude-agent-sdk` public API (npm 0.3.201; chased from the 0.3.199 baseline 2026-07-05, keeper ruling, zero conformance drift) as",
+      "description": "Target surface: `@anthropic-ai/claude-agent-sdk` public API (npm 0.3.205; chased from the 0.3.201 baseline 2026-07-10, keeper ruling, zero conformance drift — 0.3.199 -> 0.3.201 chased 2026-07-05) as",
       "resource": "/projects/bpt-agent-sdk/docs/COMPAT.md",
       "tags": [
         "data_layer:curated",
@@ -2780,7 +2780,7 @@
       ],
       "section": "projects",
       "tier": "search",
-      "degree": 2
+      "degree": 3
     },
     "/projects/project-site.md": {
       "type": "documentation",
@@ -3342,6 +3342,20 @@
       "tier": "search",
       "degree": 1
     },
+    "/resource/resource-proposal-discord-layout-unification-20260710.md": {
+      "type": "documentation",
+      "title": "discord-layout-unification-20260710",
+      "description": "当前三服布局不一致（历史原因：Global 先建、后来的 guild 走 `guilds/` 分层）：（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/proposal/discord-layout-unification-20260710.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:proposal"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 1
+    },
     "/resource/resource-proposal-internal-ai-platform-plan-202604.md": {
       "type": "documentation",
       "title": "internal-ai-platform-plan-202604",
@@ -3747,6 +3761,20 @@
       "section": "resource",
       "tier": "search",
       "degree": 0
+    },
+    "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md": {
+      "type": "documentation",
+      "title": "community-archive-strategy-review-20260710",
+      "description": "社区信息归档主线整体处于**「架构已成型、运行基本健康、收尾债集中在文档与验收」**状态。（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/repo-engineering/community-archive-strategy-review-20260710.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 1
     },
     "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md": {
       "type": "documentation",
@@ -4994,6 +5022,11 @@
       [
         "/memory/project-status.md",
         "提及:Saya",
+        "mention"
+      ],
+      [
+        "/projects/project-news.md",
+        "提及:沙耶",
         "mention"
       ],
       [
@@ -6560,6 +6593,11 @@
         "mention"
       ],
       [
+        "/resource/resource-proposal-discord-layout-unification-20260710.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
         "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
         "提及:艾瑞卡",
         "mention"
@@ -6591,6 +6629,11 @@
       ],
       [
         "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
         "提及:艾瑞卡",
         "mention"
       ],
@@ -8200,6 +8243,11 @@
         "mention"
       ],
       [
+        "/characters/130226.md",
+        "提及:沙耶",
+        "mention"
+      ],
+      [
         "/projects/entry-claude-md.md",
         "入口→上下文",
         "cross"
@@ -8658,6 +8706,13 @@
         "mention"
       ]
     ],
+    "/resource/resource-proposal-discord-layout-unification-20260710.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
     "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md": [
       [
         "/characters/15603.md",
@@ -8701,6 +8756,13 @@
       ]
     ],
     "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
+    "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md": [
       [
         "/characters/15603.md",
         "提及:艾瑞卡",
@@ -9552,6 +9614,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -9581,6 +9644,7 @@
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -9862,6 +9926,7 @@
       "/news-output/news-output-youtube.md",
       "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/sources/appstore.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -10511,6 +10576,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/sources/appstore.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -10718,6 +10784,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -10747,6 +10814,7 @@
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -11035,6 +11103,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -11064,6 +11133,7 @@
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -11347,6 +11417,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -11376,6 +11447,7 @@
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -11518,6 +11590,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -11547,6 +11620,7 @@
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -11646,6 +11720,7 @@
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/sources/discord.md"
     ],
     "discussion": [
@@ -11802,6 +11877,7 @@
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -12255,6 +12331,7 @@
       "/community/community-google-play.md",
       "/community/community-steam.md",
       "/community/community-youtube.md",
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/sources/appstore.md",
       "/sources/google_play.md",
       "/sources/official.md",
@@ -12296,6 +12373,12 @@
     ],
     "guidelines": [
       "/memory/memory-ext-karpathy-coding-principles.md"
+    ],
+    "guild": [
+      "/resource/resource-proposal-discord-layout-unification-20260710.md"
+    ],
+    "guilds": [
+      "/resource/resource-proposal-discord-layout-unification-20260710.md"
     ],
     "gz": [
       "/README.md"
@@ -12534,6 +12617,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -12563,6 +12647,7 @@
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -13007,6 +13092,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -13036,6 +13122,7 @@
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -13118,6 +13205,9 @@
     ],
     "layering": [
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
+    ],
+    "layout": [
+      "/resource/resource-proposal-discord-layout-unification-20260710.md"
     ],
     "lbs": [
       "/characters/125346.md",
@@ -13515,6 +13605,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -13539,6 +13630,7 @@
       "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -14173,6 +14265,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -14202,6 +14295,7 @@
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -14480,6 +14574,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -14552,6 +14647,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -14581,6 +14677,7 @@
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -14868,6 +14965,7 @@
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -14941,6 +15039,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -14970,6 +15069,7 @@
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -15016,6 +15116,7 @@
       "/community/community-steam.md",
       "/news-output/news-output-taptap-review.md",
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/sources/steam.md",
       "/sources/taptap_review.md"
@@ -15497,7 +15598,8 @@
     ],
     "strategy": [
       "/memory/memory-strategy-repo-slimming-plan.md",
-      "/projects/doc-testing-strategy.md"
+      "/projects/doc-testing-strategy.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md"
     ],
     "string": [
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
@@ -15779,6 +15881,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -15808,6 +15911,7 @@
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -15879,6 +15983,9 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md"
+    ],
+    "unification": [
+      "/resource/resource-proposal-discord-layout-unification-20260710.md"
     ],
     "unit": [
       "/story/lore_by_unit.md",
@@ -16423,6 +16530,7 @@
     ],
     "一致": [
       "/README.md",
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md"
     ],
     "一艾": [
@@ -16479,6 +16587,9 @@
     ],
     "三态": [
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
+    ],
+    "三服": [
+      "/resource/resource-proposal-discord-layout-unification-20260710.md"
     ],
     "三条": [
       "/README.md"
@@ -16588,6 +16699,9 @@
     ],
     "下章": [
       "/characters/15564.md"
+    ],
+    "不一": [
+      "/resource/resource-proposal-discord-layout-unification-20260710.md"
     ],
     "不丢": [
       "/memory/memory-research-discord-archive-backfill-conflict.md"
@@ -16835,6 +16949,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -16864,6 +16979,7 @@
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -17092,6 +17208,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -17121,6 +17238,7 @@
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -17403,6 +17521,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -17432,6 +17551,7 @@
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -17543,6 +17663,9 @@
     ],
     "与静": [
       "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md"
+    ],
+    "与验": [
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md"
     ],
     "与黑": [
       "/memory/memory-ext-active-silver-blackpool-interface.md"
@@ -17734,6 +17857,7 @@
     ],
     "中在": [
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md"
     ],
     "中大": [
@@ -17945,6 +18069,9 @@
     "主控": [
       "/memory/memory-ext-active-policy-direct-push-main.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md"
+    ],
+    "主线": [
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md"
     ],
     "主要": [
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
@@ -18583,6 +18710,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -18612,6 +18740,7 @@
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -19381,6 +19510,9 @@
       "/story/story_search_index.md",
       "/story/story_units.md"
     ],
+    "体处": [
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md"
+    ],
     "体定": [
       "/memory/memory-ext-bpt-positioning.md"
     ],
@@ -19510,6 +19642,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -19539,6 +19672,7 @@
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -19766,6 +19900,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -19795,6 +19930,7 @@
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -20209,7 +20345,8 @@
       "/memory/memory-ext-biav-info-classification.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
-      "/projects/project-news.md"
+      "/projects/project-news.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md"
     ],
     "信标": [
       "/story/STORY_RESEARCH.md"
@@ -20246,6 +20383,9 @@
     ],
     "债务": [
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
+    "债集": [
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md"
     ],
     "值见": [
       "/community/community-appstore.md",
@@ -20290,6 +20430,7 @@
     ],
     "健康": [
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/sources/appstore.md",
@@ -20373,6 +20514,7 @@
       "/story/story_research_todo.md"
     ],
     "先建": [
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md"
     ],
     "先行": [
@@ -21094,6 +21236,9 @@
     "分多": [
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
     ],
+    "分层": [
+      "/resource/resource-proposal-discord-layout-unification-20260710.md"
+    ],
     "分布": [
       "/memory/memory-ext-knowledge-layer-design.md",
       "/memory/memory-research-community-analysis-2026-05-18-26.md",
@@ -21557,6 +21702,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -21586,6 +21732,7 @@
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -21645,6 +21792,9 @@
     "削弱": [
       "/characters/15583.md",
       "/characters/15602.md"
+    ],
+    "前三": [
+      "/resource/resource-proposal-discord-layout-unification-20260710.md"
     ],
     "前为": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md"
@@ -21986,6 +22136,9 @@
     "北崎": [
       "/characters/15582.md"
     ],
+    "区信": [
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md"
+    ],
     "区全": [
       "/community/community-appstore.md",
       "/community/community-bilibili.md",
@@ -22090,6 +22243,7 @@
       "/community/community-google-play.md",
       "/community/community-reddit.md",
       "/community/community-steam.md",
+      "/community/community-taptap.md",
       "/community/community-weibo.md",
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
@@ -22294,6 +22448,7 @@
       "/community/community-index.md",
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/morimens-context.md",
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/sources/appstore.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -22346,7 +22501,8 @@
       "/memory/memory-ext-karpathy-coding-principles.md"
     ],
     "原因": [
-      "/projects/extracted-lua-readme.md"
+      "/projects/extracted-lua-readme.md",
+      "/resource/resource-proposal-discord-layout-unification-20260710.md"
     ],
     "原围": [
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md"
@@ -23193,6 +23349,9 @@
       "/sources/youtube.md",
       "/sources/youtube_comments.md"
     ],
+    "史原": [
+      "/resource/resource-proposal-discord-layout-unification-20260710.md"
+    ],
     "史回": [
       "/sources/appstore.md",
       "/sources/bilibili.md",
@@ -23382,6 +23541,9 @@
     ],
     "后收": [
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md"
+    ],
+    "后来": [
+      "/resource/resource-proposal-discord-layout-unification-20260710.md"
     ],
     "后永": [
       "/characters/15586.md",
@@ -24062,6 +24224,9 @@
     "在提": [
       "/characters/15602.md"
     ],
+    "在文": [
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md"
+    ],
     "在新": [
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
@@ -24243,7 +24408,8 @@
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
     ],
     "基本": [
-      "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md"
+      "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md"
     ],
     "基础": [
       "/characters/122587.md",
@@ -24477,6 +24643,9 @@
     "壳让": [
       "/characters/15565.md"
     ],
+    "处于": [
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md"
+    ],
     "处理": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -24669,6 +24838,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -24698,6 +24868,7 @@
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -25446,6 +25617,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -25475,6 +25647,7 @@
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -26054,6 +26227,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -26083,6 +26257,7 @@
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -26648,6 +26823,9 @@
     "尽的": [
       "/characters/15599.md"
     ],
+    "尾债": [
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md"
+    ],
     "尾腿": [
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
@@ -26672,6 +26850,9 @@
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md"
+    ],
+    "局不": [
+      "/resource/resource-proposal-discord-layout-unification-20260710.md"
     ],
     "局势": [
       "/characters/77926.md"
@@ -27096,7 +27277,8 @@
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "已成": [
-      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md"
     ],
     "已有": [
       "/memory/memory-research-discord-archive-backfill-conflict.md",
@@ -27193,6 +27375,9 @@
     ],
     "布功": [
       "/memory/memory-ext-bpt-architecture-summary-template.md"
+    ],
+    "布局": [
+      "/resource/resource-proposal-discord-layout-unification-20260710.md"
     ],
     "布式": [
       "/memory/memory-ext-knowledge-layer-design.md"
@@ -27832,7 +28017,8 @@
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-strategy-repo-slimming-plan.md",
-      "/projects/news-archive-sources-registry.md"
+      "/projects/news-archive-sources-registry.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md"
     ],
     "归测": [
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
@@ -27848,6 +28034,7 @@
     ],
     "当前": [
       "/memory/decisions.md",
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "当她": [
@@ -28556,6 +28743,9 @@
     "息平": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-silver-blackpool-interface.md"
     ],
+    "息归": [
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md"
+    ],
     "息往": [
       "/projects/entry-claude-md.md"
     ],
@@ -28873,6 +29063,9 @@
     ],
     "成可": [
       "/characters/95786.md"
+    ],
+    "成型": [
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md"
     ],
     "成多": [
       "/characters/15569.md"
@@ -29767,6 +29960,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -29796,6 +29990,7 @@
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -30302,6 +30497,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -30331,6 +30527,7 @@
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -30627,6 +30824,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -30656,6 +30854,7 @@
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -30785,7 +30984,8 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
     "收尾": [
-      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md"
     ],
     "收弃": [
       "/characters/15565.md"
@@ -31026,6 +31226,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -31055,6 +31256,7 @@
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -31301,6 +31503,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -31330,6 +31533,7 @@
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -31608,6 +31812,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md"
     ],
@@ -31768,6 +31973,7 @@
     "文档": [
       "/memory/memory-ext-biav-info-classification.md",
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/story/story_research_notes.md"
     ],
     "文每": [
@@ -32698,6 +32904,9 @@
       "/memory/memory-ext-skill-authoring-standard.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
     ],
+    "服布": [
+      "/resource/resource-proposal-discord-layout-unification-20260710.md"
+    ],
     "朗和": [
       "/characters/15578.md",
       "/characters/15593.md"
@@ -32941,6 +33150,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -32970,6 +33180,7 @@
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -33050,6 +33261,9 @@
       "/wiki-data/wiki-schema-realms-schema.md",
       "/wiki-data/wiki-schema-stages-schema.md",
       "/wiki-data/wiki-schema-trinkets-schema.md"
+    ],
+    "本健": [
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md"
     ],
     "本全": [
       "/projects/extracted-lua-readme.md"
@@ -33351,6 +33565,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -33380,6 +33595,7 @@
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -33608,6 +33824,7 @@
     ],
     "来的": [
       "/characters/15564.md",
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "来破": [
@@ -33664,6 +33881,9 @@
       "/story/story_research_todo.md",
       "/story/story_search_index.md",
       "/story/story_units.md"
+    ],
+    "构已": [
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md"
     ],
     "构建": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-build-verification.md",
@@ -33767,6 +33987,7 @@
       "/memory/memory-ext-bpt-architecture-summary-template.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "枷锁": [
@@ -33913,6 +34134,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -33942,6 +34164,7 @@
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -34117,6 +34340,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -34146,6 +34370,7 @@
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -34243,7 +34468,11 @@
       "/community/community-index.md"
     ],
     "档与": [
-      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md"
+    ],
+    "档主": [
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md"
     ],
     "档到": [
       "/projects/news-archive-sources-registry.md"
@@ -34581,6 +34810,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -34610,6 +34840,7 @@
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -34956,6 +35187,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -34985,6 +35217,7 @@
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -36223,6 +36456,7 @@
       "/memory/memory-ext-bpt-architecture-summary-template.md",
       "/memory/memory-research-discord-archive-backfill-conflict.md",
       "/memory/project-status.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
     ],
@@ -37165,8 +37399,7 @@
     "百级": [
       "/community/community-appstore.md",
       "/community/community-pixiv.md",
-      "/community/community-ruliweb.md",
-      "/community/community-taptap.md"
+      "/community/community-ruliweb.md"
     ],
     "的一": [
       "/characters/15577.md",
@@ -38428,6 +38661,7 @@
       "/projects/project-wiki.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/sources/appstore.md",
       "/sources/bilibili.md",
@@ -39178,6 +39412,9 @@
     ],
     "线接": [
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md"
+    ],
+    "线整": [
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md"
     ],
     "线格": [
       "/README.md"
@@ -40433,6 +40670,9 @@
     ],
     "行动": [
       "/characters/15591.md"
+    ],
+    "行基": [
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md"
     ],
     "行审": [
       "/resource/resource-repo-engineering-repo-audit-20260603.md"
@@ -41777,6 +42017,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -41806,6 +42047,7 @@
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -42204,7 +42446,8 @@
     ],
     "运行": [
       "/README.md",
-      "/projects/entry-claude-md.md"
+      "/projects/entry-claude-md.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md"
     ],
     "近她": [
       "/characters/15586.md"
@@ -42432,6 +42675,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -42461,6 +42705,7 @@
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -43421,6 +43666,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -43450,6 +43696,7 @@
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -43665,6 +43912,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -43694,6 +43942,7 @@
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -44146,6 +44395,7 @@
     "集中": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md"
     ],
     "集健": [
@@ -44560,7 +44810,8 @@
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
-      "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md"
+      "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md"
     ],
     "验标": [
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md"
@@ -44904,6 +45155,7 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-silver-blackpool-interface.md",
       "/projects/news-archive-sources-registry.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/sources/appstore.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -45206,6 +45458,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/wiki-data/wiki-data-character-skills.md"
     ],
     "compaction": [
@@ -45414,6 +45667,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -45443,6 +45697,7 @@
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -45719,6 +45974,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -45748,6 +46004,7 @@
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -45881,6 +46138,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -45910,6 +46168,7 @@
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -45980,6 +46239,7 @@
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/sources/discord.md"
     ],
     "discussion": [
@@ -46098,6 +46358,7 @@
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -46623,6 +46884,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -46652,6 +46914,7 @@
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -46734,6 +46997,9 @@
     ],
     "layering": [
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
+    ],
+    "layout": [
+      "/resource/resource-proposal-discord-layout-unification-20260710.md"
     ],
     "learned": [
       "/memory/lessons-learned.md"
@@ -47271,6 +47537,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -47361,6 +47628,7 @@
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -47408,6 +47676,7 @@
     "review": [
       "/news-output/news-output-taptap-review.md",
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/sources/taptap_review.md"
     ],
@@ -47624,7 +47893,8 @@
       "/memory/strategic-plan-2026.md"
     ],
     "strategy": [
-      "/memory/memory-strategy-repo-slimming-plan.md"
+      "/memory/memory-strategy-repo-slimming-plan.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md"
     ],
     "structure": [
       "/assets/assets-narrative-structure.md",
@@ -47745,6 +48015,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -47774,6 +48045,7 @@
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -47801,6 +48073,9 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md"
+    ],
+    "unification": [
+      "/resource/resource-proposal-discord-layout-unification-20260710.md"
     ],
     "unit": [
       "/story/lore_by_unit.md",

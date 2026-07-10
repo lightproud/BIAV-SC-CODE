@@ -1,7 +1,12 @@
 # News 聚合器 — 会话上下文
 
 > 启动时请先阅读根目录 `CLAUDE.md` 了解全局。
-> 最后更新：2026-06-28 by 艾瑞卡会话（数据根引用同步至 `Public-Info-Pool/Record/Community/`，2026-06-21 BPT 4R 迁移落地；区服/类型分层仍待实施。上次 2026-06-17 日服 Discord 归档接入。实时进度权威在 `memory/project-status.md`）
+> 最后更新：2026-07-10 by 艾瑞卡会话（归档策略整体评估 + 对账刷新：区服/类型分层已实施
+> （06-22 落地、07-02 历史归位 1,395 文件）；日服 Discord 已启用归档（:45 cron 在跑）；
+> 沉默源审计新增叶级下钻（区服/类型粒度断档告警）；official / appstore-jp 沉默排查结论
+> 见「2026-07-10 状态核验」。评估报告
+> `Public-Info-Pool/Resource/repo-engineering/community-archive-strategy-review-20260710.md`。
+> 实时进度权威在 `memory/project-status.md`）
 
 ## v2.0 新使命定位（2026-04-26 起）
 
@@ -13,6 +18,21 @@
 - **派发关系**：Code-news 接管 Phase 2 全部 news 加固任务，主控台不亲自动 news 业务文件
 
 ## 当前状态：Phase 2 加固期（自动化跑稳 + 黑池接口稳定化）
+
+### 2026-07-10 状态核验（实测，归档策略整体评估随附）
+
+- **源健康**：21 源 / 16 活跃 / 1 降级 / 0 休眠 / 4 从未产出；全量档案层 763 万条
+- **两处沉默排查结论（live 探测 API 判定，均为真沉默、采集器无恙）**：
+  - `official`（Steam 官方公告）沉默 12 天：Steam API 上最新公告即 06-28 V2.5.2.0
+    维护公告，与归档一致——版本上线后的公告间歇期
+  - `appstore/jp` 骤停 30 天：iTunes JP RSS 实时最新评论即 06-09（落在最后一档
+    06-10 内）——沙耶之歌联动评论潮退去后日区无新评论
+- **审计器叶级下钻已落地（本日）**：`silent_sources_audit.py` 新增区服/类型叶粒度
+  断档告警（近期节拍中位数自适应阈值，日更叶 7 天即报、稀疏叶按 3 倍节拍放宽），
+  堵住「平台活跃掩盖区服断档」盲区；`stalled_leaves` 一并进 source-health.json；
+  审计窗口加内容日期下限（weixin 2016 老文不再稀释统计）
+- **待守密人裁定项（评估报告 P0）**：维护态节拍表提案（20260702，含 CI required
+  `test` 门禁重启）；贡献流程验收演练；discord 三服布局统一 vs 明文豁免二选一
 
 ### 2026-06-09 状态核验（实测）
 - **采集自动化持续运行**：`update-news` 每小时；`output/*-latest.json` 当日仍在更新
@@ -27,9 +47,11 @@
 
 ### M1 基础设施加固（4-27 → 5-10，14 天）
 1. [x] **桥接 Discord 归档数据到聚合器**：已落地（见 6-9 核验）
-2. [ ] **Discord 月度清理首次触发**：`scripts/archive_discord.py --force-month YYYY-MM` 参数已实装。当前实测归档 193 MB，待守密人 UI 触发 `force_month=2026-03`（状态待核）
+2. ~~Discord 月度清理首次触发~~：2026-06-21 de-tier 裁定后 discord 全量 text 永驻 git
+   （`after_archive: keep`，不再驱逐），月度清理语境失效；历史月份已备份进 Releases
 3. ~~验证日报质量~~：daily-report 定时已停用，报告改会话内生成，本项语境失效
-4. [ ] **黑池接口稳定性评估**：评估 `output/*-latest.json` 的 schema 一致性（状态待核）
+4. [x] **黑池接口稳定性评估**：输出层契约 v1 已落地（2026-07-02，
+   `projects/news/schema/output-latest.schema.json` + `contract_version` 盖章）
 
 ### M2 信息齐备（5-11 → 6-10，31 天）
 > 全球采集覆盖范围与接入纪律见 `GLOBAL_COLLECTION_SPEC.md`（规定层，与 sources.py 配套）。
@@ -40,8 +62,10 @@
 - [ ] 黑池接口规范文档对齐（参考 `memory/active/silver-blackpool-interface.md`）
 
 ### M3 稳定化（6-11 → 7-10，30 天）
-- [ ] 自动化连续 30 天稳定运行验证
-- [ ] 哨兵层异常检测覆盖率提升
+- [x] 自动化连续 30 天稳定运行验证：期内机器提交无断档（07-10 实测 git log；
+  期中 07-02 修复三处采集缺陷但采集未中断，正式验收口径由守密人 M4 确认）
+- [x] 哨兵层异常检测覆盖率提升：校验丢弃一等指标 + `--strict` 门控（07-02）；
+  叶级下钻区服/类型断档告警（07-10）
 - [ ] 黑池消费场景实战测试（守密人或黑池会话拉取 latest.json 验证）
 
 ### M4 开放测试 + 战略验收（7-11 → 7-19，9 天）
@@ -51,14 +75,15 @@
 - update-news.yml 每小时运行一次（cron: '0 * * * *'）
 - discord-archive.yml 已从每小时降到每日 1 次（18:00 UTC）+ 每月 1 日月度归档（Global 官方服，数据落 `Public-Info-Pool/Record/Community/discord/` 根）
 - discord-archive-volunteer.yml 每小时 :15（志愿者服务器 guild，数据落 `Public-Info-Pool/Record/Community/discord/guilds/{id}/`）
-- discord-archive-jp.yml 日服服务器归档（数据落 guilds/{id}/）：待填 JP_GUILD_ID 并启用 :45 错峰 cron，详见下「日服 Discord 接入」
+- discord-archive-jp.yml 日服服务器归档（数据落 guilds/1377475512716234902/）：**已启用**（JP_GUILD_ID 已填、:45 错峰 cron 在跑，07-10 实测正常落档）
 - discord-discover-guilds.yml 手动触发：列出 bot 所在全部服务器，发现待接入 guild ID
 - collect-comments.yml 每日 02:00 UTC（2026-06-05 新增）；recover-fanart.yml 手动触发（同日新增）
 - daily-report.yml 定时已停用，仅手动备用（报告改会话内订阅生成）
 
-### 日服 Discord 接入（2026-06-17）
+### 日服 Discord 接入（2026-06-17 接入，已启用运行；07-10 实测每小时正常落档）
 bot 已接入日服 Discord，纳入归档计划。归档器（`discord_archiver.py`）按 guild_id 自动分层，
-无需改采集代码，复用同一 `DISCORD_BOT_TOKEN`（与志愿者服务器同模式）。两步启用：
+无需改采集代码，复用同一 `DISCORD_BOT_TOKEN`（与志愿者服务器同模式）。当时的两步启用
+（均已完成，留作同类新 guild 接入的操作参照）：
 
 1. **发现 guild ID**：在 Actions 运行 `Discord Discover Guilds`（`discord-discover-guilds.yml`，
    仅手动触发）。脚本 `discord_list_guilds.py` 调 `/users/@me/guilds` 列出 bot 所在全部服务器，
@@ -86,9 +111,9 @@ bot 已接入日服 Discord，纳入归档计划。归档器（`discord_archiver
 - 已集成到 `update-news.yml` workflow，每次聚合后自动归档
 - 支持去重合并、指定日期归档、统计报表
 - 运行方式：`python scripts/archive_platforms.py [--date YYYY-MM-DD] [--stats]`
-- ⚠ 数据**根**已于 2026-06-21 迁至 `Public-Info-Pool/Record/Community/`（`data/platforms/` 旧根废弃，脚本 `ARCHIVE_DIR` 已切）；但平台目录内的**区服/类型分层**（`{平台}/{区服}/{类型}/`，见下方《采集源命名与归档结构规范》）仍为扁平日期文件、**待实施**。
+- 数据**根**已于 2026-06-21 迁至 `Public-Info-Pool/Record/Community/`（`data/platforms/` 旧根废弃）；**区服/类型分层已实施**：新数据 2026-06-22 起走分层路径，平级历史 1,395 文件 2026-07-02 一次性归位（逐源唯一键集合验证零丢失），布局知识收编 `archive_layout.py` 单一真相源（契约测试 `tests/test_archive_layout.py`）。
 
-## 采集源命名与归档结构规范（2026-06-21 grilling 对齐，待实施）
+## 采集源命名与归档结构规范（2026-06-21 grilling 对齐；分层已实施，残余待办见下）
 
 > 守密人 2026-06-21 拷问对齐定案。解决「来源名混乱、未含子类、区服拼名过细」三病。
 
@@ -117,12 +142,19 @@ bot 已接入日服 Discord，纳入归档计划。归档器（`discord_archiver
 ### 日本版 = AltPlus Inc. 独立发行
 忘却前夜日本版在各平台为 AltPlus 单独运营的独立 app/账号，故一律拆 `jp/` 区服目录（非同 appid 多国）。
 
-### 实施待办（独立任务，非本次 grilling 范围）
-- 改 `sources.py`：source 标识改路径式 + 合并重复 taptap 评论栈（aggregator `fetch_taptap` 仅 4 条 → 弃；统一走 taptap_collector）。
-- 新增日本版/日服采集：steam jp(4226130)、appstore jp(6743462069)、youtube jp 频道、google_play jp 包名（**待查**）、discord jp 已接入。
-- taptap 评论采全（440 → 1163，API total）+ 新增 `post`/`strategy`（Playwright DOM）。
-- `discord_archiver` 统一三服务器到 `discord/<区服>/`（现全球服在 channels/ 根、其余在 guilds/，不一致）。
-- 历史归档目录迁移到新层级。
+### 实施待办对账（2026-07-10 实测刷新）
+- [x] 新增日本版/日服采集：steam jp / appstore jp / youtube jp / google_play jp /
+  discord jp **均已在产出**（`Public-Info-Pool/Record/Community/` 各 jp 叶实测有档；
+  jp 叶多为稀疏源，断档判定看审计器叶级下钻，勿凭「几天没新档」下结论）
+- [x] taptap 评论恢复入流（07-02 白名单事故修复后 `taptap_review` 持续产出）
+- [x] 历史归档目录迁移到新层级（07-02 归位 1,395 文件，见上节）
+- [ ] `sources.py` source 标识改路径式（现为「折叠映射」过渡态：`official` →
+  `steam/global/news` 等写入侧已折叠，源名层面仍旧名——健康报表按旧名呈现）
+- [x] `discord_archiver` 统一三服务器到 `discord/<区服>/`（守密人 2026-07-10 批准方案甲，
+  同日迁移完成：16,830 JSONL / 7,648,889 行零丢失验证通过；guild↔区服注册表 + 遍历函数
+  进 `archive_layout.py` SSOT，未登记 guild 归档响亮失败；顺带修复 T1 聚合桥读旧根
+  静默零条、Release 备份 glob 只盖 Global、guilds_seen 快照写旧根三处缺陷）
+- [ ] taptap `post`/`strategy` 子类（Playwright DOM）
 - `official` 并入 `steam/global/news`；`youtube_comments` 并入 `youtube/*/comments`。
 
 ## 后续待做（非本周）

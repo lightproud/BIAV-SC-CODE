@@ -126,19 +126,24 @@ class TestApiAndState(unittest.TestCase):
             state = arch._load_state()
             self.assertEqual(state["channels"], {})
 
-    def test_data_dir_global_vs_guild(self):
+    def test_data_dir_region_layout(self):
+        # 2026-07-10 方案甲：guild → discord/<区服>/；未登记 guild 响亮失败。
         with tempfile.TemporaryDirectory():
-            # Global guild → root dir; other guild → guilds/{id}/.
             with mock.patch.dict(os.environ, {
                 "DISCORD_BOT_TOKEN": "t", "DISCORD_GUILD_ID": da.GLOBAL_GUILD_ID,
-            }, clear=False), mock.patch.dict(os.environ, {}, clear=False):
+            }, clear=False):
                 os.environ.pop("DISCORD_DATA_ROOT", None)
                 arch = DiscordArchiver()
-                self.assertEqual(arch.data_dir, da.DISCORD_DATA_DIR)
-                arch2 = None
-                with mock.patch.dict(os.environ, {"DISCORD_GUILD_ID": "555"}, clear=False):
-                    arch2 = DiscordArchiver()
-                self.assertTrue(str(arch2.data_dir).endswith("guilds/555"))
+                self.assertEqual(arch.data_dir, da.DISCORD_DATA_DIR / "global")
+                with mock.patch.dict(os.environ,
+                                     {"DISCORD_GUILD_ID": "1377475512716234902"},
+                                     clear=False):
+                    self.assertEqual(DiscordArchiver().data_dir,
+                                     da.DISCORD_DATA_DIR / "jp")
+                with mock.patch.dict(os.environ, {"DISCORD_GUILD_ID": "555"},
+                                     clear=False):
+                    with self.assertRaises(KeyError):
+                        DiscordArchiver()
 
     def test_missing_token_raises(self):
         with mock.patch.dict(os.environ, {}, clear=True):

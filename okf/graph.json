@@ -1,8 +1,8 @@
 {
   "generated": "2026-07-10",
   "stats": {
-    "nodes": 342,
-    "edges": 401
+    "nodes": 344,
+    "edges": 404
   },
   "nodes": [
     {
@@ -2619,6 +2619,17 @@
       "tier": "search"
     },
     {
+      "id": "/resource/resource-proposal-discord-layout-unification-20260710.md",
+      "type": "documentation",
+      "title": "discord-layout-unification-20260710",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:proposal"
+      ],
+      "tier": "search"
+    },
+    {
       "id": "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "type": "documentation",
       "title": "internal-ai-platform-plan-202604",
@@ -2930,6 +2941,17 @@
       "id": "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "type": "documentation",
       "title": "claude-desktop-ui-wireframe-20260704",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
+      "type": "documentation",
+      "title": "community-archive-strategy-review-20260710",
       "tags": [
         "data_layer:curated",
         "deliverable",
@@ -4990,6 +5012,12 @@
       "rel_type": "mention"
     },
     {
+      "source": "/projects/project-news.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
       "source": "/projects/project-site.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
@@ -5452,6 +5480,12 @@
       "rel_type": "mention"
     },
     {
+      "source": "/resource/resource-proposal-discord-layout-unification-20260710.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
       "source": "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
@@ -5489,6 +5523,12 @@
     },
     {
       "source": "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
       "rel_type": "mention"

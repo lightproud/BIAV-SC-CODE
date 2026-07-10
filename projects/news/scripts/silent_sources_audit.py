@@ -36,7 +36,11 @@ from sources import KNOWN_SOURCES, CORE_SOURCES, LEGACY_SOURCES, INDEPENDENT_ARC
 import archive_layout
 
 ARCHIVE_DIR = _REPO_ROOT / 'Public-Info-Pool' / 'Record' / 'Community'
-DISCORD_ARCHIVE_DIR = _REPO_ROOT / 'Public-Info-Pool' / 'Record' / 'Community' / 'discord' / 'activity_daily'
+# discord 健康以主服 global 的每日统计为准（原语义不变）；2026-07-10 方案甲布局
+# 迁 discord/global/activity_daily/，经 SSOT 解析并回落旧布局（迁移前克隆兼容）。
+_DISCORD_ROOT = ARCHIVE_DIR / 'discord'
+DISCORD_ARCHIVE_DIR = (archive_layout.discord_region_roots(_DISCORD_ROOT)
+                       .get('global', _DISCORD_ROOT / 'global')) / 'activity_daily'
 HEALTH_PATH = _REPO_ROOT / 'projects' / 'news' / 'output' / 'source-health.json'
 DROPS_PATH = _REPO_ROOT / 'projects' / 'news' / 'output' / 'validation-drops.json'
 
@@ -50,6 +54,19 @@ ALL_REGISTERED_SOURCES = list(KNOWN_SOURCES) + list(INDEPENDENT_ARCHIVE_SOURCES)
 # 与 data_quality.SilentPlatformTracker 保持一致
 DEGRADED_THRESHOLD = 7
 DORMANT_THRESHOLD = 30
+
+# 审计窗口下限：weixin 等按内容发布日期落桶的源存在 2016-2020 老文
+# （游戏公开前的关键词噪声），会把窗口拉长数千天、稀释覆盖统计。
+# 下限取游戏相关内容可信起点（discord 历史最早月 2023-07）。
+AUDIT_WINDOW_FLOOR = '2023-07-01'
+
+# 叶级下钻（区服/类型粒度）：平台级审计对区服子层断档不可见——
+# appstore/jp 曾连续日更 44 天后骤停 30 天而平台仍显示活跃
+# （06-22「平台级看不见分层」事故的同构复发）。叶 = 含日期文件的目录
+# （<平台>[/<区服>][/<类型>]）。稀疏叶（jp 系评论等）用近期节拍中位数
+# 做自适应告警阈值，避免「评论本来就少」刷屏假警报。
+LEAF_CADENCE_WINDOW = 10   # 估节拍用最近 N 个归档日期
+LEAF_CADENCE_FACTOR = 3    # stall 阈值 = max(DEGRADED, FACTOR x 节拍中位数)
 
 # 布局知识（折叠映射 / 区服递归 / 日期文件过滤）收编进 archive_layout 单一真相源
 # （2026-07-02 P0-1）；本模块只管健康分级，遍历全部委派。
@@ -111,6 +128,93 @@ def audit_source(source: str) -> dict:
     return result
 
 
+def leaf_cadence_days(dates: list[str]) -> int | None:
+    """近期归档节拍 = 最近 LEAF_CADENCE_WINDOW 个日期的相邻间隔中位数（天）。
+
+    少于 2 个日期无法估节拍，返回 None（调用方回落 DORMANT 阈值）。
+    """
+    tail = sorted(set(dates))[-LEAF_CADENCE_WINDOW:]
+    if len(tail) < 2:
+        return None
+    try:
+        ds = [datetime.strptime(d, '%Y-%m-%d') for d in tail]
+    except ValueError:
+        return None
+    gaps = sorted((b - a).days for a, b in zip(ds, ds[1:]))
+    return gaps[len(gaps) // 2]
+
+
+def leaf_stall_threshold(cadence: int | None) -> int:
+    """叶级断档告警阈值：日更叶 7 天即报，稀疏叶按 3 倍节拍放宽。"""
+    if cadence is None:
+        return DORMANT_THRESHOLD
+    return max(DEGRADED_THRESHOLD, LEAF_CADENCE_FACTOR * cadence)
+
+
+def audit_leaves(source: str) -> list[dict]:
+    """某源的叶级（目录粒度）统计；单叶源返回空表（与平台级重复，无下钻价值）。"""
+    by_dir: dict[Path, list[str]] = {}
+    for f in _iter_archive_files(source):
+        if _DATE_STEM.match(f.stem):
+            by_dir.setdefault(f.parent, []).append(f.stem)
+    if len(by_dir) <= 1:
+        return []
+    leaves = []
+    for pdir, dates in sorted(by_dir.items()):
+        uniq = sorted(set(dates))
+        try:
+            rel = str(pdir.relative_to(ARCHIVE_DIR))
+        except ValueError:
+            rel = str(pdir)
+        leaves.append({
+            'leaf': rel,
+            'source': source,
+            'days_archived': len(uniq),
+            'first_archive_date': uniq[0],
+            'last_archive_date': uniq[-1],
+            'cadence_days': leaf_cadence_days(uniq),
+        })
+    return leaves
+
+
+def build_leaf_report(today: str) -> list[dict]:
+    """全部注册源的叶级下钻行（含 stalled 判定）。
+
+    discord 例外：activity_daily 单目录，频道级健康由 archiver 的
+    state.json 自理，不在本审计维度。
+    """
+    rows = []
+    for source in ALL_REGISTERED_SOURCES:
+        if source == 'discord':
+            continue
+        for leaf in audit_leaves(source):
+            silent = compute_silent_days(leaf['last_archive_date'], today)
+            threshold = leaf_stall_threshold(leaf['cadence_days'])
+            leaf['silent_days'] = silent
+            leaf['stall_threshold'] = threshold
+            leaf['stalled'] = silent >= threshold
+            rows.append(leaf)
+    return rows
+
+
+def print_leaf_report(rows: list[dict], show_all: bool = False) -> None:
+    stalled = [r for r in rows if r['stalled']]
+    shown = rows if show_all else stalled
+    if not shown:
+        if rows:
+            print(f'【区服/类型叶级下钻】{len(rows)} 叶全部在各自节拍内，无断档。\n')
+        return
+    title = '全部叶' if show_all else '断档告警'
+    print(f'【区服/类型叶级下钻（{title}）】({len(shown)}/{len(rows)} 叶)')
+    for r in sorted(shown, key=lambda x: -x['silent_days']):
+        cadence = f'节拍~{r["cadence_days"]}d' if r['cadence_days'] is not None else '节拍未知'
+        flag = '⚠ ' if r['stalled'] else '  '
+        print(f'  {flag}{r["leaf"]:32s}  {r["days_archived"]:4d}d  '
+              f'last={r["last_archive_date"]:10s}  沉默 {r["silent_days"]}d  '
+              f'（{cadence}，阈值 {r["stall_threshold"]}d）')
+    print()
+
+
 def compute_silent_days(last_date: str | None, today: str) -> int:
     if not last_date:
         return 9999
@@ -145,7 +249,9 @@ def build_report() -> dict:
         if stat['first_archive_date'] and source != 'discord':
             platform_first_dates.append(stat['first_archive_date'])
 
-    window_start = min(platform_first_dates) if platform_first_dates else today
+    raw_start = min(platform_first_dates) if platform_first_dates else today
+    # 内容日期老文（游戏公开前的关键词噪声）不代表采集窗口起点，钳到下限
+    window_start = max(raw_start, AUDIT_WINDOW_FLOOR)
     try:
         window_days = (datetime.strptime(today, '%Y-%m-%d')
                        - datetime.strptime(window_start, '%Y-%m-%d')).days + 1
@@ -155,15 +261,20 @@ def build_report() -> dict:
     return {
         'today': today,
         'window_start': window_start,
+        'window_clamped': raw_start < AUDIT_WINDOW_FLOOR,
         'window_days': window_days,
         'entries': entries,
+        'leaves': build_leaf_report(today),
     }
 
 
 def print_report(report: dict) -> None:
     entries = report['entries']
     print('\n=== 沉默源审计（基于归档历史）===')
-    print(f'审计窗口: {report["window_start"]} ~ {report["today"]}  ({report["window_days"]} 天)\n')
+    clamp_note = ('（已钳掉内容日期早于下限的老文长尾）'
+                  if report.get('window_clamped') else '')
+    print(f'审计窗口: {report["window_start"]} ~ {report["today"]}  '
+          f'({report["window_days"]} 天){clamp_note}\n')
 
     by_level = {'active': [], 'degraded': [], 'dormant': [], 'never': []}
     for e in entries:
@@ -247,6 +358,13 @@ def write_health(report: dict) -> None:
         # P0-3：静默丢弃是一等指标——校验层扔掉的数据必须出现在健康报表里，
         # 不能只活在 CI 日志的 WARNING（taptap_review 曾因此静默 12 天）。
         'validation_drops': load_validation_drops(),
+        # 叶级断档（区服/类型粒度）：平台活跃不代表区服活着（appstore/jp 曾
+        # 骤停 30 天不可见），消费方据此下钻而无需翻目录。
+        'stalled_leaves': [
+            {k: leaf[k] for k in ('leaf', 'source', 'last_archive_date',
+                                  'silent_days', 'cadence_days', 'stall_threshold')}
+            for leaf in report.get('leaves', []) if leaf['stalled']
+        ],
         'platforms': platforms,
     }
     HEALTH_PATH.parent.mkdir(parents=True, exist_ok=True)
@@ -367,10 +485,13 @@ def main() -> None:
                         help='输出建议清理列表')
     parser.add_argument('--strict', action='store_true',
                         help='核心源处于 never/dormant 时以非零退出（健康门控）')
+    parser.add_argument('--leaves', action='store_true',
+                        help='叶级下钻显示全部区服/类型叶（默认只列断档告警叶）')
     args = parser.parse_args()
 
     report = build_report()
     print_report(report)
+    print_leaf_report(report['leaves'], show_all=args.leaves)
     print_legacy_section(scan_unregistered_dirs())
 
     if args.suggest_prune:
