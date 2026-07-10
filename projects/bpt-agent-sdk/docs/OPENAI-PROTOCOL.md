@@ -95,10 +95,16 @@ makes cost metrics and `maxBudgetUsd` enforceable for non-Claude models.
 | `usage.prompt_tokens` / `completion_tokens` / `prompt_tokens_details.cached_tokens` | `input_tokens` (minus cached) / `output_tokens` / `cache_read_input_tokens` |
 
 Retry policy (408/429/5xx + network errors, exponential backoff + jitter,
-`retry-after` honored), the stream idle watchdog, per-request timeouts and the
+`retry-after` honored), the **empty-stream retry** (a clean HTTP 200 that
+closes with zero SSE chunks — no `[DONE]`, no `finish_reason` — is a
+replay-safe non-start, re-issued within the `maxRetries` budget rather than
+crashing the turn; on exhaustion it throws `APIConnectionError` code
+`empty_stream`), the stream idle watchdog, per-request timeouts and the
 concurrency semaphore all mirror the Anthropic transport; the same
 `ProviderConfig` knobs (`maxRetries`, `timeoutMs`, `streamIdleTimeoutMs`,
-`maxConcurrentRequests`) apply. Non-2xx errors surface as `APIStatusError`
+`maxConcurrentRequests`) apply. A mid-stream drop *after* chunks (a truncated
+turn) is never retried — it degrades gracefully via the engine's E3 salvage.
+Non-2xx errors surface as `APIStatusError`
 with the error type **normalized to Messages API vocabulary** by status
 (`401 -> authentication_error`, `429 -> rate_limit_error`, ...) so engine-side
 handling is provider-agnostic.

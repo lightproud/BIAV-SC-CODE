@@ -11,6 +11,37 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.37.1 — 2026-07-10
+
+**Port the empty-stream retry arm (断流继续臂) to the OpenAI-protocol transport.**
+The 0.36.0 fix taught `AnthropicTransport` to self-heal an HTTP 200 that closes
+with ZERO SSE events (a replay-safe gateway non-start) instead of crashing the
+turn, but the OpenAI translating transport (0.35.0) shipped without that arm —
+`OpenAIChatTransport.streamRequest` issued the request once and, on a clean
+close with zero chunks (no `[DONE]`, no `finish_reason`), threw an unretryable,
+unsalvageable `APIConnectionError` (`midStreamTruncation` false because
+`chunkCount === 0`) that took down the whole `query()` turn. On any
+OpenAI-compatible gateway (DeepSeek / vLLM / one-api) exhibiting the same
+throttle-under-fan-out shape, main conversation and subagents alike died where
+the Anthropic arm would have recovered.
+
+- **fix:** `OpenAIChatTransport.streamRequest` now wraps request+stream in the
+  same `for (;;)` retry loop. A clean close with `chunkCount === 0` re-issues
+  the whole request (exponential backoff + jitter, honoring the caller abort),
+  bounded by the same `maxRetries` budget; on exhaustion it throws a
+  retryable-class `APIConnectionError` with the stable code `empty_stream`
+  ("empty stream (HTTP 200, zero SSE chunks) after N attempt(s)"). The retry
+  lives INSIDE the transport, so subagents self-heal with no host involvement.
+- **unchanged semantics preserved:** chunks-then-clean-close-without-marker is
+  still a MID-STREAM truncation (`midStreamTruncation: true`, E3 salvage, never
+  retried); a mid-stream network ERROR still routes through `mapStreamError` and
+  stays terminal. `streamRequest` is a deliberate per-arm copy (translation vs
+  raw passthrough), so it is not a transport twin — noted for
+  `tests/transport-twin-drift.test.ts`.
+- **tests:** `tests/transport-openai.test.ts` gains the mirror suite (heal on
+  retry, exhaustion → `empty_stream`, `maxRetries: 0` still throws, `onRetry`
+  network-level shape, abort-during-backoff wins).
+
 ## 0.36.0 — 2026-07-09
 
 **Retry an empty stream (HTTP 200, zero SSE events) instead of crashing the turn**
