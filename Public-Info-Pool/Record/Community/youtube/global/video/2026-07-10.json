@@ -1,8 +1,8 @@
 {
   "date": "2026-07-10",
-  "archived_at": "2026-07-10T02:16:09.923695+00:00",
+  "archived_at": "2026-07-10T06:40:42.020820+00:00",
   "source": "youtube",
-  "item_count": 9,
+  "item_count": 11,
   "items": [
     {
       "title": "Morimens Covenants In A Nutshell",
@@ -153,6 +153,40 @@
       "lang": "",
       "platform_region": "global",
       "media_url": "https://i.ytimg.com/vi/94v4d7YySC8/hqdefault.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    },
+    {
+      "title": "Morimens 9-12 Ants",
+      "summary": "Got my Pontos up to 223K damage with over 1100 strength reduction on the boss.",
+      "source": "youtube",
+      "time": "2026-07-10T05:28:17Z",
+      "url": "https://www.youtube.com/watch?v=li49BinmulU",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "bamfbabybamf",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/li49BinmulU/hqdefault.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    },
+    {
+      "title": "망각전야 Morimens - 여름 이벤트(어려움 난이도)",
+      "summary": "리플레이를 볼 수 없는 전투들이라 어려움 클리어가 곤란하다는 얘기들을 봐서 만들어봤습니다.",
+      "source": "youtube",
+      "time": "2026-07-10T03:09:20Z",
+      "url": "https://www.youtube.com/watch?v=LODynIrp5kI",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "때까치",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/LODynIrp5kI/hqdefault.jpg",
       "content_type": "video",
       "region": "global",
       "archive_subtype": "video"

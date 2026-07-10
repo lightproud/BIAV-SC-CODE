@@ -1,8 +1,8 @@
 {
   "date": "2026-07-09",
-  "archived_at": "2026-07-10T02:16:09.923129+00:00",
+  "archived_at": "2026-07-10T06:40:42.020324+00:00",
   "source": "bilibili",
-  "item_count": 13,
+  "item_count": 14,
   "items": [
     {
       "title": "【忘却前夜】鸟弟是区？新手不推荐抽？情况究竟如何？",
@@ -230,6 +230,29 @@
         "danmaku": 0
       },
       "media_url": "https://i2.hdslb.com/bfs/archive/d5d6b528db9012b70c874caf55a1e2fc0a67b3f6.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "长夜思｜拉蒙娜",
+      "summary": "-\n  └ 孤昼alone (1赞): 三连支持了[doge]\n  └ _andZZ (1赞): 好看，支持一下",
+      "source": "bilibili",
+      "time": "2026-07-09T12:23:44+00:00",
+      "url": "https://www.bilibili.com/video/BV18oMn6PEo8",
+      "engagement": 102,
+      "is_hot": true,
+      "author": "空锂",
+      "tags": [
+        "绘画"
+      ],
+      "metadata": {
+        "play": 100,
+        "comment_count": 2,
+        "comments_fetched": 2,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/d5c8ae4f2a864e44b296fa8f9756f6aae8a6e65f.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

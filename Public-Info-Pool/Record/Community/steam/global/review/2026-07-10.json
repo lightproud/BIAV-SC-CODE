@@ -1,8 +1,8 @@
 {
   "date": "2026-07-10",
-  "archived_at": "2026-07-10T02:16:10.000229+00:00",
+  "archived_at": "2026-07-10T06:40:42.093682+00:00",
   "source": "steam",
-  "item_count": 3,
+  "item_count": 4,
   "items": [
     {
       "title": "[正面] Entretenido el juego, me gusto su gameplay aunque...",
@@ -70,6 +70,30 @@
         "playtime_forever": 817,
         "votes_up": 0,
         "timestamp_created": 1783638041
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 一款好玩的策略游戏",
+      "summary": "一款好玩的策略游戏",
+      "source": "steam_review",
+      "time": "2026-07-10T00:55:24+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198692566589/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198692566589",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 402,
+        "votes_up": 0,
+        "timestamp_created": 1783644924
       },
       "region": "global",
       "archive_subtype": "review",

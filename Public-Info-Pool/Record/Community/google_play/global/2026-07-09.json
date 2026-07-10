@@ -1,8 +1,8 @@
 {
   "date": "2026-07-09",
-  "archived_at": "2026-07-10T02:16:10.083187+00:00",
+  "archived_at": "2026-07-10T06:40:42.207618+00:00",
   "source": "google_play",
-  "item_count": 3,
+  "item_count": 4,
   "items": [
     {
       "title": "[Google Play 差评] ★1 no se puede jugar, solo se para y me ech",
@@ -41,6 +41,20 @@
       "engagement": 0,
       "is_hot": false,
       "author": "Ziad Graphic",
+      "tags": [],
+      "lang": "id",
+      "platform_region": "id",
+      "region": "global"
+    },
+    {
+      "title": "[Google Play 好评] ★5 story nya angst, TAPI GAME NYA BAGUS BAN",
+      "summary": "story nya angst, TAPI GAME NYA BAGUS BANGET WOYYYY PEAKKKK",
+      "source": "google_play",
+      "time": "2026-07-09T02:18:41",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=id#gp-665ceb31-7a13-45f0-a915-2bff927ca33d",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "reisya aulia",
       "tags": [],
       "lang": "id",
       "platform_region": "id",
