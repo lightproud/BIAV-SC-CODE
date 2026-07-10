@@ -236,7 +236,7 @@ git commit = 数据归档提交 / git push = 同步至远端存储 /
 | `memory/knowledge-layer-design.md` | **知识层北极星**（神经符号白盒骨架定位 + 改造路线 A–E；守密人 2026-07-04 结晶，统辖 KB 投资方向）|
 | `memory/methodology.md` | 协作方法论 |
 | `memory/lessons-learned.md` | 踩坑记录（持续追加编号，条数以文件最新为准）|
-| `memory/contribution-protocol.md` | 贡献协议 v1.0 |
+| `memory/contribution-protocol.md` | 贡献协议（**已退役 2026-07-10**：社区贡献取消、对社区单向可读，档案仅供追溯）|
 | `memory/style-guide.md` | 视觉规范 |
 | `memory/capability-index.md` | 银芯全功能目录 + 动态编排可达性（CI 自动生成；含孤儿检测。人工用途补注在 `memory/capability-annotations.json`，机器权威数据在 `memory/capability-registry.json`）|
 | `assets/data/VERSION.md` | 事实圣经版本 |

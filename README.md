@@ -107,15 +107,9 @@ pytest tests/ -v
 
 详见 [`memory/methodology.md`](memory/methodology.md) 与踩坑教训 [`memory/lessons-learned.md`](memory/lessons-learned.md)（持续追加，条数以文件最新为准）。
 
-## 参与贡献
+## 关于贡献（单向可读）
 
-社区贡献流程见 [`memory/contribution-protocol.md`](memory/contribution-protocol.md)。当前主要贡献方向：
-
-- 补充游戏数据（角色技能、命轮效果、剧情、立绘）
-- 完善 Wiki 页面内容（中/英/日三语）
-- 分享 AI 协作方法论的实践经验
-
-> **AI 生成贡献**：守密人 2026-04-26 Q3 裁决「不要求标注」——贡献内容质量由审核机制保障，不依赖 AI 来源标注。
+本仓库对社区为**单向可读**（守密人 2026-07-10 裁定）：欢迎自由阅读、引用与派生使用全部公开信息（遵循下方许可），但**不接收外部贡献**——不受理数据补全 / 翻译 / 内容类 PR 与 Issue。原贡献流程已退役，历史档案见 [`memory/contribution-protocol.md`](memory/contribution-protocol.md)。交流请到游戏社区（Discord 等）。
 
 ## 许可
 
