@@ -232,6 +232,7 @@ git commit = 数据归档提交 / git push = 同步至远端存储 /
 | `memory/project-status.md` | 子项目状态 + 实时进度（**状态唯一权威**，进度数字只在此维护）|
 | `memory/decisions.md` | 决策日志（**决策溯源权威**：记「为什么这么定 / 何时定 / 覆盖了谁」，含「当前有效决策」速览表）。⚠ **运行时强约束以本 CLAUDE.md 自动加载层 + 工具层为准**——任何 prompt 级文档都是弱约束（弱约束本质见 decisions-archive 2026-05-19 入口反转条），decisions.md 非自动加载、需按需 fetch；二者冲突时**以日期新者为准并双向同步**，不再单方「以 decisions.md 为准」|
 | `memory/decisions-archive.md` | 决策归档层（长理由 + 已退役决策 + 编年史，仅供审计追溯，不作运行时约束）|
+| `memory/todo.md` | 挂账台账（**待办 / 待裁唯一权威**，守密人 2026-07-10 裁定）：开着的账 + 四类别（裁定 / 预算 / 观察 / 黑池输入）+ 源指针 + 销案引；decisions.md 记已裁、本档记未销；新挂账入此档、源档案只留指针 |
 | `memory/strategic-plan-2026.md` | 战略规划 |
 | `memory/knowledge-layer-design.md` | **知识层北极星**（神经符号白盒骨架定位 + 改造路线 A–E；守密人 2026-07-04 结晶，统辖 KB 投资方向）|
 | `memory/methodology.md` | 协作方法论 |

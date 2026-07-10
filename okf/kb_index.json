@@ -7,14 +7,14 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 348,
-    "edges": 403,
-    "terms": 5986,
+    "concepts": 349,
+    "edges": 404,
+    "terms": 5999,
     "by_type": {
       "character": 72,
       "dataset": 108,
       "documentation": 105,
-      "knowledge-pointer": 43,
+      "knowledge-pointer": 44,
       "reference": 17,
       "research": 3
     },
@@ -23,7 +23,7 @@
       "characters": 72,
       "community": 16,
       "extracted": 4,
-      "memory": 47,
+      "memory": 48,
       "news-output": 23,
       "projects": 23,
       "resource": 81,
@@ -34,7 +34,7 @@
     },
     "by_tier": {
       "skeleton": 129,
-      "search": 219
+      "search": 220
     }
   },
   "sections": {
@@ -56,7 +56,7 @@
     },
     "memory": {
       "index": "/memory/index.md",
-      "count": 47
+      "count": 48
     },
     "news-output": {
       "index": "/news-output/index.md",
@@ -968,7 +968,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 88
+      "degree": 89
     },
     "/characters/15604.md": {
       "type": "character",
@@ -2057,6 +2057,19 @@
       "title": "大文件存储方案讨论",
       "description": "项目中有两类大文件存储需求：",
       "resource": "/memory/storage-discussion.md",
+      "tags": [
+        "memory",
+        "data_layer:curated"
+      ],
+      "section": "memory",
+      "tier": "search",
+      "degree": 1
+    },
+    "/memory/memory-ext-todo.md": {
+      "type": "knowledge-pointer",
+      "title": "挂账台账（待办 / 待裁唯一权威）",
+      "description": "*建档：2026-07-10 全仓扫描清点（`rg \\\"待守密人|待裁|挂账\\\"` + 逐条溯源实证），艾瑞卡会话。*",
+      "resource": "/memory/todo.md",
       "tags": [
         "memory",
         "data_layer:curated"
@@ -6429,6 +6442,11 @@
         "mention"
       ],
       [
+        "/memory/memory-ext-todo.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
         "/memory/memory-ext-wiki-characters-schema-v1.md",
         "提及:艾瑞卡",
         "mention"
@@ -7786,6 +7804,13 @@
       ]
     ],
     "/memory/memory-ext-storage-discussion.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
+    "/memory/memory-ext-todo.md": [
       [
         "/characters/15603.md",
         "提及:艾瑞卡",
@@ -9750,6 +9775,7 @@
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-skill-authoring-standard.md",
       "/memory/memory-ext-storage-discussion.md",
+      "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
       "/memory/memory-ext-workflow-api-key-audit.md",
@@ -10744,6 +10770,7 @@
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
       "/memory/memory-ext-storage-discussion.md",
+      "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
       "/memory/memory-ext-workflow-api-key-audit.md",
@@ -11110,6 +11137,7 @@
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
       "/memory/memory-ext-storage-discussion.md",
+      "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
       "/memory/memory-ext-workflow-api-key-audit.md",
@@ -11404,6 +11432,7 @@
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
       "/memory/memory-ext-storage-discussion.md",
+      "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
       "/memory/memory-ext-workflow-api-key-audit.md",
@@ -13100,6 +13129,7 @@
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
       "/memory/memory-ext-storage-discussion.md",
+      "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
       "/memory/memory-ext-workflow-api-key-audit.md",
@@ -13654,6 +13684,7 @@
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-skill-authoring-standard.md",
       "/memory/memory-ext-storage-discussion.md",
+      "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
       "/memory/memory-ext-workflow-api-key-audit.md",
@@ -13822,6 +13853,7 @@
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
       "/memory/memory-ext-storage-discussion.md",
+      "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
       "/memory/memory-ext-workflow-api-key-audit.md",
@@ -15267,6 +15299,9 @@
       "/sources/steam.md",
       "/sources/taptap_review.md"
     ],
+    "rg": [
+      "/memory/memory-ext-todo.md"
+    ],
     "ripgrep": [
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md"
     ],
@@ -15983,6 +16018,7 @@
       "/wiki-data/wiki-data-character-skills.md"
     ],
     "todo": [
+      "/memory/memory-ext-todo.md",
       "/story/story_research_todo.md"
     ],
     "todowrite": [
@@ -16653,6 +16689,7 @@
       "/README.md"
     ],
     "一权": [
+      "/memory/memory-ext-todo.md",
       "/memory/project-status.md"
     ],
     "一条": [
@@ -17031,6 +17068,7 @@
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
       "/memory/memory-ext-storage-discussion.md",
+      "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
       "/memory/memory-ext-workflow-api-key-audit.md",
@@ -17293,6 +17331,7 @@
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
       "/memory/memory-ext-storage-discussion.md",
+      "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
       "/memory/memory-ext-workflow-api-key-audit.md",
@@ -19101,6 +19140,9 @@
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md"
     ],
+    "仓扫": [
+      "/memory/memory-ext-todo.md"
+    ],
     "他不": [
       "/characters/15598.md"
     ],
@@ -19493,6 +19535,7 @@
     "会话": [
       "/memory/memory-ext-active-contribution-protocol.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
+      "/memory/memory-ext-todo.md",
       "/memory/memory-strategy-repo-slimming-plan.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
@@ -20009,6 +20052,7 @@
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
       "/memory/memory-ext-storage-discussion.md",
+      "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
       "/memory/memory-ext-workflow-api-key-audit.md",
@@ -20778,6 +20822,7 @@
       "/memory/memory-ext-active-silver-blackpool-interface.md"
     ],
     "全仓": [
+      "/memory/memory-ext-todo.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md"
     ],
     "全做": [
@@ -20998,6 +21043,7 @@
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
       "/memory/memory-ext-storage-discussion.md",
+      "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
       "/memory/memory-ext-workflow-api-key-audit.md",
@@ -21128,6 +21174,7 @@
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
       "/memory/memory-ext-storage-discussion.md",
+      "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
       "/memory/memory-ext-workflow-api-key-audit.md",
@@ -21785,6 +21832,7 @@
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
       "/memory/memory-ext-storage-discussion.md",
+      "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
       "/memory/memory-ext-workflow-api-key-audit.md",
@@ -23551,6 +23599,7 @@
     ],
     "台账": [
       "/community/community-index.md",
+      "/memory/memory-ext-todo.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md"
     ],
     "台采": [
@@ -24159,6 +24208,7 @@
     "唯一": [
       "/README.md",
       "/memory/memory-ext-skill-authoring-standard.md",
+      "/memory/memory-ext-todo.md",
       "/memory/project-status.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md"
@@ -24976,6 +25026,7 @@
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
       "/memory/memory-ext-storage-discussion.md",
+      "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
       "/memory/memory-ext-workflow-api-key-audit.md",
@@ -25759,6 +25810,7 @@
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
       "/memory/memory-ext-storage-discussion.md",
+      "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
       "/memory/memory-ext-workflow-api-key-audit.md",
@@ -26213,6 +26265,7 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
+      "/memory/memory-ext-todo.md",
       "/projects/project-game.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -26644,6 +26697,9 @@
     ],
     "实脱": [
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md"
+    ],
+    "实证": [
+      "/memory/memory-ext-todo.md"
     ],
     "实际": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
@@ -27190,6 +27246,7 @@
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
       "/memory/memory-ext-storage-discussion.md",
+      "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
       "/memory/memory-ext-workflow-api-key-audit.md",
@@ -28042,6 +28099,9 @@
     "建期": [
       "/news-output/news-output-newsjs.md"
     ],
+    "建档": [
+      "/memory/memory-ext-todo.md"
+    ],
     "建知": [
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/projects/project-site.md",
@@ -28367,6 +28427,15 @@
     "径相": [
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
+    "待办": [
+      "/memory/memory-ext-todo.md"
+    ],
+    "待守": [
+      "/memory/memory-ext-todo.md"
+    ],
+    "待裁": [
+      "/memory/memory-ext-todo.md"
+    ],
     "待讨": [
       "/memory/memory-ext-pending-discussions.md"
     ],
@@ -28551,6 +28620,7 @@
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
       "/memory/memory-ext-storage-discussion.md",
+      "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
       "/memory/memory-ext-workflow-api-key-audit.md",
@@ -29645,6 +29715,7 @@
       "/characters/15571.md"
     ],
     "扫描": [
+      "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -30027,6 +30098,9 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
     ],
+    "挂账": [
+      "/memory/memory-ext-todo.md"
+    ],
     "指令": [
       "/characters/15568.md"
     ],
@@ -30128,6 +30202,7 @@
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
       "/memory/memory-ext-storage-discussion.md",
+      "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
       "/memory/memory-ext-workflow-api-key-audit.md",
@@ -30658,6 +30733,9 @@
     "描整": [
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md"
     ],
+    "描清": [
+      "/memory/memory-ext-todo.md"
+    ],
     "描述": [
       "/assets/assets-archive-integrity.md",
       "/assets/assets-card-system.md",
@@ -31016,6 +31094,7 @@
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
       "/memory/memory-ext-storage-discussion.md",
+      "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
       "/memory/memory-ext-workflow-api-key-audit.md",
@@ -31417,6 +31496,7 @@
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
       "/memory/memory-ext-storage-discussion.md",
+      "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
       "/memory/memory-ext-workflow-api-key-audit.md",
@@ -31698,6 +31778,7 @@
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
       "/memory/memory-ext-storage-discussion.md",
+      "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
       "/memory/memory-ext-workflow-api-key-audit.md",
@@ -32254,6 +32335,7 @@
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
       "/memory/memory-ext-storage-discussion.md",
+      "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
       "/memory/memory-ext-workflow-api-key-audit.md",
@@ -33357,6 +33439,7 @@
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
       "/memory/memory-ext-storage-discussion.md",
+      "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
       "/memory/memory-ext-workflow-api-key-audit.md",
@@ -33777,6 +33860,7 @@
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
       "/memory/memory-ext-storage-discussion.md",
+      "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
       "/memory/memory-ext-workflow-api-key-audit.md",
@@ -34047,6 +34131,9 @@
     ],
     "条活": [
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md"
+    ],
+    "条溯": [
+      "/memory/memory-ext-todo.md"
     ],
     "条目": [
       "/memory/memory-research-community-analysis-2026-05-18-26.md"
@@ -35428,6 +35515,7 @@
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
       "/memory/memory-ext-storage-discussion.md",
+      "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
       "/memory/memory-ext-workflow-api-key-audit.md",
@@ -36207,6 +36295,7 @@
       "/characters/15590.md"
     ],
     "清点": [
+      "/memory/memory-ext-todo.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md"
     ],
@@ -36321,6 +36410,9 @@
     "源子": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md"
     ],
+    "源实": [
+      "/memory/memory-ext-todo.md"
+    ],
     "源归": [
       "/projects/news-archive-sources-registry.md"
     ],
@@ -36344,7 +36436,8 @@
     ],
     "溯源": [
       "/README.md",
-      "/memory/decisions.md"
+      "/memory/decisions.md",
+      "/memory/memory-ext-todo.md"
     ],
     "滔天": [
       "/characters/15569.md"
@@ -40695,6 +40788,7 @@
       "/README.md",
       "/characters/15603.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
+      "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
       "/memory/memory-strategy-repo-slimming-plan.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
@@ -41114,6 +41208,9 @@
     ],
     "裁决": [
       "/characters/77917.md"
+    ],
+    "裁唯": [
+      "/memory/memory-ext-todo.md"
     ],
     "裁定": [
       "/README.md",
@@ -41536,6 +41633,7 @@
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
       "/memory/memory-ext-storage-discussion.md",
+      "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
       "/memory/memory-ext-workflow-api-key-audit.md",
@@ -41993,6 +42091,9 @@
     "责任": [
       "/characters/77922.md"
     ],
+    "账台": [
+      "/memory/memory-ext-todo.md"
+    ],
     "账号": [
       "/README.md"
     ],
@@ -42287,6 +42388,7 @@
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
       "/memory/memory-ext-storage-discussion.md",
+      "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
       "/memory/memory-ext-workflow-api-key-audit.md",
@@ -43257,6 +43359,7 @@
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "逐条": [
+      "/memory/memory-ext-todo.md",
       "/projects/extracted-lua-inventory.md"
     ],
     "逐渐": [
@@ -43950,6 +44053,7 @@
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
       "/memory/memory-ext-storage-discussion.md",
+      "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
       "/memory/memory-ext-workflow-api-key-audit.md",
@@ -45990,6 +46094,7 @@
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
       "/memory/memory-ext-storage-discussion.md",
+      "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
       "/memory/memory-ext-workflow-api-key-audit.md",
@@ -46277,6 +46382,7 @@
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
       "/memory/memory-ext-storage-discussion.md",
+      "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
       "/memory/memory-ext-workflow-api-key-audit.md",
@@ -47199,6 +47305,7 @@
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
       "/memory/memory-ext-storage-discussion.md",
+      "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
       "/memory/memory-ext-workflow-api-key-audit.md",
@@ -47569,6 +47676,7 @@
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
       "/memory/memory-ext-storage-discussion.md",
+      "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
       "/memory/memory-ext-workflow-api-key-audit.md",
@@ -48688,6 +48796,9 @@
     "一入": [
       "/projects/entry-claude-md.md"
     ],
+    "一权": [
+      "/memory/memory-ext-todo.md"
+    ],
     "一步": [
       "/memory/memory-research-discord-archive-backfill-conflict.md"
     ],
@@ -49059,6 +49170,9 @@
     "台聚": [
       "/news-output/news-output-all.md"
     ],
+    "台账": [
+      "/memory/memory-ext-todo.md"
+    ],
     "号白": [
       "/memory/memory-ext-knowledge-layer-design.md"
     ],
@@ -49085,6 +49199,9 @@
     ],
     "哲学": [
       "/memory/memory-ext-knowledge-layer-design.md"
+    ],
+    "唯一": [
+      "/memory/memory-ext-todo.md"
     ],
     "园美": [
       "/characters/15563.md",
@@ -49406,6 +49523,12 @@
     "彩乃": [
       "/characters/15591.md"
     ],
+    "待办": [
+      "/memory/memory-ext-todo.md"
+    ],
+    "待裁": [
+      "/memory/memory-ext-todo.md"
+    ],
     "待讨": [
       "/memory/memory-ext-pending-discussions.md"
     ],
@@ -49547,6 +49670,9 @@
     "拉蒙娜": [
       "/characters/15568.md",
       "/characters/15595.md"
+    ],
+    "挂账": [
+      "/memory/memory-ext-todo.md"
     ],
     "指导": [
       "/memory/memory-ext-bpt-guidance-log.md",
@@ -49747,6 +49873,7 @@
       "/characters/15602.md"
     ],
     "权威": [
+      "/memory/memory-ext-todo.md",
       "/projects/entry-claude-md.md"
     ],
     "村由": [
@@ -50426,6 +50553,9 @@
     "表还": [
       "/unpacked/unpacked-lua-tables.md"
     ],
+    "裁唯": [
+      "/memory/memory-ext-todo.md"
+    ],
     "西编": [
       "/memory/memory-ext-karpathy-coding-principles.md"
     ],
@@ -50511,6 +50641,9 @@
     ],
     "贡献": [
       "/memory/memory-ext-active-contribution-protocol.md"
+    ],
+    "账台": [
+      "/memory/memory-ext-todo.md"
     ],
     "资产": [
       "/assets/assets-images.md"
