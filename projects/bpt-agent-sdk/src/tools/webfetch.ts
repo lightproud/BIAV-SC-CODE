@@ -20,13 +20,14 @@ import type {
   ToolResultPayload,
 } from '../internal/contracts.js';
 import { AbortError, isAbortError } from '../errors.js';
+import { SDK_USER_AGENT } from '../version.js';
 import { WEBFETCH_DESCRIPTION } from './descriptions.js';
 
 const FETCH_TIMEOUT_MS = 30_000;
 const MAX_REDIRECTS = 5;
 const MAX_BODY_BYTES = 5 * 1024 * 1024;
 const MAX_OUTPUT_CHARS = 100_000;
-const USER_AGENT = 'bpt-agent-sdk/0.1.0';
+const USER_AGENT = SDK_USER_AGENT;
 const ACCEPT_HEADER =
   'text/html,application/xhtml+xml,application/xml;q=0.9,application/json,text/plain;q=0.8,*/*;q=0.5';
 

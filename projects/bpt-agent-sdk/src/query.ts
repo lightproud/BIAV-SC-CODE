@@ -52,6 +52,8 @@ import { DefaultHookRunner } from './hooks/runner.js';
 import { DefaultMcpRegistry } from './mcp/registry.js';
 import { matchToolName, parseRule } from './permissions/rules.js';
 import { runAgentLoop } from './engine/loop.js';
+import { hasPriceFor } from './engine/pricing.js';
+import { SDK_VERSION } from './version.js';
 import { buildSystemPromptParts } from './engine/prompts.js';
 import { estimateTextTokens } from './engine/tokens.js';
 import { gatherEnvironment, loadProjectInstructions } from './engine/runtime-context.js';
@@ -84,7 +86,7 @@ import { loadProjectMcpServers } from './mcp/project-config.js';
 
 const DEFAULT_MODEL = 'claude-sonnet-4-5';
 const DEFAULT_MAX_OUTPUT_TOKENS = 8192;
-const CLAUDE_CODE_VERSION = '0.1.0';
+const CLAUDE_CODE_VERSION = SDK_VERSION;
 
 /** Static model list surfaced by supportedModels()/initializationResult(). */
 const SUPPORTED_MODELS: readonly ModelInfo[] = [
@@ -112,9 +114,10 @@ const ACCEPTED_OPTION_KEYS: readonly string[] = [
   'settings',
   'permissionPromptToolName',
   'extraArgs',
-  // settingSources drives project .mcp.json loading in v0.2, but only takes
-  // effect when a .mcp.json is present; keep the compat diagnostic.
-  'settingSources',
+  // settingSources REMOVED from this list (audit 2026-07-10 P0-5): it has real
+  // behavior — it drives CLAUDE.md/AGENTS.md loading (preset/default path) and
+  // project .mcp.json loading (all paths) — so the "has no effect" diagnostic
+  // was a lie.
   'effort',
   'plugins',
   'skills',
@@ -399,8 +402,14 @@ export function query(args: {
     }
   };
 
+  // ACCEPTED-IGNORED keys present on this call: still one debug line each, but
+  // ALSO surfaced once as a typed `informational` stream message after init
+  // (audit 2026-07-10 P1-6/#6) — a consumer without debug:true otherwise has
+  // no way to learn a knob it set is silently inert.
+  const presentAcceptedKeys: string[] = [];
   for (const key of ACCEPTED_OPTION_KEYS) {
     if ((options as Record<string, unknown>)[key] !== undefined) {
+      presentAcceptedKeys.push(key);
       debug(
         `option '${key}' is accepted for compatibility but has no effect in this SDK (see docs/COMPAT.md)`,
       );
@@ -531,6 +540,7 @@ export function query(args: {
     // matcher's `condition` can be evaluated (bounded single-shot call). A
     // matcher without a condition never triggers a call.
     conditionOptions: { provider: options.provider, betas: options.betas, env, debug },
+    failureMode: options.hookFailureMode,
   });
 
   // Bare-name disallowedTools entries (no `Tool(spec)` specifier) REMOVE the
@@ -853,6 +863,9 @@ export function query(args: {
     // Cache TTL: undefined/'5m' -> 5-minute default; '1h' -> 1-hour cache
     // (BPT-EXTENSION; the official SDK has no such knob).
     cacheTtl: options.provider?.cacheTtl,
+    // Custom price entries (BPT-EXTENSION, audit 2026-07-10): make cost
+    // metrics + maxBudgetUsd work for non-Claude models (openai protocol).
+    pricing: options.provider?.pricing,
     includePartialMessages: options.includePartialMessages === true,
     // Prompt-composition observability (BPT-EXTENSION): emit a per-request
     // system/prompt_composition message; off by default (zero cost, wire
@@ -1439,11 +1452,21 @@ export function query(args: {
         if (existingPendingUuid === undefined) {
           persistPendingTurn(sess.sessionId, pendingUuid, userUuid);
         }
-        // Track whether the turn ended in an ERROR result. The engine converts
-        // API/connection failures into an is_error `error_during_execution`
-        // result (only AbortError is thrown), so a "successful iteration" can
-        // still be a failed turn — in which case the pending_turn is left
-        // dangling so a resume re-drives the interrupted request segment.
+        // Track whether the turn ended in an EXECUTION-CRASH error result. The
+        // engine converts API/connection failures into an is_error
+        // `error_during_execution` result (only AbortError is thrown), so a
+        // "successful iteration" can still be a failed turn — in which case
+        // the pending_turn is left dangling so a resume re-drives the
+        // interrupted request segment.
+        //
+        // TERMINAL engine decisions are NOT crashes (audit 2026-07-10 P1-6):
+        // error_max_turns / error_max_budget_usd /
+        // error_max_structured_output_retries and a model refusal are the
+        // engine deliberately ENDING the turn. Leaving those pending would
+        // make a later resume auto-re-drive the request in a fresh process —
+        // where sessionCost/sessionTurns restart at zero — silently re-asking
+        // a refused prompt or billing a whole extra turn past a spent budget
+        // cap. Those settle the pending_turn like a success.
         let turnErrored = false;
 
         try {
@@ -1455,7 +1478,13 @@ export function query(args: {
               persistAssistant(sess.sessionId, msg.message.content);
               yield msg;
             } else if (msg.type === 'result') {
-              if (msg.is_error === true) turnErrored = true;
+              if (msg.is_error === true) {
+                const m = msg as { subtype?: string; error_code?: string };
+                // Only an execution crash (API/tool failure) re-drives on
+                // resume; deliberate terminal decisions settle (see above).
+                turnErrored =
+                  m.subtype === 'error_during_execution' && m.error_code !== 'refusal';
+              }
               // Fold any completed subagent usage into the session totals before
               // the result is rewritten so subagent tokens/cost are reported.
               foldSubagentUsage(subagentRuntime.drainUsageLedger());
@@ -1585,6 +1614,56 @@ export function query(args: {
       });
       yield initMessage;
       yield* drainMirror();
+      const informational = (message: string): void => {
+        emitObs({
+          type: 'informational',
+          uuid: randomUUID(),
+          session_id: sess.sessionId,
+          level: 'warning',
+          message,
+        });
+      };
+      // ACCEPTED-IGNORED knobs present on this call surface once as a typed
+      // stream message, not only behind debug:true (audit 2026-07-10 #6).
+      if (presentAcceptedKeys.length > 0) {
+        informational(
+          `Options accepted for compatibility but with NO effect in this SDK: ` +
+            `${presentAcceptedKeys.join(', ')} (see docs/COMPAT.md).`,
+        );
+      }
+      // OpenAI-protocol silent-failure surfacing (audit 2026-07-10 P1-4): a
+      // knob the wire cannot honor must SAY so once, not no-op quietly. One
+      // informational message per condition, right after init.
+      if (options.provider?.protocol === 'openai-chat') {
+        if (
+          options.maxBudgetUsd !== undefined &&
+          !hasPriceFor(engineConfig.model, options.provider.pricing)
+        ) {
+          informational(
+            `maxBudgetUsd is set but model "${engineConfig.model}" has no price entry — ` +
+              `the cap can never trip (estimates stay $0). Add provider.pricing ` +
+              `entries to make the budget enforceable on this protocol.`,
+          );
+        }
+        if (engineConfig.thinking !== undefined && engineConfig.thinking.type !== 'disabled') {
+          informational(
+            `The Anthropic 'thinking' configuration has no Chat Completions equivalent ` +
+              `and is dropped from the wire on protocol 'openai-chat'. Use ` +
+              `provider.openai.reasoningEffort for OpenAI-style reasoning models.`,
+          );
+        }
+        if (options.betas !== undefined && options.betas.length > 0) {
+          informational(
+            `'betas' flags are Anthropic header concepts and are ignored on protocol 'openai-chat'.`,
+          );
+        }
+        if (options.provider.apiVersion !== undefined) {
+          informational(
+            `provider.apiVersion is an Anthropic header concept and is ignored on protocol ` +
+              `'openai-chat' (Azure-style gateways: use provider.openai.extraQueryParams).`,
+          );
+        }
+      }
       // SessionStart hook lifecycle events (includeHookEvents) surface right
       // after init — they fired before the stream had anywhere to go.
       yield* drainObs();
@@ -1763,6 +1842,13 @@ export function query(args: {
       // controller, so this cancels them without touching the caller's
       // AbortController. Idempotent with close()'s own abortAll().
       subagentRuntime.abortAll();
+      // Give the aborted children a bounded window to run their finalizers
+      // (worktree cleanup, SubagentStop hooks, sidechain_end appends) BEFORE
+      // the store flush below — otherwise a mirrored store's buffer receives
+      // those trailing appends after flushAll and the process may exit with
+      // only an unref'd debounce timer left to deliver them (audit 2026-07-10
+      // M4). Bounded + never throws, so teardown cannot hang on a stuck child.
+      await subagentRuntime.settleAll();
       // Kill background shells + drop the persistent cwd/env snapshot: shell
       // sessions live and die with the query.
       shells.dispose();

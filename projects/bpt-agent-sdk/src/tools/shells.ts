@@ -18,6 +18,7 @@ import { mkdtempSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
+import { AbortError } from '../errors.js';
 import { planShellSpawn } from '../sandbox/backend.js';
 import { planProcessKill, terminalStatus } from './kill-plan.js';
 import { detectSandboxEvidence, sandboxFailureHint } from '../sandbox/evidence.js';
@@ -36,6 +37,9 @@ const KILL_GRACE_MS = 2_000;
 
 export function createShellManager(debug: (msg: string) => void): ShellManager {
   const shells = new Map<string, BackgroundShell>();
+  // Pending SIGTERM->SIGKILL escalation timers, cleared on process exit so a
+  // recycled PGID is never signalled after the fact (audit 2026-07-10 L1).
+  const killTimers = new Map<string, ReturnType<typeof setTimeout>>();
   let nextId = 1;
   let stateDir: string;
   try {
@@ -141,6 +145,14 @@ export function createShellManager(debug: (msg: string) => void): ShellManager {
         }
       });
       child.on('exit', (code, signal) => {
+        // Cancel any pending SIGTERM->SIGKILL escalation: the process is gone,
+        // and firing the timer later would signal -pgid after the PGID could
+        // have been recycled to an unrelated process group (audit 2026-07-10 L1).
+        const pending = killTimers.get(id);
+        if (pending !== undefined) {
+          clearTimeout(pending);
+          killTimers.delete(id);
+        }
         rec.exitCode = code;
         rec.exitSignal = signal;
         // HONEST terminal status, decided from what actually happened - never
@@ -178,12 +190,18 @@ export function createShellManager(debug: (msg: string) => void): ShellManager {
       // here before the signal has even landed.
       rec.killRequested = true;
       rec.kill('SIGTERM');
-      const t = setTimeout(() => rec.kill('SIGKILL'), KILL_GRACE_MS);
+      const t = setTimeout(() => {
+        killTimers.delete(id);
+        rec.kill('SIGKILL');
+      }, KILL_GRACE_MS);
       t.unref?.();
+      killTimers.set(id, t);
       return true;
     },
 
     dispose() {
+      for (const t of killTimers.values()) clearTimeout(t);
+      killTimers.clear();
       for (const rec of shells.values()) {
         if (rec.status === 'running') {
           // Query teardown: force-kill and mark killed. Records are discarded
@@ -352,6 +370,10 @@ export const killShellTool: BuiltinTool = {
 
 /** Blocking wait for TaskOutput when `timeout` is absent/invalid (ms). */
 const TASK_OUTPUT_DEFAULT_TIMEOUT_MS = 60_000;
+/** Hard cap on a model-supplied blocking timeout (audit 2026-07-10 P0-3): a
+ *  blocking TaskOutput holds the engine's tool await, so an unbounded value
+ *  would let one tool call defer interrupt()/close() teardown indefinitely. */
+const TASK_OUTPUT_MAX_TIMEOUT_MS = 600_000;
 /** Poll granularity while TaskOutput blocks for new output (ms). */
 const TASK_OUTPUT_POLL_MS = 50;
 
@@ -417,12 +439,19 @@ export const taskOutputTool: BuiltinTool = {
       return { content: `TaskOutput: no background task with id "${id}".`, isError: true };
     }
     if (input['block'] === true) {
-      const timeout =
+      const timeout = Math.min(
         typeof input['timeout'] === 'number' && input['timeout'] > 0
           ? input['timeout']
-          : TASK_OUTPUT_DEFAULT_TIMEOUT_MS;
+          : TASK_OUTPUT_DEFAULT_TIMEOUT_MS,
+        TASK_OUTPUT_MAX_TIMEOUT_MS,
+      );
       const maxWaits = Math.max(1, Math.ceil(timeout / TASK_OUTPUT_POLL_MS));
       for (let i = 0; i < maxWaits; i++) {
+        // interrupt()/close() must not wait out a model-chosen blocking window:
+        // this await sits on the engine's tool path, and teardown (shell
+        // dispose, subagent aborts, MCP close) queues behind it. Bail on abort
+        // like every other builtin (audit 2026-07-10 P0-3).
+        if (ctx.signal.aborted) throw new AbortError();
         const hasNew = rec.stdout.length > rec.cursorOut || rec.stderr.length > rec.cursorErr;
         if (hasNew || rec.status !== 'running') break;
         await new Promise<void>((resolve) => {

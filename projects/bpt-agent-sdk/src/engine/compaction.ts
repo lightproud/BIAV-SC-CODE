@@ -228,6 +228,7 @@ export function shouldAutoCompact(
   window: number,
   reservedOutputTokens: number,
   cfg: CompactionConfig,
+  knownPromptFloor?: number,
 ): { preTokens: number } | null {
   // Degenerate config: the window cannot even hold the reserved output. There
   // is no positive input budget to fold toward, so compaction is impossible.
@@ -237,7 +238,16 @@ export function shouldAutoCompact(
   if (window <= reservedOutputTokens) return null;
   const effectiveInputBudget = window - reservedOutputTokens;
   const triggerAt = Math.floor(effectiveInputBudget * cfg.autoThresholdRatio);
-  const preTokens = estimateMessagesTokens(messages) + overheadTokens;
+  // Ground-truth calibration (audit 2026-07-10 P1-1/D): the heuristic estimate
+  // is the only guard against a 'prompt too long' 400 (which the fallback path
+  // does not retry), and it can UNDER-estimate code/base64-dense histories.
+  // The previous request's REAL prompt size (usage input + cache read/creation,
+  // supplied by the loop) is a hard floor — history only grows between
+  // compactions — so trigger on whichever is larger.
+  const preTokens = Math.max(
+    estimateMessagesTokens(messages) + overheadTokens,
+    knownPromptFloor ?? 0,
+  );
   return preTokens >= triggerAt ? { preTokens } : null;
 }
 
@@ -290,7 +300,13 @@ export function partitionForCompaction(
   }
   if (genuine.length === 0) return null; // cannot compact safely
 
-  const candidates = [...genuine, messages.length];
+  // Candidates are the genuine user turns ONLY. The former degenerate
+  // empty-suffix candidate (i = messages.length) could — under an explicit
+  // `minRecentTurns: 0` — fold the JUST-SUBMITTED prompt into the summary and
+  // leave the request ending on an assistant turn (audit 2026-07-10 L3). The
+  // most aggressive safe cut is the LAST genuine user turn: it keeps at least
+  // the current prompt verbatim under any configuration.
+  const candidates = [...genuine];
   const evaluated = candidates.map((i) => {
     const suffix = messages.slice(i);
     return {
@@ -554,9 +570,10 @@ export async function* maybeAutoCompact(
   overheadTokens: number,
   signal: AbortSignal,
   onSummaryCall?: SummaryCallSink,
-): AsyncGenerator<SDKMessage, void> {
+  knownPromptFloor?: number,
+): AsyncGenerator<SDKMessage, boolean> {
   const cfg = config.compaction;
-  if (cfg === undefined) return;
+  if (cfg === undefined) return false;
   const window = windowFor(config, cfg);
   if (window <= config.maxOutputTokens) {
     // Compaction impossible (window cannot hold reserved output). Skip with a
@@ -565,7 +582,7 @@ export async function* maybeAutoCompact(
       `compaction: context window (${window}) <= maxOutputTokens ` +
         `(${config.maxOutputTokens}); compaction impossible, skipping`,
     );
-    return;
+    return false;
   }
   const trig = shouldAutoCompact(
     view.messages,
@@ -573,9 +590,10 @@ export async function* maybeAutoCompact(
     window,
     config.maxOutputTokens,
     cfg,
+    knownPromptFloor,
   );
-  if (trig === null) return;
-  yield* performCompaction(
+  if (trig === null) return false;
+  return yield* performCompaction(
     view,
     'auto',
     cfg.customInstructions ?? null,
@@ -601,13 +619,13 @@ export async function* runManualCompact(
   overheadTokens: number,
   signal: AbortSignal,
   onSummaryCall?: SummaryCallSink,
-): AsyncGenerator<SDKMessage, void> {
+): AsyncGenerator<SDKMessage, boolean> {
   const cfg = config.compaction;
-  if (cfg === undefined) return;
+  if (cfg === undefined) return false;
   // Remove the trailing '/compact' command so it never reaches the model.
   view.messages.pop();
   const instr = customInstructions ?? cfg.customInstructions ?? null;
-  yield* performCompaction(
+  return yield* performCompaction(
     view,
     'manual',
     instr,
@@ -619,7 +637,8 @@ export async function* runManualCompact(
   );
 }
 
-/** Shared compaction core: PreCompact hook -> partition -> fold -> boundary. */
+/** Shared compaction core: PreCompact hook -> partition -> fold -> boundary.
+ *  Returns true when a fold actually mutated the view (a boundary was emitted). */
 async function* performCompaction(
   view: { messages: APIMessageParam[] },
   trigger: 'auto' | 'manual',
@@ -629,10 +648,10 @@ async function* performCompaction(
   overheadTokens: number,
   signal: AbortSignal,
   onSummaryCall: SummaryCallSink | undefined,
-): AsyncGenerator<SDKMessage, void> {
+): AsyncGenerator<SDKMessage, boolean> {
   if (signal.aborted) throw new AbortError();
   const cfg = config.compaction;
-  if (cfg === undefined) return;
+  if (cfg === undefined) return false;
 
   const preTokens = estimateMessagesTokens(view.messages) + overheadTokens;
   let effectiveInstructions = customInstructions;
@@ -649,7 +668,7 @@ async function* performCompaction(
     const agg = await deps.hooks.run('PreCompact', input, undefined, trigger, signal);
     if (agg.continue === false) {
       deps.debug('PreCompact hook cancelled compaction');
-      return; // hook veto: no boundary, view unchanged.
+      return false; // hook veto: no boundary, view unchanged.
     }
     if (agg.additionalContext.length > 0) {
       const extra = agg.additionalContext.join('\n');
@@ -670,13 +689,13 @@ async function* performCompaction(
       `compaction: context window (${window}) <= maxOutputTokens ` +
         `(${config.maxOutputTokens}); compaction impossible, skipping`,
     );
-    return; // no boundary, no mutation.
+    return false; // no boundary, no mutation.
   }
   const budget = window - config.maxOutputTokens;
   const part = partitionForCompaction(view.messages, budget, cfg);
   if (part === null) {
     deps.debug('compaction: nothing safe to fold');
-    return; // no boundary, no mutation.
+    return false; // no boundary, no mutation.
   }
 
   // Pre-tier (G1): shed tool_result bulk from the prefix BEFORE summarizing so
@@ -701,6 +720,7 @@ async function* performCompaction(
     compact_metadata: { trigger, pre_tokens: preTokens },
   };
   yield boundary;
+  return true;
 }
 
 // ---------------------------------------------------------------------------

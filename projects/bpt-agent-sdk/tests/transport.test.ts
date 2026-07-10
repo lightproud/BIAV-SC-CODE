@@ -8,6 +8,7 @@ import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import { parseSSE, type SSEFrame } from '../src/transport/sse.js';
 import { AnthropicTransport } from '../src/transport/anthropic.js';
+import { SDK_USER_AGENT } from '../src/version.js';
 import {
   AbortError,
   APIConnectionError,
@@ -440,7 +441,7 @@ describe('AnthropicTransport request construction', () => {
     const { init } = callArgs(fetchMock);
     expect(init.headers['anthropic-version']).toBe('2023-06-01');
     expect(init.headers['content-type']).toBe('application/json');
-    expect(init.headers['user-agent']).toBe('bpt-agent-sdk/0.1.0');
+    expect(init.headers['user-agent']).toBe(SDK_USER_AGENT);
   });
 
   it('provider.apiVersion overrides the anthropic-version header', async () => {

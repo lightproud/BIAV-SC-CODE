@@ -5,9 +5,12 @@
  * event's filter value runs in parallel. Each callback gets its own timeout
  * (matcher.timeout ?? 60 seconds) combined with the caller's AbortSignal.
  * Rejected or timed-out callbacks are logged via the debug callback and
- * otherwise ignored; a callback can never crash the agent loop.
+ * otherwise ignored (failureMode 'open', the default) or converted into a
+ * deny (failureMode 'closed' — see HookRunnerConfig.failureMode); a callback
+ * can never crash the agent loop.
  *
- * Aggregation rules (across the outputs, in completion order):
+ * Aggregation rules (across the outputs, in REGISTRATION order — parallel
+ * execution, deterministic fold):
  *   - permission decision: deny > defer > ask > allow. The legacy `decision`
  *     field maps onto this: 'block' -> deny (with its `reason`), 'approve' ->
  *     allow (only when the same output carries no explicit permissionDecision).
@@ -15,7 +18,7 @@
  *     unrecognized permissionDecision value fails closed as a DENY, never a
  *     silent allow.
  *   - continue:false wins; the FIRST non-empty stopReason is kept
- *   - systemMessage / additionalContext collected in completion order
+ *   - systemMessage / additionalContext collected in registration order
  *   - updatedInput: from the LAST output carrying an 'allow' OR 'ask' decision
  *     (types.ts documents updatedInput as valid with allow and ask)
  *   - updatedToolOutput: last-wins
@@ -59,6 +62,16 @@ export type HookRunnerConfig = {
    *  Absent AND a matcher carries a condition -> the evaluation fails closed
    *  (no credential -> condition not met -> callbacks skipped). */
   conditionOptions?: UtilityCallOptions;
+  /**
+   * Failure policy for a callback that throws or times out (audit 2026-07-10
+   * P1-5). 'open' (default, historical behavior): the failure is logged and
+   * the output treated as neutral — a security hook that WOULD have denied is
+   * silently bypassed. 'closed': the failure contributes a DENY decision to
+   * the aggregate, so hook-enforced policy fails safe at the cost of blocking
+   * tool calls while a policy hook is broken. Outer-signal cancellation is
+   * never converted to a deny (the whole run is being cancelled).
+   */
+  failureMode?: 'open' | 'closed';
 };
 
 /** A promise that rejects when the signal aborts (used to bound callbacks
@@ -97,12 +110,14 @@ export class DefaultHookRunner implements HookRunner {
     msg: SDKHookStartedMessage | SDKHookResponseMessage,
   ) => void;
   private readonly conditionOptions?: UtilityCallOptions;
+  private readonly failureMode: 'open' | 'closed';
 
   constructor(cfg: HookRunnerConfig) {
     this.hooks = cfg.hooks ?? {};
     this.debug = cfg.debug;
     this.onLifecycleEvent = cfg.onLifecycleEvent;
     this.conditionOptions = cfg.conditionOptions;
+    this.failureMode = cfg.failureMode ?? 'open';
   }
 
   hasHooks(event: HookEvent): boolean {
@@ -139,15 +154,16 @@ export class DefaultHookRunner implements HookRunner {
       }
     }
 
-    // Run all callbacks in parallel; push outputs as they complete so the
-    // aggregation below sees completion order.
-    const outputs: HookJSONOutput[] = [];
-    await Promise.allSettled(
-      tasks.map(async (task) => {
-        const out = await this.runOne(event, task.cb, task.timeoutMs, input, toolUseID, signal);
-        if (out !== undefined) outputs.push(out);
-      }),
+    // Run all callbacks in parallel but aggregate in REGISTRATION order
+    // (Promise.all preserves positions), so last-wins fields (updatedInput /
+    // updatedToolOutput) are deterministic run-to-run instead of racing on
+    // completion order (audit 2026-07-10 L4). runOne never rejects.
+    const settled = await Promise.all(
+      tasks.map((task) =>
+        this.runOne(event, task.cb, task.timeoutMs, input, toolUseID, signal),
+      ),
     );
+    const outputs = settled.filter((out): out is HookJSONOutput => out !== undefined);
 
     // Cancellation is never swallowed as a "hook failure".
     if (signal.aborted) throw new AbortError();
@@ -283,12 +299,25 @@ export class DefaultHookRunner implements HookRunner {
         stderr: msg,
         outcome: signal.aborted ? 'cancelled' : 'error',
       });
+      // failureMode 'closed' (audit 2026-07-10 P1-5): a broken/timed-out hook
+      // must not silently wave the call through — contribute a deny (legacy
+      // 'block' maps onto deny in aggregate()). Cancellation of the whole run
+      // is never a deny; run() rethrows AbortError right after.
+      if (this.failureMode === 'closed' && !signal.aborted) {
+        this.debug(
+          `hooks(${event}): callback failed or timed out; hookFailureMode 'closed' denies (${msg})`,
+        );
+        return {
+          decision: 'block',
+          reason: `hook "${hookName}" failed or timed out (${msg}); denied by hookFailureMode 'closed'`,
+        };
+      }
       this.debug(`hooks(${event}): callback failed or timed out, ignored (${msg})`);
       return undefined;
     }
   }
 
-  /** Fold the collected outputs (already in completion order). */
+  /** Fold the collected outputs (in registration order). */
   private aggregate(outputs: HookJSONOutput[]): AggregatedHookResult {
     const agg: AggregatedHookResult = {
       continue: true,

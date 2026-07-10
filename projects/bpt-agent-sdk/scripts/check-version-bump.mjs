@@ -17,8 +17,29 @@
  */
 
 import { execSync } from 'node:child_process';
+import { readFileSync } from 'node:fs';
 
 const PKG_DIR_RE = /^projects\/bpt-agent-sdk\//;
+
+// --- src/version.ts sync guard (audit 2026-07-10 D9) ------------------------
+// SDK_VERSION mirrors package.json "version" inside shipped runtime code (the
+// User-Agent / init claude_code_version source). Drift = shipping a build that
+// misreports itself; red immediately, independent of the diff logic below.
+try {
+  const pkgVersion = JSON.parse(readFileSync('package.json', 'utf8')).version;
+  const versionTs = readFileSync('src/version.ts', 'utf8');
+  const m = versionTs.match(/SDK_VERSION = '([^']+)'/);
+  if (m === null || m[1] !== pkgVersion) {
+    console.error(
+      `version-bump guard FAILED: src/version.ts SDK_VERSION (${m?.[1] ?? 'missing'}) ` +
+        `!= package.json version (${pkgVersion}). Keep them identical in the same commit.`,
+    );
+    process.exit(1);
+  }
+} catch (err) {
+  console.error(`version-bump guard FAILED: cannot verify src/version.ts sync: ${err}`);
+  process.exit(1);
+}
 
 function git(args) {
   return execSync(`git ${args}`, { encoding: 'utf8' }).trim();

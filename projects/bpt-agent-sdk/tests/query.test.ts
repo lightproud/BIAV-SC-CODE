@@ -786,7 +786,10 @@ describe('query() e2e - compat options, budget, control surface', () => {
     const messages = await collect(q);
     expect(lastResult(messages).subtype).toBe('success');
 
-    expect(lines.some((l) => l.includes("option 'settingSources'"))).toBe(true);
+    // settingSources is NO LONGER on the ACCEPTED list (audit 2026-07-10
+    // P0-5): it has real behavior (CLAUDE.md + .mcp.json loading), so the
+    // "has no effect" diagnostic was a lie and must not fire for it.
+    expect(lines.some((l) => l.includes("option 'settingSources'"))).toBe(false);
     expect(lines.some((l) => l.includes("option 'plugins'"))).toBe(true);
     expect(
       lines

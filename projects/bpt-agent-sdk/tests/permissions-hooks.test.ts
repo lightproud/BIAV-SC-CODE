@@ -853,6 +853,99 @@ describe('matcherMatches', () => {
 // hooks/runner.ts - DefaultHookRunner
 // ---------------------------------------------------------------------------
 
+// Covers Options.hookFailureMode (query.ts threads it as HookRunnerConfig.failureMode).
+describe('DefaultHookRunner hookFailureMode + deterministic aggregation (audit 2026-07-10)', () => {
+  it("failureMode 'closed' turns a throwing hook into a deny", async () => {
+    const r = new DefaultHookRunner({
+      hooks: {
+        PreToolUse: [
+          {
+            matcher: '*',
+            hooks: [
+              async function policyHook() {
+                throw new Error('policy backend down');
+              },
+            ],
+          },
+        ],
+      },
+      debug: () => {},
+      failureMode: 'closed',
+    });
+    const agg = await r.run('PreToolUse', PRE_TOOL_INPUT, 'toolu_fc', 'Bash', freshSignal());
+    expect(agg.decision).toBe('deny');
+    expect(agg.decisionReason).toContain('policyHook');
+    expect(agg.decisionReason).toContain('policy backend down');
+  });
+
+  it("failureMode 'closed' turns a timed-out hook into a deny", async () => {
+    const r = new DefaultHookRunner({
+      hooks: {
+        PreToolUse: [
+          {
+            matcher: '*',
+            timeout: 0.05, // 50ms
+            hooks: [
+              async () => {
+                await new Promise((resolve) => setTimeout(resolve, 5_000).unref?.());
+                return decisionOutput('deny', 'should have denied');
+              },
+            ],
+          },
+        ],
+      },
+      debug: () => {},
+      failureMode: 'closed',
+    });
+    const agg = await r.run('PreToolUse', PRE_TOOL_INPUT, 'toolu_ft', 'Bash', freshSignal());
+    expect(agg.decision).toBe('deny');
+  });
+
+  it("default failureMode 'open' keeps a throwing hook neutral (historical behavior)", async () => {
+    const r = makeRunner({
+      PreToolUse: [
+        {
+          matcher: '*',
+          hooks: [
+            async () => {
+              throw new Error('boom');
+            },
+          ],
+        },
+      ],
+    });
+    const agg = await r.run('PreToolUse', PRE_TOOL_INPUT, 'toolu_fo', 'Bash', freshSignal());
+    expect(agg.decision).toBeUndefined();
+  });
+
+  it('last-wins fields aggregate in REGISTRATION order, not completion order', async () => {
+    // The FIRST-registered hook finishes LAST; under completion-order folding
+    // its updatedInput would win. Registration-order folding keeps the
+    // SECOND-registered hook's rewrite as the last-wins value.
+    const r = makeRunner({
+      PreToolUse: [
+        {
+          matcher: '*',
+          hooks: [
+            delayedHook(
+              decisionOutput('allow', 'slow-first', { updatedInput: { command: 'slow' } }),
+              80,
+            ),
+            delayedHook(
+              decisionOutput('allow', 'fast-second', { updatedInput: { command: 'fast' } }),
+              1,
+            ),
+          ],
+        },
+      ],
+    });
+    const agg = await r.run('PreToolUse', PRE_TOOL_INPUT, 'toolu_det', 'Bash', freshSignal());
+    expect(agg.updatedInput).toEqual({ command: 'fast' });
+    // And the kept allow reason is the FIRST in registration order.
+    expect(agg.decisionReason).toBe('slow-first');
+  });
+});
+
 describe('DefaultHookRunner', () => {
   it('hasHooks reflects registered non-empty matchers', () => {
     const r = makeRunner({

@@ -394,11 +394,13 @@ build red.
 | `src/sessions/` | `ConfigurationError` |
 | `src/query.ts` | `ConfigurationError` |
 | `src/session-manager.ts` | `ConfigurationError` |
-| `src/tools/bash.ts` | `Error` |
+| `src/tools/bash.ts` | `ConfigurationError` |
 
-(`src/tools/bash.ts` keeps one bare `Error` for spawn impossibility - the
-only legitimate throw documented in module D; typing it is deferred to the
-tools owner.)
+(`src/tools/bash.ts` throws exactly once — spawn impossibility, the only
+legitimate throw documented in module D. Typed as `ConfigurationError` since
+the 2026-07-10 audit batch: an unspawnable shell is an environment problem,
+and the stable `code` lets a host route it without parsing the message. This
+retired the last bare `Error` in `src/`.)
 
 ## Testing contract (phase after integration)
 

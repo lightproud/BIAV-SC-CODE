@@ -12,11 +12,17 @@ import {
   encodeOpenAIRequest,
   OpenAIChatTransport,
   OpenAIStreamTranslator,
+  parseRetryAfterMs,
 } from '../src/transport/openai.js';
 import { AnthropicTransport } from '../src/transport/anthropic.js';
 import { createProviderTransport } from '../src/transport/factory.js';
 import { MessageAccumulator } from '../src/engine/accumulator.js';
-import { APIConnectionError, APIStatusError, ConfigurationError } from '../src/errors.js';
+import {
+  AbortError,
+  APIConnectionError,
+  APIStatusError,
+  ConfigurationError,
+} from '../src/errors.js';
 import type { StreamRequest } from '../src/internal/contracts.js';
 import type { RawMessageStreamEvent } from '../src/types.js';
 
@@ -387,6 +393,118 @@ describe('OpenAIStreamTranslator', () => {
     const t = new OpenAIStreamTranslator('m');
     expect(() => t.finish()).toThrow(APIConnectionError);
   });
+
+  it('keeps INTERLEAVED tool_calls intact across indices (P0-1 regression)', () => {
+    const t = new OpenAIStreamTranslator('m');
+    const events = [
+      // idx 0 opens with a partial argument fragment...
+      ...t.feed({
+        id: 'c',
+        choices: [
+          {
+            delta: {
+              tool_calls: [
+                { index: 0, id: 'call_a', function: { name: 'Read', arguments: '{"file' } },
+              ],
+            },
+          },
+        ],
+      }),
+      // ...idx 1 opens BEFORE idx 0 finished (vLLM-style interleaving)...
+      ...t.feed({
+        choices: [
+          {
+            delta: {
+              tool_calls: [
+                { index: 1, id: 'call_b', function: { name: 'Grep', arguments: '{"pattern":"x"}' } },
+              ],
+            },
+          },
+        ],
+      }),
+      // ...then idx 0's remaining fragment arrives.
+      ...t.feed({
+        choices: [
+          { delta: { tool_calls: [{ index: 0, function: { arguments: '_path":"/a"}' } }] } },
+        ],
+      }),
+      ...t.feed({ choices: [{ delta: {}, finish_reason: 'tool_calls' }] }),
+      ...t.finish(),
+    ];
+    const acc = new MessageAccumulator();
+    for (const ev of events) acc.feed(ev);
+    const msg = acc.finalize();
+    expect(msg.content).toEqual([
+      { type: 'tool_use', id: 'call_a', name: 'Read', input: { file_path: '/a' } },
+      { type: 'tool_use', id: 'call_b', name: 'Grep', input: { pattern: 'x' } },
+    ]);
+  });
+
+  it('merges text deltas around a tool call into ONE text block (no ghost blocks)', () => {
+    const t = new OpenAIStreamTranslator('m');
+    const events = [
+      ...t.feed({ id: 'c', choices: [{ delta: { content: 'Let me ' } }] }),
+      ...t.feed({
+        choices: [
+          { delta: { tool_calls: [{ index: 0, id: 'call_a', function: { name: 'Read', arguments: '{}' } }] } },
+        ],
+      }),
+      ...t.feed({ choices: [{ delta: { content: 'read it.' } }] }),
+      ...t.feed({ choices: [{ delta: {}, finish_reason: 'tool_calls' }] }),
+      ...t.finish(),
+    ];
+    const acc = new MessageAccumulator();
+    for (const ev of events) acc.feed(ev);
+    const msg = acc.finalize();
+    expect(msg.content).toEqual([
+      { type: 'text', text: 'Let me read it.' },
+      { type: 'tool_use', id: 'call_a', name: 'Read', input: {} },
+    ]);
+  });
+
+  it("surfaces the `reasoning` gateway alias like `reasoning_content`", () => {
+    const t = new OpenAIStreamTranslator('m');
+    const events = [
+      ...t.feed({ id: 'c', choices: [{ delta: { reasoning: 'pondering' } }] }),
+      ...t.feed({ choices: [{ delta: { content: 'Done.' }, finish_reason: 'stop' }] }),
+      ...t.finish(),
+    ];
+    const acc = new MessageAccumulator();
+    for (const ev of events) acc.feed(ev);
+    expect(acc.finalize().content).toEqual([
+      { type: 'thinking', thinking: 'pondering', signature: '' },
+      { type: 'text', text: 'Done.' },
+    ]);
+  });
+
+  it('falls back to a synthetic call_N id when the provider omits tool_call id', () => {
+    const t = new OpenAIStreamTranslator('m');
+    const events = [
+      ...t.feed({
+        id: 'c',
+        choices: [
+          { delta: { tool_calls: [{ index: 0, function: { name: 'Glob', arguments: '{}' } }] } },
+        ],
+      }),
+      ...t.feed({ choices: [{ delta: {}, finish_reason: 'tool_calls' }] }),
+      ...t.finish(),
+    ];
+    const acc = new MessageAccumulator();
+    for (const ev of events) acc.feed(ev);
+    const block = acc.finalize().content[0];
+    expect(block).toMatchObject({ type: 'tool_use', name: 'Glob' });
+    expect((block as { id: string }).id).toMatch(/^call_\d+$/);
+  });
+});
+
+describe('parseRetryAfterMs', () => {
+  it('parses seconds and caps at the 60s backoff maximum', () => {
+    expect(parseRetryAfterMs('0')).toBe(0);
+    expect(parseRetryAfterMs('2')).toBe(2000);
+    expect(parseRetryAfterMs('9999')).toBe(60_000);
+    expect(parseRetryAfterMs('Wed, 21 Oct 2026 07:28:00 GMT')).toBeUndefined();
+    expect(parseRetryAfterMs(null)).toBeUndefined();
+  });
 });
 
 // ---------------------------------------------------------------------------
@@ -550,6 +668,216 @@ describe('OpenAIChatTransport', () => {
     const err = (await captureError(collect(transport.stream(REQ)))) as APIStatusError;
     expect(err).toBeInstanceOf(APIStatusError);
     expect(err.message).toContain('stream exploded');
+  });
+});
+
+describe('OpenAIChatTransport stream-fault quadrant', () => {
+  function bodyThatDropsAfter(head: string): ReadableStream<Uint8Array> {
+    let sent = false;
+    return new ReadableStream<Uint8Array>({
+      pull(controller) {
+        if (!sent) {
+          sent = true;
+          controller.enqueue(enc.encode(head));
+        } else {
+          controller.error(new Error('ECONNRESET: connection reset by peer'));
+        }
+      },
+    });
+  }
+
+  function hangingBody(head: string): ReadableStream<Uint8Array> {
+    return new ReadableStream<Uint8Array>({
+      start(controller) {
+        controller.enqueue(enc.encode(head));
+        // never closes, never errors
+      },
+    });
+  }
+
+  const HEAD_CHUNK = sseBody([
+    { id: 'c', choices: [{ delta: { role: 'assistant', content: 'par' } }] },
+  ]);
+
+  it('marks a mid-stream disconnect as midStreamTruncation (E3 salvage input)', async () => {
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(async () => new Response(bodyThatDropsAfter(HEAD_CHUNK), { status: 200 })),
+    );
+    const transport = new OpenAIChatTransport({
+      provider: { apiKey: 'k' },
+      env: {},
+      debug: noop,
+    });
+    const err = (await captureError(collect(transport.stream(REQ)))) as APIConnectionError;
+    expect(err).toBeInstanceOf(APIConnectionError);
+    expect(err.midStreamTruncation).toBe(true);
+  });
+
+  it('does NOT set midStreamTruncation when the connection drops before any chunk', async () => {
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(async () => new Response(bodyThatDropsAfter(''), { status: 200 })),
+    );
+    const transport = new OpenAIChatTransport({
+      provider: { apiKey: 'k', maxRetries: 0 },
+      env: {},
+      debug: noop,
+    });
+    const err = (await captureError(collect(transport.stream(REQ)))) as APIConnectionError;
+    expect(err).toBeInstanceOf(APIConnectionError);
+    expect(err.midStreamTruncation).toBeFalsy();
+  });
+
+  it('treats a clean end with neither [DONE] nor finish_reason as a truncated turn', async () => {
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(async () => okStream([
+        { id: 'c', choices: [{ delta: { role: 'assistant', content: 'half an ans' } }] },
+      ])),
+    );
+    const transport = new OpenAIChatTransport({
+      provider: { apiKey: 'k' },
+      env: {},
+      debug: noop,
+    });
+    const err = (await captureError(collect(transport.stream(REQ)))) as APIConnectionError;
+    expect(err).toBeInstanceOf(APIConnectionError);
+    expect(err.midStreamTruncation).toBe(true);
+    expect(err.message).toContain('without [DONE] or finish_reason');
+  });
+
+  it('aborts a silently stalled stream via the idle watchdog (stream_idle_timeout)', async () => {
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(async () => new Response(hangingBody(HEAD_CHUNK), { status: 200 })),
+    );
+    const transport = new OpenAIChatTransport({
+      provider: { apiKey: 'k', streamIdleTimeoutMs: 25 },
+      env: {},
+      debug: noop,
+    });
+    const err = (await captureError(collect(transport.stream(REQ)))) as APIConnectionError;
+    expect(err).toBeInstanceOf(APIConnectionError);
+    expect(err.code).toBe('stream_idle_timeout');
+  });
+
+  it('maps the whole-request timeout when the watchdog is disabled', async () => {
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(async (_url: string, init?: RequestInit) => {
+        // Respect the fetch signal so AbortSignal.timeout() actually cuts the body.
+        return new Response(
+          new ReadableStream<Uint8Array>({
+            start(controller) {
+              controller.enqueue(enc.encode(HEAD_CHUNK));
+              init?.signal?.addEventListener('abort', () => {
+                try {
+                  controller.error(init.signal?.reason ?? new Error('aborted'));
+                } catch {
+                  /* already errored */
+                }
+              });
+            },
+          }),
+          { status: 200 },
+        );
+      }),
+    );
+    const transport = new OpenAIChatTransport({
+      provider: { apiKey: 'k', timeoutMs: 30, streamIdleTimeoutMs: 0 },
+      env: {},
+      debug: noop,
+    });
+    const err = (await captureError(collect(transport.stream(REQ)))) as APIConnectionError;
+    expect(err).toBeInstanceOf(APIConnectionError);
+    expect(err.message).toContain('timed out after 30ms');
+  });
+
+  it('surfaces a caller abort mid-stream as AbortError', async () => {
+    const controller = new AbortController();
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(async () => new Response(hangingBody(HEAD_CHUNK), { status: 200 })),
+    );
+    const transport = new OpenAIChatTransport({
+      provider: { apiKey: 'k' },
+      env: {},
+      debug: noop,
+    });
+    const consume = (async () => {
+      const out: RawMessageStreamEvent[] = [];
+      for await (const ev of transport.stream({ ...REQ, signal: controller.signal })) {
+        out.push(ev);
+        controller.abort();
+      }
+      return out;
+    })();
+    const err = await captureError(consume);
+    expect(err).toBeInstanceOf(AbortError);
+  });
+
+  it('carries x-request-id into APIStatusError on HTTP errors', async () => {
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(async () =>
+        new Response(JSON.stringify({ error: { message: 'nope' } }), {
+          status: 400,
+          headers: { 'x-request-id': 'req_openai_123' },
+        }),
+      ),
+    );
+    const transport = new OpenAIChatTransport({
+      provider: { apiKey: 'k' },
+      env: {},
+      debug: noop,
+    });
+    const err = (await captureError(collect(transport.stream(REQ)))) as APIStatusError;
+    expect(err).toBeInstanceOf(APIStatusError);
+    expect(err.requestId).toBe('req_openai_123');
+  });
+});
+
+describe('OpenAIChatTransport gateway knobs (audit P1-4)', () => {
+  it('applies provider.openai.modelMap at the wire boundary', async () => {
+    const fetchMock = vi.fn(async () => okStream(TEXT_CHUNKS));
+    vi.stubGlobal('fetch', fetchMock);
+    const transport = new OpenAIChatTransport({
+      provider: {
+        apiKey: 'k',
+        openai: { modelMap: { 'claude-haiku-4-5': 'gpt-4o-mini' } },
+      },
+      env: {},
+      debug: noop,
+    });
+    await collect(transport.stream({ ...REQ, model: 'claude-haiku-4-5' }));
+    const [, init] = fetchMock.mock.calls[0] as unknown as [string, RequestInit];
+    expect((JSON.parse(init.body as string) as { model: string }).model).toBe('gpt-4o-mini');
+  });
+
+  it('supports Azure-style api-key header and extraQueryParams', async () => {
+    const fetchMock = vi.fn(async () => okStream(TEXT_CHUNKS));
+    vi.stubGlobal('fetch', fetchMock);
+    const transport = new OpenAIChatTransport({
+      provider: {
+        apiKey: 'azure-key',
+        baseUrl: 'https://myres.openai.azure.com/openai/deployments/gpt4o',
+        openai: {
+          authHeaderName: 'api-key',
+          extraQueryParams: { 'api-version': '2024-06-01' },
+        },
+      },
+      env: {},
+      debug: noop,
+    });
+    await collect(transport.stream(REQ));
+    const [url, init] = fetchMock.mock.calls[0] as unknown as [string, RequestInit];
+    expect(url).toBe(
+      'https://myres.openai.azure.com/openai/deployments/gpt4o/chat/completions?api-version=2024-06-01',
+    );
+    const headers = init.headers as Record<string, string>;
+    expect(headers['api-key']).toBe('azure-key');
+    expect(headers).not.toHaveProperty('authorization');
   });
 });
 

@@ -6,7 +6,7 @@
  * ids estimate to 0.
  */
 
-import type { NonNullableUsage, Usage } from '../types.js';
+import type { NonNullableUsage, PriceOverride, Usage } from '../types.js';
 
 type PriceEntry = {
   /** Model-id prefix this entry applies to. */
@@ -34,6 +34,42 @@ const PRICE_TABLE: readonly PriceEntry[] = [
 
 const MTOK = 1_000_000;
 
+/** Longest-prefix match over caller overrides (normalized id). */
+function matchOverride(
+  normalized: string,
+  overrides: Record<string, PriceOverride> | undefined,
+): PriceEntry | undefined {
+  if (overrides === undefined) return undefined;
+  let bestPrefix: string | undefined;
+  for (const prefix of Object.keys(overrides)) {
+    if (normalized.startsWith(prefix)) {
+      if (bestPrefix === undefined || prefix.length > bestPrefix.length) {
+        bestPrefix = prefix;
+      }
+    }
+  }
+  if (bestPrefix === undefined) return undefined;
+  const o = overrides[bestPrefix] as PriceOverride;
+  return {
+    prefix: bestPrefix,
+    input: o.input,
+    output: o.output,
+    cacheWrite: o.cacheWrite ?? o.input * 1.25,
+    cacheRead: o.cacheRead ?? o.input * 0.1,
+  };
+}
+
+/** True when a price is known for `model` (static table or overrides) — the
+ *  budget cap is only enforceable when this holds. */
+export function hasPriceFor(
+  model: string,
+  overrides?: Record<string, PriceOverride>,
+): boolean {
+  const normalized = normalizeModelId(model);
+  if (matchOverride(normalized, overrides) !== undefined) return true;
+  return PRICE_TABLE.some((e) => normalized.startsWith(e.prefix));
+}
+
 /**
  * Normalize a cloud-provider model id back to its canonical `claude-...` form so
  * the price prefix still matches (S1, BPT audit 2026-07-07). Without this,
@@ -59,13 +95,18 @@ export function estimateCostUsd(
   model: string,
   usage: NonNullableUsage,
   cacheTtl: '5m' | '1h' = '5m',
+  overrides?: Record<string, PriceOverride>,
 ): number {
   const normalized = normalizeModelId(model);
-  let best: PriceEntry | undefined;
-  for (const entry of PRICE_TABLE) {
-    if (normalized.startsWith(entry.prefix)) {
-      if (best === undefined || entry.prefix.length > best.prefix.length) {
-        best = entry;
+  // Caller overrides win over the static table (they exist to price models
+  // the table cannot know about — and to correct it when it is stale).
+  let best: PriceEntry | undefined = matchOverride(normalized, overrides);
+  if (best === undefined) {
+    for (const entry of PRICE_TABLE) {
+      if (normalized.startsWith(entry.prefix)) {
+        if (best === undefined || entry.prefix.length > best.prefix.length) {
+          best = entry;
+        }
       }
     }
   }

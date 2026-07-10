@@ -248,6 +248,10 @@ export async function* runAgentLoop(
   let lastStopReason: StopReason = null;
   let firstTokenAtMs: number | undefined; // wall-clock of the first content event
   let firstStreamStartMs: number | undefined; // apiStart of the stream that produced it
+  // Real prompt size (usage input + cache read/creation) of the last billed
+  // request: a hard floor for the compaction trigger's heuristic estimate
+  // (audit 2026-07-10 P1-1/D). Cleared when a fold shrinks the view.
+  let lastActualPromptTokens: number | undefined;
   let totalCostUsd = 0;
   let totalUsage: NonNullableUsage = {
     input_tokens: 0,
@@ -387,7 +391,7 @@ export async function* runAgentLoop(
   /** Fold one attempt's usage into the running totals + per-model ledger. */
   const recordUsage = (responseModel: string, usage: NonNullableUsage): void => {
     totalUsage = addUsage(totalUsage, usage);
-    const cost = estimateCostUsd(responseModel, usage, config.cacheTtl);
+    const cost = estimateCostUsd(responseModel, usage, config.cacheTtl, config.pricing);
     totalCostUsd += cost;
     const prev = modelUsage[responseModel];
     modelUsage[responseModel] = {
@@ -528,11 +532,6 @@ export async function* runAgentLoop(
   const systemPromptTokens = Math.ceil(systemCharLen / 4);
   const currentOverheadTokens = (): number =>
     estimateToolDefsTokens(buildToolDefs()) + systemPromptTokens;
-
-  // Static per-request overhead (system prompt + tool schemas) folded into the
-  // compaction token estimate; both pieces are stable across the run.
-  const overheadTokens =
-    estimateToolDefsTokens(buildToolDefs()) + Math.ceil(systemCharLen / 4);
 
   /** One streaming attempt; yields partial events, returns the final message.
    *  `sink` (when given) captures usage seen so far so a FAILED attempt's
@@ -716,6 +715,14 @@ export async function* runAgentLoop(
         accumulator.feed(event);
       }
     } catch (err) {
+      // Retry observability on FAILURE (audit 2026-07-10 L2): when every retry
+      // was exhausted and the attempt throws before its first stream event,
+      // the buffered rate_limit_event / api_retry messages would otherwise
+      // vanish — precisely the run where the retry log matters most. Drain
+      // them here (not on caller aborts: the consumer is going away).
+      if (!signal.aborted) {
+        while (retryMessages.length > 0) yield retryMessages.shift()!;
+      }
       // E3: graceful degradation for a MID-STREAM connection drop (flagged by
       // the transport; never a timeout/idle/abort). Salvage the blocks the
       // wire delivered whole instead of voiding the turn - official 2.1.201
@@ -1029,14 +1036,18 @@ export async function* runAgentLoop(
             };
             return;
           }
-          yield* maybeAutoCompact(
+          const compacted = yield* maybeAutoCompact(
             deps.requestView,
             deps,
             config,
             overheadTokens,
             signal,
             onSummaryCall,
+            lastActualPromptTokens,
           );
+          // A fold shrank the view: the previous request's real prompt size is
+          // no longer a valid floor for the (now smaller) context.
+          if (compacted) lastActualPromptTokens = undefined;
         }
       }
 
@@ -1146,6 +1157,17 @@ export async function* runAgentLoop(
 
       // --- Usage/cost tracking per response model. --------------------------
       recordUsage(assistant.model, normalizeUsage(assistant.usage));
+      // Ground-truth prompt-size floor for the compaction trigger (audit
+      // 2026-07-10 P1-1/D): input + cache read/creation is the REAL prompt
+      // size of the request just billed — a hard lower bound on the current
+      // context until a fold shrinks it (cleared there).
+      {
+        const u = assistant.usage;
+        lastActualPromptTokens =
+          (u.input_tokens ?? 0) +
+          (u.cache_read_input_tokens ?? 0) +
+          (u.cache_creation_input_tokens ?? 0);
+      }
 
       // NOTE on budget placement: a turn that has just naturally ended
       // (end_turn / stop_sequence / etc.) must still yield its completed
@@ -1173,7 +1195,7 @@ export async function* runAgentLoop(
           index: numTurns - 1,
           model: assistant.model,
           usage: turnUsage,
-          costUsd: estimateCostUsd(assistant.model, turnUsage, config.cacheTtl),
+          costUsd: estimateCostUsd(assistant.model, turnUsage, config.cacheTtl, config.pricing),
           apiMs: durationApiMs - apiMsBefore,
           stopReason: assistant.stop_reason,
           toolCalls: toolUses.length,
@@ -1402,7 +1424,14 @@ export async function* runAgentLoop(
       if (config.outputFormat !== undefined) {
         const outcome = evaluateStructuredOutput(text, config.outputFormat.schema);
         if (outcome.status === 'invalid') {
-          pushAssistant(assistant.content, assistant.model); // keep the invalid answer in history
+          // Keep the invalid answer in history — but apply the same C6 orphan
+          // filter as the natural-end path below: a max_tokens cut mid-tool-use
+          // leaves an unexecuted tool_use here, and persisting it unpaired
+          // 400s EVERY later request of this query (audit 2026-07-10 P0-2).
+          pushAssistant(
+            assistant.content.filter((b) => b.type !== 'tool_use'),
+            assistant.model,
+          );
           const maxRetries =
             config.maxStructuredOutputRetries ?? DEFAULT_STRUCTURED_OUTPUT_RETRIES;
           if (structuredRetries >= maxRetries) {
@@ -1450,7 +1479,13 @@ export async function* runAgentLoop(
       if (deps.drainSubagentResults !== undefined) {
         const extra = deps.drainSubagentResults();
         if (extra.length > 0) {
-          pushAssistant(assistant.content, assistant.model); // keep this turn's answer in history
+          // Keep this turn's answer in history — with the same C6 orphan filter
+          // as the natural-end path (audit 2026-07-10 P0-2): this is a natural
+          // end too, so any tool_use here is an unexecuted max_tokens orphan.
+          pushAssistant(
+            assistant.content.filter((b) => b.type !== 'tool_use'),
+            assistant.model,
+          );
           const bgTurn: APIMessageParam = { role: 'user', content: extra };
           history.push(bgTurn);
           mirror(bgTurn);

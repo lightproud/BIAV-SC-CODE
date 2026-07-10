@@ -16,10 +16,11 @@
  * damaged transcript never blocks a resume.
  */
 
-import { appendFileSync, mkdirSync } from 'node:fs';
+import { appendFileSync, createReadStream, mkdirSync } from 'node:fs';
 import { readFile, readdir, stat } from 'node:fs/promises';
 import { homedir } from 'node:os';
 import { join } from 'node:path';
+import { createInterface } from 'node:readline';
 
 import type {
   APIMessageParam,
@@ -248,6 +249,11 @@ export function resolveTranscriptPath(
 export class JsonlSessionStore implements SessionStore {
   private readonly dir: string;
   private readonly debug: (msg: string) => void;
+  /** True once the sessions directory has been ensured — append() then skips
+   *  the per-record mkdirSync (audit 2026-07-10 B1: append sits on the
+   *  streaming hot path, 4-5 calls per turn). Reset-and-retried on failure so
+   *  an externally removed directory still self-heals. */
+  private dirEnsured = false;
 
   constructor(cfg: JsonlSessionStoreConfig = {}) {
     this.dir = resolveSessionsDir(cfg.sessionDir, cfg.env);
@@ -270,13 +276,25 @@ export class JsonlSessionStore implements SessionStore {
       );
       return;
     }
+    const line = `${JSON.stringify(entry)}\n`;
     try {
-      mkdirSync(this.dir, { recursive: true });
-      appendFileSync(this.filePath(sessionId), `${JSON.stringify(entry)}\n`, 'utf8');
-    } catch (err) {
-      this.debug(
-        `session store: append failed for ${sessionId}: ${err instanceof Error ? err.message : String(err)}`,
-      );
+      if (!this.dirEnsured) {
+        mkdirSync(this.dir, { recursive: true });
+        this.dirEnsured = true;
+      }
+      appendFileSync(this.filePath(sessionId), line, 'utf8');
+    } catch {
+      // The directory may have been removed after we ensured it: re-ensure
+      // and retry ONCE before giving up (append must never throw).
+      try {
+        mkdirSync(this.dir, { recursive: true });
+        this.dirEnsured = true;
+        appendFileSync(this.filePath(sessionId), line, 'utf8');
+      } catch (err) {
+        this.debug(
+          `session store: append failed for ${sessionId}: ${err instanceof Error ? err.message : String(err)}`,
+        );
+      }
     }
   }
 
@@ -422,6 +440,17 @@ export class JsonlSessionStore implements SessionStore {
     };
   }
 
+  /**
+   * Directory listing (audit 2026-07-10 B2). This used to full-load EVERY
+   * transcript (all message lines parsed + three repairPairing passes) just to
+   * produce a summary row — O(total directory bytes) for a heavy user. The
+   * listing only needs meta / meta_update / pending-checkpoint lines, so this
+   * scans each file line-by-line and JSON.parses ONLY those record types
+   * (every writer serializes `type` as the first key, so the prefix probe is
+   * exact for SDK-produced transcripts). `messages` is returned EMPTY here —
+   * list() consumers (listSessions/getSessionInfo, the mirror adapter) never
+   * read it; resume paths go through load(), which is unchanged.
+   */
   async list(): Promise<LoadedSession[]> {
     let names: string[];
     try {
@@ -432,11 +461,102 @@ export class JsonlSessionStore implements SessionStore {
     const sessions: LoadedSession[] = [];
     for (const name of names) {
       if (!name.endsWith(JSONL_EXT)) continue;
-      const loaded = await this.load(name.slice(0, -JSONL_EXT.length));
-      if (loaded !== null) sessions.push(loaded);
+      const info = await this.loadInfo(name.slice(0, -JSONL_EXT.length));
+      if (info !== null) sessions.push(info);
     }
     sessions.sort((a, b) => b.lastModified - a.lastModified);
     return sessions;
+  }
+
+  /** Meta-only transcript scan backing list(); see the list() doc. */
+  private async loadInfo(sessionId: string): Promise<LoadedSession | null> {
+    if (!isSafeSessionId(sessionId)) return null;
+    const file = this.filePath(sessionId);
+    let createdAt: number | undefined;
+    let firstPrompt: string | undefined;
+    let cwd: string | undefined;
+    let customTitle: string | undefined;
+    let tag: string | undefined;
+    let gitBranch: string | undefined;
+    const openPending = new Map<string, string | undefined>();
+    let stream: ReturnType<typeof createReadStream>;
+    try {
+      stream = createReadStream(file, { encoding: 'utf8' });
+    } catch {
+      return null;
+    }
+    try {
+      const rl = createInterface({ input: stream, crlfDelay: Infinity });
+      for await (const rawLine of rl) {
+        const line = rawLine.trim();
+        // Exact for our writers ('type' is always serialized first); a foreign
+        // line simply contributes nothing to the summary row.
+        if (!line.startsWith('{"type":"met') && !line.startsWith('{"type":"pending_turn"') && !line.startsWith('{"type":"turn_complete"')) {
+          continue;
+        }
+        let parsed: unknown;
+        try {
+          parsed = JSON.parse(line);
+        } catch {
+          continue;
+        }
+        if (typeof parsed !== 'object' || parsed === null) continue;
+        const entry = parsed as Record<string, unknown>;
+        if (entry.type === 'meta') {
+          if (typeof entry.createdAt === 'number') createdAt = entry.createdAt;
+          if (typeof entry.firstPrompt === 'string') firstPrompt = entry.firstPrompt;
+          if (typeof entry.cwd === 'string') cwd = entry.cwd;
+          if (typeof entry.gitBranch === 'string') gitBranch = entry.gitBranch;
+        } else if (entry.type === 'meta_update') {
+          if (typeof entry.customTitle === 'string') customTitle = entry.customTitle;
+          if (typeof entry.tag === 'string') tag = entry.tag;
+          else if (entry.tag === null) tag = undefined;
+        } else if (entry.type === 'pending_turn' && typeof entry.uuid === 'string') {
+          openPending.set(
+            entry.uuid,
+            typeof entry.turn_ref === 'string' ? entry.turn_ref : undefined,
+          );
+        } else if (
+          entry.type === 'turn_complete' &&
+          typeof entry.pending_uuid === 'string'
+        ) {
+          openPending.delete(entry.pending_uuid);
+        }
+      }
+    } catch {
+      return null;
+    }
+    let lastModified = createdAt ?? Date.now();
+    try {
+      const st = await stat(file);
+      lastModified = st.mtimeMs;
+    } catch {
+      // stat raced a deletion; keep the fallback.
+    }
+    let pendingTurnUuid: string | undefined;
+    let pendingTurnRef: string | undefined;
+    for (const [uuid, ref] of openPending) {
+      pendingTurnUuid = uuid;
+      pendingTurnRef = ref;
+    }
+    return {
+      sessionId,
+      messages: [],
+      createdAt: createdAt ?? lastModified,
+      lastModified,
+      firstPrompt,
+      cwd,
+      customTitle,
+      tag,
+      gitBranch,
+      ...(pendingTurnUuid !== undefined
+        ? {
+            pendingTurnInterrupted: true,
+            pendingTurnUuid,
+            ...(pendingTurnRef !== undefined ? { pendingTurnRef } : {}),
+          }
+        : {}),
+    };
   }
 
   async latestSessionId(): Promise<string | null> {

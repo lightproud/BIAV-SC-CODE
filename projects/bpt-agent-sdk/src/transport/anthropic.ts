@@ -21,6 +21,7 @@ import type {
 } from '../types.js';
 import type { RetryInfo, StreamRequest, Transport } from '../internal/contracts.js';
 import { parseSSE } from './sse.js';
+import { SDK_USER_AGENT } from '../version.js';
 
 const DEFAULT_BASE_URL = 'https://api.anthropic.com';
 const DEFAULT_API_VERSION = '2023-06-01';
@@ -35,7 +36,7 @@ export const DEFAULT_MAX_RETRIES = 10;
 /** Official cap applied to the CLAUDE_CODE_MAX_RETRIES env override ("capped
  *  at 15"); provider.maxRetries overrides are NOT capped. */
 const ENV_MAX_RETRIES_CAP = 15;
-const USER_AGENT = 'bpt-agent-sdk/0.1.0';
+const USER_AGENT = SDK_USER_AGENT;
 const BACKOFF_BASE_MS = 1_000;
 const BACKOFF_FACTOR = 2;
 const BACKOFF_MAX_MS = 60_000;

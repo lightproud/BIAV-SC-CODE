@@ -10,7 +10,7 @@
 import { spawn } from 'node:child_process';
 import { resolvePosixShells, SHELL_NOT_FOUND_GUIDANCE } from './shell-resolve.js';
 import { planProcessKill } from './kill-plan.js';
-import { AbortError } from '../errors.js';
+import { AbortError, ConfigurationError } from '../errors.js';
 import { BASH_DESCRIPTION, BASH_WIN32_NOTE, buildBashSandboxNote } from './descriptions.js';
 import { planShellSpawn } from '../sandbox/backend.js';
 import { detectSandboxEvidence, sandboxFailureHint } from '../sandbox/evidence.js';
@@ -494,9 +494,15 @@ async function execute(
     // in order; ENOENT falls through to the next, any other spawn error is
     // terminal for that attempt chain.
     const shells = resolvePosixShells(ctx.env as Record<string, string | undefined>);
+    // Plain-object sentinel (never thrown/escaped — only .code/.message are
+    // read below), so no bare Error is constructed (error-discipline E6d).
     let outcome: RunOutcome = {
       kind: 'spawn-error',
-      error: Object.assign(new Error(SHELL_NOT_FOUND_GUIDANCE), { code: 'ENOENT' }),
+      error: {
+        name: 'Error',
+        message: SHELL_NOT_FOUND_GUIDANCE,
+        code: 'ENOENT',
+      } as NodeJS.ErrnoException,
     };
     for (const shell of shells) {
       if (ctx.signal.aborted) throw new AbortError();
@@ -508,8 +514,11 @@ async function execute(
       // Spawn impossibility is the only legitimate throw for this tool. When
       // the whole candidate chain missed, the message carries the actionable
       // guidance (Git Bash / CLAUDE_CODE_GIT_BASH_PATH) instead of raw ENOENT.
+      // Typed (audit 2026-07-10): this was the last bare `Error` in src/ — an
+      // unspawnable shell is an environment/configuration problem, and the
+      // stable `code` lets a host route it without parsing the message.
       const detail = outcome.error.code === 'ENOENT' ? SHELL_NOT_FOUND_GUIDANCE : outcome.error.message;
-      throw new Error(`Bash: failed to spawn a shell: ${detail}`);
+      throw new ConfigurationError(`Bash: failed to spawn a shell: ${detail}`);
     }
 
     if (outcome.aborted || ctx.signal.aborted) throw new AbortError();

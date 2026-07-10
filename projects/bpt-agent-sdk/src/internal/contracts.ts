@@ -23,6 +23,7 @@ import type {
   OutputFormatConfig,
   PermissionMode,
   PermissionUpdate,
+  PriceOverride,
   RawMessageStreamEvent,
   SandboxContext,
   SDKMessage,
@@ -494,6 +495,9 @@ export type EngineConfig = {
   /** Cache lifetime for the breakpoints this engine places ('5m' default, '1h'
    *  for the 1-hour cache). BPT-EXTENSION; no effect when promptCaching false. */
   cacheTtl?: '5m' | '1h';
+  /** Custom model pricing overrides (ProviderConfig.pricing) threaded into
+   *  every cost estimate this loop makes. BPT-EXTENSION (audit 2026-07-10). */
+  pricing?: Record<string, PriceOverride>;
   /** tool_use id of the spawning Agent call; stamped on this loop's messages
    *  so subagent messages thread. Root loop leaves it undefined -> null. */
   parentToolUseId?: string | null;

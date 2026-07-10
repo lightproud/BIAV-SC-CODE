@@ -11,6 +11,7 @@ import { AnthropicTransport } from '../src/transport/anthropic.js';
 import {
   addUsage,
   estimateCostUsd,
+  hasPriceFor,
   normalizeUsage,
 } from '../src/engine/pricing.js';
 import { runAgentLoop } from '../src/engine/loop.js';
@@ -499,6 +500,30 @@ describe('pricing', () => {
     const expected =
       (1_000_000 * 1 + 2_000_000 * 5 + 4_000_000 * 1.25 + 10_000_000 * 0.1) / MTOK;
     expect(estimateCostUsd('claude-haiku-3-5-20241022', usage)).toBe(expected);
+  });
+
+  it('provider.pricing overrides price unknown models and win over the table (audit P1-4)', () => {
+    const usage: NonNullableUsage = {
+      input_tokens: 1_000_000,
+      output_tokens: 1_000_000,
+      cache_creation_input_tokens: 0,
+      cache_read_input_tokens: 1_000_000,
+    };
+    const overrides = {
+      'gpt-4o': { input: 2.5, output: 10 },
+      'claude-haiku-': { input: 2, output: 10, cacheRead: 0.2 },
+    };
+    // Unknown-to-the-table model priced via override; cacheRead defaults to input x0.1.
+    expect(estimateCostUsd('gpt-4o-2024-11-20', usage, '5m', overrides)).toBe(
+      2.5 + 10 + 0.25,
+    );
+    // Override WINS over the static haiku entry (1/5/0.1 -> 2/10/0.2).
+    expect(estimateCostUsd('claude-haiku-4-5', usage, '5m', overrides)).toBe(
+      2 + 10 + 0.2,
+    );
+    expect(hasPriceFor('gpt-4o-mini', { 'gpt-4o': { input: 1, output: 2 } })).toBe(true);
+    expect(hasPriceFor('gpt-4o-mini')).toBe(false);
+    expect(hasPriceFor('claude-sonnet-4-5')).toBe(true);
   });
 
   it('estimateCostUsd returns 0 for unknown model ids', () => {

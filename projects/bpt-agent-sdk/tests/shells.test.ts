@@ -223,6 +223,26 @@ describe('TaskOutput / TaskStop (official-name background-task surface)', () => 
     expect(text(read.content)).toContain('(no new output)');
   });
 
+  it('TaskOutput block:true bails with AbortError when the signal fires (P0-3)', async () => {
+    const ctx = makeCtx(true);
+    const controller = new AbortController();
+    const abortableCtx = { ...ctx, signal: controller.signal };
+    const { id } = manager!.spawnBackground('bash', 'echo now; sleep 30', abortableCtx) as {
+      id: string;
+    };
+    await until(() => manager!.get(id)!.stdout.includes('now'));
+    await taskOutputTool.execute({ task_id: id }, abortableCtx); // drain
+    // Model asked for a huge blocking window; the abort must cut through it.
+    const start = Date.now();
+    const pending = taskOutputTool.execute(
+      { task_id: id, block: true, timeout: 86_400_000 },
+      abortableCtx,
+    );
+    setTimeout(() => controller.abort(), 80);
+    await expect(pending).rejects.toMatchObject({ name: 'AbortError' });
+    expect(Date.now() - start).toBeLessThan(5_000);
+  });
+
   it('TaskStop stops a running task by task_id', async () => {
     const ctx = makeCtx(true);
     const { id } = manager!.spawnBackground('bash', 'sleep 30', ctx) as { id: string };
