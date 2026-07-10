@@ -156,6 +156,10 @@ export async function* runAgentLoop(
   // protocol). We fire once per completed message, so this counts messages.
   let messageDisplayIndex = 0;
   let structuredRetries = 0;
+  // Official Stop-hook block semantics (v0.39, /goal-gating primitive): true
+  // once a Stop hook has blocked a stop in THIS loop, reported back on every
+  // subsequent Stop hook input so a well-behaved hook can break the cycle.
+  let stopHookActive = false;
   // E3: non-fatal stream-truncation notes for the terminal result's `errors`
   // (a truncated turn degrades gracefully; the note keeps the fault visible).
   const streamErrors: string[] = [];
@@ -1188,12 +1192,48 @@ export async function* runAgentLoop(
       if (deps.hooks.hasHooks('Stop')) {
         const stopAgg = await deps.hooks.run(
           'Stop',
-          { ...baseHookFields, hook_event_name: 'Stop', stop_hook_active: false },
+          { ...baseHookFields, hook_event_name: 'Stop', stop_hook_active: stopHookActive },
           undefined,
           undefined,
           signal,
         );
         for (const m of stopAgg.systemMessages) deps.debug(`Stop hook: ${m}`);
+        // Official Stop-hook block semantics (v0.39): a 'block' decision
+        // PREVENTS the stop — the reason is fed back as a user turn and the
+        // loop runs another assistant turn (the /goal goal-gating primitive).
+        // `continue:false` forces the stop and WINS over block (official
+        // precedence). ROOT LOOP ONLY: a subagent's natural end is governed
+        // by SubagentStop (runtime-level), so a goal-gate registered on Stop
+        // must not capture every child (parentToolUseId marks child loops).
+        const isRootLoop =
+          config.parentToolUseId === undefined || config.parentToolUseId === null;
+        if (isRootLoop && stopAgg.continue && stopAgg.decision === 'deny') {
+          const reason =
+            stopAgg.decisionReason ?? 'Stop hook blocked stopping (no reason given)';
+          deps.debug(`engine: Stop hook blocked the stop; continuing (${reason})`);
+          stopHookActive = true;
+          const blockTurn: APIMessageParam = { role: 'user', content: reason };
+          history.push(blockTurn);
+          mirror(blockTurn);
+          // The forced follow-up assistant turn is billable: honor the same
+          // caps as the tool-continue / structured-retry / bg-drain paths so a
+          // stubborn Stop hook cannot bust maxTurns / maxBudgetUsd.
+          if (config.maxTurns !== undefined && numTurns >= config.maxTurns) {
+            yield errorResult(
+              'error_max_turns',
+              `Reached maxTurns limit (${config.maxTurns})`,
+            );
+            return;
+          }
+          if (config.maxBudgetUsd !== undefined && totalCostUsd > config.maxBudgetUsd) {
+            yield errorResult(
+              'error_max_budget_usd',
+              `Estimated cost $${totalCostUsd.toFixed(6)} exceeded maxBudgetUsd ($${config.maxBudgetUsd})`,
+            );
+            return;
+          }
+          continue;
+        }
       }
       yield {
         type: 'result',

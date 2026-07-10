@@ -11,6 +11,29 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.39.0 — 2026-07-10
+
+**Stop-hook block semantics** (keeper's "/goal 线" dispatch — the goal-gating
+primitive): the engine now HONORS a Stop hook's `decision: 'block'` at natural
+end instead of logging it — the block reason is fed back as a user turn
+(history + request view, so resume replays it) and the loop runs another
+assistant turn; `stop_hook_active` reports true on subsequent Stop inputs so a
+well-behaved hook can break the cycle. `continue: false` forces the stop and
+wins over block (official precedence). ROOT LOOP ONLY: child loops
+(parentToolUseId set) stay governed by SubagentStop, so a goal gate never
+captures subagents. A stubborn block still honors maxTurns / maxBudgetUsd.
+Combined with hook `condition` (model-evaluated, already shipped), this is the
+full engine-side /goal-equivalent — the host registers a Stop hook with a
+natural-language condition; no prompt reproduction involved. COMPAT hooks
+table: Stop row updated (the pre-0.39 "FULL" overstated log-only behavior).
+Tests: tests/stop-hook-block.test.ts (5).
+
+**Version-constant repair**: the 0.38.0 release landed on main with
+`src/version.ts` / `package.json` still reading 0.37.1 — a rebase-conflict
+resolution picked `--ours` (which during rebase means the BASE branch, not the
+feature branch; lesson filed). 0.39.0 re-aligns the version single-source with
+the ledger.
+
 ## 0.38.0 — 2026-07-10
 
 **Custom slash commands** (`.claude/commands`, keeper "全面实现建议" phase-1

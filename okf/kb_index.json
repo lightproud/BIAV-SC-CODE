@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 340,
-    "edges": 395,
-    "terms": 5911,
+    "concepts": 341,
+    "edges": 400,
+    "terms": 5921,
     "by_type": {
       "character": 72,
       "dataset": 107,
-      "documentation": 98,
+      "documentation": 99,
       "knowledge-pointer": 43,
       "reference": 17,
       "research": 3
@@ -26,7 +26,7 @@
       "memory": 47,
       "news-output": 23,
       "projects": 23,
-      "resource": 74,
+      "resource": 75,
       "sources": 17,
       "story": 11,
       "unpacked": 13,
@@ -34,7 +34,7 @@
     },
     "by_tier": {
       "skeleton": 128,
-      "search": 212
+      "search": 213
     }
   },
   "sections": {
@@ -68,7 +68,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 74
+      "count": 75
     },
     "sources": {
       "index": "/sources/index.md",
@@ -968,7 +968,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 80
+      "degree": 83
     },
     "/characters/15604.md": {
       "type": "character",
@@ -996,7 +996,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 7
+      "degree": 9
     },
     "/characters/54117.md": {
       "type": "character",
@@ -1460,7 +1460,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 8
+      "degree": 9
     },
     "/community/community-weixin.md": {
       "type": "dataset",
@@ -3452,7 +3452,7 @@
       ],
       "section": "resource",
       "tier": "search",
-      "degree": 0
+      "degree": 1
     },
     "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md": {
       "type": "documentation",
@@ -3678,6 +3678,20 @@
       "tier": "search",
       "degree": 0
     },
+    "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md": {
+      "type": "documentation",
+      "title": "cc-command-behavior-observations-20260710",
+      "description": "可见的行为面。与静态提示词快照（`Public-Info-Pool/Reference/Claude-Code-System-Prompts/`）（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/repo-engineering/cc-command-behavior-observations-20260710.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 1
+    },
     "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md": {
       "type": "documentation",
       "title": "cc-engine-external-commands-20260710",
@@ -3690,7 +3704,7 @@
       ],
       "section": "resource",
       "tier": "search",
-      "degree": 0
+      "degree": 1
     },
     "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md": {
       "type": "documentation",
@@ -3905,7 +3919,7 @@
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 2635 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 2642 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -3933,7 +3947,7 @@
     "/sources/google_play.md": {
       "type": "dataset",
       "title": "google_play 社区数据源",
-      "description": "google_play 平台采集档案，全量 1243 条，健康度 active。",
+      "description": "google_play 平台采集档案，全量 1245 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/google_play/global/",
       "tags": [
         "data_layer:full_archive",
@@ -4059,7 +4073,7 @@
     "/sources/taptap_review.md": {
       "type": "dataset",
       "title": "taptap_review 社区数据源",
-      "description": "taptap_review 平台采集档案，全量 1031 条，健康度 active。",
+      "description": "taptap_review 平台采集档案，全量 1047 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/taptap/cn/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4073,7 +4087,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 9588 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 9618 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -4082,12 +4096,12 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 8
+      "degree": 9
     },
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 7216 条，健康度 active。",
+      "description": "weixin 平台采集档案，全量 7256 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -4101,7 +4115,7 @@
     "/sources/youtube.md": {
       "type": "dataset",
       "title": "youtube 社区数据源",
-      "description": "youtube 平台采集档案，全量 2744 条，健康度 active。",
+      "description": "youtube 平台采集档案，全量 2753 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -6542,7 +6556,22 @@
         "mention"
       ],
       [
+        "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
         "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
         "提及:艾瑞卡",
         "mention"
       ],
@@ -6616,6 +6645,11 @@
         "cv"
       ],
       [
+        "/community/community-weibo.md",
+        "提及:塔薇",
+        "mention"
+      ],
+      [
         "/community/community-youtube-comments.md",
         "提及:塔薇",
         "mention"
@@ -6632,6 +6666,11 @@
       ],
       [
         "/resource/resource-daily-news-morimens-period-20260512-0603.md",
+        "提及:塔薇",
+        "mention"
+      ],
+      [
+        "/sources/weibo.md",
         "提及:塔薇",
         "mention"
       ],
@@ -7243,6 +7282,11 @@
       [
         "/characters/15576.md",
         "提及:墨菲",
+        "mention"
+      ],
+      [
+        "/characters/54116.md",
+        "提及:塔薇",
         "mention"
       ],
       [
@@ -8609,7 +8653,28 @@
         "mention"
       ]
     ],
+    "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
     "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
+    "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
+    "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md": [
       [
         "/characters/15603.md",
         "提及:艾瑞卡",
@@ -8925,6 +8990,11 @@
       [
         "/characters/15576.md",
         "提及:墨菲",
+        "mention"
+      ],
+      [
+        "/characters/54116.md",
+        "提及:塔薇",
         "mention"
       ],
       [
@@ -9480,6 +9550,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -9909,6 +9980,9 @@
     "bash": [
       "/README.md"
     ],
+    "behavior": [
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md"
+    ],
     "behavioral": [
       "/memory/memory-ext-karpathy-coding-principles.md"
     ],
@@ -10207,6 +10281,7 @@
       "/extracted/extracted-categorized.md"
     ],
     "cc": [
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
@@ -10271,6 +10346,7 @@
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -10315,6 +10391,7 @@
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
       "/projects/bpt-sdk-doc-subagents.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
     ],
@@ -10342,7 +10419,8 @@
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md"
     ],
     "command": [
-      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md"
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md"
     ],
     "commands": [
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md"
@@ -10635,6 +10713,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -10950,6 +11029,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -11260,6 +11340,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -11429,6 +11510,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -11681,6 +11763,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -12437,6 +12520,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -12908,6 +12992,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -13410,6 +13495,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -13681,6 +13767,9 @@
     ],
     "o07cardkeyword2": [
       "/characters/15582.md"
+    ],
+    "observations": [
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md"
     ],
     "official": [
       "/news-output/news-output-official.md",
@@ -14066,6 +14155,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -14333,6 +14423,9 @@
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
+    "prompts": [
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md"
+    ],
     "proposal": [
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
@@ -14440,6 +14533,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -14658,6 +14752,7 @@
     ],
     "reference": [
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/unpacked/unpacked-config.md",
       "/unpacked/unpacked-ejoysdk-lua.md",
       "/unpacked/unpacked-foundation.md",
@@ -14720,6 +14815,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -14820,6 +14916,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -15474,7 +15571,8 @@
       "/assets/assets-card-system.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md",
       "/projects/site-design-morimens-design-system-guide.md",
-      "/projects/site-design-morimens-design-tokens.md"
+      "/projects/site-design-morimens-design-tokens.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md"
     ],
     "systemprompt": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
@@ -15654,6 +15752,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -16706,6 +16805,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -16961,6 +17061,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -17270,6 +17371,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -17381,6 +17483,9 @@
     ],
     "与重": [
       "/README.md"
+    ],
+    "与静": [
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md"
     ],
     "与黑": [
       "/memory/memory-ext-active-silver-blackpool-interface.md"
@@ -17756,6 +17861,9 @@
     ],
     "为队": [
       "/characters/15602.md"
+    ],
+    "为面": [
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md"
     ],
     "主体": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md",
@@ -18439,6 +18547,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -19364,6 +19473,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -19615,6 +19725,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -21404,6 +21515,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -22860,6 +22972,9 @@
     ],
     "可获": [
       "/characters/15600.md"
+    ],
+    "可见": [
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md"
     ],
     "可观": [
       "/characters/95786.md"
@@ -24511,6 +24626,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -25286,6 +25402,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -25892,6 +26009,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -28002,7 +28120,8 @@
       "/news-output/news-output-twitter.md",
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
-      "/news-output/news-output-youtube.md"
+      "/news-output/news-output-youtube.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md"
     ],
     "快速": [
       "/characters/15560.md",
@@ -28040,6 +28159,9 @@
     ],
     "态形": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md"
+    ],
+    "态提": [
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md"
     ],
     "态编": [
       "/memory/capability-index.md",
@@ -29599,6 +29721,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -30132,6 +30255,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -30243,6 +30367,7 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "提高": [
@@ -30454,6 +30579,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -30851,6 +30977,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -31124,6 +31251,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -32761,6 +32889,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -33169,6 +33298,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -33726,6 +33856,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -33928,6 +34059,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -34390,6 +34522,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -34763,6 +34896,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -37482,6 +37616,9 @@
     "的血": [
       "/characters/15563.md"
     ],
+    "的行": [
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md"
+    ],
     "的解": [
       "/characters/15602.md",
       "/characters/95786.md"
@@ -38158,6 +38295,7 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "礼服": [
@@ -40186,7 +40324,8 @@
     ],
     "行为": [
       "/memory/memory-ext-karpathy-coding-principles.md",
-      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md"
     ],
     "行代": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md"
@@ -40401,6 +40540,9 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md"
+    ],
+    "见的": [
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md"
     ],
     "见证": [
       "/characters/77926.md"
@@ -40898,6 +41040,9 @@
     "词典": [
       "/README.md",
       "/community/community-index.md"
+    ],
+    "词快": [
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md"
     ],
     "词是": [
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
@@ -41554,6 +41699,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -42207,6 +42353,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -43194,6 +43341,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -43436,6 +43584,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -44014,7 +44163,8 @@
     ],
     "静态": [
       "/README.md",
-      "/community/community-index.md"
+      "/community/community-index.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md"
     ],
     "静默": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
@@ -44732,6 +44882,9 @@
       "/assets/assets-sentinel-baseline.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
+    "behavior": [
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md"
+    ],
     "best": [
       "/memory/memory-ext-research-best-wiki-features.md"
     ],
@@ -44876,6 +45029,7 @@
       "/extracted/extracted-categorized.md"
     ],
     "cc": [
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
@@ -44923,7 +45077,8 @@
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md"
     ],
     "command": [
-      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md"
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md"
     ],
     "commands": [
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md"
@@ -45174,6 +45329,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -45477,6 +45633,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -45637,6 +45794,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -45822,6 +45980,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -46371,6 +46530,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -46700,6 +46860,9 @@
     ],
     "notices": [
       "/wiki-data/wiki-data-update-notices.md"
+    ],
+    "observations": [
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md"
     ],
     "official": [
       "/news-output/news-output-official.md",
@@ -47074,6 +47237,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
@@ -47485,6 +47649,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
