@@ -1,10 +1,25 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-10T18:21:05.849299+00:00",
+  "collected_at": "2026-07-10T20:19:23.459366+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 4,
+  "item_count": 5,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-07-10T17:55:03+00:00",
+      "lang": "spanish",
+      "title": "[正面] Buena campaña atrapa y te da por jugar mas.",
+      "summary": "Buena campaña atrapa y te da por jugar mas.",
+      "url": "https://steamcommunity.com/profiles/76561198706400807/recommended/3052450",
+      "author": "76561198706400807",
+      "engagement": 0,
+      "language": "spanish",
+      "voted_up": true,
+      "review": "Buena campaña atrapa y te da por jugar mas.",
+      "timestamp_created": 1783706103,
+      "playtime_forever": 5818
+    },
     {
       "source": "steam",
       "time": "2026-07-10T13:19:53+00:00",

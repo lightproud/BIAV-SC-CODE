@@ -1,8 +1,259 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-10T18:21:05.849299+00:00",
+  "collected_at": "2026-07-10T20:19:23.459366+00:00",
   "source": "note_com",
   "data_layer": "output",
-  "item_count": 0,
-  "items": []
+  "item_count": 25,
+  "items": [
+    {
+      "source": "note_com",
+      "time": "2026-07-09T00:52:32+09:00",
+      "lang": "ja",
+      "title": "忘却前夜にこんなに人がいるわけないだろ！！！",
+      "summary": "凄まじいスピードでカウントが進んでいった。ちょっとした恐怖である続きをみる",
+      "url": "https://note.com/gundamf91/n/n9a0f3fab5e2c",
+      "author": "ia",
+      "engagement": 0
+    },
+    {
+      "source": "note_com",
+      "time": "2026-07-06T23:40:41+09:00",
+      "lang": "ja",
+      "title": "【忘却前夜】タヴィ性能レビュー",
+      "summary": "忘却前夜の新キャラ、タヴィを1週間ほど試してみた感想等を記事にしました。キャラ性能の記事を書くのは初めてで、不慣れ不出来な所もあるかと思いますが、一意見として少しでも参考になれば幸いです。続きをみる",
+      "url": "https://note.com/yoshime443/n/nfbd8b285a1e4",
+      "author": "yoshime443",
+      "engagement": 0
+    },
+    {
+      "source": "note_com",
+      "time": "2026-06-30T01:41:14+09:00",
+      "lang": "ja",
+      "title": "「このキャラ、ダメージ出なくない？」って思ったら一度確認して欲しいこと（追記あり）",
+      "summary": "みなさんこんにちは今日も元気に怒涛モードに切り替えてますか？誰も聞いてないのに忘却前夜のことを喋りまくるオタクの忘却前夜note三回目。今日はアタッカーとダメージバフに関する個人的な見解を述べます。この件については元々関心があり、最近になってより深く考えるようになりました。ですから、このようなnoteを書いてみたいとは以前から思っていたのですが、恥ずかしながら私は計算が壊滅的に苦手でして、これから",
+      "url": "https://note.com/scryscylla3/n/n6d6c28d4b5d6",
+      "author": "ここに名前を入力",
+      "engagement": 0
+    },
+    {
+      "source": "note_com",
+      "time": "2026-06-29T10:46:09+09:00",
+      "lang": "ja",
+      "title": "【忘却前夜】時計ジェンキンを使おう！【対人戦編成紹介】",
+      "summary": "前置きの前置きこのデッキは6/25のPC版morimensを基準としたバランス調整により大きな影響を受けています。このnoteの大部分はバランス調整前の情報を元に執筆されています。ご了承ください。続きをみる",
+      "url": "https://note.com/elphane/n/n94b70654fcf4",
+      "author": "えるふぁね",
+      "engagement": 0
+    },
+    {
+      "source": "note_com",
+      "time": "2026-06-27T07:36:07+09:00",
+      "lang": "ja",
+      "title": "群星の盛華～～！！！",
+      "summary": "いよいよ開催日の残り時間が来てしまったということで自分を信じて引いちゃおうと思うし、悩んでる人用にどんな感じか見せていこうと思います。ガチャの内容はキャラが２体（３凸分）＋３種（３凸分）！続きをみる",
+      "url": "https://note.com/yuiremy/n/n18c4bb0904ea",
+      "author": "yui",
+      "engagement": 0
+    },
+    {
+      "source": "note_com",
+      "time": "2026-06-25T22:47:33+09:00",
+      "lang": "ja",
+      "title": "【忘却前夜・大陸版】新キャラ「Pontos」の翻訳",
+      "summary": "前置きこの翻訳文は発表時点での翻訳文になります。日本語版(スマホ版)との互換性は不明です。翻訳文は意訳です。それっぽいのあったら置き換えます。続きをみる",
+      "url": "https://note.com/light_alpaca8376/n/nf2c4ad1688a8",
+      "author": "氷月(ひょうげつ)",
+      "engagement": 0
+    },
+    {
+      "source": "note_com",
+      "time": "2026-06-25T20:10:47+09:00",
+      "lang": "ja",
+      "title": "忘却前夜　タヴィ性能解説",
+      "summary": "タヴィ続きをみる",
+      "url": "https://note.com/glossy_vole8818/n/n517d6689abc3",
+      "author": "ダイヤ",
+      "engagement": 0
+    },
+    {
+      "source": "note_com",
+      "time": "2026-06-23T12:50:51+09:00",
+      "lang": "ja",
+      "title": "忘却前夜　沙耶性能解説",
+      "summary": "沙耶続きをみる",
+      "url": "https://note.com/glossy_vole8818/n/n8c9c1e5bab2d",
+      "author": "ダイヤ",
+      "engagement": 0
+    },
+    {
+      "source": "note_com",
+      "time": "2026-06-23T05:29:23+09:00",
+      "lang": "ja",
+      "title": "【忘却前夜・大陸版】血ノ鎖・ヘロット編成のすゝめ",
+      "summary": "前置き間違っていることがあれば指摘していただけると助かります。また、凸数は1～3凸。それ以降の人格深化(極限開放)を+4、人格深化(最終法則)を+12と称します。血ノ鎖・ヘロットは今後文章中は血ヘロ、通常ヘロットはヘロットと記載します。融災禁域(D-tide)の攻略向けではなく、調査(ストーリー)、列車向けです。前回：ポリュクス編成のすゝめ続きをみる",
+      "url": "https://note.com/light_alpaca8376/n/n34d20602d2de",
+      "author": "氷月(ひょうげつ)",
+      "engagement": 0
+    },
+    {
+      "source": "note_com",
+      "time": "2026-06-21T13:06:59+09:00",
+      "lang": "ja",
+      "title": "忘却前夜　血ノ鎖・ヘロット性能解説",
+      "summary": "血ノ鎖・ヘロット続きをみる",
+      "url": "https://note.com/glossy_vole8818/n/nda9aec6dcd5f",
+      "author": "ダイヤ",
+      "engagement": 0
+    },
+    {
+      "source": "note_com",
+      "time": "2026-06-20T20:32:17+09:00",
+      "lang": "ja",
+      "title": "小休憩③(なぜ性能解説を書くのか)",
+      "summary": "こんにちは！ダイヤです！今回はなぜ忘却前夜の性能解説を書いているのかを深掘りしていきたいと思います。まず、性能解説を書くにあたってはたして需要があるのかと思いつきました。私が忘却前夜以外にやっているゲームは全部性能解説があがっています。忘却前夜は少しあがっています。「たくさんの方がプレイしているゲームを私の独断と偏見で解説して良いのか？」、「解説ができるレベルってどのくらいなんだ？」と色々考えまし",
+      "url": "https://note.com/glossy_vole8818/n/n8ee6bcf1a2e0",
+      "author": "ダイヤ",
+      "engagement": 0
+    },
+    {
+      "source": "note_com",
+      "time": "2026-06-20T20:00:21+09:00",
+      "lang": "ja",
+      "title": "忘却前夜　ハムリン性能解説",
+      "summary": "ハムリン続きをみる",
+      "url": "https://note.com/glossy_vole8818/n/ne7ffd9b71b26",
+      "author": "ダイヤ",
+      "engagement": 0
+    },
+    {
+      "source": "note_com",
+      "time": "2026-06-20T01:39:20+09:00",
+      "lang": "ja",
+      "title": "誕生日おめでとう、推し",
+      "summary": "特に何の説明とかもなく不意に掲載始めるただの日記です。いやね、ホントね、誕生日おめでとおおおお！！続きをみる",
+      "url": "https://note.com/yuiremy/n/ncf6bcf101fbb",
+      "author": "yui",
+      "engagement": 0
+    },
+    {
+      "source": "note_com",
+      "time": "2026-06-17T18:12:20+09:00",
+      "lang": "ja",
+      "title": "忘却前夜の『沙耶の唄』コラボシナリオを考える",
+      "summary": "こんにちは、忘却前夜を嗜んでいるオタクです。この度、忘却前夜と沙耶の唄のコラボが実装されました。おめでとう！続きをみる",
+      "url": "https://note.com/noty_forget/n/n3614c2086166",
+      "author": "れもん",
+      "engagement": 0
+    },
+    {
+      "source": "note_com",
+      "time": "2026-06-17T17:27:59+09:00",
+      "lang": "ja",
+      "title": "忘却前夜をあそんでみたって話",
+      "summary": "忘却前夜について、ストーリーを理解しやすいか、戦闘システム、その他懸念点について紹介します。クトゥルフ神話を知らなくても楽しめる続きをみる",
+      "url": "https://note.com/suzapi_bz/n/n630cc9913b64",
+      "author": "すざp",
+      "engagement": 0
+    },
+    {
+      "source": "note_com",
+      "time": "2026-06-17T09:05:35+09:00",
+      "lang": "ja",
+      "title": "小休憩②(忘却前夜覚醒体まとめ)",
+      "summary": "こんにちは！ダイヤです。先日、やっと今回の日替わり召喚で登場する覚醒体の解説が全部終わりました。自己満足で書いたのでとても満足しました！これからはまだ解説していない覚醒体の解説を実装された順にやっていきます。(多分実装順だと思います。)毎回、弱い点を書くときにくそエアプみたいな指摘になってしまっています。許してください。そういえば忘却前夜の日替わり召喚が終わろうとしています。(2026年6月17日",
+      "url": "https://note.com/glossy_vole8818/n/n87d77f9496f4",
+      "author": "ダイヤ",
+      "engagement": 0
+    },
+    {
+      "source": "note_com",
+      "time": "2026-06-17T07:32:26+09:00",
+      "lang": "ja",
+      "title": "忘却前夜　ライカー性能解説",
+      "summary": "ライカー続きをみる",
+      "url": "https://note.com/glossy_vole8818/n/n674b99eb7930",
+      "author": "ダイヤ",
+      "engagement": 0
+    },
+    {
+      "source": "note_com",
+      "time": "2026-06-17T01:23:45+09:00",
+      "lang": "ja",
+      "title": "【忘却前夜】オルライカ―はいいぞ",
+      "summary": "オルライカーとは続きをみる",
+      "url": "https://note.com/mayoineko_2025/n/n6f8b2c486d0f",
+      "author": "mayoineko",
+      "engagement": 0
+    },
+    {
+      "source": "note_com",
+      "time": "2026-06-16T20:23:12+09:00",
+      "lang": "ja",
+      "title": "忘却前夜　オルラ性能解説",
+      "summary": "オルラ続きをみる",
+      "url": "https://note.com/glossy_vole8818/n/nc878cd34f26b",
+      "author": "ダイヤ",
+      "engagement": 0
+    },
+    {
+      "source": "note_com",
+      "time": "2026-06-15T19:00:08+09:00",
+      "lang": "ja",
+      "title": "忘却前夜　ミリアム性能解説",
+      "summary": "ミリアム続きをみる",
+      "url": "https://note.com/glossy_vole8818/n/n36ab340c564f",
+      "author": "ダイヤ",
+      "engagement": 0
+    },
+    {
+      "source": "note_com",
+      "time": "2026-06-13T01:07:17+09:00",
+      "lang": "ja",
+      "title": "超　次　元　ロ　ー　タ　ン",
+      "summary": "超次元と組んだロータンが強いっていうより、ライカーとオルラの恩恵を同時に受けられる構成が強いよねって話(結論)。血ノ鎖・ヘロット特務記録高難度のリザルト続きをみる",
+      "url": "https://note.com/woann_____/n/nbb404db33b17",
+      "author": "はるさめ",
+      "engagement": 0
+    },
+    {
+      "source": "note_com",
+      "time": "2026-06-12T16:12:13+09:00",
+      "lang": "ja",
+      "title": "忘却前夜　タイス性能解説",
+      "summary": "タイス続きをみる",
+      "url": "https://note.com/glossy_vole8818/n/n5f66b5d60ff4",
+      "author": "ダイヤ",
+      "engagement": 0
+    },
+    {
+      "source": "note_com",
+      "time": "2026-06-11T23:05:24+09:00",
+      "lang": "ja",
+      "title": "忘却前夜 初心者向けガイド(後半)",
+      "summary": "前半の記事はこちら↓続きをみる",
+      "url": "https://note.com/yoshime443/n/n72924399fb34",
+      "author": "yoshime443",
+      "engagement": 0
+    },
+    {
+      "source": "note_com",
+      "time": "2026-06-11T23:03:45+09:00",
+      "lang": "ja",
+      "title": "忘却前夜 初心者向けガイド(前半)",
+      "summary": "忘却前夜をコラボきっかけ等で始めたけど、何すれば良いか分からない人向けに記事を書きました。多少間違っている所や意見の相違もあると思いますが、参考程度にご活用ください。続きをみる",
+      "url": "https://note.com/yoshime443/n/n971adabc9cf2",
+      "author": "yoshime443",
+      "engagement": 0
+    },
+    {
+      "source": "note_com",
+      "time": "2026-06-11T12:22:34+09:00",
+      "lang": "ja",
+      "title": "忘却前夜　24性能解説",
+      "summary": "24続きをみる",
+      "url": "https://note.com/glossy_vole8818/n/n318149197183",
+      "author": "ダイヤ",
+      "engagement": 0
+    }
+  ]
 }
