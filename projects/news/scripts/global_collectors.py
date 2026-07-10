@@ -969,112 +969,69 @@ def _fetch_google_play_one(gp_package, arch_region, locales):
             logger.debug(f"Google Play ({lang_code}/{country}) failed: {e}")
 
     return items
+# 忘卻前夜 Morimens 哈啦板板編（2026-07-10 实测 https://forum.gamer.com.tw/A.php?bsn=78829）
+BAHAMUT_DEFAULT_BSN = "78829"
+
+
 def fetch_bahamut():
-    """从巴哈姆特 (gamer.com.tw) 搜索忘却前夜讨论。台湾最大游戏社区。"""
-    baha_bsn = os.environ.get("BAHAMUT_BSN", "")  # 版块编号
+    """巴哈姆特忘却前夜专板帖列表（B.php 列表页 HTML）。台湾最大游戏社区。
+
+    2026-07-10 修复（三年零产出真因，CI 日志 + 本地双实测）：
+    - 旧方式1 `B.php?ajax=1` JSON 接口已退役——现返回整页 HTML；
+    - 旧方式2 `search.php` 全站搜索需板編（bsn=0 报「沒有傳入板編」系統訊息），
+      新版全站搜索 search.gamer.com.tw 为纯 JS 渲染，服务端 HTML 零结果。
+    改为解析专板列表页的 `b-list__row` 行结构（默认板編 78829，可用
+    BAHAMUT_BSN 覆盖）。专板即游戏本板，无需关键词过滤；置顶帖一并采集。
+    """
+    baha_bsn = os.environ.get("BAHAMUT_BSN") or BAHAMUT_DEFAULT_BSN
     items = []
-
-    # 方式1: 如果有版块号，直接抓版块
-    if baha_bsn:
-        try:
-            data = _get(
-                f"https://forum.gamer.com.tw/B.php?bsn={baha_bsn}&ajax=1",
-                headers={"Referer": "https://forum.gamer.com.tw"},
-            )
-            if data and data.status_code == 200:
-                try:
-                    result = data.json()
-                    for thread in result.get("data", {}).get("list", []) or []:
-                        gp = int(thread.get("gp", 0))
-                        reply = int(thread.get("reply", 0))
-                        # H4: ctime 为站方原文（日期/相对时间），归一为 ISO
-                        baha_time, baha_approx = news_common.parse_relative_time(thread.get("ctime"))
-                        items.append(_make_item(
-                            title=thread.get("title", ""),
-                            summary="",
-                            source="bahamut",
-                            platform_region="tw",
-                            time_str=baha_time,
-                            url=f"https://forum.gamer.com.tw/C.php?bsn={baha_bsn}&snA={thread.get('snA', '')}",
-                            engagement=gp + reply,
-                            is_hot=gp > 50,
-                            author=thread.get("nick", ""),
-                            lang="zh",
-                            time_is_approximate=not thread.get("ctime"),
-                        ))
-                except (ValueError, KeyError):
-                    pass
-            logger.info(f"Bahamut bsn={baha_bsn}: {len(items)} threads")
-        except Exception as e:
-            logger.warning(f"Bahamut bsn={baha_bsn} failed: {e}")
-
-    # 方式2: 关键词搜索 (HTML scraping — 巴哈搜索不返回可靠的 JSON)
     import re as _re
-    for keyword in KEYWORDS["zh"]:
-        try:
-            resp = _get(
-                "https://forum.gamer.com.tw/search.php",
-                params={"q": keyword, "bsn": "0"},
-                headers={
-                    "Referer": "https://forum.gamer.com.tw",
-                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-                },
-            )
-            if resp and resp.status_code == 200:
-                html = resp.text
-                # Try JSON first (in case ajax works)
-                try:
-                    result = resp.json()
-                    for thread in result.get("data", {}).get("list", []) or []:
-                        gp = int(thread.get("gp", 0))
-                        reply = int(thread.get("reply", 0))
-                        # H4: ctime 为站方原文（日期/相对时间），归一为 ISO
-                        baha_time, baha_approx = news_common.parse_relative_time(thread.get("ctime"))
-                        items.append(_make_item(
-                            title=thread.get("title", ""),
-                            summary="",
-                            source="bahamut",
-                            platform_region="tw",
-                            time_str=baha_time,
-                            url=thread.get("url", ""),
-                            engagement=gp + reply,
-                            is_hot=gp > 50,
-                            author=thread.get("nick", ""),
-                            lang="zh",
-                            time_is_approximate=baha_approx,
-                        ))
-                except (ValueError, KeyError):
-                    # HTML fallback: parse search result page
-                    # Bahamut search results have: <p class="b-list__main__title">
-                    #   <a href="C.php?bsn=...&snA=...">TITLE</a>
-                    for match in _re.finditer(
-                        r'<a[^>]*href="((?:C|Co)\.php\?bsn=\d+[^"]*)"[^>]*>\s*'
-                        r'(.+?)\s*</a>',
-                        html, _re.DOTALL,
-                    ):
-                        url_path, title_html = match.groups()
-                        title = _re.sub(r'<[^>]+>', '', title_html).strip()
-                        if not title:
-                            continue
-                        full_url = f"https://forum.gamer.com.tw/{url_path}"
-                        # Try to extract GP and reply count nearby
-                        items.append(_make_item(
-                            title=title,
-                            summary="",
-                            source="bahamut",
-                            platform_region="tw",
-                            time_str=datetime.now(timezone.utc).isoformat(),
-                            url=full_url,
-                            engagement=0,
-                            is_hot=False,
-                            author="",
-                            lang="zh",
-                            time_is_approximate=True,
-                        ))
-            count = len(items)
-            logger.info(f'Bahamut search "{keyword}": {count} results')
-        except Exception as e:
-            logger.warning(f'Bahamut search "{keyword}" failed: {e}')
+    try:
+        resp = _get(
+            "https://forum.gamer.com.tw/B.php",
+            params={"bsn": baha_bsn},
+            headers={
+                "Referer": "https://forum.gamer.com.tw",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+            },
+        )
+        rows = _re.split(r'<tr class="b-list__row', resp.text)[1:]
+        for row in rows:
+            # 标题两形态：置顶行 <a class="b-list__main__title">…</a>；
+            # 普通行外层大锚点持 href、标题在 <p class="b-list__main__title">…</p>
+            m_title = _re.search(
+                r'b-list__main__title[^>]*>(.*?)</(?:a|p)>', row, _re.DOTALL)
+            m_href = _re.search(r'href="(C\.php\?bsn=\d+&(?:amp;)?snA=\d+[^"]*)"', row)
+            if not m_title or not m_href:
+                continue
+            title = news_common.strip_html(m_title.group(1)).strip()
+            if not title:
+                continue
+            url = "https://forum.gamer.com.tw/" + m_href.group(1).replace("&amp;", "&")
+            m_gp = _re.search(r'b-list__summary__gp[^>]*>\s*([\d,]+)', row)
+            m_int = _re.search(r'title="互動：([\d,]+)"', row)
+            m_author = _re.search(r'b-list__count__user">\s*<a[^>]*>([^<]+)</a>', row, _re.DOTALL)
+            m_time = _re.search(r'b-list__time__edittime">\s*<a[^>]*>([^<]+)</a>', row, _re.DOTALL)
+            gp = int(m_gp.group(1).replace(",", "")) if m_gp else 0
+            interact = int(m_int.group(1).replace(",", "")) if m_int else 0
+            baha_time, baha_approx = news_common.parse_relative_time(
+                m_time.group(1).strip() if m_time else None)
+            items.append(_make_item(
+                title=title,
+                summary="",
+                source="bahamut",
+                platform_region="tw",
+                time_str=baha_time,
+                url=url,
+                engagement=gp + interact,
+                is_hot=gp > 50,
+                author=m_author.group(1).strip() if m_author else "",
+                lang="zh",
+                time_is_approximate=baha_approx,
+            ))
+        logger.info(f"Bahamut bsn={baha_bsn}: {len(items)} threads")
+    except Exception as e:
+        logger.warning(f"Bahamut bsn={baha_bsn} failed: {e}")
 
     return items
 
@@ -1190,46 +1147,69 @@ def fetch_weixin():
 # ─── 日本語プラットフォーム ────────────────────────────────
 
 def fetch_note_com():
-    """从 Note.com 搜索忘却前夜/モリメンス 攻略文章（API v3）。"""
+    """从 note.com 拉忘却前夜/モリメンス hashtag RSS（各返回最新 25 条）。
+
+    2026-07-10 修复（三年零产出真因）：旧路径 /api/v3/searches 已对非浏览器
+    请求一律 403 "Access denied"（完整浏览器头与 cloudscraper 均被拒，本地与
+    CI 双实测）；hashtag RSS（/hashtag/<tag>/rss）为普通网页路由、无此防护。
+    RSS 不含点赞数 → engagement 恒 0、is_hot 恒 False（同 weixin 的已知限制）。
+    """
+    from urllib.parse import quote as _quote
+    from email.utils import parsedate_to_datetime as _rfc822
+    import re as _re
     items = []
-    for keyword in KEYWORDS["ja"]:
+    seen_urls = set()
+    for tag in KEYWORDS["ja"]:
         try:
-            # note.com 对数据中心 IP 返回 403，cloudscraper（浏览器指纹）通过率更高；
-            # _get 对 4xx raise，故直接用 _get_cf 单路径。
-            resp = _get_cf(
-                "https://note.com/api/v3/searches",
-                params={"q": keyword, "size": 20, "sort": "new", "context": "note"},
+            resp = _get(
+                f"https://note.com/hashtag/{_quote(tag)}/rss",
                 headers={
                     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
-                    "Referer": "https://note.com/",
-                    "Accept": "application/json",
+                    "Accept-Language": "ja-JP,ja;q=0.9",
                 },
             )
-            if resp.status_code == 200:
-                data = resp.json()
-                # v3 response: data.notes.contents or data.sections[0].contents
-                notes_data = data.get("data", {})
-                contents = (notes_data.get("notes", {}).get("contents", [])
-                           or notes_data.get("sections", [{}])[0].get("contents", [])
-                           if notes_data.get("sections") else [])
-                for note in contents or []:
-                    items.append(_make_item(
-                        title=note.get("name", ""),
-                        summary=note.get("body", ""),
-                        source="note_com",
-                        platform_region="jp",
-                        time_str=note.get("publishAt") or datetime.now(timezone.utc).isoformat(),
-                        url=note.get("noteUrl", ""),
-                        engagement=note.get("likeCount", 0) + note.get("commentCount", 0),
-                        is_hot=note.get("likeCount", 0) > 50,
-                        author=note.get("user", {}).get("nickname", ""),
-                        lang="ja",
-                        time_is_approximate=not note.get("publishAt"),
-                    ))
+            added = 0
+            for m in _re.finditer(r'<item>(.*?)</item>', resp.text, _re.DOTALL):
+                block = m.group(1)
 
-            logger.info(f'Note.com "{keyword}": {len(items)} notes')
+                def _field(name, _block=block):
+                    mm = _re.search(rf'<{name}>(.*?)</{name}>', _block, _re.DOTALL)
+                    if not mm:
+                        return ""
+                    val = mm.group(1).strip()
+                    return _re.sub(r'^<!\[CDATA\[|\]\]>$', '', val).strip()
+
+                url = _field("link") or _field("guid")
+                title = news_common.strip_html(_field("title")).strip()
+                if not url or not title or url in seen_urls:
+                    continue
+                seen_urls.add(url)
+                pub = _field("pubDate")
+                try:
+                    time_str = _rfc822(pub).isoformat() if pub else ""
+                except (TypeError, ValueError):
+                    time_str = ""
+                items.append(_make_item(
+                    title=title,
+                    summary=news_common.strip_html(_field("description"))[:200],
+                    source="note_com",
+                    platform_region="jp",
+                    time_str=time_str or datetime.now(timezone.utc).isoformat(),
+                    url=url,
+                    engagement=0,
+                    is_hot=False,
+                    author=_field("note:creatorName"),
+                    lang="ja",
+                    time_is_approximate=not time_str,
+                ))
+                added += 1
+            logger.info(f'Note.com #{tag} RSS: +{added} notes')
         except Exception as e:
-            logger.warning(f'Note.com "{keyword}" failed: {e}')
+            # 标签不存在（尚无文章）时 RSS 返回 404，属正常态而非故障
+            if '404' in str(e):
+                logger.info(f'Note.com #{tag}: no such hashtag yet (404)')
+            else:
+                logger.warning(f'Note.com #{tag} RSS failed: {e}')
 
     return items
 

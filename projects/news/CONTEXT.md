@@ -73,9 +73,9 @@
 
 ### 注意事项
 - update-news.yml 每小时运行一次（cron: '0 * * * *'）
-- discord-archive.yml 已从每小时降到每日 1 次（18:00 UTC）+ 每月 1 日月度归档（Global 官方服，数据落 `Public-Info-Pool/Record/Community/discord/` 根）
-- discord-archive-volunteer.yml 每小时 :15（志愿者服务器 guild，数据落 `Public-Info-Pool/Record/Community/discord/guilds/{id}/`）
-- discord-archive-jp.yml 日服服务器归档（数据落 guilds/1377475512716234902/）：**已启用**（JP_GUILD_ID 已填、:45 错峰 cron 在跑，07-10 实测正常落档）
+- discord-archive.yml 已从每小时降到每日 1 次（18:00 UTC）+ 每月 1 日月度归档（Global 官方服，数据落 `Public-Info-Pool/Record/Community/discord/global/`，2026-07-10 方案甲）
+- discord-archive-volunteer.yml 每小时 :15（志愿者服务器 guild，数据落 `Public-Info-Pool/Record/Community/discord/volunteer/`）
+- discord-archive-jp.yml 日服服务器归档（数据落 `Public-Info-Pool/Record/Community/discord/jp/`）：**已启用**（JP_GUILD_ID 已填、:45 错峰 cron 在跑，07-10 实测正常落档）
 - discord-discover-guilds.yml 手动触发：列出 bot 所在全部服务器，发现待接入 guild ID
 - collect-comments.yml 每日 02:00 UTC（2026-06-05 新增）；recover-fanart.yml 手动触发（同日新增）
 - daily-report.yml 定时已停用，仅手动备用（报告改会话内订阅生成）
@@ -94,7 +94,8 @@ bot 已接入日服 Discord，纳入归档计划。归档器（`discord_archiver
    经 Guard 步骤安全跳过——绝不因空 ID 回落到 Global guild。
 
 首跑会全量回溯日服建服至今的历史（归档器对新 guild 的 cold-start 行为），数据隔离落
-`Public-Info-Pool/Record/Community/discord/guilds/{JP_GUILD_ID}/`，与 Global / 志愿者互不污染。
+`Public-Info-Pool/Record/Community/discord/jp/`（2026-07-10 方案甲区服布局；新 guild 须先登记
+`archive_layout.DISCORD_GUILD_REGIONS`，未登记归档响亮失败），与 Global / 志愿者互不污染。
 
 ## 已完成
 - [x] aggregator.py 基础架构（Reddit/Bilibili/Twitter/NGA/TapTap/Steam）
@@ -159,8 +160,10 @@ bot 已接入日服 Discord，纳入归档计划。归档器（`discord_archiver
 
 ## 后续待做（非本周）
 - Reddit 子版块名需确认（r/Morimens 是否存在）
-- Twitter/NGA/TapTap 需配置密钥
-- YouTube 需 API Key（代码已就绪）
+- Twitter 需付费 TWITTER_BEARER_TOKEN（买 token vs 退役待守密人裁定，2026-07-10）
+- arca_live：CI 基础设施性封锁（Cloudflare 拦 GH Actions IP，三路全堵；代码无恙），
+  退役 vs 挂账待守密人裁定（2026-07-10）；bahamut / note_com 同日已修复（详见
+  `memory/project-status.md` News 节）
 
 ## 文件说明
 - `index.html` — 前端展示页面（纯 HTML/CSS/JS，深色主题）

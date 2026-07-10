@@ -492,29 +492,56 @@ class TestFetchPixiv(unittest.TestCase):
 
 
 class TestFetchBahamut(unittest.TestCase):
-    def test_bsn_json_path(self):
-        resp = FakeResp(json_data={"data": {"list": [
-            {"title": "忘却前夜討論", "gp": "60", "reply": "10",
-             "ctime": "2026-06-19", "snA": "5", "nick": "user"},
-        ]}})
-        with mock.patch.dict(gc.os.environ, {"BAHAMUT_BSN": "12345"}, clear=True), \
-                mock.patch.object(gc, "_get", return_value=resp):
-            items = gc.fetch_bahamut()
-        baha = [i for i in items if i["author"] == "user"]
-        self.assertTrue(baha)
-        self.assertEqual(baha[0]["engagement"], 70)
-        self.assertTrue(baha[0]["is_hot"])  # gp 60 > 50
+    # 2026-07-10 重写：ajax JSON / search.php 双路径已死（接口退役），
+    # 采集器改为解析专板 B.php 列表页 HTML（默认 bsn=78829）。
+    BOARD_FIXTURE = (
+    # 置顶行：<a class="b-list__main__title">…</a> 直持 href
+    '<tr class="b-list__row b-list__row--sticky b-list-item">'
+    '<span class="b-list__summary__gp b-gp">60</span>'
+    '<a href="C.php?bsn=78829&amp;snA=581&amp;tnum=1" class="b-list__main__title">'
+    '【情報】置頂公告</a>'
+    '<p class="b-list__count__number"><span title="互動：10">10</span></p>'
+    '<p class="b-list__count__user"><a href="https://home.gamer.com.tw/u1">sticky_user</a></p>'
+    '<p class="b-list__time__edittime"><a href="C.php?bsn=78829&amp;snA=581&amp;last=1">2026-06-19</a></p>'
+    '</tr>'
+    # 普通行：外层大锚点持 href，标题在 <p class="b-list__main__title">…</p>
+    '<tr class="b-list__row b-list-item">'
+    '<a href="C.php?bsn=78829&amp;snA=797&amp;tnum=1">'
+    '<p class="b-list__main__title">【問題】新手求助</p>'
+    '<p class="b-list__brief">正文摘要</p></a>'
+    '<p class="b-list__count__number"><span title="互動：3">3</span></p>'
+    '<p class="b-list__count__user"><a href="https://home.gamer.com.tw/u2">normal_user</a></p>'
+    '<p class="b-list__time__edittime"><a href="C.php?bsn=78829&amp;snA=797&amp;last=1">2026-06-20</a></p>'
+    '</tr>'
+)
 
-    def test_search_html_fallback(self):
-        html = (
-            '<p class="b-list__main__title">'
-            '<a href="C.php?bsn=1&snA=2">忘却前夜搜索结果</a></p>'
-        )
-        resp = FakeResp(text=html, status_code=200)
+    def test_parses_board_rows_both_shapes(self):
+        resp = FakeResp(text=self.BOARD_FIXTURE, status_code=200)
         with mock.patch.dict(gc.os.environ, {}, clear=True), \
                 mock.patch.object(gc, "_get", return_value=resp):
             items = gc.fetch_bahamut()
-        self.assertTrue(any("忘却前夜搜索结果" in i["title"] for i in items))
+        self.assertEqual(len(items), 2)
+        sticky = next(i for i in items if i["author"] == "sticky_user")
+        self.assertEqual(sticky["title"], "【情報】置頂公告")
+        self.assertEqual(sticky["engagement"], 70)   # gp60 + 互動10
+        self.assertTrue(sticky["is_hot"])            # gp 60 > 50
+        self.assertIn("snA=581", sticky["url"])
+        normal = next(i for i in items if i["author"] == "normal_user")
+        self.assertEqual(normal["title"], "【問題】新手求助")
+        self.assertFalse(normal["is_hot"])
+        self.assertTrue(normal["time"].startswith("2026-06-20"))
+
+    def test_bsn_env_override(self):
+        captured = {}
+
+        def fake_get(url, params=None, **k):
+            captured.update(params or {})
+            return FakeResp(text="", status_code=200)
+
+        with mock.patch.dict(gc.os.environ, {"BAHAMUT_BSN": "999"}, clear=True), \
+                mock.patch.object(gc, "_get", side_effect=fake_get):
+            self.assertEqual(gc.fetch_bahamut(), [])
+        self.assertEqual(captured.get("bsn"), "999")
 
 
 class TestFetchWeixin(unittest.TestCase):
@@ -538,26 +565,34 @@ class TestFetchWeixin(unittest.TestCase):
 
 
 class TestFetchNoteCom(unittest.TestCase):
-    def test_collects_notes(self):
-        # 注意：源码取 contents 的三元式仅在 data.sections 存在时才走 notes.contents
-        note = {"name": "攻略", "body": "本文", "publishAt": RECENT,
-                "noteUrl": "https://note/1", "likeCount": 60, "commentCount": 5,
-                "user": {"nickname": "writer"}}
-        resp = FakeResp(json_data={"data": {
-            "notes": {"contents": [note]},
-            "sections": [{"contents": []}],
-        }}, status_code=200)
-        with mock.patch.object(gc, "_get_cf", return_value=resp):
+    # 2026-07-10 重写：/api/v3/searches 已一律 403，采集器改走 hashtag RSS。
+    RSS_FIXTURE = (
+        '<rss><channel>'
+        '<item><title><![CDATA[攻略記事]]></title>'
+        '<description><![CDATA[<p>本文サマリ</p>]]></description>'
+        '<link>https://note.com/w/n/n1</link>'
+        '<note:creatorName> writer </note:creatorName>'
+        '<pubDate>Thu, 09 Jul 2026 12:00:00 +0900</pubDate></item>'
+        '<item><title>重複</title><link>https://note.com/w/n/n1</link></item>'
+        '</channel></rss>'
+    )
+
+    def test_collects_notes_from_rss(self):
+        resp = FakeResp(text=self.RSS_FIXTURE, status_code=200)
+        with mock.patch.object(gc, "_get", return_value=resp):
             items = gc.fetch_note_com()
-        # KEYWORDS["ja"] 2 个关键词
-        self.assertEqual(len(items), 2)
+        # 两个 hashtag 返回同一 fixture，URL 去重后仅 1 条
+        self.assertEqual(len(items), 1)
         it = items[0]
         self.assertEqual(it["source"], "note_com")
-        self.assertEqual(it["engagement"], 65)
-        self.assertTrue(it["is_hot"])  # likeCount 60 > 50
+        self.assertEqual(it["title"], "攻略記事")
+        self.assertEqual(it["author"], "writer")
+        self.assertEqual(it["summary"], "本文サマリ")
+        self.assertTrue(it["time"].startswith("2026-07-09"))
+        self.assertEqual(it["engagement"], 0)  # RSS 无互动指标（已知限制）
 
-    def test_non_200_skipped(self):
-        with mock.patch.object(gc, "_get_cf", return_value=FakeResp(text="", status_code=403)):
+    def test_request_failure_returns_empty(self):
+        with mock.patch.object(gc, "_get", side_effect=RuntimeError("blocked")):
             self.assertEqual(gc.fetch_note_com(), [])
 
 
