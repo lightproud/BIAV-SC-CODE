@@ -8,7 +8,7 @@
   },
   "stats": {
     "concepts": 344,
-    "edges": 404,
+    "edges": 402,
     "terms": 5959,
     "by_type": {
       "character": 72,
@@ -855,7 +855,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 23
+      "degree": 21
     },
     "/characters/15596.md": {
       "type": "character",
@@ -1460,7 +1460,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 9
+      "degree": 8
     },
     "/community/community-weixin.md": {
       "type": "dataset",
@@ -3961,7 +3961,7 @@
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 2642 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 2646 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -3989,7 +3989,7 @@
     "/sources/google_play.md": {
       "type": "dataset",
       "title": "google_play 社区数据源",
-      "description": "google_play 平台采集档案，全量 1245 条，健康度 active。",
+      "description": "google_play 平台采集档案，全量 1247 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/google_play/global/",
       "tags": [
         "data_layer:full_archive",
@@ -4017,7 +4017,7 @@
     "/sources/pixiv.md": {
       "type": "dataset",
       "title": "pixiv 社区数据源",
-      "description": "pixiv 平台采集档案，全量 561 条，健康度 active。",
+      "description": "pixiv 平台采集档案，全量 563 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/pixiv/",
       "tags": [
         "data_layer:full_archive",
@@ -4031,7 +4031,7 @@
     "/sources/reddit.md": {
       "type": "dataset",
       "title": "reddit 社区数据源",
-      "description": "reddit 平台采集档案，全量 3556 条，健康度 active。",
+      "description": "reddit 平台采集档案，全量 3568 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/reddit/",
       "tags": [
         "data_layer:full_archive",
@@ -4045,7 +4045,7 @@
     "/sources/ruliweb.md": {
       "type": "dataset",
       "title": "ruliweb 社区数据源",
-      "description": "ruliweb 平台采集档案，全量 395 条，健康度 active。",
+      "description": "ruliweb 平台采集档案，全量 398 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/ruliweb/",
       "tags": [
         "data_layer:full_archive",
@@ -4059,7 +4059,7 @@
     "/sources/steam.md": {
       "type": "dataset",
       "title": "steam 社区数据源",
-      "description": "steam 平台采集档案，全量 5148 条，健康度 active。",
+      "description": "steam 平台采集档案，全量 5149 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4087,7 +4087,7 @@
     "/sources/stopgame.md": {
       "type": "dataset",
       "title": "stopgame 社区数据源",
-      "description": "stopgame 平台采集档案，全量 82 条，健康度 active。",
+      "description": "stopgame 平台采集档案，全量 83 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/stopgame/",
       "tags": [
         "data_layer:full_archive",
@@ -4115,7 +4115,7 @@
     "/sources/taptap_review.md": {
       "type": "dataset",
       "title": "taptap_review 社区数据源",
-      "description": "taptap_review 平台采集档案，全量 1047 条，健康度 active。",
+      "description": "taptap_review 平台采集档案，全量 1088 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/taptap/cn/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4129,7 +4129,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 9618 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 9634 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -4138,12 +4138,12 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 9
+      "degree": 8
     },
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 7256 条，健康度 active。",
+      "description": "weixin 平台采集档案，全量 7276 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -4157,7 +4157,7 @@
     "/sources/youtube.md": {
       "type": "dataset",
       "title": "youtube 社区数据源",
-      "description": "youtube 平台采集档案，全量 2753 条，健康度 active。",
+      "description": "youtube 平台采集档案，全量 2756 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -6027,11 +6027,6 @@
         "mention"
       ],
       [
-        "/community/community-weibo.md",
-        "提及:拉蒙娜",
-        "mention"
-      ],
-      [
         "/community/community-youtube-comments.md",
         "提及:Ramona",
         "mention"
@@ -6094,11 +6089,6 @@
       [
         "/sources/reddit.md",
         "提及:Ramona",
-        "mention"
-      ],
-      [
-        "/sources/weibo.md",
-        "提及:拉蒙娜",
         "mention"
       ],
       [
@@ -7334,11 +7324,6 @@
       [
         "/characters/77918.md",
         "提及:阿拉克涅",
-        "mention"
-      ],
-      [
-        "/characters/15595.md",
-        "提及:拉蒙娜",
         "mention"
       ],
       [
@@ -9068,11 +9053,6 @@
       [
         "/characters/77918.md",
         "提及:阿拉克涅",
-        "mention"
-      ],
-      [
-        "/characters/15595.md",
-        "提及:拉蒙娜",
         "mention"
       ],
       [
