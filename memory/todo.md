@@ -16,8 +16,6 @@
 
 | ID | 账目 | 类别 | 源出处 | 状态 |
 |----|------|------|--------|------|
-| T1 | `decisions.md` 落「二物一泵、分层缓立」极简条（草案全文在源档 §1，可授权代写——先例：2026-07-10 更名条） | 裁定 | `Public-Info-Pool/Resource/proposal/bpt-stack-ontology-design-notes-20260710.md` §9 | 开 |
-| T2 | POSITIONING 固定靶扩张：§1/§4 补「异步委派模式入体验范围」（O-B2 后引擎实况已大于定位文口径；建议与 T1 合并裁定） | 裁定 | 同 T1 源档 §9 + `bpt-desktop-cowork-experience-design-20260708.md` §7 | 开 |
 | T3 | CI required `test` 检查是否重启（与 §7.6「自查自合」现行政策二选一：重启即部分回退 2026-06-21 撤检查裁定） | 裁定 | `memory/project-status.md` 2026-07-02 批次注③ | 开 |
 | T4 | dispatch 一轮真 L5（验 code-01 残余 + run-l35 双臂封印 KD-L35-02，$ 帽内）；不派则一致性线判定收官 | 预算 | `memory/project-status.md`「引擎工单账目结算 r5」段 | 开 |
 | T5 | /goal 提示词快照待上游露出（每周参照刷新 CI `refresh-claude-code-prompts.yml` 自动观察） | 观察 | `memory/project-status.md` v0.38 段挂账注 | 开 |
@@ -30,6 +28,8 @@
 
 | ID | 账目 | 销案引 |
 |----|------|--------|
+| T1 | `decisions.md` 落「二物一泵、分层缓立」极简条 | 守密人 2026-07-10「授权」代写；`decisions.md` 同日「BPT 栈本体」条 |
+| T2 | POSITIONING 固定靶扩张（异步委派模式入参照系） | 同上条⑤ + `docs/POSITIONING.md` §1「参照系扩张(2026-07-10)」块 |
 | C1 | SDK 命名裁定（bpt-agent-sdk → silver-core-sdk） | `decisions.md` 2026-07-10 更名条；0.41.0 起生效 |
 | C2 | 接口审计修复 backlog P0/P1/P2 | PR #480 全面实现战役（v0.7.0）+ v0.37.0 审计债务清偿 |
 | C3 | 对标基线升钉 0.3.201 → 0.3.205 | `docs/COMPAT.md`「0.3.201 -> 0.3.205 chase」（2026-07-10，v0.40.0） |
