@@ -160,8 +160,9 @@ class TestMain(unittest.TestCase):
         import tempfile
         with tempfile.TemporaryDirectory() as d:
             root = Path(d)
-            ddir = root / "discord"
+            ddir = root / "discord" / "global"   # 2026-07-10 方案甲区服布局
             ddir.mkdir(parents=True)
+            (ddir / "channels").mkdir()          # 标记新布局根存在
             # channel matches fanart but no jsonl file for the date
             idx = {"c1": {"dir": "11111111", "name": "fanart"}}
             (ddir / "channel_index.json").write_text(json.dumps(idx), encoding="utf-8")

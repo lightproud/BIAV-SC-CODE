@@ -14,7 +14,7 @@
 * [ruliweb 社区全量档案](/community/community-ruliweb.md) - ruliweb 平台全量档案层（分析镜头）：百级条（精确值见指针本体）/ 9 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。
 * [steam 社区全量档案](/community/community-steam.md) - steam 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 24 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。
 * [stopgame 社区全量档案](/community/community-stopgame.md) - stopgame 平台全量档案层（分析镜头）：几十条或更少条（精确值见指针本体）/ 4 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。
-* [taptap 社区全量档案](/community/community-taptap.md) - taptap 平台全量档案层（分析镜头）：百级条（精确值见指针本体）/ 2 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。
+* [taptap 社区全量档案](/community/community-taptap.md) - taptap 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 2 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。
 * [weibo 社区全量档案](/community/community-weibo.md) - weibo 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 4 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。
 * [weixin 社区全量档案](/community/community-weixin.md) - weixin 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 57 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。
 * [youtube 社区全量档案](/community/community-youtube.md) - youtube 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 15 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。

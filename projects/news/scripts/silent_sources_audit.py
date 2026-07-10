@@ -36,7 +36,11 @@ from sources import KNOWN_SOURCES, CORE_SOURCES, LEGACY_SOURCES, INDEPENDENT_ARC
 import archive_layout
 
 ARCHIVE_DIR = _REPO_ROOT / 'Public-Info-Pool' / 'Record' / 'Community'
-DISCORD_ARCHIVE_DIR = _REPO_ROOT / 'Public-Info-Pool' / 'Record' / 'Community' / 'discord' / 'activity_daily'
+# discord 健康以主服 global 的每日统计为准（原语义不变）；2026-07-10 方案甲布局
+# 迁 discord/global/activity_daily/，经 SSOT 解析并回落旧布局（迁移前克隆兼容）。
+_DISCORD_ROOT = ARCHIVE_DIR / 'discord'
+DISCORD_ARCHIVE_DIR = (archive_layout.discord_region_roots(_DISCORD_ROOT)
+                       .get('global', _DISCORD_ROOT / 'global')) / 'activity_daily'
 HEALTH_PATH = _REPO_ROOT / 'projects' / 'news' / 'output' / 'source-health.json'
 DROPS_PATH = _REPO_ROOT / 'projects' / 'news' / 'output' / 'validation-drops.json'
 

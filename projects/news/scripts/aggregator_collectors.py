@@ -9,6 +9,7 @@ import os
 import time
 import requests
 from datetime import datetime, timezone, timedelta
+from pathlib import Path
 from uuid import uuid4
 
 from aggregator_base import (
@@ -17,6 +18,19 @@ from aggregator_base import (
 )
 from news_common import bilibili_spi_cookies, get_wbi_mixin_key, sign_wbi_params
 from sources import REGION_APPS  # 区服 app 标识单一真相源（2026-06-21 采集源命名规范）
+import archive_layout  # discord 布局 SSOT（2026-07-10 方案甲）
+
+
+def _discord_data_dir() -> Path:
+    """T1 桥的数据目录 = 主服 global（原语义不变），新旧布局经 SSOT 解析。
+
+    调用期从 REPO_ROOT 现算（可测性：单测 monkeypatch REPO_ROOT 即可改根）。
+    旧根 projects/news/data/discord 已死——本桥曾读旧根静默零条 19 天，
+    2026-07-10 迁移时修复。
+    """
+    discord_root = REPO_ROOT / 'Public-Info-Pool' / 'Record' / 'Community' / 'discord'
+    roots = archive_layout.discord_region_roots(discord_root)
+    return roots.get('global', discord_root / 'global')
 
 
 def _fetch_reddit_comments(permalink: str, headers: dict, max_comments: int = 10) -> list[dict]:
@@ -895,7 +909,7 @@ def _fetch_steam_discussions_one(app_id, region, max_pages: int = 3):
 
 def _load_discord_channel_index():
     """Load channel_index.json and build channel_id→name + dir→channel_id maps."""
-    index_path = REPO_ROOT / 'projects' / 'news' / 'data' / 'discord' / 'channel_index.json'
+    index_path = _discord_data_dir() / 'channel_index.json'
     ch_names: dict[str, str] = {}   # channel_id → channel_name
     dir_to_id: dict[str, str] = {}  # dir_suffix → channel_id
     if index_path.exists():
@@ -913,7 +927,7 @@ def _load_discord_channel_index():
 def _read_discord_jsonl(date_str: str):
     """Read all JSONL archives for a given date across all channels.
     Returns list of message dicts with channel_name annotated."""
-    channels_dir = REPO_ROOT / 'projects' / 'news' / 'data' / 'discord' / 'channels'
+    channels_dir = _discord_data_dir() / 'channels'
     ch_names, dir_to_id = _load_discord_channel_index()
     messages = []
     if not channels_dir.exists():
@@ -964,7 +978,7 @@ def fetch_discord_local():
     reply chains (up to 5 replies), and attachment info.
     No API calls — purely local file reads from the archiver's output.
     """
-    discord_dir = REPO_ROOT / 'projects' / 'news' / 'data' / 'discord'
+    discord_dir = _discord_data_dir()
     today_str = datetime.now(timezone.utc).strftime('%Y-%m-%d')
     yesterday_str = (datetime.now(timezone.utc) - timedelta(days=1)).strftime('%Y-%m-%d')
     items = []

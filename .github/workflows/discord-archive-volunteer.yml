@@ -1,7 +1,7 @@
 name: Discord Archive (Volunteer)
 
 # 志愿者服务器采集，与 Global 完全隔离：
-#   - 数据落 projects/news/data/discord/guilds/1402537664619479100/
+#   - 数据落 Public-Info-Pool/Record/Community/discord/volunteer/（2026-07-10 方案甲区服布局）
 #   - 复用同一 bot（DISCORD_BOT_TOKEN），仅 guild_id 不同
 #   - 频繁运行以快速回填历史；不触碰 Global 数据
 on:
@@ -47,7 +47,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add Public-Info-Pool/Record/Community/discord/guilds/
+          git add Public-Info-Pool/Record/Community/discord/volunteer/
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else

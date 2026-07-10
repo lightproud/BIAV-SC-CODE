@@ -13,9 +13,23 @@
 输出：out/ 下图片文件 + gallery_manifest.json（每条含 source/channel/author/text/file/status）。
 """
 import os, json, re, time, argparse, hashlib, urllib.request, urllib.error
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import archive_layout  # discord 布局 SSOT（2026-07-10 方案甲）
 
 # discord 数据迁至 Public-Info-Pool/Record/Community（2026-06-21）；ROOT 仅用于读 discord
 ROOT = "Public-Info-Pool/Record/Community"
+
+
+def _discord_global_dir() -> Path:
+    """主服 global 数据目录（原语义：二创频道只在主服；新旧布局经 SSOT 解析）。
+
+    调用期从 ROOT 现算（可测性：单测 monkeypatch ROOT 即可改根）。
+    """
+    droot = Path(ROOT) / "discord"
+    return archive_layout.discord_region_roots(droot).get("global", droot / "global")
 FANART_CH = ["同人创作", "art-and-memes", "官方素材", "official-materials",
              "fanart", "创作", "二创", "绘"]
 HEADERS = {"User-Agent": "Mozilla/5.0 (silver-core fanart collector)"}
@@ -80,13 +94,14 @@ def main():
     token = os.environ.get("DISCORD_BOT_TOKEN")
 
     # ---- Discord 二创频道附件：先收集，再（带 token）刷新过期链接，最后下载 ----
-    idx = json.load(open(f"{ROOT}/discord/channel_index.json", encoding="utf-8"))
+    _gdir = _discord_global_dir()
+    idx = json.load(open(_gdir / "channel_index.json", encoding="utf-8"))
     dir2name = {v["dir"]: v["name"] for v in idx.values()}
     disc = []  # [{channel, author, text, orig_filename, url, fn}]
     for d, name in dir2name.items():
         if not any(k in name for k in FANART_CH):
             continue
-        fp = f"{ROOT}/discord/channels/{d}/{a.date}.jsonl"
+        fp = _gdir / "channels" / d / f"{a.date}.jsonl"
         if not os.path.isfile(fp):
             continue
         for line in open(fp, encoding="utf-8"):

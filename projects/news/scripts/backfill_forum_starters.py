@@ -45,12 +45,13 @@ from pathlib import Path
 
 # Reuse the archiver's API + state machinery
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from discord_archiver import DiscordArchiver, DISCORD_DATA_DIR
+from discord_archiver import DiscordArchiver, resolve_data_dir
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(message)s')
 logger = logging.getLogger(__name__)
 
-DATA_DIR = DISCORD_DATA_DIR
+# 与归档器同一解析（DISCORD_GUILD_ID 选服，默认 global；2026-07-10 方案甲布局）
+DATA_DIR = resolve_data_dir(os.environ.get('DISCORD_GUILD_ID'))
 RUNTIME_BUDGET = int(os.environ.get('RUNTIME_BUDGET', 25 * 60))  # default 25 min
 DRY_RUN = os.environ.get('DRY_RUN', '').lower() in ('1', 'true', 'yes')
 # Per-thread sleep between API calls. Each thread costs 2 reqs (starter + parent),

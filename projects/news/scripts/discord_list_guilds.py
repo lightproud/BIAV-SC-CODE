@@ -20,21 +20,24 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 
-# 复用归档器的 Global guild 常量作为单一权威来源。
+# 复用归档器的 Global guild 常量；已登记清单从布局 SSOT 注册表派生（单一映射源）。
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from discord_archiver import GLOBAL_GUILD_ID  # noqa: E402
+from archive_layout import DISCORD_GUILD_REGIONS  # noqa: E402
 
 API_BASE = 'https://discord.com/api/v10'
 
-# 已登记服务器（归档计划已覆盖）。不在此表的 guild = 待接入候选（如新接入的日服）。
+# 已登记服务器（归档计划已覆盖）。不在此表的 guild = 待接入候选。
+# 2026-07-10 方案甲：清单 = archive_layout.DISCORD_GUILD_REGIONS，归档至 discord/<区服>/。
 VOLUNTEER_GUILD_ID = '1402537664619479100'
 KNOWN_GUILDS = {
-    GLOBAL_GUILD_ID: 'global · 官方/Global，归档至 data/discord/ 根目录',
-    VOLUNTEER_GUILD_ID: 'volunteer · 志愿者服务器，归档至 guilds/{id}/',
+    gid: f'{region} · 归档至 discord/{region}/'
+    for gid, region in DISCORD_GUILD_REGIONS.items()
 }
 
 _REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
-SEEN_PATH = _REPO_ROOT / 'projects' / 'news' / 'data' / 'discord' / 'guilds_seen.json'
+SEEN_PATH = (_REPO_ROOT / 'Public-Info-Pool' / 'Record' / 'Community'
+             / 'discord' / 'guilds_seen.json')
 
 
 def classify_guilds(guilds: list, known: dict) -> tuple[list, list]:

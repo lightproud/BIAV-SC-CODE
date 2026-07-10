@@ -1,8 +1,8 @@
 {
   "generated": "2026-07-10",
   "stats": {
-    "nodes": 343,
-    "edges": 403
+    "nodes": 344,
+    "edges": 404
   },
   "nodes": [
     {
@@ -2710,6 +2710,17 @@
       "id": "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "type": "documentation",
       "title": "bpt-desktop-command-framework-requirements-20260710",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
+      "type": "documentation",
+      "title": "bpt-desktop-command-impl-plan-20260710",
       "tags": [
         "data_layer:curated",
         "deliverable",
@@ -5488,6 +5499,12 @@
     },
     {
       "source": "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
       "rel_type": "mention"

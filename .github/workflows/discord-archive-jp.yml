@@ -1,6 +1,6 @@
 name: Discord Archive (JP)
 
-# 日服服务器采集，与 Global 完全隔离（数据落 guilds/1377475512716234902/），复用同一 bot。
+# 日服服务器采集，与 Global 完全隔离（数据落 Public-Info-Pool/Record/Community/discord/jp/，2026-07-10 方案甲区服布局），复用同一 bot。
 #
 # guild = 1377475512716234902 ·【公式】忘却前夜サーバー（日服官方），2026-06-17 探测确认并启用。
 # 每小时 :45 增量 + 多月历史回填；首跑全量回溯建服至今。Guard 步骤保留：若 JP_GUILD_ID
@@ -32,7 +32,7 @@ jobs:
         id: guard
         run: |
           if [ -z "$JP_GUILD_ID" ]; then
-            echo "::notice::JP_GUILD_ID 未配置 —— 安全跳过。请先运行 'Discord Discover Guilds'，从 projects/news/data/discord/guilds_seen.json 取得日服 guild ID 填入 env.JP_GUILD_ID。"
+            echo "::notice::JP_GUILD_ID 未配置 —— 安全跳过。请先运行 'Discord Discover Guilds'，从 Public-Info-Pool/Record/Community/discord/guilds_seen.json 取得日服 guild ID 填入 env.JP_GUILD_ID。"
             echo "skip=true" >> "$GITHUB_OUTPUT"
           else
             echo "skip=false" >> "$GITHUB_OUTPUT"
@@ -64,7 +64,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add Public-Info-Pool/Record/Community/discord/guilds/
+          git add Public-Info-Pool/Record/Community/discord/jp/
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else

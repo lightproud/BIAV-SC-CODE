@@ -127,3 +127,61 @@ def dated_files(source: str, archive_dir: Path) -> list[Path]:
     return sorted((f for f in iter_source_files(source, archive_dir)
                    if DATE_STEM.match(f.stem)),
                   key=lambda f: f.stem)
+
+
+# ── discord 布局（守密人 2026-07-10 批准方案甲，收编 SSOT）───────────────────
+# 三服统一 discord/{global,jp,volunteer}/（根特例消灭：原 Global 挂根、其余在
+# guilds/{guild_id}/ 的双轨布局于同日迁移归位）。每区服目录内部结构不变：
+# channels/{id_suffix}/{date}.jsonl + activity_daily/ + state.json 等五件套。
+# guild_id → 区服名注册表是唯一映射源；新 guild 接入必须先登记，未登记归档
+# 一律响亮失败——杜绝匿名新服静默落根（旧根特例的病根形态）。
+
+DISCORD_GUILD_REGIONS: dict[str, str] = {
+    '1131791637933199470': 'global',      # Global 官方服
+    '1377475512716234902': 'jp',          # 日服（AltPlus）
+    '1402537664619479100': 'volunteer',   # 志愿者服
+}
+DISCORD_REGIONS = tuple(sorted(set(DISCORD_GUILD_REGIONS.values())))
+
+# 旧布局回落映射（迁移过渡期 / 未迁移克隆）：区服 → 旧路径（相对 discord 根）
+_DISCORD_LEGACY_SUBDIR: dict[str, str] = {
+    'global': '.',
+    'jp': 'guilds/1377475512716234902',
+    'volunteer': 'guilds/1402537664619479100',
+}
+
+
+def discord_region_dir(discord_root: Path, guild_id: str) -> Path:
+    """写方唯一落点：guild_id → discord/<区服>/。未登记 guild 响亮失败。"""
+    region = DISCORD_GUILD_REGIONS.get(str(guild_id))
+    if region is None:
+        raise KeyError(
+            f'unregistered discord guild {guild_id}: '
+            f'register it in archive_layout.DISCORD_GUILD_REGIONS before archiving'
+        )
+    return discord_root / region
+
+
+def discord_region_roots(discord_root: Path) -> dict[str, Path]:
+    """读方唯一根解析：区服 → 数据目录（新布局优先，回落旧布局；两者皆无则不含该区服）。"""
+    roots: dict[str, Path] = {}
+    for region in DISCORD_REGIONS:
+        new = discord_root / region
+        if (new / 'channels').exists() or (new / 'state.json').exists():
+            roots[region] = new
+            continue
+        legacy = (discord_root / _DISCORD_LEGACY_SUBDIR[region]).resolve()
+        if (legacy / 'channels').exists():
+            roots[region] = legacy
+    return roots
+
+
+def iter_discord_message_files(discord_root: Path,
+                               region: str | None = None) -> Iterator[Path]:
+    """读方唯一遍历：channels/{id_suffix}/{date}.jsonl；region=None 遍历全部区服。"""
+    for r, root in discord_region_roots(discord_root).items():
+        if region is not None and r != region:
+            continue
+        base = root / 'channels'
+        if base.exists():
+            yield from base.glob('*/*.jsonl')

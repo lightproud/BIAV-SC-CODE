@@ -150,9 +150,10 @@ bot 已接入日服 Discord，纳入归档计划。归档器（`discord_archiver
 - [x] 历史归档目录迁移到新层级（07-02 归位 1,395 文件，见上节）
 - [ ] `sources.py` source 标识改路径式（现为「折叠映射」过渡态：`official` →
   `steam/global/news` 等写入侧已折叠，源名层面仍旧名——健康报表按旧名呈现）
-- [ ] `discord_archiver` 统一三服务器到 `discord/<区服>/`（现全球服在 channels/ 根、
-  其余在 guilds/，不一致；且 discord 布局在 `archive_layout.py` SSOT 之外「调用方自理」。
-  **统一迁移 vs 明文豁免二选一待守密人裁定**，见评估报告 20260710 P1-7）
+- [x] `discord_archiver` 统一三服务器到 `discord/<区服>/`（守密人 2026-07-10 批准方案甲，
+  同日迁移完成：16,830 JSONL / 7,648,889 行零丢失验证通过；guild↔区服注册表 + 遍历函数
+  进 `archive_layout.py` SSOT，未登记 guild 归档响亮失败；顺带修复 T1 聚合桥读旧根
+  静默零条、Release 备份 glob 只盖 Global、guilds_seen 快照写旧根三处缺陷）
 - [ ] taptap `post`/`strategy` 子类（Playwright DOM）
 - `official` 并入 `steam/global/news`；`youtube_comments` 并入 `youtube/*/comments`。
 
