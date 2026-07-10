@@ -45,12 +45,12 @@
 | 步骤 | 动作 |
 |------|------|
 | 1 | 贡献者 fork 仓库 |
-| 2 | 编辑 `projects/wiki/data/db/*.json` 或对应 markdown |
-| 3 | 本地跑 `python projects/wiki/scripts/validate_data.py` 通过 |
+| 2 | 编辑 `projects/wiki/data/processed/characters.json`（W2 可信基线）或 `processed/story/` 等对应档案（原 `data/db/` 层 2026-06-15 守密人裁定整层清空，本行 2026-07-10 对账刷新） |
+| 3 | 本地跑 `python projects/wiki/scripts/validate_data.py` 通过（或会话内 `/validate-data`） |
 | 4 | 提 PR，base=main |
 | 5 | `validate-data.yml` workflow 自动校验 schema |
 | 6 | 守密人 / 验收方人工 review（数据真实性 + 来源标注） |
-| 7 | 合入 main → `deploy-site.yml` 自动部署到 wiki |
+| 7 | 合入 main → 会话跑 `scripts/generate_wiki_pages.py` 重生成角色页 → `deploy-site.yml` 部署 |
 
 **强制要求**：贡献的数据必须标注来源（`source` 字段：`fandom` / `bilibili-wiki` / `gamekee` / `ingame-screenshot` 等）。
 
