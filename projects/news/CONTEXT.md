@@ -160,7 +160,7 @@ bot 已接入日服 Discord，纳入归档计划。归档器（`discord_archiver
 
 ## 后续待做（非本周）
 - Reddit 子版块名需确认（r/Morimens 是否存在）
-- Twitter 需付费 TWITTER_BEARER_TOKEN（买 token vs 退役待守密人裁定，2026-07-10）
+- Twitter 挂账未来再议（守密人 2026-07-10 裁定；三选项与排除项见 `memory/project-status.md` News 节）
 - arca_live：CI 基础设施性封锁（Cloudflare 拦 GH Actions IP，三路全堵；代码无恙），
   退役 vs 挂账待守密人裁定（2026-07-10）；bahamut / note_com 同日已修复（详见
   `memory/project-status.md` News 节）
