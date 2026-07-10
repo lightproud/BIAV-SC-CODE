@@ -910,12 +910,49 @@ export type AgentDefinition = {
 // ---------------------------------------------------------------------------
 
 /**
+ * Tuning for the OpenAI-protocol transport (BPT-EXTENSION). Read only when
+ * `ProviderConfig.protocol` is 'openai-chat'; see docs/OPENAI-PROTOCOL.md.
+ */
+export type OpenAIProtocolOptions = {
+  /**
+   * Which wire param carries the output-token cap. Default 'max_tokens' (the
+   * param every OpenAI-compatible gateway accepts); api.openai.com reasoning
+   * models reject it and require 'max_completion_tokens'.
+   */
+  maxTokensParam?: 'max_tokens' | 'max_completion_tokens';
+  /**
+   * Forwarded verbatim as `reasoning_effort`. The Anthropic `thinking` config
+   * has no Chat Completions equivalent and is dropped from the wire; this is
+   * the OpenAI-native reasoning knob instead.
+   */
+  reasoningEffort?: 'minimal' | 'low' | 'medium' | 'high';
+  /**
+   * Extra top-level body fields merged into every request (gateway params,
+   * e.g. `{ enable_thinking: false }`). Translator-owned keys win on conflict.
+   */
+  extraBody?: Record<string, unknown>;
+};
+
+/**
  * BPT extension: direct-API transport settings. The reference SDK spawns a
  * CLI subprocess; this SDK talks to the Messages API itself, so connection
  * settings live here. Falls back to ANTHROPIC_API_KEY / ANTHROPIC_AUTH_TOKEN /
  * ANTHROPIC_BASE_URL environment variables when omitted.
  */
 export type ProviderConfig = {
+  /**
+   * Wire protocol this transport speaks (BPT-EXTENSION). 'anthropic' (default)
+   * drives the Messages API directly; 'openai-chat' drives an OpenAI-compatible
+   * Chat Completions endpoint through a translating transport — the engine
+   * keeps speaking Messages API shapes, translation happens at the wire
+   * boundary only. With 'openai-chat', credentials resolve from apiKey /
+   * authToken / OPENAI_API_KEY and baseUrl defaults to
+   * 'https://api.openai.com/v1' (OPENAI_BASE_URL env fallback); `options.model`
+   * must name a model the endpoint serves. See docs/OPENAI-PROTOCOL.md.
+   */
+  protocol?: 'anthropic' | 'openai-chat';
+  /** OpenAI-protocol tuning; read only when protocol is 'openai-chat'. */
+  openai?: OpenAIProtocolOptions;
   apiKey?: string;
   /** Bearer token auth (gateways); mutually exclusive with apiKey. */
   authToken?: string;

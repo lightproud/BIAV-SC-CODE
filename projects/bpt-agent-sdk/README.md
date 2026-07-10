@@ -117,6 +117,17 @@ const q = query({
 
 Every field is optional and falls back to the environment variables above.
 
+### OpenAI protocol (BPT extension)
+
+Set `provider.protocol: 'openai-chat'` to drive an OpenAI-compatible Chat
+Completions endpoint (api.openai.com, DeepSeek, vLLM, one-api gateways) with
+the same agent harness — the engine keeps speaking Messages API shapes and a
+translating transport converts at the wire boundary. Credentials then resolve
+from `provider.apiKey` / `OPENAI_API_KEY`, the base URL from
+`provider.baseUrl` / `OPENAI_BASE_URL` (default `https://api.openai.com/v1`),
+and `options.model` must name a model the endpoint serves. Details, tuning
+knobs and honest limits: [docs/OPENAI-PROTOCOL.md](./docs/OPENAI-PROTOCOL.md).
+
 ## Sessions
 
 Transcripts are stored one JSONL file per session under the sessions

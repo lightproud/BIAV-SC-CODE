@@ -159,6 +159,13 @@
 > 银芯→黑池单向输出物，与 §1.1-HC 防火墙同向，非 BPT 产品内部开发。
 
 - **动手前必读**：`projects/bpt-agent-sdk/CONTEXT.md`（会话上下文 + 当前 milestone）
+- **OpenAI 协议支持（v0.35.0，2026-07-09，守密人「可以想办法支持 OpenAI 协议么」派单，已落）**：
+  `provider.protocol: 'openai-chat'` 经翻译传输层 `src/transport/openai.ts` 直驱任意 OpenAI 兼容
+  Chat Completions 端点（api.openai.com / DeepSeek / vLLM / one-api 网关）——引擎全程仍说 Messages API
+  形状、翻译只在线缆边界（请求编码 + 流事件合成，DeepSeek `reasoning_content`→thinking 块、usage 含缓存
+  token 拆分）；三处传输构造点统一走工厂 `src/transport/factory.ts`，默认 'anthropic' 零行为变化。
+  诚实边界（thinking 配置不上线缆 / cache_control 剥除 / 非 Claude 模型成本估算 0）见
+  `projects/bpt-agent-sdk/docs/OPENAI-PROTOCOL.md`。**1548 单测全绿（+21）**、`tsc` + `build` exit 0。
 - **当前状态（2026-07-04 实测）**：**v0.2 + v0.3 已合并 main**（本体 PR #380 @ `8bd4a54`；v0.3 收尾
   #384 观测流 / #387 Read 图像 / #388 类型面尾批 / #391 桶1 三项）。**v0.3 两待办 #16 + #17 +
   「桶1」（PDF document 块 / 重试流桥接 / 只读工具并行）均已收口。**
