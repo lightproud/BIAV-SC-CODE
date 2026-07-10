@@ -1,8 +1,8 @@
 {
   "date": "2026-07-09",
-  "archived_at": "2026-07-10T06:40:42.207618+00:00",
+  "archived_at": "2026-07-10T10:21:06.867499+00:00",
   "source": "google_play",
-  "item_count": 4,
+  "item_count": 5,
   "items": [
     {
       "title": "[Google Play 差评] ★1 no se puede jugar, solo se para y me ech",
@@ -58,6 +58,20 @@
       "tags": [],
       "lang": "id",
       "platform_region": "id",
+      "region": "global"
+    },
+    {
+      "title": "[Google Play 好评] ★5 Maybe less text should be good. And plea",
+      "summary": "Maybe less text should be good. And please have guide for teams.",
+      "source": "google_play",
+      "time": "2026-07-09T07:01:18",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-07289f29-a32f-4c44-9d7c-e8928dc6e1af",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "Nauth",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "us",
       "region": "global"
     }
   ],

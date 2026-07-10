@@ -1,46 +1,10 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-10T06:40:02.974749+00:00",
+  "collected_at": "2026-07-10T10:20:25.302310+00:00",
   "source": "bilibili",
   "data_layer": "output",
-  "item_count": 6,
+  "item_count": 8,
   "items": [
-    {
-      "source": "bilibili",
-      "time": "2026-07-09T10:19:14+00:00",
-      "lang": "zh",
-      "title": "【忘却前夜】鸟弟是区？新手不推荐抽？情况究竟如何？",
-      "summary": "加强……鸟弟……\n  └ 笙歌沸天引 (37赞): 问题是现在新手入坑不抽鸟弟还想抽谁？拿着常驻c打主线吗，那很会过日子了。其次三启以下鸟弟凑融灾队伍也很好用，考虑抽不抽一个角色是得综合考虑的。坦白来说你游大部分人都没这个水平去嫌弃鸟弟\n  └ 郁少弥YUI (18赞): 茉夏太过强势其实也是显得鸟弟弱势的原因之一，毕竟一个前中后期都顶尖的角色加上几乎不怎么吃队友的属性，只要是C位难免就要被对比，只能说茉夏大人还是太超模了（\n  └ 红茶喜欢喝红茶 (9赞): 你忘的角色理解真的非常癫，你结合关卡特性和boss机制讲解用什么角色不触发debuff/生存压力更小，他跟你说“不如xx大c一根”[星星眼][星星眼][星星眼](再悄咪咪一句，在某些人眼里鸟弟已经跟血希一桌了[doge])",
-      "url": "https://www.bilibili.com/video/BV1tEME6HEbA",
-      "author": "花岚天音Amane",
-      "engagement": 3095,
-      "media_url": "https://i0.hdslb.com/bfs/archive/42376f2989b1fc4524cceb7143a2eab85c217644.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 2948,
-        "comment_count": 147,
-        "comments_fetched": 3,
-        "danmaku": 8
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-07-09T08:33:08+00:00",
-      "lang": "zh",
-      "title": "［相位/教学］快速启动，爆发压制，女仆哈姆林又回来了！",
-      "summary": "感谢维克多分享构筑，主播打一晚上就上到6000多分\n  └ 一般杂鱼 (3赞): 好了我看完了，主播你快撤回[妙啊]\n  └ 红髮厨 (3赞): 好了我看完了，主播你快撤回[妙啊]\n  └ 归于喧嚣海洋吧 (6赞): 这次怎么不说是我的构筑了ᔦ ° ꒳ ° ᔨ ̖́-我要向你收取使用这套阵容的税（不是）",
-      "url": "https://www.bilibili.com/video/BV1dHMJ6MEzU",
-      "author": "莱星Ligh",
-      "engagement": 865,
-      "media_url": "https://i1.hdslb.com/bfs/archive/b74b0214f30c1301db46d8df4525bea97e34af26.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 845,
-        "comment_count": 20,
-        "comments_fetched": 3,
-        "danmaku": 0
-      }
-    },
     {
       "source": "bilibili",
       "time": "2026-07-09T13:58:45+00:00",
@@ -49,11 +13,11 @@
       "summary": "-\n  └ 明日就出逃 (0赞): 问问1分30秒的离垢是怎么变出来的哇[脱单doge]\n  └ iq2233 (0赞): 鸟厨最新力作\n  └ 璃っ亓 (0赞): 佳神[打call]",
       "url": "https://www.bilibili.com/video/BV1orMn65E9k",
       "author": "上好佳薯片丶",
-      "engagement": 272,
+      "engagement": 291,
       "media_url": "https://i1.hdslb.com/bfs/archive/885104ea67f3bb901ba423ae2bf0f3ae77e18cd5.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 262,
+        "play": 281,
         "comment_count": 10,
         "comments_fetched": 3,
         "danmaku": 1
@@ -67,11 +31,11 @@
       "summary": "-\n  └ 孤昼alone (1赞): 三连支持了[doge]\n  └ _andZZ (1赞): 好看，支持一下",
       "url": "https://www.bilibili.com/video/BV18oMn6PEo8",
       "author": "空锂",
-      "engagement": 102,
+      "engagement": 181,
       "media_url": "https://i1.hdslb.com/bfs/archive/d5c8ae4f2a864e44b296fa8f9756f6aae8a6e65f.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 100,
+        "play": 179,
         "comment_count": 2,
         "comments_fetched": 2,
         "danmaku": 0
@@ -85,11 +49,11 @@
       "summary": "-\n  └ 燃え落ちない翼 (0赞): 可以可以，支持一下，这个无垢是用来抽常驻的，抽完角色抽命轮就行[冬日树下_言叶][冬日树下_言叶]顺带一提，虽然我也不想说这个，因为这游戏前边几章剧情就已经很公式很无聊了，但这确实也几乎是这游戏的巅峰水准了，后边好像是换人了，反正越来越无聊[冬日树下_小忆][冬日树下_小忆]",
       "url": "https://www.bilibili.com/video/BV1gTT96XEyd",
       "author": "不可燃抹茶果冻",
-      "engagement": 102,
+      "engagement": 109,
       "media_url": "https://i1.hdslb.com/bfs/archive/955aa181459d0af8a726f789a6cb06c7f87bbddd.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 101,
+        "play": 108,
         "comment_count": 1,
         "comments_fetched": 1,
         "danmaku": 0
@@ -100,16 +64,88 @@
       "time": "2026-07-10T06:05:48+00:00",
       "lang": "zh",
       "title": "匂坂郁纪合集",
-      "summary": "郁纪ex，我就是要黑郁纪，我不管你说的有没有道理，反正只要是对匂坂郁纪说一句好话，恭喜你被毕业了，奖励黑名单里待着\n  └ 黑兔梅酒轮椅王世一冷 (1赞): UP不是雷郁纪吗[笑哭]\n  └ 爱白嫖视频的阿军 (0赞): [笑哭]\n  └ 耕司青海瑶 (0赞): 俩播放量，20个赞，牛逼[笑哭]",
+      "summary": "郁纪ex，我就是要黑郁纪，我不管你说的有没有道理，反正只要是对匂坂郁纪说一句好话，恭喜你被毕业了，奖励黑名单里待着\n  └ Amadeus真由理 (2赞): 666这么阴\n  └ 耕司青海瑶 (2赞): [呲牙]\n  └ 黑兔梅酒轮椅王世一冷 (2赞): UP不是雷郁纪吗[笑哭]",
       "url": "https://www.bilibili.com/video/BV1tDNE6UEEr",
       "author": "耕司青海瑶",
-      "engagement": 15,
+      "engagement": 108,
       "media_url": "https://i0.hdslb.com/bfs/archive/45a7fa6e66d1efdc4dad5192db450b7d28fac83a.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 7,
-        "comment_count": 8,
+        "play": 92,
+        "comment_count": 16,
         "comments_fetched": 3,
+        "danmaku": 3
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-07-10T09:33:33+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】阿拉克涅生存差？低配也能硬如钢铁！3启单C难5，高精通无敌静海盾",
+      "summary": "看多了阿拉克涅1T出伤秒人的视频可以看点蠕动的\n  └ 充气兔子 (0赞): 界域精通越高，静海盾越厚。走深海完美利用了阿拉克涅的高界域精通。\n凯克斯只是个提供深海环境的挂件，不需要高启灵。温科尔也不需要高启。凯克斯换成船长，墨菲，法洛斯都可以。\n其实上墨菲或船长会更强，但是没必要。可以把这两个角色留给别的队。",
+      "url": "https://www.bilibili.com/video/BV1pzN76MEd8",
+      "author": "充气兔子",
+      "engagement": 73,
+      "media_url": "https://i1.hdslb.com/bfs/archive/e6453b9d35b9cf5b6e5efcdfc13fc51ddeb7093f.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 72,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-07-10T07:29:10+00:00",
+      "lang": "zh",
+      "title": "两个小沙耶吃绿果冻喝绿色苹果汁",
+      "summary": "-\n  └ Anafabula怎么那么美丽啊 (3赞): [doge][doge][doge]saya酱很可爱\n  └ 躍龍門_ (2赞): 浅绿色的那个头发是不是有点营养不良啊？（还是说食物被豆包抢了\n  └ 䭩㟗 (2赞): 为什么左边的沙耶颜色浅一点啊[doge]",
+      "url": "https://www.bilibili.com/video/BV1CnNE6uENZ",
+      "author": "Anafabula怎么那么美丽啊",
+      "engagement": 67,
+      "media_url": "https://i2.hdslb.com/bfs/archive/605f5550e84d54e6c9ececa4ec91f005b8aef839.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 52,
+        "comment_count": 15,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-07-10T09:30:16+00:00",
+      "lang": "zh",
+      "title": "为什么都说很可爱，不就是一团肉块吗😎🕶👌😭",
+      "summary": "-\n  └ 元初丸 (2赞): 是沙耶酱啊…\n  └ 死人玛丽安 (1赞): 可爱捏[魔法少女的魔女审判表情包_哦吼吼]",
+      "url": "https://www.bilibili.com/video/BV1sqN76zEWQ",
+      "author": "欧塔裤",
+      "engagement": 8,
+      "media_url": "https://i2.hdslb.com/bfs/archive/9a2fa83934973b8055b1b28e8ad3d6b0ed5508ef.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 5,
+        "comment_count": 3,
+        "comments_fetched": 2,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-07-10T09:12:56+00:00",
+      "lang": "zh",
+      "title": "沙耶的日常（又是番外）",
+      "summary": "还是老生常谈的工作原因，接下来本打算正儿八经花钱做点有技术的，但是还是没空，先来一个简单吃吃吧",
+      "url": "https://www.bilibili.com/video/BV1eEN76QEA8",
+      "author": "御生门",
+      "engagement": 8,
+      "media_url": "https://i2.hdslb.com/bfs/archive/17f96ba5010b9dd124f2ac5c594ddd46d11eda55.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 8,
+        "comment_count": 0,
+        "comments_fetched": 0,
         "danmaku": 0
       }
     }
