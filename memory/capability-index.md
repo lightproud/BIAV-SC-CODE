@@ -4,8 +4,8 @@
 > 中文用途补注请改 `memory/capability-annotations.json`；机器权威数据见 `memory/capability-registry.json`。
 
 - 生成日期：2026-07-10
-- 功能总数：**132**
-- 脚本可达性：活 72 / 仅测试 0 / 孤儿 0
+- 功能总数：**133**
+- 脚本可达性：活 73 / 仅测试 0 / 孤儿 0
 
 ## 总览
 
@@ -13,7 +13,7 @@
 |------|------|
 | CI 自动化工作流（编排入口·定时/事件平面） | 34 |
 | 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 38 |
-| news 采集器脚本 | 28 |
+| news 采集器脚本 | 29 |
 | wiki 数据脚本 | 6 |
 | MCP 知识层工具（编排入口·AI 动态平面） | 11 |
 | Slash 命令（编排入口·人工平面） | 4 |
@@ -184,7 +184,7 @@
 - **`silver_tokenizer.py`** _[活:import]_ — 银芯静态索引共用分词器:领域词典 + 正向最大匹配（FMM）。  
   `scripts/silver_tokenizer.py`
 
-## news 采集器脚本（28）
+## news 采集器脚本（29）
 
 - **`aggregator.py`** _[活:cli+command+workflow]_ — 忘却前夜 Morimens - 社区热点聚合器  
   `projects/news/scripts/aggregator.py`
@@ -208,6 +208,8 @@
   `projects/news/scripts/backfill_media.py`
 - **`backfill_platforms.py`** _[活:cli+workflow]_ — backfill_platforms.py — 多平台历史数据回溯采集  
   `projects/news/scripts/backfill_platforms.py`
+- **`collect_arca_daily.py`** _[活:cli]_ — collect_arca_daily.py — arca_live 日采单脚本（银芯 CC 例程专用，方案 2 过渡桥）。  
+  `projects/news/scripts/collect_arca_daily.py`
 - **`collect_fanart.py`** _[活:cli+workflow]_ — 同人图采集器 — 把某日各信息源的玩家二创图抓到本地，供日报附录嵌图。  
   `projects/news/scripts/collect_fanart.py`
 - **`collect_global.py`** _[活:cli]_ — collect_global.py — 全球社区采集桥接脚本  

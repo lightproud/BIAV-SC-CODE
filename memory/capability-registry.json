@@ -8,16 +8,16 @@
     "counts": {
       "workflows": 34,
       "scripts_top": 38,
-      "scripts_news": 28,
+      "scripts_news": 29,
       "scripts_wiki": 6,
       "mcp_tools": 11,
       "commands": 4,
       "skills": 4,
       "projects": 7,
-      "total": 132
+      "total": 133
     },
     "reachability": {
-      "live": 72,
+      "live": 73,
       "test-only": 0,
       "orphaned": 0
     }
@@ -818,6 +818,15 @@
       "planes": [
         "cli",
         "workflow"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "collect_arca_daily.py",
+      "path": "projects/news/scripts/collect_arca_daily.py",
+      "summary": "collect_arca_daily.py — arca_live 日采单脚本（银芯 CC 例程专用，方案 2 过渡桥）。",
+      "planes": [
+        "cli"
       ],
       "status": "live"
     },
