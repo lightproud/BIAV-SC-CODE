@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-10T10:20:25.302310+00:00",
+  "collected_at": "2026-07-10T13:09:07.822821+00:00",
   "source": "bilibili",
   "data_layer": "output",
-  "item_count": 8,
+  "item_count": 5,
   "items": [
     {
       "source": "bilibili",
@@ -13,11 +13,11 @@
       "summary": "-\n  └ 明日就出逃 (0赞): 问问1分30秒的离垢是怎么变出来的哇[脱单doge]\n  └ iq2233 (0赞): 鸟厨最新力作\n  └ 璃っ亓 (0赞): 佳神[打call]",
       "url": "https://www.bilibili.com/video/BV1orMn65E9k",
       "author": "上好佳薯片丶",
-      "engagement": 291,
+      "engagement": 304,
       "media_url": "https://i1.hdslb.com/bfs/archive/885104ea67f3bb901ba423ae2bf0f3ae77e18cd5.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 281,
+        "play": 294,
         "comment_count": 10,
         "comments_fetched": 3,
         "danmaku": 1
@@ -25,71 +25,53 @@
     },
     {
       "source": "bilibili",
-      "time": "2026-07-09T12:23:44+00:00",
-      "lang": "zh",
-      "title": "长夜思｜拉蒙娜",
-      "summary": "-\n  └ 孤昼alone (1赞): 三连支持了[doge]\n  └ _andZZ (1赞): 好看，支持一下",
-      "url": "https://www.bilibili.com/video/BV18oMn6PEo8",
-      "author": "空锂",
-      "engagement": 181,
-      "media_url": "https://i1.hdslb.com/bfs/archive/d5c8ae4f2a864e44b296fa8f9756f6aae8a6e65f.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 179,
-        "comment_count": 2,
-        "comments_fetched": 2,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-07-09T10:36:00+00:00",
-      "lang": "zh",
-      "title": "《忘却前夜》第一章东区秘事P1",
-      "summary": "-\n  └ 燃え落ちない翼 (0赞): 可以可以，支持一下，这个无垢是用来抽常驻的，抽完角色抽命轮就行[冬日树下_言叶][冬日树下_言叶]顺带一提，虽然我也不想说这个，因为这游戏前边几章剧情就已经很公式很无聊了，但这确实也几乎是这游戏的巅峰水准了，后边好像是换人了，反正越来越无聊[冬日树下_小忆][冬日树下_小忆]",
-      "url": "https://www.bilibili.com/video/BV1gTT96XEyd",
-      "author": "不可燃抹茶果冻",
-      "engagement": 109,
-      "media_url": "https://i1.hdslb.com/bfs/archive/955aa181459d0af8a726f789a6cb06c7f87bbddd.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 108,
-        "comment_count": 1,
-        "comments_fetched": 1,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-07-10T06:05:48+00:00",
-      "lang": "zh",
-      "title": "匂坂郁纪合集",
-      "summary": "郁纪ex，我就是要黑郁纪，我不管你说的有没有道理，反正只要是对匂坂郁纪说一句好话，恭喜你被毕业了，奖励黑名单里待着\n  └ Amadeus真由理 (2赞): 666这么阴\n  └ 耕司青海瑶 (2赞): [呲牙]\n  └ 黑兔梅酒轮椅王世一冷 (2赞): UP不是雷郁纪吗[笑哭]",
-      "url": "https://www.bilibili.com/video/BV1tDNE6UEEr",
-      "author": "耕司青海瑶",
-      "engagement": 108,
-      "media_url": "https://i0.hdslb.com/bfs/archive/45a7fa6e66d1efdc4dad5192db450b7d28fac83a.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 92,
-        "comment_count": 16,
-        "comments_fetched": 3,
-        "danmaku": 3
-      }
-    },
-    {
-      "source": "bilibili",
       "time": "2026-07-10T09:33:33+00:00",
       "lang": "zh",
       "title": "【忘却前夜】阿拉克涅生存差？低配也能硬如钢铁！3启单C难5，高精通无敌静海盾",
-      "summary": "看多了阿拉克涅1T出伤秒人的视频可以看点蠕动的\n  └ 充气兔子 (0赞): 界域精通越高，静海盾越厚。走深海完美利用了阿拉克涅的高界域精通。\n凯克斯只是个提供深海环境的挂件，不需要高启灵。温科尔也不需要高启。凯克斯换成船长，墨菲，法洛斯都可以。\n其实上墨菲或船长会更强，但是没必要。可以把这两个角色留给别的队。",
+      "summary": "看多了阿拉克涅1T出伤秒人的视频可以看点蠕动的\n  └ 充气兔子 (2赞): 界域精通越高，静海盾越厚。走深海完美利用了阿拉克涅的高界域精通。\n凯克斯只是个提供深海环境的挂件，不需要高启灵。温科尔也不需要高启。凯克斯换成船长，墨菲，法洛斯都可以。\n其实上墨菲或船长会更强，但是没必要。可以把这两个角色留给别的队。\n  └ 絢麗多彩の灰 (1赞): 话说阿拉克涅施加的裁断值吃力量以及易伤吗？\n  └ 燃え落ちない翼 (1赞): 难绷，我那号栗子加一，魔术师詹金全部加二，剩下俩常驻就死活一个都不出[冬日树下_哼][冬日树下_哼]直接给我气的后边都不抽角色全去al命轮去了[冬日树下_言叶][冬日树下_言叶]",
       "url": "https://www.bilibili.com/video/BV1pzN76MEd8",
       "author": "充气兔子",
-      "engagement": 73,
+      "engagement": 212,
       "media_url": "https://i1.hdslb.com/bfs/archive/e6453b9d35b9cf5b6e5efcdfc13fc51ddeb7093f.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 72,
+        "play": 202,
+        "comment_count": 10,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-07-09T16:48:21+00:00",
+      "lang": "zh",
+      "title": "[忘卻前夜輪換池-徐]785抽抽滿的媽媽和命輪",
+      "summary": "突然想起來有抽卡記錄就發發啦 沒有很注意大家抽輪換池是怎麼樣的所以也不知道算非還是歐 祝大家歐氣滿滿呦",
+      "url": "https://www.bilibili.com/video/BV1shMp6fE8v",
+      "author": "徐以卿卿",
+      "engagement": 101,
+      "media_url": "https://i1.hdslb.com/bfs/archive/a2491352d8d0076b51bd6178ad65f34abe5f8465.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 101,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-07-10T12:32:40+00:00",
+      "lang": "zh",
+      "title": "萌新都喜欢攻杀队好吗，十倍烈火刀刀爆",
+      "summary": "呜呜呜这集又拉拉了\n  └ 路过的耄耋 (0赞): 我玩的游戏怎么提示我不要玩宫砂[笑哭]",
+      "url": "https://www.bilibili.com/video/BV1GpNJ6oEj5",
+      "author": "密斯卡托尼克的银猫",
+      "engagement": 9,
+      "media_url": "https://i1.hdslb.com/bfs/archive/bfff21eec9284d4d1a484c556b389ffcf7695c34.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 8,
         "comment_count": 1,
         "comments_fetched": 1,
         "danmaku": 0
@@ -97,53 +79,17 @@
     },
     {
       "source": "bilibili",
-      "time": "2026-07-10T07:29:10+00:00",
+      "time": "2026-07-10T10:36:00+00:00",
       "lang": "zh",
-      "title": "两个小沙耶吃绿果冻喝绿色苹果汁",
-      "summary": "-\n  └ Anafabula怎么那么美丽啊 (3赞): [doge][doge][doge]saya酱很可爱\n  └ 躍龍門_ (2赞): 浅绿色的那个头发是不是有点营养不良啊？（还是说食物被豆包抢了\n  └ 䭩㟗 (2赞): 为什么左边的沙耶颜色浅一点啊[doge]",
-      "url": "https://www.bilibili.com/video/BV1CnNE6uENZ",
-      "author": "Anafabula怎么那么美丽啊",
-      "engagement": 67,
-      "media_url": "https://i2.hdslb.com/bfs/archive/605f5550e84d54e6c9ececa4ec91f005b8aef839.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 52,
-        "comment_count": 15,
-        "comments_fetched": 3,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-07-10T09:30:16+00:00",
-      "lang": "zh",
-      "title": "为什么都说很可爱，不就是一团肉块吗😎🕶👌😭",
-      "summary": "-\n  └ 元初丸 (2赞): 是沙耶酱啊…\n  └ 死人玛丽安 (1赞): 可爱捏[魔法少女的魔女审判表情包_哦吼吼]",
-      "url": "https://www.bilibili.com/video/BV1sqN76zEWQ",
-      "author": "欧塔裤",
-      "engagement": 8,
-      "media_url": "https://i2.hdslb.com/bfs/archive/9a2fa83934973b8055b1b28e8ad3d6b0ed5508ef.jpg",
+      "title": "《忘却前夜》第一章东区秘事P2",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV13TT96XEcA",
+      "author": "不可燃抹茶果冻",
+      "engagement": 5,
+      "media_url": "https://i1.hdslb.com/bfs/archive/07bf71cb810aa4f897847dff383e67f6ac499850.jpg",
       "content_type": "image",
       "metadata": {
         "play": 5,
-        "comment_count": 3,
-        "comments_fetched": 2,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-07-10T09:12:56+00:00",
-      "lang": "zh",
-      "title": "沙耶的日常（又是番外）",
-      "summary": "还是老生常谈的工作原因，接下来本打算正儿八经花钱做点有技术的，但是还是没空，先来一个简单吃吃吧",
-      "url": "https://www.bilibili.com/video/BV1eEN76QEA8",
-      "author": "御生门",
-      "engagement": 8,
-      "media_url": "https://i2.hdslb.com/bfs/archive/17f96ba5010b9dd124f2ac5c594ddd46d11eda55.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 8,
         "comment_count": 0,
         "comments_fetched": 0,
         "danmaku": 0

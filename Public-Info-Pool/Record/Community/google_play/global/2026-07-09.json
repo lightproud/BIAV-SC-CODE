@@ -1,8 +1,8 @@
 {
   "date": "2026-07-09",
-  "archived_at": "2026-07-10T10:21:06.867499+00:00",
+  "archived_at": "2026-07-10T13:09:47.540216+00:00",
   "source": "google_play",
-  "item_count": 5,
+  "item_count": 6,
   "items": [
     {
       "title": "[Google Play 差评] ★1 no se puede jugar, solo se para y me ech",
@@ -72,6 +72,20 @@
       "tags": [],
       "lang": "en",
       "platform_region": "us",
+      "region": "global"
+    },
+    {
+      "title": "[Google Play 中评] ★3 muy bueno me encanta pero el único probl",
+      "summary": "muy bueno me encanta pero el único problema es que a la 2 partida se me congela si tienes otro celular en el futuro podrías intentarlo te quiero",
+      "source": "google_play",
+      "time": "2026-07-09T10:38:30",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=es#gp-299f7581-f633-483c-b79c-3354b8cf3a1e",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "Matia Ezequiel",
+      "tags": [],
+      "lang": "es",
+      "platform_region": "es",
       "region": "global"
     }
   ],
