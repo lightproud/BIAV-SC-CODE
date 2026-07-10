@@ -1,15 +1,20 @@
 {
   "date": "2026-07-10",
-  "messages": 193,
+  "messages": 320,
   "unique_authors": 23,
-  "reactions_total": 39,
-  "attachments": 8,
+  "reactions_total": 77,
+  "attachments": 22,
   "channel_activity": {
-    "なんでも雑談": 189,
+    "なんでも雑談": 291,
+    "誰でも質問": 24,
+    "つぶやき": 1,
     "対戦募集": 1,
     "ニムフィーアの毒パ研究日誌": 3
   },
   "hourly_activity": {
+    "10": 62,
+    "11": 58,
+    "12": 7,
     "5": 40,
     "6": 45,
     "7": 14,
@@ -21,10 +26,58 @@
     "1": 1
   },
   "message_types": {
-    "0": 151,
-    "19": 4
+    "0": 118,
+    "19": 9
   },
   "top_reacted_messages": [
+    {
+      "id": "1525086887604391936",
+      "channel_id": "1377478664609857647",
+      "content": "🪦",
+      "author": "ciocux",
+      "reactions": 6,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1525110597874749513",
+      "channel_id": "1377478664609857647",
+      "content": "安定してきたー♪",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 6,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1525087125660241980",
+      "channel_id": "1377478664609857647",
+      "content": "どもよろしくです",
+      "author": "komesan0875",
+      "reactions": 5,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1525090055901810688",
+      "channel_id": "1377478664609857647",
+      "content": "もう。。<:chiiin:1390953055800791232>",
+      "author": "partycatss.",
+      "reactions": 4,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1525100980603981974",
+      "channel_id": "1377478664609857647",
+      "content": "どしたん？話聞こか？\nあーそれはお前が悪いわ\n死ね",
+      "author": "kuroneko4253",
+      "reactions": 4,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1525105854729293944",
+      "channel_id": "1377478664609857647",
+      "content": "３までいけた！",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 3,
+      "channel": "なんでも雑談"
+    },
     {
       "id": "1525072576739545178",
       "channel_id": "1377478664609857647",
@@ -47,6 +100,22 @@
       "content": "沙耶ちゃんのアクスタ2次抽選今度こそ！っと思ったら、またメール来てなくって吐血_:(´ཀ`」 ∠):_",
       "author": "n_gm0803",
       "reactions": 3,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1525088375340535869",
+      "channel_id": "1377478664609857647",
+      "content": "１万近いシールドを貼るなぁ！！",
+      "author": "niyaku",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1525100312795414538",
+      "channel_id": "1377478664609857647",
+      "content": "ｼｾﾝﾃﾞﾙｼﾞﾊﾞｾﾞﾖ!!",
+      "author": "zzzorz",
+      "reactions": 2,
       "channel": "なんでも雑談"
     },
     {
@@ -90,98 +159,34 @@
       "channel": "なんでも雑談"
     },
     {
-      "id": "1525016882644652032",
+      "id": "1525082579730956340",
       "channel_id": "1377478664609857647",
-      "content": "アレ2かけら",
-      "author": "foxcatfurry",
-      "reactions": 1,
-      "channel": "なんでも雑談"
-    },
-    {
-      "id": "1525017356223516837",
-      "channel_id": "1377478664609857647",
-      "content": "2欠片かあ…自分やります",
-      "author": "tttt_1412",
-      "reactions": 1,
-      "channel": "なんでも雑談"
-    },
-    {
-      "id": "1525017632909295656",
-      "channel_id": "1377478664609857647",
-      "content": "弊ミサゴの24弱めだから無理すぎる<:nope:1390952962049704017>",
-      "author": "yasaizujusu",
-      "reactions": 1,
-      "channel": "なんでも雑談"
-    },
-    {
-      "id": "1525018191112179772",
-      "channel_id": "1377478664609857647",
-      "content": "封印👊😁",
-      "author": "xudabusakua",
-      "reactions": 1,
-      "channel": "なんでも雑談"
-    },
-    {
-      "id": "1525054188948557955",
-      "channel_id": "1377478664609857647",
-      "content": "端末届いからデータ移行してるけど既に1/3討伐されてて泣いてます。",
-      "author": "xudabusakua",
-      "reactions": 1,
-      "channel": "なんでも雑談"
-    },
-    {
-      "id": "1525054657486131320",
-      "channel_id": "1377478664609857647",
-      "content": "||超越的存在が欲を出すのって良いよね||",
-      "author": "asha0115",
-      "reactions": 1,
-      "channel": "なんでも雑談"
-    },
-    {
-      "id": "1525059554646294568",
-      "channel_id": "1377478664609857647",
-      "content": "都会のブラウンか田舎のブラウン？？？",
-      "author": "altiar_zain",
-      "reactions": 1,
-      "channel": "なんでも雑談"
-    },
-    {
-      "id": "1525064761086312508",
-      "channel_id": "1377478664609857647",
-      "content": "イベントやるぞー♪",
-      "author": "sugoitsubasanohaetaop",
-      "reactions": 1,
-      "channel": "なんでも雑談"
-    },
-    {
-      "id": "1525064783458599114",
-      "channel_id": "1377478664609857647",
-      "content": "FGOのレイドにもおったな",
-      "author": "altiar_zain",
-      "reactions": 1,
-      "channel": "なんでも雑談"
-    },
-    {
-      "id": "1525065136019345418",
-      "channel_id": "1377478664609857647",
-      "content": "私有給だけど外出てるからさわれぬの民やw",
+      "content": "ごめんw",
       "author": "zzzorz",
       "reactions": 1,
       "channel": "なんでも雑談"
     },
     {
-      "id": "1525065268982845520",
+      "id": "1525089946296123475",
       "channel_id": "1377478664609857647",
-      "content": "それが有意義なつかいかただと思うの",
-      "author": "meruson6406",
+      "content": "じゃあ私は沙耶万歳",
+      "author": "altiar_zain",
       "reactions": 1,
       "channel": "なんでも雑談"
     },
     {
-      "id": "1525072670109073538",
+      "id": "1525095078043975831",
       "channel_id": "1377478664609857647",
-      "content": "ミリしらむ",
-      "author": "zzzorz",
+      "content": "<:naiteru:1390952987819769856>",
+      "author": "evuansu0726",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1525100408115298395",
+      "channel_id": "1377478664609857647",
+      "content": "どしたん❓話聞こか😁",
+      "author": "xudabusakua",
       "reactions": 1,
       "channel": "なんでも雑談"
     }
