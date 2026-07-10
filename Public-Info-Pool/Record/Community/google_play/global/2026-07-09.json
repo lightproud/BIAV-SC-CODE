@@ -1,8 +1,8 @@
 {
   "date": "2026-07-09",
-  "archived_at": "2026-07-09T23:07:59.686862+00:00",
+  "archived_at": "2026-07-10T02:16:10.083187+00:00",
   "source": "google_play",
-  "item_count": 2,
+  "item_count": 3,
   "items": [
     {
       "title": "[Google Play 差评] ★1 no se puede jugar, solo se para y me ech",
@@ -27,6 +27,20 @@
       "engagement": 0,
       "is_hot": false,
       "author": "Baskara Putra",
+      "tags": [],
+      "lang": "id",
+      "platform_region": "id",
+      "region": "global"
+    },
+    {
+      "title": "[Google Play 好评] ★4 gamenya bagus, dan yup ternyata yang bik",
+      "summary": "gamenya bagus, dan yup ternyata yang bikin lag sinyal nya, di sinyalnya kuning, merah terus, jadi agak bikin lag pas main",
+      "source": "google_play",
+      "time": "2026-07-09T01:02:48",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=id#gp-09bbfef2-78b9-42e8-a6c6-9fa42310415a",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "Ziad Graphic",
       "tags": [],
       "lang": "id",
       "platform_region": "id",
