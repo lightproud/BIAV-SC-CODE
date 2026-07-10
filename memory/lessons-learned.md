@@ -426,6 +426,13 @@
 - **Fix**：(1) 触发器路径清单**从生成器实际消费的源反推**补全（每小时归档层刻意不含——其提交带 `[skip ci]` 本就不触发，由每日 cron 兜底，防高频重建）；(2) 协议写进 CLAUDE.md §6.1（自动加载层）：内容 PR 不带 okf/ diff、不开 follow-up rebuild PR；唯一例外是改生成器结构本身（改名 / 删层 / 变 type）须同 PR 重建。
 - **Impact**：「一步到位」= 机制 + 协议缺一不可。协议只写在 PR 描述 / 会话记忆里 = 对未来会话**不存在**（同 decisions-archive 2026-05-19「prompt 级文档是弱约束」——不自动加载的约束等于没约束）；声明式触发器的路径清单是**生成器消费面的镜像**，消费面扩了 12 层、清单还停在初版 3 条，就是这类「幽灵两步流程」的温床。与 #42 同簇：多条自动化的分工边界（谁触发 / 谁兜底）必须显式写死，不能靠会话临场猜。
 
+## 47. CCR Stop 钩子 git-check 误报上游提交：平台注入的 ~/.claude/stop-hook-git-check.sh 用 origin/<分支>..HEAD 检查「未验证/未推送提交」，会话分支重置到 origin/main 而远端分支指针陈旧/被删时，把 origin/main 已发布的上游提交（github-actions bot 归档提交、平台 squash 合并提交）误报为「需 --reset-author 变基重推」——照做等于改写 main 已发布历史。修法：两处检查改用 git log/rev-list HEAD --not --remotes（任何远端引用都不可达的提交才是本会话欠账），实测误报消除、真阳性（未签名未发布/欠推）保留。该脚本由 CCR 平台随容器生成，容器内补丁不跨会话持久——新容器复发时按本条重打，或在环境 setup script 固化；根治靠上游。判别启发：钩子/自动化叫你改写「不是你签发的提交」时，先对照提交归属（git rev-parse HEAD origin/main）再动手
+
+- **Context**：2026-07-10 会话：discord 布局迁移合并后，本地分支 checkout -B 到 origin/main，远端会话分支停在旧位，Stop 钩子点名 5 个上游提交要求 reset-author 重推；核实归属后拒绝执行并打补丁，三场景（误报放行/未签名拦截/欠推拦截）验证通过
+- **Problem**：CCR Stop 钩子 git-check 误报上游提交：平台注入的 ~/.claude/stop-hook-git-check.sh 用 origin/<分支>..HEAD 检查「未验证/未推送提交」，会话分支重置到 origin/main 而远端分支指针陈旧/被删时，把 origin/main 已发布的上游提交（github-actions bot 归档提交、平台 squash 合并提交）误报为「需 --reset-author 变基重推」——照做等于改写 main 已发布历史。修法：两处检查改用 git log/rev-list HEAD --not --remotes（任何远端引用都不可达的提交才是本会话欠账），实测误报消除、真阳性（未签名未发布/欠推）保留。该脚本由 CCR 平台随容器生成，容器内补丁不跨会话持久——新容器复发时按本条重打，或在环境 setup script 固化；根治靠上游。判别启发：钩子/自动化叫你改写「不是你签发的提交」时，先对照提交归属（git rev-parse HEAD origin/main）再动手
+- **Fix**：（待补充）
+- **Impact**：（待补充）
+
 ---
 
 > **维护说明**：遇到新的坑时立即追加。格式保持统一。
