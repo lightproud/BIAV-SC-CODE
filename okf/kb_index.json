@@ -8,7 +8,7 @@
   },
   "stats": {
     "concepts": 350,
-    "edges": 404,
+    "edges": 405,
     "terms": 6004,
     "by_type": {
       "character": 72,
@@ -968,7 +968,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 89
+      "degree": 90
     },
     "/characters/15604.md": {
       "type": "character",
@@ -1864,7 +1864,7 @@
       ],
       "section": "memory",
       "tier": "search",
-      "degree": 0
+      "degree": 1
     },
     "/memory/memory-ext-bpt-guidance-protocol.md": {
       "type": "knowledge-pointer",
@@ -6401,6 +6401,11 @@
         "mention"
       ],
       [
+        "/memory/memory-ext-bpt-guidance-log.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
         "/memory/memory-ext-bpt-guidance-protocol.md",
         "提及:艾瑞卡",
         "mention"
@@ -7736,6 +7741,13 @@
       ]
     ],
     "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
+    "/memory/memory-ext-bpt-guidance-log.md": [
       [
         "/characters/15603.md",
         "提及:艾瑞卡",
