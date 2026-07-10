@@ -258,7 +258,7 @@ brain-in-a-vat/
 │   ├── wiki/   # 使命#2 社区知识底座：VitePress 站点 + 72 角色数据库
 │   ├── site/   # 对外门户：静态站（public/）+ 设计令牌（design/）
 │   ├── game/   # 衍生游戏（退主线，守密人个人兴趣，不主线派发）
-│   ├── bpt-agent-sdk/  # 银芯→黑池单向输出物（非使命线）：Claude Agent SDK 干净重实现，见 project-status「## BPT Agent SDK」
+│   ├── silver-core-sdk/  # 银芯→黑池单向输出物（非使命线）：Claude Agent SDK 干净重实现（原名 bpt-agent-sdk，2026-07-10 更名），见 project-status「## Silver Core SDK」
 │   ├── bpt-v2t/  # 语音代替输入（非使命线）：本地 STT 语音输入工具 + 专名热词桥，见 project-status「## BPT-V2T」
 │   └── bpt-pm/         # 项目排期工作台（非使命线）：单网页 CPM 自动排期 + 基线比对，数据协议 bpt-pm/v1，见其 CONTEXT.md
 ├── memory/                        # 银芯记忆层（决策 / 方法论 / 踩坑 / active hub）
@@ -281,8 +281,9 @@ brain-in-a-vat/
 
 子项目纪律：每个 `projects/<x>/CONTEXT.md` 是该子项目的会话上下文与当前 milestone，
 动手前必读。news 与 wiki 是 Phase 2 双核心主线，site 维护稳定，game 不主线派发；
-`projects/bpt-agent-sdk/` 为银芯→黑池单向输出的工程产物（**非使命线**，与 §1.1-HC 防火墙同向：
-银芯→黑池单向输出、黑池不回流），状态与两轴保真模型见 `memory/project-status.md`「## BPT Agent SDK」。
+`projects/silver-core-sdk/` 为银芯→黑池单向输出的工程产物（**非使命线**，原名 bpt-agent-sdk、
+2026-07-10 守密人裁定更名 Silver Core SDK，与 §1.1-HC 防火墙同向：银芯→黑池单向输出、
+黑池不回流），状态与两轴保真模型见 `memory/project-status.md`「## Silver Core SDK」。
 
 ### §6.1 OKF Bundle（`okf/`）
 

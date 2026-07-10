@@ -2533,132 +2533,6 @@
       "tier": "skeleton",
       "degree": 1
     },
-    "/projects/bpt-sdk-doc-architecture.md": {
-      "type": "documentation",
-      "title": "bpt-agent-sdk ARCHITECTURE",
-      "description": "Independent agent harness with a `@anthropic-ai/claude-agent-sdk`-compatible",
-      "resource": "/projects/bpt-agent-sdk/docs/ARCHITECTURE.md",
-      "tags": [
-        "data_layer:curated",
-        "design-doc",
-        "sub-project:bpt-agent-sdk"
-      ],
-      "section": "projects",
-      "tier": "search",
-      "degree": 0
-    },
-    "/projects/bpt-sdk-doc-compat.md": {
-      "type": "documentation",
-      "title": "bpt-agent-sdk COMPAT",
-      "description": "Target surface: `@anthropic-ai/claude-agent-sdk` public API (npm 0.3.205; chased from the 0.3.201 baseline 2026-07-10, keeper ruling, zero conformance drift — 0.3.199 -> 0.3.201 chased 2026-07-05) as",
-      "resource": "/projects/bpt-agent-sdk/docs/COMPAT.md",
-      "tags": [
-        "data_layer:curated",
-        "design-doc",
-        "sub-project:bpt-agent-sdk"
-      ],
-      "section": "projects",
-      "tier": "search",
-      "degree": 0
-    },
-    "/projects/bpt-sdk-doc-concurrency.md": {
-      "type": "documentation",
-      "title": "bpt-agent-sdk CONCURRENCY",
-      "description": "The SDK supports true parallelism at three levels: **many conversations** over",
-      "resource": "/projects/bpt-agent-sdk/docs/CONCURRENCY.md",
-      "tags": [
-        "data_layer:curated",
-        "design-doc",
-        "sub-project:bpt-agent-sdk"
-      ],
-      "section": "projects",
-      "tier": "search",
-      "degree": 0
-    },
-    "/projects/bpt-sdk-doc-errors.md": {
-      "type": "documentation",
-      "title": "bpt-agent-sdk ERRORS",
-      "description": "Every error class in `src/errors.ts` carries a machine-readable, stable",
-      "resource": "/projects/bpt-agent-sdk/docs/ERRORS.md",
-      "tags": [
-        "data_layer:curated",
-        "design-doc",
-        "sub-project:bpt-agent-sdk"
-      ],
-      "section": "projects",
-      "tier": "search",
-      "degree": 0
-    },
-    "/projects/bpt-sdk-doc-migration.md": {
-      "type": "documentation",
-      "title": "bpt-agent-sdk MIGRATION",
-      "description": "Audience: the BPT Desktop (Electron) codebase currently importing the official",
-      "resource": "/projects/bpt-agent-sdk/docs/MIGRATION.md",
-      "tags": [
-        "data_layer:curated",
-        "design-doc",
-        "sub-project:bpt-agent-sdk"
-      ],
-      "section": "projects",
-      "tier": "search",
-      "degree": 0
-    },
-    "/projects/bpt-sdk-doc-onboarding.md": {
-      "type": "documentation",
-      "title": "bpt-agent-sdk ONBOARDING",
-      "description": "Goal: get a new maintainer from zero to \\\"I can make a change safely and prove",
-      "resource": "/projects/bpt-agent-sdk/docs/ONBOARDING.md",
-      "tags": [
-        "data_layer:curated",
-        "design-doc",
-        "sub-project:bpt-agent-sdk"
-      ],
-      "section": "projects",
-      "tier": "search",
-      "degree": 0
-    },
-    "/projects/bpt-sdk-doc-openai-protocol.md": {
-      "type": "documentation",
-      "title": "bpt-agent-sdk OPENAI-PROTOCOL",
-      "description": "The SDK can drive an **OpenAI-compatible Chat Completions endpoint** instead of",
-      "resource": "/projects/bpt-agent-sdk/docs/OPENAI-PROTOCOL.md",
-      "tags": [
-        "data_layer:curated",
-        "design-doc",
-        "sub-project:bpt-agent-sdk"
-      ],
-      "section": "projects",
-      "tier": "search",
-      "degree": 0
-    },
-    "/projects/bpt-sdk-doc-positioning.md": {
-      "type": "documentation",
-      "title": "bpt-agent-sdk POSITIONING",
-      "description": "**BPT Agent SDK = 一套稳定兼容的调用「表面」 + 一个我们完全掌控、比原版更简单更可靠的独立「引擎」。**",
-      "resource": "/projects/bpt-agent-sdk/docs/POSITIONING.md",
-      "tags": [
-        "data_layer:curated",
-        "design-doc",
-        "sub-project:bpt-agent-sdk"
-      ],
-      "section": "projects",
-      "tier": "search",
-      "degree": 0
-    },
-    "/projects/bpt-sdk-doc-subagents.md": {
-      "type": "documentation",
-      "title": "bpt-agent-sdk SUBAGENTS",
-      "description": "Goal: wire a host (BPT) to the SDK's subagent surface the way Claude Code uses",
-      "resource": "/projects/bpt-agent-sdk/docs/SUBAGENTS.md",
-      "tags": [
-        "data_layer:curated",
-        "design-doc",
-        "sub-project:bpt-agent-sdk"
-      ],
-      "section": "projects",
-      "tier": "search",
-      "degree": 0
-    },
     "/projects/doc-testing-strategy.md": {
       "type": "documentation",
       "title": "测试策略",
@@ -2740,20 +2614,6 @@
       "tier": "search",
       "degree": 0
     },
-    "/projects/project-bpt-agent-sdk.md": {
-      "type": "documentation",
-      "title": "bpt-agent-sdk 子项目上下文",
-      "description": "BPT Agent SDK：独立重实现（independent reimplementation）的 TypeScript agent 框架，公开调用面",
-      "resource": "/projects/bpt-agent-sdk/CONTEXT.md",
-      "tags": [
-        "data_layer:curated",
-        "sub-project-context",
-        "milestone"
-      ],
-      "section": "projects",
-      "tier": "search",
-      "degree": 1
-    },
     "/projects/project-game.md": {
       "type": "documentation",
       "title": "game 子项目上下文",
@@ -2781,6 +2641,20 @@
       "section": "projects",
       "tier": "search",
       "degree": 3
+    },
+    "/projects/project-silver-core-sdk.md": {
+      "type": "documentation",
+      "title": "silver-core-sdk 子项目上下文",
+      "description": "Silver Core SDK：独立重实现（independent reimplementation）的 TypeScript agent 框架，公开调用面",
+      "resource": "/projects/silver-core-sdk/CONTEXT.md",
+      "tags": [
+        "data_layer:curated",
+        "sub-project-context",
+        "milestone"
+      ],
+      "section": "projects",
+      "tier": "search",
+      "degree": 1
     },
     "/projects/project-site.md": {
       "type": "documentation",
@@ -2823,6 +2697,132 @@
       "section": "projects",
       "tier": "search",
       "degree": 1
+    },
+    "/projects/silver-core-sdk-doc-architecture.md": {
+      "type": "documentation",
+      "title": "silver-core-sdk ARCHITECTURE",
+      "description": "Independent agent harness with a `@anthropic-ai/claude-agent-sdk`-compatible",
+      "resource": "/projects/silver-core-sdk/docs/ARCHITECTURE.md",
+      "tags": [
+        "data_layer:curated",
+        "design-doc",
+        "sub-project:silver-core-sdk"
+      ],
+      "section": "projects",
+      "tier": "search",
+      "degree": 0
+    },
+    "/projects/silver-core-sdk-doc-compat.md": {
+      "type": "documentation",
+      "title": "silver-core-sdk COMPAT",
+      "description": "Target surface: `@anthropic-ai/claude-agent-sdk` public API (npm 0.3.205; chased from the 0.3.201 baseline 2026-07-10, keeper ruling, zero conformance drift — 0.3.199 -> 0.3.201 chased 2026-07-05) as",
+      "resource": "/projects/silver-core-sdk/docs/COMPAT.md",
+      "tags": [
+        "data_layer:curated",
+        "design-doc",
+        "sub-project:silver-core-sdk"
+      ],
+      "section": "projects",
+      "tier": "search",
+      "degree": 0
+    },
+    "/projects/silver-core-sdk-doc-concurrency.md": {
+      "type": "documentation",
+      "title": "silver-core-sdk CONCURRENCY",
+      "description": "The SDK supports true parallelism at three levels: **many conversations** over",
+      "resource": "/projects/silver-core-sdk/docs/CONCURRENCY.md",
+      "tags": [
+        "data_layer:curated",
+        "design-doc",
+        "sub-project:silver-core-sdk"
+      ],
+      "section": "projects",
+      "tier": "search",
+      "degree": 0
+    },
+    "/projects/silver-core-sdk-doc-errors.md": {
+      "type": "documentation",
+      "title": "silver-core-sdk ERRORS",
+      "description": "Every error class in `src/errors.ts` carries a machine-readable, stable",
+      "resource": "/projects/silver-core-sdk/docs/ERRORS.md",
+      "tags": [
+        "data_layer:curated",
+        "design-doc",
+        "sub-project:silver-core-sdk"
+      ],
+      "section": "projects",
+      "tier": "search",
+      "degree": 0
+    },
+    "/projects/silver-core-sdk-doc-migration.md": {
+      "type": "documentation",
+      "title": "silver-core-sdk MIGRATION",
+      "description": "Audience: the BPT Desktop (Electron) codebase currently importing the official",
+      "resource": "/projects/silver-core-sdk/docs/MIGRATION.md",
+      "tags": [
+        "data_layer:curated",
+        "design-doc",
+        "sub-project:silver-core-sdk"
+      ],
+      "section": "projects",
+      "tier": "search",
+      "degree": 0
+    },
+    "/projects/silver-core-sdk-doc-onboarding.md": {
+      "type": "documentation",
+      "title": "silver-core-sdk ONBOARDING",
+      "description": "Goal: get a new maintainer from zero to \\\"I can make a change safely and prove",
+      "resource": "/projects/silver-core-sdk/docs/ONBOARDING.md",
+      "tags": [
+        "data_layer:curated",
+        "design-doc",
+        "sub-project:silver-core-sdk"
+      ],
+      "section": "projects",
+      "tier": "search",
+      "degree": 0
+    },
+    "/projects/silver-core-sdk-doc-openai-protocol.md": {
+      "type": "documentation",
+      "title": "silver-core-sdk OPENAI-PROTOCOL",
+      "description": "The SDK can drive an **OpenAI-compatible Chat Completions endpoint** instead of",
+      "resource": "/projects/silver-core-sdk/docs/OPENAI-PROTOCOL.md",
+      "tags": [
+        "data_layer:curated",
+        "design-doc",
+        "sub-project:silver-core-sdk"
+      ],
+      "section": "projects",
+      "tier": "search",
+      "degree": 0
+    },
+    "/projects/silver-core-sdk-doc-positioning.md": {
+      "type": "documentation",
+      "title": "silver-core-sdk POSITIONING",
+      "description": "**Silver Core SDK = 一套稳定兼容的调用「表面」 + 一个我们完全掌控、比原版更简单更可靠的独立「引擎」。**",
+      "resource": "/projects/silver-core-sdk/docs/POSITIONING.md",
+      "tags": [
+        "data_layer:curated",
+        "design-doc",
+        "sub-project:silver-core-sdk"
+      ],
+      "section": "projects",
+      "tier": "search",
+      "degree": 0
+    },
+    "/projects/silver-core-sdk-doc-subagents.md": {
+      "type": "documentation",
+      "title": "silver-core-sdk SUBAGENTS",
+      "description": "Goal: wire a host (BPT) to the SDK's subagent surface the way Claude Code uses",
+      "resource": "/projects/silver-core-sdk/docs/SUBAGENTS.md",
+      "tags": [
+        "data_layer:curated",
+        "design-doc",
+        "sub-project:silver-core-sdk"
+      ],
+      "section": "projects",
+      "tier": "search",
+      "degree": 0
     },
     "/projects/site-design-morimens-design-system-guide.md": {
       "type": "documentation",
@@ -8140,17 +8140,17 @@
         "cross"
       ],
       [
-        "/projects/project-bpt-agent-sdk.md",
-        "入口→上下文",
-        "cross"
-      ],
-      [
         "/projects/project-game.md",
         "入口→上下文",
         "cross"
       ],
       [
         "/projects/project-news.md",
+        "入口→上下文",
+        "cross"
+      ],
+      [
+        "/projects/project-silver-core-sdk.md",
         "入口→上下文",
         "cross"
       ],
@@ -8174,13 +8174,6 @@
       [
         "/projects/entry-claude-md.md",
         "双入口",
-        "cross"
-      ]
-    ],
-    "/projects/project-bpt-agent-sdk.md": [
-      [
-        "/projects/entry-claude-md.md",
-        "入口→上下文",
         "cross"
       ]
     ],
@@ -8232,6 +8225,13 @@
         "提及:沙耶",
         "mention"
       ],
+      [
+        "/projects/entry-claude-md.md",
+        "入口→上下文",
+        "cross"
+      ]
+    ],
+    "/projects/project-silver-core-sdk.md": [
       [
         "/projects/entry-claude-md.md",
         "入口→上下文",
@@ -9538,25 +9538,25 @@
     "documentation": [
       "/README.md",
       "/extracted/extracted-readme.md",
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md",
-      "/projects/bpt-sdk-doc-concurrency.md",
-      "/projects/bpt-sdk-doc-errors.md",
-      "/projects/bpt-sdk-doc-migration.md",
-      "/projects/bpt-sdk-doc-onboarding.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md",
-      "/projects/bpt-sdk-doc-positioning.md",
-      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/extracted-lua-readme.md",
-      "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-sdk.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-concurrency.md",
+      "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-onboarding.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -9741,16 +9741,9 @@
     "agent": [
       "/README.md",
       "/memory/memory-ext-bpt-positioning.md",
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md",
-      "/projects/bpt-sdk-doc-concurrency.md",
-      "/projects/bpt-sdk-doc-errors.md",
-      "/projects/bpt-sdk-doc-migration.md",
-      "/projects/bpt-sdk-doc-onboarding.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md",
-      "/projects/bpt-sdk-doc-positioning.md",
-      "/projects/bpt-sdk-doc-subagents.md",
-      "/projects/project-bpt-agent-sdk.md",
+      "/projects/project-silver-core-sdk.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
@@ -9770,10 +9763,10 @@
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
       "/memory/memory-ext-skill-authoring-standard.md",
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md"
@@ -9826,8 +9819,8 @@
       "/memory/memory-ext-capability-annotations.md"
     ],
     "anthropic": [
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md"
     ],
     "anthropictransport": [
@@ -9835,7 +9828,7 @@
     ],
     "api": [
       "/memory/memory-ext-workflow-api-key-audit.md",
-      "/projects/bpt-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-compat.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
     ],
     "appstore": [
@@ -9850,7 +9843,7 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
       "/memory/memory-ext-bpt-architecture-summary-template.md",
-      "/projects/bpt-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "archive": [
@@ -9993,7 +9986,7 @@
       "/news-output/news-output-feed.md"
     ],
     "audience": [
-      "/projects/bpt-sdk-doc-migration.md"
+      "/projects/silver-core-sdk-doc-migration.md"
     ],
     "audio": [
       "/projects/releases-treasure-map.md"
@@ -10046,7 +10039,7 @@
     ],
     "baseline": [
       "/assets/assets-sentinel-baseline.md",
-      "/projects/bpt-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-compat.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "bash": [
@@ -10259,16 +10252,8 @@
       "/memory/memory-ext-bpt-guidance-protocol.md",
       "/memory/memory-ext-bpt-positioning.md",
       "/memory/memory-ext-phase-d-plan.md",
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md",
-      "/projects/bpt-sdk-doc-concurrency.md",
-      "/projects/bpt-sdk-doc-errors.md",
-      "/projects/bpt-sdk-doc-migration.md",
-      "/projects/bpt-sdk-doc-onboarding.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md",
-      "/projects/bpt-sdk-doc-positioning.md",
-      "/projects/bpt-sdk-doc-subagents.md",
-      "/projects/project-bpt-agent-sdk.md",
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-subagents.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -10345,7 +10330,7 @@
       "/story/story_search_index.md"
     ],
     "carries": [
-      "/projects/bpt-sdk-doc-errors.md"
+      "/projects/silver-core-sdk-doc-errors.md"
     ],
     "catalog": [
       "/README.md"
@@ -10367,7 +10352,7 @@
       "/wiki-data/wiki-data-cg-gallery.md"
     ],
     "change": [
-      "/projects/bpt-sdk-doc-onboarding.md"
+      "/projects/silver-core-sdk-doc-onboarding.md"
     ],
     "channels": [
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md"
@@ -10391,11 +10376,11 @@
       "/wiki-data/wiki-schema-characters-schema.md"
     ],
     "chased": [
-      "/projects/bpt-sdk-doc-compat.md"
+      "/projects/silver-core-sdk-doc-compat.md"
     ],
     "chat": [
       "/assets/assets-chat-onboarding-snippet.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md"
     ],
     "ci": [
@@ -10403,7 +10388,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md"
     ],
     "class": [
-      "/projects/bpt-sdk-doc-errors.md"
+      "/projects/silver-core-sdk-doc-errors.md"
     ],
     "classification": [
       "/memory/memory-ext-biav-info-classification.md"
@@ -10412,12 +10397,12 @@
       "/README.md",
       "/memory/memory-ext-active-contribution-protocol.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md",
-      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/entry-claude-md.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-subagents.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
@@ -10462,14 +10447,14 @@
       "/memory/memory-ext-active-policy-direct-push-main.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
-      "/projects/bpt-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-subagents.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
     ],
     "codebase": [
-      "/projects/bpt-sdk-doc-migration.md"
+      "/projects/silver-core-sdk-doc-migration.md"
     ],
     "coding": [
       "/memory/memory-ext-karpathy-coding-principles.md"
@@ -10586,12 +10571,12 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "compat": [
-      "/projects/bpt-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-compat.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md"
     ],
     "compatible": [
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md"
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md"
     ],
     "completion": [
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
@@ -10599,7 +10584,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md"
     ],
     "completions": [
-      "/projects/bpt-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md"
     ],
     "concept": [
@@ -10706,27 +10691,27 @@
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md",
-      "/projects/bpt-sdk-doc-concurrency.md",
-      "/projects/bpt-sdk-doc-errors.md",
-      "/projects/bpt-sdk-doc-migration.md",
-      "/projects/bpt-sdk-doc-onboarding.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md",
-      "/projects/bpt-sdk-doc-positioning.md",
-      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/extracted-lua-inventory.md",
       "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-sdk.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-concurrency.md",
+      "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-onboarding.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -10877,7 +10862,7 @@
       "/wiki-data/wiki-schema-trinkets-schema.md"
     ],
     "concurrency": [
-      "/projects/bpt-sdk-doc-concurrency.md"
+      "/projects/silver-core-sdk-doc-concurrency.md"
     ],
     "config": [
       "/unpacked/unpacked-config.md",
@@ -10887,7 +10872,7 @@
       "/memory/memory-research-discord-archive-backfill-conflict.md"
     ],
     "conformance": [
-      "/projects/bpt-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-compat.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md"
@@ -10915,9 +10900,9 @@
     ],
     "context": [
       "/memory/morimens-context.md",
-      "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-sdk.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md"
     ],
@@ -10939,10 +10924,20 @@
       "/memory/memory-ext-active-contribution-protocol.md"
     ],
     "conversations": [
-      "/projects/bpt-sdk-doc-concurrency.md"
+      "/projects/silver-core-sdk-doc-concurrency.md"
     ],
     "core": [
       "/memory/memory-ext-research-best-wiki-features.md",
+      "/projects/project-silver-core-sdk.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-concurrency.md",
+      "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-onboarding.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-subagents.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
     ],
@@ -11025,27 +11020,27 @@
       "/memory/memory-research-community-analysis-2026-05-18-26.md",
       "/memory/memory-research-discord-archive-backfill-conflict.md",
       "/memory/memory-strategy-repo-slimming-plan.md",
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md",
-      "/projects/bpt-sdk-doc-concurrency.md",
-      "/projects/bpt-sdk-doc-errors.md",
-      "/projects/bpt-sdk-doc-migration.md",
-      "/projects/bpt-sdk-doc-onboarding.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md",
-      "/projects/bpt-sdk-doc-positioning.md",
-      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/extracted-lua-inventory.md",
       "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-sdk.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-concurrency.md",
+      "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-onboarding.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -11158,7 +11153,7 @@
       "/wiki-data/wiki-schema-trinkets-schema.md"
     ],
     "currently": [
-      "/projects/bpt-sdk-doc-migration.md"
+      "/projects/silver-core-sdk-doc-migration.md"
     ],
     "cv": [
       "/README.md",
@@ -11339,27 +11334,27 @@
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md",
-      "/projects/bpt-sdk-doc-concurrency.md",
-      "/projects/bpt-sdk-doc-errors.md",
-      "/projects/bpt-sdk-doc-migration.md",
-      "/projects/bpt-sdk-doc-onboarding.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md",
-      "/projects/bpt-sdk-doc-positioning.md",
-      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/extracted-lua-inventory.md",
       "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-sdk.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-concurrency.md",
+      "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-onboarding.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -11630,15 +11625,15 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-silver-blackpool-interface.md",
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-knowledge-layer-design.md",
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md",
-      "/projects/bpt-sdk-doc-concurrency.md",
-      "/projects/bpt-sdk-doc-errors.md",
-      "/projects/bpt-sdk-doc-migration.md",
-      "/projects/bpt-sdk-doc-onboarding.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md",
-      "/projects/bpt-sdk-doc-positioning.md",
-      "/projects/bpt-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-concurrency.md",
+      "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-onboarding.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
@@ -11652,7 +11647,7 @@
     ],
     "desktop": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-desktop-design-spec-ref.md",
-      "/projects/bpt-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-migration.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
@@ -11718,29 +11713,29 @@
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
     ],
     "doc": [
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md",
-      "/projects/bpt-sdk-doc-concurrency.md",
-      "/projects/bpt-sdk-doc-errors.md",
-      "/projects/bpt-sdk-doc-migration.md",
-      "/projects/bpt-sdk-doc-onboarding.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md",
-      "/projects/bpt-sdk-doc-positioning.md",
-      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
-      "/projects/extracted-lua-readme.md"
+      "/projects/extracted-lua-readme.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-concurrency.md",
+      "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-onboarding.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-subagents.md"
     ],
     "docs": [
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md",
-      "/projects/bpt-sdk-doc-concurrency.md",
-      "/projects/bpt-sdk-doc-errors.md",
-      "/projects/bpt-sdk-doc-migration.md",
-      "/projects/bpt-sdk-doc-onboarding.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md",
-      "/projects/bpt-sdk-doc-positioning.md",
-      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-concurrency.md",
+      "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-onboarding.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-subagents.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md"
     ],
     "documentation": [
@@ -11777,10 +11772,10 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md"
     ],
     "drift": [
-      "/projects/bpt-sdk-doc-compat.md"
+      "/projects/silver-core-sdk-doc-compat.md"
     ],
     "drive": [
-      "/projects/bpt-sdk-doc-openai-protocol.md"
+      "/projects/silver-core-sdk-doc-openai-protocol.md"
     ],
     "drop": [
       "/wiki-data/wiki-data-drops-by-item.md"
@@ -11800,7 +11795,7 @@
       "/unpacked/unpacked-ejoysdk-lua.md"
     ],
     "electron": [
-      "/projects/bpt-sdk-doc-migration.md"
+      "/projects/silver-core-sdk-doc-migration.md"
     ],
     "encoding": [
       "/unpacked/unpacked-config.md",
@@ -11818,7 +11813,7 @@
       "/unpacked/unpacked-vue.md"
     ],
     "endpoint": [
-      "/projects/bpt-sdk-doc-openai-protocol.md"
+      "/projects/silver-core-sdk-doc-openai-protocol.md"
     ],
     "engine": [
       "/projects/news-archive-sources-registry.md",
@@ -11889,10 +11884,10 @@
       "/assets/persona-erica.md"
     ],
     "error": [
-      "/projects/bpt-sdk-doc-errors.md"
+      "/projects/silver-core-sdk-doc-errors.md"
     ],
     "errors": [
-      "/projects/bpt-sdk-doc-errors.md"
+      "/projects/silver-core-sdk-doc-errors.md"
     ],
     "evaluation": [
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
@@ -11902,7 +11897,7 @@
       "/memory/memory-ext-collab-event-playbook.md"
     ],
     "every": [
-      "/projects/bpt-sdk-doc-errors.md"
+      "/projects/silver-core-sdk-doc-errors.md"
     ],
     "execution": [
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
@@ -12320,8 +12315,8 @@
       "/sources/youtube.md"
     ],
     "goal": [
-      "/projects/bpt-sdk-doc-onboarding.md",
-      "/projects/bpt-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-onboarding.md",
+      "/projects/silver-core-sdk-doc-subagents.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
     ],
     "google": [
@@ -12388,7 +12383,7 @@
     ],
     "harness": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md",
-      "/projects/bpt-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md"
     ],
@@ -12425,7 +12420,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md"
     ],
     "host": [
-      "/projects/bpt-sdk-doc-subagents.md"
+      "/projects/silver-core-sdk-doc-subagents.md"
     ],
     "hub": [
       "/memory/memory-ext-active-contribution-protocol.md",
@@ -12525,11 +12520,11 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "importing": [
-      "/projects/bpt-sdk-doc-migration.md"
+      "/projects/silver-core-sdk-doc-migration.md"
     ],
     "independent": [
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/project-bpt-agent-sdk.md"
+      "/projects/project-silver-core-sdk.md",
+      "/projects/silver-core-sdk-doc-architecture.md"
     ],
     "index": [
       "/README.md",
@@ -12678,7 +12673,7 @@
       "/resource/resource-community-analysis-jp-discord-insights-202606.md"
     ],
     "instead": [
-      "/projects/bpt-sdk-doc-openai-protocol.md"
+      "/projects/silver-core-sdk-doc-openai-protocol.md"
     ],
     "instructions": [
       "/memory/memory-ext-karpathy-coding-principles.md"
@@ -12846,7 +12841,7 @@
       "/unpacked/unpacked-vue.md"
     ],
     "keeper": [
-      "/projects/bpt-sdk-doc-compat.md"
+      "/projects/silver-core-sdk-doc-compat.md"
     ],
     "key": [
       "/memory/memory-ext-workflow-api-key-audit.md"
@@ -13014,27 +13009,27 @@
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md",
-      "/projects/bpt-sdk-doc-concurrency.md",
-      "/projects/bpt-sdk-doc-errors.md",
-      "/projects/bpt-sdk-doc-migration.md",
-      "/projects/bpt-sdk-doc-onboarding.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md",
-      "/projects/bpt-sdk-doc-positioning.md",
-      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/extracted-lua-inventory.md",
       "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-sdk.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-concurrency.md",
+      "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-onboarding.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -13307,7 +13302,7 @@
       "/memory/lessons-learned.md"
     ],
     "levels": [
-      "/projects/bpt-sdk-doc-concurrency.md"
+      "/projects/silver-core-sdk-doc-concurrency.md"
     ],
     "lexical": [
       "/story/story_search_index.md"
@@ -13416,7 +13411,7 @@
       "/memory/memory-ext-capability-registry.md",
       "/memory/memory-ext-facts.md",
       "/memory/memory-ext-session-continuity.md",
-      "/projects/bpt-sdk-doc-errors.md"
+      "/projects/silver-core-sdk-doc-errors.md"
     ],
     "main": [
       "/README.md",
@@ -13426,14 +13421,14 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
     ],
     "maintainer": [
-      "/projects/bpt-sdk-doc-onboarding.md"
+      "/projects/silver-core-sdk-doc-onboarding.md"
     ],
     "maintenance": [
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/wiki-data/wiki-data-update-notices.md"
     ],
     "make": [
-      "/projects/bpt-sdk-doc-onboarding.md"
+      "/projects/silver-core-sdk-doc-onboarding.md"
     ],
     "management": [
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
@@ -13446,7 +13441,7 @@
       "/wiki-data/wiki-data-cg-gallery.md"
     ],
     "many": [
-      "/projects/bpt-sdk-doc-concurrency.md"
+      "/projects/silver-core-sdk-doc-concurrency.md"
     ],
     "map": [
       "/projects/releases-treasure-map.md",
@@ -13534,25 +13529,25 @@
       "/memory/project-status.md",
       "/memory/strategic-plan-2026.md",
       "/memory/style-guide.md",
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md",
-      "/projects/bpt-sdk-doc-concurrency.md",
-      "/projects/bpt-sdk-doc-errors.md",
-      "/projects/bpt-sdk-doc-migration.md",
-      "/projects/bpt-sdk-doc-onboarding.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md",
-      "/projects/bpt-sdk-doc-positioning.md",
-      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/extracted-lua-readme.md",
-      "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-sdk.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-concurrency.md",
+      "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-onboarding.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-subagents.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
       "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
@@ -13727,12 +13722,12 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md"
     ],
     "migration": [
-      "/projects/bpt-sdk-doc-migration.md"
+      "/projects/silver-core-sdk-doc-migration.md"
     ],
     "milestone": [
-      "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-sdk.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
@@ -13789,7 +13784,7 @@
       "/README.md"
     ],
     "new": [
-      "/projects/bpt-sdk-doc-onboarding.md"
+      "/projects/silver-core-sdk-doc-onboarding.md"
     ],
     "news": [
       "/community/community-index.md",
@@ -13872,7 +13867,7 @@
       "/wiki-data/wiki-data-update-notices.md"
     ],
     "npm": [
-      "/projects/bpt-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-compat.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md"
     ],
     "o07cardkeyword": [
@@ -13886,7 +13881,7 @@
     ],
     "official": [
       "/news-output/news-output-official.md",
-      "/projects/bpt-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-migration.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -13902,14 +13897,14 @@
     ],
     "onboarding": [
       "/assets/assets-chat-onboarding-snippet.md",
-      "/projects/bpt-sdk-doc-onboarding.md"
+      "/projects/silver-core-sdk-doc-onboarding.md"
     ],
     "open": [
       "/README.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
     ],
     "openai": [
-      "/projects/bpt-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
@@ -13980,7 +13975,7 @@
       "/wiki-data/wiki-data-panel-text.md"
     ],
     "parallelism": [
-      "/projects/bpt-sdk-doc-concurrency.md"
+      "/projects/silver-core-sdk-doc-concurrency.md"
     ],
     "parse": [
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
@@ -14321,7 +14316,7 @@
     ],
     "positioning": [
       "/memory/memory-ext-bpt-positioning.md",
-      "/projects/bpt-sdk-doc-positioning.md"
+      "/projects/silver-core-sdk-doc-positioning.md"
     ],
     "post": [
       "/community/community-taptap.md",
@@ -14405,21 +14400,21 @@
     "project": [
       "/memory/memory-ext-karpathy-coding-principles.md",
       "/memory/project-status.md",
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md",
-      "/projects/bpt-sdk-doc-concurrency.md",
-      "/projects/bpt-sdk-doc-errors.md",
-      "/projects/bpt-sdk-doc-migration.md",
-      "/projects/bpt-sdk-doc-onboarding.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md",
-      "/projects/bpt-sdk-doc-positioning.md",
-      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-sdk.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-concurrency.md",
+      "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-onboarding.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-proposal-biav-project-plan-202603.md"
@@ -14455,21 +14450,21 @@
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md",
-      "/projects/bpt-sdk-doc-concurrency.md",
-      "/projects/bpt-sdk-doc-errors.md",
-      "/projects/bpt-sdk-doc-migration.md",
-      "/projects/bpt-sdk-doc-onboarding.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md",
-      "/projects/bpt-sdk-doc-positioning.md",
-      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-sdk.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-concurrency.md",
+      "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-onboarding.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
@@ -14564,14 +14559,14 @@
       "/memory/contribution-protocol.md",
       "/memory/memory-ext-active-contribution-protocol.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
     ],
     "prototype": [
       "/resource/resource-proposal-wiki-prototype-202603.md"
     ],
     "prove": [
-      "/projects/bpt-sdk-doc-onboarding.md"
+      "/projects/silver-core-sdk-doc-onboarding.md"
     ],
     "provenance": [
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
@@ -14591,7 +14586,7 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/projects/bpt-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-compat.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
       "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
@@ -14804,7 +14799,7 @@
       "/projects/releases-treasure-map.md"
     ],
     "readable": [
-      "/projects/bpt-sdk-doc-errors.md"
+      "/projects/silver-core-sdk-doc-errors.md"
     ],
     "readfile": [
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md"
@@ -14901,7 +14896,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md"
     ],
     "reimplementation": [
-      "/projects/project-bpt-agent-sdk.md",
+      "/projects/project-silver-core-sdk.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
     ],
     "rele": [
@@ -15122,7 +15117,7 @@
       "/news-output/news-output-feed.md"
     ],
     "ruling": [
-      "/projects/bpt-sdk-doc-compat.md"
+      "/projects/silver-core-sdk-doc-compat.md"
     ],
     "ruliweb": [
       "/community/community-ruliweb.md",
@@ -15152,7 +15147,7 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-build-verification.md"
     ],
     "safely": [
-      "/projects/bpt-sdk-doc-onboarding.md"
+      "/projects/silver-core-sdk-doc-onboarding.md"
     ],
     "sampled": [
       "/news-output/news-output-all.md",
@@ -15224,16 +15219,16 @@
     ],
     "sdk": [
       "/README.md",
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md",
-      "/projects/bpt-sdk-doc-concurrency.md",
-      "/projects/bpt-sdk-doc-errors.md",
-      "/projects/bpt-sdk-doc-migration.md",
-      "/projects/bpt-sdk-doc-onboarding.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md",
-      "/projects/bpt-sdk-doc-positioning.md",
-      "/projects/bpt-sdk-doc-subagents.md",
-      "/projects/project-bpt-agent-sdk.md",
+      "/projects/project-silver-core-sdk.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-concurrency.md",
+      "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-onboarding.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-subagents.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -15264,7 +15259,7 @@
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
     ],
     "sdk's": [
-      "/projects/bpt-sdk-doc-subagents.md"
+      "/projects/silver-core-sdk-doc-subagents.md"
     ],
     "search": [
       "/README.md",
@@ -15305,6 +15300,16 @@
     "silver": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-silver-blackpool-interface.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
+      "/projects/project-silver-core-sdk.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-concurrency.md",
+      "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-onboarding.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-subagents.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
     ],
@@ -15440,11 +15445,11 @@
       "/unpacked/unpacked-sproto.md"
     ],
     "src": [
-      "/projects/bpt-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-errors.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
     ],
     "stable": [
-      "/projects/bpt-sdk-doc-errors.md"
+      "/projects/silver-core-sdk-doc-errors.md"
     ],
     "stage": [
       "/wiki-data/wiki-data-stages.md"
@@ -15596,29 +15601,29 @@
       "/memory/style-guide.md"
     ],
     "sub": [
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md",
-      "/projects/bpt-sdk-doc-concurrency.md",
-      "/projects/bpt-sdk-doc-errors.md",
-      "/projects/bpt-sdk-doc-migration.md",
-      "/projects/bpt-sdk-doc-onboarding.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md",
-      "/projects/bpt-sdk-doc-positioning.md",
-      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-sdk.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-concurrency.md",
+      "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-onboarding.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md"
     ],
     "subagent": [
-      "/projects/bpt-sdk-doc-subagents.md"
+      "/projects/silver-core-sdk-doc-subagents.md"
     ],
     "subagents": [
-      "/projects/bpt-sdk-doc-subagents.md"
+      "/projects/silver-core-sdk-doc-subagents.md"
     ],
     "suite": [
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
@@ -15685,11 +15690,11 @@
       "/wiki-data/wiki-data-summon.md"
     ],
     "supports": [
-      "/projects/bpt-sdk-doc-concurrency.md"
+      "/projects/silver-core-sdk-doc-concurrency.md"
     ],
     "surface": [
-      "/projects/bpt-sdk-doc-compat.md",
-      "/projects/bpt-sdk-doc-subagents.md"
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-subagents.md"
     ],
     "survey": [
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
@@ -15738,7 +15743,7 @@
       "/README.md"
     ],
     "target": [
-      "/projects/bpt-sdk-doc-compat.md"
+      "/projects/silver-core-sdk-doc-compat.md"
     ],
     "task": [
       "/wiki-data/wiki-data-tasks.md"
@@ -15785,7 +15790,7 @@
     ],
     "three": [
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
-      "/projects/bpt-sdk-doc-concurrency.md"
+      "/projects/silver-core-sdk-doc-concurrency.md"
     ],
     "tier": [
       "/community/community-index.md"
@@ -15943,10 +15948,10 @@
       "/wiki-data/wiki-schema-trinkets-schema.md"
     ],
     "true": [
-      "/projects/bpt-sdk-doc-concurrency.md"
+      "/projects/silver-core-sdk-doc-concurrency.md"
     ],
     "ts": [
-      "/projects/bpt-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-errors.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
     ],
     "twitter": [
@@ -15956,7 +15961,7 @@
       "/README.md"
     ],
     "typescript": [
-      "/projects/project-bpt-agent-sdk.md"
+      "/projects/project-silver-core-sdk.md"
     ],
     "ui": [
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
@@ -16064,7 +16069,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "uses": [
-      "/projects/bpt-sdk-doc-subagents.md"
+      "/projects/silver-core-sdk-doc-subagents.md"
     ],
     "utils": [
       "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
@@ -16214,7 +16219,7 @@
       "/unpacked/unpacked-vue.md"
     ],
     "way": [
-      "/projects/bpt-sdk-doc-subagents.md"
+      "/projects/silver-core-sdk-doc-subagents.md"
     ],
     "weibo": [
       "/community/community-weibo.md",
@@ -16287,7 +16292,7 @@
       "/resource/resource-daily-news-morimens-window-20260602.md"
     ],
     "wire": [
-      "/projects/bpt-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-subagents.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md"
     ],
     "wireframe": [
@@ -16324,8 +16329,8 @@
     "zero": [
       "/community/community-index.md",
       "/community/community-timeline.md",
-      "/projects/bpt-sdk-doc-compat.md",
-      "/projects/bpt-sdk-doc-onboarding.md"
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-onboarding.md"
     ],
     "に固": [
       "/resource/resource-community-analysis-jp-discord-insights-202606.md"
@@ -16410,7 +16415,7 @@
       "/characters/15577.md"
     ],
     "一套": [
-      "/projects/bpt-sdk-doc-positioning.md"
+      "/projects/silver-core-sdk-doc-positioning.md"
     ],
     "一层": [
       "/characters/15565.md"
@@ -16596,9 +16601,9 @@
       "/characters/15565.md"
     ],
     "上下": [
-      "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-sdk.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md"
     ],
@@ -16668,9 +16673,9 @@
     ],
     "下文": [
       "/memory/memory-ext-skill-authoring-standard.md",
-      "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-sdk.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md"
     ],
@@ -16871,27 +16876,27 @@
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md",
-      "/projects/bpt-sdk-doc-concurrency.md",
-      "/projects/bpt-sdk-doc-errors.md",
-      "/projects/bpt-sdk-doc-migration.md",
-      "/projects/bpt-sdk-doc-onboarding.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md",
-      "/projects/bpt-sdk-doc-positioning.md",
-      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/extracted-lua-inventory.md",
       "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-sdk.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-concurrency.md",
+      "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-onboarding.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -17130,27 +17135,27 @@
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md",
-      "/projects/bpt-sdk-doc-concurrency.md",
-      "/projects/bpt-sdk-doc-errors.md",
-      "/projects/bpt-sdk-doc-migration.md",
-      "/projects/bpt-sdk-doc-onboarding.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md",
-      "/projects/bpt-sdk-doc-positioning.md",
-      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/extracted-lua-inventory.md",
       "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-sdk.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-concurrency.md",
+      "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-onboarding.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -17443,27 +17448,27 @@
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md",
-      "/projects/bpt-sdk-doc-concurrency.md",
-      "/projects/bpt-sdk-doc-errors.md",
-      "/projects/bpt-sdk-doc-migration.md",
-      "/projects/bpt-sdk-doc-onboarding.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md",
-      "/projects/bpt-sdk-doc-positioning.md",
-      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/extracted-lua-inventory.md",
       "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-sdk.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-concurrency.md",
+      "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-onboarding.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -17766,7 +17771,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
     ],
     "个我": [
-      "/projects/bpt-sdk-doc-positioning.md"
+      "/projects/silver-core-sdk-doc-positioning.md"
     ],
     "个捣": [
       "/characters/15598.md"
@@ -18632,27 +18637,27 @@
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md",
-      "/projects/bpt-sdk-doc-concurrency.md",
-      "/projects/bpt-sdk-doc-errors.md",
-      "/projects/bpt-sdk-doc-migration.md",
-      "/projects/bpt-sdk-doc-onboarding.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md",
-      "/projects/bpt-sdk-doc-positioning.md",
-      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/extracted-lua-inventory.md",
       "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-sdk.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-concurrency.md",
+      "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-onboarding.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -19078,7 +19083,7 @@
       "/characters/15596.md"
     ],
     "们完": [
-      "/projects/bpt-sdk-doc-positioning.md"
+      "/projects/silver-core-sdk-doc-positioning.md"
     ],
     "们工": [
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
@@ -19564,27 +19569,27 @@
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md",
-      "/projects/bpt-sdk-doc-concurrency.md",
-      "/projects/bpt-sdk-doc-errors.md",
-      "/projects/bpt-sdk-doc-migration.md",
-      "/projects/bpt-sdk-doc-onboarding.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md",
-      "/projects/bpt-sdk-doc-positioning.md",
-      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/extracted-lua-inventory.md",
       "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-sdk.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-concurrency.md",
+      "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-onboarding.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -19822,27 +19827,27 @@
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md",
-      "/projects/bpt-sdk-doc-concurrency.md",
-      "/projects/bpt-sdk-doc-errors.md",
-      "/projects/bpt-sdk-doc-migration.md",
-      "/projects/bpt-sdk-doc-onboarding.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md",
-      "/projects/bpt-sdk-doc-positioning.md",
-      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/extracted-lua-inventory.md",
       "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-sdk.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-concurrency.md",
+      "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-onboarding.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -20571,7 +20576,7 @@
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md"
     ],
     "全掌": [
-      "/projects/bpt-sdk-doc-positioning.md"
+      "/projects/silver-core-sdk-doc-positioning.md"
     ],
     "全档": [
       "/README.md",
@@ -20673,7 +20678,7 @@
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
       "/projects/entry-readme.md",
-      "/projects/project-bpt-agent-sdk.md",
+      "/projects/project-silver-core-sdk.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
@@ -20856,7 +20861,7 @@
       "/characters/15603.md"
     ],
     "兼容": [
-      "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md"
     ],
     "兽吞": [
@@ -21624,27 +21629,27 @@
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md",
-      "/projects/bpt-sdk-doc-concurrency.md",
-      "/projects/bpt-sdk-doc-errors.md",
-      "/projects/bpt-sdk-doc-migration.md",
-      "/projects/bpt-sdk-doc-onboarding.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md",
-      "/projects/bpt-sdk-doc-positioning.md",
-      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/extracted-lua-inventory.md",
       "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-sdk.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-concurrency.md",
+      "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-onboarding.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -22302,7 +22307,7 @@
       "/README.md"
     ],
     "单更": [
-      "/projects/bpt-sdk-doc-positioning.md"
+      "/projects/silver-core-sdk-doc-positioning.md"
     ],
     "单本": [
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md"
@@ -22559,7 +22564,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md"
     ],
     "原版": [
-      "/projects/bpt-sdk-doc-positioning.md"
+      "/projects/silver-core-sdk-doc-positioning.md"
     ],
     "原诚": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
@@ -23212,7 +23217,7 @@
     ],
     "可靠": [
       "/characters/15602.md",
-      "/projects/bpt-sdk-doc-positioning.md"
+      "/projects/silver-core-sdk-doc-positioning.md"
     ],
     "可预": [
       "/memory/memory-ext-wiki-characters-schema-v1.md"
@@ -24760,27 +24765,27 @@
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md",
-      "/projects/bpt-sdk-doc-concurrency.md",
-      "/projects/bpt-sdk-doc-errors.md",
-      "/projects/bpt-sdk-doc-migration.md",
-      "/projects/bpt-sdk-doc-onboarding.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md",
-      "/projects/bpt-sdk-doc-positioning.md",
-      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/extracted-lua-inventory.md",
       "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-sdk.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-concurrency.md",
+      "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-onboarding.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -25266,7 +25271,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md"
     ],
     "套稳": [
-      "/projects/bpt-sdk-doc-positioning.md"
+      "/projects/silver-core-sdk-doc-positioning.md"
     ],
     "套银": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md"
@@ -25539,27 +25544,27 @@
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md",
-      "/projects/bpt-sdk-doc-concurrency.md",
-      "/projects/bpt-sdk-doc-errors.md",
-      "/projects/bpt-sdk-doc-migration.md",
-      "/projects/bpt-sdk-doc-onboarding.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md",
-      "/projects/bpt-sdk-doc-positioning.md",
-      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/extracted-lua-inventory.md",
       "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-sdk.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-concurrency.md",
+      "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-onboarding.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -25738,9 +25743,9 @@
     "子项": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md",
       "/memory/project-status.md",
-      "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-sdk.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md"
     ],
@@ -25984,7 +25989,7 @@
       "/projects/entry-claude-md.md"
     ],
     "完全": [
-      "/projects/bpt-sdk-doc-positioning.md"
+      "/projects/silver-core-sdk-doc-positioning.md"
     ],
     "完工": [
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md"
@@ -26149,27 +26154,27 @@
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md",
-      "/projects/bpt-sdk-doc-concurrency.md",
-      "/projects/bpt-sdk-doc-errors.md",
-      "/projects/bpt-sdk-doc-migration.md",
-      "/projects/bpt-sdk-doc-onboarding.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md",
-      "/projects/bpt-sdk-doc-positioning.md",
-      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/extracted-lua-inventory.md",
       "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-sdk.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-concurrency.md",
+      "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-onboarding.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -26320,7 +26325,7 @@
       "/wiki-data/wiki-schema-trinkets-schema.md"
     ],
     "定兼": [
-      "/projects/bpt-sdk-doc-positioning.md"
+      "/projects/silver-core-sdk-doc-positioning.md"
     ],
     "定就": [
       "/characters/15576.md"
@@ -26369,7 +26374,7 @@
     ],
     "实现": [
       "/README.md",
-      "/projects/project-bpt-agent-sdk.md",
+      "/projects/project-silver-core-sdk.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
@@ -26514,7 +26519,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md"
     ],
     "容的": [
-      "/projects/bpt-sdk-doc-positioning.md"
+      "/projects/silver-core-sdk-doc-positioning.md"
     ],
     "容盲": [
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
@@ -27840,7 +27845,7 @@
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "开调": [
-      "/projects/project-bpt-agent-sdk.md"
+      "/projects/project-silver-core-sdk.md"
     ],
     "开资": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md"
@@ -27894,7 +27899,7 @@
     ],
     "引擎": [
       "/characters/15602.md",
-      "/projects/bpt-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
@@ -29882,27 +29887,27 @@
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md",
-      "/projects/bpt-sdk-doc-concurrency.md",
-      "/projects/bpt-sdk-doc-errors.md",
-      "/projects/bpt-sdk-doc-migration.md",
-      "/projects/bpt-sdk-doc-onboarding.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md",
-      "/projects/bpt-sdk-doc-positioning.md",
-      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/extracted-lua-inventory.md",
       "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-sdk.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-concurrency.md",
+      "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-onboarding.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -30268,7 +30273,7 @@
     ],
     "掌控": [
       "/characters/77925.md",
-      "/projects/bpt-sdk-doc-positioning.md"
+      "/projects/silver-core-sdk-doc-positioning.md"
     ],
     "掌握": [
       "/characters/54116.md"
@@ -30419,27 +30424,27 @@
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md",
-      "/projects/bpt-sdk-doc-concurrency.md",
-      "/projects/bpt-sdk-doc-errors.md",
-      "/projects/bpt-sdk-doc-migration.md",
-      "/projects/bpt-sdk-doc-onboarding.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md",
-      "/projects/bpt-sdk-doc-positioning.md",
-      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/extracted-lua-inventory.md",
       "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-sdk.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-concurrency.md",
+      "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-onboarding.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -30746,27 +30751,27 @@
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md",
-      "/projects/bpt-sdk-doc-concurrency.md",
-      "/projects/bpt-sdk-doc-errors.md",
-      "/projects/bpt-sdk-doc-migration.md",
-      "/projects/bpt-sdk-doc-onboarding.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md",
-      "/projects/bpt-sdk-doc-positioning.md",
-      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/extracted-lua-inventory.md",
       "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-sdk.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-concurrency.md",
+      "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-onboarding.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -31148,27 +31153,27 @@
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md",
-      "/projects/bpt-sdk-doc-concurrency.md",
-      "/projects/bpt-sdk-doc-errors.md",
-      "/projects/bpt-sdk-doc-migration.md",
-      "/projects/bpt-sdk-doc-onboarding.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md",
-      "/projects/bpt-sdk-doc-positioning.md",
-      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/extracted-lua-inventory.md",
       "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-sdk.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-concurrency.md",
+      "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-onboarding.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -31425,27 +31430,27 @@
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md",
-      "/projects/bpt-sdk-doc-concurrency.md",
-      "/projects/bpt-sdk-doc-errors.md",
-      "/projects/bpt-sdk-doc-migration.md",
-      "/projects/bpt-sdk-doc-onboarding.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md",
-      "/projects/bpt-sdk-doc-positioning.md",
-      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/extracted-lua-inventory.md",
       "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-sdk.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-concurrency.md",
+      "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-onboarding.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -32641,7 +32646,7 @@
       "/characters/15602.md"
     ],
     "更可": [
-      "/projects/bpt-sdk-doc-positioning.md"
+      "/projects/silver-core-sdk-doc-positioning.md"
     ],
     "更多": [
       "/characters/15582.md",
@@ -32668,7 +32673,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "更简": [
-      "/projects/bpt-sdk-doc-positioning.md"
+      "/projects/silver-core-sdk-doc-positioning.md"
     ],
     "更高": [
       "/characters/15562.md"
@@ -33072,27 +33077,27 @@
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md",
-      "/projects/bpt-sdk-doc-concurrency.md",
-      "/projects/bpt-sdk-doc-errors.md",
-      "/projects/bpt-sdk-doc-migration.md",
-      "/projects/bpt-sdk-doc-onboarding.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md",
-      "/projects/bpt-sdk-doc-positioning.md",
-      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/extracted-lua-inventory.md",
       "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-sdk.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-concurrency.md",
+      "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-onboarding.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -33487,27 +33492,27 @@
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md",
-      "/projects/bpt-sdk-doc-concurrency.md",
-      "/projects/bpt-sdk-doc-errors.md",
-      "/projects/bpt-sdk-doc-migration.md",
-      "/projects/bpt-sdk-doc-onboarding.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md",
-      "/projects/bpt-sdk-doc-positioning.md",
-      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/extracted-lua-inventory.md",
       "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-sdk.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-concurrency.md",
+      "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-onboarding.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -34056,27 +34061,27 @@
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md",
-      "/projects/bpt-sdk-doc-concurrency.md",
-      "/projects/bpt-sdk-doc-errors.md",
-      "/projects/bpt-sdk-doc-migration.md",
-      "/projects/bpt-sdk-doc-onboarding.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md",
-      "/projects/bpt-sdk-doc-positioning.md",
-      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/extracted-lua-inventory.md",
       "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-sdk.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-concurrency.md",
+      "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-onboarding.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -34376,7 +34381,7 @@
     ],
     "框架": [
       "/memory/memory-ext-biav-info-classification.md",
-      "/projects/project-bpt-agent-sdk.md"
+      "/projects/project-silver-core-sdk.md"
     ],
     "案分": [
       "/community/community-index.md",
@@ -34732,27 +34737,27 @@
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md",
-      "/projects/bpt-sdk-doc-concurrency.md",
-      "/projects/bpt-sdk-doc-errors.md",
-      "/projects/bpt-sdk-doc-migration.md",
-      "/projects/bpt-sdk-doc-onboarding.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md",
-      "/projects/bpt-sdk-doc-positioning.md",
-      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/extracted-lua-inventory.md",
       "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-sdk.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-concurrency.md",
+      "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-onboarding.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -35109,27 +35114,27 @@
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md",
-      "/projects/bpt-sdk-doc-concurrency.md",
-      "/projects/bpt-sdk-doc-errors.md",
-      "/projects/bpt-sdk-doc-migration.md",
-      "/projects/bpt-sdk-doc-onboarding.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md",
-      "/projects/bpt-sdk-doc-positioning.md",
-      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/extracted-lua-inventory.md",
       "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-sdk.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-concurrency.md",
+      "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-onboarding.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -35416,7 +35421,7 @@
       "/characters/15600.md"
     ],
     "比原": [
-      "/projects/bpt-sdk-doc-positioning.md"
+      "/projects/silver-core-sdk-doc-positioning.md"
     ],
     "比喻": [
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
@@ -36263,7 +36268,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "版更": [
-      "/projects/bpt-sdk-doc-positioning.md"
+      "/projects/silver-core-sdk-doc-positioning.md"
     ],
     "版本": [
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
@@ -36494,8 +36499,8 @@
     ],
     "独立": [
       "/README.md",
-      "/projects/bpt-sdk-doc-positioning.md",
-      "/projects/project-bpt-agent-sdk.md",
+      "/projects/project-silver-core-sdk.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
     ],
     "猎出": [
@@ -37103,7 +37108,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
     ],
     "用面": [
-      "/projects/project-bpt-agent-sdk.md"
+      "/projects/project-silver-core-sdk.md"
     ],
     "用黑": [
       "/characters/15571.md"
@@ -37776,7 +37781,7 @@
     ],
     "的独": [
       "/characters/15586.md",
-      "/projects/bpt-sdk-doc-positioning.md"
+      "/projects/silver-core-sdk-doc-positioning.md"
     ],
     "的猎": [
       "/characters/15601.md"
@@ -37954,7 +37959,7 @@
       "/README.md"
     ],
     "的调": [
-      "/projects/bpt-sdk-doc-positioning.md"
+      "/projects/silver-core-sdk-doc-positioning.md"
     ],
     "的责": [
       "/characters/77922.md"
@@ -38096,9 +38101,9 @@
       "/characters/15581.md"
     ],
     "目上": [
-      "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-sdk.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md"
     ],
@@ -38873,7 +38878,7 @@
     ],
     "稳定": [
       "/characters/94450.md",
-      "/projects/bpt-sdk-doc-positioning.md"
+      "/projects/silver-core-sdk-doc-positioning.md"
     ],
     "穰之": [
       "/characters/15596.md"
@@ -38992,7 +38997,7 @@
       "/memory/memory-ext-wiki-characters-schema-v1.md"
     ],
     "立重": [
-      "/projects/project-bpt-agent-sdk.md"
+      "/projects/project-silver-core-sdk.md"
     ],
     "章嗣": [
       "/characters/15564.md"
@@ -39102,7 +39107,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md"
     ],
     "简单": [
-      "/projects/bpt-sdk-doc-positioning.md"
+      "/projects/silver-core-sdk-doc-positioning.md"
     ],
     "简默": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
@@ -40717,7 +40722,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md"
     ],
     "表面": [
-      "/projects/bpt-sdk-doc-positioning.md"
+      "/projects/silver-core-sdk-doc-positioning.md"
     ],
     "衰弱": [
       "/characters/15601.md"
@@ -41581,8 +41586,8 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md"
     ],
     "调用": [
-      "/projects/bpt-sdk-doc-positioning.md",
-      "/projects/project-bpt-agent-sdk.md",
+      "/projects/project-silver-core-sdk.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "谕中": [
@@ -41939,27 +41944,27 @@
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md",
-      "/projects/bpt-sdk-doc-concurrency.md",
-      "/projects/bpt-sdk-doc-errors.md",
-      "/projects/bpt-sdk-doc-migration.md",
-      "/projects/bpt-sdk-doc-onboarding.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md",
-      "/projects/bpt-sdk-doc-positioning.md",
-      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/extracted-lua-inventory.md",
       "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-sdk.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-concurrency.md",
+      "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-onboarding.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -42597,27 +42602,27 @@
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md",
-      "/projects/bpt-sdk-doc-concurrency.md",
-      "/projects/bpt-sdk-doc-errors.md",
-      "/projects/bpt-sdk-doc-migration.md",
-      "/projects/bpt-sdk-doc-onboarding.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md",
-      "/projects/bpt-sdk-doc-positioning.md",
-      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/extracted-lua-inventory.md",
       "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-sdk.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-concurrency.md",
+      "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-onboarding.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -43220,7 +43225,7 @@
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md"
     ],
     "重实": [
-      "/projects/project-bpt-agent-sdk.md",
+      "/projects/project-silver-core-sdk.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
     ],
     "重度": [
@@ -43588,27 +43593,27 @@
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md",
-      "/projects/bpt-sdk-doc-concurrency.md",
-      "/projects/bpt-sdk-doc-errors.md",
-      "/projects/bpt-sdk-doc-migration.md",
-      "/projects/bpt-sdk-doc-onboarding.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md",
-      "/projects/bpt-sdk-doc-positioning.md",
-      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/extracted-lua-inventory.md",
       "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-sdk.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-concurrency.md",
+      "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-onboarding.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -43834,27 +43839,27 @@
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md",
-      "/projects/bpt-sdk-doc-concurrency.md",
-      "/projects/bpt-sdk-doc-errors.md",
-      "/projects/bpt-sdk-doc-migration.md",
-      "/projects/bpt-sdk-doc-onboarding.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md",
-      "/projects/bpt-sdk-doc-positioning.md",
-      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/extracted-lua-inventory.md",
       "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-sdk.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-concurrency.md",
+      "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-onboarding.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -44566,7 +44571,7 @@
       "/characters/15602.md"
     ],
     "靠的": [
-      "/projects/bpt-sdk-doc-positioning.md"
+      "/projects/silver-core-sdk-doc-positioning.md"
     ],
     "靠近": [
       "/characters/15586.md"
@@ -44626,9 +44631,9 @@
       "/memory/memory-ext-bpt-positioning.md",
       "/memory/memory-ext-storage-discussion.md",
       "/memory/project-status.md",
-      "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-sdk.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
@@ -45020,16 +45025,6 @@
       "/sources/youtube_comments.md"
     ],
     "agent": [
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md",
-      "/projects/bpt-sdk-doc-concurrency.md",
-      "/projects/bpt-sdk-doc-errors.md",
-      "/projects/bpt-sdk-doc-migration.md",
-      "/projects/bpt-sdk-doc-onboarding.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md",
-      "/projects/bpt-sdk-doc-positioning.md",
-      "/projects/bpt-sdk-doc-subagents.md",
-      "/projects/project-bpt-agent-sdk.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md"
@@ -45101,7 +45096,7 @@
     ],
     "architecture": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md",
-      "/projects/bpt-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "archive": [
@@ -45296,16 +45291,6 @@
       "/memory/memory-ext-bpt-guidance-protocol.md",
       "/memory/memory-ext-bpt-positioning.md",
       "/memory/memory-ext-phase-d-plan.md",
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md",
-      "/projects/bpt-sdk-doc-concurrency.md",
-      "/projects/bpt-sdk-doc-errors.md",
-      "/projects/bpt-sdk-doc-migration.md",
-      "/projects/bpt-sdk-doc-onboarding.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md",
-      "/projects/bpt-sdk-doc-positioning.md",
-      "/projects/bpt-sdk-doc-subagents.md",
-      "/projects/project-bpt-agent-sdk.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -45448,7 +45433,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "compat": [
-      "/projects/bpt-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-compat.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md"
     ],
     "completion": [
@@ -45457,7 +45442,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md"
     ],
     "concurrency": [
-      "/projects/bpt-sdk-doc-concurrency.md"
+      "/projects/silver-core-sdk-doc-concurrency.md"
     ],
     "config": [
       "/unpacked/unpacked-config.md",
@@ -45490,9 +45475,9 @@
     ],
     "context": [
       "/memory/morimens-context.md",
-      "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-sdk.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md"
     ],
@@ -45513,6 +45498,16 @@
       "/memory/contribution-protocol.md"
     ],
     "core": [
+      "/projects/project-silver-core-sdk.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-concurrency.md",
+      "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-onboarding.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-subagents.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
     ],
@@ -45589,27 +45584,27 @@
       "/memory/memory-research-community-analysis-2026-05-18-26.md",
       "/memory/memory-research-discord-archive-backfill-conflict.md",
       "/memory/memory-strategy-repo-slimming-plan.md",
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md",
-      "/projects/bpt-sdk-doc-concurrency.md",
-      "/projects/bpt-sdk-doc-errors.md",
-      "/projects/bpt-sdk-doc-migration.md",
-      "/projects/bpt-sdk-doc-onboarding.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md",
-      "/projects/bpt-sdk-doc-positioning.md",
-      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/extracted-lua-inventory.md",
       "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-sdk.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-concurrency.md",
+      "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-onboarding.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -45896,27 +45891,27 @@
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md",
-      "/projects/bpt-sdk-doc-concurrency.md",
-      "/projects/bpt-sdk-doc-errors.md",
-      "/projects/bpt-sdk-doc-migration.md",
-      "/projects/bpt-sdk-doc-onboarding.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md",
-      "/projects/bpt-sdk-doc-positioning.md",
-      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/extracted-lua-inventory.md",
       "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-sdk.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-concurrency.md",
+      "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-onboarding.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -46167,15 +46162,15 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-silver-blackpool-interface.md",
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md",
-      "/projects/bpt-sdk-doc-concurrency.md",
-      "/projects/bpt-sdk-doc-errors.md",
-      "/projects/bpt-sdk-doc-migration.md",
-      "/projects/bpt-sdk-doc-onboarding.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md",
-      "/projects/bpt-sdk-doc-positioning.md",
-      "/projects/bpt-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-concurrency.md",
+      "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-onboarding.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
@@ -46233,17 +46228,17 @@
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
     ],
     "doc": [
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md",
-      "/projects/bpt-sdk-doc-concurrency.md",
-      "/projects/bpt-sdk-doc-errors.md",
-      "/projects/bpt-sdk-doc-migration.md",
-      "/projects/bpt-sdk-doc-onboarding.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md",
-      "/projects/bpt-sdk-doc-positioning.md",
-      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
-      "/projects/extracted-lua-readme.md"
+      "/projects/extracted-lua-readme.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-concurrency.md",
+      "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-onboarding.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-subagents.md"
     ],
     "docs": [
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md"
@@ -46364,7 +46359,7 @@
       "/assets/persona-erica.md"
     ],
     "errors": [
-      "/projects/bpt-sdk-doc-errors.md"
+      "/projects/silver-core-sdk-doc-errors.md"
     ],
     "evaluation": [
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
@@ -46806,27 +46801,27 @@
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md",
-      "/projects/bpt-sdk-doc-concurrency.md",
-      "/projects/bpt-sdk-doc-errors.md",
-      "/projects/bpt-sdk-doc-migration.md",
-      "/projects/bpt-sdk-doc-onboarding.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md",
-      "/projects/bpt-sdk-doc-positioning.md",
-      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/extracted-lua-inventory.md",
       "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-sdk.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/projects/releases-treasure-map.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-concurrency.md",
+      "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-onboarding.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -47166,12 +47161,12 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md"
     ],
     "migration": [
-      "/projects/bpt-sdk-doc-migration.md"
+      "/projects/silver-core-sdk-doc-migration.md"
     ],
     "milestone": [
-      "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-sdk.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
@@ -47241,10 +47236,10 @@
     ],
     "onboarding": [
       "/assets/assets-chat-onboarding-snippet.md",
-      "/projects/bpt-sdk-doc-onboarding.md"
+      "/projects/silver-core-sdk-doc-onboarding.md"
     ],
     "openai": [
-      "/projects/bpt-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md"
     ],
     "optimization": [
@@ -47458,7 +47453,7 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md"
     ],
     "positioning": [
-      "/projects/bpt-sdk-doc-positioning.md"
+      "/projects/silver-core-sdk-doc-positioning.md"
     ],
     "potency": [
       "/wiki-data/wiki-data-potency.md"
@@ -47480,21 +47475,21 @@
     ],
     "project": [
       "/memory/project-status.md",
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md",
-      "/projects/bpt-sdk-doc-concurrency.md",
-      "/projects/bpt-sdk-doc-errors.md",
-      "/projects/bpt-sdk-doc-migration.md",
-      "/projects/bpt-sdk-doc-onboarding.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md",
-      "/projects/bpt-sdk-doc-positioning.md",
-      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-sdk.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-concurrency.md",
+      "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-onboarding.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-proposal-biav-project-plan-202603.md"
@@ -47525,7 +47520,7 @@
     ],
     "protocol": [
       "/memory/contribution-protocol.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
     ],
     "prototype": [
@@ -47731,16 +47726,16 @@
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
     ],
     "sdk": [
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md",
-      "/projects/bpt-sdk-doc-concurrency.md",
-      "/projects/bpt-sdk-doc-errors.md",
-      "/projects/bpt-sdk-doc-migration.md",
-      "/projects/bpt-sdk-doc-onboarding.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md",
-      "/projects/bpt-sdk-doc-positioning.md",
-      "/projects/bpt-sdk-doc-subagents.md",
-      "/projects/project-bpt-agent-sdk.md",
+      "/projects/project-silver-core-sdk.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-concurrency.md",
+      "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-onboarding.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-subagents.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -47787,6 +47782,16 @@
       "/unpacked/unpacked-share.md"
     ],
     "silver": [
+      "/projects/project-silver-core-sdk.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-concurrency.md",
+      "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-onboarding.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-subagents.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
     ],
@@ -47884,26 +47889,26 @@
       "/memory/style-guide.md"
     ],
     "sub": [
-      "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md",
-      "/projects/bpt-sdk-doc-concurrency.md",
-      "/projects/bpt-sdk-doc-errors.md",
-      "/projects/bpt-sdk-doc-migration.md",
-      "/projects/bpt-sdk-doc-onboarding.md",
-      "/projects/bpt-sdk-doc-openai-protocol.md",
-      "/projects/bpt-sdk-doc-positioning.md",
-      "/projects/bpt-sdk-doc-subagents.md",
       "/projects/news-archive-sources-registry.md",
-      "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-sdk.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md",
+      "/projects/silver-core-sdk-doc-architecture.md",
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-concurrency.md",
+      "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-onboarding.md",
+      "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md"
     ],
     "subagents": [
-      "/projects/bpt-sdk-doc-subagents.md"
+      "/projects/silver-core-sdk-doc-subagents.md"
     ],
     "suite": [
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
@@ -48240,9 +48245,9 @@
       "/characters/15603.md"
     ],
     "上下": [
-      "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-sdk.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md"
     ],
@@ -48250,9 +48255,9 @@
       "/memory/memory-research-discord-archive-backfill-conflict.md"
     ],
     "下文": [
-      "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-sdk.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md"
     ],
@@ -48687,9 +48692,9 @@
       "/characters/95786.md"
     ],
     "子项": [
-      "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-sdk.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md"
     ],
@@ -49667,9 +49672,9 @@
       "/characters/15581.md"
     ],
     "目上": [
-      "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-sdk.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md"
     ],
@@ -50176,9 +50181,9 @@
       "/characters/15592.md"
     ],
     "项目": [
-      "/projects/project-bpt-agent-sdk.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
+      "/projects/project-silver-core-sdk.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md"
     ],

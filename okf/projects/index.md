@@ -1,6 +1,6 @@
 # 入口文档 + 子项目上下文 + 藏宝图 + 设计/工程文档 (23)
 
-仓库最高权威入口（CLAUDE.md / README.md）+ 各子项目 CONTEXT.md（动手前必读）+ RELEASES.md 藏宝图 + bpt-agent-sdk/site 设计文档 + 工程文档 + 归档注册表的导航指针。
+仓库最高权威入口（CLAUDE.md / README.md）+ 各子项目 CONTEXT.md（动手前必读）+ RELEASES.md 藏宝图 + silver-core-sdk/site 设计文档 + 工程文档 + 归档注册表的导航指针。
 
 ## 概念
 
@@ -10,16 +10,16 @@
 * [wiki 子项目上下文](/projects/project-wiki.md) - **wiki = 银芯二核心使命之 #2「社区共建知识底座」核心载体**（CLAUDE.md §1.2）。
 * [site 子项目上下文](/projects/project-site.md) - **site = 银芯使命对外门户 / 三轴（site·news·wiki）发现入口**（非任一单一使命的载体；使命#2「社区共建知识底座」载体为 wiki，见
 * [game 子项目上下文](/projects/project-game.md) - **game = 守密人个人兴趣项目（主）+ 未来扩展可能 ⓐⓒ（备）**
-* [bpt-agent-sdk 子项目上下文](/projects/project-bpt-agent-sdk.md) - BPT Agent SDK：独立重实现（independent reimplementation）的 TypeScript agent 框架，公开调用面
-* [bpt-agent-sdk ARCHITECTURE](/projects/bpt-sdk-doc-architecture.md) - Independent agent harness with a `@anthropic-ai/claude-agent-sdk`-compatible
-* [bpt-agent-sdk COMPAT](/projects/bpt-sdk-doc-compat.md) - Target surface: `@anthropic-ai/claude-agent-sdk` public API (npm 0.3.205; chased
-* [bpt-agent-sdk CONCURRENCY](/projects/bpt-sdk-doc-concurrency.md) - The SDK supports true parallelism at three levels: **many conversations** over
-* [bpt-agent-sdk ERRORS](/projects/bpt-sdk-doc-errors.md) - Every error class in `src/errors.ts` carries a machine-readable, stable
-* [bpt-agent-sdk MIGRATION](/projects/bpt-sdk-doc-migration.md) - Audience: the BPT Desktop (Electron) codebase currently importing the official
-* [bpt-agent-sdk ONBOARDING](/projects/bpt-sdk-doc-onboarding.md) - Goal: get a new maintainer from zero to "I can make a change safely and prove
-* [bpt-agent-sdk OPENAI-PROTOCOL](/projects/bpt-sdk-doc-openai-protocol.md) - The SDK can drive an **OpenAI-compatible Chat Completions endpoint** instead of
-* [bpt-agent-sdk POSITIONING](/projects/bpt-sdk-doc-positioning.md) - **BPT Agent SDK = 一套稳定兼容的调用「表面」 + 一个我们完全掌控、比原版更简单更可靠的独立「引擎」。**
-* [bpt-agent-sdk SUBAGENTS](/projects/bpt-sdk-doc-subagents.md) - Goal: wire a host (BPT) to the SDK's subagent surface the way Claude Code uses
+* [silver-core-sdk 子项目上下文](/projects/project-silver-core-sdk.md) - Silver Core SDK：独立重实现（independent reimplementation）的 TypeScript agent 框架，公开调用面
+* [silver-core-sdk ARCHITECTURE](/projects/silver-core-sdk-doc-architecture.md) - Independent agent harness with a `@anthropic-ai/claude-agent-sdk`-compatible
+* [silver-core-sdk COMPAT](/projects/silver-core-sdk-doc-compat.md) - Target surface: `@anthropic-ai/claude-agent-sdk` public API (npm 0.3.205; chased
+* [silver-core-sdk CONCURRENCY](/projects/silver-core-sdk-doc-concurrency.md) - The SDK supports true parallelism at three levels: **many conversations** over
+* [silver-core-sdk ERRORS](/projects/silver-core-sdk-doc-errors.md) - Every error class in `src/errors.ts` carries a machine-readable, stable
+* [silver-core-sdk MIGRATION](/projects/silver-core-sdk-doc-migration.md) - Audience: the BPT Desktop (Electron) codebase currently importing the official
+* [silver-core-sdk ONBOARDING](/projects/silver-core-sdk-doc-onboarding.md) - Goal: get a new maintainer from zero to "I can make a change safely and prove
+* [silver-core-sdk OPENAI-PROTOCOL](/projects/silver-core-sdk-doc-openai-protocol.md) - The SDK can drive an **OpenAI-compatible Chat Completions endpoint** instead of
+* [silver-core-sdk POSITIONING](/projects/silver-core-sdk-doc-positioning.md) - **Silver Core SDK = 一套稳定兼容的调用「表面」 + 一个我们完全掌控、比原版更简单更可靠的独立「引擎」。**
+* [silver-core-sdk SUBAGENTS](/projects/silver-core-sdk-doc-subagents.md) - Goal: wire a host (BPT) to the SDK's subagent surface the way Claude Code uses
 * [site design · morimens-design-system-guide.html](/projects/site-design-morimens-design-system-guide.md) - site 设计系统权威（morimens-design-system-guide.html，21.2KB）：设计令牌 / 组件规范来源。
 * [site design · morimens-design-tokens.css](/projects/site-design-morimens-design-tokens.md) - site 设计系统权威（morimens-design-tokens.css，6.7KB）：设计令牌 / 组件规范来源。
 * [archive_sources.json（归档注册表）](/projects/news-archive-sources-registry.md) - T2 数据层归档声明式注册表：哪些来源归档到哪、如何驱逐（archive_engine 读它干活）。

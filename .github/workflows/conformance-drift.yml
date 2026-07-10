@@ -3,7 +3,7 @@ name: Conformance pin drift sentinel
 # Drift sentinel (conformance suite M3; P3 upgrade 2026-07-06): weekly check of
 # whether upstream @anthropic-ai/claude-agent-sdk / @anthropic-ai/claude-code
 # have published past the dual pins in
-# projects/bpt-agent-sdk/tests/conformance/pins.json.
+# projects/silver-core-sdk/tests/conformance/pins.json.
 #
 # Standing rule (选择性追踪) UNCHANGED: the pins move ONLY by keeper ruling
 # after a conformance re-run against the candidate versions. This workflow
@@ -31,7 +31,7 @@ permissions:
 
 defaults:
   run:
-    working-directory: projects/bpt-agent-sdk
+    working-directory: projects/silver-core-sdk
 
 jobs:
   drift-check:
@@ -70,7 +70,7 @@ jobs:
         if: always()
         with:
           name: conformance-drift-report
-          path: projects/bpt-agent-sdk/drift-report.md
+          path: projects/silver-core-sdk/drift-report.md
           if-no-files-found: ignore
 
       # --- P3: open/refresh the draft alignment PR ONLY on clean-lookup drift.
@@ -84,26 +84,26 @@ jobs:
         working-directory: ${{ github.workspace }}
         run: |
           set -euo pipefail
-          test -f projects/bpt-agent-sdk/proposed-pins.json
-          test -f projects/bpt-agent-sdk/proposed-pr-body.md
+          test -f projects/silver-core-sdk/proposed-pins.json
+          test -f projects/silver-core-sdk/proposed-pr-body.md
 
           git config user.name "biav-drift-sentinel[bot]"
           git config user.email "biav-drift-sentinel@users.noreply.github.com"
 
           # Apply the proposed pins over the live ones and stage ONLY that file.
-          cp projects/bpt-agent-sdk/proposed-pins.json \
-             projects/bpt-agent-sdk/tests/conformance/pins.json
+          cp projects/silver-core-sdk/proposed-pins.json \
+             projects/silver-core-sdk/tests/conformance/pins.json
 
           git checkout -B "$BRANCH"
-          git add projects/bpt-agent-sdk/tests/conformance/pins.json
-          git commit -m "chore(bpt-sdk): [drift] propose chasing to agent-sdk ${AGENT_SDK_LATEST} / claude-code ${CLAUDE_CODE_LATEST} (PROPOSED, keeper ruling pending)"
+          git add projects/silver-core-sdk/tests/conformance/pins.json
+          git commit -m "chore(silver-core-sdk): [drift] propose chasing to agent-sdk ${AGENT_SDK_LATEST} / claude-code ${CLAUDE_CODE_LATEST} (PROPOSED, keeper ruling pending)"
           git push -f origin "HEAD:${BRANCH}"
 
           if [ -z "$(gh pr list --head "$BRANCH" --state open --json number --jq '.[].number')" ]; then
             gh pr create --draft \
               --base main --head "$BRANCH" \
-              --title "chore(bpt-sdk): [drift] chase agent-sdk ${AGENT_SDK_LATEST} / claude-code ${CLAUDE_CODE_LATEST} (draft, keeper ruling pending)" \
-              --body-file projects/bpt-agent-sdk/proposed-pr-body.md
+              --title "chore(silver-core-sdk): [drift] chase agent-sdk ${AGENT_SDK_LATEST} / claude-code ${CLAUDE_CODE_LATEST} (draft, keeper ruling pending)" \
+              --body-file projects/silver-core-sdk/proposed-pr-body.md
           else
             echo "draft PR already open for $BRANCH; force-push refreshed it to the latest candidates."
           fi

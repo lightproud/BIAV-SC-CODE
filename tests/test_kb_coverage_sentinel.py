@@ -31,8 +31,8 @@ KNOWLEDGE_GLOBS = [
     "Public-Info-Pool/Resource/*/*.md",
     "docs/*.md",
     "projects/news/CONTEXT.md", "projects/wiki/CONTEXT.md", "projects/site/CONTEXT.md",
-    "projects/game/CONTEXT.md", "projects/bpt-agent-sdk/CONTEXT.md",
-    "projects/bpt-agent-sdk/docs/*.md",
+    "projects/game/CONTEXT.md", "projects/silver-core-sdk/CONTEXT.md",
+    "projects/silver-core-sdk/docs/*.md",
     "projects/site/design/*.html", "projects/site/design/*.css",
     "extracted_lua/*.md", "extracted_lua/*.csv",
 ]
