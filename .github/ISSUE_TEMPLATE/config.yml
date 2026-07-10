@@ -1,8 +1,10 @@
+# 社区面单向可读（守密人 2026-07-10 裁定）：Issue 模板已撤，blank issue 保持关闭。
+# 交流导流至游戏社区；仓库内容欢迎自由阅读与派生使用。
 blank_issues_enabled: false
 contact_links:
   - name: Discord 国际服 / International Discord
     url: https://discord.gg/morimens
-    about: 一般讨论、玩家社区交流（非 bug / 数据缺失）请到 Discord
+    about: 一般讨论、玩家社区交流请到 Discord；本仓库为单向可读，不受理数据/内容类 Issue
   - name: GitHub 仓库 / Repository
     url: https://github.com/lightproud/brain-in-a-vat
-    about: 浏览源码、阅读 CLAUDE.md / BIAV-SC.md 了解项目协议
+    about: 浏览源码、阅读 CLAUDE.md 了解项目；欢迎自由阅读与派生使用（MIT）

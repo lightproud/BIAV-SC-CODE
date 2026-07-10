@@ -25,7 +25,7 @@
   - D-biav ✅（本批次，2026-04-26）：新建 `public/biav/index.html` 项目说明页（命名缘由 / 银芯系统 / 三新使命 / 仓库结构 / 入口协议）；nav BIAV 链接恢复指向 `biav/`，消除 P1-2 重复；改 deploy-site.yml 为 `cp -r public/. dist/` 递归部署
   - D-token-unify ✅（本批次，2026-04-26）：`public/index.html` 与 `public/biav/index.html` 通过 `<link rel="stylesheet">` 引入 `design/morimens-design-tokens.css`；`:root` 短名映射至 `--m-*` 长名（含 fallback 硬编码值），design-tokens.css 真正成为视觉真值源，解 P1-5
   - 贡献模板 ✅（本批次，2026-04-26）：按 `memory/contribution-protocol.md` § 6 M1 末任务落档 `.github/ISSUE_TEMPLATE/{bug,data-gap,config}.yml` + `.github/PULL_REQUEST_TEMPLATE.md`（Code-site 实施）
-  - 待办：D-contribute（M2 5-11 起）— 仓库根 `CONTRIBUTING.md` 形式化 + 主站「贡献者入口」镜像页双轨实施
+  - ~~待办：D-contribute（M2 5-11 起）— 仓库根 `CONTRIBUTING.md` 形式化 + 主站「贡献者入口」镜像页双轨实施~~（**2026-07-10 作废**：守密人裁定取消社区贡献、对社区单向可读，贡献入口线全线撤销）
 - **M2（5-11 → 6-10）**：补对外说明文档（如 README 重写 / 主站 About 加深 / 贡献指南入口）
 - **M3（6-11 → 7-10）**：跨站视觉一致性最终校验 + 使命展示（二核心；原使命#3 训练场 2026-06-28 退役）
 - **M4（7-11 → 7-19）**：验收：对外发现路径顺畅
