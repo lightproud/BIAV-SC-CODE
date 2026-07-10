@@ -1,6 +1,6 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-10T20:19:23.459366+00:00",
+  "collected_at": "2026-07-10T21:57:29.796808+00:00",
   "source": "google_play",
   "data_layer": "output",
   "item_count": 122,
@@ -597,16 +597,6 @@
     },
     {
       "source": "google_play",
-      "time": "2026-06-10T21:23:13",
-      "lang": "en",
-      "title": "[Google Play 好评] ★5 Best Anime Style Card Game Ever!",
-      "summary": "Best Anime Style Card Game Ever!",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-d6df4806-5084-471c-bdf6-6e81b01bbda0",
-      "author": "Sophia",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
       "time": "2026-07-06T12:21:34",
       "lang": "ko",
       "title": "[Google Play 好评] ★4 재밌긴한데 스토리 영상 보고오면 화면이 멈춰요. 그것만 고쳐주세요",
@@ -673,6 +663,16 @@
       "summary": "ชอบเกมนี้มากๆเลยครับ 5 ดาวไปเลย :DDDD",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=th#gp-b790cb16-d367-4426-b648-333e6f90f982",
       "author": "Thanabodi Ronkrathok",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-09T21:28:50",
+      "lang": "id",
+      "title": "[Google Play 好评] ★5 please add team comp recommendation, it'",
+      "summary": "please add team comp recommendation, it'll guide newbie to build a good team before they can build one they're comfortable with",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=id#gp-4f6ddba3-9ad2-4de7-b8f9-3b8103eeb357",
+      "author": "Urzuqney Fahma Dewata",
       "engagement": 0
     },
     {
