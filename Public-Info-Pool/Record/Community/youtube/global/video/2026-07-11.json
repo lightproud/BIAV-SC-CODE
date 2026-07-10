@@ -1,8 +1,8 @@
 {
   "date": "2026-07-11",
-  "archived_at": "2026-07-10T22:57:40.045457+00:00",
+  "archived_at": "2026-07-10T23:56:35.025902+00:00",
   "source": "youtube",
-  "item_count": 8,
+  "item_count": 9,
   "items": [
     {
       "title": "Morimens \\\\ Создаю гайдо-карточки, отвечаю на вопросы по игре (6, надеюсь что финальная)",
@@ -136,6 +136,23 @@
       "lang": "",
       "platform_region": "global",
       "media_url": "https://i.ytimg.com/vi/Tq7v7tDS_sc/hqdefault.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    },
+    {
+      "title": "18+ |【Morimens】I&#39;ve returned dear abyss...",
+      "summary": "vtuber #stream #streamer #envtuber #psychologicalhorror #horror #deepvoice #morimens Rules: 👁️ Do not spam.",
+      "source": "youtube",
+      "time": "2026-07-10T23:51:22Z",
+      "url": "https://www.youtube.com/watch?v=cJafH_U0Qa8",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "Faust ch.",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/cJafH_U0Qa8/hqdefault_live.jpg",
       "content_type": "video",
       "region": "global",
       "archive_subtype": "video"
