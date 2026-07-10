@@ -1,8 +1,8 @@
 {
   "date": "2026-07-11",
-  "archived_at": "2026-07-10T16:22:24.194492+00:00",
+  "archived_at": "2026-07-10T18:21:53.781799+00:00",
   "source": "bilibili",
-  "item_count": 2,
+  "item_count": 3,
   "items": [
     {
       "title": "[忘却前夜]最新兑换码，五百个银芯外加五个无垢截止到7月21号（补：小活动送的二百银芯，截止11号）",
@@ -46,6 +46,29 @@
         "danmaku": 0
       },
       "media_url": "https://i2.hdslb.com/bfs/archive/2df3521d8a74a5b8e6bdd4fecc3893f7b6567536.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "【bajiru歌回】沙耶の唄（English Version）",
+      "summary": "https://www.twitch.tv/bajiru_en\n视频来源于:2026.7.5歌回\n官方账号:\nTwitch:\nhttps://www.twitch.tv/bajiru_en\nDiscord:\nhttps://discord.gg/NvEhKn6s5\nTwitter:\nhttps://x.com/bajiru_EN\nYoutube:\nhttps://www.youtube.com/c/bajiru_EN",
+      "source": "bilibili",
+      "time": "2026-07-10T17:24:13+00:00",
+      "url": "https://www.bilibili.com/video/BV17JNH6qEv2",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "百舌鸟L",
+      "tags": [
+        "翻唱"
+      ],
+      "metadata": {
+        "play": 0,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/cd7c2536e4e23d7d5c52d12aedb6da7b49c16088.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

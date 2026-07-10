@@ -1,6 +1,6 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-10T16:21:30.961072+00:00",
+  "collected_at": "2026-07-10T18:21:05.849299+00:00",
   "source": "reddit",
   "data_layer": "output",
   "item_count": 16,
@@ -45,6 +45,21 @@
       "author": "/u/el_-turco",
       "engagement": 0,
       "media_url": "https://preview.redd.it/itc1o61o1cch1.png?width=320&amp;crop=smart&amp;auto=webp&amp;s=5067a8c62142d1ec7b1814081f0b3f059d0ead6e",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-07-10T15:30:52+00:00",
+      "lang": "en",
+      "title": "Starter team",
+      "summary": "I&#39;m a newbie, currently doing chapter 2, and I really like Caro mechanics (as well as Aequor, but I want to try Caro for the time being) Is this team fine for doing story?  &#32; submitted by &#32;  /u/Zealousideal-Link707   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1usqzeu/starter_team/",
+      "author": "/u/Zealousideal-Link707",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/zkfvg9qa8fch1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=3e6200319c084aa6b1f69931ac11a26573fcf1f7",
       "content_type": "image",
       "metadata": {
         "via": "rss"
@@ -97,27 +112,25 @@
     },
     {
       "source": "reddit",
-      "time": "2026-07-10T15:30:52+00:00",
-      "lang": "en",
-      "title": "Starter team",
-      "summary": "I&#39;m a newbie, currently doing chapter 2, and I really like Caro mechanics (as well as Aequor, but I want to try Caro for the time being) Is this team fine for doing story?  &#32; submitted by &#32;  /u/Zealousideal-Link707   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1usqzeu/starter_team/",
-      "author": "/u/Zealousideal-Link707",
-      "engagement": 0,
-      "media_url": "https://preview.redd.it/zkfvg9qa8fch1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=3e6200319c084aa6b1f69931ac11a26573fcf1f7",
-      "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
       "time": "2026-07-10T05:16:05+00:00",
       "lang": "en",
       "title": "RIP Pontos-Pickman shenanigens, you'll be missed",
       "summary": "(They removed the free Gaunt bug)  &#32; submitted by &#32;  /u/Cross_Toss   [link] &#32; [comments]",
       "url": "https://old.reddit.com/r/Morimens/comments/1use8j4/rip_pontospickman_shenanigens_youll_be_missed/",
       "author": "/u/Cross_Toss",
+      "engagement": 0,
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-07-10T11:33:55+00:00",
+      "lang": "en",
+      "title": "Saya's free unit gone?",
+      "summary": "I... Can&#39;t seem to get it or find it anymore. I just needed to finish chapter 4, and... Lifes gotten hectic so I didn&#39;t yet, but... I could of sworn it said you could get her in it for over a month still without having to roll for her.  Did i... somehow get the time wrong and missed it...? Inverted Rebirth is still there  &#32; submitted by &#32;  /u/inspiringlyCrazy   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1usl2dm/sayas_free_unit_gone/",
+      "author": "/u/inspiringlyCrazy",
       "engagement": 0,
       "metadata": {
         "via": "rss"
@@ -179,19 +192,6 @@
       "engagement": 0,
       "media_url": "https://preview.redd.it/e8p8f8ifz9ch1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=ed461a18ab8d46aeb37631088fd85eed7ae6086c",
       "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-07-10T11:33:55+00:00",
-      "lang": "en",
-      "title": "Saya's free unit gone?",
-      "summary": "I... Can&#39;t seem to get it or find it anymore. I just needed to finish chapter 4, and... Lifes gotten hectic so I didn&#39;t yet, but... I could of sworn it said you could get her in it for over a month still without having to roll for her.  Did i... somehow get the time wrong and missed it...? Inverted Rebirth is still there  &#32; submitted by &#32;  /u/inspiringlyCrazy   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1usl2dm/sayas_free_unit_gone/",
-      "author": "/u/inspiringlyCrazy",
-      "engagement": 0,
       "metadata": {
         "via": "rss"
       }
