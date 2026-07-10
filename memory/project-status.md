@@ -173,6 +173,14 @@
 > 银芯→黑池单向输出物，与 §1.1-HC 防火墙同向，非 BPT 产品内部开发。
 
 - **动手前必读**：`projects/silver-core-sdk/CONTEXT.md`（会话上下文 + 当前 milestone）
+- **SDK 命令框架消费手册（2026-07-10，守密人「银芯需要派一个说明书给黑池消费方」派单，已落）**：
+  黑池开发者向接线手册 `Public-Info-Pool/Resource/repo-engineering/silver-core-sdk-command-consumer-manual-20260710.md`
+  ——五模块各接哪个 SDK 口的总图 + 六节配方（透传纪律 / 控制面直连与通报注入 / 面板双数据源与
+  装载三语义 / resume 重入双闸 / **goal 门控完整配方**（condition 反写实现零状态自动清除、
+  stop_hook_active 收敛提示、per-query 重注册生命周期）/ 反模式五条）。代码形状核实于 v0.39 源码、
+  经 0.40（纯追官方类型面）/ 0.41（纯更名）CHANGELOG 确认无涉（含诚实边界：官方 `shouldQuery`
+  本 SDK 未实现，给 UserPromptSubmit additionalContext 等价配方）。至此闭环五件套：
+  需求 → 观测 → 方案 → SDK → **消费手册**。
 - **命令自体试用观测 + 落成方案（2026-07-10，守密人 /goal「你自己试一下所有命令，
   然后分析命令的实现，落成方案」，已落）**：艾瑞卡自触 8 组命令/工具族（Skill 族
   validate-data/keybindings-help/loop/code-review-low + 调度双平面 Cron 三连与服务端
