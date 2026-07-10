@@ -4,7 +4,7 @@ title: "claude-desktop-ui-structure-20260704-r2"
 description: "演进方向」调和句、§8 增 auto 模式落差行、§8 许可证表述补核验标签）（格式：md）"
 resource: "/Public-Info-Pool/Resource/repo-engineering/claude-desktop-ui-structure-20260704-r2.md"
 tags: ["data_layer:curated", "deliverable", "topic:repo-engineering"]
-timestamp: "2026-07-09"
+timestamp: "2026-07-10"
 ---
 
 # 指针概念

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-09",
+  "generated": "2026-07-10",
   "meta": {
     "data_layer": "curated_knowledge",
     "source": "okf/ bundle (concept frontmatter + body + graph edges)",
@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 336,
+    "concepts": 337,
     "edges": 401,
-    "terms": 5805,
+    "terms": 5808,
     "by_type": {
       "character": 72,
       "dataset": 107,
-      "documentation": 94,
+      "documentation": 95,
       "knowledge-pointer": 43,
       "reference": 17,
       "research": 3
@@ -25,7 +25,7 @@
       "extracted": 4,
       "memory": 47,
       "news-output": 23,
-      "projects": 22,
+      "projects": 23,
       "resource": 71,
       "sources": 17,
       "story": 11,
@@ -34,7 +34,7 @@
     },
     "by_tier": {
       "skeleton": 128,
-      "search": 208
+      "search": 209
     }
   },
   "sections": {
@@ -64,7 +64,7 @@
     },
     "projects": {
       "index": "/projects/index.md",
-      "count": 22
+      "count": 23
     },
     "resource": {
       "index": "/resource/index.md",
@@ -2608,6 +2608,20 @@
       "title": "bpt-agent-sdk ONBOARDING",
       "description": "Goal: get a new maintainer from zero to \\\"I can make a change safely and prove",
       "resource": "/projects/bpt-agent-sdk/docs/ONBOARDING.md",
+      "tags": [
+        "data_layer:curated",
+        "design-doc",
+        "sub-project:bpt-agent-sdk"
+      ],
+      "section": "projects",
+      "tier": "search",
+      "degree": 0
+    },
+    "/projects/bpt-sdk-doc-openai-protocol.md": {
+      "type": "documentation",
+      "title": "bpt-agent-sdk OPENAI-PROTOCOL",
+      "description": "The SDK can drive an **OpenAI-compatible Chat Completions endpoint** instead of",
+      "resource": "/projects/bpt-agent-sdk/docs/OPENAI-PROTOCOL.md",
       "tags": [
         "data_layer:curated",
         "design-doc",
@@ -9410,6 +9424,7 @@
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
@@ -9605,6 +9620,7 @@
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/bpt-sdk-doc-subagents.md",
       "/projects/project-bpt-agent-sdk.md",
@@ -10116,6 +10132,7 @@
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/bpt-sdk-doc-subagents.md",
       "/projects/project-bpt-agent-sdk.md",
@@ -10240,6 +10257,7 @@
     ],
     "chat": [
       "/assets/assets-chat-onboarding-snippet.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md"
     ],
     "ci": [
@@ -10418,7 +10436,8 @@
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md"
     ],
     "compatible": [
-      "/projects/bpt-sdk-doc-architecture.md"
+      "/projects/bpt-sdk-doc-architecture.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md"
     ],
     "completion": [
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
@@ -10426,6 +10445,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md"
     ],
     "completions": [
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md"
     ],
     "concept": [
@@ -10538,6 +10558,7 @@
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
@@ -10849,6 +10870,7 @@
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
@@ -11155,6 +11177,7 @@
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
@@ -11431,6 +11454,7 @@
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/bpt-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
@@ -11515,6 +11539,7 @@
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
@@ -11527,6 +11552,7 @@
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
@@ -11568,6 +11594,9 @@
     "drift": [
       "/projects/bpt-sdk-doc-compat.md"
     ],
+    "drive": [
+      "/projects/bpt-sdk-doc-openai-protocol.md"
+    ],
     "drop": [
       "/wiki-data/wiki-data-drops-by-item.md"
     ],
@@ -11602,6 +11631,9 @@
       "/unpacked/unpacked-sproto.md",
       "/unpacked/unpacked-text-cn.md",
       "/unpacked/unpacked-vue.md"
+    ],
+    "endpoint": [
+      "/projects/bpt-sdk-doc-openai-protocol.md"
     ],
     "engine": [
       "/projects/news-archive-sources-registry.md",
@@ -12424,6 +12456,9 @@
     "insights": [
       "/resource/resource-community-analysis-jp-discord-insights-202606.md"
     ],
+    "instead": [
+      "/projects/bpt-sdk-doc-openai-protocol.md"
+    ],
     "instructions": [
       "/memory/memory-ext-karpathy-coding-principles.md"
     ],
@@ -12764,6 +12799,7 @@
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
@@ -13273,6 +13309,7 @@
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
@@ -13630,6 +13667,7 @@
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
     ],
     "openai": [
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md"
     ],
     "orchestrated": [
@@ -14116,6 +14154,7 @@
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/bpt-sdk-doc-subagents.md",
       "/projects/news-archive-sources-registry.md",
@@ -14165,6 +14204,7 @@
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/bpt-sdk-doc-subagents.md",
       "/projects/news-archive-sources-registry.md",
@@ -14263,6 +14303,7 @@
       "/memory/contribution-protocol.md",
       "/memory/memory-ext-active-contribution-protocol.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
     ],
     "prototype": [
@@ -14895,6 +14936,7 @@
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/bpt-sdk-doc-subagents.md",
       "/projects/project-bpt-agent-sdk.md",
@@ -15263,6 +15305,7 @@
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/bpt-sdk-doc-subagents.md",
       "/projects/news-archive-sources-registry.md",
@@ -16497,6 +16540,7 @@
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
@@ -16748,6 +16792,7 @@
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
@@ -17047,6 +17092,7 @@
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
@@ -18193,6 +18239,7 @@
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
@@ -19106,6 +19153,7 @@
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
@@ -19353,6 +19401,7 @@
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
@@ -21124,6 +21173,7 @@
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
@@ -24187,6 +24237,7 @@
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
@@ -24954,6 +25005,7 @@
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
@@ -25552,6 +25604,7 @@
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
@@ -29220,6 +29273,7 @@
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
@@ -29745,6 +29799,7 @@
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
@@ -30062,6 +30117,7 @@
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
@@ -30442,6 +30498,7 @@
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
@@ -30711,6 +30768,7 @@
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
@@ -32323,6 +32381,7 @@
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
@@ -32727,6 +32786,7 @@
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
@@ -33277,6 +33337,7 @@
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
@@ -33928,6 +33989,7 @@
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
@@ -34297,6 +34359,7 @@
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
@@ -40994,6 +41057,7 @@
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
@@ -41640,6 +41704,7 @@
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
@@ -42617,6 +42682,7 @@
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
@@ -42855,6 +42921,7 @@
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
@@ -44007,6 +44074,7 @@
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/bpt-sdk-doc-subagents.md",
       "/projects/project-bpt-agent-sdk.md",
@@ -44278,6 +44346,7 @@
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/bpt-sdk-doc-subagents.md",
       "/projects/project-bpt-agent-sdk.md",
@@ -44556,6 +44625,7 @@
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
@@ -44855,6 +44925,7 @@
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
@@ -45111,6 +45182,7 @@
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/bpt-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
@@ -45173,6 +45245,7 @@
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
@@ -45729,6 +45802,7 @@
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/bpt-sdk-doc-subagents.md",
       "/projects/doc-testing-strategy.md",
@@ -46147,6 +46221,7 @@
       "/projects/bpt-sdk-doc-onboarding.md"
     ],
     "openai": [
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md"
     ],
     "orchestrated": [
@@ -46384,6 +46459,7 @@
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/bpt-sdk-doc-subagents.md",
       "/projects/news-archive-sources-registry.md",
@@ -46421,6 +46497,7 @@
     ],
     "protocol": [
       "/memory/contribution-protocol.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
     ],
     "prototype": [
@@ -46621,6 +46698,7 @@
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/bpt-sdk-doc-subagents.md",
       "/projects/project-bpt-agent-sdk.md",
@@ -46771,6 +46849,7 @@
       "/projects/bpt-sdk-doc-errors.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/projects/bpt-sdk-doc-onboarding.md",
+      "/projects/bpt-sdk-doc-openai-protocol.md",
       "/projects/bpt-sdk-doc-positioning.md",
       "/projects/bpt-sdk-doc-subagents.md",
       "/projects/news-archive-sources-registry.md",

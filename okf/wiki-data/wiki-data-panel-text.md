@@ -4,7 +4,7 @@ title: "panel_text"
 description: "PanelText.lua (runtime memory extraction) · total_entries=3163 · 生成 2026-04-26"
 resource: "/projects/wiki/data/processed/panel_text.json"
 tags: ["data_layer:curated", "unpacked-bootstrap", "domain:localization"]
-timestamp: "2026-07-09"
+timestamp: "2026-07-10"
 ---
 
 # 指针概念
