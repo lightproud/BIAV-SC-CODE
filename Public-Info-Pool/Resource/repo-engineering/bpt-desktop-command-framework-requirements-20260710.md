@@ -1,12 +1,13 @@
-# BPT Desktop 壳层命令框架 需求说明书 v1.0
+# BPT Desktop 壳层命令框架 需求说明书 v1.1
 
-- 日期：2026-07-10
+- 日期：2026-07-10（v1.1 同日修订：补 R5 目标门控，依赖基线升 v0.39）
 - 作者：艾瑞卡（守密人 /goal「全面实现建议 + 落档给黑池的需求说明书」工单终件）
 - 性质：银芯 → 黑池**单向输出物**（与 §1.1-HC 防火墙同向；本档为公开信息层
   工程产物，黑池侧实现细节不回流）
 - 消费方：BPT Desktop（Electron 壳）开发线
-- 依赖基线：`bpt-agent-sdk` **v0.38.0**（自定义命令加载器已落地）；
-  背景盘点见姊妹档 `cc-engine-external-commands-20260710.md`（五类命令全景）
+- 依赖基线：`bpt-agent-sdk` **v0.39.0**（自定义命令加载器 + Stop 钩子阻断语义均已落地）；
+  背景盘点见姊妹档 `cc-engine-external-commands-20260710.md`（五类命令全景）；
+  行为观测语料见 `cc-command-behavior-observations-20260710.md`（/goal 机制 OBS-002）
 - 参考对照：CC v2.1.201 官方行为（提示词参照库 + Agent SDK 文档快照）
 
 ---
@@ -105,6 +106,24 @@
 - **R4.3** 调度任务的 prompt 落本地持久化时按敏感数据对待（可能含仓库路径 /
   业务上下文），不进任何遥测。
 
+### 3.5 R5 目标门控 /goal 同构（壳层 + SDK v0.39 已备，P1）
+
+行为规格来自活体观测（OBS-002）：官方 /goal = 本地命令注册**带自然语言条件的
+会话级 Stop 钩子**，条件不满足阻断停止并驱动继续，满足自动清除。
+
+- **R5.1** 壳层命令 `/goal <条件文本>`：向当前 query 的 `options.hooks` 注册 Stop
+  钩子——matcher 带 `condition`（SDK 内建模型评估器判据），callback 返回
+  `{decision:'block', reason:<未达成说明>}`。SDK v0.39 起引擎按官方语义处理：
+  block → reason 作为用户回合注入 → 继续跑；`stop_hook_active` 在后续 Stop 输入
+  上为 true（钩子据此可自限）；`continue:false` 强停优先。
+- **R5.2** `/goal clear` 提前解除；条件达成后自动解除（callback 侧判达成即返回
+  空对象不再 block）。UI 常驻显示当前目标与门控状态（活动/已达成/已清除）。
+- **R5.3** 防失控三闸（SDK 侧已内建，壳层必须显式配置）：per-query `maxTurns` 与
+  `maxBudgetUsd` 必填（顽固 block 会被引擎按此终止并返回 error_max_turns /
+  error_max_budget_usd）；壳层再加一道「同一目标连续 N 次 block 后提示用户确认」。
+- **R5.4** 作用域：目标门只作用于主会话循环——SDK 保证子代理不被捕获
+  （SubagentStop 语义另管），壳层无需处理。
+
 ## 4. 验收标准（可执行清单）
 
 | # | 场景 | 预期 |
@@ -116,8 +135,9 @@
 | V5 | `/loop 5m 检查构建` 后关闭再打开应用 | 任务仍在、到点重入会话执行 |
 | V6 | `/model` 切换 | 后续 assistant 消息的 model 字段变化，transcript 无本地命令残留 |
 | V7 | 命令 md 文件含 `!rm -rf` 行 | 该行仅作为普通文本进 prompt，壳层无任何本地执行 |
+| V8 | `/goal 测试全绿` 后模型交出未跑测试的答案 | 引擎不停：reason 注入为用户回合、继续跑至条件达成或撞 maxTurns；子代理不受门控 |
 
-## 5. SDK v0.38 对接面速查（黑池侧只读参考）
+## 5. SDK v0.39 对接面速查（黑池侧只读参考）
 
 - 列举：`query.supportedCommands()` → `SlashCommand[]{name, description, argumentHint}`
 - 启动快照：`system/init.slash_commands: string[]`（bare name）
@@ -126,13 +146,17 @@
 - 装载时机：query 构造期一次；`commands_changed` 事件无源（勿等）
 - 声明不支持：`!bash` / `@file` / `allowed-tools` / `model` frontmatter /
   模型侧 SlashCommand 工具（逐项见 SDK docs/COMPAT.md）
+- 目标门控（v0.39）：Stop 钩子 `decision:'block'` → reason 注入续跑；
+  `stop_hook_active` 防死循环；`continue:false` 强停优先；仅主循环、
+  maxTurns/maxBudgetUsd 兜底（COMPAT hooks 表 Stop 行）
 
-## 6. 挂账与裁定点（不阻塞本需求）
+## 6. 挂账与裁定点
 
-1. **B 类骨架提示词再现**（/review /simplify /security-review …）：提示词
-   文本著作权属 Anthropic，再现姿态需过 G8「公开信息再现」同款守密人裁定。
-   过渡替代：以 C 类机制自写命令卡（R2 落地即天然可用）。
-2. **`/goal` 机制**：官方实锤存在但 v2.1.201 快照未含其提示词/实现；挂每周
-   参照刷新（refresh-claude-code-prompts.yml）观察，捕获后评估壳层是否补
-   「目标锚点 + Stop 条件」同构功能。
+1. **B 类骨架提示词再现——已裁定（2026-07-10）**：取「**结构再现 + 文本自写**」
+   为默认（编排思想照学、提示词文本不复制），逐命令例外通道保留（重型件如
+   code-review 可单独过裁定）。G8「公开信息再现」射程不外延至 B 类文本。
+   落地路径：以 C 类机制自写命令卡（R2 落地即天然可用）。
+2. **`/goal` 机制——已收口（2026-07-10）**：活体观测（OBS-002）补齐行为规格，
+   升格为本档 R5 正式需求；SDK 侧积木随 v0.39 落地。原「挂每周参照刷新观察」
+   降级为背景比对（快照若日后捕获官方实现，与 R5 对照校正即可）。
 3. **D/E 类（插件 / MCP prompts）**：待壳层插件面设计定稿后另立需求文档。

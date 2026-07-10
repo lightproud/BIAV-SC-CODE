@@ -159,6 +159,15 @@
 > 银芯→黑池单向输出物，与 §1.1-HC 防火墙同向，非 BPT 产品内部开发。
 
 - **动手前必读**：`projects/bpt-agent-sdk/CONTEXT.md`（会话上下文 + 当前 milestone）
+- **Stop 钩子阻断语义 = /goal 门控积木（v0.39.0，2026-07-10，守密人三项裁定「①结构再现②工作模式观测③/goal 派单没问题」，已落）**：
+  引擎按官方语义处理 Stop 钩子 block——reason 注入用户回合续跑、`stop_hook_active` 真值防死循环、
+  `continue:false` 强停优先、**仅主循环生效**（子代理归 SubagentStop，目标门不误伤 fan-out）、
+  maxTurns/maxBudgetUsd 兜底（`tests/stop-hook-block.test.ts` 5 测）。与既有钩子 condition 模型评估器合体 =
+  完整 /goal 引擎侧等价物（零提示词再现）。**同工单落档**：①两条裁定入 `memory/decisions.md`（B 类骨架提示词
+  「结构再现+文本自写」默认 + 行为观测法入方法论）；②行为观测台账
+  `Public-Info-Pool/Resource/repo-engineering/cc-command-behavior-observations-20260710.md`（OBS-001 /model、
+  OBS-002 /goal 首批）；③需求说明书 v1.1 补 R5 目标门控 + 验收 V8；④踩坑 #45（rebase --ours/--theirs 反转
+  致 v0.38 版本常量带 0.37.1 上线，v0.39 重对齐 + 三层防线）。
 - **自定义 slash 命令（v0.38.0，2026-07-10，守密人 /goal「全面实现建议」目标令，已落）**：
   官方 `.claude/commands` 自定义命令面的 SDK 侧子集再现（`src/engine/slash-commands.ts`）：
   按 settingSources 装载 project+user 命令 md（':' 子目录命名空间 / project 胜出 / 内建名保留 / I/O 失败优雅降级）、
