@@ -1,7 +1,7 @@
 {
   "channels": {
     "1377478664609857647": {
-      "last_message_id": "1524907045822660719",
+      "last_message_id": "1525014824529170442",
       "name": "なんでも雑談",
       "cold_started": true,
       "last_historical_message_id": "1378523440742400000",
@@ -13,7 +13,7 @@
       ]
     },
     "1377481792335908945": {
-      "last_message_id": "1524800792094310521",
+      "last_message_id": "1525008029907419310",
       "name": "対戦募集",
       "cold_started": true,
       "last_historical_message_id": "1378523440742400000",
@@ -327,7 +327,7 @@
       "last_message_id": "1511043315200561395"
     },
     "thread:1510911214346305566": {
-      "last_message_id": "1524819206456086699"
+      "last_message_id": "1525014795105865728"
     },
     "thread:1510847739045482596": {
       "last_message_id": "1519621081382785115"
@@ -1036,6 +1036,6 @@
     }
   },
   "historical_month": null,
-  "last_run": "2026-07-10T01:17:06.090962+00:00",
+  "last_run": "2026-07-10T05:47:06.067838+00:00",
   "history_backfill_complete": true
 }
