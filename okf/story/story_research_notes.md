@@ -4,7 +4,7 @@ title: "RESEARCH_NOTES.md"
 description: "RESEARCH_NOTES 剧情层文档"
 resource: "/projects/wiki/data/processed/story/RESEARCH_NOTES.md"
 tags: ["story", "research", "data_layer:curated"]
-timestamp: "2026-07-09"
+timestamp: "2026-07-10"
 ---
 
 # 剧情结构层指针

@@ -1,10 +1,10 @@
 ---
 type: "dataset"
 title: "weibo 社区数据源"
-description: "weibo 平台采集档案，全量 9475 条，健康度 active。"
+description: "weibo 平台采集档案，全量 9588 条，健康度 active。"
 resource: "/Public-Info-Pool/Record/Community/weibo/"
 tags: ["data_layer:full_archive", "platform:weibo", "health:active"]
-timestamp: "2026-07-09T08:25:06.994835+00:00"
+timestamp: "2026-07-10T06:40:42.542896+00:00"
 ---
 
 # 数据层指针
@@ -16,9 +16,9 @@ timestamp: "2026-07-09T08:25:06.994835+00:00"
 | 平台 | weibo |
 | 全量档案层（本体） | `Public-Info-Pool/Record/Community/weibo/` |
 | 输出展示层（抽样） | `projects/news/output/weibo-latest.json` |
-| 全量条数 | 9475 |
+| 全量条数 | 9588 |
 | 采集健康度 | active |
-| 最后成功 | 2026-07-09 |
+| 最后成功 | 2026-07-10 |
 
 # 数据纪律（硬约束）
 

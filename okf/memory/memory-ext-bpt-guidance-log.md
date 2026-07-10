@@ -4,7 +4,7 @@ title: "BPT 指导搬运日志"
 description: "不同性质的反馈走不同档案："
 resource: "/memory/bpt-guidance-log.md"
 tags: ["memory", "data_layer:curated"]
-timestamp: "2026-07-09"
+timestamp: "2026-07-10"
 ---
 
 # 记忆层指针

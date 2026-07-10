@@ -1,8 +1,8 @@
 {
-  "generated": "2026-07-09",
+  "generated": "2026-07-10",
   "stats": {
-    "nodes": 336,
-    "edges": 401
+    "nodes": 338,
+    "edges": 395
   },
   "nodes": [
     {
@@ -2050,6 +2050,17 @@
       "tier": "search"
     },
     {
+      "id": "/projects/bpt-sdk-doc-openai-protocol.md",
+      "type": "documentation",
+      "title": "bpt-agent-sdk OPENAI-PROTOCOL",
+      "tags": [
+        "data_layer:curated",
+        "design-doc",
+        "sub-project:bpt-agent-sdk"
+      ],
+      "tier": "search"
+    },
+    {
       "id": "/projects/bpt-sdk-doc-positioning.md",
       "type": "documentation",
       "title": "bpt-agent-sdk POSITIONING",
@@ -2820,6 +2831,17 @@
       "id": "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "type": "documentation",
       "title": "bpt-sdk-official-semantics-audit-20260707",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
+      "type": "documentation",
+      "title": "bpt-sdk-optimization-review-20260710",
       "tags": [
         "data_layer:curated",
         "deliverable",
@@ -4079,12 +4101,6 @@
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/77925.md",
-      "rel": "提及:克莱门汀",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
       "target": "/characters/15583.md",
       "rel": "提及:奥尔拉",
       "rel_type": "mention"
@@ -4097,20 +4113,14 @@
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/15603.md",
-      "rel": "提及:艾瑞卡",
+      "target": "/characters/54117.md",
+      "rel": "提及:哈姆林",
       "rel_type": "mention"
     },
     {
       "source": "/community/community-bilibili.md",
       "target": "/characters/15562.md",
       "rel": "提及:莉兹",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/15563.md",
-      "rel": "提及:图鲁",
       "rel_type": "mention"
     },
     {
@@ -4132,6 +4142,18 @@
       "rel_type": "mention"
     },
     {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/15604.md",
+      "rel": "提及:莱克",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
       "source": "/community/community-google-play.md",
       "target": "/characters/130226.md",
       "rel": "提及:Saya",
@@ -4141,6 +4163,12 @@
       "source": "/community/community-pixiv.md",
       "target": "/characters/15595.md",
       "rel": "提及:Ramona",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-reddit.md",
+      "target": "/characters/15560.md",
+      "rel": "提及:Pandia",
       "rel_type": "mention"
     },
     {
@@ -4169,12 +4197,6 @@
     },
     {
       "source": "/community/community-weibo.md",
-      "target": "/characters/15599.md",
-      "rel": "提及:萨尔瓦多",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-weibo.md",
       "target": "/characters/77917.md",
       "rel": "提及:波吕克斯",
       "rel_type": "mention"
@@ -4187,20 +4209,8 @@
     },
     {
       "source": "/community/community-weibo.md",
-      "target": "/characters/15577.md",
-      "rel": "提及:菲茵特",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-weibo.md",
       "target": "/characters/15595.md",
       "rel": "提及:拉蒙娜",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-weibo.md",
-      "target": "/characters/54117.md",
-      "rel": "提及:哈姆林",
       "rel_type": "mention"
     },
     {
@@ -4253,12 +4263,6 @@
     },
     {
       "source": "/community/community-youtube-comments.md",
-      "target": "/characters/15595.md",
-      "rel": "提及:Ramona",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-youtube.md",
       "target": "/characters/15595.md",
       "rel": "提及:Ramona",
       "rel_type": "mention"
@@ -5483,12 +5487,6 @@
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/77925.md",
-      "rel": "提及:克莱门汀",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
       "target": "/characters/15583.md",
       "rel": "提及:奥尔拉",
       "rel_type": "mention"
@@ -5501,20 +5499,14 @@
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/15603.md",
-      "rel": "提及:艾瑞卡",
+      "target": "/characters/54117.md",
+      "rel": "提及:哈姆林",
       "rel_type": "mention"
     },
     {
       "source": "/sources/bilibili.md",
       "target": "/characters/15562.md",
       "rel": "提及:莉兹",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/15563.md",
-      "rel": "提及:图鲁",
       "rel_type": "mention"
     },
     {
@@ -5536,6 +5528,18 @@
       "rel_type": "mention"
     },
     {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/15604.md",
+      "rel": "提及:莱克",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
       "source": "/sources/google_play.md",
       "target": "/characters/130226.md",
       "rel": "提及:Saya",
@@ -5545,6 +5549,12 @@
       "source": "/sources/pixiv.md",
       "target": "/characters/15595.md",
       "rel": "提及:Ramona",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/reddit.md",
+      "target": "/characters/15560.md",
+      "rel": "提及:Pandia",
       "rel_type": "mention"
     },
     {
@@ -5573,12 +5583,6 @@
     },
     {
       "source": "/sources/weibo.md",
-      "target": "/characters/15599.md",
-      "rel": "提及:萨尔瓦多",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/weibo.md",
       "target": "/characters/77917.md",
       "rel": "提及:波吕克斯",
       "rel_type": "mention"
@@ -5591,20 +5595,8 @@
     },
     {
       "source": "/sources/weibo.md",
-      "target": "/characters/15577.md",
-      "rel": "提及:菲茵特",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/weibo.md",
       "target": "/characters/15595.md",
       "rel": "提及:拉蒙娜",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/weibo.md",
-      "target": "/characters/54117.md",
-      "rel": "提及:哈姆林",
       "rel_type": "mention"
     },
     {
@@ -5617,12 +5609,6 @@
       "source": "/sources/weibo.md",
       "target": "/characters/130226.md",
       "rel": "提及:沙耶",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/youtube.md",
-      "target": "/characters/15595.md",
-      "rel": "提及:Ramona",
       "rel_type": "mention"
     },
     {

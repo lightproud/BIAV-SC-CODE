@@ -4,7 +4,7 @@ title: "BPT-NEXT Phase D — 黑池索引 / 母版部署 / 对话加密（作战
 description: "Phase C 已验证："
 resource: "/memory/phase-d-plan.md"
 tags: ["memory", "data_layer:curated"]
-timestamp: "2026-07-09"
+timestamp: "2026-07-10"
 ---
 
 # 记忆层指针

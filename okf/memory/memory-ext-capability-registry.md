@@ -4,7 +4,7 @@ title: "capability-registry.json"
 description: "capability-registry 机器权威数据"
 resource: "/memory/capability-registry.json"
 tags: ["memory", "data_layer:curated", "machine-authority"]
-timestamp: "2026-07-09"
+timestamp: "2026-07-10"
 ---
 
 # 记忆层指针
