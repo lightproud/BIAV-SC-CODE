@@ -318,7 +318,7 @@ SDK implements the agent loop directly against the public Messages API:
 
 | Variant | Tier | Notes |
 |---|---|---|
-| `system/init` | PARTIAL | apiKeySource, tools, mcp_servers, model, permissionMode, agents, claude_code_version, betas, skills, plugins ALL emitted (the old "claude_code_version/betas/skills/plugins absent" note was stale — docs-audit 2026-07-05); `slash_commands`/`skills` always `[]`; `plugins` element shape is `string[]` vs official `{name, path}[]`; `claude_code_version`/`skills`/`plugins` typed optional where official requires them |
+| `system/init` | PARTIAL | apiKeySource, tools, mcp_servers, model, permissionMode, agents, claude_code_version, betas, skills, plugins ALL emitted (the old "claude_code_version/betas/skills/plugins absent" note was stale — docs-audit 2026-07-05); `slash_commands` REAL since v0.38 (bare names: built-in `compact` + custom `.claude/commands` — see "Custom slash commands" below; official CC lists its full host command set, ours only what this engine can honor); `skills` always `[]`; `plugins` element shape is `string[]` vs official `{name, path}[]`; `claude_code_version`/`skills`/`plugins` typed optional where official requires them |
 | `assistant` | FULL | full `APIAssistantMessage` |
 | `user` (echo + tool results) | FULL | prompt echo and tool_result user turns both yielded and persisted in order |
 | `stream_event` | FULL | behind `includePartialMessages`; **P2**: `SDKPartialAssistantMessage` now carries the official `ttft_ms?` field, attached from the event that latches the first token onward (test engine.test.ts) |
@@ -356,8 +356,29 @@ prompt_suggestion) are unemitted-typed. `SDKRateLimitEvent` gains the official
 | `hook_started` / `hook_response` | FULL (emitted, v0.4) | behind `options.includeHookEvents`: one pair per callback invocation, correlated by `hook_id`; `result` = bounded output JSON, `error` = failure/timeout text. Same message-boundary drain as task events |
 | `hook_progress` | TYPED | callbacks are opaque promises; no honest mid-callback progress source |
 | `rate_limit_event`, `api_retry` | FULL (emitted) | the transport's per-request `onRetry` observer bridges each 429/5xx/network retry into the stream: a `rate_limit_event` on 429 (with `retry_after_ms`), an `api_retry` otherwise (with `status`/`reason`), yielded just before the retried attempt's stream. Shape split vs official: 2.1.201 encodes the per-429-retry notification as `system/api_retry` too - it emits no `rate_limit_event` on 429 (triaged KD-12; conformance run-l4 l4-429-retry-after-recover / l4-429-storm-two-vs-budget, 2026-07-05) |
-| `files_persisted`, `local_command_output`, `commands_changed`, `auth_status`, `elicitation_complete`, `informational`, `notification`, `prompt_suggestion`, `memory_recall`, `worker_shutting_down`, `plugin_install`, `session_state_changed`, `system/status` | TYPED | no source event in a headless engine with no plugins/skills/CC-host/slash-command framework |
+| `files_persisted`, `local_command_output`, `commands_changed`, `auth_status`, `elicitation_complete`, `notification`, `prompt_suggestion`, `memory_recall`, `worker_shutting_down`, `plugin_install`, `session_state_changed`, `system/status` | TYPED | no source event in a headless engine with no plugins/skills/CC-host. `commands_changed` specifically: custom commands (v0.38) load ONCE at query construction — the set never changes mid-query, so there is still no change source; `local_command_output` covers CC-host LOCAL commands (`/voice`, `/usage`), which have no engine equivalent |
 | `system/prompt_composition` | FULL (emitted, v0.32.0) | **BPT-EXTENSION**; behind `options.includePromptComposition` (default off): one message per request, just before it is sent, carrying `promptComposition` (需求 A per-part estimate) + `cacheBreakpoints` (需求 B cache-prefix map) + `model`. Read-only — the wire request is never affected |
+
+## Custom slash commands (`.claude/commands`) — v0.38
+
+Open reproduction of the official custom-command surface, SDK-side subset
+(`src/engine/slash-commands.ts`). Loading follows `settingSources` ('project' →
+`<cwd>/.claude/commands/`, 'user' → `~/.claude/commands/`), one `*.md` file per
+command, subdirectories namespace with ':' (`frontend/component.md` →
+`/frontend:component`), project wins over user on collision, built-in names
+(`compact`) reserved. A PURE-TEXT `/name [args]` user turn is expanded to the
+command body with `$ARGUMENTS` / `$1`..`$9` substituted (args appended after a
+blank line when the body has no placeholder); history and persistence carry the
+EXPANDED body, `UserPromptSubmit` hooks see the RAW typed text, and the
+`firstPrompt` session meta stays raw.
+
+| Aspect | Tier | Notes |
+|---|---|---|
+| Load + list + expand (`$ARGUMENTS`, `$1`..`$9`, frontmatter `description`/`argument-hint`, ':' namespacing) | FULL | commands load once at query construction; unknown `/name` passes through as plain text (official CLI raises a local "Unknown command" error instead — no engine-honest equivalent) |
+| `!command` inline-bash execution | UNSUPPORTED | would need the permission gate wired into command PREPROCESSING (a pre-turn execution surface this engine does not have); declared, not silent |
+| `@file` references | UNSUPPORTED | same preprocessing surface; use the model's Read tool instead |
+| frontmatter `allowed-tools` / `model` / `disable-model-invocation` | UNSUPPORTED | parsed keys are ignored (no per-turn tool/model scoping surface); `description`/`argument-hint` are the consumed subset |
+| `SlashCommand` tool (model-invoked commands) | UNSUPPORTED | official gives the MODEL a SlashCommand tool; here expansion is input-side only |
 
 ## Hooks
 
@@ -388,7 +409,7 @@ prompt_suggestion) are unemitted-typed. `SDKRateLimitEvent` gains the official
 |---|---|---|
 | `interrupt()` | FULL | |
 | `setPermissionMode()` / `setModel()` / `setMaxThinkingTokens()` | FULL | |
-| `initializationResult()` / `supportedModels()` / `supportedCommands()` / `supportedAgents()` | PARTIAL | P2 re-audit: `supportedModels` returns a real known-model list, `supportedAgents` returns the configured agents, `initializationResult` returns real agents/models/account — all NON-empty. Only `supportedCommands` is genuinely `[]` (no slash-command framework — structural), which keeps this grouped row PARTIAL |
+| `initializationResult()` / `supportedModels()` / `supportedCommands()` / `supportedAgents()` | PARTIAL | P2 re-audit: `supportedModels` returns a real known-model list, `supportedAgents` returns the configured agents, `initializationResult` returns real agents/models/account — all NON-empty. `supportedCommands` REAL since v0.38 (the old "genuinely `[]` — structural" note is retired): built-in `compact` + loaded custom commands in the official `SlashCommand` shape (`name`/`description`/`argumentHint`). Still PARTIAL as a row: official lists the full CC host command set (`/clear`, `/help`, …) that has no engine equivalent here |
 | `mcpServerStatus()` | FULL | carries `config` (echoed back) + per-server `tools[]` when connected; **P2**: `scope` now tracked — 'project' (`.mcp.json`) / 'local' (programmatic `options.mcpServers`) / 'dynamic' (added via `setMcpServers`); test query.test.ts. v0.7: `tools` is the official OBJECT array (`{name, description?, annotations{readOnly/destructive/openWorld}?}`), assembled at the registry |
 | `accountInfo()` | PARTIAL | apiKeySource only |
 | `streamInput()` | FULL | streaming-input mode |

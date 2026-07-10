@@ -33,6 +33,7 @@ import type {
   SDKResultMessage,
   SDKSystemMessage,
   SDKUserMessage,
+  SlashCommand,
   TextBlockParam,
 } from './types.js';
 import type {
@@ -53,6 +54,12 @@ import { DefaultMcpRegistry } from './mcp/registry.js';
 import { matchToolName, parseRule } from './permissions/rules.js';
 import { runAgentLoop } from './engine/loop.js';
 import { hasPriceFor } from './engine/pricing.js';
+import {
+  expandSlashCommand,
+  loadSlashCommands,
+  pureTextOf,
+  slashCommandInfos,
+} from './engine/slash-commands.js';
 import { SessionAccounting } from './query-accounting.js';
 import { buildEngineConfig } from './engine/config-builder.js';
 import { createSessionPersistence } from './sessions/persistence.js';
@@ -417,6 +424,11 @@ export function query(args: {
     for (const name of Object.keys(options.mcpServers ?? {}))
       mcpScopeByName.set(name, 'local');
   }
+
+  // Custom slash commands (.claude/commands, project + user per settingSources),
+  // loaded ONCE at query construction — the set is static for the query's
+  // lifetime, so commands_changed still has no source event (docs/COMPAT.md).
+  const customSlashCommands = loadSlashCommands(cwd, options.settingSources);
   const realMcp: McpRegistry =
     injected?.mcpRegistry ??
     new DefaultMcpRegistry({
@@ -1033,7 +1045,7 @@ export function query(args: {
           .map((s) => ({ name: s.name, status: s.status })),
         model: engineConfig.model,
         permissionMode: gate.getMode(),
-        slash_commands: [],
+        slash_commands: slashCommandInfos(customSlashCommands).map((c) => c.name),
         output_style: 'default',
         agents: wantAgent ? Object.keys(agentDefs) : [],
         claude_code_version: CLAUDE_CODE_VERSION,
@@ -1042,7 +1054,7 @@ export function query(args: {
         plugins: [],
       };
       initDeferred.resolve({
-        commands: [],
+        commands: slashCommandInfos(customSlashCommands),
         agents: Object.keys(agentDefs).map((name) => ({ name })),
         output_style: 'default',
         available_output_styles: ['default'],
@@ -1194,6 +1206,23 @@ export function query(args: {
             return;
           }
           extraLines.push(...agg.additionalContext);
+        }
+
+        // Custom slash-command expansion (.claude/commands): a PURE-TEXT
+        // `/name [args]` prompt becomes the command body with $ARGUMENTS /
+        // $1..$9 substituted. Hooks above saw the raw typed text; history and
+        // persistence carry the EXPANDED body (that is what the model sees,
+        // so resume replays correctly). Unknown names pass through as plain
+        // text; the built-in /compact is never shadowed (engine handles it
+        // downstream via detectManualCompact).
+        if (customSlashCommands.length > 0) {
+          const pure = pureTextOf(message);
+          const expansion =
+            pure === null ? null : expandSlashCommand(pure, customSlashCommands);
+          if (expansion !== null) {
+            debug(`query: expanded custom slash command /${expansion.name}`);
+            message = { role: 'user', content: expansion.expanded };
+          }
         }
         message = appendContextLines(message, extraLines);
 
@@ -1407,8 +1436,8 @@ export function query(args: {
     initializationResult(): Promise<SDKControlInitializeResponse> {
       return initDeferred.promise;
     },
-    async supportedCommands(): Promise<never[]> {
-      return [];
+    async supportedCommands(): Promise<SlashCommand[]> {
+      return slashCommandInfos(customSlashCommands);
     },
     async supportedModels(): Promise<ModelInfo[]> {
       return SUPPORTED_MODELS.map((m) => ({ ...m }));

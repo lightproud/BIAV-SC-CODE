@@ -841,7 +841,11 @@ describe('query() e2e - compat options, budget, control surface', () => {
     expect(models.some((m) => m.value === 'claude-sonnet-4-5')).toBe(true);
     expect(models.every((m) => typeof m.displayName === 'string')).toBe(true);
 
-    expect(await q.supportedCommands()).toEqual([]);
+    // v0.38: the built-in /compact is now surfaced (custom .claude/commands
+    // would add more; this hermetic cwd has none).
+    expect(await q.supportedCommands()).toEqual([
+      expect.objectContaining({ name: 'compact' }),
+    ]);
     expect(await q.supportedAgents()).toEqual([]);
     expect(await q.mcpServerStatus()).toEqual([]);
     expect(await q.accountInfo()).toEqual({ apiKeySource: 'user' });
@@ -850,7 +854,9 @@ describe('query() e2e - compat options, budget, control surface', () => {
     expect(lastResult(messages).subtype).toBe('success');
 
     const init = await q.initializationResult();
-    expect(init.commands).toEqual([]);
+    expect(init.commands).toEqual([
+      expect.objectContaining({ name: 'compact' }),
+    ]);
     expect(init.agents).toEqual([]);
     expect(init.output_style).toBe('default');
     expect(init.available_output_styles).toContain('default');
