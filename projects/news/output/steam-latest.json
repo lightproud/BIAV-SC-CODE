@@ -1,10 +1,25 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-10T13:09:07.822821+00:00",
+  "collected_at": "2026-07-10T16:21:30.961072+00:00",
   "source": "steam",
   "data_layer": "output",
   "item_count": 5,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-07-10T13:19:53+00:00",
+      "lang": "schinese",
+      "title": "[正面] 「今日起，我将继任弥萨格的守密人。\n 我宣誓，我将永远站在人类与融蚀斗争的最前线。」\n\n「我宣誓，我...",
+      "summary": "「今日起，我将继任弥萨格的守密人。\n 我宣誓，我将永远站在人类与融蚀斗争的最前线。」\n\n「我宣誓，我将永远为人类的历史与斗争而战。」\n\n谢谢……能遇见[spoiler] 弥萨格的大家[/spoiler]，真好。\n\n[h2] 愿银钥，指引前路！！ [/h2]",
+      "url": "https://steamcommunity.com/profiles/76561198332809476/recommended/3052450",
+      "author": "76561198332809476",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "「今日起，我将继任弥萨格的守密人。\n 我宣誓，我将永远站在人类与融蚀斗争的最前线。」\n\n「我宣誓，我将永远为人类的历史与斗争而战。」\n\n谢谢……能遇见[spoiler] 弥萨格的大家[/spoiler]，真好。\n\n[h2] 愿银钥，指引前路！！ [/h2]",
+      "timestamp_created": 1783689593,
+      "playtime_forever": 7503
+    },
     {
       "source": "steam",
       "time": "2026-07-10T00:55:24+00:00",
@@ -64,21 +79,6 @@
       "review": "Entretenido el juego, me gusto su gameplay aunque me gustara un modo automático para cierto combates, ademas la historia estaba interesante y el gacha te da la oportunidad de tener todo los personajes si tienes suerte para que el gameplay no sea aburrido...\n\nEl arte y la estetica el juego 10/10...\n\nRecomendable el juego para pasar el rato, aunque la traduccion es por chatgpt con errores, sigue siendo entendible y muy disfrutable...",
       "timestamp_created": 1783620210,
       "playtime_forever": 1927
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-09T15:40:39+00:00",
-      "lang": "brazilian",
-      "title": "[正面] Jogo equilibrado, com dificuldade rasuavel, ponto...",
-      "summary": "Jogo equilibrado, com dificuldade rasuavel, ponto negativo; a legenda não é exata porém isso não interfere na jogabilidade, sujestão; poderiam por mecanicas de clãs e pvp.",
-      "url": "https://steamcommunity.com/profiles/76561199829588283/recommended/3052450",
-      "author": "76561199829588283",
-      "engagement": 0,
-      "language": "brazilian",
-      "voted_up": true,
-      "review": "Jogo equilibrado, com dificuldade rasuavel, ponto negativo; a legenda não é exata porém isso não interfere na jogabilidade, sujestão; poderiam por mecanicas de clãs e pvp.",
-      "timestamp_created": 1783611639,
-      "playtime_forever": 2330
     }
   ]
 }

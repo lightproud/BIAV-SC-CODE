@@ -1,6 +1,6 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-10T13:09:07.822821+00:00",
+  "collected_at": "2026-07-10T16:21:30.961072+00:00",
   "source": "google_play",
   "data_layer": "output",
   "item_count": 124,
@@ -273,6 +273,26 @@
       "summary": "觉得还行",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=zh_CN#gp-57f4f9db-558e-4842-b184-3a7e848970ad",
       "author": "元气豆芽（YQBean）",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-09T16:01:11",
+      "lang": "en",
+      "title": "[Google Play 好评] ★4 So great and kind! Here for Pontos 💙",
+      "summary": "So great and kind! Here for Pontos 💙",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-ff93a09f-c26a-4b39-b107-353ed1db73af",
+      "author": "Joshua RGT",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-09T14:14:47",
+      "lang": "en",
+      "title": "[Google Play 好评] ★5 Awesome gameplay. The mechanics got me h",
+      "summary": "Awesome gameplay. The mechanics got me hook. Awesome visual. Very F2P player friendly. Haven't got into the story yet (I've skipped most of the cutscenes), but from what I've heard it's good so I'll definitely catch up later. Though, I've stumbled graphical glitches where some enemies health bar weren't supposed to be where they should and overlapped with other enemies healthbar. I recommend this to casuals turn based rpg enjoyer. 👌👌👌",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-187574e2-f0b7-4255-a28f-8716356d002e",
+      "author": "Osman Yusuf",
       "engagement": 0
     },
     {
@@ -593,26 +613,6 @@
       "summary": "Best Anime Style Card Game Ever!",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-d6df4806-5084-471c-bdf6-6e81b01bbda0",
       "author": "Sophia",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-06-10T15:49:42",
-      "lang": "en",
-      "title": "[Google Play 好评] ★4 Honestly great in most aspects except th",
-      "summary": "Honestly great in most aspects except that it tends to crash quite a bit on my device (s24 ultra)",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-6f984cdf-8ed4-4d1c-a75f-9736fce62ac2",
-      "author": "Jonathan",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-06-10T14:36:52",
-      "lang": "en",
-      "title": "[Google Play 好评] ★5 I absolutely love this game. One issue I",
-      "summary": "I absolutely love this game. One issue I'm facing is that I can only play it with mobile data. whenever I'm using wifi the game tells me to check my internet connection even though it's perfectly fine.... Please help Devs",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-e42da58d-2a47-4c04-a8c2-09ae99e36a94",
-      "author": "Homura Akemi",
       "engagement": 0
     },
     {

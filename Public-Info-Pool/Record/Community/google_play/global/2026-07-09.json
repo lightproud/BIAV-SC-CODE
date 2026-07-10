@@ -1,8 +1,8 @@
 {
   "date": "2026-07-09",
-  "archived_at": "2026-07-10T13:09:47.540216+00:00",
+  "archived_at": "2026-07-10T16:22:24.352377+00:00",
   "source": "google_play",
-  "item_count": 6,
+  "item_count": 7,
   "items": [
     {
       "title": "[Google Play 差评] ★1 no se puede jugar, solo se para y me ech",
@@ -86,6 +86,20 @@
       "tags": [],
       "lang": "es",
       "platform_region": "es",
+      "region": "global"
+    },
+    {
+      "title": "[Google Play 好评] ★5 Awesome gameplay. The mechanics got me h",
+      "summary": "Awesome gameplay. The mechanics got me hook. Awesome visual. Very F2P player friendly. Haven't got into the story yet (I've skipped most of the cutscenes), but from what I've heard it's good so I'll definitely catch up later. Though, I've stumbled graphical glitches where some enemies health bar weren't supposed to be where they should and overlapped with other enemies healthbar. I recommend this to casuals turn based rpg enjoyer. 👌👌👌",
+      "source": "google_play",
+      "time": "2026-07-09T14:14:47",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-187574e2-f0b7-4255-a28f-8716356d002e",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "Osman Yusuf",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "us",
       "region": "global"
     }
   ],
