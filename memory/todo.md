@@ -24,6 +24,7 @@
 | T6 | 测试长尾：L3.5 双臂升门禁（自注「版本稳定后」）+ MCP 差分第二批（schema 语义 / annotations / stdio-http 传输） | 观察 | `memory/project-status.md` 一致性测试段 | 开 |
 | T7 | Desktop UI 路线 M0–M4 升 r2：待守密人回填 BPT 现状（存量可跑件 / 团队人力） | 黑池输入 | `Public-Info-Pool/Resource/repo-engineering/bpt-desktop-ui-roadmap-20260705.md` 假设声明 | 开 |
 | T8 | 黑池侧派工包开工：UI M0–M4 + 命令框架五模块（图纸 + 消费手册已齐，开工在黑池侧） | 黑池输入 | `.../bpt-desktop-command-impl-plan-20260710.md` + `.../silver-core-sdk-command-consumer-manual-20260710.md` | 开 |
+| T9 | twitter 源重启与否（三选项已成文：官方 API 按量 recent search + 日读硬顶 ~\$15-30/月 / 第三方转售商灰色 ~\$3-10/月 / 退役；Playwright 登录抓取已排除——ToS 硬约束）；守密人「未来再说」，不设期限 | 裁定 | `memory/decisions.md` 2026-07-10「twitter 源挂账」条 + `memory/project-status.md` News 节零产出四源段 | 开 |
 
 ## 已清（销案引）
 
