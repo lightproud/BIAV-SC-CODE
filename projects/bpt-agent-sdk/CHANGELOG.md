@@ -11,6 +11,27 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.38.0 — 2026-07-10
+
+**Custom slash commands** (`.claude/commands`, keeper "全面实现建议" phase-1
+work order): open reproduction of the official custom-command surface,
+SDK-side subset. New `src/engine/slash-commands.ts` loads project + user
+command markdown per `settingSources` (subdirectory ':' namespacing, project
+wins collisions, built-in names reserved, I/O failures degrade to none);
+a pure-text `/name [args]` user turn expands to the command body with
+`$ARGUMENTS`/`$1`..`$9` substituted before hitting the wire (raw text still
+shown to `UserPromptSubmit` hooks and session `firstPrompt` meta; expanded
+body is what history/persistence/resume carry). `system/init.slash_commands`
+and `supportedCommands()` now report the REAL command set (built-in `compact`
++ custom) in the official `SlashCommand` shape — `SlashCommand` type aligned
+to official (`description`/`argumentHint` required, `aliases?`). Deliberately
+NOT reproduced (declared in COMPAT.md, not silent): `!command` inline bash,
+`@file` references, `allowed-tools`/`model` frontmatter, model-invoked
+SlashCommand tool. Tests: `tests/slash-commands.test.ts` (21: loader /
+frontmatter subset / expansion rules / query() wiring e2e); two stale
+`toEqual([])` assertions in query.test.ts realigned. Full suite 1620 pass /
+2 skip; `tsc` + `build` exit 0.
+
 ## 0.37.1 — 2026-07-10
 
 **Port the empty-stream retry arm (断流继续臂) to the OpenAI-protocol transport.**

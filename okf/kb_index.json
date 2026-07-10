@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 338,
+    "concepts": 340,
     "edges": 395,
-    "terms": 5898,
+    "terms": 5911,
     "by_type": {
       "character": 72,
       "dataset": 107,
-      "documentation": 96,
+      "documentation": 98,
       "knowledge-pointer": 43,
       "reference": 17,
       "research": 3
@@ -26,7 +26,7 @@
       "memory": 47,
       "news-output": 23,
       "projects": 23,
-      "resource": 72,
+      "resource": 74,
       "sources": 17,
       "story": 11,
       "unpacked": 13,
@@ -34,7 +34,7 @@
     },
     "by_tier": {
       "skeleton": 128,
-      "search": 210
+      "search": 212
     }
   },
   "sections": {
@@ -68,7 +68,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 72
+      "count": 74
     },
     "sources": {
       "index": "/sources/index.md",
@@ -3440,6 +3440,20 @@
       "tier": "search",
       "degree": 1
     },
+    "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md": {
+      "type": "documentation",
+      "title": "bpt-desktop-command-framework-requirements-20260710",
+      "description": "工程产物，黑池侧实现细节不回流）（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/repo-engineering/bpt-desktop-command-framework-requirements-20260710.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 0
+    },
     "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md": {
       "type": "documentation",
       "title": "bpt-desktop-ui-reference-20260704-r2",
@@ -3655,6 +3669,20 @@
       "title": "bpt-sdk-prompt-corpus-20260708",
       "description": "repo-engineering 产物（html）（格式：html）",
       "resource": "/Public-Info-Pool/Resource/repo-engineering/bpt-sdk-prompt-corpus-20260708.html",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 0
+    },
+    "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md": {
+      "type": "documentation",
+      "title": "cc-engine-external-commands-20260710",
+      "description": "（Piebald-AI 自 `@anthropic-ai/claude-code` npm 编译产物提取，CC v2.1.201，（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/repo-engineering/cc-engine-external-commands-20260710.md",
       "tags": [
         "data_layer:curated",
         "deliverable",
@@ -9435,6 +9463,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -9451,6 +9480,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -9603,7 +9633,8 @@
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
-      "/resource/resource-proposal-internal-ai-platform-plan-202604.md"
+      "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md"
     ],
     "aliases": [
       "/wiki-data/wiki-data-aliases.md"
@@ -9654,7 +9685,8 @@
     ],
     "anthropic": [
       "/projects/bpt-sdk-doc-architecture.md",
-      "/projects/bpt-sdk-doc-compat.md"
+      "/projects/bpt-sdk-doc-compat.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md"
     ],
     "anthropictransport": [
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md"
@@ -10105,6 +10137,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -10174,6 +10207,7 @@
       "/extracted/extracted-categorized.md"
     ],
     "cc": [
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
     ],
@@ -10237,6 +10271,7 @@
       "/projects/project-site.md",
       "/projects/project-wiki.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
@@ -10280,6 +10315,7 @@
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
       "/projects/bpt-sdk-doc-subagents.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
     ],
     "codebase": [
@@ -10304,6 +10340,12 @@
     ],
     "collector": [
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md"
+    ],
+    "command": [
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md"
+    ],
+    "commands": [
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md"
     ],
     "comments": [
       "/community/community-youtube-comments.md",
@@ -10576,6 +10618,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -10592,6 +10635,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -10889,6 +10933,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -10905,6 +10950,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -11197,6 +11243,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -11213,6 +11260,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -11364,6 +11412,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -11380,6 +11429,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -11435,6 +11485,7 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-desktop-design-spec-ref.md",
       "/projects/bpt-sdk-doc-migration.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -11603,6 +11654,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
     ],
     "engineering": [
@@ -11612,6 +11664,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -11628,6 +11681,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -11681,6 +11735,9 @@
     ],
     "experience": [
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md"
+    ],
+    "external": [
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md"
     ],
     "extracted": [
       "/extracted/extracted-art-assets.md",
@@ -11780,6 +11837,9 @@
     ],
     "fragment": [
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
+    ],
+    "framework": [
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md"
     ],
     "frontmatter": [
       "/README.md",
@@ -12360,6 +12420,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -12376,6 +12437,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -12829,6 +12891,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -12845,6 +12908,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -13331,6 +13395,7 @@
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -13345,6 +13410,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
@@ -13607,7 +13673,8 @@
       "/wiki-data/wiki-data-update-notices.md"
     ],
     "npm": [
-      "/projects/bpt-sdk-doc-compat.md"
+      "/projects/bpt-sdk-doc-compat.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md"
     ],
     "o07cardkeyword": [
       "/characters/15582.md"
@@ -13753,6 +13820,9 @@
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-phase-d-plan.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md"
+    ],
+    "piebald": [
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md"
     ],
     "pillars": [
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md"
@@ -13979,6 +14049,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -13995,6 +14066,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -14351,6 +14423,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -14367,6 +14440,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -14629,6 +14703,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -14645,6 +14720,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -14670,6 +14746,9 @@
     ],
     "reproduction": [
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
+    ],
+    "requirements": [
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md"
     ],
     "research": [
       "/memory/memory-ext-research-best-wiki-features.md",
@@ -14724,6 +14803,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -14740,6 +14820,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -15556,6 +15637,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -15572,6 +15654,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -15779,7 +15862,8 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-research-community-analysis-2026-05-18-26.md",
-      "/projects/releases-treasure-map.md"
+      "/projects/releases-treasure-map.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md"
     ],
     "v4": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
@@ -16429,7 +16513,8 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
     ],
     "不回": [
-      "/README.md"
+      "/README.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md"
     ],
     "不在": [
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
@@ -16604,6 +16689,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -16620,6 +16706,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -16857,6 +16944,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -16873,6 +16961,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -17164,6 +17253,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -17180,6 +17270,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -18061,9 +18152,11 @@
       "/resource/resource-proposal-wiki-prototype-202603.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md"
     ],
     "产生": [
@@ -18329,6 +18422,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -18345,6 +18439,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -19252,6 +19347,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -19268,6 +19364,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -19501,6 +19598,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -19517,6 +19615,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -19865,6 +19964,9 @@
     "依赖": [
       "/README.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
+    ],
+    "侧实": [
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md"
     ],
     "侧构": [
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md"
@@ -21285,6 +21387,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -21301,6 +21404,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -23594,6 +23698,9 @@
     "回收": [
       "/characters/15565.md"
     ],
+    "回流": [
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md"
+    ],
     "回溯": [
       "/sources/appstore.md",
       "/sources/bilibili.md",
@@ -24387,6 +24494,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -24403,6 +24511,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -25160,6 +25269,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -25176,6 +25286,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -25764,6 +25875,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -25780,6 +25892,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -25916,6 +26029,7 @@
       "/projects/project-bpt-agent-sdk.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "实纠": [
@@ -26696,6 +26810,7 @@
       "/README.md",
       "/memory/memory-ext-biav-info-classification.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md"
     ],
     "工裁": [
@@ -29467,6 +29582,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -29483,6 +29599,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -29998,6 +30115,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -30014,6 +30132,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -30113,7 +30232,8 @@
       "/characters/77913.md"
     ],
     "提取": [
-      "/projects/extracted-lua-readme.md"
+      "/projects/extracted-lua-readme.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md"
     ],
     "提灯": [
       "/characters/77917.md"
@@ -30317,6 +30437,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -30333,6 +30454,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -30712,6 +30834,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -30728,6 +30851,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -30983,6 +31107,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -30999,6 +31124,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -32618,6 +32744,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -32634,6 +32761,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -33024,6 +33152,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -33040,6 +33169,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -33579,6 +33709,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -33595,6 +33726,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -33779,6 +33911,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -33795,6 +33928,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -34239,6 +34373,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -34255,6 +34390,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -34610,6 +34746,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -34626,6 +34763,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -34946,7 +35084,8 @@
       "/characters/15562.md"
     ],
     "池侧": [
-      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md"
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md"
     ],
     "池信": [
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
@@ -35740,6 +35879,9 @@
     "物亦": [
       "/README.md"
     ],
+    "物提": [
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md"
+    ],
     "物的": [
       "/characters/15591.md",
       "/characters/77913.md"
@@ -36146,6 +36288,9 @@
     ],
     "现精": [
       "/README.md"
+    ],
+    "现细": [
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md"
     ],
     "现行": [
       "/memory/memory-ext-active-contribution-protocol.md",
@@ -38264,7 +38409,8 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
     ],
     "程产": [
-      "/README.md"
+      "/README.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md"
     ],
     "程完": [
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md"
@@ -38820,6 +38966,9 @@
     "组装": [
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
+    "细节": [
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md"
+    ],
     "织互": [
       "/README.md"
     ],
@@ -39072,7 +39221,8 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
     ],
     "编译": [
-      "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
+      "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md"
     ],
     "缝方": [
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
@@ -39724,6 +39874,9 @@
     ],
     "艾继丝": [
       "/characters/15591.md"
+    ],
+    "节不": [
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md"
     ],
     "节奏": [
       "/characters/77925.md",
@@ -40758,6 +40911,9 @@
     "词装": [
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
+    "译产": [
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md"
+    ],
     "译出": [
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
     ],
@@ -41381,6 +41537,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -41397,6 +41554,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -42032,6 +42190,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -42048,6 +42207,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -43017,6 +43177,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -43033,6 +43194,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -43257,6 +43419,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -43273,6 +43436,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -44296,6 +44460,7 @@
       "/projects/project-news.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "黑法老": [
@@ -44663,6 +44828,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -44710,6 +44876,7 @@
       "/extracted/extracted-categorized.md"
     ],
     "cc": [
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
     ],
@@ -44754,6 +44921,12 @@
     ],
     "collector": [
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md"
+    ],
+    "command": [
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md"
+    ],
+    "commands": [
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md"
     ],
     "comments": [
       "/community/community-youtube-comments.md",
@@ -44984,6 +45157,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -45000,6 +45174,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -45285,6 +45460,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -45301,6 +45477,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -45443,6 +45620,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -45459,6 +45637,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -45502,6 +45681,7 @@
     "desktop": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-desktop-design-spec-ref.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -45615,6 +45795,7 @@
     "engine": [
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
     ],
     "engineering": [
@@ -45624,6 +45805,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -45640,6 +45822,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -45678,6 +45861,9 @@
     ],
     "experience": [
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md"
+    ],
+    "external": [
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md"
     ],
     "extracted": [
       "/extracted/extracted-readme.md"
@@ -45732,6 +45918,9 @@
     ],
     "foundation": [
       "/unpacked/unpacked-foundation.md"
+    ],
+    "framework": [
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md"
     ],
     "frozen": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -46165,6 +46354,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -46181,6 +46371,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -46866,6 +47057,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -46882,6 +47074,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -46907,6 +47100,9 @@
     ],
     "reproduction": [
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
+    ],
+    "requirements": [
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md"
     ],
     "research": [
       "/memory/memory-ext-research-best-wiki-features.md",
@@ -47272,6 +47468,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -47288,6 +47485,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",

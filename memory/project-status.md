@@ -159,6 +159,17 @@
 > 银芯→黑池单向输出物，与 §1.1-HC 防火墙同向，非 BPT 产品内部开发。
 
 - **动手前必读**：`projects/bpt-agent-sdk/CONTEXT.md`（会话上下文 + 当前 milestone）
+- **自定义 slash 命令（v0.38.0，2026-07-10，守密人 /goal「全面实现建议」目标令，已落）**：
+  官方 `.claude/commands` 自定义命令面的 SDK 侧子集再现（`src/engine/slash-commands.ts`）：
+  按 settingSources 装载 project+user 命令 md（':' 子目录命名空间 / project 胜出 / 内建名保留 / I/O 失败优雅降级）、
+  纯文本 `/name args` 回合入线前展开（`$ARGUMENTS`+`$1..$9`；hook 与 firstPrompt 见原文、history/resume 载展开文）、
+  `system/init.slash_commands` 与 `supportedCommands()` 返真（内建 compact + 自定义，官方 SlashCommand 四字段型对齐）。
+  `!bash`/`@file`/`allowed-tools`/`model` frontmatter 声明不支持（COMPAT.md「Custom slash commands」节）。
+  **1620 单测全绿（+21）**、`tsc`+`build` exit 0。产物三件：五类命令全景盘点
+  `Public-Info-Pool/Resource/repo-engineering/cc-engine-external-commands-20260710.md`、
+  黑池需求说明书（壳层 A 类命令面板 + 调度平面归壳 + 验收 V1-V7）
+  `Public-Info-Pool/Resource/repo-engineering/bpt-desktop-command-framework-requirements-20260710.md`。
+  挂账两条：B 类官方骨架提示词再现（须过 G8 同款「公开信息再现」裁定）、`/goal` 机制（快照未捕获，挂每周参照刷新观察）。
 - **审计债务清偿（v0.37.0，2026-07-10，守密人「将所有审计的技术债务还完」目标令，已落）**：
   四维审计（`Public-Info-Pool/Resource/repo-engineering/bpt-sdk-optimization-review-20260710.md`）P0/P1/P2 全量落地：
   3 P0 真缺陷修复（交错 tool_calls / 孤儿 tool_use 入库 / TaskOutput 阻塞无视 abort）、P1 加固

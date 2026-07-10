@@ -2522,7 +2522,9 @@ export type ModelInfo = {
 
 export type SlashCommand = {
   name: string;
-  description?: string;
+  description: string;
+  argumentHint: string;
+  aliases?: string[];
 };
 
 export type AgentInfo = {
