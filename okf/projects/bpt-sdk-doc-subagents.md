@@ -4,7 +4,7 @@ title: "bpt-agent-sdk SUBAGENTS"
 description: "Goal: wire a host (BPT) to the SDK's subagent surface the way Claude Code uses"
 resource: "/projects/bpt-agent-sdk/docs/SUBAGENTS.md"
 tags: ["data_layer:curated", "design-doc", "sub-project:bpt-agent-sdk"]
-timestamp: "2026-07-09"
+timestamp: "2026-07-10"
 ---
 
 # 指针概念

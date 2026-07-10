@@ -4,7 +4,7 @@ title: "bpt-agent-sdk ERRORS"
 description: "Every error class in `src/errors.ts` carries a machine-readable, stable"
 resource: "/projects/bpt-agent-sdk/docs/ERRORS.md"
 tags: ["data_layer:curated", "design-doc", "sub-project:bpt-agent-sdk"]
-timestamp: "2026-07-09"
+timestamp: "2026-07-10"
 ---
 
 # 指针概念

@@ -4,7 +4,7 @@ title: "art_assets"
 description: "一手可读解包源「art_assets」：2 文件 / 2.6MB。processed/*.json 的上游权威（血缘：extracted 原始→processed 派生）。"
 resource: "/projects/wiki/data/extracted/art_assets/"
 tags: ["data_layer:full_archive", "first-hand-unpack", "upstream-of:processed", "content:art-assets"]
-timestamp: "2026-07-09"
+timestamp: "2026-07-10"
 ---
 
 # 指针概念

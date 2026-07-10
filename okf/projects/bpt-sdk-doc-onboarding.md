@@ -4,7 +4,7 @@ title: "bpt-agent-sdk ONBOARDING"
 description: "Goal: get a new maintainer from zero to \"I can make a change safely and prove"
 resource: "/projects/bpt-agent-sdk/docs/ONBOARDING.md"
 tags: ["data_layer:curated", "design-doc", "sub-project:bpt-agent-sdk"]
-timestamp: "2026-07-09"
+timestamp: "2026-07-10"
 ---
 
 # 指针概念
