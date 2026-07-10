@@ -313,6 +313,11 @@ brain-in-a-vat/
   （后端 `scripts/kb_navigator.py`）动态检索 / 取概念 / 顺关系图遍历——即「动态编排知识库」（详见 §1.4 第 5 条）。
 - CI：`.github/workflows/build-okf-bundle.yml` 在源数据变更时自动重生成（带 `[skip ci]`）；
   `kb_index.json` 随 bundle 一并重生成（`build_okf_bundle.py` 末尾自动调用 `build_kb_index`）。
+- **索引更新一步到位协议（2026-07-10，lesson #46）**：改 KB 源（memory / assets / Resource /
+  wiki 数据 / 项目文档等）的内容 PR **不必**随包重建 `okf/`、**不要**事后专开 rebuild PR——
+  push 触发器已覆盖全部会话可提交源路径，合并 main 即自动重建直推（数分钟内）；每小时归档层
+  漂移由每日 cron 兜底；治理测试为子集比对、容忍源增长不误报。唯一例外：改**生成器结构本身**
+  （概念改名 / 删层 / 变 type，即 committed 会从 fresh 缺失或结构不一致）须同 PR 重建，否则治理红。
 - 重新生成：`python3 scripts/build_okf_bundle.py`（含导航索引）。
 
 ### §6.2 Public-Info-Pool（产物落点强约定，2026-06-21 守密人裁定）
