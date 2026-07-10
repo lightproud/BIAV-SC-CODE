@@ -102,6 +102,8 @@ Per-row detail lives in the sections below; this is the at-a-glance table.
 | Read total-output cap (`readLimits`) | BPT-EXTENSION | line + per-line caps only | additionally caps TOTAL Read output on a line boundary (default 50000), with a footer that reflects the real range, per-line truncation markers, and a Grep hint; `options.readLimits` tunes the numbers (v0.10.0) |
 | `enumerateBuiltinToolMetadata` | BPT-EXTENSION | built-in tool defs are internal to the CLI; no public read API | zero-side-effect read-only projection of the default built-in tools as `{ name, description, inputJsonSchema }` (MCP-metadata-shaped), so a host can size the built-in tool block instead of estimating it as a residual (v0.11.0) |
 | `provider.protocol: 'openai-chat'` + `provider.openai` | BPT-EXTENSION | Anthropic-only (the wrapped CLI speaks the Messages API) | translating transport drives any OpenAI-compatible Chat Completions endpoint; engine keeps Messages API shapes, translation at the wire boundary only (see docs/OPENAI-PROTOCOL.md) (v0.35.0) |
+| `provider.pricing` | BPT-EXTENSION | static internal price table | USD-per-MTok overrides keyed by model-id prefix (win over the static table); makes cost metrics + `maxBudgetUsd` enforceable on non-Claude models (v0.37.0) |
+| `hookFailureMode` | BPT-EXTENSION | hook failures are logged and ignored | `'closed'` turns a throwing/timed-out hook into a deny so hook-enforced policy fails safe; default `'open'` keeps official-parity behavior (v0.37.0) |
 | `provider.cacheTtl` | BPT-EXTENSION | no cache-TTL knob (CLI decides 5m/1h internally; only reports the split in usage) | caller picks `'5m'`/`'1h'` per query (v0.7.1) |
 | `provider.promptCaching` | BPT-EXTENSION | no toggle (caching is internal) | caller can turn the whole breakpoint layer off |
 | tool-block cache breakpoint | KEPT-DIVERGENCE | 0 breakpoints on tool blocks | 1 (last tool) — measured to only ever gain cache hits on system-prompt divergence, never lose (E7-03) |
@@ -221,10 +223,13 @@ SDK implements the agent loop directly against the public Messages API:
 - Credentials come from `options.provider` (BPT extension) or
   `ANTHROPIC_API_KEY` / `ANTHROPIC_AUTH_TOKEN` / `ANTHROPIC_BASE_URL`.
 - `total_cost_usd` is an **estimate** from a static price table.
-- **`settingSources` loads CLAUDE.md / AGENTS.md** (v0.5): 'project'/'local'
-  walk up from cwd, 'user' reads ~/.claude/CLAUDE.md; the text is injected as a
-  cached system-reminder on the `claude_code` preset path. Empty/undefined loads
-  nothing (SDK default — opt in). Skills/plugins loading still not implemented.
+- **`settingSources` loads CLAUDE.md / AGENTS.md** (v0.5; default flipped
+  v0.8): 'project'/'local' walk up from cwd, 'user' reads ~/.claude/CLAUDE.md;
+  the text is injected as a cached system-reminder on the `claude_code` preset
+  path, and a project `.mcp.json` is loaded on EVERY systemPrompt path.
+  OMITTED loads all three sources (the v0.8 load-all default, matching
+  official Claude Code); an explicit `[]` loads nothing (opt-out).
+  Skills/plugins loading still not implemented.
 - **`<env>` runtime-context block** (v0.5): the `claude_code` preset injects an
   official-style `<env>` block (working directory, git repo/branch, platform, OS
   version, date) + the model line into the volatile tail, reproducing the

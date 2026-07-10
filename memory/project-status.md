@@ -159,6 +159,13 @@
 > 银芯→黑池单向输出物，与 §1.1-HC 防火墙同向，非 BPT 产品内部开发。
 
 - **动手前必读**：`projects/bpt-agent-sdk/CONTEXT.md`（会话上下文 + 当前 milestone）
+- **审计债务清偿（v0.37.0，2026-07-10，守密人「将所有审计的技术债务还完」目标令，已落）**：
+  四维审计（`Public-Info-Pool/Resource/repo-engineering/bpt-sdk-optimization-review-20260710.md`）P0/P1/P2 全量落地：
+  3 P0 真缺陷修复（交错 tool_calls / 孤儿 tool_use 入库 / TaskOutput 阻塞无视 abort）、P1 加固
+  （压缩触发 O(n²)+真值地板 / hookFailureMode fail-safe / pending_turn 终局 settle / 存储 I/O /
+  OpenAI 网关 modelMap+Azure+pricing+informational 警告）、P2 结构（import 纪律守卫+断环 / 双胞胎防漂移 /
+  五件大文件抽取 query 2008→约1530 行、loop 1519→约1160 行 / system 场契约测试 / version 单源 / 文档矛盾清账 /
+  L5 月度定时）。1600+ 单测全绿。
 - **OpenAI 协议支持（v0.35.0，2026-07-09，守密人「可以想办法支持 OpenAI 协议么」派单，已落）**：
   `provider.protocol: 'openai-chat'` 经翻译传输层 `src/transport/openai.ts` 直驱任意 OpenAI 兼容
   Chat Completions 端点（api.openai.com / DeepSeek / vLLM / one-api 网关）——引擎全程仍说 Messages API

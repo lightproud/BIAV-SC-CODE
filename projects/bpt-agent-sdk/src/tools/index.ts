@@ -20,7 +20,7 @@
  * toolset and input/output unions as of Agent SDK 0.3.149). It runs workflow
  * scripts synchronously over the subagent runtime (agent() needs
  * ctx.spawnSubagent, wired inside query(); a zero-agent script still runs
- * bare). See src/tools/workflow.ts + src/internal/workflow-engine.ts.
+ * bare). See src/tools/workflow.ts + src/tools/workflow-engine.ts.
  *
  * Background-task name alignment (2026-07-08): TaskOutput / TaskStop are the
  * official 0.3.201 names for reading and stopping a background task. This SDK's

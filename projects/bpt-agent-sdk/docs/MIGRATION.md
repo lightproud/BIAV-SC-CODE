@@ -5,7 +5,7 @@ Claude Agent SDK. This SDK is a surface-compatible drop-in whose engine drives
 the Anthropic Messages API directly — no CLI subprocess, nothing to install
 beside the package itself.
 
-Compatibility surface is pinned to the official **0.3.199** baseline
+Compatibility surface is pinned to the official **0.3.201** baseline
 (docs/COMPAT.md is the authoritative per-field ledger; docs/POSITIONING.md is
 the strategy anchor — surface tracked, behavior deliberately not).
 
@@ -79,9 +79,19 @@ gap is structural, not a backlog):
    slow on monorepos.
 4. **Bash state** persists `cd` + exported vars via state-file replay, not a
    long-lived shell: functions/aliases/unexported vars reset per call.
-5. **No filesystem settings**: `settingSources` loads only a project
-   `.mcp.json`; CLAUDE.md / skills / plugins are CLI-coupled and deliberately
-   absent. Everything is configured through `Options`.
+5. **Filesystem settings via `settingSources`** (default LOAD-ALL since
+   v0.8 — see 5m): CLAUDE.md / AGENTS.md are injected on the preset/default
+   system-prompt path, and a project `.mcp.json` is loaded on every path.
+   Pass `settingSources: []` to opt out. skills / plugins stay CLI-coupled
+   and absent.
+5a2. **Background shells are detached process groups** whose only reclaim
+   point is query teardown (`for await` completing, `close()`, or the
+   generator's finally). Two residual risks a host should know (audit
+   2026-07-10 M5): a HARD host-process crash orphans running background
+   shells (nothing left alive to signal them), and a Query that is
+   constructed but never iterated nor closed never reaches teardown. Always
+   `close()` queries on window close, and consider host-level cleanup (e.g.
+   a PID-file sweep) if your app must survive crashes with no orphans.
 5b. **Bash sandbox** (v0.6) is ON by default when a backend resolves —
    bubblewrap on Linux. On **Windows (BPT Desktop) and macOS no backend
    resolves**, so Bash runs unsandboxed, no sandbox guidance is emitted, and no
@@ -105,8 +115,9 @@ gap is structural, not a backlog):
    unlocks. This is a deliberate behavior TIGHTENING to match official
    2.1.201 — a caller that used to blind-overwrite must Read first.
 5d. **Extended thinking defaults ON with the `claude_code` preset** (E1,
-   v0.6), matching the observable official default. Budget defaults to 4096
-   (our chosen value — the official budget is unobservable); opt out with
+   v0.6), matching the observable official default. On 4.6+ models the default
+   is `adaptive` (no numeric budget); older models get a budget defaulting to
+   10000 (our chosen value — the official budget is unobservable); opt out with
    `maxThinkingTokens: 0` or `thinking: { type: 'disabled' }`. Expect
    slightly higher per-turn cost and thinking deltas in the stream. Non-preset
    paths are unchanged.

@@ -42,10 +42,9 @@ import { EXITPLANMODE_DESCRIPTION } from './descriptions.js';
 /** The slice of the permission gate ExitPlanMode needs (duck-typed context extension). */
 export type PlanModeControl = Pick<PermissionGate, 'getMode' | 'setMode'>;
 
-/** ToolContext extended with the optional plan-mode bridge (see module header). */
-export type ToolContextWithPermissionGate = ToolContext & {
-  permissionGate?: PlanModeControl;
-};
+/** @deprecated `permissionGate` is a formal ToolContext field since the
+ *  2026-07-10 audit batch; this alias is kept for existing import sites. */
+export type ToolContextWithPermissionGate = ToolContext;
 
 type AllowedPrompt = { tool: 'Bash'; prompt: string };
 
@@ -113,7 +112,7 @@ export const exitPlanModeTool: BuiltinTool = {
       return { content: `ExitPlanMode failed: ${prompts.error}`, isError: true };
     }
 
-    const gate = (ctx as ToolContextWithPermissionGate).permissionGate;
+    const gate = ctx.permissionGate;
     if (gate === undefined) {
       return {
         content:

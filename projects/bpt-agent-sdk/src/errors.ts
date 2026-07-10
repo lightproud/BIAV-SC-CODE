@@ -34,10 +34,11 @@ export type McpErrorCode =
   | 'mcp_unknown_server';
 
 /**
- * All stable error codes. The three `APIConnectionError` scenario codes
- * (`sse_malformed_frame`, `stream_idle_timeout`, `empty_stream`) are defined
- * here for the transport layer to attach at its throw sites; until wired,
- * transport errors carry the class default `api_connection_failed`.
+ * All stable error codes. The `APIConnectionError` scenario codes
+ * (`sse_malformed_frame`, `stream_idle_timeout`, `empty_stream`) are WIRED at
+ * both transports' throw sites (audit 2026-07-10 cleared the stale
+ * "wiring pending" note); errors without a scenario carry the class default
+ * `api_connection_failed`.
  */
 export type ErrorCode =
   | 'aborted'

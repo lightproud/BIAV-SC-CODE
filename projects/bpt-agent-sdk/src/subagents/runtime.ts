@@ -75,7 +75,6 @@ import {
   resolveStallTimeoutMs,
 } from '../transport/stall-watchdog.js';
 import { addWorktree, removeWorktreeIfClean } from '../internal/worktree.js';
-import type { ToolContextWithPermissionGate } from '../tools/exitplanmode.js';
 import {
   DEFAULT_SUBAGENT_MAX_TURNS,
   MAX_SUBAGENT_DEPTH,
@@ -103,6 +102,15 @@ export interface SubagentRuntime {
   stopTask(taskId: string): void;
   /** Abort every outstanding background subagent (query close). */
   abortAll(): void;
+  /**
+   * Await the finalizers of every background subagent ever launched (bounded
+   * by `timeoutMs`, default 2000). abortAll() only SIGNALS the children; their
+   * finally blocks (worktree cleanup, SubagentStop hook, sidechain_end
+   * persistence) settle asynchronously — a query teardown that flushes the
+   * session store before they land loses those trailing records on a mirrored
+   * store (audit 2026-07-10 M4). Never throws.
+   */
+  settleAll(timeoutMs?: number): Promise<void>;
 }
 
 export type SubagentRuntimeOptions = {
@@ -145,6 +153,8 @@ export type SubagentRuntimeOptions = {
   /** E4 read-before-write gate: the query-wide read-paths Set (the SAME
    *  reference as the root ToolContext, so the gate spans the session). */
   readFilePaths?: Set<string>;
+  /** Formal per-query WeakMap key threaded into child contexts (F6). */
+  sessionKey?: object;
 };
 
 /** task_updated.result carries a bounded preview, not the full child text
@@ -412,6 +422,9 @@ export function createSubagentRuntime(
     string,
     { controller: AbortController; promise: Promise<void> }
   >();
+  // Every background finalizer ever launched (settleAll awaits these; entries
+  // are already-settled promises after completion, so the array stays cheap).
+  const allBackgroundPromises: Array<Promise<void>> = [];
 
   const drainCompletedResults = (): TextBlockParam[] => {
     if (completedBuffer.length === 0) return [];
@@ -901,6 +914,10 @@ export function createSubagentRuntime(
         thinking: engineConfig.thinking,
         maxThinkingTokens: engineConfig.maxThinkingTokens,
         promptCaching: engineConfig.promptCaching,
+        // Children estimate cost with the same custom price entries as the
+        // parent, so subagent spend counts toward maxBudgetUsd on non-Claude
+        // models too (audit 2026-07-10 P1-4).
+        pricing: engineConfig.pricing,
         includePartialMessages: false,
         sessionId: agentId,
         // The child's own transcript, so hooks fired INSIDE the subagent loop
@@ -935,11 +952,12 @@ export function createSubagentRuntime(
         // Same SESSION for the read-before-write gate: a parent Read
         // satisfies a child's Write gate and vice versa.
         readFilePaths: opts.readFilePaths,
+        sessionKey: opts.sessionKey,
       };
       // ExitPlanMode bridge: the child flips ITS OWN gate (childGate), never
       // the parent's. Attached via the tool's context extension because the
       // bridge is deliberately not part of the core ToolContext contract.
-      (childToolContext as ToolContextWithPermissionGate).permissionGate =
+      childToolContext.permissionGate =
         childGate;
       const childDeps: EngineDeps = {
         transport,
@@ -1049,6 +1067,7 @@ export function createSubagentRuntime(
           }
         })();
         backgroundTasks.set(agentId, { controller: childController, promise });
+        allBackgroundPromises.push(promise);
         return {
           content:
             `Launched background subagent '${resolved.type}' ` +
@@ -1116,6 +1135,16 @@ export function createSubagentRuntime(
         summary: `background subagent "${taskId}" stopped via stopTask`,
       });
       debug(`stopTask: aborted background subagent "${taskId}"`);
+    },
+    async settleAll(timeoutMs = 2_000): Promise<void> {
+      if (allBackgroundPromises.length === 0) return;
+      await Promise.race([
+        Promise.allSettled(allBackgroundPromises),
+        new Promise<void>((resolve) => {
+          const t = setTimeout(resolve, timeoutMs);
+          (t as { unref?: () => void }).unref?.();
+        }),
+      ]);
     },
     abortAll(): void {
       for (const { controller } of backgroundTasks.values()) {

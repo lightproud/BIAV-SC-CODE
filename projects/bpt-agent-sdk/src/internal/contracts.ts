@@ -23,6 +23,7 @@ import type {
   OutputFormatConfig,
   PermissionMode,
   PermissionUpdate,
+  PriceOverride,
   RawMessageStreamEvent,
   SandboxContext,
   SDKMessage,
@@ -97,6 +98,17 @@ export type ToolResultPayload = {
   isError?: boolean;
 };
 
+/**
+ * NOTE (audit 2026-07-10 F6, stage 2 deferred by its own recommendation):
+ * the optional fields below would group naturally into `session`
+ * (shells/sandbox/readFilePaths/recordFileChange/sessionKey) and
+ * `capabilities` (webSearch/askUser/mcpResources/fetchImpl) sub-objects, but
+ * regrouping touches every builtin tool file and is a churn-wide mechanical
+ * change — the audit's verdict was "do it at a major-version window", and
+ * v0.x minor batches keep the flat shape. Until then: new per-query state
+ * keys on `sessionKey`, and new optional fields must document their absent
+ * behavior here.
+ */
 export type ToolContext = {
   cwd: string;
   additionalDirectories: string[];
@@ -154,6 +166,22 @@ export type ToolContext = {
    * outside query(), e.g. direct unit tests that opt out).
    */
   readFilePaths?: Set<string>;
+  /**
+   * Stable per-query identity object (audit 2026-07-10 F6): the ONE key for
+   * any per-query WeakMap state (worktree sessions, task stores, ...). The
+   * query layer creates it once and the subagent runtime threads the SAME
+   * reference into child contexts. Before this field, per-query state was
+   * keyed on the readFilePaths Set's object identity — an invisible coupling
+   * where rebuilding that Set would silently drop unrelated session state.
+   * Absent -> keyers fall back to their historical keys (bare tool use).
+   */
+  sessionKey?: object;
+  /**
+   * Plan-mode control surface consumed by ExitPlanMode (mode read + flip).
+   * Formalized from the previous duck-typed `as`-cast context extension
+   * (audit 2026-07-10 F6): the field is now part of the contract.
+   */
+  permissionGate?: Pick<PermissionGate, 'getMode' | 'setMode'>;
 };
 
 // v0.2 subagent spawn contract (subagent runtime <-> Agent tool).
@@ -494,6 +522,9 @@ export type EngineConfig = {
   /** Cache lifetime for the breakpoints this engine places ('5m' default, '1h'
    *  for the 1-hour cache). BPT-EXTENSION; no effect when promptCaching false. */
   cacheTtl?: '5m' | '1h';
+  /** Custom model pricing overrides (ProviderConfig.pricing) threaded into
+   *  every cost estimate this loop makes. BPT-EXTENSION (audit 2026-07-10). */
+  pricing?: Record<string, PriceOverride>;
   /** tool_use id of the spawning Agent call; stamped on this loop's messages
    *  so subagent messages thread. Root loop leaves it undefined -> null. */
   parentToolUseId?: string | null;

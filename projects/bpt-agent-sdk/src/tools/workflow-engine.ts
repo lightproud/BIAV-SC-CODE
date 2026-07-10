@@ -51,7 +51,7 @@
 import * as os from 'node:os';
 import * as vm from 'node:vm';
 import { AbortError } from '../errors.js';
-import type { SpawnSubagentFn } from './contracts.js';
+import type { SpawnSubagentFn } from '../internal/contracts.js';
 
 // ---------------------------------------------------------------------------
 // Public types
@@ -729,6 +729,17 @@ export async function runWorkflow(opts: WorkflowRunOptions): Promise<WorkflowRun
         toolUseId: '',
         signal: opts.signal,
       });
+      // Defensive post-spawn check (audit 2026-07-10 P2-7): the runtime's
+      // spawn honors the signal, but an injected/custom spawn may not — an
+      // abort that landed while this agent ran must not hand its late result
+      // back to the script. Resolve null (not throw: a parallel-launched
+      // sibling the script never awaits after cancellation would otherwise be
+      // an unhandled rejection); the run-level post-script check below turns
+      // the cancellation into the single AbortError the caller sees.
+      if (opts.signal.aborted) {
+        pushProgress(`[agent#${index}] ${display}: aborted`);
+        return null;
+      }
       if (res.isError) {
         pushProgress(`[agent#${index}] ${display}: failed (${res.content.slice(0, 120)})`);
         return null;
@@ -930,6 +941,10 @@ export async function runWorkflow(opts: WorkflowRunOptions): Promise<WorkflowRun
 
   try {
     const { meta, value } = await executeScript(opts.script, opts.args, 0);
+    // A workflow whose abort landed mid-flight must not report success even
+    // when the script body happened to run to completion around the signal
+    // checks (audit 2026-07-10 P2-7).
+    if (opts.signal.aborted) throw new AbortError();
     return { ok: true, meta, value, progress, agentsLive, agentsCached, journal };
   } catch (err) {
     if (isAbort(err)) throw err;

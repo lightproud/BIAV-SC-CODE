@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 337,
+    "concepts": 338,
     "edges": 401,
-    "terms": 5808,
+    "terms": 5898,
     "by_type": {
       "character": 72,
       "dataset": 107,
-      "documentation": 95,
+      "documentation": 96,
       "knowledge-pointer": 43,
       "reference": 17,
       "research": 3
@@ -26,7 +26,7 @@
       "memory": 47,
       "news-output": 23,
       "projects": 23,
-      "resource": 71,
+      "resource": 72,
       "sources": 17,
       "story": 11,
       "unpacked": 13,
@@ -34,7 +34,7 @@
     },
     "by_tier": {
       "skeleton": 128,
-      "search": 209
+      "search": 210
     }
   },
   "sections": {
@@ -68,7 +68,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 71
+      "count": 72
     },
     "sources": {
       "index": "/sources/index.md",
@@ -3613,6 +3613,20 @@
       "title": "bpt-sdk-official-semantics-audit-20260707",
       "description": "审计过程中,3 个子代理独立发现 **thinking-signature 修复的源码不在 main**——只剩编译出的 `.d.ts`,`src/engine/thinking-provenance.ts` 缺失、loop 逐字重放。追查:**PR #505 因 pre-push 钩子 rebase 与复用分支的交互,推送的分支不含实际提交 → 合并了空 diff**;#506 随后只把版本号刷成 0.14.0,使 main **标称 0.14.0 却无修复代码**。已从 （格式：md）",
       "resource": "/Public-Info-Pool/Resource/repo-engineering/bpt-sdk-official-semantics-audit-20260707.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 0
+    },
+    "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md": {
+      "type": "documentation",
+      "title": "bpt-sdk-optimization-review-20260710",
+      "description": "引擎主干的取消链、tool_use/tool_result 配对守恒、fail-closed 意识明显高于平均水准（负面清单见 §6）；接缝方法论（契约先行、Transport 单切换点）已被 OpenAI 传输零引擎改动落地所验证。当前主要债务不是「设计错」，而是三类：**① 少数真缺陷集中在新翻译层与两条冷门引擎路径；② 文档与守卫没跟上代码生长速度**（import 契约 13 处越界无守卫、三份文档对同一默认行为口径相反、旗舰示例已随 v0.7 事件改版失效）；**③（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/repo-engineering/bpt-sdk-optimization-review-20260710.md",
       "tags": [
         "data_layer:curated",
         "deliverable",
@@ -9494,6 +9508,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -10163,6 +10178,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
@@ -10305,6 +10321,9 @@
     ],
     "clean": [
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
+    ],
+    "closed": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "cloud": [
       "/README.md"
@@ -10630,6 +10649,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -10942,6 +10962,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -11249,6 +11270,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -11415,6 +11437,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -11662,6 +11685,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -11753,6 +11777,9 @@
     ],
     "facts": [
       "/memory/memory-ext-facts.md"
+    ],
+    "fail": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "failure": [
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md"
@@ -12310,6 +12337,9 @@
     "images": [
       "/assets/assets-images.md"
     ],
+    "import": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
     "importing": [
       "/projects/bpt-sdk-doc-migration.md"
     ],
@@ -12403,6 +12433,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -12871,6 +12902,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -13371,6 +13403,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -13668,7 +13701,11 @@
     ],
     "openai": [
       "/projects/bpt-sdk-doc-openai-protocol.md",
-      "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md"
+      "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
+    "optimization": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "orchestrated": [
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
@@ -14015,6 +14052,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -14386,6 +14424,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -14663,6 +14702,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -14757,6 +14797,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -14791,6 +14832,9 @@
       "/sources/youtube.md",
       "/sources/youtube_comments.md"
     ],
+    "result": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
     "retention": [
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md"
     ],
@@ -14803,6 +14847,7 @@
     "review": [
       "/community/community-steam.md",
       "/news-output/news-output-taptap-review.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/sources/steam.md",
       "/sources/taptap_review.md"
@@ -14963,6 +15008,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
@@ -15521,6 +15567,9 @@
     "ton": [
       "/characters/15569.md"
     ],
+    "tool": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
     "tools": [
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
@@ -15580,6 +15629,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -15622,7 +15672,8 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
     "transport": [
-      "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md"
+      "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "treasure": [
       "/projects/releases-treasure-map.md"
@@ -15748,6 +15799,9 @@
       "/extracted/extracted-categorized.md",
       "/extracted/extracted-lua-tables.md"
     ],
+    "use": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
     "uses": [
       "/projects/bpt-sdk-doc-subagents.md"
     ],
@@ -15764,7 +15818,8 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-desktop-design-spec-ref.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
-      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "v0182": [
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md"
@@ -16209,6 +16264,9 @@
       "/characters/15592.md",
       "/memory/memory-ext-collab-event-playbook.md"
     ],
+    "一默": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
     "七绪": [
       "/characters/15572.md",
       "/characters/15579.md"
@@ -16226,6 +16284,9 @@
     "万能": [
       "/characters/15590.md",
       "/characters/15603.md"
+    ],
+    "三份": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "三会": [
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
@@ -16249,6 +16310,7 @@
       "/characters/15603.md"
     ],
     "三类": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
     ],
     "三语": [
@@ -16274,6 +16336,9 @@
     ],
     "上了": [
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md"
+    ],
+    "上代": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "上传": [
       "/memory/memory-strategy-repo-slimming-plan.md"
@@ -16612,6 +16677,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -16864,6 +16930,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -17020,6 +17087,9 @@
     "与三": [
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
     ],
+    "与两": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
     "与仓": [
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
@@ -17029,6 +17099,9 @@
     ],
     "与复": [
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
+    ],
+    "与守": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "与定": [
       "/assets/assets-archive-integrity.md",
@@ -17164,6 +17237,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -17339,6 +17413,9 @@
     "两引": [
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
     ],
+    "两条": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
     "两次": [
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md"
     ],
@@ -17463,6 +17540,7 @@
       "/characters/94450.md"
     ],
     "中在": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md"
     ],
     "中大": [
@@ -17565,6 +17643,9 @@
     "为原": [
       "/memory/memory-ext-karpathy-coding-principles.md"
     ],
+    "为口": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
     "为团": [
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md"
     ],
@@ -17658,6 +17739,9 @@
     "主卖": [
       "/README.md"
     ],
+    "主干": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
     "主循": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
@@ -17665,6 +17749,9 @@
     "主控": [
       "/memory/memory-ext-active-policy-direct-push-main.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md"
+    ],
+    "主要": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "主词": [
       "/memory/memory-ext-bpt-positioning.md"
@@ -17865,7 +17952,8 @@
       "/characters/15574.md"
     ],
     "事件": [
-      "/memory/memory-ext-collab-event-playbook.md"
+      "/memory/memory-ext-collab-event-playbook.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "事实": [
       "/assets/assets-archive-integrity.md",
@@ -17911,6 +17999,9 @@
     ],
     "于她": [
       "/characters/125346.md"
+    ],
+    "于平": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "于总": [
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md"
@@ -18311,6 +18402,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -18554,6 +18646,7 @@
       "/memory/memory-ext-bpt-architecture-summary-template.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
@@ -18715,6 +18808,9 @@
     "件拼": [
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
+    "件改": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
     "件数": [
       "/memory/memory-ext-bpt-architecture-summary-template.md"
     ],
@@ -18758,7 +18854,8 @@
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
     ],
     "份文": [
-      "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
+      "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "仿制": [
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md"
@@ -18874,6 +18971,9 @@
     ],
     "会降": [
       "/characters/15596.md"
+    ],
+    "传输": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "伤变": [
       "/characters/15581.md"
@@ -19225,6 +19325,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -19473,6 +19574,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -19778,6 +19880,9 @@
     "使队": [
       "/characters/15574.md"
     ],
+    "例已": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
     "供其": [
       "/README.md"
     ],
@@ -19920,6 +20025,9 @@
       "/README.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md"
     ],
+    "债务": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
     "值见": [
       "/community/community-appstore.md",
       "/community/community-bilibili.md",
@@ -20049,6 +20157,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md"
     ],
     "先行": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md"
     ],
     "光明": [
@@ -20562,6 +20671,9 @@
     "冷光": [
       "/characters/77922.md"
     ],
+    "冷门": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
     "冻结": [
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
     ],
@@ -20933,7 +21045,8 @@
       "/characters/54116.md"
     ],
     "切换": [
-      "/characters/15601.md"
+      "/characters/15601.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "切漆": [
       "/characters/77917.md"
@@ -21245,6 +21358,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -21311,6 +21425,9 @@
     ],
     "前为": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md"
+    ],
+    "前主": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "前夜": [
       "/projects/entry-readme.md"
@@ -21495,6 +21612,9 @@
     "务上": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
+    "务不": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
     "务于": [
       "/memory/memory-ext-skill-authoring-standard.md"
     ],
@@ -21544,6 +21664,9 @@
     ],
     "动窗": [
       "/memory/memory-research-community-analysis-2026-05-18-26.md"
+    ],
+    "动落": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "动质": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md"
@@ -21809,6 +21932,9 @@
       "/story/story_layer_readme.md",
       "/story/story_units.md"
     ],
+    "单切": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
     "单向": [
       "/README.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-silver-blackpool-interface.md",
@@ -21837,6 +21963,9 @@
     ],
     "单独": [
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md"
+    ],
+    "单见": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "单页": [
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
@@ -21881,6 +22010,9 @@
     ],
     "卡茜亚": [
       "/characters/15572.md"
+    ],
+    "卫没": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "印获": [
       "/characters/15604.md"
@@ -22261,6 +22393,9 @@
     "取概": [
       "/README.md"
     ],
+    "取消": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
     "取混": [
       "/characters/15604.md"
     ],
@@ -22402,6 +22537,9 @@
       "/sources/weixin.md",
       "/sources/youtube.md",
       "/sources/youtube_comments.md"
+    ],
+    "口径": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "口没": [
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md"
@@ -22923,7 +23061,8 @@
       "/characters/15562.md"
     ],
     "同一": [
-      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "同享": [
       "/characters/95786.md"
@@ -23694,6 +23833,9 @@
     "在提": [
       "/characters/15602.md"
     ],
+    "在新": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
     "在无": [
       "/characters/15574.md",
       "/characters/54116.md"
@@ -23776,6 +23918,9 @@
       "/sources/youtube.md",
       "/sources/youtube_comments.md"
     ],
+    "地所": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
     "地掌": [
       "/characters/54116.md"
     ],
@@ -23802,6 +23947,9 @@
     ],
     "均带": [
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
+    ],
+    "均水": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "均获": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
@@ -24108,6 +24256,9 @@
     "处结": [
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md"
     ],
+    "处越": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
     "备忘": [
       "/memory/memory-research-discord-archive-backfill-conflict.md"
     ],
@@ -24309,6 +24460,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -24684,6 +24836,9 @@
     "失去": [
       "/characters/77923.md"
     ],
+    "失效": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
     "失的": [
       "/characters/15600.md"
     ],
@@ -24713,6 +24868,7 @@
     ],
     "契约": [
       "/README.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/wiki-data/wiki-schema-banners-schema.md",
       "/wiki-data/wiki-schema-characters-processed-schema.md",
       "/wiki-data/wiki-schema-characters-schema.md",
@@ -25077,6 +25233,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -25384,7 +25541,8 @@
       "/memory/memory-ext-collab-event-playbook.md"
     ],
     "守卫": [
-      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
+      "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "守密人": [
       "/README.md",
@@ -25413,6 +25571,9 @@
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/story/story_research_todo.md"
+    ],
+    "守恒": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "守护": [
       "/characters/15566.md",
@@ -25676,6 +25837,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -25986,7 +26148,8 @@
       "/characters/15564.md"
     ],
     "对同": [
-      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "对外": [
       "/README.md",
@@ -25994,6 +26157,9 @@
     ],
     "对多": [
       "/characters/15594.md"
+    ],
+    "对守": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "对手": [
       "/characters/15560.md",
@@ -26194,6 +26360,9 @@
       "/characters/77922.md",
       "/characters/94450.md"
     ],
+    "少数": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
     "少条": [
       "/community/community-stopgame.md"
     ],
@@ -26267,6 +26436,9 @@
     ],
     "层不": [
       "/README.md"
+    ],
+    "层与": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "层公": [
       "/README.md"
@@ -26690,8 +26862,14 @@
     "已落": [
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
     ],
+    "已被": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
     "已退": [
       "/memory/decisions-archive.md"
+    ],
+    "已随": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "已验": [
       "/memory/memory-ext-phase-d-plan.md"
@@ -26865,6 +27043,9 @@
       "/projects/news-archive-sources-registry.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
     ],
+    "干的": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
     "平台": [
       "/community/community-appstore.md",
       "/community/community-bilibili.md",
@@ -26904,6 +27085,9 @@
       "/sources/weixin.md",
       "/sources/youtube.md",
       "/sources/youtube_comments.md"
+    ],
+    "平均": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "平时": [
       "/characters/15602.md"
@@ -27305,7 +27489,8 @@
       "/projects/bpt-sdk-doc-positioning.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "引流": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
@@ -27419,7 +27604,8 @@
       "/README.md"
     ],
     "当前": [
-      "/memory/decisions.md"
+      "/memory/decisions.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "当她": [
       "/characters/125346.md"
@@ -27493,6 +27679,9 @@
     ],
     "径严": [
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
+    ],
+    "径相": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "待讨": [
       "/memory/memory-ext-pending-discussions.md"
@@ -28250,6 +28439,9 @@
     "意见": [
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
     ],
+    "意识": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
     "感受": [
       "/characters/15595.md"
     ],
@@ -28649,6 +28841,9 @@
     ],
     "所追": [
       "/characters/15570.md"
+    ],
+    "所验": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "扇面": [
       "/characters/125346.md"
@@ -29345,6 +29540,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -29489,6 +29685,9 @@
     ],
     "换成": [
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md"
+    ],
+    "换点": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "换的": [
       "/characters/15601.md"
@@ -29692,7 +29891,8 @@
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md"
     ],
     "接缝": [
-      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md"
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "接表": [
       "/README.md",
@@ -29871,6 +30071,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -30189,6 +30390,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -30272,7 +30474,11 @@
       "/characters/77925.md"
     ],
     "擎主": [
-      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
+      "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
+    "擎改": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "擎效": [
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
@@ -30282,6 +30488,9 @@
     ],
     "擎终": [
       "/characters/15602.md"
+    ],
+    "擎路": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "擎里": [
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
@@ -30333,6 +30542,12 @@
     ],
     "收门": [
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md"
+    ],
+    "改动": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
+    "改版": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "改用": [
       "/news-output/news-output-appstore.md",
@@ -30570,6 +30785,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -30840,6 +31056,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -31105,6 +31322,9 @@
     "数的": [
       "/characters/15584.md"
     ],
+    "数真": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
     "数种": [
       "/characters/54116.md"
     ],
@@ -31278,6 +31498,7 @@
     ],
     "文档": [
       "/memory/memory-ext-biav-info-classification.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/story/story_research_notes.md"
     ],
     "文每": [
@@ -31393,7 +31614,8 @@
       "/characters/15589.md"
     ],
     "新翻": [
-      "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
+      "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "方为": [
       "/memory/memory-ext-collab-event-playbook.md"
@@ -31443,7 +31665,8 @@
     "方法": [
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
-      "/memory/methodology.md"
+      "/memory/methodology.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "方生": [
       "/characters/15566.md"
@@ -31477,6 +31700,9 @@
     "旋转": [
       "/characters/15562.md"
     ],
+    "旗舰": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
     "无上": [
       "/characters/15589.md"
     ],
@@ -31494,6 +31720,9 @@
     ],
     "无可": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+    ],
+    "无守": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "无尽": [
       "/characters/15599.md"
@@ -31715,6 +31944,9 @@
     "明是": [
       "/characters/15594.md"
     ],
+    "明显": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
     "明的": [
       "/characters/15589.md"
     ],
@@ -31743,6 +31975,9 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
+    ],
+    "是三": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "是主": [
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
@@ -31885,6 +32120,9 @@
     "显著": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md"
+    ],
+    "显高": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "晓一": [
       "/characters/54116.md"
@@ -32453,6 +32691,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -32858,6 +33097,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -32956,6 +33196,9 @@
     ],
     "条假": [
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md"
+    ],
+    "条冷": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "条列": [
       "/projects/extracted-lua-inventory.md"
@@ -33409,6 +33652,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -33608,6 +33852,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -33708,6 +33953,9 @@
     "案静": [
       "/community/community-index.md"
     ],
+    "档与": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
     "档到": [
       "/projects/news-archive-sources-registry.md"
     ],
@@ -33719,6 +33967,9 @@
     ],
     "档定": [
       "/memory/memory-ext-biav-info-classification.md"
+    ],
+    "档对": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "档就": [
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md"
@@ -34061,6 +34312,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -34431,6 +34683,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -34707,6 +34960,9 @@
     "水亚": [
       "/characters/15590.md"
     ],
+    "水准": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
     "水母": [
       "/characters/15573.md"
     ],
@@ -34816,7 +35072,8 @@
       "/resource/resource-community-analysis-jp-discord-insights-202606.md"
     ],
     "没跟": [
-      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md"
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "没通": [
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md"
@@ -34854,7 +35111,8 @@
     "法论": [
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
-      "/memory/methodology.md"
+      "/memory/methodology.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "法跟": [
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md"
@@ -35029,6 +35287,9 @@
     "消费": [
       "/README.md"
     ],
+    "消链": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
     "涡将": [
       "/characters/130901.md"
     ],
@@ -35065,7 +35326,8 @@
     ],
     "清单": [
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
-      "/projects/extracted-lua-inventory.md"
+      "/projects/extracted-lua-inventory.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "清查": [
       "/memory/memory-ext-workflow-api-key-audit.md"
@@ -35478,6 +35740,9 @@
       "/memory/memory-ext-bpt-architecture-summary-template.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
+    ],
+    "版失": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "版更": [
       "/projects/bpt-sdk-doc-positioning.md"
@@ -36156,6 +36421,9 @@
     "生都": [
       "/characters/125346.md"
     ],
+    "生长": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
     "用主": [
       "/projects/entry-readme.md"
     ],
@@ -36458,6 +36726,9 @@
       "/characters/15589.md",
       "/characters/15601.md"
     ],
+    "界无": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
     "界的": [
       "/characters/54116.md",
       "/characters/77926.md"
@@ -36699,6 +36970,9 @@
       "/characters/15560.md",
       "/characters/15586.md",
       "/memory/memory-ext-bpt-guidance-log.md"
+    ],
+    "的取": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "的可": [
       "/characters/15600.md"
@@ -37350,6 +37624,9 @@
     "直的": [
       "/characters/130901.md"
     ],
+    "相反": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
     "相当": [
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
@@ -37419,6 +37696,9 @@
     ],
     "真矛": [
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md"
+    ],
+    "真缺": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "真集": [
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md"
@@ -37560,6 +37840,9 @@
     ],
     "码片": [
       "/memory/memory-ext-bpt-architecture-summary-template.md"
+    ],
+    "码生": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "码行": [
       "/memory/memory-ext-karpathy-coding-principles.md"
@@ -37730,6 +38013,9 @@
     ],
     "磨灭": [
       "/characters/15588.md"
+    ],
+    "示例": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "示层": [
       "/news-output/news-output-all.md",
@@ -38449,6 +38735,9 @@
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
+    "约先": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
     "约束": [
       "/projects/entry-claude-md.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
@@ -38845,6 +39134,9 @@
     "编译": [
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
     ],
+    "缝方": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
     "缩为": [
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
     ],
@@ -38869,6 +39161,9 @@
     ],
     "缺的": [
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
+    ],
+    "缺陷": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "网络": [
       "/memory/memory-ext-knowledge-layer-design.md"
@@ -38956,7 +39251,8 @@
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
     ],
     "翻译": [
-      "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
+      "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "翼吹": [
       "/characters/77923.md"
@@ -39016,6 +39312,7 @@
       "/characters/77917.md"
     ],
     "而是": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
@@ -39422,6 +39719,9 @@
     "航行": [
       "/characters/15566.md"
     ],
+    "舰示": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
     "船只": [
       "/characters/77922.md"
     ],
@@ -39684,7 +39984,8 @@
     ],
     "落地": [
       "/README.md",
-      "/memory/memory-ext-active-policy-direct-push-main.md"
+      "/memory/memory-ext-active-policy-direct-push-main.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "落差": [
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -39791,7 +40092,8 @@
       "/characters/15567.md"
     ],
     "行为": [
-      "/memory/memory-ext-karpathy-coding-principles.md"
+      "/memory/memory-ext-karpathy-coding-principles.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "行代": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md"
@@ -39939,6 +40241,9 @@
     ],
     "要付": [
       "/characters/15593.md"
+    ],
+    "要债": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "要向": [
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
@@ -40196,6 +40501,9 @@
     "计过": [
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
     ],
+    "计错": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
     "订阅": [
       "/news-output/news-output-feed.md"
     ],
@@ -40207,6 +40515,9 @@
     ],
     "认知": [
       "/characters/15563.md"
+    ],
+    "认行": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "讨厌": [
       "/characters/15563.md"
@@ -40351,7 +40662,8 @@
       "/memory/memory-ext-knowledge-layer-design.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
-      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md"
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "访确": [
       "/memory/memory-ext-collab-event-playbook.md"
@@ -40483,6 +40795,9 @@
       "/projects/project-site.md",
       "/projects/project-wiki.md"
     ],
+    "识明": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
     "诊断": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-build-verification.md",
       "/memory/memory-research-discord-archive-backfill-conflict.md"
@@ -40505,6 +40820,9 @@
     ],
     "译出": [
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
+    ],
+    "译层": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "译志": [
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
@@ -40722,7 +41040,8 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md"
     ],
     "负面": [
-      "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md"
+      "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "贡献": [
       "/memory/contribution-protocol.md",
@@ -40895,6 +41214,9 @@
     "越时": [
       "/characters/15574.md"
     ],
+    "越界": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
     "越穷": [
       "/characters/54116.md"
     ],
@@ -40929,6 +41251,9 @@
     ],
     "跑顺": [
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md"
+    ],
+    "跟上": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "跟官": [
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md"
@@ -41129,6 +41454,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -41454,6 +41780,9 @@
       "/sources/youtube.md",
       "/sources/youtube_comments.md"
     ],
+    "输零": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
     "辱敌": [
       "/characters/15575.md"
     ],
@@ -41776,6 +42105,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -41996,6 +42326,9 @@
     "速对": [
       "/characters/15580.md"
     ],
+    "速度": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
     "速激": [
       "/characters/15563.md"
     ],
@@ -42199,6 +42532,9 @@
     "配合": [
       "/characters/77922.md",
       "/extracted/extracted-readme.md"
+    ],
+    "配对": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "配层": [
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
@@ -42754,6 +43090,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -42993,6 +43330,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -43267,6 +43605,12 @@
     "长谷": [
       "/characters/94450.md"
     ],
+    "长速": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
+    "门引": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
     "门户": [
       "/projects/project-site.md"
     ],
@@ -43406,6 +43750,9 @@
     "陪伴": [
       "/characters/125346.md"
     ],
+    "陷集": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
     "随后": [
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
     ],
@@ -43439,6 +43786,7 @@
     ],
     "集中": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md"
     ],
     "集健": [
@@ -43512,6 +43860,9 @@
     ],
     "零常": [
       "/README.md"
+    ],
+    "零引": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "零持": [
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md"
@@ -43641,6 +43992,9 @@
     ],
     "面时": [
       "/characters/125346.md"
+    ],
+    "面清": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "面的": [
       "/characters/15566.md"
@@ -43855,6 +44209,7 @@
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-phase-d-plan.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md"
     ],
     "骨架": [
@@ -43872,6 +44227,9 @@
     ],
     "骸绘": [
       "/characters/77926.md"
+    ],
+    "高于": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "高五": [
       "/characters/15585.md"
@@ -44013,7 +44371,8 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "默认": [
-      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "鼓舞": [
       "/characters/130901.md"
@@ -44377,6 +44736,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md"
     ],
@@ -44697,6 +45057,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -44997,6 +45358,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -45154,6 +45516,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -45334,6 +45697,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -45874,6 +46238,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -46224,6 +46589,9 @@
       "/projects/bpt-sdk-doc-openai-protocol.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md"
     ],
+    "optimization": [
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
     "orchestrated": [
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
     ],
@@ -46571,6 +46939,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -46618,6 +46987,7 @@
     ],
     "review": [
       "/news-output/news-output-taptap-review.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/sources/taptap_review.md"
     ],
@@ -46724,6 +47094,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md"
     ],
@@ -46974,6 +47345,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",

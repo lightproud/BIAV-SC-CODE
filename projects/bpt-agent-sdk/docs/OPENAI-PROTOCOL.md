@@ -68,6 +68,13 @@ provider: {
 | `maxTokensParam` | `'max_tokens'` | Wire param carrying the output-token cap. api.openai.com reasoning models require `'max_completion_tokens'`; most gateways accept the default. |
 | `reasoningEffort` | unset | Forwarded verbatim as `reasoning_effort` (the OpenAI-native reasoning knob; see thinking note below). |
 | `extraBody` | unset | Extra top-level body fields merged into every request (gateway params, e.g. `{ enable_thinking: false }`). Translator-owned keys win on conflict. |
+| `modelMap` | unset | Wire-model remapping `{resolvedId: endpointModel}` applied just before encoding — ONE knob that also catches the Claude defaults baked into generators / verifier / subagent aliases (e.g. `{'claude-haiku-4-5': 'gpt-4o-mini'}`). Unmapped `claude-*` ids log a debug warning. |
+| `authHeaderName` | `'authorization'` | Credential header. The default sends `Bearer <key>`; any other name (e.g. Azure's `'api-key'`) sends the raw key under that header. |
+| `extraQueryParams` | unset | Query params appended to the endpoint URL (e.g. `{'api-version': '2024-06-01'}` for Azure-style gateways). |
+
+Related (on `provider`, not protocol-specific): **`provider.pricing`** — USD-per-MTok
+entries keyed by model-id prefix, merged over the static Claude table. Setting it
+makes cost metrics and `maxBudgetUsd` enforceable for non-Claude models.
 
 ## Translation map
 
@@ -109,8 +116,12 @@ handling is provider-agnostic.
 - **PDF/document blocks degrade** to a text placeholder (no protocol
   equivalent); text-source documents inline their text.
 - **`betas` and `apiVersion` are ignored** (Anthropic header concepts).
-- **Cost metrics read 0** for non-Claude models — the pricing table is
-  Claude-only, so `maxBudgetUsd` is not enforceable on this protocol.
+- **Cost metrics read 0** for non-Claude models UNLESS you supply
+  `provider.pricing` entries — with them, cost metrics and `maxBudgetUsd`
+  are fully enforceable. When `maxBudgetUsd` is set with no price entry for
+  the session model, the SDK emits an `informational` warning after init
+  (as it does for a dropped `thinking` config and ignored `betas`/
+  `apiVersion`) instead of failing silently.
 - **Model choice changes behavior**: the harness prompts are tuned against
   Claude Code behavior (POSITIONING §2); a different model family means a
   different feel. This is the sovereignty trade the switch exists to offer.

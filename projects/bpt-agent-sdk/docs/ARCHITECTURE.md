@@ -17,9 +17,16 @@ genuinely internal or leaked material is used.
 
 1. **Language**: TypeScript strict, ESM (`module: NodeNext`). Relative imports
    MUST use the `.js` suffix (`import { x } from '../types.js'`).
-2. **Imports**: a module may import ONLY from `src/types.ts`, `src/errors.ts`,
-   `src/internal/contracts.ts`, Node builtins (`node:` prefix), `zod`,
-   `fast-glob`, and files it owns. Never import another module's files.
+2. **Imports**: a module may import from `src/types.ts`, `src/errors.ts`,
+   `src/version.ts`, anything under `src/internal/` (the shared kernel),
+   Node builtins (`node:` prefix), `zod`, `fast-glob`, and files it owns.
+   Cross-module imports beyond that are allowed ONLY along the directed
+   edges in the **Import edges** table below — which
+   `tests/import-discipline.test.ts` parses and enforces, the same
+   doc-as-executable-authority mechanism as the error-class whitelist.
+   (Updated 2026-07-10: the old "never import another module's files" absolute
+   had decayed into 13 unguarded violations; the real, legal dependency edges
+   are now declared and machine-checked instead.)
 3. **No default exports.** Named exports only.
 4. **No new dependencies.** Runtime deps are exactly `zod` (v4) and `fast-glob`.
 5. **UUIDs**: `randomUUID` from `node:crypto`.
@@ -31,15 +38,52 @@ genuinely internal or leaked material is used.
 
 ## Module map
 
-| Module | Owner files (under `src/`) | Contract |
+(Updated 2026-07-10 to the as-built reality — the original seven-module A–G
+plan had grown subagents/, sandbox/, generators/, tips/, verifier/ and a
+richer internal/ without the map following.)
+
+| Module | Owner dirs/files (under `src/`) | Contract / role |
 |--------|---------------------------|----------|
-| A transport | `transport/sse.ts`, `transport/anthropic.ts` | `Transport` |
-| B engine | `engine/pricing.ts`, `engine/prompts.ts`, `engine/accumulator.ts`, `engine/loop.ts` | `EngineConfig`/`EngineDeps` |
-| C fs tools | `tools/fsutil.ts`, `tools/read.ts`, `tools/write.ts`, `tools/edit.ts` | `BuiltinTool` |
-| D exec/search tools | `tools/bash.ts`, `tools/glob.ts`, `tools/grep.ts` | `BuiltinTool` |
-| E permissions + hooks | `permissions/rules.ts`, `permissions/gate.ts`, `hooks/matcher.ts`, `hooks/runner.ts` | `PermissionGate`, `HookRunner` |
-| F mcp | `mcp/stdio.ts`, `mcp/http.ts`, `mcp/sdk-server.ts`, `mcp/registry.ts` | `McpRegistry`, `tool()`, `createSdkMcpServer()` |
-| G sessions + query | `sessions/store.ts`, `tools/index.ts`, `query.ts`, `index.ts` + `examples/*`, `README.md` | `SessionStore`, `Query`, package exports |
+| A transport | `transport/` (sse, anthropic, openai, factory, stall-watchdog) | `Transport`; `factory.ts` is the protocol switch point |
+| B engine | `engine/` (loop, accumulator, compaction, prompts + fragments/assembler, tokens, pricing, cache-control, context-window, thinking-*, structured-output, runtime-context, prompt-composition) | `EngineConfig`/`EngineDeps` |
+| C+D tools | `tools/` (fs/exec/search builtins, shells, task family, workflow + workflow-engine, worktree, plan mode, web, registry) | `BuiltinTool` |
+| E permissions + hooks | `permissions/`, `hooks/` | `PermissionGate`, `HookRunner` |
+| F mcp | `mcp/` | `McpRegistry`, `tool()`, `createSdkMcpServer()` |
+| G sessions + assembly | `sessions/`, `query.ts`, `session-manager.ts`, `index.ts` | `SessionStore`, `Query`, package exports; composition roots |
+| H subagents | `subagents/` (agents, runtime, agent-tool) | `SpawnSubagentFn`; the SECOND assembly root (builds child gates/loops) |
+| I sandbox | `sandbox/` (backend, bwrap, evidence) | `SandboxBackend`; consumed by tools |
+| J generators | `generators/` (utility LLM runtime + prompts) | single-shot utility calls; consumed by hooks (condition), tips, verifier |
+| K tips + verifier | `tips/`, `verifier/` | context-tip / adversarial-verify features over generators |
+| shared kernel | `internal/` (contracts, model-alias, worktree, setting-sources), `types.ts`, `errors.ts`, `version.ts` | importable by every module |
+
+## Import edges
+
+Directed cross-module edges beyond the everywhere-allowed set (types/errors/
+version/internal/own files). `tests/import-discipline.test.ts` parses THIS
+table; an import not covered here turns the build red. Composition roots
+(`query.ts`, `session-manager.ts`, `index.ts`) may import everything.
+
+| From | May import from |
+|------|-----------------|
+| `src/engine/` | (everywhere-allowed only) |
+| `src/transport/` | (everywhere-allowed only) |
+| `src/tools/` | `src/sandbox/` |
+| `src/hooks/` | `src/generators/` |
+| `src/tips/` | `src/generators/` |
+| `src/verifier/` | `src/generators/` |
+| `src/generators/` | `src/transport/`, `src/engine/` |
+| `src/subagents/` | `src/engine/`, `src/permissions/`, `src/sessions/`, `src/transport/`, `src/tools/` |
+| `src/mcp/` | (everywhere-allowed only) |
+| `src/sessions/` | (everywhere-allowed only) |
+| `src/permissions/` | (everywhere-allowed only) |
+| `src/sandbox/` | (everywhere-allowed only) |
+| `src/tips/`, `src/verifier/` | `src/generators/` |
+
+The acyclicity that matters: `engine` must never import `subagents` (the
+2026-07-10 audit found `engine/compaction -> subagents/agents` closing a
+package cycle with `subagents/runtime -> engine/loop`; `resolveModelAlias`
+moved to `internal/model-alias.ts` to break it, and the guard now keeps it
+broken).
 
 ## A — Transport
 
@@ -394,11 +438,13 @@ build red.
 | `src/sessions/` | `ConfigurationError` |
 | `src/query.ts` | `ConfigurationError` |
 | `src/session-manager.ts` | `ConfigurationError` |
-| `src/tools/bash.ts` | `Error` |
+| `src/tools/bash.ts` | `ConfigurationError` |
 
-(`src/tools/bash.ts` keeps one bare `Error` for spawn impossibility - the
-only legitimate throw documented in module D; typing it is deferred to the
-tools owner.)
+(`src/tools/bash.ts` throws exactly once — spawn impossibility, the only
+legitimate throw documented in module D. Typed as `ConfigurationError` since
+the 2026-07-10 audit batch: an unspawnable shell is an environment problem,
+and the stable `code` lets a host route it without parsing the message. This
+retired the last bare `Error` in `src/`.)
 
 ## Testing contract (phase after integration)
 

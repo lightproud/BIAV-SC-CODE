@@ -56,6 +56,7 @@ import type {
 } from '../types.js';
 import type { RetryInfo, StreamRequest, Transport } from '../internal/contracts.js';
 import { parseSSE } from './sse.js';
+import { SDK_USER_AGENT } from '../version.js';
 import {
   RequestSemaphore,
   resolveMaxConcurrent,
@@ -65,7 +66,7 @@ import {
 
 const DEFAULT_BASE_URL = 'https://api.openai.com/v1';
 const DEFAULT_TIMEOUT_MS = 600_000;
-const USER_AGENT = 'bpt-agent-sdk/0.1.0';
+const USER_AGENT = SDK_USER_AGENT;
 const BACKOFF_BASE_MS = 1_000;
 const BACKOFF_FACTOR = 2;
 const BACKOFF_MAX_MS = 60_000;
@@ -357,19 +358,38 @@ function mapFinishReason(reason: string | null): StopReason {
  * Stateful chunk translator: feeds chat.completion.chunk payloads, emits
  * Anthropic stream events. One instance per stream attempt. Exported for
  * unit tests (pure state machine, no I/O).
+ *
+ * Blocks are keyed ('text' / 'reasoning' / `tool:${index}`) and stay OPEN
+ * until finish(): providers such as vLLM interleave deltas of parallel tool
+ * calls, so a close-on-switch design would seal a half-received block (empty
+ * or truncated input) and route later fragments into a mis-labeled ghost
+ * block. Multiple concurrently open blocks are exactly what the Anthropic
+ * protocol's per-index events model; the accumulator keys by index and never
+ * requires eager stops. (Audit 2026-07-10 P0-1.)
  */
 export class OpenAIStreamTranslator {
   private readonly model: string;
   private started = false;
   private nextIndex = 0;
-  private openKey: string | null = null;
-  private openIndex = -1;
+  /** Open blocks: translator key -> Anthropic block index (insertion order). */
+  private readonly open = new Map<string, number>();
   private finishReason: string | null = null;
   private usage: NonNullable<OpenAIChunk['usage']> | null = null;
   private done = false;
 
   constructor(requestModel: string) {
     this.model = requestModel;
+  }
+
+  /** True once any choice carried a finish_reason (stream reached a proper
+   *  end-of-message marker; used by the transport's truncation heuristic). */
+  sawFinishReason(): boolean {
+    return this.finishReason !== null;
+  }
+
+  /** True once the first chunk arrived (message_start was emitted). */
+  hasStarted(): boolean {
+    return this.started;
   }
 
   feed(chunk: OpenAIChunk): RawMessageStreamEvent[] {
@@ -401,28 +421,28 @@ export class OpenAIStreamTranslator {
 
     const reasoning = delta.reasoning_content ?? delta.reasoning;
     if (typeof reasoning === 'string' && reasoning.length > 0) {
-      this.openBlock(events, 'reasoning', {
+      const index = this.openBlock(events, 'reasoning', {
         type: 'thinking',
         thinking: '',
         signature: '',
       });
       events.push({
         type: 'content_block_delta',
-        index: this.openIndex,
+        index,
         delta: { type: 'thinking_delta', thinking: reasoning },
       });
     }
     if (typeof delta.content === 'string' && delta.content.length > 0) {
-      this.openBlock(events, 'text', { type: 'text', text: '' });
+      const index = this.openBlock(events, 'text', { type: 'text', text: '' });
       events.push({
         type: 'content_block_delta',
-        index: this.openIndex,
+        index,
         delta: { type: 'text_delta', text: delta.content },
       });
     }
     for (const tc of delta.tool_calls ?? []) {
       const key = `tool:${tc.index ?? 0}`;
-      this.openBlock(events, key, {
+      const index = this.openBlock(events, key, {
         type: 'tool_use',
         id: tc.id ?? `call_${this.nextIndex}`,
         name: tc.function?.name ?? '',
@@ -432,7 +452,7 @@ export class OpenAIStreamTranslator {
       if (typeof args === 'string' && args.length > 0) {
         events.push({
           type: 'content_block_delta',
-          index: this.openIndex,
+          index,
           delta: { type: 'input_json_delta', partial_json: args },
         });
       }
@@ -440,7 +460,7 @@ export class OpenAIStreamTranslator {
     return events;
   }
 
-  /** Close the open block and emit message_delta + message_stop. Idempotent. */
+  /** Close all open blocks and emit message_delta + message_stop. Idempotent. */
   finish(): RawMessageStreamEvent[] {
     if (this.done) return [];
     this.done = true;
@@ -450,7 +470,10 @@ export class OpenAIStreamTranslator {
       );
     }
     const events: RawMessageStreamEvent[] = [];
-    this.closeOpen(events);
+    for (const index of [...this.open.values()].sort((a, b) => a - b)) {
+      events.push({ type: 'content_block_stop', index });
+    }
+    this.open.clear();
     const cached = this.usage?.prompt_tokens_details?.cached_tokens ?? 0;
     const prompt = this.usage?.prompt_tokens ?? 0;
     events.push({
@@ -468,6 +491,9 @@ export class OpenAIStreamTranslator {
     return events;
   }
 
+  /** Return the block index for `key`, opening (and emitting
+   *  content_block_start for) it on first sight. Blocks never close before
+   *  finish() — see the class doc on interleaved deltas. */
   private openBlock(
     events: RawMessageStreamEvent[],
     key: string,
@@ -475,23 +501,18 @@ export class OpenAIStreamTranslator {
       | { type: 'text'; text: string }
       | { type: 'thinking'; thinking: string; signature?: string }
       | { type: 'tool_use'; id: string; name: string; input: Record<string, unknown> },
-  ): void {
-    if (this.openKey === key) return;
-    this.closeOpen(events);
-    this.openKey = key;
-    this.openIndex = this.nextIndex;
+  ): number {
+    const existing = this.open.get(key);
+    if (existing !== undefined) return existing;
+    const index = this.nextIndex;
     this.nextIndex += 1;
+    this.open.set(key, index);
     events.push({
       type: 'content_block_start',
-      index: this.openIndex,
+      index,
       content_block: block,
     });
-  }
-
-  private closeOpen(events: RawMessageStreamEvent[]): void {
-    if (this.openKey === null) return;
-    events.push({ type: 'content_block_stop', index: this.openIndex });
-    this.openKey = null;
+    return index;
   }
 }
 
@@ -519,7 +540,14 @@ export class OpenAIChatTransport implements Transport {
       nonEmpty(cfg.env.OPENAI_BASE_URL) ??
       DEFAULT_BASE_URL
     ).replace(/\/+$/, '');
-    this.endpoint = `${base}/chat/completions`;
+    // Azure-style gateways route by query params (e.g. api-version); append
+    // any configured extras once at construction (audit 2026-07-10 P1-4).
+    const extras = Object.entries(this.provider.openai?.extraQueryParams ?? {});
+    const query =
+      extras.length > 0
+        ? `?${new URLSearchParams(Object.fromEntries(extras)).toString()}`
+        : '';
+    this.endpoint = `${base}/chat/completions${query}`;
   }
 
   apiKeySource(): ApiKeySource {
@@ -551,8 +579,22 @@ export class OpenAIChatTransport implements Transport {
     const { signal: callerSignal, onRetry, ...requestBody } = req;
     if (callerSignal?.aborted) throw new AbortError();
 
+    // Wire-model remapping (audit 2026-07-10 P1-4): one knob that catches
+    // every call site — main loop, generators' utility default, verifier,
+    // subagent alias resolutions — instead of chasing per-site overrides.
+    const opts = this.provider.openai ?? {};
+    const mappedModel = opts.modelMap?.[requestBody.model] ?? requestBody.model;
+    if (mappedModel !== requestBody.model) {
+      this.debug(`openai transport: model ${requestBody.model} -> ${mappedModel} (modelMap)`);
+    } else if (requestBody.model.includes('claude')) {
+      this.debug(
+        `openai transport: WARNING sending Claude model id "${requestBody.model}" to an ` +
+          `OpenAI-protocol endpoint (likely 404). Map it via provider.openai.modelMap ` +
+          `or set the model explicitly.`,
+      );
+    }
     const bodyJson = JSON.stringify(
-      encodeOpenAIRequest(requestBody, this.provider.openai ?? {}),
+      encodeOpenAIRequest({ ...requestBody, model: mappedModel }, opts),
     );
     const headers = this.buildHeaders(this.credential);
     const timeoutMs = this.provider.timeoutMs ?? DEFAULT_TIMEOUT_MS;
@@ -569,6 +611,13 @@ export class OpenAIChatTransport implements Transport {
     );
 
     // ---- streaming phase: NEVER retried ------------------------------------
+    // OpenAI-protocol servers/gateways report the correlation id as
+    // x-request-id (some proxies keep Anthropic's request-id); capture either
+    // so APIStatusError carries the same diagnosability as the Anthropic arm.
+    const requestId =
+      response.headers.get('x-request-id') ??
+      response.headers.get('request-id') ??
+      undefined;
     if (!response.body) {
       throw new APIConnectionError('Chat Completions response has no body');
     }
@@ -586,12 +635,16 @@ export class OpenAIChatTransport implements Transport {
     };
     const translator = new OpenAIStreamTranslator(req.model);
     let chunkCount = 0;
+    let doneSeen = false;
     try {
       resetIdle();
       for await (const frame of parseSSE(response.body, streamSignal)) {
         resetIdle();
         const data = frame.data.trim();
-        if (data === '[DONE]') break;
+        if (data === '[DONE]') {
+          doneSeen = true;
+          break;
+        }
         let parsed: OpenAIChunk;
         try {
           parsed = JSON.parse(data) as OpenAIChunk;
@@ -605,10 +658,24 @@ export class OpenAIChatTransport implements Transport {
         }
         if (parsed.error !== undefined && parsed.error !== null) {
           const info = extractOpenAIError(parsed.error);
-          throw new APIStatusError(500, info.type, info.message);
+          throw new APIStatusError(500, info.type, info.message, requestId);
         }
         chunkCount += 1;
         yield* translator.feed(parsed);
+      }
+      // A stream that ends CLEANLY but carried neither [DONE] nor any
+      // finish_reason never reached its end-of-message marker: the connection
+      // was cut mid-turn (proxy timeout, server restart). Do NOT fabricate an
+      // end_turn success from the half-received answer — surface it as a
+      // truncated turn so the engine's E3 salvage applies, matching the
+      // Anthropic arm's semantics. (Audit 2026-07-10 P1-2.)
+      if (!doneSeen && !translator.sawFinishReason()) {
+        const failure = new APIConnectionError(
+          `Chat Completions stream ended without [DONE] or finish_reason after ` +
+            `${chunkCount} chunk(s); treating as a truncated turn`,
+        );
+        failure.midStreamTruncation = chunkCount > 0;
+        throw failure;
       }
       yield* translator.finish();
     } catch (err) {
@@ -676,6 +743,10 @@ export class OpenAIChatTransport implements Transport {
 
       if (response.ok) return { response, signal, timeoutSignal };
 
+      const requestId =
+        response.headers.get('x-request-id') ??
+        response.headers.get('request-id') ??
+        undefined;
       const info = await readOpenAIErrorInfo(response);
       const retryable =
         response.status === 408 || response.status === 429 || response.status >= 500;
@@ -695,7 +766,7 @@ export class OpenAIChatTransport implements Transport {
         await this.backoff(attempt, retryAfterMs, callerSignal);
         continue;
       }
-      throw new APIStatusError(response.status, info.type, info.message);
+      throw new APIStatusError(response.status, info.type, info.message, requestId);
     }
   }
 
@@ -719,7 +790,11 @@ export class OpenAIChatTransport implements Transport {
     for (const [key, value] of Object.entries(this.provider.defaultHeaders ?? {})) {
       headers[key.toLowerCase()] = value;
     }
-    headers.authorization = `Bearer ${credential.value}`;
+    // Credential header (audit 2026-07-10 P1-4): default Bearer authorization;
+    // a custom header name (e.g. Azure's 'api-key') carries the RAW key.
+    const authHeader = (this.provider.openai?.authHeaderName ?? 'authorization').toLowerCase();
+    headers[authHeader] =
+      authHeader === 'authorization' ? `Bearer ${credential.value}` : credential.value;
     return headers;
   }
 }
@@ -787,7 +862,8 @@ async function readOpenAIErrorInfo(
   };
 }
 
-function parseRetryAfterMs(header: string | null): number | undefined {
+/** Exported for unit tests (retry-after cap coverage). */
+export function parseRetryAfterMs(header: string | null): number | undefined {
   if (!header) return undefined;
   const seconds = Number(header.trim());
   if (Number.isFinite(seconds) && seconds >= 0) {

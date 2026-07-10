@@ -23,7 +23,7 @@ import type {
 import {
   defaultWorkflowLimits,
   parseWorkflowMeta,
-} from '../src/internal/workflow-engine.js';
+} from '../src/tools/workflow-engine.js';
 import { createWorkflowTool, workflowTool } from '../src/tools/workflow.js';
 import { createBuiltinTools } from '../src/tools/index.js';
 
@@ -465,6 +465,48 @@ throw new Error('midway failure')`;
 // ---------------------------------------------------------------------------
 // Caps: concurrency queueing + lifetime backstop + official defaults
 // ---------------------------------------------------------------------------
+
+describe('Workflow abort mid-execution (audit 2026-07-10 P2-7)', () => {
+  it('an abort while agents are queued surfaces AbortError and stops new spawns', async () => {
+    const controller = new AbortController();
+    let started = 0;
+    let releaseFirst!: () => void;
+    const firstRunning = deferred();
+    const { spawn, calls } = makeSpawn(async () => {
+      started += 1;
+      if (started === 1) {
+        firstRunning.resolve();
+        // Hold the first agent open until the test aborts the workflow.
+        await new Promise<void>((r) => {
+          releaseFirst = r;
+        });
+      }
+      return 'late';
+    });
+    const script =
+      meta('abort-wf') +
+      `const a = agent('first')\n` +
+      `const b = agent('second-after-first', {})\n` +
+      `await a\n` +
+      `await b\n` +
+      `return 'unreachable'`;
+    const pending = workflowTool.execute(
+      { script },
+      makeCtx({ spawnSubagent: spawn, signal: controller.signal }),
+    );
+    await firstRunning.promise;
+    controller.abort();
+    releaseFirst();
+    // The cancellation surfaces as ONE AbortError from the run (agents whose
+    // spawn resolved after the abort contribute null instead of late results,
+    // and the post-script check converts the cancelled run into AbortError).
+    await expect(pending).rejects.toMatchObject({ name: 'AbortError' });
+    await sleep(20);
+    // Both agents were legitimately launched pre-abort; nothing NEW after.
+    expect(started).toBeLessThanOrEqual(2);
+    void calls;
+  });
+});
 
 describe('Workflow caps', () => {
   it('default limits are the official numbers: min(16, cores-2), 1000, 4096', () => {

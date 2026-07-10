@@ -132,11 +132,40 @@ export function estimateMessageTokens(msg: APIMessageParam): number {
   return PER_MESSAGE_OVERHEAD_TOKENS + estimateContentTokens(msg.content);
 }
 
-/** Estimate tokens for a list of messages (additive). */
+/**
+ * Per-message estimate cache (audit 2026-07-10 P1-1). The compaction trigger
+ * re-estimates the WHOLE history every sub-turn; without a cache that is a
+ * full codepoint scan of every prior message each iteration — O(n) per turn,
+ * O(n²) per conversation, plus a fresh JSON.stringify of every historical
+ * tool_use input. History messages are append-only and never mutated in place
+ * with ONE known exception: the engine pushes drained background-subagent
+ * blocks onto the just-appended tool_result turn (engine/loop.ts,
+ * drainSubagentResults). The cache therefore keys by message identity AND
+ * validates (content reference, block count / string length) before trusting
+ * an entry, so that in-place append recomputes instead of undercounting.
+ */
+const messageTokenCache = new WeakMap<
+  APIMessageParam,
+  { content: APIMessageParam['content']; len: number; tokens: number }
+>();
+
+function contentLen(content: APIMessageParam['content']): number {
+  return content.length; // string length or block count — either detects the known mutation
+}
+
+/** Estimate tokens for a list of messages (additive; per-message cached). */
 export function estimateMessagesTokens(messages: APIMessageParam[]): number {
   let total = 0;
   for (const msg of messages) {
-    total += estimateMessageTokens(msg);
+    const len = contentLen(msg.content);
+    const cached = messageTokenCache.get(msg);
+    if (cached !== undefined && cached.content === msg.content && cached.len === len) {
+      total += cached.tokens;
+      continue;
+    }
+    const tokens = estimateMessageTokens(msg);
+    messageTokenCache.set(msg, { content: msg.content, len, tokens });
+    total += tokens;
   }
   return total;
 }

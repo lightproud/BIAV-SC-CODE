@@ -869,7 +869,7 @@ export type SdkMcpServerInstance = {
 };
 
 // ---------------------------------------------------------------------------
-// Agents (accepted for type compatibility; execution lands in v0.2)
+// Agents (subagent definitions; executed by the subagent runtime since v0.2)
 // ---------------------------------------------------------------------------
 
 export type AgentDefinition = {
@@ -910,10 +910,48 @@ export type AgentDefinition = {
 // ---------------------------------------------------------------------------
 
 /**
+ * Caller-supplied price entry (BPT-EXTENSION, audit 2026-07-10): USD per MTok
+ * for a model-id prefix, merged OVER the static Claude price table (overrides
+ * win on prefix match). Lets a gateway consumer price non-Claude models so
+ * cost metrics and `maxBudgetUsd` are enforceable on the OpenAI protocol.
+ */
+export type PriceOverride = {
+  /** USD per MTok of regular input tokens. */
+  input: number;
+  /** USD per MTok of output tokens. */
+  output: number;
+  /** USD per MTok of cache-creation input; default input x1.25. */
+  cacheWrite?: number;
+  /** USD per MTok of cache-read input; default input x0.1. */
+  cacheRead?: number;
+};
+
+/**
  * Tuning for the OpenAI-protocol transport (BPT-EXTENSION). Read only when
  * `ProviderConfig.protocol` is 'openai-chat'; see docs/OPENAI-PROTOCOL.md.
  */
 export type OpenAIProtocolOptions = {
+  /**
+   * Wire-model remapping applied by the transport just before the request is
+   * encoded: `modelMap[model] ?? model`. Keys are the RESOLVED model ids that
+   * would otherwise hit the wire — including Claude defaults baked into
+   * subsystems (generators' utility model, verifier, alias table), e.g.
+   * `{ 'claude-haiku-4-5': 'gpt-4o-mini' }`. One knob instead of chasing every
+   * per-call-site model override; unmapped `claude-*` ids on this protocol
+   * log a debug warning (they will 404 on an OpenAI endpoint).
+   */
+  modelMap?: Record<string, string>;
+  /**
+   * Name of the credential header (default 'authorization', sent as
+   * `Bearer <key>`). Any other name sends the RAW key under that header —
+   * e.g. 'api-key' for Azure OpenAI-style gateways.
+   */
+  authHeaderName?: string;
+  /**
+   * Extra query parameters appended to the chat/completions URL on every
+   * request — e.g. `{ 'api-version': '2024-06-01' }` for Azure-style gateways.
+   */
+  extraQueryParams?: Record<string, string>;
   /**
    * Which wire param carries the output-token cap. Default 'max_tokens' (the
    * param every OpenAI-compatible gateway accepts); api.openai.com reasoning
@@ -953,6 +991,14 @@ export type ProviderConfig = {
   protocol?: 'anthropic' | 'openai-chat';
   /** OpenAI-protocol tuning; read only when protocol is 'openai-chat'. */
   openai?: OpenAIProtocolOptions;
+  /**
+   * Custom model pricing (BPT-EXTENSION, audit 2026-07-10): USD-per-MTok
+   * entries keyed by model-id prefix, merged over the static Claude table
+   * (overrides win on prefix match). Required for cost metrics /
+   * `maxBudgetUsd` enforcement on non-Claude models (protocol 'openai-chat');
+   * also usable to correct a stale static entry.
+   */
+  pricing?: Record<string, PriceOverride>;
   apiKey?: string;
   /** Bearer token auth (gateways); mutually exclusive with apiKey. */
   authToken?: string;
@@ -1201,6 +1247,16 @@ export type Options = {
   fallbackModel?: string;
   forkSession?: boolean;
   hooks?: Partial<Record<HookEvent, HookCallbackMatcher[]>>;
+  /**
+   * BPT-EXTENSION (audit 2026-07-10): what a hook callback's failure (throw
+   * or timeout) means for the permission aggregate. 'open' (default, the
+   * historical and official-parity behavior): the failure is logged and
+   * treated as neutral — note this means a broken PreToolUse policy hook
+   * silently stops denying. 'closed': the failure contributes a deny, so
+   * hook-enforced policy fails safe (tool calls block while the hook is
+   * broken). Cancellation via the caller's signal is never treated as a deny.
+   */
+  hookFailureMode?: 'open' | 'closed';
   /** v0.4: surface hook execution as system/hook_started + system/
    *  hook_response stream messages (official encoding since v0.7; default
    *  false — hooks otherwise report via debug only). Semantics unchanged by
@@ -1260,13 +1316,19 @@ export type Options = {
   /** Directory for session transcripts (default ~/.bpt-agent/sessions). */
   sessionDir?: string;
   /**
-   * Which on-disk instruction sources to load into the system prompt, matching
-   * @anthropic-ai/claude-agent-sdk. 'project'/'local' walk up from cwd for
-   * CLAUDE.md / AGENTS.md; 'user' reads ~/.claude/CLAUDE.md. OMITTED (undefined)
-   * loads all three — user+project+local — matching official Claude Code (the
-   * bump-pin default, 2026-07-05). An explicit `[]` loads nothing (opt-out); an
-   * explicit subset loads exactly that subset. Only consulted on the
-   * `claude_code` preset / default harness path.
+   * Which on-disk instruction sources to load, matching
+   * @anthropic-ai/claude-agent-sdk. Two DISTINCT effects (audit 2026-07-10
+   * P0-5):
+   *  1. CLAUDE.md / AGENTS.md system-prompt injection — 'project'/'local' walk
+   *     up from cwd, 'user' reads ~/.claude/CLAUDE.md. Applies ONLY on the
+   *     `claude_code` preset / default harness path (a string/segments
+   *     systemPrompt is caller-owned verbatim).
+   *  2. Project `.mcp.json` server loading — applies on EVERY systemPrompt
+   *     path (project/local sources enable it).
+   * OMITTED (undefined) loads all three sources — user+project+local —
+   * matching official Claude Code (the bump-pin default, 2026-07-05). An
+   * explicit `[]` loads nothing (opt-out); an explicit subset loads exactly
+   * that subset.
    */
   settingSources?: SettingSource[];
   /**
@@ -1278,8 +1340,17 @@ export type Options = {
    */
   includeEnvironmentContext?: boolean;
   stderr?: (data: string) => void;
-  /** Only use MCP servers passed in options (always true for this SDK). */
+  /** ACCEPTED-IGNORED (audit 2026-07-10): despite the official name, this SDK
+   *  has no consumer for the flag — project `.mcp.json` loading is governed by
+   *  `settingSources` instead. See docs/COMPAT.md. */
   strictMcpConfig?: boolean;
+  /**
+   * System-prompt selection. NOTE a documented behavior fork (audit
+   * 2026-07-10 P1-5a): OMITTING this field and spelling the `claude_code`
+   * preset converge on the SAME prompt text, but ONLY the preset spelling
+   * enables the default thinking configuration — cost and stream content
+   * differ between the two "equivalent" spellings. See also `thinking`.
+   */
   systemPrompt?:
     | string
     | {
@@ -1305,6 +1376,13 @@ export type Options = {
         excludeDynamicSections?: boolean;
       }
     | { type: 'segments'; segments: SystemPromptSegment[] };
+  /**
+   * Thinking configuration. Unset + `claude_code` PRESET systemPrompt ->
+   * default thinking is enabled (E1); unset + OMITTED systemPrompt -> no
+   * thinking param is sent (the preset-vs-omitted fork, audit 2026-07-10
+   * P1-5a). On `provider.protocol: 'openai-chat'` this config does not
+   * translate and is dropped from the wire (use provider.openai.reasoningEffort).
+   */
   thinking?: ThinkingConfigParam;
   /** Restrict built-in tools by name; defaults to all built-ins. */
   tools?: string[] | { type: 'preset'; preset: 'claude_code' };
@@ -2005,7 +2083,10 @@ export type SDKElicitationCompleteMessage = {
   error?: string;
 };
 
-/** A free-form informational log surfaced into the stream. Typed; not emitted. */
+/** A free-form informational log surfaced into the stream. EMITTED since the
+ *  2026-07-10 audit batch: once after init for ACCEPTED-IGNORED options present
+ *  on the call, and for OpenAI-protocol knobs the wire cannot honor
+ *  (unpriceable maxBudgetUsd / dropped thinking / ignored betas+apiVersion). */
 export type SDKInformationalMessage = {
   type: 'informational';
   uuid: string;
