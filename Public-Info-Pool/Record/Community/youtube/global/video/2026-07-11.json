@@ -1,8 +1,8 @@
 {
   "date": "2026-07-11",
-  "archived_at": "2026-07-10T21:58:16.047677+00:00",
+  "archived_at": "2026-07-10T22:57:40.045457+00:00",
   "source": "youtube",
-  "item_count": 7,
+  "item_count": 8,
   "items": [
     {
       "title": "Morimens \\\\ Создаю гайдо-карточки, отвечаю на вопросы по игре (6, надеюсь что финальная)",
@@ -119,6 +119,23 @@
       "lang": "",
       "platform_region": "global",
       "media_url": "https://i.ytimg.com/vi/Jw3dMxYKLek/hqdefault.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    },
+    {
+      "title": "Hardmode 1-3. F2P Morimens G:Helot Carry.",
+      "summary": "",
+      "source": "youtube",
+      "time": "2026-07-10T22:00:19Z",
+      "url": "https://www.youtube.com/watch?v=Tq7v7tDS_sc",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "Koka",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/Tq7v7tDS_sc/hqdefault.jpg",
       "content_type": "video",
       "region": "global",
       "archive_subtype": "video"
