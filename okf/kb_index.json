@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 344,
+    "concepts": 345,
     "edges": 402,
-    "terms": 5959,
+    "terms": 5971,
     "by_type": {
       "character": 72,
       "dataset": 107,
-      "documentation": 102,
+      "documentation": 103,
       "knowledge-pointer": 43,
       "reference": 17,
       "research": 3
@@ -26,7 +26,7 @@
       "memory": 47,
       "news-output": 23,
       "projects": 23,
-      "resource": 78,
+      "resource": 79,
       "sources": 17,
       "story": 11,
       "unpacked": 13,
@@ -34,7 +34,7 @@
     },
     "by_tier": {
       "skeleton": 128,
-      "search": 216
+      "search": 217
     }
   },
   "sections": {
@@ -68,7 +68,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 78
+      "count": 79
     },
     "sources": {
       "index": "/sources/index.md",
@@ -3341,6 +3341,20 @@
       "section": "resource",
       "tier": "search",
       "degree": 1
+    },
+    "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md": {
+      "type": "documentation",
+      "title": "bpt-stack-ontology-design-notes-20260710",
+      "description": "本档归档 2026-07-08 至 07-10 会话对 BPT 栈分层的完整探索。**除 §3 不变量台账按纪律（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/proposal/bpt-stack-ontology-design-notes-20260710.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:proposal"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 0
     },
     "/resource/resource-proposal-discord-layout-unification-20260710.md": {
       "type": "documentation",
@@ -9594,6 +9608,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -10265,6 +10280,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
@@ -10749,6 +10765,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -11078,6 +11095,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -11392,6 +11410,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -11565,6 +11584,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -11639,6 +11659,7 @@
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
     ],
@@ -12592,6 +12613,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -13067,6 +13089,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -13580,6 +13603,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -13861,6 +13885,7 @@
       "/news-output/news-output-note-com.md"
     ],
     "notes": [
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/story/story_research_notes.md"
     ],
     "notices": [
@@ -13898,6 +13923,9 @@
     "onboarding": [
       "/assets/assets-chat-onboarding-snippet.md",
       "/projects/silver-core-sdk-doc-onboarding.md"
+    ],
+    "ontology": [
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md"
     ],
     "open": [
       "/README.md",
@@ -14240,6 +14268,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -14549,6 +14578,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -14622,6 +14652,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -15014,6 +15045,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -15451,6 +15483,9 @@
     "stable": [
       "/projects/silver-core-sdk-doc-errors.md"
     ],
+    "stack": [
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md"
+    ],
     "stage": [
       "/wiki-data/wiki-data-stages.md"
     ],
@@ -15866,6 +15901,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -16722,7 +16758,8 @@
       "/README.md"
     ],
     "不变": [
-      "/memory/memory-ext-active-mission-v2-0-three-pillars.md"
+      "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md"
     ],
     "不可": [
       "/README.md",
@@ -16934,6 +16971,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -17193,6 +17231,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -17506,6 +17545,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -18695,6 +18735,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -19283,6 +19324,7 @@
       "/memory/memory-ext-active-policy-direct-push-main.md",
       "/memory/memory-strategy-repo-slimming-plan.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
     ],
     "会转": [
@@ -19627,6 +19669,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -19885,6 +19928,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -21222,6 +21266,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
     ],
     "分层": [
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md"
     ],
     "分布": [
@@ -21687,6 +21732,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -22829,6 +22875,9 @@
     "变走": [
       "/characters/15572.md"
     ],
+    "变量": [
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md"
+    ],
     "变魔": [
       "/characters/15572.md"
     ],
@@ -23313,7 +23362,8 @@
       "/characters/95786.md"
     ],
     "台账": [
-      "/community/community-index.md"
+      "/community/community-index.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md"
     ],
     "台采": [
       "/sources/appstore.md",
@@ -24823,6 +24873,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -25602,6 +25653,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -26034,6 +26086,7 @@
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
       "/sources/appstore.md",
       "/sources/bilibili.md",
@@ -26212,6 +26265,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -27004,7 +27058,8 @@
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
     ],
     "层的": [
-      "/README.md"
+      "/README.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md"
     ],
     "层皆": [
       "/memory/memory-ext-bpt-positioning.md"
@@ -28003,6 +28058,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-strategy-repo-slimming-plan.md",
       "/projects/news-archive-sources-registry.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md"
     ],
     "归测": [
@@ -29945,6 +30001,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -30071,6 +30128,9 @@
     ],
     "按画": [
       "/README.md"
+    ],
+    "按纪": [
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md"
     ],
     "按词": [
       "/README.md"
@@ -30297,6 +30357,9 @@
     "排表": [
       "/README.md"
     ],
+    "探索": [
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md"
+    ],
     "接上": [
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md"
     ],
@@ -30482,6 +30545,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -30809,6 +30873,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -31211,6 +31276,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -31488,6 +31554,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -31862,6 +31929,9 @@
       "/sources/weixin.md",
       "/sources/youtube.md",
       "/sources/youtube_comments.md"
+    ],
+    "整探": [
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md"
     ],
     "整条": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md"
@@ -33135,6 +33205,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -33288,6 +33359,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md"
     ],
     "本档": [
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md"
     ],
@@ -33550,6 +33622,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -34119,6 +34192,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -34203,6 +34277,9 @@
       "/wiki-data/wiki-schema-realms-schema.md",
       "/wiki-data/wiki-schema-stages-schema.md",
       "/wiki-data/wiki-schema-trinkets-schema.md"
+    ],
+    "栈分": [
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md"
     ],
     "栏各": [
       "/projects/doc-testing-strategy.md"
@@ -34325,6 +34402,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -34479,6 +34557,9 @@
     ],
     "档层": [
       "/memory/decisions-archive.md"
+    ],
+    "档归": [
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md"
     ],
     "档案": [
       "/README.md",
@@ -34795,6 +34876,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -35172,6 +35254,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -37571,6 +37654,9 @@
     "的孤": [
       "/characters/77923.md"
     ],
+    "的完": [
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md"
+    ],
     "的审": [
       "/characters/77917.md"
     ],
@@ -39345,6 +39431,7 @@
     ],
     "纪律": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-design.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/sources/appstore.md",
       "/sources/bilibili.md",
@@ -41438,6 +41525,9 @@
     "话定": [
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
     ],
+    "话对": [
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md"
+    ],
     "话搬": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md"
@@ -41621,6 +41711,9 @@
     ],
     "账号": [
       "/README.md"
+    ],
+    "账按": [
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md"
     ],
     "账本": [
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md"
@@ -42002,6 +42095,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -42660,6 +42754,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -43309,6 +43404,9 @@
       "/characters/15560.md",
       "/characters/15586.md"
     ],
+    "量台": [
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md"
+    ],
     "量后": [
       "/characters/130901.md"
     ],
@@ -43651,6 +43749,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -43897,6 +43996,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -45302,6 +45402,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
@@ -45642,6 +45743,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -45949,6 +46051,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -46113,6 +46216,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -46176,6 +46280,7 @@
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
     ],
@@ -46859,6 +46964,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -47215,6 +47321,7 @@
       "/news-output/news-output-note-com.md"
     ],
     "notes": [
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/story/story_research_notes.md"
     ],
     "notices": [
@@ -47237,6 +47344,9 @@
     "onboarding": [
       "/assets/assets-chat-onboarding-snippet.md",
       "/projects/silver-core-sdk-doc-onboarding.md"
+    ],
+    "ontology": [
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md"
     ],
     "openai": [
       "/projects/silver-core-sdk-doc-openai-protocol.md",
@@ -47512,6 +47622,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -47830,6 +47941,9 @@
     "sproto": [
       "/unpacked/unpacked-sproto.md"
     ],
+    "stack": [
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md"
+    ],
     "stages": [
       "/story/stages_by_unit.md",
       "/wiki-data/wiki-data-stages.md",
@@ -48000,6 +48114,7 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
+      "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",

@@ -1,7 +1,7 @@
 {
   "generated": "2026-07-10",
   "stats": {
-    "nodes": 344,
+    "nodes": 345,
     "edges": 402
   },
   "nodes": [
@@ -2611,6 +2611,17 @@
       "id": "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "type": "documentation",
       "title": "bpt-sdk-v06-remaining-execution-roadmap-20260705",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:proposal"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
+      "type": "documentation",
+      "title": "bpt-stack-ontology-design-notes-20260710",
       "tags": [
         "data_layer:curated",
         "deliverable",
