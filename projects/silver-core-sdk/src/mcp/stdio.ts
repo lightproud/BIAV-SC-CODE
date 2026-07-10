@@ -20,9 +20,10 @@ import type {
 } from '../types.js';
 import { AbortError, McpError } from '../errors.js';
 import { resolveElicitation } from './elicitation.js';
+import { SDK_VERSION } from '../version.js';
 
 const MCP_PROTOCOL_VERSION = '2025-06-18';
-const CLIENT_INFO = { name: 'silver-core-sdk', version: '0.1.0' } as const;
+const CLIENT_INFO = { name: 'silver-core-sdk', version: SDK_VERSION } as const;
 const DEFAULT_REQUEST_TIMEOUT_MS = 60_000;
 const KILL_GRACE_MS = 2_000;
 /** Safety cap on tools/list pagination to avoid a misbehaving-server loop. */

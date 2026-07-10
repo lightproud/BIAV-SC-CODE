@@ -16,6 +16,16 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.41.1 — 2026-07-10
+
+**Rename-review fixes** (keeper ruling 「全部修复」). MCP handshake
+`clientInfo.version` in the streamable-HTTP and stdio connections was still
+hardcoded `'0.1.0'` — a leftover the 2026-07-10 D9 single-version-source audit
+fixed for the User-Agent and init message but missed for MCP; both now import
+`SDK_VERSION`. `docs/MIGRATION.md` gains an explicit rename note for consumers
+crossing the `bpt-agent-sdk` -> `silver-core-sdk` boundary (dependency name +
+tarball pin must be updated together).
+
 ## 0.41.0 — 2026-07-10
 
 **Rename: bpt-agent-sdk -> silver-core-sdk** (keeper ruling 2026-07-10).
