@@ -368,7 +368,8 @@
       "path": "scripts/build_kb_index.py",
       "summary": "build_kb_index.py — 银芯知识库运行时导航索引（KB navigation index）生成器。",
       "planes": [
-        "cli"
+        "cli",
+        "workflow"
       ],
       "status": "live"
     },
@@ -596,7 +597,7 @@
       "path": "scripts/okf_pointer_layers.py",
       "summary": "okf_pointer_layers.py — 全仓知识组织：OKF bundle 新增指针概念层（import-only 库）。",
       "planes": [
-        "import"
+        "workflow"
       ],
       "status": "live"
     },

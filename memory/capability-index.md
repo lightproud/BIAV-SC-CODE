@@ -111,7 +111,7 @@
   `scripts/build_capability_registry.py`
 - **`build_community_index.py`** _[活:cli+workflow]_ — Build a static community-discussion analysis index over the FULL archive.  
   `scripts/build_community_index.py`
-- **`build_kb_index.py`** _[活:cli]_ — build_kb_index.py — 银芯知识库运行时导航索引（KB navigation index）生成器。  
+- **`build_kb_index.py`** _[活:cli+workflow]_ — build_kb_index.py — 银芯知识库运行时导航索引（KB navigation index）生成器。  
   `scripts/build_kb_index.py`
 - **`build_kb_vectors.py`** _[活:cli+workflow]_ — build_kb_vectors.py — 构建银芯长尾向量索引（§八「厚锚撑向量」参照实现）。  
   `scripts/build_kb_vectors.py`
@@ -159,7 +159,7 @@
   `scripts/migrate_flat_archives_to_layout.py`
 - **`migrate_unpacked_to_git.py`** _[活:cli+workflow]_ — 把 unpacked-data release 的 **text 部分** 迁入 git（二进制留 Releases）。  
   `scripts/migrate_unpacked_to_git.py`
-- **`okf_pointer_layers.py`** _[活:import]_ — okf_pointer_layers.py — 全仓知识组织：OKF bundle 新增指针概念层（import-only 库）。  
+- **`okf_pointer_layers.py`** _[活:workflow]_ — okf_pointer_layers.py — 全仓知识组织：OKF bundle 新增指针概念层（import-only 库）。  
   `scripts/okf_pointer_layers.py`
 - **`parse_awaker_config.py`** _[活:cli]_ — [CLI 手动] 解析 AwakerConfig.lua 为角色档案 JSON（wiki 数据流水线）。  
   `scripts/parse_awaker_config.py`
