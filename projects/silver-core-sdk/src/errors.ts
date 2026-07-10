@@ -45,6 +45,9 @@ export type ErrorCode =
   | 'api_connection_failed'
   | 'sse_malformed_frame'
   | 'stream_idle_timeout'
+  /** The streamMaxDurationMs hard cap cut a flowing stream (resilience P1).
+   *  Delivered-whole blocks remain salvageable (midStreamTruncation). */
+  | 'stream_max_duration'
   /** HTTP 200 but the SSE body carried zero events (not even message_start) —
    *  a replay-safe non-start (observed as an upstream-throttle shape under
    *  concurrent fan-out). The transport retries internally; this code surfaces
@@ -69,12 +72,21 @@ export class APIConnectionError extends Error {
   override name = 'APIConnectionError';
   readonly code: ErrorCode;
   /**
-   * E3: set by the transport when the connection dropped MID-STREAM after at
-   * least one event was delivered (a truncated turn). The engine may salvage
-   * the completed content blocks instead of voiding the turn. Never set for
-   * timeouts, idle-watchdog aborts, or pre-stream failures.
+   * E3: set by the transport when the stream ended after at least one event
+   * was delivered (a truncated turn) — a mid-stream connection drop, the
+   * streamMaxDurationMs hard cap, or the fallback body timeout. The engine
+   * may salvage the completed content blocks instead of voiding the turn.
+   * Never set for idle-watchdog aborts, caller aborts, or pre-stream failures.
    */
   midStreamTruncation?: boolean;
+  /**
+   * Resilience P0-1: set by the transport when the stream failed before
+   * delivering ANY event — nothing was consumed, no content was accepted, no
+   * tool executed — so re-issuing the whole turn is semantically safe (the
+   * only cost is the duplicate request). The engine replays such turns within
+   * a bounded budget instead of surfacing the error to the consumer.
+   */
+  turnReplaySafe?: boolean;
   constructor(
     message: string,
     override readonly cause?: unknown,
@@ -83,6 +95,7 @@ export class APIConnectionError extends Error {
       | 'api_connection_failed'
       | 'sse_malformed_frame'
       | 'stream_idle_timeout'
+      | 'stream_max_duration'
       | 'empty_stream'
     > = 'api_connection_failed',
   ) {

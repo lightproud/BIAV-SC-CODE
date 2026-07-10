@@ -62,6 +62,7 @@ import {
   resolveMaxConcurrent,
   resolveMaxRetries,
   resolveStreamIdleMs,
+  resolveStreamMaxMs,
 } from './anthropic.js';
 
 const DEFAULT_BASE_URL = 'https://api.openai.com/v1';
@@ -599,6 +600,11 @@ export class OpenAIChatTransport implements Transport {
     const headers = this.buildHeaders(this.credential);
     const timeoutMs = this.provider.timeoutMs ?? DEFAULT_TIMEOUT_MS;
     const maxRetries = resolveMaxRetries(this.provider, this.env);
+    // Body-governance rule (resilience P1): same composite rule as the
+    // Anthropic arm — request timeout governs connect->headers; the flowing
+    // body is governed by the idle watchdog + optional streamMaxDurationMs
+    // hard cap, with the request timeout as fallback when both are off.
+    const streamMaxMs = resolveStreamMaxMs(this.provider, this.env);
 
     // Empty-stream retry (断流继续臂): an HTTP 200 whose SSE body carries ZERO
     // chunks before closing CLEANLY is a replay-SAFE non-start — the gateway
@@ -619,14 +625,15 @@ export class OpenAIChatTransport implements Transport {
     let emptyStreamRetries = 0;
     for (;;) {
       // ---- request phase: retries allowed ---------------------------------
-      const { response, signal, timeoutSignal } = await this.requestWithRetries(
-        bodyJson,
-        headers,
-        callerSignal,
-        timeoutMs,
-        maxRetries,
-        onRetry,
-      );
+      const { response, signal, timeoutSignal, detachRequestTimeout, releaseSignals } =
+        await this.requestWithRetries(
+          bodyJson,
+          headers,
+          callerSignal,
+          timeoutMs,
+          maxRetries,
+          onRetry,
+        );
 
       // ---- streaming phase: NEVER retried once a chunk is delivered --------
       // OpenAI-protocol servers/gateways report the correlation id as
@@ -641,9 +648,23 @@ export class OpenAIChatTransport implements Transport {
       }
       const idleMs = resolveStreamIdleMs(this.provider, this.env);
       const idleController = idleMs > 0 ? new AbortController() : undefined;
-      const streamSignal = idleController
-        ? AbortSignal.any([signal, idleController.signal])
-        : signal;
+      // P1 body governance (mirrors the Anthropic arm): detach the request
+      // timeout from the body unless BOTH body governors are off.
+      const timeoutDetached = idleController !== undefined || streamMaxMs > 0;
+      if (timeoutDetached) detachRequestTimeout();
+      const maxController = streamMaxMs > 0 ? new AbortController() : undefined;
+      let maxTimer: ReturnType<typeof setTimeout> | undefined;
+      if (maxController !== undefined) {
+        maxTimer = setTimeout(() => maxController.abort(), streamMaxMs);
+        (maxTimer as { unref?: () => void }).unref?.();
+      }
+      const signalParts = [
+        signal,
+        ...(idleController ? [idleController.signal] : []),
+        ...(maxController ? [maxController.signal] : []),
+      ];
+      const streamSignal =
+        signalParts.length > 1 ? AbortSignal.any(signalParts) : signal;
       let idleTimer: ReturnType<typeof setTimeout> | undefined;
       const resetIdle = (): void => {
         if (!idleController) return;
@@ -682,17 +703,21 @@ export class OpenAIChatTransport implements Transport {
           yield* translator.feed(parsed);
         }
       } catch (err) {
-        throw mapStreamError(
-          err,
+        throw mapStreamError(err, {
           callerSignal,
           timeoutSignal,
           timeoutMs,
+          timeoutGovernsBody: !timeoutDetached,
           chunkCount,
-          idleController?.signal,
+          idleSignal: idleController?.signal,
           idleMs,
-        );
+          maxSignal: maxController?.signal,
+          streamMaxMs,
+        });
       } finally {
         if (idleTimer) clearTimeout(idleTimer);
+        if (maxTimer) clearTimeout(maxTimer);
+        releaseSignals();
       }
 
       // The stream ended without throwing. A [DONE] terminator or any
@@ -717,7 +742,7 @@ export class OpenAIChatTransport implements Transport {
           );
           // Surface it like a network-level retry (no HTTP status) so the loop
           // emits an api_retry observability message, same as a dropped socket.
-          onRetry?.({ attempt: emptyStreamRetries, maxRetries });
+          onRetry?.({ attempt: emptyStreamRetries, maxRetries, kind: 'empty_stream' });
           await this.backoff(emptyStreamRetries, undefined, callerSignal);
           continue;
         }
@@ -753,14 +778,42 @@ export class OpenAIChatTransport implements Transport {
     timeoutMs: number,
     maxRetries: number,
     onRetry?: (info: RetryInfo) => void,
-  ): Promise<{ response: Response; signal: AbortSignal; timeoutSignal: AbortSignal }> {
+  ): Promise<{
+    response: Response;
+    signal: AbortSignal;
+    timeoutSignal: AbortSignal;
+    /** Stop propagating the whole-request timeout into the accepted response's
+     *  body (P1 body governance; called once headers arrive and a body
+     *  governor — idle watchdog / hard cap — is active). */
+    detachRequestTimeout: () => void;
+    /** Drop the caller/timeout abort listeners once the stream is finished so
+     *  a long-lived caller signal does not accumulate one listener per turn. */
+    releaseSignals: () => void;
+  }> {
     let attempt = 0;
     for (;;) {
       if (callerSignal?.aborted) throw new AbortError();
+      // Fresh timeout per attempt, propagated into a DEDICATED per-attempt
+      // controller so the body phase can later detach the timeout leg without
+      // dropping the caller leg (AbortSignal.any is compose-once; a dedicated
+      // controller is the only way to unsubscribe one source).
       const timeoutSignal = AbortSignal.timeout(timeoutMs);
-      const signal = callerSignal
-        ? AbortSignal.any([callerSignal, timeoutSignal])
-        : timeoutSignal;
+      const attemptController = new AbortController();
+      const abortFromCaller = (): void =>
+        attemptController.abort(
+          (callerSignal as { reason?: unknown } | undefined)?.reason,
+        );
+      const abortFromTimeout = (): void =>
+        attemptController.abort((timeoutSignal as { reason?: unknown }).reason);
+      callerSignal?.addEventListener('abort', abortFromCaller, { once: true });
+      timeoutSignal.addEventListener('abort', abortFromTimeout, { once: true });
+      const detachRequestTimeout = (): void =>
+        timeoutSignal.removeEventListener('abort', abortFromTimeout);
+      const releaseSignals = (): void => {
+        callerSignal?.removeEventListener('abort', abortFromCaller);
+        timeoutSignal.removeEventListener('abort', abortFromTimeout);
+      };
+      const signal = attemptController.signal;
 
       let response: Response;
       try {
@@ -774,13 +827,15 @@ export class OpenAIChatTransport implements Transport {
           signal,
         });
       } catch (err) {
+        releaseSignals();
         if (callerSignal?.aborted) throw new AbortError();
+        // Connection failure or per-attempt timeout: retryable.
         if (attempt < maxRetries) {
           attempt += 1;
           this.debug(
             `openai transport: network error (${errorMessage(err)}); retry ${attempt}/${maxRetries}`,
           );
-          onRetry?.({ attempt, maxRetries });
+          onRetry?.({ attempt, maxRetries, kind: 'network' });
           await this.backoff(attempt, undefined, callerSignal);
           continue;
         }
@@ -790,12 +845,12 @@ export class OpenAIChatTransport implements Transport {
         );
       }
 
-      if (response.ok) return { response, signal, timeoutSignal };
+      if (response.ok) {
+        return { response, signal, timeoutSignal, detachRequestTimeout, releaseSignals };
+      }
+      releaseSignals();
 
-      const requestId =
-        response.headers.get('x-request-id') ??
-        response.headers.get('request-id') ??
-        undefined;
+      const requestId = response.headers.get('x-request-id') ?? response.headers.get('request-id') ?? undefined;
       const info = await readOpenAIErrorInfo(response);
       const retryable =
         response.status === 408 || response.status === 429 || response.status >= 500;
@@ -810,6 +865,7 @@ export class OpenAIChatTransport implements Transport {
           maxRetries,
           status: response.status,
           errorType: info.type,
+          kind: 'http_status',
           ...(retryAfterMs !== undefined ? { retryAfterMs } : {}),
         });
         await this.backoff(attempt, retryAfterMs, callerSignal);
@@ -819,6 +875,7 @@ export class OpenAIChatTransport implements Transport {
     }
   }
 
+  /** Exponential backoff (base 1s, factor 2) with jitter; retry-after wins. */
   private async backoff(
     attempt: number,
     retryAfterMs: number | undefined,
@@ -921,43 +978,88 @@ export function parseRetryAfterMs(header: string | null): number | undefined {
   return undefined;
 }
 
-function mapStreamError(
-  err: unknown,
-  callerSignal: AbortSignal | undefined,
-  timeoutSignal: AbortSignal,
-  timeoutMs: number,
-  chunkCount: number,
-  idleSignal?: AbortSignal,
-  idleMs?: number,
-): Error {
+type StreamErrorContext = {
+  callerSignal: AbortSignal | undefined;
+  timeoutSignal: AbortSignal;
+  timeoutMs: number;
+  timeoutGovernsBody: boolean;
+  chunkCount: number;
+  idleSignal?: AbortSignal;
+  idleMs?: number;
+  maxSignal?: AbortSignal;
+  streamMaxMs?: number;
+};
+
+function mapStreamError(err: unknown, ctx: StreamErrorContext): Error {
+  const { callerSignal, timeoutSignal, timeoutMs, chunkCount } = ctx;
+  // Disconnect-taxonomy flags (resilience P0/P1): every terminal stream error
+  // carries the pair the engine acts on — `midStreamTruncation` (events were
+  // delivered whole; salvage may apply) and `turnReplaySafe` (NOTHING was
+  // delivered, so re-issuing the turn cannot double-consume content or tool
+  // side effects; the engine may replay within its bounded budget).
+  const flag = (failure: APIConnectionError): APIConnectionError => {
+    failure.turnReplaySafe = chunkCount === 0;
+    return failure;
+  };
   if (err instanceof APIStatusError) return err;
   if (callerSignal?.aborted) {
     return err instanceof AbortError ? err : new AbortError();
   }
-  if (idleSignal?.aborted && !timeoutSignal.aborted) {
-    return new APIConnectionError(
-      `Chat Completions stream idle for ${idleMs}ms with no server event after ` +
-        `${chunkCount} chunk(s); aborted`,
-      err,
-      'stream_idle_timeout',
+  // Idle watchdog fired (checked before the whole-request timeout, which it
+  // pre-empts): the stream stalled with no server event. Terminal at the
+  // transport (the streaming phase is never retried here); a zero-event stall
+  // is turn-replay-safe for the engine.
+  if (ctx.idleSignal?.aborted) {
+    return flag(
+      new APIConnectionError(
+        `Chat Completions stream idle for ${ctx.idleMs}ms with no server event after ` +
+          `${chunkCount} chunk(s); aborted`,
+        err,
+        'stream_idle_timeout',
+      ),
     );
   }
-  if (timeoutSignal.aborted) {
-    return new APIConnectionError(
-      `Chat Completions stream timed out after ${timeoutMs}ms`,
-      err,
+  // Hard cap on total streaming duration fired (streamMaxDurationMs). Unlike
+  // the idle watchdog this cuts a FLOWING stream, so blocks delivered whole
+  // stay salvageable.
+  if (ctx.maxSignal?.aborted) {
+    const failure = flag(
+      new APIConnectionError(
+        `Chat Completions stream exceeded the streamMaxDurationMs hard cap ` +
+          `(${ctx.streamMaxMs}ms) after ${chunkCount} chunk(s); aborted`,
+        err,
+        'stream_max_duration',
+      ),
     );
+    failure.midStreamTruncation = chunkCount > 0;
+    return failure;
+  }
+  // Whole-request timeout during the body: only reachable in the fallback
+  // configuration (idle watchdog disabled, no hard cap). Delivered-whole
+  // blocks stay salvageable here too (P1: salvage-on-timeout).
+  if (ctx.timeoutGovernsBody && timeoutSignal.aborted) {
+    const failure = flag(
+      new APIConnectionError(
+        `Chat Completions stream timed out after ${timeoutMs}ms`,
+        err,
+      ),
+    );
+    failure.midStreamTruncation = chunkCount > 0;
+    return failure;
   }
   if (err instanceof APIConnectionError) return err;
   if (isAbortError(err)) {
     return err instanceof AbortError ? err : new AbortError(errorMessage(err));
   }
-  const failure = new APIConnectionError(
-    `Chat Completions stream failed after ${chunkCount} chunk(s): ${errorMessage(err)}`,
-    err,
+  const failure = flag(
+    new APIConnectionError(
+      `Chat Completions stream failed after ${chunkCount} chunk(s): ${errorMessage(err)}`,
+      err,
+    ),
   );
-  // Same E3 semantics as the Anthropic transport: a connection that dropped
-  // after delivering chunks is a truncated turn the engine may salvage.
+  // E3: a connection that dropped after delivering events is a TRUNCATED
+  // turn - the engine may salvage the completed blocks (official 2.1.201
+  // does; conformance run-l4 KD-L4-02/04).
   failure.midStreamTruncation = chunkCount > 0;
   return failure;
 }

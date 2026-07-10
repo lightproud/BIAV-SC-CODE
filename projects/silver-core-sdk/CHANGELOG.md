@@ -16,6 +16,35 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.43.0 — 2026-07-10
+
+**Resilience: layered disconnect survival** (keeper ruling 「全量」; design in
+`docs/RESILIENCE.md`). Closes the gap behind "it still disconnects for various
+reasons" with three shipped layers plus a measurement plane:
+
+- **P0-1 bounded turn replay**: a stream failure that consumed nothing (zero
+  events, a zero-event stall, or a discarded unsalvageable partial) now
+  replays the turn up to 2 times with short backoff instead of killing the
+  run — re-issuing is semantically safe (no tool ran, no content accepted).
+  Visible as `api_retry` messages with `reason: "turn_replay:<code>"`.
+- **P0-2 disconnect ledger**: every result's `metrics.transportHealth`
+  (BPT-EXTENSION) counts network/HTTP/empty-stream retries, mid-stream drops,
+  idle stalls, hard-cap aborts, salvages, and replays — "various reasons"
+  becomes a measurable spectrum. `RetryInfo` gains a `kind` tag.
+- **P1 body governance**: `timeoutMs` now governs the request phase only;
+  a flowing stream is governed by the idle watchdog plus the new optional
+  `streamMaxDurationMs` hard cap (`BPT_STREAM_MAX_DURATION_MS`; new error
+  code `stream_max_duration`) — healthy long turns are no longer cut at the
+  10-minute wall clock. Fallback: both governors off -> `timeoutMs` keeps
+  bounding the body (never unbounded). Timeout/hard-cap truncations are now
+  salvageable (E3), and zero-event failures carry `turnReplaySafe`.
+- **P2 consumer recipe**: `docs/RESILIENCE.md` documents the four-layer
+  model, all knobs, ledger interpretation, and the session auto-resume loop
+  (layer 4) for BPT Desktop.
+
+Both transports (Anthropic + OpenAI-compat) share the full change via the
+twin discipline.
+
 ## 0.42.0 — 2026-07-10
 
 **O-B2: SendMessage tool body + subagent continuation + coordinator presets**

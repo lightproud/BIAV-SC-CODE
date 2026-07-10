@@ -29,6 +29,7 @@ import type {
   SDKResultMessage,
   SDKRunMetrics,
   SDKToolMetrics,
+  SDKTransportHealth,
   SDKTurnMetrics,
   StopReason,
   TextBlockParam,
@@ -69,6 +70,34 @@ import {
 } from './thinking-provenance.js';
 
 const DEFAULT_THINKING_BUDGET = 10_000;
+
+/** Resilience P0-1: per-turn budget for replay-safe turn replays. Bounded and
+ *  small on purpose — replays fight transient link faults (a cut socket, a
+ *  zero-event stall), not systemic ones; a link that kills three attempts in
+ *  a row needs the error surfaced, not a longer fuse. */
+export const TURN_REPLAY_LIMIT = 2;
+const REPLAY_BACKOFF_BASE_MS = 500;
+
+/** Short exponential pause between turn replays; abortable. */
+function replayBackoff(attempt: number, signal: AbortSignal): Promise<void> {
+  const delay = REPLAY_BACKOFF_BASE_MS * 2 ** (attempt - 1);
+  return new Promise<void>((resolve, reject) => {
+    if (signal.aborted) {
+      reject(new AbortError());
+      return;
+    }
+    const onAbort = (): void => {
+      clearTimeout(timer);
+      reject(new AbortError());
+    };
+    const timer = setTimeout(() => {
+      signal.removeEventListener('abort', onAbort);
+      resolve();
+    }, delay);
+    (timer as { unref?: () => void }).unref?.();
+    signal.addEventListener('abort', onAbort, { once: true });
+  });
+}
 
 /** Wrap any abort-shaped error into this SDK's AbortError. */
 function toAbortError(err: unknown): AbortError {
@@ -163,6 +192,27 @@ export async function* runAgentLoop(
   // E3: non-fatal stream-truncation notes for the terminal result's `errors`
   // (a truncated turn degrades gracefully; the note keeps the fault visible).
   const streamErrors: string[] = [];
+  // Resilience P0-2: disconnect-taxonomy ledger for this run (metrics
+  // `transportHealth`). Counted here at the loop level so request-phase
+  // retries, salvages, and turn replays all land in ONE per-run ledger.
+  const transportHealth: SDKTransportHealth = {
+    networkRetries: 0,
+    httpRetries: 0,
+    emptyStreamRetries: 0,
+    midStreamDrops: 0,
+    idleStalls: 0,
+    maxDurationAborts: 0,
+    turnsSalvaged: 0,
+    turnReplays: 0,
+  };
+  /** Classify a terminal stream failure into the taxonomy ledger. */
+  const recordStreamFailure = (err: APIConnectionError): void => {
+    if (err.code === 'stream_idle_timeout') transportHealth.idleStalls += 1;
+    else if (err.code === 'stream_max_duration') transportHealth.maxDurationAborts += 1;
+    else if (err.midStreamTruncation === true || err.turnReplaySafe === true) {
+      transportHealth.midStreamDrops += 1;
+    }
+  };
   // E3: set when the CURRENT turn's assistant message was salvaged from a
   // truncated stream (per-attempt; consumed by the tool-dispatch decision -
   // official 2.1.201 acts on complete tool_use blocks even when the cut
@@ -220,6 +270,8 @@ export async function* runAgentLoop(
       ),
     };
     if (firstTokenAtMs !== undefined) m.ttftMs = firstTokenAtMs - startedAt;
+    // P0-2: the disconnect ledger rides every result (all-zero = clean run).
+    m.transportHealth = { ...transportHealth };
     return m;
   };
   // Once a fallback retry fires the run stays on the fallback model; until then
@@ -474,6 +526,12 @@ export async function* runAgentLoop(
     // top of the event loop, so they surface just before this attempt's stream.
     const retryMessages: SDKMessage[] = [];
     const onRetry = (info: RetryInfo): void => {
+      // P0-2: count request-phase retries by disconnect-taxonomy class.
+      if (info.kind === 'network') transportHealth.networkRetries += 1;
+      else if (info.kind === 'empty_stream') transportHealth.emptyStreamRetries += 1;
+      else if (info.kind === 'http_status' || info.status !== undefined) {
+        transportHealth.httpRetries += 1;
+      }
       const base = { uuid: randomUUID(), session_id: config.sessionId };
       if (info.status === 429) {
         retryMessages.push({
@@ -608,12 +666,14 @@ export async function* runAgentLoop(
       if (!signal.aborted) {
         while (retryMessages.length > 0) yield retryMessages.shift()!;
       }
-      // E3: graceful degradation for a MID-STREAM connection drop (flagged by
-      // the transport; never a timeout/idle/abort). Salvage the blocks the
-      // wire delivered whole instead of voiding the turn - official 2.1.201
-      // keeps the partial text and even executes complete tool_use blocks
-      // (conformance run-l4 KD-L4-02/04). Nothing salvageable (no
-      // message_start, zero whole blocks) falls through to the error path.
+      // E3: graceful degradation for a truncated stream — a MID-STREAM
+      // connection drop, the streamMaxDurationMs hard cap, or the fallback
+      // body timeout (flagged by the transport; never an idle stall or caller
+      // abort). Salvage the blocks the wire delivered whole instead of voiding
+      // the turn - official 2.1.201 keeps the partial text and even executes
+      // complete tool_use blocks (conformance run-l4 KD-L4-02/04). Nothing
+      // salvageable (no message_start, zero whole blocks) falls through to the
+      // error path, where the bounded turn replay (P0-1) picks it up.
       if (
         err instanceof APIConnectionError &&
         err.midStreamTruncation === true &&
@@ -621,6 +681,10 @@ export async function* runAgentLoop(
       ) {
         const salvaged = accumulator.salvageTruncated();
         if (salvaged !== undefined) {
+          // P0-2: a salvaged truncation is a fault the run absorbed — classify
+          // it (mid-stream drop / hard-cap abort) and count the salvage.
+          recordStreamFailure(err);
+          transportHealth.turnsSalvaged += 1;
           turnTruncated = true;
           streamErrors.push(err.message);
           deps.debug(
@@ -722,9 +786,8 @@ export async function* runAgentLoop(
       // effect, unless a fallback has permanently switched us.
       let model = fallbackModel ?? config.model;
 
-      // --- Stream one assistant turn (with one-shot fallback retry). -------
+      // --- Stream one assistant turn (bounded replay + one-shot fallback). --
       let assistant: APIAssistantMessage;
-      const firstSink: UsageSink = {};
       const apiMsBefore = durationApiMs; // for this turn's isolated apiMs metric
       // ttft anchors as of BEFORE this turn's first attempt. If the attempt
       // fails and we retry on the fallback model, the failed attempt's
@@ -735,51 +798,100 @@ export async function* runAgentLoop(
       // hold the run's real (earlier) first token, which must be preserved.
       const ttftTokenBefore = firstTokenAtMs;
       const ttftStreamBefore = firstStreamStartMs;
-      try {
-        assistant = yield* streamAttempt(model, firstSink);
-      } catch (err) {
-        if (isAbortError(err)) throw toAbortError(err);
-        if (
-          config.fallbackModel !== undefined &&
-          model !== config.fallbackModel &&
-          err instanceof APIStatusError &&
-          isFallbackStatus(err.status)
-        ) {
-          // §4 hard edge: if we are mid-tool-loop, the in-flight assistant turn
-          // (its thinking is API-REQUIRED before its tool_use, so it can't be
-          // stripped) was signed by the now-failing model. Retrying it on the
-          // fallback model would 400 on its stale signature — trading one
-          // failure for a worse, un-strippable one. Withhold the switch and
-          // surface the ORIGINAL error instead: no invalid-signature 400 loop,
-          // no double tool execution. (Auto-recovering read-only rewind-restart
-          // is a scoped follow-up; clean-fail is the stable choice for now.)
-          const protIdx = protectedTurnIndex(reqMsgs);
-          if (protIdx >= 0 && signingModelOf(reqMsgs[protIdx]!) !== config.fallbackModel) {
+      // Resilience P0-1: bounded turn replay. A stream failure that consumed
+      // NOTHING (turnReplaySafe: zero events / zero-event stall) or whose
+      // partial delivery was fully DISCARDED (midStreamTruncation rethrown
+      // here means salvage found no whole block) executed no tool and accepted
+      // no content — re-issuing the turn cannot double-consume anything. The
+      // commercial-agent "never disconnects" feel is exactly this layer: the
+      // user sees a few seconds of retry, not a dead session. Budget is
+      // per-turn; every replay is visible (api_retry message + ledger).
+      let turnReplaysLeft = TURN_REPLAY_LIMIT;
+      let firstSink: UsageSink = {};
+      replay: for (;;) {
+        firstSink = {};
+        try {
+          assistant = yield* streamAttempt(model, firstSink);
+          break;
+        } catch (err) {
+          if (isAbortError(err)) throw toAbortError(err);
+          if (
+            err instanceof APIConnectionError &&
+            !signal.aborted &&
+            (err.turnReplaySafe === true || err.midStreamTruncation === true) &&
+            turnReplaysLeft > 0
+          ) {
+            recordStreamFailure(err);
+            turnReplaysLeft -= 1;
+            transportHealth.turnReplays += 1;
+            const replayN = TURN_REPLAY_LIMIT - turnReplaysLeft;
+            // The doomed attempt may still have billed tokens (input tokens on
+            // its message_start); fold them so cost totals stay honest.
+            if (firstSink.usage !== undefined) recordUsage(model, firstSink.usage);
+            firstTokenAtMs = ttftTokenBefore;
+            firstStreamStartMs = ttftStreamBefore;
             deps.debug(
-              `engine: fallback to ${config.fallbackModel} withheld — the in-flight ` +
-                `tool-loop turn is signed by the failing model ${model} and its thinking ` +
-                `is API-required; surfacing the original error to avoid an invalid-signature 400`,
+              `engine: replay-safe stream failure (${err.code}): ${err.message}; ` +
+                `replaying turn (${replayN}/${TURN_REPLAY_LIMIT})`,
             );
-            throw err;
+            yield {
+              type: 'api_retry',
+              uuid: randomUUID(),
+              session_id: config.sessionId,
+              attempt: replayN,
+              max_retries: TURN_REPLAY_LIMIT,
+              reason: `turn_replay:${err.code}`,
+            };
+            await replayBackoff(replayN, signal);
+            // A mid-run setModel()/latched fallback applies to the replay too.
+            model = fallbackModel ?? config.model;
+            continue replay;
           }
-          deps.debug(
-            `engine: model ${model} failed with status ${err.status}; retrying turn with fallback model ${config.fallbackModel}`,
-          );
-          // The failed attempt already burned tokens (at least the prompt's
-          // input tokens reported on its message_start). Fold them into the
-          // running totals so budget/cost reporting is not understated.
-          if (firstSink.usage !== undefined) recordUsage(model, firstSink.usage);
-          fallbackModel = config.fallbackModel; // stays switched for the rest of the run
-          model = fallbackModel;
-          // Discard any ttft the discarded attempt latched so the metric tracks
-          // the fallback attempt actually returned to the consumer (finding #13).
-          firstTokenAtMs = ttftTokenBefore;
-          firstStreamStartMs = ttftStreamBefore;
-          // The retry emits its OWN message_start; downstream consumers of
-          // includePartialMessages must treat a fresh message_start as
-          // superseding the discarded attempt's partial stream_events.
-          assistant = yield* streamAttempt(model); // 2nd failure -> outer catch
-        } else {
+          // Terminal for this attempt: classify it for the ledger, then fall
+          // through to the one-shot model fallback / the error path.
+          if (err instanceof APIConnectionError) recordStreamFailure(err);
+          if (
+            config.fallbackModel !== undefined &&
+            model !== config.fallbackModel &&
+            err instanceof APIStatusError &&
+            isFallbackStatus(err.status)
+          ) {
+            // §4 hard edge: if we are mid-tool-loop, the in-flight assistant turn
+            // (its thinking is API-REQUIRED before its tool_use, so it can't be
+            // stripped) was signed by the now-failing model. Retrying it on the
+            // fallback model would 400 on its stale signature — trading one
+            // failure for a worse, un-strippable one. Withhold the switch and
+            // surface the ORIGINAL error instead: no invalid-signature 400 loop,
+            // no double tool execution. (Auto-recovering read-only rewind-restart
+            // is a scoped follow-up; clean-fail is the stable choice for now.)
+            const protIdx = protectedTurnIndex(reqMsgs);
+            if (protIdx >= 0 && signingModelOf(reqMsgs[protIdx]!) !== config.fallbackModel) {
+              deps.debug(
+                `engine: fallback to ${config.fallbackModel} withheld — the in-flight ` +
+                  `tool-loop turn is signed by the failing model ${model} and its thinking ` +
+                  `is API-required; surfacing the original error to avoid an invalid-signature 400`,
+              );
+              throw err;
+            }
+            deps.debug(
+              `engine: model ${model} failed with status ${err.status}; retrying turn with fallback model ${config.fallbackModel}`,
+            );
+            // The failed attempt already burned tokens (at least the prompt's
+            // input tokens reported on its message_start). Fold them into the
+            // running totals so budget/cost reporting is not understated.
+            if (firstSink.usage !== undefined) recordUsage(model, firstSink.usage);
+            fallbackModel = config.fallbackModel; // stays switched for the rest of the run
+            model = fallbackModel;
+            // Discard any ttft the discarded attempt latched so the metric tracks
+            // the fallback attempt actually returned to the consumer (finding #13).
+            firstTokenAtMs = ttftTokenBefore;
+            firstStreamStartMs = ttftStreamBefore;
+            // The retry emits its OWN message_start; downstream consumers of
+            // includePartialMessages must treat a fresh message_start as
+            // superseding the discarded attempt's partial stream_events.
+            assistant = yield* streamAttempt(model); // 2nd failure -> outer catch
+            break;
+          }
           throw err;
         }
       }
