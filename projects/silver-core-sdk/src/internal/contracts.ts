@@ -51,6 +51,9 @@ export type RetryInfo = {
   retryAfterMs?: number;
   /** API error type (e.g. 'rate_limit_error', 'overloaded_error') when known. */
   errorType?: string;
+  /** Disconnect-taxonomy class of this retry (resilience P0-2): what kind of
+   *  failure triggered it, so the loop can count retries by cause. */
+  kind?: 'network' | 'http_status' | 'empty_stream';
 };
 
 export type StreamRequest = {

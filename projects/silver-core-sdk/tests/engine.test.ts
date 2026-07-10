@@ -14,7 +14,7 @@ import {
   hasPriceFor,
   normalizeUsage,
 } from '../src/engine/pricing.js';
-import { runAgentLoop } from '../src/engine/loop.js';
+import { runAgentLoop, TURN_REPLAY_LIMIT } from '../src/engine/loop.js';
 import { AbortError, APIConnectionError, APIStatusError } from '../src/errors.js';
 import type {
   AggregatedHookResult,
@@ -1966,9 +1966,12 @@ class TruncatingTransport implements Transport {
 
   constructor(
     private readonly scripts: RawMessageStreamEvent[][],
-    /** 1-based call number that truncates; other calls complete normally. */
-    private readonly truncateCall = 1,
+    /** 1-based call number that truncates ('all' = every call); other calls
+     *  complete normally. */
+    private readonly truncateCall: number | 'all' = 1,
     private readonly flag = true,
+    /** Also mark the failure turn-replay-safe (zero-consumption shape). */
+    private readonly replaySafe = false,
   ) {}
 
   apiKeySource(): 'user' {
@@ -1981,11 +1984,12 @@ class TruncatingTransport implements Transport {
     const events = this.scripts[call - 1];
     if (!events) throw new Error(`TruncatingTransport: unexpected call #${call}`);
     for (const ev of events) yield ev;
-    if (call === this.truncateCall) {
+    if (this.truncateCall === 'all' || call === this.truncateCall) {
       const err = new APIConnectionError(
         `Messages API stream failed after ${events.length} event(s): socket hang up`,
       );
       err.midStreamTruncation = this.flag;
+      if (this.replaySafe) err.turnReplaySafe = true;
       throw err;
     }
   }
@@ -2045,11 +2049,13 @@ describe('engine loop - truncated-turn graceful degradation (E3)', () => {
     expect(lastResult(messages).subtype).toBe('success');
   });
 
-  it('an UNCLOSED tool_use block never executes: nothing whole -> the turn still fails', async () => {
+  it('an UNCLOSED tool_use block never executes: nothing whole -> replays, then the turn fails', async () => {
     // Cut mid input_json_delta: content_block_stop never arrives, so the
-    // half-received input must not run. No other whole block -> no salvage.
+    // half-received input must not run. No other whole block -> no salvage;
+    // the discarded partial IS replay-safe (P0-1), so the engine replays the
+    // turn up to its bounded budget before surfacing the error.
     const events = toolUseReplyEvents('Read', { file_path: '/a.txt' }).slice(0, -3);
-    const transport = new TruncatingTransport([events]);
+    const transport = new TruncatingTransport([events, events, events], 'all');
     const executed: Array<Record<string, unknown>> = [];
     const tools = new Map<string, BuiltinTool>([['Read', makeFakeReadTool(executed)]]);
     const deps = makeDeps(transport as unknown as MockTransport, { builtinTools: tools });
@@ -2058,8 +2064,11 @@ describe('engine loop - truncated-turn graceful degradation (E3)', () => {
     const messages = await collect(runAgentLoop(history, deps, makeConfig()));
 
     expect(executed).toEqual([]);
+    // Initial attempt + TURN_REPLAY_LIMIT replays, all truncated.
+    expect(transport.requests).toHaveLength(1 + TURN_REPLAY_LIMIT);
     const result = lastResult(messages);
     expect(result.subtype).toBe('error_during_execution');
+    expect(result.metrics?.transportHealth?.turnReplays).toBe(TURN_REPLAY_LIMIT);
   });
 
   it('a connection error WITHOUT the truncation flag keeps the existing error path', async () => {
@@ -2097,6 +2106,103 @@ describe('engine loop - truncated-turn graceful degradation (E3)', () => {
     expect(result.subtype).toBe('success');
     if (result.subtype === 'success') expect(result.result).toBe('KEPT PREFIX');
     expect(result.errors?.some((e) => /stream failed/.test(e))).toBe(true);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Resilience P0-1 (bounded turn replay) + P0-2 (transportHealth ledger).
+// A stream failure that consumed nothing (or whose partial delivery was fully
+// discarded by a failed salvage) is replay-safe: the engine re-issues the turn
+// within TURN_REPLAY_LIMIT instead of surfacing a dead session, and every
+// absorbed fault lands in metrics.transportHealth.
+// ---------------------------------------------------------------------------
+
+describe('engine loop - bounded turn replay (P0-1) + transport health ledger (P0-2)', () => {
+  it('mid-stream drop with nothing salvageable: the turn replays and succeeds', async () => {
+    // Call 1 delivers only message_start (no whole block -> salvage fails,
+    // replay-safe); call 2 completes normally.
+    const cut = textReplyEvents('LOST').slice(0, 1);
+    const transport = new TruncatingTransport([cut, textReplyEvents('RECOVERED')], 1);
+    const deps = makeDeps(transport as unknown as MockTransport);
+    const history = [{ role: 'user' as const, content: 'go' }];
+
+    const messages = await collect(runAgentLoop(history, deps, makeConfig()));
+
+    expect(transport.requests).toHaveLength(2);
+    const result = lastResult(messages);
+    expect(result.subtype).toBe('success');
+    if (result.subtype === 'success') expect(result.result).toBe('RECOVERED');
+    // The replay is visible: an api_retry observability message rides the
+    // stream, and the ledger counts both the drop and the replay.
+    const retry = messages.find((m) => m.type === 'api_retry');
+    expect(retry).toBeDefined();
+    if (retry?.type === 'api_retry') {
+      expect(retry.reason).toMatch(/^turn_replay:/);
+      expect(retry.max_retries).toBe(TURN_REPLAY_LIMIT);
+    }
+    expect(result.metrics?.transportHealth).toMatchObject({
+      midStreamDrops: 1,
+      turnReplays: 1,
+      turnsSalvaged: 0,
+    });
+  });
+
+  it('a zero-event replay-safe stall replays and succeeds', async () => {
+    const transport = new TruncatingTransport(
+      [[], textReplyEvents('AFTER STALL')],
+      1,
+      false,
+      true, // turnReplaySafe (zero-consumption shape)
+    );
+    const deps = makeDeps(transport as unknown as MockTransport);
+    const history = [{ role: 'user' as const, content: 'go' }];
+
+    const messages = await collect(runAgentLoop(history, deps, makeConfig()));
+
+    expect(transport.requests).toHaveLength(2);
+    const result = lastResult(messages);
+    expect(result.subtype).toBe('success');
+    if (result.subtype === 'success') expect(result.result).toBe('AFTER STALL');
+    expect(result.metrics?.transportHealth?.turnReplays).toBe(1);
+  });
+
+  it('a clean run reports an all-zero transport health ledger', async () => {
+    const transport = new TruncatingTransport([textReplyEvents('CLEAN')], 0);
+    const deps = makeDeps(transport as unknown as MockTransport);
+    const history = [{ role: 'user' as const, content: 'go' }];
+
+    const messages = await collect(runAgentLoop(history, deps, makeConfig()));
+
+    const result = lastResult(messages);
+    expect(result.subtype).toBe('success');
+    expect(result.metrics?.transportHealth).toEqual({
+      networkRetries: 0,
+      httpRetries: 0,
+      emptyStreamRetries: 0,
+      midStreamDrops: 0,
+      idleStalls: 0,
+      maxDurationAborts: 0,
+      turnsSalvaged: 0,
+      turnReplays: 0,
+    });
+  });
+
+  it('a salvaged truncation counts as an absorbed drop, not a replay', async () => {
+    const events = textReplyEvents('PARTIAL').slice(0, -1); // salvageable
+    const transport = new TruncatingTransport([events]);
+    const deps = makeDeps(transport as unknown as MockTransport);
+    const history = [{ role: 'user' as const, content: 'go' }];
+
+    const messages = await collect(runAgentLoop(history, deps, makeConfig()));
+
+    expect(transport.requests).toHaveLength(1); // salvage, no replay
+    const result = lastResult(messages);
+    expect(result.subtype).toBe('success');
+    expect(result.metrics?.transportHealth).toMatchObject({
+      midStreamDrops: 1,
+      turnsSalvaged: 1,
+      turnReplays: 0,
+    });
   });
 });
 

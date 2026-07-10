@@ -1006,7 +1006,16 @@ export type ProviderConfig = {
   apiVersion?: string;
   defaultHeaders?: Record<string, string>;
   maxRetries?: number;
-  /** Per-request timeout in milliseconds (default 600000). */
+  /**
+   * Per-request timeout in milliseconds (default 600000). Governs the REQUEST
+   * phase (connect through response headers) of each attempt. Once the stream
+   * is flowing, the body is governed by the idle watchdog plus the optional
+   * `streamMaxDurationMs` hard cap instead — a healthy long turn is never cut
+   * mid-flow by a clock that ignores progress. Fallback: when the idle
+   * watchdog is explicitly disabled (`streamIdleTimeoutMs: 0`) and no hard cap
+   * is set, this timeout keeps governing the body too, so no configuration is
+   * ever unbounded.
+   */
   timeoutMs?: number;
   /**
    * Idle watchdog for the streaming phase: abort the stream if no SSE event
@@ -1016,6 +1025,15 @@ export type ProviderConfig = {
    * means the connection is stuck, not merely slow.
    */
   streamIdleTimeoutMs?: number;
+  /**
+   * Optional hard cap on TOTAL streaming duration in milliseconds (default 0 =
+   * disabled; env fallback `BPT_STREAM_MAX_DURATION_MS`). Unlike the idle
+   * watchdog this fires even on a flowing stream; when it does, content blocks
+   * delivered whole remain salvageable (E3) instead of the turn being voided.
+   * BPT-EXTENSION: the primary body governor is the idle watchdog — set this
+   * only when an absolute wall-clock bound per turn is required.
+   */
+  streamMaxDurationMs?: number;
   /**
    * Cap on concurrently in-flight Messages API requests through THIS transport
    * (default 0 = unlimited). When many conversations share one transport (a
@@ -1602,6 +1620,32 @@ export type SDKToolMetrics = {
 };
 
 /**
+ * Disconnect-taxonomy ledger for one run (BPT-EXTENSION, resilience P0-2).
+ * Counts every transport-level fault the run absorbed or surfaced, by cause,
+ * so "it keeps disconnecting for various reasons" becomes a measurable
+ * spectrum: which cause dominates decides the fix (endpoint routing vs knob
+ * tuning vs code). All counters are 0 on a clean run.
+ */
+export type SDKTransportHealth = {
+  /** Request-phase retries on socket/DNS/TLS failures (pre-headers). */
+  networkRetries: number;
+  /** Request-phase retries on retryable HTTP statuses (408/429/5xx/529). */
+  httpRetries: number;
+  /** In-transport replays of an HTTP-200-but-zero-events body. */
+  emptyStreamRetries: number;
+  /** Streams that dropped mid-body after delivering at least one event. */
+  midStreamDrops: number;
+  /** Idle-watchdog aborts (connected stream went silent past the window). */
+  idleStalls: number;
+  /** streamMaxDurationMs hard-cap aborts (plus fallback body timeouts). */
+  maxDurationAborts: number;
+  /** Truncated turns whose delivered-whole blocks were salvaged (E3). */
+  turnsSalvaged: number;
+  /** Bounded engine-level turn replays after replay-safe failures (P0-1). */
+  turnReplays: number;
+};
+
+/**
  * Per-run budget/efficiency metrics (v0.3). A superset of the flat result
  * fields, packaged for logging + A/B comparison. `cacheHitRatio` is
  * cache_read / (input + cache_read + cache_creation), 0 when no caching.
@@ -1617,6 +1661,9 @@ export type SDKRunMetrics = {
   perTurn: SDKTurnMetrics[];
   perTool: SDKToolMetrics[];
   modelUsage: Record<string, ModelUsage>;
+  /** Disconnect-taxonomy ledger (BPT-EXTENSION, resilience P0-2); present on
+   *  every run — all-zero means a clean network run. */
+  transportHealth?: SDKTransportHealth;
 };
 
 /** NEW-IN-DOCS: why the agent loop ended (SDKResultMessage.terminal_reason).

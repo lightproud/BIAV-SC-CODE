@@ -177,6 +177,15 @@
 > 银芯→黑池单向输出物，与 §1.1-HC 防火墙同向，非 BPT 产品内部开发。
 
 - **动手前必读**：`projects/silver-core-sdk/CONTEXT.md`（会话上下文 + 当前 milestone）
+- **断线韧性全量落地（v0.43.0，2026-07-10，守密人「全量」裁定，已落）**：承「实际使用时不时断线」
+  痛点，落四层兜底模型（设计档 `projects/silver-core-sdk/docs/RESILIENCE.md`，裁定见 decisions.md 同日条）：
+  ① **P0-1 有界回合重放**——零采信流失败（零事件 / 零事件卡死 / 打捞落空的废弃残片）回合级重放 2 次
+  （`TURN_REPLAY_LIMIT`），`api_retry` reason `turn_replay:*` 全程可见；② **P0-2 断因计账**——
+  `metrics.transportHealth` 八计数器（BPT-EXTENSION），修哪层看账本；③ **P1 响应体治理权改判**——
+  `timeoutMs` 只管请求期，活流归 idle 看门狗 + 可选 `streamMaxDurationMs` 硬上限（新错误码
+  `stream_max_duration`），超时/硬上限截断纳入 E3 打捞，双治理器全关回退 timeoutMs 保永不无界；
+  ④ **P2 消费方配方**——RESILIENCE.md §5 会话级自动续接循环（`resume` + `error_code` 分类）。
+  双传输线经孪生纪律同享；引擎新增 4 测 + 传输层新增/改写 4 测。
 - **O-B2 收官：SendMessage 本体 + 子代理续接 + coordinator 预设（v0.42.0，2026-07-10，守密人「全部开工」，已落）**：
   体验设计档四缝最后一条焊完。① **续接注册表**（`src/subagents/runtime.ts`）：每个子代理连
   live 转录数组 + deps/config 留存至 query 生命周期尾，SendMessage 按 agentId 定址续跑——

@@ -1,7 +1,7 @@
 {
   "generated": "2026-07-10",
   "stats": {
-    "nodes": 349,
+    "nodes": 350,
     "edges": 404
   },
   "nodes": [
@@ -2203,6 +2203,17 @@
       "id": "/projects/silver-core-sdk-doc-positioning.md",
       "type": "documentation",
       "title": "silver-core-sdk POSITIONING",
+      "tags": [
+        "data_layer:curated",
+        "design-doc",
+        "sub-project:silver-core-sdk"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/projects/silver-core-sdk-doc-resilience.md",
+      "type": "documentation",
+      "title": "silver-core-sdk RESILIENCE",
       "tags": [
         "data_layer:curated",
         "design-doc",

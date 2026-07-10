@@ -87,6 +87,11 @@ Most call sites need no further change. Key differences to be aware of:
 The full per-feature compatibility matrix (FULL / PARTIAL / ACCEPTED /
 UNSUPPORTED tiers) lives in [docs/COMPAT.md](./docs/COMPAT.md).
 
+Disconnect survival — request retries, bounded turn replay, truncation
+salvage, body-governance timeouts, and the `metrics.transportHealth`
+ledger — is documented in [docs/RESILIENCE.md](./docs/RESILIENCE.md),
+including the consumer-side session auto-resume recipe.
+
 ## Environment variables
 
 | Variable | Purpose |
@@ -98,6 +103,7 @@ UNSUPPORTED tiers) lives in [docs/COMPAT.md](./docs/COMPAT.md).
 | `OPENAI_API_KEY` / `OPENAI_BASE_URL` | Credential / base URL for `provider.protocol: 'openai-chat'` (see docs/OPENAI-PROTOCOL.md) |
 | `BPT_AGENT_HOME` | Home directory for SDK state; sessions live in `$BPT_AGENT_HOME/sessions` (default `~/.bpt-agent/sessions`) |
 | `BPT_MAX_CONCURRENT_REQUESTS` | Cap on concurrent in-flight API requests through one transport (default unlimited) |
+| `BPT_STREAM_MAX_DURATION_MS` | Optional hard cap on total streaming duration per turn (default off; see docs/RESILIENCE.md) |
 | `CLAUDE_CODE_MAX_RETRIES` | Request retry count (default 10, env capped at 15) |
 | `CLAUDE_STREAM_IDLE_TIMEOUT_MS` / `CLAUDE_ENABLE_STREAM_WATCHDOG` | Stream idle watchdog window (default 300000ms; `0` disables via the watchdog switch) |
 | `CLAUDE_CODE_ENABLE_TASKS` | Toggle the Task tool family |

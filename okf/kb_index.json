@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 349,
+    "concepts": 350,
     "edges": 404,
-    "terms": 5999,
+    "terms": 6004,
     "by_type": {
       "character": 72,
       "dataset": 108,
-      "documentation": 105,
+      "documentation": 106,
       "knowledge-pointer": 44,
       "reference": 17,
       "research": 3
@@ -25,7 +25,7 @@
       "extracted": 4,
       "memory": 48,
       "news-output": 23,
-      "projects": 23,
+      "projects": 24,
       "resource": 81,
       "sources": 18,
       "story": 11,
@@ -34,7 +34,7 @@
     },
     "by_tier": {
       "skeleton": 129,
-      "search": 220
+      "search": 221
     }
   },
   "sections": {
@@ -64,7 +64,7 @@
     },
     "projects": {
       "index": "/projects/index.md",
-      "count": 23
+      "count": 24
     },
     "resource": {
       "index": "/resource/index.md",
@@ -2814,6 +2814,20 @@
       "title": "silver-core-sdk POSITIONING",
       "description": "**Silver Core SDK = 一套稳定兼容的调用「表面」 + 一个我们完全掌控、比原版更简单更可靠的独立「引擎」。**",
       "resource": "/projects/silver-core-sdk/docs/POSITIONING.md",
+      "tags": [
+        "data_layer:curated",
+        "design-doc",
+        "sub-project:silver-core-sdk"
+      ],
+      "section": "projects",
+      "tier": "search",
+      "degree": 0
+    },
+    "/projects/silver-core-sdk-doc-resilience.md": {
+      "type": "documentation",
+      "title": "silver-core-sdk RESILIENCE",
+      "description": "Audience: consumers running this SDK over imperfect links (corporate",
+      "resource": "/projects/silver-core-sdk/docs/RESILIENCE.md",
       "tags": [
         "data_layer:curated",
         "design-doc",
@@ -9656,6 +9670,7 @@
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
@@ -10094,7 +10109,8 @@
       "/news-output/news-output-feed.md"
     ],
     "audience": [
-      "/projects/silver-core-sdk-doc-migration.md"
+      "/projects/silver-core-sdk-doc-migration.md",
+      "/projects/silver-core-sdk-doc-resilience.md"
     ],
     "audio": [
       "/projects/releases-treasure-map.md"
@@ -10825,6 +10841,7 @@
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
@@ -11001,6 +11018,9 @@
     "consumer": [
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md"
     ],
+    "consumers": [
+      "/projects/silver-core-sdk-doc-resilience.md"
+    ],
     "content": [
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
@@ -11058,11 +11078,15 @@
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md"
+    ],
+    "corporate": [
+      "/projects/silver-core-sdk-doc-resilience.md"
     ],
     "corpus": [
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md"
@@ -11164,6 +11188,7 @@
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
@@ -11482,6 +11507,7 @@
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
@@ -11768,6 +11794,7 @@
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
@@ -11859,6 +11886,7 @@
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md"
     ],
     "docs": [
@@ -11871,6 +11899,7 @@
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md"
     ],
@@ -12656,6 +12685,9 @@
     "images": [
       "/assets/assets-images.md"
     ],
+    "imperfect": [
+      "/projects/silver-core-sdk-doc-resilience.md"
+    ],
     "impl": [
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md"
     ],
@@ -13179,6 +13211,7 @@
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
@@ -13479,6 +13512,7 @@
       "/wiki-data/wiki-data-voice-lines.md"
     ],
     "links": [
+      "/projects/silver-core-sdk-doc-resilience.md",
       "/story/character_story_links.md"
     ],
     "live": [
@@ -13714,6 +13748,7 @@
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
@@ -14600,6 +14635,7 @@
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
@@ -14650,6 +14686,7 @@
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
@@ -15175,6 +15212,9 @@
       "/story/story_research_notes.md",
       "/story/story_research_todo.md"
     ],
+    "resilience": [
+      "/projects/silver-core-sdk-doc-resilience.md"
+    ],
     "resource": [
       "/README.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -15336,6 +15376,9 @@
     "runner": [
       "/memory/memory-strategy-repo-slimming-plan.md"
     ],
+    "running": [
+      "/projects/silver-core-sdk-doc-resilience.md"
+    ],
     "runtime": [
       "/projects/entry-claude-md.md",
       "/wiki-data/wiki-data-feature-unlock.md",
@@ -15434,6 +15477,7 @@
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
@@ -15517,6 +15561,7 @@
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -15831,6 +15876,7 @@
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md"
@@ -17123,6 +17169,7 @@
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
@@ -17386,6 +17433,7 @@
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
@@ -17703,6 +17751,7 @@
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
@@ -18901,6 +18950,7 @@
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
@@ -19845,6 +19895,7 @@
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
@@ -20107,6 +20158,7 @@
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
@@ -21921,6 +21973,7 @@
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
@@ -25081,6 +25134,7 @@
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
@@ -25865,6 +25919,7 @@
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
@@ -26482,6 +26537,7 @@
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
@@ -30257,6 +30313,7 @@
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
@@ -30812,6 +30869,7 @@
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
@@ -31144,6 +31202,7 @@
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
@@ -31551,6 +31610,7 @@
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
@@ -31833,6 +31893,7 @@
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
@@ -33494,6 +33555,7 @@
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
@@ -33915,6 +33977,7 @@
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
@@ -34494,6 +34557,7 @@
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
@@ -35188,6 +35252,7 @@
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
@@ -35570,6 +35635,7 @@
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
@@ -42443,6 +42509,7 @@
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
@@ -43105,6 +43172,7 @@
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
@@ -44108,6 +44176,7 @@
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
@@ -44358,6 +44427,7 @@
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
@@ -46021,6 +46091,7 @@
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -46121,6 +46192,7 @@
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
@@ -46432,6 +46504,7 @@
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
@@ -46698,6 +46771,7 @@
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
@@ -46767,6 +46841,7 @@
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md"
     ],
     "docs": [
@@ -47355,6 +47430,7 @@
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
@@ -48037,6 +48113,7 @@
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
@@ -48193,6 +48270,9 @@
       "/story/story_research_notes.md",
       "/story/story_research_todo.md"
     ],
+    "resilience": [
+      "/projects/silver-core-sdk-doc-resilience.md"
+    ],
     "retention": [
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md"
     ],
@@ -48290,6 +48370,7 @@
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
@@ -48348,6 +48429,7 @@
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -48465,6 +48547,7 @@
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/projects/silver-core-sdk-doc-positioning.md",
+      "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md"

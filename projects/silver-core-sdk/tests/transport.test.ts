@@ -758,18 +758,62 @@ describe('AnthropicTransport streaming', () => {
     expect(received).toEqual(events);
   });
 
-  it('per-request timeout during the stream -> APIConnectionError (not AbortError)', async () => {
+  it('P1 body governance: the request timeout no longer cuts the body while the idle watchdog is armed', async () => {
     stubFetch([
       () =>
         new Response(hangingStream(eventsToSse([{ type: 'ping' }])), {
           status: 200,
         }),
     ]);
-    const t = makeTransport({ provider: { apiKey: 'k', timeoutMs: 40 } });
+    // timeoutMs (40) elapses first, but the armed idle watchdog (120) governs
+    // the body — the terminal cause must be the idle stall, not the timeout.
+    const t = makeTransport({
+      provider: { apiKey: 'k', timeoutMs: 40, streamIdleTimeoutMs: 120 },
+    });
     const { events, error } = await collectWithError(t.stream(baseReq()));
     expect(events).toEqual([{ type: 'ping' }]);
     expect(error).toBeInstanceOf(APIConnectionError);
-    expect((error as Error).message).toMatch(/timed out after 40ms/);
+    expect((error as Error).message).toMatch(/idle for 120ms/);
+    // One event was delivered: not replay-safe, and an idle stall is not a
+    // salvageable truncation either.
+    expect((error as APIConnectionError).turnReplaySafe).toBe(false);
+    expect((error as APIConnectionError).midStreamTruncation).toBeUndefined();
+  });
+
+  it('streamMaxDurationMs hard cap cuts a flowing stream; delivered blocks stay salvageable', async () => {
+    stubFetch([
+      () =>
+        new Response(hangingStream(eventsToSse([{ type: 'ping' }])), {
+          status: 200,
+        }),
+    ]);
+    const t = makeTransport({
+      provider: {
+        apiKey: 'k',
+        timeoutMs: 5_000,
+        streamIdleTimeoutMs: 0,
+        streamMaxDurationMs: 40,
+      },
+    });
+    const { events, error } = await collectWithError(t.stream(baseReq()));
+    expect(events).toEqual([{ type: 'ping' }]);
+    expect(error).toBeInstanceOf(APIConnectionError);
+    expect((error as APIConnectionError).code).toBe('stream_max_duration');
+    expect((error as Error).message).toMatch(/hard cap \(40ms\)/);
+    expect((error as APIConnectionError).midStreamTruncation).toBe(true);
+    expect((error as APIConnectionError).turnReplaySafe).toBe(false);
+  });
+
+  it('a zero-event idle stall is turn-replay-safe', async () => {
+    stubFetch([() => new Response(hangingStream(''), { status: 200 })]);
+    const t = makeTransport({
+      provider: { apiKey: 'k', timeoutMs: 5_000, streamIdleTimeoutMs: 30 },
+    });
+    const { events, error } = await collectWithError(t.stream(baseReq()));
+    expect(events).toEqual([]);
+    expect(error).toBeInstanceOf(APIConnectionError);
+    expect((error as APIConnectionError).code).toBe('stream_idle_timeout');
+    expect((error as APIConnectionError).turnReplaySafe).toBe(true);
   });
 
   it('idle watchdog: a stalled stream aborts after streamIdleTimeoutMs (before the request timeout)', async () => {
@@ -789,7 +833,7 @@ describe('AnthropicTransport streaming', () => {
     expect((error as Error).message).toMatch(/idle for 30ms/);
   });
 
-  it('streamIdleTimeoutMs: 0 disables the idle watchdog (only the request timeout fires)', async () => {
+  it('streamIdleTimeoutMs: 0 disables the idle watchdog (the request timeout stays as the fallback body bound)', async () => {
     stubFetch([
       () =>
         new Response(hangingStream(eventsToSse([{ type: 'ping' }])), {
@@ -801,8 +845,12 @@ describe('AnthropicTransport streaming', () => {
     });
     const { error } = await collectWithError(t.stream(baseReq()));
     expect(error).toBeInstanceOf(APIConnectionError);
-    // idle disabled -> the whole-request timeout is the terminal cause.
+    // Both body governors off -> the whole-request timeout is the terminal
+    // cause (never-unbounded invariant), and P1 salvage-on-timeout marks the
+    // delivered event as a salvageable truncation.
     expect((error as Error).message).toMatch(/timed out after 40ms/);
+    expect((error as APIConnectionError).midStreamTruncation).toBe(true);
+    expect((error as APIConnectionError).turnReplaySafe).toBe(false);
   });
 });
 

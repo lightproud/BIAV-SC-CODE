@@ -146,6 +146,16 @@ export class AnthropicTransport implements Transport {
     const timeoutMs = this.provider.timeoutMs ?? DEFAULT_TIMEOUT_MS;
     const maxRetries = resolveMaxRetries(this.provider, this.env);
 
+    // Body-governance rule (resilience P1, keeper ruling 2026-07-10): the
+    // whole-request timeout governs the REQUEST phase (connect -> response
+    // headers). The streaming body is governed by the idle watchdog (which the
+    // API's periodic pings keep honest) plus the optional hard cap
+    // streamMaxDurationMs — so a healthy long turn is never cut down mid-flow
+    // by a clock that ignores progress. Fallback: when the idle watchdog is
+    // explicitly disabled AND no hard cap is set, the request timeout keeps
+    // governing the body too, so no configuration is ever unbounded.
+    const streamMaxMs = resolveStreamMaxMs(this.provider, this.env);
+
     // Empty-stream retry: an HTTP 200 whose SSE body carries ZERO events (not
     // even message_start) before closing is a replay-SAFE non-start — the
     // gateway accepted the request but delivered nothing (an observed idealab
@@ -162,14 +172,15 @@ export class AnthropicTransport implements Transport {
     let emptyStreamRetries = 0;
     for (;;) {
       // ---- request phase: retries allowed ---------------------------------
-      const { response, signal, timeoutSignal } = await this.requestWithRetries(
-        bodyJson,
-        headers,
-        callerSignal,
-        timeoutMs,
-        maxRetries,
-        onRetry,
-      );
+      const { response, signal, timeoutSignal, detachRequestTimeout, releaseSignals } =
+        await this.requestWithRetries(
+          bodyJson,
+          headers,
+          callerSignal,
+          timeoutMs,
+          maxRetries,
+          onRetry,
+        );
 
       // ---- streaming phase: NEVER retried once an event is delivered -------
       const requestId = response.headers.get('request-id') ?? undefined;
@@ -188,9 +199,29 @@ export class AnthropicTransport implements Transport {
       // handles the latter.
       const idleMs = resolveStreamIdleMs(this.provider, this.env);
       const idleController = idleMs > 0 ? new AbortController() : undefined;
-      const streamSignal = idleController
-        ? AbortSignal.any([signal, idleController.signal])
-        : signal;
+      // P1 body governance: once headers have arrived, stop propagating the
+      // whole-request timeout into the stream — UNLESS both body governors
+      // (idle watchdog, hard cap) are off, in which case the request timeout
+      // stays wired as the fallback bound (never-unbounded invariant).
+      const timeoutDetached = idleController !== undefined || streamMaxMs > 0;
+      if (timeoutDetached) detachRequestTimeout();
+      // Optional hard cap on total streaming duration (streamMaxDurationMs /
+      // BPT_STREAM_MAX_DURATION_MS; 0 = disabled). Unlike the idle watchdog it
+      // fires even on a flowing stream; when it does, delivered-whole blocks
+      // remain salvageable (midStreamTruncation).
+      const maxController = streamMaxMs > 0 ? new AbortController() : undefined;
+      let maxTimer: ReturnType<typeof setTimeout> | undefined;
+      if (maxController !== undefined) {
+        maxTimer = setTimeout(() => maxController.abort(), streamMaxMs);
+        (maxTimer as { unref?: () => void }).unref?.();
+      }
+      const signalParts = [
+        signal,
+        ...(idleController ? [idleController.signal] : []),
+        ...(maxController ? [maxController.signal] : []),
+      ];
+      const streamSignal =
+        signalParts.length > 1 ? AbortSignal.any(signalParts) : signal;
       let idleTimer: ReturnType<typeof setTimeout> | undefined;
       const resetIdle = (): void => {
         if (!idleController) return;
@@ -257,17 +288,21 @@ export class AnthropicTransport implements Transport {
           }
         }
       } catch (err) {
-        throw mapStreamError(
-          err,
+        throw mapStreamError(err, {
           callerSignal,
           timeoutSignal,
           timeoutMs,
+          timeoutGovernsBody: !timeoutDetached,
           eventCount,
-          idleController?.signal,
+          idleSignal: idleController?.signal,
           idleMs,
-        );
+          maxSignal: maxController?.signal,
+          streamMaxMs,
+        });
       } finally {
         if (idleTimer) clearTimeout(idleTimer);
+        if (maxTimer) clearTimeout(maxTimer);
+        releaseSignals();
       }
 
       // The stream ended without a terminal message_stop. Zero events => the
@@ -284,7 +319,7 @@ export class AnthropicTransport implements Transport {
           );
           // Surface it like a network-level retry (no HTTP status) so the loop
           // emits an api_retry observability message, same as a dropped socket.
-          onRetry?.({ attempt: emptyStreamRetries, maxRetries });
+          onRetry?.({ attempt: emptyStreamRetries, maxRetries, kind: 'empty_stream' });
           await this.backoff(emptyStreamRetries, undefined, callerSignal);
           continue;
         }
@@ -318,16 +353,42 @@ export class AnthropicTransport implements Transport {
     timeoutMs: number,
     maxRetries: number,
     onRetry?: (info: RetryInfo) => void,
-  ): Promise<{ response: Response; signal: AbortSignal; timeoutSignal: AbortSignal }> {
+  ): Promise<{
+    response: Response;
+    signal: AbortSignal;
+    timeoutSignal: AbortSignal;
+    /** Stop propagating the whole-request timeout into the accepted response's
+     *  body (P1 body governance; called once headers arrive and a body
+     *  governor — idle watchdog / hard cap — is active). */
+    detachRequestTimeout: () => void;
+    /** Drop the caller/timeout abort listeners once the stream is finished so
+     *  a long-lived caller signal does not accumulate one listener per turn. */
+    releaseSignals: () => void;
+  }> {
     let attempt = 0;
     for (;;) {
       if (callerSignal?.aborted) throw new AbortError();
-      // Fresh timeout per attempt; it also bounds body consumption because
-      // fetch ties the response stream to its signal.
+      // Fresh timeout per attempt, propagated into a DEDICATED per-attempt
+      // controller so the body phase can later detach the timeout leg without
+      // dropping the caller leg (AbortSignal.any is compose-once; a dedicated
+      // controller is the only way to unsubscribe one source).
       const timeoutSignal = AbortSignal.timeout(timeoutMs);
-      const signal = callerSignal
-        ? AbortSignal.any([callerSignal, timeoutSignal])
-        : timeoutSignal;
+      const attemptController = new AbortController();
+      const abortFromCaller = (): void =>
+        attemptController.abort(
+          (callerSignal as { reason?: unknown } | undefined)?.reason,
+        );
+      const abortFromTimeout = (): void =>
+        attemptController.abort((timeoutSignal as { reason?: unknown }).reason);
+      callerSignal?.addEventListener('abort', abortFromCaller, { once: true });
+      timeoutSignal.addEventListener('abort', abortFromTimeout, { once: true });
+      const detachRequestTimeout = (): void =>
+        timeoutSignal.removeEventListener('abort', abortFromTimeout);
+      const releaseSignals = (): void => {
+        callerSignal?.removeEventListener('abort', abortFromCaller);
+        timeoutSignal.removeEventListener('abort', abortFromTimeout);
+      };
+      const signal = attemptController.signal;
 
       let response: Response;
       try {
@@ -341,6 +402,7 @@ export class AnthropicTransport implements Transport {
           signal,
         });
       } catch (err) {
+        releaseSignals();
         if (callerSignal?.aborted) throw new AbortError();
         // Connection failure or per-attempt timeout: retryable.
         if (attempt < maxRetries) {
@@ -348,7 +410,7 @@ export class AnthropicTransport implements Transport {
           this.debug(
             `transport: network error (${errorMessage(err)}); retry ${attempt}/${maxRetries}`,
           );
-          onRetry?.({ attempt, maxRetries });
+          onRetry?.({ attempt, maxRetries, kind: 'network' });
           await this.backoff(attempt, undefined, callerSignal);
           continue;
         }
@@ -358,7 +420,10 @@ export class AnthropicTransport implements Transport {
         );
       }
 
-      if (response.ok) return { response, signal, timeoutSignal };
+      if (response.ok) {
+        return { response, signal, timeoutSignal, detachRequestTimeout, releaseSignals };
+      }
+      releaseSignals();
 
       const requestId = response.headers.get('request-id') ?? undefined;
       const info = await readErrorInfo(response);
@@ -375,6 +440,7 @@ export class AnthropicTransport implements Transport {
           maxRetries,
           status: response.status,
           errorType: info.type,
+          kind: 'http_status',
           ...(retryAfterMs !== undefined ? { retryAfterMs } : {}),
         });
         await this.backoff(attempt, retryAfterMs, callerSignal);
@@ -520,6 +586,21 @@ export function resolveStreamIdleMs(
 }
 
 /**
+ * Streaming hard-cap resolution: provider.streamMaxDurationMs (explicit
+ * override; 0 disables) > BPT_STREAM_MAX_DURATION_MS env > 0 (disabled — the
+ * default; the idle watchdog is the primary body governor). BPT-EXTENSION.
+ */
+export function resolveStreamMaxMs(
+  provider: ProviderConfig,
+  env: Record<string, string | undefined>,
+): number {
+  if (provider.streamMaxDurationMs !== undefined) {
+    return Math.max(0, provider.streamMaxDurationMs);
+  }
+  return envInt(env.BPT_STREAM_MAX_DURATION_MS) ?? 0;
+}
+
+/**
  * Credential resolution order per spec: provider.apiKey ->
  * env.ANTHROPIC_API_KEY (x-api-key), else provider.authToken ->
  * env.ANTHROPIC_AUTH_TOKEN (Authorization: Bearer). 'user' = provider
@@ -610,48 +691,88 @@ function parseRetryAfterMs(header: string | null): number | undefined {
  * win over everything except deliberate APIStatusError throws; per-request
  * timeouts and transport failures surface as APIConnectionError.
  */
-function mapStreamError(
-  err: unknown,
-  callerSignal: AbortSignal | undefined,
-  timeoutSignal: AbortSignal,
-  timeoutMs: number,
-  eventCount: number,
-  idleSignal?: AbortSignal,
-  idleMs?: number,
-): Error {
+type StreamErrorContext = {
+  callerSignal: AbortSignal | undefined;
+  timeoutSignal: AbortSignal;
+  timeoutMs: number;
+  timeoutGovernsBody: boolean;
+  eventCount: number;
+  idleSignal?: AbortSignal;
+  idleMs?: number;
+  maxSignal?: AbortSignal;
+  streamMaxMs?: number;
+};
+
+function mapStreamError(err: unknown, ctx: StreamErrorContext): Error {
+  const { callerSignal, timeoutSignal, timeoutMs, eventCount } = ctx;
+  // Disconnect-taxonomy flags (resilience P0/P1): every terminal stream error
+  // carries the pair the engine acts on — `midStreamTruncation` (events were
+  // delivered whole; salvage may apply) and `turnReplaySafe` (NOTHING was
+  // delivered, so re-issuing the turn cannot double-consume content or tool
+  // side effects; the engine may replay within its bounded budget).
+  const flag = (failure: APIConnectionError): APIConnectionError => {
+    failure.turnReplaySafe = eventCount === 0;
+    return failure;
+  };
   if (err instanceof APIStatusError) return err;
   if (callerSignal?.aborted) {
     return err instanceof AbortError ? err : new AbortError();
   }
   // Idle watchdog fired (checked before the whole-request timeout, which it
-  // pre-empts): the stream stalled with no server event. Distinct, diagnosable
-  // message; terminal (the streaming phase is never retried).
-  if (idleSignal?.aborted && !timeoutSignal.aborted) {
-    return new APIConnectionError(
-      `Messages API stream idle for ${idleMs}ms with no server event after ` +
-        `${eventCount} event(s); aborted`,
-      err,
-      'stream_idle_timeout',
+  // pre-empts): the stream stalled with no server event. Terminal at the
+  // transport (the streaming phase is never retried here); a zero-event stall
+  // is turn-replay-safe for the engine.
+  if (ctx.idleSignal?.aborted) {
+    return flag(
+      new APIConnectionError(
+        `Messages API stream idle for ${ctx.idleMs}ms with no server event after ` +
+          `${eventCount} event(s); aborted`,
+        err,
+        'stream_idle_timeout',
+      ),
     );
   }
-  if (timeoutSignal.aborted) {
-    return new APIConnectionError(
-      `Messages API stream timed out after ${timeoutMs}ms`,
-      err,
+  // Hard cap on total streaming duration fired (streamMaxDurationMs). Unlike
+  // the idle watchdog this cuts a FLOWING stream, so blocks delivered whole
+  // stay salvageable.
+  if (ctx.maxSignal?.aborted) {
+    const failure = flag(
+      new APIConnectionError(
+        `Messages API stream exceeded the streamMaxDurationMs hard cap ` +
+          `(${ctx.streamMaxMs}ms) after ${eventCount} event(s); aborted`,
+        err,
+        'stream_max_duration',
+      ),
     );
+    failure.midStreamTruncation = eventCount > 0;
+    return failure;
+  }
+  // Whole-request timeout during the body: only reachable in the fallback
+  // configuration (idle watchdog disabled, no hard cap). Delivered-whole
+  // blocks stay salvageable here too (P1: salvage-on-timeout).
+  if (ctx.timeoutGovernsBody && timeoutSignal.aborted) {
+    const failure = flag(
+      new APIConnectionError(
+        `Messages API stream timed out after ${timeoutMs}ms`,
+        err,
+      ),
+    );
+    failure.midStreamTruncation = eventCount > 0;
+    return failure;
   }
   if (err instanceof APIConnectionError) return err;
   if (isAbortError(err)) {
     return err instanceof AbortError ? err : new AbortError(errorMessage(err));
   }
-  const failure = new APIConnectionError(
-    `Messages API stream failed after ${eventCount} event(s): ${errorMessage(err)}`,
-    err,
+  const failure = flag(
+    new APIConnectionError(
+      `Messages API stream failed after ${eventCount} event(s): ${errorMessage(err)}`,
+      err,
+    ),
   );
   // E3: a connection that dropped after delivering events is a TRUNCATED
   // turn - the engine may salvage the completed blocks (official 2.1.201
-  // does; conformance run-l4 KD-L4-02/04). Timeout/idle/abort branches above
-  // never carry this flag.
+  // does; conformance run-l4 KD-L4-02/04).
   failure.midStreamTruncation = eventCount > 0;
   return failure;
 }
