@@ -1,8 +1,8 @@
 {
   "generated": "2026-07-10",
   "stats": {
-    "nodes": 346,
-    "edges": 403
+    "nodes": 347,
+    "edges": 402
   },
   "nodes": [
     {
@@ -3081,6 +3081,17 @@
       "tier": "search"
     },
     {
+      "id": "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "type": "documentation",
+      "title": "silver-core-sdk-command-consumer-manual-20260710",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
       "id": "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "type": "documentation",
       "title": "silver-core-sdk-rename-review-20260710",
@@ -4237,8 +4248,8 @@
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/130226.md",
-      "rel": "提及:沙耶",
+      "target": "/characters/94450.md",
+      "rel": "提及:茉夏",
       "rel_type": "mention"
     },
     {
@@ -4353,12 +4364,6 @@
       "source": "/community/community-youtube-comments.md",
       "target": "/characters/15595.md",
       "rel": "提及:Ramona",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-youtube.md",
-      "target": "/characters/130226.md",
-      "rel": "提及:Saya",
       "rel_type": "mention"
     },
     {
@@ -5598,6 +5603,12 @@
       "rel_type": "mention"
     },
     {
+      "source": "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
       "source": "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
@@ -5671,8 +5682,8 @@
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/130226.md",
-      "rel": "提及:沙耶",
+      "target": "/characters/94450.md",
+      "rel": "提及:茉夏",
       "rel_type": "mention"
     },
     {
@@ -5745,12 +5756,6 @@
       "source": "/sources/weibo.md",
       "target": "/characters/130226.md",
       "rel": "提及:沙耶",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/youtube.md",
-      "target": "/characters/130226.md",
-      "rel": "提及:Saya",
       "rel_type": "mention"
     },
     {
