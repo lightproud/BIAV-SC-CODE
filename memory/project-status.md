@@ -70,9 +70,13 @@
   - [x] **note_com 已修复**：真因 = `/api/v3/searches` 已对非浏览器请求一律 403（浏览器头
     与 cloudscraper 均被拒）。改走 hashtag RSS（`/hashtag/忘却前夜/rss`），本地实测 25 条；
     RSS 无互动指标 → engagement 恒 0（同 weixin 已知限制）
-  - [ ] **arca_live 不可修（CI 基础设施性封锁）**：Cloudflare 拦 GitHub Actions 机房 IP
-    ——HTTP 403 / PW 挑战页超时 / App API 403 三路全堵；采集器代码本身无恙（住宅 IP
-    侧实测 86 条正常）。**退役 vs 挂账待守密人裁定**
+  - [x] **arca_live 改走 CC 例程日采（守密人 2026-07-10 裁定方案 2 过渡桥）**：CI 基础
+    设施性封锁（Cloudflare 拦 GitHub Actions 机房 IP——HTTP 403 / PW 挑战页超时 /
+    App API 403 三路全堵），银芯 CC 云环境出口实测畅通。每日一次 fresh-session 例程
+    调用单脚本 `projects/news/scripts/collect_arca_daily.py`（采集 → 按日归档 →
+    [skip ci] 提交推送，响亮失败；健康兜底 = 沉默源审计 arca_live 断更 >7d 告警）。
+    首采 86 条 / 10 日期桶已入 `Record/Community/arca_live/`。GC 编排尝试保留——
+    CF 若放行 Actions 则正常路径自动恢复、例程可退役
   - [ ] **twitter 需付费 Token**（TWITTER_BEARER_TOKEN 未配置，静默空）。**买 token vs
     退役待守密人裁定**
 - **2026-07-02 degraded 排查结论（已修复）**：
