@@ -42,7 +42,7 @@
   `.github/workflows/backfill-media.yml`
 - **`Backfill Historical News`** _[schedule/manual]_ — 定时回填历史社区新闻。  
   `.github/workflows/backfill-news.yml`
-- **`BPT Agent SDK`** _[push/pull_request/manual]_ —   
+- **`BPT Agent SDK`** _[schedule/push/pull_request/manual]_ —   
   `.github/workflows/bpt-agent-sdk.yml`
 - **`Build Analysis Index`** _[schedule/manual]_ —   
   `.github/workflows/build-analysis-index.yml`

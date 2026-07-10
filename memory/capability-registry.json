@@ -57,6 +57,7 @@
       "name": "BPT Agent SDK",
       "path": ".github/workflows/bpt-agent-sdk.yml",
       "triggers": [
+        "schedule",
         "push",
         "pull_request",
         "manual"
