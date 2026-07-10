@@ -61,6 +61,47 @@ the main conversation).
   stream self-heals and the loop yields the assistant reply — the black-pool
   crash regression). Full suite 1554 pass / 2 skip (rebased onto 0.35.0's
   OpenAI translating transport; no interaction).
+## 0.37.0 — 2026-07-10
+
+**Audit debt payoff** (full ledger:
+`Public-Info-Pool/Resource/repo-engineering/bpt-sdk-optimization-review-20260710.md`).
+
+Defect fixes: OpenAI translator keeps interleaved tool_calls intact
+(per-index open blocks) and treats a clean stream end without
+[DONE]/finish_reason as a truncated turn (E3 salvage) instead of a fabricated
+success; orphan tool_use blocks are filtered on the structured-output-retry
+and background-drain persist paths (was: every later same-query request
+400s); blocking TaskOutput honors abort + caps model-supplied timeouts;
+terminal engine decisions (budget/turns/refusal) settle the WAL pending_turn
+so resume cannot re-bill a spent budget cap; SIGKILL escalation timers cancel
+on exit; workflow runs cancel honestly when aborted mid-flight.
+
+Hardening/perf: per-message token-estimate cache + real-usage floor kill the
+O(n^2) compaction-trigger scan and the silent 'prompt too long' overflow
+path; hooks aggregate in deterministic registration order with a new
+`hookFailureMode: 'closed'` fail-safe knob; session list() is a meta-only
+scan; teardown awaits background-subagent finalizers before the mirror
+flush; retry observability survives exhausted retries.
+
+OpenAI gateway: `provider.openai.modelMap` / `authHeaderName` (Azure) /
+`extraQueryParams`; `provider.pricing` overrides; silent-failure
+`informational` warnings (unpriceable maxBudgetUsd, dropped thinking,
+ignored betas/apiVersion) — the `informational` message type is now emitted,
+including one listing any ACCEPTED-IGNORED options present.
+
+Structure (audit P2): import-discipline test enforces the ARCHITECTURE.md
+edges table (engine<->subagents cycle broken via internal/model-alias);
+transport twin anti-drift guard; tool dispatch, EngineConfig assembly,
+session persistence/WAL, session accounting and async primitives extracted
+from the two mega-files (query.ts 2008->~1530 lines, loop.ts 1519->~1160);
+system wire-field derivation single-sited with an assembly<->derivation
+contract test; ToolContext gains formal `sessionKey`/`permissionGate`;
+workflow-engine moved to tools/. `src/version.ts` is the single version
+source (User-Agent / init now report the real version; guard REDS drift).
+Docs reconciled (settingSources tri-doc contradiction, electron-host example
+message pump + smoke guard, README tools/env tables, ERRORS wiring notes).
+Monthly scheduled L5 real-API conformance round. 1600+ unit tests green.
+
 ## 0.35.0 — 2026-07-09
 
 **OpenAI protocol support** (`provider.protocol: 'openai-chat'`, BPT-EXTENSION).

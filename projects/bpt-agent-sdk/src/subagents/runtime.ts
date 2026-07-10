@@ -75,7 +75,6 @@ import {
   resolveStallTimeoutMs,
 } from '../transport/stall-watchdog.js';
 import { addWorktree, removeWorktreeIfClean } from '../internal/worktree.js';
-import type { ToolContextWithPermissionGate } from '../tools/exitplanmode.js';
 import {
   DEFAULT_SUBAGENT_MAX_TURNS,
   MAX_SUBAGENT_DEPTH,
@@ -154,6 +153,8 @@ export type SubagentRuntimeOptions = {
   /** E4 read-before-write gate: the query-wide read-paths Set (the SAME
    *  reference as the root ToolContext, so the gate spans the session). */
   readFilePaths?: Set<string>;
+  /** Formal per-query WeakMap key threaded into child contexts (F6). */
+  sessionKey?: object;
 };
 
 /** task_updated.result carries a bounded preview, not the full child text
@@ -951,11 +952,12 @@ export function createSubagentRuntime(
         // Same SESSION for the read-before-write gate: a parent Read
         // satisfies a child's Write gate and vice versa.
         readFilePaths: opts.readFilePaths,
+        sessionKey: opts.sessionKey,
       };
       // ExitPlanMode bridge: the child flips ITS OWN gate (childGate), never
       // the parent's. Attached via the tool's context extension because the
       // bridge is deliberately not part of the core ToolContext contract.
-      (childToolContext as ToolContextWithPermissionGate).permissionGate =
+      childToolContext.permissionGate =
         childGate;
       const childDeps: EngineDeps = {
         transport,

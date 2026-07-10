@@ -18,7 +18,7 @@
 import { AbortError } from '../errors.js';
 import { createProviderTransport } from '../transport/factory.js';
 import { MessageAccumulator } from '../engine/accumulator.js';
-import { resolveModelAlias } from '../subagents/agents.js';
+import { resolveModelAlias } from '../internal/model-alias.js';
 import type { APIMessageParam, ProviderConfig } from '../types.js';
 import type { StreamRequest, Transport } from '../internal/contracts.js';
 

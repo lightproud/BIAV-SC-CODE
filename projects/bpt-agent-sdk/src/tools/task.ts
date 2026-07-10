@@ -63,7 +63,7 @@ type TaskStore = {
 const STORES = new WeakMap<object, TaskStore>();
 
 function storeKey(ctx: ToolContext): object {
-  return ctx.readFilePaths ?? ctx;
+  return ctx.sessionKey ?? ctx.readFilePaths ?? ctx;
 }
 
 function storeFor(ctx: ToolContext): TaskStore {

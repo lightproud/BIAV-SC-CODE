@@ -32,8 +32,9 @@
  *  user turn until the host threads a session-mutable cwd there.
  *
  * The worktree session (original cwd + active worktree) is tracked per query
- * in a WeakMap keyed on the shared `readFilePaths` Set (same keying precedent
- * as the task store in task.ts), falling back to the ToolContext itself.
+ * in a WeakMap keyed on the formal per-query `ctx.sessionKey` (audit
+ * 2026-07-10 F6), falling back to the shared `readFilePaths` Set and then the
+ * ToolContext itself for bare tool use.
  */
 
 import { writeFileSync } from 'node:fs';
@@ -68,7 +69,9 @@ export type WorktreeSession = {
 const SESSIONS = new WeakMap<object, WorktreeSession>();
 
 function sessionKey(ctx: ToolContext): object {
-  return ctx.readFilePaths ?? ctx;
+  // Formal per-query key first (audit 2026-07-10 F6); the readFilePaths
+  // fallback keeps bare tool use (unit tests without a query) working.
+  return ctx.sessionKey ?? ctx.readFilePaths ?? ctx;
 }
 
 /** Test/inspection hook: the current worktree session for a context, if any. */

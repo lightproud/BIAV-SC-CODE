@@ -53,15 +53,12 @@ import { DefaultMcpRegistry } from './mcp/registry.js';
 import { matchToolName, parseRule } from './permissions/rules.js';
 import { runAgentLoop } from './engine/loop.js';
 import { hasPriceFor } from './engine/pricing.js';
+import { SessionAccounting } from './query-accounting.js';
+import { buildEngineConfig } from './engine/config-builder.js';
+import { createSessionPersistence } from './sessions/persistence.js';
+import { AsyncQueue, createDeferred, type Deferred } from './internal/async.js';
+import { ToolFilterMcpRegistry } from './mcp/tool-filter.js';
 import { SDK_VERSION } from './version.js';
-import { buildSystemPromptParts } from './engine/prompts.js';
-import { estimateTextTokens } from './engine/tokens.js';
-import { gatherEnvironment, loadProjectInstructions } from './engine/runtime-context.js';
-import { buildCompactionConfig } from './engine/compaction.js';
-import {
-  buildStructuredOutputInstruction,
-  normalizeOutputFormat,
-} from './engine/structured-output.js';
 import { JsonlSessionStore, resolveTranscriptPath } from './sessions/store.js';
 import { MirroringSessionStore, encodeProjectKey } from './sessions/store-adapter.js';
 import { FileCheckpointStore } from './sessions/checkpoints.js';
@@ -77,7 +74,6 @@ import { join } from 'node:path';
 import { createBuiltinTools, DEFAULT_DEFERRED_BUILTINS } from './tools/index.js';
 import { createShellManager } from './tools/shells.js';
 import { peekWorktreeSession } from './tools/enterworktree.js';
-import type { ToolContextWithPermissionGate } from './tools/exitplanmode.js';
 import { resolveSandboxBackend } from './sandbox/backend.js';
 import type { SandboxContext } from './types.js';
 import { createSubagentRuntime } from './subagents/runtime.js';
@@ -149,69 +145,6 @@ const zeroUsage = (): NonNullableUsage => ({
 });
 
 /** Sum two usage records (session-wide accumulation across streaming turns). */
-function addUsageLocal(a: NonNullableUsage, b: NonNullableUsage): NonNullableUsage {
-  return {
-    input_tokens: a.input_tokens + b.input_tokens,
-    output_tokens: a.output_tokens + b.output_tokens,
-    cache_creation_input_tokens:
-      a.cache_creation_input_tokens + b.cache_creation_input_tokens,
-    cache_read_input_tokens: a.cache_read_input_tokens + b.cache_read_input_tokens,
-  };
-}
-
-/**
- * McpRegistry decorator that hides tools matched by bare-name disallowedTools
- * entries so the model never sees their definitions (audit v0.1.1 P0). A tool
- * whose qualified name matches a bare disallowed pattern is dropped from
- * allTools() (which feeds the request's tool list and the init message) and
- * reported as absent by has() (so a hallucinated call yields "No such tool"
- * rather than executing). Scoped `Tool(spec)` deny rules are NOT applied here;
- * they remain call-time gate decisions.
- */
-class ToolFilterMcpRegistry implements McpRegistry {
-  constructor(
-    private readonly inner: McpRegistry,
-    private readonly hidden: (qualifiedName: string) => boolean,
-  ) {}
-  connectAll(): Promise<void> {
-    return this.inner.connectAll();
-  }
-  statuses(): McpServerStatus[] {
-    return this.inner.statuses();
-  }
-  allTools(): McpToolEntry[] {
-    return this.inner.allTools().filter((t) => !this.hidden(t.qualifiedName));
-  }
-  has(qualifiedName: string): boolean {
-    if (this.hidden(qualifiedName)) return false;
-    return this.inner.has(qualifiedName);
-  }
-  call(
-    qualifiedName: string,
-    args: Record<string, unknown>,
-    signal: AbortSignal,
-  ): Promise<CallToolResult> {
-    return this.inner.call(qualifiedName, args, signal);
-  }
-  listResources(server: string | undefined, signal: AbortSignal): Promise<McpResource[]> {
-    return this.inner.listResources(server, signal);
-  }
-  readResource(server: string, uri: string, signal: AbortSignal): Promise<McpResourceContent[]> {
-    return this.inner.readResource(server, uri, signal);
-  }
-  reconnect(serverName: string): Promise<void> {
-    return this.inner.reconnect(serverName);
-  }
-  setEnabled(serverName: string, enabled: boolean): void {
-    this.inner.setEnabled(serverName, enabled);
-  }
-  setServers(servers: Record<string, McpServerConfig>): Promise<void> {
-    return this.inner.setServers(servers);
-  }
-  closeAll(): Promise<void> {
-    return this.inner.closeAll();
-  }
-}
 
 /** Plain text view of a user message (for hooks and session meta). */
 function promptTextOf(message: APIUserMessage): string {
@@ -239,108 +172,7 @@ function appendContextLines(
   return { role: 'user', content: [...message.content, ...extra] };
 }
 
-type Deferred<T> = {
-  promise: Promise<T>;
-  resolve: (value: T) => void;
-  reject: (err: unknown) => void;
-  settled: boolean;
-};
 
-function createDeferred<T>(): Deferred<T> {
-  let resolveFn!: (v: T) => void;
-  let rejectFn!: (e: unknown) => void;
-  const promise = new Promise<T>((res, rej) => {
-    resolveFn = res;
-    rejectFn = rej;
-  });
-  // Pre-attach a handler so a rejection nobody awaits never becomes an
-  // unhandledRejection; callers of initializationResult() still see it.
-  void promise.catch(() => undefined);
-  const d: Deferred<T> = {
-    promise,
-    settled: false,
-    resolve: (v) => {
-      if (d.settled) return;
-      d.settled = true;
-      resolveFn(v);
-    },
-    reject: (e) => {
-      if (d.settled) return;
-      d.settled = true;
-      rejectFn(e);
-    },
-  };
-  return d;
-}
-
-/** Minimal push-based async queue feeding user turns into the run loop. */
-class AsyncQueue<T> {
-  private readonly items: T[] = [];
-  private readonly waiters: Array<{
-    resolve: (r: IteratorResult<T, undefined>) => void;
-    reject: (err: unknown) => void;
-  }> = [];
-  private closed = false;
-  private failure: { err: unknown } | null = null;
-
-  /** Returns false when the queue is already closed/failed. */
-  push(item: T): boolean {
-    if (this.closed) return false;
-    const waiter = this.waiters.shift();
-    if (waiter !== undefined) waiter.resolve({ done: false, value: item });
-    else this.items.push(item);
-    return true;
-  }
-
-  close(): void {
-    if (this.closed) return;
-    this.closed = true;
-    for (const w of this.waiters.splice(0)) {
-      w.resolve({ done: true, value: undefined });
-    }
-  }
-
-  fail(err: unknown): void {
-    if (this.closed) return;
-    this.closed = true;
-    this.failure = { err };
-    for (const w of this.waiters.splice(0)) w.reject(err);
-  }
-
-  isClosed(): boolean {
-    return this.closed;
-  }
-
-  async next(): Promise<IteratorResult<T, undefined>> {
-    const item = this.items.shift();
-    if (item !== undefined) return { done: false, value: item };
-    if (this.failure !== null) throw this.failure.err;
-    if (this.closed) return { done: true, value: undefined };
-    return new Promise((resolve, reject) => {
-      this.waiters.push({ resolve, reject });
-    });
-  }
-}
-
-type ResolvedSession = {
-  sessionId: string;
-  history: APIMessageParam[];
-  resumed: boolean;
-  /** True when the meta line still needs to be written on first persist. */
-  needMeta: boolean;
-  /**
-   * SM-乙b §5.2: the resumed transcript carries a dangling pending_turn
-   * (crash inside the request segment). When the replayed history also ends
-   * with a user turn, run() re-drives exactly that API request segment before
-   * consuming new input — tools are NEVER replayed (their execution state is
-   * whatever tool_result records reached disk).
-   */
-  redrivePending?: boolean;
-  /** uuid of the dangling pending_turn record (settled after the re-drive). */
-  pendingTurnUuid?: string;
-  /** turn_ref of the dangling pending_turn (the interrupted user turn uuid). */
-  pendingTurnRef?: string;
-};
 
 // ---------------------------------------------------------------------------
 // query()
@@ -531,6 +363,10 @@ export function query(args: {
   // runtime threads the SAME reference into child contexts (like shells /
   // sandbox), so "this session has read the file" spans parent and children.
   const readFilePaths = new Set<string>();
+  // Stable per-query identity for WeakMap-keyed tool state (audit 2026-07-10
+  // F6): worktree sessions / task stores key on THIS object, not on the
+  // readFilePaths Set's identity.
+  const toolSessionKey: object = {};
 
   const hooks = new DefaultHookRunner({
     hooks: options.hooks,
@@ -674,209 +510,16 @@ export function query(args: {
     deferred.attachColdBuiltins(cold);
   }
 
-  // Structured-output: normalize the schema option and append the instruction
-  // to the STABLE system segment so the requirement survives tool turns and
-  // stays inside the cached prefix (it is static, not per-run).
-  const outputFormat = normalizeOutputFormat(options.outputFormat, debug);
-
-  // System prompt has two shapes:
-  //  - segments form (host-layered): the CALLER composed ordered blocks and
-  //    marked which to cache. We forward them verbatim (respecting their
-  //    breakpoints, adding none) — the generic seam for host prompt layering.
-  //  - string/preset/undefined: this SDK builds the [stable, cwd] split.
-  let systemBlocks: TextBlockParam[] | undefined;
-  let systemPromptStable = '';
-  let systemPromptVolatile = '';
-  // Git branch of cwd at query construction, reused from the runtime-context
-  // probe below (no second git call) and persisted into the session meta line
-  // so listSessions/getSessionInfo report SDKSessionInfo.gitBranch. Absent on
-  // the segments path / when includeEnvironmentContext is false (no probe ran).
-  let sessionGitBranch: string | undefined;
-  // Char offset splitting the stable prefix into [base harness | appended tail]
-  // for the 2nd system cache breakpoint. Only set on the string/preset path.
-  let systemPromptBaseLen: number | undefined;
-  // Labeled per-part system breakdown for the prompt-composition message
-  // (BPT-EXTENSION); built here where the parts are still separate strings.
-  let systemComposition: SystemComposition | undefined;
-  const sp = options.systemPrompt;
-  if (sp !== null && typeof sp === 'object' && 'type' in sp && sp.type === 'segments') {
-    // 4 API breakpoints total; reserve 1 for the tool schemas -> up to 3 here.
-    let budget = 3;
-    systemBlocks = (Array.isArray(sp.segments) ? sp.segments : [])
-      .filter((s) => s !== null && typeof s.text === 'string' && s.text.length > 0)
-      .map((s) => {
-        const block: TextBlockParam = { type: 'text', text: s.text };
-        if (s.cache === true) {
-          if (budget > 0) {
-            block.cache_control = { type: 'ephemeral' };
-            budget -= 1;
-          } else {
-            debug(
-              'systemPrompt segments: cache-breakpoint budget (3) exhausted; ' +
-                'this segment is sent uncached (order segments most-shared first)',
-            );
-          }
-        }
-        return block;
-      });
-    // Structured-output requirement rides as a trailing (uncached) block.
-    if (outputFormat !== undefined && systemBlocks.length > 0) {
-      systemBlocks.push({
-        type: 'text',
-        text: buildStructuredOutputInstruction(outputFormat.schema),
-      });
-    }
-    // Labeled composition for the prompt-composition message: each host segment
-    // is its own append part (segments form has no engine-owned base), plus the
-    // trailing structured-output block when present.
-    const segParts: SystemCompositionPart[] = (Array.isArray(sp.segments) ? sp.segments : [])
-      .filter((s) => s !== null && typeof s.text === 'string' && s.text.length > 0)
-      .map((s) => ({
-        role: 'segment' as const,
-        label: s.label,
-        estTokens: estimateTextTokens(s.text),
-      }));
-    if (outputFormat !== undefined && segParts.length > 0) {
-      segParts.push({
-        role: 'structured-output',
-        label: 'structured-output',
-        estTokens: estimateTextTokens(buildStructuredOutputInstruction(outputFormat.schema)),
-      });
-    }
-    systemComposition = { parts: segParts };
-  } else {
-    // Runtime-assembly context (open reproduction of the official runtime
-    // prompt): the <env> block (default-on for the preset) and CLAUDE.md /
-    // AGENTS.md codebase instructions (opt-in via settingSources). Gathered
-    // here because it needs I/O the pure prompt module avoids; both degrade to
-    // empty on any failure and never block query construction.
-    const includeEnv = options.includeEnvironmentContext !== false;
-    const environment = includeEnv
-      ? gatherEnvironment(cwd, initialModel, new Date().toISOString().slice(0, 10))
-      : undefined;
-    sessionGitBranch = environment?.gitBranch;
-    const projectInstructions = loadProjectInstructions(cwd, options.settingSources);
-    // There is one harness prompt: buildSystemPromptParts resolves both an unset
-    // systemPrompt and the claude_code preset to the same comprehensive default.
-    const promptParts = buildSystemPromptParts(sp, {
-      cwd,
-      toolNames: [...builtinTools.keys()],
-      environment,
-      projectInstructions,
-    });
-    systemPromptStable = promptParts.stable;
-    // Boundary between the shared base harness and the appended stable tail
-    // (project instructions / append). The structured-output instruction is
-    // appended AFTER `base`, so it lands in the slice(baseLen) tail and the
-    // offset stays valid.
-    systemPromptBaseLen = promptParts.base.length;
-    // Prompt-composition breakdown: the stable parts (base + codebase-instructions
-    // + append segments), then the structured-output instruction, then the
-    // volatile (cwd/env) tail — in wire order.
-    const compositionParts: SystemCompositionPart[] = [...promptParts.parts];
-    if (outputFormat !== undefined) {
-      const instr = buildStructuredOutputInstruction(outputFormat.schema);
-      systemPromptStable += `\n\n${instr}`;
-      compositionParts.push({
-        role: 'structured-output',
-        label: 'structured-output',
-        estTokens: estimateTextTokens(instr),
-      });
-    }
-    systemPromptVolatile = promptParts.volatile;
-    if (systemPromptVolatile.length > 0) {
-      compositionParts.push({
-        role: 'environment',
-        label: 'environment',
-        estTokens: estimateTextTokens(systemPromptVolatile),
-      });
-    }
-    systemComposition = { parts: compositionParts };
-  }
-
-  // Default-on extended thinking, claude_code preset path ONLY (E1 + E7-01).
-  // The official CLI enables thinking by default and (per the r3 wire
-  // differential) sends `thinking: {type:"adaptive"}` on 4.6+ models. E7-01
-  // aligned our preset default to that. Injection rules (INTENT only — the
-  // engine normalizes the wire form per LIVE model in computeThinking):
-  //  - an explicit options.thinking always wins (passed through verbatim);
-  //  - maxThinkingTokens: 0 is the explicit opt-out (no thinking param);
-  //  - maxThinkingTokens > 0 enables FIXED thinking with that budget;
-  //  - both unset -> adaptive thinking intent.
-  // The `adaptive` intent below is NOT the final wire shape: computeThinking
-  // (loop.ts + thinking-model.ts) emits `{type:'adaptive'}` on 4.6+ models but
-  // downgrades to `{type:'enabled', budget_tokens}` on pre-4.6 models (haiku
-  // 4.5, sonnet 4.5, etc.), which 400 on adaptive. This fork is why the v0.7
-  // "always adaptive" default 400'd the whole haiku conformance arm.
-  // Non-preset paths (bare string / segments / no systemPrompt) are unchanged:
-  // the drop-in default remains "no thinking param".
-  const isClaudeCodePreset =
-    sp !== null &&
-    typeof sp === 'object' &&
-    'type' in sp &&
-    sp.type === 'preset' &&
-    sp.preset === 'claude_code';
-  let thinkingConfig = options.thinking;
-  let maxThinkingTokensConfig = options.maxThinkingTokens;
-  if (isClaudeCodePreset && thinkingConfig === undefined) {
-    if (maxThinkingTokensConfig === undefined) {
-      thinkingConfig = { type: 'adaptive' };
-    } else if (maxThinkingTokensConfig > 0) {
-      thinkingConfig = { type: 'enabled' };
-    }
-    // maxThinkingTokens <= 0: explicit opt-out, inject nothing.
-  }
-
-  // Mutable engine config shared across turns; setModel/setMaxThinkingTokens
-  // mutate it live (takes effect from the next assistant turn).
-  const engineConfig: EngineConfig = {
-    model: initialModel,
-    fallbackModel: options.fallbackModel,
-    maxOutputTokens: options.provider?.maxOutputTokens ?? DEFAULT_MAX_OUTPUT_TOKENS,
-    systemPrompt: systemPromptStable,
-    // Volatile (cwd) tail rides after the cache breakpoint; absent -> the
-    // stable prompt is sent as a single string (e.g. a user-string prompt).
-    ...(systemPromptVolatile.length > 0
-      ? { systemPromptSuffix: systemPromptVolatile }
-      : {}),
-    // Base/tail split offset for the 2nd system cache breakpoint (string/preset
-    // path only; the loop guards 0 < baseLen < systemPrompt.length so it
-    // degrades to a single breakpoint when there is no appended tail).
-    ...(systemPromptBaseLen !== undefined ? { systemPromptBaseLen } : {}),
-    // Caller-composed segments (host layering) take precedence over the
-    // string/preset path when present.
-    ...(systemBlocks !== undefined ? { systemBlocks } : {}),
-    maxTurns: options.maxTurns,
-    maxBudgetUsd: options.maxBudgetUsd,
-    thinking: thinkingConfig,
-    maxThinkingTokens: maxThinkingTokensConfig,
-    // tool_choice steer/constraint; forwarded to each request when tools are
-    // present (loop guards the empty-tools case). Absent -> API default (auto).
-    toolChoice: options.toolChoice,
-    compaction: buildCompactionConfig(options.compaction),
-    outputFormat,
-    // Prompt caching is ON by default (matches the official SDK and saves the
-    // static system+tools prefix on every turn of a multi-turn session). Set
-    // provider.promptCaching = false to disable (e.g. for very short sessions
-    // where the cache-write premium is not amortized).
-    promptCaching: options.provider?.promptCaching !== false,
-    // Cache TTL: undefined/'5m' -> 5-minute default; '1h' -> 1-hour cache
-    // (BPT-EXTENSION; the official SDK has no such knob).
-    cacheTtl: options.provider?.cacheTtl,
-    // Custom price entries (BPT-EXTENSION, audit 2026-07-10): make cost
-    // metrics + maxBudgetUsd work for non-Claude models (openai protocol).
-    pricing: options.provider?.pricing,
-    includePartialMessages: options.includePartialMessages === true,
-    // Prompt-composition observability (BPT-EXTENSION): emit a per-request
-    // system/prompt_composition message; off by default (zero cost, wire
-    // request unaffected). The labeled system breakdown feeds its 需求 A split.
-    ...(options.includePromptComposition === true
-      ? { includePromptComposition: true }
-      : {}),
-    ...(systemComposition !== undefined ? { systemComposition } : {}),
-    sessionId: '', // resolved when the run starts
+  // EngineConfig assembly extracted to engine/config-builder.ts (audit
+  // 2026-07-10 P2-3C): structured-output normalization, system-prompt shapes
+  // + composition breakdown, preset thinking default, the config literal.
+  const { engineConfig, outputFormat, sessionGitBranch, isClaudeCodePreset } = buildEngineConfig({
+    options,
     cwd,
-  };
+    initialModel,
+    builtinToolNames: [...builtinTools.keys()],
+    debug,
+  });
 
   // Subagent runtime: hands out per-depth spawn closures + drains child results
   // and usage. Children get the real (unfiltered) MCP registry and apply their
@@ -905,6 +548,7 @@ export function query(args: {
     shells,
     sandbox: sandboxCtx,
     readFilePaths,
+    sessionKey: toolSessionKey,
   });
 
   // --- Input queue (unified for string and streaming-input modes) -----------
@@ -1004,164 +648,23 @@ export function query(args: {
     }
   }
 
-  function persistParam(sessionId: string, m: APIMessageParam): void {
-    if (!persist) return;
-    store.append(sessionId, {
-      type: m.role,
-      timestamp: new Date().toISOString(),
-      message: { role: m.role, content: m.content },
-    });
-  }
-
-  /**
-   * Persist an assistant turn AT YIELD TIME (finding #34). The engine pushes
-   * the assistant to its in-memory history only after yielding it, so a
-   * consumer that breaks right after the assistant message would otherwise lose
-   * the answer from disk. Empty text blocks are dropped and an all-empty
-   * message is skipped, so the persisted transcript never carries a
-   * {role:'assistant',content:[]} turn the API would 400 on resume.
-   */
-  function persistAssistant(sessionId: string, content: ContentBlock[]): void {
-    if (!persist) return;
-    const filtered = content.filter((b) =>
-      b.type === 'text' ? b.text.length > 0 : true,
-    );
-    if (filtered.length === 0) return;
-    store.append(sessionId, {
-      type: 'assistant',
-      timestamp: new Date().toISOString(),
-      message: { role: 'assistant', content: filtered },
-    });
-  }
-
-  /**
-   * §5.2 write-ahead checkpoint: mark that a turn is entering its API request
-   * segment. A crash before the matching turn_complete leaves this record
-   * dangling, which a later resume reads as "the interruption happened in the
-   * request segment — re-drive it". turn_ref references the already-persisted
-   * user turn's uuid (no content copied). Always on when the query persists:
-   * the record is tiny and it is what makes the crash point diagnosable.
-   */
-  function persistPendingTurn(
-    sessionId: string,
-    pendingUuid: string,
-    turnRef: string,
-  ): void {
-    if (!persist) return;
-    store.append(sessionId, {
-      type: 'pending_turn',
-      uuid: pendingUuid,
-      timestamp: new Date().toISOString(),
-      turn_ref: turnRef,
-    });
-  }
-
-  /** §5.2: settle a pending_turn (append-only — the pending line stays, the
-   *  pairing makes it logically closed). */
-  function persistTurnComplete(sessionId: string, pendingUuid: string): void {
-    if (!persist) return;
-    store.append(sessionId, {
-      type: 'turn_complete',
-      uuid: randomUUID(),
-      timestamp: new Date().toISOString(),
-      pending_uuid: pendingUuid,
-    });
-  }
-
-  /**
-   * Session resolution:
-   *   - resume / continue-latest -> load and replay the prior transcript (the
-   *     explicit resume path). forkSession copies it under a fresh id.
-   *   - sessionId (without resume/continue) -> select/create THAT id but start
-   *     with EMPTY history: it labels a logically fresh session, it does not
-   *     auto-resume prior content (finding #38). resume stays the only resume.
-   *   - nothing -> a fresh randomUUID.
-   */
-  async function resolveSession(): Promise<ResolvedSession> {
-    // Explicit resume source: options.resume, or continue:true -> latest.
-    let resumeSource: string | undefined = options.resume;
-    if (resumeSource === undefined && options.continue === true) {
-      resumeSource = (await store.latestSessionId()) ?? undefined;
-    }
-
-    if (resumeSource !== undefined) {
-      const stored = await store.load(resumeSource);
-      if (stored !== null) {
-        // §5.2: carry the dangling-checkpoint evidence into the run so the
-        // interrupted request segment is re-driven before new input.
-        const pendingFields = {
-          ...(stored.pendingTurnInterrupted === true ? { redrivePending: true } : {}),
-          ...(stored.pendingTurnUuid !== undefined
-            ? { pendingTurnUuid: stored.pendingTurnUuid }
-            : {}),
-          ...(stored.pendingTurnRef !== undefined
-            ? { pendingTurnRef: stored.pendingTurnRef }
-            : {}),
-        };
-        if (options.forkSession === true) {
-          // Copy the transcript under a new id; the original stays untouched.
-          // The fork's future turns run under the CURRENT query's cwd, so the
-          // fork meta records `cwd`, not the source session's cwd (finding #39).
-          const newId = randomUUID();
-          if (persist) {
-            store.append(newId, {
-              type: 'meta',
-              sessionId: newId,
-              createdAt: Date.now(),
-              cwd,
-              firstPrompt: stored.firstPrompt,
-              ...(sessionGitBranch !== undefined ? { gitBranch: sessionGitBranch } : {}),
-            });
-            for (const m of stored.messages) {
-              store.append(newId, { type: m.role, message: m });
-            }
-          }
-          return {
-            sessionId: newId,
-            history: [...stored.messages],
-            resumed: true,
-            needMeta: false,
-          };
-        }
-        return {
-          sessionId: resumeSource,
-          history: [...stored.messages],
-          resumed: true,
-          needMeta: false,
-          // §5.2: a dangling pending_turn on the resumed transcript arms the
-          // redrive-on-resume in run() (fork deliberately omits this — a fork
-          // is a clean copy under a fresh id, not a crash recovery).
-          ...pendingFields,
-        };
-      }
-      // Resume target has no stored transcript.
-      if (options.forkSession === true) {
-        // Fork ALWAYS mints a fresh id; never write into the (missing) source
-        // id, which a later real session under that id would collide with
-        // (finding #39).
-        return { sessionId: randomUUID(), history: [], resumed: false, needMeta: true };
-      }
-      debug(
-        `resume: no stored transcript for session ${resumeSource}; starting fresh under that id`,
-      );
-      return { sessionId: resumeSource, history: [], resumed: false, needMeta: true };
-    }
-
-    // A specific sessionId (no resume/continue) selects that id WITHOUT
-    // resuming prior content: fresh history, but reuse the existing meta line
-    // if a transcript already lives under that id (finding #38).
-    if (options.sessionId !== undefined) {
-      const existing = persist ? await store.load(options.sessionId) : null;
-      return {
-        sessionId: options.sessionId,
-        history: [],
-        resumed: false,
-        needMeta: existing === null,
-      };
-    }
-
-    return { sessionId: randomUUID(), history: [], resumed: false, needMeta: true };
-  }
+  // Persistence + session resolution extracted to sessions/persistence.ts
+  // (audit 2026-07-10 P2-3B): message appends, the §5.2 WAL checkpoint pair,
+  // and resume/fork/continue resolution.
+  const {
+    persistParam,
+    persistAssistant,
+    persistPendingTurn,
+    persistTurnComplete,
+    resolveSession,
+  } = createSessionPersistence({
+    store,
+    persist,
+    options,
+    cwd,
+    sessionGitBranch,
+    debug,
+  });
 
   // --- The run generator -------------------------------------------------------
   async function* run(): AsyncGenerator<SDKMessage, void> {
@@ -1176,11 +679,9 @@ export function query(args: {
     // usage on each result are THAT turn's own figures, while total_cost_usd
     // and duration_api_ms report the session-cumulative (strictly increasing)
     // totals - enforcement stays cumulative, only the report fields differ.
-    let sessionTurns = 0;
-    let sessionCost = 0;
-    let sessionApiMs = 0;
-    let sessionUsage = zeroUsage();
-    const sessionModelUsage: Record<string, ModelUsage> = {};
+    // Session accounting extracted to query-accounting.ts (audit 2026-07-10
+    // P2-3A): additive counters + the single ModelUsage merge rule.
+    const acct = new SessionAccounting();
 
     // Common fields for QUERY-LAYER synthetic results (hook-block, pre-turn
     // session-cap stop, interrupt): no engine turn ran for THIS result, so the
@@ -1188,13 +689,11 @@ export function query(args: {
     // session totals. The official shape for these paths is unobserved.
     const resultCommon = () => ({
       duration_ms: Date.now() - startedAt,
-      duration_api_ms: sessionApiMs,
+      duration_api_ms: acct.apiMs,
       num_turns: 0,
-      total_cost_usd: sessionCost,
+      total_cost_usd: acct.cost,
       usage: zeroUsage(),
-      modelUsage: Object.fromEntries(
-        Object.entries(sessionModelUsage).map(([k, v]) => [k, { ...v }]),
-      ),
+      modelUsage: acct.snapshotModelUsage(),
       permission_denials: gate.denials(),
     });
 
@@ -1224,66 +723,6 @@ export function query(args: {
     ): SDKResultMessage =>
       terminalResult('error_during_execution', sessionId, errorMessage);
 
-    /** Fold one engine-turn result's totals into the session accumulators. */
-    const accumulateResult = (r: SDKResultMessage): void => {
-      sessionTurns += r.num_turns;
-      sessionCost += r.total_cost_usd;
-      sessionApiMs += r.duration_api_ms;
-      sessionUsage = addUsageLocal(sessionUsage, r.usage);
-      for (const [modelId, mu] of Object.entries(r.modelUsage)) {
-        const prev = sessionModelUsage[modelId];
-        sessionModelUsage[modelId] =
-          prev === undefined
-            ? { ...mu }
-            : {
-                inputTokens: prev.inputTokens + mu.inputTokens,
-                outputTokens: prev.outputTokens + mu.outputTokens,
-                cacheReadInputTokens:
-                  prev.cacheReadInputTokens + mu.cacheReadInputTokens,
-                cacheCreationInputTokens:
-                  prev.cacheCreationInputTokens + mu.cacheCreationInputTokens,
-                webSearchRequests: prev.webSearchRequests + mu.webSearchRequests,
-                costUSD: prev.costUSD + mu.costUSD,
-                // Static per-model figures (not additive): latest wins,
-                // falling back to the earlier value when the newer entry
-                // lacks them (e.g. a subagent-ledger merge).
-                contextWindow: mu.contextWindow ?? prev.contextWindow,
-                maxOutputTokens: mu.maxOutputTokens ?? prev.maxOutputTokens,
-              };
-      }
-    };
-
-    /** Fold drained subagent usage/cost/modelUsage into the session totals. */
-    const foldSubagentUsage = (ledger: {
-      usage: NonNullableUsage;
-      cost: number;
-      modelUsage: Record<string, ModelUsage>;
-    }): void => {
-      sessionCost += ledger.cost;
-      sessionUsage = addUsageLocal(sessionUsage, ledger.usage);
-      for (const [modelId, mu] of Object.entries(ledger.modelUsage)) {
-        const prev = sessionModelUsage[modelId];
-        sessionModelUsage[modelId] =
-          prev === undefined
-            ? { ...mu }
-            : {
-                inputTokens: prev.inputTokens + mu.inputTokens,
-                outputTokens: prev.outputTokens + mu.outputTokens,
-                cacheReadInputTokens:
-                  prev.cacheReadInputTokens + mu.cacheReadInputTokens,
-                cacheCreationInputTokens:
-                  prev.cacheCreationInputTokens + mu.cacheCreationInputTokens,
-                webSearchRequests: prev.webSearchRequests + mu.webSearchRequests,
-                costUSD: prev.costUSD + mu.costUSD,
-                // Static per-model figures (not additive): latest wins,
-                // falling back to the earlier value when the newer entry
-                // lacks them (e.g. a subagent-ledger merge).
-                contextWindow: mu.contextWindow ?? prev.contextWindow,
-                maxOutputTokens: mu.maxOutputTokens ?? prev.maxOutputTokens,
-              };
-      }
-    };
-
     /** Drain any queued mirror-error system messages from the session store. */
     const drainMirror = function* (): Generator<SDKMirrorErrorMessage> {
       if (store instanceof MirroringSessionStore) {
@@ -1308,11 +747,9 @@ export function query(args: {
      */
     const rewriteResult = (r: SDKResultMessage): SDKResultMessage => ({
       ...r,
-      total_cost_usd: sessionCost,
-      duration_api_ms: sessionApiMs,
-      modelUsage: Object.fromEntries(
-        Object.entries(sessionModelUsage).map(([k, v]) => [k, { ...v }]),
-      ),
+      total_cost_usd: acct.cost,
+      duration_api_ms: acct.apiMs,
+      modelUsage: acct.snapshotModelUsage(),
     });
 
     try {
@@ -1372,7 +809,7 @@ export function query(args: {
           // context picks the active worktree up again (Bash follows via its
           // persistent state; this covers the fs tools and subagent spawns).
           cwd:
-            peekWorktreeSession({ readFilePaths } as ToolContext)?.dir ?? cwd,
+            peekWorktreeSession({ sessionKey: toolSessionKey } as ToolContext)?.dir ?? cwd,
           // Recomputed per turn so session addDirectories / removeDirectories
           // permission updates take real effect on the fs tools (T2-7:
           // removeDirectories revokes; addDirectories grants).
@@ -1396,11 +833,11 @@ export function query(args: {
           shells,
           sandbox: sandboxCtx,
           readFilePaths,
+          sessionKey: toolSessionKey,
         };
-        // ExitPlanMode bridge: the tool flips this query's own gate. Attached
-        // via the tool's context extension (deliberately not part of the core
-        // ToolContext contract).
-        (toolContext as ToolContextWithPermissionGate).permissionGate = gate;
+        // ExitPlanMode bridge: the tool flips this query's own gate (a formal
+        // optional ToolContext field since the 2026-07-10 audit batch).
+        toolContext.permissionGate = gate;
         const deps: EngineDeps = {
           transport,
           builtinTools,
@@ -1487,8 +924,8 @@ export function query(args: {
               }
               // Fold any completed subagent usage into the session totals before
               // the result is rewritten so subagent tokens/cost are reported.
-              foldSubagentUsage(subagentRuntime.drainUsageLedger());
-              accumulateResult(msg);
+              acct.foldSubagentUsage(subagentRuntime.drainUsageLedger());
+              acct.accumulateResult(msg);
               yield rewriteResult(msg);
             } else {
               yield msg;
@@ -1792,18 +1229,18 @@ export function query(args: {
         //    with the REMAINING budget/turns so it also stops mid-turn once the
         //    session cap is hit (finding #33).
         if (options.maxBudgetUsd !== undefined) {
-          if (sessionCost >= options.maxBudgetUsd) {
+          if (acct.cost >= options.maxBudgetUsd) {
             yield terminalResult(
               'error_max_budget_usd',
               sess.sessionId,
-              `Estimated cost $${sessionCost.toFixed(6)} exceeded maxBudgetUsd ($${options.maxBudgetUsd})`,
+              `Estimated cost $${acct.cost.toFixed(6)} exceeded maxBudgetUsd ($${options.maxBudgetUsd})`,
             );
             return;
           }
-          engineConfig.maxBudgetUsd = options.maxBudgetUsd - sessionCost;
+          engineConfig.maxBudgetUsd = options.maxBudgetUsd - acct.cost;
         }
         if (options.maxTurns !== undefined) {
-          if (sessionTurns >= options.maxTurns) {
+          if (acct.turns >= options.maxTurns) {
             yield terminalResult(
               'error_max_turns',
               sess.sessionId,
@@ -1811,7 +1248,7 @@ export function query(args: {
             );
             return;
           }
-          engineConfig.maxTurns = options.maxTurns - sessionTurns;
+          engineConfig.maxTurns = options.maxTurns - acct.turns;
         }
 
         // Delegate this turn to the shared engine driver (SM-乙b §5.2 wires

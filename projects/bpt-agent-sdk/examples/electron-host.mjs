@@ -94,7 +94,12 @@ const q = query({
 for await (const msg of q) {
   switch (msg.type) {
     case 'system':
+      // v0.7 re-encoding: subagent/task lifecycle rides `system` + subtype
+      // (task_started/task_progress/task_updated/task_notification), not
+      // top-level types. See docs/MIGRATION.md 5f.
       if (msg.subtype === 'init') console.log(`[init] model=${msg.model} tools=${msg.tools.length}`);
+      else if (msg.subtype === 'task_started') console.log(`[task] ${msg.description} started`);
+      else if (msg.subtype === 'task_notification') console.log(`[task] ${msg.summary}`);
       break;
     case 'assistant': {
       const text = msg.message.content
@@ -104,11 +109,11 @@ for await (const msg of q) {
       if (text) console.log(`[assistant] ${text}`);
       break;
     }
-    case 'task_started':
-      console.log(`[task] ${msg.task_name} started`);
-      break;
     case 'permission_denied':
       console.log(`[denied] ${msg.tool_name}: ${msg.reason}`);
+      break;
+    case 'informational':
+      console.log(`[${msg.level}] ${msg.message}`);
       break;
     case 'result': {
       const m = msg.metrics;

@@ -24,8 +24,8 @@ Per-layer rules for WHICH class a module may throw live in
 |------|-------|------------------|
 | `aborted` | `AbortError` | The operation was cancelled via AbortController / `interrupt()` / connection close. |
 | `api_connection_failed` | `APIConnectionError` | Network-level failure talking to the Messages API (default scenario; `midStreamTruncation` marks a mid-stream drop). |
-| `sse_malformed_frame` | `APIConnectionError` | Reserved scenario code: an SSE frame with an event name failed to parse (transport layer wiring pending; until wired such errors carry `api_connection_failed`). |
-| `stream_idle_timeout` | `APIConnectionError` | Reserved scenario code: the idle watchdog aborted a silent stream (transport layer wiring pending; same fallback as above). |
+| `sse_malformed_frame` | `APIConnectionError` | An SSE frame failed to parse (WIRED at both transports' throw sites; consumed e.g. by the session manager's failure classifier). |
+| `stream_idle_timeout` | `APIConnectionError` | The idle watchdog aborted a silently stalled stream (WIRED at both transports; same consumer). |
 | `api_status_error` | `APIStatusError` | Non-2xx response from the Messages API (`status` / `errorType` / `requestId` fields carry the detail). |
 | `not_implemented` | `NotImplementedError` | A feature accepted for type compatibility is not implemented in this version (e.g. the legacy `sse` MCP transport). |
 | `config_invalid` | `ConfigurationError` | Invalid or missing configuration (no resolvable API key, unrecognized MCP server config, ...). |

@@ -43,7 +43,7 @@ import {
   runWorkflow,
   type WorkflowJournalEntry,
   type WorkflowLimits,
-} from '../internal/workflow-engine.js';
+} from './workflow-engine.js';
 import { WORKFLOW_DESCRIPTION } from './descriptions.js';
 
 // ---------------------------------------------------------------------------

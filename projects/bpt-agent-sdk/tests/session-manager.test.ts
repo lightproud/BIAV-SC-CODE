@@ -285,6 +285,75 @@ describe('SessionManager concurrent conversations (sdk in-process server)', () =
 });
 
 // ---------------------------------------------------------------------------
+// mgr.close() with an IN-FLIGHT query (audit 2026-07-10 P2-7): lock the
+// semantics — close() resolves promptly WITHOUT cancelling the in-flight
+// turn (the shared transport is a stateless requester; in-process MCP calls
+// already dispatched keep running), the turn then completes, and any NEW
+// mgr.query() after close is refused loudly.
+// ---------------------------------------------------------------------------
+
+describe('SessionManager close() during an in-flight query', () => {
+  it('close resolves promptly, the in-flight turn completes, new query() refused', async () => {
+    let releaseTool!: () => void;
+    const toolEntered = new Promise<void>((enterResolve) => {
+      void enterResolve; // reassigned below via closure trick
+    });
+    let markEntered!: () => void;
+    const entered = new Promise<void>((r) => {
+      markEntered = r;
+    });
+    const gate = new Promise<void>((r) => {
+      releaseTool = r;
+    });
+    const slow = tool(
+      'slow',
+      'Blocks until the test releases it',
+      { tag: z.string() },
+      async (args) => {
+        markEntered();
+        await gate;
+        return { content: [{ type: 'text', text: `done-${args.tag}` }] };
+      },
+    );
+    const srv = createSdkMcpServer({ name: 'slowsrv', version: '1.0.0', tools: [slow] });
+    const mgr = createBptSession(
+      baseManagerOptions({
+        mcpServers: { slowsrv: srv },
+        allowedTools: ['mcp__slowsrv__slow'],
+      }),
+    );
+    vi.stubGlobal(
+      'fetch',
+      routedSSEFetch((body) => {
+        const hasToolResult = JSON.stringify(body.messages).includes('"tool_result"');
+        return hasToolResult
+          ? textReplyEvents('inflight finished')
+          : toolUseReplyEvents('mcp__slowsrv__slow', { tag: 'x' }, { id: 'toolu_slow' });
+      }),
+    );
+
+    const inflight = collect(mgr.query({ prompt: 'inflight-conversation' }));
+    await entered; // the turn is now blocked inside the shared MCP tool
+    const closeStart = Date.now();
+    const closing = mgr.close();
+    // close() must not deadlock behind the in-flight tool call.
+    await closing;
+    expect(Date.now() - closeStart).toBeLessThan(2000);
+    // New conversations are refused after close...
+    await expect(async () => {
+      const q = mgr.query({ prompt: 'after-close' });
+      await collect(q);
+    }).rejects.toMatchObject({ name: 'ConfigurationError' });
+    // ...while the already-dispatched turn completes once the tool returns.
+    releaseTool();
+    const messages = await inflight;
+    expect(toolResultTexts(messages)).toEqual(['done-x']);
+    expect(lastResult(messages).subtype).toBe('success');
+    void toolEntered;
+  }, 20000);
+});
+
+// ---------------------------------------------------------------------------
 // ③ ownership: no query-side closeAll; manager close is observed + idempotent
 // ---------------------------------------------------------------------------
 

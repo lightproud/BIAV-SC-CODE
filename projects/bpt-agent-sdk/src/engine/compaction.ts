@@ -37,7 +37,7 @@ import type {
   EngineDeps,
   StreamRequest,
 } from '../internal/contracts.js';
-import { resolveModelAlias } from '../subagents/agents.js';
+import { resolveModelAlias } from '../internal/model-alias.js';
 import { MessageAccumulator } from './accumulator.js';
 import { contextWindowFor } from './context-window.js';
 import { normalizeUsage } from './pricing.js';

@@ -21,6 +21,13 @@ on:
     paths:
       - 'projects/bpt-agent-sdk/**'
       - '.github/workflows/bpt-agent-sdk.yml'
+  schedule:
+    # Monthly L5 real-API round (audit 2026-07-10 P2-7/F): the emulator-based
+    # conformance jobs catch OUR regressions on every push, but real API
+    # server-side behavior drift (new stop_reasons, cache billing, stream
+    # grammar) was only visible on manual dispatch. One scheduled round a
+    # month (~$1.5 on haiku, capped by --max-budget) closes that blind spot.
+    - cron: '17 6 1 * *'
   workflow_dispatch:
     inputs:
       model:
@@ -367,7 +374,9 @@ jobs:
     # pins.json). L6 rides along at zero marginal cost: every official-arm
     # PUBLIC SDKMessage stream is retained under l5-traces/ (content-blind
     # audited — never request bodies) and uploaded as a run artifact.
-    if: github.event_name == 'workflow_dispatch' && github.event.inputs.conformance_l5 == 'true'
+    if: >-
+      github.event_name == 'schedule' ||
+      (github.event_name == 'workflow_dispatch' && github.event.inputs.conformance_l5 == 'true')
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
@@ -392,7 +401,15 @@ jobs:
       - name: L5 dual-arm real-API round (gate B enforced)
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: node tests/conformance/run-l5.mjs --gate "--model=${{ github.event.inputs.model }}" "--repeat=${{ github.event.inputs.l5_repeat }}" "--budget-usd=${{ github.event.inputs.l5_budget }}" ${{ github.event.inputs.l5_thinking != '' && format('--thinking={0}', github.event.inputs.l5_thinking) || '' }}
+        # Schedule-safe arg building: on the monthly cron github.event.inputs
+        # is empty, so pass flags only when a value exists (run-l5.mjs defaults
+        # kick in: haiku model, repeat 5, $1.5 budget cap).
+        run: >-
+          node tests/conformance/run-l5.mjs --gate
+          ${{ github.event.inputs.model != '' && github.event.inputs.model != null && format('--model={0}', github.event.inputs.model) || '' }}
+          ${{ github.event.inputs.l5_repeat != '' && github.event.inputs.l5_repeat != null && format('--repeat={0}', github.event.inputs.l5_repeat) || '' }}
+          ${{ github.event.inputs.l5_budget != '' && github.event.inputs.l5_budget != null && format('--budget-usd={0}', github.event.inputs.l5_budget) || '' }}
+          ${{ github.event.inputs.l5_thinking != '' && github.event.inputs.l5_thinking != null && format('--thinking={0}', github.event.inputs.l5_thinking) || '' }}
       - uses: actions/upload-artifact@v4
         if: always()
         with:

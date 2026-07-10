@@ -869,7 +869,7 @@ export type SdkMcpServerInstance = {
 };
 
 // ---------------------------------------------------------------------------
-// Agents (accepted for type compatibility; execution lands in v0.2)
+// Agents (subagent definitions; executed by the subagent runtime since v0.2)
 // ---------------------------------------------------------------------------
 
 export type AgentDefinition = {
