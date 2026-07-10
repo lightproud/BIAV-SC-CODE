@@ -159,6 +159,15 @@
 > 银芯→黑池单向输出物，与 §1.1-HC 防火墙同向，非 BPT 产品内部开发。
 
 - **动手前必读**：`projects/bpt-agent-sdk/CONTEXT.md`（会话上下文 + 当前 milestone）
+- **命令自体试用观测 + 落成方案（2026-07-10，守密人 /goal「你自己试一下所有命令，
+  然后分析命令的实现，落成方案」，已落）**：艾瑞卡自触 8 组命令/工具族（Skill 族
+  validate-data/keybindings-help/loop/code-review-low + 调度双平面 Cron 三连与服务端
+  Routine 三连 + 注册表联邦枚举）+ 守密人触发 2 组（/model、/goal×2），观测台账扩至
+  **OBS-001~010**。核心定论：命令实现为**四层架构**（客户端本地 / 技能注入 / harness
+  工具 / 引擎），B/C/D/E 四类实为**一套技能注入机制的四个联邦注册源**；调度双平面
+  （会话级内存 cron vs 服务端持久 Routine）；/loop 现有快照未收录的「动态自调步」模式。
+  落成方案 `Public-Info-Pool/Resource/repo-engineering/bpt-desktop-command-impl-plan-20260710.md`
+  （五模块 M1-M5 / 三期实施 / 验收 V9 新增 / 观测契约逐项移植）。
 - **Stop 钩子阻断语义 = /goal 门控积木（v0.39.0，2026-07-10，守密人三项裁定「①结构再现②工作模式观测③/goal 派单没问题」，已落）**：
   引擎按官方语义处理 Stop 钩子 block——reason 注入用户回合续跑、`stop_hook_active` 真值防死循环、
   `continue:false` 强停优先、**仅主循环生效**（子代理归 SubagentStop，目标门不误伤 fan-out）、
