@@ -23,7 +23,7 @@ import {
   APIStatusError,
   ConfigurationError,
 } from '../src/errors.js';
-import type { StreamRequest } from '../src/internal/contracts.js';
+import type { RetryInfo, StreamRequest } from '../src/internal/contracts.js';
 import type { RawMessageStreamEvent } from '../src/types.js';
 
 const enc = new TextEncoder();
@@ -835,6 +835,104 @@ describe('OpenAIChatTransport stream-fault quadrant', () => {
     const err = (await captureError(collect(transport.stream(REQ)))) as APIStatusError;
     expect(err).toBeInstanceOf(APIStatusError);
     expect(err.requestId).toBe('req_openai_123');
+  });
+});
+
+describe('OpenAIChatTransport empty-stream retry (idealab throttle self-heal)', () => {
+  // A CLEAN HTTP 200 whose SSE body carries zero chunks (no [DONE], no
+  // finish_reason) — the replay-safe non-start the 断流继续臂 heals. Distinct
+  // from the quadrant's ECONNRESET-before-any-chunk case (a stream ERROR, which
+  // stays terminal). Mirrors AnthropicTransport's empty-stream retry.
+  function emptyStream(): Response {
+    return new Response(streamFromChunks([]), {
+      status: 200,
+      headers: { 'content-type': 'text/event-stream' },
+    });
+  }
+
+  it('retries an empty stream (HTTP 200, zero SSE chunks) then completes on the healed retry', async () => {
+    // Pin backoff jitter so the single retry waits a deterministic ~500ms.
+    vi.spyOn(Math, 'random').mockReturnValue(0);
+    const fetchMock = vi
+      .fn()
+      .mockResolvedValueOnce(emptyStream()) // 200, empty body -> replay-safe non-start
+      .mockResolvedValueOnce(okStream(TEXT_CHUNKS)); // healed: a real stream
+    vi.stubGlobal('fetch', fetchMock);
+    const transport = new OpenAIChatTransport({ provider: { apiKey: 'k' }, env: {}, debug: noop });
+    const events = await collect(transport.stream(REQ));
+    expect(events.at(-1)?.type).toBe('message_stop');
+    expect(fetchMock).toHaveBeenCalledTimes(2);
+  });
+
+  it('never returns normally on an empty stream: persistent empties exhaust the budget into an empty_stream APIConnectionError', async () => {
+    vi.spyOn(Math, 'random').mockReturnValue(0);
+    const fetchMock = vi
+      .fn()
+      .mockResolvedValueOnce(emptyStream())
+      .mockResolvedValueOnce(emptyStream());
+    vi.stubGlobal('fetch', fetchMock);
+    const transport = new OpenAIChatTransport({
+      provider: { apiKey: 'k', maxRetries: 1 },
+      env: {},
+      debug: noop,
+    });
+    const err = (await captureError(collect(transport.stream(REQ)))) as APIConnectionError;
+    expect(err).toBeInstanceOf(APIConnectionError);
+    expect(err.code).toBe('empty_stream');
+    expect(err.message).toMatch(/empty stream/i);
+    expect(err.message).toMatch(/after 2 attempt\(s\)/);
+    expect(fetchMock).toHaveBeenCalledTimes(2); // initial + 1 retry
+  });
+
+  it('with maxRetries 0 an empty stream is not retried but STILL becomes a diagnosable empty_stream', async () => {
+    const fetchMock = vi.fn().mockResolvedValueOnce(emptyStream());
+    vi.stubGlobal('fetch', fetchMock);
+    const transport = new OpenAIChatTransport({
+      provider: { apiKey: 'k', maxRetries: 0 },
+      env: {},
+      debug: noop,
+    });
+    const err = (await captureError(collect(transport.stream(REQ)))) as APIConnectionError;
+    expect(err).toBeInstanceOf(APIConnectionError);
+    expect(err.code).toBe('empty_stream');
+    expect(err.message).toMatch(/after 1 attempt\(s\)/);
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+  });
+
+  it('an empty-stream retry fires onRetry with a network-level shape (no HTTP status), like a dropped socket', async () => {
+    vi.spyOn(Math, 'random').mockReturnValue(0);
+    const fetchMock = vi
+      .fn()
+      .mockResolvedValueOnce(emptyStream())
+      .mockResolvedValueOnce(okStream(TEXT_CHUNKS));
+    vi.stubGlobal('fetch', fetchMock);
+    const transport = new OpenAIChatTransport({ provider: { apiKey: 'k' }, env: {}, debug: noop });
+    const retries: RetryInfo[] = [];
+    const events = await collect(
+      transport.stream({ ...REQ, onRetry: (info) => retries.push(info) }),
+    );
+    expect(events.at(-1)?.type).toBe('message_stop');
+    expect(retries).toHaveLength(1);
+    expect(retries[0]).toMatchObject({ attempt: 1 });
+    expect(retries[0]!.status).toBeUndefined();
+  });
+
+  it('a caller abort during the empty-stream backoff wins over the retry', async () => {
+    vi.spyOn(Math, 'random').mockReturnValue(0);
+    const fetchMock = vi
+      .fn()
+      .mockResolvedValueOnce(emptyStream())
+      .mockResolvedValueOnce(okStream(TEXT_CHUNKS));
+    vi.stubGlobal('fetch', fetchMock);
+    const transport = new OpenAIChatTransport({ provider: { apiKey: 'k' }, env: {}, debug: noop });
+    const ac = new AbortController();
+    // Abort while the transport is backing off before the retry fetch.
+    const onRetry = (): void => ac.abort();
+    const err = await captureError(
+      collect(transport.stream({ ...REQ, signal: ac.signal, onRetry })),
+    );
+    expect(err).toBeInstanceOf(AbortError);
+    expect(fetchMock).toHaveBeenCalledTimes(1); // never reached the retry fetch
   });
 });
 

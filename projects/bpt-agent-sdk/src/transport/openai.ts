@@ -600,98 +600,147 @@ export class OpenAIChatTransport implements Transport {
     const timeoutMs = this.provider.timeoutMs ?? DEFAULT_TIMEOUT_MS;
     const maxRetries = resolveMaxRetries(this.provider, this.env);
 
-    // ---- request phase: retries allowed -----------------------------------
-    const { response, signal, timeoutSignal } = await this.requestWithRetries(
-      bodyJson,
-      headers,
-      callerSignal,
-      timeoutMs,
-      maxRetries,
-      onRetry,
-    );
-
-    // ---- streaming phase: NEVER retried ------------------------------------
-    // OpenAI-protocol servers/gateways report the correlation id as
-    // x-request-id (some proxies keep Anthropic's request-id); capture either
-    // so APIStatusError carries the same diagnosability as the Anthropic arm.
-    const requestId =
-      response.headers.get('x-request-id') ??
-      response.headers.get('request-id') ??
-      undefined;
-    if (!response.body) {
-      throw new APIConnectionError('Chat Completions response has no body');
-    }
-    const idleMs = resolveStreamIdleMs(this.provider, this.env);
-    const idleController = idleMs > 0 ? new AbortController() : undefined;
-    const streamSignal = idleController
-      ? AbortSignal.any([signal, idleController.signal])
-      : signal;
-    let idleTimer: ReturnType<typeof setTimeout> | undefined;
-    const resetIdle = (): void => {
-      if (!idleController) return;
-      if (idleTimer) clearTimeout(idleTimer);
-      idleTimer = setTimeout(() => idleController.abort(), idleMs);
-      (idleTimer as { unref?: () => void }).unref?.();
-    };
-    const translator = new OpenAIStreamTranslator(req.model);
-    let chunkCount = 0;
-    let doneSeen = false;
-    try {
-      resetIdle();
-      for await (const frame of parseSSE(response.body, streamSignal)) {
-        resetIdle();
-        const data = frame.data.trim();
-        if (data === '[DONE]') {
-          doneSeen = true;
-          break;
-        }
-        let parsed: OpenAIChunk;
-        try {
-          parsed = JSON.parse(data) as OpenAIChunk;
-        } catch (err) {
-          throw new APIConnectionError(
-            `Malformed Chat Completions SSE payload after ${chunkCount} chunk(s): ` +
-              data.slice(0, 120),
-            err,
-            'sse_malformed_frame',
-          );
-        }
-        if (parsed.error !== undefined && parsed.error !== null) {
-          const info = extractOpenAIError(parsed.error);
-          throw new APIStatusError(500, info.type, info.message, requestId);
-        }
-        chunkCount += 1;
-        yield* translator.feed(parsed);
-      }
-      // A stream that ends CLEANLY but carried neither [DONE] nor any
-      // finish_reason never reached its end-of-message marker: the connection
-      // was cut mid-turn (proxy timeout, server restart). Do NOT fabricate an
-      // end_turn success from the half-received answer — surface it as a
-      // truncated turn so the engine's E3 salvage applies, matching the
-      // Anthropic arm's semantics. (Audit 2026-07-10 P1-2.)
-      if (!doneSeen && !translator.sawFinishReason()) {
-        const failure = new APIConnectionError(
-          `Chat Completions stream ended without [DONE] or finish_reason after ` +
-            `${chunkCount} chunk(s); treating as a truncated turn`,
-        );
-        failure.midStreamTruncation = chunkCount > 0;
-        throw failure;
-      }
-      yield* translator.finish();
-    } catch (err) {
-      throw mapStreamError(
-        err,
+    // Empty-stream retry (断流继续臂): an HTTP 200 whose SSE body carries ZERO
+    // chunks before closing CLEANLY is a replay-SAFE non-start — the gateway
+    // accepted the request but delivered nothing (an idealab-style throttle
+    // shape observed under concurrent fan-out). Unlike a mid-stream drop
+    // (chunks already yielded, which must never replay a partially consumed
+    // turn), zero chunks means zero consumption, so re-issuing the whole
+    // request is safe. Retried HERE, inside the transport, so BOTH the main
+    // conversation and subagents (which run on this same transport, out of
+    // reach of any host-level retry) self-heal without the caller seeing the
+    // empty stream. Bounded by the same maxRetries budget; on exhaustion we
+    // surface a retryable-class `empty_stream` APIConnectionError. This mirrors
+    // AnthropicTransport's arm — a LOCAL copy because the streaming bodies
+    // genuinely differ (translation vs raw passthrough), so streamRequest is
+    // NOT a transport twin (see tests/transport-twin-drift.test.ts). A network
+    // ERROR mid-stream (parseSSE throws) still routes through the catch below
+    // and is NEVER retried, empty or not.
+    let emptyStreamRetries = 0;
+    for (;;) {
+      // ---- request phase: retries allowed ---------------------------------
+      const { response, signal, timeoutSignal } = await this.requestWithRetries(
+        bodyJson,
+        headers,
         callerSignal,
-        timeoutSignal,
         timeoutMs,
-        chunkCount,
-        idleController?.signal,
-        idleMs,
+        maxRetries,
+        onRetry,
       );
-    } finally {
-      if (idleTimer) clearTimeout(idleTimer);
+
+      // ---- streaming phase: NEVER retried once a chunk is delivered --------
+      // OpenAI-protocol servers/gateways report the correlation id as
+      // x-request-id (some proxies keep Anthropic's request-id); capture either
+      // so APIStatusError carries the same diagnosability as the Anthropic arm.
+      const requestId =
+        response.headers.get('x-request-id') ??
+        response.headers.get('request-id') ??
+        undefined;
+      if (!response.body) {
+        throw new APIConnectionError('Chat Completions response has no body');
+      }
+      const idleMs = resolveStreamIdleMs(this.provider, this.env);
+      const idleController = idleMs > 0 ? new AbortController() : undefined;
+      const streamSignal = idleController
+        ? AbortSignal.any([signal, idleController.signal])
+        : signal;
+      let idleTimer: ReturnType<typeof setTimeout> | undefined;
+      const resetIdle = (): void => {
+        if (!idleController) return;
+        if (idleTimer) clearTimeout(idleTimer);
+        idleTimer = setTimeout(() => idleController.abort(), idleMs);
+        (idleTimer as { unref?: () => void }).unref?.();
+      };
+      const translator = new OpenAIStreamTranslator(req.model);
+      let chunkCount = 0;
+      let doneSeen = false;
+      try {
+        resetIdle();
+        for await (const frame of parseSSE(response.body, streamSignal)) {
+          resetIdle();
+          const data = frame.data.trim();
+          if (data === '[DONE]') {
+            doneSeen = true;
+            break;
+          }
+          let parsed: OpenAIChunk;
+          try {
+            parsed = JSON.parse(data) as OpenAIChunk;
+          } catch (err) {
+            throw new APIConnectionError(
+              `Malformed Chat Completions SSE payload after ${chunkCount} chunk(s): ` +
+                data.slice(0, 120),
+              err,
+              'sse_malformed_frame',
+            );
+          }
+          if (parsed.error !== undefined && parsed.error !== null) {
+            const info = extractOpenAIError(parsed.error);
+            throw new APIStatusError(500, info.type, info.message, requestId);
+          }
+          chunkCount += 1;
+          yield* translator.feed(parsed);
+        }
+      } catch (err) {
+        throw mapStreamError(
+          err,
+          callerSignal,
+          timeoutSignal,
+          timeoutMs,
+          chunkCount,
+          idleController?.signal,
+          idleMs,
+        );
+      } finally {
+        if (idleTimer) clearTimeout(idleTimer);
+      }
+
+      // The stream ended without throwing. A [DONE] terminator or any
+      // finish_reason means the message reached its end-of-message marker:
+      // synthesize the terminal message_delta/message_stop and finish.
+      if (doneSeen || translator.sawFinishReason()) {
+        yield* translator.finish();
+        this.debug(`openai transport: stream completed after ${chunkCount} chunk(s)`);
+        return;
+      }
+
+      // No end-of-message marker. ZERO chunks => an empty stream (replay-safe):
+      // retry the whole request within the shared budget, like the Anthropic
+      // arm's idealab-throttle self-heal. Any caller abort observed here wins.
+      if (chunkCount === 0) {
+        if (callerSignal?.aborted) throw new AbortError();
+        if (emptyStreamRetries < maxRetries) {
+          emptyStreamRetries += 1;
+          this.debug(
+            `openai transport: empty stream (HTTP 200, zero SSE chunks); ` +
+              `retry ${emptyStreamRetries}/${maxRetries}`,
+          );
+          // Surface it like a network-level retry (no HTTP status) so the loop
+          // emits an api_retry observability message, same as a dropped socket.
+          onRetry?.({ attempt: emptyStreamRetries, maxRetries });
+          await this.backoff(emptyStreamRetries, undefined, callerSignal);
+          continue;
+        }
+        throw new APIConnectionError(
+          `Chat Completions returned an empty stream (HTTP 200, zero SSE chunks) ` +
+            `after ${emptyStreamRetries + 1} attempt(s)`,
+          undefined,
+          'empty_stream',
+        );
+      }
+
+      // Chunks arrived but no [DONE]/finish_reason: a MID-STREAM connection drop
+      // (proxy timeout, server restart). Do NOT fabricate an end_turn success
+      // from the half-received answer — surface it as a truncated turn so the
+      // engine's E3 salvage applies, matching the Anthropic arm. NEVER retried
+      // (replaying a partially consumed turn is unsafe). (Audit 2026-07-10 P1-2.)
+      const failure = new APIConnectionError(
+        `Chat Completions stream ended without [DONE] or finish_reason after ` +
+          `${chunkCount} chunk(s); treating as a truncated turn`,
+      );
+      failure.midStreamTruncation = true;
+      throw failure;
     }
-    this.debug(`openai transport: stream completed after ${chunkCount} chunk(s)`);
   }
 
   /** Same retry policy as AnthropicTransport: 408/429/5xx + network errors
