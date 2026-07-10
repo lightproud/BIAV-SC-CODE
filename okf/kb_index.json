@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 345,
+    "concepts": 346,
     "edges": 402,
-    "terms": 5971,
+    "terms": 5974,
     "by_type": {
       "character": 72,
       "dataset": 107,
-      "documentation": 103,
+      "documentation": 104,
       "knowledge-pointer": 43,
       "reference": 17,
       "research": 3
@@ -26,7 +26,7 @@
       "memory": 47,
       "news-output": 23,
       "projects": 23,
-      "resource": 79,
+      "resource": 80,
       "sources": 17,
       "story": 11,
       "unpacked": 13,
@@ -34,7 +34,7 @@
     },
     "by_tier": {
       "skeleton": 128,
-      "search": 217
+      "search": 218
     }
   },
   "sections": {
@@ -68,7 +68,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 79
+      "count": 80
     },
     "sources": {
       "index": "/sources/index.md",
@@ -3929,6 +3929,20 @@
       "section": "resource",
       "tier": "search",
       "degree": 1
+    },
+    "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md": {
+      "type": "documentation",
+      "title": "silver-core-sdk-rename-review-20260710",
+      "description": "`rename: bpt-agent-sdk -> silver-core-sdk`（squash 合并 main `287ea40f`）（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/repo-engineering/silver-core-sdk-rename-review-20260710.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 0
     },
     "/resource/resource-repo-engineering-test-coverage-analysis-202606.md": {
       "type": "documentation",
@@ -9650,6 +9664,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/story/story_layer_readme.md"
@@ -9764,7 +9779,8 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
-      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md"
     ],
     "aggregate": [
       "/news-output/news-output-all.md",
@@ -10302,7 +10318,8 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
-      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md"
     ],
     "brain": [
       "/assets/assets-chat-onboarding-snippet.md",
@@ -10807,6 +10824,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/sources/appstore.md",
@@ -10956,7 +10974,8 @@
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md"
     ],
     "corpus": [
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md"
@@ -11137,6 +11156,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/story/story_layer_readme.md",
@@ -11452,6 +11472,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/sources/appstore.md",
@@ -11626,6 +11647,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md"
     ],
@@ -11804,6 +11826,9 @@
     "drops": [
       "/wiki-data/wiki-data-drops-by-item.md"
     ],
+    "ea40f": [
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md"
+    ],
     "easter": [
       "/characters/78840.md",
       "/characters/78841.md"
@@ -11884,6 +11909,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md"
     ],
@@ -12655,6 +12681,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/sources/appstore.md",
@@ -13131,6 +13158,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/sources/appstore.md",
@@ -13441,7 +13469,8 @@
       "/memory/memory-ext-active-contribution-protocol.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
-      "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
+      "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md"
     ],
     "maintainer": [
       "/projects/silver-core-sdk-doc-onboarding.md"
@@ -13640,6 +13669,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/sources/appstore.md",
@@ -14310,6 +14340,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/sources/appstore.md",
@@ -14694,6 +14725,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/sources/appstore.md",
@@ -14944,6 +14976,9 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
+    "rename": [
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md"
+    ],
     "repo": [
       "/memory/memory-strategy-repo-slimming-plan.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
@@ -14982,6 +15017,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md"
     ],
@@ -15087,6 +15123,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/sources/appstore.md",
@@ -15125,6 +15162,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/sources/steam.md",
       "/sources/taptap_review.md"
     ],
@@ -15288,7 +15326,8 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
-      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
+      "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md"
     ],
     "sdk's": [
       "/projects/silver-core-sdk-doc-subagents.md"
@@ -15343,7 +15382,8 @@
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md"
     ],
     "single": [
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
@@ -15475,6 +15515,9 @@
     ],
     "sproto": [
       "/unpacked/unpacked-sproto.md"
+    ],
+    "squash": [
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md"
     ],
     "src": [
       "/projects/silver-core-sdk-doc-errors.md",
@@ -15943,6 +15986,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md"
     ],
@@ -17013,6 +17057,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/unpacked/unpacked-config.md",
@@ -17273,6 +17318,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/sources/appstore.md",
@@ -17587,6 +17633,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/sources/appstore.md",
@@ -18777,6 +18824,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/sources/appstore.md",
@@ -19711,6 +19759,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/unpacked/unpacked-config.md",
@@ -19970,6 +20019,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/story/STORY_RESEARCH.md",
@@ -21774,6 +21824,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/unpacked/unpacked-config.md",
@@ -23459,7 +23510,8 @@
     "合并": [
       "/news-output/news-output-newsjs.md",
       "/projects/releases-treasure-map.md",
-      "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
+      "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md"
     ],
     "合成": [
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
@@ -24915,6 +24967,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/unpacked/unpacked-config.md",
@@ -25695,6 +25748,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/unpacked/unpacked-config.md",
@@ -26307,6 +26361,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/sources/appstore.md",
@@ -30043,6 +30098,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/sources/appstore.md",
@@ -30587,6 +30643,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/sources/appstore.md",
@@ -30915,6 +30972,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/story/lore_by_unit.md",
@@ -31318,6 +31376,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/sources/appstore.md",
@@ -31596,6 +31655,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/sources/appstore.md",
@@ -33247,6 +33307,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/sources/appstore.md",
@@ -33664,6 +33725,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/unpacked/unpacked-config.md",
@@ -34234,6 +34296,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/story/STORY_RESEARCH.md",
@@ -34444,6 +34507,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md"
     ],
@@ -34918,6 +34982,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/unpacked/unpacked-config.md",
@@ -35296,6 +35361,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/story/lore_entries.md",
@@ -42137,6 +42203,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/story/STORY_RESEARCH.md",
@@ -42796,6 +42863,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/sources/appstore.md",
@@ -43791,6 +43859,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/sources/appstore.md",
@@ -44038,6 +44107,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/unpacked/unpacked-config.md",
@@ -45610,7 +45680,8 @@
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md"
     ],
     "corpus": [
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md"
@@ -45785,6 +45856,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/story/story_layer_readme.md",
@@ -46093,6 +46165,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/sources/appstore.md",
@@ -46258,6 +46331,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md"
     ],
@@ -46449,6 +46523,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md"
     ],
@@ -47006,6 +47081,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/sources/appstore.md",
@@ -47688,6 +47764,9 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
+    "rename": [
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md"
+    ],
     "repo": [
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -47725,6 +47804,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md"
     ],
@@ -47764,6 +47844,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/sources/taptap_review.md"
     ],
     "ripgrep": [
@@ -47871,7 +47952,8 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
-      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md"
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md"
     ],
     "search": [
       "/story/story_search_index.md"
@@ -47904,7 +47986,8 @@
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
+      "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md"
     ],
     "site": [
       "/projects/project-site.md",
@@ -48156,6 +48239,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md"
     ],

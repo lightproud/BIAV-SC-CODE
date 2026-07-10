@@ -9,6 +9,12 @@ Compatibility surface is pinned to the official **0.3.201** baseline
 (docs/COMPAT.md is the authoritative per-field ledger; docs/POSITIONING.md is
 the strategy anchor — surface tracked, behavior deliberately not).
 
+> **Renamed 2026-07-10 (0.41.0)**: this package was previously named
+> `bpt-agent-sdk`. Consumers upgrading across the rename must update the
+> dependency name in `package.json` and the pinned tarball filename
+> (`bpt-agent-sdk-<version>.tgz` -> `silver-core-sdk-<version>.tgz`) — the
+> import specifier follows the package name. No API change is involved.
+
 ## 1. The one-line swap
 
 ```ts
