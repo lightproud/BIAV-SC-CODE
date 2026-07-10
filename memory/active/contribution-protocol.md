@@ -1,5 +1,10 @@
 # 贡献协议（active hub）
 
+> **⚠ 已退役（守密人 2026-07-10 裁定）**：社区贡献通道整体取消（fork+PR / 翻译 / Issue 报告
+> 三通道全关），银芯对社区收敛为**单方面可读**；M7 验收项「至少一种贡献流程跑顺」作废。
+> 本 hub 与主档 `memory/contribution-protocol.md` 同步退役，正文仅供历史追溯，不再作为现行流程依据。
+> 见 `memory/decisions.md` 2026-07-10「取消社区贡献」条。
+>
 > 主题入口卡 / Code-memory batch 1 落档 2026-05-03
 > 决策版本号：v1.0（基于既有 `memory/contribution-protocol.md` 168 行）
 > 上游档案：`memory/contribution-protocol.md`（详细规则正文）

@@ -1,6 +1,11 @@
 # 项目状态一览
 
-> 最后更新：2026-07-06 by 艾瑞卡评估会话（bpt-agent-sdk 工程评估：实机跑验证程序取地面真值——
+> 最后更新：2026-07-10 by 记忆档案事实核对会话（全 memory/ 档案对账审计：修正本档 5 处漂移——
+> 头部日期滞后（正文已含 07-07/07-08/07-10 条目）、状态表 silver-core-sdk 行版本/测试数
+> v0.12.0/1427→v0.42.0/1651（对齐 package.json 与 O-B2 节）、数据源清单补 bahamut/note_com/arca_live
+> 三源修复状态、Discord 行改方案甲三服平级布局、06-09 核验节补历史快照标注；同会话另修 CLAUDE.md
+> 5 处漂移，PR #569）。
+> 前次 2026-07-06 by 艾瑞卡评估会话（bpt-agent-sdk 工程评估：实机跑验证程序取地面真值——
 > 1414 单测全绿 + 2 skipped / tsc+build exit 0；校正状态行过期摘要（v0.2+v0.3/668→v0.11.0/1414、
 > 0.3.199→0.3.201）；评估全文落 `Public-Info-Pool/Resource/repo-engineering/bpt-agent-sdk-evaluation-20260706.md`，
 > 含 P2–P4 投资路线 backlog）。
@@ -27,7 +32,7 @@
 > 进度数字只在此维护，其他档案（含 CLAUDE.md）一律指针、不复刻。
 > 战略规划详见 `memory/strategic-plan-2026.md`
 
-## 2026-06-09 状态核验（实测）
+## 2026-06-09 状态核验（历史快照，数字为当日实测；现值以 `ls` / 权威源为准，如工作流数今为 34）
 
 - **Phase 2 进行中**（2026-04-27 → 07-19，84 天，已过 43 天）
 - **采集自动化持续运行**：git log 顶部为连续机器提交（Discord 回填 / 视频评论归档 / 社区新闻），无中断迹象
@@ -53,7 +58,7 @@
 | news（新闻聚合 + 报告系统） | 自动化持续运行（采集 / 回填 / 评论 / 同人图） | Code-news | M2 信息齐备期任务见 `projects/news/CONTEXT.md`；dependabot #136-140 实际状态待核 |
 | wiki（数据集 + Wiki 站点） | **W2 基线已重建 + 数据桥已接回（2026-07-02）**：可信基线 `data/processed/characters.json`（72 真实角色，一手解包）→ 58 真实唤醒体页 + 运行时数据桥 `characters.runtime.json`（生成器单点产出）→ `characters.ts` 消费，CharacterGrid（72 卡片、界域/类目/搜索筛选）挂载图鉴页，SSR 构建验证通过 | 艾瑞卡会话 | 真实字段缺口推进（skills/命轮/立绘/三语）见 `wiki-phase-2-gap-inventory.md`；贡献流程 2026-07-10 裁定取消（社区单向可读，见 decisions.md） |
 | game（衍生游戏） | 暂缓 | 待创建 | 不主线派发 |
-| **silver-core-sdk**（原名 bpt-agent-sdk，2026-07-10 更名 · Claude Agent SDK 公开信息再现 · 银芯→黑池单向输出物） | **v0.12.0 已发货（2026-07-06 P2 收官）**：TypeScript 重实现（公开信息再现、自研引擎），直驱 Anthropic Messages API（fetch+SSE，无 CLI 子进程），**1427 单测全绿 + 2 skipped（真 bwrap 隔离）、tsc/build exit 0**（实机取证）；对官方 SDK **0.3.205** 约 90%+ 表面等价（对标基线 2026-07-10 由 0.3.201 追齐至 0.3.205，见 `docs/COMPAT.md`「0.3.201 -> 0.3.205 chase」；v0.40.0 落 7 个新类型 + interrupt 收据 + parent_agent_id，全类型化、诚实源外 typed-not-emitted），一致性金字塔 L1–L5 全封顶、首轮真 API L5 两臂打平 88.9%。**评估 backlog P2/P3/P4 全落（2026-07-06）**：**P2**（PR #501）逐条过 COMPAT 39 项 PARTIAL 分诊——~14 行「文档滞后」收敛为 FULL + 8 个真缺口闭合各带测试（Edit 读前写门 / stream_event ttft_ms / PostToolBatch tool_calls[] / SubagentStop agent_transcript_path / thinking.display / debugFile / mcpServerStatus scope / maxThinkingTokens @deprecated；notebook·sse 显式暂缓）；**P3** 漂移哨兵升「报+自动开草稿 PR」（`conformance-drift.yml` + `drift-check.mjs --emit-*`，选择性追踪纪律不动、绝不自动改基线）；**P4** `docs/ONBOARDING.md` 新维护者 30 分钟上手（降总线因子）。中间里程碑（v0.4→v0.11）详见下方专节 | 艾瑞卡会话 | 无阻塞待办；评估全文 `Public-Info-Pool/Resource/repo-engineering/bpt-agent-sdk-evaluation-20260706.md`；**动手前必读** `projects/silver-core-sdk/CONTEXT.md` + `docs/ONBOARDING.md`，定位见 `docs/POSITIONING.md` |
+| **silver-core-sdk**（原名 bpt-agent-sdk，2026-07-10 更名 · Claude Agent SDK 公开信息再现 · 银芯→黑池单向输出物） | **v0.42.0 已发货（2026-07-10 O-B2 收官；v0.12.0 为 07-06 P2 收官里程碑）**：TypeScript 重实现（公开信息再现、自研引擎），直驱 Anthropic Messages API（fetch+SSE，无 CLI 子进程），**1651 单测全绿 + 2 skipped（77 文件，真 bwrap 隔离）、tsc/build exit 0**（O-B2 节实录）；对官方 SDK **0.3.205** 约 90%+ 表面等价（对标基线 2026-07-10 由 0.3.201 追齐至 0.3.205，见 `docs/COMPAT.md`「0.3.201 -> 0.3.205 chase」；v0.40.0 落 7 个新类型 + interrupt 收据 + parent_agent_id，全类型化、诚实源外 typed-not-emitted），一致性金字塔 L1–L5 全封顶、首轮真 API L5 两臂打平 88.9%。**评估 backlog P2/P3/P4 全落（2026-07-06）**：**P2**（PR #501）逐条过 COMPAT 39 项 PARTIAL 分诊——~14 行「文档滞后」收敛为 FULL + 8 个真缺口闭合各带测试（Edit 读前写门 / stream_event ttft_ms / PostToolBatch tool_calls[] / SubagentStop agent_transcript_path / thinking.display / debugFile / mcpServerStatus scope / maxThinkingTokens @deprecated；notebook·sse 显式暂缓）；**P3** 漂移哨兵升「报+自动开草稿 PR」（`conformance-drift.yml` + `drift-check.mjs --emit-*`，选择性追踪纪律不动、绝不自动改基线）；**P4** `docs/ONBOARDING.md` 新维护者 30 分钟上手（降总线因子）。中间里程碑（v0.4→v0.11）详见下方专节 | 艾瑞卡会话 | 无阻塞待办；评估全文 `Public-Info-Pool/Resource/repo-engineering/bpt-agent-sdk-evaluation-20260706.md`；**动手前必读** `projects/silver-core-sdk/CONTEXT.md` + `docs/ONBOARDING.md`，定位见 `docs/POSITIONING.md` |
 | **bpt-pm**（项目排期工作台 · 非使命线工程产物） | **v1 首版已建（2026-07-05）**：单网页 `index.html` 零依赖零后端，数据协议 `bpt-pm/v1`（`schema/task-schema.json`），CPM 前向/后向自动排期 + 临界路径 + 4 依赖类型（FS/SS/FF/SF）+ 工作日历 + SNET/MSO 约束 + 基线比对甘特图；File System Access 读写回写。CPM 离线复算 + 无头 Chromium 冒烟均通过。**Notion 数据源已端到端实测（2026-07-05）**：适配器 `docs/notion-adapter.md` + CLI `scripts/schedule.mjs`，对真实工作区跑通建库→拉取→CPM→写回→抽验闭环。**本地 Notion 代理已建**（`proxy/server.mjs` 持 token 跑 localhost，网页按钮直连 Notion，端到端 12 项契约通过）。**v2-A 资源冲突可视化已落（2026-07-05，面向 60 人内容团队痛点）**：协议加 `resources`（人/外包 + 并发产能），引擎算逐日负载 + 超载检测，网页资源×日热力图（超载红/满载绿），`tests/resource_load.mjs` 全过。**v2 B/C/D 三特性已实现（2026-07-05，全部 additive 向后兼容，CPM 主算法不改）**：B 版本周期守护（任务级 `deadline` 软截止 → `late`/`lateDays`/顶层 `lateCount`）/ C 流水线模板+返修回环（项目级 `templates` + 纯函数 `instantiateTemplate`，stage FS 链 + R 轮审核→返修）/ D 外包发单对象（项目级 `orders` + 纯函数 `analyzeOrders` → `atRisk`/顶层 `ordersAtRisk`）；三函数在 `scripts/schedule.mjs` 导出、`index.html` 内联同实现，回归 `tests/v2_bcd.mjs`（15 断言全过）。**v3 引擎四组已实现（2026-07-05，工作流编排，全 additive）**：① 完备性（自由浮动 `freeSlack` + 约束补齐 8 型 ALAP/SNLT/FNET/FNLT/MFO + 从完成日倒排 `scheduleFrom=finish`）/ ② 资源错峰建议（纯函数 `suggestLeveling` 贪心串行，残余超载消解）/ ③ WBS 层级摘要（`parent` + 卷积 `isSummary`/`depth`/`childIds`，摘要排除出 CPM/资源/错峰）/ ④ 冲突显式告警（`warnings`/`warningCount`：constraint-conflict/negative-slack/infeasible-window）；引擎两处同实现，回归 `tests/v3.mjs`（20 断言全过）。UI 全部收尾：自由浮动列/8约束/调度方向切换/告警面板/#btnSampleV3/错峰视图/**WBS 折叠三角+甘特摘要条**/**错峰应用建议按钮**（实测超载 3→0）。**表格格式协议 bpt-pm/table-v1 已加（2026-07-05）**：`docs/table-formats.md`（5 张数据源无关标准表：项目/任务/资源/外包单/模板，列名即协议、标输入vs写回）+ 生成器 `scripts/gen_tables.mjs`（空表模板/样例 CSV）+ `tests/tables.mjs`；服务阿里 AI 表格/Notion/飞书多维表等任意 base 建新格式 | 艾瑞卡会话 | 无阻塞待办；可选：消费上限恢复后重跑 v3 对抗验证工作流二次背书；**动手前必读** `projects/bpt-pm/CONTEXT.md` |
 
 > BPT 战线（bpt-web / bpt-desktop / bpt-next / graphify-ext / occ-local）已于 2026-04-19 战略转向中从银芯仓库删除，不再在银芯内部开发。银芯转为 BPT 指导者，协议见 `memory/bpt-guidance-protocol.md`。
@@ -102,8 +107,11 @@
   - [ ] Twitter/X — 需 TWITTER_BEARER_TOKEN
   - [ ] NGA — 无采集器实现（2026-07-02 核实，原「需 NGA_FORUM_ID」描述作废；小红书同此）
   - [x] TapTap — Playwright 采集运行中（source-health: active）
-  - [x] Discord — 已实现（Bot 已配置，全量归档 + 聚合器双通道）；多 guild 分层归档（2026-06-21 迁 `Public-Info-Pool/Record/Community/discord/`）：Global（`discord/` 根）/ 志愿者（`discord/guilds/`）/ 日服（接入中，2026-06-17，`discord/guilds/`）
+  - [x] Discord — 已实现（Bot 已配置，全量归档 + 聚合器双通道）；三服平级分层归档（2026-07-10 方案甲统一，`Public-Info-Pool/Record/Community/discord/{global,jp,volunteer}/`；guild↔区服映射唯一源 `archive_layout.py` `DISCORD_GUILD_REGIONS`。原「Global 在根 / guilds/ 子目录」旧布局已迁移消灭）
   - [x] YouTube — 代码就绪，需配置 API 密钥
+  - [x] Bahamut — 已修复（2026-07-10：旧 JSON 接口退役，改解析忘卻前夜专板 bsn=78829 列表页 HTML）
+  - [x] note.com — 已修复（2026-07-10：搜索 API 一律 403，改走 hashtag RSS；无互动指标、engagement 恒 0）
+  - [x] arca.live — CC 例程日采过渡桥（2026-07-10 方案 2：CI 机房 IP 被 Cloudflare 封锁，每日 fresh-session 例程跑 `collect_arca_daily.py`；CF 放行 Actions 则正常路径自动恢复）
 
 ### 报告系统（新增，来自 new-session-7Plu3）
 - **已完成**：29 平台采集器、AI 分析模块、报告生成、多渠道通知（Email/Discord/Telegram/Bark/Webhook）

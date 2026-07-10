@@ -59,12 +59,19 @@
 > **使命#3「Studio 团队 AI 协作训练场」已退役**（守密人 2026-06-28 裁定，见 `memory/decisions.md`）：
 > 其「主对接子项目」映射长期 site/game 不一致，守密人裁定取消该使命而非择一。银芯使命由「三新使命」
 > 收敛为上表**二核心使命**。site 仍为对外门户 / 三轴发现入口、game 仍为守密人个人兴趣（均不承载正式使命）。
+>
+> **使命#2「共建」语义已收敛为「单向共享」**（守密人 2026-07-10 取消社区贡献裁定）：名称保留，
+> 但社区贡献通道（fork+PR / 翻译 / Issue 报告）整体取消——社区可自由读取银芯全部公开信息，银芯不接收
+> 社区回写。信息流哲学自此全线单向：黑池不进银芯（§1.1-HC）、社区不写银芯，银芯对两侧皆为单向输出。
 
 ### §1.3 当前阶段
 
 **Phase 2 银芯使命建设期**（2026-04-27 → 07-19）。news 与 wiki 双核心主线，
 site 维护稳定，game 暂缓。实时进度与子项目状态以 `memory/project-status.md` 为
 **唯一权威**——本档案及其他档案只指针、不复刻进度数字。
+
+**07-19 后转维护态**（守密人 2026-07-10 批准维护态节拍表）：银芯降档为「值班中的系统」，
+按持续 / 周检 / 月检三档节拍运转 + 数据增长触发线三条；节拍表摘要见 `memory/methodology.md`「维护态节拍」节。
 
 ### §1.4 运作模型
 
@@ -84,7 +91,8 @@ site 维护稳定，game 暂缓。实时进度与子项目状态以 `memory/proj
    **当前状态**：旧结构化层（`characters.json` 全 6 JSON + 派生角色页，原在 data/db/）2026-06-15 守密人裁定整层清空
    （占位数据长期误导引用）；W2 **可信基线已重建**于 `projects/wiki/data/processed/characters.json`（72 真实角色、一手解包、
    **无合成占位**），`scripts/generate_wiki_pages.py` 已据此生成 58 个真实唤醒体静态页、站点构建通过。
-   **W2 收尾**：运行时数据桥 characters.ts 仍导出空数组、待接回 processed/ 基线（进度见 `memory/project-status.md`）。
+   **运行时数据桥已接回（2026-07-02）**：生成器单点产出 `characters.runtime.json` → `characters.ts` 消费，
+   CharacterGrid 挂载图鉴页；剩余为真实字段缺口推进（skills / 命轮 / 立绘 / 三语，进度见 `memory/project-status.md`）。
 3. **记忆层**（AI 协作底座）：记忆 = CLAUDE.md（每会话自动加载）+ `memory/*.md`
    人工策展档案（决策 / 踩坑 / 状态 / 方法论），会话连续性承 Claude 平台原生上下文管理。
    原自造的「会话蒸馏 + 语义召回 + 做梦」自动环与平台原生记忆定位冲突，已于
@@ -100,8 +108,8 @@ site 维护稳定，game 暂缓。实时进度与子项目状态以 `memory/proj
    把静态 OKF bundle（§6.1）升级为**艾瑞卡运行时可动态导航的知识库**（思想溯源 OKF「一概念一文件 + 关系图」
    + LLMwiki「LLM 顺图逐跳导航、按需取概念」）。底座是 `scripts/build_kb_index.py` 从 bundle
    （concept 元数据 + 正文 + `graph.json`）造的静态导航索引 `okf/kb_index.json`（倒排表 + 邻接表，
-   词典法分词、**确定性零 ML 零常驻**）；运行时经**唯一动态平面 MCP** 上 `kb_*` 四工具动态编排
-   （后端 `scripts/kb_navigator.py`，import-only 库）。放指针不放本体：导航层只返回元信息 + `resource`
+   词典法分词、**确定性零 ML 零常驻**）；运行时经**唯一动态平面 MCP** 上 `kb_*` 七工具动态编排
+   （导航四件后端 `scripts/kb_navigator.py`，向量腿 `scripts/kb_vector.py`、合流 `scripts/kb_anchor.py`，均 import-only 库）。放指针不放本体：导航层只返回元信息 + `resource`
    指针，本体仍原地不动。重建随 `scripts/build_okf_bundle.py` 末尾自动跑，或 `python3 scripts/build_kb_index.py` 单独重建。
 
 四条主线的「手动怎么跑哪条命令」见 §7。
@@ -311,8 +319,9 @@ brain-in-a-vat/
   其他消费端。银芯→黑池单向线格式：`python3 scripts/build_okf_bundle.py --tarball <path>`
   产出 `.tar.gz` 单向输出物（仅策展知识层走此线，原始时序数据仍只放指针）。
 - **消费（运行时动态导航，2026-07-04）**：`okf/kb_index.json`（`scripts/build_kb_index.py` 生成的
-  倒排表 + 邻接表导航索引，词典法零 ML）让艾瑞卡在唯一动态平面 MCP 上经 `kb_*` 四工具
-  （后端 `scripts/kb_navigator.py`）动态检索 / 取概念 / 顺关系图遍历——即「动态编排知识库」（详见 §1.4 第 5 条）。
+  倒排表 + 邻接表导航索引，词典法零 ML）让艾瑞卡在唯一动态平面 MCP 上经 `kb_*` 七工具
+  （导航四件后端 `scripts/kb_navigator.py`，向量 / 合流腿见 §5 腿路由）动态检索 / 取概念 /
+  顺关系图遍历——即「动态编排知识库」（详见 §1.4 第 5 条）。
 - CI：`.github/workflows/build-okf-bundle.yml` 在源数据变更时自动重生成（带 `[skip ci]`）；
   `kb_index.json` 随 bundle 一并重生成（`build_okf_bundle.py` 末尾自动调用 `build_kb_index`）。
 - **索引更新一步到位协议（2026-07-10，lesson #46）**：改 KB 源（memory / assets / Resource /
@@ -411,11 +420,12 @@ MCP 服务端 `biav-sc-memory`（`scripts/mcp_server.py`）对接知识层工具
 - **合并默认规则**（守密人 2026-06-11 裁定）：feature 分支任务完成且全量验证通过后，
   守密人下达「合并」即默认合并 main，PR 无需停留等待逐项确认；遇合并冲突按
   「自动生成状态档案取最新、人工档案先报告再处置」原则解决。
-- **自查自合 — 必需 CI「test」检查已撤（守密人 2026-06-21 裁定）**：main Ruleset 不再要求
-  `test` 状态检查通过才可合并。改为**自查自合**：合并前**自己跑 `pytest tests/`**（改了代码/测试/
-  数据的 PR 必跑、贴结果），全绿才 squash 合并；纯文档/纯注释改动可免跑直接合。**绝不**把
-  「没有 CI 拦」当成「免验证」——验证责任从 CI 平台移交给会话本身。（背景：迁移后 repo 变大，
-  CI checkout 慢且 required check 常卡 "expected"，故撤检查、责任内移。）
+- **自查自合（2026-06-21 裁定）→ CI 硬门禁重启已批准（守密人 2026-07-10 裁定，过渡期仍按自查自合）**：
+  2026-06-21 撤下 main Ruleset 必需 `test` 检查、改为**自查自合**——合并前**自己跑 `pytest tests/`**
+  （改了代码/测试/数据的 PR 必跑、贴结果），全绿才 squash 合并；纯文档/纯注释改动可免跑直接合。
+  **绝不**把「没有 CI 拦」当成「免验证」。2026-07-10 守密人批准**重启 CI 硬门禁**（Ruleset 恢复
+  required `test` 检查 + require branches up to date；撤检查的两条理由已随 07-02 sparse checkout
+  改造消失）——Ruleset 为 GitHub 设置项、会话无写权限，**待守密人手动勾选后生效，勾选前一律仍按自查自合执行**。
 - **直接合并 main + PR 订阅可选（守密人 2026-06-14 裁定、2026-06-21 修订）**：
   Web 环境强制建 PR，但任务完成且验证通过后**默认立即合并 main**（squash），不停留等待。
   PR 订阅由**退订不再强制**：若会话被环境自动订阅（出现 `<github-webhook-activity>` 提示）
