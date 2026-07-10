@@ -119,6 +119,26 @@ export type ToolContext = {
   /** v0.2 subagent spawn callback (wired by the subagent runtime). */
   spawnSubagent?: SpawnSubagentFn;
   /**
+   * O-B2 SendMessage bridge: continue / stop a previously spawned subagent.
+   * Wired on the ROOT loop's ToolContext only — subagent messaging is
+   * root-loop-only in this SDK, so a child context never carries it (the
+   * SendMessage tool then fails honestly; TaskStop falls through to shells).
+   */
+  subagents?: {
+    /** Continue a subagent's conversation (see SubagentRuntime.sendMessage). */
+    send(params: {
+      to: string;
+      message: string;
+      signal: AbortSignal;
+    }): Promise<{ content: string; isError: boolean }>;
+    /**
+     * Stop a subagent by agentId. Returns a human-readable outcome when the
+     * id names a known subagent, undefined when it does not (the caller then
+     * tries other id spaces, e.g. background shells).
+     */
+    stop(taskId: string): string | undefined;
+  };
+  /**
    * FORK support: return a shallow copy of the parent loop's CURRENT request
    * messages so the Agent tool can EAGERLY snapshot the parent context at spawn
    * time (a fork child continues from the parent's cached prefix). Installed by

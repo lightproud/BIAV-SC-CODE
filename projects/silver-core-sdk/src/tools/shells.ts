@@ -504,6 +504,12 @@ export const taskStopTool: BuiltinTool = {
         isError: true,
       };
     }
+    // Official v2.1.198: `task_id` also accepts an agent id — a background
+    // subagent's agentId stops that subagent (bridge wired on the root loop).
+    const agentOutcome = ctx.subagents?.stop(id);
+    if (agentOutcome !== undefined) {
+      return { content: agentOutcome };
+    }
     if (ctx.shells === undefined) {
       return { content: `TaskStop: ${NO_MANAGER}`, isError: true };
     }

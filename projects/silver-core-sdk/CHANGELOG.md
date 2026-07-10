@@ -16,6 +16,30 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.42.0 — 2026-07-10
+
+**O-B2: SendMessage tool body + subagent continuation + coordinator presets**
+(keeper ruling 「全部开工」). New `SendMessage` built-in `{to, summary?,
+message}` continues a previously spawned subagent by agentId with its FULL
+transcript intact — the runtime now retains every child (live history array +
+deps/config) for the query's life in a continuation registry; messages to the
+same agent serialize; stopped (killed) workers are revivable (fresh
+controller), per official semantics. Foreground children reply as the tool
+result; background children ack and reply on a later drained turn. Background
+drain notes now use the official `<task-notification>` XML shape (task-id /
+status / summary / result / usage) — consumers matching the old
+`[background subagent …]` prefix must switch to the XML block. `TaskStop`
+additionally accepts a subagent agentId (official v2.1.198) before falling
+through to shells. Coordinator presets ship alongside (red-line now
+satisfied): `COORDINATOR_MODE_PROMPT` (adapted reproduction,
+system-prompt-coordinator-mode-orchestration @ 2.1.199) +
+`COORDINATOR_WORKER_AGENT` / `COORDINATOR_WORKER_INSTRUCTIONS` (faithful,
+system-prompt-coordinator-worker-instructions @ 2.1.182), exported from the
+package root. Isolated children never see SendMessage; fork children keep the
+schema (prefix byte-match) and error honestly. 17 new tests
+(tests/sendmessage.test.ts) incl. corpus-sync anchors; red-line guard extended
+to both coordinator prompts.
+
 ## 0.41.1 — 2026-07-10
 
 **Rename-review fixes** (keeper ruling 「全部修复」). MCP handshake

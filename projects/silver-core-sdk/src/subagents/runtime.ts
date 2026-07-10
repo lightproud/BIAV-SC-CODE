@@ -100,6 +100,26 @@ export interface SubagentRuntime {
   agentNames(): string[];
   /** Stop a running background subagent task by id (agentId). */
   stopTask(taskId: string): void;
+  /**
+   * O-B2 SendMessage: continue a previously spawned subagent's conversation
+   * with its context intact. `to` is the child agentId from its spawn result.
+   * A non-background child blocks and returns the reply as `content`; a
+   * background child returns a delivery ack and its reply arrives on a later
+   * drained turn as a <task-notification> block. Messages to the same agent
+   * serialize (a continuation queues behind the active run).
+   */
+  sendMessage(params: {
+    to: string;
+    message: string;
+    signal: AbortSignal;
+  }): Promise<{ content: string; isError: boolean }>;
+  /**
+   * TaskStop bridge (official v2.1.198: `task_id` also accepts an agent id):
+   * stop a known subagent by agentId. Returns a human-readable outcome when
+   * the id names a known subagent, undefined when it does not (the caller
+   * falls through to other id spaces, e.g. background shells).
+   */
+  stopAgent(taskId: string): string | undefined;
   /** Abort every outstanding background subagent (query close). */
   abortAll(): void;
   /**
@@ -357,6 +377,42 @@ export function createSubagentRuntime(
     });
   };
 
+  /**
+   * Official <task-notification> XML block (archive slug
+   * system-prompt-coordinator-mode-orchestration, "Agent Results" section):
+   * background subagent results reach the model in this wire shape, so the
+   * reproduced coordinator preset's Results contract holds verbatim.
+   * `<result>` and `<usage>` are optional sections, exactly as documented.
+   */
+  const formatTaskNotification = (p: {
+    agentId: string;
+    status: 'completed' | 'failed' | 'killed';
+    summary: string;
+    result?: string;
+    usage?: { totalTokens: number; toolUses: number; durationMs: number };
+  }): string => {
+    const lines = [
+      '<task-notification>',
+      `<task-id>${p.agentId}</task-id>`,
+      `<status>${p.status}</status>`,
+      `<summary>${p.summary}</summary>`,
+    ];
+    if (p.result !== undefined && p.result.length > 0) {
+      lines.push(`<result>${p.result}</result>`);
+    }
+    if (p.usage !== undefined) {
+      lines.push(
+        '<usage>',
+        `  <subagent_tokens>${p.usage.totalTokens}</subagent_tokens>`,
+        `  <tool_uses>${p.usage.toolUses}</tool_uses>`,
+        `  <duration_ms>${p.usage.durationMs}</duration_ms>`,
+        '</usage>',
+      );
+    }
+    lines.push('</task-notification>');
+    return lines.join('\n');
+  };
+
   // Bare-name (no `Tool(spec)` specifier) parent disallow patterns propagate to
   // child tool-set filtering, so a fully-denied parent tool never re-surfaces
   // inside a subagent.
@@ -599,6 +655,31 @@ export function createSubagentRuntime(
     toolUseId: string;
   };
 
+  /** Cumulative real figures from one child run (feeds <usage> notification). */
+  type ChildRunUsage = { totalTokens: number; toolUses: number; durationMs: number };
+
+  // --- O-B2 continuation registry -------------------------------------------
+  // Every spawned child is retained here for the runtime's lifetime so a later
+  // SendMessage can CONTINUE its conversation with context intact: `history`
+  // is the SAME array runAgentLoop mutates in place, so after a run it holds
+  // the child's full transcript (every tool call, file read and decision — not
+  // a summary). Retention is bounded by the query's life (the runtime dies
+  // with the query). `queue` serializes continuations behind the active run so
+  // transcript turns never interleave.
+  type ChildRecord = {
+    agentType: string;
+    description: string;
+    background: boolean;
+    status: 'running' | 'completed' | 'failed' | 'killed';
+    history: APIMessageParam[];
+    deps: EngineDeps;
+    config: EngineConfig;
+    sidechain: SidechainInfo;
+    controller: AbortController;
+    queue: Promise<unknown>;
+  };
+  const childRegistry = new Map<string, ChildRecord>();
+
   async function runChildToCompletion(
     history: APIMessageParam[],
     deps: EngineDeps,
@@ -606,7 +687,7 @@ export function createSubagentRuntime(
     agentId: string,
     sidechain: SidechainInfo,
     liveness?: { touch(): void },
-  ): Promise<{ text: string; isError: boolean }> {
+  ): Promise<{ text: string; isError: boolean; usage: ChildRunUsage }> {
     let lastText = '';
     let sawError = false;
     let errMsg: string | undefined;
@@ -705,20 +786,27 @@ export function createSubagentRuntime(
       }
     }
 
-    let result: { text: string; isError: boolean };
+    const runUsage: ChildRunUsage = {
+      totalTokens: childTokens,
+      toolUses: childToolUses,
+      durationMs: Date.now() - startedAtMs,
+    };
+    let result: { text: string; isError: boolean; usage: ChildRunUsage };
     if (!sawError) {
-      result = { text: lastText, isError: false };
+      result = { text: lastText, isError: false, usage: runUsage };
     } else if (lastText.length > 0) {
       // Partial-output handling: surface any produced text rather than dropping
       // it, treating a non-empty partial as a soft (non-error) result.
       result = {
         text: `${lastText}\n\n(subagent did not finish: ${errMsg ?? 'unknown error'})`,
         isError: false,
+        usage: runUsage,
       };
     } else {
       result = {
         text: `Agent terminated early due to an API error: ${errMsg ?? 'unknown error'}`,
         isError: true,
+        usage: runUsage,
       };
     }
 
@@ -864,8 +952,14 @@ export function createSubagentRuntime(
       if (forkActive) {
         childBuiltins = new Map(baseBuiltins);
         if (childDepth >= MAX_SUBAGENT_DEPTH) childBuiltins.delete('Agent');
+        // SendMessage stays IN a fork child's tool block (prefix byte-match
+        // with the parent); its execute fails honestly there because the
+        // child ToolContext carries no `subagents` bridge.
       } else {
         childBuiltins = buildChildBuiltins(agentDef, childDepth);
+        // Subagent messaging is root-loop-only in this SDK: an isolated child
+        // has no use for the tool, so its schema is withheld outright.
+        childBuiltins.delete('SendMessage');
       }
       const childMcp = forkActive ? mcp : buildChildMcp(agentDef);
       const childGate = new DefaultPermissionGate({
@@ -982,6 +1076,23 @@ export function createSubagentRuntime(
         toolUseId: params.toolUseId,
       };
 
+      // O-B2: retain the child for later SendMessage continuation. `history`
+      // is the live array runAgentLoop mutates, so the record's transcript
+      // stays current across the initial run and every continuation.
+      const record: ChildRecord = {
+        agentType: resolved.type,
+        description: taskDescription,
+        background: isBackground,
+        status: 'running',
+        history: childHistory,
+        deps: childDeps,
+        config: childConfig,
+        sidechain: sidechainInfo,
+        controller: childController,
+        queue: Promise.resolve(),
+      };
+      childRegistry.set(agentId, record);
+
       if (isBackground) {
         // T2-6 background stall watchdog: a child whose stream goes silent for
         // the resolved window is aborted (env-tunable, 0 disables); touch()
@@ -1000,11 +1111,20 @@ export function createSubagentRuntime(
               sidechainInfo,
               stallWatchdog,
             );
+            record.status = result.isError ? 'failed' : 'completed';
             completedBuffer.push({
               type: 'text',
-              text:
-                `[background subagent '${resolved.type}' (agentId: ${agentId}) ` +
-                `completed]\n${result.text}`,
+              text: formatTaskNotification({
+                agentId,
+                status: result.isError ? 'failed' : 'completed',
+                summary: `Agent "${taskDescription}" ${
+                  result.isError
+                    ? `failed: ${resultPreview(result.text)}`
+                    : 'completed'
+                }`,
+                result: result.text,
+                usage: result.usage,
+              }),
             });
             emitTaskFinished(agentId, result);
             emitTask({
@@ -1018,6 +1138,7 @@ export function createSubagentRuntime(
               summary: `background subagent '${resolved.type}' ${result.isError ? 'failed' : 'completed'}`,
             });
           } catch (err) {
+            if (record.status === 'running') record.status = 'failed';
             debug(
               `background subagent ${agentId} failed: ` +
                 `${err instanceof Error ? err.message : String(err)}`,
@@ -1068,6 +1189,7 @@ export function createSubagentRuntime(
         })();
         backgroundTasks.set(agentId, { controller: childController, promise });
         allBackgroundPromises.push(promise);
+        record.queue = promise;
         return {
           content:
             `Launched background subagent '${resolved.type}' ` +
@@ -1080,18 +1202,28 @@ export function createSubagentRuntime(
 
       // Foreground: block until the child finishes. Worktree cleanup runs on
       // every exit path (finally covers an abort thrown out of the loop).
-      let result: { text: string; isError: boolean };
-      try {
-        result = await runChildToCompletion(
+      let result: { text: string; isError: boolean; usage: ChildRunUsage };
+      const run = (async () =>
+        runChildToCompletion(
           childHistory,
           childDeps,
           childConfig,
           agentId,
           sidechainInfo,
-        );
+        ))();
+      record.queue = run.then(
+        () => undefined,
+        () => undefined,
+      );
+      try {
+        result = await run;
+      } catch (err) {
+        record.status = 'failed';
+        throw err;
       } finally {
         await releaseWorktree().catch(() => undefined);
       }
+      record.status = result.isError ? 'failed' : 'completed';
       emitTaskFinished(agentId, result);
       await fireSubagentStop(agentId, resolved.type, params.signal);
       return {
@@ -1103,6 +1235,85 @@ export function createSubagentRuntime(
     };
   }
 
+  // --- O-B2: SendMessage continuation ---------------------------------------
+
+  /** One continuation episode: append the message, re-enter the child loop. */
+  async function runContinuation(
+    agentId: string,
+    record: ChildRecord,
+    params: { message: string; signal: AbortSignal },
+  ): Promise<{ text: string; isError: boolean; usage: ChildRunUsage }> {
+    // A stopped (killed) worker can be continued — official semantics. Its
+    // spawn-time controller is already aborted, so mint a fresh one; the old
+    // composed signals die with the finished run.
+    if (record.controller.signal.aborted) {
+      record.controller = new AbortController();
+    }
+    record.status = 'running';
+    record.history.push({ role: 'user', content: params.message });
+    // Fresh signal composition: the spawn-time ToolContext signal belonged to
+    // the ORIGINAL Agent call's turn. A continuation aborts with ITS OWN call
+    // signal, the child's controller (stopTask/stopAgent), and the query-wide
+    // signal — never the stale spawn-turn signal.
+    const contSignal = AbortSignal.any([
+      outerSignal,
+      params.signal,
+      record.controller.signal,
+    ]);
+    const contDeps: EngineDeps = {
+      ...record.deps,
+      toolContext: { ...record.deps.toolContext, signal: contSignal },
+    };
+    try {
+      const result = await runChildToCompletion(
+        record.history,
+        contDeps,
+        record.config,
+        agentId,
+        record.sidechain,
+      );
+      record.status = result.isError ? 'failed' : 'completed';
+      emitTaskFinished(agentId, result);
+      return result;
+    } catch (err) {
+      if (record.status === 'running') record.status = 'failed';
+      throw err;
+    }
+  }
+
+  /** Shared kill path for stopTask (Query API) and stopAgent (TaskStop bridge). */
+  function killAgent(
+    taskId: string,
+  ): { outcome: 'stopped' } | { outcome: 'not_running'; status: string } | { outcome: 'unknown' } {
+    const task = backgroundTasks.get(taskId);
+    const record = childRegistry.get(taskId);
+    if (task === undefined && record === undefined) return { outcome: 'unknown' };
+    if (task === undefined && record !== undefined && record.status !== 'running') {
+      return { outcome: 'not_running', status: record.status };
+    }
+    (task?.controller ?? record?.controller)?.abort();
+    backgroundTasks.delete(taskId);
+    if (record !== undefined) record.status = 'killed';
+    // Official patch.status vocabulary has 'killed' (not 'cancelled') for an
+    // externally stopped task; the paired notification uses 'stopped'.
+    emitTask({
+      type: 'system',
+      subtype: 'task_updated',
+      task_id: taskId,
+      patch: { status: 'killed', end_time: Date.now() },
+    });
+    emitTask({
+      type: 'system',
+      subtype: 'task_notification',
+      task_id: taskId,
+      status: 'stopped',
+      output_file: '',
+      summary: `background subagent "${taskId}" stopped via stopTask`,
+    });
+    debug(`stopTask: aborted background subagent "${taskId}"`);
+    return { outcome: 'stopped' };
+  }
+
   return {
     makeSpawnFn,
     drainCompletedResults,
@@ -1111,30 +1322,106 @@ export function createSubagentRuntime(
       return [...Object.keys(agents), 'general-purpose'];
     },
     stopTask(taskId: string): void {
-      const task = backgroundTasks.get(taskId);
-      if (task === undefined) {
+      const res = killAgent(taskId);
+      if (res.outcome === 'unknown') {
         debug(`stopTask: no background subagent with id "${taskId}"`);
-        return;
+      } else if (res.outcome === 'not_running') {
+        debug(`stopTask: subagent "${taskId}" already ${res.status}`);
       }
-      task.controller.abort();
-      backgroundTasks.delete(taskId);
-      // Official patch.status vocabulary has 'killed' (not 'cancelled') for an
-      // externally stopped task; the paired notification uses 'stopped'.
-      emitTask({
-        type: 'system',
-        subtype: 'task_updated',
-        task_id: taskId,
-        patch: { status: 'killed', end_time: Date.now() },
-      });
-      emitTask({
-        type: 'system',
-        subtype: 'task_notification',
-        task_id: taskId,
-        status: 'stopped',
-        output_file: '',
-        summary: `background subagent "${taskId}" stopped via stopTask`,
-      });
-      debug(`stopTask: aborted background subagent "${taskId}"`);
+    },
+    stopAgent(taskId: string): string | undefined {
+      const res = killAgent(taskId);
+      if (res.outcome === 'unknown') return undefined;
+      if (res.outcome === 'not_running') {
+        return `Subagent ${taskId} already ${res.status}.`;
+      }
+      return `Stopped background subagent ${taskId}.`;
+    },
+    async sendMessage(params: {
+      to: string;
+      message: string;
+      signal: AbortSignal;
+    }): Promise<{ content: string; isError: boolean }> {
+      const agentId = params.to;
+      const record = childRegistry.get(agentId);
+      if (record === undefined) {
+        const known = [...childRegistry.keys()];
+        const hint =
+          known.length === 0
+            ? 'no subagents have been spawned in this query'
+            : `known agentIds: ${known.slice(-8).join(', ')}`;
+        return {
+          content: `SendMessage: no subagent with agentId "${agentId}" (${hint}).`,
+          isError: true,
+        };
+      }
+      // Serialize per agent: queue behind the active run + earlier messages.
+      const turn = record.queue.then(() =>
+        runContinuation(agentId, record, params),
+      );
+      record.queue = turn.then(
+        () => undefined,
+        () => undefined,
+      );
+      if (record.background) {
+        // Official flow for a background agent: ack the delivery now; the
+        // reply arrives on a later drained turn as a <task-notification>.
+        const delivery = turn
+          .then((result) => {
+            completedBuffer.push({
+              type: 'text',
+              text: formatTaskNotification({
+                agentId,
+                status: result.isError ? 'failed' : 'completed',
+                summary: `Agent "${record.description}" ${
+                  result.isError
+                    ? `failed: ${resultPreview(result.text)}`
+                    : 'replied'
+                }`,
+                result: result.text,
+                usage: result.usage,
+              }),
+            });
+            emitTask({
+              type: 'system',
+              subtype: 'task_notification',
+              task_id: agentId,
+              status: result.isError ? 'failed' : 'completed',
+              output_file: '',
+              summary: `background subagent '${record.agentType}' ${
+                result.isError ? 'failed' : 'replied'
+              }`,
+            });
+          })
+          .catch((err) => {
+            debug(
+              `SendMessage continuation for ${agentId} failed: ${
+                err instanceof Error ? err.message : String(err)
+              }`,
+            );
+          });
+        allBackgroundPromises.push(delivery);
+        return {
+          content:
+            `Message delivered to background subagent (agentId: ${agentId}). ` +
+            'Its reply will be delivered on a later turn.',
+          isError: false,
+        };
+      }
+      try {
+        const result = await turn;
+        return { content: result.text, isError: result.isError };
+      } catch (err) {
+        // Aborts propagate (same contract as a foreground Agent spawn); real
+        // failures degrade to an honest error result.
+        if (isAbortError(err)) throw err;
+        return {
+          content: `SendMessage: continuation failed: ${
+            err instanceof Error ? err.message : String(err)
+          }`,
+          isError: true,
+        };
+      }
     },
     async settleAll(timeoutMs = 2_000): Promise<void> {
       if (allBackgroundPromises.length === 0) return;
@@ -1151,6 +1438,11 @@ export function createSubagentRuntime(
         controller.abort();
       }
       backgroundTasks.clear();
+      // Continuations in flight (not tracked in backgroundTasks) abort via
+      // their record controller; completed records are left untouched.
+      for (const record of childRegistry.values()) {
+        if (record.status === 'running') record.controller.abort();
+      }
     },
   };
 }

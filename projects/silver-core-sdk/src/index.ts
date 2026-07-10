@@ -145,6 +145,12 @@ export {
   WORKER_FORK_FRAMING,
   WORKER_FORK_PROVENANCE,
   buildWorkerForkPrompt,
+  // O-B2 coordinator preset (rides the SendMessage tool body).
+  COORDINATOR_MODE_PROMPT,
+  COORDINATOR_MODE_PROMPT_PROVENANCE,
+  COORDINATOR_WORKER_AGENT,
+  COORDINATOR_WORKER_INSTRUCTIONS,
+  COORDINATOR_WORKER_PROVENANCE,
 } from './subagents/agents.js';
 export {
   AbortError,
