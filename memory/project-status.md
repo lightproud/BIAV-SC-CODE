@@ -77,8 +77,10 @@
     [skip ci] 提交推送，响亮失败；健康兜底 = 沉默源审计 arca_live 断更 >7d 告警）。
     首采 86 条 / 10 日期桶已入 `Record/Community/arca_live/`。GC 编排尝试保留——
     CF 若放行 Actions 则正常路径自动恢复、例程可退役
-  - [ ] **twitter 需付费 Token**（TWITTER_BEARER_TOKEN 未配置，静默空）。**买 token vs
-    退役待守密人裁定**
+  - [~] **twitter 挂账未来再议**（守密人 2026-07-10 裁定，覆盖节拍表决议④的 07-19 期限）：
+    免 key syndication 路径已 429 全灭；三选项成文备查——官方 API 按量（recent search
+    关键词全量，日读硬顶后 \$15-30/月）/ 第三方转售商（灰色 \$3-10/月）/ 退役。
+    Playwright 登录抓取明确排除（ToS 硬约束）。源保持注册静默空转，重启议题时从此处接续
 - **2026-07-02 degraded 排查结论（已修复）**：
   - steam / youtube / official / steam_discussion / appstore / google_play 六源为**假警报**——
     数据自 06-22 起正常写入区服分层新路径（`steam/global/review/` 等），
