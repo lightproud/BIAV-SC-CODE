@@ -63,8 +63,18 @@
 
 ### 实时聚合器
 - **已完成**：前端页面、B站抓取、GitHub Actions 自动化
-- **阻塞**：Twitter/X 需付费 Token（未接入）；bahamut / arca_live / note_com 零产出待核
-  （Arca 实测 PW 选择器超时，`.vrow` 不可见——疑站点改版）
+- **零产出四源处置（2026-07-10 排查+修复，CI 日志 + live 探测定性）**：
+  - [x] **bahamut 已修复**：真因 = `B.php?ajax=1` JSON 接口退役（返回整页 HTML）+
+    `search.php` 需板編（bsn=0 报「沒有傳入板編」）且新版全站搜索纯 JS 渲染——旧双路径
+    注定零产出。改为解析忘卻前夜专板（bsn=78829）列表页 HTML，本地实测 30 帖入流
+  - [x] **note_com 已修复**：真因 = `/api/v3/searches` 已对非浏览器请求一律 403（浏览器头
+    与 cloudscraper 均被拒）。改走 hashtag RSS（`/hashtag/忘却前夜/rss`），本地实测 25 条；
+    RSS 无互动指标 → engagement 恒 0（同 weixin 已知限制）
+  - [ ] **arca_live 不可修（CI 基础设施性封锁）**：Cloudflare 拦 GitHub Actions 机房 IP
+    ——HTTP 403 / PW 挑战页超时 / App API 403 三路全堵；采集器代码本身无恙（住宅 IP
+    侧实测 86 条正常）。**退役 vs 挂账待守密人裁定**
+  - [ ] **twitter 需付费 Token**（TWITTER_BEARER_TOKEN 未配置，静默空）。**买 token vs
+    退役待守密人裁定**
 - **2026-07-02 degraded 排查结论（已修复）**：
   - steam / youtube / official / steam_discussion / appstore / google_play 六源为**假警报**——
     数据自 06-22 起正常写入区服分层新路径（`steam/global/review/` 等），
