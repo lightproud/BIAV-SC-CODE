@@ -177,6 +177,21 @@
 > 银芯→黑池单向输出物，与 §1.1-HC 防火墙同向，非 BPT 产品内部开发。
 
 - **动手前必读**：`projects/silver-core-sdk/CONTEXT.md`（会话上下文 + 当前 milestone）
+- **O-B2 收官：SendMessage 本体 + 子代理续接 + coordinator 预设（v0.42.0，2026-07-10，守密人「全部开工」，已落）**：
+  体验设计档四缝最后一条焊完。① **续接注册表**（`src/subagents/runtime.ts`）：每个子代理连
+  live 转录数组 + deps/config 留存至 query 生命周期尾，SendMessage 按 agentId 定址续跑——
+  上下文完整保留、同代理消息串行、**已停止（killed）工人可复活续接**（官方语义，控制器换新）；
+  ② **SendMessage 工具**（`src/tools/sendmessage.ts`，描述改编自语料 2.1.199）：前台子代理阻塞
+  返回回复、后台子代理 ack + 回复走后续 drain 轮；**根环专属**（隔离子代理不见 schema、fork
+  子代理保 schema 维持缓存字节对齐但诚实报错）；③ **drain 格式对齐官方**：后台完成注入从自造
+  `[background subagent …]` 前缀改为官方 `<task-notification>` XML（task-id/status/summary/
+  result/usage，语料逐字锚点）——**破坏性**，消费方需改配（CHANGELOG 0.42.0）；④ **TaskStop
+  扩容**：`task_id` 兼认子代理 agentId（官方 v2.1.198），先查子代理注册表再落 shell；⑤
+  **coordinator 预设**（红线随本体落地解锁）：`COORDINATOR_MODE_PROMPT`（改编复现 @2.1.199，
+  去牌 + 工具名代入 + 缺席工具子句 gate + 两处引擎诚实注记）+ `COORDINATOR_WORKER_AGENT`
+  （忠实复现 @2.1.182，maxTurns 200），包根导出，红线守卫扩挂两文。**+17 测**
+  （`tests/sendmessage.test.ts`：续接上下文 / 串行化 / 复活 / XML 格式 / TaskStop 桥 /
+  语料锚点），**1651 全绿 + 2 skipped（77 文件）**、`tsc` + `build` exit 0。
 - **SDK 命令框架消费手册（2026-07-10，守密人「银芯需要派一个说明书给黑池消费方」派单，已落）**：
   黑池开发者向接线手册 `Public-Info-Pool/Resource/repo-engineering/silver-core-sdk-command-consumer-manual-20260710.md`
   ——五模块各接哪个 SDK 口的总图 + 六节配方（透传纪律 / 控制面直连与通报注入 / 面板双数据源与

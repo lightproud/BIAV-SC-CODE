@@ -24,7 +24,12 @@ import {
 import { VERIFY_VERDICT_SYSTEM } from '../src/verifier/prompts.js';
 import { CONTEXT_TIP_SELECTOR_SYSTEM, TIP_RECEPTION_SYSTEM } from '../src/tips/prompts.js';
 import { HOOK_CONDITION_SYSTEM, HOOK_STOP_CONDITION_SYSTEM } from '../src/hooks/condition.js';
-import { GENERAL_PURPOSE_PROMPT, WORKER_FORK_FRAMING } from '../src/subagents/agents.js';
+import {
+  COORDINATOR_MODE_PROMPT,
+  COORDINATOR_WORKER_INSTRUCTIONS,
+  GENERAL_PURPOSE_PROMPT,
+  WORKER_FORK_FRAMING,
+} from '../src/subagents/agents.js';
 
 /**
  * Official Claude Code tool identifiers this SDK deliberately does NOT ship.
@@ -68,6 +73,10 @@ const REPRODUCED: Array<[label: string, text: string]> = [
   ['hooks:stop-condition', HOOK_STOP_CONDITION_SYSTEM],
   ['subagent:general-purpose', GENERAL_PURPOSE_PROMPT],
   ['subagent:worker-fork', WORKER_FORK_FRAMING],
+  // O-B2: legal only because the SendMessage tool body ships in the same
+  // batch — every tool these reference (Agent/SendMessage/TaskStop) exists.
+  ['subagent:coordinator-mode', COORDINATOR_MODE_PROMPT],
+  ['subagent:coordinator-worker', COORDINATOR_WORKER_INSTRUCTIONS],
 ];
 
 describe('red-line: reproduced prompts never name an unshipped tool', () => {

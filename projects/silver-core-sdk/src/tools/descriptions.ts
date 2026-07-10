@@ -788,6 +788,28 @@ Use this tool for multi-step orchestration where control flow should be determin
 The tool result includes a runId. To resume after a failure or script edit, relaunch with Workflow({scriptPath, resumeFromRunId}) — the longest unchanged prefix of agent() calls returns cached results instantly; the first edited/new call and everything after it runs live. Same script + same args → 100% cache hit. The cache lives in session memory: resume works within the same session only, and a matching agent() call that previously returned null re-runs live without breaking the prefix. Date.now()/Math.random()/new Date() are unavailable in scripts (they would break this) — stamp results after the workflow returns, or pass timestamps via args.`;
 
 /**
+ * SendMessage (O-B2) — ADAPTED reproduction of the agent-teams SendMessage
+ * description (archive slug tool-description-sendmessagetool, ccVersion
+ * 2.1.199). Adaptations, per the red-line discipline (never describe an
+ * unshipped capability): teammate-NAME addressing, the `"main"` address and
+ * the automatic teammate-delivery sentence are omitted (this SDK ships no
+ * agent-teams naming machinery — agentId addressing only); the official
+ * `a...-...` id-format note is dropped (this SDK's agentIds are UUIDs); the
+ * legacy protocol-responses variant is omitted. The transcript-retention
+ * sentence reproduces the coordinator prompt's "Continue mechanics" wording
+ * (archive slug system-prompt-coordinator-mode-orchestration).
+ */
+export const SENDMESSAGE_DESCRIPTION = `# SendMessage
+
+Send a message to another agent.
+
+\`\`\`json
+{"to": "<agentId>", "summary": "fix the failing test", "message": "The tests failed on the null check you added — update the assertion and report back."}
+\`\`\`
+
+\`to\` is the agentId of a previously spawned subagent, from its Agent spawn result (the trailing \`agentId:\` line). Use it to continue an existing worker or to resume a completed (or stopped) one: the agent retains its full prior transcript — every tool call, file read, and decision — not a summary, so follow-ups can be brief. A foreground-spawned agent replies directly as this tool's result; a background agent acknowledges delivery and its reply arrives on a later turn as a <task-notification> block. Messages to the same agent are delivered one at a time, in order.`;
+
+/**
  * Provenance for the tool-description surface (Track B): which archive fragments
  * each faithful description draws from. A corpus-sync guard
  * (tests/tool-descriptions-provenance.test.ts) verifies each cited fragment's
@@ -840,6 +862,14 @@ export const TOOL_DESCRIPTION_PROVENANCE: ToolDescriptionProvenance[] = [
     slugs: ['tool-description-background-monitor-streaming-events'],
   },
   { tool: 'Workflow', faithful: true, slugs: ['tool-description-workflow'] },
+  // ADAPTED (agentId-only addressing; see the SENDMESSAGE_DESCRIPTION doc
+  // comment for the exact deltas) — faithful:false keeps the corpus-sync
+  // anchor guard scoped to the genuinely reproduced descriptions.
+  {
+    tool: 'SendMessage',
+    faithful: false,
+    slugs: ['tool-description-sendmessagetool'],
+  },
 ];
 
 /** The description text for each provenance-tracked tool (for the corpus-sync guard). */
@@ -862,6 +892,7 @@ export const TOOL_DESCRIPTION_TEXT: Record<string, string> = {
   EnterWorktree: ENTERWORKTREE_DESCRIPTION,
   Monitor: MONITOR_DESCRIPTION,
   Workflow: WORKFLOW_DESCRIPTION,
+  SendMessage: SENDMESSAGE_DESCRIPTION,
 };
 
 // ---------------------------------------------------------------------------

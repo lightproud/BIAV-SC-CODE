@@ -833,6 +833,12 @@ export function query(args: {
           signal: turnSignal,
           debug,
           spawnSubagent: subagentRuntime.makeSpawnFn(0),
+          // O-B2 SendMessage/TaskStop bridge — ROOT loop only by design (the
+          // subagent runtime never threads this into a child ToolContext).
+          subagents: {
+            send: (p) => subagentRuntime.sendMessage(p),
+            stop: (taskId) => subagentRuntime.stopAgent(taskId),
+          },
           webSearch: options.webSearch,
           askUser: options.onUserQuestion,
           mcpResources: {

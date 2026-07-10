@@ -49,6 +49,7 @@ import { monitorTool } from './monitor.js';
 import { exitPlanModeTool } from './exitplanmode.js';
 import { enterWorktreeTool } from './enterworktree.js';
 import { workflowTool } from './workflow.js';
+import { sendMessageTool } from './sendmessage.js';
 
 /** Fresh Map per call so callers can filter without affecting others.
  *  When a sandbox is active (G-SANDBOX) the Bash tool is built with its
@@ -86,6 +87,7 @@ export function createBuiltinTools(cfg?: {
     exitPlanModeTool,
     enterWorktreeTool,
     workflowTool,
+    sendMessageTool,
   ];
   return new Map(tools.map((t) => [t.name, t]));
 }
