@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 352,
-    "edges": 409,
-    "terms": 6003,
+    "concepts": 353,
+    "edges": 410,
+    "terms": 6048,
     "by_type": {
       "character": 72,
       "dataset": 110,
-      "documentation": 106,
+      "documentation": 107,
       "knowledge-pointer": 44,
       "reference": 17,
       "research": 3
@@ -26,7 +26,7 @@
       "memory": 48,
       "news-output": 23,
       "projects": 24,
-      "resource": 81,
+      "resource": 82,
       "sources": 20,
       "story": 11,
       "unpacked": 13,
@@ -34,7 +34,7 @@
     },
     "by_tier": {
       "skeleton": 131,
-      "search": 221
+      "search": 222
     }
   },
   "sections": {
@@ -68,7 +68,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 81
+      "count": 82
     },
     "sources": {
       "index": "/sources/index.md",
@@ -968,7 +968,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 90
+      "degree": 91
     },
     "/characters/15604.md": {
       "type": "character",
@@ -3172,6 +3172,20 @@
       "section": "resource",
       "tier": "search",
       "degree": 0
+    },
+    "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md": {
+      "type": "documentation",
+      "title": "silver-core-sdk-l5-round-20260711",
+      "description": "守密人已裁「点火」的这一轮真 L5（run [29134399453](https://github.com/lightproud/brain-in-a-vat/actions/runs/29134399453)）**技术上干净成功、两臂零背离**，但**主目标 code-01 残余复验未达成**——`$1.5` 预算帽在 `repeat=5` 下跑到第 8 个任务（document-01）即因「照此速度做完会超帽」被预算守卫干净中止（79/180 runs，实花 $0.59（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/data-diagnostics/silver-core-sdk-l5-round-20260711.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:data-diagnostics"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 1
     },
     "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md": {
       "type": "documentation",
@@ -6639,6 +6653,11 @@
         "mention"
       ],
       [
+        "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
         "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
         "提及:艾瑞卡",
         "mention"
@@ -8732,6 +8751,13 @@
         "mention"
       ]
     ],
+    "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
     "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md": [
       [
         "/characters/15560.md",
@@ -9785,6 +9811,7 @@
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
@@ -9924,6 +9951,9 @@
     ],
     "action": [
       "/resource/resource-game-analysis-role-action-recommendations-202605.md"
+    ],
+    "actions": [
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
     ],
     "active": [
       "/memory/memory-ext-active-contribution-protocol.md",
@@ -10511,7 +10541,8 @@
     ],
     "brain": [
       "/assets/assets-chat-onboarding-snippet.md",
-      "/memory/memory-ext-biav-info-classification.md"
+      "/memory/memory-ext-biav-info-classification.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
     ],
     "bug": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
@@ -10672,6 +10703,7 @@
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
@@ -10965,6 +10997,7 @@
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
@@ -11181,6 +11214,7 @@
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
@@ -11314,6 +11348,7 @@
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
@@ -11633,6 +11668,7 @@
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
@@ -11812,6 +11848,7 @@
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
@@ -11938,6 +11975,7 @@
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md"
     ],
     "dict": [
@@ -12005,6 +12043,9 @@
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md"
+    ],
+    "document": [
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
     ],
     "documentation": [
       "/README.md",
@@ -12572,7 +12613,8 @@
     "github": [
       "/README.md",
       "/assets/assets-chat-onboarding-snippet.md",
-      "/memory/memory-strategy-repo-slimming-plan.md"
+      "/memory/memory-strategy-repo-slimming-plan.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
     ],
     "githubusercontent": [
       "/assets/assets-chat-onboarding-snippet.md"
@@ -12860,6 +12902,7 @@
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
@@ -13154,6 +13197,7 @@
     ],
     "l5": [
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md"
     ],
@@ -13349,6 +13393,7 @@
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
@@ -13619,7 +13664,8 @@
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md"
     ],
     "lightproud": [
-      "/assets/assets-chat-onboarding-snippet.md"
+      "/assets/assets-chat-onboarding-snippet.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
     ],
     "limit": [
       "/assets/assets-chat-onboarding-snippet.md",
@@ -13887,6 +13933,7 @@
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
@@ -14566,6 +14613,7 @@
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
@@ -14960,6 +15008,7 @@
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
@@ -15277,6 +15326,9 @@
     "rename": [
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md"
     ],
+    "repeat": [
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
+    ],
     "repo": [
       "/memory/memory-strategy-repo-slimming-plan.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
@@ -15369,6 +15421,7 @@
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
@@ -15489,6 +15542,9 @@
     "room": [
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
     ],
+    "round": [
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
+    ],
     "round1": [
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md"
     ],
@@ -15504,6 +15560,7 @@
       "/sources/ruliweb.md"
     ],
     "run": [
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md"
     ],
     "runner": [
@@ -15511,6 +15568,9 @@
     ],
     "running": [
       "/projects/silver-core-sdk-doc-resilience.md"
+    ],
+    "runs": [
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
     ],
     "runtime": [
       "/projects/entry-claude-md.md",
@@ -15615,6 +15675,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
@@ -15696,6 +15757,7 @@
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
@@ -16248,6 +16310,7 @@
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
@@ -16520,7 +16583,8 @@
     ],
     "vat": [
       "/assets/assets-chat-onboarding-snippet.md",
-      "/memory/memory-ext-biav-info-classification.md"
+      "/memory/memory-ext-biav-info-classification.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
     ],
     "vector": [
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -16927,6 +16991,9 @@
     "一行": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md"
     ],
+    "一轮": [
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
+    ],
     "一遍": [
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
     ],
@@ -17025,6 +17092,9 @@
     "上复": [
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md"
     ],
+    "上干": [
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
+    ],
     "上来": [
       "/characters/15584.md"
     ],
@@ -17087,6 +17157,9 @@
     ],
     "下章": [
       "/characters/15564.md"
+    ],
+    "下跑": [
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
     ],
     "不一": [
       "/resource/resource-proposal-discord-layout-unification-20260710.md"
@@ -17329,6 +17402,7 @@
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
@@ -17593,6 +17667,7 @@
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
@@ -17913,6 +17988,7 @@
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
@@ -18163,7 +18239,8 @@
       "/memory/memory-ext-storage-discussion.md"
     ],
     "两臂": [
-      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
     ],
     "严宣": [
       "/characters/15586.md"
@@ -18184,6 +18261,9 @@
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md"
+    ],
+    "个任": [
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
     ],
     "个停": [
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
@@ -18298,6 +18378,9 @@
     ],
     "中有": [
       "/memory/memory-ext-storage-discussion.md"
+    ],
+    "中止": [
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
     ],
     "中毒": [
       "/characters/15562.md",
@@ -18484,6 +18567,9 @@
     "主控": [
       "/memory/memory-ext-active-policy-direct-push-main.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md"
+    ],
+    "主目": [
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
     ],
     "主线": [
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md"
@@ -19118,6 +19204,7 @@
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
@@ -19616,7 +19703,8 @@
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md"
     ],
     "任务": [
-      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
     ],
     "份归": [
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
@@ -19735,6 +19823,9 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
+    ],
+    "会超": [
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
     ],
     "会转": [
       "/characters/15582.md"
@@ -20065,6 +20156,7 @@
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
@@ -20328,6 +20420,7 @@
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
@@ -20543,6 +20636,9 @@
     ],
     "何黑": [
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md"
+    ],
+    "余复": [
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
     ],
     "余是": [
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
@@ -20854,6 +20950,9 @@
     ],
     "假阳": [
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md"
+    ],
+    "做完": [
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
     ],
     "做梦": [
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
@@ -21492,6 +21591,12 @@
     "冻结": [
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
     ],
+    "净中": [
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
+    ],
+    "净成": [
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
+    ],
     "净重": [
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
     ],
@@ -21943,6 +22048,9 @@
     "到端": [
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md"
     ],
+    "到第": [
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
+    ],
     "到越": [
       "/characters/15572.md"
     ],
@@ -22151,6 +22259,7 @@
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
@@ -22857,6 +22966,9 @@
     "卡茜亚": [
       "/characters/15572.md"
     ],
+    "卫干": [
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
+    ],
     "卫没": [
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
@@ -22894,6 +23006,9 @@
       "/sources/weixin.md",
       "/sources/youtube.md",
       "/sources/youtube_comments.md"
+    ],
+    "即因": [
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
     ],
     "即契": [
       "/README.md"
@@ -25336,6 +25451,7 @@
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
@@ -25486,6 +25602,9 @@
     ],
     "复量": [
       "/characters/15599.md"
+    ],
+    "复验": [
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
     ],
     "夏塔克鸟": [
       "/characters/77924.md"
@@ -26123,6 +26242,7 @@
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
@@ -26477,6 +26597,7 @@
       "/memory/memory-ext-collab-event-playbook.md"
     ],
     "守卫": [
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
@@ -26504,6 +26625,7 @@
       "/memory/memory-ext-todo.md",
       "/projects/project-game.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
@@ -26529,6 +26651,9 @@
     ],
     "完不": [
       "/projects/entry-claude-md.md"
+    ],
+    "完会": [
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
     ],
     "完全": [
       "/projects/silver-core-sdk-doc-positioning.md"
@@ -26745,6 +26870,7 @@
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
@@ -26938,6 +27064,9 @@
     ],
     "实脱": [
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md"
+    ],
+    "实花": [
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
     ],
     "实证": [
       "/memory/memory-ext-todo.md"
@@ -27848,6 +27977,9 @@
     "已被": [
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
+    "已裁": [
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
+    ],
     "已退": [
       "/memory/decisions-archive.md"
     ],
@@ -28014,6 +28146,9 @@
     "常驻": [
       "/README.md"
     ],
+    "帽在": [
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
+    ],
     "幅强": [
       "/characters/15589.md",
       "/characters/77926.md"
@@ -28023,6 +28158,7 @@
       "/characters/77913.md"
     ],
     "干净": [
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
     ],
     "干活": [
@@ -28275,6 +28411,9 @@
     ],
     "度中": [
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
+    ],
+    "度做": [
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
     ],
     "度分": [
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md"
@@ -29633,6 +29772,7 @@
       "/characters/54117.md"
     ],
     "成功": [
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/sources/appstore.md",
       "/sources/arca_live.md",
       "/sources/bahamut.md",
@@ -30009,6 +30149,9 @@
     ],
     "技巧": [
       "/characters/15567.md"
+    ],
+    "技术": [
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
     ],
     "技能": [
       "/characters/15596.md",
@@ -30551,6 +30694,7 @@
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
@@ -31117,6 +31261,7 @@
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
@@ -31452,6 +31597,7 @@
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
@@ -31862,6 +32008,7 @@
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
@@ -32147,6 +32294,7 @@
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
@@ -33650,6 +33798,9 @@
     "未设": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
+    "未达": [
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
+    ],
     "未逐": [
       "/story/story_research_todo.md"
     ],
@@ -33819,6 +33970,7 @@
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
@@ -34035,6 +34187,9 @@
     "术一": [
       "/characters/15572.md"
     ],
+    "术上": [
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
+    ],
     "术刺": [
       "/characters/15595.md"
     ],
@@ -34243,6 +34398,7 @@
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
@@ -34825,6 +34981,7 @@
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
@@ -35037,6 +35194,7 @@
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
@@ -35524,6 +35682,7 @@
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
@@ -35907,6 +36066,7 @@
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
@@ -36044,6 +36204,9 @@
     "此线": [
       "/README.md"
     ],
+    "此速": [
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
+    ],
     "步必": [
       "/memory/memory-strategy-repo-slimming-plan.md"
     ],
@@ -36074,6 +36237,9 @@
     ],
     "死的": [
       "/characters/95786.md"
+    ],
+    "残余": [
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
     ],
     "残骸": [
       "/characters/77926.md",
@@ -36871,6 +37037,9 @@
     "点档": [
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md"
     ],
+    "点火": [
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
+    ],
     "点自": [
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md"
     ],
@@ -36949,6 +37118,9 @@
     ],
     "照实": [
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
+    ],
+    "照此": [
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
     ],
     "照翻": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
@@ -38758,6 +38930,9 @@
     "的运": [
       "/README.md"
     ],
+    "的这": [
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
+    ],
     "的迷": [
       "/characters/15600.md"
     ],
@@ -38901,7 +39076,8 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
     ],
     "目标": [
-      "/README.md"
+      "/README.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
     ],
     "目状": [
       "/memory/project-status.md"
@@ -39912,6 +40088,12 @@
       "/characters/54117.md",
       "/characters/77913.md"
     ],
+    "算守": [
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
+    ],
+    "算帽": [
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
+    ],
     "算法": [
       "/extracted/extracted-readme.md"
     ],
@@ -40737,6 +40919,9 @@
     "背景": [
       "/memory/memory-ext-wiki-characters-schema-v1.md"
     ],
+    "背离": [
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
+    ],
     "胎融": [
       "/characters/15600.md"
     ],
@@ -40958,6 +41143,9 @@
     ],
     "臂实": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+    ],
+    "臂零": [
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
     ],
     "臣民": [
       "/characters/15589.md"
@@ -41536,6 +41724,9 @@
     ],
     "被静": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+    ],
+    "被预": [
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
     ],
     "裁决": [
       "/characters/77917.md"
@@ -42553,6 +42744,9 @@
     "超小": [
       "/resource/resource-community-analysis-jp-discord-insights-202606.md"
     ],
+    "超帽": [
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
+    ],
     "超维": [
       "/characters/15562.md",
       "/characters/15590.md"
@@ -42618,6 +42812,9 @@
     ],
     "跑了": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+    ],
+    "跑到": [
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
     ],
     "跑满": [
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md"
@@ -42801,6 +42998,7 @@
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
@@ -43081,6 +43279,9 @@
     "转输": [
       "/characters/15599.md"
     ],
+    "轮真": [
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
+    ],
     "轮舞": [
       "/characters/15584.md"
     ],
@@ -43188,6 +43389,9 @@
     "达性": [
       "/memory/capability-index.md"
     ],
+    "达成": [
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
+    ],
     "达芙黛尔": [
       "/characters/15590.md"
     ],
@@ -43276,7 +43480,8 @@
       "/characters/54117.md"
     ],
     "这一": [
-      "/characters/15604.md"
+      "/characters/15604.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
     ],
     "这些": [
       "/memory/memory-research-discord-archive-backfill-conflict.md"
@@ -43466,6 +43671,7 @@
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
@@ -43735,6 +43941,7 @@
       "/characters/15580.md"
     ],
     "速度": [
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "速激": [
@@ -44478,6 +44685,7 @@
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
@@ -44731,6 +44939,7 @@
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
@@ -45324,6 +45533,9 @@
     "零断": [
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
     ],
+    "零背": [
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
+    ],
     "零读": [
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md"
     ],
@@ -45561,6 +45773,9 @@
     "预期": [
       "/memory/memory-ext-discord-archiver-design.md"
     ],
+    "预算": [
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
+    ],
     "预见": [
       "/memory/memory-ext-wiki-characters-schema-v1.md"
     ],
@@ -45660,6 +45875,9 @@
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md"
+    ],
+    "验未": [
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
     ],
     "验标": [
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md"
@@ -46385,6 +46603,7 @@
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
@@ -46509,6 +46728,7 @@
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
@@ -46821,6 +47041,7 @@
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
@@ -46991,6 +47212,7 @@
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
@@ -47101,6 +47323,7 @@
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md"
     ],
     "discord": [
@@ -47608,6 +47831,7 @@
     ],
     "l5": [
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md"
     ],
@@ -47753,6 +47977,7 @@
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
@@ -48604,6 +48829,9 @@
     "role": [
       "/resource/resource-game-analysis-role-action-recommendations-202605.md"
     ],
+    "round": [
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
+    ],
     "rss": [
       "/news-output/news-output-feed.md"
     ],
@@ -48678,6 +48906,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
@@ -48734,6 +48963,7 @@
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
@@ -48934,6 +49164,7 @@
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",

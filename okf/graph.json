@@ -1,8 +1,8 @@
 {
   "generated": "2026-07-11",
   "stats": {
-    "nodes": 352,
-    "edges": 409
+    "nodes": 353,
+    "edges": 410
   },
   "nodes": [
     {
@@ -2478,6 +2478,17 @@
       "id": "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "type": "documentation",
       "title": "grep-ripgrep-crossover-20260707",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:data-diagnostics"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
+      "type": "documentation",
+      "title": "silver-core-sdk-l5-round-20260711",
       "tags": [
         "data_layer:curated",
         "deliverable",
@@ -5445,6 +5456,12 @@
     },
     {
       "source": "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
       "rel_type": "mention"
