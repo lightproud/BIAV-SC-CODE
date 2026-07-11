@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 358,
+    "concepts": 359,
     "edges": 414,
-    "terms": 6142,
+    "terms": 6145,
     "by_type": {
       "character": 72,
       "dataset": 110,
-      "documentation": 111,
+      "documentation": 112,
       "knowledge-pointer": 45,
       "reference": 17,
       "research": 3
@@ -25,7 +25,7 @@
       "extracted": 4,
       "memory": 49,
       "news-output": 23,
-      "projects": 26,
+      "projects": 27,
       "resource": 84,
       "sources": 20,
       "story": 11,
@@ -34,7 +34,7 @@
     },
     "by_tier": {
       "skeleton": 131,
-      "search": 227
+      "search": 228
     }
   },
   "sections": {
@@ -64,7 +64,7 @@
     },
     "projects": {
       "index": "/projects/index.md",
-      "count": 26
+      "count": 27
     },
     "resource": {
       "index": "/resource/index.md",
@@ -2772,6 +2772,20 @@
       "title": "silver-core-sdk ERRORS",
       "description": "Every error class in `src/errors.ts` carries a machine-readable, stable",
       "resource": "/projects/silver-core-sdk/docs/ERRORS.md",
+      "tags": [
+        "data_layer:curated",
+        "design-doc",
+        "sub-project:silver-core-sdk"
+      ],
+      "section": "projects",
+      "tier": "search",
+      "degree": 0
+    },
+    "/projects/silver-core-sdk-doc-memory-governance.md": {
+      "type": "documentation",
+      "title": "silver-core-sdk MEMORY-GOVERNANCE",
+      "description": "Archived requirements + implementation record for the 2026-07-11 keeper",
+      "resource": "/projects/silver-core-sdk/docs/MEMORY-GOVERNANCE.md",
       "tags": [
         "data_layer:curated",
         "design-doc",
@@ -9896,6 +9910,7 @@
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
       "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
@@ -10312,6 +10327,9 @@
       "/unpacked/unpacked-sproto.md",
       "/unpacked/unpacked-text-cn.md",
       "/unpacked/unpacked-vue.md"
+    ],
+    "archived": [
+      "/projects/silver-core-sdk-doc-memory-governance.md"
     ],
     "archiver": [
       "/memory/memory-ext-discord-archiver-design.md"
@@ -11108,6 +11126,7 @@
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
       "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
@@ -11357,6 +11376,7 @@
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
       "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
@@ -11475,6 +11495,7 @@
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
       "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
@@ -11800,6 +11821,7 @@
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
       "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
@@ -12101,6 +12123,7 @@
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
       "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
@@ -12197,6 +12220,7 @@
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
       "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
@@ -12212,6 +12236,7 @@
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
       "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
@@ -12828,6 +12853,9 @@
     "googlecloudplatform": [
       "/README.md"
     ],
+    "governance": [
+      "/projects/silver-core-sdk-doc-memory-governance.md"
+    ],
     "graph": [
       "/README.md"
     ],
@@ -13022,6 +13050,9 @@
     ],
     "impl": [
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md"
+    ],
+    "implementation": [
+      "/projects/silver-core-sdk-doc-memory-governance.md"
     ],
     "import": [
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
@@ -13363,7 +13394,8 @@
       "/unpacked/unpacked-vue.md"
     ],
     "keeper": [
-      "/projects/silver-core-sdk-doc-compat.md"
+      "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md"
     ],
     "key": [
       "/memory/memory-ext-workflow-api-key-audit.md"
@@ -13556,6 +13588,7 @@
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
       "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
@@ -14107,6 +14140,7 @@
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
       "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
@@ -14271,6 +14305,7 @@
       "/memory/project-status.md",
       "/memory/strategic-plan-2026.md",
       "/memory/style-guide.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-repo-engineering-bpt-desktop-builtin-commands-batch1-20260711.md",
@@ -15020,6 +15055,7 @@
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
       "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
@@ -15073,6 +15109,7 @@
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
       "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
@@ -15470,6 +15507,7 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/sources/appstore.md",
       "/sources/arca_live.md",
       "/sources/bahamut.md",
@@ -15609,6 +15647,7 @@
     ],
     "requirements": [
       "/memory/memory-ext-active-self-improvement-requirements.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md"
     ],
     "research": [
@@ -15897,6 +15936,7 @@
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
       "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
@@ -15988,6 +16028,7 @@
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
       "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
@@ -16310,6 +16351,7 @@
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
       "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
@@ -17637,6 +17679,7 @@
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
       "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
@@ -17907,6 +17950,7 @@
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
       "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
@@ -18232,6 +18276,7 @@
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
       "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
@@ -19462,6 +19507,7 @@
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
       "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
@@ -20427,6 +20473,7 @@
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
       "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
@@ -20696,6 +20743,7 @@
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
       "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
@@ -22562,6 +22610,7 @@
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
       "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
@@ -25803,6 +25852,7 @@
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
       "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
@@ -26602,6 +26652,7 @@
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
       "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
@@ -27237,6 +27288,7 @@
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
       "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
@@ -31091,6 +31143,7 @@
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
       "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
@@ -31668,6 +31721,7 @@
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
       "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
@@ -32009,6 +32063,7 @@
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
       "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
@@ -32429,6 +32484,7 @@
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
       "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
@@ -32720,6 +32776,7 @@
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
       "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
@@ -34428,6 +34485,7 @@
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
       "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
@@ -34861,6 +34919,7 @@
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
       "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
@@ -35457,6 +35516,7 @@
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
       "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
@@ -36167,6 +36227,7 @@
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
       "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
@@ -36559,6 +36620,7 @@
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
       "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
@@ -43570,6 +43632,7 @@
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
       "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
@@ -44254,6 +44317,7 @@
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
       "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
@@ -45279,6 +45343,7 @@
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
       "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
@@ -45537,6 +45602,7 @@
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
       "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
@@ -47252,6 +47318,7 @@
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
       "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
@@ -47358,6 +47425,7 @@
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
       "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
@@ -47676,6 +47744,7 @@
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
       "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
@@ -47953,6 +48022,7 @@
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
       "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
@@ -48027,6 +48097,7 @@
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
       "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
@@ -48353,6 +48424,9 @@
       "/news-output/news-output-google-play.md",
       "/sources/google_play.md"
     ],
+    "governance": [
+      "/projects/silver-core-sdk-doc-memory-governance.md"
+    ],
     "grep": [
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md"
     ],
@@ -48629,6 +48703,7 @@
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
       "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
@@ -48975,6 +49050,7 @@
       "/memory/project-status.md",
       "/memory/strategic-plan-2026.md",
       "/memory/style-guide.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md"
     ],
@@ -49328,6 +49404,7 @@
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
       "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
@@ -49593,6 +49670,7 @@
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
       "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
@@ -49657,6 +49735,7 @@
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
       "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
@@ -49779,6 +49858,7 @@
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
       "/projects/silver-core-sdk-doc-errors.md",
+      "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
