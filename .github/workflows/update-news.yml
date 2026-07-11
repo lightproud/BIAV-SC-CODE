@@ -2,8 +2,8 @@ name: Update Community News
 
 on:
   schedule:
-    # Run every hour
-    - cron: '0 * * * *'
+    # 每 3 小时一次（守密人 2026-07-11 降频裁定；原每小时）
+    - cron: '0 */3 * * *'
   workflow_dispatch:
 
 concurrency:

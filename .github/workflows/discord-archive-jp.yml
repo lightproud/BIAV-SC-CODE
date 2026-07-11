@@ -8,7 +8,7 @@ name: Discord Archive (JP)
 on:
   schedule:
     # 每小时一次，offset :45 错开 Global（每日 18:00）与志愿者（:15）
-    - cron: '45 * * * *'
+    - cron: '45 */3 * * *'
   workflow_dispatch:
 
 concurrency:

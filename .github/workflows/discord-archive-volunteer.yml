@@ -7,7 +7,7 @@ name: Discord Archive (Volunteer)
 on:
   schedule:
     # 每小时一次，offset :15 错开 Global（:00 增量 / :30 历史回填）
-    - cron: '15 * * * *'
+    - cron: '15 */3 * * *'
   workflow_dispatch:
 
 concurrency:
