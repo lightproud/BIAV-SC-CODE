@@ -27,6 +27,8 @@
 | T15 | SubagentStop 阻断语义（子代理级门控续跑）：现为 runtime 级 fire-and-log，黑池对子代理门控有真需求再评估 | 观察 | SDK `docs/COMPAT.md` hooks 表 Stop 行「ROOT LOOP ONLY」注 | 开 |
 | T19 | CI 硬门禁 Ruleset 勾选操作：**只勾 required `test`**（2026-07-11 裁定,修正 0710「维持自查自合」定谳与 0710 原案的 up-to-date 第二项）；GitHub Settings → Rules 为守密人手动操作,勾选生效前会话仍按自查自合执行 | 预算 | `memory/decisions.md` 2026-07-11 记忆系统条⑤ | 开 |
 | T20 | conformance 记忆轴官方臂差分采集：需守密人 dispatch 一轮带 memory tool 的官方臂 live 采集,回填 `tests/conformance-memory-axis.test.ts` 的 skip 槽位（mock 线缆锁与 live-smoke 第 3 阶段已常驻） | 预算 | SDK `tests/conformance-memory-axis.test.ts` 头注 + `docs/MEMORY.md` status 节 | 开 |
+| T21 | BPT 侧消费 v0.45.0+ 网络层三小项：① 升级依赖至 `silver-core-sdk-0.45.0.tgz` 及以上即自动获内建保活（零改码）；② 若走企业代理：两内建客户端均不认 `HTTPS_PROXY`，需按 `docs/PERFORMANCE.md` 配方注入 `provider.fetch`；③ `preconnect` 旋钮是否在 BPT 默认开启，真机浸泡后由黑池侧定 | 黑池输入 | `memory/decisions.md` 2026-07-11 网络层默认客户端条 + `projects/silver-core-sdk/docs/PERFORMANCE.md` | 开 |
+| T22 | 方案乙（HTTP/2）重估时机：undici `allowH2` 实测（2026-07-11）一请求一会话（零复用）或单会话流串行化（8 并发 SSE 223ms→1262ms），判死搁置；待 undici 上游实现真并发多路复用（多流并行同会话）再重估——收益面为 SessionManager 多会话并发场景 | 观察 | `memory/decisions.md` 2026-07-11 网络层默认客户端条④ + `projects/silver-core-sdk/docs/PERFORMANCE.md`「Why not HTTP/2」节 | 开 |
 
 ## 已清（销案引）
 
