@@ -2,8 +2,9 @@
 # Source roots mirror the --cov flags in .github/workflows/test.yml.
 [run]
 # Branch coverage on (P6, 2026-07-02): statement coverage alone hid a 5+pp gap
-# of executed-but-never-forked branches (error/degradation paths). The gate in
-# test.yml stays at 85 — this makes the dial honest, it does not tighten it.
+# of executed-but-never-forked branches (error/degradation paths). This makes
+# the dial honest, it does not tighten it (the gate lives in test.yml — 92
+# since the 2026-07-11 gap-fill sweep).
 branch = True
 source =
     scripts

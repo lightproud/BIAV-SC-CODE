@@ -110,3 +110,78 @@ def test_collect_empty_corpus(monkeypatch):
     monkeypatch.setattr(build_community_index, "iter_records",
                         lambda max_files=None: iter(()))
     assert bkv.collect(limit=100, max_files=None, min_len=8) == []
+
+
+# ---------- main CLI（嵌入 + 落盘路径，恒 stub 后端、零网络） ----------
+
+def _load_gz_index(path):
+    import gzip
+    import json
+    with gzip.open(path, "rt", encoding="utf-8") as fh:
+        return json.load(fh)
+
+
+def test_main_stub_backend_writes_index(tmp_path, monkeypatch, capsys):
+    """main() 全链路：合成流 → 分层采集 → stub 嵌入 → gzip 索引落 tmp（--out）。"""
+    _patch_stream(monkeypatch)
+    monkeypatch.delenv("VOYAGE_API_KEY", raising=False)
+    out = tmp_path / "kb_vectors.json.gz"
+    monkeypatch.setattr(sys, "argv",
+                        ["build_kb_vectors.py", "--limit", "30",
+                         "--backend", "stub", "--out", str(out)])
+    rc = bkv.main()
+    assert rc == 0
+    err = capsys.readouterr().err
+    assert "[build_kb_vectors] backend=stub" in err
+    assert "已写" in err
+
+    idx = _load_gz_index(out)
+    meta, items = idx["_meta"], idx["items"]
+    assert meta["backend"] == "stub" and meta["model"] == "stub"
+    assert meta["sampling"] == "stratified" and meta["data_layer"] == "full_archive"
+    assert meta["count"] == len(items) == 30
+    assert meta["dim"] == len(items[0]["vec"]) > 0
+    # 分层采样在 main 链路同样生效：三源均入索引
+    assert set(meta["per_source"]) == {"discord", "weibo", "taptap"}
+    # 放指针不放本体：行内只有 ref/preview，无 _text 全文
+    for it in items:
+        assert "_text" not in it
+        assert it["ref"] == f"{it['source']}:{it['date']}"
+        assert len(it["preview"]) <= 200
+
+
+def test_main_default_backend_falls_back_to_stub_without_key(tmp_path, monkeypatch, capsys):
+    """不传 --backend 且无 VOYAGE_API_KEY → default_backend()=stub（绝不触网）。"""
+    _patch_stream(monkeypatch)
+    monkeypatch.delenv("VOYAGE_API_KEY", raising=False)
+    out = tmp_path / "vec.json.gz"
+    monkeypatch.setattr(sys, "argv",
+                        ["build_kb_vectors.py", "--limit", "5", "--out", str(out)])
+    assert bkv.main() == 0
+    assert "backend=stub" in capsys.readouterr().err
+    assert _load_gz_index(out)["_meta"]["backend"] == "stub"
+
+
+def test_main_zero_collect_returns_1_and_writes_nothing(tmp_path, monkeypatch, capsys):
+    """零采集（语料缺失）→ rc=1、不落索引文件。"""
+    import build_community_index
+    monkeypatch.setattr(build_community_index, "iter_records",
+                        lambda max_files=None: iter(()))
+    monkeypatch.delenv("VOYAGE_API_KEY", raising=False)
+    out = tmp_path / "empty.json.gz"
+    monkeypatch.setattr(sys, "argv",
+                        ["build_kb_vectors.py", "--backend", "stub", "--out", str(out)])
+    assert bkv.main() == 1
+    assert "零采集" in capsys.readouterr().err
+    assert not out.exists()
+
+
+def test_embed_rows_batches_and_drops_fulltext(monkeypatch):
+    """embed_rows：分批嵌入、vec 落行、_text 丢弃（放指针不放本体）。"""
+    _patch_stream(monkeypatch)
+    rows = bkv.collect(limit=10, max_files=None, min_len=8)
+    items = bkv.embed_rows(rows, backend="stub", model="whatever")
+    assert len(items) == len(rows)
+    for it, r in zip(items, rows):
+        assert it["ref"] == r["ref"] and "_text" not in it
+        assert isinstance(it["vec"], list) and len(it["vec"]) > 0

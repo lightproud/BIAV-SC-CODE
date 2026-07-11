@@ -63,6 +63,34 @@ def test_boundary_enumeration_exact():
     assert b["grep_can_enumerate_bounded"] is False
 
 
+# ---------- CLI 入口 / 报告渲染冒烟（main + _print） ----------
+
+def test_main_prints_four_dimensions(monkeypatch, capsys):
+    """main() 默认路径：质性报告四维逐条打印（层/身份/边界/关系类型）。"""
+    monkeypatch.setattr(sys, "argv", ["kb_qual.py"])
+    kb_qual.main()
+    out = capsys.readouterr().out
+    assert "KB 质性能力报告" in out
+    assert "层判定" in out
+    assert "身份" in out
+    assert "边界枚举" in out
+    assert "类型化关系" in out
+    assert "4/4" in out  # KB 交付全部四维
+
+
+def test_main_json_summary_only(monkeypatch, capsys):
+    """--json 机读路径：只输出三项汇总（维度计数），不带四维明细。"""
+    import json
+
+    monkeypatch.setattr(sys, "argv", ["kb_qual.py", "--json"])
+    kb_qual.main()
+    rep = json.loads(capsys.readouterr().out)
+    assert set(rep) == {"dimensions_kb_delivers", "dimensions_total",
+                        "dimensions_grep_delivers"}
+    assert rep["dimensions_kb_delivers"] == rep["dimensions_total"] == 4
+    assert rep["dimensions_grep_delivers"] == 0
+
+
 if __name__ == "__main__":
     import pytest
     pytest.main([__file__, "-v"])
