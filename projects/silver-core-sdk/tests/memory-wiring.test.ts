@@ -29,7 +29,7 @@ import {
 import { ConfigurationError } from '../src/errors.js';
 import { encodeOpenAIRequest } from '../src/transport/openai.js';
 import { resolveMemoryRuntime } from '../src/tools/memory/index.js';
-import { MEMORY_PROTOCOL_FRAGMENT } from '../src/engine/prompt-fragments.js';
+import { MEMORY_PITFALLS_FRAGMENT, MEMORY_PROTOCOL_FRAGMENT } from '../src/engine/prompt-fragments.js';
 import type { Options, SDKMessage, SDKResultMessage } from '../src/types.js';
 import { makeSSEFetch, type SSEFetchStub } from './helpers/sse-fetch.js';
 import { textReplyEvents, toolUseReplyEvents } from './helpers/mock-transport.js';
@@ -187,6 +187,91 @@ describe('memory mode B (custom tool)', () => {
     expect(system).toContain('Only record facts about the SDK.');
     // The injected fragment is the docs-faithful reproduction.
     expect(MEMORY_PROTOCOL_FRAGMENT.faithful).toBe(true);
+  });
+});
+
+describe('memory pitfall recording protocol (SCS-REQ-002 Phase 0 / REQ-3.2)', () => {
+  it('is disabled by default — no pitfall text in the system prompt', async () => {
+    const stub = makeSSEFetch([textReplyEvents('ok')]);
+    await collect(
+      'hi',
+      baseOptions(stub, { memory: { mode: 'custom', sessionEndUpdate: false } }),
+    );
+    const system = JSON.stringify(stub.requests[0]!.body['system']);
+    expect(system).not.toContain('PITFALL RECORDING');
+  });
+
+  it('pitfalls: true injects the fragment with the /memories/pitfalls/ convention and the stripping rule', async () => {
+    const stub = makeSSEFetch([textReplyEvents('ok')]);
+    await collect(
+      'hi',
+      baseOptions(stub, {
+        memory: { mode: 'custom', sessionEndUpdate: false, pitfalls: true },
+      }),
+    );
+    const system = JSON.stringify(stub.requests[0]!.body['system']);
+    expect(system).toContain('PITFALL RECORDING:');
+    expect(system).toContain('/memories/pitfalls/');
+    // The stripping rule (technical facts only, nothing evaluative about people).
+    expect(system).toContain('TECHNICAL FACTS ONLY');
+    expect(system).toContain('evaluative statements about any person');
+    // sdk-original guidance, not an archive reproduction.
+    expect(MEMORY_PITFALLS_FRAGMENT.faithful).toBe(false);
+  });
+
+  it('applies in NATIVE mode too, without doubling the base protocol fragment', async () => {
+    const stub = makeSSEFetch([textReplyEvents('ok')]);
+    await collect(
+      'hi',
+      baseOptions(stub, {
+        memory: { mode: 'native', sessionEndUpdate: false, pitfalls: true },
+      }),
+    );
+    const system = JSON.stringify(stub.requests[0]!.body['system']);
+    expect(system).toContain('PITFALL RECORDING:');
+    // Native mode: the base protocol prompt stays API-side (R5) — the SDK
+    // must not inject it even when pitfalls is on.
+    expect(system).not.toContain('ALWAYS VIEW YOUR MEMORY DIRECTORY BEFORE DOING ANYTHING ELSE.');
+  });
+
+  it('the object form appends extra consumer guidance after the fragment', async () => {
+    const stub = makeSSEFetch([textReplyEvents('ok')]);
+    await collect(
+      'hi',
+      baseOptions(stub, {
+        memory: {
+          mode: 'custom',
+          sessionEndUpdate: false,
+          pitfalls: { instructions: 'File SDK pitfalls under /memories/pitfalls/sdk/.' },
+        },
+      }),
+    );
+    const system = JSON.stringify(stub.requests[0]!.body['system']);
+    expect(system).toContain('PITFALL RECORDING:');
+    expect(system).toContain('File SDK pitfalls under /memories/pitfalls/sdk/.');
+  });
+
+  it('resolveMemoryRuntime: default null; incognito forces null even when requested', () => {
+    const off = resolveMemoryRuntime({ memory: {}, cwd, protocol: 'anthropic', debug: () => {} });
+    expect(off.pitfalls).toBeNull();
+
+    const on = resolveMemoryRuntime({
+      memory: { pitfalls: true },
+      cwd,
+      protocol: 'anthropic',
+      debug: () => {},
+    });
+    expect(on.pitfalls).toEqual({ extra: '' });
+
+    // S2: a write protocol contradicts a read-only incognito session.
+    const incognito = resolveMemoryRuntime({
+      memory: { pitfalls: true },
+      cwd,
+      protocol: 'anthropic',
+      incognito: true,
+      debug: () => {},
+    });
+    expect(incognito.pitfalls).toBeNull();
   });
 });
 

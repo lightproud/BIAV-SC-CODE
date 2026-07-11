@@ -57,6 +57,7 @@ src/
 | 构建 | `npm run build`（ESM + d.ts → dist/） |
 | 单测 | `npm test`（vitest，mock 传输层，零网络；含仿真器端到端集成测试） |
 | 真机 smoke | `ANTHROPIC_API_KEY=... node tests/integration/live-real-api.mjs`（需先 `npm run build`；打真 api.anthropic.com） |
+| 双层评估 runEvals（SCS-REQ-002 环二） | `node scripts/run-evals.mjs`（底线层 = 全量 vitest pass/fail；行为层 = `evals/` 20 题 + `claude-sonnet-5` 判卷，无 key 走 STUB 验管线。评估集为守密人定稿权保护路径，任何改动须 `node scripts/update-evals-manifest.mjs` 重签清单，否则治理测试红） |
 
 ## 测试三层
 

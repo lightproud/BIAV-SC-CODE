@@ -66,6 +66,7 @@ import { SessionAccounting } from './query-accounting.js';
 import { appendSystemInjection, buildEngineConfig } from './engine/config-builder.js';
 import {
   MEMORY_COMPACTION_FLUSH_PROMPT,
+  MEMORY_PITFALLS_FRAGMENT,
   MEMORY_PROTOCOL_FRAGMENT,
   MEMORY_SESSION_END_PROMPT,
 } from './engine/prompt-fragments.js';
@@ -920,6 +921,20 @@ export function query(args: {
         const parts: Array<{ label: string; text: string }> = [];
         if (memory.mode === 'custom') {
           parts.push({ label: 'memory-protocol', text: MEMORY_PROTOCOL_FRAGMENT.text });
+        }
+        // Phase 0 (REQ-3.2): the pitfall-recording protocol applies in BOTH
+        // modes — it layers consumer guidance (WHAT to record) on top of the
+        // base protocol (HOW the tool works), so it never doubles the
+        // API-injected native-mode prompt.
+        if (memory.pitfalls !== null) {
+          const extra = memory.pitfalls.extra;
+          parts.push({
+            label: 'memory-pitfalls',
+            text:
+              extra.length > 0
+                ? `${MEMORY_PITFALLS_FRAGMENT.text}\n${extra}`
+                : MEMORY_PITFALLS_FRAGMENT.text,
+          });
         }
         // Consumer guidance applies in BOTH modes (the docs' "guide what
         // Claude writes to memory" prompting pattern).

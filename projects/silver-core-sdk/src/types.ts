@@ -1434,6 +1434,20 @@ export type MemoryOptions = {
    * disable.
    */
   sessionEndUpdate?: boolean;
+  /**
+   * Pitfall recording protocol (self-improvement spec SCS-REQ-002 Phase 0 /
+   * REQ-3.2): inject an sdk-original system-prompt fragment instructing the
+   * model to record non-obvious failures ("pitfalls") under
+   * `/memories/pitfalls/` — one file per distinct pitfall with symptom, root
+   * cause, fix and avoidance — restricted to technical facts (the stripping
+   * rule: no evaluative statements about people, no PII beyond what the fix
+   * requires). Applies in BOTH assembly modes (it is consumer guidance layered
+   * on top of the base protocol, not a duplicate of it). The object form
+   * appends extra guidance after the default text. Never injected on an
+   * incognito session (memory is read-only there; a write protocol would
+   * contradict it). Default: disabled.
+   */
+  pitfalls?: boolean | { instructions?: string };
 };
 
 /**

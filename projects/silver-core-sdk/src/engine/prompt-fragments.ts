@@ -63,6 +63,35 @@ export const MEMORY_PROTOCOL_FRAGMENT: PromptFragment = {
 };
 
 /**
+ * Pitfall recording protocol (self-improvement spec SCS-REQ-002 Phase 0 /
+ * REQ-3.2, sdk-original): opt-in via MemoryOptions.pitfalls. Layered ON TOP
+ * of the base memory protocol in both assembly modes — it directs WHAT to
+ * record (pitfalls, technical facts only), not HOW the memory tool works, so
+ * it never duplicates the API-injected native-mode prompt. The stripping rule
+ * mirrors the nightly-synthesis pipeline's: technical facts only, nothing
+ * evaluative about people.
+ */
+export const MEMORY_PITFALLS_FRAGMENT: PromptFragment = {
+  id: 'memory-pitfalls',
+  slug: 'sdk-original',
+  faithful: false,
+  gate: (has) => has('memory'),
+  text:
+    'PITFALL RECORDING:\n' +
+    'When you hit a pitfall — an error whose cause was not obvious, a wrong assumption ' +
+    'that cost you work, or a tool/API behaving differently than documented — record it ' +
+    'under /memories/pitfalls/ before moving on: one file per distinct pitfall, ' +
+    'kebab-case filename.\n' +
+    'Each record states: the symptom, the root cause, the fix or workaround, and how to ' +
+    'avoid it next time.\n' +
+    'Record TECHNICAL FACTS ONLY: never include evaluative statements about any person ' +
+    '(the user, colleagues, yourself), and no personal data beyond what the fix ' +
+    'technically requires.\n' +
+    'Update an existing pitfall file instead of duplicating it; delete records that turn ' +
+    'out to be wrong. Do not record ordinary failures whose cause was immediately obvious.',
+};
+
+/**
  * Memory compaction-flush prompt (spec R7, sdk-original): injected as a USER
  * turn when auto-compaction is about to fold, so the model gets one write
  * opportunity for un-saved progress. Explicitly tells the model to CONTINUE

@@ -16,6 +16,24 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.49.0 — 2026-07-11
+
+**Self-improvement loop Phase 0 + Phase 1 landing (SCS-REQ-002).** Phase 0
+(REQ-3.2): `options.memory.pitfalls` opt-in injects the sdk-original
+pitfall-recording protocol — non-obvious failures go to `/memories/pitfalls/`
+(one kebab-case file per pitfall: symptom / root cause / fix / avoidance),
+technical facts only (stripping rule: nothing evaluative about people, no
+PII), applies in both assembly modes, forced off on incognito sessions
+(`MEMORY_PITFALLS_FRAGMENT`, `MemoryRuntime.pitfalls`). Phase 1 (REQ-2.1,
+non-shipped tooling): `evals/` maintainer-curated behavior set (20 questions
+r0 draft, 3 dimensions, hybrid sourcing per keeper ruling 2026-07-11) with
+tamper-evidence manifest (`scripts/update-evals-manifest.mjs` +
+`tests/evals-governance.test.ts`), pinned judge contract
+(`evals/judge-prompt.md`, judge model `claude-sonnet-5`), and the two-layer
+runner `scripts/run-evals.mjs` (baseline = full vitest pass/fail; behavior =
+per-question harness + LLM grading; STUB mode without a key; PENDING_HARNESS
+questions named explicitly, never silently skipped). +11 tests.
+
 ## 0.48.10 — 2026-07-11
 
 **World-class review pass (cont.), shell resolution**: a non-existent ABSOLUTE

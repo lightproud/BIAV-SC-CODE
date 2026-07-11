@@ -171,6 +171,22 @@ injected stores must still not trust incoming paths (spec §8.6).
   layout is unchanged: the injection lands inside the existing stable-tail
   breakpoint (see `appendSystemInjection`).
 
+## Pitfall recording (SCS-REQ-002 Phase 0 / REQ-3.2)
+
+Opt-in via `options.memory.pitfalls` (`true`, or `{ instructions }` to append
+extra guidance). Injects the sdk-original `MEMORY_PITFALLS_FRAGMENT`: record
+non-obvious failures under `/memories/pitfalls/` — one kebab-case file per
+distinct pitfall with symptom / root cause / fix / avoidance — **technical
+facts only** (the stripping rule: nothing evaluative about any person, no PII
+beyond what the fix requires; mirrors the nightly-synthesis pipeline's rule).
+Applies in BOTH assembly modes (it directs WHAT to record, layered on top of
+the base protocol, so it never doubles the API-injected native prompt).
+Forced off on incognito sessions (S2: memory is read-only there). This is the
+zero-code-change quality ramp of the self-improvement loop
+(`memory/active/self-improvement-requirements.md` Phase 0); its record
+quality over ~2 weeks of runtime is the go/no-go signal for loop 3
+(acceptance: >= 10 reviewable records in `memory/pitfalls/`).
+
 ## Module map
 
 | Piece | Location |
