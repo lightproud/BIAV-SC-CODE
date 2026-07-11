@@ -14,7 +14,7 @@
 * [社区档案 community](/community/index.md) - 16 concept · 全量档案分析镜头（full_archive）
 * [输出展示 news-output](/news-output/index.md) - 23 concept · 抽样展示层（output）
 * [解包 unpacked](/unpacked/index.md) - 13 concept · 客户端一手 text 指针（full_archive）
-* [解包上游 extracted](/extracted/index.md) - 4 concept · processed 权威上游（full_archive）
+* [解包上游 extracted](/extracted/index.md) - 3 concept · processed 权威上游（full_archive）
 * [产物 resource](/resource/index.md) - 85 concept · 银芯正式报告/分析指针
 * [子项目 projects](/projects/index.md) - 27 concept · CONTEXT/藏宝图/工程文档指针
 

@@ -86,8 +86,9 @@ site 维护稳定，game 暂缓。实时进度与子项目状态以 `memory/proj
    **T3 维护回填**（`repair_gaps` / `backfill_*` / `download_media` 等）。
    总数据流：原始数据 → 全量档案层（社区 text `Public-Info-Pool/Record/Community/`）→ 过滤选样进输出展示层
    (`projects/news/output/`) → 单向送黑池。机器提交带 `[skip ci]` 防触发循环。
-2. **wiki 自举闭环**（使命#2）：客户端解包 Lua → `projects/wiki/data/extracted/`
-   原始字段 → 脚本 / 人工补齐结构化角色基线（72 角色）→ VitePress 构建社区 Wiki 站点。
+2. **wiki 自举闭环**（使命#2）：客户端解包 Lua → `Public-Info-Pool/Reference/Game-Unpacked/`
+   原始字段（2026-07-11 去重裁定后唯一本体；wiki 侧 `projects/wiki/data/extracted/` 仅余
+   art_assets 等独占件）→ 脚本 / 人工补齐结构化角色基线（72 角色）→ VitePress 构建社区 Wiki 站点。
    **当前状态**：旧结构化层（`characters.json` 全 6 JSON + 派生角色页，原在 data/db/）2026-06-15 守密人裁定整层清空
    （占位数据长期误导引用）；W2 **可信基线已重建**于 `projects/wiki/data/processed/characters.json`（72 真实角色、一手解包、
    **无合成占位**），`scripts/generate_wiki_pages.py` 已据此生成 58 个真实唤醒体静态页、站点构建通过。
@@ -222,7 +223,7 @@ git commit = 数据归档提交 / git push = 同步至远端存储 /
 
 - 人格：`assets/data/character-personas/erica.json`（角色卡 v1.1）+ `assets/data/character-personas/erica-speech-canon.md`（Voice.lua 一手 + 8 节归纳）
 - 采访 / 叙事 / 设计：`assets/data/interview-2026-04.json`（53 问）· `assets/data/narrative-structure.json` · `assets/data/design-decisions.json` · `assets/data/card-system.json`
-- 角色基线（自举源）：`projects/wiki/data/extracted/categorized/character_data.txt`（72 角色原始字段）；W2 可信基线 `projects/wiki/data/processed/characters.json`，进度见 `memory/project-status.md`
+- 角色基线（自举源）：`Public-Info-Pool/Reference/Game-Unpacked/全部游戏数据/角色数据_AwakerConfig.txt`（72 角色原始字段；2026-07-11 去重后唯一本体，原 wiki 侧 categorized 副本已删）；W2 可信基线 `projects/wiki/data/processed/characters.json`，进度见 `memory/project-status.md`
 - 剧情结构层：`projects/wiki/data/processed/story/`（`story_units` / `lore_entries` / `index`，`scripts/build_story_layer.py` 生成）+ `STORY_RESEARCH.md`（社区源深研，采信看置信标签）+ `story_search_index.json`（`scripts/build_story_index.py` 重建，分词 `scripts/silver_tokenizer.py`）
 - 世界观：`memory/morimens-context.md`（术语 + 历史时间线）
 

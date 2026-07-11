@@ -19,18 +19,15 @@ import build_story_layer as bsl
 # --- load_desc --------------------------------------------------------------
 
 def test_load_desc_parses_collection_lines(tmp_path, monkeypatch):
-    f = tmp_path / "collection_story.txt"
+    f = tmp_path / "收藏馆_CollectionHall.txt"
     f.write_text(
         "CollectionHall_12_Desc|some desc text\n"
         "CollectionHall_34_Desc|另一段描述|含管道\n"
         " unrelated line\n"
         "CollectionHall_bad_Desc|skip\n",
         encoding="utf-8")
-    # load_desc opens f'{EXTRACTED}/categorized/collection_story.txt'
-    monkeypatch.setattr(bsl, "EXTRACTED", str(tmp_path))
-    (tmp_path / "categorized").mkdir()
-    (tmp_path / "categorized" / "collection_story.txt").write_text(
-        f.read_text(encoding="utf-8"), encoding="utf-8")
+    # load_desc opens the module-level DESC_SRC path
+    monkeypatch.setattr(bsl, "DESC_SRC", str(f))
     descs = bsl.load_desc()
     assert descs[12] == "some desc text"
     assert descs[34] == "另一段描述|含管道"

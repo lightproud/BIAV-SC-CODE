@@ -503,7 +503,7 @@ def build_extracted() -> list[dict]:
         nfiles = sum(1 for _ in d.rglob("*") if _.is_file())
         entries.append({
             "id": f"extracted-{slug(d.name)}", "type": "dataset", "title": d.name,
-            "description": f"一手可读解包源「{d.name}」：{nfiles} 文件 / {_size_of(d)}。processed/*.json 的上游权威（血缘：extracted 原始→processed 派生）。",
+            "description": f"一手可读解包源 wiki 侧独占件「{d.name}」：{nfiles} 文件 / {_size_of(d)}。与 Game-Unpacked 重复的主体已于 2026-07-11 去重（唯一本体见 unpacked 层），此处仅余 Game-Unpacked 没有的独占内容。",
             "resource": _rel(d) + "/",
             "tags": ["data_layer:full_archive", "first-hand-unpack", "upstream-of:processed", f"content:{slug(d.name)}"],
         })
@@ -515,8 +515,9 @@ def build_extracted() -> list[dict]:
             "description": blurb or "解包一手层说明与数据血缘。", "resource": _rel(rd),
             "tags": ["data_layer:curated", "documentation"],
         })
-    return write_layer("extracted", entries, "解包一手可读源（processed 上游）",
-                       "projects/wiki/data/extracted/ 一手可读解包源指针（明文 lua 表 + 分类 txt），processed 派生层的权威上游。")
+    return write_layer("extracted", entries, "解包一手可读源（wiki 侧独占残件）",
+                       "projects/wiki/data/extracted/ wiki 侧独占解包件指针（art_assets 清单 + categorized 独占 txt）；"
+                       "lua_tables / categorized 主体 2026-07-11 去重后唯一本体在 Public-Info-Pool/Reference/Game-Unpacked/（unpacked 层）。")
 
 
 # ---------------------------------------------------------------------------

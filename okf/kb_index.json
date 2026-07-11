@@ -7,12 +7,12 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 359,
+    "concepts": 358,
     "edges": 415,
-    "terms": 6162,
+    "terms": 6172,
     "by_type": {
       "character": 72,
-      "dataset": 109,
+      "dataset": 108,
       "documentation": 113,
       "knowledge-pointer": 45,
       "reference": 17,
@@ -22,7 +22,7 @@
       "assets": 12,
       "characters": 72,
       "community": 16,
-      "extracted": 4,
+      "extracted": 3,
       "memory": 48,
       "news-output": 23,
       "projects": 27,
@@ -34,7 +34,7 @@
     },
     "by_tier": {
       "skeleton": 131,
-      "search": 228
+      "search": 227
     }
   },
   "sections": {
@@ -52,7 +52,7 @@
     },
     "extracted": {
       "index": "/extracted/index.md",
-      "count": 4
+      "count": 3
     },
     "memory": {
       "index": "/memory/index.md",
@@ -1507,7 +1507,7 @@
     "/extracted/extracted-art-assets.md": {
       "type": "dataset",
       "title": "art_assets",
-      "description": "一手可读解包源「art_assets」：2 文件 / 2.6MB。processed/*.json 的上游权威（血缘：extracted 原始→processed 派生）。",
+      "description": "一手可读解包源 wiki 侧独占件「art_assets」：2 文件 / 2.6MB。与 Game-Unpacked 重复的主体已于 2026-07-11 去重（唯一本体见 unpacked 层），此处仅余 Game-Unpacked 没有的独占内容。",
       "resource": "/projects/wiki/data/extracted/art_assets/",
       "tags": [
         "data_layer:full_archive",
@@ -1522,28 +1522,13 @@
     "/extracted/extracted-categorized.md": {
       "type": "dataset",
       "title": "categorized",
-      "description": "一手可读解包源「categorized」：14 文件 / 22.8MB。processed/*.json 的上游权威（血缘：extracted 原始→processed 派生）。",
+      "description": "一手可读解包源 wiki 侧独占件「categorized」：2 文件 / 2.2MB。与 Game-Unpacked 重复的主体已于 2026-07-11 去重（唯一本体见 unpacked 层），此处仅余 Game-Unpacked 没有的独占内容。",
       "resource": "/projects/wiki/data/extracted/categorized/",
       "tags": [
         "data_layer:full_archive",
         "first-hand-unpack",
         "upstream-of:processed",
         "content:categorized"
-      ],
-      "section": "extracted",
-      "tier": "search",
-      "degree": 0
-    },
-    "/extracted/extracted-lua-tables.md": {
-      "type": "dataset",
-      "title": "lua_tables",
-      "description": "一手可读解包源「lua_tables」：24 文件 / 18.7MB。processed/*.json 的上游权威（血缘：extracted 原始→processed 派生）。",
-      "resource": "/projects/wiki/data/extracted/lua_tables/",
-      "tags": [
-        "data_layer:full_archive",
-        "first-hand-unpack",
-        "upstream-of:processed",
-        "content:lua-tables"
       ],
       "section": "extracted",
       "tier": "search",
@@ -9829,7 +9814,6 @@
       "/community/community-youtube.md",
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/memory/memory-ext-capability-annotations.md",
       "/memory/memory-ext-capability-registry.md",
       "/memory/memory-ext-session-continuity.md",
@@ -10279,7 +10263,6 @@
       "/community/community-youtube.md",
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/memory/decisions-archive.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
@@ -11068,7 +11051,6 @@
       "/community/community-youtube.md",
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/extracted/extracted-readme.md",
       "/memory/capability-index.md",
       "/memory/contribution-protocol.md",
@@ -11354,7 +11336,6 @@
     "content": [
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/unpacked/unpacked-config.md",
       "/unpacked/unpacked-ejoysdk-lua.md",
       "/unpacked/unpacked-foundation.md",
@@ -11773,7 +11754,6 @@
       "/community/community-youtube.md",
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/extracted/extracted-readme.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
@@ -12472,7 +12452,6 @@
     "extracted": [
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/extracted/extracted-readme.md",
       "/projects/extracted-lua-inventory.md",
       "/projects/extracted-lua-readme.md"
@@ -12537,7 +12516,6 @@
     "first": [
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/unpacked/unpacked-config.md",
       "/unpacked/unpacked-ejoysdk-lua.md",
       "/unpacked/unpacked-foundation.md",
@@ -12613,7 +12591,6 @@
       "/community/community-youtube.md",
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/news-output/news-output-appstore.md",
       "/news-output/news-output-arca-live.md",
       "/news-output/news-output-bahamut.md",
@@ -12731,6 +12708,8 @@
       "/wiki-data/wiki-data-cg-gallery.md"
     ],
     "game": [
+      "/extracted/extracted-art-assets.md",
+      "/extracted/extracted-categorized.md",
       "/memory/memory-ext-research-best-wiki-features.md",
       "/projects/project-game.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
@@ -12935,7 +12914,6 @@
     "hand": [
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/unpacked/unpacked-config.md",
       "/unpacked/unpacked-ejoysdk-lua.md",
       "/unpacked/unpacked-foundation.md",
@@ -13333,9 +13311,6 @@
       "/assets/persona-erica.md",
       "/community/community-index.md",
       "/community/community-timeline.md",
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/memory/memory-ext-capability-annotations.md",
       "/memory/memory-ext-capability-registry.md",
       "/memory/memory-ext-session-continuity.md",
@@ -13555,7 +13530,6 @@
       "/community/community-youtube.md",
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/extracted/extracted-readme.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
@@ -13985,7 +13959,6 @@
       "/wiki-data/wiki-data-world-lore.md"
     ],
     "lua": [
-      "/extracted/extracted-lua-tables.md",
       "/extracted/extracted-readme.md",
       "/projects/extracted-lua-inventory.md",
       "/projects/extracted-lua-readme.md",
@@ -14106,7 +14079,6 @@
       "/assets/assets-images.md",
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/unpacked/unpacked-config.md",
       "/unpacked/unpacked-ejoysdk-lua.md",
       "/unpacked/unpacked-game-data-all.md",
@@ -15050,7 +15022,6 @@
     "processed": [
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/story/STORY_RESEARCH.md",
       "/story/character_story_links.md",
       "/story/lore_by_unit.md",
@@ -15120,7 +15091,6 @@
       "/community/community-timeline.md",
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/extracted/extracted-readme.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-build-verification.md",
       "/news-output/news-output-all.md",
@@ -16529,7 +16499,6 @@
       "/projects/news-archive-sources-registry.md"
     ],
     "tables": [
-      "/extracted/extracted-lua-tables.md",
       "/unpacked/unpacked-lua-tables.md"
     ],
     "tags": [
@@ -16810,7 +16779,6 @@
     "unpack": [
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/unpacked/unpacked-config.md",
       "/unpacked/unpacked-ejoysdk-lua.md",
       "/unpacked/unpacked-foundation.md",
@@ -16826,6 +16794,8 @@
       "/unpacked/unpacked-vue.md"
     ],
     "unpacked": [
+      "/extracted/extracted-art-assets.md",
+      "/extracted/extracted-categorized.md",
       "/projects/releases-treasure-map.md",
       "/unpacked/unpacked-config.md",
       "/unpacked/unpacked-ejoysdk-lua.md",
@@ -16884,8 +16854,7 @@
     ],
     "upstream": [
       "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md"
+      "/extracted/extracted-categorized.md"
     ],
     "use": [
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
@@ -17062,7 +17031,6 @@
     "wiki": [
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/extracted/extracted-readme.md",
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
@@ -17258,7 +17226,6 @@
     "一手": [
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/unpacked/unpacked-config.md",
       "/unpacked/unpacked-ejoysdk-lua.md",
       "/unpacked/unpacked-foundation.md",
@@ -17290,6 +17257,10 @@
     ],
     "一文": [
       "/README.md"
+    ],
+    "一本": [
+      "/extracted/extracted-art-assets.md",
+      "/extracted/extracted-categorized.md"
     ],
     "一权": [
       "/memory/memory-ext-todo.md",
@@ -17469,9 +17440,6 @@
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md"
     ],
     "上游": [
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
     ],
     "上烈": [
@@ -17652,7 +17620,6 @@
       "/community/community-youtube.md",
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/extracted/extracted-readme.md",
       "/memory/capability-index.md",
       "/memory/contribution-protocol.md",
@@ -17923,7 +17890,6 @@
       "/community/community-youtube.md",
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/extracted/extracted-readme.md",
       "/memory/capability-index.md",
       "/memory/contribution-protocol.md",
@@ -18298,7 +18264,6 @@
       "/community/community-youtube.md",
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/extracted/extracted-readme.md",
       "/news-output/news-output-all.md",
       "/news-output/news-output-appstore.md",
@@ -18931,6 +18896,8 @@
       "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md"
     ],
     "主体": [
+      "/extracted/extracted-art-assets.md",
+      "/extracted/extracted-categorized.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
@@ -19483,6 +19450,10 @@
     "仁爱": [
       "/characters/15599.md"
     ],
+    "仅余": [
+      "/extracted/extracted-art-assets.md",
+      "/extracted/extracted-categorized.md"
+    ],
     "仅供": [
       "/memory/contribution-protocol.md"
     ],
@@ -19533,7 +19504,6 @@
       "/community/community-youtube.md",
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/extracted/extracted-readme.md",
       "/news-output/news-output-all.md",
       "/news-output/news-output-appstore.md",
@@ -20463,6 +20433,10 @@
     "体差": [
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
     ],
+    "体已": [
+      "/extracted/extracted-art-assets.md",
+      "/extracted/extracted-categorized.md"
+    ],
     "体效": [
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
     ],
@@ -20500,7 +20474,6 @@
       "/community/community-youtube.md",
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/extracted/extracted-readme.md",
       "/news-output/news-output-all.md",
       "/news-output/news-output-appstore.md",
@@ -20688,6 +20661,10 @@
     "体覆": [
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md"
     ],
+    "体见": [
+      "/extracted/extracted-art-assets.md",
+      "/extracted/extracted-categorized.md"
+    ],
     "体观": [
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md"
     ],
@@ -20722,7 +20699,6 @@
       "/community/community-youtube.md",
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/extracted/extracted-readme.md",
       "/memory/capability-index.md",
       "/memory/contribution-protocol.md",
@@ -21255,6 +21231,10 @@
     ],
     "侧构": [
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md"
+    ],
+    "侧独": [
+      "/extracted/extracted-art-assets.md",
+      "/extracted/extracted-categorized.md"
     ],
     "侵蚀": [
       "/characters/77923.md"
@@ -21881,6 +21861,8 @@
       "/characters/15569.md"
     ],
     "内容": [
+      "/extracted/extracted-art-assets.md",
+      "/extracted/extracted-categorized.md",
       "/memory/capability-index.md",
       "/memory/contribution-protocol.md",
       "/memory/decisions-archive.md",
@@ -22642,7 +22624,6 @@
       "/community/community-youtube.md",
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/extracted/extracted-readme.md",
       "/news-output/news-output-all.md",
       "/news-output/news-output-appstore.md",
@@ -23115,7 +23096,6 @@
     "包源": [
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md"
     ],
     "包结": [
@@ -23406,6 +23386,14 @@
     "卖点": [
       "/README.md"
     ],
+    "占件": [
+      "/extracted/extracted-art-assets.md",
+      "/extracted/extracted-categorized.md"
+    ],
+    "占内": [
+      "/extracted/extracted-art-assets.md",
+      "/extracted/extracted-categorized.md"
+    ],
     "卡付": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md"
     ],
@@ -23622,9 +23610,6 @@
     "原始": [
       "/README.md",
       "/assets/assets-chat-onboarding-snippet.md",
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/memory/memory-ext-biav-info-classification.md",
       "/sources/appstore.md",
       "/sources/arca_live.md",
@@ -23665,6 +23650,10 @@
     ],
     "去大": [
       "/characters/77923.md"
+    ],
+    "去重": [
+      "/extracted/extracted-art-assets.md",
+      "/extracted/extracted-categorized.md"
     ],
     "参照": [
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
@@ -24308,7 +24297,6 @@
     "可读": [
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/memory/memory-ext-knowledge-layer-design.md",
       "/story/story_units.md"
     ],
@@ -25049,6 +25037,8 @@
     ],
     "唯一": [
       "/README.md",
+      "/extracted/extracted-art-assets.md",
+      "/extracted/extracted-categorized.md",
       "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-skill-authoring-standard.md",
       "/memory/memory-ext-todo.md",
@@ -25784,6 +25774,10 @@
     "处于": [
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md"
     ],
+    "处仅": [
+      "/extracted/extracted-art-assets.md",
+      "/extracted/extracted-categorized.md"
+    ],
     "处理": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md",
@@ -25846,7 +25840,6 @@
       "/community/community-youtube.md",
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/extracted/extracted-readme.md",
       "/memory/capability-index.md",
       "/memory/contribution-protocol.md",
@@ -26108,6 +26101,8 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
     ],
     "复的": [
+      "/extracted/extracted-art-assets.md",
+      "/extracted/extracted-categorized.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
     ],
     "复自": [
@@ -26646,7 +26641,6 @@
       "/community/community-youtube.md",
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/extracted/extracted-readme.md",
       "/memory/capability-index.md",
       "/memory/contribution-protocol.md",
@@ -27328,7 +27322,6 @@
       "/community/community-youtube.md",
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/extracted/extracted-readme.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-bpt-positioning.md",
@@ -28480,6 +28473,8 @@
       "/characters/15585.md"
     ],
     "已于": [
+      "/extracted/extracted-art-assets.md",
+      "/extracted/extracted-categorized.md",
       "/memory/memory-ext-active-policy-direct-push-main.md"
     ],
     "已从": [
@@ -30600,8 +30595,7 @@
     ],
     "手可": [
       "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md"
+      "/extracted/extracted-categorized.md"
     ],
     "手得": [
       "/characters/15583.md"
@@ -31146,7 +31140,6 @@
       "/community/community-youtube.md",
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/extracted/extracted-readme.md",
       "/memory/capability-index.md",
       "/memory/contribution-protocol.md",
@@ -31773,7 +31766,6 @@
       "/community/community-youtube.md",
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/extracted/extracted-readme.md",
       "/news-output/news-output-all.md",
       "/news-output/news-output-appstore.md",
@@ -32077,7 +32069,6 @@
       "/community/community-youtube.md",
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/extracted/extracted-readme.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
@@ -32488,7 +32479,6 @@
       "/community/community-youtube.md",
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/extracted/extracted-readme.md",
       "/memory/capability-index.md",
       "/memory/contribution-protocol.md",
@@ -32780,7 +32770,6 @@
       "/community/community-youtube.md",
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/extracted/extracted-readme.md",
       "/memory/capability-index.md",
       "/memory/contribution-protocol.md",
@@ -33329,7 +33318,6 @@
       "/assets/assets-narrative-structure.md",
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-storage-discussion.md",
       "/memory/memory-ext-active-self-improvement-requirements.md",
@@ -34318,6 +34306,8 @@
     "有的": [
       "/characters/54116.md",
       "/characters/54117.md",
+      "/extracted/extracted-art-assets.md",
+      "/extracted/extracted-categorized.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
     ],
     "有着": [
@@ -34487,7 +34477,6 @@
       "/community/community-youtube.md",
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/extracted/extracted-readme.md",
       "/memory/capability-index.md",
       "/memory/contribution-protocol.md",
@@ -34920,7 +34909,6 @@
       "/community/community-youtube.md",
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/extracted/extracted-readme.md",
       "/memory/capability-index.md",
       "/memory/contribution-protocol.md",
@@ -35566,7 +35554,6 @@
       "/community/community-youtube.md",
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/extracted/extracted-readme.md",
       "/news-output/news-output-all.md",
       "/news-output/news-output-appstore.md",
@@ -36279,7 +36266,6 @@
       "/community/community-youtube.md",
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/extracted/extracted-readme.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md",
       "/news-output/news-output-all.md",
@@ -36625,7 +36611,6 @@
       "/community/community-youtube.md",
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/extracted/extracted-readme.md",
       "/memory/capability-index.md",
       "/memory/contribution-protocol.md",
@@ -36883,6 +36868,10 @@
     ],
     "此单": [
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md"
+    ],
+    "此处": [
+      "/extracted/extracted-art-assets.md",
+      "/extracted/extracted-categorized.md"
     ],
     "此线": [
       "/README.md"
@@ -37307,9 +37296,6 @@
       "/resource/resource-repo-engineering-repo-audit-20260603.md"
     ],
     "派生": [
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/wiki-data/wiki-schema-banners-schema.md",
       "/wiki-data/wiki-schema-characters-processed-schema.md",
       "/wiki-data/wiki-schema-characters-schema.md",
@@ -37569,11 +37555,6 @@
       "/projects/entry-readme.md",
       "/unpacked/unpacked-game-data-all.md",
       "/unpacked/unpacked-game-text.md"
-    ],
-    "游权": [
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md"
     ],
     "源不": [
       "/characters/15573.md"
@@ -38121,6 +38102,10 @@
     ],
     "独决": [
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md"
+    ],
+    "独占": [
+      "/extracted/extracted-art-assets.md",
+      "/extracted/extracted-categorized.md"
     ],
     "独特": [
       "/characters/15567.md",
@@ -39039,17 +39024,16 @@
       "/characters/15592.md",
       "/characters/77925.md"
     ],
-    "的上": [
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md"
-    ],
     "的东": [
       "/characters/125346.md",
       "/characters/15572.md"
     ],
     "的中": [
       "/characters/15580.md"
+    ],
+    "的主": [
+      "/extracted/extracted-art-assets.md",
+      "/extracted/extracted-categorized.md"
     ],
     "的义": [
       "/characters/77922.md"
@@ -39436,6 +39420,8 @@
     ],
     "的独": [
       "/characters/15586.md",
+      "/extracted/extracted-art-assets.md",
+      "/extracted/extracted-categorized.md",
       "/projects/silver-core-sdk-doc-positioning.md"
     ],
     "的猎": [
@@ -42352,11 +42338,6 @@
     "血治": [
       "/characters/15584.md"
     ],
-    "血缘": [
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md"
-    ],
     "血脉": [
       "/characters/15563.md",
       "/characters/15594.md"
@@ -42675,7 +42656,6 @@
       "/README.md",
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/projects/extracted-lua-inventory.md",
       "/projects/extracted-lua-readme.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
@@ -43325,8 +43305,7 @@
     ],
     "读解": [
       "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md"
+      "/extracted/extracted-categorized.md"
     ],
     "调和": [
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md"
@@ -43644,7 +43623,6 @@
       "/community/community-youtube.md",
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/extracted/extracted-readme.md",
       "/memory/capability-index.md",
       "/memory/contribution-protocol.md",
@@ -44378,7 +44356,6 @@
       "/community/community-youtube.md",
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/extracted/extracted-readme.md",
       "/news-output/news-output-all.md",
       "/news-output/news-output-appstore.md",
@@ -45042,6 +45019,10 @@
     "重叠": [
       "/resource/resource-repo-engineering-repo-audit-20260603.md"
     ],
+    "重复": [
+      "/extracted/extracted-art-assets.md",
+      "/extracted/extracted-categorized.md"
+    ],
     "重大": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
@@ -45360,7 +45341,6 @@
       "/community/community-youtube.md",
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/extracted/extracted-readme.md",
       "/memory/capability-index.md",
       "/memory/contribution-protocol.md",
@@ -45668,7 +45648,6 @@
       "/community/community-youtube.md",
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/extracted/extracted-readme.md",
       "/news-output/news-output-all.md",
       "/news-output/news-output-appstore.md",
@@ -47029,7 +47008,6 @@
       "/community/community-youtube.md",
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/memory/decisions-archive.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
@@ -47392,7 +47370,6 @@
     "content": [
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/unpacked/unpacked-config.md",
       "/unpacked/unpacked-ejoysdk-lua.md",
       "/unpacked/unpacked-foundation.md",
@@ -47784,7 +47761,6 @@
       "/community/community-youtube.md",
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/extracted/extracted-readme.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
@@ -48396,7 +48372,6 @@
     "first": [
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/unpacked/unpacked-config.md",
       "/unpacked/unpacked-ejoysdk-lua.md",
       "/unpacked/unpacked-foundation.md",
@@ -48455,7 +48430,6 @@
       "/community/community-youtube.md",
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/resource/resource-daily-news-morimens-daily-full-20260602.md",
       "/sources/appstore.md",
       "/sources/arca_live.md",
@@ -48562,7 +48536,6 @@
     "hand": [
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/unpacked/unpacked-config.md",
       "/unpacked/unpacked-ejoysdk-lua.md",
       "/unpacked/unpacked-foundation.md",
@@ -48747,7 +48720,6 @@
       "/community/community-youtube.md",
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/extracted/extracted-readme.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
@@ -49052,7 +49024,6 @@
       "/wiki-data/wiki-data-world-lore.md"
     ],
     "lua": [
-      "/extracted/extracted-lua-tables.md",
       "/projects/extracted-lua-inventory.md",
       "/unpacked/unpacked-ejoysdk-lua.md",
       "/unpacked/unpacked-lua-tables.md"
@@ -49505,7 +49476,6 @@
     "processed": [
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/wiki-data/wiki-schema-characters-processed-schema.md"
     ],
     "producer": [
@@ -50021,7 +49991,6 @@
       "/projects/site-design-morimens-design-tokens.md"
     ],
     "tables": [
-      "/extracted/extracted-lua-tables.md",
       "/unpacked/unpacked-lua-tables.md"
     ],
     "taptap": [
@@ -50177,7 +50146,6 @@
     "unpack": [
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md",
       "/unpacked/unpacked-config.md",
       "/unpacked/unpacked-ejoysdk-lua.md",
       "/unpacked/unpacked-foundation.md",
@@ -50231,8 +50199,7 @@
     ],
     "upstream": [
       "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/extracted/extracted-lua-tables.md"
+      "/extracted/extracted-categorized.md"
     ],
     "utils": [
       "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md"
