@@ -9,8 +9,11 @@
 设计取舍：
 - **只在 MCP 消费边界埋点**（`mcp_server.py` 调 `log_call`），不在 `kb_navigator` 库层——
   故只记**真实消费**，不记测试/CLI 跑动。库层保持纯净、可测。
-- 日志落**gitignored** `Public-Info-Pool/Rough/kb_usage.jsonl`（瞬态过程数据，不进 git、不 churn）。
-  云容器易逝→记的是「近期使用」；要长期留由消费方自行持久化。
+- 日志落 **git 内** `Public-Info-Pool/Record/kb-usage/{YYYY-MM-DD}.jsonl`（按日一文件，
+  随会话正常提交入库，**跨会话累计**）。守密人 2026-07-11 裁定方案甲：云容器每会话全新
+  克隆，原 gitignored `Rough/kb_usage.jsonl` 落点令借阅记录每会话归零——需求侧有效性、
+  死概念剪枝、零命中回流三机制全部断粮，故迁 git-tracked 落点。路径唯一源即本模块
+  `KB_USAGE_DIR`（写方读方同一常量）。
 - `log_call` **best-effort**：任何异常吞掉，绝不因埋点失败拖垮工具本身。
 
 用法：
@@ -25,7 +28,18 @@ from collections import Counter
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
-KB_USAGE_LOG = REPO / "Public-Info-Pool" / "Rough" / "kb_usage.jsonl"
+# 借阅记录唯一落点（git-tracked，按日一文件，跨会话累计；2026-07-11 方案甲）。
+# KB_USAGE_DIR 为运行时落点（tests/conftest.py 自动改道 tmp，守「只记真实消费」）；
+# _DEFAULT 供纪律测试断言配置本身，不随改道变。
+KB_USAGE_DIR_DEFAULT = REPO / "Public-Info-Pool" / "Record" / "kb-usage"
+KB_USAGE_DIR = KB_USAGE_DIR_DEFAULT
+
+
+def _log_files(p: Path) -> list[Path]:
+    """把落点解析成待读文件列表：目录 → 全部按日 JSONL（排序）；单文件 → 自身。"""
+    if p.is_dir():
+        return sorted(p.glob("*.jsonl"))
+    return [p] if p.exists() else []
 
 
 def log_call(tool: str, query: str, result_ids: list[str] | None = None,
@@ -34,16 +48,17 @@ def log_call(tool: str, query: str, result_ids: list[str] | None = None,
     try:
         from datetime import datetime, timezone
 
+        now = datetime.now(timezone.utc)
         ids = list(result_ids or [])
         rec = {
-            "ts": datetime.now(timezone.utc).isoformat(),
+            "ts": now.isoformat(),
             "tool": tool,
             "query": (query or "")[:200],
             "n": len(ids),
             "top": ids[0] if ids else None,
             "ids": ids[:10],
         }
-        p = log_path or KB_USAGE_LOG
+        p = log_path or (KB_USAGE_DIR / f"{now:%Y-%m-%d}.jsonl")
         p.parent.mkdir(parents=True, exist_ok=True)
         with p.open("a", encoding="utf-8") as fh:
             fh.write(json.dumps(rec, ensure_ascii=False) + "\n")
@@ -62,11 +77,11 @@ def _all_concept_ids() -> set[str]:
 
 
 def summarize(log_path: Path | None = None) -> dict:
-    """读使用 JSONL，产出需求侧使用报告。"""
-    p = log_path or KB_USAGE_LOG
+    """读使用 JSONL（目录=全部按日文件聚合，或单文件），产出需求侧使用报告。"""
+    p = log_path or KB_USAGE_DIR
     calls = []
-    if p.exists():
-        for line in p.read_text(encoding="utf-8").splitlines():
+    for f in _log_files(p):
+        for line in f.read_text(encoding="utf-8").splitlines():
             line = line.strip()
             if not line:
                 continue
@@ -134,7 +149,7 @@ def _display_path(p: Path) -> str:
         rel = str(p.relative_to(REPO))
     except ValueError:
         rel = str(p)
-    return rel if p.exists() else f"{rel}（尚无记录）"
+    return rel if _log_files(p) else f"{rel}（尚无记录）"
 
 
 def _print_report(rep: dict) -> None:

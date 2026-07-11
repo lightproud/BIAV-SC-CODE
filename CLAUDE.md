@@ -369,7 +369,7 @@ brain-in-a-vat/
 | 数据校验（wiki JSON）| slash `/validate-data` 或 `python scripts/...`（见 schema 目录）|
 | 跨档案检索 | `rg "<关键词>" memory/ assets/`（ripgrep） |
 | 知识库有效性记分卡 | `python3 scripts/kb_eval.py`（黄金问题集 hit@k + MRR；需求侧有效性回归见 `tests/test_kb_golden.py`）|
-| 知识库使用遥测报告 | `python3 scripts/kb_telemetry.py`（借阅记录：调用分布 / 死概念 / 零命中查询；日志 kb_usage.jsonl 落 gitignored `Public-Info-Pool/Rough/`）；`--harvest` 把零命中查询回流成 held-out 难题候选（闭合评判 #1↔#2）|
+| 知识库使用遥测报告 | `python3 scripts/kb_telemetry.py`（借阅记录：调用分布 / 死概念 / 零命中查询；日志按日落 git 内 `Public-Info-Pool/Record/kb-usage/{date}.jsonl` **跨会话累计**，2026-07-11 方案甲裁定，路径唯一源 = `kb_telemetry.KB_USAGE_DIR`）；`--harvest` 把零命中查询回流成 held-out 难题候选（闭合评判 #1↔#2）|
 | 知识库反事实 A/B | `python3 scripts/kb_ab.py`（KB 结构化检索 vs 朴素 grep 同语料对照，含**最强 grep** 反稻草人臂；回归见 `tests/test_kb_ab.py`：KB 不劣于 grep + 联想题即便对最强 grep 仍严格胜）|
 | 知识库质性能力 probe | `python3 scripts/kb_qual.py`（测 grep 给不了知识的四维：层判定/身份/边界/关系类型，hit@k 测不出的 KB 真价值；回归见 `tests/test_kb_qual.py`）|
 | 知识库黄金集图驱动生成 | `python3 scripts/kb_golden_gen.py`（从图的带类型边自动生成数百题黄金集，边即真值；规模化复现 KB vs grep 差距；回归见 `tests/test_kb_golden_generated.py`）|
