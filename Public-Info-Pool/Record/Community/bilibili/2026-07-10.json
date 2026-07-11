@@ -1,8 +1,8 @@
 {
   "date": "2026-07-10",
-  "archived_at": "2026-07-10T23:56:35.026410+00:00",
+  "archived_at": "2026-07-11T02:02:01.069533+00:00",
   "source": "bilibili",
-  "item_count": 11,
+  "item_count": 13,
   "items": [
     {
       "title": "我莉兹不认识这个叫中毒的人 忘却前夜 莉兹最终法则测试 癫狂列车熔朵",
@@ -46,6 +46,52 @@
         "danmaku": 0
       },
       "media_url": "https://i0.hdslb.com/bfs/archive/6120175fdce7ef6c859ed23c6ba0d2fa97358acb.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "第一次过难四",
+      "summary": "-\n  └ 弥萨格首席机长 (0赞): 我焯，佬[doge]",
+      "source": "bilibili",
+      "time": "2026-07-10T12:54:07+00:00",
+      "url": "https://www.bilibili.com/video/BV1NrNJ6yELX",
+      "engagement": 130,
+      "is_hot": false,
+      "author": "死士丈八",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 128,
+        "comment_count": 2,
+        "comments_fetched": 1,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/5343d9b7d1a34ae11225602e42605cb6dc310aef.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "低配鸟弟 2-5",
+      "summary": "-\n  └ 静寂夏至 (1赞): 严肃学习[星星眼]\n  └ 上好佳薯片丶 (1赞): 老大好强喵[打call]",
+      "source": "bilibili",
+      "time": "2026-07-10T12:12:05+00:00",
+      "url": "https://www.bilibili.com/video/BV1LfNJ6AEJN",
+      "engagement": 120,
+      "is_hot": false,
+      "author": "寂榕",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 118,
+        "comment_count": 2,
+        "comments_fetched": 2,
+        "danmaku": 0
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/db7cd3c15a3149fe0c298f4feeaf819ea63da3f5.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
