@@ -312,7 +312,7 @@ function opts(extra: Partial<Options> = {}): Options {
     provider: { apiKey: 'test-key' },
     sessionDir: path.join(sandbox, '.sessions'),
     cwd: sandbox,
-    env: { PATH: process.env.PATH, HOME: process.env.HOME },
+    env: { PATH: process.env.PATH, HOME: process.env.HOME, BPT_HTTP_CLIENT: 'fetch' },
     model: 'claude-sonnet-4-5',
     ...extra,
   } as Options;

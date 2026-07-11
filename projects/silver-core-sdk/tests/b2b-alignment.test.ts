@@ -86,7 +86,7 @@ describe('T2-3: official ACCEPTED Options fields are typed + warn once each', ()
       persistSession: false,
       provider: { apiKey: 'test-key' },
       cwd,
-      env: { PATH: process.env.PATH, HOME: process.env.HOME },
+      env: { PATH: process.env.PATH, HOME: process.env.HOME, BPT_HTTP_CLIENT: 'fetch' },
       // --- the T2-3 fields (debugFile now honored, not warned) ---
       agent: 'main-agent',
       agentProgressSummaries: true,
@@ -199,7 +199,7 @@ describe('T2-2/T2-7: MCP surface official shapes', () => {
         persistSession: false,
         provider: { apiKey: 'test-key' },
         cwd,
-        env: { PATH: process.env.PATH, HOME: process.env.HOME },
+        env: { PATH: process.env.PATH, HOME: process.env.HOME, BPT_HTTP_CLIENT: 'fetch' },
       },
     });
     try {
@@ -419,7 +419,7 @@ describe('session-face tail items', () => {
           provider: { apiKey: 'test-key' },
           sessionDir,
           cwd,
-          env: { PATH: process.env.PATH, HOME: process.env.HOME },
+          env: { PATH: process.env.PATH, HOME: process.env.HOME, BPT_HTTP_CLIENT: 'fetch' },
         },
       }),
     );

@@ -16,6 +16,41 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.45.0 — 2026-07-11
+
+**Network layer: built-in keep-alive client (方案丁转正) + preconnect (方案丙)**
+(keeper ruling 2026-07-11 「做」, after the measured evaluation reversed the
+earlier 甲/乙 recommendation — probes summarized in docs/PERFORMANCE.md):
+
+- **Default HTTP client is now the SDK's own zero-dependency node:http(s)
+  adapter** (`src/transport/node-http.ts`), shared process-wide, behind the
+  provider.fetch seam — transports and the twin discipline untouched.
+  Long keep-alive agents end the per-turn TCP+TLS re-handshake
+  (~100-300ms) that global fetch's ~4s idle pool imposed on any turn whose
+  tool run exceeded it; TLS sessions resume across reconnects; idle pooled
+  sockets are unref'd so a warm pool never blocks process exit. Honest
+  divergences from fetch (inert against the Messages API): no redirects, no
+  accept-encoding, bodies always carry explicit content-length.
+  `provider.httpClient: 'fetch'` / env `BPT_HTTP_CLIENT=fetch` restores the
+  pre-v0.45 late-bound global fetch (undici semantics: setGlobalDispatcher,
+  NODE_USE_ENV_PROXY, global-fetch test stubs). `provider.fetch` still wins
+  over everything.
+- **`provider.preconnect`** (default off; env `BPT_PRECONNECT=1`): one
+  fire-and-forget unauthenticated HEAD at transport construction overlaps
+  DNS+TCP+TLS with query init (~100-300ms off first-turn TTFT).
+- **HTTP/2 evaluated and parked**: undici `allowH2` measured either
+  one-session-per-request (no multiplexing) or serialized streams (8
+  concurrent SSE turns 223ms → 1262ms) — no deliverable win; noted in
+  PERFORMANCE.md.
+- ARCHITECTURE.md error-class whitelist: `TypeError` allowed in
+  `src/transport/` for the adapter's fetch-shape fidelity (WHATWG fetch
+  rejects TypeError on invalid URL/scheme/body).
+- +9 tests (`tests/transport-node-http.test.ts`: fetch-shape fidelity,
+  explicit content-length, keep-alive reuse, abort, idle-socket unref,
+  resolution precedence, node-client emulator e2e incl. tool loop / 429 /
+  interrupt); suite pins BPT_HTTP_CLIENT=fetch for its global-fetch-stub
+  tests. 1675 passed / 2 skipped (80 files).
+
 ## 0.44.0 — 2026-07-11
 
 **Response-time pass** (keeper dispatch 「审视 silver core sdk，优化响应时间」).

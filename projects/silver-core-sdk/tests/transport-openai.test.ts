@@ -537,7 +537,7 @@ describe('OpenAIChatTransport', () => {
     vi.stubGlobal('fetch', fetchMock);
     const transport = new OpenAIChatTransport({
       provider: { protocol: 'openai-chat', apiKey: 'sk-test' },
-      env: {},
+      env: { BPT_HTTP_CLIENT: 'fetch' },
       debug: noop,
     });
     expect(transport.apiKeySource()).toBe('user');
@@ -567,6 +567,7 @@ describe('OpenAIChatTransport', () => {
     const transport = new OpenAIChatTransport({
       provider: {},
       env: {
+        BPT_HTTP_CLIENT: 'fetch',
         OPENAI_API_KEY: 'sk-env',
         OPENAI_BASE_URL: 'https://gateway.example.com/openai/v1/',
       },
@@ -586,7 +587,7 @@ describe('OpenAIChatTransport', () => {
     );
     const transport = new OpenAIChatTransport({
       provider: { apiKey: 'k' },
-      env: {},
+      env: { BPT_HTTP_CLIENT: 'fetch' },
       debug: noop,
     });
     const events = await collect(transport.stream(REQ));
@@ -595,7 +596,7 @@ describe('OpenAIChatTransport', () => {
 
   it('throws ConfigurationError when no credential resolves', async () => {
     vi.stubGlobal('fetch', vi.fn());
-    const transport = new OpenAIChatTransport({ provider: {}, env: {}, debug: noop });
+    const transport = new OpenAIChatTransport({ provider: {}, env: { BPT_HTTP_CLIENT: 'fetch' }, debug: noop });
     expect(transport.apiKeySource()).toBe('none');
     const err = await captureError(collect(transport.stream(REQ)));
     expect(err).toBeInstanceOf(ConfigurationError);
@@ -613,7 +614,7 @@ describe('OpenAIChatTransport', () => {
     );
     const transport = new OpenAIChatTransport({
       provider: { apiKey: 'k' },
-      env: {},
+      env: { BPT_HTTP_CLIENT: 'fetch' },
       debug: noop,
     });
     const err = (await captureError(collect(transport.stream(REQ)))) as APIStatusError;
@@ -636,7 +637,7 @@ describe('OpenAIChatTransport', () => {
     vi.stubGlobal('fetch', fetchMock);
     const transport = new OpenAIChatTransport({
       provider: { apiKey: 'k', maxRetries: 2 },
-      env: {},
+      env: { BPT_HTTP_CLIENT: 'fetch' },
       debug: noop,
     });
     const retries: number[] = [];
@@ -662,7 +663,7 @@ describe('OpenAIChatTransport', () => {
     );
     const transport = new OpenAIChatTransport({
       provider: { apiKey: 'k' },
-      env: {},
+      env: { BPT_HTTP_CLIENT: 'fetch' },
       debug: noop,
     });
     const err = (await captureError(collect(transport.stream(REQ)))) as APIStatusError;
@@ -706,7 +707,7 @@ describe('OpenAIChatTransport stream-fault quadrant', () => {
     );
     const transport = new OpenAIChatTransport({
       provider: { apiKey: 'k' },
-      env: {},
+      env: { BPT_HTTP_CLIENT: 'fetch' },
       debug: noop,
     });
     const err = (await captureError(collect(transport.stream(REQ)))) as APIConnectionError;
@@ -721,7 +722,7 @@ describe('OpenAIChatTransport stream-fault quadrant', () => {
     );
     const transport = new OpenAIChatTransport({
       provider: { apiKey: 'k', maxRetries: 0 },
-      env: {},
+      env: { BPT_HTTP_CLIENT: 'fetch' },
       debug: noop,
     });
     const err = (await captureError(collect(transport.stream(REQ)))) as APIConnectionError;
@@ -738,7 +739,7 @@ describe('OpenAIChatTransport stream-fault quadrant', () => {
     );
     const transport = new OpenAIChatTransport({
       provider: { apiKey: 'k' },
-      env: {},
+      env: { BPT_HTTP_CLIENT: 'fetch' },
       debug: noop,
     });
     const err = (await captureError(collect(transport.stream(REQ)))) as APIConnectionError;
@@ -754,7 +755,7 @@ describe('OpenAIChatTransport stream-fault quadrant', () => {
     );
     const transport = new OpenAIChatTransport({
       provider: { apiKey: 'k', streamIdleTimeoutMs: 25 },
-      env: {},
+      env: { BPT_HTTP_CLIENT: 'fetch' },
       debug: noop,
     });
     const err = (await captureError(collect(transport.stream(REQ)))) as APIConnectionError;
@@ -786,7 +787,7 @@ describe('OpenAIChatTransport stream-fault quadrant', () => {
     );
     const transport = new OpenAIChatTransport({
       provider: { apiKey: 'k', timeoutMs: 30, streamIdleTimeoutMs: 0 },
-      env: {},
+      env: { BPT_HTTP_CLIENT: 'fetch' },
       debug: noop,
     });
     const err = (await captureError(collect(transport.stream(REQ)))) as APIConnectionError;
@@ -802,7 +803,7 @@ describe('OpenAIChatTransport stream-fault quadrant', () => {
     );
     const transport = new OpenAIChatTransport({
       provider: { apiKey: 'k' },
-      env: {},
+      env: { BPT_HTTP_CLIENT: 'fetch' },
       debug: noop,
     });
     const consume = (async () => {
@@ -829,7 +830,7 @@ describe('OpenAIChatTransport stream-fault quadrant', () => {
     );
     const transport = new OpenAIChatTransport({
       provider: { apiKey: 'k' },
-      env: {},
+      env: { BPT_HTTP_CLIENT: 'fetch' },
       debug: noop,
     });
     const err = (await captureError(collect(transport.stream(REQ)))) as APIStatusError;
@@ -858,7 +859,7 @@ describe('OpenAIChatTransport empty-stream retry (idealab throttle self-heal)', 
       .mockResolvedValueOnce(emptyStream()) // 200, empty body -> replay-safe non-start
       .mockResolvedValueOnce(okStream(TEXT_CHUNKS)); // healed: a real stream
     vi.stubGlobal('fetch', fetchMock);
-    const transport = new OpenAIChatTransport({ provider: { apiKey: 'k' }, env: {}, debug: noop });
+    const transport = new OpenAIChatTransport({ provider: { apiKey: 'k' }, env: { BPT_HTTP_CLIENT: 'fetch' }, debug: noop });
     const events = await collect(transport.stream(REQ));
     expect(events.at(-1)?.type).toBe('message_stop');
     expect(fetchMock).toHaveBeenCalledTimes(2);
@@ -873,7 +874,7 @@ describe('OpenAIChatTransport empty-stream retry (idealab throttle self-heal)', 
     vi.stubGlobal('fetch', fetchMock);
     const transport = new OpenAIChatTransport({
       provider: { apiKey: 'k', maxRetries: 1 },
-      env: {},
+      env: { BPT_HTTP_CLIENT: 'fetch' },
       debug: noop,
     });
     const err = (await captureError(collect(transport.stream(REQ)))) as APIConnectionError;
@@ -889,7 +890,7 @@ describe('OpenAIChatTransport empty-stream retry (idealab throttle self-heal)', 
     vi.stubGlobal('fetch', fetchMock);
     const transport = new OpenAIChatTransport({
       provider: { apiKey: 'k', maxRetries: 0 },
-      env: {},
+      env: { BPT_HTTP_CLIENT: 'fetch' },
       debug: noop,
     });
     const err = (await captureError(collect(transport.stream(REQ)))) as APIConnectionError;
@@ -906,7 +907,7 @@ describe('OpenAIChatTransport empty-stream retry (idealab throttle self-heal)', 
       .mockResolvedValueOnce(emptyStream())
       .mockResolvedValueOnce(okStream(TEXT_CHUNKS));
     vi.stubGlobal('fetch', fetchMock);
-    const transport = new OpenAIChatTransport({ provider: { apiKey: 'k' }, env: {}, debug: noop });
+    const transport = new OpenAIChatTransport({ provider: { apiKey: 'k' }, env: { BPT_HTTP_CLIENT: 'fetch' }, debug: noop });
     const retries: RetryInfo[] = [];
     const events = await collect(
       transport.stream({ ...REQ, onRetry: (info) => retries.push(info) }),
@@ -924,7 +925,7 @@ describe('OpenAIChatTransport empty-stream retry (idealab throttle self-heal)', 
       .mockResolvedValueOnce(emptyStream())
       .mockResolvedValueOnce(okStream(TEXT_CHUNKS));
     vi.stubGlobal('fetch', fetchMock);
-    const transport = new OpenAIChatTransport({ provider: { apiKey: 'k' }, env: {}, debug: noop });
+    const transport = new OpenAIChatTransport({ provider: { apiKey: 'k' }, env: { BPT_HTTP_CLIENT: 'fetch' }, debug: noop });
     const ac = new AbortController();
     // Abort while the transport is backing off before the retry fetch.
     const onRetry = (): void => ac.abort();
@@ -945,7 +946,7 @@ describe('OpenAIChatTransport gateway knobs (audit P1-4)', () => {
         apiKey: 'k',
         openai: { modelMap: { 'claude-haiku-4-5': 'gpt-4o-mini' } },
       },
-      env: {},
+      env: { BPT_HTTP_CLIENT: 'fetch' },
       debug: noop,
     });
     await collect(transport.stream({ ...REQ, model: 'claude-haiku-4-5' }));
@@ -965,7 +966,7 @@ describe('OpenAIChatTransport gateway knobs (audit P1-4)', () => {
           extraQueryParams: { 'api-version': '2024-06-01' },
         },
       },
-      env: {},
+      env: { BPT_HTTP_CLIENT: 'fetch' },
       debug: noop,
     });
     await collect(transport.stream(REQ));
@@ -983,13 +984,13 @@ describe('createProviderTransport', () => {
   it("returns the OpenAI transport for protocol 'openai-chat', Anthropic otherwise", () => {
     const openai = createProviderTransport({
       provider: { protocol: 'openai-chat', apiKey: 'k' },
-      env: {},
+      env: { BPT_HTTP_CLIENT: 'fetch' },
       debug: noop,
     });
     expect(openai).toBeInstanceOf(OpenAIChatTransport);
     const anthropic = createProviderTransport({
       provider: { apiKey: 'k' },
-      env: {},
+      env: { BPT_HTTP_CLIENT: 'fetch' },
       debug: noop,
     });
     expect(anthropic).toBeInstanceOf(AnthropicTransport);

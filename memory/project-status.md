@@ -195,6 +195,18 @@
   内建源前置件就位；动态自调步文本留 #T13、其余重型件走逐命令例外通道。另注：同会话
   基于 T4 陈旧镜像撞车点火 run 29135224871（$5 帽全量轮 = T17 选项一），处置与呈报
   见 `memory/todo.md` #T17 撞车注记。
+- **网络层默认客户端裁定落地（v0.45.0，2026-07-11，守密人「做」裁定，已落）**：承 v0.44.0 评估
+  四方案实测定谳（裁定全文 `memory/decisions.md` 同日条）。①**丁转正**：内建零依赖 node:http(s)
+  长保活适配器 `src/transport/node-http.ts` 为默认 HTTP 客户端（TLS 会话缓存 + 空闲 socket unref
+  防进程挂死 + 显式 content-length 防网关拒 chunked），经 provider.fetch 缝后灌入、传输层与孪生
+  纪律零改动；每回合 ~100-300ms 重握手税就地消除、消费方零接线（T18 销案）。回退：
+  `provider.httpClient:'fetch'` / `BPT_HTTP_CLIENT=fetch`。②**丙并入**：`provider.preconnect`
+  构造期预热旋钮（默认关）。③甲（undici 依赖）不做、乙（HTTP/2）实测判死搁置（allowH2 零复用或
+  流串行化 223ms→1262ms）。证据：本地 TLS 对照（4 秒断崖实锤 / 丁 21 请求单连接 / isSessionReused /
+  0.86 vs 2.62ms）+ 真 SDK e2e 三关。ARCHITECTURE 错误白名单补 transport TypeError（fetch 形状
+  忠实）。+9 测（适配器保真 / 复用 / 中止 / unref / 判序 / node 客户端仿真器 e2e），存量测试以
+  BPT_HTTP_CLIENT=fetch 钉扎其全局 fetch 桩语义，**1675 全绿 + 2 skipped（80 文件）**、tsc + build
+  exit 0、版本三方对账过（0.45.0）。
 - **响应时间优化过审（v0.44.0，2026-07-11，守密人「审视 silver core sdk 优化响应时间」派单，已落）**：
   先测后改——新增零密钥仿真器延迟探针 `tests/integration/perf-overhead.mjs`（30 回合工具环 +
   8000 事件流两场景，中位数计量）确认引擎本体开销仅 ~1ms/回合，真正大头在网络层。四项落地：
@@ -208,7 +220,7 @@
   仅重切一次缓冲（原先逐行重拷贝，行数二次方）。探针中位数（repeat=9 同机）：30 回合引擎记账
   29.7ms→18.0ms（-39%）、8000 事件流 CPU 53.3ms→46.3ms。+3 测（注入缝双传输 + 重试路径），
   **1666 全绿 + 2 skipped（79 文件）**、tsc + build exit 0；孪生纪律测试保持绿。
-  消费方接线（BPT 侧 undici Agent keep-alive）挂账见 `memory/todo.md` #T18。
+  消费方接线挂账 T18 已随 v0.45.0 丁转正销案（保活改 SDK 内建默认，见下条）。
 - **断线韧性全量落地（v0.43.0，2026-07-10，守密人「全量」裁定，已落）**：承「实际使用时不时断线」
   痛点，落四层兜底模型（设计档 `projects/silver-core-sdk/docs/RESILIENCE.md`，裁定见 decisions.md 同日条）：
   ① **P0-1 有界回合重放**——零采信流失败（零事件 / 零事件卡死 / 打捞落空的废弃残片）回合级重放 2 次

@@ -38,7 +38,7 @@ function makeCtx(withManager: boolean): ToolContext {
   return {
     cwd: sandbox,
     additionalDirectories: [],
-    env: { PATH: process.env.PATH, HOME: process.env.HOME },
+    env: { PATH: process.env.PATH, HOME: process.env.HOME, BPT_HTTP_CLIENT: 'fetch' },
     signal: new AbortController().signal,
     debug: () => {},
     ...(withManager ? { shells: manager } : {}),

@@ -21,6 +21,12 @@ import type {
 } from '../types.js';
 import type { RetryInfo, StreamRequest, Transport } from '../internal/contracts.js';
 import { parseSSE } from './sse.js';
+import {
+  firePreconnect,
+  getNodeFetch,
+  resolveHttpClient,
+  resolvePreconnect,
+} from './node-http.js';
 import { SDK_USER_AGENT } from '../version.js';
 
 const DEFAULT_BASE_URL = 'https://api.anthropic.com';
@@ -79,12 +85,12 @@ export class AnthropicTransport implements Transport {
   private readonly betas: string[] | undefined;
   private readonly credential: ResolvedCredential | null;
   private readonly endpoint: string;
-  /** provider.fetch injection seam. BPT-EXTENSION — lets the consumer bind
-   *  requests to a long-keep-alive undici Agent so turns separated by slow
-   *  tool runs reuse the warm TLS connection (docs/PERFORMANCE.md), or route
-   *  via proxy/instrumented fetch. Undefined -> the CURRENT global fetch is
-   *  resolved at call time (late binding: a later setGlobalDispatcher / test
-   *  stub still applies). */
+  /** The HTTP client behind every request. Resolution: provider.fetch
+   *  (injection seam, always wins) > httpClient 'node' (default since
+   *  v0.45.0: the built-in keep-alive adapter, see node-http.ts) >
+   *  httpClient 'fetch' -> undefined here, so the call site late-binds the
+   *  CURRENT global fetch (a later setGlobalDispatcher / test stub still
+   *  applies — the exact pre-v0.45 behavior). */
   private readonly fetchFn:
     | ((input: string | URL, init?: RequestInit) => Promise<Response>)
     | undefined;
@@ -99,7 +105,9 @@ export class AnthropicTransport implements Transport {
     this.debug = cfg.debug;
     this.betas = cfg.betas;
     this.credential = resolveCredential(this.provider, cfg.env);
-    this.fetchFn = this.provider.fetch;
+    this.fetchFn =
+      this.provider.fetch ??
+      (resolveHttpClient(this.provider, cfg.env) === 'node' ? getNodeFetch() : undefined);
     const maxConcurrent = resolveMaxConcurrent(this.provider, cfg.env);
     this.slots = maxConcurrent > 0 ? new RequestSemaphore(maxConcurrent) : null;
     const base = (
@@ -108,6 +116,11 @@ export class AnthropicTransport implements Transport {
       DEFAULT_BASE_URL
     ).replace(/\/+$/, '');
     this.endpoint = `${base}/v1/messages`;
+    // 方案丙: optional first-turn handshake warm-up, overlapped with query
+    // init (MCP connect / session resolution). Default off.
+    if (resolvePreconnect(this.provider, cfg.env)) {
+      firePreconnect(this.fetchFn ?? fetch, this.endpoint, this.debug);
+    }
   }
 
   apiKeySource(): ApiKeySource {

@@ -321,7 +321,7 @@ describe('fileSessionStore end-to-end (options.sessionStore)', () => {
     return {
       provider: { apiKey: 'test-key', promptCaching: false },
       cwd,
-      env: { PATH: process.env.PATH, HOME: process.env.HOME },
+      env: { PATH: process.env.PATH, HOME: process.env.HOME, BPT_HTTP_CLIENT: 'fetch' },
       model: 'claude-sonnet-4-5',
       ...extra,
     };

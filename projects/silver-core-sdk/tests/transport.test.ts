@@ -151,7 +151,7 @@ function makeTransport(cfg: {
 } = {}): AnthropicTransport {
   return new AnthropicTransport({
     provider: cfg.provider,
-    env: cfg.env ?? {},
+    env: { BPT_HTTP_CLIENT: 'fetch', ...cfg.env },
     debug: () => undefined,
     betas: cfg.betas,
   });

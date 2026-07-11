@@ -81,7 +81,7 @@ function baseOptions(extra: Partial<Options> = {}): Options {
     sessionDir,
     cwd,
     // Hermetic env: no ANTHROPIC_* leakage; PATH kept so Bash can spawn.
-    env: { PATH: process.env.PATH, HOME: process.env.HOME },
+    env: { PATH: process.env.PATH, HOME: process.env.HOME, BPT_HTTP_CLIENT: 'fetch' },
     model: 'claude-sonnet-4-5',
     ...extra,
   };
@@ -196,7 +196,7 @@ describe('query() e2e - happy path', () => {
         provider: { apiKey: 'test-key' },
         sessionDir,
         cwd,
-        env: { PATH: process.env.PATH, HOME: process.env.HOME },
+        env: { PATH: process.env.PATH, HOME: process.env.HOME, BPT_HTTP_CLIENT: 'fetch' },
         model: 'claude-sonnet-4-5',
       },
     });
@@ -235,7 +235,7 @@ describe('query() e2e - happy path', () => {
         provider: { apiKey: 'test-key' },
         sessionDir,
         cwd,
-        env: { PATH: process.env.PATH, HOME: process.env.HOME },
+        env: { PATH: process.env.PATH, HOME: process.env.HOME, BPT_HTTP_CLIENT: 'fetch' },
         model: 'claude-sonnet-4-5',
       },
     });
@@ -263,7 +263,7 @@ describe('query() e2e - happy path', () => {
         provider: { apiKey: 'test-key' },
         sessionDir,
         cwd,
-        env: { PATH: process.env.PATH, HOME: process.env.HOME },
+        env: { PATH: process.env.PATH, HOME: process.env.HOME, BPT_HTTP_CLIENT: 'fetch' },
         model: 'claude-sonnet-4-5',
         // host-layered: core -> team -> user -> project (cwd stays out).
         systemPrompt: {
@@ -316,7 +316,7 @@ describe('query() e2e - happy path', () => {
         provider: { apiKey: 'test-key' },
         sessionDir,
         cwd,
-        env: { PATH: process.env.PATH, HOME: process.env.HOME },
+        env: { PATH: process.env.PATH, HOME: process.env.HOME, BPT_HTTP_CLIENT: 'fetch' },
         model: 'claude-sonnet-4-5',
         systemPrompt: {
           type: 'segments',
