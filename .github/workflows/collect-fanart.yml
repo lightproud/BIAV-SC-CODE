@@ -1,8 +1,11 @@
 name: "🎨 Collect Fan Art"
 
-# 独立采集忘却前夜社区当日（默认北京昨日）二创同人图，归档到
-# projects/news/data/fanart/{date}/，供会话内报告引用。经 Discord attachments/refresh-urls
-# 刷新过期 CDN 链接后落盘原图（缩略图在会话产报告时按需生成）。
+# 独立采集忘却前夜社区当日（默认北京昨日）二创同人图，落 runner 本地 staging
+# projects/news/data/fanart/{date}/ 后直传 community-assets release 当月资产
+# （fanart-archive-{YYYY-MM}.tar.gz，取回既有月桶合并后经归档引擎 --force-group 重传）。
+# 2026-06-21 守密人裁定 fanart 二进制不入 git（.gitignore 排除、采集链直传 release），
+# 故本工作流不做任何 git 提交。经 Discord attachments/refresh-urls 刷新过期 CDN 链接
+# 后落盘原图（缩略图在会话产报告时按需生成）。
 # 只用 DISCORD_BOT_TOKEN（免费），不碰 Anthropic API、不花钱。
 
 on:
@@ -41,19 +44,29 @@ jobs:
           D="${{ github.event.inputs.date }}"
           [ -n "$D" ] || D=$(TZ=Asia/Shanghai date -d 'yesterday' +%Y-%m-%d)
           python projects/news/scripts/collect_fanart.py --date "$D" --out "projects/news/data/fanart/$D"
+          echo "FANART_DATE=$D" >> "$GITHUB_ENV"
 
-      - name: Commit fan art archive
+      - name: Upload to community-assets release (merge month asset)
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add projects/news/data/fanart/
-          if git diff --staged --quiet; then
-            echo "No new fan art to commit"
-          else
-            git commit -m "chore: archive community fan art [skip ci]"
-            for i in 1 2 3 4; do
-              git pull --rebase origin main && git push origin main && exit 0
-              sleep $i
-            done
-            exit 1
+          BASE=projects/news/data/fanart
+          if [ ! -d "$BASE/$FANART_DATE" ] || [ -z "$(ls -A "$BASE/$FANART_DATE")" ]; then
+            echo "No new fan art for $FANART_DATE, nothing to upload"
+            exit 0
           fi
+          M=${FANART_DATE:0:7}
+          ASSET="fanart-archive-$M.tar.gz"
+          mkdir -p /tmp/fanart-assets
+          # 查询失败必须硬失败：静默当「资产不存在」会用当日增量 --clobber 覆掉整月存量
+          gh release view community-assets --json assets -q '.assets[].name' \
+            --repo "$GITHUB_REPOSITORY" > /tmp/fanart-assets/names.txt
+          if grep -qx "$ASSET" /tmp/fanart-assets/names.txt; then
+            gh release download community-assets --pattern "$ASSET" \
+              --dir /tmp/fanart-assets --repo "$GITHUB_REPOSITORY"
+            # --skip-old-files：月桶存量与本次新采同名时保留新采（刚刷新过 CDN 链接）
+            tar --skip-old-files -xzf "/tmp/fanart-assets/$ASSET" -C "$BASE"
+          else
+            echo "No existing asset for $M (first upload of the month)"
+          fi
+          python projects/news/scripts/archive_engine.py --source fanart --force-group "$M"
