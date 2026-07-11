@@ -40,7 +40,7 @@
 | C4 | settingSources 默认语义反转升钉 | v0.8.0（守密人「确定升钉了」，2026-07-05） |
 | C5 | B 类官方骨架提示词再现裁定 | `decisions.md` 2026-07-10（「结构再现 + 文本自写」默认，随 v0.39 工单落档） |
 | C6 | 委派引擎四缝（coordinator/SendMessage、ExitPlanMode、调度归宿、通知面） | ExitPlanMode/Monitor/Workflow 等随 PR #480；O-B2 SendMessage + coordinator 预设随 PR #567（v0.42.0，2026-07-10） |
-| T3 | CI required `test` 检查是否重启 | **定谳：维持自查自合**（守密人 2026-07-10 AskUserQuestion，覆盖同日节拍表条③——撞车经呈报后守密人选「以 UI 答复为准」）；`decisions.md` 同日「CI required 检查维持自查自合」条 + methodology「维护态节拍」节已双向同步 |
+| T3 | CI required `test` 检查是否重启 | **终版定谳（2026-07-11）：部分采纳**——required `test` 已由守密人亲手勾选生效（Ruleset 18506085 实测，机器推送无误伤）；「Require branches to be up to date」明文不开（自动归档直推流量与 strict 策略撞车）。覆盖 07-10「维持自查自合」定谳；`decisions.md` 2026-07-11「CI 硬门禁部分采纳定案」条 |
 | T11 | 版本守卫三方对账升级：`check-version-bump.mjs` 加 CHANGELOG 最新条目号对账，堵「双源一致地错」盲区 | `projects/silver-core-sdk/scripts/check-version-bump.mjs` 三方对账（version.ts + package.json + CHANGELOG 最新 `## X.Y.Z`）+ 测试 `tests/version-guard-changelog.test.ts`（含 lesson #45 负控）；PR #575 |
 | T10 | B 类首批骨架命令文本自写（review / simplify 结构再现版 + loop 固定模式命令卡） | 三张命令卡 + 零官方句子实跑自查落 `Public-Info-Pool/Resource/repo-engineering/bpt-desktop-builtin-commands-batch1-20260711.md`（2026-07-11 艾瑞卡会话）；`project-status.md` Silver Core SDK 节同日条 |
 | T16 | run-l35 双臂封印（原表述「KD-L35-02 待封印、本地脚本需真钥」） | **两前提均查实过时**（2026-07-11）：① `run-l35.mjs` 打 content-blind 仿真器 + DUMMY_KEY，**零真钥零真金**（头注明载）；② KD-L35-02 编码差已于 v0.7 对齐时 lockstep 退役（COMPAT.md「KD-L35-02 retired」，MIGRATION 5f）。实做两件：本地双臂实跑一轮——词汇差分仅余已知项（bpt 多 `task_progress`=documented superset、官方多前台 `task_notification`=KD-L35-01/E8b 裁定项，**无新分歧**）；CI 接线——`silver-core-sdk.yml` conformance 作业加 L3.5 步（report-only 永不门禁）+ artifact 登记，随每轮 L1-L4 零边际成本常驻 |
