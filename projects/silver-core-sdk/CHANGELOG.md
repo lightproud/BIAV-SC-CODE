@@ -16,6 +16,17 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.47.2 — 2026-07-11
+
+**World-class review pass, security fix**: WebFetch SSRF guard — `ipv6Blocked`
+now reconstructs the embedded IPv4 from an IPv4-mapped/-compatible IPv6
+address in its HEX group form and runs it through the IPv4 blocklist. The
+WHATWG/Node URL parser normalizes a host like `[::ffff:169.254.169.254]` to
+the hex spelling `[::ffff:a9fe:a9fe]` before the guard ever sees it, so the
+old dotted-only regex never matched and the entire private/loopback/
+link-local/metadata IPv4 blocklist was bypassable via the mapped form (a
+prompt-injection SSRF vector). +4 regression cases.
+
 ## 0.47.1 — 2026-07-11
 
 **World-class review pass (six-track deep audit), fix batch**: engine — the
