@@ -8,7 +8,7 @@
 
 import type {
   APIMessageParam,
-  APIToolDefinition,
+  APIToolDefinitionParam,
   ApiKeySource,
   CallToolResult,
   DocumentBlockParam,
@@ -61,7 +61,7 @@ export type StreamRequest = {
   max_tokens: number;
   system?: string | TextBlockParam[];
   messages: APIMessageParam[];
-  tools?: APIToolDefinition[];
+  tools?: APIToolDefinitionParam[];
   /** Messages API `tool_choice`; forwarded verbatim by the transport. Only set
    *  when `tools` is non-empty (the API 400s on tool_choice without tools). */
   tool_choice?: ToolChoice;
@@ -321,6 +321,18 @@ export interface ShellManager {
 }
 
 // ---------------------------------------------------------------------------
+// Memory store (module C/D, BPT-EXTENSION — memory system spec R3)
+// ---------------------------------------------------------------------------
+
+/**
+ * The MemoryStore contract is part of the PUBLIC type surface (a hosting
+ * application implements it), so it lives in ../types.ts; re-exported here
+ * because it is also the internal seam the memory tool executes against.
+ * See the JSDoc there + docs/MEMORY.md.
+ */
+export type { MemoryStore } from '../types.js';
+
+// ---------------------------------------------------------------------------
 // Permission gate (module E)
 // ---------------------------------------------------------------------------
 
@@ -561,6 +573,17 @@ export type EngineConfig = {
    *  Built by the query layer; absent -> the analyzer derives a best-effort
    *  split from the wire `system` field. */
   systemComposition?: SystemComposition;
+  /**
+   * Anthropic-provided (server-declared) tool entries to advertise on the
+   * wire verbatim (BPT-EXTENSION — memory system spec R2 mode A). Each entry
+   * is sent in `tools[]` as `{ type, name }` with NO input_schema (the API
+   * injects the definition + protocol prompt server-side), and a builtin of
+   * the SAME name is skipped from schema advertisement while remaining
+   * executable — the local builtin is the execution loop for the server-
+   * declared tool. Anthropic protocol only; the query layer never sets this
+   * on an openai-chat transport.
+   */
+  serverTools?: Array<{ type: string; name: string }>;
   sessionId: string;
   cwd: string;
   /** Absolute transcript path of THIS loop's session, when it was persisted to a

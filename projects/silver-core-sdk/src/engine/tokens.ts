@@ -18,7 +18,7 @@
 
 import type {
   APIMessageParam,
-  APIToolDefinition,
+  APIToolDefinitionParam,
   ContentBlockParam,
 } from '../types.js';
 
@@ -171,7 +171,7 @@ export function estimateMessagesTokens(messages: APIMessageParam[]): number {
 }
 
 /** Estimate tokens for the serialized tool-definition schemas. */
-export function estimateToolDefsTokens(defs: APIToolDefinition[]): number {
+export function estimateToolDefsTokens(defs: APIToolDefinitionParam[]): number {
   if (defs.length === 0) return 0;
   return Math.ceil(JSON.stringify(defs).length / CHARS_PER_TOKEN);
 }

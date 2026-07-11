@@ -11,7 +11,11 @@
 import { describe, expect, it } from 'vitest';
 
 import { TOOL_DESCRIPTION_TEXT, BASH_SANDBOX_FRAGMENTS } from '../src/tools/descriptions.js';
-import { MAIN_LOOP_INTRO, MAIN_LOOP_BODY } from '../src/engine/prompt-fragments.js';
+import {
+  MAIN_LOOP_INTRO,
+  MAIN_LOOP_BODY,
+  MEMORY_PROTOCOL_FRAGMENT,
+} from '../src/engine/prompt-fragments.js';
 import {
   AWAY_SUMMARY_SYSTEM,
   BACKGROUND_STATE_SYSTEM,
@@ -59,6 +63,9 @@ const REPRODUCED: Array<[label: string, text: string]> = [
   ...BASH_SANDBOX_FRAGMENTS.map((f) => [`sandbox-fragment:${f.id}`, f.text] as [string, string]),
   ['main-loop:intro', MAIN_LOOP_INTRO.text],
   ...MAIN_LOOP_BODY.map((f) => [`main-loop:${f.id}`, f.text] as [string, string]),
+  // Memory mode-B protocol prompt (docs-verbatim; the `memory` tool it names
+  // ships in src/tools/memory/ and the fragment is only injected when it does).
+  ['memory:protocol', MEMORY_PROTOCOL_FRAGMENT.text],
   ['generator:command-prefix', COMMAND_PREFIX_SYSTEM],
   ['generator:background-state', BACKGROUND_STATE_SYSTEM],
   ['generator:session-title', SESSION_TITLE_SYSTEM],

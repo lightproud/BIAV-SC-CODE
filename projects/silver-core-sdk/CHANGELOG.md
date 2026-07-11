@@ -16,6 +16,20 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.46.0 — 2026-07-11
+
+**Memory system M1 (spec R1–R6, BPT-EXTENSION `options.memory` — docs/MEMORY.md)**:
+`memory_20250818`-equivalent six-command memory tool with client-injected
+storage. Dual assembly (R2): native typed entry on the Anthropic protocol /
+SDK-defined custom tool + docs-verbatim protocol prompt on any protocol —
+one consuming surface, identical store artifacts. `MemoryStore` contract +
+`MemoryFileOps` primitives + `createMemoryStore` semantics engine (byte-exact
+docs reference strings, golden-tested) + `createLocalFilesystemMemoryStore`
+default + publishable `runMemoryStoreContractSuite` (R3). SDK-layer path
+validation with a 23-variant traversal attack corpus as a release gate (R4).
+Resident `/memories/MEMORY.md` index injection with line/byte caps (R6).
+80 new tests; typed `MemoryToolError`.
+
 ## 0.45.0 — 2026-07-11
 
 **Network layer: built-in keep-alive client (方案丁转正) + preconnect (方案丙)**

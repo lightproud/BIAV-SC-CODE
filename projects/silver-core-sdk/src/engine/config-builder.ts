@@ -263,3 +263,40 @@ export function buildEngineConfig(args: {
 
   return { engineConfig, outputFormat, sessionGitBranch, isClaudeCodePreset };
 }
+
+/**
+ * Append labeled system-prompt parts to an ALREADY-BUILT engine config
+ * (memory system R5/R6: the protocol fragment is static but the resident
+ * memory index needs an async store read, so both are appended by the query
+ * layer at run start, before the first request). Placement invariants:
+ *  - string/preset path: appended to the STABLE prompt after the existing
+ *    tail, so systemPromptBaseLen (a char offset into the base) stays valid
+ *    and the [tools | system-base | system-tail | last-message] cache-
+ *    breakpoint structure is unchanged — the parts land inside the existing
+ *    tail breakpoint;
+ *  - segments path: appended as trailing UNCACHED blocks (same treatment as
+ *    the structured-output instruction), adding no breakpoints.
+ * Each part is also pushed onto the labeled composition breakdown so
+ * prompt-composition observability attributes it by name.
+ */
+export function appendSystemInjection(
+  engineConfig: EngineConfig,
+  parts: Array<{ label: string; text: string }>,
+): void {
+  for (const part of parts) {
+    if (part.text.length === 0) continue;
+    if (engineConfig.systemBlocks !== undefined) {
+      engineConfig.systemBlocks.push({ type: 'text', text: part.text });
+    } else {
+      engineConfig.systemPrompt =
+        engineConfig.systemPrompt.length > 0
+          ? `${engineConfig.systemPrompt}\n\n${part.text}`
+          : part.text;
+    }
+    engineConfig.systemComposition?.parts.push({
+      role: 'append',
+      label: part.label,
+      estTokens: estimateTextTokens(part.text),
+    });
+  }
+}

@@ -56,6 +56,7 @@ export type ErrorCode =
   | 'api_status_error'
   | 'not_implemented'
   | 'config_invalid'
+  | 'memory_tool_error'
   | McpErrorCode;
 
 /** Thrown when an operation is aborted via AbortController/interrupt(). */
@@ -133,6 +134,18 @@ export class NotImplementedError extends Error {
 export class ConfigurationError extends Error {
   override name = 'ConfigurationError';
   readonly code: ErrorCode = 'config_invalid';
+}
+
+/**
+ * A memory-tool command failed (missing path, duplicate old_str, root
+ * protection, ...). `message` is the REFERENCE error string from the official
+ * memory-tool docs, verbatim — the memory tool surfaces it as the is_error
+ * tool_result content, so the model reads exactly what the docs trained it
+ * to expect (docs/MEMORY.md R1).
+ */
+export class MemoryToolError extends Error {
+  override name = 'MemoryToolError';
+  readonly code: ErrorCode = 'memory_tool_error';
 }
 
 /** Which MCP transport an `McpError` originated from. */
