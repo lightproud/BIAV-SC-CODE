@@ -7,12 +7,16 @@ the data lives is entirely the consumer's decision (a local directory, an
 intranet share, a database — the SDK never knows).
 
 Status: **M1 shipped in v0.46.0** (spec R1–R6) and **M2 shipped in v0.47.0**
-(spec R7–R9): the full spec surface is implemented. One R2 acceptance sub-item
-remains open: the conformance memory axis against a LIVE official-arm wire
-capture — the mock-wire locks exist (`tests/conformance-memory-axis.test.ts`,
-plus live-smoke phase 3 against the real API via the `live-smoke` workflow);
-the official-arm differential slot is the skipped test there, pending a
-keeper-dispatched capture run.
+(spec R7–R9): the full spec surface is implemented, and the R2 acceptance is
+now CLOSED end to end: the conformance memory axis carries both the mock-wire
+locks AND a field-level differential against a LIVE official-arm capture
+(fixture `tests/conformance/official-memory-wire.json`, captured 2026-07-11 by
+`tests/integration/capture-official-memory-wire.mjs` via the live-smoke
+workflow — findings: the official SDK serializes the typed entry as exactly
+`{type, name}` and byte-matches this SDK's native-mode entry; tools[] order is
+caller-defined; anthropic-version parity holds). live-smoke phase 3 also
+proved the native-mode assembly against the real API (model wrote through the
+typed entry into the local store, memoryHealth writes=1).
 
 M2 surface summary:
 - **R7 write-timing** — `flushOnCompaction` (default on): when auto-compaction
