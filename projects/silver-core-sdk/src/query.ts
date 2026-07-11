@@ -267,6 +267,15 @@ export function query(args: {
 
   // --- Collaborators ---------------------------------------------------------
   const outer = options.abortController ?? new AbortController();
+  // Query-OWNED lifetime controller. close() aborts THIS, never `outer`: when
+  // the caller passes their own AbortController (a supported pattern — one
+  // controller can drive several sibling queries, or a SessionManager threads
+  // one into every session), close()-ing one query must not abort the caller's
+  // controller and take the siblings down with it. Cancellation propagates
+  // through `lifeSignal`, the union of the caller's signal and this one, so an
+  // outer abort still cancels everything AND close() cancels only this query.
+  const life = new AbortController();
+  const lifeSignal = AbortSignal.any([outer.signal, life.signal]);
   const persist = options.persistSession !== false;
   if (options.sessionStore !== undefined && !persist) {
     throw new ConfigurationError(
@@ -614,7 +623,7 @@ export function query(args: {
     env,
     additionalDirectories: options.additionalDirectories ?? [],
     fallbackModel: options.fallbackModel,
-    outerSignal: outer.signal,
+    outerSignal: lifeSignal,
     sessionId: () => resolvedSessionId,
     debug,
     emitObservability: emitObs,
@@ -912,7 +921,7 @@ export function query(args: {
           interruptRequested = false;
           turnController.abort(new AbortError('The turn was interrupted'));
         }
-        const turnSignal = AbortSignal.any([outer.signal, turnController.signal]);
+        const turnSignal = AbortSignal.any([lifeSignal, turnController.signal]);
         const toolContext: ToolContext = {
           // EnterWorktree survives turn-boundary context rebuilds: the session
           // state is keyed on the shared readFilePaths Set, so the per-turn
@@ -1074,7 +1083,10 @@ export function query(args: {
             }
           }
           if (isAbortError(err)) {
-            if (outer.signal.aborted) {
+            // A caller abort OR a close() (life) ends the whole run; only a
+            // per-turn interrupt() (turnController, neither of the above) is a
+            // recoverable turn-level cancel.
+            if (lifeSignal.aborted) {
               throw err instanceof AbortError ? err : new AbortError();
             }
             // Turn-level interrupt(): streaming mode keeps accepting input;
@@ -1115,7 +1127,7 @@ export function query(args: {
           },
           undefined,
           source,
-          outer.signal,
+          lifeSignal,
         );
         for (const m of agg.systemMessages) debug(`SessionStart hook: ${m}`);
         sessionStartContext = [...agg.additionalContext];
@@ -1306,7 +1318,7 @@ export function query(args: {
             },
             undefined,
             undefined,
-            outer.signal,
+            lifeSignal,
           );
           for (const m of agg.systemMessages) debug(`UserPromptSubmit hook: ${m}`);
           if (!agg.continue || agg.decision === 'deny') {
@@ -1419,7 +1431,7 @@ export function query(args: {
         memory !== null &&
         memory.sessionEndUpdate &&
         acct.turns > 0 &&
-        !outer.signal.aborted
+        !lifeSignal.aborted
       ) {
         try {
           const endParam: APIMessageParam = {
@@ -1456,6 +1468,14 @@ export function query(args: {
       throw err;
     } finally {
       turnController = null;
+      // Stop the input pump on EVERY exit path, not only close()/outer-abort:
+      // a streaming-input consumer that breaks its for-await, or an internal
+      // early return (maxTurns / maxBudget / SessionStart block), otherwise
+      // leaves pump() forever pulling the caller's async iterator into an
+      // unbounded queue — the caller's generator finally never runs. Closing
+      // the queue makes the next queue.push() return false so pump() breaks and
+      // calls the source's return(). Idempotent with close()'s queue.fail().
+      queue.close();
       // Remove the outer-abort listener so reusing one AbortController across
       // many queries does not accumulate a listener per query (finding #16).
       outer.signal.removeEventListener('abort', onOuterAbort);
@@ -1704,7 +1724,12 @@ export function query(args: {
       // finally block does not race a different reason in.
       void fireSessionEnd('close');
       queue.fail(reason);
-      if (!outer.signal.aborted) outer.abort(reason);
+      // Abort the query-OWNED lifetime controller, never the caller's `outer`:
+      // aborting `outer` here would fire every sibling query that shares the
+      // caller's AbortController (finding: close() must not take siblings down).
+      // lifeSignal is the union of outer + life, so this still cancels this
+      // query's turns/subagents/hooks.
+      if (!life.signal.aborted) life.abort(reason);
       subagentRuntime.abortAll();
       void inner.return(undefined).catch(() => undefined);
       // Ownership contract: only close a registry this query constructed. A

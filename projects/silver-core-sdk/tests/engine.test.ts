@@ -1745,6 +1745,26 @@ describe('runAgentLoop', () => {
     expect((result as { error_code?: string }).error_code).toBe('refusal');
   });
 
+  it('C5: a refusal turn drops any orphan tool_use from the persisted turn', async () => {
+    // A refusal (200, stop_reason:refusal) can still carry a completed tool_use.
+    // Persisting it unpaired 400s every later same-session request, so it must
+    // be filtered like the C6 natural-end path (text kept for context).
+    const events = toolUseReplyEvents('Read', { file_path: '/a' }, { leadingText: 'no' });
+    const md = events.find((e) => e.type === 'message_delta') as {
+      delta: { stop_reason: string };
+    };
+    md.delta.stop_reason = 'refusal';
+    const transport = new MockTransport([events]);
+    const deps = makeDeps(transport);
+    const history: APIMessageParam[] = [{ role: 'user', content: 'go' }];
+    const messages = await collect(runAgentLoop(history, deps, makeConfig()));
+    expect((lastResult(messages) as { error_code?: string }).error_code).toBe('refusal');
+    const persisted = history.find((m) => m.role === 'assistant')!;
+    const kinds = (persisted.content as ContentBlockParam[]).map((b) => b.type);
+    expect(kinds).not.toContain('tool_use'); // orphan dropped
+    expect(kinds).toContain('text'); // context kept
+  });
+
   it('C6: a max_tokens orphan tool_use is dropped from the persisted turn', async () => {
     const events = toolUseReplyEvents('Read', { file_path: '/a' }, { leadingText: 'hmm' });
     const md = events.find((e) => e.type === 'message_delta') as {

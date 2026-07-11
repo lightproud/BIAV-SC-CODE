@@ -16,6 +16,35 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.47.8 — 2026-07-11
+
+**World-class review pass, engine + query correctness batch**:
+
+- **PreCompact `decision:'deny'` now vetoes the FOLD, not only the flush**:
+  `performCompaction` vetoed only on `continue:false`, while the memory-flush
+  gate (and official hook semantics) also treat `decision:'deny'` as a veto. A
+  hook returning `{continue:true, decision:'deny'}` therefore suppressed the
+  pre-compaction memory-flush turn yet let the fold compact away the very
+  progress the denied flush was meant to save. The two gates now agree.
+- **refusal turn drops orphan tool_use**: a `stop_reason:'refusal'` turn can
+  carry a completed tool_use; persisting it unpaired 400s every later
+  same-session request. Apply the C6 orphan filter (as natural-end /
+  structured-invalid / bg-drain already do); text/thinking kept for context.
+- **input pump closed on every exit path**: a streaming-input consumer that
+  breaks its `for await`, or an internal early return (maxTurns / maxBudget /
+  SessionStart block), left `pump()` forever pulling the caller's async
+  iterator into an unbounded queue (the caller's generator finalizer never
+  ran). `run()`'s finally now closes the queue so the pump stops and the source
+  is returned.
+- **close() no longer aborts the caller's AbortController**: `close()` aborted
+  `options.abortController`, so closing one query killed every sibling query
+  sharing that controller (and any managed session). A query-owned `life`
+  controller now backs `close()`; cancellation propagates through the union of
+  the caller's signal and `life`, so an outer abort still cancels the query and
+  `close()` cancels only this one.
+
++4 regression tests.
+
 ## 0.47.7 — 2026-07-11
 
 **World-class review pass, P1 fix**: `ToolSearch` registration reached the

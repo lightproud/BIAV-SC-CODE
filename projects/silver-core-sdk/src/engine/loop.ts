@@ -1118,7 +1118,15 @@ export async function* runAgentLoop(
       // fed into the structured-output retry loop below). error_code 'refusal'
       // lets a host classify + opt into a fallback. Partial content is dropped.
       if (assistant.stop_reason === 'refusal') {
-        pushAssistant(assistant.content, assistant.model);
+        // Apply the C6 orphan filter (as natural-end / structured-invalid /
+        // bg-drain do): a refusal can carry a COMPLETED but unexecuted tool_use,
+        // and persisting it unpaired 400s every later same-session request with
+        // "tool_use ids without tool_result". Keep any text/thinking for context,
+        // drop the orphan tool_use.
+        pushAssistant(
+          assistant.content.filter((b) => b.type !== 'tool_use'),
+          assistant.model,
+        );
         deps.debug('engine: model declined (stop_reason: refusal)');
         yield errorResult(
           'error_during_execution',
