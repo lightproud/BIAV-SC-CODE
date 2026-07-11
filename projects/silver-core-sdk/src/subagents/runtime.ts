@@ -62,6 +62,7 @@ import type {
   SpawnSubagentParams,
   SpawnSubagentResult,
   ToolContext,
+  ToolDispatchRecord,
   Transport,
 } from '../internal/contracts.js';
 import type { CanUseTool } from '../types.js';
@@ -175,6 +176,10 @@ export type SubagentRuntimeOptions = {
   readFilePaths?: Set<string>;
   /** Formal per-query WeakMap key threaded into child contexts (F6). */
   sessionKey?: object;
+  /** S3 structured tool-call records: the parent query's recorder. Children
+   *  forward every dispatched call with parentToolUseId stamped, so the
+   *  session audit trail covers subagent tool calls too. */
+  onToolRecord?: (rec: ToolDispatchRecord) => void;
 };
 
 /** task_updated.result carries a bounded preview, not the full child text
@@ -1061,6 +1066,14 @@ export function createSubagentRuntime(
         hooks,
         toolContext: childToolContext,
         debug,
+        // S3: forward the parent recorder with the spawning Task tool_use id
+        // stamped, so the session audit trail attributes child tool calls.
+        ...(opts.onToolRecord !== undefined
+          ? {
+              onToolRecord: (rec: ToolDispatchRecord): void =>
+                opts.onToolRecord!({ ...rec, parentToolUseId: params.toolUseId }),
+            }
+          : {}),
       };
       // Fork seeds the child with a trimmed copy of the parent history plus the
       // delegated task as a trailing user turn; isolated starts from just the

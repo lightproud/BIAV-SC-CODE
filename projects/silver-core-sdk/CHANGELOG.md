@@ -16,6 +16,33 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.48.0 — 2026-07-11
+
+**Memory governance P0 set (spec S1–S4, BPT-EXTENSION — docs/MEMORY-GOVERNANCE.md)**:
+the SDK-layer footing for BPT's team/personal memory partitioning, incognito
+mode and auditability. S1 scope routing: `options.memory.mounts` declares
+per-query subtree rights (`read-only` / `read-write`), enforced at the tool
+layer on top of R4 traversal protection — writes outside a read-write mount
+and any access outside every mount are rejected with structured errors,
+ancestor-directory listings are FILTERED to mount-visible entries (user A
+never sees user B's names), rename is gated at both ends, and the resident
+index (R6) only injects when `/memories/MEMORY.md` is mount-readable. S2
+incognito primitive: `options.incognito` forces zero SDK-side persistence —
+transcript writes off (`sessionStore` combination is a ConfigurationError),
+memory degraded to read-only (view stays; the five writes return
+`INCOGNITO_MEMORY_ERROR`), both R7 write rounds off, S3 records off; the
+leak-test checklist from the requirements doc runs as integration tests
+(marker-grep across every SDK-writable root). S3 structured tool-call log:
+one `tool_call` JSONL record per dispatched tool_use block (root loop AND
+subagents, `parent_tool_use_id`-stamped) with name / truncated input JSON /
+timestamp / seq / status / duration / result summary, `type`-distinguishable
+from message lines and joinable to the untruncated tool_use block via
+tool_use_id; read back with `getSessionToolCalls()`. S4 claim verification:
+`auditToolClaims` / `auditSessionToolClaims` flag assistant turns that CLAIM
+a tool action with no backing record (default zh+en memory-write detector,
+consumer-extensible; low-miss over precision by design). +32 tests, full
+suite 1812 green.
+
 ## 0.47.0 — 2026-07-11
 
 **Memory system M2 (spec R7–R9, BPT-EXTENSION `options.memory` — docs/MEMORY.md)**:

@@ -66,6 +66,21 @@ src/
 
 ## 当前状态
 
+**v0.48.0(2026-07-11):记忆治理 P0 组(spec S1–S4)落地**——守密人 0711 派发《记忆系统、
+隐私治理与会议记录支持》需求书(归档 `docs/MEMORY-GOVERNANCE.md`)的 SDK 侧收口。
+S1 作用域路由:`options.memory.mounts` 按 query 声明子树权限(read-only / read-write),
+工具层在 R4 穿越防护之上强制执行——只读挂载点拒写、挂载点外拒读写、祖先目录列目录按
+挂载可见性过滤(用户 A 看不到用户 B 的目录名)、rename 双端校验、R6 常驻索引仅在
+MEMORY.md 挂载可读时注入。S2 无痕原语:`options.incognito` 一键零持久化(转录不落盘、
+memory 降级只读 view 可用、R7 两写回合关断、S3 记录抑制、sessionStore 组合报配置错误),
+需求书泄漏测试清单直接落为集成测试(标记词全盘 grep 零残留)。S3 结构化工具调用日志:
+每次 tool_use 派发在会话 JSONL 写一条 `tool_call` 记录(名/截断参数/时间戳/序号/成败/
+耗时/摘要;子代理带 parent_tool_use_id),`getSessionToolCalls` 读回,经 tool_use_id 与
+tool_use 块对齐可全量重放。S4 声明核验:`auditToolClaims`/`auditSessionToolClaims` 检出
+「嘴上说调了、日志无记录」轮次(中英文记忆写入探测器默认集,漏报优先压低)。S5 由既有
+按 query 组合满足(同一 store 上 team-ro 用户会话与 team-rw synthesis 任务并存已入测试)、
+S6 架构预留由 S3 记录携 session_id 兑现。+32 测试,全量 1812 绿。
+
 **v0.47.0(2026-07-11):记忆系统 M2(spec R7–R9)落地,spec 全量收口**——R7 压缩前落盘回合
 (auto 触发将至先注入一次记忆写入机会、PreCompact 钩子可 deny、每折叠周期恰一次)+ 会话正常
 终结进度卡回合(abort/错误不触发,回合 result 被吸收、任务自身 result 仍为流内最后一个);

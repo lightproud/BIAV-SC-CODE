@@ -19,6 +19,7 @@ import { ConfigurationError } from '../errors.js';
 
 import type {
   SessionStore as ExternalSessionStore,
+  SDKToolCallRecord,
   SessionKey,
   SessionMessage,
   SessionStoreEntry,
@@ -129,6 +130,34 @@ export async function getSessionMessages(
   const end =
     options.limit !== undefined && options.limit >= 0 ? offset + options.limit : undefined;
   return offset > 0 || end !== undefined ? out.slice(offset, end) : out;
+}
+
+/**
+ * Return the structured tool-call records persisted for a session (governance
+ * spec S3), in write order. Together with getSessionMessages this is the
+ * export surface for synthesis pipelines and audit tools: `type` distinguishes
+ * text from tool calls without parsing natural language, and `timestamp`/`seq`
+ * keep tool calls alignable with the message sequence. An incognito session
+ * (S2) has no transcript, hence no records.
+ */
+export async function getSessionToolCalls(
+  sessionId: string,
+  options: SessionMutationOptions = {},
+): Promise<SDKToolCallRecord[]> {
+  let entries: Record<string, unknown>[];
+  if (options.sessionStore !== undefined) {
+    const loaded = await options.sessionStore.load(mainKey(sessionId, options));
+    entries = (loaded ?? []) as Record<string, unknown>[];
+  } else {
+    entries = await readLocalEntries(sessionId, options);
+  }
+  const out: SDKToolCallRecord[] = [];
+  for (const e of entries) {
+    if (e.type !== 'tool_call') continue;
+    if (typeof e.tool_use_id !== 'string' || typeof e.tool_name !== 'string') continue;
+    out.push(e as unknown as SDKToolCallRecord);
+  }
+  return out;
 }
 
 /** Set the human-readable title for a session (last write wins). The official
