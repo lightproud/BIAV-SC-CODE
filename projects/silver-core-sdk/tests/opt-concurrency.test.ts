@@ -122,7 +122,7 @@ describe('OPT-4: transport honors maxConcurrentRequests', () => {
     const probe = stubFetch();
     const t = new AnthropicTransport({
       provider: { apiKey: 'sk-test', maxConcurrentRequests: 2 },
-      env: {},
+      env: { BPT_HTTP_CLIENT: 'fetch' },
       debug: () => {},
       betas: undefined,
     });
@@ -135,7 +135,7 @@ describe('OPT-4: transport honors maxConcurrentRequests', () => {
     const probe = stubFetch();
     const t = new AnthropicTransport({
       provider: { apiKey: 'sk-test' },
-      env: {},
+      env: { BPT_HTTP_CLIENT: 'fetch' },
       debug: () => {},
       betas: undefined,
     });

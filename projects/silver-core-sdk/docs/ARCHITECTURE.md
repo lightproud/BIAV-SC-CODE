@@ -432,7 +432,7 @@ build red.
 
 | Path prefix | Additional allowed error classes |
 |-------------|----------------------------------|
-| `src/transport/` | `APIConnectionError`, `APIStatusError`, `ConfigurationError` |
+| `src/transport/` | `APIConnectionError`, `APIStatusError`, `ConfigurationError`, `TypeError` |
 | `src/engine/` | `APIConnectionError` |
 | `src/mcp/` | `McpError`, `NotImplementedError`, `ConfigurationError` |
 | `src/sessions/` | `ConfigurationError` |
@@ -445,6 +445,13 @@ legitimate throw documented in module D. Typed as `ConfigurationError` since
 the 2026-07-10 audit batch: an unspawnable shell is an environment problem,
 and the stable `code` lets a host route it without parsing the message. This
 retired the last bare `Error` in `src/`.)
+
+(`TypeError` in `src/transport/` exists for ONE module: `node-http.ts`, the
+built-in fetch adapter. Fetch-shape fidelity requires it — the WHATWG fetch
+contract rejects with `TypeError` for an invalid URL, an unsupported scheme,
+or an unusable body, and the adapter must be indistinguishable from global
+fetch to its callers, provider.fetch injectors included. The transports
+themselves still never mint a `TypeError`.)
 
 ## Testing contract (phase after integration)
 

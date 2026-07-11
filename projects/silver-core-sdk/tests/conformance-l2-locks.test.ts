@@ -67,7 +67,7 @@ function opts(extra: Record<string, unknown> = {}) {
     provider: { apiKey: 'test-key' },
     sessionDir: path.join(sandbox, '.sessions'),
     cwd: sandbox,
-    env: { PATH: process.env.PATH, HOME: process.env.HOME },
+    env: { PATH: process.env.PATH, HOME: process.env.HOME, BPT_HTTP_CLIENT: 'fetch' },
     model: 'claude-conformance-l2',
     // Pin the bash sandbox OFF so request bytes do not depend on host bwrap
     // presence (deterministic locks regardless of the CI image).
@@ -527,6 +527,7 @@ describe('L2 lock: env passthrough to the transport', () => {
           env: {
             PATH: process.env.PATH,
             HOME: process.env.HOME,
+            BPT_HTTP_CLIENT: 'fetch',
             ANTHROPIC_BASE_URL: 'http://conf-l2-env-routed.invalid',
             ANTHROPIC_API_KEY: DUMMY_KEY,
           },
@@ -552,6 +553,7 @@ describe('L2 lock: model resolution order', () => {
     const envWithModel = {
       PATH: process.env.PATH,
       HOME: process.env.HOME,
+      BPT_HTTP_CLIENT: 'fetch',
       ANTHROPIC_MODEL: 'model-from-env',
     };
 

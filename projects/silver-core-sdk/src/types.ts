@@ -1047,18 +1047,41 @@ export type ProviderConfig = {
   maxConcurrentRequests?: number;
   /**
    * Custom fetch implementation used for EVERY HTTP request this transport
-   * issues (default: the global fetch). BPT-EXTENSION. The primary use case
-   * is response time: Node's built-in fetch pools connections with a ~4s
-   * idle keep-alive by default, so an agent whose tool executions run longer
-   * than that pays a fresh TCP+TLS handshake (typically 100-300ms) on every
-   * turn. Injecting a fetch bound to an undici Agent with a longer
-   * keepAliveTimeout removes that per-turn tax (recipe: docs/PERFORMANCE.md).
-   * Also the seam for proxies, mTLS, and request instrumentation. The
-   * function receives exactly what the transport would pass to global fetch
-   * (endpoint URL + RequestInit including signal) and must resolve to a
-   * WHATWG Response whose body is the SSE stream.
+   * issues. BPT-EXTENSION. Highest-priority override: when set it wins over
+   * `httpClient` and the built-in default. The seam for proxies, mTLS, and
+   * request instrumentation (recipes: docs/PERFORMANCE.md). The function
+   * receives exactly what the transport would pass to global fetch (endpoint
+   * URL + RequestInit including signal) and must resolve to a WHATWG
+   * Response whose body is the SSE stream.
    */
   fetch?: (input: string | URL, init?: RequestInit) => Promise<Response>;
+  /**
+   * Which built-in HTTP client drives requests when `fetch` is not injected
+   * (BPT-EXTENSION; default 'node', env fallback `BPT_HTTP_CLIENT`).
+   * - 'node' (default since v0.45.0): the SDK's zero-dependency node:http(s)
+   *   adapter with long keep-alive agents + TLS session cache — connections
+   *   survive slow tool runs instead of re-paying a TCP+TLS handshake
+   *   (typically 100-300ms) each turn, the way global fetch's ~4s idle pool
+   *   does. Idle sockets are unref'd, so the warm pool never blocks process
+   *   exit. Divergences from fetch (all inert against the Messages API): no
+   *   redirect following, no accept-encoding, bodies always carry an
+   *   explicit content-length.
+   * - 'fetch': the pre-v0.45 behavior — the CURRENT global fetch, resolved
+   *   at call time. Pick this when you rely on undici semantics such as
+   *   setGlobalDispatcher / NODE_USE_ENV_PROXY proxying or global-fetch
+   *   test stubs.
+   */
+  httpClient?: 'node' | 'fetch';
+  /**
+   * Fire ONE fire-and-forget unauthenticated HEAD to the endpoint at
+   * transport construction (BPT-EXTENSION; default false, env fallback
+   * `BPT_PRECONNECT=1`). Warms DNS+TCP+TLS in parallel with MCP connect /
+   * session resolution so the first real request skips the handshake
+   * (~100-300ms off first-turn TTFT). Off by default: it is extra traffic
+   * the caller did not ask for. Failures are swallowed (never a failure
+   * source); no credential rides the probe.
+   */
+  preconnect?: boolean;
   maxOutputTokens?: number;
   /** Automatic prompt caching via cache_control breakpoints; default true. */
   promptCaching?: boolean;

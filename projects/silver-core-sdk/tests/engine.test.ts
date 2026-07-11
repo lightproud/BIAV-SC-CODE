@@ -225,7 +225,7 @@ function makeDeps(
     toolContext: {
       cwd: '/tmp/engine-test',
       additionalDirectories: [],
-      env: {},
+      env: { BPT_HTTP_CLIENT: 'fetch' },
       signal: overrides.signal ?? new AbortController().signal,
       debug: () => {},
     },
@@ -646,7 +646,7 @@ describe('runAgentLoop empty-stream self-heal (transport-level retry)', () => {
     vi.stubGlobal('fetch', fetch);
     const transport = new AnthropicTransport({
       provider: { apiKey: 'k' },
-      env: {},
+      env: { BPT_HTTP_CLIENT: 'fetch' },
       debug: () => {},
     });
     const deps = makeDeps(transport);

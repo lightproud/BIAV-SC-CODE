@@ -104,7 +104,7 @@ function managerOptions(extra: Partial<SessionManagerOptions> = {}): SessionMana
     provider: { apiKey: 'test-key', promptCaching: false, maxRetries: 0 },
     sessionDir,
     cwd,
-    env: { PATH: process.env.PATH, HOME: process.env.HOME },
+    env: { PATH: process.env.PATH, HOME: process.env.HOME, BPT_HTTP_CLIENT: 'fetch' },
     model: 'claude-sonnet-4-5',
     ...extra,
   };
@@ -115,7 +115,7 @@ function queryOptions(extra: Partial<Options> = {}): Options {
     provider: { apiKey: 'test-key', promptCaching: false, maxRetries: 0 },
     sessionDir,
     cwd,
-    env: { PATH: process.env.PATH, HOME: process.env.HOME },
+    env: { PATH: process.env.PATH, HOME: process.env.HOME, BPT_HTTP_CLIENT: 'fetch' },
     model: 'claude-sonnet-4-5',
     ...extra,
   };

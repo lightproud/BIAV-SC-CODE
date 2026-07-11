@@ -75,7 +75,7 @@ function baseManagerOptions(extra: Partial<SessionManagerOptions> = {}): Session
     sessionDir,
     cwd,
     // Hermetic env: no ANTHROPIC_* leakage; PATH kept so stdio servers spawn.
-    env: { PATH: process.env.PATH, HOME: process.env.HOME },
+    env: { PATH: process.env.PATH, HOME: process.env.HOME, BPT_HTTP_CLIENT: 'fetch' },
     model: 'claude-sonnet-4-5',
     ...extra,
   };

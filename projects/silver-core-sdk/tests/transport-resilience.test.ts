@@ -110,7 +110,7 @@ describe('transport uses the env-resolved retry budget', () => {
     vi.stubGlobal('fetch', fetchMock);
     const t = new AnthropicTransport({
       provider: { apiKey: 'k' },
-      env: { CLAUDE_CODE_MAX_RETRIES: '1' },
+      env: { CLAUDE_CODE_MAX_RETRIES: '1', BPT_HTTP_CLIENT: 'fetch' },
       debug: () => undefined,
     });
     const err = await exhaust(t);
@@ -123,7 +123,7 @@ describe('transport uses the env-resolved retry budget', () => {
     vi.stubGlobal('fetch', fetchMock);
     const t = new AnthropicTransport({
       provider: { apiKey: 'k', maxRetries: 0 },
-      env: { CLAUDE_CODE_MAX_RETRIES: '5' },
+      env: { CLAUDE_CODE_MAX_RETRIES: '5', BPT_HTTP_CLIENT: 'fetch' },
       debug: () => undefined,
     });
     const err = await exhaust(t);

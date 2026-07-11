@@ -43,7 +43,7 @@ function opts(extra: Partial<Options> = {}): Options {
     provider: { apiKey: 'test-key', promptCaching: false },
     sessionDir: join(cwd, '.sessions'),
     cwd,
-    env: { PATH: process.env.PATH, HOME: process.env.HOME },
+    env: { PATH: process.env.PATH, HOME: process.env.HOME, BPT_HTTP_CLIENT: 'fetch' },
     model: 'claude-sonnet-4-5',
     agents: { 'general-purpose': { description: 'worker', prompt: 'You are a worker.' } },
     ...extra,
