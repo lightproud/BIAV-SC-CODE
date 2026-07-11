@@ -63,9 +63,10 @@ def main() -> int:
     def run(*cmd):
         return subprocess.run(cmd, cwd=_REPO_ROOT, capture_output=True, text=True)
 
-    # 机器身份只随本次 commit 生效（-c 一次性参数）——绝不 `git config` 改写仓库级
+    # 机器身份只随单条命令生效（-c 一次性参数）——绝不 `git config` 改写仓库级
     # 身份：自绑定模式下脚本跑在主会话仓库里，改写会污染会话后续提交的署名
-    # （lesson #48 follow-up：曾致会话 docs 提交带 github-actions[bot] 署名）。
+    # （lesson #48 follow-up / lesson #49 跨进程污染）。pull --rebase 重写本地
+    # 提交时同样需要身份，故 commit 与 pull 两处都带。
     bot_identity = ['-c', 'user.name=github-actions[bot]',
                     '-c', 'user.email=github-actions[bot]@users.noreply.github.com',
                     '-c', 'commit.gpgsign=false']
@@ -80,7 +81,7 @@ def main() -> int:
         print(f'FATAL: commit 失败: {commit.stderr[:300]}', file=sys.stderr)
         return 1
     for attempt in range(1, 5):
-        pull = run('git', 'pull', '--rebase', 'origin', 'main')
+        pull = run('git', *bot_identity, 'pull', '--rebase', 'origin', 'main')
         push = run('git', 'push', 'origin', 'HEAD:main')
         if push.returncode == 0:
             print('已推送 main')

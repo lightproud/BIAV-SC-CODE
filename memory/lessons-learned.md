@@ -445,4 +445,13 @@
 
 ---
 
+## 49. 采集脚本写仓库级 git 身份 = 容器内跨进程污染：例程自绑定后 bot 身份渗入人工会话提交
+
+- **Context**：2026-07-11 守密人诊断 Unverified 提交源头。arca_live 日采脚本 `collect_arca_daily.py` 沿用 CI workflow 惯用写法 `git config user.name/email github-actions[bot]`；lesson #48 将该例程切**自绑定**（点火进主会话）后，脚本开始跑在**守密人主会话容器**里
+- **Problem**：`git config user.*` 默认写**仓库级** `.git/config`，作用域是整个容器的整个仓库、跨进程持久——采集跑过一次，同容器后续所有**人工会话**提交全部顶着 bot 身份（GitHub 显示 Unverified）。CI 容器即用即弃掩盖了这个写法的害处；一进长命容器立即变污染源。与 #47（钩子误报侧）合为同一事故的两半：真污染 + 误诊路径
+- **Fix**：身份改**骑在单条命令上**——`git -c user.name=… -c user.email=… commit/pull` （`_GIT_ID` 元组两处展开；`pull --rebase` 重写提交同样需要身份故必须带），零持久写。仓库级 config 由会话/容器 setup 自己管
+- **Impact**：判别准则沉淀——**任何在共享/长命容器里跑的脚本，禁写 `git config user.*`（及一切仓库级持久配置），一律 `-c` 单命令作用域**；从 CI workflow 抄脚本进例程时，此项必须过一遍改造检查
+
+---
+
 > **维护说明**：遇到新的坑时立即追加。格式保持统一。
