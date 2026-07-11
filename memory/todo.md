@@ -34,6 +34,7 @@
 | T28 | BPT 侧多用户 session 隔离与 token 计费归属现状回填：S1 挂载已按 query 实例化落地（SDK 侧不阻塞），BPT 接线时按其用户体系把 `{userId}` 实例化进 mounts 并核对计费归属口径 | 黑池输入 | 0711 记忆治理需求书 §7 待决表 + `projects/silver-core-sdk/docs/MEMORY-GOVERNANCE.md` S1 节 | 开 |
 | T29 | git 历史重写禁区站岗：2026-06-21 瘦身删除的 ~3.0G discord 旧档，仅实证 30 月中 3 月在 Releases 有副本；做 git 历史重写前**不得假定其余 27 月安全**（历史 blob 是唯一二次抢救网） | 观察 | 原根目录 `todo.md` 风险提示节（2026-07-11 仓库精简裁定归账后删档，见 `Public-Info-Pool/Resource/repo-engineering/repo-slim-audit-20260711.md` 项 2） | 开 |
 | T30 | pending-discussions 归档遗留开账复核：2026-04-26 定格快照归档时余 18 条未销（采集接入 4 / 日报流程 2 / 事实圣经补全 1 / 站点 Discussions 1 / 数据层审计副产物 6 / 待解锁源 3 / publish_time 污染 1），部分疑已被后续演化覆盖（如 Discussions/Giscus 评论随 2026-07-10 取消社区贡献大概率作废、日报定时已停用），须逐条复核销案或转正式挂账 | 裁定 | `memory/archive/pending-discussions.md`（2026-07-11 仓库精简裁定项 5 归档） | 开 |
+| T31 | 机器直推 main 切 deploy key 通道（T19 门禁误伤修复）：Ruleset 生效后内建 `GITHUB_TOKEN` 直推被 GH013 拦——update-news 断流 4 轮（UTC 0920/1312/1553/1706）+ OKF 重建 2 败实证；「GitHub Actions」不能作 Ruleset bypass 主体系平台限制，bypass 选择器搜不到（守密人截图证实）。16 个直推 workflow 的 checkout 已挂 `secrets.BOT_DEPLOY_KEY`。**待守密人三步**：① Settings→Deploy keys 添加公钥（勾 Allow write access）；② Ruleset bypass 加「Deploy keys」Always allow；③ Settings→Secrets→Actions 建 `BOT_DEPLOY_KEY`=私钥。三步完后合并接线 PR、点火 update-news 复验即销。另注：T3 销案「机器推送无误伤」结论被本次实证推翻（当时验证批次在勾选前，误判） | 裁定 | 本条 + 接线 PR + `update-news` 失败 run [29160997764](https://github.com/lightproud/brain-in-a-vat/actions/runs/29160997764) | 开 |
 
 ## 已清（销案引）
 
