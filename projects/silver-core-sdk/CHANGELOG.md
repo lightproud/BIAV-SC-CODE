@@ -16,6 +16,15 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.47.10 — 2026-07-11
+
+**World-class review pass, OpenAI is_error signal**: an `is_error` tool_result
+lost its failure signal when encoded to the OpenAI `tool` role (which has no
+is_error field), so the model could not tell a failed tool call (a non-zero
+Bash exit, a builtin error) from a successful one. Failed tool results now carry
+a deterministic `[tool error]` marker; successful results are unchanged.
++1 regression test.
+
 ## 0.47.9 — 2026-07-11
 
 **World-class review pass, permissions + subagents batch**:

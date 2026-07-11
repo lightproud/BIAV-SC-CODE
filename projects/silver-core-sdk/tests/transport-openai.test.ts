@@ -184,6 +184,28 @@ describe('encodeOpenAIRequest', () => {
     ]);
   });
 
+  it('marks an is_error tool_result so the model sees the failure (no OpenAI is_error field)', () => {
+    const body = encodeOpenAIRequest({
+      model: 'm',
+      max_tokens: 8,
+      messages: [
+        {
+          role: 'user',
+          content: [
+            { type: 'tool_result', tool_use_id: 't1', content: 'boom: exit 1', is_error: true },
+            { type: 'tool_result', tool_use_id: 't2', content: 'ok result' },
+            { type: 'tool_result', tool_use_id: 't3', content: '', is_error: true },
+          ],
+        },
+      ],
+    });
+    expect(body.messages).toEqual([
+      { role: 'tool', tool_call_id: 't1', content: '[tool error] boom: exit 1' },
+      { role: 'tool', tool_call_id: 't2', content: 'ok result' }, // success unchanged
+      { role: 'tool', tool_call_id: 't3', content: '[tool error]' },
+    ]);
+  });
+
   it('translates user image blocks to image_url data URLs', () => {
     const body = encodeOpenAIRequest({
       model: 'm',

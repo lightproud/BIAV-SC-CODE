@@ -137,21 +137,31 @@ function imagePartUrl(block: ImageBlockParam): string {
 
 /** Flatten a tool_result's content to the string an OpenAI `tool` message
  *  carries. Non-text blocks degrade to honest placeholders (never dropped
- *  silently). */
+ *  silently). An `is_error` tool_result gets a deterministic textual marker:
+ *  the OpenAI `tool` role has no is_error field, so without it the model can
+ *  no longer tell a failed tool call (a non-zero Bash exit, a builtin error)
+ *  from a successful one — it would treat the error text as a normal result. */
 function flattenToolResultContent(block: ToolResultBlockParam): string {
   const content = block.content;
-  if (content === undefined) return '';
-  if (typeof content === 'string') return content;
-  const parts: string[] = [];
-  for (const item of content) {
-    if (item.type === 'text') parts.push(item.text);
-    else if (item.type === 'image') {
-      parts.push('[image content omitted: not representable in an OpenAI tool result]');
-    } else {
-      parts.push(documentFallbackText(item));
-    }
-  }
-  return parts.join('\n');
+  const body =
+    content === undefined
+      ? ''
+      : typeof content === 'string'
+        ? content
+        : content
+            .map((item) =>
+              item.type === 'text'
+                ? item.text
+                : item.type === 'image'
+                  ? '[image content omitted: not representable in an OpenAI tool result]'
+                  : documentFallbackText(item),
+            )
+            .join('\n');
+  return block.is_error === true
+    ? body.length > 0
+      ? `[tool error] ${body}`
+      : '[tool error]'
+    : body;
 }
 
 function documentFallbackText(block: DocumentBlockParam): string {
