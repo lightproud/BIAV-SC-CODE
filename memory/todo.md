@@ -16,7 +16,7 @@
 
 | ID | 账目 | 类别 | 源出处 | 状态 |
 |----|------|------|--------|------|
-| T4 | dispatch 一轮真 L5（验 code-01 残余 + run-l35 双臂封印 KD-L35-02，$ 帽内）；不派则一致性线判定收官 | 预算 | `memory/project-status.md`「引擎工单账目结算 r5」段 | 开 |
+| T4 | dispatch 一轮真 L5（验 code-01 残余，$ 帽内）。**已裁「点火」**（守密人 2026-07-10 AskUserQuestion）；执行阻于通道：github MCP 需重授权（claude.ai 连接器设置）、REST 经会话代理 403（GitHub App 未启组织级访问）、备选 = 守密人 Actions 页手点 Run workflow（勾 `conformance_l5`）。另注：run-l35 双臂封印 KD-L35-02 无 CI 入口（本地脚本需真钥），需接线或本地跑，随本账一并收 | 预算 | `memory/project-status.md`「引擎工单账目结算 r5」段 | 开（已裁待通道） |
 | T5 | /goal 提示词快照待上游露出（每周参照刷新 CI `refresh-claude-code-prompts.yml` 自动观察） | 观察 | `memory/project-status.md` v0.38 段挂账注 | 开 |
 | T6 | 测试长尾：L3.5 双臂升门禁（自注「版本稳定后」）+ MCP 差分第二批（schema 语义 / annotations / stdio-http 传输） | 观察 | `memory/project-status.md` 一致性测试段 | 开 |
 | T7 | Desktop UI 路线 M0–M4 升 r2：待守密人回填 BPT 现状（存量可跑件 / 团队人力） | 黑池输入 | `Public-Info-Pool/Resource/repo-engineering/bpt-desktop-ui-roadmap-20260705.md` 假设声明 | 开 |
@@ -41,7 +41,7 @@
 | C4 | settingSources 默认语义反转升钉 | v0.8.0（守密人「确定升钉了」，2026-07-05） |
 | C5 | B 类官方骨架提示词再现裁定 | `decisions.md` 2026-07-10（「结构再现 + 文本自写」默认，随 v0.39 工单落档） |
 | C6 | 委派引擎四缝（coordinator/SendMessage、ExitPlanMode、调度归宿、通知面） | ExitPlanMode/Monitor/Workflow 等随 PR #480；O-B2 SendMessage + coordinator 预设随 PR #567（v0.42.0，2026-07-10） |
-| T3 | CI required `test` 检查是否重启 | `decisions.md` 2026-07-10 维护态节拍表条③：重启获批（Ruleset 恢复 required test + up-to-date），待守密人手动勾选生效、勾选前过渡期仍按自查自合 |
+| T3 | CI required `test` 检查是否重启 | **定谳：维持自查自合**（守密人 2026-07-10 AskUserQuestion，覆盖同日节拍表条③——撞车经呈报后守密人选「以 UI 答复为准」）；`decisions.md` 同日「CI required 检查维持自查自合」条 + methodology「维护态节拍」节已双向同步 |
 
 ---
 
