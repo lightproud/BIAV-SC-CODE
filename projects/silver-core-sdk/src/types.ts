@@ -224,6 +224,23 @@ export type APIToolDefinition = {
 };
 
 /**
+ * An Anthropic-provided (server-declared) tool entry, e.g.
+ * `{ type: 'memory_20250818', name: 'memory' }`: the typed entry IS the whole
+ * configuration — no input_schema is sent, the API injects the definition
+ * server-side. Anthropic protocol only (the OpenAI translator drops these).
+ */
+export type APIServerToolDefinition = {
+  type: string;
+  name: string;
+  /** Prompt-cache breakpoint marker (set by the cache-control layer). */
+  cache_control?: CacheControlEphemeral | null;
+};
+
+/** One request `tools[]` entry: a custom tool definition or a server-declared
+ *  typed entry. Discriminate on the presence of `input_schema`. */
+export type APIToolDefinitionParam = APIToolDefinition | APIServerToolDefinition;
+
+/**
  * Messages API `tool_choice` param (Options.toolChoice; forwarded verbatim to
  * the wire — snake_case `disable_parallel_tool_use` is the API field name). The
  * four variants are the official shape:
@@ -1285,6 +1302,71 @@ export type ReadLimits = {
   maxLineChars?: number;
 };
 
+/**
+ * Client-side storage contract for the memory tool (BPT-EXTENSION, memory
+ * system spec R3): the injection point that keeps memory data entirely in the
+ * hosting application's hands — the SDK defines the contract and never knows
+ * the storage medium. Paths are virtual (`/memories[/...]`) and arrive
+ * SDK-validated (spec R4); implementations must still not trust them (defense
+ * in depth). Each method returns the reference result string, or throws an
+ * Error whose message is the reference error string.
+ *
+ * Prefer implementing the storage primitives (`MemoryFileOps`) and wrapping
+ * them with `createMemoryStore()` — that inherits the byte-exact reference
+ * formats. Validate any implementation with `runMemoryStoreContractSuite()`.
+ */
+export interface MemoryStore {
+  view(path: string, viewRange?: [number, number]): Promise<string>;
+  create(path: string, fileText: string): Promise<string>;
+  strReplace(path: string, oldStr: string, newStr: string | undefined): Promise<string>;
+  insert(path: string, insertLine: number, insertText: string): Promise<string>;
+  delete(path: string): Promise<string>;
+  rename(oldPath: string, newPath: string): Promise<string>;
+}
+
+/**
+ * Memory system configuration (BPT-EXTENSION; docs/MEMORY.md). Presence of
+ * the object enables the `memory` tool (set `enabled: false` to keep a shared
+ * options spread but switch the system off).
+ */
+export type MemoryOptions = {
+  /** Default true when the object is present. */
+  enabled?: boolean;
+  /**
+   * Storage implementation. Default: a local-filesystem store rooted at
+   * `<cwd>/.claude/memory/memories` (development / single-machine use).
+   */
+  store?: MemoryStore;
+  /**
+   * Base directory for the DEFAULT local store (ignored when `store` is
+   * given); the memory root is `<baseDir>/memories`.
+   */
+  baseDir?: string;
+  /**
+   * Tool assembly mode (spec R2). 'native' declares the official
+   * `{ type: 'memory_20250818', name: 'memory' }` entry and lets the API
+   * inject the definition + protocol prompt (Anthropic protocol only);
+   * 'custom' advertises an SDK-defined equivalent tool and injects the
+   * protocol prompt SDK-side (any protocol). Default: by transport protocol —
+   * anthropic -> 'native', openai-chat -> 'custom'. Forcing 'native' on an
+   * openai-chat provider is a configuration error (query() throws).
+   */
+  mode?: 'native' | 'custom';
+  /** `create` on an existing file overwrites instead of erroring (the
+   *  reference behavior; spec R1 opt-in). Default false. */
+  createOverwrite?: boolean;
+  /**
+   * Resident memory index (spec R6): at session start the harness reads the
+   * head of `/memories/MEMORY.md` (when it exists) into the system prompt so
+   * the index survives context resets without a tool round-trip. `false`
+   * disables; defaults: maxLines 200, maxBytes 25600 — first limit hit wins.
+   */
+  indexInjection?: false | { maxLines?: number; maxBytes?: number };
+  /** Extra consumer guidance appended after the protocol prompt in 'custom'
+   *  mode (e.g. "Only record information relevant to <topic>."). */
+  instructions?: string;
+};
+
 export type Options = {
   abortController?: AbortController;
   additionalDirectories?: string[];
@@ -1471,6 +1553,9 @@ export type Options = {
   onElicitation?: ElicitationHandler;
   /** BPT extension: allow WebFetch to reach localhost/private IPs (default false). */
   allowPrivateWebFetch?: boolean;
+  /** BPT-EXTENSION: cross-session memory tool (memory_20250818 equivalence);
+   *  see MemoryOptions + docs/MEMORY.md. Absent -> no memory tool. */
+  memory?: MemoryOptions;
   /** Mirror session transcripts to an external backend (S3/Redis/DB). */
   sessionStore?: SessionStore;
   /** Flush cadence for sessionStore mirror writes. Default 'batched'. */

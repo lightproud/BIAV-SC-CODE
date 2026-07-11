@@ -62,7 +62,9 @@ import {
   slashCommandInfos,
 } from './engine/slash-commands.js';
 import { SessionAccounting } from './query-accounting.js';
-import { buildEngineConfig } from './engine/config-builder.js';
+import { appendSystemInjection, buildEngineConfig } from './engine/config-builder.js';
+import { MEMORY_PROTOCOL_FRAGMENT } from './engine/prompt-fragments.js';
+import { MEMORY_TOOL_NAME, resolveMemoryRuntime } from './tools/memory/index.js';
 import { createSessionPersistence } from './sessions/persistence.js';
 import { AsyncQueue, createDeferred, type Deferred } from './internal/async.js';
 import { ToolFilterMcpRegistry } from './mcp/tool-filter.js';
@@ -310,9 +312,35 @@ export function query(args: {
   };
   assertBypassUnlocked(options.permissionMode);
 
+  // Memory system (BPT-EXTENSION, docs/MEMORY.md): resolve Options.memory into
+  // the store + assembly mode + builtin. Resolved BEFORE the permission gate so
+  // the tool can ride an implicit allowedTools entry (official parity: memory
+  // operations never permission-prompt; plan mode still denies writes). A
+  // bare-name disallowedTools 'memory' entry disables the system outright.
+  const memoryEnabled =
+    options.memory !== undefined &&
+    options.memory.enabled !== false &&
+    !(options.disallowedTools ?? [])
+      .filter((raw) => parseRule(raw).specifier === undefined)
+      .some((pattern) => matchToolName(pattern, MEMORY_TOOL_NAME));
+  const memory = memoryEnabled
+    ? resolveMemoryRuntime({
+        memory: options.memory!,
+        cwd,
+        protocol: options.provider?.protocol === 'openai-chat' ? 'openai-chat' : 'anthropic',
+        debug,
+      })
+    : null;
+  if (options.memory !== undefined && memory === null) {
+    debug('memory: configured but disabled (enabled:false or bare-name disallowed)');
+  }
+
   const gate = new DefaultPermissionGate({
     mode: options.permissionMode,
-    allowedTools: options.allowedTools,
+    allowedTools:
+      memory !== null
+        ? [...(options.allowedTools ?? []), MEMORY_TOOL_NAME]
+        : options.allowedTools,
     disallowedTools: options.disallowedTools,
     canUseTool: options.canUseTool,
     debug,
@@ -533,6 +561,14 @@ export function query(args: {
     builtinToolNames: [...builtinTools.keys()],
     debug,
   });
+  // Memory mode A ("native"): advertise the official typed entry verbatim;
+  // the memory BUILTIN below stays the execution loop but its schema is not
+  // advertised (see EngineConfig.serverTools). Set on the ROOT config only —
+  // the subagent runtime derives child configs field-by-field, so children
+  // never inherit it (memory is main-loop-only in v1).
+  if (memory?.serverTools !== undefined) {
+    engineConfig.serverTools = memory.serverTools;
+  }
 
   // Subagent runtime: hands out per-depth spawn closures + drains child results
   // and usage. Children get the real (unfiltered) MCP registry and apply their
@@ -563,6 +599,15 @@ export function query(args: {
     readFilePaths,
     sessionKey: toolSessionKey,
   });
+
+  // Memory tool registration — MAIN LOOP ONLY (v1): a cloned map so the
+  // subagent runtime's baseBuiltins (captured above) never sees it. In native
+  // mode the entry is the execution loop for the server-declared tool; in
+  // custom mode it is advertised like any other builtin.
+  const mainLoopBuiltins =
+    memory !== null
+      ? new Map(builtinTools).set(MEMORY_TOOL_NAME, memory.tool)
+      : builtinTools;
 
   // --- Input queue (unified for string and streaming-input modes) -----------
   const streamingMode = typeof prompt !== 'string';
@@ -774,6 +819,29 @@ export function query(args: {
       engineConfig.transcriptPath = persist
         ? resolveTranscriptPath(store, sess.sessionId)
         : undefined;
+
+      // Memory system-prompt injection, ONCE per run, before the first
+      // request: (R5) the behavior-protocol fragment in CUSTOM mode only —
+      // native mode gets it API-side, doubling it would skew behavior — plus
+      // any consumer instructions; (R6) the resident memory index (async
+      // store read; zero injection when /memories/MEMORY.md is absent). Both
+      // land in the stable system tail (see appendSystemInjection), so the
+      // cache-breakpoint structure is unchanged.
+      if (memory !== null) {
+        const parts: Array<{ label: string; text: string }> = [];
+        if (memory.mode === 'custom') {
+          parts.push({ label: 'memory-protocol', text: MEMORY_PROTOCOL_FRAGMENT.text });
+        }
+        // Consumer guidance applies in BOTH modes (the docs' "guide what
+        // Claude writes to memory" prompting pattern).
+        if (memory.instructions !== undefined && memory.instructions.length > 0) {
+          parts.push({ label: 'memory-instructions', text: memory.instructions });
+        }
+        const index = await memory.buildIndexInjection();
+        if (index !== null) parts.push(index);
+        appendSystemInjection(engineConfig, parts);
+      }
+
       const history = sess.history;
       let needMeta = sess.needMeta;
 
@@ -859,7 +927,7 @@ export function query(args: {
         toolContext.permissionGate = gate;
         const deps: EngineDeps = {
           transport,
-          builtinTools,
+          builtinTools: mainLoopBuiltins,
           mcp: mcpEff,
           permissions: gate,
           hooks,
@@ -1044,7 +1112,7 @@ export function query(args: {
         apiKeySource: transport.apiKeySource(),
         cwd,
         tools: [
-          ...builtinTools.keys(),
+          ...mainLoopBuiltins.keys(),
           ...mcpEff.allTools().map((t) => t.qualifiedName),
         ],
         mcp_servers: mcpEff

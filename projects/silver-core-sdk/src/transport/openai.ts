@@ -271,9 +271,15 @@ export function encodeOpenAIRequest(
   if (system !== undefined) messages.push({ role: 'system', content: system });
   for (const msg of req.messages) messages.push(...encodeMessage(msg));
 
+  // Server-declared typed entries (no input_schema, e.g. memory_20250818)
+  // have no Chat Completions equivalent and are dropped honestly — the query
+  // layer never assembles them on this protocol (memory runs in custom mode).
+  const customTools = (req.tools ?? []).filter(
+    (t): t is APIToolDefinition => 'input_schema' in t,
+  );
   const tools =
-    req.tools !== undefined && req.tools.length > 0
-      ? req.tools.map((t: APIToolDefinition) => ({
+    customTools.length > 0
+      ? customTools.map((t: APIToolDefinition) => ({
           type: 'function' as const,
           function: {
             name: t.name,

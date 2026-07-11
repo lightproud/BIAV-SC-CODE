@@ -66,6 +66,14 @@ src/
 
 ## 当前状态
 
+**v0.46.0(2026-07-11):记忆系统 M1(spec R1–R6)落地**——`options.memory` 六命令
+memory 工具(memory_20250818 协议等价)+ 双模式装配(native 直通官方类型条目 /
+custom 自带 schema + 官方逐字协议提示)+ `MemoryStore` 契约与 `MemoryFileOps`
+原语层(参考格式单点收口 `createMemoryStore`)+ 本地默认 store + 可交付契约
+测试套件 + R4 穿越攻击集(23 变体,发版门禁)+ `/memories/MEMORY.md` 索引常驻
+(行/字节双帽)。M2(R7 钩子联动 / R8 治理限额 / R9 记忆卡)待建;需求书归档
+`docs/MEMORY.md`。80 新测试,全量 1755 绿。
+
 v0.2 完成（2026-07-03）：v0.1 已合并入 main；v0.2 补齐上下文压缩 / 结构化输出 /
 子代理运行时 / 权限 v2 / 提示缓存 / 新工具（WebFetch·WebSearch·AskUserQuestion·
 TodoWrite）/ 外部会话存储 + 文件检查点 + 工具搜索。

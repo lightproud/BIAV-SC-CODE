@@ -46,7 +46,7 @@ richer internal/ without the map following.)
 |--------|---------------------------|----------|
 | A transport | `transport/` (sse, anthropic, openai, factory, stall-watchdog) | `Transport`; `factory.ts` is the protocol switch point |
 | B engine | `engine/` (loop, accumulator, compaction, prompts + fragments/assembler, tokens, pricing, cache-control, context-window, thinking-*, structured-output, runtime-context, prompt-composition) | `EngineConfig`/`EngineDeps` |
-| C+D tools | `tools/` (fs/exec/search builtins, shells, task family, workflow + workflow-engine, worktree, plan mode, web, registry) | `BuiltinTool` |
+| C+D tools | `tools/` (fs/exec/search builtins, shells, task family, workflow + workflow-engine, worktree, plan mode, web, memory (six-command tool + MemoryStore engine + contract suite), registry) | `BuiltinTool`, `MemoryStore` |
 | E permissions + hooks | `permissions/`, `hooks/` | `PermissionGate`, `HookRunner` |
 | F mcp | `mcp/` | `McpRegistry`, `tool()`, `createSdkMcpServer()` |
 | G sessions + assembly | `sessions/`, `query.ts`, `session-manager.ts`, `index.ts` | `SessionStore`, `Query`, package exports; composition roots |
@@ -439,6 +439,7 @@ build red.
 | `src/query.ts` | `ConfigurationError` |
 | `src/session-manager.ts` | `ConfigurationError` |
 | `src/tools/bash.ts` | `ConfigurationError` |
+| `src/tools/memory/` | `MemoryToolError`, `ConfigurationError` |
 
 (`src/tools/bash.ts` throws exactly once — spawn impossibility, the only
 legitimate throw documented in module D. Typed as `ConfigurationError` since

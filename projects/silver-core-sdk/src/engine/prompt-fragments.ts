@@ -38,6 +38,30 @@ export interface PromptFragment {
   text: string;
 }
 
+/**
+ * Memory-tool behavior protocol (spec R5): in memory mode B ("custom") the
+ * SDK injects this itself, reproducing what the Messages API auto-adds to the
+ * system prompt when the native memory_20250818 tool is present (verbatim
+ * from the official memory-tool docs, "Prompting guidance"). NOT part of
+ * MAIN_LOOP_BODY — the query layer appends it to the stable system tail only
+ * when memory is enabled in custom mode (never in native mode: the API
+ * injects it server-side there, and doubling it would skew behavior).
+ */
+export const MEMORY_PROTOCOL_FRAGMENT: PromptFragment = {
+  id: 'memory-protocol',
+  slug: 'memory-tool-docs-prompting-guidance',
+  faithful: true,
+  gate: (has) => has('memory'),
+  text:
+    'IMPORTANT: ALWAYS VIEW YOUR MEMORY DIRECTORY BEFORE DOING ANYTHING ELSE.\n' +
+    'MEMORY PROTOCOL:\n' +
+    '1. Use the `view` command of your `memory` tool to check for earlier progress.\n' +
+    '2. ... (work on the task) ...\n' +
+    '   - As you make progress, record status / progress / thoughts etc in your memory.\n' +
+    'ASSUME INTERRUPTION: Your context window might be reset at any moment, so you risk ' +
+    'losing any progress that is not recorded in your memory directory.',
+};
+
 /** The identity intro (always first). */
 export const MAIN_LOOP_INTRO: PromptFragment = {
   id: 'intro',

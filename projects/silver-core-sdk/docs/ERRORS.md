@@ -29,6 +29,7 @@ Per-layer rules for WHICH class a module may throw live in
 | `api_status_error` | `APIStatusError` | Non-2xx response from the Messages API (`status` / `errorType` / `requestId` fields carry the detail). |
 | `not_implemented` | `NotImplementedError` | A feature accepted for type compatibility is not implemented in this version (e.g. the legacy `sse` MCP transport). |
 | `config_invalid` | `ConfigurationError` | Invalid or missing configuration (no resolvable API key, unrecognized MCP server config, ...). |
+| `memory_tool_error` | `MemoryToolError` | A memory-tool command failed (missing path, duplicate old_str, root protection, ...); `message` is the docs-reference error string surfaced to the model as is_error tool_result content. |
 
 ## MCP codes (`McpError`)
 

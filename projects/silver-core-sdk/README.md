@@ -172,6 +172,17 @@ active). The authoritative list is `enumerateBuiltinToolMetadata()` /
 `tool()` + `createSdkMcpServer()`, or connect external MCP servers
 (stdio and streamable HTTP) via `options.mcpServers`.
 
+## Memory (cross-session, BPT-EXTENSION)
+
+`options.memory` enables a `memory_20250818`-equivalent six-command memory
+tool whose storage the host injects (`MemoryStore` contract; local-filesystem
+default under `<cwd>/.claude/memory`). On the Anthropic protocol the official
+typed entry is sent and the API injects the tool definition + protocol prompt;
+on `openai-chat` (or `mode: 'custom'`) the SDK advertises an equivalent tool
+and injects the docs-verbatim protocol itself — same consuming code, identical
+store artifacts. The head of `/memories/MEMORY.md` is auto-injected at session
+start (capped; lazily `view` the rest). See [docs/MEMORY.md](./docs/MEMORY.md).
+
 ## Examples
 
 Runnable examples live in [examples/](./examples):

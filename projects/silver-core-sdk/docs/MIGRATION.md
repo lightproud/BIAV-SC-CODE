@@ -33,6 +33,17 @@ npm install /path/to/silver-core-sdk-<version>.tgz
 
 Build a tarball from a checkout with `npm run build && npm pack`.
 
+## 1a. Memory tool naming (BPT-EXTENSION watch item)
+
+`options.memory` (docs/MEMORY.md) is a BPT-EXTENSION: the official
+`@anthropic-ai/claude-agent-sdk` has no memory options surface today. Where an
+official name exists it is already used verbatim (`memory` tool name, the
+`memory_20250818` typed entry, the six commands and their reference return
+strings — Messages API docs), so a future official SDK memory surface should
+be a rename/移植 of `options.memory` only; the wire behavior is already
+official-shaped. When that surface ships, migrate to the official field names
+and record the mapping here.
+
 ## 2. Credentials
 
 No `claude login`, no keychain. The transport resolves, in order:

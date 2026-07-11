@@ -16,7 +16,7 @@ import {
 import type {
   APIAssistantMessage,
   APIMessageParam,
-  APIToolDefinition,
+  APIToolDefinitionParam,
   CallToolResult,
   ContentBlock,
   DocumentBlockParam,
@@ -424,9 +424,19 @@ export async function* runAgentLoop(
    *  here so its schema is not written this turn; it reappears the turn after
    *  a ToolSearch load. Absent isBuiltinDeferred -> every built-in is inline
    *  (exact pre-unification behavior). */
-  const buildToolDefs = (): APIToolDefinition[] => {
-    const defs: APIToolDefinition[] = [];
+  const buildToolDefs = (): APIToolDefinitionParam[] => {
+    const defs: APIToolDefinitionParam[] = [];
+    // Server-declared tool entries (config.serverTools, e.g. the native-mode
+    // memory tool): the typed entry is advertised verbatim and a builtin of
+    // the SAME name is skipped from schema advertisement — that builtin is
+    // the execution loop for the server-declared tool, not a second
+    // definition of it.
+    const serverDeclared =
+      config.serverTools !== undefined && config.serverTools.length > 0
+        ? new Set(config.serverTools.map((t) => t.name))
+        : undefined;
     for (const tool of deps.builtinTools.values()) {
+      if (serverDeclared?.has(tool.name) === true) continue;
       if (deps.isBuiltinDeferred?.(tool.name) === true) continue;
       defs.push({
         name: tool.name,
@@ -440,6 +450,11 @@ export async function* runAgentLoop(
         description: entry.description,
         input_schema: entry.inputSchema,
       });
+    }
+    if (config.serverTools !== undefined) {
+      for (const st of config.serverTools) {
+        defs.push({ type: st.type, name: st.name });
+      }
     }
     return defs;
   };
@@ -518,7 +533,7 @@ export async function* runAgentLoop(
   // always changes the name set. Same-name schemas are static objects.
   let toolDefsEstimateKey: string | undefined;
   let toolDefsEstimate = 0;
-  const currentOverheadTokens = (defs: APIToolDefinition[]): number => {
+  const currentOverheadTokens = (defs: APIToolDefinitionParam[]): number => {
     const key = defs.map((d) => d.name).join(' ');
     if (key !== toolDefsEstimateKey) {
       toolDefsEstimate = estimateToolDefsTokens(defs);
@@ -532,7 +547,7 @@ export async function* runAgentLoop(
    *  tokens can be folded into totals before a fallback retry. */
   async function* streamAttempt(
     useModel: string,
-    toolDefs: APIToolDefinition[],
+    toolDefs: APIToolDefinitionParam[],
     sink?: UsageSink,
   ): AsyncGenerator<SDKMessage, APIAssistantMessage> {
     const accumulator = new MessageAccumulator();

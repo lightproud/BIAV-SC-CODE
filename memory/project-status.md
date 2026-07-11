@@ -186,6 +186,14 @@
 > 银芯→黑池单向输出物，与 §1.1-HC 防火墙同向，非 BPT 产品内部开发。
 
 - **动手前必读**：`projects/silver-core-sdk/CONTEXT.md`（会话上下文 + 当前 milestone）
+- **记忆系统 M1 落地（v0.46.0，2026-07-11，spec r1 R1–R6 全量，PR 待合并）**：`options.memory`
+  六命令 memory 工具（memory_20250818 协议等价、参考返回字符串逐字节 golden 锁）+ 双模式装配
+  （native 直通官方类型条目 / custom 自带 schema + 官方逐字协议提示，双模式存储产物 diff 为空）
+  + `MemoryStore` 契约（黑池注入点）与 `MemoryFileOps` 原语层（`createMemoryStore` 参考格式单点
+  收口）+ 本地默认 store + 可独立交付黑池的契约测试套件 `runMemoryStoreContractSuite` + R4 穿越
+  攻击集 23 变体（发版门禁）+ `/memories/MEMORY.md` 索引常驻（200 行 / 25KB 双帽）。M2（R7 钩子
+  联动 / R8 治理限额 / R9 记忆卡）待建；需求书 r1 归档 `projects/silver-core-sdk/docs/MEMORY.md`。
+  +80 测试（全量 1755 绿）；新增典型错误类 `MemoryToolError`。
 - **B 类首批骨架命令文本 batch 1（2026-07-11，销 todo #T10，已落）**：三张命令卡
   （`/review` low/medium/high + `/simplify` low/high 结构再现、`/loop` 固定模式）落
   `Public-Info-Pool/Resource/repo-engineering/bpt-desktop-builtin-commands-batch1-20260711.md`——

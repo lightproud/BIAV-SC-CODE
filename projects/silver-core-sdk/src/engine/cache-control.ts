@@ -42,7 +42,7 @@
 
 import type { StreamRequest } from '../internal/contracts.js';
 import type {
-  APIToolDefinition,
+  APIToolDefinitionParam,
   CacheControlEphemeral,
   ContentBlockParam,
   TextBlockParam,
@@ -112,7 +112,7 @@ export function applyCacheControl(
   if (Array.isArray(req.tools) && req.tools.length > 0) {
     const tools = req.tools.slice();
     const lastIdx = tools.length - 1;
-    const lastTool = tools[lastIdx] as APIToolDefinition;
+    const lastTool = tools[lastIdx] as APIToolDefinitionParam;
     tools[lastIdx] = { ...lastTool, cache_control: marker };
     next.tools = tools;
   }

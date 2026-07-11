@@ -27,6 +27,32 @@ export type { BuiltinToolMetadata } from './tools/index.js';
 // the 银芯/SVN-world variant options bundle. The faithful createBuiltinTools()
 // factory is unchanged; both of these are opt-in caller surfaces.
 export { DEFAULT_DEFERRED_BUILTINS, silverCoreToolOptions } from './tools/index.js';
+// Memory system (BPT-EXTENSION, docs/MEMORY.md): the MemoryStore contract and
+// MemoryOptions ride the types.js export; here are the store engine (implement
+// the MemoryFileOps primitives, inherit the byte-exact reference formats), the
+// built-in local-filesystem store, the SDK-layer path validator, and the
+// contract test suite a hosting application runs against its own store.
+export {
+  MEMORY_INDEX_PATH,
+  MEMORY_ROOT,
+  MEMORY_SERVER_TOOL,
+  MEMORY_TOOL_NAME,
+  MemoryPathError,
+  createLocalFilesystemMemoryStore,
+  createLocalMemoryFileOps,
+  createMemoryStore,
+  memoryStoreContractCheckNames,
+  runMemoryStoreContractSuite,
+  validateMemoryPath,
+} from './tools/memory/index.js';
+export type {
+  CreateMemoryStoreOptions,
+  MemoryDirEntry,
+  MemoryEntryStat,
+  MemoryFileOps,
+  MemoryStoreContractReport,
+  MemoryStoreContractResult,
+} from './tools/memory/index.js';
 // BPT-EXTENSION (2026-07-08, black-pool ContextRing request): expose the harness
 // system-prompt base constructor so a host can size the built-in harness base —
 // the ~2.9k-token V5 preset prose injected on the `claude_code` preset path — the
