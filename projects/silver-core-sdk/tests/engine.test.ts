@@ -565,6 +565,13 @@ describe('pricing', () => {
     expect(estimateCostUsd('us.anthropic.claude-opus-4-8', usage)).toBe(15);
     expect(estimateCostUsd('anthropic.claude-sonnet-4-5', usage)).toBe(3);
     expect(estimateCostUsd('claude-haiku-4-5@vertex', usage)).toBe(1);
+    // Cross-region inference-profile prefixes (NOT two letters) must price too,
+    // or maxBudgetUsd is silently unenforceable on them.
+    expect(estimateCostUsd('apac.anthropic.claude-opus-4-8', usage)).toBe(15);
+    expect(estimateCostUsd('global.anthropic.claude-sonnet-4-5', usage)).toBe(3);
+    expect(estimateCostUsd('us-gov.anthropic.claude-opus-4-8', usage)).toBe(15);
+    expect(hasPriceFor('apac.anthropic.claude-opus-4-8')).toBe(true);
+    expect(hasPriceFor('global.anthropic.claude-sonnet-4-5')).toBe(true);
   });
 
   it('S5: claude-fable-* prices instead of costing $0', () => {

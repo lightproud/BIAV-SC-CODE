@@ -77,8 +77,19 @@ export function hasPriceFor(
  * ids matched no prefix -> cost 0 -> `maxBudgetUsd` silently never enforced.
  */
 export function normalizeModelId(model: string): string {
-  // Bedrock: "<region>.anthropic.claude-…" or "anthropic.claude-…"
-  let m = model.replace(/^[a-z]{2}\.anthropic\./, '').replace(/^anthropic\./, '');
+  // Bedrock: "<region-profile>.anthropic.claude-…" or "anthropic.claude-…".
+  // The region/inference-profile prefix is NOT always two letters: cross-region
+  // inference profiles ship as `apac.`, `global.`, and `us-gov.` alongside the
+  // two-letter `us.`/`eu.` forms. The old two-letter-only regex left those
+  // spellings un-normalized → no price-table prefix matched → cost estimated as
+  // $0 → maxBudgetUsd silently unenforceable on exactly those models. Match a
+  // general lowercase[digits/hyphen] profile token before `.anthropic.`; a
+  // canonical `claude-…` / Vertex `claude-…@…` id has no `.anthropic.` and is
+  // untouched, and the bare `anthropic.` form is still handled by the second
+  // replace, so there is no double strip.
+  let m = model
+    .replace(/^[a-z][a-z0-9-]*\.anthropic\./, '')
+    .replace(/^anthropic\./, '');
   // Vertex: "claude-…@<region-or-version>"
   const at = m.indexOf('@');
   return at === -1 ? m : m.slice(0, at);

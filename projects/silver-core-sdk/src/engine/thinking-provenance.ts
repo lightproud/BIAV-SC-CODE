@@ -84,17 +84,31 @@ export function stripStaleThinking(
 ): APIMessageParam[] {
   const protectedIdx = protectedTurnIndex(messages);
   let changed = false;
-  const out = messages.map((m, i) => {
-    if (m.role !== 'assistant' || i === protectedIdx) return m;
-    if (!contentHasThinking(m.content)) return m;
+  const out: APIMessageParam[] = [];
+  for (let i = 0; i < messages.length; i++) {
+    const m = messages[i]!;
+    if (m.role !== 'assistant' || i === protectedIdx || !contentHasThinking(m.content)) {
+      out.push(m);
+      continue;
+    }
     const signer = signingModelOf(m);
     const stale = signer === undefined || signer !== targetModel;
-    if (!stale) return m;
+    if (!stale) {
+      out.push(m);
+      continue;
+    }
     changed = true;
-    return {
-      role: m.role,
-      content: (m.content as ContentBlockParam[]).filter((b) => !isThinking(b)),
-    };
-  });
+    const filtered = (m.content as ContentBlockParam[]).filter((b) => !isThinking(b));
+    // A thinking-only assistant turn (a max_tokens cut before any text/tool_use)
+    // strips down to ZERO content blocks. Replaying {role:'assistant',content:[]}
+    // 400s "content must not be empty" on EVERY later request — the bad turn
+    // lives in history, so the whole session wedges permanently and no resume
+    // can recover it. Drop the empty turn entirely instead of emitting it: it
+    // carried no answer and no tool call, and the Anthropic API coalesces any
+    // now-adjacent user turns (the memory-flush path already appends a user turn
+    // right after a tool_result user turn and relies on the same coalescing).
+    if (filtered.length === 0) continue;
+    out.push({ role: m.role, content: filtered });
+  }
   return changed ? out : messages;
 }

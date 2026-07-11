@@ -16,6 +16,24 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.47.4 — 2026-07-11
+
+**World-class review pass, engine correctness batch**:
+
+- **thinking-strip session death**: a thinking-only assistant turn (a max_tokens
+  cut before any text/tool_use) stripped down to zero content blocks on a
+  cross-model replay or an unstamped resume, and emitting
+  `{role:'assistant',content:[]}` 400s "content must not be empty" on EVERY
+  later request — permanently wedging the session. `stripStaleThinking` now
+  drops such an emptied turn instead of sending it.
+- **Bedrock inference-profile pricing**: `normalizeModelId` matched only
+  two-letter region prefixes (`us.`/`eu.`), so cross-region inference profiles
+  (`apac.`, `global.`, `us-gov.`) normalized to nothing → no price match → $0
+  cost → `maxBudgetUsd` silently unenforceable on exactly those models. The
+  region-profile token match is broadened to the real prefix shapes.
+
++5 regression tests.
+
 ## 0.47.3 — 2026-07-11
 
 **World-class review pass, P0 fix**: aggregate (agent-tree) budget ceiling.
