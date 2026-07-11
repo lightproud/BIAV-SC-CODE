@@ -272,6 +272,7 @@ export class AnthropicTransport implements Transport {
         armIdle(idleMs);
       };
       let eventCount = 0;
+      let sawMessageStart = false;
       try {
         resetIdle();
         for await (const frame of parseSSE(response.body, streamSignal)) {
@@ -315,6 +316,15 @@ export class AnthropicTransport implements Transport {
             );
           }
           eventCount += 1;
+          // Track the message's actual BEGINNING separately from the raw frame
+          // count: a `ping` keep-alive counts as a processed frame (diagnostics)
+          // but is NOT the message starting. The empty-stream check below keys
+          // on this, so a ping-then-close stream (no message_start) is still
+          // treated as an empty non-start and retried — instead of skipping the
+          // retry and letting the accumulator throw "finalize before message_start".
+          if ((parsed as { type?: string }).type === 'message_start') {
+            sawMessageStart = true;
+          }
           yield parsed as RawMessageStreamEvent;
           // The Messages API streams exactly one message; message_stop is its
           // terminal event. Stop consuming here - official-client lifecycle -
@@ -346,16 +356,19 @@ export class AnthropicTransport implements Transport {
         releaseSignals();
       }
 
-      // The stream ended without a terminal message_stop. Zero events => the
-      // body was empty (replay-safe): retry the whole request within the shared
-      // budget instead of returning an unusable zero-event stream. Any caller
-      // abort observed here wins over the retry.
-      if (eventCount === 0) {
+      // The stream ended without a terminal message_stop. No message_start =>
+      // the body never began (replay-safe): retry the whole request within the
+      // shared budget instead of returning an unusable stream. Keys on
+      // sawMessageStart, not eventCount, so a stream of ONLY ping keep-alives
+      // (no message_start) is still recognized as an empty non-start rather than
+      // slipping through to the accumulator's raw "finalize before message_start".
+      // Any caller abort observed here wins over the retry.
+      if (!sawMessageStart) {
         if (callerSignal?.aborted) throw new AbortError();
         if (emptyStreamRetries < maxRetries) {
           emptyStreamRetries += 1;
           this.debug(
-            `transport: empty stream (HTTP 200, zero SSE events); ` +
+            `transport: empty stream (HTTP 200, no message_start); ` +
               `retry ${emptyStreamRetries}/${maxRetries}`,
           );
           // Surface it like a network-level retry (no HTTP status) so the loop
@@ -365,7 +378,7 @@ export class AnthropicTransport implements Transport {
           continue;
         }
         throw new APIConnectionError(
-          `Messages API returned an empty stream (HTTP 200, zero SSE events) ` +
+          `Messages API returned an empty stream (HTTP 200, no message_start) ` +
             `after ${emptyStreamRetries + 1} attempt(s)`,
           undefined,
           'empty_stream',

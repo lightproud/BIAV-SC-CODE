@@ -16,6 +16,18 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.48.9 — 2026-07-11
+
+**World-class review pass (cont.), ping-only stream = empty non-start**: the
+Anthropic transport's empty-stream retry keyed on `eventCount === 0`, but a
+`ping` keep-alive counts as an event — so a stream of only pings that then
+closed (no `message_start`) looked non-empty, skipped the retry, and let the
+engine's accumulator throw a raw `finalize before message_start`. The empty
+check now keys on whether `message_start` was actually seen, so a ping-only
+non-start is retried like any other empty stream (eventCount still counts pings
+for the "after N event(s)" diagnostics; the twinned `mapStreamError` is
+untouched). +1 regression test.
+
 ## 0.48.8 — 2026-07-11
 
 **World-class review pass (cont.), shared-MCP cross-session isolation**: a
