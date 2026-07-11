@@ -433,6 +433,40 @@ describe('redrive-on-resume', () => {
     const t2 = await transcript(sid);
     expect(t2.some((l) => l.type === 'turn_complete')).toBe(true);
   });
+
+  it('⑨ a per-turn interrupt() SETTLES the pending so resume does not redrive the cancelled request', async () => {
+    // A hanging stream: the turn blocks until q.interrupt() cancels it. Unlike a
+    // crash (dangling pending -> redrive), a deliberate interrupt must settle the
+    // checkpoint so a later resume does NOT re-bill the cancelled request.
+    const hangingFn = vi.fn(async (): Promise<Response> => {
+      const stream = new ReadableStream<Uint8Array>({ start() { /* never closes */ } });
+      return new Response(stream, { status: 200, headers: { 'content-type': 'text/event-stream' } });
+    });
+    vi.stubGlobal('fetch', hangingFn);
+
+    const q = query({ prompt: 'do a thing', options: queryOptions() });
+    const messages: SDKMessage[] = [];
+    for await (const m of q) {
+      messages.push(m);
+      if (m.type === 'system' && (m as any).subtype === 'init') {
+        void q.interrupt(); // per-turn cancel (NOT the caller's AbortController)
+      }
+      if (m.type === 'result') break; // string mode ends with a terminal result
+    }
+    const sid = initSessionId(messages);
+    // The interrupt settled the checkpoint: a turn_complete pairs the pending.
+    const t1 = await transcript(sid);
+    expect(t1.some((l) => l.type === 'pending_turn')).toBe(true);
+    expect(t1.some((l) => l.type === 'turn_complete')).toBe(true);
+
+    // Resume: because the pending is settled, NO redrive request is issued for
+    // the cancelled turn (a dangling pending would have re-billed it).
+    vi.unstubAllGlobals();
+    const resumed = scriptedFetch([textReplyEvents('fresh')]);
+    vi.stubGlobal('fetch', resumed.fn);
+    await collect(query({ prompt: emptyStream(), options: queryOptions({ resume: sid }) }));
+    expect(resumed.calls()).toBe(0); // no auto-redrive of the cancelled request
+  });
 });
 
 // ---------------------------------------------------------------------------

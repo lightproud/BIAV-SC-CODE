@@ -16,6 +16,17 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.48.7 — 2026-07-11
+
+**World-class review pass (cont.), interrupt vs resume**: a per-turn
+`interrupt()` left the write-ahead `pending_turn` checkpoint dangling, so a
+later `resume` auto-redrove the request the user had DELIBERATELY cancelled —
+re-billing the API call and re-executing a rejected intent. A per-turn
+interrupt now settles the checkpoint (the resume redrive only fires on genuine
+crash evidence — a thrown error or an `error_during_execution` result); a caller
+`AbortController` abort / `close()` keeps the recover-on-resume posture. +1
+regression test.
+
 ## 0.48.6 — 2026-07-11
 
 **World-class review pass (cont.), subagent finalizer hardening**:
