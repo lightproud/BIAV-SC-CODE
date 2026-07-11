@@ -389,6 +389,22 @@ export class OpenAIStreamTranslator {
   private finishReason: string | null = null;
   private usage: NonNullable<OpenAIChunk['usage']> | null = null;
   private done = false;
+  /**
+   * Per-tool-call buffered state so a fragmented gateway does not lose the id
+   * or the name. Some OpenAI-compatible gateways stream the id in a LATER chunk
+   * than the one that opens the tool call, or split `function.name` across
+   * chunks. The old code captured id/name only on FIRST sight and minted a
+   * synthetic id immediately — so the real id (arriving next chunk) was
+   * dropped, producing a tool_use_id the server later rejects (400), and a
+   * split name mis-dispatched. We now hold the tool_use content_block_start
+   * until an id is present, accumulating name fragments and buffering any early
+   * argument deltas; conforming streams (id+name in the first delta) are
+   * byte-identical since the block still emits within that same feed() call.
+   */
+  private readonly toolBuffers = new Map<
+    string,
+    { id?: string; name: string; args: string; emitted: boolean; index?: number }
+  >();
 
   constructor(requestModel: string) {
     this.model = requestModel;
@@ -454,20 +470,53 @@ export class OpenAIStreamTranslator {
       });
     }
     for (const tc of delta.tool_calls ?? []) {
-      const key = `tool:${tc.index ?? 0}`;
-      const index = this.openBlock(events, key, {
-        type: 'tool_use',
-        id: tc.id ?? `call_${this.nextIndex}`,
-        name: tc.function?.name ?? '',
-        input: {},
-      });
+      // Key by index when present (the normal case); fall back to id, then a
+      // last-resort constant. Keying an index-less call by its id keeps two
+      // distinct id-bearing calls from colliding on `tool:0`.
+      const key =
+        tc.index !== undefined && tc.index !== null
+          ? `tool:${tc.index}`
+          : tc.id !== undefined
+            ? `tool:id:${tc.id}`
+            : 'tool:0';
+      let buf = this.toolBuffers.get(key);
+      if (buf === undefined) {
+        buf = { name: '', args: '', emitted: false };
+        this.toolBuffers.set(key, buf);
+      }
+      if (typeof tc.id === 'string' && tc.id.length > 0) buf.id = tc.id;
+      if (typeof tc.function?.name === 'string') buf.name += tc.function.name;
+      // Emit the block start as soon as an id is known, flushing any argument
+      // deltas that arrived before it. Conforming gateways hit this on the
+      // first delta (id present), so nothing is actually deferred for them.
+      if (!buf.emitted && buf.id !== undefined) {
+        buf.index = this.openBlock(events, key, {
+          type: 'tool_use',
+          id: buf.id,
+          name: buf.name,
+          input: {},
+        });
+        buf.emitted = true;
+        if (buf.args.length > 0) {
+          events.push({
+            type: 'content_block_delta',
+            index: buf.index,
+            delta: { type: 'input_json_delta', partial_json: buf.args },
+          });
+          buf.args = '';
+        }
+      }
       const args = tc.function?.arguments;
       if (typeof args === 'string' && args.length > 0) {
-        events.push({
-          type: 'content_block_delta',
-          index,
-          delta: { type: 'input_json_delta', partial_json: args },
-        });
+        if (buf.emitted && buf.index !== undefined) {
+          events.push({
+            type: 'content_block_delta',
+            index: buf.index,
+            delta: { type: 'input_json_delta', partial_json: args },
+          });
+        } else {
+          buf.args += args; // hold until the id arrives (or finish() flushes it)
+        }
       }
     }
     return events;
@@ -483,6 +532,27 @@ export class OpenAIStreamTranslator {
       );
     }
     const events: RawMessageStreamEvent[] = [];
+    // Flush any tool buffer that never received an id: emit it with a synthetic
+    // id (best effort) so a fragmented-id gateway still yields a callable
+    // tool_use block rather than silently dropping the call. Ordered by first
+    // appearance for stable indices.
+    for (const [key, buf] of this.toolBuffers) {
+      if (buf.emitted) continue;
+      buf.index = this.openBlock(events, key, {
+        type: 'tool_use',
+        id: buf.id ?? `call_${this.nextIndex}`,
+        name: buf.name,
+        input: {},
+      });
+      buf.emitted = true;
+      if (buf.args.length > 0) {
+        events.push({
+          type: 'content_block_delta',
+          index: buf.index,
+          delta: { type: 'input_json_delta', partial_json: buf.args },
+        });
+      }
+    }
     for (const index of [...this.open.values()].sort((a, b) => a - b)) {
       events.push({ type: 'content_block_stop', index });
     }
@@ -762,16 +832,25 @@ export class OpenAIChatTransport implements Transport {
 
       // The stream ended without throwing. A [DONE] terminator or any
       // finish_reason means the message reached its end-of-message marker:
-      // synthesize the terminal message_delta/message_stop and finish.
-      if (doneSeen || translator.sawFinishReason()) {
+      // synthesize the terminal message_delta/message_stop and finish. Guard on
+      // chunkCount > 0: a stream that delivered ZERO content chunks but a bare
+      // `[DONE]` (an overloaded gateway that accepts the request then closes it
+      // with only the terminator) is NOT a completed message — translator
+      // never started, so finish() would throw a raw, non-replay-safe error
+      // and the engine's turn-replay could not catch it. Fall through to the
+      // empty-stream retry below instead, so this zero-consumption shape
+      // self-heals exactly like the Anthropic arm's (a finish_reason chunk
+      // always increments chunkCount first, so sawFinishReason implies > 0).
+      if (chunkCount > 0 && (doneSeen || translator.sawFinishReason())) {
         yield* translator.finish();
         this.debug(`openai transport: stream completed after ${chunkCount} chunk(s)`);
         return;
       }
 
-      // No end-of-message marker. ZERO chunks => an empty stream (replay-safe):
-      // retry the whole request within the shared budget, like the Anthropic
-      // arm's idealab-throttle self-heal. Any caller abort observed here wins.
+      // No end-of-message marker (or a bare [DONE] with no chunks). ZERO chunks
+      // => an empty stream (replay-safe): retry the whole request within the
+      // shared budget, like the Anthropic arm's idealab-throttle self-heal. Any
+      // caller abort observed here wins.
       if (chunkCount === 0) {
         if (callerSignal?.aborted) throw new AbortError();
         if (emptyStreamRetries < maxRetries) {

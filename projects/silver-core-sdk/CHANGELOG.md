@@ -16,6 +16,28 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.47.5 — 2026-07-11
+
+**World-class review pass, OpenAI-protocol transport batch**:
+
+- **zero-consumption stream now self-heals**: a `200 + only data:[DONE]`
+  stream (zero content chunks — an overloaded gateway that accepts the request
+  then closes with just the terminator) hit `translator.finish()`, which threw
+  a raw "ended before any chunk" error with no replay-safe marker, so the
+  engine's turn-replay could not catch it. The completed-message check now
+  requires `chunkCount > 0`, so a zero-chunk `[DONE]` falls through to the same
+  empty-stream retry the Anthropic arm already uses (twin-symmetry restored).
+- **fragmented tool_call id/name preserved**: the translator captured a
+  tool-call's id and name only on the FIRST delta and minted a synthetic id
+  immediately, so a gateway that streamed the real id in a later chunk (or split
+  `function.name`) produced a tool_use_id the server later rejected (400) or a
+  mis-dispatched name. Per-index tool state is now buffered; the block start is
+  held until an id is known (accumulating name fragments and early arg deltas),
+  and a never-id'd call is flushed with a synthetic id at finish. Conforming
+  streams (id+name in the first delta) are byte-identical.
+
++4 regression tests.
+
 ## 0.47.4 — 2026-07-11
 
 **World-class review pass, engine correctness batch**:
