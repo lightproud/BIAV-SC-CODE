@@ -8,7 +8,7 @@
   },
   "stats": {
     "concepts": 359,
-    "edges": 416,
+    "edges": 417,
     "terms": 6182,
     "by_type": {
       "character": 72,
@@ -277,7 +277,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 3
+      "degree": 4
     },
     "/characters/125346.md": {
       "type": "character",
@@ -1597,7 +1597,7 @@
       ],
       "section": "memory",
       "tier": "search",
-      "degree": 8
+      "degree": 9
     },
     "/memory/lessons-learned.md": {
       "type": "knowledge-pointer",
@@ -5170,6 +5170,11 @@
         "cv"
       ],
       [
+        "/memory/decisions.md",
+        "提及:本源萝坦",
+        "mention"
+      ],
+      [
         "/memory/lessons-learned.md",
         "提及:本源萝坦",
         "mention"
@@ -7735,6 +7740,11 @@
       [
         "/characters/15602.md",
         "提及:熔毁·朵尔",
+        "mention"
+      ],
+      [
+        "/characters/122587.md",
+        "提及:本源萝坦",
         "mention"
       ],
       [

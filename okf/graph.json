@@ -2,7 +2,7 @@
   "generated": "2026-07-11",
   "stats": {
     "nodes": 359,
-    "edges": 416
+    "edges": 417
   },
   "nodes": [
     {
@@ -4547,6 +4547,12 @@
       "source": "/memory/decisions.md",
       "target": "/characters/15602.md",
       "rel": "提及:熔毁·朵尔",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/decisions.md",
+      "target": "/characters/122587.md",
+      "rel": "提及:本源萝坦",
       "rel_type": "mention"
     },
     {
