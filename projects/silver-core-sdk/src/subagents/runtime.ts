@@ -874,6 +874,7 @@ export function createSubagentRuntime(
       // for nested spawns — the spawn closure does not track per-child cwds.
       let childCwd = cwd;
       let worktreeDir: string | undefined;
+      let worktreeBaseHead: string | undefined;
       if (params.isolation === 'worktree') {
         const wt = await addWorktree(cwd);
         if ('error' in wt) {
@@ -885,17 +886,19 @@ export function createSubagentRuntime(
           };
         }
         worktreeDir = wt.dir;
+        worktreeBaseHead = wt.baseHead;
         childCwd = wt.dir;
         debug(`subagent ${agentId}: isolation worktree at ${worktreeDir}`);
       }
-      /** Post-run worktree cleanup: removed only when left unchanged. */
+      /** Post-run worktree cleanup: removed only when the child left NO work —
+       *  neither uncommitted changes NOR commits past the base HEAD. */
       const releaseWorktree = async (): Promise<void> => {
         if (worktreeDir === undefined) return;
-        const outcome = await removeWorktreeIfClean(cwd, worktreeDir);
+        const outcome = await removeWorktreeIfClean(cwd, worktreeDir, worktreeBaseHead);
         if (outcome === 'kept') {
           debug(
             `subagent ${agentId}: worktree ${worktreeDir} kept ` +
-              '(uncommitted changes or git failure)',
+              '(uncommitted changes, committed work, or git failure)',
           );
         }
       };

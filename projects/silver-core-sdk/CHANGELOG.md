@@ -16,6 +16,18 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.48.5 — 2026-07-11
+
+**World-class review pass (cont.), worktree data safety**: a subagent isolation
+worktree (`Agent({ isolation: 'worktree' })`) is a DETACHED checkout. Cleanup
+kept it only when the working tree was dirty (`git status --porcelain`), so a
+child that COMMITTED its work left a clean tree and the worktree — with its
+detached commits — was removed, orphaning the commits (gc'd after the grace
+period). `addWorktree` now records the base HEAD and `removeWorktreeIfClean`
+keeps the worktree when HEAD has moved past it (commits made), not only when the
+tree is dirty — "never destroy work", committed or not. Named EnterWorktree
+worktrees are unaffected (their commits live on a branch). +1 regression test.
+
 ## 0.48.4 — 2026-07-11
 
 **World-class review pass (cont.), OpenAI-gateway compatibility**:

@@ -34,7 +34,7 @@ const execFileP = promisify(execFile);
  */
 export async function addWorktree(
   repoCwd: string,
-): Promise<{ dir: string } | { error: string }> {
+): Promise<{ dir: string; baseHead?: string } | { error: string }> {
   let dir: string;
   try {
     dir = await mkdtemp(join(tmpdir(), 'bpt-subagent-worktree-'));
@@ -43,7 +43,17 @@ export async function addWorktree(
   }
   try {
     await execFileP('git', ['worktree', 'add', '--detach', dir], { cwd: repoCwd });
-    return { dir };
+    // Record the HEAD the child STARTED from, so cleanup can tell whether the
+    // child committed (HEAD moved) and must be preserved — a detached worktree's
+    // commits become unreferenced the moment the worktree is removed.
+    let baseHead: string | undefined;
+    try {
+      const { stdout } = await execFileP('git', ['-C', dir, 'rev-parse', 'HEAD']);
+      baseHead = stdout.trim() || undefined;
+    } catch {
+      baseHead = undefined; // no HEAD probe -> cleanup treats any commit as "kept"
+    }
+    return baseHead !== undefined ? { dir, baseHead } : { dir };
   } catch (err) {
     await rm(dir, { recursive: true, force: true }).catch(() => undefined);
     return { error: err instanceof Error ? err.message : String(err) };
@@ -51,19 +61,37 @@ export async function addWorktree(
 }
 
 /**
- * Remove a temporary worktree IF the child left it unchanged (empty
- * `git status --porcelain`: no modified, staged, or untracked files). A dirty
- * worktree is KEPT — never destroy uncommitted child work — and any git
- * failure also keeps it (fail-safe toward preservation). The caller logs a
- * 'kept' outcome.
+ * Remove a temporary DETACHED worktree IF the child left NO work behind:
+ * an empty `git status --porcelain` (nothing modified/staged/untracked) AND
+ * HEAD still at `baseHead` (nothing committed). A dirty tree OR a moved HEAD is
+ * KEPT — never destroy child work, committed or not, since a detached
+ * worktree's commits go unreferenced (and are eventually gc'd) the instant the
+ * worktree is removed. Any git failure also keeps it (fail-safe toward
+ * preservation). When `baseHead` is unknown (the add-time probe failed), a
+ * clean-tree worktree whose HEAD is unreadable is kept, and a readable HEAD is
+ * only removed when it is a real, non-empty sha (still commit-safe). The caller
+ * logs a 'kept' outcome.
  */
 export async function removeWorktreeIfClean(
   repoCwd: string,
   dir: string,
+  baseHead?: string,
 ): Promise<'removed' | 'kept'> {
   try {
     const { stdout } = await execFileP('git', ['-C', dir, 'status', '--porcelain']);
-    if (stdout.trim().length > 0) return 'kept';
+    if (stdout.trim().length > 0) return 'kept'; // uncommitted work
+    // Committed work check: if HEAD moved past where the child started, the
+    // worktree carries detached commits that removal would orphan — keep it.
+    let head: string | undefined;
+    try {
+      const rp = await execFileP('git', ['-C', dir, 'rev-parse', 'HEAD']);
+      head = rp.stdout.trim() || undefined;
+    } catch {
+      head = undefined;
+    }
+    if (baseHead !== undefined) {
+      if (head === undefined || head !== baseHead) return 'kept'; // committed / unreadable
+    }
     await execFileP('git', ['worktree', 'remove', dir], { cwd: repoCwd });
     return 'removed';
   } catch {
