@@ -29,9 +29,15 @@
  * tool_result with that message as content.
  */
 
+import { Buffer } from 'node:buffer';
 import type { MemoryStore } from '../../internal/contracts.js';
 import { MemoryToolError } from '../../errors.js';
 import { MEMORY_ROOT, validateMemoryPath } from './paths.js';
+import {
+  DEFAULT_CARDS_CONFIG,
+  validateCardsContent,
+  type MemoryCardsConfig,
+} from './cards.js';
 
 /** stat() result for one existing entry. */
 export type MemoryEntryStat = { kind: 'file' | 'directory'; sizeBytes: number };
@@ -67,6 +73,42 @@ export interface MemoryFileOps {
   rename(oldPath: string, newPath: string): Promise<void>;
 }
 
+/** Governance limits (spec R8) as resolved numbers. */
+export type MemoryLimits = {
+  maxFileBytes: number;
+  maxFilesPerDirectory: number;
+  maxViewChars: number;
+};
+
+export const DEFAULT_MEMORY_LIMITS: MemoryLimits = {
+  maxFileBytes: 65_536,
+  maxFilesPerDirectory: 64,
+  maxViewChars: 16_000,
+};
+
+/** SDK-defined limit error strings (documented in docs/MEMORY.md; not part of
+ *  the official reference set — the official docs leave sizing to the
+ *  implementation and only recommend capping). */
+export function fileTooLargeError(path: string, maxFileBytes: number): string {
+  return `Error: File ${path} would exceed the maximum memory file size (${maxFileBytes} bytes)`;
+}
+export function directoryFullError(dir: string, maxFiles: number): string {
+  return `Error: Directory ${dir} already contains the maximum number of memory files (${maxFiles})`;
+}
+export function viewTruncationNotice(maxViewChars: number): string {
+  return `[Output truncated at ${maxViewChars} characters. Use the view_range parameter to view the rest of the file.]`;
+}
+
+/** Truncate a numbered view body at a whole-line boundary under the char cap,
+ *  appending the pagination notice. Shared by the store engine and the tool
+ *  layer (which re-applies it for directly-implemented stores). */
+export function truncateViewBody(body: string, maxViewChars: number): string {
+  if (body.length <= maxViewChars) return body;
+  const cut = body.lastIndexOf('\n', maxViewChars);
+  const kept = cut > 0 ? body.slice(0, cut) : body.slice(0, maxViewChars);
+  return `${kept}\n${viewTruncationNotice(maxViewChars)}`;
+}
+
 export type CreateMemoryStoreOptions = {
   /**
    * `create` on an existing file overwrites instead of returning the
@@ -75,6 +117,13 @@ export type CreateMemoryStoreOptions = {
    * default here — spec R1 makes overwrite an explicit opt-in).
    */
   createOverwrite?: boolean;
+  /** Governance limits (spec R8); missing fields take DEFAULT_MEMORY_LIMITS. */
+  limits?: Partial<MemoryLimits>;
+  /** Structured memory-card mode (spec R9): every written file must validate
+   *  as cards; invalid content is rejected with a structured retryable error. */
+  schema?: 'cards';
+  /** Card limits for schema 'cards'; missing fields take DEFAULT_CARDS_CONFIG. */
+  cards?: Partial<MemoryCardsConfig>;
 };
 
 const MAX_LINES = 999_999;
@@ -112,6 +161,19 @@ export function createMemoryStore(
   options: CreateMemoryStoreOptions = {},
 ): MemoryStore {
   const overwrite = options.createOverwrite === true;
+  const limits: MemoryLimits = { ...DEFAULT_MEMORY_LIMITS, ...options.limits };
+  const cardsCfg: MemoryCardsConfig = { ...DEFAULT_CARDS_CONFIG, ...options.cards };
+  /** R8 + R9 write gate: size cap, then cards validation, both BEFORE any
+   *  primitive write. Throws the SDK-defined error string. */
+  const checkWrite = (path: string, content: string): void => {
+    if (Buffer.byteLength(content, 'utf8') > limits.maxFileBytes) {
+      throw new MemoryToolError(fileTooLargeError(path, limits.maxFileBytes));
+    }
+    if (options.schema === 'cards') {
+      const invalid = validateCardsContent(content, cardsCfg);
+      if (invalid !== null) throw new MemoryToolError(invalid);
+    }
+  };
 
   /** 2-level depth-first listing walk (level 1 = children of the viewed
    *  directory, level 2 = grandchildren), sorted per level, hidden items and
@@ -180,7 +242,7 @@ export function createMemoryStore(
       }
       return (
         `Here's the content of ${path} with line numbers:\n` +
-        numberLines(displayLines, startNum).join('\n')
+        truncateViewBody(numberLines(displayLines, startNum).join('\n'), limits.maxViewChars)
       );
     },
 
@@ -192,6 +254,20 @@ export function createMemoryStore(
       const stat = await statOrNull(path);
       if (stat !== null && (stat.kind === 'directory' || !overwrite)) {
         throw new MemoryToolError(`Error: File ${path} already exists`);
+      }
+      checkWrite(path, fileText);
+      if (stat === null) {
+        // R8: per-directory file-count cap, checked only when ADDING a file.
+        const parent = path.slice(0, path.lastIndexOf('/')) || MEMORY_ROOT;
+        const parentStat = await statOrNull(parent);
+        if (parentStat?.kind === 'directory') {
+          const files = (await ops.list(parent)).filter((e) => e.kind === 'file');
+          if (files.length >= limits.maxFilesPerDirectory) {
+            throw new MemoryToolError(
+              directoryFullError(parent, limits.maxFilesPerDirectory),
+            );
+          }
+        }
       }
       await ops.write(path, fileText);
       return `File created successfully at: ${path}`;
@@ -224,6 +300,7 @@ export function createMemoryStore(
         );
       }
       const newContent = content.replace(oldStr, newStr ?? '');
+      checkWrite(path, newContent);
       await ops.write(path, newContent);
 
       const newLines = newContent.split('\n');
@@ -255,7 +332,9 @@ export function createMemoryStore(
         );
       }
       lines.splice(insertLine, 0, insertText.replace(/\n$/, ''));
-      await ops.write(path, lines.join('\n'));
+      const inserted = lines.join('\n');
+      checkWrite(path, inserted);
+      await ops.write(path, inserted);
       return `The file ${path} has been edited.`;
     },
 

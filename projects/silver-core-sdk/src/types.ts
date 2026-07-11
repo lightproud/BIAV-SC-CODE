@@ -1365,6 +1365,73 @@ export type MemoryOptions = {
   /** Extra consumer guidance appended after the protocol prompt in 'custom'
    *  mode (e.g. "Only record information relevant to <topic>."). */
   instructions?: string;
+  /**
+   * Governance limits (spec R8). Defaults: maxFileBytes 65536,
+   * maxFilesPerDirectory 64, maxViewChars 16000 (view output beyond this is
+   * truncated on a line boundary with a view_range pagination hint). Byte and
+   * file-count limits are enforced in the store engine (createMemoryStore /
+   * the built-in local store); view truncation and the create-size cap are
+   * ALSO enforced at the tool layer, so they hold for directly-implemented
+   * MemoryStore injections too.
+   */
+  limits?: {
+    maxFileBytes?: number;
+    maxFilesPerDirectory?: number;
+    maxViewChars?: number;
+  };
+  /**
+   * Structured memory-card mode (spec R9): 'cards' requires every written
+   * memory file to be one or more cards with the fixed fields 结论 / 依据 /
+   * 过期条件 under a `## <title>` heading. Invalid content is rejected with a
+   * structured error the model can retry from. Aimed at models with weak
+   * write-side discipline; omit for free-form writing.
+   */
+  schema?: 'cards';
+  /** Card limits for schema 'cards'. Defaults: maxCardChars 500,
+   *  maxCardsPerFile 50. */
+  cards?: { maxCardChars?: number; maxCardsPerFile?: number };
+  /**
+   * Compaction flush (spec R7): when auto-compaction is about to fold the
+   * conversation, first give the model one write opportunity ("record
+   * un-saved progress to memory now") — the fold happens on the following
+   * turn. A PreCompact hook deny suppresses the flush (and the fold). Default
+   * true; set false to compact without the flush round.
+   */
+  flushOnCompaction?: boolean;
+  /**
+   * Session-end progress card (spec R7): when the query ends NORMALLY (never
+   * on abort or error), run one bounded memory-update round ("update the
+   * progress card in /memories/MEMORY.md"). Its assistant/user messages are
+   * streamed, its result message is absorbed into session accounting instead
+   * of being yielded (the task's own final result stays the last result the
+   * consumer sees). Default true when memory is enabled; set false to
+   * disable.
+   */
+  sessionEndUpdate?: boolean;
+};
+
+/**
+ * Memory-operation counters for one run (spec R8 observability; rides
+ * SDKRunMetrics.memoryHealth when the memory system is enabled). All-zero
+ * means the model never touched memory.
+ */
+export type SDKMemoryHealth = {
+  /** Total memory tool invocations. */
+  operations: number;
+  /** view commands. */
+  reads: number;
+  /** create / str_replace / insert / delete / rename commands. */
+  writes: number;
+  /** Invocations that returned is_error. */
+  errors: number;
+  /** UTF-8 bytes of view output returned to the model (post-truncation). */
+  bytesRead: number;
+  /** UTF-8 bytes of content handed to write commands (file_text /
+   *  insert_text / new_str). */
+  bytesWritten: number;
+  /** Estimated tokens of the resident memory-index injection (R6), so the
+   *  read-side residency cost shows up on the bill. */
+  indexInjectionTokens: number;
 };
 
 export type Options = {
@@ -1786,6 +1853,9 @@ export type SDKRunMetrics = {
   /** Disconnect-taxonomy ledger (BPT-EXTENSION, resilience P0-2); present on
    *  every run — all-zero means a clean network run. */
   transportHealth?: SDKTransportHealth;
+  /** Memory-operation counters (BPT-EXTENSION, memory spec R8); present when
+   *  the memory system is enabled for the query. */
+  memoryHealth?: SDKMemoryHealth;
 };
 
 /** NEW-IN-DOCS: why the agent loop ended (SDKResultMessage.terminal_reason).

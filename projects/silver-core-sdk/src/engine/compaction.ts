@@ -563,6 +563,34 @@ async function foldViaApi(
  * Auto-compaction step: fire at the top of a loop iteration. No-op when the
  * estimate is below the trigger threshold.
  */
+/**
+ * Pure trigger probe (memory spec R7): would maybeAutoCompact fold on this
+ * view right now? Same window guard + shouldAutoCompact math, no side
+ * effects, no hook consultation — the loop uses it to schedule the memory
+ * flush turn BEFORE the fold happens.
+ */
+export function wouldAutoCompact(
+  view: { messages: APIMessageParam[] },
+  config: EngineConfig,
+  overheadTokens: number,
+  knownPromptFloor?: number,
+): boolean {
+  const cfg = config.compaction;
+  if (cfg === undefined || cfg.enabled === false) return false;
+  const window = windowFor(config, cfg);
+  if (window <= config.maxOutputTokens) return false;
+  return (
+    shouldAutoCompact(
+      view.messages,
+      overheadTokens,
+      window,
+      config.maxOutputTokens,
+      cfg,
+      knownPromptFloor,
+    ) !== null
+  );
+}
+
 export async function* maybeAutoCompact(
   view: { messages: APIMessageParam[] },
   deps: EngineDeps,

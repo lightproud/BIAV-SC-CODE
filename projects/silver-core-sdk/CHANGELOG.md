@@ -16,6 +16,23 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.47.0 — 2026-07-11
+
+**Memory system M2 (spec R7–R9, BPT-EXTENSION `options.memory` — docs/MEMORY.md)**:
+harness-enforced write timing + governance over the M1 base. R7 lifecycle: a
+pre-compaction FLUSH turn (one memory-write opportunity injected before each
+auto-compaction fold, PreCompact-deniable, once per episode) and a session-end
+progress-card round on normal termination only (its result absorbed into
+accounting — the task's own result stays last; `sessionEndUpdate: false` /
+`flushOnCompaction: false` to disable). R8 governance: 64KB file / 64
+files-per-dir / 16k-char view truncation with a view_range hint (configurable
+`memory.limits`, enforced in the store engine + tool layer), and
+`metrics.memoryHealth` counters (ops/reads/writes/errors/bytes + resident-index
+tokens). R9 `schema: 'cards'`: writes must validate as 结论/依据/过期条件 cards
+(zod; structured retryable errors; `memory.cards` limits). Live-smoke phase 3
+(native-mode memory against the real API) + conformance memory-axis wire locks.
++31 tests (1782 green).
+
 ## 0.46.0 — 2026-07-11
 
 **Memory system M1 (spec R1–R6, BPT-EXTENSION `options.memory` — docs/MEMORY.md)**:

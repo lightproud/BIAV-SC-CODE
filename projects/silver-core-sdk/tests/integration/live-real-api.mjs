@@ -7,11 +7,15 @@
  * `silver-core-sdk-live-smoke` GitHub Actions workflow (workflow_dispatch),
  * which injects the ANTHROPIC_API_KEY repository secret into the runner.
  *
- * Two phases:
+ * Three phases:
  *   1. Write/Read/Bash round-trip — the core tool loop over the real API.
  *   2. PDF-in-tool_result — Read returns a base64 `document` block for a PDF;
  *      a success confirms the API accepts a document block inside a tool_result
  *      end to end (bucket-1 live confirmation).
+ *   3. Native-mode memory tool — the request declares the official
+ *      `{type:'memory_20250818', name:'memory'}` typed entry; the real model
+ *      writes to the local memory store through the SDK's execution loop
+ *      (memory spec R2/M2 live confirmation).
  *
  *   Requires: `npm run build` first (imports the compiled dist).
  *   Reads:    process.env.ANTHROPIC_API_KEY  (never hardcoded, never committed)
@@ -170,7 +174,59 @@ try {
     throw new Error('PDF-in-tool_result run did not succeed (API may have rejected the document block)');
   }
 
-  console.log('\n[PASS] live real-API smoke test succeeded (both phases).');
+  // Phase 3 (memory spec R2/M2): native-mode memory tool end to end against
+  // the REAL API — the request carries the official typed entry, the API
+  // injects the definition + protocol prompt, and the model's memory calls
+  // execute through this SDK's builtin into the local store. Proves the
+  // server-declared assembly is accepted on the live wire (the unit suite can
+  // only lock the request shape).
+  console.log('\n' + '-'.repeat(68));
+  console.log('Phase 3: native-mode memory tool (memory_20250818 typed entry)');
+  console.log('-'.repeat(68));
+  let memOk = false;
+  const q3 = query({
+    prompt:
+      'Use your memory tool to record this durable fact, then confirm in one ' +
+      'sentence: the project codename is SILVER-CORE-SMOKE.',
+    options: {
+      provider: { apiKey: KEY },
+      cwd: sandbox,
+      persistSession: false,
+      model,
+      maxTurns: 6,
+      memory: { sessionEndUpdate: false },
+    },
+  });
+  for await (const m of q3) {
+    if (m.type === 'assistant') {
+      for (const b of m.message.content) {
+        if (b.type === 'text' && b.text.trim()) console.log(`\n[mem/assistant] ${b.text.trim()}`);
+        if (b.type === 'tool_use')
+          console.log(`\n[mem/tool_use] ${b.name}(${JSON.stringify(b.input).slice(0, 160)})`);
+      }
+    } else if (m.type === 'result') {
+      console.log(
+        `\n[mem/result] ${m.subtype} | turns=${m.num_turns} | cost=$${m.total_cost_usd.toFixed(6)}`,
+      );
+      if (m.subtype === 'success') {
+        const health = m.metrics?.memoryHealth;
+        console.log(`[mem/health] ${JSON.stringify(health)}`);
+        // writes > 0 is the assertion; errors are tolerated (a probing view
+        // of a not-yet-existing file is legitimate model behavior).
+        memOk = health !== undefined && health.writes > 0;
+      } else if (m.errorMessage) console.log(`[mem/error] ${m.errorMessage}`);
+    }
+  }
+  const memDir = path.join(sandbox, '.claude', 'memory', 'memories');
+  const memFiles = fs.existsSync(memDir) ? fs.readdirSync(memDir, { recursive: true }) : [];
+  console.log(`[mem/disk] ${memDir} -> ${JSON.stringify(memFiles)}`);
+  if (!memOk || memFiles.length === 0) {
+    throw new Error(
+      'memory phase did not succeed (no memory write recorded, or the API rejected the typed entry)',
+    );
+  }
+
+  console.log('\n[PASS] live real-API smoke test succeeded (all three phases).');
 } catch (e) {
   console.error('\n[FAIL]', e?.name, e?.message);
   process.exitCode = 1;

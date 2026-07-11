@@ -125,12 +125,22 @@ describe('memory golden: view', () => {
   });
 
   it('a file beyond 999,999 lines returns the docs line-limit error', async () => {
-    await ok({
-      command: 'create',
-      path: '/memories/huge.txt',
-      file_text: 'x\n'.repeat(1_000_000),
+    // Needs limits above the R8 default 64KB file cap and 16k view cap — the
+    // line-limit check must fire first for an in-limit configuration.
+    const bigStore = createLocalFilesystemMemoryStore(baseDir, {
+      limits: { maxFileBytes: 4_000_000, maxViewChars: 4_000_000 },
     });
-    expect(await err({ command: 'view', path: '/memories/huge.txt' })).toBe(
+    const bigTool = createMemoryTool(bigStore, {
+      limits: { maxFileBytes: 4_000_000, maxViewChars: 4_000_000 },
+    });
+    const created = await bigTool.execute(
+      { command: 'create', path: '/memories/huge.txt', file_text: 'x\n'.repeat(1_000_000) },
+      ctx(),
+    );
+    expect(created.isError).not.toBe(true);
+    const res = await bigTool.execute({ command: 'view', path: '/memories/huge.txt' }, ctx());
+    expect(res.isError).toBe(true);
+    expect(res.content).toBe(
       'File /memories/huge.txt exceeds maximum line limit of 999,999 lines.',
     );
   });

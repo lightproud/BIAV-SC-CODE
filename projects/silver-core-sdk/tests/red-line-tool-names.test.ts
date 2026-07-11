@@ -14,7 +14,9 @@ import { TOOL_DESCRIPTION_TEXT, BASH_SANDBOX_FRAGMENTS } from '../src/tools/desc
 import {
   MAIN_LOOP_INTRO,
   MAIN_LOOP_BODY,
+  MEMORY_COMPACTION_FLUSH_PROMPT,
   MEMORY_PROTOCOL_FRAGMENT,
+  MEMORY_SESSION_END_PROMPT,
 } from '../src/engine/prompt-fragments.js';
 import {
   AWAY_SUMMARY_SYSTEM,
@@ -66,6 +68,8 @@ const REPRODUCED: Array<[label: string, text: string]> = [
   // Memory mode-B protocol prompt (docs-verbatim; the `memory` tool it names
   // ships in src/tools/memory/ and the fragment is only injected when it does).
   ['memory:protocol', MEMORY_PROTOCOL_FRAGMENT.text],
+  ['memory:compaction-flush', MEMORY_COMPACTION_FLUSH_PROMPT],
+  ['memory:session-end', MEMORY_SESSION_END_PROMPT],
   ['generator:command-prefix', COMMAND_PREFIX_SYSTEM],
   ['generator:background-state', BACKGROUND_STATE_SYSTEM],
   ['generator:session-title', SESSION_TITLE_SYSTEM],

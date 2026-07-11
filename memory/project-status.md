@@ -186,7 +186,14 @@
 > 银芯→黑池单向输出物，与 §1.1-HC 防火墙同向，非 BPT 产品内部开发。
 
 - **动手前必读**：`projects/silver-core-sdk/CONTEXT.md`（会话上下文 + 当前 milestone）
-- **记忆系统 M1 落地（v0.46.0，2026-07-11，spec r1 R1–R6 全量，PR 待合并）**：`options.memory`
+- **记忆系统 M2 落地（v0.47.0，2026-07-11，spec R7–R9，随 M1 同日；spec r1 全量收口）**：R7 压缩前
+  落盘回合（auto 触发将至先注入一次写入机会、PreCompact 可 deny、每折叠周期恰一次）+ 会话正常终结
+  进度卡回合（abort/错误不触发；回合 result 被吸收，任务自身 result 仍为流内最后一个）；R8 治理限额
+  （64KB/文件、64 文件/目录、view 16k 截断带 view_range 提示，引擎 + 工具层双层）+ `metrics.memoryHealth`
+  （次数/读写字节/索引注入 token）；R9 `schema:'cards'` 记忆卡（结论/依据/过期条件，结构化可重试错误）。
+  live-smoke 第 3 阶段（真 API 原生模式）+ conformance 记忆轴 mock 线缆锁（官方臂差分槽位挂 todo #T20）。
+  +31 测试（全量 1782 绿）。六项余项裁定见 `memory/decisions.md` 2026-07-11 记忆系统条（CI 门禁改口径挂 #T19）。
+- **记忆系统 M1 落地（v0.46.0，2026-07-11，spec r1 R1–R6 全量，PR #585 已合并）**：`options.memory`
   六命令 memory 工具（memory_20250818 协议等价、参考返回字符串逐字节 golden 锁）+ 双模式装配
   （native 直通官方类型条目 / custom 自带 schema + 官方逐字协议提示，双模式存储产物 diff 为空）
   + `MemoryStore` 契约（黑池注入点）与 `MemoryFileOps` 原语层（`createMemoryStore` 参考格式单点

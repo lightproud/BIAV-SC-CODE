@@ -62,6 +62,30 @@ export const MEMORY_PROTOCOL_FRAGMENT: PromptFragment = {
     'losing any progress that is not recorded in your memory directory.',
 };
 
+/**
+ * Memory compaction-flush prompt (spec R7, sdk-original): injected as a USER
+ * turn when auto-compaction is about to fold, so the model gets one write
+ * opportunity for un-saved progress. Explicitly tells the model to CONTINUE
+ * the task — the flush rides alongside pending work (the API merges adjacent
+ * user content), it must not terminate the turn.
+ */
+export const MEMORY_COMPACTION_FLUSH_PROMPT =
+  'Context compaction is about to summarize the older part of this conversation. ' +
+  'Before that happens, use your `memory` tool to record any important progress, ' +
+  'decisions or state that is not yet saved (update /memories/MEMORY.md as the index). ' +
+  'Skip anything already recorded. Then continue with the current task without stopping.';
+
+/**
+ * Memory session-end progress-card prompt (spec R7, sdk-original): drives the
+ * bounded memory-update round the query layer runs after a NORMAL end of
+ * input (never after abort/error).
+ */
+export const MEMORY_SESSION_END_PROMPT =
+  'The session is ending. Use your `memory` tool to update /memories/MEMORY.md with a ' +
+  'progress card for the next session: what was accomplished, what remains, and the ' +
+  'immediate next steps. Record any other durable facts or decisions from this session ' +
+  'in appropriate memory files. Keep it concise; then reply with a one-line confirmation.';
+
 /** The identity intro (always first). */
 export const MAIN_LOOP_INTRO: PromptFragment = {
   id: 'intro',
