@@ -16,7 +16,6 @@
 
 | ID | 账目 | 类别 | 源出处 | 状态 |
 |----|------|------|--------|------|
-| T4 | dispatch 一轮真 L5（验 code-01 残余，$ 帽内）。**已裁「点火」**（守密人 2026-07-10 AskUserQuestion）；执行阻于通道：github MCP 需重授权（claude.ai 连接器设置）、REST 经会话代理 403（GitHub App 未启组织级访问）、备选 = 守密人 Actions 页手点 Run workflow（勾 `conformance_l5`）。另注：run-l35 双臂封印 KD-L35-02 无 CI 入口（本地脚本需真钥），需接线或本地跑，随本账一并收 | 预算 | `memory/project-status.md`「引擎工单账目结算 r5」段 | 开（已裁待通道） |
 | T5 | /goal 提示词快照待上游露出（每周参照刷新 CI `refresh-claude-code-prompts.yml` 自动观察） | 观察 | `memory/project-status.md` v0.38 段挂账注 | 开 |
 | T6 | 测试长尾：L3.5 双臂升门禁（自注「版本稳定后」）+ MCP 差分第二批（schema 语义 / annotations / stdio-http 传输） | 观察 | `memory/project-status.md` 一致性测试段 | 开 |
 | T7 | Desktop UI 路线 M0–M4 升 r2：待守密人回填 BPT 现状（存量可跑件 / 团队人力） | 黑池输入 | `Public-Info-Pool/Resource/repo-engineering/bpt-desktop-ui-roadmap-20260705.md` 假设声明 | 开 |
@@ -27,6 +26,8 @@
 | T13 | 动态自调步（ScheduleWakeup 同构的壳层唤醒原语，方案三期 P2 单独立项；开工前先测 BPT 自身缓存分层） | 黑池输入 | `.../bpt-desktop-command-impl-plan-20260710.md` §2 M4 + §4 | 开 |
 | T14 | D/E 类注册源（插件 / MCP prompts）需求档——待黑池侧壳层插件面设计定稿后另立 | 黑池输入 | `.../bpt-desktop-command-framework-requirements-20260710.md` §6.3 | 开 |
 | T15 | SubagentStop 阻断语义（子代理级门控续跑）：现为 runtime 级 fire-and-log，黑池对子代理门控有真需求再评估 | 观察 | SDK `docs/COMPAT.md` hooks 表 Stop 行「ROOT LOOP ONLY」注 | 开 |
+| T16 | run-l35 双臂封印（KD-L35-02：子代理生命周期事件编码差——我方顶层 `type` vs 官方 `system` 子类型）仍无 CI 入口——本地 `run-l35.mjs` 需真钥、须接线或本地跑（原糊在 T4 尾，2026-07-11 清 T4 时另立、不糊在一起） | 预算 | `memory/project-status.md`「引擎工单账目结算 r5」段 + E8/KD-L35 段 | 开 |
+| T17 | code-01 残余在 v0.43.0 的真 L5 复验**未达成**——`$1.5` 帽 + `repeat=5` 于 79/180 runs（document-01 后）预算中止、code 维度未触达（run 29134399453）；三条路（`l5_budget=5` 全量轮 ~$2.2–3.3 / 降 `l5_repeat` 换广度 / 给 `conformance-l5` 加 `l5_tasks` 透传 `--tasks` 定向 shard——当前 workflow 无此输入）均超本次授权的 $1.5 单轮，待守密人裁 | 裁定 | `Public-Info-Pool/Resource/data-diagnostics/silver-core-sdk-l5-round-20260711.md` §3/§6 | 开 |
 
 ## 已清（销案引）
 
@@ -42,6 +43,7 @@
 | C6 | 委派引擎四缝（coordinator/SendMessage、ExitPlanMode、调度归宿、通知面） | ExitPlanMode/Monitor/Workflow 等随 PR #480；O-B2 SendMessage + coordinator 预设随 PR #567（v0.42.0，2026-07-10） |
 | T3 | CI required `test` 检查是否重启 | **定谳：维持自查自合**（守密人 2026-07-10 AskUserQuestion，覆盖同日节拍表条③——撞车经呈报后守密人选「以 UI 答复为准」）；`decisions.md` 同日「CI required 检查维持自查自合」条 + methodology「维护态节拍」节已双向同步 |
 | T11 | 版本守卫三方对账升级：`check-version-bump.mjs` 加 CHANGELOG 最新条目号对账，堵「双源一致地错」盲区 | `projects/silver-core-sdk/scripts/check-version-bump.mjs` 三方对账（version.ts + package.json + CHANGELOG 最新 `## X.Y.Z`）+ 测试 `tests/version-guard-changelog.test.ts`（含 lesson #45 负控）；PR #575 |
+| T4 | dispatch 一轮真 L5（验 code-01 残余，$ 帽内）；不派则一致性线判定收官 | **点火已执行**（预算账 = 点火，已裁已花即销）：守密人 2026-07-10 已裁点火，本会话 dispatch run [29134399453](https://github.com/lightproud/brain-in-a-vat/actions/runs/29134399453)（v0.43.0，$1.5 帽，两臂各 100%、gate B `INCONCLUSIVE-PARTIAL` 非破线、实花 $0.59）；报告 `Public-Info-Pool/Resource/data-diagnostics/silver-core-sdk-l5-round-20260711.md`。**注**：主目标 code-01 **未触达**（$1.5 帽在 repeat=5 下 79/180 预算中止于 document-01 前）→ code-01 复验挪新账 **T17**、run-l35 KD-L35-02 挪新账 **T16**（不糊在一起） |
 
 ---
 
