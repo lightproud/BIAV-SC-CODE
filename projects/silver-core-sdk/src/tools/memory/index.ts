@@ -95,6 +95,15 @@ export type MemoryRuntime = {
   /** R7: run the session-end progress-card round on normal termination. */
   sessionEndUpdate: boolean;
   /**
+   * Pitfall recording protocol (SCS-REQ-002 Phase 0 / REQ-3.2): null =
+   * disabled (default, or forced by incognito — a write protocol on a
+   * read-only session would contradict S2); otherwise `extra` carries the
+   * consumer guidance to append after the fragment ('' for none). The
+   * fragment text itself lives in engine/prompt-fragments (this module does
+   * not import src/engine/).
+   */
+  pitfalls: { extra: string } | null;
+  /**
    * Resident memory index (spec R6): the head of /memories/MEMORY.md as a
    * ready-to-inject system-prompt part, or null for zero injection (file
    * missing, index disabled, or the store failed — never throws).
@@ -172,6 +181,17 @@ export function resolveMemoryRuntime(args: {
     // S2: both R7 rounds are WRITE rounds; an incognito session never runs them.
     flushOnCompaction: !incognito && memory.flushOnCompaction !== false,
     sessionEndUpdate: !incognito && memory.sessionEndUpdate !== false,
+    // Phase 0 (REQ-3.2): opt-in, and — like the R7 write rounds — never on an
+    // incognito session.
+    pitfalls:
+      incognito || memory.pitfalls === undefined || memory.pitfalls === false
+        ? null
+        : {
+            extra:
+              typeof memory.pitfalls === 'object' && memory.pitfalls.instructions !== undefined
+                ? memory.pitfalls.instructions
+                : '',
+          },
 
     async buildIndexInjection(): Promise<{ label: string; text: string } | null> {
       if (indexCfg === false || maxLines <= 0 || maxBytes <= 0) return null;

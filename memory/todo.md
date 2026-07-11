@@ -32,6 +32,7 @@
 | T28 | BPT 侧多用户 session 隔离与 token 计费归属现状回填：S1 挂载已按 query 实例化落地（SDK 侧不阻塞），BPT 接线时按其用户体系把 `{userId}` 实例化进 mounts 并核对计费归属口径 | 黑池输入 | 0711 记忆治理需求书 §7 待决表 + `projects/silver-core-sdk/docs/MEMORY-GOVERNANCE.md` S1 节 | 开 |
 | T29 | git 历史重写禁区站岗：2026-06-21 瘦身删除的 ~3.0G discord 旧档，仅实证 30 月中 3 月在 Releases 有副本；做 git 历史重写前**不得假定其余 27 月安全**（历史 blob 是唯一二次抢救网） | 观察 | 原根目录 `todo.md` 风险提示节（2026-07-11 仓库精简裁定归账后删档，见 `Public-Info-Pool/Resource/repo-engineering/repo-slim-audit-20260711.md` 项 2） | 开 |
 | T30 | pending-discussions 归档遗留开账复核：2026-04-26 定格快照归档时余 18 条未销（采集接入 4 / 日报流程 2 / 事实圣经补全 1 / 站点 Discussions 1 / 数据层审计副产物 6 / 待解锁源 3 / publish_time 污染 1），部分疑已被后续演化覆盖（如 Discussions/Giscus 评论随 2026-07-10 取消社区贡献大概率作废、日报定时已停用），须逐条复核销案或转正式挂账 | 裁定 | `memory/archive/pending-discussions.md`（2026-07-11 仓库精简裁定项 5 归档） | 开 |
+| T32 | SCS-REQ-002 行为评估集 r0 → final 定稿：`projects/silver-core-sdk/evals/behavior/questions.json` 20 草题（提炼 14 + 构造 6，三维度 7/6/7）已按 2026-07-11 混合来源裁定起草，逐题 `status:"draft"`；守密人逐题复核改定升 `final` 后基线分起算（改动须 `node scripts/update-evals-manifest.mjs` 重签清单） | 裁定 | `projects/silver-core-sdk/evals/README.md` 治理规则 1 + `memory/decisions.md` 2026-07-11「SCS-REQ-002 阻塞项四裁定」条③ | 开 |
 
 ## 已清（销案引）
 
