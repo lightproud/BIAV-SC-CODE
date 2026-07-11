@@ -220,6 +220,15 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: node tests/integration/live-real-api.mjs "${{ github.event.inputs.model }}"
+      - name: Official memory-tool wire capture (T20, conformance memory axis)
+        # Two tiny real calls through the OFFICIAL @anthropic-ai/sdk with the
+        # memory tool; prints the captured request bodies (headers whitelisted,
+        # no credentials) between markers for fixture retrieval from this log.
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          npm install --no-save @anthropic-ai/sdk
+          node tests/integration/capture-official-memory-wire.mjs "${{ github.event.inputs.model }}"
 
   ab-benchmark:
     # POSITIONING.md §7 measurement mandate: the representative-task efficiency
