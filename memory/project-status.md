@@ -1,7 +1,9 @@
 # 项目状态一览
 
-> 最后更新：2026-07-11 by 自我改进闭环需求归档会话（SCS-REQ-002 草案落 `memory/active/self-improvement-requirements.md`，
-> Silver Core SDK 节加归档条目，阻塞性开放问题挂账 `memory/todo.md` #T25/#T26）。
+> 最后更新：2026-07-11 by 自我改进闭环需求归档会话（同会话两批：① SCS-REQ-002 草案落
+> `memory/active/self-improvement-requirements.md`、阻塞项挂账 #T25/#T26；② 守密人四裁定落
+> `memory/decisions.md` 并销 T25/T26——评分模型 Sonnet 5 / 预算帽 $30/月 / 题目来源混合 /
+> 沙箱独立 checkout，Phase 1 解锁）。
 > 前次 2026-07-10 by 记忆档案事实核对会话（全 memory/ 档案对账审计：修正本档 5 处漂移——
 > 头部日期滞后（正文已含 07-07/07-08/07-10 条目）、状态表 silver-core-sdk 行版本/测试数
 > v0.12.0/1427→v0.42.0/1651（对齐 package.json 与 O-B2 节）、数据源清单补 bahamut/note_com/arca_live
@@ -188,13 +190,15 @@
 > 银芯→黑池单向输出物，与 §1.1-HC 防火墙同向，非 BPT 产品内部开发。
 
 - **动手前必读**：`projects/silver-core-sdk/CONTEXT.md`（会话上下文 + 当前 milestone）
-- **自我改进闭环需求书 SCS-REQ-002 草案归档（2026-07-11，守密人手书、艾瑞卡落档）**：四环闭环
-  （环一信号采集与聚合 → 环二评估基准 → 环三改进执行 → 环四人工把关）需求明细 + Phase 0–4 分阶段
-  落地路线，归档 `memory/active/self-improvement-requirements.md`。硬序：环二先于环三——无评估基准
-  之前不启动任何 agent 自主改代码任务；Phase 0（REQ-3.2 踩坑记录先行）为零代码改动先行通道。
-  两组阻塞性开放问题已挂账：`memory/todo.md` #T25（Phase 1：评分模型版本 / 成本预算 + 20 题题目
-  来源）、#T26（Phase 3：沙箱工作区选型）。前置文档 SCS-REQ-001 = 记忆系统需求书
-  （`projects/silver-core-sdk/docs/MEMORY.md`，M1/M2 已落地，见下两条）。
+- **自我改进闭环需求书 SCS-REQ-002 草案归档 + 阻塞项四裁定（2026-07-11，守密人手书、艾瑞卡落档；
+  同日裁定销案 T25/T26）**：四环闭环（环一信号采集与聚合 → 环二评估基准 → 环三改进执行 → 环四
+  人工把关）需求明细 + Phase 0–4 分阶段落地路线，归档 `memory/active/self-improvement-requirements.md`。
+  硬序：环二先于环三——无评估基准之前不启动任何 agent 自主改代码任务；Phase 0（REQ-3.2 踩坑记录
+  先行）为零代码改动先行通道。**阻塞项已全裁**（`memory/decisions.md` 2026-07-11「SCS-REQ-002
+  阻塞项四裁定」条）：评分模型 = Claude Sonnet 5、判卷预算帽 $30/月、20 题来源 = 提炼为主 + 人工补、
+  环三沙箱 = 独立 checkout 目录——**Phase 1（维护者出题 + runEvals()）阻塞解除、即日可启动**。
+  前置文档 SCS-REQ-001 = 记忆系统需求书（`projects/silver-core-sdk/docs/MEMORY.md`，M1/M2 已落地，
+  见下方两条）。
 - **记忆治理 P0 组落地（v0.48.0，2026-07-11，spec S1–S4，守密人 0711 需求书派发）**：需求书
   《记忆系统、隐私治理与会议记录支持》SDK 侧收口（归档 `projects/silver-core-sdk/docs/MEMORY-GOVERNANCE.md`）。
   S1 作用域路由（`options.memory.mounts` 按 query 声明子树 read-only/read-write，工具层在 R4 之上
