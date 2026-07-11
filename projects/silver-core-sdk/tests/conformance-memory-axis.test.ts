@@ -16,6 +16,7 @@
  */
 
 import { mkdtemp, rm } from 'node:fs/promises';
+import { readFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
@@ -86,11 +87,68 @@ describe('conformance memory axis: native-mode wire locks', () => {
     );
   });
 
-  // R2 acceptance tail (deferred to a keeper-dispatched live run): compare the
-  // FULL request body against an official-arm capture with the memory tool
-  // enabled. Unskip once a capture exists under tests/conformance/.
-  it.skip('official-arm wire differential (needs a live official-arm capture)', () => {
-    // Placeholder: load the capture, diff tools[] ordering + entry fields
-    // against a silver-core request built from the same inputs.
+  // R2 acceptance tail: field-level differential against the LIVE official-arm
+  // capture (run 29148114257, 2026-07-11; fixture provenance inside the file).
+  describe('official-arm wire differential (fixture: tests/conformance/official-memory-wire.json)', () => {
+    type Capture = {
+      arm: string;
+      url: string;
+      headers: Record<string, string>;
+      body: { tools: Array<Record<string, unknown>>; [k: string]: unknown };
+    };
+    const fixture = JSON.parse(
+      readFileSync(join(__dirname, 'conformance', 'official-memory-wire.json'), 'utf8'),
+    ) as { captures: Capture[] };
+    const ga = fixture.captures.find((c) => c.arm === 'ga')!;
+    const runner = fixture.captures.find((c) => c.arm === 'runner')!;
+
+    it('fixture integrity: both arms present, GA on the plain endpoint', () => {
+      expect(ga).toBeDefined();
+      expect(runner).toBeDefined();
+      expect(ga.url).toBe('https://api.anthropic.com/v1/messages');
+      // The beta tool-runner rides the beta query flag; memory itself is GA
+      // (no anthropic-beta header on either arm — matches the docs).
+      expect(runner.url).toContain('/v1/messages');
+      expect(ga.headers['anthropic-beta']).toBeUndefined();
+      expect(runner.headers['anthropic-beta']).toBeUndefined();
+    });
+
+    it('the official typed entry is EXACTLY {type, name} — and ours matches it byte-for-byte', async () => {
+      const officialEntry = ga.body.tools.find((t) => t['type'] === 'memory_20250818')!;
+      expect(officialEntry).toEqual({ type: 'memory_20250818', name: 'memory' });
+      expect(Object.keys(officialEntry).sort()).toEqual(['name', 'type']);
+      // The runner arm serializes the identical entry.
+      expect(runner.body.tools).toEqual([{ type: 'memory_20250818', name: 'memory' }]);
+
+      // OUR native-mode entry (caching off = no cache_control marker) must be
+      // deep-equal to the official one — no extra fields, no client-side
+      // schema, same literal type/name.
+      const stub = makeSSEFetch([textReplyEvents('ok')]);
+      await drain(
+        opts(stub, { provider: { apiKey: 'test-key', fetch: stub, promptCaching: false } }),
+      );
+      const ourTools = stub.requests[0]!.body['tools'] as Array<Record<string, unknown>>;
+      const ourEntry = ourTools.find((t) => t['type'] === 'memory_20250818')!;
+      expect(ourEntry).toEqual(officialEntry);
+    });
+
+    it('official tools[] preserves caller order — entry position is caller-defined', () => {
+      // The GA arm passed [custom, memory] and the wire kept that order
+      // verbatim: the official SDK does not reposition typed entries, so this
+      // SDK's place-last policy is a legal caller choice, not a divergence.
+      expect(ga.body.tools.map((t) => t['name'])).toEqual(['echo_probe', 'memory']);
+      const custom = ga.body.tools[0]!;
+      expect(custom['input_schema']).toBeDefined();
+      expect(custom['type']).toBeUndefined();
+    });
+
+    it('anthropic-version parity with the official arm', async () => {
+      expect(ga.headers['anthropic-version']).toBe('2023-06-01');
+      const stub = makeSSEFetch([textReplyEvents('ok')]);
+      await drain(opts(stub));
+      expect(stub.requests[0]!.headers['anthropic-version']).toBe(
+        ga.headers['anthropic-version'],
+      );
+    });
   });
 });
