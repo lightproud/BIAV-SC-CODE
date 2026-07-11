@@ -63,14 +63,19 @@ def main() -> int:
     def run(*cmd):
         return subprocess.run(cmd, cwd=_REPO_ROOT, capture_output=True, text=True)
 
-    run('git', 'config', 'user.name', 'github-actions[bot]')
-    run('git', 'config', 'user.email', 'github-actions[bot]@users.noreply.github.com')
+    # 机器身份只随本次 commit 生效（-c 一次性参数）——绝不 `git config` 改写仓库级
+    # 身份：自绑定模式下脚本跑在主会话仓库里，改写会污染会话后续提交的署名
+    # （lesson #48 follow-up：曾致会话 docs 提交带 github-actions[bot] 署名）。
+    bot_identity = ['-c', 'user.name=github-actions[bot]',
+                    '-c', 'user.email=github-actions[bot]@users.noreply.github.com',
+                    '-c', 'commit.gpgsign=false']
     run('git', 'add', 'Public-Info-Pool/Record/Community/arca_live/')
     diff = run('git', 'diff', '--staged', '--quiet')
     if diff.returncode == 0:
         print('无新增内容，无需提交')
         return 0
-    commit = run('git', 'commit', '-m', 'chore: collect arca_live via CC routine [skip ci]')
+    commit = run('git', *bot_identity, 'commit', '-m',
+                 'chore: collect arca_live via CC routine [skip ci]')
     if commit.returncode != 0:
         print(f'FATAL: commit 失败: {commit.stderr[:300]}', file=sys.stderr)
         return 1
