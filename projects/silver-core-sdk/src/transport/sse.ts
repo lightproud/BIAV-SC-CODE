@@ -70,14 +70,18 @@ export async function* parseSSE(
     // 'id', 'retry' and unknown fields are intentionally ignored.
   };
 
-  /** Consume every complete (newline-terminated) line currently buffered. */
+  /** Consume every complete (newline-terminated) line currently buffered.
+   *  Scans by offset and re-slices the buffer ONCE at the end — the previous
+   *  per-line `buffer = buffer.slice(...)` recopied the whole remainder for
+   *  every line, quadratic in lines-per-chunk. */
   const drainBuffer = (): void => {
+    let start = 0;
     let idx: number;
-    while ((idx = buffer.indexOf('\n')) !== -1) {
-      const line = buffer.slice(0, idx);
-      buffer = buffer.slice(idx + 1);
-      handleLine(line);
+    while ((idx = buffer.indexOf('\n', start)) !== -1) {
+      handleLine(buffer.slice(start, idx));
+      start = idx + 1;
     }
+    if (start > 0) buffer = start === buffer.length ? '' : buffer.slice(start);
   };
 
   // Reject a pending read() promptly when the caller aborts; the underlying
