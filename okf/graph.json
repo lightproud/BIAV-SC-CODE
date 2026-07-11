@@ -1,8 +1,8 @@
 {
   "generated": "2026-07-11",
   "stats": {
-    "nodes": 354,
-    "edges": 410
+    "nodes": 355,
+    "edges": 411
   },
   "nodes": [
     {
@@ -2753,6 +2753,17 @@
       "id": "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "type": "documentation",
       "title": "bpt-agent-sdk-evaluation-20260706",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-repo-engineering-bpt-desktop-builtin-commands-batch1-20260711.md",
+      "type": "documentation",
+      "title": "bpt-desktop-builtin-commands-batch1-20260711",
       "tags": [
         "data_layer:curated",
         "deliverable",
@@ -5605,6 +5616,12 @@
     },
     {
       "source": "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-repo-engineering-bpt-desktop-builtin-commands-batch1-20260711.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
       "rel_type": "mention"
