@@ -177,6 +177,8 @@ jobs:
         run: node tests/conformance/run-l3.mjs --out=conformance-l3.json
       - name: L4 fault-injection differential
         run: node tests/conformance/run-l4.mjs --out=conformance-l4.json
+      - name: L3.5 subagent-lifecycle vocabulary differential (report-only — KD-L35 triage, never a gate; wired 2026-07-11, todo T16)
+        run: node tests/conformance/run-l35.mjs --arm=both --out=conformance-l35.json
       - name: Scoreboard ratchet (M3 GATE — green only grows vs committed baseline.json)
         run: node tests/conformance/ratchet.mjs conformance-l1.json conformance-l2.json conformance-l3.json conformance-l4.json
       - name: L5 harness smoke (keyless — scripted emulator round proves the M4 harness end-to-end)
@@ -190,6 +192,7 @@ jobs:
             projects/silver-core-sdk/conformance-l2.json
             projects/silver-core-sdk/conformance-l3.json
             projects/silver-core-sdk/conformance-l4.json
+            projects/silver-core-sdk/conformance-l35.json
             projects/silver-core-sdk/conformance-l5.json
           if-no-files-found: ignore
 
