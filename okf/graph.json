@@ -1,7 +1,7 @@
 {
   "generated": "2026-07-11",
   "stats": {
-    "nodes": 356,
+    "nodes": 357,
     "edges": 413
   },
   "nodes": [
@@ -2709,6 +2709,17 @@
       "id": "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "type": "documentation",
       "title": "silver-core-maintenance-cadence-20260702",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:proposal"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
+      "type": "documentation",
+      "title": "silver-core-sdk-memory-consumer-kit-20260711",
       "tags": [
         "data_layer:curated",
         "deliverable",
