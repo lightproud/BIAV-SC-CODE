@@ -25,7 +25,6 @@
 | T13 | 动态自调步（ScheduleWakeup 同构的壳层唤醒原语，方案三期 P2 单独立项；开工前先测 BPT 自身缓存分层） | 黑池输入 | `.../bpt-desktop-command-impl-plan-20260710.md` §2 M4 + §4 | 开 |
 | T14 | D/E 类注册源（插件 / MCP prompts）需求档——待黑池侧壳层插件面设计定稿后另立 | 黑池输入 | `.../bpt-desktop-command-framework-requirements-20260710.md` §6.3 | 开 |
 | T15 | SubagentStop 阻断语义（子代理级门控续跑）：现为 runtime 级 fire-and-log，黑池对子代理门控有真需求再评估 | 观察 | SDK `docs/COMPAT.md` hooks 表 Stop 行「ROOT LOOP ONLY」注 | 开 |
-| T19 | CI 硬门禁 Ruleset 勾选操作：**只勾 required `test`**（2026-07-11 裁定,修正 0710「维持自查自合」定谳与 0710 原案的 up-to-date 第二项）；GitHub Settings → Rules 为守密人手动操作,勾选生效前会话仍按自查自合执行 | 预算 | `memory/decisions.md` 2026-07-11 记忆系统条⑤ | 开 |
 | T20 | conformance 记忆轴官方臂差分采集：需守密人 dispatch 一轮带 memory tool 的官方臂 live 采集,回填 `tests/conformance-memory-axis.test.ts` 的 skip 槽位（mock 线缆锁与 live-smoke 第 3 阶段已常驻） | 预算 | SDK `tests/conformance-memory-axis.test.ts` 头注 + `docs/MEMORY.md` status 节 | 开 |
 
 ## 已清（销案引）
@@ -46,6 +45,7 @@
 | T16 | run-l35 双臂封印（原表述「KD-L35-02 待封印、本地脚本需真钥」） | **两前提均查实过时**（2026-07-11）：① `run-l35.mjs` 打 content-blind 仿真器 + DUMMY_KEY，**零真钥零真金**（头注明载）；② KD-L35-02 编码差已于 v0.7 对齐时 lockstep 退役（COMPAT.md「KD-L35-02 retired」，MIGRATION 5f）。实做两件：本地双臂实跑一轮——词汇差分仅余已知项（bpt 多 `task_progress`=documented superset、官方多前台 `task_notification`=KD-L35-01/E8b 裁定项，**无新分歧**）；CI 接线——`silver-core-sdk.yml` conformance 作业加 L3.5 步（report-only 永不门禁）+ artifact 登记，随每轮 L1-L4 零边际成本常驻 |
 | T18 | BPT 侧接线 provider.fetch 长 keep-alive（v0.44.0 注入缝的消费方兑现项） | **性质变更销案**：守密人 2026-07-11「做」裁定丁转正——保活客户端改为 SDK **内建默认**（v0.45.0 node:http(s) 适配器），消费方零接线即兑现，「黑池输入」前提消失；`decisions.md` 2026-07-11 网络层默认客户端条 |
 | T17 | code-01 残余真 L5 复验（$1.5 帽轮预算中止后三条路待裁；选项一 $5 全量轮遭另一会话基于 T4 陈旧镜像撞车执行，经呈报保留运行） | **守密人 2026-07-11「T17 追认」定谳**：以撞车执行轮 run [29135224871](https://github.com/lightproud/brain-in-a-vat/actions/runs/29135224871) 读数销案——180/180 跑满、实花 $2.1284（$5 帽内）、**Gate B PASS**（bpt 87/90=96.7% vs 官方 73/90=81.1%，delta +15.6pp）、**code-01 复验到手：bpt 2/5 vs 官方 3/5**（残余仍在但已判读：历史 0/3→3/5→2/5，官方本轮亦跌出 5/5，题面对 haiku 本身不稳，非我方独有缺陷）；详报 `Public-Info-Pool/Resource/data-diagnostics/silver-core-sdk-l5-round-20260711.md` + artifact `conformance-l5-report`。随本销案，r5 结算「剩余验收项清完则一致性线收官」条件齐备（code-01 复验 + run-l35 封印 T16 均清） |
+| T19 | CI 硬门禁 Ruleset 勾选操作：只勾 required `test`（2026-07-11 裁定，修正 0710 原案的 up-to-date 第二项） | **守密人 2026-07-11 告知勾选完成**（GitHub Settings 侧手动操作，会话无 Ruleset 读权限，以告知为销案依据）；实证挂在下一单 PR 合并流程——`test` 检查应显示为必需项，若实测不符另行呈报。自此合并纪律由「自查自合」切换为 **CI 硬门禁**（合并前等 required `test` 绿），CLAUDE.md §7.6 已同步 |
 | T4 | dispatch 一轮真 L5（验 code-01 残余，$ 帽内）；不派则一致性线判定收官 | **点火已执行**（预算账 = 点火，已裁已花即销）：守密人 2026-07-10 已裁点火，本会话 dispatch run [29134399453](https://github.com/lightproud/brain-in-a-vat/actions/runs/29134399453)（v0.43.0，$1.5 帽，两臂各 100%、gate B `INCONCLUSIVE-PARTIAL` 非破线、实花 $0.59）；报告 `Public-Info-Pool/Resource/data-diagnostics/silver-core-sdk-l5-round-20260711.md`。**注**：主目标 code-01 **未触达**（$1.5 帽在 repeat=5 下 79/180 预算中止于 document-01 前）→ code-01 复验挪新账 **T17**、run-l35 KD-L35-02 挪新账 **T16**（不糊在一起） |
 
 ---
