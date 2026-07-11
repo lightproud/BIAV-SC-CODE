@@ -73,11 +73,11 @@
 
 ### 注意事项
 - update-news.yml 每 3 小时运行一次（cron: '0 */3 * * *'，2026-07-11 降频裁定）
-- discord-archive.yml 已从每小时降到每日 1 次（18:00 UTC）+ 每月 1 日月度归档（Global 官方服，数据落 `Public-Info-Pool/Record/Community/discord/global/`，2026-07-10 方案甲）
+- discord-archive.yml 每日 1 次北京时间 15:00（07:00 UTC；2026-07-11 日更档统一北京 15 点裁定）+ 每月 1 日月度归档（Global 官方服，数据落 `Public-Info-Pool/Record/Community/discord/global/`，2026-07-10 方案甲）
 - discord-archive-volunteer.yml 每 3 小时 :15（志愿者服务器 guild，数据落 `Public-Info-Pool/Record/Community/discord/volunteer/`）
 - discord-archive-jp.yml 日服服务器归档（数据落 `Public-Info-Pool/Record/Community/discord/jp/`）：**已启用**（JP_GUILD_ID 已填、:45 错峰 cron 在跑，07-10 实测正常落档）
 - discord-discover-guilds.yml 手动触发：列出 bot 所在全部服务器，发现待接入 guild ID
-- collect-comments.yml 每日 02:00 UTC（2026-06-05 新增）；recover-fanart.yml 手动触发（同日新增）
+- collect-comments.yml 每日北京 15:05（07:05 UTC）、collect-fanart.yml 每日北京 15:10（07:10 UTC）（2026-07-11 统一北京 15 点档）；recover-fanart.yml 手动触发
 - daily-report.yml 定时已停用，仅手动备用（报告改会话内订阅生成）
 
 ### 日服 Discord 接入（2026-06-17 接入，已启用运行；07-10 实测每小时正常落档）

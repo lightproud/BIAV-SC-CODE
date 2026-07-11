@@ -16,7 +16,7 @@ on:
         required: false
         default: ''
   schedule:
-    - cron: '0 2 * * *'   # 每日 02:00 UTC 自动采（与新闻管线同属免费数据层）
+    - cron: '10 7 * * *'   # 每日北京时间 15:10（07:10 UTC）自动采（2026-07-11 日更档统一北京 15 点裁定）
 
 concurrency:
   group: collect-fanart
