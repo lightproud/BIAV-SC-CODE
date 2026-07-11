@@ -1131,10 +1131,21 @@ export function query(args: {
       }
       // Tool-search: decide activation now that tools are known; when active,
       // register the ToolSearch builtin so the model can load deferred schemas.
+      // Register into mainLoopBuiltins — the map the engine (deps.builtinTools)
+      // AND the init message actually consume — not the original builtinTools.
+      // When memory is enabled the two diverge (mainLoopBuiltins is a clone,
+      // see its construction above): writing to builtinTools then left the
+      // ToolSearch tool STRANDED, so with memory + tool-search both on, every
+      // deferred built-in and MCP tool became permanently unreachable (init
+      // never advertised ToolSearch and the dispatcher could not find it).
+      // ToolSearch is a main-loop-only tool (it closes over the main loop's
+      // deferred registry, which subagents do not have), exactly like the
+      // memory tool, so mainLoopBuiltins is the correct — and, when memory is
+      // off, reference-identical — home for it.
       if (deferred !== null) {
         deferred.activateIfNeeded(options.toolSearch);
         if (deferred.isActive()) {
-          builtinTools.set('ToolSearch', makeToolSearchTool(deferred));
+          mainLoopBuiltins.set('ToolSearch', makeToolSearchTool(deferred));
         }
       }
       const initMessage: SDKSystemMessage = {

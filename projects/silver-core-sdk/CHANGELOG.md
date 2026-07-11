@@ -16,6 +16,19 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.47.7 — 2026-07-11
+
+**World-class review pass, P1 fix**: `ToolSearch` registration reached the
+wrong builtin map when memory was enabled. The engine and the init message
+consume `mainLoopBuiltins`, which is a CLONE of `builtinTools` when
+`options.memory` is on (so the memory tool stays main-loop-only). `ToolSearch`
+was registered into the original `builtinTools`, so with memory + tool-search
+both enabled it never reached the engine or the init `tools` list — and every
+deferred built-in and MCP tool became permanently unreachable (the dispatcher
+could not find `ToolSearch` to load them). It now registers into
+`mainLoopBuiltins`; when memory is off the two maps are the same reference, so
+that path is byte-identical. +1 regression test.
+
 ## 0.47.6 — 2026-07-11
 
 **World-class review pass, transport-core batch** (both arms):

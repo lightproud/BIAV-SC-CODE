@@ -182,6 +182,33 @@ describe('query() — unified built-in deferral', () => {
     }
   });
 
+  it('registers ToolSearch even when memory is enabled (mainLoopBuiltins clone regression)', async () => {
+    // Regression: with memory on, the engine consumes a CLONED builtin map
+    // (mainLoopBuiltins) while ToolSearch used to be registered into the
+    // ORIGINAL map — so ToolSearch never reached the engine or the init
+    // message, and every deferred built-in + MCP tool became permanently
+    // unreachable. It must now appear on the wire AND in the init tools list.
+    const f = stub([textReplyEvents('ok')]);
+    const msgs = await drain(
+      query({
+        prompt: 'hi',
+        options: baseOptions({ toolSearch: true, memory: { sessionEndUpdate: false } }),
+      }),
+    );
+    const names = toolNames(f.requests[0]!.body);
+    expect(names).toContain('ToolSearch');
+    // The memory tool still rides too (native-mode server tool / builtin).
+    expect(names).toContain('memory');
+    // Init message advertises ToolSearch (it reads mainLoopBuiltins.keys()).
+    const init = msgs.find(
+      (m): m is Extract<SDKMessage, { type: 'system'; subtype: 'init' }> =>
+        m.type === 'system' && m.subtype === 'init',
+    );
+    expect(init?.tools).toContain('ToolSearch');
+    // The cold set is still withheld from the first request.
+    expect(names).not.toContain('Workflow');
+  });
+
   it('the default path (toolSearch undefined) is byte-unchanged: no deferral, no ToolSearch', async () => {
     const f = stub([textReplyEvents('ok')]);
     await drain(query({ prompt: 'hi', options: baseOptions() }));
