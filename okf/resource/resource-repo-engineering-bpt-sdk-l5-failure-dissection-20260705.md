@@ -4,7 +4,7 @@ title: "bpt-sdk-l5-failure-dissection-20260705"
 description: "含 `conformance-l5.json` + 54 份 L6 官方臂公开流留痕（`l5-traces/official/*.json`）。（格式：md）"
 resource: "/Public-Info-Pool/Resource/repo-engineering/bpt-sdk-l5-failure-dissection-20260705.md"
 tags: ["data_layer:curated", "deliverable", "topic:repo-engineering"]
-timestamp: "2026-07-10"
+timestamp: "2026-07-11"
 ---
 
 # 指针概念

@@ -1,10 +1,10 @@
 ---
 type: "dataset"
 title: "arca_live 社区数据源"
-description: "arca_live 平台采集档案，全量 0 条，健康度 active。"
+description: "arca_live 平台采集档案，全量 86 条，健康度 active。"
 resource: "/Public-Info-Pool/Record/Community/arca_live/"
 tags: ["data_layer:full_archive", "platform:arca_live", "health:active"]
-timestamp: "2026-07-10T18:21:54.561299+00:00"
+timestamp: "2026-07-10T23:56:35.792778+00:00"
 ---
 
 # 数据层指针
@@ -16,9 +16,9 @@ timestamp: "2026-07-10T18:21:54.561299+00:00"
 | 平台 | arca_live |
 | 全量档案层（本体） | `Public-Info-Pool/Record/Community/arca_live/` |
 | 输出展示层（抽样） | `projects/news/output/arca_live-latest.json` |
-| 全量条数 | 0 |
+| 全量条数 | 86 |
 | 采集健康度 | active |
-| 最后成功 | None |
+| 最后成功 | 2026-07-11 |
 
 # 数据纪律（硬约束）
 

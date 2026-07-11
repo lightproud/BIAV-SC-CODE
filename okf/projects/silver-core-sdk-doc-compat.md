@@ -4,7 +4,7 @@ title: "silver-core-sdk COMPAT"
 description: "Target surface: `@anthropic-ai/claude-agent-sdk` public API (npm 0.3.205; chased from the 0.3.201 baseline 2026-07-10, keeper ruling, zero conformance drift — 0.3.199 -> 0.3.201 chased 2026-07-05) as"
 resource: "/projects/silver-core-sdk/docs/COMPAT.md"
 tags: ["data_layer:curated", "design-doc", "sub-project:silver-core-sdk"]
-timestamp: "2026-07-10"
+timestamp: "2026-07-11"
 ---
 
 # 指针概念

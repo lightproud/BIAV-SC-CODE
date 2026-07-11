@@ -1,9 +1,9 @@
 ---
 type: "dataset"
-title: "google_play 社区数据源"
-description: "google_play 平台采集档案，全量 1248 条，健康度 active。"
-resource: "/Public-Info-Pool/Record/Community/google_play/global/"
-tags: ["data_layer:full_archive", "platform:google_play", "health:active"]
+title: "bahamut 社区数据源"
+description: "bahamut 平台采集档案，全量 30 条，健康度 active。"
+resource: "/Public-Info-Pool/Record/Community/bahamut/"
+tags: ["data_layer:full_archive", "platform:bahamut", "health:active"]
 timestamp: "2026-07-10T23:56:35.792778+00:00"
 ---
 
@@ -13,12 +13,12 @@ timestamp: "2026-07-10T23:56:35.792778+00:00"
 
 | 项 | 值 |
 |------|------|
-| 平台 | google_play |
-| 全量档案层（本体） | `Public-Info-Pool/Record/Community/google_play/global/` |
-| 输出展示层（抽样） | `projects/news/output/google_play-latest.json` |
-| 全量条数 | 1248 |
+| 平台 | bahamut |
+| 全量档案层（本体） | `Public-Info-Pool/Record/Community/bahamut/` |
+| 输出展示层（抽样） | `projects/news/output/bahamut-latest.json` |
+| 全量条数 | 30 |
 | 采集健康度 | active |
-| 最后成功 | 2026-07-10 |
+| 最后成功 | 2026-07-11 |
 
 # 数据纪律（硬约束）
 

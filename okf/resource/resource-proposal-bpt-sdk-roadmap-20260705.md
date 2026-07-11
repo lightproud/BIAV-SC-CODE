@@ -4,7 +4,7 @@ title: "bpt-sdk-roadmap-20260705"
 description: "引擎主体（v0.1–v0.5）+ 提示词装配层（Track B）已成并入 main；G 系列（引擎效率机制 + 保真收尾，含 G8 决策落档）收官 v0.5；（格式：md）"
 resource: "/Public-Info-Pool/Resource/proposal/bpt-sdk-roadmap-20260705.md"
 tags: ["data_layer:curated", "deliverable", "topic:proposal"]
-timestamp: "2026-07-10"
+timestamp: "2026-07-11"
 ---
 
 # 指针概念

@@ -4,7 +4,7 @@ title: "Lua表还原"
 description: "客户端解包text 子集（明文）「Lua表还原」：24 文件 / 18.7MB。一手解包，本体原地。"
 resource: "/Public-Info-Pool/Reference/Game-Unpacked/Lua表还原/"
 tags: ["data_layer:full_archive", "content:lua-tables", "encoding:text", "first-hand-unpack"]
-timestamp: "2026-07-10"
+timestamp: "2026-07-11"
 ---
 
 # 指针概念

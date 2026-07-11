@@ -4,7 +4,7 @@ title: "公开图像资产"
 description: "立绘 / CG 等公开图像资产目录（10.0MB），二进制本体原地。"
 resource: "/assets/images/"
 tags: ["data_layer:curated", "fact-bible", "media:image"]
-timestamp: "2026-07-10"
+timestamp: "2026-07-11"
 ---
 
 # 指针概念

@@ -4,7 +4,7 @@ title: "bpt-desktop-command-impl-plan-20260710"
 description: "（10 条活体观测）+ 需求说明书 v1.1（R1-R5）+ 五类盘点档 + SDK v0.39（格式：md）"
 resource: "/Public-Info-Pool/Resource/repo-engineering/bpt-desktop-command-impl-plan-20260710.md"
 tags: ["data_layer:curated", "deliverable", "topic:repo-engineering"]
-timestamp: "2026-07-10"
+timestamp: "2026-07-11"
 ---
 
 # 指针概念

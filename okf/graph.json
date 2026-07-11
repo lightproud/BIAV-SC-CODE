@@ -1,8 +1,8 @@
 {
-  "generated": "2026-07-10",
+  "generated": "2026-07-11",
   "stats": {
-    "nodes": 350,
-    "edges": 405
+    "nodes": 352,
+    "edges": 409
   },
   "nodes": [
     {
@@ -3170,6 +3170,18 @@
       "url": "news/"
     },
     {
+      "id": "/sources/bahamut.md",
+      "type": "dataset",
+      "title": "bahamut 社区数据源",
+      "tags": [
+        "data_layer:full_archive",
+        "platform:bahamut",
+        "health:active"
+      ],
+      "tier": "skeleton",
+      "url": "news/"
+    },
+    {
       "id": "/sources/bilibili.md",
       "type": "dataset",
       "title": "bilibili 社区数据源",
@@ -3200,6 +3212,18 @@
       "tags": [
         "data_layer:full_archive",
         "platform:google_play",
+        "health:active"
+      ],
+      "tier": "skeleton",
+      "url": "news/"
+    },
+    {
+      "id": "/sources/note_com.md",
+      "type": "dataset",
+      "title": "note_com 社区数据源",
+      "tags": [
+        "data_layer:full_archive",
+        "platform:note_com",
         "health:active"
       ],
       "tier": "skeleton",
@@ -4311,12 +4335,6 @@
     },
     {
       "source": "/community/community-reddit.md",
-      "target": "/characters/130226.md",
-      "rel": "提及:Saya",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-steam.md",
       "target": "/characters/130226.md",
       "rel": "提及:Saya",
       "rel_type": "mention"
@@ -5660,6 +5678,30 @@
       "rel_type": "mention"
     },
     {
+      "source": "/sources/bahamut.md",
+      "target": "/characters/54117.md",
+      "rel": "提及:哈姆林",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bahamut.md",
+      "target": "/characters/77926.md",
+      "rel": "提及:皮克曼",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bahamut.md",
+      "target": "/characters/15576.md",
+      "rel": "提及:墨菲",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bahamut.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
       "source": "/sources/bilibili.md",
       "target": "/characters/77913.md",
       "rel": "提及:凯蒂古拉",
@@ -5757,12 +5799,6 @@
     },
     {
       "source": "/sources/reddit.md",
-      "target": "/characters/130226.md",
-      "rel": "提及:Saya",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/steam.md",
       "target": "/characters/130226.md",
       "rel": "提及:Saya",
       "rel_type": "mention"
@@ -6176,6 +6212,12 @@
       "rel_type": "cross"
     },
     {
+      "source": "/news-output/news-output-bahamut.md",
+      "target": "/sources/bahamut.md",
+      "rel": "抽样自",
+      "rel_type": "cross"
+    },
+    {
       "source": "/community/community-bilibili.md",
       "target": "/sources/bilibili.md",
       "rel": "同平台",
@@ -6208,6 +6250,12 @@
     {
       "source": "/news-output/news-output-google-play.md",
       "target": "/sources/google_play.md",
+      "rel": "抽样自",
+      "rel_type": "cross"
+    },
+    {
+      "source": "/news-output/news-output-note-com.md",
+      "target": "/sources/note_com.md",
       "rel": "抽样自",
       "rel_type": "cross"
     },
