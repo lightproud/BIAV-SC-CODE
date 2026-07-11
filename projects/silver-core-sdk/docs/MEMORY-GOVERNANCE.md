@@ -76,11 +76,11 @@ one-flag SDK guarantee:
 
 1. **Memory degrades to read-only** — `view` stays available ("knows you,
    doesn't record you"), the five write commands return the exported
-   `INCOGNITO_MEMORY_ERROR` constant. Pending-decision note: the dispatch left
-   "keep read access?" open for the keeper; the shipped default keeps reads
-   (the doc's own recommendation). If ruled otherwise, disable the tool with
-   `disallowedTools: ['memory']` or `memory: { enabled: false }` — no SDK
-   change needed.
+   `INCOGNITO_MEMORY_ERROR` constant. RATIFIED (keeper ruling
+   2026-07-12 Beijing, todo T27): read-kept IS the settled default. The
+   de-personalization variant ("don't even read memory this time") stays a
+   consumer-side option — `disallowedTools: ['memory']` or
+   `memory: { enabled: false }` — no SDK change needed.
 2. **Zero SDK-side persistence** — the session transcript is not written
    (`persistSession` forced off), no `tool_call` records (S3) are written, and
    both R7 memory write rounds (compaction flush, session-end progress card)
