@@ -186,6 +186,15 @@
 > 银芯→黑池单向输出物，与 §1.1-HC 防火墙同向，非 BPT 产品内部开发。
 
 - **动手前必读**：`projects/silver-core-sdk/CONTEXT.md`（会话上下文 + 当前 milestone）
+- **B 类首批骨架命令文本 batch 1（2026-07-11，销 todo #T10，已落）**：三张命令卡
+  （`/review` low/medium/high + `/simplify` low/high 结构再现、`/loop` 固定模式）落
+  `Public-Info-Pool/Resource/repo-engineering/bpt-desktop-builtin-commands-batch1-20260711.md`——
+  结构照 OBS-005/007 编排思想（档位闸门 / 相位编排 / 回执三件套），文本自写、零官方句子
+  自查实跑（559 快照反查 10 抽查句：9 句 0 命中、1 处撞词 `adversarial verify` 改写
+  `refutation pass` 后复归 0 命中），品牌按 2026-07-08 去牌裁定用 BPT。方案二期 M3
+  内建源前置件就位；动态自调步文本留 #T13、其余重型件走逐命令例外通道。另注：同会话
+  基于 T4 陈旧镜像撞车点火 run 29135224871（$5 帽全量轮 = T17 选项一），处置与呈报
+  见 `memory/todo.md` #T17 撞车注记。
 - **响应时间优化过审（v0.44.0，2026-07-11，守密人「审视 silver core sdk 优化响应时间」派单，已落）**：
   先测后改——新增零密钥仿真器延迟探针 `tests/integration/perf-overhead.mjs`（30 回合工具环 +
   8000 事件流两场景，中位数计量）确认引擎本体开销仅 ~1ms/回合，真正大头在网络层。四项落地：
