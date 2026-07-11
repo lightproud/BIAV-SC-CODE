@@ -1,0 +1,31 @@
+{
+  "date": "2026-07-12",
+  "archived_at": "2026-07-11T18:17:47.777491+00:00",
+  "source": "bilibili",
+  "item_count": 1,
+  "items": [
+    {
+      "title": "原来是个梦",
+      "summary": "",
+      "source": "bilibili",
+      "time": "2026-07-11T16:50:41+00:00",
+      "url": "https://www.bilibili.com/video/BV1HeNw6xEnr",
+      "engagement": 1,
+      "is_hot": false,
+      "author": "天使戀愛記",
+      "tags": [
+        "动漫杂谈"
+      ],
+      "metadata": {
+        "play": 1,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/8c2e59cf91d47627e60a2c202c49510489000406.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    }
+  ]
+}

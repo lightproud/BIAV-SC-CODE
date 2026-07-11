@@ -1,8 +1,8 @@
 {
   "date": "2026-07-11",
-  "archived_at": "2026-07-11T07:47:16.576849+00:00",
+  "archived_at": "2026-07-11T18:17:47.803630+00:00",
   "source": "steam",
-  "item_count": 4,
+  "item_count": 6,
   "items": [
     {
       "title": "[正面] Buena campaña atrapa y te da por jugar mas.",
@@ -94,6 +94,54 @@
         "playtime_forever": 1821,
         "votes_up": 0,
         "timestamp_created": 1783752614
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Kind of a run of the mill deck fighting game with...",
+      "summary": "Kind of a run of the mill deck fighting game with gacha. Beautiful characters and design, but nothing really pushes it beyond its more notable contemporaries. Still okay tho if this is your thing.",
+      "source": "steam_review",
+      "time": "2026-07-11T13:02:35+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198905637631/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198905637631",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 10,
+        "votes_up": 0,
+        "timestamp_created": 1783774955
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] playable",
+      "summary": "playable",
+      "source": "steam_review",
+      "time": "2026-07-11T08:21:36+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199524380974/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199524380974",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 6147,
+        "votes_up": 0,
+        "timestamp_created": 1783758096
       },
       "region": "global",
       "archive_subtype": "review",

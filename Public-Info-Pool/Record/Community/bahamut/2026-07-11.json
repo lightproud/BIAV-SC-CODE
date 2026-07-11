@@ -1,8 +1,8 @@
 {
   "date": "2026-07-11",
-  "archived_at": "2026-07-11T07:47:16.491315+00:00",
+  "archived_at": "2026-07-11T18:17:47.692429+00:00",
   "source": "bahamut",
-  "item_count": 22,
+  "item_count": 24,
   "items": [
     {
       "title": "【情報】邀請活動集中串，一起拿朵爾幻衣獎勵(可3人互填)",
@@ -12,6 +12,19 @@
       "url": "https://forum.gamer.com.tw/C.php?bsn=78829&snA=938&tnum=250",
       "engagement": 417,
       "is_hot": false,
+      "author": "t12345825",
+      "tags": [],
+      "lang": "zh",
+      "platform_region": "tw"
+    },
+    {
+      "title": "【集中串】2.4.0 發問集中串，來問，有問必答",
+      "summary": "",
+      "source": "bahamut",
+      "time": "2026-07-10T18:16:20.386211+00:00",
+      "url": "https://forum.gamer.com.tw/C.php?bsn=78829&snA=1144&tnum=222",
+      "engagement": 338,
+      "is_hot": true,
       "author": "t12345825",
       "tags": [],
       "lang": "zh",
@@ -39,6 +52,19 @@
       "engagement": 249,
       "is_hot": true,
       "author": "geoafamila",
+      "tags": [],
+      "lang": "zh",
+      "platform_region": "tw"
+    },
+    {
+      "title": "【情報】《沙耶之歌》名場面復刻，截圖獲得空幻之心*5！",
+      "summary": "",
+      "source": "bahamut",
+      "time": "2026-07-10T18:16:20.386180+00:00",
+      "url": "https://forum.gamer.com.tw/C.php?bsn=78829&snA=1419&tnum=52",
+      "engagement": 115,
+      "is_hot": true,
+      "author": "t12345825",
       "tags": [],
       "lang": "zh",
       "platform_region": "tw"

@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-11T07:46:28.116332+00:00",
+  "collected_at": "2026-07-11T18:17:07.380121+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 123,
+  "item_count": 124,
   "items": [
     {
       "source": "google_play",
@@ -104,16 +104,6 @@
       "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-5106d1bd-db6f-447c-95d7-668e8e07b9c9",
       "author": "内田",
       "engagement": 2
-    },
-    {
-      "source": "google_play",
-      "time": "2026-06-11T13:12:02",
-      "lang": "zh",
-      "title": "[Google Play 差评] ★1 我无论换哪一种登录方式都无法登录。你们为什么要弄得这么麻烦？真是令人恶心的软件。",
-      "summary": "我无论换哪一种登录方式都无法登录。你们为什么要弄得这么麻烦？真是令人恶心的软件。",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=zh_CN#gp-b47a4125-902e-4e08-ad74-9027eed035b5",
-      "author": "黑衬白",
-      "engagement": 1
     },
     {
       "source": "google_play",
@@ -273,6 +263,26 @@
       "summary": "觉得还行",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=zh_CN#gp-57f4f9db-558e-4842-b184-3a7e848970ad",
       "author": "元气豆芽（YQBean）",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-10T16:43:15",
+      "lang": "en",
+      "title": "[Google Play 中评] ★3 The conversations between phases of boss",
+      "summary": "The conversations between phases of bosses in story are annoying, add a skip for that please, and also add that in replay too, thanks. And please have guide for teams.",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-07289f29-a32f-4c44-9d7c-e8928dc6e1af",
+      "author": "Nauth",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-10T16:32:19",
+      "lang": "en",
+      "title": "[Google Play 好评] ★5 fun and PEAK",
+      "summary": "fun and PEAK",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-dac85edb-749b-4feb-b5bc-6cdb24a6b374",
+      "author": "Little Spicy",
       "engagement": 0
     },
     {
@@ -667,6 +677,16 @@
     },
     {
       "source": "google_play",
+      "time": "2026-07-10T18:12:14",
+      "lang": "id",
+      "title": "[Google Play 好评] ★5 best game ever, game baik dan sangat ram",
+      "summary": "best game ever, game baik dan sangat ramah buat free player, awaker (hero) nya sangat bagus",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=id#gp-cb2eee64-7b8c-489f-b47e-c32cdfcb4d5f",
+      "author": "Beryl Burn",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
       "time": "2026-07-09T21:28:50",
       "lang": "id",
       "title": "[Google Play 好评] ★5 please add team comp recommendation, it'",
@@ -877,16 +897,6 @@
     },
     {
       "source": "google_play",
-      "time": "2026-06-11T15:46:43",
-      "lang": "vi",
-      "title": "[Google Play 好评] ★5 game hay mỗi tội về sau hơi khó",
-      "summary": "game hay mỗi tội về sau hơi khó",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=vi#gp-5e06aac3-493a-476c-871e-8a26beab41e1",
-      "author": "Nguyễn Chí Linh",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
       "time": "2026-07-05T10:22:19",
       "lang": "fr",
       "title": "[Google Play 中评] ★3 c'est dommage car le jeu en soit mériter",
@@ -997,6 +1007,16 @@
     },
     {
       "source": "google_play",
+      "time": "2026-07-10T16:56:29",
+      "lang": "it",
+      "title": "[Google Play 好评] ★5 Best gatcha ever, I love the Lovecraftia",
+      "summary": "Best gatcha ever, I love the Lovecraftian lore and the intricate gameplay. 10/10 cum laude.",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=it#gp-3da69e37-ee67-4e24-9a08-b0814ade38a3",
+      "author": "Alessio Bollich",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
       "time": "2026-07-04T07:26:08",
       "lang": "it",
       "title": "[Google Play 好评] ★5 5 stelle perché è un gioco multilingue c",
@@ -1023,16 +1043,6 @@
       "summary": "Bellissimo ma oscurato dal fatto che la traduzione (pure \"umana) in inglese è tradotta male. È proprio innaturale da leggere, seppur la trama sia bella.",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=it#gp-230144da-aec6-4e3f-ae4a-85c1b3fe94d0",
       "author": "Francesco Morselli",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-06-11T14:41:09",
-      "lang": "it",
-      "title": "[Google Play 好评] ★5 Gioco molto bello, consigliato da un mio",
-      "summary": "Gioco molto bello, consigliato da un mio amico e devo dire che sembra molto interessante. Continuerò.",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=it#gp-1e7af763-e971-4f9f-8bee-1787aa01dd03",
-      "author": "Mariano De Gennaro",
       "engagement": 0
     },
     {
