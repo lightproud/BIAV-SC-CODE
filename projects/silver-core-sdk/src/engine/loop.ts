@@ -379,6 +379,12 @@ export async function* runAgentLoop(
     totalUsage = addUsage(totalUsage, usage);
     const cost = estimateCostUsd(responseModel, usage, config.cacheTtl, config.pricing);
     totalCostUsd += cost;
+    // Add THIS loop's own spend to the shared family ceiling (root + every
+    // subagent loop reference the same object), so the aggregate budget gate
+    // below sees concurrent-child spend the parent's own totalCostUsd never
+    // carries. Bumped once per billed attempt here — the single site all of
+    // the loop's own cost flows through.
+    if (deps.familyBudget !== undefined) deps.familyBudget.spentUsd += cost;
     const prev = modelUsage[responseModel];
     modelUsage[responseModel] = {
       inputTokens: (prev?.inputTokens ?? 0) + usage.input_tokens,
@@ -395,6 +401,28 @@ export async function* runAgentLoop(
       contextWindow: contextWindowFor(responseModel),
       maxOutputTokens: config.maxOutputTokens,
     };
+  };
+
+  /**
+   * The reason string when the budget is spent, else undefined. Checks the
+   * per-loop self-cap FIRST (so a childless single loop reports the exact same
+   * message it always did — the self path is byte-identical), then the shared
+   * family ceiling (only reachable when concurrent subagent spend has pushed
+   * the aggregate past the absolute cap). Consulted at every point the loop is
+   * about to make ANOTHER billable API call.
+   */
+  const budgetStopReason = (): string | undefined => {
+    if (config.maxBudgetUsd !== undefined && totalCostUsd > config.maxBudgetUsd) {
+      return `Estimated cost $${totalCostUsd.toFixed(6)} exceeded maxBudgetUsd ($${config.maxBudgetUsd})`;
+    }
+    const fb = deps.familyBudget;
+    if (fb !== undefined && fb.spentUsd > fb.capUsd) {
+      return (
+        `Estimated agent-tree cost $${fb.spentUsd.toFixed(6)} exceeded ` +
+        `maxBudgetUsd ($${fb.capUsd}) across the subagent family`
+      );
+    }
+    return undefined;
   };
 
   /**
@@ -1128,17 +1156,14 @@ export async function* runAgentLoop(
         // stream shape (assistant tool_use -> result/error_max_budget_usd);
         // the persisted trailing assistant tool_use is healed on resume by
         // the session store's repairPairing.
-        if (config.maxBudgetUsd !== undefined && totalCostUsd > config.maxBudgetUsd) {
+        const preToolBudgetStop = budgetStopReason();
+        if (preToolBudgetStop !== undefined) {
           pushAssistant(assistant.content, assistant.model);
           deps.debug(
             `engine: budget pre-stop - ${toolUses.length} requested tool call(s) ` +
-              `not executed (estimated cost $${totalCostUsd.toFixed(6)} > ` +
-              `maxBudgetUsd $${config.maxBudgetUsd})`,
+              `not executed (${preToolBudgetStop})`,
           );
-          yield errorResult(
-            'error_max_budget_usd',
-            `Estimated cost $${totalCostUsd.toFixed(6)} exceeded maxBudgetUsd ($${config.maxBudgetUsd})`,
-          );
+          yield errorResult('error_max_budget_usd', preToolBudgetStop);
           return;
         }
         const results: ToolResultBlockParam[] = [];
@@ -1289,11 +1314,9 @@ export async function* runAgentLoop(
         }
         // Budget gate: only fires when about to CONTINUE the loop with another
         // billable API call (a completed answer above is never voided here).
-        if (config.maxBudgetUsd !== undefined && totalCostUsd > config.maxBudgetUsd) {
-          yield errorResult(
-            'error_max_budget_usd',
-            `Estimated cost $${totalCostUsd.toFixed(6)} exceeded maxBudgetUsd ($${config.maxBudgetUsd})`,
-          );
+        const continueBudgetStop = budgetStopReason();
+        if (continueBudgetStop !== undefined) {
+          yield errorResult('error_max_budget_usd', continueBudgetStop);
           return;
         }
         continue;
@@ -1331,11 +1354,9 @@ export async function* runAgentLoop(
             yield errorResult('error_max_turns', `Reached maxTurns limit (${config.maxTurns})`);
             return;
           }
-          if (config.maxBudgetUsd !== undefined && totalCostUsd > config.maxBudgetUsd) {
-            yield errorResult(
-              'error_max_budget_usd',
-              `Estimated cost $${totalCostUsd.toFixed(6)} exceeded maxBudgetUsd ($${config.maxBudgetUsd})`,
-            );
+          const budgetStop = budgetStopReason();
+          if (budgetStop !== undefined) {
+            yield errorResult('error_max_budget_usd', budgetStop);
             return;
           }
           // Push the corrective turn to BOTH history (persistence + query scan)
@@ -1381,11 +1402,9 @@ export async function* runAgentLoop(
             );
             return;
           }
-          if (config.maxBudgetUsd !== undefined && totalCostUsd > config.maxBudgetUsd) {
-            yield errorResult(
-              'error_max_budget_usd',
-              `Estimated cost $${totalCostUsd.toFixed(6)} exceeded maxBudgetUsd ($${config.maxBudgetUsd})`,
-            );
+          const budgetStop = budgetStopReason();
+          if (budgetStop !== undefined) {
+            yield errorResult('error_max_budget_usd', budgetStop);
             return;
           }
           continue;
@@ -1440,11 +1459,9 @@ export async function* runAgentLoop(
             );
             return;
           }
-          if (config.maxBudgetUsd !== undefined && totalCostUsd > config.maxBudgetUsd) {
-            yield errorResult(
-              'error_max_budget_usd',
-              `Estimated cost $${totalCostUsd.toFixed(6)} exceeded maxBudgetUsd ($${config.maxBudgetUsd})`,
-            );
+          const budgetStop = budgetStopReason();
+          if (budgetStop !== undefined) {
+            yield errorResult('error_max_budget_usd', budgetStop);
             return;
           }
           continue;

@@ -640,6 +640,24 @@ export type EngineDeps = {
    *  shared with the query layer, which drains it at its own yield points;
    *  splice-style — each buffered message is returned exactly once. */
   drainObservability?: () => SDKMessage[];
+  /**
+   * Family-wide (agent-tree) spend ceiling, shared by the root loop AND every
+   * subagent loop of the same query. Each loop adds ITS OWN billed cost to
+   * `spentUsd` in real time (in recordUsage) and trips `error_max_budget_usd`
+   * once `spentUsd > capUsd`. This is the AGGREGATE ceiling that the per-loop
+   * `config.maxBudgetUsd` self-cap cannot provide: without it, a coordinator
+   * that fans out N concurrent subagents (each handed a full copy of
+   * `maxBudgetUsd`) can spend up to (1+N)×maxBudgetUsd inside one prompt,
+   * because the parent's own budget gate only sees the parent's own cost and
+   * child cost folds into the session account only at result boundaries.
+   *
+   * `capUsd` is the ABSOLUTE `options.maxBudgetUsd` and `spentUsd` accumulates
+   * cumulatively across turns, so for a childless single loop this gate trips
+   * at the exact same point as the existing self-cap (identical behavior);
+   * it only bites earlier when concurrent family spend is in flight. Purely
+   * additive/conservative — it can trip sooner, never later. Absent when no
+   * budget is configured. */
+  familyBudget?: { spentUsd: number; capUsd: number };
 };
 
 // ---------------------------------------------------------------------------

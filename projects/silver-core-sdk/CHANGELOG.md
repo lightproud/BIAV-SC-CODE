@@ -16,6 +16,22 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.47.3 — 2026-07-11
+
+**World-class review pass, P0 fix**: aggregate (agent-tree) budget ceiling.
+Each subagent was handed a full copy of `maxBudgetUsd` and the parent loop's
+budget gate only saw the parent's own cost (child cost folds into the session
+account at result boundaries), so a coordinator that fanned out N concurrent
+subagents in one prompt could spend up to (1+N)×maxBudgetUsd. A shared
+`familyBudget` ledger is now threaded through the root loop and every subagent
+loop: each loop adds its own billed cost to one shared `spentUsd` and every
+budget gate additionally trips once the family total exceeds the absolute cap.
+Purely additive/conservative — for a childless loop the family gate trips at
+the identical point as the existing per-loop self-cap, so single-loop budget
+behavior is byte-identical; it only bites earlier when concurrent family spend
+is in flight. Also syncs `src/version.ts` (it had lagged the 0.47.1/0.47.2
+package bumps — the version-guard invariant covers it). +1 regression test.
+
 ## 0.47.2 — 2026-07-11
 
 **World-class review pass, security fix**: WebFetch SSRF guard — `ipv6Blocked`

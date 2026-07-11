@@ -152,6 +152,8 @@ function makeRuntime(cfg: {
   persist?: boolean;
   /** Runtime cwd (worktree-isolation tests point this at a real git repo). */
   cwd?: string;
+  /** Shared agent-tree budget ceiling (P0 fix) threaded into every child loop. */
+  familyBudget?: { spentUsd: number; capUsd: number };
 }): RuntimeHarness {
   const transport = new MockTransport(cfg.scripts);
   const starts: string[] = [];
@@ -210,6 +212,7 @@ function makeRuntime(cfg: {
     outerSignal: new AbortController().signal,
     sessionId: () => engineConfig.sessionId,
     debug: () => {},
+    familyBudget: cfg.familyBudget,
   };
   return { runtime: createSubagentRuntime(opts), transport, starts, stops, stopInputs };
 }
@@ -809,6 +812,36 @@ describe('subagent runtime — inherited turn/budget caps (finding #3)', () => {
     // Budget gate fired after turn 1 -> child terminated early, turn 2 never ran.
     expect(res.isError).toBe(true);
     expect(res.content).toContain('maxBudgetUsd');
+    expect(h.transport.requests).toHaveLength(1);
+  });
+
+  it('trips a child on the shared FAMILY budget already spent by siblings (P0)', async () => {
+    // The per-loop maxBudgetUsd is generous ($1), so the child's own self-cap
+    // would let its turn-1 tool_use continue to turn 2. But the shared family
+    // ledger is ALREADY over its cap (a sibling burned it), so the aggregate
+    // pre-tool gate must stop this child after turn 1 records its own cost,
+    // before executing the requested tool — the ceiling the copied self-cap
+    // cannot enforce. Without the family gate the child would run turn 2.
+    const readInputs: Array<Record<string, unknown>> = [];
+    const base = new Map<string, BuiltinTool>([
+      ['Read', recordingTool('Read', readInputs, { readOnly: true })],
+    ]);
+    const h = makeRuntime({
+      scripts: [
+        toolUseReplyEvents('Read', { file_path: '/a' }, { model: 'claude-sonnet-4-5' }),
+        textReplyEvents('done', { model: 'claude-sonnet-4-5' }),
+      ],
+      baseBuiltins: base,
+      engineConfig: { maxBudgetUsd: 1 }, // roomy self-cap: would NOT trip alone
+      familyBudget: { spentUsd: 5, capUsd: 1 }, // family already over budget
+    });
+    const res = await h.runtime.makeSpawnFn(0)(baseParams());
+    expect(res.isError).toBe(true);
+    expect(res.content).toContain('maxBudgetUsd');
+    expect(res.content).toContain('subagent family');
+    // Pre-tool gate fired after turn 1: the Read was never executed and turn 2
+    // never streamed.
+    expect(readInputs).toHaveLength(0);
     expect(h.transport.requests).toHaveLength(1);
   });
 

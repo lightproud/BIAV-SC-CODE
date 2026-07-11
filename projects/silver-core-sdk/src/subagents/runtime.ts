@@ -175,6 +175,11 @@ export type SubagentRuntimeOptions = {
   readFilePaths?: Set<string>;
   /** Formal per-query WeakMap key threaded into child contexts (F6). */
   sessionKey?: object;
+  /** Aggregate agent-tree budget ceiling (P0 fix): the SAME object the root
+   *  loop holds, threaded into every child loop so the whole family shares one
+   *  spend total and one cap — a child cannot spend past the family ceiling
+   *  even though it is handed a full copy of the per-loop maxBudgetUsd. */
+  familyBudget?: { spentUsd: number; capUsd: number };
 };
 
 /** task_updated.result carries a bounded preview, not the full child text
@@ -1061,6 +1066,12 @@ export function createSubagentRuntime(
         hooks,
         toolContext: childToolContext,
         debug,
+        // Share the aggregate agent-tree budget ceiling: this child's own
+        // billed cost lands in the same spentUsd the root loop and its sibling
+        // children see, so no branch of the tree can exceed maxBudgetUsd in
+        // aggregate (P0 fix — the per-loop maxBudgetUsd self-cap only bounds one
+        // loop in isolation).
+        ...(opts.familyBudget !== undefined ? { familyBudget: opts.familyBudget } : {}),
       };
       // Fork seeds the child with a trimmed copy of the parent history plus the
       // delegated task as a trailing user turn; isolated starts from just the

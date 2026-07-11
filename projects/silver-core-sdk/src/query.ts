@@ -400,6 +400,18 @@ export function query(args: {
     );
   }
 
+  // Aggregate (agent-tree) budget ceiling shared by the root loop AND every
+  // subagent loop, so a coordinator that fans out N concurrent children cannot
+  // spend (1+N)×maxBudgetUsd in one prompt (each child is otherwise handed a
+  // full copy of the cap and the parent's own gate never sees child spend).
+  // capUsd is the absolute option; spentUsd accumulates cumulatively across
+  // the whole query, so for a childless loop the family gate trips at the same
+  // point as the per-loop self-cap (identical behavior). Absent when unbudgeted.
+  const familyBudget =
+    options.maxBudgetUsd !== undefined
+      ? { spentUsd: 0, capUsd: options.maxBudgetUsd }
+      : undefined;
+
   // Read-before-write gate state (E4): one shared Set per query. The subagent
   // runtime threads the SAME reference into child contexts (like shells /
   // sandbox), so "this session has read the file" spans parent and children.
@@ -610,6 +622,7 @@ export function query(args: {
     sandbox: sandboxCtx,
     readFilePaths,
     sessionKey: toolSessionKey,
+    familyBudget,
   });
 
   // Memory tool registration — MAIN LOOP ONLY (v1): a cloned map so the
@@ -952,6 +965,8 @@ export function query(args: {
           requestView,
           drainSubagentResults: () => subagentRuntime.drainCompletedResults(),
           drainObservability,
+          // Aggregate agent-tree budget ceiling, shared with every subagent loop.
+          ...(familyBudget !== undefined ? { familyBudget } : {}),
           // Memory spec R8: metrics.memoryHealth snapshot source (root only).
           ...(memory !== null ? { memoryHealth: () => memory.health } : {}),
           // Unified tool-search: withhold a cold built-in's schema from this
