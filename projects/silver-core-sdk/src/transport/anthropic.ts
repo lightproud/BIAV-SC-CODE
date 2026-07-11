@@ -79,6 +79,15 @@ export class AnthropicTransport implements Transport {
   private readonly betas: string[] | undefined;
   private readonly credential: ResolvedCredential | null;
   private readonly endpoint: string;
+  /** provider.fetch injection seam. BPT-EXTENSION — lets the consumer bind
+   *  requests to a long-keep-alive undici Agent so turns separated by slow
+   *  tool runs reuse the warm TLS connection (docs/PERFORMANCE.md), or route
+   *  via proxy/instrumented fetch. Undefined -> the CURRENT global fetch is
+   *  resolved at call time (late binding: a later setGlobalDispatcher / test
+   *  stub still applies). */
+  private readonly fetchFn:
+    | ((input: string | URL, init?: RequestInit) => Promise<Response>)
+    | undefined;
   /** Concurrency gate; null when maxConcurrentRequests resolves to 0
    *  (unlimited — the default, so existing single-conversation callers see
    *  zero behavior change). */
@@ -90,6 +99,7 @@ export class AnthropicTransport implements Transport {
     this.debug = cfg.debug;
     this.betas = cfg.betas;
     this.credential = resolveCredential(this.provider, cfg.env);
+    this.fetchFn = this.provider.fetch;
     const maxConcurrent = resolveMaxConcurrent(this.provider, cfg.env);
     this.slots = maxConcurrent > 0 ? new RequestSemaphore(maxConcurrent) : null;
     const base = (
@@ -222,13 +232,29 @@ export class AnthropicTransport implements Transport {
       ];
       const streamSignal =
         signalParts.length > 1 ? AbortSignal.any(signalParts) : signal;
+      // Lazily re-armed: the per-event cost is ONE timestamp write, not a
+      // clearTimeout+setTimeout pair — a stream of thousands of small deltas
+      // no longer churns a timer per event. The single timer wakes at the
+      // earliest possible expiry and either fires (gap since the last event
+      // reached idleMs) or re-arms for exactly the remaining gap, so the
+      // abort still lands idleMs after the LAST event — same semantics as
+      // the per-event reset, at ~1 timer per idle window instead of 1 per
+      // event.
       let idleTimer: ReturnType<typeof setTimeout> | undefined;
-      const resetIdle = (): void => {
-        if (!idleController) return;
-        if (idleTimer) clearTimeout(idleTimer);
-        idleTimer = setTimeout(() => idleController.abort(), idleMs);
+      let lastEventAt = 0;
+      const armIdle = (delay: number): void => {
+        idleTimer = setTimeout(() => {
+          const remaining = idleMs - (Date.now() - lastEventAt);
+          if (remaining <= 0) idleController!.abort();
+          else armIdle(remaining);
+        }, delay);
         // Don't let the watchdog alone keep the process alive.
         (idleTimer as { unref?: () => void }).unref?.();
+      };
+      const resetIdle = (): void => {
+        lastEventAt = Date.now();
+        if (!idleController || idleTimer !== undefined) return;
+        armIdle(idleMs);
       };
       let eventCount = 0;
       try {
@@ -395,7 +421,7 @@ export class AnthropicTransport implements Transport {
         this.debug(
           `transport: POST ${this.endpoint} (attempt ${attempt + 1}/${maxRetries + 1})`,
         );
-        response = await fetch(this.endpoint, {
+        response = await (this.fetchFn ?? fetch)(this.endpoint, {
           method: 'POST',
           headers,
           body: bodyJson,

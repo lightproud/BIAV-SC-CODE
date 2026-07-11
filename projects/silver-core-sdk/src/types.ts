@@ -1045,6 +1045,20 @@ export type ProviderConfig = {
    * BPT-EXTENSION: the official SDK has no such knob (its CLI owns concurrency).
    */
   maxConcurrentRequests?: number;
+  /**
+   * Custom fetch implementation used for EVERY HTTP request this transport
+   * issues (default: the global fetch). BPT-EXTENSION. The primary use case
+   * is response time: Node's built-in fetch pools connections with a ~4s
+   * idle keep-alive by default, so an agent whose tool executions run longer
+   * than that pays a fresh TCP+TLS handshake (typically 100-300ms) on every
+   * turn. Injecting a fetch bound to an undici Agent with a longer
+   * keepAliveTimeout removes that per-turn tax (recipe: docs/PERFORMANCE.md).
+   * Also the seam for proxies, mTLS, and request instrumentation. The
+   * function receives exactly what the transport would pass to global fetch
+   * (endpoint URL + RequestInit including signal) and must resolve to a
+   * WHATWG Response whose body is the SSE stream.
+   */
+  fetch?: (input: string | URL, init?: RequestInit) => Promise<Response>;
   maxOutputTokens?: number;
   /** Automatic prompt caching via cache_control breakpoints; default true. */
   promptCaching?: boolean;

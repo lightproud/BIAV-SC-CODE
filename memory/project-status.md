@@ -186,6 +186,19 @@
 > 银芯→黑池单向输出物，与 §1.1-HC 防火墙同向，非 BPT 产品内部开发。
 
 - **动手前必读**：`projects/silver-core-sdk/CONTEXT.md`（会话上下文 + 当前 milestone）
+- **响应时间优化过审（v0.44.0，2026-07-11，守密人「审视 silver core sdk 优化响应时间」派单，已落）**：
+  先测后改——新增零密钥仿真器延迟探针 `tests/integration/perf-overhead.mjs`（30 回合工具环 +
+  8000 事件流两场景，中位数计量）确认引擎本体开销仅 ~1ms/回合，真正大头在网络层。四项落地：
+  ① **`provider.fetch` 注入缝（BPT-EXTENSION，双传输孪生同享）**——Node 内建 fetch 连接池默认
+  ~4 秒空闲即断，工具执行超 4 秒的回合每回合重付 TCP+TLS 握手（约 100-300ms）；消费方注入长
+  keep-alive undici Agent 即消除，配方见新档 `docs/PERFORMANCE.md`（未注入时调用期晚绑定回退全局
+  fetch，测试桩 / setGlobalDispatcher 均照常生效）；② **空闲看门狗惰性重臂**——每 SSE 事件成本从
+  clearTimeout+setTimeout 一对降为一次时间戳写入，单计时器按剩余间隙自重臂、超时语义不变；
+  ③ **工具定义每回合单次构建**——压缩估算与该回合全部流尝试（重放 / fallback 含）共享一次
+  `buildToolDefs()`，全 schema stringify 估算按工具名集缓存；④ **SSE 解析器偏移扫描**——每 chunk
+  仅重切一次缓冲（原先逐行重拷贝，行数二次方）。探针中位数（repeat=9 同机）：30 回合引擎记账
+  29.7ms→18.0ms（-39%）、8000 事件流 CPU 53.3ms→46.3ms。+3 测（注入缝双传输 + 重试路径），
+  **1666 全绿 + 2 skipped（79 文件）**、tsc + build exit 0；孪生纪律测试保持绿。
 - **断线韧性全量落地（v0.43.0，2026-07-10，守密人「全量」裁定，已落）**：承「实际使用时不时断线」
   痛点，落四层兜底模型（设计档 `projects/silver-core-sdk/docs/RESILIENCE.md`，裁定见 decisions.md 同日条）：
   ① **P0-1 有界回合重放**——零采信流失败（零事件 / 零事件卡死 / 打捞落空的废弃残片）回合级重放 2 次

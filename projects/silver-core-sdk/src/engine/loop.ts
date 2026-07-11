@@ -413,12 +413,16 @@ export async function* runAgentLoop(
     mirror(turn);
   };
 
-  /** Tool defs are rebuilt each attempt so tool-search "load on demand"
-   *  surfaces newly-loaded schemas per turn — for BOTH deferred MCP tools
-   *  (via deps.mcp.allTools() filtering) and deferred COLD built-ins (via
-   *  deps.isBuiltinDeferred). A cold-and-unloaded built-in is skipped here so
-   *  its schema is not written this turn; it reappears the turn after a
-   *  ToolSearch load. Absent isBuiltinDeferred -> every built-in is inline
+  /** Tool defs are rebuilt once per TURN (loop iteration) so tool-search
+   *  "load on demand" surfaces newly-loaded schemas per turn — for BOTH
+   *  deferred MCP tools (via deps.mcp.allTools() filtering) and deferred COLD
+   *  built-ins (via deps.isBuiltinDeferred). Loads only happen through tool
+   *  execution BETWEEN turns, so one build per iteration (shared by the
+   *  compaction estimate and every stream attempt of that turn, replay and
+   *  fallback included) is equivalent to the previous per-attempt rebuild —
+   *  minus the redundant allocations. A cold-and-unloaded built-in is skipped
+   *  here so its schema is not written this turn; it reappears the turn after
+   *  a ToolSearch load. Absent isBuiltinDeferred -> every built-in is inline
    *  (exact pre-unification behavior). */
   const buildToolDefs = (): APIToolDefinition[] => {
     const defs: APIToolDefinition[] = [];
@@ -508,18 +512,30 @@ export async function* runAgentLoop(
       ? config.systemBlocks.reduce((n, b) => n + (b.text?.length ?? 0), 0)
       : (config.systemPrompt?.length ?? 0) + (config.systemPromptSuffix?.length ?? 0);
   const systemPromptTokens = Math.ceil(systemCharLen / 4);
-  const currentOverheadTokens = (): number =>
-    estimateToolDefsTokens(buildToolDefs()) + systemPromptTokens;
+  // Tool-def token estimate, cached by the tool-NAME set: the estimate walks
+  // a JSON.stringify of every schema, and the def list only changes when the
+  // advertised tool set changes (ToolSearch load / MCP setServers) — which
+  // always changes the name set. Same-name schemas are static objects.
+  let toolDefsEstimateKey: string | undefined;
+  let toolDefsEstimate = 0;
+  const currentOverheadTokens = (defs: APIToolDefinition[]): number => {
+    const key = defs.map((d) => d.name).join(' ');
+    if (key !== toolDefsEstimateKey) {
+      toolDefsEstimate = estimateToolDefsTokens(defs);
+      toolDefsEstimateKey = key;
+    }
+    return toolDefsEstimate + systemPromptTokens;
+  };
 
   /** One streaming attempt; yields partial events, returns the final message.
    *  `sink` (when given) captures usage seen so far so a FAILED attempt's
    *  tokens can be folded into totals before a fallback retry. */
   async function* streamAttempt(
     useModel: string,
+    toolDefs: APIToolDefinition[],
     sink?: UsageSink,
   ): AsyncGenerator<SDKMessage, APIAssistantMessage> {
     const accumulator = new MessageAccumulator();
-    const toolDefs = buildToolDefs();
     // Retry observability: the transport calls onRetry (in the request phase,
     // before any stream event) for each 429/5xx/network retry. We buffer a
     // rate_limit_event (429) / api_retry (else) per retry and yield them at the
@@ -727,12 +743,17 @@ export async function* runAgentLoop(
       if (signal.aborted) throw new AbortError();
       yield* drainObs();
 
+      // ONE tool-def build per turn, shared by the compaction estimate and
+      // every stream attempt below (replay / fallback included) — the set can
+      // only change between turns (tool execution), never mid-turn.
+      const turnToolDefs = buildToolDefs();
+
       // --- Context compaction (only when a shared request view exists). -----
       if (deps.requestView !== undefined && config.compaction?.enabled !== false) {
         const cfg = config.compaction;
         // Recompute the tool-def overhead THIS turn so mid-run tool growth
         // (tool-search / lazy MCP load) is counted in the trigger (finding #11).
-        const overheadTokens = currentOverheadTokens();
+        const overheadTokens = currentOverheadTokens(turnToolDefs);
         const onSummaryCall = (
           m: string,
           u: NonNullableUsage,
@@ -811,7 +832,7 @@ export async function* runAgentLoop(
       replay: for (;;) {
         firstSink = {};
         try {
-          assistant = yield* streamAttempt(model, firstSink);
+          assistant = yield* streamAttempt(model, turnToolDefs, firstSink);
           break;
         } catch (err) {
           if (isAbortError(err)) throw toAbortError(err);
@@ -889,7 +910,7 @@ export async function* runAgentLoop(
             // The retry emits its OWN message_start; downstream consumers of
             // includePartialMessages must treat a fresh message_start as
             // superseding the discarded attempt's partial stream_events.
-            assistant = yield* streamAttempt(model); // 2nd failure -> outer catch
+            assistant = yield* streamAttempt(model, turnToolDefs); // 2nd failure -> outer catch
             break;
           }
           throw err;

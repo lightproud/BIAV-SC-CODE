@@ -16,6 +16,37 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.44.0 — 2026-07-11
+
+**Response-time pass** (keeper dispatch 「审视 silver core sdk，优化响应时间」).
+Measured first (`tests/integration/perf-overhead.mjs`, new zero-key
+emulator-driven probe), then trimmed what the engine controls:
+
+- **`provider.fetch` injection seam (BPT-EXTENSION, both transports)**: custom
+  fetch used for every HTTP request the transport issues (retries included).
+  The headline consumer win: Node's built-in fetch pools connections with a
+  ~4s idle keep-alive, so any turn whose tool run exceeds that re-pays a
+  TCP+TLS handshake (~100-300ms) — binding requests to a long-keep-alive
+  undici Agent removes that per-turn tax. Late-bound: when absent, the
+  CURRENT global fetch resolves at call time. Recipes in new
+  `docs/PERFORMANCE.md` (keep-alive agent, first-turn preconnect, perceived
+  latency). Twin discipline held (`requestWithRetries` stays token-identical).
+- **Idle-watchdog lazy re-arm (both transports)**: per-SSE-event cost drops
+  from a clearTimeout+setTimeout pair to one timestamp write; a single timer
+  re-arms for the remaining gap (abort still lands exactly idleMs after the
+  last event). ~1 timer per idle window instead of 1 per event.
+- **One tool-def build per turn (engine loop)**: the compaction estimate and
+  every stream attempt of a turn (replay/fallback included) now share one
+  `buildToolDefs()` product instead of building twice per turn; the tool-def
+  token estimate (a full-schema JSON.stringify) is cached by tool-name set.
+- **SSE parser: offset line scan**: `drainBuffer` re-slices the buffer once
+  per chunk instead of once per line (was quadratic in lines-per-chunk).
+
+Probe medians (repeat=9, same machine): 30-turn tool-loop engine bookkeeping
+29.7ms → 18.0ms (-39%); 8000-delta stream wall 57.4ms → 48.6ms, CPU
+53.3ms → 46.3ms. +3 tests (fetch injection, both transports + retry path);
+1666 passed / 2 skipped.
+
 ## 0.43.0 — 2026-07-10
 
 **Resilience: layered disconnect survival** (keeper ruling 「全量」; design in

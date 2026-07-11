@@ -527,6 +527,15 @@ export class OpenAIChatTransport implements Transport {
   private readonly debug: (m: string) => void;
   private readonly credential: ResolvedCredential | null;
   private readonly endpoint: string;
+  /** provider.fetch injection seam. BPT-EXTENSION — lets the consumer bind
+   *  requests to a long-keep-alive undici Agent so turns separated by slow
+   *  tool runs reuse the warm TLS connection (docs/PERFORMANCE.md), or route
+   *  via proxy/instrumented fetch. Undefined -> the CURRENT global fetch is
+   *  resolved at call time (late binding: a later setGlobalDispatcher / test
+   *  stub still applies). */
+  private readonly fetchFn:
+    | ((input: string | URL, init?: RequestInit) => Promise<Response>)
+    | undefined;
   private readonly slots: RequestSemaphore | null;
 
   constructor(cfg: TransportConfig) {
@@ -534,6 +543,7 @@ export class OpenAIChatTransport implements Transport {
     this.env = cfg.env;
     this.debug = cfg.debug;
     this.credential = resolveOpenAICredential(this.provider, cfg.env);
+    this.fetchFn = this.provider.fetch;
     const maxConcurrent = resolveMaxConcurrent(this.provider, cfg.env);
     this.slots = maxConcurrent > 0 ? new RequestSemaphore(maxConcurrent) : null;
     const base = (
@@ -665,12 +675,23 @@ export class OpenAIChatTransport implements Transport {
       ];
       const streamSignal =
         signalParts.length > 1 ? AbortSignal.any(signalParts) : signal;
+      // Lazily re-armed watchdog (see the anthropic twin for the rationale):
+      // per-event cost is one timestamp write; the single timer re-arms for
+      // the remaining gap and still aborts idleMs after the LAST event.
       let idleTimer: ReturnType<typeof setTimeout> | undefined;
-      const resetIdle = (): void => {
-        if (!idleController) return;
-        if (idleTimer) clearTimeout(idleTimer);
-        idleTimer = setTimeout(() => idleController.abort(), idleMs);
+      let lastEventAt = 0;
+      const armIdle = (delay: number): void => {
+        idleTimer = setTimeout(() => {
+          const remaining = idleMs - (Date.now() - lastEventAt);
+          if (remaining <= 0) idleController!.abort();
+          else armIdle(remaining);
+        }, delay);
         (idleTimer as { unref?: () => void }).unref?.();
+      };
+      const resetIdle = (): void => {
+        lastEventAt = Date.now();
+        if (!idleController || idleTimer !== undefined) return;
+        armIdle(idleMs);
       };
       const translator = new OpenAIStreamTranslator(req.model);
       let chunkCount = 0;
@@ -820,7 +841,7 @@ export class OpenAIChatTransport implements Transport {
         this.debug(
           `openai transport: POST ${this.endpoint} (attempt ${attempt + 1}/${maxRetries + 1})`,
         );
-        response = await fetch(this.endpoint, {
+        response = await (this.fetchFn ?? fetch)(this.endpoint, {
           method: 'POST',
           headers,
           body: bodyJson,
