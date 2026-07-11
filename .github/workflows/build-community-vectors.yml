@@ -7,7 +7,7 @@ name: Build Community Vectors
 # 触发：workflow_dispatch（手动，带 limit 入参）。需 workflow 在默认分支才可 dispatch，
 #   故合并后可用；key 有效性 + 索引建得出已实测跑绿（2026-07-05：1500×512 voyage-3-lite）。
 # 产物（chunk2，守密人 2026-07-05 裁定 1）：真索引上传 Release community-assets
-#   （gh release upload --clobber，照 fanart-archive.yml）——合本仓「二进制→Release、
+#   （gh release upload --clobber，照 collect-fanart.yml 直传范式）——合本仓「二进制→Release、
 #   git 留指针」范式；索引确定性 gzip（GzipFile mtime=0）保证同内容不 churn 资产。
 #   运行时还原：scripts/restore_release_data.py --tag community-assets
 #   --pattern 'kb_vectors.json.gz' --dest okf。actions artifact 保留供 run 内检视。

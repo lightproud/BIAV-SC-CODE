@@ -76,7 +76,7 @@
 
 合并自原 `media-archive-v1`，含两类：
 - **回填社区媒体**（索引 `media/backfill_manifest.json`）；`backfill_media.py --upload` 以 `gh release upload --clobber` 追加。
-- **同人图月归档** `fanart-archive-{YYYY-MM}.tar.gz`：归档引擎 fanart 条目（`release_tag: community-assets`，`month_from_parent_dir` 分桶，60 天 cutoff + git_rm）每月自动追加。
+- **同人图月归档** `fanart-archive-{YYYY-MM}.tar.gz`：归档引擎 fanart 条目（`release_tag: community-assets`，`month_from_parent_dir` 分桶）。fanart 不入 git（2026-06-21 de-tier），采集工作流（`collect-fanart.yml` 每日 / `recover-fanart.yml` 手动补录）取回当月资产合并新采后经 `archive_engine.py --force-group` 重传，月资产随采集滚动更新。
 
 ## 三、整理历程
 
