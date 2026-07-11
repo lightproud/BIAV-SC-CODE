@@ -491,7 +491,10 @@ export class AnthropicTransport implements Transport {
     }
   }
 
-  /** Exponential backoff (base 1s, factor 2) with jitter; retry-after wins. */
+  /** Exponential backoff (base 1s, factor 2) with jitter; an explicit
+   *  retry-after wins and is honored AS GIVEN (already bounded by the parser).
+   *  Only the exponential fallback is capped at BACKOFF_MAX_MS — clamping an
+   *  explicit "wait 90s" down to 60s just retries early into the same limit. */
   private async backoff(
     attempt: number,
     retryAfterMs: number | undefined,
@@ -500,7 +503,7 @@ export class AnthropicTransport implements Transport {
     const exponential = BACKOFF_BASE_MS * BACKOFF_FACTOR ** (attempt - 1);
     // Bounded jitter in [0.5, 1.0] x the exponential delay.
     const jittered = exponential * (0.5 + Math.random() * 0.5);
-    const delay = Math.min(retryAfterMs ?? jittered, BACKOFF_MAX_MS);
+    const delay = retryAfterMs ?? Math.min(jittered, BACKOFF_MAX_MS);
     this.debug(`transport: backing off ${Math.round(delay)}ms`);
     await sleep(delay, signal);
   }
@@ -754,11 +757,28 @@ async function readErrorInfo(
 }
 
 /** Parse a retry-after header given in seconds; anything else is ignored. */
+/** A server Retry-After is honored fully up to this ceiling, so a busy gateway's
+ *  "wait 90s" is respected instead of clamped to the exponential cap and retried
+ *  early. Bounded so a pathological "Retry-After: 99999" cannot hang the agent. */
+const RETRY_AFTER_MAX_MS = 120_000;
+
 function parseRetryAfterMs(header: string | null): number | undefined {
   if (!header) return undefined;
-  const seconds = Number(header.trim());
+  const trimmed = header.trim();
+  // delta-seconds form (the common case).
+  const seconds = Number(trimmed);
   if (Number.isFinite(seconds) && seconds >= 0) {
-    return Math.min(seconds * 1_000, BACKOFF_MAX_MS);
+    return Math.min(seconds * 1_000, RETRY_AFTER_MAX_MS);
+  }
+  // HTTP-date form (RFC 7231, e.g. "Wed, 21 Oct 2026 07:28:00 GMT") — proxies
+  // and CDNs commonly emit it; the wait is the delta from now. Was previously
+  // dropped (Number() -> NaN), silently falling back to exponential backoff.
+  const dateMs = Date.parse(trimmed);
+  if (Number.isFinite(dateMs)) {
+    const delta = dateMs - Date.now();
+    // the date already passed -> retry now
+    if (delta <= 0) return 0;
+    return Math.min(delta, RETRY_AFTER_MAX_MS);
   }
   return undefined;
 }

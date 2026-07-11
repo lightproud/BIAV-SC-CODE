@@ -574,12 +574,29 @@ describe('OpenAIStreamTranslator', () => {
 });
 
 describe('parseRetryAfterMs', () => {
-  it('parses seconds and caps at the 60s backoff maximum', () => {
+  it('parses delta-seconds and honors up to the 120s ceiling', () => {
     expect(parseRetryAfterMs('0')).toBe(0);
     expect(parseRetryAfterMs('2')).toBe(2000);
-    expect(parseRetryAfterMs('9999')).toBe(60_000);
-    expect(parseRetryAfterMs('Wed, 21 Oct 2026 07:28:00 GMT')).toBeUndefined();
+    // An explicit "wait 90s" is now honored fully (was clamped to 60s and
+    // retried early into the same limit).
+    expect(parseRetryAfterMs('90')).toBe(90_000);
+    // A pathological value is bounded by the honor-ceiling.
+    expect(parseRetryAfterMs('9999')).toBe(120_000);
     expect(parseRetryAfterMs(null)).toBeUndefined();
+    expect(parseRetryAfterMs('not-a-date')).toBeUndefined();
+  });
+
+  it('parses the HTTP-date form (RFC 7231) instead of dropping it', () => {
+    // A far-future date is bounded by the ceiling; a past date retries now.
+    const future = new Date(Date.now() + 3600_000).toUTCString();
+    expect(parseRetryAfterMs(future)).toBe(120_000);
+    const past = new Date(Date.now() - 5000).toUTCString();
+    expect(parseRetryAfterMs(past)).toBe(0);
+    // A near-future date yields a small positive wait (allow scheduling slop).
+    const soon = new Date(Date.now() + 3000).toUTCString();
+    const ms = parseRetryAfterMs(soon)!;
+    expect(ms).toBeGreaterThan(1000);
+    expect(ms).toBeLessThanOrEqual(3000);
   });
 });
 

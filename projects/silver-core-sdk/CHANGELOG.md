@@ -16,6 +16,19 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.48.3 — 2026-07-11
+
+**World-class review pass (cont.), Retry-After handling** (both transport arms):
+the parser only recognized the numeric delta-seconds form (an HTTP-date
+`Retry-After`, common from proxies/CDNs, was `Number()`→NaN and silently dropped
+to exponential backoff), and it clamped a value above the 60s exponential cap
+down to 60s — so a server's explicit "wait 90s" retried at 60s, straight back
+into the same limit and burning a retry. Now the HTTP-date form is parsed
+(delta-from-now, past date → retry immediately) and an explicit Retry-After is
+honored as given, bounded by a 120s ceiling so a pathological value can't hang
+the agent; only the exponential fallback stays capped at 60s. +3 regression
+tests; twin-drift guard kept green.
+
 ## 0.48.2 — 2026-07-11
 
 **World-class review pass (cont.), session-integrity batch**:

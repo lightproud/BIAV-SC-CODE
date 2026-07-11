@@ -1014,7 +1014,9 @@ export class OpenAIChatTransport implements Transport {
   ): Promise<void> {
     const exponential = BACKOFF_BASE_MS * BACKOFF_FACTOR ** (attempt - 1);
     const jittered = exponential * (0.5 + Math.random() * 0.5);
-    const delay = Math.min(retryAfterMs ?? jittered, BACKOFF_MAX_MS);
+    // Honor an explicit retry-after as given (parser-bounded); cap only the
+    // exponential fallback — clamping "wait 90s" to 60s retries early.
+    const delay = retryAfterMs ?? Math.min(jittered, BACKOFF_MAX_MS);
     this.debug(`openai transport: backing off ${Math.round(delay)}ms`);
     await sleep(delay, signal);
   }
@@ -1099,12 +1101,26 @@ async function readOpenAIErrorInfo(
   };
 }
 
+/** A server Retry-After is honored fully up to this ceiling (twin of the
+ *  Anthropic arm): a "wait 90s" is respected rather than clamped to the
+ *  exponential cap and retried early into the same limit; bounded so a
+ *  pathological value cannot hang the agent. */
+const RETRY_AFTER_MAX_MS = 120_000;
+
 /** Exported for unit tests (retry-after cap coverage). */
 export function parseRetryAfterMs(header: string | null): number | undefined {
   if (!header) return undefined;
-  const seconds = Number(header.trim());
+  const trimmed = header.trim();
+  const seconds = Number(trimmed);
   if (Number.isFinite(seconds) && seconds >= 0) {
-    return Math.min(seconds * 1_000, BACKOFF_MAX_MS);
+    return Math.min(seconds * 1_000, RETRY_AFTER_MAX_MS);
+  }
+  // HTTP-date form (RFC 7231) — proxies/CDNs emit it; previously dropped.
+  const dateMs = Date.parse(trimmed);
+  if (Number.isFinite(dateMs)) {
+    const delta = dateMs - Date.now();
+    if (delta <= 0) return 0;
+    return Math.min(delta, RETRY_AFTER_MAX_MS);
   }
   return undefined;
 }
