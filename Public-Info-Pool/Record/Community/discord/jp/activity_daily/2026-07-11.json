@@ -1,0 +1,45 @@
+{
+  "date": "2026-07-11",
+  "messages": 20,
+  "unique_authors": 8,
+  "reactions_total": 5,
+  "attachments": 1,
+  "channel_activity": {
+    "なんでも雑談": 19,
+    "描きたい時に描いてます": 1
+  },
+  "hourly_activity": {
+    "0": 13,
+    "1": 7
+  },
+  "message_types": {
+    "0": 16,
+    "19": 4
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1525302209003388948",
+      "channel_id": "1377478664609857647",
+      "content": "ウィリアムもママ…？",
+      "author": "altiar_zain",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1525305867355029596",
+      "channel_id": "1377478664609857647",
+      "content": "タイスでしょ、ラモンナでしょ、タヴィでしょ、ロータンでしょ、24でしょ、ヘロットでしょ、ドールでしょ、アルバ…まだいるかな？",
+      "author": "0w04250",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1525302290913820813",
+      "channel_id": "1377478664609857647",
+      "content": "ようやく融災のための５ｐｔ揃った",
+      "author": "meruson6406",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    }
+  ]
+}
