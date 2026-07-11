@@ -1077,6 +1077,36 @@ describe('subagent runtime — FORK mode', () => {
     expect(store.entries.get('parent-sess')).toBeUndefined();
   });
 
+  it('writes sidechain_end even when the child ABORTS mid-run (finally, not post-loop)', async () => {
+    // The terminal marker must be persisted on every exit path — settleAll's M4
+    // contract waits for it. A child aborted mid-stream previously skipped the
+    // post-loop write, leaving its transcript unterminated.
+    class AbortingTransport implements Transport {
+      apiKeySource(): 'user' {
+        return 'user';
+      }
+      async *stream(): AsyncGenerator<RawMessageStreamEvent, void> {
+        yield textReplyEvents('x', { model: 'claude-sonnet-4-5' })[0]!; // message_start
+        throw new AbortError();
+      }
+    }
+    const store = new FakeStore();
+    const h = makeRuntime({
+      scripts: [],
+      transport: new AbortingTransport(),
+      store,
+      persist: true,
+    });
+    // The spawn may reject or return an error result on abort; either way the
+    // transcript's terminal marker must be present.
+    await h.runtime.makeSpawnFn(0)(baseParams({ subagentType: 'general-purpose' })).catch(() => undefined);
+    const agentIds = [...store.entries.keys()].filter((k) => k !== 'parent-sess');
+    const entries = store.entries.get(agentIds[0]!) ?? [];
+    const end = entries.find((e) => e['type'] === 'sidechain_end');
+    expect(end).toBeDefined();
+    expect(end?.['is_error']).toBe(true); // aborted -> pessimistic error marker
+  });
+
   it('records a sidechain for an isolated child too (fork:false marker)', async () => {
     const store = new FakeStore();
     const h = makeRuntime({

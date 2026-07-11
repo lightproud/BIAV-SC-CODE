@@ -16,6 +16,22 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.48.6 — 2026-07-11
+
+**World-class review pass (cont.), subagent finalizer hardening**:
+
+- **isolation worktree released when SubagentStart throws**: the worktree is
+  created before the per-branch run body's try/finally, so an aborted or
+  throwing `SubagentStart` hook leaked the worktree (and its `git worktree list`
+  registration). It is now released before the throw propagates.
+- **`sidechain_end` written on every exit path**: the sidechain transcript's
+  terminal marker was written AFTER the run loop, so an abort or thrown error
+  mid-run skipped it — leaving the transcript unterminated and breaking the
+  `settleAll` M4 contract that waits for it. The marker is now written in a
+  finally (pessimistic `is_error: true` when the run did not complete cleanly).
+
++1 regression test.
+
 ## 0.48.5 — 2026-07-11
 
 **World-class review pass (cont.), worktree data safety**: a subagent isolation

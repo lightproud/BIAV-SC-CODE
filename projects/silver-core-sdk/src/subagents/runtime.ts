@@ -744,6 +744,14 @@ export function createSubagentRuntime(
       }
     }
 
+    // The sidechain transcript's terminal marker MUST be written on EVERY exit
+    // path — including an abort or a thrown error mid-run — or an aborted
+    // child's transcript is missing its `sidechain_end` and the settleAll M4
+    // contract (which waits for it) is broken. Track the terminal error state
+    // and write the marker in a finally.
+    let result: { text: string; isError: boolean; usage: ChildRunUsage };
+    let sidechainErrored = true; // pessimistic until a clean result is computed
+    try {
     for await (const msg of runAgentLoop(history, deps, config)) {
       liveness?.touch();
       if (msg.type === 'assistant') {
@@ -801,7 +809,6 @@ export function createSubagentRuntime(
       toolUses: childToolUses,
       durationMs: Date.now() - startedAtMs,
     };
-    let result: { text: string; isError: boolean; usage: ChildRunUsage };
     if (!sawError) {
       result = { text: lastText, isError: false, usage: runUsage };
     } else if (lastText.length > 0) {
@@ -819,15 +826,17 @@ export function createSubagentRuntime(
         usage: runUsage,
       };
     }
-
-    if (recordSidechain && store !== undefined) {
-      store.append(agentId, {
-        type: 'sidechain_end',
-        timestamp: new Date().toISOString(),
-        agent_type: sidechain.agentType,
-        fork: sidechain.fork,
-        is_error: result.isError,
-      });
+    sidechainErrored = result.isError;
+    } finally {
+      if (recordSidechain && store !== undefined) {
+        store.append(agentId, {
+          type: 'sidechain_end',
+          timestamp: new Date().toISOString(),
+          agent_type: sidechain.agentType,
+          fork: sidechain.fork,
+          is_error: sidechainErrored,
+        });
+      }
     }
     return result;
   }
@@ -915,7 +924,17 @@ export function createSubagentRuntime(
         // 'local_agent'.
         task_type: 'local_agent',
       });
-      await fireSubagentStart(agentId, params.subagentType, params.signal);
+      // The isolation worktree is created ABOVE but the try/finally blocks that
+      // release it are the per-branch run bodies below. A throw here (an aborted
+      // SubagentStart hook, a hook that rethrows) would otherwise leak the
+      // worktree AND its `git worktree list` registration. Release it (clean =
+      // removed) before propagating.
+      try {
+        await fireSubagentStart(agentId, params.subagentType, params.signal);
+      } catch (err) {
+        await releaseWorktree().catch(() => undefined);
+        throw err;
+      }
 
       // Background is a depth-0-only feature (keeps the drain wiring root-only).
       const wantBackground =
