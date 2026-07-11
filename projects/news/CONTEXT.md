@@ -72,9 +72,9 @@
 - [ ] 验收：news 自动化连续 30 天稳定运行 + 黑池有可消费的公开信息流（守密人确认）
 
 ### 注意事项
-- update-news.yml 每小时运行一次（cron: '0 * * * *'）
+- update-news.yml 每 3 小时运行一次（cron: '0 */3 * * *'，2026-07-11 降频裁定）
 - discord-archive.yml 已从每小时降到每日 1 次（18:00 UTC）+ 每月 1 日月度归档（Global 官方服，数据落 `Public-Info-Pool/Record/Community/discord/global/`，2026-07-10 方案甲）
-- discord-archive-volunteer.yml 每小时 :15（志愿者服务器 guild，数据落 `Public-Info-Pool/Record/Community/discord/volunteer/`）
+- discord-archive-volunteer.yml 每 3 小时 :15（志愿者服务器 guild，数据落 `Public-Info-Pool/Record/Community/discord/volunteer/`）
 - discord-archive-jp.yml 日服服务器归档（数据落 `Public-Info-Pool/Record/Community/discord/jp/`）：**已启用**（JP_GUILD_ID 已填、:45 错峰 cron 在跑，07-10 实测正常落档）
 - discord-discover-guilds.yml 手动触发：列出 bot 所在全部服务器，发现待接入 guild ID
 - collect-comments.yml 每日 02:00 UTC（2026-06-05 新增）；recover-fanart.yml 手动触发（同日新增）

@@ -78,7 +78,7 @@ site 维护稳定，game 暂缓。实时进度与子项目状态以 `memory/proj
 银芯作为黑池的「眼睛和耳朵」，靠以下机制运转：
 
 1. **采集三层**（使命#1，2026-06-21 守密人定性）：采集层非一锅，按职能分三层、产出三个不同目标——
-   **T1 新闻流**（`aggregator.py` 单入口，AC 平台 + 内部调 `collect_global`，产输出展示层流快照，每时 :00）；
+   **T1 新闻流**（`aggregator.py` 单入口，AC 平台 + 内部调 `collect_global`，产输出展示层流快照，每 3 小时一轮，2026-07-11 降频裁定）；
    **T2 数据层归档**（声明式归档引擎 `projects/news/scripts/archive_engine.py` 读 `archive_sources.json` 干活；
    2026-06-21 de-tier 后 discord **全量永驻 git**`Public-Info-Pool/Record/Community/`（`after_archive: keep`，不再驱逐）；
    fanart 等二进制仍滚动归档进 Releases「社区二创」；加新来源 = 注册表加一段配置、零新代码；
