@@ -41,7 +41,7 @@
 | C5 | B 类官方骨架提示词再现裁定 | `decisions.md` 2026-07-10（「结构再现 + 文本自写」默认，随 v0.39 工单落档） |
 | C6 | 委派引擎四缝（coordinator/SendMessage、ExitPlanMode、调度归宿、通知面） | ExitPlanMode/Monitor/Workflow 等随 PR #480；O-B2 SendMessage + coordinator 预设随 PR #567（v0.42.0，2026-07-10） |
 | T3 | CI required `test` 检查是否重启 | **定谳：维持自查自合**（守密人 2026-07-10 AskUserQuestion，覆盖同日节拍表条③——撞车经呈报后守密人选「以 UI 答复为准」）；`decisions.md` 同日「CI required 检查维持自查自合」条 + methodology「维护态节拍」节已双向同步 |
-| T11 | 版本守卫三方对账升级：`check-version-bump.mjs` 加 CHANGELOG 最新条目号对账，堵「双源一致地错」盲区 | `projects/silver-core-sdk/scripts/check-version-bump.mjs` 三方对账（version.ts + package.json + CHANGELOG 最新 `## X.Y.Z`）+ 测试 `tests/version-guard-changelog.test.ts`（含 lesson #45 负控）；分支 `claude/todo-implementation-0sht7h` |
+| T11 | 版本守卫三方对账升级：`check-version-bump.mjs` 加 CHANGELOG 最新条目号对账，堵「双源一致地错」盲区 | `projects/silver-core-sdk/scripts/check-version-bump.mjs` 三方对账（version.ts + package.json + CHANGELOG 最新 `## X.Y.Z`）+ 测试 `tests/version-guard-changelog.test.ts`（含 lesson #45 负控）；PR #575 |
 
 ---
 
