@@ -4,15 +4,15 @@
 > 中文用途补注请改 `memory/capability-annotations.json`；机器权威数据见 `memory/capability-registry.json`。
 
 - 生成日期：2026-07-11
-- 功能总数：**133**
-- 脚本可达性：活 73 / 仅测试 0 / 孤儿 0
+- 功能总数：**129**
+- 脚本可达性：活 71 / 仅测试 0 / 孤儿 0
 
 ## 总览
 
 | 功能层 | 数量 |
 |------|------|
-| CI 自动化工作流（编排入口·定时/事件平面） | 34 |
-| 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 38 |
+| CI 自动化工作流（编排入口·定时/事件平面） | 32 |
+| 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 36 |
 | news 采集器脚本 | 29 |
 | wiki 数据脚本 | 6 |
 | MCP 知识层工具（编排入口·AI 动态平面） | 11 |
@@ -34,7 +34,7 @@
 
 可达性 = 从活编排入口沿 Python import 图传递闭包。`孤儿` = 无任何活入口可达，建议隔离待裁（§3.1 裁撤属守密人决策，工具只检测不删除）。
 
-## CI 自动化工作流（编排入口·定时/事件平面）（34）
+## CI 自动化工作流（编排入口·定时/事件平面）（32）
 
 - **`Backfill Data Gap`** _[manual]_ — 手动回填指定时间段的数据缺口。  
   `.github/workflows/backfill-gap.yml`
@@ -82,12 +82,8 @@
   `.github/workflows/edit-release.yml`
 - **`Extract Game Data from Client`** _[push/manual]_ — 解包提取客户端游戏数据（wiki 数据源）。  
   `.github/workflows/extract-game-data.yml`
-- **`Fanart Archive`** _[schedule/manual]_ —   
-  `.github/workflows/fanart-archive.yml`
 - **`KB Semantic Proof`** _[manual]_ —   
   `.github/workflows/kb-semantic-proof.yml`
-- **`Migrate to Public-Info-Pool`** _[manual]_ —   
-  `.github/workflows/migrate-to-public-info-pool.yml`
 - **`Mutation Test (manual)`** _[manual]_ —   
   `.github/workflows/mutation-test.yml`
 - **`Recover Fan Art`** _[manual]_ — 恢复丢失的同人图。  
@@ -105,7 +101,7 @@
 - **`Validate Wiki Data`** _[push/pull_request/manual]_ — 校验 wiki JSON 数据（push/PR 触发）。  
   `.github/workflows/validate-data.yml`
 
-## 顶层脚本（记忆 / 做梦 / 解包 / 运营）（38）
+## 顶层脚本（记忆 / 做梦 / 解包 / 运营）（36）
 
 - **`build_capability_registry.py`** _[活:cli+workflow]_ — build_capability_registry.py — 银芯功能目录 + 动态编排可达性分析器  
   `scripts/build_capability_registry.py`
@@ -155,10 +151,6 @@
   `scripts/lua_parse.py`
 - **`mcp_server.py`** _[活:cli+mcp]_ — MCP 服务端 biav-sc-memory，暴露 4 个平台互补工具。  
   `scripts/mcp_server.py`
-- **`migrate_flat_archives_to_layout.py`** _[活:cli]_ — migrate_flat_archives_to_layout.py — 平级历史归档一次性归位到区服/类型分层。  
-  `scripts/migrate_flat_archives_to_layout.py`
-- **`migrate_unpacked_to_git.py`** _[活:cli+workflow]_ — 把 unpacked-data release 的 **text 部分** 迁入 git（二进制留 Releases）。  
-  `scripts/migrate_unpacked_to_git.py`
 - **`okf_pointer_layers.py`** _[活:workflow]_ — okf_pointer_layers.py — 全仓知识组织：OKF bundle 新增指针概念层（import-only 库）。  
   `scripts/okf_pointer_layers.py`
 - **`parse_awaker_config.py`** _[活:cli]_ — [CLI 手动] 解析 AwakerConfig.lua 为角色档案 JSON（wiki 数据流水线）。  
