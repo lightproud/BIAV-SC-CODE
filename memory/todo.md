@@ -28,6 +28,11 @@
 | T13 | 动态自调步（ScheduleWakeup 同构的壳层唤醒原语，方案三期 P2 单独立项；开工前先测 BPT 自身缓存分层） | 黑池输入 | `.../bpt-desktop-command-impl-plan-20260710.md` §2 M4 + §4 | 开 |
 | T14 | D/E 类注册源（插件 / MCP prompts）需求档——待黑池侧壳层插件面设计定稿后另立 | 黑池输入 | `.../bpt-desktop-command-framework-requirements-20260710.md` §6.3 | 开 |
 | T15 | SubagentStop 阻断语义（子代理级门控续跑）：现为 runtime 级 fire-and-log，黑池对子代理门控有真需求再评估 | 观察 | SDK `docs/COMPAT.md` hooks 表 Stop 行「ROOT LOOP ONLY」注 | 开 |
+| T16 | 记忆审计遗留·孤儿与台账处置：`facts.json` 真孤儿删或归档 / `pending-discussions.md` 双台账降级或保留 / `session-continuity.json` 续维护或连 `current_continuity` 工具退役 | 裁定 | `Public-Info-Pool/Resource/repo-engineering/memory-fact-audit-20260710.md` §三-1 | 开 |
+| T17 | 记忆审计遗留·被覆盖设计档处置：`discord-archiver-design.md`（三重覆盖，最重）退役归档或重写现行 / `storage-discussion.md` 补 superseded 横幅或移 archive | 裁定 | 同 T16 源档 §三-2 | 开 |
+| T18 | 记忆审计遗留·wiki schema 落点：`wiki-characters-schema-v1.md` 产出落点 db/（已清空）是否改指 `processed/characters.json` 作现行校验权威 | 裁定 | 同 T16 源档 §三-3 | 开 |
+| T19 | 记忆审计遗留·lessons #21 重复编号是否重编（物理 48 条 ≠ 最高号 47；历史日志改号，默认不动） | 裁定 | 同 T16 源档 §三-4 | 开 |
+| T20 | 记忆层反漂移三防线开工与否：①全域卫测试扩编 ②复刻数字对账表 + 回写足迹硬规 ③/audit-memory 月检固化（约 1.5 会话工作量） | 裁定 | 同 T16 源档 §四 | 开 |
 
 ## 已清（销案引）
 
