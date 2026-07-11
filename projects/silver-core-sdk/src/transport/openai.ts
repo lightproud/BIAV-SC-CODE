@@ -659,7 +659,9 @@ export class OpenAIChatTransport implements Transport {
       yield* this.streamRequest(req);
       return;
     }
-    const release = await this.slots.acquire();
+    // Pass the caller signal so a queued acquirer aborts promptly instead of
+    // blocking on someone else's in-flight stream (twin of the Anthropic arm).
+    const release = await this.slots.acquire(req.signal);
     try {
       yield* this.streamRequest(req);
     } finally {

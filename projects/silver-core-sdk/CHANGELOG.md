@@ -16,6 +16,28 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.47.6 — 2026-07-11
+
+**World-class review pass, transport-core batch** (both arms):
+
+- **concurrency gate honors abort while queued**: `RequestSemaphore.acquire`
+  took no signal, so a request queued behind a full concurrency cap could not
+  be aborted — an interrupt()/teardown blocked until an unrelated in-flight
+  stream (possibly minutes long) freed a permit. `acquire(signal)` now rejects
+  a queued waiter with AbortError on abort and removes it from the queue, with
+  a documented race analysis (a just-granted permit resolves and the aborting
+  caller releases it; the next waiter still gets the permit). Both transports
+  pass `req.signal`.
+- **SSE parser drops per-read reaction accumulation**: the parse loop raced
+  every `reader.read()` against a shared never-settling abort promise, attaching
+  a fresh reaction to it on EVERY chunk — a long stream (hundreds of thousands
+  of frames) retained one closure per read, megabytes of growth that undid the
+  transport's per-frame-timer savings. Abort now cancels the reader (which wakes
+  the pending read) via one listener for the whole stream; prompt-abort behavior
+  is unchanged.
+
++7 regression tests.
+
 ## 0.47.5 — 2026-07-11
 
 **World-class review pass, OpenAI-protocol transport batch**:

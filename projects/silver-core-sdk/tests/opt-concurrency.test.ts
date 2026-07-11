@@ -62,6 +62,60 @@ describe('OPT-4: RequestSemaphore', () => {
     expect(order).toEqual([1, 2, 3]);
   });
 
+  it('a queued acquire aborts promptly instead of blocking on the held permit', async () => {
+    const sem = new RequestSemaphore(1);
+    const held = await sem.acquire(); // hold the only permit
+    const ac = new AbortController();
+    const queued = sem.acquire(ac.signal); // must wait — no permit free
+    let settled = false;
+    void queued.then(
+      () => {
+        settled = true;
+      },
+      () => {
+        settled = true;
+      },
+    );
+    await delay(5);
+    expect(settled).toBe(false); // still blocked
+    ac.abort();
+    await expect(queued).rejects.toMatchObject({ name: 'AbortError' });
+    // The permit was never consumed by the aborted waiter: releasing the held
+    // permit still leaves the semaphore at full capacity.
+    held();
+    const next = await sem.acquire();
+    next();
+  });
+
+  it('an already-aborted signal rejects acquire without taking a permit', async () => {
+    const sem = new RequestSemaphore(1);
+    const ac = new AbortController();
+    ac.abort();
+    await expect(sem.acquire(ac.signal)).rejects.toMatchObject({ name: 'AbortError' });
+    // Permit untouched: a fresh acquire succeeds immediately.
+    const rel = await sem.acquire();
+    rel();
+  });
+
+  it('aborting one queued waiter still hands the permit to the next in line', async () => {
+    const sem = new RequestSemaphore(1);
+    const held = await sem.acquire();
+    const ac = new AbortController();
+    const aborted = sem.acquire(ac.signal);
+    void aborted.catch(() => undefined);
+    let gotSecond = false;
+    const second = sem.acquire().then((rel) => {
+      gotSecond = true;
+      rel();
+    });
+    await delay(5);
+    ac.abort(); // drop the first waiter
+    await expect(aborted).rejects.toMatchObject({ name: 'AbortError' });
+    held(); // release -> must go to the SECOND waiter, not the aborted one
+    await second;
+    expect(gotSecond).toBe(true);
+  });
+
   it('release is idempotent (double-release does not leak a permit)', async () => {
     const sem = new RequestSemaphore(1);
     const rel = await sem.acquire();
