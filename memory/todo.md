@@ -28,6 +28,7 @@
 | T15 | SubagentStop 阻断语义（子代理级门控续跑）：现为 runtime 级 fire-and-log，黑池对子代理门控有真需求再评估 | 观察 | SDK `docs/COMPAT.md` hooks 表 Stop 行「ROOT LOOP ONLY」注 | 开 |
 | T16 | run-l35 双臂封印（KD-L35-02：子代理生命周期事件编码差——我方顶层 `type` vs 官方 `system` 子类型）仍无 CI 入口——本地 `run-l35.mjs` 需真钥、须接线或本地跑（原糊在 T4 尾，2026-07-11 清 T4 时另立、不糊在一起） | 预算 | `memory/project-status.md`「引擎工单账目结算 r5」段 + E8/KD-L35 段 | 开 |
 | T17 | code-01 残余在 v0.43.0 的真 L5 复验**未达成**——`$1.5` 帽 + `repeat=5` 于 79/180 runs（document-01 后）预算中止、code 维度未触达（run 29134399453）；三条路（`l5_budget=5` 全量轮 ~$2.2–3.3 / 降 `l5_repeat` 换广度 / 给 `conformance-l5` 加 `l5_tasks` 透传 `--tasks` 定向 shard——当前 workflow 无此输入）均超本次授权的 $1.5 单轮，待守密人裁 | 裁定 | `Public-Info-Pool/Resource/data-diagnostics/silver-core-sdk-l5-round-20260711.md` §3/§6 | 开 |
+| T18 | BPT 侧接线 `provider.fetch` 长 keep-alive（undici Agent 60s，`docs/PERFORMANCE.md` 首节配方）——v0.44.0 注入缝已发货（PR #578），但「工具执行超 4 秒 → 每回合重付 TCP+TLS 握手 ~100-300ms」的税须消费方接线后才兑现，银芯不可代 | 黑池输入 | `projects/silver-core-sdk/docs/PERFORMANCE.md` + `CHANGELOG.md` 0.44.0 条 + `memory/project-status.md` v0.44.0 段 | 开 |
 
 ## 已清（销案引）
 
