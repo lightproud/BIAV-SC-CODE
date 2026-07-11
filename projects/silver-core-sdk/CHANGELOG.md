@@ -16,6 +16,22 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.48.4 — 2026-07-11
+
+**World-class review pass (cont.), OpenAI-gateway compatibility**:
+
+- **`stream_options` is now suppressible**: `stream_options: { include_usage:
+  true }` was hardcoded AFTER the `extraBody` spread, so a gateway that 400s on
+  it (older vLLM, some one-api variants) had no escape hatch. When `extraBody`
+  declares `stream_options` (e.g. `null`), its value now stands.
+- **in-stream error status is classified, not hardcoded 500**: a mid-stream
+  error chunk (the response was 200, so there is no HTTP status) threw a
+  hardcoded `500`, so a mid-stream rate-limit / quota / auth error looked like a
+  server error to the engine's fallback and the caller. Its `type` is now mapped
+  to the right status (429 / 401 / 400 / …), mirroring the Anthropic arm.
+
++2 regression tests.
+
 ## 0.48.3 — 2026-07-11
 
 **World-class review pass (cont.), Retry-After handling** (both transport arms):

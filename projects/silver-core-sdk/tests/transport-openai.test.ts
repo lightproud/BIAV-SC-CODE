@@ -295,6 +295,18 @@ describe('encodeOpenAIRequest', () => {
     expect(body.model).toBe('o4-mini');
     expect(body.temperature).toBe(0);
   });
+
+  it('defaults stream_options on, but lets extraBody suppress it for old gateways', () => {
+    const on = encodeOpenAIRequest({ model: 'm', max_tokens: 8, messages: [{ role: 'user', content: 'x' }] });
+    expect(on.stream_options).toEqual({ include_usage: true });
+    // A gateway that 400s on stream_options can disable it via extraBody; the
+    // hardcoded default previously always won (spread first).
+    const off = encodeOpenAIRequest(
+      { model: 'm', max_tokens: 8, messages: [{ role: 'user', content: 'x' }] },
+      { extraBody: { stream_options: null } },
+    );
+    expect(off.stream_options).toBeNull();
+  });
 });
 
 // ---------------------------------------------------------------------------
@@ -739,6 +751,26 @@ describe('OpenAIChatTransport', () => {
     );
     expect(retries).toEqual([429]);
     expect(events.at(-1)?.type).toBe('message_stop');
+  });
+
+  it('classifies an in-stream rate-limit error as 429 (not a hardcoded 500)', async () => {
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(async () =>
+        okStream([
+          { id: 'c', choices: [{ delta: { content: 'p' } }] },
+          { error: { message: 'slow down', type: 'rate_limit_exceeded' } } as Record<string, unknown>,
+        ]),
+      ),
+    );
+    const transport = new OpenAIChatTransport({
+      provider: { apiKey: 'k' },
+      env: { BPT_HTTP_CLIENT: 'fetch' },
+      debug: noop,
+    });
+    const err = (await captureError(collect(transport.stream(REQ)))) as APIStatusError;
+    expect(err).toBeInstanceOf(APIStatusError);
+    expect(err.status).toBe(429); // was hardcoded 500 before
   });
 
   it('surfaces an in-stream error payload as APIStatusError', async () => {

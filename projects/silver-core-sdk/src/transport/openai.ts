@@ -326,7 +326,14 @@ export function encodeOpenAIRequest(
         }
       : {}),
     stream: true,
-    stream_options: { include_usage: true },
+    // Default to asking for a usage summary, but let a consumer suppress it via
+    // extraBody (e.g. `extraBody: { stream_options: null }`): some gateways
+    // (older vLLM, one-api variants) 400 on `stream_options`, and the hardcoded
+    // default previously always won over extraBody (spread first), leaving no
+    // escape hatch. When extraBody declares the key, its value stands.
+    ...('stream_options' in (opts.extraBody ?? {})
+      ? {}
+      : { stream_options: { include_usage: true } }),
   };
 }
 
@@ -819,7 +826,17 @@ export class OpenAIChatTransport implements Transport {
           }
           if (parsed.error !== undefined && parsed.error !== null) {
             const info = extractOpenAIError(parsed.error);
-            throw new APIStatusError(500, info.type, info.message, requestId);
+            // An in-stream error chunk carries no HTTP status (the response was
+            // 200), so derive one from the error type instead of hardcoding 500:
+            // a mid-stream rate-limit / quota / auth error must classify as
+            // 429 / 401 etc. so the engine's fallback + the caller see the right
+            // class (the Anthropic arm likewise maps its in-stream error type).
+            throw new APIStatusError(
+              statusForOpenAIErrorType(info.type),
+              info.type,
+              info.message,
+              requestId,
+            );
           }
           chunkCount += 1;
           yield* translator.feed(parsed);
@@ -1057,6 +1074,37 @@ function resolveOpenAICredential(
   const envKey = nonEmpty(env.OPENAI_API_KEY);
   if (envKey) return { value: envKey, source: 'project' };
   return null;
+}
+
+/** Map an OpenAI in-stream error's `type` (or code-ish string) to an HTTP-ish
+ *  status so a mid-stream failure classifies like its non-2xx counterpart —
+ *  the engine's retry/fallback and the caller both switch on status. Unknown
+ *  types fall back to 500 (the previous hardcoded value). */
+function statusForOpenAIErrorType(type: string): number {
+  switch (type) {
+    case 'rate_limit_error':
+    case 'rate_limit_exceeded':
+    case 'insufficient_quota':
+    case 'requests':
+    case 'tokens':
+      return 429;
+    case 'invalid_request_error':
+    case 'invalid_prompt':
+      return 400;
+    case 'authentication_error':
+    case 'invalid_api_key':
+      return 401;
+    case 'permission_error':
+    case 'insufficient_permissions':
+      return 403;
+    case 'not_found_error':
+      return 404;
+    case 'overloaded_error':
+    case 'server_overloaded':
+      return 529;
+    default:
+      return 500;
+  }
 }
 
 function extractOpenAIError(error: unknown): { type: string; message: string } {
