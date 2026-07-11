@@ -1,8 +1,8 @@
 {
   "date": "2026-07-11",
-  "archived_at": "2026-07-11T05:18:17.421385+00:00",
+  "archived_at": "2026-07-11T07:47:16.488745+00:00",
   "source": "bilibili",
-  "item_count": 4,
+  "item_count": 6,
   "items": [
     {
       "title": "【忘却前夜】竞慢挑战....10队磨队425......",
@@ -46,6 +46,52 @@
         "danmaku": 0
       },
       "media_url": "https://i1.hdslb.com/bfs/archive/38fd1b9800d28c68b2c9864ddfb610aa8c14c798.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "【下饭合集】闲者都打不出的操作",
+      "summary": "又名蜂蜜抽子都打不出的操作\n感谢专业罪印批发商对于鸟弟素材的提供\n感谢星辰正位之刻对于小曲的提供\n  └ 母亲在注视着你 (0赞): 我说闲者要是打出来，忘却前夜就完了\n  └ 抱着狗狗不敢说话 (0赞): alkn开大那个没太看懂。其余大概已经学会了。下次一定用[doge]",
+      "source": "bilibili",
+      "time": "2026-07-11T03:44:17+00:00",
+      "url": "https://www.bilibili.com/video/BV19gNs6gEAn",
+      "engagement": 124,
+      "is_hot": false,
+      "author": "母亲在注视着你",
+      "tags": [
+        "网络游戏"
+      ],
+      "metadata": {
+        "play": 120,
+        "comment_count": 4,
+        "comments_fetched": 2,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/5ac3a6f9e3ab1a52c3a666895751a9e841b75752.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "假如开局只有一张进阶之灾",
+      "summary": "选出沙耶就是假如我直接赢\n  └ 一株小麦突变体 (1赞): 创意工坊MOD:\n控制台\n沙耶之歌\n先古之民美化（韩国作者的那个）[洛天依]",
+      "source": "bilibili",
+      "time": "2026-07-11T05:35:34+00:00",
+      "url": "https://www.bilibili.com/video/BV18nN46GEXc",
+      "engagement": 116,
+      "is_hot": false,
+      "author": "一株小麦突变体",
+      "tags": [
+        "单机游戏"
+      ],
+      "metadata": {
+        "play": 115,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 3
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/2c28f4a1e5112ddb0e3b8c9eafc0a774fee38f10.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

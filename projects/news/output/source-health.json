@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-11T05:18:18.019418+00:00",
+  "updated_at": "2026-07-11T07:47:17.240856+00:00",
   "seeded_from": "silent_sources_audit",
   "audit_window": {
     "start": "2023-07-01",
@@ -7,7 +7,7 @@
     "days": 1107
   },
   "validation_drops": {
-    "generated_at": "2026-07-11T05:17:37.309867+00:00",
+    "generated_at": "2026-07-11T07:46:28.138540+00:00",
     "total_dropped": 0,
     "by_source": {}
   },
@@ -51,7 +51,7 @@
       "last_success_date": "2026-07-11",
       "last_check_date": "2026-06-20",
       "consecutive_silent_days": 0,
-      "total_items": 2651,
+      "total_items": 2655,
       "errors": []
     },
     "steam": {
@@ -59,7 +59,7 @@
       "last_success_date": "2026-07-11",
       "last_check_date": null,
       "consecutive_silent_days": 0,
-      "total_items": 5152,
+      "total_items": 5153,
       "errors": []
     },
     "taptap": {
@@ -115,7 +115,7 @@
       "last_success_date": "2026-07-11",
       "last_check_date": "2026-07-11",
       "consecutive_silent_days": 0,
-      "total_items": 9741,
+      "total_items": 9755,
       "errors": []
     },
     "bahamut": {
@@ -155,7 +155,7 @@
       "last_success_date": "2026-07-11",
       "last_check_date": "2026-07-11",
       "consecutive_silent_days": 0,
-      "total_items": 563,
+      "total_items": 564,
       "errors": []
     },
     "note_com": {
@@ -187,7 +187,7 @@
       "last_success_date": "2026-07-10",
       "last_check_date": "2026-07-11",
       "consecutive_silent_days": 1,
-      "total_items": 7416,
+      "total_items": 7436,
       "errors": []
     },
     "twitter": {
@@ -203,15 +203,15 @@
       "last_success_date": "2026-07-11",
       "last_check_date": null,
       "consecutive_silent_days": 0,
-      "total_items": 1144,
+      "total_items": 1152,
       "errors": []
     },
     "youtube_comments": {
       "level": "active",
-      "last_success_date": "2026-07-09",
+      "last_success_date": "2026-07-10",
       "last_check_date": null,
-      "consecutive_silent_days": 2,
-      "total_items": 2056,
+      "consecutive_silent_days": 1,
+      "total_items": 2070,
       "errors": []
     }
   }
