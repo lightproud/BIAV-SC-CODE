@@ -487,8 +487,17 @@ export class JsonlSessionStore implements SessionStore {
     }
     try {
       const rl = createInterface({ input: stream, crlfDelay: Infinity });
+      let firstLine = true;
       for await (const rawLine of rl) {
         const line = rawLine.trim();
+        if (firstLine) {
+          firstLine = false;
+          // A subagent sidechain transcript ({"type":"sidechain_start",...}) is
+          // NOT a listable main session — hide it from list()/getSessionInfo so
+          // it never surfaces as a resumable conversation (it holds only
+          // assistant turns behind the marker).
+          if (line.startsWith('{"type":"sidechain_start"')) return null;
+        }
         // Exact for our writers ('type' is always serialized first); a foreign
         // line simply contributes nothing to the summary row.
         if (!line.startsWith('{"type":"met') && !line.startsWith('{"type":"pending_turn"') && !line.startsWith('{"type":"turn_complete"')) {
@@ -569,16 +578,49 @@ export class JsonlSessionStore implements SessionStore {
     let latest: { id: string; mtimeMs: number } | null = null;
     for (const name of names) {
       if (!name.endsWith(JSONL_EXT)) continue;
+      const id = name.slice(0, -JSONL_EXT.length);
       try {
         const st = await stat(join(this.dir, name));
-        if (latest === null || st.mtimeMs > latest.mtimeMs) {
-          latest = { id: name.slice(0, -JSONL_EXT.length), mtimeMs: st.mtimeMs };
-        }
+        if (latest !== null && st.mtimeMs <= latest.mtimeMs) continue;
+        // A subagent SIDECHAIN transcript lives in the same dir keyed by
+        // agentId; `continue: true` (resume the most-recent session) must NEVER
+        // pick one — it records only assistant turns behind a `sidechain_start`
+        // marker, so resuming it replays a garbled, repair-mangled conversation.
+        // A background child that finished after the parent's last write can be
+        // the newest file, so mtime alone is not enough — check the marker.
+        if (await this.isSidechainFile(id)) continue;
+        latest = { id, mtimeMs: st.mtimeMs };
       } catch {
         // Raced deletion; skip.
       }
     }
     return latest?.id ?? null;
+  }
+
+  /** True when a transcript's FIRST record is `sidechain_start` (a subagent
+   *  child transcript), so main-session discovery can skip it. Reads only the
+   *  first line. */
+  private async isSidechainFile(sessionId: string): Promise<boolean> {
+    if (!isSafeSessionId(sessionId)) return false;
+    let stream: ReturnType<typeof createReadStream>;
+    try {
+      stream = createReadStream(this.filePath(sessionId), { encoding: 'utf8' });
+    } catch {
+      return false;
+    }
+    try {
+      const rl = createInterface({ input: stream, crlfDelay: Infinity });
+      for await (const rawLine of rl) {
+        const line = rawLine.trim();
+        if (line.length === 0) continue;
+        return line.startsWith('{"type":"sidechain_start"');
+      }
+      return false; // empty file
+    } catch {
+      return false;
+    } finally {
+      stream.destroy();
+    }
   }
 }
 

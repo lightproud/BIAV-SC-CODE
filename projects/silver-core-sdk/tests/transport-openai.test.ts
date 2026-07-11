@@ -295,6 +295,18 @@ describe('encodeOpenAIRequest', () => {
     expect(body.model).toBe('o4-mini');
     expect(body.temperature).toBe(0);
   });
+
+  it('defaults stream_options on, but lets extraBody suppress it for old gateways', () => {
+    const on = encodeOpenAIRequest({ model: 'm', max_tokens: 8, messages: [{ role: 'user', content: 'x' }] });
+    expect(on.stream_options).toEqual({ include_usage: true });
+    // A gateway that 400s on stream_options can disable it via extraBody; the
+    // hardcoded default previously always won (spread first).
+    const off = encodeOpenAIRequest(
+      { model: 'm', max_tokens: 8, messages: [{ role: 'user', content: 'x' }] },
+      { extraBody: { stream_options: null } },
+    );
+    expect(off.stream_options).toBeNull();
+  });
 });
 
 // ---------------------------------------------------------------------------
@@ -574,12 +586,29 @@ describe('OpenAIStreamTranslator', () => {
 });
 
 describe('parseRetryAfterMs', () => {
-  it('parses seconds and caps at the 60s backoff maximum', () => {
+  it('parses delta-seconds and honors up to the 120s ceiling', () => {
     expect(parseRetryAfterMs('0')).toBe(0);
     expect(parseRetryAfterMs('2')).toBe(2000);
-    expect(parseRetryAfterMs('9999')).toBe(60_000);
-    expect(parseRetryAfterMs('Wed, 21 Oct 2026 07:28:00 GMT')).toBeUndefined();
+    // An explicit "wait 90s" is now honored fully (was clamped to 60s and
+    // retried early into the same limit).
+    expect(parseRetryAfterMs('90')).toBe(90_000);
+    // A pathological value is bounded by the honor-ceiling.
+    expect(parseRetryAfterMs('9999')).toBe(120_000);
     expect(parseRetryAfterMs(null)).toBeUndefined();
+    expect(parseRetryAfterMs('not-a-date')).toBeUndefined();
+  });
+
+  it('parses the HTTP-date form (RFC 7231) instead of dropping it', () => {
+    // A far-future date is bounded by the ceiling; a past date retries now.
+    const future = new Date(Date.now() + 3600_000).toUTCString();
+    expect(parseRetryAfterMs(future)).toBe(120_000);
+    const past = new Date(Date.now() - 5000).toUTCString();
+    expect(parseRetryAfterMs(past)).toBe(0);
+    // A near-future date yields a small positive wait (allow scheduling slop).
+    const soon = new Date(Date.now() + 3000).toUTCString();
+    const ms = parseRetryAfterMs(soon)!;
+    expect(ms).toBeGreaterThan(1000);
+    expect(ms).toBeLessThanOrEqual(3000);
   });
 });
 
@@ -722,6 +751,26 @@ describe('OpenAIChatTransport', () => {
     );
     expect(retries).toEqual([429]);
     expect(events.at(-1)?.type).toBe('message_stop');
+  });
+
+  it('classifies an in-stream rate-limit error as 429 (not a hardcoded 500)', async () => {
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(async () =>
+        okStream([
+          { id: 'c', choices: [{ delta: { content: 'p' } }] },
+          { error: { message: 'slow down', type: 'rate_limit_exceeded' } } as Record<string, unknown>,
+        ]),
+      ),
+    );
+    const transport = new OpenAIChatTransport({
+      provider: { apiKey: 'k' },
+      env: { BPT_HTTP_CLIENT: 'fetch' },
+      debug: noop,
+    });
+    const err = (await captureError(collect(transport.stream(REQ)))) as APIStatusError;
+    expect(err).toBeInstanceOf(APIStatusError);
+    expect(err.status).toBe(429); // was hardcoded 500 before
   });
 
   it('surfaces an in-stream error payload as APIStatusError', async () => {

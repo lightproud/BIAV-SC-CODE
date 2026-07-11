@@ -892,6 +892,26 @@ describe('AnthropicTransport empty-stream retry', () => {
     expect(fetchMock).toHaveBeenCalledTimes(2);
   });
 
+  it('treats a PING-ONLY stream (keep-alive, no message_start) as an empty non-start and retries', async () => {
+    // A stream that delivers only ping keep-alives and then closes never began
+    // the message. Keying the empty check on message_start (not raw event count)
+    // means this is retried instead of slipping through to the accumulator's
+    // raw "finalize before message_start".
+    vi.spyOn(Math, 'random').mockReturnValue(0);
+    const fetchMock = stubFetch([
+      () => sseResponse(eventsToSse([{ type: 'ping' } as RawMessageStreamEvent])), // ping, then close
+      () => sseResponse(okSse()), // healed
+    ]);
+    const t = makeTransport({ provider: { apiKey: 'k' } });
+    const events = await collect(t.stream(baseReq()));
+    // The KEY assertion: two fetches — the ping-only non-start was retried
+    // (before the fix, eventCount>0 skipped the retry and the engine got a raw
+    // "finalize before message_start"). The discarded attempt's keep-alive ping
+    // is surfaced (a no-op for the accumulator), then the healed stream.
+    expect(fetchMock).toHaveBeenCalledTimes(2);
+    expect(events).toEqual([{ type: 'ping' }, ...OK_EVENTS]);
+  });
+
   it('never returns normally on an empty stream: persistent empties exhaust the budget into an empty_stream APIConnectionError', async () => {
     vi.spyOn(Math, 'random').mockReturnValue(0);
     const fetchMock = stubFetch([

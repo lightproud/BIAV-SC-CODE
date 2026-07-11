@@ -20,15 +20,30 @@ describe('resolvePosixShells', () => {
     expect(resolvePosixShells({}, 'darwin')).toEqual(['bash', 'sh']);
   });
 
-  it('CLAUDE_CODE_GIT_BASH_PATH is prepended on any platform (official-compatible knob)', () => {
-    expect(resolvePosixShells({ CLAUDE_CODE_GIT_BASH_PATH: '/opt/gitbash/bash.exe' }, 'linux'))
-      .toEqual(['/opt/gitbash/bash.exe', 'bash', 'sh']);
+  it('CLAUDE_CODE_GIT_BASH_PATH is prepended on any platform when it EXISTS', () => {
+    // probe true -> the existing override is prepended ahead of the defaults.
+    expect(
+      resolvePosixShells({ CLAUDE_CODE_GIT_BASH_PATH: '/opt/gitbash/bash.exe' }, 'linux', () => true),
+    ).toEqual(['/opt/gitbash/bash.exe', 'bash', 'sh']);
     const win = resolvePosixShells(
       { ...WIN_ENV, CLAUDE_CODE_GIT_BASH_PATH: 'D:\\tools\\bash.exe' },
       'win32',
-      () => false,
+      (p) => p === 'D:\\tools\\bash.exe',
     );
     expect(win).toEqual(['D:\\tools\\bash.exe']);
+  });
+
+  it('a non-existent ABSOLUTE override is skipped so the resolver falls through', () => {
+    // The background shell path cannot fall back on its own (spawn ENOENT is
+    // async), so a misconfigured absolute override must be dropped here, not
+    // handed to spawn as a doomed candidate.
+    expect(
+      resolvePosixShells({ CLAUDE_CODE_GIT_BASH_PATH: '/nope/bash' }, 'linux', () => false),
+    ).toEqual(['bash', 'sh']);
+    // A BARE-name override is kept (spawn resolves it via PATH; we can't probe it).
+    expect(
+      resolvePosixShells({ CLAUDE_CODE_GIT_BASH_PATH: 'mybash' }, 'linux', () => false),
+    ).toEqual(['mybash', 'bash', 'sh']);
   });
 
   it('Windows probes Git Bash standard locations in order and keeps the hits', () => {

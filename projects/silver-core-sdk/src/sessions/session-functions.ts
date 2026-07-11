@@ -228,31 +228,58 @@ export async function forkSession(
   const newId = randomUUID();
   if (options.sessionStore !== undefined) {
     const store = options.sessionStore;
-    const loaded = await store.load(mainKey(sessionId, options));
-    const entries = (loaded ?? []).map((e) =>
-      rewriteEntry(e as Record<string, unknown>, sessionId, newId),
+    const loaded = (await store.load(mainKey(sessionId, options))) ?? [];
+    const entries = rewriteEntries(
+      loaded as unknown as Record<string, unknown>[],
+      sessionId,
+      newId,
     ) as SessionStoreEntry[];
     await store.append(mainKey(newId, options), entries);
     return newId;
   }
   const entries = await readLocalEntries(sessionId, options);
   const store = new JsonlSessionStore({ sessionDir: sessionDirOf(options), env: options.env });
-  for (const e of entries) {
-    store.append(newId, rewriteEntry(e, sessionId, newId));
+  for (const e of rewriteEntries(entries, sessionId, newId)) {
+    store.append(newId, e);
   }
   return newId;
 }
 
-/** Rewrite session-id fields to newId and mint a fresh message uuid. */
-function rewriteEntry(
-  e: Record<string, unknown>,
+/**
+ * Rewrite a whole transcript for a fork: session-id fields to newId AND every
+ * message uuid to a fresh one — but CONSISTENTLY, so cross-references between
+ * records still resolve. A `pending_turn` record's `turn_ref` points at a user
+ * message's uuid and a `turn_complete` record's `pending_uuid` points at the
+ * pending_turn's uuid; rewriting each uuid independently (the old per-entry
+ * rewrite) left those pointers dangling → the fork's write-ahead checkpoint
+ * read as a permanently-interrupted turn (bad list/getSessionInfo metadata),
+ * and a source ending on a user turn triggered a phantom redrive on resume
+ * (a duplicate billed API call). A single old→new uuid map fixes all three.
+ */
+function rewriteEntries(
+  entries: Record<string, unknown>[],
   oldId: string,
   newId: string,
-): Record<string, unknown> {
-  const out: Record<string, unknown> = { ...e };
-  if (typeof out.sessionId === 'string') out.sessionId = newId;
-  if (typeof out.session_id === 'string') out.session_id = newId;
-  if (out.sessionId === oldId) out.sessionId = newId;
-  if (typeof out.uuid === 'string') out.uuid = randomUUID();
-  return out;
+): Record<string, unknown>[] {
+  // Pass 1: assign a fresh uuid for every record that carries one.
+  const uuidMap = new Map<string, string>();
+  for (const e of entries) {
+    if (typeof e.uuid === 'string' && !uuidMap.has(e.uuid)) {
+      uuidMap.set(e.uuid, randomUUID());
+    }
+  }
+  // Pass 2: rewrite session ids, the record's own uuid, and any uuid the record
+  // REFERENCES (turn_ref / pending_uuid) via the same map.
+  const remap = (v: unknown): unknown =>
+    typeof v === 'string' && uuidMap.has(v) ? uuidMap.get(v) : v;
+  return entries.map((e) => {
+    const out: Record<string, unknown> = { ...e };
+    if (typeof out.sessionId === 'string') out.sessionId = newId;
+    if (typeof out.session_id === 'string') out.session_id = newId;
+    if (out.sessionId === oldId) out.sessionId = newId;
+    if (typeof out.uuid === 'string') out.uuid = uuidMap.get(out.uuid) ?? randomUUID();
+    if (out.turn_ref !== undefined) out.turn_ref = remap(out.turn_ref);
+    if (out.pending_uuid !== undefined) out.pending_uuid = remap(out.pending_uuid);
+    return out;
+  });
 }

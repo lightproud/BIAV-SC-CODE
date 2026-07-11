@@ -175,10 +175,23 @@ class SharedMcpRegistry implements McpRegistry {
     return this.inner.readResource(server, uri, signal);
   }
   reconnect(serverName: string): Promise<void> {
+    // Reconnect is shared RECOVERY (a failed server is failed for every
+    // borrower; reconnecting fixes it for all), not a per-session preference —
+    // safe to pass through.
     return this.inner.reconnect(serverName);
   }
   setEnabled(serverName: string, enabled: boolean): void {
-    this.inner.setEnabled(serverName, enabled);
+    // enable/disable is a per-SESSION preference, but the registry is SHARED:
+    // passing it through would enable/disable the server for every sibling
+    // conversation (one session's toggleMcpServer(name,false) blanks the tool
+    // for all of them). The shared layer cannot offer per-session views, so —
+    // like setServers — this is refused loudly rather than leaked silently.
+    throw new ConfigurationError(
+      'toggleMcpServer / setEnabled is not available on a SessionManager-managed ' +
+        'query: the MCP server set is shared across sibling conversations, so a ' +
+        'per-session enable/disable would affect them all. Configure servers on ' +
+        'createBptSession.',
+    );
   }
   setServers(): Promise<void> {
     // setServers() internally closes every connection before swapping the set

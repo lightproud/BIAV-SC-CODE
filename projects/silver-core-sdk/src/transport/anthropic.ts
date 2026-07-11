@@ -272,6 +272,7 @@ export class AnthropicTransport implements Transport {
         armIdle(idleMs);
       };
       let eventCount = 0;
+      let sawMessageStart = false;
       try {
         resetIdle();
         for await (const frame of parseSSE(response.body, streamSignal)) {
@@ -315,6 +316,15 @@ export class AnthropicTransport implements Transport {
             );
           }
           eventCount += 1;
+          // Track the message's actual BEGINNING separately from the raw frame
+          // count: a `ping` keep-alive counts as a processed frame (diagnostics)
+          // but is NOT the message starting. The empty-stream check below keys
+          // on this, so a ping-then-close stream (no message_start) is still
+          // treated as an empty non-start and retried — instead of skipping the
+          // retry and letting the accumulator throw "finalize before message_start".
+          if ((parsed as { type?: string }).type === 'message_start') {
+            sawMessageStart = true;
+          }
           yield parsed as RawMessageStreamEvent;
           // The Messages API streams exactly one message; message_stop is its
           // terminal event. Stop consuming here - official-client lifecycle -
@@ -346,16 +356,19 @@ export class AnthropicTransport implements Transport {
         releaseSignals();
       }
 
-      // The stream ended without a terminal message_stop. Zero events => the
-      // body was empty (replay-safe): retry the whole request within the shared
-      // budget instead of returning an unusable zero-event stream. Any caller
-      // abort observed here wins over the retry.
-      if (eventCount === 0) {
+      // The stream ended without a terminal message_stop. No message_start =>
+      // the body never began (replay-safe): retry the whole request within the
+      // shared budget instead of returning an unusable stream. Keys on
+      // sawMessageStart, not eventCount, so a stream of ONLY ping keep-alives
+      // (no message_start) is still recognized as an empty non-start rather than
+      // slipping through to the accumulator's raw "finalize before message_start".
+      // Any caller abort observed here wins over the retry.
+      if (!sawMessageStart) {
         if (callerSignal?.aborted) throw new AbortError();
         if (emptyStreamRetries < maxRetries) {
           emptyStreamRetries += 1;
           this.debug(
-            `transport: empty stream (HTTP 200, zero SSE events); ` +
+            `transport: empty stream (HTTP 200, no message_start); ` +
               `retry ${emptyStreamRetries}/${maxRetries}`,
           );
           // Surface it like a network-level retry (no HTTP status) so the loop
@@ -365,7 +378,7 @@ export class AnthropicTransport implements Transport {
           continue;
         }
         throw new APIConnectionError(
-          `Messages API returned an empty stream (HTTP 200, zero SSE events) ` +
+          `Messages API returned an empty stream (HTTP 200, no message_start) ` +
             `after ${emptyStreamRetries + 1} attempt(s)`,
           undefined,
           'empty_stream',
@@ -491,7 +504,10 @@ export class AnthropicTransport implements Transport {
     }
   }
 
-  /** Exponential backoff (base 1s, factor 2) with jitter; retry-after wins. */
+  /** Exponential backoff (base 1s, factor 2) with jitter; an explicit
+   *  retry-after wins and is honored AS GIVEN (already bounded by the parser).
+   *  Only the exponential fallback is capped at BACKOFF_MAX_MS — clamping an
+   *  explicit "wait 90s" down to 60s just retries early into the same limit. */
   private async backoff(
     attempt: number,
     retryAfterMs: number | undefined,
@@ -500,7 +516,7 @@ export class AnthropicTransport implements Transport {
     const exponential = BACKOFF_BASE_MS * BACKOFF_FACTOR ** (attempt - 1);
     // Bounded jitter in [0.5, 1.0] x the exponential delay.
     const jittered = exponential * (0.5 + Math.random() * 0.5);
-    const delay = Math.min(retryAfterMs ?? jittered, BACKOFF_MAX_MS);
+    const delay = retryAfterMs ?? Math.min(jittered, BACKOFF_MAX_MS);
     this.debug(`transport: backing off ${Math.round(delay)}ms`);
     await sleep(delay, signal);
   }
@@ -754,11 +770,28 @@ async function readErrorInfo(
 }
 
 /** Parse a retry-after header given in seconds; anything else is ignored. */
+/** A server Retry-After is honored fully up to this ceiling, so a busy gateway's
+ *  "wait 90s" is respected instead of clamped to the exponential cap and retried
+ *  early. Bounded so a pathological "Retry-After: 99999" cannot hang the agent. */
+const RETRY_AFTER_MAX_MS = 120_000;
+
 function parseRetryAfterMs(header: string | null): number | undefined {
   if (!header) return undefined;
-  const seconds = Number(header.trim());
+  const trimmed = header.trim();
+  // delta-seconds form (the common case).
+  const seconds = Number(trimmed);
   if (Number.isFinite(seconds) && seconds >= 0) {
-    return Math.min(seconds * 1_000, BACKOFF_MAX_MS);
+    return Math.min(seconds * 1_000, RETRY_AFTER_MAX_MS);
+  }
+  // HTTP-date form (RFC 7231, e.g. "Wed, 21 Oct 2026 07:28:00 GMT") — proxies
+  // and CDNs commonly emit it; the wait is the delta from now. Was previously
+  // dropped (Number() -> NaN), silently falling back to exponential backoff.
+  const dateMs = Date.parse(trimmed);
+  if (Number.isFinite(dateMs)) {
+    const delta = dateMs - Date.now();
+    // the date already passed -> retry now
+    if (delta <= 0) return 0;
+    return Math.min(delta, RETRY_AFTER_MAX_MS);
   }
   return undefined;
 }

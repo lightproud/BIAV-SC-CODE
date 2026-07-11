@@ -16,6 +16,132 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.48.10 — 2026-07-11
+
+**World-class review pass (cont.), shell resolution**: a non-existent ABSOLUTE
+`CLAUDE_CODE_GIT_BASH_PATH` override was handed to spawn unconditionally. The
+background shell path cannot fall back on its own (spawn's ENOENT is async and
+fires after `spawnBackground` has already returned a shell id — reported
+"launched" yet never running), so a misconfigured override there silently broke
+`run_in_background` / Monitor. `resolvePosixShells` now drops an absolute
+override that does not exist, so both the foreground and background paths fall
+through to the platform defaults (bash/sh, or the Git Bash probes). A bare-name
+override is kept (PATH-resolved by spawn). +1 regression test.
+
+## 0.48.9 — 2026-07-11
+
+**World-class review pass (cont.), ping-only stream = empty non-start**: the
+Anthropic transport's empty-stream retry keyed on `eventCount === 0`, but a
+`ping` keep-alive counts as an event — so a stream of only pings that then
+closed (no `message_start`) looked non-empty, skipped the retry, and let the
+engine's accumulator throw a raw `finalize before message_start`. The empty
+check now keys on whether `message_start` was actually seen, so a ping-only
+non-start is retried like any other empty stream (eventCount still counts pings
+for the "after N event(s)" diagnostics; the twinned `mapStreamError` is
+untouched). +1 regression test.
+
+## 0.48.8 — 2026-07-11
+
+**World-class review pass (cont.), shared-MCP cross-session isolation**: a
+SessionManager-managed query's `toggleMcpServer` / `setEnabled` passed straight
+through to the SHARED registry, so one conversation disabling a server blanked
+that tool for every sibling conversation. The shared layer cannot offer
+per-session enable/disable views, so it is now refused loudly (like
+`setMcpServers`). `reconnect` still passes through — a failed server is failed
+for all borrowers and reconnecting is shared recovery, not a per-session
+preference. +1 regression test.
+
+## 0.48.7 — 2026-07-11
+
+**World-class review pass (cont.), interrupt vs resume**: a per-turn
+`interrupt()` left the write-ahead `pending_turn` checkpoint dangling, so a
+later `resume` auto-redrove the request the user had DELIBERATELY cancelled —
+re-billing the API call and re-executing a rejected intent. A per-turn
+interrupt now settles the checkpoint (the resume redrive only fires on genuine
+crash evidence — a thrown error or an `error_during_execution` result); a caller
+`AbortController` abort / `close()` keeps the recover-on-resume posture. +1
+regression test.
+
+## 0.48.6 — 2026-07-11
+
+**World-class review pass (cont.), subagent finalizer hardening**:
+
+- **isolation worktree released when SubagentStart throws**: the worktree is
+  created before the per-branch run body's try/finally, so an aborted or
+  throwing `SubagentStart` hook leaked the worktree (and its `git worktree list`
+  registration). It is now released before the throw propagates.
+- **`sidechain_end` written on every exit path**: the sidechain transcript's
+  terminal marker was written AFTER the run loop, so an abort or thrown error
+  mid-run skipped it — leaving the transcript unterminated and breaking the
+  `settleAll` M4 contract that waits for it. The marker is now written in a
+  finally (pessimistic `is_error: true` when the run did not complete cleanly).
+
++1 regression test.
+
+## 0.48.5 — 2026-07-11
+
+**World-class review pass (cont.), worktree data safety**: a subagent isolation
+worktree (`Agent({ isolation: 'worktree' })`) is a DETACHED checkout. Cleanup
+kept it only when the working tree was dirty (`git status --porcelain`), so a
+child that COMMITTED its work left a clean tree and the worktree — with its
+detached commits — was removed, orphaning the commits (gc'd after the grace
+period). `addWorktree` now records the base HEAD and `removeWorktreeIfClean`
+keeps the worktree when HEAD has moved past it (commits made), not only when the
+tree is dirty — "never destroy work", committed or not. Named EnterWorktree
+worktrees are unaffected (their commits live on a branch). +1 regression test.
+
+## 0.48.4 — 2026-07-11
+
+**World-class review pass (cont.), OpenAI-gateway compatibility**:
+
+- **`stream_options` is now suppressible**: `stream_options: { include_usage:
+  true }` was hardcoded AFTER the `extraBody` spread, so a gateway that 400s on
+  it (older vLLM, some one-api variants) had no escape hatch. When `extraBody`
+  declares `stream_options` (e.g. `null`), its value now stands.
+- **in-stream error status is classified, not hardcoded 500**: a mid-stream
+  error chunk (the response was 200, so there is no HTTP status) threw a
+  hardcoded `500`, so a mid-stream rate-limit / quota / auth error looked like a
+  server error to the engine's fallback and the caller. Its `type` is now mapped
+  to the right status (429 / 401 / 400 / …), mirroring the Anthropic arm.
+
++2 regression tests.
+
+## 0.48.3 — 2026-07-11
+
+**World-class review pass (cont.), Retry-After handling** (both transport arms):
+the parser only recognized the numeric delta-seconds form (an HTTP-date
+`Retry-After`, common from proxies/CDNs, was `Number()`→NaN and silently dropped
+to exponential backoff), and it clamped a value above the 60s exponential cap
+down to 60s — so a server's explicit "wait 90s" retried at 60s, straight back
+into the same limit and burning a retry. Now the HTTP-date form is parsed
+(delta-from-now, past date → retry immediately) and an explicit Retry-After is
+honored as given, bounded by a 120s ceiling so a pathological value can't hang
+the agent; only the exponential fallback stays capped at 60s. +3 regression
+tests; twin-drift guard kept green.
+
+## 0.48.2 — 2026-07-11
+
+**World-class review pass (cont.), session-integrity batch**:
+
+- **forkSession keeps the write-ahead checkpoint pairing consistent**: the fork
+  minted a fresh uuid for every record but left the cross-references
+  (`turn_complete.pending_uuid` → the pending_turn's uuid, `pending_turn.turn_ref`
+  → the user message's uuid) pointing at the OLD uuids. A forked session then
+  read as a permanently-interrupted turn (bad list/getSessionInfo metadata), and
+  a source ending on a user turn phantom-redrove an already-completed request (a
+  duplicate billed API call) on resume. A single old→new uuid map now rewrites
+  the record uuids AND their references together.
+- **`continue: true` never resurrects a subagent sidechain**: `latestSessionId`
+  (and `list()`/`getSessionInfo`) scanned every `.jsonl` by mtime, not
+  distinguishing a main session from a subagent sidechain transcript. A
+  background child that finished after the parent's last write became the newest
+  file, so "resume the most recent session" loaded a `sidechain_start`-marked
+  transcript that holds only assistant turns — repairPairing then welded it into
+  a garbled conversation. Both discovery paths now skip a transcript whose first
+  record is `sidechain_start`.
+
++2 regression tests.
+
 ## 0.48.1 — 2026-07-11
 
 **World-class review pass — six-track audit fixes** (one consolidated entry; the

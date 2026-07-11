@@ -1146,6 +1146,14 @@ export function query(args: {
             if (lifeSignal.aborted) {
               throw err instanceof AbortError ? err : new AbortError();
             }
+            // Turn-level interrupt(): the USER deliberately cancelled THIS turn.
+            // Settle the write-ahead checkpoint so a later resume does NOT
+            // auto-redrive the cancelled request — redriving would re-bill the
+            // API call and re-execute an intent the user explicitly rejected.
+            // Only a genuine CRASH (the non-abort throw below, or an
+            // error_during_execution result that left it dangling) is treated as
+            // recoverable; a caller abort / close() keeps the recovery posture.
+            persistTurnComplete(sess.sessionId, pendingUuid);
             // Turn-level interrupt(): streaming mode keeps accepting input;
             // string mode ends the run WITH a terminal result so an awaiting
             // consumer is not left hanging with no explanation (finding #36).
