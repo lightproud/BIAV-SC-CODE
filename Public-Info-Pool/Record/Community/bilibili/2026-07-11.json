@@ -1,8 +1,8 @@
 {
   "date": "2026-07-11",
-  "archived_at": "2026-07-11T18:17:47.691235+00:00",
+  "archived_at": "2026-07-11T19:02:09.898597+00:00",
   "source": "bilibili",
-  "item_count": 18,
+  "item_count": 19,
   "items": [
     {
       "title": "【忘却前夜】竞慢挑战....10队磨队425......",
@@ -253,6 +253,29 @@
         "danmaku": 0
       },
       "media_url": "https://i1.hdslb.com/bfs/archive/89103a62f9a4f4132b2d75a12801b50322ced0aa.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "【忘却前夜】庞托斯7tH5-11",
+      "summary": "打的有点蠢，极限应该还能压1t，玩的太累了\n  └ 夜雨-月明 (1赞): 厉害[魔女的夜宴动态表情包_期待]\n  └ 略略帅 (0赞): 你这老头回转太快了吧",
+      "source": "bilibili",
+      "time": "2026-07-11T11:01:59+00:00",
+      "url": "https://www.bilibili.com/video/BV1G8Nc6gEfr",
+      "engagement": 103,
+      "is_hot": false,
+      "author": "璃っ亓",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 101,
+        "comment_count": 2,
+        "comments_fetched": 2,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/c556cc824d218e572c53fe51a7a4badcd1d4c4c4.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
