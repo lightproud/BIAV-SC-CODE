@@ -978,7 +978,21 @@ export async function* runAgentLoop(
             // The retry emits its OWN message_start; downstream consumers of
             // includePartialMessages must treat a fresh message_start as
             // superseding the discarded attempt's partial stream_events.
-            assistant = yield* streamAttempt(model, turnToolDefs); // 2nd failure -> outer catch
+            // The fallback attempt gets its own usage sink: if IT fails too,
+            // the tokens it burned (its message_start already billed the
+            // prompt) must reach the totals the terminal error result reports,
+            // exactly as the first attempt's sink was folded above. A caller
+            // abort keeps the plain throw-through — no result is produced, so
+            // there is no report to keep honest.
+            const fallbackSink: UsageSink = {};
+            try {
+              assistant = yield* streamAttempt(model, turnToolDefs, fallbackSink);
+            } catch (fallbackErr) {
+              if (!isAbortError(fallbackErr) && fallbackSink.usage !== undefined) {
+                recordUsage(model, fallbackSink.usage);
+              }
+              throw fallbackErr; // 2nd failure -> outer catch
+            }
             break;
           }
           throw err;

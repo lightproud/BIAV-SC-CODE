@@ -16,6 +16,16 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.47.1 — 2026-07-11
+
+**World-class review pass (six-track deep audit), fix batch**: engine — the
+one-shot model-fallback attempt now carries its own usage sink, so when the
+fallback stream ALSO fails, the tokens it already billed (its message_start
+input tokens) are folded into the run totals and reach the terminal error
+result's usage/cost/modelUsage report instead of being dropped (the primary
+attempt's sink has had exactly this treatment since finding #5). Further
+verified fixes from the audit land in this same version entry.
+
 ## 0.47.0 — 2026-07-11
 
 **Memory system M2 (spec R7–R9, BPT-EXTENSION `options.memory` — docs/MEMORY.md)**:

@@ -1568,6 +1568,50 @@ describe('runAgentLoop', () => {
     expect(result.modelUsage['claude-fallback']!.inputTokens).toBe(50);
   });
 
+  it('folds the FALLBACK attempt usage into totals when it fails too', async () => {
+    class DoubleFailTransport implements Transport {
+      readonly requests: StreamRequest[] = [];
+      private call = 0;
+      apiKeySource(): ApiKeySource {
+        return 'user';
+      }
+      async *stream(req: StreamRequest): AsyncGenerator<RawMessageStreamEvent, void> {
+        this.requests.push(req);
+        const n = this.call++;
+        if (n === 0) {
+          // Primary attempt: bill 100 input tokens, then fail with a
+          // fallback-eligible status.
+          yield messageStart({ model: 'claude-primary', usage: { input_tokens: 100 } });
+          throw new APIStatusError(529, 'overloaded_error', 'overloaded');
+        }
+        // Fallback attempt: bill 60 input tokens, then fail terminally.
+        yield messageStart({ model: 'claude-fallback', usage: { input_tokens: 60 } });
+        throw new APIStatusError(500, 'api_error', 'server exploded');
+      }
+    }
+
+    const transport = new DoubleFailTransport();
+    const deps = makeDeps(transport);
+    const history: APIMessageParam[] = [{ role: 'user', content: 'go' }];
+
+    const messages = await collect(
+      runAgentLoop(
+        history,
+        deps,
+        makeConfig({ model: 'claude-primary', fallbackModel: 'claude-fallback' }),
+      ),
+    );
+
+    expect(transport.requests).toHaveLength(2);
+    const result = lastResult(messages);
+    expect(result.subtype).toBe('error_during_execution');
+    // BOTH doomed attempts' billed input tokens survive into the terminal
+    // report: 100 (primary) + 60 (fallback).
+    expect(result.usage.input_tokens).toBe(160);
+    expect(result.modelUsage['claude-primary']!.inputTokens).toBe(100);
+    expect(result.modelUsage['claude-fallback']!.inputTokens).toBe(60);
+  });
+
   // ----- BPT 2026-07-07: cross-model thinking-signature hygiene -----
 
   it('strips a cross-model CLOSED thinking block from the outgoing replay', async () => {
