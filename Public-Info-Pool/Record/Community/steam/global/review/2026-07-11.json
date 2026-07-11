@@ -1,8 +1,8 @@
 {
   "date": "2026-07-11",
-  "archived_at": "2026-07-11T02:02:01.186806+00:00",
+  "archived_at": "2026-07-11T05:18:17.475849+00:00",
   "source": "steam",
-  "item_count": 1,
+  "item_count": 3,
   "items": [
     {
       "title": "[正面] Buena campaña atrapa y te da por jugar mas.",
@@ -22,6 +22,54 @@
         "playtime_forever": 5818,
         "votes_up": 0,
         "timestamp_created": 1783706103
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] cool",
+      "summary": "cool",
+      "source": "steam_review",
+      "time": "2026-07-11T04:29:24+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198341339204/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198341339204",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 3038,
+        "votes_up": 0,
+        "timestamp_created": 1783744164
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 沙耶我婆",
+      "summary": "沙耶我婆",
+      "source": "steam_review",
+      "time": "2026-07-11T03:40:34+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198295406045/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198295406045",
+      "tags": [
+        "tchinese"
+      ],
+      "language": "tchinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 330,
+        "votes_up": 0,
+        "timestamp_created": 1783741234
       },
       "region": "global",
       "archive_subtype": "review",

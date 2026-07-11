@@ -1,10 +1,40 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-11T02:01:11.020479+00:00",
+  "collected_at": "2026-07-11T05:17:37.287682+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 2,
+  "item_count": 4,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-07-11T04:29:24+00:00",
+      "lang": "english",
+      "title": "[正面] cool",
+      "summary": "cool",
+      "url": "https://steamcommunity.com/profiles/76561198341339204/recommended/3052450",
+      "author": "76561198341339204",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "cool",
+      "timestamp_created": 1783744164,
+      "playtime_forever": 3038
+    },
+    {
+      "source": "steam",
+      "time": "2026-07-11T03:40:34+00:00",
+      "lang": "tchinese",
+      "title": "[正面] 沙耶我婆",
+      "summary": "沙耶我婆",
+      "url": "https://steamcommunity.com/profiles/76561198295406045/recommended/3052450",
+      "author": "76561198295406045",
+      "engagement": 0,
+      "language": "tchinese",
+      "voted_up": true,
+      "review": "沙耶我婆",
+      "timestamp_created": 1783741234,
+      "playtime_forever": 330
+    },
     {
       "source": "steam",
       "time": "2026-07-10T17:55:03+00:00",
@@ -33,7 +63,7 @@
       "voted_up": true,
       "review": "「今日起，我将继任弥萨格的守密人。\n 我宣誓，我将永远站在人类与融蚀斗争的最前线。」\n\n「我宣誓，我将永远为人类的历史与斗争而战。」\n\n谢谢……能遇见[spoiler] 弥萨格的大家[/spoiler]，真好。\n\n[h2] 愿银钥，指引前路！！ [/h2]",
       "timestamp_created": 1783689593,
-      "playtime_forever": 7612
+      "playtime_forever": 7748
     }
   ]
 }

@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-11T02:01:11.020479+00:00",
+  "collected_at": "2026-07-11T05:17:37.287682+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 122,
+  "item_count": 123,
   "items": [
     {
       "source": "google_play",
@@ -917,6 +917,26 @@
     },
     {
       "source": "google_play",
+      "time": "2026-07-10T04:26:45",
+      "lang": "es",
+      "title": "[Google Play 好评] ★5 excelente",
+      "summary": "excelente",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=es#gp-08e77136-c56f-4569-b5ab-7646bf684886",
+      "author": "Dylan Santiago",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-10T02:24:53",
+      "lang": "es",
+      "title": "[Google Play 好评] ★5 👍 Exelente juego me encanta el arte no e",
+      "summary": "👍 Exelente juego me encanta el arte no entiendo porque no tiene más comentarios",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=es#gp-dea640b1-55d4-4c81-ab48-7e2d4bf67d3b",
+      "author": "Saadiel Chavez",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
       "time": "2026-07-09T10:38:30",
       "lang": "es",
       "title": "[Google Play 中评] ★3 muy bueno me encanta pero el único probl",
@@ -1213,16 +1233,6 @@
       "summary": "神ゲー",
       "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-4777fbe5-549b-4971-b946-fde7e7d1694f",
       "author": "金澤裕之",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-06-11T03:45:33",
-      "lang": "ja",
-      "title": "[Google Play 差评] ★1 意味のわからない言葉使いすぎで、ストーリーが頭に入ってこない、だから面白くならな",
-      "summary": "意味のわからない言葉使いすぎで、ストーリーが頭に入ってこない、だから面白くならない。ユーザーは文章を読まず、理解しないままプレイしているのだろうか？",
-      "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-ee285041-ced6-46af-9543-d4fa9556989b",
-      "author": "google user",
       "engagement": 0
     }
   ]
