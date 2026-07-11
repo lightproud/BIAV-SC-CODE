@@ -1028,6 +1028,36 @@ export function createSubagentRuntime(
         // stable correlation id (the child agentId) when the tool passed none.
         parentToolUseId:
           params.toolUseId !== '' ? params.toolUseId : agentId,
+        // FORK inherits the parent's FULL system + compaction shape. Fork's whole
+        // point is a byte-identical prefix so the child reads the parent's warm
+        // cache instead of re-billing the shared history cold; inheriting only
+        // `systemPrompt` broke that (the default preset carries its instructions
+        // in systemPromptSuffix, and a segments host puts EVERYTHING in
+        // systemBlocks with an empty systemPrompt — a fork then had no system at
+        // all). Not inherited on purpose: serverTools (the memory tool is
+        // root-only in v1, so a child must not advertise a tool it cannot run).
+        ...(forkActive
+          ? {
+              ...(engineConfig.systemPromptSuffix !== undefined
+                ? { systemPromptSuffix: engineConfig.systemPromptSuffix }
+                : {}),
+              ...(engineConfig.systemPromptBaseLen !== undefined
+                ? { systemPromptBaseLen: engineConfig.systemPromptBaseLen }
+                : {}),
+              ...(engineConfig.systemBlocks !== undefined
+                ? { systemBlocks: engineConfig.systemBlocks }
+                : {}),
+              ...(engineConfig.systemComposition !== undefined
+                ? { systemComposition: engineConfig.systemComposition }
+                : {}),
+              ...(engineConfig.cacheTtl !== undefined
+                ? { cacheTtl: engineConfig.cacheTtl }
+                : {}),
+              ...(engineConfig.compaction !== undefined
+                ? { compaction: engineConfig.compaction }
+                : {}),
+            }
+          : {}),
       };
 
       const childController = new AbortController();
@@ -1164,6 +1194,22 @@ export function createSubagentRuntime(
                 : err instanceof Error
                   ? err.message
                   : String(err);
+              // The model ONLY ever sees completedBuffer (drained onto a later
+              // tool_result turn); the emitTask events below are host-visible
+              // observability only. Without a completedBuffer entry a stalled or
+              // crashed BACKGROUND worker never reaches its coordinator — whose
+              // prompt says "workers will notify you when they are done" — so the
+              // coordinator waits forever. Surface the failure to the model too
+              // (intentional stopTask/close aborts are excluded by the guard).
+              completedBuffer.push({
+                type: 'text',
+                text: formatTaskNotification({
+                  agentId,
+                  status: 'failed',
+                  summary: `Agent "${taskDescription}" failed: ${resultPreview(message)}`,
+                  result: message,
+                }),
+              });
               emitTask({
                 type: 'system',
                 subtype: 'task_updated',

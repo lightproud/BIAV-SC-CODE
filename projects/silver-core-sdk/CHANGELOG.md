@@ -16,6 +16,32 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.47.9 — 2026-07-11
+
+**World-class review pass, permissions + subagents batch**:
+
+- **Bash specifier `:` boundary is a WORD boundary, not a bare prefix**: the
+  `Bash(git:*)` colon-boundary branch matched on `value.startsWith('git')`, so
+  it granted `git-crypt export /secret`, `github-cli`, and `gitk` — a real
+  over-grant (and symmetric deny-weakening). The command base must be the whole
+  value or be followed by a space.
+- **stalled background worker notifies its coordinator**: a background subagent
+  aborted by the stall watchdog (or any genuine failure) emitted only
+  host-visible observability events, never a `completedBuffer` note — the ONLY
+  channel the model sees. Its coordinator (told "workers will notify you when
+  they are done") waited forever. A failed task-notification is now buffered for
+  the model too (intentional stopTask/close aborts excluded).
+- **fork subagent inherits the parent's FULL system**: fork inherited only
+  `systemPrompt`, dropping `systemPromptSuffix` / `systemPromptBaseLen` /
+  `systemBlocks` / `systemComposition` / `cacheTtl` / `compaction`. Fork's whole
+  point is a byte-identical prefix so the child reads the parent's warm cache;
+  the default preset keeps its instructions in the suffix and a segments host
+  puts everything in blocks (an empty-system fork). Those fields are now
+  inherited in fork mode; `serverTools` stays root-only (a child must not
+  advertise the memory tool it cannot execute).
+
++3 regression tests.
+
 ## 0.47.8 — 2026-07-11
 
 **World-class review pass, engine + query correctness batch**:

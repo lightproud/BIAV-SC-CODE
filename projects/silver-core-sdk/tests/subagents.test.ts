@@ -32,6 +32,7 @@ import {
 } from '../src/subagents/runtime.js';
 import { DefaultHookRunner } from '../src/hooks/runner.js';
 import { DefaultPermissionGate } from '../src/permissions/gate.js';
+import { AbortError } from '../src/errors.js';
 import type {
   BuiltinTool,
   EngineConfig,
@@ -40,6 +41,7 @@ import type {
   SpawnSubagentParams,
   StoredSession,
   ToolContext,
+  Transport,
 } from '../src/internal/contracts.js';
 import type {
   AgentDefinition,
@@ -154,8 +156,13 @@ function makeRuntime(cfg: {
   cwd?: string;
   /** Shared agent-tree budget ceiling (P0 fix) threaded into every child loop. */
   familyBudget?: { spentUsd: number; capUsd: number };
+  /** Runtime env (e.g. a tiny CLAUDE_ASYNC_AGENT_STALL_TIMEOUT_MS for the
+   *  background-stall test). Defaults to {}. */
+  env?: Record<string, string | undefined>;
+  /** Transport override (for a hanging stream that trips the stall watchdog). */
+  transport?: MockTransport | Transport;
 }): RuntimeHarness {
-  const transport = new MockTransport(cfg.scripts);
+  const transport = (cfg.transport ?? new MockTransport(cfg.scripts)) as MockTransport;
   const starts: string[] = [];
   const stops: string[] = [];
   const stopInputs: HookInput[] = [];
@@ -207,7 +214,7 @@ function makeRuntime(cfg: {
     store: cfg.store,
     persist: cfg.persist,
     cwd: cfg.cwd ?? '/tmp/sub-test',
-    env: {},
+    env: cfg.env ?? {},
     additionalDirectories: [],
     outerSignal: new AbortController().signal,
     sessionId: () => engineConfig.sessionId,
@@ -927,6 +934,23 @@ describe('subagent runtime — FORK mode', () => {
     expect(req?.model).toBe('claude-sonnet-4-5');
   });
 
+  it('fork inherits the parent systemPromptSuffix (full-system byte-match, not just the prefix)', async () => {
+    // The default preset carries its instructions in systemPromptSuffix; a fork
+    // that inherited only systemPrompt lost them (and a segments host lost its
+    // whole system). The fork child's wire system must carry the suffix too.
+    const h = makeRuntime({
+      scripts: [textReplyEvents('forked', { model: 'claude-sonnet-4-5' })],
+      engineConfig: { systemPrompt: 'parent-base', systemPromptSuffix: 'PARENT-SUFFIX' },
+    });
+    await h.runtime.makeSpawnFn(0)(
+      baseParams({ fork: true, parentHistory: parentCtx(), prompt: 'task' }),
+    );
+    const req = h.transport.requests[0];
+    const systemSerialized = JSON.stringify(req?.system);
+    expect(systemSerialized).toContain('parent-base');
+    expect(systemSerialized).toContain('PARENT-SUFFIX'); // suffix inherited by fork
+  });
+
   it('fork inherits a REALISTIC tool-call-sequence parent (keeps pairs; regression: G4 blocker)', async () => {
     const h = makeRuntime({
       scripts: [textReplyEvents('forked answer', { model: 'claude-sonnet-4-5' })],
@@ -1236,6 +1260,47 @@ describe('subagent runtime — background', () => {
     expect(notes[0]?.text).toContain(res.agentId);
     // Drained: buffer is now empty.
     expect(h.runtime.drainCompletedResults()).toHaveLength(0);
+  });
+
+  it('a stalled background worker buffers a FAILED note so the coordinator is not left waiting', async () => {
+    // The model only sees completedBuffer (drainCompletedResults). A background
+    // worker aborted by the stall watchdog must surface a failed note there, not
+    // only on the host observability stream — else the coordinator waits forever.
+    class StallTransport implements Transport {
+      apiKeySource(): 'user' {
+        return 'user';
+      }
+      async *stream(req: {
+        signal?: AbortSignal;
+      }): AsyncGenerator<RawMessageStreamEvent, void> {
+        const start = textReplyEvents('x', { model: 'claude-sonnet-4-5' })[0]!;
+        yield start; // one event touches the watchdog, then we go silent
+        await new Promise<void>((_, reject) => {
+          const sig = req.signal;
+          if (sig?.aborted) {
+            reject(new AbortError());
+            return;
+          }
+          sig?.addEventListener('abort', () => reject(new AbortError()), { once: true });
+        });
+      }
+    }
+    const h = makeRuntime({
+      scripts: [],
+      transport: new StallTransport(),
+      env: { CLAUDE_ASYNC_AGENT_STALL_TIMEOUT_MS: '20' }, // trip fast
+      agents: { worker: { description: 'w', prompt: 'work', background: true } },
+    });
+    const res = await h.runtime.makeSpawnFn(0)(baseParams({ subagentType: 'worker' }));
+    expect(res.background).toBe(true);
+    let notes = h.runtime.drainCompletedResults();
+    for (let i = 0; i < 100 && notes.length === 0; i++) {
+      await tick(5);
+      notes = h.runtime.drainCompletedResults();
+    }
+    expect(notes).toHaveLength(1);
+    expect(notes[0]?.text.toLowerCase()).toContain('failed');
+    expect(notes[0]?.text).toContain(res.agentId);
   });
 
   it('runs background foreground when requested below depth 0', async () => {
