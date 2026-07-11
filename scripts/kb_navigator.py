@@ -98,12 +98,51 @@ def normalize_id(raw: str) -> str | None:
     return None
 
 
+def _title_anchors(query: str) -> dict[str, str]:
+    """概念标题逐字出现在查询里 → 锚概念（{cid: title}）。
+
+    kb_anchor「先锚后扩」哲学的库内形态：查询点名了谁，谁就是锚。两条纪律：
+    - **最长匹配优先**：短标题若只作为更长已锚标题的内部子串出现，不独立成锚
+      （「本源萝坦」点名的是本源萝坦，不是「萝坦」——实体链接经典规则）；
+    - 单字标题仅认 CJK（如角色「徐」——分词器丢单字、倒排表够不到，标题锚是其唯一入口），
+      拉丁单字母不作锚（噪声）。确定性纯查表。
+    """
+    out: dict[str, str] = {}
+    if not query:
+        return out
+    idx = load_index()
+    cands: list[tuple[str, str]] = []
+    for cid, c in idx["concepts"].items():
+        t = (c.get("title") or "").strip()
+        if not t or len(t) > len(query):
+            continue
+        if len(t) == 1 and not ("一" <= t <= "鿿"):
+            continue
+        if t in query:
+            cands.append((t, cid))
+    claimed = [False] * len(query)
+    for t, cid in sorted(cands, key=lambda x: (-len(x[0]), x[1])):
+        anchored = False
+        start = query.find(t)
+        while start >= 0:
+            if not all(claimed[start:start + len(t)]):
+                anchored = True
+                for j in range(start, start + len(t)):
+                    claimed[j] = True
+            start = query.find(t, start + 1)
+        if anchored:
+            out[cid] = t
+    return out
+
+
 def search(query: str, limit: int = 8, type_filter: str | None = None) -> dict:
     """Rank concepts against a free-text query using the inverted index.
 
     Deterministic scoring: +1 per query term hitting a concept's body postings,
     +2 extra if the term hits title/tags, +5 if the whole query is a title
-    substring. Ties break by node degree (graph centrality) then id.
+    substring, +4 if a concept title appears verbatim inside the query
+    (title anchor — the only path to single-CJK-char titles the tokenizer
+    drops, e.g. 角色「徐」). Ties break by node degree then id.
     """
     idx = load_index()
     concepts = idx["concepts"]
@@ -128,6 +167,9 @@ def search(query: str, limit: int = 8, type_filter: str | None = None) -> dict:
         for cid, c in concepts.items():
             if ql in (c.get("title") or "").lower():
                 scores[cid] = scores.get(cid, 0.0) + 5.0
+    for cid, t in _title_anchors(query).items():
+        scores[cid] = scores.get(cid, 0.0) + 4.0
+        matched.setdefault(cid, set()).add(t)
 
     ranked = []
     for cid, sc in scores.items():
@@ -226,12 +268,21 @@ _EDGE_WEIGHT = {
 }
 
 
+_ANCHOR_ENERGY = 1.5   # 标题锚种子能量（查询逐字点名的概念应主导扩散——先锚后扩）
+_LABEL_BOOST = 1.5     # 边标签命中查询词 → 传导加成（顺「所问之物」的边扩散更强）
+
+
 def activate(seed: str, hops: int = 2, decay: float = 0.5, limit: int = 15) -> dict:
     """扩散激活：从种子（概念 id 或检索词）沿骨架多跳带衰减扩散，返回被点亮子图。
 
     种子解析：先当概念 id（normalize_id）；不中则当检索词，取 search 前若干命中为种子
-    （按检索分归一化为初始激活）。传导：每跳激活 = 上游激活 × decay × 边类型权重，累加。
-    确定性、零 ML：纯查表 + 算术。骨架层最有效；search-tier 概念多为孤立、需经检索作种子进入。
+    （按检索分归一化为初始激活），且**标题锚**（查询逐字点名的概念）种子能量升至
+    _ANCHOR_ENERGY——先锚后扩。传导：每跳激活 = 上游激活 × decay × 边类型权重；检索词
+    模式下边标签命中查询原文再乘 _LABEL_BOOST（顺所问之边传导更强）。**累加取最强路径
+    （max）而非求和**——和值会让多路径再汇聚的高度数枢纽（如被众文档共同提及的热门角色）
+    淹没一跳直达目标（2026-07-11 修正枢纽淹没）。排名并列时低度数优先（越专属的关联越靠前，
+    与 max 同一反枢纽哲学）。确定性、零 ML：纯查表 + 算术。骨架层最有效；search-tier
+    概念多为孤立、需经检索作种子进入。
 
     Args:
         seed: 概念 id（如 /characters/125346.md 或 125346）或检索词（如 "沙耶" / "discord 社区"）
@@ -264,9 +315,11 @@ def activate(seed: str, hops: int = 2, decay: float = 0.5, limit: int = 15) -> d
         top = hits[0]["score"] or 1.0
         for h in hits:
             seeds[h["id"]] = max(0.2, (h["score"] or 0) / top)  # 归一化初始激活
+        for aid in _title_anchors(seed):
+            seeds[aid] = _ANCHOR_ENERGY  # 标题锚主导扩散（先锚后扩）
         seed_kind = "query"
 
-    # --- 逐跳扩散（累加激活，记录首达关系）---
+    # --- 逐跳扩散（最强路径取 max，记录首达关系）---
     activation = dict(seeds)
     via: dict[str, str] = {}
     frontier = dict(seeds)
@@ -275,23 +328,30 @@ def activate(seed: str, hops: int = 2, decay: float = 0.5, limit: int = 15) -> d
         for node, act in frontier.items():
             for pair in neighbors.get(node, []):
                 nid = pair[0]
+                rel = pair[1] or ""
                 rel_type = pair[2] if len(pair) > 2 else "link"
                 w = _EDGE_WEIGHT.get(rel_type, 0.4)
+                if seed_kind == "query" and rel:
+                    label = rel.split(":", 1)[-1].strip()
+                    if len(label) >= 2 and label in seed:
+                        w *= _LABEL_BOOST  # 边标签命中查询原文：顺所问之边传导更强
                 contrib = act * decay * w
                 if contrib <= 0.01:
                     continue
-                nxt[nid] = nxt.get(nid, 0.0) + contrib
+                if contrib > nxt.get(nid, 0.0):
+                    nxt[nid] = contrib
                 via.setdefault(nid, f"{pair[1]} ({rel_type})")
         for nid, add in nxt.items():
-            activation[nid] = activation.get(nid, 0.0) + add
+            if add > activation.get(nid, 0.0):
+                activation[nid] = add
         frontier = nxt
         if not frontier:
             break
 
-    # --- 排名（种子外，激活降序；确定性 tie-break by id）---
+    # --- 排名（种子外，激活降序；并列时低度数优先=专属关联，末位 tie-break by id）---
     ranked = sorted(
         ((nid, sc) for nid, sc in activation.items() if nid not in seeds),
-        key=lambda kv: (-kv[1], kv[0]),
+        key=lambda kv: (-kv[1], len(neighbors.get(kv[0], [])), kv[0]),
     )[:limit]
     activated = [
         _summary(nid, concepts.get(nid, {}),
