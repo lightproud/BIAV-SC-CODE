@@ -1,7 +1,7 @@
 {
   "channels": {
     "1377478664609857647": {
-      "last_message_id": "1525427949912723576",
+      "last_message_id": "1525573528349311007",
       "name": "なんでも雑談",
       "cold_started": true,
       "last_historical_message_id": "1378523440742400000",
@@ -84,7 +84,7 @@
       "name": "フレンド募集（非表示）"
     },
     "1391701560496623688": {
-      "last_message_id": "1525409919673569391",
+      "last_message_id": "1525520094401269781",
       "name": "🔰初心者質問",
       "cold_started": true,
       "last_historical_message_id": "1378523440742400000",
@@ -115,7 +115,7 @@
       ]
     },
     "1400058619726266462": {
-      "last_message_id": "1525423329215905983",
+      "last_message_id": "1525453046883156039",
       "name": "誰でも質問",
       "cold_started": true,
       "last_historical_message_id": "1378523440742400000",
@@ -134,7 +134,7 @@
       "last_message_id": "1516214167365750865"
     },
     "thread:1514598182120587295": {
-      "last_message_id": "1520021791727157268"
+      "last_message_id": "1525492686940016661"
     },
     "thread:1513406975856345269": {
       "last_message_id": "1514488332049055864"
@@ -327,7 +327,7 @@
       "last_message_id": "1511043315200561395"
     },
     "thread:1510911214346305566": {
-      "last_message_id": "1525014795105865728"
+      "last_message_id": "1525512289523077210"
     },
     "thread:1510847739045482596": {
       "last_message_id": "1519621081382785115"
@@ -366,7 +366,7 @@
       "last_message_id": "1522955535278801037"
     },
     "thread:1458760640351965361": {
-      "last_message_id": "1525325250735378493"
+      "last_message_id": "1525547427665412146"
     },
     "thread:1457876779954995315": {
       "last_message_id": "1515724523432050698"
@@ -1035,10 +1035,13 @@
       "last_message_id": "1524657836444094625"
     },
     "thread:1525369177165140090": {
-      "last_message_id": "1525424226314489876"
+      "last_message_id": "1525540829123313756"
+    },
+    "thread:1525444531363778631": {
+      "last_message_id": "1525550969549488280"
     }
   },
   "historical_month": null,
-  "last_run": "2026-07-11T09:11:13.402301+00:00",
+  "last_run": "2026-07-11T19:51:51.130683+00:00",
   "history_backfill_complete": true
 }
