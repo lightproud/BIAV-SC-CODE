@@ -386,8 +386,8 @@ brain-in-a-vat/
 ### §7.3 脚本层
 
 `scripts/` 按命名约定分类（人格 `character_persona` / 记忆写入 `silver_memory_tools` /
-解包-解析 `parse_*` / 运营 / 一次性迁移 `migrate_*`，如 `migrate_flat_archives_to_layout.py`
-2026-07-02 平级历史归位），`projects/news/scripts/` 为采集器层——其中
+解包-解析 `parse_*` / 运营；一次性迁移脚本 `migrate_*` **用完即删**——2026-07-11 精简裁定
+清空已完工存量，历史版本 git 可追），`projects/news/scripts/` 为采集器层——其中
 `archive_layout.py` 为**归档布局单一真相源**（2026-07-02 P0-1：某源数据落在哪、
 怎么找，全仓只有它回答；写方读方一律 import 它，契约测试 `tests/test_archive_layout.py`
 锁定读写往返）；精确清单以 `ls` 为准。

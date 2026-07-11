@@ -109,7 +109,7 @@ kb 工具族）。两者均经通道①交付。
 
 - `memory/lessons-learned.md` — 搬运过程中的踩坑
 - `memory/decisions.md` — 架构层面的联合决策
-- `memory/bpt-guidance-log.md`（待创建） — 每轮搬运的主题 / 日期 / 成果概要（一行一条）
+- `memory/archive/bpt-guidance-log.md`（W18 后停更，2026-07-11 精简裁定归档） — 历轮搬运的主题 / 日期 / 成果概要（一行一条）
 - 本文件 — 协议本身的迭代
 
 ## 六、边界（绝不做，v0.3 修订）

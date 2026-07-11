@@ -1,5 +1,8 @@
-# 贡献协议（active hub）
+# 贡献协议（原 active hub，已降档归档）
 
+> **⚠ 已归档（2026-07-11 仓库精简裁定项 9）**：本 hub 原为 `memory/active/contribution-protocol.md`，
+> 随协议退役失去高频 hub 资格，降档移入 archive/；主档 `memory/contribution-protocol.md` 留原地供追溯。
+>
 > **⚠ 已退役（守密人 2026-07-10 裁定）**：社区贡献通道整体取消（fork+PR / 翻译 / Issue 报告
 > 三通道全关），银芯对社区收敛为**单方面可读**；M7 验收项「至少一种贡献流程跑顺」作废。
 > 本 hub 与主档 `memory/contribution-protocol.md` 同步退役，正文仅供历史追溯，不再作为现行流程依据。
