@@ -1,4 +1,4 @@
-# 银芯记忆层指针 (48)
+# 银芯记忆层指针 (49)
 
 每张卡是一份**指针** concept，正文权威在 `memory/**`，此处不复刻。核心 10 份 + 全层扩展。
 
@@ -43,6 +43,7 @@
 * [贡献协议（active hub）](/memory/memory-ext-active-contribution-protocol.md) - **一句话摘要**：贡献协议 v1.0 定义**外部社区贡献者**与**银芯仓库**的协作流程，覆盖 Issue 模板 / PR 流程 /
 * [银芯 v2.0 使命（active hub）](/memory/memory-ext-active-mission-v2-0-three-pillars.md) - **一句话摘要**：银芯于 2026-04-26 完成战略重定位，**新使命 v2.0** 取代原三重身份（BPT 开发母仓 / 方法论验证
 * [直推 main 政策（active hub）](/memory/memory-ext-active-policy-direct-push-main.md) - **一句话摘要**：银芯仓库自 2026-03-29 决策、2026-04-26 PR #141 全档案对齐落地起，**所有 AI 会话（现
+* [Silver Core SDK — 自我改进闭环需求文档](/memory/memory-ext-active-self-improvement-requirements.md) - BPT 目前的运行质量改进完全依赖唯一维护者的人工排查:断流原因靠事后翻监控,token 消耗靠账单倒推,记忆系统效果无法量化。运行数据(t
 * [银芯-黑池数据接口（active hub）](/memory/memory-ext-active-silver-blackpool-interface.md) - **一句话摘要**：银芯（公开信息层）与黑池（内部层 SVN + Qoder）通过**严格单向流动**协作——银芯采集外部信息单向输出至黑池
 * [BPT 战略转向归档（2026-04-19）](/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md) - 2026-04-19 守密人决策：BPT（黑池终端）整条战线**从银芯仓库删除**，不再在银芯内部开发。银芯转为 BPT 的指导者，采用「人
 * [缸中之脑·黑池（Black Pool）架构设计方案](/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md) - 黑池是缸中之脑的内部信息层，处理不适合公开的数据：

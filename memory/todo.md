@@ -28,6 +28,8 @@
 | T22 | 方案乙（HTTP/2）重估时机：undici `allowH2` 实测（2026-07-11）一请求一会话（零复用）或单会话流串行化（8 并发 SSE 223ms→1262ms），判死搁置；待 undici 上游实现真并发多路复用（多流并行同会话）再重估——收益面为 SessionManager 多会话并发场景 | 观察 | `memory/decisions.md` 2026-07-11 网络层默认客户端条④ + `projects/silver-core-sdk/docs/PERFORMANCE.md`「Why not HTTP/2」节 | 开 |
 | T23 | fanart 直传 release 新链路首次全真实跑验证：PR #587 把 collect-fanart / recover-fanart 改「取月桶合并 → `--force-group` 重传」（修每日 gitignore exit 1），下一次定时跑（每日 02:00 UTC）或手动 dispatch 需核 Actions 日志——月桶下载 / 合并 / 重传三步全绿即销 | 观察 | PR [#587](https://github.com/lightproud/brain-in-a-vat/pull/587) + `RELEASES.md` §2.2 | 开 |
 | T24 | fanart 月桶「日日下载整月重传」带宽站岗：随月内天数线性涨（历史 ~150MB/月，月末单次两三百 MB），当前可接受；若未来体量失控再议按日资产分桶（代价 = 回到「资产散乱」老问题，2026-06-21 整理前形态），无异常不动 | 观察 | PR [#587](https://github.com/lightproud/brain-in-a-vat/pull/587) 合并总结体余项 2 + `.github/workflows/collect-fanart.yml` 上传步 | 开 |
+| T25 | Silver Core SDK 自我改进闭环（SCS-REQ-002）Phase 1 双裁定：① 行为评估 LLM 评分固定用哪个模型版本、成本预算多少；② 20 题评估集题目来源（从历史失败会话提炼 vs 人工构造）。两项均阻塞 Phase 1（环二评估基准），环三夜间改进任务依赖环二先行（需求书硬序） | 裁定 | `memory/active/self-improvement-requirements.md` §8 开放问题 #1/#2 | 开 |
+| T26 | Silver Core SDK 自我改进闭环（SCS-REQ-002）Phase 3 沙箱工作区实现选型：容器隔离 vs 独立 checkout 目录（工程决策），阻塞 Phase 3（环三夜间改进任务）；前置 Phase 1、2 完成，不急裁 | 裁定 | `memory/active/self-improvement-requirements.md` §8 开放问题 #3 | 开 |
 
 ## 已清（销案引）
 
