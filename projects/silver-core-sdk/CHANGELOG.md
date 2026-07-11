@@ -16,6 +16,17 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.48.8 — 2026-07-11
+
+**World-class review pass (cont.), shared-MCP cross-session isolation**: a
+SessionManager-managed query's `toggleMcpServer` / `setEnabled` passed straight
+through to the SHARED registry, so one conversation disabling a server blanked
+that tool for every sibling conversation. The shared layer cannot offer
+per-session enable/disable views, so it is now refused loudly (like
+`setMcpServers`). `reconnect` still passes through — a failed server is failed
+for all borrowers and reconnecting is shared recovery, not a per-session
+preference. +1 regression test.
+
 ## 0.48.7 — 2026-07-11
 
 **World-class review pass (cont.), interrupt vs resume**: a per-turn

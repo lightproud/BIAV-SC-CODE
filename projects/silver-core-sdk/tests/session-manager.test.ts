@@ -494,6 +494,18 @@ describe('SessionManager D1 refusals', () => {
     await mgr.close();
   });
 
+  it('toggleMcpServer on a managed query refuses (shared registry — no per-session enable/disable leak)', async () => {
+    const mgr = createBptSession(baseManagerOptions());
+    stubFetch(makeSSEFetch([textReplyEvents('ok')]));
+    const q = mgr.query({ prompt: 'hi' });
+    await q.initializationResult();
+    // Disabling a server would blank it for every sibling conversation on the
+    // shared registry, so it is refused loudly (like setMcpServers), not leaked.
+    await expect(q.toggleMcpServer('anything', false)).rejects.toThrow(ConfigurationError);
+    await collect(q);
+    await mgr.close();
+  });
+
   it('per-query provider throws ConfigurationError (the transport is shared)', async () => {
     const mgr = createBptSession(baseManagerOptions());
     expect(() =>
