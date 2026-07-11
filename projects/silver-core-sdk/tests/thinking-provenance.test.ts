@@ -129,4 +129,37 @@ describe('stripStaleThinking', () => {
     expect(types(out[1]!)).toEqual(['text']); // stripped
     expect(types(out[3]!)).toEqual(['thinking', 'tool_use']); // protected
   });
+
+  it('DROPS a thinking-only turn that strips to empty (no content:[] 400 death)', () => {
+    // A max_tokens cut before any text/tool_use leaves a thinking-only assistant
+    // turn. Cross-model (or unstamped resume) stripping would empty it; emitting
+    // {role:'assistant',content:[]} 400s "content must not be empty" on EVERY
+    // later request, wedging the session forever. The turn must be dropped.
+    const msgs = [
+      user('go'),
+      assistant([thinking()], 'A'), // thinking-only, cross-model -> strips to empty
+      user('next'),
+    ];
+    const out = stripStaleThinking(msgs, 'B');
+    // The emptied assistant turn is gone; no zero-content message survives.
+    expect(out).toHaveLength(2);
+    expect(out.map((m) => m.role)).toEqual(['user', 'user']);
+    for (const m of out) {
+      if (Array.isArray(m.content)) expect(m.content.length).toBeGreaterThan(0);
+    }
+  });
+
+  it('DROPS an unstamped thinking-only turn (resume path) but keeps a text sibling', () => {
+    const msgs = [
+      user('go'),
+      assistant([redacted()]), // unstamped thinking-only -> drop
+      user('mid'),
+      assistant([thinking(), text('kept')], 'A'), // strips to text -> keep
+      user('next'),
+    ];
+    const out = stripStaleThinking(msgs, 'B');
+    // First assistant dropped; the second survives as text-only.
+    expect(out.map((m) => m.role)).toEqual(['user', 'user', 'assistant', 'user']);
+    expect(types(out[2]!)).toEqual(['text']);
+  });
 });

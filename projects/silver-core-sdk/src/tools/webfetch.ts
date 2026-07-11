@@ -103,11 +103,33 @@ function ipv6Blocked(ipRaw: string): boolean {
   let ip = ipRaw.toLowerCase();
   const pct = ip.indexOf('%');
   if (pct >= 0) ip = ip.slice(0, pct); // strip zone id
-  // IPv4-mapped (::ffff:a.b.c.d) -> evaluate the embedded IPv4.
+  // IPv4-mapped (::ffff:a.b.c.d, dotted form) -> evaluate the embedded IPv4.
   const mapped = /^::ffff:(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})$/.exec(ip);
   if (mapped) return ipv4Blocked(mapped[1] ?? '');
   const groups = parseIpv6Groups(ip);
   if (groups === null || groups.length !== 8) return false;
+  // IPv4-mapped / IPv4-compatible in HEX group form. The WHATWG URL parser
+  // (and Node's) normalizes "[::ffff:169.254.169.254]" to the hex spelling
+  // "[::ffff:a9fe:a9fe]" BEFORE the guard ever sees it, so the dotted regex
+  // above never fires on a parsed URL host — the whole IPv4 blocklist would be
+  // bypassable via the mapped IPv6 form. Reconstruct the embedded IPv4 from the
+  // trailing two 16-bit groups and run it through ipv4Blocked. ::ffff:x:y is
+  // the mapped range (groups 0..4 zero, group 5 == 0xffff); ::x:y with all of
+  // groups 0..5 zero is the deprecated IPv4-compatible form — both embed an
+  // IPv4 address that must be classified, not waved through.
+  const embedsIpv4Mapped =
+    groups.slice(0, 5).every((g) => g === 0) && groups[5] === 0xffff;
+  const embedsIpv4Compatible = groups.slice(0, 6).every((g) => g === 0);
+  if (embedsIpv4Mapped || embedsIpv4Compatible) {
+    const hi = groups[6] ?? 0;
+    const lo = groups[7] ?? 0;
+    const embedded = `${hi >> 8}.${hi & 0xff}.${lo >> 8}.${lo & 0xff}`;
+    // ::  and ::1 are the unspecified/loopback literals, handled just below;
+    // do not misclassify them as an embedded 0.0.0.x / 0.0.0.1 IPv4.
+    if (!(embedsIpv4Compatible && hi === 0 && (lo === 0 || lo === 1))) {
+      if (ipv4Blocked(embedded)) return true;
+    }
+  }
   const last = groups[7] ?? 0;
   const allZeroExceptLast = groups.slice(0, 7).every((g) => g === 0);
   if (allZeroExceptLast && (last === 0 || last === 1)) return true; // :: and ::1

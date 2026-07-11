@@ -694,7 +694,13 @@ async function* performCompaction(
       custom_instructions: customInstructions,
     };
     const agg = await deps.hooks.run('PreCompact', input, undefined, trigger, signal);
-    if (agg.continue === false) {
+    // A PreCompact veto is EITHER continue:false OR decision:'deny' — the same
+    // pair the memory-flush gate honors (loop.ts). Before, this checked only
+    // continue:false, so a hook returning {continue:true, decision:'deny'}
+    // suppressed the pre-compaction memory-FLUSH turn (which does honor deny)
+    // yet let the FOLD proceed — compacting away the very progress the denied
+    // flush was meant to save first. Honor deny here too so the two gates agree.
+    if (agg.continue === false || agg.decision === 'deny') {
       deps.debug('PreCompact hook cancelled compaction');
       return false; // hook veto: no boundary, view unchanged.
     }

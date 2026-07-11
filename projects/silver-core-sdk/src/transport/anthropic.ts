@@ -140,7 +140,9 @@ export class AnthropicTransport implements Transport {
       yield* this.streamRequest(req);
       return;
     }
-    const release = await this.slots.acquire();
+    // Pass the caller signal so a queued acquirer aborts promptly instead of
+    // blocking on someone else's in-flight stream (interrupt()/teardown).
+    const release = await this.slots.acquire(req.signal);
     try {
       yield* this.streamRequest(req);
     } finally {
@@ -581,20 +583,56 @@ export class RequestSemaphore {
   constructor(permits: number) {
     this.permits = permits;
   }
-  acquire(): Promise<() => void> {
-    return new Promise<() => void>((resolve) => {
+  /**
+   * Acquire a permit, resolving with the matching `release`. An optional
+   * `signal` makes a QUEUED acquirer abortable: without it, a caller that
+   * aborts while waiting for a permit stays blocked until an unrelated in-flight
+   * stream frees one, so interrupt()/teardown could hang for the length of
+   * someone else's minutes-long stream. On abort the waiter is removed from the
+   * queue and the promise rejects with AbortError.
+   */
+  acquire(signal?: AbortSignal): Promise<() => void> {
+    return new Promise<() => void>((resolve, reject) => {
+      if (signal?.aborted) {
+        reject(new AbortError());
+        return;
+      }
       let released = false;
       const releaseOnce = (): void => {
         if (released) return;
         released = true;
         this.release();
       };
-      const grant = (): void => resolve(releaseOnce);
+      let onAbort: (() => void) | undefined;
+      const grant = (): void => {
+        if (onAbort !== undefined && signal !== undefined) {
+          signal.removeEventListener('abort', onAbort);
+        }
+        resolve(releaseOnce);
+      };
       if (this.permits > 0) {
         this.permits -= 1;
         grant();
-      } else {
-        this.waiters.push(grant);
+        return;
+      }
+      this.waiters.push(grant);
+      if (signal !== undefined) {
+        onAbort = (): void => {
+          // Only reject if the permit was NOT already handed to this waiter.
+          // release() shifts + calls grant() synchronously, so the two can only
+          // race by ORDER, never interleave: if grant() ran it removed this
+          // listener (so we never get here); if we run first, the waiter is
+          // still queued and we remove it, and a later release() hands its
+          // permit to the next waiter instead. If grant already dequeued us
+          // (indexOf -1), it will resolve with releaseOnce and the aborting
+          // caller releases the permit in its own finally — do not reject.
+          const idx = this.waiters.indexOf(grant);
+          if (idx >= 0) {
+            this.waiters.splice(idx, 1);
+            reject(new AbortError());
+          }
+        };
+        signal.addEventListener('abort', onAbort, { once: true });
       }
     });
   }

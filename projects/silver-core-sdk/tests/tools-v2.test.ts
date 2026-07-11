@@ -117,6 +117,24 @@ describe('webFetchTool', () => {
     expect(r2.isError).toBe(true);
   });
 
+  // Regression: the WHATWG/Node URL parser normalizes an IPv4-mapped IPv6 host
+  // to its HEX group spelling BEFORE the SSRF guard runs, so the private-IPv4
+  // blocklist was fully bypassable via "[::ffff:169.254.169.254]" etc. The
+  // fetch impl must never be called for any of these.
+  it.each([
+    ['[::ffff:127.0.0.1]', '::ffff:7f00:1'], // loopback
+    ['[::ffff:169.254.169.254]', '::ffff:a9fe:a9fe'], // cloud metadata (link-local)
+    ['[::ffff:10.0.0.1]', '::ffff:a00:1'], // private 10/8
+    ['[::ffff:192.168.1.1]', '::ffff:c0a8:101'], // private 192.168/16
+  ])('blocks IPv4-mapped IPv6 %s (parser normalizes to %s)', async (host) => {
+    const impl = vi.fn();
+    const ctx = makeCtx({ fetchImpl: impl as unknown as typeof fetch });
+    const r = await webFetchTool.execute({ url: `http://${host}/`, prompt: 'x' }, ctx);
+    expect(r.isError).toBe(true);
+    expect(impl).not.toHaveBeenCalled();
+    expect(mockLookup).not.toHaveBeenCalled();
+  });
+
   it('blocks a hostname whose DNS lookup resolves to a private address', async () => {
     mockLookup.mockResolvedValue([{ address: '10.0.0.9', family: 4 }] as never);
     const impl = vi.fn();

@@ -1021,6 +1021,42 @@ describe('query() e2e - confirmed-finding regressions', () => {
     q.close();
   });
 
+  it('close() does not abort the caller-provided AbortController (siblings survive)', async () => {
+    // One AbortController shared by two sibling queries. Closing the first must
+    // not abort the shared controller — that would kill the second mid-flight.
+    const controller = new AbortController();
+    stubFetch(makeSSEFetch([textReplyEvents('a')]));
+    const q1 = query({ prompt: 'one', options: baseOptions({ abortController: controller }) });
+    await q1.initializationResult();
+    q1.close();
+    // The caller's controller is untouched, so a sibling query on the same
+    // controller still runs to a successful result.
+    expect(controller.signal.aborted).toBe(false);
+    stubFetch(makeSSEFetch([textReplyEvents('b')]));
+    const q2 = query({ prompt: 'two', options: baseOptions({ abortController: controller }) });
+    expect(lastResult(await collect(q2)).subtype).toBe('success');
+    expect(controller.signal.aborted).toBe(false);
+  });
+
+  it('an explicit outer abort STILL cancels the query (life union intact)', async () => {
+    const controller = new AbortController();
+    stubFetch(makeSSEFetch([HANG_STREAM]));
+    const q = query({ prompt: 'go', options: baseOptions({ abortController: controller }) });
+    expect((await q.next()).value as SDKMessage).toMatchObject({ type: 'system' });
+    expect((await q.next()).value as SDKMessage).toMatchObject({ type: 'user' });
+    const pending = q.next(); // now blocks on the hanging stream
+    await delay(25);
+    controller.abort();
+    // Aborting the caller's controller still cancels this query (union of
+    // outer + life), so the pending read settles promptly (done or AbortError).
+    const settled = await pending.then(
+      (r) => ({ rejected: false as const, r }),
+      (e: unknown) => ({ rejected: true as const, e }),
+    );
+    if (settled.rejected) expect(isAbortError(settled.e)).toBe(true);
+    else expect(settled.r.done).toBe(true);
+  });
+
   it('does not leak abort listeners when one AbortController is reused across queries (#16)', async () => {
     const controller = new AbortController();
     for (let i = 0; i < 5; i += 1) {

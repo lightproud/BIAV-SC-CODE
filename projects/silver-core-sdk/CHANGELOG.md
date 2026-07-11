@@ -16,6 +16,49 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.48.1 — 2026-07-11
+
+**World-class review pass — six-track audit fixes** (one consolidated entry; the
+branch bumped through 0.47.1–0.47.10 pre-merge, rebased onto 0.48.0's memory
+governance). A six-way parallel deep review of all 103 source files surfaced,
+verified, and fixed the following, each with a regression test:
+
+- **P0 — aggregate agent-tree budget ceiling**: each subagent got a full copy of
+  `maxBudgetUsd` and the parent gate saw only its own cost, so a coordinator
+  fanning out N concurrent subagents could spend (1+N)×maxBudgetUsd in one
+  prompt. A shared `familyBudget` ledger is threaded through the root loop and
+  every subagent loop; each loop adds its own cost and every gate trips on the
+  aggregate. Single-loop behavior is byte-identical.
+- **Security — WebFetch SSRF**: an IPv4-mapped IPv6 host (`[::ffff:169.254.169.254]`)
+  is normalized by the URL parser to hex before the guard runs, bypassing the
+  entire private/loopback/link-local/metadata IPv4 blocklist. The embedded IPv4
+  is now reconstructed and run through `ipv4Blocked`.
+- **P1**: memory×toolSearch registered ToolSearch into the wrong builtin map
+  (all deferred tools unreachable); a thinking-only assistant turn stripped to
+  `content:[]` and 400'd every later request (permanent session death); OpenAI
+  transport crashed on a zero-consumption `[DONE]` stream and dropped a
+  late-arriving tool_call id / split name; the concurrency gate ignored abort
+  while a request was queued; a PreCompact `decision:'deny'` vetoed the memory
+  flush but not the fold (memory loss); a refusal turn kept an orphan tool_use;
+  `run()` never closed the input pump on early exit (unbounded queue + caller
+  generator leak); `close()` aborted the caller's shared AbortController (killing
+  sibling queries — now a query-owned `life` controller); the `Bash(git:*)`
+  colon boundary matched a bare prefix (`git-crypt`, `github`); a stalled
+  background worker never notified its coordinator; a fork subagent inherited
+  only `systemPrompt` (breaking the shared-cache byte-match); a doubly-failed
+  fallback attempt's usage went unbilled.
+- **P2**: SSE parser accumulated one reaction per chunk on a never-settling abort
+  promise (megabytes on long streams — now cancels the reader); Bedrock
+  `apac.`/`global.`/`us-gov.` inference-profile prefixes priced at $0 (silently
+  unenforceable `maxBudgetUsd`); an `is_error` tool_result lost its failure
+  signal on the OpenAI protocol (now a `[tool error]` marker).
+
+Baseline 1786 → full suite green with +25 review regression tests; `tsc` +
+`build` exit 0. Deferred for keeper adjudication (documented in the PR): the
+SessionManager auto-resume resource/accounting semantics, the auto-mode
+`allowedTools` question, sandbox writable-dir sync, and a P2 long-tail.
+
+
 ## 0.48.0 — 2026-07-11
 
 **Memory governance P0 set (spec S1–S4, BPT-EXTENSION — docs/MEMORY-GOVERNANCE.md)**:

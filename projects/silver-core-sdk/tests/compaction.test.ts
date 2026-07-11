@@ -865,6 +865,22 @@ describe('maybeAutoCompact', () => {
     expect(view.messages).toEqual(snapshot);
   });
 
+  it('PreCompact decision:deny vetoes the fold too (not only continue:false)', async () => {
+    // A hook returning {continue:true, decision:'deny'} must cancel the fold,
+    // matching the memory-flush gate (which already honors deny) and the
+    // official hook semantics. Before the fix only continue:false vetoed, so a
+    // deny let the fold compact away the very progress a denied flush protects.
+    const deps = makeDeps({
+      hooks: makeHooks({ has: true, result: { continue: true, decision: 'deny' } }),
+    });
+    const config = makeConfig(smallWindow);
+    const view = { messages: bigHistory(12) };
+    const snapshot = [...view.messages];
+    const msgs = await collect(maybeAutoCompact(view, deps, config, 0, new AbortController().signal));
+    expect(msgs).toHaveLength(0);
+    expect(view.messages).toEqual(snapshot);
+  });
+
   it('PreCompact additionalContext flows into the fold instructions', async () => {
     const deps = makeDeps({
       hooks: makeHooks({ has: true, result: { additionalContext: ['FOCUS ON AUTH'] } }),

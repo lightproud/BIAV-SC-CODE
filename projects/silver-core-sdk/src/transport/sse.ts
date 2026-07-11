@@ -84,25 +84,26 @@ export async function* parseSSE(
     if (start > 0) buffer = start === buffer.length ? '' : buffer.slice(start);
   };
 
-  // Reject a pending read() promptly when the caller aborts; the underlying
-  // reader is cancelled in the finally block.
-  let onAbort: (() => void) | undefined;
-  const abortPromise = new Promise<never>((_, reject) => {
-    if (!signal) return;
-    onAbort = () => reject(new AbortError());
-    signal.addEventListener('abort', onAbort, { once: true });
-  });
-  // Pre-attach a handler so an abort that fires while no read is racing does
-  // not surface as an unhandled rejection.
-  abortPromise.catch(() => undefined);
+  // Wake a pending read() promptly on abort by CANCELLING the reader (which
+  // settles the in-flight read with done), rather than racing every read()
+  // against a shared never-settling abort promise. The race form attached a new
+  // reaction to that promise on EVERY chunk, and since the promise never settles
+  // until abort, V8 retained one closure per read — a long stream (hundreds of
+  // thousands of frames) accumulated megabytes, undoing the per-frame-timer
+  // savings on the transport side. This form allocates one listener for the
+  // whole stream. The reader is also cancelled in finally (idempotent).
+  let aborted = false;
+  const onAbort = (): void => {
+    aborted = true;
+    void reader.cancel().catch(() => undefined);
+  };
+  if (signal) signal.addEventListener('abort', onAbort, { once: true });
 
   try {
     if (signal?.aborted) throw new AbortError();
     for (;;) {
-      const result = signal
-        ? await Promise.race([reader.read(), abortPromise])
-        : await reader.read();
-      if (signal?.aborted) throw new AbortError();
+      const result = await reader.read();
+      if (aborted || signal?.aborted) throw new AbortError();
       if (result.done) break;
       buffer += decoder.decode(result.value, { stream: true });
       drainBuffer();
@@ -129,7 +130,7 @@ export async function* parseSSE(
       yield pending.shift() as SSEFrame;
     }
   } finally {
-    if (signal && onAbort) signal.removeEventListener('abort', onAbort);
+    if (signal) signal.removeEventListener('abort', onAbort);
     // Release the underlying stream whether we finished, threw, or the
     // consumer stopped iterating early.
     await reader.cancel().catch(() => undefined);

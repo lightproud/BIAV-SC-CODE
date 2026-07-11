@@ -565,6 +565,13 @@ describe('pricing', () => {
     expect(estimateCostUsd('us.anthropic.claude-opus-4-8', usage)).toBe(15);
     expect(estimateCostUsd('anthropic.claude-sonnet-4-5', usage)).toBe(3);
     expect(estimateCostUsd('claude-haiku-4-5@vertex', usage)).toBe(1);
+    // Cross-region inference-profile prefixes (NOT two letters) must price too,
+    // or maxBudgetUsd is silently unenforceable on them.
+    expect(estimateCostUsd('apac.anthropic.claude-opus-4-8', usage)).toBe(15);
+    expect(estimateCostUsd('global.anthropic.claude-sonnet-4-5', usage)).toBe(3);
+    expect(estimateCostUsd('us-gov.anthropic.claude-opus-4-8', usage)).toBe(15);
+    expect(hasPriceFor('apac.anthropic.claude-opus-4-8')).toBe(true);
+    expect(hasPriceFor('global.anthropic.claude-sonnet-4-5')).toBe(true);
   });
 
   it('S5: claude-fable-* prices instead of costing $0', () => {
@@ -1568,6 +1575,50 @@ describe('runAgentLoop', () => {
     expect(result.modelUsage['claude-fallback']!.inputTokens).toBe(50);
   });
 
+  it('folds the FALLBACK attempt usage into totals when it fails too', async () => {
+    class DoubleFailTransport implements Transport {
+      readonly requests: StreamRequest[] = [];
+      private call = 0;
+      apiKeySource(): ApiKeySource {
+        return 'user';
+      }
+      async *stream(req: StreamRequest): AsyncGenerator<RawMessageStreamEvent, void> {
+        this.requests.push(req);
+        const n = this.call++;
+        if (n === 0) {
+          // Primary attempt: bill 100 input tokens, then fail with a
+          // fallback-eligible status.
+          yield messageStart({ model: 'claude-primary', usage: { input_tokens: 100 } });
+          throw new APIStatusError(529, 'overloaded_error', 'overloaded');
+        }
+        // Fallback attempt: bill 60 input tokens, then fail terminally.
+        yield messageStart({ model: 'claude-fallback', usage: { input_tokens: 60 } });
+        throw new APIStatusError(500, 'api_error', 'server exploded');
+      }
+    }
+
+    const transport = new DoubleFailTransport();
+    const deps = makeDeps(transport);
+    const history: APIMessageParam[] = [{ role: 'user', content: 'go' }];
+
+    const messages = await collect(
+      runAgentLoop(
+        history,
+        deps,
+        makeConfig({ model: 'claude-primary', fallbackModel: 'claude-fallback' }),
+      ),
+    );
+
+    expect(transport.requests).toHaveLength(2);
+    const result = lastResult(messages);
+    expect(result.subtype).toBe('error_during_execution');
+    // BOTH doomed attempts' billed input tokens survive into the terminal
+    // report: 100 (primary) + 60 (fallback).
+    expect(result.usage.input_tokens).toBe(160);
+    expect(result.modelUsage['claude-primary']!.inputTokens).toBe(100);
+    expect(result.modelUsage['claude-fallback']!.inputTokens).toBe(60);
+  });
+
   // ----- BPT 2026-07-07: cross-model thinking-signature hygiene -----
 
   it('strips a cross-model CLOSED thinking block from the outgoing replay', async () => {
@@ -1692,6 +1743,26 @@ describe('runAgentLoop', () => {
     expect(result.subtype).toBe('error_during_execution');
     expect(result.is_error).toBe(true);
     expect((result as { error_code?: string }).error_code).toBe('refusal');
+  });
+
+  it('C5: a refusal turn drops any orphan tool_use from the persisted turn', async () => {
+    // A refusal (200, stop_reason:refusal) can still carry a completed tool_use.
+    // Persisting it unpaired 400s every later same-session request, so it must
+    // be filtered like the C6 natural-end path (text kept for context).
+    const events = toolUseReplyEvents('Read', { file_path: '/a' }, { leadingText: 'no' });
+    const md = events.find((e) => e.type === 'message_delta') as {
+      delta: { stop_reason: string };
+    };
+    md.delta.stop_reason = 'refusal';
+    const transport = new MockTransport([events]);
+    const deps = makeDeps(transport);
+    const history: APIMessageParam[] = [{ role: 'user', content: 'go' }];
+    const messages = await collect(runAgentLoop(history, deps, makeConfig()));
+    expect((lastResult(messages) as { error_code?: string }).error_code).toBe('refusal');
+    const persisted = history.find((m) => m.role === 'assistant')!;
+    const kinds = (persisted.content as ContentBlockParam[]).map((b) => b.type);
+    expect(kinds).not.toContain('tool_use'); // orphan dropped
+    expect(kinds).toContain('text'); // context kept
   });
 
   it('C6: a max_tokens orphan tool_use is dropped from the persisted turn', async () => {

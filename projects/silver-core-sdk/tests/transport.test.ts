@@ -299,6 +299,26 @@ describe('parseSSE', () => {
     );
     expect(err).toBeInstanceOf(AbortError);
   });
+
+  it('aborting mid-stream CANCELS the reader (wakes the pending read, no per-read race)', async () => {
+    // The abort path now cancels the reader instead of racing each read against
+    // a never-settling promise; cancelling wakes the in-flight read so the loop
+    // throws AbortError without hanging until the next chunk.
+    let cancelled = false;
+    const ac = new AbortController();
+    const gen = parseSSE(
+      hangingStream('data: one\n\n', () => {
+        cancelled = true;
+      }),
+      ac.signal,
+    );
+    expect((await gen.next()).value).toEqual({ data: 'one' });
+    const pending = gen.next(); // blocks on a read that never resolves on its own
+    ac.abort();
+    const err = await captureError(pending);
+    expect(err).toBeInstanceOf(AbortError);
+    expect(cancelled).toBe(true);
+  });
 });
 
 // ---------------------------------------------------------------------------

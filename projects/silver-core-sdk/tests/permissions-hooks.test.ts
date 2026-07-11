@@ -270,6 +270,16 @@ describe('ruleMatches', () => {
     expect(ruleMatches(rule, 'Bash', { command: 'npm test' })).toBe(false);
   });
 
+  it("the ':' boundary matches a WORD boundary, not a bare prefix (no over-grant)", () => {
+    const rule = parseRule('Bash(git:*)');
+    expect(ruleMatches(rule, 'Bash', { command: 'git' })).toBe(true);
+    expect(ruleMatches(rule, 'Bash', { command: 'git status' })).toBe(true);
+    // Same-prefix DIFFERENT binaries must NOT be granted by `git:*`.
+    expect(ruleMatches(rule, 'Bash', { command: 'git-crypt export /secret' })).toBe(false);
+    expect(ruleMatches(rule, 'Bash', { command: 'github-cli auth' })).toBe(false);
+    expect(ruleMatches(rule, 'Bash', { command: 'gitk' })).toBe(false);
+  });
+
   it('spec rule never matches when the primary arg is missing', () => {
     expect(ruleMatches(parseRule('Bash(ls*)'), 'Bash', {})).toBe(false);
     expect(ruleMatches(parseRule('Read(/tmp/*)'), 'Read', { offset: 3 })).toBe(false);

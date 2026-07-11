@@ -133,7 +133,11 @@ function primaryArg(
  * Semantics: exact match, or prefix match when the specifier ends with `*`
  * (strip the `*`, compare prefix). A `:*` suffix is a boundary marker in the
  * `Bash(npm run:*)` style: the `:` is not part of the command text, so the
- * prefix is also tried without it.
+ * command base is also tried — but ONLY at a WORD boundary. Matching the base
+ * as a bare prefix let `Bash(git:*)` allow `git-crypt export /secret` and
+ * `github-cli` (a real over-grant) and, symmetrically, weakened deny rules;
+ * the base must be the whole value or be followed by a space so `git` never
+ * matches `git-crypt`.
  */
 function specifierMatches(spec: string, value: string): boolean {
   if (spec === value) return true;
@@ -141,7 +145,8 @@ function specifierMatches(spec: string, value: string): boolean {
     const stem = spec.slice(0, -1);
     if (value.startsWith(stem)) return true;
     if (stem.endsWith(':')) {
-      return value.startsWith(stem.slice(0, -1));
+      const base = stem.slice(0, -1);
+      return value === base || value.startsWith(base + ' ');
     }
   }
   return false;

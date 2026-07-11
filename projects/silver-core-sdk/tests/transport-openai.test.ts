@@ -184,6 +184,28 @@ describe('encodeOpenAIRequest', () => {
     ]);
   });
 
+  it('marks an is_error tool_result so the model sees the failure (no OpenAI is_error field)', () => {
+    const body = encodeOpenAIRequest({
+      model: 'm',
+      max_tokens: 8,
+      messages: [
+        {
+          role: 'user',
+          content: [
+            { type: 'tool_result', tool_use_id: 't1', content: 'boom: exit 1', is_error: true },
+            { type: 'tool_result', tool_use_id: 't2', content: 'ok result' },
+            { type: 'tool_result', tool_use_id: 't3', content: '', is_error: true },
+          ],
+        },
+      ],
+    });
+    expect(body.messages).toEqual([
+      { role: 'tool', tool_call_id: 't1', content: '[tool error] boom: exit 1' },
+      { role: 'tool', tool_call_id: 't2', content: 'ok result' }, // success unchanged
+      { role: 'tool', tool_call_id: 't3', content: '[tool error]' },
+    ]);
+  });
+
   it('translates user image blocks to image_url data URLs', () => {
     const body = encodeOpenAIRequest({
       model: 'm',
@@ -353,6 +375,60 @@ describe('OpenAIStreamTranslator', () => {
     expect(msg.content).toEqual([
       { type: 'tool_use', id: 'call_a', name: 'Read', input: { file: '/a' } },
       { type: 'tool_use', id: 'call_b', name: 'Glob', input: {} },
+    ]);
+  });
+
+  // A tool-call delta chunk built without deep inline nesting (the embedded
+  // JSON braces in `arguments` make hand-counting the object literal error-prone).
+  const toolChunk = (
+    tc: { index?: number; id?: string; name?: string; arguments?: string },
+    finish = false,
+  ): OpenAIChunk => {
+    const fn: { name?: string; arguments?: string } = {};
+    if (tc.name !== undefined) fn.name = tc.name;
+    if (tc.arguments !== undefined) fn.arguments = tc.arguments;
+    const call: Record<string, unknown> = { function: fn };
+    if (tc.index !== undefined) call.index = tc.index;
+    if (tc.id !== undefined) call.id = tc.id;
+    const choice: Record<string, unknown> = { delta: { tool_calls: [call] } };
+    if (finish) choice.finish_reason = 'tool_calls';
+    return { id: 'c', choices: [choice] } as OpenAIChunk;
+  };
+
+  it('accumulates a tool id that arrives in a LATER chunk than the block open', () => {
+    // A fragmenting gateway opens the tool call with name+args but NO id, then
+    // sends the real id in the next chunk. The real id must win — not a synthetic
+    // one — or the server rejects the follow-up tool_call_id with a 400.
+    const t = new OpenAIStreamTranslator('m');
+    const events = [
+      ...t.feed(toolChunk({ index: 0, name: 'Read', arguments: '{"a":' })),
+      ...t.feed(toolChunk({ index: 0, id: 'call_REAL', arguments: '1}' })),
+      ...t.feed({ choices: [{ delta: {}, finish_reason: 'tool_calls' }] }),
+      ...t.finish(),
+    ];
+    const acc = new MessageAccumulator();
+    for (const ev of events) acc.feed(ev);
+    const msg = acc.finalize();
+    expect(msg.content).toEqual([
+      { type: 'tool_use', id: 'call_REAL', name: 'Read', input: { a: 1 } },
+    ]);
+  });
+
+  it('joins a tool name split across chunks that precede the id', () => {
+    // Name fragments accumulate while the block is still pending (no id yet);
+    // the block is emitted with the full name once the id-bearing chunk lands.
+    const t = new OpenAIStreamTranslator('m');
+    const events = [
+      ...t.feed(toolChunk({ index: 0, name: 'get_' })),
+      ...t.feed(toolChunk({ index: 0, id: 'call_x', name: 'weather', arguments: '{}' })),
+      ...t.feed({ choices: [{ delta: {}, finish_reason: 'tool_calls' }] }),
+      ...t.finish(),
+    ];
+    const acc = new MessageAccumulator();
+    for (const ev of events) acc.feed(ev);
+    const msg = acc.finalize();
+    expect(msg.content).toEqual([
+      { type: 'tool_use', id: 'call_x', name: 'get_weather', input: {} },
     ]);
   });
 
@@ -863,6 +939,48 @@ describe('OpenAIChatTransport empty-stream retry (idealab throttle self-heal)', 
     const events = await collect(transport.stream(REQ));
     expect(events.at(-1)?.type).toBe('message_stop');
     expect(fetchMock).toHaveBeenCalledTimes(2);
+  });
+
+  it('treats a bare [DONE] with ZERO chunks as an empty stream (heals on retry, not a raw crash)', async () => {
+    // A gateway that accepts the request then closes the SSE body with only
+    // `data: [DONE]` (no content chunks). The translator never started, so the
+    // old code called finish() -> raw "ended before any chunk" throw with no
+    // replay-safe marker. It must instead route through the empty-stream retry,
+    // exactly like the no-terminator empty stream, and heal on the next attempt.
+    vi.spyOn(Math, 'random').mockReturnValue(0);
+    const doneOnly = (): Response =>
+      new Response(streamFromChunks(['[DONE]']), {
+        status: 200,
+        headers: { 'content-type': 'text/event-stream' },
+      });
+    const fetchMock = vi
+      .fn()
+      .mockResolvedValueOnce(doneOnly()) // 200, only [DONE] -> replay-safe non-start
+      .mockResolvedValueOnce(okStream(TEXT_CHUNKS)); // healed
+    vi.stubGlobal('fetch', fetchMock);
+    const transport = new OpenAIChatTransport({ provider: { apiKey: 'k' }, env: { BPT_HTTP_CLIENT: 'fetch' }, debug: noop });
+    const events = await collect(transport.stream(REQ));
+    expect(events.at(-1)?.type).toBe('message_stop');
+    expect(fetchMock).toHaveBeenCalledTimes(2);
+  });
+
+  it('a persistent bare-[DONE] empty stream exhausts into a diagnosable empty_stream error', async () => {
+    vi.spyOn(Math, 'random').mockReturnValue(0);
+    const doneOnly = (): Response =>
+      new Response(streamFromChunks(['[DONE]']), {
+        status: 200,
+        headers: { 'content-type': 'text/event-stream' },
+      });
+    const fetchMock = vi.fn().mockResolvedValueOnce(doneOnly()).mockResolvedValueOnce(doneOnly());
+    vi.stubGlobal('fetch', fetchMock);
+    const transport = new OpenAIChatTransport({
+      provider: { apiKey: 'k', maxRetries: 1 },
+      env: { BPT_HTTP_CLIENT: 'fetch' },
+      debug: noop,
+    });
+    const err = (await captureError(collect(transport.stream(REQ)))) as APIConnectionError;
+    expect(err).toBeInstanceOf(APIConnectionError);
+    expect(err.code).toBe('empty_stream');
   });
 
   it('never returns normally on an empty stream: persistent empties exhaust the budget into an empty_stream APIConnectionError', async () => {

@@ -379,6 +379,12 @@ export async function* runAgentLoop(
     totalUsage = addUsage(totalUsage, usage);
     const cost = estimateCostUsd(responseModel, usage, config.cacheTtl, config.pricing);
     totalCostUsd += cost;
+    // Add THIS loop's own spend to the shared family ceiling (root + every
+    // subagent loop reference the same object), so the aggregate budget gate
+    // below sees concurrent-child spend the parent's own totalCostUsd never
+    // carries. Bumped once per billed attempt here — the single site all of
+    // the loop's own cost flows through.
+    if (deps.familyBudget !== undefined) deps.familyBudget.spentUsd += cost;
     const prev = modelUsage[responseModel];
     modelUsage[responseModel] = {
       inputTokens: (prev?.inputTokens ?? 0) + usage.input_tokens,
@@ -395,6 +401,28 @@ export async function* runAgentLoop(
       contextWindow: contextWindowFor(responseModel),
       maxOutputTokens: config.maxOutputTokens,
     };
+  };
+
+  /**
+   * The reason string when the budget is spent, else undefined. Checks the
+   * per-loop self-cap FIRST (so a childless single loop reports the exact same
+   * message it always did — the self path is byte-identical), then the shared
+   * family ceiling (only reachable when concurrent subagent spend has pushed
+   * the aggregate past the absolute cap). Consulted at every point the loop is
+   * about to make ANOTHER billable API call.
+   */
+  const budgetStopReason = (): string | undefined => {
+    if (config.maxBudgetUsd !== undefined && totalCostUsd > config.maxBudgetUsd) {
+      return `Estimated cost $${totalCostUsd.toFixed(6)} exceeded maxBudgetUsd ($${config.maxBudgetUsd})`;
+    }
+    const fb = deps.familyBudget;
+    if (fb !== undefined && fb.spentUsd > fb.capUsd) {
+      return (
+        `Estimated agent-tree cost $${fb.spentUsd.toFixed(6)} exceeded ` +
+        `maxBudgetUsd ($${fb.capUsd}) across the subagent family`
+      );
+    }
+    return undefined;
   };
 
   /**
@@ -981,7 +1009,21 @@ export async function* runAgentLoop(
             // The retry emits its OWN message_start; downstream consumers of
             // includePartialMessages must treat a fresh message_start as
             // superseding the discarded attempt's partial stream_events.
-            assistant = yield* streamAttempt(model, turnToolDefs); // 2nd failure -> outer catch
+            // The fallback attempt gets its own usage sink: if IT fails too,
+            // the tokens it burned (its message_start already billed the
+            // prompt) must reach the totals the terminal error result reports,
+            // exactly as the first attempt's sink was folded above. A caller
+            // abort keeps the plain throw-through — no result is produced, so
+            // there is no report to keep honest.
+            const fallbackSink: UsageSink = {};
+            try {
+              assistant = yield* streamAttempt(model, turnToolDefs, fallbackSink);
+            } catch (fallbackErr) {
+              if (!isAbortError(fallbackErr) && fallbackSink.usage !== undefined) {
+                recordUsage(model, fallbackSink.usage);
+              }
+              throw fallbackErr; // 2nd failure -> outer catch
+            }
             break;
           }
           throw err;
@@ -1079,7 +1121,15 @@ export async function* runAgentLoop(
       // fed into the structured-output retry loop below). error_code 'refusal'
       // lets a host classify + opt into a fallback. Partial content is dropped.
       if (assistant.stop_reason === 'refusal') {
-        pushAssistant(assistant.content, assistant.model);
+        // Apply the C6 orphan filter (as natural-end / structured-invalid /
+        // bg-drain do): a refusal can carry a COMPLETED but unexecuted tool_use,
+        // and persisting it unpaired 400s every later same-session request with
+        // "tool_use ids without tool_result". Keep any text/thinking for context,
+        // drop the orphan tool_use.
+        pushAssistant(
+          assistant.content.filter((b) => b.type !== 'tool_use'),
+          assistant.model,
+        );
         deps.debug('engine: model declined (stop_reason: refusal)');
         yield errorResult(
           'error_during_execution',
@@ -1117,17 +1167,14 @@ export async function* runAgentLoop(
         // stream shape (assistant tool_use -> result/error_max_budget_usd);
         // the persisted trailing assistant tool_use is healed on resume by
         // the session store's repairPairing.
-        if (config.maxBudgetUsd !== undefined && totalCostUsd > config.maxBudgetUsd) {
+        const preToolBudgetStop = budgetStopReason();
+        if (preToolBudgetStop !== undefined) {
           pushAssistant(assistant.content, assistant.model);
           deps.debug(
             `engine: budget pre-stop - ${toolUses.length} requested tool call(s) ` +
-              `not executed (estimated cost $${totalCostUsd.toFixed(6)} > ` +
-              `maxBudgetUsd $${config.maxBudgetUsd})`,
+              `not executed (${preToolBudgetStop})`,
           );
-          yield errorResult(
-            'error_max_budget_usd',
-            `Estimated cost $${totalCostUsd.toFixed(6)} exceeded maxBudgetUsd ($${config.maxBudgetUsd})`,
-          );
+          yield errorResult('error_max_budget_usd', preToolBudgetStop);
           return;
         }
         const results: ToolResultBlockParam[] = [];
@@ -1278,11 +1325,9 @@ export async function* runAgentLoop(
         }
         // Budget gate: only fires when about to CONTINUE the loop with another
         // billable API call (a completed answer above is never voided here).
-        if (config.maxBudgetUsd !== undefined && totalCostUsd > config.maxBudgetUsd) {
-          yield errorResult(
-            'error_max_budget_usd',
-            `Estimated cost $${totalCostUsd.toFixed(6)} exceeded maxBudgetUsd ($${config.maxBudgetUsd})`,
-          );
+        const continueBudgetStop = budgetStopReason();
+        if (continueBudgetStop !== undefined) {
+          yield errorResult('error_max_budget_usd', continueBudgetStop);
           return;
         }
         continue;
@@ -1320,11 +1365,9 @@ export async function* runAgentLoop(
             yield errorResult('error_max_turns', `Reached maxTurns limit (${config.maxTurns})`);
             return;
           }
-          if (config.maxBudgetUsd !== undefined && totalCostUsd > config.maxBudgetUsd) {
-            yield errorResult(
-              'error_max_budget_usd',
-              `Estimated cost $${totalCostUsd.toFixed(6)} exceeded maxBudgetUsd ($${config.maxBudgetUsd})`,
-            );
+          const budgetStop = budgetStopReason();
+          if (budgetStop !== undefined) {
+            yield errorResult('error_max_budget_usd', budgetStop);
             return;
           }
           // Push the corrective turn to BOTH history (persistence + query scan)
@@ -1370,11 +1413,9 @@ export async function* runAgentLoop(
             );
             return;
           }
-          if (config.maxBudgetUsd !== undefined && totalCostUsd > config.maxBudgetUsd) {
-            yield errorResult(
-              'error_max_budget_usd',
-              `Estimated cost $${totalCostUsd.toFixed(6)} exceeded maxBudgetUsd ($${config.maxBudgetUsd})`,
-            );
+          const budgetStop = budgetStopReason();
+          if (budgetStop !== undefined) {
+            yield errorResult('error_max_budget_usd', budgetStop);
             return;
           }
           continue;
@@ -1429,11 +1470,9 @@ export async function* runAgentLoop(
             );
             return;
           }
-          if (config.maxBudgetUsd !== undefined && totalCostUsd > config.maxBudgetUsd) {
-            yield errorResult(
-              'error_max_budget_usd',
-              `Estimated cost $${totalCostUsd.toFixed(6)} exceeded maxBudgetUsd ($${config.maxBudgetUsd})`,
-            );
+          const budgetStop = budgetStopReason();
+          if (budgetStop !== undefined) {
+            yield errorResult('error_max_budget_usd', budgetStop);
             return;
           }
           continue;

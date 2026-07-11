@@ -176,6 +176,11 @@ export type SubagentRuntimeOptions = {
   readFilePaths?: Set<string>;
   /** Formal per-query WeakMap key threaded into child contexts (F6). */
   sessionKey?: object;
+  /** Aggregate agent-tree budget ceiling (P0 fix): the SAME object the root
+   *  loop holds, threaded into every child loop so the whole family shares one
+   *  spend total and one cap — a child cannot spend past the family ceiling
+   *  even though it is handed a full copy of the per-loop maxBudgetUsd. */
+  familyBudget?: { spentUsd: number; capUsd: number };
   /** S3 structured tool-call records: the parent query's recorder. Children
    *  forward every dispatched call with parentToolUseId stamped, so the
    *  session audit trail covers subagent tool calls too. */
@@ -1028,6 +1033,36 @@ export function createSubagentRuntime(
         // stable correlation id (the child agentId) when the tool passed none.
         parentToolUseId:
           params.toolUseId !== '' ? params.toolUseId : agentId,
+        // FORK inherits the parent's FULL system + compaction shape. Fork's whole
+        // point is a byte-identical prefix so the child reads the parent's warm
+        // cache instead of re-billing the shared history cold; inheriting only
+        // `systemPrompt` broke that (the default preset carries its instructions
+        // in systemPromptSuffix, and a segments host puts EVERYTHING in
+        // systemBlocks with an empty systemPrompt — a fork then had no system at
+        // all). Not inherited on purpose: serverTools (the memory tool is
+        // root-only in v1, so a child must not advertise a tool it cannot run).
+        ...(forkActive
+          ? {
+              ...(engineConfig.systemPromptSuffix !== undefined
+                ? { systemPromptSuffix: engineConfig.systemPromptSuffix }
+                : {}),
+              ...(engineConfig.systemPromptBaseLen !== undefined
+                ? { systemPromptBaseLen: engineConfig.systemPromptBaseLen }
+                : {}),
+              ...(engineConfig.systemBlocks !== undefined
+                ? { systemBlocks: engineConfig.systemBlocks }
+                : {}),
+              ...(engineConfig.systemComposition !== undefined
+                ? { systemComposition: engineConfig.systemComposition }
+                : {}),
+              ...(engineConfig.cacheTtl !== undefined
+                ? { cacheTtl: engineConfig.cacheTtl }
+                : {}),
+              ...(engineConfig.compaction !== undefined
+                ? { compaction: engineConfig.compaction }
+                : {}),
+            }
+          : {}),
       };
 
       const childController = new AbortController();
@@ -1066,6 +1101,12 @@ export function createSubagentRuntime(
         hooks,
         toolContext: childToolContext,
         debug,
+        // Share the aggregate agent-tree budget ceiling: this child's own
+        // billed cost lands in the same spentUsd the root loop and its sibling
+        // children see, so no branch of the tree can exceed maxBudgetUsd in
+        // aggregate (P0 fix — the per-loop maxBudgetUsd self-cap only bounds one
+        // loop in isolation).
+        ...(opts.familyBudget !== undefined ? { familyBudget: opts.familyBudget } : {}),
         // S3: forward the parent recorder with the spawning Task tool_use id
         // stamped, so the session audit trail attributes child tool calls.
         ...(opts.onToolRecord !== undefined
@@ -1166,6 +1207,22 @@ export function createSubagentRuntime(
                 : err instanceof Error
                   ? err.message
                   : String(err);
+              // The model ONLY ever sees completedBuffer (drained onto a later
+              // tool_result turn); the emitTask events below are host-visible
+              // observability only. Without a completedBuffer entry a stalled or
+              // crashed BACKGROUND worker never reaches its coordinator — whose
+              // prompt says "workers will notify you when they are done" — so the
+              // coordinator waits forever. Surface the failure to the model too
+              // (intentional stopTask/close aborts are excluded by the guard).
+              completedBuffer.push({
+                type: 'text',
+                text: formatTaskNotification({
+                  agentId,
+                  status: 'failed',
+                  summary: `Agent "${taskDescription}" failed: ${resultPreview(message)}`,
+                  result: message,
+                }),
+              });
               emitTask({
                 type: 'system',
                 subtype: 'task_updated',

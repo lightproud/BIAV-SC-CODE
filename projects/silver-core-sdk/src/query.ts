@@ -271,6 +271,15 @@ export function query(args: {
 
   // --- Collaborators ---------------------------------------------------------
   const outer = options.abortController ?? new AbortController();
+  // Query-OWNED lifetime controller. close() aborts THIS, never `outer`: when
+  // the caller passes their own AbortController (a supported pattern — one
+  // controller can drive several sibling queries, or a SessionManager threads
+  // one into every session), close()-ing one query must not abort the caller's
+  // controller and take the siblings down with it. Cancellation propagates
+  // through `lifeSignal`, the union of the caller's signal and this one, so an
+  // outer abort still cancels everything AND close() cancels only this query.
+  const life = new AbortController();
+  const lifeSignal = AbortSignal.any([outer.signal, life.signal]);
   // S2 incognito: zero SDK-side persistence. Forces the transcript writes off
   // (below), degrades memory to read-only (resolveMemoryRuntime), disables the
   // R7 write rounds and suppresses S3 tool-call records (all persist-gated).
@@ -414,6 +423,18 @@ export function query(args: {
         `${sandboxCtx.allowEscape ? 'allowed' : 'mandatory'})`,
     );
   }
+
+  // Aggregate (agent-tree) budget ceiling shared by the root loop AND every
+  // subagent loop, so a coordinator that fans out N concurrent children cannot
+  // spend (1+N)×maxBudgetUsd in one prompt (each child is otherwise handed a
+  // full copy of the cap and the parent's own gate never sees child spend).
+  // capUsd is the absolute option; spentUsd accumulates cumulatively across
+  // the whole query, so for a childless loop the family gate trips at the same
+  // point as the per-loop self-cap (identical behavior). Absent when unbudgeted.
+  const familyBudget =
+    options.maxBudgetUsd !== undefined
+      ? { spentUsd: 0, capUsd: options.maxBudgetUsd }
+      : undefined;
 
   // Read-before-write gate state (E4): one shared Set per query. The subagent
   // runtime threads the SAME reference into child contexts (like shells /
@@ -656,7 +677,7 @@ export function query(args: {
     env,
     additionalDirectories: options.additionalDirectories ?? [],
     fallbackModel: options.fallbackModel,
-    outerSignal: outer.signal,
+    outerSignal: lifeSignal,
     sessionId: () => resolvedSessionId,
     debug,
     emitObservability: emitObs,
@@ -664,6 +685,7 @@ export function query(args: {
     sandbox: sandboxCtx,
     readFilePaths,
     sessionKey: toolSessionKey,
+    familyBudget,
     onToolRecord: persistToolRecord,
   });
 
@@ -954,7 +976,7 @@ export function query(args: {
           interruptRequested = false;
           turnController.abort(new AbortError('The turn was interrupted'));
         }
-        const turnSignal = AbortSignal.any([outer.signal, turnController.signal]);
+        const turnSignal = AbortSignal.any([lifeSignal, turnController.signal]);
         const toolContext: ToolContext = {
           // EnterWorktree survives turn-boundary context rebuilds: the session
           // state is keyed on the shared readFilePaths Set, so the per-turn
@@ -1007,6 +1029,8 @@ export function query(args: {
           requestView,
           drainSubagentResults: () => subagentRuntime.drainCompletedResults(),
           drainObservability,
+          // Aggregate agent-tree budget ceiling, shared with every subagent loop.
+          ...(familyBudget !== undefined ? { familyBudget } : {}),
           // S3: root-loop tool-call records (children record via the runtime).
           onToolRecord: persistToolRecord,
           // Memory spec R8: metrics.memoryHealth snapshot source (root only).
@@ -1116,7 +1140,10 @@ export function query(args: {
             }
           }
           if (isAbortError(err)) {
-            if (outer.signal.aborted) {
+            // A caller abort OR a close() (life) ends the whole run; only a
+            // per-turn interrupt() (turnController, neither of the above) is a
+            // recoverable turn-level cancel.
+            if (lifeSignal.aborted) {
               throw err instanceof AbortError ? err : new AbortError();
             }
             // Turn-level interrupt(): streaming mode keeps accepting input;
@@ -1157,7 +1184,7 @@ export function query(args: {
           },
           undefined,
           source,
-          outer.signal,
+          lifeSignal,
         );
         for (const m of agg.systemMessages) debug(`SessionStart hook: ${m}`);
         sessionStartContext = [...agg.additionalContext];
@@ -1173,10 +1200,21 @@ export function query(args: {
       }
       // Tool-search: decide activation now that tools are known; when active,
       // register the ToolSearch builtin so the model can load deferred schemas.
+      // Register into mainLoopBuiltins — the map the engine (deps.builtinTools)
+      // AND the init message actually consume — not the original builtinTools.
+      // When memory is enabled the two diverge (mainLoopBuiltins is a clone,
+      // see its construction above): writing to builtinTools then left the
+      // ToolSearch tool STRANDED, so with memory + tool-search both on, every
+      // deferred built-in and MCP tool became permanently unreachable (init
+      // never advertised ToolSearch and the dispatcher could not find it).
+      // ToolSearch is a main-loop-only tool (it closes over the main loop's
+      // deferred registry, which subagents do not have), exactly like the
+      // memory tool, so mainLoopBuiltins is the correct — and, when memory is
+      // off, reference-identical — home for it.
       if (deferred !== null) {
         deferred.activateIfNeeded(options.toolSearch);
         if (deferred.isActive()) {
-          builtinTools.set('ToolSearch', makeToolSearchTool(deferred));
+          mainLoopBuiltins.set('ToolSearch', makeToolSearchTool(deferred));
         }
       }
       const initMessage: SDKSystemMessage = {
@@ -1337,7 +1375,7 @@ export function query(args: {
             },
             undefined,
             undefined,
-            outer.signal,
+            lifeSignal,
           );
           for (const m of agg.systemMessages) debug(`UserPromptSubmit hook: ${m}`);
           if (!agg.continue || agg.decision === 'deny') {
@@ -1450,7 +1488,7 @@ export function query(args: {
         memory !== null &&
         memory.sessionEndUpdate &&
         acct.turns > 0 &&
-        !outer.signal.aborted
+        !lifeSignal.aborted
       ) {
         try {
           const endParam: APIMessageParam = {
@@ -1487,6 +1525,14 @@ export function query(args: {
       throw err;
     } finally {
       turnController = null;
+      // Stop the input pump on EVERY exit path, not only close()/outer-abort:
+      // a streaming-input consumer that breaks its for-await, or an internal
+      // early return (maxTurns / maxBudget / SessionStart block), otherwise
+      // leaves pump() forever pulling the caller's async iterator into an
+      // unbounded queue — the caller's generator finally never runs. Closing
+      // the queue makes the next queue.push() return false so pump() breaks and
+      // calls the source's return(). Idempotent with close()'s queue.fail().
+      queue.close();
       // Remove the outer-abort listener so reusing one AbortController across
       // many queries does not accumulate a listener per query (finding #16).
       outer.signal.removeEventListener('abort', onOuterAbort);
@@ -1735,7 +1781,12 @@ export function query(args: {
       // finally block does not race a different reason in.
       void fireSessionEnd('close');
       queue.fail(reason);
-      if (!outer.signal.aborted) outer.abort(reason);
+      // Abort the query-OWNED lifetime controller, never the caller's `outer`:
+      // aborting `outer` here would fire every sibling query that shares the
+      // caller's AbortController (finding: close() must not take siblings down).
+      // lifeSignal is the union of outer + life, so this still cancels this
+      // query's turns/subagents/hooks.
+      if (!life.signal.aborted) life.abort(reason);
       subagentRuntime.abortAll();
       void inner.return(undefined).catch(() => undefined);
       // Ownership contract: only close a registry this query constructed. A
