@@ -75,12 +75,13 @@
   - [x] **note_com 已修复**：真因 = `/api/v3/searches` 已对非浏览器请求一律 403（浏览器头
     与 cloudscraper 均被拒）。改走 hashtag RSS（`/hashtag/忘却前夜/rss`），本地实测 25 条；
     RSS 无互动指标 → engagement 恒 0（同 weixin 已知限制）
-  - [x] **arca_live 改走 CC 例程日采（守密人 2026-07-10 裁定方案 2 过渡桥）**：CI 基础
-    设施性封锁（Cloudflare 拦 GitHub Actions 机房 IP——HTTP 403 / PW 挑战页超时 /
-    App API 403 三路全堵），银芯 CC 云环境出口实测畅通。每日一次 fresh-session 例程
-    调用单脚本 `projects/news/scripts/collect_arca_daily.py`（采集 → 按日归档 →
-    [skip ci] 提交推送，响亮失败；健康兜底 = 沉默源审计 arca_live 断更 >7d 告警）。
-    首采 86 条 / 10 日期桶已入 `Record/Community/arca_live/`。GC 编排尝试保留——
+  - [x] **arca_live 改走 CC 例程日采（守密人 2026-07-10 裁定方案 2 过渡桥；07-11 起
+    自绑定模式）**：CI 基础设施性封锁（Cloudflare 拦 GitHub Actions 机房 IP——HTTP 403 /
+    PW 挑战页超时 / App API 403 三路全堵），银芯 CC 云环境出口实测畅通。每日 02:37 UTC
+    例程点火进主会话，运行单脚本 `projects/news/scripts/collect_arca_daily.py`（采集 →
+    按日归档 → [skip ci] 提交推送，响亮失败；健康兜底 = 沉默源审计 arca_live 断更 >7d
+    告警）。fresh-session 模式两连败退役（安全误判 + 空环境，见 lesson #48）。
+    首日两轮实采 87 条 / 10 日期桶已入 `Record/Community/arca_live/`。GC 编排尝试保留——
     CF 若放行 Actions 则正常路径自动恢复、例程可退役
   - [~] **twitter 挂账未来再议**（守密人 2026-07-10 裁定，覆盖节拍表决议④的 07-19 期限）：
     免 key syndication 路径已 429 全灭，源保持注册静默空转。挂账见 `memory/todo.md` #T9
