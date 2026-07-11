@@ -1,4 +1,4 @@
-# 入口文档 + 子项目上下文 + 藏宝图 + 设计/工程文档 (24)
+# 入口文档 + 子项目上下文 + 藏宝图 + 设计/工程文档 (25)
 
 仓库最高权威入口（CLAUDE.md / README.md）+ 各子项目 CONTEXT.md（动手前必读）+ RELEASES.md 藏宝图 + silver-core-sdk/site 设计文档 + 工程文档 + 归档注册表的导航指针。
 
@@ -18,6 +18,7 @@
 * [silver-core-sdk MIGRATION](/projects/silver-core-sdk-doc-migration.md) - Audience: the BPT Desktop (Electron) codebase currently importing the official
 * [silver-core-sdk ONBOARDING](/projects/silver-core-sdk-doc-onboarding.md) - Goal: get a new maintainer from zero to "I can make a change safely and prove
 * [silver-core-sdk OPENAI-PROTOCOL](/projects/silver-core-sdk-doc-openai-protocol.md) - The SDK can drive an **OpenAI-compatible Chat Completions endpoint** instead of
+* [silver-core-sdk PERFORMANCE](/projects/silver-core-sdk-doc-performance.md) - What the SDK controls about response time, what it already does by default,
 * [silver-core-sdk POSITIONING](/projects/silver-core-sdk-doc-positioning.md) - **Silver Core SDK = 一套稳定兼容的调用「表面」 + 一个我们完全掌控、比原版更简单更可靠的独立「引擎」。**
 * [silver-core-sdk RESILIENCE](/projects/silver-core-sdk-doc-resilience.md) - Audience: consumers running this SDK over imperfect links (corporate
 * [silver-core-sdk SUBAGENTS](/projects/silver-core-sdk-doc-subagents.md) - Goal: wire a host (BPT) to the SDK's subagent surface the way Claude Code uses
