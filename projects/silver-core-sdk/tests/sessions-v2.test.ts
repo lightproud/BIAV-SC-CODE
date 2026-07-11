@@ -565,6 +565,28 @@ describe('session helpers (local)', () => {
     expect((msgs[1]?.uuid ?? '').length).toBeGreaterThan(0);
   });
 
+  it('latestSessionId and list() skip a subagent sidechain transcript (even if newest)', async () => {
+    const store = new JsonlSessionStore({ sessionDir: dir });
+    // A real main session, then a NEWER sidechain (a background child that
+    // finished after the parent's last write).
+    seedLocalSession('main-1', [
+      { type: 'meta', sessionId: 'main-1', createdAt: 1 },
+      { type: 'user', uuid: 'm-u', session_id: 'main-1', parent_tool_use_id: null, message: { role: 'user', content: 'hi' } },
+    ]);
+    await new Promise((r) => setTimeout(r, 10)); // ensure a later mtime
+    seedLocalSession('agent-xyz', [
+      { type: 'sidechain_start', agentId: 'agent-xyz', agent_type: 'general-purpose', fork: false },
+      { type: 'assistant', uuid: 's-a', message: { role: 'assistant', content: 'child work' } },
+    ]);
+    // continue:true resolves to latestSessionId — it must be the MAIN session,
+    // not the newer sidechain.
+    expect(await store.latestSessionId()).toBe('main-1');
+    // ...and list() must not surface the sidechain as a resumable session.
+    const ids = (await store.list()).map((s) => s.sessionId);
+    expect(ids).toContain('main-1');
+    expect(ids).not.toContain('agent-xyz');
+  });
+
   it('renameSession and tagSession append meta_update entries', async () => {
     seedLocalSession('s2', [{ type: 'meta', sessionId: 's2' }]);
     await renameSession('s2', 'My Title', { sessionDir: dir });
@@ -608,6 +630,36 @@ describe('session helpers (local)', () => {
     expect(lines[1].session_id).toBe(newId);
     expect(lines[1].uuid).not.toBe('orig-1');
     expect(typeof lines[1].uuid).toBe('string');
+  });
+
+  it('forkSession keeps the pending_turn<->turn_complete pairing consistent', async () => {
+    // A settled turn: user -> pending_turn(turn_ref=user) -> turn_complete(pending_uuid=pending).
+    // The fork rewrites every uuid, but the cross-references must be remapped to
+    // match — else the checkpoint reads as a dangling (interrupted) turn and a
+    // resume phantom-redrives an already-completed request.
+    seedLocalSession('s5', [
+      { type: 'meta', sessionId: 's5', createdAt: 1 },
+      { type: 'user', uuid: 'u-1', session_id: 's5', parent_tool_use_id: null, message: { role: 'user', content: 'hi' } },
+      { type: 'pending_turn', uuid: 'p-1', timestamp: 2, turn_ref: 'u-1' },
+      { type: 'assistant', uuid: 'a-1', session_id: 's5', message: { role: 'assistant', content: 'ok' } },
+      { type: 'turn_complete', uuid: 'c-1', timestamp: 3, pending_uuid: 'p-1' },
+    ]);
+    const newId = await forkSession('s5', { sessionDir: dir });
+    const raw = await readFile(join(dir, `${newId}.jsonl`), 'utf8');
+    const lines = raw.trim().split('\n').map((l) => JSON.parse(l));
+    const user = lines.find((l) => l.type === 'user');
+    const pending = lines.find((l) => l.type === 'pending_turn');
+    const complete = lines.find((l) => l.type === 'turn_complete');
+    // All uuids were rewritten (fresh identity)...
+    expect(pending.uuid).not.toBe('p-1');
+    expect(user.uuid).not.toBe('u-1');
+    // ...but the cross-references now point at the NEW uuids, so the pair still
+    // resolves: turn_complete settles pending_turn, pending_turn refs the user.
+    expect(complete.pending_uuid).toBe(pending.uuid);
+    expect(pending.turn_ref).toBe(user.uuid);
+    // The forked session therefore loads as NOT interrupted (the pair resolves).
+    const loaded = await new JsonlSessionStore({ sessionDir: dir, env: {} }).load(newId);
+    expect(loaded?.pendingTurnInterrupted).not.toBe(true);
   });
 });
 

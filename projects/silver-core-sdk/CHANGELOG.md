@@ -16,6 +16,29 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.48.2 — 2026-07-11
+
+**World-class review pass (cont.), session-integrity batch**:
+
+- **forkSession keeps the write-ahead checkpoint pairing consistent**: the fork
+  minted a fresh uuid for every record but left the cross-references
+  (`turn_complete.pending_uuid` → the pending_turn's uuid, `pending_turn.turn_ref`
+  → the user message's uuid) pointing at the OLD uuids. A forked session then
+  read as a permanently-interrupted turn (bad list/getSessionInfo metadata), and
+  a source ending on a user turn phantom-redrove an already-completed request (a
+  duplicate billed API call) on resume. A single old→new uuid map now rewrites
+  the record uuids AND their references together.
+- **`continue: true` never resurrects a subagent sidechain**: `latestSessionId`
+  (and `list()`/`getSessionInfo`) scanned every `.jsonl` by mtime, not
+  distinguishing a main session from a subagent sidechain transcript. A
+  background child that finished after the parent's last write became the newest
+  file, so "resume the most recent session" loaded a `sidechain_start`-marked
+  transcript that holds only assistant turns — repairPairing then welded it into
+  a garbled conversation. Both discovery paths now skip a transcript whose first
+  record is `sidechain_start`.
+
++2 regression tests.
+
 ## 0.48.1 — 2026-07-11
 
 **World-class review pass — six-track audit fixes** (one consolidated entry; the
