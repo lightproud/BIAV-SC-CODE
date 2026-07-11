@@ -94,5 +94,52 @@ class TestPipeline(unittest.TestCase):
                          [p["id"] for p in r2["per_question"]])
 
 
+class TestCLIMain(unittest.TestCase):
+    """CLI 入口 / 报告渲染冒烟——恒 stub 后端（main 的 --backend 默认即 stub），零网络。"""
+
+    @staticmethod
+    def _run_main(argv):
+        import contextlib
+        import io
+        from unittest import mock
+
+        out, err = io.StringIO(), io.StringIO()
+        with mock.patch.object(sys, "argv", argv), \
+                contextlib.redirect_stdout(out), contextlib.redirect_stderr(err):
+            rc = sab.main()
+        return rc, out.getvalue(), err.getvalue()
+
+    def test_main_default_prints_rates_and_returns_0(self):
+        rc, out, _err = self._run_main(["kb_semantic_ab.py"])
+        self.assertEqual(rc, 0)
+        self.assertIn("[semantic-ab] backend=stub", out)
+        for key in ("vector_hit_rate", "grep_hit_rate", "grep_strong_hit_rate",
+                    "spine_hit_rate", "vector_exclusive_win_rate", "vector_mrr"):
+            self.assertIn(key, out)
+
+    def test_main_json_machine_readable(self):
+        import json
+
+        rc, out, _err = self._run_main(["kb_semantic_ab.py", "--json", "--k", "3"])
+        self.assertEqual(rc, 0)
+        rep = json.loads(out)
+        self.assertEqual(rep["backend"], "stub")
+        self.assertEqual(rep["k"], 3)
+        self.assertIn("per_question", rep)
+
+    def test_main_assert_win_gate_fails_on_stub(self):
+        """CI 门控路径：stub 胜率贴 chance 地板，--assert-win 高阈必红（rc=1 + ::error::）。"""
+        rc, _out, err = self._run_main(
+            ["kb_semantic_ab.py", "--assert-win", "--min-win-rate", "0.99"])
+        self.assertEqual(rc, 1)
+        self.assertIn("::error::", err)
+
+    def test_main_assert_win_gate_passes_at_zero_threshold(self):
+        """阈 0.0 时门控放行（rc=0）——门控逻辑双向可测。"""
+        rc, _out, _err = self._run_main(
+            ["kb_semantic_ab.py", "--assert-win", "--min-win-rate", "0.0"])
+        self.assertEqual(rc, 0)
+
+
 if __name__ == "__main__":
     unittest.main()
