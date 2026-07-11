@@ -1,4 +1,4 @@
-# 入口文档 + 子项目上下文 + 藏宝图 + 设计/工程文档 (25)
+# 入口文档 + 子项目上下文 + 藏宝图 + 设计/工程文档 (26)
 
 仓库最高权威入口（CLAUDE.md / README.md）+ 各子项目 CONTEXT.md（动手前必读）+ RELEASES.md 藏宝图 + silver-core-sdk/site 设计文档 + 工程文档 + 归档注册表的导航指针。
 
@@ -15,6 +15,7 @@
 * [silver-core-sdk COMPAT](/projects/silver-core-sdk-doc-compat.md) - Target surface: `@anthropic-ai/claude-agent-sdk` public API (npm 0.3.205; chased
 * [silver-core-sdk CONCURRENCY](/projects/silver-core-sdk-doc-concurrency.md) - The SDK supports true parallelism at three levels: **many conversations** over
 * [silver-core-sdk ERRORS](/projects/silver-core-sdk-doc-errors.md) - Every error class in `src/errors.ts` carries a machine-readable, stable
+* [silver-core-sdk MEMORY](/projects/silver-core-sdk-doc-memory.md) - Cross-session memory for agents: a `memory_20250818`-equivalent six-command
 * [silver-core-sdk MIGRATION](/projects/silver-core-sdk-doc-migration.md) - Audience: the BPT Desktop (Electron) codebase currently importing the official
 * [silver-core-sdk ONBOARDING](/projects/silver-core-sdk-doc-onboarding.md) - Goal: get a new maintainer from zero to "I can make a change safely and prove
 * [silver-core-sdk OPENAI-PROTOCOL](/projects/silver-core-sdk-doc-openai-protocol.md) - The SDK can drive an **OpenAI-compatible Chat Completions endpoint** instead of

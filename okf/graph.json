@@ -1,7 +1,7 @@
 {
   "generated": "2026-07-11",
   "stats": {
-    "nodes": 355,
+    "nodes": 356,
     "edges": 413
   },
   "nodes": [
@@ -2159,6 +2159,17 @@
       "id": "/projects/silver-core-sdk-doc-errors.md",
       "type": "documentation",
       "title": "silver-core-sdk ERRORS",
+      "tags": [
+        "data_layer:curated",
+        "design-doc",
+        "sub-project:silver-core-sdk"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/projects/silver-core-sdk-doc-memory.md",
+      "type": "documentation",
+      "title": "silver-core-sdk MEMORY",
       "tags": [
         "data_layer:curated",
         "design-doc",
