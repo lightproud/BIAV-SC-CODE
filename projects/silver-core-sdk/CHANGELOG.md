@@ -16,6 +16,18 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.48.10 — 2026-07-11
+
+**World-class review pass (cont.), shell resolution**: a non-existent ABSOLUTE
+`CLAUDE_CODE_GIT_BASH_PATH` override was handed to spawn unconditionally. The
+background shell path cannot fall back on its own (spawn's ENOENT is async and
+fires after `spawnBackground` has already returned a shell id — reported
+"launched" yet never running), so a misconfigured override there silently broke
+`run_in_background` / Monitor. `resolvePosixShells` now drops an absolute
+override that does not exist, so both the foreground and background paths fall
+through to the platform defaults (bash/sh, or the Git Bash probes). A bare-name
+override is kept (PATH-resolved by spawn). +1 regression test.
+
 ## 0.48.9 — 2026-07-11
 
 **World-class review pass (cont.), ping-only stream = empty non-start**: the

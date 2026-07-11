@@ -20,6 +20,7 @@
  */
 
 import { existsSync } from 'node:fs';
+import { isAbsolute } from 'node:path';
 
 /**
  * Explicit backslash join: these are WINDOWS-ONLY paths, and building them
@@ -63,7 +64,16 @@ export function resolvePosixShells(
 ): string[] {
   const out: string[] = [];
   const override = env['CLAUDE_CODE_GIT_BASH_PATH'];
-  if (typeof override === 'string' && override.length > 0) out.push(override);
+  if (typeof override === 'string' && override.length > 0) {
+    // Skip an ABSOLUTE override that does not exist, so the resolver falls
+    // through to the platform defaults (bash/sh, or the Git Bash probes) rather
+    // than handing a doomed path to spawn. This matters most for the BACKGROUND
+    // shell path, which cannot fall back on its own — spawn's ENOENT is async
+    // and fires after spawnBackground has already returned a shell id, so a
+    // misconfigured override there is reported "launched" yet never runs. A
+    // bare-name override (no separator) is kept as-is (PATH-resolved by spawn).
+    if (!isAbsolute(override) || probe(override)) out.push(override);
+  }
   if (platform !== 'win32') {
     out.push('bash', 'sh');
     return out;
