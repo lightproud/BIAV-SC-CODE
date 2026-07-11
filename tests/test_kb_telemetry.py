@@ -110,6 +110,76 @@ def test_mcp_tools_wired_to_telemetry(tmp_path, monkeypatch):
     assert rec["tool"] == "kb_search"
 
 
+# ---------- CLI 入口 / 报告渲染冒烟（main + --harvest 回流路径） ----------
+
+def _seed_log(tmp_path):
+    """造一份含命中 + 零命中的使用日志，供 main() 冒烟。"""
+    log = tmp_path / "usage.jsonl"
+    tel.log_call("kb_search", "沙耶", ["/characters/130226.md"], log_path=log)
+    tel.log_call("kb_search", "沙耶", ["/characters/130226.md"], log_path=log)
+    tel.log_call("kb_search", "找不到的散句甲", [], log_path=log)
+    tel.log_call("kb_activate", "找不到的散句乙", [], log_path=log)
+    tel.log_call("kb_search", "找不到的散句甲", [], log_path=log)  # 重复零命中
+    return log
+
+
+def test_main_report_prints_scorecard(tmp_path, monkeypatch, capsys):
+    """main() 默认路径：打印人读报告（总调用 / 按工具 / 零命中 / 日志路径）。"""
+    monkeypatch.setattr(tel, "KB_USAGE_LOG", _seed_log(tmp_path))
+    monkeypatch.setattr(sys, "argv", ["kb_telemetry.py"])
+    tel.main()
+    out = capsys.readouterr().out
+    assert "KB 使用遥测报告" in out
+    assert "总调用 = 5" in out
+    assert "kb_search" in out
+    assert "最常触达" in out and "/characters/130226.md" in out
+    assert "零命中查询" in out and "找不到的散句甲" in out
+    assert "死概念" in out
+
+
+def test_main_report_json(tmp_path, monkeypatch, capsys):
+    monkeypatch.setattr(tel, "KB_USAGE_LOG", _seed_log(tmp_path))
+    monkeypatch.setattr(sys, "argv", ["kb_telemetry.py", "--json"])
+    tel.main()
+    rep = json.loads(capsys.readouterr().out)
+    assert rep["total_calls"] == 5
+    assert rep["by_tool"]["kb_search"] == 4
+
+
+def test_main_harvest_prints_candidates(tmp_path, monkeypatch, capsys):
+    """--harvest 人读路径：零命中查询回流成 held-out 难题候选并打印。"""
+    monkeypatch.setattr(tel, "KB_USAGE_LOG", _seed_log(tmp_path))
+    monkeypatch.setattr(sys, "argv", ["kb_telemetry.py", "--harvest"])
+    tel.main()
+    out = capsys.readouterr().out
+    assert "零命中回流：2 条" in out
+    assert "找不到的散句甲" in out and "找不到的散句乙" in out
+    assert "遥测管够难够真" in out  # note 尾注
+
+
+def test_main_harvest_json_candidates_well_formed(tmp_path, monkeypatch, capsys):
+    """--harvest --json 机读路径：候选字段齐、去重、expect 待分诊。"""
+    monkeypatch.setattr(tel, "KB_USAGE_LOG", _seed_log(tmp_path))
+    monkeypatch.setattr(sys, "argv", ["kb_telemetry.py", "--harvest", "--json"])
+    tel.main()
+    h = json.loads(capsys.readouterr().out)
+    assert h["count"] == 2 and len(h["candidates"]) == 2
+    qs = {c["q"]: c for c in h["candidates"]}
+    assert set(qs) == {"找不到的散句甲", "找不到的散句乙"}
+    assert qs["找不到的散句甲"]["seen"] == 2  # 重复零命中计数
+    for c in h["candidates"]:
+        assert c["expect"] == [] and c["needs_triage"] is True
+        assert c["source"] == "telemetry_zero_hit" and c["mode"] == "search"
+
+
+def test_main_harvest_empty_log(tmp_path, monkeypatch, capsys):
+    """--harvest 空日志：0 候选、不炸。"""
+    monkeypatch.setattr(tel, "KB_USAGE_LOG", tmp_path / "none.jsonl")
+    monkeypatch.setattr(sys, "argv", ["kb_telemetry.py", "--harvest"])
+    tel.main()
+    assert "零命中回流：0 条" in capsys.readouterr().out
+
+
 if __name__ == "__main__":
     import pytest
     pytest.main([__file__, "-v"])
