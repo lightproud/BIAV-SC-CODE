@@ -21,7 +21,7 @@
 | T7 | Desktop UI 路线 M0–M4 升 r2：待守密人回填 BPT 现状（存量可跑件 / 团队人力） | 黑池输入 | `Public-Info-Pool/Resource/repo-engineering/bpt-desktop-ui-roadmap-20260705.md` 假设声明 | 开 |
 | T8 | 黑池侧派工包开工：UI M0–M4 + 命令框架五模块（图纸 + 消费手册已齐，开工在黑池侧） | 黑池输入 | `.../bpt-desktop-command-impl-plan-20260710.md` + `.../silver-core-sdk-command-consumer-manual-20260710.md` | 开 |
 | T9 | twitter 源重启与否（三选项已成文：官方 API 按量 recent search + 日读硬顶 ~\$15-30/月 / 第三方转售商灰色 ~\$3-10/月 / 退役；Playwright 登录抓取已排除——ToS 硬约束）；守密人「未来再说」，不设期限 | 裁定 | `memory/decisions.md` 2026-07-10「twitter 源挂账」条 + `memory/project-status.md` News 节零产出四源段 | 开 |
-| T12 | 命令行为观测续册：A 类 P0 组余 /clear /resume（须守密人会话内触发，艾瑞卡不可自触）。已清三笔：**/loop 动态自调步**（OBS-011，艾瑞卡自触完整生命周期）；**/compact**（OBS-012，手动 + 自动双路径对照，compact_boundary 不进上下文）；**/help**（OBS-013，本环境未注册、前端 fail-closed 两件薄回执——「不可用」即完整观测，均 2026-07-11）| 预算 | `.../cc-command-behavior-observations-20260710.md` 待观测清单 + OBS-011/012/013 | 开（余 /clear /resume 待守密人触发） |
+| T12 | 命令行为观测续册：A 类 P0 组仅余 /clear（须守密人会话内触发且会清上下文，建议留作某次会话最后一条）。已清四笔：**/loop 动态自调步**（OBS-011，艾瑞卡自触完整生命周期）；**/compact**（OBS-012，手动 + 自动双路径对照，compact_boundary 不进上下文）；**/help /resume**（OBS-013/014，本环境未注册、前端 fail-closed 幂等薄回执——「不可用」即完整观测，/resume 连触两次证无状态，均 2026-07-11）| 预算 | `.../cc-command-behavior-observations-20260710.md` 待观测清单 + OBS-011/012/013/014 | 开（仅余 /clear 待守密人触发） |
 | T13 | 动态自调步（ScheduleWakeup 同构的壳层唤醒原语，方案三期 P2 单独立项；开工前先测 BPT 自身缓存分层） | 黑池输入 | `.../bpt-desktop-command-impl-plan-20260710.md` §2 M4 + §4 | 开 |
 | T14 | D/E 类注册源（插件 / MCP prompts）需求档——待黑池侧壳层插件面设计定稿后另立 | 黑池输入 | `.../bpt-desktop-command-framework-requirements-20260710.md` §6.3 | 开 |
 | T15 | SubagentStop 阻断语义（子代理级门控续跑）：现为 runtime 级 fire-and-log，黑池对子代理门控有真需求再评估 | 观察 | SDK `docs/COMPAT.md` hooks 表 Stop 行「ROOT LOOP ONLY」注 | 开 |
