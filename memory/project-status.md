@@ -1,6 +1,8 @@
 # 项目状态一览
 
-> 最后更新：2026-07-10 by 记忆档案事实核对会话（全 memory/ 档案对账审计：修正本档 5 处漂移——
+> 最后更新：2026-07-11 by 自我改进闭环需求归档会话（SCS-REQ-002 草案落 `memory/active/self-improvement-requirements.md`，
+> Silver Core SDK 节加归档条目，阻塞性开放问题挂账 `memory/todo.md` #T25/#T26）。
+> 前次 2026-07-10 by 记忆档案事实核对会话（全 memory/ 档案对账审计：修正本档 5 处漂移——
 > 头部日期滞后（正文已含 07-07/07-08/07-10 条目）、状态表 silver-core-sdk 行版本/测试数
 > v0.12.0/1427→v0.42.0/1651（对齐 package.json 与 O-B2 节）、数据源清单补 bahamut/note_com/arca_live
 > 三源修复状态、Discord 行改方案甲三服平级布局、06-09 核验节补历史快照标注；同会话另修 CLAUDE.md
@@ -186,6 +188,13 @@
 > 银芯→黑池单向输出物，与 §1.1-HC 防火墙同向，非 BPT 产品内部开发。
 
 - **动手前必读**：`projects/silver-core-sdk/CONTEXT.md`（会话上下文 + 当前 milestone）
+- **自我改进闭环需求书 SCS-REQ-002 草案归档（2026-07-11，守密人手书、艾瑞卡落档）**：四环闭环
+  （环一信号采集与聚合 → 环二评估基准 → 环三改进执行 → 环四人工把关）需求明细 + Phase 0–4 分阶段
+  落地路线，归档 `memory/active/self-improvement-requirements.md`。硬序：环二先于环三——无评估基准
+  之前不启动任何 agent 自主改代码任务；Phase 0（REQ-3.2 踩坑记录先行）为零代码改动先行通道。
+  两组阻塞性开放问题已挂账：`memory/todo.md` #T25（Phase 1：评分模型版本 / 成本预算 + 20 题题目
+  来源）、#T26（Phase 3：沙箱工作区选型）。前置文档 SCS-REQ-001 = 记忆系统需求书
+  （`projects/silver-core-sdk/docs/MEMORY.md`，M1/M2 已落地，见下两条）。
 - **记忆系统 M2 落地（v0.47.0，2026-07-11，spec R7–R9，随 M1 同日；spec r1 全量收口）**：R7 压缩前
   落盘回合（auto 触发将至先注入一次写入机会、PreCompact 可 deny、每折叠周期恰一次）+ 会话正常终结
   进度卡回合（abort/错误不触发；回合 result 被吸收，任务自身 result 仍为流内最后一个）；R8 治理限额

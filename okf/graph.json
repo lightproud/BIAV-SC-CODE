@@ -1,8 +1,8 @@
 {
   "generated": "2026-07-11",
   "stats": {
-    "nodes": 357,
-    "edges": 413
+    "nodes": 358,
+    "edges": 414
   },
   "nodes": [
     {
@@ -1405,6 +1405,17 @@
       "id": "/memory/memory-ext-active-policy-direct-push-main.md",
       "type": "knowledge-pointer",
       "title": "直推 main 政策（active hub）",
+      "tags": [
+        "memory",
+        "data_layer:curated",
+        "active-hub"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/memory/memory-ext-active-self-improvement-requirements.md",
+      "type": "knowledge-pointer",
+      "title": "Silver Core SDK — 自我改进闭环需求文档",
       "tags": [
         "memory",
         "data_layer:curated",
@@ -4690,6 +4701,12 @@
     },
     {
       "source": "/memory/memory-ext-active-policy-direct-push-main.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-ext-active-self-improvement-requirements.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
       "rel_type": "mention"

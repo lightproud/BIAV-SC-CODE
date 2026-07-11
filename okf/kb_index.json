@@ -7,14 +7,14 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 357,
-    "edges": 413,
-    "terms": 6079,
+    "concepts": 358,
+    "edges": 414,
+    "terms": 6142,
     "by_type": {
       "character": 72,
       "dataset": 110,
       "documentation": 111,
-      "knowledge-pointer": 44,
+      "knowledge-pointer": 45,
       "reference": 17,
       "research": 3
     },
@@ -23,7 +23,7 @@
       "characters": 72,
       "community": 16,
       "extracted": 4,
-      "memory": 48,
+      "memory": 49,
       "news-output": 23,
       "projects": 26,
       "resource": 84,
@@ -34,7 +34,7 @@
     },
     "by_tier": {
       "skeleton": 131,
-      "search": 226
+      "search": 227
     }
   },
   "sections": {
@@ -56,7 +56,7 @@
     },
     "memory": {
       "index": "/memory/index.md",
-      "count": 48
+      "count": 49
     },
     "news-output": {
       "index": "/news-output/index.md",
@@ -968,7 +968,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 92
+      "degree": 93
     },
     "/characters/15604.md": {
       "type": "character",
@@ -1791,6 +1791,20 @@
       "title": "直推 main 政策（active hub）",
       "description": "**一句话摘要**：银芯仓库自 2026-03-29 决策、2026-04-26 PR #141 全档案对齐落地起，**所有 AI 会话（现为守密人 ↔ 单一艾瑞卡会话；原主控台 / Code-* 多会话角色已于 2026-06 退役）的所有 commit 直接推送到 `origin/main`**，不创建 feature 分支、不走 PR / merge 流程，冲突时 `git pull --rebase` 后重推。",
       "resource": "/memory/active/policy-direct-push-main.md",
+      "tags": [
+        "memory",
+        "data_layer:curated",
+        "active-hub"
+      ],
+      "section": "memory",
+      "tier": "search",
+      "degree": 1
+    },
+    "/memory/memory-ext-active-self-improvement-requirements.md": {
+      "type": "knowledge-pointer",
+      "title": "Silver Core SDK — 自我改进闭环需求文档",
+      "description": "BPT 目前的运行质量改进完全依赖唯一维护者的人工排查:断流原因靠事后翻监控,token 消耗靠账单倒推,记忆系统效果无法量化。运行数据(transportHealth、工具调用日志、失败会话)已经存在,但散落在监控面板和日志文件中,既不可被 agent 消费,也没有基准来判断任何一次改动是\\\"变好\\\"还是\\\"变坏\\\"。",
+      "resource": "/memory/active/self-improvement-requirements.md",
       "tags": [
         "memory",
         "data_layer:curated",
@@ -6494,6 +6508,11 @@
         "mention"
       ],
       [
+        "/memory/memory-ext-active-self-improvement-requirements.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
         "/memory/memory-ext-active-silver-blackpool-interface.md",
         "提及:艾瑞卡",
         "mention"
@@ -7848,6 +7867,13 @@
       ]
     ],
     "/memory/memory-ext-active-policy-direct-push-main.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
+    "/memory/memory-ext-active-self-improvement-requirements.md": [
       [
         "/characters/15603.md",
         "提及:艾瑞卡",
@@ -9983,6 +10009,7 @@
       "/memory/memory-ext-active-contribution-protocol.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-ext-biav-info-classification.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
@@ -10051,6 +10078,7 @@
       "/memory/memory-ext-active-contribution-protocol.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/sources/appstore.md",
       "/sources/arca_live.md",
@@ -10074,6 +10102,7 @@
     ],
     "agent": [
       "/README.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-bpt-positioning.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/silver-core-sdk-doc-architecture.md",
@@ -10596,6 +10625,7 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-silver-blackpool-interface.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
       "/memory/memory-ext-bpt-architecture-summary-template.md",
@@ -11006,6 +11036,7 @@
       "/memory/memory-ext-active-contribution-protocol.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-ext-biav-info-classification.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
@@ -11319,6 +11350,7 @@
       "/projects/silver-core-sdk-doc-concurrency.md"
     ],
     "core": [
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-research-best-wiki-features.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/silver-core-sdk-doc-architecture.md",
@@ -11399,6 +11431,7 @@
       "/memory/memory-ext-active-contribution-protocol.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-ext-biav-info-classification.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
@@ -11700,6 +11733,7 @@
       "/memory/memory-ext-active-contribution-protocol.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-ext-biav-info-classification.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
@@ -12895,6 +12929,7 @@
       "/memory/memory-ext-active-contribution-protocol.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md"
     ],
     "i18n": [
@@ -12993,6 +13028,9 @@
     ],
     "importing": [
       "/projects/silver-core-sdk-doc-migration.md"
+    ],
+    "improvement": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
     ],
     "independent": [
       "/projects/project-silver-core-sdk.md",
@@ -13451,6 +13489,7 @@
       "/memory/memory-ext-active-contribution-protocol.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-ext-biav-info-classification.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
@@ -14025,6 +14064,7 @@
       "/memory/memory-ext-active-contribution-protocol.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-ext-biav-info-classification.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
@@ -14198,6 +14238,7 @@
       "/memory/memory-ext-active-contribution-protocol.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-ext-biav-info-classification.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
@@ -15567,6 +15608,7 @@
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
     ],
     "requirements": [
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md"
     ],
     "research": [
@@ -15849,6 +15891,7 @@
     ],
     "sdk": [
       "/README.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/silver-core-sdk-doc-architecture.md",
       "/projects/silver-core-sdk-doc-compat.md",
@@ -15903,6 +15946,7 @@
       "/story/story_search_index.md"
     ],
     "self": [
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/story/story_search_index.md"
     ],
     "selfreport": [
@@ -15937,6 +15981,7 @@
     ],
     "silver": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-silver-blackpool-interface.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/silver-core-sdk-doc-architecture.md",
@@ -16473,6 +16518,7 @@
     ],
     "token": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-design.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-bpt-architecture-summary-template.md",
       "/memory/memory-strategy-repo-slimming-plan.md"
     ],
@@ -16605,6 +16651,9 @@
     "transport": [
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
+    "transporthealth": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
     ],
     "treasure": [
       "/projects/releases-treasure-map.md"
@@ -17156,7 +17205,8 @@
     ],
     "一次": [
       "/characters/15593.md",
-      "/characters/15604.md"
+      "/characters/15604.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md"
     ],
     "一步": [
       "/memory/memory-research-discord-archive-backfill-conflict.md"
@@ -17182,6 +17232,9 @@
     ],
     "一种": [
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md"
+    ],
+    "一维": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
     ],
     "一致": [
       "/README.md",
@@ -17413,6 +17466,7 @@
     "不可": [
       "/README.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-design.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-knowledge-layer-design.md",
       "/sources/appstore.md",
@@ -17511,6 +17565,7 @@
       "/memory/memory-ext-active-contribution-protocol.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-ext-biav-info-classification.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
@@ -17780,6 +17835,7 @@
       "/memory/memory-ext-active-contribution-protocol.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-ext-biav-info-classification.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
@@ -18957,6 +19013,9 @@
     "也已": [
       "/characters/15575.md"
     ],
+    "也没": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
+    ],
     "也能": [
       "/characters/15579.md",
       "/characters/15582.md",
@@ -18999,6 +19058,9 @@
     "事件": [
       "/memory/memory-ext-collab-event-playbook.md",
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
+    "事后": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
     ],
     "事实": [
       "/assets/assets-archive-integrity.md",
@@ -19242,6 +19304,7 @@
       "/characters/78841.md",
       "/characters/94451.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md"
     ],
     "人带": [
@@ -19870,6 +19933,9 @@
     "件一": [
       "/README.md"
     ],
+    "件中": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
+    ],
     "件事": [
       "/projects/doc-testing-strategy.md"
     ],
@@ -19926,6 +19992,7 @@
       "/README.md",
       "/characters/15585.md",
       "/characters/15598.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-strategy-repo-slimming-plan.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md"
@@ -20046,6 +20113,7 @@
     "会话": [
       "/memory/memory-ext-active-contribution-protocol.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-todo.md",
       "/memory/memory-strategy-repo-slimming-plan.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
@@ -20151,6 +20219,9 @@
     ],
     "但存": [
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
+    ],
+    "但散": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
     ],
     "但未": [
       "/story/story_research_todo.md"
@@ -20553,6 +20624,7 @@
       "/memory/memory-ext-active-contribution-protocol.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-ext-biav-info-classification.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
@@ -20857,7 +20929,8 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md"
     ],
     "何一": [
-      "/characters/15598.md"
+      "/characters/15598.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md"
     ],
     "何人": [
       "/characters/15585.md"
@@ -21054,6 +21127,7 @@
     ],
     "依赖": [
       "/README.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
     ],
     "侧实": [
@@ -21148,6 +21222,9 @@
     ],
     "倒排": [
       "/README.md"
+    ],
+    "倒推": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
     ],
     "倔强": [
       "/characters/77923.md"
@@ -21360,6 +21437,9 @@
       "/memory/memory-ext-todo.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md"
     ],
+    "全依": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
+    ],
     "全做": [
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
     ],
@@ -21560,6 +21640,7 @@
       "/memory/memory-ext-active-contribution-protocol.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-ext-biav-info-classification.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
@@ -21654,6 +21735,9 @@
     "具独": [
       "/README.md"
     ],
+    "具调": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
+    ],
     "典作": [
       "/memory/memory-ext-collab-event-playbook.md"
     ],
@@ -21691,6 +21775,7 @@
       "/memory/memory-ext-active-contribution-protocol.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-ext-biav-info-classification.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
@@ -21839,6 +21924,9 @@
     ],
     "净重": [
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
+    ],
+    "准来": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
     ],
     "凝结": [
       "/characters/15585.md",
@@ -22259,6 +22347,9 @@
     "判定": [
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md"
     ],
+    "判断": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
+    ],
     "利刃": [
       "/characters/15582.md",
       "/characters/15588.md"
@@ -22365,6 +22456,7 @@
       "/memory/memory-ext-active-contribution-protocol.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-ext-biav-info-classification.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
@@ -22630,6 +22722,9 @@
     "前有": [
       "/memory/decisions.md"
     ],
+    "前的": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
+    ],
     "前缀": [
       "/memory/memory-ext-active-contribution-protocol.md"
     ],
@@ -22847,6 +22942,9 @@
     ],
     "动时": [
       "/community/community-timeline.md"
+    ],
+    "动是": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
     ],
     "动毁": [
       "/characters/15602.md"
@@ -23128,6 +23226,9 @@
     "单体": [
       "/characters/15588.md"
     ],
+    "单倒": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
+    ],
     "单元": [
       "/story/lore_by_unit.md",
       "/story/stages_by_unit.md",
@@ -23338,6 +23439,7 @@
       "/memory/memory-ext-karpathy-coding-principles.md"
     ],
     "原因": [
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/projects/extracted-lua-readme.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md"
     ],
@@ -23671,6 +23773,12 @@
     ],
     "变化": [
       "/characters/15583.md"
+    ],
+    "变坏": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
+    ],
+    "变好": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
     ],
     "变异": [
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md"
@@ -24047,6 +24155,9 @@
     ],
     "可获": [
       "/characters/15600.md"
+    ],
+    "可被": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
     ],
     "可见": [
       "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md"
@@ -24428,6 +24539,9 @@
     "后续": [
       "/characters/15592.md"
     ],
+    "后翻": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
+    ],
     "后者": [
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md"
     ],
@@ -24664,6 +24778,9 @@
     "和施": [
       "/characters/15600.md"
     ],
+    "和日": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
+    ],
     "和暴": [
       "/characters/15578.md",
       "/characters/15593.md"
@@ -24801,6 +24918,7 @@
     ],
     "唯一": [
       "/README.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-skill-authoring-standard.md",
       "/memory/memory-ext-todo.md",
       "/memory/project-status.md",
@@ -24948,6 +25066,9 @@
     ],
     "回补": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md"
+    ],
+    "因靠": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
     ],
     "团队": [
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
@@ -25125,6 +25246,9 @@
     "在的": [
       "/memory/memory-ext-skill-authoring-standard.md"
     ],
+    "在监": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
+    ],
     "在知": [
       "/memory/memory-ext-knowledge-layer-design.md"
     ],
@@ -25284,6 +25408,9 @@
     ],
     "基于": [
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
+    ],
+    "基准": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
     ],
     "基本": [
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
@@ -25604,6 +25731,7 @@
       "/memory/memory-ext-active-contribution-protocol.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-ext-biav-info-classification.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
@@ -26140,6 +26268,9 @@
     "失落": [
       "/characters/15592.md"
     ],
+    "失败": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
+    ],
     "头的": [
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md"
@@ -26399,6 +26530,7 @@
       "/memory/memory-ext-active-contribution-protocol.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-ext-biav-info-classification.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
@@ -26777,6 +26909,7 @@
       "/memory/memory-ext-storage-discussion.md"
     ],
     "存在": [
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-skill-authoring-standard.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/story/story_research_todo.md"
@@ -26917,6 +27050,7 @@
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
     ],
     "完全": [
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/projects/silver-core-sdk-doc-positioning.md"
     ],
     "完工": [
@@ -27869,6 +28003,7 @@
       "/memory/memory-ext-active-contribution-protocol.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-ext-biav-info-classification.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
@@ -28122,6 +28257,7 @@
     "工具": [
       "/README.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-bpt-positioning.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
@@ -28130,6 +28266,9 @@
     "工对": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md"
+    ],
+    "工排": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
     ],
     "工程": [
       "/README.md",
@@ -29271,6 +29410,7 @@
       "/memory/memory-ext-active-contribution-protocol.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-ext-biav-info-classification.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
@@ -29304,11 +29444,17 @@
       "/memory/strategic-plan-2026.md",
       "/memory/style-guide.md"
     ],
+    "忆系": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
+    ],
     "忍继": [
       "/characters/15587.md"
     ],
     "志愿": [
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
+    ],
+    "志文": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
     ],
     "志高": [
       "/characters/15574.md"
@@ -30161,6 +30307,9 @@
     "我不": [
       "/characters/15585.md"
     ],
+    "我改": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
+    ],
     "我方": [
       "/characters/15577.md",
       "/characters/77923.md"
@@ -30523,6 +30672,9 @@
       "/characters/15592.md",
       "/characters/15599.md"
     ],
+    "护者": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
+    ],
     "护能": [
       "/characters/15576.md",
       "/characters/15581.md",
@@ -30867,6 +31019,7 @@
       "/memory/memory-ext-active-contribution-protocol.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-ext-biav-info-classification.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
@@ -31356,6 +31509,9 @@
     "排期": [
       "/memory/memory-ext-biav-info-classification.md"
     ],
+    "排查": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
+    ],
     "排表": [
       "/README.md"
     ],
@@ -31410,6 +31566,9 @@
     ],
     "控着": [
       "/characters/77925.md"
+    ],
+    "控面": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
     ],
     "推出": [
       "/memory/memory-ext-collab-event-playbook.md"
@@ -31783,6 +31942,7 @@
       "/memory/memory-ext-active-contribution-protocol.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-ext-biav-info-classification.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
@@ -32081,6 +32241,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md"
     ],
     "改动": [
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "改版": [
@@ -32107,6 +32268,9 @@
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md"
+    ],
+    "改进": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
     ],
     "攻击": [
       "/characters/130901.md",
@@ -32193,6 +32357,7 @@
       "/memory/memory-ext-active-contribution-protocol.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-ext-biav-info-classification.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
@@ -32483,6 +32648,7 @@
       "/memory/memory-ext-active-contribution-protocol.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-ext-biav-info-classification.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
@@ -32765,7 +32931,8 @@
       "/characters/77913.md",
       "/characters/77917.md",
       "/characters/77922.md",
-      "/characters/77926.md"
+      "/characters/77926.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md"
     ],
     "效率": [
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
@@ -32832,6 +32999,9 @@
     "散脆": [
       "/characters/15585.md"
     ],
+    "散落": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
+    ],
     "散虚": [
       "/characters/15570.md"
     ],
@@ -32855,6 +33025,7 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-ext-capability-annotations.md",
       "/memory/memory-ext-capability-registry.md",
@@ -33009,6 +33180,7 @@
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
       "/extracted/extracted-lua-tables.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
       "/memory/memory-ext-bpt-architecture-summary-template.md",
       "/memory/memory-ext-storage-discussion.md",
@@ -33052,6 +33224,7 @@
       "/memory/memory-ext-active-contribution-protocol.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-ext-biav-info-classification.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
@@ -33086,6 +33259,7 @@
       "/memory/style-guide.md"
     ],
     "文档": [
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-biav-info-classification.md",
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
@@ -33125,6 +33299,9 @@
     "斩首": [
       "/characters/15564.md"
     ],
+    "断任": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
+    ],
     "断出": [
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
@@ -33142,6 +33319,9 @@
     ],
     "断成": [
       "/characters/15562.md"
+    ],
+    "断流": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
     ],
     "断的": [
       "/characters/15569.md",
@@ -33335,7 +33515,8 @@
     "无法": [
       "/characters/130901.md",
       "/characters/15591.md",
-      "/characters/54116.md"
+      "/characters/54116.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md"
     ],
     "无涉": [
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
@@ -33364,6 +33545,7 @@
       "/community/community-index.md"
     ],
     "既不": [
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-knowledge-layer-design.md"
     ],
     "既为": [
@@ -33375,6 +33557,7 @@
     ],
     "日志": [
       "/memory/decisions.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-bpt-guidance-log.md"
     ],
     "日报": [
@@ -33932,6 +34115,9 @@
     "有在": [
       "/characters/15602.md"
     ],
+    "有基": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
+    ],
     "有宇": [
       "/memory/memory-ext-collab-event-playbook.md"
     ],
@@ -34170,6 +34356,7 @@
       "/memory/memory-ext-active-contribution-protocol.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-ext-biav-info-classification.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
@@ -34602,6 +34789,7 @@
       "/memory/memory-ext-active-contribution-protocol.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-ext-biav-info-classification.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
@@ -34929,6 +35117,9 @@
     "来击": [
       "/characters/15586.md"
     ],
+    "来判": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
+    ],
     "来各": [
       "/characters/77926.md"
     ],
@@ -35012,6 +35203,9 @@
     ],
     "松元": [
       "/characters/130901.md"
+    ],
+    "板和": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
     ],
     "极之": [
       "/characters/54116.md"
@@ -35137,6 +35331,9 @@
     ],
     "果多": [
       "/characters/15596.md"
+    ],
+    "果无": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
     ],
     "枢纽": [
       "/story/story_layer_readme.md"
@@ -36195,6 +36392,9 @@
     "次指": [
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
     ],
+    "次改": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
+    ],
     "次效": [
       "/characters/54117.md"
     ],
@@ -36287,6 +36487,7 @@
       "/memory/memory-ext-active-contribution-protocol.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-ext-biav-info-classification.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
@@ -36750,6 +36951,9 @@
     "求体": [
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md"
     ],
+    "求文": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
+    ],
     "求的": [
       "/characters/15587.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md"
@@ -36879,6 +37083,9 @@
     "法跟": [
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md"
     ],
+    "法量": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
+    ],
     "法零": [
       "/community/community-index.md"
     ],
@@ -36957,6 +37164,9 @@
     ],
     "流动": [
       "/memory/memory-ext-active-silver-blackpool-interface.md"
+    ],
+    "流原": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
     ],
     "流派": [
       "/resource/resource-repo-engineering-repo-audit-20260603.md"
@@ -37045,10 +37255,12 @@
       "/characters/15596.md",
       "/characters/54117.md",
       "/characters/77913.md",
-      "/characters/77925.md"
+      "/characters/77925.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md"
     ],
     "消费": [
-      "/README.md"
+      "/README.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md"
     ],
     "消链": [
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
@@ -37957,6 +38169,9 @@
     "环行": [
       "/characters/15568.md"
     ],
+    "环需": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
+    ],
     "现一": [
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
     ],
@@ -38299,6 +38514,9 @@
     ],
     "用料": [
       "/characters/15571.md"
+    ],
+    "用日": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
     ],
     "用梦": [
       "/characters/15566.md"
@@ -38682,6 +38900,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md"
     ],
     "的人": [
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md"
     ],
     "的仁": [
@@ -39256,7 +39475,8 @@
       "/characters/77925.md"
     ],
     "的运": [
-      "/README.md"
+      "/README.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md"
     ],
     "的这": [
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
@@ -39345,6 +39565,9 @@
     "监修": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md"
     ],
+    "监控": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
+    ],
     "盒脊": [
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
@@ -39389,6 +39612,7 @@
       "/memory/memory-ext-storage-discussion.md"
     ],
     "目前": [
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md"
     ],
     "目压": [
@@ -40507,6 +40731,7 @@
     ],
     "系统": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-discord-archiver-design.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
@@ -40759,6 +40984,9 @@
     "经典": [
       "/memory/memory-ext-collab-event-playbook.md"
     ],
+    "经存": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
+    ],
     "经对": [
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md"
     ],
@@ -40880,6 +41108,9 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
+    "统效": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
+    ],
     "统权": [
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md"
@@ -40938,6 +41169,7 @@
       "/characters/15592.md"
     ],
     "维护": [
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/projects/entry-readme.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md"
     ],
@@ -41105,6 +41337,9 @@
     "翻档": [
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
     ],
+    "翻监": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
+    ],
     "翻译": [
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
@@ -41149,7 +41384,8 @@
       "/characters/77925.md"
     ],
     "者的": [
-      "/characters/95786.md"
+      "/characters/95786.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md"
     ],
     "而且": [
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
@@ -41206,6 +41442,9 @@
     ],
     "耗降": [
       "/characters/15574.md"
+    ],
+    "耗靠": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
     ],
     "耳朵": [
       "/projects/entry-claude-md.md"
@@ -41516,6 +41755,9 @@
     ],
     "自愈": [
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md"
+    ],
+    "自我": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
     ],
     "自持": [
       "/memory/memory-ext-bpt-positioning.md"
@@ -41845,6 +42087,7 @@
       "/characters/77913.md"
     ],
     "落在": [
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md"
     ],
     "落地": [
@@ -41984,6 +42227,7 @@
       "/memory/memory-ext-active-contribution-protocol.md"
     ],
     "行数": [
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-bpt-architecture-summary-template.md"
     ],
     "行时": [
@@ -41995,6 +42239,9 @@
     ],
     "行覆": [
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md"
+    ],
+    "行质": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
     ],
     "补上": [
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md"
@@ -42469,6 +42716,7 @@
       "/memory/memory-ext-active-contribution-protocol.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-ext-biav-info-classification.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
@@ -42920,6 +43168,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md"
     ],
     "调用": [
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
@@ -42953,6 +43202,12 @@
     "责任": [
       "/characters/77922.md"
     ],
+    "败会": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
+    ],
+    "账单": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
+    ],
     "账台": [
       "/memory/memory-ext-todo.md"
     ],
@@ -42969,6 +43224,7 @@
       "/memory/memory-ext-bpt-guidance-log.md"
     ],
     "质量": [
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md"
@@ -43028,6 +43284,9 @@
     ],
     "赖力": [
       "/README.md"
+    ],
+    "赖唯": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
     ],
     "赠造": [
       "/characters/15604.md"
@@ -43239,6 +43498,7 @@
       "/memory/memory-ext-active-contribution-protocol.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-ext-biav-info-classification.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
@@ -43799,6 +44059,7 @@
     ],
     "运行": [
       "/README.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/projects/entry-claude-md.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md"
     ],
@@ -43857,6 +44118,9 @@
     "进制": [
       "/assets/assets-images.md"
     ],
+    "进完": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
+    ],
     "进度": [
       "/memory/project-status.md"
     ],
@@ -43876,6 +44140,9 @@
     ],
     "进道": [
       "/characters/15575.md"
+    ],
+    "进闭": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
     ],
     "远不": [
       "/characters/15588.md"
@@ -44683,6 +44950,9 @@
       "/characters/15564.md",
       "/characters/15598.md"
     ],
+    "量化": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
+    ],
     "量卡": [
       "/characters/15572.md",
       "/characters/15574.md",
@@ -44746,6 +45016,9 @@
     ],
     "量提": [
       "/characters/15597.md"
+    ],
+    "量改": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
     ],
     "量本": [
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md"
@@ -44934,6 +45207,7 @@
       "/memory/memory-ext-active-contribution-protocol.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-ext-biav-info-classification.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
@@ -45631,6 +45905,9 @@
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md"
     ],
+    "闭环": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
+    ],
     "问题": [
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
     ],
@@ -45911,6 +46188,7 @@
     ],
     "需求": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-storage-discussion.md",
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md"
     ],
@@ -45993,6 +46271,9 @@
     "非针": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md"
     ],
+    "靠事": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
+    ],
     "靠单": [
       "/projects/doc-testing-strategy.md"
     ],
@@ -46001,6 +46282,9 @@
     ],
     "靠的": [
       "/projects/silver-core-sdk-doc-positioning.md"
+    ],
+    "靠账": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
     ],
     "靠近": [
       "/characters/15586.md"
@@ -46017,6 +46301,9 @@
     ],
     "面时": [
       "/characters/125346.md"
+    ],
+    "面板": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
     ],
     "面清": [
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
@@ -46444,6 +46731,7 @@
       "/memory/memory-ext-active-contribution-protocol.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/sources/appstore.md",
       "/sources/arca_live.md",
@@ -46958,6 +47246,7 @@
       "/memory/contribution-protocol.md"
     ],
     "core": [
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/silver-core-sdk-doc-architecture.md",
       "/projects/silver-core-sdk-doc-compat.md",
@@ -47025,6 +47314,7 @@
       "/memory/memory-ext-active-contribution-protocol.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-ext-biav-info-classification.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
@@ -47319,6 +47609,7 @@
       "/memory/memory-ext-active-contribution-protocol.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-ext-biav-info-classification.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
@@ -48122,6 +48413,7 @@
       "/memory/memory-ext-active-contribution-protocol.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md"
     ],
     "i18n": [
@@ -48270,6 +48562,7 @@
       "/memory/memory-ext-active-contribution-protocol.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-ext-biav-info-classification.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
@@ -48649,6 +48942,7 @@
       "/memory/memory-ext-active-contribution-protocol.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-ext-biav-info-classification.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
@@ -49293,6 +49587,7 @@
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
     ],
     "sdk": [
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/silver-core-sdk-doc-architecture.md",
       "/projects/silver-core-sdk-doc-compat.md",
@@ -49356,6 +49651,7 @@
       "/unpacked/unpacked-share.md"
     ],
     "silver": [
+      "/memory/memory-ext-active-self-improvement-requirements.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/silver-core-sdk-doc-architecture.md",
       "/projects/silver-core-sdk-doc-compat.md",
@@ -50603,6 +50899,9 @@
     "戏文": [
       "/unpacked/unpacked-game-text.md"
     ],
+    "我改": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
+    ],
     "战档": [
       "/memory/memory-ext-phase-d-plan.md"
     ],
@@ -50749,6 +51048,9 @@
     "撒托古亚": [
       "/characters/130384.md"
     ],
+    "改进": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
+    ],
     "政策": [
       "/memory/memory-ext-active-policy-direct-push-main.md"
     ],
@@ -50785,6 +51087,9 @@
     ],
     "文本": [
       "/unpacked/unpacked-game-text.md"
+    ],
+    "文档": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
     ],
     "断备": [
       "/memory/memory-research-discord-archive-backfill-conflict.md"
@@ -51020,6 +51325,9 @@
     "汀克特": [
       "/characters/15574.md"
     ],
+    "求文": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
+    ],
     "池优": [
       "/characters/15562.md"
     ],
@@ -51113,6 +51421,9 @@
     ],
     "环行": [
       "/characters/15568.md"
+    ],
+    "环需": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
     ],
     "现行": [
       "/memory/memory-ext-bpt-positioning.md"
@@ -51509,6 +51820,9 @@
     "脑缸": [
       "/memory/memory-ext-biav-info-classification.md"
     ],
+    "自我": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
+    ],
     "艾尔瓦": [
       "/characters/15588.md"
     ],
@@ -51731,6 +52045,9 @@
     "还原": [
       "/unpacked/unpacked-lua-tables.md"
     ],
+    "进闭": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
+    ],
     "逆向": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-desktop-design-spec-ref.md"
     ],
@@ -51790,6 +52107,9 @@
     "长谷": [
       "/characters/94450.md"
     ],
+    "闭环": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
+    ],
     "阿拉克涅": [
       "/characters/77918.md"
     ],
@@ -51802,6 +52122,9 @@
     ],
     "雷娅": [
       "/characters/15597.md"
+    ],
+    "需求": [
+      "/memory/memory-ext-active-self-improvement-requirements.md"
     ],
     "青池": [
       "/characters/15562.md"
