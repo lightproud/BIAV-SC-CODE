@@ -195,6 +195,17 @@
   两组阻塞性开放问题已挂账：`memory/todo.md` #T25（Phase 1：评分模型版本 / 成本预算 + 20 题题目
   来源）、#T26（Phase 3：沙箱工作区选型）。前置文档 SCS-REQ-001 = 记忆系统需求书
   （`projects/silver-core-sdk/docs/MEMORY.md`，M1/M2 已落地，见下两条）。
+- **记忆治理 P0 组落地（v0.48.0，2026-07-11，spec S1–S4，守密人 0711 需求书派发）**：需求书
+  《记忆系统、隐私治理与会议记录支持》SDK 侧收口（归档 `projects/silver-core-sdk/docs/MEMORY-GOVERNANCE.md`）。
+  S1 作用域路由（`options.memory.mounts` 按 query 声明子树 read-only/read-write，工具层在 R4 之上
+  强制：只读拒写 / 挂载外拒读写 / 祖先目录列目录按挂载可见性过滤 / rename 双端 / R6 索引挂载可读才注入）；
+  S2 无痕原语（`options.incognito` 零持久化：转录不落盘、memory 只读降级 view 可用、R7 两写回合关断、
+  S3 记录抑制；泄漏测试清单落集成测试，标记词全盘 grep 零残留）；S3 结构化工具调用日志（每次派发
+  一条 `tool_call` JSONL 记录：名/截断参数/时间戳/序号/成败/耗时/摘要，子代理带 parent_tool_use_id，
+  `getSessionToolCalls` 读回）；S4 声明核验（`auditToolClaims` 检出「嘴上说调了、日志无记录」，
+  漏报优先压低）。S5 由按 query 组合满足（team-ro 会话与 team-rw synthesis 同 store 并存入测试）、
+  S6 预留由 S3 记录携 session_id 兑现。+32 测试（全量 1812 绿）。挂账：`memory/todo.md`
+  #T27（无痕 memory 读权限待拍板，现默认保留）、#T28（BPT 侧多用户隔离 / 计费归属回填）。
 - **记忆系统 M2 落地（v0.47.0，2026-07-11，spec R7–R9，随 M1 同日；spec r1 全量收口）**：R7 压缩前
   落盘回合（auto 触发将至先注入一次写入机会、PreCompact 可 deny、每折叠周期恰一次）+ 会话正常终结
   进度卡回合（abort/错误不触发；回合 result 被吸收，任务自身 result 仍为流内最后一个）；R8 治理限额

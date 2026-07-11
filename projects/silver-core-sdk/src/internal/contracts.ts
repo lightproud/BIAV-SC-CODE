@@ -640,6 +640,31 @@ export type EngineDeps = {
    *  shared with the query layer, which drains it at its own yield points;
    *  splice-style — each buffered message is returned exactly once. */
   drainObservability?: () => SDKMessage[];
+  /** Structured tool-call telemetry (BPT-EXTENSION, governance spec S3):
+   *  called once per dispatched tool_use block, at dispatch completion, with
+   *  timing + outcome. The query layer persists these as `tool_call` records
+   *  in the session JSONL (suppressed when persistence is off / incognito).
+   *  The subagent runtime forwards the parent recorder with `parentToolUseId`
+   *  stamped, so child tool calls stay attributable. */
+  onToolRecord?: (rec: ToolDispatchRecord) => void;
+};
+
+/** One dispatched tool_use block's telemetry (governance spec S3). Timing
+ *  spans the WHOLE dispatch pipeline (hooks + permission gate + execution);
+ *  status 'error' covers execution errors, denials, hook stops and unknown
+ *  tools alike — the summary carries the detail. */
+export type ToolDispatchRecord = {
+  toolUseId: string;
+  toolName: string;
+  input: Record<string, unknown>;
+  /** ISO timestamp of dispatch start. */
+  startedAt: string;
+  durationMs: number;
+  status: 'ok' | 'error';
+  /** Result content head, truncated at 500 chars ('[aborted]' on abort). */
+  resultSummary: string;
+  /** Set by the subagent runtime: the spawning Task tool_use id. */
+  parentToolUseId?: string;
 };
 
 // ---------------------------------------------------------------------------

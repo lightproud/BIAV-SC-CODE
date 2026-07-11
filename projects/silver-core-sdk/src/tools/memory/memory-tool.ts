@@ -39,6 +39,14 @@ import {
   truncateViewBody,
   type MemoryLimits,
 } from './store.js';
+import {
+  filterAncestorListing,
+  mountAllowsWrite,
+  mountReadAccess,
+  outsideMountsError,
+  readOnlyMountError,
+  type ResolvedMemoryMounts,
+} from './mounts.js';
 
 export const MEMORY_TOOL_NAME = 'memory';
 
@@ -170,7 +178,20 @@ export type CreateMemoryToolOptions = {
    *  here); str_replace/insert results are validated in the store engine. */
   schema?: 'cards';
   cards?: Partial<MemoryCardsConfig>;
+  /** S1 scope routing: resolved mounts (null / absent = unrestricted). */
+  mounts?: ResolvedMemoryMounts;
+  /** S2 incognito: reject every write command (view stays available). */
+  incognitoReadOnly?: boolean;
 };
+
+/** S2: the structured error every memory write command returns in an
+ *  incognito session. Model-readable — states the rule, not just "denied". */
+export const INCOGNITO_MEMORY_ERROR =
+  'Error: This is an incognito session — the memory store is read-only. ' +
+  'view remains available, but create, str_replace, insert, delete and ' +
+  'rename are disabled: nothing from this session is recorded.';
+
+const DIRECTORY_LISTING_HEADER = "Here're the files and directories";
 
 /**
  * Build the memory builtin over a store. Constructed per query (like the
@@ -184,7 +205,17 @@ export function createMemoryTool(
   const limits: MemoryLimits = { ...DEFAULT_MEMORY_LIMITS, ...toolOptions.limits };
   const cardsCfg: MemoryCardsConfig = { ...DEFAULT_CARDS_CONFIG, ...toolOptions.cards };
   const health = toolOptions.health;
+  const mounts: ResolvedMemoryMounts = toolOptions.mounts ?? null;
   const bytesOf = (s: string): number => Buffer.byteLength(s, 'utf8');
+  /** S1/S2 write gate: incognito first (session-wide rule), then mount
+   *  routing. Returns the structured error message, or null when allowed. */
+  const writeDenial = (path: string): string | null => {
+    if (toolOptions.incognitoReadOnly === true) return INCOGNITO_MEMORY_ERROR;
+    if (mounts === null || mountAllowsWrite(mounts, path)) return null;
+    return mountReadAccess(mounts, path) === null
+      ? outsideMountsError(mounts, path)
+      : readOnlyMountError(mounts, path);
+  };
   return {
     name: MEMORY_TOOL_NAME,
     description: MEMORY_DESCRIPTION,
@@ -222,12 +253,26 @@ export function createMemoryTool(
         switch (cmd.command) {
           case 'view': {
             const path = validateMemoryPath(cmd.path);
+            // S1 read gate: 'full' inside a mount; 'ancestor' keeps the
+            // navigation path viewable but filters the listing to
+            // mount-visible entries; null is rejected outright.
+            const access = mountReadAccess(mounts, path);
+            if (access === null) {
+              return done(errorResult(outsideMountsError(mounts!, path)));
+            }
+            let viewed = await store.view(path, cmd.view_range);
+            if (access === 'ancestor') {
+              if (!viewed.startsWith(DIRECTORY_LISTING_HEADER)) {
+                // An ancestor of a mount that views as FILE content can only
+                // mean a misconfigured mount nested under a file; never leak
+                // the content.
+                return done(errorResult(outsideMountsError(mounts!, path)));
+              }
+              viewed = filterAncestorListing(mounts!, path, viewed);
+            }
             // Tool-layer truncation (idempotent over the engine's own) so the
             // R8 view cap holds for directly-implemented stores too.
-            const body = truncateViewBody(
-              await store.view(path, cmd.view_range),
-              limits.maxViewChars,
-            );
+            const body = truncateViewBody(viewed, limits.maxViewChars);
             if (health !== undefined) {
               health.reads += 1;
               health.bytesRead += bytesOf(body);
@@ -236,6 +281,8 @@ export function createMemoryTool(
           }
           case 'create': {
             const path = validateMemoryPath(cmd.path);
+            const denied = writeDenial(path);
+            if (denied !== null) return done(errorResult(denied));
             // Tool-layer R8 size cap + R9 cards validation on the full
             // content (the store engine re-checks; this covers direct stores).
             if (bytesOf(cmd.file_text) > limits.maxFileBytes) {
@@ -253,6 +300,8 @@ export function createMemoryTool(
           }
           case 'str_replace': {
             const path = validateMemoryPath(cmd.path);
+            const denied = writeDenial(path);
+            if (denied !== null) return done(errorResult(denied));
             if (health !== undefined) {
               health.writes += 1;
               health.bytesWritten += bytesOf(cmd.new_str ?? '');
@@ -261,6 +310,8 @@ export function createMemoryTool(
           }
           case 'insert': {
             const path = validateMemoryPath(cmd.path);
+            const denied = writeDenial(path);
+            if (denied !== null) return done(errorResult(denied));
             if (health !== undefined) {
               health.writes += 1;
               health.bytesWritten += bytesOf(cmd.insert_text);
@@ -278,6 +329,8 @@ export function createMemoryTool(
                 `Error: Cannot delete the ${MEMORY_ROOT} directory itself`,
               ));
             }
+            const denied = writeDenial(path);
+            if (denied !== null) return done(errorResult(denied));
             if (health !== undefined) health.writes += 1;
             return done({ content: await store.delete(path) });
           }
@@ -289,6 +342,9 @@ export function createMemoryTool(
                 `Error: Cannot rename the ${MEMORY_ROOT} directory itself`,
               ));
             }
+            // S1: a rename is a write at BOTH ends (removal + creation).
+            const denied = writeDenial(oldPath) ?? writeDenial(newPath);
+            if (denied !== null) return done(errorResult(denied));
             if (health !== undefined) health.writes += 1;
             return done({ content: await store.rename(oldPath, newPath) });
           }

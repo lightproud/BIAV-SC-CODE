@@ -7,7 +7,10 @@ the data lives is entirely the consumer's decision (a local directory, an
 intranet share, a database — the SDK never knows).
 
 Status: **M1 shipped in v0.46.0** (spec R1–R6) and **M2 shipped in v0.47.0**
-(spec R7–R9): the full spec surface is implemented, and the R2 acceptance is
+(spec R7–R9). The GOVERNANCE layer on top — scope-routing mounts (S1),
+incognito sessions (S2), the structured tool-call log (S3), claim
+verification (S4) — shipped in **v0.48.0**; see `docs/MEMORY-GOVERNANCE.md`.
+The full R-spec surface is implemented, and the R2 acceptance is
 now CLOSED end to end: the conformance memory axis carries both the mock-wire
 locks AND a field-level differential against a LIVE official-arm capture
 (fixture `tests/conformance/official-memory-wire.json`, captured 2026-07-11 by

@@ -14,8 +14,21 @@ import type { BuiltinTool } from '../../internal/contracts.js';
 import { ConfigurationError } from '../../errors.js';
 import { createLocalFilesystemMemoryStore } from './local-store.js';
 import { createMemoryHealth, createMemoryTool, MEMORY_TOOL_NAME } from './memory-tool.js';
+import { mountReadAccess, resolveMemoryMounts } from './mounts.js';
 
 export { MEMORY_ROOT, MemoryPathError, validateMemoryPath } from './paths.js';
+export {
+  describeMounts,
+  filterAncestorListing,
+  mountAllowsWrite,
+  mountReadAccess,
+  outsideMountsError,
+  readOnlyMountError,
+  resolveMemoryMounts,
+  type MountReadAccess,
+  type ResolvedMemoryMount,
+  type ResolvedMemoryMounts,
+} from './mounts.js';
 export {
   createMemoryStore,
   formatFileSize,
@@ -42,6 +55,7 @@ export {
   createMemoryHealth,
   createMemoryTool,
   memoryCommandSchema,
+  INCOGNITO_MEMORY_ERROR,
   MEMORY_TOOL_NAME,
   type CreateMemoryToolOptions,
 } from './memory-tool.js';
@@ -98,9 +112,16 @@ export function resolveMemoryRuntime(args: {
   cwd: string;
   /** ProviderConfig.protocol ('anthropic' default when undefined). */
   protocol: 'anthropic' | 'openai-chat';
+  /** S2: incognito session — memory degrades to read-only and both R7 write
+   *  rounds are disabled, regardless of the memory options. */
+  incognito?: boolean;
   debug: (msg: string) => void;
 }): MemoryRuntime {
   const { memory, cwd, protocol, debug } = args;
+  const incognito = args.incognito === true;
+  // S1: validate + canonicalize the mount declarations up front (a bad mount
+  // is a consumer configuration error, thrown from query()).
+  const mounts = resolveMemoryMounts(memory.mounts);
 
   const mode = memory.mode ?? (protocol === 'openai-chat' ? 'custom' : 'native');
   if (mode === 'native' && protocol === 'openai-chat') {
@@ -142,15 +163,24 @@ export function resolveMemoryRuntime(args: {
       ...(memory.limits !== undefined ? { limits: memory.limits } : {}),
       ...(memory.schema !== undefined ? { schema: memory.schema } : {}),
       ...(memory.cards !== undefined ? { cards: memory.cards } : {}),
+      ...(mounts !== null ? { mounts } : {}),
+      ...(incognito ? { incognitoReadOnly: true } : {}),
     }),
     ...(mode === 'native' ? { serverTools: [{ ...MEMORY_SERVER_TOOL }] } : {}),
     ...(memory.instructions !== undefined ? { instructions: memory.instructions } : {}),
     health,
-    flushOnCompaction: memory.flushOnCompaction !== false,
-    sessionEndUpdate: memory.sessionEndUpdate !== false,
+    // S2: both R7 rounds are WRITE rounds; an incognito session never runs them.
+    flushOnCompaction: !incognito && memory.flushOnCompaction !== false,
+    sessionEndUpdate: !incognito && memory.sessionEndUpdate !== false,
 
     async buildIndexInjection(): Promise<{ label: string; text: string } | null> {
       if (indexCfg === false || maxLines <= 0 || maxBytes <= 0) return null;
+      // S1: never inject content the session's mounts do not grant read
+      // access to — the resident index is a READ of /memories/MEMORY.md.
+      if (mountReadAccess(mounts, MEMORY_INDEX_PATH) !== 'full') {
+        debug('memory: resident index skipped (not readable under the configured mounts)');
+        return null;
+      }
       let viewed: string;
       try {
         // Ask for one line beyond the cap so line-truncation is detectable
