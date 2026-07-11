@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 353,
+    "concepts": 354,
     "edges": 410,
-    "terms": 6048,
+    "terms": 6054,
     "by_type": {
       "character": 72,
       "dataset": 110,
-      "documentation": 107,
+      "documentation": 108,
       "knowledge-pointer": 44,
       "reference": 17,
       "research": 3
@@ -25,7 +25,7 @@
       "extracted": 4,
       "memory": 48,
       "news-output": 23,
-      "projects": 24,
+      "projects": 25,
       "resource": 82,
       "sources": 20,
       "story": 11,
@@ -34,7 +34,7 @@
     },
     "by_tier": {
       "skeleton": 131,
-      "search": 222
+      "search": 223
     }
   },
   "sections": {
@@ -64,7 +64,7 @@
     },
     "projects": {
       "index": "/projects/index.md",
-      "count": 24
+      "count": 25
     },
     "resource": {
       "index": "/resource/index.md",
@@ -2800,6 +2800,20 @@
       "title": "silver-core-sdk OPENAI-PROTOCOL",
       "description": "The SDK can drive an **OpenAI-compatible Chat Completions endpoint** instead of",
       "resource": "/projects/silver-core-sdk/docs/OPENAI-PROTOCOL.md",
+      "tags": [
+        "data_layer:curated",
+        "design-doc",
+        "sub-project:silver-core-sdk"
+      ],
+      "section": "projects",
+      "tier": "search",
+      "degree": 0
+    },
+    "/projects/silver-core-sdk-doc-performance.md": {
+      "type": "documentation",
+      "title": "silver-core-sdk PERFORMANCE",
+      "description": "What the SDK controls about response time, what it already does by default,",
+      "resource": "/projects/silver-core-sdk/docs/PERFORMANCE.md",
       "tags": [
         "data_layer:curated",
         "design-doc",
@@ -9785,6 +9799,7 @@
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-performance.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
@@ -10020,6 +10035,9 @@
     "alignment": [
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md"
+    ],
+    "already": [
+      "/projects/silver-core-sdk-doc-performance.md"
     ],
     "analysis": [
       "/community/community-appstore.md",
@@ -10971,6 +10989,7 @@
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-performance.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
@@ -11198,6 +11217,9 @@
       "/memory/contribution-protocol.md",
       "/memory/memory-ext-active-contribution-protocol.md"
     ],
+    "controls": [
+      "/projects/silver-core-sdk-doc-performance.md"
+    ],
     "conversations": [
       "/projects/silver-core-sdk-doc-concurrency.md"
     ],
@@ -11211,6 +11233,7 @@
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-performance.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
@@ -11322,6 +11345,7 @@
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-performance.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
@@ -11642,6 +11666,7 @@
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-performance.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
@@ -11823,6 +11848,9 @@
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
     ],
+    "default": [
+      "/projects/silver-core-sdk-doc-performance.md"
+    ],
     "degraded": [
       "/sources/official.md"
     ],
@@ -11933,6 +11961,7 @@
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-performance.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
@@ -12026,6 +12055,7 @@
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-performance.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md"
@@ -12039,6 +12069,7 @@
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-performance.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
@@ -13367,6 +13398,7 @@
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-performance.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
@@ -13910,6 +13942,7 @@
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-performance.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
@@ -14386,6 +14419,9 @@
     "pending": [
       "/memory/memory-ext-pending-discussions.md"
     ],
+    "performance": [
+      "/projects/silver-core-sdk-doc-performance.md"
+    ],
     "period": [
       "/resource/resource-daily-news-morimens-period-20260512-0603.md"
     ],
@@ -14807,6 +14843,7 @@
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-performance.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
@@ -14858,6 +14895,7 @@
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-performance.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
@@ -15503,6 +15541,9 @@
       "/sources/youtube.md",
       "/sources/youtube_comments.md"
     ],
+    "response": [
+      "/projects/silver-core-sdk-doc-performance.md"
+    ],
     "result": [
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
@@ -15669,6 +15710,7 @@
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-performance.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
@@ -15754,6 +15796,7 @@
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-performance.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
@@ -16070,6 +16113,7 @@
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-performance.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
@@ -16251,6 +16295,9 @@
     ],
     "tier": [
       "/community/community-index.md"
+    ],
+    "time": [
+      "/projects/silver-core-sdk-doc-performance.md"
     ],
     "timeseries": [
       "/community/community-timeline.md"
@@ -17376,6 +17423,7 @@
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-performance.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
@@ -17641,6 +17689,7 @@
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-performance.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
@@ -17962,6 +18011,7 @@
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-performance.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
@@ -19178,6 +19228,7 @@
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-performance.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
@@ -20130,6 +20181,7 @@
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-performance.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
@@ -20394,6 +20446,7 @@
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-performance.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
@@ -22233,6 +22286,7 @@
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-performance.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
@@ -25425,6 +25479,7 @@
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-performance.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
@@ -26216,6 +26271,7 @@
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-performance.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
@@ -26844,6 +26900,7 @@
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-performance.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
@@ -30668,6 +30725,7 @@
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-performance.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
@@ -31235,6 +31293,7 @@
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-performance.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
@@ -31571,6 +31630,7 @@
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-performance.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
@@ -31982,6 +32042,7 @@
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-performance.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
@@ -32268,6 +32329,7 @@
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-performance.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
@@ -33944,6 +34006,7 @@
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-performance.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
@@ -34372,6 +34435,7 @@
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-performance.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
@@ -34955,6 +35019,7 @@
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-performance.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
@@ -35656,6 +35721,7 @@
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-performance.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
@@ -36040,6 +36106,7 @@
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-performance.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
@@ -42972,6 +43039,7 @@
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-performance.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
@@ -43645,6 +43713,7 @@
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-performance.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
@@ -44659,6 +44728,7 @@
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-performance.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
@@ -44913,6 +44983,7 @@
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-performance.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
@@ -46600,6 +46671,7 @@
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-performance.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
@@ -46702,6 +46774,7 @@
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-performance.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
@@ -47015,6 +47088,7 @@
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-performance.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
@@ -47286,6 +47360,7 @@
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-performance.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
@@ -47357,6 +47432,7 @@
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-performance.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md"
@@ -47951,6 +48027,7 @@
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-performance.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
@@ -48431,6 +48508,9 @@
     "patterns": [
       "/memory/memory-ext-research-best-wiki-features.md"
     ],
+    "performance": [
+      "/projects/silver-core-sdk-doc-performance.md"
+    ],
     "period": [
       "/resource/resource-daily-news-morimens-period-20260512-0603.md"
     ],
@@ -48640,6 +48720,7 @@
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-performance.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
@@ -48900,6 +48981,7 @@
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-performance.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
@@ -48960,6 +49042,7 @@
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-performance.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
@@ -49079,6 +49162,7 @@
       "/projects/silver-core-sdk-doc-migration.md",
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
+      "/projects/silver-core-sdk-doc-performance.md",
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
