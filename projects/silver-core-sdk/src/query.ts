@@ -46,6 +46,7 @@ import type {
   SystemComposition,
   SystemCompositionPart,
   ToolContext,
+  ToolDispatchRecord,
   Transport,
 } from './internal/contracts.js';
 import { createProviderTransport } from './transport/factory.js';
@@ -97,6 +98,9 @@ import { loadProjectMcpServers } from './mcp/project-config.js';
 
 const DEFAULT_MODEL = 'claude-sonnet-4-5';
 const DEFAULT_MAX_OUTPUT_TOKENS = 8192;
+/** S3 tool-call record: cap on the persisted input JSON (the full input lives
+ *  in the assistant message's tool_use block with the same tool_use_id). */
+const TOOL_RECORD_INPUT_MAX_CHARS = 2048;
 const CLAUDE_CODE_VERSION = SDK_VERSION;
 
 /** Static model list surfaced by supportedModels()/initializationResult(). */
@@ -276,7 +280,17 @@ export function query(args: {
   // outer abort still cancels everything AND close() cancels only this query.
   const life = new AbortController();
   const lifeSignal = AbortSignal.any([outer.signal, life.signal]);
-  const persist = options.persistSession !== false;
+  // S2 incognito: zero SDK-side persistence. Forces the transcript writes off
+  // (below), degrades memory to read-only (resolveMemoryRuntime), disables the
+  // R7 write rounds and suppresses S3 tool-call records (all persist-gated).
+  const incognito = options.incognito === true;
+  if (incognito && options.sessionStore !== undefined) {
+    throw new ConfigurationError(
+      'sessionStore cannot be combined with incognito:true (an incognito ' +
+        'session persists nothing)',
+    );
+  }
+  const persist = !incognito && options.persistSession !== false;
   if (options.sessionStore !== undefined && !persist) {
     throw new ConfigurationError(
       'sessionStore cannot be combined with persistSession:false',
@@ -342,6 +356,7 @@ export function query(args: {
         memory: options.memory!,
         cwd,
         protocol: options.provider?.protocol === 'openai-chat' ? 'openai-chat' : 'anthropic',
+        incognito,
         debug,
       })
     : null;
@@ -603,6 +618,45 @@ export function query(args: {
     engineConfig.memoryFlush = { prompt: MEMORY_COMPACTION_FLUSH_PROMPT };
   }
 
+  // S3 structured tool-call records (governance spec): one `tool_call` line in
+  // the session JSONL per dispatched tool_use block — same level as the
+  // message lines, machine-readable by `type`, so "the model SAID it called a
+  // tool" is always checkable against "a call actually dispatched"
+  // (getSessionToolCalls / auditToolClaims read them back). Persist-gated:
+  // persistSession:false and incognito (S2) write zero records. The input is
+  // truncated JSON — the untruncated input lives in the assistant message's
+  // tool_use block under the same tool_use_id.
+  let toolCallSeq = 0;
+  const persistToolRecord = (rec: ToolDispatchRecord): void => {
+    if (!persist || resolvedSessionId === '') return;
+    toolCallSeq += 1;
+    let inputJson: string;
+    try {
+      inputJson = JSON.stringify(rec.input) ?? 'null';
+    } catch {
+      inputJson = '"[unserializable input]"';
+    }
+    if (inputJson.length > TOOL_RECORD_INPUT_MAX_CHARS) {
+      inputJson = `${inputJson.slice(0, TOOL_RECORD_INPUT_MAX_CHARS)}…[truncated]`;
+    }
+    store.append(resolvedSessionId, {
+      type: 'tool_call',
+      uuid: randomUUID(),
+      session_id: resolvedSessionId,
+      seq: toolCallSeq,
+      timestamp: rec.startedAt,
+      tool_use_id: rec.toolUseId,
+      tool_name: rec.toolName,
+      tool_input: inputJson,
+      status: rec.status,
+      duration_ms: rec.durationMs,
+      result_summary: rec.resultSummary,
+      ...(rec.parentToolUseId !== undefined
+        ? { parent_tool_use_id: rec.parentToolUseId }
+        : {}),
+    });
+  };
+
   // Subagent runtime: hands out per-depth spawn closures + drains child results
   // and usage. Children get the real (unfiltered) MCP registry and apply their
   // own per-child tool filtering.
@@ -632,6 +686,7 @@ export function query(args: {
     readFilePaths,
     sessionKey: toolSessionKey,
     familyBudget,
+    onToolRecord: persistToolRecord,
   });
 
   // Memory tool registration — MAIN LOOP ONLY (v1): a cloned map so the
@@ -976,6 +1031,8 @@ export function query(args: {
           drainObservability,
           // Aggregate agent-tree budget ceiling, shared with every subagent loop.
           ...(familyBudget !== undefined ? { familyBudget } : {}),
+          // S3: root-loop tool-call records (children record via the runtime).
+          onToolRecord: persistToolRecord,
           // Memory spec R8: metrics.memoryHealth snapshot source (root only).
           ...(memory !== null ? { memoryHealth: () => memory.health } : {}),
           // Unified tool-search: withhold a cold built-in's schema from this

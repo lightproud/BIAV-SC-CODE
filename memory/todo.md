@@ -30,6 +30,10 @@
 | T24 | fanart 月桶「日日下载整月重传」带宽站岗：随月内天数线性涨（历史 ~150MB/月，月末单次两三百 MB），当前可接受；若未来体量失控再议按日资产分桶（代价 = 回到「资产散乱」老问题，2026-06-21 整理前形态），无异常不动 | 观察 | PR [#587](https://github.com/lightproud/brain-in-a-vat/pull/587) 合并总结体余项 2 + `.github/workflows/collect-fanart.yml` 上传步 | 开 |
 | T25 | Silver Core SDK 自我改进闭环（SCS-REQ-002）Phase 1 双裁定：① 行为评估 LLM 评分固定用哪个模型版本、成本预算多少；② 20 题评估集题目来源（从历史失败会话提炼 vs 人工构造）。两项均阻塞 Phase 1（环二评估基准），环三夜间改进任务依赖环二先行（需求书硬序） | 裁定 | `memory/active/self-improvement-requirements.md` §8 开放问题 #1/#2 | 开 |
 | T26 | Silver Core SDK 自我改进闭环（SCS-REQ-002）Phase 3 沙箱工作区实现选型：容器隔离 vs 独立 checkout 目录（工程决策），阻塞 Phase 3（环三夜间改进任务）；前置 Phase 1、2 完成，不急裁 | 裁定 | `memory/active/self-improvement-requirements.md` §8 开放问题 #3 | 开 |
+| T27 | 无痕会话（S2 `options.incognito`）memory **读权限**是否保留：v0.48.0 默认保留（view 可用，「知道你但不记录你」，需求书自荐方案待拍板）；若裁「全禁」，消费侧 `disallowedTools:['memory']` 即达、SDK 零改动 | 裁定 | 0711 记忆治理需求书 §7 待决表 + `projects/silver-core-sdk/docs/MEMORY-GOVERNANCE.md` S2 节 | 开 |
+| T28 | BPT 侧多用户 session 隔离与 token 计费归属现状回填：S1 挂载已按 query 实例化落地（SDK 侧不阻塞），BPT 接线时按其用户体系把 `{userId}` 实例化进 mounts 并核对计费归属口径 | 黑池输入 | 0711 记忆治理需求书 §7 待决表 + `projects/silver-core-sdk/docs/MEMORY-GOVERNANCE.md` S1 节 | 开 |
+| T29 | git 历史重写禁区站岗：2026-06-21 瘦身删除的 ~3.0G discord 旧档，仅实证 30 月中 3 月在 Releases 有副本；做 git 历史重写前**不得假定其余 27 月安全**（历史 blob 是唯一二次抢救网） | 观察 | 原根目录 `todo.md` 风险提示节（2026-07-11 仓库精简裁定归账后删档，见 `Public-Info-Pool/Resource/repo-engineering/repo-slim-audit-20260711.md` 项 2） | 开 |
+| T30 | pending-discussions 归档遗留开账复核：2026-04-26 定格快照归档时余 18 条未销（采集接入 4 / 日报流程 2 / 事实圣经补全 1 / 站点 Discussions 1 / 数据层审计副产物 6 / 待解锁源 3 / publish_time 污染 1），部分疑已被后续演化覆盖（如 Discussions/Giscus 评论随 2026-07-10 取消社区贡献大概率作废、日报定时已停用），须逐条复核销案或转正式挂账 | 裁定 | `memory/archive/pending-discussions.md`（2026-07-11 仓库精简裁定项 5 归档） | 开 |
 
 ## 已清（销案引）
 

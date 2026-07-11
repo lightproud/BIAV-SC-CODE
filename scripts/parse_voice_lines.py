@@ -79,7 +79,7 @@ def parse_voice_lua(path):
 
 
 if __name__ == '__main__':
-    src = 'projects/wiki/data/extracted/lua_tables/Voice.lua'
+    src = 'Public-Info-Pool/Reference/Game-Unpacked/Lua表还原/Voice.lua'
     dst = 'projects/wiki/data/processed/voice_lines.json'
     data = parse_voice_lua(src)
     with open(dst, 'w', encoding='utf-8') as f:

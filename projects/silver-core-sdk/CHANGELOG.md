@@ -16,181 +16,75 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
-## 0.47.10 — 2026-07-11
+## 0.48.1 — 2026-07-11
 
-**World-class review pass, OpenAI is_error signal**: an `is_error` tool_result
-lost its failure signal when encoded to the OpenAI `tool` role (which has no
-is_error field), so the model could not tell a failed tool call (a non-zero
-Bash exit, a builtin error) from a successful one. Failed tool results now carry
-a deterministic `[tool error]` marker; successful results are unchanged.
-+1 regression test.
+**World-class review pass — six-track audit fixes** (one consolidated entry; the
+branch bumped through 0.47.1–0.47.10 pre-merge, rebased onto 0.48.0's memory
+governance). A six-way parallel deep review of all 103 source files surfaced,
+verified, and fixed the following, each with a regression test:
 
-## 0.47.9 — 2026-07-11
+- **P0 — aggregate agent-tree budget ceiling**: each subagent got a full copy of
+  `maxBudgetUsd` and the parent gate saw only its own cost, so a coordinator
+  fanning out N concurrent subagents could spend (1+N)×maxBudgetUsd in one
+  prompt. A shared `familyBudget` ledger is threaded through the root loop and
+  every subagent loop; each loop adds its own cost and every gate trips on the
+  aggregate. Single-loop behavior is byte-identical.
+- **Security — WebFetch SSRF**: an IPv4-mapped IPv6 host (`[::ffff:169.254.169.254]`)
+  is normalized by the URL parser to hex before the guard runs, bypassing the
+  entire private/loopback/link-local/metadata IPv4 blocklist. The embedded IPv4
+  is now reconstructed and run through `ipv4Blocked`.
+- **P1**: memory×toolSearch registered ToolSearch into the wrong builtin map
+  (all deferred tools unreachable); a thinking-only assistant turn stripped to
+  `content:[]` and 400'd every later request (permanent session death); OpenAI
+  transport crashed on a zero-consumption `[DONE]` stream and dropped a
+  late-arriving tool_call id / split name; the concurrency gate ignored abort
+  while a request was queued; a PreCompact `decision:'deny'` vetoed the memory
+  flush but not the fold (memory loss); a refusal turn kept an orphan tool_use;
+  `run()` never closed the input pump on early exit (unbounded queue + caller
+  generator leak); `close()` aborted the caller's shared AbortController (killing
+  sibling queries — now a query-owned `life` controller); the `Bash(git:*)`
+  colon boundary matched a bare prefix (`git-crypt`, `github`); a stalled
+  background worker never notified its coordinator; a fork subagent inherited
+  only `systemPrompt` (breaking the shared-cache byte-match); a doubly-failed
+  fallback attempt's usage went unbilled.
+- **P2**: SSE parser accumulated one reaction per chunk on a never-settling abort
+  promise (megabytes on long streams — now cancels the reader); Bedrock
+  `apac.`/`global.`/`us-gov.` inference-profile prefixes priced at $0 (silently
+  unenforceable `maxBudgetUsd`); an `is_error` tool_result lost its failure
+  signal on the OpenAI protocol (now a `[tool error]` marker).
 
-**World-class review pass, permissions + subagents batch**:
+Baseline 1786 → full suite green with +25 review regression tests; `tsc` +
+`build` exit 0. Deferred for keeper adjudication (documented in the PR): the
+SessionManager auto-resume resource/accounting semantics, the auto-mode
+`allowedTools` question, sandbox writable-dir sync, and a P2 long-tail.
 
-- **Bash specifier `:` boundary is a WORD boundary, not a bare prefix**: the
-  `Bash(git:*)` colon-boundary branch matched on `value.startsWith('git')`, so
-  it granted `git-crypt export /secret`, `github-cli`, and `gitk` — a real
-  over-grant (and symmetric deny-weakening). The command base must be the whole
-  value or be followed by a space.
-- **stalled background worker notifies its coordinator**: a background subagent
-  aborted by the stall watchdog (or any genuine failure) emitted only
-  host-visible observability events, never a `completedBuffer` note — the ONLY
-  channel the model sees. Its coordinator (told "workers will notify you when
-  they are done") waited forever. A failed task-notification is now buffered for
-  the model too (intentional stopTask/close aborts excluded).
-- **fork subagent inherits the parent's FULL system**: fork inherited only
-  `systemPrompt`, dropping `systemPromptSuffix` / `systemPromptBaseLen` /
-  `systemBlocks` / `systemComposition` / `cacheTtl` / `compaction`. Fork's whole
-  point is a byte-identical prefix so the child reads the parent's warm cache;
-  the default preset keeps its instructions in the suffix and a segments host
-  puts everything in blocks (an empty-system fork). Those fields are now
-  inherited in fork mode; `serverTools` stays root-only (a child must not
-  advertise the memory tool it cannot execute).
 
-+3 regression tests.
+## 0.48.0 — 2026-07-11
 
-## 0.47.8 — 2026-07-11
-
-**World-class review pass, engine + query correctness batch**:
-
-- **PreCompact `decision:'deny'` now vetoes the FOLD, not only the flush**:
-  `performCompaction` vetoed only on `continue:false`, while the memory-flush
-  gate (and official hook semantics) also treat `decision:'deny'` as a veto. A
-  hook returning `{continue:true, decision:'deny'}` therefore suppressed the
-  pre-compaction memory-flush turn yet let the fold compact away the very
-  progress the denied flush was meant to save. The two gates now agree.
-- **refusal turn drops orphan tool_use**: a `stop_reason:'refusal'` turn can
-  carry a completed tool_use; persisting it unpaired 400s every later
-  same-session request. Apply the C6 orphan filter (as natural-end /
-  structured-invalid / bg-drain already do); text/thinking kept for context.
-- **input pump closed on every exit path**: a streaming-input consumer that
-  breaks its `for await`, or an internal early return (maxTurns / maxBudget /
-  SessionStart block), left `pump()` forever pulling the caller's async
-  iterator into an unbounded queue (the caller's generator finalizer never
-  ran). `run()`'s finally now closes the queue so the pump stops and the source
-  is returned.
-- **close() no longer aborts the caller's AbortController**: `close()` aborted
-  `options.abortController`, so closing one query killed every sibling query
-  sharing that controller (and any managed session). A query-owned `life`
-  controller now backs `close()`; cancellation propagates through the union of
-  the caller's signal and `life`, so an outer abort still cancels the query and
-  `close()` cancels only this one.
-
-+4 regression tests.
-
-## 0.47.7 — 2026-07-11
-
-**World-class review pass, P1 fix**: `ToolSearch` registration reached the
-wrong builtin map when memory was enabled. The engine and the init message
-consume `mainLoopBuiltins`, which is a CLONE of `builtinTools` when
-`options.memory` is on (so the memory tool stays main-loop-only). `ToolSearch`
-was registered into the original `builtinTools`, so with memory + tool-search
-both enabled it never reached the engine or the init `tools` list — and every
-deferred built-in and MCP tool became permanently unreachable (the dispatcher
-could not find `ToolSearch` to load them). It now registers into
-`mainLoopBuiltins`; when memory is off the two maps are the same reference, so
-that path is byte-identical. +1 regression test.
-
-## 0.47.6 — 2026-07-11
-
-**World-class review pass, transport-core batch** (both arms):
-
-- **concurrency gate honors abort while queued**: `RequestSemaphore.acquire`
-  took no signal, so a request queued behind a full concurrency cap could not
-  be aborted — an interrupt()/teardown blocked until an unrelated in-flight
-  stream (possibly minutes long) freed a permit. `acquire(signal)` now rejects
-  a queued waiter with AbortError on abort and removes it from the queue, with
-  a documented race analysis (a just-granted permit resolves and the aborting
-  caller releases it; the next waiter still gets the permit). Both transports
-  pass `req.signal`.
-- **SSE parser drops per-read reaction accumulation**: the parse loop raced
-  every `reader.read()` against a shared never-settling abort promise, attaching
-  a fresh reaction to it on EVERY chunk — a long stream (hundreds of thousands
-  of frames) retained one closure per read, megabytes of growth that undid the
-  transport's per-frame-timer savings. Abort now cancels the reader (which wakes
-  the pending read) via one listener for the whole stream; prompt-abort behavior
-  is unchanged.
-
-+7 regression tests.
-
-## 0.47.5 — 2026-07-11
-
-**World-class review pass, OpenAI-protocol transport batch**:
-
-- **zero-consumption stream now self-heals**: a `200 + only data:[DONE]`
-  stream (zero content chunks — an overloaded gateway that accepts the request
-  then closes with just the terminator) hit `translator.finish()`, which threw
-  a raw "ended before any chunk" error with no replay-safe marker, so the
-  engine's turn-replay could not catch it. The completed-message check now
-  requires `chunkCount > 0`, so a zero-chunk `[DONE]` falls through to the same
-  empty-stream retry the Anthropic arm already uses (twin-symmetry restored).
-- **fragmented tool_call id/name preserved**: the translator captured a
-  tool-call's id and name only on the FIRST delta and minted a synthetic id
-  immediately, so a gateway that streamed the real id in a later chunk (or split
-  `function.name`) produced a tool_use_id the server later rejected (400) or a
-  mis-dispatched name. Per-index tool state is now buffered; the block start is
-  held until an id is known (accumulating name fragments and early arg deltas),
-  and a never-id'd call is flushed with a synthetic id at finish. Conforming
-  streams (id+name in the first delta) are byte-identical.
-
-+4 regression tests.
-
-## 0.47.4 — 2026-07-11
-
-**World-class review pass, engine correctness batch**:
-
-- **thinking-strip session death**: a thinking-only assistant turn (a max_tokens
-  cut before any text/tool_use) stripped down to zero content blocks on a
-  cross-model replay or an unstamped resume, and emitting
-  `{role:'assistant',content:[]}` 400s "content must not be empty" on EVERY
-  later request — permanently wedging the session. `stripStaleThinking` now
-  drops such an emptied turn instead of sending it.
-- **Bedrock inference-profile pricing**: `normalizeModelId` matched only
-  two-letter region prefixes (`us.`/`eu.`), so cross-region inference profiles
-  (`apac.`, `global.`, `us-gov.`) normalized to nothing → no price match → $0
-  cost → `maxBudgetUsd` silently unenforceable on exactly those models. The
-  region-profile token match is broadened to the real prefix shapes.
-
-+5 regression tests.
-
-## 0.47.3 — 2026-07-11
-
-**World-class review pass, P0 fix**: aggregate (agent-tree) budget ceiling.
-Each subagent was handed a full copy of `maxBudgetUsd` and the parent loop's
-budget gate only saw the parent's own cost (child cost folds into the session
-account at result boundaries), so a coordinator that fanned out N concurrent
-subagents in one prompt could spend up to (1+N)×maxBudgetUsd. A shared
-`familyBudget` ledger is now threaded through the root loop and every subagent
-loop: each loop adds its own billed cost to one shared `spentUsd` and every
-budget gate additionally trips once the family total exceeds the absolute cap.
-Purely additive/conservative — for a childless loop the family gate trips at
-the identical point as the existing per-loop self-cap, so single-loop budget
-behavior is byte-identical; it only bites earlier when concurrent family spend
-is in flight. Also syncs `src/version.ts` (it had lagged the 0.47.1/0.47.2
-package bumps — the version-guard invariant covers it). +1 regression test.
-
-## 0.47.2 — 2026-07-11
-
-**World-class review pass, security fix**: WebFetch SSRF guard — `ipv6Blocked`
-now reconstructs the embedded IPv4 from an IPv4-mapped/-compatible IPv6
-address in its HEX group form and runs it through the IPv4 blocklist. The
-WHATWG/Node URL parser normalizes a host like `[::ffff:169.254.169.254]` to
-the hex spelling `[::ffff:a9fe:a9fe]` before the guard ever sees it, so the
-old dotted-only regex never matched and the entire private/loopback/
-link-local/metadata IPv4 blocklist was bypassable via the mapped form (a
-prompt-injection SSRF vector). +4 regression cases.
-
-## 0.47.1 — 2026-07-11
-
-**World-class review pass (six-track deep audit), fix batch**: engine — the
-one-shot model-fallback attempt now carries its own usage sink, so when the
-fallback stream ALSO fails, the tokens it already billed (its message_start
-input tokens) are folded into the run totals and reach the terminal error
-result's usage/cost/modelUsage report instead of being dropped (the primary
-attempt's sink has had exactly this treatment since finding #5). Further
-verified fixes from the audit land in this same version entry.
+**Memory governance P0 set (spec S1–S4, BPT-EXTENSION — docs/MEMORY-GOVERNANCE.md)**:
+the SDK-layer footing for BPT's team/personal memory partitioning, incognito
+mode and auditability. S1 scope routing: `options.memory.mounts` declares
+per-query subtree rights (`read-only` / `read-write`), enforced at the tool
+layer on top of R4 traversal protection — writes outside a read-write mount
+and any access outside every mount are rejected with structured errors,
+ancestor-directory listings are FILTERED to mount-visible entries (user A
+never sees user B's names), rename is gated at both ends, and the resident
+index (R6) only injects when `/memories/MEMORY.md` is mount-readable. S2
+incognito primitive: `options.incognito` forces zero SDK-side persistence —
+transcript writes off (`sessionStore` combination is a ConfigurationError),
+memory degraded to read-only (view stays; the five writes return
+`INCOGNITO_MEMORY_ERROR`), both R7 write rounds off, S3 records off; the
+leak-test checklist from the requirements doc runs as integration tests
+(marker-grep across every SDK-writable root). S3 structured tool-call log:
+one `tool_call` JSONL record per dispatched tool_use block (root loop AND
+subagents, `parent_tool_use_id`-stamped) with name / truncated input JSON /
+timestamp / seq / status / duration / result summary, `type`-distinguishable
+from message lines and joinable to the untruncated tool_use block via
+tool_use_id; read back with `getSessionToolCalls()`. S4 claim verification:
+`auditToolClaims` / `auditSessionToolClaims` flag assistant turns that CLAIM
+a tool action with no backing record (default zh+en memory-write detector,
+consumer-extensible; low-miss over precision by design). +32 tests, full
+suite 1812 green.
 
 ## 0.47.0 — 2026-07-11
 

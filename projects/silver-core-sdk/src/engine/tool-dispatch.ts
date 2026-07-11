@@ -28,6 +28,7 @@ import type {
 import type {
   AggregatedHookResult,
   EngineDeps,
+  ToolDispatchRecord,
   ToolResultPayload,
 } from '../internal/contracts.js';
 
@@ -137,13 +138,36 @@ export type ToolDispatcherConfig = {
   signal: AbortSignal;
   /** Per-tool metrics recorder (calls/duration/errors). */
   recordTool: (name: string, ms: number, isError: boolean) => void;
+  /** Structured tool-call telemetry (governance spec S3): one record per
+   *  dispatched block, emitted at dispatch completion. Absent -> no records. */
+  onToolRecord?: (rec: ToolDispatchRecord) => void;
 };
+
+const RECORD_SUMMARY_MAX_CHARS = 500;
+
+/** Head of a tool_result's content for the S3 record; non-text blocks appear
+ *  as their type tag so the record stays small and text-only. */
+function summarizeResultContent(
+  content: ToolResultBlockParam['content'],
+): string {
+  const text =
+    content === undefined
+      ? ''
+      : typeof content === 'string'
+        ? content
+        : content
+            .map((b) => (b.type === 'text' ? b.text : `[${b.type}]`))
+            .join(' ');
+  return text.length > RECORD_SUMMARY_MAX_CHARS
+    ? `${text.slice(0, RECORD_SUMMARY_MAX_CHARS)}…[truncated]`
+    : text;
+}
 
 export function createToolDispatcher(cfg: ToolDispatcherConfig): {
   isReadOnlyTool: (name: string) => boolean;
   executeToolUse: (block: ToolUseBlock) => Promise<ToolExecOutcome>;
 } {
-  const { deps, sessionId, baseHookFields, signal, recordTool } = cfg;
+  const { deps, sessionId, baseHookFields, signal, recordTool, onToolRecord } = cfg;
   /** Full pipeline for one tool_use block: hooks -> gate -> execute -> hooks. */
   /** A tool is read-only if a builtin flags it, or a connected MCP tool's
    * server annotation sets readOnlyHint. Feeds the gate's auto-approve
@@ -156,7 +180,44 @@ export function createToolDispatcher(cfg: ToolDispatcherConfig): {
       .some((t) => t.qualifiedName === name && t.annotations?.readOnlyHint === true);
   };
 
+  /** S3 wrapper: time the whole dispatch and emit one structured record per
+   *  block, including error/deny/stop outcomes. An abort still records (with
+   *  '[aborted]') so the audit trail never loses a dispatched call, then
+   *  rethrows. Absent recorder -> zero overhead passthrough. */
   async function executeToolUse(block: ToolUseBlock): Promise<ToolExecOutcome> {
+    if (onToolRecord === undefined) return dispatchToolUse(block);
+    const startedAt = new Date().toISOString();
+    const t0 = Date.now();
+    const emit = (status: 'ok' | 'error', resultSummary: string): void => {
+      try {
+        onToolRecord({
+          toolUseId: block.id,
+          toolName: block.name,
+          input: block.input,
+          startedAt,
+          durationMs: Date.now() - t0,
+          status,
+          resultSummary,
+        });
+      } catch {
+        // Telemetry must never break a tool dispatch.
+      }
+    };
+    let outcome: ToolExecOutcome;
+    try {
+      outcome = await dispatchToolUse(block);
+    } catch (err) {
+      emit('error', isAbortError(err) ? '[aborted]' : String(err));
+      throw err;
+    }
+    emit(
+      outcome.result.is_error === true ? 'error' : 'ok',
+      summarizeResultContent(outcome.result.content),
+    );
+    return outcome;
+  }
+
+  async function dispatchToolUse(block: ToolUseBlock): Promise<ToolExecOutcome> {
     const toolName = block.name;
     let input = block.input;
 

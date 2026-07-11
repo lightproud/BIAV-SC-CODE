@@ -54,6 +54,43 @@ def test_generated_kb_reaches_own_structure():
     )
 
 
+# ---------- CLI 入口 / 报告渲染冒烟（main） ----------
+# report() 的真实数字已由上组测试覆盖；此处用小型合成汇总焊 main 的两条打印出口，
+# 避免整套 generate+evaluate+ab 再重跑两遍拖慢套件。
+
+_FAKE_REPORT = {
+    "total": 200, "distinctive": 90,
+    "by_capability": {"identity": 60, "associative": 120, "layer_aware": 20},
+    "kb_hit_rate": 0.95, "distinctive_hit_rate": 0.92,
+    "ab_kb": 0.95, "ab_grep": 0.40, "ab_delta": 0.55,
+    "ab_by_mode": {"search": {"n": 80, "kb": 78, "grep": 70},
+                   "activate": {"n": 120, "kb": 112, "grep": 10}},
+}
+
+
+def test_main_prints_scaled_scorecard(monkeypatch, capsys):
+    """main() 默认路径：规模化记分卡各节齐（总题 / distinctive / A/B / 分模式）。"""
+    monkeypatch.setattr(gen, "report", lambda golden=None: dict(_FAKE_REPORT))
+    monkeypatch.setattr(sys, "argv", ["kb_golden_gen.py"])
+    gen.main()
+    out = capsys.readouterr().out
+    assert "图驱动黄金集" in out
+    assert "总题 = 200" in out and "distinctive" in out
+    assert "反事实 A/B" in out and "+0.55" in out
+    assert "activate" in out and "search" in out
+
+
+def test_main_json_machine_readable(monkeypatch, capsys):
+    """--json 机读路径：整份汇总原样输出。"""
+    import json
+
+    monkeypatch.setattr(gen, "report", lambda golden=None: dict(_FAKE_REPORT))
+    monkeypatch.setattr(sys, "argv", ["kb_golden_gen.py", "--json"])
+    gen.main()
+    rep = json.loads(capsys.readouterr().out)
+    assert rep == _FAKE_REPORT
+
+
 if __name__ == "__main__":
     import pytest
     pytest.main([__file__, "-v"])

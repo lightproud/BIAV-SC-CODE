@@ -55,6 +55,45 @@ def test_ab_shape():
     assert sum(rep["verdicts"].values()) == rep["n"]
 
 
+# ---------- CLI 入口 / 报告渲染冒烟（main + _print） ----------
+
+def test_main_prints_ab_table(monkeypatch, capsys):
+    """main() 默认路径：A/B 对照表各节齐（三臂命中率 / 裁决 / 分模式）。"""
+    monkeypatch.setattr(sys, "argv", ["kb_ab.py"])
+    kb_ab.main()
+    out = capsys.readouterr().out
+    assert "KB vs grep 反事实 A/B" in out
+    assert "grep 朴素" in out and "grep 最强" in out
+    assert "裁决" in out and "分模式" in out
+    # 联想模式行带结构差距注解
+    assert "联想/结构题，grep 无从遍历" in out
+
+
+def test_main_json_omits_per_question(monkeypatch, capsys):
+    """--json 机读路径：汇总字段齐、逐题明细剔除。"""
+    import json
+
+    monkeypatch.setattr(sys, "argv", ["kb_ab.py", "--json"])
+    kb_ab.main()
+    rep = json.loads(capsys.readouterr().out)
+    assert "per_question" not in rep
+    assert set(rep) >= {"kb_hit_rate", "grep_hit_rate", "grep_strong_hit_rate",
+                        "delta", "delta_strong", "verdicts", "by_mode"}
+    assert sum(rep["verdicts"].values()) == rep["n"]
+
+
+def test_print_lists_kb_exclusive_wins(capsys):
+    """_print 对 KB 独胜题打清单（grep 做不到的那些）；无独胜时不打该节。"""
+    rep = kb_ab.ab_evaluate()
+    kb_ab._print(rep)
+    out = capsys.readouterr().out
+    wins = [p["q"] for p in rep["per_question"] if p["verdict"] == "KB_win"]
+    if wins:
+        assert "KB 独胜" in out and wins[0] in out
+    else:
+        assert "KB 独胜" not in out
+
+
 if __name__ == "__main__":
     import pytest
     pytest.main([__file__, "-v"])

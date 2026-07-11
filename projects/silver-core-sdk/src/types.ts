@@ -1325,6 +1325,20 @@ export interface MemoryStore {
 }
 
 /**
+ * One memory mount declaration (BPT-EXTENSION, memory governance spec S1):
+ * a virtual subtree under `/memories` this query may touch, with its rights.
+ * Mounts are per-query — the embedder instantiates them from its own session
+ * context (e.g. `/memories/team` read-only + `/memories/users/<id>` read-write
+ * for a user session; `/memories/team` read-write for a synthesis batch task).
+ */
+export type MemoryMount = {
+  /** Virtual path under /memories (e.g. '/memories/team'). Trailing slashes
+   *  are tolerated; an invalid path is a ConfigurationError at query(). */
+  path: string;
+  mode: 'read-only' | 'read-write';
+};
+
+/**
  * Memory system configuration (BPT-EXTENSION; docs/MEMORY.md). Presence of
  * the object enables the `memory` tool (set `enabled: false` to keep a shared
  * options spread but switch the system off).
@@ -1355,6 +1369,18 @@ export type MemoryOptions = {
   /** `create` on an existing file overwrites instead of erroring (the
    *  reference behavior; spec R1 opt-in). Default false. */
   createOverwrite?: boolean;
+  /**
+   * Memory scope routing (governance spec S1): the subtrees this query may
+   * touch and with what rights, enforced at the SDK tool layer (never via
+   * prompt discipline). Writes outside a read-write mount and any access
+   * outside every mount are rejected with structured errors; a strict
+   * ancestor directory of a mount stays viewable for navigation with its
+   * listing filtered to mount-visible entries. Omit for unrestricted
+   * access to the whole /memories tree (pre-S1 behavior); an empty array is
+   * a ConfigurationError. The resident index (R6) is only injected when
+   * `/memories/MEMORY.md` is readable under the mounts.
+   */
+  mounts?: MemoryMount[];
   /**
    * Resident memory index (spec R6): at session start the harness reads the
    * head of `/memories/MEMORY.md` (when it exists) into the system prompt so
@@ -1434,6 +1460,43 @@ export type SDKMemoryHealth = {
   indexInjectionTokens: number;
 };
 
+/**
+ * One structured tool-call record (BPT-EXTENSION, memory governance spec S3),
+ * persisted to the session JSONL at the same level as the message lines so
+ * "the model SAID it called a tool" is always checkable against "a tool call
+ * actually happened". Records are written at dispatch time by the engine —
+ * they never depend on reconstructing tool_use blocks from message text.
+ * Read them back with `getSessionToolCalls()`; audit claims against them with
+ * `auditToolClaims()`. Incognito sessions (S2) write none.
+ */
+export type SDKToolCallRecord = {
+  type: 'tool_call';
+  uuid: string;
+  session_id: string;
+  /** 1-based dispatch sequence within one query() run (a resumed session's
+   *  file restarts at 1 for the new run; `timestamp` orders across runs). */
+  seq: number;
+  /** ISO timestamp of dispatch start. */
+  timestamp: string;
+  /** The tool_use block id — joins the record to the full tool_use block
+   *  (untruncated input) persisted in the assistant message. */
+  tool_use_id: string;
+  tool_name: string;
+  /** JSON of the input, truncated at 2048 chars (see tool_use_id for the
+   *  full input). */
+  tool_input: string;
+  /** 'ok' = a tool_result without is_error; 'error' covers execution errors,
+   *  permission denials, hook stops and unknown tools (detail in
+   *  result_summary). */
+  status: 'ok' | 'error';
+  /** Full dispatch duration (hooks + permission gate + execution). */
+  duration_ms: number;
+  /** Result content head, truncated at 500 chars. */
+  result_summary: string;
+  /** Present on a subagent's tool call: the parent Task tool_use id. */
+  parent_tool_use_id?: string;
+};
+
 export type Options = {
   abortController?: AbortController;
   additionalDirectories?: string[];
@@ -1480,6 +1543,23 @@ export type Options = {
    */
   includePromptComposition?: boolean;
   includePartialMessages?: boolean;
+  /**
+   * Incognito session (BPT-EXTENSION, memory governance spec S2): a session
+   * that leaves no SDK-side persistent trace. When true:
+   *  - the session transcript is NOT persisted (persistSession is forced off;
+   *    combining with `sessionStore` is a ConfigurationError);
+   *  - the memory tool degrades to READ-ONLY: `view` stays available ("knows
+   *    you, doesn't record you"), the five write commands are rejected with a
+   *    structured error at the SDK layer;
+   *  - the R7 memory write rounds (compaction flush + session-end progress
+   *    card) are disabled;
+   *  - structured tool-call records (S3) are not written.
+   * Promise boundary: "incognito" means nothing enters SDK storage or the
+   * memory store. Requests are still sent to the configured model API and
+   * remain subject to its terms; workspace files the model edits via
+   * Write/Edit/Bash are the user's own actions and are out of scope.
+   */
+  incognito?: boolean;
   maxBudgetUsd?: number;
   /**
    * @deprecated Official docs mark `maxThinkingTokens` deprecated in favor of

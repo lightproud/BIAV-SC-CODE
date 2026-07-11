@@ -42,7 +42,6 @@ ALLOWLIST = {
     "build_capability_registry": "CI internal; driven by build-capability-registry.yml",
     "check_decisions_consistency": "CI/dev lint helper for decision docs; not user-facing",
     "discord_list_guilds": "one-off discovery utility; driven by discord-discover-guilds.yml",
-    "migrate_unpacked_to_git": "one-shot migration; driven by migrate-unpacked-to-git.yml",
     "playwright_collectors": "collector backend exercised only by test-collectors.yml",
     "report_render": "internal render helper for the in-session report flow",
     "silent_sources_audit": "diagnostic sub-step of update-news.yml; not a standalone component",

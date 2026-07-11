@@ -282,7 +282,7 @@ MEMORY_DOCS = [
     ("strategic-plan-2026.md", "knowledge-pointer", "2026 战略规划"),
     ("methodology.md", "knowledge-pointer", "协作方法论"),
     ("lessons-learned.md", "knowledge-pointer", "踩坑记录（持续追加编号）"),
-    ("contribution-protocol.md", "knowledge-pointer", "贡献协议 v1.0"),
+    ("contribution-protocol.md", "knowledge-pointer", "贡献协议 v1.0（已退役 2026-07-10：社区贡献取消，仅供追溯）"),
     ("style-guide.md", "knowledge-pointer", "视觉规范"),
     ("capability-index.md", "knowledge-pointer", "银芯全功能目录 + 动态编排可达性"),
     ("morimens-context.md", "knowledge-pointer", "世界观术语 + 历史时间线"),

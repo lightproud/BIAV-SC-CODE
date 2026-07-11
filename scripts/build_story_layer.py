@@ -10,19 +10,20 @@ Reproducible regeneration of projects/wiki/data/processed/story/:
   - character_story_links.json (character -> unlock / unit)
   - index.json          (per-unit aggregation)
 
-Originals (extracted/*) are read-only; desc / lock_tip kept byte-for-byte.
+Originals (Game-Unpacked/*) are read-only; desc / lock_tip kept byte-for-byte.
 """
 import json
 import re
 
-EXTRACTED = 'projects/wiki/data/extracted'
+UNPACKED = 'Public-Info-Pool/Reference/Game-Unpacked'
+DESC_SRC = f'{UNPACKED}/全部游戏数据/收藏馆_CollectionHall.txt'
 PROCESSED = 'projects/wiki/data/processed'
 OUT = f'{PROCESSED}/story'
 
 
 def load_desc():
     descs = {}
-    for line in open(f'{EXTRACTED}/categorized/collection_story.txt', encoding='utf-8', errors='ignore'):
+    for line in open(DESC_SRC, encoding='utf-8', errors='ignore'):
         m = re.match(r'CollectionHall_(\d+)_Desc\|(.*)', line.rstrip('\n'))
         if m:
             descs[int(m.group(1))] = m.group(2)
@@ -117,7 +118,7 @@ def main():
         })
     json.dump({'_meta': {
         'purpose': 'CollectionHall 全量 lore:world_lore(title/lock_tip)+ collection_story.txt(desc 逐字)+ 剧情单元解析 + 角色小传标记',
-        'source_raw': 'extracted/categorized/collection_story.txt, extracted/lua_tables/CollectionHall.lua',
+        'source_raw': 'Game-Unpacked/全部游戏数据/收藏馆_CollectionHall.txt, Game-Unpacked/Lua表还原/CollectionHall.lua',
         'note': 'desc/lock_tip 为原始文本逐字;解析器覆盖 序章/主线第N章/星辰篇第N章/意识潜游,含关卡号(N-M)与困难格式',
         'total': len(lore), 'with_description': sum(1 for x in lore if x['has_description']),
         'mapped_to_unit': sum(1 for x in lore if x['story_unit']),

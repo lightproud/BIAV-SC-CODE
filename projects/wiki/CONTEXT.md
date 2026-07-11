@@ -21,8 +21,10 @@
 ## 数据血缘（唯一现行链）
 
 ```
-data/extracted/                 客户端一手解包（lua_tables / categorized / art_assets）
-  → 顶层 scripts/parse_*.py    解析器（awaker_config / voice_lines / collection_hall / item_stories / cg_gallery）
+Public-Info-Pool/Reference/Game-Unpacked/   客户端一手解包 text（Lua表还原 / 全部游戏数据 等；
+                                2026-07-11 精简裁定去重后唯一本体，wiki 侧 data/extracted/ 仅余独占件）
+  → 顶层 scripts/parse_*.py    解析器（awaker_config / voice_lines / collection_hall / item_stories；
+                                cg_gallery 读 data/extracted/art_assets/——wiki 侧独占件）
   → data/processed/            加工 JSON（characters.json 可信基线 + 剧情层 story/ 等）
   → 顶层 scripts/generate_wiki_pages.py   生成 VitePress Markdown 页（由 deploy-site.yml 驱动）
   → docs/                      站点源（VitePress 构建 → gh-pages /wiki/ 子路径）
@@ -51,7 +53,9 @@ data/extracted/                 客户端一手解包（lua_tables / categorized
 
 ## 目录说明
 
-- `data/extracted/` — 客户端解包原始数据（只读，血缘源头）
+- `data/extracted/` — 客户端解包 wiki 侧独占残件（art_assets/ 立绘清单 + categorized 独占 2 txt；
+  与 Game-Unpacked 重复的 lua_tables / categorized 主体已于 2026-07-11 去重，
+  唯一本体在 `Public-Info-Pool/Reference/Game-Unpacked/`，血缘源头随之改指）
 - `data/processed/` — 加工 JSON（现行 source of truth；剧情层在 `processed/story/`）
 - `data/schemas/` — schema 定义。现行校验对象为 processed 基线
   （`characters.processed.schema.json`，2026-07-02 对齐）；旧 db 链 schema

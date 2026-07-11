@@ -78,7 +78,7 @@
 ### 配套接口与协议
 
 - `memory/active/silver-blackpool-interface.md` — 双系统接口规则（M3 单向输出依据）
-- `memory/active/contribution-protocol.md` — 贡献协议 v1.0（**已退役 2026-07-10**：社区贡献取消，档案仅供追溯）
+- `memory/archive/contribution-protocol-hub.md` — 贡献协议 hub（**已退役 2026-07-10**：社区贡献取消；2026-07-11 精简裁定降档出 active/，主档 `memory/contribution-protocol.md` 留原地供追溯）
 - `memory/bpt-guidance-protocol.md` — BPT 指导协议（v0.2 战略层 + 技术层指导分离）
 
 ### 角色体系（v2.0 后扩张）

@@ -778,6 +778,9 @@ export async function* runAgentLoop(
     baseHookFields,
     signal,
     recordTool,
+    // S3 structured tool-call records: threaded from the query layer (root)
+    // or the subagent runtime (children, parentToolUseId stamped).
+    ...(deps.onToolRecord !== undefined ? { onToolRecord: deps.onToolRecord } : {}),
   });
 
   // v0.4: surface buffered task_* / hook_* lifecycle messages (the subagent

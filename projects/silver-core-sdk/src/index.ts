@@ -35,6 +35,7 @@ export { DEFAULT_DEFERRED_BUILTINS, silverCoreToolOptions } from './tools/index.
 export {
   DEFAULT_CARDS_CONFIG,
   DEFAULT_MEMORY_LIMITS,
+  INCOGNITO_MEMORY_ERROR,
   MEMORY_INDEX_PATH,
   MEMORY_ROOT,
   MEMORY_SERVER_TOOL,
@@ -44,8 +45,14 @@ export {
   createLocalMemoryFileOps,
   createMemoryHealth,
   createMemoryStore,
+  describeMounts,
   memoryStoreContractCheckNames,
+  mountAllowsWrite,
+  mountReadAccess,
+  outsideMountsError,
   parseMemoryCards,
+  readOnlyMountError,
+  resolveMemoryMounts,
   runMemoryStoreContractSuite,
   truncateViewBody,
   validateCardsContent,
@@ -62,6 +69,9 @@ export type {
   MemoryLimits,
   MemoryStoreContractReport,
   MemoryStoreContractResult,
+  MountReadAccess,
+  ResolvedMemoryMount,
+  ResolvedMemoryMounts,
 } from './tools/memory/index.js';
 // BPT-EXTENSION (2026-07-08, black-pool ContextRing request): expose the harness
 // system-prompt base constructor so a host can size the built-in harness base —
@@ -90,11 +100,28 @@ export type {
 export { getSessionInfo, listSessions } from './sessions/store.js';
 export {
   getSessionMessages,
+  getSessionToolCalls,
   renameSession,
   tagSession,
   deleteSession,
   forkSession,
 } from './sessions/session-functions.js';
+// Tool-claim verification (BPT-EXTENSION, governance spec S4): flag assistant
+// turns that CLAIM a tool action with no backing record in the S3 structured
+// tool-call log. Heuristic by design — findings go to human review.
+export {
+  DEFAULT_TOOL_CLAIM_DETECTORS,
+  MEMORY_WRITE_CLAIM_DETECTOR,
+  auditSessionToolClaims,
+  auditToolClaims,
+  isMemoryWriteRecord,
+} from './sessions/tool-claims.js';
+export type {
+  AuditToolClaimsArgs,
+  ToolClaimDetector,
+  ToolClaimFinding,
+  ToolClaimRecordView,
+} from './sessions/tool-claims.js';
 export { InMemorySessionStore, encodeProjectKey } from './sessions/store-adapter.js';
 export {
   // v0.6 utility-call product features (generators / classifiers).
