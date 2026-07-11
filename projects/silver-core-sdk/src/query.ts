@@ -63,7 +63,12 @@ import {
 } from './engine/slash-commands.js';
 import { SessionAccounting } from './query-accounting.js';
 import { appendSystemInjection, buildEngineConfig } from './engine/config-builder.js';
-import { MEMORY_PROTOCOL_FRAGMENT } from './engine/prompt-fragments.js';
+import {
+  MEMORY_COMPACTION_FLUSH_PROMPT,
+  MEMORY_PROTOCOL_FRAGMENT,
+  MEMORY_SESSION_END_PROMPT,
+} from './engine/prompt-fragments.js';
+import { estimateTextTokens } from './engine/tokens.js';
 import { MEMORY_TOOL_NAME, resolveMemoryRuntime } from './tools/memory/index.js';
 import { createSessionPersistence } from './sessions/persistence.js';
 import { AsyncQueue, createDeferred, type Deferred } from './internal/async.js';
@@ -569,6 +574,13 @@ export function query(args: {
   if (memory?.serverTools !== undefined) {
     engineConfig.serverTools = memory.serverTools;
   }
+  // Memory spec R7: arm the engine's pre-compaction flush turn (one write
+  // opportunity before each fold). Root config only — child configs are
+  // derived field-by-field, so subagents never flush (they have no memory
+  // tool).
+  if (memory !== null && memory.flushOnCompaction) {
+    engineConfig.memoryFlush = { prompt: MEMORY_COMPACTION_FLUSH_PROMPT };
+  }
 
   // Subagent runtime: hands out per-depth spawn closures + drains child results
   // and usage. Children get the real (unfiltered) MCP registry and apply their
@@ -838,7 +850,11 @@ export function query(args: {
           parts.push({ label: 'memory-instructions', text: memory.instructions });
         }
         const index = await memory.buildIndexInjection();
-        if (index !== null) parts.push(index);
+        if (index !== null) {
+          parts.push(index);
+          // R8: the read-side residency cost is part of the memory bill.
+          memory.health.indexInjectionTokens = estimateTextTokens(index.text);
+        }
         appendSystemInjection(engineConfig, parts);
       }
 
@@ -936,6 +952,8 @@ export function query(args: {
           requestView,
           drainSubagentResults: () => subagentRuntime.drainCompletedResults(),
           drainObservability,
+          // Memory spec R8: metrics.memoryHealth snapshot source (root only).
+          ...(memory !== null ? { memoryHealth: () => memory.health } : {}),
           // Unified tool-search: withhold a cold built-in's schema from this
           // turn's tools[] while deferral is active and it is unloaded. Absent
           // when no deferred registry exists -> every built-in stays inline.
@@ -1361,6 +1379,47 @@ export function query(args: {
         // input (streaming-mode interrupt or normal completion).
         const outcome = yield* driveTurn(userUuid);
         if (outcome === 'stop') return;
+      }
+
+      // Memory spec R7: session-end progress-card round. Runs ONLY on the
+      // normal end of input (this point is unreachable on abort/error — both
+      // throw past it), only when at least one turn actually ran, and only
+      // when the knob is on. Its assistant/user messages stream normally,
+      // but its RESULT is absorbed (accounting already folded inside
+      // driveTurn's iteration) so the task's own final result remains the
+      // last result the consumer sees. Failures are logged, never fatal —
+      // the user's answer has already been delivered.
+      if (
+        memory !== null &&
+        memory.sessionEndUpdate &&
+        acct.turns > 0 &&
+        !outer.signal.aborted
+      ) {
+        try {
+          const endParam: APIMessageParam = {
+            role: 'user',
+            content: [{ type: 'text', text: MEMORY_SESSION_END_PROMPT }],
+          };
+          history.push(endParam);
+          requestView.messages.push(endParam);
+          persistParam(sess.sessionId, endParam);
+          // Bound the round: a progress card is a couple of tool turns, not
+          // a task. (driveTurn re-arms real budgets from session state.)
+          engineConfig.maxTurns = 4;
+          debug('memory: running session-end progress-card round');
+          const gen = driveTurn(randomUUID());
+          for (;;) {
+            const it = await gen.next();
+            if (it.done === true) break;
+            const msg = it.value;
+            if (msg.type !== 'result') yield msg;
+          }
+        } catch (err) {
+          if (isAbortError(err)) throw err;
+          debug(
+            `memory: session-end update failed (non-fatal): ${err instanceof Error ? err.message : String(err)}`,
+          );
+        }
       }
     } catch (err) {
       if (isAbortError(err)) {

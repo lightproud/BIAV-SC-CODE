@@ -6,14 +6,34 @@ contract, enforces the reference formats and the path-security boundary; where
 the data lives is entirely the consumer's decision (a local directory, an
 intranet share, a database — the SDK never knows).
 
-Status: **M1 shipped in v0.46.0** (spec R1–R6, the P0 set). M2 (R7 lifecycle
-hooks, R8 governance limits/accounting, R9 structured memory cards) is
-specified below but NOT yet implemented — the spec's §8.2 sample options
-`schema: 'cards'` and `sessionEndUpdate` do not exist yet. One R2 acceptance
-sub-item is deferred with M2: the conformance suite's memory axis against a
-LIVE official-arm wire capture (needs an official-arm run; the mode-A wire
-shape and dual-mode artifact equality are unit-locked today in
-`tests/memory-wiring.test.ts`).
+Status: **M1 shipped in v0.46.0** (spec R1–R6) and **M2 shipped in v0.47.0**
+(spec R7–R9): the full spec surface is implemented. One R2 acceptance sub-item
+remains open: the conformance memory axis against a LIVE official-arm wire
+capture — the mock-wire locks exist (`tests/conformance-memory-axis.test.ts`,
+plus live-smoke phase 3 against the real API via the `live-smoke` workflow);
+the official-arm differential slot is the skipped test there, pending a
+keeper-dispatched capture run.
+
+M2 surface summary:
+- **R7 write-timing** — `flushOnCompaction` (default on): when auto-compaction
+  is about to fold, the engine first injects ONE memory-write opportunity as a
+  user turn (docs-style "record un-saved progress now, then continue"); the
+  fold happens on the following check, and a PreCompact hook deny suppresses
+  both. `sessionEndUpdate` (default on): after a NORMAL end of input (never
+  abort/error), a bounded progress-card round updates /memories/MEMORY.md; its
+  assistant messages stream, its result is absorbed into session accounting so
+  the task's own result stays the last one the consumer sees.
+- **R8 governance** — `memory.limits` (defaults 65536 bytes/file, 64
+  files/directory, 16000 view chars with a view_range pagination hint),
+  enforced in the store engine and re-checked at the tool layer (view
+  truncation + create size + create cards) so directly-implemented stores are
+  covered too; `metrics.memoryHealth` reports operations / reads / writes /
+  errors / bytesRead / bytesWritten / indexInjectionTokens per run.
+- **R9 cards mode** — `schema: 'cards'` + `memory.cards` (defaults 500
+  chars/card, 50 cards/file): every written file must be `## <title>` cards
+  with 结论 / 依据 / 过期条件 fields (half- or full-width colons, multi-line
+  values); invalid writes return a structured error restating the format so
+  the model can retry.
 
 Requirements provenance: the r1 spec (2026-07-11) is archived verbatim at the
 bottom of this file. Implementation basis is exclusively the public Messages

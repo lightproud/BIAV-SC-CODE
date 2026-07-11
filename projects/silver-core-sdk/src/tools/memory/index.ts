@@ -9,26 +9,42 @@
 
 import { Buffer } from 'node:buffer';
 import * as path from 'node:path';
-import type { MemoryOptions, MemoryStore } from '../../types.js';
+import type { MemoryOptions, MemoryStore, SDKMemoryHealth } from '../../types.js';
 import type { BuiltinTool } from '../../internal/contracts.js';
 import { ConfigurationError } from '../../errors.js';
 import { createLocalFilesystemMemoryStore } from './local-store.js';
-import { createMemoryTool, MEMORY_TOOL_NAME } from './memory-tool.js';
+import { createMemoryHealth, createMemoryTool, MEMORY_TOOL_NAME } from './memory-tool.js';
 
 export { MEMORY_ROOT, MemoryPathError, validateMemoryPath } from './paths.js';
 export {
   createMemoryStore,
   formatFileSize,
+  DEFAULT_MEMORY_LIMITS,
+  truncateViewBody,
   type CreateMemoryStoreOptions,
   type MemoryDirEntry,
   type MemoryEntryStat,
   type MemoryFileOps,
+  type MemoryLimits,
 } from './store.js';
+export {
+  parseMemoryCards,
+  validateCardsContent,
+  DEFAULT_CARDS_CONFIG,
+  type MemoryCard,
+  type MemoryCardsConfig,
+} from './cards.js';
 export {
   createLocalFilesystemMemoryStore,
   createLocalMemoryFileOps,
 } from './local-store.js';
-export { createMemoryTool, memoryCommandSchema, MEMORY_TOOL_NAME } from './memory-tool.js';
+export {
+  createMemoryHealth,
+  createMemoryTool,
+  memoryCommandSchema,
+  MEMORY_TOOL_NAME,
+  type CreateMemoryToolOptions,
+} from './memory-tool.js';
 export {
   memoryStoreContractCheckNames,
   runMemoryStoreContractSuite,
@@ -57,6 +73,13 @@ export type MemoryRuntime = {
   serverTools?: Array<{ type: string; name: string }>;
   /** Consumer guidance to append after the protocol fragment (custom mode). */
   instructions?: string;
+  /** R8 per-query counters; the query layer snapshots this into
+   *  SDKRunMetrics.memoryHealth and stamps indexInjectionTokens. */
+  health: SDKMemoryHealth;
+  /** R7: inject a memory-write opportunity before auto-compaction folds. */
+  flushOnCompaction: boolean;
+  /** R7: run the session-end progress-card round on normal termination. */
+  sessionEndUpdate: boolean;
   /**
    * Resident memory index (spec R6): the head of /memories/MEMORY.md as a
    * ready-to-inject system-prompt part, or null for zero injection (file
@@ -92,7 +115,15 @@ export function resolveMemoryRuntime(args: {
     memory.store ??
     createLocalFilesystemMemoryStore(
       memory.baseDir ?? path.join(cwd, '.claude', 'memory'),
-      { createOverwrite: memory.createOverwrite === true },
+      {
+        createOverwrite: memory.createOverwrite === true,
+        // R8/R9 in the store engine (full enforcement). An injected store
+        // skips these; the tool layer below still covers view truncation,
+        // the create size cap and create-content cards validation.
+        ...(memory.limits !== undefined ? { limits: memory.limits } : {}),
+        ...(memory.schema !== undefined ? { schema: memory.schema } : {}),
+        ...(memory.cards !== undefined ? { cards: memory.cards } : {}),
+      },
     );
 
   const indexCfg = memory.indexInjection;
@@ -101,12 +132,22 @@ export function resolveMemoryRuntime(args: {
   const maxBytes =
     indexCfg === false ? 0 : (indexCfg?.maxBytes ?? INDEX_DEFAULT_MAX_BYTES);
 
+  const health = createMemoryHealth();
+
   return {
     store,
     mode,
-    tool: createMemoryTool(store),
+    tool: createMemoryTool(store, {
+      health,
+      ...(memory.limits !== undefined ? { limits: memory.limits } : {}),
+      ...(memory.schema !== undefined ? { schema: memory.schema } : {}),
+      ...(memory.cards !== undefined ? { cards: memory.cards } : {}),
+    }),
     ...(mode === 'native' ? { serverTools: [{ ...MEMORY_SERVER_TOOL }] } : {}),
     ...(memory.instructions !== undefined ? { instructions: memory.instructions } : {}),
+    health,
+    flushOnCompaction: memory.flushOnCompaction !== false,
+    sessionEndUpdate: memory.sessionEndUpdate !== false,
 
     async buildIndexInjection(): Promise<{ label: string; text: string } | null> {
       if (indexCfg === false || maxLines <= 0 || maxBytes <= 0) return null;

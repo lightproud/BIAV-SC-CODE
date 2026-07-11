@@ -33,6 +33,8 @@ export { DEFAULT_DEFERRED_BUILTINS, silverCoreToolOptions } from './tools/index.
 // built-in local-filesystem store, the SDK-layer path validator, and the
 // contract test suite a hosting application runs against its own store.
 export {
+  DEFAULT_CARDS_CONFIG,
+  DEFAULT_MEMORY_LIMITS,
   MEMORY_INDEX_PATH,
   MEMORY_ROOT,
   MEMORY_SERVER_TOOL,
@@ -40,16 +42,24 @@ export {
   MemoryPathError,
   createLocalFilesystemMemoryStore,
   createLocalMemoryFileOps,
+  createMemoryHealth,
   createMemoryStore,
   memoryStoreContractCheckNames,
+  parseMemoryCards,
   runMemoryStoreContractSuite,
+  truncateViewBody,
+  validateCardsContent,
   validateMemoryPath,
 } from './tools/memory/index.js';
 export type {
   CreateMemoryStoreOptions,
+  CreateMemoryToolOptions,
+  MemoryCard,
+  MemoryCardsConfig,
   MemoryDirEntry,
   MemoryEntryStat,
   MemoryFileOps,
+  MemoryLimits,
   MemoryStoreContractReport,
   MemoryStoreContractResult,
 } from './tools/memory/index.js';

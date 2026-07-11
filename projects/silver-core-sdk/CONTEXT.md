@@ -66,6 +66,14 @@ src/
 
 ## 当前状态
 
+**v0.47.0(2026-07-11):记忆系统 M2(spec R7–R9)落地,spec 全量收口**——R7 压缩前落盘回合
+(auto 触发将至先注入一次记忆写入机会、PreCompact 钩子可 deny、每折叠周期恰一次)+ 会话正常
+终结进度卡回合(abort/错误不触发,回合 result 被吸收、任务自身 result 仍为流内最后一个);
+R8 治理限额(64KB/文件、64 文件/目录、view 16k 截断带 view_range 提示,store 引擎 + 工具层
+双层执行)+ `metrics.memoryHealth` 记账(次数/读写字节/索引注入 token);R9 `schema:'cards'`
+记忆卡校验(结论/依据/过期条件,结构化可重试错误)。live-smoke 第 3 阶段(真 API 原生模式)
++ conformance 记忆轴 mock 线缆锁(官方臂差分槽位待守密人 dispatch 采集)。+31 测试,全量 1782 绿。
+
 **v0.46.0(2026-07-11):记忆系统 M1(spec R1–R6)落地**——`options.memory` 六命令
 memory 工具(memory_20250818 协议等价)+ 双模式装配(native 直通官方类型条目 /
 custom 自带 schema + 官方逐字协议提示)+ `MemoryStore` 契约与 `MemoryFileOps`

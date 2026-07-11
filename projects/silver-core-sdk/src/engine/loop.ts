@@ -55,6 +55,7 @@ import {
   maybeAutoCompact,
   runManualCompact,
   detectManualCompact,
+  wouldAutoCompact,
 } from './compaction.js';
 import {
   DEFAULT_STRUCTURED_OUTPUT_RETRIES,
@@ -272,12 +273,19 @@ export async function* runAgentLoop(
     if (firstTokenAtMs !== undefined) m.ttftMs = firstTokenAtMs - startedAt;
     // P0-2: the disconnect ledger rides every result (all-zero = clean run).
     m.transportHealth = { ...transportHealth };
+    // Memory spec R8: memory-operation counters ride the metrics whenever the
+    // query enabled the memory system (root loop only).
+    if (deps.memoryHealth !== undefined) m.memoryHealth = { ...deps.memoryHealth() };
     return m;
   };
   // Once a fallback retry fires the run stays on the fallback model; until then
   // each turn re-reads config.model (a shared mutable object) so a live
   // setModel() applies from the next assistant turn.
   let fallbackModel: string | undefined;
+  // Memory spec R7: true once this compaction episode's flush turn has been
+  // injected (or vetoed); re-armed after a fold actually happens, so exactly
+  // one write opportunity precedes each fold.
+  let memoryFlushInjected = false;
 
   // Request-message view: when the query layer supplies a shared, cross-turn
   // view we stream from it (compactable) and mirror our own appends into it;
@@ -803,18 +811,63 @@ export async function* runAgentLoop(
             };
             return;
           }
-          const compacted = yield* maybeAutoCompact(
-            deps.requestView,
-            deps,
-            config,
-            overheadTokens,
-            signal,
-            onSummaryCall,
-            lastActualPromptTokens,
-          );
-          // A fold shrank the view: the previous request's real prompt size is
-          // no longer a valid floor for the (now smaller) context.
-          if (compacted) lastActualPromptTokens = undefined;
+          // Memory spec R7: when the auto trigger WOULD fire, first inject
+          // ONE memory-write opportunity and fold on the following check, so
+          // un-saved progress can reach the store before it is summarized
+          // away. A PreCompact hook deny suppresses the flush AND this
+          // iteration's fold (the fold's own hook run would veto it anyway).
+          if (
+            config.memoryFlush !== undefined &&
+            !memoryFlushInjected &&
+            wouldAutoCompact(deps.requestView, config, overheadTokens, lastActualPromptTokens)
+          ) {
+            memoryFlushInjected = true;
+            let flushVetoed = false;
+            if (deps.hooks.hasHooks('PreCompact')) {
+              const agg = await deps.hooks.run(
+                'PreCompact',
+                {
+                  ...baseHookFields,
+                  hook_event_name: 'PreCompact',
+                  trigger: 'auto',
+                  custom_instructions: cfg.customInstructions ?? null,
+                },
+                undefined,
+                'auto',
+                signal,
+              );
+              if (agg.continue === false || agg.decision === 'deny') {
+                flushVetoed = true;
+                deps.debug('memory flush: PreCompact hook vetoed the write opportunity');
+              }
+            }
+            if (!flushVetoed) {
+              const flushTurn: APIMessageParam = {
+                role: 'user',
+                content: [{ type: 'text', text: config.memoryFlush.prompt }],
+              };
+              history.push(flushTurn);
+              mirror(flushTurn);
+              deps.debug('memory flush: injected pre-compaction write opportunity');
+            }
+          } else {
+            const compacted = yield* maybeAutoCompact(
+              deps.requestView,
+              deps,
+              config,
+              overheadTokens,
+              signal,
+              onSummaryCall,
+              lastActualPromptTokens,
+            );
+            // A fold shrank the view: the previous request's real prompt size
+            // is no longer a valid floor for the (now smaller) context.
+            if (compacted) {
+              lastActualPromptTokens = undefined;
+              // Re-arm the R7 flush for the next compaction episode.
+              memoryFlushInjected = false;
+            }
+          }
         }
       }
 

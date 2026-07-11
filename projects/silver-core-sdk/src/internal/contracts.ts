@@ -584,6 +584,15 @@ export type EngineConfig = {
    * on an openai-chat transport.
    */
   serverTools?: Array<{ type: string; name: string }>;
+  /**
+   * Memory compaction flush (BPT-EXTENSION, memory spec R7): when set and
+   * auto-compaction WOULD trigger, the loop first injects this prompt as a
+   * user turn (one write opportunity for un-saved progress) and folds on the
+   * following check. A PreCompact hook deny suppresses both the flush and
+   * that turn's fold. Set by the query layer when the memory system is
+   * enabled with flushOnCompaction.
+   */
+  memoryFlush?: { prompt: string };
   sessionId: string;
   cwd: string;
   /** Absolute transcript path of THIS loop's session, when it was persisted to a
@@ -621,6 +630,10 @@ export type EngineDeps = {
   /** Root loop only: pull completed background-subagent results to append to
    *  the current tool_result user turn. Returns [] when none pending. */
   drainSubagentResults?: () => TextBlockParam[];
+  /** Memory-health snapshot (BPT-EXTENSION, memory spec R8): when present the
+   *  loop attaches its value to SDKRunMetrics.memoryHealth on every result.
+   *  Wired by the query layer on the ROOT loop only. */
+  memoryHealth?: () => import('../types.js').SDKMemoryHealth;
   /** v0.4 observability drain: pull buffered task_* / hook_* lifecycle
    *  messages (produced by the subagent runtime + hook runner, which cannot
    *  yield) so the loop can surface them at message boundaries. The queue is

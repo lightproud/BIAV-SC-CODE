@@ -18,15 +18,27 @@
  * called, for every path parameter — the SDK never delegates that to a store.
  */
 
+import { Buffer } from 'node:buffer';
 import { z } from 'zod';
 import type {
   BuiltinTool,
   MemoryStore,
   ToolResultPayload,
 } from '../../internal/contracts.js';
-import type { JSONSchema } from '../../types.js';
+import type { JSONSchema, SDKMemoryHealth } from '../../types.js';
 import { AbortError, isAbortError } from '../../errors.js';
 import { MEMORY_ROOT, validateMemoryPath } from './paths.js';
+import {
+  DEFAULT_CARDS_CONFIG,
+  validateCardsContent,
+  type MemoryCardsConfig,
+} from './cards.js';
+import {
+  DEFAULT_MEMORY_LIMITS,
+  fileTooLargeError,
+  truncateViewBody,
+  type MemoryLimits,
+} from './store.js';
 
 export const MEMORY_TOOL_NAME = 'memory';
 
@@ -133,12 +145,46 @@ function errorResult(message: string): ToolResultPayload {
   return { content: message, isError: true };
 }
 
+/** Mutable per-query memory counters (spec R8); the query layer snapshots
+ *  this into SDKRunMetrics.memoryHealth. */
+export function createMemoryHealth(): SDKMemoryHealth {
+  return {
+    operations: 0,
+    reads: 0,
+    writes: 0,
+    errors: 0,
+    bytesRead: 0,
+    bytesWritten: 0,
+    indexInjectionTokens: 0,
+  };
+}
+
+export type CreateMemoryToolOptions = {
+  /** R8 counters to record into (shared with the query layer). */
+  health?: SDKMemoryHealth;
+  /** R8 tool-layer limits (view truncation + create size cap) so they hold
+   *  even for a directly-implemented injected MemoryStore; the store engine
+   *  enforces the full set. Missing fields take DEFAULT_MEMORY_LIMITS. */
+  limits?: Partial<MemoryLimits>;
+  /** R9 tool-layer cards validation for `create` (full content available
+   *  here); str_replace/insert results are validated in the store engine. */
+  schema?: 'cards';
+  cards?: Partial<MemoryCardsConfig>;
+};
+
 /**
  * Build the memory builtin over a store. Constructed per query (like the
  * sandbox-aware Bash variant) so the store binding is a closure, not a
  * ToolContext field.
  */
-export function createMemoryTool(store: MemoryStore): BuiltinTool {
+export function createMemoryTool(
+  store: MemoryStore,
+  toolOptions: CreateMemoryToolOptions = {},
+): BuiltinTool {
+  const limits: MemoryLimits = { ...DEFAULT_MEMORY_LIMITS, ...toolOptions.limits };
+  const cardsCfg: MemoryCardsConfig = { ...DEFAULT_CARDS_CONFIG, ...toolOptions.cards };
+  const health = toolOptions.health;
+  const bytesOf = (s: string): number => Buffer.byteLength(s, 'utf8');
   return {
     name: MEMORY_TOOL_NAME,
     description: MEMORY_DESCRIPTION,
@@ -150,6 +196,13 @@ export function createMemoryTool(store: MemoryStore): BuiltinTool {
     isFileEdit: true,
     inputSchema: MEMORY_INPUT_SCHEMA,
     async execute(input, ctx): Promise<ToolResultPayload> {
+      // R8 accounting: every invocation counts; reads/writes/bytes recorded on
+      // the command branches below, errors in the shared wrapper.
+      if (health !== undefined) health.operations += 1;
+      const done = (res: ToolResultPayload): ToolResultPayload => {
+        if (health !== undefined && res.isError === true) health.errors += 1;
+        return res;
+      };
       try {
         if (ctx.signal.aborted) throw new AbortError();
         const parsed = memoryCommandSchema.safeParse(input);
@@ -158,9 +211,9 @@ export function createMemoryTool(store: MemoryStore): BuiltinTool {
           const where = issue !== undefined && issue.path.length > 0
             ? ` (${issue.path.join('.')})`
             : '';
-          return errorResult(
+          return done(errorResult(
             `Error: Invalid memory command${where}: ${issue?.message ?? 'malformed input'}`,
-          );
+          ));
         }
         const cmd = parsed.data;
         // R4: SDK-layer validation of EVERY path parameter before the store
@@ -169,49 +222,82 @@ export function createMemoryTool(store: MemoryStore): BuiltinTool {
         switch (cmd.command) {
           case 'view': {
             const path = validateMemoryPath(cmd.path);
-            return { content: await store.view(path, cmd.view_range) };
+            // Tool-layer truncation (idempotent over the engine's own) so the
+            // R8 view cap holds for directly-implemented stores too.
+            const body = truncateViewBody(
+              await store.view(path, cmd.view_range),
+              limits.maxViewChars,
+            );
+            if (health !== undefined) {
+              health.reads += 1;
+              health.bytesRead += bytesOf(body);
+            }
+            return done({ content: body });
           }
           case 'create': {
             const path = validateMemoryPath(cmd.path);
-            return { content: await store.create(path, cmd.file_text) };
+            // Tool-layer R8 size cap + R9 cards validation on the full
+            // content (the store engine re-checks; this covers direct stores).
+            if (bytesOf(cmd.file_text) > limits.maxFileBytes) {
+              return done(errorResult(fileTooLargeError(path, limits.maxFileBytes)));
+            }
+            if (toolOptions.schema === 'cards') {
+              const invalid = validateCardsContent(cmd.file_text, cardsCfg);
+              if (invalid !== null) return done(errorResult(invalid));
+            }
+            if (health !== undefined) {
+              health.writes += 1;
+              health.bytesWritten += bytesOf(cmd.file_text);
+            }
+            return done({ content: await store.create(path, cmd.file_text) });
           }
           case 'str_replace': {
             const path = validateMemoryPath(cmd.path);
-            return { content: await store.strReplace(path, cmd.old_str, cmd.new_str) };
+            if (health !== undefined) {
+              health.writes += 1;
+              health.bytesWritten += bytesOf(cmd.new_str ?? '');
+            }
+            return done({ content: await store.strReplace(path, cmd.old_str, cmd.new_str) });
           }
           case 'insert': {
             const path = validateMemoryPath(cmd.path);
-            return {
+            if (health !== undefined) {
+              health.writes += 1;
+              health.bytesWritten += bytesOf(cmd.insert_text);
+            }
+            return done({
               content: await store.insert(path, cmd.insert_line, cmd.insert_text),
-            };
+            });
           }
           case 'delete': {
             const path = validateMemoryPath(cmd.path);
             // Root protection at the TOOL layer too, so an injected custom
             // store cannot be talked into removing its own root.
             if (path === MEMORY_ROOT) {
-              return errorResult(
+              return done(errorResult(
                 `Error: Cannot delete the ${MEMORY_ROOT} directory itself`,
-              );
+              ));
             }
-            return { content: await store.delete(path) };
+            if (health !== undefined) health.writes += 1;
+            return done({ content: await store.delete(path) });
           }
           case 'rename': {
             const oldPath = validateMemoryPath(cmd.old_path);
             const newPath = validateMemoryPath(cmd.new_path);
             if (oldPath === MEMORY_ROOT) {
-              return errorResult(
+              return done(errorResult(
                 `Error: Cannot rename the ${MEMORY_ROOT} directory itself`,
-              );
+              ));
             }
-            return { content: await store.rename(oldPath, newPath) };
+            if (health !== undefined) health.writes += 1;
+            return done({ content: await store.rename(oldPath, newPath) });
           }
         }
       } catch (e) {
         if (isAbortError(e)) {
           throw new AbortError('memory was aborted');
         }
-        return errorResult((e as Error).message);
+        return done(errorResult((e as Error).message));
       }
     },
   };

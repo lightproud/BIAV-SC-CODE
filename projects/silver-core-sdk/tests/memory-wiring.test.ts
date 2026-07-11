@@ -127,7 +127,7 @@ describe('memory mode A (native, Anthropic transport)', () => {
       toolUseReplyEvents('memory', CREATE_CMD),
       textReplyEvents('done'),
     ]);
-    const messages = await collect('remember this', baseOptions(stub, { memory: {} }));
+    const messages = await collect('remember this', baseOptions(stub, { memory: { sessionEndUpdate: false } }));
     const result = lastResult(messages);
     expect(result.subtype).toBe('success');
 
@@ -170,7 +170,7 @@ describe('memory mode B (custom tool)', () => {
     await collect(
       'hi',
       baseOptions(stub, {
-        memory: { mode: 'custom', instructions: 'Only record facts about the SDK.' },
+        memory: { mode: 'custom', sessionEndUpdate: false, instructions: 'Only record facts about the SDK.' },
       }),
     );
     const body = stub.requests[0]!.body;
@@ -244,7 +244,7 @@ describe('memory mode selection (R2)', () => {
     const stub = makeSSEFetch([textReplyEvents('ok')]);
     await collect(
       'hi',
-      baseOptions(stub, { memory: {}, disallowedTools: ['memory'] }),
+      baseOptions(stub, { memory: { sessionEndUpdate: false }, disallowedTools: ['memory'] }),
     );
     const body = stub.requests[0]!.body;
     expect(JSON.stringify(body['tools'])).not.toContain('memory_20250818');
@@ -295,12 +295,12 @@ describe('R2 acceptance: dual-mode consistency (store artifacts diff empty)', ()
     try {
       const nativeMsgs = await collect(
         'go',
-        baseOptions(makeSSEFetch(script()), { memory: { baseDir: nativeBase } }),
+        baseOptions(makeSSEFetch(script()), { memory: { baseDir: nativeBase, sessionEndUpdate: false } }),
       );
       const customMsgs = await collect(
         'go',
         baseOptions(makeSSEFetch(script()), {
-          memory: { mode: 'custom', baseDir: customBase },
+          memory: { mode: 'custom', baseDir: customBase, sessionEndUpdate: false },
         }),
       );
       expect(lastResult(nativeMsgs).subtype).toBe('success');
@@ -327,7 +327,7 @@ describe('R6: resident memory index injection', () => {
   it('injects the head of /memories/MEMORY.md into the system prompt', async () => {
     await seedIndex('# Project state\n- feature A done\n- feature B next\n');
     const stub = makeSSEFetch([textReplyEvents('ok')]);
-    await collect('hi', baseOptions(stub, { memory: {} }));
+    await collect('hi', baseOptions(stub, { memory: { sessionEndUpdate: false } }));
     const system = JSON.stringify(stub.requests[0]!.body['system']);
     expect(system).toContain('# Memory index');
     expect(system).toContain('feature A done');
@@ -340,7 +340,7 @@ describe('R6: resident memory index injection', () => {
     const stub = makeSSEFetch([textReplyEvents('ok')]);
     await collect(
       'hi',
-      baseOptions(stub, { memory: { indexInjection: { maxLines: 2 } } }),
+      baseOptions(stub, { memory: { sessionEndUpdate: false, indexInjection: { maxLines: 2 } } }),
     );
     const system = JSON.stringify(stub.requests[0]!.body['system']);
     expect(system).toContain('l1');
@@ -354,7 +354,7 @@ describe('R6: resident memory index injection', () => {
     const stub = makeSSEFetch([textReplyEvents('ok')]);
     await collect(
       'hi',
-      baseOptions(stub, { memory: { indexInjection: { maxBytes: 170 } } }),
+      baseOptions(stub, { memory: { sessionEndUpdate: false, indexInjection: { maxBytes: 170 } } }),
     );
     const system = JSON.stringify(stub.requests[0]!.body['system']);
     expect(system).toContain('a'.repeat(80));
@@ -365,7 +365,7 @@ describe('R6: resident memory index injection', () => {
 
   it('missing index file means zero injection and zero errors', async () => {
     const stub = makeSSEFetch([textReplyEvents('ok')]);
-    const messages = await collect('hi', baseOptions(stub, { memory: {} }));
+    const messages = await collect('hi', baseOptions(stub, { memory: { sessionEndUpdate: false } }));
     expect(lastResult(messages).subtype).toBe('success');
     expect(JSON.stringify(stub.requests[0]!.body['system'])).not.toContain('# Memory index');
   });
@@ -373,7 +373,7 @@ describe('R6: resident memory index injection', () => {
   it('indexInjection: false disables injection even when the file exists', async () => {
     await seedIndex('# should not appear\n');
     const stub = makeSSEFetch([textReplyEvents('ok')]);
-    await collect('hi', baseOptions(stub, { memory: { indexInjection: false } }));
+    await collect('hi', baseOptions(stub, { memory: { sessionEndUpdate: false, indexInjection: false } }));
     expect(JSON.stringify(stub.requests[0]!.body['system'])).not.toContain('# Memory index');
   });
 });
