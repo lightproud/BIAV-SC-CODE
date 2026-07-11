@@ -156,10 +156,12 @@ def test_community_titles_constant():
 # This exercises the full lore/unit/stage/link/index pipeline incl. unlock_type.
 
 def test_main_writes_all_outputs(tmp_path, monkeypatch):
+    repo = Path(__file__).resolve().parent.parent
+    if not (repo / bsl.DESC_SRC).exists():
+        pytest.skip("Game-Unpacked source absent (sparse checkout) — real-data main() run excluded")
     out = tmp_path / "story_out"
     out.mkdir()
     monkeypatch.setattr(bsl, "OUT", str(out))
-    repo = Path(__file__).resolve().parent.parent
     monkeypatch.chdir(repo)
     bsl.main()
     expected = {
