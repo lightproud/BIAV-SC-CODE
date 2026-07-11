@@ -3,7 +3,7 @@ import re
 import json
 import os
 
-LUA_DIR = 'projects/wiki/data/extracted/lua_tables'
+LUA_DIR = 'Public-Info-Pool/Reference/Game-Unpacked/Lua表还原'
 OUT_DIR = 'projects/wiki/data/processed'
 
 

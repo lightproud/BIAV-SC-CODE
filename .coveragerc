@@ -14,10 +14,6 @@ omit =
     tests/*
     */__pycache__/*
     */tests/*
-    # One-off migration already executed on 2026-07-02; kept for the record
-    # only. Its 0% is dead-code noise, not debt (2026-07-11 coverage proposal
-    # P2-2 write-off) — un-omit before reviving it for any future migration.
-    scripts/migrate_flat_archives_to_layout.py
 
 [report]
 exclude_lines =

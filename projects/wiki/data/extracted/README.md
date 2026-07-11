@@ -1,8 +1,18 @@
-# Morimens 客户端数据提取
+# Morimens 客户端数据提取（wiki 侧独占残件）
 
 > 提取日期：2026-04-07
 > 提取方式：运行时内存扫描 + AssetBundle 解密
 > 游戏版本：忘却前夜 (Tuanjie Engine 2022.3.61t8)
+>
+> **⚠ 去重改指（2026-07-11 仓库精简裁定项 4，乙案）**：原存于本目录的
+> `lua_tables/`（24 个还原 Lua 配置表）与 `categorized/` 主体（12 个分类 txt）
+> 与 `Public-Info-Pool/Reference/Game-Unpacked/` 内容完全重复（同哈希，仅文件名不同），
+> 已删除本侧副本；**唯一本体**在 `Public-Info-Pool/Reference/Game-Unpacked/`
+>（`Lua表还原/` 同名对应 lua_tables，`全部游戏数据/` 中文名对应 categorized，
+> 对照如 `character_data.txt` = `角色数据_AwakerConfig.txt`、
+> `collection_story.txt` = `收藏馆_CollectionHall.txt`）。
+> 顶层 `scripts/parse_*.py` 与 `scripts/build_story_layer.py` 已改指本体路径。
+> 本目录只保留 Game-Unpacked 没有的 wiki 侧独占件（见下）。
 
 ## 数据来源
 
@@ -13,55 +23,21 @@
 2. **运行时内存扫描** — 从 Lua VM 字符串表中提取已解密的字符串数据
 3. **结构化重建** — 根据 `TableName_ID_Field|Value` 模式还原 Lua 表结构
 
-## 目录结构
+## 本目录现存内容（独占件）
 
-### `lua_tables/` — 还原的 Lua 配置表（24 个文件，113,337 条目）
+- `art_assets/` — 美术资产清单与 manifest（`scripts/parse_cg_gallery.py` 消费）
+- `categorized/numeric_config.txt` — 数值配置（66,517 行，Game-Unpacked 无对应件）
+- `categorized/asset_references.txt` — 资源引用路径（Game-Unpacked 无对应件）
 
-从内存提取的字符串数据中，根据命名模式还原的游戏配置表：
+## 已迁本体的原内容速查（在 Game-Unpacked 找）
 
-| 文件 | 条目数 | 内容 |
-|------|--------|------|
-| AwakerConfig.lua | 72 | 角色基础数据（姓名、年龄、身高、体重、性别、画师、声优） |
-| AwakerPotency.lua | 1,035 | 角色潜能/技能描述（含数值嵌入文本） |
-| Item.lua | 3,774 | 道具（名称、描述、剧情描述） |
-| Stage.lua | 5,709 | 关卡（名称、描述） |
-| Task.lua | 6,317 | 任务（名称、描述、完成条件） |
-| Summon.lua | 366 | 召唤/抽卡（概率、描述） |
-| Voice.lua | 2,562 | 语音（台词内容、解锁描述） |
-| CollectionHall.lua | 1,026 | 收藏馆 |
-| GameConfig_References.lua | 33,334 | 游戏配置引用（`Category@Detail` 格式） |
-| UpdateNotices.lua | 2,697 | 更新公告 |
-| 其他14个表 | — | Lead, Lottery, PVPRank, PanelText, SchoolConfig 等 |
-
-### `categorized/` — 分类文本数据（14 个文件）
-
-从全量内存提取中按类别整理的原始数据：
-
-| 文件 | 行数 | 内容 |
-|------|------|------|
-| character_data.txt | 2,188 | 角色相关数据 |
-| item_data.txt | 8,532 | 道具数据 |
-| stage_quest.txt | 22,503 | 关卡与任务 |
-| voice_data.txt | 5,882 | 语音数据 |
-| summon_gacha.txt | 2,712 | 抽卡系统 |
-| collection_story.txt | 2,598 | 收藏/剧情 |
-| game_config_at.txt | 39,541 | 游戏配置（@引用格式） |
-| game_kv.txt | 13,501 | 键值对配置 |
-| ui_text.txt | 6,969 | UI 文本 |
-| update_notices.txt | 2,697 | 更新公告 |
-| skill_battle.txt | — | 技能/战斗相关 |
-| numeric_config.txt | 66,517 | 数值配置 |
-| asset_references.txt | — | 资源引用路径 |
-| other_chinese.txt | 30,415 | 未分类中文文本 |
+- 24 个还原 Lua 配置表（AwakerConfig / Item / Stage / Task / Voice / CollectionHall /
+  UpdateNotices 等，共 113,337 条目）→ `Public-Info-Pool/Reference/Game-Unpacked/Lua表还原/`
+- 12 个分类文本（角色 / 道具 / 关卡任务 / 语音 / 抽卡 / 收藏剧情 / 配置 / 键值 / UI /
+  更新公告 / 技能战斗 / 未分类中文）→ `Public-Info-Pool/Reference/Game-Unpacked/全部游戏数据/`
 
 ## 已知限制
 
 - **纯数值数据缺失**：整数/浮点数值（HP、ATK、伤害倍率等）存储在 Lua 字节码的常量表中，不在字符串表内，因此未被内存字符串扫描捕获
 - **字段名推断**：Lua 表的字段名基于 `TableName_ID_Field|Value` 命名模式推断，可能存在个别不准确
 - **LuaT0 加密未破解**：字节码体的加密算法受 Themida 保护，无法进行完整的字节码反编译
-
-## 后续计划
-
-- [ ] 运行时 Lua table 遍历（DLL 注入方式获取完整数值数据）
-- [ ] 美术资产提取（15,557 个 AB 文件，6.4GB）
-- [ ] 与现有 `db/*.json` 数据库交叉验证和合并

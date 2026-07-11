@@ -66,7 +66,7 @@ def parse_item_stories(path):
 
 
 if __name__ == '__main__':
-    src = 'projects/wiki/data/extracted/lua_tables/Item.lua'
+    src = 'Public-Info-Pool/Reference/Game-Unpacked/Lua表还原/Item.lua'
     dst = 'projects/wiki/data/processed/item_stories.json'
     data = parse_item_stories(src)
     with open(dst, 'w', encoding='utf-8') as f:

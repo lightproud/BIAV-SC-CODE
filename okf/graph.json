@@ -1,8 +1,8 @@
 {
   "generated": "2026-07-11",
   "stats": {
-    "nodes": 358,
-    "edges": 414
+    "nodes": 359,
+    "edges": 416
   },
   "nodes": [
     {
@@ -1201,18 +1201,6 @@
       "tier": "search"
     },
     {
-      "id": "/extracted/extracted-lua-tables.md",
-      "type": "dataset",
-      "title": "lua_tables",
-      "tags": [
-        "data_layer:full_archive",
-        "first-hand-unpack",
-        "upstream-of:processed",
-        "content:lua-tables"
-      ],
-      "tier": "search"
-    },
-    {
       "id": "/extracted/extracted-readme.md",
       "type": "documentation",
       "title": "extracted 说明",
@@ -1269,6 +1257,32 @@
       "tags": [
         "memory",
         "pointer"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/memory/memory-archive-bpt-architecture-summary-template.md",
+      "type": "knowledge-pointer",
+      "title": "BPT 架构周报模板",
+      "tags": [
+        "memory",
+        "data_layer:curated",
+        "archive",
+        "frozen-snapshot",
+        "bpt"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/memory/memory-archive-bpt-guidance-log.md",
+      "type": "knowledge-pointer",
+      "title": "BPT 指导搬运日志",
+      "tags": [
+        "memory",
+        "data_layer:curated",
+        "archive",
+        "frozen-snapshot",
+        "bpt"
       ],
       "tier": "search"
     },
@@ -1353,6 +1367,19 @@
       "tier": "search"
     },
     {
+      "id": "/memory/memory-archive-bpt-strategic-shift-2026-04-19-phase-d-plan.md",
+      "type": "knowledge-pointer",
+      "title": "BPT-NEXT Phase D — 黑池索引 / 母版部署 / 对话加密（作战档案）",
+      "tags": [
+        "memory",
+        "data_layer:curated",
+        "archive",
+        "frozen-snapshot",
+        "bpt"
+      ],
+      "tier": "search"
+    },
+    {
       "id": "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md",
       "type": "knowledge-pointer",
       "title": "BPT 战略转向归档（2026-04-19）",
@@ -1380,13 +1407,38 @@
       "tier": "search"
     },
     {
-      "id": "/memory/memory-ext-active-contribution-protocol.md",
+      "id": "/memory/memory-archive-contribution-protocol-hub.md",
       "type": "knowledge-pointer",
-      "title": "贡献协议（active hub）",
+      "title": "贡献协议（原 active hub，已降档归档）",
       "tags": [
         "memory",
         "data_layer:curated",
-        "active-hub"
+        "archive",
+        "frozen-snapshot"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/memory/memory-archive-pending-discussions.md",
+      "type": "knowledge-pointer",
+      "title": "待讨论事项",
+      "tags": [
+        "memory",
+        "data_layer:curated",
+        "archive",
+        "frozen-snapshot"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/memory/memory-archive-storage-discussion.md",
+      "type": "knowledge-pointer",
+      "title": "大文件存储方案讨论",
+      "tags": [
+        "memory",
+        "data_layer:curated",
+        "archive",
+        "frozen-snapshot"
       ],
       "tier": "search"
     },
@@ -1448,26 +1500,6 @@
       "id": "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
       "type": "knowledge-pointer",
       "title": "BPT 架构快照（4-19 战略转向冻结点基线）",
-      "tags": [
-        "memory",
-        "data_layer:curated"
-      ],
-      "tier": "search"
-    },
-    {
-      "id": "/memory/memory-ext-bpt-architecture-summary-template.md",
-      "type": "knowledge-pointer",
-      "title": "BPT 架构周报模板",
-      "tags": [
-        "memory",
-        "data_layer:curated"
-      ],
-      "tier": "search"
-    },
-    {
-      "id": "/memory/memory-ext-bpt-guidance-log.md",
-      "type": "knowledge-pointer",
-      "title": "BPT 指导搬运日志",
       "tags": [
         "memory",
         "data_layer:curated"
@@ -1537,17 +1569,6 @@
       "tier": "search"
     },
     {
-      "id": "/memory/memory-ext-facts.md",
-      "type": "dataset",
-      "title": "facts.json",
-      "tags": [
-        "memory",
-        "data_layer:curated",
-        "machine-authority"
-      ],
-      "tier": "search"
-    },
-    {
       "id": "/memory/memory-ext-karpathy-coding-principles.md",
       "type": "knowledge-pointer",
       "title": "卡帕西编码行为原则（Andrej Karpathy CLAUDE.md, forrestchang 整理版）",
@@ -1561,26 +1582,6 @@
       "id": "/memory/memory-ext-knowledge-layer-design.md",
       "type": "knowledge-pointer",
       "title": "银芯知识层设计哲学 —— 神经符号白盒骨架（North Star）",
-      "tags": [
-        "memory",
-        "data_layer:curated"
-      ],
-      "tier": "search"
-    },
-    {
-      "id": "/memory/memory-ext-pending-discussions.md",
-      "type": "knowledge-pointer",
-      "title": "待讨论事项",
-      "tags": [
-        "memory",
-        "data_layer:curated"
-      ],
-      "tier": "search"
-    },
-    {
-      "id": "/memory/memory-ext-phase-d-plan.md",
-      "type": "knowledge-pointer",
-      "title": "BPT-NEXT Phase D — 黑池索引 / 母版部署 / 对话加密（作战档案）",
       "tags": [
         "memory",
         "data_layer:curated"
@@ -1612,16 +1613,6 @@
       "id": "/memory/memory-ext-skill-authoring-standard.md",
       "type": "knowledge-pointer",
       "title": "技能写作审计标尺",
-      "tags": [
-        "memory",
-        "data_layer:curated"
-      ],
-      "tier": "search"
-    },
-    {
-      "id": "/memory/memory-ext-storage-discussion.md",
-      "type": "knowledge-pointer",
-      "title": "大文件存储方案讨论",
       "tags": [
         "memory",
         "data_layer:curated"
@@ -2170,6 +2161,17 @@
       "id": "/projects/silver-core-sdk-doc-errors.md",
       "type": "documentation",
       "title": "silver-core-sdk ERRORS",
+      "tags": [
+        "data_layer:curated",
+        "design-doc",
+        "sub-project:silver-core-sdk"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/projects/silver-core-sdk-doc-memory-governance.md",
+      "type": "documentation",
+      "title": "silver-core-sdk MEMORY-GOVERNANCE",
       "tags": [
         "data_layer:curated",
         "design-doc",
@@ -3146,6 +3148,17 @@
       "tier": "search"
     },
     {
+      "id": "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
+      "type": "documentation",
+      "title": "repo-slim-audit-20260711",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
       "id": "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "type": "documentation",
       "title": "repo-wide-orchestrated-review-20260609",
@@ -3204,6 +3217,17 @@
       "id": "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "type": "documentation",
       "title": "test-coverage-analysis-20260702",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
+      "type": "documentation",
+      "title": "test-coverage-analysis-20260711",
       "tags": [
         "data_layer:curated",
         "deliverable",
@@ -4640,6 +4664,12 @@
       "rel_type": "mention"
     },
     {
+      "source": "/memory/memory-archive-bpt-guidance-log.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
       "source": "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
       "target": "/characters/15595.md",
       "rel": "提及:拉蒙娜",
@@ -4676,6 +4706,12 @@
       "rel_type": "mention"
     },
     {
+      "source": "/memory/memory-archive-bpt-strategic-shift-2026-04-19-phase-d-plan.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
       "source": "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
@@ -4688,7 +4724,19 @@
       "rel_type": "mention"
     },
     {
-      "source": "/memory/memory-ext-active-contribution-protocol.md",
+      "source": "/memory/memory-archive-contribution-protocol-hub.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-archive-pending-discussions.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-archive-storage-discussion.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
       "rel_type": "mention"
@@ -4725,12 +4773,6 @@
     },
     {
       "source": "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
-      "target": "/characters/15603.md",
-      "rel": "提及:艾瑞卡",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/memory/memory-ext-bpt-guidance-log.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
       "rel_type": "mention"
@@ -4778,18 +4820,6 @@
       "rel_type": "mention"
     },
     {
-      "source": "/memory/memory-ext-pending-discussions.md",
-      "target": "/characters/15603.md",
-      "rel": "提及:艾瑞卡",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/memory/memory-ext-phase-d-plan.md",
-      "target": "/characters/15603.md",
-      "rel": "提及:艾瑞卡",
-      "rel_type": "mention"
-    },
-    {
       "source": "/memory/memory-ext-research-best-wiki-features.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
@@ -4797,12 +4827,6 @@
     },
     {
       "source": "/memory/memory-ext-skill-authoring-standard.md",
-      "target": "/characters/15603.md",
-      "rel": "提及:艾瑞卡",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/memory/memory-ext-storage-discussion.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
       "rel_type": "mention"
@@ -5738,6 +5762,12 @@
       "rel_type": "mention"
     },
     {
+      "source": "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
       "source": "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "target": "/characters/15572.md",
       "rel": "提及:卡茜亚",
@@ -5763,6 +5793,12 @@
     },
     {
       "source": "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
       "rel_type": "mention"

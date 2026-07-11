@@ -87,7 +87,7 @@ def parse_collection_hall(path):
 
 
 if __name__ == '__main__':
-    src = 'projects/wiki/data/extracted/lua_tables/CollectionHall.lua'
+    src = 'Public-Info-Pool/Reference/Game-Unpacked/Lua表还原/CollectionHall.lua'
     dst = 'projects/wiki/data/processed/world_lore.json'
     data = parse_collection_hall(src)
     with open(dst, 'w', encoding='utf-8') as f:

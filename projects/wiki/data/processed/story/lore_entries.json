@@ -1,7 +1,7 @@
 {
   "_meta": {
     "purpose": "CollectionHall 全量 lore:world_lore(title/lock_tip)+ collection_story.txt(desc 逐字)+ 剧情单元解析 + 角色小传标记",
-    "source_raw": "extracted/categorized/collection_story.txt, extracted/lua_tables/CollectionHall.lua",
+    "source_raw": "Game-Unpacked/全部游戏数据/收藏馆_CollectionHall.txt, Game-Unpacked/Lua表还原/CollectionHall.lua",
     "note": "desc/lock_tip 为原始文本逐字;解析器覆盖 序章/主线第N章/星辰篇第N章/意识潜游,含关卡号(N-M)与困难格式",
     "total": 1026,
     "with_description": 798,
