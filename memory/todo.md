@@ -32,12 +32,12 @@
 | T33 | 黑池侧自我改进信号**反馈回流通道**：BPT 接线 v0.49.0 `pitfalls: true` 后，踩坑记录质量（两周 ≥10 条有效 = 环三 go/no-go 先导）与运行数据（transportHealth / token / 失败会话）如何反哺银芯侧闭环——防火墙下黑池不进银芯，唯一合法通道 = **守密人亲述回流**（bpt-positioning v0.3「唯一裁定者 + 回流过滤器」）；到时守密人口头转述统计口径即可，银芯不收原始数据 | 黑池输入 | 守密人 2026-07-11「加 todo 黑池到时候怎么反馈回来」+ `memory/bpt-positioning.md` 丙节 + SCS-REQ-002 §6 | 开 |
 
 | T34 | 定时报告推送方式（Discord Bot / 邮件）：日报定时现已停用、报告会话内按需生成，本账仅在**恢复定时报告**时激活再议推送通道 | 观察 | T30 第 6 条守密人 2026-07-12 裁定「转正式挂账」；`memory/archive/pending-discussions.md` 日报流程节 | 开 |
-| T35 | Discord 频道一致性 reconcile：global 区服 571 频道目录 vs `channel_index.json` 仅 143 条（差 428 个已下线/改名频道的历史孤儿目录，2026-07-12 复测仍在扩大）；不影响采集与全量分析，但孤儿目录无法由索引反查频道名——待点火后给 `discord_archiver` 加 reconcile 步骤（标记孤儿 + 补全历史频道名映射） | 预算 | T30 第 10 条守密人 2026-07-12 裁定「转预算类挂账」；复测数据见 T30 销案条 | 开 |
 
 ## 已清（销案引）
 
 | ID | 账目 | 销案引 |
 |----|------|--------|
+| T35 | Discord 频道一致性 reconcile（原账：global 571 目录 vs 索引 143，孤儿无法反查） | **守密人 2026-07-12「继续推进余项」点火，同日实现销案**：① 根因修复——`discord_archiver._save_channel_index` 由覆盖式改**合并式**（下线条目保留标 `offline`，防复发）；② 一次性对账工具 `projects/news/scripts/discord_reconcile.py`（扫孤儿、JSONL 恢复完整 channel_id、git 历史尽力回收名字、登记 `orphan`）——三区服实跑：global 143→641 / jp 20→24 / volunteer 30→32，孤儿 504 全登记、ID 恢复率 100%、**每个归档目录均可反查**（名字回收 0——下线均早于 2026-07-11 索引首次入库，git 无史可考）；③ 单测 `tests/test_discord_reconcile.py` 14 例 + CLAUDE.md §5.2 反查语义入档 |
 | T30 | pending-discussions 归档遗留 18 条开账复核 | **守密人 2026-07-12 逐条裁定（18 问 18 答）全部处置完毕**：销案 14 条（频道监控范围 / Twitter 并入 T9 / NGA×2 维持不补 secret / TapTap 已内置 app_id 落地 / Chrome 手动采集场景消失 / 事实圣经对象已重构 / Giscus 随取消社区贡献作废 / steam_review 被 07-02 archive_layout 改造结构性覆盖 / 架构文档 07-02 已重写在养 / gamerch·miraheze 目录已不存在 / weibo 已在产出 / bahamut·arca 07-10 已修复在产 / bahamut 时间污染随重写消亡）；转挂账 2 条（第 6 条→T34 观察、第 10 条→T35 预算）；执行 2 条（第 11 条 gap backfill 已 dispatch `backfill-gap.yml` 2026-05-13→07-09 全跨度——注：原账 5,173 缺口已随缺口逻辑演化缩至 208；第 12 条 weixin 噪声已清理——删 74 全噪声文件 908 条 + 净化 11 混合文件剔 280 条，报告 `Public-Info-Pool/Resource/data-diagnostics/weixin-noise-cleanup-20260712.md`） |
 | T1 | `decisions.md` 落「二物一泵、分层缓立」极简条 | 守密人 2026-07-10「授权」代写；`decisions.md` 同日「BPT 栈本体」条 |
 | T2 | POSITIONING 固定靶扩张（异步委派模式入参照系） | 同上条⑤ + `docs/POSITIONING.md` §1「参照系扩张(2026-07-10)」块 |
