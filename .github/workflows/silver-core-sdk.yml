@@ -58,6 +58,11 @@ on:
         required: false
         type: choice
         options: ['v2', 'v3', 'v4', 'v5']
+      run_evals:
+        description: 'Run the two-layer eval suite LIVE (SCS-REQ-002 loop 2: scenario runs on the real API + claude-sonnet-5 judging; keeper budget cap $30/month)'
+        required: false
+        type: boolean
+        default: false
         default: 'v5'
       prompt_tasks:
         description: 'Task ids for the prompt A/B (e.g. 10,11 = the hard discriminating tasks; empty = all)'
@@ -229,6 +234,40 @@ jobs:
         run: |
           npm install --no-save @anthropic-ai/sdk
           node tests/integration/capture-official-memory-wire.mjs "${{ github.event.inputs.model }}"
+
+  run-evals-live:
+    # SCS-REQ-002 loop 2, LIVE round: the two-layer eval suite with the
+    # behavior layer driving the real API (12 prompt-session questions) and
+    # claude-sonnet-5 judging against the pinned evals/judge-prompt.md.
+    # Manual dispatch with run_evals=true only — spends API budget (keeper
+    # cap: $30/month judge-side; nightly Batches wiring is Phase 2).
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.run_evals == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          sparse-checkout: |
+            /*
+            !/Public-Info-Pool/Record/
+            !/Public-Info-Pool/Reference/
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: runEvals (two-layer, LIVE)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/run-evals.mjs --out evals-reports
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: evals-report
+          path: projects/silver-core-sdk/evals-reports/
 
   ab-benchmark:
     # POSITIONING.md §7 measurement mandate: the representative-task efficiency

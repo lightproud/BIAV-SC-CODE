@@ -4,7 +4,7 @@ title: "silver-core-sdk ERRORS"
 description: "Every error class in `src/errors.ts` carries a machine-readable, stable"
 resource: "/projects/silver-core-sdk/docs/ERRORS.md"
 tags: ["data_layer:curated", "design-doc", "sub-project:silver-core-sdk"]
-timestamp: "2026-07-11"
+timestamp: "2026-07-12"
 ---
 
 # 指针概念

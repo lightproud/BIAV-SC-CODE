@@ -4,7 +4,7 @@ title: "silver-core-sdk-rename-review-20260710"
 description: "`rename: bpt-agent-sdk -> silver-core-sdk`（squash 合并 main `287ea40f`）（格式：md）"
 resource: "/Public-Info-Pool/Resource/repo-engineering/silver-core-sdk-rename-review-20260710.md"
 tags: ["data_layer:curated", "deliverable", "topic:repo-engineering"]
-timestamp: "2026-07-11"
+timestamp: "2026-07-12"
 ---
 
 # 指针概念

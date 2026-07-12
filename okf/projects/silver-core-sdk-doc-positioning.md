@@ -4,7 +4,7 @@ title: "silver-core-sdk POSITIONING"
 description: "**Silver Core SDK = 一套稳定兼容的调用「表面」 + 一个我们完全掌控、比原版更简单更可靠的独立「引擎」。**"
 resource: "/projects/silver-core-sdk/docs/POSITIONING.md"
 tags: ["data_layer:curated", "design-doc", "sub-project:silver-core-sdk"]
-timestamp: "2026-07-11"
+timestamp: "2026-07-12"
 ---
 
 # 指针概念
