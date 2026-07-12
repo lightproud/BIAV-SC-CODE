@@ -1,8 +1,8 @@
 {
   "date": "2026-07-12",
-  "archived_at": "2026-07-12T13:17:14.068662+00:00",
+  "archived_at": "2026-07-12T16:00:44.974851+00:00",
   "source": "bilibili",
-  "item_count": 12,
+  "item_count": 13,
   "items": [
     {
       "title": "斯大林强迫蒋介石cos沙耶",
@@ -230,6 +230,29 @@
         "danmaku": 0
       },
       "media_url": "https://i2.hdslb.com/bfs/archive/75afbf69adc0480b3ba7619582f8e81a346caadb.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "第四届N厨杯-第二十四日录播",
+      "summary": "第二十四日直播录播",
+      "source": "bilibili",
+      "time": "2026-07-12T13:24:50+00:00",
+      "url": "https://www.bilibili.com/video/BV1jrN36kE9H",
+      "engagement": 7,
+      "is_hot": false,
+      "author": "God7777",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 7,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/2df3521d8a74a5b8e6bdd4fecc3893f7b6567536.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

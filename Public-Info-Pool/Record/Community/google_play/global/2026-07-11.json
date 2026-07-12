@@ -1,8 +1,8 @@
 {
   "date": "2026-07-11",
-  "archived_at": "2026-07-12T13:17:14.271763+00:00",
+  "archived_at": "2026-07-12T16:00:45.186371+00:00",
   "source": "google_play",
-  "item_count": 6,
+  "item_count": 7,
   "items": [
     {
       "title": "[Google Play 中评] ★3 The conversations between phases of boss",
@@ -83,6 +83,20 @@
       "engagement": 0,
       "is_hot": false,
       "author": "Kim Mai",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "us",
+      "region": "global"
+    },
+    {
+      "title": "[Google Play 好评] ★5 If you want something dark/thriller card",
+      "summary": "If you want something dark/thriller card based strategic turn based genre, Morimens is highly recommended for you. It's just few days since I played this game, and it giving me hype due to art style and flow of the story.",
+      "source": "google_play",
+      "time": "2026-07-11T13:49:22",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-e6a97be8-0461-41b1-808d-517840b04917",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "Lance Monterola",
       "tags": [],
       "lang": "en",
       "platform_region": "us",

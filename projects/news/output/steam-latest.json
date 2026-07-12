@@ -1,10 +1,40 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-12T13:16:24.736709+00:00",
+  "collected_at": "2026-07-12T15:59:53.803654+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 9,
+  "item_count": 11,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-07-12T13:39:16+00:00",
+      "lang": "brazilian",
+      "title": "[正面] Tema Lovecraft Amo.",
+      "summary": "Tema Lovecraft Amo.",
+      "url": "https://steamcommunity.com/profiles/76561198110099514/recommended/3052450",
+      "author": "76561198110099514",
+      "engagement": 0,
+      "language": "brazilian",
+      "voted_up": true,
+      "review": "Tema Lovecraft Amo.",
+      "timestamp_created": 1783863556,
+      "playtime_forever": 1722
+    },
+    {
+      "source": "steam",
+      "time": "2026-07-12T13:16:53+00:00",
+      "lang": "schinese",
+      "title": "[正面] 好玩美术风格很独特也很不错但是我觉得文案前期剧情有点薄弱了",
+      "summary": "好玩美术风格很独特也很不错但是我觉得文案前期剧情有点薄弱了",
+      "url": "https://steamcommunity.com/profiles/76561199888887726/recommended/3052450",
+      "author": "76561199888887726",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "好玩美术风格很独特也很不错但是我觉得文案前期剧情有点薄弱了",
+      "timestamp_created": 1783862213,
+      "playtime_forever": 11909
+    },
     {
       "source": "steam",
       "time": "2026-07-12T11:35:19+00:00",
@@ -18,7 +48,7 @@
       "voted_up": false,
       "review": "game wont launch",
       "timestamp_created": 1783856119,
-      "playtime_forever": 539
+      "playtime_forever": 665
     },
     {
       "source": "steam",

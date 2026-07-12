@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-12T13:16:24.736709+00:00",
+  "collected_at": "2026-07-12T15:59:53.803654+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 123,
+  "item_count": 124,
   "items": [
     {
       "source": "google_play",
@@ -253,6 +253,16 @@
       "summary": "觉得还行",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=zh_CN#gp-57f4f9db-558e-4842-b184-3a7e848970ad",
       "author": "元气豆芽（YQBean）",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-11T13:49:22",
+      "lang": "en",
+      "title": "[Google Play 好评] ★5 If you want something dark/thriller card",
+      "summary": "If you want something dark/thriller card based strategic turn based genre, Morimens is highly recommended for you. It's just few days since I played this game, and it giving me hype due to art style and flow of the story.",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-e6a97be8-0461-41b1-808d-517840b04917",
+      "author": "Lance Monterola",
       "engagement": 0
     },
     {
