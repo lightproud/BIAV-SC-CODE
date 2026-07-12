@@ -2,7 +2,7 @@
   "generated": "2026-07-12",
   "stats": {
     "nodes": 355,
-    "edges": 428
+    "edges": 427
   },
   "nodes": [
     {
@@ -4576,36 +4576,6 @@
       "rel_type": "mention"
     },
     {
-      "source": "/memory/lessons-learned.md",
-      "target": "/characters/77918.md",
-      "rel": "提及:阿拉克涅",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/memory/lessons-learned.md",
-      "target": "/characters/122587.md",
-      "rel": "提及:本源萝坦",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/memory/lessons-learned.md",
-      "target": "/characters/15603.md",
-      "rel": "提及:艾瑞卡",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/memory/lessons-learned.md",
-      "target": "/characters/15563.md",
-      "rel": "提及:图鲁",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/memory/lessons-learned.md",
-      "target": "/characters/15569.md",
-      "rel": "提及:萝坦",
-      "rel_type": "mention"
-    },
-    {
       "source": "/memory/memory-archive-bpt-guidance-log.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
@@ -4763,8 +4733,32 @@
     },
     {
       "source": "/memory/memory-ext-lessons-archive.md",
+      "target": "/characters/77918.md",
+      "rel": "提及:阿拉克涅",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-ext-lessons-archive.md",
+      "target": "/characters/122587.md",
+      "rel": "提及:本源萝坦",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-ext-lessons-archive.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-ext-lessons-archive.md",
+      "target": "/characters/15563.md",
+      "rel": "提及:图鲁",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-ext-lessons-archive.md",
+      "target": "/characters/15569.md",
+      "rel": "提及:萝坦",
       "rel_type": "mention"
     },
     {

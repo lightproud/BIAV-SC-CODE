@@ -8,7 +8,7 @@
   },
   "stats": {
     "concepts": 355,
-    "edges": 428,
+    "edges": 427,
     "terms": 6224,
     "by_type": {
       "character": 72,
@@ -963,7 +963,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 99
+      "degree": 98
     },
     "/characters/15604.md": {
       "type": "character",
@@ -1647,7 +1647,7 @@
       ],
       "section": "memory",
       "tier": "search",
-      "degree": 5
+      "degree": 0
     },
     "/memory/memory-archive-bpt-architecture-summary-template.md": {
       "type": "knowledge-pointer",
@@ -2072,7 +2072,7 @@
       ],
       "section": "memory",
       "tier": "search",
-      "degree": 1
+      "degree": 5
     },
     "/memory/memory-ext-research-best-wiki-features.md": {
       "type": "knowledge-pointer",
@@ -4247,7 +4247,7 @@
     "/sources/appstore.md": {
       "type": "dataset",
       "title": "appstore 社区数据源",
-      "description": "appstore 平台采集档案，全量 688 条，健康度 active。",
+      "description": "appstore 平台采集档案，全量 1144 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/appstore/global/",
       "tags": [
         "data_layer:full_archive",
@@ -4275,7 +4275,7 @@
     "/sources/bahamut.md": {
       "type": "dataset",
       "title": "bahamut 社区数据源",
-      "description": "bahamut 平台采集档案，全量 54 条，健康度 active。",
+      "description": "bahamut 平台采集档案，全量 59 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bahamut/",
       "tags": [
         "data_layer:full_archive",
@@ -4289,7 +4289,7 @@
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 2808 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 2809 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -4317,7 +4317,7 @@
     "/sources/google_play.md": {
       "type": "dataset",
       "title": "google_play 社区数据源",
-      "description": "google_play 平台采集档案，全量 1257 条，健康度 active。",
+      "description": "google_play 平台采集档案，全量 2233 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/google_play/global/",
       "tags": [
         "data_layer:full_archive",
@@ -4359,7 +4359,7 @@
     "/sources/pixiv.md": {
       "type": "dataset",
       "title": "pixiv 社区数据源",
-      "description": "pixiv 平台采集档案，全量 569 条，健康度 active。",
+      "description": "pixiv 平台采集档案，全量 570 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/pixiv/",
       "tags": [
         "data_layer:full_archive",
@@ -4387,7 +4387,7 @@
     "/sources/ruliweb.md": {
       "type": "dataset",
       "title": "ruliweb 社区数据源",
-      "description": "ruliweb 平台采集档案，全量 401 条，健康度 active。",
+      "description": "ruliweb 平台采集档案，全量 538 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/ruliweb/",
       "tags": [
         "data_layer:full_archive",
@@ -4401,7 +4401,7 @@
     "/sources/steam.md": {
       "type": "dataset",
       "title": "steam 社区数据源",
-      "description": "steam 平台采集档案，全量 5194 条，健康度 active。",
+      "description": "steam 平台采集档案，全量 5196 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4415,7 +4415,7 @@
     "/sources/steam_discussion.md": {
       "type": "dataset",
       "title": "steam_discussion 社区数据源",
-      "description": "steam_discussion 平台采集档案，全量 97 条，健康度 active。",
+      "description": "steam_discussion 平台采集档案，全量 98 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/discussion/",
       "tags": [
         "data_layer:full_archive",
@@ -4457,7 +4457,7 @@
     "/sources/taptap_review.md": {
       "type": "dataset",
       "title": "taptap_review 社区数据源",
-      "description": "taptap_review 平台采集档案，全量 1249 条，健康度 active。",
+      "description": "taptap_review 平台采集档案，全量 1257 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/taptap/cn/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4471,7 +4471,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 9865 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 9874 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -4485,7 +4485,7 @@
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 6408 条，健康度 active。",
+      "description": "weixin 平台采集档案，全量 9832 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -4499,7 +4499,7 @@
     "/sources/youtube.md": {
       "type": "dataset",
       "title": "youtube 社区数据源",
-      "description": "youtube 平台采集档案，全量 2812 条，健康度 active。",
+      "description": "youtube 平台采集档案，全量 2817 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -5100,7 +5100,7 @@
         "mention"
       ],
       [
-        "/memory/lessons-learned.md",
+        "/memory/memory-ext-lessons-archive.md",
         "提及:本源萝坦",
         "mention"
       ]
@@ -5436,7 +5436,7 @@
         "cv"
       ],
       [
-        "/memory/lessons-learned.md",
+        "/memory/memory-ext-lessons-archive.md",
         "提及:图鲁",
         "mention"
       ],
@@ -5623,7 +5623,7 @@
         "mention"
       ],
       [
-        "/memory/lessons-learned.md",
+        "/memory/memory-ext-lessons-archive.md",
         "提及:萝坦",
         "mention"
       ],
@@ -6433,11 +6433,6 @@
         "mention"
       ],
       [
-        "/memory/lessons-learned.md",
-        "提及:艾瑞卡",
-        "mention"
-      ],
-      [
         "/memory/memory-archive-bpt-guidance-log.md",
         "提及:艾瑞卡",
         "mention"
@@ -7059,7 +7054,7 @@
         "mention"
       ],
       [
-        "/memory/lessons-learned.md",
+        "/memory/memory-ext-lessons-archive.md",
         "提及:阿拉克涅",
         "mention"
       ],
@@ -7812,33 +7807,6 @@
         "mention"
       ]
     ],
-    "/memory/lessons-learned.md": [
-      [
-        "/characters/77918.md",
-        "提及:阿拉克涅",
-        "mention"
-      ],
-      [
-        "/characters/122587.md",
-        "提及:本源萝坦",
-        "mention"
-      ],
-      [
-        "/characters/15603.md",
-        "提及:艾瑞卡",
-        "mention"
-      ],
-      [
-        "/characters/15563.md",
-        "提及:图鲁",
-        "mention"
-      ],
-      [
-        "/characters/15569.md",
-        "提及:萝坦",
-        "mention"
-      ]
-    ],
     "/memory/memory-archive-bpt-guidance-log.md": [
       [
         "/characters/15603.md",
@@ -8019,8 +7987,28 @@
     ],
     "/memory/memory-ext-lessons-archive.md": [
       [
+        "/characters/77918.md",
+        "提及:阿拉克涅",
+        "mention"
+      ],
+      [
+        "/characters/122587.md",
+        "提及:本源萝坦",
+        "mention"
+      ],
+      [
         "/characters/15603.md",
         "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/characters/15563.md",
+        "提及:图鲁",
+        "mention"
+      ],
+      [
+        "/characters/15569.md",
+        "提及:萝坦",
         "mention"
       ]
     ],
