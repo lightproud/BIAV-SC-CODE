@@ -244,7 +244,11 @@ async function runBehavior() {
       const phases = question.harness.phases ?? [question.harness];
       const evidence = { phases: [], harnessNotes: question.harness.envelope ?? null };
       for (const phase of phases) {
-        const { transcript, result } = await runPhase(sdk, phase, ws, {});
+        // Headless run: no permission callback exists, so tool calls must not
+        // stall on approval — the scenarios only touch seeded temp workspaces.
+        const { transcript, result } = await runPhase(sdk, phase, ws, {
+          permissionMode: 'bypassPermissions',
+        });
         evidence.phases.push({
           transcript: transcript.slice(0, 200),
           result,

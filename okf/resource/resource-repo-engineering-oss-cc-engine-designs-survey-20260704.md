@@ -4,7 +4,7 @@ title: "oss-cc-engine-designs-survey-20260704"
 description: "Research deliverable for `projects/bpt-agent-sdk`. Goal: survey notable open-source Claude Code（格式：md）"
 resource: "/Public-Info-Pool/Resource/repo-engineering/oss-cc-engine-designs-survey-20260704.md"
 tags: ["data_layer:curated", "deliverable", "topic:repo-engineering"]
-timestamp: "2026-07-11"
+timestamp: "2026-07-12"
 ---
 
 # 指针概念
