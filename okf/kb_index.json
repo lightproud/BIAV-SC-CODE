@@ -7,14 +7,14 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 354,
-    "edges": 434,
-    "terms": 6215,
+    "concepts": 355,
+    "edges": 428,
+    "terms": 6224,
     "by_type": {
       "character": 72,
       "dataset": 98,
       "documentation": 119,
-      "knowledge-pointer": 45,
+      "knowledge-pointer": 46,
       "reference": 17,
       "research": 3
     },
@@ -23,7 +23,7 @@
       "characters": 72,
       "community": 19,
       "extracted": 3,
-      "memory": 48,
+      "memory": 49,
       "news-output": 23,
       "projects": 28,
       "resource": 90,
@@ -33,7 +33,7 @@
     },
     "by_tier": {
       "skeleton": 134,
-      "search": 220
+      "search": 221
     }
   },
   "sections": {
@@ -55,7 +55,7 @@
     },
     "memory": {
       "index": "/memory/index.md",
-      "count": 48
+      "count": 49
     },
     "news-output": {
       "index": "/news-output/index.md",
@@ -300,7 +300,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 38
+      "degree": 37
     },
     "/characters/130375.md": {
       "type": "character",
@@ -314,7 +314,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 3
+      "degree": 2
     },
     "/characters/130384.md": {
       "type": "character",
@@ -328,7 +328,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 1
     },
     "/characters/130901.md": {
       "type": "character",
@@ -963,7 +963,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 98
+      "degree": 99
     },
     "/characters/15604.md": {
       "type": "character",
@@ -1019,7 +1019,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 1
     },
     "/characters/77913.md": {
       "type": "character",
@@ -1047,7 +1047,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 4
+      "degree": 3
     },
     "/characters/77917.md": {
       "type": "character",
@@ -1131,7 +1131,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 1
     },
     "/characters/77925.md": {
       "type": "character",
@@ -1173,7 +1173,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 1
     },
     "/characters/77928.md": {
       "type": "character",
@@ -1647,7 +1647,7 @@
       ],
       "section": "memory",
       "tier": "search",
-      "degree": 12
+      "degree": 5
     },
     "/memory/memory-archive-bpt-architecture-summary-template.md": {
       "type": "knowledge-pointer",
@@ -2060,6 +2060,19 @@
       "section": "memory",
       "tier": "search",
       "degree": 2
+    },
+    "/memory/memory-ext-lessons-archive.md": {
+      "type": "knowledge-pointer",
+      "title": "踩坑记录归档层",
+      "description": "1. BIAV-SC.md §知识模块索引拆分为「全量档案层 / 输出展示层」两段，明确语义（4-26 完成）",
+      "resource": "/memory/lessons-archive.md",
+      "tags": [
+        "memory",
+        "data_layer:curated"
+      ],
+      "section": "memory",
+      "tier": "search",
+      "degree": 1
     },
     "/memory/memory-ext-research-best-wiki-features.md": {
       "type": "knowledge-pointer",
@@ -5154,11 +5167,6 @@
         "mention"
       ],
       [
-        "/memory/lessons-learned.md",
-        "提及:沙耶",
-        "mention"
-      ],
-      [
         "/memory/memory-ext-knowledge-layer-design.md",
         "提及:沙耶",
         "mention"
@@ -5291,11 +5299,6 @@
         "cv"
       ],
       [
-        "/memory/lessons-learned.md",
-        "提及:诺登斯",
-        "mention"
-      ],
-      [
         "/story/story_research_todo.md",
         "提及:诺登斯",
         "mention"
@@ -5306,11 +5309,6 @@
         "/characters/15578.md",
         "CV:山田真瑠奈",
         "cv"
-      ],
-      [
-        "/memory/lessons-learned.md",
-        "提及:撒托古亚",
-        "mention"
       ]
     ],
     "/characters/130901.md": [
@@ -6560,6 +6558,11 @@
         "mention"
       ],
       [
+        "/memory/memory-ext-lessons-archive.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
         "/memory/memory-ext-research-best-wiki-features.md",
         "提及:艾瑞卡",
         "mention"
@@ -6991,11 +6994,6 @@
         "/characters/15578.md",
         "CV:山田真瑠奈",
         "cv"
-      ],
-      [
-        "/memory/lessons-learned.md",
-        "提及:秃鹫",
-        "mention"
       ]
     ],
     "/characters/77913.md": [
@@ -7015,11 +7013,6 @@
         "/characters/15578.md",
         "CV:山田真瑠奈",
         "cv"
-      ],
-      [
-        "/memory/lessons-learned.md",
-        "提及:兰提戈斯",
-        "mention"
       ],
       [
         "/story/STORY_RESEARCH.md",
@@ -7140,11 +7133,6 @@
         "/characters/15578.md",
         "CV:山田真瑠奈",
         "cv"
-      ],
-      [
-        "/memory/lessons-learned.md",
-        "提及:夏塔克鸟",
-        "mention"
       ]
     ],
     "/characters/77925.md": [
@@ -7186,11 +7174,6 @@
         "/characters/15578.md",
         "CV:山田真瑠奈",
         "cv"
-      ],
-      [
-        "/memory/lessons-learned.md",
-        "提及:黑法老",
-        "mention"
       ]
     ],
     "/characters/77928.md": [
@@ -7831,18 +7814,8 @@
     ],
     "/memory/lessons-learned.md": [
       [
-        "/characters/77914.md",
-        "提及:兰提戈斯",
-        "mention"
-      ],
-      [
         "/characters/77918.md",
         "提及:阿拉克涅",
-        "mention"
-      ],
-      [
-        "/characters/77924.md",
-        "提及:夏塔克鸟",
         "mention"
       ],
       [
@@ -7851,23 +7824,8 @@
         "mention"
       ],
       [
-        "/characters/130384.md",
-        "提及:撒托古亚",
-        "mention"
-      ],
-      [
         "/characters/15603.md",
         "提及:艾瑞卡",
-        "mention"
-      ],
-      [
-        "/characters/77927.md",
-        "提及:黑法老",
-        "mention"
-      ],
-      [
-        "/characters/130375.md",
-        "提及:诺登斯",
         "mention"
       ],
       [
@@ -7878,16 +7836,6 @@
       [
         "/characters/15569.md",
         "提及:萝坦",
-        "mention"
-      ],
-      [
-        "/characters/77911.md",
-        "提及:秃鹫",
-        "mention"
-      ],
-      [
-        "/characters/130226.md",
-        "提及:沙耶",
         "mention"
       ]
     ],
@@ -8066,6 +8014,13 @@
       [
         "/characters/130226.md",
         "提及:沙耶",
+        "mention"
+      ]
+    ],
+    "/memory/memory-ext-lessons-archive.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
         "mention"
       ]
     ],
@@ -10173,6 +10128,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
       "/memory/memory-ext-knowledge-layer-design.md",
+      "/memory/memory-ext-lessons-archive.md",
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-skill-authoring-standard.md",
       "/memory/memory-ext-todo.md",
@@ -10410,6 +10366,7 @@
       "/memory/memory-archive-contribution-protocol-hub.md",
       "/memory/memory-archive-pending-discussions.md",
       "/memory/memory-archive-storage-discussion.md",
+      "/memory/memory-ext-lessons-archive.md",
       "/memory/memory-research-discord-archive-backfill-conflict.md",
       "/news-output/news-output-appstore.md",
       "/news-output/news-output-arca-live.md",
@@ -10589,6 +10546,7 @@
     ],
     "biav": [
       "/memory/memory-ext-biav-info-classification.md",
+      "/memory/memory-ext-lessons-archive.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md"
     ],
@@ -11209,6 +11167,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
       "/memory/memory-ext-knowledge-layer-design.md",
+      "/memory/memory-ext-lessons-archive.md",
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
@@ -11586,6 +11545,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
       "/memory/memory-ext-knowledge-layer-design.md",
+      "/memory/memory-ext-lessons-archive.md",
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
@@ -11897,6 +11857,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
       "/memory/memory-ext-knowledge-layer-design.md",
+      "/memory/memory-ext-lessons-archive.md",
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
@@ -13607,6 +13568,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
       "/memory/memory-ext-knowledge-layer-design.md",
+      "/memory/memory-ext-lessons-archive.md",
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
@@ -13947,7 +13909,8 @@
       "/sources/youtube_comments.md"
     ],
     "lessons": [
-      "/memory/lessons-learned.md"
+      "/memory/lessons-learned.md",
+      "/memory/memory-ext-lessons-archive.md"
     ],
     "levels": [
       "/projects/silver-core-sdk-doc-concurrency.md"
@@ -14155,6 +14118,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
       "/memory/memory-ext-knowledge-layer-design.md",
+      "/memory/memory-ext-lessons-archive.md",
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-skill-authoring-standard.md",
       "/memory/memory-ext-todo.md",
@@ -14338,6 +14302,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
       "/memory/memory-ext-knowledge-layer-design.md",
+      "/memory/memory-ext-lessons-archive.md",
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
@@ -15951,6 +15916,9 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md"
+    ],
+    "sc": [
+      "/memory/memory-ext-lessons-archive.md"
     ],
     "scan": [
       "/resource/resource-repo-engineering-bpt-demo-residue-scan-20260712.md"
@@ -17667,6 +17635,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
       "/memory/memory-ext-knowledge-layer-design.md",
+      "/memory/memory-ext-lessons-archive.md",
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
@@ -17933,6 +17902,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
       "/memory/memory-ext-knowledge-layer-design.md",
+      "/memory/memory-ext-lessons-archive.md",
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
@@ -18574,6 +18544,9 @@
     ],
     "两次": [
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md"
+    ],
+    "两段": [
+      "/memory/memory-ext-lessons-archive.md"
     ],
     "两点": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md"
@@ -20726,6 +20699,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
       "/memory/memory-ext-knowledge-layer-design.md",
+      "/memory/memory-ext-lessons-archive.md",
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
@@ -21600,6 +21574,7 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
+      "/memory/memory-ext-lessons-archive.md",
       "/memory/memory-research-discord-archive-backfill-conflict.md",
       "/news-output/news-output-all.md",
       "/news-output/news-output-appstore.md",
@@ -21762,6 +21737,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
       "/memory/memory-ext-knowledge-layer-design.md",
+      "/memory/memory-ext-lessons-archive.md",
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
@@ -21898,6 +21874,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
       "/memory/memory-ext-knowledge-layer-design.md",
+      "/memory/memory-ext-lessons-archive.md",
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
@@ -22085,6 +22062,7 @@
       "/README.md"
     ],
     "出展": [
+      "/memory/memory-ext-lessons-archive.md",
       "/news-output/news-output-all.md",
       "/news-output/news-output-appstore.md",
       "/news-output/news-output-arca-live.md",
@@ -22222,6 +22200,9 @@
     ],
     "刃进": [
       "/characters/15588.md"
+    ],
+    "分为": [
+      "/memory/memory-ext-lessons-archive.md"
     ],
     "分优": [
       "/characters/15571.md"
@@ -22590,6 +22571,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
       "/memory/memory-ext-knowledge-layer-design.md",
+      "/memory/memory-ext-lessons-archive.md",
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
@@ -25523,7 +25505,8 @@
     ],
     "坑记": [
       "/memory/lessons-learned.md",
-      "/memory/memory-ext-bpt-guidance-protocol.md"
+      "/memory/memory-ext-bpt-guidance-protocol.md",
+      "/memory/memory-ext-lessons-archive.md"
     ],
     "块名": [
       "/memory/memory-archive-bpt-architecture-summary-template.md"
@@ -25533,6 +25516,9 @@
     ],
     "块的": [
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
+    ],
+    "块索": [
+      "/memory/memory-ext-lessons-archive.md"
     ],
     "块覆": [
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
@@ -25915,6 +25901,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
       "/memory/memory-ext-knowledge-layer-design.md",
+      "/memory/memory-ext-lessons-archive.md",
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
@@ -26711,6 +26698,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
       "/memory/memory-ext-knowledge-layer-design.md",
+      "/memory/memory-ext-lessons-archive.md",
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
@@ -27196,6 +27184,7 @@
     ],
     "完成": [
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
+      "/memory/memory-ext-lessons-archive.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md"
     ],
     "完整": [
@@ -28167,6 +28156,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
       "/memory/memory-ext-knowledge-layer-design.md",
+      "/memory/memory-ext-lessons-archive.md",
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
@@ -28296,6 +28286,7 @@
       "/README.md"
     ],
     "展示": [
+      "/memory/memory-ext-lessons-archive.md",
       "/news-output/news-output-all.md",
       "/news-output/news-output-appstore.md",
       "/news-output/news-output-arca-live.md",
@@ -29201,6 +29192,9 @@
       "/characters/130901.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md"
     ],
+    "引拆": [
+      "/memory/memory-ext-lessons-archive.md"
+    ],
     "引擎": [
       "/characters/15602.md",
       "/projects/silver-core-sdk-doc-positioning.md",
@@ -29306,6 +29300,7 @@
       "/memory/memory-archive-contribution-protocol-hub.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
       "/memory/memory-ext-discord-archiver-design.md",
+      "/memory/memory-ext-lessons-archive.md",
       "/memory/memory-strategy-repo-slimming-plan.md",
       "/projects/news-archive-sources-registry.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
@@ -29342,6 +29337,9 @@
     ],
     "录带": [
       "/README.md"
+    ],
+    "录归": [
+      "/memory/memory-ext-lessons-archive.md"
     ],
     "录是": [
       "/README.md"
@@ -29601,6 +29599,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
       "/memory/memory-ext-knowledge-layer-design.md",
+      "/memory/memory-ext-lessons-archive.md",
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
@@ -30949,6 +30948,9 @@
       "/characters/15574.md",
       "/characters/15579.md"
     ],
+    "拆分": [
+      "/memory/memory-ext-lessons-archive.md"
+    ],
     "拉巴": [
       "/characters/122587.md",
       "/characters/125346.md",
@@ -31196,6 +31198,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
       "/memory/memory-ext-knowledge-layer-design.md",
+      "/memory/memory-ext-lessons-archive.md",
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
@@ -32112,6 +32115,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
       "/memory/memory-ext-knowledge-layer-design.md",
+      "/memory/memory-ext-lessons-archive.md",
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
@@ -32526,6 +32530,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
       "/memory/memory-ext-knowledge-layer-design.md",
+      "/memory/memory-ext-lessons-archive.md",
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
@@ -32813,6 +32818,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
       "/memory/memory-ext-knowledge-layer-design.md",
+      "/memory/memory-ext-lessons-archive.md",
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
@@ -33372,6 +33378,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
       "/memory/memory-ext-knowledge-layer-design.md",
+      "/memory/memory-ext-lessons-archive.md",
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
@@ -33857,6 +33864,7 @@
       "/characters/15589.md"
     ],
     "明确": [
+      "/memory/memory-ext-lessons-archive.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
     ],
@@ -34499,6 +34507,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
       "/memory/memory-ext-knowledge-layer-design.md",
+      "/memory/memory-ext-lessons-archive.md",
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
@@ -34927,6 +34936,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
       "/memory/memory-ext-knowledge-layer-design.md",
+      "/memory/memory-ext-lessons-archive.md",
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
@@ -35934,6 +35944,7 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
+      "/memory/memory-ext-lessons-archive.md",
       "/news-output/news-output-all.md",
       "/news-output/news-output-appstore.md",
       "/news-output/news-output-arca-live.md",
@@ -36013,7 +36024,8 @@
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md"
     ],
     "档层": [
-      "/memory/decisions-archive.md"
+      "/memory/decisions-archive.md",
+      "/memory/memory-ext-lessons-archive.md"
     ],
     "档归": [
       "/memory/memory-archive-contribution-protocol-hub.md",
@@ -36115,6 +36127,7 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-phase-d-plan.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
+      "/memory/memory-ext-lessons-archive.md",
       "/news-output/news-output-all.md",
       "/news-output/news-output-appstore.md",
       "/news-output/news-output-arca-live.md",
@@ -36442,6 +36455,7 @@
     ],
     "模块": [
       "/memory/memory-archive-bpt-architecture-summary-template.md",
+      "/memory/memory-ext-lessons-archive.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md"
@@ -36635,6 +36649,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
       "/memory/memory-ext-knowledge-layer-design.md",
+      "/memory/memory-ext-lessons-archive.md",
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
@@ -39967,6 +39982,7 @@
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-bpt-positioning.md",
       "/memory/memory-ext-knowledge-layer-design.md",
+      "/memory/memory-ext-lessons-archive.md",
       "/projects/entry-readme.md",
       "/projects/project-site.md",
       "/projects/project-wiki.md"
@@ -40180,6 +40196,9 @@
       "/memory/memory-ext-collab-event-playbook.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md"
     ],
+    "确语": [
+      "/memory/memory-ext-lessons-archive.md"
+    ],
     "碎敌": [
       "/characters/15598.md"
     ],
@@ -40193,6 +40212,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "示层": [
+      "/memory/memory-ext-lessons-archive.md",
       "/news-output/news-output-all.md",
       "/news-output/news-output-appstore.md",
       "/news-output/news-output-arca-live.md",
@@ -40903,6 +40923,7 @@
       "/README.md",
       "/community/community-index.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-phase-d-plan.md",
+      "/memory/memory-ext-lessons-archive.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
       "/story/story_index.md"
     ],
@@ -42833,7 +42854,8 @@
     "记录": [
       "/memory/lessons-learned.md",
       "/memory/memory-ext-biav-info-classification.md",
-      "/memory/memory-ext-bpt-guidance-protocol.md"
+      "/memory/memory-ext-bpt-guidance-protocol.md",
+      "/memory/memory-ext-lessons-archive.md"
     ],
     "记忆": [
       "/characters/15579.md",
@@ -42870,6 +42892,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
       "/memory/memory-ext-knowledge-layer-design.md",
+      "/memory/memory-ext-lessons-archive.md",
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
@@ -43068,6 +43091,9 @@
     "识明": [
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
+    "识模": [
+      "/memory/memory-ext-lessons-archive.md"
+    ],
     "诊断": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-build-verification.md",
       "/memory/memory-research-discord-archive-backfill-conflict.md"
@@ -43210,6 +43236,7 @@
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
     ],
     "语义": [
+      "/memory/memory-ext-lessons-archive.md",
       "/sources/appstore.md",
       "/sources/arca_live.md",
       "/sources/bahamut.md",
@@ -43664,6 +43691,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
       "/memory/memory-ext-knowledge-layer-design.md",
+      "/memory/memory-ext-lessons-archive.md",
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
@@ -43864,7 +43892,8 @@
     ],
     "踩坑": [
       "/memory/lessons-learned.md",
-      "/memory/memory-ext-bpt-guidance-protocol.md"
+      "/memory/memory-ext-bpt-guidance-protocol.md",
+      "/memory/memory-ext-lessons-archive.md"
     ],
     "踩过": [
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md"
@@ -44076,6 +44105,7 @@
       "/README.md",
       "/characters/15599.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
+      "/memory/memory-ext-lessons-archive.md",
       "/memory/memory-ext-skill-authoring-standard.md",
       "/news-output/news-output-all.md",
       "/news-output/news-output-appstore.md",
@@ -45222,6 +45252,7 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
+      "/memory/memory-ext-lessons-archive.md",
       "/news-output/news-output-all.md",
       "/news-output/news-output-appstore.md",
       "/news-output/news-output-arca-live.md",
@@ -45381,6 +45412,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
       "/memory/memory-ext-knowledge-layer-design.md",
+      "/memory/memory-ext-lessons-archive.md",
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
@@ -47489,6 +47521,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
       "/memory/memory-ext-knowledge-layer-design.md",
+      "/memory/memory-ext-lessons-archive.md",
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
@@ -47793,6 +47826,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
       "/memory/memory-ext-knowledge-layer-design.md",
+      "/memory/memory-ext-lessons-archive.md",
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
@@ -48704,6 +48738,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
       "/memory/memory-ext-knowledge-layer-design.md",
+      "/memory/memory-ext-lessons-archive.md",
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
@@ -49068,6 +49103,7 @@
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-ext-karpathy-coding-principles.md",
       "/memory/memory-ext-knowledge-layer-design.md",
+      "/memory/memory-ext-lessons-archive.md",
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
@@ -50681,6 +50717,9 @@
     "坂帆": [
       "/characters/15597.md"
     ],
+    "坑记": [
+      "/memory/memory-ext-lessons-archive.md"
+    ],
     "基线": [
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
     ],
@@ -50977,8 +51016,12 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md",
       "/memory/memory-archive-contribution-protocol-hub.md",
       "/memory/memory-ext-discord-archiver-design.md",
+      "/memory/memory-ext-lessons-archive.md",
       "/memory/memory-strategy-repo-slimming-plan.md",
       "/projects/news-archive-sources-registry.md"
+    ],
+    "录归": [
+      "/memory/memory-ext-lessons-archive.md"
     ],
     "彩乃": [
       "/characters/15591.md"
@@ -51395,6 +51438,9 @@
     ],
     "案讨": [
       "/memory/memory-archive-storage-discussion.md"
+    ],
+    "档层": [
+      "/memory/memory-ext-lessons-archive.md"
     ],
     "档归": [
       "/memory/memory-archive-contribution-protocol-hub.md"
@@ -52070,6 +52116,9 @@
       "/memory/memory-archive-pending-discussions.md",
       "/memory/memory-archive-storage-discussion.md"
     ],
+    "记录": [
+      "/memory/memory-ext-lessons-archive.md"
+    ],
     "论事": [
       "/memory/memory-archive-pending-discussions.md"
     ],
@@ -52123,6 +52172,9 @@
     ],
     "资产": [
       "/assets/assets-images.md"
+    ],
+    "踩坑": [
+      "/memory/memory-ext-lessons-archive.md"
     ],
     "身下": [
       "/memory/memory-research-discord-archive-backfill-conflict.md"
