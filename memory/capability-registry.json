@@ -6,18 +6,18 @@
     "scope": "BIAV-SC 银芯（公开信息层）全功能盘点 + 动态编排可达性",
     "reachability_method": "从活编排入口（工作流/MCP/命令/钩子/CLI 手动入口）沿 Python 模块级 import 图做传递闭包；带 __main__ 的脚本计为 cli 手动平面。status=orphaned 表示无任何活入口可达，建议隔离待裁，非自动删除。",
     "counts": {
-      "workflows": 33,
+      "workflows": 34,
       "scripts_top": 36,
-      "scripts_news": 30,
+      "scripts_news": 31,
       "scripts_wiki": 6,
       "mcp_tools": 11,
       "commands": 4,
       "skills": 4,
       "projects": 7,
-      "total": 131
+      "total": 133
     },
     "reachability": {
-      "live": 72,
+      "live": 73,
       "test-only": 0,
       "orphaned": 0
     }
@@ -200,6 +200,15 @@
         "manual"
       ],
       "note_zh": "定时归档主 Discord 数据。"
+    },
+    {
+      "id": "discord-cold-compress.yml",
+      "name": "Discord Cold Compress",
+      "path": ".github/workflows/discord-cold-compress.yml",
+      "triggers": [
+        "schedule",
+        "manual"
+      ]
     },
     {
       "id": "discord-discover-guilds.yml",
@@ -861,6 +870,16 @@
       "status": "live"
     },
     {
+      "id": "discord_cold_compress.py",
+      "path": "projects/news/scripts/discord_cold_compress.py",
+      "summary": "discord_cold_compress.py — discord 归档月度压冷（守密人 2026-07-12 甲案裁定）。",
+      "planes": [
+        "cli",
+        "workflow"
+      ],
+      "status": "live"
+    },
+    {
       "id": "discord_compact.py",
       "path": "projects/news/scripts/discord_compact.py",
       "summary": "Discord 记录紧凑 schema — 单一权威定义（归档器写盘 + 存量批量重写器共用此一份）",
@@ -1187,7 +1206,7 @@
     {
       "id": "wiki",
       "path": "projects/wiki/",
-      "summary": "> 最后更新：2026-07-02 by 艾瑞卡会话（档案漂移全面修复：正文重写为现行新链状态。",
+      "summary": "> **⚠ 子项目已冻结（守密人 2026-07-12 裁定，见 `memory/decisions.md` 同日「wiki 使命取消」条）**：",
       "note_zh": "使命#2 社区知识底座：VitePress 站点 + 72 角色数据库（客户端解包自举）。"
     }
   ]
