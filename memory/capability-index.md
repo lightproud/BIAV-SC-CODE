@@ -4,14 +4,14 @@
 > 中文用途补注请改 `memory/capability-annotations.json`；机器权威数据见 `memory/capability-registry.json`。
 
 - 生成日期：2026-07-12
-- 功能总数：**129**
+- 功能总数：**130**
 - 脚本可达性：活 71 / 仅测试 0 / 孤儿 0
 
 ## 总览
 
 | 功能层 | 数量 |
 |------|------|
-| CI 自动化工作流（编排入口·定时/事件平面） | 32 |
+| CI 自动化工作流（编排入口·定时/事件平面） | 33 |
 | 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 36 |
 | news 采集器脚本 | 29 |
 | wiki 数据脚本 | 6 |
@@ -34,7 +34,7 @@
 
 可达性 = 从活编排入口沿 Python import 图传递闭包。`孤儿` = 无任何活入口可达，建议隔离待裁（§3.1 裁撤属守密人决策，工具只检测不删除）。
 
-## CI 自动化工作流（编排入口·定时/事件平面）（32）
+## CI 自动化工作流（编排入口·定时/事件平面）（33）
 
 - **`Backfill Data Gap`** _[manual]_ — 手动回填指定时间段的数据缺口。  
   `.github/workflows/backfill-gap.yml`
@@ -100,6 +100,8 @@
   `.github/workflows/update-news.yml`
 - **`Validate Wiki Data`** _[push/pull_request/manual]_ — 校验 wiki JSON 数据（push/PR 触发）。  
   `.github/workflows/validate-data.yml`
+- **`Weekly Heavy-Deps Test`** _[schedule/manual]_ —   
+  `.github/workflows/weekly-heavy-deps-test.yml`
 
 ## 顶层脚本（记忆 / 做梦 / 解包 / 运营）（36）
 
