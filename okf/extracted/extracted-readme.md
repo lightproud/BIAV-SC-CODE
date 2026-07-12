@@ -4,7 +4,7 @@ title: "extracted 说明"
 description: "游戏使用 **LuaT0** 自定义字节码格式（Lua 5.4 变体，format byte 0x30），配合 Themida 加壳保护解密算法。"
 resource: "/projects/wiki/data/extracted/README.md"
 tags: ["data_layer:curated", "documentation"]
-timestamp: "2026-07-11"
+timestamp: "2026-07-12"
 ---
 
 # 指针概念

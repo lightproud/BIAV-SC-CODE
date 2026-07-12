@@ -4,7 +4,7 @@ title: "biav-project-plan-202603"
 description: "proposal 产物（html/pdf）（格式：html/pdf）"
 resource: "/Public-Info-Pool/Resource/proposal/biav-project-plan-202603.html"
 tags: ["data_layer:curated", "deliverable", "topic:proposal"]
-timestamp: "2026-07-11"
+timestamp: "2026-07-12"
 ---
 
 # 指针概念

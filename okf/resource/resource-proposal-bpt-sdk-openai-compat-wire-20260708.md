@@ -4,7 +4,7 @@ title: "bpt-sdk-openai-compat-wire-20260708"
 description: "给 BPT Agent SDK 增加一条 **OpenAI 兼容 Chat Completions 线**——作为兄弟 `Transport` 压在现有（格式：md）"
 resource: "/Public-Info-Pool/Resource/proposal/bpt-sdk-openai-compat-wire-20260708.md"
 tags: ["data_layer:curated", "deliverable", "topic:proposal"]
-timestamp: "2026-07-11"
+timestamp: "2026-07-12"
 ---
 
 # 指针概念

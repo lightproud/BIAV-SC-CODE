@@ -4,7 +4,7 @@ title: "silver-core-sdk RESILIENCE"
 description: "Audience: consumers running this SDK over imperfect links (corporate"
 resource: "/projects/silver-core-sdk/docs/RESILIENCE.md"
 tags: ["data_layer:curated", "design-doc", "sub-project:silver-core-sdk"]
-timestamp: "2026-07-11"
+timestamp: "2026-07-12"
 ---
 
 # 指针概念
