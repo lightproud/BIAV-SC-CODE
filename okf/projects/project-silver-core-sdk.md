@@ -4,7 +4,7 @@ title: "silver-core-sdk 子项目上下文"
 description: "Silver Core SDK：独立重实现（independent reimplementation）的 TypeScript agent 框架，公开调用面"
 resource: "/projects/silver-core-sdk/CONTEXT.md"
 tags: ["data_layer:curated", "sub-project-context", "milestone"]
-timestamp: "2026-07-12"
+timestamp: "2026-07-11"
 ---
 
 # 指针概念

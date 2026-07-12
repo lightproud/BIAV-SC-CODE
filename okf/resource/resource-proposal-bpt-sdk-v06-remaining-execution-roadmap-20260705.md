@@ -4,7 +4,7 @@ title: "bpt-sdk-v06-remaining-execution-roadmap-20260705"
 description: "**首批（本会话）已实现并全绿**：G-VERIFY（三态验证器）+ G-SUMMARY（摘要安全守卫 + away-summary）。详见下「## 已落」。（格式：md）"
 resource: "/Public-Info-Pool/Resource/proposal/bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
 tags: ["data_layer:curated", "deliverable", "topic:proposal"]
-timestamp: "2026-07-12"
+timestamp: "2026-07-11"
 ---
 
 # 指针概念

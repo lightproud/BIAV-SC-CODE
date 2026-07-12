@@ -4,7 +4,7 @@ title: "gameupdate"
 description: "客户端解包text 子集（明文）「gameupdate」：127 文件 / 119.1KB。一手解包，本体原地。"
 resource: "/Public-Info-Pool/Reference/Game-Unpacked/gameupdate/"
 tags: ["data_layer:full_archive", "content:gameupdate", "encoding:text", "first-hand-unpack"]
-timestamp: "2026-07-12"
+timestamp: "2026-07-11"
 ---
 
 # 指针概念

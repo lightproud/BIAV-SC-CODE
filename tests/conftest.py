@@ -19,6 +19,12 @@ sys.path.insert(0, str(REPO / "scripts"))
 
 @pytest.fixture(autouse=True)
 def _isolate_kb_telemetry(tmp_path, monkeypatch):
-    import kb_telemetry
+    # mutmut 的 mutants/ 工作副本只复制被变异源 + tests，kb_telemetry 不在
+    # 副本内（kb 工具不在变异区，无遥测可隔离）——导入不到即降级为无操作，
+    # 不让隔离夹具反把变异跑批整个卡死。
+    try:
+        import kb_telemetry
+    except ImportError:
+        return
 
     monkeypatch.setattr(kb_telemetry, "KB_USAGE_DIR", tmp_path / "kb-usage-isolated")
