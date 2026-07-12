@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 353,
-    "edges": 433,
-    "terms": 6198,
+    "concepts": 354,
+    "edges": 434,
+    "terms": 6215,
     "by_type": {
       "character": 72,
       "dataset": 98,
-      "documentation": 118,
+      "documentation": 119,
       "knowledge-pointer": 45,
       "reference": 17,
       "research": 3
@@ -26,14 +26,14 @@
       "memory": 48,
       "news-output": 23,
       "projects": 28,
-      "resource": 89,
+      "resource": 90,
       "sources": 20,
       "story": 11,
       "wiki-data": 27
     },
     "by_tier": {
       "skeleton": 134,
-      "search": 219
+      "search": 220
     }
   },
   "sections": {
@@ -67,7 +67,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 89
+      "count": 90
     },
     "sources": {
       "index": "/sources/index.md",
@@ -963,7 +963,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 97
+      "degree": 98
     },
     "/characters/15604.md": {
       "type": "character",
@@ -3530,6 +3530,20 @@
       "section": "resource",
       "tier": "search",
       "degree": 0
+    },
+    "/resource/resource-proposal-news-push-format-20260712.md": {
+      "type": "documentation",
+      "title": "news-push-format-20260712",
+      "description": "采集侧已稳（全量档案 + 3 小时节拍自动跑、日采北京 15 点档）；待定的是**输出侧最后一公里**：（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/proposal/news-push-format-20260712.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:proposal"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 1
     },
     "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md": {
       "type": "documentation",
@@ -6766,6 +6780,11 @@
         "mention"
       ],
       [
+        "/resource/resource-proposal-news-push-format-20260712.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
         "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
         "提及:艾瑞卡",
         "mention"
@@ -9063,6 +9082,13 @@
         "mention"
       ]
     ],
+    "/resource/resource-proposal-news-push-format-20260712.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
     "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md": [
       [
         "/characters/15603.md",
@@ -10063,6 +10089,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -11288,6 +11315,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -11636,6 +11664,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -11969,6 +11998,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -12147,6 +12177,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -12599,7 +12630,8 @@
     ],
     "format": [
       "/README.md",
-      "/extracted/extracted-readme.md"
+      "/extracted/extracted-readme.md",
+      "/resource/resource-proposal-news-push-format-20260712.md"
     ],
     "forrestchang": [
       "/memory/memory-ext-karpathy-coding-principles.md"
@@ -13188,6 +13220,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -13675,6 +13708,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -14196,6 +14230,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -14452,6 +14487,7 @@
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/sources/appstore.md",
@@ -14904,6 +14940,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -15223,6 +15260,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -15303,6 +15341,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -15378,6 +15417,7 @@
     ],
     "push": [
       "/memory/memory-ext-active-policy-direct-push-main.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
     ],
     "pv": [
@@ -15714,6 +15754,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -16655,6 +16696,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -17144,6 +17186,9 @@
     ],
     "一入": [
       "/projects/entry-claude-md.md"
+    ],
+    "一公": [
+      "/resource/resource-proposal-news-push-format-20260712.md"
     ],
     "一击": [
       "/characters/15587.md"
@@ -17728,6 +17773,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -17993,6 +18039,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -18314,6 +18361,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -19562,6 +19610,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -20518,6 +20567,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -20782,6 +20832,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -21163,6 +21214,12 @@
     ],
     "侧实": [
       "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md"
+    ],
+    "侧已": [
+      "/resource/resource-proposal-news-push-format-20260712.md"
+    ],
+    "侧最": [
+      "/resource/resource-proposal-news-push-format-20260712.md"
     ],
     "侧构": [
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md"
@@ -21568,6 +21625,7 @@
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/sources/appstore.md",
       "/sources/arca_live.md",
       "/sources/bahamut.md",
@@ -21609,6 +21667,9 @@
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
+    ],
+    "公里": [
+      "/resource/resource-proposal-news-push-format-20260712.md"
     ],
     "兰提戈斯": [
       "/characters/77914.md"
@@ -21998,6 +22059,9 @@
     ],
     "出不": [
       "/README.md"
+    ],
+    "出侧": [
+      "/resource/resource-proposal-news-push-format-20260712.md"
     ],
     "出单": [
       "/README.md"
@@ -22668,6 +22732,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -23012,6 +23077,9 @@
     "动质": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md"
     ],
+    "动跑": [
+      "/resource/resource-proposal-news-push-format-20260712.md"
+    ],
     "动重": [
       "/characters/15564.md"
     ],
@@ -23103,6 +23171,9 @@
     ],
     "化身": [
       "/characters/94450.md"
+    ],
+    "北京": [
+      "/resource/resource-proposal-news-push-format-20260712.md"
     ],
     "北崎": [
       "/characters/15582.md"
@@ -24566,7 +24637,8 @@
       "/characters/15593.md"
     ],
     "后一": [
-      "/characters/15604.md"
+      "/characters/15604.md",
+      "/resource/resource-proposal-news-push-format-20260712.md"
     ],
     "后只": [
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
@@ -25949,6 +26021,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -26744,6 +26817,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -27358,6 +27432,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -27483,6 +27558,9 @@
     ],
     "定新": [
       "/characters/15589.md"
+    ],
+    "定的": [
+      "/resource/resource-proposal-news-push-format-20260712.md"
     ],
     "定藏": [
       "/characters/15560.md"
@@ -27898,6 +27976,9 @@
     ],
     "小无": [
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md"
+    ],
+    "小时": [
+      "/resource/resource-proposal-news-push-format-20260712.md"
     ],
     "小清": [
       "/characters/15590.md"
@@ -28449,6 +28530,9 @@
     "已有": [
       "/memory/memory-research-discord-archive-backfill-conflict.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
+    ],
+    "已稳": [
+      "/resource/resource-proposal-news-push-format-20260712.md"
     ],
     "已落": [
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
@@ -29328,6 +29412,9 @@
     ],
     "待守": [
       "/memory/memory-ext-todo.md"
+    ],
+    "待定": [
+      "/resource/resource-proposal-news-push-format-20260712.md"
     ],
     "待裁": [
       "/memory/memory-ext-todo.md"
@@ -30946,6 +31033,9 @@
     "拍脑": [
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
     ],
+    "拍自": [
+      "/resource/resource-proposal-news-push-format-20260712.md"
+    ],
     "拐点": [
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md"
     ],
@@ -31212,6 +31302,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -31785,6 +31876,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -32121,6 +32213,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -32539,6 +32632,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -32825,6 +32919,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -33629,6 +33724,9 @@
     "日菜": [
       "/characters/15600.md"
     ],
+    "日采": [
+      "/resource/resource-proposal-news-push-format-20260712.md"
+    ],
     "旧版": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-design.md"
     ],
@@ -33701,6 +33799,9 @@
       "/characters/15602.md",
       "/characters/77922.md",
       "/characters/95786.md"
+    ],
+    "时节": [
+      "/resource/resource-proposal-news-push-format-20260712.md"
     ],
     "时获": [
       "/characters/15560.md"
@@ -34038,6 +34139,7 @@
     ],
     "最后": [
       "/characters/15604.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/sources/appstore.md",
       "/sources/arca_live.md",
       "/sources/bahamut.md",
@@ -34503,6 +34605,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -34930,6 +35033,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -35528,6 +35632,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -35735,6 +35840,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -36032,6 +36138,7 @@
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
@@ -36246,6 +36353,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -36633,6 +36741,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -37599,6 +37708,7 @@
       "/README.md"
     ],
     "点档": [
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md"
     ],
     "点火": [
@@ -39200,6 +39310,7 @@
     "的是": [
       "/characters/15563.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
     ],
     "的智": [
@@ -41768,6 +41879,7 @@
     ],
     "自动": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
     ],
@@ -41935,6 +42047,9 @@
     "节奏": [
       "/characters/77925.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md"
+    ],
+    "节拍": [
+      "/resource/resource-proposal-news-push-format-20260712.md"
     ],
     "节点": [
       "/README.md"
@@ -43655,6 +43770,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -43985,6 +44101,7 @@
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
       "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/sources/appstore.md",
       "/sources/arca_live.md",
       "/sources/bahamut.md",
@@ -44337,6 +44454,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -44824,6 +44942,9 @@
     "采信": [
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md"
     ],
+    "采北": [
+      "/resource/resource-proposal-news-push-format-20260712.md"
+    ],
     "采用": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md"
     ],
@@ -44833,6 +44954,7 @@
     "采集": [
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/projects/entry-claude-md.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/sources/appstore.md",
       "/sources/arca_live.md",
       "/sources/bahamut.md",
@@ -45123,6 +45245,7 @@
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/sources/appstore.md",
       "/sources/arca_live.md",
       "/sources/bahamut.md",
@@ -45364,6 +45487,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -45621,6 +45745,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -46123,6 +46248,9 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md"
+    ],
+    "集侧": [
+      "/resource/resource-proposal-news-push-format-20260712.md"
     ],
     "集健": [
       "/sources/appstore.md",
@@ -47439,6 +47567,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -47765,6 +47894,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -47930,6 +48060,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -48236,6 +48367,9 @@
     ],
     "fixed": [
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md"
+    ],
+    "format": [
+      "/resource/resource-proposal-news-push-format-20260712.md"
     ],
     "forrestchang": [
       "/memory/memory-ext-karpathy-coding-principles.md"
@@ -48671,6 +48805,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -49007,6 +49142,7 @@
       "/resource/resource-daily-news-morimens-daily-full-20260602.md",
       "/resource/resource-daily-news-morimens-period-20260512-0603.md",
       "/resource/resource-daily-news-morimens-window-20260602.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md"
     ],
     "next": [
@@ -49343,6 +49479,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -49355,6 +49492,9 @@
     ],
     "prototype": [
       "/resource/resource-proposal-wiki-prototype-202603.md"
+    ],
+    "push": [
+      "/resource/resource-proposal-news-push-format-20260712.md"
     ],
     "r2": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
@@ -49886,6 +50026,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
+      "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
