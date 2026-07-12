@@ -237,6 +237,12 @@ export function buildEngineConfig(args: {
     // present (loop guards the empty-tools case). Absent -> API default (auto).
     toolChoice: options.toolChoice,
     compaction: buildCompactionConfig(options.compaction),
+    // E3 salvage mode (BPT-EXTENSION, resilience): 'continue' re-drives a
+    // mid-stream truncation to a complete answer instead of accepting the
+    // partial. Default (undefined) keeps the official salvage-accept path.
+    ...(options.resilience?.salvageMode !== undefined
+      ? { salvageMode: options.resilience.salvageMode }
+      : {}),
     outputFormat,
     // Prompt caching is ON by default (matches the official SDK and saves the
     // static system+tools prefix on every turn of a multi-turn session). Set

@@ -115,6 +115,39 @@ describe('analyzeRequestComposition — 需求 A per-part estimate', () => {
     ]);
   });
 
+  it('reports EXACT UTF-8 byte sizes complementary to the token estimates', () => {
+    // A bare-string system + tools + messages; bytes are exact (not estimates)
+    // and CJK counts as its real UTF-8 width. Keeper ruling 2026-07-12.
+    const system = 'You are helpful. 中文'; // ASCII + 2 CJK (3 bytes each)
+    const { promptComposition } = analyzeRequestComposition(req({ system }));
+    const enc = new TextEncoder();
+    expect(promptComposition.bytes.system).toBe(enc.encode(system).length);
+    expect(promptComposition.bytes.toolDefs).toBe(enc.encode(JSON.stringify(TOOLS)).length);
+    expect(promptComposition.bytes.messages).toBe(enc.encode(JSON.stringify(MESSAGES)).length);
+    expect(promptComposition.bytes.total).toBe(
+      promptComposition.bytes.system +
+        promptComposition.bytes.toolDefs +
+        promptComposition.bytes.messages,
+    );
+    // Byte truth diverges from the token estimate — that is the point.
+    expect(promptComposition.bytes.system).toBeGreaterThan(system.length - 1);
+  });
+
+  it('sums block-array system bytes and reports 0 when tools/system are absent', () => {
+    const system: TextBlockParam[] = [
+      { type: 'text', text: 'alpha' },
+      { type: 'text', text: 'beta' },
+    ];
+    const enc = new TextEncoder();
+    const withBlocks = analyzeRequestComposition(req({ system })).promptComposition;
+    expect(withBlocks.bytes.system).toBe(enc.encode('alpha').length + enc.encode('beta').length);
+    const noTools = analyzeRequestComposition(
+      req({ system: '', tools: [] }),
+    ).promptComposition;
+    expect(noTools.bytes.system).toBe(0);
+    expect(noTools.bytes.toolDefs).toBe(0);
+  });
+
   it('reports no engine-owned base for the host segments form (systemBase 0)', () => {
     const system: SystemComposition = {
       parts: [

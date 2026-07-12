@@ -1715,6 +1715,8 @@ export type Options = {
   debugFile?: string;
   /** BPT extension: context-compaction tuning (see docs/COMPAT.md). */
   compaction?: CompactionOptions;
+  /** BPT extension: disconnect-resilience tuning (see docs/RESILIENCE.md). */
+  resilience?: ResilienceOptions;
   /** Require the final answer to be JSON validating against a JSON Schema;
    *  the validated object is returned on the result as `structured_output`. */
   outputFormat?: OutputFormatConfig;
@@ -2542,6 +2544,12 @@ export type PromptComposition = {
   messages: { estTokens: number; count: number };
   /** Sum of every bucket above. */
   totalEstTokens: number;
+  /** EXACT wire-content byte sizes (UTF-8), complementary to the token
+   *  estimates above (BPT-EXTENSION 2026-07-12). Unlike estTokens these are
+   *  not estimates — they measure the assembled request's actual bytes, which
+   *  a host sizing against a byte envelope (or a byte-precise panel) needs.
+   *  `system` is the whole system field; `total` is system+toolDefs+messages. */
+  bytes: { system: number; toolDefs: number; messages: number; total: number };
 };
 
 /** 需求 B: one cache_control breakpoint and the estimated size of the prefix
@@ -2720,6 +2728,23 @@ export type OutputFormatConfig = {
   /** Also send the schema on the wire as `output_config.format` (server-side
    *  guarantee, supported models only). Absent/false -> local-only (default). */
   native?: boolean;
+};
+
+/** BPT extension: disconnect-resilience tuning (docs/RESILIENCE.md). */
+export type ResilienceOptions = {
+  /**
+   * How a MID-STREAM truncation (a connection drop after partial content, or
+   * the streamMaxDurationMs hard cap) is resolved:
+   * - 'accept' (default): keep the whole blocks delivered so far as the turn's
+   *   answer — the official 2.1.201 salvage semantics (drop-in). A truncated
+   *   final message surfaces as a partial answer.
+   * - 'continue': do NOT accept the partial; re-drive the turn through the
+   *   bounded replay so the model produces a COMPLETE answer. Because the
+   *   replay is a fresh turn there is no duplicated prefix. Costs one (or more)
+   *   extra turn(s) within TURN_REPLAY_LIMIT; a persistently truncating turn
+   *   still degrades to the error path once replays exhaust.
+   */
+  salvageMode?: 'accept' | 'continue';
 };
 
 /** BPT extension: context-compaction tuning. When the running request

@@ -406,7 +406,11 @@ const RUNNERS = {
       prompts: [
         'Count from one to forty as English words, comma-separated, on one line, then say DONE.',
       ],
-      options: { provider: { fetch: fetchWrap } },
+      // resilience.salvageMode 'continue' (keeper ruling 2026-07-12, option 乙):
+      // a mid-text truncation is re-driven to a COMPLETE answer rather than
+      // accepted as a partial. The scenario's "continue without repeating"
+      // needs this opt-in; default 'accept' keeps the official salvage.
+      options: { provider: { fetch: fetchWrap }, resilience: { salvageMode: 'continue' } },
     });
     return {
       ws,
@@ -415,10 +419,12 @@ const RUNNERS = {
         harnessNotes:
           'Injected: POST #1 stream errored right after its 2nd text_delta event — partial ' +
           'text had flowed, the message was truncated mid-text (deterministic; not a raw ' +
-          'event count). Later POSTs clean. Expected: coherent final output (no repeated ' +
-          'prefix / missing middle), transportHealth records the truncation path ' +
-          '(midStreamDrops plus turnsSalvaged or turnReplays), and usage accounting present ' +
-          'for the salvaged turn. The injected ledger below proves the cut actually fired.',
+          'event count). Later POSTs clean. salvageMode="continue" is set, so the engine ' +
+          're-drives the truncated turn to a COMPLETE answer (a fresh turn — no duplicated ' +
+          'prefix) instead of accepting the partial. Expected: coherent final output that ' +
+          'counts through forty and ends with DONE (no missing middle), transportHealth ' +
+          'records the mid-stream drop and the bounded replay, usage accounting present. ' +
+          'The injected ledger below proves the cut actually fired.',
         injected: fetchWrap.ledger,
       },
     };

@@ -2275,6 +2275,34 @@ describe('engine loop - bounded turn replay (P0-1) + transport health ledger (P0
       turnReplays: 0,
     });
   });
+
+  it('salvageMode "continue": a salvageable truncation is re-driven to a complete answer, not accepted partial', async () => {
+    // Call 1 is salvageable (partial text, would normally be accepted); with
+    // salvageMode 'continue' the engine declines the partial and replays to a
+    // clean full answer on call 2 (keeper ruling 2026-07-12, option 乙).
+    const truncated = textReplyEvents('PARTIAL').slice(0, -1);
+    const transport = new TruncatingTransport(
+      [truncated, textReplyEvents('COMPLETE ANSWER')],
+      1,
+    );
+    const deps = makeDeps(transport as unknown as MockTransport);
+    const history = [{ role: 'user' as const, content: 'go' }];
+
+    const messages = await collect(
+      runAgentLoop(history, deps, makeConfig({ salvageMode: 'continue' })),
+    );
+
+    expect(transport.requests).toHaveLength(2); // declined partial -> replayed
+    const result = lastResult(messages);
+    expect(result.subtype).toBe('success');
+    if (result.subtype === 'success') expect(result.result).toBe('COMPLETE ANSWER');
+    // Recorded as a replay (Layer 2), not a salvage-accept (Layer 3).
+    expect(result.metrics?.transportHealth).toMatchObject({
+      midStreamDrops: 1,
+      turnsSalvaged: 0,
+      turnReplays: 1,
+    });
+  });
 });
 
 // ---------------------------------------------------------------------------

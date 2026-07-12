@@ -16,6 +16,22 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.52.0 — 2026-07-12
+
+**`options.resilience.salvageMode` (E3 continue-after-truncation) + exact
+byte sizes in prompt composition.** Two keeper rulings from the loop-1
+retrospective. (1) `resilience: { salvageMode: 'continue' }` (default
+`'accept'`, drop-in): a mid-stream truncation is re-driven through the
+bounded turn replay to a COMPLETE answer instead of accepting the partial
+blocks — a fresh turn, so no duplicated prefix; a persistently truncating
+turn still degrades to the error path once replays exhaust. `'accept'`
+keeps the official 2.1.201 salvage semantics byte-for-byte. The dc-03 eval
+harness turns it on. (2) `promptComposition.bytes` (`system` / `toolDefs` /
+`messages` / `total`): EXACT UTF-8 byte sizes of the assembled request,
+complementary to the existing token estimates — what a host sizing against
+a byte envelope (the tok-06 measurement anchor) or a byte-precise context
+panel needs. Computed from the wire content; no new estimator. +5 tests.
+
 ## 0.51.2 — 2026-07-12
 
 **Fix: run-log appends are serialized (ledger order = arrival order) +

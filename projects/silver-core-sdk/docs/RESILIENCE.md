@@ -51,6 +51,17 @@ continues. As of P1 this also applies to hard-cap aborts
 (`streamMaxDurationMs`) and fallback body timeouts — a timeout no longer
 voids delivered content.
 
+**Salvage mode (`options.resilience.salvageMode`, v0.52.0).** The default
+`'accept'` is the behavior above — the partial is the answer (official
+2.1.201 semantics, drop-in). Set `'continue'` when a *complete* answer
+matters more than the flowed prefix: the engine declines the partial and
+re-drives the turn through the Layer-2 bounded replay, producing a full
+fresh answer (no duplicated prefix, since it is a new turn). It records a
+`turnReplay` rather than a `turnsSalvaged`, and a turn that keeps
+truncating still degrades to the honest error path once replays exhaust.
+Costs one or more extra turns; leave it at `'accept'` unless partial
+answers are unacceptable for your workload.
+
 ## 2. Body governance (P1): who is allowed to kill a flowing stream
 
 - `timeoutMs` (default 600000) governs the REQUEST phase: connect

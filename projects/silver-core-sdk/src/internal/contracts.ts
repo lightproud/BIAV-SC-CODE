@@ -548,6 +548,13 @@ export type EngineConfig = {
   toolChoice?: ToolChoice;
   /** Context-compaction tunables; absent -> never compact. */
   compaction?: CompactionConfig;
+  /** E3 salvage mode (BPT-EXTENSION, resilience). Default 'accept': a
+   *  mid-stream truncation keeps the whole blocks delivered so far as the
+   *  turn's answer (official 2.1.201 semantics, drop-in). 'continue': the
+   *  partial is NOT accepted as final — the turn falls through to the bounded
+   *  replay so the model produces a complete answer (a fresh turn, so no
+   *  duplicated prefix). Opt-in; the default is byte-for-byte the old path. */
+  salvageMode?: 'accept' | 'continue';
   /** Structured-output schema; when set the engine validates + re-prompts. */
   outputFormat?: OutputFormatConfig;
   /** Bound on structured-output re-prompts (default 2). */
