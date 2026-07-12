@@ -212,6 +212,19 @@
   顽固无分对子转观察（3 轮 5 次 judge 结构化输出失败）；③ judge 方差（mem-01 零改动 2→5 实证）
   与 estBytes 等收益递减项不再专门烧轮。判卷侧当日约 $15（$30/月帽内）。裁定全文
   `memory/decisions.md` 同日「自改循环授权 + 首轮循环收官」条。
+- **self-improve #7：判卷 HTTP 错误分类（2026-07-12，判卷无关硬化，收官后补一单）**：
+  收官后点火的确诊轮（run [29196113106](https://github.com/lightproud/brain-in-a-vat/actions/runs/29196113106)）
+  20 题全 judge HTTP 400——完整报文是 **`invalid_request_error: Your credit balance is too low`**
+  （API 账户余额耗尽，非代码缺陷，与 2026-07-07 v0.14.0 余额耗尽轮同类「无效不可采信」）。
+  基础设施**正确降级**（20 题全记 ERROR、维度均值空、REQ-2.2 只发 advisory 警告不误报假回归——
+  self-improve #2 均值防毒化在判卷全线中断下按设计工作的铁证）。但暴露两个判卷无关缺陷：① 账单/鉴权
+  类 400 被当瞬时错误盲目重试一次（注定失败、白烧已耗尽余额）；② 报告 90 字备注格被 JSON 信封前缀
+  `…"message":"` 占满，真因得钻原始 CI 日志才见。**修复**：`classifyJudgeError()`（`scripts/eval-scoring.mjs`
+  纯函数）按状态码 + 报文分诊——billing/auth/permission/其他 4xx 为终态 `retryable:false`（judge() 不再
+  空重试），429/5xx/529 仍为瞬时可重试；备注前置 `[kind]` + API 原文，截断格也读得出「billing: Your
+  credit balance is too low」。+4 测试（`tests/eval-scoring.test.ts`，**1905 全绿 + 2 skipped**）。
+  仅改 scripts/ + tests/（非 shipped `src/**`），版本升号守卫豁免、无需升版。**判卷侧证分待守密人为
+  API 账户充值后重跑**（dc-03 续写旗分数复核 + mem-03/dc-05 深挖一单 judgeDiag 收集均阻塞于此）。
 - **首份全量 LIVE 评估基线（2026-07-12，run [29178972282](https://github.com/lightproud/brain-in-a-vat/actions/runs/29178972282)，v0.51.1）**：
   20 题全执行（8 题 Phase 2 harness 首次真跑真判），**19 判卷成功 / 1 judge 解析错误（tok-02，偶发）**；
   维度均分 memory_recall **4.86** / disconnect_recovery **4.00** / token_efficiency **4.33**，

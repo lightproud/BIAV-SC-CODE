@@ -41,6 +41,69 @@ export function diagnoseJudgeMessage(body) {
   };
 }
 
+/**
+ * Classify a non-2xx judge HTTP response (self-improve #7). The 2026-07-12
+ * confirm round returned twenty identical HTTP 400s whose body was
+ * "Your credit balance is too low" — a billing outage, not a code fault.
+ * Two things went wrong in how the runner handled it: (1) judge() retried
+ * each one once, a guaranteed-doomed second call that burned the last of a
+ * depleted balance; (2) the report's 90-char note cell showed only the JSON
+ * envelope prefix (…{"type":"error","error":{"type":"invalid_request_error",
+ * "message":"), so the real cause was invisible without digging into raw CI
+ * logs. This classifier fixes both: `retryable` tells judge() not to re-fire
+ * terminal request errors, and `note` front-loads a human `kind` + the API's
+ * own message text so the truncated table cell is legible.
+ *
+ * Terminal (retryable:false): billing, auth, permission, and any other 4xx —
+ * an identical re-POST cannot change the verdict. Transient (retryable:true):
+ * 408/425/429 and 5xx/529 — backoff may help.
+ */
+export function classifyJudgeError(status, bodyText) {
+  let apiType;
+  let apiMessage;
+  try {
+    const parsed = JSON.parse(bodyText);
+    apiType = parsed?.error?.type ?? undefined;
+    apiMessage = parsed?.error?.message ?? undefined;
+  } catch {
+    // Non-JSON body (gateway HTML, empty) — keep the raw head as the message.
+  }
+  const msg = String(apiMessage ?? bodyText ?? '').trim();
+  const lower = msg.toLowerCase();
+  let kind;
+  let retryable;
+  if (status === 429 || status === 408 || status === 425) {
+    kind = 'rate_limit';
+    retryable = true;
+  } else if (status >= 500) {
+    kind = 'server';
+    retryable = true;
+  } else if (status === 401) {
+    kind = 'auth';
+    retryable = false;
+  } else if (status === 403) {
+    kind = 'permission';
+    retryable = false;
+  } else if (status === 400 && (lower.includes('credit balance') || lower.includes('billing'))) {
+    kind = 'billing';
+    retryable = false;
+  } else if (status === 400) {
+    kind = 'invalid_request';
+    retryable = false;
+  } else {
+    // Any other non-2xx (odd 4xx / 3xx): do not retry an identical re-POST.
+    kind = apiType ?? 'http';
+    retryable = false;
+  }
+  return {
+    status,
+    kind,
+    retryable,
+    apiType: apiType ?? null,
+    note: `judge HTTP ${status} [${kind}]: ${msg.slice(0, 160)}`,
+  };
+}
+
 /** A verdict counts only with an integer score in 1..5. */
 export function isValidVerdict(graded) {
   return (

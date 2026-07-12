@@ -9,6 +9,7 @@ import { describe, expect, it } from 'vitest';
 
 // eslint-disable-next-line import/no-relative-packages -- eval-side tooling under test
 import {
+  classifyJudgeError,
   computeDimensionMeans,
   diagnoseJudgeMessage,
   isValidVerdict,
@@ -86,6 +87,48 @@ describe('diagnoseJudgeMessage (深挖一单 probe)', () => {
     expect(diag.text_len).toBe('{"verdict":"unsure"}'.length);
     expect(diag.text_head).toContain('unsure');
     expect(diag.block_types).toEqual(['text']);
+  });
+});
+
+describe('classifyJudgeError (self-improve #7)', () => {
+  const billingBody = JSON.stringify({
+    type: 'error',
+    error: { type: 'invalid_request_error', message: 'Your credit balance is too low to access the API.' },
+  });
+
+  it('a billing 400 is terminal and legible in a 90-char cell (the 2026-07-12 confirm round)', () => {
+    const cls = classifyJudgeError(400, billingBody);
+    expect(cls.kind).toBe('billing');
+    expect(cls.retryable).toBe(false);
+    // The note front-loads kind + API message so `Error: <note>`.slice(0,90)
+    // still shows the cause, not the JSON envelope prefix.
+    expect(cls.note).toBe('judge HTTP 400 [billing]: Your credit balance is too low to access the API.');
+    expect(`Error: ${cls.note}`.slice(0, 90)).toContain('credit balance');
+  });
+
+  it('auth/permission/other-400 are terminal (no doomed retry)', () => {
+    expect(classifyJudgeError(401, '{}')).toMatchObject({ kind: 'auth', retryable: false });
+    expect(classifyJudgeError(403, '{}')).toMatchObject({ kind: 'permission', retryable: false });
+    expect(
+      classifyJudgeError(
+        400,
+        JSON.stringify({ error: { type: 'invalid_request_error', message: 'max_tokens: bad' } }),
+      ),
+    ).toMatchObject({ kind: 'invalid_request', retryable: false });
+  });
+
+  it('rate-limit and server errors stay transient (retry may help)', () => {
+    expect(classifyJudgeError(429, '{}')).toMatchObject({ kind: 'rate_limit', retryable: true });
+    expect(classifyJudgeError(408, '{}')).toMatchObject({ kind: 'rate_limit', retryable: true });
+    expect(classifyJudgeError(500, '{}')).toMatchObject({ kind: 'server', retryable: true });
+    expect(classifyJudgeError(529, '{}')).toMatchObject({ kind: 'server', retryable: true });
+  });
+
+  it('a non-JSON body (gateway HTML) keeps its raw head as the message', () => {
+    const cls = classifyJudgeError(502, '<html>Bad Gateway</html>');
+    expect(cls.kind).toBe('server');
+    expect(cls.retryable).toBe(true);
+    expect(cls.note).toContain('Bad Gateway');
   });
 });
 
