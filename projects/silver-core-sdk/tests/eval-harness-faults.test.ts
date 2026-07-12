@@ -147,6 +147,51 @@ describe('makeFaultFetch against the emulator (keyless)', () => {
   });
 });
 
+describe('cutAfterTextDeltas (self-improve #3: deterministic mid-text cut)', () => {
+  it('cuts mid-text even when the whole reply arrives as one batched chunk', async () => {
+    // The emulator writes the full SSE body at once — exactly the batching
+    // shape that let raw-event-count cuts silently never fire (dc-03 drift).
+    const fetchWrap = makeFaultFetch((i: number) =>
+      i === 1 ? { cutAfterTextDeltas: 2 } : 'pass',
+    );
+    const { messages, result } = await run(fetchWrap);
+    expect(fetchWrap.ledger).toEqual([{ call: 1, action: 'cut-after-2-text-deltas' }]);
+    expect(result?.is_error).toBe(false);
+    const health = result?.metrics?.transportHealth;
+    expect(
+      (health?.midStreamDrops ?? 0) +
+        (health?.turnsSalvaged ?? 0) +
+        (health?.turnReplays ?? 0) +
+        (health?.emptyStreamRetries ?? 0),
+    ).toBeGreaterThanOrEqual(1);
+    // Recovery may salvage the flowed prefix as the answer (E3) or replay to
+    // a full reply — either way exactly ONE assistant text message survives,
+    // with no duplicated prefix.
+    const texts = messages
+      .filter((m) => m.type === 'assistant')
+      .flatMap((m) =>
+        (m as { message: { content: Array<{ type: string; text?: string }> } }).message.content
+          .filter((b) => b.type === 'text')
+          .map((b) => b.text ?? ''),
+      )
+      .filter((t) => t.length > 0);
+    expect(texts.length).toBe(1);
+    const occurrences = texts[0]!.split('All twenty').length - 1;
+    expect(occurrences).toBe(1);
+  });
+
+  it('a reply with fewer text_deltas than the threshold passes through un-cut', async () => {
+    // Guard the other direction: threshold beyond the reply must not corrupt
+    // or truncate a healthy stream.
+    const fetchWrap = makeFaultFetch((i: number) =>
+      i === 1 ? { cutAfterTextDeltas: 99 } : 'pass',
+    );
+    const { result } = await run(fetchWrap);
+    expect(result?.is_error).toBe(false);
+    expect(result?.metrics?.transportHealth?.midStreamDrops ?? 0).toBe(0);
+  });
+});
+
 describe('harness registry governance boundary', () => {
   it('registers a runner for every manual question and only those', () => {
     const doc = JSON.parse(
