@@ -139,10 +139,10 @@ def _emit_discord(d):
 
 
 def _emit_comments(d):
-    """*_comments：*.jsonl，{text,published,likes}。"""
-    for f in sorted(d.glob("*.jsonl")):
+    """*_comments：*.jsonl[.gz]，{text,published,likes}。"""
+    for f in sorted(list(d.glob("*.jsonl")) + list(d.glob("*.jsonl.gz"))):
         try:
-            with f.open(encoding="utf-8") as fh:
+            with archive_layout.open_archive_text(f) as fh:
                 for line in fh:
                     line = line.strip()
                     if not line:
@@ -160,10 +160,11 @@ def _emit_comments(d):
 
 
 def _emit_platform(d):
-    """平台：dated *.json，{items:[{time,lang,title,summary,engagement}]}。"""
-    for f in sorted(d.rglob("*.json")):
+    """平台：dated *.json[.gz]，{items:[{time,lang,title,summary,engagement}]}。"""
+    for f in sorted(list(d.rglob("*.json")) + list(d.rglob("*.json.gz"))):
         try:
-            doc = json.loads(f.read_text(encoding="utf-8"))
+            with archive_layout.open_archive_text(f) as fh:
+                doc = json.load(fh)
         except Exception:
             continue
         items = doc.get("items", doc) if isinstance(doc, dict) else doc
