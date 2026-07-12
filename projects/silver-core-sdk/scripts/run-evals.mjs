@@ -35,6 +35,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 
 import { dumpMemory, getHarnessRunner, seedWorkspace } from './eval-harnesses.mjs';
 import {
+  classifyJudgeError,
   computeDimensionMeans,
   diagnoseJudgeMessage,
   isValidVerdict,
@@ -173,7 +174,16 @@ async function judgeOnce(question, evidence, judgePrompt) {
     headers: API_HEADERS(),
     body: JSON.stringify(judgeParams(question, evidence, judgePrompt)),
   });
-  if (!res.ok) throw new Error(`judge HTTP ${res.status}: ${(await res.text()).slice(0, 300)}`);
+  if (!res.ok) {
+    // Classify (self-improve #7): terminal request errors (billing/auth/
+    // malformed) carry retryable:false so judge() skips a doomed re-POST, and
+    // the note front-loads the API's own message for the 90-char report cell.
+    const cls = classifyJudgeError(res.status, await res.text());
+    const err = new Error(cls.note);
+    err.retryable = cls.retryable;
+    err.judgeErrorKind = cls.kind;
+    throw err;
+  }
   const body = await res.json();
   const verdict = parseJudgeMessage(body);
   // 深挖一单 (keeper 2026-07-12): when the verdict has no valid score, carry
@@ -192,6 +202,11 @@ async function judge(question, evidence, judgePrompt) {
     first = await judgeOnce(question, evidence, judgePrompt);
     if (isValidVerdict(first)) return first;
   } catch (err) {
+    // Terminal request errors (billing/auth/malformed, retryable:false) can't
+    // be fixed by an identical re-POST — surface immediately instead of
+    // burning a doomed retry (self-improve #7). Transient throws (network /
+    // 5xx / 429, retryable undefined or true) still get their one retry.
+    if (err.retryable === false) throw err;
     console.log(`judge retry for ${question.id}: first attempt threw (${String(err).slice(0, 120)})`);
     return judgeOnce(question, evidence, judgePrompt);
   }
