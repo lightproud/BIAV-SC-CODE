@@ -136,11 +136,15 @@ describe('createRunLogSink', () => {
     sink.observe({ type: 'system', subtype: 'init' } as never);
     sink.observe(resultFixture() as never);
     sink.observe(resultFixture({ session_id: 'sess-9' } as never) as never);
-    await new Promise((r) => setTimeout(r, 50));
+    // flush() (v0.51.2) resolves once all observed records are appended —
+    // appends are serialized, so line order IS arrival order (the old 50ms
+    // sleep raced two independent append chains and flaked in CI).
+    await sink.flush();
     const lines = (await readFile(join(logDir, runLogFileName(new Date())), 'utf8'))
       .trim()
       .split('\n');
     expect(lines).toHaveLength(2);
+    expect(JSON.parse(lines[0]!).session_id).toBe('sess-1');
     expect(JSON.parse(lines[1]!).session_id).toBe('sess-9');
   });
 });
