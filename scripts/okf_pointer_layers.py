@@ -286,7 +286,6 @@ _WIKI_DOMAIN = {
     "character_index": "index",
     "aliases": "index",  # 厚锚别名侧表（chunk3）：角色索引的 sibling 扩展
     "language_config": "localization", "panel_text": "localization",
-    "update_notices": "localization",
 }
 
 

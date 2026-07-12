@@ -72,7 +72,7 @@
 | wiki（数据集 + Wiki 站点） | **已冻结（守密人 2026-07-12 裁定：原使命#2「社区共建知识底座」取消，wiki 不再承载正式使命）**。已建成果保留不删不派发：可信基线 `data/processed/characters.json`（72 真实角色，一手解包）→ 58 真实唤醒体页 + 运行时数据桥 `characters.runtime.json` → `characters.ts` 消费，CharacterGrid 挂载图鉴页，SSR 构建验证通过（2026-07-02 冻结前状态）。站点随 deploy-site.yml 继续对外可读 | 艾瑞卡会话 | 无（冻结，不派发）。原字段缺口任务（skills/命轮/立绘/三语，见 `wiki-phase-2-gap-inventory.md`）随冻结停派；社区数据采集必要性重估已裁维持现状（T36 销案 2026-07-12，见 `memory/todo.md` 已清节） |
 | game（衍生游戏） | 暂缓 | 待创建 | 不主线派发 |
 | **silver-core-sdk**（原名 bpt-agent-sdk，2026-07-10 更名 · Claude Agent SDK 公开信息再现 · **正式使命#2「通用 AI 底层能力开发基地」核心载体**，守密人 2026-07-12 裁定由「非使命线」事实使命转正 · 银芯→黑池单向输出物） | **v0.51.0（2026-07-12 自我改进闭环推进：REQ-1.2 趋势比对 + Phase 2 harness 全 8 题解锁 + REQ-2.2 回归门禁；0.43–0.50 历程见专节逐条）**：TypeScript 重实现（公开信息再现、自研引擎），直驱 Anthropic Messages API（fetch+SSE，无 CLI 子进程），**1885 单测全绿 + 2 skipped、tsc/build exit 0**（0712 实录；v0.49.0 时点为 1848+2）；对官方 SDK **0.3.205** 约 90%+ 表面等价（对标基线 2026-07-10 由 0.3.201 追齐至 0.3.205，见 `docs/COMPAT.md`「0.3.201 -> 0.3.205 chase」；v0.40.0 落 7 个新类型 + interrupt 收据 + parent_agent_id，全类型化、诚实源外 typed-not-emitted），一致性金字塔 L1–L5 全封顶、首轮真 API L5 两臂打平 88.9%。**评估 backlog P2/P3/P4 全落（2026-07-06）**：**P2**（PR #501）逐条过 COMPAT 39 项 PARTIAL 分诊——~14 行「文档滞后」收敛为 FULL + 8 个真缺口闭合各带测试（Edit 读前写门 / stream_event ttft_ms / PostToolBatch tool_calls[] / SubagentStop agent_transcript_path / thinking.display / debugFile / mcpServerStatus scope / maxThinkingTokens @deprecated；notebook·sse 显式暂缓）；**P3** 漂移哨兵升「报+自动开草稿 PR」（`conformance-drift.yml` + `drift-check.mjs --emit-*`，选择性追踪纪律不动、绝不自动改基线）；**P4** `docs/ONBOARDING.md` 新维护者 30 分钟上手（降总线因子）。中间里程碑（v0.4→v0.11）详见下方专节 | 艾瑞卡会话 | 无阻塞待办；评估全文 `Public-Info-Pool/Resource/repo-engineering/bpt-agent-sdk-evaluation-20260706.md`；**动手前必读** `projects/silver-core-sdk/CONTEXT.md` + `docs/ONBOARDING.md`，定位见 `docs/POSITIONING.md` |
-| **bpt-pm**（项目排期工作台 · 非使命线工程产物） | **v1 首版已建（2026-07-05）**：单网页 `index.html` 零依赖零后端，数据协议 `bpt-pm/v1`（`schema/task-schema.json`），CPM 前向/后向自动排期 + 临界路径 + 4 依赖类型（FS/SS/FF/SF）+ 工作日历 + SNET/MSO 约束 + 基线比对甘特图；File System Access 读写回写。CPM 离线复算 + 无头 Chromium 冒烟均通过。**Notion 数据源已端到端实测（2026-07-05）**：适配器 `docs/notion-adapter.md` + CLI `scripts/schedule.mjs`，对真实工作区跑通建库→拉取→CPM→写回→抽验闭环。**本地 Notion 代理已建**（`proxy/server.mjs` 持 token 跑 localhost，网页按钮直连 Notion，端到端 12 项契约通过）。**v2-A 资源冲突可视化已落（2026-07-05，面向 60 人内容团队痛点）**：协议加 `resources`（人/外包 + 并发产能），引擎算逐日负载 + 超载检测，网页资源×日热力图（超载红/满载绿），`tests/resource_load.mjs` 全过。**v2 B/C/D 三特性已实现（2026-07-05，全部 additive 向后兼容，CPM 主算法不改）**：B 版本周期守护（任务级 `deadline` 软截止 → `late`/`lateDays`/顶层 `lateCount`）/ C 流水线模板+返修回环（项目级 `templates` + 纯函数 `instantiateTemplate`，stage FS 链 + R 轮审核→返修）/ D 外包发单对象（项目级 `orders` + 纯函数 `analyzeOrders` → `atRisk`/顶层 `ordersAtRisk`）；三函数在 `scripts/schedule.mjs` 导出、`index.html` 内联同实现，回归 `tests/v2_bcd.mjs`（15 断言全过）。**v3 引擎四组已实现（2026-07-05，工作流编排，全 additive）**：① 完备性（自由浮动 `freeSlack` + 约束补齐 8 型 ALAP/SNLT/FNET/FNLT/MFO + 从完成日倒排 `scheduleFrom=finish`）/ ② 资源错峰建议（纯函数 `suggestLeveling` 贪心串行，残余超载消解）/ ③ WBS 层级摘要（`parent` + 卷积 `isSummary`/`depth`/`childIds`，摘要排除出 CPM/资源/错峰）/ ④ 冲突显式告警（`warnings`/`warningCount`：constraint-conflict/negative-slack/infeasible-window）；引擎两处同实现，回归 `tests/v3.mjs`（20 断言全过）。UI 全部收尾：自由浮动列/8约束/调度方向切换/告警面板/#btnSampleV3/错峰视图/**WBS 折叠三角+甘特摘要条**/**错峰应用建议按钮**（实测超载 3→0）。**表格格式协议 bpt-pm/table-v1 已加（2026-07-05）**：`docs/table-formats.md`（5 张数据源无关标准表：项目/任务/资源/外包单/模板，列名即协议、标输入vs写回）+ 生成器 `scripts/gen_tables.mjs`（空表模板/样例 CSV）+ `tests/tables.mjs`；服务阿里 AI 表格/Notion/飞书多维表等任意 base 建新格式 | 艾瑞卡会话 | 无阻塞待办；可选：消费上限恢复后重跑 v3 对抗验证工作流二次背书；**动手前必读** `projects/bpt-pm/CONTEXT.md` |
+| **bpt-pm**（项目排期工作台 · 非使命线） | **已删除（2026-07-12 守密人裁定，模块盘点逐个问答：已不使用）**。原单网页 CPM 排期工作台（协议 bpt-pm/v1，v1→v3 引擎 + Notion 适配 + 表格协议均曾落盘），全部代码与文档 git 历史可追 | 艾瑞卡会话 | 无 |
 
 > BPT 战线（bpt-web / bpt-desktop / bpt-next / graphify-ext / occ-local）已于 2026-04-19 战略转向中从银芯仓库删除，不再在银芯内部开发。银芯转为 BPT 指导者，协议见 `memory/bpt-guidance-protocol.md`。
 > **例外辨析（勿混淆）**：上表 `silver-core-sdk`（原名 bpt-agent-sdk） **不属**上述被删 BPT 产品战线，**亦非**「银芯内部开发 BPT 产品」。它是银芯自有的**工程产物**（公开信息层），作为**银芯→黑池单向输出物**供 BPT Desktop 消费——方向与 §1.1-HC 防火墙一致（银芯→黑池单向输出），黑池数据从不回流。**定性升级（守密人 2026-07-12 裁定）**：由「非使命线工程产物」转正为**正式使命#2「通用 AI 底层能力开发基地」核心载体**（事实使命转正：20+ 真实消费者、BPT 在产）；背景事实——黑池侧已完全弃用 Claude Code、全面换装自有技术栈（BPT + silver-core-sdk 0.3x pin），SDK 存在理由由「应急替代」升格「常态底座」。
@@ -767,24 +767,11 @@
 - **中文 i18n 成本调查收官（2026-07-08，守密人「测试最新 haiku L5」→ 追查 +50% 成本）**：main 升到 **v0.28.0**（#523–#533 Chinese i18n 战役,工具描述 + 系统提示 + 分类器提示全译中文）。v0.28.0 Haiku L5：**gate B bpt 87/90 (96.7%) vs 官方 70/90 (77.8%),+18.9pp PASS,未回归**（bpt 仅 code-01 3/5→2/5,已知残余）;但**花 $3.28 vs v0.18.2 $2.19(+50%)**。两个 `count_tokens` 探针($0)+ L5 per-run 缓存明细追查,**两次假设翻掉**:①「Haiku 旧分词器、换新模型省」**证伪**(跨模型探针:Haiku 中文 1.75 tok/字反比新分词器 1.89 更省);②「中文提示大 → 前缀翻 3 倍」**证伪**(逐文件 count_tokens:8 译文文件全 1.2–1.45×,缓存前缀合计**仅 1.41×**)。**定位**:1.41× 内容膨胀解释不了 3.2× 缓存读——差值在**每轮重读的对话上下文**(document-01 同任务同轮数、ZH 历史读量 ~6× EN),**主嫌=中文思考/输出累积**(preset 默认开思考、中文 token 越滚越厚)。**优化方向**(待裁定 + L5 复验):内部系统提示可留英文(模型照懂、用户输出仍中文),砍思考累积大头。诊断报告 [`bpt-sdk-i18n-cost-investigation-20260708.md`](https://github.com/lightproud/brain-in-a-vat/blob/main/Public-Info-Pool/Resource/data-diagnostics/bpt-sdk-i18n-cost-investigation-20260708.md);探针 `tests/integration/token-probe{,-perfile}.mjs`(#535/#536)。纯测试+诊断,零 src。
 - **T4 点火：真 L5 一轮（2026-07-11，守密人 2026-07-10 已裁点火，艾瑞卡会话执行；run [29134399453](https://github.com/lightproud/brain-in-a-vat/actions/runs/29134399453)，head `1783b0dc`=v0.43.0，haiku，`$1.5` 帽，`conformance_l5=true` 余默认）**：作业全绿、净室自审 PASS，但**主目标 code-01 复验未达成**。预算守卫按投影（$0.59 实花→投影 $1.56 > $1.5）在 **79/180 runs** 干净中止，停在 document-01 之后——**code/longconv 整段未触达**（`aborted=true`）。**Gate B `INCONCLUSIVE-PARTIAL`**（预算停，明示**非破线**、exit 0）：跑到的 8 任务（chat×3+retrieval×4+document-01）**bpt 40/40 (100%) == 官方 39/39 (100%)、delta 0.0pp**，即前排在 0.28→0.43 全部变更后**零回归**；两臂缓存均 scenario a；L6 官方迹 39/我方 0（设计如此）；效率旁证 bpt 检索/文档更省 token+更少 turns（reported-only 非门禁）。**根因非基建非行为、是预算射程不足**：`$1.5`+`repeat=5` 结构上到不了 code 维度（历史触达 code-01 的全量干净轮用 `$5` 帽、花 $2.19–3.28 跑满 180）。**红行不遮蔽**：未把 8 任务全过粉饰为轮次通过、未把 code-01 未触达写成已复验、未动任何基线。code-01 复验 → 新账 **T17**（$5 全量轮 / 降 repeat / 加 `l5_tasks` shard 输入，均待守密人裁）；run-l35 KD-L35-02 无 CI 入口 → 新账 **T16**。诊断报告 [`silver-core-sdk-l5-round-20260711.md`](https://github.com/lightproud/brain-in-a-vat/blob/main/Public-Info-Pool/Resource/data-diagnostics/silver-core-sdk-l5-round-20260711.md)。
 
-## BPT-V2T 语音代替输入（`projects/bpt-v2t/`）
+## BPT-V2T 语音代替输入（已删除）
 
-> **一句话**：本地「语音代替键盘输入」工具——按热键说话 → 转文字 → 注入正在打字处，
-> 用《忘却前夜》专名词典提升识别率。**非使命线**工程子项目。
-
-- **动手前必读**：`projects/bpt-v2t/CONTEXT.md`
-- **派发 + 三连降维（守密人 2026-07-05）**：原诉求「持续录音 + 声纹录入识别 + 专名增益、
-  对标钉钉听记」，同会话守密人降维——① 转录引擎重决策（FunASR/云/sherpa）**暂缓**；
-  ② 交付层收敛为**仅语音代替输入**（不做持续会议转录/听记完整体验）；③ 声纹**暂不做**。
-- **首期已落盘（2026-07-05）**：`projects/bpt-v2t/` 骨架。内核（云端可测）+ 本地薄壳两分：
-  内核 `hotwords.py`（复用 `scripts/silver_tokenizer.domain_dict()`，热词 **125 词**、
-  偏置串按世界观词→角色名优先级填 whisper `initial_prompt`）+ 可插拔后端 `backends/`
-  （`fake` 测试后端 + `faster-whisper` 默认离线引擎，惰性加载、注册表可 `register` 挂 FunASR）；
-  外壳 `recorder.py`（麦克风）/`injector.py`（print/clipboard/type）/`cli.py`（推挽循环），须本机跑。
-  **验证**：`pytest projects/bpt-v2t/tests -v` **13/13 全绿**（仅依赖内核 + 假后端，无需麦克风/真模型）。
-- **硬事实**：云端容器无麦克风，故内核云端可建可测、录音+注入外壳只能守密人本机跑。
-- **后续轮次候选**（守密人裁定后再动）：换/加真引擎（FunASR 热词+流式/云 API）、声纹录入识别、
-  持续录音+实时字幕+说话人分离（听记级）、VAD 断句 + 托盘壳 + 全局快捷键。
+> **2026-07-12 守密人裁定删除**（模块盘点逐个问答：非使命线、已不使用）。原为本地语音代替
+> 输入工具 + 专名热词桥（2026-07-05 首期落盘，13/13 单测绿）。全部代码 git 历史可追
+>（删除前最后版本见本档案历史与 PR #646）。
 
 ## 当前阶段
 

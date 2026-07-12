@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 351,
-    "edges": 427,
-    "terms": 6173,
+    "concepts": 344,
+    "edges": 394,
+    "terms": 6167,
     "by_type": {
       "character": 72,
-      "dataset": 95,
-      "documentation": 117,
+      "dataset": 94,
+      "documentation": 111,
       "knowledge-pointer": 47,
       "reference": 17,
       "research": 3
@@ -25,14 +25,14 @@
       "memory": 50,
       "news-output": 23,
       "projects": 26,
-      "resource": 90,
+      "resource": 84,
       "sources": 20,
       "story": 11,
-      "wiki-data": 27
+      "wiki-data": 26
     },
     "by_tier": {
       "skeleton": 134,
-      "search": 217
+      "search": 210
     }
   },
   "sections": {
@@ -62,7 +62,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 90
+      "count": 84
     },
     "sources": {
       "index": "/sources/index.md",
@@ -74,7 +74,7 @@
     },
     "wiki-data": {
       "index": "/wiki-data/index.md",
-      "count": 27
+      "count": 26
     }
   },
   "concepts": {
@@ -295,7 +295,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 37
+      "degree": 32
     },
     "/characters/130375.md": {
       "type": "character",
@@ -351,7 +351,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 16
+      "degree": 14
     },
     "/characters/15561.md": {
       "type": "character",
@@ -394,7 +394,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 8
+      "degree": 7
     },
     "/characters/15564.md": {
       "type": "character",
@@ -494,7 +494,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 10
+      "degree": 9
     },
     "/characters/15571.md": {
       "type": "character",
@@ -536,7 +536,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 1
     },
     "/characters/15574.md": {
       "type": "character",
@@ -578,7 +578,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 13
+      "degree": 12
     },
     "/characters/15577.md": {
       "type": "character",
@@ -648,7 +648,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 5
+      "degree": 4
     },
     "/characters/15582.md": {
       "type": "character",
@@ -676,7 +676,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 3
+      "degree": 2
     },
     "/characters/15584.md": {
       "type": "character",
@@ -732,7 +732,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 5
+      "degree": 4
     },
     "/characters/15588.md": {
       "type": "character",
@@ -845,7 +845,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 17
+      "degree": 15
     },
     "/characters/15596.md": {
       "type": "character",
@@ -859,7 +859,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 3
+      "degree": 2
     },
     "/characters/15597.md": {
       "type": "character",
@@ -901,7 +901,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 5
+      "degree": 4
     },
     "/characters/15600.md": {
       "type": "character",
@@ -915,7 +915,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 4
+      "degree": 3
     },
     "/characters/15601.md": {
       "type": "character",
@@ -958,7 +958,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 98
+      "degree": 92
     },
     "/characters/15604.md": {
       "type": "character",
@@ -972,7 +972,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 5
+      "degree": 3
     },
     "/characters/54116.md": {
       "type": "character",
@@ -986,7 +986,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 9
+      "degree": 6
     },
     "/characters/54117.md": {
       "type": "character",
@@ -1070,7 +1070,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 12
+      "degree": 10
     },
     "/characters/77921.md": {
       "type": "character",
@@ -1154,7 +1154,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 3
+      "degree": 2
     },
     "/characters/77927.md": {
       "type": "character",
@@ -3048,90 +3048,6 @@
       "tier": "search",
       "degree": 0
     },
-    "/resource/resource-daily-news-morimens-daily-20260601-r2.md": {
-      "type": "documentation",
-      "title": "morimens-daily-20260601-r2",
-      "description": "◇ ◇ ◇（格式：html/md/pdf）",
-      "resource": "/Public-Info-Pool/Resource/daily-news/morimens-daily-20260601-r2.md",
-      "tags": [
-        "data_layer:curated",
-        "deliverable",
-        "topic:daily-news"
-      ],
-      "section": "resource",
-      "tier": "search",
-      "degree": 2
-    },
-    "/resource/resource-daily-news-morimens-daily-20260601.md": {
-      "type": "documentation",
-      "title": "morimens-daily-20260601",
-      "description": "◇ ◇ ◇（格式：html/md/pdf）",
-      "resource": "/Public-Info-Pool/Resource/daily-news/morimens-daily-20260601.md",
-      "tags": [
-        "data_layer:curated",
-        "deliverable",
-        "topic:daily-news"
-      ],
-      "section": "resource",
-      "tier": "search",
-      "degree": 5
-    },
-    "/resource/resource-daily-news-morimens-daily-20260602-r2.md": {
-      "type": "documentation",
-      "title": "morimens-daily-20260602-r2",
-      "description": "◇ ◇ ◇（格式：html/md/pdf）",
-      "resource": "/Public-Info-Pool/Resource/daily-news/morimens-daily-20260602-r2.md",
-      "tags": [
-        "data_layer:curated",
-        "deliverable",
-        "topic:daily-news"
-      ],
-      "section": "resource",
-      "tier": "search",
-      "degree": 3
-    },
-    "/resource/resource-daily-news-morimens-daily-full-20260602.md": {
-      "type": "documentation",
-      "title": "morimens-daily-full-20260602",
-      "description": "◇ ◇ ◇（格式：html/md/pdf）",
-      "resource": "/Public-Info-Pool/Resource/daily-news/morimens-daily-full-20260602.md",
-      "tags": [
-        "data_layer:curated",
-        "deliverable",
-        "topic:daily-news"
-      ],
-      "section": "resource",
-      "tier": "search",
-      "degree": 8
-    },
-    "/resource/resource-daily-news-morimens-period-20260512-0603.md": {
-      "type": "documentation",
-      "title": "morimens-period-20260512-0603",
-      "description": "◇ ◇ ◇（格式：html/md/pdf）",
-      "resource": "/Public-Info-Pool/Resource/daily-news/morimens-period-20260512-0603.md",
-      "tags": [
-        "data_layer:curated",
-        "deliverable",
-        "topic:daily-news"
-      ],
-      "section": "resource",
-      "tier": "search",
-      "degree": 12
-    },
-    "/resource/resource-daily-news-morimens-window-20260602.md": {
-      "type": "documentation",
-      "title": "morimens-window-20260602",
-      "description": "◇ ◇ ◇（格式：html/md/pdf）",
-      "resource": "/Public-Info-Pool/Resource/daily-news/morimens-window-20260602.md",
-      "tags": [
-        "data_layer:curated",
-        "deliverable",
-        "topic:daily-news"
-      ],
-      "section": "resource",
-      "tier": "search",
-      "degree": 3
-    },
     "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md": {
       "type": "documentation",
       "title": "bpt-sdk-comparison-baseline-20260705",
@@ -4827,20 +4743,6 @@
       "tier": "search",
       "degree": 0
     },
-    "/wiki-data/wiki-data-update-notices.md": {
-      "type": "dataset",
-      "title": "update_notices",
-      "description": "UpdateNotices.lua (game update/maintenance notices) · total_entries=2697 · 生成 2026-04-26",
-      "resource": "/projects/wiki/data/processed/update_notices.json",
-      "tags": [
-        "data_layer:curated",
-        "unpacked-bootstrap",
-        "domain:localization"
-      ],
-      "section": "wiki-data",
-      "tier": "search",
-      "degree": 0
-    },
     "/wiki-data/wiki-data-voice-character-map.md": {
       "type": "dataset",
       "title": "voice_character_map",
@@ -5145,31 +5047,6 @@
         "mention"
       ],
       [
-        "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-        "提及:沙耶",
-        "mention"
-      ],
-      [
-        "/resource/resource-daily-news-morimens-daily-20260601.md",
-        "提及:沙耶",
-        "mention"
-      ],
-      [
-        "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-        "提及:沙耶",
-        "mention"
-      ],
-      [
-        "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-        "提及:沙耶",
-        "mention"
-      ],
-      [
-        "/resource/resource-daily-news-morimens-window-20260602.md",
-        "提及:沙耶",
-        "mention"
-      ],
-      [
         "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
         "提及:沙耶",
         "mention"
@@ -5303,16 +5180,6 @@
         "mention"
       ],
       [
-        "/resource/resource-daily-news-morimens-daily-20260601.md",
-        "提及:Pandia",
-        "mention"
-      ],
-      [
-        "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-        "提及:Pandia",
-        "mention"
-      ],
-      [
         "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
         "提及:Pandia",
         "mention"
@@ -5395,11 +5262,6 @@
       ],
       [
         "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
-        "提及:图鲁",
-        "mention"
-      ],
-      [
-        "/resource/resource-daily-news-morimens-period-20260512-0603.md",
         "提及:图鲁",
         "mention"
       ],
@@ -5613,11 +5475,6 @@
         "mention"
       ],
       [
-        "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-        "提及:朵尔",
-        "mention"
-      ],
-      [
         "/sources/bilibili.md",
         "提及:朵尔",
         "mention"
@@ -5657,11 +5514,6 @@
         "/characters/15584.md",
         "CV:田村由加莉",
         "cv"
-      ],
-      [
-        "/resource/resource-daily-news-morimens-daily-20260601.md",
-        "提及:奥瑞塔",
-        "mention"
       ]
     ],
     "/characters/15574.md": [
@@ -5721,11 +5573,6 @@
       ],
       [
         "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
-        "提及:墨菲",
-        "mention"
-      ],
-      [
-        "/resource/resource-daily-news-morimens-period-20260512-0603.md",
         "提及:墨菲",
         "mention"
       ],
@@ -5888,11 +5735,6 @@
         "mention"
       ],
       [
-        "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-        "提及:莉莉",
-        "mention"
-      ],
-      [
         "/sources/youtube_comments.md",
         "提及:莉莉",
         "mention"
@@ -5933,11 +5775,6 @@
       ],
       [
         "/memory/morimens-context.md",
-        "提及:奥尔拉",
-        "mention"
-      ],
-      [
-        "/resource/resource-daily-news-morimens-period-20260512-0603.md",
         "提及:奥尔拉",
         "mention"
       ]
@@ -5999,11 +5836,6 @@
       ],
       [
         "/community/community-bahamut.md",
-        "提及:希洛",
-        "mention"
-      ],
-      [
-        "/resource/resource-daily-news-morimens-period-20260512-0603.md",
         "提及:希洛",
         "mention"
       ],
@@ -6167,16 +5999,6 @@
         "mention"
       ],
       [
-        "/resource/resource-daily-news-morimens-daily-20260601.md",
-        "提及:Ramona",
-        "mention"
-      ],
-      [
-        "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-        "提及:Ramona",
-        "mention"
-      ],
-      [
         "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
         "提及:拉蒙娜",
         "mention"
@@ -6207,11 +6029,6 @@
         "/memory/morimens-context.md",
         "提及:泰旖丝",
         "mention"
-      ],
-      [
-        "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-        "提及:泰旖丝",
-        "mention"
       ]
     ],
     "/characters/15598.md": [
@@ -6238,11 +6055,6 @@
         "mention"
       ],
       [
-        "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-        "提及:萨尔瓦多",
-        "mention"
-      ],
-      [
         "/sources/bilibili.md",
         "提及:萨尔瓦多",
         "mention"
@@ -6261,11 +6073,6 @@
     "/characters/15600.md": [
       [
         "/memory/memory-ext-wiki-characters-schema-v1.md",
-        "提及:阿格里帕",
-        "mention"
-      ],
-      [
-        "/resource/resource-daily-news-morimens-period-20260512-0603.md",
         "提及:阿格里帕",
         "mention"
       ],
@@ -6611,36 +6418,6 @@
         "mention"
       ],
       [
-        "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-        "提及:艾瑞卡",
-        "mention"
-      ],
-      [
-        "/resource/resource-daily-news-morimens-daily-20260601.md",
-        "提及:艾瑞卡",
-        "mention"
-      ],
-      [
-        "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-        "提及:艾瑞卡",
-        "mention"
-      ],
-      [
-        "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-        "提及:艾瑞卡",
-        "mention"
-      ],
-      [
-        "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-        "提及:艾瑞卡",
-        "mention"
-      ],
-      [
-        "/resource/resource-daily-news-morimens-window-20260602.md",
-        "提及:艾瑞卡",
-        "mention"
-      ],
-      [
         "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
         "提及:艾瑞卡",
         "mention"
@@ -6833,16 +6610,6 @@
         "mention"
       ],
       [
-        "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-        "提及:莱克",
-        "mention"
-      ],
-      [
-        "/resource/resource-daily-news-morimens-window-20260602.md",
-        "提及:莱克",
-        "mention"
-      ],
-      [
         "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
         "提及:莱克",
         "mention"
@@ -6866,21 +6633,6 @@
       ],
       [
         "/community/community-youtube-comments.md",
-        "提及:塔薇",
-        "mention"
-      ],
-      [
-        "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-        "提及:塔薇",
-        "mention"
-      ],
-      [
-        "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-        "提及:塔薇",
-        "mention"
-      ],
-      [
-        "/resource/resource-daily-news-morimens-period-20260512-0603.md",
         "提及:塔薇",
         "mention"
       ],
@@ -7007,16 +6759,6 @@
         "mention"
       ],
       [
-        "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-        "提及:阿拉克涅",
-        "mention"
-      ],
-      [
-        "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-        "提及:阿拉克涅",
-        "mention"
-      ],
-      [
         "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
         "提及:阿拉克涅",
         "mention"
@@ -7088,11 +6830,6 @@
     "/characters/77926.md": [
       [
         "/community/community-bahamut.md",
-        "提及:皮克曼",
-        "mention"
-      ],
-      [
-        "/resource/resource-daily-news-morimens-period-20260512-0603.md",
         "提及:皮克曼",
         "mention"
       ],
@@ -8629,183 +8366,6 @@
         "mention"
       ]
     ],
-    "/resource/resource-daily-news-morimens-daily-20260601-r2.md": [
-      [
-        "/characters/15603.md",
-        "提及:艾瑞卡",
-        "mention"
-      ],
-      [
-        "/characters/130226.md",
-        "提及:沙耶",
-        "mention"
-      ]
-    ],
-    "/resource/resource-daily-news-morimens-daily-20260601.md": [
-      [
-        "/characters/15573.md",
-        "提及:奥瑞塔",
-        "mention"
-      ],
-      [
-        "/characters/15603.md",
-        "提及:艾瑞卡",
-        "mention"
-      ],
-      [
-        "/characters/130226.md",
-        "提及:沙耶",
-        "mention"
-      ],
-      [
-        "/characters/15560.md",
-        "提及:Pandia",
-        "mention"
-      ],
-      [
-        "/characters/15595.md",
-        "提及:Ramona",
-        "mention"
-      ]
-    ],
-    "/resource/resource-daily-news-morimens-daily-20260602-r2.md": [
-      [
-        "/characters/15603.md",
-        "提及:艾瑞卡",
-        "mention"
-      ],
-      [
-        "/characters/54116.md",
-        "提及:塔薇",
-        "mention"
-      ],
-      [
-        "/characters/130226.md",
-        "提及:沙耶",
-        "mention"
-      ]
-    ],
-    "/resource/resource-daily-news-morimens-daily-full-20260602.md": [
-      [
-        "/characters/77918.md",
-        "提及:阿拉克涅",
-        "mention"
-      ],
-      [
-        "/characters/15603.md",
-        "提及:艾瑞卡",
-        "mention"
-      ],
-      [
-        "/characters/15570.md",
-        "提及:朵尔",
-        "mention"
-      ],
-      [
-        "/characters/15604.md",
-        "提及:莱克",
-        "mention"
-      ],
-      [
-        "/characters/54116.md",
-        "提及:塔薇",
-        "mention"
-      ],
-      [
-        "/characters/130226.md",
-        "提及:沙耶",
-        "mention"
-      ],
-      [
-        "/characters/15560.md",
-        "提及:Pandia",
-        "mention"
-      ],
-      [
-        "/characters/15595.md",
-        "提及:Ramona",
-        "mention"
-      ]
-    ],
-    "/resource/resource-daily-news-morimens-period-20260512-0603.md": [
-      [
-        "/characters/15599.md",
-        "提及:萨尔瓦多",
-        "mention"
-      ],
-      [
-        "/characters/15600.md",
-        "提及:阿格里帕",
-        "mention"
-      ],
-      [
-        "/characters/77918.md",
-        "提及:阿拉克涅",
-        "mention"
-      ],
-      [
-        "/characters/15583.md",
-        "提及:奥尔拉",
-        "mention"
-      ],
-      [
-        "/characters/15596.md",
-        "提及:泰旖丝",
-        "mention"
-      ],
-      [
-        "/characters/15603.md",
-        "提及:艾瑞卡",
-        "mention"
-      ],
-      [
-        "/characters/77926.md",
-        "提及:皮克曼",
-        "mention"
-      ],
-      [
-        "/characters/15563.md",
-        "提及:图鲁",
-        "mention"
-      ],
-      [
-        "/characters/15576.md",
-        "提及:墨菲",
-        "mention"
-      ],
-      [
-        "/characters/15581.md",
-        "提及:莉莉",
-        "mention"
-      ],
-      [
-        "/characters/15587.md",
-        "提及:希洛",
-        "mention"
-      ],
-      [
-        "/characters/54116.md",
-        "提及:塔薇",
-        "mention"
-      ]
-    ],
-    "/resource/resource-daily-news-morimens-window-20260602.md": [
-      [
-        "/characters/15603.md",
-        "提及:艾瑞卡",
-        "mention"
-      ],
-      [
-        "/characters/15604.md",
-        "提及:莱克",
-        "mention"
-      ],
-      [
-        "/characters/130226.md",
-        "提及:沙耶",
-        "mention"
-      ]
-    ],
     "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md": [
       [
         "/characters/15603.md",
@@ -9893,7 +9453,6 @@
       "/wiki-data/wiki-data-story-character-map.md",
       "/wiki-data/wiki-data-summon.md",
       "/wiki-data/wiki-data-tasks.md",
-      "/wiki-data/wiki-data-update-notices.md",
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md"
@@ -9934,12 +9493,6 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
-      "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -10622,7 +10175,6 @@
       "/wiki-data/wiki-data-story-character-map.md",
       "/wiki-data/wiki-data-summon.md",
       "/wiki-data/wiki-data-tasks.md",
-      "/wiki-data/wiki-data-update-notices.md",
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md"
@@ -11148,12 +10700,6 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
-      "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -11275,7 +10821,6 @@
       "/wiki-data/wiki-data-story-character-map.md",
       "/wiki-data/wiki-data-summon.md",
       "/wiki-data/wiki-data-tasks.md",
-      "/wiki-data/wiki-data-update-notices.md",
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md",
@@ -11489,12 +11034,6 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
-      "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -11588,7 +11127,6 @@
       "/wiki-data/wiki-data-story-character-map.md",
       "/wiki-data/wiki-data-summon.md",
       "/wiki-data/wiki-data-tasks.md",
-      "/wiki-data/wiki-data-update-notices.md",
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md",
@@ -11680,14 +11218,6 @@
       "/characters/95786.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md"
-    ],
-    "daily": [
-      "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "/resource/resource-daily-news-morimens-window-20260602.md"
     ],
     "data": [
       "/README.md",
@@ -11820,12 +11350,6 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
-      "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -11947,7 +11471,6 @@
       "/wiki-data/wiki-data-story-character-map.md",
       "/wiki-data/wiki-data-summon.md",
       "/wiki-data/wiki-data-tasks.md",
-      "/wiki-data/wiki-data-update-notices.md",
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md",
@@ -11999,12 +11522,6 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
-      "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -12260,7 +11777,6 @@
       "/wiki-data/wiki-data-story-character-map.md",
       "/wiki-data/wiki-data-summon.md",
       "/wiki-data/wiki-data-tasks.md",
-      "/wiki-data/wiki-data-update-notices.md",
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md"
@@ -12362,7 +11878,6 @@
       "/wiki-data/wiki-data-language-config.md",
       "/wiki-data/wiki-data-panel-text.md",
       "/wiki-data/wiki-data-story-character-map.md",
-      "/wiki-data/wiki-data-update-notices.md",
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-world-lore.md"
     ],
@@ -12542,7 +12057,6 @@
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
-      "/resource/resource-daily-news-morimens-daily-full-20260602.md",
       "/sources/appstore.md",
       "/sources/arca_live.md",
       "/sources/bahamut.md",
@@ -12629,8 +12143,7 @@
       "/memory/memory-ext-research-best-wiki-features.md",
       "/projects/project-game.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
-      "/resource/resource-game-analysis-role-action-recommendations-202605.md",
-      "/wiki-data/wiki-data-update-notices.md"
+      "/resource/resource-game-analysis-role-action-recommendations-202605.md"
     ],
     "gameplay": [
       "/wiki-data/wiki-data-banners-by-character.md",
@@ -13016,12 +12529,6 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
-      "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -13260,7 +12767,6 @@
       "/wiki-data/wiki-data-story-character-map.md",
       "/wiki-data/wiki-data-summon.md",
       "/wiki-data/wiki-data-tasks.md",
-      "/wiki-data/wiki-data-update-notices.md",
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md",
@@ -13500,12 +13006,6 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
-      "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -13626,7 +13126,6 @@
       "/wiki-data/wiki-data-story-character-map.md",
       "/wiki-data/wiki-data-summon.md",
       "/wiki-data/wiki-data-tasks.md",
-      "/wiki-data/wiki-data-update-notices.md",
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md",
@@ -13814,8 +13313,7 @@
     ],
     "localization": [
       "/wiki-data/wiki-data-language-config.md",
-      "/wiki-data/wiki-data-panel-text.md",
-      "/wiki-data/wiki-data-update-notices.md"
+      "/wiki-data/wiki-data-panel-text.md"
     ],
     "log": [
       "/README.md",
@@ -13844,7 +13342,6 @@
       "/wiki-data/wiki-data-story-character-map.md",
       "/wiki-data/wiki-data-summon.md",
       "/wiki-data/wiki-data-tasks.md",
-      "/wiki-data/wiki-data-update-notices.md",
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md"
@@ -13883,8 +13380,7 @@
       "/projects/silver-core-sdk-doc-onboarding.md"
     ],
     "maintenance": [
-      "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
-      "/wiki-data/wiki-data-update-notices.md"
+      "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md"
     ],
     "make": [
       "/projects/silver-core-sdk-doc-onboarding.md"
@@ -14013,12 +13509,6 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
-      "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -14239,13 +13729,7 @@
       "/memory/morimens-context.md",
       "/projects/entry-readme.md",
       "/projects/site-design-morimens-design-system-guide.md",
-      "/projects/site-design-morimens-design-tokens.md",
-      "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "/resource/resource-daily-news-morimens-window-20260602.md"
+      "/projects/site-design-morimens-design-tokens.md"
     ],
     "ms": [
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md"
@@ -14295,12 +13779,6 @@
       "/projects/project-news.md",
       "/projects/project-site.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
-      "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-discord-data-retention-diagnosis-202606.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
@@ -14351,9 +13829,6 @@
     "notes": [
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/story/story_research_notes.md"
-    ],
-    "notices": [
-      "/wiki-data/wiki-data-update-notices.md"
     ],
     "npm": [
       "/projects/silver-core-sdk-doc-compat.md",
@@ -14487,12 +13962,6 @@
     ],
     "pdf": [
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
-      "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
       "/resource/resource-proposal-biav-project-plan-202603.md"
@@ -14502,9 +13971,6 @@
     ],
     "performance": [
       "/projects/silver-core-sdk-doc-performance.md"
-    ],
-    "period": [
-      "/resource/resource-daily-news-morimens-period-20260512-0603.md"
     ],
     "persona": [
       "/assets/persona-erica-speech-canon.md",
@@ -14723,12 +14189,6 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
-      "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -14893,7 +14353,6 @@
       "/wiki-data/wiki-data-story-character-map.md",
       "/wiki-data/wiki-data-summon.md",
       "/wiki-data/wiki-data-tasks.md",
-      "/wiki-data/wiki-data-update-notices.md",
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md",
@@ -15032,7 +14491,6 @@
       "/wiki-data/wiki-data-story-character-map.md",
       "/wiki-data/wiki-data-summon.md",
       "/wiki-data/wiki-data-tasks.md",
-      "/wiki-data/wiki-data-update-notices.md",
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md",
@@ -15119,12 +14577,6 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
-      "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -15258,8 +14710,6 @@
     ],
     "r2": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -15529,12 +14979,6 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
-      "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -16470,12 +15914,6 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
-      "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -16565,7 +16003,6 @@
       "/wiki-data/wiki-data-story-character-map.md",
       "/wiki-data/wiki-data-summon.md",
       "/wiki-data/wiki-data-tasks.md",
-      "/wiki-data/wiki-data-update-notices.md",
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md"
@@ -16646,7 +16083,6 @@
       "/wiki-data/wiki-data-story-character-map.md",
       "/wiki-data/wiki-data-summon.md",
       "/wiki-data/wiki-data-tasks.md",
-      "/wiki-data/wiki-data-update-notices.md",
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md"
@@ -16664,12 +16100,6 @@
       "/characters/77928.md",
       "/characters/78754.md",
       "/characters/94451.md"
-    ],
-    "update": [
-      "/wiki-data/wiki-data-update-notices.md"
-    ],
-    "updatenotices": [
-      "/wiki-data/wiki-data-update-notices.md"
     ],
     "updateprompts": [
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
@@ -16879,7 +16309,6 @@
       "/wiki-data/wiki-data-story-character-map.md",
       "/wiki-data/wiki-data-summon.md",
       "/wiki-data/wiki-data-tasks.md",
-      "/wiki-data/wiki-data-update-notices.md",
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md",
@@ -16891,9 +16320,6 @@
       "/wiki-data/wiki-schema-realms-schema.md",
       "/wiki-data/wiki-schema-stages-schema.md",
       "/wiki-data/wiki-schema-trinkets-schema.md"
-    ],
-    "window": [
-      "/resource/resource-daily-news-morimens-window-20260602.md"
     ],
     "wire": [
       "/projects/silver-core-sdk-doc-subagents.md",
@@ -17527,12 +16953,6 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
-      "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -17623,7 +17043,6 @@
       "/wiki-data/wiki-data-story-character-map.md",
       "/wiki-data/wiki-data-summon.md",
       "/wiki-data/wiki-data-tasks.md",
-      "/wiki-data/wiki-data-update-notices.md",
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md",
@@ -17790,12 +17209,6 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
-      "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -17917,7 +17330,6 @@
       "/wiki-data/wiki-data-story-character-map.md",
       "/wiki-data/wiki-data-summon.md",
       "/wiki-data/wiki-data-tasks.md",
-      "/wiki-data/wiki-data-update-notices.md",
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md",
@@ -18107,12 +17519,6 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
-      "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -18223,7 +17629,6 @@
       "/wiki-data/wiki-data-story-character-map.md",
       "/wiki-data/wiki-data-summon.md",
       "/wiki-data/wiki-data-tasks.md",
-      "/wiki-data/wiki-data-update-notices.md",
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md",
@@ -19342,12 +18747,6 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
-      "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -19458,7 +18857,6 @@
       "/wiki-data/wiki-data-story-character-map.md",
       "/wiki-data/wiki-data-summon.md",
       "/wiki-data/wiki-data-tasks.md",
-      "/wiki-data/wiki-data-update-notices.md",
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md",
@@ -20284,12 +19682,6 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
-      "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -20380,7 +19772,6 @@
       "/wiki-data/wiki-data-story-character-map.md",
       "/wiki-data/wiki-data-summon.md",
       "/wiki-data/wiki-data-tasks.md",
-      "/wiki-data/wiki-data-update-notices.md",
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md",
@@ -20546,12 +19937,6 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
-      "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -20653,7 +20038,6 @@
       "/wiki-data/wiki-data-story-character-map.md",
       "/wiki-data/wiki-data-summon.md",
       "/wiki-data/wiki-data-tasks.md",
-      "/wiki-data/wiki-data-update-notices.md",
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md",
@@ -22437,12 +21821,6 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
-      "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -22533,7 +21911,6 @@
       "/wiki-data/wiki-data-story-character-map.md",
       "/wiki-data/wiki-data-summon.md",
       "/wiki-data/wiki-data-tasks.md",
-      "/wiki-data/wiki-data-update-notices.md",
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md",
@@ -25685,12 +25062,6 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
-      "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -25781,7 +25152,6 @@
       "/wiki-data/wiki-data-story-character-map.md",
       "/wiki-data/wiki-data-summon.md",
       "/wiki-data/wiki-data-tasks.md",
-      "/wiki-data/wiki-data-update-notices.md",
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md",
@@ -26478,12 +25848,6 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
-      "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -26574,7 +25938,6 @@
       "/wiki-data/wiki-data-story-character-map.md",
       "/wiki-data/wiki-data-summon.md",
       "/wiki-data/wiki-data-tasks.md",
-      "/wiki-data/wiki-data-update-notices.md",
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md",
@@ -27083,12 +26446,6 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
-      "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -27210,7 +26567,6 @@
       "/wiki-data/wiki-data-story-character-map.md",
       "/wiki-data/wiki-data-summon.md",
       "/wiki-data/wiki-data-tasks.md",
-      "/wiki-data/wiki-data-update-notices.md",
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md",
@@ -30948,12 +30304,6 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
-      "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -31075,7 +30425,6 @@
       "/wiki-data/wiki-data-story-character-map.md",
       "/wiki-data/wiki-data-summon.md",
       "/wiki-data/wiki-data-tasks.md",
-      "/wiki-data/wiki-data-update-notices.md",
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md",
@@ -31517,12 +30866,6 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
-      "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -31633,7 +30976,6 @@
       "/wiki-data/wiki-data-story-character-map.md",
       "/wiki-data/wiki-data-summon.md",
       "/wiki-data/wiki-data-tasks.md",
-      "/wiki-data/wiki-data-update-notices.md",
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md",
@@ -31850,12 +31192,6 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
-      "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -31952,7 +31288,6 @@
       "/wiki-data/wiki-data-story-character-map.md",
       "/wiki-data/wiki-data-summon.md",
       "/wiki-data/wiki-data-tasks.md",
-      "/wiki-data/wiki-data-update-notices.md",
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md",
@@ -32266,12 +31601,6 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
-      "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -32393,7 +31722,6 @@
       "/wiki-data/wiki-data-story-character-map.md",
       "/wiki-data/wiki-data-summon.md",
       "/wiki-data/wiki-data-tasks.md",
-      "/wiki-data/wiki-data-update-notices.md",
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md",
@@ -32550,12 +31878,6 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
-      "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -32677,7 +31999,6 @@
       "/wiki-data/wiki-data-story-character-map.md",
       "/wiki-data/wiki-data-summon.md",
       "/wiki-data/wiki-data-tasks.md",
-      "/wiki-data/wiki-data-update-notices.md",
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md",
@@ -34233,12 +33554,6 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
-      "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -34360,7 +33675,6 @@
       "/wiki-data/wiki-data-story-character-map.md",
       "/wiki-data/wiki-data-summon.md",
       "/wiki-data/wiki-data-tasks.md",
-      "/wiki-data/wiki-data-update-notices.md",
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md",
@@ -34655,12 +33969,6 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
-      "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -34751,7 +34059,6 @@
       "/wiki-data/wiki-data-story-character-map.md",
       "/wiki-data/wiki-data-summon.md",
       "/wiki-data/wiki-data-tasks.md",
-      "/wiki-data/wiki-data-update-notices.md",
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md",
@@ -35246,12 +34553,6 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
-      "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -35343,7 +34644,6 @@
       "/wiki-data/wiki-data-story-character-map.md",
       "/wiki-data/wiki-data-summon.md",
       "/wiki-data/wiki-data-tasks.md",
-      "/wiki-data/wiki-data-update-notices.md",
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md",
@@ -35454,12 +34754,6 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
-      "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -35965,12 +35259,6 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
-      "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -36061,7 +35349,6 @@
       "/wiki-data/wiki-data-story-character-map.md",
       "/wiki-data/wiki-data-summon.md",
       "/wiki-data/wiki-data-tasks.md",
-      "/wiki-data/wiki-data-update-notices.md",
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md",
@@ -36351,12 +35638,6 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
-      "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -36448,7 +35729,6 @@
       "/wiki-data/wiki-data-story-character-map.md",
       "/wiki-data/wiki-data-summon.md",
       "/wiki-data/wiki-data-tasks.md",
-      "/wiki-data/wiki-data-update-notices.md",
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md",
@@ -38110,7 +37390,6 @@
       "/wiki-data/wiki-data-story-character-map.md",
       "/wiki-data/wiki-data-summon.md",
       "/wiki-data/wiki-data-tasks.md",
-      "/wiki-data/wiki-data-update-notices.md",
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md"
@@ -43351,12 +42630,6 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
-      "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -43458,7 +42731,6 @@
       "/wiki-data/wiki-data-story-character-map.md",
       "/wiki-data/wiki-data-summon.md",
       "/wiki-data/wiki-data-tasks.md",
-      "/wiki-data/wiki-data-update-notices.md",
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md",
@@ -44032,12 +43304,6 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
-      "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -44148,7 +43414,6 @@
       "/wiki-data/wiki-data-story-character-map.md",
       "/wiki-data/wiki-data-summon.md",
       "/wiki-data/wiki-data-tasks.md",
-      "/wiki-data/wiki-data-update-notices.md",
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md",
@@ -45059,12 +44324,6 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
-      "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -45186,7 +44445,6 @@
       "/wiki-data/wiki-data-story-character-map.md",
       "/wiki-data/wiki-data-summon.md",
       "/wiki-data/wiki-data-tasks.md",
-      "/wiki-data/wiki-data-update-notices.md",
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md",
@@ -45312,12 +44570,6 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
-      "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -45408,7 +44660,6 @@
       "/wiki-data/wiki-data-story-character-map.md",
       "/wiki-data/wiki-data-summon.md",
       "/wiki-data/wiki-data-tasks.md",
-      "/wiki-data/wiki-data-update-notices.md",
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md",
@@ -46766,7 +46017,6 @@
       "/wiki-data/wiki-data-story-character-map.md",
       "/wiki-data/wiki-data-summon.md",
       "/wiki-data/wiki-data-tasks.md",
-      "/wiki-data/wiki-data-update-notices.md",
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md"
@@ -47120,12 +46370,6 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
-      "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -47219,7 +46463,6 @@
       "/wiki-data/wiki-data-story-character-map.md",
       "/wiki-data/wiki-data-summon.md",
       "/wiki-data/wiki-data-tasks.md",
-      "/wiki-data/wiki-data-update-notices.md",
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md",
@@ -47305,14 +46548,6 @@
       "/characters/94450.md",
       "/characters/94451.md",
       "/characters/95786.md"
-    ],
-    "daily": [
-      "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "/resource/resource-daily-news-morimens-window-20260602.md"
     ],
     "data": [
       "/assets/assets-archive-integrity.md",
@@ -47444,12 +46679,6 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
-      "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -47570,7 +46799,6 @@
       "/wiki-data/wiki-data-story-character-map.md",
       "/wiki-data/wiki-data-summon.md",
       "/wiki-data/wiki-data-tasks.md",
-      "/wiki-data/wiki-data-update-notices.md",
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md",
@@ -47610,12 +46838,6 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
-      "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -47814,7 +47036,6 @@
       "/wiki-data/wiki-data-story-character-map.md",
       "/wiki-data/wiki-data-summon.md",
       "/wiki-data/wiki-data-tasks.md",
-      "/wiki-data/wiki-data-update-notices.md",
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md"
@@ -47984,7 +47205,6 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/resource/resource-daily-news-morimens-daily-full-20260602.md",
       "/sources/appstore.md",
       "/sources/arca_live.md",
       "/sources/bahamut.md",
@@ -48336,12 +47556,6 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
-      "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -48462,7 +47676,6 @@
       "/wiki-data/wiki-data-story-character-map.md",
       "/wiki-data/wiki-data-summon.md",
       "/wiki-data/wiki-data-tasks.md",
-      "/wiki-data/wiki-data-update-notices.md",
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md",
@@ -48529,8 +47742,7 @@
     ],
     "localization": [
       "/wiki-data/wiki-data-language-config.md",
-      "/wiki-data/wiki-data-panel-text.md",
-      "/wiki-data/wiki-data-update-notices.md"
+      "/wiki-data/wiki-data-panel-text.md"
     ],
     "lore": [
       "/story/lore_by_unit.md",
@@ -48680,13 +47892,7 @@
     "morimens": [
       "/memory/morimens-context.md",
       "/projects/site-design-morimens-design-system-guide.md",
-      "/projects/site-design-morimens-design-tokens.md",
-      "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "/resource/resource-daily-news-morimens-window-20260602.md"
+      "/projects/site-design-morimens-design-tokens.md"
     ],
     "narrative": [
       "/assets/assets-narrative-structure.md"
@@ -48694,12 +47900,6 @@
     "news": [
       "/projects/news-archive-sources-registry.md",
       "/projects/project-news.md",
-      "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
       "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md"
     ],
@@ -48722,9 +47922,6 @@
     "notes": [
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/story/story_research_notes.md"
-    ],
-    "notices": [
-      "/wiki-data/wiki-data-update-notices.md"
     ],
     "observations": [
       "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md"
@@ -48793,9 +47990,6 @@
     ],
     "performance": [
       "/projects/silver-core-sdk-doc-performance.md"
-    ],
-    "period": [
-      "/resource/resource-daily-news-morimens-period-20260512-0603.md"
     ],
     "persona": [
       "/assets/persona-erica-speech-canon.md",
@@ -49053,8 +48247,6 @@
     ],
     "r2": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
@@ -49550,12 +48742,6 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
-      "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "/resource/resource-daily-news-morimens-window-20260602.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -49675,7 +48861,6 @@
       "/wiki-data/wiki-data-story-character-map.md",
       "/wiki-data/wiki-data-summon.md",
       "/wiki-data/wiki-data-tasks.md",
-      "/wiki-data/wiki-data-update-notices.md",
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md"
@@ -49693,9 +48878,6 @@
       "/characters/77928.md",
       "/characters/78754.md",
       "/characters/94451.md"
-    ],
-    "update": [
-      "/wiki-data/wiki-data-update-notices.md"
     ],
     "utils": [
       "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md"
@@ -49764,9 +48946,6 @@
       "/projects/project-wiki.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-proposal-wiki-prototype-202603.md"
-    ],
-    "window": [
-      "/resource/resource-daily-news-morimens-window-20260602.md"
     ],
     "wire": [
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md"
