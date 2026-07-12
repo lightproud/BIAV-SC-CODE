@@ -34,7 +34,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
 import { dumpMemory, getHarnessRunner, seedWorkspace } from './eval-harnesses.mjs';
-import { computeDimensionMeans, isValidVerdict, parseJudgeMessage } from './eval-scoring.mjs';
+import { computeDimensionMeans, isValidVerdict, parseJudgeMessage, trimEvidence } from './eval-scoring.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const JUDGE_MODEL = 'claude-sonnet-5'; // PINNED — keeper ruling 2026-07-11.
@@ -275,7 +275,7 @@ async function runBehavior() {
       try {
         const out = await runner({ sdk });
         ws = out.ws;
-        toJudge.push({ question, base, evidence: out.evidence });
+        toJudge.push({ question, base, evidence: trimEvidence(out.evidence) });
       } catch (err) {
         results.push({ ...base, outcome: 'ERROR', note: String(err).slice(0, 500) });
       } finally {
@@ -308,7 +308,7 @@ async function runBehavior() {
         });
       }
       evidence.memoryDump = dumpMemory(ws);
-      toJudge.push({ question, base, evidence });
+      toJudge.push({ question, base, evidence: trimEvidence(evidence) });
     } catch (err) {
       results.push({ ...base, outcome: 'ERROR', note: String(err).slice(0, 500) });
     } finally {
