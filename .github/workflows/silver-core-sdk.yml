@@ -58,12 +58,12 @@ on:
         required: false
         type: choice
         options: ['v2', 'v3', 'v4', 'v5']
+        default: 'v5'
       run_evals:
         description: 'Run the two-layer eval suite LIVE (SCS-REQ-002 loop 2: scenario runs on the real API + claude-sonnet-5 judging; keeper budget cap $30/month)'
         required: false
         type: boolean
         default: false
-        default: 'v5'
       prompt_tasks:
         description: 'Task ids for the prompt A/B (e.g. 10,11 = the hard discriminating tasks; empty = all)'
         required: false
