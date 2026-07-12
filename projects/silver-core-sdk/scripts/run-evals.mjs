@@ -34,6 +34,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
 import { dumpMemory, getHarnessRunner, seedWorkspace } from './eval-harnesses.mjs';
+import { computeDimensionMeans, isValidVerdict, parseJudgeMessage } from './eval-scoring.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const JUDGE_MODEL = 'claude-sonnet-5'; // PINNED — keeper ruling 2026-07-11.
@@ -154,11 +155,6 @@ const API_HEADERS = () => ({
   'x-api-key': apiKey,
   'anthropic-version': '2023-06-01',
 });
-
-function parseJudgeMessage(body) {
-  const text = (body.content ?? []).find((b) => b.type === 'text')?.text ?? '{}';
-  return { ...JSON.parse(text), judgeUsage: body.usage };
-}
 
 /** Grade one question with the pinned judge (inline lane). */
 async function judge(question, evidence, judgePrompt) {
@@ -306,6 +302,15 @@ async function runBehavior() {
         const g = graded.get(question.id);
         if (g === undefined || g.error !== undefined) {
           results.push({ ...base, outcome: 'ERROR', note: g?.error ?? 'missing batch result' });
+        } else if (!isValidVerdict(g)) {
+          // A verdict without a valid 1-5 score is NOT a score (self-improve
+          // #2: an undefined score fed the dimension mean and nulled it,
+          // firing false REQ-2.2 regressions).
+          results.push({
+            ...base,
+            outcome: 'ERROR',
+            note: `judge verdict missing/invalid score (got ${JSON.stringify(g.score)})`,
+          });
         } else {
           results.push({ ...base, outcome: 'SCORED', ...g });
         }
@@ -319,7 +324,15 @@ async function runBehavior() {
     for (const { question, base, evidence } of toJudge) {
       try {
         const graded = await judge(question, evidence, judgePrompt);
-        results.push({ ...base, outcome: 'SCORED', ...graded });
+        if (!isValidVerdict(graded)) {
+          results.push({
+            ...base,
+            outcome: 'ERROR',
+            note: `judge verdict missing/invalid score (got ${JSON.stringify(graded.score)})`,
+          });
+        } else {
+          results.push({ ...base, outcome: 'SCORED', ...graded });
+        }
       } catch (err) {
         results.push({ ...base, outcome: 'ERROR', note: String(err).slice(0, 500) });
       }
@@ -335,13 +348,7 @@ async function runBehavior() {
 
 function summarize(baseline, behavior) {
   const scored = behavior.filter((r) => r.outcome === 'SCORED');
-  const byDim = {};
-  for (const r of scored) {
-    (byDim[r.dimension] ??= []).push(r.score);
-  }
-  const dimMeans = Object.fromEntries(
-    Object.entries(byDim).map(([d, s]) => [d, +(s.reduce((a, b) => a + b, 0) / s.length).toFixed(2)]),
-  );
+  const dimMeans = computeDimensionMeans(behavior);
   return {
     generator: 'run-evals.mjs (SCS-REQ-002 REQ-2.1)',
     mode: live ? 'LIVE' : 'STUB',
