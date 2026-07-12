@@ -47,7 +47,7 @@ jobs:
             !/Public-Info-Pool/Record/
             !/Public-Info-Pool/Reference/
           sparse-checkout-cone-mode: false
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: '20'
       - name: Check pinned vs latest published versions (report + drift facts)
