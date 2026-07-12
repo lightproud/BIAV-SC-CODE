@@ -8,7 +8,12 @@
 import { describe, expect, it } from 'vitest';
 
 // eslint-disable-next-line import/no-relative-packages -- eval-side tooling under test
-import { computeDimensionMeans, isValidVerdict, parseJudgeMessage } from '../scripts/eval-scoring.mjs';
+import {
+  computeDimensionMeans,
+  isValidVerdict,
+  parseJudgeMessage,
+  trimEvidence,
+} from '../scripts/eval-scoring.mjs';
 
 describe('isValidVerdict', () => {
   it('accepts integer scores 1..5 only', () => {
@@ -49,6 +54,27 @@ describe('parseJudgeMessage', () => {
     expect(() =>
       parseJudgeMessage({ content: [{ type: 'text', text: '{"score":4,"verd' }], usage: {} }),
     ).toThrow();
+  });
+});
+
+describe('trimEvidence (self-improve #6)', () => {
+  it('cuts oversized strings anywhere in the tree with an explicit marker', () => {
+    const big = 'x'.repeat(5000);
+    const out = trimEvidence({
+      phases: [{ transcript: [{ message: { content: [{ type: 'text', text: big }] } }] }],
+      harnessNotes: 'short note',
+      metrics: { turnReplays: 1 },
+    });
+    const text = out.phases[0].transcript[0].message.content[0].text;
+    expect(text.length).toBeLessThan(3100);
+    expect(text).toContain('…[trimmed 2000 chars]');
+    expect(out.harnessNotes).toBe('short note');
+    expect(out.metrics.turnReplays).toBe(1);
+  });
+
+  it('leaves structure, numbers, booleans and nulls untouched', () => {
+    const evidence = { a: [1, true, null, 'ok'], b: { c: 'fine' } };
+    expect(trimEvidence(evidence)).toEqual(evidence);
   });
 });
 

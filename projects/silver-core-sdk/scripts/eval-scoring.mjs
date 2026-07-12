@@ -31,6 +31,28 @@ export function isValidVerdict(graded) {
 }
 
 /**
+ * Deep-trim judge evidence (self-improve #6): dc-05's verdict came back
+ * scoreless TWICE even at the 4096 output budget — its two-phase transcript
+ * evidence is enormous (seeded fixtures + full message contents), and an
+ * over-stuffed judge input degrades output reliability and burns budget.
+ * Any string longer than `cap` chars anywhere in the evidence tree is cut
+ * with an explicit marker; structure, keys and short values (metrics,
+ * ledgers, notes) pass through untouched, so rubric-relevant signals stay.
+ */
+export function trimEvidence(value, cap = 3000) {
+  if (typeof value === 'string') {
+    return value.length > cap
+      ? `${value.slice(0, cap)}…[trimmed ${value.length - cap} chars]`
+      : value;
+  }
+  if (Array.isArray(value)) return value.map((v) => trimEvidence(v, cap));
+  if (value !== null && typeof value === 'object') {
+    return Object.fromEntries(Object.entries(value).map(([k, v]) => [k, trimEvidence(v, cap)]));
+  }
+  return value;
+}
+
+/**
  * Per-dimension means over SCORED results with valid scores. Invalid scores
  * never reach this point when the runner enforces isValidVerdict, but the
  * filter here is deliberate defense in depth — one bad record must never
