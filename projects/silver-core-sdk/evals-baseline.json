@@ -1,0 +1,12 @@
+{
+  "note": "REQ-2.2 behavior baseline — regenerate only via check-eval-regression.mjs --write-baseline (a keeper-reviewed act; baseline resets require a decision record).",
+  "seededFrom": "evals-2026-07-12-03-59-08.json",
+  "mode": "LIVE",
+  "judgeModel": "claude-sonnet-5",
+  "scored": 19,
+  "dimensionMeans": {
+    "memory_recall": 4.86,
+    "disconnect_recovery": 4,
+    "token_efficiency": 4.33
+  }
+}

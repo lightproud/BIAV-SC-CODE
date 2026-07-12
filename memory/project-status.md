@@ -191,6 +191,16 @@
 > 银芯→黑池单向输出物，与 §1.1-HC 防火墙同向，非 BPT 产品内部开发。
 
 - **动手前必读**：`projects/silver-core-sdk/CONTEXT.md`（会话上下文 + 当前 milestone）
+- **首份全量 LIVE 评估基线（2026-07-12，run [29178972282](https://github.com/lightproud/brain-in-a-vat/actions/runs/29178972282)，v0.51.1）**：
+  20 题全执行（8 题 Phase 2 harness 首次真跑真判），**19 判卷成功 / 1 judge 解析错误（tok-02，偶发）**；
+  维度均分 memory_recall **4.86** / disconnect_recovery **4.00** / token_efficiency **4.33**，
+  已播种 `projects/silver-core-sdk/evals-baseline.json`（REQ-2.2 回归门禁自此有基可比）。
+  **三项真发现 = 环三首批改进候选**：① tok-06 得 1 分——`allowedTools:['Read']` 时系统提示词仍
+  装配全 22 工具描述（token 效率真缺口）；② dc-05 得 2 分——混合故障中流中切断的台账归因不全
+  （transportHealth 只记到一个事件桶）；③ dc-03 得 3 分——截断抢救的计数器归因与预期不符。
+  低分不修不遮：正是评估轮的产出物，按压缩后节拍进环三处理。**基线轮点火史**：首次点火
+  run 29178257816 以 exit 13 失败、当场揪出并修掉引擎回放退避 unref 缺陷（v0.51.1 + 踩坑 #50），
+  重点火即绿——评估环第一天就抓到一个发货级缺陷，闭环价值自证。
 - **阶段时间压缩裁定（2026-07-12，守密人「压缩到最短」口谕）**：SCS-REQ-002 日历等待全压——
   Phase 0 观察并行不阻塞、**Phase 3（环三改进执行）即日启动**（先提示词类，首 PR 合并即放开
   代码类）、「夜间」改按需触发、Phase 4 复盘改「累计 5 个自改 PR」触发；首轮 LIVE 基线轮
