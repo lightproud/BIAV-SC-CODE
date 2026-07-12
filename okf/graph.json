@@ -1,7 +1,7 @@
 {
   "generated": "2026-07-12",
   "stats": {
-    "nodes": 366,
+    "nodes": 354,
     "edges": 434
   },
   "nodes": [
@@ -3280,6 +3280,17 @@
       "tier": "search"
     },
     {
+      "id": "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
+      "type": "documentation",
+      "title": "stop-hook-git-check-fixed-20260712",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
       "id": "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "type": "documentation",
       "title": "test-coverage-analysis-202606",
@@ -3683,162 +3694,6 @@
       ],
       "tier": "search",
       "url": "wiki/story"
-    },
-    {
-      "id": "/unpacked/unpacked-config.md",
-      "type": "dataset",
-      "title": "config",
-      "tags": [
-        "data_layer:full_archive",
-        "content:config",
-        "encoding:luac",
-        "first-hand-unpack"
-      ],
-      "tier": "search"
-    },
-    {
-      "id": "/unpacked/unpacked-ejoysdk-lua.md",
-      "type": "dataset",
-      "title": "ejoysdk_lua",
-      "tags": [
-        "data_layer:full_archive",
-        "content:ejoysdk-lua",
-        "encoding:luac",
-        "first-hand-unpack"
-      ],
-      "tier": "search"
-    },
-    {
-      "id": "/unpacked/unpacked-foundation.md",
-      "type": "dataset",
-      "title": "foundation",
-      "tags": [
-        "data_layer:full_archive",
-        "content:foundation",
-        "encoding:luac",
-        "first-hand-unpack"
-      ],
-      "tier": "search"
-    },
-    {
-      "id": "/unpacked/unpacked-game-data-all.md",
-      "type": "dataset",
-      "title": "全部游戏数据",
-      "tags": [
-        "data_layer:full_archive",
-        "content:game-data-all",
-        "encoding:text",
-        "first-hand-unpack"
-      ],
-      "tier": "search"
-    },
-    {
-      "id": "/unpacked/unpacked-game-text.md",
-      "type": "dataset",
-      "title": "游戏文本",
-      "tags": [
-        "data_layer:full_archive",
-        "content:game-text",
-        "encoding:text",
-        "first-hand-unpack"
-      ],
-      "tier": "search"
-    },
-    {
-      "id": "/unpacked/unpacked-gamelauncher.md",
-      "type": "dataset",
-      "title": "gamelauncher",
-      "tags": [
-        "data_layer:full_archive",
-        "content:gamelauncher",
-        "encoding:luac",
-        "first-hand-unpack"
-      ],
-      "tier": "search"
-    },
-    {
-      "id": "/unpacked/unpacked-gamescript.md",
-      "type": "dataset",
-      "title": "gamescript",
-      "tags": [
-        "data_layer:full_archive",
-        "content:gamescript",
-        "encoding:luac",
-        "first-hand-unpack"
-      ],
-      "tier": "search"
-    },
-    {
-      "id": "/unpacked/unpacked-gameupdate.md",
-      "type": "dataset",
-      "title": "gameupdate",
-      "tags": [
-        "data_layer:full_archive",
-        "content:gameupdate",
-        "encoding:text",
-        "first-hand-unpack"
-      ],
-      "tier": "search"
-    },
-    {
-      "id": "/unpacked/unpacked-lua-tables.md",
-      "type": "dataset",
-      "title": "Lua表还原",
-      "tags": [
-        "data_layer:full_archive",
-        "content:lua-tables",
-        "encoding:text",
-        "first-hand-unpack"
-      ],
-      "tier": "search"
-    },
-    {
-      "id": "/unpacked/unpacked-share.md",
-      "type": "dataset",
-      "title": "share",
-      "tags": [
-        "data_layer:full_archive",
-        "content:share",
-        "encoding:luac",
-        "first-hand-unpack"
-      ],
-      "tier": "search"
-    },
-    {
-      "id": "/unpacked/unpacked-sproto.md",
-      "type": "dataset",
-      "title": "sproto",
-      "tags": [
-        "data_layer:full_archive",
-        "content:sproto",
-        "encoding:text",
-        "first-hand-unpack"
-      ],
-      "tier": "search"
-    },
-    {
-      "id": "/unpacked/unpacked-text-cn.md",
-      "type": "dataset",
-      "title": "text_cn",
-      "tags": [
-        "data_layer:full_archive",
-        "content:text-cn",
-        "encoding:luac",
-        "first-hand-unpack"
-      ],
-      "tier": "search"
-    },
-    {
-      "id": "/unpacked/unpacked-vue.md",
-      "type": "dataset",
-      "title": "vue",
-      "tags": [
-        "data_layer:full_archive",
-        "content:vue",
-        "encoding:luac",
-        "first-hand-unpack"
-      ],
-      "tier": "search"
     },
     {
       "id": "/wiki-data/wiki-data-aliases.md",

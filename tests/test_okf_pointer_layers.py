@@ -26,13 +26,13 @@ NEW_LAYERS = {
     "wiki-data": "curated",
     "community": "full_archive",
     "news-output": "output",
-    "unpacked": "full_archive",
+    # "unpacked" 层已随源数据退役（Game-Unpacked 整层删除，守密人 2026-07-12 裁定）
     "extracted": "full_archive",
     "resource": "curated",
     "projects": "curated",
 }
 # 全量大本体层：概念必须只放指针（文件小），防复刻 2.1G/44M 本体
-POINTER_ONLY_SMALL = ("community", "unpacked", "extracted", "news-output")
+POINTER_ONLY_SMALL = ("community", "extracted", "news-output")
 
 _ARCHIVE_PRESENT = (REPO / "Public-Info-Pool" / "Record" / "Community").exists()
 _SPARSE_EXCLUDED = ("Public-Info-Pool/Record/", "Public-Info-Pool/Reference/")

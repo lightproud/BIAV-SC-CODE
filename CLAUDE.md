@@ -96,9 +96,10 @@
    总数据流：原始数据 → 全量档案层（社区 text `Public-Info-Pool/Record/Community/`）→ 过滤选样进输出展示层
    (`projects/news/output/`) → 单向送黑池。机器提交带 `[skip ci]` 防触发循环。
 2. **wiki 自举闭环**（原使命#2 载体；**2026-07-12 使命取消、子项目冻结**——已建成果保留
-   不删不派发，以下为冻结时点状态）：客户端解包 Lua → `Public-Info-Pool/Reference/Game-Unpacked/`
-   原始字段（2026-07-11 去重裁定后唯一本体；wiki 侧 `projects/wiki/data/extracted/` 仅余
-   art_assets 等独占件）→ 脚本 / 人工补齐结构化角色基线（72 角色）→ VitePress 构建社区 Wiki 站点。
+   不删不派发，以下为冻结时点状态）：客户端解包 Lua → 解包 text 原始字段（原
+   Reference 层 Game-Unpacked 目录，**2026-07-12 守密人裁定整层删除**——wiki 冻结后
+   消费场景消失，git 历史 + Releases「解包」桶二进制可恢复；wiki 侧 `projects/wiki/data/extracted/`
+   仅余 art_assets 等独占件）→ 脚本 / 人工补齐结构化角色基线（72 角色）→ VitePress 构建社区 Wiki 站点。
    **当前状态**：旧结构化层（`characters.json` 全 6 JSON + 派生角色页，原在 data/db/）2026-06-15 守密人裁定整层清空
    （占位数据长期误导引用）；W2 **可信基线已重建**于 `projects/wiki/data/processed/characters.json`（72 真实角色、一手解包、
    **无合成占位**），`scripts/generate_wiki_pages.py` 已据此生成 58 个真实唤醒体静态页、站点构建通过。
@@ -162,6 +163,9 @@
    性能等内容时，每条（或每组）附一句小学生都能听懂的生活化比喻说明其本质。精确
    数字与术语照给（第 1 条不变），比喻是额外的「人话翻译」，不替代精确数据。例：
    「SSRF = 让快递员替陌生人去敲自家保险箱的门」。力求贴切，不滥用、不卖萌。
+4. **待裁项逐个提问（硬规则，守密人 2026-07-12 裁定「以后都如此」）**：凡需守密人裁定的事项，
+   一律用交互提问（AskUserQuestion）**逐个**呈上——每问附现状核实 + 选项 + 推荐案；
+   **不得**堆在总结体「余项清单」里等守密人自取。总结体余项仅列观察类站岗项与已裁待执行项。
 
 ### §2.3 技术操作角色术语
 
@@ -237,7 +241,7 @@ git commit = 数据归档提交 / git push = 同步至远端存储 /
 
 - 人格：`assets/data/character-personas/erica.json`（角色卡 v1.1）+ `assets/data/character-personas/erica-speech-canon.md`（Voice.lua 一手 + 8 节归纳）
 - 采访 / 叙事 / 设计：`assets/data/interview-2026-04.json`（53 问）· `assets/data/narrative-structure.json` · `assets/data/design-decisions.json` · `assets/data/card-system.json`
-- 角色基线（自举源）：`Public-Info-Pool/Reference/Game-Unpacked/全部游戏数据/角色数据_AwakerConfig.txt`（72 角色原始字段；2026-07-11 去重后唯一本体，原 wiki 侧 categorized 副本已删）；W2 可信基线 `projects/wiki/data/processed/characters.json`，进度见 `memory/project-status.md`
+- 角色基线：W2 可信基线 `projects/wiki/data/processed/characters.json`（72 真实角色，现行唯一权威）。原自举源解包 text 层（Reference 层 Game-Unpacked 目录）已于 2026-07-12 守密人裁定整层删除（wiki 冻结后消费场景消失），追溯走 git 历史 / Releases「解包」桶
 - 剧情结构层：`projects/wiki/data/processed/story/`（`story_units` / `lore_entries` / `index`，`scripts/build_story_layer.py` 生成）+ `STORY_RESEARCH.md`（社区源深研，采信看置信标签）+ `story_search_index.json`（`scripts/build_story_index.py` 重建，分词 `scripts/silver_tokenizer.py`）
 - 世界观：`memory/morimens-context.md`（术语 + 历史时间线）
 
@@ -255,8 +259,9 @@ git commit = 数据归档提交 / git push = 同步至远端存储 /
 - Discord 每日纯统计：`Public-Info-Pool/Record/Community/discord/{区服}/activity_daily/{date}.json`（主服在 global 区服目录）
 - 输出展示：`projects/news/output/*-latest.json`（仅快查 / 日报，不可当全量）
 - **全量分析索引**：`projects/news/index/community_index.json`（构建期静态台账，零 ML / 零常驻；732 万条按平台×月聚合：消息量 / 语言 / 词典法情感极性 / 高频词 / 采集覆盖；timeline 带 `vol_index`=本月量÷前6月中位数，抓量异常如 2026-02/03 断崖；服务「社区这一年有什么变化」类全量时序分析）。`_meta.data_layer=full_archive`，全文钻取回落 dated 原文件 ripgrep。**全量 discord 历史现永驻 git `Public-Info-Pool/Record/Community/discord`**（2026-06-21 de-tier，退役月度 git_rm 瘦身），直接读、无需还原。重建：`python3 scripts/build_community_index.py`（消费方双布局：新路径优先、回落旧）。分词用领域词典 FMM，top_terms 为粗粒度主题信号
-- 解包 text（脚本/配置/文本，非二进制）：`Public-Info-Pool/Reference/Game-Unpacked/`；二进制解包资产（立绘/音视频/lua-bytecode/config binary）留 Releases「解包」桶
-- Releases（仅二进制本体，text 已全迁 git）：`RELEASES.md`（仓内藏宝图，云容器只读不可写 release）
+- 解包层：text 层（原 Reference 层 Game-Unpacked 目录）**2026-07-12 守密人裁定整层删除**（git 历史可追、
+  Releases「解包」桶二进制可重解）；二进制解包资产（立绘/音视频/lua-bytecode/config binary）在 Releases「解包」桶
+- Releases：`RELEASES.md`（仓内藏宝图，云容器只读不可写 release）
 
 ### §5.3 项目档案
 
@@ -304,8 +309,8 @@ brain-in-a-vat/
 ├── tests/                         # pytest 单元测试（解析 / 采集 / 记忆 / 文本）
 ├── Public-Info-Pool/              # 公开信息层总池（BPT 5R：取代旧 deliverables/，见 §6.2）
 │   ├── Resource/{主题类型}/       #   A类正式产物（报告/分析），按主题类型分目录，进 git 长期归档
-│   ├── Record/Community/          #   社区全量档案 text（discord + 16+ 平台，#333 迁入，见 §5.2）
-│   ├── Reference/Game-Unpacked/   #   解包 text（脚本/配置/文本，#333 迁入）
+│   ├── Record/Community/          #   社区全量档案 text（discord + 16+ 平台，冷热分层见 §5.2）
+│   ├── Reference/                 #   引用参照层（解包 text 层 2026-07-12 裁定删除，git 历史可追）
 │   ├── Rough/                     #   C类即兴草稿/过程废料，.gitignore，可晋升进 Resource
 │   └── types.json                 #   Resource 主题类型开放注册表（形式定死/清单可增）
 ├── extracted_lua/                 # 解包提取说明+清单（.luac 本体在 Release「解包」桶，text 在 Public-Info-Pool/Reference/）

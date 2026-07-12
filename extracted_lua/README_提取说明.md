@@ -1,5 +1,9 @@
 # 忘却前夜 Lua 字节码提取最终成果
 
+> **⚠ 解包 text 层已删除（守密人 2026-07-12 裁定）**：原 `Public-Info-Pool/Reference/Game-Unpacked/`
+> 整层（224M / 3,694 文件）已删——wiki 冻结后消费场景消失；追溯走 git 历史，二进制本体仍在
+> Releases「解包」桶（可重解 text）。下文对该层的引用按历史状态理解。
+
 > **2026-06-21 数据本体迁移（守密人裁定「text→git / 二进制→Releases」）**：本目录下文
 > 描述的交付物本体已迁走——`.luac` 字节码（hook_capture / plaintext_from_memory / raw）
 > 在 GitHub Release `unpacked-assets` 的 `morimens-lua-bytecode.tar.gz`；解析后的 text
