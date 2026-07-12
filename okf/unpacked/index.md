@@ -15,5 +15,5 @@ Public-Info-Pool/Reference/Game-Unpacked/ 客户端解包子集指针（明文 t
 * [sproto](/unpacked/unpacked-sproto.md) - 客户端解包text 子集（明文）「sproto」：1 文件 / 2.7KB。一手解包，本体原地。
 * [text_cn](/unpacked/unpacked-text-cn.md) - 客户端解包lua 字节码子集（binary，非明文）「text_cn」：69 文件 / 28.1MB。一手解包，本体原地。
 * [vue](/unpacked/unpacked-vue.md) - 客户端解包lua 字节码子集（binary，非明文）「vue」：39 文件 / 322.7KB。一手解包，本体原地。
-* [全部游戏数据](/unpacked/unpacked-game-data-all.md) - 客户端解包text 子集（明文）「全部游戏数据」：14 文件 / 41.3MB。一手解包，本体原地。
-* [游戏文本](/unpacked/unpacked-game-text.md) - 客户端解包text 子集（明文）「游戏文本」：11 文件 / 45.4MB。一手解包，本体原地。
+* [全部游戏数据](/unpacked/unpacked-game-data-all.md) - 客户端解包text 子集（明文）「全部游戏数据」：13 文件 / 20.7MB。一手解包，本体原地。
+* [游戏文本](/unpacked/unpacked-game-text.md) - 客户端解包text 子集（明文）「游戏文本」：10 文件 / 22.7MB。一手解包，本体原地。

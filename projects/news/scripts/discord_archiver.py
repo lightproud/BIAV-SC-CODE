@@ -955,9 +955,14 @@ class DiscordArchiver:
                 'top_reacted_messages': top_reacted,
             }
             file_path = stats_dir / f'{date_str}.json'
-            if file_path.exists():
+            # 冷热分层（2026-07-12）：冷月统计已压 .gz 时以其为底续加——写出的裸旁车
+            # 已含 gz 计数，压冷器对 activity_daily 按「raw 胜出」重压覆盖。
+            existing_path = file_path if file_path.exists() else (
+                file_path.with_suffix('.json.gz')
+                if file_path.with_suffix('.json.gz').exists() else None)
+            if existing_path is not None:
                 try:
-                    with open(file_path, 'r', encoding='utf-8') as f:
+                    with archive_layout.open_archive_text(existing_path) as f:
                         existing = json.load(f)
                     output['messages'] += existing.get('messages', 0)
                     output['unique_authors'] = max(

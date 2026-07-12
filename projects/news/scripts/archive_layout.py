@@ -97,37 +97,54 @@ def resolve_write_layout(source: str, region: str | None = None,
     return platform, region, subtype
 
 
+def date_stem(path: Path | str) -> str:
+    """归档文件的日期茎：剥掉 .json/.jsonl 及冷压 .gz 双重后缀。
+
+    冷热分层后 `2026-04-01.json.gz` 的 Path.stem 是 '2026-04-01.json'——
+    直接拿 stem 解析日期会把整个冷层误判成非日期文件 / 缺口，日期一律经本函数。
+    """
+    name = Path(path).name
+    for suf in ('.json.gz', '.jsonl.gz', '.json', '.jsonl'):
+        if name.endswith(suf):
+            return name[:-len(suf)]
+    return Path(path).stem
+
+
 def iter_source_files(source: str, archive_dir: Path) -> Iterator[Path]:
     """读方唯一遍历：产出某源的全部归档日期文件（平铺旧布局 + 分层新布局）。
 
     折叠源：本源旧平级目录 + 宿主平台 <任意区服>/<类型>/ 下的文件。
     普通源：源目录递归，但跳过被其他折叠源认领的类型子目录。
     discord 不经本函数（独立归档器与目录语义，调用方自理）。
+    冷热分层（2026-07-12 甲案推广）：冷月为 .json.gz，与裸文件一并产出。
     """
     if source in FOLDED_SOURCE_LAYOUT:
         legacy = archive_dir / source
         if legacy.exists():
             yield from legacy.glob('*.json')
+            yield from legacy.glob('*.json.gz')
         platform, subtype = FOLDED_SOURCE_LAYOUT[source]
         base = archive_dir / platform
         if base.exists():
             yield from base.glob(f'*/{subtype}/*.json')
+            yield from base.glob(f'*/{subtype}/*.json.gz')
         return
     pdir = archive_dir / source
     if not pdir.exists():
         return
     claimed = CLAIMED_SUBTYPES.get(source, set())
-    for f in pdir.rglob('*.json'):
-        if f.parent.name in claimed:
-            continue
-        yield f
+    for pattern in ('*.json', '*.json.gz'):
+        for f in pdir.rglob(pattern):
+            if f.parent.name in claimed:
+                continue
+            yield f
 
 
 def dated_files(source: str, archive_dir: Path) -> list[Path]:
-    """某源全部日期文件，按日期（stem）升序；过滤 state/manifest 类非日期文件。"""
+    """某源全部日期文件，按日期升序；过滤 state/manifest 类非日期文件。"""
     return sorted((f for f in iter_source_files(source, archive_dir)
-                   if DATE_STEM.match(f.stem)),
-                  key=lambda f: f.stem)
+                   if DATE_STEM.match(date_stem(f))),
+                  key=date_stem)
 
 
 # ── discord 布局（守密人 2026-07-10 批准方案甲，收编 SSOT）───────────────────
