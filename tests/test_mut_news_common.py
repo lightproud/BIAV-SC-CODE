@@ -576,3 +576,155 @@ def test_dump_json_atomic_tmpfile_naming_and_dir(tmp_path, monkeypatch):
     assert seen['dir'] == str(tmp_path)
     assert seen['prefix'] == '.named.json.'
     assert seen['suffix'] == '.tmp'
+
+
+# ══ 二轮击杀：冻结时钟下的精确值断言（MM-DD / MM/DD / HH:MM 分支）═══════════
+# 首跑+一轮后 parse_relative_time 仍存活 56：容差断言杀不动「置零字段 / 月日
+# 映射 / 回退边界」类，且 MM-DD（短横/斜线）形态此前完全漏测。此处用 datetime
+# 子类冻结 now，把这些分支钉成精确等值。
+
+
+class _FrozenDT(datetime):
+    _frozen = None
+
+    @classmethod
+    def now(cls, tz=None):
+        return cls._frozen
+
+
+@pytest.fixture()
+def frozen_now(monkeypatch):
+    def freeze(dt):
+        _FrozenDT._frozen = dt
+        monkeypatch.setattr(nc, 'datetime', _FrozenDT)
+        return dt
+    return freeze
+
+
+def test_prt_month_day_dot_exact(frozen_now):
+    frozen_now(datetime(2026, 7, 11, 10, 20, 30, 123456, tzinfo=timezone.utc))
+    # 过去的 MM.DD → 当年精确零点（钉 month/day 映射与 hour/min/sec/µs 全置零）
+    assert nc.parse_relative_time('3.5') == ('2026-03-05T00:00:00+00:00', False)
+    # 未来的 MM.DD → 回退恰一年
+    assert nc.parse_relative_time('12.31') == ('2025-12-31T00:00:00+00:00', False)
+
+
+def test_prt_month_day_dash_slash_exact(frozen_now):
+    # 短横 / 斜线形态此前漏测（首跑 m=None 变异存活的病根）
+    frozen_now(datetime(2026, 7, 11, 10, 20, 30, 123456, tzinfo=timezone.utc))
+    assert nc.parse_relative_time('3-5') == ('2026-03-05T00:00:00+00:00', False)
+    assert nc.parse_relative_time('03/05') == ('2026-03-05T00:00:00+00:00', False)
+    assert nc.parse_relative_time('12-31') == ('2025-12-31T00:00:00+00:00', False)
+    assert nc.parse_relative_time('12/31') == ('2025-12-31T00:00:00+00:00', False)
+
+
+def test_prt_month_day_equal_boundary_no_rollback(frozen_now):
+    # dt == now 恰相等：> 判定不回退（>= 变异体在此翻车）
+    frozen_now(datetime(2026, 7, 11, 0, 0, 0, 0, tzinfo=timezone.utc))
+    assert nc.parse_relative_time('7.11') == ('2026-07-11T00:00:00+00:00', False)
+    assert nc.parse_relative_time('7-11') == ('2026-07-11T00:00:00+00:00', False)
+
+
+def test_prt_hhmm_exact(frozen_now):
+    frozen_now(datetime(2026, 7, 11, 10, 20, 30, 987654, tzinfo=timezone.utc))
+    # 过去时刻 → 当日精确到分（sec/µs 全置零）
+    assert nc.parse_relative_time('09:15') == ('2026-07-11T09:15:00+00:00', False)
+    # 未来时刻 → 回退恰一天
+    assert nc.parse_relative_time('11:45') == ('2026-07-10T11:45:00+00:00', False)
+
+
+def test_prt_hhmm_equal_boundary_no_rollback(frozen_now):
+    frozen_now(datetime(2026, 7, 11, 10, 20, 0, 0, tzinfo=timezone.utc))
+    assert nc.parse_relative_time('10:20') == ('2026-07-11T10:20:00+00:00', False)
+
+
+def test_prt_seconds_ago_exact(frozen_now):
+    # 击杀 delta_map 'second' 键变异：此前英文相对时间漏测 seconds 单位
+    frozen_now(datetime(2026, 7, 11, 10, 20, 30, 0, tzinfo=timezone.utc))
+    assert nc.parse_relative_time('30 seconds ago') == \
+        ('2026-07-11T10:20:00+00:00', False)
+    assert nc.parse_relative_time('2 weeks ago') == \
+        ('2026-06-27T10:20:30+00:00', False)
+
+
+# ══ 二轮击杀：safe_get 挂载/收尾/相对跳转 与 守卫实参录制 ═══════════════════
+
+
+def test_safe_get_mounts_pinned_adapter_and_closes_redirects(monkeypatch):
+    mounts = []
+
+    class _RecSession(_FakeSession):
+        def mount(self, prefix, adapter):
+            mounts.append((prefix, type(adapter).__name__, adapter._pinned_ip))
+
+    _FakeSession.queue = [_Resp(302, {'Location': 'https://a.example/n'}), _Resp(200)]
+    _FakeSession.calls = []
+    _FakeSession.kwargs = []
+    redirect_resp = _FakeSession.queue[0]
+    monkeypatch.setattr(nc.requests, 'Session', _RecSession)
+    monkeypatch.setattr(nc, '_resolve_safe_ip', lambda host: '93.184.216.34')
+    final = nc.safe_get('https://a.example/x')
+    # 两种 scheme 前缀各挂 pinned adapter，且 pin 的是守卫解析出的那颗 IP
+    assert mounts[:2] == [('http://', '_PinnedIPAdapter', '93.184.216.34'),
+                          ('https://', '_PinnedIPAdapter', '93.184.216.34')]
+    assert redirect_resp.closed is True      # 3xx 响应必须关闭（防连接泄漏）
+    assert final.closed is False             # 最终响应留给调用方消费
+
+
+def test_safe_get_resolves_relative_location(fake_session):
+    # 相对 Location 须以当前 URL 为基解析（urljoin 实参序被换即翻车）
+    fake_session.queue = [_Resp(301, {'Location': '/deeper/page'}), _Resp(200)]
+    nc.safe_get('https://a.example/start/here')
+    assert fake_session.calls[1][0] == 'https://a.example/deeper/page'
+
+
+def test_resolve_safe_ip_calls_getaddrinfo_with_null_service(monkeypatch):
+    # 击杀 getaddrinfo 实参变异：host 原样、service 必须为 None
+    seen = {}
+
+    def spy_gai(host, port):
+        seen.update(host=host, port=port)
+        return [(2, 1, 6, '', ('93.184.216.34', 0))]
+
+    monkeypatch.setattr(nc.socket, 'getaddrinfo', spy_gai)
+    assert nc._resolve_safe_ip('h.example') == '93.184.216.34'
+    assert seen == {'host': 'h.example', 'port': None}
+
+
+# ══ 二轮击杀：wbi 缓存精确态 / spi 缺 data 键与 headers 透传 ════════════════
+
+
+def test_wbi_cache_exact_state_after_fetch(monkeypatch):
+    nc._wbi_cache.clear()
+    monkeypatch.setattr(nc.time, 'time', lambda: 1752200000.0)
+    monkeypatch.setattr(nc.requests, 'get', lambda *a, **k: _JsonResp(
+        {'data': {'wbi_img': {
+            'img_url': f'https://i0.hdslb.com/bfs/wbi/{_IMG}.png',
+            'sub_url': f'https://i0.hdslb.com/bfs/wbi/{_SUB}.png'}}}))
+    assert nc.get_wbi_mixin_key() == _GOLDEN_MIXIN
+    # 缓存全字段精确态：ts 必须等于取数时刻（+1/-1 变异皆翻车）
+    assert nc._wbi_cache == {'mixin_key': _GOLDEN_MIXIN, 'ts': 1752200000.0}
+    nc._wbi_cache.clear()
+
+
+def test_wbi_and_spi_pass_headers_through(monkeypatch):
+    nc._wbi_cache.clear()
+    seen = []
+
+    def fake_get(url, headers=None, timeout=None):
+        seen.append(headers)
+        if 'nav' in url:
+            return _JsonResp({'data': {'wbi_img': {
+                'img_url': f'https://x/{_IMG}.png', 'sub_url': f'https://x/{_SUB}.png'}}})
+        return _JsonResp({'data': {'b_3': 'x'}})
+
+    monkeypatch.setattr(nc.requests, 'get', fake_get)
+    nc.get_wbi_mixin_key(headers={'UA': 'erica'})
+    nc.bilibili_spi_cookies(headers={'UA': 'erica'})
+    assert seen == [{'UA': 'erica'}, {'UA': 'erica'}]
+    nc._wbi_cache.clear()
+
+
+def test_spi_missing_data_key_yields_empty(monkeypatch):
+    monkeypatch.setattr(nc.requests, 'get', lambda *a, **k: _JsonResp({}))
+    assert nc.bilibili_spi_cookies() == {}
