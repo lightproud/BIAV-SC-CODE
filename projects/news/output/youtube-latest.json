@@ -1,22 +1,10 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-12T02:33:27.644560+00:00",
+  "collected_at": "2026-07-12T05:57:58.215060+00:00",
   "source": "youtube",
   "data_layer": "output",
   "item_count": 18,
   "items": [
-    {
-      "source": "youtube",
-      "time": "2026-07-11T09:52:13Z",
-      "lang": "",
-      "title": "복각 뽑을까 말까? 40초 최종 요약 #게임#morimens #망각전야",
-      "summary": "morimens #게임 #망각전야 #공략 디스코드 : https://discord.gg/TaDkgyQ35y 치지직 ...",
-      "url": "https://www.youtube.com/watch?v=fMQyy4j4iY4",
-      "author": "박현(Muyeong)",
-      "engagement": 2064,
-      "media_url": "https://i.ytimg.com/vi/fMQyy4j4iY4/hqdefault.jpg",
-      "content_type": "video"
-    },
     {
       "source": "youtube",
       "time": "2026-07-11T17:00:24Z",
@@ -25,20 +13,20 @@
       "summary": "",
       "url": "https://www.youtube.com/watch?v=0Ywpcqi4uLw",
       "author": "AnjutheMage",
-      "engagement": 1076,
+      "engagement": 1085,
       "media_url": "https://i.ytimg.com/vi/0Ywpcqi4uLw/hqdefault.jpg",
       "content_type": "video"
     },
     {
       "source": "youtube",
-      "time": "2026-07-11T14:00:29Z",
+      "time": "2026-07-12T04:00:23Z",
       "lang": "",
-      "title": "🌲🌳 #忘卻前夜 #Morimens #SayaNoUta #cosplay",
-      "summary": "",
-      "url": "https://www.youtube.com/watch?v=6PfRFLiEM4A",
-      "author": "SAKURA",
-      "engagement": 255,
-      "media_url": "https://i.ytimg.com/vi/6PfRFLiEM4A/hqdefault.jpg",
+      "title": "I PULLED HER ON MY 3RD PULL? | Morimens",
+      "summary": "(SPOILER!) I pulled the Caro character - Helot: Cadena (insanely rare), she has a very strong assault role. Check out the ...",
+      "url": "https://www.youtube.com/watch?v=HKtNIl9327U",
+      "author": "Dread Tmrw",
+      "engagement": 299,
+      "media_url": "https://i.ytimg.com/vi/HKtNIl9327U/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -49,8 +37,20 @@
       "summary": "",
       "url": "https://www.youtube.com/watch?v=KkX3i_9_-lM",
       "author": "Kota",
-      "engagement": 201,
+      "engagement": 277,
       "media_url": "https://i.ytimg.com/vi/KkX3i_9_-lM/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-07-11T14:00:29Z",
+      "lang": "",
+      "title": "🌲🌳 #忘卻前夜 #Morimens #SayaNoUta #cosplay",
+      "summary": "",
+      "url": "https://www.youtube.com/watch?v=6PfRFLiEM4A",
+      "author": "SAKURA",
+      "engagement": 256,
+      "media_url": "https://i.ytimg.com/vi/6PfRFLiEM4A/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -61,20 +61,8 @@
       "summary": "Maayong! I'm Horori, an Angel Trainee sent to Earth to study and learn human culture. The more Faith I can bring to Heaven, the ...",
       "url": "https://www.youtube.com/watch?v=yDzcAGnL0vY",
       "author": "Horori Ch.",
-      "engagement": 154,
+      "engagement": 180,
       "media_url": "https://i.ytimg.com/vi/yDzcAGnL0vY/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-07-11T08:15:35Z",
-      "lang": "",
-      "title": "Bài Ca Hồi Ức (Karaoke) - Morimens X Saya no Uta | Song of Memento Vietnamese Karaoke",
-      "summary": "\"Liệu người nghe được em, khi hình bóng của em giờ đây đã phai?\" \"Liệu người nghe thấy em... gọi tên trong giấc mơ\" ...",
-      "url": "https://www.youtube.com/watch?v=PJFyx5tohHM",
-      "author": "AniciMorimens",
-      "engagement": 65,
-      "media_url": "https://i.ytimg.com/vi/PJFyx5tohHM/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -85,7 +73,7 @@
       "summary": "망각전야 #Morimens #이터널리턴.",
       "url": "https://www.youtube.com/watch?v=lhPTyssfJzc",
       "author": "박현(Muyeong)",
-      "engagement": 49,
+      "engagement": 51,
       "media_url": "https://i.ytimg.com/vi/lhPTyssfJzc/hqdefault.jpg",
       "content_type": "video"
     },
@@ -103,14 +91,14 @@
     },
     {
       "source": "youtube",
-      "time": "2026-07-11T08:15:06Z",
+      "time": "2026-07-11T10:05:04Z",
       "lang": "",
-      "title": "Bài Ca Hồi Ức (Karaoke) - Morimens X Saya no Uta | Song of Memento Vietnamese Karaoke (-1 Key)",
-      "summary": "\"Liệu người nghe được em, khi hình bóng của em giờ đây đã phai?\" \"Liệu người nghe thấy em... gọi tên trong giấc mơ\" ...",
-      "url": "https://www.youtube.com/watch?v=vpmrk5wIqP8",
-      "author": "AniciMorimens",
-      "engagement": 34,
-      "media_url": "https://i.ytimg.com/vi/vpmrk5wIqP8/hqdefault.jpg",
+      "title": "The Falling Moon",
+      "summary": "Provided to YouTube by DistroKid The Falling Moon · B.I.A.V. Studio · B.I.A.V. Studio Morimens OST┊Pontos EP: The Unending ...",
+      "url": "https://www.youtube.com/watch?v=Y_-BpjM9-H4",
+      "author": "B.I.A.V. Studio - Topic",
+      "engagement": 30,
+      "media_url": "https://i.ytimg.com/vi/Y_-BpjM9-H4/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -121,8 +109,20 @@
       "summary": "Selam beyler! Bugün efsane bir keşifle karşınızdayım: Morimens. Hem Türkçe dil desteği olması hem de Japonca dublaj ...",
       "url": "https://www.youtube.com/watch?v=6kyic0C8igc",
       "author": "Mustafa Temiz",
-      "engagement": 24,
+      "engagement": 25,
       "media_url": "https://i.ytimg.com/vi/6kyic0C8igc/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-07-12T05:18:13Z",
+      "lang": "",
+      "title": "GMurphy is BACK!.. As a Baddie | Morimens: Ark 2 - CH4",
+      "summary": "Morimens until I'm KoG TTV: https://www.twitch.tv/lowlivve Disc: https://discord.gg/KWB3yD6HeW #morimens #忘却前夜 #忘卻 ...",
+      "url": "https://www.youtube.com/watch?v=p8tSjimcYao",
+      "author": "LowLivve",
+      "engagement": 15,
+      "media_url": "https://i.ytimg.com/vi/p8tSjimcYao/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -139,19 +139,31 @@
     },
     {
       "source": "youtube",
-      "time": "2026-07-11T09:18:51Z",
+      "time": "2026-07-11T10:05:05Z",
       "lang": "",
-      "title": "So I Tried Out Morimens",
-      "summary": "Audio is from Gary and His Demons Game is Morimens - It's actually pretty good so far. Very impressed by the writing.",
-      "url": "https://www.youtube.com/watch?v=iI_NWD4oAsc",
-      "author": "Rehtael",
+      "title": "Old Souls",
+      "summary": "Provided to YouTube by DistroKid Old Souls · B.I.A.V. Studio · B.I.A.V. Studio Morimens OST┊Pontos EP: The Unending Triumph ...",
+      "url": "https://www.youtube.com/watch?v=Dz8-hc1m__o",
+      "author": "B.I.A.V. Studio - Topic",
       "engagement": 10,
-      "media_url": "https://i.ytimg.com/vi/iI_NWD4oAsc/hqdefault.jpg",
+      "media_url": "https://i.ytimg.com/vi/Dz8-hc1m__o/hqdefault.jpg",
       "content_type": "video"
     },
     {
       "source": "youtube",
-      "time": "2026-07-11T15:16:38Z",
+      "time": "2026-07-11T10:04:22Z",
+      "lang": "",
+      "title": "Their Eros",
+      "summary": "Provided to YouTube by DistroKid Their Eros · B.I.A.V. Studio · B.I.A.V. Studio Morimens OST┊Pontos EP: The Unending Triumph ...",
+      "url": "https://www.youtube.com/watch?v=NE2JUkjQAtU",
+      "author": "B.I.A.V. Studio - Topic",
+      "engagement": 8,
+      "media_url": "https://i.ytimg.com/vi/NE2JUkjQAtU/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-07-12T04:31:24Z",
       "lang": "",
       "title": "JUGANDO MORIMENS",
       "summary": "",
@@ -163,14 +175,14 @@
     },
     {
       "source": "youtube",
-      "time": "2026-07-11T10:00:04Z",
+      "time": "2026-07-11T22:48:22Z",
       "lang": "",
-      "title": "#忘卻前夜 #morimens 無聊開個小號來玩一下~009",
-      "summary": "忘卻前夜 #morimens 這隻目前可能不定期更新,有時間再玩一下 前半段有錄音,中途跑去休息,後來再回來錄製打得比較隨意就沒特別 ...",
-      "url": "https://www.youtube.com/watch?v=jVmN0SHSr_w",
-      "author": "Noir",
-      "engagement": 4,
-      "media_url": "https://i.ytimg.com/vi/jVmN0SHSr_w/hqdefault.jpg",
+      "title": "【忘却前夜】融災禁区・第1波・Ⅴ級警報（2026/07/12）",
+      "summary": "忘却前夜 よければお使いください。 招待コード：GCWESC27JR.",
+      "url": "https://www.youtube.com/watch?v=7pANqD5QgZ0",
+      "author": "霏憂【ひゅう】",
+      "engagement": 3,
+      "media_url": "https://i.ytimg.com/vi/7pANqD5QgZ0/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -183,18 +195,6 @@
       "author": "Dread Tmrw",
       "engagement": 2,
       "media_url": "https://i.ytimg.com/vi/6YrGTfF7OiY/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-07-11T22:48:22Z",
-      "lang": "",
-      "title": "【忘却前夜】融災禁区・第1波・Ⅴ級警報（2026/07/12）",
-      "summary": "忘却前夜 よければお使いください。 招待コード：GCWESC27JR.",
-      "url": "https://www.youtube.com/watch?v=7pANqD5QgZ0",
-      "author": "霏憂【ひゅう】",
-      "engagement": 1,
-      "media_url": "https://i.ytimg.com/vi/7pANqD5QgZ0/hqdefault.jpg",
       "content_type": "video"
     },
     {

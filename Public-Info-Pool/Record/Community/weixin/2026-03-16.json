@@ -1,8 +1,8 @@
 {
   "date": "2026-03-16",
-  "archived_at": "2026-07-12T02:34:11.630000+00:00",
+  "archived_at": "2026-07-12T05:58:41.160722+00:00",
   "source": "weixin",
-  "item_count": 564,
+  "item_count": 566,
   "items": [
     {
       "title": "[微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜2033》公布",
@@ -7339,11 +7339,32 @@
       "tags": [],
       "lang": "zh",
       "platform_region": "cn"
+    },
+    {
+      "title": "[微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜2033》公布",
+      "summary": "",
+      "source": "weixin",
+      "time": "2026-03-16T15:14:33+00:00",
+      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS-uWX6u8fIhvBr6epw7KIpLeOBlvIbXr6VqXa8Fplpd9WAo-4d70ucJBKgmRqhVs7Uqb0KDGJ3w7QtDiCA0p4qhEFKmie-CFlR69k5D3QRfXbVSq398oPBn1EQhmmLF8wEyJAK13mkTuhn7EXPyVAnocaLxf2Rw6T2dMJZar6DDCr0h4snK1bvQZfS1EJix_e_lyZUN5Qoa4SeluAFHW-971AfaFW2DefQ..&amp;type=2&amp;query=%E5%BF%98%E5%8D%B4%E5%89%8D%E5%A4%9C&amp;token=4267F453FA6B97973B3D6A5F9E3404343C3A43056A532CB7",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "",
+      "tags": [],
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "[微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜2033》公布",
+      "summary": "",
+      "source": "weixin",
+      "time": "2026-03-16T15:14:33+00:00",
+      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS-uWX6u8fIhvYa7aLm4yuGbeOBlvIbXr6VqXa8Fplpd9WAo-4d70ucJBKgmRqhVs7Uqb0KDGJ3w7QtDiCA0p4qhEFKmie-CFlR69k5D3QRfXbVSq398oPBn1EQhmmLF8wPTDVzrOxA_0SjoonodlffgOWNBD4JBOotEvqm7qIE5uVKxoIF7dJqwz9R63sV_8qUPN3g9Sq1Aut5rlFmZQV2D2CsG6-xMgzQ..&amp;type=2&amp;query=%E5%BF%98%E5%8D%BB%E5%89%8D%E5%A4%9C&amp;token=4267FB5EE4728889242272478103547D257FD0E76A532CB8",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "",
+      "tags": [],
+      "lang": "zh",
+      "platform_region": "cn"
     }
-  ],
-  "noise_purged": {
-    "count": 2,
-    "date": "2026-07-12",
-    "reason": "sogou split-keyword noise, keeper ruling T30-12"
-  }
+  ]
 }

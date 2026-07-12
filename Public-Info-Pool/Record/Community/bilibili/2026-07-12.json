@@ -1,9 +1,55 @@
 {
   "date": "2026-07-12",
-  "archived_at": "2026-07-12T02:34:11.473075+00:00",
+  "archived_at": "2026-07-12T05:58:41.051113+00:00",
   "source": "bilibili",
-  "item_count": 2,
+  "item_count": 4,
   "items": [
+    {
+      "title": "斯大林强迫蒋介石cos沙耶",
+      "summary": "本视频仅为娱乐，请勿当真\n  └ 叢蘭秋雨 (3赞): 勾子野史还在追我[笑哭]\n  └ 创游的ddfgy (0赞): 优秀啊",
+      "source": "bilibili",
+      "time": "2026-07-12T05:26:44+00:00",
+      "url": "https://www.bilibili.com/video/BV1xXNT62ECG",
+      "engagement": 710,
+      "is_hot": true,
+      "author": "原原喵酱",
+      "tags": [
+        "鬼畜剧场"
+      ],
+      "metadata": {
+        "play": 708,
+        "comment_count": 2,
+        "comments_fetched": 2,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/449a16d9423018015f39773384ad52bd9463dfda.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "ˋˏ꒰ঌ粉粉蛆* Galgame向游戏配乐实验音乐",
+      "summary": "-当画师遇到曲师\n作者-粉粉蛆 音乐风格：实验音乐，噪音\n  └ 耕司青海瑶 (0赞): [doge]\n  └ 哈基沙大玉 (0赞): [鸣潮2周年同人绘画_纸飞机]\n  └ -昆扬 (0赞): [魔法少女的魔女审判表情包_探头]",
+      "source": "bilibili",
+      "time": "2026-07-11T17:07:33+00:00",
+      "url": "https://www.bilibili.com/video/BV1GXNw6VE7i",
+      "engagement": 151,
+      "is_hot": false,
+      "author": "一条粉秋秋的蛆",
+      "tags": [
+        "单机游戏"
+      ],
+      "metadata": {
+        "play": 148,
+        "comment_count": 3,
+        "comments_fetched": 3,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/de553f18a912a92cc9e0ce8e651f58e7e2e00a5c.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
     {
       "title": "原来是个梦",
       "summary": "",

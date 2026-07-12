@@ -1,8 +1,8 @@
 {
   "date": "2026-07-12",
-  "archived_at": "2026-07-12T02:34:11.580494+00:00",
+  "archived_at": "2026-07-12T05:58:41.112009+00:00",
   "source": "steam",
-  "item_count": 1,
+  "item_count": 4,
   "items": [
     {
       "title": "[负面] This thing is pure FOMO\n\nYou can get Saya, but now...",
@@ -22,6 +22,78 @@
         "playtime_forever": 40,
         "votes_up": 0,
         "timestamp_created": 1783797126
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Rather good gamplay taking inspiration from slay t...",
+      "summary": "Rather good gamplay taking inspiration from slay the spire. art can look like midjourny at times but thats just because of the style",
+      "source": "steam_review",
+      "time": "2026-07-12T03:33:38+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198968181419/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198968181419",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 1493,
+        "votes_up": 0,
+        "timestamp_created": 1783827218
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Depression? Good, You'll gain some more after you...",
+      "summary": "Depression? Good, You'll gain some more after you realize you write your name on your grave.",
+      "source": "steam_review",
+      "time": "2026-07-12T02:56:26+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199733689588/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199733689588",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 1336,
+        "votes_up": 0,
+        "timestamp_created": 1783824986
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 前三章简单，对xp及原著党友好",
+      "summary": "前三章简单，对xp及原著党友好",
+      "source": "steam_review",
+      "time": "2026-07-12T02:45:32+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198687505595/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198687505595",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 732,
+        "votes_up": 0,
+        "timestamp_created": 1783824332
       },
       "region": "global",
       "archive_subtype": "review",
