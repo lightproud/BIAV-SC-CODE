@@ -728,3 +728,82 @@ def test_wbi_and_spi_pass_headers_through(monkeypatch):
 def test_spi_missing_data_key_yields_empty(monkeypatch):
     monkeypatch.setattr(nc.requests, 'get', lambda *a, **k: _JsonResp({}))
     assert nc.bilibili_spi_cookies() == {}
+
+
+# ══ 终轮击杀：等价类之外最后一批可确定性观测的存活体 ═══════════════════════
+
+
+def test_resolve_safe_ip_rejects_reserved_range(monkeypatch):
+    # 240.0.0.0/4 保留段不在 is_private 射程内——is_reserved 判断被布尔重排
+    # 吞掉时（or→and）唯有此段能翻车
+    monkeypatch.setattr(nc.socket, 'getaddrinfo', _fake_gai('240.0.0.1'))
+    assert nc._resolve_safe_ip('h') is None
+
+
+def test_is_safe_url_plain_http_and_host_passthrough(monkeypatch):
+    # 击杀 is_safe_url 的 'http' 元组变异 + host 实参丢弃变异
+    seen = {}
+
+    def spy_gai(host, port):
+        seen['host'] = host
+        return [(2, 1, 6, '', ('93.184.216.34', 0))]
+
+    monkeypatch.setattr(nc.socket, 'getaddrinfo', spy_gai)
+    assert nc.is_safe_url('http://plain.example/x') is True
+    assert seen['host'] == 'plain.example'         # host 必须原样传给解析器
+
+
+def test_safe_get_follows_308(fake_session):
+    # 308 Permanent Redirect 在跳转码元组末位，末位数字变异唯此能杀
+    fake_session.queue = [_Resp(308, {'Location': 'https://a.example/n'}), _Resp(200)]
+    assert nc.safe_get('https://a.example/x').status_code == 200
+    assert len(fake_session.calls) == 2
+
+
+def test_get_with_retry_url_reaches_session(monkeypatch):
+    seen = {}
+
+    class _S:
+        def __init__(self):
+            self.max_redirects = None
+
+        def get(self, url, params=None, headers=None, timeout=None):
+            seen['url'] = url
+            return _OkResp()
+
+    monkeypatch.setattr(nc.requests, 'Session', _S)
+    nc.get_with_retry('https://exact.example/path')
+    assert seen['url'] == 'https://exact.example/path'
+
+
+def test_wbi_cache_expiry_boundary_exactly_1800s(monkeypatch):
+    # 缓存寿命恰 1800 秒：< 判定视为过期须重取（<= / 1801 变异在此翻车）
+    nc._wbi_cache.clear()
+    nc._wbi_cache.update({'mixin_key': 'old', 'ts': 0.0})
+    monkeypatch.setattr(nc.time, 'time', lambda: 1800.0)
+    monkeypatch.setattr(nc.requests, 'get', lambda *a, **k: _JsonResp(
+        {'data': {'wbi_img': {
+            'img_url': f'https://x/{_IMG}.png', 'sub_url': f'https://x/{_SUB}.png'}}}))
+    assert nc.get_wbi_mixin_key() == _GOLDEN_MIXIN  # 已过期：取新，非续 'old'
+    nc._wbi_cache.clear()
+
+
+def test_dump_json_atomic_creates_two_missing_levels(tmp_path):
+    # parents=True 只有在缺两级以上目录时才与缺省行为可区分
+    target = tmp_path / 'lv1' / 'lv2' / 'out.json'
+    nc.dump_json_atomic(target, {'a': 1})
+    assert json.loads(target.read_text(encoding='utf-8')) == {'a': 1}
+
+
+def test_dump_json_atomic_fdopen_encoding_exact(tmp_path, monkeypatch):
+    # 落盘编码必须显式小写 'utf-8'——不许吃 locale 缺省（云容器 locale 不可控）
+    seen = {}
+    real_fdopen = nc.os.fdopen
+
+    def spy_fdopen(fd, mode, **kw):
+        seen.update(mode=mode, **kw)
+        return real_fdopen(fd, mode, **kw)
+
+    monkeypatch.setattr(nc.os, 'fdopen', spy_fdopen)
+    nc.dump_json_atomic(tmp_path / 'enc.json', {'k': '值'})
+    assert seen == {'mode': 'w', 'encoding': 'utf-8'}
