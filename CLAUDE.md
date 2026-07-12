@@ -298,9 +298,7 @@ brain-in-a-vat/
 │   ├── wiki/   # 已冻结（2026-07-12 原使命#2 取消，成果保留）：VitePress 站点 + 72 角色数据库
 │   ├── site/   # 对外门户：静态站（public/）+ 设计令牌（design/）
 │   ├── game/   # 衍生游戏（退主线，守密人个人兴趣，不主线派发）
-│   ├── silver-core-sdk/  # 使命#2 通用 AI 底层开发基地（2026-07-12 转正）· 银芯→黑池单向输出物：Claude Agent SDK 干净重实现（原名 bpt-agent-sdk，2026-07-10 更名），见 project-status「## Silver Core SDK」
-│   ├── bpt-v2t/  # 语音代替输入（非使命线）：本地 STT 语音输入工具 + 专名热词桥，见 project-status「## BPT-V2T」
-│   └── bpt-pm/         # 项目排期工作台（非使命线）：单网页 CPM 自动排期 + 基线比对，数据协议 bpt-pm/v1，见其 CONTEXT.md
+│   └── silver-core-sdk/  # 使命#2 通用 AI 底层开发基地（2026-07-12 转正）· 银芯→黑池单向输出物：Claude Agent SDK 干净重实现（原名 bpt-agent-sdk，2026-07-10 更名），见 project-status「## Silver Core SDK」
 ├── memory/                        # 银芯记忆层（决策 / 方法论 / 踩坑 / active hub）
 │   ├── active/                    # 主题入口卡（4 个高频 hub，优先读这里再下钻）
 │   ├── archive/ research/ strategy/
