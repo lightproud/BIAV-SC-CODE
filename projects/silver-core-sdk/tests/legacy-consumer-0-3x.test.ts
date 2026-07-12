@@ -101,7 +101,10 @@ describe('legacy 0.3x surface lock (fixture: legacy-0-3x-surface.json)', () => {
   // One compiler program shared across the assertions below (it is the slow part).
   const current = enumerateCurrentSurface();
 
-  for (const version of ['0.30.0', '0.39.0'] as const) {
+  // 0.37.1 is the ACTUAL black-pool BPT pin (keeper, 2026-07-12); 0.30.0 and
+  // 0.39.0 bracket the whole 0.3x line. See the fixture _meta for the
+  // 0.37.1/0.38.0 twin-build caveat (identical surfaces, one entry covers both).
+  for (const version of ['0.30.0', '0.37.1', '0.39.0'] as const) {
     const frozen = fixture[version];
 
     it(`every ${version} VALUE export is still a value export`, () => {
