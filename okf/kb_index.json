@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 365,
+    "concepts": 353,
     "edges": 433,
-    "terms": 6211,
+    "terms": 6198,
     "by_type": {
       "character": 72,
-      "dataset": 111,
-      "documentation": 117,
+      "dataset": 98,
+      "documentation": 118,
       "knowledge-pointer": 45,
       "reference": 17,
       "research": 3
@@ -26,15 +26,14 @@
       "memory": 48,
       "news-output": 23,
       "projects": 28,
-      "resource": 88,
+      "resource": 89,
       "sources": 20,
       "story": 11,
-      "unpacked": 13,
       "wiki-data": 27
     },
     "by_tier": {
       "skeleton": 134,
-      "search": 231
+      "search": 219
     }
   },
   "sections": {
@@ -68,7 +67,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 88
+      "count": 89
     },
     "sources": {
       "index": "/sources/index.md",
@@ -77,10 +76,6 @@
     "story": {
       "index": "/story/index.md",
       "count": 11
-    },
-    "unpacked": {
-      "index": "/unpacked/index.md",
-      "count": 13
     },
     "wiki-data": {
       "index": "/wiki-data/index.md",
@@ -1549,7 +1544,7 @@
     "/extracted/extracted-art-assets.md": {
       "type": "dataset",
       "title": "art_assets",
-      "description": "一手可读解包源 wiki 侧独占件「art_assets」：2 文件 / 2.6MB。与 Game-Unpacked 重复的主体已于 2026-07-11 去重（唯一本体见 unpacked 层），此处仅余 Game-Unpacked 没有的独占内容。",
+      "description": "一手可读解包源 wiki 侧独占件「art_assets」：2 文件 / 2.6MB。解包 text 主体层（原 Game-Unpacked）已于 2026-07-12 守密人裁定整层删除（git 历史可追），此处为仅存的解包独占内容。",
       "resource": "/projects/wiki/data/extracted/art_assets/",
       "tags": [
         "data_layer:full_archive",
@@ -1564,7 +1559,7 @@
     "/extracted/extracted-categorized.md": {
       "type": "dataset",
       "title": "categorized",
-      "description": "一手可读解包源 wiki 侧独占件「categorized」：2 文件 / 2.2MB。与 Game-Unpacked 重复的主体已于 2026-07-11 去重（唯一本体见 unpacked 层），此处仅余 Game-Unpacked 没有的独占内容。",
+      "description": "一手可读解包源 wiki 侧独占件「categorized」：2 文件 / 2.2MB。解包 text 主体层（原 Game-Unpacked）已于 2026-07-12 守密人裁定整层删除（git 历史可追），此处为仅存的解包独占内容。",
       "resource": "/projects/wiki/data/extracted/categorized/",
       "tags": [
         "data_layer:full_archive",
@@ -4166,6 +4161,20 @@
       "tier": "search",
       "degree": 1
     },
+    "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md": {
+      "type": "documentation",
+      "title": "stop-hook-git-check-fixed-20260712",
+      "description": "repo-engineering 产物（sh）（格式：sh）",
+      "resource": "/Public-Info-Pool/Resource/repo-engineering/stop-hook-git-check-fixed-20260712.sh",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 0
+    },
     "/resource/resource-repo-engineering-test-coverage-analysis-202606.md": {
       "type": "documentation",
       "title": "test-coverage-analysis-202606",
@@ -4639,201 +4648,6 @@
         "data_layer:full_archive"
       ],
       "section": "story",
-      "tier": "search",
-      "degree": 0
-    },
-    "/unpacked/unpacked-config.md": {
-      "type": "dataset",
-      "title": "config",
-      "description": "客户端解包lua 字节码子集（binary，非明文）「config」：149 文件 / 90.7MB。一手解包，本体原地。",
-      "resource": "/Public-Info-Pool/Reference/Game-Unpacked/config/",
-      "tags": [
-        "data_layer:full_archive",
-        "content:config",
-        "encoding:luac",
-        "first-hand-unpack"
-      ],
-      "section": "unpacked",
-      "tier": "search",
-      "degree": 0
-    },
-    "/unpacked/unpacked-ejoysdk-lua.md": {
-      "type": "dataset",
-      "title": "ejoysdk_lua",
-      "description": "客户端解包lua 字节码子集（binary，非明文）「ejoysdk_lua」：588 文件 / 9.3MB。一手解包，本体原地。",
-      "resource": "/Public-Info-Pool/Reference/Game-Unpacked/ejoysdk_lua/",
-      "tags": [
-        "data_layer:full_archive",
-        "content:ejoysdk-lua",
-        "encoding:luac",
-        "first-hand-unpack"
-      ],
-      "section": "unpacked",
-      "tier": "search",
-      "degree": 0
-    },
-    "/unpacked/unpacked-foundation.md": {
-      "type": "dataset",
-      "title": "foundation",
-      "description": "客户端解包lua 字节码子集（binary，非明文）「foundation」：77 文件 / 652.5KB。一手解包，本体原地。",
-      "resource": "/Public-Info-Pool/Reference/Game-Unpacked/foundation/",
-      "tags": [
-        "data_layer:full_archive",
-        "content:foundation",
-        "encoding:luac",
-        "first-hand-unpack"
-      ],
-      "section": "unpacked",
-      "tier": "search",
-      "degree": 0
-    },
-    "/unpacked/unpacked-game-data-all.md": {
-      "type": "dataset",
-      "title": "全部游戏数据",
-      "description": "客户端解包text 子集（明文）「全部游戏数据」：13 文件 / 20.7MB。一手解包，本体原地。",
-      "resource": "/Public-Info-Pool/Reference/Game-Unpacked/全部游戏数据/",
-      "tags": [
-        "data_layer:full_archive",
-        "content:game-data-all",
-        "encoding:text",
-        "first-hand-unpack"
-      ],
-      "section": "unpacked",
-      "tier": "search",
-      "degree": 0
-    },
-    "/unpacked/unpacked-game-text.md": {
-      "type": "dataset",
-      "title": "游戏文本",
-      "description": "客户端解包text 子集（明文）「游戏文本」：10 文件 / 22.7MB。一手解包，本体原地。",
-      "resource": "/Public-Info-Pool/Reference/Game-Unpacked/游戏文本/",
-      "tags": [
-        "data_layer:full_archive",
-        "content:game-text",
-        "encoding:text",
-        "first-hand-unpack"
-      ],
-      "section": "unpacked",
-      "tier": "search",
-      "degree": 0
-    },
-    "/unpacked/unpacked-gamelauncher.md": {
-      "type": "dataset",
-      "title": "gamelauncher",
-      "description": "客户端解包lua 字节码子集（binary，非明文）「gamelauncher」：3 文件 / 8.2KB。一手解包，本体原地。",
-      "resource": "/Public-Info-Pool/Reference/Game-Unpacked/gamelauncher/",
-      "tags": [
-        "data_layer:full_archive",
-        "content:gamelauncher",
-        "encoding:luac",
-        "first-hand-unpack"
-      ],
-      "section": "unpacked",
-      "tier": "search",
-      "degree": 0
-    },
-    "/unpacked/unpacked-gamescript.md": {
-      "type": "dataset",
-      "title": "gamescript",
-      "description": "客户端解包lua 字节码子集（binary，非明文）「gamescript」：2295 文件 / 22.9MB。一手解包，本体原地。",
-      "resource": "/Public-Info-Pool/Reference/Game-Unpacked/gamescript/",
-      "tags": [
-        "data_layer:full_archive",
-        "content:gamescript",
-        "encoding:luac",
-        "first-hand-unpack"
-      ],
-      "section": "unpacked",
-      "tier": "search",
-      "degree": 0
-    },
-    "/unpacked/unpacked-gameupdate.md": {
-      "type": "dataset",
-      "title": "gameupdate",
-      "description": "客户端解包text 子集（明文）「gameupdate」：127 文件 / 119.1KB。一手解包，本体原地。",
-      "resource": "/Public-Info-Pool/Reference/Game-Unpacked/gameupdate/",
-      "tags": [
-        "data_layer:full_archive",
-        "content:gameupdate",
-        "encoding:text",
-        "first-hand-unpack"
-      ],
-      "section": "unpacked",
-      "tier": "search",
-      "degree": 0
-    },
-    "/unpacked/unpacked-lua-tables.md": {
-      "type": "dataset",
-      "title": "Lua表还原",
-      "description": "客户端解包text 子集（明文）「Lua表还原」：24 文件 / 18.7MB。一手解包，本体原地。",
-      "resource": "/Public-Info-Pool/Reference/Game-Unpacked/Lua表还原/",
-      "tags": [
-        "data_layer:full_archive",
-        "content:lua-tables",
-        "encoding:text",
-        "first-hand-unpack"
-      ],
-      "section": "unpacked",
-      "tier": "search",
-      "degree": 0
-    },
-    "/unpacked/unpacked-share.md": {
-      "type": "dataset",
-      "title": "share",
-      "description": "客户端解包lua 字节码子集（binary，非明文）「share」：299 文件 / 2.0MB。一手解包，本体原地。",
-      "resource": "/Public-Info-Pool/Reference/Game-Unpacked/share/",
-      "tags": [
-        "data_layer:full_archive",
-        "content:share",
-        "encoding:luac",
-        "first-hand-unpack"
-      ],
-      "section": "unpacked",
-      "tier": "search",
-      "degree": 0
-    },
-    "/unpacked/unpacked-sproto.md": {
-      "type": "dataset",
-      "title": "sproto",
-      "description": "客户端解包text 子集（明文）「sproto」：1 文件 / 2.7KB。一手解包，本体原地。",
-      "resource": "/Public-Info-Pool/Reference/Game-Unpacked/sproto/",
-      "tags": [
-        "data_layer:full_archive",
-        "content:sproto",
-        "encoding:text",
-        "first-hand-unpack"
-      ],
-      "section": "unpacked",
-      "tier": "search",
-      "degree": 0
-    },
-    "/unpacked/unpacked-text-cn.md": {
-      "type": "dataset",
-      "title": "text_cn",
-      "description": "客户端解包lua 字节码子集（binary，非明文）「text_cn」：69 文件 / 28.1MB。一手解包，本体原地。",
-      "resource": "/Public-Info-Pool/Reference/Game-Unpacked/text_cn/",
-      "tags": [
-        "data_layer:full_archive",
-        "content:text-cn",
-        "encoding:luac",
-        "first-hand-unpack"
-      ],
-      "section": "unpacked",
-      "tier": "search",
-      "degree": 0
-    },
-    "/unpacked/unpacked-vue.md": {
-      "type": "dataset",
-      "title": "vue",
-      "description": "客户端解包lua 字节码子集（binary，非明文）「vue」：39 文件 / 322.7KB。一手解包，本体原地。",
-      "resource": "/Public-Info-Pool/Reference/Game-Unpacked/vue/",
-      "tags": [
-        "data_layer:full_archive",
-        "content:vue",
-        "encoding:luac",
-        "first-hand-unpack"
-      ],
-      "section": "unpacked",
       "tier": "search",
       "degree": 0
     },
@@ -10160,19 +9974,6 @@
       "/story/story_index.md",
       "/story/story_search_index.md",
       "/story/story_units.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md",
       "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
@@ -10307,6 +10108,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
@@ -10631,20 +10433,7 @@
       "/story/stages_by_unit.md",
       "/story/story_index.md",
       "/story/story_search_index.md",
-      "/story/story_units.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md"
+      "/story/story_units.md"
     ],
     "archived": [
       "/projects/silver-core-sdk-doc-memory-governance.md"
@@ -10798,15 +10587,7 @@
     ],
     "binary": [
       "/projects/extracted-lua-inventory.md",
-      "/projects/releases-treasure-map.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md"
+      "/projects/releases-treasure-map.md"
     ],
     "bio": [
       "/characters/125346.md",
@@ -11110,6 +10891,9 @@
       "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md"
     ],
+    "check": [
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md"
+    ],
     "ci": [
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md"
@@ -11173,8 +10957,7 @@
     "cn": [
       "/community/community-taptap.md",
       "/sources/taptap.md",
-      "/sources/taptap_review.md",
-      "/unpacked/unpacked-text-cn.md"
+      "/sources/taptap_review.md"
     ],
     "code": [
       "/memory/memory-ext-active-policy-direct-push-main.md",
@@ -11550,6 +11333,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
@@ -11584,19 +11368,6 @@
       "/story/story_research_todo.md",
       "/story/story_search_index.md",
       "/story/story_units.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md",
       "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
@@ -11629,7 +11400,6 @@
       "/projects/silver-core-sdk-doc-concurrency.md"
     ],
     "config": [
-      "/unpacked/unpacked-config.md",
       "/wiki-data/wiki-data-language-config.md"
     ],
     "conflict": [
@@ -11653,20 +11423,7 @@
     ],
     "content": [
       "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md"
+      "/extracted/extracted-categorized.md"
     ],
     "context": [
       "/memory/morimens-context.md",
@@ -11924,6 +11681,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
@@ -12256,6 +12014,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
@@ -12290,19 +12049,6 @@
       "/story/story_research_todo.md",
       "/story/story_search_index.md",
       "/story/story_units.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md",
       "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
@@ -12446,6 +12192,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md"
@@ -12666,26 +12413,8 @@
       "/characters/78840.md",
       "/characters/78841.md"
     ],
-    "ejoysdk": [
-      "/unpacked/unpacked-ejoysdk-lua.md"
-    ],
     "electron": [
       "/projects/silver-core-sdk-doc-migration.md"
-    ],
-    "encoding": [
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md"
     ],
     "endpoint": [
       "/projects/silver-core-sdk-doc-openai-protocol.md"
@@ -12743,6 +12472,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md"
@@ -12859,20 +12589,10 @@
     ],
     "first": [
       "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md"
+      "/extracted/extracted-categorized.md"
+    ],
+    "fixed": [
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md"
     ],
     "fmm": [
       "/story/story_search_index.md"
@@ -12883,9 +12603,6 @@
     ],
     "forrestchang": [
       "/memory/memory-ext-karpathy-coding-principles.md"
-    ],
-    "foundation": [
-      "/unpacked/unpacked-foundation.md"
     ],
     "fragment": [
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
@@ -12985,20 +12702,7 @@
       "/story/stages_by_unit.md",
       "/story/story_index.md",
       "/story/story_search_index.md",
-      "/story/story_units.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md"
+      "/story/story_units.md"
     ],
     "fulldetail": [
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md"
@@ -13061,23 +12765,7 @@
       "/projects/project-game.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md",
       "/wiki-data/wiki-data-update-notices.md"
-    ],
-    "gamelauncher": [
-      "/unpacked/unpacked-gamelauncher.md"
     ],
     "gameplay": [
       "/wiki-data/wiki-data-banners-by-character.md",
@@ -13089,12 +12777,6 @@
       "/wiki-data/wiki-data-stages.md",
       "/wiki-data/wiki-data-summon.md",
       "/wiki-data/wiki-data-tasks.md"
-    ],
-    "gamescript": [
-      "/unpacked/unpacked-gamescript.md"
-    ],
-    "gameupdate": [
-      "/unpacked/unpacked-gameupdate.md"
     ],
     "gap": [
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
@@ -13184,10 +12866,13 @@
     ],
     "git": [
       "/community/community-index.md",
+      "/extracted/extracted-art-assets.md",
+      "/extracted/extracted-categorized.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-research-discord-archive-backfill-conflict.md",
-      "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md"
+      "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md"
     ],
     "github": [
       "/README.md",
@@ -13260,20 +12945,7 @@
     ],
     "hand": [
       "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md"
+      "/extracted/extracted-categorized.md"
     ],
     "handoff": [
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
@@ -13320,6 +12992,9 @@
     ],
     "helper": [
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md"
+    ],
+    "hook": [
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md"
     ],
     "host": [
       "/projects/silver-core-sdk-doc-subagents.md"
@@ -13558,6 +13233,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
@@ -13580,20 +13256,7 @@
       "/sources/weibo.md",
       "/sources/weixin.md",
       "/sources/youtube.md",
-      "/sources/youtube_comments.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md"
+      "/sources/youtube_comments.md"
     ],
     "infobox": [
       "/memory/memory-ext-research-best-wiki-features.md"
@@ -13762,12 +13425,7 @@
       "/README.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
-      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-vue.md"
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "keeper": [
       "/projects/silver-core-sdk-doc-compat.md",
@@ -14062,6 +13720,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
@@ -14095,19 +13754,6 @@
       "/story/story_research_todo.md",
       "/story/story_search_index.md",
       "/story/story_units.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md",
       "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
@@ -14334,15 +13980,6 @@
       "/projects/extracted-lua-readme.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md",
       "/wiki-data/wiki-data-feature-unlock.md",
       "/wiki-data/wiki-data-item-stories.md",
       "/wiki-data/wiki-data-language-config.md",
@@ -14358,15 +13995,7 @@
       "/wiki-data/wiki-data-world-lore.md"
     ],
     "luac": [
-      "/projects/extracted-lua-inventory.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md"
+      "/projects/extracted-lua-inventory.md"
     ],
     "luat0": [
       "/extracted/extracted-readme.md"
@@ -14448,15 +14077,7 @@
     "mb": [
       "/assets/assets-images.md",
       "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-text-cn.md"
+      "/extracted/extracted-categorized.md"
     ],
     "mcp": [
       "/README.md",
@@ -15328,6 +14949,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
@@ -15350,20 +14972,7 @@
       "/sources/weibo.md",
       "/sources/weixin.md",
       "/sources/youtube.md",
-      "/sources/youtube_comments.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md"
+      "/sources/youtube_comments.md"
     ],
     "positioning": [
       "/memory/memory-ext-bpt-positioning.md",
@@ -15739,6 +15348,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
@@ -15761,20 +15371,7 @@
       "/sources/weibo.md",
       "/sources/weixin.md",
       "/sources/youtube.md",
-      "/sources/youtube_comments.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md"
+      "/sources/youtube_comments.md"
     ],
     "pull": [
       "/memory/memory-ext-active-policy-direct-push-main.md"
@@ -15959,20 +15556,7 @@
     ],
     "reference": [
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
-      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md"
+      "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md"
     ],
     "references": [
       "/wiki-data/wiki-data-drops-by-item.md"
@@ -16049,6 +15633,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md"
@@ -16174,6 +15759,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
@@ -16439,8 +16025,8 @@
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md",
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md"
     ],
-    "share": [
-      "/unpacked/unpacked-share.md"
+    "sh": [
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md"
     ],
     "shift": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -16628,9 +16214,6 @@
     "speech": [
       "/assets/persona-erica-speech-canon.md"
     ],
-    "sproto": [
-      "/unpacked/unpacked-sproto.md"
-    ],
     "squash": [
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md"
     ],
@@ -16673,6 +16256,9 @@
       "/sources/official.md",
       "/sources/steam.md",
       "/sources/steam_discussion.md"
+    ],
+    "stop": [
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md"
     ],
     "stopgame": [
       "/community/community-stopgame.md",
@@ -16921,9 +16507,6 @@
     "t2": [
       "/projects/news-archive-sources-registry.md"
     ],
-    "tables": [
-      "/unpacked/unpacked-lua-tables.md"
-    ],
     "tags": [
       "/README.md"
     ],
@@ -16968,15 +16551,11 @@
       "/README.md"
     ],
     "text": [
+      "/extracted/extracted-art-assets.md",
+      "/extracted/extracted-categorized.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
       "/wiki-data/wiki-data-panel-text.md",
       "/wiki-data/wiki-data-voice-character-map.md"
     ],
@@ -17121,6 +16700,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md"
@@ -17205,38 +16785,12 @@
     ],
     "unpack": [
       "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md"
+      "/extracted/extracted-categorized.md"
     ],
     "unpacked": [
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
       "/projects/releases-treasure-map.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md",
       "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
@@ -17433,9 +16987,6 @@
       "/README.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md"
-    ],
-    "vue": [
-      "/unpacked/unpacked-vue.md"
     ],
     "way": [
       "/projects/silver-core-sdk-doc-subagents.md"
@@ -17653,20 +17204,7 @@
     ],
     "一手": [
       "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md"
+      "/extracted/extracted-categorized.md"
     ],
     "一批": [
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
@@ -17685,10 +17223,6 @@
     ],
     "一文": [
       "/README.md"
-    ],
-    "一本": [
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md"
     ],
     "一权": [
       "/memory/memory-ext-todo.md",
@@ -18239,22 +17773,10 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md",
       "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
@@ -18516,6 +18038,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
@@ -18550,19 +18073,6 @@
       "/story/story_research_todo.md",
       "/story/story_search_index.md",
       "/story/story_units.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md",
       "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
@@ -18849,6 +18359,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
@@ -18872,19 +18383,6 @@
       "/sources/weixin.md",
       "/sources/youtube.md",
       "/sources/youtube_comments.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md",
       "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
@@ -19233,6 +18731,10 @@
     ],
     "为什": [
       "/characters/15566.md"
+    ],
+    "为仅": [
+      "/extracted/extracted-art-assets.md",
+      "/extracted/extracted-categorized.md"
     ],
     "为他": [
       "/characters/15578.md",
@@ -19781,7 +19283,8 @@
       "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
-      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md"
+      "/resource/resource-repo-engineering-claude-desktop-ui-wireframe-20260704.md",
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md"
     ],
     "产生": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md"
@@ -19910,15 +19413,15 @@
     "仁爱": [
       "/characters/15599.md"
     ],
-    "仅余": [
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md"
-    ],
     "仅供": [
       "/memory/contribution-protocol.md"
     ],
     "仅剩": [
       "/characters/15594.md"
+    ],
+    "仅存": [
+      "/extracted/extracted-art-assets.md",
+      "/extracted/extracted-categorized.md"
     ],
     "仅定": [
       "/story/STORY_RESEARCH.md",
@@ -20104,6 +19607,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
@@ -20127,19 +19631,6 @@
       "/sources/weixin.md",
       "/sources/youtube.md",
       "/sources/youtube_comments.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md",
       "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
@@ -20854,20 +20345,7 @@
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md"
     ],
     "体原": [
-      "/assets/assets-images.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md"
+      "/assets/assets-images.md"
     ],
     "体参": [
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
@@ -20901,12 +20379,12 @@
     "体对": [
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
     ],
-    "体差": [
-      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
-    ],
-    "体已": [
+    "体层": [
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md"
+    ],
+    "体差": [
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
     ],
     "体效": [
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
@@ -21085,22 +20563,10 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md",
       "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
@@ -21138,10 +20604,6 @@
     ],
     "体覆": [
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md"
-    ],
-    "体见": [
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md"
     ],
     "体观": [
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md"
@@ -21365,6 +20827,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
@@ -21379,19 +20842,6 @@
       "/story/story_research_todo.md",
       "/story/story_search_index.md",
       "/story/story_units.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md",
       "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
@@ -22070,8 +21520,7 @@
     ],
     "全部": [
       "/memory/memory-ext-wiki-characters-schema-v1.md",
-      "/projects/extracted-lua-readme.md",
-      "/unpacked/unpacked-game-data-all.md"
+      "/projects/extracted-lua-readme.md"
     ],
     "全量": [
       "/README.md",
@@ -22943,6 +22392,8 @@
       "/characters/15601.md"
     ],
     "删除": [
+      "/extracted/extracted-art-assets.md",
+      "/extracted/extracted-categorized.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md",
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md"
     ],
@@ -23262,22 +22713,10 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md",
       "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
@@ -23602,6 +23041,10 @@
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md"
+    ],
+    "包独": [
+      "/extracted/extracted-art-assets.md",
+      "/extracted/extracted-categorized.md"
     ],
     "包结": [
       "/story/lore_entries.md",
@@ -24009,6 +23452,8 @@
     ],
     "历史": [
       "/community/community-index.md",
+      "/extracted/extracted-art-assets.md",
+      "/extracted/extracted-categorized.md",
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/morimens-context.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
@@ -24099,20 +23544,7 @@
       "/sources/weibo.md",
       "/sources/weixin.md",
       "/sources/youtube.md",
-      "/sources/youtube_comments.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md"
+      "/sources/youtube_comments.md"
     ],
     "原型": [
       "/story/STORY_RESEARCH.md"
@@ -24166,10 +23598,6 @@
     ],
     "去大": [
       "/characters/77923.md"
-    ],
-    "去重": [
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md"
     ],
     "参照": [
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
@@ -24827,6 +24255,10 @@
     "可达": [
       "/memory/capability-index.md"
     ],
+    "可追": [
+      "/extracted/extracted-art-assets.md",
+      "/extracted/extracted-categorized.md"
+    ],
     "可造": [
       "/characters/15572.md"
     ],
@@ -24965,6 +24397,10 @@
     ],
     "史原": [
       "/resource/resource-proposal-discord-layout-unification-20260710.md"
+    ],
+    "史可": [
+      "/extracted/extracted-art-assets.md",
+      "/extracted/extracted-categorized.md"
     ],
     "史回": [
       "/sources/appstore.md",
@@ -25563,8 +24999,6 @@
     ],
     "唯一": [
       "/README.md",
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
       "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-skill-authoring-standard.md",
       "/memory/memory-ext-todo.md",
@@ -26303,12 +25737,12 @@
     "壳让": [
       "/characters/15565.md"
     ],
-    "处于": [
-      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md"
-    ],
-    "处仅": [
+    "处为": [
       "/extracted/extracted-art-assets.md",
       "/extracted/extracted-categorized.md"
+    ],
+    "处于": [
+      "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md"
     ],
     "处理": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -26560,22 +25994,10 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md",
       "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
@@ -26640,8 +26062,6 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
     ],
     "复的": [
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
     ],
     "复自": [
@@ -27369,22 +26789,10 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md",
       "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
@@ -27450,21 +26858,6 @@
     ],
     "子的": [
       "/characters/77917.md"
-    ],
-    "子集": [
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md"
     ],
     "子项": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md",
@@ -27566,15 +26959,7 @@
     "字节": [
       "/extracted/extracted-readme.md",
       "/projects/extracted-lua-inventory.md",
-      "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md"
+      "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md"
     ],
     "字重": [
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
@@ -27623,6 +27008,8 @@
     ],
     "存的": [
       "/characters/15580.md",
+      "/extracted/extracted-art-assets.md",
+      "/extracted/extracted-categorized.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
     ],
     "孤嚎": [
@@ -27688,6 +27075,8 @@
       "/characters/78840.md",
       "/characters/78841.md",
       "/characters/94451.md",
+      "/extracted/extracted-art-assets.md",
+      "/extracted/extracted-categorized.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
@@ -28014,6 +27403,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
@@ -28048,19 +27438,6 @@
       "/story/story_research_todo.md",
       "/story/story_search_index.md",
       "/story/story_units.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md",
       "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
@@ -28099,6 +27476,10 @@
       "/README.md",
       "/memory/memory-ext-skill-authoring-standard.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
+    ],
+    "定整": [
+      "/extracted/extracted-art-assets.md",
+      "/extracted/extracted-categorized.md"
     ],
     "定新": [
       "/characters/15589.md"
@@ -28240,20 +27621,7 @@
       "/sources/youtube_comments.md"
     ],
     "客户": [
-      "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md"
+      "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md"
     ],
     "宣誓": [
       "/characters/15586.md"
@@ -28638,6 +28006,10 @@
     ],
     "层分": [
       "/memory/memory-research-community-analysis-2026-05-18-26.md"
+    ],
+    "层删": [
+      "/extracted/extracted-art-assets.md",
+      "/extracted/extracted-categorized.md"
     ],
     "层即": [
       "/sources/appstore.md",
@@ -30890,12 +30262,6 @@
       "/characters/94451.md",
       "/characters/95786.md"
     ],
-    "戏数": [
-      "/unpacked/unpacked-game-data-all.md"
-    ],
-    "戏文": [
-      "/unpacked/unpacked-game-text.md"
-    ],
     "戏资": [
       "/projects/entry-readme.md"
     ],
@@ -31127,20 +30493,7 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md"
     ],
     "户端": [
-      "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md"
+      "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md"
     ],
     "户线": [
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md"
@@ -31211,21 +30564,6 @@
     "手的": [
       "/characters/15560.md",
       "/characters/15577.md"
-    ],
-    "手解": [
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md"
     ],
     "才能": [
       "/characters/15584.md",
@@ -31919,6 +31257,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
@@ -31953,19 +31292,6 @@
       "/story/story_research_todo.md",
       "/story/story_search_index.md",
       "/story/story_units.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md",
       "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
@@ -32504,6 +31830,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
@@ -32527,19 +31854,6 @@
       "/sources/weixin.md",
       "/sources/youtube.md",
       "/sources/youtube_comments.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md",
       "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
@@ -32852,6 +32166,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
@@ -32861,19 +32176,6 @@
       "/story/story_research_notes.md",
       "/story/story_research_todo.md",
       "/story/story_search_index.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md",
       "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
@@ -33282,6 +32584,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
@@ -33316,19 +32619,6 @@
       "/story/story_research_todo.md",
       "/story/story_search_index.md",
       "/story/story_units.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md",
       "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
@@ -33580,6 +32870,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
@@ -33614,19 +32905,6 @@
       "/story/story_research_todo.md",
       "/story/story_search_index.md",
       "/story/story_units.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md",
       "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
@@ -33828,7 +33106,6 @@
       "/sources/youtube.md",
       "/sources/youtube_comments.md",
       "/story/story_layer_readme.md",
-      "/unpacked/unpacked-game-data-all.md",
       "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-schema-banners-schema.md",
       "/wiki-data/wiki-schema-characters-processed-schema.md",
@@ -33871,7 +33148,9 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md"
     ],
     "整层": [
-      "/README.md"
+      "/README.md",
+      "/extracted/extracted-art-assets.md",
+      "/extracted/extracted-categorized.md"
     ],
     "整性": [
       "/community/community-appstore.md",
@@ -33958,25 +33237,11 @@
       "/memory/memory-research-discord-archive-backfill-conflict.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
-      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md"
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "文本": [
       "/characters/54116.md",
-      "/characters/54117.md",
-      "/unpacked/unpacked-game-text.md"
+      "/characters/54117.md"
     ],
     "文权": [
       "/memory/capability-index.md",
@@ -34478,21 +33743,6 @@
     "明式": [
       "/projects/news-archive-sources-registry.md"
     ],
-    "明文": [
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md"
-    ],
     "明日": [
       "/characters/15600.md"
     ],
@@ -34941,8 +34191,6 @@
     "有的": [
       "/characters/54116.md",
       "/characters/54117.md",
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
     ],
     "有着": [
@@ -35300,6 +34548,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
@@ -35334,19 +34583,6 @@
       "/story/story_research_todo.md",
       "/story/story_search_index.md",
       "/story/story_units.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md",
       "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
@@ -35739,22 +34975,10 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md",
       "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
@@ -36349,23 +35573,11 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
       "/story/STORY_RESEARCH.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md",
       "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
@@ -36568,6 +35780,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md"
@@ -37078,22 +36291,10 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md",
       "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
@@ -37477,23 +36678,11 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
       "/story/lore_entries.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md",
       "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
@@ -38244,9 +37433,7 @@
       "/characters/94451.md",
       "/characters/95786.md",
       "/extracted/extracted-readme.md",
-      "/projects/entry-readme.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md"
+      "/projects/entry-readme.md"
     ],
     "源不": [
       "/characters/15573.md"
@@ -39730,10 +38917,6 @@
     "的中": [
       "/characters/15580.md"
     ],
-    "的主": [
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md"
-    ],
     "的义": [
       "/characters/77922.md"
     ],
@@ -40119,8 +39302,6 @@
     ],
     "的独": [
       "/characters/15586.md",
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
       "/projects/silver-core-sdk-doc-positioning.md"
     ],
     "的猎": [
@@ -40271,7 +39452,9 @@
     ],
     "的解": [
       "/characters/15602.md",
-      "/characters/95786.md"
+      "/characters/95786.md",
+      "/extracted/extracted-art-assets.md",
+      "/extracted/extracted-categorized.md"
     ],
     "的触": [
       "/characters/15563.md"
@@ -40697,16 +39880,6 @@
     ],
     "码主": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md"
-    ],
-    "码子": [
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md"
     ],
     "码层": [
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
@@ -41399,20 +40572,7 @@
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md"
     ],
     "端解": [
-      "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md"
+      "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md"
     ],
     "端验": [
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md"
@@ -42781,15 +41941,7 @@
     ],
     "节码": [
       "/extracted/extracted-readme.md",
-      "/projects/extracted-lua-inventory.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md"
+      "/projects/extracted-lua-inventory.md"
     ],
     "芯不": [
       "/memory/memory-ext-bpt-guidance-protocol.md"
@@ -43154,9 +42306,6 @@
     "表达": [
       "/memory/memory-ext-wiki-characters-schema-v1.md"
     ],
-    "表还": [
-      "/unpacked/unpacked-lua-tables.md"
-    ],
     "表述": [
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md"
     ],
@@ -43208,6 +42357,8 @@
       "/characters/78840.md",
       "/characters/78841.md",
       "/characters/94451.md",
+      "/extracted/extracted-art-assets.md",
+      "/extracted/extracted-categorized.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
@@ -43396,20 +42547,7 @@
       "/projects/extracted-lua-readme.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/story/lore_entries.md",
-      "/story/story_units.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md"
+      "/story/story_units.md"
     ],
     "解密": [
       "/extracted/extracted-readme.md"
@@ -44562,6 +43700,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
@@ -44576,19 +43715,6 @@
       "/story/story_research_todo.md",
       "/story/story_search_index.md",
       "/story/story_units.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md",
       "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
@@ -44982,8 +44108,7 @@
     "还原": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
-      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
-      "/unpacked/unpacked-lua-tables.md"
+      "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
     ],
     "还能": [
       "/characters/15565.md",
@@ -45257,6 +44382,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
@@ -45280,19 +44406,6 @@
       "/sources/weixin.md",
       "/sources/youtube.md",
       "/sources/youtube_comments.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md",
       "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
@@ -45613,9 +44726,6 @@
     "部消": [
       "/README.md"
     ],
-    "部游": [
-      "/unpacked/unpacked-game-data-all.md"
-    ],
     "部社": [
       "/memory/memory-archive-contribution-protocol-hub.md"
     ],
@@ -45786,10 +44896,6 @@
     ],
     "重叠": [
       "/resource/resource-repo-engineering-repo-audit-20260603.md"
-    ],
-    "重复": [
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md"
     ],
     "重大": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
@@ -46303,6 +45409,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
@@ -46337,19 +45444,6 @@
       "/story/story_research_todo.md",
       "/story/story_search_index.md",
       "/story/story_units.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md",
       "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
@@ -46572,22 +45666,10 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md",
       "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
@@ -47219,16 +46301,6 @@
     ],
     "非同": [
       "/memory/memory-ext-skill-authoring-standard.md"
-    ],
-    "非明": [
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md"
     ],
     "非空": [
       "/README.md"
@@ -47865,20 +46937,7 @@
       "/story/stages_by_unit.md",
       "/story/story_index.md",
       "/story/story_search_index.md",
-      "/story/story_units.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md"
+      "/story/story_units.md"
     ],
     "arm": [
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
@@ -48102,6 +47161,9 @@
     "chat": [
       "/assets/assets-chat-onboarding-snippet.md"
     ],
+    "check": [
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md"
+    ],
     "claude": [
       "/memory/memory-ext-karpathy-coding-principles.md",
       "/projects/entry-claude-md.md",
@@ -48110,9 +47172,6 @@
     ],
     "cleanup": [
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md"
-    ],
-    "cn": [
-      "/unpacked/unpacked-text-cn.md"
     ],
     "collab": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
@@ -48172,7 +47231,6 @@
       "/projects/silver-core-sdk-doc-concurrency.md"
     ],
     "config": [
-      "/unpacked/unpacked-config.md",
       "/wiki-data/wiki-data-language-config.md"
     ],
     "conformance": [
@@ -48188,20 +47246,7 @@
     ],
     "content": [
       "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md"
+      "/extracted/extracted-categorized.md"
     ],
     "context": [
       "/memory/morimens-context.md",
@@ -48439,6 +47484,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
@@ -48764,6 +47810,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
@@ -48797,19 +47844,6 @@
       "/story/story_research_todo.md",
       "/story/story_search_index.md",
       "/story/story_units.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md",
       "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
@@ -48941,6 +47975,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md"
@@ -49085,24 +48120,6 @@
       "/characters/78840.md",
       "/characters/78841.md"
     ],
-    "ejoysdk": [
-      "/unpacked/unpacked-ejoysdk-lua.md"
-    ],
-    "encoding": [
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md"
-    ],
     "engine": [
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
@@ -49154,6 +48171,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md"
@@ -49214,26 +48232,13 @@
     ],
     "first": [
       "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md"
+      "/extracted/extracted-categorized.md"
+    ],
+    "fixed": [
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md"
     ],
     "forrestchang": [
       "/memory/memory-ext-karpathy-coding-principles.md"
-    ],
-    "foundation": [
-      "/unpacked/unpacked-foundation.md"
     ],
     "framework": [
       "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md"
@@ -49303,20 +48308,7 @@
       "/story/stages_by_unit.md",
       "/story/story_index.md",
       "/story/story_search_index.md",
-      "/story/story_units.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md"
+      "/story/story_units.md"
     ],
     "fulldetail": [
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md"
@@ -49334,12 +48326,7 @@
       "/memory/memory-ext-research-best-wiki-features.md",
       "/projects/project-game.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
-      "/resource/resource-game-analysis-role-action-recommendations-202605.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md"
-    ],
-    "gamelauncher": [
-      "/unpacked/unpacked-gamelauncher.md"
+      "/resource/resource-game-analysis-role-action-recommendations-202605.md"
     ],
     "gameplay": [
       "/wiki-data/wiki-data-banners-by-character.md",
@@ -49352,17 +48339,12 @@
       "/wiki-data/wiki-data-summon.md",
       "/wiki-data/wiki-data-tasks.md"
     ],
-    "gamescript": [
-      "/unpacked/unpacked-gamescript.md"
-    ],
-    "gameupdate": [
-      "/unpacked/unpacked-gameupdate.md"
-    ],
     "gap": [
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md"
     ],
     "git": [
-      "/memory/memory-research-discord-archive-backfill-conflict.md"
+      "/memory/memory-research-discord-archive-backfill-conflict.md",
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md"
     ],
     "google": [
       "/community/community-google-play.md",
@@ -49381,20 +48363,7 @@
     ],
     "hand": [
       "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md"
+      "/extracted/extracted-categorized.md"
     ],
     "handoff": [
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
@@ -49426,6 +48395,9 @@
       "/sources/weixin.md",
       "/sources/youtube.md",
       "/sources/youtube_comments.md"
+    ],
+    "hook": [
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md"
     ],
     "hub": [
       "/memory/memory-archive-contribution-protocol-hub.md",
@@ -49744,6 +48716,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
@@ -49777,19 +48750,6 @@
       "/story/story_research_todo.md",
       "/story/story_search_index.md",
       "/story/story_units.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md",
       "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
       "/wiki-data/wiki-data-cg-gallery.md",
@@ -49881,19 +48841,7 @@
       "/wiki-data/wiki-data-world-lore.md"
     ],
     "lua": [
-      "/projects/extracted-lua-inventory.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-lua-tables.md"
-    ],
-    "luac": [
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md"
+      "/projects/extracted-lua-inventory.md"
     ],
     "machine": [
       "/memory/memory-ext-capability-annotations.md",
@@ -50504,6 +49452,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md"
@@ -50695,9 +49644,6 @@
       "/memory/memory-ext-session-continuity.md",
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md"
     ],
-    "share": [
-      "/unpacked/unpacked-share.md"
-    ],
     "silver": [
       "/memory/memory-ext-active-self-improvement-requirements.md",
       "/projects/project-silver-core-sdk.md",
@@ -50763,9 +49709,6 @@
     "speech": [
       "/assets/persona-erica-speech-canon.md"
     ],
-    "sproto": [
-      "/unpacked/unpacked-sproto.md"
-    ],
     "stack": [
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md"
     ],
@@ -50786,6 +49729,9 @@
       "/news-output/news-output-steam.md",
       "/sources/steam.md",
       "/sources/steam_discussion.md"
+    ],
+    "stop": [
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md"
     ],
     "stopgame": [
       "/community/community-stopgame.md",
@@ -50869,9 +49815,6 @@
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md"
     ],
-    "tables": [
-      "/unpacked/unpacked-lua-tables.md"
-    ],
     "taptap": [
       "/community/community-taptap.md",
       "/news-output/news-output-taptap-review.md",
@@ -50891,12 +49834,6 @@
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md"
     ],
     "text": [
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
       "/wiki-data/wiki-data-panel-text.md"
     ],
     "timeseries": [
@@ -50994,6 +49931,7 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md"
@@ -51028,20 +49966,7 @@
     ],
     "unpack": [
       "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/unpacked/unpacked-config.md",
-      "/unpacked/unpacked-ejoysdk-lua.md",
-      "/unpacked/unpacked-foundation.md",
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md",
-      "/unpacked/unpacked-gamelauncher.md",
-      "/unpacked/unpacked-gamescript.md",
-      "/unpacked/unpacked-gameupdate.md",
-      "/unpacked/unpacked-lua-tables.md",
-      "/unpacked/unpacked-share.md",
-      "/unpacked/unpacked-sproto.md",
-      "/unpacked/unpacked-text-cn.md",
-      "/unpacked/unpacked-vue.md"
+      "/extracted/extracted-categorized.md"
     ],
     "unpacked": [
       "/wiki-data/wiki-data-aliases.md",
@@ -51129,9 +50054,6 @@
     ],
     "volunteer": [
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
-    ],
-    "vue": [
-      "/unpacked/unpacked-vue.md"
     ],
     "weibo": [
       "/community/community-weibo.md",
@@ -51354,9 +50276,6 @@
     ],
     "全平": [
       "/news-output/news-output-all.md"
-    ],
-    "全部": [
-      "/unpacked/unpacked-game-data-all.md"
     ],
     "全量": [
       "/community/community-appstore.md",
@@ -51967,12 +50886,6 @@
     "戈利亚": [
       "/characters/15564.md"
     ],
-    "戏数": [
-      "/unpacked/unpacked-game-data-all.md"
-    ],
-    "戏文": [
-      "/unpacked/unpacked-game-text.md"
-    ],
     "我改": [
       "/memory/memory-ext-active-self-improvement-requirements.md"
     ],
@@ -52150,17 +51063,13 @@
       "/sources/weibo.md",
       "/sources/weixin.md",
       "/sources/youtube.md",
-      "/sources/youtube_comments.md",
-      "/unpacked/unpacked-game-data-all.md"
+      "/sources/youtube_comments.md"
     ],
     "整理": [
       "/memory/memory-ext-karpathy-coding-principles.md"
     ],
     "文件": [
       "/memory/memory-archive-storage-discussion.md"
-    ],
-    "文本": [
-      "/unpacked/unpacked-game-text.md"
     ],
     "文档": [
       "/memory/memory-ext-active-self-improvement-requirements.md"
@@ -52469,10 +51378,6 @@
     ],
     "温柯尔": [
       "/characters/15579.md"
-    ],
-    "游戏": [
-      "/unpacked/unpacked-game-data-all.md",
-      "/unpacked/unpacked-game-text.md"
     ],
     "潘狄娅": [
       "/characters/15560.md"
@@ -52983,9 +51888,6 @@
     "行档": [
       "/memory/memory-ext-bpt-positioning.md"
     ],
-    "表还": [
-      "/unpacked/unpacked-lua-tables.md"
-    ],
     "裁唯": [
       "/memory/memory-ext-todo.md"
     ],
@@ -53125,9 +52027,6 @@
     "运行": [
       "/projects/entry-claude-md.md"
     ],
-    "还原": [
-      "/unpacked/unpacked-lua-tables.md"
-    ],
     "进闭": [
       "/memory/memory-ext-active-self-improvement-requirements.md"
     ],
@@ -53136,9 +52035,6 @@
     ],
     "逢沢": [
       "/characters/77917.md"
-    ],
-    "部游": [
-      "/unpacked/unpacked-game-data-all.md"
     ],
     "部署": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-phase-d-plan.md"

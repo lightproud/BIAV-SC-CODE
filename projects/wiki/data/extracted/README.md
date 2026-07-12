@@ -1,5 +1,9 @@
 # Morimens 客户端数据提取（wiki 侧独占残件）
 
+> **⚠ 解包 text 层已删除（守密人 2026-07-12 裁定）**：原 `Public-Info-Pool/Reference/Game-Unpacked/`
+> 整层（224M / 3,694 文件）已删——wiki 冻结后消费场景消失；追溯走 git 历史，二进制本体仍在
+> Releases「解包」桶（可重解 text）。下文对该层的引用按历史状态理解。
+
 > 提取日期：2026-04-07
 > 提取方式：运行时内存扫描 + AssetBundle 解密
 > 游戏版本：忘却前夜 (Tuanjie Engine 2022.3.61t8)
