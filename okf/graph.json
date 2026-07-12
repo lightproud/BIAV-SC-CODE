@@ -1,7 +1,7 @@
 {
   "generated": "2026-07-12",
   "stats": {
-    "nodes": 344,
+    "nodes": 345,
     "edges": 394
   },
   "nodes": [
@@ -2544,6 +2544,17 @@
       "id": "/resource/resource-proposal-biav-project-plan-202603.md",
       "type": "documentation",
       "title": "biav-project-plan-202603",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:proposal"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "type": "documentation",
+      "title": "bpt-context-architecture-20260712",
       "tags": [
         "data_layer:curated",
         "deliverable",
