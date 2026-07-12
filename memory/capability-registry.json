@@ -7,17 +7,17 @@
     "reachability_method": "从活编排入口（工作流/MCP/命令/钩子/CLI 手动入口）沿 Python 模块级 import 图做传递闭包；带 __main__ 的脚本计为 cli 手动平面。status=orphaned 表示无任何活入口可达，建议隔离待裁，非自动删除。",
     "counts": {
       "workflows": 35,
-      "scripts_top": 36,
+      "scripts_top": 37,
       "scripts_news": 32,
       "scripts_wiki": 6,
       "mcp_tools": 11,
       "commands": 4,
       "skills": 4,
       "projects": 7,
-      "total": 135
+      "total": 136
     },
     "reachability": {
-      "live": 74,
+      "live": 75,
       "test-only": 0,
       "orphaned": 0
     }
@@ -582,6 +582,16 @@
       ],
       "status": "live",
       "note_zh": "MCP 服务端 biav-sc-memory，暴露 4 个平台互补工具。"
+    },
+    {
+      "id": "memory_freshness.py",
+      "path": "scripts/memory_freshness.py",
+      "summary": "memory_freshness.py — 记忆档案保鲜巡检器（确定性零 ML 零常驻）。",
+      "planes": [
+        "cli",
+        "command"
+      ],
+      "status": "live"
     },
     {
       "id": "okf_pointer_layers.py",
@@ -1151,7 +1161,7 @@
     {
       "id": "sync-memory",
       "path": ".claude/commands/sync-memory.md",
-      "summary": "Check all sub-project actual file states and sync shared memory files",
+      "summary": "Memory audit + sync playbook（记忆巡检手册，守密人 2026-07-12 裁定升级）。",
       "note_zh": "核对各子项目实际文件状态，同步共享记忆文件。"
     },
     {
@@ -1225,7 +1235,7 @@
     {
       "id": "wiki",
       "path": "projects/wiki/",
-      "summary": "> **⚠ 子项目已冻结（守密人 2026-07-12 裁定，见 `memory/decisions.md` 同日「wiki 使命取消」条）**：",
+      "summary": "> **⚠ 解包 text 层已删除（守密人 2026-07-12 裁定）**：原 `Public-Info-Pool/Reference/Game-Unpacked/`",
       "note_zh": "使命#2 社区知识底座：VitePress 站点 + 72 角色数据库（客户端解包自举）。"
     }
   ]
