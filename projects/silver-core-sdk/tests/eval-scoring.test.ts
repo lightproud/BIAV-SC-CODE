@@ -1,0 +1,79 @@
+/**
+ * self-improve #2 — judge-verdict validity and mean-poisoning defense
+ * (scripts/eval-scoring.mjs). Reproduces the branch LIVE round failure of
+ * 2026-07-12 (run 29187930045): two judge verdicts came back without a
+ * `score`, were recorded as SCORED, and nulled their whole dimension mean —
+ * firing -4.86 / -4.0 FALSE regressions at the REQ-2.2 gate.
+ */
+import { describe, expect, it } from 'vitest';
+
+// eslint-disable-next-line import/no-relative-packages -- eval-side tooling under test
+import { computeDimensionMeans, isValidVerdict, parseJudgeMessage } from '../scripts/eval-scoring.mjs';
+
+describe('isValidVerdict', () => {
+  it('accepts integer scores 1..5 only', () => {
+    for (const score of [1, 2, 3, 4, 5]) {
+      expect(isValidVerdict({ score, verdict: 'x', rubric_findings: [] })).toBe(true);
+    }
+    for (const score of [0, 6, 3.5, '4', null, undefined, NaN]) {
+      expect(isValidVerdict({ score })).toBe(false);
+    }
+    expect(isValidVerdict(null)).toBe(false);
+    expect(isValidVerdict({})).toBe(false);
+  });
+});
+
+describe('parseJudgeMessage', () => {
+  it('parses a structured verdict and carries judge usage', () => {
+    const body = {
+      content: [{ type: 'text', text: '{"score":4,"verdict":"ok","rubric_findings":[]}' }],
+      usage: { input_tokens: 10, output_tokens: 5 },
+    };
+    const graded = parseJudgeMessage(body);
+    expect(graded.score).toBe(4);
+    expect(graded.judgeUsage.output_tokens).toBe(5);
+    expect(isValidVerdict(graded)).toBe(true);
+  });
+
+  it('an empty/scoreless reply parses but is NOT a valid verdict', () => {
+    const empty = parseJudgeMessage({ content: [], usage: {} });
+    expect(isValidVerdict(empty)).toBe(false);
+    const scoreless = parseJudgeMessage({
+      content: [{ type: 'text', text: '{"verdict":"hmm","rubric_findings":[]}' }],
+      usage: {},
+    });
+    expect(isValidVerdict(scoreless)).toBe(false);
+  });
+
+  it('a truncated JSON reply throws (callers map it to ERROR)', () => {
+    expect(() =>
+      parseJudgeMessage({ content: [{ type: 'text', text: '{"score":4,"verd' }], usage: {} }),
+    ).toThrow();
+  });
+});
+
+describe('computeDimensionMeans', () => {
+  it('one invalid score never nulls a dimension (the 2026-07-12 poisoning)', () => {
+    const results = [
+      { outcome: 'SCORED', dimension: 'memory_recall', score: 5 },
+      { outcome: 'SCORED', dimension: 'memory_recall', score: 4 },
+      // The poisoned record: SCORED but no score — must be excluded.
+      { outcome: 'SCORED', dimension: 'memory_recall', score: undefined },
+      { outcome: 'ERROR', dimension: 'memory_recall' },
+      { outcome: 'SCORED', dimension: 'token_efficiency', score: 3 },
+    ];
+    expect(computeDimensionMeans(results)).toEqual({
+      memory_recall: 4.5,
+      token_efficiency: 3,
+    });
+  });
+
+  it('a dimension with no valid scores is absent, not null', () => {
+    const means = computeDimensionMeans([
+      { outcome: 'SCORED', dimension: 'disconnect_recovery', score: undefined },
+      { outcome: 'PENDING_HARNESS', dimension: 'disconnect_recovery' },
+    ]);
+    expect(means).toEqual({});
+    expect('disconnect_recovery' in means).toBe(false);
+  });
+});
