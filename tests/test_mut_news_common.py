@@ -425,7 +425,7 @@ def test_dump_json_atomic_failure_preserves_original(tmp_path):
 # ══ 首跑存活体击杀区（守密人 2026-07-11 扩员裁定的补断言轮）════════════════
 # 以下断言按首跑存活类逐类补钉：签名默认值 / 实参常量 / 缓存语义 / 序列化
 # 原样文本 / epoch 边界。stub 边界不可观测类（_PinnedIPAdapter 内部、真连接
-# 行为）不在此杀，见 docs/testing-strategy.md 白名单。
+# 行为）不在此杀，见 memory/testing-strategy.md 白名单。
 
 
 def test_make_item_signature_defaults_pinned():

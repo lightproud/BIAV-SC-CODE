@@ -7,14 +7,14 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 355,
+    "concepts": 351,
     "edges": 427,
-    "terms": 6224,
+    "terms": 6173,
     "by_type": {
       "character": 72,
-      "dataset": 98,
-      "documentation": 119,
-      "knowledge-pointer": 46,
+      "dataset": 95,
+      "documentation": 117,
+      "knowledge-pointer": 47,
       "reference": 17,
       "research": 3
     },
@@ -22,10 +22,9 @@
       "assets": 12,
       "characters": 72,
       "community": 19,
-      "extracted": 3,
-      "memory": 49,
+      "memory": 50,
       "news-output": 23,
-      "projects": 28,
+      "projects": 26,
       "resource": 90,
       "sources": 20,
       "story": 11,
@@ -33,7 +32,7 @@
     },
     "by_tier": {
       "skeleton": 134,
-      "search": 221
+      "search": 217
     }
   },
   "sections": {
@@ -49,13 +48,9 @@
       "index": "/community/index.md",
       "count": 19
     },
-    "extracted": {
-      "index": "/extracted/index.md",
-      "count": 3
-    },
     "memory": {
       "index": "/memory/index.md",
-      "count": 49
+      "count": 50
     },
     "news-output": {
       "index": "/news-output/index.md",
@@ -63,7 +58,7 @@
     },
     "projects": {
       "index": "/projects/index.md",
-      "count": 28
+      "count": 26
     },
     "resource": {
       "index": "/resource/index.md",
@@ -1541,49 +1536,6 @@
       "tier": "skeleton",
       "degree": 4
     },
-    "/extracted/extracted-art-assets.md": {
-      "type": "dataset",
-      "title": "art_assets",
-      "description": "一手可读解包源 wiki 侧独占件「art_assets」：2 文件 / 2.6MB。解包 text 主体层（原 Game-Unpacked）已于 2026-07-12 守密人裁定整层删除（git 历史可追），此处为仅存的解包独占内容。",
-      "resource": "/projects/wiki/data/extracted/art_assets/",
-      "tags": [
-        "data_layer:full_archive",
-        "first-hand-unpack",
-        "upstream-of:processed",
-        "content:art-assets"
-      ],
-      "section": "extracted",
-      "tier": "search",
-      "degree": 0
-    },
-    "/extracted/extracted-categorized.md": {
-      "type": "dataset",
-      "title": "categorized",
-      "description": "一手可读解包源 wiki 侧独占件「categorized」：2 文件 / 2.2MB。解包 text 主体层（原 Game-Unpacked）已于 2026-07-12 守密人裁定整层删除（git 历史可追），此处为仅存的解包独占内容。",
-      "resource": "/projects/wiki/data/extracted/categorized/",
-      "tags": [
-        "data_layer:full_archive",
-        "first-hand-unpack",
-        "upstream-of:processed",
-        "content:categorized"
-      ],
-      "section": "extracted",
-      "tier": "search",
-      "degree": 0
-    },
-    "/extracted/extracted-readme.md": {
-      "type": "documentation",
-      "title": "extracted 说明",
-      "description": "游戏使用 **LuaT0** 自定义字节码格式（Lua 5.4 变体，format byte 0x30），配合 Themida 加壳保护解密算法。",
-      "resource": "/projects/wiki/data/extracted/README.md",
-      "tags": [
-        "data_layer:curated",
-        "documentation"
-      ],
-      "section": "extracted",
-      "tier": "search",
-      "degree": 0
-    },
     "/memory/capability-index.md": {
       "type": "knowledge-pointer",
       "title": "capability-index.md",
@@ -2114,6 +2066,19 @@
       "tier": "search",
       "degree": 1
     },
+    "/memory/memory-ext-testing-strategy.md": {
+      "type": "knowledge-pointer",
+      "title": "银芯测试策略 — 分层质量护栏",
+      "description": "银芯的测试不靠单一数字护城。三层护栏各管一件事，互相补盲：",
+      "resource": "/memory/testing-strategy.md",
+      "tags": [
+        "memory",
+        "data_layer:curated"
+      ],
+      "section": "memory",
+      "tier": "search",
+      "degree": 0
+    },
     "/memory/memory-ext-todo.md": {
       "type": "knowledge-pointer",
       "title": "挂账台账（待办 / 待裁唯一权威）",
@@ -2599,7 +2564,7 @@
       "type": "documentation",
       "title": "测试策略",
       "description": "银芯的测试不靠单一数字护城。三层护栏各管一件事，互相补盲：",
-      "resource": "/docs/testing-strategy.md",
+      "resource": "/memory/testing-strategy.md",
       "tags": [
         "data_layer:curated",
         "engineering-doc"
@@ -2634,33 +2599,6 @@
       "section": "projects",
       "tier": "search",
       "degree": 2
-    },
-    "/projects/extracted-lua-inventory.md": {
-      "type": "dataset",
-      "title": "解包 lua 清单",
-      "description": "逐条列 .luac 本体位置的清单（1608 条），字节码本体在 Releases「解包」桶。",
-      "resource": "/extracted_lua/lua_scripts_inventory.csv",
-      "tags": [
-        "data_layer:curated",
-        "manifest",
-        "binary-assets-pointer"
-      ],
-      "section": "projects",
-      "tier": "search",
-      "degree": 0
-    },
-    "/projects/extracted-lua-readme.md": {
-      "type": "documentation",
-      "title": "解包提取说明",
-      "description": "**不能保证 639 份 archive 脚本全部覆盖。** 原因：",
-      "resource": "/extracted_lua/README_提取说明.md",
-      "tags": [
-        "data_layer:curated",
-        "engineering-doc"
-      ],
-      "section": "projects",
-      "tier": "search",
-      "degree": 0
     },
     "/projects/news-archive-sources-registry.md": {
       "type": "dataset",
@@ -9886,8 +9824,6 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
       "/memory/memory-ext-capability-annotations.md",
       "/memory/memory-ext-capability-registry.md",
       "/memory/memory-ext-session-continuity.md",
@@ -9914,7 +9850,6 @@
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
-      "/projects/extracted-lua-inventory.md",
       "/projects/news-archive-sources-registry.md",
       "/sources/appstore.md",
       "/sources/arca_live.md",
@@ -9965,11 +9900,9 @@
     ],
     "documentation": [
       "/README.md",
-      "/extracted/extracted-readme.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
-      "/projects/extracted-lua-readme.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-sdk.md",
@@ -10119,6 +10052,7 @@
       "/memory/memory-ext-lessons-archive.md",
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-skill-authoring-standard.md",
+      "/memory/memory-ext-testing-strategy.md",
       "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
@@ -10337,8 +10271,6 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
       "/memory/decisions-archive.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
@@ -10376,7 +10308,6 @@
       "/news-output/news-output-weibo.md",
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md",
-      "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/sources/appstore.md",
@@ -10420,7 +10351,6 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
     ],
     "art": [
-      "/extracted/extracted-art-assets.md",
       "/projects/releases-treasure-map.md",
       "/wiki-data/wiki-data-cg-gallery.md"
     ],
@@ -10449,8 +10379,6 @@
       "/assets/assets-version.md",
       "/assets/persona-erica-speech-canon.md",
       "/assets/persona-erica.md",
-      "/extracted/extracted-art-assets.md",
-      "/projects/extracted-lua-inventory.md",
       "/projects/releases-treasure-map.md",
       "/wiki-data/wiki-data-cg-gallery.md"
     ],
@@ -10559,7 +10487,6 @@
       "/sources/bilibili.md"
     ],
     "binary": [
-      "/projects/extracted-lua-inventory.md",
       "/projects/releases-treasure-map.md"
     ],
     "bio": [
@@ -10784,9 +10711,6 @@
     "bundle": [
       "/README.md"
     ],
-    "byte": [
-      "/extracted/extracted-readme.md"
-    ],
     "cache": [
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
     ],
@@ -10815,9 +10739,6 @@
     ],
     "catalog": [
       "/README.md"
-    ],
-    "categorized": [
-      "/extracted/extracted-categorized.md"
     ],
     "cc": [
       "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
@@ -11119,9 +11040,6 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/extracted/extracted-readme.md",
       "/memory/capability-index.md",
       "/memory/contribution-protocol.md",
       "/memory/decisions-archive.md",
@@ -11159,6 +11077,7 @@
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
+      "/memory/memory-ext-testing-strategy.md",
       "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
@@ -11197,8 +11116,6 @@
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
-      "/projects/extracted-lua-inventory.md",
-      "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
@@ -11396,10 +11313,6 @@
     "consumers": [
       "/projects/silver-core-sdk-doc-resilience.md"
     ],
-    "content": [
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md"
-    ],
     "context": [
       "/memory/morimens-context.md",
       "/projects/project-game.md",
@@ -11488,9 +11401,6 @@
     "css": [
       "/projects/site-design-morimens-design-tokens.md"
     ],
-    "csv": [
-      "/projects/extracted-lua-inventory.md"
-    ],
     "curated": [
       "/assets/assets-archive-integrity.md",
       "/assets/assets-card-system.md",
@@ -11504,7 +11414,6 @@
       "/assets/assets-version.md",
       "/assets/persona-erica-speech-canon.md",
       "/assets/persona-erica.md",
-      "/extracted/extracted-readme.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -11537,6 +11446,7 @@
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
+      "/memory/memory-ext-testing-strategy.md",
       "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
@@ -11547,8 +11457,6 @@
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
-      "/projects/extracted-lua-inventory.md",
-      "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
@@ -11814,9 +11722,6 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/extracted/extracted-readme.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -11849,6 +11754,7 @@
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
+      "/memory/memory-ext-testing-strategy.md",
       "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
@@ -11882,8 +11788,6 @@
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
-      "/projects/extracted-lua-inventory.md",
-      "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
@@ -12297,7 +12201,6 @@
     ],
     "doc": [
       "/projects/doc-testing-strategy.md",
-      "/projects/extracted-lua-readme.md",
       "/projects/silver-core-sdk-doc-architecture.md",
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
@@ -12314,7 +12217,6 @@
       "/projects/silver-core-sdk-doc-subagents.md"
     ],
     "docs": [
-      "/projects/doc-testing-strategy.md",
       "/projects/silver-core-sdk-doc-architecture.md",
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
@@ -12336,7 +12238,6 @@
     ],
     "documentation": [
       "/README.md",
-      "/extracted/extracted-readme.md",
       "/story/story_layer_readme.md"
     ],
     "doesn't": [
@@ -12409,7 +12310,6 @@
     ],
     "engineering": [
       "/projects/doc-testing-strategy.md",
-      "/projects/extracted-lua-readme.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -12502,13 +12402,6 @@
     "external": [
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md"
     ],
-    "extracted": [
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/extracted/extracted-readme.md",
-      "/projects/extracted-lua-inventory.md",
-      "/projects/extracted-lua-readme.md"
-    ],
     "extraction": [
       "/wiki-data/wiki-data-cg-gallery.md",
       "/wiki-data/wiki-data-feature-unlock.md",
@@ -12567,10 +12460,6 @@
     "fetch": [
       "/assets/assets-chat-onboarding-snippet.md"
     ],
-    "first": [
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md"
-    ],
     "fixed": [
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md"
     ],
@@ -12579,7 +12468,6 @@
     ],
     "format": [
       "/README.md",
-      "/extracted/extracted-readme.md",
       "/resource/resource-proposal-news-push-format-20260712.md"
     ],
     "forrestchang": [
@@ -12634,8 +12522,6 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
       "/news-output/news-output-appstore.md",
       "/news-output/news-output-arca-live.md",
       "/news-output/news-output-bahamut.md",
@@ -12740,8 +12626,6 @@
       "/wiki-data/wiki-data-cg-gallery.md"
     ],
     "game": [
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
       "/memory/memory-ext-research-best-wiki-features.md",
       "/projects/project-game.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
@@ -12847,8 +12731,6 @@
     ],
     "git": [
       "/community/community-index.md",
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/memory-research-discord-archive-backfill-conflict.md",
@@ -12923,10 +12805,6 @@
     ],
     "gz": [
       "/README.md"
-    ],
-    "hand": [
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md"
     ],
     "handoff": [
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
@@ -13268,7 +13146,6 @@
     ],
     "inventory": [
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
-      "/projects/extracted-lua-inventory.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md"
     ],
     "inverted": [
@@ -13525,9 +13402,6 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/extracted/extracted-readme.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -13560,6 +13434,7 @@
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
+      "/memory/memory-ext-testing-strategy.md",
       "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
@@ -13593,8 +13468,6 @@
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
-      "/projects/extracted-lua-inventory.md",
-      "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
@@ -13960,9 +13833,6 @@
       "/wiki-data/wiki-data-world-lore.md"
     ],
     "lua": [
-      "/extracted/extracted-readme.md",
-      "/projects/extracted-lua-inventory.md",
-      "/projects/extracted-lua-readme.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/wiki-data/wiki-data-feature-unlock.md",
@@ -13978,12 +13848,6 @@
       "/wiki-data/wiki-data-voice-character-map.md",
       "/wiki-data/wiki-data-voice-lines.md",
       "/wiki-data/wiki-data-world-lore.md"
-    ],
-    "luac": [
-      "/projects/extracted-lua-inventory.md"
-    ],
-    "luat0": [
-      "/extracted/extracted-readme.md"
     ],
     "m1": [
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md"
@@ -14032,7 +13896,6 @@
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md"
     ],
     "manifest": [
-      "/projects/extracted-lua-inventory.md",
       "/wiki-data/wiki-data-cg-gallery.md"
     ],
     "manual": [
@@ -14060,9 +13923,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md"
     ],
     "mb": [
-      "/assets/assets-images.md",
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md"
+      "/assets/assets-images.md"
     ],
     "mcp": [
       "/README.md",
@@ -14074,7 +13935,6 @@
       "/assets/assets-readme.md",
       "/assets/assets-version.md",
       "/assets/persona-erica-speech-canon.md",
-      "/extracted/extracted-readme.md",
       "/memory/capability-index.md",
       "/memory/contribution-protocol.md",
       "/memory/decisions-archive.md",
@@ -14109,6 +13969,7 @@
       "/memory/memory-ext-lessons-archive.md",
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-skill-authoring-standard.md",
+      "/memory/memory-ext-testing-strategy.md",
       "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
@@ -14124,7 +13985,6 @@
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
-      "/projects/extracted-lua-readme.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
       "/projects/project-silver-core-sdk.md",
@@ -14294,6 +14154,7 @@
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
+      "/memory/memory-ext-testing-strategy.md",
       "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
@@ -14306,6 +14167,7 @@
       "/memory/project-status.md",
       "/memory/strategic-plan-2026.md",
       "/memory/style-guide.md",
+      "/projects/doc-testing-strategy.md",
       "/projects/silver-core-sdk-doc-memory-governance.md",
       "/projects/silver-core-sdk-doc-memory.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
@@ -14821,7 +14683,6 @@
       "/memory/project-status.md",
       "/memory/strategic-plan-2026.md",
       "/memory/style-guide.md",
-      "/projects/extracted-lua-inventory.md",
       "/projects/releases-treasure-map.md",
       "/story/STORY_RESEARCH.md",
       "/story/character_story_links.md",
@@ -15006,8 +14867,6 @@
       "/memory/memory-ext-karpathy-coding-principles.md"
     ],
     "processed": [
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
       "/story/STORY_RESEARCH.md",
       "/story/character_story_links.md",
       "/story/lore_by_unit.md",
@@ -15076,9 +14935,6 @@
     "projects": [
       "/community/community-index.md",
       "/community/community-timeline.md",
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/extracted/extracted-readme.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-build-verification.md",
       "/news-output/news-output-all.md",
       "/news-output/news-output-appstore.md",
@@ -15477,10 +15333,8 @@
     "readme": [
       "/README.md",
       "/assets/assets-readme.md",
-      "/extracted/extracted-readme.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md",
       "/projects/entry-readme.md",
-      "/projects/extracted-lua-readme.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/story/story_layer_readme.md"
     ],
@@ -15570,7 +15424,6 @@
       "/README.md",
       "/memory/memory-research-discord-archive-backfill-conflict.md",
       "/memory/memory-strategy-repo-slimming-plan.md",
-      "/projects/extracted-lua-inventory.md",
       "/projects/releases-treasure-map.md"
     ],
     "remaining": [
@@ -15940,7 +15793,6 @@
     ],
     "scripts": [
       "/README.md",
-      "/projects/extracted-lua-inventory.md",
       "/projects/news-archive-sources-registry.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
     ],
@@ -16359,6 +16211,7 @@
       "/memory/strategic-plan-2026.md"
     ],
     "strategy": [
+      "/memory/memory-ext-testing-strategy.md",
       "/memory/memory-strategy-repo-slimming-plan.md",
       "/projects/doc-testing-strategy.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md"
@@ -16542,22 +16395,18 @@
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md"
     ],
     "testing": [
+      "/memory/memory-ext-testing-strategy.md",
       "/projects/doc-testing-strategy.md"
     ],
     "tests": [
       "/README.md"
     ],
     "text": [
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
       "/resource/resource-data-diagnostics-discord-compaction-further-savings-20260622.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/wiki-data/wiki-data-panel-text.md",
       "/wiki-data/wiki-data-voice-character-map.md"
-    ],
-    "themida": [
-      "/extracted/extracted-readme.md"
     ],
     "thinking": [
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
@@ -16781,13 +16630,7 @@
     "unlock": [
       "/wiki-data/wiki-data-feature-unlock.md"
     ],
-    "unpack": [
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md"
-    ],
     "unpacked": [
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
       "/projects/releases-treasure-map.md",
       "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
@@ -16830,10 +16673,6 @@
     ],
     "updateprompts": [
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
-    ],
-    "upstream": [
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md"
     ],
     "use": [
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
@@ -17006,9 +16845,6 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
     ],
     "wiki": [
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/extracted/extracted-readme.md",
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
@@ -17074,9 +16910,6 @@
     "world": [
       "/wiki-data/wiki-data-world-lore.md"
     ],
-    "x30": [
-      "/extracted/extracted-readme.md"
-    ],
     "xlsx": [
       "/resource/resource-community-analysis-saya-collab-voices-fulldetail-20260603.md"
     ],
@@ -17131,6 +16964,7 @@
       "/resource/resource-community-analysis-jp-discord-insights-202606.md"
     ],
     "一件": [
+      "/memory/memory-ext-testing-strategy.md",
       "/projects/doc-testing-strategy.md"
     ],
     "一份": [
@@ -17203,10 +17037,6 @@
     "一念": [
       "/characters/77925.md"
     ],
-    "一手": [
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md"
-    ],
     "一批": [
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
     ],
@@ -17217,6 +17047,7 @@
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
     ],
     "一数": [
+      "/memory/memory-ext-testing-strategy.md",
       "/projects/doc-testing-strategy.md"
     ],
     "一整": [
@@ -17333,6 +17164,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md"
     ],
     "三层": [
+      "/memory/memory-ext-testing-strategy.md",
       "/projects/doc-testing-strategy.md"
     ],
     "三张": [
@@ -17587,9 +17419,6 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/extracted/extracted-readme.md",
       "/memory/capability-index.md",
       "/memory/contribution-protocol.md",
       "/memory/decisions-archive.md",
@@ -17627,6 +17456,7 @@
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
+      "/memory/memory-ext-testing-strategy.md",
       "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
@@ -17665,8 +17495,6 @@
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
-      "/projects/extracted-lua-inventory.md",
-      "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
@@ -17854,9 +17682,6 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/extracted/extracted-readme.md",
       "/memory/capability-index.md",
       "/memory/contribution-protocol.md",
       "/memory/decisions-archive.md",
@@ -17894,6 +17719,7 @@
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
+      "/memory/memory-ext-testing-strategy.md",
       "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
@@ -17932,8 +17758,6 @@
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
-      "/projects/extracted-lua-inventory.md",
-      "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
@@ -18134,8 +17958,7 @@
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
     ],
     "不能": [
-      "/memory/memory-strategy-repo-slimming-plan.md",
-      "/projects/extracted-lua-readme.md"
+      "/memory/memory-strategy-repo-slimming-plan.md"
     ],
     "不落": [
       "/characters/77913.md"
@@ -18169,6 +17992,7 @@
       "/assets/assets-chat-onboarding-snippet.md"
     ],
     "不靠": [
+      "/memory/memory-ext-testing-strategy.md",
       "/projects/doc-testing-strategy.md"
     ],
     "不齐": [
@@ -18225,9 +18049,6 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/extracted/extracted-readme.md",
       "/news-output/news-output-all.md",
       "/news-output/news-output-appstore.md",
       "/news-output/news-output-arca-live.md",
@@ -18254,8 +18075,6 @@
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
-      "/projects/extracted-lua-inventory.md",
-      "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
@@ -18741,10 +18560,6 @@
     "为什": [
       "/characters/15566.md"
     ],
-    "为仅": [
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md"
-    ],
     "为他": [
       "/characters/15578.md",
       "/characters/15593.md"
@@ -18862,8 +18677,6 @@
       "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md"
     ],
     "主体": [
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md"
     ],
@@ -18951,9 +18764,6 @@
     ],
     "义务": [
       "/characters/77922.md"
-    ],
-    "义字": [
-      "/extracted/extracted-readme.md"
     ],
     "义强": [
       "/characters/15590.md"
@@ -19202,6 +19012,7 @@
       "/README.md"
     ],
     "互相": [
+      "/memory/memory-ext-testing-strategy.md",
       "/projects/doc-testing-strategy.md"
     ],
     "五大": [
@@ -19428,10 +19239,6 @@
     "仅剩": [
       "/characters/15594.md"
     ],
-    "仅存": [
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md"
-    ],
     "仅定": [
       "/story/STORY_RESEARCH.md",
       "/story/character_story_links.md",
@@ -19477,9 +19284,6 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/extracted/extracted-readme.md",
       "/news-output/news-output-all.md",
       "/news-output/news-output-appstore.md",
       "/news-output/news-output-arca-live.md",
@@ -19506,8 +19310,6 @@
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
-      "/projects/extracted-lua-inventory.md",
-      "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
@@ -19992,6 +19794,7 @@
       "/memory/memory-ext-active-self-improvement-requirements.md"
     ],
     "件事": [
+      "/memory/memory-ext-testing-strategy.md",
       "/projects/doc-testing-strategy.md"
     ],
     "件仓": [
@@ -20293,9 +20096,6 @@
     "位数": [
       "/community/community-timeline.md"
     ],
-    "位置": [
-      "/projects/extracted-lua-inventory.md"
-    ],
     "低下": [
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
     ],
@@ -20347,9 +20147,6 @@
       "/characters/15588.md",
       "/characters/15598.md"
     ],
-    "体位": [
-      "/projects/extracted-lua-inventory.md"
-    ],
     "体健": [
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md"
@@ -20367,7 +20164,6 @@
       "/README.md"
     ],
     "体在": [
-      "/projects/extracted-lua-inventory.md",
       "/story/STORY_RESEARCH.md",
       "/story/character_story_links.md",
       "/story/lore_by_unit.md",
@@ -20388,10 +20184,6 @@
     ],
     "体对": [
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
-    ],
-    "体层": [
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md"
     ],
     "体差": [
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
@@ -20434,9 +20226,6 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/extracted/extracted-readme.md",
       "/news-output/news-output-all.md",
       "/news-output/news-output-appstore.md",
       "/news-output/news-output-arca-live.md",
@@ -20463,8 +20252,6 @@
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
-      "/projects/extracted-lua-inventory.md",
-      "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
@@ -20651,9 +20438,6 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/extracted/extracted-readme.md",
       "/memory/capability-index.md",
       "/memory/contribution-protocol.md",
       "/memory/decisions-archive.md",
@@ -20691,6 +20475,7 @@
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
+      "/memory/memory-ext-testing-strategy.md",
       "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
@@ -20729,8 +20514,6 @@
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
-      "/projects/extracted-lua-inventory.md",
-      "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
@@ -21111,7 +20894,6 @@
       "/characters/15574.md",
       "/characters/15580.md",
       "/characters/15582.md",
-      "/extracted/extracted-readme.md",
       "/memory/memory-ext-workflow-api-key-audit.md",
       "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md"
     ],
@@ -21186,10 +20968,6 @@
     "侧构": [
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md"
     ],
-    "侧独": [
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md"
-    ],
     "侵蚀": [
       "/characters/77923.md"
     ],
@@ -21211,9 +20989,6 @@
     "保密": [
       "/memory/memory-archive-bpt-architecture-summary-template.md"
     ],
-    "保护": [
-      "/extracted/extracted-readme.md"
-    ],
     "保留": [
       "/README.md"
     ],
@@ -21222,9 +20997,6 @@
     ],
     "保自": [
       "/characters/15580.md"
-    ],
-    "保证": [
-      "/projects/extracted-lua-readme.md"
     ],
     "信仰": [
       "/characters/15575.md",
@@ -21538,8 +21310,7 @@
       "/characters/15594.md"
     ],
     "全部": [
-      "/memory/memory-ext-wiki-characters-schema-v1.md",
-      "/projects/extracted-lua-readme.md"
+      "/memory/memory-ext-wiki-characters-schema-v1.md"
     ],
     "全量": [
       "/README.md",
@@ -21729,6 +21500,7 @@
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
+      "/memory/memory-ext-testing-strategy.md",
       "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
@@ -21827,8 +21599,6 @@
       "/characters/15569.md"
     ],
     "内容": [
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
       "/memory/capability-index.md",
       "/memory/contribution-protocol.md",
       "/memory/decisions-archive.md",
@@ -21866,6 +21636,7 @@
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
+      "/memory/memory-ext-testing-strategy.md",
       "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
@@ -22206,6 +21977,7 @@
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
     ],
     "分层": [
+      "/memory/memory-ext-testing-strategy.md",
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md"
     ],
@@ -22425,8 +22197,6 @@
       "/characters/15601.md"
     ],
     "删除": [
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md",
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md"
     ],
@@ -22563,6 +22333,7 @@
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
+      "/memory/memory-ext-testing-strategy.md",
       "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
@@ -22608,9 +22379,6 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/extracted/extracted-readme.md",
       "/news-output/news-output-all.md",
       "/news-output/news-output-appstore.md",
       "/news-output/news-output-arca-live.md",
@@ -22637,8 +22405,6 @@
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
-      "/projects/extracted-lua-inventory.md",
-      "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
@@ -22936,9 +22702,6 @@
     "加中": [
       "/characters/15600.md"
     ],
-    "加壳": [
-      "/extracted/extracted-readme.md"
-    ],
     "加大": [
       "/characters/15567.md",
       "/characters/15586.md"
@@ -23072,17 +22835,8 @@
     "包含": [
       "/README.md"
     ],
-    "包提": [
-      "/projects/extracted-lua-readme.md"
-    ],
     "包源": [
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md"
-    ],
-    "包独": [
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md"
     ],
     "包结": [
       "/story/lore_entries.md",
@@ -23315,6 +23069,7 @@
     ],
     "单一": [
       "/memory/memory-ext-active-policy-direct-push-main.md",
+      "/memory/memory-ext-testing-strategy.md",
       "/projects/doc-testing-strategy.md",
       "/projects/project-site.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md"
@@ -23379,14 +23134,6 @@
     ],
     "卖点": [
       "/README.md"
-    ],
-    "占件": [
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md"
-    ],
-    "占内": [
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md"
     ],
     "卡付": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md"
@@ -23493,8 +23240,6 @@
     ],
     "历史": [
       "/community/community-index.md",
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
       "/memory/memory-ext-discord-archiver-design.md",
       "/memory/morimens-context.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
@@ -23557,7 +23302,6 @@
     ],
     "原因": [
       "/memory/memory-ext-active-self-improvement-requirements.md",
-      "/projects/extracted-lua-readme.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md"
     ],
     "原围": [
@@ -23838,9 +23582,6 @@
     "取的": [
       "/characters/15590.md"
     ],
-    "取说": [
-      "/projects/extracted-lua-readme.md"
-    ],
     "取零": [
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md"
     ],
@@ -23874,8 +23615,7 @@
       "/characters/15589.md",
       "/characters/15602.md",
       "/characters/78754.md",
-      "/characters/94451.md",
-      "/extracted/extracted-readme.md"
+      "/characters/94451.md"
     ],
     "变化": [
       "/characters/15583.md"
@@ -24285,8 +24025,6 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md"
     ],
     "可读": [
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
       "/memory/memory-ext-knowledge-layer-design.md",
       "/story/story_units.md"
     ],
@@ -24295,10 +24033,6 @@
     ],
     "可达": [
       "/memory/capability-index.md"
-    ],
-    "可追": [
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md"
     ],
     "可造": [
       "/characters/15572.md"
@@ -24439,10 +24173,6 @@
     "史原": [
       "/resource/resource-proposal-discord-layout-unification-20260710.md"
     ],
-    "史可": [
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md"
-    ],
     "史回": [
       "/sources/appstore.md",
       "/sources/arca_live.md",
@@ -24504,6 +24234,7 @@
       "/characters/77926.md"
     ],
     "各管": [
+      "/memory/memory-ext-testing-strategy.md",
       "/projects/doc-testing-strategy.md"
     ],
     "各自": [
@@ -25777,15 +25508,8 @@
     "壳上": [
       "/characters/15565.md"
     ],
-    "壳保": [
-      "/extracted/extracted-readme.md"
-    ],
     "壳让": [
       "/characters/15565.md"
-    ],
-    "处为": [
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md"
     ],
     "处于": [
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md"
@@ -25853,9 +25577,6 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/extracted/extracted-readme.md",
       "/memory/capability-index.md",
       "/memory/contribution-protocol.md",
       "/memory/decisions-archive.md",
@@ -25893,6 +25614,7 @@
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
+      "/memory/memory-ext-testing-strategy.md",
       "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
@@ -25931,8 +25653,6 @@
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
-      "/projects/extracted-lua-inventory.md",
-      "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
@@ -26650,9 +26370,6 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/extracted/extracted-readme.md",
       "/memory/capability-index.md",
       "/memory/contribution-protocol.md",
       "/memory/decisions-archive.md",
@@ -26690,6 +26407,7 @@
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
+      "/memory/memory-ext-testing-strategy.md",
       "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
@@ -26728,8 +26446,6 @@
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
-      "/projects/extracted-lua-inventory.md",
-      "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
@@ -26925,6 +26641,7 @@
       "/characters/15596.md"
     ],
     "字护": [
+      "/memory/memory-ext-testing-strategy.md",
       "/projects/doc-testing-strategy.md"
     ],
     "字段": [
@@ -27007,8 +26724,6 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
     ],
     "字节": [
-      "/extracted/extracted-readme.md",
-      "/projects/extracted-lua-inventory.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md"
     ],
     "字重": [
@@ -27058,8 +26773,6 @@
     ],
     "存的": [
       "/characters/15580.md",
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
     ],
     "孤嚎": [
@@ -27125,8 +26838,6 @@
       "/characters/78840.md",
       "/characters/78841.md",
       "/characters/94451.md",
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
@@ -27263,7 +26974,6 @@
     ],
     "定义": [
       "/characters/15590.md",
-      "/extracted/extracted-readme.md",
       "/memory/memory-archive-contribution-protocol-hub.md",
       "/memory/memory-ext-biav-info-classification.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
@@ -27313,9 +27023,6 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/extracted/extracted-readme.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-bpt-positioning.md",
       "/news-output/news-output-all.md",
@@ -27344,8 +27051,6 @@
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
-      "/projects/extracted-lua-inventory.md",
-      "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
@@ -27528,10 +27233,6 @@
       "/README.md",
       "/memory/memory-ext-skill-authoring-standard.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
-    ],
-    "定整": [
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md"
     ],
     "定新": [
       "/characters/15589.md"
@@ -27732,9 +27433,6 @@
     ],
     "密度": [
       "/resource/resource-community-analysis-jp-discord-insights-202606.md"
-    ],
-    "密算": [
-      "/extracted/extracted-readme.md"
     ],
     "对不": [
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -28065,10 +27763,6 @@
     "层分": [
       "/memory/memory-research-community-analysis-2026-05-18-26.md"
     ],
-    "层删": [
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md"
-    ],
     "层即": [
       "/sources/appstore.md",
       "/sources/arca_live.md",
@@ -28107,6 +27801,7 @@
       "/projects/news-archive-sources-registry.md"
     ],
     "层护": [
+      "/memory/memory-ext-testing-strategy.md",
       "/projects/doc-testing-strategy.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md"
     ],
@@ -28148,6 +27843,7 @@
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
+      "/memory/memory-ext-testing-strategy.md",
       "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
@@ -28257,6 +27953,9 @@
       "/sources/weixin.md",
       "/sources/youtube.md",
       "/sources/youtube_comments.md"
+    ],
+    "层质": [
+      "/memory/memory-ext-testing-strategy.md"
     ],
     "屈的": [
       "/characters/77923.md"
@@ -28470,8 +28169,6 @@
       "/characters/15585.md"
     ],
     "已于": [
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
       "/memory/memory-ext-active-policy-direct-push-main.md",
       "/projects/project-wiki.md"
     ],
@@ -29591,6 +29288,7 @@
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
+      "/memory/memory-ext-testing-strategy.md",
       "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
@@ -30259,9 +29957,6 @@
     "戈利亚": [
       "/characters/15564.md"
     ],
-    "戏使": [
-      "/extracted/extracted-readme.md"
-    ],
     "戏内": [
       "/characters/122587.md",
       "/characters/125346.md",
@@ -30611,10 +30306,6 @@
     "手册": [
       "/memory/memory-ext-collab-event-playbook.md"
     ],
-    "手可": [
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md"
-    ],
     "手得": [
       "/characters/15583.md"
     ],
@@ -30793,12 +30484,14 @@
       "/characters/15600.md"
     ],
     "护城": [
+      "/memory/memory-ext-testing-strategy.md",
       "/projects/doc-testing-strategy.md"
     ],
     "护更": [
       "/characters/15565.md"
     ],
     "护栏": [
+      "/memory/memory-ext-testing-strategy.md",
       "/projects/doc-testing-strategy.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md"
     ],
@@ -30821,9 +30514,6 @@
       "/characters/15576.md",
       "/characters/15581.md",
       "/characters/15592.md"
-    ],
-    "护解": [
-      "/extracted/extracted-readme.md"
     ],
     "护越": [
       "/characters/15581.md"
@@ -31150,9 +30840,6 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/extracted/extracted-readme.md",
       "/memory/capability-index.md",
       "/memory/contribution-protocol.md",
       "/memory/decisions-archive.md",
@@ -31190,6 +30877,7 @@
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
+      "/memory/memory-ext-testing-strategy.md",
       "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
@@ -31228,8 +30916,6 @@
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
-      "/projects/extracted-lua-inventory.md",
-      "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
@@ -31773,9 +31459,6 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/extracted/extracted-readme.md",
       "/news-output/news-output-all.md",
       "/news-output/news-output-appstore.md",
       "/news-output/news-output-arca-live.md",
@@ -31802,8 +31485,6 @@
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
-      "/projects/extracted-lua-inventory.md",
-      "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
@@ -31992,7 +31673,6 @@
       "/characters/77913.md"
     ],
     "提取": [
-      "/projects/extracted-lua-readme.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md"
     ],
     "提灯": [
@@ -32072,9 +31752,6 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/extracted/extracted-readme.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -32107,6 +31784,7 @@
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
+      "/memory/memory-ext-testing-strategy.md",
       "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
@@ -32140,8 +31818,6 @@
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
-      "/projects/extracted-lua-inventory.md",
-      "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
@@ -32482,9 +32158,6 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/extracted/extracted-readme.md",
       "/memory/capability-index.md",
       "/memory/contribution-protocol.md",
       "/memory/decisions-archive.md",
@@ -32522,6 +32195,7 @@
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
+      "/memory/memory-ext-testing-strategy.md",
       "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
@@ -32560,8 +32234,6 @@
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
-      "/projects/extracted-lua-inventory.md",
-      "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
@@ -32770,9 +32442,6 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/extracted/extracted-readme.md",
       "/memory/capability-index.md",
       "/memory/contribution-protocol.md",
       "/memory/decisions-archive.md",
@@ -32810,6 +32479,7 @@
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
+      "/memory/memory-ext-testing-strategy.md",
       "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
@@ -32848,8 +32518,6 @@
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
-      "/projects/extracted-lua-inventory.md",
-      "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
@@ -33145,6 +32813,7 @@
       "/characters/15589.md"
     ],
     "数字": [
+      "/memory/memory-ext-testing-strategy.md",
       "/projects/doc-testing-strategy.md"
     ],
     "数据": [
@@ -33237,9 +32906,7 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md"
     ],
     "整层": [
-      "/README.md",
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md"
+      "/README.md"
     ],
     "整性": [
       "/community/community-appstore.md",
@@ -33317,8 +32984,6 @@
       "/README.md",
       "/assets/assets-chat-onboarding-snippet.md",
       "/assets/assets-narrative-structure.md",
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-storage-discussion.md",
       "/memory/memory-ext-active-self-improvement-requirements.md",
@@ -33370,6 +33035,7 @@
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
+      "/memory/memory-ext-testing-strategy.md",
       "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
@@ -34459,9 +34125,6 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/extracted/extracted-readme.md",
       "/memory/capability-index.md",
       "/memory/contribution-protocol.md",
       "/memory/decisions-archive.md",
@@ -34499,6 +34162,7 @@
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
+      "/memory/memory-ext-testing-strategy.md",
       "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
@@ -34537,8 +34201,6 @@
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
-      "/projects/extracted-lua-inventory.md",
-      "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
@@ -34714,9 +34376,6 @@
     "本健": [
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md"
     ],
-    "本全": [
-      "/projects/extracted-lua-readme.md"
-    ],
     "本号": [
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
     ],
@@ -34888,9 +34547,6 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/extracted/extracted-readme.md",
       "/memory/capability-index.md",
       "/memory/contribution-protocol.md",
       "/memory/decisions-archive.md",
@@ -34928,6 +34584,7 @@
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
+      "/memory/memory-ext-testing-strategy.md",
       "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
@@ -34966,8 +34623,6 @@
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
-      "/projects/extracted-lua-inventory.md",
-      "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
@@ -35153,9 +34808,6 @@
     ],
     "条冷": [
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
-    ],
-    "条列": [
-      "/projects/extracted-lua-inventory.md"
     ],
     "条可": [
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md"
@@ -35536,9 +35188,6 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/extracted/extracted-readme.md",
       "/news-output/news-output-all.md",
       "/news-output/news-output-appstore.md",
       "/news-output/news-output-arca-live.md",
@@ -35565,8 +35214,6 @@
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
-      "/projects/extracted-lua-inventory.md",
-      "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
@@ -35713,6 +35360,7 @@
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md"
     ],
     "栏各": [
+      "/memory/memory-ext-testing-strategy.md",
       "/projects/doc-testing-strategy.md"
     ],
     "树之": [
@@ -35797,7 +35445,6 @@
     ],
     "格式": [
       "/README.md",
-      "/extracted/extracted-readme.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
       "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
@@ -36259,9 +35906,6 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/extracted/extracted-readme.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md",
       "/news-output/news-output-all.md",
       "/news-output/news-output-appstore.md",
@@ -36289,8 +35933,6 @@
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
-      "/projects/extracted-lua-inventory.md",
-      "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
@@ -36601,9 +36243,6 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/extracted/extracted-readme.md",
       "/memory/capability-index.md",
       "/memory/contribution-protocol.md",
       "/memory/decisions-archive.md",
@@ -36641,6 +36280,7 @@
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
+      "/memory/memory-ext-testing-strategy.md",
       "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
@@ -36679,8 +36319,6 @@
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
-      "/projects/extracted-lua-inventory.md",
-      "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
@@ -36857,10 +36495,6 @@
     ],
     "此单": [
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md"
-    ],
-    "此处": [
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md"
     ],
     "此线": [
       "/README.md"
@@ -37331,6 +36965,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "测试": [
+      "/memory/memory-ext-testing-strategy.md",
       "/projects/doc-testing-strategy.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
@@ -37437,7 +37072,6 @@
     ],
     "清单": [
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
-      "/projects/extracted-lua-inventory.md",
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md"
     ],
@@ -37544,7 +37178,6 @@
       "/characters/94450.md",
       "/characters/94451.md",
       "/characters/95786.md",
-      "/extracted/extracted-readme.md",
       "/projects/entry-readme.md"
     ],
     "源不": [
@@ -38097,10 +37730,6 @@
     ],
     "独决": [
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md"
-    ],
-    "独占": [
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md"
     ],
     "独特": [
       "/characters/15567.md",
@@ -39379,10 +39008,8 @@
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "的测": [
+      "/memory/memory-ext-testing-strategy.md",
       "/projects/doc-testing-strategy.md"
-    ],
-    "的清": [
-      "/projects/extracted-lua-inventory.md"
     ],
     "的游": [
       "/projects/entry-readme.md"
@@ -39566,9 +39193,7 @@
     ],
     "的解": [
       "/characters/15602.md",
-      "/characters/95786.md",
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md"
+      "/characters/95786.md"
     ],
     "的触": [
       "/characters/15563.md"
@@ -39819,6 +39444,7 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md"
     ],
     "相补": [
+      "/memory/memory-ext-testing-strategy.md",
       "/projects/doc-testing-strategy.md"
     ],
     "盾轴": [
@@ -40002,14 +39628,8 @@
     "码工": [
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md"
     ],
-    "码本": [
-      "/projects/extracted-lua-inventory.md"
-    ],
     "码核": [
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
-    ],
-    "码格": [
-      "/extracted/extracted-readme.md"
     ],
     "码片": [
       "/memory/memory-archive-bpt-architecture-summary-template.md"
@@ -40743,6 +40363,7 @@
     ],
     "策略": [
       "/memory/memory-archive-contribution-protocol-hub.md",
+      "/memory/memory-ext-testing-strategy.md",
       "/projects/doc-testing-strategy.md"
     ],
     "策直": [
@@ -40791,10 +40412,8 @@
     "算帽": [
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
     ],
-    "算法": [
-      "/extracted/extracted-readme.md"
-    ],
     "管一": [
+      "/memory/memory-ext-testing-strategy.md",
       "/projects/doc-testing-strategy.md"
     ],
     "管在": [
@@ -41430,9 +41049,6 @@
     "置和": [
       "/memory/memory-ext-biav-info-classification.md"
     ],
-    "置的": [
-      "/projects/extracted-lua-inventory.md"
-    ],
     "署名": [
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
     ],
@@ -41671,9 +41287,6 @@
       "/characters/15571.md",
       "/characters/54117.md"
     ],
-    "能保": [
-      "/projects/extracted-lua-readme.md"
-    ],
     "能创": [
       "/characters/15590.md"
     ],
@@ -41805,7 +41418,6 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md"
     ],
     "脚本": [
-      "/projects/extracted-lua-readme.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
     ],
     "脱敏": [
@@ -41899,8 +41511,7 @@
       "/README.md"
     ],
     "自定": [
-      "/characters/15590.md",
-      "/extracted/extracted-readme.md"
+      "/characters/15590.md"
     ],
     "自审": [
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md"
@@ -42063,10 +41674,6 @@
     "节点": [
       "/README.md"
     ],
-    "节码": [
-      "/extracted/extracted-readme.md",
-      "/projects/extracted-lua-inventory.md"
-    ],
     "芯不": [
       "/memory/memory-ext-bpt-guidance-protocol.md"
     ],
@@ -42128,8 +41735,12 @@
     "芯是": [
       "/projects/entry-claude-md.md"
     ],
+    "芯测": [
+      "/memory/memory-ext-testing-strategy.md"
+    ],
     "芯的": [
       "/assets/persona-erica-speech-canon.md",
+      "/memory/memory-ext-testing-strategy.md",
       "/projects/doc-testing-strategy.md"
     ],
     "芯知": [
@@ -42413,6 +42024,7 @@
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md"
     ],
     "补盲": [
+      "/memory/memory-ext-testing-strategy.md",
       "/projects/doc-testing-strategy.md"
     ],
     "表增": [
@@ -42481,8 +42093,6 @@
       "/characters/78840.md",
       "/characters/78841.md",
       "/characters/94451.md",
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
@@ -42551,7 +42161,6 @@
       "/README.md",
       "/memory/memory-archive-contribution-protocol-hub.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
-      "/projects/extracted-lua-readme.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
@@ -42665,16 +42274,9 @@
     ],
     "解包": [
       "/README.md",
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/projects/extracted-lua-inventory.md",
-      "/projects/extracted-lua-readme.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/story/lore_entries.md",
       "/story/story_units.md"
-    ],
-    "解密": [
-      "/extracted/extracted-readme.md"
     ],
     "解敌": [
       "/characters/125346.md",
@@ -42884,6 +42486,7 @@
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
+      "/memory/memory-ext-testing-strategy.md",
       "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
@@ -43118,6 +42721,7 @@
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
     ],
     "试不": [
+      "/memory/memory-ext-testing-strategy.md",
       "/projects/doc-testing-strategy.md"
     ],
     "试图": [
@@ -43130,6 +42734,7 @@
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md"
     ],
     "试策": [
+      "/memory/memory-ext-testing-strategy.md",
       "/projects/doc-testing-strategy.md"
     ],
     "诗篇": [
@@ -43273,9 +42878,7 @@
     ],
     "说明": [
       "/README.md",
-      "/extracted/extracted-readme.md",
       "/memory/memory-ext-workflow-api-key-audit.md",
-      "/projects/extracted-lua-readme.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md"
@@ -43315,10 +42918,6 @@
     ],
     "读的": [
       "/memory/memory-ext-knowledge-layer-design.md"
-    ],
-    "读解": [
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md"
     ],
     "调和": [
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md"
@@ -43384,6 +42983,7 @@
     ],
     "质量": [
       "/memory/memory-ext-active-self-improvement-requirements.md",
+      "/memory/memory-ext-testing-strategy.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md"
@@ -43643,9 +43243,6 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/extracted/extracted-readme.md",
       "/memory/capability-index.md",
       "/memory/contribution-protocol.md",
       "/memory/decisions-archive.md",
@@ -43683,6 +43280,7 @@
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
+      "/memory/memory-ext-testing-strategy.md",
       "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
@@ -43721,8 +43319,6 @@
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
-      "/projects/extracted-lua-inventory.md",
-      "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
@@ -44378,9 +43974,6 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/extracted/extracted-readme.md",
       "/news-output/news-output-all.md",
       "/news-output/news-output-appstore.md",
       "/news-output/news-output-arca-live.md",
@@ -44407,8 +44000,6 @@
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
-      "/projects/extracted-lua-inventory.md",
-      "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
@@ -44685,8 +44276,7 @@
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "逐条": [
-      "/memory/memory-ext-todo.md",
-      "/projects/extracted-lua-inventory.md"
+      "/memory/memory-ext-todo.md"
     ],
     "逐渐": [
       "/characters/15595.md",
@@ -44870,9 +44460,6 @@
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
     ],
-    "部覆": [
-      "/projects/extracted-lua-readme.md"
-    ],
     "都不": [
       "/characters/15587.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md"
@@ -44923,8 +44510,7 @@
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
     ],
     "配合": [
-      "/characters/77922.md",
-      "/extracted/extracted-readme.md"
+      "/characters/77922.md"
     ],
     "配对": [
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
@@ -45181,7 +44767,8 @@
       "/memory/memory-ext-discord-archiver-design.md"
     ],
     "量护": [
-      "/characters/15588.md"
+      "/characters/15588.md",
+      "/memory/memory-ext-testing-strategy.md"
     ],
     "量提": [
       "/characters/15597.md"
@@ -45364,9 +44951,6 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/extracted/extracted-readme.md",
       "/memory/capability-index.md",
       "/memory/contribution-protocol.md",
       "/memory/decisions-archive.md",
@@ -45404,6 +44988,7 @@
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
+      "/memory/memory-ext-testing-strategy.md",
       "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
@@ -45442,8 +45027,6 @@
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
-      "/projects/extracted-lua-inventory.md",
-      "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
@@ -45671,9 +45254,6 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/extracted/extracted-readme.md",
       "/news-output/news-output-all.md",
       "/news-output/news-output-appstore.md",
       "/news-output/news-output-arca-live.md",
@@ -45700,8 +45280,6 @@
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
-      "/projects/extracted-lua-inventory.md",
-      "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
@@ -45875,6 +45453,7 @@
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
       "/memory/memory-ext-knowledge-layer-design.md",
+      "/memory/memory-ext-testing-strategy.md",
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/project-news.md",
@@ -46460,6 +46039,7 @@
       "/memory/memory-ext-active-self-improvement-requirements.md"
     ],
     "靠单": [
+      "/memory/memory-ext-testing-strategy.md",
       "/projects/doc-testing-strategy.md"
     ],
     "靠支": [
@@ -47040,8 +46620,6 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
       "/memory/decisions-archive.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
@@ -47090,9 +46668,6 @@
     "arm": [
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
     ],
-    "art": [
-      "/extracted/extracted-art-assets.md"
-    ],
     "assembly": [
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
     ],
@@ -47100,8 +46675,6 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md"
     ],
     "assets": [
-      "/extracted/extracted-art-assets.md",
-      "/projects/extracted-lua-inventory.md",
       "/projects/releases-treasure-map.md"
     ],
     "atom": [
@@ -47166,7 +46739,6 @@
       "/sources/bilibili.md"
     ],
     "binary": [
-      "/projects/extracted-lua-inventory.md",
       "/projects/releases-treasure-map.md"
     ],
     "black": [
@@ -47279,9 +46851,6 @@
     "card": [
       "/assets/assets-card-system.md"
     ],
-    "categorized": [
-      "/extracted/extracted-categorized.md"
-    ],
     "cc": [
       "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
@@ -47392,10 +46961,6 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md"
     ],
-    "content": [
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md"
-    ],
     "context": [
       "/memory/morimens-context.md",
       "/projects/project-game.md",
@@ -47480,7 +47045,6 @@
       "/assets/assets-version.md",
       "/assets/persona-erica-speech-canon.md",
       "/assets/persona-erica.md",
-      "/extracted/extracted-readme.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -47513,6 +47077,7 @@
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
+      "/memory/memory-ext-testing-strategy.md",
       "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
@@ -47523,8 +47088,6 @@
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
-      "/projects/extracted-lua-inventory.md",
-      "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
@@ -47783,9 +47346,6 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/extracted/extracted-readme.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -47818,6 +47378,7 @@
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
+      "/memory/memory-ext-testing-strategy.md",
       "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
@@ -47851,8 +47412,6 @@
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
-      "/projects/extracted-lua-inventory.md",
-      "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
@@ -48217,7 +47776,6 @@
     ],
     "doc": [
       "/projects/doc-testing-strategy.md",
-      "/projects/extracted-lua-readme.md",
       "/projects/silver-core-sdk-doc-architecture.md",
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-concurrency.md",
@@ -48238,7 +47796,6 @@
     ],
     "documentation": [
       "/README.md",
-      "/extracted/extracted-readme.md",
       "/story/story_layer_readme.md"
     ],
     "domain": [
@@ -48281,7 +47838,6 @@
     ],
     "engineering": [
       "/projects/doc-testing-strategy.md",
-      "/projects/extracted-lua-readme.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-matrix-20260703.md",
@@ -48356,9 +47912,6 @@
     "external": [
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md"
     ],
-    "extracted": [
-      "/extracted/extracted-readme.md"
-    ],
     "fact": [
       "/assets/assets-archive-integrity.md",
       "/assets/assets-card-system.md",
@@ -48382,10 +47935,6 @@
     ],
     "features": [
       "/memory/memory-ext-research-best-wiki-features.md"
-    ],
-    "first": [
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md"
     ],
     "fixed": [
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md"
@@ -48435,8 +47984,6 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
       "/resource/resource-daily-news-morimens-daily-full-20260602.md",
       "/sources/appstore.md",
       "/sources/arca_live.md",
@@ -48516,10 +48063,6 @@
     "guide": [
       "/memory/style-guide.md",
       "/projects/site-design-morimens-design-system-guide.md"
-    ],
-    "hand": [
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md"
     ],
     "handoff": [
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
@@ -48695,9 +48238,6 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
-      "/extracted/extracted-readme.md",
       "/memory/memory-archive-bpt-architecture-summary-template.md",
       "/memory/memory-archive-bpt-guidance-log.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-black-pool-design.md",
@@ -48730,6 +48270,7 @@
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
+      "/memory/memory-ext-testing-strategy.md",
       "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
@@ -48763,8 +48304,6 @@
       "/projects/doc-testing-strategy.md",
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
-      "/projects/extracted-lua-inventory.md",
-      "/projects/extracted-lua-readme.md",
       "/projects/news-archive-sources-registry.md",
       "/projects/project-game.md",
       "/projects/project-news.md",
@@ -48998,9 +48537,6 @@
       "/story/lore_entries.md",
       "/wiki-data/wiki-data-world-lore.md"
     ],
-    "lua": [
-      "/projects/extracted-lua-inventory.md"
-    ],
     "machine": [
       "/memory/memory-ext-capability-annotations.md",
       "/memory/memory-ext-capability-registry.md",
@@ -49017,9 +48553,6 @@
     ],
     "manager": [
       "/resource/resource-proposal-bpt-sdk-session-manager-20260706.md"
-    ],
-    "manifest": [
-      "/projects/extracted-lua-inventory.md"
     ],
     "manual": [
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md"
@@ -49095,6 +48628,7 @@
       "/memory/memory-ext-research-best-wiki-features.md",
       "/memory/memory-ext-session-continuity.md",
       "/memory/memory-ext-skill-authoring-standard.md",
+      "/memory/memory-ext-testing-strategy.md",
       "/memory/memory-ext-todo.md",
       "/memory/memory-ext-wiki-characters-schema-v1.md",
       "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
@@ -49423,7 +48957,6 @@
       "/memory/project-status.md",
       "/memory/strategic-plan-2026.md",
       "/memory/style-guide.md",
-      "/projects/extracted-lua-inventory.md",
       "/projects/releases-treasure-map.md",
       "/story/STORY_RESEARCH.md",
       "/story/character_story_links.md",
@@ -49446,8 +48979,6 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md"
     ],
     "processed": [
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md",
       "/wiki-data/wiki-schema-characters-processed-schema.md"
     ],
     "producer": [
@@ -50129,10 +49660,6 @@
     "unlock": [
       "/wiki-data/wiki-data-feature-unlock.md"
     ],
-    "unpack": [
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md"
-    ],
     "unpacked": [
       "/wiki-data/wiki-data-aliases.md",
       "/wiki-data/wiki-data-banners-by-character.md",
@@ -50169,10 +49696,6 @@
     ],
     "update": [
       "/wiki-data/wiki-data-update-notices.md"
-    ],
-    "upstream": [
-      "/extracted/extracted-art-assets.md",
-      "/extracted/extracted-categorized.md"
     ],
     "utils": [
       "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md"
@@ -50520,6 +50043,9 @@
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md"
     ],
+    "分层": [
+      "/memory/memory-ext-testing-strategy.md"
+    ],
     "分析": [
       "/community/community-index.md",
       "/memory/memory-research-community-analysis-2026-05-18-26.md"
@@ -50545,9 +50071,6 @@
     ],
     "动窗": [
       "/memory/memory-research-community-analysis-2026-05-18-26.md"
-    ],
-    "包提": [
-      "/projects/extracted-lua-readme.md"
     ],
     "北崎": [
       "/characters/15582.md"
@@ -50627,9 +50150,6 @@
     ],
     "参考": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-desktop-design-spec-ref.md"
-    ],
-    "取说": [
-      "/projects/extracted-lua-readme.md"
     ],
     "变体": [
       "/characters/122587.md",
@@ -50814,6 +50334,9 @@
     ],
     "层设": [
       "/memory/memory-ext-knowledge-layer-design.md"
+    ],
+    "层质": [
+      "/memory/memory-ext-testing-strategy.md"
     ],
     "展示": [
       "/news-output/news-output-all.md",
@@ -51074,6 +50597,9 @@
     "技能": [
       "/memory/memory-ext-skill-authoring-standard.md"
     ],
+    "护栏": [
+      "/memory/memory-ext-testing-strategy.md"
+    ],
     "报告": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-build-verification.md",
       "/memory/memory-research-community-analysis-2026-05-18-26.md"
@@ -51197,9 +50723,6 @@
     "接口": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-silver-blackpool-interface.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md"
-    ],
-    "提取": [
-      "/projects/extracted-lua-readme.md"
     ],
     "搬运": [
       "/memory/memory-archive-bpt-guidance-log.md"
@@ -51533,6 +51056,7 @@
       "/community/community-timeline.md"
     ],
     "测试": [
+      "/memory/memory-ext-testing-strategy.md",
       "/projects/doc-testing-strategy.md"
     ],
     "浦小": [
@@ -51542,8 +51066,7 @@
       "/characters/15580.md"
     ],
     "清单": [
-      "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
-      "/projects/extracted-lua-inventory.md"
+      "/memory/memory-ext-wiki-phase-2-gap-inventory.md"
     ],
     "清查": [
       "/memory/memory-ext-workflow-api-key-audit.md"
@@ -51889,6 +51412,7 @@
       "/memory/memory-ext-knowledge-layer-design.md"
     ],
     "策略": [
+      "/memory/memory-ext-testing-strategy.md",
       "/projects/doc-testing-strategy.md"
     ],
     "类法": [
@@ -51998,6 +51522,9 @@
     "芯指": [
       "/memory/memory-ext-bpt-guidance-protocol.md"
     ],
+    "芯测": [
+      "/memory/memory-ext-testing-strategy.md"
+    ],
     "芯知": [
       "/memory/memory-ext-knowledge-layer-design.md"
     ],
@@ -52073,10 +51600,6 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-desktop-design-spec-ref.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-silver-blackpool-interface.md"
     ],
-    "解包": [
-      "/projects/extracted-lua-inventory.md",
-      "/projects/extracted-lua-readme.md"
-    ],
     "詹金": [
       "/characters/15578.md",
       "/characters/15593.md"
@@ -52127,6 +51650,7 @@
       "/memory/memory-research-discord-archive-backfill-conflict.md"
     ],
     "试策": [
+      "/memory/memory-ext-testing-strategy.md",
       "/projects/doc-testing-strategy.md"
     ],
     "话加": [
@@ -52134,10 +51658,6 @@
     ],
     "诞妄": [
       "/characters/15589.md"
-    ],
-    "说明": [
-      "/extracted/extracted-readme.md",
-      "/projects/extracted-lua-readme.md"
     ],
     "诺登斯": [
       "/characters/130375.md"
@@ -52157,6 +51677,9 @@
     ],
     "账台": [
       "/memory/memory-ext-todo.md"
+    ],
+    "质量": [
+      "/memory/memory-ext-testing-strategy.md"
     ],
     "资产": [
       "/assets/assets-images.md"
@@ -52239,6 +51762,9 @@
     "量优": [
       "/memory/memory-strategy-repo-slimming-plan.md"
     ],
+    "量护": [
+      "/memory/memory-ext-testing-strategy.md"
+    ],
     "量档": [
       "/community/community-appstore.md",
       "/community/community-arca-live.md",
@@ -52265,7 +51791,8 @@
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
-      "/memory/memory-ext-knowledge-layer-design.md"
+      "/memory/memory-ext-knowledge-layer-design.md",
+      "/memory/memory-ext-testing-strategy.md"
     ],
     "长谷": [
       "/characters/94450.md"

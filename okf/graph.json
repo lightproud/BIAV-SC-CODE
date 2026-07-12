@@ -1,7 +1,7 @@
 {
   "generated": "2026-07-12",
   "stats": {
-    "nodes": 355,
+    "nodes": 351,
     "edges": 427
   },
   "nodes": [
@@ -1210,40 +1210,6 @@
       "tier": "skeleton"
     },
     {
-      "id": "/extracted/extracted-art-assets.md",
-      "type": "dataset",
-      "title": "art_assets",
-      "tags": [
-        "data_layer:full_archive",
-        "first-hand-unpack",
-        "upstream-of:processed",
-        "content:art-assets"
-      ],
-      "tier": "search"
-    },
-    {
-      "id": "/extracted/extracted-categorized.md",
-      "type": "dataset",
-      "title": "categorized",
-      "tags": [
-        "data_layer:full_archive",
-        "first-hand-unpack",
-        "upstream-of:processed",
-        "content:categorized"
-      ],
-      "tier": "search"
-    },
-    {
-      "id": "/extracted/extracted-readme.md",
-      "type": "documentation",
-      "title": "extracted 说明",
-      "tags": [
-        "data_layer:curated",
-        "documentation"
-      ],
-      "tier": "search"
-    },
-    {
       "id": "/memory/capability-index.md",
       "type": "knowledge-pointer",
       "title": "capability-index.md",
@@ -1663,6 +1629,16 @@
       "tier": "search"
     },
     {
+      "id": "/memory/memory-ext-testing-strategy.md",
+      "type": "knowledge-pointer",
+      "title": "银芯测试策略 — 分层质量护栏",
+      "tags": [
+        "memory",
+        "data_layer:curated"
+      ],
+      "tier": "search"
+    },
+    {
       "id": "/memory/memory-ext-todo.md",
       "type": "knowledge-pointer",
       "title": "挂账台账（待办 / 待裁唯一权威）",
@@ -2066,27 +2042,6 @@
       "tags": [
         "data_layer:curated",
         "entry-point"
-      ],
-      "tier": "search"
-    },
-    {
-      "id": "/projects/extracted-lua-inventory.md",
-      "type": "dataset",
-      "title": "解包 lua 清单",
-      "tags": [
-        "data_layer:curated",
-        "manifest",
-        "binary-assets-pointer"
-      ],
-      "tier": "search"
-    },
-    {
-      "id": "/projects/extracted-lua-readme.md",
-      "type": "documentation",
-      "title": "解包提取说明",
-      "tags": [
-        "data_layer:curated",
-        "engineering-doc"
       ],
       "tier": "search"
     },

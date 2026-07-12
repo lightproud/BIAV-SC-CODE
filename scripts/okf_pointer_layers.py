@@ -613,10 +613,9 @@ def build_projects() -> list[dict]:
             "description": blurb or "仓内藏宝图：指向只存在于 GitHub Releases 的二进制本体（立绘/音视频/lua 字节码/fanart）。",
             "resource": _rel(rel_md), "tags": ["data_layer:curated", "treasure-map", "binary-assets-pointer"],
         })
-    # engineering docs
+    # engineering docs（extracted_lua 说明与清单已随 2026-07-12 目录规范化裁定整删）
     for p, cid, title in [
-        (REPO / "docs" / "testing-strategy.md", "doc-testing-strategy", "测试策略"),
-        (REPO / "extracted_lua" / "README_提取说明.md", "extracted-lua-readme", "解包提取说明"),
+        (REPO / "memory" / "testing-strategy.md", "doc-testing-strategy", "测试策略"),
     ]:
         if p.exists():
             _t, blurb = md_title_blurb(p)
@@ -625,20 +624,6 @@ def build_projects() -> list[dict]:
                 "description": blurb or title, "resource": _rel(p),
                 "tags": ["data_layer:curated", "engineering-doc"],
             })
-    # lua inventory csv (manifest of .luac bodies in Releases)
-    csvp = REPO / "extracted_lua" / "lua_scripts_inventory.csv"
-    if csvp.exists():
-        n = 0
-        try:
-            with csvp.open(encoding="utf-8", errors="ignore") as fh:
-                n = max(0, sum(1 for _ in csv.reader(fh)) - 1)
-        except OSError:
-            pass
-        entries.append({
-            "id": "extracted-lua-inventory", "type": "dataset", "title": "解包 lua 清单",
-            "description": f"逐条列 .luac 本体位置的清单（{n} 条），字节码本体在 Releases「解包」桶。",
-            "resource": _rel(csvp), "tags": ["data_layer:curated", "manifest", "binary-assets-pointer"],
-        })
     return write_layer("projects", entries, "入口文档 + 子项目上下文 + 藏宝图 + 设计/工程文档",
                        "仓库最高权威入口（CLAUDE.md / README.md）+ 各子项目 CONTEXT.md（动手前必读）+ "
                        "RELEASES.md 藏宝图 + silver-core-sdk/site 设计文档 + 工程文档 + 归档注册表的导航指针。")

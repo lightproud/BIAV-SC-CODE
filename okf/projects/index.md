@@ -1,4 +1,4 @@
-# 入口文档 + 子项目上下文 + 藏宝图 + 设计/工程文档 (28)
+# 入口文档 + 子项目上下文 + 藏宝图 + 设计/工程文档 (26)
 
 仓库最高权威入口（CLAUDE.md / README.md）+ 各子项目 CONTEXT.md（动手前必读）+ RELEASES.md 藏宝图 + silver-core-sdk/site 设计文档 + 工程文档 + 归档注册表的导航指针。
 
@@ -30,5 +30,3 @@
 * [archive_sources.json（归档注册表）](/projects/news-archive-sources-registry.md) - T2 数据层归档声明式注册表：哪些来源归档到哪、如何驱逐（archive_engine 读它干活）。
 * [Releases 藏宝图](/projects/releases-treasure-map.md) - 合并自 art-assets-v2 + audio-assets-v1 + audio-raw-v1 + video-assets-v1 + （2026-06
 * [测试策略](/projects/doc-testing-strategy.md) - 银芯的测试不靠单一数字护城。三层护栏各管一件事，互相补盲：
-* [解包提取说明](/projects/extracted-lua-readme.md) - **不能保证 639 份 archive 脚本全部覆盖。** 原因：
-* [解包 lua 清单](/projects/extracted-lua-inventory.md) - 逐条列 .luac 本体位置的清单（1608 条），字节码本体在 Releases「解包」桶。

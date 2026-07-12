@@ -54,7 +54,6 @@ brain-in-a-vat/
 │   ├── news/                # 社区新闻聚合 + 报告系统（含全量档案层 data/）
 │   ├── wiki/                # 游戏数据集 + 多语言 Wiki 站点
 │   └── game/                # 衍生游戏（v2.0 退主线，备扩展位）
-├── extracted_lua/           # 解包提取说明+清单（.luac 本体在 Release「解包」桶，text 在 Public-Info-Pool/Reference/）
 └── Public-Info-Pool/        # 公开信息层产物总池（Resource 正式产物 / Rough 草稿；取代旧 deliverables/）
 ```
 
