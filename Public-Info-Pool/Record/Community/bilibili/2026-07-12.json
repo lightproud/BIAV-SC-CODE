@@ -1,8 +1,8 @@
 {
   "date": "2026-07-12",
-  "archived_at": "2026-07-11T21:50:06.780101+00:00",
+  "archived_at": "2026-07-12T02:34:11.473075+00:00",
   "source": "bilibili",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "title": "原来是个梦",
@@ -23,6 +23,29 @@
         "danmaku": 0
       },
       "media_url": "https://i2.hdslb.com/bfs/archive/8c2e59cf91d47627e60a2c202c49510489000406.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "【没想好的初玩实况】最后生还者丨沙耶之歌 The Song of Saya #23",
+      "summary": "感谢您的观看，我是一个游戏实况主，名字没想好。\n游戏名字：沙耶之歌 The Song of Saya\n游戏平台：Steam",
+      "source": "bilibili",
+      "time": "2026-07-12T02:00:00+00:00",
+      "url": "https://www.bilibili.com/video/BV1XVNs6MEfp",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "没想好哦MeiXiangHAO",
+      "tags": [
+        "单机游戏"
+      ],
+      "metadata": {
+        "play": 0,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/4b07160edeeca2cd677b732033abafcd1726aa1a.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
