@@ -8,16 +8,16 @@
     "counts": {
       "workflows": 33,
       "scripts_top": 36,
-      "scripts_news": 29,
+      "scripts_news": 30,
       "scripts_wiki": 6,
       "mcp_tools": 11,
       "commands": 4,
       "skills": 4,
       "projects": 7,
-      "total": 130
+      "total": 131
     },
     "reachability": {
-      "live": 71,
+      "live": 72,
       "test-only": 0,
       "orphaned": 0
     }
@@ -876,6 +876,15 @@
       "planes": [
         "cli",
         "workflow"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "discord_reconcile.py",
+      "path": "projects/news/scripts/discord_reconcile.py",
+      "summary": "discord_reconcile.py — channel_index 与归档目录的一致性对账（T35，守密人 2026-07-12 点火）。",
+      "planes": [
+        "cli"
       ],
       "status": "live"
     },

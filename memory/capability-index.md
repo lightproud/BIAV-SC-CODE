@@ -4,8 +4,8 @@
 > 中文用途补注请改 `memory/capability-annotations.json`；机器权威数据见 `memory/capability-registry.json`。
 
 - 生成日期：2026-07-12
-- 功能总数：**130**
-- 脚本可达性：活 71 / 仅测试 0 / 孤儿 0
+- 功能总数：**131**
+- 脚本可达性：活 72 / 仅测试 0 / 孤儿 0
 
 ## 总览
 
@@ -13,7 +13,7 @@
 |------|------|
 | CI 自动化工作流（编排入口·定时/事件平面） | 33 |
 | 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 36 |
-| news 采集器脚本 | 29 |
+| news 采集器脚本 | 30 |
 | wiki 数据脚本 | 6 |
 | MCP 知识层工具（编排入口·AI 动态平面） | 11 |
 | Slash 命令（编排入口·人工平面） | 4 |
@@ -178,7 +178,7 @@
 - **`silver_tokenizer.py`** _[活:import]_ — 银芯静态索引共用分词器:领域词典 + 正向最大匹配（FMM）。  
   `scripts/silver_tokenizer.py`
 
-## news 采集器脚本（29）
+## news 采集器脚本（30）
 
 - **`aggregator.py`** _[活:cli+command+workflow]_ — 忘却前夜 Morimens - 社区热点聚合器  
   `projects/news/scripts/aggregator.py`
@@ -220,6 +220,8 @@
   `projects/news/scripts/discord_compact.py`
 - **`discord_list_guilds.py`** _[活:cli+workflow]_ — Discord 服务器清单探测 — 列出 bot 当前加入的所有服务器（guild）  
   `projects/news/scripts/discord_list_guilds.py`
+- **`discord_reconcile.py`** _[活:cli]_ — discord_reconcile.py — channel_index 与归档目录的一致性对账（T35，守密人 2026-07-12 点火）。  
+  `projects/news/scripts/discord_reconcile.py`
 - **`download_media.py`** _[活:cli+workflow]_ — download_media.py — 全平台媒体资源下载器  
   `projects/news/scripts/download_media.py`
 - **`global_collectors.py`** _[活:import]_ — 忘却前夜 Morimens - 全球信息收集器  
