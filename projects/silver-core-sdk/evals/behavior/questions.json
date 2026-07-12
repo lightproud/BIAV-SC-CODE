@@ -325,7 +325,7 @@
       "scenario": "Configure a minimal non-coding session (tools restricted to Read only, no MCP, no memory). The assembled system prompt must stay inside a pinned byte envelope — gated fragments for absent capabilities must not leak in. This is the measurement anchor for the prompt-trim PRs that loop 3 will propose (REQ-3.3).",
       "harness": {
         "driver": "prompt-session",
-        "options": { "allowedTools": ["Read"] },
+        "options": { "tools": ["Read"] },
         "prompt": "Say 'ready'.",
         "envelope": { "maxSystemPromptBytes": 24000 }
       },

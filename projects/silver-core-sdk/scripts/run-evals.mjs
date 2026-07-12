@@ -277,6 +277,12 @@ async function runBehavior() {
         const { transcript, result } = await runPhase(sdk, phase, ws, {
           permissionMode: 'bypassPermissions',
           allowDangerouslySkipPermissions: true,
+          // Envelope questions (e.g. tok-06) judge measured prompt size, not
+          // vibes: surface the SDK's own per-request composition estimate
+          // (system/prompt_composition rides the transcript into evidence).
+          ...(question.harness.envelope !== undefined && question.harness.envelope !== null
+            ? { includePromptComposition: true }
+            : {}),
         });
         evidence.phases.push({
           transcript: transcript.slice(0, 200),
