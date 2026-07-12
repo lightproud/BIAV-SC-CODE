@@ -95,7 +95,14 @@ function replayBackoff(attempt: number, signal: AbortSignal): Promise<void> {
       signal.removeEventListener('abort', onAbort);
       resolve();
     }, delay);
-    (timer as { unref?: () => void }).unref?.();
+    // Deliberately ref'd: an in-flight replay backoff IS active work. This
+    // fires exactly when the connection just died — often the process's LAST
+    // live handle — and an unref'd timer here drains the event loop, so a
+    // plain-script consumer exits mid-recovery with Node's code 13 (unsettled
+    // top-level await). Vitest's own handles masked this; the first LIVE eval
+    // round (2026-07-12, run 29178257816) died on it. unref() belongs to idle
+    // watchdogs and pooled sockets (stall-watchdog.ts, node-http.ts), never
+    // to a pending retry.
     signal.addEventListener('abort', onAbort, { once: true });
   });
 }

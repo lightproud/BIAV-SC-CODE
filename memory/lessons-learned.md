@@ -452,6 +452,13 @@
 - **Fix**：身份改**骑在单条命令上**——`git -c user.name=… -c user.email=… commit/pull` （`_GIT_ID` 元组两处展开；`pull --rebase` 重写提交同样需要身份故必须带），零持久写。仓库级 config 由会话/容器 setup 自己管
 - **Impact**：判别准则沉淀——**任何在共享/长命容器里跑的脚本，禁写 `git config user.*`（及一切仓库级持久配置），一律 `-c` 单命令作用域**；从 CI workflow 抄脚本进例程时，此项必须过一遍改造检查
 
+## 50. unref 计时器用在「进行中的重试退避」上 = 无头消费方进程静默死亡（exit 13），且 vitest 宿主句柄掩蔽此病
+
+- **Context**：2026-07-12 首轮带故障注入 harness 的 LIVE 评估轮（run 29178257816）零输出死于 exit 13（Node「顶层 await 未决而事件环排空」）。本地 vitest 同场景 4 项测试全绿，STUB/无效 key 全管线也通——只有真流式 + 中途切流复现
+- **Problem**：SDK 引擎 `replayBackoff`（loop.ts）的退避计时器被 `unref`。回合重放的退避**恰好发生在连接刚死之时**——常常是进程最后一个存活句柄；unref 后事件环排空，纯脚本（顶层 await）消费方在恢复中途整个进程静默退出。两重掩蔽：① vitest 自身句柄常驻，单测永远测不出「事件环排空」类缺陷；② 同进程内起的仿真器服务端 socket 也持 ref——负控必须**双进程**（服务器独立子进程 + 客户端 unref 监听）才能复现
+- **Fix**：去掉该 unref（v0.51.1）——**unref 的正当对象是空闲看门狗与空闲池化 socket（stall-watchdog / node-http），绝不是进行中的重试等待**；配子进程级回归测试 `tests/replay-backoff-process-exit.test.ts`（spawn 真 node 进程 + 独立服务器进程 + dc-02 同源客户端切流，断言 exit 0 + turnReplays≥1；负控实测：unref 加回即 exit 13）
+- **Impact**：判别准则两条——① 写 `unref()` 前先问「这个计时器醒来时是否还有别的句柄必然存活」，答不上来就别 unref；② 「进程能否活过恢复窗口」这类缺陷**只能用真子进程测**，vitest/jest 宿主内的绿灯不作数
+
 ---
 
 > **维护说明**：遇到新的坑时立即追加。格式保持统一。

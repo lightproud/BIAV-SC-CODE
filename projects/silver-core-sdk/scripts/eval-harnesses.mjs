@@ -152,12 +152,14 @@ function cutResponse(res, cutAfterEvents) {
           events += 1;
           if (events >= cutAfterEvents) {
             controller.enqueue(value.slice(0, i + 2));
-            try {
-              await reader.cancel();
-            } catch {
-              /* upstream may already be closed */
-            }
+            // Error FIRST, cancel fire-and-forget: awaiting reader.cancel()
+            // here can hang forever on a cross-process socket teardown, and a
+            // hung pull() strands the consumer's read() — with every other
+            // handle unref'd the event loop drains and node dies with exit 13
+            // (unsettled top-level await). First LIVE round 2026-07-12
+            // (run 29178257816) died exactly this way.
             controller.error(new TypeError('injected fault: stream cut mid-body'));
+            void reader.cancel().catch(() => {});
             return;
           }
         }
@@ -165,7 +167,7 @@ function cutResponse(res, cutAfterEvents) {
       controller.enqueue(value);
     },
     cancel(reason) {
-      return reader.cancel(reason);
+      void reader.cancel(reason).catch(() => {});
     },
   });
   return new Response(stream, {
