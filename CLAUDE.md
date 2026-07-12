@@ -98,8 +98,8 @@
 2. **wiki 自举闭环**（原使命#2 载体；**2026-07-12 使命取消、子项目冻结**——已建成果保留
    不删不派发，以下为冻结时点状态）：客户端解包 Lua → 解包 text 原始字段（原
    Reference 层 Game-Unpacked 目录，**2026-07-12 守密人裁定整层删除**——wiki 冻结后
-   消费场景消失，git 历史 + Releases「解包」桶二进制可恢复；wiki 侧 `projects/wiki/data/extracted/`
-   仅余 art_assets 等独占件）→ 脚本 / 人工补齐结构化角色基线（72 角色）→ VitePress 构建社区 Wiki 站点。
+   消费场景消失，git 历史 + Releases「解包」桶二进制可恢复；wiki 侧 data/extracted 独占残件
+   亦于同日随目录规范化裁定整删）→ 脚本 / 人工补齐结构化角色基线（72 角色）→ VitePress 构建社区 Wiki 站点。
    **当前状态**：旧结构化层（`characters.json` 全 6 JSON + 派生角色页，原在 data/db/）2026-06-15 守密人裁定整层清空
    （占位数据长期误导引用）；W2 **可信基线已重建**于 `projects/wiki/data/processed/characters.json`（72 真实角色、一手解包、
    **无合成占位**），`scripts/generate_wiki_pages.py` 已据此生成 58 个真实唤醒体静态页、站点构建通过。
@@ -314,7 +314,6 @@ brain-in-a-vat/
 │   ├── Reference/                 #   引用参照层（解包 text 层 2026-07-12 裁定删除，git 历史可追）
 │   ├── Rough/                     #   C类即兴草稿/过程废料，.gitignore，可晋升进 Resource
 │   └── types.json                 #   Resource 主题类型开放注册表（形式定死/清单可增）
-├── extracted_lua/                 # 解包提取说明+清单（.luac 本体在 Release「解包」桶，text 在 Public-Info-Pool/Reference/）
 ├── .claude/                       # 会话钩子 / slash 命令 / 技能 / settings.json
 └── .github/workflows/             # CI 自动化（见 §7.2）
 ```
