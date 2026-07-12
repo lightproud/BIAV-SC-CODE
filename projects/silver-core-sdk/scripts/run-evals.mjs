@@ -34,7 +34,13 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
 import { dumpMemory, getHarnessRunner, seedWorkspace } from './eval-harnesses.mjs';
-import { computeDimensionMeans, isValidVerdict, parseJudgeMessage, trimEvidence } from './eval-scoring.mjs';
+import {
+  computeDimensionMeans,
+  diagnoseJudgeMessage,
+  isValidVerdict,
+  parseJudgeMessage,
+  trimEvidence,
+} from './eval-scoring.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const JUDGE_MODEL = 'claude-sonnet-5'; // PINNED — keeper ruling 2026-07-11.
@@ -168,7 +174,13 @@ async function judgeOnce(question, evidence, judgePrompt) {
     body: JSON.stringify(judgeParams(question, evidence, judgePrompt)),
   });
   if (!res.ok) throw new Error(`judge HTTP ${res.status}: ${(await res.text()).slice(0, 300)}`);
-  return parseJudgeMessage(await res.json());
+  const body = await res.json();
+  const verdict = parseJudgeMessage(body);
+  // 深挖一单 (keeper 2026-07-12): when the verdict has no valid score, carry
+  // the API-level diagnostic so one LIVE round reveals WHY (truncation vs
+  // no-text-block vs missing field) instead of another blind retry.
+  if (!isValidVerdict(verdict)) verdict._diag = diagnoseJudgeMessage(body);
+  return verdict;
 }
 
 /** Judge with ONE retry on an invalid/unparseable verdict (self-improve #4):
@@ -239,6 +251,22 @@ async function judgeViaBatches(items, judgePrompt) {
     }
   }
   return graded;
+}
+
+/** ERROR result for a scoreless verdict, with the 深挖一单 diagnostic folded
+ *  into the note (so it shows in the CI log, not only the JSON artifact). */
+function invalidVerdictResult(base, verdict) {
+  const d = verdict._diag;
+  const diagStr =
+    d !== undefined
+      ? ` [diag: stop=${d.stop_reason}, blocks=${d.block_types.join('+') || 'none'}, text_len=${d.text_len}, out_tok=${d.output_tokens}]`
+      : '';
+  return {
+    ...base,
+    outcome: 'ERROR',
+    note: `judge verdict missing/invalid score (got ${JSON.stringify(verdict.score)})${diagStr}`,
+    ...(d !== undefined ? { judgeDiag: d } : {}),
+  };
 }
 
 async function runBehavior() {
@@ -336,11 +364,7 @@ async function runBehavior() {
         if (g.error !== undefined) {
           results.push({ ...base, outcome: 'ERROR', note: g.error });
         } else if (!isValidVerdict(g)) {
-          results.push({
-            ...base,
-            outcome: 'ERROR',
-            note: `judge verdict missing/invalid score (got ${JSON.stringify(g.score)})`,
-          });
+          results.push(invalidVerdictResult(base, g));
         } else {
           results.push({ ...base, outcome: 'SCORED', ...g });
         }
@@ -355,11 +379,7 @@ async function runBehavior() {
       try {
         const graded = await judge(question, evidence, judgePrompt);
         if (!isValidVerdict(graded)) {
-          results.push({
-            ...base,
-            outcome: 'ERROR',
-            note: `judge verdict missing/invalid score (got ${JSON.stringify(graded.score)})`,
-          });
+          results.push(invalidVerdictResult(base, graded));
         } else {
           results.push({ ...base, outcome: 'SCORED', ...graded });
         }

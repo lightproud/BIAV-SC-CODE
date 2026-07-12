@@ -19,6 +19,28 @@ export function parseJudgeMessage(body) {
   return { ...JSON.parse(text), judgeUsage: body.usage };
 }
 
+/**
+ * Diagnostic probe for a judge response that failed to yield a valid score
+ * (mem-03 / dc-05 stubborn scoreless pair — keeper "深挖一单" 2026-07-12).
+ * Captures the API-level shape WITHOUT guessing the cause: was the output
+ * truncated (`stop_reason: 'max_tokens'`)? Was there no text block at all
+ * (structured-output landed elsewhere / refusal)? Is the text present but
+ * missing `score`? One LIVE round with this attached tells us which — then
+ * the fix is targeted, not speculative.
+ */
+export function diagnoseJudgeMessage(body) {
+  const blocks = Array.isArray(body?.content) ? body.content : [];
+  const textBlock = blocks.find((b) => b.type === 'text');
+  return {
+    stop_reason: body?.stop_reason ?? null,
+    block_types: blocks.map((b) => b.type),
+    has_text_block: textBlock !== undefined,
+    text_len: textBlock?.text?.length ?? 0,
+    text_head: (textBlock?.text ?? '').slice(0, 400),
+    output_tokens: body?.usage?.output_tokens ?? null,
+  };
+}
+
 /** A verdict counts only with an integer score in 1..5. */
 export function isValidVerdict(graded) {
   return (
