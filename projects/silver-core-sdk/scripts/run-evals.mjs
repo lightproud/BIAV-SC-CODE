@@ -118,7 +118,11 @@ function judgeParams(question, evidence, judgePrompt) {
     .replace('{{EVIDENCE_JSON}}', JSON.stringify(evidence, null, 2));
   return {
     model: JUDGE_MODEL,
-    max_tokens: 2048,
+    // 4096 since self-improve #4: at 2048 evidence-heavy questions hit the
+    // cap mid-JSON (5/20 scoreless verdicts in the 2026-07-12 branch round —
+    // truncated rubric_findings evidence strings). Output budget is runner
+    // plumbing; the PINNED judge model + prompt are untouched.
+    max_tokens: 4096,
     messages: [{ role: 'user', content: prompt }],
     output_config: {
       format: {
@@ -157,7 +161,7 @@ const API_HEADERS = () => ({
 });
 
 /** Grade one question with the pinned judge (inline lane). */
-async function judge(question, evidence, judgePrompt) {
+async function judgeOnce(question, evidence, judgePrompt) {
   const res = await fetch(API_URL, {
     method: 'POST',
     headers: API_HEADERS(),
@@ -165,6 +169,24 @@ async function judge(question, evidence, judgePrompt) {
   });
   if (!res.ok) throw new Error(`judge HTTP ${res.status}: ${(await res.text()).slice(0, 300)}`);
   return parseJudgeMessage(await res.json());
+}
+
+/** Judge with ONE retry on an invalid/unparseable verdict (self-improve #4):
+ *  scoreless or truncated judge replies are transient — a single fresh call
+ *  usually yields a valid verdict; a second failure surfaces as ERROR. */
+async function judge(question, evidence, judgePrompt) {
+  let first;
+  try {
+    first = await judgeOnce(question, evidence, judgePrompt);
+    if (isValidVerdict(first)) return first;
+  } catch (err) {
+    console.log(`judge retry for ${question.id}: first attempt threw (${String(err).slice(0, 120)})`);
+    return judgeOnce(question, evidence, judgePrompt);
+  }
+  console.log(
+    `judge retry for ${question.id}: first verdict invalid (score=${JSON.stringify(first.score)})`,
+  );
+  return judgeOnce(question, evidence, judgePrompt);
 }
 
 /** Grade every pending question in ONE Message Batch (50% nightly lane).
@@ -298,14 +320,22 @@ async function runBehavior() {
   if (judgeBatches && toJudge.length > 0) {
     try {
       const graded = await judgeViaBatches(toJudge, judgePrompt);
-      for (const { question, base } of toJudge) {
-        const g = graded.get(question.id);
-        if (g === undefined || g.error !== undefined) {
-          results.push({ ...base, outcome: 'ERROR', note: g?.error ?? 'missing batch result' });
+      for (const { question, base, evidence } of toJudge) {
+        let g = graded.get(question.id);
+        // A verdict without a valid 1-5 score is NOT a score (self-improve
+        // #2). Batch-lane misses fall back to ONE inline retry (self-improve
+        // #4) before surfacing as ERROR.
+        if (g === undefined || g.error !== undefined || !isValidVerdict(g)) {
+          try {
+            console.log(`judge retry (inline) for ${question.id}: batch verdict missing/invalid`);
+            g = await judgeOnce(question, evidence, judgePrompt);
+          } catch (err) {
+            g = { error: String(err).slice(0, 300) };
+          }
+        }
+        if (g.error !== undefined) {
+          results.push({ ...base, outcome: 'ERROR', note: g.error });
         } else if (!isValidVerdict(g)) {
-          // A verdict without a valid 1-5 score is NOT a score (self-improve
-          // #2: an undefined score fed the dimension mean and nulled it,
-          // firing false REQ-2.2 regressions).
           results.push({
             ...base,
             outcome: 'ERROR',
