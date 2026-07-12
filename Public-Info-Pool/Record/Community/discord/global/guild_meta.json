@@ -1,6 +1,6 @@
 {
   "guild_id": "1131791637933199470",
-  "updated_at": "2026-07-12T10:56:36.966944+00:00",
+  "updated_at": "2026-07-12T14:06:14.582179+00:00",
   "channels": [
     {
       "id": "1131791637933199471",
@@ -1289,14 +1289,6 @@
       "parent_id": "1440851754311749733",
       "position": 12,
       "topic": "ModMail Channel 621513890123218944 1524623569101787187 (Please do not change this)"
-    },
-    {
-      "id": "1525778990391099432",
-      "name": "chinkeeyong",
-      "type": 0,
-      "parent_id": "1440851754311749733",
-      "position": 143,
-      "topic": "ModMail Channel 212031841786527764 1454470171765768394 (Please do not change this)"
     }
   ]
 }
