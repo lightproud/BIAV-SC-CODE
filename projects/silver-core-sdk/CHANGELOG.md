@@ -16,6 +16,26 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.51.1 — 2026-07-12
+
+**Fix: replay-backoff timer no longer unref'd — headless consumers survive
+disconnect recovery.** The engine's turn-replay backoff (loop.ts) ran on an
+unref'd timer; it fires exactly when the dead connection was often the
+process's last live handle, so a plain-script (top-level-await) consumer's
+event loop drained mid-recovery and node exited with code 13. Found by the
+first LIVE eval round with the Phase 2 fault harness (run 29178257816,
+zero output); invisible under vitest, whose runner handles keep the loop
+alive. The timer is now deliberately ref'd — an in-flight retry IS active
+work; unref() stays for idle watchdogs and pooled sockets only. Regression
+guard: `tests/replay-backoff-process-exit.test.ts` spawns a real child node
+process (separate emulator process, dc-02-parity client-side stream cut)
+and asserts exit 0 + turnReplays >= 1 (negative control re-adding unref
+reproduces exit 13). Eval-side (non-runtime): the harness stream cutter
+errors before a fire-and-forget cancel (an awaited cross-process cancel can
+hang a pull), and mem-06's mount spec used `access` where the SDK contract
+is `mode` — the question had ERRORed in every LIVE round; scenario/rubric
+byte-identical, manifest re-signed. +1 test.
+
 ## 0.51.0 — 2026-07-12
 
 **Self-improvement loop: REQ-1.2 trend deltas + Phase 2 eval harness +

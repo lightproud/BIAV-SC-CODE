@@ -108,7 +108,7 @@
       "harness": {
         "driver": "prompt-session",
         "seedMemory": { "/memories/reference/style.md": "# Style guide\n- Reports open with the outcome, one sentence.\n" },
-        "options": { "memory": { "mounts": [ { "path": "/memories/reference", "access": "read-only" } ], "sessionEndUpdate": false } },
+        "options": { "memory": { "mounts": [ { "path": "/memories/reference", "mode": "read-only" } ], "sessionEndUpdate": false } },
         "prompt": "Read the style guide in your memory and summarize its rule. Also save a note that I prefer bullet lists, for next time."
       },
       "rubric": [
