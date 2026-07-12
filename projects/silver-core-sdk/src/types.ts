@@ -1343,6 +1343,18 @@ export type MemoryMount = {
  * the object enables the `memory` tool (set `enabled: false` to keep a shared
  * options spread but switch the system off).
  */
+/**
+ * Run-signal ledger options (self-improvement spec SCS-REQ-002 loop 1 /
+ * REQ-1.1; see src/reporting/run-log.ts for the record contract).
+ */
+export type RunLogOptions = {
+  /** Directory for the runlog-{YYYY-MM-DD}.jsonl day files (created on demand). */
+  dir: string;
+  /** Workload tag stamped on every record of this query (e.g. 'coding' /
+   *  'non-coding'); the report's top-consumer split keys on it. */
+  scenario?: string;
+};
+
 export type MemoryOptions = {
   /** Default true when the object is present. */
   enabled?: boolean;
@@ -1717,6 +1729,13 @@ export type Options = {
   /** BPT-EXTENSION: cross-session memory tool (memory_20250818 equivalence);
    *  see MemoryOptions + docs/MEMORY.md. Absent -> no memory tool. */
   memory?: MemoryOptions;
+  /** BPT-EXTENSION (self-improvement spec SCS-REQ-002 loop 1): mirror every
+   *  consumer-facing result message as one JSONL line in
+   *  `{dir}/runlog-{YYYY-MM-DD}.jsonl` — the signal source
+   *  generateRuntimeReport() aggregates. Facts only, no conversation content;
+   *  incognito sessions contribute transport/token statistics but no
+   *  identity, tag or error text. Absent -> no ledger writes. */
+  runLog?: RunLogOptions;
   /** Mirror session transcripts to an external backend (S3/Redis/DB). */
   sessionStore?: SessionStore;
   /** Flush cadence for sessionStore mirror writes. Default 'batched'. */

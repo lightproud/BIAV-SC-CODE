@@ -246,8 +246,11 @@ async function runBehavior() {
       for (const phase of phases) {
         // Headless run: no permission callback exists, so tool calls must not
         // stall on approval — the scenarios only touch seeded temp workspaces.
+        // The SDK gates bypassPermissions behind the explicit opt-in flag
+        // (first LIVE round 2026-07-12 run #58 caught the missing pair).
         const { transcript, result } = await runPhase(sdk, phase, ws, {
           permissionMode: 'bypassPermissions',
+          allowDangerouslySkipPermissions: true,
         });
         evidence.phases.push({
           transcript: transcript.slice(0, 200),
