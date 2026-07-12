@@ -49,29 +49,38 @@
 小学生比喻：银芯是只许往外寄信、绝不收里屋包裹的单向邮筒——里屋（黑池）的东西一旦寄出门
 就再也收不回来，所以邮筒只焊了出口、堵死了入口，谁来撬入口都得拉警报。
 
-### §1.2 二核心使命（v2.0，2026-04-26 起；使命#3 于 2026-06-28 退役）
+### §1.2 二使命（2026-07-12 第三次收敛：信息入口 + 通用 AI 底层开发基地）
 
 | # | 使命 | 主对接子项目 |
 |---|------|------|
 | 1 | **黑池信息入口**（GitHub 自动化采集层 / 单向输出） | news（核心） |
-| 2 | **社区共建知识底座**（社区知识共享 / 全语言 Wiki 等派生内容基础） | wiki（核心） |
+| 2 | **通用 AI 底层能力开发基地**（通用 AI 底层工程产物持续开发，作为银芯→黑池单向输出物支持黑池建设） | silver-core-sdk（核心） |
 
-> **使命#3「Studio 团队 AI 协作训练场」已退役**（守密人 2026-06-28 裁定，见 `memory/decisions.md`）：
-> 其「主对接子项目」映射长期 site/game 不一致，守密人裁定取消该使命而非择一。银芯使命由「三新使命」
-> 收敛为上表**二核心使命**。site 仍为对外门户 / 三轴发现入口、game 仍为守密人个人兴趣（均不承载正式使命）。
+> **使命收敛历程**（详见 `memory/decisions.md`）：三新使命（2026-04-26 v2.0）→ 使命#3
+> 「Studio 团队 AI 协作训练场」退役（2026-06-28）→ 使命#2「共建」语义收敛为「单向共享」
+> （2026-07-10 取消社区贡献）→ **原使命#2「社区共建知识底座」整体取消 + 新使命
+> 「通用 AI 底层能力开发基地」转正**（守密人 2026-07-12 裁定）。wiki 子项目转**冻结**
+> （已建成果保留：W2 基线 72 角色 / 站点静态页，不删不派发）；社区数据采集必要性进入重估
+> （采集不停，挂账 `memory/todo.md` #T36）。SDK 转正为「事实使命转正」：其已有 20+ 真实消费者
+> （BPT 在产），黑池侧已完全弃用 Claude Code、全面换装自有技术栈（BPT + silver-core-sdk 0.3x pin），
+> SDK 存在理由由「应急替代」升格「常态底座」。site 仍为对外门户、game 仍为守密人个人兴趣
+> （均不承载正式使命）。
 >
-> **使命#2「共建」语义已收敛为「单向共享」**（守密人 2026-07-10 取消社区贡献裁定）：名称保留，
-> 但社区贡献通道（fork+PR / 翻译 / Issue 报告）整体取消——社区可自由读取银芯全部公开信息，银芯不接收
-> 社区回写。信息流哲学自此全线单向：黑池不进银芯（§1.1-HC）、社区不写银芯，银芯对两侧皆为单向输出。
+> **信息流哲学全线单向不变**：黑池不进银芯（§1.1-HC）、社区不写银芯（2026-07-10 裁定），
+> 银芯对两侧皆为单向输出。
 
 ### §1.3 当前阶段
 
-**Phase 2 银芯使命建设期**（2026-04-27 → 07-19）。news 与 wiki 双核心主线，
-site 维护稳定，game 暂缓。实时进度与子项目状态以 `memory/project-status.md` 为
-**唯一权威**——本档案及其他档案只指针、不复刻进度数字。
+**稳态维护期**（2026-07-12 即时生效，守密人裁定不待原定 07-19）：Phase 2「银芯使命建设期」
+（2026-04-27 起）提前收口，判定**基本达成**——M7 验收 ① 使命基础设施齐备 ✅ ② 自动化跑稳 ✅，
+③ 贡献流程项随 wiki 使命取消作废（诚实记录：非「达成」而是「目标撤销」）。信息层采集自动跑、
+按需维护，不再开建设战线；**silver-core-sdk 按使命#2 持续开发，不受维护期限制**。
+实时进度与子项目状态以 `memory/project-status.md` 为**唯一权威**——本档案及其他档案只指针、
+不复刻进度数字。
 
-**07-19 后转维护态**（守密人 2026-07-10 批准维护态节拍表）：银芯降档为「值班中的系统」，
-按持续 / 周检 / 月检三档节拍运转 + 数据增长触发线三条；节拍表摘要见 `memory/methodology.md`「维护态节拍」节。
+维护态按守密人 2026-07-10 批准的节拍表运转：银芯降档为「值班中的系统」，按持续 / 周检 / 月检
+三档节拍 + 数据增长触发线三条；节拍表摘要见 `memory/methodology.md`「维护态节拍」节。
+稳态期唯一开放议题：news 下半场推送形态（挂账 `memory/todo.md` #T37）。
 
 ### §1.4 运作模型
 
@@ -86,14 +95,15 @@ site 维护稳定，game 暂缓。实时进度与子项目状态以 `memory/proj
    **T3 维护回填**（`repair_gaps` / `backfill_*` / `download_media` 等）。
    总数据流：原始数据 → 全量档案层（社区 text `Public-Info-Pool/Record/Community/`）→ 过滤选样进输出展示层
    (`projects/news/output/`) → 单向送黑池。机器提交带 `[skip ci]` 防触发循环。
-2. **wiki 自举闭环**（使命#2）：客户端解包 Lua → `Public-Info-Pool/Reference/Game-Unpacked/`
+2. **wiki 自举闭环**（原使命#2 载体；**2026-07-12 使命取消、子项目冻结**——已建成果保留
+   不删不派发，以下为冻结时点状态）：客户端解包 Lua → `Public-Info-Pool/Reference/Game-Unpacked/`
    原始字段（2026-07-11 去重裁定后唯一本体；wiki 侧 `projects/wiki/data/extracted/` 仅余
    art_assets 等独占件）→ 脚本 / 人工补齐结构化角色基线（72 角色）→ VitePress 构建社区 Wiki 站点。
    **当前状态**：旧结构化层（`characters.json` 全 6 JSON + 派生角色页，原在 data/db/）2026-06-15 守密人裁定整层清空
    （占位数据长期误导引用）；W2 **可信基线已重建**于 `projects/wiki/data/processed/characters.json`（72 真实角色、一手解包、
    **无合成占位**），`scripts/generate_wiki_pages.py` 已据此生成 58 个真实唤醒体静态页、站点构建通过。
    **运行时数据桥已接回（2026-07-02）**：生成器单点产出 `characters.runtime.json` → `characters.ts` 消费，
-   CharacterGrid 挂载图鉴页；剩余为真实字段缺口推进（skills / 命轮 / 立绘 / 三语，进度见 `memory/project-status.md`）。
+   CharacterGrid 挂载图鉴页；真实字段缺口推进（skills / 命轮 / 立绘 / 三语）随冻结停派。
 3. **记忆层**（AI 协作底座）：记忆 = CLAUDE.md（每会话自动加载）+ `memory/*.md`
    人工策展档案（决策 / 踩坑 / 状态 / 方法论），会话连续性承 Claude 平台原生上下文管理。
    原自造的「会话蒸馏 + 语义召回 + 做梦」自动环与平台原生记忆定位冲突，已于
@@ -105,7 +115,7 @@ site 维护稳定，game 暂缓。实时进度与子项目状态以 `memory/proj
    `kb_activate`（扩散激活联想召回，Pillar D）+ `kb_vector_search`（长尾语义召回，向量腿，
    2026-07-05 反转零 ML 后加）+ `kb_anchor`（先锚后扩合流，2026-07-05 chunk3 厚锚后加），
    见下条）；守密人经会话派发任务。
-5. **知识库运行时导航**（动态编排，使命#2 底座之上；守密人 2026-06-21 定位公开、2026-07-04 裁定实现）：
+5. **知识库运行时导航**（动态编排，社区知识底座（原使命#2）之上；守密人 2026-06-21 定位公开、2026-07-04 裁定实现）：
    把静态 OKF bundle（§6.1）升级为**艾瑞卡运行时可动态导航的知识库**（思想溯源 OKF「一概念一文件 + 关系图」
    + LLMwiki「LLM 顺图逐跳导航、按需取概念」）。底座是 `scripts/build_kb_index.py` 从 bundle
    （concept 元数据 + 正文 + `graph.json`）造的静态导航索引 `okf/kb_index.json`（倒排表 + 邻接表，
@@ -113,7 +123,11 @@ site 维护稳定，game 暂缓。实时进度与子项目状态以 `memory/proj
    （导航四件后端 `scripts/kb_navigator.py`，向量腿 `scripts/kb_vector.py`、合流 `scripts/kb_anchor.py`，均 import-only 库）。放指针不放本体：导航层只返回元信息 + `resource`
    指针，本体仍原地不动。重建随 `scripts/build_okf_bundle.py` 末尾自动跑，或 `python3 scripts/build_kb_index.py` 单独重建。
 
-四条主线的「手动怎么跑哪条命令」见 §7。
+使命#2「通用 AI 底层能力开发基地」的运转形态 = `projects/silver-core-sdk/` 等通用 AI 底层
+工程产物持续开发 + 银芯→黑池单向输出（tarball pin 消费，方向与 §1.1-HC 防火墙一致），
+状态见 `memory/project-status.md`「## Silver Core SDK」节。
+
+各主线的「手动怎么跑哪条命令」见 §7。
 
 ---
 
@@ -275,10 +289,10 @@ brain-in-a-vat/
 │   └── images/                    # 立绘 / CG 等公开图像资产
 ├── projects/                      # 子项目 + 工程产物（各有 CONTEXT.md，动手前先读）
 │   ├── news/   # 使命#1 黑池信息入口：采集器 + 全量档案 + 输出展示层
-│   ├── wiki/   # 使命#2 社区知识底座：VitePress 站点 + 72 角色数据库
+│   ├── wiki/   # 已冻结（2026-07-12 原使命#2 取消，成果保留）：VitePress 站点 + 72 角色数据库
 │   ├── site/   # 对外门户：静态站（public/）+ 设计令牌（design/）
 │   ├── game/   # 衍生游戏（退主线，守密人个人兴趣，不主线派发）
-│   ├── silver-core-sdk/  # 银芯→黑池单向输出物（非使命线）：Claude Agent SDK 干净重实现（原名 bpt-agent-sdk，2026-07-10 更名），见 project-status「## Silver Core SDK」
+│   ├── silver-core-sdk/  # 使命#2 通用 AI 底层开发基地（2026-07-12 转正）· 银芯→黑池单向输出物：Claude Agent SDK 干净重实现（原名 bpt-agent-sdk，2026-07-10 更名），见 project-status「## Silver Core SDK」
 │   ├── bpt-v2t/  # 语音代替输入（非使命线）：本地 STT 语音输入工具 + 专名热词桥，见 project-status「## BPT-V2T」
 │   └── bpt-pm/         # 项目排期工作台（非使命线）：单网页 CPM 自动排期 + 基线比对，数据协议 bpt-pm/v1，见其 CONTEXT.md
 ├── memory/                        # 银芯记忆层（决策 / 方法论 / 踩坑 / active hub）
@@ -300,10 +314,12 @@ brain-in-a-vat/
 ```
 
 子项目纪律：每个 `projects/<x>/CONTEXT.md` 是该子项目的会话上下文与当前 milestone，
-动手前必读。news 与 wiki 是 Phase 2 双核心主线，site 维护稳定，game 不主线派发；
-`projects/silver-core-sdk/` 为银芯→黑池单向输出的工程产物（**非使命线**，原名 bpt-agent-sdk、
-2026-07-10 守密人裁定更名 Silver Core SDK，与 §1.1-HC 防火墙同向：银芯→黑池单向输出、
-黑池不回流），状态与两轴保真模型见 `memory/project-status.md`「## Silver Core SDK」。
+动手前必读。news 承载使命#1 持续自动跑；wiki 已冻结（2026-07-12 原使命#2 取消，成果保留
+不删不派发）；site 维护稳定，game 不主线派发；`projects/silver-core-sdk/` 承载**使命#2
+「通用 AI 底层能力开发基地」**（2026-07-12 由「非使命线工程产物」事实使命转正；原名
+bpt-agent-sdk、2026-07-10 守密人裁定更名 Silver Core SDK，与 §1.1-HC 防火墙同向：
+银芯→黑池单向输出、黑池不回流），状态与两轴保真模型见 `memory/project-status.md`
+「## Silver Core SDK」。
 
 ### §6.1 OKF Bundle（`okf/`）
 

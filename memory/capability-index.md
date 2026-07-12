@@ -4,16 +4,16 @@
 > 中文用途补注请改 `memory/capability-annotations.json`；机器权威数据见 `memory/capability-registry.json`。
 
 - 生成日期：2026-07-12
-- 功能总数：**131**
-- 脚本可达性：活 72 / 仅测试 0 / 孤儿 0
+- 功能总数：**133**
+- 脚本可达性：活 73 / 仅测试 0 / 孤儿 0
 
 ## 总览
 
 | 功能层 | 数量 |
 |------|------|
-| CI 自动化工作流（编排入口·定时/事件平面） | 33 |
+| CI 自动化工作流（编排入口·定时/事件平面） | 34 |
 | 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 36 |
-| news 采集器脚本 | 30 |
+| news 采集器脚本 | 31 |
 | wiki 数据脚本 | 6 |
 | MCP 知识层工具（编排入口·AI 动态平面） | 11 |
 | Slash 命令（编排入口·人工平面） | 4 |
@@ -34,7 +34,7 @@
 
 可达性 = 从活编排入口沿 Python import 图传递闭包。`孤儿` = 无任何活入口可达，建议隔离待裁（§3.1 裁撤属守密人决策，工具只检测不删除）。
 
-## CI 自动化工作流（编排入口·定时/事件平面）（33）
+## CI 自动化工作流（编排入口·定时/事件平面）（34）
 
 - **`Backfill Data Gap`** _[manual]_ — 手动回填指定时间段的数据缺口。  
   `.github/workflows/backfill-gap.yml`
@@ -74,6 +74,8 @@
   `.github/workflows/discord-archive-volunteer.yml`
 - **`Discord Archive`** _[schedule/manual]_ — 定时归档主 Discord 数据。  
   `.github/workflows/discord-archive.yml`
+- **`Discord Cold Compress`** _[schedule/manual]_ —   
+  `.github/workflows/discord-cold-compress.yml`
 - **`Discord Discover Guilds`** _[manual]_ — 定时发现新的 Discord 服务器。  
   `.github/workflows/discord-discover-guilds.yml`
 - **`Discord History Backfill`** _[schedule/manual]_ — 定时回填 Discord 历史消息。  
@@ -178,7 +180,7 @@
 - **`silver_tokenizer.py`** _[活:import]_ — 银芯静态索引共用分词器:领域词典 + 正向最大匹配（FMM）。  
   `scripts/silver_tokenizer.py`
 
-## news 采集器脚本（30）
+## news 采集器脚本（31）
 
 - **`aggregator.py`** _[活:cli+command+workflow]_ — 忘却前夜 Morimens - 社区热点聚合器  
   `projects/news/scripts/aggregator.py`
@@ -216,6 +218,8 @@
   `projects/news/scripts/data_quality.py`
 - **`discord_archiver.py`** _[活:cli+workflow]_ — Discord 全量数据归档器 v2 — 双轨并行 + 断点续传 + JSONL 去重  
   `projects/news/scripts/discord_archiver.py`
+- **`discord_cold_compress.py`** _[活:cli+workflow]_ — discord_cold_compress.py — discord 归档月度压冷（守密人 2026-07-12 甲案裁定）。  
+  `projects/news/scripts/discord_cold_compress.py`
 - **`discord_compact.py`** _[活:command]_ — Discord 记录紧凑 schema — 单一权威定义（归档器写盘 + 存量批量重写器共用此一份）  
   `projects/news/scripts/discord_compact.py`
 - **`discord_list_guilds.py`** _[活:cli+workflow]_ — Discord 服务器清单探测 — 列出 bot 当前加入的所有服务器（guild）  

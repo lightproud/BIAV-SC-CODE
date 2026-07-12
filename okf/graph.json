@@ -1,8 +1,8 @@
 {
   "generated": "2026-07-12",
   "stats": {
-    "nodes": 361,
-    "edges": 416
+    "nodes": 365,
+    "edges": 431
   },
   "nodes": [
     {
@@ -1012,6 +1012,28 @@
       "tier": "skeleton"
     },
     {
+      "id": "/community/community-arca-live.md",
+      "type": "dataset",
+      "title": "arca_live 社区全量档案",
+      "tags": [
+        "data_layer:full_archive",
+        "platform:arca_live",
+        "lens:analysis"
+      ],
+      "tier": "skeleton"
+    },
+    {
+      "id": "/community/community-bahamut.md",
+      "type": "dataset",
+      "title": "bahamut 社区全量档案",
+      "tags": [
+        "data_layer:full_archive",
+        "platform:bahamut",
+        "lens:analysis"
+      ],
+      "tier": "skeleton"
+    },
+    {
       "id": "/community/community-bilibili.md",
       "type": "dataset",
       "title": "bilibili 社区全量档案",
@@ -1052,6 +1074,17 @@
         "data_layer:full_archive",
         "kind:analysis-index",
         "zero-ml"
+      ],
+      "tier": "skeleton"
+    },
+    {
+      "id": "/community/community-note-com.md",
+      "type": "dataset",
+      "title": "note_com 社区全量档案",
+      "tags": [
+        "data_layer:full_archive",
+        "platform:note_com",
+        "lens:analysis"
       ],
       "tier": "skeleton"
     },
@@ -2818,6 +2851,17 @@
       "tier": "search"
     },
     {
+      "id": "/resource/resource-repo-engineering-bpt-demo-residue-scan-20260712.md",
+      "type": "documentation",
+      "title": "bpt-demo-residue-scan-20260712",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
       "id": "/resource/resource-repo-engineering-bpt-desktop-builtin-commands-batch1-20260711.md",
       "type": "documentation",
       "title": "bpt-desktop-builtin-commands-batch1-20260711",
@@ -4350,6 +4394,42 @@
       "rel_type": "mention"
     },
     {
+      "source": "/community/community-bahamut.md",
+      "target": "/characters/77922.md",
+      "rel": "提及:克珀珊特",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bahamut.md",
+      "target": "/characters/54117.md",
+      "rel": "提及:哈姆林",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bahamut.md",
+      "target": "/characters/77926.md",
+      "rel": "提及:皮克曼",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bahamut.md",
+      "target": "/characters/15576.md",
+      "rel": "提及:墨菲",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bahamut.md",
+      "target": "/characters/15587.md",
+      "rel": "提及:希洛",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bahamut.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
       "source": "/community/community-bilibili.md",
       "target": "/characters/15599.md",
       "rel": "提及:萨尔瓦多",
@@ -4515,6 +4595,12 @@
       "source": "/community/community-youtube-comments.md",
       "target": "/characters/15595.md",
       "rel": "提及:Ramona",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-youtube.md",
+      "target": "/characters/15576.md",
+      "rel": "提及:墨菲",
       "rel_type": "mention"
     },
     {
@@ -5712,6 +5798,12 @@
       "rel_type": "mention"
     },
     {
+      "source": "/resource/resource-repo-engineering-bpt-demo-residue-scan-20260712.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
       "source": "/resource/resource-repo-engineering-bpt-desktop-builtin-commands-batch1-20260711.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
@@ -5985,6 +6077,12 @@
       "source": "/sources/weibo.md",
       "target": "/characters/130226.md",
       "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/youtube.md",
+      "target": "/characters/15576.md",
+      "rel": "提及:墨菲",
       "rel_type": "mention"
     },
     {
@@ -6270,6 +6368,18 @@
       "rel_type": "cross"
     },
     {
+      "source": "/community/community-arca-live.md",
+      "target": "/community/community-index.md",
+      "rel": "聚合于",
+      "rel_type": "cross"
+    },
+    {
+      "source": "/community/community-bahamut.md",
+      "target": "/community/community-index.md",
+      "rel": "聚合于",
+      "rel_type": "cross"
+    },
+    {
       "source": "/community/community-bilibili.md",
       "target": "/community/community-index.md",
       "rel": "聚合于",
@@ -6283,6 +6393,12 @@
     },
     {
       "source": "/community/community-google-play.md",
+      "target": "/community/community-index.md",
+      "rel": "聚合于",
+      "rel_type": "cross"
+    },
+    {
+      "source": "/community/community-note-com.md",
       "target": "/community/community-index.md",
       "rel": "聚合于",
       "rel_type": "cross"
@@ -6360,9 +6476,21 @@
       "rel_type": "cross"
     },
     {
+      "source": "/community/community-arca-live.md",
+      "target": "/sources/arca_live.md",
+      "rel": "同平台",
+      "rel_type": "cross"
+    },
+    {
       "source": "/news-output/news-output-arca-live.md",
       "target": "/sources/arca_live.md",
       "rel": "抽样自",
+      "rel_type": "cross"
+    },
+    {
+      "source": "/community/community-bahamut.md",
+      "target": "/sources/bahamut.md",
+      "rel": "同平台",
       "rel_type": "cross"
     },
     {
@@ -6405,6 +6533,12 @@
       "source": "/news-output/news-output-google-play.md",
       "target": "/sources/google_play.md",
       "rel": "抽样自",
+      "rel_type": "cross"
+    },
+    {
+      "source": "/community/community-note-com.md",
+      "target": "/sources/note_com.md",
+      "rel": "同平台",
       "rel_type": "cross"
     },
     {
