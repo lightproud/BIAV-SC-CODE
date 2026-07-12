@@ -107,8 +107,13 @@ function dumpFiles(ws, names) {
 /**
  * Build a provider.fetch that consults `plan(callIndex)` per transport POST
  * (1-based). Actions: 'pass' | 'fail' (network error before any byte) |
- * { cutAfterEvents: n } (forward the real response, then error the body
- * stream after >= n SSE events have been delivered).
+ * { cutAfterEvents: n } (error the body stream after >= n raw SSE events —
+ * deliberately EARLY cuts, before content commits) |
+ * { cutAfterTextDeltas: n } (error the stream right after the n-th
+ * text_delta event — a guaranteed MID-TEXT truncation. Raw event counts are
+ * fragile against the real API's delta batching: a heavily-batched reply can
+ * finish inside fewer events than the threshold and the "cut" silently never
+ * fires — the dc-03 score drift of 2026-07-12, self-improve #3).
  */
 export function makeFaultFetch(plan) {
   let calls = 0;
@@ -125,6 +130,13 @@ export function makeFaultFetch(plan) {
     if (typeof action === 'object' && action.cutAfterEvents > 0 && res.body !== null) {
       injected.push({ call: calls, action: `cut-after-${action.cutAfterEvents}-events` });
       return cutResponse(res, action.cutAfterEvents);
+    }
+    if (typeof action === 'object' && action.cutAfterTextDeltas > 0 && res.body !== null) {
+      injected.push({
+        call: calls,
+        action: `cut-after-${action.cutAfterTextDeltas}-text-deltas`,
+      });
+      return cutResponseAfterTextDeltas(res, action.cutAfterTextDeltas);
     }
     return res;
   };
@@ -165,6 +177,84 @@ function cutResponse(res, cutAfterEvents) {
         }
       }
       controller.enqueue(value);
+    },
+    cancel(reason) {
+      void reader.cancel(reason).catch(() => {});
+    },
+  });
+  return new Response(stream, {
+    status: res.status,
+    statusText: res.statusText,
+    headers: res.headers,
+  });
+}
+
+const TEXT_DELTA_MARKER = new TextEncoder().encode('text_delta');
+
+/** Index of the first `needle` occurrence in `hay` at/after `from`, or -1. */
+function indexOfBytes(hay, needle, from) {
+  outer: for (let i = from; i + needle.length <= hay.length; i += 1) {
+    for (let j = 0; j < needle.length; j += 1) {
+      if (hay[i + j] !== needle[j]) continue outer;
+    }
+    return i;
+  }
+  return -1;
+}
+
+/** Forward the SSE body until the n-th text_delta event completed, then error
+ *  the stream — a deterministic MID-TEXT truncation regardless of how the
+ *  server batches deltas or chunks. Scans the CUMULATIVE byte buffer so a
+ *  marker split across chunk boundaries is still found. */
+function cutResponseAfterTextDeltas(res, n) {
+  const reader = res.body.getReader();
+  let buf = new Uint8Array(0);
+  let delivered = 0; // bytes of buf already enqueued downstream
+  let seen = 0; // completed text_delta events counted so far
+  let scanFrom = 0; // next marker-scan position in buf
+  const stream = new ReadableStream({
+    async pull(controller) {
+      const { done, value } = await reader.read();
+      if (done) {
+        if (delivered < buf.length) controller.enqueue(buf.slice(delivered));
+        controller.close();
+        return;
+      }
+      const merged = new Uint8Array(buf.length + value.length);
+      merged.set(buf, 0);
+      merged.set(value, buf.length);
+      buf = merged;
+      // Count text_delta markers up to the n-th.
+      while (seen < n) {
+        const at = indexOfBytes(buf, TEXT_DELTA_MARKER, scanFrom);
+        if (at === -1) break;
+        seen += 1;
+        scanFrom = at + TEXT_DELTA_MARKER.length;
+      }
+      if (seen === n) {
+        // Cut right after the n-th marker's event terminator '\n\n'. The
+        // terminator search runs on EVERY pull (not only the one that found
+        // the marker), so a terminator arriving in a later chunk still cuts.
+        let end = -1;
+        for (let i = scanFrom; i + 1 < buf.length; i += 1) {
+          if (buf[i] === 10 && buf[i + 1] === 10) {
+            end = i + 2;
+            break;
+          }
+        }
+        if (end !== -1) {
+          controller.enqueue(buf.slice(delivered, end));
+          // Error first, cancel fire-and-forget (see cutResponse: an awaited
+          // cross-process cancel hangs the pull and drains the event loop).
+          controller.error(new TypeError('injected fault: stream cut mid-text'));
+          void reader.cancel().catch(() => {});
+        }
+        // Terminator not arrived yet: hold bytes back and wait for more.
+        return;
+      }
+      // Fewer than n markers so far: forward what we have.
+      controller.enqueue(buf.slice(delivered));
+      delivered = buf.length;
     },
     cancel(reason) {
       void reader.cancel(reason).catch(() => {});
@@ -307,7 +397,11 @@ const RUNNERS = {
   /** Layer 3: mid-final-message cut after partial text flowed; salvage. */
   'dc-03': async ({ sdk }) => {
     const ws = seedWorkspace({});
-    const fetchWrap = makeFaultFetch((i) => (i === 1 ? { cutAfterEvents: 12 } : 'pass'));
+    // Cut after the 2nd text_delta EVENT (not a raw event count): guaranteed
+    // mid-text truncation regardless of API delta batching — raw counts let a
+    // heavily-batched reply finish before the threshold and the fault never
+    // fired (score drift 5->3->1 across the first three rounds).
+    const fetchWrap = makeFaultFetch((i) => (i === 1 ? { cutAfterTextDeltas: 2 } : 'pass'));
     const run = await drive(sdk, ws, {
       prompts: [
         'Count from one to forty as English words, comma-separated, on one line, then say DONE.',
@@ -319,10 +413,12 @@ const RUNNERS = {
       evidence: {
         phases: [phaseEvidence(run)],
         harnessNotes:
-          'Injected: POST #1 stream errored after ~12 SSE events (partial text had flowed); ' +
-          'later POSTs clean. Expected: coherent final output (no repeated prefix / missing ' +
-          'middle), transportHealth records the truncation path (midStreamDrops plus ' +
-          'turnsSalvaged or turnReplays), and usage accounting present for the salvaged turn.',
+          'Injected: POST #1 stream errored right after its 2nd text_delta event — partial ' +
+          'text had flowed, the message was truncated mid-text (deterministic; not a raw ' +
+          'event count). Later POSTs clean. Expected: coherent final output (no repeated ' +
+          'prefix / missing middle), transportHealth records the truncation path ' +
+          '(midStreamDrops plus turnsSalvaged or turnReplays), and usage accounting present ' +
+          'for the salvaged turn. The injected ledger below proves the cut actually fired.',
         injected: fetchWrap.ledger,
       },
     };
@@ -374,7 +470,7 @@ const RUNNERS = {
     const ws = seedWorkspace({});
     const fetchWrap = makeFaultFetch((i) => {
       if (i === 1) return 'fail';
-      if (i === 3) return { cutAfterEvents: 8 };
+      if (i === 3) return { cutAfterTextDeltas: 1 };
       return 'pass';
     });
     const run = await drive(sdk, ws, {
@@ -390,10 +486,11 @@ const RUNNERS = {
         phases: [phaseEvidence(run)],
         harnessNotes:
           'Injected mixed faults: POST #1 request-phase network error (recovered by retry ' +
-          'POST #2), POST #3 mid-stream cut after ~8 events (recovered by replay/salvage). ' +
-          'Expected: exactly these two disconnect events in transportHealth, each in the ' +
-          'matching bucket (networkRetries=1; midStreamDrops=1 with its recovery counter), ' +
-          'success result, zero unrecovered.',
+          'POST #2), POST #3 cut right after its 1st text_delta event — a deterministic ' +
+          'mid-stream truncation (recovered by replay/salvage). Expected: exactly these two ' +
+          'disconnect events in transportHealth, each in the matching bucket ' +
+          '(networkRetries=1; midStreamDrops=1 with its recovery counter), success result, ' +
+          'zero unrecovered. The injected ledger below proves both faults actually fired.',
         injected: fetchWrap.ledger,
       },
     };
