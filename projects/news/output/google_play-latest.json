@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-12T08:15:32.878958+00:00",
+  "collected_at": "2026-07-12T10:28:00.394067+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 122,
+  "item_count": 123,
   "items": [
     {
       "source": "google_play",
@@ -253,6 +253,16 @@
       "summary": "觉得还行",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=zh_CN#gp-57f4f9db-558e-4842-b184-3a7e848970ad",
       "author": "元气豆芽（YQBean）",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-11T09:35:12",
+      "lang": "en",
+      "title": "[Google Play 好评] ★5 amazing game, I very used to gachas and",
+      "summary": "amazing game, I very used to gachas and tried CZN before this but morimens is so much better and elite. story, characters gameplay is amazing. super generous with their pulls too that it makes me want to whale! only bad thing is that this isn't very popular and also PvP sucks and my game is still prone to freezing compared to other games - take what you can get",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-7c5d6a66-f98e-4a54-8559-36a6b58e3f0e",
+      "author": "Kim Mai",
       "engagement": 0
     },
     {

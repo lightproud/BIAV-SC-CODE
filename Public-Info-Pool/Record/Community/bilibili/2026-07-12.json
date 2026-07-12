@@ -1,8 +1,8 @@
 {
   "date": "2026-07-12",
-  "archived_at": "2026-07-12T08:16:12.179991+00:00",
+  "archived_at": "2026-07-12T10:28:44.577807+00:00",
   "source": "bilibili",
-  "item_count": 5,
+  "item_count": 6,
   "items": [
     {
       "title": "斯大林强迫蒋介石cos沙耶",
@@ -69,6 +69,29 @@
         "danmaku": 0
       },
       "media_url": "https://i2.hdslb.com/bfs/archive/ab3b63b8102a863fc5621de5d53bdd9fa867a78f.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "【忘却前夜/meme】莱克的低皮质醇meme",
+      "summary": "不吃压力，直接all in \n\n几个小时就能搞定的meme我拖了一个月......\n  └ 飞扬nb (1赞): [果糖含量·多元宇宙_啵唧]\n  └ 以毒平灵 (1赞): [打call][打call][打call][打call][打call][打call][打call][打call]\n  └ 阿双不酸啦 (1赞): 你画的好牛逼呀",
+      "source": "bilibili",
+      "time": "2026-07-12T09:15:58+00:00",
+      "url": "https://www.bilibili.com/video/BV1zLNg66EJk",
+      "engagement": 32,
+      "is_hot": false,
+      "author": "给你麻袋自己套",
+      "tags": [
+        "同人·手书"
+      ],
+      "metadata": {
+        "play": 24,
+        "comment_count": 8,
+        "comments_fetched": 3,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/0a8bfeae72104dd9f679d3cc1919a760c7b35705.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

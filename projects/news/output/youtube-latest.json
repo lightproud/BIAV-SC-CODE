@@ -1,6 +1,6 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-12T08:15:32.878958+00:00",
+  "collected_at": "2026-07-12T10:28:00.394067+00:00",
   "source": "youtube",
   "data_layer": "output",
   "item_count": 18,
@@ -13,8 +13,20 @@
       "summary": "",
       "url": "https://www.youtube.com/watch?v=0Ywpcqi4uLw",
       "author": "AnjutheMage",
-      "engagement": 1086,
+      "engagement": 1088,
       "media_url": "https://i.ytimg.com/vi/0Ywpcqi4uLw/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-07-12T09:15:55Z",
+      "lang": "",
+      "title": "폴룩스 복각 뽑을까 말까? 30초 최종 요약 #게임#morimens #망각전야",
+      "summary": "morimens #게임 #망각전야 #공략 디스코드 : https://discord.gg/TaDkgyQ35y 치지직 ...",
+      "url": "https://www.youtube.com/watch?v=VYPEqwGriiI",
+      "author": "박현(Muyeong)",
+      "engagement": 567,
+      "media_url": "https://i.ytimg.com/vi/VYPEqwGriiI/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -25,7 +37,7 @@
       "summary": "(SPOILER!) I pulled the Caro character - Helot: Cadena (insanely rare), she has a very strong assault role. Check out the ...",
       "url": "https://www.youtube.com/watch?v=HKtNIl9327U",
       "author": "Dread Tmrw",
-      "engagement": 408,
+      "engagement": 512,
       "media_url": "https://i.ytimg.com/vi/HKtNIl9327U/hqdefault.jpg",
       "content_type": "video"
     },
@@ -37,7 +49,7 @@
       "summary": "",
       "url": "https://www.youtube.com/watch?v=KkX3i_9_-lM",
       "author": "Kota",
-      "engagement": 274,
+      "engagement": 281,
       "media_url": "https://i.ytimg.com/vi/KkX3i_9_-lM/hqdefault.jpg",
       "content_type": "video"
     },
@@ -61,7 +73,7 @@
       "summary": "Maayong! I'm Horori, an Angel Trainee sent to Earth to study and learn human culture. The more Faith I can bring to Heaven, the ...",
       "url": "https://www.youtube.com/watch?v=yDzcAGnL0vY",
       "author": "Horori Ch.",
-      "engagement": 185,
+      "engagement": 187,
       "media_url": "https://i.ytimg.com/vi/yDzcAGnL0vY/hqdefault.jpg",
       "content_type": "video"
     },
@@ -79,37 +91,13 @@
     },
     {
       "source": "youtube",
-      "time": "2026-07-11T14:00:21Z",
-      "lang": "",
-      "title": "Good morning walks in the forest #忘卻前夜 #Morimens #SayaNoUta #cosplay",
-      "summary": "",
-      "url": "https://www.youtube.com/watch?v=IqOAWk21qlM",
-      "author": "SAKURA",
-      "engagement": 45,
-      "media_url": "https://i.ytimg.com/vi/IqOAWk21qlM/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-07-11T10:05:04Z",
-      "lang": "",
-      "title": "The Falling Moon",
-      "summary": "Provided to YouTube by DistroKid The Falling Moon · B.I.A.V. Studio · B.I.A.V. Studio Morimens OST┊Pontos EP: The Unending ...",
-      "url": "https://www.youtube.com/watch?v=Y_-BpjM9-H4",
-      "author": "B.I.A.V. Studio - Topic",
-      "engagement": 36,
-      "media_url": "https://i.ytimg.com/vi/Y_-BpjM9-H4/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
       "time": "2026-07-11T14:08:22Z",
       "lang": "",
       "title": "MORIMENS GELİYOR: Türkçe + Japonca Dublajlı Anime Keyfi!",
       "summary": "Selam beyler! Bugün efsane bir keşifle karşınızdayım: Morimens. Hem Türkçe dil desteği olması hem de Japonca dublaj ...",
       "url": "https://www.youtube.com/watch?v=6kyic0C8igc",
       "author": "Mustafa Temiz",
-      "engagement": 25,
+      "engagement": 27,
       "media_url": "https://i.ytimg.com/vi/6kyic0C8igc/hqdefault.jpg",
       "content_type": "video"
     },
@@ -121,7 +109,7 @@
       "summary": "Morimens until I'm KoG TTV: https://www.twitch.tv/lowlivve Disc: https://discord.gg/KWB3yD6HeW #morimens #忘却前夜 #忘卻 ...",
       "url": "https://www.youtube.com/watch?v=p8tSjimcYao",
       "author": "LowLivve",
-      "engagement": 19,
+      "engagement": 17,
       "media_url": "https://i.ytimg.com/vi/p8tSjimcYao/hqdefault.jpg",
       "content_type": "video"
     },
@@ -139,37 +127,13 @@
     },
     {
       "source": "youtube",
-      "time": "2026-07-11T10:05:05Z",
-      "lang": "",
-      "title": "Old Souls",
-      "summary": "Provided to YouTube by DistroKid Old Souls · B.I.A.V. Studio · B.I.A.V. Studio Morimens OST┊Pontos EP: The Unending Triumph ...",
-      "url": "https://www.youtube.com/watch?v=Dz8-hc1m__o",
-      "author": "B.I.A.V. Studio - Topic",
-      "engagement": 12,
-      "media_url": "https://i.ytimg.com/vi/Dz8-hc1m__o/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-07-11T10:04:22Z",
-      "lang": "",
-      "title": "Their Eros",
-      "summary": "Provided to YouTube by DistroKid Their Eros · B.I.A.V. Studio · B.I.A.V. Studio Morimens OST┊Pontos EP: The Unending Triumph ...",
-      "url": "https://www.youtube.com/watch?v=NE2JUkjQAtU",
-      "author": "B.I.A.V. Studio - Topic",
-      "engagement": 10,
-      "media_url": "https://i.ytimg.com/vi/NE2JUkjQAtU/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
       "time": "2026-07-12T04:31:24Z",
       "lang": "",
       "title": "JUGANDO MORIMENS",
       "summary": "",
       "url": "https://www.youtube.com/watch?v=Vq-nWyBYoeY",
       "author": "Nirian en Super Mecha Champions",
-      "engagement": 5,
+      "engagement": 6,
       "media_url": "https://i.ytimg.com/vi/Vq-nWyBYoeY/hqdefault.jpg",
       "content_type": "video"
     },
@@ -181,7 +145,7 @@
       "summary": "In this episode of Morimens, I honestly can't believe what just happened. After countless attempts, I finally pulled the impossible!",
       "url": "https://www.youtube.com/watch?v=6YrGTfF7OiY",
       "author": "Dread Tmrw",
-      "engagement": 4,
+      "engagement": 5,
       "media_url": "https://i.ytimg.com/vi/6YrGTfF7OiY/hqdefault.jpg",
       "content_type": "video"
     },
@@ -207,6 +171,42 @@
       "author": "霏憂【ひゅう】",
       "engagement": 1,
       "media_url": "https://i.ytimg.com/vi/VqauNpFMN00/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-07-12T10:00:38Z",
+      "lang": "",
+      "title": "#忘卻前夜 #morimens Regional D-Effect Zone Wave 3:Alert V! 融災3-5 Boss戰的部分",
+      "summary": "忘卻前夜 #morimens 7月6日~7月20日融災更新. Regional D-Effect Zone Update (July 6 – July 20). 3-5 誕妄墨菲被調整到了3-5, ...",
+      "url": "https://www.youtube.com/watch?v=9SpbsQk9oa0",
+      "author": "Noir",
+      "engagement": 0,
+      "media_url": "https://i.ytimg.com/vi/9SpbsQk9oa0/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-07-12T10:00:22Z",
+      "lang": "",
+      "title": "[YU-GI-OH Master Duel / Morimens] Il y avait une maintenance la première heure",
+      "summary": "Rediff 22ème live yu-gi-oh master duel @ertazil2132 #gaming #streamer #yugioh #yugiohmasterduel.",
+      "url": "https://www.youtube.com/watch?v=gGsxhqCJQRM",
+      "author": "Ertazil",
+      "engagement": 0,
+      "media_url": "https://i.ytimg.com/vi/gGsxhqCJQRM/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-07-12T10:00:27Z",
+      "lang": "",
+      "title": "#忘卻前夜 #morimens 小號打融災-355分,參考與紀錄~",
+      "summary": "忘卻前夜#morimens 7月6日~7月20日融災更新. Regional D-Effect Zone Update (July 6 – July 20). 小號打融災-355分,參考與紀錄~ ...",
+      "url": "https://www.youtube.com/watch?v=d2k1zJQrETo",
+      "author": "Noir",
+      "engagement": 0,
+      "media_url": "https://i.ytimg.com/vi/d2k1zJQrETo/hqdefault.jpg",
       "content_type": "video"
     },
     {
