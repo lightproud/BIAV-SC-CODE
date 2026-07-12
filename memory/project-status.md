@@ -199,6 +199,12 @@
 > 银芯→黑池单向输出物，与 §1.1-HC 防火墙同向，非 BPT 产品内部开发。
 
 - **动手前必读**：`projects/silver-core-sdk/CONTEXT.md`（会话上下文 + 当前 milestone）
+- **0.3x→0.52 消费方迁移战役（2026-07-12 通宵批，为黑池次日 pin 升级预趟坑；docs/tests/scripts-only 零 src 改动）**：
+  编译器级冻结双端点旧消费面（fixture `tests/fixtures/legacy-0-3x-surface.json`：0.30.0/0.39.0 全导出 + Options 字段）——
+  结论 **0.39.0 pin 零缺失、0.30.0 pin 仅缺 `harnessPromptVariant`（0.33.0 移除）**，导出面纯增量；
+  迁移文档 `docs/MIGRATION-0.3x-to-0.52.md`（收益/选入/破坏点三节，破坏点=更名 0.41 / drain-note XML 0.42 /
+  变体旋钮 0.33 / Stop-hook block 0.39 + 五项默认语义迁移）+ legacy-consumer 常驻测试 11 条进 `npm test` +
+  day-one 金丝雀 `scripts/canary-day-one.mjs`（零钥四查全绿，`--live` 可打真 API）
 - **环三首轮自改循环收官（2026-07-12，守密人「循环自改、合并自断」授权，6 单全并）**：
   self-improve **#1–#6** 当日走完六个完整「定位→修复→分支 LIVE 验证→合并」周期——
   #1 tok-06 接线修复（PR #622，管线验收单）/ #2 判卷校验闸（#624）/ #3 确定性切流
