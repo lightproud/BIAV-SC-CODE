@@ -1,8 +1,8 @@
 {
   "date": "2026-07-13",
-  "archived_at": "2026-07-12T19:04:45.754243+00:00",
+  "archived_at": "2026-07-12T21:49:08.490870+00:00",
   "source": "steam",
-  "item_count": 2,
+  "item_count": 3,
   "items": [
     {
       "title": "[负面] скам",
@@ -46,6 +46,30 @@
         "playtime_forever": 7205,
         "votes_up": 0,
         "timestamp_created": 1783875755
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[负面] Vamos a ver si cumple las condiciones para ser un...",
+      "summary": "Vamos a ver si cumple las condiciones para ser un juego otaku:\n\nNiños ligeros de ropa (turbio): SI\nHistoria con picos de epiquismo : SI\nPicos emocionales forzados: SI\nHistoria para ungas ungas que se tapan un ojo con el flequillo: SI\n\n...aquí huele a otaku claramente. Huele a tí, warro.\n\nLo jugué porque supuestamente esto tenía temática lovecraftiana, si la tiene, no la he visto, y si la tiene más adelante, tampoco la voy a ver. Devuélvanme mis 0 euros.",
+      "source": "steam_review",
+      "time": "2026-07-12T20:01:26+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198020480303/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198020480303",
+      "tags": [
+        "spanish"
+      ],
+      "language": "spanish",
+      "metadata": {
+        "voted_up": false,
+        "playtime_forever": 36,
+        "votes_up": 0,
+        "timestamp_created": 1783886486
       },
       "region": "global",
       "archive_subtype": "review",
