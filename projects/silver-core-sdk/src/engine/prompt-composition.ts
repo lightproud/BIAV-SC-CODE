@@ -46,6 +46,21 @@ function hasCache(cc: CacheControlEphemeral | null | undefined): boolean {
   return cc !== null && cc !== undefined && cc.type === 'ephemeral';
 }
 
+/** Exact UTF-8 byte length (no Buffer dependency — TextEncoder is universal). */
+const BYTE_ENCODER = new TextEncoder();
+function utf8Bytes(s: string): number {
+  return BYTE_ENCODER.encode(s).length;
+}
+
+/** Exact bytes of the wire `system` field (string, block array, or absent).
+ *  Only the text content is counted — the cache_control/type wrapper bytes
+ *  are wire framing, not prompt content. */
+function systemFieldBytes(sys: StreamRequest['system']): number {
+  if (typeof sys === 'string') return utf8Bytes(sys);
+  if (Array.isArray(sys)) return sys.reduce((sum, b) => sum + utf8Bytes(b.text), 0);
+  return 0;
+}
+
 /** Human label for a part, defaulting to its role name when none was supplied. */
 function partLabel(part: SystemCompositionPart): string {
   return part.label ?? part.role;
@@ -100,6 +115,14 @@ export function analyzeRequestComposition(
     }
   }
   const systemAppendTotal = systemAppend.reduce((sum, p) => sum + p.estTokens, 0);
+
+  // EXACT byte sizes from the request content (complementary to the token
+  // estimates). System bytes come from the wire `system` field so the total
+  // matches what the API receives regardless of the labeled-parts path.
+  const systemBytes = systemFieldBytes(req.system);
+  const toolDefsBytes = tools.length > 0 ? utf8Bytes(JSON.stringify(tools)) : 0;
+  const messagesBytes = utf8Bytes(JSON.stringify(req.messages));
+
   const promptComposition: PromptComposition = {
     systemBase,
     systemAppend,
@@ -107,6 +130,12 @@ export function analyzeRequestComposition(
     messages: { estTokens: messagesEst, count: req.messages.length },
     totalEstTokens:
       systemBase.estTokens + systemAppendTotal + toolDefsEst + messagesEst,
+    bytes: {
+      system: systemBytes,
+      toolDefs: toolDefsBytes,
+      messages: messagesBytes,
+      total: systemBytes + toolDefsBytes + messagesBytes,
+    },
   };
 
   // --- 需求 B: cache-breakpoint map, walked over the WIRE request in prefix

@@ -10,6 +10,7 @@ import { describe, expect, it } from 'vitest';
 // eslint-disable-next-line import/no-relative-packages -- eval-side tooling under test
 import {
   computeDimensionMeans,
+  diagnoseJudgeMessage,
   isValidVerdict,
   parseJudgeMessage,
   trimEvidence,
@@ -54,6 +55,37 @@ describe('parseJudgeMessage', () => {
     expect(() =>
       parseJudgeMessage({ content: [{ type: 'text', text: '{"score":4,"verd' }], usage: {} }),
     ).toThrow();
+  });
+});
+
+describe('diagnoseJudgeMessage (深挖一单 probe)', () => {
+  it('captures the max_tokens-truncation shape (no text block emitted)', () => {
+    // The hypothesised mem-03/dc-05 failure: output budget consumed before a
+    // text block, so parseJudgeMessage falls back to {} (score undefined).
+    const diag = diagnoseJudgeMessage({
+      stop_reason: 'max_tokens',
+      content: [],
+      usage: { output_tokens: 4096 },
+    });
+    expect(diag).toMatchObject({
+      stop_reason: 'max_tokens',
+      block_types: [],
+      has_text_block: false,
+      text_len: 0,
+      output_tokens: 4096,
+    });
+  });
+
+  it('captures a present-but-scoreless text block (head + length)', () => {
+    const diag = diagnoseJudgeMessage({
+      stop_reason: 'end_turn',
+      content: [{ type: 'text', text: '{"verdict":"unsure"}' }],
+      usage: { output_tokens: 12 },
+    });
+    expect(diag.has_text_block).toBe(true);
+    expect(diag.text_len).toBe('{"verdict":"unsure"}'.length);
+    expect(diag.text_head).toContain('unsure');
+    expect(diag.block_types).toEqual(['text']);
   });
 });
 

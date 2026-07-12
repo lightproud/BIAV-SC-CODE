@@ -751,7 +751,8 @@ export async function* runAgentLoop(
       if (
         err instanceof APIConnectionError &&
         err.midStreamTruncation === true &&
-        !signal.aborted
+        !signal.aborted &&
+        config.salvageMode !== 'continue'
       ) {
         const salvaged = accumulator.salvageTruncated();
         if (salvaged !== undefined) {
