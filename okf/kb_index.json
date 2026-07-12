@@ -8,7 +8,7 @@
   },
   "stats": {
     "concepts": 365,
-    "edges": 431,
+    "edges": 433,
     "terms": 6211,
     "by_type": {
       "character": 72,
@@ -1010,7 +1010,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 4
     },
     "/characters/77911.md": {
       "type": "character",
@@ -1502,7 +1502,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 8
+      "degree": 9
     },
     "/community/community-weixin.md": {
       "type": "dataset",
@@ -4253,7 +4253,7 @@
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 2802 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 2808 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -4281,7 +4281,7 @@
     "/sources/google_play.md": {
       "type": "dataset",
       "title": "google_play 社区数据源",
-      "description": "google_play 平台采集档案，全量 1256 条，健康度 active。",
+      "description": "google_play 平台采集档案，全量 1257 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/google_play/global/",
       "tags": [
         "data_layer:full_archive",
@@ -4365,7 +4365,7 @@
     "/sources/steam.md": {
       "type": "dataset",
       "title": "steam 社区数据源",
-      "description": "steam 平台采集档案，全量 5193 条，健康度 active。",
+      "description": "steam 平台采集档案，全量 5194 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4421,7 +4421,7 @@
     "/sources/taptap_review.md": {
       "type": "dataset",
       "title": "taptap_review 社区数据源",
-      "description": "taptap_review 平台采集档案，全量 1241 条，健康度 active。",
+      "description": "taptap_review 平台采集档案，全量 1249 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/taptap/cn/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4435,7 +4435,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 9852 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 9865 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -4444,12 +4444,12 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 8
+      "degree": 9
     },
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 6388 条，健康度 active。",
+      "description": "weixin 平台采集档案，全量 6408 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -4463,7 +4463,7 @@
     "/sources/youtube.md": {
       "type": "dataset",
       "title": "youtube 社区数据源",
-      "description": "youtube 平台采集档案，全量 2808 条，健康度 active。",
+      "description": "youtube 平台采集档案，全量 2812 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -7138,7 +7138,17 @@
         "mention"
       ],
       [
+        "/community/community-weibo.md",
+        "提及:哈姆林",
+        "mention"
+      ],
+      [
         "/sources/bahamut.md",
+        "提及:哈姆林",
+        "mention"
+      ],
+      [
+        "/sources/weibo.md",
         "提及:哈姆林",
         "mention"
       ]
@@ -7794,6 +7804,11 @@
       [
         "/characters/77918.md",
         "提及:阿拉克涅",
+        "mention"
+      ],
+      [
+        "/characters/54117.md",
+        "提及:哈姆林",
         "mention"
       ],
       [
@@ -9682,6 +9697,11 @@
       [
         "/characters/77918.md",
         "提及:阿拉克涅",
+        "mention"
+      ],
+      [
+        "/characters/54117.md",
+        "提及:哈姆林",
         "mention"
       ],
       [

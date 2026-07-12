@@ -2,7 +2,7 @@
   "generated": "2026-07-12",
   "stats": {
     "nodes": 365,
-    "edges": 431
+    "edges": 433
   },
   "nodes": [
     {
@@ -4539,6 +4539,12 @@
     },
     {
       "source": "/community/community-weibo.md",
+      "target": "/characters/54117.md",
+      "rel": "提及:哈姆林",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-weibo.md",
       "target": "/characters/15576.md",
       "rel": "提及:墨菲",
       "rel_type": "mention"
@@ -6059,6 +6065,12 @@
       "source": "/sources/weibo.md",
       "target": "/characters/77918.md",
       "rel": "提及:阿拉克涅",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/weibo.md",
+      "target": "/characters/54117.md",
+      "rel": "提及:哈姆林",
       "rel_type": "mention"
     },
     {
