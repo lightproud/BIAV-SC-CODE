@@ -16,6 +16,17 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.51.2 — 2026-07-12
+
+**Fix: run-log appends are serialized (ledger order = arrival order) +
+`RunLogSink.flush()`.** Two fire-and-forget `appendFile` calls could land
+out of arrival order — surfaced as a CI flake in the sink's own ordering
+test, and a consumer reading `runlog-*.jsonl` as a timeline would see the
+same inversion. Appends now ride one promise chain (each link swallows its
+own failure, so a bad append never wedges the chain; still fire-and-forget
+for the run). `flush()` resolves once everything observed so far is
+appended — tests and shutdown paths await durability instead of sleeping.
+
 ## 0.51.1 — 2026-07-12
 
 **Fix: replay-backoff timer no longer unref'd — headless consumers survive
