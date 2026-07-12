@@ -157,6 +157,15 @@ def test_dated_files_sorted_and_filtered(tree):
     assert dated_files('bilibili', root) == [a, b]
 
 
+def test_dated_files_sorts_by_stem_across_directories(tree):
+    # 折叠源横跨旧平级目录与宿主分层目录：路径字典序（official/... < steam/...）
+    # 与日期序相反——必须按 stem 排，防「按路径排碰巧对」的假绿
+    root, mk = tree
+    newer_legacy = mk('official/2026-07-02.json')          # 路径序在前、日期序在后
+    older_hosted = mk('steam/global/news/2026-07-01.json')
+    assert dated_files('official', root) == [older_hosted, newer_legacy]
+
+
 # ── discord 布局：guild 注册表 + 区服根解析 ─────────────────────────────────
 
 def test_discord_guild_registry_exact():
