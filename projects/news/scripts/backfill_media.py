@@ -121,10 +121,11 @@ def collect_urls(include_discord):
         import archive_layout
         for fpath in archive_layout.iter_discord_message_files(Path(SRC) / "discord"):
             fp = str(fpath)
-            d = os.path.basename(fp)[:-6]
+            # 冷热双扩展名（.jsonl / .jsonl.gz，2026-07-12 甲案）：按名截日期
+            d = os.path.basename(fp).replace(".jsonl.gz", "").replace(".jsonl", "")
             if len(d) != 10:
                 continue
-            for line in open(fp, encoding="utf-8"):
+            for line in archive_layout.open_archive_text(fp):
                 if '"content_type": "image' not in line:
                     continue
                 try:

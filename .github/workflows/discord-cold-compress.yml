@@ -1,0 +1,60 @@
+name: Discord Cold Compress
+
+# 月度压冷（守密人 2026-07-12 甲案裁定）：每到新月份，把上上个月及更早的
+# discord dated JSONL 压成 .jsonl.gz（当月 + 上月保持裸文本热层）。
+# 幂等可重入；读方经 archive_layout.open_archive_text 透明双开，检索用 rg -z。
+on:
+  schedule:
+    - cron: '23 3 2 * *'   # 每月 2 日 03:23 UTC（错峰归档器整点轮）
+  workflow_dispatch:
+    inputs:
+      cutoff:
+        description: '冷月上界 YYYY-MM（不含；留空 = 上月）'
+        required: false
+        default: ''
+
+concurrency:
+  group: discord-cold-compress
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  compress:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ssh-key: ${{ secrets.BOT_DEPLOY_KEY }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run cold compress
+        run: |
+          if [ -n "${{ github.event.inputs.cutoff }}" ]; then
+            python3 projects/news/scripts/discord_cold_compress.py --cutoff "${{ github.event.inputs.cutoff }}"
+          else
+            python3 projects/news/scripts/discord_cold_compress.py
+          fi
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A Public-Info-Pool/Record/Community/discord/
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore(discord): monthly cold compress [skip ci]"
+            for i in 1 2 3 4; do
+              git pull --rebase origin main && git push origin main && exit 0
+              echo "Push attempt $i failed, retrying in ${i}s..."
+              sleep $i
+            done
+            echo "All push attempts failed"
+            exit 1
+          fi

@@ -204,11 +204,20 @@ class DiscordArchiver:
         return self.data_dir / 'channels' / str(channel_id)[-8:]
 
     def _file_ids(self, file_path: Path) -> set:
-        """Cached set of message IDs already present in a JSONL file (dedup support)."""
+        """Cached set of message IDs already present for this daily file (dedup support).
+
+        gz-aware (2026-07-12 cold-layer ruling): if the date was already
+        cold-compressed to `{date}.jsonl.gz`, its IDs count too — history
+        backfill re-walking a cold month must not duplicate messages into
+        the raw sidecar it appends to.
+        """
         if file_path not in self._file_ids_cache:
             ids: set = set()
-            if file_path.exists():
-                with open(file_path, 'r', encoding='utf-8') as f:
+            gz_path = file_path.with_suffix('.jsonl.gz')
+            for path in (file_path, gz_path):
+                if not path.exists():
+                    continue
+                with archive_layout.open_archive_text(path) as f:
                     for line in f:
                         line = line.strip()
                         if line:

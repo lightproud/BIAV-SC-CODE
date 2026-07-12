@@ -34,7 +34,9 @@ from datetime import date
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "projects" / "news" / "scripts"))
 from silver_tokenizer import tokenize  # noqa: E402  共享领域词典 FMM 分词
+import archive_layout  # noqa: E402  归档布局单一真相源（冷热分层统一开档）
 
 REPO = Path(__file__).resolve().parent.parent
 # 社区源根：迁移后为 BPT 4R 的 Record/Community（各源摊平）；迁移前回落旧布局。
@@ -115,10 +117,11 @@ def _sources():
 
 
 def _emit_discord(d):
-    """discord：channels/ 与 guilds/ 下 *.jsonl，{content,timestamp,reactions}。"""
-    for f in sorted(d.rglob("*.jsonl")):
+    """discord：channels/ 与 guilds/ 下 *.jsonl[.gz]，{content,timestamp,reactions}。
+    冷热分层（2026-07-12 甲案）：冷月为 .gz，经 archive_layout 统一开档透明读。"""
+    for f in sorted(list(d.rglob("*.jsonl")) + list(d.rglob("*.jsonl.gz"))):
         try:
-            with f.open(encoding="utf-8") as fh:
+            with archive_layout.open_archive_text(f) as fh:
                 for line in fh:
                     line = line.strip()
                     if not line:
