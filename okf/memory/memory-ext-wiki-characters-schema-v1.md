@@ -4,7 +4,7 @@ title: "Wiki characters.json Schema v1.0.1"
 description: "1. 覆盖 72 角色全部可预见字段，并为 B3 揭露的四类缺口留有表达位：技能引导、背景故事、命轮、立绘"
 resource: "/memory/wiki-characters-schema-v1.md"
 tags: ["memory", "data_layer:curated"]
-timestamp: "2026-07-11"
+timestamp: "2026-07-12"
 ---
 
 # 记忆层指针
