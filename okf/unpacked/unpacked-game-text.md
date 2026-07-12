@@ -4,7 +4,7 @@ title: "游戏文本"
 description: "客户端解包text 子集（明文）「游戏文本」：11 文件 / 45.4MB。一手解包，本体原地。"
 resource: "/Public-Info-Pool/Reference/Game-Unpacked/游戏文本/"
 tags: ["data_layer:full_archive", "content:game-text", "encoding:text", "first-hand-unpack"]
-timestamp: "2026-07-12"
+timestamp: "2026-07-11"
 ---
 
 # 指针概念

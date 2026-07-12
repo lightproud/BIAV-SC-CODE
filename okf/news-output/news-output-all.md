@@ -4,7 +4,7 @@ title: "输出展示层 · 全平台聚合"
 description: "全平台最新快照聚合（抽样，非全量）。 抽样/展示用途，非全量档案层。"
 resource: "/projects/news/output/all-latest.json"
 tags: ["data_layer:output", "aggregate", "sampled"]
-timestamp: "2026-07-12"
+timestamp: "2026-07-11"
 ---
 
 # 指针概念

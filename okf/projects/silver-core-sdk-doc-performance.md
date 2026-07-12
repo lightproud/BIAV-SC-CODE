@@ -4,7 +4,7 @@ title: "silver-core-sdk PERFORMANCE"
 description: "What the SDK controls about response time, what it already does by default,"
 resource: "/projects/silver-core-sdk/docs/PERFORMANCE.md"
 tags: ["data_layer:curated", "design-doc", "sub-project:silver-core-sdk"]
-timestamp: "2026-07-12"
+timestamp: "2026-07-11"
 ---
 
 # 指针概念

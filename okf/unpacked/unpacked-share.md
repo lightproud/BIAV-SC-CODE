@@ -4,7 +4,7 @@ title: "share"
 description: "客户端解包lua 字节码子集（binary，非明文）「share」：299 文件 / 2.0MB。一手解包，本体原地。"
 resource: "/Public-Info-Pool/Reference/Game-Unpacked/share/"
 tags: ["data_layer:full_archive", "content:share", "encoding:luac", "first-hand-unpack"]
-timestamp: "2026-07-12"
+timestamp: "2026-07-11"
 ---
 
 # 指针概念

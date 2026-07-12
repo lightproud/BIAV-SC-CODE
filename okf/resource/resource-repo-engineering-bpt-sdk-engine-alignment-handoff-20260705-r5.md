@@ -4,7 +4,7 @@ title: "bpt-sdk-engine-alignment-handoff-20260705-r5"
 description: "其实只是便签没跟着更新。本档就是把便签换成「已完工验收单」。（格式：md）"
 resource: "/Public-Info-Pool/Resource/repo-engineering/bpt-sdk-engine-alignment-handoff-20260705-r5.md"
 tags: ["data_layer:curated", "deliverable", "topic:repo-engineering"]
-timestamp: "2026-07-12"
+timestamp: "2026-07-11"
 ---
 
 # 指针概念
