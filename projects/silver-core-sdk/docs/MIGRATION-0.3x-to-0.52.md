@@ -7,7 +7,7 @@ covers exactly that window; the general swap-from-official guide stays in
 `docs/MIGRATION.md`, and the per-feature tier ledger stays in `docs/COMPAT.md`.
 
 **Compatibility verdict up front**: the public surface is drop-in across the
-whole window. Compiler-verified against the frozen 0.3x surface
+whole window — and specifically for the actual pin, **0.37.1** (§0-pre). Compiler-verified against the frozen 0.3x surface
 (`tests/fixtures/legacy-0-3x-surface.json`, enumerated from the historical
 trees with the TypeScript checker): **zero value exports removed, zero type
 exports removed, zero `Options` fields removed from 0.39.0**, and exactly
@@ -18,6 +18,38 @@ shapes, `canUseTool` / hook signatures, the result fields, session resume,
 (`tests/legacy-consumer-0-3x.test.ts`). What remains for the consumer is the
 package rename (§3.1), two narrow behavioral breaks (§3.2, and §3.4 for older
 pins), and a handful of default-semantics shifts to be aware of (§3.5).
+
+## 0-pre. The actual pin: 0.37.1 — your exact checklist
+
+The black-pool BPT pin is **0.37.1** (keeper, 2026-07-12). Everything in this
+document was re-verified against that exact build (fixture entry `0.37.1`,
+commit `cbdbfa184`): **zero exports and zero `Options` fields missing** in
+0.52.0. What applies to THIS pin:
+
+| Item | Applies? | Where |
+|---|---|---|
+| Package rename + identity strings | YES | §3.1 |
+| `[background subagent …]` → `<task-notification>` XML | YES | §3.2 |
+| `harnessPromptVariant` removal | **NO** — 0.37.1 is already past 0.33.0 | §3.3 |
+| Stop-hook `decision: 'block'` now honored | **YES** — audit your Stop hooks | §3.4 |
+| Default-semantics shifts (timeoutMs / HTTP client / budget / interrupt) | YES | §3.5 |
+| Custom slash commands appear (crossing 0.38.0) | YES — see below | — |
+
+Two 0.37.1-specific notes:
+
+- **Twin-build caveat.** The 0.38.0 release (custom slash commands) shipped
+  with its version constant still reading 0.37.1 (repaired in 0.39.0), so TWO
+  different builds label their tarball `bpt-agent-sdk-0.37.1.tgz`. Their
+  public export surfaces are identical (both enumerated; both zero-missing in
+  0.52.0) — the difference is behavioral only. Disambiguate on the box:
+  `node_modules/bpt-agent-sdk/dist/engine/slash-commands.js` present = the
+  0.38.0 feature build; absent = true 0.37.1.
+- **Slash-command expansion becomes active** (if your build is true 0.37.1):
+  from 0.38.0, a pure-text `/name [args]` user turn expands against
+  `.claude/commands` markdown loaded per `settingSources` before hitting the
+  wire. No command files, no change; if the host's users type literal
+  `/`-prefixed text and command files exist in reachable setting sources,
+  review that surface.
 
 ## 0. The upgrade recipe
 
