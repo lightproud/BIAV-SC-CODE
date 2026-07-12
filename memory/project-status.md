@@ -199,6 +199,19 @@
 > 银芯→黑池单向输出物，与 §1.1-HC 防火墙同向，非 BPT 产品内部开发。
 
 - **动手前必读**：`projects/silver-core-sdk/CONTEXT.md`（会话上下文 + 当前 milestone）
+- **环三首轮自改循环收官（2026-07-12，守密人「循环自改、合并自断」授权，6 单全并）**：
+  self-improve **#1–#6** 当日走完六个完整「定位→修复→分支 LIVE 验证→合并」周期——
+  #1 tok-06 接线修复（PR #622，管线验收单）/ #2 判卷校验闸（#624）/ #3 确定性切流
+  `cutAfterTextDeltas`（#625）/ #4 judge 预算 4096+重试（#627）/ #5 runlog 追加序列化
+  （#630，**v0.51.2** 发货修复：台账顺序=到达顺序 + `flush()`）/ #6 判卷证据瘦身
+  `trimEvidence`（#631）。判卷成功率 15/20 → 18-19/20，四轮门禁全 PASS，末轮
+  （run [29194232519](https://github.com/lightproud/brain-in-a-vat/actions/runs/29194232519)）
+  9 作业全绿、维度均分 memory **5.00** / token 4.57 / disconnect 3.80。**停机判定**（授权终点）：
+  基础设施四层无已知可修缺陷；残余三类——① **dc-03 语义冲突待守密人裁**（引擎「半截话作答」
+  忠实复刻官方 E3 vs rubric 期待续写，两轮稳定 1 分，改 rubric=基线重置专权）；② mem-03/dc-05
+  顽固无分对子转观察（3 轮 5 次 judge 结构化输出失败）；③ judge 方差（mem-01 零改动 2→5 实证）
+  与 estBytes 等收益递减项不再专门烧轮。判卷侧当日约 $15（$30/月帽内）。裁定全文
+  `memory/decisions.md` 同日「自改循环授权 + 首轮循环收官」条。
 - **首份全量 LIVE 评估基线（2026-07-12，run [29178972282](https://github.com/lightproud/brain-in-a-vat/actions/runs/29178972282)，v0.51.1）**：
   20 题全执行（8 题 Phase 2 harness 首次真跑真判），**19 判卷成功 / 1 judge 解析错误（tok-02，偶发）**；
   维度均分 memory_recall **4.86** / disconnect_recovery **4.00** / token_efficiency **4.33**，
