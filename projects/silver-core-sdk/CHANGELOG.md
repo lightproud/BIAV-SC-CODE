@@ -16,6 +16,23 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.52.1 — 2026-07-13
+
+**Dev-only: overnight quality-campaign harness (shipped runtime unchanged).**
+No `src/` behavior change beyond the version constant; this bump exists
+because the version guard rightly counts dependency-manifest changes as
+shipped-content changes. Added devDependencies: `@stryker-mutator/core` +
+`@stryker-mutator/vitest-runner` (mutation testing, `stryker.conf.json`,
+in-place mode so corpus-sync tests keep their repo-root archive paths) and
+`fast-check` (property tests). New test assets: property suites for the SSE
+parser (byte-level chunking/noise/truncation invariance), the permission
+gate partial order (deny-dominance metamorphic + ask-routing + totality),
+and session JSONL corruption robustness; 39 mutation-kill tests for the
+permissions module (Stryker score 79.97% -> 92.87%, no-coverage 36 -> 0);
+keyless emulator soak probes (`tests/integration/soak-emulator.mjs` +
+`soak-report.mjs`) for long-run leak curves. +48 tests (full suite 1968
+passed + 2 skipped).
+
 ## 0.52.0 — 2026-07-12
 
 **`options.resilience.salvageMode` (E3 continue-after-truncation) + exact

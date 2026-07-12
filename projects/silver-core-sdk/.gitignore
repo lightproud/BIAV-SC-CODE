@@ -15,3 +15,7 @@ proposed-pins.json
 proposed-pr-body.md
 ab-report-*.json
 evals-reports/
+.stryker-tmp/
+reports/
+.prop-staging/
+stryker.log
