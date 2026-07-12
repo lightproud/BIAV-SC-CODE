@@ -1,7 +1,7 @@
 {
   "generated": "2026-07-12",
   "stats": {
-    "nodes": 345,
+    "nodes": 346,
     "edges": 394
   },
   "nodes": [
@@ -2181,6 +2181,17 @@
       "id": "/projects/silver-core-sdk-doc-memory.md",
       "type": "documentation",
       "title": "silver-core-sdk MEMORY",
+      "tags": [
+        "data_layer:curated",
+        "design-doc",
+        "sub-project:silver-core-sdk"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/projects/silver-core-sdk-doc-migration-0-3x-to-0-52.md",
+      "type": "documentation",
+      "title": "silver-core-sdk MIGRATION-0.3x-to-0.52",
       "tags": [
         "data_layer:curated",
         "design-doc",

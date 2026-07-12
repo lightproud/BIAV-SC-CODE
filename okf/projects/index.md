@@ -1,4 +1,4 @@
-# 入口文档 + 子项目上下文 + 藏宝图 + 设计/工程文档 (26)
+# 入口文档 + 子项目上下文 + 藏宝图 + 设计/工程文档 (27)
 
 仓库最高权威入口（CLAUDE.md / README.md）+ 各子项目 CONTEXT.md（动手前必读）+ RELEASES.md 藏宝图 + silver-core-sdk/site 设计文档 + 工程文档 + 归档注册表的导航指针。
 
@@ -17,6 +17,7 @@
 * [silver-core-sdk ERRORS](/projects/silver-core-sdk-doc-errors.md) - Every error class in `src/errors.ts` carries a machine-readable, stable
 * [silver-core-sdk MEMORY-GOVERNANCE](/projects/silver-core-sdk-doc-memory-governance.md) - Archived requirements + implementation record for the 2026-07-11 keeper
 * [silver-core-sdk MEMORY](/projects/silver-core-sdk-doc-memory.md) - Cross-session memory for agents: a `memory_20250818`-equivalent six-command
+* [silver-core-sdk MIGRATION-0.3x-to-0.52](/projects/silver-core-sdk-doc-migration-0-3x-to-0-52.md) - Audience: a consumer (BPT Desktop) pinned on the **0.3x tarball line**
 * [silver-core-sdk MIGRATION](/projects/silver-core-sdk-doc-migration.md) - Audience: the BPT Desktop (Electron) codebase currently importing the official
 * [silver-core-sdk ONBOARDING](/projects/silver-core-sdk-doc-onboarding.md) - Goal: get a new maintainer from zero to "I can make a change safely and prove
 * [silver-core-sdk OPENAI-PROTOCOL](/projects/silver-core-sdk-doc-openai-protocol.md) - The SDK can drive an **OpenAI-compatible Chat Completions endpoint** instead of
