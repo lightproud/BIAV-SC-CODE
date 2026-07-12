@@ -133,14 +133,27 @@ def test_iter_folded_source_merges_legacy_and_hosted(tree):
     assert got == {legacy, hosted}
 
 
-def test_iter_normal_source_skips_claimed_subdirs(tree):
+def test_iter_steam_walks_folded_branch(tree):
+    # steam 自身即折叠源（宿主=自己）：走折叠分支 = 平级旧档 + */review/，
+    # 绝不递归吞并 news/discussion（那是 official / steam_discussion 的地盘）
     root, mk = tree
     own = mk('steam/global/review/2026-07-01.json')
     flat = mk('steam/2026-06-01.json')
-    mk('steam/global/news/2026-07-01.json')          # official 认领，须跳过
-    mk('steam/global/discussion/2026-07-01.json')    # steam_discussion 认领，须跳过
+    mk('steam/global/news/2026-07-01.json')
+    mk('steam/global/discussion/2026-07-01.json')
     got = set(iter_source_files('steam', root))
     assert got == {own, flat}
+
+
+def test_iter_normal_source_skips_claimed_subdirs(tree):
+    # 认领跳过逻辑的唯一现实走线：taptap 非折叠源（走递归分支），但其
+    # */review/ 被折叠源 taptap_review 认领——宿主递归必须绕开防双计
+    root, mk = tree
+    post = mk('taptap/cn/post/2026-07-01.json')
+    flat = mk('taptap/2026-06-01.json')
+    mk('taptap/cn/review/2026-07-01.json')           # taptap_review 认领，须跳过
+    got = set(iter_source_files('taptap', root))
+    assert got == {post, flat}
 
 
 def test_iter_missing_dirs_yield_nothing(tree):
