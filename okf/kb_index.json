@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 346,
-    "edges": 394,
-    "terms": 6226,
+    "concepts": 347,
+    "edges": 395,
+    "terms": 6257,
     "by_type": {
       "character": 72,
       "dataset": 94,
-      "documentation": 113,
+      "documentation": 114,
       "knowledge-pointer": 47,
       "reference": 17,
       "research": 3
@@ -25,14 +25,14 @@
       "memory": 50,
       "news-output": 23,
       "projects": 27,
-      "resource": 85,
+      "resource": 86,
       "sources": 20,
       "story": 11,
       "wiki-data": 26
     },
     "by_tier": {
       "skeleton": 134,
-      "search": 212
+      "search": 213
     }
   },
   "sections": {
@@ -62,7 +62,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 85
+      "count": 86
     },
     "sources": {
       "index": "/sources/index.md",
@@ -295,7 +295,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 32
+      "degree": 33
     },
     "/characters/130375.md": {
       "type": "character",
@@ -3272,6 +3272,20 @@
       "tier": "search",
       "degree": 0
     },
+    "/resource/resource-proposal-bpt-cowork-product-design-20260713.md": {
+      "type": "documentation",
+      "title": "bpt-cowork-product-design-20260713",
+      "description": "本文档定义黑池的下一个产品形态:**Cowork——面向非技术职能的「对话 + 交付物」工作界面**。它回答三个问题:用户用起来和 Code 类工具有什么区别;它解决黑池当前的什么问题;技术上如何在 silver-core-sdk 之上实现。（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/proposal/bpt-cowork-product-design-20260713.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:proposal"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 1
+    },
     "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md": {
       "type": "documentation",
       "title": "bpt-desktop-cowork-experience-design-20260708",
@@ -5081,6 +5095,11 @@
       ],
       [
         "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+        "提及:沙耶",
+        "mention"
+      ],
+      [
+        "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
         "提及:沙耶",
         "mention"
       ],
@@ -8495,6 +8514,13 @@
         "mention"
       ]
     ],
+    "/resource/resource-proposal-bpt-cowork-product-design-20260713.md": [
+      [
+        "/characters/130226.md",
+        "提及:沙耶",
+        "mention"
+      ]
+    ],
     "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md": [
       [
         "/characters/15603.md",
@@ -9537,6 +9563,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
@@ -10242,6 +10269,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
@@ -10445,6 +10473,7 @@
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
@@ -10750,6 +10779,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
@@ -10947,6 +10977,7 @@
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -10971,6 +11002,7 @@
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md"
     ],
     "cowork": [
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md"
     ],
     "cross": [
@@ -11089,6 +11121,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
@@ -11407,6 +11440,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
@@ -11580,6 +11614,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
@@ -11678,6 +11713,7 @@
       "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
@@ -12592,6 +12628,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
@@ -13071,6 +13108,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
@@ -13577,6 +13615,7 @@
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
@@ -14264,6 +14303,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
@@ -14421,6 +14461,9 @@
     ],
     "producer": [
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md"
+    ],
+    "product": [
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
     ],
     "profile": [
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
@@ -14580,6 +14623,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
@@ -14656,6 +14700,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
@@ -15059,6 +15104,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
@@ -15329,6 +15375,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
@@ -15429,6 +15476,7 @@
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -16003,6 +16051,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
@@ -16655,6 +16704,9 @@
       "/characters/15590.md",
       "/characters/15603.md"
     ],
+    "三个": [
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
+    ],
     "三份": [
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
@@ -16730,6 +16782,12 @@
     "上复": [
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md"
     ],
+    "上如": [
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
+    ],
+    "上实": [
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
+    ],
     "上干": [
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
     ],
@@ -16768,7 +16826,8 @@
       "/characters/15581.md"
     ],
     "下一": [
-      "/memory/memory-research-discord-archive-backfill-conflict.md"
+      "/memory/memory-research-discord-archive-backfill-conflict.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
     ],
     "下为": [
       "/story/story_research_todo.md"
@@ -17049,6 +17108,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
@@ -17307,6 +17367,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
@@ -17622,6 +17683,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
@@ -17882,6 +17944,9 @@
     "个不": [
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
+    "个产": [
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
+    ],
     "个人": [
       "/projects/project-game.md",
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md",
@@ -17953,7 +18018,8 @@
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md"
     ],
     "个问": [
-      "/resource/resource-proposal-bpt-context-architecture-20260712.md"
+      "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
     ],
     "个零": [
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md"
@@ -18256,6 +18322,9 @@
     "么会": [
       "/characters/15566.md"
     ],
+    "么区": [
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
+    ],
     "么多": [
       "/resource/resource-proposal-bpt-context-architecture-20260712.md"
     ],
@@ -18269,6 +18338,9 @@
       "/characters/15590.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md"
     ],
+    "么问": [
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
+    ],
     "义务": [
       "/characters/77922.md"
     ],
@@ -18278,10 +18350,14 @@
     "义脑": [
       "/memory/memory-ext-biav-info-classification.md"
     ],
+    "义黑": [
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
+    ],
     "之一": [
       "/characters/15583.md"
     ],
     "之上": [
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md"
     ],
     "之下": [
@@ -18580,7 +18656,8 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
     ],
     "交付": [
-      "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md"
+      "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
     ],
     "交流": [
       "/characters/77925.md"
@@ -18595,6 +18672,7 @@
       "/README.md"
     ],
     "产品": [
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md"
     ],
     "产物": [
@@ -18868,6 +18946,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
@@ -19126,7 +19205,8 @@
       "/characters/15593.md"
     ],
     "付物": [
-      "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md"
+      "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
     ],
     "付费": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md"
@@ -19810,6 +19890,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
@@ -20067,6 +20148,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
@@ -20259,6 +20341,9 @@
     "何人": [
       "/characters/15585.md"
     ],
+    "何在": [
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
+    ],
     "何形": [
       "/memory/memory-ext-active-silver-blackpool-interface.md"
     ],
@@ -20326,6 +20411,9 @@
     "作流": [
       "/memory/memory-archive-contribution-protocol-hub.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md"
+    ],
+    "作界": [
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
     ],
     "作的": [
       "/characters/77926.md"
@@ -21085,7 +21173,8 @@
     ],
     "具有": [
       "/characters/15592.md",
-      "/characters/15604.md"
+      "/characters/15604.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
     ],
     "具独": [
       "/README.md"
@@ -21262,6 +21351,9 @@
       "/memory/memory-ext-biav-info-classification.md",
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
+    ],
+    "决黑": [
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
     ],
     "冷光": [
       "/characters/77922.md"
@@ -21971,6 +22063,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
@@ -22085,7 +22178,8 @@
       "/memory/decisions.md"
     ],
     "前的": [
-      "/memory/memory-ext-active-self-improvement-requirements.md"
+      "/memory/memory-ext-active-self-improvement-requirements.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
     ],
     "前缀": [
       "/memory/memory-archive-contribution-protocol-hub.md"
@@ -22455,7 +22549,8 @@
       "/characters/15560.md",
       "/characters/15577.md",
       "/characters/15595.md",
-      "/characters/15602.md"
+      "/characters/15602.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
     ],
     "区原": [
       "/memory/memory-ext-biav-info-classification.md"
@@ -23978,6 +24073,9 @@
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
+    "向非": [
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
+    ],
     "吞噬": [
       "/characters/15569.md",
       "/characters/15596.md",
@@ -24208,6 +24306,9 @@
     ],
     "咨询": [
       "/characters/77925.md"
+    ],
+    "品形": [
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
     ],
     "品本": [
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md"
@@ -24444,6 +24545,7 @@
     ],
     "回答": [
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
     ],
@@ -25232,6 +25334,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
@@ -25814,7 +25917,8 @@
     "如何": [
       "/characters/15604.md",
       "/projects/news-archive-sources-registry.md",
-      "/resource/resource-proposal-bpt-context-architecture-20260712.md"
+      "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
     ],
     "如归": [
       "/characters/77922.md"
@@ -26028,6 +26132,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
@@ -26329,6 +26434,9 @@
     "它唤": [
       "/characters/77926.md"
     ],
+    "它回": [
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
+    ],
     "它干": [
       "/projects/news-archive-sources-registry.md"
     ],
@@ -26340,6 +26448,9 @@
     ],
     "它的": [
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
+    ],
+    "它解": [
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
     ],
     "宇宙": [
       "/memory/memory-ext-collab-event-playbook.md"
@@ -26505,6 +26616,7 @@
       "/characters/15590.md",
       "/memory/memory-archive-contribution-protocol-hub.md",
       "/memory/memory-ext-biav-info-classification.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md",
       "/wiki-data/wiki-schema-banners-schema.md",
       "/wiki-data/wiki-schema-characters-processed-schema.md",
@@ -26628,6 +26740,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
@@ -26804,6 +26917,7 @@
     "实现": [
       "/README.md",
       "/projects/project-silver-core-sdk.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
@@ -27030,7 +27144,8 @@
     "对话": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-phase-d-plan.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md",
-      "/memory/memory-ext-active-silver-blackpool-interface.md"
+      "/memory/memory-ext-active-silver-blackpool-interface.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
     ],
     "对账": [
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md"
@@ -27602,6 +27717,7 @@
       "/characters/94450.md"
     ],
     "工作": [
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md"
     ],
@@ -27610,6 +27726,7 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md",
       "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-bpt-positioning.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
@@ -28543,6 +28660,7 @@
     ],
     "当前": [
       "/memory/decisions.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-discord-layout-unification-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
@@ -28573,7 +28691,8 @@
     ],
     "形态": [
       "/characters/15601.md",
-      "/characters/15603.md"
+      "/characters/15603.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
     ],
     "形成": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md"
@@ -29811,6 +29930,9 @@
     "户原": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md"
     ],
+    "户用": [
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
+    ],
     "户端": [
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md"
     ],
@@ -29956,7 +30078,8 @@
       "/characters/15567.md"
     ],
     "技术": [
-      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
     ],
     "技能": [
       "/characters/15596.md",
@@ -30514,6 +30637,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
@@ -31078,6 +31202,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
@@ -31411,6 +31536,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
@@ -31822,6 +31948,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
@@ -32101,6 +32228,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
@@ -32585,6 +32713,7 @@
     "文档": [
       "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-biav-info-classification.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/story/story_research_notes.md"
@@ -33416,6 +33545,9 @@
     "有人": [
       "/characters/15602.md"
     ],
+    "有什": [
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
+    ],
     "有公": [
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
@@ -33787,6 +33919,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
@@ -33935,7 +34068,8 @@
     ],
     "本文": [
       "/memory/memory-ext-biav-info-classification.md",
-      "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md"
+      "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
     ],
     "本月": [
       "/community/community-timeline.md"
@@ -33989,7 +34123,8 @@
       "/characters/15572.md"
     ],
     "术上": [
-      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
     ],
     "术刺": [
       "/characters/15595.md"
@@ -33999,6 +34134,9 @@
     ],
     "术的": [
       "/characters/15592.md"
+    ],
+    "术职": [
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
     ],
     "术语": [
       "/memory/morimens-context.md"
@@ -34205,6 +34343,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
@@ -34424,6 +34563,9 @@
     ],
     "来命": [
       "/characters/95786.md"
+    ],
+    "来和": [
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
     ],
     "来增": [
       "/characters/15572.md"
@@ -34794,6 +34936,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
@@ -34997,6 +35140,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
@@ -35174,7 +35318,8 @@
       "/projects/news-archive-sources-registry.md"
     ],
     "档定": [
-      "/memory/memory-ext-biav-info-classification.md"
+      "/memory/memory-ext-biav-info-classification.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
     ],
     "档对": [
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
@@ -35505,6 +35650,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
@@ -35886,6 +36032,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
@@ -36275,6 +36422,9 @@
     "池吃": [
       "/projects/entry-claude-md.md"
     ],
+    "池当": [
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
+    ],
     "池数": [
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
@@ -36287,7 +36437,8 @@
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md"
     ],
     "池的": [
-      "/projects/entry-claude-md.md"
+      "/projects/entry-claude-md.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
     ],
     "池系": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md"
@@ -37809,7 +37960,8 @@
       "/assets/persona-erica-speech-canon.md"
     ],
     "用户": [
-      "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md"
+      "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
     ],
     "用料": [
       "/characters/15571.md"
@@ -37837,6 +37989,9 @@
     ],
     "用记": [
       "/resource/resource-proposal-bpt-context-architecture-20260712.md"
+    ],
+    "用起": [
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
     ],
     "用超": [
       "/characters/15574.md"
@@ -38053,6 +38208,9 @@
       "/memory/morimens-context.md",
       "/story/STORY_RESEARCH.md"
     ],
+    "界面": [
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
+    ],
     "留了": [
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md"
     ],
@@ -38181,6 +38339,9 @@
     "的上": [
       "/resource/resource-proposal-bpt-context-architecture-20260712.md"
     ],
+    "的下": [
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
+    ],
     "的东": [
       "/characters/125346.md",
       "/characters/15572.md"
@@ -38203,6 +38364,9 @@
     "的人": [
       "/memory/memory-ext-active-self-improvement-requirements.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md"
+    ],
+    "的什": [
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
     ],
     "的仁": [
       "/characters/15599.md"
@@ -39883,6 +40047,9 @@
     "答一": [
       "/resource/resource-proposal-bpt-context-architecture-20260712.md"
     ],
+    "答三": [
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
+    ],
     "答的": [
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
     ],
@@ -39966,6 +40133,9 @@
     ],
     "类大": [
       "/memory/memory-archive-storage-discussion.md"
+    ],
+    "类工": [
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
     ],
     "类成": [
       "/README.md"
@@ -40776,6 +40946,9 @@
       "/memory/memory-ext-biav-info-classification.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md"
     ],
+    "职能": [
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
+    ],
     "联动": [
       "/memory/memory-ext-collab-event-playbook.md",
       "/memory/memory-research-community-analysis-2026-05-18-26.md",
@@ -40912,7 +41085,8 @@
       "/characters/15589.md"
     ],
     "能的": [
-      "/characters/15603.md"
+      "/characters/15603.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
     ],
     "能目": [
       "/memory/capability-index.md"
@@ -41825,6 +41999,9 @@
       "/story/character_story_links.md",
       "/story/story_index.md"
     ],
+    "解决": [
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
+    ],
     "解包": [
       "/README.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
@@ -42643,6 +42820,9 @@
     "起巨": [
       "/characters/15564.md"
     ],
+    "起来": [
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
+    ],
     "起滔": [
       "/characters/15569.md"
     ],
@@ -42925,6 +43105,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
@@ -43614,6 +43795,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
@@ -44642,6 +44824,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
@@ -44890,6 +45073,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
@@ -45236,6 +45420,7 @@
     ],
     "问题": [
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
     ],
     "间不": [
@@ -45604,6 +45789,9 @@
     "非同": [
       "/memory/memory-ext-skill-authoring-standard.md"
     ],
+    "非技": [
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
+    ],
     "非空": [
       "/README.md"
     ],
@@ -45628,6 +45816,9 @@
     ],
     "靠近": [
       "/characters/15586.md"
+    ],
+    "面向": [
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
     ],
     "面图": [
       "/README.md"
@@ -46020,6 +46211,7 @@
       "/projects/entry-readme.md",
       "/projects/project-news.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-repo-engineering-bpt-desktop-command-framework-requirements-20260710.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
@@ -46368,6 +46560,7 @@
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
@@ -46602,6 +46795,7 @@
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md"
     ],
     "cowork": [
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md"
     ],
     "crosscheck": [
@@ -46717,6 +46911,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
@@ -47028,6 +47223,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
@@ -47188,6 +47384,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
@@ -47275,6 +47472,7 @@
       "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
@@ -47910,6 +48108,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
@@ -48519,6 +48718,9 @@
     "producer": [
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md"
     ],
+    "product": [
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
+    ],
     "profile": [
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
     ],
@@ -48560,6 +48762,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",
@@ -49103,6 +49306,7 @@
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md",

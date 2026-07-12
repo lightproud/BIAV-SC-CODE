@@ -1,8 +1,8 @@
 {
   "generated": "2026-07-12",
   "stats": {
-    "nodes": 346,
-    "edges": 394
+    "nodes": 347,
+    "edges": 395
   },
   "nodes": [
     {
@@ -2566,6 +2566,17 @@
       "id": "/resource/resource-proposal-bpt-context-architecture-20260712.md",
       "type": "documentation",
       "title": "bpt-context-architecture-20260712",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:proposal"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
+      "type": "documentation",
+      "title": "bpt-cowork-product-design-20260713",
       "tags": [
         "data_layer:curated",
         "deliverable",
@@ -5275,6 +5286,12 @@
     },
     {
       "source": "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "target": "/characters/130226.md",
       "rel": "提及:沙耶",
       "rel_type": "mention"
