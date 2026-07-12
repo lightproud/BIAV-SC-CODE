@@ -398,6 +398,7 @@ bpt-agent-sdk、2026-07-10 守密人裁定更名 Silver Core SDK，与 §1.1-HC 
 | wiki 构建产出 | `cd projects/wiki && npm run docs:build` |
 | 数据校验（wiki JSON）| slash `/validate-data` 或 `python scripts/...`（见 schema 目录）|
 | 跨档案检索 | `rg "<关键词>" memory/ assets/`（ripgrep） |
+| 记忆保鲜巡检 | `python3 scripts/memory_freshness.py`（lessons 指针/编号不变量门禁见 `tests/test_memory_freshness.py`；月检例程与 `/sync-memory` 手册共用一套流程）|
 | 知识库有效性记分卡 | `python3 scripts/kb_eval.py`（黄金问题集 hit@k + MRR；需求侧有效性回归见 `tests/test_kb_golden.py`）|
 | 知识库使用遥测报告 | `python3 scripts/kb_telemetry.py`（借阅记录：调用分布 / 死概念 / 零命中查询；日志按日落 git 内 `Public-Info-Pool/Record/kb-usage/{date}.jsonl` **跨会话累计**，2026-07-11 方案甲裁定，路径唯一源 = `kb_telemetry.KB_USAGE_DIR`）；`--harvest` 把零命中查询回流成 held-out 难题候选（闭合评判 #1↔#2）|
 | 知识库反事实 A/B | `python3 scripts/kb_ab.py`（KB 结构化检索 vs 朴素 grep 同语料对照，含**最强 grep** 反稻草人臂；回归见 `tests/test_kb_ab.py`：KB 不劣于 grep + 联想题即便对最强 grep 仍严格胜）|
