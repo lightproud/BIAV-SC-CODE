@@ -29,13 +29,16 @@
 | T23 | fanart 直传 release 新链路首次全真实跑验证：PR #587 把 collect-fanart / recover-fanart 改「取月桶合并 → `--force-group` 重传」（修每日 gitignore exit 1），下一次定时跑（每日 02:00 UTC）或手动 dispatch 需核 Actions 日志——月桶下载 / 合并 / 重传三步全绿即销 | 观察 | PR [#587](https://github.com/lightproud/brain-in-a-vat/pull/587) + `RELEASES.md` §2.2 | 开 |
 | T24 | fanart 月桶「日日下载整月重传」带宽站岗：随月内天数线性涨（历史 ~150MB/月，月末单次两三百 MB），当前可接受；若未来体量失控再议按日资产分桶（代价 = 回到「资产散乱」老问题，2026-06-21 整理前形态），无异常不动 | 观察 | PR [#587](https://github.com/lightproud/brain-in-a-vat/pull/587) 合并总结体余项 2 + `.github/workflows/collect-fanart.yml` 上传步 | 开 |
 | T29 | git 历史重写禁区站岗：2026-06-21 瘦身删除的 ~3.0G discord 旧档，仅实证 30 月中 3 月在 Releases 有副本；做 git 历史重写前**不得假定其余 27 月安全**（历史 blob 是唯一二次抢救网） | 观察 | 原根目录 `todo.md` 风险提示节（2026-07-11 仓库精简裁定归账后删档，见 `Public-Info-Pool/Resource/repo-engineering/repo-slim-audit-20260711.md` 项 2） | 开 |
-| T30 | pending-discussions 归档遗留开账复核：2026-04-26 定格快照归档时余 18 条未销（采集接入 4 / 日报流程 2 / 事实圣经补全 1 / 站点 Discussions 1 / 数据层审计副产物 6 / 待解锁源 3 / publish_time 污染 1），部分疑已被后续演化覆盖（如 Discussions/Giscus 评论随 2026-07-10 取消社区贡献大概率作废、日报定时已停用），须逐条复核销案或转正式挂账 | 裁定 | `memory/archive/pending-discussions.md`（2026-07-11 仓库精简裁定项 5 归档） | 开 |
 | T33 | 黑池侧自我改进信号**反馈回流通道**：BPT 接线 v0.49.0 `pitfalls: true` 后，踩坑记录质量（两周 ≥10 条有效 = 环三 go/no-go 先导）与运行数据（transportHealth / token / 失败会话）如何反哺银芯侧闭环——防火墙下黑池不进银芯，唯一合法通道 = **守密人亲述回流**（bpt-positioning v0.3「唯一裁定者 + 回流过滤器」）；到时守密人口头转述统计口径即可，银芯不收原始数据 | 黑池输入 | 守密人 2026-07-11「加 todo 黑池到时候怎么反馈回来」+ `memory/bpt-positioning.md` 丙节 + SCS-REQ-002 §6 | 开 |
+
+| T34 | 定时报告推送方式（Discord Bot / 邮件）：日报定时现已停用、报告会话内按需生成，本账仅在**恢复定时报告**时激活再议推送通道 | 观察 | T30 第 6 条守密人 2026-07-12 裁定「转正式挂账」；`memory/archive/pending-discussions.md` 日报流程节 | 开 |
+| T35 | Discord 频道一致性 reconcile：global 区服 571 频道目录 vs `channel_index.json` 仅 143 条（差 428 个已下线/改名频道的历史孤儿目录，2026-07-12 复测仍在扩大）；不影响采集与全量分析，但孤儿目录无法由索引反查频道名——待点火后给 `discord_archiver` 加 reconcile 步骤（标记孤儿 + 补全历史频道名映射） | 预算 | T30 第 10 条守密人 2026-07-12 裁定「转预算类挂账」；复测数据见 T30 销案条 | 开 |
 
 ## 已清（销案引）
 
 | ID | 账目 | 销案引 |
 |----|------|--------|
+| T30 | pending-discussions 归档遗留 18 条开账复核 | **守密人 2026-07-12 逐条裁定（18 问 18 答）全部处置完毕**：销案 14 条（频道监控范围 / Twitter 并入 T9 / NGA×2 维持不补 secret / TapTap 已内置 app_id 落地 / Chrome 手动采集场景消失 / 事实圣经对象已重构 / Giscus 随取消社区贡献作废 / steam_review 被 07-02 archive_layout 改造结构性覆盖 / 架构文档 07-02 已重写在养 / gamerch·miraheze 目录已不存在 / weibo 已在产出 / bahamut·arca 07-10 已修复在产 / bahamut 时间污染随重写消亡）；转挂账 2 条（第 6 条→T34 观察、第 10 条→T35 预算）；执行 2 条（第 11 条 gap backfill 已 dispatch `backfill-gap.yml` 2026-05-13→07-09 全跨度——注：原账 5,173 缺口已随缺口逻辑演化缩至 208；第 12 条 weixin 噪声已清理——删 74 全噪声文件 908 条 + 净化 11 混合文件剔 280 条，报告 `Public-Info-Pool/Resource/data-diagnostics/weixin-noise-cleanup-20260712.md`） |
 | T1 | `decisions.md` 落「二物一泵、分层缓立」极简条 | 守密人 2026-07-10「授权」代写；`decisions.md` 同日「BPT 栈本体」条 |
 | T2 | POSITIONING 固定靶扩张（异步委派模式入参照系） | 同上条⑤ + `docs/POSITIONING.md` §1「参照系扩张(2026-07-10)」块 |
 | C1 | SDK 命名裁定（bpt-agent-sdk → silver-core-sdk） | `decisions.md` 2026-07-10 更名条；0.41.0 起生效 |

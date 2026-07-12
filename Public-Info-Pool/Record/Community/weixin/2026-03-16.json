@@ -2,7 +2,7 @@
   "date": "2026-03-16",
   "archived_at": "2026-07-12T02:34:11.630000+00:00",
   "source": "weixin",
-  "item_count": 566,
+  "item_count": 564,
   "items": [
     {
       "title": "[微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜2033》公布",
@@ -20,21 +20,6 @@
       "media_url": ""
     },
     {
-      "title": "[微信] 【砺行 &bull; 少先队】不能忘却的记忆&mdash;&mdash;理工实小开展国家公祭日主题寻访悼念活动⑪",
-      "summary": "",
-      "source": "weixin",
-      "platform_region": "cn",
-      "lang": "zh",
-      "time": "2026-03-16T03:52:25+00:00",
-      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS5mzpYPP6Wb5G3XRhVUkJQtf7gSTqvdqXFqXa8Fplpd9xUwRLC-wafVNIB0sYPG0uH2EJK3EOoE-1WHjmteOIJJtpv0QBb-XZ-sYuJ9WIXSuElsySwtEcPMDZNbgUd_0RqYbKZMxYitVsrLNqb3yYrA-_AVdv2wDKLqcxBp3JXSU-C17EIu6F5xoyvKHJPK8TCBVVuBqRp6k2NMJu9dKAvS54z_tGSZTqA..&amp;type=2&amp;query=%E5%BF%98%E5%8D%B4%E5%89%8D%E5%A4%9C&amp;token=0E2D73A010E5CC37141243408CC5C7EB14E0DDFC69ED8673",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "",
-      "tags": [],
-      "content_type": "text",
-      "media_url": ""
-    },
-    {
       "title": "[微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜2033》公布",
       "summary": "",
       "source": "weixin",
@@ -42,21 +27,6 @@
       "lang": "zh",
       "time": "2026-03-16T15:14:33+00:00",
       "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS5mzpYPP6Wb5tGvgyba8vFhf7gSTqvdqXFqXa8Fplpd974o5ErietLZLScaOi_T54nWAmCL97ghTChnreea9hSW8XmzSFCDhYpefJWldumUCm5CjrCgNyb_eDkETbEKF1WqvKbTydIbCsbBEM-h9GNNJh6DEjxkcTCu4uADEqPu9xLIe_d2enqX9bQFrhYcY4MG82hyHfQv0gLZsIdNTPYuTJmCU1UgHwQ..&amp;type=2&amp;query=%E5%BF%98%E5%8D%BB%E5%89%8D%E5%A4%9C&amp;token=0E2D8314A7324DAD8D8BDED91674CB2E8EB112D469ED8676",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "",
-      "tags": [],
-      "content_type": "text",
-      "media_url": ""
-    },
-    {
-      "title": "[微信] 【砺行 &bull; 少先队】不能忘却的记忆&mdash;&mdash;理工实小开展国家公祭日主题寻访悼念活动⑪",
-      "summary": "",
-      "source": "weixin",
-      "platform_region": "cn",
-      "lang": "zh",
-      "time": "2026-03-16T03:52:25+00:00",
-      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS5mzpYPP6Wb5RI7eEw_ubr1f7gSTqvdqXFqXa8Fplpd9xUwRLC-wafVNIB0sYPG0uH2EJK3EOoE-1WHjmteOIJJtpv0QBb-XZ-sYuJ9WIXSuElsySwtEcPMDZNbgUd_0RiX875q4ma6QhQb7n7yTjtOewDvJgMAtbBqHhVEA2E-avrHJQT-kHcBxP_gsi39pSVQPlHB0ao8zq4JVfTz8qQDdrgozfSg6bw..&amp;type=2&amp;query=%E5%BF%98%E5%8D%BB%E5%89%8D%E5%A4%9C&amp;token=0E2DDF9B0693EC0F2C2A7D78B7240F642DCB025469ED8688",
       "engagement": 0,
       "is_hot": false,
       "author": "",
@@ -7370,5 +7340,10 @@
       "lang": "zh",
       "platform_region": "cn"
     }
-  ]
+  ],
+  "noise_purged": {
+    "count": 2,
+    "date": "2026-07-12",
+    "reason": "sogou split-keyword noise, keeper ruling T30-12"
+  }
 }
