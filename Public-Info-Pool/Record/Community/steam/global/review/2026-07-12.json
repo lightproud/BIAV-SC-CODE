@@ -1,8 +1,8 @@
 {
   "date": "2026-07-12",
-  "archived_at": "2026-07-12T10:28:44.676410+00:00",
+  "archived_at": "2026-07-12T13:17:14.176502+00:00",
   "source": "steam",
-  "item_count": 8,
+  "item_count": 9,
   "items": [
     {
       "title": "[负面] This thing is pure FOMO\n\nYou can get Saya, but now...",
@@ -190,6 +190,30 @@
         "playtime_forever": 42309,
         "votes_up": 0,
         "timestamp_created": 1783834934
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[负面] game wont launch",
+      "summary": "game wont launch",
+      "source": "steam_review",
+      "time": "2026-07-12T11:35:19+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198089992125/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198089992125",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": false,
+        "playtime_forever": 539,
+        "votes_up": 0,
+        "timestamp_created": 1783856119
       },
       "region": "global",
       "archive_subtype": "review",

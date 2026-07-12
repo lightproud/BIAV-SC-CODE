@@ -1,10 +1,25 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-12T10:28:00.394067+00:00",
+  "collected_at": "2026-07-12T13:16:24.736709+00:00",
   "source": "steam",
   "data_layer": "output",
   "item_count": 9,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-07-12T11:35:19+00:00",
+      "lang": "english",
+      "title": "[负面] game wont launch",
+      "summary": "game wont launch",
+      "url": "https://steamcommunity.com/profiles/76561198089992125/recommended/3052450",
+      "author": "76561198089992125",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": false,
+      "review": "game wont launch",
+      "timestamp_created": 1783856119,
+      "playtime_forever": 539
+    },
     {
       "source": "steam",
       "time": "2026-07-12T06:17:47+00:00",
@@ -124,21 +139,6 @@
       "review": "This thing is pure FOMO\n\nYou can get Saya, but now you have to pull for her (she used to be free) and they dont even give out the 250 free pulls anymore\n\nYou are better off playing something else instead of this FOMO festival",
       "timestamp_created": 1783797126,
       "playtime_forever": 40
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-11T13:02:35+00:00",
-      "lang": "english",
-      "title": "[正面] Kind of a run of the mill deck fighting game with...",
-      "summary": "Kind of a run of the mill deck fighting game with gacha. Beautiful characters and design, but nothing really pushes it beyond its more notable contemporaries. Still okay tho if this is your thing.",
-      "url": "https://steamcommunity.com/profiles/76561198905637631/recommended/3052450",
-      "author": "76561198905637631",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "Kind of a run of the mill deck fighting game with gacha. Beautiful characters and design, but nothing really pushes it beyond its more notable contemporaries. Still okay tho if this is your thing.",
-      "timestamp_created": 1783774955,
-      "playtime_forever": 10
     }
   ]
 }
