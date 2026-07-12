@@ -60,7 +60,29 @@ section); lists are capped with the cap stated inline (~8K-token target);
 a missing log directory degrades to an all-无数据 report, not a throw; zero
 new runtime dependencies.
 
-## Pending (P1)
+## Trend comparison (`compareReports`, REQ-1.2)
 
-`compareReports(dateA, dateB)` — key-metric deltas for loop 3's
-direction-finding (REQ-1.2). Not yet implemented.
+```ts
+import { compareReports } from 'silver-core-sdk';
+
+const { a, b, deltas, markdown } = await compareReports(
+  '2026-07-10', '2026-07-11',            // UTC days; B is the "after" side
+  { logDir: '/var/bpt/runlog' },
+);
+```
+
+Re-aggregates the ledger per UTC day (same day files, no second storage
+format) and returns `b - a` deltas for the key metrics: records/sessions,
+transport fault total + per-cause table, unrecovered sessions, failures,
+input/output tokens, cache hit rate (percentage points), cost, tool calls
+and tool failure rate. A day without data reads as explicit `null` /
+无数据 — never zeros in disguise — and its deltas are `null`.
+`aggregateDay(logDir, date)` is exported for single-day consumption.
+
+## Rolling retention (REQ-1.2)
+
+`generateRuntimeReport` prunes `runtime-report-*.md` files older than
+`retentionDays` (default **30**; `0` disables) after each write. The raw
+`runlog-*.jsonl` ledger is **never pruned by default** — it is the signal
+source of record; opt in with `ledgerRetentionDays` when the consumer wants
+the ledger bounded too. Pruning is best-effort and can never throw.

@@ -43,5 +43,10 @@
 ```
 
 `driver: "prompt-session"` 的题可由 `run-evals.mjs` 在 live 模式(有
-`ANTHROPIC_API_KEY`)自动执行并判卷;`driver: "manual"` 的题需故障注入 harness
-(Phase 2/3 建),运行器将其显式记为 `PENDING_HARNESS` 并排除出分母——绝不静默略过。
+`ANTHROPIC_API_KEY`)自动执行并判卷;`driver: "manual"` 的题由 Phase 2 harness
+注册表(`scripts/eval-harnesses.mjs`,按题 id 键控:provider.fetch 缝故障注入 /
+中断+resume / 压缩压力,注册表在本目录之外、题面零字节不动)在 live 模式执行——
+注册表缺 runner 的 manual 题仍显式记为 `PENDING_HARNESS` 并排除出分母,绝不静默略过。
+回归门禁(REQ-2.2):`scripts/check-eval-regression.mjs` 将 LIVE 轮维度均分与
+基线(`evals-baseline.json`,SDK 根,首个 LIVE 轮 `--write-baseline` 播种)比对,
+任一维度降幅 > 0.5 出 `::warning::` 警示(不硬阻断,维护者裁量)。

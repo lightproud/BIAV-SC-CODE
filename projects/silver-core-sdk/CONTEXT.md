@@ -57,15 +57,35 @@ src/
 | 构建 | `npm run build`（ESM + d.ts → dist/） |
 | 单测 | `npm test`（vitest，mock 传输层，零网络；含仿真器端到端集成测试） |
 | 真机 smoke | `ANTHROPIC_API_KEY=... node tests/integration/live-real-api.mjs`（需先 `npm run build`；打真 api.anthropic.com） |
-| 双层评估 runEvals（SCS-REQ-002 环二） | `node scripts/run-evals.mjs`（底线层 = 全量 vitest pass/fail；行为层 = `evals/` 20 题 + `claude-sonnet-5` 判卷，无 key 走 STUB 验管线。评估集为守密人定稿权保护路径，任何改动须 `node scripts/update-evals-manifest.mjs` 重签清单，否则治理测试红） |
+| 双层评估 runEvals（SCS-REQ-002 环二） | `node scripts/run-evals.mjs`（底线层 = 全量 vitest pass/fail；行为层 = `evals/` 20 题 + `claude-sonnet-5` 判卷——12 题 prompt-session + 8 题 Phase 2 harness（`scripts/eval-harnesses.mjs` 故障注入/resume/压缩压力），无 key 走 STUB 验管线；`--judge-batches` 走 Batches API 五折判卷。评估集为守密人定稿权保护路径，任何改动须 `node scripts/update-evals-manifest.mjs` 重签清单，否则治理测试红。回归门禁 `node scripts/check-eval-regression.mjs`（REQ-2.2，报警不阻断）） |
 
 ## 测试三层
 
-1. **单测**（`tests/*.test.ts`）：mock 传输层，纯逻辑，零网络（348 通过）。
+1. **单测**（`tests/*.test.ts`）：mock 传输层，纯逻辑，零网络（计数随版本滚动，以 `npx vitest run` 实测为准，当前见「当前状态」节）。
 2. **仿真器端到端**（`tests/integration/emulator-e2e.test.ts`）：真 fetch/HTTP/SSE/agent 环/工具落盘/MCP/会话，只把模型换成本地 Messages-API 仿真器；**零密钥、进常规 `npm test`**。
 3. **真机 smoke**（`tests/integration/live-real-api.mjs`）：真 Claude 模型自己决定调工具；从 `ANTHROPIC_API_KEY` env 读密钥（**脚本不含密钥**），不进 `npm test`。CI 侧由 `.github/workflows/silver-core-sdk.yml` 的 `live-smoke` job 手动触发（`workflow_dispatch`），用 `secrets.ANTHROPIC_API_KEY` 注入——密钥值全程不入仓库。
 
 ## 当前状态
+
+**v0.51.0(2026-07-12):自我改进闭环推进批**——① REQ-1.2 `compareReports(dateA,dateB,{logDir})`
+按 UTC 日重聚合台账出关键指标差值 + Markdown 表(无数据日显式 null,绝不伪装零),
+`generateRuntimeReport` 报告 30 天滚动剪除(原始台账默认永不剪、`ledgerRetentionDays`
+显式选入);② Phase 2 故障注入 harness(`scripts/eval-harnesses.mjs`,按题 id 键控、
+在受保护 evals/ 之外):8 题 `driver:"manual"` 全解锁——传输故障注入(provider.fetch 缝,
+SSE 字节级切流)/ 硬杀+resume / 压缩压力+R7 证据,STUB 轮 pending-harness 8→0;
+③ REQ-2.2 回归门禁 `scripts/check-eval-regression.mjs`(维度均分降 >0.5 出 ::warning::,
+不阻断;无基线 SKIP,`--write-baseline` 播种),挂 run-evals-live;④ `--judge-batches`
+五折判卷通道(Message Batches API),dispatch `run_evals` 升三态 false/inline/batches。
++17 测试,全量 1885 绿 + 2 skipped。
+
+**v0.50.0(2026-07-12):loop-1 信号侧(REQ-1.1)**——`options.runLog` facts-only JSONL
+运行台账(零对话内容,无痕降身份)+ `generateRuntimeReport()` 24h 日报四节
+(传输健康/token/工具/失败会话),缺信号显式「无数据」。`docs/REPORTING.md`;+8 测试。
+
+**v0.49.0(2026-07-11):自我改进闭环 Phase 0+1(SCS-REQ-002)**——Phase 0 踩坑记录
+`options.memory.pitfalls`(选入式,两周 ≥10 条有效为环三先导);Phase 1 评估基准
+`evals/` 20 题(r1 已定稿)+ 固定判卷(claude-sonnet-5)+ 防篡改清单 + 双层运行器
+`scripts/run-evals.mjs`。+11 测试。
 
 **v0.48.0(2026-07-11):记忆治理 P0 组(spec S1–S4)落地**——守密人 0711 派发《记忆系统、
 隐私治理与会议记录支持》需求书(归档 `docs/MEMORY-GOVERNANCE.md`)的 SDK 侧收口。
@@ -159,7 +179,7 @@ shell（BashOutput 增量读 + 按行 filter / KillShell 击杀，进程组 SIGT
 =引擎机制 / 公开文档 + 自研引擎=兜底主权。**硬边界不变**：§1.1-HC 黑池防火墙、拒绝真正的内部未授权泄漏
 （「公开分发可逆向」≠「内部偷流出」）、不逐字大段克隆到会引用空气处、署名。
 
-- **提示词装配层 Track B（守密人 2026-07-05 裁定「先设计落档、再实现 Track B」，进行中）**：设计档 `Public-Info-Pool/Resource/proposal/bpt-prompt-assembly-layer-design-20260705.md`（五层模型 + build-from-archive + 剔除清单）。
+- **提示词装配层 Track B（守密人 2026-07-05 裁定「先设计落档、再实现 Track B」；SDK 实用 4 surface 已全覆盖收口，见下方「各面 provenance」条——本块保留为落地记录）**：设计档 `Public-Info-Pool/Resource/proposal/bpt-prompt-assembly-layer-design-20260705.md`（五层模型 + build-from-archive + 剔除清单）。
   **Phase 0.5 已落**：修 R1——v5/v3 无条件引用 Agent 工具，但 Agent 仅在配置 subagents 时注册（`query.ts:498`）；现每条工具子句 gate 在该工具在场，红线测试锁定。
   **Phase 1a 已落**：main-loop 从硬编码 `defaultHarnessStableV5` 迁入**片段库**（`src/engine/prompt-fragments.ts`，每片带 id+archive slug provenance+faithful 标+tool gate）+ **装配器**（`src/engine/prompt-assembler.ts` `assembleMainLoop`）；v5 变薄封装；**字节金标锁定**（`tests/fixtures/v5-mainloop-golden.json` 四工具集，装配器逐字节复现）。
   **corpus-sync 校验器已落**：每 faithful 片段对上游归档逐锚点对账、漂移即 CI 报红（21 faithful 全过；provenance 曾乐观标注、已按内容匹配诚实校正为 21 faithful / 11 adapted）。

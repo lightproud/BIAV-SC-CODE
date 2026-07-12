@@ -20,7 +20,7 @@
  * lists are capped (top N), and the caps are stated inline when they bite.
  */
 
-import { readdir, readFile, mkdir, writeFile } from 'node:fs/promises';
+import { readdir, readFile, mkdir, rm, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import type { RunLogRecord } from './run-log.js';
 
@@ -35,6 +35,13 @@ export type RuntimeReportOptions = {
   windowHours?: number;
   /** Cap for every list section; default 5. */
   topN?: number;
+  /** Rolling window for written report files (REQ-1.2): reports older than
+   *  this many days are pruned after each write. Default 30; 0 disables. */
+  retentionDays?: number;
+  /** Optional rolling window for the raw runlog-*.jsonl day files. Default
+   *  undefined = never prune the ledger (it is the signal source of record;
+   *  deleting it is the consumer's explicit call, not ours). */
+  ledgerRetentionDays?: number;
 };
 
 export type RuntimeReportResult = {
@@ -66,8 +73,10 @@ function fmtPct(x: number): string {
   return `${(x * 100).toFixed(1)}%`;
 }
 
-/** Parse every ledger line in the window (bad lines are counted, not fatal). */
-async function readWindow(
+/** Parse every ledger line in the window (bad lines are counted, not fatal).
+ *  Internal contract shared with compare-reports.ts — not part of the
+ *  public package surface. */
+export async function readWindow(
   logDir: string,
   from: Date,
   to: Date,
@@ -99,6 +108,31 @@ async function readWindow(
     }
   }
   return { records, badLines };
+}
+
+/** Delete day-stamped files older than the retention window (best-effort). */
+async function pruneDayFiles(
+  dir: string,
+  pattern: RegExp,
+  now: Date,
+  retentionDays: number,
+): Promise<void> {
+  const cutoff = new Date(now.getTime() - retentionDays * 86_400_000).toISOString().slice(0, 10);
+  let names: string[] = [];
+  try {
+    names = await readdir(dir);
+  } catch {
+    return;
+  }
+  for (const name of names) {
+    const m = pattern.exec(name);
+    if (m === null || m[1]! >= cutoff) continue;
+    try {
+      await rm(join(dir, name), { force: true });
+    } catch {
+      /* best-effort: a locked file must not break report generation */
+    }
+  }
 }
 
 export async function generateRuntimeReport(
@@ -271,6 +305,21 @@ export async function generateRuntimeReport(
     await mkdir(outDir, { recursive: true });
     path = join(outDir, `runtime-report-${date}.md`);
     await writeFile(path, markdown, 'utf8');
+    // REQ-1.2 rolling window: prune old reports (default 30 days), and the
+    // raw ledger only when the consumer explicitly opted in. Pruning is
+    // best-effort — observability must never throw.
+    const retentionDays = options.retentionDays ?? 30;
+    if (retentionDays > 0) {
+      await pruneDayFiles(outDir, /^runtime-report-(\d{4}-\d{2}-\d{2})\.md$/, now, retentionDays);
+    }
+    if (options.ledgerRetentionDays !== undefined && options.ledgerRetentionDays > 0) {
+      await pruneDayFiles(
+        options.logDir,
+        /^runlog-(\d{4}-\d{2}-\d{2})\.jsonl$/,
+        now,
+        options.ledgerRetentionDays,
+      );
+    }
   }
 
   return {
