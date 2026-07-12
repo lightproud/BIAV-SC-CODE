@@ -1,8 +1,8 @@
 {
   "date": "2026-05-29",
-  "archived_at": "2026-05-29T12:43:33.200289+00:00",
+  "archived_at": "2026-07-12T03:52:24.758322+00:00",
   "source": "steam",
-  "item_count": 22,
+  "item_count": 24,
   "items": [
     {
       "source": "steam",
@@ -333,6 +333,36 @@
       "review": "i love the artwork but i hope there moves more like the characters always don't move",
       "timestamp_created": 1780043720,
       "playtime_forever": 705
+    },
+    {
+      "title": "[正面] 那还说啥了，打牌就完事了",
+      "summary": "那还说啥了，打牌就完事了",
+      "source": "steam",
+      "platform_region": "global",
+      "lang": "schinese",
+      "time": "2026-05-29T13:37:04+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199024604034/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199024604034",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[正面] 服务器好像不太行，网不好",
+      "summary": "服务器好像不太行，网不好",
+      "source": "steam",
+      "platform_region": "global",
+      "lang": "schinese",
+      "time": "2026-05-29T13:33:47+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199548225751/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199548225751",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
     }
   ]
 }

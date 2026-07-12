@@ -1,8 +1,8 @@
 {
   "date": "2026-07-05",
-  "archived_at": "2026-07-06T05:08:18.191301+00:00",
+  "archived_at": "2026-07-12T03:52:12.058645+00:00",
   "source": "bilibili",
-  "item_count": 23,
+  "item_count": 27,
   "items": [
     {
       "title": "今天我要变成一个香喷喷的肉丸子",
@@ -532,6 +532,66 @@
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
+    },
+    {
+      "title": "[忘却前夜]资源不够，但凑个塔微纯混队伍",
+      "summary": "这个我不清楚，我搜到的攻略都说纯混队伍比较好，我的塔薇才0命，可能效果上不是很好，所以各位观众有什么建议欢迎提出",
+      "source": "bilibili",
+      "platform_region": "cn",
+      "lang": "zh",
+      "time": "2026-07-05T14:11:41+00:00",
+      "url": "http://www.bilibili.com/video/av116867771407882",
+      "engagement": 432,
+      "is_hot": false,
+      "author": "TAZex影",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "忘卻前夜 Morimens 水船队觉得自己操作老好了",
+      "summary": "其实红触都忘了切（悲），菜，但是你别管，反正打死了",
+      "source": "bilibili",
+      "platform_region": "cn",
+      "lang": "zh",
+      "time": "2026-07-05T11:30:59+00:00",
+      "url": "http://www.bilibili.com/video/av116867133937760",
+      "engagement": 309,
+      "is_hot": false,
+      "author": "幻觉の概念",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[忘却前夜]资源不够，但凑个塔微纯混队伍",
+      "summary": "这个我不清楚，我搜到的攻略都说纯混队伍比较好，我的塔薇才0命，可能效果上不是很好，所以各位观众有什么建议欢迎提出",
+      "source": "bilibili",
+      "platform_region": "cn",
+      "lang": "zh",
+      "time": "2026-07-05T14:11:41+00:00",
+      "url": "http://www.bilibili.com/video/av116867771407882",
+      "engagement": 432,
+      "is_hot": false,
+      "author": "TAZex影",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "忘卻前夜 Morimens 水船队觉得自己操作老好了",
+      "summary": "其实红触都忘了切（悲），菜，但是你别管，反正打死了",
+      "source": "bilibili",
+      "platform_region": "cn",
+      "lang": "zh",
+      "time": "2026-07-05T11:30:59+00:00",
+      "url": "http://www.bilibili.com/video/av116867133937760",
+      "engagement": 309,
+      "is_hot": false,
+      "author": "幻觉の概念",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
     }
   ]
 }

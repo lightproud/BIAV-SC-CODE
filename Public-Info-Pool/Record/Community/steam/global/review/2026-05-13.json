@@ -1,8 +1,8 @@
 {
   "date": "2026-05-13",
-  "archived_at": "2026-05-13T14:07:53.889176+00:00",
+  "archived_at": "2026-07-12T03:52:24.771640+00:00",
   "source": "steam",
-  "item_count": 18,
+  "item_count": 20,
   "items": [
     {
       "source": "steam",
@@ -273,6 +273,36 @@
       "review": "Woow, les dessins, le gameplay, l'ambiance, tout y est. c'est vraiment dommage que la traduction française soit horrible, on a vraiment envie de suivre l'histoire mais c'est presque impossible avec cette traduction, j'espère que la future mise à jour sera faite à ce niveau car c'est vraiment un banger niveau deckbulding, l'histoire a l'air super glauque et prenante",
       "timestamp_created": 1778673575,
       "playtime_forever": 752
+    },
+    {
+      "title": "[负面] Gachapon de mierda",
+      "summary": "Gachapon de mierda",
+      "source": "steam",
+      "platform_region": "global",
+      "lang": "spanish",
+      "time": "2026-05-13T15:42:44+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199745623754/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199745623754",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[正面] great saya collap",
+      "summary": "great saya collap",
+      "source": "steam",
+      "platform_region": "global",
+      "lang": "vietnamese",
+      "time": "2026-05-13T12:34:36+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198720716198/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198720716198",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
     }
   ]
 }

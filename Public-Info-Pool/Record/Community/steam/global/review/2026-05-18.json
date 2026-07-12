@@ -1,8 +1,8 @@
 {
   "date": "2026-05-18",
-  "archived_at": "2026-05-18T14:29:36.654750+00:00",
+  "archived_at": "2026-07-12T03:52:24.767993+00:00",
   "source": "steam",
-  "item_count": 22,
+  "item_count": 23,
   "items": [
     {
       "source": "steam",
@@ -333,6 +333,21 @@
       "review": "+1 Cool visual art",
       "timestamp_created": 1779100529,
       "playtime_forever": 350
+    },
+    {
+      "title": "[正面] Дорогие друзья, скоро начнётся цветение, спешите у...",
+      "summary": "Дорогие друзья, скоро начнётся цветение, спешите участвовать.",
+      "source": "steam",
+      "platform_region": "global",
+      "lang": "russian",
+      "time": "2026-05-18T13:48:43+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198045250681/recommended/3052450",
+      "engagement": 5,
+      "is_hot": false,
+      "author": "76561198045250681",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
     }
   ]
 }

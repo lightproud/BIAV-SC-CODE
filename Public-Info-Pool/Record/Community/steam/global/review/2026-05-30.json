@@ -1,8 +1,8 @@
 {
   "date": "2026-05-30",
-  "archived_at": "2026-05-30T14:26:38.221075+00:00",
+  "archived_at": "2026-07-12T03:52:24.756921+00:00",
   "source": "steam",
-  "item_count": 33,
+  "item_count": 39,
   "items": [
     {
       "source": "steam",
@@ -498,6 +498,96 @@
       "review": "多年以前就在等国服，直到知晓沙耶联动后，便明白国服无望了，趁着这次周年庆自建入坑玩一玩，过过剧情，目前为止体感还好。",
       "timestamp_created": 1780142501,
       "playtime_forever": 210
+    },
+    {
+      "title": "[正面] howly peak",
+      "summary": "howly peak",
+      "source": "steam",
+      "platform_region": "global",
+      "lang": "english",
+      "time": "2026-05-30T15:58:10+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199196392277/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199196392277",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[负面] Would love to give this a go after hearing wonderf...",
+      "summary": "Would love to give this a go after hearing wonderful things and glowing recommendations from friends. Unfortunately, Linux support is non-existent as launching into the game is impossible on Steam Deck. I'll try again in a year.",
+      "source": "steam",
+      "platform_region": "global",
+      "lang": "english",
+      "time": "2026-05-30T15:30:30+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198350141245/recommended/3052450",
+      "engagement": 2,
+      "is_hot": false,
+      "author": "76561198350141245",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[正面] ,ksugc;o yay",
+      "summary": ",ksugc;o yay",
+      "source": "steam",
+      "platform_region": "global",
+      "lang": "ukrainian",
+      "time": "2026-05-30T15:28:16+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199789274042/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199789274042",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[正面] peak",
+      "summary": "peak",
+      "source": "steam",
+      "platform_region": "global",
+      "lang": "english",
+      "time": "2026-05-30T14:41:45+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199526938934/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199526938934",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[正面] 好玩，就是怕游戏凉了",
+      "summary": "好玩，就是怕游戏凉了",
+      "source": "steam",
+      "platform_region": "global",
+      "lang": "schinese",
+      "time": "2026-05-30T14:14:59+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199239208542/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199239208542",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[正面] 福利很好，美术风格是少见的克系厚涂画风",
+      "summary": "福利很好，美术风格是少见的克系厚涂画风",
+      "source": "steam",
+      "platform_region": "global",
+      "lang": "schinese",
+      "time": "2026-05-30T13:46:41+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198774159590/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198774159590",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
     }
   ]
 }

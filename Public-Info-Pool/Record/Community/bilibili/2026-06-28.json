@@ -1,8 +1,8 @@
 {
   "date": "2026-06-28",
-  "archived_at": "2026-06-29T07:29:33.115351+00:00",
+  "archived_at": "2026-07-12T03:52:12.069877+00:00",
   "source": "bilibili",
-  "item_count": 23,
+  "item_count": 24,
   "items": [
     {
       "title": "【君彼】15年过去，这部诡作仍然无法被超越。",
@@ -532,6 +532,21 @@
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
+    },
+    {
+      "title": "【忘却前夜】晦夜引灯抽卡视频",
+      "summary": "省流：125抽出了6金，菲茵特，奥尔拉，羊妈，血希，詹金，塔薇。",
+      "source": "bilibili",
+      "platform_region": "cn",
+      "lang": "zh",
+      "time": "2026-06-27T16:32:15+00:00",
+      "url": "http://www.bilibili.com/video/av116823009790212",
+      "engagement": 1300,
+      "is_hot": false,
+      "author": "SherbetWhite",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
     }
   ]
 }

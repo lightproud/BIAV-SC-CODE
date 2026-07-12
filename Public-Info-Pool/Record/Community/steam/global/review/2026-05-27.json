@@ -1,8 +1,8 @@
 {
   "date": "2026-05-27",
-  "archived_at": "2026-05-27T12:22:59.053653+00:00",
+  "archived_at": "2026-07-12T03:52:24.760803+00:00",
   "source": "steam",
-  "item_count": 29,
+  "item_count": 30,
   "items": [
     {
       "source": "steam",
@@ -438,6 +438,21 @@
       "review": "The difficulty is just right for everyone.",
       "timestamp_created": 1779869619,
       "playtime_forever": 13
+    },
+    {
+      "title": "[正面] 好游戏，简直要痛哭流滴！这家整的",
+      "summary": "好游戏，简直要痛哭流滴！这家整的",
+      "source": "steam",
+      "platform_region": "global",
+      "lang": "schinese",
+      "time": "2026-05-27T12:35:54+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199763098925/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199763098925",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
     }
   ]
 }

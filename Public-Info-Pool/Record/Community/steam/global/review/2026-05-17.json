@@ -1,8 +1,8 @@
 {
   "date": "2026-05-17",
-  "archived_at": "2026-05-17T15:53:29.930719+00:00",
+  "archived_at": "2026-07-12T03:52:24.769108+00:00",
   "source": "steam",
-  "item_count": 24,
+  "item_count": 25,
   "items": [
     {
       "source": "steam",
@@ -363,6 +363,21 @@
       "review": "边狱巴士真好玩",
       "timestamp_created": 1779029499,
       "playtime_forever": 4032
+    },
+    {
+      "title": "[正面] เกมดีมากครับ",
+      "summary": "เกมดีมากครับ",
+      "source": "steam",
+      "platform_region": "global",
+      "lang": "thai",
+      "time": "2026-05-17T15:30:01+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199322531873/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199322531873",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
     }
   ]
 }

@@ -1,8 +1,8 @@
 {
   "date": "2026-05-25",
-  "archived_at": "2026-05-25T14:35:09.367394+00:00",
+  "archived_at": "2026-07-12T03:52:24.762810+00:00",
   "source": "steam",
-  "item_count": 31,
+  "item_count": 33,
   "items": [
     {
       "source": "steam",
@@ -468,6 +468,36 @@
       "review": "一眼望到头，就纯是二游，美术却实很养眼，但玩这个还不如去再爬几把塔，真的浪费时间",
       "timestamp_created": 1779690299,
       "playtime_forever": 144
+    },
+    {
+      "title": "[负面] chiquita mierda la verdad, no se entiende nada, no...",
+      "summary": "chiquita mierda la verdad, no se entiende nada, no engancha y una batalla de tutorial no puede ser dificil, debe guiarte pero no lo hace, el gacha es una cosa aparte, no te dan tiradas (1 multi de 5 y da gracias)",
+      "source": "steam",
+      "platform_region": "global",
+      "lang": "spanish",
+      "time": "2026-05-25T14:42:10+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198201219257/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198201219257",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[正面] Плюсы игры: медленный но нормальный сюжет, похожий...",
+      "summary": "Плюсы игры: медленный но нормальный сюжет, похожий на кафку и классическую литературу, намного лучше финала пацанов. Нормальный стилист персонажей. Атмосфера печальная. Как рогалик дающий за щеку норм.\nМинусы: перевод на русский нейронный, ошибок больше чем у трампа уголовок. 100% Лудка после пару ч",
+      "source": "steam",
+      "platform_region": "global",
+      "lang": "russian",
+      "time": "2026-05-25T14:24:00+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199554566332/recommended/3052450",
+      "engagement": 8,
+      "is_hot": false,
+      "author": "76561199554566332",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
     }
   ]
 }

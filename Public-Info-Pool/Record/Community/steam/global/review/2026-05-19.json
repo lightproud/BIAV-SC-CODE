@@ -1,8 +1,8 @@
 {
   "date": "2026-05-19",
-  "archived_at": "2026-05-19T13:51:56.919476+00:00",
+  "archived_at": "2026-07-12T03:52:24.767268+00:00",
   "source": "steam",
-  "item_count": 7,
+  "item_count": 9,
   "items": [
     {
       "source": "steam",
@@ -108,6 +108,36 @@
       "review": "为什么卡池里一堆死人",
       "timestamp_created": 1779186497,
       "playtime_forever": 631
+    },
+    {
+      "title": "[正面] 할만함",
+      "summary": "할만함",
+      "source": "steam",
+      "platform_region": "global",
+      "lang": "koreana",
+      "time": "2026-05-19T15:40:10+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198837263838/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198837263838",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[正面] pure cinema",
+      "summary": "pure cinema",
+      "source": "steam",
+      "platform_region": "global",
+      "lang": "polish",
+      "time": "2026-05-19T13:42:28+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198979053455/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198979053455",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
     }
   ]
 }

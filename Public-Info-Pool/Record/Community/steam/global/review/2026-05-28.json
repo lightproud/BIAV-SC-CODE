@@ -1,8 +1,8 @@
 {
   "date": "2026-05-28",
-  "archived_at": "2026-05-28T14:30:49.169560+00:00",
+  "archived_at": "2026-07-12T03:52:24.759575+00:00",
   "source": "steam",
-  "item_count": 31,
+  "item_count": 32,
   "items": [
     {
       "source": "steam",
@@ -468,6 +468,21 @@
       "review": "美术和玩法都不错，二游里少数做人的了，多点人来支持吧",
       "timestamp_created": 1779965529,
       "playtime_forever": 7729
+    },
+    {
+      "title": "[正面] good vibes",
+      "summary": "good vibes",
+      "source": "steam",
+      "platform_region": "global",
+      "lang": "english",
+      "time": "2026-05-28T14:19:23+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199016771411/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199016771411",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
     }
   ]
 }

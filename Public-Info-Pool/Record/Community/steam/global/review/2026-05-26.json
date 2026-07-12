@@ -1,8 +1,8 @@
 {
   "date": "2026-05-26",
-  "archived_at": "2026-05-26T13:49:14.696942+00:00",
+  "archived_at": "2026-07-12T03:52:24.761792+00:00",
   "source": "steam",
-  "item_count": 18,
+  "item_count": 20,
   "items": [
     {
       "source": "steam",
@@ -273,6 +273,36 @@
       "review": "A very tactical gacha deck-building roguelike game with a diverse play style.",
       "timestamp_created": 1779787170,
       "playtime_forever": 394
+    },
+    {
+      "title": "[正面] 二游暗黑地牢，上手很快，美术很不错，看到沙耶之歌联动来的，结果新手也玩不上沙耶除非爆氪，没想到意外地...",
+      "summary": "二游暗黑地牢，上手很快，美术很不错，看到沙耶之歌联动来的，结果新手也玩不上沙耶除非爆氪，没想到意外地还算好玩，玩了两天感觉缺点就是服务器太烂，经常登录的时候要尝试两三次，游戏中的延迟几百到一千偶尔会卡一下，不会真给我干外服去了吧，我连CS新加坡服务器延迟四五百，连澳洲延迟才一千多。看评论好像后面卡数值卡的很厉害，到时候就直接删号跑路，希望跑路前给主线打完多玩上几个角色",
+      "source": "steam",
+      "platform_region": "global",
+      "lang": "schinese",
+      "time": "2026-05-26T15:55:50+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198352950567/recommended/3052450",
+      "engagement": 8,
+      "is_hot": false,
+      "author": "76561198352950567",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[正面] 1",
+      "summary": "1",
+      "source": "steam",
+      "platform_region": "global",
+      "lang": "schinese",
+      "time": "2026-05-26T13:25:00+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199888666114/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199888666114",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
     }
   ]
 }

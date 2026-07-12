@@ -1,8 +1,8 @@
 {
   "date": "2026-05-20",
-  "archived_at": "2026-05-20T13:33:23.875195+00:00",
+  "archived_at": "2026-07-12T03:52:24.766496+00:00",
   "source": "steam",
-  "item_count": 17,
+  "item_count": 18,
   "items": [
     {
       "source": "steam",
@@ -258,6 +258,21 @@
       "review": "美味",
       "timestamp_created": 1779279396,
       "playtime_forever": 286
+    },
+    {
+      "title": "[正面] Хороший симулятор поедания эмбрионов",
+      "summary": "Хороший симулятор поедания эмбрионов",
+      "source": "steam",
+      "platform_region": "global",
+      "lang": "russian",
+      "time": "2026-05-20T14:48:15+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198253944466/recommended/3052450",
+      "engagement": 1,
+      "is_hot": false,
+      "author": "76561198253944466",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
     }
   ]
 }

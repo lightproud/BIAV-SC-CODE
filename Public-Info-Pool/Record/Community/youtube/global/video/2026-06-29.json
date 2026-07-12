@@ -1,8 +1,8 @@
 {
   "date": "2026-06-29",
-  "archived_at": "2026-06-30T13:10:01.959650+00:00",
+  "archived_at": "2026-07-12T03:50:58.548224+00:00",
   "source": "youtube",
-  "item_count": 35,
+  "item_count": 36,
   "items": [
     {
       "title": "[Morimens] Flares Awakener Review : Pontos - A Tier Discard Carry (Almost S tier)",
@@ -598,8 +598,21 @@
       "content_type": "video",
       "region": "global",
       "archive_subtype": "video"
+    },
+    {
+      "title": "忘卻前夜 龐托斯試玩 融災5-5皮克曼",
+      "summary": "不知道手感有點怪這裡是完全當作侵蝕觸發器來用了背景音樂：K-NEXT - \"Resolution\" ...",
+      "source": "youtube",
+      "platform_region": "global",
+      "lang": "",
+      "time": "2026-06-29T06:36:21Z",
+      "url": "https://www.youtube.com/watch?v=yvkZJyg4hNA",
+      "engagement": 74,
+      "is_hot": false,
+      "author": "海之心",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
     }
-  ],
-  "region": "global",
-  "content_subtype": "video"
+  ]
 }
