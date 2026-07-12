@@ -16,6 +16,31 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.51.0 — 2026-07-12
+
+**Self-improvement loop: REQ-1.2 trend deltas + Phase 2 eval harness +
+REQ-2.2 regression gate.** `compareReports(dateA, dateB, {logDir})`
+re-aggregates the run-signal ledger per UTC day and returns key-metric
+`b - a` deltas (records/sessions, transport faults total + per cause,
+unrecovered, failures, tokens, cache-hit pp, cost, tool calls/failure-rate
+pp) with an agent-readable Markdown table; a data-less day reads as explicit
+nulls / 无数据, never zeros. `aggregateDay` exported alongside.
+`generateRuntimeReport` now prunes `runtime-report-*.md` older than
+`retentionDays` (default 30, `0` disables); the raw ledger is only pruned on
+explicit `ledgerRetentionDays` opt-in. Eval side (scripts, outside the
+shipped runtime): `scripts/eval-harnesses.mjs` registers Phase 2 runners for
+all 8 `driver:"manual"` questions — request-phase/mid-stream/permanent fault
+injection at the provider.fetch seam (byte-precise SSE cuts), hard-kill +
+session-resume (dc-04), compaction pressure with R7 flush evidence
+(mem-03/tok-04) — question files stay byte-identical (governance boundary);
+run-evals.mjs gains the registry dispatch plus a `--judge-batches` lane
+(Message Batches API, the 50% nightly judge rate; same pinned params as
+inline). `scripts/check-eval-regression.mjs` (REQ-2.2): dimension-mean drop
+> 0.5 vs the committed `evals-baseline.json` emits `::warning::` only —
+no baseline → explicit SKIP; `--write-baseline` seeds from a LIVE report;
+wired into the run-evals-live job (run_evals input is now a choice:
+false/inline/batches — GitHub's 10-input dispatch cap). +17 tests.
+
 ## 0.50.0 — 2026-07-12
 
 **Self-improvement loop 1 signal side (SCS-REQ-002 REQ-1.1).**

@@ -63,7 +63,7 @@
 | news（新闻聚合 + 报告系统） | 自动化持续运行（采集 / 回填 / 评论 / 同人图） | Code-news | M2 信息齐备期任务见 `projects/news/CONTEXT.md`；dependabot #136-140 实际状态待核 |
 | wiki（数据集 + Wiki 站点） | **W2 基线已重建 + 数据桥已接回（2026-07-02）**：可信基线 `data/processed/characters.json`（72 真实角色，一手解包）→ 58 真实唤醒体页 + 运行时数据桥 `characters.runtime.json`（生成器单点产出）→ `characters.ts` 消费，CharacterGrid（72 卡片、界域/类目/搜索筛选）挂载图鉴页，SSR 构建验证通过 | 艾瑞卡会话 | 真实字段缺口推进（skills/命轮/立绘/三语）见 `wiki-phase-2-gap-inventory.md`；贡献流程 2026-07-10 裁定取消（社区单向可读，见 decisions.md） |
 | game（衍生游戏） | 暂缓 | 待创建 | 不主线派发 |
-| **silver-core-sdk**（原名 bpt-agent-sdk，2026-07-10 更名 · Claude Agent SDK 公开信息再现 · 银芯→黑池单向输出物） | **v0.49.0（2026-07-11 自我改进闭环 Phase 0+1；0.43–0.48 历程见专节逐条）**：TypeScript 重实现（公开信息再现、自研引擎），直驱 Anthropic Messages API（fetch+SSE，无 CLI 子进程），**1848 单测全绿 + 2 skipped、tsc/build exit 0**（0711 实录；v0.42.0 时点为 1651+2）；对官方 SDK **0.3.205** 约 90%+ 表面等价（对标基线 2026-07-10 由 0.3.201 追齐至 0.3.205，见 `docs/COMPAT.md`「0.3.201 -> 0.3.205 chase」；v0.40.0 落 7 个新类型 + interrupt 收据 + parent_agent_id，全类型化、诚实源外 typed-not-emitted），一致性金字塔 L1–L5 全封顶、首轮真 API L5 两臂打平 88.9%。**评估 backlog P2/P3/P4 全落（2026-07-06）**：**P2**（PR #501）逐条过 COMPAT 39 项 PARTIAL 分诊——~14 行「文档滞后」收敛为 FULL + 8 个真缺口闭合各带测试（Edit 读前写门 / stream_event ttft_ms / PostToolBatch tool_calls[] / SubagentStop agent_transcript_path / thinking.display / debugFile / mcpServerStatus scope / maxThinkingTokens @deprecated；notebook·sse 显式暂缓）；**P3** 漂移哨兵升「报+自动开草稿 PR」（`conformance-drift.yml` + `drift-check.mjs --emit-*`，选择性追踪纪律不动、绝不自动改基线）；**P4** `docs/ONBOARDING.md` 新维护者 30 分钟上手（降总线因子）。中间里程碑（v0.4→v0.11）详见下方专节 | 艾瑞卡会话 | 无阻塞待办；评估全文 `Public-Info-Pool/Resource/repo-engineering/bpt-agent-sdk-evaluation-20260706.md`；**动手前必读** `projects/silver-core-sdk/CONTEXT.md` + `docs/ONBOARDING.md`，定位见 `docs/POSITIONING.md` |
+| **silver-core-sdk**（原名 bpt-agent-sdk，2026-07-10 更名 · Claude Agent SDK 公开信息再现 · 银芯→黑池单向输出物） | **v0.51.0（2026-07-12 自我改进闭环推进：REQ-1.2 趋势比对 + Phase 2 harness 全 8 题解锁 + REQ-2.2 回归门禁；0.43–0.50 历程见专节逐条）**：TypeScript 重实现（公开信息再现、自研引擎），直驱 Anthropic Messages API（fetch+SSE，无 CLI 子进程），**1885 单测全绿 + 2 skipped、tsc/build exit 0**（0712 实录；v0.49.0 时点为 1848+2）；对官方 SDK **0.3.205** 约 90%+ 表面等价（对标基线 2026-07-10 由 0.3.201 追齐至 0.3.205，见 `docs/COMPAT.md`「0.3.201 -> 0.3.205 chase」；v0.40.0 落 7 个新类型 + interrupt 收据 + parent_agent_id，全类型化、诚实源外 typed-not-emitted），一致性金字塔 L1–L5 全封顶、首轮真 API L5 两臂打平 88.9%。**评估 backlog P2/P3/P4 全落（2026-07-06）**：**P2**（PR #501）逐条过 COMPAT 39 项 PARTIAL 分诊——~14 行「文档滞后」收敛为 FULL + 8 个真缺口闭合各带测试（Edit 读前写门 / stream_event ttft_ms / PostToolBatch tool_calls[] / SubagentStop agent_transcript_path / thinking.display / debugFile / mcpServerStatus scope / maxThinkingTokens @deprecated；notebook·sse 显式暂缓）；**P3** 漂移哨兵升「报+自动开草稿 PR」（`conformance-drift.yml` + `drift-check.mjs --emit-*`，选择性追踪纪律不动、绝不自动改基线）；**P4** `docs/ONBOARDING.md` 新维护者 30 分钟上手（降总线因子）。中间里程碑（v0.4→v0.11）详见下方专节 | 艾瑞卡会话 | 无阻塞待办；评估全文 `Public-Info-Pool/Resource/repo-engineering/bpt-agent-sdk-evaluation-20260706.md`；**动手前必读** `projects/silver-core-sdk/CONTEXT.md` + `docs/ONBOARDING.md`，定位见 `docs/POSITIONING.md` |
 | **bpt-pm**（项目排期工作台 · 非使命线工程产物） | **v1 首版已建（2026-07-05）**：单网页 `index.html` 零依赖零后端，数据协议 `bpt-pm/v1`（`schema/task-schema.json`），CPM 前向/后向自动排期 + 临界路径 + 4 依赖类型（FS/SS/FF/SF）+ 工作日历 + SNET/MSO 约束 + 基线比对甘特图；File System Access 读写回写。CPM 离线复算 + 无头 Chromium 冒烟均通过。**Notion 数据源已端到端实测（2026-07-05）**：适配器 `docs/notion-adapter.md` + CLI `scripts/schedule.mjs`，对真实工作区跑通建库→拉取→CPM→写回→抽验闭环。**本地 Notion 代理已建**（`proxy/server.mjs` 持 token 跑 localhost，网页按钮直连 Notion，端到端 12 项契约通过）。**v2-A 资源冲突可视化已落（2026-07-05，面向 60 人内容团队痛点）**：协议加 `resources`（人/外包 + 并发产能），引擎算逐日负载 + 超载检测，网页资源×日热力图（超载红/满载绿），`tests/resource_load.mjs` 全过。**v2 B/C/D 三特性已实现（2026-07-05，全部 additive 向后兼容，CPM 主算法不改）**：B 版本周期守护（任务级 `deadline` 软截止 → `late`/`lateDays`/顶层 `lateCount`）/ C 流水线模板+返修回环（项目级 `templates` + 纯函数 `instantiateTemplate`，stage FS 链 + R 轮审核→返修）/ D 外包发单对象（项目级 `orders` + 纯函数 `analyzeOrders` → `atRisk`/顶层 `ordersAtRisk`）；三函数在 `scripts/schedule.mjs` 导出、`index.html` 内联同实现，回归 `tests/v2_bcd.mjs`（15 断言全过）。**v3 引擎四组已实现（2026-07-05，工作流编排，全 additive）**：① 完备性（自由浮动 `freeSlack` + 约束补齐 8 型 ALAP/SNLT/FNET/FNLT/MFO + 从完成日倒排 `scheduleFrom=finish`）/ ② 资源错峰建议（纯函数 `suggestLeveling` 贪心串行，残余超载消解）/ ③ WBS 层级摘要（`parent` + 卷积 `isSummary`/`depth`/`childIds`，摘要排除出 CPM/资源/错峰）/ ④ 冲突显式告警（`warnings`/`warningCount`：constraint-conflict/negative-slack/infeasible-window）；引擎两处同实现，回归 `tests/v3.mjs`（20 断言全过）。UI 全部收尾：自由浮动列/8约束/调度方向切换/告警面板/#btnSampleV3/错峰视图/**WBS 折叠三角+甘特摘要条**/**错峰应用建议按钮**（实测超载 3→0）。**表格格式协议 bpt-pm/table-v1 已加（2026-07-05）**：`docs/table-formats.md`（5 张数据源无关标准表：项目/任务/资源/外包单/模板，列名即协议、标输入vs写回）+ 生成器 `scripts/gen_tables.mjs`（空表模板/样例 CSV）+ `tests/tables.mjs`；服务阿里 AI 表格/Notion/飞书多维表等任意 base 建新格式 | 艾瑞卡会话 | 无阻塞待办；可选：消费上限恢复后重跑 v3 对抗验证工作流二次背书；**动手前必读** `projects/bpt-pm/CONTEXT.md` |
 
 > BPT 战线（bpt-web / bpt-desktop / bpt-next / graphify-ext / occ-local）已于 2026-04-19 战略转向中从银芯仓库删除，不再在银芯内部开发。银芯转为 BPT 指导者，协议见 `memory/bpt-guidance-protocol.md`。
@@ -191,6 +191,29 @@
 > 银芯→黑池单向输出物，与 §1.1-HC 防火墙同向，非 BPT 产品内部开发。
 
 - **动手前必读**：`projects/silver-core-sdk/CONTEXT.md`（会话上下文 + 当前 milestone）
+- **自我改进闭环推进批（v0.51.0，2026-07-12，守密人「全面推进剩余的工作」派发）**：四件一 PR 收口。
+  ① **REQ-1.2 报告归档与趋势**——`compareReports(dateA, dateB, {logDir})` 按 UTC 日重聚合台账、
+  出关键指标 b-a 差值（记录/会话/传输故障总量+按因/未恢复/失败/输入输出 token/缓存命中 pp/成本/
+  工具调用与失败率 pp）+ agent 可读 Markdown 表，无数据日显式 null / 无数据（绝不伪装零）；
+  `generateRuntimeReport` 报告文件 30 天滚动剪除（`retentionDays` 默认 30、0 关），原始台账**默认永不剪**
+  （`ledgerRetentionDays` 显式选入才剪）。② **Phase 2 故障注入 harness**——`scripts/eval-harnesses.mjs`
+  注册表按题 id 键控，8 题 `driver:"manual"` 全部解锁（dc-01/02/03/05/06 = provider.fetch 缝故障注入，
+  SSE 字节级精确切流；dc-04 = 硬杀+会话 resume；mem-03/tok-04 = 压缩压力 + R7 落盘证据），
+  **题库字节零改动**（治理边界：harness 在受保护 evals/ 目录之外）；run-evals.mjs 接注册表，
+  STUB 轮实测 pending-harness 8→0。③ **REQ-2.2 评估回归门禁**——`scripts/check-eval-regression.mjs`
+  维度均分对基线降幅 >0.5 出 `::warning::`（报警不阻断，无基线显式 SKIP、`--write-baseline` 从 LIVE
+  轮播种基线），挂 run-evals-live 作业。④ **Batches 五折判卷通道**——`--judge-batches` 走 Message
+  Batches API（判卷参数与行内逐字节同源），dispatch 输入 `run_evals` 升三态 choice
+  false/inline/batches（GitHub 10 输入上限，不加新 flag）。evals/README.md 陈旧 PENDING 段同步更新
+  + 清单重签（题面/判卷提示词零字节改动，非基线重置）。+17 测试（**1885 全绿 + 2 skipped**）、
+  tsc + build exit 0、仓库级 pytest 2792 绿。
+- **loop-1 信号侧 v0.50.0（2026-07-12，PR #612，REQ-1.1）**：`options.runLog` 把每条消费方可见
+  result 镜像为一行 facts-only JSONL（`runlog-{date}.jsonl`：subtype/计数器/usage/缓存比/成本/
+  transportHealth 台账/逐工具调用与错误/模型 id，零对话内容；无痕记录保传输/token 统计、
+  去身份/标签/错误文本，spec §6.4；fire-and-forget 追加绝不破坏运行）+
+  `generateRuntimeReport()` 将滚动窗口（默认 24h）折成 `runtime-report-{date}.md` 四节
+  （传输健康+未恢复清单 / token 按场景 / 工具×失败率 / 失败会话仅事实），缺信号显式「无数据」、
+  列表带帽、日志目录缺失优雅降级。新档 `docs/REPORTING.md`；+8 测试。
 - **自我改进闭环 Phase 0 + Phase 1 实装（v0.49.0，2026-07-11，承同日四裁定，守密人「推进剩余项目」派发）**：
   **Phase 0（REQ-3.2 踩坑记录）**——`options.memory.pitfalls` 选入式注入 sdk-original 踩坑记录协议
   （非显因失败落 `/memories/pitfalls/`，逐坑一文件：现象/根因/修法/规避；剥离规则「仅技术事实、

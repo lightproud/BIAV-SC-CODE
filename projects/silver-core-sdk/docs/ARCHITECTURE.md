@@ -440,6 +440,7 @@ build red.
 | `src/session-manager.ts` | `ConfigurationError` |
 | `src/tools/bash.ts` | `ConfigurationError` |
 | `src/tools/memory/` | `MemoryToolError`, `ConfigurationError` |
+| `src/reporting/` | `ConfigurationError` |
 
 (`src/tools/bash.ts` throws exactly once — spawn impossibility, the only
 legitimate throw documented in module D. Typed as `ConfigurationError` since
