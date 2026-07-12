@@ -16,6 +16,23 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.50.0 — 2026-07-12
+
+**Self-improvement loop 1 signal side (SCS-REQ-002 REQ-1.1).**
+`options.runLog` mirrors every consumer-facing result message as one
+facts-only JSONL line (`runlog-{date}.jsonl`: subtype, counters, usage,
+cache ratio, cost, transportHealth ledger, per-tool calls/errors, model
+ids — no conversation content; incognito records keep transport/token
+stats but no identity/tag/error per spec §6.4; fire-and-forget appends
+never break the run; observed at the Query-wrapper choke point so every
+result path is covered). `generateRuntimeReport()` folds a rolling
+window (default 24h) of ledger lines into `runtime-report-{date}.md`
+with the four spec sections (传输健康 + 未恢复清单 / token 消耗按场景 /
+工具调用×失败率 / 失败会话仅事实); absent signals render explicit 无数据
+markers, lists are capped with the cap stated, a missing log dir degrades
+instead of throwing. New `docs/REPORTING.md`; +8 tests. REQ-1.2
+compareReports stays pending (P1).
+
 ## 0.49.0 — 2026-07-11
 
 **Self-improvement loop Phase 0 + Phase 1 landing (SCS-REQ-002).** Phase 0

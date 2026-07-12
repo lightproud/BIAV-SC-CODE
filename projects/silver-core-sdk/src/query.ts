@@ -73,6 +73,7 @@ import {
 import { estimateTextTokens } from './engine/tokens.js';
 import { MEMORY_TOOL_NAME, resolveMemoryRuntime } from './tools/memory/index.js';
 import { createSessionPersistence } from './sessions/persistence.js';
+import { createRunLogSink } from './reporting/run-log.js';
 import { AsyncQueue, createDeferred, type Deferred } from './internal/async.js';
 import { ToolFilterMcpRegistry } from './mcp/tool-filter.js';
 import { SDK_VERSION } from './version.js';
@@ -1621,7 +1622,32 @@ export function query(args: {
   }
 
   // --- Query wrapper -------------------------------------------------------------
-  const inner = run();
+  const innerGen = run();
+
+  // Run-signal ledger (SCS-REQ-002 loop 1): observe every consumer-facing
+  // message at the single choke point all result paths share (engine results,
+  // query-layer synthetic terminals, interrupt results). A thin delegating
+  // proxy — not a generator wrapper — so next()-argument forwarding and
+  // return/throw semantics stay byte-identical.
+  const runLogSink =
+    options.runLog !== undefined
+      ? createRunLogSink({ runLog: options.runLog, incognito, debug })
+      : null;
+  const inner =
+    runLogSink === null
+      ? innerGen
+      : ({
+          next: (...a: [] | [unknown]) =>
+            innerGen.next(...a).then((r) => {
+              if (r.done !== true) runLogSink.observe(r.value);
+              return r;
+            }),
+          return: (v: void | PromiseLike<void>) => innerGen.return(v),
+          throw: (e?: unknown) => innerGen.throw(e),
+          [Symbol.asyncIterator]() {
+            return this;
+          },
+        } as AsyncGenerator<SDKMessage, void>);
 
   // Prime the generator eagerly so initialization (SessionStart hooks,
   // mcp.connectAll, the init system message and initDeferred.resolve) runs at

@@ -7,6 +7,12 @@
  */
 
 export { query } from './query.js';
+// BPT-EXTENSION (SCS-REQ-002 loop 1): run-signal ledger + daily runtime report.
+// RunLogOptions rides the types.js export.
+export { generateRuntimeReport } from './reporting/runtime-report.js';
+export type { RuntimeReportOptions, RuntimeReportResult } from './reporting/runtime-report.js';
+export { buildRunLogRecord, createRunLogSink, runLogFileName } from './reporting/run-log.js';
+export type { RunLogRecord, RunLogSink } from './reporting/run-log.js';
 // BPT-EXTENSION: in-process multi-conversation coordinator (SessionManager /
 // SessionManagerOptions / SessionManagerUsage types ride the types.js export).
 export { createBptSession, runConcurrent } from './session-manager.js';
