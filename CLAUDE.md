@@ -230,6 +230,11 @@ git commit = 数据归档提交 / git push = 同步至远端存储 /
 ### §5.2 社区情报（先读 §4 数据纪律）
 
 - 全量档案（2026-06-21 迁入 BPT 4R `Public-Info-Pool/`，text 全量永驻 git）：`Public-Info-Pool/Record/Community/discord/{区服}/channels/{id_suffix}/{date}.jsonl`（区服 ∈ global / jp / volunteer，2026-07-10 方案甲三服统一；guild↔区服映射唯一源 = `projects/news/scripts/archive_layout.py` `DISCORD_GUILD_REGIONS`，新 guild 未登记归档即响亮失败）+ `Public-Info-Pool/Record/Community/{platform}/`（16+ 平台与 discord 平级摊平，以 `ls` 为准）。**discord JSONL 为紧凑 schema（2026-06-22 精简，工作树 3.4G→2.0G 省 41%）：缺字段 = 默认值**（`type`→0 / `author_bot`→false / `pinned`→false / `flags`→0 / `has_thread`→false / `thread_id`·`edited_timestamp`·`reply_to`→null / `mentions`·`reactions`·`attachments`·`embeds`→[]）；恒留 `id`/`channel_id`/`author_id`/`author_name`/`content`/`timestamp`。读取**必用 `.get(默认)`**，需稳定全字段用 `projects/news/scripts/discord_compact.py` 的 `expand_record()`。
+  **冷热分层（守密人 2026-07-12 甲案裁定）**：discord dated JSONL 按月压冷——**当月 + 上月为裸文本热层，
+  上上个月及更早压成 `.jsonl.gz` 冷层**（实测压至 ~18%）；月度执行 = CI `discord-cold-compress.yml`（每月 2 日）
+  调 `projects/news/scripts/discord_cold_compress.py`（幂等，`--dry-run` 只报告；冷月被历史回填追加出裸旁车时
+  按消息 id 并轨去重）。**读方一律经 `archive_layout.open_archive_text()` 透明双开**（写方去重 gz 感知）；
+  跨档案检索冷层给 `rg` 加 **`-z`**（全量 2G 实测 ~12 秒，热层裸文件照常秒回）。
   **频道反查唯一入口 = `{区服}/channel_index.json`**（id→{name,type,dir,status}；status ∈ active / offline / orphan，缺省按 active——2026-07-12 T35 对账后每个归档目录均可反查，orphan 为下线早于索引入库的历史目录、名字不可考）；索引为**合并式更新**（下线条目保留标 offline，不再覆盖蒸发），对账工具 `projects/news/scripts/discord_reconcile.py`（扫孤儿目录、从 JSONL 恢复完整 channel_id 登记，`--dry-run` 只报告）
 - Discord 每日纯统计：`Public-Info-Pool/Record/Community/discord/{区服}/activity_daily/{date}.json`（主服在 global 区服目录）
 - 输出展示：`projects/news/output/*-latest.json`（仅快查 / 日报，不可当全量）

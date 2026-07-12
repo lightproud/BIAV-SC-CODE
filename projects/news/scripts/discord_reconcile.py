@@ -58,10 +58,11 @@ def merge_channel_index(existing: dict, current: dict) -> dict:
 
 
 def recover_channel_id(ch_dir: Path) -> str:
-    """从目录内任一 JSONL 首行恢复完整 channel_id（紧凑 schema 恒留该字段）。"""
-    for f in sorted(ch_dir.glob('*.jsonl'), reverse=True):
+    """从目录内任一 JSONL（裸或 .gz）首行恢复完整 channel_id（紧凑 schema 恒留该字段）。"""
+    files = sorted(list(ch_dir.glob('*.jsonl')) + list(ch_dir.glob('*.jsonl.gz')), reverse=True)
+    for f in files:
         try:
-            with open(f, encoding='utf-8') as fh:
+            with archive_layout.open_archive_text(f) as fh:
                 line = fh.readline()
             cid = str(json.loads(line).get('channel_id', ''))
             if cid:
