@@ -189,7 +189,7 @@ jobs:
         run: node tests/conformance/ratchet.mjs conformance-l1.json conformance-l2.json conformance-l3.json conformance-l4.json
       - name: L5 harness smoke (keyless — scripted emulator round proves the M4 harness end-to-end)
         run: node tests/conformance/run-l5.mjs --smoke
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: conformance-matrix
@@ -272,7 +272,7 @@ jobs:
       - name: Regression gate (REQ-2.2, advisory)
         if: always()
         run: node scripts/check-eval-regression.mjs
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: evals-report
@@ -304,7 +304,7 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: node tests/integration/ab-benchmark.mjs --engine=bpt "--model=${{ github.event.inputs.model }}" --out=ab-report-bpt.json
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: ab-report
@@ -364,7 +364,7 @@ jobs:
           else
             echo "No official report produced — the official engine did not run headless. BPT-only numbers are in ab-report-bpt.json."
           fi
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: vs-official-report
@@ -414,7 +414,7 @@ jobs:
         run: node tests/integration/ab-benchmark.mjs --engine=bpt "--variant=$CAND" $TASKS_ARG "--model=${{ github.event.inputs.model }}" "--repeat=${{ github.event.inputs.repeat }}" --out=ab-report-cand.json
       - name: Compare v1 vs candidate
         run: node tests/integration/ab-benchmark.mjs --compare ab-report-v1.json ab-report-cand.json
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: prompt-ab-report
@@ -470,7 +470,7 @@ jobs:
           ${{ github.event.inputs.l5_repeat != '' && github.event.inputs.l5_repeat != null && format('--repeat={0}', github.event.inputs.l5_repeat) || '' }}
           ${{ github.event.inputs.l5_budget != '' && github.event.inputs.l5_budget != null && format('--budget-usd={0}', github.event.inputs.l5_budget) || '' }}
           ${{ github.event.inputs.l5_thinking != '' && github.event.inputs.l5_thinking != null && format('--thinking={0}', github.event.inputs.l5_thinking) || '' }}
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: conformance-l5-report
