@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 347,
-    "edges": 395,
-    "terms": 6257,
+    "concepts": 348,
+    "edges": 392,
+    "terms": 6273,
     "by_type": {
       "character": 72,
       "dataset": 94,
-      "documentation": 114,
+      "documentation": 115,
       "knowledge-pointer": 47,
       "reference": 17,
       "research": 3
@@ -25,14 +25,14 @@
       "memory": 50,
       "news-output": 23,
       "projects": 27,
-      "resource": 86,
+      "resource": 87,
       "sources": 20,
       "story": 11,
       "wiki-data": 26
     },
     "by_tier": {
       "skeleton": 134,
-      "search": 213
+      "search": 214
     }
   },
   "sections": {
@@ -62,7 +62,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 86
+      "count": 87
     },
     "sources": {
       "index": "/sources/index.md",
@@ -295,7 +295,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 33
+      "degree": 34
     },
     "/characters/130375.md": {
       "type": "character",
@@ -380,7 +380,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 0
     },
     "/characters/15563.md": {
       "type": "character",
@@ -578,7 +578,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 12
+      "degree": 10
     },
     "/characters/15577.md": {
       "type": "character",
@@ -887,7 +887,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 3
+      "degree": 5
     },
     "/characters/15599.md": {
       "type": "character",
@@ -1239,7 +1239,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 5
+      "degree": 3
     },
     "/characters/94451.md": {
       "type": "character",
@@ -1324,7 +1324,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 11
+      "degree": 9
     },
     "/community/community-discord.md": {
       "type": "dataset",
@@ -4070,6 +4070,20 @@
       "tier": "search",
       "degree": 1
     },
+    "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md": {
+      "type": "documentation",
+      "title": "silver-core-sdk-overnight-quality-campaign-20260713",
+      "description": "日期：2026-07-13（北京时间凌晨批）· 派单：守密人「能干一整晚的活 = 自我补充的循环」三线令（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/repo-engineering/silver-core-sdk-overnight-quality-campaign-20260713.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 1
+    },
     "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md": {
       "type": "documentation",
       "title": "silver-core-sdk-rename-review-20260710",
@@ -4143,7 +4157,7 @@
     "/sources/appstore.md": {
       "type": "dataset",
       "title": "appstore 社区数据源",
-      "description": "appstore 平台采集档案，全量 1144 条，健康度 active。",
+      "description": "appstore 平台采集档案，全量 1145 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/appstore/global/",
       "tags": [
         "data_layer:full_archive",
@@ -4171,7 +4185,7 @@
     "/sources/bahamut.md": {
       "type": "dataset",
       "title": "bahamut 社区数据源",
-      "description": "bahamut 平台采集档案，全量 59 条，健康度 active。",
+      "description": "bahamut 平台采集档案，全量 81 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bahamut/",
       "tags": [
         "data_layer:full_archive",
@@ -4185,7 +4199,7 @@
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 2809 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 2810 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -4194,7 +4208,7 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 11
+      "degree": 9
     },
     "/sources/discord.md": {
       "type": "dataset",
@@ -4255,7 +4269,7 @@
     "/sources/pixiv.md": {
       "type": "dataset",
       "title": "pixiv 社区数据源",
-      "description": "pixiv 平台采集档案，全量 570 条，健康度 active。",
+      "description": "pixiv 平台采集档案，全量 571 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/pixiv/",
       "tags": [
         "data_layer:full_archive",
@@ -4297,7 +4311,7 @@
     "/sources/steam.md": {
       "type": "dataset",
       "title": "steam 社区数据源",
-      "description": "steam 平台采集档案，全量 5196 条，健康度 active。",
+      "description": "steam 平台采集档案，全量 5199 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4311,7 +4325,7 @@
     "/sources/steam_discussion.md": {
       "type": "dataset",
       "title": "steam_discussion 社区数据源",
-      "description": "steam_discussion 平台采集档案，全量 98 条，健康度 active。",
+      "description": "steam_discussion 平台采集档案，全量 99 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/discussion/",
       "tags": [
         "data_layer:full_archive",
@@ -4325,7 +4339,7 @@
     "/sources/stopgame.md": {
       "type": "dataset",
       "title": "stopgame 社区数据源",
-      "description": "stopgame 平台采集档案，全量 84 条，健康度 active。",
+      "description": "stopgame 平台采集档案，全量 85 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/stopgame/",
       "tags": [
         "data_layer:full_archive",
@@ -4353,7 +4367,7 @@
     "/sources/taptap_review.md": {
       "type": "dataset",
       "title": "taptap_review 社区数据源",
-      "description": "taptap_review 平台采集档案，全量 1257 条，健康度 active。",
+      "description": "taptap_review 平台采集档案，全量 1298 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/taptap/cn/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4367,7 +4381,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 9874 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 9890 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -4381,7 +4395,7 @@
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 9832 条，健康度 active。",
+      "description": "weixin 平台采集档案，全量 9852 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -4395,7 +4409,7 @@
     "/sources/youtube.md": {
       "type": "dataset",
       "title": "youtube 社区数据源",
-      "description": "youtube 平台采集档案，全量 2817 条，健康度 active。",
+      "description": "youtube 平台采集档案，全量 2819 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -5109,6 +5123,11 @@
         "mention"
       ],
       [
+        "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
+        "提及:沙耶",
+        "mention"
+      ],
+      [
         "/sources/bahamut.md",
         "提及:沙耶",
         "mention"
@@ -5266,18 +5285,6 @@
       [
         "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
         "提及:本源汀克特",
-        "mention"
-      ]
-    ],
-    "/characters/15562.md": [
-      [
-        "/community/community-bilibili.md",
-        "提及:莉兹",
-        "mention"
-      ],
-      [
-        "/sources/bilibili.md",
-        "提及:莉兹",
         "mention"
       ]
     ],
@@ -5599,11 +5606,6 @@
         "mention"
       ],
       [
-        "/community/community-bilibili.md",
-        "提及:墨菲",
-        "mention"
-      ],
-      [
         "/community/community-weibo.md",
         "提及:墨菲",
         "mention"
@@ -5625,11 +5627,6 @@
       ],
       [
         "/sources/bahamut.md",
-        "提及:墨菲",
-        "mention"
-      ],
-      [
-        "/sources/bilibili.md",
         "提及:墨菲",
         "mention"
       ],
@@ -6080,7 +6077,17 @@
     ],
     "/characters/15598.md": [
       [
+        "/community/community-bilibili.md",
+        "提及:尤乌哈希",
+        "mention"
+      ],
+      [
         "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
+        "提及:尤乌哈希",
+        "mention"
+      ],
+      [
+        "/sources/bilibili.md",
         "提及:尤乌哈希",
         "mention"
       ],
@@ -6159,7 +6166,7 @@
       ],
       [
         "/community/community-bilibili.md",
-        "提及:熔朵",
+        "提及:融朵",
         "mention"
       ],
       [
@@ -6179,7 +6186,7 @@
       ],
       [
         "/sources/bilibili.md",
-        "提及:熔朵",
+        "提及:融朵",
         "mention"
       ],
       [
@@ -6933,22 +6940,12 @@
     ],
     "/characters/94450.md": [
       [
-        "/community/community-bilibili.md",
-        "提及:茉夏",
-        "mention"
-      ],
-      [
         "/community/community-youtube-comments.md",
         "提及:茉夏",
         "mention"
       ],
       [
         "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
-        "提及:茉夏",
-        "mention"
-      ],
-      [
-        "/sources/bilibili.md",
         "提及:茉夏",
         "mention"
       ],
@@ -7043,6 +7040,11 @@
     ],
     "/community/community-bilibili.md": [
       [
+        "/characters/15598.md",
+        "提及:尤乌哈希",
+        "mention"
+      ],
+      [
         "/characters/15599.md",
         "提及:萨尔瓦多",
         "mention"
@@ -7053,28 +7055,13 @@
         "mention"
       ],
       [
-        "/characters/15562.md",
-        "提及:莉兹",
-        "mention"
-      ],
-      [
         "/characters/15570.md",
         "提及:朵尔",
         "mention"
       ],
       [
-        "/characters/15576.md",
-        "提及:墨菲",
-        "mention"
-      ],
-      [
         "/characters/15604.md",
         "提及:莱克",
-        "mention"
-      ],
-      [
-        "/characters/94450.md",
-        "提及:茉夏",
         "mention"
       ],
       [
@@ -7084,7 +7071,7 @@
       ],
       [
         "/characters/15602.md",
-        "提及:熔朵",
+        "提及:融朵",
         "mention"
       ],
       [
@@ -8722,6 +8709,13 @@
         "mention"
       ]
     ],
+    "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md": [
+      [
+        "/characters/130226.md",
+        "提及:沙耶",
+        "mention"
+      ]
+    ],
     "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md": [
       [
         "/characters/15603.md",
@@ -8804,6 +8798,11 @@
     ],
     "/sources/bilibili.md": [
       [
+        "/characters/15598.md",
+        "提及:尤乌哈希",
+        "mention"
+      ],
+      [
         "/characters/15599.md",
         "提及:萨尔瓦多",
         "mention"
@@ -8814,28 +8813,13 @@
         "mention"
       ],
       [
-        "/characters/15562.md",
-        "提及:莉兹",
-        "mention"
-      ],
-      [
         "/characters/15570.md",
         "提及:朵尔",
         "mention"
       ],
       [
-        "/characters/15576.md",
-        "提及:墨菲",
-        "mention"
-      ],
-      [
         "/characters/15604.md",
         "提及:莱克",
-        "mention"
-      ],
-      [
-        "/characters/94450.md",
-        "提及:茉夏",
         "mention"
       ],
       [
@@ -8845,7 +8829,7 @@
       ],
       [
         "/characters/15602.md",
-        "提及:熔朵",
+        "提及:融朵",
         "mention"
       ],
       [
@@ -9620,6 +9604,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
@@ -10332,7 +10317,8 @@
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md"
     ],
     "campaign": [
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md"
     ],
     "canon": [
       "/assets/persona-erica-speech-canon.md"
@@ -10836,6 +10822,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
@@ -10982,6 +10969,7 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md"
     ],
     "corporate": [
@@ -11178,6 +11166,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
@@ -11497,6 +11486,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
@@ -11671,6 +11661,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
@@ -11951,6 +11942,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
@@ -12685,6 +12677,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
@@ -13165,6 +13158,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
@@ -13667,6 +13661,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
@@ -14031,6 +14026,9 @@
       "/sources/youtube.md",
       "/sources/youtube_comments.md"
     ],
+    "overnight": [
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md"
+    ],
     "overview": [
       "/README.md"
     ],
@@ -14360,6 +14358,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
@@ -14757,6 +14756,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
@@ -14807,6 +14807,9 @@
     "qoder": [
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md"
+    ],
+    "quality": [
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md"
     ],
     "query": [
       "/README.md",
@@ -15038,6 +15041,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
@@ -15161,6 +15165,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
@@ -15403,6 +15408,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md"
     ],
     "sdk's": [
@@ -15481,6 +15487,7 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md"
     ],
     "single": [
@@ -16108,6 +16115,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
@@ -16604,7 +16612,8 @@
       "/projects/doc-testing-strategy.md"
     ],
     "一整": [
-      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md"
     ],
     "一文": [
       "/README.md"
@@ -16741,6 +16750,9 @@
     "三类": [
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
+    ],
+    "三线": [
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md"
     ],
     "三语": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md"
@@ -17165,6 +17177,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
@@ -17424,6 +17437,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
@@ -17740,6 +17754,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
@@ -18709,6 +18724,9 @@
     "享用": [
       "/characters/95786.md"
     ],
+    "京时": [
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md"
+    ],
     "人伤": [
       "/characters/15576.md",
       "/characters/15599.md"
@@ -19003,6 +19021,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
@@ -19947,6 +19966,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
@@ -20205,6 +20225,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
@@ -20792,6 +20813,9 @@
       "/characters/15575.md",
       "/characters/15604.md"
     ],
+    "充的": [
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md"
+    ],
     "充算": [
       "/characters/15571.md",
       "/characters/15576.md",
@@ -21375,6 +21399,9 @@
     ],
     "准来": [
       "/memory/memory-ext-active-self-improvement-requirements.md"
+    ],
+    "凌晨": [
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md"
     ],
     "凝结": [
       "/characters/15585.md",
@@ -22120,6 +22147,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
@@ -22507,7 +22535,8 @@
       "/characters/94450.md"
     ],
     "北京": [
-      "/resource/resource-proposal-news-push-format-20260712.md"
+      "/resource/resource-proposal-news-push-format-20260712.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md"
     ],
     "北崎": [
       "/characters/15582.md"
@@ -25391,6 +25420,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
@@ -26189,6 +26219,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
@@ -26488,6 +26519,7 @@
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/story/story_research_todo.md"
     ],
     "守恒": [
@@ -26797,6 +26829,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
@@ -28045,6 +28078,9 @@
       "/characters/15587.md",
       "/characters/77913.md"
     ],
+    "干一": [
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md"
+    ],
     "干净": [
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
@@ -28830,7 +28866,8 @@
     "循环": [
       "/characters/15562.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
-      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md"
     ],
     "心使": [
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
@@ -29848,6 +29885,9 @@
       "/characters/15596.md",
       "/characters/15604.md"
     ],
+    "我补": [
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md"
+    ],
     "戒备": [
       "/characters/15588.md",
       "/characters/15600.md",
@@ -30694,6 +30734,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
@@ -31259,6 +31300,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
@@ -31593,6 +31635,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
@@ -32005,6 +32048,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
@@ -32285,6 +32329,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
@@ -32630,6 +32675,9 @@
     ],
     "整探": [
       "/resource/resource-proposal-bpt-stack-ontology-design-notes-20260710.md"
+    ],
+    "整晚": [
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md"
     ],
     "整条": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md"
@@ -33037,7 +33085,8 @@
       "/sources/youtube_comments.md"
     ],
     "日期": [
-      "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md"
+      "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md"
     ],
     "日条": [
       "/resource/resource-repo-engineering-bpt-desktop-builtin-commands-batch1-20260711.md"
@@ -33152,7 +33201,8 @@
       "/characters/77922.md"
     ],
     "时间": [
-      "/memory/morimens-context.md"
+      "/memory/morimens-context.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md"
     ],
     "旺达": [
       "/characters/15586.md"
@@ -33360,6 +33410,12 @@
     ],
     "晓一": [
       "/characters/54116.md"
+    ],
+    "晚的": [
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md"
+    ],
+    "晨批": [
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md"
     ],
     "普遍": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md",
@@ -33976,6 +34032,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
@@ -34400,6 +34457,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
@@ -34993,6 +35051,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
@@ -35197,6 +35256,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
@@ -35707,6 +35767,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
@@ -36089,6 +36150,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
@@ -36585,6 +36647,9 @@
       "/characters/15571.md",
       "/characters/54117.md",
       "/characters/77926.md"
+    ],
+    "派单": [
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md"
     ],
     "派发": [
       "/resource/resource-repo-engineering-repo-audit-20260603.md"
@@ -38562,6 +38627,9 @@
     "的律": [
       "/characters/15586.md"
     ],
+    "的循": [
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md"
+    ],
     "的心": [
       "/characters/77925.md"
     ],
@@ -38701,7 +38769,8 @@
     ],
     "的活": [
       "/characters/94450.md",
-      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md"
     ],
     "的测": [
       "/memory/memory-ext-testing-strategy.md",
@@ -40397,6 +40466,9 @@
     "线与": [
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md"
     ],
+    "线令": [
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md"
+    ],
     "线回": [
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
     ],
@@ -41066,6 +41138,9 @@
     "能好": [
       "/characters/15576.md"
     ],
+    "能干": [
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md"
+    ],
     "能性": [
       "/characters/54116.md"
     ],
@@ -41248,7 +41323,8 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md"
     ],
     "自我": [
-      "/memory/memory-ext-active-self-improvement-requirements.md"
+      "/memory/memory-ext-active-self-improvement-requirements.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md"
     ],
     "自持": [
       "/memory/memory-ext-bpt-positioning.md"
@@ -41738,6 +41814,7 @@
       "/characters/15576.md",
       "/characters/15589.md",
       "/characters/15604.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/story/story_research_todo.md"
     ],
     "补完": [
@@ -43162,6 +43239,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
@@ -43852,6 +43930,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
@@ -44881,6 +44960,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
@@ -45130,6 +45210,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
@@ -45431,6 +45512,9 @@
     ],
     "间之": [
       "/characters/15570.md"
+    ],
+    "间凌": [
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md"
     ],
     "间或": [
       "/characters/15562.md"
@@ -46610,7 +46694,8 @@
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md"
     ],
     "campaign": [
-      "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md"
+      "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md"
     ],
     "canon": [
       "/assets/persona-erica-speech-canon.md"
@@ -46781,6 +46866,7 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md"
     ],
     "corpus": [
@@ -46968,6 +47054,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
@@ -47280,6 +47367,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
@@ -47441,6 +47529,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
@@ -47636,6 +47725,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
@@ -48165,6 +48255,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
@@ -48522,6 +48613,9 @@
       "/news-output/news-output-weixin.md",
       "/news-output/news-output-youtube.md"
     ],
+    "overnight": [
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md"
+    ],
     "panel": [
       "/wiki-data/wiki-data-panel-text.md"
     ],
@@ -48791,6 +48885,9 @@
     "push": [
       "/resource/resource-proposal-news-push-format-20260712.md"
     ],
+    "quality": [
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md"
+    ],
     "r2": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
@@ -48884,6 +48981,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
@@ -49060,6 +49158,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md"
     ],
     "search": [
@@ -49101,6 +49200,7 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md"
     ],
     "site": [
@@ -49363,6 +49463,7 @@
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
