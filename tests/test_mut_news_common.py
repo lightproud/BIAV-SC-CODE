@@ -221,9 +221,10 @@ class _Resp:
 
 
 class _FakeSession:
-    """回放队列式 Session 桩：记录 GET 序列，弹出预设响应。"""
+    """回放队列式 Session 桩：记录 GET 序列与全量 kwargs，弹出预设响应。"""
     queue = []
     calls = []
+    kwargs = []
 
     def __init__(self):
         pass
@@ -233,6 +234,7 @@ class _FakeSession:
 
     def get(self, url, **kw):
         _FakeSession.calls.append((url, kw.get('allow_redirects')))
+        _FakeSession.kwargs.append(dict(kw))
         return _FakeSession.queue.pop(0)
 
 
@@ -240,6 +242,7 @@ class _FakeSession:
 def fake_session(monkeypatch):
     _FakeSession.queue = []
     _FakeSession.calls = []
+    _FakeSession.kwargs = []
     monkeypatch.setattr(nc.requests, 'Session', _FakeSession)
     monkeypatch.setattr(nc, '_resolve_safe_ip',
                         lambda host: None if 'evil' in host else '93.184.216.34')
@@ -417,3 +420,159 @@ def test_dump_json_atomic_failure_preserves_original(tmp_path):
         nc.dump_json_atomic(target, {'bad': object()})
     assert json.loads(target.read_text(encoding='utf-8')) == {'ok': 1}  # 旧文件完好
     assert list(tmp_path.glob('.*.tmp')) == []                 # 半截临时文件已清
+
+
+# ══ 首跑存活体击杀区（守密人 2026-07-11 扩员裁定的补断言轮）════════════════
+# 以下断言按首跑存活类逐类补钉：签名默认值 / 实参常量 / 缓存语义 / 序列化
+# 原样文本 / epoch 边界。stub 边界不可观测类（_PinnedIPAdapter 内部、真连接
+# 行为）不在此杀，见 docs/testing-strategy.md 白名单。
+
+
+def test_make_item_signature_defaults_pinned():
+    # 击杀 make_item__mutmut_1..7：只给必填位，逐字段钉全部签名默认值
+    item = nc.make_item('t', 's', 'src', 'pr', 'time0', 'u')
+    assert item == {
+        'title': 't', 'summary': 's', 'source': 'src', 'platform_region': 'pr',
+        'lang': '', 'time': 'time0', 'url': 'u', 'engagement': 0, 'is_hot': False,
+        'author': '', 'tags': [], 'content_type': 'text', 'media_url': '',
+    }
+
+
+def test_prt_epoch_boundary_and_overflow():
+    # 击杀 ts>1e11 边界与 OverflowError 旗标翻转类
+    iso_at, approx_at = nc.parse_relative_time(100000000000)      # ==1e11 → 按秒
+    assert approx_at is False and iso_at.startswith('5138-')
+    iso_over, _ = nc.parse_relative_time(100000000001)            # 刚过线 → 按毫秒
+    assert iso_over.startswith('1973-')
+    iso_bad, approx_bad = nc.parse_relative_time(10 ** 300)       # 溢出 → 回退近似
+    assert approx_bad is True
+    # int 0 为假值：走「空值」早退近似分支，绝不当 epoch 0 解析成 1970
+    iso_zero, approx_zero = nc.parse_relative_time(0)
+    assert approx_zero is True and not iso_zero.startswith('1970-')
+
+
+def test_safe_get_passes_exact_kwargs(fake_session):
+    # 击杀 safe_get 签名默认值/实参类：timeout=30 / stream=False / headers 透传
+    fake_session.queue = [_Resp(200)]
+    nc.safe_get('https://a.example/x', headers={'H': '1'})
+    kw = fake_session.kwargs[0]
+    assert kw == {'headers': {'H': '1'}, 'timeout': 30,
+                  'stream': False, 'allow_redirects': False}
+
+
+def test_safe_get_accepts_plain_http(fake_session):
+    # 击杀 scheme 元组字符串变异（'http' → 大小写/加料变体）
+    fake_session.queue = [_Resp(200)]
+    assert nc.safe_get('http://a.example/x').status_code == 200
+
+
+def test_get_with_retry_passes_exact_args(monkeypatch):
+    # 击杀 get_with_retry 签名默认值/实参类：timeout=15 / retries=3 / params 透传
+    recorded = {}
+
+    class _S:
+        def __init__(self):
+            self.max_redirects = None
+
+        def get(self, url, params=None, headers=None, timeout=None):
+            recorded.update(url=url, params=params, headers=headers,
+                            timeout=timeout, max_redirects=self.max_redirects)
+            recorded['n'] = recorded.get('n', 0) + 1
+            raise nc.requests.RequestException('always down')
+
+    monkeypatch.setattr(nc.requests, 'Session', _S)
+    monkeypatch.setattr(nc.time, 'sleep', lambda *_: None)
+    with pytest.raises(nc.requests.RequestException):
+        nc.get_with_retry('https://x', params={'p': 1})
+    assert recorded['n'] == 3                                  # retries 默认恰为 3
+    assert recorded['params'] == {'p': 1}
+    assert recorded['timeout'] == 15
+    assert recorded['max_redirects'] == nc.MAX_REDIRECTS
+
+
+def test_wbi_fetch_hits_exact_endpoint(monkeypatch):
+    # 击杀 wbi 端点 URL / timeout 实参变异：stub 录制实参并断言
+    nc._wbi_cache.clear()
+    seen = {}
+
+    def fake_get(url, headers=None, timeout=None):
+        seen.update(url=url, timeout=timeout)
+        seen['n'] = seen.get('n', 0) + 1
+        return _JsonResp({'data': {'wbi_img': {
+            'img_url': f'https://i0.hdslb.com/bfs/wbi/{_IMG}.png',
+            'sub_url': f'https://i0.hdslb.com/bfs/wbi/{_SUB}.png'}}})
+
+    monkeypatch.setattr(nc.requests, 'get', fake_get)
+    assert nc.get_wbi_mixin_key() == _GOLDEN_MIXIN
+    assert seen['url'] == 'https://api.bilibili.com/x/web-interface/nav'
+    assert seen['timeout'] == 10
+    nc._wbi_cache.clear()
+
+
+def test_wbi_stale_cache_refetches_new_value(monkeypatch):
+    # 击杀缓存条件 and→or：过期缓存 + 可用后端必须取回新值而非续用旧值
+    nc._wbi_cache.clear()
+    nc._wbi_cache.update({'mixin_key': 'stale-old', 'ts': 0})
+    monkeypatch.setattr(nc.requests, 'get', lambda *a, **k: _JsonResp(
+        {'data': {'wbi_img': {
+            'img_url': f'https://i0.hdslb.com/bfs/wbi/{_IMG}.png',
+            'sub_url': f'https://i0.hdslb.com/bfs/wbi/{_SUB}.png'}}}))
+    assert nc.get_wbi_mixin_key() == _GOLDEN_MIXIN             # 不是 'stale-old'
+    assert nc._wbi_cache['ts'] > 0                              # 时间戳已刷新
+    nc._wbi_cache.clear()
+
+
+def test_wbi_fresh_cache_makes_zero_requests(monkeypatch):
+    # 击杀缓存键字符串变异：新鲜缓存下后端调用数必须为 0（异常吞不掉计数）
+    nc._wbi_cache.clear()
+    nc._wbi_cache.update({'mixin_key': 'fresh', 'ts': nc.time.time()})
+    n = {'calls': 0}
+
+    def counting_get(*a, **k):
+        n['calls'] += 1
+        raise RuntimeError('must not be called')
+
+    monkeypatch.setattr(nc.requests, 'get', counting_get)
+    assert nc.get_wbi_mixin_key() == 'fresh'
+    assert n['calls'] == 0
+    nc._wbi_cache.clear()
+
+
+def test_spi_hits_exact_endpoint(monkeypatch):
+    # 击杀 spi 端点 URL / timeout 实参变异
+    seen = {}
+
+    def fake_get(url, headers=None, timeout=None):
+        seen.update(url=url, timeout=timeout)
+        return _JsonResp({'data': {'b_3': 'x3'}})
+
+    monkeypatch.setattr(nc.requests, 'get', fake_get)
+    assert nc.bilibili_spi_cookies() == {'buvid3': 'x3'}
+    assert seen['url'] == 'https://api.bilibili.com/x/frontend/finger/spi'
+    assert seen['timeout'] == 10
+
+
+def test_dump_json_atomic_exact_serialization(tmp_path):
+    # 击杀 indent=2 / ensure_ascii=False 变异：断言原样文本而非仅可解析
+    target = tmp_path / 'exact.json'
+    nc.dump_json_atomic(target, {'k': '值', 'n': [1, 2]})
+    assert target.read_text(encoding='utf-8') == \
+        '{\n  "k": "值",\n  "n": [\n    1,\n    2\n  ]\n}'
+
+
+def test_dump_json_atomic_tmpfile_naming_and_dir(tmp_path, monkeypatch):
+    # 击杀 mkstemp dir/prefix/suffix 实参变异：同目录 + .<名>. 前缀 + .tmp 后缀
+    # （同目录是 os.replace 原子性的前提——跨文件系统即退化为拷贝）
+    seen = {}
+    real_mkstemp = nc.tempfile.mkstemp
+
+    def spy_mkstemp(**kw):
+        seen.update(kw)
+        return real_mkstemp(**kw)
+
+    monkeypatch.setattr(nc.tempfile, 'mkstemp', spy_mkstemp)
+    target = tmp_path / 'named.json'
+    nc.dump_json_atomic(target, {'a': 1})
+    assert seen['dir'] == str(tmp_path)
+    assert seen['prefix'] == '.named.json.'
+    assert seen['suffix'] == '.tmp'
