@@ -1,0 +1,58 @@
+{
+  "date": "2026-07-13",
+  "archived_at": "2026-07-12T19:04:45.754243+00:00",
+  "source": "steam",
+  "item_count": 2,
+  "items": [
+    {
+      "title": "[负面] скам",
+      "summary": "скам",
+      "source": "steam_review",
+      "time": "2026-07-12T18:09:19+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198876705749/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198876705749",
+      "tags": [
+        "russian"
+      ],
+      "language": "russian",
+      "metadata": {
+        "voted_up": false,
+        "playtime_forever": 1931,
+        "votes_up": 0,
+        "timestamp_created": 1783879759
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Amazing story, lots of content to do, gacha is sup...",
+      "summary": "Amazing story, lots of content to do, gacha is super generous, devs are really nice and actively communicate, very unique and beautiful character designs and art",
+      "source": "steam_review",
+      "time": "2026-07-12T17:02:35+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198312249936/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198312249936",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 7205,
+        "votes_up": 0,
+        "timestamp_created": 1783875755
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    }
+  ],
+  "region": "global",
+  "content_subtype": "review"
+}

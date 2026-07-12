@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-12T15:59:53.803654+00:00",
+  "collected_at": "2026-07-12T19:04:01.077451+00:00",
   "source": "bilibili",
   "data_layer": "output",
-  "item_count": 13,
+  "item_count": 12,
   "items": [
     {
       "source": "bilibili",
@@ -13,12 +13,30 @@
       "summary": "本视频仅为娱乐，请勿当真\n  └ 叢蘭秋雨 (5赞): 勾子野史还在追我[笑哭]\n  └ 大古炮台 (2赞): 00:26 斯大林还是一个忠厚人呐[doge]\n  └ 创游的ddfgy (2赞): 优秀啊",
       "url": "https://www.bilibili.com/video/BV1xXNT62ECG",
       "author": "原原喵酱",
-      "engagement": 937,
+      "engagement": 945,
       "media_url": "https://i1.hdslb.com/bfs/archive/449a16d9423018015f39773384ad52bd9463dfda.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 932,
+        "play": 940,
         "comment_count": 5,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-07-12T10:26:17+00:00",
+      "lang": "zh",
+      "title": "🌩[忘却前夜]在融灾后门打385的二人🌩",
+      "summary": "音频来源@芙宝___ \n花一下午弄的分做……大家看的开心就好\n  └ 普泽泽 (7赞): 不是在融灾后门偷偷流血的两人吗[大哭][大哭]\n  └ 皮喵九 (4赞): 听完2000死扛全爆了[微笑]\n  └ 芒亡了 (5赞): 听完五个灵芝全爆了[汤圆]",
+      "url": "https://www.bilibili.com/video/BV1SDNu6oEVZ",
+      "author": "梦依流苏_myls",
+      "engagement": 740,
+      "media_url": "https://i2.hdslb.com/bfs/archive/76caf5d741ba87e8b673448365994bd4ed861360.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 703,
+        "comment_count": 37,
         "comments_fetched": 3,
         "danmaku": 0
       }
@@ -31,30 +49,12 @@
       "summary": "我说沙莱拉塔就是顶级攻杀队 有人反对吗\n图3也能打，5T速杀。\n  └ 理线道明未来 (1赞): 我了强强\n  └ Radiant_ttt (1赞): 好强的凹 来支持了\n  └ 愛吃郭子的小孩 (0赞): 天呐 不愧是龙肆大人 太强了[打call]",
       "url": "https://www.bilibili.com/video/BV1uuNu6dEE7",
       "author": "RomG龍肆",
-      "engagement": 653,
+      "engagement": 726,
       "media_url": "https://i1.hdslb.com/bfs/archive/0c7fb1e2f9736f56ee9d2bf862e7953718369a48.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 643,
+        "play": 716,
         "comment_count": 10,
-        "comments_fetched": 3,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-07-12T10:26:17+00:00",
-      "lang": "zh",
-      "title": "🌩[忘却前夜]在融灾后门打385的二人🌩",
-      "summary": "└ 普泽泽 (7赞): 不是在融灾后门偷偷流血的两人吗[大哭][大哭]\n  └ 皮喵九 (3赞): 听完2000死扛全爆了[微笑]\n  └ 无谓所以 (4赞): 哎，下坡路，哎，流血，哎大c",
-      "url": "https://www.bilibili.com/video/BV1SDNu6oEVZ",
-      "author": "梦依流苏_myls",
-      "engagement": 597,
-      "media_url": "https://i2.hdslb.com/bfs/archive/76caf5d741ba87e8b673448365994bd4ed861360.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 562,
-        "comment_count": 35,
         "comments_fetched": 3,
         "danmaku": 0
       }
@@ -67,31 +67,13 @@
       "summary": "12345678910\n  └ 玖玖_子 (0赞): 我居然是第一吗\n  └ 梦依流苏_myls (0赞): [香奈美·追寻那道光 应援装扮_让我看看]",
       "url": "https://www.bilibili.com/video/BV1aNNu6bEHK",
       "author": "密斯卡托尼克的银猫",
-      "engagement": 384,
+      "engagement": 493,
       "media_url": "https://i0.hdslb.com/bfs/archive/70548e3ad5836f41ce2c356ff88deb07d8f29666.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 382,
+        "play": 491,
         "comment_count": 2,
         "comments_fetched": 2,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-07-11T16:50:41+00:00",
-      "lang": "zh",
-      "title": "原来是个梦",
-      "summary": "-\n  └ 躍龍門_ (2赞): @Anafabula怎么那么美丽啊\n  └ 哈基沙大玉 (1赞): [鸣潮2周年同人绘画_大手]\n  └ 神神秘秘16h (0赞): @哈基沙大玉 [鸣潮2周年同人绘画_大手]",
-      "url": "https://www.bilibili.com/video/BV1HeNw6xEnr",
-      "author": "天使戀愛記",
-      "engagement": 381,
-      "media_url": "https://i2.hdslb.com/bfs/archive/8c2e59cf91d47627e60a2c202c49510489000406.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 369,
-        "comment_count": 12,
-        "comments_fetched": 3,
         "danmaku": 0
       }
     },
@@ -103,11 +85,11 @@
       "summary": "除去鸟弟三套密契都要高银钥，生机和无垢启示录最好30+，然后入药有个20就行，神父道中三个商店都要卖血，单段扛不住就开神父觉醒，每次出道中都要带一个空间\n  └ 上好佳薯片丶 (2赞): 来学习了，打道中的神[打call]\n  └ 静寂夏至 (1赞): 老大我搬完宿舍来学习了[打call]",
       "url": "https://www.bilibili.com/video/BV1aPNu6FEd3",
       "author": "寂榕",
-      "engagement": 345,
+      "engagement": 377,
       "media_url": "https://i2.hdslb.com/bfs/archive/ab3b63b8102a863fc5621de5d53bdd9fa867a78f.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 341,
+        "play": 373,
         "comment_count": 4,
         "comments_fetched": 2,
         "danmaku": 0
@@ -121,48 +103,12 @@
       "summary": "不吃压力，直接all in \n\n几个小时就能搞定的meme我拖了一个月......\n  └ 缓缓HuanOvo (1赞): 莱克可爱捏\n  └ 莱克ryker (1赞): 额们冷门厨[doge]\n  └ 飞扬nb (1赞): [果糖含量·多元宇宙_啵唧]",
       "url": "https://www.bilibili.com/video/BV1zLNg66EJk",
       "author": "给你麻袋自己套",
-      "engagement": 334,
+      "engagement": 374,
       "media_url": "https://i2.hdslb.com/bfs/archive/0a8bfeae72104dd9f679d3cc1919a760c7b35705.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 320,
+        "play": 360,
         "comment_count": 14,
-        "comments_fetched": 3,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-07-12T07:12:36+00:00",
-      "lang": "zh",
-      "title": "所有人保持嘴角弧度不变",
-      "summary": "",
-      "url": "https://www.bilibili.com/video/BV1DCNT69EZ5",
-      "author": "撕袜复合",
-      "engagement": 172,
-      "media_url": "https://i2.hdslb.com/bfs/archive/06ab43c6f43d675b7ac5dc67aec1d4f9bf3826de.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 172,
-        "comment_count": 0,
-        "comments_fetched": 0,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-07-11T17:07:33+00:00",
-      "lang": "zh",
-      "title": "ˋˏ꒰ঌ粉粉蛆* Galgame向游戏配乐实验音乐",
-      "summary": "-当画师遇到曲师\n作者-粉粉蛆 音乐风格：实验音乐，噪音\n  └ -昆扬 (0赞): [魔法少女的魔女审判表情包_探头]\n  └ 耕司青海瑶 (0赞): [doge]\n  └ 哈基沙大玉 (0赞): [鸣潮2周年同人绘画_纸飞机]",
-      "url": "https://www.bilibili.com/video/BV1GXNw6VE7i",
-      "author": "一条粉秋秋的蛆",
-      "engagement": 172,
-      "media_url": "https://i2.hdslb.com/bfs/archive/de553f18a912a92cc9e0ce8e651f58e7e2e00a5c.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 168,
-        "comment_count": 4,
         "comments_fetched": 3,
         "danmaku": 0
       }
@@ -175,13 +121,31 @@
       "summary": "尤乌回放能不能优化一下（\n每期血肉戒指才能体验的压配置）\n这神秘造物，一个有效输出造物都没有，难评\n  └ 3只蚊子咬了我18万个包 (1赞): 油污神了\n  └ 萨摩_不耶 (1赞): 不是退坑？[doge][doge][doge][doge]\n  └ 上好佳薯片丶 (1赞): 老大好强喵[星星眼]",
       "url": "https://www.bilibili.com/video/BV1wtNu6CECj",
       "author": "跳段木偶舞",
-      "engagement": 160,
+      "engagement": 236,
       "media_url": "https://i2.hdslb.com/bfs/archive/929622afe6b90394485782ef4c9e5840c35e0e0c.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 145,
+        "play": 221,
         "comment_count": 15,
         "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-07-12T07:12:36+00:00",
+      "lang": "zh",
+      "title": "所有人保持嘴角弧度不变",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV1DCNT69EZ5",
+      "author": "撕袜复合",
+      "engagement": 178,
+      "media_url": "https://i2.hdslb.com/bfs/archive/06ab43c6f43d675b7ac5dc67aec1d4f9bf3826de.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 178,
+        "comment_count": 0,
+        "comments_fetched": 0,
         "danmaku": 0
       }
     },
@@ -193,13 +157,31 @@
       "summary": "感谢您的观看，我是一个游戏实况主，名字没想好。\n游戏名字：沙耶之歌 The Song of Saya\n游戏平台：Steam\n  └ 耕司青海瑶 (0赞): [呲牙]",
       "url": "https://www.bilibili.com/video/BV1XVNs6MEfp",
       "author": "没想好哦MeiXiangHAO",
-      "engagement": 84,
+      "engagement": 94,
       "media_url": "https://i1.hdslb.com/bfs/archive/4b07160edeeca2cd677b732033abafcd1726aa1a.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 83,
+        "play": 93,
         "comment_count": 1,
         "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-07-12T16:21:29+00:00",
+      "lang": "zh",
+      "title": "[忘却前夜]一拖三尤乌哈希5-5",
+      "summary": "如题\n感谢梨子老师的uw，我的配置回转够但是前期力量叠不上去，爆伤差的有点多，明年造个烟枪双持或许能好一点？\n给@葛西茜ovo 号打的，一把胡到没法形容的造物局，就录了个王关，可惜没录全程和语音，有的话将全是戏剧性（毕竟打的太菜）\n总之血肉戒指限定大c，非血肉戒指就比较难受\nbgm：topkingcream废案 来源wyy\n  └ Kai_tsit_ (1赞): [魔女的夜宴动态表情包_点赞][魔女的夜宴动态表情包_嘿嘿]\n  └ 跳段木偶舞 (1赞): 强强强！\n琥珀对尤乌的提升远大于其他爆伤命轮，做双持的话优先考虑琥珀",
+      "url": "https://www.bilibili.com/video/BV17FN366E7x",
+      "author": "陶醉2333",
+      "engagement": 43,
+      "media_url": "https://i1.hdslb.com/bfs/archive/e10ef156a8e4d443b0de03589edc58c1bcf618d4.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 36,
+        "comment_count": 7,
+        "comments_fetched": 2,
         "danmaku": 0
       }
     },
@@ -211,11 +193,11 @@
       "summary": "-\n  └ 燃え落ちない翼 (0赞): 医生萌萌哒[冬日树下_抱抱][冬日树下_抱抱]",
       "url": "https://www.bilibili.com/video/BV1gTT96XEUj",
       "author": "不可燃抹茶果冻",
-      "engagement": 13,
+      "engagement": 17,
       "media_url": "https://i2.hdslb.com/bfs/archive/75afbf69adc0480b3ba7619582f8e81a346caadb.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 12,
+        "play": 16,
         "comment_count": 1,
         "comments_fetched": 1,
         "danmaku": 0
@@ -229,11 +211,11 @@
       "summary": "第二十四日直播录播",
       "url": "https://www.bilibili.com/video/BV1jrN36kE9H",
       "author": "God7777",
-      "engagement": 7,
+      "engagement": 11,
       "media_url": "https://i2.hdslb.com/bfs/archive/2df3521d8a74a5b8e6bdd4fecc3893f7b6567536.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 7,
+        "play": 11,
         "comment_count": 0,
         "comments_fetched": 0,
         "danmaku": 0
