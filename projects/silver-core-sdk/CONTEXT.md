@@ -67,6 +67,17 @@ src/
 
 ## 当前状态
 
+**0.3x→0.52 消费方迁移战役（2026-07-12 通宵批，docs/tests/scripts-only、零 src 改动不 bump）**——
+黑池 BPT 明日将把 pin 从 0.3x 线拉到 0.52，本批把升级要踩的坑先趟完：① 旧消费面冻结
+`tests/fixtures/legacy-0-3x-surface.json`（0.30.0=8c709f068 / 0.39.0=cf67a6e56 双端点，
+TypeScript 编译器精确枚举：值导出/类型导出/Options 字段）；② 编译器级差分结论——**0.39.0 全面
+零缺失、0.30.0 仅缺 `harnessPromptVariant`**（0.33.0 收梯裁定移除），导出面 0.3x→0.52 纯增量；
+③ 迁移文档 `docs/MIGRATION-0.3x-to-0.52.md`（零改码收益/推荐选入/破坏点三节：更名 0.41.0、
+task-notification XML 0.42.0、变体旋钮 0.33.0、Stop-hook block 0.39.0、五项默认语义迁移）；
+④ legacy-consumer 常驻一致性测试 `tests/legacy-consumer-0-3x.test.ts`（11 测：表面锁 + 0.3x
+调用姿势仿真器实跑，进 `npm test`）；⑤ day-one 金丝雀 `scripts/canary-day-one.mjs`（单文件可拷走，
+仿真器零钥四查 C1-C4 全绿：导入/首会话/工具落盘/断线自愈上账，`--live` 同查打真 API）。
+
 **v0.51.0(2026-07-12):自我改进闭环推进批**——① REQ-1.2 `compareReports(dateA,dateB,{logDir})`
 按 UTC 日重聚合台账出关键指标差值 + Markdown 表(无数据日显式 null,绝不伪装零),
 `generateRuntimeReport` 报告 30 天滚动剪除(原始台账默认永不剪、`ledgerRetentionDays`
