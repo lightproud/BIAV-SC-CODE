@@ -225,6 +225,15 @@
   credit balance is too low」。+4 测试（`tests/eval-scoring.test.ts`，**1905 全绿 + 2 skipped**）。
   仅改 scripts/ + tests/（非 shipped `src/**`），版本升号守卫豁免、无需升版。**判卷侧证分待守密人为
   API 账户充值后重跑**（dc-03 续写旗分数复核 + mem-03/dc-05 深挖一单 judgeDiag 收集均阻塞于此）。
+- **无钥替代：dc-05 双桶台账确定性断言（2026-07-12，充值阻塞下的免费推进）**：守密人 API 暂无法充值，
+  遂把被判卷阻塞的机械内核转成无钥断言（`tests/eval-harness-faults.test.ts` 本地 SSE 模拟器驱真引擎，
+  零 API 零成本）。**结论**：① **dc-03 续写旗机械核早已无钥覆盖**（`engine.test.ts:2279`
+  断言 `salvageMode:'continue'`→`turnsSalvaged:0,turnReplays:1`），不真阻塞；② **dc-05「只记一个桶」被
+  证伪**——新增混合故障断言（网络错 POST#1 + 流中切断 POST#2 同处一轮）实测 `networkRetries≥1` **且**
+  drop/recovery 桶 `≥1` **同时成立**，引擎台账双桶各记一笔、并未漏记；judge 那句 2 分说的是喂它的证据只
+  浮现一个桶（呈现/rubric 层面），**非引擎缺陷**。价值 = 免费永久 CI 双桶回归锁 + 无需判卷即判明 dc-05
+  工程无罪。**判卷侧真剩项**（确须付费判卷、无钥不可复现）：mem-03/dc-05 judge 结构化输出偶发失败的
+  深挖，属判卷官模型行为、待充值后收 judgeDiag。**1906 全绿 + 2 skipped**（+1 混合故障断言）、仅改 tests/。
 - **首份全量 LIVE 评估基线（2026-07-12，run [29178972282](https://github.com/lightproud/brain-in-a-vat/actions/runs/29178972282)，v0.51.1）**：
   20 题全执行（8 题 Phase 2 harness 首次真跑真判），**19 判卷成功 / 1 judge 解析错误（tok-02，偶发）**；
   维度均分 memory_recall **4.86** / disconnect_recovery **4.00** / token_efficiency **4.33**，
