@@ -7,7 +7,7 @@
 * [CLAUDE.md（AI 统一入口 · 运行时强约束权威）](/projects/entry-claude-md.md) - 银芯是黑池的「眼睛和耳朵」：采集 + 整理外部信息往黑池送，黑池吃完不吐回。
 * [README.md（人 + AI 共用主入口）](/projects/entry-readme.md) - 忘却前夜（忘卻前夜 / Morimens）的**社区知识平台 + 黑池信息入口**。本仓库由忘却前夜官方授权制作人维护，引用公开可查阅的游戏资料。
 * [news 子项目上下文](/projects/project-news.md) - **news = 银芯二核心使命之 #1「黑池信息入口」核心载体**
-* [wiki 子项目上下文](/projects/project-wiki.md) - **wiki = 银芯二核心使命之 #2「社区共建知识底座」核心载体**（CLAUDE.md §1.2）。
+* [wiki 子项目上下文](/projects/project-wiki.md) - **原定位：银芯使命#2「社区共建知识底座」核心载体——该使命已于 2026-07-12 取消，
 * [site 子项目上下文](/projects/project-site.md) - **site = 银芯使命对外门户 / 三轴（site·news·wiki）发现入口**（非任一单一使命的载体；使命#2「社区共建知识底座」载体为 wiki，见
 * [game 子项目上下文](/projects/project-game.md) - **game = 守密人个人兴趣项目（主）+ 未来扩展可能 ⓐⓒ（备）**
 * [silver-core-sdk 子项目上下文](/projects/project-silver-core-sdk.md) - Silver Core SDK：独立重实现（independent reimplementation）的 TypeScript agent 框架，公开调用面
