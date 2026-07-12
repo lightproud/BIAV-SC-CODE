@@ -1,8 +1,8 @@
 {
   "generated": "2026-07-12",
   "stats": {
-    "nodes": 360,
-    "edges": 411
+    "nodes": 361,
+    "edges": 412
   },
   "nodes": [
     {
@@ -2535,6 +2535,17 @@
       "id": "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "type": "documentation",
       "title": "silver-core-sdk-l5-round-20260711",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:data-diagnostics"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
+      "type": "documentation",
+      "title": "weixin-noise-cleanup-20260712",
       "tags": [
         "data_layer:curated",
         "deliverable",
@@ -5546,6 +5557,12 @@
     },
     {
       "source": "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
       "rel_type": "mention"

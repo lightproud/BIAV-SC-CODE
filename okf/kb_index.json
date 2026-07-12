@@ -8,7 +8,7 @@
   },
   "stats": {
     "concepts": 361,
-    "edges": 411,
+    "edges": 412,
     "terms": 6190,
     "by_type": {
       "character": 72,
@@ -968,7 +968,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 95
+      "degree": 96
     },
     "/characters/15604.md": {
       "type": "character",
@@ -3254,7 +3254,7 @@
       ],
       "section": "resource",
       "tier": "search",
-      "degree": 0
+      "degree": 1
     },
     "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md": {
       "type": "documentation",
@@ -6806,6 +6806,11 @@
         "mention"
       ],
       [
+        "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
         "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
         "提及:艾瑞卡",
         "mention"
@@ -8877,6 +8882,13 @@
       ]
     ],
     "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
+    "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md": [
       [
         "/characters/15603.md",
         "提及:艾瑞卡",
