@@ -4,7 +4,7 @@ title: "pixiv 社区数据源"
 description: "pixiv 平台采集档案，全量 565 条，健康度 active。"
 resource: "/Public-Info-Pool/Record/Community/pixiv/"
 tags: ["data_layer:full_archive", "platform:pixiv", "health:active"]
-timestamp: "2026-07-11T21:50:07.556906+00:00"
+timestamp: "2026-07-12T02:34:12.265519+00:00"
 ---
 
 # 数据层指针
