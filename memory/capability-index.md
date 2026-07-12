@@ -4,7 +4,7 @@
 > 中文用途补注请改 `memory/capability-annotations.json`；机器权威数据见 `memory/capability-registry.json`。
 
 - 生成日期：2026-07-12
-- 功能总数：**136**
+- 功能总数：**134**
 - 脚本可达性：活 75 / 仅测试 0 / 孤儿 0
 
 ## 总览
@@ -18,7 +18,7 @@
 | MCP 知识层工具（编排入口·AI 动态平面） | 11 |
 | Slash 命令（编排入口·人工平面） | 4 |
 | 仓内技能 | 4 |
-| 子项目 | 7 |
+| 子项目 | 5 |
 
 ## 动态编排与可达性
 
@@ -313,12 +313,8 @@
 - **`grilling`** — Interview the keeper relentlessly about a plan or design before building. Use when the keeper wants to stress-test a plan, sharpen a vague idea, or uses any 'grill' / 拷问 / 质询 / 对齐 trigger phrase.  
   `.claude/skills/grilling/SKILL.md`
 
-## 子项目（7）
+## 子项目（5）
 
-- **`bpt-pm`** — BPT PM：**单网页项目排期工作台**。一份 JSON 描述一个项目（锚点日期 + 工作日历 +  
-  `projects/bpt-pm/`
-- **`bpt-v2t`** — BPT-V2T:银芯**语音代替输入**(voice-as-input)工具。按热键说话 → 转成文字 →  
-  `projects/bpt-v2t/`
 - **`game`** — 衍生游戏，退出主线，守密人个人兴趣，不主线派发。  
   `projects/game/`
 - **`news`** — 使命#1 黑池信息入口：采集器 + 全量档案层 + 输出展示层，单向送黑池。  

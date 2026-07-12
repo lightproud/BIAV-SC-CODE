@@ -13,8 +13,8 @@
       "mcp_tools": 11,
       "commands": 4,
       "skills": 4,
-      "projects": 7,
-      "total": 136
+      "projects": 5,
+      "total": 134
     },
     "reachability": {
       "live": 75,
@@ -1199,16 +1199,6 @@
     }
   ],
   "projects": [
-    {
-      "id": "bpt-pm",
-      "path": "projects/bpt-pm/",
-      "summary": "BPT PM：**单网页项目排期工作台**。一份 JSON 描述一个项目（锚点日期 + 工作日历 +"
-    },
-    {
-      "id": "bpt-v2t",
-      "path": "projects/bpt-v2t/",
-      "summary": "BPT-V2T:银芯**语音代替输入**(voice-as-input)工具。按热键说话 → 转成文字 →"
-    },
     {
       "id": "game",
       "path": "projects/game/",
