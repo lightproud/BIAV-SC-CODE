@@ -16,6 +16,37 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.53.5 — 2026-07-13
+
+**Conversation-stability follow-up: the three deferred light items from 0.53.4
+(BPT stability, 2026-07-13).** Keeper asked the remaining trio be closed out.
+
+- **T2 — retry-budget amplification (both transports).** The empty-stream
+  re-issue counter was INDEPENDENT of `requestWithRetries`' own attempt counter,
+  each bounded by `maxRetries` — so a gateway alternating errors and empty-200s
+  under fan-out throttle could burn ~`maxRetries²` POSTs on an already-struggling
+  endpoint. Fix: one `{ used }` budget threaded through BOTH the request-phase
+  retries and the empty-stream re-issues, capping the total extra POSTs at
+  `maxRetries` (so `maxRetries+1` attempts overall). Anthropic + OpenAI arms.
+- **killAgent status race (subagent runtime).** `stopTask`/`killAgent` racing a
+  child's completion could emit a `stopped` notification contradicting a
+  `completed` one and flip `record.status` between the two. Fix: killAgent no
+  longer clobbers a record that already reached a terminal status (the
+  completed→kill direction), and the completion body only reports completion
+  while the record is still `running` (the kill→completed direction) — mirroring
+  the catch arm's existing guard. Both directions now resolve to one consistent
+  terminal signal.
+- **T3 — pre-message_start ping "leak" — assessed WAI, left unchanged.** A ping
+  keep-alive is yielded to the consumer as it arrives BY DESIGN: live ping
+  delivery is load-bearing (the idle-watchdog / hard-cap / progress paths and
+  their tests depend on the consumer seeing keep-alives in real time). The
+  theoretical leak of a discarded empty-retry attempt's pings is harmless (pings
+  carry no content; the accumulator ignores them), so buffering them — which
+  would degrade live delivery — is not worth it. Documented in-code.
+
++2 regression tests (`tests/conversation-stability-followups.test.ts`, T2 bound).
+Full suite 2160 passing + 2 skipped; typecheck + build clean.
+
 ## 0.53.4 — 2026-07-13
 
 **Conversation-stability audit batch: 13 verified fixes across compaction,

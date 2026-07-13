@@ -210,6 +210,13 @@ export class AnthropicTransport implements Transport {
     // stream and letting the engine fall through to accumulator.finalize()'s
     // raw `Protocol error: finalize before message_start`.
     let emptyStreamRetries = 0;
+    // Finding T2 — ONE retry budget shared by the request-phase retries AND the
+    // empty-stream re-issues. Previously each empty-stream re-issue called
+    // requestWithRetries afresh with the FULL maxRetries, so a gateway that
+    // alternates errors and empty-200s could burn ~maxRetries² POSTs on an
+    // already-struggling endpoint. Threading one `{ used }` counter caps the
+    // total extra POSTs at maxRetries (so maxRetries+1 attempts overall).
+    const retryBudget = { used: 0 };
     for (;;) {
       // ---- request phase: retries allowed ---------------------------------
       const { response, signal, timeoutSignal, detachRequestTimeout, releaseSignals } =
@@ -219,6 +226,7 @@ export class AnthropicTransport implements Transport {
           callerSignal,
           timeoutMs,
           maxRetries,
+          retryBudget,
           onRetry,
         );
 
@@ -357,6 +365,13 @@ export class AnthropicTransport implements Transport {
             const sr = (parsed as { delta?: { stop_reason?: unknown } }).delta?.stop_reason;
             if (sr !== null && sr !== undefined) sawStopReason = true;
           }
+          // T3 (NOT changed — WAI): a ping keep-alive is yielded to the consumer
+          // as it arrives, deliberately. Live ping delivery is load-bearing (the
+          // idle-watchdog / hard-cap / progress paths and their tests rely on the
+          // consumer seeing keep-alives in real time). The theoretical "a
+          // discarded empty-retry attempt's pings reach the consumer" leak is
+          // harmless (pings carry no content; the accumulator ignores them), so
+          // it is not worth buffering pings and degrading live delivery.
           yield parsed as RawMessageStreamEvent;
           // The Messages API streams exactly one message; message_stop is its
           // terminal event. Stop consuming here - official-client lifecycle -
@@ -397,16 +412,17 @@ export class AnthropicTransport implements Transport {
       // Any caller abort observed here wins over the retry.
       if (!sawMessageStart) {
         if (callerSignal?.aborted) throw new AbortError();
-        if (emptyStreamRetries < maxRetries) {
+        if (retryBudget.used < maxRetries) {
+          retryBudget.used += 1;
           emptyStreamRetries += 1;
           this.debug(
             `transport: empty stream (HTTP 200, no message_start); ` +
-              `retry ${emptyStreamRetries}/${maxRetries}`,
+              `retry ${retryBudget.used}/${maxRetries}`,
           );
           // Surface it like a network-level retry (no HTTP status) so the loop
           // emits an api_retry observability message, same as a dropped socket.
-          onRetry?.({ attempt: emptyStreamRetries, maxRetries, kind: 'empty_stream' });
-          await this.backoff(emptyStreamRetries, undefined, callerSignal);
+          onRetry?.({ attempt: retryBudget.used, maxRetries, kind: 'empty_stream' });
+          await this.backoff(retryBudget.used, undefined, callerSignal);
           continue;
         }
         throw new APIConnectionError(
@@ -454,6 +470,10 @@ export class AnthropicTransport implements Transport {
     callerSignal: AbortSignal | undefined,
     timeoutMs: number,
     maxRetries: number,
+    // Finding T2 — shared retry budget (see streamRequest). Both request-phase
+    // retries here and empty-stream re-issues in the caller draw from it, so the
+    // total is bounded by maxRetries rather than maxRetries per re-issue.
+    retryBudget: { used: number },
     onRetry?: (info: RetryInfo) => void,
   ): Promise<{
     response: Response;
@@ -467,7 +487,6 @@ export class AnthropicTransport implements Transport {
      *  a long-lived caller signal does not accumulate one listener per turn. */
     releaseSignals: () => void;
   }> {
-    let attempt = 0;
     for (;;) {
       if (callerSignal?.aborted) throw new AbortError();
       // Fresh timeout per attempt, propagated into a DEDICATED per-attempt
@@ -495,7 +514,7 @@ export class AnthropicTransport implements Transport {
       let response: Response;
       try {
         this.debug(
-          `transport: POST ${this.endpoint} (attempt ${attempt + 1}/${maxRetries + 1})`,
+          `transport: POST ${this.endpoint} (attempt ${retryBudget.used + 1}/${maxRetries + 1})`,
         );
         response = await (this.fetchFn ?? fetch)(this.endpoint, {
           method: 'POST',
@@ -507,13 +526,13 @@ export class AnthropicTransport implements Transport {
         releaseSignals();
         if (callerSignal?.aborted) throw new AbortError();
         // Connection failure or per-attempt timeout: retryable.
-        if (attempt < maxRetries) {
-          attempt += 1;
+        if (retryBudget.used < maxRetries) {
+          retryBudget.used += 1;
           this.debug(
-            `transport: network error (${errorMessage(err)}); retry ${attempt}/${maxRetries}`,
+            `transport: network error (${errorMessage(err)}); retry ${retryBudget.used}/${maxRetries}`,
           );
-          onRetry?.({ attempt, maxRetries, kind: 'network' });
-          await this.backoff(attempt, undefined, callerSignal);
+          onRetry?.({ attempt: retryBudget.used, maxRetries, kind: 'network' });
+          await this.backoff(retryBudget.used, undefined, callerSignal);
           continue;
         }
         throw new APIConnectionError(
@@ -531,21 +550,21 @@ export class AnthropicTransport implements Transport {
       const info = await readErrorInfo(response);
       const retryable =
         response.status === 408 || response.status === 429 || response.status >= 500;
-      if (retryable && attempt < maxRetries) {
-        attempt += 1;
+      if (retryable && retryBudget.used < maxRetries) {
+        retryBudget.used += 1;
         const retryAfterMs = parseRetryAfterMs(response.headers.get('retry-after'));
         this.debug(
-          `transport: HTTP ${response.status} (${info.type}); retry ${attempt}/${maxRetries}`,
+          `transport: HTTP ${response.status} (${info.type}); retry ${retryBudget.used}/${maxRetries}`,
         );
         onRetry?.({
-          attempt,
+          attempt: retryBudget.used,
           maxRetries,
           status: response.status,
           errorType: info.type,
           kind: 'http_status',
           ...(retryAfterMs !== undefined ? { retryAfterMs } : {}),
         });
-        await this.backoff(attempt, retryAfterMs, callerSignal);
+        await this.backoff(retryBudget.used, retryAfterMs, callerSignal);
         continue;
       }
       throw new APIStatusError(response.status, info.type, info.message, requestId);
