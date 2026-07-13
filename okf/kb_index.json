@@ -8,7 +8,7 @@
   },
   "stats": {
     "concepts": 349,
-    "edges": 398,
+    "edges": 400,
     "terms": 6275,
     "by_type": {
       "character": 72,
@@ -337,7 +337,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 1
+      "degree": 3
     },
     "/characters/15560.md": {
       "type": "character",
@@ -1324,7 +1324,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 9
+      "degree": 10
     },
     "/community/community-discord.md": {
       "type": "dataset",
@@ -4171,7 +4171,7 @@
     "/sources/appstore.md": {
       "type": "dataset",
       "title": "appstore 社区数据源",
-      "description": "appstore 平台采集档案，全量 1145 条，健康度 active。",
+      "description": "appstore 平台采集档案，全量 1146 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/appstore/global/",
       "tags": [
         "data_layer:full_archive",
@@ -4213,7 +4213,7 @@
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 2810 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 2814 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -4222,7 +4222,7 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 9
+      "degree": 10
     },
     "/sources/discord.md": {
       "type": "dataset",
@@ -4339,7 +4339,7 @@
     "/sources/steam_discussion.md": {
       "type": "dataset",
       "title": "steam_discussion 社区数据源",
-      "description": "steam_discussion 平台采集档案，全量 100 条，健康度 active。",
+      "description": "steam_discussion 平台采集档案，全量 101 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/discussion/",
       "tags": [
         "data_layer:full_archive",
@@ -4381,7 +4381,7 @@
     "/sources/taptap_review.md": {
       "type": "dataset",
       "title": "taptap_review 社区数据源",
-      "description": "taptap_review 平台采集档案，全量 1306 条，健康度 active。",
+      "description": "taptap_review 平台采集档案，全量 1314 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/taptap/cn/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4395,7 +4395,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 9904 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 9919 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -4409,7 +4409,7 @@
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 9872 条，健康度 active。",
+      "description": "weixin 平台采集档案，全量 9892 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -4423,7 +4423,7 @@
     "/sources/youtube.md": {
       "type": "dataset",
       "title": "youtube 社区数据源",
-      "description": "youtube 平台采集档案，全量 2823 条，健康度 active。",
+      "description": "youtube 平台采集档案，全量 2825 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -5213,7 +5213,17 @@
     ],
     "/characters/130901.md": [
       [
+        "/community/community-bilibili.md",
+        "提及:莫丝",
+        "mention"
+      ],
+      [
         "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
+        "提及:莫丝",
+        "mention"
+      ],
+      [
+        "/sources/bilibili.md",
         "提及:莫丝",
         "mention"
       ]
@@ -6200,7 +6210,7 @@
       ],
       [
         "/community/community-bilibili.md",
-        "提及:融朵",
+        "提及:熔朵",
         "mention"
       ],
       [
@@ -6220,7 +6230,7 @@
       ],
       [
         "/sources/bilibili.md",
-        "提及:融朵",
+        "提及:熔朵",
         "mention"
       ],
       [
@@ -7114,8 +7124,13 @@
         "mention"
       ],
       [
+        "/characters/130901.md",
+        "提及:莫丝",
+        "mention"
+      ],
+      [
         "/characters/15602.md",
-        "提及:融朵",
+        "提及:熔朵",
         "mention"
       ],
       [
@@ -8904,8 +8919,13 @@
         "mention"
       ],
       [
+        "/characters/130901.md",
+        "提及:莫丝",
+        "mention"
+      ],
+      [
         "/characters/15602.md",
-        "提及:融朵",
+        "提及:熔朵",
         "mention"
       ],
       [

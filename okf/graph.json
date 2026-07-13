@@ -2,7 +2,7 @@
   "generated": "2026-07-13",
   "stats": {
     "nodes": 349,
-    "edges": 398
+    "edges": 400
   },
   "nodes": [
     {
@@ -4276,8 +4276,14 @@
     },
     {
       "source": "/community/community-bilibili.md",
+      "target": "/characters/130901.md",
+      "rel": "提及:莫丝",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
       "target": "/characters/15602.md",
-      "rel": "提及:融朵",
+      "rel": "提及:熔朵",
       "rel_type": "mention"
     },
     {
@@ -5608,8 +5614,14 @@
     },
     {
       "source": "/sources/bilibili.md",
+      "target": "/characters/130901.md",
+      "rel": "提及:莫丝",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
       "target": "/characters/15602.md",
-      "rel": "提及:融朵",
+      "rel": "提及:熔朵",
       "rel_type": "mention"
     },
     {
