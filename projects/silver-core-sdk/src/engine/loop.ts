@@ -835,7 +835,7 @@ export async function* runAgentLoop(
   // 2026-07-10 F5): hooks -> gate -> execute -> hooks, plus read-only
   // classification. Touches no streaming state — a per-run factory bound to
   // this loop's deps/hook fields/metrics recorder.
-  const { isReadOnlyTool, executeToolUse } = createToolDispatcher({
+  const { isParallelSafeTool, executeToolUse } = createToolDispatcher({
     deps,
     sessionId: config.sessionId,
     baseHookFields,
@@ -1244,14 +1244,16 @@ export async function* runAgentLoop(
         let batchStop: ToolExecOutcome['stop'];
         let batchDefer: ToolExecOutcome['defer'];
         // Execute in content order, but run a maximal run of >= 2 consecutive
-        // read-only tools CONCURRENTLY (they have no side effects and are
-        // order-independent). Non-read-only and lone read-only tools run
-        // sequentially, exactly as before. Results stay in tool_use order (the
-        // API pairs by id; history keeps them ordered). A stop/defer from any
-        // executed tool suppresses all LATER tools with a "Not executed"
-        // placeholder. "Read-only" covers builtins (readOnly flag) and MCP
-        // tools whose server annotation sets readOnlyHint (isReadOnlyTool).
-        const isReadOnly = (b: ToolUseBlock): boolean => isReadOnlyTool(b.name);
+        // parallel-safe tools CONCURRENTLY (order-independent within a batch).
+        // Other tools and lone parallel-safe tools run sequentially, exactly
+        // as before. Results stay in tool_use order (the API pairs by id;
+        // history keeps them ordered). A stop/defer from any executed tool
+        // suppresses all LATER tools with a "Not executed" placeholder.
+        // "Parallel-safe" covers read-only builtins (readOnly flag), MCP tools
+        // whose server annotation sets readOnlyHint, and builtins explicitly
+        // marked parallelSafe (Agent — batched foreground subagents must
+        // overlap, not serialize; each child runs in its own isolated loop).
+        const isParallelSafe = (b: ToolUseBlock): boolean => isParallelSafeTool(b.name);
         let ti = 0;
         while (ti < toolUses.length) {
           if (batchStop !== undefined || batchDefer !== undefined) {
@@ -1267,16 +1269,18 @@ export async function* runAgentLoop(
             continue;
           }
           let groupEnd = ti;
-          while (groupEnd < toolUses.length && isReadOnly(toolUses[groupEnd]!)) groupEnd += 1;
+          while (groupEnd < toolUses.length && isParallelSafe(toolUses[groupEnd]!)) groupEnd += 1;
           const outcomes: ToolExecOutcome[] =
             groupEnd - ti >= 2
               ? await Promise.all(toolUses.slice(ti, groupEnd).map((b) => executeToolUse(b)))
               : [await executeToolUse(toolUses[ti]!)];
           // Process outcomes in tool_use order. Once one stops/defers the run,
           // OVERRIDE the rest of this concurrent group with the skip marker so
-          // the observable contract matches sequential execution: the group
-          // already ran, but its members are read-only, so that was
-          // side-effect-free. Later GROUPS are skipped by the outer guard.
+          // the observable contract matches sequential execution. For read-only
+          // members that is side-effect-free; a parallelSafe member (Agent) DID
+          // run its child to completion — only its RESULT is masked, a
+          // documented trade-off of batching agents with an interrupting call.
+          // Later GROUPS are skipped by the outer guard.
           let stoppedInGroup = false;
           for (let g = 0; g < outcomes.length; g += 1) {
             if (stoppedInGroup) {

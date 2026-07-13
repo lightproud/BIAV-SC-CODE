@@ -1,9 +1,11 @@
 # Running conversations concurrently
 
 The SDK supports true parallelism at three levels: **many conversations** over
-one `SessionManager`, **read-only tools within a turn** (grouped `Promise.all`,
-writes stay serial), and **background subagents**. This doc is about the first
-level and the two knobs that make a large fan-out safe.
+one `SessionManager`, **parallel-safe tools within a turn** (grouped
+`Promise.all`: read-only tools plus foreground `Agent` calls, which are
+`parallelSafe` because each child runs its own isolated loop; writes stay
+serial), and **background subagents**. This doc is about the first level and
+the two knobs that make a large fan-out safe.
 
 ## The footgun: pull-driven iteration
 

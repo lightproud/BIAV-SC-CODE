@@ -1574,6 +1574,104 @@ describe('runAgentLoop', () => {
     expect(toolResults.map((r) => r.tool_use_id)).toEqual(['toolu_a', 'toolu_b']);
   });
 
+  // ----- child-agent serialization fix: parallelSafe joins the concurrent
+  // group (foreground Agent batches must overlap, not serialize) -----
+
+  /** Start/end probe: under concurrent execution every member STARTS before
+   *  any member ENDS; sequential execution interleaves start/end/start/end. */
+  function timingProbe(
+    name: string,
+    order: string[],
+    opts: { readOnly: boolean; parallelSafe?: boolean } = { readOnly: false },
+  ): BuiltinTool {
+    return {
+      name,
+      description: `${name} timing probe`,
+      inputSchema: { type: 'object', properties: { file_path: { type: 'string' } } },
+      readOnly: opts.readOnly,
+      ...(opts.parallelSafe !== undefined ? { parallelSafe: opts.parallelSafe } : {}),
+      async execute(input) {
+        const p = (input as { file_path: string }).file_path;
+        order.push(`start:${p}`);
+        await new Promise((r) => setTimeout(r, 10));
+        order.push(`end:${p}`);
+        return { content: `${name} ${p}` };
+      },
+    };
+  }
+
+  function twoToolBatch(nameA: string, nameB: string): RawMessageStreamEvent[] {
+    return [
+      messageStart(),
+      { type: 'content_block_start', index: 0, content_block: { type: 'tool_use', id: 'toolu_a', name: nameA, input: {} } },
+      { type: 'content_block_delta', index: 0, delta: { type: 'input_json_delta', partial_json: '{"file_path":"/a"}' } },
+      { type: 'content_block_stop', index: 0 },
+      { type: 'content_block_start', index: 1, content_block: { type: 'tool_use', id: 'toolu_b', name: nameB, input: {} } },
+      { type: 'content_block_delta', index: 1, delta: { type: 'input_json_delta', partial_json: '{"file_path":"/b"}' } },
+      { type: 'content_block_stop', index: 1 },
+      { type: 'message_delta', delta: { stop_reason: 'tool_use', stop_sequence: null }, usage: { output_tokens: 5 } },
+      { type: 'message_stop' },
+    ];
+  }
+
+  it('runs consecutive parallelSafe tools (foreground Agent batch) concurrently, results in order', async () => {
+    const transport = new MockTransport([twoToolBatch('Agent', 'Agent'), textReplyEvents('done')]);
+    const order: string[] = [];
+    const deps = makeDeps(transport, {
+      builtinTools: new Map<string, BuiltinTool>([
+        ['Agent', timingProbe('Agent', order, { readOnly: false, parallelSafe: true })],
+      ]),
+    });
+    const history: APIMessageParam[] = [{ role: 'user', content: 'go' }];
+
+    await collect(runAgentLoop(history, deps, makeConfig()));
+
+    // Both agents START before either ENDS: the execution windows overlap
+    // (the reported bug had them strictly serial: start/end/start/end).
+    expect(order).toHaveLength(4);
+    expect(order.slice(0, 2).every((s) => s.startsWith('start:'))).toBe(true);
+    expect(order.slice(2).every((s) => s.startsWith('end:'))).toBe(true);
+
+    // tool_results stay in tool_use order (API pairs by id).
+    const userTurn = history.find((m) => m.role === 'user' && Array.isArray(m.content));
+    const toolResults = userTurn!.content as ToolResultBlockParam[];
+    expect(toolResults.map((r) => r.tool_use_id)).toEqual(['toolu_a', 'toolu_b']);
+  });
+
+  it('groups a read-only tool and a parallelSafe tool into one concurrent group', async () => {
+    const transport = new MockTransport([twoToolBatch('Read', 'Agent'), textReplyEvents('done')]);
+    const order: string[] = [];
+    const deps = makeDeps(transport, {
+      builtinTools: new Map<string, BuiltinTool>([
+        ['Read', timingProbe('Read', order, { readOnly: true })],
+        ['Agent', timingProbe('Agent', order, { readOnly: false, parallelSafe: true })],
+      ]),
+    });
+    const history: APIMessageParam[] = [{ role: 'user', content: 'go' }];
+
+    await collect(runAgentLoop(history, deps, makeConfig()));
+
+    expect(order).toHaveLength(4);
+    expect(order.slice(0, 2).every((s) => s.startsWith('start:'))).toBe(true);
+    expect(order.slice(2).every((s) => s.startsWith('end:'))).toBe(true);
+  });
+
+  it('still serializes consecutive tools that are neither readOnly nor parallelSafe', async () => {
+    const transport = new MockTransport([twoToolBatch('Write', 'Write'), textReplyEvents('done')]);
+    const order: string[] = [];
+    const deps = makeDeps(transport, {
+      builtinTools: new Map<string, BuiltinTool>([
+        ['Write', timingProbe('Write', order, { readOnly: false })],
+      ]),
+    });
+    const history: APIMessageParam[] = [{ role: 'user', content: 'go' }];
+
+    await collect(runAgentLoop(history, deps, makeConfig()));
+
+    // Mutating tools keep the strict sequential contract.
+    expect(order).toEqual(['start:/a', 'end:/a', 'start:/b', 'end:/b']);
+  });
+
   // ----- finding #5: fallback retry folds the failed attempt's usage -----
 
   it('folds the failed attempt usage into totals before a fallback retry (#5)', async () => {

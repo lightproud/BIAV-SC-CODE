@@ -67,6 +67,16 @@ src/
 
 ## 当前状态
 
+**v0.53.8（2026-07-13）：前台子代理批量调用串行化修复（子代理串行化报告）**——同一 assistant
+批次内多个互不依赖的前台 `Agent` 调用被逐个 await（三个 5 秒计时子代理零重叠、启动间隔约 12 秒），
+后台模式却正常并发。根因唯一：`engine/loop.ts` 并发分组谓词只收「只读工具」，Agent `readOnly: false`
+落入串行支路；传输层信号量默认无限额、runtime 无全局锁，均排除。修复：契约新增
+`BuiltinTool.parallelSafe`（Agent 置真——每个子代理跑自己的隔离环，批内互不共享可变态），
+调度器暴露 `isParallelSafeTool`（= readOnly 或 parallelSafe）供分组用；权限门的 readOnly 判定
+（plan 放行 / default 自动批准）不放宽。前台批次现与只读组同样走 `Promise.all` 并发启动，
+tool_result 保持 tool_use 顺序，可变工具维持严格串行契约。+5 测试（引擎分组 3 + runtime 并发
+spawn 1 + 工具元数据 1）；SUBAGENTS.md / CONCURRENCY.md 补记前台批次并发契约。
+
 **v0.53.2（2026-07-13）：工具 Schema 边界校验（BPT P0，PR #665）**——azure/*（OpenAI 兼容）网关
 对缺失/非法 `input_schema` 的 tools[] 条目拒绝整个请求（`tools.N.custom.input_schema: Field required`），
 对话在生成前即死。三层修复：① `engine/loop.ts` 组装层——内置/MCP 非对象 inputSchema（缺失/null/

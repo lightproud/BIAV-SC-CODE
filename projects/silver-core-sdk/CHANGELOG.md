@@ -16,6 +16,27 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.53.8 — 2026-07-13
+
+**Foreground Agent batch serialization fix (child-agent serialization report,
+2026-07-13).** Independent foreground `Agent` calls issued in one assistant
+batch ran strictly one-after-another (three 5s timer children showed zero
+overlap, ~12s start-to-start gaps), while `run_in_background: true` overlapped
+fine — the engine's concurrent tool grouping admitted only read-only tools,
+and Agent is `readOnly: false`, so every foreground spawn fell into the
+sequential branch. Root cause was the loop's grouping predicate, not the
+transport (the request semaphore defaults to unlimited) and not the subagent
+runtime (no global lock). Fix: a new `BuiltinTool.parallelSafe` flag — set on
+Agent, whose children each run their own isolated loop — widens ONLY the
+engine's parallel grouping (`isParallelSafeTool` = readOnly OR parallelSafe);
+permission semantics (plan-mode allow, default-mode auto-approve) still key
+off `readOnly` untouched. Batched foreground agents now start together under
+one `Promise.all`, results stay in tool_use order, and mutating tools keep
+the strict sequential contract. +5 tests (engine grouping 3: Agent×2 overlap /
+mixed Read+Agent group / non-parallelSafe still serial; runtime concurrent
+spawn overlap 1; Agent tool metadata 1). Docs: SUBAGENTS.md + CONCURRENCY.md
+now state the foreground-batch concurrency contract.
+
 ## 0.53.7 — 2026-07-13
 
 **Second multi-subsystem audit batch: 5 verified fixes across subagents, MCP

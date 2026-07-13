@@ -48,6 +48,11 @@ export function createAgentTool(agentNames: string[]): BuiltinTool {
       'cache, more privileged) rather than a fresh isolated one.',
     readOnly: false,
     isFileEdit: false,
+    // Foreground Agent calls batched in one assistant turn must run
+    // concurrently (official parity: "send them in a single message with
+    // multiple tool uses so they run concurrently"). Each child runs in its
+    // own isolated loop/session, so batch-mates share no mutable state here.
+    parallelSafe: true,
     inputSchema: {
       type: 'object',
       properties: {

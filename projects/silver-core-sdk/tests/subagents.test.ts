@@ -40,11 +40,13 @@ import type {
   SessionStore,
   SpawnSubagentParams,
   StoredSession,
+  StreamRequest,
   ToolContext,
   Transport,
 } from '../src/internal/contracts.js';
 import type {
   AgentDefinition,
+  ApiKeySource,
   APIMessageParam,
   CallToolResult,
   HookInput,
@@ -328,6 +330,10 @@ describe('createAgentTool', () => {
     expect(tool.name).toBe('Agent');
     expect(tool.readOnly).toBe(false);
     expect(tool.isFileEdit).toBe(false);
+    // Batched foreground Agent calls join the engine's concurrent tool group
+    // (child-agent serialization fix): each child runs in its own isolated
+    // loop, so parallel batch-mates must overlap instead of serializing.
+    expect(tool.parallelSafe).toBe(true);
     // Official required set: subagent_type is optional (defaults to
     // general-purpose in execute()).
     expect(tool.inputSchema.required).toEqual(['description', 'prompt']);
@@ -592,6 +598,44 @@ describe('subagent runtime — foreground', () => {
     const second = h.runtime.drainUsageLedger();
     expect(second.usage.input_tokens).toBe(0);
     expect(second.cost).toBe(0);
+  });
+
+  it('two concurrent foreground spawns overlap (no runtime-level serialization)', async () => {
+    // Guards the runtime half of the child-agent serialization fix: the
+    // engine may await a batch of Agent execute()s via Promise.all, so the
+    // runtime must not hold a global lock that would re-serialize them.
+    const order: string[] = [];
+    class SlowTransport implements Transport {
+      readonly requests: StreamRequest[] = [];
+      apiKeySource(): ApiKeySource {
+        return 'user';
+      }
+      async *stream(req: StreamRequest): AsyncGenerator<RawMessageStreamEvent, void> {
+        this.requests.push(req);
+        const label = lastUserContent(req.messages).includes('alpha') ? 'alpha' : 'beta';
+        order.push(`start:${label}`);
+        await new Promise((r) => setTimeout(r, 10));
+        order.push(`end:${label}`);
+        for (const ev of textReplyEvents(`${label} done`, { model: 'claude-sonnet-4-5' })) {
+          yield ev;
+        }
+      }
+    }
+    const h = makeRuntime({ scripts: [], transport: new SlowTransport() });
+    const spawn = h.runtime.makeSpawnFn(0);
+    const [a, b] = await Promise.all([
+      spawn(baseParams({ prompt: 'alpha task' })),
+      spawn(baseParams({ prompt: 'beta task' })),
+    ]);
+
+    expect(a.isError).toBe(false);
+    expect(b.isError).toBe(false);
+    expect(a.content).toContain('alpha done');
+    expect(b.content).toContain('beta done');
+    // Both children START before either ENDS: execution windows overlap.
+    expect(order).toHaveLength(4);
+    expect(order.slice(0, 2).every((s) => s.startsWith('start:'))).toBe(true);
+    expect(order.slice(2).every((s) => s.startsWith('end:'))).toBe(true);
   });
 
   it('restricts the child tool set via agentDef.tools (Bash absent)', async () => {

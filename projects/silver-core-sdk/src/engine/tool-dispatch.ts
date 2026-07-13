@@ -165,6 +165,7 @@ function summarizeResultContent(
 
 export function createToolDispatcher(cfg: ToolDispatcherConfig): {
   isReadOnlyTool: (name: string) => boolean;
+  isParallelSafeTool: (name: string) => boolean;
   executeToolUse: (block: ToolUseBlock) => Promise<ToolExecOutcome>;
 } {
   const { deps, sessionId, baseHookFields, signal, recordTool, onToolRecord } = cfg;
@@ -179,6 +180,13 @@ export function createToolDispatcher(cfg: ToolDispatcherConfig): {
       .allTools()
       .some((t) => t.qualifiedName === name && t.annotations?.readOnlyHint === true);
   };
+
+  /** A tool may join a concurrent batch group if it is read-only OR a builtin
+   * explicitly marked parallelSafe (Agent: children run in isolated contexts,
+   * so batched foreground spawns must overlap, not serialize). Grouping only —
+   * the permission gate's readOnly flag is NOT widened by this. */
+  const isParallelSafeTool = (name: string): boolean =>
+    isReadOnlyTool(name) || deps.builtinTools.get(name)?.parallelSafe === true;
 
   /** S3 wrapper: time the whole dispatch and emit one structured record per
    *  block, including error/deny/stop outcomes. An abort still records (with
@@ -435,5 +443,5 @@ export function createToolDispatcher(cfg: ToolDispatcherConfig): {
     return { result, stop };
   }
 
-  return { isReadOnlyTool, executeToolUse };
+  return { isReadOnlyTool, isParallelSafeTool, executeToolUse };
 }
