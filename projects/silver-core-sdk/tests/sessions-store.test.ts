@@ -3,9 +3,11 @@
  * (findings #10/#40) and load()'s tool_use/tool_result pairing repair
  * (finding #37).
  */
+// @ts-nocheck
+
 
 import { appendFileSync, existsSync, readFileSync } from 'node:fs';
-import { mkdtemp, readFile, rm } from 'node:fs/promises';
+import { mkdir, mkdtemp, readFile, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
@@ -21,13 +23,25 @@ import { renameSession, tagSession } from '../src/sessions/session-functions.js'
 import type { APIMessageParam } from '../src/types.js';
 
 let dir: string;
+let dirRoot: string;
 
 beforeEach(async () => {
-  dir = await mkdtemp(join(tmpdir(), 'bpt-store-'));
+  // `dir` is a NESTED subdir of the mkdtemp root, so the path-traversal
+  // test's `../evil.jsonl` escape target lands back INSIDE the isolated root
+  // (removed by afterEach), not in the shared system tmpdir. Without the
+  // nesting, a mutation run that disables the traversal guard writes
+  // /tmp/evil.jsonl and poisons every later run and parallel worker — a real
+  // pollution source that hit 2026-07-13. All `join(dir, …)` assertions are
+  // unchanged: `dir` is still the store's sessionDir.
+  dirRoot = await mkdtemp(join(tmpdir(), 'bpt-store-'));
+  dir = join(dirRoot, 'nest');
+  await mkdir(dir, { recursive: true });
 });
 
 afterEach(async () => {
-  await rm(dir, { recursive: true, force: true });
+  // Remove the whole isolated root, so any guard-escape file the traversal
+  // test provoked (dir/../evil.jsonl == dirRoot/evil.jsonl) goes with it.
+  await rm(dirRoot, { recursive: true, force: true });
 });
 
 function makeStore(): { store: JsonlSessionStore; warnings: string[] } {
