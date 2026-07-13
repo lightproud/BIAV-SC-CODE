@@ -39,6 +39,18 @@
  * PROCESS-EXIT SAFETY: pooled keep-alive sockets are unref()'d while idle and
  * ref()'d again on reuse, so a warm pool never keeps a finished process
  * alive (the classic node Agent keep-alive hang).
+ *
+ * BOUNDED IDLE LIFETIME (v0.53.3, BPT stability): a free socket is destroyed
+ * after FREE_SOCKET_TTL_MS of pool idleness instead of being held "until the
+ * server closes it". Middleboxes (Azure LB, ALB, nginx, corporate proxies)
+ * drop idle flows SILENTLY — no FIN/RST ever arrives — so an unbounded pool
+ * accumulates zombie sockets that look alive to node; a request written onto
+ * one hangs for the full request-phase timeout (default 600s), and a retry
+ * can pick the NEXT zombie. Concurrent conversations multiply the exposure
+ * (more sockets idling between turns). The TTL (55s) sits under the common
+ * 60s middlebox idle floor while still covering the multi-second tool-run
+ * gaps this adapter exists for; an expired socket just costs one fresh
+ * TCP+TLS handshake (~100-300ms, TLS session resumption still applies).
  */
 
 import http from 'node:http';
@@ -50,20 +62,49 @@ import type { ProviderConfig } from '../types.js';
 /** The provider.fetch seam shape (kept structurally identical to types.ts). */
 export type FetchLike = (input: string | URL, init?: RequestInit) => Promise<Response>;
 
-/** Idle keep-alive sockets must not hold the event loop open. */
-function unrefOnFree<T extends http.Agent | https.Agent>(agent: T): T {
+/**
+ * Default free-socket TTL: just under the common 60s middlebox idle floor
+ * (ALB 60s, nginx keepalive_timeout 75s, Azure LB 240s), far above the ~4s
+ * undici recycle whose handshake re-pay this adapter was built to avoid.
+ */
+export const FREE_SOCKET_TTL_MS = 55_000;
+
+/**
+ * Idle keep-alive sockets must not hold the event loop open (unref while
+ * pooled, ref on reuse) and must not outlive silent middlebox idle drops
+ * (destroy after ttlMs of pool idleness; the TTL timer is itself unref'd).
+ */
+function manageFreeSockets<T extends http.Agent | https.Agent>(agent: T, ttlMs: number): T {
   const anyAgent = agent as unknown as {
     keepSocketAlive(socket: import('node:net').Socket): boolean;
     reuseSocket(socket: import('node:net').Socket, req: http.ClientRequest): void;
+  };
+  const ttlTimers = new WeakMap<import('node:net').Socket, ReturnType<typeof setTimeout>>();
+  const clearTtl = (socket: import('node:net').Socket): void => {
+    const timer = ttlTimers.get(socket);
+    if (timer !== undefined) {
+      clearTimeout(timer);
+      ttlTimers.delete(socket);
+    }
   };
   const origKeep = anyAgent.keepSocketAlive.bind(anyAgent);
   const origReuse = anyAgent.reuseSocket.bind(anyAgent);
   anyAgent.keepSocketAlive = (socket) => {
     const keep = origKeep(socket);
-    if (keep) socket.unref();
+    if (keep) {
+      socket.unref();
+      clearTtl(socket); // re-arm, never stack
+      const timer = setTimeout(() => {
+        ttlTimers.delete(socket);
+        socket.destroy();
+      }, ttlMs);
+      timer.unref();
+      ttlTimers.set(socket, timer);
+    }
     return keep;
   };
   anyAgent.reuseSocket = (socket, req) => {
+    clearTtl(socket);
     socket.ref();
     origReuse(socket, req);
   };
@@ -115,11 +156,16 @@ export type NodeFetch = FetchLike & {
   readonly agents: { http: http.Agent; https: https.Agent };
 };
 
-export function createNodeFetch(): NodeFetch {
-  const httpsAgent = unrefOnFree(
-    new https.Agent({ keepAlive: true, maxCachedSessions: 100 }),
+export function createNodeFetch(opts: { freeSocketTtlMs?: number } = {}): NodeFetch {
+  const ttlMs = opts.freeSocketTtlMs ?? FREE_SOCKET_TTL_MS;
+  const httpsAgent = manageFreeSockets(
+    new https.Agent({ keepAlive: true, maxCachedSessions: 100, scheduling: 'lifo' }),
+    ttlMs,
   );
-  const httpAgent = unrefOnFree(new http.Agent({ keepAlive: true }));
+  const httpAgent = manageFreeSockets(
+    new http.Agent({ keepAlive: true, scheduling: 'lifo' }),
+    ttlMs,
+  );
 
   const nodeFetch = function nodeFetch(input: string | URL, init: RequestInit = {}): Promise<Response> {
     return new Promise<Response>((resolve, reject) => {

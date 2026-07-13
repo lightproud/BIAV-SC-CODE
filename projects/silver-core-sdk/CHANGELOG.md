@@ -16,6 +16,30 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.53.3 — 2026-07-13
+
+**Free-socket idle TTL: keep-alive pool no longer accumulates zombie
+sockets (BPT stability, 2026-07-13).** Symptom: turns hang with NO output
+— worst with several concurrent conversations — on gateway deployments
+(azure/* and friends). Root cause: the default node HTTP client (0.45.0)
+held pooled sockets "until the SERVER closes it", but middleboxes
+(Azure LB, ALB, nginx, corporate proxies) drop idle flows SILENTLY — no
+FIN/RST — so the pool filled with sockets that look alive to node.
+A request written onto one stalls for the full request-phase timeout
+(default 600s), and each retry can pick the NEXT zombie; concurrency
+multiplies exposure (more sockets idling between turns). The pre-0.45
+undici client recycled pooled connections after ~4s idle, which had
+masked the entire class. Fix: a free socket is destroyed after 55s of
+pool idleness (`FREE_SOCKET_TTL_MS`, under the common 60s middlebox idle
+floor; timer unref'd, cleared + re-armed on reuse) — an expired socket
+costs one fresh TCP+TLS handshake (~100-300ms, TLS session resumption
+intact), never a 600s stall. Agents also pin `scheduling: 'lifo'`
+(node's default, now explicit: most-recently-used socket first minimizes
+zombie-pick odds inside the TTL window). `createNodeFetch()` accepts
+`{ freeSocketTtlMs }` for tests/tuning. Consumer escape hatches
+unchanged (`provider.httpClient: 'fetch'` / `BPT_HTTP_CLIENT=fetch`).
++2 tests (TTL destroy + reuse re-arm).
+
 ## 0.53.2 — 2026-07-13
 
 **Tool schema boundary validation (BPT P0, 2026-07-13).** Symptom: on
