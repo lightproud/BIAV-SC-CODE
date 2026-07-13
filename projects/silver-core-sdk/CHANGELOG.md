@@ -16,6 +16,30 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.53.1 — 2026-07-13
+
+**Corpus-sync re-sync to upstream ccVersion 2.1.205.** The weekly
+claude-code-system-prompts refresh advanced the archived upstream prompts
+(2.1.129 → 2.1.205) and drifted two faithfully-reproduced surfaces:
+- **Background-agent state classifier** (`src/generators/prompts.ts`): eight
+  example/schema lines were reworded upstream. Re-synced verbatim — six
+  `detail` example strings (`dedicated column beats a composite index…`,
+  `localhost:4000 restarted on local CCR`, `venn.png + scripts/venn.R`,
+  `~16K/min notif drop confirmed`, `option B: reuses the table…`, `added at
+  the logging call site`), the OUTPUT schema (`<one line, ≤64 chars>`), and
+  the `detail` guidance clause (`…phone lock screen and as the one-line status
+  column in a session list…`). Note: the `generators.test.ts` guard is a
+  first-60-char substring check, so only two of these tripped it; all eight
+  were still drift and are now fixed.
+- **Bash sandbox note** (`src/tools/descriptions.ts`): upstream deleted the
+  standalone `-user-permission-prompt` archive fragment. The SDK keeps the
+  sentence "This will prompt the user for permission" as its own framing (the
+  escape hatch does gate on a prompt here) but reclassified it `faithful:
+  false` / `slug: ''` — never claim verbatim provenance for text upstream
+  dropped. Assembled sandbox-note output is byte-unchanged.
+
+No behavior change beyond the reproduced prompt text. Full vitest green.
+
 ## 0.53.0 — 2026-07-13
 
 **Persist message uuids at write time (keeper ruling 2026-07-13).** The
