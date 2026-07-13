@@ -1,10 +1,25 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-13T12:01:16.690353+00:00",
+  "collected_at": "2026-07-13T14:54:41.117707+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 13,
+  "item_count": 12,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-07-13T13:50:31+00:00",
+      "lang": "schinese",
+      "title": "[正面] 美术很棒，剧情的话，前面还不错，后面我还没过不评价",
+      "summary": "美术很棒，剧情的话，前面还不错，后面我还没过不评价",
+      "url": "https://steamcommunity.com/profiles/76561199496489849/recommended/3052450",
+      "author": "76561199496489849",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "美术很棒，剧情的话，前面还不错，后面我还没过不评价",
+      "timestamp_created": 1783950631,
+      "playtime_forever": 2274
+    },
     {
       "source": "steam",
       "time": "2026-07-13T10:07:31+00:00",
@@ -18,7 +33,7 @@
       "voted_up": true,
       "review": "ts game fye bro",
       "timestamp_created": 1783937251,
-      "playtime_forever": 638
+      "playtime_forever": 668
     },
     {
       "source": "steam",
@@ -33,7 +48,7 @@
       "voted_up": true,
       "review": "Gameplay is a mix of Slay the Spire with a really good cosmic horror visual novel. There is a gatcha system but the devs are very very generous with free pulls and currency even after the normal newbie stage of the game. Characters are extremely well designed. The story is really interesting. But the combat is were the real meat and potatoes are at. It's slay the spire but your deck is made up of the cards of your teams 4 members so you have control over it massively. Instead of elements like other games, each character belong to one of 4 factions and your team can be made up of up to 2 factions thou you get a bonus for pure teams. And each faction has it's own mechanic leading to a lot of build variety and experimenting with team comps ever thou I hate doing that in other games. Trust me this game is amazing!",
       "timestamp_created": 1783935029,
-      "playtime_forever": 2310
+      "playtime_forever": 2363
     },
     {
       "source": "steam",
@@ -63,7 +78,7 @@
       "voted_up": true,
       "review": "PLAY IT RIGHT NOWWWW!!!!!!!",
       "timestamp_created": 1783922201,
-      "playtime_forever": 284
+      "playtime_forever": 298
     },
     {
       "source": "steam",
@@ -108,7 +123,7 @@
       "voted_up": true,
       "review": "玩过的最好玩的二游，没有之一",
       "timestamp_created": 1783915498,
-      "playtime_forever": 4883
+      "playtime_forever": 4940
     },
     {
       "source": "steam",
@@ -168,37 +183,7 @@
       "voted_up": true,
       "review": "优秀的音乐与美术，引人入胜的剧情。哦你本该是二游之光",
       "timestamp_created": 1783871994,
-      "playtime_forever": 10306
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-12T13:39:16+00:00",
-      "lang": "brazilian",
-      "title": "[正面] Tema Lovecraft Amo.",
-      "summary": "Tema Lovecraft Amo.",
-      "url": "https://steamcommunity.com/profiles/76561198110099514/recommended/3052450",
-      "author": "76561198110099514",
-      "engagement": 0,
-      "language": "brazilian",
-      "voted_up": true,
-      "review": "Tema Lovecraft Amo.",
-      "timestamp_created": 1783863556,
-      "playtime_forever": 1722
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-12T13:16:53+00:00",
-      "lang": "schinese",
-      "title": "[正面] 好玩美术风格很独特也很不错但是我觉得文案前期剧情有点薄弱了",
-      "summary": "好玩美术风格很独特也很不错但是我觉得文案前期剧情有点薄弱了",
-      "url": "https://steamcommunity.com/profiles/76561199888887726/recommended/3052450",
-      "author": "76561199888887726",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "好玩美术风格很独特也很不错但是我觉得文案前期剧情有点薄弱了",
-      "timestamp_created": 1783862213,
-      "playtime_forever": 11909
+      "playtime_forever": 10319
     }
   ]
 }

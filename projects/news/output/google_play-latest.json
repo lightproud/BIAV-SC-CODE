@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-13T12:01:16.690353+00:00",
+  "collected_at": "2026-07-13T14:54:41.117707+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 117,
+  "item_count": 116,
   "items": [
     {
       "source": "google_play",
@@ -273,16 +273,6 @@
       "summary": "awesomesauce game. I lololololovee my baby boo Pickman and my handsome, incredible, talented king captain Elton!!! I'm already @ keeper lvl 50 with only 31 days of playtime (started playing during the 1st anniv. and have only been able to play again recently). Absolutely adore this game. As an f2p 4lifer, this is defo on the no. 1 spot in my games list.",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-8d5d8f28-e7f0-451e-b8d0-d9f1d989001f",
       "author": "Ash Gomez (Ace)",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-07-10T16:43:15",
-      "lang": "en",
-      "title": "[Google Play 中评] ★3 The conversations between phases of boss",
-      "summary": "The conversations between phases of bosses in story are annoying, add a skip for that please, and also add that in replay too, thanks. And please have guide for teams.",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-07289f29-a32f-4c44-9d7c-e8928dc6e1af",
-      "author": "Nauth",
       "engagement": 0
     },
     {
@@ -1067,6 +1057,16 @@
     },
     {
       "source": "google_play",
+      "time": "2026-07-12T14:02:25",
+      "lang": "ja",
+      "title": "[Google Play 好评] ★5 本当に面白いゲーム",
+      "summary": "本当に面白いゲーム",
+      "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-14f07d99-bcaa-47df-a93e-aa3ae782d519",
+      "author": "MASATO",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
       "time": "2026-07-11T12:05:22",
       "lang": "ja",
       "title": "[Google Play 好评] ★5 キャラクターがすごくいいです！",
@@ -1163,16 +1163,6 @@
       "summary": "難易度は難しめですが、シナリオが丁寧で石配布も多く無凸ならキャラコンプも楽です。",
       "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-65679f4b-0745-4272-807d-56476680d5e7",
       "author": "おけ",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-06-13T14:49:21",
-      "lang": "ja",
-      "title": "[Google Play 好评] ★5 いいよ",
-      "summary": "いいよ",
-      "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-247123f1-a289-422e-a210-bc2de6928d93",
-      "author": "anion",
       "engagement": 0
     }
   ]

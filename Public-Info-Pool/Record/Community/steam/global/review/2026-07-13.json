@@ -1,8 +1,8 @@
 {
   "date": "2026-07-13",
-  "archived_at": "2026-07-13T12:02:14.509665+00:00",
+  "archived_at": "2026-07-13T14:55:34.340025+00:00",
   "source": "steam",
-  "item_count": 10,
+  "item_count": 11,
   "items": [
     {
       "title": "[负面] скам",
@@ -238,6 +238,30 @@
         "playtime_forever": 5849,
         "votes_up": 0,
         "timestamp_created": 1783934080
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 美术很棒，剧情的话，前面还不错，后面我还没过不评价",
+      "summary": "美术很棒，剧情的话，前面还不错，后面我还没过不评价",
+      "source": "steam_review",
+      "time": "2026-07-13T13:50:31+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199496489849/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199496489849",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 2274,
+        "votes_up": 0,
+        "timestamp_created": 1783950631
       },
       "region": "global",
       "archive_subtype": "review",
