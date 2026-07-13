@@ -1,8 +1,8 @@
 {
   "date": "2026-07-14",
-  "archived_at": "2026-07-13T19:23:46.399471+00:00",
+  "archived_at": "2026-07-13T21:57:30.638774+00:00",
   "source": "steam",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "title": "[负面] I like this game so far but it just keeps crashing...",
@@ -22,6 +22,30 @@
         "playtime_forever": 0,
         "votes_up": 0,
         "timestamp_created": 1783959970
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Хорошая гача. Что-то включил и залип на весь день....",
+      "summary": "Хорошая гача. Что-то включил и залип на весь день. Не знаю, как тут по мете и прочему, но сюжет хороший, за первый день выбил ♥♥♥♥♥ лег, теперь просто кайфовать, качаться. Спасибо разрабам, надеюсь поработают над русским языком.",
+      "source": "steam_review",
+      "time": "2026-07-13T20:26:27+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198285192245/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198285192245",
+      "tags": [
+        "russian"
+      ],
+      "language": "russian",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 494,
+        "votes_up": 0,
+        "timestamp_created": 1783974387
       },
       "region": "global",
       "archive_subtype": "review",
