@@ -16,6 +16,22 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.53.0 — 2026-07-13
+
+**Persist message uuids at write time (keeper ruling 2026-07-13).** The
+property-fuzz campaign surfaced that user/assistant transcript records
+carried no identity: `getSessionMessages` minted RANDOM uuids on every
+read, so two reads of the same file disagreed and anything keyed on
+message uuid (fork reconciliation, external consumers) silently
+mismatched. Now every user/assistant record is written WITH a uuid, and
+the streamed SDKMessage and the persisted record share ONE identity
+(the yield-time uuid is threaded into the persist call). Fork copies
+mint fresh identities (fork semantics). Backward tolerant: legacy
+records without a uuid still read fine - the read path keeps its
+mint-on-miss fallback, so old transcripts stay non-idempotent (only
+newly written turns gain stable identity). Session JSONL stays
+append-only; no schema version change. +5 tests.
+
 ## 0.52.1 — 2026-07-13
 
 **Dev-only: overnight quality-campaign harness (shipped runtime unchanged).**

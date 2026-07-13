@@ -33,6 +33,7 @@
 | T34 | 定时报告推送方式（Discord Bot / 邮件）：日报定时现已停用、报告会话内按需生成，本账仅在**恢复定时报告**时激活再议推送通道 | 观察 | T30 第 6 条守密人 2026-07-12 裁定「转正式挂账」；`memory/archive/pending-discussions.md` 日报流程节 | 开 |
 | T37 | **news 下半场推送形态待裁**：归档已稳，定期以何种形态推送到团队（黑池侧消费面）——稳态期唯一开放议题；与 T34（推送通道，仅恢复定时报告时激活）相邻不重合：T37 议「什么形态的内容产品」，T34 议「走哪条通道送达」。**形态提案已出**（守密人 2026-07-12「先出形态提案再裁」）：形态 × 通道 × 节拍三轴矩阵 + 五组合案（推荐甲案 = 周报挂周检档落 Resource/，零新件），见 `Public-Info-Pool/Resource/proposal/news-push-format-20260712.md`，待守密人过目裁定 | 裁定 | 守密人 2026-07-12「稳态维护期」裁定条③ + 同日「先出形态提案再裁」口谕 | 开 |
 | T38 | **判卷侧尾段挂起（守密人 2026-07-12 裁定「暂不充值、挂账不着急」）**：三项均阻塞于 Anthropic API 账户充值恢复，充值好后一并处理——① mem-03/dc-05 judge 结构化输出偶发失败「深挖一单」（收 `judgeDiag` 定位真因，属判卷官模型行为、无钥不可复现）；② dc-03「半截话作答」dc-语义裁定后重跑证分（引擎忠实复刻官方 E3 vs rubric 期待续写，改 rubric 属基线重置专权）；③ 升格提案 = runEvals 出题期强制标 `assert_kind: mechanical\|subjective` + 机械项禁入判卷轮（踩坑 #51 防复发，弱准则升工具层硬门禁）。**不着急**，无充值前无动作。 | 预算 | `memory/project-status.md` self-improve #7 条 + 无钥替代条 + `memory/lessons-learned.md` #51 | 开 |
+| T39 | **openai.ts 变异歼灭专场（守密人 2026-07-13 AskUserQuestion 裁定「派专场」）**：transport 变异分最大的洞——62.81%（251 存活 + 109 无覆盖，占全模块存活六成），黑池经 idealab 网关走的正是 openai-chat 协议臂；打法参照 permissions 轮（无覆盖段补测 + 存活簇分诊 + 等价论证留档），目标压到 85%+；作下一个通宵批或空档期主线 | 预算 | 通宵质量攻坚战报 `Public-Info-Pool/Resource/repo-engineering/silver-core-sdk-overnight-quality-campaign-20260713.md` + 本会话 AskUserQuestion 裁定 | 开 |
 
 ## 已清（销案引）
 
