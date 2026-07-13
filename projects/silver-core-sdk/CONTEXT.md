@@ -67,6 +67,16 @@ src/
 
 ## 当前状态
 
+**v0.53.2（2026-07-13）：工具 Schema 边界校验（BPT P0，PR #665）**——azure/*（OpenAI 兼容）网关
+对缺失/非法 `input_schema` 的 tools[] 条目拒绝整个请求（`tools.N.custom.input_schema: Field required`），
+对话在生成前即死。三层修复：① `engine/loop.ts` 组装层——内置/MCP 非对象 inputSchema（缺失/null/
+数组/原始值）归一化为空对象 Schema + 带工具名 debug 诊断，单个坏 MCP 工具不再拖垮请求；
+② serverTools 层——`type:'custom'`（或空 type）条目诊断后跳过、绝不上线缆，跳过条目不再抑制同名
+内置工具，原生 typed 条目（memory_20250818）字节直通；③ `transport/openai.ts` 末道防线——
+`encodeOpenAIRequest()` 只放行 `input_schema` 为非数组对象的工具，合法工具翻译字节不变。
++10 测试（loop 归一化 6 + 编码器过滤 4），全量 2144 绿 + 2 skipped。0.53.1 号被同日 #667
+（corpus-sync 对齐上游 2.1.205）占用，本修复按台账纪律编 0.53.2。
+
 **0.3x→0.52 消费方迁移战役（2026-07-12 通宵批，docs/tests/scripts-only、零 src 改动不 bump）**——
 黑池 BPT 明日将把 pin 从 0.3x 线拉到 0.52，本批把升级要踩的坑先趟完：① 旧消费面冻结
 `tests/fixtures/legacy-0-3x-surface.json`（0.30.0=8c709f068 / 0.39.0=cf67a6e56 双端点，

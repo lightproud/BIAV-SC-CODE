@@ -199,6 +199,15 @@
 > 银芯→黑池单向输出物，与 §1.1-HC 防火墙同向，非 BPT 产品内部开发。
 
 - **动手前必读**：`projects/silver-core-sdk/CONTEXT.md`（会话上下文 + 当前 milestone）
+- **v0.53.2（2026-07-13，BPT P0《工具 Schema 边界校验与协议安全》，PR #665）**：修复 azure/*（OpenAI
+  Chat Completions 兼容）网关整请求被拒（`tools.N.custom.input_schema: Field required`——单个缺失/非法
+  `input_schema` 的工具条目令整段对话无法开始）。三层收口：① 组装层（`engine/loop.ts`）内置/MCP
+  非对象 Schema（缺失/null/数组/原始值）归一化为 `{type:'object',properties:{}}` + 带工具名 debug 诊断；
+  ② `serverTools` 中 `type:'custom'`（或空 type）条目记诊断跳过、不再抑制同名内置工具，Anthropic 原生
+  typed 条目（`memory_20250818`）直通不变；③ OpenAI 传输层 `encodeOpenAIRequest()` 末道过滤只放行
+  非数组对象 Schema。+10 测试，全量 **2144 绿 + 2 skipped**；tarball `silver-core-sdk-0.53.2.tgz`
+  （807,371 B，sha1 `223aaf8242b020572954d0810e82d45e86a8bc86`）已干净目录装机 + 导入冒烟。
+  版本 0.53.1→0.53.2（0.53.1 已被同日 #667 提示词对齐批占用，按台账纪律重编号）。
 - **0.3x→0.52 消费方迁移战役（2026-07-12 通宵批，为黑池次日 pin 升级预趟坑；docs/tests/scripts-only 零 src 改动）**：
   编译器级冻结双端点旧消费面（fixture `tests/fixtures/legacy-0-3x-surface.json`：0.30.0/0.39.0 全导出 + Options 字段）——
   结论 **0.39.0 pin 零缺失、0.30.0 pin 仅缺 `harnessPromptVariant`（0.33.0 移除）**，导出面纯增量；
