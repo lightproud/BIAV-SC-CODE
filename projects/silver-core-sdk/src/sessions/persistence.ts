@@ -47,8 +47,8 @@ export type SessionPersistenceConfig = {
 };
 
 export type SessionPersistence = {
-  persistParam(sessionId: string, m: APIMessageParam): void;
-  persistAssistant(sessionId: string, content: ContentBlock[]): void;
+  persistParam(sessionId: string, m: APIMessageParam, uuid?: string): void;
+  persistAssistant(sessionId: string, content: ContentBlock[], uuid?: string): void;
   persistPendingTurn(sessionId: string, pendingUuid: string, turnRef: string): void;
   persistTurnComplete(sessionId: string, pendingUuid: string): void;
   resolveSession(): Promise<ResolvedSession>;
@@ -59,10 +59,17 @@ export function createSessionPersistence(
 ): SessionPersistence {
   const { store, persist, options, cwd, sessionGitBranch, debug } = cfg;
 
-  function persistParam(sessionId: string, m: APIMessageParam): void {
+  function persistParam(sessionId: string, m: APIMessageParam, uuid?: string): void {
     if (!persist) return;
     store.append(sessionId, {
       type: m.role,
+      // Persist a STABLE message identity (keeper ruling 2026-07-13): when the
+      // caller already minted a uuid for the streamed SDKMessage, the record
+      // carries THAT uuid, so the stream view and every later
+      // getSessionMessages read agree. Records written before this ruling
+      // carry none - the read path mints a fallback for those (legacy
+      // tolerance), which is why the field stays optional there.
+      uuid: uuid ?? randomUUID(),
       timestamp: new Date().toISOString(),
       message: { role: m.role, content: m.content },
     });
@@ -76,7 +83,7 @@ export function createSessionPersistence(
    * message is skipped, so the persisted transcript never carries a
    * {role:'assistant',content:[]} turn the API would 400 on resume.
    */
-  function persistAssistant(sessionId: string, content: ContentBlock[]): void {
+  function persistAssistant(sessionId: string, content: ContentBlock[], uuid?: string): void {
     if (!persist) return;
     const filtered = content.filter((b) =>
       b.type === 'text' ? b.text.length > 0 : true,
@@ -84,6 +91,7 @@ export function createSessionPersistence(
     if (filtered.length === 0) return;
     store.append(sessionId, {
       type: 'assistant',
+      uuid: uuid ?? randomUUID(),
       timestamp: new Date().toISOString(),
       message: { role: 'assistant', content: filtered },
     });
@@ -168,7 +176,14 @@ export function createSessionPersistence(
               ...(sessionGitBranch !== undefined ? { gitBranch: sessionGitBranch } : {}),
             });
             for (const m of stored.messages) {
-              store.append(newId, { type: m.role, message: m });
+              // Fork copies mint FRESH identities (fork semantics - new ids,
+              // consistently new): the source ids are not carried over.
+              store.append(newId, {
+                type: m.role,
+                uuid: randomUUID(),
+                timestamp: new Date().toISOString(),
+                message: m,
+              });
             }
           }
           return {

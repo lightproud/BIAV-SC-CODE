@@ -1072,10 +1072,13 @@ export function query(args: {
             // Assistant entries are persisted at their own yield time; only the
             // engine-appended tool_result user turns need surfacing here.
             if (entry !== undefined && entry.role === 'user') {
-              persistParam(sess.sessionId, entry);
+              // One identity for the streamed message AND the persisted record
+              // (keeper ruling 2026-07-13: message uuids persist at write time).
+              const entryUuid = randomUUID();
+              persistParam(sess.sessionId, entry, entryUuid);
               yield {
                 type: 'user',
-                uuid: randomUUID(),
+                uuid: entryUuid,
                 session_id: sess.sessionId,
                 message: { role: 'user', content: entry.content },
                 parent_tool_use_id: null,
@@ -1114,7 +1117,7 @@ export function query(args: {
             yield* drainMirror();
             yield* drainObs();
             if (msg.type === 'assistant') {
-              persistAssistant(sess.sessionId, msg.message.content);
+              persistAssistant(sess.sessionId, msg.message.content, msg.uuid);
               yield msg;
             } else if (msg.type === 'result') {
               if (msg.is_error === true) {
@@ -1463,7 +1466,7 @@ export function query(args: {
         const userParam: APIMessageParam = { role: 'user', content: message.content };
         history.push(userParam);
         requestView.messages.push(userParam);
-        persistParam(sess.sessionId, userParam);
+        persistParam(sess.sessionId, userParam, userUuid);
         yield echoed;
 
         // 4. Enforce session-wide limits BEFORE the turn, and arm the engine
