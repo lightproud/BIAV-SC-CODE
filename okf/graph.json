@@ -2,7 +2,7 @@
   "generated": "2026-07-13",
   "stats": {
     "nodes": 351,
-    "edges": 404
+    "edges": 406
   },
   "nodes": [
     {
@@ -4327,6 +4327,12 @@
       "rel_type": "mention"
     },
     {
+      "source": "/community/community-note-com.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
       "source": "/community/community-pixiv.md",
       "target": "/characters/130226.md",
       "rel": "提及:沙耶",
@@ -5674,6 +5680,12 @@
       "source": "/sources/bilibili.md",
       "target": "/characters/15602.md",
       "rel": "提及:熔朵",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/note_com.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:沙耶",
       "rel_type": "mention"
     },
     {

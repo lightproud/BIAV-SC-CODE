@@ -8,7 +8,7 @@
   },
   "stats": {
     "concepts": 351,
-    "edges": 404,
+    "edges": 406,
     "terms": 6300,
     "by_type": {
       "character": 72,
@@ -295,7 +295,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 33
+      "degree": 35
     },
     "/characters/130375.md": {
       "type": "character",
@@ -1380,7 +1380,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 3
     },
     "/community/community-pixiv.md": {
       "type": "dataset",
@@ -4241,7 +4241,7 @@
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 2844 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 2845 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -4269,7 +4269,7 @@
     "/sources/google_play.md": {
       "type": "dataset",
       "title": "google_play 社区数据源",
-      "description": "google_play 平台采集档案，全量 2237 条，健康度 active。",
+      "description": "google_play 平台采集档案，全量 2238 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/google_play/global/",
       "tags": [
         "data_layer:full_archive",
@@ -4283,7 +4283,7 @@
     "/sources/note_com.md": {
       "type": "dataset",
       "title": "note_com 社区数据源",
-      "description": "note_com 平台采集档案，全量 25 条，健康度 active。",
+      "description": "note_com 平台采集档案，全量 26 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/note_com/",
       "tags": [
         "data_layer:full_archive",
@@ -4292,7 +4292,7 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 3
     },
     "/sources/official.md": {
       "type": "dataset",
@@ -4325,7 +4325,7 @@
     "/sources/reddit.md": {
       "type": "dataset",
       "title": "reddit 社区数据源",
-      "description": "reddit 平台采集档案，全量 3596 条，健康度 active。",
+      "description": "reddit 平台采集档案，全量 3599 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/reddit/",
       "tags": [
         "data_layer:full_archive",
@@ -4423,7 +4423,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 9976 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 9990 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -4437,7 +4437,7 @@
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 9972 条，健康度 active。",
+      "description": "weixin 平台采集档案，全量 9992 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -4451,7 +4451,7 @@
     "/sources/youtube.md": {
       "type": "dataset",
       "title": "youtube 社区数据源",
-      "description": "youtube 平台采集档案，全量 2838 条，健康度 active。",
+      "description": "youtube 平台采集档案，全量 2839 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -5060,6 +5060,11 @@
         "mention"
       ],
       [
+        "/community/community-note-com.md",
+        "提及:沙耶",
+        "mention"
+      ],
+      [
         "/community/community-pixiv.md",
         "提及:沙耶",
         "mention"
@@ -5176,6 +5181,11 @@
       ],
       [
         "/sources/bilibili.md",
+        "提及:沙耶",
+        "mention"
+      ],
+      [
+        "/sources/note_com.md",
         "提及:沙耶",
         "mention"
       ],
@@ -7320,6 +7330,11 @@
     ],
     "/community/community-note-com.md": [
       [
+        "/characters/130226.md",
+        "提及:沙耶",
+        "mention"
+      ],
+      [
         "/community/community-index.md",
         "聚合于",
         "cross"
@@ -9037,6 +9052,11 @@
       ]
     ],
     "/sources/note_com.md": [
+      [
+        "/characters/130226.md",
+        "提及:沙耶",
+        "mention"
+      ],
       [
         "/community/community-note-com.md",
         "同平台",
