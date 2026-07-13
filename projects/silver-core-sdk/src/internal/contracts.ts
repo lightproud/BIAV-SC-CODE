@@ -268,6 +268,14 @@ export interface BuiltinTool {
   readOnly: boolean;
   /** Mutates files; auto-approved under acceptEdits. */
   isFileEdit?: boolean;
+  /**
+   * Safe to run concurrently with the other tools of the same assistant
+   * batch even though it is NOT readOnly — its side effects are contained in
+   * an independent context (e.g. Agent: each subagent runs its own isolated
+   * loop). Feeds ONLY the engine's parallel grouping; permission semantics
+   * (plan-mode allow, default-mode auto-approve) still key off readOnly.
+   */
+  parallelSafe?: boolean;
   execute(
     input: Record<string, unknown>,
     ctx: ToolContext,

@@ -92,6 +92,12 @@ Pick the mode by the shape of the work — this mirrors how Claude Code delegate
 | Long-running work; don't block the main turn | **background** (depth-0 only) | `run_in_background: true`; the result arrives on a later turn |
 | Several agents that MUTATE files in parallel without clobbering each other | **worktree** | `isolation: 'worktree'` — each gets a temporary git worktree, auto-removed if left unchanged |
 
+Foreground `Agent` calls batched in one assistant turn run **concurrently**:
+the tool is `parallelSafe` (each child runs its own isolated loop), so the
+engine groups the batch under one `Promise.all` like read-only tools instead
+of awaiting one child at a time. Background exists to not block the *turn* —
+it is not a prerequisite for parallelism within the batch.
+
 Delegation discipline (reproduced from the official main-loop prompt — have your
 host follow it):
 
