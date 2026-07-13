@@ -1,7 +1,7 @@
 <!--
 name: 'Skill: Plugin eval authoring interview'
 description: Guided interview for creating Claude plugin eval suites under evals/ with gated inputs, graders, calibration, and cost checks
-ccVersion: 2.1.198
+ccVersion: 2.1.203
 variables:
   - PLUGIN_PATH
   - SUGGESTED_CASE_SLUG_NOTE
@@ -75,3 +75,5 @@ Set `timeout_seconds` on every case (skills that do real work need more than the
 | `tool_order` | `before`, `after` | (none) |
 
 Defaults: `target`/`focus` = `last_message`, `weight` = 1, `match` = `contains`, `tool_used.min` = 1. For a "must NOT call tool X" check, set `min: 0`, `max: 0`, AND `arm: both` (omitting `min` leaves it at 1; omitting `arm` on `tool: Skill` makes it display-only under ablation).
+
+`files` (as `target`/`focus`) = the newline-separated list of file *paths* created during the run — paths only, never file contents, and files that existed before the run don't appear even if modified. To grade a created file's contents, use `{source: file, path}`. `file_exists` checks the same created-files list, so a pre-existing file grades as absent.

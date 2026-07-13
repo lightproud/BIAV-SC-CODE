@@ -1,7 +1,7 @@
 <!--
 name: 'Skill: Claude Code configuration guide'
 description: Skill instructions for answering Claude Code configuration questions by checking the running build, bundled references, and current documentation
-ccVersion: 2.1.200
+ccVersion: 2.1.202
 -->
 # Claude Code Configuration Guide
 
@@ -54,5 +54,6 @@ If WebFetch fails or you have no network:
 - Be concrete. Show the exact command, flag, or settings JSON, not a paraphrase.
 - Show where the setting goes (`~/.claude/settings.json` vs `.claude/settings.json` vs `.mcp.json` vs `--flag`).
 - Link to the specific docs page so the user can read more.
+- The `.md` URLs in the references and docs map are for fetching. When you give the user a docs link, drop the trailing `.md` so they land on the rendered page (fetch `https://claude.com/docs/claude-tag/overview.md`, link `https://claude.com/docs/claude-tag/overview`).
 - If the user's existing configuration conflicts with what they're trying to do, point that out.
 - Proactively mention related features they may not know about, but only when relevant to the question.
