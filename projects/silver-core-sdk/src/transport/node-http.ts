@@ -87,6 +87,27 @@ function manageFreeSockets<T extends http.Agent | https.Agent>(agent: T, ttlMs: 
       ttlTimers.delete(socket);
     }
   };
+  // Finding L2 — synchronously evict a socket from the agent's free pool. The
+  // TTL callback destroy()s a dying socket, but the agent only drops it from
+  // `freeSockets` on the ASYNC 'close' event; in that window reuseSocket could
+  // hand the destroyed socket to a new request → ECONNRESET + a wasted retry.
+  // Removing it from the pool first closes the selection window.
+  const removeFromFree = (socket: import('node:net').Socket): void => {
+    const free = (agent as unknown as {
+      freeSockets: Record<string, import('node:net').Socket[] | undefined>;
+    }).freeSockets;
+    if (free === undefined) return;
+    for (const name of Object.keys(free)) {
+      const list = free[name];
+      if (list === undefined) continue;
+      const idx = list.indexOf(socket);
+      if (idx !== -1) {
+        list.splice(idx, 1);
+        if (list.length === 0) delete free[name];
+        return;
+      }
+    }
+  };
   const origKeep = anyAgent.keepSocketAlive.bind(anyAgent);
   const origReuse = anyAgent.reuseSocket.bind(anyAgent);
   anyAgent.keepSocketAlive = (socket) => {
@@ -96,6 +117,7 @@ function manageFreeSockets<T extends http.Agent | https.Agent>(agent: T, ttlMs: 
       clearTtl(socket); // re-arm, never stack
       const timer = setTimeout(() => {
         ttlTimers.delete(socket);
+        removeFromFree(socket); // evict BEFORE destroy so reuse can't pick it
         socket.destroy();
       }, ttlMs);
       timer.unref();

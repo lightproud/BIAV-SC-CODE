@@ -130,22 +130,24 @@ describe('FileCheckpointStore: record semantics', () => {
     cp.record(join(dir, 'a'), 'a');
     cp.record(join(dir, 'b'), 'b'); // distinct paths -> two records
     const idxPath = join(dir, 'checkpoints', 'sess-seq', 'index.jsonl');
-    const seqs1 = readFileSync(idxPath, 'utf8')
-      .trim()
-      .split('\n')
-      .map((l) => (JSON.parse(l) as { seq: number }).seq);
-    expect(seqs1).toEqual([0, 1]);
+    // Finding L4 — beginTurn writes a turn_start MARKER line (no absPath) for
+    // positioning; it does not consume a seq. Filter to real file-change
+    // records (those with an absPath) to assert the record seq space.
+    const recordSeqs = (): number[] =>
+      readFileSync(idxPath, 'utf8')
+        .trim()
+        .split('\n')
+        .map((l) => JSON.parse(l) as { seq: number; absPath?: string })
+        .filter((o) => typeof o.absPath === 'string')
+        .map((o) => o.seq);
+    expect(recordSeqs()).toEqual([0, 1]);
 
     // Fresh store instance rebinding the SAME session must continue at max+1.
     const cp2 = makeCp();
     cp2.bind('sess-seq');
     cp2.beginTurn('t2');
     cp2.record(join(dir, 'c'), 'c');
-    const seqs2 = readFileSync(idxPath, 'utf8')
-      .trim()
-      .split('\n')
-      .map((l) => (JSON.parse(l) as { seq: number }).seq);
-    expect(seqs2).toEqual([0, 1, 2]); // reconstructed to 2, not reset to 0
+    expect(recordSeqs()).toEqual([0, 1, 2]); // reconstructed to 2, not reset to 0
   });
 
   it('makeCheckpointRecorder forwards to store.record', async () => {

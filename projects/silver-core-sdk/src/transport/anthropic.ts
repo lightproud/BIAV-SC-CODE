@@ -15,7 +15,9 @@ import {
   isAbortError,
 } from '../errors.js';
 import type {
+  APIMessageParam,
   ApiKeySource,
+  ContentBlockParam,
   ProviderConfig,
   RawMessageStreamEvent,
 } from '../types.js';
@@ -163,10 +165,23 @@ export class AnthropicTransport implements Transport {
     const { signal: callerSignal, onRetry, ...requestBody } = req;
     if (callerSignal?.aborted) throw new AbortError();
 
+    // Finding L5 — drop any thinking block that carries an EMPTY signature
+    // before it reaches the wire. A prior malformed/gateway-rewritten stream
+    // can finalize a thinking block without its signature_delta; re-sending
+    // that block 400s the Messages API ("invalid thinking signature") and kills
+    // every later turn of the conversation. Well-formed streams always sign
+    // their thinking, so this is a NO-OP (byte-identical body) on every normal
+    // and conformance path — it only activates on the rare unsigned case.
+    const sanitizedMessages = stripUnsignedThinking(requestBody.messages);
+    const wireBody =
+      sanitizedMessages === requestBody.messages
+        ? requestBody
+        : { ...requestBody, messages: sanitizedMessages };
+
     // JSON.stringify drops undefined-valued fields, satisfying "omit
     // undefined fields" without manual pruning. onRetry (a function) is
     // destructured out above so it never reaches the body.
-    const bodyJson = JSON.stringify({ ...requestBody, stream: true });
+    const bodyJson = JSON.stringify({ ...wireBody, stream: true });
     const headers = this.buildHeaders(this.credential);
     const timeoutMs = this.provider.timeoutMs ?? DEFAULT_TIMEOUT_MS;
     const maxRetries = resolveMaxRetries(this.provider, this.env);
@@ -273,6 +288,15 @@ export class AnthropicTransport implements Transport {
       };
       let eventCount = 0;
       let sawMessageStart = false;
+      // Finding M2 — whether a terminal message_delta.stop_reason arrived. If
+      // it did, the message content is complete even without the trailing
+      // message_stop frame; if it did not and CONTENT was already delivered,
+      // the server dropped mid-generation (a truncation, not a completion).
+      let sawStopReason = false;
+      // Whether any content_block_start arrived: distinguishes a start-only
+      // stream (empty, benign — returns normally, the deliberate existing
+      // behavior) from one that delivered a PARTIAL answer then dropped.
+      let sawContentBlock = false;
       try {
         resetIdle();
         for await (const frame of parseSSE(response.body, streamSignal)) {
@@ -324,6 +348,14 @@ export class AnthropicTransport implements Transport {
           // retry and letting the accumulator throw "finalize before message_start".
           if ((parsed as { type?: string }).type === 'message_start') {
             sawMessageStart = true;
+          }
+          // Finding M2 — a message_delta with a non-null stop_reason marks the
+          // content as complete (message_stop merely closes the SSE channel).
+          const parsedType = (parsed as { type?: string }).type;
+          if (parsedType === 'content_block_start') sawContentBlock = true;
+          if (parsedType === 'message_delta') {
+            const sr = (parsed as { delta?: { stop_reason?: unknown } }).delta?.stop_reason;
+            if (sr !== null && sr !== undefined) sawStopReason = true;
           }
           yield parsed as RawMessageStreamEvent;
           // The Messages API streams exactly one message; message_stop is its
@@ -386,8 +418,24 @@ export class AnthropicTransport implements Transport {
       }
 
       // A non-empty stream that ended without message_stop (server closed after
-      // delivering some events): complete normally — the engine finalizes /
-      // salvages whatever arrived. Unchanged from the original single attempt.
+      // delivering some events). Finding M2: if PARTIAL CONTENT was delivered
+      // and no terminal message_delta.stop_reason arrived, the server dropped
+      // MID-GENERATION — surface a truncated turn (midStreamTruncation) so the
+      // engine's E3 salvage runs and the fault shows up in the result's
+      // `errors`, matching the OpenAI arm, instead of silently accepting a
+      // half-received answer as a complete, billed success. A start-only stream
+      // (no content_block) or one whose stop_reason DID arrive (only the
+      // trailing message_stop frame was lost) is complete enough — finalize
+      // normally, preserving the deliberate existing behavior.
+      if (sawContentBlock && !sawStopReason) {
+        if (callerSignal?.aborted) throw new AbortError();
+        const failure = new APIConnectionError(
+          `Messages API stream ended without message_stop after ${eventCount} event(s); ` +
+            `treating as a truncated turn`,
+        );
+        failure.midStreamTruncation = true;
+        throw failure;
+      }
       this.debug(`transport: stream completed after ${eventCount} event(s)`);
       return;
     }
@@ -549,6 +597,30 @@ export class AnthropicTransport implements Transport {
 
 function nonEmpty(value: string | undefined): string | undefined {
   return value !== undefined && value.length > 0 ? value : undefined;
+}
+
+/**
+ * Finding L5 — drop assistant `thinking` blocks whose signature is empty before
+ * they hit the Anthropic wire (an unsigned thinking block 400s on resend). Pure
+ * and reference-preserving: returns the SAME array when no block needs removing,
+ * so a well-formed request (every thinking block signed) is byte-identical and
+ * the conformance/byte-diff suites are untouched. Only the rare unsigned block —
+ * produced by a malformed/gateway-rewritten upstream stream — is stripped.
+ */
+function stripUnsignedThinking(messages: APIMessageParam[]): APIMessageParam[] {
+  const isUnsignedThinking = (b: ContentBlockParam): boolean =>
+    b.type === 'thinking' &&
+    (typeof (b as { signature?: unknown }).signature !== 'string' ||
+      (b as { signature: string }).signature.length === 0);
+
+  let changed = false;
+  const out = messages.map((msg) => {
+    if (msg.role !== 'assistant' || !Array.isArray(msg.content)) return msg;
+    if (!msg.content.some(isUnsignedThinking)) return msg;
+    changed = true;
+    return { ...msg, content: msg.content.filter((b) => !isUnsignedThinking(b)) };
+  });
+  return changed ? out : messages;
 }
 
 function envInt(value: string | undefined): number | undefined {

@@ -64,6 +64,10 @@ type ServerEntry = {
   serverInfo?: { name: string; version: string };
   tools: McpToolEntry[];
   enabled: boolean;
+  /** Finding M4 — in-flight connect latch. Set synchronously before the
+   *  connect+listTools await so a concurrent connectAll()/reconnect() for the
+   *  same entry coalesces onto it instead of spawning a second connection. */
+  connecting?: Promise<void> | null;
 };
 
 export class DefaultMcpRegistry implements McpRegistry {
@@ -299,8 +303,23 @@ export class DefaultMcpRegistry implements McpRegistry {
 
   // -- internals -------------------------------------------------------------
 
+  /** Connect one server, coalescing concurrent callers onto ONE in-flight
+   *  attempt (finding M4). Without the latch, entry.connection was published
+   *  only after the up-to-60s connect+listTools await, so a second concurrent
+   *  entry (a racing connectAll, or reconnect() during startup) passed the
+   *  `!entry.connection` guard and spawned a SECOND child process; the loser
+   *  was never close()d and leaked. */
+  private connectEntry(entry: ServerEntry): Promise<void> {
+    if (entry.connecting) return entry.connecting;
+    const p = this.connectEntryInner(entry).finally(() => {
+      entry.connecting = null;
+    });
+    entry.connecting = p;
+    return p;
+  }
+
   /** Connect one server with a per-server timeout; failures land in status. */
-  private async connectEntry(entry: ServerEntry): Promise<void> {
+  private async connectEntryInner(entry: ServerEntry): Promise<void> {
     entry.baseStatus = 'pending';
     entry.error = undefined;
     entry.tools = [];

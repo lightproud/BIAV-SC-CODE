@@ -105,9 +105,16 @@ function entryToSessionMessage(
 }
 
 /**
- * Return the persisted transcript as SessionMessage[]. When a compaction
- * summary chain is present the post-compaction view is followed; otherwise the
- * raw user/assistant sequence is returned.
+ * Return the persisted transcript as SessionMessage[], in write order.
+ *
+ * This returns the FULL persisted user/assistant sequence. Compaction operates
+ * on the live in-memory request view (engine/compaction.ts) and does NOT
+ * rewrite the durable transcript — the folded-away messages stay on disk — so
+ * there is no post-compaction chain to follow here, and audit/synthesis
+ * consumers (e.g. auditSessionToolClaims) deliberately see the complete
+ * history rather than the trimmed view a given turn happened to send.
+ * (Corrected 2026-07-13: the prior doc claimed a post-compaction view was
+ * followed, which the body never did.)
  */
 export async function getSessionMessages(
   sessionId: string,

@@ -317,16 +317,28 @@ class ChildMcpFilter implements McpRegistry {
     return this.inner.readResource(server, uri, signal);
   }
   reconnect(serverName: string): Promise<void> {
+    // Reconnect is shared RECOVERY (a failed server is failed for every
+    // borrower; reconnecting fixes it for all), not a per-session preference —
+    // safe to pass through, same as SharedMcpRegistry.
     return this.inner.reconnect(serverName);
   }
-  setEnabled(serverName: string, enabled: boolean): void {
-    this.inner.setEnabled(serverName, enabled);
+  // Finding L1 — the child view narrows tool VISIBILITY only; it must not carry
+  // a subagent's lifecycle mutations into the registry the parent and every
+  // sibling subagent share. setEnabled would blank a server for all of them,
+  // setServers closes every connection before swapping the set, and closeAll
+  // tears the shared pool down mid-conversation — so these are inert on a child
+  // view. Teardown/reconfiguration authority stays with the query/manager that
+  // owns the registry.
+  setEnabled(): void {
+    // no-op: a subagent cannot toggle a shared server for its siblings.
   }
-  setServers(servers: Parameters<McpRegistry['setServers']>[0]) {
-    return this.inner.setServers(servers);
+  setServers(): Promise<void> {
+    // no-op: a subagent cannot swap the shared server set.
+    return Promise.resolve();
   }
   closeAll(): Promise<void> {
-    return this.inner.closeAll();
+    // no-op: a subagent cannot tear down the shared connection pool.
+    return Promise.resolve();
   }
 }
 

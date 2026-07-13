@@ -16,6 +16,80 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.53.4 — 2026-07-13
+
+**Conversation-stability audit batch: 13 verified fixes across compaction,
+sessions, transport, accumulator, MCP (BPT stability, 2026-07-13).** A
+four-subsystem audit surfaced (and this release fixes) a set of defects that
+could crash, corrupt, or silently degrade conversations — several specific to
+running MULTIPLE conversations over shared state. Ranked:
+
+- **H1 — compaction was a no-op for pure tool-loops (default-path, highest
+  blast radius).** `partitionForCompaction` only accepted GENUINE user turns as
+  cut points, so a single string prompt driving an autonomous
+  assistant↔tool_result loop (the SDK's headline shape) had zero valid cut
+  points after index 0 → compaction never folded → context grew unbounded until
+  a `prompt too long` 400 with no retry. Fix: fall back to ASSISTANT-turn
+  boundaries (pairing-safe) with a user-TERMINATED fold, so such loops compact
+  while role alternation stays valid. Compaction is on by default, so this hit
+  the most common long-running run.
+- **H2 — concurrent cross-host resume double-materialized the transcript.**
+  `MirroringSessionStore.load` appended the external transcript per racing
+  loader and `JsonlSessionStore.load` did no uuid dedup, so two workers resuming
+  one session replayed the whole conversation TWICE (compounding every turn).
+  Fix: read-time uuid dedup (cross-process backstop) + in-process load
+  coalescing + a post-fetch re-check.
+- **M1 — an unmodeled content-block type crashed the turn.** The accumulator's
+  `content_block_start` handled only text/thinking/redacted_thinking/tool_use;
+  a `server_tool_use` (or any future block) left its index unregistered and the
+  next `content_block_delta` threw. Fix: register unknown blocks opaquely,
+  ignore their deltas, round-trip them into the message.
+- **M2 — the Anthropic arm silently accepted a truncated turn.** A clean EOF
+  after partial content with no `message_stop`/terminal `stop_reason` was
+  finalized as a complete, billed success (asymmetric with the OpenAI arm). Fix:
+  surface `midStreamTruncation` so E3 salvage runs and the fault shows in the
+  result's `errors` — but only when partial CONTENT was delivered and no
+  stop_reason arrived (a start-only or stop_reason-carrying stream still
+  completes normally).
+- **M3 — concurrent same-session file checkpoints collided on the blob path.**
+  `seq` was recovered per-instance, so two stores bound to one session wrote the
+  same `{seq}.blob`, and a later rewind restored the WRONG file's bytes. Fix:
+  qualify blob names with a per-instance token (collision-free; the index stores
+  the full name so rewind reads the exact pre-image).
+- **M4 — MCP `connectEntry` double-spawned under a connect/reconnect race.**
+  `entry.connection` was published only after the up-to-60s handshake, so a
+  concurrent connect/reconnect passed the guard and spawned a second child
+  process (the loser leaked). Fix: an in-flight connect latch coalesces callers.
+- **M5 — a retained suffix could exceed the budget and re-fold forever.** When
+  even the minimal viable suffix overflowed, compaction re-folded a tiny prefix
+  and still 400'd. Fix: pre-tier-shed the retained suffix's oversized string
+  tool_results (pairing-preserving) so the request fits the window.
+- **L1** — the subagent `ChildMcpFilter` forwarded lifecycle MUTATORS
+  (setEnabled/setServers/closeAll) to the shared registry, so one subagent could
+  disrupt its siblings; these are now inert on a child view (reconnect, a shared
+  recovery, still passes through).
+- **L2** — the free-socket TTL destroy raced socket reuse; the dying socket is
+  now evicted from the agent's `freeSockets` BEFORE `destroy()`.
+- **L3** — the CJK token estimator omitted CJK Symbols & Punctuation, Fullwidth
+  Forms, and Enclosed CJK (the primary workload's punctuation), biasing the
+  compaction trigger late; those ranges now count ~1 token/codepoint.
+- **L4** — file rewind could only target turns that changed a file; `beginTurn`
+  now writes a (seq-free) turn-position marker so a chat-only turn is a valid
+  rewind target.
+- **L5** — a thinking block with an EMPTY signature (malformed/gateway-rewritten
+  upstream) 400'd every later Anthropic request on resend; such blocks are now
+  stripped from the wire body (no-op / byte-identical on well-formed requests).
+- **L6** — `JsonlSessionStore.loadInfo` leaked a file descriptor on the
+  sidechain early-return and error paths; the read stream is now destroyed in a
+  `finally` (mirrors `isSidechainFile`).
+
++12 regression tests (`tests/conversation-stability-fixes.test.ts`); two
+existing mutation-kill tests updated for the new checkpoint marker + Anthropic
+truncation surface. Full suite 2157 passing + 3 skipped. Deferred (noted, not
+fixed): the nested empty-stream retry budget (bounded ~maxRetries², not
+infinite), cross-attempt ping replay (benign), and a narrow killAgent status
+race (reporting only).
+
 ## 0.53.3 — 2026-07-13
 
 **Free-socket idle TTL: keep-alive pool no longer accumulates zombie
