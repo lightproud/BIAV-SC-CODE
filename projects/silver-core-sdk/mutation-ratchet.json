@@ -26,7 +26,8 @@
     {
       "name": "sessions",
       "mutate": "src/sessions/**/*.ts",
-      "floor": 71.24
+      "floor": 71.24,
+      "ignoreStatic": true
     }
   ]
 }

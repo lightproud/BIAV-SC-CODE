@@ -68,10 +68,20 @@ jobs:
             if (!t) { console.error('unknown target ${{ matrix.target }} in mutation-ratchet.json'); process.exit(2); }
             console.log(t.mutate);
           ")
+          # Per-target ignoreStatic: some targets (e.g. sessions) carry heavy
+          # module-load static mutants that inject load-variance noise into the
+          # score. Their baseline is measured WITH --ignoreStatic, so the weekly
+          # round must match. Emitted as the flag string (empty when unset).
+          IGNORE_STATIC=$(node -e "
+            const b = require('./mutation-ratchet.json');
+            const t = (b.targets ?? []).find((t) => t.name === '${{ matrix.target }}');
+            console.log(t && t.ignoreStatic ? '--ignoreStatic' : '');
+          ")
           echo "mutate=$PATTERN" >> "$GITHUB_OUTPUT"
+          echo "ignore_static=$IGNORE_STATIC" >> "$GITHUB_OUTPUT"
       - name: Stryker round (${{ matrix.target }})
         working-directory: projects/silver-core-sdk
-        run: npx stryker run --mutate "${{ steps.pattern.outputs.mutate }}"
+        run: npx stryker run --mutate "${{ steps.pattern.outputs.mutate }}" ${{ steps.pattern.outputs.ignore_static }}
       - name: Ratchet check
         working-directory: projects/silver-core-sdk
         run: node scripts/check-mutation-ratchet.mjs --name "${{ matrix.target }}"
