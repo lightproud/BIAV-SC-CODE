@@ -445,7 +445,12 @@ describe('generator prompt provenance (corpus-sync guard, Track B parity)', () =
         .map(norm)
         // skip short/boilerplate lines and the interpolation placeholder line
         .filter((s) => s.length >= 40 && !s.includes('{description}'))
-        .filter((s) => !body.includes(s.slice(0, 60)));
+        // FULL-string check (deepened 2026-07-13, keeper ruling): each reproduced
+        // sentence must be verbatim in the archive end-to-end, not just its first
+        // 60 chars. The old slice(0, 60) let deep drift through — the 2.1.205
+        // refresh reworded 8 classifier lines and this guard caught only the 2
+        // whose divergence fell inside the first 60 chars.
+        .filter((s) => !body.includes(s));
       expect(drifted, `not found in archive:\n${drifted.join('\n')}`).toEqual([]);
     });
   }
