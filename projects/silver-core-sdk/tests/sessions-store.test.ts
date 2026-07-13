@@ -385,6 +385,25 @@ describe('rename/tag round trip via meta_update (T1-6)', () => {
     expect(info?.summary).toBe('first prompt line');
   });
 
+  it('a meta_update gitBranch is honored by BOTH load() and getSessionInfo()', async () => {
+    // Seed with an initial branch, then append a meta_update switching it.
+    const file = join(dir, `${SID}.jsonl`);
+    appendFileSync(
+      file,
+      `${JSON.stringify({ type: 'meta', sessionId: SID, createdAt: 1, cwd: '/w', firstPrompt: 'p', gitBranch: 'main' })}\n` +
+        `${JSON.stringify({ type: 'user', message: { role: 'user', content: 'p' } })}\n` +
+        `${JSON.stringify({ type: 'meta_update', uuid: 'mu-1', gitBranch: 'release' })}\n`,
+      'utf8',
+    );
+    const { store } = makeStore();
+    const loaded = await store.load(SID);
+    const info = await getSessionInfo(SID, { sessionDir: dir });
+    // Both read paths must agree — loadInfo() previously ignored the update and
+    // reported the stale 'main' while load() reported 'release'.
+    expect(loaded?.gitBranch).toBe('release');
+    expect(info?.gitBranch).toBe('release');
+  });
+
   it('listSessions carries customTitle/tag through', async () => {
     seed();
     await renameSession(SID, 'Listed title', { sessionDir: dir });

@@ -16,6 +16,50 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.53.7 — 2026-07-13
+
+**Second multi-subsystem audit batch: 5 verified fixes across subagents, MCP
+tools, and sessions (BPT stability, 2026-07-13).** A three-cluster audit
+(subagents/task runtime, sessions/accumulator, workflow/misc tools) surfaced
+five more concrete defects, each with a regression test. Ranked:
+
+- **Background SendMessage continuations had no stall watchdog (subagents).**
+  The initial background launch wraps the child in a `StallWatchdog` that aborts
+  a silent stream; `runContinuation` (the SendMessage follow-up path) constructed
+  none, so a continuation whose stream went silent never aborted — `turn` never
+  settled, the background delivery promise never pushed its `<task-notification>`,
+  and a coordinator waiting on the reply hung until whole-query teardown. Fix:
+  wire the same watchdog into the continuation, AND return a stalled continuation
+  as an error RESULT (not a thrown abort) so the delivery path surfaces a FAILED
+  note to the coordinator instead of swallowing it in its `.catch`.
+- **Foreground child result discarded if the SubagentStop hook aborted
+  (subagents).** The foreground path awaited `fireSubagentStop(…, params.signal)`
+  bare; an outer abort landing during that await made the hook throw and rejected
+  spawn(), discarding the child's already-computed answer. The background path
+  already fired the stop hook with a fresh signal and a `.catch`; the foreground
+  path now mirrors it (the child has finished — the hook is a notification, not a
+  gate on returning the result).
+- **`readCappedBody` off-by-one flagged an exactly-cap body as truncated
+  (webfetch).** The streaming path used `value.byteLength >= remaining`, so a
+  body exactly `MAX_BODY_BYTES` long (or a chunk landing right on the boundary)
+  was marked overflow though nothing was dropped — appending a misleading
+  `[truncated]`. The non-stream fallback correctly used `> cap`. Fix: `>` in the
+  streaming path too; an exactly-cap chunk is taken whole and the next read()'s
+  `done` distinguishes "exactly cap" from "more follows".
+- **`auditToolClaims` reused a stateful RegExp across texts (sessions).** A
+  consumer-supplied detector whose `claimPattern` carries the `g`/`y` flag is
+  stateful; exec() advanced `lastIndex`, so matching resumed mid-string on the
+  next assistant text and a genuinely-unbacked claim was silently missed. Fix:
+  reset `lastIndex` before each exec.
+- **`list()`/`getSessionInfo` dropped a meta_update gitBranch (sessions).**
+  `load()` honored an updated `gitBranch` on a `meta_update` record; the
+  `loadInfo()` scan behind `list()`/`listSessions()` read only `customTitle`/`tag`,
+  so the two read paths reported different branches for the same session. Fix:
+  read `gitBranch` in `loadInfo` too.
+
++4 regression tests (the foreground stop-hook fix mirrors the already-tested
+background path). Full suite 2175 passing + 2 skipped; typecheck + build clean.
+
 ## 0.53.6 — 2026-07-13
 
 **Multi-subsystem audit batch: 5 verified fixes across MCP, hooks, permissions,
