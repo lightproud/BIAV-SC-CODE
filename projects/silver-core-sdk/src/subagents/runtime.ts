@@ -47,6 +47,10 @@ import type {
   SDKTaskStartedMessage,
   SDKTaskUpdatedMessage,
   TextBlockParam,
+  ProviderConfig,
+  SubagentTransportHandle,
+  SubagentTransportResolution,
+  SubagentTransportResolver,
 } from '../types.js';
 import type {
   BuiltinTool,
@@ -150,6 +154,13 @@ export type SubagentRuntimeOptions = {
   disallowedTools?: string[];
   /** Live parent engine config (model/thinking read at spawn time). */
   engineConfig: EngineConfig;
+  /** The query's provider config: resolver-callback context + the parent
+   *  protocol on the spawn transport log line. */
+  provider?: ProviderConfig;
+  /** Cross-protocol transport routing (Options.resolveSubagentTransport):
+   *  consulted once per ISOLATED spawn after the child model resolves; forks
+   *  never consult it. Absent -> children share the parent transport. */
+  resolveSubagentTransport?: SubagentTransportResolver;
   /** Transcript store; child transcripts persist under {agentId} when set. */
   store?: SessionStore;
   persist?: boolean;
@@ -367,6 +378,28 @@ export function createSubagentRuntime(
     emitObservability,
   } = opts;
   const persist = opts.persist === true && store !== undefined;
+  // Wire protocol of the parent transport (spawn log + resolver input). The
+  // provider protocol field is the same single switch point factory.ts uses.
+  const parentProtocol: 'anthropic' | 'openai-chat' =
+    opts.provider?.protocol === 'openai-chat' ? 'openai-chat' : 'anthropic';
+  // Transports handed over with `owned: true` by resolveSubagentTransport.
+  // Children survive their runs for SendMessage continuation, so per-child
+  // disposal would kill a revivable worker's transport — owned transports are
+  // released once, at query teardown (settleAll), after every child settled.
+  const ownedTransports = new Set<Transport>();
+  const disposeOwnedTransports = (): void => {
+    for (const t of ownedTransports) {
+      try {
+        t.dispose?.();
+      } catch (err) {
+        debug(
+          `subagent transport dispose failed (ignored): ` +
+            `${err instanceof Error ? err.message : String(err)}`,
+        );
+      }
+    }
+    ownedTransports.clear();
+  };
 
   // --- Task-lifecycle observability (v0.4) ----------------------------------
   const emitTask = (
@@ -1028,12 +1061,111 @@ export function createSubagentRuntime(
             'ignored in fork mode (fork inherits the parent model)',
         );
       }
+      // Fork inherits the parent model; isolated resolves the per-call
+      // override, then agentDef.model, through the same alias path.
+      const childModel = forkActive
+        ? engineConfig.model
+        : resolveModelAlias(params.model ?? agentDef.model, engineConfig.model);
+
+      // --- Cross-protocol transport routing (P0, 2026-07-13) ---------------
+      // An isolated child whose resolved model is only served on a different
+      // wire protocol must not ride the parent transport (the gateway 400s
+      // "model not found" on the wrong route). The host's
+      // resolveSubagentTransport callback owns the model->protocol policy;
+      // absent (or returning undefined) the child shares the parent transport
+      // — byte-for-byte the previous behavior. Forks NEVER consult it: a
+      // fork's whole point is the parent's cached prefix, which requires the
+      // parent model and transport.
+      let childTransport: Transport = transport;
+      let resolution: SubagentTransportResolution | undefined;
+      if (!forkActive && opts.resolveSubagentTransport !== undefined) {
+        try {
+          resolution = await opts.resolveSubagentTransport({
+            model: childModel,
+            parentModel: engineConfig.model,
+            parentProtocol,
+            parentTransport: transport as SubagentTransportHandle,
+            parentProvider: opts.provider,
+            env,
+            fork: false,
+            debug,
+          });
+        } catch (err) {
+          // Fail the spawn honestly: a child sent through a transport the
+          // host failed to resolve would hit the exact wrong-route 400 this
+          // hook exists to prevent.
+          const message = err instanceof Error ? err.message : String(err);
+          await releaseWorktree().catch(() => undefined);
+          emitTask({
+            type: 'system',
+            subtype: 'task_updated',
+            task_id: agentId,
+            patch: {
+              status: 'failed',
+              end_time: Date.now(),
+              error: resultPreview(`transport resolution failed: ${message}`),
+            },
+          });
+          return {
+            content: `Agent failed: subagent transport resolution failed: ${message}`,
+            isError: true,
+            agentId,
+            background: false,
+          };
+        }
+      }
+      if (
+        resolution !== undefined &&
+        (resolution.transport as unknown as Transport) !== transport
+      ) {
+        childTransport = resolution.transport as unknown as Transport;
+        if (resolution.owned === true) ownedTransports.add(childTransport);
+      }
+      const transportSwitched = childTransport !== transport;
+      const transportMode = !transportSwitched
+        ? 'shared-parent'
+        : resolution?.owned === true
+          ? 'child-owned'
+          : 'resolver-shared';
+      const childProtocol = transportSwitched
+        ? resolution?.protocol
+        : parentProtocol;
+      debug(
+        `subagent ${agentId}: transport ${JSON.stringify({
+          parentModel: engineConfig.model,
+          childModel,
+          parentProtocol,
+          ...(childProtocol !== undefined ? { childProtocol } : {}),
+          transportMode,
+        })}`,
+      );
+      // Thinking must be re-derived for a transport-switched child: the
+      // engine already re-fits the WIRE FORM per live model (computeThinking,
+      // adaptive vs budget_tokens), but its capability check only knows
+      // Claude generations — an unknown model id defaults to adaptive, and a
+      // Claude-shaped `thinking` param sent to a non-Claude model is
+      // gateway-rejected more often than honored. Resolution values win;
+      // otherwise a switched child whose model id is not Claude-family drops
+      // the inherited config (safe degradation), and a shared-transport child
+      // inherits unchanged (existing behavior).
+      const degradeThinking =
+        transportSwitched &&
+        resolution?.thinking === undefined &&
+        !/claude/i.test(childModel);
+      const childThinking =
+        resolution?.thinking ?? (degradeThinking ? undefined : engineConfig.thinking);
+      const childMaxThinkingTokens =
+        resolution?.maxThinkingTokens ??
+        (degradeThinking ? undefined : engineConfig.maxThinkingTokens);
+      if (degradeThinking && engineConfig.thinking !== undefined) {
+        debug(
+          `subagent ${agentId}: inherited thinking config dropped for ` +
+            `non-Claude child model "${childModel}" on a switched transport`,
+        );
+      }
+
       const childConfig: EngineConfig = {
-        // Fork inherits the parent model; isolated resolves the per-call
-        // override, then agentDef.model, through the same alias path.
-        model: forkActive
-          ? engineConfig.model
-          : resolveModelAlias(params.model ?? agentDef.model, engineConfig.model),
+        model: childModel,
         fallbackModel,
         maxOutputTokens: engineConfig.maxOutputTokens,
         // Fork inherits the parent system prompt (prefix match); isolated uses
@@ -1049,9 +1181,11 @@ export function createSubagentRuntime(
           engineConfig.maxTurns ??
           DEFAULT_SUBAGENT_MAX_TURNS,
         maxBudgetUsd: engineConfig.maxBudgetUsd,
-        thinking: engineConfig.thinking,
-        maxThinkingTokens: engineConfig.maxThinkingTokens,
-        promptCaching: engineConfig.promptCaching,
+        // Re-derived above for transport-switched children (resolution wins,
+        // non-Claude models degrade safely); inherited unchanged otherwise.
+        thinking: childThinking,
+        maxThinkingTokens: childMaxThinkingTokens,
+        promptCaching: resolution?.promptCaching ?? engineConfig.promptCaching,
         // Children estimate cost with the same custom price entries as the
         // parent, so subagent spend counts toward maxBudgetUsd on non-Claude
         // models too (audit 2026-07-10 P1-4).
@@ -1128,7 +1262,8 @@ export function createSubagentRuntime(
       childToolContext.permissionGate =
         childGate;
       const childDeps: EngineDeps = {
-        transport,
+        // Parent transport, or the resolver's cross-protocol replacement.
+        transport: childTransport,
         builtinTools: childBuiltins,
         mcp: childMcp,
         permissions: childGate,
@@ -1580,14 +1715,19 @@ export function createSubagentRuntime(
       }
     },
     async settleAll(timeoutMs = 2_000): Promise<void> {
-      if (allBackgroundPromises.length === 0) return;
-      await Promise.race([
-        Promise.allSettled(allBackgroundPromises),
-        new Promise<void>((resolve) => {
-          const t = setTimeout(resolve, timeoutMs);
-          (t as { unref?: () => void }).unref?.();
-        }),
-      ]);
+      if (allBackgroundPromises.length > 0) {
+        await Promise.race([
+          Promise.allSettled(allBackgroundPromises),
+          new Promise<void>((resolve) => {
+            const t = setTimeout(resolve, timeoutMs);
+            (t as { unref?: () => void }).unref?.();
+          }),
+        ]);
+      }
+      // Query teardown: release transports the resolver handed over with
+      // owned: true (AFTER the children settled — a SendMessage continuation
+      // can revive a finished child any time before this point).
+      disposeOwnedTransports();
     },
     abortAll(): void {
       for (const { controller } of backgroundTasks.values()) {

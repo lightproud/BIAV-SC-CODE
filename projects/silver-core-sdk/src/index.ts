@@ -231,6 +231,12 @@ export {
   COORDINATOR_WORKER_PROVENANCE,
 } from './subagents/agents.js';
 export {
+  // Cross-protocol subagent transport routing (2026-07-13): the standard
+  // Options.resolveSubagentTransport implementation.
+  createSubagentTransportResolver,
+} from './subagents/transport-resolver.js';
+export type { SubagentTransportResolverOptions } from './subagents/transport-resolver.js';
+export {
   AbortError,
   APIConnectionError,
   APIStatusError,

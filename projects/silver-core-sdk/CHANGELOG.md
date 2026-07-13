@@ -16,6 +16,39 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.54.0 — 2026-07-13
+
+**Cross-protocol subagent transport routing (BPT P0).** An isolated subagent
+whose resolved model is served on a different wire protocol than the parent
+(e.g. an `openai-chat` parent whose Haiku-tier children map to a model only
+on the gateway's Anthropic route) previously rode the parent transport
+unconditionally and 400'd "model not found" on the wrong endpoint. New
+`Options.resolveSubagentTransport` callback (host-owned model→protocol
+policy) is consulted once per isolated spawn after the child model resolves:
+a resolution routes the child through its own transport; `undefined` (or
+omitting the option) shares the parent transport — byte-for-byte the previous
+behavior, so single-protocol consumers are unchanged. Forks never consult it
+(a fork's cached prefix requires the parent model + transport).
+`createSubagentTransportResolver()` ships the standard implementation:
+per-protocol transport memoization through the same
+`createProviderTransport()` switch point the root query uses, with
+protocol-agnostic provider knobs (retries / timeouts / fetch / httpClient /
+preconnect / pricing) carried from the parent and protocol-SPECIFIC fields
+(baseUrl / credentials / apiVersion / openai.\*) deliberately NOT copied —
+the two protocols append different URL suffixes and resolve different env
+chains, so a blind copy mis-routes. Thinking is re-derived for
+transport-switched children: resolution values win; otherwise a non-Claude
+child model drops the inherited config (safe degradation — a Claude-shaped
+`thinking` param on a non-Claude model is gateway-rejected more often than
+honored); shared-transport children inherit unchanged. Resolutions with
+`owned: true` are disposed once at query teardown (after every child settled
+— SendMessage can revive a finished child until then); `Transport.dispose?()`
+added as an optional contract member (the built-ins self-clean and implement
+none). The spawn debug log now records `{parentModel, childModel,
+parentProtocol, childProtocol, transportMode}` per child. +18 tests (routing
+matrix, fork inheritance, concurrency model-integrity, owned disposal,
+thinking degradation, resolver provider derivation).
+
 ## 0.53.8 — 2026-07-13
 
 **Foreground Agent batch serialization fix (child-agent serialization report,

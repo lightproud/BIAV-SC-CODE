@@ -1114,6 +1114,97 @@ export type ProviderConfig = {
 };
 
 /**
+ * Opaque handle to the SDK's internal Transport contract (BPT-EXTENSION,
+ * cross-protocol subagent routing 2026-07-13). The public type surface cannot
+ * import `internal/contracts.ts` (contracts imports types.ts — a cycle), so
+ * this structural stand-in carries transports across the
+ * `resolveSubagentTransport` boundary. Treat values as opaque: obtain them
+ * from `input.parentTransport` or `createSubagentTransportResolver()`; the
+ * real internal Transport satisfies this shape.
+ */
+export interface SubagentTransportHandle {
+  stream(req: never): AsyncGenerator<unknown, void>;
+  apiKeySource(): ApiKeySource;
+  /** Optional resource release (idle connection pools etc.). The built-in
+   *  transports self-clean (unref'd keep-alive sockets with a TTL) and do not
+   *  implement it; a custom transport may. Called by the subagent runtime at
+   *  query teardown for resolutions returned with `owned: true`. */
+  dispose?(): void;
+}
+
+/**
+ * What `resolveSubagentTransport` returns for one isolated-subagent spawn
+ * (BPT-EXTENSION, cross-protocol subagent routing 2026-07-13).
+ */
+export type SubagentTransportResolution = {
+  /** Transport the child loop must drive. Return the parent's own instance
+   *  (or `undefined` from the resolver) to share it. */
+  transport: SubagentTransportHandle;
+  /**
+   * True hands the transport's lifecycle to the subagent runtime: its
+   * `dispose()` (when implemented) is called once at query teardown, after
+   * every child settled. False (default) means the host owns it — e.g. an
+   * instance memoized across spawns. Children NEVER dispose a shared parent
+   * transport regardless of this flag.
+   */
+  owned?: boolean;
+  /** Wire protocol of `transport`, for the spawn log line only. */
+  protocol?: 'anthropic' | 'openai-chat';
+  /**
+   * Thinking config for the child. Omitted + transport SWITCHED + child model
+   * id without 'claude' -> the runtime safely drops the inherited thinking
+   * config (a Claude-shaped `thinking` param sent to a non-Claude model is
+   * gateway-rejected more often than honored). Omitted + transport shared ->
+   * the parent config is inherited unchanged (existing behavior). NOTE this
+   * value is the config-level INTENT: the engine still fits the wire form to
+   * the live child model per turn (computeThinking — adaptive vs
+   * budget_tokens), exactly as it does for the main loop's Options.thinking.
+   */
+  thinking?: ThinkingConfigParam;
+  /** Child maxThinkingTokens; same defaulting rules as `thinking`. */
+  maxThinkingTokens?: number;
+  /** Child promptCaching; inherited from the parent when omitted. */
+  promptCaching?: boolean;
+};
+
+/** Input handed to `resolveSubagentTransport` for one isolated spawn. */
+export type SubagentTransportRequest = {
+  /** Fully resolved child model id (per-call override / agentDef.model /
+   *  parent fallback, aliases expanded). */
+  model: string;
+  /** The live parent model id. */
+  parentModel: string;
+  /** Wire protocol of the parent transport. */
+  parentProtocol: 'anthropic' | 'openai-chat';
+  parentTransport: SubagentTransportHandle;
+  /** The query's provider config (undefined when the caller passed none). */
+  parentProvider?: ProviderConfig;
+  /** The query's resolved env (credential/base-URL fallback chains). */
+  env: Record<string, string | undefined>;
+  /** Always false in v1: forks NEVER consult the resolver (a fork's cached
+   *  prefix requires the parent model + transport). Field kept so the shape
+   *  is forward-compatible should that ever loosen. */
+  fork: boolean;
+  debug: (msg: string) => void;
+};
+
+/**
+ * Host callback resolving the transport an ISOLATED subagent drives
+ * (BPT-EXTENSION, cross-protocol subagent routing 2026-07-13). Called once
+ * per isolated spawn AFTER the child model is resolved; never called for
+ * forks. Return `undefined` to share the parent transport (the default when
+ * the option is absent — existing single-protocol behavior is unchanged).
+ * `createSubagentTransportResolver()` builds the common implementation from a
+ * model->protocol routing table with per-protocol transport memoization.
+ */
+export type SubagentTransportResolver = (
+  input: SubagentTransportRequest,
+) =>
+  | SubagentTransportResolution
+  | undefined
+  | Promise<SubagentTransportResolution | undefined>;
+
+/**
  * Bash sandbox configuration (BPT-shaped object form of Options.sandbox).
  * Restriction scope v1: write-denial outside allowed dirs + network isolation
  * (binary) + sandbox-writable $TMPDIR — exactly what the archived guidance
@@ -1608,6 +1699,17 @@ export type Options = {
   persistSession?: boolean;
   /** BPT extension: direct Messages API connection settings. */
   provider?: ProviderConfig;
+  /**
+   * BPT-EXTENSION (cross-protocol subagent routing, 2026-07-13): resolve the
+   * transport an ISOLATED subagent drives when its resolved model needs a
+   * different wire protocol than the parent (e.g. an openai-chat parent
+   * spawning a child model only served on the gateway's Anthropic route —
+   * previously the child rode the parent transport unconditionally and the
+   * gateway 400'd "model not found"). Absent -> children share the parent
+   * transport (existing behavior). Forks never consult it. See
+   * `createSubagentTransportResolver()` for the standard implementation.
+   */
+  resolveSubagentTransport?: SubagentTransportResolver;
   /**
    * Bash sandbox (G-SANDBOX). Default ON when a backend resolves (bubblewrap
    * on Linux); on platforms with no backend (win32/darwin) Bash runs
