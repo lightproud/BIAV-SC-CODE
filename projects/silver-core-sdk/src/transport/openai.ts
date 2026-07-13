@@ -284,8 +284,15 @@ export function encodeOpenAIRequest(
   // Server-declared typed entries (no input_schema, e.g. memory_20250818)
   // have no Chat Completions equivalent and are dropped honestly — the query
   // layer never assembles them on this protocol (memory runs in custom mode).
+  // Last line of defense (BPT 2026-07-13): a tool whose input_schema is
+  // missing or not a plain object (null, array, primitive) would 400 the
+  // whole request at the gateway (`tools.N.custom.input_schema: Field
+  // required`), so only wire-safe schemas make it into `tools`.
+  const isWireSafeSchema = (s: unknown): boolean =>
+    typeof s === 'object' && s !== null && !Array.isArray(s);
   const customTools = (req.tools ?? []).filter(
-    (t): t is APIToolDefinition => 'input_schema' in t,
+    (t): t is APIToolDefinition =>
+      'input_schema' in t && isWireSafeSchema(t.input_schema),
   );
   const tools =
     customTools.length > 0

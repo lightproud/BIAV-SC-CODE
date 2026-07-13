@@ -16,6 +16,30 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.53.2 — 2026-07-13
+
+**Tool schema boundary validation (BPT P0, 2026-07-13).** Symptom: on
+`azure/*` (OpenAI Chat Completions-compatible) gateways, whole
+conversations died at request time with
+`tools.N.custom.input_schema: Field required` — one tools[] entry with a
+missing/invalid `input_schema` (a lax MCP server, or a misconfigured
+`serverTools: [{type:'custom',...}]` entry) fails the ENTIRE model call
+before generation. Root cause: the SDK assembled and encoded tool
+definitions without validating schemas at either boundary. Fix, three
+layers: (1) agent loop (`src/engine/loop.ts`) — builtin/MCP
+`inputSchema` values that are not plain objects (missing, null, array,
+primitive) are normalized to the safe empty-object schema
+`{type:'object',properties:{}}` with a tool-name-bearing debug line;
+(2) server-declared tools — `serverTools` entries whose type is
+`'custom'` (or empty) are skipped with a diagnostic instead of being
+advertised schema-less; a skipped entry no longer suppresses the
+same-named builtin; Anthropic-typed entries (e.g. `memory_20250818`)
+pass through verbatim, unchanged; (3) OpenAI wire encoder
+(`src/transport/openai.ts`) — last-line filter keeps only tools whose
+`input_schema` is a non-array object, so no schema-less entry can reach
+a Chat Completions body; valid tools translate byte-identically as
+before. +10 tests (loop normalization x6, encoder filter x4).
+
 ## 0.53.1 — 2026-07-13
 
 **Corpus-sync re-sync to upstream ccVersion 2.1.205.** The weekly
