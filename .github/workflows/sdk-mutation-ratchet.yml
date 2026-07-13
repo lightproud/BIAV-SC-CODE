@@ -1,0 +1,84 @@
+name: SDK Mutation Ratchet (weekly)
+
+# Test-QUALITY ratchet for silver-core-sdk (keeper order 2026-07-13): the
+# 2026-07-13 quality campaign pushed per-module mutation scores up
+# (permissions 92.87%, transport/openai 85.55%); this workflow re-measures
+# each ratcheted target weekly and REDS when a score falls below its
+# committed floor (mutation-ratchet.json) - i.e. new code brought mutants
+# the suite does not kill. Floors only rise (bump after a measured
+# improvement); lowering one requires a keeper ruling. Complements the
+# python-side mutation-test.yml (mutmut, scripts/) and the SDK unit suite:
+# line coverage proves a line ran, the ratchet proves the assertions BITE.
+#
+# Deliberately scheduled + manual, NOT a per-PR required check: a full
+# per-target Stryker round costs ~7-12 minutes.
+#
+# Matrix names must match mutation-ratchet.json target names - the guard
+# script REDS loudly on drift (unknown name), so adding a target means
+# editing both files in one PR.
+
+on:
+  schedule:
+    - cron: '43 5 * * 1' # Mondays 05:43 UTC (13:43 北京)
+  workflow_dispatch:
+    inputs:
+      target:
+        description: 'Single ratchet target name to run (empty = full matrix)'
+        required: false
+        default: ''
+
+permissions:
+  contents: read
+
+jobs:
+  ratchet:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        target: [permissions, transport-openai, transport-anthropic]
+    steps:
+      - name: Skip when a single target was requested and this is not it
+        if: github.event.inputs.target != '' && github.event.inputs.target != matrix.target
+        run: echo "skipping ${{ matrix.target }}" && exit 0
+      - uses: actions/checkout@v7
+        with:
+          # SPARSE: the SDK suite does not need the 2.4G archive layers
+          # (same exclusions as silver-core-sdk.yml; corpus-sync tests skip
+          # gracefully without the Reference snapshot).
+          sparse-checkout: |
+            /*
+            !/Public-Info-Pool/Record/
+            !/Public-Info-Pool/Reference/
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        working-directory: projects/silver-core-sdk
+        run: npm ci
+      - name: Resolve mutate pattern from the baseline
+        id: pattern
+        working-directory: projects/silver-core-sdk
+        run: |
+          PATTERN=$(node -e "
+            const b = require('./mutation-ratchet.json');
+            const t = (b.targets ?? []).find((t) => t.name === '${{ matrix.target }}');
+            if (!t) { console.error('unknown target ${{ matrix.target }} in mutation-ratchet.json'); process.exit(2); }
+            console.log(t.mutate);
+          ")
+          echo "mutate=$PATTERN" >> "$GITHUB_OUTPUT"
+      - name: Stryker round (${{ matrix.target }})
+        working-directory: projects/silver-core-sdk
+        run: npx stryker run --mutate "${{ steps.pattern.outputs.mutate }}"
+      - name: Ratchet check
+        working-directory: projects/silver-core-sdk
+        run: node scripts/check-mutation-ratchet.mjs --name "${{ matrix.target }}"
+      - name: Upload mutation report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mutation-report-${{ matrix.target }}
+          path: projects/silver-core-sdk/reports/mutation/mutation.json
+          retention-days: 30

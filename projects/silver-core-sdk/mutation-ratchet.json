@@ -1,0 +1,27 @@
+{
+  "_meta": {
+    "what": "Mutation-score ratchet baselines (keeper order 2026-07-13: lock the campaign gains as only-up floors). One entry per mutate target; the scheduled sdk-mutation-ratchet workflow re-measures each and REDS below floor. Raising a floor is the only sanctioned edit after a measured improvement; floors never go down without a keeper ruling.",
+    "score": "Stryker mutation score = (killed + timeout) / (killed + timeout + survived + noCoverage) * 100; compile/runtime-error mutants excluded",
+    "tolerance_pp": 0.75,
+    "history": {
+      "2026-07-13": "seeded from the overnight quality campaign: permissions round 2 (92.87), openai dedicated rounds 1-6 (85.55); transport-anthropic seeded at 77.42 (measurement round, pre-kill-batch)"
+    }
+  },
+  "targets": [
+    {
+      "name": "permissions",
+      "mutate": "src/permissions/**/*.ts",
+      "floor": 92.87
+    },
+    {
+      "name": "transport-openai",
+      "mutate": "src/transport/openai.ts",
+      "floor": 85.55
+    },
+    {
+      "name": "transport-anthropic",
+      "mutate": "src/transport/anthropic.ts",
+      "floor": 77.42
+    }
+  ]
+}
