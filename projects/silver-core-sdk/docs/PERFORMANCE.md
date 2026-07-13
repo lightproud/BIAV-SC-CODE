@@ -36,7 +36,13 @@ adapter (`src/transport/node-http.ts`) with long keep-alive agents:
 - Node's global fetch (undici) drops pooled connections after **~4s idle**,
   so any turn whose tool run exceeds that re-paid a TCP+TLS handshake
   (typically 100-300ms) — every turn. The adapter's agents hold the socket
-  until the server closes it.
+  across those gaps, bounded by a **55s free-socket TTL** (v0.53.3,
+  `FREE_SOCKET_TTL_MS`): middleboxes (Azure LB, ALB, nginx, corporate
+  proxies) drop idle flows silently — no FIN/RST — and an unbounded pool
+  accumulated zombie sockets that stalled the next request for the full
+  request-phase timeout (worst under concurrent conversations, each
+  parking sockets between turns). 55s sits under the common 60s middlebox
+  idle floor; an expired socket costs one fresh handshake, never a stall.
 - Measured head-to-head (same TLS server): adapter reused ONE connection
   across 21 requests where undici recycled mid-run; kept the socket across a
   5.2s idle gap; resumed TLS sessions after a forced close

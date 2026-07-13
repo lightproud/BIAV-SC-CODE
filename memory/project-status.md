@@ -199,6 +199,21 @@
 > 银芯→黑池单向输出物，与 §1.1-HC 防火墙同向，非 BPT 产品内部开发。
 
 - **动手前必读**：`projects/silver-core-sdk/CONTEXT.md`（会话上下文 + 当前 milestone）
+- **v0.53.3（2026-07-13，BPT 稳定性《keep-alive 空闲 socket TTL》）**：修复黑池升 pin 后
+  「回合卡住无输出、并发对话越多越易发」——0.45.0 默认 node HTTP 客户端把池化 socket 握到
+  「服务端来关」为止，但 azure/* 等网关中间设备**静默丢弃**空闲连接（不发 FIN/RST），池内积累
+  僵尸 socket；写上去的请求要等满请求阶段超时（默认 600 秒），重试还可能摸到下一条僵尸；
+  0.45 之前 undici 约 4 秒回收空闲连接、掩盖了整类问题。修复：空闲 socket 55 秒 TTL 主动销毁
+  （`FREE_SOCKET_TTL_MS`，压在常见 60 秒中间设备空闲底线之下；计时器 unref、复用即清零重计），
+  过期只花一次 TCP+TLS 重握手（约 100–300 毫秒，TLS 会话恢复不受影响）；Agent 显式钉
+  `scheduling:'lifo'`。逃生口不变（`provider.httpClient:'fetch'` / `BPT_HTTP_CLIENT=fetch`）。
+  +2 测试，全量 **2145 绿 + 3 skipped**（多出的 1 个 skip 为 `replay-backoff-process-exit`
+  在云容器的环境性跳过，非本改动引起）；tarball `silver-core-sdk-0.53.3.tgz`（809,430 B，
+  sha1 `d5dc13c03a7b43daaa21d72285faebce8cb9150e`）已干净目录装机 + 导入冒烟。
+  **消费侧速判三则**（黑池工具快照对不上源码登记 ≠ 版本不同步）：`memory` 工具仅在传
+  `options.memory` 时才广告（`query.ts`）、`ToolSearch` 仅在 `toolSearch:true` 或工具总数
+  >50 自动激活时出现（`toolsearch.ts` `shouldActivate`）、`SendMessage` 自 0.42.0 起默认在列
+  ——宿主权限表须显式登记（迁移文档 §1.5 已预警）。
 - **v0.53.2（2026-07-13，BPT P0《工具 Schema 边界校验与协议安全》，PR #665）**：修复 azure/*（OpenAI
   Chat Completions 兼容）网关整请求被拒（`tools.N.custom.input_schema: Field required`——单个缺失/非法
   `input_schema` 的工具条目令整段对话无法开始）。三层收口：① 组装层（`engine/loop.ts`）内置/MCP
