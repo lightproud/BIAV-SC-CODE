@@ -1,0 +1,244 @@
+{
+  "date": "2026-07-13",
+  "messages": 5796,
+  "unique_authors": 310,
+  "reactions_total": 869,
+  "attachments": 390,
+  "channel_activity": {
+    "🔸綜合討論": 249,
+    "🔸阵容构建": 221,
+    "🔸剧情交流": 5,
+    "🔸晒卡分享": 5,
+    "🔸相位对弈": 10,
+    "🔸课间休息闲聊": 124,
+    "🔸한국어-채팅방": 145,
+    "🔸deutscher-chatraum": 49,
+    "🔸chaîne-française": 19,
+    "🔸русский-канал": 110,
+    "🔸phòng-chat-tiếng-việt": 145,
+    "🔸canal-español": 149,
+    "🔸canal-português": 310,
+    "🔸ruang-obrolan-indonesia": 208,
+    "🔸ห้องสนทนาภาษาไทย": 309,
+    "🔸traphase": 41,
+    "🔸lore-chat": 546,
+    "🔸礼包码┊gift-codes": 1,
+    "🔸lets-count": 4,
+    "🔸team-building": 770,
+    "🔸邀请码互助┊swap-invitation-codes": 3,
+    "🔸game-question": 2223,
+    "🔸机器人命令┊bot-commands": 34,
+    "《沙耶之歌》名场面复刻┊song-of-saya-speak-for-them-before-she-arrives": 2,
+    "自制一图流（沙耶beta版）（仅供参考）": 2,
+    "願這把銀鑰引領我們 || 一週年紀念": 2,
+    "嗯對沒錯我又來了爆發吧你們的眼睛": 7,
+    "请输入文本": 10,
+    "汀克特bug": 1,
+    "Bug on Psyche Deepdives": 2,
+    "Warp Orison Copy does not trigger Quasar Cost reduction": 1,
+    "这两个东西被放在一个乘区是不是太变态了": 1,
+    "相位對弈 好運時間能夠複製命輪跟打擊": 2,
+    "可以把通關記錄刪掉嗎": 1,
+    "💭「Processing」Game freeze upon finishing an event story": 2,
+    "Potential improvements for Hameln": 4,
+    "明着削了？": 2,
+    "Please rework how Propagation Caro works for the future units": 15,
+    "V2.5.1.0 停服维护公告": 7,
+    "忘却前夜OST：庞托斯EP·无休的凯旋┊Morimens OST: Pontos EP: The Unending Triumph": 8,
+    "May the silver key guide us || 1 Year anniversary": 1,
+    "Ossuary Gala, Chapter 3-9 in a Nutshell": 4,
+    "【 Fan-Made 】 Vulthoom-Inspired Awakener, Persephone": 3,
+    "Arsen's Doodle corner": 1,
+    "William posting": 12,
+    "[Readme]: New players": 1,
+    "【English Translation】Opinions Collection": 3,
+    "V2.5.2 狂欢之行┊A Night of Revelry┊광란의 행진": 1,
+    "回鍋想問陣容組成": 1,
+    "卡关": 7,
+    "Who works with Pollux?": 8,
+    "General guide on how to proceed with account.": 4,
+    "【Newcomer Help】Forum Introduction": 1
+  },
+  "hourly_activity": {
+    "0": 603,
+    "1": 552,
+    "2": 369,
+    "3": 685,
+    "4": 551,
+    "5": 653,
+    "6": 418,
+    "7": 377,
+    "8": 601,
+    "9": 687,
+    "10": 300
+  },
+  "message_types": {
+    "0": 4193,
+    "19": 1564,
+    "20": 36,
+    "6": 1,
+    "4": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1526149678582857729",
+      "channel_id": "1355094251775459399",
+      "content": "**🎁 DC 56000守密人入驻达成礼 ┊ Discord 56,000 Keepers Milestone Reward**\n\n《忘却前夜》官方Discor",
+      "author": "morimensstaff06",
+      "reactions": 311,
+      "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1526057464372396042",
+      "channel_id": "1445556242381672559",
+      "content": "tipsy William flirting with you pov <:Faros_love:1356053099931897977>",
+      "author": "zzio_",
+      "reactions": 21,
+      "channel": "William posting"
+    },
+    {
+      "id": "1526064342792142931",
+      "channel_id": "1131839817982947429",
+      "content": "終於有輸出了",
+      "author": "fon_tain",
+      "reactions": 12,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1526094573292752927",
+      "channel_id": "1326453763355185215",
+      "content": "Anyways\nEverytime I see names such as Netzach I think of the Library of Ruina ch",
+      "author": "nightmarekingrimmu",
+      "reactions": 10,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1526036536821285055",
+      "channel_id": "1131839817982947429",
+      "content": "还差个莱克和神父就全角色超限了😋",
+      "author": "ponponnyaru",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1526069540193042543",
+      "channel_id": "1526069540193042543",
+      "content": "婚紗戈",
+      "author": "foxcatfurry",
+      "reactions": 9,
+      "channel": "嗯對沒錯我又來了爆發吧你們的眼睛"
+    },
+    {
+      "id": "1526111114436546631",
+      "channel_id": "1526111114436546631",
+      "content": "In celebration of me actively logging in for 1 year, I had made this quick art!\n",
+      "author": "that_one_chippy",
+      "reactions": 9,
+      "channel": "May the silver key guide us || 1 Year anniversary"
+    },
+    {
+      "id": "1526086242964602930",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1526157034976841810",
+      "channel_id": "1131839817982947429",
+      "content": "把螺旋疊滿了",
+      "author": "yusi4172",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1526112182914383932",
+      "channel_id": "1526112182914383932",
+      "content": "為了慶祝我持續登入這款遊戲滿一年，我畫了這幅速寫！\n\n雖然我是在 达芙黛尔剛推出時第一次玩這款遊戲…… 不久之後，我就停止遊玩了，直到遊戲推出兩週年為止。我從未",
+      "author": "that_one_chippy",
+      "reactions": 6,
+      "channel": "願這把銀鑰引領我們 || 一週年紀念"
+    },
+    {
+      "id": "1526120865991753848",
+      "channel_id": "1526120865991753848",
+      "content": "感谢各位守密人的支持！《忘却前夜》新OST已发布，欢迎收听、下载及分享。\n如果有基于OST的二次创作，也欢迎分享给我们！二创请遵照同人规则，OST内容请勿商用。",
+      "author": "morimensstaff06",
+      "reactions": 6,
+      "channel": "忘却前夜OST：庞托斯EP·无休的凯旋┊Morimens OST: Pontos EP: The Unending Triumph"
+    },
+    {
+      "id": "1526070474457485413",
+      "channel_id": "1131839817982947429",
+      "content": "好可惜 现在的新人大概都是无脑碾过去\n赤不了曾经的美味了<:24_clown:1468259444423921871>",
+      "author": "ling_an_",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1526156262507544726",
+      "channel_id": "1131839817982947429",
+      "content": "我的阿拉+36了",
+      "author": "yusi4172",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1526104425784021062",
+      "channel_id": "1131839874132090890",
+      "content": "box是谁，没听过<:Nymph_mmmh:1356053095691452457>",
+      "author": "hanzhishi._46481",
+      "reactions": 5,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1526064008849784832",
+      "channel_id": "1326453763355185215",
+      "content": "so far all the genesis characters do consider their base counterparts as the sam",
+      "author": "nikolazuli",
+      "reactions": 5,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1526067477593849958",
+      "channel_id": "1326453763355185215",
+      "content": "You expect people to do hw!",
+      "author": "mythicmoonwort",
+      "reactions": 5,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1526098340671000586",
+      "channel_id": "1131839817982947429",
+      "content": "<:emoji_11:1505290988908974161>",
+      "author": "hon_ey0",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1526151627088592896",
+      "channel_id": "1131839817982947429",
+      "content": "我懂了，熊佬都在记录我纯洁的每一刻",
+      "author": "kemomimi_",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1526094317058396323",
+      "channel_id": "1131839874132090890",
+      "content": "我還以為阿拉就是一直死就贏了",
+      "author": "yi000607",
+      "reactions": 4,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1526105353153020034",
+      "channel_id": "1131839874132090890",
+      "content": "我都425了我不怕省配置",
+      "author": "gensono0609",
+      "reactions": 4,
+      "channel": "🔸阵容构建"
+    }
+  ]
+}

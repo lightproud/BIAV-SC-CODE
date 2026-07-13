@@ -3,859 +3,1002 @@
     "name": "活動訊息",
     "type": "text",
     "parent_id": "1511303613408870511",
-    "dir": "33199472"
+    "dir": "33199472",
+    "status": "active"
   },
   "1131796304050262126": {
     "name": "官方佈告（已停止使用）",
     "type": "announcement",
     "parent_id": "1511303613408870511",
-    "dir": "50262126"
+    "dir": "50262126",
+    "status": "active"
   },
   "1131837874078232597": {
     "name": "🔸新生守则┊rules",
     "type": "text",
     "parent_id": "",
-    "dir": "78232597"
+    "dir": "78232597",
+    "status": "active"
   },
   "1131838787706699807": {
     "name": "禮包兌換碼",
     "type": "text",
     "parent_id": "1511303613408870511",
-    "dir": "06699807"
+    "dir": "06699807",
+    "status": "active"
   },
   "1131839817982947429": {
     "name": "🔸綜合討論",
     "type": "text",
     "parent_id": "1355149654068691124",
-    "dir": "82947429"
+    "dir": "82947429",
+    "status": "active"
   },
   "1131839874132090890": {
     "name": "🔸阵容构建",
     "type": "text",
     "parent_id": "1355149654068691124",
-    "dir": "32090890"
+    "dir": "32090890",
+    "status": "active"
   },
   "1131840077237067837": {
     "name": "遊戲問題及bug回報",
     "type": "text",
     "parent_id": "1511303613408870511",
-    "dir": "37067837"
+    "dir": "37067837",
+    "status": "active"
   },
   "1131840478267064320": {
     "name": "繪圖",
     "type": "text",
     "parent_id": "1511303613408870511",
-    "dir": "67064320"
+    "dir": "67064320",
+    "status": "active"
   },
   "1132942133632974990": {
     "name": "🤖垃圾邮件机器人┊spam-bot",
     "type": "text",
     "parent_id": "",
-    "dir": "32974990"
+    "dir": "32974990",
+    "status": "active"
   },
   "1166623241293545492": {
     "name": "discord社群建議",
     "type": "text",
     "parent_id": "1511303613408870511",
-    "dir": "93545492"
+    "dir": "93545492",
+    "status": "active"
   },
   "1168734000827863070": {
     "name": "校貓問答（已停止使用）",
     "type": "text",
     "parent_id": "1511303613408870511",
-    "dir": "27863070"
+    "dir": "27863070",
+    "status": "active"
   },
   "1170692781216378960": {
     "name": "🔸morimens-game-chat",
     "type": "text",
     "parent_id": "1433512102714413146",
-    "dir": "16378960"
+    "dir": "16378960",
+    "status": "active"
   },
   "1170913498579095634": {
     "name": "影片",
     "type": "text",
     "parent_id": "1511303613408870511",
-    "dir": "79095634"
+    "dir": "79095634",
+    "status": "active"
   },
   "1171394049970798602": {
     "name": "世界觀-喚醒體介紹",
     "type": "forum",
     "parent_id": "1511303613408870511",
-    "dir": "70798602"
+    "dir": "70798602",
+    "status": "active"
   },
   "1173463482503536711": {
     "name": "🔸剧情交流",
     "type": "text",
     "parent_id": "1355149654068691124",
-    "dir": "03536711"
+    "dir": "03536711",
+    "status": "active"
   },
   "1174179624096378930": {
     "name": "🔸游戏攻略",
     "type": "forum",
     "parent_id": "1355090412821418119",
-    "dir": "96378930"
+    "dir": "96378930",
+    "status": "active"
   },
   "1174182796424650843": {
     "name": "攻略投遞專區（已停止使用）",
     "type": "text",
     "parent_id": "1511303613408870511",
-    "dir": "24650843"
+    "dir": "24650843",
+    "status": "active"
   },
   "1174185304027045969": {
     "name": "🔸同人创作",
     "type": "forum",
     "parent_id": "1355149143739203624",
-    "dir": "27045969"
+    "dir": "27045969",
+    "status": "active"
   },
   "1174983699935277147": {
     "name": "🔸晒卡分享",
     "type": "text",
     "parent_id": "1355149654068691124",
-    "dir": "35277147"
+    "dir": "35277147",
+    "status": "active"
   },
   "1177574564440588308": {
     "name": "彌薩格大學茶話會",
     "type": "text",
     "parent_id": "1511303613408870511",
-    "dir": "40588308"
+    "dir": "40588308",
+    "status": "active"
   },
   "1179386963871150211": {
     "name": "🔸彌薩格大學委員會",
     "type": "text",
     "parent_id": "1511303613408870511",
-    "dir": "71150211"
+    "dir": "71150211",
+    "status": "active"
   },
   "1179405846673883186": {
     "name": "🔸调查心得",
     "type": "forum",
     "parent_id": "1355149654068691124",
-    "dir": "73883186"
+    "dir": "73883186",
+    "status": "active"
   },
   "1179745906283773952": {
     "name": "入學典禮",
     "type": "text",
     "parent_id": "1511303613408870511",
-    "dir": "83773952"
+    "dir": "83773952",
+    "status": "active"
   },
   "1179761516032032819": {
     "name": "茶話會特邀前輩",
     "type": "text",
     "parent_id": "1511303613408870511",
-    "dir": "32032819"
+    "dir": "32032819",
+    "status": "active"
   },
   "1180087318506393630": {
     "name": "喚醒體搭配分享活動",
     "type": "forum",
     "parent_id": "1511303613408870511",
-    "dir": "06393630"
+    "dir": "06393630",
+    "status": "active"
   },
   "1180437373012672522": {
     "name": "🔸欢乐梗图",
     "type": "text",
     "parent_id": "1355149654068691124",
-    "dir": "12672522"
+    "dir": "12672522",
+    "status": "active"
   },
   "1180845276823564288": {
     "name": "🔸有問必答┊official-q-a",
     "type": "forum",
     "parent_id": "1355086706163974316",
-    "dir": "23564288"
+    "dir": "23564288",
+    "status": "active"
   },
   "1180850818509971466": {
     "name": "🔸相位对弈",
     "type": "text",
     "parent_id": "1355149654068691124",
-    "dir": "09971466"
+    "dir": "09971466",
+    "status": "active"
   },
   "1181135756958371881": {
     "name": "🔸遊戲公告┊game-announcement",
     "type": "forum",
     "parent_id": "1131791637933199471",
-    "dir": "58371881"
+    "dir": "58371881",
+    "status": "active"
   },
   "1181145177943982153": {
     "name": "🔸影片分享",
     "type": "forum",
     "parent_id": "1355149143739203624",
-    "dir": "43982153"
+    "dir": "43982153",
+    "status": "active"
   },
   "1181146739198140487": {
     "name": "🔸考據研究",
     "type": "forum",
     "parent_id": "1355149143739203624",
-    "dir": "98140487"
+    "dir": "98140487",
+    "status": "active"
   },
   "1181146813890302033": {
     "name": "🔸官方素材┊official-materials",
     "type": "forum",
     "parent_id": "1131791637933199471",
-    "dir": "90302033"
+    "dir": "90302033",
+    "status": "active"
   },
   "1181152750319456266": {
     "name": "🔸课间休息闲聊",
     "type": "text",
     "parent_id": "1355149654068691124",
-    "dir": "19456266"
+    "dir": "19456266",
+    "status": "active"
   },
   "1184003940082262069": {
     "name": "🔸校貓日誌┊schoolcat’s-notes",
     "type": "forum",
     "parent_id": "1131791637933199471",
-    "dir": "82262069"
+    "dir": "82262069",
+    "status": "active"
   },
   "1184706567103324252": {
     "name": "幻夢深潛天梯賽",
     "type": "forum",
     "parent_id": "1511303613408870511",
-    "dir": "03324252"
+    "dir": "03324252",
+    "status": "active"
   },
   "1187304008356999169": {
     "name": "達芙黛爾應援活動",
     "type": "text",
     "parent_id": "1511303613408870511",
-    "dir": "56999169"
+    "dir": "56999169",
+    "status": "active"
   },
   "1190246670332600401": {
     "name": "滿月慶典",
     "type": "text",
     "parent_id": "1511303613408870511",
-    "dir": "32600401"
+    "dir": "32600401",
+    "status": "active"
   },
   "1194554310680391700": {
     "name": "📖彌薩格攻略研讀會",
     "type": "text",
     "parent_id": "1511303613408870511",
-    "dir": "80391700"
+    "dir": "80391700",
+    "status": "active"
   },
   "1194835209242296410": {
     "name": "🔸交友频道",
     "type": "text",
     "parent_id": "1355149654068691124",
-    "dir": "42296410"
+    "dir": "42296410",
+    "status": "active"
   },
   "1205101971514728458": {
     "name": "春節活動",
     "type": "text",
     "parent_id": "1511303613408870511",
-    "dir": "14728458"
+    "dir": "14728458",
+    "status": "active"
   },
   "1210870902959378474": {
     "name": "元宵節活動",
     "type": "text",
     "parent_id": "1511303613408870511",
-    "dir": "59378474"
+    "dir": "59378474",
+    "status": "active"
   },
   "1214493117508755506": {
     "name": "百日慶典",
     "type": "text",
     "parent_id": "1511303613408870511",
-    "dir": "08755506"
+    "dir": "08755506",
+    "status": "active"
   },
   "1230475904166133801": {
     "name": "「迎新×銀芯√」活動",
     "type": "text",
     "parent_id": "1511303613408870511",
-    "dir": "66133801"
+    "dir": "66133801",
+    "status": "active"
   },
   "1241617246934007808": {
     "name": "🔸半周年活動專區",
     "type": "forum",
     "parent_id": "1511303613408870511",
-    "dir": "34007808"
+    "dir": "34007808",
+    "status": "active"
   },
   "1300659436804640788": {
     "name": "🔸日本語チャンネル",
     "type": "text",
     "parent_id": "1131839770545365072",
-    "dir": "04640788"
+    "dir": "04640788",
+    "status": "active"
   },
   "1300659495550062592": {
     "name": "🔸한국어-채팅방",
     "type": "text",
     "parent_id": "1131839770545365072",
-    "dir": "50062592"
+    "dir": "50062592",
+    "status": "active"
   },
   "1300659525812097026": {
     "name": "🔸deutscher-chatraum",
     "type": "text",
     "parent_id": "1131839770545365072",
-    "dir": "12097026"
+    "dir": "12097026",
+    "status": "active"
   },
   "1300659552701648960": {
     "name": "🔸chaîne-française",
     "type": "text",
     "parent_id": "1131839770545365072",
-    "dir": "01648960"
+    "dir": "01648960",
+    "status": "active"
   },
   "1300659580446969918": {
     "name": "🔸русский-канал",
     "type": "text",
     "parent_id": "1131839770545365072",
-    "dir": "46969918"
+    "dir": "46969918",
+    "status": "active"
   },
   "1300659603993923644": {
     "name": "🔸phòng-chat-tiếng-việt",
     "type": "text",
     "parent_id": "1131839770545365072",
-    "dir": "93923644"
+    "dir": "93923644",
+    "status": "active"
   },
   "1300659662311526512": {
     "name": "🔸canal-español",
     "type": "text",
     "parent_id": "1131839770545365072",
-    "dir": "11526512"
+    "dir": "11526512",
+    "status": "active"
   },
   "1300659718653476925": {
     "name": "🔸canal-português",
     "type": "text",
     "parent_id": "1131839770545365072",
-    "dir": "53476925"
+    "dir": "53476925",
+    "status": "active"
   },
   "1300659753197764688": {
     "name": "🔸ruang-obrolan-indonesia",
     "type": "text",
     "parent_id": "1131839770545365072",
-    "dir": "97764688"
+    "dir": "97764688",
+    "status": "active"
   },
   "1300659802455674972": {
     "name": "🔸ห้องสนทนาภาษาไทย",
     "type": "text",
     "parent_id": "1131839770545365072",
-    "dir": "55674972"
+    "dir": "55674972",
+    "status": "active"
   },
   "1304022107847659520": {
     "name": "🔸art-and-memes",
     "type": "forum",
     "parent_id": "1355149143739203624",
-    "dir": "47659520"
+    "dir": "47659520",
+    "status": "active"
   },
   "1304022827824844842": {
     "name": "🔸guides",
     "type": "forum",
     "parent_id": "1355090412821418119",
-    "dir": "24844842"
+    "dir": "24844842",
+    "status": "active"
   },
   "1304023203252801599": {
     "name": "🔸story-discussion",
     "type": "forum",
     "parent_id": "1433512102714413146",
-    "dir": "52801599"
+    "dir": "52801599",
+    "status": "active"
   },
   "1316744385118998529": {
     "name": "🔸【超越維度的祝福】認領專區",
     "type": "text",
     "parent_id": "1511303613408870511",
-    "dir": "18998529"
+    "dir": "18998529",
+    "status": "active"
   },
   "1324573371349860352": {
     "name": "🔸pvp-tournament",
     "type": "text",
     "parent_id": "1433512102714413146",
-    "dir": "49860352"
+    "dir": "49860352",
+    "status": "active"
   },
   "1326453691527594035": {
     "name": "🔸traphase",
     "type": "text",
     "parent_id": "1433512102714413146",
-    "dir": "27594035"
+    "dir": "27594035",
+    "status": "active"
   },
   "1326453763355185215": {
     "name": "🔸lore-chat",
     "type": "text",
     "parent_id": "1433512102714413146",
-    "dir": "55185215"
+    "dir": "55185215",
+    "status": "active"
   },
   "1350027302205001779": {
     "name": "🔸翻译反馈┊mistranslation",
     "type": "forum",
     "parent_id": "1355086706163974316",
-    "dir": "05001779"
+    "dir": "05001779",
+    "status": "active"
   },
   "1351755074040496228": {
     "name": "💬mythag-university-committee",
     "type": "text",
     "parent_id": "1508074298236211270",
-    "dir": "40496228"
+    "dir": "40496228",
+    "status": "active"
   },
   "1354754985119846581": {
     "name": "🔸服务器公告┊server-announcement",
     "type": "text",
     "parent_id": "1131791637933199471",
-    "dir": "19846581"
+    "dir": "19846581",
+    "status": "active"
   },
   "1355085076500578363": {
     "name": "🔸活动资讯┊event-information",
     "type": "forum",
     "parent_id": "1131791637933199471",
-    "dir": "00578363"
+    "dir": "00578363",
+    "status": "active"
   },
   "1355094251775459399": {
     "name": "🔸礼包码┊gift-codes",
     "type": "text",
     "parent_id": "1131791637933199471",
-    "dir": "75459399"
+    "dir": "75459399",
+    "status": "active"
   },
   "1355609481886826536": {
     "name": "دردشة-عامة",
     "type": "text",
     "parent_id": "1355607635147362554",
-    "dir": "86826536"
+    "dir": "86826536",
+    "status": "active"
   },
   "1355609693073969392": {
     "name": "دليل-اللعبة",
     "type": "text",
     "parent_id": "1355607635147362554",
-    "dir": "73969392"
+    "dir": "73969392",
+    "status": "active"
   },
   "1355610161842098469": {
     "name": "一般聊天",
     "type": "text",
     "parent_id": "1355607635147362554",
-    "dir": "42098469"
+    "dir": "42098469",
+    "status": "active"
   },
   "1355610239050711232": {
     "name": "游戏指南",
     "type": "text",
     "parent_id": "1355607635147362554",
-    "dir": "50711232"
+    "dir": "50711232",
+    "status": "active"
   },
   "1355610353370665375": {
     "name": "一般聊天",
     "type": "text",
     "parent_id": "1355607635147362554",
-    "dir": "70665375"
+    "dir": "70665375",
+    "status": "active"
   },
   "1355610435084353717": {
     "name": "遊戲指南",
     "type": "text",
     "parent_id": "1355607635147362554",
-    "dir": "84353717"
+    "dir": "84353717",
+    "status": "active"
   },
   "1355610586876084336": {
     "name": "algemene-chat",
     "type": "text",
     "parent_id": "1355607635147362554",
-    "dir": "76084336"
+    "dir": "76084336",
+    "status": "active"
   },
   "1355610715175780562": {
     "name": "spelgids",
     "type": "text",
     "parent_id": "1355607635147362554",
-    "dir": "75780562"
+    "dir": "75780562",
+    "status": "active"
   },
   "1355617858767294666": {
     "name": "discussion-générale",
     "type": "text",
     "parent_id": "1355607635147362554",
-    "dir": "67294666"
+    "dir": "67294666",
+    "status": "active"
   },
   "1355617966070300762": {
     "name": "guide-du-jeu",
     "type": "text",
     "parent_id": "1355607635147362554",
-    "dir": "70300762"
+    "dir": "70300762",
+    "status": "active"
   },
   "1355618342781845584": {
     "name": "allgemeiner-chat",
     "type": "text",
     "parent_id": "1355607635147362554",
-    "dir": "81845584"
+    "dir": "81845584",
+    "status": "active"
   },
   "1355619870569529467": {
     "name": "spielanleitung",
     "type": "text",
     "parent_id": "1355607635147362554",
-    "dir": "69529467"
+    "dir": "69529467",
+    "status": "active"
   },
   "1355622323029413989": {
     "name": "צאט-כללי",
     "type": "text",
     "parent_id": "1355607635147362554",
-    "dir": "29413989"
+    "dir": "29413989",
+    "status": "active"
   },
   "1355622592005931170": {
     "name": "מדריך-משחק",
     "type": "text",
     "parent_id": "1355607635147362554",
-    "dir": "05931170"
+    "dir": "05931170",
+    "status": "active"
   },
   "1355622856225980637": {
     "name": "सामान्य-बातचीत",
     "type": "text",
     "parent_id": "1355607635147362554",
-    "dir": "25980637"
+    "dir": "25980637",
+    "status": "active"
   },
   "1355623188708458767": {
     "name": "गेम-निर्देशिका",
     "type": "text",
     "parent_id": "1355607635147362554",
-    "dir": "08458767"
+    "dir": "08458767",
+    "status": "active"
   },
   "1355623778956083442": {
     "name": "obrolan-umum",
     "type": "text",
     "parent_id": "1355607635147362554",
-    "dir": "56083442"
+    "dir": "56083442",
+    "status": "active"
   },
   "1355624136247869751": {
     "name": "panduan-permainan",
     "type": "text",
     "parent_id": "1355607635147362554",
-    "dir": "47869751"
+    "dir": "47869751",
+    "status": "active"
   },
   "1355624407896428674": {
     "name": "chiacchierata-generale",
     "type": "text",
     "parent_id": "1355607635147362554",
-    "dir": "96428674"
+    "dir": "96428674",
+    "status": "active"
   },
   "1355624604118417528": {
     "name": "guida-al-gioco",
     "type": "text",
     "parent_id": "1355607635147362554",
-    "dir": "18417528"
+    "dir": "18417528",
+    "status": "active"
   },
   "1355624803603578980": {
     "name": "一般的なチャット",
     "type": "text",
     "parent_id": "1355607635147362554",
-    "dir": "03578980"
+    "dir": "03578980",
+    "status": "active"
   },
   "1355625161717711029": {
     "name": "ゲームガイド",
     "type": "text",
     "parent_id": "1355607635147362554",
-    "dir": "17711029"
+    "dir": "17711029",
+    "status": "active"
   },
   "1355625604199743689": {
     "name": "일반-채팅",
     "type": "text",
     "parent_id": "1355607635147362554",
-    "dir": "99743689"
+    "dir": "99743689",
+    "status": "active"
   },
   "1355625824161759382": {
     "name": "게임-가이드",
     "type": "text",
     "parent_id": "1355607635147362554",
-    "dir": "61759382"
+    "dir": "61759382",
+    "status": "active"
   },
   "1355626220661772508": {
     "name": "pangkalahatang-chat",
     "type": "text",
     "parent_id": "1355607635147362554",
-    "dir": "61772508"
+    "dir": "61772508",
+    "status": "active"
   },
   "1355626481367126026": {
     "name": "gabay-sa-laro",
     "type": "text",
     "parent_id": "1355607635147362554",
-    "dir": "67126026"
+    "dir": "67126026",
+    "status": "active"
   },
   "1355626663576211527": {
     "name": "czat-ogólny",
     "type": "text",
     "parent_id": "1355607635147362554",
-    "dir": "76211527"
+    "dir": "76211527",
+    "status": "active"
   },
   "1355626833931927754": {
     "name": "przewodnik-po-grze",
     "type": "text",
     "parent_id": "1355607635147362554",
-    "dir": "31927754"
+    "dir": "31927754",
+    "status": "active"
   },
   "1355627119216033792": {
     "name": "bate-papo-geral",
     "type": "text",
     "parent_id": "1355607635147362554",
-    "dir": "16033792"
+    "dir": "16033792",
+    "status": "active"
   },
   "1355627327370821703": {
     "name": "guia-do-jogo",
     "type": "text",
     "parent_id": "1355607635147362554",
-    "dir": "70821703"
+    "dir": "70821703",
+    "status": "active"
   },
   "1355627760974037163": {
     "name": "bate-papo-geral",
     "type": "text",
     "parent_id": "1355607635147362554",
-    "dir": "74037163"
+    "dir": "74037163",
+    "status": "active"
   },
   "1355628090243551331": {
     "name": "guia-do-jogo",
     "type": "text",
     "parent_id": "1355607635147362554",
-    "dir": "43551331"
+    "dir": "43551331",
+    "status": "active"
   },
   "1355628273207345322": {
     "name": "общий-чат",
     "type": "text",
     "parent_id": "1355607635147362554",
-    "dir": "07345322"
+    "dir": "07345322",
+    "status": "active"
   },
   "1355628524014272582": {
     "name": "руководство-по-игре",
     "type": "text",
     "parent_id": "1355607635147362554",
-    "dir": "14272582"
+    "dir": "14272582",
+    "status": "active"
   },
   "1355628675319468304": {
     "name": "charla-general",
     "type": "text",
     "parent_id": "1355607635147362554",
-    "dir": "19468304"
+    "dir": "19468304",
+    "status": "active"
   },
   "1355628872988758116": {
     "name": "guía-del-juego",
     "type": "text",
     "parent_id": "1355607635147362554",
-    "dir": "88758116"
+    "dir": "88758116",
+    "status": "active"
   },
   "1355629411281666150": {
     "name": "allmän-chatt",
     "type": "text",
     "parent_id": "1355607635147362554",
-    "dir": "81666150"
+    "dir": "81666150",
+    "status": "active"
   },
   "1355629622540111872": {
     "name": "spelguide",
     "type": "text",
     "parent_id": "1355607635147362554",
-    "dir": "40111872"
+    "dir": "40111872",
+    "status": "active"
   },
   "1355629796507254794": {
     "name": "genel-sohbet",
     "type": "text",
     "parent_id": "1355607635147362554",
-    "dir": "07254794"
+    "dir": "07254794",
+    "status": "active"
   },
   "1355629973964198158": {
     "name": "oyun-rehberi",
     "type": "text",
     "parent_id": "1355607635147362554",
-    "dir": "64198158"
+    "dir": "64198158",
+    "status": "active"
   },
   "1355630588094320661": {
     "name": "🔸lets-count",
     "type": "text",
     "parent_id": "1437857872011726879",
-    "dir": "94320661"
+    "dir": "94320661",
+    "status": "active"
   },
   "1355631357312635111": {
     "name": "game-guide",
     "type": "text",
     "parent_id": "1355607635147362554",
-    "dir": "12635111"
+    "dir": "12635111",
+    "status": "active"
   },
   "1355631663366803586": {
     "name": "trò-chuyện-chung",
     "type": "text",
     "parent_id": "1355607635147362554",
-    "dir": "66803586"
+    "dir": "66803586",
+    "status": "active"
   },
   "1355631764130889778": {
     "name": "hướng-dẫn-trò-chơi",
     "type": "text",
     "parent_id": "1355607635147362554",
-    "dir": "30889778"
+    "dir": "30889778",
+    "status": "active"
   },
   "1355632527263404032": {
     "name": "การสนทนาทั่วไป",
     "type": "text",
     "parent_id": "1355607635147362554",
-    "dir": "63404032"
+    "dir": "63404032",
+    "status": "active"
   },
   "1355632743764987945": {
     "name": "คู่มือเกม",
     "type": "text",
     "parent_id": "1355607635147362554",
-    "dir": "64987945"
+    "dir": "64987945",
+    "status": "active"
   },
   "1356008444615983256": {
     "name": "🌎┊select-language",
     "type": "text",
     "parent_id": "1355607635147362554",
-    "dir": "15983256"
+    "dir": "15983256",
+    "status": "active"
   },
   "1356020305448931560": {
     "name": "global-chat",
     "type": "text",
     "parent_id": "1355607635147362554",
-    "dir": "48931560"
+    "dir": "48931560",
+    "status": "active"
   },
   "1356200054276493444": {
     "name": "🔸新人帮助",
     "type": "forum",
     "parent_id": "1355090412821418119",
-    "dir": "76493444"
+    "dir": "76493444",
+    "status": "active"
   },
   "1356200968311803956": {
     "name": "🔸newcomer-help",
     "type": "forum",
     "parent_id": "1355090412821418119",
-    "dir": "11803956"
+    "dir": "11803956",
+    "status": "active"
   },
   "1356538084828647546": {
     "name": "🔸翻译器教程┊translator-tutorial",
     "type": "text",
     "parent_id": "",
-    "dir": "28647546"
+    "dir": "28647546",
+    "status": "active"
   },
   "1385040039448412170": {
     "name": "🔸频道建议┊server-suggestions",
     "type": "text",
     "parent_id": "1355086706163974316",
-    "dir": "48412170"
+    "dir": "48412170",
+    "status": "active"
   },
   "1400749543288475770": {
     "name": "🔸team-building",
     "type": "text",
     "parent_id": "1433512102714413146",
-    "dir": "88475770"
+    "dir": "88475770",
+    "status": "active"
   },
   "1400750050208125010": {
     "name": "🔸general-chat",
     "type": "text",
     "parent_id": "1433512102714413146",
-    "dir": "08125010"
+    "dir": "08125010",
+    "status": "active"
   },
   "1405837769212821554": {
     "name": "🔸邀请码互助┊swap-invitation-codes",
     "type": "text",
     "parent_id": "1355090412821418119",
-    "dir": "12821554"
+    "dir": "12821554",
+    "status": "active"
   },
   "1407293732310614109": {
     "name": "🌍community-interpreter",
     "type": "text",
     "parent_id": "1508074298236211270",
-    "dir": "10614109"
+    "dir": "10614109",
+    "status": "active"
   },
   "1426837316533747823": {
     "name": "🐱light’s-nest",
     "type": "text",
     "parent_id": "1433512102714413146",
-    "dir": "33747823"
+    "dir": "33747823",
+    "status": "active"
   },
   "1433513650299076780": {
     "name": "🔸game-question",
     "type": "text",
     "parent_id": "1433512102714413146",
-    "dir": "99076780"
+    "dir": "99076780",
+    "status": "active"
   },
   "1435483703114596503": {
     "name": "🔸忘却前夜┊morimens-tv",
     "type": "text",
     "parent_id": "1355149143739203624",
-    "dir": "14596503"
+    "dir": "14596503",
+    "status": "active"
   },
   "1435487123250872371": {
     "name": "🔸游戏问题",
     "type": "text",
     "parent_id": "1355149654068691124",
-    "dir": "50872371"
+    "dir": "50872371",
+    "status": "active"
   },
   "1435488403960631357": {
     "name": "🔸friend-request",
     "type": "text",
     "parent_id": "1437857872011726879",
-    "dir": "60631357"
+    "dir": "60631357",
+    "status": "active"
   },
   "1436097679653601340": {
     "name": "🔸两周年纪念反馈┊2yr-anniv-feedback",
     "type": "text",
     "parent_id": "1511303613408870511",
-    "dir": "53601340"
+    "dir": "53601340",
+    "status": "active"
   },
   "1436576905401991329": {
     "name": "🎞️content-creator",
     "type": "text",
     "parent_id": "",
-    "dir": "01991329"
+    "dir": "01991329",
+    "status": "active"
   },
   "1436766905628098632": {
     "name": "🔸游戏常见问题解答┊game-faq",
     "type": "text",
     "parent_id": "1355090412821418119",
-    "dir": "28098632"
+    "dir": "28098632",
+    "status": "active"
   },
   "1436913827571695898": {
     "name": "🔸机器人命令┊bot-commands",
     "type": "text",
     "parent_id": "1437857872011726879",
-    "dir": "71695898"
+    "dir": "71695898",
+    "status": "active"
   },
   "1437760064470646844": {
     "name": "🔸flex",
     "type": "text",
     "parent_id": "1437857872011726879",
-    "dir": "70646844"
+    "dir": "70646844",
+    "status": "active"
   },
   "1440338135434268783": {
     "name": "📝audit-log",
     "type": "text",
     "parent_id": "1508074298236211270",
-    "dir": "34268783"
+    "dir": "34268783",
+    "status": "active"
   },
   "1440851755603722270": {
     "name": "✉️modmail-log",
     "type": "text",
     "parent_id": "1508074298236211270",
-    "dir": "03722270"
+    "dir": "03722270",
+    "status": "active"
   },
   "1453650039493754981": {
     "name": "🎄圣诞限时活动┊christmas-activities",
     "type": "text",
     "parent_id": "1511303613408870511",
-    "dir": "93754981"
+    "dir": "93754981",
+    "status": "active"
   },
   "1481134325033472060": {
     "name": "volunteer-onboarding",
     "type": "text",
     "parent_id": "1508074298236211270",
-    "dir": "33472060"
+    "dir": "33472060",
+    "status": "active"
   },
   "1486019364682465372": {
     "name": "🔸erica-playground",
     "type": "text",
     "parent_id": "1511303613408870511",
-    "dir": "82465372"
+    "dir": "82465372",
+    "status": "active"
   },
   "1491277200651980831": {
     "name": "📚mythag-research-group丨弥萨格课题组",
     "type": "text",
     "parent_id": "1508074298236211270",
-    "dir": "51980831"
+    "dir": "51980831",
+    "status": "active"
   },
   "1508073533979234324": {
     "name": "cases-repository",
     "type": "forum",
     "parent_id": "1508074298236211270",
-    "dir": "79234324"
+    "dir": "79234324",
+    "status": "active"
   },
   "1508175196928999584": {
     "name": "🚫auto-ban-channel",
     "type": "text",
     "parent_id": "",
-    "dir": "28999584"
+    "dir": "28999584",
+    "status": "active"
   },
   "1509389887080632330": {
     "name": "《沙耶之歌》名场面复刻┊song-of-saya-speak-for-them-before-she-arrives",
     "type": "text",
     "parent_id": "1131791637933199471",
-    "dir": "80632330"
+    "dir": "80632330",
+    "status": "active"
   },
   "1524623737297567946": {
     "name": "kyojurorengokusama",
     "type": "text",
     "parent_id": "1440851754311749733",
-    "dir": "97567946"
+    "dir": "97567946",
+    "status": "offline"
   },
   "1525778990391099432": {
     "name": "chinkeeyong",
     "type": "text",
     "parent_id": "1440851754311749733",
-    "dir": "91099432"
+    "dir": "91099432",
+    "status": "offline"
   },
   "1479049630200107069": {
     "name": "",
