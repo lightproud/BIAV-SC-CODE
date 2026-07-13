@@ -627,6 +627,17 @@ export type EngineConfig = {
 
 export type EngineDeps = {
   transport: Transport;
+  /**
+   * Cross-protocol routing for engine-internal calls that target a model
+   * OTHER than the session model (currently: the compaction summarizer).
+   * Returns the transport that model should drive; absent -> `transport`.
+   * Composed by the query layer from Options.resolveSubagentTransport;
+   * owned-transport disposal is the composer's responsibility.
+   */
+  transportForModel?: (
+    model: string,
+    purpose: 'utility' | 'compaction',
+  ) => Transport | Promise<Transport>;
   builtinTools: Map<string, BuiltinTool>;
   mcp: McpRegistry;
   permissions: PermissionGate;

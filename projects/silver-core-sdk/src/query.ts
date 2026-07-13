@@ -35,6 +35,7 @@ import type {
   SDKSystemMessage,
   SDKUserMessage,
   SlashCommand,
+  SubagentTransportHandle,
   TextBlockParam,
 } from './types.js';
 import type {
@@ -447,6 +448,57 @@ export function query(args: {
   // readFilePaths Set's identity.
   const toolSessionKey: object = {};
 
+  // Cross-protocol routing for engine-internal non-session-model calls
+  // (v0.55.0): utility generator calls (hook `condition` evaluation) and the
+  // compaction summarizer route through the same Options.resolveSubagentTransport
+  // policy as isolated subagents, distinguished by `purpose`. Absent resolver
+  // -> undefined -> every call keeps its previous transport path unchanged.
+  // Owned resolutions are tracked here and disposed at query teardown. NOTE
+  // the closure reads `engineConfig` (declared below) lazily — it only runs
+  // during hook/compaction evaluation, long after query init completes.
+  const queryOwnedTransports = new Set<Transport>();
+  const disposeQueryOwnedTransports = (): void => {
+    for (const t of queryOwnedTransports) {
+      try {
+        t.dispose?.();
+      } catch (err) {
+        debug(
+          `transportForModel dispose failed (ignored): ` +
+            `${err instanceof Error ? err.message : String(err)}`,
+        );
+      }
+    }
+    queryOwnedTransports.clear();
+  };
+  const transportForModel =
+    options.resolveSubagentTransport === undefined
+      ? undefined
+      : async (
+          model: string,
+          purpose: 'utility' | 'compaction',
+        ): Promise<Transport> => {
+          const resolution = await options.resolveSubagentTransport!({
+            model,
+            purpose,
+            parentModel: engineConfig.model,
+            parentProtocol:
+              options.provider?.protocol === 'openai-chat'
+                ? 'openai-chat'
+                : 'anthropic',
+            parentTransport: transport as SubagentTransportHandle,
+            parentProvider: options.provider,
+            env,
+            fork: false,
+            debug,
+          });
+          if (resolution === undefined) return transport;
+          const resolved = resolution.transport as unknown as Transport;
+          if (resolved !== transport && resolution.owned === true) {
+            queryOwnedTransports.add(resolved);
+          }
+          return resolved;
+        };
+
   const hooks = new DefaultHookRunner({
     hooks: options.hooks,
     debug,
@@ -454,7 +506,16 @@ export function query(args: {
     // v0.6 condition-gated matchers: thread the session credentials so a
     // matcher's `condition` can be evaluated (bounded single-shot call). A
     // matcher without a condition never triggers a call.
-    conditionOptions: { provider: options.provider, betas: options.betas, env, debug },
+    conditionOptions: {
+      provider: options.provider,
+      betas: options.betas,
+      env,
+      debug,
+      // Cross-protocol routing for the condition call's utility model.
+      ...(transportForModel !== undefined
+        ? { resolveTransport: (m: string) => transportForModel(m, 'utility') }
+        : {}),
+    },
     failureMode: options.hookFailureMode,
   });
 
@@ -675,6 +736,7 @@ export function query(args: {
     engineConfig,
     provider: options.provider,
     resolveSubagentTransport: options.resolveSubagentTransport,
+    transportForModel,
     store,
     persist,
     cwd,
@@ -1038,6 +1100,8 @@ export function query(args: {
         toolContext.permissionGate = gate;
         const deps: EngineDeps = {
           transport,
+          // Cross-protocol routing for the compaction summarizer (v0.55.0).
+          ...(transportForModel !== undefined ? { transportForModel } : {}),
           builtinTools: mainLoopBuiltins,
           mcp: mcpEff,
           permissions: gate,
@@ -1581,6 +1645,10 @@ export function query(args: {
       // only an unref'd debounce timer left to deliver them (audit 2026-07-10
       // M4). Bounded + never throws, so teardown cannot hang on a stuck child.
       await subagentRuntime.settleAll();
+      // Release cross-protocol transports the resolver handed the QUERY layer
+      // with owned: true (utility/compaction routing); the subagent runtime
+      // disposed its own set inside settleAll() above.
+      disposeQueryOwnedTransports();
       // Kill background shells + drop the persistent cwd/env snapshot: shell
       // sessions live and die with the query.
       shells.dispose();

@@ -192,6 +192,25 @@ Semantics:
 - Family budget, usage ledger, and hook wiring are transport-independent and
   unchanged.
 
+**Utility + compaction calls (v0.55.0).** The same callback also routes the
+other two engine-internal call sites that target a non-session model,
+distinguished by a `purpose` field on the resolver input
+(`'subagent' | 'utility' | 'compaction'`):
+
+- **Utility generator calls** (hook `condition` evaluation on the default
+  Haiku-tier utility model): the query composes the callback into
+  `UtilityCallOptions.resolveTransport`; precedence is explicit `transport`
+  (tests) > `resolveTransport(model)` > provider-built default. Hosts calling
+  the generators/tips/verifier exports directly may pass their own
+  `resolveTransport`.
+- **Compaction summarizer**: when `compaction.model` differs from the session
+  model, the summary stream rides the resolved transport (root loop and every
+  child loop alike) instead of the session transport.
+
+The standard resolver ignores `purpose` (it routes purely by model), so a
+0.54.0 host needs no change beyond rebuilding. Resolver absent -> both call
+sites keep their previous transport paths byte-for-byte.
+
 `tests/subagent-transport.test.ts` locks the acceptance matrix.
 
 ## Tests
