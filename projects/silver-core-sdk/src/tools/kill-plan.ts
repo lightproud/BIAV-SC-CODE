@@ -7,26 +7,13 @@
  * Windows, with the failure swallowed by an empty catch. Result on Windows:
  * KillShell was a no-op that lied.
  *
- * These two pure functions isolate the platform + honesty decisions so both
- * are unit-testable on any host (the Windows branch cannot spawn taskkill on
- * Linux CI, so it is planned here and executed by the caller).
+ * `terminalStatus` isolates the exit-honesty decision so it is unit-testable
+ * on any host. The platform kill planner it used to define moved to
+ * `internal/process-kill.ts` (so `mcp/` can reuse the same source of truth);
+ * it is re-exported here unchanged for the existing tool-layer consumers.
  */
 
-/** How to terminate a child, chosen by platform + pid availability. */
-export type KillPlan =
-  | { kind: 'group'; pid: number; signal: string } // POSIX: signal the whole process group (-pid)
-  | { kind: 'taskkill'; pid: number } // Windows: taskkill /PID <pid> /T /F (tree, forced)
-  | { kind: 'child'; signal: string }; // no pid: best-effort direct child.kill
-
-export function planProcessKill(
-  pid: number | undefined,
-  signal: string,
-  platform: NodeJS.Platform = process.platform,
-): KillPlan {
-  if (pid === undefined) return { kind: 'child', signal };
-  if (platform === 'win32') return { kind: 'taskkill', pid };
-  return { kind: 'group', pid, signal };
-}
+export { planProcessKill, type KillPlan } from '../internal/process-kill.js';
 
 /**
  * The HONEST terminal status of a background shell, decided from what actually

@@ -20,6 +20,7 @@ import type {
 } from '../types.js';
 import { AbortError, McpError } from '../errors.js';
 import { resolveElicitation } from './elicitation.js';
+import { planProcessKill } from '../internal/process-kill.js';
 import { SDK_VERSION } from '../version.js';
 
 const MCP_PROTOCOL_VERSION = '2025-06-18';
@@ -111,9 +112,19 @@ export class StdioMcpConnection {
     }
     Object.assign(env, this.config.env ?? {});
 
+    // detached:true makes the server a process-GROUP leader on POSIX, so
+    // close() can signal the whole tree (`process.kill(-pid)`) instead of only
+    // the direct child. MCP servers are almost always launched through a
+    // wrapper (`npx`/`cmd /c`/`uvx`/`python -m`/`node launcher`), whose real,
+    // long-lived server is a GRANDCHILD; a bare `child.kill()` orphans it,
+    // leaving inherited stdio handles open that keep the host from exiting on
+    // interrupt/teardown. Harmless on Windows (taskkill /T reaps the tree by
+    // pid regardless). stdio stays piped (no unref), so the handshake below is
+    // unaffected — the same posture bash.ts / shells.ts already use.
     const child = spawn(this.config.command, this.config.args ?? [], {
       cwd: this.config.cwd,
       env,
+      detached: true,
     });
     this.child = child;
 
@@ -234,11 +245,44 @@ export class StdioMcpConnection {
     const child = this.child;
     this.child = null;
     if (!child || child.exitCode !== null || child.signalCode !== null) return;
-    child.kill('SIGTERM');
+    // Terminate the server's WHOLE tree, platform-correctly (planProcessKill):
+    // POSIX signals the process group (-pid); Windows uses taskkill /T /F.
+    // A bare child.kill() reaps only the wrapper and orphans the real server
+    // grandchild — the exact latent bug bash.ts / shells.ts already fixed.
+    this.killTree(child, 'SIGTERM');
     const exited = await waitForExit(child, KILL_GRACE_MS);
     if (!exited) {
-      child.kill('SIGKILL');
+      this.killTree(child, 'SIGKILL');
       await waitForExit(child, KILL_GRACE_MS);
+    }
+  }
+
+  /** Signal the child's whole process tree, platform-correctly. Best-effort:
+   *  a benign failure (the tree already exited) goes to debug, never thrown —
+   *  close() must stay non-fatal. Mirrors bash.ts's killGroup. */
+  private winKilled = false;
+  private killTree(child: ChildProcessWithoutNullStreams, sig: NodeJS.Signals): void {
+    const plan = planProcessKill(child.pid, sig);
+    try {
+      if (plan.kind === 'group') {
+        process.kill(-plan.pid, plan.signal as NodeJS.Signals); // win-ok: posix branch of planProcessKill
+      } else if (plan.kind === 'child') {
+        child.kill(plan.signal as NodeJS.Signals);
+      } else {
+        // Windows: one taskkill /T /F reaps the whole tree; firing it twice
+        // (SIGTERM then SIGKILL escalation) is redundant, so guard it.
+        if (this.winKilled) return;
+        this.winKilled = true;
+        const tk = spawn('taskkill', ['/PID', String(plan.pid), '/T', '/F'], {
+          stdio: 'ignore',
+        });
+        tk.on('error', (e) =>
+          this.debug(`[mcp:${this.label}] taskkill failed for pid ${plan.pid}: ${e.message}`),
+        );
+        tk.unref();
+      }
+    } catch (err) {
+      this.debug(`[mcp:${this.label}] kill(${sig}) failed: ${errMessage(err)}`);
     }
   }
 
