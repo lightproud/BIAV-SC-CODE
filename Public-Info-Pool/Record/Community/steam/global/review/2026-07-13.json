@@ -1,8 +1,8 @@
 {
   "date": "2026-07-13",
-  "archived_at": "2026-07-13T02:35:00.892591+00:00",
+  "archived_at": "2026-07-13T06:17:49.346238+00:00",
   "source": "steam",
-  "item_count": 3,
+  "item_count": 7,
   "items": [
     {
       "title": "[负面] скам",
@@ -70,6 +70,102 @@
         "playtime_forever": 36,
         "votes_up": 0,
         "timestamp_created": 1783886486
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] PLAY IT RIGHT NOWWWW!!!!!!!",
+      "summary": "PLAY IT RIGHT NOWWWW!!!!!!!",
+      "source": "steam_review",
+      "time": "2026-07-13T05:56:41+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198319986325/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198319986325",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 270,
+        "votes_up": 0,
+        "timestamp_created": 1783922201
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 伟大无需多言",
+      "summary": "伟大无需多言",
+      "source": "steam_review",
+      "time": "2026-07-13T05:05:08+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198773969717/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198773969717",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 2414,
+        "votes_up": 0,
+        "timestamp_created": 1783919108
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Okay I guess. Cool concept, but I wouldnt play it...",
+      "summary": "Okay I guess. Cool concept, but I wouldnt play it every day. Fun plot tho.",
+      "source": "steam_review",
+      "time": "2026-07-13T04:15:00+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198781917144/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198781917144",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 208,
+        "votes_up": 0,
+        "timestamp_created": 1783916100
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 玩过的最好玩的二游，没有之一",
+      "summary": "玩过的最好玩的二游，没有之一",
+      "source": "steam_review",
+      "time": "2026-07-13T04:04:58+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198788912386/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198788912386",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 4833,
+        "votes_up": 0,
+        "timestamp_created": 1783915498
       },
       "region": "global",
       "archive_subtype": "review",

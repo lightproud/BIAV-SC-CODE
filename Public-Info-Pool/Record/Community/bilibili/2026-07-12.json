@@ -1,8 +1,8 @@
 {
   "date": "2026-07-12",
-  "archived_at": "2026-07-13T02:35:00.785511+00:00",
+  "archived_at": "2026-07-13T06:17:49.230548+00:00",
   "source": "bilibili",
-  "item_count": 16,
+  "item_count": 17,
   "items": [
     {
       "title": "斯大林强迫蒋介石cos沙耶",
@@ -69,6 +69,29 @@
         "danmaku": 0
       },
       "media_url": "https://i2.hdslb.com/bfs/archive/76caf5d741ba87e8b673448365994bd4ed861360.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "我们都是血肉组成的/沙耶之歌",
+      "summary": "-\n  └ 不会存在的吧- (5赞): 刷了一天肉块，总算刷到美少女了。\n  └ Anafabula怎么那么美丽啊 (5赞): 可爱[星星眼][星星眼][星星眼][喜欢]\n  └ 荼甘如荠 (2赞): 一坨肉块干啥？[笑哭]",
+      "source": "bilibili",
+      "time": "2026-07-12T07:04:21+00:00",
+      "url": "https://www.bilibili.com/video/BV1V6NT6oEwp",
+      "engagement": 311,
+      "is_hot": false,
+      "author": "雾小南呀",
+      "tags": [
+        "动画综合"
+      ],
+      "metadata": {
+        "play": 304,
+        "comment_count": 7,
+        "comments_fetched": 3,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/5157645329ef55d2cbf16e436822da9fa0d2822a.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

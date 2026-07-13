@@ -1,8 +1,19 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-13T02:34:11.965507+00:00",
+  "collected_at": "2026-07-13T06:16:52.985458+00:00",
   "source": "taptap",
   "data_layer": "output",
-  "item_count": 0,
-  "items": []
+  "item_count": 1,
+  "items": [
+    {
+      "source": "taptap",
+      "time": "2026-07-13T03:28:33+00:00",
+      "lang": "zh",
+      "title": "[TapTap 好评] 嗯，不错，画风很美，这种卡牌类的我也挺感兴趣",
+      "summary": "嗯，不错，画风很美，这种卡牌类的我也挺感兴趣",
+      "url": "https://www.taptap.cn/moment/825692835951935905",
+      "author": "彼岸",
+      "engagement": 1
+    }
+  ]
 }

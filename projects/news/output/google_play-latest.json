@@ -1,6 +1,6 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-13T02:34:11.965507+00:00",
+  "collected_at": "2026-07-13T06:16:52.985458+00:00",
   "source": "google_play",
   "data_layer": "output",
   "item_count": 117,
@@ -233,6 +233,16 @@
       "summary": "觉得还行",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=zh_CN#gp-57f4f9db-558e-4842-b184-3a7e848970ad",
       "author": "元气豆芽（YQBean）",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-12T02:37:17",
+      "lang": "en",
+      "title": "[Google Play 好评] ★5 such a good game, i cant believe it does",
+      "summary": "such a good game, i cant believe it doesn't have more players!",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-a329a3b0-6f5a-4bb0-ab21-1d3218ba17e3",
+      "author": "Kikou",
       "engagement": 0
     },
     {
@@ -593,16 +603,6 @@
       "summary": "재밌음 스토리도 좋고 일러도 개성있음 단점은 적들 한방데미지가 쎄서 죽창메타로 가야해서 비트는 재미가 좀 떨어짐",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=ko#gp-2a34e3c5-2bc7-4225-a76f-64347bed91b4",
       "author": "Ilinx",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-06-13T04:47:38",
-      "lang": "ko",
-      "title": "[Google Play 好评] ★4 카드별로 일러스트를 다르게 그려주세요",
-      "summary": "카드별로 일러스트를 다르게 그려주세요",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=ko#gp-e1d58e94-2efc-4d2f-b0e9-6b09f84f9d6a",
-      "author": "홍타",
       "engagement": 0
     },
     {
