@@ -4,7 +4,7 @@
     "score": "Stryker mutation score = (killed + timeout) / (killed + timeout + survived + noCoverage) * 100; compile/runtime-error mutants excluded",
     "tolerance_pp": 0.75,
     "history": {
-      "2026-07-13": "seeded from the overnight quality campaign: permissions round 2 (92.87), openai dedicated rounds 1-6 (85.55); transport-anthropic seeded at 77.42 (measurement round, pre-kill-batch)"
+      "2026-07-13": "seeded from the overnight quality campaign: permissions round 2 (92.87), openai dedicated rounds 1-6 (85.55); transport-anthropic seeded at 77.42 (measurement round, pre-kill-batch); transport-anthropic raised 77.42 -> 82.97 (kill batch 2, 14 tests)"
     }
   },
   "targets": [
@@ -21,7 +21,7 @@
     {
       "name": "transport-anthropic",
       "mutate": "src/transport/anthropic.ts",
-      "floor": 77.42
+      "floor": 82.97
     }
   ]
 }
