@@ -748,6 +748,10 @@ export class OpenAIChatTransport implements Transport {
     // ERROR mid-stream (parseSSE throws) still routes through the catch below
     // and is NEVER retried, empty or not.
     let emptyStreamRetries = 0;
+    // Finding T2 — one retry budget shared by request-phase retries AND
+    // empty-stream re-issues (see the Anthropic arm), so the total is bounded by
+    // maxRetries rather than maxRetries per re-issue on a struggling gateway.
+    const retryBudget = { used: 0 };
     for (;;) {
       // ---- request phase: retries allowed ---------------------------------
       const { response, signal, timeoutSignal, detachRequestTimeout, releaseSignals } =
@@ -757,6 +761,7 @@ export class OpenAIChatTransport implements Transport {
           callerSignal,
           timeoutMs,
           maxRetries,
+          retryBudget,
           onRetry,
         );
 
@@ -889,16 +894,17 @@ export class OpenAIChatTransport implements Transport {
       // caller abort observed here wins.
       if (chunkCount === 0) {
         if (callerSignal?.aborted) throw new AbortError();
-        if (emptyStreamRetries < maxRetries) {
+        if (retryBudget.used < maxRetries) {
+          retryBudget.used += 1;
           emptyStreamRetries += 1;
           this.debug(
             `openai transport: empty stream (HTTP 200, zero SSE chunks); ` +
-              `retry ${emptyStreamRetries}/${maxRetries}`,
+              `retry ${retryBudget.used}/${maxRetries}`,
           );
           // Surface it like a network-level retry (no HTTP status) so the loop
           // emits an api_retry observability message, same as a dropped socket.
-          onRetry?.({ attempt: emptyStreamRetries, maxRetries, kind: 'empty_stream' });
-          await this.backoff(emptyStreamRetries, undefined, callerSignal);
+          onRetry?.({ attempt: retryBudget.used, maxRetries, kind: 'empty_stream' });
+          await this.backoff(retryBudget.used, undefined, callerSignal);
           continue;
         }
         throw new APIConnectionError(
@@ -932,6 +938,8 @@ export class OpenAIChatTransport implements Transport {
     callerSignal: AbortSignal | undefined,
     timeoutMs: number,
     maxRetries: number,
+    // Finding T2 — shared retry budget (see streamRequest / the Anthropic arm).
+    retryBudget: { used: number },
     onRetry?: (info: RetryInfo) => void,
   ): Promise<{
     response: Response;
@@ -945,7 +953,6 @@ export class OpenAIChatTransport implements Transport {
      *  a long-lived caller signal does not accumulate one listener per turn. */
     releaseSignals: () => void;
   }> {
-    let attempt = 0;
     for (;;) {
       if (callerSignal?.aborted) throw new AbortError();
       // Fresh timeout per attempt, propagated into a DEDICATED per-attempt
@@ -973,7 +980,7 @@ export class OpenAIChatTransport implements Transport {
       let response: Response;
       try {
         this.debug(
-          `openai transport: POST ${this.endpoint} (attempt ${attempt + 1}/${maxRetries + 1})`,
+          `openai transport: POST ${this.endpoint} (attempt ${retryBudget.used + 1}/${maxRetries + 1})`,
         );
         response = await (this.fetchFn ?? fetch)(this.endpoint, {
           method: 'POST',
@@ -985,13 +992,13 @@ export class OpenAIChatTransport implements Transport {
         releaseSignals();
         if (callerSignal?.aborted) throw new AbortError();
         // Connection failure or per-attempt timeout: retryable.
-        if (attempt < maxRetries) {
-          attempt += 1;
+        if (retryBudget.used < maxRetries) {
+          retryBudget.used += 1;
           this.debug(
-            `openai transport: network error (${errorMessage(err)}); retry ${attempt}/${maxRetries}`,
+            `openai transport: network error (${errorMessage(err)}); retry ${retryBudget.used}/${maxRetries}`,
           );
-          onRetry?.({ attempt, maxRetries, kind: 'network' });
-          await this.backoff(attempt, undefined, callerSignal);
+          onRetry?.({ attempt: retryBudget.used, maxRetries, kind: 'network' });
+          await this.backoff(retryBudget.used, undefined, callerSignal);
           continue;
         }
         throw new APIConnectionError(
@@ -1009,21 +1016,21 @@ export class OpenAIChatTransport implements Transport {
       const info = await readOpenAIErrorInfo(response);
       const retryable =
         response.status === 408 || response.status === 429 || response.status >= 500;
-      if (retryable && attempt < maxRetries) {
-        attempt += 1;
+      if (retryable && retryBudget.used < maxRetries) {
+        retryBudget.used += 1;
         const retryAfterMs = parseRetryAfterMs(response.headers.get('retry-after'));
         this.debug(
-          `openai transport: HTTP ${response.status} (${info.type}); retry ${attempt}/${maxRetries}`,
+          `openai transport: HTTP ${response.status} (${info.type}); retry ${retryBudget.used}/${maxRetries}`,
         );
         onRetry?.({
-          attempt,
+          attempt: retryBudget.used,
           maxRetries,
           status: response.status,
           errorType: info.type,
           kind: 'http_status',
           ...(retryAfterMs !== undefined ? { retryAfterMs } : {}),
         });
-        await this.backoff(attempt, retryAfterMs, callerSignal);
+        await this.backoff(retryBudget.used, retryAfterMs, callerSignal);
         continue;
       }
       throw new APIStatusError(response.status, info.type, info.message, requestId);

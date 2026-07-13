@@ -7,7 +7,7 @@
  * scripts/check-version-bump.mjs REDS any commit where the two disagree.
  */
 
-export const SDK_VERSION = '0.53.4';
+export const SDK_VERSION = '0.53.5';
 
 /** User-Agent both transports send. */
 export const SDK_USER_AGENT = `silver-core-sdk/${SDK_VERSION}`;

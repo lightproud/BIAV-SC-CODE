@@ -1199,32 +1199,40 @@ export function createSubagentRuntime(
               sidechainInfo,
               stallWatchdog,
             );
-            record.status = result.isError ? 'failed' : 'completed';
-            completedBuffer.push({
-              type: 'text',
-              text: formatTaskNotification({
-                agentId,
+            // Finding (killAgent race) — only report completion if the task is
+            // still RUNNING. If stopTask()/killAgent raced in first (status now
+            // 'killed'), respect that terminal decision: do NOT overwrite the
+            // status back to completed nor emit a 'completed' notification that
+            // contradicts the 'stopped' one the kill site already sent. Mirrors
+            // the catch arm's existing `status === 'running'` guard.
+            if (record.status === 'running') {
+              record.status = result.isError ? 'failed' : 'completed';
+              completedBuffer.push({
+                type: 'text',
+                text: formatTaskNotification({
+                  agentId,
+                  status: result.isError ? 'failed' : 'completed',
+                  summary: `Agent "${taskDescription}" ${
+                    result.isError
+                      ? `failed: ${resultPreview(result.text)}`
+                      : 'completed'
+                  }`,
+                  result: result.text,
+                  usage: result.usage,
+                }),
+              });
+              emitTaskFinished(agentId, result);
+              emitTask({
+                type: 'system',
+                subtype: 'task_notification',
+                task_id: agentId,
+                ...(params.toolUseId !== '' ? { tool_use_id: params.toolUseId } : {}),
                 status: result.isError ? 'failed' : 'completed',
-                summary: `Agent "${taskDescription}" ${
-                  result.isError
-                    ? `failed: ${resultPreview(result.text)}`
-                    : 'completed'
-                }`,
-                result: result.text,
-                usage: result.usage,
-              }),
-            });
-            emitTaskFinished(agentId, result);
-            emitTask({
-              type: 'system',
-              subtype: 'task_notification',
-              task_id: agentId,
-              ...(params.toolUseId !== '' ? { tool_use_id: params.toolUseId } : {}),
-              status: result.isError ? 'failed' : 'completed',
-              // No task output files in this engine (official field, required).
-              output_file: '',
-              summary: `background subagent '${resolved.type}' ${result.isError ? 'failed' : 'completed'}`,
-            });
+                // No task output files in this engine (official field, required).
+                output_file: '',
+                summary: `background subagent '${resolved.type}' ${result.isError ? 'failed' : 'completed'}`,
+              });
+            }
           } catch (err) {
             if (record.status === 'running') record.status = 'failed';
             debug(
@@ -1392,7 +1400,14 @@ export function createSubagentRuntime(
     const task = backgroundTasks.get(taskId);
     const record = childRegistry.get(taskId);
     if (task === undefined && record === undefined) return { outcome: 'unknown' };
-    if (task === undefined && record !== undefined && record.status !== 'running') {
+    // Finding (killAgent race) — if the record already reached a TERMINAL status
+    // (the child finished, or a prior kill landed), do not abort/clobber it or
+    // emit a contradictory 'stopped' notification. This covers the completed→
+    // kill direction (the child's completion continuation ran first); the
+    // completion body covers the kill→completed direction. Clean up any stale
+    // task entry either way.
+    if (record !== undefined && record.status !== 'running') {
+      backgroundTasks.delete(taskId);
       return { outcome: 'not_running', status: record.status };
     }
     (task?.controller ?? record?.controller)?.abort();
