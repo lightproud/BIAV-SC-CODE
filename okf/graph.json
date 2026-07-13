@@ -2,7 +2,7 @@
   "generated": "2026-07-13",
   "stats": {
     "nodes": 349,
-    "edges": 398
+    "edges": 404
   },
   "nodes": [
     {
@@ -4252,6 +4252,12 @@
     },
     {
       "source": "/community/community-bilibili.md",
+      "target": "/characters/77917.md",
+      "rel": "提及:波吕克斯",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
       "target": "/characters/77918.md",
       "rel": "提及:阿拉克涅",
       "rel_type": "mention"
@@ -4398,6 +4404,18 @@
       "source": "/community/community-youtube-comments.md",
       "target": "/characters/15595.md",
       "rel": "提及:Ramona",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-youtube.md",
+      "target": "/characters/77922.md",
+      "rel": "提及:克珀珊特",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-youtube.md",
+      "target": "/characters/54117.md",
+      "rel": "提及:哈姆林",
       "rel_type": "mention"
     },
     {
@@ -5584,6 +5602,12 @@
     },
     {
       "source": "/sources/bilibili.md",
+      "target": "/characters/77917.md",
+      "rel": "提及:波吕克斯",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
       "target": "/characters/77918.md",
       "rel": "提及:阿拉克涅",
       "rel_type": "mention"
@@ -5688,6 +5712,18 @@
       "source": "/sources/weibo.md",
       "target": "/characters/130226.md",
       "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/youtube.md",
+      "target": "/characters/77922.md",
+      "rel": "提及:克珀珊特",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/youtube.md",
+      "target": "/characters/54117.md",
+      "rel": "提及:哈姆林",
       "rel_type": "mention"
     },
     {

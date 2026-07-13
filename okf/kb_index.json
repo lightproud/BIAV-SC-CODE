@@ -8,7 +8,7 @@
   },
   "stats": {
     "concepts": 349,
-    "edges": 398,
+    "edges": 404,
     "terms": 6275,
     "by_type": {
       "character": 72,
@@ -1000,7 +1000,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 4
+      "degree": 6
     },
     "/characters/77911.md": {
       "type": "character",
@@ -1056,7 +1056,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 3
+      "degree": 5
     },
     "/characters/77918.md": {
       "type": "character",
@@ -1098,7 +1098,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 3
+      "degree": 5
     },
     "/characters/77923.md": {
       "type": "character",
@@ -1324,7 +1324,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 10
+      "degree": 11
     },
     "/community/community-discord.md": {
       "type": "dataset",
@@ -1534,7 +1534,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 4
+      "degree": 6
     },
     "/memory/capability-index.md": {
       "type": "knowledge-pointer",
@@ -4171,7 +4171,7 @@
     "/sources/appstore.md": {
       "type": "dataset",
       "title": "appstore 社区数据源",
-      "description": "appstore 平台采集档案，全量 1146 条，健康度 active。",
+      "description": "appstore 平台采集档案，全量 1147 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/appstore/global/",
       "tags": [
         "data_layer:full_archive",
@@ -4199,7 +4199,7 @@
     "/sources/bahamut.md": {
       "type": "dataset",
       "title": "bahamut 社区数据源",
-      "description": "bahamut 平台采集档案，全量 83 条，健康度 active。",
+      "description": "bahamut 平台采集档案，全量 85 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bahamut/",
       "tags": [
         "data_layer:full_archive",
@@ -4213,7 +4213,7 @@
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 2827 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 2832 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -4222,12 +4222,12 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 10
+      "degree": 11
     },
     "/sources/discord.md": {
       "type": "dataset",
       "title": "discord 社区数据源",
-      "description": "discord 平台采集档案，全量 8032365 条，健康度 active。",
+      "description": "discord 平台采集档案，全量 8048433 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/discord/",
       "tags": [
         "data_layer:full_archive",
@@ -4325,7 +4325,7 @@
     "/sources/steam.md": {
       "type": "dataset",
       "title": "steam 社区数据源",
-      "description": "steam 平台采集档案，全量 5204 条，健康度 active。",
+      "description": "steam 平台采集档案，全量 5207 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4395,7 +4395,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 9933 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 9948 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -4409,7 +4409,7 @@
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 9912 条，健康度 active。",
+      "description": "weixin 平台采集档案，全量 9932 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -4423,7 +4423,7 @@
     "/sources/youtube.md": {
       "type": "dataset",
       "title": "youtube 社区数据源",
-      "description": "youtube 平台采集档案，全量 2826 条，健康度 active。",
+      "description": "youtube 平台采集档案，全量 2833 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -4432,12 +4432,12 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 4
+      "degree": 6
     },
     "/sources/youtube_comments.md": {
       "type": "dataset",
       "title": "youtube_comments 社区数据源",
-      "description": "youtube_comments 平台采集档案，全量 2083 条，健康度 active。",
+      "description": "youtube_comments 平台采集档案，全量 2088 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube_comments/",
       "tags": [
         "data_layer:full_archive",
@@ -6757,12 +6757,22 @@
         "mention"
       ],
       [
+        "/community/community-youtube.md",
+        "提及:哈姆林",
+        "mention"
+      ],
+      [
         "/sources/bahamut.md",
         "提及:哈姆林",
         "mention"
       ],
       [
         "/sources/weibo.md",
+        "提及:哈姆林",
+        "mention"
+      ],
+      [
+        "/sources/youtube.md",
         "提及:哈姆林",
         "mention"
       ]
@@ -6805,7 +6815,17 @@
     ],
     "/characters/77917.md": [
       [
+        "/community/community-bilibili.md",
+        "提及:波吕克斯",
+        "mention"
+      ],
+      [
         "/community/community-weibo.md",
+        "提及:波吕克斯",
+        "mention"
+      ],
+      [
+        "/sources/bilibili.md",
         "提及:波吕克斯",
         "mention"
       ],
@@ -6891,7 +6911,17 @@
         "mention"
       ],
       [
+        "/community/community-youtube.md",
+        "提及:克珀珊特",
+        "mention"
+      ],
+      [
         "/sources/bahamut.md",
+        "提及:克珀珊特",
+        "mention"
+      ],
+      [
+        "/sources/youtube.md",
         "提及:克珀珊特",
         "mention"
       ]
@@ -7091,6 +7121,11 @@
       [
         "/characters/15599.md",
         "提及:萨尔瓦多",
+        "mention"
+      ],
+      [
+        "/characters/77917.md",
+        "提及:波吕克斯",
         "mention"
       ],
       [
@@ -7461,6 +7496,16 @@
       ]
     ],
     "/community/community-youtube.md": [
+      [
+        "/characters/77922.md",
+        "提及:克珀珊特",
+        "mention"
+      ],
+      [
+        "/characters/54117.md",
+        "提及:哈姆林",
+        "mention"
+      ],
       [
         "/characters/15576.md",
         "提及:墨菲",
@@ -8884,6 +8929,11 @@
         "mention"
       ],
       [
+        "/characters/77917.md",
+        "提及:波吕克斯",
+        "mention"
+      ],
+      [
         "/characters/77918.md",
         "提及:阿拉克涅",
         "mention"
@@ -9138,6 +9188,16 @@
       ]
     ],
     "/sources/youtube.md": [
+      [
+        "/characters/77922.md",
+        "提及:克珀珊特",
+        "mention"
+      ],
+      [
+        "/characters/54117.md",
+        "提及:哈姆林",
+        "mention"
+      ],
       [
         "/characters/15576.md",
         "提及:墨菲",
