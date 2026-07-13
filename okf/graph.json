@@ -1,8 +1,8 @@
 {
-  "generated": "2026-07-12",
+  "generated": "2026-07-13",
   "stats": {
-    "nodes": 348,
-    "edges": 392
+    "nodes": 349,
+    "edges": 398
   },
   "nodes": [
     {
@@ -2526,6 +2526,17 @@
         "data_layer:curated",
         "deliverable",
         "topic:game-analysis"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-intel-weekly-morimens-intel-20260712.md",
+      "type": "documentation",
+      "title": "morimens-intel-20260712",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:intel-weekly"
       ],
       "tier": "search"
     },
@@ -5285,6 +5296,42 @@
     },
     {
       "source": "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-intel-weekly-morimens-intel-20260712.md",
+      "target": "/characters/15598.md",
+      "rel": "提及:尤乌哈希",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-intel-weekly-morimens-intel-20260712.md",
+      "target": "/characters/15594.md",
+      "rel": "提及:凯刻斯",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-intel-weekly-morimens-intel-20260712.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-intel-weekly-morimens-intel-20260712.md",
+      "target": "/characters/77926.md",
+      "rel": "提及:皮克曼",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-intel-weekly-morimens-intel-20260712.md",
+      "target": "/characters/15587.md",
+      "rel": "提及:希洛",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-intel-weekly-morimens-intel-20260712.md",
       "target": "/characters/130226.md",
       "rel": "提及:沙耶",
       "rel_type": "mention"

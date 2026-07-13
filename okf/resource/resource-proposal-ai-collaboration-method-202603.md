@@ -4,7 +4,7 @@ title: "ai-collaboration-method-202603"
 description: "proposal 产物（html）（格式：html）"
 resource: "/Public-Info-Pool/Resource/proposal/ai-collaboration-method-202603.html"
 tags: ["data_layer:curated", "deliverable", "topic:proposal"]
-timestamp: "2026-07-12"
+timestamp: "2026-07-13"
 ---
 
 # 指针概念

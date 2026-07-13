@@ -4,7 +4,7 @@ title: "bpt-desktop-command-framework-requirements-20260710"
 description: "工程产物，黑池侧实现细节不回流）（格式：md）"
 resource: "/Public-Info-Pool/Resource/repo-engineering/bpt-desktop-command-framework-requirements-20260710.md"
 tags: ["data_layer:curated", "deliverable", "topic:repo-engineering"]
-timestamp: "2026-07-12"
+timestamp: "2026-07-13"
 ---
 
 # 指针概念

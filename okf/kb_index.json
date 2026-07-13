@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-12",
+  "generated": "2026-07-13",
   "meta": {
     "data_layer": "curated_knowledge",
     "source": "okf/ bundle (concept frontmatter + body + graph edges)",
@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 348,
-    "edges": 392,
-    "terms": 6273,
+    "concepts": 349,
+    "edges": 398,
+    "terms": 6275,
     "by_type": {
       "character": 72,
       "dataset": 94,
-      "documentation": 115,
+      "documentation": 116,
       "knowledge-pointer": 47,
       "reference": 17,
       "research": 3
@@ -25,14 +25,14 @@
       "memory": 50,
       "news-output": 23,
       "projects": 27,
-      "resource": 87,
+      "resource": 88,
       "sources": 20,
       "story": 11,
       "wiki-data": 26
     },
     "by_tier": {
       "skeleton": 134,
-      "search": 214
+      "search": 215
     }
   },
   "sections": {
@@ -62,7 +62,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 87
+      "count": 88
     },
     "sources": {
       "index": "/sources/index.md",
@@ -295,7 +295,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 34
+      "degree": 35
     },
     "/characters/130375.md": {
       "type": "character",
@@ -732,7 +732,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 4
+      "degree": 5
     },
     "/characters/15588.md": {
       "type": "character",
@@ -831,7 +831,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 1
+      "degree": 2
     },
     "/characters/15595.md": {
       "type": "character",
@@ -887,7 +887,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 5
+      "degree": 6
     },
     "/characters/15599.md": {
       "type": "character",
@@ -958,7 +958,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 92
+      "degree": 93
     },
     "/characters/15604.md": {
       "type": "character",
@@ -1154,7 +1154,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 3
     },
     "/characters/77927.md": {
       "type": "character",
@@ -3216,6 +3216,20 @@
       "tier": "search",
       "degree": 2
     },
+    "/resource/resource-intel-weekly-morimens-intel-20260712.md": {
+      "type": "documentation",
+      "title": "morimens-intel-20260712",
+      "description": "◇ ◇ ◇（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/intel-weekly/morimens-intel-20260712.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:intel-weekly"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 6
+    },
     "/resource/resource-methodology-knowledge-engineering-primer-20260704.md": {
       "type": "documentation",
       "title": "knowledge-engineering-primer-20260704",
@@ -4227,7 +4241,7 @@
     "/sources/google_play.md": {
       "type": "dataset",
       "title": "google_play 社区数据源",
-      "description": "google_play 平台采集档案，全量 2233 条，健康度 active。",
+      "description": "google_play 平台采集档案，全量 2234 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/google_play/global/",
       "tags": [
         "data_layer:full_archive",
@@ -4311,7 +4325,7 @@
     "/sources/steam.md": {
       "type": "dataset",
       "title": "steam 社区数据源",
-      "description": "steam 平台采集档案，全量 5199 条，健康度 active。",
+      "description": "steam 平台采集档案，全量 5200 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4325,7 +4339,7 @@
     "/sources/steam_discussion.md": {
       "type": "dataset",
       "title": "steam_discussion 社区数据源",
-      "description": "steam_discussion 平台采集档案，全量 99 条，健康度 active。",
+      "description": "steam_discussion 平台采集档案，全量 100 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/discussion/",
       "tags": [
         "data_layer:full_archive",
@@ -4367,7 +4381,7 @@
     "/sources/taptap_review.md": {
       "type": "dataset",
       "title": "taptap_review 社区数据源",
-      "description": "taptap_review 平台采集档案，全量 1298 条，健康度 active。",
+      "description": "taptap_review 平台采集档案，全量 1306 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/taptap/cn/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4381,7 +4395,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 9890 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 9904 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -4395,7 +4409,7 @@
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 9852 条，健康度 active。",
+      "description": "weixin 平台采集档案，全量 9872 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -4409,7 +4423,7 @@
     "/sources/youtube.md": {
       "type": "dataset",
       "title": "youtube 社区数据源",
-      "description": "youtube 平台采集档案，全量 2819 条，健康度 active。",
+      "description": "youtube 平台采集档案，全量 2823 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -5109,6 +5123,11 @@
       ],
       [
         "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+        "提及:沙耶",
+        "mention"
+      ],
+      [
+        "/resource/resource-intel-weekly-morimens-intel-20260712.md",
         "提及:沙耶",
         "mention"
       ],
@@ -5884,6 +5903,11 @@
         "mention"
       ],
       [
+        "/resource/resource-intel-weekly-morimens-intel-20260712.md",
+        "提及:希洛",
+        "mention"
+      ],
+      [
         "/sources/bahamut.md",
         "提及:希洛",
         "mention"
@@ -5982,6 +6006,11 @@
     "/characters/15594.md": [
       [
         "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
+        "提及:凯刻斯",
+        "mention"
+      ],
+      [
+        "/resource/resource-intel-weekly-morimens-intel-20260712.md",
         "提及:凯刻斯",
         "mention"
       ]
@@ -6083,6 +6112,11 @@
       ],
       [
         "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
+        "提及:尤乌哈希",
+        "mention"
+      ],
+      [
+        "/resource/resource-intel-weekly-morimens-intel-20260712.md",
         "提及:尤乌哈希",
         "mention"
       ],
@@ -6507,6 +6541,11 @@
         "mention"
       ],
       [
+        "/resource/resource-intel-weekly-morimens-intel-20260712.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
         "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
         "提及:艾瑞卡",
         "mention"
@@ -6884,6 +6923,11 @@
     "/characters/77926.md": [
       [
         "/community/community-bahamut.md",
+        "提及:皮克曼",
+        "mention"
+      ],
+      [
+        "/resource/resource-intel-weekly-morimens-intel-20260712.md",
         "提及:皮克曼",
         "mention"
       ],
@@ -8501,6 +8545,38 @@
         "mention"
       ]
     ],
+    "/resource/resource-intel-weekly-morimens-intel-20260712.md": [
+      [
+        "/characters/15598.md",
+        "提及:尤乌哈希",
+        "mention"
+      ],
+      [
+        "/characters/15594.md",
+        "提及:凯刻斯",
+        "mention"
+      ],
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/characters/77926.md",
+        "提及:皮克曼",
+        "mention"
+      ],
+      [
+        "/characters/15587.md",
+        "提及:希洛",
+        "mention"
+      ],
+      [
+        "/characters/130226.md",
+        "提及:沙耶",
+        "mention"
+      ]
+    ],
     "/resource/resource-proposal-bpt-cowork-product-design-20260713.md": [
       [
         "/characters/130226.md",
@@ -9543,6 +9619,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-intel-weekly-morimens-intel-20260712.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
@@ -10761,6 +10838,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-intel-weekly-morimens-intel-20260712.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
@@ -11105,6 +11183,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-intel-weekly-morimens-intel-20260712.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
@@ -11425,6 +11504,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-intel-weekly-morimens-intel-20260712.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
@@ -11600,6 +11680,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-intel-weekly-morimens-intel-20260712.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
@@ -12616,6 +12697,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-intel-weekly-morimens-intel-20260712.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
@@ -12718,6 +12800,9 @@
     ],
     "integrity": [
       "/assets/assets-archive-integrity.md"
+    ],
+    "intel": [
+      "/resource/resource-intel-weekly-morimens-intel-20260712.md"
     ],
     "interface": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-silver-blackpool-interface.md",
@@ -13097,6 +13182,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-intel-weekly-morimens-intel-20260712.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
@@ -13607,6 +13693,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-intel-weekly-morimens-intel-20260712.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
       "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
@@ -13820,7 +13907,8 @@
       "/memory/morimens-context.md",
       "/projects/entry-readme.md",
       "/projects/site-design-morimens-design-system-guide.md",
-      "/projects/site-design-morimens-design-tokens.md"
+      "/projects/site-design-morimens-design-tokens.md",
+      "/resource/resource-intel-weekly-morimens-intel-20260712.md"
     ],
     "ms": [
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md"
@@ -14297,6 +14385,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-intel-weekly-morimens-intel-20260712.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
@@ -14695,6 +14784,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-intel-weekly-morimens-intel-20260712.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
@@ -15104,6 +15194,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-intel-weekly-morimens-intel-20260712.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
@@ -16054,6 +16145,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-intel-weekly-morimens-intel-20260712.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
@@ -16389,6 +16481,9 @@
     ],
     "way": [
       "/projects/silver-core-sdk-doc-subagents.md"
+    ],
+    "weekly": [
+      "/resource/resource-intel-weekly-morimens-intel-20260712.md"
     ],
     "weibo": [
       "/community/community-weibo.md",
@@ -17116,6 +17211,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-intel-weekly-morimens-intel-20260712.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
@@ -17376,6 +17472,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-intel-weekly-morimens-intel-20260712.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
@@ -17693,6 +17790,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-intel-weekly-morimens-intel-20260712.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
@@ -18960,6 +19058,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-intel-weekly-morimens-intel-20260712.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
@@ -19905,6 +20004,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-intel-weekly-morimens-intel-20260712.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
@@ -20164,6 +20264,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-intel-weekly-morimens-intel-20260712.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
@@ -22086,6 +22187,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-intel-weekly-morimens-intel-20260712.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
@@ -25359,6 +25461,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-intel-weekly-morimens-intel-20260712.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
@@ -26158,6 +26261,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-intel-weekly-morimens-intel-20260712.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
@@ -26768,6 +26872,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-intel-weekly-morimens-intel-20260712.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
@@ -30673,6 +30778,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-intel-weekly-morimens-intel-20260712.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
@@ -31239,6 +31345,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-intel-weekly-morimens-intel-20260712.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
@@ -31574,6 +31681,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-intel-weekly-morimens-intel-20260712.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
@@ -31987,6 +32095,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-intel-weekly-morimens-intel-20260712.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
@@ -32268,6 +32377,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-intel-weekly-morimens-intel-20260712.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
@@ -33971,6 +34081,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-intel-weekly-morimens-intel-20260712.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
@@ -34396,6 +34507,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-intel-weekly-morimens-intel-20260712.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
@@ -34990,6 +35102,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-intel-weekly-morimens-intel-20260712.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
@@ -35195,6 +35308,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-intel-weekly-morimens-intel-20260712.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
@@ -35706,6 +35820,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-intel-weekly-morimens-intel-20260712.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
@@ -36089,6 +36204,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-intel-weekly-morimens-intel-20260712.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
@@ -43178,6 +43294,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-intel-weekly-morimens-intel-20260712.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
@@ -43869,6 +43986,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-intel-weekly-morimens-intel-20260712.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
@@ -44899,6 +45017,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-intel-weekly-morimens-intel-20260712.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
@@ -45149,6 +45268,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-intel-weekly-morimens-intel-20260712.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
@@ -46993,6 +47113,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-intel-weekly-morimens-intel-20260712.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
@@ -47306,6 +47427,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-intel-weekly-morimens-intel-20260712.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
@@ -47468,6 +47590,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-intel-weekly-morimens-intel-20260712.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
@@ -47977,6 +48100,9 @@
     "integrity": [
       "/assets/assets-archive-integrity.md"
     ],
+    "intel": [
+      "/resource/resource-intel-weekly-morimens-intel-20260712.md"
+    ],
     "interface": [
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md"
     ],
@@ -48194,6 +48320,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-intel-weekly-morimens-intel-20260712.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
@@ -48523,7 +48650,8 @@
     "morimens": [
       "/memory/morimens-context.md",
       "/projects/site-design-morimens-design-system-guide.md",
-      "/projects/site-design-morimens-design-tokens.md"
+      "/projects/site-design-morimens-design-tokens.md",
+      "/resource/resource-intel-weekly-morimens-intel-20260712.md"
     ],
     "narrative": [
       "/assets/assets-narrative-structure.md"
@@ -49402,6 +49530,7 @@
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-game-analysis-role-action-recommendations-202605.md",
+      "/resource/resource-intel-weekly-morimens-intel-20260712.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
@@ -49576,6 +49705,9 @@
     ],
     "volunteer": [
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
+    ],
+    "weekly": [
+      "/resource/resource-intel-weekly-morimens-intel-20260712.md"
     ],
     "weibo": [
       "/community/community-weibo.md",

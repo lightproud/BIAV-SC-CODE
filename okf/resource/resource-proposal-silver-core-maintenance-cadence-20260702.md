@@ -4,7 +4,7 @@ title: "silver-core-maintenance-cadence-20260702"
 description: "M7 验收 =「二核心使命基础设施齐备 + 自动化跑稳 + 至少一种贡献流程跑顺」。（格式：md）"
 resource: "/Public-Info-Pool/Resource/proposal/silver-core-maintenance-cadence-20260702.md"
 tags: ["data_layer:curated", "deliverable", "topic:proposal"]
-timestamp: "2026-07-12"
+timestamp: "2026-07-13"
 ---
 
 # 指针概念
