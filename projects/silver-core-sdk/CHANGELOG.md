@@ -16,6 +16,57 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.53.6 — 2026-07-13
+
+**Multi-subsystem audit batch: 5 verified fixes across MCP, hooks, permissions,
+grep, and the engine (BPT stability, 2026-07-13).** A four-cluster audit
+(permissions/hooks, file/shell tools, engine/transport, MCP/sessions/subagents)
+surfaced (and this release fixes) five concrete defects, each with a regression
+test. Ranked:
+
+- **ReDoS guard was bypassable by a nested group (hooks matcher).** The
+  catastrophic-backtracking detector used `[^()]` around the inner quantifier,
+  so it only recognized a nested quantifier when the quantified group held no
+  further parens — `((a+))+$` and `(a(b+))+$` evaded it, reached
+  `new RegExp().test()`, and froze the event loop synchronously (confirmed: a
+  33-char value ran past a 5s timeout). Fix: replaced the flat regex with a
+  paren-stack star-height walk that flags any repetition-bearing group that is
+  itself quantified, at any nesting depth; safe linear patterns
+  (`(foo|bar)+`, `Edit.*`, `^mcp__`) keep working.
+- **auto-mode classifier `deny` was bypassed by an ask route (permissions
+  gate).** The auto classifier lived inside the `!routeToPrompt` mode switch, so
+  any active ask route (hook `ask`, session ask rule, requiresUserInteraction,
+  sandboxEscape) skipped it and routed a classifier-DENY call to `canUseTool` —
+  which could ALLOW it, inverting the module's own documented deny > ask
+  invariant. Fix: the classifier `deny` verdict is now evaluated as its own
+  guard, regardless of the ask route (a hook `allow` still outranks it); the
+  `allow`/`prompt` verdicts stay behind the ask route so it still prompts.
+  Bites consumers who inject a custom classifier.
+- **stdio elicitation reply could leak an unhandled rejection (MCP).** The
+  server-initiated `elicitation/create` reply chain had only two `.then/.catch`
+  links; when the connection was closing, the fallback decline `write()` threw
+  again with no terminal catch → unhandled rejection → process crash under a
+  strict policy. The HTTP arm already had the terminal `.catch` (finding 15);
+  it was missed on the stdio arm. Fix: mirror the terminal `.catch`.
+- **`grep` multiline + `-o` reported "No matches found" for a matching file.**
+  In only-matching mode the substring extraction ran the regex per-line, so a
+  `multiline` pattern whose match spans a newline extracted nothing and
+  fell through to the empty-result guard — a false negative, while
+  `files_with_matches`/`count` correctly reported the match. Fix: multiline `-o`
+  scans the reconstructed whole content and emits each match with its starting
+  line number (ripgrep -oU semantics).
+- **`grep -o` emitted spurious empty output lines for a zero-length pattern.**
+  A pattern that can match the empty string (e.g. `x*`) pushed a blank entry at
+  every offset. Fix: skip zero-length matches (ripgrep omits them).
+- **thinking `budget_tokens` could be emitted below the API's 1024 floor
+  (engine).** For pre-adaptive models the code guarded only the upper bound
+  (`< max_tokens`), so a positive-but-sub-1024 budget (e.g.
+  `maxThinkingTokens: 500`) passed straight through and 400'd the turn — then
+  every turn. Fix: clamp up to the 1024 floor; when `max_tokens` cannot fit the
+  floor, disable thinking rather than emit a guaranteed-400 request.
+
++11 regression tests. Full suite 2171 passing + 2 skipped; typecheck + build clean.
+
 ## 0.53.5 — 2026-07-13
 
 **Conversation-stability follow-up: the three deferred light items from 0.53.4

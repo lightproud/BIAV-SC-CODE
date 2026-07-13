@@ -701,3 +701,61 @@ describe('sandbox escape is gated as its own ask (never piggybacks a command app
     expect(spy).not.toHaveBeenCalled(); // allowed by rule, no prompt
   });
 });
+
+// ---------------------------------------------------------------------------
+// auto-classifier DENY must survive an active ask route (deny > ask). An ask
+// route (hook 'ask' / session ask rule) previously skipped the mode switch that
+// held the classifier, routing a classifier-DENY call to canUseTool — which
+// could ALLOW it, inverting the documented deny > ask precedence.
+// ---------------------------------------------------------------------------
+
+describe('auto mode: classifier deny is not bypassed by an ask route', () => {
+  const denyAll: ToolClassifier = () => 'deny';
+  const allowingCanUse: CanUseTool = async () => ({ behavior: 'allow' }) as PermissionResult;
+
+  it('hook ask + classifier deny => deny (not allow via canUseTool)', async () => {
+    const spy = vi.fn(allowingCanUse);
+    const gate = makeGate({ mode: 'auto', classifier: denyAll, canUseTool: spy });
+    const res = await gate.check(
+      'Bash',
+      { command: 'rm -rf /' },
+      checkOpts({ hook: { decision: 'ask' } }),
+    );
+    expect(res.decision).toBe('deny');
+    expect(spy).not.toHaveBeenCalled();
+  });
+
+  it('session ask rule + classifier deny => deny (not allow via canUseTool)', async () => {
+    const spy = vi.fn(allowingCanUse);
+    const gate = makeGate({ mode: 'auto', classifier: denyAll, canUseTool: spy });
+    gate.applyUpdates([
+      { type: 'addRules', behavior: 'ask', rules: [{ toolName: 'Bash' }], destination: 'session' },
+    ]);
+    const res = await gate.check('Bash', { command: 'rm -rf /' }, checkOpts());
+    expect(res.decision).toBe('deny');
+    expect(spy).not.toHaveBeenCalled();
+  });
+
+  it('hook ask + classifier ALLOW still prompts (ask route is not widened away)', async () => {
+    const allowAll: ToolClassifier = () => 'allow';
+    const spy = vi.fn(allowingCanUse);
+    const gate = makeGate({ mode: 'auto', classifier: allowAll, canUseTool: spy });
+    const res = await gate.check(
+      'Bash',
+      { command: 'ls' },
+      checkOpts({ hook: { decision: 'ask' } }),
+    );
+    // classifier 'allow' must NOT short-circuit past the ask route: canUseTool
+    // decides, and here it allows — but it WAS consulted (the prompt happened).
+    expect(res.decision).toBe('allow');
+    expect(spy).toHaveBeenCalledTimes(1);
+  });
+
+  it('classifier deny with NO ask route still denies (regression control)', async () => {
+    const spy = vi.fn(allowingCanUse);
+    const gate = makeGate({ mode: 'auto', classifier: denyAll, canUseTool: spy });
+    const res = await gate.check('Bash', { command: 'rm -rf /' }, checkOpts());
+    expect(res.decision).toBe('deny');
+    expect(spy).not.toHaveBeenCalled();
+  });
+});

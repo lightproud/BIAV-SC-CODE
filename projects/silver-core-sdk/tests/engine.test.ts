@@ -1192,6 +1192,53 @@ describe('runAgentLoop', () => {
     });
   });
 
+  it('raises a sub-1024 thinking budget to the 1024 API floor (pre-adaptive)', async () => {
+    const transport = new MockTransport([textReplyEvents('ok')]);
+    const deps = makeDeps(transport);
+    const history: APIMessageParam[] = [{ role: 'user', content: 'go' }];
+
+    await collect(
+      runAgentLoop(
+        history,
+        deps,
+        // 500 is positive (not "off") but below the API's 1024 floor: previously
+        // sent verbatim -> 400 "budget_tokens must be >= 1024" -> every turn dies.
+        makeConfig({
+          model: 'claude-haiku-4-5',
+          maxOutputTokens: 8192,
+          thinking: { type: 'enabled', budget_tokens: 500 },
+        }),
+      ),
+    );
+
+    expect(transport.requests[0]!.thinking).toEqual({
+      type: 'enabled',
+      budget_tokens: 1024,
+    });
+  });
+
+  it('disables thinking when max_tokens cannot fit the 1024 floor (pre-adaptive)', async () => {
+    const transport = new MockTransport([textReplyEvents('ok')]);
+    const deps = makeDeps(transport);
+    const history: APIMessageParam[] = [{ role: 'user', content: 'go' }];
+
+    await collect(
+      runAgentLoop(
+        history,
+        deps,
+        // max_tokens 900 => ceiling 899 < 1024: no valid budget exists, so emit
+        // NO thinking param rather than a guaranteed-400 request.
+        makeConfig({
+          model: 'claude-haiku-4-5',
+          maxOutputTokens: 900,
+          thinking: { type: 'enabled', budget_tokens: 2000 },
+        }),
+      ),
+    );
+
+    expect(transport.requests[0]!.thinking).toBeUndefined();
+  });
+
   it('a resolved thinking budget of 0 sends NO thinking param (E1 live-disable guard)', async () => {
     // thinking {type:'enabled'} with maxThinkingTokens 0 is what a live
     // setMaxThinkingTokens(0) produces under the preset default (which injects

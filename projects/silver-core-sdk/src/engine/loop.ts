@@ -72,6 +72,9 @@ import {
 } from './thinking-provenance.js';
 
 const DEFAULT_THINKING_BUDGET = 10_000;
+/** Messages API floor for an enabled thinking budget (pre-adaptive wire form):
+ *  `thinking.budget_tokens` must be >= 1024 or the request 400s. */
+const MIN_THINKING_BUDGET = 1_024;
 
 /** Resilience P0-1: per-turn budget for replay-safe turn replays. Bounded and
  *  small on purpose — replays fight transient link faults (a cut socket, a
@@ -571,15 +574,35 @@ export async function* runAgentLoop(
       return { type: 'adaptive', ...(display !== undefined ? { display } : {}) };
     }
     // Pre-adaptive model: enabled + clamped budget. The Messages API requires
-    // budget_tokens < max_tokens or it 400s; the default budget (10000) exceeds
-    // the default max_tokens (8192), so clamp below max_tokens and warn.
+    // 1024 <= budget_tokens < max_tokens or it 400s; the default budget (10000)
+    // exceeds the default max_tokens (8192), so clamp below max_tokens and warn.
     const ceiling = config.maxOutputTokens - 1;
-    const budget_tokens = requested > ceiling ? ceiling : requested;
+    // If max_tokens leaves no room for even the 1024 floor, thinking cannot be
+    // validly enabled — emitting budget_tokens < 1024 (or >= max_tokens) 400s
+    // the turn, and then every turn (config is re-read each turn). Disable it.
+    if (ceiling < MIN_THINKING_BUDGET) {
+      deps.debug(
+        `engine: thinking disabled: max_tokens ${config.maxOutputTokens} leaves ` +
+          `no room for the API's ${MIN_THINKING_BUDGET}-token budget floor`,
+      );
+      return undefined;
+    }
+    let budget_tokens = requested > ceiling ? ceiling : requested;
     if (budget_tokens < requested) {
       deps.debug(
         `engine: thinking budget_tokens ${requested} >= max_tokens ` +
           `${config.maxOutputTokens}; clamped to ${budget_tokens} to satisfy the API`,
       );
+    }
+    // Lower-bound clamp: a positive-but-sub-1024 budget (e.g. maxThinkingTokens:
+    // 500) previously passed straight through and 400'd the request. Raise it to
+    // the floor, which fits since ceiling >= MIN_THINKING_BUDGET here.
+    if (budget_tokens < MIN_THINKING_BUDGET) {
+      deps.debug(
+        `engine: thinking budget_tokens ${budget_tokens} below the API's ` +
+          `${MIN_THINKING_BUDGET}-token floor; raised to ${MIN_THINKING_BUDGET}`,
+      );
+      budget_tokens = MIN_THINKING_BUDGET;
     }
     return {
       type: 'enabled',

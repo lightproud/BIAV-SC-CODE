@@ -36,8 +36,59 @@ const MAX_VALUE_LENGTH = 1024;
  * backtracking signature: `(a+)+`, `(a*)+`, `(a+)*`, `(.*x)+`, `(a+){2,}`, ...
  * Intentionally conservative: safe linear patterns like `(foo|bar)+`, `Edit.*`
  * or `^mcp__` do not match and keep working.
+ *
+ * A single flat regex CANNOT do this correctly: the old detector
+ * `/\([^()]*[*+][^()]*\)\s*[*+{]/` used `[^()]*` around the inner quantifier,
+ * so it only saw a nested quantifier when the quantified group held NO further
+ * parens — `((a+))+` and `(a(b+))+` slipped through and still froze the event
+ * loop. We instead walk the pattern with a paren stack, tracking (at every
+ * nesting depth) whether the group body contains a repetition, and flag the
+ * moment a repetition-bearing group is itself quantified.
  */
-const NESTED_QUANTIFIER_RE = /\([^()]*[*+][^()]*\)\s*[*+{]/;
+function hasNestedQuantifier(pattern: string): boolean {
+  const isRepeatQuant = (c: string | undefined): boolean =>
+    c === '*' || c === '+' || c === '{';
+  // Per open group: does its body (at ANY depth) contain a repetition quantifier?
+  const bodyHasRepeat: boolean[] = [];
+  const markAllOpenGroups = (): void => {
+    for (let k = 0; k < bodyHasRepeat.length; k += 1) bodyHasRepeat[k] = true;
+  };
+  for (let i = 0; i < pattern.length; i += 1) {
+    const ch = pattern[i];
+    if (ch === '\\') {
+      i += 1; // escaped metachar is a literal atom; skip it
+      continue;
+    }
+    if (ch === '[') {
+      // character class: consume to the closing ']' so parens/quantifier chars
+      // inside it are treated as literals, not structure.
+      i += 1;
+      while (i < pattern.length && pattern[i] !== ']') {
+        if (pattern[i] === '\\') i += 1;
+        i += 1;
+      }
+      continue;
+    }
+    if (ch === '(') {
+      bodyHasRepeat.push(false);
+      continue;
+    }
+    if (ch === ')') {
+      const closedBodyRepeat = bodyHasRepeat.pop() ?? false;
+      // Look past optional whitespace for a quantifier applied to THIS group.
+      let j = i + 1;
+      while (j < pattern.length && /\s/.test(pattern[j] ?? '')) j += 1;
+      const outerQuantified = isRepeatQuant(pattern[j]);
+      // A repetition-bearing group that is itself repeated = star height >= 2.
+      if (outerQuantified && closedBodyRepeat) return true;
+      // A quantified group counts as a repetition within its parent's body.
+      if (outerQuantified) markAllOpenGroups();
+      continue;
+    }
+    if (isRepeatQuant(ch)) markAllOpenGroups(); // in-body repetition at this depth
+  }
+  return false;
+}
 
 export function matcherMatches(
   matcher: string | undefined,
@@ -64,7 +115,7 @@ export function matcherMatches(
     );
     return false;
   }
-  if (NESTED_QUANTIFIER_RE.test(matcher)) {
+  if (hasNestedQuantifier(matcher)) {
     debug?.(
       `hooks matcher: pattern "${matcher}" has a nested quantifier ` +
         `(catastrophic-backtracking risk); treated as no-match`,

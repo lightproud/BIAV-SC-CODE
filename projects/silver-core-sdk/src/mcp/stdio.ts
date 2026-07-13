@@ -295,7 +295,18 @@ export class StdioMcpConnection {
         const replyId = msg.id as JsonRpcId;
         void resolveElicitation(msg.params, this.elicitation, this.lifeController.signal)
           .then((result) => this.write({ jsonrpc: '2.0', id: replyId, result }))
-          .catch(() => this.write({ jsonrpc: '2.0', id: replyId, result: { action: 'decline' } }));
+          .catch(() => this.write({ jsonrpc: '2.0', id: replyId, result: { action: 'decline' } }))
+          // The fallback decline write can ITSELF throw (e.g. the connection is
+          // already closing -> write() throws McpError). Without this terminal
+          // catch that second rejection is unhandled and can crash the process
+          // under a strict unhandledRejection policy. Mirrors http.ts.
+          .catch((err: unknown) => {
+            this.debug(
+              `[mcp:${this.label}] elicitation reply failed: ${
+                err instanceof Error ? err.message : String(err)
+              }`,
+            );
+          });
         return;
       }
       // Other server-initiated requests: this client implements no server-
