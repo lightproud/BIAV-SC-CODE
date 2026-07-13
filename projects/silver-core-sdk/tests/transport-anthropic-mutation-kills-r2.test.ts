@@ -203,12 +203,26 @@ describe('error payloads and request ids (both error paths)', () => {
 });
 
 describe('stream gating: message_start, malformed frames', () => {
-  it('a stream that DID start but closed without message_stop completes in ONE attempt (no phantom empty-retry)', async () => {
+  it('a started stream with no content and no stop_reason fails fast: empty_message error, NOT retried, NOT replay-flagged', async () => {
+    // C (keeper ruling 2026-07-13, BPT "空 stopReason 轮次"): a stream that
+    // emits message_start but delivers NO content and NO terminal stop_reason
+    // is a degraded 200 (the API always sends stop_reason before message_stop).
+    // It must NOT finalize as a silent empty success. It is NOT retried (a
+    // started stream is not replay-safe — the "no phantom empty-retry"
+    // contract) and NOT flagged for engine turn-replay; instead it surfaces a
+    // diagnosable empty_message error the engine reports as error_during_execution.
     const f = vi.fn(async () => sseResponse(startOnlySse()));
     vi.stubGlobal('fetch', f);
-    const events = await collect(makeT({ maxRetries: 2 }).stream(baseReq()));
-    expect(events.map((e) => e.type)).toEqual(['message_start']);
-    expect(f).toHaveBeenCalledTimes(1);
+    const err = (await errOf(collect(makeT({ maxRetries: 2 }).stream(baseReq())))) as APIConnectionError & {
+      code?: string;
+      turnReplaySafe?: boolean;
+      midStreamTruncation?: boolean;
+    };
+    expect(err).toBeInstanceOf(APIConnectionError);
+    expect(err.code).toBe('empty_message');
+    expect(f).toHaveBeenCalledTimes(1); // no phantom empty-retry
+    expect(err.turnReplaySafe).not.toBe(true); // not engine-replayed either
+    expect(err.midStreamTruncation).not.toBe(true);
   });
 
   it('an event-less non-JSON frame is SKIPPED; an event-ful garbage frame is sse_malformed_frame', async () => {

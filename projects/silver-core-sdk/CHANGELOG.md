@@ -16,6 +16,29 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.55.1 — 2026-07-13
+
+**Degraded empty stream no longer billed as a silent success (BPT "空 stopReason
+轮次", 2026-07-13; keeper ruling C).** A degraded HTTP 200 that emitted
+`message_start` but delivered NO content block AND no terminal
+`message_delta.stop_reason` (a gateway hiccup / proxy buffering cutoff — the API
+always sends stop_reason before message_stop) fell between the transport's
+no-message_start empty-retry and its mid-stream-truncation salvage. The engine
+then finalized an EMPTY assistant and billed a `subtype:'success'` result with
+`stop_reason: null` — the exact "round ended, no assistant message, empty stop"
+shape BPT reported (five in a row = the gateway hiccuping five times, each
+silently accepted). Fix: the Anthropic arm now detects `message_start` seen +
+no content + no stop_reason at BOTH stream-exit points (message_stop present and
+natural close) and throws a diagnosable `empty_message` `APIConnectionError`. It
+is NOT flagged `turnReplaySafe`/`midStreamTruncation` and is NOT retried inside
+the transport — honoring the deliberate "a started stream is not replay-safe /
+no phantom empty-retry" contract — so the engine surfaces it as
+`error_during_execution` (error_code `empty_message`) instead of a silent empty
+success. The OpenAI arm already self-heals its analog (zero-chunk retry +
+synthesized stop_reason), so it is unchanged. +5 tests (transport S1/S2, engine
+end-to-end, re-baselined mutation lock); the honest empty end_turn
+(stop_reason present) and partial-content paths are untouched.
+
 ## 0.55.0 — 2026-07-13
 
 **Cross-protocol routing extended to utility + compaction calls (closes the
