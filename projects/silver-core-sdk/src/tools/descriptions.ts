@@ -934,9 +934,15 @@ export const BASH_SANDBOX_FRAGMENTS: SandboxNoteFragment[] = [
     text: 'The user explicitly asks you to run a command outside the sandbox.',
   },
   {
+    // ADAPTED (was faithful): upstream ccVersion 2.1.205 removed the archive's
+    // -user-permission-prompt fragment (it deleted the standalone "This will
+    // prompt the user for permission" line). The SDK keeps the sentence as its
+    // own framing because the escape hatch does gate on a permission prompt
+    // here — but it no longer has an upstream source, so it is no longer marked
+    // faithful (red line: never claim verbatim provenance for text upstream dropped).
     id: 'user-permission-prompt',
-    slug: 'tool-description-bash-sandbox-user-permission-prompt',
-    faithful: true,
+    slug: '',
+    faithful: false,
     text: 'This will prompt the user for permission',
   },
   {
