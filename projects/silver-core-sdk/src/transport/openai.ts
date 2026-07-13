@@ -23,8 +23,15 @@
  *  - `cache_control` breakpoints are stripped (OpenAI-side caching is
  *    automatic); cached prompt tokens are read back from
  *    `usage.prompt_tokens_details.cached_tokens`.
- *  - image blocks translate to `image_url` parts; PDF/document blocks have no
- *    Chat Completions equivalent and degrade to an honest text placeholder.
+ *  - image blocks translate to `image_url` parts (base64 -> data URL, with a
+ *    media-type whitelist + base64 hygiene checks so a bad image fails with a
+ *    locatable error HERE instead of an opaque gateway image-processing
+ *    error); base64-PDF document blocks translate to the official `file`
+ *    part (data URL in file_data); URL documents keep an honest placeholder.
+ *  - images/PDFs inside a tool_result are FANNED OUT into the user message
+ *    following the tool messages (the OpenAI `tool` role is text-only), each
+ *    labeled with its tool_call_id; the tool body keeps a forward-reference
+ *    marker.
  *
  * The HTTP retry/backoff/watchdog policy mirrors AnthropicTransport (the
  * resolve* helpers and semaphore are imported from it); the request loop is
@@ -70,6 +77,10 @@ import {
   resolveStreamIdleMs,
   resolveStreamMaxMs,
 } from './anthropic.js';
+import {
+  SUPPORTED_IMAGE_MEDIA_TYPES,
+  SUPPORTED_IMAGE_MEDIA_TYPES_LIST,
+} from '../internal/media.js';
 
 const DEFAULT_BASE_URL = 'https://api.openai.com/v1';
 const DEFAULT_TIMEOUT_MS = 600_000;
@@ -105,7 +116,9 @@ type TransportConfig = {
 
 type OpenAIContentPart =
   | { type: 'text'; text: string }
-  | { type: 'image_url'; image_url: { url: string } };
+  | { type: 'image_url'; image_url: { url: string } }
+  /** Official Chat Completions PDF-input part (base64 data URL in file_data). */
+  | { type: 'file'; file: { filename: string; file_data: string } };
 
 type OpenAIToolCall = {
   id: string;
@@ -129,33 +142,158 @@ function encodeSystem(system: string | TextBlockParam[] | undefined): string | u
   return text.length > 0 ? text : undefined;
 }
 
-function imagePartUrl(block: ImageBlockParam): string {
-  return block.source.type === 'base64'
-    ? `data:${block.source.media_type};base64,${block.source.data}`
-    : block.source.url;
+/** Per-request attachment-translation stats for the debug channel. Log
+ *  hygiene: carries ONLY MIME types and base64 character counts — never
+ *  image/document bytes, credentials, or any slice of the request body. */
+type ImageStats = { mediaTypes: string[]; dataChars: number[] };
+
+/** RFC 4648 alphabet (padding allowed only at the end). Catches garbage that
+ *  would otherwise ride into the data URL and fail server-side. */
+const BASE64_RE = /^[A-Za-z0-9+/]+={0,2}$/;
+
+/** Whitespace-normalize + validate base64 payload for a data URL. Raw
+ *  newlines (line-wrapped file encoders), an accidental nested `data:` prefix
+ *  and off-alphabet bytes are exactly the malformed shapes gateways reject
+ *  opaquely at their media-processing stage (e.g.
+ *  `image_moderation_server_error`) — fail HERE, locatably, instead. All
+ *  error messages are byte-free (never include the payload). */
+function cleanBase64(raw: string, where: string, what: string): string {
+  const data = raw.replace(/\s+/g, '');
+  if (data.length === 0) {
+    throw new ConfigurationError(
+      `openai-chat: empty base64 ${what} data at ${where}; ` +
+        `supply the ${what} bytes or drop the block`,
+    );
+  }
+  if (data.startsWith('data:')) {
+    throw new ConfigurationError(
+      `openai-chat: ${what} data at ${where} already carries a "data:" URL prefix; ` +
+        `pass RAW base64 in source.data (or use source.type 'url' for a full URL)`,
+    );
+  }
+  if (!BASE64_RE.test(data)) {
+    throw new ConfigurationError(
+      `openai-chat: ${what} data at ${where} is not valid base64 (${data.length} chars)`,
+    );
+  }
+  return data;
 }
 
+function imagePartUrl(block: ImageBlockParam, where: string, stats?: ImageStats): string {
+  if (block.source.type !== 'base64') {
+    // http(s) or ready-made data URL: the Chat Completions image_url part
+    // takes it verbatim.
+    stats?.mediaTypes.push('url');
+    stats?.dataChars.push(block.source.url.length);
+    return block.source.url;
+  }
+  const mediaType = block.source.media_type.trim().toLowerCase();
+  if (!SUPPORTED_IMAGE_MEDIA_TYPES.has(mediaType)) {
+    throw new ConfigurationError(
+      `openai-chat: unsupported image media_type "${block.source.media_type}" at ${where}; ` +
+        `supported: ${SUPPORTED_IMAGE_MEDIA_TYPES_LIST}`,
+    );
+  }
+  const data = cleanBase64(block.source.data, where, 'image');
+  stats?.mediaTypes.push(mediaType);
+  stats?.dataChars.push(data.length);
+  return `data:${mediaType};base64,${data}`;
+}
+
+/** Translate a document block into an OpenAI content part. Base64 PDFs map to
+ *  the official Chat Completions `file` part (data URL in `file_data`,
+ *  v0.56.0 — previously an honest text placeholder); text sources inline
+ *  their text; URL sources have no Chat Completions equivalent and keep the
+ *  honest placeholder. */
+function documentPart(
+  block: DocumentBlockParam,
+  where: string,
+  stats?: ImageStats,
+): OpenAIContentPart {
+  if (block.source.type === 'text') return { type: 'text', text: block.source.data };
+  if (block.source.type === 'url') {
+    return {
+      type: 'text',
+      text: `[document "${block.title ?? block.source.url}" omitted: URL documents have no Chat Completions equivalent]`,
+    };
+  }
+  const data = cleanBase64(block.source.data, where, 'document');
+  stats?.mediaTypes.push('application/pdf');
+  stats?.dataChars.push(data.length);
+  return {
+    type: 'file',
+    file: {
+      filename: block.title ?? 'document.pdf',
+      file_data: `data:application/pdf;base64,${data}`,
+    },
+  };
+}
+
+/** An image/document lifted out of a tool_result and carried into the user
+ *  message that follows the tool messages (fan-out, v0.56.0): the OpenAI
+ *  `tool` role is text-only, so without the carry the model NEVER sees a
+ *  screenshot an MCP tool returned or an image file Read produced. The label
+ *  ties the attachment back to its tool call. */
+type CarriedAttachment = { label: string; part: OpenAIContentPart };
+
 /** Flatten a tool_result's content to the string an OpenAI `tool` message
- *  carries. Non-text blocks degrade to honest placeholders (never dropped
- *  silently). An `is_error` tool_result gets a deterministic textual marker:
- *  the OpenAI `tool` role has no is_error field, so without it the model can
- *  no longer tell a failed tool call (a non-zero Bash exit, a builtin error)
- *  from a successful one — it would treat the error text as a normal result. */
-function flattenToolResultContent(block: ToolResultBlockParam): string {
+ *  carries. Images and base64-PDF documents are lifted into `carry` (see
+ *  CarriedAttachment) with a forward-reference marker left in the tool body;
+ *  an attachment that fails validation degrades to an explicit omission
+ *  marker with the reason (never a thrown error — a malformed tool OUTPUT
+ *  must not brick the turn the way a malformed caller INPUT should; user-turn
+ *  blocks stay strict). An `is_error` tool_result gets a deterministic
+ *  textual marker: the OpenAI `tool` role has no is_error field, so without
+ *  it the model can no longer tell a failed tool call (a non-zero Bash exit,
+ *  a builtin error) from a successful one — it would treat the error text as
+ *  a normal result. */
+function flattenToolResultContent(
+  block: ToolResultBlockParam,
+  where: string,
+  carry: CarriedAttachment[],
+  stats?: ImageStats,
+): string {
   const content = block.content;
+  let imageNo = 0;
+  let documentNo = 0;
   const body =
     content === undefined
       ? ''
       : typeof content === 'string'
         ? content
         : content
-            .map((item) =>
-              item.type === 'text'
-                ? item.text
-                : item.type === 'image'
-                  ? '[image content omitted: not representable in an OpenAI tool result]'
-                  : documentFallbackText(item),
-            )
+            .map((item, j) => {
+              if (item.type === 'text') return item.text;
+              if (item.type === 'image') {
+                imageNo += 1;
+                try {
+                  const url = imagePartUrl(item, `${where}.content[${j}]`, stats);
+                  carry.push({
+                    label: `[image #${imageNo} from tool call ${block.tool_use_id}]`,
+                    part: { type: 'image_url', image_url: { url } },
+                  });
+                  return `[image #${imageNo}: attached in the user message after the tool results]`;
+                } catch (err) {
+                  return `[image #${imageNo} omitted: ${errorMessage(err)}]`;
+                }
+              }
+              // document
+              try {
+                const part = documentPart(item, `${where}.content[${j}]`, stats);
+                // documentPart returns text (inline/placeholder) or file only.
+                if (part.type !== 'file') {
+                  return part.type === 'text' ? part.text : '';
+                }
+                documentNo += 1;
+                carry.push({
+                  label: `[document #${documentNo} ("${part.file.filename}") from tool call ${block.tool_use_id}]`,
+                  part,
+                });
+                return `[document #${documentNo} ("${part.file.filename}"): attached in the user message after the tool results]`;
+              } catch (err) {
+                return `[document omitted: ${errorMessage(err)}]`;
+              }
+            })
             .join('\n');
   return block.is_error === true
     ? body.length > 0
@@ -164,17 +302,15 @@ function flattenToolResultContent(block: ToolResultBlockParam): string {
     : body;
 }
 
-function documentFallbackText(block: DocumentBlockParam): string {
-  if (block.source.type === 'text') return block.source.data;
-  const label = block.title ?? (block.source.type === 'url' ? block.source.url : 'PDF');
-  return `[document "${label}" omitted: no Chat Completions equivalent]`;
-}
-
 /** Translate one Anthropic message-param into its OpenAI message(s). A user
  *  turn carrying tool_result blocks fans out into `tool` role messages (which
  *  must directly follow the assistant tool_calls turn), then any remaining
  *  user content. */
-function encodeMessage(msg: APIMessageParam): OpenAIChatMessage[] {
+function encodeMessage(
+  msg: APIMessageParam,
+  where = 'messages[?]',
+  stats?: ImageStats,
+): OpenAIChatMessage[] {
   if (typeof msg.content === 'string') {
     return msg.role === 'user'
       ? [{ role: 'user', content: msg.content }]
@@ -208,31 +344,48 @@ function encodeMessage(msg: APIMessageParam): OpenAIChatMessage[] {
   // remaining text/image parts as one user message.
   const out: OpenAIChatMessage[] = [];
   const parts: OpenAIContentPart[] = [];
-  for (const block of msg.content as ContentBlockParam[]) {
+  const carry: CarriedAttachment[] = [];
+  const blocks = msg.content as ContentBlockParam[];
+  for (let i = 0; i < blocks.length; i += 1) {
+    const block = blocks[i]!;
     switch (block.type) {
       case 'tool_result':
         out.push({
           role: 'tool',
           tool_call_id: block.tool_use_id,
-          content: flattenToolResultContent(block),
+          content: flattenToolResultContent(block, `${where}.content[${i}]`, carry, stats),
         });
         break;
       case 'text':
         parts.push({ type: 'text', text: block.text });
         break;
       case 'image':
-        parts.push({ type: 'image_url', image_url: { url: imagePartUrl(block) } });
+        parts.push({
+          type: 'image_url',
+          image_url: { url: imagePartUrl(block, `${where}.content[${i}]`, stats) },
+        });
         break;
       default:
         if ((block as { type?: string }).type === 'document') {
-          parts.push({
-            type: 'text',
-            text: documentFallbackText(block as unknown as DocumentBlockParam),
-          });
+          parts.push(
+            documentPart(
+              block as unknown as DocumentBlockParam,
+              `${where}.content[${i}]`,
+              stats,
+            ),
+          );
         }
         // tool_use / thinking blocks never appear in user turns.
         break;
     }
+  }
+  // Carried tool_result attachments ride in the user message FOLLOWING the
+  // tool messages (protocol adjacency: tool messages must directly follow the
+  // assistant tool_calls turn). Each is preceded by its text label so the
+  // model can tie it back to the tool call; appended AFTER any genuine user
+  // content so original block order within the turn is preserved.
+  for (const { label, part } of carry) {
+    parts.push({ type: 'text', text: label }, part);
   }
   if (parts.length > 0) {
     const onlyText = parts.every((p) => p.type === 'text');
@@ -270,16 +423,30 @@ function encodeToolChoice(
 
 /**
  * Encode one StreamRequest as a Chat Completions request body. Exported for
- * unit tests (pure function, no I/O).
+ * unit tests (pure function, no I/O; the optional `debug` sink receives one
+ * image-translation summary line — MIME types and base64 lengths only, never
+ * image bytes / credentials / body content).
  */
 export function encodeOpenAIRequest(
   req: Omit<StreamRequest, 'signal' | 'onRetry'>,
   opts: OpenAIProtocolOptions = {},
+  debug?: (m: string) => void,
 ): Record<string, unknown> {
   const messages: OpenAIChatMessage[] = [];
   const system = encodeSystem(req.system);
   if (system !== undefined) messages.push({ role: 'system', content: system });
-  for (const msg of req.messages) messages.push(...encodeMessage(msg));
+  const imageStats: ImageStats = { mediaTypes: [], dataChars: [] };
+  for (let i = 0; i < req.messages.length; i += 1) {
+    messages.push(...encodeMessage(req.messages[i]!, `messages[${i}]`, imageStats));
+  }
+  if (imageStats.mediaTypes.length > 0) {
+    const files = imageStats.mediaTypes.filter((t) => t === 'application/pdf').length;
+    debug?.(
+      `openai transport: protocol=openai-chat images=${imageStats.mediaTypes.length - files} ` +
+        `files=${files} types=[${imageStats.mediaTypes.join(', ')}] ` +
+        `data_chars=[${imageStats.dataChars.join(', ')}] -> image_url/file parts (ok)`,
+    );
+  }
 
   // Server-declared typed entries (no input_schema, e.g. memory_20250818)
   // have no Chat Completions equivalent and are dropped honestly — the query
@@ -755,9 +922,17 @@ export class OpenAIChatTransport implements Transport {
           `or set the model explicitly.`,
       );
     }
-    const bodyJson = JSON.stringify(
-      encodeOpenAIRequest({ ...requestBody, model: mappedModel }, opts),
-    );
+    let bodyJson: string;
+    try {
+      bodyJson = JSON.stringify(
+        encodeOpenAIRequest({ ...requestBody, model: mappedModel }, opts, this.debug),
+      );
+    } catch (err) {
+      // The encode error is already locatable and byte-free (media_type +
+      // block path only); mirror it on the debug channel and surface as-is.
+      this.debug(`openai transport: request encoding failed (${errorMessage(err)})`);
+      throw err;
+    }
     const headers = this.buildHeaders(this.credential);
     const timeoutMs = this.provider.timeoutMs ?? DEFAULT_TIMEOUT_MS;
     const maxRetries = resolveMaxRetries(this.provider, this.env);

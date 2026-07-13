@@ -78,7 +78,7 @@ describe('encoder leftovers (round-2 NC)', () => {
     expect(msgs[0]).toEqual({ role: 'assistant', content: 'previous words' });
   });
 
-  it('a document part in PLAIN user content flattens to its text fallback', async () => {
+  it('a base64 PDF in PLAIN user content rides the official file part (v0.56.0)', async () => {
     const body = await bodyOf({
       messages: [
         {
@@ -91,8 +91,11 @@ describe('encoder leftovers (round-2 NC)', () => {
       ] as never,
     });
     const user = (body.messages as Array<{ role: string; content: unknown }>).find((m) => m.role === 'user')!;
-    // all parts are text -> joined string; the title-less PDF gets the 'PDF' label
-    expect(user.content).toBe('see attached\n[document "PDF" omitted: no Chat Completions equivalent]');
+    // a file part forces the array-of-parts form; the title-less PDF gets the default filename
+    expect(user.content).toEqual([
+      { type: 'text', text: 'see attached' },
+      { type: 'file', file: { filename: 'document.pdf', file_data: 'data:application/pdf;base64,aGk=' } },
+    ]);
   });
 });
 

@@ -31,6 +31,10 @@ import type {
   ToolDispatchRecord,
   ToolResultPayload,
 } from '../internal/contracts.js';
+import {
+  normalizeImageMediaType,
+  SUPPORTED_IMAGE_MEDIA_TYPES_LIST,
+} from '../internal/media.js';
 
 /** Wrap any abort-shaped error into this SDK's AbortError. */
 function toAbortError(err: unknown): AbortError {
@@ -68,20 +72,37 @@ export type ToolExecOutcome = {
   observability?: SDKMessage[];
 };
 
-/** Map an MCP CallToolResult into a builtin-style tool result payload. */
-function mapMcpResult(res: CallToolResult): ToolResultPayload {
+/** Map an MCP CallToolResult into a builtin-style tool result payload.
+ *  Exported for unit tests (pure function, no I/O). */
+export function mapMcpResult(res: CallToolResult): ToolResultPayload {
   const parts: Array<TextBlockParam | ImageBlockParam> = [];
   for (const part of res.content) {
     switch (part.type) {
       case 'text':
         parts.push({ type: 'text', text: part.text });
         break;
-      case 'image':
-        parts.push({
-          type: 'image',
-          source: { type: 'base64', media_type: part.mimeType, data: part.data },
-        });
+      case 'image': {
+        // Whitelist the mimeType HERE (v0.56.0): an MCP server is free to
+        // label anything (image/bmp, image/tiff, ...), and an off-vocabulary
+        // media_type riding into the next API request 400s the WHOLE turn on
+        // the Anthropic protocol (and is unrepresentable on openai-chat).
+        // Degrade to an explicit text marker instead — never dropped silently.
+        const mediaType = normalizeImageMediaType(part.mimeType);
+        parts.push(
+          mediaType !== undefined
+            ? {
+                type: 'image',
+                source: { type: 'base64', media_type: mediaType, data: part.data },
+              }
+            : {
+                type: 'text',
+                text:
+                  `[image omitted: unsupported media type "${part.mimeType}"; ` +
+                  `supported: ${SUPPORTED_IMAGE_MEDIA_TYPES_LIST}]`,
+              },
+        );
         break;
+      }
       case 'audio':
         parts.push({ type: 'text', text: `[audio ${part.mimeType}]` });
         break;

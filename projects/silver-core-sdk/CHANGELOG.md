@@ -16,6 +16,35 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.56.0 — 2026-07-13
+
+**openai-chat image input: hardened translation + tool_result fan-out + PDF
+`file` parts + MCP mimeType whitelist (keeper ruling 2026-07-13).** Four
+related gaps closed in one capability bump. (1) Base64 image blocks already
+translated to `image_url` data URLs but rode through UNVALIDATED — an
+unsupported media_type, empty/line-wrapped base64, or a nested `data:` prefix
+produced a malformed data URL gateways reject opaquely at their
+image-processing stage (`image_moderation_server_error`). The translator now
+enforces the Messages API four-type whitelist (JPEG/PNG/GIF/WebP), normalizes
+media_type case and base64 whitespace, and throws a locatable
+`ConfigurationError` (block path + media_type, never image bytes) for empty /
+double-prefixed / non-base64 data BEFORE any network call. (2) Images / base64
+PDFs inside a tool_result — a screenshot an MCP tool returned, an image file
+Read produced — previously degraded to a text placeholder on openai-chat (the
+`tool` role is text-only): the model never saw them. They now FAN OUT into the
+user message following the tool messages, each labeled with its tool_call_id;
+a malformed tool-OUTPUT attachment degrades to an explicit omission marker
+(never bricks the turn) while user-turn blocks stay fail-fast. (3) Base64 PDF
+`document` blocks translate to the official Chat Completions `file` content
+part (data URL in `file_data`) instead of a placeholder; URL documents keep
+the honest placeholder. (4) The MCP result mapper whitelists image mimeTypes
+against the shared vocabulary (`src/internal/media.ts`) — an off-vocabulary
+type (image/bmp, …) becomes an explicit text marker at the dispatch seam
+instead of 400-ing the whole next request on the Anthropic protocol. One
+byte-free debug summary line per request (protocol, image/file counts, MIME
+types, base64 lengths, outcome). Anthropic-protocol wire shape untouched
+(fixture-locked). Docs: OPENAI-PROTOCOL.md "Image input".
+
 ## 0.55.2 — 2026-07-13
 
 **OpenAI arm: metadata-only stream + `[DONE]` no longer billed as a silent
@@ -45,7 +74,6 @@ mutation-lock suites still pass without re-baselining). +12 test cases
 (transport: role-only, usage-only, empty-first-delta, no-terminator truncation,
 empty-text-finish_reason, tool_call-fragment; translator content tracking x3;
 engine end-to-end error_code x3); docs/OPENAI-PROTOCOL.md updated.
-
 ## 0.55.1 — 2026-07-13
 
 **Degraded empty stream no longer billed as a silent success (BPT "空 stopReason
