@@ -23,6 +23,10 @@
       "desc": "游戏向分析(数据全景/角色行动建议/bug故障报告)",
       "status": "provisional"
     },
+    "intel-weekly": {
+      "desc": "例行社区情报周报(报告规范v1物种①,固定骨架:速览/重点信号/风险哨兵/故障单)",
+      "status": "provisional"
+    },
     "methodology": {
       "desc": "方法论导出与导读(面向黑池会话等外部消费方的知识工程方法论 primer)",
       "status": "provisional"
