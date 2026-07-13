@@ -2090,7 +2090,17 @@ export type TerminalReason =
   | 'rapid_refill_breaker'
   | 'prompt_too_long'
   | 'image_error'
-  | 'model_error';
+  | 'model_error'
+  // NEW-IN-DOCS (official 0.3.207 chase, 2026-07-13): the union gained six
+  // members with zero exported-symbol change on the tarball. Typed for
+  // drop-in exhaustiveness; typed-not-populated here (this field carries no
+  // engine emission site — see the grep in the 0.3.207 diff report).
+  | 'api_error'
+  | 'malformed_tool_use_exhausted'
+  | 'budget_exhausted'
+  | 'structured_output_retry_exhausted'
+  | 'tool_deferred_unavailable'
+  | 'turn_setup_failed';
 
 /** NEW-IN-DOCS: fast-mode state on the result. typed-not-populated. */
 export type FastModeState = 'on' | 'off' | 'cooldown';

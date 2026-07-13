@@ -114,12 +114,16 @@ budget/retry 那句）——纯文档，无接口影响。
 
 ---
 
-## 5. 待裁 / 后续（详见对话内提问）
+## 5. 裁定与执行（守密人 2026-07-13 裁定「追」，同批已落）
 
-1. **0.3.205 → 0.3.207 追不追**：本质是「`TerminalReason` +6 成员补齐 + COMPAT 台账为 staging/hook
-   字段补 N/A 注脚」的小追赶批。历史上守密人对同类补丁漂移下过「追」的裁定（0.3.201→0.3.205）。
-2. staging（`input_files`/`output_files`）与 hook 结构化输出字段：确认维持 N/A-by-design 即可，
-   仅需台账留痕。
+守密人裁定 **追**。同一会话内已执行 0.3.205 → 0.3.207 追赶批（silver-core-sdk 0.53.7）：
+
+1. **`TerminalReason` +6 成员已补齐**（`src/types.ts`）——typed-not-populated，drop-in 穷尽性对齐；
+   `tests/b2c-alignment.test.ts` 加穷尽锁（12 → 18，`satisfies readonly TerminalReason[]`）。
+2. **staging / hook 结构化输出 / model-refusal 措辞**——维持 **N/A-by-design**，仅 COMPAT.md 台账
+   留痕（`mcp_call` 分级暂存落 control_request 协议面，本无引擎不实现）。
+3. COMPAT.md pin 0.3.205 → **0.3.207**；CHANGELOG 记 0.53.7 一条；版本升号守卫通过。
+4. 全量 vitest **2171 通过 + 2 skip**、`tsc` exit 0。
 
 ---
 
