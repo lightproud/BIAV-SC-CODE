@@ -112,18 +112,18 @@ describe('tool_result flattening (is_error marker + media fallbacks)', () => {
     expect((await toolMessages(undefined))[0]!.content).toBe('');
   });
 
-  it('image blocks inside a tool_result flatten to the omission placeholder', async () => {
+  it('image blocks inside a tool_result leave a forward-reference marker (fan-out, v0.56.0)', async () => {
     const tool = await toolMessages([
       { type: 'text', text: 'before' },
       { type: 'image', source: { type: 'base64', media_type: 'image/png', data: 'aGk=' } },
       { type: 'text', text: 'after' },
     ]);
     expect(tool[0]!.content).toBe(
-      'before\n[image content omitted: not representable in an OpenAI tool result]\nafter',
+      'before\n[image #1: attached in the user message after the tool results]\nafter',
     );
   });
 
-  it('document blocks flatten: text source passes its data; url/pdf sources name the label', async () => {
+  it('document blocks flatten: text source inlines; base64 PDFs fan out; url keeps a placeholder', async () => {
     const tool = await toolMessages([
       { type: 'document', title: 'notes', source: { type: 'text', media_type: 'text/plain', data: 'doc body' } },
       { type: 'document', title: 'spec.pdf', source: { type: 'base64', media_type: 'application/pdf', data: 'aGk=' } },
@@ -131,8 +131,12 @@ describe('tool_result flattening (is_error marker + media fallbacks)', () => {
     ]);
     const text = tool[0]!.content as string;
     expect(text).toContain('doc body');
-    expect(text).toContain('[document "spec.pdf" omitted: no Chat Completions equivalent]');
-    expect(text).toContain('[document "https://x.test/a.pdf" omitted: no Chat Completions equivalent]');
+    expect(text).toContain(
+      '[document #1 ("spec.pdf"): attached in the user message after the tool results]',
+    );
+    expect(text).toContain(
+      '[document "https://x.test/a.pdf" omitted: URL documents have no Chat Completions equivalent]',
+    );
   });
 });
 

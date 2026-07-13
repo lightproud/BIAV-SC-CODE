@@ -81,8 +81,8 @@ makes cost metrics and `maxBudgetUsd` enforceable for non-Claude models.
 | Messages API | Chat Completions |
 |---|---|
 | `system` (string or blocks) | one `system` message (blocks joined with `\n`) |
-| user `text` / `image` blocks | `text` / `image_url` content parts (base64 -> data URL) |
-| user `tool_result` blocks | `tool` role messages (emitted first, preserving protocol adjacency); non-text result content degrades to honest text placeholders |
+| user `text` / `image` blocks | `text` / `image_url` content parts (base64 -> data URL; JPEG/PNG/GIF/WebP whitelist + base64 hygiene — see "Image input") |
+| user `tool_result` blocks | `tool` role messages (emitted first, preserving protocol adjacency); images / base64 PDFs inside a result FAN OUT into the user message that follows, each labeled with its tool_call_id (the `tool` role is text-only) — see "Image input" |
 | assistant `text` + `tool_use` | `content` + `tool_calls` (arguments JSON-stringified) |
 | `tools[]` | `tools[]` (`type: 'function'`, `input_schema` -> `parameters`) |
 | `tool_choice` auto/any/tool/none | `'auto'` / `'required'` / `{type:'function',...}` / `'none'`; `disable_parallel_tool_use` -> `parallel_tool_calls: false` |
@@ -131,6 +131,72 @@ with the error type **normalized to Messages API vocabulary** by status
 (`401 -> authentication_error`, `429 -> rate_limit_error`, ...) so engine-side
 handling is provider-agnostic.
 
+## Image input
+
+The engine speaks Messages API image blocks end to end; this transport
+translates them at the wire boundary (v0.55.2 hardening — previously a bad
+image rode through unvalidated and failed opaquely at the gateway's
+image-processing stage, e.g. `image_moderation_server_error`).
+
+**Supported input** (user-turn content blocks):
+
+```ts
+// base64 (JPEG / PNG / GIF / WebP)
+{ type: 'image', source: { type: 'base64', media_type: 'image/png', data: '<raw base64>' } }
+// URL (http(s) or a ready-made data: URL) — passed through verbatim
+{ type: 'image', source: { type: 'url', url: 'https://…' } }
+```
+
+**Conversion rule** (base64 → data URL):
+
+```
+{ type: 'image', source: { type: 'base64', media_type: M, data: D } }
+  ->  { type: 'image_url', image_url: { url: `data:${M};base64,${D}` } }
+```
+
+- `media_type` is trimmed/lowercased and must be one of `image/jpeg`,
+  `image/png`, `image/gif`, `image/webp` — anything else throws a
+  `ConfigurationError` naming the offending type and its block path
+  (`messages[i].content[j]`) before any network call.
+- `data` is whitespace-normalized (line-wrapped base64 from file encoders
+  would produce a malformed data URL); empty data, a nested `data:` prefix,
+  or non-base64 characters likewise throw locatable `ConfigurationError`s.
+  Nothing is silently dropped.
+- Text blocks stay `{ type: 'text', text }`; block order within a message is
+  preserved exactly (text/image/text mixes survive as-is). A message whose
+  blocks are all text still collapses to a plain string (gateway-friendliest
+  shape); any image forces the array-of-parts form.
+- Debug logging is byte-free by design: one summary line per request with the
+  protocol, image count, MIME types, base64 character counts, and outcome —
+  never the base64 payload, credentials, or the request body.
+
+**Cross-protocol difference**: on `protocol: 'anthropic'` the same blocks are
+sent to the wire in their original Messages API shape (no `image_url`
+anywhere); the OpenAI translation applies only on `protocol: 'openai-chat'`.
+
+**tool_result attachments (v0.56.0 fan-out)**: the OpenAI `tool` role is
+text-only, so images and base64 PDFs inside a `tool_result` (a screenshot an
+MCP tool returned, an image file `Read` produced) are lifted into the user
+message that follows the tool messages — each preceded by a text label tying
+it back to its tool call (`[image #1 from tool call toolu_x]`), with a
+forward-reference marker left in the tool body. Validation asymmetry, by
+design: a malformed attachment in a tool RESULT degrades to an explicit
+omission marker with the reason (a bad tool output must not brick the turn);
+a malformed image/document in a USER turn throws the locatable
+`ConfigurationError` above (caller-controlled input, fail fast).
+
+**PDF documents (v0.56.0)**: base64 PDF `document` blocks translate to the
+official Chat Completions `file` content part
+(`{ type: 'file', file: { filename, file_data: 'data:application/pdf;base64,…' } }`,
+filename from the block's `title`, default `document.pdf`); text-source
+documents inline their text. Gateways that predate the `file` part will
+reject it server-side — that is their protocol surface, not a silent drop.
+
+**Current limits**: URL-source documents keep an honest text placeholder (no
+Chat Completions equivalent); no size/dimension pre-validation (gateway
+limits still apply); URL image sources are not fetched or validated
+client-side.
+
 ## Honest limits
 
 - **`thinking` config is dropped from the wire** — it has no Chat Completions
@@ -141,8 +207,9 @@ handling is provider-agnostic.
   automatic, not breakpoint-driven. Cached tokens are still accounted
   (`cache_read_input_tokens` from `prompt_tokens_details.cached_tokens`), but
   the `promptCaching` / `cacheTtl` knobs have no wire effect on this protocol.
-- **PDF/document blocks degrade** to a text placeholder (no protocol
-  equivalent); text-source documents inline their text.
+- **URL-source document blocks degrade** to a text placeholder (no protocol
+  equivalent); base64 PDFs ride the official `file` part and text-source
+  documents inline their text (both since v0.56.0 — see "Image input").
 - **`betas` and `apiVersion` are ignored** (Anthropic header concepts).
 - **Cost metrics read 0** for non-Claude models UNLESS you supply
   `provider.pricing` entries — with them, cost metrics and `maxBudgetUsd`

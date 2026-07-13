@@ -178,9 +178,16 @@ describe('encodeOpenAIRequest', () => {
         role: 'tool',
         tool_call_id: 'toolu_2',
         content:
-          'part\n[image content omitted: not representable in an OpenAI tool result]',
+          'part\n[image #1: attached in the user message after the tool results]',
       },
-      { role: 'user', content: 'background note' },
+      {
+        role: 'user',
+        content: [
+          { type: 'text', text: 'background note' },
+          { type: 'text', text: '[image #1 from tool call toolu_2]' },
+          { type: 'image_url', image_url: { url: 'data:image/png;base64,AA' } },
+        ],
+      },
     ]);
   });
 
@@ -229,6 +236,265 @@ describe('encodeOpenAIRequest', () => {
         ],
       },
     ]);
+  });
+
+  it('keeps a pure-text message free of any image structures', () => {
+    const body = encodeOpenAIRequest({
+      model: 'm',
+      max_tokens: 8,
+      messages: [{ role: 'user', content: [{ type: 'text', text: 'plain' }] }],
+    });
+    expect(body.messages).toEqual([{ role: 'user', content: 'plain' }]);
+    expect(JSON.stringify(body)).not.toContain('image_url');
+  });
+
+  it.each([
+    ['image/jpeg', 'ZmFrZQ=='],
+    ['image/png', 'QUJD'],
+    ['image/gif', 'R0lG'],
+    ['image/webp', 'V0VCUA=='],
+  ])('translates a single %s image to a correctly prefixed data URL', (mediaType, data) => {
+    const body = encodeOpenAIRequest({
+      model: 'm',
+      max_tokens: 8,
+      messages: [
+        {
+          role: 'user',
+          content: [
+            { type: 'text', text: 'look' },
+            { type: 'image', source: { type: 'base64', media_type: mediaType, data } },
+          ],
+        },
+      ],
+    });
+    expect(body.messages).toEqual([
+      {
+        role: 'user',
+        content: [
+          { type: 'text', text: 'look' },
+          { type: 'image_url', image_url: { url: `data:${mediaType};base64,${data}` } },
+        ],
+      },
+    ]);
+    // No Anthropic-shaped image block may survive into the wire body.
+    expect(JSON.stringify(body)).not.toContain('"type":"image"');
+    expect(JSON.stringify(body)).not.toContain('"source"');
+  });
+
+  it('preserves block order for text/image/text mixes and multiple images', () => {
+    const img = (data: string, mediaType = 'image/png') =>
+      ({ type: 'image', source: { type: 'base64', media_type: mediaType, data } }) as const;
+    const body = encodeOpenAIRequest({
+      model: 'm',
+      max_tokens: 8,
+      messages: [
+        {
+          role: 'user',
+          content: [
+            { type: 'text', text: 'before' },
+            img('QQ=='),
+            { type: 'text', text: 'between' },
+            img('Qg==', 'image/jpeg'),
+            img('Qw==', 'image/webp'),
+            { type: 'text', text: 'after' },
+          ],
+        },
+      ],
+    });
+    expect(body.messages).toEqual([
+      {
+        role: 'user',
+        content: [
+          { type: 'text', text: 'before' },
+          { type: 'image_url', image_url: { url: 'data:image/png;base64,QQ==' } },
+          { type: 'text', text: 'between' },
+          { type: 'image_url', image_url: { url: 'data:image/jpeg;base64,Qg==' } },
+          { type: 'image_url', image_url: { url: 'data:image/webp;base64,Qw==' } },
+          { type: 'text', text: 'after' },
+        ],
+      },
+    ]);
+  });
+
+  it('normalizes media_type case and strips line-wrapped base64 whitespace', () => {
+    const body = encodeOpenAIRequest({
+      model: 'm',
+      max_tokens: 8,
+      messages: [
+        {
+          role: 'user',
+          content: [
+            {
+              type: 'image',
+              source: { type: 'base64', media_type: ' IMAGE/PNG ', data: 'QUJ\nDRA\r\n==' },
+            },
+          ],
+        },
+      ],
+    });
+    expect(body.messages).toEqual([
+      {
+        role: 'user',
+        content: [
+          { type: 'image_url', image_url: { url: 'data:image/png;base64,QUJDRA==' } },
+        ],
+      },
+    ]);
+  });
+
+  it('passes a url image source through verbatim', () => {
+    const body = encodeOpenAIRequest({
+      model: 'm',
+      max_tokens: 8,
+      messages: [
+        {
+          role: 'user',
+          content: [
+            { type: 'image', source: { type: 'url', url: 'https://example.com/a.png' } },
+          ],
+        },
+      ],
+    });
+    expect(body.messages).toEqual([
+      {
+        role: 'user',
+        content: [
+          { type: 'image_url', image_url: { url: 'https://example.com/a.png' } },
+        ],
+      },
+    ]);
+  });
+
+  it('rejects an unsupported image media_type with a locatable error', () => {
+    const attempt = (): unknown =>
+      encodeOpenAIRequest({
+        model: 'm',
+        max_tokens: 8,
+        messages: [
+          { role: 'user', content: 'first' },
+          {
+            role: 'user',
+            content: [
+              { type: 'text', text: 'x' },
+              { type: 'image', source: { type: 'base64', media_type: 'image/bmp', data: 'QUJD' } },
+            ],
+          },
+        ],
+      });
+    expect(attempt).toThrow(ConfigurationError);
+    expect(attempt).toThrow(/unsupported image media_type "image\/bmp"/);
+    expect(attempt).toThrow(/messages\[1\]\.content\[1\]/);
+    expect(attempt).toThrow(/image\/jpeg, image\/png, image\/gif, image\/webp/);
+  });
+
+  it('rejects empty base64 image data instead of sending a malformed data URL', () => {
+    const attempt = (): unknown =>
+      encodeOpenAIRequest({
+        model: 'm',
+        max_tokens: 8,
+        messages: [
+          {
+            role: 'user',
+            content: [
+              { type: 'image', source: { type: 'base64', media_type: 'image/png', data: '  \n ' } },
+            ],
+          },
+        ],
+      });
+    expect(attempt).toThrow(ConfigurationError);
+    expect(attempt).toThrow(/empty base64 image data at messages\[0\]\.content\[0\]/);
+  });
+
+  it('rejects source.data that already carries a data: URL prefix (double-prefix guard)', () => {
+    const attempt = (): unknown =>
+      encodeOpenAIRequest({
+        model: 'm',
+        max_tokens: 8,
+        messages: [
+          {
+            role: 'user',
+            content: [
+              {
+                type: 'image',
+                source: {
+                  type: 'base64',
+                  media_type: 'image/png',
+                  data: 'data:image/png;base64,QUJD',
+                },
+              },
+            ],
+          },
+        ],
+      });
+    expect(attempt).toThrow(ConfigurationError);
+    expect(attempt).toThrow(/already carries a "data:" URL prefix/);
+  });
+
+  it('rejects non-base64 image data with a byte-free error', () => {
+    const attempt = (): unknown =>
+      encodeOpenAIRequest({
+        model: 'm',
+        max_tokens: 8,
+        messages: [
+          {
+            role: 'user',
+            content: [
+              { type: 'image', source: { type: 'base64', media_type: 'image/gif', data: '@@not-b64@@' } },
+            ],
+          },
+        ],
+      });
+    expect(attempt).toThrow(ConfigurationError);
+    expect(attempt).toThrow(/is not valid base64/);
+    let message = '';
+    try {
+      attempt();
+    } catch (err) {
+      message = (err as Error).message;
+    }
+    // Log/error hygiene: the payload itself must never appear.
+    expect(message).not.toContain('@@not-b64@@');
+  });
+
+  it('debug summary logs count/MIME/lengths but never the base64 payload', () => {
+    const lines: string[] = [];
+    encodeOpenAIRequest(
+      {
+        model: 'm',
+        max_tokens: 8,
+        messages: [
+          {
+            role: 'user',
+            content: [
+              { type: 'text', text: 'two images' },
+              { type: 'image', source: { type: 'base64', media_type: 'image/png', data: 'QUJDRA==' } },
+              { type: 'image', source: { type: 'base64', media_type: 'image/jpeg', data: 'ZmFrZQ==' } },
+            ],
+          },
+        ],
+      },
+      {},
+      (m) => lines.push(m),
+    );
+    expect(lines).toHaveLength(1);
+    expect(lines[0]).toContain('protocol=openai-chat');
+    expect(lines[0]).toContain('images=2');
+    expect(lines[0]).toContain('image/png');
+    expect(lines[0]).toContain('image/jpeg');
+    expect(lines[0]).toContain('data_chars=[8, 8]');
+    expect(lines[0]).toContain('(ok)');
+    expect(lines[0]).not.toContain('QUJDRA');
+    expect(lines[0]).not.toContain('ZmFrZQ');
+  });
+
+  it('emits no image debug line for a request without images', () => {
+    const lines: string[] = [];
+    encodeOpenAIRequest(
+      { model: 'm', max_tokens: 8, messages: [{ role: 'user', content: 'hi' }] },
+      {},
+      (m) => lines.push(m),
+    );
+    expect(lines).toHaveLength(0);
   });
 
   it('maps tools and tool_choice variants', () => {
@@ -1434,5 +1700,409 @@ describe('encodeOpenAIRequest tool schema filter', () => {
         function: { name: 'fine', parameters: { type: 'object', properties: {} } },
       },
     ]);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// End-to-end wire fixtures: image structure on the final request body
+// ---------------------------------------------------------------------------
+
+describe('image wire format (transport fixtures)', () => {
+  const IMAGE_MESSAGES: StreamRequest['messages'] = [
+    {
+      role: 'user',
+      content: [
+        { type: 'text', text: 'what is this?' },
+        { type: 'image', source: { type: 'base64', media_type: 'image/png', data: 'QUJD' } },
+      ],
+    },
+  ];
+
+  function openaiSse(): Response {
+    const chunks = [
+      {
+        id: 'chatcmpl-1',
+        model: 'gpt-test',
+        choices: [{ index: 0, delta: { role: 'assistant', content: 'a cat' }, finish_reason: null }],
+      },
+      {
+        id: 'chatcmpl-1',
+        model: 'gpt-test',
+        choices: [{ index: 0, delta: {}, finish_reason: 'stop' }],
+        usage: { prompt_tokens: 1, completion_tokens: 1 },
+      },
+    ];
+    const body =
+      chunks.map((c) => `data: ${JSON.stringify(c)}\n\n`).join('') + 'data: [DONE]\n\n';
+    return new Response(streamFromChunks([body]), {
+      status: 200,
+      headers: { 'content-type': 'text/event-stream' },
+    });
+  }
+
+  function anthropicSse(): Response {
+    const events = [
+      { type: 'message_start', message: { id: 'msg_1', type: 'message', role: 'assistant', model: 'claude-test-1', content: [], stop_reason: null, stop_sequence: null, usage: { input_tokens: 1, output_tokens: 1 } } },
+      { type: 'content_block_start', index: 0, content_block: { type: 'text', text: '' } },
+      { type: 'content_block_delta', index: 0, delta: { type: 'text_delta', text: 'a cat' } },
+      { type: 'content_block_stop', index: 0 },
+      { type: 'message_delta', delta: { stop_reason: 'end_turn', stop_sequence: null }, usage: { output_tokens: 2 } },
+      { type: 'message_stop' },
+    ];
+    const body = events
+      .map((e) => `event: ${(e as { type: string }).type}\ndata: ${JSON.stringify(e)}\n\n`)
+      .join('');
+    return new Response(streamFromChunks([body]), {
+      status: 200,
+      headers: { 'content-type': 'text/event-stream' },
+    });
+  }
+
+  it('OpenAIChatTransport sends image_url parts (and no Anthropic image block) on the wire', async () => {
+    const injected = vi.fn(async () => openaiSse());
+    const debugLines: string[] = [];
+    const transport = new OpenAIChatTransport({
+      provider: { protocol: 'openai-chat', apiKey: 'k', fetch: injected },
+      env: {},
+      debug: (m) => debugLines.push(m),
+    });
+    const events = await collect(
+      transport.stream({ model: 'gpt-test', max_tokens: 64, messages: IMAGE_MESSAGES }),
+    );
+    expect(events.at(-1)?.type).toBe('message_stop');
+    const wire = JSON.parse(String(injected.mock.calls[0]![1]!.body)) as {
+      messages: Array<{ role: string; content: unknown }>;
+    };
+    expect(wire.messages).toEqual([
+      {
+        role: 'user',
+        content: [
+          { type: 'text', text: 'what is this?' },
+          { type: 'image_url', image_url: { url: 'data:image/png;base64,QUJD' } },
+        ],
+      },
+    ]);
+    expect(JSON.stringify(wire)).not.toContain('"type":"image"');
+    // Debug hygiene at the transport level: summary present, payload absent.
+    const summary = debugLines.find((l) => l.includes('images='));
+    expect(summary).toContain('images=1');
+    expect(summary).toContain('image/png');
+    expect(debugLines.join('\n')).not.toContain('QUJD');
+  });
+
+  it('AnthropicTransport keeps the original Anthropic image structure untouched', async () => {
+    const injected = vi.fn(async () => anthropicSse());
+    const transport = new AnthropicTransport({
+      provider: { apiKey: 'k', fetch: injected },
+      env: {},
+      debug: noop,
+    });
+    const events = await collect(
+      transport.stream({ model: 'claude-test-1', max_tokens: 64, messages: IMAGE_MESSAGES }),
+    );
+    expect(events.at(-1)?.type).toBe('message_stop');
+    const wire = JSON.parse(String(injected.mock.calls[0]![1]!.body)) as {
+      messages: Array<{ role: string; content: unknown }>;
+    };
+    expect(wire.messages).toEqual([
+      {
+        role: 'user',
+        content: [
+          { type: 'text', text: 'what is this?' },
+          { type: 'image', source: { type: 'base64', media_type: 'image/png', data: 'QUJD' } },
+        ],
+      },
+    ]);
+    expect(JSON.stringify(wire)).not.toContain('image_url');
+  });
+
+  it('OpenAIChatTransport surfaces an encode error before any network call', async () => {
+    const injected = vi.fn(async () => openaiSse());
+    const debugLines: string[] = [];
+    const transport = new OpenAIChatTransport({
+      provider: { protocol: 'openai-chat', apiKey: 'k', fetch: injected },
+      env: {},
+      debug: (m) => debugLines.push(m),
+    });
+    const err = await captureError(
+      collect(
+        transport.stream({
+          model: 'gpt-test',
+          max_tokens: 64,
+          messages: [
+            {
+              role: 'user',
+              content: [
+                { type: 'image', source: { type: 'base64', media_type: 'image/tiff', data: 'QUJD' } },
+              ],
+            },
+          ],
+        }),
+      ),
+    );
+    expect(err).toBeInstanceOf(ConfigurationError);
+    expect((err as Error).message).toContain('image/tiff');
+    expect(injected).not.toHaveBeenCalled();
+    expect(debugLines.some((l) => l.includes('request encoding failed'))).toBe(true);
+    expect(debugLines.join('\n')).not.toContain('QUJD');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// tool_result attachment fan-out + document -> file parts (v0.56.0)
+// ---------------------------------------------------------------------------
+
+describe('tool_result attachment fan-out', () => {
+  it('carries a tool_result image into a labeled user message when no other user content exists', () => {
+    const body = encodeOpenAIRequest({
+      model: 'm',
+      max_tokens: 8,
+      messages: [
+        {
+          role: 'user',
+          content: [
+            {
+              type: 'tool_result',
+              tool_use_id: 'toolu_shot',
+              content: [
+                { type: 'text', text: 'screenshot taken' },
+                { type: 'image', source: { type: 'base64', media_type: 'image/png', data: 'QUJD' } },
+              ],
+            },
+          ],
+        },
+      ],
+    });
+    expect(body.messages).toEqual([
+      {
+        role: 'tool',
+        tool_call_id: 'toolu_shot',
+        content:
+          'screenshot taken\n[image #1: attached in the user message after the tool results]',
+      },
+      {
+        role: 'user',
+        content: [
+          { type: 'text', text: '[image #1 from tool call toolu_shot]' },
+          { type: 'image_url', image_url: { url: 'data:image/png;base64,QUJD' } },
+        ],
+      },
+    ]);
+  });
+
+  it('labels attachments from multiple tool_results by their own tool_call_id, in order', () => {
+    const img = (data: string) =>
+      ({ type: 'image', source: { type: 'base64', media_type: 'image/png', data } }) as const;
+    const body = encodeOpenAIRequest({
+      model: 'm',
+      max_tokens: 8,
+      messages: [
+        {
+          role: 'user',
+          content: [
+            { type: 'tool_result', tool_use_id: 't1', content: [img('QQ==')] },
+            { type: 'tool_result', tool_use_id: 't2', content: [img('Qg=='), img('Qw==')] },
+          ],
+        },
+      ],
+    });
+    const msgs = body.messages as Array<{ role: string; content: unknown }>;
+    expect(msgs.map((m) => m.role)).toEqual(['tool', 'tool', 'user']);
+    expect(msgs[2]!.content).toEqual([
+      { type: 'text', text: '[image #1 from tool call t1]' },
+      { type: 'image_url', image_url: { url: 'data:image/png;base64,QQ==' } },
+      { type: 'text', text: '[image #1 from tool call t2]' },
+      { type: 'image_url', image_url: { url: 'data:image/png;base64,Qg==' } },
+      { type: 'text', text: '[image #2 from tool call t2]' },
+      { type: 'image_url', image_url: { url: 'data:image/png;base64,Qw==' } },
+    ]);
+  });
+
+  it('degrades an invalid tool_result image to an explicit omission marker instead of throwing', () => {
+    const body = encodeOpenAIRequest({
+      model: 'm',
+      max_tokens: 8,
+      messages: [
+        {
+          role: 'user',
+          content: [
+            {
+              type: 'tool_result',
+              tool_use_id: 'tbad',
+              content: [
+                { type: 'image', source: { type: 'base64', media_type: 'image/bmp', data: 'QUJD' } },
+              ],
+            },
+          ],
+        },
+      ],
+    });
+    expect(body.messages).toEqual([
+      {
+        role: 'tool',
+        tool_call_id: 'tbad',
+        content: expect.stringMatching(
+          /^\[image #1 omitted: .*unsupported image media_type "image\/bmp".*\]$/,
+        ),
+      },
+    ]);
+    // Nothing carried, no image parts anywhere.
+    expect(JSON.stringify(body)).not.toContain('image_url');
+  });
+});
+
+describe('document -> file part translation', () => {
+  it('translates a user-turn base64 PDF into an official file part (title as filename)', () => {
+    const body = encodeOpenAIRequest({
+      model: 'm',
+      max_tokens: 8,
+      messages: [
+        {
+          role: 'user',
+          content: [
+            { type: 'text', text: 'read this' },
+            {
+              type: 'document',
+              title: 'report.pdf',
+              source: { type: 'base64', media_type: 'application/pdf', data: 'UERG' },
+            } as never,
+          ],
+        },
+      ],
+    });
+    expect(body.messages).toEqual([
+      {
+        role: 'user',
+        content: [
+          { type: 'text', text: 'read this' },
+          {
+            type: 'file',
+            file: { filename: 'report.pdf', file_data: 'data:application/pdf;base64,UERG' },
+          },
+        ],
+      },
+    ]);
+  });
+
+  it('carries a tool_result base64 PDF into the follow-up user message with a default filename', () => {
+    const body = encodeOpenAIRequest({
+      model: 'm',
+      max_tokens: 8,
+      messages: [
+        {
+          role: 'user',
+          content: [
+            {
+              type: 'tool_result',
+              tool_use_id: 'tpdf',
+              content: [
+                {
+                  type: 'document',
+                  source: { type: 'base64', media_type: 'application/pdf', data: 'UERG' },
+                } as never,
+              ],
+            },
+          ],
+        },
+      ],
+    });
+    expect(body.messages).toEqual([
+      {
+        role: 'tool',
+        tool_call_id: 'tpdf',
+        content:
+          '[document #1 ("document.pdf"): attached in the user message after the tool results]',
+      },
+      {
+        role: 'user',
+        content: [
+          { type: 'text', text: '[document #1 ("document.pdf") from tool call tpdf]' },
+          {
+            type: 'file',
+            file: { filename: 'document.pdf', file_data: 'data:application/pdf;base64,UERG' },
+          },
+        ],
+      },
+    ]);
+  });
+
+  it('inlines text-source documents and keeps an honest placeholder for URL documents', () => {
+    const body = encodeOpenAIRequest({
+      model: 'm',
+      max_tokens: 8,
+      messages: [
+        {
+          role: 'user',
+          content: [
+            {
+              type: 'document',
+              source: { type: 'text', media_type: 'text/plain', data: 'inline body' },
+            } as never,
+            {
+              type: 'document',
+              source: { type: 'url', url: 'https://example.com/x.pdf' },
+            } as never,
+          ],
+        },
+      ],
+    });
+    expect(body.messages).toEqual([
+      {
+        role: 'user',
+        content:
+          'inline body\n[document "https://example.com/x.pdf" omitted: URL documents have no Chat Completions equivalent]',
+      },
+    ]);
+  });
+
+  it('rejects empty base64 document data in a USER turn with a locatable error', () => {
+    const attempt = (): unknown =>
+      encodeOpenAIRequest({
+        model: 'm',
+        max_tokens: 8,
+        messages: [
+          {
+            role: 'user',
+            content: [
+              {
+                type: 'document',
+                source: { type: 'base64', media_type: 'application/pdf', data: ' ' },
+              } as never,
+            ],
+          },
+        ],
+      });
+    expect(attempt).toThrow(ConfigurationError);
+    expect(attempt).toThrow(/empty base64 document data at messages\[0\]\.content\[0\]/);
+  });
+
+  it('debug summary counts images and files separately, still byte-free', () => {
+    const lines: string[] = [];
+    encodeOpenAIRequest(
+      {
+        model: 'm',
+        max_tokens: 8,
+        messages: [
+          {
+            role: 'user',
+            content: [
+              { type: 'image', source: { type: 'base64', media_type: 'image/png', data: 'QUJD' } },
+              {
+                type: 'document',
+                source: { type: 'base64', media_type: 'application/pdf', data: 'UERG' },
+              } as never,
+            ],
+          },
+        ],
+      },
+      {},
+      (m) => lines.push(m),
+    );
+    expect(lines).toHaveLength(1);
+    expect(lines[0]).toContain('images=1');
+    expect(lines[0]).toContain('files=1');
+    expect(lines[0]).toContain('application/pdf');
+    expect(lines[0]).not.toContain('QUJD');
+    expect(lines[0]).not.toContain('UERG');
   });
 });
