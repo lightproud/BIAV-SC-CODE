@@ -1,8 +1,8 @@
 {
   "date": "2026-07-11",
-  "archived_at": "2026-07-12T21:49:08.392540+00:00",
+  "archived_at": "2026-07-13T02:35:00.809606+00:00",
   "source": "appstore",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "title": "❤️",
@@ -16,6 +16,20 @@
       "tags": [],
       "lang": "en",
       "platform_region": "us",
+      "region": "global"
+    },
+    {
+      "title": "best of the best",
+      "summary": "i absolutely love this game. graphics are amazing, i also adore that it’s somehow a card game, and im a big came of cards games. but the thing that i love the most about it, is the atmosphere, rain on the background and stuff… very calming",
+      "source": "appstore",
+      "time": "2026-07-11T05:44:44-07:00",
+      "url": "https://apps.apple.com/de/app/id6447354150?see-all=reviews#as-14290000422",
+      "engagement": 5,
+      "is_hot": false,
+      "author": "neandreyy",
+      "tags": [],
+      "lang": "de",
+      "platform_region": "de",
       "region": "global"
     }
   ],

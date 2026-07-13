@@ -1,6 +1,6 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-12T21:48:26.449124+00:00",
+  "collected_at": "2026-07-13T02:34:11.965507+00:00",
   "source": "steam",
   "data_layer": "output",
   "item_count": 14,
@@ -63,7 +63,7 @@
       "voted_up": true,
       "review": "优秀的音乐与美术，引人入胜的剧情。哦你本该是二游之光",
       "timestamp_created": 1783871994,
-      "playtime_forever": 10250
+      "playtime_forever": 10304
     },
     {
       "source": "steam",
@@ -108,7 +108,7 @@
       "voted_up": false,
       "review": "game wont launch",
       "timestamp_created": 1783856119,
-      "playtime_forever": 911
+      "playtime_forever": 967
     },
     {
       "source": "steam",
@@ -153,7 +153,7 @@
       "voted_up": true,
       "review": "In my opinion it's one of the better card game styled gacha games out there. The art is amazing and the story in a little dark maybe for some people, but it's interesting. The strategies aren't too hard to figure out and overall just a fun game to play. Would recommend this to people without a doubt.",
       "timestamp_created": 1783835811,
-      "playtime_forever": 666
+      "playtime_forever": 766
     },
     {
       "source": "steam",
@@ -183,7 +183,7 @@
       "voted_up": true,
       "review": "Rather good gamplay taking inspiration from slay the spire. art can look like midjourny at times but thats just because of the style",
       "timestamp_created": 1783827218,
-      "playtime_forever": 1493
+      "playtime_forever": 1570
     },
     {
       "source": "steam",
