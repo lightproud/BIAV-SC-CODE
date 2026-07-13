@@ -4,7 +4,7 @@ title: "taptap_review 社区数据源"
 description: "taptap_review 平台采集档案，全量 1314 条，健康度 active。"
 resource: "/Public-Info-Pool/Record/Community/taptap/cn/review/"
 tags: ["data_layer:full_archive", "platform:taptap_review", "health:active"]
-timestamp: "2026-07-13T02:35:01.843556+00:00"
+timestamp: "2026-07-13T06:17:50.348084+00:00"
 ---
 
 # 数据层指针
