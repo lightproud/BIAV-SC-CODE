@@ -1,8 +1,8 @@
 {
   "date": "2026-07-14",
-  "archived_at": "2026-07-13T17:15:19.909841+00:00",
+  "archived_at": "2026-07-13T19:23:46.289221+00:00",
   "source": "bilibili",
-  "item_count": 2,
+  "item_count": 3,
   "items": [
     {
       "title": "【忘却前夜】星辰篇 H2-12 鸟弟：我和阿拉克涅合砍80分",
@@ -46,6 +46,29 @@
         "danmaku": 0
       },
       "media_url": "https://i2.hdslb.com/bfs/archive/4fc57e5f1141f471304e27a2a003d2be00513bbc.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "沙耶之歌",
+      "summary": "",
+      "source": "bilibili",
+      "time": "2026-07-13T18:38:36+00:00",
+      "url": "https://www.bilibili.com/video/BV1RDNm63EGP",
+      "engagement": 2,
+      "is_hot": false,
+      "author": "下雨时的梦",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 2,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/0afcc14ff0b94487bf3758f18c06a09f4c963ab2.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

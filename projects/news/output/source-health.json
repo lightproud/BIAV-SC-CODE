@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-13T17:15:21.014276+00:00",
+  "updated_at": "2026-07-13T19:23:47.414548+00:00",
   "seeded_from": "silent_sources_audit",
   "audit_window": {
     "start": "2023-07-01",
@@ -7,7 +7,7 @@
     "days": 1110
   },
   "validation_drops": {
-    "generated_at": "2026-07-13T17:14:20.496519+00:00",
+    "generated_at": "2026-07-13T19:22:48.433916+00:00",
     "total_dropped": 0,
     "by_source": {}
   },
@@ -43,7 +43,7 @@
       "last_success_date": "2026-07-14",
       "last_check_date": "2026-06-20",
       "consecutive_silent_days": 0,
-      "total_items": 2844,
+      "total_items": 2845,
       "errors": []
     },
     "steam": {
@@ -75,15 +75,15 @@
       "last_success_date": "2026-07-14",
       "last_check_date": "2026-07-13",
       "consecutive_silent_days": 0,
-      "total_items": 2838,
+      "total_items": 2839,
       "errors": []
     },
     "reddit": {
       "level": "active",
-      "last_success_date": "2026-07-13",
+      "last_success_date": "2026-07-14",
       "last_check_date": "2026-06-20",
-      "consecutive_silent_days": 1,
-      "total_items": 3596,
+      "consecutive_silent_days": 0,
+      "total_items": 3599,
       "errors": []
     },
     "official": {
@@ -107,7 +107,7 @@
       "last_success_date": "2026-07-14",
       "last_check_date": "2026-07-13",
       "consecutive_silent_days": 0,
-      "total_items": 9976,
+      "total_items": 9990,
       "errors": []
     },
     "bahamut": {
@@ -136,10 +136,10 @@
     },
     "google_play": {
       "level": "active",
-      "last_success_date": "2026-07-12",
+      "last_success_date": "2026-07-13",
       "last_check_date": "2026-07-13",
-      "consecutive_silent_days": 2,
-      "total_items": 2237,
+      "consecutive_silent_days": 1,
+      "total_items": 2238,
       "errors": []
     },
     "pixiv": {
@@ -152,10 +152,10 @@
     },
     "note_com": {
       "level": "active",
-      "last_success_date": "2026-07-09",
+      "last_success_date": "2026-07-14",
       "last_check_date": "2026-07-13",
-      "consecutive_silent_days": 5,
-      "total_items": 25,
+      "consecutive_silent_days": 0,
+      "total_items": 26,
       "errors": []
     },
     "ruliweb": {
@@ -179,7 +179,7 @@
       "last_success_date": "2026-07-10",
       "last_check_date": "2026-07-13",
       "consecutive_silent_days": 4,
-      "total_items": 9972,
+      "total_items": 9992,
       "errors": []
     },
     "twitter": {
