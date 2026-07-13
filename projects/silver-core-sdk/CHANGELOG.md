@@ -16,6 +16,24 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.54.1 — 2026-07-13
+
+**MCP stdio shutdown reaps the server process TREE (BPT stability, 2026-07-13).**
+`StdioMcpConnection` spawned the server WITHOUT `detached:true` and terminated
+it with a bare `child.kill('SIGTERM'/'SIGKILL')`, which signals only the direct
+child PID. Real MCP servers are launched through a wrapper (`npx`/`cmd /c`/
+`uvx`/`python -m`/`node launcher`) whose actual, long-lived server is a
+GRANDCHILD — so on abort/close the wrapper died but the server was orphaned,
+and its inherited stdio handles could keep the host from exiting within the
+teardown grace window (force-kill fallback). On Windows the whole tree survived
+(`child.kill()` = single-PID TerminateProcess). Fix: spawn `detached:true` (a
+POSIX process-group leader) and terminate via the shared `planProcessKill`
+planner — POSIX `process.kill(-pid)` group kill / Windows `taskkill /PID <pid>
+/T /F` — the same tree-safe posture `bash.ts` / `shells.ts` already use. The
+planner moved to `internal/process-kill.ts` (single source of truth; re-exported
+from `tools/kill-plan.ts` for existing consumers) so `mcp/` can reuse it within
+the import-discipline rules. +1 regression test (grandchild-orphan, POSIX-CI).
+
 ## 0.54.0 — 2026-07-13
 
 **Cross-protocol subagent transport routing (BPT P0).** An isolated subagent
@@ -164,7 +182,6 @@ test. Ranked:
   floor, disable thinking rather than emit a guaranteed-400 request.
 
 +11 regression tests. Full suite 2171 passing + 2 skipped; typecheck + build clean.
-
 ## 0.53.5 — 2026-07-13
 
 **Conversation-stability follow-up: the three deferred light items from 0.53.4
