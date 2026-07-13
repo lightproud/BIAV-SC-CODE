@@ -1,7 +1,7 @@
 {
   "generated": "2026-07-13",
   "stats": {
-    "nodes": 350,
+    "nodes": 351,
     "edges": 404
   },
   "nodes": [
@@ -3193,6 +3193,17 @@
       "id": "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "type": "documentation",
       "title": "retired-modules-audit-202606",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
+      "type": "documentation",
+      "title": "sdk-cross-protocol-routing-bpt-handoff-20260713",
       "tags": [
         "data_layer:curated",
         "deliverable",

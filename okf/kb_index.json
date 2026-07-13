@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 350,
+    "concepts": 351,
     "edges": 404,
-    "terms": 6288,
+    "terms": 6300,
     "by_type": {
       "character": 72,
       "dataset": 94,
-      "documentation": 117,
+      "documentation": 118,
       "knowledge-pointer": 47,
       "reference": 17,
       "research": 3
@@ -25,14 +25,14 @@
       "memory": 50,
       "news-output": 23,
       "projects": 27,
-      "resource": 89,
+      "resource": 90,
       "sources": 20,
       "story": 11,
       "wiki-data": 26
     },
     "by_tier": {
       "skeleton": 134,
-      "search": 216
+      "search": 217
     }
   },
   "sections": {
@@ -62,7 +62,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 89
+      "count": 90
     },
     "sources": {
       "index": "/sources/index.md",
@@ -4069,6 +4069,20 @@
       "section": "resource",
       "tier": "search",
       "degree": 1
+    },
+    "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md": {
+      "type": "documentation",
+      "title": "sdk-cross-protocol-routing-bpt-handoff-20260713",
+      "description": "BPT 报障场景：主模型 `azure/gpt-5.6-sol`（openai-chat 协议）+ Haiku 档子代理映射（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/repo-engineering/sdk-cross-protocol-routing-bpt-handoff-20260713.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 0
     },
     "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md": {
       "type": "documentation",
@@ -9754,6 +9768,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
@@ -10173,6 +10188,9 @@
     "away": [
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
     ],
+    "azure": [
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md"
+    ],
     "b3": [
       "/memory/memory-ext-wiki-characters-schema-v1.md"
     ],
@@ -10440,6 +10458,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md"
     ],
     "brain": [
@@ -10534,7 +10553,8 @@
     "chat": [
       "/assets/assets-chat-onboarding-snippet.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
-      "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md"
+      "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md"
     ],
     "check": [
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md"
@@ -10973,6 +10993,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
@@ -11147,7 +11168,8 @@
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md"
     ],
     "cross": [
-      "/projects/silver-core-sdk-doc-memory.md"
+      "/projects/silver-core-sdk-doc-memory.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md"
     ],
     "crosscheck": [
       "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md"
@@ -11319,6 +11341,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
@@ -11641,6 +11664,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
@@ -11818,6 +11842,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
@@ -12101,6 +12126,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
@@ -12529,6 +12555,9 @@
     "governance": [
       "/projects/silver-core-sdk-doc-memory-governance.md"
     ],
+    "gpt": [
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md"
+    ],
     "graph": [
       "/README.md"
     ],
@@ -12559,10 +12588,14 @@
     "gz": [
       "/README.md"
     ],
+    "haiku": [
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md"
+    ],
     "handoff": [
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
-      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md"
     ],
     "harness": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md",
@@ -12841,6 +12874,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
@@ -13327,6 +13361,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
@@ -13832,6 +13867,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
@@ -14139,7 +14175,8 @@
     "openai": [
       "/projects/silver-core-sdk-doc-openai-protocol.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
-      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+      "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md"
     ],
     "optimization": [
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
@@ -14533,6 +14570,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
@@ -14822,7 +14860,8 @@
       "/memory/memory-archive-contribution-protocol-hub.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
-      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md"
     ],
     "prototype": [
       "/resource/resource-proposal-wiki-prototype-202603.md"
@@ -14933,6 +14972,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
@@ -15219,6 +15259,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
@@ -15345,6 +15386,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
@@ -15421,6 +15463,9 @@
     ],
     "round1": [
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md"
+    ],
+    "routing": [
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md"
     ],
     "rss": [
       "/news-output/news-output-feed.md"
@@ -15589,6 +15634,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
@@ -15774,6 +15820,9 @@
     ],
     "snippet": [
       "/assets/assets-chat-onboarding-snippet.md"
+    ],
+    "sol": [
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md"
     ],
     "source": [
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
@@ -16302,6 +16351,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
@@ -17374,6 +17424,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
@@ -17636,6 +17687,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
@@ -17955,6 +18007,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
@@ -18487,6 +18540,9 @@
     "主控": [
       "/memory/memory-ext-active-policy-direct-push-main.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md"
+    ],
+    "主模": [
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md"
     ],
     "主目": [
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
@@ -19224,6 +19280,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
@@ -19444,7 +19501,8 @@
     "代理": [
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
-      "/resource/resource-repo-engineering-repo-audit-20260603.md"
+      "/resource/resource-repo-engineering-repo-audit-20260603.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md"
     ],
     "代码": [
       "/memory/memory-archive-bpt-architecture-summary-template.md",
@@ -20171,6 +20229,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
@@ -20432,6 +20491,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
@@ -22360,6 +22420,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
@@ -22922,7 +22983,8 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-readme.md",
       "/memory/memory-archive-contribution-protocol-hub.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
-      "/memory/memory-ext-bpt-guidance-protocol.md"
+      "/memory/memory-ext-bpt-guidance-protocol.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md"
     ],
     "卓見": [
       "/characters/77926.md"
@@ -25075,6 +25137,9 @@
     "场夺": [
       "/characters/15588.md"
     ],
+    "场景": [
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md"
+    ],
     "场的": [
       "/characters/15588.md"
     ],
@@ -25642,6 +25707,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
@@ -26443,6 +26509,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
@@ -26502,7 +26569,8 @@
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md"
     ],
     "子代": [
-      "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
+      "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md"
     ],
     "子使": [
       "/characters/15596.md"
@@ -27056,6 +27124,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
@@ -30499,6 +30568,9 @@
     "报酬": [
       "/characters/15590.md"
     ],
+    "报障": [
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md"
+    ],
     "抵御": [
       "/characters/15577.md"
     ],
@@ -30965,6 +31037,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
@@ -31533,6 +31606,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
@@ -31870,6 +31944,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
@@ -32285,6 +32360,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
@@ -32568,6 +32644,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
@@ -33493,6 +33570,9 @@
     "星之": [
       "/characters/15569.md"
     ],
+    "映射": [
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md"
+    ],
     "是一": [
       "/README.md",
       "/characters/15602.md",
@@ -34276,6 +34356,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
@@ -34706,6 +34787,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
@@ -35305,6 +35387,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
@@ -35512,6 +35595,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
@@ -35634,6 +35718,9 @@
     ],
     "档声": [
       "/projects/news-archive-sources-registry.md"
+    ],
+    "档子": [
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md"
     ],
     "档定": [
       "/memory/memory-ext-biav-info-classification.md",
@@ -36025,6 +36112,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
@@ -36078,6 +36166,7 @@
     ],
     "模型": [
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/wiki-data/wiki-schema-banners-schema.md",
       "/wiki-data/wiki-schema-characters-processed-schema.md",
       "/wiki-data/wiki-schema-characters-schema.md",
@@ -36410,6 +36499,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
@@ -38031,6 +38121,9 @@
     ],
     "理想": [
       "/README.md"
+    ],
+    "理映": [
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md"
     ],
     "理普": [
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
@@ -43515,6 +43608,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
@@ -44208,6 +44302,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
@@ -45240,6 +45335,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
@@ -45492,6 +45588,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
@@ -45959,6 +46056,9 @@
     "隔离": [
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
       "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md"
+    ],
+    "障场": [
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md"
     ],
     "障壁": [
       "/characters/15585.md"
@@ -46961,7 +47061,8 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
-      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md"
+      "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md"
     ],
     "bug": [
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md"
@@ -47170,6 +47271,9 @@
       "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md"
     ],
+    "cross": [
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md"
+    ],
     "crosscheck": [
       "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md"
     ],
@@ -47340,6 +47444,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
@@ -47655,6 +47760,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
@@ -47819,6 +47925,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
@@ -48019,6 +48126,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
@@ -48209,7 +48317,8 @@
     "handoff": [
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md",
-      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md"
     ],
     "harness": [
       "/resource/resource-repo-engineering-bpt-sdk-harness-utils-20260708.md"
@@ -48554,6 +48663,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
@@ -49180,7 +49290,8 @@
     "protocol": [
       "/memory/contribution-protocol.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
-      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
+      "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md"
     ],
     "prototype": [
       "/resource/resource-proposal-wiki-prototype-202603.md"
@@ -49283,6 +49394,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
@@ -49353,6 +49465,9 @@
     ],
     "round": [
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
+    ],
+    "routing": [
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md"
     ],
     "rss": [
       "/news-output/news-output-feed.md"
@@ -49461,6 +49576,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
@@ -49769,6 +49885,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
