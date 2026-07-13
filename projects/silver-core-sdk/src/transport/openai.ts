@@ -414,6 +414,17 @@ export class OpenAIStreamTranslator {
   private usage: NonNullable<OpenAIChunk['usage']> | null = null;
   private done = false;
   /**
+   * Whether any delta carried VALID assistant content — as opposed to the
+   * role-only / usage-only metadata chunks a gateway may stream before it
+   * closes with a bare [DONE]. Tracked SEPARATELY from the transport's raw
+   * chunk count: `chunkCount > 0` proves a frame arrived, not that the model
+   * produced anything. Flips true on a non-empty text/reasoning delta or a
+   * tool_call fragment bearing an id/name/arguments (see feed()). Used by the
+   * transport to reject the "empty finish" shape (metadata + [DONE], no
+   * content, no finish_reason) instead of fabricating an empty success.
+   */
+  private contentSeen = false;
+  /**
    * Per-tool-call buffered state so a fragmented gateway does not lose the id
    * or the name. Some OpenAI-compatible gateways stream the id in a LATER chunk
    * than the one that opens the tool call, or split `function.name` across
@@ -438,6 +449,15 @@ export class OpenAIStreamTranslator {
    *  end-of-message marker; used by the transport's truncation heuristic). */
   sawFinishReason(): boolean {
     return this.finishReason !== null;
+  }
+
+  /** True once any delta carried VALID assistant content — non-empty text,
+   *  non-empty reasoning, or a tool_call fragment carrying an id/name/arguments.
+   *  Role-only and usage-only metadata chunks do NOT flip this, so it separates
+   *  a real (if short) message from the "empty finish" shape the transport must
+   *  reject as an `empty_message` failure. */
+  sawContent(): boolean {
+    return this.contentSeen;
   }
 
   /** True once the first chunk arrived (message_start was emitted). */
@@ -466,7 +486,10 @@ export class OpenAIStreamTranslator {
     if (chunk.usage !== undefined && chunk.usage !== null) this.usage = chunk.usage;
     const choice = chunk.choices?.[0];
     if (choice === undefined) return events;
-    if (choice.finish_reason !== undefined && choice.finish_reason !== null) {
+    // Only a non-empty finish_reason string counts as an explicit terminal
+    // marker: the requirement's "empty finish" shape may carry finish_reason:''
+    // (or null), which must NOT be read as a real end-of-message.
+    if (typeof choice.finish_reason === 'string' && choice.finish_reason.length > 0) {
       this.finishReason = choice.finish_reason;
     }
     const delta = choice.delta;
@@ -474,6 +497,7 @@ export class OpenAIStreamTranslator {
 
     const reasoning = delta.reasoning_content ?? delta.reasoning;
     if (typeof reasoning === 'string' && reasoning.length > 0) {
+      this.contentSeen = true;
       const index = this.openBlock(events, 'reasoning', {
         type: 'thinking',
         thinking: '',
@@ -486,6 +510,7 @@ export class OpenAIStreamTranslator {
       });
     }
     if (typeof delta.content === 'string' && delta.content.length > 0) {
+      this.contentSeen = true;
       const index = this.openBlock(events, 'text', { type: 'text', text: '' });
       events.push({
         type: 'content_block_delta',
@@ -494,6 +519,17 @@ export class OpenAIStreamTranslator {
       });
     }
     for (const tc of delta.tool_calls ?? []) {
+      // A tool_call fragment is VALID assistant content the moment it carries
+      // an id, a function name, or argument bytes — even before the block can
+      // be emitted (a fragmented-id gateway holds the block open). An empty
+      // `{index:0}` placeholder alone does not count.
+      if (
+        (typeof tc.id === 'string' && tc.id.length > 0) ||
+        (typeof tc.function?.name === 'string' && tc.function.name.length > 0) ||
+        (typeof tc.function?.arguments === 'string' && tc.function.arguments.length > 0)
+      ) {
+        this.contentSeen = true;
+      }
       // Key by index when present (the normal case); fall back to id, then a
       // last-resort constant. Keying an index-less call by its id keeps two
       // distinct id-bearing calls from colliding on `tool:0`.
@@ -871,21 +907,55 @@ export class OpenAIChatTransport implements Transport {
         releaseSignals();
       }
 
-      // The stream ended without throwing. A [DONE] terminator or any
-      // finish_reason means the message reached its end-of-message marker:
-      // synthesize the terminal message_delta/message_stop and finish. Guard on
-      // chunkCount > 0: a stream that delivered ZERO content chunks but a bare
-      // `[DONE]` (an overloaded gateway that accepts the request then closes it
-      // with only the terminator) is NOT a completed message — translator
-      // never started, so finish() would throw a raw, non-replay-safe error
-      // and the engine's turn-replay could not catch it. Fall through to the
-      // empty-stream retry below instead, so this zero-consumption shape
-      // self-heals exactly like the Anthropic arm's (a finish_reason chunk
-      // always increments chunkCount first, so sawFinishReason implies > 0).
-      if (chunkCount > 0 && (doneSeen || translator.sawFinishReason())) {
+      // The stream ended without throwing. Decide the outcome from THREE
+      // independent facts, not the raw chunk count alone: whether a terminator
+      // arrived (doneSeen), whether an explicit finish_reason arrived
+      // (sawFinishReason), and whether any VALID assistant content arrived
+      // (sawContent). `chunkCount > 0` only proves a frame was delivered — a
+      // gateway can stream role-only / usage-only metadata then close with a
+      // bare [DONE], which is NOT a completed message. (BPT 2026-07-13: idealab
+      // "turn stop / hasAssistantMessage:false" — an empty message billed as a
+      // null-stop_reason success.)
+      const sawContent = translator.sawContent();
+      const sawFinish = translator.sawFinishReason();
+
+      // Completed message, case 1: an explicit finish_reason is BOTH a
+      // terminator and — per the Chat Completions protocol — a real
+      // end-of-message, even when the text is empty (finish_reason:'stop' with
+      // no content is a legitimate, if unusual, response). Keep its protocol
+      // semantics; a finish_reason chunk always incremented chunkCount first.
+      if (chunkCount > 0 && sawFinish) {
         yield* translator.finish();
         this.debug(`openai transport: stream completed after ${chunkCount} chunk(s)`);
         return;
+      }
+      // Completed message, case 2: a [DONE] terminator paired with valid
+      // assistant content (text / reasoning / tool_calls) is the normal
+      // completion path.
+      if (chunkCount > 0 && doneSeen && sawContent) {
+        yield* translator.finish();
+        this.debug(`openai transport: stream completed after ${chunkCount} chunk(s)`);
+        return;
+      }
+      // The "empty finish": a [DONE] arrived (chunkCount > 0, so metadata frames
+      // WERE delivered — role-only / usage-only), but with NO valid assistant
+      // content AND NO finish_reason. This is exactly the shape that produced
+      // the idealab empty turns. It is NOT a completed message: never fabricate
+      // a stop_reason:null / subtype:'success' / empty assistant message from
+      // it. A started (chunkCount > 0) stream is not replay-safe, so it is NOT
+      // retried; surface a diagnosable, non-replay-safe `empty_message`
+      // APIConnectionError (no turnReplaySafe / midStreamTruncation flags) so
+      // the engine reports error_during_execution with error_code
+      // 'empty_message'. Twin of AnthropicTransport's message_stop guard.
+      if (chunkCount > 0 && doneSeen && !sawContent) {
+        if (callerSignal?.aborted) throw new AbortError();
+        throw new APIConnectionError(
+          `OpenAI Chat Completions stream received [DONE] after ${chunkCount} chunk(s) ` +
+            `with no valid assistant content and no finish_reason; treating as a failed ` +
+            `turn (empty message)`,
+          undefined,
+          'empty_message',
+        );
       }
 
       // No end-of-message marker (or a bare [DONE] with no chunks). ZERO chunks

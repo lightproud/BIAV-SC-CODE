@@ -1104,6 +1104,207 @@ describe('OpenAIChatTransport empty-stream retry (idealab throttle self-heal)', 
   });
 });
 
+describe('OpenAIChatTransport empty-message guard (idealab "turn stop / hasAssistantMessage:false")', () => {
+  // A stream that DELIVERS chunks (so it is NOT the zero-chunk empty_stream
+  // case) but only role-only / usage-only metadata, then closes with a bare
+  // `[DONE]`: no content, no reasoning, no tool_calls, no finish_reason. The
+  // old `chunkCount > 0 && doneSeen` success gate finalized this as an empty
+  // stop_reason:null message; it must now throw a diagnosable empty_message.
+  function metaOnlyDone(payloads: Array<Record<string, unknown> | '[DONE]'>): Response {
+    return new Response(streamFromChunks([sseBody(payloads)]), {
+      status: 200,
+      headers: { 'content-type': 'text/event-stream' },
+    });
+  }
+
+  it('role-only chunk + [DONE] (no content, no finish_reason) throws empty_message, never a success', async () => {
+    const fetchMock = vi.fn(async () =>
+      metaOnlyDone([
+        { id: 'chatcmpl-x', model: 'gpt-4o', choices: [{ delta: { role: 'assistant' } }] },
+        '[DONE]',
+      ]),
+    );
+    vi.stubGlobal('fetch', fetchMock);
+    const transport = new OpenAIChatTransport({
+      provider: { apiKey: 'k', maxRetries: 2 },
+      env: { BPT_HTTP_CLIENT: 'fetch' },
+      debug: noop,
+    });
+    const err = (await captureError(collect(transport.stream(REQ)))) as APIConnectionError;
+    expect(err).toBeInstanceOf(APIConnectionError);
+    expect(err.code).toBe('empty_message');
+    expect(err.message).toContain('OpenAI');
+    expect(err.message).toContain('[DONE]');
+    expect(err.message).toMatch(/no valid assistant content/i);
+    expect(err.message).toMatch(/no finish_reason/i);
+    // A started stream is NOT replay-safe: it is thrown, not retried.
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+    // Must NOT carry the replay/salvage flags (would let the engine mask it).
+    expect(err.turnReplaySafe).not.toBe(true);
+    expect(err.midStreamTruncation).not.toBe(true);
+  });
+
+  it('usage-only chunk + [DONE] (no content, no finish_reason) throws empty_message', async () => {
+    const fetchMock = vi.fn(async () =>
+      metaOnlyDone([
+        { choices: [], usage: { prompt_tokens: 12, completion_tokens: 0 } },
+        '[DONE]',
+      ]),
+    );
+    vi.stubGlobal('fetch', fetchMock);
+    const transport = new OpenAIChatTransport({
+      provider: { apiKey: 'k', maxRetries: 2 },
+      env: { BPT_HTTP_CLIENT: 'fetch' },
+      debug: noop,
+    });
+    const err = (await captureError(collect(transport.stream(REQ)))) as APIConnectionError;
+    expect(err).toBeInstanceOf(APIConnectionError);
+    expect(err.code).toBe('empty_message');
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+  });
+
+  it('empty first delta then real text + finish_reason still completes normally', async () => {
+    const fetchMock = vi.fn(async () =>
+      okStream([
+        { id: 'chatcmpl-y', model: 'gpt-4o', choices: [{ delta: { role: 'assistant', content: '' } }] },
+        { choices: [{ delta: { content: 'hello' } }] },
+        { choices: [{ delta: {}, finish_reason: 'stop' }] },
+        { choices: [], usage: { prompt_tokens: 3, completion_tokens: 1 } },
+        '[DONE]',
+      ]),
+    );
+    vi.stubGlobal('fetch', fetchMock);
+    const transport = new OpenAIChatTransport({
+      provider: { apiKey: 'k' },
+      env: { BPT_HTTP_CLIENT: 'fetch' },
+      debug: noop,
+    });
+    const events = await collect(transport.stream(REQ));
+    expect(events.at(-1)?.type).toBe('message_stop');
+    const acc = new MessageAccumulator();
+    for (const ev of events) acc.feed(ev);
+    const msg = acc.finalize();
+    expect(msg.content).toEqual([{ type: 'text', text: 'hello' }]);
+    expect(msg.stop_reason).toBe('end_turn');
+  });
+
+  it('text but no [DONE]/finish_reason stays a truncated turn, NOT empty_message', async () => {
+    // Content arrived but the connection dropped before any terminator: this is
+    // a mid-stream truncation (salvageable), which must not be reclassified as
+    // the empty-finish shape.
+    const fetchMock = vi.fn(async () =>
+      okStream([
+        { id: 'chatcmpl-z', model: 'gpt-4o', choices: [{ delta: { role: 'assistant', content: 'partial' } }] },
+      ]),
+    );
+    vi.stubGlobal('fetch', fetchMock);
+    const transport = new OpenAIChatTransport({
+      provider: { apiKey: 'k' },
+      env: { BPT_HTTP_CLIENT: 'fetch' },
+      debug: noop,
+    });
+    const err = (await captureError(collect(transport.stream(REQ)))) as APIConnectionError;
+    expect(err).toBeInstanceOf(APIConnectionError);
+    expect(err.code).not.toBe('empty_message');
+    expect(err.midStreamTruncation).toBe(true);
+    expect(err.message).toMatch(/truncated turn/i);
+  });
+
+  it('explicit finish_reason:stop with EMPTY text completes per protocol (not empty_message)', async () => {
+    // A legitimate — if unusual — completed message: the model finished with no
+    // text. finish_reason is the authoritative terminal marker, so this keeps
+    // its protocol semantics and must NOT be reclassified as an empty finish.
+    const fetchMock = vi.fn(async () =>
+      okStream([
+        { id: 'chatcmpl-e', model: 'gpt-4o', choices: [{ delta: { role: 'assistant' } }] },
+        { choices: [{ delta: {}, finish_reason: 'stop' }] },
+        { choices: [], usage: { prompt_tokens: 4, completion_tokens: 0 } },
+        '[DONE]',
+      ]),
+    );
+    vi.stubGlobal('fetch', fetchMock);
+    const transport = new OpenAIChatTransport({
+      provider: { apiKey: 'k' },
+      env: { BPT_HTTP_CLIENT: 'fetch' },
+      debug: noop,
+    });
+    const events = await collect(transport.stream(REQ));
+    expect(events.at(-1)?.type).toBe('message_stop');
+    const acc = new MessageAccumulator();
+    for (const ev of events) acc.feed(ev);
+    const msg = acc.finalize();
+    expect(msg.content).toEqual([]);
+    expect(msg.stop_reason).toBe('end_turn');
+  });
+
+  it('tool_call fragment + [DONE] (no text, no finish_reason) is valid content, completes normally', async () => {
+    // A tool_call bearing an id/name IS assistant content even without a
+    // finish_reason: [DONE] + valid content is the normal completion path.
+    const fetchMock = vi.fn(async () =>
+      okStream([
+        {
+          id: 'chatcmpl-t',
+          model: 'gpt-4o',
+          choices: [
+            {
+              delta: {
+                role: 'assistant',
+                tool_calls: [
+                  { index: 0, id: 'call_1', type: 'function', function: { name: 'Read', arguments: '{}' } },
+                ],
+              },
+            },
+          ],
+        },
+        '[DONE]',
+      ]),
+    );
+    vi.stubGlobal('fetch', fetchMock);
+    const transport = new OpenAIChatTransport({
+      provider: { apiKey: 'k' },
+      env: { BPT_HTTP_CLIENT: 'fetch' },
+      debug: noop,
+    });
+    const events = await collect(transport.stream(REQ));
+    expect(events.at(-1)?.type).toBe('message_stop');
+    const acc = new MessageAccumulator();
+    for (const ev of events) acc.feed(ev);
+    const msg = acc.finalize();
+    expect(msg.content.some((b) => b.type === 'tool_use')).toBe(true);
+  });
+});
+
+describe('OpenAIStreamTranslator content tracking', () => {
+  it('sawContent() stays false for role-only and usage-only chunks', () => {
+    const t = new OpenAIStreamTranslator('gpt-4o');
+    t.feed({ id: 'c', choices: [{ delta: { role: 'assistant' } }] });
+    t.feed({ choices: [], usage: { prompt_tokens: 5 } });
+    expect(t.sawContent()).toBe(false);
+    expect(t.sawFinishReason()).toBe(false);
+  });
+
+  it('sawContent() flips on non-empty text / reasoning / tool_call fragments', () => {
+    const text = new OpenAIStreamTranslator('gpt-4o');
+    text.feed({ choices: [{ delta: { content: 'x' } }] });
+    expect(text.sawContent()).toBe(true);
+
+    const reason = new OpenAIStreamTranslator('gpt-4o');
+    reason.feed({ choices: [{ delta: { reasoning_content: 'thinking' } }] });
+    expect(reason.sawContent()).toBe(true);
+
+    const tool = new OpenAIStreamTranslator('gpt-4o');
+    tool.feed({ choices: [{ delta: { tool_calls: [{ index: 0, function: { arguments: '{"a":1}' } }] } }] });
+    expect(tool.sawContent()).toBe(true);
+  });
+
+  it('empty content string does not flip sawContent(); an empty finish_reason is not a terminal marker', () => {
+    const t = new OpenAIStreamTranslator('gpt-4o');
+    t.feed({ choices: [{ delta: { content: '' }, finish_reason: '' }] });
+    expect(t.sawContent()).toBe(false);
+    expect(t.sawFinishReason()).toBe(false);
+  });
+});
+
 describe('OpenAIChatTransport gateway knobs (audit P1-4)', () => {
   it('applies provider.openai.modelMap at the wire boundary', async () => {
     const fetchMock = vi.fn(async () => okStream(TEXT_CHUNKS));

@@ -104,6 +104,28 @@ concurrency semaphore all mirror the Anthropic transport; the same
 `ProviderConfig` knobs (`maxRetries`, `timeoutMs`, `streamIdleTimeoutMs`,
 `maxConcurrentRequests`) apply. A mid-stream drop *after* chunks (a truncated
 turn) is never retried — it degrades gracefully via the engine's E3 salvage.
+
+Stream completion is decided from three independent facts, **not** the raw
+chunk count: whether a `[DONE]` terminator arrived, whether an explicit
+non-empty `finish_reason` arrived, and whether any **valid assistant content**
+arrived. Valid content means at least one of: a non-empty `delta.content`, a
+non-empty `delta.reasoning_content` / `delta.reasoning`, or a `tool_calls`
+fragment carrying an id / function name / arguments. A stream is finalized only
+when it saw an explicit `finish_reason` (protocol semantics preserved — an
+empty-text `finish_reason:'stop'` is a legitimate completed message) **or** a
+`[DONE]` paired with valid content. The degenerate **"empty finish"** — an
+HTTP 200 that streams only role-only / usage-only metadata chunks (`chunkCount
+> 0`) then closes with a bare `[DONE]`, carrying no content, no reasoning, no
+`tool_calls` and no `finish_reason` (the idealab-gateway "turn stop /
+hasAssistantMessage:false" shape) — is **never** finalized as an empty
+`stop_reason: null` success. Because a *started* stream is not replay-safe it
+is not retried either; it throws a diagnosable `APIConnectionError` code
+`empty_message` (not flagged `turnReplaySafe` / `midStreamTruncation`), which
+the engine surfaces as an `error_during_execution` result with
+`error_code: 'empty_message'`. This is the OpenAI twin of the Anthropic arm's
+degraded-`message_stop` guard (0.55.1); the zero-chunk case still self-heals
+via the `empty_stream` retry above.
+
 Non-2xx errors surface as `APIStatusError`
 with the error type **normalized to Messages API vocabulary** by status
 (`401 -> authentication_error`, `429 -> rate_limit_error`, ...) so engine-side

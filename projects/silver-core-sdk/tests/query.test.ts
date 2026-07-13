@@ -695,6 +695,94 @@ describe('query() e2e - degraded empty stream (BPT "空 stopReason 轮次")', ()
   });
 });
 
+describe('query() e2e - OpenAI arm degraded empty stream (idealab "turn stop")', () => {
+  // The OpenAI twin: an HTTP 200 that streams only role-only / usage-only
+  // metadata chunks then closes with a bare `data: [DONE]` — no content, no
+  // finish_reason — must reach the main loop as an error_during_execution
+  // result with error_code 'empty_message', NEVER a silent empty success.
+  const openaiEnc = new TextEncoder();
+  function openaiSSEFetch(payloads: Array<Record<string, unknown> | '[DONE]'>): {
+    fn: ReturnType<typeof vi.fn>;
+  } {
+    const body = payloads
+      .map((p) => `data: ${p === '[DONE]' ? '[DONE]' : JSON.stringify(p)}\n\n`)
+      .join('');
+    const fn = vi.fn(
+      async () =>
+        new Response(
+          new ReadableStream<Uint8Array>({
+            start(controller) {
+              controller.enqueue(openaiEnc.encode(body));
+              controller.close();
+            },
+          }),
+          { status: 200, headers: { 'content-type': 'text/event-stream' } },
+        ),
+    );
+    return { fn };
+  }
+
+  function openaiOptions(): Options {
+    return baseOptions({
+      provider: { apiKey: 'test-key', promptCaching: false, protocol: 'openai-chat' },
+      model: 'gpt-4o',
+    });
+  }
+
+  it('role-only chunk + [DONE] surfaces error_during_execution (empty_message), not a silent success', async () => {
+    const { fn } = openaiSSEFetch([
+      { id: 'chatcmpl-x', model: 'gpt-4o', choices: [{ delta: { role: 'assistant' } }] },
+      '[DONE]',
+    ]);
+    vi.stubGlobal('fetch', fn);
+    const messages = await collect(query({ prompt: 'hi', options: openaiOptions() }));
+
+    const result = lastResult(messages);
+    expect(result.subtype).toBe('error_during_execution');
+    expect(result.is_error).toBe(true);
+    if (result.subtype !== 'success') {
+      expect(result.error_code).toBe('empty_message');
+    }
+    const assistants = messages.filter((m) => m.type === 'assistant');
+    expect(assistants).toHaveLength(0);
+    expect(resultsOf(messages).some((r) => r.subtype === 'success')).toBe(false);
+    // A started stream is not replay-safe: exactly one request, no retry.
+    expect(fn).toHaveBeenCalledTimes(1);
+  });
+
+  it('usage-only chunk + [DONE] surfaces error_during_execution (empty_message)', async () => {
+    const { fn } = openaiSSEFetch([
+      { choices: [], usage: { prompt_tokens: 9, completion_tokens: 0 } },
+      '[DONE]',
+    ]);
+    vi.stubGlobal('fetch', fn);
+    const messages = await collect(query({ prompt: 'hi', options: openaiOptions() }));
+
+    const result = lastResult(messages);
+    expect(result.subtype).toBe('error_during_execution');
+    if (result.subtype !== 'success') {
+      expect(result.error_code).toBe('empty_message');
+    }
+    expect(fn).toHaveBeenCalledTimes(1);
+  });
+
+  it('a real text stream on the same OpenAI arm still succeeds (no false positive)', async () => {
+    const { fn } = openaiSSEFetch([
+      { id: 'chatcmpl-ok', model: 'gpt-4o', choices: [{ delta: { role: 'assistant', content: 'hello' } }] },
+      { choices: [{ delta: {}, finish_reason: 'stop' }] },
+      { choices: [], usage: { prompt_tokens: 3, completion_tokens: 1 } },
+      '[DONE]',
+    ]);
+    vi.stubGlobal('fetch', fn);
+    const messages = await collect(query({ prompt: 'hi', options: openaiOptions() }));
+
+    const result = lastResult(messages);
+    expect(result.subtype).toBe('success');
+    const assistants = messages.filter((m) => m.type === 'assistant');
+    expect(assistants).toHaveLength(1);
+  });
+});
+
 describe('query() e2e - persistence and resume', () => {
   async function runOnce(prompt: string, reply: string): Promise<SDKMessage[]> {
     stubFetch(makeSSEFetch([textReplyEvents(reply)]));
