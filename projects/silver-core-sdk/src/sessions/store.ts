@@ -324,6 +324,15 @@ export class JsonlSessionStore implements SessionStore {
     // segment, turn_complete settles it. Insertion order is preserved so the
     // LAST unsettled entry is the most recent interruption.
     const openPending = new Map<string, string | undefined>();
+    // Finding H2 — read-time uuid dedup (mirrors FileSessionStore.load). A
+    // concurrent cross-host resume can double-materialize the external
+    // transcript into one JSONL (MirroringSessionStore.load appends N entries
+    // per racing loader), which without this dedup replayed the whole
+    // conversation TWICE — the model resumed on a verbatim doubled history and
+    // every later turn compounded it. Every entry carries a unique uuid at
+    // write time, so this is a no-op on a healthy transcript and collapses the
+    // duplicates otherwise (first occurrence wins).
+    const seenUuids = new Set<string>();
 
     const lines = raw.split('\n');
     for (let i = 0; i < lines.length; i += 1) {
@@ -346,6 +355,12 @@ export class JsonlSessionStore implements SessionStore {
         continue;
       }
       const entry = parsed as Record<string, unknown>;
+
+      // Finding H2 — drop a repeated uuid (double-materialized transcript).
+      if (typeof entry.uuid === 'string') {
+        if (seenUuids.has(entry.uuid)) continue;
+        seenUuids.add(entry.uuid);
+      }
 
       if (entry.type === 'meta') {
         if (typeof entry.createdAt === 'number') createdAt = entry.createdAt;
@@ -534,6 +549,12 @@ export class JsonlSessionStore implements SessionStore {
       }
     } catch {
       return null;
+    } finally {
+      // Finding L6 — destroy the read stream on EVERY exit (the sidechain
+      // early-return and the catch both leave readline's underlying fd open;
+      // list() calls loadInfo per *.jsonl, so a dir of sidechain transcripts
+      // leaked one fd each toward the process limit). Mirrors isSidechainFile.
+      stream.destroy();
     }
     let lastModified = createdAt ?? Date.now();
     try {
