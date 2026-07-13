@@ -16,6 +16,28 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.55.0 — 2026-07-13
+
+**Cross-protocol routing extended to utility + compaction calls (closes the
+0.54.0 gap's siblings).** The two remaining engine-internal call sites that
+target a NON-session model had the same wrong-route failure mode as
+subagents: utility generator calls (hook `condition` evaluation on the
+default Haiku-tier model) built their transport from the single session
+provider, and the compaction summarizer (`compaction.model`) streamed through
+the session transport unconditionally. Both now route through the SAME
+`Options.resolveSubagentTransport` policy, distinguished by a new required
+`purpose` field on the resolver input (`'subagent' | 'utility' |
+'compaction'`). Plumbing: the query layer composes one `transportForModel`
+closure (owned-resolution disposal at query teardown, alongside the subagent
+runtime's own set); `EngineDeps.transportForModel` carries it to the
+compaction summarizer in the root loop AND every child loop;
+`UtilityCallOptions.resolveTransport` (public, host-usable) carries it into
+`runUtilityCall` with precedence explicit `transport` >
+`resolveTransport(model)` > provider-built default. Resolver absent -> every
+call keeps its previous transport path byte-for-byte. The standard resolver
+ignores `purpose` (routes purely by model), so 0.54.0 hosts only rebuild.
++4 tests (utility precedence x2, compaction routed/same-model x2).
+
 ## 0.54.2 — 2026-07-13
 
 Official chase 0.3.205 → 0.3.207 (empirical diff report

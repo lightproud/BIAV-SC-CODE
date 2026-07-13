@@ -50,6 +50,17 @@ export interface UtilityCallOptions {
    */
   transport?: Transport;
   /**
+   * Cross-protocol routing (v0.55.0): called with the RESOLVED utility model
+   * to obtain the transport it should drive — the utility model (default
+   * Haiku-tier) may be served on a different wire protocol than the session
+   * provider. Loses to an explicit `transport`, wins over the provider-built
+   * default. The query layer composes this from
+   * Options.resolveSubagentTransport for its internal utility calls (hook
+   * `condition` evaluation); hosts calling generators directly may pass their
+   * own.
+   */
+  resolveTransport?: (model: string) => Transport | Promise<Transport>;
+  /**
    * Environment for credential resolution when building the default transport.
    * Defaults to process.env. Ignored when `transport` is injected.
    */
@@ -78,8 +89,14 @@ export async function runUtilityCall(
   opts: UtilityCallOptions,
   maxTokensDefault: number,
 ): Promise<string> {
-  const transport = resolveUtilityTransport(opts);
   const model = resolveModelAlias(opts.model ?? DEFAULT_UTILITY_MODEL, DEFAULT_UTILITY_MODEL);
+  // Transport precedence: explicit injection (tests) > cross-protocol
+  // resolver keyed by the resolved model (v0.55.0) > provider-built default.
+  const transport =
+    opts.transport ??
+    (opts.resolveTransport !== undefined
+      ? await opts.resolveTransport(model)
+      : resolveUtilityTransport(opts));
   const messages: APIMessageParam[] =
     typeof user === 'string' ? [{ role: 'user', content: user }] : user;
   const req: StreamRequest = {

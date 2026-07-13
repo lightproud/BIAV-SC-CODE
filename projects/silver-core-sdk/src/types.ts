@@ -1167,11 +1167,20 @@ export type SubagentTransportResolution = {
   promptCaching?: boolean;
 };
 
-/** Input handed to `resolveSubagentTransport` for one isolated spawn. */
+/** Input handed to `resolveSubagentTransport` for one internal model call. */
 export type SubagentTransportRequest = {
   /** Fully resolved child model id (per-call override / agentDef.model /
    *  parent fallback, aliases expanded). */
   model: string;
+  /**
+   * Which internal call is asking (v0.55.0): 'subagent' (isolated child
+   * spawn), 'utility' (generator calls, e.g. hook `condition` evaluation on
+   * the default Haiku-tier utility model), or 'compaction' (the summarizer
+   * when `compaction.model` differs from the session model). The standard
+   * resolver routes purely by model; hosts may branch on this for logging or
+   * per-purpose policy.
+   */
+  purpose: 'subagent' | 'utility' | 'compaction';
   /** The live parent model id. */
   parentModel: string;
   /** Wire protocol of the parent transport. */
@@ -1708,6 +1717,10 @@ export type Options = {
    * gateway 400'd "model not found"). Absent -> children share the parent
    * transport (existing behavior). Forks never consult it. See
    * `createSubagentTransportResolver()` for the standard implementation.
+   * Since v0.55.0 the same callback also routes the OTHER internal calls that
+   * target a non-session model — utility generator calls (hook `condition`
+   * evaluation) and the compaction summarizer — distinguished by
+   * `input.purpose`.
    */
   resolveSubagentTransport?: SubagentTransportResolver;
   /**

@@ -549,10 +549,19 @@ async function foldViaApi(
     ],
     signal,
   };
+  // Cross-protocol routing (v0.55.0): compaction.model may be served on a
+  // different wire protocol than the session model (the exact subagent-routing
+  // failure mode — right model, wrong route, 400 "model not found"). Consult
+  // the query-composed transportForModel when the summary model differs;
+  // same-model (or no composer) keeps the session transport unchanged.
+  const summaryTransport =
+    deps.transportForModel !== undefined && summaryModel !== config.model
+      ? await deps.transportForModel(summaryModel, 'compaction')
+      : deps.transport;
   const started = Date.now();
   try {
     const acc = new MessageAccumulator();
-    for await (const ev of deps.transport.stream(req)) {
+    for await (const ev of summaryTransport.stream(req)) {
       if (signal.aborted) throw new AbortError();
       acc.feed(ev);
     }

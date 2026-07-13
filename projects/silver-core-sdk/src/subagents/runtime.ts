@@ -161,6 +161,10 @@ export type SubagentRuntimeOptions = {
    *  consulted once per ISOLATED spawn after the child model resolves; forks
    *  never consult it. Absent -> children share the parent transport. */
   resolveSubagentTransport?: SubagentTransportResolver;
+  /** Query-composed engine-internal routing (compaction summarizer inside a
+   *  child loop); forwarded into every childDeps verbatim. Owned-transport
+   *  disposal belongs to the query layer that composed it. */
+  transportForModel?: EngineDeps['transportForModel'];
   /** Transcript store; child transcripts persist under {agentId} when set. */
   store?: SessionStore;
   persist?: boolean;
@@ -1082,6 +1086,7 @@ export function createSubagentRuntime(
         try {
           resolution = await opts.resolveSubagentTransport({
             model: childModel,
+            purpose: 'subagent',
             parentModel: engineConfig.model,
             parentProtocol,
             parentTransport: transport as SubagentTransportHandle,
@@ -1264,6 +1269,11 @@ export function createSubagentRuntime(
       const childDeps: EngineDeps = {
         // Parent transport, or the resolver's cross-protocol replacement.
         transport: childTransport,
+        // Child compaction may route ITS summary model cross-protocol too
+        // (query-composed closure; owned disposal stays with the composer).
+        ...(opts.transportForModel !== undefined
+          ? { transportForModel: opts.transportForModel }
+          : {}),
         builtinTools: childBuiltins,
         mcp: childMcp,
         permissions: childGate,
