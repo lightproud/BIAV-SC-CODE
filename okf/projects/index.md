@@ -12,7 +12,7 @@
 * [game 子项目上下文](/projects/project-game.md) - **game = 守密人个人兴趣项目（主）+ 未来扩展可能 ⓐⓒ（备）**
 * [silver-core-sdk 子项目上下文](/projects/project-silver-core-sdk.md) - Silver Core SDK：独立重实现（independent reimplementation）的 TypeScript agent 框架，公开调用面
 * [silver-core-sdk ARCHITECTURE](/projects/silver-core-sdk-doc-architecture.md) - Independent agent harness with a `@anthropic-ai/claude-agent-sdk`-compatible
-* [silver-core-sdk COMPAT](/projects/silver-core-sdk-doc-compat.md) - Target surface: `@anthropic-ai/claude-agent-sdk` public API (npm 0.3.205; chased
+* [silver-core-sdk COMPAT](/projects/silver-core-sdk-doc-compat.md) - Target surface: `@anthropic-ai/claude-agent-sdk` public API (npm 0.3.207; chased
 * [silver-core-sdk CONCURRENCY](/projects/silver-core-sdk-doc-concurrency.md) - The SDK supports true parallelism at three levels: **many conversations** over
 * [silver-core-sdk ERRORS](/projects/silver-core-sdk-doc-errors.md) - Every error class in `src/errors.ts` carries a machine-readable, stable
 * [silver-core-sdk MEMORY-GOVERNANCE](/projects/silver-core-sdk-doc-memory-governance.md) - Archived requirements + implementation record for the 2026-07-11 keeper

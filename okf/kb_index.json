@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 349,
+    "concepts": 350,
     "edges": 404,
-    "terms": 6275,
+    "terms": 6288,
     "by_type": {
       "character": 72,
       "dataset": 94,
-      "documentation": 116,
+      "documentation": 117,
       "knowledge-pointer": 47,
       "reference": 17,
       "research": 3
@@ -25,14 +25,14 @@
       "memory": 50,
       "news-output": 23,
       "projects": 27,
-      "resource": 88,
+      "resource": 89,
       "sources": 20,
       "story": 11,
       "wiki-data": 26
     },
     "by_tier": {
       "skeleton": 134,
-      "search": 215
+      "search": 216
     }
   },
   "sections": {
@@ -62,7 +62,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 88
+      "count": 89
     },
     "sources": {
       "index": "/sources/index.md",
@@ -2715,7 +2715,7 @@
     "/projects/silver-core-sdk-doc-compat.md": {
       "type": "documentation",
       "title": "silver-core-sdk COMPAT",
-      "description": "Target surface: `@anthropic-ai/claude-agent-sdk` public API (npm 0.3.205; chased from the 0.3.201 baseline 2026-07-10, keeper ruling, zero conformance drift — 0.3.199 -> 0.3.201 chased 2026-07-05) as",
+      "description": "Target surface: `@anthropic-ai/claude-agent-sdk` public API (npm 0.3.207; chased from 0.3.205 2026-07-13, keeper ruling 「追」, zero exported-symbol drift — 0.3.201 -> 0.3.205 chased 2026-07-10, 0.3.199 -> 0.3.201 chased 2026-07-05) as",
       "resource": "/projects/silver-core-sdk/docs/COMPAT.md",
       "tags": [
         "data_layer:curated",
@@ -4111,6 +4111,20 @@
       "section": "resource",
       "tier": "search",
       "degree": 1
+    },
+    "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md": {
+      "type": "documentation",
+      "title": "silver-core-sdk-vs-official-diff-20260713",
+      "description": "解析双方 `.d.ts` 导出符号面；官方-对-官方隔离版本漂移；本 SDK 全量 vitest 对照测试（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/repo-engineering/silver-core-sdk-vs-official-diff-20260713.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 0
     },
     "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md": {
       "type": "documentation",
@@ -9743,6 +9757,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
@@ -10176,7 +10191,6 @@
     ],
     "baseline": [
       "/assets/assets-sentinel-baseline.md",
-      "/projects/silver-core-sdk-doc-compat.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
     "bash": [
@@ -10962,6 +10976,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
@@ -11034,7 +11049,6 @@
       "/memory/memory-research-discord-archive-backfill-conflict.md"
     ],
     "conformance": [
-      "/projects/silver-core-sdk-doc-compat.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md"
@@ -11108,7 +11122,8 @@
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
-      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md"
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md"
     ],
     "corporate": [
       "/projects/silver-core-sdk-doc-resilience.md"
@@ -11307,6 +11322,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
@@ -11628,6 +11644,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
@@ -11804,6 +11821,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
@@ -11893,7 +11911,8 @@
       "/story/story_search_index.md"
     ],
     "diff": [
-      "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
+      "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md"
     ],
     "digests": [
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md"
@@ -12085,6 +12104,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
@@ -12130,6 +12150,9 @@
     ],
     "experience": [
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md"
+    ],
+    "exported": [
+      "/projects/silver-core-sdk-doc-compat.md"
     ],
     "external": [
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md"
@@ -12821,6 +12844,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
@@ -13306,6 +13330,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
@@ -13810,6 +13835,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md",
@@ -14090,6 +14116,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
       "/sources/official.md"
     ],
     "okf": [
@@ -14509,6 +14536,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
@@ -14908,6 +14936,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
@@ -15193,6 +15222,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
@@ -15318,6 +15348,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
@@ -15560,7 +15591,8 @@
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
-      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md"
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md"
     ],
     "sdk's": [
       "/projects/silver-core-sdk-doc-subagents.md"
@@ -15639,7 +15671,8 @@
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
-      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md"
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md"
     ],
     "single": [
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
@@ -16060,6 +16093,9 @@
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
     ],
+    "symbol": [
+      "/projects/silver-core-sdk-doc-compat.md"
+    ],
     "system": [
       "/assets/assets-card-system.md",
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-blackpool-architecture.md",
@@ -16269,6 +16305,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
@@ -16318,7 +16355,8 @@
     ],
     "ts": [
       "/projects/silver-core-sdk-doc-errors.md",
-      "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
+      "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md"
     ],
     "twitter": [
       "/news-output/news-output-twitter.md"
@@ -16469,6 +16507,9 @@
     "visualizer": [
       "/README.md"
     ],
+    "vitest": [
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md"
+    ],
     "voice": [
       "/characters/15560.md",
       "/characters/15562.md",
@@ -16537,7 +16578,8 @@
     "vs": [
       "/README.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
-      "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md"
+      "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md"
     ],
     "way": [
       "/projects/silver-core-sdk-doc-subagents.md"
@@ -17335,6 +17377,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
@@ -17596,6 +17639,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
@@ -17914,6 +17958,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
@@ -19182,6 +19227,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
@@ -20128,6 +20174,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
@@ -20388,6 +20435,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
@@ -21148,6 +21196,7 @@
       "/news-output/news-output-youtube.md",
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md",
       "/resource/resource-proposal-news-push-format-20260712.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
       "/sources/appstore.md",
       "/sources/arca_live.md",
       "/sources/bahamut.md",
@@ -21682,6 +21731,9 @@
     ],
     "出确": [
       "/memory/memory-ext-skill-authoring-standard.md"
+    ],
+    "出符": [
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md"
     ],
     "出至": [
       "/memory/memory-ext-active-silver-blackpool-interface.md"
@@ -22311,6 +22363,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
@@ -23233,6 +23286,9 @@
     "双指": [
       "/memory/memory-ext-active-silver-blackpool-interface.md"
     ],
+    "双方": [
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md"
+    ],
     "反击": [
       "/characters/15560.md",
       "/characters/15565.md",
@@ -24027,6 +24083,9 @@
     ],
     "号角": [
       "/characters/15585.md"
+    ],
+    "号面": [
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md"
     ],
     "司的": [
       "/characters/15582.md"
@@ -25586,6 +25645,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
@@ -26386,6 +26446,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
@@ -26804,7 +26865,8 @@
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
-      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md"
     ],
     "宙恐": [
       "/memory/memory-ext-collab-event-playbook.md"
@@ -26997,6 +27059,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
@@ -27335,7 +27398,8 @@
       "/characters/77922.md"
     ],
     "对照": [
-      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
+      "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md"
     ],
     "对联": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md"
@@ -27366,7 +27430,8 @@
       "/characters/15570.md"
     ],
     "导出": [
-      "/README.md"
+      "/README.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md"
     ],
     "导向": [
       "/README.md"
@@ -30903,6 +30968,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
@@ -31470,6 +31536,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
@@ -31806,6 +31873,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
@@ -32220,6 +32288,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
@@ -32502,6 +32571,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
@@ -33131,6 +33201,9 @@
     ],
     "方队": [
       "/characters/77926.md"
+    ],
+    "方隔": [
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md"
     ],
     "施加": [
       "/characters/15567.md",
@@ -34206,6 +34279,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
@@ -34326,6 +34400,9 @@
     ],
     "本源萝坦": [
       "/characters/122587.md"
+    ],
+    "本漂": [
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md"
     ],
     "本目": [
       "/README.md"
@@ -34632,6 +34709,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
@@ -34959,6 +35037,9 @@
     "构骨": [
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
+    "析双": [
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md"
+    ],
     "析台": [
       "/community/community-index.md"
     ],
@@ -35227,6 +35308,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
@@ -35433,6 +35515,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
@@ -35945,6 +36028,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
@@ -36329,6 +36413,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
@@ -36878,6 +36963,7 @@
       "/memory/memory-ext-testing-strategy.md",
       "/projects/doc-testing-strategy.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260711.md"
     ],
@@ -37138,6 +37224,9 @@
     "滔天": [
       "/characters/15569.md"
     ],
+    "漂移": [
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md"
+    ],
     "漆黑": [
       "/characters/77917.md"
     ],
@@ -37349,6 +37438,9 @@
     "照此": [
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
     ],
+    "照测": [
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md"
+    ],
     "照翻": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
     ],
@@ -37430,7 +37522,8 @@
       "/projects/silver-core-sdk-doc-positioning.md"
     ],
     "版本": [
-      "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
+      "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md"
     ],
     "版部": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-phase-d-plan.md"
@@ -39956,6 +40049,9 @@
     "离开": [
       "/README.md"
     ],
+    "离版": [
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md"
+    ],
     "秀美": [
       "/characters/15592.md"
     ],
@@ -40266,7 +40362,8 @@
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md"
     ],
     "符号": [
-      "/memory/memory-ext-knowledge-layer-design.md"
+      "/memory/memory-ext-knowledge-layer-design.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md"
     ],
     "笼中": [
       "/characters/15574.md"
@@ -42265,6 +42362,9 @@
       "/characters/125346.md",
       "/characters/77925.md"
     ],
+    "解析": [
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md"
+    ],
     "解脱": [
       "/characters/15602.md",
       "/characters/95786.md"
@@ -43418,6 +43518,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
@@ -44110,6 +44211,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
@@ -45141,6 +45243,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
@@ -45392,6 +45495,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
@@ -45853,7 +45957,8 @@
       "/characters/15587.md"
     ],
     "隔离": [
-      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
+      "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md"
     ],
     "障壁": [
       "/characters/15585.md"
@@ -47047,7 +47152,8 @@
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
-      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md"
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md"
     ],
     "corpus": [
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md"
@@ -47237,6 +47343,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
@@ -47551,6 +47658,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
@@ -47714,6 +47822,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
@@ -47781,6 +47890,9 @@
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
       "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md"
+    ],
+    "diff": [
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md"
     ],
     "discord": [
       "/community/community-discord.md",
@@ -47910,6 +48022,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
@@ -48444,6 +48557,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
@@ -48751,6 +48865,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
       "/sources/official.md"
     ],
     "okf": [
@@ -49171,6 +49286,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
@@ -49347,7 +49463,8 @@
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
-      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md"
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md"
     ],
     "search": [
       "/story/story_search_index.md"
@@ -49389,7 +49506,8 @@
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
-      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md"
+      "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md"
     ],
     "site": [
       "/projects/project-site.md",
@@ -49654,6 +49772,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-20260702.md",
@@ -49765,6 +49884,9 @@
     ],
     "volunteer": [
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
+    ],
+    "vs": [
+      "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md"
     ],
     "weekly": [
       "/resource/resource-intel-weekly-morimens-intel-20260712.md"

@@ -1,7 +1,7 @@
 {
   "generated": "2026-07-13",
   "stats": {
-    "nodes": 349,
+    "nodes": 350,
     "edges": 404
   },
   "nodes": [
@@ -3226,6 +3226,17 @@
       "id": "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "type": "documentation",
       "title": "silver-core-sdk-rename-review-20260710",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
+      "type": "documentation",
+      "title": "silver-core-sdk-vs-official-diff-20260713",
       "tags": [
         "data_layer:curated",
         "deliverable",
