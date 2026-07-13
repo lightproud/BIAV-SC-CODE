@@ -37,7 +37,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        target: [permissions, transport-openai, transport-anthropic]
+        target: [permissions, transport-openai, transport-anthropic, sessions]
     steps:
       - name: Skip when a single target was requested and this is not it
         if: github.event.inputs.target != '' && github.event.inputs.target != matrix.target
