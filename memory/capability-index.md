@@ -3,8 +3,8 @@
 > 本文件由 `scripts/build_capability_registry.py` 自动生成，**请勿手改**。
 > 中文用途补注请改 `memory/capability-annotations.json`；机器权威数据见 `memory/capability-registry.json`。
 
-- 生成日期：2026-07-12
-- 功能总数：**134**
+- 生成日期：2026-07-13
+- 功能总数：**135**
 - 脚本可达性：活 75 / 仅测试 0 / 孤儿 0
 
 ## 总览
@@ -17,7 +17,7 @@
 | wiki 数据脚本 | 6 |
 | MCP 知识层工具（编排入口·AI 动态平面） | 11 |
 | Slash 命令（编排入口·人工平面） | 4 |
-| 仓内技能 | 4 |
+| 仓内技能 | 5 |
 | 子项目 | 5 |
 
 ## 动态编排与可达性
@@ -302,7 +302,7 @@
 - **`validate-data`** — 校验 wiki 数据库全部 JSON 数据文件。  
   `.claude/commands/validate-data.md`
 
-## 仓内技能（4）
+## 仓内技能（5）
 
 - **`anysearch`** — 实时网络检索（多区社区情报 CN/JP/TW），AnySearch API 封装，失败回退内置 WebSearch。  
   `.claude/skills/anysearch/SKILL.md`
@@ -312,6 +312,8 @@
   `.claude/skills/grill/SKILL.md`
 - **`grilling`** — Interview the keeper relentlessly about a plan or design before building. Use when the keeper wants to stress-test a plan, sharpen a vague idea, or uses any 'grill' / 拷问 / 质询 / 对齐 trigger phrase.  
   `.claude/skills/grilling/SKILL.md`
+- **`intel-weekly`** — Generate the Morimens weekly community intelligence report (社区情报周报) from the full archive layer. Use when asked for the weekly report, 周报, community intel digest, or a windowed community summary. Produces a fixed-skeleton Chinese report (trend + role routing + business topics with embedded risk sentinels + bug list + player request list + credited fanart gallery + volume map) rendered as mobile PDF in brand themes.  
+  `.claude/skills/intel-weekly/SKILL.md`
 
 ## 子项目（5）
 
