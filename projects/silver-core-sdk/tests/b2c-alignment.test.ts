@@ -37,6 +37,7 @@ import type {
   SDKResultMessage,
   SDKUserMessage,
   SessionCronSummary,
+  TerminalReason,
   SetupHookInput,
   StopHookInput,
   SubagentStopHookInput,
@@ -303,7 +304,32 @@ describe('B2c-C: pure-type NEW-IN-DOCS additions', () => {
     expect(user.origin?.kind).toBe('human');
   });
 
-  it('SDKResultMessage terminal_reason (12) + fast_mode_state (3) + origin', () => {
+  it('SDKResultMessage terminal_reason (18) + fast_mode_state (3) + origin', () => {
+    // Exhaustive lock on the union (0.3.207 chase added six members to the
+    // original twelve). `satisfies readonly TerminalReason[]` reds the build
+    // if a member here is dropped from the type.
+    const reasons = [
+      'completed',
+      'max_turns',
+      'tool_deferred',
+      'aborted_streaming',
+      'aborted_tools',
+      'hook_stopped',
+      'stop_hook_prevented',
+      'blocking_limit',
+      'rapid_refill_breaker',
+      'prompt_too_long',
+      'image_error',
+      'model_error',
+      'api_error',
+      'malformed_tool_use_exhausted',
+      'budget_exhausted',
+      'structured_output_retry_exhausted',
+      'tool_deferred_unavailable',
+      'turn_setup_failed',
+    ] as const satisfies readonly TerminalReason[];
+    expect(new Set(reasons).size).toBe(18);
+
     const result = {
       type: 'result',
       subtype: 'success',

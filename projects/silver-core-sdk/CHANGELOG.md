@@ -16,6 +16,28 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.54.2 — 2026-07-13
+
+Official chase 0.3.205 → 0.3.207 (empirical diff report
+`Public-Info-Pool/Resource/repo-engineering/silver-core-sdk-vs-official-diff-20260713.md`;
+keeper ruling 「追」). A type-surface diff of the official tarballs found the
+pinned 0.3.205 baseline drifted 2 patch versions behind npm latest `0.3.207`
+(published after the 0.3.205 pin) with **zero exported-symbol change** (232 =
+232) — the drift is entirely field-level/additive:
+
+- **`TerminalReason` union +6 members** — `api_error`,
+  `malformed_tool_use_exhausted`, `budget_exhausted`,
+  `structured_output_retry_exhausted`, `tool_deferred_unavailable`,
+  `turn_setup_failed`. Added to the type for drop-in exhaustiveness;
+  typed-not-populated (this field has no engine emission site here). Exhaustive
+  lock in `tests/b2c-alignment.test.ts` (12 → 18).
+- **N/A-by-design additive fields registered in the COMPAT ledger** (no code):
+  `mcp_call` staging (`input_files`/`output_files`/`expires_at`/`timeout_ms`,
+  Cowork file-lane) rides the control_request protocol this headless engine
+  does not implement; the PostToolUse-family structured-tool-output field and
+  the `SDKModelRefusalNoFallbackMessage` per-category-routing doc refinement
+  are additive-optional. docs/COMPAT.md pin bumped to 0.3.207.
+
 ## 0.54.1 — 2026-07-13
 
 **MCP stdio shutdown reaps the server process TREE (BPT stability, 2026-07-13).**

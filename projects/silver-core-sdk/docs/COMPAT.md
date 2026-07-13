@@ -1,6 +1,6 @@
 # Silver Core SDK — Compatibility Matrix
 
-Target surface: `@anthropic-ai/claude-agent-sdk` public API (npm 0.3.205; chased from the 0.3.201 baseline 2026-07-10, keeper ruling, zero conformance drift — 0.3.199 -> 0.3.201 chased 2026-07-05) as
+Target surface: `@anthropic-ai/claude-agent-sdk` public API (npm 0.3.207; chased from 0.3.205 2026-07-13, keeper ruling 「追」, zero exported-symbol drift — 0.3.201 -> 0.3.205 chased 2026-07-10, 0.3.199 -> 0.3.201 chased 2026-07-05) as
 documented at code.claude.com/docs/en/agent-sdk/* (fetched 2026-07-03).
 
 For a full 146-row completion audit against the latest official surface
@@ -13,6 +13,36 @@ including the drop-in breaking-gap list and the NEW-IN-DOCS ledger
 (post-0.3.199 surface), see
 `Public-Info-Pool/Resource/repo-engineering/bpt-sdk-official-docs-interface-audit-20260705.md`.
 Stale rows flagged there were corrected in this file on 2026-07-05.
+
+## 0.3.205 -> 0.3.207 chase (2026-07-13, keeper ruling 「追」)
+
+An empirical type-surface diff of the official tarballs (0.3.205 vs 0.3.207,
+`sdk.d.ts` parsed via the TS compiler API — full report
+`Public-Info-Pool/Resource/repo-engineering/silver-core-sdk-vs-official-diff-20260713.md`)
+found the pinned 0.3.205 baseline drifted 2 patch versions behind npm latest
+`0.3.207` with **zero exported-symbol change (232 = 232, none added/removed)**.
+The drift is entirely field-level/additive:
+
+- **`TerminalReason` union +6 members** — `api_error`,
+  `malformed_tool_use_exhausted`, `budget_exhausted`,
+  `structured_output_retry_exhausted`, `tool_deferred_unavailable`,
+  `turn_setup_failed`. IMPLEMENTED: added to the union (`src/types.ts`) for
+  drop-in exhaustiveness; **typed-not-populated** (this field has no engine
+  emission site here — grep-verified). Exhaustive lock in
+  `tests/b2c-alignment.test.ts` (12 → 18).
+- **`mcp_call` staging fields** (`input_files`/`output_files`/`expires_at`/`timeout_ms`,
+  Cowork synced-file lane) — **N/A-BY-DESIGN**: these ride the `control_request`
+  wire protocol this headless direct-API engine does not implement (same posture
+  as `get_plan`/`get_workspace_diff`/`reinitialize`). No code; registered here to
+  prevent drift-misjudgement.
+- **PostToolUse-family structured-tool-output field** (`AgentToolCompletedOutput`
+  shape) — additive-optional on the hook-output shapes; not populated (no hook
+  emission of the full typed Output object here).
+- **`SDKModelRefusalNoFallbackMessage`** doc refinement (per-category routing
+  declines the retry) — documentation-only; no interface change.
+
+No package `version` change to the tracked-Claude-Code number (this SDK keeps
+its own independent version, 0.53.7 — see CHANGELOG).
 
 ## 0.3.201 -> 0.3.205 chase (2026-07-10, keeper ruling 「追」)
 
