@@ -1,10 +1,10 @@
 ---
 type: "dataset"
 title: "bilibili 社区数据源"
-description: "bilibili 平台采集档案，全量 2832 条，健康度 active。"
+description: "bilibili 平台采集档案，全量 2844 条，健康度 active。"
 resource: "/Public-Info-Pool/Record/Community/bilibili/"
 tags: ["data_layer:full_archive", "platform:bilibili", "health:active"]
-timestamp: "2026-07-13T12:02:15.514744+00:00"
+timestamp: "2026-07-13T17:15:21.014276+00:00"
 ---
 
 # 数据层指针
@@ -16,9 +16,9 @@ timestamp: "2026-07-13T12:02:15.514744+00:00"
 | 平台 | bilibili |
 | 全量档案层（本体） | `Public-Info-Pool/Record/Community/bilibili/` |
 | 输出展示层（抽样） | `projects/news/output/bilibili-latest.json` |
-| 全量条数 | 2832 |
+| 全量条数 | 2844 |
 | 采集健康度 | active |
-| 最后成功 | 2026-07-13 |
+| 最后成功 | 2026-07-14 |
 
 # 数据纪律（硬约束）
 

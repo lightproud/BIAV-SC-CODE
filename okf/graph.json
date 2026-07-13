@@ -4240,14 +4240,20 @@
     },
     {
       "source": "/community/community-bilibili.md",
+      "target": "/characters/15567.md",
+      "rel": "提及:血链·希洛",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
       "target": "/characters/15598.md",
       "rel": "提及:尤乌哈希",
       "rel_type": "mention"
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/15599.md",
-      "rel": "提及:萨尔瓦多",
+      "target": "/characters/77913.md",
+      "rel": "提及:凯蒂古拉",
       "rel_type": "mention"
     },
     {
@@ -4264,14 +4270,20 @@
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/15570.md",
-      "rel": "提及:朵尔",
+      "target": "/characters/15587.md",
+      "rel": "提及:希洛",
       "rel_type": "mention"
     },
     {
       "source": "/community/community-bilibili.md",
       "target": "/characters/15604.md",
       "rel": "提及:莱克",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/94450.md",
+      "rel": "提及:茉夏",
       "rel_type": "mention"
     },
     {
@@ -4300,12 +4312,6 @@
     },
     {
       "source": "/community/community-reddit.md",
-      "target": "/characters/15560.md",
-      "rel": "提及:Pandia",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-reddit.md",
       "target": "/characters/15595.md",
       "rel": "提及:Ramona",
       "rel_type": "mention"
@@ -4319,13 +4325,7 @@
     {
       "source": "/community/community-steam.md",
       "target": "/characters/130226.md",
-      "rel": "提及:沙耶",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-weibo.md",
-      "target": "/characters/15582.md",
-      "rel": "提及:弥利亚姆",
+      "rel": "提及:Saya",
       "rel_type": "mention"
     },
     {
@@ -5590,14 +5590,20 @@
     },
     {
       "source": "/sources/bilibili.md",
+      "target": "/characters/15567.md",
+      "rel": "提及:血链·希洛",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
       "target": "/characters/15598.md",
       "rel": "提及:尤乌哈希",
       "rel_type": "mention"
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/15599.md",
-      "rel": "提及:萨尔瓦多",
+      "target": "/characters/77913.md",
+      "rel": "提及:凯蒂古拉",
       "rel_type": "mention"
     },
     {
@@ -5614,14 +5620,20 @@
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/15570.md",
-      "rel": "提及:朵尔",
+      "target": "/characters/15587.md",
+      "rel": "提及:希洛",
       "rel_type": "mention"
     },
     {
       "source": "/sources/bilibili.md",
       "target": "/characters/15604.md",
       "rel": "提及:莱克",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/94450.md",
+      "rel": "提及:茉夏",
       "rel_type": "mention"
     },
     {
@@ -5650,12 +5662,6 @@
     },
     {
       "source": "/sources/reddit.md",
-      "target": "/characters/15560.md",
-      "rel": "提及:Pandia",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/reddit.md",
       "target": "/characters/15595.md",
       "rel": "提及:Ramona",
       "rel_type": "mention"
@@ -5669,13 +5675,7 @@
     {
       "source": "/sources/steam.md",
       "target": "/characters/130226.md",
-      "rel": "提及:沙耶",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/weibo.md",
-      "target": "/characters/15582.md",
-      "rel": "提及:弥利亚姆",
+      "rel": "提及:Saya",
       "rel_type": "mention"
     },
     {
