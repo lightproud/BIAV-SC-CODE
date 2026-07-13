@@ -16,6 +16,36 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.55.2 — 2026-07-13
+
+**OpenAI arm: metadata-only stream + `[DONE]` no longer billed as a silent
+success (BPT idealab "turn stop / hasAssistantMessage:false", 2026-07-13).**
+0.55.1 fixed the Anthropic arm's degraded-200 shape and asserted the OpenAI arm
+"already self-heals its analog" — true only for the ZERO-chunk case (the
+empty-stream retry). The metadata-then-`[DONE]` case was still mis-routed: an
+HTTP 200 that streamed only role-only / usage-only chunks (so `chunkCount > 0`)
+and then closed with a bare `data: [DONE]`, carrying NO `delta.content`, NO
+`reasoning_content`, NO `tool_calls` and NO `finish_reason`, satisfied the old
+`chunkCount > 0 && (doneSeen || sawFinishReason())` success gate and was
+finalized as an empty assistant with `stop_reason: null` — the exact idealab
+"turn stop, hasAssistantMessage:false, lastAssistantMessage:''" log shape.
+Fix: the translator now tracks VALID assistant content (`sawContent()`)
+separately from the raw chunk count — flipped only by a non-empty text /
+reasoning delta or a tool_call fragment bearing an id/name/arguments — and
+`finish_reason` counts only when a non-empty string. The transport now
+completes only on an explicit `finish_reason` (protocol semantics preserved,
+incl. an empty-text `finish_reason:'stop'`) OR a `[DONE]` paired with valid
+content; a `[DONE]` with neither throws a diagnosable `empty_message`
+`APIConnectionError` (not `turnReplaySafe`/`midStreamTruncation`, so NOT
+retried — a started stream is not replay-safe), which the engine surfaces as
+`error_during_execution` (error_code `empty_message`). Preserved unchanged:
+zero-chunk `empty_stream` retry, partial-content-without-terminator truncation
+salvage, and the honest empty-text-with-`finish_reason` path (all existing
+mutation-lock suites still pass without re-baselining). +12 test cases
+(transport: role-only, usage-only, empty-first-delta, no-terminator truncation,
+empty-text-finish_reason, tool_call-fragment; translator content tracking x3;
+engine end-to-end error_code x3); docs/OPENAI-PROTOCOL.md updated.
+
 ## 0.55.1 — 2026-07-13
 
 **Degraded empty stream no longer billed as a silent success (BPT "空 stopReason
