@@ -19,7 +19,7 @@
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import { mkdtemp, rm, readFile, writeFile, mkdir } from 'node:fs/promises';
 import { existsSync, readFileSync } from 'node:fs';
-import { tmpdir, homedir } from 'node:os';
+import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { FileCheckpointStore, makeCheckpointRecorder } from '../src/sessions/checkpoints.js';
 import {
@@ -257,17 +257,11 @@ describe('FileSessionStore: torn-tail heal + layout', () => {
   });
 });
 
-describe('FileSessionStore: tilde expansion', () => {
-  it("a leading '~/' expands to the home directory", async () => {
-    // Use a unique subdir under home so we can clean it deterministically.
-    const rel = `.bpt-test-${process.pid}-${Date.now() % 100000}`;
-    const store = new FileSessionStore(`~/${rel}`);
-    const k: SessionKey = { projectKey: 'p', sessionId: 's', subpath: '' };
-    try {
-      await store.append(k, [{ type: 'user', message: { role: 'user', content: 'hi' } } as SessionStoreEntry]);
-      expect(existsSync(join(homedir(), rel))).toBe(true);
-    } finally {
-      await rm(join(homedir(), rel), { recursive: true, force: true });
-    }
-  });
-});
+// NOTE: a tilde-expansion test was deliberately REMOVED (2026-07-13). Driving
+// expandTilde('~/…') through a real FileSessionStore.append writes to disk, so
+// a mutation run that disables the tilde branch creates a LITERAL `~/` dir in
+// the repo (and the passing path writes under the real homedir) — the same
+// side-effecting pollution class as the /tmp/evil.jsonl traversal case. The
+// expandTilde branch's low kill value does not justify a filesystem-side-effect
+// test; it is left as an accepted survivor per the overfitting/side-effect
+// guard (100%-question analysis).
