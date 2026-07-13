@@ -1,10 +1,25 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-13T14:54:41.117707+00:00",
+  "collected_at": "2026-07-13T17:14:20.471513+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 12,
+  "item_count": 9,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-07-13T16:26:10+00:00",
+      "lang": "english",
+      "title": "[负面] I like this game so far but it just keeps crashing...",
+      "summary": "I like this game so far but it just keeps crashing...",
+      "url": "https://steamcommunity.com/profiles/76561198343004057/recommended/3052450",
+      "author": "76561198343004057",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": false,
+      "review": "I like this game so far but it just keeps crashing...",
+      "timestamp_created": 1783959970,
+      "playtime_forever": 0
+    },
     {
       "source": "steam",
       "time": "2026-07-13T13:50:31+00:00",
@@ -67,21 +82,6 @@
     },
     {
       "source": "steam",
-      "time": "2026-07-13T05:56:41+00:00",
-      "lang": "english",
-      "title": "[正面] PLAY IT RIGHT NOWWWW!!!!!!!",
-      "summary": "PLAY IT RIGHT NOWWWW!!!!!!!",
-      "url": "https://steamcommunity.com/profiles/76561198319986325/recommended/3052450",
-      "author": "76561198319986325",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "PLAY IT RIGHT NOWWWW!!!!!!!",
-      "timestamp_created": 1783922201,
-      "playtime_forever": 298
-    },
-    {
-      "source": "steam",
       "time": "2026-07-13T05:05:08+00:00",
       "lang": "schinese",
       "title": "[正面] 伟大无需多言",
@@ -112,21 +112,6 @@
     },
     {
       "source": "steam",
-      "time": "2026-07-13T04:04:58+00:00",
-      "lang": "schinese",
-      "title": "[正面] 玩过的最好玩的二游，没有之一",
-      "summary": "玩过的最好玩的二游，没有之一",
-      "url": "https://steamcommunity.com/profiles/76561198788912386/recommended/3052450",
-      "author": "76561198788912386",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "玩过的最好玩的二游，没有之一",
-      "timestamp_created": 1783915498,
-      "playtime_forever": 4940
-    },
-    {
-      "source": "steam",
       "time": "2026-07-12T20:01:26+00:00",
       "lang": "spanish",
       "title": "[负面] Vamos a ver si cumple las condiciones para ser un...",
@@ -154,36 +139,6 @@
       "review": "скам",
       "timestamp_created": 1783879759,
       "playtime_forever": 1931
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-12T17:02:35+00:00",
-      "lang": "english",
-      "title": "[正面] Amazing story, lots of content to do, gacha is sup...",
-      "summary": "Amazing story, lots of content to do, gacha is super generous, devs are really nice and actively communicate, very unique and beautiful character designs and art",
-      "url": "https://steamcommunity.com/profiles/76561198312249936/recommended/3052450",
-      "author": "76561198312249936",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "Amazing story, lots of content to do, gacha is super generous, devs are really nice and actively communicate, very unique and beautiful character designs and art",
-      "timestamp_created": 1783875755,
-      "playtime_forever": 7205
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-12T15:59:54+00:00",
-      "lang": "schinese",
-      "title": "[正面] 优秀的音乐与美术，引人入胜的剧情。哦你本该是二游之光",
-      "summary": "优秀的音乐与美术，引人入胜的剧情。哦你本该是二游之光",
-      "url": "https://steamcommunity.com/profiles/76561199578011146/recommended/3052450",
-      "author": "76561199578011146",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "优秀的音乐与美术，引人入胜的剧情。哦你本该是二游之光",
-      "timestamp_created": 1783871994,
-      "playtime_forever": 10319
     }
   ]
 }

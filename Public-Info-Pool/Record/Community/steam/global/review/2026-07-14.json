@@ -1,0 +1,34 @@
+{
+  "date": "2026-07-14",
+  "archived_at": "2026-07-13T17:15:20.023985+00:00",
+  "source": "steam",
+  "item_count": 1,
+  "items": [
+    {
+      "title": "[负面] I like this game so far but it just keeps crashing...",
+      "summary": "I like this game so far but it just keeps crashing...",
+      "source": "steam_review",
+      "time": "2026-07-13T16:26:10+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198343004057/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198343004057",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": false,
+        "playtime_forever": 0,
+        "votes_up": 0,
+        "timestamp_created": 1783959970
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    }
+  ],
+  "region": "global",
+  "content_subtype": "review"
+}
