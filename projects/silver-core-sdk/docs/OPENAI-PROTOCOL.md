@@ -132,6 +132,68 @@ handling is provider-agnostic.
   Claude Code behavior (POSITIONING §2); a different model family means a
   different feel. This is the sovereignty trade the switch exists to offer.
 
+## Cross-protocol subagents (v0.54.0)
+
+A query has ONE provider config, but a gateway often serves different models
+on different routes — an `openai-chat` main model whose subagent-tier models
+only exist on the gateway's Anthropic route (or vice versa). Without routing,
+an isolated child rides the parent transport unconditionally and the gateway
+400s "model not found" on the wrong endpoint.
+
+`Options.resolveSubagentTransport` fixes this without hardcoding any model
+naming convention in the SDK. The host owns the model→protocol table:
+
+```ts
+import { query, createSubagentTransportResolver } from 'silver-core-sdk';
+
+const q = query({
+  prompt,
+  options: {
+    model: 'azure/gpt-5',
+    provider: { protocol: 'openai-chat', baseUrl: GW_OPENAI, apiKey: KEY },
+    resolveSubagentTransport: createSubagentTransportResolver({
+      protocolForModel: (m) => (m.startsWith('azure/') ? 'openai-chat' : 'anthropic'),
+      providers: {
+        anthropic: { baseUrl: GW_ANTHROPIC, apiKey: KEY },
+      },
+    }),
+  },
+});
+```
+
+Semantics:
+
+- Consulted once per ISOLATED spawn, after the child model resolves
+  (per-call override → agentDef.model → parent, aliases expanded). Returning
+  `undefined` — or omitting the option — shares the parent transport,
+  byte-for-byte the previous behavior. **Forks never consult it**: a fork's
+  cached prefix requires the parent model + transport.
+- The standard resolver memoizes ONE transport per protocol (children share
+  warm keep-alive pools instead of paying a TCP+TLS handshake per spawn) and
+  derives the child provider from the parent's protocol-AGNOSTIC knobs only
+  (retries / timeouts / fetch / httpClient / preconnect / pricing).
+  Protocol-SPECIFIC fields (baseUrl / credentials / apiVersion / openai.\*)
+  come from the explicit per-protocol config or that protocol's own env chain
+  (`ANTHROPIC_*` / `OPENAI_*`) — never copied from the parent, because the two
+  protocols append different URL suffixes (`/v1/messages` vs
+  `/chat/completions`) and a blind copy mis-routes.
+- Thinking is re-derived for a transport-switched child: resolution values
+  win; otherwise a non-Claude child model DROPS the inherited config (a
+  Claude-shaped `thinking` param on a non-Claude model is gateway-rejected
+  more often than honored). Shared-transport children inherit unchanged.
+- Lifecycle: resolutions with `owned: true` are disposed once at query
+  teardown (after all children settled — SendMessage can revive a finished
+  child until then). The standard resolver returns `owned: false` (it owns
+  its memoized instances; the built-in transports self-clean via unref'd
+  TTL-bounded socket pools).
+- Each spawn logs `{parentModel, childModel, parentProtocol, childProtocol,
+  transportMode}` on the debug channel (`shared-parent` / `resolver-shared` /
+  `child-owned`).
+- Family budget, usage ledger, and hook wiring are transport-independent and
+  unchanged.
+
+`tests/subagent-transport.test.ts` locks the acceptance matrix.
+
 ## Tests
 
 `tests/transport-openai.test.ts` — request encoding, stream translation

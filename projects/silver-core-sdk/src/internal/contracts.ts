@@ -90,6 +90,14 @@ export interface Transport {
   stream(req: StreamRequest): AsyncGenerator<RawMessageStreamEvent, void>;
   /** Where the credential came from (for the init message). */
   apiKeySource(): ApiKeySource;
+  /**
+   * Optional resource release (idle connection pools etc.). The built-in
+   * transports do not implement it — their keep-alive sockets are unref'd
+   * with a bounded idle TTL, so an abandoned instance self-cleans. The
+   * subagent runtime calls it at query teardown on transports a
+   * `resolveSubagentTransport` resolution returned with `owned: true`.
+   */
+  dispose?(): void;
 }
 
 // ---------------------------------------------------------------------------

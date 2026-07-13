@@ -673,6 +673,8 @@ export function query(args: {
     allowedTools: options.allowedTools,
     disallowedTools: options.disallowedTools,
     engineConfig,
+    provider: options.provider,
+    resolveSubagentTransport: options.resolveSubagentTransport,
     store,
     persist,
     cwd,
