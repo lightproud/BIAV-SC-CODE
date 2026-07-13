@@ -1163,3 +1163,75 @@ describe('createProviderTransport', () => {
     expect(anthropic).toBeInstanceOf(AnthropicTransport);
   });
 });
+
+// ---------------------------------------------------------------------------
+// Wire-boundary tool schema filter (BPT 2026-07-13): a tools[] entry whose
+// input_schema is missing or not a plain object 400s the whole request at the
+// gateway (`tools.N.custom.input_schema: Field required`). The encoder is the
+// last line of defense and must drop such entries while keeping valid tools'
+// translation byte-identical.
+// ---------------------------------------------------------------------------
+
+describe('encodeOpenAIRequest tool schema filter', () => {
+  const base = {
+    model: 'gpt-4o',
+    max_tokens: 8,
+    messages: [{ role: 'user' as const, content: 'hi' }],
+  };
+
+  function toolsOf(body: Record<string, unknown>): unknown[] | undefined {
+    return body.tools as unknown[] | undefined;
+  }
+
+  it('drops a schema-less custom entry ({type:"custom",name}) from the wire body', () => {
+    const body = encodeOpenAIRequest({
+      ...base,
+      tools: [{ type: 'custom', name: 'some_tool' } as never],
+    });
+    expect(toolsOf(body)).toBeUndefined();
+  });
+
+  it('drops tools whose input_schema is null, an array or a string', () => {
+    const body = encodeOpenAIRequest({
+      ...base,
+      tools: [
+        { name: 'nullish', input_schema: null } as never,
+        { name: 'arrayish', input_schema: [] } as never,
+        { name: 'stringish', input_schema: 'nope' } as never,
+        { name: 'fine', description: 'ok', input_schema: { type: 'object' } },
+      ],
+    });
+    expect(toolsOf(body)).toEqual([
+      {
+        type: 'function',
+        function: { name: 'fine', description: 'ok', parameters: { type: 'object' } },
+      },
+    ]);
+  });
+
+  it('omits tools (and tool_choice) entirely when every entry is invalid', () => {
+    const body = encodeOpenAIRequest({
+      ...base,
+      tools: [{ name: 'nullish', input_schema: null } as never],
+      tool_choice: { type: 'auto' },
+    });
+    expect(toolsOf(body)).toBeUndefined();
+    expect(body).not.toHaveProperty('tool_choice');
+  });
+
+  it('still drops server-declared typed entries (memory_20250818) honestly', () => {
+    const body = encodeOpenAIRequest({
+      ...base,
+      tools: [
+        { type: 'memory_20250818', name: 'memory' },
+        { name: 'fine', input_schema: { type: 'object', properties: {} } },
+      ],
+    });
+    expect(toolsOf(body)).toEqual([
+      {
+        type: 'function',
+        function: { name: 'fine', parameters: { type: 'object', properties: {} } },
+      },
+    ]);
+  });
+});

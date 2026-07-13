@@ -21,6 +21,7 @@ import type {
   ContentBlock,
   DocumentBlockParam,
   ImageBlockParam,
+  JSONSchema,
   ModelUsage,
   NonNullableUsage,
   RawMessageStreamEvent,
@@ -467,16 +468,49 @@ export async function* runAgentLoop(
    *  here so its schema is not written this turn; it reappears the turn after
    *  a ToolSearch load. Absent isBuiltinDeferred -> every built-in is inline
    *  (exact pre-unification behavior). */
+  /** A tools[] entry with a missing/invalid input_schema (null, array,
+   *  primitive — seen from lax MCP servers) makes the gateway reject the
+   *  ENTIRE request (`tools.N.custom.input_schema: Field required`, BPT
+   *  2026-07-13), killing every conversation that shares the tool list.
+   *  Normalize such schemas to the safe empty-object schema and say so in
+   *  the debug log, instead of letting one bad tool take the request down. */
+  const normalizeInputSchema = (name: string, schema: unknown): JSONSchema => {
+    if (typeof schema === 'object' && schema !== null && !Array.isArray(schema)) {
+      return schema as JSONSchema;
+    }
+    deps.debug(
+      `engine: tool "${name}" has ${
+        schema === undefined || schema === null ? 'no input schema' : 'a non-object input schema'
+      }; normalized to the empty object schema`,
+    );
+    return { type: 'object', properties: {} };
+  };
+  /** Server-declared typed entries are sent WITHOUT input_schema — only
+   *  types the API defines server-side (e.g. memory_20250818) may do that.
+   *  A `type:'custom'` (or type-less) entry is a misconfiguration: the API
+   *  reads it as a custom tool and 400s the whole request on the missing
+   *  input_schema, so it is skipped loudly rather than advertised. */
+  const isValidServerTool = (st: { type: string; name: string }): boolean =>
+    typeof st.type === 'string' && st.type.length > 0 && st.type !== 'custom';
   const buildToolDefs = (): APIToolDefinitionParam[] => {
     const defs: APIToolDefinitionParam[] = [];
+    const serverToolEntries = (config.serverTools ?? []).filter((st) => {
+      if (isValidServerTool(st)) return true;
+      deps.debug(
+        `engine: serverTools entry "${st.name}" (type ${JSON.stringify(st.type)}) ` +
+          'is not a server-defined tool type and would be rejected as a custom ' +
+          'tool without input_schema; entry skipped',
+      );
+      return false;
+    });
     // Server-declared tool entries (config.serverTools, e.g. the native-mode
     // memory tool): the typed entry is advertised verbatim and a builtin of
     // the SAME name is skipped from schema advertisement — that builtin is
     // the execution loop for the server-declared tool, not a second
-    // definition of it.
+    // definition of it. Skipped-invalid entries do NOT suppress a builtin.
     const serverDeclared =
-      config.serverTools !== undefined && config.serverTools.length > 0
-        ? new Set(config.serverTools.map((t) => t.name))
+      serverToolEntries.length > 0
+        ? new Set(serverToolEntries.map((t) => t.name))
         : undefined;
     for (const tool of deps.builtinTools.values()) {
       if (serverDeclared?.has(tool.name) === true) continue;
@@ -484,20 +518,18 @@ export async function* runAgentLoop(
       defs.push({
         name: tool.name,
         description: tool.description,
-        input_schema: tool.inputSchema,
+        input_schema: normalizeInputSchema(tool.name, tool.inputSchema),
       });
     }
     for (const entry of deps.mcp.allTools()) {
       defs.push({
         name: entry.qualifiedName,
         description: entry.description,
-        input_schema: entry.inputSchema,
+        input_schema: normalizeInputSchema(entry.qualifiedName, entry.inputSchema),
       });
     }
-    if (config.serverTools !== undefined) {
-      for (const st of config.serverTools) {
-        defs.push({ type: st.type, name: st.name });
-      }
+    for (const st of serverToolEntries) {
+      defs.push({ type: st.type, name: st.name });
     }
     return defs;
   };

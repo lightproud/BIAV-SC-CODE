@@ -23,6 +23,7 @@ import type {
   EngineDeps,
   HookRunner,
   McpRegistry,
+  McpToolEntry,
   PermissionCheckResult,
   PermissionGate,
   StreamRequest,
@@ -2406,5 +2407,146 @@ describe('P2: PostToolBatch tool_calls[]', () => {
     expect(input.tool_calls).toEqual([
       { tool_name: 'Read', tool_input: { file_path: '/a.txt' }, tool_use_id: 'toolu_x' },
     ]);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Tool schema boundary hardening (BPT 2026-07-13): a tools[] entry with a
+// missing/invalid input_schema 400s the ENTIRE request at OpenAI-compatible
+// gateways (`tools.N.custom.input_schema: Field required`). The loop must
+// normalize bad builtin/MCP schemas and never emit a schema-less custom entry.
+// ---------------------------------------------------------------------------
+
+/** FakeMcp variant that reports a scripted tool list. */
+class FakeMcpWithTools implements McpRegistry {
+  constructor(private readonly tools: McpToolEntry[]) {}
+  async connectAll(): Promise<void> {}
+  statuses(): McpServerStatus[] {
+    return [];
+  }
+  allTools(): McpToolEntry[] {
+    return this.tools;
+  }
+  has(qualifiedName: string): boolean {
+    return this.tools.some((t) => t.qualifiedName === qualifiedName);
+  }
+  async call(): Promise<CallToolResult> {
+    return { content: [{ type: 'text', text: 'unexpected mcp call' }], isError: true };
+  }
+  async reconnect(_serverName: string): Promise<void> {}
+  setEnabled(_serverName: string, _enabled: boolean): void {}
+  async closeAll(): Promise<void> {}
+}
+
+describe('runAgentLoop tool schema normalization', () => {
+  function mcpEntry(name: string, inputSchema: unknown): McpToolEntry {
+    return {
+      qualifiedName: `mcp__srv__${name}`,
+      serverName: 'srv',
+      toolName: name,
+      description: `mcp tool ${name}`,
+      inputSchema: inputSchema as McpToolEntry['inputSchema'],
+    };
+  }
+
+  async function runWithTools(opts: {
+    mcpTools?: McpToolEntry[];
+    builtinTools?: Map<string, BuiltinTool>;
+    serverTools?: Array<{ type: string; name: string }>;
+  }): Promise<{ tools: unknown[]; debugLines: string[] }> {
+    const transport = new MockTransport([textReplyEvents('ok')]);
+    const debugLines: string[] = [];
+    const deps: EngineDeps = {
+      ...makeDeps(transport, { builtinTools: opts.builtinTools }),
+      mcp: new FakeMcpWithTools(opts.mcpTools ?? []),
+      debug: (m) => debugLines.push(m),
+    };
+    const config = makeConfig(
+      opts.serverTools !== undefined ? { serverTools: opts.serverTools } : {},
+    );
+    await collect(runAgentLoop([{ role: 'user' as const, content: 'go' }], deps, config));
+    expect(transport.requests).toHaveLength(1);
+    return { tools: (transport.requests[0]!.tools ?? []) as unknown[], debugLines };
+  }
+
+  it('normalizes a missing MCP inputSchema to the empty object schema and logs the tool name', async () => {
+    const { tools, debugLines } = await runWithTools({
+      mcpTools: [mcpEntry('broken', undefined)],
+    });
+    expect(tools).toEqual([
+      {
+        name: 'mcp__srv__broken',
+        description: 'mcp tool broken',
+        input_schema: { type: 'object', properties: {} },
+      },
+    ]);
+    expect(debugLines.some((l) => l.includes('mcp__srv__broken') && l.includes('normalized'))).toBe(
+      true,
+    );
+  });
+
+  it('normalizes null / array / primitive MCP inputSchema values', async () => {
+    const { tools } = await runWithTools({
+      mcpTools: [
+        mcpEntry('nullish', null),
+        mcpEntry('arrayish', []),
+        mcpEntry('stringish', 'not a schema'),
+      ],
+    });
+    for (const t of tools as Array<{ input_schema: unknown }>) {
+      expect(t.input_schema).toEqual({ type: 'object', properties: {} });
+    }
+  });
+
+  it('leaves a valid MCP schema and builtin schemas untouched', async () => {
+    const executed: Array<Record<string, unknown>> = [];
+    const { tools, debugLines } = await runWithTools({
+      builtinTools: new Map([['Read', makeFakeReadTool(executed)]]),
+      mcpTools: [mcpEntry('fine', { type: 'object', properties: { q: { type: 'string' } } })],
+    });
+    expect(tools).toEqual([
+      {
+        name: 'Read',
+        description: 'fake read tool',
+        input_schema: { type: 'object', properties: { file_path: { type: 'string' } } },
+      },
+      {
+        name: 'mcp__srv__fine',
+        description: 'mcp tool fine',
+        input_schema: { type: 'object', properties: { q: { type: 'string' } } },
+      },
+    ]);
+    expect(debugLines.filter((l) => l.includes('normalized'))).toEqual([]);
+  });
+
+  it("skips a serverTools entry of type 'custom' instead of emitting a schema-less tool", async () => {
+    const { tools, debugLines } = await runWithTools({
+      serverTools: [{ type: 'custom', name: 'some_tool' }],
+    });
+    expect(tools).toEqual([]);
+    expect(debugLines.some((l) => l.includes('some_tool') && l.includes('skipped'))).toBe(true);
+  });
+
+  it("a skipped 'custom' serverTools entry does not suppress the builtin of the same name", async () => {
+    const executed: Array<Record<string, unknown>> = [];
+    const { tools } = await runWithTools({
+      builtinTools: new Map([['Read', makeFakeReadTool(executed)]]),
+      serverTools: [{ type: 'custom', name: 'Read' }],
+    });
+    expect(tools).toEqual([
+      {
+        name: 'Read',
+        description: 'fake read tool',
+        input_schema: { type: 'object', properties: { file_path: { type: 'string' } } },
+      },
+    ]);
+  });
+
+  it('keeps Anthropic-typed server tools (memory_20250818) verbatim and schema-less', async () => {
+    const { tools, debugLines } = await runWithTools({
+      serverTools: [{ type: 'memory_20250818', name: 'memory' }],
+    });
+    expect(tools).toEqual([{ type: 'memory_20250818', name: 'memory' }]);
+    expect(debugLines.filter((l) => l.includes('skipped'))).toEqual([]);
   });
 });
