@@ -655,6 +655,46 @@ describe('query() e2e - UserPromptSubmit hooks', () => {
   });
 });
 
+describe('query() e2e - degraded empty stream (BPT "空 stopReason 轮次")', () => {
+  // A degraded HTTP 200 that emits message_start but delivers NO content AND no
+  // terminal stop_reason must reach the consumer as an ERROR result — never a
+  // silent empty success with stop_reason null. Not retried (a started stream
+  // is not replay-safe). Keeper ruling 2026-07-13, option C.
+  const START_ONLY = {
+    type: 'message_start',
+    message: {
+      id: 'msg_degraded',
+      type: 'message',
+      role: 'assistant',
+      model: 'claude-sonnet-4-5',
+      content: [],
+      stop_reason: null,
+      stop_sequence: null,
+      usage: { input_tokens: 5, output_tokens: 0, cache_creation_input_tokens: 0, cache_read_input_tokens: 0 },
+    },
+  };
+
+  it('surfaces error_during_execution (empty_message), not a silent empty success', async () => {
+    const fetchStub = stubFetch(makeSSEFetch([[START_ONLY]]));
+    const q = query({ prompt: 'hi', options: baseOptions() });
+    const messages = await collect(q);
+
+    const result = lastResult(messages);
+    expect(result.subtype).toBe('error_during_execution');
+    expect(result.is_error).toBe(true);
+    if (result.subtype !== 'success') {
+      expect(result.error_code).toBe('empty_message');
+      expect(result.stop_reason).toBeNull();
+    }
+    // No meaningful assistant turn, and NOT a success.
+    const assistants = messages.filter((m) => m.type === 'assistant');
+    expect(assistants).toHaveLength(0);
+    expect(resultsOf(messages).some((r) => r.subtype === 'success')).toBe(false);
+    // Not retried (single fetch): a started stream is not replay-safe.
+    expect(fetchStub.requests).toHaveLength(1);
+  });
+});
+
 describe('query() e2e - persistence and resume', () => {
   async function runOnce(prompt: string, reply: string): Promise<SDKMessage[]> {
     stubFetch(makeSSEFetch([textReplyEvents(reply)]));

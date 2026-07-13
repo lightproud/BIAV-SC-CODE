@@ -379,6 +379,22 @@ export class AnthropicTransport implements Transport {
           // parsed at all and the connection is released promptly. parseSSE's
           // finally cancels the underlying reader on early return.
           if ((parsed as { type?: string }).type === 'message_stop') {
+            // C (keeper ruling 2026-07-13): a message_stop preceded by NO
+            // terminal stop_reason AND no content is a degraded 200 — the API
+            // always emits message_delta.stop_reason before message_stop. Do
+            // NOT accept it as a complete empty success (the BPT "空 stopReason
+            // 轮次" shape) and do NOT retry it (a started stream is not
+            // replay-safe). Surface a diagnosable, NON-replay-safe error
+            // (no turnReplaySafe / midStreamTruncation flags) so the engine
+            // reports error_during_execution instead of a silent empty turn.
+            if (sawMessageStart && !sawStopReason && !sawContentBlock) {
+              throw new APIConnectionError(
+                `Messages API sent message_stop after message_start with no content ` +
+                  `and no stop_reason (${eventCount} event(s)); treating as a failed turn`,
+                undefined,
+                'empty_message',
+              );
+            }
             this.debug(
               `transport: stream completed at message_stop after ${eventCount} event(s)`,
             );
@@ -430,6 +446,25 @@ export class AnthropicTransport implements Transport {
             `after ${emptyStreamRetries + 1} attempt(s)`,
           undefined,
           'empty_stream',
+        );
+      }
+
+      // C (keeper ruling 2026-07-13): message_start arrived but the stream
+      // closed with NO content AND no terminal stop_reason — the degraded 200
+      // that produced the BPT "空 stopReason 轮次" (an empty assistant billed as
+      // a null-stop_reason success). Surface a diagnosable, NON-replay-safe
+      // error instead; a started stream is not replay-safe, so it is NOT
+      // retried (respecting the "no phantom empty-retry" contract). This sits
+      // between the no-message_start empty-retry above (sawMessageStart is
+      // guaranteed true here) and the mid-stream-truncation salvage below
+      // (which needs sawContentBlock).
+      if (!sawStopReason && !sawContentBlock) {
+        if (callerSignal?.aborted) throw new AbortError();
+        throw new APIConnectionError(
+          `Messages API stream started (message_start) but delivered no content ` +
+            `and no stop_reason (${eventCount} event(s)); treating as a failed turn`,
+          undefined,
+          'empty_message',
         );
       }
 

@@ -53,6 +53,13 @@ export type ErrorCode =
    *  concurrent fan-out). The transport retries internally; this code surfaces
    *  only after the retry budget is exhausted. */
   | 'empty_stream'
+  /** HTTP 200 that emitted message_start but delivered NO content AND no
+   *  terminal message_delta.stop_reason (the API always sends stop_reason
+   *  before message_stop). A degraded turn: NOT retried (a started stream is
+   *  not replay-safe) and NOT finalized as a silent empty success — surfaced
+   *  so the engine reports error_during_execution (keeper ruling 2026-07-13,
+   *  BPT "空 stopReason 轮次"). */
+  | 'empty_message'
   | 'api_status_error'
   | 'not_implemented'
   | 'config_invalid'
@@ -98,6 +105,7 @@ export class APIConnectionError extends Error {
       | 'stream_idle_timeout'
       | 'stream_max_duration'
       | 'empty_stream'
+      | 'empty_message'
     > = 'api_connection_failed',
   ) {
     super(message);

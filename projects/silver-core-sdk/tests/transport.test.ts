@@ -964,6 +964,48 @@ describe('AnthropicTransport empty-stream retry', () => {
     expect(err).toBeInstanceOf(AbortError);
     expect(fetchMock).toHaveBeenCalledTimes(1); // never reached the retry fetch
   });
+
+  // BPT 2026-07-13 "空 stopReason 轮次" (keeper ruling C): a started stream
+  // (message_start seen) that delivers NO content AND no terminal stop_reason —
+  // WITH a message_stop frame — is a degraded 200 (the API always sends
+  // message_delta.stop_reason before message_stop). It must fail fast with a
+  // diagnosable empty_message error, NOT be retried (a started stream is not
+  // replay-safe) and NOT be finalized as a silent empty success. The S1 variant
+  // (no message_stop) is locked in transport-anthropic-mutation-kills-r2.
+  it('a started stream with message_stop but no content and no stop_reason is empty_message (not retried, not replay-flagged)', async () => {
+    const startOnly: RawMessageStreamEvent = {
+      type: 'message_start',
+      message: {
+        id: 'msg_degraded',
+        type: 'message',
+        role: 'assistant',
+        model: 'claude-test-1',
+        content: [],
+        stop_reason: null,
+        stop_sequence: null,
+        usage: {
+          input_tokens: 5,
+          output_tokens: 0,
+          cache_creation_input_tokens: 0,
+          cache_read_input_tokens: 0,
+        },
+      },
+    } as RawMessageStreamEvent;
+    const fetchMock = stubFetch([
+      () => sseResponse(eventsToSse([startOnly, { type: 'message_stop' } as RawMessageStreamEvent])),
+    ]);
+    const t = makeTransport({ provider: { apiKey: 'k', maxRetries: 3 } });
+    const err = (await captureError(collect(t.stream(baseReq())))) as APIConnectionError & {
+      turnReplaySafe?: boolean;
+      midStreamTruncation?: boolean;
+    };
+    expect(err).toBeInstanceOf(APIConnectionError);
+    expect((err as APIConnectionError).code).toBe('empty_message');
+    expect(err.message).toMatch(/no content and no stop_reason/);
+    expect(fetchMock).toHaveBeenCalledTimes(1); // NOT retried
+    expect(err.turnReplaySafe).not.toBe(true);
+    expect(err.midStreamTruncation).not.toBe(true);
+  });
 });
 
 // ---------------------------------------------------------------------------
