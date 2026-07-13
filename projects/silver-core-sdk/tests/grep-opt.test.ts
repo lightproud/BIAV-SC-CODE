@@ -132,3 +132,50 @@ describe('OPT: unchanged basics still hold', () => {
     ).rejects.toBeInstanceOf(AbortError);
   });
 });
+
+describe('OPT: -o (only-matching) content mode', () => {
+  async function fileWith(body: string): Promise<string> {
+    const dir = await mkdtemp(path.join(os.tmpdir(), 'grep-o-'));
+    sandboxes.push(dir);
+    await writeFile(path.join(dir, 'm.txt'), body);
+    return dir;
+  }
+
+  it('multiline + -o extracts a match spanning newlines (was: "No matches found")', async () => {
+    const dir = await fileWith('alpha\nbeta\ngamma\n');
+    const res = await grepTool.execute(
+      { pattern: 'alpha.beta', path: dir, output_mode: 'content', multiline: true, '-o': true },
+      makeCtx(dir),
+    );
+    const c = contentOf(res);
+    expect(c).not.toBe('No matches found');
+    // starting line number (1) + the whole spanning match
+    expect(c).toContain('m.txt:1:alpha\nbeta');
+  });
+
+  it('-o omits empty matches for a zero-length-capable pattern (no blank spam)', async () => {
+    const dir = await fileWith('abc\n');
+    const c = contentOf(
+      await grepTool.execute(
+        { pattern: 'x*', path: dir, output_mode: 'content', '-o': true },
+        makeCtx(dir),
+      ),
+    );
+    // 'x*' matches empty at every offset; ripgrep emits nothing, so the file is
+    // reported as not matching rather than four blank `m.txt:1:` lines.
+    expect(c).toBe('No matches found');
+  });
+
+  it('-o still extracts ordinary single-line matches', async () => {
+    const dir = await fileWith('foo bar foo baz\n');
+    const c = contentOf(
+      await grepTool.execute(
+        { pattern: 'foo', path: dir, output_mode: 'content', '-o': true },
+        makeCtx(dir),
+      ),
+    );
+    const lines = c.split('\n');
+    expect(lines).toHaveLength(2); // two 'foo' occurrences, each on its own line
+    expect(lines.every((l) => l.endsWith('m.txt:1:foo'))).toBe(true);
+  });
+});

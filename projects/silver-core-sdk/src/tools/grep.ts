@@ -438,16 +438,39 @@ export const grepTool: BuiltinTool = {
       if (onlyMatching) {
         // Print each matched substring on its own line; context is ignored.
         const re = new RegExp(pattern, flags.includes('g') ? flags : `${flags}g`);
+        if (multiline) {
+          // A multiline pattern's match can SPAN newlines, so a per-line exec
+          // would extract nothing and report "No matches found" for a file the
+          // scanner already flagged as matching. Scan the reconstructed whole
+          // content instead and emit each match with its STARTING line number
+          // (ripgrep -oU semantics).
+          const text = scan.lines.join('\n');
+          const offsets = lineStartOffsets(text);
+          let m: RegExpExecArray | null;
+          while ((m = re.exec(text)) !== null) {
+            if (m[0].length === 0) {
+              re.lastIndex++; // zero-length match: advance, emit nothing
+              continue;
+            }
+            if (out.length >= collectCap) break;
+            const lineNo = showLineNumbers ? `${lineIndexAt(offsets, m.index) + 1}:` : '';
+            out.push(`${file}:${lineNo}${clipLine(m[0])}`);
+          }
+          continue;
+        }
         for (const i of scan.matches) {
           if (out.length >= collectCap) break;
           const line = scan.lines[i] ?? '';
           re.lastIndex = 0;
           let m: RegExpExecArray | null;
           while ((m = re.exec(line)) !== null) {
+            if (m[0].length === 0) {
+              re.lastIndex++; // zero-length match: advance without emitting a
+              continue; //       spurious empty line (ripgrep omits empty matches)
+            }
             if (out.length >= collectCap) break;
             const lineNo = showLineNumbers ? `${i + 1}:` : '';
             out.push(`${file}:${lineNo}${clipLine(m[0])}`);
-            if (m[0].length === 0) re.lastIndex++; // avoid zero-length loop
           }
         }
         continue;

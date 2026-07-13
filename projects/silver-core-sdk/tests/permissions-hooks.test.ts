@@ -839,6 +839,18 @@ describe('matcherMatches', () => {
     expect(matcherMatches('(a+){2,}', value)).toBe(false);
   });
 
+  // The original flat-regex detector used [^()] around the inner quantifier, so
+  // a quantified group wrapping ANOTHER group evaded it and still froze the
+  // event loop. These deeper-nested shapes must also be flagged, fast.
+  it('flags DEEPLY nested quantifier shapes and returns quickly', () => {
+    const evil = 'a'.repeat(40) + 'b';
+    for (const pat of ['((a+))+$', '(a(b+))+$', '((a|b)+)+$', '(x(y+)z)*$']) {
+      const started = Date.now();
+      expect(matcherMatches(pat, evil)).toBe(false);
+      expect(Date.now() - started).toBeLessThan(100);
+    }
+  });
+
   it('caps an over-long regex input value as no-match (#24)', () => {
     expect(matcherMatches('x.*', 'x'.repeat(5000))).toBe(false);
   });

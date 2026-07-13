@@ -206,6 +206,27 @@ export class DefaultPermissionGate implements PermissionGate {
       return { decision: 'allow', updatedInput: effectiveInput };
     }
 
+    // ----- STEP 4a: auto-classifier DENY (applies even on an ask route) -------
+    // The auto classifier's `deny` is a hard deny that must survive an active
+    // ask route, exactly as the module invariant states ("an ask route can never
+    // widen permissions"). Evaluating it inside the `!routeToPrompt` switch below
+    // meant any ask route (hook 'ask', a session ask rule, requiresUserInteraction,
+    // sandboxEscape) skipped the classifier entirely and routed a classifier-DENY
+    // call to canUseTool — which could ALLOW it, inverting deny > ask. So the deny
+    // verdict is checked here, regardless of routeToPrompt. A hook 'allow' (the
+    // deliberate escape hatch resolved just above) still outranks it. The 'allow'
+    // / 'prompt' verdicts stay in the mode step so an ask route still prompts.
+    if (this.mode === 'auto' && !hookAllow) {
+      const cls = this.classifier(toolName, input, { readOnly, isFileEdit });
+      if (cls === 'deny') {
+        return this.deny(toolName, toolUseID, input, 'auto classifier');
+      }
+      if (!routeToPrompt) {
+        if (cls === 'allow') return { decision: 'allow', updatedInput: input };
+        routeToPrompt = true; // 'prompt'
+      }
+    }
+
     // ----- STEP 4: permission mode (only when no hook-allow / ask route) ------
     if (!hookAllow && !routeToPrompt) {
       switch (this.mode) {
@@ -219,15 +240,10 @@ export class DefaultPermissionGate implements PermissionGate {
           // v0.2: plan ROUTES writes to canUseTool (never a hard deny).
           routeToPrompt = true;
           break;
-        case 'auto': {
-          const cls = this.classifier(toolName, input, { readOnly, isFileEdit });
-          if (cls === 'allow') return { decision: 'allow', updatedInput: input };
-          if (cls === 'deny') {
-            return this.deny(toolName, toolUseID, input, 'auto classifier');
-          }
-          routeToPrompt = true; // 'prompt'
+        case 'auto':
+          // Resolved in step 4a above (deny already returned; allow/prompt
+          // handled there). Nothing left to decide here.
           break;
-        }
         case 'default':
         case 'dontAsk':
           if (readOnly) return { decision: 'allow', updatedInput: input };
