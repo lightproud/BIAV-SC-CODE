@@ -211,7 +211,7 @@ function htmlToText(html: string): string {
  * `cap` bytes have accumulated. `overflow` is true when the source exceeded the
  * cap (so the caller can mark the output truncated).
  */
-async function readCappedBody(
+export async function readCappedBody(
   response: Response,
   cap: number,
 ): Promise<{ buf: Buffer; overflow: boolean }> {
@@ -231,7 +231,13 @@ async function readCappedBody(
       if (done) break;
       if (!value || value.byteLength === 0) continue;
       const remaining = cap - total;
-      if (value.byteLength >= remaining) {
+      // Strictly GREATER than remaining = genuine overflow (this chunk carries
+      // more than fits). A chunk that EXACTLY fills the cap is not overflow —
+      // take it whole and let the next read()'s `done` distinguish "body is
+      // exactly `cap` bytes" (no overflow) from "more follows" (overflow on the
+      // next iteration, where remaining is 0). Mirrors the non-stream fallback's
+      // `full.length > cap`; `>=` here falsely flagged an exactly-cap body.
+      if (value.byteLength > remaining) {
         if (remaining > 0) chunks.push(Buffer.from(value.subarray(0, remaining)));
         overflow = true;
         break;

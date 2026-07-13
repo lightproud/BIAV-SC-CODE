@@ -535,6 +535,11 @@ export class JsonlSessionStore implements SessionStore {
           if (typeof entry.customTitle === 'string') customTitle = entry.customTitle;
           if (typeof entry.tag === 'string') tag = entry.tag;
           else if (entry.tag === null) tag = undefined;
+          // Mirror load(): a meta_update may carry an updated gitBranch (a
+          // documented meta_update field). Omitting it here made list()/
+          // getSessionInfo report a stale branch while load() reported the new
+          // one for the same session.
+          if (typeof entry.gitBranch === 'string') gitBranch = entry.gitBranch;
         } else if (entry.type === 'pending_turn' && typeof entry.uuid === 'string') {
           openPending.set(
             entry.uuid,

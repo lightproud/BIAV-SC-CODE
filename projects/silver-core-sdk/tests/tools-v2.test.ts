@@ -12,7 +12,7 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 vi.mock('node:dns/promises', () => ({ lookup: vi.fn() }));
 import { lookup } from 'node:dns/promises';
 
-import { webFetchTool } from '../src/tools/webfetch.js';
+import { webFetchTool, readCappedBody } from '../src/tools/webfetch.js';
 import { webSearchTool } from '../src/tools/websearch.js';
 import { askUserQuestionTool } from '../src/tools/askuserquestion.js';
 import { todoWriteTool } from '../src/tools/todo.js';
@@ -302,9 +302,42 @@ describe('webFetchTool', () => {
     const r = await webFetchTool.execute({ url: 'https://example.com', prompt: 'x' }, ctx);
     expect(r.isError).toBeUndefined();
     expect(String(r.content)).toContain('[truncated]');
-    // The reader is cancelled at the cap; before the fix arrayBuffer() drained
-    // all 20MB into memory.
-    expect(pulled).toBeLessThanOrEqual(5 * 1024 * 1024 + chunk);
+    // The reader is cancelled shortly past the cap; before the fix arrayBuffer()
+    // drained all 20MB into memory. The bound allows a couple of extra chunks:
+    // the correct overflow check reads one chunk to fill the cap and one more to
+    // confirm overflow, plus the stream's 1-chunk prefetch — still O(cap), not 20MB.
+    expect(pulled).toBeLessThanOrEqual(5 * 1024 * 1024 + 3 * chunk);
+  });
+
+  it('readCappedBody: body EXACTLY at the cap is not overflow; one more byte is', async () => {
+    const cap = 1024;
+    const makeStream = (total: number, chunkSize: number): ReadableStream<Uint8Array> => {
+      let sent = 0;
+      return new ReadableStream<Uint8Array>({
+        pull(controller) {
+          if (sent >= total) {
+            controller.close();
+            return;
+          }
+          const n = Math.min(chunkSize, total - sent);
+          controller.enqueue(new Uint8Array(n).fill(97));
+          sent += n;
+        },
+      });
+    };
+    // Exactly cap bytes, delivered as a chunk that lands right on the boundary:
+    // the whole body arrived, so overflow must be false (was true under `>=`).
+    const exact = await readCappedBody(new Response(makeStream(cap, 256)), cap);
+    expect(exact.overflow).toBe(false);
+    expect(exact.buf.length).toBe(cap);
+    // One byte over the cap is genuine overflow, capped to `cap` bytes.
+    const over = await readCappedBody(new Response(makeStream(cap + 1, 256)), cap);
+    expect(over.overflow).toBe(true);
+    expect(over.buf.length).toBe(cap);
+    // A single chunk that exactly equals the cap: also not overflow.
+    const oneShot = await readCappedBody(new Response(makeStream(cap, cap)), cap);
+    expect(oneShot.overflow).toBe(false);
+    expect(oneShot.buf.length).toBe(cap);
   });
 
   // -- finding 8: IPv6-literal hostnames (URL keeps the brackets) -------------

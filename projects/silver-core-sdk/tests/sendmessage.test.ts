@@ -44,6 +44,32 @@ import type {
   RawMessageStreamEvent,
 } from '../src/types.js';
 import { MockTransport, textReplyEvents } from './helpers/mock-transport.js';
+import { AbortError } from '../src/errors.js';
+
+/** Completes the initial run (stream call 0), then stalls every later stream
+ *  (the SendMessage continuation): one event to touch the watchdog, then silent
+ *  until the signal aborts. */
+class StallOnContinuationTransport extends MockTransport {
+  private n = 0;
+  override async *stream(
+    req: StreamRequest,
+  ): AsyncGenerator<RawMessageStreamEvent, void> {
+    const idx = this.n++;
+    if (idx === 0) {
+      yield* super.stream(req);
+      return;
+    }
+    yield textReplyEvents('x')[0]!; // one event, then go silent
+    await new Promise<void>((_, reject) => {
+      const sig = req.signal;
+      if (sig?.aborted) {
+        reject(new AbortError());
+        return;
+      }
+      sig?.addEventListener('abort', () => reject(new AbortError()), { once: true });
+    });
+  }
+}
 
 // ---------------------------------------------------------------------------
 // Fakes / builders (same shapes as tests/subagents.test.ts)
@@ -126,6 +152,7 @@ function makeRuntime(cfg: {
   baseBuiltins?: Map<string, BuiltinTool>;
   store?: SessionStore;
   persist?: boolean;
+  env?: Record<string, string | undefined>;
 }) {
   const engineConfig = makeConfig();
   const opts: SubagentRuntimeOptions = {
@@ -139,7 +166,7 @@ function makeRuntime(cfg: {
     store: cfg.store,
     persist: cfg.persist,
     cwd: '/tmp/sendmsg-test',
-    env: {},
+    env: cfg.env ?? {},
     additionalDirectories: [],
     outerSignal: new AbortController().signal,
     sessionId: () => engineConfig.sessionId,
@@ -395,6 +422,36 @@ describe('SubagentRuntime.sendMessage — background flow', () => {
     const spawned = await runtime.makeSpawnFn(0)(baseParams());
     expect(runtime.stopAgent(spawned.agentId)).toContain('already completed');
     expect(runtime.stopAgent('nope')).toBeUndefined();
+  });
+
+  it('a STALLED background continuation surfaces a FAILED note (coordinator not left waiting)', async () => {
+    // The initial run completes; the SendMessage continuation stalls. Without a
+    // continuation stall watchdog the reply promise never settles and the
+    // coordinator (polling drainCompletedResults) waits forever. The watchdog
+    // must abort the stalled continuation AND surface a FAILED task-notification.
+    const transport = new StallOnContinuationTransport([textReplyEvents('bg done')]);
+    const runtime = makeRuntime({
+      transport,
+      env: { CLAUDE_ASYNC_AGENT_STALL_TIMEOUT_MS: '20' }, // trip fast
+    });
+    const spawned = await runtime.makeSpawnFn(0)(
+      baseParams({ runInBackground: true, description: 'bg worker' }),
+    );
+    await runtime.settleAll();
+    runtime.drainCompletedResults(); // clear the initial completion note
+
+    const ack = await runtime.sendMessage({
+      to: spawned.agentId,
+      message: 'one more thing',
+      signal: new AbortController().signal,
+    });
+    expect(ack.isError).toBe(false); // background ack is immediate
+    await runtime.settleAll();
+    const notes = runtime.drainCompletedResults();
+    expect(notes).toHaveLength(1);
+    expect(notes[0]!.text.toLowerCase()).toContain('failed');
+    expect(notes[0]!.text.toLowerCase()).toContain('stalled');
+    expect(notes[0]!.text).toContain(spawned.agentId);
   });
 });
 

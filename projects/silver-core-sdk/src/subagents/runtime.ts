@@ -1337,7 +1337,16 @@ export function createSubagentRuntime(
       }
       record.status = result.isError ? 'failed' : 'completed';
       emitTaskFinished(agentId, result);
-      await fireSubagentStop(agentId, resolved.type, params.signal);
+      // Fire the stop hook with a FRESH signal and swallow its errors, mirroring
+      // the background path: the child has already finished (result + usage are
+      // computed), so an outer abort landing during the stop-hook await must not
+      // reject spawn() and DISCARD the completed answer. The hook is a
+      // notification here, not a gate on returning the result.
+      await fireSubagentStop(
+        agentId,
+        resolved.type,
+        new AbortController().signal,
+      ).catch(() => undefined);
       return {
         content: `${result.text}\n\nagentId: ${agentId}`,
         isError: result.isError,
@@ -1361,6 +1370,7 @@ export function createSubagentRuntime(
     if (record.controller.signal.aborted) {
       record.controller = new AbortController();
     }
+    const contController = record.controller;
     record.status = 'running';
     record.history.push({ role: 'user', content: params.message });
     // Fresh signal composition: the spawn-time ToolContext signal belonged to
@@ -1370,12 +1380,21 @@ export function createSubagentRuntime(
     const contSignal = AbortSignal.any([
       outerSignal,
       params.signal,
-      record.controller.signal,
+      contController.signal,
     ]);
     const contDeps: EngineDeps = {
       ...record.deps,
       toolContext: { ...record.deps.toolContext, signal: contSignal },
     };
+    // Stall watchdog for the continuation too (twin of the initial background
+    // launch). Without it a SendMessage continuation whose stream goes silent
+    // never aborts, so `turn` never settles, the background delivery promise
+    // never pushes its <task-notification>, and a coordinator waiting on the
+    // reply hangs until whole-query teardown. touch() rides every stream event.
+    const stallWatchdog = new StallWatchdog({
+      timeoutMs: resolveStallTimeoutMs(env),
+      onStall: () => contController.abort(),
+    });
     try {
       const result = await runChildToCompletion(
         record.history,
@@ -1383,13 +1402,31 @@ export function createSubagentRuntime(
         record.config,
         agentId,
         record.sidechain,
+        stallWatchdog,
       );
       record.status = result.isError ? 'failed' : 'completed';
       emitTaskFinished(agentId, result);
       return result;
     } catch (err) {
       if (record.status === 'running') record.status = 'failed';
+      // A stall-watchdog abort has NO cancellation site (unlike stopTask/close,
+      // whose notes are emitted at the kill site). Surface it as an error RESULT
+      // rather than throwing: for a BACKGROUND continuation the delivery promise
+      // only pushes a <task-notification> on the .then (success/error result),
+      // so a thrown abort is swallowed by its .catch and the coordinator polling
+      // completedBuffer never learns the continuation died. Returning an error
+      // result routes through the .then and surfaces a FAILED note — mirroring
+      // the initial background run's stallWatchdog.stalled handling.
+      if (stallWatchdog.stalled) {
+        const message =
+          `stalled: no stream event for ${resolveStallTimeoutMs(env)}ms; ` +
+          `aborted by the stall watchdog`;
+        emitTaskFinished(agentId, { text: message, isError: true });
+        return { text: message, isError: true, usage: { totalTokens: 0, toolUses: 0, durationMs: 0 } };
+      }
       throw err;
+    } finally {
+      stallWatchdog.dispose();
     }
   }
 
