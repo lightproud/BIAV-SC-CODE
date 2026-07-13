@@ -104,3 +104,28 @@ node tests/integration/soak-emulator.mjs --duration-min=480 --snapshot-sec=300 -
 node tests/integration/soak-report.mjs --in=/tmp/soak.jsonl
 ```
 存活清单提取：读 `reports/mutation/mutation.json`（gitignored，跑完即有）按 status 过滤。
+
+---
+
+## 追记（2026-07-13 上午）：T39 openai 专场 + T21 银芯侧收口
+
+**T39 openai.ts 变异歼灭专场（守密人裁「派专场」，同日执行）**：五批 52 击杀、
+四轮复测（单文件轮约 10 分钟），**62.81% → 80.60%**（击杀 608→781、存活 251→180、
+无覆盖 109→**8**）。批次构成：① 编码器 14（tool_result 摊平 is_error 标记/图像文档兜底、
+tool_choice 四形、回合扇出、body 装配优先级）；② 解码器 10（交错 tool_calls 按 index 组装、
+迟到/缺失 id、reasoning→thinking、finish_reason 映射、缓存 token 拆分、流中错误分类、
+stream_options 可压制）；③ 请求路径 12（preconnect、并发闸、Claude 型号警告、空体、
+畸形 SSE、硬顶、网络重试与中止）；④ HTTP 错误路径 7（状态分类表全 case、错误体四形、
+重试耗尽、可重试状态镜像）；⑤ 状态机微语义 9（message_start 精确形、空 delta 不开块、
+null usage 不覆写、空串 id 不采认、无参不发空 delta）。**残余 180 存活为深层语义长尾**
+（逐批收益 6.2→5.1→4.5→2.0pp 衰减），85% 目标未及、以 80.60% 诚实结算，
+清单在 `reports/mutation/mutation.json`（gitignore，按需重生成）。
+比喻：油田先抽的是自喷井，五轮之后剩下的都是要注水才出油的深井——按桶算账不再划算，留账待下一场。
+
+**T21 银芯侧收口**：② 企业代理配方由「文档」升「实证」——`tests/transport-proxy-recipe.test.ts`
+经真本地正向代理进程验证机制三件（含重试的每次请求都过代理 / SSE 与鉴权头存活代理跳 /
+中止经注入 fetch 传播），厂商中立（undici EnvHttpProxyAgent 为消费方侧依赖，文档配方不变）；
+③ preconnect 默认值裁定工具——`tests/integration/preconnect-probe.mjs`（黑池箱上对真网关跑
+`PROBE_BASE_URL=... node ...`，出 OFF/ON 中位 TTFT 与建议），回环自证零差符合预期。
+T21 ①③ 黑池侧账目照挂（升级消费 + 真机探针跑数后定默认值）。
+
