@@ -199,6 +199,15 @@
 > 银芯→黑池单向输出物，与 §1.1-HC 防火墙同向，非 BPT 产品内部开发。
 
 - **动手前必读**：`projects/silver-core-sdk/CONTEXT.md`（会话上下文 + 当前 milestone）
+- **v0.59.0（2026-07-14，BPT `/loop` 缺口收口，守密人同日裁定「SDK 侧加循环原语」）**：
+  BPT 调查确认 `/loop 10m <任务>` 未被任何层解释、原样透传为一次性 prompt（GUI 未注册 /loop、
+  SDK 斜杠层仅 /compact 内建 + markdown 展开、周期语义静默丢失）。新公开模块 `src/prompt-loop.ts`
+  （BPT-EXTENSION）：`parseLoopCommand` 语法唯一真相源（`/loop [<interval>] <task>`，s/m/h + 别名 +
+  小数，缺省 10m，三态返回、数字开头非法区间 fail-closed、界 [1s, 2^31-1ms] 防 setTimeout 溢出）+
+  `createPromptLoop` 固定延迟控制器（立即首跑、结清后再计时绝不重叠、maxIterations / AbortSignal /
+  onError 策略、done 摘要永不 reject）+ `LOOP_SLASH_COMMAND` 菜单元数据（刻意不进引擎内建，守诚实
+  红线）。BPT 侧只余十行桥接（README 附范本）。+24 测试，全量 **2384 绿 + 2 skipped**；
+  「循环/调度」自 v0.5 推迟清单转正落地。
 - **v0.53.3（2026-07-13，BPT 稳定性《keep-alive 空闲 socket TTL》）**：修复黑池升 pin 后
   「回合卡住无输出、并发对话越多越易发」——0.45.0 默认 node HTTP 客户端把池化 socket 握到
   「服务端来关」为止，但 azure/* 等网关中间设备**静默丢弃**空闲连接（不发 FIN/RST），池内积累
