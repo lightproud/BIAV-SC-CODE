@@ -145,7 +145,7 @@ function appendContext(
   return [...content, ...extra.map((text): TextBlockParam => ({ type: 'text', text }))];
 }
 
-export { mkToolError };
+export { mkToolError, toAbortError };
 
 export type ToolDispatcherConfig = {
   deps: Pick<

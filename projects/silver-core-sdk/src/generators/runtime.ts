@@ -149,7 +149,6 @@ export function extractJsonObject(text: string): unknown {
     let depth = 0;
     let inString = false;
     let escaped = false;
-    let closed = false;
     for (let i = searchFrom; i < trimmed.length; i += 1) {
       const ch = trimmed[i];
       if (inString) {
@@ -165,14 +164,12 @@ export function extractJsonObject(text: string): unknown {
         if (depth === 0) {
           const parsed = tryParse(trimmed.slice(searchFrom, i + 1));
           if (parsed !== undefined) return parsed;
-          closed = true; // balanced but unparseable -> try the next '{'
-          break;
+          break; // balanced but unparseable -> try the next '{' (audit 2026-07-14 L-9c)
         }
       }
     }
     // Whether the group closed-but-failed or never balanced, advance to the
     // next candidate '{' after the current start.
-    void closed;
     searchFrom = trimmed.indexOf('{', searchFrom + 1);
   }
   return null;

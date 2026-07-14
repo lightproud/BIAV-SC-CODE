@@ -140,6 +140,14 @@ export class StdioMcpConnection {
       this.debug(`[mcp:${this.label}] stdin error: ${err.message}`);
     });
     child.on('error', (err: Error) => {
+      // audit 2026-07-14 L-5: a spawn failure (ENOENT etc.) fires 'error' but
+      // NOT 'exit', so without flipping closed state here the connection stays
+      // nominally "open" — a later request() would write to a dead stdin and
+      // hang for the full 60s request timeout. Mark it closed (mirrors the
+      // 'exit' handler) and drop the child so subsequent request()/write()
+      // fail FAST with mcp_not_connected.
+      this.closed = true;
+      this.child = null;
       this.failAllPending(
         new McpError(
           'mcp_process_error',

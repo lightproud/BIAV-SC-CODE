@@ -22,23 +22,18 @@ import type {
   APIAssistantMessage,
   APIMessageParam,
   APIToolDefinitionParam,
-  CallToolResult,
   ContentBlock,
-  DocumentBlockParam,
-  ImageBlockParam,
   JSONSchema,
   ModelUsage,
   NonNullableUsage,
   RawMessageStreamEvent,
   SDKMessage,
-  SDKPermissionDeniedMessage,
   SDKResultMessage,
   SDKRunMetrics,
   SDKToolMetrics,
   SDKTransportHealth,
   SDKTurnMetrics,
   StopReason,
-  TextBlockParam,
   ToolResultBlockParam,
   ToolUseBlock,
 } from '../types.js';
@@ -48,12 +43,16 @@ import type {
   EngineDeps,
   RetryInfo,
   StreamRequest,
-  ToolResultPayload,
 } from '../internal/contracts.js';
 import { MessageAccumulator } from './accumulator.js';
 import { addUsage, estimateCostUsd, normalizeUsage } from './pricing.js';
 import { contextWindowFor } from './context-window.js';
-import { createToolDispatcher, mkToolError, type ToolExecOutcome } from './tool-dispatch.js';
+import {
+  createToolDispatcher,
+  mkToolError,
+  toAbortError,
+  type ToolExecOutcome,
+} from './tool-dispatch.js';
 import { deriveSystemField } from './system-field.js';
 import { supportsAdaptiveThinking } from './thinking-model.js';
 import { estimateToolDefsTokens } from './tokens.js';
@@ -114,14 +113,6 @@ function replayBackoff(attempt: number, signal: AbortSignal): Promise<void> {
     // to a pending retry.
     signal.addEventListener('abort', onAbort, { once: true });
   });
-}
-
-/** Wrap any abort-shaped error into this SDK's AbortError. */
-function toAbortError(err: unknown): AbortError {
-  if (err instanceof AbortError) return err;
-  const message =
-    err instanceof Error ? err.message : 'The operation was aborted';
-  return new AbortError(message);
 }
 
 /** Fallback-eligible API statuses: rate limit and server-side failures. */
@@ -644,7 +635,7 @@ export async function* runAgentLoop(
   let toolDefsEstimateKey: string | undefined;
   let toolDefsEstimate = 0;
   const currentOverheadTokens = (defs: APIToolDefinitionParam[]): number => {
-    const key = defs.map((d) => d.name).join(' ');
+    const key = defs.map((d) => d.name).join('\x00');
     if (key !== toolDefsEstimateKey) {
       toolDefsEstimate = estimateToolDefsTokens(defs);
       toolDefsEstimateKey = key;

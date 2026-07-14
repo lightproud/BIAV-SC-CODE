@@ -21,7 +21,7 @@ import { join } from 'node:path';
 import { AbortError } from '../errors.js';
 import { guardRegexPattern } from '../internal/regex-guard.js';
 import { planShellSpawn } from '../sandbox/backend.js';
-import { planProcessKill, terminalStatus } from './kill-plan.js';
+import { createTreeKiller, terminalStatus } from './kill-plan.js';
 import { detectSandboxEvidence, sandboxFailureHint } from '../sandbox/evidence.js';
 import type {
   BackgroundShell,
@@ -88,34 +88,11 @@ export function createShellManager(debug: (msg: string) => void): ShellManager {
         return { error: err instanceof Error ? err.message : String(err) };
       }
 
-      // Windows has no POSIX process groups/signals: taskkill /T /F is one
-      // forcible pass over the whole tree, so the SIGTERM->SIGKILL escalation
-      // collapses to a single call (a second is a harmless no-op once gone).
-      let winKilled = false;
-      const killGroup = (sig: string): void => {
-        const plan = planProcessKill(child.pid, sig);
-        try {
-          if (plan.kind === 'group') {
-            process.kill(-plan.pid, plan.signal as NodeJS.Signals); // win-ok: posix branch of planProcessKill
-          } else if (plan.kind === 'child') {
-            child.kill(plan.signal as NodeJS.Signals);
-          } else {
-            // taskkill (Windows): fire once, best-effort, never blocks.
-            if (winKilled) return;
-            winKilled = true;
-            const tk = spawn('taskkill', ['/PID', String(plan.pid), '/T', '/F'], {
-              stdio: 'ignore',
-            });
-            tk.on('error', (e) => debug(`Bash: taskkill failed for pid ${plan.pid}: ${e.message}`));
-            tk.unref();
-          }
-        } catch (err) {
-          // Benign when the process/group already exited; surface anything
-          // else to debug instead of swallowing it (the old empty catch hid
-          // the Windows failure that made KillShell a silent no-op).
-          debug(`Bash: kill(${sig}) failed for shell ${id}: ${err instanceof Error ? err.message : String(err)}`);
-        }
-      };
+      // Terminate the shell's whole tree, platform-correctly: POSIX signals
+      // the process group (-pid); Windows uses one taskkill /T /F pass.
+      // Shared executor createTreeKiller (kill-plan.ts) — dedup with bash.ts
+      // foreground killGroup, audit 2026-07-14 L-10.
+      const killGroup = createTreeKiller(child, debug, ` for shell ${id}`);
 
       const rec: BackgroundShell = {
         id,

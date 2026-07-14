@@ -652,7 +652,15 @@ export class AnthropicTransport implements Transport {
     const exponential = BACKOFF_BASE_MS * BACKOFF_FACTOR ** (attempt - 1);
     // Bounded jitter in [0.5, 1.0] x the exponential delay.
     const jittered = exponential * (0.5 + Math.random() * 0.5);
-    const delay = retryAfterMs ?? Math.min(jittered, BACKOFF_MAX_MS);
+    // audit 2026-07-14 L-2: jitter the explicit Retry-After path too. Without
+    // it a fan-out of subagents that all receive the same "Retry-After: 30"
+    // wake in the SAME instant (thundering herd). Spread DOWN into
+    // [0.85, 1.0] x the header value — never ABOVE it, so the server's floor
+    // is still respected; the parser already caps the header (RETRY_AFTER_MAX_MS).
+    const delay =
+      retryAfterMs !== undefined
+        ? retryAfterMs * (0.85 + Math.random() * 0.15)
+        : Math.min(jittered, BACKOFF_MAX_MS);
     this.debug(`transport: backing off ${Math.round(delay)}ms`);
     await sleep(delay, signal);
   }
