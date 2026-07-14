@@ -656,6 +656,76 @@ describe('OpenAIStreamTranslator', () => {
     ]);
   });
 
+  // Missing-finish_reason inference (audit 2026-07-14 M-5): a gateway that
+  // ends a tool-call stream with a bare [DONE] / EOF and never sends
+  // finish_reason must still yield stop_reason 'tool_use' — mapping it to
+  // 'end_turn' makes the engine treat the turn as final and silently drop
+  // the model's tool calls.
+  it('infers stop_reason tool_use when the stream ends without finish_reason after tool_call deltas', () => {
+    const t = new OpenAIStreamTranslator('m');
+    const events = [
+      ...t.feed({
+        id: 'c',
+        choices: [
+          {
+            delta: {
+              tool_calls: [
+                { index: 0, id: 'call_a', function: { name: 'Read', arguments: '{}' } },
+              ],
+            },
+          },
+        ],
+      }),
+      // Bare [DONE] / EOF: the transport calls finish() with no finish_reason seen.
+      ...t.finish(),
+    ];
+    const acc = new MessageAccumulator();
+    for (const ev of events) acc.feed(ev);
+    const msg = acc.finalize();
+    expect(msg.stop_reason).toBe('tool_use');
+    expect(msg.content).toEqual([{ type: 'tool_use', id: 'call_a', name: 'Read', input: {} }]);
+  });
+
+  it('keeps stop_reason end_turn for a text-only stream that ends without finish_reason', () => {
+    // The M-5 inference must be scoped to tool calls: a text stream ending in
+    // a bare [DONE] is still a plain final turn.
+    const t = new OpenAIStreamTranslator('m');
+    const events = [
+      ...t.feed({ id: 'c', choices: [{ delta: { content: 'Hello' } }] }),
+      ...t.finish(),
+    ];
+    const acc = new MessageAccumulator();
+    for (const ev of events) acc.feed(ev);
+    const msg = acc.finalize();
+    expect(msg.stop_reason).toBe('end_turn');
+    expect(msg.content).toEqual([{ type: 'text', text: 'Hello' }]);
+  });
+
+  it('never overrides an EXPLICIT finish_reason, even when tool calls were emitted', () => {
+    // A stream that DID carry finish_reason must behave exactly as before
+    // M-5: 'stop' maps to 'end_turn' regardless of open tool_use blocks.
+    const t = new OpenAIStreamTranslator('m');
+    const events = [
+      ...t.feed({
+        id: 'c',
+        choices: [
+          {
+            delta: {
+              tool_calls: [
+                { index: 0, id: 'call_a', function: { name: 'Read', arguments: '{}' } },
+              ],
+            },
+          },
+        ],
+      }),
+      ...t.feed({ choices: [{ delta: {}, finish_reason: 'stop' }] }),
+      ...t.finish(),
+    ];
+    const acc = new MessageAccumulator();
+    for (const ev of events) acc.feed(ev);
+    expect(acc.finalize().stop_reason).toBe('end_turn');
+  });
+
   // A tool-call delta chunk built without deep inline nesting (the embedded
   // JSON braces in `arguments` make hand-counting the object literal error-prone).
   const toolChunk = (

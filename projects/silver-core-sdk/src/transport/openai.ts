@@ -787,9 +787,21 @@ export class OpenAIStreamTranslator {
     this.open.clear();
     const cached = this.usage?.prompt_tokens_details?.cached_tokens ?? 0;
     const prompt = this.usage?.prompt_tokens ?? 0;
+    // Missing finish_reason + tool calls => infer 'tool_use' (audit 2026-07-14
+    // M-5): some gateways end a tool-call stream with a bare [DONE] (or EOF)
+    // and never send finish_reason='tool_calls'. mapFinishReason(null) defaults
+    // to 'end_turn', which makes the engine treat the turn as FINAL and
+    // silently drop the model's tool calls. If this message opened/buffered at
+    // least one tool_use block, the only honest stop_reason is 'tool_use'.
+    // Streams that DID carry a finish_reason are untouched (finishReason is
+    // only set from a non-empty string, so every explicit path is unchanged).
+    const stopReason: StopReason =
+      this.finishReason === null && this.toolBuffers.size > 0
+        ? 'tool_use'
+        : mapFinishReason(this.finishReason);
     events.push({
       type: 'message_delta',
-      delta: { stop_reason: mapFinishReason(this.finishReason), stop_sequence: null },
+      delta: { stop_reason: stopReason, stop_sequence: null },
       // OpenAI prompt_tokens INCLUDES cached tokens; Anthropic input_tokens
       // excludes cache reads — split so pricing/usage semantics line up.
       usage: {
