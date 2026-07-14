@@ -1,7 +1,7 @@
 {
   "generated": "2026-07-14",
   "stats": {
-    "nodes": 351,
+    "nodes": 352,
     "edges": 406
   },
   "nodes": [
@@ -3094,6 +3094,17 @@
       "id": "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md",
       "type": "documentation",
       "title": "markdown-consistency-audit-20260628",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
+      "type": "documentation",
+      "title": "memory-tool-usage-prompt-20260714",
       "tags": [
         "data_layer:curated",
         "deliverable",
