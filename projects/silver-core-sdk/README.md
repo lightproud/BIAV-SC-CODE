@@ -124,7 +124,7 @@ const q = query({
       baseUrl: 'https://my-gateway.example.com',
       maxRetries: 4,
       timeoutMs: 600_000,
-      maxOutputTokens: 8192,
+      maxOutputTokens: 8192,           // default: 8192 (anthropic) / 128000 (openai-chat)
       defaultHeaders: { 'x-team': 'bpt' },
     },
   },

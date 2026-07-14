@@ -76,6 +76,19 @@ Related (on `provider`, not protocol-specific): **`provider.pricing`** — USD-p
 entries keyed by model-id prefix, merged over the static Claude table. Setting it
 makes cost metrics and `maxBudgetUsd` enforceable for non-Claude models.
 
+**`provider.maxOutputTokens`** — per-request output cap (`max_tokens`, or the
+configured `maxTokensParam`). The default is protocol-aware since v0.57.0:
+**128000 on `openai-chat`** (the previous global 8192 starved agentic turns on
+large-output gateway models), 8192 on `anthropic` (that API 400s a cap above
+the model's ceiling and no per-model table is bundled). A gateway/model whose
+ceiling is below the cap rejects the request with a clear `APIStatusError`
+(HTTP 400, the server's own message preserved, not retried) — set the value
+explicitly to match your endpoint. Cross-protocol caveat: a transport-switched
+subagent (`resolveSubagentTransport`) inherits the parent's resolved cap, so an
+openai-chat parent on the 128000 default routing a child to an Anthropic-route
+Claude model will get that clear 400 — pass an explicit `maxOutputTokens`
+when mixing protocols.
+
 ## Translation map
 
 | Messages API | Chat Completions |

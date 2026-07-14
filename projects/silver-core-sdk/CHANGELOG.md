@@ -16,6 +16,25 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.57.0 — 2026-07-14
+
+**openai-chat default maxOutputTokens 8192 -> 128000 (BPT ruling 2026-07-14).**
+The global 8192 default rode onto every OpenAI-compatible request as
+`max_tokens: 8192`, starving agentic turns on large-output gateway models. The
+default is now PROTOCOL-AWARE: 128000 on `openai-chat`, 8192 unchanged on
+`anthropic` (that API 400s a max_tokens above the model's output ceiling —
+e.g. claude-sonnet-4-5 caps at 64000 — and no per-model output table is
+bundled, so a blanket 128000 would have killed default Claude sessions on
+turn 1). `provider.maxOutputTokens` overrides either default, both directions.
+Boundary behavior locked by tests (`tests/max-output-tokens-default.test.ts`):
+128000 is sendable (incl. via `maxTokensParam` rename); a gateway whose model
+caps lower rejects with a clear surfaced `APIStatusError` (HTTP 400,
+`invalid_request_error`, the server's own message preserved verbatim, exactly
+one POST — 400 is never retried). Cross-protocol subagent caveat documented in
+OPENAI-PROTOCOL.md. Removed a dead duplicate `DEFAULT_MAX_OUTPUT_TOKENS` in
+query.ts. BPT: passing an explicit 128000 keeps working and is now redundant
+on openai-chat.
+
 ## 0.56.0 — 2026-07-13
 
 **openai-chat image input: hardened translation + tool_result fan-out + PDF
