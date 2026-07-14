@@ -1,5 +1,8 @@
 node_modules/
 dist/
+# npm pack tarballs are build artifacts shipped to 黑池 (BPT pins them); never
+# commit them — an 865 KB blob would trip the pre-push fat-pack firewall.
+*.tgz
 *.tsbuildinfo
 .vitest-cache/
 conformance-l1.json

@@ -225,6 +225,9 @@ export function buildEngineConfig(args: {
   const engineConfig: EngineConfig = {
     model: initialModel,
     fallbackModel: options.fallbackModel,
+    // Provider label for normalized errors: map the wire protocol to a stable
+    // backend name a host can branch on ('openai-chat' -> 'openai').
+    providerLabel: options.provider?.protocol === 'openai-chat' ? 'openai' : 'anthropic',
     maxOutputTokens:
       options.provider?.maxOutputTokens ??
       (options.provider?.protocol === 'openai-chat'

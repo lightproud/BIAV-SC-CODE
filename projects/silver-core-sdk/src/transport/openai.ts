@@ -46,6 +46,7 @@ import {
   ConfigurationError,
   isAbortError,
 } from '../errors.js';
+import { extractProviderErrorObject } from '../error-normalize.js';
 import type {
   APIMessageParam,
   APIToolDefinition,
@@ -1054,11 +1055,13 @@ export class OpenAIChatTransport implements Transport {
             // a mid-stream rate-limit / quota / auth error must classify as
             // 429 / 401 etc. so the engine's fallback + the caller see the right
             // class (the Anthropic arm likewise maps its in-stream error type).
+            // A `status` the gateway put in the body wins over the derived one.
             throw new APIStatusError(
-              statusForOpenAIErrorType(info.type),
+              info.status ?? statusForOpenAIErrorType(info.type),
               info.type,
               info.message,
-              requestId,
+              info.requestId ?? requestId,
+              info.code !== undefined ? { providerErrorCode: info.code } : undefined,
             );
           }
           chunkCount += 1;
@@ -1242,7 +1245,12 @@ export class OpenAIChatTransport implements Transport {
           this.debug(
             `openai transport: network error (${errorMessage(err)}); retry ${retryBudget.used}/${maxRetries}`,
           );
-          onRetry?.({ attempt: retryBudget.used, maxRetries, kind: 'network' });
+          onRetry?.({
+            attempt: retryBudget.used,
+            maxRetries,
+            kind: 'network',
+            message: errorMessage(err),
+          });
           await this.backoff(retryBudget.used, undefined, callerSignal);
           continue;
         }
@@ -1259,11 +1267,12 @@ export class OpenAIChatTransport implements Transport {
 
       const requestId = response.headers.get('x-request-id') ?? response.headers.get('request-id') ?? undefined;
       const info = await readOpenAIErrorInfo(response);
+      const resolvedRequestId = requestId ?? info.requestId;
+      const retryAfterMs = parseRetryAfterMs(response.headers.get('retry-after'));
       const retryable =
         response.status === 408 || response.status === 429 || response.status >= 500;
       if (retryable && retryBudget.used < maxRetries) {
         retryBudget.used += 1;
-        const retryAfterMs = parseRetryAfterMs(response.headers.get('retry-after'));
         this.debug(
           `openai transport: HTTP ${response.status} (${info.type}); retry ${retryBudget.used}/${maxRetries}`,
         );
@@ -1273,12 +1282,24 @@ export class OpenAIChatTransport implements Transport {
           status: response.status,
           errorType: info.type,
           kind: 'http_status',
+          message: info.message,
+          ...(resolvedRequestId !== undefined ? { requestId: resolvedRequestId } : {}),
+          ...(info.code !== undefined ? { code: info.code } : {}),
           ...(retryAfterMs !== undefined ? { retryAfterMs } : {}),
         });
         await this.backoff(retryBudget.used, retryAfterMs, callerSignal);
         continue;
       }
-      throw new APIStatusError(response.status, info.type, info.message, requestId);
+      throw new APIStatusError(
+        response.status,
+        info.type,
+        info.message,
+        resolvedRequestId,
+        {
+          ...(info.code !== undefined ? { providerErrorCode: info.code } : {}),
+          ...(retryAfterMs !== undefined ? { retryAfterMs } : {}),
+        },
+      );
     }
   }
 
@@ -1366,23 +1387,51 @@ function statusForOpenAIErrorType(type: string): number {
   }
 }
 
-function extractOpenAIError(error: unknown): { type: string; message: string } {
+/** Diagnostic fields lifted from an OpenAI-protocol error payload. */
+type OpenAIErrorInfo = {
+  type: string;
+  message: string;
+  code?: string;
+  status?: number;
+  requestId?: string;
+};
+
+function extractOpenAIError(error: unknown): OpenAIErrorInfo {
   if (typeof error === 'object' && error !== null) {
-    const type = (error as { type?: unknown }).type;
-    const message = (error as { message?: unknown }).message;
-    return {
+    const e = error as Record<string, unknown>;
+    const type = e.type;
+    const message = e.message;
+    // Meta (status/code/request_id) is lifted via the shared extractor by
+    // wrapping the error object in an `error` envelope; the MESSAGE keeps the
+    // historical semantics (string message, else JSON.stringify) so existing
+    // consumers and mutation-kill tests see the exact same text.
+    const meta = extractProviderErrorObject({ error: e });
+    const out: OpenAIErrorInfo = {
       type: typeof type === 'string' ? type : 'api_error',
       message: typeof message === 'string' ? message : JSON.stringify(error),
     };
+    if (meta?.code !== undefined) out.code = meta.code;
+    if (meta?.status !== undefined) out.status = meta.status;
+    if (meta?.requestId !== undefined) out.requestId = meta.requestId;
+    return out;
   }
   return { type: 'api_error', message: String(error) };
 }
 
+/** Additive meta fields (code/status/requestId) of an OpenAIErrorInfo, spread
+ *  into a returned info without touching type/message. */
+function meta(info: OpenAIErrorInfo): Partial<OpenAIErrorInfo> {
+  return {
+    ...(info.code !== undefined ? { code: info.code } : {}),
+    ...(info.status !== undefined ? { status: info.status } : {}),
+    ...(info.requestId !== undefined ? { requestId: info.requestId } : {}),
+  };
+}
+
 /** Read a non-2xx body; normalize the error type to Anthropic vocabulary by
- *  status (engine-side handling switches on those), keep the server message. */
-async function readOpenAIErrorInfo(
-  response: Response,
-): Promise<{ type: string; message: string }> {
+ *  status (engine-side handling switches on those), keep the server message.
+ *  A non-JSON body (a plain-text 5xx page) yields a readable message. */
+async function readOpenAIErrorInfo(response: Response): Promise<OpenAIErrorInfo> {
   const normalizedType =
     STATUS_ERROR_TYPE[response.status] ??
     (response.status >= 500 ? 'api_error' : 'invalid_request_error');
@@ -1396,7 +1445,21 @@ async function readOpenAIErrorInfo(
     try {
       const parsed = JSON.parse(text) as { error?: unknown };
       if (parsed.error !== undefined && parsed.error !== null) {
-        return { type: normalizedType, message: extractOpenAIError(parsed.error).message };
+        // Keep the historical message derivation (incl. a STRING error member
+        // -> String(error)); meta (status/code/request_id) is additive.
+        const info = extractOpenAIError(parsed.error);
+        return { type: normalizedType, message: info.message, ...meta(info) };
+      }
+      // A bare top-level { message, status } (no error envelope).
+      const bare = extractProviderErrorObject(parsed);
+      if (bare !== null) {
+        return {
+          type: normalizedType,
+          message: bare.message,
+          ...(bare.code !== undefined ? { code: bare.code } : {}),
+          ...(bare.status !== undefined ? { status: bare.status } : {}),
+          ...(bare.requestId !== undefined ? { requestId: bare.requestId } : {}),
+        };
       }
     } catch {
       // Not JSON; use raw text below.
