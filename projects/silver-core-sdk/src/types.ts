@@ -61,7 +61,8 @@ export type ModelUsage = {
   /**
    * Max output tokens in force for requests to this model (REQUIRED on the
    * official surface). This engine reports the ACTUAL per-request `max_tokens`
-   * cap it sends (provider.maxOutputTokens ?? 8192) — an honest runtime value,
+   * cap it sends (provider.maxOutputTokens, defaulting by protocol: 8192 on
+   * 'anthropic', 128000 on 'openai-chat') — an honest runtime value,
    * NOT the model's theoretical output ceiling (no public per-model
    * max-output table is bundled). Optional during the transition (same
    * subagent-ledger caveat as contextWindow).
@@ -1099,6 +1100,18 @@ export type ProviderConfig = {
    * source); no credential rides the probe.
    */
   preconnect?: boolean;
+  /**
+   * Per-request output-token cap (`max_tokens` / the configured
+   * maxTokensParam on the wire). Default is protocol-aware: 8192 on
+   * 'anthropic' (that API 400s a cap above the model's output ceiling and no
+   * per-model table is bundled), 128000 on 'openai-chat' (BPT ruling
+   * 2026-07-14 — agentic turns on large-output gateway models were starved
+   * at 8192). A model/gateway whose ceiling is lower rejects the request
+   * with a clear surfaced APIStatusError; set this explicitly to match your
+   * endpoint. Note: compaction budgets derive from `contextWindow -
+   * maxOutputTokens`, so a cap at/above the model's context window disables
+   * compaction (logged, not silent).
+   */
   maxOutputTokens?: number;
   /** Automatic prompt caching via cache_control breakpoints; default true. */
   promptCaching?: boolean;

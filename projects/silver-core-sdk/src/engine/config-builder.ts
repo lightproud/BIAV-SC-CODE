@@ -33,7 +33,17 @@ import {
   normalizeOutputFormat,
 } from './structured-output.js';
 
-const DEFAULT_MAX_OUTPUT_TOKENS = 8192;
+/** Default per-request output-token cap, BY WIRE PROTOCOL (BPT ruling
+ *  2026-07-14). The Anthropic default stays conservative: that API 400s a
+ *  max_tokens above the model's output ceiling (e.g. claude-sonnet-4-5 caps
+ *  at 64000) and no public per-model output table is bundled, so 8192 keeps
+ *  default sessions safe. The openai-chat default is 128000: agentic turns
+ *  on large-output gateway models were starved at 8192, and a gateway/model
+ *  with a lower ceiling rejects with a clear surfaced APIStatusError (see
+ *  the transport-openai boundary tests) rather than failing silently.
+ *  `provider.maxOutputTokens` overrides either default. */
+const DEFAULT_MAX_OUTPUT_TOKENS_ANTHROPIC = 8192;
+const DEFAULT_MAX_OUTPUT_TOKENS_OPENAI_CHAT = 128_000;
 
 export type BuiltEngineConfig = {
   /** Mutable engine config shared across turns (setModel etc. mutate it live). */
@@ -215,7 +225,11 @@ export function buildEngineConfig(args: {
   const engineConfig: EngineConfig = {
     model: initialModel,
     fallbackModel: options.fallbackModel,
-    maxOutputTokens: options.provider?.maxOutputTokens ?? DEFAULT_MAX_OUTPUT_TOKENS,
+    maxOutputTokens:
+      options.provider?.maxOutputTokens ??
+      (options.provider?.protocol === 'openai-chat'
+        ? DEFAULT_MAX_OUTPUT_TOKENS_OPENAI_CHAT
+        : DEFAULT_MAX_OUTPUT_TOKENS_ANTHROPIC),
     systemPrompt: systemPromptStable,
     // Volatile (cwd) tail rides after the cache breakpoint; absent -> the
     // stable prompt is sent as a single string (e.g. a user-string prompt).

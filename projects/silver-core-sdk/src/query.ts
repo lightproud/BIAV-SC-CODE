@@ -100,7 +100,6 @@ import { createAgentTool } from './subagents/agent-tool.js';
 import { loadProjectMcpServers } from './mcp/project-config.js';
 
 const DEFAULT_MODEL = 'claude-sonnet-4-5';
-const DEFAULT_MAX_OUTPUT_TOKENS = 8192;
 /** S3 tool-call record: cap on the persisted input JSON (the full input lives
  *  in the assistant message's tool_use block with the same tool_use_id). */
 const TOOL_RECORD_INPUT_MAX_CHARS = 2048;
