@@ -47,6 +47,19 @@ export type {
   PromptLoopOptions,
   PromptLoopSummary,
 } from './prompt-loop.js';
+// BPT-EXTENSION: /goal session-goal primitive (the surface companion to the
+// engine's Stop-hook block semantics — parser + goal manager producing the
+// Stop matcher; see src/hooks/session-goal.ts module header for the deliberately
+// inverted failure direction).
+export { createSessionGoal, parseGoalCommand, GOAL_SLASH_COMMAND } from './hooks/session-goal.js';
+export type {
+  GoalCommandAction,
+  GoalCommandOutcome,
+  GoalCommandParse,
+  SessionGoal,
+  SessionGoalEvent,
+  SessionGoalOptions,
+} from './hooks/session-goal.js';
 // Built-in durable session store (SM-乙a): fileSessionStore(dir) for the
 // SessionManager's `store` option and options.sessionStore recovery.
 export { FileSessionStore, fileSessionStore } from './sessions/file-store.js';

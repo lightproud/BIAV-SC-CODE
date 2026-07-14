@@ -16,6 +16,33 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.60.0 — 2026-07-14
+
+New capability: `/goal` session-goal primitive (`src/hooks/session-goal.ts`,
+BPT-EXTENSION) — the surface companion to the engine's Stop-hook block
+semantics (v0.39) and the stop-variant condition evaluator (v0.6), both of
+which already shipped; without this surface a `/goal <condition>` invocation
+fell through as a one-shot plain prompt exactly like the /loop gap.
+
+- `parseGoalCommand`: single source of truth for `/goal <condition>` /
+  `/goal clear` (three-way result like parseLoopCommand; bare `/goal`
+  errors loudly, `clear <text>` is a condition, multiline preserved).
+- `createSessionGoal`: goal manager producing a Stop matcher via
+  `.hooks()` — "not met" verdict blocks the stop (reason fed back as a user
+  turn by the existing engine path; maxTurns/maxBudgetUsd still cap),
+  "met" auto-clears, `impossible` escape hatch auto-clears. `set`/`clear`/
+  `handleCommand` one-call host bridge, `onEvent` lifecycle notifications,
+  optional `maxBlocks` host-policy cap, bounded transcript-tail context
+  (32 KiB default, `context` override).
+- INVERTED failure direction vs the generic hook-condition gate, documented
+  and tested: an errored / unparseable / context-less evaluation ALLOWS the
+  stop and keeps the goal armed — a broken judge must never trap the agent
+  in a forced loop. Never judges blind (no transcript → no evaluator call).
+- `GOAL_SLASH_COMMAND` menu metadata; NOT an engine built-in (same honesty
+  red line as /loop). ConfigurationError on invalid options (whitelist row).
+- +20 tests (`tests/session-goal.test.ts`); engine chain already locked by
+  `tests/stop-hook-block.test.ts` + hook-runner aggregation tests.
+
 ## 0.59.1 — 2026-07-14
 
 Audit 2026-07-14 P2 batch — low-severity hygiene + a lint gate:

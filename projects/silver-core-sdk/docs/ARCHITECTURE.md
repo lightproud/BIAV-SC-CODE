@@ -440,6 +440,7 @@ build red.
 | `src/query.ts` | `ConfigurationError` |
 | `src/session-manager.ts` | `ConfigurationError` |
 | `src/prompt-loop.ts` | `ConfigurationError` |
+| `src/hooks/session-goal.ts` | `ConfigurationError` |
 | `src/tools/bash.ts` | `ConfigurationError` |
 | `src/tools/memory/` | `MemoryToolError`, `ConfigurationError` |
 | `src/reporting/` | `ConfigurationError` |

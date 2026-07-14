@@ -215,6 +215,40 @@ deliberately NOT an engine built-in — the engine loop cannot re-invoke itself
 over wall-clock time, and advertising a command the engine would swallow as
 plain text is the honesty red line.
 
+## /goal session goals (BPT-EXTENSION)
+
+`/goal <condition>` arms a session-scoped Stop gate: when the agent tries to
+stop, the faithful stop-variant condition evaluator judges the transcript;
+"not met" blocks the stop (the reason is fed back as a user turn and the
+loop keeps working — engine `maxTurns` / `maxBudgetUsd` still cap it), "met"
+auto-clears, and the evaluator's `impossible` escape hatch clears without
+looping forever. `/goal clear` disarms early. The engine's Stop-hook block
+semantics (v0.39) and the evaluator prompt already shipped; this module is
+the missing surface. Host bridge:
+
+```ts
+import { createSessionGoal, GOAL_SLASH_COMMAND } from 'silver-core-sdk';
+
+const goal = createSessionGoal({
+  utility: { provider },              // evaluator credentials (Haiku default)
+  onEvent: (e) => updateBadge(e),     // set/met/blocked/impossible/...
+});
+// wire ONCE into every query of the session:
+const q = query({ prompt, options: { hooks: { ...goal.hooks() } } });
+// route user input BEFORE submitting it as a prompt:
+const outcome = goal.handleCommand(userInput);
+if (outcome.handled) {
+  return outcome.ok ? showInfo(outcome.message) : showError(outcome.error);
+}
+```
+
+Failure direction is deliberately INVERTED from the generic hook-condition
+gate: there the dangerous act is firing a hook (unverified → don't fire);
+here the dangerous act is BLOCKING the stop, so an errored/unparseable/
+context-less evaluation ALLOWS the stop and keeps the goal armed — a broken
+judge must never trap the agent in a forced loop. `GOAL_SLASH_COMMAND` is
+menu metadata only, not an engine built-in (same honesty red line as /loop).
+
 ## Examples
 
 Runnable examples live in [examples/](./examples):

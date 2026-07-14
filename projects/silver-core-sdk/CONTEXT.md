@@ -67,6 +67,16 @@ src/
 
 ## 当前状态
 
+**v0.60.0（2026-07-14）：/goal 会话目标原语（同日守密人「把 goal 命令也给实现了吧」派单）**——
+`/goal <条件>` 布防会话级 Stop 门：引擎 Stop-hook block 语义（v0.39）与 stop 变体条件评估器（v0.6）
+早已发货，缺的只是 `/goal` 表面。新公开模块 `src/hooks/session-goal.ts`：`parseGoalCommand`（set / clear
+双动作三态返回）+ `createSessionGoal`（目标管理器出 Stop matcher——「未达成」判决 block 停止、
+理由回喂用户轮续跑（maxTurns / maxBudgetUsd 照常封顶）、「已达成」自动撤防、`impossible` 逃生口
+撤防防死循环；`handleCommand` 一调用桥接、`onEvent` 生命周期通知、`maxBlocks` 宿主策略帽、
+transcript 尾部有界上下文）。**失败方向与通用 hook 条件门刻意反向**：评估器故障 / 乱码 / 零上下文
+一律放行停止、目标保持布防——坏裁判绝不把 agent 困进强制循环；零上下文不盲判（不调评估器）。
+`GOAL_SLASH_COMMAND` 仅菜单元数据不进内建（同 /loop 诚实红线）。+20 测试。
+
 **v0.59.0（2026-07-14）：/loop 区间循环原语（BPT /loop 缺口收口，守密人同日裁定「SDK 侧加循环原语」）**——
 BPT 中 `/loop 10m <任务>` 原样透传为一次性 prompt、周期语义静默丢失（缺口调查同日）。新公开模块
 `src/prompt-loop.ts`：`parseLoopCommand`（`/loop [<interval>] <task>` 语法唯一真相源，s/m/h + 别名 + 小数，
