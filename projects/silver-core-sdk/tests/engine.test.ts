@@ -1879,6 +1879,36 @@ describe('runAgentLoop', () => {
     expect(lastResult(messages).subtype).toBe('error_max_turns');
   });
 
+  it('C4: a pause_turn continuation is gated by maxBudgetUsd like every other continuation (audit 2026-07-14 M-8)', async () => {
+    // Before the fix the pause_turn branch checked only maxTurns before
+    // re-issuing a billed API call — the ONE continuation path without the
+    // budget gate the tool-continue / structured-retry / bg-drain /
+    // stop-hook-block paths all share.
+    const transport = new MockTransport([
+      textReplyEvents('partial…', {
+        stopReason: 'pause_turn',
+        model: 'claude-sonnet-4-5',
+        usage: { input_tokens: 1000 }, // $0.003105 > the cap below
+      }),
+      textReplyEvents('should never run'),
+    ]);
+    const deps = makeDeps(transport);
+    const history: APIMessageParam[] = [{ role: 'user', content: 'go' }];
+    const messages = await collect(
+      runAgentLoop(history, deps, makeConfig({ maxBudgetUsd: 0.000001 })),
+    );
+
+    // No second billed call was issued past the cap.
+    expect(transport.requests).toHaveLength(1);
+    // Same result shaping as the other budget-gated continuation paths.
+    const result = lastResult(messages);
+    expect(result.subtype).toBe('error_max_budget_usd');
+    expect(result.is_error).toBe(true);
+    if (result.subtype === 'error_max_budget_usd') {
+      expect(result.errorMessage).toContain('maxBudgetUsd');
+    }
+  });
+
   it('C5: refusal surfaces as an ERROR result (not success) with error_code refusal', async () => {
     const transport = new MockTransport([textReplyEvents('', { stopReason: 'refusal' })]);
     const deps = makeDeps(transport);
