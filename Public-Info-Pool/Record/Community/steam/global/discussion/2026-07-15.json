@@ -1,0 +1,27 @@
+{
+  "date": "2026-07-15",
+  "archived_at": "2026-07-14T16:15:05.811032+00:00",
+  "source": "steam",
+  "item_count": 1,
+  "items": [
+    {
+      "title": "[Steam论坛] The next collab might be SNOWBREAK",
+      "summary": "Snowbreak is going to eos by the end of the year \nSource: Trust me bro.",
+      "source": "steam_discussion",
+      "time": "2026-07-14T16:03:18+00:00",
+      "url": "https://steamcommunity.com/app/3052450/discussions/0/577173082186280698/",
+      "engagement": 1,
+      "is_hot": false,
+      "author": "Uncanny_Vorgor",
+      "tags": [
+        "steam_forum"
+      ],
+      "region": "global",
+      "archive_subtype": "discussion",
+      "lang": "en",
+      "platform_region": "global"
+    }
+  ],
+  "region": "global",
+  "content_subtype": "discussion"
+}

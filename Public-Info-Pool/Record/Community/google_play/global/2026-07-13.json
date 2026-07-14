@@ -1,8 +1,8 @@
 {
   "date": "2026-07-13",
-  "archived_at": "2026-07-14T13:31:30.945418+00:00",
+  "archived_at": "2026-07-14T16:15:05.948065+00:00",
   "source": "google_play",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "title": "[Google Play 好评] ★4 Regarding the PT-BR translation: I highl",
@@ -16,6 +16,20 @@
       "tags": [],
       "lang": "pt",
       "platform_region": "br",
+      "region": "global"
+    },
+    {
+      "title": "[Google Play 中评] ★3 The conversations between phases of boss",
+      "summary": "The conversations between phases of bosses in story are annoying, add a skip for that please, and also add that in replay too, thanks. And please have guide for teams.",
+      "source": "google_play",
+      "time": "2026-07-13T14:23:10",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-81b13ca9-e065-49df-90ff-be632967802f",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "Nauth",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "us",
       "region": "global"
     }
   ],

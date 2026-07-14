@@ -1,8 +1,8 @@
 {
   "date": "2026-07-14",
-  "archived_at": "2026-07-14T13:31:30.825272+00:00",
+  "archived_at": "2026-07-14T16:15:05.791334+00:00",
   "source": "steam",
-  "item_count": 11,
+  "item_count": 12,
   "items": [
     {
       "title": "[负面] このゲームタップ早すぎたり戦闘終わった後に確率でフリーズして操作できなくなるんだよね タスクキルして...",
@@ -262,6 +262,30 @@
         "playtime_forever": 2756,
         "votes_up": 0,
         "timestamp_created": 1784025890
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 加油，5571你的服务器优化越来越屎了，",
+      "summary": "加油，5571你的服务器优化越来越屎了，",
+      "source": "steam_review",
+      "time": "2026-07-14T14:05:33+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199018777109/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199018777109",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 2133,
+        "votes_up": 0,
+        "timestamp_created": 1784037933
       },
       "region": "global",
       "archive_subtype": "review",
