@@ -8,6 +8,10 @@
  * never rename or reuse a published code.
  */
 
+// Type-only import (erased at emit): carries no runtime dependency, so the
+// errors module stays import-cycle-free.
+import type { ModelUsage, NonNullableUsage } from './types.js';
+
 /** Stable machine-readable codes for MCP subsystem failures (`McpError`). */
 export type McpErrorCode =
   /** A server did not finish connect+listTools within the connect timeout. */
@@ -66,10 +70,33 @@ export type ErrorCode =
   | 'memory_tool_error'
   | McpErrorCode;
 
+/**
+ * audit 2026-07-14 L-6: partial accounting of an engine run that an abort cut
+ * short. The aborted run's already-billed usage (message_start input tokens,
+ * any completed intermediate turns) never reaches a result message — results
+ * are not emitted on abort — so the engine loop attaches what it knows at
+ * abort time and the query layer folds it into its SessionAccounting.
+ */
+export type AbortedRunAccounting = {
+  usage: NonNullableUsage;
+  totalCostUsd: number;
+  durationApiMs: number;
+  numTurns: number;
+  modelUsage: Record<string, ModelUsage>;
+};
+
 /** Thrown when an operation is aborted via AbortController/interrupt(). */
 export class AbortError extends Error {
   override name = 'AbortError';
   readonly code: ErrorCode = 'aborted';
+  /**
+   * audit 2026-07-14 L-6: set by the engine loop when a run is aborted after
+   * usage was already billed (e.g. a turn-level interrupt() that lands after
+   * message_start reported input tokens). Absent when nothing was billed or
+   * the abort happened outside an engine run. The query layer folds this into
+   * its session accounting so an interrupted turn's spend is not lost.
+   */
+  abortedRunAccounting?: AbortedRunAccounting;
   constructor(message = 'The operation was aborted') {
     super(message);
   }

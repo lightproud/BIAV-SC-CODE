@@ -11,7 +11,7 @@
 import { mkdtemp, readFile, readdir, rm, writeFile, mkdir } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { afterEach, beforeEach, describe, expect, it } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { query } from '../src/query.js';
 import {
@@ -146,6 +146,32 @@ describe('createRunLogSink', () => {
     expect(lines).toHaveLength(2);
     expect(JSON.parse(lines[0]!).session_id).toBe('sess-1');
     expect(JSON.parse(lines[1]!).session_id).toBe('sess-9');
+  });
+
+  // audit 2026-07-14 L-16: the day file is derived from the RECORD'S ts (set at
+  // observe time), not the flush-time clock. A record observed at 23:59:59 and
+  // flushed after midnight must still land in the earlier day's file.
+  it('writes to the record ts day file, not the flush-time clock (L-16)', async () => {
+    vi.useFakeTimers();
+    try {
+      const logDir = join(dir, 'sink-l16');
+      const sink = createRunLogSink({
+        runLog: { dir: logDir },
+        incognito: false,
+        debug: () => {},
+      });
+      // Observe just before midnight on day A -> record.ts is day A.
+      vi.setSystemTime(new Date('2026-07-14T23:59:59.000Z'));
+      sink.observe(resultFixture() as never);
+      // The append lands "later" — the wall clock is now day B.
+      vi.setSystemTime(new Date('2026-07-15T00:00:01.000Z'));
+      await sink.flush();
+      const files = await readdir(logDir);
+      // Belongs to day A (its observe-time ts), NOT day B (the flush clock).
+      expect(files).toEqual(['runlog-2026-07-14.jsonl']);
+    } finally {
+      vi.useRealTimers();
+    }
   });
 });
 

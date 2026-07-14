@@ -13,15 +13,9 @@ import type {
   AgentInfo,
   APIMessageParam,
   APIUserMessage,
-  CallToolResult,
-  ContentBlock,
-  McpResource,
-  McpResourceContent,
   McpServerConfig,
-  McpServerStatus,
   McpSetServersResult,
   ModelInfo,
-  ModelUsage,
   NonNullableUsage,
   Options,
   PermissionMode,
@@ -40,12 +34,8 @@ import type {
 } from './types.js';
 import type {
   BuiltinTool,
-  EngineConfig,
   EngineDeps,
   McpRegistry,
-  McpToolEntry,
-  SystemComposition,
-  SystemCompositionPart,
   ToolContext,
   ToolDispatchRecord,
   Transport,
@@ -75,7 +65,7 @@ import { estimateTextTokens } from './engine/tokens.js';
 import { MEMORY_TOOL_NAME, resolveMemoryRuntime } from './tools/memory/index.js';
 import { createSessionPersistence } from './sessions/persistence.js';
 import { createRunLogSink } from './reporting/run-log.js';
-import { AsyncQueue, createDeferred, type Deferred } from './internal/async.js';
+import { AsyncQueue, createDeferred } from './internal/async.js';
 import { ToolFilterMcpRegistry } from './mcp/tool-filter.js';
 import { SDK_VERSION } from './version.js';
 import { JsonlSessionStore, resolveTranscriptPath } from './sessions/store.js';
@@ -657,7 +647,7 @@ export function query(args: {
   // EngineConfig assembly extracted to engine/config-builder.ts (audit
   // 2026-07-10 P2-3C): structured-output normalization, system-prompt shapes
   // + composition breakdown, preset thinking default, the config literal.
-  const { engineConfig, outputFormat, sessionGitBranch, isClaudeCodePreset } = buildEngineConfig({
+  const { engineConfig, sessionGitBranch, isClaudeCodePreset } = buildEngineConfig({
     options,
     cwd,
     initialModel,
@@ -1231,6 +1221,16 @@ export function query(args: {
             }
           }
           if (isAbortError(err)) {
+            // audit 2026-07-14 L-6: an aborted engine run emits no result, so
+            // its already-billed partial usage (message_start input tokens,
+            // completed intermediate turns) rides the AbortError instead. Fold
+            // it — plus any completed subagent usage — into the session
+            // accounting BEFORE deciding the abort's fate, so both the
+            // interrupt terminal result below and a later session summary
+            // report the true spend instead of under-counting.
+            const partial = err instanceof AbortError ? err.abortedRunAccounting : undefined;
+            if (partial !== undefined) acct.accumulateAborted(partial);
+            acct.foldSubagentUsage(subagentRuntime.drainUsageLedger());
             // A caller abort OR a close() (life) ends the whole run; only a
             // per-turn interrupt() (turnController, neither of the above) is a
             // recoverable turn-level cancel.

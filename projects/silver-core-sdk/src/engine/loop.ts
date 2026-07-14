@@ -38,7 +38,6 @@ import type {
   ToolUseBlock,
 } from '../types.js';
 import type {
-  AggregatedHookResult,
   EngineConfig,
   EngineDeps,
   RetryInfo,
@@ -1023,7 +1022,15 @@ export async function* runAgentLoop(
           assistant = yield* streamAttempt(model, turnToolDefs, firstSink);
           break;
         } catch (err) {
-          if (isAbortError(err)) throw toAbortError(err);
+          if (isAbortError(err)) {
+            // audit 2026-07-14 L-6: the aborted attempt may already have
+            // billed tokens (input tokens on its message_start). Fold them
+            // into the run totals so the outer catch can hand the partial
+            // accounting to the query layer — without this, a turn-level
+            // interrupt() silently lost the aborted turn's spend.
+            if (firstSink.usage !== undefined) recordUsage(model, firstSink.usage);
+            throw toAbortError(err);
+          }
           if (
             err instanceof APIConnectionError &&
             !signal.aborted &&
@@ -1108,14 +1115,15 @@ export async function* runAgentLoop(
             // The fallback attempt gets its own usage sink: if IT fails too,
             // the tokens it burned (its message_start already billed the
             // prompt) must reach the totals the terminal error result reports,
-            // exactly as the first attempt's sink was folded above. A caller
-            // abort keeps the plain throw-through — no result is produced, so
-            // there is no report to keep honest.
+            // exactly as the first attempt's sink was folded above. An abort
+            // folds too (audit 2026-07-14 L-6): no result is produced, but the
+            // outer catch now hands the run's partial accounting to the query
+            // layer on the thrown AbortError, so these tokens are reportable.
             const fallbackSink: UsageSink = {};
             try {
               assistant = yield* streamAttempt(model, turnToolDefs, fallbackSink);
             } catch (fallbackErr) {
-              if (!isAbortError(fallbackErr) && fallbackSink.usage !== undefined) {
+              if (fallbackSink.usage !== undefined) {
                 recordUsage(model, fallbackSink.usage);
               }
               throw fallbackErr; // 2nd failure -> outer catch
@@ -1600,7 +1608,27 @@ export async function* runAgentLoop(
       return;
     }
   } catch (err) {
-    if (isAbortError(err)) throw toAbortError(err);
+    if (isAbortError(err)) {
+      // audit 2026-07-14 L-6: an aborted run yields NO result message, so the
+      // usage it already billed (this turn's message_start input tokens folded
+      // above, plus any completed intermediate turns of the tool loop) would
+      // silently vanish from session accounting. Attach the run's partial
+      // accounting to the thrown AbortError; the query layer folds it into
+      // SessionAccounting in its abort path. When the same AbortError bubbles
+      // through nested loops each loop overwrites with ITS OWN scope — the
+      // outermost (root) loop wins, which is the scope the root query folds.
+      const aborted = toAbortError(err);
+      aborted.abortedRunAccounting = {
+        usage: { ...totalUsage },
+        totalCostUsd,
+        durationApiMs,
+        numTurns,
+        modelUsage: Object.fromEntries(
+          Object.entries(modelUsage).map(([k, v]) => [k, { ...v }]),
+        ),
+      };
+      throw aborted;
+    }
     // Unified normalization: map ANY thrown upstream failure — an APIStatusError,
     // an APIConnectionError, or a bare gateway error object that穿透ed
     // un-classified — into a stable NormalizedProviderError so the host never

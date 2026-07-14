@@ -89,6 +89,12 @@ const USER_AGENT = SDK_USER_AGENT;
 const BACKOFF_BASE_MS = 1_000;
 const BACKOFF_FACTOR = 2;
 const BACKOFF_MAX_MS = 60_000;
+/** Bounded jitter applied ON TOP of an explicit Retry-After delay (audit
+ *  2026-07-14 L-2): the delay is multiplied by [1.0, 1.0 + this factor], so a
+ *  concurrent fan-out (subagent fleets) does not retry at the same instant.
+ *  Never retries EARLIER than the server asked; the jittered total stays
+ *  capped at RETRY_AFTER_MAX_MS (the same ceiling the parser applies). */
+const RETRY_AFTER_JITTER = 0.25;
 
 /** Normalized (Anthropic-vocabulary) error type per HTTP status, so engine-
  *  side handling keyed on Messages API error types works unchanged. */
@@ -1024,11 +1030,20 @@ export class OpenAIChatTransport implements Transport {
       // the remaining gap and still aborts idleMs after the LAST event.
       let idleTimer: ReturnType<typeof setTimeout> | undefined;
       let lastEventAt = 0;
+      // audit 2026-07-14 L-3 (twin of the anthropic arm): the watchdog
+      // measures SERVER progress, not consumer progress — while the consumer
+      // holds a yielded event the expiry check re-arms instead of aborting;
+      // the clock restarts when the consumer resumes (resetIdle after the
+      // yield). Stall detection during a long consumer pause is deferred
+      // until the consumer resumes (worst case ~2x idleMs).
+      let consumerHolds = false;
       const armIdle = (delay: number): void => {
         idleTimer = setTimeout(() => {
           const remaining = idleMs - (Date.now() - lastEventAt);
-          if (remaining <= 0) idleController!.abort();
-          else armIdle(remaining);
+          if (remaining <= 0) {
+            if (consumerHolds) armIdle(idleMs);
+            else idleController!.abort();
+          } else armIdle(remaining);
         }, delay);
         (idleTimer as { unref?: () => void }).unref?.();
       };
@@ -1077,7 +1092,13 @@ export class OpenAIChatTransport implements Transport {
             );
           }
           chunkCount += 1;
+          // audit 2026-07-14 L-3: mark the consumer-hold window around the
+          // yield so the idle watchdog never counts a paused consumer as a
+          // stalled connection; restart the idle clock when it resumes.
+          consumerHolds = true;
           yield* translator.feed(parsed);
+          consumerHolds = false;
+          resetIdle();
         }
       } catch (err) {
         throw mapStreamError(err, {
@@ -1334,12 +1355,12 @@ export class OpenAIChatTransport implements Transport {
     const jittered = exponential * (0.5 + Math.random() * 0.5);
     // audit 2026-07-14 L-2: jitter the explicit Retry-After path too. Without
     // it a fan-out of subagents that all receive the same "Retry-After: 30"
-    // wake in the SAME instant (thundering herd). Spread DOWN into
-    // [0.85, 1.0] x the header value — never ABOVE it, so the server's floor
-    // is still respected; the parser already caps the header (RETRY_AFTER_MAX_MS).
+    // wake in the SAME instant (thundering herd). Spread UP only — never
+    // EARLIER than the server asked — then re-cap at the parser's ceiling so a
+    // jittered value can never exceed RETRY_AFTER_MAX_MS.
     const delay =
       retryAfterMs !== undefined
-        ? retryAfterMs * (0.85 + Math.random() * 0.15)
+        ? Math.min(retryAfterMs * (1 + Math.random() * RETRY_AFTER_JITTER), RETRY_AFTER_MAX_MS)
         : Math.min(jittered, BACKOFF_MAX_MS);
     this.debug(`openai transport: backing off ${Math.round(delay)}ms`);
     await sleep(delay, signal);

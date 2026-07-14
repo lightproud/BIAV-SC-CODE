@@ -52,6 +52,12 @@ const USER_AGENT = SDK_USER_AGENT;
 const BACKOFF_BASE_MS = 1_000;
 const BACKOFF_FACTOR = 2;
 const BACKOFF_MAX_MS = 60_000;
+/** Bounded jitter applied ON TOP of an explicit Retry-After delay (audit
+ *  2026-07-14 L-2): the delay is multiplied by [1.0, 1.0 + this factor], so a
+ *  concurrent fan-out (subagent fleets) does not retry at the same instant.
+ *  Never retries EARLIER than the server asked; the jittered total stays
+ *  capped at RETRY_AFTER_MAX_MS (the same ceiling the parser applies). */
+const RETRY_AFTER_JITTER = 0.25;
 
 /**
  * Plausible HTTP statuses for in-stream error payloads. An SSE `error` event
@@ -284,11 +290,24 @@ export class AnthropicTransport implements Transport {
       // event.
       let idleTimer: ReturnType<typeof setTimeout> | undefined;
       let lastEventAt = 0;
+      // audit 2026-07-14 L-3: the watchdog measures SERVER progress, not
+      // consumer progress. While the consumer holds a yielded event this
+      // generator is suspended at the yield through no fault of the
+      // connection, so the expiry check re-arms instead of aborting; the
+      // clock restarts when the consumer resumes (resetIdle after the yield).
+      // A genuine stall (silent server while WE await the next frame) still
+      // aborts exactly as before; detection of a stall that begins during a
+      // long consumer pause is deferred until the consumer resumes (worst
+      // case ~2x idleMs), which trades delay for never killing a healthy
+      // stream under a slow consumer.
+      let consumerHolds = false;
       const armIdle = (delay: number): void => {
         idleTimer = setTimeout(() => {
           const remaining = idleMs - (Date.now() - lastEventAt);
-          if (remaining <= 0) idleController!.abort();
-          else armIdle(remaining);
+          if (remaining <= 0) {
+            if (consumerHolds) armIdle(idleMs);
+            else idleController!.abort();
+          } else armIdle(remaining);
         }, delay);
         // Don't let the watchdog alone keep the process alive.
         (idleTimer as { unref?: () => void }).unref?.();
@@ -380,7 +399,13 @@ export class AnthropicTransport implements Transport {
           // discarded empty-retry attempt's pings reach the consumer" leak is
           // harmless (pings carry no content; the accumulator ignores them), so
           // it is not worth buffering pings and degrading live delivery.
+          // audit 2026-07-14 L-3: mark the consumer-hold window around the
+          // yield so the idle watchdog never counts a paused consumer as a
+          // stalled connection; restart the idle clock when it resumes.
+          consumerHolds = true;
           yield parsed as RawMessageStreamEvent;
+          consumerHolds = false;
+          resetIdle();
           // The Messages API streams exactly one message; message_stop is its
           // terminal event. Stop consuming here - official-client lifecycle -
           // so trailing gateway appendices (e.g. `data: [DONE]`) are never
@@ -640,10 +665,12 @@ export class AnthropicTransport implements Transport {
     }
   }
 
-  /** Exponential backoff (base 1s, factor 2) with jitter; an explicit
-   *  retry-after wins and is honored AS GIVEN (already bounded by the parser).
-   *  Only the exponential fallback is capped at BACKOFF_MAX_MS — clamping an
-   *  explicit "wait 90s" down to 60s just retries early into the same limit. */
+  /** Exponential backoff (base 1s, factor 2) with jitter. An explicit
+   *  retry-after is honored as the FLOOR (never retried earlier) but jittered
+   *  UP by RETRY_AFTER_JITTER so a concurrent fan-out does not all wake at the
+   *  same instant, then re-capped at RETRY_AFTER_MAX_MS. Only the exponential
+   *  fallback is capped at BACKOFF_MAX_MS — clamping an explicit "wait 90s"
+   *  down to 60s just retries early into the same limit. */
   private async backoff(
     attempt: number,
     retryAfterMs: number | undefined,
@@ -654,12 +681,12 @@ export class AnthropicTransport implements Transport {
     const jittered = exponential * (0.5 + Math.random() * 0.5);
     // audit 2026-07-14 L-2: jitter the explicit Retry-After path too. Without
     // it a fan-out of subagents that all receive the same "Retry-After: 30"
-    // wake in the SAME instant (thundering herd). Spread DOWN into
-    // [0.85, 1.0] x the header value — never ABOVE it, so the server's floor
-    // is still respected; the parser already caps the header (RETRY_AFTER_MAX_MS).
+    // wake in the SAME instant (thundering herd). Spread UP only — never
+    // EARLIER than the server asked — then re-cap at the parser's ceiling so a
+    // jittered value can never exceed RETRY_AFTER_MAX_MS.
     const delay =
       retryAfterMs !== undefined
-        ? retryAfterMs * (0.85 + Math.random() * 0.15)
+        ? Math.min(retryAfterMs * (1 + Math.random() * RETRY_AFTER_JITTER), RETRY_AFTER_MAX_MS)
         : Math.min(jittered, BACKOFF_MAX_MS);
     this.debug(`transport: backing off ${Math.round(delay)}ms`);
     await sleep(delay, signal);
