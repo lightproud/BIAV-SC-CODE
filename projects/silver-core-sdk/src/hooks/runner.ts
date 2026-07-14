@@ -244,11 +244,13 @@ export class DefaultHookRunner implements HookRunner {
     return matched.filter((_m, i) => verdicts[i] === true);
   }
 
-  /** Run one callback with its own timeout; failures become debug warnings. */
+  /** Run one callback with its own timeout; failures become debug warnings
+   *  (or a deny under the effective failureMode 'closed'). */
   private async runOne(
     event: HookEvent,
     cb: HookCallback,
     timeoutMs: number,
+    failureMode: 'open' | 'closed',
     input: HookInput,
     toolUseID: string | undefined,
     signal: AbortSignal,
@@ -322,20 +324,30 @@ export class DefaultHookRunner implements HookRunner {
         stderr: msg,
         outcome: signal.aborted ? 'cancelled' : 'error',
       });
-      // failureMode 'closed' (audit 2026-07-10 P1-5): a broken/timed-out hook
-      // must not silently wave the call through — contribute a deny (legacy
-      // 'block' maps onto deny in aggregate()). Cancellation of the whole run
-      // is never a deny; run() rethrows AbortError right after.
-      if (this.failureMode === 'closed' && !signal.aborted) {
+      // failureMode 'closed' (audit 2026-07-10 P1-5; per-matcher override
+      // audit 2026-07-14 M-1): a broken/timed-out hook must not silently wave
+      // the call through — contribute a deny (legacy 'block' maps onto deny
+      // in aggregate()). Cancellation of the whole run is never a deny;
+      // run() rethrows AbortError right after.
+      if (failureMode === 'closed' && !signal.aborted) {
         this.debug(
-          `hooks(${event}): callback failed or timed out; hookFailureMode 'closed' denies (${msg})`,
+          `hooks(${event}): callback failed or timed out; failureMode 'closed' denies (${msg})`,
         );
         return {
           decision: 'block',
-          reason: `hook "${hookName}" failed or timed out (${msg}); denied by hookFailureMode 'closed'`,
+          reason: `hook "${hookName}" failed or timed out (${msg}); denied by failureMode 'closed'`,
         };
       }
-      this.debug(`hooks(${event}): callback failed or timed out, ignored (${msg})`);
+      // Loud fail-open notice (audit 2026-07-14 M-1): the hook DID fail and
+      // whatever it would have decided is being DISCARDED — the tool call
+      // proceeds as if the hook had no opinion. A quiet one-liner here let a
+      // crashed PreToolUse security hook be bypassed invisibly.
+      this.debug(
+        `hooks(${event}): WARNING hook "${hookName}" failed or timed out and its ` +
+          `outcome was DISCARDED fail-open (failureMode 'open'): the tool call ` +
+          `proceeds as if the hook had no opinion. Set failureMode 'closed' on ` +
+          `the matcher (or Options.hookFailureMode) to fail safe. (${msg})`,
+      );
       return undefined;
     }
   }

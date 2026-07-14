@@ -3,7 +3,10 @@
 The SDK supports true parallelism at three levels: **many conversations** over
 one `SessionManager`, **parallel-safe tools within a turn** (grouped
 `Promise.all`: read-only tools plus foreground `Agent` calls, which are
-`parallelSafe` because each child runs its own isolated loop; writes stay
+`parallelSafe` because each child runs its own isolated loop AND its own
+persistent Bash cwd/env namespace — forked from the parent's snapshot at
+spawn, so batch-mates' `cd`/`export` never cross-pollute (audit 2026-07-14
+M-10); the background-shell registry stays query-wide by design; writes stay
 serial), and **background subagents**. This doc is about the first level and
 the two knobs that make a large fan-out safe.
 

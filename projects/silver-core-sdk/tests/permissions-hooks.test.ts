@@ -1526,3 +1526,136 @@ describe('DefaultHookRunner', () => {
     ).rejects.toBeInstanceOf(AbortError);
   });
 });
+
+// ---------------------------------------------------------------------------
+// Per-matcher failureMode override + loud fail-open notice (audit 2026-07-14 M-1)
+// ---------------------------------------------------------------------------
+
+describe('DefaultHookRunner per-matcher failureMode (audit 2026-07-14 M-1)', () => {
+  it("matcher failureMode 'closed' denies a crashing PreToolUse hook while the global default stays 'open'", async () => {
+    // No runner-level failureMode: the global default is 'open'. The security
+    // matcher opts into 'closed' for itself only.
+    const r = new DefaultHookRunner({
+      hooks: {
+        PreToolUse: [
+          {
+            matcher: '*',
+            failureMode: 'closed',
+            hooks: [
+              async function securityHook() {
+                throw new Error('policy backend down');
+              },
+            ],
+          },
+        ],
+      },
+      debug: () => {},
+    });
+    const agg = await r.run('PreToolUse', PRE_TOOL_INPUT, 'toolu_m1a', 'Bash', freshSignal());
+    expect(agg.decision).toBe('deny');
+    expect(agg.decisionReason).toContain('securityHook');
+    expect(agg.decisionReason).toContain('policy backend down');
+  });
+
+  it("matcher failureMode 'closed' denies a timed-out hook under the global default", async () => {
+    const r = new DefaultHookRunner({
+      hooks: {
+        PreToolUse: [
+          {
+            matcher: '*',
+            failureMode: 'closed',
+            timeout: 0.05, // 50ms
+            hooks: [
+              async () => {
+                await new Promise((resolve) => setTimeout(resolve, 5_000).unref?.());
+                return decisionOutput('deny', 'should have denied');
+              },
+            ],
+          },
+        ],
+      },
+      debug: () => {},
+    });
+    const agg = await r.run('PreToolUse', PRE_TOOL_INPUT, 'toolu_m1b', 'Bash', freshSignal());
+    expect(agg.decision).toBe('deny');
+  });
+
+  it("matcher failureMode 'open' wins over a global 'closed' (override works both ways)", async () => {
+    const r = new DefaultHookRunner({
+      hooks: {
+        PreToolUse: [
+          {
+            matcher: '*',
+            failureMode: 'open',
+            hooks: [
+              async () => {
+                throw new Error('best-effort hook, failure tolerated');
+              },
+            ],
+          },
+        ],
+      },
+      debug: () => {},
+      failureMode: 'closed',
+    });
+    const agg = await r.run('PreToolUse', PRE_TOOL_INPUT, 'toolu_m1c', 'Bash', freshSignal());
+    expect(agg.decision).toBeUndefined();
+  });
+
+  it('the override is scoped to ITS matcher: a sibling matcher still follows the global default', async () => {
+    const r = new DefaultHookRunner({
+      hooks: {
+        PreToolUse: [
+          {
+            matcher: '*',
+            failureMode: 'closed',
+            hooks: [
+              async function guardedHook() {
+                throw new Error('guarded matcher down');
+              },
+            ],
+          },
+          {
+            matcher: '*',
+            hooks: [
+              async () => {
+                throw new Error('default matcher down');
+              },
+            ],
+          },
+        ],
+      },
+      debug: () => {},
+    });
+    const agg = await r.run('PreToolUse', PRE_TOOL_INPUT, 'toolu_m1d', 'Bash', freshSignal());
+    // The 'closed' matcher contributes the deny; the sibling stays neutral
+    // under the global 'open' default (registration order keeps the reason).
+    expect(agg.decision).toBe('deny');
+    expect(agg.decisionReason).toContain('guardedHook');
+  });
+
+  it("a failure resolved fail-open emits a LOUD debug line saying the outcome was discarded", async () => {
+    const lines: string[] = [];
+    const r = makeRunner(
+      {
+        PreToolUse: [
+          {
+            matcher: '*',
+            hooks: [
+              async function fragileHook() {
+                throw new Error('boom');
+              },
+            ],
+          },
+        ],
+      },
+      (m) => lines.push(m),
+    );
+    const agg = await r.run('PreToolUse', PRE_TOOL_INPUT, 'toolu_m1e', 'Bash', freshSignal());
+    expect(agg.decision).toBeUndefined();
+    const loud = lines.find((l) => l.includes('DISCARDED fail-open'));
+    expect(loud).toBeDefined();
+    expect(loud).toContain('fragileHook');
+    expect(loud).toContain("failureMode 'closed'"); // points at the remedy
+  });
+});

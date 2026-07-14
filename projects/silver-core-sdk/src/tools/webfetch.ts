@@ -8,12 +8,26 @@
  *
  * Safety: an SSRF guard blocks localhost / private / link-local / ULA / CGNAT
  * addresses (IP literals AND resolved DNS results) unless
- * ctx.allowPrivateWebFetch is true. Residual DNS-rebinding risk between the
- * lookup and the fetch is documented and not fully closed.
+ * ctx.allowPrivateWebFetch is true.
+ *
+ * DNS pinning (audit 2026-07-14 M-3): the guard's lookup and the fetch used
+ * to be two INDEPENDENT resolutions, leaving a classic DNS-rebinding window
+ * (validate public IP, then the attacker's DNS answers a private IP for the
+ * actual connection). The default path now connects through node:https with a
+ * custom `lookup` that returns ONLY the guard-validated addresses, while Host
+ * and TLS SNI/cert verification stay on the original hostname. Redirect hops
+ * re-run guard + pinning per hop. HONEST LIMIT: a caller-injected
+ * ctx.fetchImpl does its own connection handling and BYPASSES pinning (it
+ * still goes through the per-hop guard); injection is a test/ops escape hatch
+ * and inherits the old rebinding window.
  */
 
 import { isIP } from 'node:net';
 import { lookup } from 'node:dns/promises';
+import { request as httpsRequest } from 'node:https';
+import type { RequestOptions } from 'node:https';
+import type { IncomingMessage } from 'node:http';
+import { Readable } from 'node:stream';
 import type {
   BuiltinTool,
   ToolContext,
@@ -145,11 +159,23 @@ function addressBlocked(address: string, family: number): boolean {
   return false;
 }
 
-/** Returns a blocked-reason string, or null when the host is permitted. */
-async function ssrfGuard(hostname: string, signal: AbortSignal): Promise<string | null> {
+/** One guard-validated address, pinned for the actual connection (M-3). */
+export type PinnedAddress = { address: string; family: number };
+
+type SsrfVerdict =
+  | { blocked: string; addresses?: undefined }
+  | { blocked: null; addresses: PinnedAddress[] };
+
+/**
+ * Validates a host and, when permitted, returns the exact addresses the
+ * validation saw so the connection can be PINNED to them (audit 2026-07-14
+ * M-3 — without pinning, the fetch's own second resolution reopened the
+ * DNS-rebinding window this guard exists to close).
+ */
+async function ssrfGuard(hostname: string, signal: AbortSignal): Promise<SsrfVerdict> {
   const host = hostname.toLowerCase();
   if (host === 'localhost' || host.endsWith('.localhost')) {
-    return `blocked host "${hostname}" (localhost)`;
+    return { blocked: `blocked host "${hostname}" (localhost)` };
   }
   // URL.hostname keeps the surrounding brackets on an IPv6 literal
   // (e.g. "[2606:4700:4700::1111]"); strip them so isIP()/lookup() see the
@@ -158,9 +184,11 @@ async function ssrfGuard(hostname: string, signal: AbortSignal): Promise<string 
   const literalFamily = isIP(bare);
   if (literalFamily !== 0) {
     if (addressBlocked(bare, literalFamily)) {
-      return `blocked IP literal "${hostname}" (private/loopback/link-local range)`;
+      return {
+        blocked: `blocked IP literal "${hostname}" (private/loopback/link-local range)`,
+      };
     }
-    return null;
+    return { blocked: null, addresses: [{ address: bare, family: literalFamily }] };
   }
   // Resolve and reject if ANY resolved address is in a blocked range.
   let records: Array<{ address: string; family: number }>;
@@ -168,15 +196,137 @@ async function ssrfGuard(hostname: string, signal: AbortSignal): Promise<string 
     records = await lookup(bare, { all: true });
   } catch (e) {
     if (isAbortError(e)) throw e;
-    return `could not resolve host "${hostname}": ${(e as Error).message}`;
+    return { blocked: `could not resolve host "${hostname}": ${(e as Error).message}` };
   }
   if (signal.aborted) throw new AbortError();
   for (const rec of records) {
     if (addressBlocked(rec.address, rec.family)) {
-      return `blocked host "${hostname}" -> ${rec.address} (private/loopback/link-local range)`;
+      return {
+        blocked: `blocked host "${hostname}" -> ${rec.address} (private/loopback/link-local range)`,
+      };
     }
   }
-  return null;
+  return {
+    blocked: null,
+    addresses: records.map((r) => ({ address: r.address, family: r.family })),
+  };
+}
+
+// -- DNS-pinned fetch (default path, audit 2026-07-14 M-3) --------------------
+
+/** Module-private sentinel: the pinned set has no address usable for the
+ *  socket's requested family. Mirrors an ENOTFOUND lookup failure. */
+class PinnedLookupExhaustedError extends Error {
+  readonly code = 'ENOTFOUND';
+  constructor(hostname: string, family: number) {
+    super(
+      `DNS pinning: no validated${family === 4 ? ' IPv4' : family === 6 ? ' IPv6' : ''} ` +
+        `address available for "${hostname}"`,
+    );
+    this.name = 'PinnedLookupExhaustedError';
+  }
+}
+
+type LookupCallback = (
+  err: NodeJS.ErrnoException | null,
+  address?: string | Array<{ address: string; family: number }>,
+  family?: number,
+) => void;
+
+/**
+ * Builds a node `lookup` override that answers ONLY from the guard-validated
+ * address set — the socket can no longer be steered to a different (private)
+ * address by a second DNS answer, because no second DNS query ever happens.
+ * Handles both node call shapes: (hostname, cb) and (hostname, options, cb),
+ * with options.family / options.all honored. Exported for unit tests.
+ */
+export function makePinnedLookup(
+  addresses: PinnedAddress[],
+): (hostname: string, options: unknown, callback?: LookupCallback) => void {
+  return (hostname, options, callback) => {
+    const cb: LookupCallback =
+      typeof options === 'function' ? (options as LookupCallback) : (callback as LookupCallback);
+    const opts =
+      typeof options === 'object' && options !== null
+        ? (options as { family?: number | string; all?: boolean })
+        : {};
+    const family =
+      opts.family === 4 || opts.family === 'IPv4'
+        ? 4
+        : opts.family === 6 || opts.family === 'IPv6'
+          ? 6
+          : 0;
+    const usable = family === 0 ? addresses : addresses.filter((a) => a.family === family);
+    const first = usable[0];
+    if (first === undefined) {
+      cb(new PinnedLookupExhaustedError(hostname, family));
+      return;
+    }
+    if (opts.all === true) {
+      cb(
+        null,
+        usable.map((a) => ({ address: a.address, family: a.family })),
+        0,
+      );
+      return;
+    }
+    cb(null, first.address, first.family);
+  };
+}
+
+/** Minimal request-issuing seam so tests can observe the pinned wiring
+ *  without touching the network. Defaults to node:https request. */
+export type PinnedRequestImpl = (
+  options: RequestOptions,
+) => ReturnType<typeof httpsRequest>;
+
+/**
+ * Fetch-shaped GET over node:https with the connection pinned to the
+ * guard-validated addresses (`pinned`; null = no pinning, used only under
+ * ctx.allowPrivateWebFetch where nothing was validated). Host header and TLS
+ * SNI / certificate verification stay on the ORIGINAL hostname — node derives
+ * both from `hostname`, and the custom `lookup` only replaces the address the
+ * socket dials. Returns a real WHATWG Response wrapping the socket stream, so
+ * the existing redirect / body-cap / conversion pipeline is unchanged.
+ */
+export async function pinnedFetch(
+  url: URL,
+  init: { signal: AbortSignal; headers: Record<string, string> },
+  pinned: PinnedAddress[] | null,
+  requestImpl: PinnedRequestImpl = httpsRequest,
+): Promise<Response> {
+  const hostname =
+    url.hostname.startsWith('[') && url.hostname.endsWith(']')
+      ? url.hostname.slice(1, -1)
+      : url.hostname;
+  const res = await new Promise<IncomingMessage>((resolve, reject) => {
+    const req = requestImpl({
+      hostname,
+      port: url.port !== '' ? Number(url.port) : 443,
+      path: `${url.pathname}${url.search}`,
+      method: 'GET',
+      headers: init.headers,
+      signal: init.signal,
+      ...(pinned !== null ? { lookup: makePinnedLookup(pinned) } : {}),
+    } as RequestOptions);
+    req.once('response', resolve);
+    req.once('error', reject);
+    req.end();
+  });
+  const status = res.statusCode ?? 0;
+  const headers = new Headers();
+  for (const [key, value] of Object.entries(res.headers)) {
+    if (Array.isArray(value)) headers.set(key, value.join(', '));
+    else if (typeof value === 'string') headers.set(key, value);
+  }
+  const statusText = res.statusMessage ?? '';
+  // Null-body statuses may not carry a body per the Response contract.
+  if (status === 204 || status === 205 || status === 304) {
+    res.resume(); // drain so the socket is released
+    return new Response(null, { status, statusText, headers });
+  }
+  const body = Readable.toWeb(res) as ReadableStream<Uint8Array>;
+  return new Response(body, { status, statusText, headers });
 }
 
 // -- HTML -> text conversion -------------------------------------------------
@@ -318,24 +468,41 @@ export const webFetchTool: BuiltinTool = {
       if (!normalized.ok) return errorResult(normalized.message);
       let current = normalized.url;
 
-      const fetchImpl = ctx.fetchImpl ?? globalThis.fetch;
+      // Injection bypasses DNS pinning (audit 2026-07-14 M-3): an injected
+      // fetch does its own connection handling, so we can only run the guard
+      // per hop and hand it the URL — the rebinding window stays open on that
+      // path. The DEFAULT path pins the connection to the guard's addresses.
+      const injectedFetch = ctx.fetchImpl;
       let response: Response | undefined;
 
       for (let hop = 0; hop <= MAX_REDIRECTS; hop++) {
+        // Guard + pinning re-run on EVERY hop, so a redirect cannot smuggle
+        // the connection onto an unvalidated (or re-bound) address either.
+        let pinned: PinnedAddress[] | null = null;
         if (!ctx.allowPrivateWebFetch) {
-          const blocked = await ssrfGuard(current.hostname, ctx.signal);
-          if (blocked) return errorResult(`WebFetch failed: ${blocked}.`);
+          const verdict = await ssrfGuard(current.hostname, ctx.signal);
+          if (verdict.blocked !== null) {
+            return errorResult(`WebFetch failed: ${verdict.blocked}.`);
+          }
+          pinned = verdict.addresses;
         }
 
         const signal = AbortSignal.any([ctx.signal, AbortSignal.timeout(FETCH_TIMEOUT_MS)]);
-        const res = await fetchImpl(current.toString(), {
-          redirect: 'manual',
-          signal,
-          headers: { 'user-agent': USER_AGENT, accept: ACCEPT_HEADER },
-        });
+        const headers = { 'user-agent': USER_AGENT, accept: ACCEPT_HEADER };
+        const res =
+          injectedFetch !== undefined
+            ? await injectedFetch(current.toString(), {
+                redirect: 'manual',
+                signal,
+                headers,
+              })
+            : await pinnedFetch(current, { signal, headers }, pinned);
 
         // Manual redirect handling.
         if (res.status >= 300 && res.status < 400) {
+          // The hop's body is never read; release its stream (and, on the
+          // pinned path, the underlying socket) before moving on.
+          if (res.body !== null) void res.body.cancel().catch(() => {});
           const location = res.headers.get('location');
           if (!location) {
             return errorResult(

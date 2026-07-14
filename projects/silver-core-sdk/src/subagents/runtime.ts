@@ -1662,6 +1662,12 @@ export function createSubagentRuntime(
       backgroundTasks.delete(taskId);
       return { outcome: 'not_running', status: record.status };
     }
+    // Word the kill honestly by the record (audit 2026-07-14 M-11b): this
+    // path also stops FOREGROUND children (their agentId is registered too),
+    // and the old text hardcoded "background". A bare backgroundTasks entry
+    // with no record is by construction background.
+    const kind: 'foreground' | 'background' =
+      record !== undefined && !record.background ? 'foreground' : 'background';
     (task?.controller ?? record?.controller)?.abort();
     backgroundTasks.delete(taskId);
     if (record !== undefined) record.status = 'killed';
@@ -1679,10 +1685,10 @@ export function createSubagentRuntime(
       task_id: taskId,
       status: 'stopped',
       output_file: '',
-      summary: `background subagent "${taskId}" stopped via stopTask`,
+      summary: `${kind} subagent "${taskId}" stopped via stopTask`,
     });
-    debug(`stopTask: aborted background subagent "${taskId}"`);
-    return { outcome: 'stopped' };
+    debug(`stopTask: aborted ${kind} subagent "${taskId}"`);
+    return { outcome: 'stopped', kind };
   }
 
   return {
@@ -1695,7 +1701,7 @@ export function createSubagentRuntime(
     stopTask(taskId: string): void {
       const res = killAgent(taskId);
       if (res.outcome === 'unknown') {
-        debug(`stopTask: no background subagent with id "${taskId}"`);
+        debug(`stopTask: no subagent with id "${taskId}"`);
       } else if (res.outcome === 'not_running') {
         debug(`stopTask: subagent "${taskId}" already ${res.status}`);
       }
@@ -1706,7 +1712,8 @@ export function createSubagentRuntime(
       if (res.outcome === 'not_running') {
         return `Subagent ${taskId} already ${res.status}.`;
       }
-      return `Stopped background subagent ${taskId}.`;
+      // Honest wording per record (audit 2026-07-14 M-11b).
+      return `Stopped ${res.kind} subagent ${taskId}.`;
     },
     async sendMessage(params: {
       to: string;

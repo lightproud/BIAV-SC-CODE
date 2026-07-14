@@ -68,6 +68,11 @@ type ServerEntry = {
    *  connect+listTools await so a concurrent connectAll()/reconnect() for the
    *  same entry coalesces onto it instead of spawning a second connection. */
   connecting?: Promise<void> | null;
+  /** audit 2026-07-14 M-4 — set when closeAll()/setServers() abandons this
+   *  entry. A handshake that resolves AFTERWARDS must close its fresh
+   *  connection instead of publishing it onto the abandoned entry, where the
+   *  child process would leak forever (nothing closes it again). */
+  retired?: boolean;
 };
 
 export class DefaultMcpRegistry implements McpRegistry {
@@ -286,8 +291,27 @@ export class DefaultMcpRegistry implements McpRegistry {
 
   /** Close every connection (best-effort, parallel). */
   async closeAll(): Promise<void> {
+    // audit 2026-07-14 M-4: retire every entry FIRST, synchronously, so a
+    // handshake that resolves while we await below sees the flag and closes
+    // its fresh connection instead of publishing onto an abandoned entry.
+    // (setServers() replaces the entry array afterwards; the query teardown
+    // paths never reconnect a closed registry, so retirement is final.)
+    for (const entry of this.entries) entry.retired = true;
     await Promise.all(
       this.entries.map(async (entry) => {
+        // Await any in-flight handshake so the child it may have spawned is
+        // settled before we sweep: it either published entry.connection
+        // (closed below) or self-closed on the retired flag. connectEntryInner
+        // never rejects, but guard anyway — closeAll stays best-effort.
+        if (entry.connecting) {
+          try {
+            await entry.connecting;
+          } catch (err) {
+            this.debug(
+              `[mcp] error awaiting in-flight connect of '${entry.name}': ${errMessage(err)}`,
+            );
+          }
+        }
         if (!entry.connection) return;
         try {
           await entry.connection.close();
@@ -310,6 +334,8 @@ export class DefaultMcpRegistry implements McpRegistry {
    *  `!entry.connection` guard and spawned a SECOND child process; the loser
    *  was never close()d and leaked. */
   private connectEntry(entry: ServerEntry): Promise<void> {
+    // audit 2026-07-14 M-4: an abandoned entry never starts a new connect.
+    if (entry.retired) return Promise.resolve();
     if (entry.connecting) return entry.connecting;
     const p = this.connectEntryInner(entry).finally(() => {
       entry.connecting = null;
@@ -346,6 +372,22 @@ export class DefaultMcpRegistry implements McpRegistry {
             { serverLabel: entry.name, phase: 'connect', timeoutMs: CONNECT_TIMEOUT_MS },
           ),
       );
+      // audit 2026-07-14 M-4: closeAll()/setServers() may have retired this
+      // entry while the (up to 60s) handshake was in flight. Publishing now
+      // would hang a live connection on an abandoned entry — nothing would
+      // ever close it again and the child process would leak forever. Close
+      // the fresh connection instead and leave the entry unpublished.
+      if (entry.retired) {
+        this.debug(
+          `[mcp] '${entry.name}' was retired during connect; closing the fresh connection`,
+        );
+        try {
+          await conn.close();
+        } catch (err) {
+          this.debug(`[mcp] error closing retired '${entry.name}': ${errMessage(err)}`);
+        }
+        return;
+      }
       entry.connection = conn;
       entry.serverInfo = conn.serverInfo();
       entry.tools = tools.map((t) => ({
