@@ -183,6 +183,38 @@ and injects the docs-verbatim protocol itself — same consuming code, identical
 store artifacts. The head of `/memories/MEMORY.md` is auto-injected at session
 start (capped; lazily `view` the rest). See [docs/MEMORY.md](./docs/MEMORY.md).
 
+## /loop interval loops (BPT-EXTENSION)
+
+The official SDK has no recurring-prompt facility, so an unrecognized
+`/loop 10m <task>` would fall through slash-command expansion as a ONE-SHOT
+plain prompt and the recurrence would be silently lost. `parseLoopCommand`
+is the single source of truth for the `/loop [<interval>] <task>` grammar
+(units `s|m|h`, default `10m`), and `createPromptLoop` drives a host-owned
+runner on a fixed-delay cadence (next run scheduled `intervalMs` after the
+previous one settles — runs never overlap). The host bridge is thin:
+
+```ts
+import { parseLoopCommand, createPromptLoop, LOOP_SLASH_COMMAND } from 'silver-core-sdk';
+
+const parsed = parseLoopCommand(userInput);
+if (parsed) {
+  if (!parsed.ok) return showError(parsed.error); // never pass through as a prompt
+  const loop = createPromptLoop({
+    ...parsed.directive,                // intervalMs + prompt
+    run: (prompt) => submitTurn(prompt), // host-owned: e.g. a new query() turn
+    onError: 'stop',                    // default; 'continue' or a callback
+    signal: sessionAbort.signal,
+  });
+  loop.start();                         // immediate first run, then fixed-delay
+  await loop.done;                      // { iterations, stopReason, error? }
+}
+```
+
+`LOOP_SLASH_COMMAND` is menu metadata for hosts that wire this bridge; it is
+deliberately NOT an engine built-in — the engine loop cannot re-invoke itself
+over wall-clock time, and advertising a command the engine would swallow as
+plain text is the honesty red line.
+
 ## Examples
 
 Runnable examples live in [examples/](./examples):

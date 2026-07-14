@@ -67,6 +67,16 @@ src/
 
 ## 当前状态
 
+**v0.59.0（2026-07-14）：/loop 区间循环原语（BPT /loop 缺口收口，守密人同日裁定「SDK 侧加循环原语」）**——
+BPT 中 `/loop 10m <任务>` 原样透传为一次性 prompt、周期语义静默丢失（缺口调查同日）。新公开模块
+`src/prompt-loop.ts`：`parseLoopCommand`（`/loop [<interval>] <task>` 语法唯一真相源，s/m/h + 别名 + 小数，
+缺省 10m；三态返回 null / `{ok:false,error}` / `{ok:true,directive}`，数字开头非法区间 fail-closed，
+界 [1s, 2^31-1ms] 防 Node setTimeout 溢出热循环）+ `createPromptLoop`（宿主自有 runner 上的固定延迟
+控制器：立即首跑、上次**结清**后隔 intervalMs 再跑绝不重叠、maxIterations / AbortSignal / onError
+三态策略、done 摘要 promise 永不 reject）+ `LOOP_SLASH_COMMAND` 菜单元数据（**刻意不进引擎内建**——
+引擎环无法跨墙钟自唤起，广告吞字命令踩诚实红线）。非法配置按层白名单掷 `ConfigurationError`
+（ARCHITECTURE.md 表补行）。+24 测试，全量 2384 绿 + 2 skipped。「循环/调度」自 v0.5 续期推迟清单转正落地（Tier 2 首件）。
+
 **v0.53.8（2026-07-13）：前台子代理批量调用串行化修复（子代理串行化报告）**——同一 assistant
 批次内多个互不依赖的前台 `Agent` 调用被逐个 await（三个 5 秒计时子代理零重叠、启动间隔约 12 秒），
 后台模式却正常并发。根因唯一：`engine/loop.ts` 并发分组谓词只收「只读工具」，Agent `readOnly: false`

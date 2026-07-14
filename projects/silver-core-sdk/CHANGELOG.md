@@ -16,6 +16,31 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.59.0 — 2026-07-14
+
+New capability: `/loop` interval-loop primitive (`src/prompt-loop.ts`,
+BPT-EXTENSION). Closes the 2026-07-14 gap report — `/loop 10m <task>` in BPT
+passed through as a one-shot plain prompt and the recurrence semantics were
+silently lost.
+
+- `parseLoopCommand`: single source of truth for the
+  `/loop [<interval>] <task>` grammar (units s|m|h + aliases, decimals,
+  default 10m). Three-way result: null (not /loop — route as usual),
+  `{ok:false, error}` (IS /loop but unusable — hosts must surface the error,
+  never pass through), `{ok:true, directive}`. Fail-closed on digit-leading
+  non-interval tokens; bounds [1s, 2^31-1 ms] (Node setTimeout overflow
+  fires immediately — a real hot-loop hazard above the ceiling).
+- `createPromptLoop`: fixed-delay controller over a host-owned `run`
+  callback — immediate first run, next run `intervalMs` after the previous
+  SETTLES (never overlaps), `maxIterations` / `AbortSignal` / `onError`
+  ('stop' default | 'continue' | per-error callback), `done` summary promise
+  (never rejects).
+- `LOOP_SLASH_COMMAND` menu metadata; deliberately NOT an engine built-in
+  (the engine cannot re-invoke itself over wall-clock time; advertising a
+  command the engine would swallow as plain text breaks the honesty red
+  line). README section documents the thin host bridge.
+- +24 tests (`tests/prompt-loop.test.ts`).
+
 ## 0.58.0 — 2026-07-14
 
 Audit 2026-07-14 P1 batch — all 13 MEDIUM findings, each with regressions:

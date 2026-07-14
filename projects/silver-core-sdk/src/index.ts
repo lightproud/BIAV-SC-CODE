@@ -26,6 +26,27 @@ export type {
 // SessionManagerOptions / SessionManagerUsage types ride the types.js export).
 export { createBptSession, runConcurrent } from './session-manager.js';
 export type { ManagedTask, RunConcurrentOutcome } from './session-manager.js';
+// BPT-EXTENSION: /loop interval-loop primitive (parser is the grammar's
+// single source of truth; the controller drives a host-owned runner on a
+// fixed-delay cadence — see src/prompt-loop.ts module header).
+export {
+  createPromptLoop,
+  parseLoopCommand,
+  DEFAULT_LOOP_INTERVAL_MS,
+  DEFAULT_LOOP_INTERVAL_LABEL,
+  MIN_LOOP_INTERVAL_MS,
+  MAX_LOOP_INTERVAL_MS,
+  LOOP_SLASH_COMMAND,
+} from './prompt-loop.js';
+export type {
+  LoopCommandParse,
+  LoopDirective,
+  LoopErrorDecision,
+  LoopStopReason,
+  PromptLoopController,
+  PromptLoopOptions,
+  PromptLoopSummary,
+} from './prompt-loop.js';
 // Built-in durable session store (SM-乙a): fileSessionStore(dir) for the
 // SessionManager's `store` option and options.sessionStore recovery.
 export { FileSessionStore, fileSessionStore } from './sessions/file-store.js';
