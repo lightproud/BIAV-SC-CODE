@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 353,
-    "edges": 406,
-    "terms": 6382,
+    "concepts": 354,
+    "edges": 407,
+    "terms": 6393,
     "by_type": {
       "character": 72,
       "dataset": 94,
-      "documentation": 120,
+      "documentation": 121,
       "knowledge-pointer": 47,
       "reference": 17,
       "research": 3
@@ -25,14 +25,14 @@
       "memory": 50,
       "news-output": 23,
       "projects": 27,
-      "resource": 92,
+      "resource": 93,
       "sources": 20,
       "story": 11,
       "wiki-data": 26
     },
     "by_tier": {
       "skeleton": 134,
-      "search": 219
+      "search": 220
     }
   },
   "sections": {
@@ -62,7 +62,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 92
+      "count": 93
     },
     "sources": {
       "index": "/sources/index.md",
@@ -958,7 +958,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 93
+      "degree": 94
     },
     "/characters/15604.md": {
       "type": "character",
@@ -3649,6 +3649,20 @@
       "section": "resource",
       "tier": "search",
       "degree": 0
+    },
+    "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md": {
+      "type": "documentation",
+      "title": "bpt-loop-goal-primitives-note-20260714",
+      "description": "2026-07-14 缺口调查确认：BPT 中 `/loop 10m <任务>` 未被任何层解释——GUI 未注册（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/repo-engineering/bpt-loop-goal-primitives-note-20260714.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 1
     },
     "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md": {
       "type": "documentation",
@@ -6667,6 +6681,11 @@
         "mention"
       ],
       [
+        "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
         "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md",
         "提及:艾瑞卡",
         "mention"
@@ -8805,6 +8824,13 @@
         "mention"
       ]
     ],
+    "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
     "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md": [
       [
         "/characters/15603.md",
@@ -9786,6 +9812,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -10498,6 +10525,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -11020,6 +11048,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -11371,6 +11400,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -11696,6 +11726,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -11876,6 +11907,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -12162,6 +12194,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -12610,6 +12643,7 @@
     "goal": [
       "/projects/silver-core-sdk-doc-onboarding.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md"
     ],
     "google": [
@@ -12636,6 +12670,9 @@
     ],
     "group": [
       "/memory/memory-ext-biav-info-classification.md"
+    ],
+    "gui": [
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md"
     ],
     "guidance": [
       "/memory/memory-archive-bpt-guidance-log.md",
@@ -12913,6 +12950,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -13402,6 +13440,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -13687,6 +13726,7 @@
     "loop": [
       "/projects/silver-core-sdk-doc-reporting.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
     ],
     "lore": [
@@ -13913,6 +13953,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -14204,6 +14245,7 @@
     "note": [
       "/community/community-note-com.md",
       "/news-output/news-output-note-com.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/sources/note_com.md"
     ],
     "notes": [
@@ -14619,6 +14661,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -14718,6 +14761,9 @@
     ],
     "primer": [
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md"
+    ],
+    "primitives": [
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md"
     ],
     "principles": [
       "/memory/memory-ext-karpathy-coding-principles.md"
@@ -15027,6 +15073,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -15317,6 +15364,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -15446,6 +15494,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -16422,6 +16471,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -17506,6 +17556,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -17771,6 +17822,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -18093,6 +18145,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -19378,6 +19431,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -19858,12 +19912,14 @@
       "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-strategy-repo-slimming-plan.md",
-      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md"
+      "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md"
     ],
     "任务": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
-      "/resource/resource-proposal-bpt-context-architecture-20260712.md"
+      "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md"
     ],
     "份归": [
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md"
@@ -20340,6 +20396,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -20607,6 +20664,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -20781,6 +20839,9 @@
     ],
     "何在": [
       "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
+    ],
+    "何层": [
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md"
     ],
     "何形": [
       "/memory/memory-ext-active-silver-blackpool-interface.md"
@@ -22558,6 +22619,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -23850,6 +23912,9 @@
     ],
     "口规": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-silver-blackpool-interface.md"
+    ],
+    "口调": [
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md"
     ],
     "句话": [
       "/memory/memory-archive-contribution-protocol-hub.md",
@@ -25876,6 +25941,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -26680,6 +26746,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -27299,6 +27366,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -28111,6 +28179,9 @@
     ],
     "层皆": [
       "/memory/memory-ext-bpt-positioning.md"
+    ],
+    "层解": [
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md"
     ],
     "层设": [
       "/memory/memory-ext-knowledge-layer-design.md"
@@ -31243,6 +31314,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -31817,6 +31889,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -32157,6 +32230,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -32576,6 +32650,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -32862,6 +32937,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -34383,6 +34459,9 @@
       "/characters/15604.md",
       "/projects/project-game.md"
     ],
+    "未注": [
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md"
+    ],
     "未知": [
       "/characters/15603.md",
       "/characters/54116.md"
@@ -34390,6 +34469,9 @@
     "未确": [
       "/characters/15560.md",
       "/characters/15577.md"
+    ],
+    "未被": [
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md"
     ],
     "未设": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
@@ -34600,6 +34682,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -35034,6 +35117,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -35500,6 +35584,9 @@
     "查点": [
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md"
     ],
+    "查确": [
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md"
+    ],
     "查询": [
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md"
     ],
@@ -35651,6 +35738,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -35867,6 +35955,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -36392,6 +36481,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -36781,6 +36871,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -37270,7 +37361,8 @@
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md"
     ],
     "注册": [
-      "/projects/news-archive-sources-registry.md"
+      "/projects/news-archive-sources-registry.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md"
     ],
     "注意": [
       "/README.md"
@@ -40276,6 +40368,7 @@
       "/characters/15560.md",
       "/characters/15577.md",
       "/memory/memory-ext-collab-event-playbook.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md"
     ],
     "确语": [
@@ -41522,7 +41615,8 @@
     ],
     "缺口": [
       "/memory/memory-ext-wiki-characters-schema-v1.md",
-      "/memory/memory-ext-wiki-phase-2-gap-inventory.md"
+      "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md"
     ],
     "缺失": [
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
@@ -42586,6 +42680,9 @@
     "袋优": [
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
     ],
+    "被任": [
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md"
+    ],
     "被看": [
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
     ],
@@ -42828,6 +42925,9 @@
     "解脱": [
       "/characters/15602.md",
       "/characters/95786.md"
+    ],
+    "解释": [
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md"
     ],
     "解除": [
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
@@ -43485,6 +43585,9 @@
     "调和": [
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md"
     ],
+    "调查": [
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md"
+    ],
     "调用": [
       "/memory/memory-ext-active-self-improvement-requirements.md",
       "/projects/project-silver-core-sdk.md",
@@ -43960,6 +44063,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -44668,6 +44772,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -45707,6 +45812,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -45962,6 +46068,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -47475,6 +47582,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -47845,6 +47953,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -48163,6 +48272,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -48330,6 +48440,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -48533,6 +48644,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -48737,6 +48849,9 @@
     "git": [
       "/memory/memory-research-discord-archive-backfill-conflict.md",
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md"
+    ],
+    "goal": [
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md"
     ],
     "google": [
       "/community/community-google-play.md",
@@ -49072,6 +49187,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -49225,6 +49341,9 @@
     "localization": [
       "/wiki-data/wiki-data-language-config.md",
       "/wiki-data/wiki-data-panel-text.md"
+    ],
+    "loop": [
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md"
     ],
     "lore": [
       "/story/lore_by_unit.md",
@@ -49402,6 +49521,7 @@
     "note": [
       "/community/community-note-com.md",
       "/news-output/news-output-note-com.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/sources/note_com.md"
     ],
     "notes": [
@@ -49661,6 +49781,9 @@
     "primer": [
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md"
     ],
+    "primitives": [
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md"
+    ],
     "processed": [
       "/wiki-data/wiki-schema-characters-processed-schema.md"
     ],
@@ -49808,6 +49931,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
@@ -50306,6 +50430,7 @@
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
+      "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-campaign-report-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",

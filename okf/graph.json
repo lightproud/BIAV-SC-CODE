@@ -1,8 +1,8 @@
 {
   "generated": "2026-07-14",
   "stats": {
-    "nodes": 353,
-    "edges": 406
+    "nodes": 354,
+    "edges": 407
   },
   "nodes": [
     {
@@ -2871,6 +2871,17 @@
       "tier": "search"
     },
     {
+      "id": "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
+      "type": "documentation",
+      "title": "bpt-loop-goal-primitives-note-20260714",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
       "id": "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
       "type": "documentation",
       "title": "bpt-sdk-completion-inventory-20260705",
@@ -5496,6 +5507,12 @@
     },
     {
       "source": "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
       "rel_type": "mention"
