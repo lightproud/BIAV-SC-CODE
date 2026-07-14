@@ -118,6 +118,22 @@ describe('compareReports', () => {
     expect(cmp.markdown).toContain('| midStreamCuts | 2 | 0 | -2 |');
   });
 
+  it('does not throw on wrong-shape ledger lines; aggregates only valid ones (audit 2026-07-14 M-12)', async () => {
+    await seedDay('2026-07-10', [
+      line(),
+      // well-formed JSON, wrong shape: no usage object at all
+      '{"ts":"2026-07-10T11:00:00.000Z"}\n',
+      // well-formed JSON, wrong-typed usage
+      `${JSON.stringify({ v: 1, ts: '2026-07-10T12:00:00.000Z', usage: 'nonsense', total_cost_usd: 0.5 })}\n`,
+    ]);
+    await seedDay('2026-07-11', [line({ ts: '2026-07-11T10:00:00.000Z' })]);
+    const cmp = await compareReports('2026-07-10', '2026-07-11', { logDir: dir });
+    expect(cmp.a.records).toBe(1);
+    expect(cmp.a.tokens?.input).toBe(100);
+    expect(cmp.a.tokens?.costUsd).toBeCloseTo(0.01);
+    expect(cmp.b.records).toBe(1);
+  });
+
   it('marks a data-less side 无数据 and nulls its deltas', async () => {
     await seedDay('2026-07-11', [line({ ts: '2026-07-11T10:00:00.000Z' })]);
     const cmp = await compareReports('2026-07-01', '2026-07-11', { logDir: dir });

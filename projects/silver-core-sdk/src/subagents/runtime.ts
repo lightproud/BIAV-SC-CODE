@@ -71,6 +71,7 @@ import type {
 } from '../internal/contracts.js';
 import type { CanUseTool } from '../types.js';
 import { DefaultPermissionGate } from '../permissions/gate.js';
+import { forkShellSession } from '../tools/shells.js';
 import { runAgentLoop } from '../engine/loop.js';
 import { matchToolName, parseRule } from '../permissions/rules.js';
 import { addUsage } from '../engine/pricing.js';
@@ -95,8 +96,14 @@ export type SubagentUsageLedger = {
 };
 
 export interface SubagentRuntime {
-  /** SpawnSubagentFn bound to a nesting depth (root ToolContext uses depth 0). */
-  makeSpawnFn(depth: number): SpawnSubagentFn;
+  /**
+   * SpawnSubagentFn bound to a nesting depth (root ToolContext uses depth 0).
+   * `parentShells` is the SPAWNING context's shell session — each spawned
+   * child forks its persistent cwd/env namespace from it (audit 2026-07-14
+   * M-10), so nested children seed from their immediate parent, not the root.
+   * Omitted -> the runtime's query-wide manager (the root loop's session).
+   */
+  makeSpawnFn(depth: number, parentShells?: ShellManager): SpawnSubagentFn;
   /** Pull + clear completed background-subagent result notes (root loop drains). */
   drainCompletedResults(): TextBlockParam[];
   /** Pull + reset the accumulated child usage/cost/modelUsage. */
@@ -182,7 +189,10 @@ export type SubagentRuntimeOptions = {
    *  encoding since v0.7) are pushed here (the runtime cannot yield);
    *  the query layer drains them into the SDKMessage stream. */
   emitObservability?: (msg: SDKMessage) => void;
-  /** v0.5 query-wide shell session (shared with children's ToolContext). */
+  /** v0.5 query-wide shell session. The BACKGROUND-shell registry is shared
+   *  with children's ToolContext as-is; the PERSISTENT cwd/env namespace is
+   *  forked per spawned child (audit 2026-07-14 M-10), seeded from the
+   *  spawning context's snapshot at spawn time. */
   shells?: ShellManager;
   /** v0.6 sandbox context (shared with children's ToolContext). */
   sandbox?: SandboxContext;
@@ -899,7 +909,11 @@ export function createSubagentRuntime(
   }
 
   // --- The spawn closure factory -------------------------------------------
-  function makeSpawnFn(depth: number): SpawnSubagentFn {
+  function makeSpawnFn(depth: number, parentShells?: ShellManager): SpawnSubagentFn {
+    // The shell session this spawner's CALLER runs on: children fork their
+    // persistent cwd/env namespace from it (audit 2026-07-14 M-10). The root
+    // loop's spawner (depth 0, no override) forks from the query-wide manager.
+    const sessionShells = parentShells ?? opts.shells;
     return async function spawn(
       params: SpawnSubagentParams,
     ): Promise<SpawnSubagentResult> {
@@ -1249,19 +1263,30 @@ export function createSubagentRuntime(
       const childController = new AbortController();
       const parentSignal = isBackground ? outerSignal : params.signal;
       const childSignal = AbortSignal.any([parentSignal, childController.signal]);
+      // Persistent shell state is FORKED per spawned child (audit 2026-07-14
+      // M-10): the child's namespace is seeded from the parent's cwd/env
+      // snapshot as of spawn time (it still sees the parent's persistent
+      // state), but its own cd/exports stay private — they never replay into
+      // concurrent batch-mates' Bash calls nor back into the parent's next
+      // foreground Bash. The BACKGROUND-shell registry stays query-wide:
+      // forkShellSession delegates spawnBackground/get/kill to the shared
+      // manager, so BashOutput/KillShell see the same shells everywhere.
+      const childShells =
+        sessionShells !== undefined ? forkShellSession(sessionShells) : undefined;
       const childToolContext: ToolContext = {
         cwd: childCwd,
         additionalDirectories,
         env,
         signal: childSignal,
         debug,
-        spawnSubagent: makeSpawnFn(childDepth),
-        // One shell session per query: children see the same background
-        // shells and persistent cwd/env as the root loop. KNOWN LIMIT for
-        // worktree isolation: the shared persistent-state replay may `cd` a
-        // child Bash call back to the last recorded cwd (outside the
-        // worktree); Read/Write/Edit and childConfig.cwd stay confined.
-        shells: opts.shells,
+        // Nested spawns fork their shell namespace from THIS child's session
+        // (lineage seeding), not from the root manager.
+        spawnSubagent: makeSpawnFn(childDepth, childShells),
+        // KNOWN LIMIT for worktree isolation: the SEED is the parent's last
+        // recorded cwd, which may lie outside the worktree, so the child's
+        // first Bash call can still start outside it (its later cds are its
+        // own); Read/Write/Edit and childConfig.cwd stay confined.
+        shells: childShells,
         // Children inherit the same sandbox as the root loop.
         sandbox: opts.sandbox,
         // Same SESSION for the read-before-write gate: a parent Read
@@ -1486,7 +1511,38 @@ export function createSubagentRuntime(
       try {
         result = await run;
       } catch (err) {
-        record.status = 'failed';
+        // Do not clobber a terminal status: killAgent may have set 'killed'
+        // before this catch runs — same guard as the background path (audit
+        // 2026-07-14 M-11a).
+        if (record.status === 'running') record.status = 'failed';
+        // killAgent on a FOREGROUND child aborts only that child: resolve the
+        // spawn to an error result so the Agent tool returns "stopped" and
+        // the PARENT loop continues — rethrowing the AbortError here would
+        // propagate through the Agent tool and kill the whole parent query
+        // (audit 2026-07-14 M-11c). A genuine parent-side abort (the spawning
+        // tool call's signal or the query-wide signal) still rethrows: the
+        // parent itself is being cancelled, and swallowing that would fake a
+        // completed turn.
+        if (
+          isAbortError(err) &&
+          record.status === 'killed' &&
+          !params.signal.aborted &&
+          !outerSignal.aborted
+        ) {
+          // The child is done (stopped); fire its stop hook like every other
+          // terminal path, with a fresh signal, never gating the return.
+          await fireSubagentStop(
+            agentId,
+            resolved.type,
+            new AbortController().signal,
+          ).catch(() => undefined);
+          return {
+            content: `Subagent was stopped before completing (agentId: ${agentId}).`,
+            isError: true,
+            agentId,
+            background: false,
+          };
+        }
         throw err;
       } finally {
         await releaseWorktree().catch(() => undefined);
@@ -1589,7 +1645,10 @@ export function createSubagentRuntime(
   /** Shared kill path for stopTask (Query API) and stopAgent (TaskStop bridge). */
   function killAgent(
     taskId: string,
-  ): { outcome: 'stopped' } | { outcome: 'not_running'; status: string } | { outcome: 'unknown' } {
+  ):
+    | { outcome: 'stopped'; kind: 'foreground' | 'background' }
+    | { outcome: 'not_running'; status: string }
+    | { outcome: 'unknown' } {
     const task = backgroundTasks.get(taskId);
     const record = childRegistry.get(taskId);
     if (task === undefined && record === undefined) return { outcome: 'unknown' };

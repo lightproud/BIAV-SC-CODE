@@ -16,7 +16,16 @@
  * damaged transcript never blocks a resume.
  */
 
-import { appendFileSync, createReadStream, mkdirSync } from 'node:fs';
+import { Buffer } from 'node:buffer';
+import {
+  appendFileSync,
+  closeSync,
+  createReadStream,
+  fstatSync,
+  mkdirSync,
+  openSync,
+  readSync,
+} from 'node:fs';
 import { readFile, readdir, stat } from 'node:fs/promises';
 import { homedir } from 'node:os';
 import { join } from 'node:path';
@@ -254,6 +263,9 @@ export class JsonlSessionStore implements SessionStore {
    *  streaming hot path, 4-5 calls per turn). Reset-and-retried on failure so
    *  an externally removed directory still self-heals. */
   private dirEnsured = false;
+  /** Files whose tail byte was already verified by this instance (torn-tail
+   *  self-heal below — audit 2026-07-14 M-9, mirrors FileSessionStore). */
+  private readonly tailChecked = new Set<string>();
 
   constructor(cfg: JsonlSessionStoreConfig = {}) {
     this.dir = resolveSessionsDir(cfg.sessionDir, cfg.env);
@@ -263,6 +275,30 @@ export class JsonlSessionStore implements SessionStore {
   /** Absolute path of one session's transcript file. */
   filePath(sessionId: string): string {
     return join(this.dir, `${sessionId}${JSONL_EXT}`);
+  }
+
+  /**
+   * True when the file exists, is non-empty and does NOT end in a newline —
+   * i.e. a previous process crashed mid-append and left a torn tail.
+   * Reads ONLY the last byte (append sits on the streaming hot path; never
+   * read the whole file here). Sync twin of FileSessionStore's check.
+   */
+  private endsWithoutNewlineSync(file: string): boolean {
+    let fd: number;
+    try {
+      fd = openSync(file, 'r');
+    } catch {
+      return false; // ENOENT etc.: nothing to heal
+    }
+    try {
+      const size = fstatSync(fd).size;
+      if (size === 0) return false;
+      const buf = Buffer.alloc(1);
+      readSync(fd, buf, 0, 1, size - 1);
+      return buf[0] !== 0x0a;
+    } finally {
+      closeSync(fd);
+    }
   }
 
   /**
@@ -276,20 +312,33 @@ export class JsonlSessionStore implements SessionStore {
       );
       return;
     }
-    const line = `${JSON.stringify(entry)}\n`;
+    const file = this.filePath(sessionId);
+    let line = `${JSON.stringify(entry)}\n`;
     try {
       if (!this.dirEnsured) {
         mkdirSync(this.dir, { recursive: true });
         this.dirEnsured = true;
       }
-      appendFileSync(this.filePath(sessionId), line, 'utf8');
+      // Torn-tail self-heal (audit 2026-07-14 M-9, ported from
+      // FileSessionStore.append): the FIRST append to each file per store
+      // instance checks the file's last byte and, when it is not a newline
+      // (a previous process died mid-append), prefixes this line with '\n'.
+      // Otherwise the fresh record would glue onto the torn tail and BOTH
+      // lines would be lost on load — this way the crash corrupts only
+      // itself, never the next record. A racing double check at worst writes
+      // an extra blank line, which load() skips.
+      if (!this.tailChecked.has(file)) {
+        this.tailChecked.add(file);
+        if (this.endsWithoutNewlineSync(file)) line = `\n${line}`;
+      }
+      appendFileSync(file, line, 'utf8');
     } catch {
       // The directory may have been removed after we ensured it: re-ensure
       // and retry ONCE before giving up (append must never throw).
       try {
         mkdirSync(this.dir, { recursive: true });
         this.dirEnsured = true;
-        appendFileSync(this.filePath(sessionId), line, 'utf8');
+        appendFileSync(file, line, 'utf8');
       } catch (err) {
         this.debug(
           `session store: append failed for ${sessionId}: ${err instanceof Error ? err.message : String(err)}`,

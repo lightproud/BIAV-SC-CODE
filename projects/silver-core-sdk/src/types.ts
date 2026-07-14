@@ -757,6 +757,18 @@ export type HookCallbackMatcher = {
    * path, zero model calls.
    */
   condition?: string;
+  /**
+   * BPT-EXTENSION (audit 2026-07-14 M-1): per-matcher failure policy for THIS
+   * matcher's callbacks, overriding Options.hookFailureMode when set. The
+   * global default stays 'open' (official drop-in parity), which means a
+   * crashed or timed-out callback is treated as "no opinion" — a security
+   * PreToolUse hook that WOULD have denied silently stops denying. Marking
+   * the security-critical matcher 'closed' turns its callback failures into a
+   * deny (fail safe) without changing behavior for every other hook; 'open'
+   * likewise wins over a global 'closed' for a best-effort matcher. Omitted
+   * -> the global setting applies.
+   */
+  failureMode?: 'open' | 'closed';
   hooks: HookCallback[];
   /** Timeout in seconds for each callback (default 60). */
   timeout?: number;
@@ -1667,6 +1679,8 @@ export type Options = {
    * silently stops denying. 'closed': the failure contributes a deny, so
    * hook-enforced policy fails safe (tool calls block while the hook is
    * broken). Cancellation via the caller's signal is never treated as a deny.
+   * A matcher-level HookCallbackMatcher.failureMode overrides this global
+   * setting for that matcher's callbacks (audit 2026-07-14 M-1).
    */
   hookFailureMode?: 'open' | 'closed';
   /** v0.4: surface hook execution as system/hook_started + system/

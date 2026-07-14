@@ -6,8 +6,11 @@
  * (matcher.timeout ?? 60 seconds) combined with the caller's AbortSignal.
  * Rejected or timed-out callbacks are logged via the debug callback and
  * otherwise ignored (failureMode 'open', the default) or converted into a
- * deny (failureMode 'closed' — see HookRunnerConfig.failureMode); a callback
- * can never crash the agent loop.
+ * deny (failureMode 'closed' — see HookRunnerConfig.failureMode; a matcher's
+ * own HookCallbackMatcher.failureMode overrides the global setting for that
+ * matcher's callbacks, audit 2026-07-14 M-1); a callback can never crash the
+ * agent loop. A failure resolved 'open' emits a loud debug line stating the
+ * hook's outcome was DISCARDED fail-open.
  *
  * Aggregation rules (across the outputs, in REGISTRATION order — parallel
  * execution, deterministic fold):
@@ -70,6 +73,10 @@ export type HookRunnerConfig = {
    * the aggregate, so hook-enforced policy fails safe at the cost of blocking
    * tool calls while a policy hook is broken. Outer-signal cancellation is
    * never converted to a deny (the whole run is being cancelled).
+   * Per-matcher override: HookCallbackMatcher.failureMode wins over this
+   * global setting for that matcher's callbacks (audit 2026-07-14 M-1), so a
+   * single security-critical matcher can fail closed while the global default
+   * keeps official drop-in parity ('open').
    */
   failureMode?: 'open' | 'closed';
 };
@@ -141,7 +148,11 @@ export class DefaultHookRunner implements HookRunner {
     const admitted = await this.filterByCondition(event, matched, input, signal);
 
     // Collect every callback of every admitted matcher.
-    const tasks: Array<{ cb: HookCallback; timeoutMs: number }> = [];
+    const tasks: Array<{
+      cb: HookCallback;
+      timeoutMs: number;
+      failureMode: 'open' | 'closed';
+    }> = [];
     for (const matcher of admitted) {
       const seconds =
         typeof matcher.timeout === 'number' &&
@@ -149,8 +160,12 @@ export class DefaultHookRunner implements HookRunner {
         matcher.timeout > 0
           ? matcher.timeout
           : DEFAULT_TIMEOUT_SECONDS;
+      // Per-matcher failure policy wins over the runner-wide setting (audit
+      // 2026-07-14 M-1): a security-critical matcher can fail closed while
+      // the global default keeps official drop-in parity ('open').
+      const failureMode = matcher.failureMode ?? this.failureMode;
       for (const cb of matcher.hooks) {
-        tasks.push({ cb, timeoutMs: seconds * 1000 });
+        tasks.push({ cb, timeoutMs: seconds * 1000, failureMode });
       }
     }
 
@@ -160,7 +175,15 @@ export class DefaultHookRunner implements HookRunner {
     // completion order (audit 2026-07-10 L4). runOne never rejects.
     const settled = await Promise.all(
       tasks.map((task) =>
-        this.runOne(event, task.cb, task.timeoutMs, input, toolUseID, signal),
+        this.runOne(
+          event,
+          task.cb,
+          task.timeoutMs,
+          task.failureMode,
+          input,
+          toolUseID,
+          signal,
+        ),
       ),
     );
     const outputs = settled.filter((out): out is HookJSONOutput => out !== undefined);

@@ -14,11 +14,12 @@
  */
 
 import { spawn } from 'node:child_process';
-import { mkdtempSync, rmSync } from 'node:fs';
+import { copyFileSync, mkdtempSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
 import { AbortError } from '../errors.js';
+import { guardRegexPattern } from '../internal/regex-guard.js';
 import { planShellSpawn } from '../sandbox/backend.js';
 import { planProcessKill, terminalStatus } from './kill-plan.js';
 import { detectSandboxEvidence, sandboxFailureHint } from '../sandbox/evidence.js';
@@ -224,6 +225,67 @@ export function createShellManager(debug: (msg: string) => void): ShellManager {
 }
 
 // ---------------------------------------------------------------------------
+// Per-subagent persistent-state fork (audit 2026-07-14 M-10)
+// ---------------------------------------------------------------------------
+
+/**
+ * Fork the PERSISTENT-STATE namespace of a shell session for one spawned
+ * subagent (audit 2026-07-14 M-10). Before this, every concurrent foreground
+ * subagent shared the query's single cwd/env state file, so one batch-mate's
+ * `cd`/`export` replayed into its siblings' (and the parent's) next Bash call
+ * — cross-pollution plus a write race on the shared file. The fork:
+ *   - creates a child state dir SEEDED from the parent's current cwd/env
+ *     snapshot, so the child still sees the parent's persistent state as it
+ *     was at spawn time, but its own mutations stay in its namespace and
+ *     never leak to siblings or back to the parent;
+ *   - nests the child dir UNDER the parent state dir, so the query-wide
+ *     dispose() removes every fork with no extra lifecycle plumbing (a
+ *     SendMessage continuation between-times still finds its state intact);
+ *   - scopes ONLY the persistent state: spawnBackground/get/kill delegate to
+ *     the query-wide manager, so children list, read and stop the SAME
+ *     background shells as the root loop.
+ * A parent with no state dir (persistence already degraded to stateless) has
+ * nothing to fork or pollute and is returned as-is; a fork whose own mkdtemp
+ * fails degrades that child to stateless ('' state dir) rather than falling
+ * back onto the shared parent file.
+ */
+export function forkShellSession(parent: ShellManager): ShellManager {
+  if (parent.stateDir === '') return parent;
+  let childDir = '';
+  try {
+    childDir = mkdtempSync(join(parent.stateDir, 'fork-'));
+    for (const name of ['cwd', 'env']) {
+      try {
+        copyFileSync(join(parent.stateDir, name), join(childDir, name));
+      } catch {
+        // No parent snapshot for this file yet (no foreground Bash ran
+        // before the spawn) — the child simply starts without one.
+      }
+    }
+  } catch {
+    childDir = ''; // degrade to stateless, never back to the shared file
+  }
+  return {
+    stateDir: childDir,
+    spawnBackground: (shell, command, ctx, disableSandbox) =>
+      parent.spawnBackground(shell, command, ctx, disableSandbox),
+    get: (id) => parent.get(id),
+    kill: (id) => parent.kill(id),
+    // Scoped dispose: drop only this fork's namespace. Background shells
+    // belong to the query-wide manager and are disposed there.
+    dispose: () => {
+      if (childDir !== '') {
+        try {
+          rmSync(childDir, { recursive: true, force: true });
+        } catch {
+          /* best-effort */
+        }
+      }
+    },
+  };
+}
+
+// ---------------------------------------------------------------------------
 // BashOutput / KillShell built-in tools
 // ---------------------------------------------------------------------------
 
@@ -240,7 +302,11 @@ function describeStatus(rec: BackgroundShell): string {
   return `status: ${rec.status} (${exit})`;
 }
 
-/** Apply an optional per-line regex filter to an output chunk. */
+/** Apply an optional per-line regex filter to an output chunk.
+ *  Callers must pre-screen `filter` with guardRegexPattern (audit 2026-07-14
+ *  M-2): this helper only handles SYNTACTIC invalidity (passes everything);
+ *  ReDoS-risky patterns are rejected at the tool boundary with a descriptive
+ *  error so the model can rephrase. */
 function filterLines(chunk: string, filter: string | undefined): string {
   if (filter === undefined || filter.length === 0 || chunk.length === 0) {
     return chunk;
@@ -296,6 +362,21 @@ export const bashOutputTool: BuiltinTool = {
       return { content: `BashOutput: no background shell with id "${id}".`, isError: true };
     }
     const filter = typeof input['filter'] === 'string' ? input['filter'] : undefined;
+    // ReDoS guard (audit 2026-07-14 M-2, shared with Grep and hooks/matcher):
+    // the filter regex runs per line over up to 500K chars of accumulated
+    // shell output, synchronously. Reject risky patterns with a message the
+    // model can act on, BEFORE the cursors advance (so no output is lost).
+    if (filter !== undefined) {
+      const guardReason = guardRegexPattern(filter);
+      if (guardReason !== null) {
+        return {
+          content:
+            `BashOutput: unsafe "filter" regular expression rejected: ` +
+            `${guardReason}. Retry with a simpler filter (or none).`,
+          isError: true,
+        };
+      }
+    }
     const newOut = rec.stdout.slice(rec.cursorOut);
     const newErr = rec.stderr.slice(rec.cursorErr);
     rec.cursorOut = rec.stdout.length;

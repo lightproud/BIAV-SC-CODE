@@ -41,11 +41,16 @@
  *    unparsable reply yields null (same null semantics as a dead agent).
  *
  * Resume: each run journals its agent() calls in invocation order as
- * (input-hash, result) pairs. Resuming replays the longest unchanged prefix
- * from the journal (official semantics: the first edited/new call and
- * everything after it runs live); a call whose inputs match but which never
- * completed (returned null) re-runs live without breaking the prefix.
- * Journals live in memory — resume is same-session only.
+ * (input-hash, result) pairs. Resume lookup is ORDER-INDEPENDENT (audit
+ * 2026-07-14 M-13): parallel branches' post-await agent() calls interleave
+ * nondeterministically, so a rerun's sequence permutation must not defeat
+ * the cache — the Nth live call with hash H replays the Nth journal entry
+ * with hash H (two calls with identical hash are interchangeable by
+ * construction: the hash covers prompt + opts). A changed/new call simply
+ * runs live without disabling other lookups; a call whose inputs match but
+ * which never completed (returned null) re-runs live. The journal WRITE
+ * format is unchanged (entries in invocation order), so old journals stay
+ * resumable. Journals live in memory — resume is same-session only.
  */
 
 import * as os from 'node:os';
@@ -102,7 +107,9 @@ export type WorkflowRunOptions = {
   signal: AbortSignal;
   debug: (msg: string) => void;
   limits?: Partial<WorkflowLimits>;
-  /** Prior run's journal (prefix cache) for resumeFromRunId. */
+  /** Prior run's journal for resumeFromRunId. Replayed by (hash, occurrence),
+   *  not by position (audit 2026-07-14 M-13), so parallel-branch reorderings
+   *  between runs still hit the cache. */
   resumeJournal?: WorkflowJournalEntry[];
   /** Resolve a saved workflow name to script source (workflow(name) hook).
    *  Must throw a descriptive Error for an unknown name. */
@@ -639,9 +646,30 @@ export async function runWorkflow(opts: WorkflowRunOptions): Promise<WorkflowRun
   let seq = 0; // agent() invocation counter (lifetime cap + journal index)
   let agentsLive = 0;
   let agentsCached = 0;
-  let cacheActive = opts.resumeJournal !== undefined;
   let topMeta: WorkflowMeta | undefined;
   let started = false;
+
+  // Resume cache index (audit 2026-07-14 M-13): keyed by (hash, occurrence)
+  // instead of global call sequence. Parallel branches' post-await agent()
+  // calls interleave nondeterministically, so on a rerun the seq permutation
+  // would break a journal[index] comparison and silently disable the cache;
+  // instead the Nth live call with hash H looks up the Nth journal entry
+  // with hash H (journal order). Identical-hash calls are interchangeable by
+  // construction (the hash covers prompt + opts), so occurrence-matching is
+  // semantically safe. Each lookup is independent — a miss means only THAT
+  // call runs live. The journal write format (invocation-ordered array) is
+  // unchanged, so journals from before this change resume fine.
+  const resumeByHash = new Map<string, WorkflowJournalEntry[]>();
+  if (opts.resumeJournal !== undefined) {
+    for (const e of opts.resumeJournal) {
+      if (e === undefined) continue; // tolerate a sparse journal
+      const arr = resumeByHash.get(e.hash);
+      if (arr === undefined) resumeByHash.set(e.hash, [e]);
+      else arr.push(e);
+    }
+  }
+  /** Per-hash count of occurrences already consumed by live calls. */
+  const resumeSeen = new Map<string, number>();
 
   const pushProgress = (line: string): void => {
     if (progress.length < MAX_PROGRESS_LINES) progress.push(line);
@@ -683,12 +711,16 @@ export async function runWorkflow(opts: WorkflowRunOptions): Promise<WorkflowRun
     const entry: WorkflowJournalEntry = { hash, completed: false, result: null };
     journal[index] = entry;
 
-    // Resume prefix cache: unchanged + completed -> cached result; unchanged
-    // but never completed -> re-run live without breaking the prefix; changed
-    // or new -> everything after runs live.
-    if (cacheActive) {
-      const prior = opts.resumeJournal![index];
-      if (prior !== undefined && prior.hash === hash) {
+    // Resume cache, order-independent (audit 2026-07-14 M-13): the Nth live
+    // call with this hash consumes the Nth journal entry with this hash.
+    // Completed -> cached result; matching but uncompleted -> re-run live
+    // (the occurrence is still consumed so later duplicates stay aligned);
+    // no entry -> this call runs live, other lookups are unaffected.
+    if (resumeByHash.size > 0) {
+      const occurrence = resumeSeen.get(hash) ?? 0;
+      const prior = resumeByHash.get(hash)?.[occurrence];
+      if (prior !== undefined) {
+        resumeSeen.set(hash, occurrence + 1);
         if (prior.completed) {
           agentsCached += 1;
           entry.completed = true;
@@ -696,9 +728,7 @@ export async function runWorkflow(opts: WorkflowRunOptions): Promise<WorkflowRun
           pushProgress(`[agent#${index}] ${display}: cached (resume)`);
           return prior.result;
         }
-        // fall through: matching inputs, uncompleted -> live, prefix intact
-      } else {
-        cacheActive = false;
+        // fall through: matching inputs, uncompleted -> live
       }
     }
 

@@ -247,6 +247,12 @@ function formatStreams(stdout: string, stderr: string): string {
  * cwd + `export -p`. Functions/aliases/unexported vars do NOT persist — this
  * is a state-file replay, not a long-lived shell process (docs/COMPAT.md).
  *
+ * `stateDir` is the caller's PER-CONTEXT namespace: the root loop replays the
+ * query-wide dir, while each spawned subagent's ToolContext carries a forked
+ * dir seeded from its parent at spawn time (shells.ts forkShellSession), so
+ * concurrent batch-mates never replay each other's cd/exports and a child's
+ * mutations never reach the parent's next call (audit 2026-07-14 M-10).
+ *
  * The state dir comes from mkdtemp, so single-quoting it is safe against word
  * splitting. But on Windows mkdtemp returns a BACKSLASH path
  * (`C:\Users\…\bpt-shell-X`); embedded verbatim, those backslashes corrupt

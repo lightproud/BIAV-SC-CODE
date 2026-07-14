@@ -67,6 +67,12 @@ export async function aggregateDay(logDir: string, date: string): Promise<DayAgg
   }
   const from = new Date(`${date}T00:00:00.000Z`);
   const to = new Date(`${date}T23:59:59.999Z`);
+  // Shape safety (audit 2026-07-14 M-12): this aggregation duplicates
+  // runtime-report.ts's (L-7) and dereferences the same nested fields
+  // (r.usage.*, r.total_cost_usd, r.transport_health, r.per_tool). Both
+  // consumers are guarded at the shared readWindow choke point — its
+  // isRunLogRecord() validator diverts wrong-shape lines into the bad-line
+  // counter, so every record that reaches this loop is safe to dereference.
   const { records } = await readWindow(logDir, from, to);
 
   const named = records.filter((r) => r.incognito !== true);

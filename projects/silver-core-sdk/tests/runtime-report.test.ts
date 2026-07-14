@@ -251,6 +251,29 @@ describe('generateRuntimeReport', () => {
     expect(report.summary.records).toBe(1);
   });
 
+  it('wrong-shape JSON lines count as bad lines, never kill the report (audit 2026-07-14 M-12)', async () => {
+    const good = {
+      ...buildRunLogRecord(resultFixture(), { incognito: false, scenario: 'coding' }),
+      ts: '2026-07-11T11:00:00Z',
+    };
+    const logDir = join(dir, 'ledger');
+    await mkdir(logDir, { recursive: true });
+    await writeFile(
+      join(logDir, 'runlog-2026-07-11.jsonl'),
+      `${JSON.stringify(good)}\n` +
+        // well-formed JSON, wrong shape: no usage object at all
+        '{"ts":"2026-07-11T11:00:00Z"}\n' +
+        // well-formed JSON, wrong-typed usage
+        `${JSON.stringify({ ...good, usage: 'nonsense' })}\n`,
+    );
+
+    const report = await generateRuntimeReport({ logDir, now: T0, outDir: null });
+    // Succeeds; aggregates ONLY the valid record and counts the 2 bad lines.
+    expect(report.summary.records).toBe(1);
+    expect(report.summary.tokens?.input).toBe(100);
+    expect(report.markdown).toContain('2 unparseable lines skipped');
+  });
+
   it('missing log directory degrades to an all-无数据 report, not a throw', async () => {
     const report = await generateRuntimeReport({
       logDir: join(dir, 'does-not-exist'),

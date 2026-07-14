@@ -11,6 +11,7 @@ import fg from 'fast-glob';
 import { promises as fs } from 'node:fs';
 import * as path from 'node:path';
 import { AbortError } from '../errors.js';
+import { guardRegexPattern } from '../internal/regex-guard.js';
 import { GREP_DESCRIPTION } from './descriptions.js';
 import type {
   BuiltinTool,
@@ -337,6 +338,18 @@ export const grepTool: BuiltinTool = {
     let flags = 'm';
     if (caseInsensitive) flags += 'i';
     if (multiline) flags += 's';
+    // ReDoS guard (audit 2026-07-14 M-2, shared with hooks/matcher.ts): the
+    // model-supplied pattern runs synchronously over up to 10MB per file, so a
+    // catastrophic-backtracking pattern would freeze the event loop with no
+    // timeout or AbortSignal able to interrupt it. Rejected patterns come back
+    // as a descriptive tool error the model can rephrase — never a throw.
+    const guardReason = guardRegexPattern(pattern);
+    if (guardReason !== null) {
+      return {
+        content: `Grep: unsafe regular expression rejected: ${guardReason}.`,
+        isError: true,
+      };
+    }
     try {
       void new RegExp(pattern, flags);
     } catch (err) {

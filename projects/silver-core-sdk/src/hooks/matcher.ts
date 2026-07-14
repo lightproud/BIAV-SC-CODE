@@ -21,74 +21,21 @@
  * closed (treat as no-match) by (a) capping the pattern and value lengths fed
  * to the engine and (b) refusing patterns with a nested quantifier. This never
  * throws; on a guard trip it returns false and emits an optional debug warning.
+ *
+ * The heuristic itself lives in src/internal/regex-guard.ts since the audit
+ * 2026-07-14 M-2 batch (Grep and BashOutput compile model-supplied patterns
+ * over far larger inputs and now share the exact same defense); this module's
+ * observable behavior is unchanged.
  */
+
+import { hasNestedQuantifier, MAX_REGEX_PATTERN_LENGTH } from '../internal/regex-guard.js';
 
 /** Charset that selects exact-set semantics instead of regex semantics. */
 const EXACT_SET_RE = /^[A-Za-z0-9_\-, |]*$/;
 
 /** Regex-path input ceilings. Tool names are short; these are generous. */
-const MAX_MATCHER_LENGTH = 1024;
-const MAX_VALUE_LENGTH = 1024;
-
-/**
- * Detects a repetition quantifier applied to a group whose body already
- * contains a repetition (star height >= 2), the classic catastrophic-
- * backtracking signature: `(a+)+`, `(a*)+`, `(a+)*`, `(.*x)+`, `(a+){2,}`, ...
- * Intentionally conservative: safe linear patterns like `(foo|bar)+`, `Edit.*`
- * or `^mcp__` do not match and keep working.
- *
- * A single flat regex CANNOT do this correctly: the old detector
- * `/\([^()]*[*+][^()]*\)\s*[*+{]/` used `[^()]*` around the inner quantifier,
- * so it only saw a nested quantifier when the quantified group held NO further
- * parens — `((a+))+` and `(a(b+))+` slipped through and still froze the event
- * loop. We instead walk the pattern with a paren stack, tracking (at every
- * nesting depth) whether the group body contains a repetition, and flag the
- * moment a repetition-bearing group is itself quantified.
- */
-function hasNestedQuantifier(pattern: string): boolean {
-  const isRepeatQuant = (c: string | undefined): boolean =>
-    c === '*' || c === '+' || c === '{';
-  // Per open group: does its body (at ANY depth) contain a repetition quantifier?
-  const bodyHasRepeat: boolean[] = [];
-  const markAllOpenGroups = (): void => {
-    for (let k = 0; k < bodyHasRepeat.length; k += 1) bodyHasRepeat[k] = true;
-  };
-  for (let i = 0; i < pattern.length; i += 1) {
-    const ch = pattern[i];
-    if (ch === '\\') {
-      i += 1; // escaped metachar is a literal atom; skip it
-      continue;
-    }
-    if (ch === '[') {
-      // character class: consume to the closing ']' so parens/quantifier chars
-      // inside it are treated as literals, not structure.
-      i += 1;
-      while (i < pattern.length && pattern[i] !== ']') {
-        if (pattern[i] === '\\') i += 1;
-        i += 1;
-      }
-      continue;
-    }
-    if (ch === '(') {
-      bodyHasRepeat.push(false);
-      continue;
-    }
-    if (ch === ')') {
-      const closedBodyRepeat = bodyHasRepeat.pop() ?? false;
-      // Look past optional whitespace for a quantifier applied to THIS group.
-      let j = i + 1;
-      while (j < pattern.length && /\s/.test(pattern[j] ?? '')) j += 1;
-      const outerQuantified = isRepeatQuant(pattern[j]);
-      // A repetition-bearing group that is itself repeated = star height >= 2.
-      if (outerQuantified && closedBodyRepeat) return true;
-      // A quantified group counts as a repetition within its parent's body.
-      if (outerQuantified) markAllOpenGroups();
-      continue;
-    }
-    if (isRepeatQuant(ch)) markAllOpenGroups(); // in-body repetition at this depth
-  }
-  return false;
-}
+const MAX_MATCHER_LENGTH = MAX_REGEX_PATTERN_LENGTH;
+const MAX_VALUE_LENGTH = MAX_REGEX_PATTERN_LENGTH;
 
 export function matcherMatches(
   matcher: string | undefined,
