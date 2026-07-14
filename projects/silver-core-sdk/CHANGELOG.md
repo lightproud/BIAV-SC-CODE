@@ -16,6 +16,28 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.57.3 — 2026-07-14
+
+Audit 2026-07-14 P0 batch — the three HIGH findings, each with regressions:
+
+- **H-1 (transport, both twins)**: a non-2xx error body is now drained with
+  the abort listeners still attached (caller interrupt / request timeout can
+  cancel it) and capped by `ERROR_BODY_TIMEOUT_MS` (10s, falls back to the
+  status line). Before, a gateway that sent error headers and then stalled
+  the body hung the conversation forever, uninterruptibly (the default
+  'node' http client has no body timeout).
+- **H-2 (session-manager)**: transparent auto-resume now retires the
+  abandoned query (`q.return()`) BEFORE re-driving, so its run() teardown —
+  background-shell kill, sandbox tmpdir removal, subagent settle, SessionEnd
+  hooks, session-store flush — actually executes; the flush lands before the
+  resumed query re-reads persisted history. Before, each resume leaked all
+  of that.
+- **H-3 (subagents)**: child ToolContext now threads the checkpoint
+  recorder (`getRecordFileChange`, resolved at spawn time), so subagent
+  Write/Edit pre-images land in the same per-turn checkpoint index as the
+  root loop's and `rewindConversation` actually restores child edits.
+  Before, rewind reported success while child edits stayed in place.
+
 ## 0.57.2 — 2026-07-14
 
 **Directory-full memory error now carries self-rescue guidance (keeper ruling

@@ -750,6 +750,13 @@ export function query(args: {
     sandbox: sandboxCtx,
     readFilePaths,
     sessionKey: toolSessionKey,
+    // Resolved at spawn time: checkpointStore is declared (and bound) further
+    // down, after this runtime is constructed; spawns only ever happen once
+    // the query is running, so the closure reads the live binding (H-3).
+    getRecordFileChange: () =>
+      checkpointStore
+        ? (abs, pre): void => checkpointStore!.record(abs, pre)
+        : undefined,
     familyBudget,
     onToolRecord: persistToolRecord,
   });

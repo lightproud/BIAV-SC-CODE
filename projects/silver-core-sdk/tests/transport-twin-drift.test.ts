@@ -86,6 +86,11 @@ const TWINS: Array<{ name: string; anthropic: string; openai: string }> = [
     openai: 'function parseRetryAfterMs(',
   },
   { name: 'sleep', anthropic: 'function sleep(', openai: 'function sleep(' },
+  {
+    name: 'readBodyTextBounded',
+    anthropic: 'function readBodyTextBounded(',
+    openai: 'function readBodyTextBounded(',
+  },
   { name: 'nonEmpty', anthropic: 'function nonEmpty(', openai: 'function nonEmpty(' },
   {
     name: 'errorMessage',
@@ -109,6 +114,7 @@ describe('transport twin anti-drift (anthropic.ts vs openai.ts)', () => {
       'BACKOFF_FACTOR = 2',
       'BACKOFF_MAX_MS = 60_000',
       'DEFAULT_TIMEOUT_MS = 600_000',
+      'ERROR_BODY_TIMEOUT_MS = 10_000',
     ]) {
       expect(anthropicSrc, `anthropic missing ${name}`).toContain(name);
       expect(openaiSrc, `openai missing ${name}`).toContain(name);
