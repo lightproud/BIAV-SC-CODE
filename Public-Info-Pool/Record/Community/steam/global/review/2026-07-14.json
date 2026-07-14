@@ -1,9 +1,33 @@
 {
   "date": "2026-07-14",
-  "archived_at": "2026-07-14T10:46:10.407242+00:00",
+  "archived_at": "2026-07-14T13:31:30.825272+00:00",
   "source": "steam",
-  "item_count": 9,
+  "item_count": 11,
   "items": [
+    {
+      "title": "[负面] このゲームタップ早すぎたり戦闘終わった後に確率でフリーズして操作できなくなるんだよね タスクキルして...",
+      "summary": "このゲームタップ早すぎたり戦闘終わった後に確率でフリーズして操作できなくなるんだよね タスクキルして入り直すしかなくてマジでうざいわ 私の端末の問題なのかわかんないけど",
+      "source": "steam_review",
+      "time": "2026-07-14T11:22:01+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199028174060/recommended/3052450",
+      "engagement": 1,
+      "is_hot": false,
+      "author": "76561199028174060",
+      "tags": [
+        "japanese"
+      ],
+      "language": "japanese",
+      "metadata": {
+        "voted_up": false,
+        "playtime_forever": 536,
+        "votes_up": 1,
+        "timestamp_created": 1784028121
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
     {
       "title": "[负面] I like this game so far but it just keeps crashing...",
       "summary": "I like this game so far but it just keeps crashing...",
@@ -214,6 +238,30 @@
         "playtime_forever": 314,
         "votes_up": 0,
         "timestamp_created": 1784006352
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 挺不错的",
+      "summary": "挺不错的",
+      "source": "steam_review",
+      "time": "2026-07-14T10:44:50+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199481132294/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199481132294",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 2756,
+        "votes_up": 0,
+        "timestamp_created": 1784025890
       },
       "region": "global",
       "archive_subtype": "review",
