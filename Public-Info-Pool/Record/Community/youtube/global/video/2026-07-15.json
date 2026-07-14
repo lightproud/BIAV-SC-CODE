@@ -1,8 +1,8 @@
 {
   "date": "2026-07-15",
-  "archived_at": "2026-07-14T19:18:43.729035+00:00",
+  "archived_at": "2026-07-14T21:58:18.718482+00:00",
   "source": "youtube",
-  "item_count": 3,
+  "item_count": 4,
   "items": [
     {
       "title": "Day 37 of doodling N til #Morimens makes him playable. #fanart #speedpaint",
@@ -17,6 +17,23 @@
       "lang": "",
       "platform_region": "global",
       "media_url": "https://i.ytimg.com/vi/ehDsWji4fOU/hqdefault.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    },
+    {
+      "title": "# 1【忘却前夜】ライカーで対人戦",
+      "summary": "忘却前夜.",
+      "source": "youtube",
+      "time": "2026-07-14T19:18:51Z",
+      "url": "https://www.youtube.com/watch?v=Ga7cgulHVa4",
+      "engagement": 14,
+      "is_hot": false,
+      "author": "じゃく",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/Ga7cgulHVa4/hqdefault.jpg",
       "content_type": "video",
       "region": "global",
       "archive_subtype": "video"

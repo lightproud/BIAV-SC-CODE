@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-14T19:17:54.678662+00:00",
+  "collected_at": "2026-07-14T21:57:28.851744+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 11,
+  "item_count": 12,
   "items": [
     {
       "source": "steam",
@@ -34,6 +34,36 @@
       "review": "(In advance I have dyslexia so if something is misspelled my bad.) \nThis game is genuinely good story is interiging at most too. Sadly though last couple of days I haven't been able to log in for wtv reason. I've tried every thing possible from logging out, resigning in and uninstalling the game and it just doesn't wanna work. I wanted to love the game and continue playing but its not seeming to work very well. If you fix it till change the review but for now I dont suggest the game till they fix wtv this issue is.",
       "timestamp_created": 1783990492,
       "playtime_forever": 262
+    },
+    {
+      "source": "steam",
+      "time": "2026-07-14T20:17:35+00:00",
+      "lang": "russian",
+      "title": "[正面] на любителя, что то на подобии мортал комбат и ген...",
+      "summary": "на любителя, что то на подобии мортал комбат и геншина одновременно",
+      "url": "https://steamcommunity.com/profiles/76561198724128397/recommended/3052450",
+      "author": "76561198724128397",
+      "engagement": 0,
+      "language": "russian",
+      "voted_up": true,
+      "review": "на любителя, что то на подобии мортал комбат и геншина одновременно",
+      "timestamp_created": 1784060255,
+      "playtime_forever": 44
+    },
+    {
+      "source": "steam",
+      "time": "2026-07-14T18:50:09+00:00",
+      "lang": "english",
+      "title": "[正面] Yes it's still a gacha, but this has a lot of dept...",
+      "summary": "Yes it's still a gacha, but this has a lot of depth and a lot of ways of avoiding spending anything. Slay the Spire, but with less focus on the roguelite elements. Good in small bursts, but also can be played for hours at a time. Stick with it if it seems you are hitting a roadblock + ignore some of the early warnings about being underleveled while doing the main story levels.",
+      "url": "https://steamcommunity.com/profiles/76561197971424339/recommended/3052450",
+      "author": "76561197971424339",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Yes it's still a gacha, but this has a lot of depth and a lot of ways of avoiding spending anything. Slay the Spire, but with less focus on the roguelite elements. Good in small bursts, but also can be played for hours at a time. Stick with it if it seems you are hitting a roadblock + ignore some of the early warnings about being underleveled while doing the main story levels.",
+      "timestamp_created": 1784055009,
+      "playtime_forever": 643
     },
     {
       "source": "steam",
@@ -154,21 +184,6 @@
       "review": "没深玩，但是服务器极差，频繁卡顿，短时间重启4次，游戏按键不合理，有种在pc玩山寨手游模拟器的感觉",
       "timestamp_created": 1783983964,
       "playtime_forever": 203
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-13T20:26:27+00:00",
-      "lang": "russian",
-      "title": "[正面] Хорошая гача. Что-то включил и залип на весь день....",
-      "summary": "Хорошая гача. Что-то включил и залип на весь день. Не знаю, как тут по мете и прочему, но сюжет хороший, за первый день выбил ♥♥♥♥♥ лег, теперь просто кайфовать, качаться. Спасибо разрабам, надеюсь поработают над русским языком.",
-      "url": "https://steamcommunity.com/profiles/76561198285192245/recommended/3052450",
-      "author": "76561198285192245",
-      "engagement": 0,
-      "language": "russian",
-      "voted_up": true,
-      "review": "Хорошая гача. Что-то включил и залип на весь день. Не знаю, как тут по мете и прочему, но сюжет хороший, за первый день выбил ♥♥♥♥♥ лег, теперь просто кайфовать, качаться. Спасибо разрабам, надеюсь поработают над русским языком.",
-      "timestamp_created": 1783974387,
-      "playtime_forever": 918
     }
   ]
 }

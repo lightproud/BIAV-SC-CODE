@@ -1,8 +1,8 @@
 {
   "date": "2026-07-15",
-  "archived_at": "2026-07-14T19:18:43.728074+00:00",
+  "archived_at": "2026-07-14T21:58:18.718083+00:00",
   "source": "bilibili",
-  "item_count": 3,
+  "item_count": 4,
   "items": [
     {
       "title": "【杂谈】鸟弟是下坡路么？波吕克斯抽不抽",
@@ -46,6 +46,29 @@
         "danmaku": 0
       },
       "media_url": "https://i0.hdslb.com/bfs/archive/639c79eb8f52cbe51ac615a25d5e4d333135681c.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "小骑士1t5-5三管血,混沌穿刺大c?你是谁?",
+      "summary": "-\n  └ 暮影寻曦 (1赞): 注意到穿刺之枪是2C，并且攻击两次，两回合易伤。那么这就是一个2C触发4次的角色，简称24[doge]\n  └ RatedRubyRue (0赞): 老大我们怎么改名了[打call]",
+      "source": "bilibili",
+      "time": "2026-07-14T20:49:47+00:00",
+      "url": "https://www.bilibili.com/video/BV1z9Nh6NEqS",
+      "engagement": 25,
+      "is_hot": false,
+      "author": "忘却安卓佬",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 23,
+        "comment_count": 2,
+        "comments_fetched": 2,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/454620f77374861e6805a1a6c1a92cf63a2dfa92.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

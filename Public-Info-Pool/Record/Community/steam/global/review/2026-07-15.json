@@ -1,0 +1,58 @@
+{
+  "date": "2026-07-15",
+  "archived_at": "2026-07-14T21:58:18.815503+00:00",
+  "source": "steam",
+  "item_count": 2,
+  "items": [
+    {
+      "title": "[正面] на любителя, что то на подобии мортал комбат и ген...",
+      "summary": "на любителя, что то на подобии мортал комбат и геншина одновременно",
+      "source": "steam_review",
+      "time": "2026-07-14T20:17:35+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198724128397/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198724128397",
+      "tags": [
+        "russian"
+      ],
+      "language": "russian",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 44,
+        "votes_up": 0,
+        "timestamp_created": 1784060255
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Yes it's still a gacha, but this has a lot of dept...",
+      "summary": "Yes it's still a gacha, but this has a lot of depth and a lot of ways of avoiding spending anything. Slay the Spire, but with less focus on the roguelite elements. Good in small bursts, but also can be played for hours at a time. Stick with it if it seems you are hitting a roadblock + ignore some of the early warnings about being underleveled while doing the main story levels.",
+      "source": "steam_review",
+      "time": "2026-07-14T18:50:09+00:00",
+      "url": "https://steamcommunity.com/profiles/76561197971424339/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561197971424339",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 643,
+        "votes_up": 0,
+        "timestamp_created": 1784055009
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    }
+  ],
+  "region": "global",
+  "content_subtype": "review"
+}
