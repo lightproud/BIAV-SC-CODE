@@ -31,6 +31,23 @@ Audit 2026-07-14 P2 batch — low-severity hygiene + a lint gate:
 - **L-2**: explicit Retry-After now gets bounded upward jitter (never
   earlier than the server floor) in both transport twins — a subagent
   fan-out sharing one Retry-After no longer retries in the same instant.
+- **L-3**: the stream idle watchdog now measures server silence, not
+  consumer progress — a slow/paused consumer holding a yielded event past
+  idleMs no longer trips a false `stream_idle_timeout` (both twins). A
+  genuine mid-pause server stall is still killed, at worst ~2x idleMs late
+  (documented trade; no unbounded buffering).
+- **L-4**: utility model calls (generators/runtime.ts) memoize the transport
+  per provider-config reference (WeakMap), so the concurrency gate and any
+  BPT_PRECONNECT probe take effect ONCE across calls instead of per call;
+  injected transports still bypass the cache.
+- **L-6**: a turn interrupted by interrupt() no longer loses its already-
+  billed usage — the engine attaches the aborted run's accounting
+  (usage/cost/apiMs/turns/modelUsage) to the AbortError and the query layer
+  folds it into the session ledger (incl. settled subagents), so
+  maxBudgetUsd accounting no longer under-counts on repeated interrupts.
+- **L-7**: transparent auto-resume suppresses the duplicate system/init that
+  the re-driven query would emit, so a consumer modeling "one init per
+  stream" no longer sees a phantom new session after a recovery.
 - **L-5**: mcp/stdio.ts marks the connection closed on a spawn 'error'
   (ENOENT) so later requests fail fast with mcp_not_connected instead of
   hanging to the 60s timeout.
