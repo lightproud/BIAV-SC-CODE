@@ -1257,6 +1257,16 @@ export async function* runAgentLoop(
           yield errorResult('error_max_turns', `Reached maxTurns limit (${config.maxTurns})`);
           return;
         }
+        // The continuation re-issues a billable API call: honor the same
+        // budget gate as the tool-continue / structured-retry / bg-drain /
+        // stop-hook-block paths (audit 2026-07-14 M-8 — this was the one
+        // continuation branch that checked only maxTurns, so a paused turn
+        // could keep billing past maxBudgetUsd).
+        const pauseBudgetStop = budgetStopReason();
+        if (pauseBudgetStop !== undefined) {
+          yield errorResult('error_max_budget_usd', pauseBudgetStop);
+          return;
+        }
         deps.debug('engine: turn paused (stop_reason: pause_turn); continuing the turn');
         continue;
       }

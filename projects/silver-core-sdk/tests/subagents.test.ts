@@ -32,12 +32,14 @@ import {
 } from '../src/subagents/runtime.js';
 import { DefaultHookRunner } from '../src/hooks/runner.js';
 import { DefaultPermissionGate } from '../src/permissions/gate.js';
+import { createShellManager } from '../src/tools/shells.js';
 import { AbortError } from '../src/errors.js';
 import type {
   BuiltinTool,
   EngineConfig,
   McpRegistry,
   SessionStore,
+  ShellManager,
   SpawnSubagentParams,
   StoredSession,
   StreamRequest,
@@ -53,6 +55,7 @@ import type {
   McpServerStatus,
   Options,
   RawMessageStreamEvent,
+  SDKMessage,
 } from '../src/types.js';
 import {
   MockTransport,
@@ -165,6 +168,10 @@ function makeRuntime(cfg: {
   transport?: MockTransport | Transport;
   /** Spawn-time checkpoint recorder resolver (audit 2026-07-14 H-3). */
   getRecordFileChange?: SubagentRuntimeOptions['getRecordFileChange'];
+  /** Query-wide shell session (per-child persistent-state fork, M-10). */
+  shells?: ShellManager;
+  /** Task lifecycle sink (task_started/... observability messages). */
+  emitObservability?: (msg: SDKMessage) => void;
 }): RuntimeHarness {
   const transport = (cfg.transport ?? new MockTransport(cfg.scripts)) as MockTransport;
   const starts: string[] = [];
@@ -225,6 +232,8 @@ function makeRuntime(cfg: {
     debug: () => {},
     familyBudget: cfg.familyBudget,
     getRecordFileChange: cfg.getRecordFileChange,
+    shells: cfg.shells,
+    emitObservability: cfg.emitObservability,
   };
   return { runtime: createSubagentRuntime(opts), transport, starts, stops, stopInputs };
 }
@@ -1479,6 +1488,164 @@ describe('subagent runtime — task control', () => {
       },
     });
     expect(h.runtime.agentNames()).toEqual(['a', 'b', 'general-purpose']);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Per-child persistent shell-state fork (audit 2026-07-14 M-10)
+// ---------------------------------------------------------------------------
+
+describe('subagent runtime — per-child shell-state fork (audit 2026-07-14 M-10)', () => {
+  it('each spawned child gets a FORKED persistent namespace seeded from the parent snapshot', async () => {
+    const parentShells = createShellManager(() => {});
+    expect(parentShells.stateDir).not.toBe('');
+    writeFileSync(join(parentShells.stateDir, 'cwd'), '/tmp/parent-was-here');
+    const seen: Array<ShellManager | undefined> = [];
+    const probe: BuiltinTool = {
+      name: 'Probe',
+      description: 'captures ctx.shells',
+      inputSchema: { type: 'object', properties: {} },
+      readOnly: true,
+      async execute(_input, ctx) {
+        seen.push(ctx.shells);
+        return { content: 'ok' };
+      },
+    };
+    try {
+      const h = makeRuntime({
+        scripts: [
+          toolUseReplyEvents('Probe', {}, { model: 'claude-sonnet-4-5' }),
+          textReplyEvents('done A', { model: 'claude-sonnet-4-5' }),
+          toolUseReplyEvents('Probe', {}, { model: 'claude-sonnet-4-5' }),
+          textReplyEvents('done B', { model: 'claude-sonnet-4-5' }),
+        ],
+        baseBuiltins: new Map([['Probe', probe]]),
+        shells: parentShells,
+      });
+      await h.runtime.makeSpawnFn(0)(baseParams());
+      await h.runtime.makeSpawnFn(0)(baseParams());
+      expect(seen).toHaveLength(2);
+      const [a, b] = seen;
+      // Each child got its OWN namespace — not the parent's, not a sibling's.
+      expect(a!.stateDir).not.toBe('');
+      expect(a!.stateDir).not.toBe(parentShells.stateDir);
+      expect(b!.stateDir).not.toBe(parentShells.stateDir);
+      expect(a!.stateDir).not.toBe(b!.stateDir);
+      // Seeded from the parent's snapshot as of spawn time.
+      expect(readFileSync(join(a!.stateDir, 'cwd'), 'utf8')).toBe('/tmp/parent-was-here');
+      expect(readFileSync(join(b!.stateDir, 'cwd'), 'utf8')).toBe('/tmp/parent-was-here');
+      // A child-side mutation stays in ITS namespace: the parent's next
+      // foreground Bash and the sibling both keep the original snapshot.
+      writeFileSync(join(a!.stateDir, 'cwd'), '/tmp/child-a-moved');
+      expect(readFileSync(join(parentShells.stateDir, 'cwd'), 'utf8')).toBe(
+        '/tmp/parent-was-here',
+      );
+      expect(readFileSync(join(b!.stateDir, 'cwd'), 'utf8')).toBe('/tmp/parent-was-here');
+    } finally {
+      parentShells.dispose();
+    }
+  });
+
+  it('no shell manager wired -> children still get no shells (no phantom fork)', async () => {
+    const seen: Array<ShellManager | undefined> = [];
+    const probe: BuiltinTool = {
+      name: 'Probe',
+      description: 'captures ctx.shells',
+      inputSchema: { type: 'object', properties: {} },
+      readOnly: true,
+      async execute(_input, ctx) {
+        seen.push(ctx.shells);
+        return { content: 'ok' };
+      },
+    };
+    const h = makeRuntime({
+      scripts: [
+        toolUseReplyEvents('Probe', {}, { model: 'claude-sonnet-4-5' }),
+        textReplyEvents('done', { model: 'claude-sonnet-4-5' }),
+      ],
+      baseBuiltins: new Map([['Probe', probe]]),
+    });
+    await h.runtime.makeSpawnFn(0)(baseParams());
+    expect(seen).toEqual([undefined]);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Foreground kill path (audit 2026-07-14 M-11)
+// ---------------------------------------------------------------------------
+
+/** Transport whose stream hangs until the request signal aborts. */
+class HangUntilAbortTransport implements Transport {
+  apiKeySource(): ApiKeySource {
+    return 'user';
+  }
+  async *stream(req: StreamRequest): AsyncGenerator<RawMessageStreamEvent, void> {
+    await new Promise<void>((_, reject) => {
+      const sig = req.signal;
+      if (sig?.aborted) {
+        reject(new AbortError());
+        return;
+      }
+      sig?.addEventListener('abort', () => reject(new AbortError()), { once: true });
+    });
+  }
+}
+
+describe('subagent runtime — foreground kill path (audit 2026-07-14 M-11)', () => {
+  it('killAgent on a running foreground child: status killed (not failed), foreground wording, spawn resolves isError', async () => {
+    const emitted: SDKMessage[] = [];
+    const h = makeRuntime({
+      scripts: [],
+      transport: new HangUntilAbortTransport(),
+      emitObservability: (m) => emitted.push(m),
+    });
+    const pending = h.runtime.makeSpawnFn(0)(baseParams());
+    // Discover the agentId from the task_started observability message, then
+    // stop it mid-run via the TaskStop bridge (poll: the child registers in
+    // the registry just after task_started fires).
+    let agentId: string | undefined;
+    for (let i = 0; i < 200 && agentId === undefined; i++) {
+      await tick(1);
+      const started = emitted.find(
+        (m) => 'subtype' in m && m.subtype === 'task_started',
+      );
+      if (started !== undefined) agentId = (started as { task_id: string }).task_id;
+    }
+    expect(agentId).toBeDefined();
+    let stopped: string | undefined;
+    for (let i = 0; i < 200 && stopped === undefined; i++) {
+      stopped = h.runtime.stopAgent(agentId!);
+      if (stopped === undefined) await tick(1);
+    }
+    // (b) honest wording: this record is FOREGROUND, not background.
+    expect(stopped).toBe(`Stopped foreground subagent ${agentId}.`);
+    const note = emitted.find(
+      (m) => 'subtype' in m && m.subtype === 'task_notification',
+    ) as { summary: string } | undefined;
+    expect(note?.summary).toContain('foreground subagent');
+    expect(note?.summary).not.toContain('background');
+    // (c) the spawn RESOLVES to an isError result — the AbortError must not
+    // propagate through the Agent tool and kill the whole parent query.
+    const res = await pending;
+    expect(res.isError).toBe(true);
+    expect(res.content).toContain('stopped');
+    expect(res.background).toBe(false);
+    expect(res.agentId).toBe(agentId);
+    // (a) the record's terminal status stayed 'killed' — the foreground catch
+    // did not clobber it to 'failed' (observable via the TaskStop bridge).
+    expect(h.runtime.stopAgent(agentId!)).toBe(`Subagent ${agentId} already killed.`);
+  });
+
+  it('a genuine parent-signal abort still rethrows AbortError from a foreground spawn', async () => {
+    const h = makeRuntime({
+      scripts: [],
+      transport: new HangUntilAbortTransport(),
+    });
+    const ac = new AbortController();
+    const pending = h.runtime.makeSpawnFn(0)(baseParams({ signal: ac.signal }));
+    await tick(5);
+    ac.abort();
+    await expect(pending).rejects.toBeInstanceOf(AbortError);
   });
 });
 

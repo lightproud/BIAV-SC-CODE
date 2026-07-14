@@ -106,8 +106,11 @@ function mergeModelUsage(
 /**
  * Per-conversation ledger. Result messages carry two reporting semantics
  * (E2/KD-L5-04): `usage` is THAT turn's own figures (summed here), while
- * `total_cost_usd` / `modelUsage` are conversation-cumulative (latest snapshot
- * wins here). usage() folds the ledgers at read time.
+ * `total_cost_usd` / `modelUsage` are cumulative PER QUERY RUN (latest snapshot
+ * wins here). Within one run "latest wins" is exact; across a transparent
+ * auto-resume the fresh run's accumulator restarts at 0, so the supervised
+ * path adds a base offset of the swallowed runs' spend (audit 2026-07-14 M-7).
+ * usage() folds the ledgers at read time.
  */
 type QueryLedger = {
   usage: NonNullableUsage;
@@ -439,6 +442,35 @@ export function createBptSession(options: SessionManagerOptions = {}): SessionMa
     // before the retried query's first message.
     const observations: SDKMessage[] = [];
 
+    // audit 2026-07-14 M-7: `total_cost_usd` / `modelUsage` are cumulative PER
+    // QUERY RUN, but a transparent resume starts a FRESH run whose accumulator
+    // restarts at 0 — plain "latest wins" recording would let the post-resume
+    // snapshot OVERWRITE the pre-resume spend and under-report mgr.usage().
+    // So the supervised path keeps a base offset: each swallowed recoverable
+    // error result folds its cumulative figures into the base, and every
+    // recorded snapshot is accounted as base + latest. (`usage` needs no base:
+    // each result's usage covers only its own run, and record() already SUMS
+    // it — that semantics is preserved below.)
+    let costBase = 0;
+    const modelUsageBase: Record<string, ModelUsage> = {};
+
+    /** Base-aware record(): same single-tick read-modify-write discipline. */
+    const recordSupervised = (r: SDKResultMessage): void => {
+      ledger.usage = addUsage(ledger.usage, r.usage); // per-turn figures: sum
+      ledger.costUsd = costBase + r.total_cost_usd; // swallowed runs + latest run
+      const snapshot: Record<string, ModelUsage> = {};
+      mergeModelUsage(snapshot, modelUsageBase);
+      mergeModelUsage(snapshot, r.modelUsage);
+      ledger.modelUsage = snapshot;
+    };
+
+    /** Fold a swallowed run's cumulative spend into the base (called exactly
+     *  once per swallowed error result, right before the resume re-drive). */
+    const foldIntoBase = (r: SDKResultMessage): void => {
+      costBase += r.total_cost_usd;
+      mergeModelUsage(modelUsageBase, r.modelUsage);
+    };
+
     /** Arm a transparent resume: emit the observation, re-drive, bump count. */
     const scheduleResume = async (code: string, reason: string): Promise<void> => {
       attempts += 1;
@@ -509,13 +541,18 @@ export function createBptSession(options: SessionManagerOptions = {}): SessionMa
 
           // The `subtype` discriminant (not is_error) narrows to the error arm.
           if (v.type === 'result' && v.subtype !== 'success') {
-            record(ledger, v);
+            recordSupervised(v);
             if (
               isRecoverableResult(v) &&
               sessionId !== undefined &&
               attempts < maxResumes
             ) {
-              // Swallow this error result and re-drive transparently.
+              // Swallow this error result and re-drive transparently. Its
+              // cumulative spend goes into the base FIRST (audit 2026-07-14
+              // M-7): the resumed run restarts its accumulator at 0, so
+              // without the fold its first result would overwrite this run's
+              // spend in the ledger.
+              foldIntoBase(v);
               await scheduleResume(
                 v.error_code ?? `http_${v.api_error_status ?? 'error'}`,
                 v.errorMessage ?? 'recoverable error',
@@ -533,7 +570,7 @@ export function createBptSession(options: SessionManagerOptions = {}): SessionMa
             return r;
           }
 
-          if (v.type === 'result') record(ledger, v);
+          if (v.type === 'result') recordSupervised(v);
           return r;
         }
       },

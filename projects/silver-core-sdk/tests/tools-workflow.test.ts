@@ -683,6 +683,86 @@ return [a, b]`;
     expect(calls).toHaveLength(3);
   });
 
+  it('parallel branches completing in a different order still hit the cache (audit 2026-07-14 M-13)', async () => {
+    // Run 1 holds branch A's first agent until branch B's SECOND call has
+    // been issued, so the journal lands in order [A1, B1, B2, A2]. On
+    // resume the cached calls resolve instantly, making the lookup order
+    // [A1, B1, A2, B2] — a seq permutation. The order-independent
+    // (hash, occurrence) lookup must still serve A2 from cache; only B2
+    // (failed in run 1, journaled uncompleted) runs live. The old
+    // journal[index] comparison saw A2 at B2's old index, broke, and ran
+    // BOTH live.
+    let phase = 1;
+    const calls: SpawnSubagentParams[] = [];
+    const spawn: SpawnSubagentFn = async (p) => {
+      calls.push(p);
+      const head = p.prompt.split('\n')[0]!;
+      if (phase === 1) {
+        if (head === 'A1') {
+          await waitUntil(() => calls.some((c) => c.prompt.startsWith('B2:')));
+        }
+        if (head.startsWith('B2:')) {
+          return { content: 'dead', isError: true, agentId: 'x', background: false };
+        }
+      }
+      return { content: `R:${head}`, isError: false, agentId: 'x', background: false };
+    };
+    const script = `${meta('par-resume')}
+const [a, b] = await parallel([
+  async () => {
+    const r = await agent('A1')
+    return await agent('A2:' + r)
+  },
+  async () => {
+    const r = await agent('B1')
+    return await agent('B2:' + r)
+  },
+])
+return [a, b]`;
+    const tool = createWorkflowTool({ limits: { maxConcurrentAgents: 2 } });
+    const ctx = makeCtx({ spawnSubagent: spawn });
+    const first = await tool.execute({ script }, ctx);
+    expect(resultValue(first)).toEqual(['R:A2:R:A1', null]);
+    expect(calls).toHaveLength(4);
+    const runId = /runId: (wf-run-\d+)/.exec(text(first))![1]!;
+
+    phase = 2;
+    const second = await tool.execute({ script, resumeFromRunId: runId }, ctx);
+    // Only B2 ran live; A1/B1/A2 all replayed from cache despite the permutation.
+    expect(calls).toHaveLength(5);
+    expect(calls[4]!.prompt.startsWith('B2:')).toBe(true);
+    expect(text(second)).toContain('1 run live, 3 from cache');
+    expect(resultValue(second)).toEqual(['R:A2:R:A1', 'R:B2:R:B1']);
+  });
+
+  it('identical-hash calls map to distinct journal occurrences on resume (audit 2026-07-14 M-13)', async () => {
+    let failSecondDup = true;
+    const calls: SpawnSubagentParams[] = [];
+    const spawn: SpawnSubagentFn = async (p) => {
+      calls.push(p);
+      const dupCount = calls.filter((c) => c.prompt.startsWith('dup')).length;
+      if (failSecondDup && dupCount === 2) {
+        return { content: 'dead', isError: true, agentId: 'x', background: false };
+      }
+      return { content: `R:${calls.length}`, isError: false, agentId: 'x', background: false };
+    };
+    const script = `${meta('dup')}
+const a = await agent('dup')
+const b = await agent('dup')
+return [a, b]`;
+    const ctx = makeCtx({ spawnSubagent: spawn });
+    const first = await workflowTool.execute({ script }, ctx);
+    expect(resultValue(first)).toEqual(['R:1', null]);
+    const runId = /runId: (wf-run-\d+)/.exec(text(first))![1]!;
+
+    failSecondDup = false;
+    const second = await workflowTool.execute({ script, resumeFromRunId: runId }, ctx);
+    // Occurrence 0 (completed) replays from cache; occurrence 1 (uncompleted)
+    // re-runs live — the per-hash counter keeps duplicates aligned.
+    expect(text(second)).toContain('1 run live, 1 from cache');
+    expect(resultValue(second)).toEqual(['R:1', 'R:3']);
+  });
+
   it('rejects an unknown runId (resume is same-session only)', async () => {
     const r = await workflowTool.execute(
       { script: `${meta()}return 1`, resumeFromRunId: 'wf-run-999' },

@@ -6,7 +6,7 @@
 // @ts-nocheck
 
 
-import { appendFileSync, existsSync, readFileSync } from 'node:fs';
+import { appendFileSync, existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { mkdir, mkdtemp, readFile, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
@@ -112,6 +112,63 @@ describe('JsonlSessionStore path traversal (findings #10/#40)', () => {
     const loaded = await store.load('good-id');
     expect(loaded).not.toBeNull();
     expect(loaded?.messages).toEqual([{ role: 'user', content: 'hello' }]);
+  });
+});
+
+describe('JsonlSessionStore torn-tail self-heal (audit 2026-07-14 M-9)', () => {
+  it('append after a crash-torn tail loses only the torn line; the new record survives', async () => {
+    const sid = 'torn-1';
+    const { store } = makeStore();
+    store.append(sid, { type: 'meta', sessionId: sid, createdAt: 1, cwd: '/w' });
+    store.append(sid, { type: 'user', message: { role: 'user', content: 'kept' } });
+    store.append(sid, { type: 'assistant', message: { role: 'assistant', content: 'reply' } });
+    store.append(sid, { type: 'user', message: { role: 'user', content: 'to-be-torn' } });
+
+    // Simulate a crash mid-append: drop the trailing newline AND part of the
+    // last record's JSON, leaving a torn tail.
+    const file = join(dir, `${sid}.jsonl`);
+    const raw = readFileSync(file, 'utf8');
+    expect(raw.endsWith('\n')).toBe(true);
+    writeFileSync(file, raw.slice(0, raw.length - 12), 'utf8');
+
+    // A FRESH store instance (fresh process after the crash) appends the next
+    // record. Without the self-heal the new line glues onto the torn tail and
+    // BOTH are lost; with it, only the torn line is lost.
+    const { store: restarted } = makeStore();
+    restarted.append(sid, { type: 'user', message: { role: 'user', content: 'after-crash' } });
+
+    const loaded = await restarted.load(sid);
+    expect(loaded).not.toBeNull();
+    expect(loaded?.messages).toEqual([
+      { role: 'user', content: 'kept' },
+      { role: 'assistant', content: 'reply' },
+      { role: 'user', content: 'after-crash' },
+    ]);
+    // The healed file carries the new record on its OWN line (a '\n' was
+    // prefixed ahead of it, sealing the torn tail into its own line).
+    const healed = readFileSync(file, 'utf8').split('\n').filter((l) => l.trim().length > 0);
+    expect(JSON.parse(healed[healed.length - 1]!)).toEqual({
+      type: 'user',
+      message: { role: 'user', content: 'after-crash' },
+    });
+  });
+
+  it('does not inject blank lines when the tail is intact (heal fires only on a torn tail)', async () => {
+    const sid = 'clean-1';
+    const { store } = makeStore();
+    store.append(sid, { type: 'meta', sessionId: sid, createdAt: 1, cwd: '/w' });
+    store.append(sid, { type: 'user', message: { role: 'user', content: 'one' } });
+
+    // Fresh instance, intact newline-terminated tail: no '\n' prefix.
+    const { store: restarted } = makeStore();
+    restarted.append(sid, { type: 'user', message: { role: 'user', content: 'two' } });
+
+    const raw = readFileSync(join(dir, `${sid}.jsonl`), 'utf8');
+    expect(raw).not.toContain('\n\n');
+    const loaded = await restarted.load(sid);
+    // Consecutive user turns merge in pairing repair; both texts survive.
+    expect(JSON.stringify(loaded?.messages)).toContain('one');
+    expect(JSON.stringify(loaded?.messages)).toContain('two');
   });
 });
 

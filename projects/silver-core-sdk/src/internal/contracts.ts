@@ -175,7 +175,10 @@ export type ToolContext = {
   };
   /** v0.2 WebFetch escape hatch for localhost/private hosts (default false). */
   allowPrivateWebFetch?: boolean;
-  /** Injectable fetch for tests; defaults to globalThis.fetch when undefined. */
+  /** Injectable fetch for tests. When undefined, WebFetch uses its DNS-pinned
+   *  node:https path (audit 2026-07-14 M-3); an injected impl still passes the
+   *  per-hop SSRF guard but does its own connection handling and therefore
+   *  BYPASSES DNS pinning. */
   fetchImpl?: typeof fetch;
   /**
    * File-checkpoint recorder. When enableFileCheckpointing is on, fs tools

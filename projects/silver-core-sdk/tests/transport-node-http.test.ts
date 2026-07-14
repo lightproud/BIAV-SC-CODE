@@ -198,6 +198,33 @@ describe('node-http adapter (unit)', () => {
     expect(resolvePreconnect({ preconnect: true }, {})).toBe(true);
     expect(getNodeFetch()).toBe(getNodeFetch()); // process-wide singleton
   });
+
+  it('proxy env autodetect resolves to fetch unless an explicit choice overrides it (audit 2026-07-14 M-6)', () => {
+    // The node adapter ignores proxy env vars, so a proxy-only environment
+    // must default to the proxiable global fetch (NODE_USE_ENV_PROXY /
+    // setGlobalDispatcher path). Every conventional variable, both cases:
+    for (const name of [
+      'HTTPS_PROXY',
+      'https_proxy',
+      'HTTP_PROXY',
+      'http_proxy',
+      'ALL_PROXY',
+      'all_proxy',
+    ]) {
+      expect(resolveHttpClient({}, { [name]: 'http://proxy:8080' })).toBe('fetch');
+    }
+    // Explicit overrides always win over the autodetect.
+    expect(
+      resolveHttpClient({ httpClient: 'node' }, { HTTPS_PROXY: 'http://proxy:8080' }),
+    ).toBe('node');
+    expect(
+      resolveHttpClient({}, { BPT_HTTP_CLIENT: 'node', HTTPS_PROXY: 'http://proxy:8080' }),
+    ).toBe('node');
+    // Empty-string proxy vars do not count as "set".
+    expect(resolveHttpClient({}, { HTTPS_PROXY: '', http_proxy: '' })).toBe('node');
+    // No proxy vars: the default stays 'node'.
+    expect(resolveHttpClient({}, {})).toBe('node');
+  });
 });
 
 describe('node client through the transport (default path)', () => {

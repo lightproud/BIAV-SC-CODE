@@ -22,9 +22,11 @@
  * untouched; this module only changes what the seam RESOLVES TO by default.
  *
  * Resolution order (resolveHttpClient): provider.fetch (always wins, it IS
- * the override seam) > provider.httpClient > env BPT_HTTP_CLIENT > 'node'.
- * `'fetch'` restores the exact pre-v0.45 behavior (late-bound global fetch)
- * for environments that need undici semantics — e.g. Node's
+ * the override seam) > provider.httpClient > env BPT_HTTP_CLIENT >
+ * proxy-env autodetect (any of HTTPS_PROXY/HTTP_PROXY/ALL_PROXY set, either
+ * case, resolves to 'fetch' — audit 2026-07-14 M-6, see resolveHttpClient) >
+ * 'node'. `'fetch'` restores the exact pre-v0.45 behavior (late-bound global
+ * fetch) for environments that need undici semantics — e.g. Node's
  * NODE_USE_ENV_PROXY / setGlobalDispatcher proxying, or a test suite that
  * stubs global fetch (this repo's own suite pins it via vitest env).
  *
@@ -262,10 +264,34 @@ export function getNodeFetch(): NodeFetch {
 }
 
 /**
+ * Proxy env vars that flip the default HTTP client to 'fetch' (audit
+ * 2026-07-14 M-6). Both cases are listed because both are conventional and
+ * the env record passed in is case-sensitive (unlike Windows process env).
+ */
+const PROXY_ENV_VARS = [
+  'HTTPS_PROXY',
+  'https_proxy',
+  'HTTP_PROXY',
+  'http_proxy',
+  'ALL_PROXY',
+  'all_proxy',
+] as const;
+
+/**
  * HTTP-client resolution: provider.httpClient (explicit override) >
- * BPT_HTTP_CLIENT env ('node' | 'fetch') > default 'node' (the built-in
- * keep-alive adapter). provider.fetch is NOT decided here — it always wins
- * at the transport's call site regardless of this setting.
+ * BPT_HTTP_CLIENT env ('node' | 'fetch') > proxy-env autodetect (below) >
+ * default 'node' (the built-in keep-alive adapter). provider.fetch is NOT
+ * decided here — it always wins at the transport's call site regardless of
+ * this setting.
+ *
+ * Proxy autodetect (audit 2026-07-14 M-6): the built-in node adapter dials
+ * origins DIRECTLY — it never reads HTTPS_PROXY/HTTP_PROXY/ALL_PROXY — so in
+ * a proxy-only environment defaulting to 'node' makes every request fail (or
+ * silently bypass an audit proxy where direct egress is open). When no
+ * explicit choice was made and any proxy env var is set non-empty, resolve
+ * to 'fetch': global fetch (undici) can be proxied via NODE_USE_ENV_PROXY or
+ * setGlobalDispatcher. An explicit 'node' (provider or BPT_HTTP_CLIENT)
+ * always wins over the autodetect.
  */
 export function resolveHttpClient(
   provider: ProviderConfig,
@@ -276,6 +302,10 @@ export function resolveHttpClient(
   }
   const fromEnv = env.BPT_HTTP_CLIENT;
   if (fromEnv === 'node' || fromEnv === 'fetch') return fromEnv;
+  for (const name of PROXY_ENV_VARS) {
+    const value = env[name];
+    if (typeof value === 'string' && value.length > 0) return 'fetch';
+  }
   return 'node';
 }
 
