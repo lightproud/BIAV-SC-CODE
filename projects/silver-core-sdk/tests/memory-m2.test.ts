@@ -432,8 +432,20 @@ describe('R8: limits in the store engine', () => {
     await expect(store.create('/memories/d/c.txt', '3')).rejects.toThrow(
       'Error: Directory /memories/d already contains the maximum number of memory files (2)',
     );
+    // The error carries self-rescue guidance so a model can reorganize instead
+    // of looping on create: it names the three routes and clarifies the cap is
+    // per-directory and blocks only new-file creation.
+    await expect(store.create('/memories/d/c.txt', '3')).rejects.toThrow(
+      /blocks only new-file creation/,
+    );
+    await expect(store.create('/memories/d/c.txt', '3')).rejects.toThrow(/subdirectory/);
     // Other directories are unaffected.
     await expect(store.create('/memories/e/a.txt', '1')).resolves.toContain('successfully');
+    // An existing file in the full directory can still be edited and deleted.
+    await expect(store.strReplace('/memories/d/a.txt', '1', '11')).resolves.toContain('edited');
+    await expect(store.delete('/memories/d/b.txt')).resolves.toContain('deleted');
+    // With a file removed, a new create in the same directory succeeds again.
+    await expect(store.create('/memories/d/c.txt', '3')).resolves.toContain('successfully');
   });
 
   it('view output beyond maxViewChars truncates on a line boundary with the pagination hint', async () => {

@@ -16,6 +16,24 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.57.2 — 2026-07-14
+
+**Directory-full memory error now carries self-rescue guidance (keeper ruling
+2026-07-14).** BPT reported that when a `/memories` directory hit the
+`maxFilesPerDirectory` cap (default 64), the model would loop on `create` and
+effectively stop recording — it had no idea the directory was full only for
+*new* files, nor how to reorganize. Root cause was purely the terse error
+string: `directoryFullError` said "already contains the maximum number of
+memory files (N)" and nothing else. The message now appends actionable
+guidance — the cap is per-directory and blocks only new-file creation
+(str_replace / insert / delete / rename on existing files still work), and the
+three ways to make room: consolidate related files, delete stale files, or
+create under a new subdirectory (each subdirectory has its own limit). No
+default, limit, or enforcement change; the reference prefix is preserved
+verbatim so existing substring assertions hold. Test: `memory-m2.test.ts` (the
+per-directory cap case now also asserts the guidance and the edit/delete/
+re-create recovery path).
+
 ## 0.57.1 — 2026-07-14
 
 **Unified upstream-error normalization: no more bare 500s穿透ing to the host
