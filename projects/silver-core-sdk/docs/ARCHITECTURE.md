@@ -18,8 +18,9 @@ genuinely internal or leaked material is used.
 1. **Language**: TypeScript strict, ESM (`module: NodeNext`). Relative imports
    MUST use the `.js` suffix (`import { x } from '../types.js'`).
 2. **Imports**: a module may import from `src/types.ts`, `src/errors.ts`,
-   `src/version.ts`, anything under `src/internal/` (the shared kernel),
-   Node builtins (`node:` prefix), `zod`, `fast-glob`, and files it owns.
+   `src/version.ts`, `src/error-normalize.ts`, anything under `src/internal/`
+   (the shared kernel), Node builtins (`node:` prefix), `zod`, `fast-glob`, and
+   files it owns.
    Cross-module imports beyond that are allowed ONLY along the directed
    edges in the **Import edges** table below — which
    `tests/import-discipline.test.ts` parses and enforces, the same
@@ -54,7 +55,7 @@ richer internal/ without the map following.)
 | I sandbox | `sandbox/` (backend, bwrap, evidence) | `SandboxBackend`; consumed by tools |
 | J generators | `generators/` (utility LLM runtime + prompts) | single-shot utility calls; consumed by hooks (condition), tips, verifier |
 | K tips + verifier | `tips/`, `verifier/` | context-tip / adversarial-verify features over generators |
-| shared kernel | `internal/` (contracts, model-alias, worktree, setting-sources), `types.ts`, `errors.ts`, `version.ts` | importable by every module |
+| shared kernel | `internal/` (contracts, model-alias, worktree, setting-sources), `types.ts`, `errors.ts`, `version.ts`, `error-normalize.ts` | importable by every module |
 
 ## Import edges
 

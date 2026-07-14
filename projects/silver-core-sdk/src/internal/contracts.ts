@@ -54,6 +54,13 @@ export type RetryInfo = {
   /** Disconnect-taxonomy class of this retry (resilience P0-2): what kind of
    *  failure triggered it, so the loop can count retries by cause. */
   kind?: 'network' | 'http_status' | 'empty_stream';
+  /** Redacted upstream error message, when the body carried one (error
+   *  normalization 2026-07-14) — lets a retry event carry a readable cause. */
+  message?: string;
+  /** Upstream request id (body or header), when known. */
+  requestId?: string;
+  /** Provider/gateway machine code slug from the error body, when present. */
+  code?: string;
 };
 
 export type StreamRequest = {
@@ -537,6 +544,10 @@ export type SystemComposition = {
 export type EngineConfig = {
   model: string;
   fallbackModel?: string;
+  /** Provider/protocol label ('anthropic' | 'openai') carried onto normalized
+   *  provider errors so a host knows WHICH backend failed (error normalization
+   *  2026-07-14). Derived from provider.protocol; defaults to 'anthropic'. */
+  providerLabel?: string;
   maxOutputTokens: number;
   /** Stable system-prompt prefix (cache-worthy; byte-identical across runs). */
   systemPrompt: string;

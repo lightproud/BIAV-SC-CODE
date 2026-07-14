@@ -247,6 +247,18 @@ export {
   isAbortError,
 } from './errors.js';
 export type { ErrorCode, McpErrorCode, McpPhase, McpTransportKind } from './errors.js';
+export {
+  normalizeProviderError,
+  normalizeRetry,
+  isRetryableHttpStatus,
+  extractProviderErrorObject,
+  looksLikeErrorObject,
+} from './error-normalize.js';
+export type {
+  NormalizedProviderError,
+  NormalizeContext,
+  RetryLike,
+} from './error-normalize.js';
 export type * from './types.js';
 // Official tool input/output schema types (ToolInputSchemas / ToolOutputSchemas
 // and their members) — the drop-in consumer surface for typed tool interactions.

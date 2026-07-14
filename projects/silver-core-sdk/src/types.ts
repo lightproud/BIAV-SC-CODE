@@ -13,6 +13,12 @@
 
 import type { Readable, Writable } from 'node:stream';
 
+import type { NormalizedProviderError } from './error-normalize.js';
+
+/** Re-export so consumers can `import type { NormalizedProviderError }` from the
+ *  package root alongside the rest of the SDK message surface. */
+export type { NormalizedProviderError } from './error-normalize.js';
+
 // ---------------------------------------------------------------------------
 // Anthropic Messages API wire types (minimal independent subset)
 // ---------------------------------------------------------------------------
@@ -2210,6 +2216,15 @@ export type SDKResultMessage =
        * Absent for codeless failures and on non-error results.
        */
       error_code?: string;
+      /**
+       * Unified normalized upstream error (error normalization 2026-07-14).
+       * Present when the run ended on an actual provider/transport failure
+       * (`error_during_execution`); carries status / code / provider / model /
+       * requestId / retryable in a STABLE shape so a host never has to parse
+       * errorMessage or duck-type a raw gateway object. Absent for
+       * max-turns / budget / refusal / structured-retry stops.
+       */
+      providerError?: NormalizedProviderError;
       /** Time to first token (ms); only present when a token actually arrived. */
       ttft_ms?: number;
       ttft_stream_ms?: number;
@@ -2533,6 +2548,10 @@ export type SDKRateLimitEvent = {
   limit_type?: 'api' | 'token' | 'requests';
   /** @deprecated Pre-alignment flat field; never populated. */
   requests_remaining?: number;
+  /** Unified normalized upstream error for this 429 (error normalization
+   *  2026-07-14): stable status/code/provider/model/requestId/retryAfterMs the
+   *  host can consume without parsing. Additive. */
+  providerError?: NormalizedProviderError;
 };
 
 /** @deprecated Use the official export name SDKRateLimitEvent (v0.7 spelling
@@ -2540,7 +2559,8 @@ export type SDKRateLimitEvent = {
 export type SDKRateLimitEventMessage = SDKRateLimitEvent;
 
 /** An API call is being retried. EMITTED (v0.3) via the transport's onRetry
- *  observer on each non-429 (5xx/network) retry. */
+ *  observer on each non-429 (5xx/network) retry, and by the engine's bounded
+ *  turn-replay. */
 export type SDKAPIRetryMessage = {
   type: 'api_retry';
   uuid: string;
@@ -2549,6 +2569,19 @@ export type SDKAPIRetryMessage = {
   max_retries: number;
   status?: number;
   reason?: string;
+  /** Whether the failure being retried is retryable (always true on an emitted
+   *  api_retry — a retry is in progress). Additive (error normalization
+   *  2026-07-14). */
+  retryable?: boolean;
+  /** Retries left in this budget after the current one. Additive. */
+  retry_remaining?: number;
+  /** Short machine reason for the retry (error type / kind / http_<status> /
+   *  turn_replay:<code>). Additive. */
+  retry_reason?: string;
+  /** Unified normalized upstream error for this retry: stable status / code /
+   *  provider / model / requestId the host can consume without parsing.
+   *  Additive. */
+  providerError?: NormalizedProviderError;
 };
 
 /** @deprecated Use the official export name SDKAPIRetryMessage (v0.7

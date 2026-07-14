@@ -16,6 +16,53 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.57.1 — 2026-07-14
+
+**Unified upstream-error normalization: no more bare 500s穿透ing to the host
+(BPT P1, keeper ruling 2026-07-14).** BPT saw a raw
+`{ error: { message: "Internal server error", code: null, status: 500 } }`
+object reach the host un-classified — it bypassed the retry / error chain, so
+the user got an opaque 500 with no way to tell provider, retryability, or
+request id. Root cause: the Anthropic arm's SSE error detector only recognized
+the native `type: 'error'` frame, so a gateway that wrapped the failure as a
+bare top-level `{ error: {...} }` / `{ message, status }` data frame (no
+`event: error` name, no `type` discriminator) was neither caught as an error
+nor a valid stream event — it穿透ed. New unified layer
+(`src/error-normalize.ts`):
+
+- **`NormalizedProviderError`** — one STABLE shape every upstream failure maps
+  to: `name`, `message` (readable, never `[object Object]`), `status`, `code`,
+  `provider`, `model`, `requestId`, `retryable`, `retryAfterMs`, `phase`,
+  `rawType`. `normalizeProviderError()` maps an `APIStatusError`,
+  `APIConnectionError`, a bare gateway error object, a plain `Error`, or an
+  opaque value; `normalizeRetry()` builds one for a retry-in-progress.
+- **Detection widened** — both transports now recognize the wrapped
+  `{ error: {...} }` and bare `{ message, status }` shapes (`looksLikeErrorObject`
+  cannot swallow a real stream event: those always carry a known `type`).
+- **Richer extraction** — `APIStatusError` gained `providerErrorCode` +
+  `retryAfterMs`; transports lift `code` / `status` / `request_id` from the body
+  (accepting `request_id` / `requestId` / `x-request-id` / `X-Request-Id`
+  spellings, header preferred), for the Anthropic Messages API, the
+  OpenAI-compatible Chat Completions protocol, SSE in-stream error frames, and
+  non-streaming HTTP paths alike.
+- **Retry policy** (status-based, so it never string-matches "quota"/
+  "allocation" to force a non-retry): 408/429 and every 5xx retryable; other
+  4xx (400/401/403/404/…) not. `APIConnectionError` honors the existing
+  replay-safe contract (a started stream is not blind-retried).
+- **Host surfaces** — the `error_during_execution` result, the `api_retry`
+  message (now also carrying `retryable` / `retry_remaining` / `retry_reason`),
+  and the `rate_limit_event` all carry `providerError`. A 500 with no assistant
+  content is surfaced as an error, never a silent empty success.
+- **Redaction (硬约束)** — the normalized message is bounded (2 KB) and scrubs
+  API keys / Bearer tokens / Authorization; the raw error object is never
+  attached.
+
+Additive-only (drop-in surface gains fields, never changes existing ones).
+New tests: 24 normalizer unit + 11 transport/end-to-end integration; the two
+mandated integration shapes (JSON `{error:{…,request_id:"test-500"}}` and
+`text/plain` 500) both assert the host gets `status: 500` / readable message /
+`retryable: true` / `requestId` / an explicit error event.
+
 ## 0.57.0 — 2026-07-14
 
 **openai-chat default maxOutputTokens 8192 -> 128000 (BPT ruling 2026-07-14).**

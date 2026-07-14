@@ -13,6 +13,11 @@ import {
   errorCodeOf,
   isAbortError,
 } from '../errors.js';
+import {
+  normalizeProviderError,
+  normalizeRetry,
+  type NormalizedProviderError,
+} from '../error-normalize.js';
 import type {
   APIAssistantMessage,
   APIMessageParam,
@@ -368,6 +373,12 @@ export async function* runAgentLoop(
     // CODE rather than by parsing errorMessage. Absent for non-SDK / codeless
     // failures. Additive; does not touch the request wire.
     errorCode?: string,
+    // Unified normalized upstream error (error normalization 2026-07-14): a
+    // stable, host-consumable shape so BPT can read status/code/provider/model/
+    // requestId/retryable without parsing errorMessage or duck-typing the raw
+    // error. Present only when the run ended on an actual provider/transport
+    // failure (the outer catch); absent for max-turns/budget/refusal stops.
+    providerError?: NormalizedProviderError,
   ): SDKResultMessage => ({
     type: 'result',
     subtype,
@@ -378,6 +389,7 @@ export async function* runAgentLoop(
     stop_reason: lastStopReason,
     ...(apiErrorStatus !== undefined ? { api_error_status: apiErrorStatus } : {}),
     ...(errorCode !== undefined ? { error_code: errorCode } : {}),
+    ...(providerError !== undefined ? { providerError } : {}),
     ...resultBase(),
     // Official-surface parallel: the reference SDK reports error text as a
     // string[]. Placed AFTER the resultBase spread so the fatal message wins
@@ -662,6 +674,15 @@ export async function* runAgentLoop(
         transportHealth.httpRetries += 1;
       }
       const base = { uuid: randomUUID(), session_id: config.sessionId };
+      // Unified normalized error for THIS retry (error normalization 2026-07-14):
+      // a retry proves the failure was retryable, so it carries a full
+      // NormalizedProviderError (provider/model/status/code/requestId) on both
+      // the rate_limit_event and api_retry arms — the host reads one shape.
+      const providerError = normalizeRetry(info, {
+        provider: config.providerLabel,
+        model: useModel,
+      });
+      const retryRemaining = Math.max(0, info.maxRetries - info.attempt);
       if (info.status === 429) {
         retryMessages.push({
           type: 'rate_limit_event',
@@ -678,6 +699,7 @@ export async function* runAgentLoop(
           // Deprecated dual-track flat fields, still populated.
           retry_after_ms: info.retryAfterMs ?? 0,
           limit_type: 'api',
+          providerError,
         });
       } else {
         retryMessages.push({
@@ -687,6 +709,19 @@ export async function* runAgentLoop(
           max_retries: info.maxRetries,
           ...(info.status !== undefined ? { status: info.status } : {}),
           ...(info.errorType !== undefined ? { reason: info.errorType } : {}),
+          // Additive unified-error fields (do not break existing consumers).
+          retryable: true,
+          retry_remaining: retryRemaining,
+          retry_reason:
+            info.errorType ??
+            (info.kind === 'empty_stream'
+              ? 'empty_stream'
+              : info.kind === 'network'
+                ? 'network'
+                : info.status !== undefined
+                  ? `http_${info.status}`
+                  : 'retry'),
+          providerError,
         });
       }
     };
@@ -1024,6 +1059,13 @@ export async function* runAgentLoop(
               attempt: replayN,
               max_retries: TURN_REPLAY_LIMIT,
               reason: `turn_replay:${err.code}`,
+              retryable: true,
+              retry_remaining: turnReplaysLeft,
+              retry_reason: `turn_replay:${err.code}`,
+              providerError: normalizeProviderError(err, {
+                provider: config.providerLabel,
+                model,
+              }),
             };
             await replayBackoff(replayN, signal);
             // A mid-run setModel()/latched fallback applies to the replay too.
@@ -1558,10 +1600,25 @@ export async function* runAgentLoop(
     }
   } catch (err) {
     if (isAbortError(err)) throw toAbortError(err);
-    const message = err instanceof Error ? err.message : String(err);
-    deps.debug(`engine: error during execution: ${message}`);
-    const apiStatus = err instanceof APIStatusError ? err.status : undefined;
-    yield errorResult('error_during_execution', message, apiStatus, errorCodeOf(err));
+    // Unified normalization: map ANY thrown upstream failure — an APIStatusError,
+    // an APIConnectionError, or a bare gateway error object that穿透ed
+    // un-classified — into a stable NormalizedProviderError so the host never
+    // receives a raw object or an opaque exception. The readable normalized
+    // message is the surfaced errorMessage (never [object Object]).
+    const providerError = normalizeProviderError(err, {
+      provider: config.providerLabel,
+      model: fallbackModel ?? config.model,
+    });
+    deps.debug(`engine: error during execution: ${providerError.message}`);
+    const apiStatus =
+      err instanceof APIStatusError ? err.status : providerError.status;
+    yield errorResult(
+      'error_during_execution',
+      providerError.message,
+      apiStatus,
+      errorCodeOf(err),
+      providerError,
+    );
     return;
   }
 }

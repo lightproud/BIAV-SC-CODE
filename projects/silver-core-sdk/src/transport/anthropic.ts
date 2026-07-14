@@ -14,6 +14,10 @@ import {
   ConfigurationError,
   isAbortError,
 } from '../errors.js';
+import {
+  extractProviderErrorObject,
+  looksLikeErrorObject,
+} from '../error-normalize.js';
 import type {
   APIMessageParam,
   ApiKeySource,
@@ -340,11 +344,15 @@ export class AnthropicTransport implements Transport {
               type: 'api_error',
               message: frame.data,
             };
+            // An in-stream error frame carries no HTTP status (the response was
+            // 200). Prefer a `status` the gateway put IN the body (the wrapped
+            // { error: { status } } shape), else derive one from the error type.
             throw new APIStatusError(
-              statusForErrorType(info.type),
+              info.status ?? statusForErrorType(info.type),
               info.type,
               info.message,
-              requestId,
+              info.requestId ?? requestId,
+              info.code !== undefined ? { providerErrorCode: info.code } : undefined,
             );
           }
           eventCount += 1;
@@ -566,7 +574,12 @@ export class AnthropicTransport implements Transport {
           this.debug(
             `transport: network error (${errorMessage(err)}); retry ${retryBudget.used}/${maxRetries}`,
           );
-          onRetry?.({ attempt: retryBudget.used, maxRetries, kind: 'network' });
+          onRetry?.({
+            attempt: retryBudget.used,
+            maxRetries,
+            kind: 'network',
+            message: errorMessage(err),
+          });
           await this.backoff(retryBudget.used, undefined, callerSignal);
           continue;
         }
@@ -581,13 +594,17 @@ export class AnthropicTransport implements Transport {
       }
       releaseSignals();
 
-      const requestId = response.headers.get('request-id') ?? undefined;
+      // Request id: prefer the response header, fall back to a request_id the
+      // gateway put in the error body.
+      const requestId =
+        response.headers.get('request-id') ?? undefined;
       const info = await readErrorInfo(response);
+      const resolvedRequestId = requestId ?? info.requestId;
+      const retryAfterMs = parseRetryAfterMs(response.headers.get('retry-after'));
       const retryable =
         response.status === 408 || response.status === 429 || response.status >= 500;
       if (retryable && retryBudget.used < maxRetries) {
         retryBudget.used += 1;
-        const retryAfterMs = parseRetryAfterMs(response.headers.get('retry-after'));
         this.debug(
           `transport: HTTP ${response.status} (${info.type}); retry ${retryBudget.used}/${maxRetries}`,
         );
@@ -597,12 +614,24 @@ export class AnthropicTransport implements Transport {
           status: response.status,
           errorType: info.type,
           kind: 'http_status',
+          message: info.message,
+          ...(resolvedRequestId !== undefined ? { requestId: resolvedRequestId } : {}),
+          ...(info.code !== undefined ? { code: info.code } : {}),
           ...(retryAfterMs !== undefined ? { retryAfterMs } : {}),
         });
         await this.backoff(retryBudget.used, retryAfterMs, callerSignal);
         continue;
       }
-      throw new APIStatusError(response.status, info.type, info.message, requestId);
+      throw new APIStatusError(
+        response.status,
+        info.type,
+        info.message,
+        resolvedRequestId,
+        {
+          ...(info.code !== undefined ? { providerErrorCode: info.code } : {}),
+          ...(retryAfterMs !== undefined ? { retryAfterMs } : {}),
+        },
+      );
     }
   }
 
@@ -844,26 +873,62 @@ function resolveCredential(
   return null;
 }
 
+/** True for an SSE frame payload that is actually an ERROR — the native
+ *  `{ type: 'error' }` frame OR a gateway that wrapped an upstream failure as a
+ *  bare `{ error: {...} }` / `{ message, status }` object with no `type:'error'`
+ *  discriminator (the穿透 case this normalization work closes). A real stream
+ *  event always carries a known `type`, so `looksLikeErrorObject` cannot swallow
+ *  one (it requires either a nested `error` object or a `type`-less body). */
 function isErrorPayload(parsed: unknown): boolean {
-  return (
+  if (
     typeof parsed === 'object' &&
     parsed !== null &&
     (parsed as { type?: unknown }).type === 'error'
-  );
+  ) {
+    return true;
+  }
+  return looksLikeErrorObject(parsed);
 }
 
-/** Extract `{ error: { type, message } }` from an API error payload. */
-function extractErrorPayload(
-  parsed: unknown,
-): { type: string; message: string } | null {
+/** Diagnostic fields lifted from an API error payload. `status`/`code`/
+ *  `requestId` are present only when the body carried them. */
+type ErrorPayloadInfo = {
+  type: string;
+  message: string;
+  status?: number;
+  code?: string;
+  requestId?: string;
+};
+
+/** Extract `{ error: { type, message, code, status, request_id } }` (or the bare
+ *  top-level `{ message, status, code, request_id }`) from an API error payload. */
+function extractErrorPayload(parsed: unknown): ErrorPayloadInfo | null {
   if (typeof parsed !== 'object' || parsed === null) return null;
-  const error = (parsed as { error?: unknown }).error;
-  if (typeof error !== 'object' || error === null) return null;
-  const type = (error as { type?: unknown }).type;
-  const message = (error as { message?: unknown }).message;
+  const top = parsed as Record<string, unknown>;
+  const error =
+    typeof top.error === 'object' && top.error !== null
+      ? (top.error as Record<string, unknown>)
+      : undefined;
+  // The `type` slug (Anthropic vocabulary) lives on the error envelope when
+  // present, else on the top-level object.
+  const typeSrc = error?.type ?? top.type;
+  const type =
+    typeof typeSrc === 'string' && typeSrc !== 'error' ? typeSrc : 'api_error';
+  // Delegate message/status/code/request_id extraction to the shared, redacting
+  // normalizer helper so both arms agree on the field spellings.
+  const obj = extractProviderErrorObject(parsed);
+  if (obj === null) {
+    // Neither a nested error nor a usable message: keep the old behavior of
+    // stringifying the error envelope (bounded by the normalizer elsewhere).
+    if (error === undefined) return null;
+    return { type, message: JSON.stringify(error) };
+  }
   return {
-    type: typeof type === 'string' ? type : 'api_error',
-    message: typeof message === 'string' ? message : JSON.stringify(error),
+    type,
+    message: obj.message,
+    ...(obj.status !== undefined ? { status: obj.status } : {}),
+    ...(obj.code !== undefined ? { code: obj.code } : {}),
+    ...(obj.requestId !== undefined ? { requestId: obj.requestId } : {}),
   };
 }
 
@@ -871,10 +936,10 @@ function statusForErrorType(errorType: string): number {
   return ERROR_TYPE_STATUS[errorType] ?? 500;
 }
 
-/** Read and classify a non-2xx response body (best effort, never throws). */
-async function readErrorInfo(
-  response: Response,
-): Promise<{ type: string; message: string }> {
+/** Read and classify a non-2xx response body (best effort, never throws). A
+ *  non-JSON body (e.g. a plain-text "Internal server error" 500 page) yields a
+ *  readable message rather than an opaque object. */
+async function readErrorInfo(response: Response): Promise<ErrorPayloadInfo> {
   let text = '';
   try {
     text = await response.text();

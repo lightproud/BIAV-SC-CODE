@@ -113,18 +113,41 @@ export class APIConnectionError extends Error {
   }
 }
 
-/** Non-2xx response from the Messages API. */
+/** Non-2xx response from the Messages API (or an in-stream error frame). */
 export class APIStatusError extends Error {
   override name = 'APIStatusError';
   readonly code: ErrorCode = 'api_status_error';
+  /**
+   * The provider/gateway's OWN machine code slug when the error body carried
+   * one — e.g. a gateway `{ error: { code: 'model_overloaded' } }`. Distinct
+   * from `errorType` (the Anthropic-vocabulary type the transport normalizes
+   * to) and from `code` (this SDK's stable ErrorCode). Append-only field; the
+   * error-normalization layer prefers it over `errorType` when present.
+   */
+  readonly providerErrorCode?: string;
+  /**
+   * Milliseconds the server asked us to wait before retrying (parsed
+   * Retry-After), carried onto the terminal error so the normalized error can
+   * surface `retryAfterMs` even after the transport's retry budget is spent.
+   */
+  readonly retryAfterMs?: number;
   constructor(
     readonly status: number,
     readonly errorType: string,
     message: string,
-    readonly requestId?: string,
+    requestId?: string,
+    extra?: { providerErrorCode?: string; retryAfterMs?: number },
   ) {
     super(message);
+    this.requestId = requestId;
+    if (extra?.providerErrorCode !== undefined) {
+      this.providerErrorCode = extra.providerErrorCode;
+    }
+    if (extra?.retryAfterMs !== undefined) this.retryAfterMs = extra.retryAfterMs;
   }
+
+  /** Upstream request id (body `request_id`/`requestId` or `x-request-id` header). */
+  readonly requestId?: string;
 }
 
 /** Feature accepted for type compatibility but not implemented in this version. */
