@@ -199,6 +199,13 @@
 > 银芯→黑池单向输出物，与 §1.1-HC 防火墙同向，非 BPT 产品内部开发。
 
 - **动手前必读**：`projects/silver-core-sdk/CONTEXT.md`（会话上下文 + 当前 milestone）
+- **v0.60.0（2026-07-14，`/goal` 会话目标原语，守密人「把 goal 命令也给实现了吧」派单）**：
+  与 /loop 同类表面缺口——引擎 Stop-hook block 语义（v0.39）与 stop 变体条件评估器（v0.6）早已
+  发货，`/goal` 却无人解析。新模块 `src/hooks/session-goal.ts`（BPT-EXTENSION）：`parseGoalCommand`
+  （set / clear）+ `createSessionGoal`（Stop matcher：未达成 block 停止并回喂理由续跑、达成自动
+  撤防、impossible 逃生口撤防；`handleCommand` 一调用桥接、`onEvent` 通知、`maxBlocks` 帽、
+  transcript 尾部有界上下文）。失败方向与通用条件门**刻意反向**：坏裁判（评估器故障 / 乱码 /
+  零上下文）一律放行停止、目标保持布防，绝不困死 agent；零上下文不盲判。+20 测试。
 - **v0.59.0（2026-07-14，BPT `/loop` 缺口收口，守密人同日裁定「SDK 侧加循环原语」）**：
   BPT 调查确认 `/loop 10m <任务>` 未被任何层解释、原样透传为一次性 prompt（GUI 未注册 /loop、
   SDK 斜杠层仅 /compact 内建 + markdown 展开、周期语义静默丢失）。新公开模块 `src/prompt-loop.ts`
