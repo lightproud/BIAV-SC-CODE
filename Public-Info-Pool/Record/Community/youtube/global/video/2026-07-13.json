@@ -1,8 +1,8 @@
 {
   "date": "2026-07-13",
-  "archived_at": "2026-07-14T02:14:47.031537+00:00",
+  "archived_at": "2026-07-14T05:30:13.141764+00:00",
   "source": "youtube",
-  "item_count": 19,
+  "item_count": 20,
   "items": [
     {
       "title": "망각전야 Morimens - 쇼츠로 올릴 수 있는 고양이 포획",
@@ -153,6 +153,23 @@
       "lang": "",
       "platform_region": "global",
       "media_url": "https://i.ytimg.com/vi/6kZaSiUyc_g/hqdefault.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    },
+    {
+      "title": "Bad Baddies be BAD! | Morimens: Ark 2 - CH4",
+      "summary": "Morimens until I'm KoG TTV: https://www.twitch.tv/lowlivve Disc: https://discord.gg/KWB3yD6HeW #morimens #忘却前夜 #忘卻 ...",
+      "source": "youtube",
+      "time": "2026-07-13T06:53:54Z",
+      "url": "https://www.youtube.com/watch?v=k1rWJ4kmu2w",
+      "engagement": 4,
+      "is_hot": false,
+      "author": "LowLivve",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/k1rWJ4kmu2w/hqdefault_live.jpg",
       "content_type": "video",
       "region": "global",
       "archive_subtype": "video"

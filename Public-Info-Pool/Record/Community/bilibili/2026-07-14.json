@@ -1,8 +1,8 @@
 {
   "date": "2026-07-14",
-  "archived_at": "2026-07-14T02:14:47.033317+00:00",
+  "archived_at": "2026-07-14T05:30:13.142979+00:00",
   "source": "bilibili",
-  "item_count": 3,
+  "item_count": 4,
   "items": [
     {
       "title": "【忘却前夜】星辰篇 H2-12 鸟弟：我和阿拉克涅合砍80分",
@@ -46,6 +46,29 @@
         "danmaku": 0
       },
       "media_url": "https://i2.hdslb.com/bfs/archive/4fc57e5f1141f471304e27a2a003d2be00513bbc.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "【忘却前夜】抽鸟弟 欧气用尽",
+      "summary": "",
+      "source": "bilibili",
+      "time": "2026-07-14T04:31:13+00:00",
+      "url": "https://www.bilibili.com/video/BV1YnNQ6EEat",
+      "engagement": 5,
+      "is_hot": false,
+      "author": "喵老狮",
+      "tags": [
+        "网络游戏"
+      ],
+      "metadata": {
+        "play": 5,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/63bc0cc3c4ea2f78bf17fb9e8a6c99c6b0c021a0.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

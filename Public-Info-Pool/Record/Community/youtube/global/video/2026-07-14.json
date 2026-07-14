@@ -1,8 +1,8 @@
 {
   "date": "2026-07-14",
-  "archived_at": "2026-07-14T02:14:47.033666+00:00",
+  "archived_at": "2026-07-14T05:30:13.144026+00:00",
   "source": "youtube",
-  "item_count": 7,
+  "item_count": 8,
   "items": [
     {
       "title": "망각전야Morimens) 상담 대리뽑 피드백 신청가능",
@@ -102,6 +102,23 @@
       "lang": "",
       "platform_region": "global",
       "media_url": "https://i.ytimg.com/vi/-U7_FbD8E-Q/hqdefault.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    },
+    {
+      "title": "忘卻前夜 Morimens Ebwynnos Evermore Event - Predator&#39;s Play Madness",
+      "summary": "Took a bit cause I was busy with something recently but here is a Kathi blowing up Murphy!",
+      "source": "youtube",
+      "time": "2026-07-14T03:07:20Z",
+      "url": "https://www.youtube.com/watch?v=pV_s97H3h9s",
+      "engagement": 2,
+      "is_hot": false,
+      "author": "Kiro Takahashi",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/pV_s97H3h9s/hqdefault.jpg",
       "content_type": "video",
       "region": "global",
       "archive_subtype": "video"
