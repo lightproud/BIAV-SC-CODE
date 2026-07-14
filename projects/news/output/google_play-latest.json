@@ -1,6 +1,6 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-14T16:14:19.598249+00:00",
+  "collected_at": "2026-07-14T19:17:54.678662+00:00",
   "source": "google_play",
   "data_layer": "output",
   "item_count": 111,
@@ -94,6 +94,16 @@
       "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-5106d1bd-db6f-447c-95d7-668e8e07b9c9",
       "author": "内田",
       "engagement": 2
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-13T14:23:10",
+      "lang": "en",
+      "title": "[Google Play 中评] ★3 The conversations between phases of boss",
+      "summary": "The conversations between phases of bosses in story are annoying, add a skip for that please, and also add that in replay too, thanks. And please have guide for teams.",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-81b13ca9-e065-49df-90ff-be632967802f",
+      "author": "Nauth",
+      "engagement": 1
     },
     {
       "source": "google_play",
@@ -223,16 +233,6 @@
       "summary": "觉得还行",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=zh_CN#gp-57f4f9db-558e-4842-b184-3a7e848970ad",
       "author": "元气豆芽（YQBean）",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-07-13T14:23:10",
-      "lang": "en",
-      "title": "[Google Play 中评] ★3 The conversations between phases of boss",
-      "summary": "The conversations between phases of bosses in story are annoying, add a skip for that please, and also add that in replay too, thanks. And please have guide for teams.",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-81b13ca9-e065-49df-90ff-be632967802f",
-      "author": "Nauth",
       "engagement": 0
     },
     {
