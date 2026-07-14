@@ -16,6 +16,41 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.59.1 — 2026-07-14
+
+Audit 2026-07-14 P2 batch — low-severity hygiene + a lint gate:
+
+- **Lint gate**: `noUnusedLocals` enabled in tsconfig (so `npm run
+  typecheck` now reds on dead imports/vars); cleaned the extraction-leftover
+  dead type imports it surfaced in query.ts / engine/loop.ts /
+  subagents/runtime.ts / tools/toolsearch.ts. (`noUnusedParameters`
+  deliberately NOT enabled — it flags idiomatic unused destructured params.)
+- **L-1**: engine/loop.ts tool-defs cache key no longer embeds a raw NUL
+  byte (now the `\x00` escape) — behavior identical, but the source file is
+  plain text again instead of being flagged binary by grep et al.
+- **L-2**: explicit Retry-After now gets bounded upward jitter (never
+  earlier than the server floor) in both transport twins — a subagent
+  fan-out sharing one Retry-After no longer retries in the same instant.
+- **L-5**: mcp/stdio.ts marks the connection closed on a spawn 'error'
+  (ENOENT) so later requests fail fast with mcp_not_connected instead of
+  hanging to the 60s timeout.
+- **L-9**: removed dead imports/vars (loop.ts extraction leftovers,
+  duplicate toAbortError now shared from tool-dispatch, a dead `closed`
+  var in generators/runtime.ts).
+- **L-10**: the process-tree kill closure (duplicated in bash.ts and
+  shells.ts) is unified into `createTreeKiller` in tools/kill-plan.ts.
+- **L-14**: getSessionInfo reuses the meta-only scan (loadInfo) instead of
+  a full load()+repairPairing when it only needs title/timestamps.
+- **L-16**: run-log day file is named from the record's own ts, not the
+  flush-time clock, so a record observed at 23:59 and flushed at 00:00
+  lands in the correct day.
+- **L-19b**: deleteSession emits a debug line when the external store has
+  no delete capability, instead of silently resolving as success.
+
+L-13 (monitor kill-timer registration) deliberately skipped — the timer is
+already unref'd (harmless) and wiring it into the private killTimers map
+risks colliding with the SIGTERM->SIGKILL upgrade timer keyed on the same
+id; not worth it for a no-op leak.
 ## 0.59.0 — 2026-07-14
 
 New capability: `/loop` interval-loop primitive (`src/prompt-loop.ts`,

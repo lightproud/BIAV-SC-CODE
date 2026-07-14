@@ -22,38 +22,36 @@ import type {
   APIAssistantMessage,
   APIMessageParam,
   APIToolDefinitionParam,
-  CallToolResult,
   ContentBlock,
-  DocumentBlockParam,
-  ImageBlockParam,
   JSONSchema,
   ModelUsage,
   NonNullableUsage,
   RawMessageStreamEvent,
   SDKMessage,
-  SDKPermissionDeniedMessage,
   SDKResultMessage,
   SDKRunMetrics,
   SDKToolMetrics,
   SDKTransportHealth,
   SDKTurnMetrics,
   StopReason,
-  TextBlockParam,
   ToolResultBlockParam,
   ToolUseBlock,
 } from '../types.js';
 import type {
-  AggregatedHookResult,
   EngineConfig,
   EngineDeps,
   RetryInfo,
   StreamRequest,
-  ToolResultPayload,
 } from '../internal/contracts.js';
 import { MessageAccumulator } from './accumulator.js';
 import { addUsage, estimateCostUsd, normalizeUsage } from './pricing.js';
 import { contextWindowFor } from './context-window.js';
-import { createToolDispatcher, mkToolError, type ToolExecOutcome } from './tool-dispatch.js';
+import {
+  createToolDispatcher,
+  mkToolError,
+  toAbortError,
+  type ToolExecOutcome,
+} from './tool-dispatch.js';
 import { deriveSystemField } from './system-field.js';
 import { supportsAdaptiveThinking } from './thinking-model.js';
 import { estimateToolDefsTokens } from './tokens.js';
@@ -114,14 +112,6 @@ function replayBackoff(attempt: number, signal: AbortSignal): Promise<void> {
     // to a pending retry.
     signal.addEventListener('abort', onAbort, { once: true });
   });
-}
-
-/** Wrap any abort-shaped error into this SDK's AbortError. */
-function toAbortError(err: unknown): AbortError {
-  if (err instanceof AbortError) return err;
-  const message =
-    err instanceof Error ? err.message : 'The operation was aborted';
-  return new AbortError(message);
 }
 
 /** Fallback-eligible API statuses: rate limit and server-side failures. */
@@ -644,7 +634,7 @@ export async function* runAgentLoop(
   let toolDefsEstimateKey: string | undefined;
   let toolDefsEstimate = 0;
   const currentOverheadTokens = (defs: APIToolDefinitionParam[]): number => {
-    const key = defs.map((d) => d.name).join(' ');
+    const key = defs.map((d) => d.name).join('\x00');
     if (key !== toolDefsEstimateKey) {
       toolDefsEstimate = estimateToolDefsTokens(defs);
       toolDefsEstimateKey = key;
@@ -1032,7 +1022,15 @@ export async function* runAgentLoop(
           assistant = yield* streamAttempt(model, turnToolDefs, firstSink);
           break;
         } catch (err) {
-          if (isAbortError(err)) throw toAbortError(err);
+          if (isAbortError(err)) {
+            // audit 2026-07-14 L-6: the aborted attempt may already have
+            // billed tokens (input tokens on its message_start). Fold them
+            // into the run totals so the outer catch can hand the partial
+            // accounting to the query layer — without this, a turn-level
+            // interrupt() silently lost the aborted turn's spend.
+            if (firstSink.usage !== undefined) recordUsage(model, firstSink.usage);
+            throw toAbortError(err);
+          }
           if (
             err instanceof APIConnectionError &&
             !signal.aborted &&
@@ -1117,14 +1115,15 @@ export async function* runAgentLoop(
             // The fallback attempt gets its own usage sink: if IT fails too,
             // the tokens it burned (its message_start already billed the
             // prompt) must reach the totals the terminal error result reports,
-            // exactly as the first attempt's sink was folded above. A caller
-            // abort keeps the plain throw-through — no result is produced, so
-            // there is no report to keep honest.
+            // exactly as the first attempt's sink was folded above. An abort
+            // folds too (audit 2026-07-14 L-6): no result is produced, but the
+            // outer catch now hands the run's partial accounting to the query
+            // layer on the thrown AbortError, so these tokens are reportable.
             const fallbackSink: UsageSink = {};
             try {
               assistant = yield* streamAttempt(model, turnToolDefs, fallbackSink);
             } catch (fallbackErr) {
-              if (!isAbortError(fallbackErr) && fallbackSink.usage !== undefined) {
+              if (fallbackSink.usage !== undefined) {
                 recordUsage(model, fallbackSink.usage);
               }
               throw fallbackErr; // 2nd failure -> outer catch
@@ -1609,7 +1608,27 @@ export async function* runAgentLoop(
       return;
     }
   } catch (err) {
-    if (isAbortError(err)) throw toAbortError(err);
+    if (isAbortError(err)) {
+      // audit 2026-07-14 L-6: an aborted run yields NO result message, so the
+      // usage it already billed (this turn's message_start input tokens folded
+      // above, plus any completed intermediate turns of the tool loop) would
+      // silently vanish from session accounting. Attach the run's partial
+      // accounting to the thrown AbortError; the query layer folds it into
+      // SessionAccounting in its abort path. When the same AbortError bubbles
+      // through nested loops each loop overwrites with ITS OWN scope — the
+      // outermost (root) loop wins, which is the scope the root query folds.
+      const aborted = toAbortError(err);
+      aborted.abortedRunAccounting = {
+        usage: { ...totalUsage },
+        totalCostUsd,
+        durationApiMs,
+        numTurns,
+        modelUsage: Object.fromEntries(
+          Object.entries(modelUsage).map(([k, v]) => [k, { ...v }]),
+        ),
+      };
+      throw aborted;
+    }
     // Unified normalization: map ANY thrown upstream failure — an APIStatusError,
     // an APIConnectionError, or a bare gateway error object that穿透ed
     // un-classified — into a stable NormalizedProviderError so the host never

@@ -195,6 +195,13 @@ describe('supervised auto-resume', () => {
     // Two fetch calls: the failure, then the successful redrive.
     expect(calls()).toBe(2);
 
+    // audit 2026-07-14 L-7: the resumed query re-emits its own system/init,
+    // but the supervisor promised ONE continuous session — exactly one init
+    // reaches the consumer across the transparent resume (a second one would
+    // render a ghost "new session" in init-as-boundary UIs).
+    const inits = messages.filter((m) => m.type === 'system' && m.subtype === 'init');
+    expect(inits).toHaveLength(1);
+
     // The write-ahead checkpoint left a trace, and the redrive settled it.
     const sid = initSessionId(messages);
     const types = (await transcript(sid)).map((e) => e.type);
@@ -279,6 +286,9 @@ describe('supervised auto-resume', () => {
     expect(resumeObservations(messages)).toHaveLength(2);
     // Initial attempt + 2 resumes = 3 fetch calls.
     expect(calls()).toBe(3);
+    // audit 2026-07-14 L-7: two resumes re-emitted two more inits internally;
+    // still exactly ONE init reaches the consumer.
+    expect(messages.filter((m) => m.type === 'system' && m.subtype === 'init')).toHaveLength(1);
 
     await mgr.close();
   });

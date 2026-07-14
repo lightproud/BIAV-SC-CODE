@@ -438,6 +438,10 @@ export function createBptSession(options: SessionManagerOptions = {}): SessionMa
     const maxResumes = recovery?.maxResumes ?? 2;
     let sessionId: string | undefined;
     let attempts = 0;
+    // audit 2026-07-14 L-7: whether the FIRST system/init already reached the
+    // consumer. A transparent auto-resume starts a fresh query() run that
+    // re-emits its own init; only the first one is forwarded (see below).
+    let initForwarded = false;
     // Status observations queued to surface (in the consumer's stream) just
     // before the retried query's first message.
     const observations: SDKMessage[] = [];
@@ -537,6 +541,15 @@ export function createBptSession(options: SessionManagerOptions = {}): SessionMa
           const v = r.value;
           if (v.type === 'system' && v.subtype === 'init') {
             sessionId = v.session_id;
+            // audit 2026-07-14 L-7: after a transparent auto-resume the
+            // resumed query re-emits its own system/init. Forwarding that
+            // SECOND init would make a downstream UI that treats init as a
+            // session boundary render a ghost "new session" for what the
+            // supervisor promised is ONE continuous session. The session_id
+            // was already read above for internal use; swallow every init
+            // after the first and keep fetching the next message.
+            if (initForwarded) continue;
+            initForwarded = true;
           }
 
           // The `subtype` discriminant (not is_error) narrows to the error arm.

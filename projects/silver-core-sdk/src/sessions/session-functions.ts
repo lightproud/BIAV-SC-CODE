@@ -37,6 +37,10 @@ export type SessionMutationOptions = {
   sessionStore?: ExternalSessionStore;
   /** Working dir used to derive the external project key. Default process.cwd(). */
   cwd?: string;
+  /** Optional diagnostic sink (audit 2026-07-14 L-19b). Used to surface
+   *  no-op mutations a host might otherwise read as success — e.g. a
+   *  deleteSession against an external store that exposes no `delete`. */
+  debug?: (msg: string) => void;
 };
 
 export type GetSessionMessagesOptions = SessionMutationOptions & {
@@ -215,6 +219,15 @@ export async function deleteSession(
   if (options.sessionStore !== undefined) {
     if (options.sessionStore.delete !== undefined) {
       await options.sessionStore.delete(mainKey(sessionId, options));
+    } else {
+      // audit 2026-07-14 L-19b: the external store has no delete capability, so
+      // nothing was removed. Resolve (do NOT throw — that would break the
+      // local-only happy path), but emit a debug line so a host is not misled
+      // into believing the session's private data was actually deleted.
+      options.debug?.(
+        `deleteSession: external store exposes no delete(); session '${sessionId}' ` +
+          `was NOT removed (no-op)`,
+      );
     }
     return;
   }

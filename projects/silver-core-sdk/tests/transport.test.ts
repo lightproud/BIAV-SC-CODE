@@ -590,6 +590,65 @@ describe('AnthropicTransport retries', () => {
     expect(elapsed).toBeLessThan(450);
   });
 
+  // audit 2026-07-14 L-2: the explicit Retry-After delay is jittered UP (never
+  // earlier than the server asked) so a concurrent fan-out does not all wake at
+  // the same instant. Two retries carrying the SAME Retry-After header must
+  // therefore back off for DIFFERENT durations, each within [header, header*1.25].
+  describe('retry-after jitter (L-2 thundering-herd spread)', () => {
+    function backoffMsFrom(debugLines: string[]): number {
+      const line = debugLines.find((l) => /backing off \d+ms/.test(l));
+      if (line === undefined) throw new Error('no backoff debug line captured');
+      return Number(/backing off (\d+)ms/.exec(line)![1]);
+    }
+
+    async function runRetryAfter(headerSeconds: string): Promise<number> {
+      const debugLines: string[] = [];
+      const fetchMock = stubFetch([
+        () =>
+          new Response(
+            JSON.stringify({
+              type: 'error',
+              error: { type: 'rate_limit_error', message: 'slow down' },
+            }),
+            { status: 429, headers: { 'retry-after': headerSeconds } },
+          ),
+        () => sseResponse(okSse()),
+      ]);
+      const t = new AnthropicTransport({
+        provider: { apiKey: 'k' },
+        env: { BPT_HTTP_CLIENT: 'fetch' },
+        debug: (m) => debugLines.push(m),
+      });
+      await collect(t.stream(baseReq()));
+      expect(fetchMock).toHaveBeenCalledTimes(2);
+      return backoffMsFrom(debugLines);
+    }
+
+    it('same Retry-After header -> different delays, each within [header, header*1.25]', async () => {
+      // backoff() draws Math.random TWICE per call: the exponential jitter
+      // (unused on the retry-after path) then the retry-after multiplier. Feed
+      // four values so the two retry-after multipliers (2nd + 4th draw) differ.
+      vi.spyOn(Math, 'random')
+        .mockReturnValueOnce(0.0)
+        .mockReturnValueOnce(0.2)
+        .mockReturnValueOnce(0.0)
+        .mockReturnValueOnce(0.8);
+      const headerMs = 200; // 'retry-after: 0.2' seconds -> a short real sleep
+      const d1 = await runRetryAfter('0.2');
+      const d2 = await runRetryAfter('0.2');
+      // Jitter is actually applied (not a fixed value).
+      expect(d1).not.toBe(d2);
+      // Never earlier than the server asked; never more than 25% late.
+      for (const d of [d1, d2]) {
+        expect(d).toBeGreaterThanOrEqual(headerMs);
+        expect(d).toBeLessThanOrEqual(Math.ceil(headerMs * 1.25));
+      }
+      // Concretely: 0.2 -> 200*1.05 = 210, 0.8 -> 200*1.20 = 240.
+      expect(d1).toBe(210);
+      expect(d2).toBe(240);
+    });
+  });
+
   it('400 -> APIStatusError immediately with exactly 1 fetch call', async () => {
     const fetchMock = stubFetch([
       () =>

@@ -11,6 +11,7 @@
  */
 
 import type { ModelUsage, NonNullableUsage, SDKResultMessage } from './types.js';
+import type { AbortedRunAccounting } from './errors.js';
 
 function zeroUsage(): NonNullableUsage {
   return {
@@ -70,6 +71,23 @@ export class SessionAccounting {
     this.apiMs += r.duration_api_ms;
     this.usage = addUsage(this.usage, r.usage);
     for (const [modelId, mu] of Object.entries(r.modelUsage)) {
+      mergeModelUsage(this.modelUsage, modelId, mu);
+    }
+  }
+
+  /**
+   * audit 2026-07-14 L-6: fold an ABORTED run's partial accounting (attached
+   * to the AbortError by the engine loop) into the session totals. An aborted
+   * run emits no result message, so without this fold the usage it already
+   * billed — message_start input tokens, completed intermediate turns — would
+   * under-count the session budget/summary.
+   */
+  accumulateAborted(p: AbortedRunAccounting): void {
+    this.turns += p.numTurns;
+    this.cost += p.totalCostUsd;
+    this.apiMs += p.durationApiMs;
+    this.usage = addUsage(this.usage, p.usage);
+    for (const [modelId, mu] of Object.entries(p.modelUsage)) {
       mergeModelUsage(this.modelUsage, modelId, mu);
     }
   }

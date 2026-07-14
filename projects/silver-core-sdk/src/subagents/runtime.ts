@@ -22,12 +22,7 @@
  * (context isolation).
  */
 
-import { execFile } from 'node:child_process';
 import { randomUUID } from 'node:crypto';
-import { mkdtemp, rm } from 'node:fs/promises';
-import { tmpdir } from 'node:os';
-import { join } from 'node:path';
-import { promisify } from 'node:util';
 
 import { isAbortError } from '../errors.js';
 import type {
@@ -303,8 +298,6 @@ export function buildForkSeed(
   }
   return seed;
 }
-
-const execFileP = promisify(execFile);
 
 /**
  * Worktree isolation (Agent tool `isolation: 'worktree'`, E7-02): create a

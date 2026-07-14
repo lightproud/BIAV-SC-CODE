@@ -67,15 +67,45 @@ export interface UtilityCallOptions {
   env?: Record<string, string | undefined>;
 }
 
+/**
+ * audit 2026-07-14 L-4: memoized default transports for utility calls.
+ *
+ * Every utility call used to build a FRESH provider transport, which voided
+ * the maxConcurrentRequests semaphore across calls (the gate is per-transport)
+ * and fired one BPT_PRECONNECT probe per call. The default transport is now
+ * cached per resolved provider-config identity: keyed by the provider object
+ * reference (or, when no provider is given, the env object reference — both
+ * are stable references at the call sites that repeat utility calls), with the
+ * betas list as a secondary key since it changes the wire headers. WeakMap
+ * keying means a dropped provider config releases its transport. The first
+ * caller's debug sink is captured for the cached transport's lifetime — an
+ * accepted trade for identity-stable memoization. Injected transports
+ * (opts.transport) and the cross-protocol resolver keep priority and are
+ * never cached here.
+ */
+const utilityTransportCache = new WeakMap<object, Map<string, Transport>>();
+
 /** Resolve (or build) the transport a utility call will drive. */
 export function resolveUtilityTransport(opts: UtilityCallOptions): Transport {
   if (opts.transport !== undefined) return opts.transport;
-  return createProviderTransport({
+  const env = opts.env ?? process.env;
+  const keyObj: object = opts.provider ?? env;
+  const betasKey = (opts.betas ?? []).join(',');
+  let byBetas = utilityTransportCache.get(keyObj);
+  if (byBetas === undefined) {
+    byBetas = new Map();
+    utilityTransportCache.set(keyObj, byBetas);
+  }
+  const cached = byBetas.get(betasKey);
+  if (cached !== undefined) return cached;
+  const transport = createProviderTransport({
     provider: opts.provider,
-    env: opts.env ?? process.env,
+    env,
     debug: opts.debug ?? (() => {}),
     betas: opts.betas,
   });
+  byBetas.set(betasKey, transport);
+  return transport;
 }
 
 /**
@@ -149,7 +179,6 @@ export function extractJsonObject(text: string): unknown {
     let depth = 0;
     let inString = false;
     let escaped = false;
-    let closed = false;
     for (let i = searchFrom; i < trimmed.length; i += 1) {
       const ch = trimmed[i];
       if (inString) {
@@ -165,14 +194,12 @@ export function extractJsonObject(text: string): unknown {
         if (depth === 0) {
           const parsed = tryParse(trimmed.slice(searchFrom, i + 1));
           if (parsed !== undefined) return parsed;
-          closed = true; // balanced but unparseable -> try the next '{'
-          break;
+          break; // balanced but unparseable -> try the next '{' (audit 2026-07-14 L-9c)
         }
       }
     }
     // Whether the group closed-but-failed or never balanced, advance to the
     // next candidate '{' after the current start.
-    void closed;
     searchFrom = trimmed.indexOf('{', searchFrom + 1);
   }
   return null;

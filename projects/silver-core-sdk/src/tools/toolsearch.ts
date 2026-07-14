@@ -25,7 +25,6 @@ import type {
   McpResourceContent,
   McpServerConfig,
   McpServerStatus,
-  McpSetServersResult,
   CallToolResult,
 } from '../types.js';
 

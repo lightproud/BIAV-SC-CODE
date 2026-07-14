@@ -494,4 +494,30 @@ describe('rename/tag round trip via meta_update (T1-6)', () => {
     const info = await getSessionInfo(SID, { sessionDir: dir });
     expect(info?.gitBranch).toBe('feature/x');
   });
+
+  // audit 2026-07-14 L-14: getSessionInfo now reuses the meta-only streaming
+  // scan (loadInfo) instead of a full load() + triple repairPairing, since the
+  // summary row reads only meta fields. On a normal transcript (with real
+  // message lines) it must return exactly what it did before — and match the
+  // listSessions row, which already sourced from the same meta-only path.
+  it('getSessionInfo (meta-only path) matches listSessions on a normal transcript (L-14)', async () => {
+    const file = join(dir, `${SID}.jsonl`);
+    appendFileSync(
+      file,
+      `${JSON.stringify({ type: 'meta', sessionId: SID, createdAt: 123, cwd: '/w', firstPrompt: 'hello world', gitBranch: 'main' })}\n` +
+        `${JSON.stringify({ type: 'user', message: { role: 'user', content: 'hello world' } })}\n` +
+        `${JSON.stringify({ type: 'assistant', message: { role: 'assistant', content: [{ type: 'text', text: 'hi' }] } })}\n`,
+      'utf8',
+    );
+    const info = await getSessionInfo(SID, { sessionDir: dir });
+    expect(info).toBeDefined();
+    expect(info?.summary).toBe('hello world');
+    expect(info?.firstPrompt).toBe('hello world');
+    expect(info?.cwd).toBe('/w');
+    expect(info?.gitBranch).toBe('main');
+    expect(info?.createdAt).toBe(123);
+    // Identical to the listSessions summary row (both meta-only reads of one file).
+    const entry = (await listSessions({ sessionDir: dir })).find((s) => s.sessionId === SID);
+    expect(info).toEqual(entry);
+  });
 });
