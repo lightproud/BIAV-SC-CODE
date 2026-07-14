@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-14T05:29:30.938169+00:00",
+  "collected_at": "2026-07-14T08:01:39.299716+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 12,
+  "item_count": 13,
   "items": [
     {
       "source": "steam",
@@ -19,6 +19,36 @@
       "review": "ts game fye bro",
       "timestamp_created": 1783937251,
       "playtime_forever": 668
+    },
+    {
+      "source": "steam",
+      "time": "2026-07-14T05:40:33+00:00",
+      "lang": "japanese",
+      "title": "[负面] クトゥルフをテーマにしているのとローグライクという文言に惹かれてプレイ。\n実際にやってみると、まあ確...",
+      "summary": "クトゥルフをテーマにしているのとローグライクという文言に惹かれてプレイ。\n実際にやってみると、まあ確かにモチーフを感じる部分はあったものの、謳うほどではないように感じた。\nシステムもスレスパライクなのでsteamゲーをやってる人なら馴染み深いと思う。\n\n遊んでみた感想としては、良く言えば馴染み深くて悪く言えば新鮮味がない。\nストーリーは王道をいきつつも、モチーフテーマを薄味ながらもうまく取り入れている。\nガチャは緩いので欲しいキャラは比較的入手しやすい。\nただ、このゲームでないと得られない体験というのはさほどないように思えた。\n\nUIやビジュアルもまだまだ発展途上に感じるので、もう少し品質が良いものを遊びたいなら\n正直リバース1999をプレイしたほうが満足度が高い。\n今後の開発を見越して触るのならありだと思う。",
+      "url": "https://steamcommunity.com/profiles/76561198853987584/recommended/3052450",
+      "author": "76561198853987584",
+      "engagement": 0,
+      "language": "japanese",
+      "voted_up": false,
+      "review": "クトゥルフをテーマにしているのとローグライクという文言に惹かれてプレイ。\n実際にやってみると、まあ確かにモチーフを感じる部分はあったものの、謳うほどではないように感じた。\nシステムもスレスパライクなのでsteamゲーをやってる人なら馴染み深いと思う。\n\n遊んでみた感想としては、良く言えば馴染み深くて悪く言えば新鮮味がない。\nストーリーは王道をいきつつも、モチーフテーマを薄味ながらもうまく取り入れている。\nガチャは緩いので欲しいキャラは比較的入手しやすい。\nただ、このゲームでないと得られない体験というのはさほどないように思えた。\n\nUIやビジュアルもまだまだ発展途上に感じるので、もう少し品質が良いものを遊びたいなら\n正直リバース1999をプレイしたほうが満足度が高い。\n今後の開発を見越して触るのならありだと思う。",
+      "timestamp_created": 1784007633,
+      "playtime_forever": 3064
+    },
+    {
+      "source": "steam",
+      "time": "2026-07-14T05:19:12+00:00",
+      "lang": "schinese",
+      "title": "[正面] 好玩",
+      "summary": "好玩",
+      "url": "https://steamcommunity.com/profiles/76561198789268852/recommended/3052450",
+      "author": "76561198789268852",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "好玩",
+      "timestamp_created": 1784006352,
+      "playtime_forever": 314
     },
     {
       "source": "steam",
@@ -153,7 +183,7 @@
       "voted_up": true,
       "review": "Gameplay is a mix of Slay the Spire with a really good cosmic horror visual novel. There is a gatcha system but the devs are very very generous with free pulls and currency even after the normal newbie stage of the game. Characters are extremely well designed. The story is really interesting. But the combat is were the real meat and potatoes are at. It's slay the spire but your deck is made up of the cards of your teams 4 members so you have control over it massively. Instead of elements like other games, each character belong to one of 4 factions and your team can be made up of up to 2 factions thou you get a bonus for pure teams. And each faction has it's own mechanic leading to a lot of build variety and experimenting with team comps ever thou I hate doing that in other games. Trust me this game is amazing!",
       "timestamp_created": 1783935029,
-      "playtime_forever": 2374
+      "playtime_forever": 2375
     },
     {
       "source": "steam",
@@ -169,21 +199,6 @@
       "review": "垃圾抽卡 一堆角色抽四隻才開始正常強度 連個活動關都要復活好幾次 \r\n帳號等級影響強度 帳號經驗給的超少升得超慢",
       "timestamp_created": 1783934080,
       "playtime_forever": 5851
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-13T05:56:41+00:00",
-      "lang": "english",
-      "title": "[正面] PLAY IT RIGHT NOWWWW!!!!!!!",
-      "summary": "PLAY IT RIGHT NOWWWW!!!!!!!",
-      "url": "https://steamcommunity.com/profiles/76561198319986325/recommended/3052450",
-      "author": "76561198319986325",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "PLAY IT RIGHT NOWWWW!!!!!!!",
-      "timestamp_created": 1783922201,
-      "playtime_forever": 383
     }
   ]
 }

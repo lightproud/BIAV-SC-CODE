@@ -1,8 +1,8 @@
 {
   "date": "2026-07-14",
-  "archived_at": "2026-07-14T05:30:13.222459+00:00",
+  "archived_at": "2026-07-14T08:02:29.860311+00:00",
   "source": "steam",
-  "item_count": 7,
+  "item_count": 9,
   "items": [
     {
       "title": "[负面] I like this game so far but it just keeps crashing...",
@@ -166,6 +166,54 @@
         "playtime_forever": 2694,
         "votes_up": 0,
         "timestamp_created": 1783997402
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[负面] クトゥルフをテーマにしているのとローグライクという文言に惹かれてプレイ。\n実際にやってみると、まあ確...",
+      "summary": "クトゥルフをテーマにしているのとローグライクという文言に惹かれてプレイ。\n実際にやってみると、まあ確かにモチーフを感じる部分はあったものの、謳うほどではないように感じた。\nシステムもスレスパライクなのでsteamゲーをやってる人なら馴染み深いと思う。\n\n遊んでみた感想としては、良く言えば馴染み深くて悪く言えば新鮮味がない。\nストーリーは王道をいきつつも、モチーフテーマを薄味ながらもうまく取り入れている。\nガチャは緩いので欲しいキャラは比較的入手しやすい。\nただ、このゲームでないと得られない体験というのはさほどないように思えた。\n\nUIやビジュアルもまだまだ発展途上に感じるので、もう少し品質が良いものを遊びたいなら\n正直リバース1999をプレイしたほうが満足度が高い。\n今後の開発を見越して触るのならありだと思う。",
+      "source": "steam_review",
+      "time": "2026-07-14T05:40:33+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198853987584/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198853987584",
+      "tags": [
+        "japanese"
+      ],
+      "language": "japanese",
+      "metadata": {
+        "voted_up": false,
+        "playtime_forever": 3064,
+        "votes_up": 0,
+        "timestamp_created": 1784007633
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 好玩",
+      "summary": "好玩",
+      "source": "steam_review",
+      "time": "2026-07-14T05:19:12+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198789268852/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198789268852",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 314,
+        "votes_up": 0,
+        "timestamp_created": 1784006352
       },
       "region": "global",
       "archive_subtype": "review",
