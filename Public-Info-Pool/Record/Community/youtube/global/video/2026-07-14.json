@@ -1,8 +1,8 @@
 {
   "date": "2026-07-14",
-  "archived_at": "2026-07-14T08:02:29.786796+00:00",
+  "archived_at": "2026-07-14T10:46:10.322916+00:00",
   "source": "youtube",
-  "item_count": 8,
+  "item_count": 10,
   "items": [
     {
       "title": "망각전야Morimens) 상담 대리뽑 피드백 신청가능",
@@ -51,6 +51,23 @@
       "lang": "",
       "platform_region": "global",
       "media_url": "https://i.ytimg.com/vi/RXecfAFrkBg/hqdefault.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    },
+    {
+      "title": "Bad Baddies be BAD! | Morimens: Ark 2 - CH4",
+      "summary": "Morimens until I'm KoG TTV: https://www.twitch.tv/lowlivve Disc: https://discord.gg/KWB3yD6HeW #morimens #忘却前夜#忘卻前夜.",
+      "source": "youtube",
+      "time": "2026-07-14T09:53:25Z",
+      "url": "https://www.youtube.com/watch?v=k1rWJ4kmu2w",
+      "engagement": 30,
+      "is_hot": false,
+      "author": "LowLivve",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/k1rWJ4kmu2w/hqdefault.jpg",
       "content_type": "video",
       "region": "global",
       "archive_subtype": "video"
@@ -119,6 +136,23 @@
       "lang": "",
       "platform_region": "global",
       "media_url": "https://i.ytimg.com/vi/pV_s97H3h9s/hqdefault.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    },
+    {
+      "title": "#忘卻前夜 #morimens Regional D-Effect Zone Wave 2:Alert V! 融災2-5 Boss戰的部分",
+      "summary": "忘卻前夜#morimens 7月6日~7月20日融災更新. Regional D-Effect Zone Update (July 6 – July 20) 2-5 純粹的高傷害檢測,檢測你的 ...",
+      "source": "youtube",
+      "time": "2026-07-14T10:00:30Z",
+      "url": "https://www.youtube.com/watch?v=-U6Wxn5Dihk",
+      "engagement": 2,
+      "is_hot": false,
+      "author": "Noir",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/-U6Wxn5Dihk/hqdefault.jpg",
       "content_type": "video",
       "region": "global",
       "archive_subtype": "video"

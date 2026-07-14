@@ -1,8 +1,8 @@
 {
   "date": "2026-07-14",
-  "archived_at": "2026-07-14T08:02:29.837079+00:00",
+  "archived_at": "2026-07-14T10:46:10.386541+00:00",
   "source": "steam",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "title": "[Steam论坛] New Player Handbook Guide",
@@ -13,6 +13,23 @@
       "engagement": 1,
       "is_hot": false,
       "author": "SUSKIWY",
+      "tags": [
+        "steam_forum"
+      ],
+      "region": "global",
+      "archive_subtype": "discussion",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "[Steam论坛] 300 silver invitation code 56LJF5ZB5P",
+      "summary": "56LJF5ZB5P\nEnter it in the new Mythag Invite / Bind Invitation tab on the left. (two person symbol next to the mail symbol)\nThanks!",
+      "source": "steam_discussion",
+      "time": "2026-07-14T09:19:36+00:00",
+      "url": "https://steamcommunity.com/app/3052450/discussions/0/577173082186274337/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "coconutnut",
       "tags": [
         "steam_forum"
       ],
