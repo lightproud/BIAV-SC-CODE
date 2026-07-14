@@ -37,6 +37,10 @@ export type SessionMutationOptions = {
   sessionStore?: ExternalSessionStore;
   /** Working dir used to derive the external project key. Default process.cwd(). */
   cwd?: string;
+  /** Optional diagnostic sink (audit 2026-07-14 L-19b). Used to surface
+   *  no-op mutations a host might otherwise read as success — e.g. a
+   *  deleteSession against an external store that exposes no `delete`. */
+  debug?: (msg: string) => void;
 };
 
 export type GetSessionMessagesOptions = SessionMutationOptions & {

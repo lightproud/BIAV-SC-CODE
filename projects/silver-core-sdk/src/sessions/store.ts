@@ -532,8 +532,12 @@ export class JsonlSessionStore implements SessionStore {
     return sessions;
   }
 
-  /** Meta-only transcript scan backing list(); see the list() doc. */
-  private async loadInfo(sessionId: string): Promise<LoadedSession | null> {
+  /** Meta-only transcript scan backing list() AND getSessionInfo (audit
+   *  2026-07-14 L-14). Public because getSessionInfo only needs the summary-row
+   *  meta (title / timestamps / cwd / tag / branch), never `messages`, so it
+   *  must not pay for load()'s full parse + triple repairPairing. Returns
+   *  `messages: []`; resume paths still go through load(). */
+  async loadInfo(sessionId: string): Promise<LoadedSession | null> {
     if (!isSafeSessionId(sessionId)) return null;
     const file = this.filePath(sessionId);
     let createdAt: number | undefined;
@@ -783,7 +787,11 @@ export async function getSessionInfo(
   options: SessionListOptions = {},
 ): Promise<SDKSessionInfo | undefined> {
   const store = new JsonlSessionStore(resolveSessionDir(options));
-  const loaded = await store.load(sessionId);
+  // audit 2026-07-14 L-14: the summary row (toSessionInfo) reads only meta
+  // fields, never `messages`, so use the meta-only streaming scan instead of a
+  // full load() + triple repairPairing. Aligns with listSessions, which
+  // already sources its rows from loadInfo.
+  const loaded = await store.loadInfo(sessionId);
   if (loaded === null) return undefined;
   let fileSize: number | undefined;
   try {

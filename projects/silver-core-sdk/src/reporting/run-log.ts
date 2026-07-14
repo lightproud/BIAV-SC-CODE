@@ -154,7 +154,11 @@ export function createRunLogSink(args: {
       const line = `${JSON.stringify(record)}\n`;
       tail = tail
         .then(() => ensureDir())
-        .then(() => appendFile(join(runLog.dir, runLogFileName(new Date())), line, 'utf8'))
+        // audit 2026-07-14 L-16: derive the day file from the RECORD'S ts (set
+        // at observe time), not the flush-time clock — a record observed at
+        // 23:59:59 and appended at 00:00:01 otherwise lands in the wrong day
+        // file, where readWindow's filename-based day prefilter can miss it.
+        .then(() => appendFile(join(runLog.dir, runLogFileName(new Date(record.ts))), line, 'utf8'))
         .catch((err) => debug(`runLog: append failed (ignored): ${String(err)}`));
     },
     flush(): Promise<void> {
