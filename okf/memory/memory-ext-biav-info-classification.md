@@ -4,7 +4,7 @@ title: "脑缸组信息分类法则 v1.0"
 description: "本文档定义脑缸组(Brain-in-a-Vat group)所有内部信息的分类框架。涵盖范围:聊天记录、会议记录、提交记录、社区原始信息、工程配置和代码、设计决策、流程、排期等。"
 resource: "/memory/biav-info-classification.md"
 tags: ["memory", "data_layer:curated"]
-timestamp: "2026-07-13"
+timestamp: "2026-07-14"
 ---
 
 # 记忆层指针

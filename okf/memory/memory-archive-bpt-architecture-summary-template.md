@@ -4,7 +4,7 @@ title: "BPT 架构周报模板"
 description: "1. **保密**：不贴源代码片段、不贴敏感配置、不贴未发布功能名。仅贴**结构性事实**（模块名、文件数、行数、状态值、错误类型、token 数）"
 resource: "/memory/archive/bpt-architecture-summary-template.md"
 tags: ["memory", "data_layer:curated", "archive", "frozen-snapshot", "bpt"]
-timestamp: "2026-07-13"
+timestamp: "2026-07-14"
 ---
 
 # 记忆层指针

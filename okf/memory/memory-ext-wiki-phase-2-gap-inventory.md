@@ -4,7 +4,7 @@ title: "Wiki Phase 2 缺口清单"
 description: "艾瑞卡在扫描仓库时检测到**严重的记忆-现实脱节**："
 resource: "/memory/wiki-phase-2-gap-inventory.md"
 tags: ["memory", "data_layer:curated"]
-timestamp: "2026-07-13"
+timestamp: "2026-07-14"
 ---
 
 # 记忆层指针

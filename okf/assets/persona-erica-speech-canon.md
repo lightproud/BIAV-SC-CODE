@@ -4,7 +4,7 @@ title: "erica-speech-canon"
 description: "**接入银芯的 AI 使用建议**："
 resource: "/assets/data/character-personas/erica-speech-canon.md"
 tags: ["data_layer:curated", "persona", "character:erica"]
-timestamp: "2026-07-13"
+timestamp: "2026-07-14"
 ---
 
 # 指针概念

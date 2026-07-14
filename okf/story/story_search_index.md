@@ -4,7 +4,7 @@ title: "story_search_index.json"
 description: "deterministic lexical inverted index; tokenizer = domain-dict FMM (self-bootstrapped from characters/cards/story; bigram fallback)"
 resource: "/projects/wiki/data/processed/story/story_search_index.json"
 tags: ["story", "dataset", "data_layer:full_archive"]
-timestamp: "2026-07-13"
+timestamp: "2026-07-14"
 ---
 
 # 剧情结构层指针
