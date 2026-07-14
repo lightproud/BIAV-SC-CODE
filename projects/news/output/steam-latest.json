@@ -1,10 +1,70 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-13T21:56:34.776429+00:00",
+  "collected_at": "2026-07-14T02:13:52.689655+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 10,
+  "item_count": 13,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-07-13T10:07:31+00:00",
+      "lang": "english",
+      "title": "[正面] ts game fye bro",
+      "summary": "ts game fye bro",
+      "url": "https://steamcommunity.com/profiles/76561199552004851/recommended/3052450",
+      "author": "76561199552004851",
+      "engagement": 1,
+      "language": "english",
+      "voted_up": true,
+      "review": "ts game fye bro",
+      "timestamp_created": 1783937251,
+      "playtime_forever": 668
+    },
+    {
+      "source": "steam",
+      "time": "2026-07-14T00:54:52+00:00",
+      "lang": "english",
+      "title": "[负面] (In advance I have dyslexia so if something is mis...",
+      "summary": "(In advance I have dyslexia so if something is misspelled my bad.) \nThis game is genuinely good story is interiging at most too. Sadly though last couple of days I haven't been able to log in for wtv reason. I've tried every thing possible from logging out, resigning in and uninstalling the game and it just doesn't wanna work. I wanted to love the game and continue playing but its not seeming to work very well. If you fix it till change the review but for now I dont suggest the game till they fix wtv this issue is.",
+      "url": "https://steamcommunity.com/profiles/76561199339701239/recommended/3052450",
+      "author": "76561199339701239",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": false,
+      "review": "(In advance I have dyslexia so if something is misspelled my bad.) \nThis game is genuinely good story is interiging at most too. Sadly though last couple of days I haven't been able to log in for wtv reason. I've tried every thing possible from logging out, resigning in and uninstalling the game and it just doesn't wanna work. I wanted to love the game and continue playing but its not seeming to work very well. If you fix it till change the review but for now I dont suggest the game till they fix wtv this issue is.",
+      "timestamp_created": 1783990492,
+      "playtime_forever": 262
+    },
+    {
+      "source": "steam",
+      "time": "2026-07-14T00:13:12+00:00",
+      "lang": "latam",
+      "title": "[正面] Me agrada mucho este juego, es uno de los mejores...",
+      "summary": "Me agrada mucho este juego, es uno de los mejores que he jugado aunque luego me ilusioné con el gacha se que asi son abecés te toca algo bueno o algo malo o simplemente nada, la historia es interesante y la musica es la mejor que he escuchado se pueden obtener recursos fácilmente además de que esta para celulares. Sin duda es un juego que recomiendo",
+      "url": "https://steamcommunity.com/profiles/76561199073927079/recommended/3052450",
+      "author": "76561199073927079",
+      "engagement": 0,
+      "language": "latam",
+      "voted_up": true,
+      "review": "Me agrada mucho este juego, es uno de los mejores que he jugado aunque luego me ilusioné con el gacha se que asi son abecés te toca algo bueno o algo malo o simplemente nada, la historia es interesante y la musica es la mejor que he escuchado se pueden obtener recursos fácilmente además de que esta para celulares. Sin duda es un juego que recomiendo",
+      "timestamp_created": 1783987992,
+      "playtime_forever": 245
+    },
+    {
+      "source": "steam",
+      "time": "2026-07-13T23:06:04+00:00",
+      "lang": "schinese",
+      "title": "[负面] 没深玩，但是服务器极差，频繁卡顿，短时间重启4次，游戏按键不合理，有种在pc玩山寨手游模拟器的感觉",
+      "summary": "没深玩，但是服务器极差，频繁卡顿，短时间重启4次，游戏按键不合理，有种在pc玩山寨手游模拟器的感觉",
+      "url": "https://steamcommunity.com/profiles/76561198985116276/recommended/3052450",
+      "author": "76561198985116276",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": false,
+      "review": "没深玩，但是服务器极差，频繁卡顿，短时间重启4次，游戏按键不合理，有种在pc玩山寨手游模拟器的感觉",
+      "timestamp_created": 1783983964,
+      "playtime_forever": 203
+    },
     {
       "source": "steam",
       "time": "2026-07-13T20:26:27+00:00",
@@ -52,21 +112,6 @@
     },
     {
       "source": "steam",
-      "time": "2026-07-13T10:07:31+00:00",
-      "lang": "english",
-      "title": "[正面] ts game fye bro",
-      "summary": "ts game fye bro",
-      "url": "https://steamcommunity.com/profiles/76561199552004851/recommended/3052450",
-      "author": "76561199552004851",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "ts game fye bro",
-      "timestamp_created": 1783937251,
-      "playtime_forever": 668
-    },
-    {
-      "source": "steam",
       "time": "2026-07-13T09:30:29+00:00",
       "lang": "english",
       "title": "[正面] Gameplay is a mix of Slay the Spire with a really...",
@@ -78,7 +123,7 @@
       "voted_up": true,
       "review": "Gameplay is a mix of Slay the Spire with a really good cosmic horror visual novel. There is a gatcha system but the devs are very very generous with free pulls and currency even after the normal newbie stage of the game. Characters are extremely well designed. The story is really interesting. But the combat is were the real meat and potatoes are at. It's slay the spire but your deck is made up of the cards of your teams 4 members so you have control over it massively. Instead of elements like other games, each character belong to one of 4 factions and your team can be made up of up to 2 factions thou you get a bonus for pure teams. And each faction has it's own mechanic leading to a lot of build variety and experimenting with team comps ever thou I hate doing that in other games. Trust me this game is amazing!",
       "timestamp_created": 1783935029,
-      "playtime_forever": 2363
+      "playtime_forever": 2373
     },
     {
       "source": "steam",
@@ -93,7 +138,7 @@
       "voted_up": false,
       "review": "垃圾抽卡 一堆角色抽四隻才開始正常強度 連個活動關都要復活好幾次 \r\n帳號等級影響強度 帳號經驗給的超少升得超慢",
       "timestamp_created": 1783934080,
-      "playtime_forever": 5849
+      "playtime_forever": 5851
     },
     {
       "source": "steam",

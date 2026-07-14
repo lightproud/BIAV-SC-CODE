@@ -1,8 +1,8 @@
 {
   "date": "2026-07-14",
-  "archived_at": "2026-07-13T21:57:30.638774+00:00",
+  "archived_at": "2026-07-14T02:14:47.141753+00:00",
   "source": "steam",
-  "item_count": 2,
+  "item_count": 5,
   "items": [
     {
       "title": "[负面] I like this game so far but it just keeps crashing...",
@@ -46,6 +46,78 @@
         "playtime_forever": 494,
         "votes_up": 0,
         "timestamp_created": 1783974387
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[负面] (In advance I have dyslexia so if something is mis...",
+      "summary": "(In advance I have dyslexia so if something is misspelled my bad.) \nThis game is genuinely good story is interiging at most too. Sadly though last couple of days I haven't been able to log in for wtv reason. I've tried every thing possible from logging out, resigning in and uninstalling the game and it just doesn't wanna work. I wanted to love the game and continue playing but its not seeming to work very well. If you fix it till change the review but for now I dont suggest the game till they fix wtv this issue is.",
+      "source": "steam_review",
+      "time": "2026-07-14T00:54:52+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199339701239/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199339701239",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": false,
+        "playtime_forever": 262,
+        "votes_up": 0,
+        "timestamp_created": 1783990492
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Me agrada mucho este juego, es uno de los mejores...",
+      "summary": "Me agrada mucho este juego, es uno de los mejores que he jugado aunque luego me ilusioné con el gacha se que asi son abecés te toca algo bueno o algo malo o simplemente nada, la historia es interesante y la musica es la mejor que he escuchado se pueden obtener recursos fácilmente además de que esta para celulares. Sin duda es un juego que recomiendo",
+      "source": "steam_review",
+      "time": "2026-07-14T00:13:12+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199073927079/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199073927079",
+      "tags": [
+        "latam"
+      ],
+      "language": "latam",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 245,
+        "votes_up": 0,
+        "timestamp_created": 1783987992
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[负面] 没深玩，但是服务器极差，频繁卡顿，短时间重启4次，游戏按键不合理，有种在pc玩山寨手游模拟器的感觉",
+      "summary": "没深玩，但是服务器极差，频繁卡顿，短时间重启4次，游戏按键不合理，有种在pc玩山寨手游模拟器的感觉",
+      "source": "steam_review",
+      "time": "2026-07-13T23:06:04+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198985116276/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198985116276",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": false,
+        "playtime_forever": 203,
+        "votes_up": 0,
+        "timestamp_created": 1783983964
       },
       "region": "global",
       "archive_subtype": "review",
