@@ -204,6 +204,60 @@ describe('supervised auto-resume', () => {
     await mgr.close();
   });
 
+  it('①b retires the abandoned query (full teardown) BEFORE re-driving (audit 2026-07-14 H-2)', async () => {
+    // Before the fix, scheduleResume only swapped `q = start(...)`: the old
+    // query generator stayed suspended at the yield that surfaced the error
+    // result, so its run() finally — background-shell teardown, store flush,
+    // SessionEnd hooks — never executed (a leak per resume). The SessionEnd
+    // hook is the observable for that finally having run.
+    const store = new InMemorySessionStore();
+    const { fn } = scriptedFetch(['crash', textReplyEvents('recovered')]);
+    vi.stubGlobal('fetch', fn);
+
+    const events: string[] = [];
+    const mgr = createBptSession(
+      managerOptions({
+        sessionStore: store,
+        recovery: { autoResume: true, maxResumes: 2 },
+        hooks: {
+          SessionEnd: [
+            {
+              hooks: [
+                async () => {
+                  events.push('session-end');
+                  return {};
+                },
+              ],
+            },
+          ],
+        },
+      }),
+    );
+    for await (const m of mgr.query({ prompt: 'hello keeper' })) {
+      if (
+        m.type === 'system' &&
+        (m as any).subtype === 'status' &&
+        (m as any).status === 'auto-resume'
+      ) {
+        events.push('resume-observation');
+      }
+      if (m.type === 'result') events.push('result');
+    }
+
+    // Retired query's teardown ran, and it ran BEFORE the consumer saw the
+    // resume observation (i.e. before the re-drive) — the store flush must
+    // land before the resumed query re-reads persisted history. The second
+    // session-end is the final query's own natural teardown.
+    expect(events).toEqual([
+      'session-end',
+      'resume-observation',
+      'result',
+      'session-end',
+    ]);
+
+    await mgr.close();
+  });
+
   // -------------------------------------------------------------------------
   // ③ recoverable but never clears -> exhaust maxResumes -> forward + scene
   // -------------------------------------------------------------------------

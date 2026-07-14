@@ -163,6 +163,8 @@ function makeRuntime(cfg: {
   env?: Record<string, string | undefined>;
   /** Transport override (for a hanging stream that trips the stall watchdog). */
   transport?: MockTransport | Transport;
+  /** Spawn-time checkpoint recorder resolver (audit 2026-07-14 H-3). */
+  getRecordFileChange?: SubagentRuntimeOptions['getRecordFileChange'];
 }): RuntimeHarness {
   const transport = (cfg.transport ?? new MockTransport(cfg.scripts)) as MockTransport;
   const starts: string[] = [];
@@ -222,6 +224,7 @@ function makeRuntime(cfg: {
     sessionId: () => engineConfig.sessionId,
     debug: () => {},
     familyBudget: cfg.familyBudget,
+    getRecordFileChange: cfg.getRecordFileChange,
   };
   return { runtime: createSubagentRuntime(opts), transport, starts, stops, stopInputs };
 }
@@ -598,6 +601,40 @@ describe('subagent runtime — foreground', () => {
     const second = h.runtime.drainUsageLedger();
     expect(second.usage.input_tokens).toBe(0);
     expect(second.cost).toBe(0);
+  });
+
+  it('threads the checkpoint recorder into the child ToolContext (audit 2026-07-14 H-3)', async () => {
+    // Before the fix, childToolContext carried no recordFileChange, so child
+    // Write/Edit pre-images never reached the checkpoint index and rewind()
+    // reported success while child edits stayed un-rolled-back.
+    const recorded: Array<[string, string | null]> = [];
+    const sawRecorder: boolean[] = [];
+    const probe: BuiltinTool = {
+      name: 'Probe',
+      description: 'records ctx.recordFileChange presence',
+      inputSchema: { type: 'object', properties: {} },
+      readOnly: true,
+      async execute(_input, ctx) {
+        sawRecorder.push(typeof ctx.recordFileChange === 'function');
+        ctx.recordFileChange?.('/tmp/sub-test/x.txt', 'pre-image');
+        return { content: 'probed' };
+      },
+    };
+    const h = makeRuntime({
+      scripts: [
+        toolUseReplyEvents('Probe', {}, { model: 'claude-sonnet-4-5' }),
+        textReplyEvents('done', { model: 'claude-sonnet-4-5' }),
+      ],
+      baseBuiltins: new Map([['Probe', probe]]),
+      agents: { prober: { description: 'p', prompt: 'probe things', tools: ['Probe'] } },
+      getRecordFileChange: () => (abs, pre) => {
+        recorded.push([abs, pre]);
+      },
+    });
+    const res = await h.runtime.makeSpawnFn(0)(baseParams({ subagentType: 'prober' }));
+    expect(res.isError).toBe(false);
+    expect(sawRecorder).toEqual([true]);
+    expect(recorded).toEqual([['/tmp/sub-test/x.txt', 'pre-image']]);
   });
 
   it('two concurrent foreground spawns overlap (no runtime-level serialization)', async () => {

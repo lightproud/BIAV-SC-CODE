@@ -440,7 +440,7 @@ export function createBptSession(options: SessionManagerOptions = {}): SessionMa
     const observations: SDKMessage[] = [];
 
     /** Arm a transparent resume: emit the observation, re-drive, bump count. */
-    const scheduleResume = (code: string, reason: string): void => {
+    const scheduleResume = async (code: string, reason: string): Promise<void> => {
       attempts += 1;
       debug(
         `[session-manager] auto-resume ${attempts}/${maxResumes} ` +
@@ -449,6 +449,22 @@ export function createBptSession(options: SessionManagerOptions = {}): SessionMa
       observations.push(
         resumeObservation(sessionId!, attempts, maxResumes, code, reason),
       );
+      // Retire the abandoned query FIRST: after a recoverable error RESULT it
+      // is suspended at the yield that surfaced that result, so its run()
+      // finally (background-shell teardown, sandbox tmpdir removal, subagent
+      // settle, SessionEnd hooks, session-store flush) never runs unless we
+      // drive it to completion. The store flush in particular must land
+      // BEFORE the resumed query re-reads the persisted history (audit
+      // 2026-07-14 H-2). On the throw path the generator already completed,
+      // where return() is a harmless no-op.
+      try {
+        await q.return(undefined);
+      } catch (err) {
+        debug(
+          `[session-manager] retiring the interrupted query failed: ` +
+            `${err instanceof Error ? err.message : String(err)}`,
+        );
+      }
       // No prompt is re-sent (the resumed query's §5.2 redrive continues the
       // interrupted turn against the persisted history).
       q = start({ sessionId: sessionId! });
@@ -472,7 +488,7 @@ export function createBptSession(options: SessionManagerOptions = {}): SessionMa
               sessionId !== undefined &&
               attempts < maxResumes
             ) {
-              scheduleResume(
+              await scheduleResume(
                 errorCodeOf(err) ?? 'unknown',
                 err instanceof Error ? err.message : String(err),
               );
@@ -500,7 +516,7 @@ export function createBptSession(options: SessionManagerOptions = {}): SessionMa
               attempts < maxResumes
             ) {
               // Swallow this error result and re-drive transparently.
-              scheduleResume(
+              await scheduleResume(
                 v.error_code ?? `http_${v.api_error_status ?? 'error'}`,
                 v.errorMessage ?? 'recoverable error',
               );

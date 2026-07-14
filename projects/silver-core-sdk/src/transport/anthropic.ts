@@ -592,13 +592,18 @@ export class AnthropicTransport implements Transport {
       if (response.ok) {
         return { response, signal, timeoutSignal, detachRequestTimeout, releaseSignals };
       }
-      releaseSignals();
 
       // Request id: prefer the response header, fall back to a request_id the
       // gateway put in the error body.
       const requestId =
         response.headers.get('request-id') ?? undefined;
-      const info = await readErrorInfo(response);
+      // Keep the abort listeners attached while draining the error body: the
+      // per-attempt signal is wired into the response stream, so a caller
+      // interrupt (or the request timeout) can still cancel a gateway that
+      // sent error headers and then stalled the body; the drain itself is
+      // additionally capped by ERROR_BODY_TIMEOUT_MS (audit 2026-07-14 H-1).
+      const info = await readErrorInfo(response, signal).finally(releaseSignals);
+      if (callerSignal?.aborted) throw new AbortError();
       const resolvedRequestId = requestId ?? info.requestId;
       const retryAfterMs = parseRetryAfterMs(response.headers.get('retry-after'));
       const retryable =
@@ -939,12 +944,63 @@ function statusForErrorType(errorType: string): number {
 /** Read and classify a non-2xx response body (best effort, never throws). A
  *  non-JSON body (e.g. a plain-text "Internal server error" 500 page) yields a
  *  readable message rather than an opaque object. */
-async function readErrorInfo(response: Response): Promise<ErrorPayloadInfo> {
+/** Hard cap on draining a non-2xx error body. A gateway that returns error
+ *  headers and then stalls the body must not hang the retry loop forever —
+ *  the default 'node' http client has no body timeout of its own. On expiry
+ *  the body is cancelled best-effort and the status-line fallback is used
+ *  (audit 2026-07-14 H-1). */
+const ERROR_BODY_TIMEOUT_MS = 10_000;
+
+/** Read a response body as text, bounded by ERROR_BODY_TIMEOUT_MS and the
+ *  given abort signal. Rejection means "body unavailable" — callers fall
+ *  back to the status line. */
+function readBodyTextBounded(
+  response: Response,
+  signal: AbortSignal | undefined,
+): Promise<string> {
+  return new Promise<string>((resolve, reject) => {
+    let settled = false;
+    const settle = (fn: () => void): void => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(timer);
+      signal?.removeEventListener('abort', onAbort);
+      fn();
+    };
+    const cancelBody = (): void => {
+      void response.body?.cancel().catch(() => {});
+    };
+    const onAbort = (): void => {
+      cancelBody();
+      settle(() => reject(new AbortError()));
+    };
+    const timer = setTimeout(() => {
+      cancelBody();
+      settle(() => reject(new APIConnectionError('error body read timed out')));
+    }, ERROR_BODY_TIMEOUT_MS);
+    (timer as { unref?: () => void }).unref?.();
+    if (signal?.aborted) {
+      onAbort();
+      return;
+    }
+    signal?.addEventListener('abort', onAbort, { once: true });
+    response.text().then(
+      (text) => settle(() => resolve(text)),
+      (err) => settle(() => reject(err instanceof Error ? err : new Error(String(err)))),
+    );
+  });
+}
+
+async function readErrorInfo(
+  response: Response,
+  signal?: AbortSignal,
+): Promise<ErrorPayloadInfo> {
   let text = '';
   try {
-    text = await response.text();
+    text = await readBodyTextBounded(response, signal);
   } catch {
-    // Body unavailable (aborted/half-closed); fall through to the fallback.
+    // Body unavailable (aborted / half-closed / stalled past the drain cap);
+    // fall through to the fallback.
   }
   if (text) {
     try {

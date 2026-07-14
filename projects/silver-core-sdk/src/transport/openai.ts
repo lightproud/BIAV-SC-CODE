@@ -1263,10 +1263,18 @@ export class OpenAIChatTransport implements Transport {
       if (response.ok) {
         return { response, signal, timeoutSignal, detachRequestTimeout, releaseSignals };
       }
-      releaseSignals();
 
-      const requestId = response.headers.get('x-request-id') ?? response.headers.get('request-id') ?? undefined;
-      const info = await readOpenAIErrorInfo(response);
+      // Request id: prefer the response header, fall back to a request_id the
+      // gateway put in the error body.
+      const requestId =
+        response.headers.get('x-request-id') ?? response.headers.get('request-id') ?? undefined;
+      // Keep the abort listeners attached while draining the error body: the
+      // per-attempt signal is wired into the response stream, so a caller
+      // interrupt (or the request timeout) can still cancel a gateway that
+      // sent error headers and then stalled the body; the drain itself is
+      // additionally capped by ERROR_BODY_TIMEOUT_MS (audit 2026-07-14 H-1).
+      const info = await readOpenAIErrorInfo(response, signal).finally(releaseSignals);
+      if (callerSignal?.aborted) throw new AbortError();
       const resolvedRequestId = requestId ?? info.requestId;
       const retryAfterMs = parseRetryAfterMs(response.headers.get('retry-after'));
       const retryable =
@@ -1431,15 +1439,66 @@ function meta(info: OpenAIErrorInfo): Partial<OpenAIErrorInfo> {
 /** Read a non-2xx body; normalize the error type to Anthropic vocabulary by
  *  status (engine-side handling switches on those), keep the server message.
  *  A non-JSON body (a plain-text 5xx page) yields a readable message. */
-async function readOpenAIErrorInfo(response: Response): Promise<OpenAIErrorInfo> {
+/** Hard cap on draining a non-2xx error body. A gateway that returns error
+ *  headers and then stalls the body must not hang the retry loop forever —
+ *  the default 'node' http client has no body timeout of its own. On expiry
+ *  the body is cancelled best-effort and the status-line fallback is used
+ *  (audit 2026-07-14 H-1). */
+const ERROR_BODY_TIMEOUT_MS = 10_000;
+
+/** Read a response body as text, bounded by ERROR_BODY_TIMEOUT_MS and the
+ *  given abort signal. Rejection means "body unavailable" — callers fall
+ *  back to the status line. */
+function readBodyTextBounded(
+  response: Response,
+  signal: AbortSignal | undefined,
+): Promise<string> {
+  return new Promise<string>((resolve, reject) => {
+    let settled = false;
+    const settle = (fn: () => void): void => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(timer);
+      signal?.removeEventListener('abort', onAbort);
+      fn();
+    };
+    const cancelBody = (): void => {
+      void response.body?.cancel().catch(() => {});
+    };
+    const onAbort = (): void => {
+      cancelBody();
+      settle(() => reject(new AbortError()));
+    };
+    const timer = setTimeout(() => {
+      cancelBody();
+      settle(() => reject(new APIConnectionError('error body read timed out')));
+    }, ERROR_BODY_TIMEOUT_MS);
+    (timer as { unref?: () => void }).unref?.();
+    if (signal?.aborted) {
+      onAbort();
+      return;
+    }
+    signal?.addEventListener('abort', onAbort, { once: true });
+    response.text().then(
+      (text) => settle(() => resolve(text)),
+      (err) => settle(() => reject(err instanceof Error ? err : new Error(String(err)))),
+    );
+  });
+}
+
+async function readOpenAIErrorInfo(
+  response: Response,
+  signal?: AbortSignal,
+): Promise<OpenAIErrorInfo> {
   const normalizedType =
     STATUS_ERROR_TYPE[response.status] ??
     (response.status >= 500 ? 'api_error' : 'invalid_request_error');
   let text = '';
   try {
-    text = await response.text();
+    text = await readBodyTextBounded(response, signal);
   } catch {
-    // Body unavailable; fall through to the fallback.
+    // Body unavailable (aborted / half-closed / stalled past the drain cap);
+    // fall through to the fallback.
   }
   if (text) {
     try {

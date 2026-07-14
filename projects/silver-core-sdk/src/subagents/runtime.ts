@@ -191,6 +191,14 @@ export type SubagentRuntimeOptions = {
   readFilePaths?: Set<string>;
   /** Formal per-query WeakMap key threaded into child contexts (F6). */
   sessionKey?: object;
+  /** Checkpoint pre-image recorder, resolved at SPAWN time (the checkpoint
+   *  store binds after this runtime is constructed). Children thread it into
+   *  their ToolContext so subagent Write/Edit pre-images land in the SAME
+   *  per-turn checkpoint index as the root loop's — without it, rewind()
+   *  reports success while child edits stay un-rolled-back (audit 2026-07-14
+   *  H-3). Returns undefined while checkpoints are off, so child fs tools
+   *  skip pre-image capture exactly like the root context does. */
+  getRecordFileChange?: () => ((absPath: string, preImage: string | null) => void) | undefined;
   /** Aggregate agent-tree budget ceiling (P0 fix): the SAME object the root
    *  loop holds, threaded into every child loop so the whole family shares one
    *  spend total and one cap — a child cannot spend past the family ceiling
@@ -1260,6 +1268,9 @@ export function createSubagentRuntime(
         // satisfies a child's Write gate and vice versa.
         readFilePaths: opts.readFilePaths,
         sessionKey: opts.sessionKey,
+        // Same per-turn checkpoint index as the root loop: child Write/Edit
+        // pre-images must be captured, or rewind() silently skips them.
+        recordFileChange: opts.getRecordFileChange?.(),
       };
       // ExitPlanMode bridge: the child flips ITS OWN gate (childGate), never
       // the parent's. Attached via the tool's context extension because the
