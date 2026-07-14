@@ -16,6 +16,55 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.58.0 — 2026-07-14
+
+Audit 2026-07-14 P1 batch — all 13 MEDIUM findings, each with regressions:
+
+- **M-1 (hooks)**: per-matcher `failureMode: 'open' | 'closed'` override (a
+  crashed security hook can now be made blocking per matcher); global
+  default stays 'open' for official drop-in parity; fail-open discards now
+  log loudly.
+- **M-2 (tools)**: shared ReDoS guard (`src/internal/regex-guard.ts`,
+  extracted from hooks/matcher) now also protects Grep patterns and
+  BashOutput filters — catastrophic patterns are rejected with a readable
+  tool error instead of freezing the event loop.
+- **M-3 (webfetch)**: DNS pinning — the default fetch path now dials only
+  the SSRF-guard-validated addresses (node lookup override, Host/SNI
+  preserved), closing the rebinding window; per-hop re-validation on
+  redirects. An injected fetchImpl still bypasses pinning (documented).
+- **M-4 (mcp)**: registry entries are retired on closeAll()/setServers();
+  in-flight handshakes are awaited and their connections closed instead of
+  leaking zombie child processes.
+- **M-5 (openai)**: a stream ending without finish_reason after tool_call
+  deltas now infers stop_reason 'tool_use' — non-conformant gateways no
+  longer silently drop tool calls.
+- **M-6 (transport)**: with proxy env vars set and no explicit httpClient
+  choice, the default resolves to 'fetch' (proxy-capable) instead of the
+  proxy-blind 'node' adapter.
+- **M-7 (session-manager)**: auto-resume folds pre-resume total_cost_usd /
+  modelUsage into a base offset — mgr.usage() reports the sum, not just
+  post-resume spend.
+- **M-8 (engine)**: pause_turn continuation now checks budgetStopReason()
+  like every other continuation path — maxBudgetUsd can no longer be
+  bypassed by repeated server pause_turn.
+- **M-9 (sessions)**: JsonlSessionStore.append heals a crash-torn tail
+  (missing trailing newline) exactly like file-store — a torn line no
+  longer swallows the next record with it.
+- **M-10 (subagents)**: concurrent foreground subagents fork their own
+  persistent shell cwd/env namespace (seeded from the parent's snapshot) —
+  batch-mate cd/export no longer cross-pollutes; background-shell registry
+  stays query-wide.
+- **M-11 (subagents)**: foreground kill path — 'killed' status no longer
+  clobbered to 'failed'; notifications word foreground/background
+  correctly; stopping a foreground child resolves an isError tool result
+  instead of aborting the whole parent query.
+- **M-12 (reporting)**: run-log lines are shape-validated at the shared
+  readWindow choke point — a well-formed-JSON-but-wrong-shape line counts
+  as a bad line instead of killing the whole report.
+- **M-13 (workflow)**: resume cache lookup is now (hash, occurrence)-keyed
+  instead of global-sequence-keyed — parallel-branch timing permutations no
+  longer silently disable prefix caching; old journals stay resumable.
+
 ## 0.57.3 — 2026-07-14
 
 Audit 2026-07-14 P0 batch — the three HIGH findings, each with regressions:
