@@ -1,10 +1,25 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-15T13:40:44.611764+00:00",
+  "collected_at": "2026-07-15T16:21:43.570290+00:00",
   "source": "steam",
   "data_layer": "output",
   "item_count": 6,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-07-15T13:21:39+00:00",
+      "lang": "english",
+      "title": "[正面] sts styled gachaslop, i enjoyed it for the tentacl...",
+      "summary": "sts styled gachaslop, i enjoyed it for the tentacles",
+      "url": "https://steamcommunity.com/profiles/76561198984737465/recommended/3052450",
+      "author": "76561198984737465",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "sts styled gachaslop, i enjoyed it for the tentacles",
+      "timestamp_created": 1784121699,
+      "playtime_forever": 5752
+    },
     {
       "source": "steam",
       "time": "2026-07-15T05:45:02+00:00",
@@ -79,21 +94,6 @@
       "review": "Yes it's still a gacha, but this has a lot of depth and a lot of ways of avoiding spending anything. Slay the Spire, but with less focus on the roguelite elements. Good in small bursts, but also can be played for hours at a time. Stick with it if it seems you are hitting a roadblock + ignore some of the early warnings about being underleveled while doing the main story levels.",
       "timestamp_created": 1784055009,
       "playtime_forever": 643
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-14T14:05:33+00:00",
-      "lang": "schinese",
-      "title": "[正面] 加油，5571你的服务器优化越来越屎了，",
-      "summary": "加油，5571你的服务器优化越来越屎了，",
-      "url": "https://steamcommunity.com/profiles/76561199018777109/recommended/3052450",
-      "author": "76561199018777109",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "加油，5571你的服务器优化越来越屎了，",
-      "timestamp_created": 1784037933,
-      "playtime_forever": 2133
     }
   ]
 }

@@ -1,8 +1,8 @@
 {
   "date": "2026-07-15",
-  "archived_at": "2026-07-15T13:41:30.281416+00:00",
+  "archived_at": "2026-07-15T16:22:36.908366+00:00",
   "source": "steam",
-  "item_count": 5,
+  "item_count": 6,
   "items": [
     {
       "title": "[正面] на любителя, что то на подобии мортал комбат и ген...",
@@ -118,6 +118,30 @@
         "playtime_forever": 2428,
         "votes_up": 0,
         "timestamp_created": 1784094302
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] sts styled gachaslop, i enjoyed it for the tentacl...",
+      "summary": "sts styled gachaslop, i enjoyed it for the tentacles",
+      "source": "steam_review",
+      "time": "2026-07-15T13:21:39+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198984737465/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198984737465",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 5752,
+        "votes_up": 0,
+        "timestamp_created": 1784121699
       },
       "region": "global",
       "archive_subtype": "review",

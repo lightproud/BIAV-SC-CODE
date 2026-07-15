@@ -1,8 +1,8 @@
 {
   "date": "2026-07-15",
-  "archived_at": "2026-07-15T13:41:30.158180+00:00",
+  "archived_at": "2026-07-15T16:22:36.808837+00:00",
   "source": "youtube",
-  "item_count": 15,
+  "item_count": 16,
   "items": [
     {
       "title": "Day 37 of doodling N til #Morimens makes him playable. #fanart #speedpaint",
@@ -187,6 +187,23 @@
       "lang": "",
       "platform_region": "global",
       "media_url": "https://i.ytimg.com/vi/tiFYrckVe3s/hqdefault.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    },
+    {
+      "title": "Morimens • Chapter 3 Part 6 • Thorn in my side",
+      "summary": "morimens #story #chapter3 #gameplay.",
+      "source": "youtube",
+      "time": "2026-07-15T14:23:03Z",
+      "url": "https://www.youtube.com/watch?v=zyL7JoZjDoE",
+      "engagement": 2,
+      "is_hot": false,
+      "author": "KarmandarkK",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/zyL7JoZjDoE/hqdefault.jpg",
       "content_type": "video",
       "region": "global",
       "archive_subtype": "video"
