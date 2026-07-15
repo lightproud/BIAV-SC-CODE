@@ -1,8 +1,8 @@
 {
   "date": "2026-07-15",
-  "archived_at": "2026-07-15T02:12:40.474797+00:00",
+  "archived_at": "2026-07-15T05:31:30.934846+00:00",
   "source": "bilibili",
-  "item_count": 6,
+  "item_count": 7,
   "items": [
     {
       "title": "【杂谈】鸟弟是下坡路么？波吕克斯抽不抽",
@@ -46,6 +46,29 @@
         "danmaku": 0
       },
       "media_url": "https://i2.hdslb.com/bfs/archive/95e68cc584ab2673e78e960c2b31bb4ff60e9a02.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "[忘却前夜]鸟弟血希复刻杂谈",
+      "summary": "好久不见\n  └ 梦依流苏_myls (4赞): 善意打广……\n  └ 7yb_official (2赞): [浅川玉乃的表情包_比心]\n  └ 密斯卡托尼克的银猫 (1赞): 哇[星星眼]",
+      "source": "bilibili",
+      "time": "2026-07-15T04:43:54+00:00",
+      "url": "https://www.bilibili.com/video/BV1RKNi6rEJ6",
+      "engagement": 143,
+      "is_hot": false,
+      "author": "梦依流苏_myls",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 128,
+        "comment_count": 15,
+        "comments_fetched": 3,
+        "danmaku": 2
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/51bfc01948c7274f6f67f048c95c0cf01bfbf395.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

@@ -1,8 +1,8 @@
 {
   "date": "2026-07-15",
-  "archived_at": "2026-07-15T02:12:40.540517+00:00",
+  "archived_at": "2026-07-15T05:31:31.005127+00:00",
   "source": "steam",
-  "item_count": 3,
+  "item_count": 4,
   "items": [
     {
       "title": "[正面] на любителя, что то на подобии мортал комбат и ген...",
@@ -70,6 +70,30 @@
         "playtime_forever": 5759,
         "votes_up": 0,
         "timestamp_created": 1784071635
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] que jogo bom da porra",
+      "summary": "que jogo bom da porra",
+      "source": "steam_review",
+      "time": "2026-07-15T02:57:17+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198767676360/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198767676360",
+      "tags": [
+        "brazilian"
+      ],
+      "language": "brazilian",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 281,
+        "votes_up": 0,
+        "timestamp_created": 1784084237
       },
       "region": "global",
       "archive_subtype": "review",
