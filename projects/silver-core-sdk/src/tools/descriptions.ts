@@ -552,6 +552,34 @@ Usage notes:
 - Use multiSelect: true to allow multiple answers to be selected for a question
 - If you recommend a specific option, make that the first option in the list and add "(Recommended)" at the end of the label`;
 
+export const ENTERPLANMODE_DESCRIPTION = `Use this tool proactively when you're about to start a non-trivial implementation task. Getting user sign-off on your approach before writing code prevents wasted effort and ensures alignment. This tool transitions you into plan mode where you can explore the codebase and design an implementation approach for user approval.
+
+## When to Use This Tool
+
+Prefer using EnterPlanMode for implementation tasks unless they're simple. Use it when ANY of these conditions apply:
+
+1. New Feature Implementation: Adding meaningful new functionality.
+2. Multiple Valid Approaches: The task can be solved in several different ways.
+3. Code Modifications: Changes that affect existing behavior or structure.
+4. Architectural Decisions: The task requires choosing between patterns or technologies.
+5. Multi-File Changes: The task will likely touch more than 2-3 files.
+6. Unclear Requirements: You need to explore before understanding the full scope.
+7. User Preferences Matter: The implementation could reasonably go multiple ways. If you would use AskUserQuestion to clarify the approach, use EnterPlanMode instead — plan mode lets you explore first, then present options with context.
+
+## When NOT to Use This Tool
+
+Only skip EnterPlanMode for simple tasks:
+- Single-line or few-line fixes (typos, obvious bugs, small tweaks)
+- Adding a single function with clear requirements
+- Tasks where the user has given very specific, detailed instructions
+- Pure research/exploration tasks (use the Agent tool instead)
+
+## Important Notes
+
+- This tool REQUIRES user approval - they must consent to entering plan mode
+- If unsure whether to use it, err on the side of planning - it's better to get alignment upfront than to redo work
+- Users appreciate being consulted before significant changes are made to their codebase`;
+
 export const EXITPLANMODE_DESCRIPTION = `Use this tool when you are in plan mode and have finished presenting your plan and are ready for user approval to begin implementing.
 
 ## How This Tool Works
@@ -875,6 +903,7 @@ export const TOOL_DESCRIPTION_PROVENANCE: ToolDescriptionProvenance[] = [
   { tool: 'WebFetch', faithful: true, slugs: ['tool-description-webfetch'] },
   { tool: 'WebSearch', faithful: true, slugs: ['tool-description-websearch'] },
   { tool: 'AskUserQuestion', faithful: true, slugs: ['tool-description-askuserquestion'] },
+  { tool: 'EnterPlanMode', faithful: true, slugs: ['tool-description-enterplanmode'] },
   { tool: 'ExitPlanMode', faithful: true, slugs: ['tool-description-exitplanmode'] },
   { tool: 'EnterWorktree', faithful: true, slugs: ['tool-description-enterworktree'] },
   {
@@ -910,6 +939,7 @@ export const TOOL_DESCRIPTION_TEXT: Record<string, string> = {
   WebFetch: WEBFETCH_DESCRIPTION,
   WebSearch: WEBSEARCH_DESCRIPTION,
   AskUserQuestion: ASKUSERQUESTION_DESCRIPTION,
+  EnterPlanMode: ENTERPLANMODE_DESCRIPTION,
   ExitPlanMode: EXITPLANMODE_DESCRIPTION,
   EnterWorktree: ENTERWORKTREE_DESCRIPTION,
   Monitor: MONITOR_DESCRIPTION,

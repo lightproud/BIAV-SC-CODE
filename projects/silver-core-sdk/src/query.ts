@@ -1081,6 +1081,7 @@ export function query(args: {
           mcpResources: {
             list: (server, signal) => mcpEff.listResources(server, signal),
             read: (server, uri, signal) => mcpEff.readResource(server, uri, signal),
+            readDir: (server, uri, signal) => mcpEff.readResourceDir(server, uri, signal),
           },
           allowPrivateWebFetch: options.allowPrivateWebFetch === true,
           recordFileChange: checkpointStore

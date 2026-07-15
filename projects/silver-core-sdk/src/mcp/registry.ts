@@ -51,6 +51,7 @@ type McpConnectionLike = {
   ): Promise<CallToolResult>;
   listResources(signal?: AbortSignal): Promise<McpResource[]>;
   readResource(uri: string, signal?: AbortSignal): Promise<McpResourceContent[]>;
+  readResourceDir(uri: string, signal?: AbortSignal): Promise<McpResource[]>;
   close(): Promise<void>;
 };
 
@@ -238,6 +239,26 @@ export class DefaultMcpRegistry implements McpRegistry {
       });
     }
     return await entry.connection.readResource(uri, signal);
+  }
+
+  async readResourceDir(
+    server: string,
+    uri: string,
+    signal: AbortSignal,
+  ): Promise<McpResource[]> {
+    const entry = this.entries.find((e) => e.name === server);
+    if (!entry) {
+      throw new McpError('mcp_unknown_server', `No such MCP server: ${server}`, {
+        serverLabel: server,
+      });
+    }
+    if (!entry.enabled || entry.baseStatus !== 'connected' || !entry.connection) {
+      throw new McpError('mcp_not_connected', `MCP server '${server}' is not connected`, {
+        serverLabel: server,
+        phase: 'request',
+      });
+    }
+    return await entry.connection.readResourceDir(uri, signal);
   }
 
   /** Tear down and re-establish one server's connection. Never throws. */

@@ -120,6 +120,9 @@ export class DeferredMcpRegistry implements McpRegistry {
   readResource(server: string, uri: string, signal: AbortSignal): Promise<McpResourceContent[]> {
     return this.inner.readResource(server, uri, signal);
   }
+  readResourceDir(server: string, uri: string, signal: AbortSignal): Promise<McpResource[]> {
+    return this.inner.readResourceDir(server, uri, signal);
+  }
 
   reconnect(serverName: string): Promise<void> {
     return this.inner.reconnect(serverName);

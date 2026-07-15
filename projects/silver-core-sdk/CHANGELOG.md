@@ -16,6 +16,35 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.62.0 — 2026-07-15
+
+Tool-parity audit (2026-07-15): closed the remaining clean gaps against the
+official Claude Code CLI tool surface, and added a backstop so future gaps
+red the build.
+
+- **EnterPlanMode** built-in (`src/tools/enterplanmode.ts`) — the mirror of
+  the already-shipped ExitPlanMode. Flips the session permission mode to
+  'plan' through the same `ctx.permissionGate` handle; readOnly (entering
+  plan mode only ever restricts). Faithful description reproduced from the
+  archive fragment. Was a gap: the SDK shipped the "exit" half of the pair
+  but not the "enter" half.
+- **ReadMcpResourceDirTool** built-in (`src/tools/resources.ts`) — lists the
+  direct children of an MCP directory resource (`resources/directory/read`),
+  completing the MCP resource family (List / Read / **ReadDir**). Threaded
+  `readResourceDir` through the whole MCP registry chain (contract, registry,
+  stdio/http/sdk-server connections, and every delegating wrapper). Non-
+  recursive; errors from servers without directory support propagate as an
+  error result.
+- **Tool-parity ledger** (`docs/TOOL-PARITY.md`) + backstop test
+  (`tests/tool-parity.test.ts`): the ledger enumerates official CLI tools ×
+  shipped? × why-not (including deliberate exclusions like LSP/NotebookEdit
+  and host-facing candidates SendUserFile/ListAgents for when the host layer
+  grows); the test pins the default built-in set so adding/removing a tool
+  reds until the ledger is updated. This is the mechanism that would have
+  caught the MultiEdit / EnterPlanMode gaps.
+- Coverage: EnterPlanMode cases in `tests/tools-planmode-worktree-monitor.
+  test.ts`; ReadMcpResourceDirTool cases in `tests/tools-v2.test.ts`.
+
 ## 0.61.0 — 2026-07-15
 
 New capability: **MultiEdit** — several exact-string replacements to ONE file
