@@ -599,12 +599,14 @@ describe('pricing', () => {
       output_tokens: 3,
       cache_creation_input_tokens: 0,
       cache_read_input_tokens: 0,
+      web_search_requests: 0,
     });
     expect(normalizeUsage({ input_tokens: 1, output_tokens: 2 })).toEqual({
       input_tokens: 1,
       output_tokens: 2,
       cache_creation_input_tokens: 0,
       cache_read_input_tokens: 0,
+      web_search_requests: 0,
     });
   });
 
@@ -626,7 +628,25 @@ describe('pricing', () => {
       output_tokens: 22,
       cache_creation_input_tokens: 33,
       cache_read_input_tokens: 44,
+      web_search_requests: 0,
     });
+  });
+
+  it('bug-fix: web_search_requests flows through normalizeUsage and addUsage', () => {
+    // Pre-fix normalizeUsage stripped server_tool_use, so the count was lost
+    // before recordUsage and ModelUsage.webSearchRequests was permanently 0.
+    const n = normalizeUsage({
+      input_tokens: 1,
+      output_tokens: 1,
+      server_tool_use: { web_search_requests: 3 },
+    });
+    expect(n.web_search_requests).toBe(3);
+    const summed = addUsage(n, normalizeUsage({
+      input_tokens: 1,
+      output_tokens: 1,
+      server_tool_use: { web_search_requests: 2 },
+    }));
+    expect(summed.web_search_requests).toBe(5);
   });
 });
 
@@ -706,6 +726,7 @@ describe('runAgentLoop', () => {
       output_tokens: 7,
       cache_creation_input_tokens: 0,
       cache_read_input_tokens: 0,
+      web_search_requests: 0,
     });
     // modelUsage keyed by the RESPONSE model id (claude-test-1 is unpriced).
     expect(Object.keys(result.modelUsage)).toEqual(['claude-test-1']);

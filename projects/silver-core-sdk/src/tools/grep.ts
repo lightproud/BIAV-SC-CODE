@@ -78,6 +78,18 @@ function extensionsForType(patterns: string[]): Set<string> {
   return exts;
 }
 
+// ripgrep glob semantics: a pattern with no slash matches at ANY depth
+// (gitignore-style), so `-g '*.ts'` finds nested files. fast-glob instead
+// anchors a bare `*.ts` to the search root, silently missing nested matches —
+// the exact `*.js`-style example this tool's own description advertises. So a
+// slash-less positive pattern gets a globstar prefix to restore ripgrep depth
+// semantics; patterns that already carry a slash, or a leading `!` negation,
+// are left as authored.
+function normalizeGlobDepth(glob: string): string {
+  if (glob.includes('/') || glob.startsWith('!')) return glob;
+  return `**/${glob}`;
+}
+
 /** Offsets (into the raw text) where each line starts. */
 function lineStartOffsets(text: string): number[] {
   const offsets = [0];
@@ -372,7 +384,9 @@ export const grepTool: BuiltinTool = {
     }
     const rawGlob = input['glob'];
     const globPattern =
-      typeof rawGlob === 'string' && rawGlob.length > 0 ? rawGlob : undefined;
+      typeof rawGlob === 'string' && rawGlob.length > 0
+        ? normalizeGlobDepth(rawGlob)
+        : undefined;
 
     // --- File enumeration ---------------------------------------------------
     const rawPath = input['path'];

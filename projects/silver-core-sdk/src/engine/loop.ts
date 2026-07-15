@@ -54,7 +54,7 @@ import {
 } from './tool-dispatch.js';
 import { deriveSystemField } from './system-field.js';
 import { supportsAdaptiveThinking } from './thinking-model.js';
-import { estimateToolDefsTokens } from './tokens.js';
+import { estimateToolDefsTokens, estimateTextTokens } from './tokens.js';
 import {
   maybeAutoCompact,
   runManualCompact,
@@ -406,7 +406,7 @@ export async function* runAgentLoop(
         (prev?.cacheReadInputTokens ?? 0) + usage.cache_read_input_tokens,
       cacheCreationInputTokens:
         (prev?.cacheCreationInputTokens ?? 0) + usage.cache_creation_input_tokens,
-      webSearchRequests: prev?.webSearchRequests ?? 0,
+      webSearchRequests: (prev?.webSearchRequests ?? 0) + (usage.web_search_requests ?? 0),
       costUSD: (prev?.costUSD ?? 0) + cost,
       // Official ModelUsage fields (T2-4): the static public window table
       // (an estimate, same provenance as the price table) and the ACTUAL
@@ -622,11 +622,16 @@ export async function* runAgentLoop(
   // System-prompt term = stable prefix + volatile (cwd) tail, OR the caller's
   // segment blocks when present; all are sent every request, so all count
   // toward the compaction overhead estimate.
-  const systemCharLen =
+  // CJK-aware token estimate (finding): a flat charLen/4 undercounts a
+  // CJK-heavy system prompt ~4x (estimateTextTokens charges 1 token per Han/
+  // kana/Hangul char), so a Chinese system prompt could defer compaction past
+  // the point the first request 400s "prompt too long". Use the same estimator
+  // the rest of the engine (and analyzeRequestComposition) uses.
+  const systemPromptTokens =
     config.systemBlocks !== undefined
-      ? config.systemBlocks.reduce((n, b) => n + (b.text?.length ?? 0), 0)
-      : (config.systemPrompt?.length ?? 0) + (config.systemPromptSuffix?.length ?? 0);
-  const systemPromptTokens = Math.ceil(systemCharLen / 4);
+      ? config.systemBlocks.reduce((n, b) => n + estimateTextTokens(b.text ?? ''), 0)
+      : estimateTextTokens(config.systemPrompt ?? '') +
+        estimateTextTokens(config.systemPromptSuffix ?? '');
   // Tool-def token estimate, cached by the tool-NAME set: the estimate walks
   // a JSON.stringify of every schema, and the def list only changes when the
   // advertised tool set changes (ToolSearch load / MCP setServers) — which

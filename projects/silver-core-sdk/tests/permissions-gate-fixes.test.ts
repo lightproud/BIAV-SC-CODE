@@ -759,3 +759,34 @@ describe('auto mode: classifier deny is not bypassed by an ask route', () => {
     expect(spy).not.toHaveBeenCalled();
   });
 });
+
+// ---------------------------------------------------------------------------
+// Bug-fix round 2026-07-15 — scoped rule specifier reaches builtin primary args
+// ---------------------------------------------------------------------------
+
+describe('scoped rules match WebFetch/WebSearch by their primary arg (PRIMARY_ARG_FIELD)', () => {
+  it('a WebFetch SSRF deny specifier matches the url field (not the JSON blob)', () => {
+    const rule = parseRule('WebFetch(http://169.254.169.254*)');
+    expect(
+      ruleMatches(rule, 'WebFetch', { url: 'http://169.254.169.254/latest/meta-data', prompt: 'x' }),
+    ).toBe(true);
+    // A different host is not caught by the specifier.
+    expect(ruleMatches(rule, 'WebFetch', { url: 'https://example.com', prompt: 'x' })).toBe(false);
+  });
+
+  it('the SSRF deny actually fires at the gate now', async () => {
+    const gate = makeGate({ disallowedTools: ['WebFetch(http://169.254.169.254*)'] });
+    const res = await gate.check(
+      'WebFetch',
+      { url: 'http://169.254.169.254/latest/meta-data', prompt: 'x' },
+      checkOpts({ readOnly: false }),
+    );
+    expect(res.decision).toBe('deny');
+  });
+
+  it('a WebSearch specifier matches the query field', () => {
+    const rule = parseRule('WebSearch(secret*)');
+    expect(ruleMatches(rule, 'WebSearch', { query: 'secret plans' })).toBe(true);
+    expect(ruleMatches(rule, 'WebSearch', { query: 'public info' })).toBe(false);
+  });
+});

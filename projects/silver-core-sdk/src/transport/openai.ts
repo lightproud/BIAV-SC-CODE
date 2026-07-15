@@ -772,6 +772,11 @@ export class OpenAIStreamTranslator {
     // appearance for stable indices.
     for (const [key, buf] of this.toolBuffers) {
       if (buf.emitted) continue;
+      // Skip a pure placeholder buffer (`{index:N}` with no id, name, or
+      // argument bytes ever received): it carries no callable tool, and
+      // emitting it would yield a tool_use block with an empty name and a
+      // synthetic id. Mirrors the contentSeen placeholder guard in feed().
+      if (buf.id === undefined && buf.name === '' && buf.args === '') continue;
       buf.index = this.openBlock(events, key, {
         type: 'tool_use',
         id: buf.id ?? `call_${this.nextIndex}`,
@@ -793,16 +798,20 @@ export class OpenAIStreamTranslator {
     this.open.clear();
     const cached = this.usage?.prompt_tokens_details?.cached_tokens ?? 0;
     const prompt = this.usage?.prompt_tokens ?? 0;
-    // Missing finish_reason + tool calls => infer 'tool_use' (audit 2026-07-14
-    // M-5): some gateways end a tool-call stream with a bare [DONE] (or EOF)
-    // and never send finish_reason='tool_calls'. mapFinishReason(null) defaults
-    // to 'end_turn', which makes the engine treat the turn as FINAL and
-    // silently drop the model's tool calls. If this message opened/buffered at
-    // least one tool_use block, the only honest stop_reason is 'tool_use'.
-    // Streams that DID carry a finish_reason are untouched (finishReason is
-    // only set from a non-empty string, so every explicit path is unchanged).
+    // Missing finish_reason + real tool calls => infer 'tool_use' (audit
+    // 2026-07-14 M-5): some gateways end a tool-call stream with a bare [DONE]
+    // (or EOF) and never send finish_reason='tool_calls'. mapFinishReason(null)
+    // defaults to 'end_turn', which makes the engine treat the turn as FINAL
+    // and silently drop the model's tool calls. If this message opened/buffered
+    // at least one REAL tool_use block, the only honest stop_reason is
+    // 'tool_use'. An EXPLICIT finish_reason (including 'stop') is respected
+    // regardless of open tool blocks — deliberate M-5 semantics. A pure
+    // placeholder buffer does not count (same guard as the flush loop above).
+    const hasRealTool = [...this.toolBuffers.values()].some(
+      (b) => b.emitted || b.id !== undefined || b.name !== '' || b.args !== '',
+    );
     const stopReason: StopReason =
-      this.finishReason === null && this.toolBuffers.size > 0
+      this.finishReason === null && hasRealTool
         ? 'tool_use'
         : mapFinishReason(this.finishReason);
     events.push({

@@ -331,7 +331,9 @@ export async function generateRuntimeReport(
   } else {
     lines.push('| tool | calls | errors | failure rate |', '|---|---|---|---|');
     for (const t of tools.slice(0, Math.max(topN * 2, 10))) {
-      lines.push(`| ${t.name} | ${t.calls} | ${t.errors} | ${fmtPct(t.errors / t.calls)} |`);
+      lines.push(
+        `| ${t.name} | ${t.calls} | ${t.errors} | ${t.calls > 0 ? fmtPct(t.errors / t.calls) : '无数据'} |`,
+      );
     }
     if (tools.length > Math.max(topN * 2, 10)) {
       lines.push('', `…共 ${tools.length} 个工具(截断)。`);

@@ -16,6 +16,86 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.62.2 — 2026-07-15
+
+Bug-fix sweep — a multi-module audit (6 parallel readers over `src/`) surfaced
+~19 candidates; 12 verified as genuine defects and fixed here, 2 rejected as
+false positives that contradicted intentional test-locked behavior (an explicit
+OpenAI `finish_reason='stop'` is deliberately NOT overridden by open tool
+blocks, M-5; and `auto` mode deliberately routes a classifier 'prompt' verdict
+PAST allow rules to canUseTool, gate.ts mutation-kill), and 4 deferred as design
+calls for the keeper (see below).
+
+Security / permissions:
+- **Scoped rules never reached WebFetch/WebSearch/MultiEdit/NotebookEdit**
+  (`permissions/rules.ts`): these builtins were absent from `PRIMARY_ARG_FIELD`,
+  so a specifier rule (e.g. the SSRF deny `WebFetch(http://169.254.169.254*)`)
+  was matched against the JSON blob `{"url":...}` — which starts with `{` and
+  never prefix-matches — so the deny silently never fired. Mapped each to its
+  primary field. This is the security-relevant half; the `auto`-mode allow-rule
+  finding it shipped alongside was rejected (intentional, see above).
+- **A fully-denied MCP tool still showed in `statuses()`** (`mcp/tool-filter.ts`):
+  the decorator hid it from allTools()/has() but advertised it in each server's
+  per-tool status list. Filtered statuses() to match.
+
+Correctness:
+- **`ModelUsage.webSearchRequests` was permanently 0** (`engine/loop.ts`,
+  `engine/pricing.ts`, `types.ts`): `normalizeUsage` stripped `server_tool_use`
+  before `recordUsage` could read it, and recordUsage only carried the prior
+  value. Carried `web_search_requests` through normalizeUsage/addUsage and
+  summed it in the per-model ledger.
+- **OpenAI empty tool_call placeholder emitted a bogus tool_use block**
+  (`transport/openai.ts`): a `{index:N}` chunk with no id/name/args created a
+  buffer that finish() flushed as a tool_use with an empty name. Skip pure
+  placeholders in the flush loop (mirrors the contentSeen guard), and infer
+  `tool_use` on a missing finish_reason only from a REAL buffered tool.
+- **Compaction summary 400'd on an orphan tool_use** (`engine/compaction.ts`):
+  the summarization prefix kept tool_use blocks, so a prefix cut ending on an
+  assistant tool_use turn (result beyond the cut) sent an unpaired tool_use →
+  400 → silent degrade + a wasted call. Strip orphan tool_use blocks (mirrors
+  the C6 filter in loop.ts).
+- **Compaction under-counted a CJK system prompt ~4x** (`engine/loop.ts`): the
+  overhead estimate used a flat `charLen/4` instead of the CJK-aware
+  `estimateTextTokens` used elsewhere, so a Chinese system prompt could defer
+  the fold past a "prompt too long" 400. Use the shared estimator.
+- **runtime-report divided by zero** (`reporting/runtime-report.ts`): the tool
+  failure-rate cell computed `errors/calls` with no guard (calls:0 is a valid
+  ledger shape from external producers), rendering `NaN%`/`Infinity%`. Guarded
+  like the sibling in compare-reports.ts.
+
+Robustness / resource:
+- **WebFetch leaked the response socket on reject-without-read paths**
+  (`tools/webfetch.ts`): the HTTP-status / content-type / Content-Length error
+  returns never cancelled `response.body` (the redirect branch does), holding
+  the socket open until the 30s abort. Cancel on those paths too.
+- **listSessions aborted on a stray non-directory entry**
+  (`sessions/file-store.ts`): only ENOENT was tolerated stat-ing
+  `<entry>/main.jsonl`, so a plain file (e.g. `.DS_Store`) in the project dir
+  threw ENOTDIR and killed the whole listing. Treat ENOTDIR as "not a session".
+- **Grep's bare `*.ext` glob missed nested files** (`tools/grep.ts`): fast-glob
+  anchors `*.ts` to the search root while ripgrep (the interface this tool
+  reproduces, and its own `*.js` example) matches at any depth. Prepend a
+  globstar to a slash-less positive pattern.
+- **Cross-host session fallbacks leaked subagent sidechains**
+  (`sessions/store-adapter.ts`): the external `list()`/`latestSessionId()`
+  fallbacks bypassed the sidechain guard the local store applies, so a mirrored
+  `<agentId>` child transcript could surface as a resumable session or be picked
+  as the newest to resume. Apply the same guard in both.
+
+Deferred (real, but the fix is a keeper design call): an unsigned-thinking strip
+that can empty an assistant message (anthropic.ts, alters role alternation); the
+task-notification XML embedding child text un-escaped (runtime.ts, conformance
+vs. hardening); duplicate `sidechain_start` markers across SendMessage
+continuations (runtime.ts, marker-lifecycle redesign); and content-scoped
+specifiers never matching arbitrary MCP tools (rules.ts JSON fallback, a fuzzy
+match with its own misfire risk).
+
+Coverage: regressions across `tests/engine.test.ts` (web_search_requests),
+`tests/transport-openai.test.ts` (placeholder), `tests/permissions-gate-fixes.test.ts`
+(WebFetch/WebSearch specifier + SSRF deny), `tests/runtime-report.test.ts`
+(calls=0), `tests/file-store.test.ts` (ENOTDIR), `tests/grep-opt.test.ts`
+(nested glob), and a new `tests/tool-filter.test.ts` (statuses filtering).
+
 ## 0.62.1 — 2026-07-15
 
 Bug fix (usability) — MultiEdit's not-found error now diagnoses WHY instead of
