@@ -1,10 +1,11 @@
 {
   "date": "2026-07-12",
-  "messages": 8186,
+  "messages": 8474,
   "unique_authors": 276,
-  "reactions_total": 891,
-  "attachments": 435,
+  "reactions_total": 897,
+  "attachments": 453,
   "channel_activity": {
+    "🔸general-chat": 288,
     "🔸綜合討論": 1061,
     "🔸阵容构建": 93,
     "🔸剧情交流": 8,
@@ -66,6 +67,7 @@
     "Leigh x I LICK and TICKLE Leigh's ARMPIT": 2
   },
   "hourly_activity": {
+    "0": 328,
     "8": 643,
     "9": 488,
     "10": 607,
@@ -88,13 +90,13 @@
     "5": 295,
     "6": 595,
     "7": 449,
-    "1": 67,
-    "0": 40
+    "1": 67
   },
   "message_types": {
-    "0": 4010,
-    "19": 1250,
-    "20": 12
+    "0": 147,
+    "19": 136,
+    "20": 4,
+    "23": 1
   },
   "top_reacted_messages": [
     {
