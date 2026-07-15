@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-15T10:49:44.861439+00:00",
+  "collected_at": "2026-07-15T13:40:44.611764+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 109,
+  "item_count": 107,
   "items": [
     {
       "source": "google_play",
@@ -567,16 +567,6 @@
     },
     {
       "source": "google_play",
-      "time": "2026-06-15T11:16:57",
-      "lang": "ko",
-      "title": "[Google Play 好评] ★5 재밌음 스토리도 좋고 일러도 개성있음 단점은 적들 한방데미지가 쎄서 죽창",
-      "summary": "재밌음 스토리도 좋고 일러도 개성있음 단점은 적들 한방데미지가 쎄서 죽창메타로 가야해서 비트는 재미가 좀 떨어짐",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=ko#gp-2a34e3c5-2bc7-4225-a76f-64347bed91b4",
-      "author": "Ilinx",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
       "time": "2026-07-06T12:47:57",
       "lang": "th",
       "title": "[Google Play 好评] ★5 เนื้อเรื่องเกม สนุกมากครับ เสียดายพึ่งมา",
@@ -773,16 +763,6 @@
       "summary": "gak bisa login, mau itu pake metode apapun gak bisa login malah force close",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=id#gp-4b2ba77c-023b-4c22-b930-8184508f2495",
       "author": "Muhammad Jenal",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-06-15T13:16:36",
-      "lang": "id",
-      "title": "[Google Play 好评] ★4 game bagus suka tapi saran karakter nya",
-      "summary": "game bagus suka tapi saran karakter nya dibuat gerak 3d semua",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=id#gp-9455c62e-c0b4-45f0-ae18-22ee71bc9b85",
-      "author": "Penyampah Maniac",
       "engagement": 0
     },
     {

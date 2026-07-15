@@ -1,8 +1,8 @@
 {
   "date": "2026-07-15",
-  "archived_at": "2026-07-15T10:50:30.873711+00:00",
+  "archived_at": "2026-07-15T13:41:30.159666+00:00",
   "source": "bahamut",
-  "item_count": 22,
+  "item_count": 24,
   "items": [
     {
       "title": "【情報】邀請活動集中串，一起拿朵爾幻衣獎勵(可3人互填)",
@@ -12,6 +12,19 @@
       "url": "https://forum.gamer.com.tw/C.php?bsn=78829&snA=938&tnum=250",
       "engagement": 419,
       "is_hot": false,
+      "author": "t12345825",
+      "tags": [],
+      "lang": "zh",
+      "platform_region": "tw"
+    },
+    {
+      "title": "【集中串】2.4.0 發問集中串，來問，有問必答",
+      "summary": "",
+      "source": "bahamut",
+      "time": "2026-07-15T13:21:57.399338+00:00",
+      "url": "https://forum.gamer.com.tw/C.php?bsn=78829&snA=1144&tnum=224",
+      "engagement": 341,
+      "is_hot": true,
       "author": "t12345825",
       "tags": [],
       "lang": "zh",
@@ -284,6 +297,19 @@
       "time": "2026-07-14T16:13:32.314026+00:00",
       "url": "https://forum.gamer.com.tw/C.php?bsn=78829&snA=1473&tnum=1",
       "engagement": 8,
+      "is_hot": false,
+      "author": "t12345825",
+      "tags": [],
+      "lang": "zh",
+      "platform_region": "tw"
+    },
+    {
+      "title": "【心得】星辰篇必修課：淺談「牌權」的重要性",
+      "summary": "",
+      "source": "bahamut",
+      "time": "2026-07-15T13:39:57.399375+00:00",
+      "url": "https://forum.gamer.com.tw/C.php?bsn=78829&snA=1491&tnum=1",
+      "engagement": 4,
       "is_hot": false,
       "author": "t12345825",
       "tags": [],

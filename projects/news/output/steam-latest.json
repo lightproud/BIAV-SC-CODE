@@ -1,25 +1,10 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-15T10:49:44.861439+00:00",
+  "collected_at": "2026-07-15T13:40:44.611764+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 7,
+  "item_count": 6,
   "items": [
-    {
-      "source": "steam",
-      "time": "2026-07-14T11:22:01+00:00",
-      "lang": "japanese",
-      "title": "[负面] このゲームタップ早すぎたり戦闘終わった後に確率でフリーズして操作できなくなるんだよね タスクキルして...",
-      "summary": "このゲームタップ早すぎたり戦闘終わった後に確率でフリーズして操作できなくなるんだよね タスクキルして入り直すしかなくてマジでうざいわ 私の端末の問題なのかわかんないけど",
-      "url": "https://steamcommunity.com/profiles/76561199028174060/recommended/3052450",
-      "author": "76561199028174060",
-      "engagement": 3,
-      "language": "japanese",
-      "voted_up": false,
-      "review": "このゲームタップ早すぎたり戦闘終わった後に確率でフリーズして操作できなくなるんだよね タスクキルして入り直すしかなくてマジでうざいわ 私の端末の問題なのかわかんないけど",
-      "timestamp_created": 1784028121,
-      "playtime_forever": 994
-    },
     {
       "source": "steam",
       "time": "2026-07-15T05:45:02+00:00",
