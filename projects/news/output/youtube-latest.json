@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-15T08:06:40.838369+00:00",
+  "collected_at": "2026-07-15T10:49:44.861439+00:00",
   "source": "youtube",
   "data_layer": "output",
-  "item_count": 18,
+  "item_count": 17,
   "items": [
     {
       "source": "youtube",
@@ -13,7 +13,7 @@
       "summary": "",
       "url": "https://www.youtube.com/watch?v=ehDsWji4fOU",
       "author": "AnjutheMage",
-      "engagement": 1061,
+      "engagement": 1070,
       "media_url": "https://i.ytimg.com/vi/ehDsWji4fOU/hqdefault.jpg",
       "content_type": "video"
     },
@@ -25,7 +25,7 @@
       "summary": "https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord ...",
       "url": "https://www.youtube.com/watch?v=HBwe85_GExA",
       "author": "Flares117",
-      "engagement": 753,
+      "engagement": 764,
       "media_url": "https://i.ytimg.com/vi/HBwe85_GExA/hqdefault.jpg",
       "content_type": "video"
     },
@@ -37,7 +37,7 @@
       "summary": "『忘却前夜』オンラインプレイヤーとの対戦動画です！ 今回は動画で初めてダフォダイルさんを紹介していきます！ ２コストで、 ...",
       "url": "https://www.youtube.com/watch?v=8JV7EpweySo",
       "author": "薄めの『ゆゆ』",
-      "engagement": 75,
+      "engagement": 87,
       "media_url": "https://i.ytimg.com/vi/8JV7EpweySo/hqdefault.jpg",
       "content_type": "video"
     },
@@ -55,25 +55,13 @@
     },
     {
       "source": "youtube",
-      "time": "2026-07-14T09:53:25Z",
-      "lang": "",
-      "title": "Bad Baddies be BAD! | Morimens: Ark 2 - CH4",
-      "summary": "Morimens until I'm KoG TTV: https://www.twitch.tv/lowlivve Disc: https://discord.gg/KWB3yD6HeW #morimens #忘却前夜#忘卻前夜.",
-      "url": "https://www.youtube.com/watch?v=k1rWJ4kmu2w",
-      "author": "LowLivve",
-      "engagement": 33,
-      "media_url": "https://i.ytimg.com/vi/k1rWJ4kmu2w/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
       "time": "2026-07-15T00:39:34Z",
       "lang": "",
       "title": "Never underestimate QUEEN WANDA (Morimens)",
       "summary": "WANDA and her 3 minions with BOB CUTS.",
       "url": "https://www.youtube.com/watch?v=UY58NR5x6LQ",
       "author": "Tamara Mel Ribeiro-Maria",
-      "engagement": 24,
+      "engagement": 43,
       "media_url": "https://i.ytimg.com/vi/UY58NR5x6LQ/hqdefault.jpg",
       "content_type": "video"
     },
@@ -85,8 +73,20 @@
       "summary": "",
       "url": "https://www.youtube.com/watch?v=EGTUnnBBzdo",
       "author": "Koka",
-      "engagement": 24,
+      "engagement": 36,
       "media_url": "https://i.ytimg.com/vi/EGTUnnBBzdo/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-07-15T08:48:57Z",
+      "lang": "",
+      "title": "Re:Keeper, Awakening Life in Another Boat! | Morimens: Ark 2 - CH4",
+      "summary": "Morimens until I'm KoG TTV: https://www.twitch.tv/lowlivve Disc: https://discord.gg/KWB3yD6HeW #morimens #忘却前夜 #忘卻 ...",
+      "url": "https://www.youtube.com/watch?v=c5rUvgepTIg",
+      "author": "LowLivve",
+      "engagement": 22,
+      "media_url": "https://i.ytimg.com/vi/c5rUvgepTIg/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -97,7 +97,7 @@
       "summary": "I absolutely love this game and it's OST, but couldn't find it anywhere on YouTube so I took it upon myself to upload some themes.",
       "url": "https://www.youtube.com/watch?v=51-tqDTrits",
       "author": "SeaLily",
-      "engagement": 20,
+      "engagement": 22,
       "media_url": "https://i.ytimg.com/vi/51-tqDTrits/hqdefault.jpg",
       "content_type": "video"
     },
@@ -115,18 +115,6 @@
     },
     {
       "source": "youtube",
-      "time": "2026-07-14T09:42:53Z",
-      "lang": "",
-      "title": "Re:Keeper, Awakening Life in Another Boat! | Morimens: Ark 2 - CH4",
-      "summary": "Morimens until I'm KoG TTV: https://www.twitch.tv/lowlivve Disc: https://discord.gg/KWB3yD6HeW #morimens #忘却前夜 #忘卻 ...",
-      "url": "https://www.youtube.com/watch?v=c5rUvgepTIg",
-      "author": "LowLivve",
-      "engagement": 17,
-      "media_url": "https://i.ytimg.com/vi/c5rUvgepTIg/hqdefault_live.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
       "time": "2026-07-14T19:18:51Z",
       "lang": "",
       "title": "# 1【忘却前夜】ライカーで対人戦",
@@ -135,18 +123,6 @@
       "author": "じゃく",
       "engagement": 15,
       "media_url": "https://i.ytimg.com/vi/Ga7cgulHVa4/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-07-14T10:00:30Z",
-      "lang": "",
-      "title": "#忘卻前夜 #morimens Regional D-Effect Zone Wave 2:Alert V! 融災2-5 Boss戰的部分",
-      "summary": "忘卻前夜#morimens 7月6日~7月20日融災更新. Regional D-Effect Zone Update (July 6 – July 20) 2-5 純粹的高傷害檢測,檢測你的 ...",
-      "url": "https://www.youtube.com/watch?v=-U6Wxn5Dihk",
-      "author": "Noir",
-      "engagement": 9,
-      "media_url": "https://i.ytimg.com/vi/-U6Wxn5Dihk/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -175,14 +151,38 @@
     },
     {
       "source": "youtube",
+      "time": "2026-07-15T09:09:55Z",
+      "lang": "",
+      "title": "Petite vidéo sur Morimens à minuit ! Je vous montre le jeu #dontflop #morimens",
+      "summary": "dontflop #katawashoujo #drawing #alienstage #animation #animegirl #art #edit #enashinonome #alibi #morimens.",
+      "url": "https://www.youtube.com/watch?v=3uV7rkUblOM",
+      "author": "Niara",
+      "engagement": 7,
+      "media_url": "https://i.ytimg.com/vi/3uV7rkUblOM/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
       "time": "2026-07-14T14:14:05Z",
       "lang": "",
       "title": "Morimens OST- Old Souls",
       "summary": "I absolutely love this game and it's OST, but couldn't find it anywhere on YouTube so I took it upon myself to upload some themes.",
       "url": "https://www.youtube.com/watch?v=xTNEHgmdQuA",
       "author": "SeaLily",
-      "engagement": 6,
+      "engagement": 7,
       "media_url": "https://i.ytimg.com/vi/xTNEHgmdQuA/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-07-14T22:26:25Z",
+      "lang": "",
+      "title": "Morimens...Saya Collab Event Story",
+      "summary": "CapCut I made this amazing video with CapCut. Open the link to try it out: capcut.com/tools/desktop-video-editor.",
+      "url": "https://www.youtube.com/watch?v=jYadB-krq34",
+      "author": "J3w3lz4nn",
+      "engagement": 4,
+      "media_url": "https://i.ytimg.com/vi/jYadB-krq34/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -205,20 +205,8 @@
       "summary": "ワンダ獲得 融災禁区編成.",
       "url": "https://www.youtube.com/watch?v=jWg1nz_xfPw",
       "author": "和音",
-      "engagement": 1,
+      "engagement": 2,
       "media_url": "https://i.ytimg.com/vi/jWg1nz_xfPw/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-07-14T22:26:25Z",
-      "lang": "",
-      "title": "Morimens...Saya Collab Event Story",
-      "summary": "CapCut I made this amazing video with CapCut. Open the link to try it out: capcut.com/tools/desktop-video-editor.",
-      "url": "https://www.youtube.com/watch?v=jYadB-krq34",
-      "author": "J3w3lz4nn",
-      "engagement": 0,
-      "media_url": "https://i.ytimg.com/vi/jYadB-krq34/hqdefault.jpg",
       "content_type": "video"
     }
   ]

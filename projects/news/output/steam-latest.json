@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-15T08:06:40.838369+00:00",
+  "collected_at": "2026-07-15T10:49:44.861439+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 8,
+  "item_count": 7,
   "items": [
     {
       "source": "steam",
@@ -63,7 +63,7 @@
       "voted_up": true,
       "review": "Game so good, It makes you forget that It's a gacha (sin in the eyes of God) (:",
       "timestamp_created": 1784071635,
-      "playtime_forever": 5759
+      "playtime_forever": 5781
     },
     {
       "source": "steam",
@@ -109,21 +109,6 @@
       "review": "加油，5571你的服务器优化越来越屎了，",
       "timestamp_created": 1784037933,
       "playtime_forever": 2133
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-14T10:44:50+00:00",
-      "lang": "schinese",
-      "title": "[正面] 挺不错的",
-      "summary": "挺不错的",
-      "url": "https://steamcommunity.com/profiles/76561199481132294/recommended/3052450",
-      "author": "76561199481132294",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "挺不错的",
-      "timestamp_created": 1784025890,
-      "playtime_forever": 2756
     }
   ]
 }

@@ -1,8 +1,8 @@
 {
   "date": "2026-07-15",
-  "archived_at": "2026-07-15T08:07:25.685866+00:00",
+  "archived_at": "2026-07-15T10:50:30.871102+00:00",
   "source": "bilibili",
-  "item_count": 10,
+  "item_count": 11,
   "items": [
     {
       "title": "【杂谈】鸟弟是下坡路么？波吕克斯抽不抽",
@@ -230,6 +230,29 @@
         "danmaku": 0
       },
       "media_url": "https://i0.hdslb.com/bfs/archive/89399cb12bceab5acbdf2b9221c0b399eacecc9a.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "《忘却前夜》第二章以蜡像之名P2",
+      "summary": "",
+      "source": "bilibili",
+      "time": "2026-07-15T09:29:00+00:00",
+      "url": "https://www.bilibili.com/video/BV1B8Nj6sEw5",
+      "engagement": 2,
+      "is_hot": false,
+      "author": "不可燃抹茶果冻",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 2,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/549c6daf42f836f4adf2a14a32d7544c46fa6641.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

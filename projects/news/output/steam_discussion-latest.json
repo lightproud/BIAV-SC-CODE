@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-15T08:06:40.838369+00:00",
+  "collected_at": "2026-07-15T10:49:44.861439+00:00",
   "source": "steam_discussion",
   "data_layer": "output",
-  "item_count": 2,
+  "item_count": 1,
   "items": [
     {
       "source": "steam_discussion",
@@ -14,16 +14,6 @@
       "url": "https://steamcommunity.com/app/3052450/discussions/0/577173082186280698/",
       "author": "Uncanny_Vorgor",
       "engagement": 1
-    },
-    {
-      "source": "steam_discussion",
-      "time": "2026-07-14T09:19:36+00:00",
-      "lang": "en",
-      "title": "[Steam论坛] 300 silver invitation code 56LJF5ZB5P",
-      "summary": "56LJF5ZB5P\nEnter it in the new Mythag Invite / Bind Invitation tab on the left. (two person symbol next to the mail symbol)\nThanks!",
-      "url": "https://steamcommunity.com/app/3052450/discussions/0/577173082186274337/",
-      "author": "coconutnut",
-      "engagement": 0
     }
   ]
 }
