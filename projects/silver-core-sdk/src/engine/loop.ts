@@ -1552,7 +1552,20 @@ export async function* runAgentLoop(
       // assistant message already carried the raw content).
       const naturalEndContent = assistant.content.filter((b) => b.type !== 'tool_use');
       pushAssistant(naturalEndContent, assistant.model);
-      if (deps.hooks.hasHooks('Stop')) {
+      // ROOT LOOP ONLY: the Stop hook fires exclusively for the root loop; a
+      // subagent's natural end is governed by SubagentStop (runtime-level). The
+      // gate wraps the hook's INVOCATION, not merely its 'block' decision
+      // (audit 2026-07-15): a Stop hook such as /goal's onStop MUTATES
+      // session-goal state as a side effect (clears the goal on "met"/
+      // "impossible", bumps the block counter on "not met", and spends an
+      // evaluator LLM call). Running it on a CHILD's transcript would let any
+      // subagent's natural end clear or pollute the ROOT goal — the very
+      // conversation-loses-stop-state bug this gate must prevent. Guarding only
+      // the block branch (the pre-fix shape) stopped children being trapped but
+      // left those side effects leaking. parentToolUseId marks child loops.
+      const isRootLoop =
+        config.parentToolUseId === undefined || config.parentToolUseId === null;
+      if (isRootLoop && deps.hooks.hasHooks('Stop')) {
         const stopAgg = await deps.hooks.run(
           'Stop',
           { ...baseHookFields, hook_event_name: 'Stop', stop_hook_active: stopHookActive },
@@ -1565,12 +1578,8 @@ export async function* runAgentLoop(
         // PREVENTS the stop — the reason is fed back as a user turn and the
         // loop runs another assistant turn (the /goal goal-gating primitive).
         // `continue:false` forces the stop and WINS over block (official
-        // precedence). ROOT LOOP ONLY: a subagent's natural end is governed
-        // by SubagentStop (runtime-level), so a goal-gate registered on Stop
-        // must not capture every child (parentToolUseId marks child loops).
-        const isRootLoop =
-          config.parentToolUseId === undefined || config.parentToolUseId === null;
-        if (isRootLoop && stopAgg.continue && stopAgg.decision === 'deny') {
+        // precedence).
+        if (stopAgg.continue && stopAgg.decision === 'deny') {
           const reason =
             stopAgg.decisionReason ?? 'Stop hook blocked stopping (no reason given)';
           deps.debug(`engine: Stop hook blocked the stop; continuing (${reason})`);
