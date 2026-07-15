@@ -16,6 +16,35 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.61.0 — 2026-07-15
+
+New capability: **MultiEdit** — several exact-string replacements to ONE file
+in a single atomic tool step (`src/tools/multiedit.ts`), registered as a
+default built-in.
+
+- Collapses the `Read → Edit → Edit → …` tool loop into `Read → MultiEdit`
+  for same-file changes: fewer tool round-trips, and each avoided round-trip
+  also avoids re-feeding a tool result into context.
+- Edits apply SEQUENTIALLY on one in-memory snapshot — edit N sees edit
+  N-1's result — so an intra-file dependent chain (rename a symbol, then edit
+  a line that now holds the new name) is one call. Cross-file edits and edits
+  whose text depends on an intervening tool result still use separate Edit
+  calls.
+- ATOMIC: any edit whose `old_string` is not found, or is non-unique without
+  `replace_all`, aborts the whole call — nothing is written and the failing
+  edit is named by index. A single pre-image (the original text, captured
+  before any edit) is recorded for `Query.rewindFiles()`, so a rewind
+  restores the true prior state, never a half-applied one.
+- Same Read-before-write gate as Edit/Write; registers the path on success.
+- Description is SDK-original (`faithful:false`): the official MultiEdit is
+  not in the reproduction archive, so the text is authored for the semantics
+  this SDK ships, not reproduced. `MultiEdit` removed from the red-line
+  unshipped-tool denylist (it now ships).
+- Coverage: `tests/multiedit.test.ts` (13 cases — sequential application,
+  intra-file dependent chain, `replace_all`, atomic rollback on a mid-batch
+  failure, read-before-write gate, single-pre-image rewind, binary/abort/
+  missing-file/empty-array guards).
+
 ## 0.60.1 — 2026-07-15
 
 Bug fix — a subagent's natural end no longer clears or pollutes the root

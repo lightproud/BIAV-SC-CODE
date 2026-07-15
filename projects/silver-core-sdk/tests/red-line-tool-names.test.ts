@@ -46,7 +46,8 @@ import {
 const UNSHIPPED_TOOL_TOKENS = [
   'NotebookEdit',
   'NotebookRead',
-  'MultiEdit',
+  // 'MultiEdit' removed 2026-07-15: the tool now ships (src/tools/multiedit.ts),
+  // a same-file batch-edit sibling of Edit with an SDK-original description.
   // 'ExitPlanMode' removed 2026-07-05 (B4b): the tool now ships (src/tools/exitplanmode.ts).
   'ExitWorktree',
   // 'TaskStop' removed 2026-07-08: the tool now ships (src/tools/shells.ts);
