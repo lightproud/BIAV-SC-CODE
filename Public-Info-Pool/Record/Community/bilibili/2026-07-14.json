@@ -1,8 +1,8 @@
 {
   "date": "2026-07-14",
-  "archived_at": "2026-07-14T21:58:18.717392+00:00",
+  "archived_at": "2026-07-15T02:12:40.474143+00:00",
   "source": "bilibili",
-  "item_count": 15,
+  "item_count": 19,
   "items": [
     {
       "title": "【忘却前夜】群弥利亚姆，正在发动普池正位之刻",
@@ -74,6 +74,29 @@
       "platform_region": "cn"
     },
     {
+      "title": "杜饿不是蛆…2t融灾2-5",
+      "summary": "肚饿不是区。。。。",
+      "source": "bilibili",
+      "time": "2026-07-14T03:33:41+00:00",
+      "url": "https://www.bilibili.com/video/BV1P6NQ6vEB6",
+      "engagement": 154,
+      "is_hot": false,
+      "author": "Abs-K-",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 154,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/a0e14e9699b6889aabd2f98e123e1b06aaf09ec4.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
       "title": "忘却前夜 拉蒙娜打乐园 癫狂列车",
       "summary": "试着用了不怎么熟练的阿拉拐\n\n你问我的银钥套组在哪里？\n我忘带了（\n\n背景音乐：\nRigël Theatre - &quot;Lurie&quot;\nARForest - &quot;The Unattended&quot;",
       "source": "bilibili",
@@ -138,6 +161,75 @@
         "danmaku": 0
       },
       "media_url": "https://i2.hdslb.com/bfs/archive/02602eddc53e583710e9401f702302d1af8411bb.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "【忘却前夜】三相池抽卡录屏",
+      "summary": "运气还可以。",
+      "source": "bilibili",
+      "time": "2026-07-14T11:08:17+00:00",
+      "url": "https://www.bilibili.com/video/BV1AoNt6iE95",
+      "engagement": 109,
+      "is_hot": false,
+      "author": "SherbetWhite",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 109,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/853ad5dbfbff225c99cda497e765dfdbf25d8f8e.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "忘却前夜 打得很难看的奥尔拉C 癫狂列车仰望星空派",
+      "summary": "因为找不到奥尔拉专造道心破碎\n其实就是在乱打（\n只保证了伤害有在叠 其他一律没在理\n\n背景音乐：love solfege - &quot;Ninna Nanna&quot;",
+      "source": "bilibili",
+      "time": "2026-07-14T14:39:03+00:00",
+      "url": "https://www.bilibili.com/video/BV17jNh6hEWS",
+      "engagement": 107,
+      "is_hot": false,
+      "author": "夢遊遊遊遊",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 107,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/52fd9ef03ae3480fa522b2351d212b50556c4b12.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "【忘却前夜】中配水船带两常驻融灾禁区3-5「海嗣神母」",
+      "summary": "",
+      "source": "bilibili",
+      "time": "2026-07-14T13:56:53+00:00",
+      "url": "https://www.bilibili.com/video/BV1AnNt6wEgQ",
+      "engagement": 106,
+      "is_hot": false,
+      "author": "小肠在蠕动",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 106,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/89998ee573b86db3a734dc1068ccffd87d247eba.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

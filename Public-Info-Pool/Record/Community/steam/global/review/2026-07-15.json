@@ -1,8 +1,8 @@
 {
   "date": "2026-07-15",
-  "archived_at": "2026-07-14T21:58:18.815503+00:00",
+  "archived_at": "2026-07-15T02:12:40.540517+00:00",
   "source": "steam",
-  "item_count": 2,
+  "item_count": 3,
   "items": [
     {
       "title": "[正面] на любителя, что то на подобии мортал комбат и ген...",
@@ -46,6 +46,30 @@
         "playtime_forever": 643,
         "votes_up": 0,
         "timestamp_created": 1784055009
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Game so good, It makes you forget that It's a gach...",
+      "summary": "Game so good, It makes you forget that It's a gacha (sin in the eyes of God) (:",
+      "source": "steam_review",
+      "time": "2026-07-14T23:27:15+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198193804166/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198193804166",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 5759,
+        "votes_up": 0,
+        "timestamp_created": 1784071635
       },
       "region": "global",
       "archive_subtype": "review",

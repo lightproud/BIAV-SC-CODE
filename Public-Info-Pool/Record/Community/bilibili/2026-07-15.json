@@ -1,8 +1,8 @@
 {
   "date": "2026-07-15",
-  "archived_at": "2026-07-14T21:58:18.718083+00:00",
+  "archived_at": "2026-07-15T02:12:40.474797+00:00",
   "source": "bilibili",
-  "item_count": 4,
+  "item_count": 6,
   "items": [
     {
       "title": "【杂谈】鸟弟是下坡路么？波吕克斯抽不抽",
@@ -23,6 +23,29 @@
         "danmaku": 2
       },
       "media_url": "https://i2.hdslb.com/bfs/archive/658c944d5a61f8005965cbf2906512726d4cd16d.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "批发的她无尽的哈！究竟是鱼性的扭曲还是代码的沦丧…",
+      "summary": "记录群友善意开发bug的猎奇事迹，结束了pvp群罪恶的一生…\n  └ 琉璃_90 (2赞): @一般杂鱼 來看\n  └ _double_double (1赞): 来支持鼠鼠了[打call]\n  └ 莱星Ligh (1赞): 有幸参演[doge]",
+      "source": "bilibili",
+      "time": "2026-07-14T18:13:21+00:00",
+      "url": "https://www.bilibili.com/video/BV1aPN86SE73",
+      "engagement": 190,
+      "is_hot": false,
+      "author": "外星昆布鼠",
+      "tags": [
+        "桌游棋牌"
+      ],
+      "metadata": {
+        "play": 184,
+        "comment_count": 6,
+        "comments_fetched": 3,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/95e68cc584ab2673e78e960c2b31bb4ff60e9a02.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
@@ -69,6 +92,29 @@
         "danmaku": 0
       },
       "media_url": "https://i2.hdslb.com/bfs/archive/454620f77374861e6805a1a6c1a92cf63a2dfa92.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "【鸣布织】小金龙看忘却前夜，慨念pv，皇帝的夜宴。",
+      "summary": "@鸣布织\n  └ 安安家的切片将军 (0赞): 关注鸣布织，关注up主喵@鸣布织 【鸣布织的个人空间-哔哩哔哩】 https://b23.tv/Dyei9eh",
+      "source": "bilibili",
+      "time": "2026-07-15T00:10:42+00:00",
+      "url": "https://www.bilibili.com/video/BV1WtNe6SEks",
+      "engagement": 23,
+      "is_hot": false,
+      "author": "安安家的切片将军",
+      "tags": [
+        "特摄"
+      ],
+      "metadata": {
+        "play": 22,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/91f92db88a8764aa1571306f7978f1d749e90727.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

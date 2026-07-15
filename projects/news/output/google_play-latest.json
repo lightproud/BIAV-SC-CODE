@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-14T21:57:28.851744+00:00",
+  "collected_at": "2026-07-15T02:11:47.672749+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 111,
+  "item_count": 110,
   "items": [
     {
       "source": "google_play",
@@ -1103,16 +1103,6 @@
       "summary": "戦闘手応え、ガチャ仕様、ストーリー◯",
       "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-a2cd690b-32c9-4485-8d10-4370fff8b9bd",
       "author": "rarara peas",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-06-15T00:59:17",
-      "lang": "ja",
-      "title": "[Google Play 好评] ★5 過酷な物語にほんの少しの光が味わい深い",
-      "summary": "過酷な物語にほんの少しの光が味わい深い",
-      "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-d9fcb19d-5b45-417e-a927-5e56c4cf4c2c",
-      "author": "御先狐",
       "engagement": 0
     }
   ]
