@@ -4,7 +4,7 @@ title: "feature_unlock"
 description: "FeatureUnlock.lua (runtime memory extraction) · total_features=318 · 生成 2026-04-25"
 resource: "/projects/wiki/data/processed/feature_unlock.json"
 tags: ["data_layer:curated", "unpacked-bootstrap", "domain:gameplay"]
-timestamp: "2026-07-14"
+timestamp: "2026-07-15"
 ---
 
 # 指针概念

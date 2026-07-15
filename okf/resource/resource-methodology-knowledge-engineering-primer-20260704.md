@@ -4,7 +4,7 @@ title: "knowledge-engineering-primer-20260704"
 description: "「什么都接上了、但没有结构」不是黑池特有。银芯 2026 上半年踩过同型的坑：（格式：md）"
 resource: "/Public-Info-Pool/Resource/methodology/knowledge-engineering-primer-20260704.md"
 tags: ["data_layer:curated", "deliverable", "topic:methodology"]
-timestamp: "2026-07-14"
+timestamp: "2026-07-15"
 ---
 
 # 指针概念

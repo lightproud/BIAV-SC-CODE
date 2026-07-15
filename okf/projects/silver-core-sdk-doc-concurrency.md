@@ -4,7 +4,7 @@ title: "silver-core-sdk CONCURRENCY"
 description: "The SDK supports true parallelism at three levels: **many conversations** over"
 resource: "/projects/silver-core-sdk/docs/CONCURRENCY.md"
 tags: ["data_layer:curated", "design-doc", "sub-project:silver-core-sdk"]
-timestamp: "2026-07-14"
+timestamp: "2026-07-15"
 ---
 
 # 指针概念

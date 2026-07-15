@@ -4,7 +4,7 @@ title: "silver-core-sdk OPENAI-PROTOCOL"
 description: "The SDK can drive an **OpenAI-compatible Chat Completions endpoint** instead of"
 resource: "/projects/silver-core-sdk/docs/OPENAI-PROTOCOL.md"
 tags: ["data_layer:curated", "design-doc", "sub-project:silver-core-sdk"]
-timestamp: "2026-07-14"
+timestamp: "2026-07-15"
 ---
 
 # 指针概念

@@ -4,7 +4,7 @@ title: "bpt-desktop-builtin-commands-batch1-20260711"
 description: "（`memory/decisions.md` 同日条）+ 实施方案二期 M3 内建源前置件（格式：md）"
 resource: "/Public-Info-Pool/Resource/repo-engineering/bpt-desktop-builtin-commands-batch1-20260711.md"
 tags: ["data_layer:curated", "deliverable", "topic:repo-engineering"]
-timestamp: "2026-07-14"
+timestamp: "2026-07-15"
 ---
 
 # 指针概念

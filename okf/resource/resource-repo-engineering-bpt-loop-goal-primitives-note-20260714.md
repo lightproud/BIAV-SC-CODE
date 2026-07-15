@@ -4,7 +4,7 @@ title: "bpt-loop-goal-primitives-note-20260714"
 description: "2026-07-14 缺口调查确认：BPT 中 `/loop 10m <任务>` 未被任何层解释——GUI 未注册（格式：md）"
 resource: "/Public-Info-Pool/Resource/repo-engineering/bpt-loop-goal-primitives-note-20260714.md"
 tags: ["data_layer:curated", "deliverable", "topic:repo-engineering"]
-timestamp: "2026-07-14"
+timestamp: "2026-07-15"
 ---
 
 # 指针概念

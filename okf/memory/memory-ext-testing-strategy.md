@@ -4,7 +4,7 @@ title: "银芯测试策略 — 分层质量护栏"
 description: "银芯的测试不靠单一数字护城。三层护栏各管一件事，互相补盲："
 resource: "/memory/testing-strategy.md"
 tags: ["memory", "data_layer:curated"]
-timestamp: "2026-07-14"
+timestamp: "2026-07-15"
 ---
 
 # 记忆层指针

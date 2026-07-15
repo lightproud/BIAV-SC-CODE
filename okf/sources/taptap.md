@@ -1,10 +1,10 @@
 ---
 type: "dataset"
 title: "taptap 社区数据源"
-description: "taptap 平台采集档案，全量 11 条，健康度 active。"
+description: "taptap 平台采集档案，全量 12 条，健康度 active。"
 resource: "/Public-Info-Pool/Record/Community/taptap/cn/post/"
 tags: ["data_layer:full_archive", "platform:taptap", "health:active"]
-timestamp: "2026-07-14T08:02:30.857768+00:00"
+timestamp: "2026-07-15T08:07:26.780275+00:00"
 ---
 
 # 数据层指针
@@ -16,9 +16,9 @@ timestamp: "2026-07-14T08:02:30.857768+00:00"
 | 平台 | taptap |
 | 全量档案层（本体） | `Public-Info-Pool/Record/Community/taptap/cn/post/` |
 | 输出展示层（抽样） | `projects/news/output/taptap-latest.json` |
-| 全量条数 | 11 |
+| 全量条数 | 12 |
 | 采集健康度 | active |
-| 最后成功 | 2026-07-13 |
+| 最后成功 | 2026-07-15 |
 
 # 数据纪律（硬约束）
 
