@@ -214,6 +214,10 @@ export class SdkMcpConnection {
     return [];
   }
 
+  async readResourceDir(_uri: string, _signal?: AbortSignal): Promise<McpResource[]> {
+    return [];
+  }
+
   /** In-process: nothing to release. */
   async close(): Promise<void> {
     // Intentionally empty.

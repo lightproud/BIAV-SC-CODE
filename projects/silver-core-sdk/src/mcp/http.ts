@@ -166,6 +166,13 @@ export class HttpMcpConnection {
     return parseResourceContents(result);
   }
 
+  /** resources/directory/read: direct children of a directory resource. Errors
+   *  propagate (a server without directory support rejects the request). */
+  async readResourceDir(uri: string, signal?: AbortSignal): Promise<McpResource[]> {
+    const result = await this.rpcRequest('resources/directory/read', { uri }, signal);
+    return parseResourcesList(result);
+  }
+
   /** Cancel all in-flight requests; further calls fail with AbortError. */
   async close(): Promise<void> {
     this.closeController.abort();

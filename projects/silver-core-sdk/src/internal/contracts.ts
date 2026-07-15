@@ -172,6 +172,8 @@ export type ToolContext = {
   mcpResources?: {
     list(server: string | undefined, signal: AbortSignal): Promise<McpResource[]>;
     read(server: string, uri: string, signal: AbortSignal): Promise<McpResourceContent[]>;
+    /** List the direct children of a directory resource (resources/directory/read). */
+    readDir(server: string, uri: string, signal: AbortSignal): Promise<McpResource[]>;
   };
   /** v0.2 WebFetch escape hatch for localhost/private hosts (default false). */
   allowPrivateWebFetch?: boolean;
@@ -484,6 +486,8 @@ export interface McpRegistry {
   listResources(server: string | undefined, signal: AbortSignal): Promise<McpResource[]>;
   /** Read one resource's contents from a named server. */
   readResource(server: string, uri: string, signal: AbortSignal): Promise<McpResourceContent[]>;
+  /** List the direct children of a directory resource on a named server. */
+  readResourceDir(server: string, uri: string, signal: AbortSignal): Promise<McpResource[]>;
   reconnect(serverName: string): Promise<void>;
   setEnabled(serverName: string, enabled: boolean): void;
   /** Replace the live server set at runtime; callers read statuses() for

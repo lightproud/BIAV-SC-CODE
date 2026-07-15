@@ -16,7 +16,11 @@ import { webFetchTool, readCappedBody } from '../src/tools/webfetch.js';
 import { webSearchTool } from '../src/tools/websearch.js';
 import { askUserQuestionTool } from '../src/tools/askuserquestion.js';
 import { todoWriteTool } from '../src/tools/todo.js';
-import { listMcpResourcesTool, readMcpResourceTool } from '../src/tools/resources.js';
+import {
+  listMcpResourcesTool,
+  readMcpResourceTool,
+  readMcpResourceDirTool,
+} from '../src/tools/resources.js';
 import {
   resolveElicitation,
   parseElicitationParams,
@@ -820,6 +824,58 @@ describe('ListMcpResourcesTool / ReadMcpResourceTool', () => {
     expect(list.isError).toBe(true);
     const read = await readMcpResourceTool.execute({ server: 's', uri: 'u' }, makeCtx());
     expect(read.isError).toBe(true);
+    const dir = await readMcpResourceDirTool.execute({ server: 's', uri: 'u' }, makeCtx());
+    expect(dir.isError).toBe(true);
+  });
+
+  it('lists a directory resource\'s direct children via ctx.mcpResources.readDir', async () => {
+    const ctx = makeCtx({
+      mcpResources: {
+        list: async () => [],
+        read: async () => [],
+        readDir: async (server, uri) => [
+          { uri: `${uri}child.txt`, name: 'child.txt', server },
+          { uri: `${uri}sub/`, name: 'sub', mimeType: 'inode/directory', server },
+        ],
+      },
+    });
+    const res = await readMcpResourceDirTool.execute(
+      { server: 'srv1', uri: 'file:///dir/' },
+      ctx,
+    );
+    expect(res.isError).toBeUndefined();
+    expect(JSON.parse(res.content as string)).toEqual([
+      { uri: 'file:///dir/child.txt', name: 'child.txt', server: 'srv1' },
+      { uri: 'file:///dir/sub/', name: 'sub', mimeType: 'inode/directory', server: 'srv1' },
+    ]);
+  });
+
+  it('surfaces a server error (e.g. no directory support) as an error result', async () => {
+    const ctx = makeCtx({
+      mcpResources: {
+        list: async () => [],
+        read: async () => [],
+        readDir: async () => {
+          throw new Error('server does not support directory listing');
+        },
+      },
+    });
+    const res = await readMcpResourceDirTool.execute(
+      { server: 'srv1', uri: 'file:///dir/' },
+      ctx,
+    );
+    expect(res.isError).toBe(true);
+    expect(String(res.content)).toMatch(/directory listing/);
+  });
+
+  it('validates ReadMcpResourceDirTool required args', async () => {
+    const ctx = makeCtx({
+      mcpResources: { list: async () => [], read: async () => [], readDir: async () => [] },
+    });
+    const noServer = await readMcpResourceDirTool.execute({ uri: 'u' }, ctx);
+    expect(noServer.isError).toBe(true);
+    const noUri = await readMcpResourceDirTool.execute({ server: 's' }, ctx);
+    expect(noUri.isError).toBe(true);
   });
 
   it('validates ReadMcpResourceTool required args', async () => {

@@ -44,10 +44,11 @@ import { webSearchTool } from './websearch.js';
 import { askUserQuestionTool } from './askuserquestion.js';
 import { todoWriteTool } from './todo.js';
 import { taskTools } from './task.js';
-import { listMcpResourcesTool, readMcpResourceTool } from './resources.js';
+import { listMcpResourcesTool, readMcpResourceTool, readMcpResourceDirTool } from './resources.js';
 import { bashOutputTool, killShellTool, taskOutputTool, taskStopTool } from './shells.js';
 import { monitorTool } from './monitor.js';
 import { exitPlanModeTool } from './exitplanmode.js';
+import { enterPlanModeTool } from './enterplanmode.js';
 import { enterWorktreeTool } from './enterworktree.js';
 import { workflowTool } from './workflow.js';
 import { sendMessageTool } from './sendmessage.js';
@@ -86,6 +87,8 @@ export function createBuiltinTools(cfg?: {
     ...(legacyTodo ? [todoWriteTool] : taskTools),
     listMcpResourcesTool,
     readMcpResourceTool,
+    readMcpResourceDirTool,
+    enterPlanModeTool,
     exitPlanModeTool,
     enterWorktreeTool,
     workflowTool,
