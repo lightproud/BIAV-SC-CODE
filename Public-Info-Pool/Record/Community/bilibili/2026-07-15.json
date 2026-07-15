@@ -1,8 +1,8 @@
 {
   "date": "2026-07-15",
-  "archived_at": "2026-07-15T05:31:30.934846+00:00",
+  "archived_at": "2026-07-15T08:07:25.685866+00:00",
   "source": "bilibili",
-  "item_count": 7,
+  "item_count": 10,
   "items": [
     {
       "title": "【杂谈】鸟弟是下坡路么？波吕克斯抽不抽",
@@ -46,6 +46,75 @@
         "danmaku": 0
       },
       "media_url": "https://i2.hdslb.com/bfs/archive/95e68cc584ab2673e78e960c2b31bb4ff60e9a02.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "主！",
+      "summary": "-\n  └ AAA木柴批发 (3赞): 感觉最近要猝死了，做了配饰和好多触手\n不过，主！图鲁好萌！相机跟本拍不出来！做到一半疯狂给朋友拍视频[打call]\n感觉如果做成冰条线大软糖，就可以细化一下触手[呲牙]，会很好rua吧[喜欢][喜欢]\n最近河南的天，像是赛尔号终于到无尽能源附近了，热到爆炸，奶奶都开始开空调了。\n还有就是图可以自己站着！不愧是主！\n  └ 椒盐兔头酱 (2赞): 我们抹茶小蛋糕是极好的[星星眼]\n陪一个自己做的掐丝\n  └ 九璃樱落 (0赞): 图图好萌我一直啃",
+      "source": "bilibili",
+      "time": "2026-07-14T21:43:08+00:00",
+      "url": "https://www.bilibili.com/video/BV1iZNh6aE4p",
+      "engagement": 173,
+      "is_hot": false,
+      "author": "AAA木柴批发",
+      "tags": [
+        "手工"
+      ],
+      "metadata": {
+        "play": 167,
+        "comment_count": 6,
+        "comments_fetched": 3,
+        "danmaku": 1
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/204178e7a04c70dae5a8cf2ccbf0b29eee4b4d7d.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "【忘却前夜】道中攻略——血肉双鸟",
+      "summary": "-\n  └ 秋萧雁羽 (2赞): 最近在群里偷师了一个理解，鸟哥的光合祭礼洗三银钥，命轮带墨菲专，可以cos银钥位",
+      "source": "bilibili",
+      "time": "2026-07-15T05:44:06+00:00",
+      "url": "https://www.bilibili.com/video/BV18zNv6wEmS",
+      "engagement": 165,
+      "is_hot": false,
+      "author": "文雪枫",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 163,
+        "comment_count": 2,
+        "comments_fetched": 1,
+        "danmaku": 1
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/c4044fbeaf6e9b7766621ff0a7fa23cea2af8fe1.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "【忘却前夜】拉蒙娜的异格动画去哪了？",
+      "summary": "└ 月面宙返_DarkSide (1赞): 各个有动态背景的角色的动画也通通没了，还掉帧也没了\n  └ 双酮shorty (1赞): [惊讶]我想起来我有20银芯没领，等我回弥萨格大学看一下",
+      "source": "bilibili",
+      "time": "2026-07-15T01:22:54+00:00",
+      "url": "https://www.bilibili.com/video/BV1dPNe6KEJf",
+      "engagement": 154,
+      "is_hot": false,
+      "author": "月面宙返_DarkSide",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 152,
+        "comment_count": 2,
+        "comments_fetched": 2,
+        "danmaku": 0
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/209695f264b2c6fd8b89e177b934f741e36d5db5.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

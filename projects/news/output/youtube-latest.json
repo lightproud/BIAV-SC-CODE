@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-15T05:30:41.479883+00:00",
+  "collected_at": "2026-07-15T08:06:40.838369+00:00",
   "source": "youtube",
   "data_layer": "output",
-  "item_count": 19,
+  "item_count": 18,
   "items": [
     {
       "source": "youtube",
@@ -13,7 +13,7 @@
       "summary": "",
       "url": "https://www.youtube.com/watch?v=ehDsWji4fOU",
       "author": "AnjutheMage",
-      "engagement": 1060,
+      "engagement": 1061,
       "media_url": "https://i.ytimg.com/vi/ehDsWji4fOU/hqdefault.jpg",
       "content_type": "video"
     },
@@ -25,8 +25,20 @@
       "summary": "https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord ...",
       "url": "https://www.youtube.com/watch?v=HBwe85_GExA",
       "author": "Flares117",
-      "engagement": 712,
+      "engagement": 753,
       "media_url": "https://i.ytimg.com/vi/HBwe85_GExA/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-07-14T12:15:05Z",
+      "lang": "",
+      "title": "『忘却前夜/対人戦』１コストで４４ダメージ！？　お得な火力編成！『ゲーム実況』",
+      "summary": "『忘却前夜』オンラインプレイヤーとの対戦動画です！ 今回は動画で初めてダフォダイルさんを紹介していきます！ ２コストで、 ...",
+      "url": "https://www.youtube.com/watch?v=8JV7EpweySo",
+      "author": "薄めの『ゆゆ』",
+      "engagement": 75,
+      "media_url": "https://i.ytimg.com/vi/8JV7EpweySo/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -43,25 +55,13 @@
     },
     {
       "source": "youtube",
-      "time": "2026-07-14T12:15:05Z",
-      "lang": "",
-      "title": "『忘却前夜/対人戦』１コストで４４ダメージ！？　お得な火力編成！『ゲーム実況』",
-      "summary": "『忘却前夜』オンラインプレイヤーとの対戦動画です！ 今回は動画で初めてダフォダイルさんを紹介していきます！ ２コストで、 ...",
-      "url": "https://www.youtube.com/watch?v=8JV7EpweySo",
-      "author": "薄めの『ゆゆ』",
-      "engagement": 58,
-      "media_url": "https://i.ytimg.com/vi/8JV7EpweySo/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
       "time": "2026-07-14T09:53:25Z",
       "lang": "",
       "title": "Bad Baddies be BAD! | Morimens: Ark 2 - CH4",
       "summary": "Morimens until I'm KoG TTV: https://www.twitch.tv/lowlivve Disc: https://discord.gg/KWB3yD6HeW #morimens #忘却前夜#忘卻前夜.",
       "url": "https://www.youtube.com/watch?v=k1rWJ4kmu2w",
       "author": "LowLivve",
-      "engagement": 32,
+      "engagement": 33,
       "media_url": "https://i.ytimg.com/vi/k1rWJ4kmu2w/hqdefault.jpg",
       "content_type": "video"
     },
@@ -97,7 +97,7 @@
       "summary": "I absolutely love this game and it's OST, but couldn't find it anywhere on YouTube so I took it upon myself to upload some themes.",
       "url": "https://www.youtube.com/watch?v=51-tqDTrits",
       "author": "SeaLily",
-      "engagement": 19,
+      "engagement": 20,
       "media_url": "https://i.ytimg.com/vi/51-tqDTrits/hqdefault.jpg",
       "content_type": "video"
     },
@@ -109,8 +109,20 @@
       "summary": "字幕で説明してます。 途中は2倍速とかでもいいかも 画質悪くてすみません.",
       "url": "https://www.youtube.com/watch?v=C0DpZo0pynA",
       "author": "001新規作成",
-      "engagement": 16,
+      "engagement": 19,
       "media_url": "https://i.ytimg.com/vi/C0DpZo0pynA/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-07-14T09:42:53Z",
+      "lang": "",
+      "title": "Re:Keeper, Awakening Life in Another Boat! | Morimens: Ark 2 - CH4",
+      "summary": "Morimens until I'm KoG TTV: https://www.twitch.tv/lowlivve Disc: https://discord.gg/KWB3yD6HeW #morimens #忘却前夜 #忘卻 ...",
+      "url": "https://www.youtube.com/watch?v=c5rUvgepTIg",
+      "author": "LowLivve",
+      "engagement": 17,
+      "media_url": "https://i.ytimg.com/vi/c5rUvgepTIg/hqdefault_live.jpg",
       "content_type": "video"
     },
     {
@@ -139,6 +151,18 @@
     },
     {
       "source": "youtube",
+      "time": "2026-07-14T14:08:56Z",
+      "lang": "",
+      "title": "Morimens OST- Run, Hide",
+      "summary": "I absolutely love this game and it's OST, but couldn't find it anywhere on YouTube so I took it upon myself to upload some themes.",
+      "url": "https://www.youtube.com/watch?v=qZ3MRiBoyFA",
+      "author": "SeaLily",
+      "engagement": 8,
+      "media_url": "https://i.ytimg.com/vi/qZ3MRiBoyFA/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
       "time": "2026-07-14T14:01:20Z",
       "lang": "",
       "title": "Morimens OST- Survivor’s Dirge",
@@ -151,18 +175,6 @@
     },
     {
       "source": "youtube",
-      "time": "2026-07-14T14:08:56Z",
-      "lang": "",
-      "title": "Morimens OST- Run, Hide",
-      "summary": "I absolutely love this game and it's OST, but couldn't find it anywhere on YouTube so I took it upon myself to upload some themes.",
-      "url": "https://www.youtube.com/watch?v=qZ3MRiBoyFA",
-      "author": "SeaLily",
-      "engagement": 7,
-      "media_url": "https://i.ytimg.com/vi/qZ3MRiBoyFA/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
       "time": "2026-07-14T14:14:05Z",
       "lang": "",
       "title": "Morimens OST- Old Souls",
@@ -171,30 +183,6 @@
       "author": "SeaLily",
       "engagement": 6,
       "media_url": "https://i.ytimg.com/vi/xTNEHgmdQuA/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-07-14T09:42:53Z",
-      "lang": "",
-      "title": "Re:Keeper, Awakening Life in Another Boat! | Morimens: Ark 2 - CH4",
-      "summary": "Morimens until I'm KoG TTV: https://www.twitch.tv/lowlivve Disc: https://discord.gg/KWB3yD6HeW #morimens #忘却前夜 #忘卻 ...",
-      "url": "https://www.youtube.com/watch?v=c5rUvgepTIg",
-      "author": "LowLivve",
-      "engagement": 6,
-      "media_url": "https://i.ytimg.com/vi/c5rUvgepTIg/hqdefault_live.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-07-14T07:27:34Z",
-      "lang": "",
-      "title": "The Dark Alley",
-      "summary": "Provided to YouTube by DistroKid The Dark Alley · B.I.A.V. Studio · B.I.A.V. Studio Morimens OST┊Castor EP: Eye of the Tempest ...",
-      "url": "https://www.youtube.com/watch?v=Ha2pFsQNHUY",
-      "author": "B.I.A.V. Studio - Topic",
-      "engagement": 6,
-      "media_url": "https://i.ytimg.com/vi/Ha2pFsQNHUY/hqdefault.jpg",
       "content_type": "video"
     },
     {

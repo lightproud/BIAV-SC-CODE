@@ -1,8 +1,8 @@
 {
   "date": "2026-07-14",
-  "archived_at": "2026-07-15T05:31:30.933980+00:00",
+  "archived_at": "2026-07-15T08:07:25.685019+00:00",
   "source": "bilibili",
-  "item_count": 19,
+  "item_count": 20,
   "items": [
     {
       "title": "【忘却前夜】群弥利亚姆，正在发动普池正位之刻",
@@ -115,6 +115,29 @@
         "danmaku": 0
       },
       "media_url": "https://i0.hdslb.com/bfs/archive/f9d514ff79c7ea7ba11f7e8305e47ac9b1d1838c.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "【忘却前夜】我三回合打败了万分大佬（上个版本）",
+      "summary": "-\n  └ 蔡怜儿 (0赞): 这咋做到的",
+      "source": "bilibili",
+      "time": "2026-07-14T13:38:23+00:00",
+      "url": "https://www.bilibili.com/video/BV1JxNt6oE5M",
+      "engagement": 117,
+      "is_hot": false,
+      "author": "一位惊鸿客",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 116,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/b96a4aabbb4e8a070f14fbea77d9f92391254251.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

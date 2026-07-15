@@ -1,8 +1,8 @@
 {
   "date": "2026-07-14",
-  "archived_at": "2026-07-15T05:31:31.123915+00:00",
+  "archived_at": "2026-07-15T08:07:25.866986+00:00",
   "source": "google_play",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "title": "[Google Play 差评] ★1 game macam apa ini?, mengapa di saat say",
@@ -16,6 +16,20 @@
       "tags": [],
       "lang": "id",
       "platform_region": "id",
+      "region": "global"
+    },
+    {
+      "title": "[Google Play 好评] ★5 actually kinda banger of a game I actual",
+      "summary": "actually kinda banger of a game I actually love this game. it's classic, the team is enthusiastic. they brought in human translators. it's a beautiful game.",
+      "source": "google_play",
+      "time": "2026-07-14T05:50:52",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-17e21c68-bf48-4236-b28b-506fd36f24bd",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "broccoli vegetable",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "us",
       "region": "global"
     }
   ],

@@ -1,6 +1,6 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-15T05:30:41.479883+00:00",
+  "collected_at": "2026-07-15T08:06:40.838369+00:00",
   "source": "google_play",
   "data_layer": "output",
   "item_count": 110,
@@ -197,16 +197,6 @@
     },
     {
       "source": "google_play",
-      "time": "2026-06-15T07:48:23",
-      "lang": "ja",
-      "title": "[Google Play 好评] ★5 ストーリーが深くて戦闘システムも面白いいいゲーム",
-      "summary": "ストーリーが深くて戦闘システムも面白いいいゲーム",
-      "url": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya&hl=ja#gp-5aa92f00-6b79-4f68-b924-a5233ee19e64",
-      "author": "ハルマルかも",
-      "engagement": 1
-    },
-    {
-      "source": "google_play",
       "time": "2026-07-08T07:29:28",
       "lang": "zh",
       "title": "[Google Play 好评] ★5 好歹比崩铁膨胀好一点",
@@ -233,6 +223,16 @@
       "summary": "觉得还行",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=zh_CN#gp-57f4f9db-558e-4842-b184-3a7e848970ad",
       "author": "元气豆芽（YQBean）",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-14T05:50:52",
+      "lang": "en",
+      "title": "[Google Play 好评] ★5 actually kinda banger of a game I actual",
+      "summary": "actually kinda banger of a game I actually love this game. it's classic, the team is enthusiastic. they brought in human translators. it's a beautiful game.",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-17e21c68-bf48-4236-b28b-506fd36f24bd",
+      "author": "broccoli vegetable",
       "engagement": 0
     },
     {
