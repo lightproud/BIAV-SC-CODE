@@ -16,6 +16,31 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.60.1 — 2026-07-15
+
+Bug fix — a subagent's natural end no longer clears or pollutes the root
+session goal (the 0.60.0 `/goal` primitive):
+
+- **Stop-hook root-only gate widened to the invocation itself**
+  (`src/engine/loop.ts`). A `/goal` goal-gate is a session-scoped Stop hook,
+  and a subagent's child loop shares the parent HookRunner. Pre-fix, the
+  `isRootLoop` gate guarded only the Stop hook's *block decision*, so a
+  child's natural end still *invoked* the Stop hook against the child's
+  transcript — and `session-goal.onStop` mutates state as a side effect
+  (clears the goal on a "met"/"impossible" verdict, bumps the block counter
+  on "not met", and spends an evaluator LLM call). The result: any subagent
+  finishing could clear the root goal, so the root conversation stopped even
+  though the goal was never actually met (a conversation-loses-stop-state
+  bug). The gate now wraps the whole Stop-hook block — child loops
+  (parentToolUseId set) skip Stop entirely and are governed by SubagentStop
+  at the runtime level, matching the module's documented intent. Also
+  eliminates the wasted evaluator call per subagent.
+- Regression coverage (`tests/stop-hook-block.test.ts`): a child loop never
+  invokes the Stop hook (`stopInputs` empty), and an end-to-end test with the
+  real `createSessionGoal` + a stubbed "met" evaluator confirms a child's
+  natural end leaves an armed root goal intact (both tests fail against the
+  pre-fix engine).
+
 ## 0.60.0 — 2026-07-14
 
 New capability: `/goal` session-goal primitive (`src/hooks/session-goal.ts`,
