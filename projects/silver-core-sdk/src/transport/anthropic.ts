@@ -1060,10 +1060,15 @@ const RETRY_AFTER_MAX_MS = 120_000;
 function parseRetryAfterMs(header: string | null): number | undefined {
   if (!header) return undefined;
   const trimmed = header.trim();
-  // delta-seconds form (the common case).
-  const seconds = Number(trimmed);
-  if (Number.isFinite(seconds) && seconds >= 0) {
-    return Math.min(seconds * 1_000, RETRY_AFTER_MAX_MS);
+  // delta-seconds form (the common case). Only a plain decimal qualifies:
+  // Number('') is 0 (not NaN), so a whitespace-only header would otherwise
+  // return 0 (retry immediately) instead of being ignored; Number() also
+  // over-accepts '0x1f'/'1e3'. A numeric-shape gate keeps those out.
+  if (/^\d+(?:\.\d+)?$/.test(trimmed)) {
+    const seconds = Number(trimmed);
+    if (Number.isFinite(seconds) && seconds >= 0) {
+      return Math.min(seconds * 1_000, RETRY_AFTER_MAX_MS);
+    }
   }
   // HTTP-date form (RFC 7231, e.g. "Wed, 21 Oct 2026 07:28:00 GMT") — proxies
   // and CDNs commonly emit it; the wait is the delta from now. Was previously

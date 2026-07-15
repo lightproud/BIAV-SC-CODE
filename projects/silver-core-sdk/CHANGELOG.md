@@ -16,6 +16,35 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.62.5 — 2026-07-15
+
+Bug-fix sweep, round 4 (final) — a cross-cutting sweep (numeric coercion,
+boundary/comparison, truthiness, parsing) plus a safe fix for one round-3
+deferral. The cross-cutting pass confirmed the codebase is exceptionally
+hardened against these classes: it surfaced ONE genuine defect (in a
+deliberately-mirrored twin), which is the signal to conclude the sweep.
+
+- **A whitespace-only Retry-After caused a zero-backoff retry**
+  (`transport/openai.ts`, `transport/anthropic.ts` — byte-aligned twins):
+  `Number('')` is 0, not NaN, so a header of only spaces passed the
+  `isFinite && >= 0` gate and returned 0 (retry immediately) instead of falling
+  through to be ignored (the doc's "anything else is ignored"). `Number()` also
+  over-accepted `'0x1f'`/`'1e3'`. Gated the delta-seconds branch behind a plain
+  decimal shape so malformed headers fall through to the HTTP-date parse and
+  ultimately `undefined` (exponential backoff), preserving every previously
+  blessed case (`' 5 '`, `'0'`, `'-1'`, `'soon'`, `null`).
+- **version-bump guard false-failed on a devDependency-only change**
+  (`scripts/check-version-bump.mjs`): the deps check pattern-matched a flat
+  patch where `"dependencies"` is also a substring of `"devDependencies"`, so
+  bumping a dev tool (vitest/typescript) with no src change forced an
+  unnecessary version bump. Now it compares the PARSED `dependencies` object of
+  the two revisions (via `git show`), ignoring devDependencies as the guard's
+  own docstring intends.
+
+Coverage: parseRetryAfterMs whitespace/hex/exponent regressions in
+`tests/openai-mutation-kills-r5.test.ts`; twin-drift test confirms the two
+transport arms stay byte-aligned. Full vitest green.
+
 ## 0.62.4 — 2026-07-15
 
 Bug-fix sweep, round 3 — a third audit (3 readers over query/session-manager/

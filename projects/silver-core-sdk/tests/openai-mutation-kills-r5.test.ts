@@ -402,4 +402,14 @@ describe('parseRetryAfterMs edges', () => {
     expect(parseRetryAfterMs('soon')).toBeUndefined();
     expect(parseRetryAfterMs(null)).toBeUndefined();
   });
+
+  it('bug-fix: a whitespace-only / non-decimal header is ignored, not a 0 backoff', () => {
+    // Number('') is 0, so a whitespace-only Retry-After previously returned 0
+    // (retry immediately) instead of falling through to be ignored.
+    expect(parseRetryAfterMs('   ')).toBeUndefined();
+    expect(parseRetryAfterMs('')).toBeUndefined();
+    // Number() over-accepts these hex/exponent forms; they are not delta-seconds.
+    expect(parseRetryAfterMs('0x1f')).toBeUndefined();
+    expect(parseRetryAfterMs('1e3')).toBeUndefined();
+  });
 });

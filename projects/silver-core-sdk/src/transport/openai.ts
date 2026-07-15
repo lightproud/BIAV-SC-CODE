@@ -1589,9 +1589,15 @@ const RETRY_AFTER_MAX_MS = 120_000;
 export function parseRetryAfterMs(header: string | null): number | undefined {
   if (!header) return undefined;
   const trimmed = header.trim();
-  const seconds = Number(trimmed);
-  if (Number.isFinite(seconds) && seconds >= 0) {
-    return Math.min(seconds * 1_000, RETRY_AFTER_MAX_MS);
+  // Only a plain decimal is the delta-seconds form. Number('') is 0 (not NaN),
+  // so a whitespace-only header would otherwise return 0 (retry immediately)
+  // instead of falling through to be ignored; Number() also over-accepts
+  // '0x1f'/'1e3'. A numeric-shape gate keeps those out of the seconds branch.
+  if (/^\d+(?:\.\d+)?$/.test(trimmed)) {
+    const seconds = Number(trimmed);
+    if (Number.isFinite(seconds) && seconds >= 0) {
+      return Math.min(seconds * 1_000, RETRY_AFTER_MAX_MS);
+    }
   }
   // HTTP-date form (RFC 7231) — proxies/CDNs emit it; previously dropped.
   const dateMs = Date.parse(trimmed);
