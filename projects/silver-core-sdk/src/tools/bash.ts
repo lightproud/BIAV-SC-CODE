@@ -82,12 +82,24 @@ function runShell(
     // detached:true puts the shell (or bwrap, which becomes the group leader)
     // in its own process group so termination can signal the WHOLE tree, not
     // just the direct child. --unshare-pid + SIGKILL escalation still reap it.
-    const child = spawn(plan.command, plan.args, {
-      cwd: ctx.cwd,
-      env: { ...(ctx.env as NodeJS.ProcessEnv), ...plan.envOverlay },
-      stdio: ['ignore', 'pipe', 'pipe'],
-      detached: true,
-    });
+    // spawn() throws SYNCHRONOUSLY for some invalid argv (e.g. a NUL byte in
+    // the command -> ERR_INVALID_ARG_VALUE) rather than emitting an async
+    // 'error' event, so it must be guarded or the throw rejects this executor
+    // and escapes runShell (which "never rejects"). The background path
+    // (shells.ts spawnBackground) already guards this; fold the throw into the
+    // existing spawn-error outcome so execute() surfaces a ConfigurationError.
+    let child: ReturnType<typeof spawn>;
+    try {
+      child = spawn(plan.command, plan.args, {
+        cwd: ctx.cwd,
+        env: { ...(ctx.env as NodeJS.ProcessEnv), ...plan.envOverlay },
+        stdio: ['ignore', 'pipe', 'pipe'],
+        detached: true,
+      });
+    } catch (error) {
+      resolve({ kind: 'spawn-error', error: error as NodeJS.ErrnoException });
+      return;
+    }
 
     const stdout = new CappedStream();
     const stderr = new CappedStream();

@@ -117,19 +117,25 @@ export class MessageAccumulator {
             if (block.type !== 'text') {
               throw this.mismatch(event.index, block.type, delta.type);
             }
-            block.text += delta.text;
+            // S3 (BPT audit 2026-07-07): a field-omitting / gateway-rewritten
+            // frame must be a no-op append, not `+= undefined` (which writes the
+            // literal "undefined"). The same guard as input_json_delta below.
+            block.text += delta.text ?? '';
             return;
           case 'thinking_delta':
             if (block.type !== 'thinking') {
               throw this.mismatch(event.index, block.type, delta.type);
             }
-            block.thinking += delta.thinking;
+            block.thinking += delta.thinking ?? '';
             return;
           case 'signature_delta':
             if (block.type !== 'thinking') {
               throw this.mismatch(event.index, block.type, delta.type);
             }
-            block.signature += delta.signature;
+            // A missing signature here is the WORST case: `+= undefined` poisons
+            // the thinking block's signature and the API 400s "Invalid signature"
+            // on every subsequent replay — the wedged conversation this guards.
+            block.signature += delta.signature ?? '';
             return;
           case 'input_json_delta':
             if (block.type !== 'tool_use') {

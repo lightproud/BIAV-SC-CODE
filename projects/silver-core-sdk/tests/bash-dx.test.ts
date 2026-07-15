@@ -249,3 +249,24 @@ describe('withPersistentState state-dir separator normalization (Windows)', () =
     expect(script).toContain('"$__bpt_state/env"');
   });
 });
+
+describe('bug-fix: a NUL byte in the command does not crash the tool', () => {
+  let nulDir: string;
+  beforeAll(async () => {
+    nulDir = await mkdtemp(path.join(os.tmpdir(), 'bash-nul-'));
+  });
+  afterAll(async () => {
+    await rm(nulDir, { recursive: true, force: true });
+  });
+
+  it('spawn throwing synchronously (NUL in argv) surfaces as ConfigurationError, not a raw TypeError', async () => {
+    // Node's spawn throws ERR_INVALID_ARG_VALUE synchronously for a NUL byte;
+    // the foreground path must fold that into the spawn-error -> ConfigurationError
+    // contract like the background path does, never reject with a bare TypeError.
+    const { ConfigurationError } = await import('../src/errors.js');
+    const nul = String.fromCharCode(0); // built at runtime; no control char in source
+    await expect(
+      bashTool.execute({ command: `echo hi${nul}there` }, makeCtx(nulDir)),
+    ).rejects.toBeInstanceOf(ConfigurationError);
+  });
+});

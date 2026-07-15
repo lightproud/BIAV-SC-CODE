@@ -16,6 +16,68 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.62.3 — 2026-07-15
+
+Bug-fix sweep, round 2 — a second, deeper audit (4 readers over the areas the
+first pass ranked below its cutoff) surfaced 14 candidates; 12 verified and
+fixed, 2 deferred (an OpenAI tool_call whose fragments split id-vs-index across
+deltas — a low-likelihood hot-path edge; and non-standard finish_reason
+aliases — speculative). One candidate that would have overridden the M-5
+explicit-finish_reason design was rejected on sight.
+
+Security / correctness:
+- **JSON-Schema validation walked the prototype chain**
+  (`engine/structured-output.ts`): property presence used the `in` operator, so
+  a schema property named like an `Object.prototype` member (`constructor`,
+  `toString`, `__proto__`, …) was always "present" — a `required:['constructor']`
+  went unflagged and a `properties:{toString}` rejected a valid `{}`. Switched
+  to own-property checks (also in `resolveRef` for `#/constructor`-style refs).
+- **Accumulator silently corrupted a thinking signature**
+  (`engine/accumulator.ts`): only `input_json_delta` had the S3 field-omit
+  guard; a `signature_delta` missing its field appended the literal
+  `"undefined"`, wedging every later turn with a 400 "Invalid signature".
+  Guarded `signature_delta`/`text_delta`/`thinking_delta` too.
+
+Robustness / recovery:
+- **Bash crashed on a NUL byte in the command** (`tools/bash.ts`): the
+  foreground `spawn()` was unguarded, so Node's SYNCHRONOUS `ERR_INVALID_ARG_VALUE`
+  escaped as a raw TypeError instead of the spawn-error → ConfigurationError
+  contract the background path already honored.
+- **Monitor / stall-watchdog timeouts overflowed the 32-bit timer**
+  (`tools/monitor.ts`, `transport/stall-watchdog.ts`): a timeout above
+  2147483647ms silently became a 1ms delay, so a long watch was killed ~instantly
+  and a relaxed stall timeout aborted every background subagent ~instantly.
+  Clamped both to the setTimeout ceiling.
+- **ShellManager.kill armed a stray SIGKILL timer** (`tools/shells.ts`): kill()
+  ran with no running-guard and overwrote the escalation timer without clearing
+  it, so a late/duplicate kill could SIGKILL a recycled process group — the L1
+  hazard the module guards. Guard on status + replace, never leak, the timer.
+- **Checkpoint index had no torn-tail heal** (`sessions/checkpoints.ts`): a
+  crash-torn `index.jsonl` glued the next record onto the partial line, losing
+  BOTH on read and leaving a just-written blob unreferenced/unrewindable.
+  Ported the M-9 self-heal (both append sites).
+- **Structured-output extraction gave up on a wrong-type bracket in prose**
+  (`engine/structured-output.ts`): `Sure [see below]: {"answer":42}` let the
+  `[` capture the scan; it now resumes past a failed span to the real JSON.
+- **Session-title generation returned an array-wrapped object verbatim**
+  (`generators/runtime.ts`): `[{...}]` short-circuited the fast path, so the
+  literal array text became the title; unwrap to the inner object.
+
+Sessions data integrity:
+- **Audit/export read path lacked null-message + uuid-dedup guards**
+  (`sessions/session-functions.ts`): a `{message:null}` line crashed consumers
+  doing `.message.content`, and a double-materialized transcript returned doubled
+  messages — which `forkSession` baked in PERMANENTLY (fresh uuids). Mirror the
+  shape check and H2 uuid-dedup the resume path already applies.
+- **loadInfo's sidechain guard missed a leading blank line**
+  (`sessions/store.ts`): a sidechain transcript whose first physical line was
+  blank surfaced as a resumable main session, disagreeing with
+  `isSidechainFile`/`latestSessionId`. Skip blanks before the record-1 check.
+
+Coverage: regressions in `tests/structured-output.test.ts` (prototype props +
+prose bracket), `tests/generators.test.ts` (array unwrap), `tests/bash-dx.test.ts`
+(NUL byte). Full vitest green.
+
 ## 0.62.2 — 2026-07-15
 
 Bug-fix sweep — a multi-module audit (6 parallel readers over `src/`) surfaced

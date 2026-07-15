@@ -70,6 +70,11 @@ describe('extractJsonObject', () => {
   it('returns the first balanced object only', () => {
     expect(extractJsonObject('{"a":1}{"b":2}')).toEqual({ a: 1 });
   });
+  it('bug-fix: an array-wrapped object is unwrapped, not returned as the array', () => {
+    // A model reply `[{...}]` must not short-circuit the fast path; the brace
+    // scan recovers the inner object (else a caller gets the literal array text).
+    expect(extractJsonObject('[{"title":"My Session"}]')).toEqual({ title: 'My Session' });
+  });
   it('skips a balanced-but-unparseable group before the real JSON', () => {
     // {x} is balanced but not valid JSON — must not abort the search.
     expect(extractJsonObject('note: {x} then {"a":1}')).toEqual({ a: 1 });
