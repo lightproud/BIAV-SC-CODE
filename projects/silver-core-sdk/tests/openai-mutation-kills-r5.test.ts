@@ -325,7 +325,7 @@ describe('stream completion and resilience error fields', () => {
     expect(events.at(-1)?.type).toBe('message_stop');
   });
 
-  it('an idle stall with ZERO chunks is replay-safe; after chunks it is a mid-stream truncation', async () => {
+  it('an idle stall with ZERO chunks is replay-safe; after chunks it is NOT replay-safe (truncation flag stays unset)', async () => {
     vi.stubGlobal('fetch', vi.fn(async () => sseOf([], { hang: true })));
     const e1 = (await errOf(drainT(makeT({ streamIdleTimeoutMs: 60 }).stream(REQ)))) as APIConnectionError & {
       turnReplaySafe?: boolean;

@@ -16,6 +16,47 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.62.4 — 2026-07-15
+
+Bug-fix sweep, round 3 — a third audit (3 readers over query/session-manager/
+subagents, mcp/tool-dispatch/config, and scripts + the test suite's own
+correctness). 4 runtime defects + 1 test-title correction fixed; deferred as
+keeper design calls: two accounting-completeness gaps (a memory session-end
+round's spend and a late background subagent's usage never surface on a yielded
+result — query.ts), a devDependency-only false-fail in the version-bump guard,
+an MCP `ping`→-32601 spec question locked by a test, and a handful of weak/
+vacuous test assertions (test-hardening backlog).
+
+- **HTTP MCP close aborted the whole run** (`mcp/registry.ts`): a tool call
+  in flight when the connection is closed (setServers/reconnect) threw
+  AbortError, which `registry.call` re-threw, tearing down the entire agent run
+  — the stdio path degrades the identical close to an isError result. Now the
+  registry only propagates an abort when the CALLER's signal is actually
+  aborted; a mid-call close becomes an isError result, restoring the documented
+  "call failures never thrown, aborts excepted" contract and stdio/http parity.
+- **compare-reports reported "0 unrecovered" with no transport signal**
+  (`reporting/compare-reports.ts`): `unrecovered` was a plain 0 even on a day
+  whose records carry no `transport_health`, while `transportFaultTotal` (the
+  same absent signal) correctly read 无数据. Made `unrecovered` `number | null`
+  so absence is a fact, not a zero — matching the file's own principle.
+- **Aborted tool calls were undercounted in perTool metrics**
+  (`engine/tool-dispatch.ts`): the abort path rethrew before `recordTool`, so a
+  tool aborted mid-execution was logged by the S3 onToolRecord audit ('[aborted]')
+  but missing from the perTool call/error ledger — the two disagreed on the same
+  dispatch. Record the aborted dispatch before rethrowing.
+- **Subagent tool calls lost their attribution** (`subagents/runtime.ts`): the
+  onToolRecord wrapper stamped `parentToolUseId: params.toolUseId`, but the Agent
+  tool always passes `''`, so child tool records persisted an empty parent id
+  instead of the child agentId — defeating the audit trail's child-attribution.
+  Use the same agentId fallback childConfig already uses.
+- **Test-title correction** (`tests/openai-mutation-kills-r5.test.ts`): a title
+  claimed a post-chunk idle stall "is a mid-stream truncation" while the body
+  asserts the opposite (not replay-safe, truncation flag unset); renamed to
+  match the real contract.
+
+Coverage: regressions in `tests/compare-reports.test.ts` (unrecovered null on
+no-transport days). Full vitest green.
+
 ## 0.62.3 — 2026-07-15
 
 Bug-fix sweep, round 2 — a second, deeper audit (4 readers over the areas the

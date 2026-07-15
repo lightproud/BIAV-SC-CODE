@@ -380,7 +380,14 @@ export function createToolDispatcher(cfg: ToolDispatcherConfig): {
         return { result: errorToolResult(`No such tool: ${toolName}`) };
       }
     } catch (err) {
-      if (isAbortError(err)) throw toAbortError(err);
+      if (isAbortError(err)) {
+        // Record the aborted dispatch in the perTool metrics too: the S3
+        // onToolRecord path logs it as '[aborted]' (so "the audit trail never
+        // loses a dispatched call"), and the metrics ledger must not silently
+        // undercount aborted work relative to that same-dispatch record.
+        recordTool(toolName, Date.now() - execStart, true);
+        throw toAbortError(err);
+      }
       const message = err instanceof Error ? err.message : String(err);
       if (deps.hooks.hasHooks('PostToolUseFailure')) {
         await deps.hooks.run(

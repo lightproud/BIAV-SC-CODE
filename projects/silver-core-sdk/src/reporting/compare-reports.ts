@@ -25,7 +25,7 @@ export type DayAggregate = {
   /** Fault counters summed by cause; null when no record carried the ledger. */
   transport: Record<string, number> | null;
   transportFaultTotal: number | null;
-  unrecovered: number;
+  unrecovered: number | null;
   tokens: {
     input: number;
     output: number;
@@ -80,9 +80,13 @@ export async function aggregateDay(logDir: string, date: string): Promise<DayAgg
 
   const transportRecords = records.filter((r) => r.transport_health !== undefined);
   let transport: Record<string, number> | null = null;
-  let unrecovered = 0;
+  // Absence is a fact, not a zero: with no transport signal, unrecovered is
+  // 无数据 (null), NOT "0 unrecovered" — mirroring transportFaultTotal, which
+  // this same block leaves null when there are no transport records.
+  let unrecovered: number | null = null;
   if (transportRecords.length > 0) {
     transport = {};
+    unrecovered = 0;
     for (const r of transportRecords) {
       let faults = 0;
       for (const [k, v] of Object.entries(r.transport_health!)) {

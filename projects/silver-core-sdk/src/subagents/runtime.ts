@@ -1323,7 +1323,14 @@ export function createSubagentRuntime(
         ...(opts.onToolRecord !== undefined
           ? {
               onToolRecord: (rec: ToolDispatchRecord): void =>
-                opts.onToolRecord!({ ...rec, parentToolUseId: params.toolUseId }),
+                // Use the SAME stable correlation id childConfig uses: the Agent
+                // tool always passes toolUseId '' , so stamp the child agentId as
+                // the fallback — otherwise the audit trail records an empty
+                // parent_tool_use_id and cannot attribute the child's tool calls.
+                opts.onToolRecord!({
+                  ...rec,
+                  parentToolUseId: params.toolUseId !== '' ? params.toolUseId : agentId,
+                }),
             }
           : {}),
       };
