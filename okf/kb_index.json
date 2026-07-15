@@ -436,7 +436,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 4
+      "degree": 6
     },
     "/characters/15567.md": {
       "type": "character",
@@ -451,7 +451,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 8
+      "degree": 6
     },
     "/characters/15568.md": {
       "type": "character",
@@ -578,7 +578,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 8
+      "degree": 10
     },
     "/characters/15577.md": {
       "type": "character",
@@ -648,7 +648,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 4
+      "degree": 6
     },
     "/characters/15582.md": {
       "type": "character",
@@ -887,7 +887,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 6
+      "degree": 4
     },
     "/characters/15599.md": {
       "type": "character",
@@ -1028,7 +1028,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 4
+      "degree": 2
     },
     "/characters/77914.md": {
       "type": "character",
@@ -4283,7 +4283,7 @@
     "/sources/bahamut.md": {
       "type": "dataset",
       "title": "bahamut 社区数据源",
-      "description": "bahamut 平台采集档案，全量 156 条，健康度 active。",
+      "description": "bahamut 平台采集档案，全量 157 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bahamut/",
       "tags": [
         "data_layer:full_archive",
@@ -4297,7 +4297,7 @@
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 2884 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 2888 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -4395,7 +4395,7 @@
     "/sources/ruliweb.md": {
       "type": "dataset",
       "title": "ruliweb 社区数据源",
-      "description": "ruliweb 平台采集档案，全量 541 条，健康度 active。",
+      "description": "ruliweb 平台采集档案，全量 542 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/ruliweb/",
       "tags": [
         "data_layer:full_archive",
@@ -4479,7 +4479,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 10203 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 10217 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -4493,7 +4493,7 @@
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 10292 条，健康度 active。",
+      "description": "weixin 平台采集档案，全量 10312 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -4507,7 +4507,7 @@
     "/sources/youtube.md": {
       "type": "dataset",
       "title": "youtube 社区数据源",
-      "description": "youtube 平台采集档案，全量 2874 条，健康度 active。",
+      "description": "youtube 平台采集档案，全量 2877 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -5454,7 +5454,17 @@
         "cv"
       ],
       [
+        "/community/community-bilibili.md",
+        "提及:希莱斯特",
+        "mention"
+      ],
+      [
         "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
+        "提及:希莱斯特",
+        "mention"
+      ],
+      [
+        "/sources/bilibili.md",
         "提及:希莱斯特",
         "mention"
       ],
@@ -5481,22 +5491,12 @@
         "cv"
       ],
       [
-        "/community/community-bilibili.md",
-        "提及:血链·希洛",
-        "mention"
-      ],
-      [
         "/community/community-weibo.md",
         "提及:血链·希洛",
         "mention"
       ],
       [
         "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
-        "提及:血链·希洛",
-        "mention"
-      ],
-      [
-        "/sources/bilibili.md",
         "提及:血链·希洛",
         "mention"
       ],
@@ -5719,6 +5719,11 @@
         "mention"
       ],
       [
+        "/community/community-bilibili.md",
+        "提及:墨菲",
+        "mention"
+      ],
+      [
         "/community/community-weibo.md",
         "提及:墨菲",
         "mention"
@@ -5735,6 +5740,11 @@
       ],
       [
         "/sources/bahamut.md",
+        "提及:墨菲",
+        "mention"
+      ],
+      [
+        "/sources/bilibili.md",
         "提及:墨菲",
         "mention"
       ],
@@ -5877,6 +5887,11 @@
     ],
     "/characters/15581.md": [
       [
+        "/community/community-bilibili.md",
+        "提及:莉莉",
+        "mention"
+      ],
+      [
         "/community/community-youtube-comments.md",
         "提及:莉莉",
         "mention"
@@ -5888,6 +5903,11 @@
       ],
       [
         "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
+        "提及:莉莉",
+        "mention"
+      ],
+      [
+        "/sources/bilibili.md",
         "提及:莉莉",
         "mention"
       ],
@@ -6230,22 +6250,12 @@
     ],
     "/characters/15598.md": [
       [
-        "/community/community-bilibili.md",
-        "提及:尤乌哈希",
-        "mention"
-      ],
-      [
         "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
         "提及:尤乌哈希",
         "mention"
       ],
       [
         "/resource/resource-intel-weekly-morimens-intel-20260712.md",
-        "提及:尤乌哈希",
-        "mention"
-      ],
-      [
-        "/sources/bilibili.md",
         "提及:尤乌哈希",
         "mention"
       ],
@@ -6885,16 +6895,6 @@
     ],
     "/characters/77913.md": [
       [
-        "/community/community-bilibili.md",
-        "提及:凯蒂古拉",
-        "mention"
-      ],
-      [
-        "/sources/bilibili.md",
-        "提及:凯蒂古拉",
-        "mention"
-      ],
-      [
         "/story/STORY_RESEARCH.md",
         "提及:凯蒂古拉",
         "mention"
@@ -7223,23 +7223,13 @@
     ],
     "/community/community-bilibili.md": [
       [
-        "/characters/15567.md",
-        "提及:血链·希洛",
+        "/characters/15566.md",
+        "提及:希莱斯特",
         "mention"
       ],
       [
         "/characters/15582.md",
         "提及:弥利亚姆",
-        "mention"
-      ],
-      [
-        "/characters/15598.md",
-        "提及:尤乌哈希",
-        "mention"
-      ],
-      [
-        "/characters/77913.md",
-        "提及:凯蒂古拉",
         "mention"
       ],
       [
@@ -7280,6 +7270,16 @@
       [
         "/characters/15569.md",
         "提及:萝坦",
+        "mention"
+      ],
+      [
+        "/characters/15576.md",
+        "提及:墨菲",
+        "mention"
+      ],
+      [
+        "/characters/15581.md",
+        "提及:莉莉",
         "mention"
       ],
       [
@@ -9045,23 +9045,13 @@
     ],
     "/sources/bilibili.md": [
       [
-        "/characters/15567.md",
-        "提及:血链·希洛",
+        "/characters/15566.md",
+        "提及:希莱斯特",
         "mention"
       ],
       [
         "/characters/15582.md",
         "提及:弥利亚姆",
-        "mention"
-      ],
-      [
-        "/characters/15598.md",
-        "提及:尤乌哈希",
-        "mention"
-      ],
-      [
-        "/characters/77913.md",
-        "提及:凯蒂古拉",
         "mention"
       ],
       [
@@ -9102,6 +9092,16 @@
       [
         "/characters/15569.md",
         "提及:萝坦",
+        "mention"
+      ],
+      [
+        "/characters/15576.md",
+        "提及:墨菲",
+        "mention"
+      ],
+      [
+        "/characters/15581.md",
+        "提及:莉莉",
         "mention"
       ],
       [

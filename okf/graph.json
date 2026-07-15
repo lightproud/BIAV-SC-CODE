@@ -4306,26 +4306,14 @@
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/15567.md",
-      "rel": "提及:血链·希洛",
+      "target": "/characters/15566.md",
+      "rel": "提及:希莱斯特",
       "rel_type": "mention"
     },
     {
       "source": "/community/community-bilibili.md",
       "target": "/characters/15582.md",
       "rel": "提及:弥利亚姆",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/15598.md",
-      "rel": "提及:尤乌哈希",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/77913.md",
-      "rel": "提及:凯蒂古拉",
       "rel_type": "mention"
     },
     {
@@ -4374,6 +4362,18 @@
       "source": "/community/community-bilibili.md",
       "target": "/characters/15569.md",
       "rel": "提及:萝坦",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/15576.md",
+      "rel": "提及:墨菲",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/15581.md",
+      "rel": "提及:莉莉",
       "rel_type": "mention"
     },
     {
@@ -5674,26 +5674,14 @@
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/15567.md",
-      "rel": "提及:血链·希洛",
+      "target": "/characters/15566.md",
+      "rel": "提及:希莱斯特",
       "rel_type": "mention"
     },
     {
       "source": "/sources/bilibili.md",
       "target": "/characters/15582.md",
       "rel": "提及:弥利亚姆",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/15598.md",
-      "rel": "提及:尤乌哈希",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/77913.md",
-      "rel": "提及:凯蒂古拉",
       "rel_type": "mention"
     },
     {
@@ -5742,6 +5730,18 @@
       "source": "/sources/bilibili.md",
       "target": "/characters/15569.md",
       "rel": "提及:萝坦",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/15576.md",
+      "rel": "提及:墨菲",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/15581.md",
+      "rel": "提及:莉莉",
       "rel_type": "mention"
     },
     {
