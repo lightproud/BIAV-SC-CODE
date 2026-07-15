@@ -14,7 +14,8 @@
  *    TodoWrite (legacy, behind CLAUDE_CODE_ENABLE_TASKS=0 — see tools/index.ts),
  *    WebFetch, WebSearch, AskUserQuestion, Monitor, ExitPlanMode, EnterWorktree
  *    (B4b batch), Workflow (B4c batch).
- *    No Agent-in-descriptions, NotebookEdit, MultiEdit, Skill, etc.
+ *    Edit's batch sibling MultiEdit (SDK-original description, 2026-07-15).
+ *    No Agent-in-descriptions, NotebookEdit, Skill, etc.
  *  - ExitPlanMode: the archive fragment's plan-FILE mechanics (write plan to the
  *    plan file, tool reads it back) do not ship here — this SDK has a plan
  *    permission MODE but no plan-file machinery, so those clauses are adapted
@@ -248,6 +249,22 @@ Usage:
 - Prefer the Edit tool for modifying existing files — it only sends the diff. Only use this tool to create new files or for complete rewrites.
 - NEVER create documentation files (*.md) or README files unless explicitly requested by the User.
 - Only use emojis if the user explicitly requests it. Avoid writing emojis to files unless asked.`;
+
+// MultiEdit (SDK-original, faithful:false): the official Claude Code MultiEdit
+// is not in the reproduction archive, so this description is authored for the
+// semantics this SDK actually ships (src/tools/multiedit.ts) rather than
+// reproduced. Keeps the corpus-sync anchor guard scoped to genuine repros.
+export const MULTIEDIT_DESCRIPTION = `Applies several exact string replacements to a SINGLE file in one atomic step.
+
+When to use: several edits to the SAME file — prefer this over issuing separate Edit calls, which each cost a tool round-trip and re-feed the tool result into context. For one change use Edit. For cross-file changes, or an edit whose text depends on an intervening tool result, keep using separate Edit calls.
+
+Usage:
+- You must use your Read tool on the file at least once in the conversation before editing. This tool will error if you attempt to edit a file you have not read.
+- Provide \`file_path\` and an ordered \`edits\` array; each edit carries \`old_string\`, \`new_string\`, and an optional \`replace_all\` (default false).
+- Edits apply SEQUENTIALLY on one snapshot: each edit matches the file as left by the preceding edits, so you can rename a symbol and then edit a line that now contains the new name — in the same call.
+- ATOMIC: if any edit's \`old_string\` is not found (or is not unique without \`replace_all\`), NOTHING is written and the failing edit is named by index. Order your edits so an earlier one does not break a later one's match.
+- Each \`old_string\` must be unique in the file at the point it applies unless \`replace_all\` is true. Preserve exact indentation as it appears in the Read output, excluding the line-number prefix.
+- \`new_string\` must differ from \`old_string\`. Only use emojis if the user explicitly requests it.`;
 
 export const GREP_DESCRIPTION = `A powerful search tool built on ripgrep
 
@@ -844,6 +861,10 @@ export const TOOL_DESCRIPTION_PROVENANCE: ToolDescriptionProvenance[] = [
   { tool: 'Read', faithful: true, slugs: ['tool-description-readfile'] },
   { tool: 'Edit', faithful: true, slugs: ['tool-description-edit'] },
   { tool: 'Write', faithful: true, slugs: ['tool-description-write', 'tool-description-write-read-existing-file-first'] },
+  // SDK-original (see MULTIEDIT_DESCRIPTION doc comment): no archive fragment,
+  // so faithful:false and the slug is the sdk-original sentinel — the anchor
+  // guard skips it, the presence guard still requires description text.
+  { tool: 'MultiEdit', faithful: false, slugs: ['sdk-original'] },
   { tool: 'Grep', faithful: true, slugs: ['tool-description-grep'] },
   { tool: 'Glob', faithful: true, slugs: ['tool-description-glob'] },
   { tool: 'TodoWrite', faithful: true, slugs: ['tool-description-todowrite'] },
@@ -878,6 +899,7 @@ export const TOOL_DESCRIPTION_TEXT: Record<string, string> = {
   Read: READ_DESCRIPTION,
   Edit: EDIT_DESCRIPTION,
   Write: WRITE_DESCRIPTION,
+  MultiEdit: MULTIEDIT_DESCRIPTION,
   Grep: GREP_DESCRIPTION,
   Glob: GLOB_DESCRIPTION,
   TodoWrite: TODOWRITE_DESCRIPTION,

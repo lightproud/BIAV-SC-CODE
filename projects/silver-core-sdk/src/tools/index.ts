@@ -34,6 +34,7 @@ import type { BuiltinTool } from '../internal/contracts.js';
 import { createReadTool, readTool } from './read.js';
 import { writeTool } from './write.js';
 import { editTool } from './edit.js';
+import { multiEditTool } from './multiedit.js';
 import { bashTool, createBashTool } from './bash.js';
 import type { JSONSchema, ReadLimits, SandboxContext } from '../types.js';
 import { globTool } from './glob.js';
@@ -70,6 +71,7 @@ export function createBuiltinTools(cfg?: {
     cfg?.readLimits !== undefined ? createReadTool(cfg.readLimits) : readTool,
     writeTool,
     editTool,
+    multiEditTool,
     cfg?.sandbox !== undefined ? createBashTool(cfg.sandbox) : bashTool,
     bashOutputTool,
     killShellTool,
