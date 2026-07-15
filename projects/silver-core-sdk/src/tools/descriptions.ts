@@ -263,6 +263,7 @@ Usage:
 - Provide \`file_path\` and an ordered \`edits\` array; each edit carries \`old_string\`, \`new_string\`, and an optional \`replace_all\` (default false).
 - Edits apply SEQUENTIALLY on one snapshot: each edit matches the file as left by the preceding edits, so you can rename a symbol and then edit a line that now contains the new name — in the same call.
 - ATOMIC: if any edit's \`old_string\` is not found (or is not unique without \`replace_all\`), NOTHING is written and the failing edit is named by index. Order your edits so an earlier one does not break a later one's match.
+- OVERLAP RULE: edits whose regions overlap — share any line or text, including context lines added for uniqueness — must be MERGED into a single edit. An earlier edit rewrites the text a later \`old_string\` was copied from, and the later edit then fails to match. Author a later \`old_string\` against the post-edit text only when the dependency is intended (e.g. rename a symbol, then edit a line that now holds the new name).
 - Each \`old_string\` must be unique in the file at the point it applies unless \`replace_all\` is true. Preserve exact indentation as it appears in the Read output, excluding the line-number prefix.
 - \`new_string\` must differ from \`old_string\`. Only use emojis if the user explicitly requests it.`;
 

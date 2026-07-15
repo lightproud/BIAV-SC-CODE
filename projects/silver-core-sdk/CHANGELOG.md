@@ -16,6 +16,35 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.62.1 — 2026-07-15
+
+Bug fix (usability) — MultiEdit's not-found error now diagnoses WHY instead of
+one undifferentiated message. Field report (BPT, same day as 0.61.0): repeated
+`MultiEdit failed at edit #3: old_string was not found` loops — the model
+authors every old_string from one Read of the ORIGINAL file, but edits apply
+sequentially, so an old_string that overlaps an earlier edit's region (usually
+context lines added for uniqueness) no longer exists when its turn comes; the
+generic error gave no way to tell this self-inflicted case from a genuinely
+stale old_string, so retries repeated the same mistake.
+
+- **Not-found triage** (`src/tools/multiedit.ts`): the tool holds the original
+  text, so it now tells the two causes apart. Absent from the original too →
+  "does not appear in the original file either — Re-Read the file". Present in
+  the original but gone at apply time → the already-validated preceding edits
+  are replayed to NAME the culprit ("edit #1 in this call already rewrote that
+  text") and the remedy is stated: merge overlapping edits into one, or author
+  the later old_string against the post-edit text.
+- **Overlap rule in the description** (`src/tools/descriptions.ts`): edits
+  whose regions share any line or text must be merged into a single edit;
+  authoring a later old_string against post-edit text is for intended
+  dependencies only. Preventive guidance so the model stops writing the trap.
+- **COMPAT.md drift fixed**: the tools table still carried the pre-0.61.0
+  `NotebookEdit / MultiEdit | UNSUPPORTED | … retired upstream` row,
+  contradicting this ledger; MultiEdit now has its own FULL row (SDK-original,
+  no official parity target), NotebookEdit stays UNSUPPORTED.
+- Coverage: `tests/multiedit.test.ts` +2 cases (absent-from-original triage;
+  overlap triage naming the culprit edit, atomic rollback intact).
+
 ## 0.62.0 — 2026-07-15
 
 Tool-parity audit (2026-07-15): closed the remaining clean gaps against the

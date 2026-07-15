@@ -96,18 +96,12 @@ function parseEdits(raw: unknown): ParsedEdit[] | string {
   return parsed;
 }
 
-/** Apply one edit to `text`, returning the new text or an error message. */
-function applyOne(text: string, edit: ParsedEdit, label: string): { text: string; replaced: number } | string {
-  const count = countOccurrences(text, edit.oldString);
-  if (count === 0) {
-    return `MultiEdit failed at ${label}: old_string was not found. It must match the current file contents exactly (after the preceding edits in this call), including whitespace and indentation. No changes were written.`;
-  }
-  if (count > 1 && !edit.replaceAll) {
-    return `MultiEdit failed at ${label}: found ${count} occurrences of old_string. The match must be unique — add more surrounding context, or set replace_all: true. No changes were written.`;
-  }
+/** Substitute `edit` into `text` (match already validated by the caller). */
+function substitute(text: string, edit: ParsedEdit): { text: string; replaced: number } {
   if (edit.replaceAll) {
     // String splitting on purpose: String.prototype.replace would interpret
     // $-patterns in the replacement text.
+    const count = countOccurrences(text, edit.oldString);
     return { text: text.split(edit.oldString).join(edit.newString), replaced: count };
   }
   const idx = text.indexOf(edit.oldString);
@@ -115,6 +109,36 @@ function applyOne(text: string, edit: ParsedEdit, label: string): { text: string
     text: text.slice(0, idx) + edit.newString + text.slice(idx + edit.oldString.length),
     replaced: 1,
   };
+}
+
+/**
+ * A not-found old_string has two very different causes with two different
+ * remedies, and the tool can tell them apart because it holds the original
+ * text: either the text never existed in the file (stale memory / whitespace
+ * mismatch — re-Read), or it DID exist and a preceding edit in this same call
+ * rewrote it (overlapping edits — merge them). For the second case, replay the
+ * already-validated preceding edits to name the one that consumed the match.
+ */
+function diagnoseNotFound(
+  original: string,
+  edits: ParsedEdit[],
+  failedIndex: number,
+  label: string,
+): string {
+  const needle = edits[failedIndex]!.oldString;
+  if (!original.includes(needle)) {
+    return `MultiEdit failed at ${label}: old_string was not found — it does not appear in the original file either. Re-Read the file and copy the text exactly, including whitespace and indentation. No changes were written.`;
+  }
+  let text = original;
+  let culprit = 0;
+  for (let j = 0; j < failedIndex; j++) {
+    text = substitute(text, edits[j]!).text;
+    if (!text.includes(needle)) {
+      culprit = j + 1;
+      break;
+    }
+  }
+  return `MultiEdit failed at ${label}: old_string matches the ORIGINAL file, but edit #${culprit} in this call already rewrote that text, so it no longer exists when ${label} applies. Edits whose regions overlap must be MERGED into a single edit (or the later old_string authored against the post-edit text). No changes were written.`;
 }
 
 export const multiEditTool: BuiltinTool = {
@@ -212,10 +236,18 @@ export const multiEditTool: BuiltinTool = {
       let text = original;
       const perEdit: number[] = [];
       for (let i = 0; i < edits.length; i++) {
-        const outcome = applyOne(text, edits[i]!, `edit #${i + 1}`);
-        if (typeof outcome === 'string') {
-          return errorResult(outcome);
+        const edit = edits[i]!;
+        const label = `edit #${i + 1}`;
+        const count = countOccurrences(text, edit.oldString);
+        if (count === 0) {
+          return errorResult(diagnoseNotFound(original, edits, i, label));
         }
+        if (count > 1 && !edit.replaceAll) {
+          return errorResult(
+            `MultiEdit failed at ${label}: found ${count} occurrences of old_string. The match must be unique — add more surrounding context, or set replace_all: true. No changes were written.`,
+          );
+        }
+        const outcome = substitute(text, edit);
         text = outcome.text;
         perEdit.push(outcome.replaced);
       }
