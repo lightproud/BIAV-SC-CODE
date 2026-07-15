@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 354,
-    "edges": 411,
-    "terms": 6393,
+    "concepts": 355,
+    "edges": 409,
+    "terms": 6399,
     "by_type": {
       "character": 72,
       "dataset": 94,
-      "documentation": 121,
+      "documentation": 122,
       "knowledge-pointer": 47,
       "reference": 17,
       "research": 3
@@ -24,7 +24,7 @@
       "community": 19,
       "memory": 50,
       "news-output": 23,
-      "projects": 27,
+      "projects": 28,
       "resource": 93,
       "sources": 20,
       "story": 11,
@@ -32,7 +32,7 @@
     },
     "by_tier": {
       "skeleton": 134,
-      "search": 220
+      "search": 221
     }
   },
   "sections": {
@@ -58,7 +58,7 @@
     },
     "projects": {
       "index": "/projects/index.md",
-      "count": 27
+      "count": 28
     },
     "resource": {
       "index": "/resource/index.md",
@@ -901,7 +901,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 2
+      "degree": 4
     },
     "/characters/15600.md": {
       "type": "character",
@@ -1000,7 +1000,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 6
+      "degree": 4
     },
     "/characters/77911.md": {
       "type": "character",
@@ -1098,7 +1098,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 7
+      "degree": 5
     },
     "/characters/77923.md": {
       "type": "character",
@@ -1492,7 +1492,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 10
+      "degree": 11
     },
     "/community/community-weixin.md": {
       "type": "dataset",
@@ -1534,7 +1534,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 5
+      "degree": 3
     },
     "/memory/capability-index.md": {
       "type": "knowledge-pointer",
@@ -2908,6 +2908,20 @@
       "tier": "search",
       "degree": 0
     },
+    "/projects/silver-core-sdk-doc-tool-parity.md": {
+      "type": "documentation",
+      "title": "silver-core-sdk TOOL-PARITY",
+      "description": "Why this file exists: the SDK reproduces the **Claude Code CLI agent** tool",
+      "resource": "/projects/silver-core-sdk/docs/TOOL-PARITY.md",
+      "tags": [
+        "data_layer:curated",
+        "design-doc",
+        "sub-project:silver-core-sdk"
+      ],
+      "section": "projects",
+      "tier": "search",
+      "degree": 0
+    },
     "/projects/site-design-morimens-design-system-guide.md": {
       "type": "documentation",
       "title": "site design · morimens-design-system-guide.html",
@@ -4269,7 +4283,7 @@
     "/sources/bahamut.md": {
       "type": "dataset",
       "title": "bahamut 社区数据源",
-      "description": "bahamut 平台采集档案，全量 130 条，健康度 active。",
+      "description": "bahamut 平台采集档案，全量 156 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bahamut/",
       "tags": [
         "data_layer:full_archive",
@@ -4283,7 +4297,7 @@
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 2876 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 2884 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -4297,7 +4311,7 @@
     "/sources/discord.md": {
       "type": "dataset",
       "title": "discord 社区数据源",
-      "description": "discord 平台采集档案，全量 8060617 条，健康度 active。",
+      "description": "discord 平台采集档案，全量 8074884 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/discord/",
       "tags": [
         "data_layer:full_archive",
@@ -4353,7 +4367,7 @@
     "/sources/pixiv.md": {
       "type": "dataset",
       "title": "pixiv 社区数据源",
-      "description": "pixiv 平台采集档案，全量 573 条，健康度 active。",
+      "description": "pixiv 平台采集档案，全量 575 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/pixiv/",
       "tags": [
         "data_layer:full_archive",
@@ -4367,7 +4381,7 @@
     "/sources/reddit.md": {
       "type": "dataset",
       "title": "reddit 社区数据源",
-      "description": "reddit 平台采集档案，全量 3622 条，健康度 active。",
+      "description": "reddit 平台采集档案，全量 3629 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/reddit/",
       "tags": [
         "data_layer:full_archive",
@@ -4381,7 +4395,7 @@
     "/sources/ruliweb.md": {
       "type": "dataset",
       "title": "ruliweb 社区数据源",
-      "description": "ruliweb 平台采集档案，全量 540 条，健康度 active。",
+      "description": "ruliweb 平台采集档案，全量 541 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/ruliweb/",
       "tags": [
         "data_layer:full_archive",
@@ -4395,7 +4409,7 @@
     "/sources/steam.md": {
       "type": "dataset",
       "title": "steam 社区数据源",
-      "description": "steam 平台采集档案，全量 5225 条，健康度 active。",
+      "description": "steam 平台采集档案，全量 5226 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4409,7 +4423,7 @@
     "/sources/steam_discussion.md": {
       "type": "dataset",
       "title": "steam_discussion 社区数据源",
-      "description": "steam_discussion 平台采集档案，全量 105 条，健康度 active。",
+      "description": "steam_discussion 平台采集档案，全量 106 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/discussion/",
       "tags": [
         "data_layer:full_archive",
@@ -4423,7 +4437,7 @@
     "/sources/stopgame.md": {
       "type": "dataset",
       "title": "stopgame 社区数据源",
-      "description": "stopgame 平台采集档案，全量 87 条，健康度 active。",
+      "description": "stopgame 平台采集档案，全量 88 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/stopgame/",
       "tags": [
         "data_layer:full_archive",
@@ -4465,7 +4479,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 10160 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 10203 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -4474,12 +4488,12 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 10
+      "degree": 11
     },
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 10232 条，健康度 active。",
+      "description": "weixin 平台采集档案，全量 10292 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -4493,7 +4507,7 @@
     "/sources/youtube.md": {
       "type": "dataset",
       "title": "youtube 社区数据源",
-      "description": "youtube 平台采集档案，全量 2864 条，健康度 active。",
+      "description": "youtube 平台采集档案，全量 2874 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -4502,12 +4516,12 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 5
+      "degree": 3
     },
     "/sources/youtube_comments.md": {
       "type": "dataset",
       "title": "youtube_comments 社区数据源",
-      "description": "youtube_comments 平台采集档案，全量 2107 条，健康度 active。",
+      "description": "youtube_comments 平台采集档案，全量 2122 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube_comments/",
       "tags": [
         "data_layer:full_archive",
@@ -6248,6 +6262,16 @@
     ],
     "/characters/15599.md": [
       [
+        "/community/community-weibo.md",
+        "提及:萨尔瓦多",
+        "mention"
+      ],
+      [
+        "/sources/weibo.md",
+        "提及:萨尔瓦多",
+        "mention"
+      ],
+      [
         "/story/STORY_RESEARCH.md",
         "提及:萨尔瓦多",
         "mention"
@@ -6842,22 +6866,12 @@
         "mention"
       ],
       [
-        "/community/community-youtube.md",
-        "提及:哈姆林",
-        "mention"
-      ],
-      [
         "/sources/bahamut.md",
         "提及:哈姆林",
         "mention"
       ],
       [
         "/sources/bilibili.md",
-        "提及:哈姆林",
-        "mention"
-      ],
-      [
-        "/sources/youtube.md",
         "提及:哈姆林",
         "mention"
       ]
@@ -7011,22 +7025,12 @@
         "mention"
       ],
       [
-        "/community/community-youtube.md",
-        "提及:克珀珊特",
-        "mention"
-      ],
-      [
         "/sources/bahamut.md",
         "提及:克珀珊特",
         "mention"
       ],
       [
         "/sources/weibo.md",
-        "提及:克珀珊特",
-        "mention"
-      ],
-      [
-        "/sources/youtube.md",
         "提及:克珀珊特",
         "mention"
       ]
@@ -7516,6 +7520,11 @@
         "mention"
       ],
       [
+        "/characters/15599.md",
+        "提及:萨尔瓦多",
+        "mention"
+      ],
+      [
         "/characters/77917.md",
         "提及:波吕克斯",
         "mention"
@@ -7621,16 +7630,6 @@
       ]
     ],
     "/community/community-youtube.md": [
-      [
-        "/characters/77922.md",
-        "提及:克珀珊特",
-        "mention"
-      ],
-      [
-        "/characters/54117.md",
-        "提及:哈姆林",
-        "mention"
-      ],
       [
         "/characters/130226.md",
         "提及:沙耶",
@@ -9277,6 +9276,11 @@
         "mention"
       ],
       [
+        "/characters/15599.md",
+        "提及:萨尔瓦多",
+        "mention"
+      ],
+      [
         "/characters/77917.md",
         "提及:波吕克斯",
         "mention"
@@ -9335,16 +9339,6 @@
       ]
     ],
     "/sources/youtube.md": [
-      [
-        "/characters/77922.md",
-        "提及:克珀珊特",
-        "mention"
-      ],
-      [
-        "/characters/54117.md",
-        "提及:哈姆林",
-        "mention"
-      ],
       [
         "/characters/130226.md",
         "提及:沙耶",
@@ -9799,6 +9793,7 @@
       "/projects/silver-core-sdk-doc-reporting.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-tool-parity.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -10013,6 +10008,7 @@
       "/projects/project-silver-core-sdk.md",
       "/projects/silver-core-sdk-doc-architecture.md",
       "/projects/silver-core-sdk-doc-compat.md",
+      "/projects/silver-core-sdk-doc-tool-parity.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
@@ -10701,6 +10697,7 @@
       "/projects/silver-core-sdk-doc-architecture.md",
       "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-tool-parity.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md",
@@ -10736,6 +10733,9 @@
     "cleanup": [
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md"
     ],
+    "cli": [
+      "/projects/silver-core-sdk-doc-tool-parity.md"
+    ],
     "closed": [
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md"
@@ -10753,6 +10753,7 @@
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-tool-parity.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
@@ -11035,6 +11036,7 @@
       "/projects/silver-core-sdk-doc-reporting.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-tool-parity.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -11264,6 +11266,7 @@
       "/projects/silver-core-sdk-doc-reporting.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-tool-parity.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -11387,6 +11390,7 @@
       "/projects/silver-core-sdk-doc-reporting.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-tool-parity.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -11713,6 +11717,7 @@
       "/projects/silver-core-sdk-doc-reporting.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-tool-parity.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -12024,6 +12029,7 @@
       "/projects/silver-core-sdk-doc-reporting.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-tool-parity.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
@@ -12128,7 +12134,8 @@
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-reporting.md",
       "/projects/silver-core-sdk-doc-resilience.md",
-      "/projects/silver-core-sdk-doc-subagents.md"
+      "/projects/silver-core-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-tool-parity.md"
     ],
     "docs": [
       "/projects/silver-core-sdk-doc-architecture.md",
@@ -12146,6 +12153,7 @@
       "/projects/silver-core-sdk-doc-reporting.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-tool-parity.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md"
     ],
     "document": [
@@ -12315,6 +12323,9 @@
     "execution": [
       "/resource/resource-proposal-bpt-sdk-v06-remaining-execution-roadmap-20260705.md"
     ],
+    "exists": [
+      "/projects/silver-core-sdk-doc-tool-parity.md"
+    ],
     "experience": [
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md"
     ],
@@ -12382,6 +12393,9 @@
     ],
     "fetch": [
       "/assets/assets-chat-onboarding-snippet.md"
+    ],
+    "file": [
+      "/projects/silver-core-sdk-doc-tool-parity.md"
     ],
     "fixed": [
       "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md"
@@ -13427,6 +13441,7 @@
       "/projects/silver-core-sdk-doc-reporting.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-tool-parity.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -13947,6 +13962,7 @@
       "/projects/silver-core-sdk-doc-reporting.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-tool-parity.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
       "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
@@ -14417,6 +14433,9 @@
     "parallelism": [
       "/projects/silver-core-sdk-doc-concurrency.md"
     ],
+    "parity": [
+      "/projects/silver-core-sdk-doc-tool-parity.md"
+    ],
     "parse": [
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
       "/resource/resource-repo-engineering-test-coverage-analysis-202606.md"
@@ -14873,6 +14892,7 @@
       "/projects/silver-core-sdk-doc-reporting.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-tool-parity.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-proposal-biav-project-plan-202603.md"
@@ -14925,6 +14945,7 @@
       "/projects/silver-core-sdk-doc-reporting.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-tool-parity.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-producer-light-evaluation-20260704.md",
@@ -15458,6 +15479,9 @@
     "reporting": [
       "/projects/silver-core-sdk-doc-reporting.md"
     ],
+    "reproduces": [
+      "/projects/silver-core-sdk-doc-tool-parity.md"
+    ],
     "reproduction": [
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
     ],
@@ -15787,6 +15811,7 @@
       "/projects/silver-core-sdk-doc-reporting.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-tool-parity.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -15895,6 +15920,7 @@
       "/projects/silver-core-sdk-doc-reporting.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-tool-parity.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
@@ -16241,6 +16267,7 @@
       "/projects/silver-core-sdk-doc-reporting.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-tool-parity.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md"
     ],
@@ -16452,6 +16479,7 @@
       "/characters/15569.md"
     ],
     "tool": [
+      "/projects/silver-core-sdk-doc-tool-parity.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md"
@@ -16845,6 +16873,9 @@
       "/news-output/news-output-weixin.md",
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
       "/sources/weixin.md"
+    ],
+    "why": [
+      "/projects/silver-core-sdk-doc-tool-parity.md"
     ],
     "wide": [
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
@@ -17543,6 +17574,7 @@
       "/projects/silver-core-sdk-doc-reporting.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-tool-parity.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -17809,6 +17841,7 @@
       "/projects/silver-core-sdk-doc-reporting.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-tool-parity.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -18132,6 +18165,7 @@
       "/projects/silver-core-sdk-doc-reporting.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-tool-parity.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -19418,6 +19452,7 @@
       "/projects/silver-core-sdk-doc-reporting.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-tool-parity.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -20383,6 +20418,7 @@
       "/projects/silver-core-sdk-doc-reporting.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-tool-parity.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -20651,6 +20687,7 @@
       "/projects/silver-core-sdk-doc-reporting.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-tool-parity.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -22606,6 +22643,7 @@
       "/projects/silver-core-sdk-doc-reporting.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-tool-parity.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -25928,6 +25966,7 @@
       "/projects/silver-core-sdk-doc-reporting.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-tool-parity.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -26733,6 +26772,7 @@
       "/projects/silver-core-sdk-doc-reporting.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-tool-parity.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -27353,6 +27393,7 @@
       "/projects/silver-core-sdk-doc-reporting.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-tool-parity.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -31301,6 +31342,7 @@
       "/projects/silver-core-sdk-doc-reporting.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-tool-parity.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -31876,6 +31918,7 @@
       "/projects/silver-core-sdk-doc-reporting.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-tool-parity.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -32217,6 +32260,7 @@
       "/projects/silver-core-sdk-doc-reporting.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-tool-parity.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -32637,6 +32681,7 @@
       "/projects/silver-core-sdk-doc-reporting.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-tool-parity.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -32924,6 +32969,7 @@
       "/projects/silver-core-sdk-doc-reporting.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-tool-parity.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -34669,6 +34715,7 @@
       "/projects/silver-core-sdk-doc-reporting.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-tool-parity.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -35104,6 +35151,7 @@
       "/projects/silver-core-sdk-doc-reporting.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-tool-parity.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -35725,6 +35773,7 @@
       "/projects/silver-core-sdk-doc-reporting.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-tool-parity.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -36468,6 +36517,7 @@
       "/projects/silver-core-sdk-doc-reporting.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-tool-parity.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -36858,6 +36908,7 @@
       "/projects/silver-core-sdk-doc-reporting.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-tool-parity.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -44050,6 +44101,7 @@
       "/projects/silver-core-sdk-doc-reporting.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-tool-parity.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -44759,6 +44811,7 @@
       "/projects/silver-core-sdk-doc-reporting.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-tool-parity.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -45799,6 +45852,7 @@
       "/projects/silver-core-sdk-doc-reporting.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-tool-parity.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -46055,6 +46109,7 @@
       "/projects/silver-core-sdk-doc-reporting.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-tool-parity.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -47825,6 +47880,7 @@
       "/projects/silver-core-sdk-doc-reporting.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-tool-parity.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
@@ -47940,6 +47996,7 @@
       "/projects/silver-core-sdk-doc-reporting.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-tool-parity.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -48259,6 +48316,7 @@
       "/projects/silver-core-sdk-doc-reporting.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-tool-parity.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -48546,6 +48604,7 @@
       "/projects/silver-core-sdk-doc-reporting.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-tool-parity.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
@@ -48626,7 +48685,8 @@
       "/projects/silver-core-sdk-doc-positioning.md",
       "/projects/silver-core-sdk-doc-reporting.md",
       "/projects/silver-core-sdk-doc-resilience.md",
-      "/projects/silver-core-sdk-doc-subagents.md"
+      "/projects/silver-core-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-tool-parity.md"
     ],
     "docs": [
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md"
@@ -49174,6 +49234,7 @@
       "/projects/silver-core-sdk-doc-reporting.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-tool-parity.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
@@ -49634,6 +49695,9 @@
     "panel": [
       "/wiki-data/wiki-data-panel-text.md"
     ],
+    "parity": [
+      "/projects/silver-core-sdk-doc-tool-parity.md"
+    ],
     "patterns": [
       "/memory/memory-ext-research-best-wiki-features.md"
     ],
@@ -49859,6 +49923,7 @@
       "/projects/silver-core-sdk-doc-reporting.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-tool-parity.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md",
       "/resource/resource-proposal-biav-project-plan-202603.md"
@@ -50159,6 +50224,7 @@
       "/projects/silver-core-sdk-doc-reporting.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-tool-parity.md",
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-data-diagnostics-bpt-sdk-i18n-cost-investigation-20260708.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
@@ -50227,6 +50293,7 @@
       "/projects/silver-core-sdk-doc-reporting.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-tool-parity.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
       "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
@@ -50364,6 +50431,7 @@
       "/projects/silver-core-sdk-doc-reporting.md",
       "/projects/silver-core-sdk-doc-resilience.md",
       "/projects/silver-core-sdk-doc-subagents.md",
+      "/projects/silver-core-sdk-doc-tool-parity.md",
       "/projects/site-design-morimens-design-system-guide.md",
       "/projects/site-design-morimens-design-tokens.md"
     ],
@@ -50416,6 +50484,7 @@
       "/projects/site-design-morimens-design-tokens.md"
     ],
     "tool": [
+      "/projects/silver-core-sdk-doc-tool-parity.md",
       "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md"
     ],
     "topic": [
