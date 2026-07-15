@@ -1,8 +1,8 @@
 {
   "date": "2026-07-15",
-  "archived_at": "2026-07-15T19:09:36.504037+00:00",
+  "archived_at": "2026-07-15T22:01:15.373342+00:00",
   "source": "bilibili",
-  "item_count": 18,
+  "item_count": 19,
   "items": [
     {
       "title": "【忘却前夜】强力输出！波吕克斯详细攻略",
@@ -184,6 +184,29 @@
         "danmaku": 0
       },
       "media_url": "https://i0.hdslb.com/bfs/archive/639c79eb8f52cbe51ac615a25d5e4d333135681c.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "十二神器这一块",
+      "summary": "-\n  └ 进击的哈基角的sama (1赞): 太对了[星星眼][星星眼][星星眼][星星眼]saya酱永远的神",
+      "source": "bilibili",
+      "time": "2026-07-15T12:07:25+00:00",
+      "url": "https://www.bilibili.com/video/BV1DENi6eE2d",
+      "engagement": 127,
+      "is_hot": false,
+      "author": "星顺华",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 125,
+        "comment_count": 2,
+        "comments_fetched": 1,
+        "danmaku": 0
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/6be85548d2939de0ce0d374b8cd1463e3eba73de.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
