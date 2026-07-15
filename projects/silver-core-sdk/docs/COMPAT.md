@@ -373,7 +373,8 @@ SDK implements the agent loop directly against the public Messages API:
 | WebFetch / WebSearch | FULL | registered in v0.2 |
 | TodoWrite | PARTIAL | v0.7: OFF by default (Task quadruplet is the default surface); `CLAUDE_CODE_ENABLE_TASKS=0` reverts to TodoWrite-only, per official 0.3.142 |
 | Agent | PARTIAL | the subagent spawn tool; v0.7 gains `model`/`isolation:'worktree'` and the official required set [description, prompt] (subagent_type defaults to general-purpose). Residual param delta = our BPT-only `fork` extension |
-| NotebookEdit / MultiEdit | UNSUPPORTED | deliberately untracked (BPT has no notebook surface; MultiEdit retired upstream) |
+| MultiEdit | FULL | v0.61.0 (SDK-original): same-file atomic batch edit — edits apply sequentially on one snapshot, all-or-nothing write, single pre-image for rewind, same read-before-write gate as Edit. No official parity target (retired upstream), so FULL is vs our own documented semantics and the description is authored, not reproduced (`faithful:false`). v0.62.1: not-found errors are triaged against the original text — "absent from the file (re-Read)" vs "consumed by an earlier edit in this call" (culprit edit named; overlap rule added to the description) |
+| NotebookEdit | UNSUPPORTED | deliberately untracked (BPT has no notebook surface) |
 
 ## SDKMessage stream
 

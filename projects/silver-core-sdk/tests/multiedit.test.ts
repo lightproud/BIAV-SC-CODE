@@ -136,6 +136,50 @@ describe('MultiEdit tool', () => {
     expect(await readFile(file, 'utf8')).toBe(original);
   });
 
+  it('triages a not-found old_string that never existed: says so and points at Read', async () => {
+    const file = path.join(sandbox, 'triage-absent.txt');
+    const original = 'one\ntwo\n';
+    await writeFile(file, original, 'utf8');
+
+    const res = await multiEditTool.execute(
+      { file_path: file, edits: [{ old_string: 'NEVER-THERE', new_string: 'x' }] },
+      makeCtx(sandbox),
+    );
+
+    expect(res.isError).toBe(true);
+    expect(String(res.content)).toContain('does not appear in the original file');
+    expect(String(res.content)).toContain('Re-Read');
+    expect(await readFile(file, 'utf8')).toBe(original);
+  });
+
+  it('triages a not-found old_string consumed by an earlier edit: names the culprit', async () => {
+    const file = path.join(sandbox, 'triage-overlap.txt');
+    const original = 'alpha\nbeta\ngamma\n';
+    await writeFile(file, original, 'utf8');
+
+    // Edit #1 rewrites "beta"; edit #3's old_string was authored against the
+    // ORIGINAL file and includes that now-gone line — the classic overlap trap.
+    const res = await multiEditTool.execute(
+      {
+        file_path: file,
+        edits: [
+          { old_string: 'beta', new_string: 'BETA' },
+          { old_string: 'alpha', new_string: 'ALPHA' },
+          { old_string: 'beta\ngamma', new_string: 'X' },
+        ],
+      },
+      makeCtx(sandbox),
+    );
+
+    expect(res.isError).toBe(true);
+    expect(String(res.content)).toContain('edit #3');
+    expect(String(res.content)).toContain('matches the ORIGINAL file');
+    expect(String(res.content)).toContain('edit #1');
+    expect(String(res.content)).toContain('MERGED into a single edit');
+    // Atomic: nothing written despite edits #1 and #2 having applied in memory.
+    expect(await readFile(file, 'utf8')).toBe(original);
+  });
+
   it('is ATOMIC on a non-unique match without replace_all', async () => {
     const file = path.join(sandbox, 'ambiguous.txt');
     const original = 'dup\ndup\n';
