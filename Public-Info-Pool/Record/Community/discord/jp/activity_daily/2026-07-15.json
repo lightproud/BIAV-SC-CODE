@@ -1,11 +1,11 @@
 {
   "date": "2026-07-15",
-  "messages": 767,
+  "messages": 768,
   "unique_authors": 21,
   "reactions_total": 160,
   "attachments": 45,
   "channel_activity": {
-    "対人関係のあれこれ": 2,
+    "対人関係のあれこれ": 3,
     "ガチャ結果報告": 2,
     "なんでも雑談": 598,
     "🔰初心者質問": 141,
@@ -17,6 +17,7 @@
     "練習": 1
   },
   "hourly_activity": {
+    "22": 1,
     "18": 2,
     "17": 1,
     "14": 14,
@@ -37,7 +38,7 @@
     "1": 1
   },
   "message_types": {
-    "0": 3
+    "0": 1
   },
   "top_reacted_messages": [
     {
