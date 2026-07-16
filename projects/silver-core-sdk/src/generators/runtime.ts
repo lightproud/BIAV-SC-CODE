@@ -164,10 +164,16 @@ export async function runUtilityCall(
  * balanced object is present.
  */
 export function extractJsonObject(text: string): unknown {
-  // Fast path: the whole reply is already JSON.
+  // Fast path: the whole reply is already a JSON OBJECT. A top-level array or
+  // primitive must NOT short-circuit — this function's contract is "the first
+  // top-level object", and an array-wrapped reply (`[{...}]`) still needs the
+  // brace scan below to recover the inner object (else the caller gets the
+  // literal array text as, e.g., a session title).
   const trimmed = text.trim();
   const direct = tryParse(trimmed);
-  if (direct !== undefined) return direct;
+  if (typeof direct === 'object' && direct !== null && !Array.isArray(direct)) {
+    return direct;
+  }
 
   // Scan for the first balanced { … } that PARSES, honoring string literals so
   // a brace inside a quoted value never miscounts. A balanced group that fails

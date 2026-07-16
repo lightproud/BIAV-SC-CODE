@@ -74,12 +74,25 @@ async function readLocalEntries(
     return [];
   }
   const out: Record<string, unknown>[] = [];
+  // Finding H2 read-time uuid dedup (mirrors JsonlSessionStore.load): a
+  // concurrent cross-host resume can double-materialize a transcript, and this
+  // audit/export/fork read path must collapse it too — otherwise forkSession
+  // rewrites each duplicate to a DISTINCT fresh uuid, baking the doubling in
+  // permanently so load()'s own dedup can never collapse it again.
+  const seenUuids = new Set<string>();
   for (const line of raw.split('\n')) {
     const t = line.trim();
     if (t.length === 0) continue;
     try {
       const o = JSON.parse(t);
-      if (o !== null && typeof o === 'object') out.push(o as Record<string, unknown>);
+      if (o !== null && typeof o === 'object') {
+        const rec = o as Record<string, unknown>;
+        if (typeof rec.uuid === 'string') {
+          if (seenUuids.has(rec.uuid)) continue;
+          seenUuids.add(rec.uuid);
+        }
+        out.push(rec);
+      }
     } catch {
       // Skip corrupt lines.
     }
@@ -93,7 +106,11 @@ function entryToSessionMessage(
 ): SessionMessage | null {
   const type = e.type;
   if (type !== 'user' && type !== 'assistant') return null;
-  if (e.message === undefined) return null;
+  // Reject a missing OR malformed message (null / non-object): the resume path
+  // (store.ts load) shape-checks message before use, but this audit/export path
+  // fed `message` straight through, so a `{message:null}` line crashed any
+  // consumer doing `.message.content` (e.g. auditSessionToolClaims).
+  if (e.message === null || typeof e.message !== 'object') return null;
   return {
     type,
     uuid: typeof e.uuid === 'string' ? e.uuid : randomUUID(),

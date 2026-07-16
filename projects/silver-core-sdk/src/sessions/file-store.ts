@@ -137,6 +137,21 @@ function isEnoent(err: unknown): boolean {
 }
 
 /**
+ * A directory entry that cannot hold a session transcript: it either does not
+ * exist (ENOENT) or is a plain file, so `join(entry, main.jsonl)` is not a
+ * directory path (ENOTDIR). Both mean "not a session", never a fatal error —
+ * a stray `.DS_Store` in the project dir must not abort the whole listing.
+ */
+function isNotASessionDir(err: unknown): boolean {
+  if (isEnoent(err)) return true;
+  return (
+    typeof err === 'object' &&
+    err !== null &&
+    (err as NodeJS.ErrnoException).code === 'ENOTDIR'
+  );
+}
+
+/**
  * File-backed implementation of the public SessionStore contract. See the
  * module doc for layout, path-safety and lock-free durability semantics.
  */
@@ -265,7 +280,7 @@ export class FileSessionStore implements SessionStore {
         const st = await stat(join(projectDir, name, MAIN_FILE));
         out.push({ sessionId: decodeKeyComponent(name), mtime: st.mtimeMs });
       } catch (err) {
-        if (!isEnoent(err)) throw err; // no main transcript -> not a session
+        if (!isNotASessionDir(err)) throw err; // no main transcript -> not a session
       }
     }
     out.sort((a, b) => b.mtime - a.mtime);

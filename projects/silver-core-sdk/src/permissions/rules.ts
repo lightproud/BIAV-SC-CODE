@@ -102,8 +102,16 @@ const PRIMARY_ARG_FIELD: Readonly<Record<string, string>> = {
   Read: 'file_path',
   Write: 'file_path',
   Edit: 'file_path',
+  MultiEdit: 'file_path',
   Glob: 'pattern',
   Grep: 'pattern',
+  // Without these, a scoped rule (e.g. the SSRF deny `WebFetch(http://169.254.169.254*)`)
+  // falls to the JSON fallback and compares the specifier against `{"url":...}`,
+  // which starts with `{` and never prefix-matches the URL — the deny silently
+  // never fires. Map each builtin to the field its specifier rules target.
+  WebFetch: 'url',
+  WebSearch: 'query',
+  NotebookEdit: 'notebook_path',
 };
 
 /**

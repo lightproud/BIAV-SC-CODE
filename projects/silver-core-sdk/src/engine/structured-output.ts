@@ -155,10 +155,19 @@ function extractJsonCandidate(text: string): ExtractResult {
     if (parsed.ok) return parsed;
   }
 
-  const scanned = scanBalanced(trimmed);
-  if (scanned !== undefined) {
-    const parsed = tryParse(scanned);
-    if (parsed.ok) return parsed;
+  // Try each balanced span in turn: a stray wrong-type bracket in leading prose
+  // (`Sure [see below]: {"answer":42}`) must not let the first opener capture
+  // the scan and hide the real JSON that follows. Resume past each opener whose
+  // span is unbalanced or fails to parse.
+  let from = 0;
+  for (;;) {
+    const scanned = scanBalanced(trimmed, from);
+    if (scanned === undefined) break;
+    if (scanned.span !== null) {
+      const parsed = tryParse(scanned.span);
+      if (parsed.ok) return parsed;
+    }
+    from = scanned.start + 1;
   }
 
   return { ok: false, reason: direct.reason };
@@ -180,12 +189,18 @@ function extractFenced(text: string): string | undefined {
 }
 
 /**
- * First balanced JSON object/array substring. Counts only the opening
- * delimiter's own type, ignoring delimiters inside JSON strings and respecting
- * backslash escapes. Returns undefined when no balanced value is found.
+ * The next balanced JSON object/array substring at or after `from`. Counts only
+ * the opening delimiter's own type, ignoring delimiters inside JSON strings and
+ * respecting backslash escapes. Returns `{ start, span }` where `start` is the
+ * opener position (so the caller can resume the search past it) and `span` is
+ * the balanced substring, or null when this opener never closes. Returns
+ * undefined when no opener exists at/after `from`.
  */
-function scanBalanced(text: string): string | undefined {
-  const start = firstOpener(text);
+function scanBalanced(
+  text: string,
+  from = 0,
+): { start: number; span: string | null } | undefined {
+  const start = firstOpener(text, from);
   if (start === -1) return undefined;
   const open = text[start];
   const close = open === '{' ? '}' : ']';
@@ -207,15 +222,15 @@ function scanBalanced(text: string): string | undefined {
     if (ch === open) depth += 1;
     else if (ch === close) {
       depth -= 1;
-      if (depth === 0) return text.slice(start, i + 1);
+      if (depth === 0) return { start, span: text.slice(start, i + 1) };
     }
   }
-  return undefined;
+  return { start, span: null }; // opened at `start` but never balanced
 }
 
-function firstOpener(text: string): number {
-  const ib = text.indexOf('{');
-  const ia = text.indexOf('[');
+function firstOpener(text: string, from = 0): number {
+  const ib = text.indexOf('{', from);
+  const ia = text.indexOf('[', from);
   if (ib === -1) return ia;
   if (ia === -1) return ib;
   return Math.min(ib, ia);
@@ -287,9 +302,16 @@ function validateValue(
         ? (s.properties as Record<string, unknown>)
         : undefined;
 
+    // OWN-property checks only: the `in` operator walks the prototype chain, so
+    // a schema property named like an Object.prototype member (constructor,
+    // toString, valueOf, hasOwnProperty, __proto__, …) would be seen as always
+    // present — a missing `required:['constructor']` goes unflagged, and a
+    // `properties:{toString}` validates the inherited function on a valid {}.
+    const hasOwn = (k: string): boolean => Object.prototype.hasOwnProperty.call(obj, k);
+
     if (Array.isArray(s.required)) {
       for (const key of s.required) {
-        if (typeof key === 'string' && !(key in obj)) {
+        if (typeof key === 'string' && !hasOwn(key)) {
           errors.push({ path: joinPath(path, key), message: 'required property missing' });
         }
       }
@@ -297,7 +319,7 @@ function validateValue(
 
     if (props) {
       for (const key of Object.keys(props)) {
-        if (key in obj) {
+        if (hasOwn(key)) {
           errors.push(...validateValue(obj[key], props[key], root, joinPath(path, key), refDepth));
         }
       }
@@ -392,7 +414,13 @@ function resolveRef(ref: string, root: unknown): unknown {
   const parts = ref.slice(2).split('/').map(decodePointer);
   let cur: unknown = root;
   for (const part of parts) {
-    if (cur !== null && typeof cur === 'object' && part in (cur as Record<string, unknown>)) {
+    // OWN-property only: a `#/constructor`-style ref must resolve to undefined,
+    // not walk into Object.prototype (same prototype-chain hazard as `in`).
+    if (
+      cur !== null &&
+      typeof cur === 'object' &&
+      Object.prototype.hasOwnProperty.call(cur, part)
+    ) {
       cur = (cur as Record<string, unknown>)[part];
     } else {
       return undefined;

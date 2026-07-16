@@ -529,16 +529,36 @@ async function foldViaApi(
   // on the foreign signatures (previously caught + silently degraded to the
   // deterministic fold, so useApiSummary never worked with a distinct model).
   // The summary is mechanical and needs no thinking, so strip it unconditionally.
-  const summaryPrefix = prefix.map((m) =>
-    m.role === 'assistant' && Array.isArray(m.content)
-      ? {
-          ...m,
-          content: m.content.filter(
-            (b) => b.type !== 'thinking' && b.type !== 'redacted_thinking',
-          ),
-        }
-      : m,
-  );
+  // Every tool_use id that has a paired tool_result inside the prefix. A
+  // tool_use WITHOUT one (reachable when the prefix cut lands right after an
+  // assistant tool_use turn, so its result sits beyond the cut) makes the
+  // summary request 400 "tool_use ids without tool_result" — caught below and
+  // silently degraded to the deterministic fold, wasting the API call. Strip
+  // such orphan tool_use blocks (mirrors the C6 orphan filter in loop.ts).
+  const pairedResultIds = new Set<string>();
+  for (const m of prefix) {
+    if (!Array.isArray(m.content)) continue;
+    for (const b of m.content) {
+      if (b.type === 'tool_result') pairedResultIds.add(b.tool_use_id);
+    }
+  }
+  const summaryPrefix = prefix
+    .map((m) =>
+      m.role === 'assistant' && Array.isArray(m.content)
+        ? {
+            ...m,
+            content: m.content.filter(
+              (b) =>
+                b.type !== 'thinking' &&
+                b.type !== 'redacted_thinking' &&
+                (b.type !== 'tool_use' || pairedResultIds.has(b.id)),
+            ),
+          }
+        : m,
+    )
+    // An assistant turn left empty by the strip would itself 400 (empty
+    // content); drop it — the summary is mechanical and loses nothing.
+    .filter((m) => !Array.isArray(m.content) || m.content.length > 0);
   const req: StreamRequest = {
     model: summaryModel,
     max_tokens: Math.min(4096, config.maxOutputTokens),

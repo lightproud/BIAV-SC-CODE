@@ -163,11 +163,22 @@ export function createShellManager(debug: (msg: string) => void): ShellManager {
     kill(id) {
       const rec = shells.get(id);
       if (rec === undefined) return false;
+      // Never signal a shell that already reached a terminal state: its PGID may
+      // have been recycled to an unrelated process, and a SIGKILL-escalation
+      // timer armed AFTER exit is never cleared by the exit handler (it only
+      // clears timers armed before exit) — so it would fire on the recycled
+      // group, the exact L1 hazard this module guards against.
+      if (rec.status !== 'running') return false;
       // Record intent only; the terminal status is set by the exit handler
       // (terminalStatus) from what actually happens - not forced to 'killed'
       // here before the signal has even landed.
       rec.killRequested = true;
       rec.kill('SIGTERM');
+      // Replace (never leak) any in-flight escalation timer: a second kill()
+      // — e.g. a Monitor timeout racing an explicit KillShell — would otherwise
+      // orphan the first timer and mis-delete the wrong entry when one fires.
+      const existing = killTimers.get(id);
+      if (existing !== undefined) clearTimeout(existing);
       const t = setTimeout(() => {
         killTimers.delete(id);
         rec.kill('SIGKILL');

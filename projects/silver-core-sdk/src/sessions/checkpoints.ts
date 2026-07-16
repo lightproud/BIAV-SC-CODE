@@ -16,8 +16,12 @@
 
 import {
   appendFileSync,
+  closeSync,
+  fstatSync,
   mkdirSync,
+  openSync,
   readFileSync,
+  readSync,
   writeFileSync,
 } from 'node:fs';
 import { mkdir, readFile, rm, writeFile } from 'node:fs/promises';
@@ -56,6 +60,9 @@ export class FileCheckpointStore {
 
   private dir: string | null = null;
   private seq = 0;
+  /** Whether this instance already checked the index tail for a torn append
+   *  (M-9 self-heal, mirrors JsonlSessionStore.append). */
+  private indexTailChecked = false;
   private seenThisTurn = new Set<string>();
   private currentTurnId: string | null = null;
   // Finding M3 — per-instance blob token. `seq` is recovered from the index at
@@ -105,10 +112,8 @@ export class FileCheckpointStore {
     const seq = this.seq;
     try {
       mkdirSync(this.dir, { recursive: true });
-      appendFileSync(
-        this.indexPath(),
+      this.appendIndexLine(
         `${JSON.stringify({ userMessageId, seq, marker: 'turn_start' })}\n`,
-        'utf8',
       );
     } catch (err) {
       this.debug(`checkpoint turn marker failed: ${errMessage(err)}`);
@@ -141,7 +146,7 @@ export class FileCheckpointStore {
         blob: blobName,
         seq,
       };
-      appendFileSync(this.indexPath(), `${JSON.stringify(line)}\n`, 'utf8');
+      this.appendIndexLine(`${JSON.stringify(line)}\n`);
     } catch (err) {
       this.debug(`checkpoint record failed for ${absPath}: ${errMessage(err)}`);
     }
@@ -232,6 +237,44 @@ export class FileCheckpointStore {
 
   private indexPath(): string {
     return join(this.dir as string, 'index.jsonl');
+  }
+
+  /**
+   * Append one already-newline-terminated line to index.jsonl with the M-9
+   * torn-tail self-heal (mirrors JsonlSessionStore.append): the FIRST append
+   * per instance checks the file's last byte and, if a previous process died
+   * mid-append leaving no trailing newline, prefixes this line with '\n' so the
+   * fresh record does not glue onto the torn tail (which would lose BOTH lines
+   * on readIndex and leave a just-written blob unreferenced/unrewindable).
+   * The index file survives across processes on purpose (see the file header).
+   */
+  private appendIndexLine(line: string): void {
+    const file = this.indexPath();
+    let out = line;
+    if (!this.indexTailChecked) {
+      this.indexTailChecked = true;
+      if (this.endsWithoutNewlineSync(file)) out = `\n${line}`;
+    }
+    appendFileSync(file, out, 'utf8');
+  }
+
+  /** True when `file` exists, is non-empty, and its last byte is not '\n'. */
+  private endsWithoutNewlineSync(file: string): boolean {
+    let fd: number;
+    try {
+      fd = openSync(file, 'r');
+    } catch {
+      return false; // ENOENT etc.: nothing to heal
+    }
+    try {
+      const size = fstatSync(fd).size;
+      if (size === 0) return false;
+      const buf = Buffer.alloc(1);
+      readSync(fd, buf, 0, 1, size - 1);
+      return buf[0] !== 0x0a;
+    } finally {
+      closeSync(fd);
+    }
   }
 
   private blobsDir(): string {

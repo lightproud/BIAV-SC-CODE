@@ -45,6 +45,14 @@ export type NonNullableUsage = {
   output_tokens: number;
   cache_creation_input_tokens: number;
   cache_read_input_tokens: number;
+  /**
+   * Server-side web-search call count carried through from the wire
+   * `usage.server_tool_use.web_search_requests` (normalizeUsage populates it).
+   * Optional so the various zeroUsage() factories can omit it (treated as 0);
+   * without this field the count is stripped before recordUsage and the
+   * official-surface ModelUsage.webSearchRequests is permanently 0.
+   */
+  web_search_requests?: number;
 };
 
 export type ModelUsage = {

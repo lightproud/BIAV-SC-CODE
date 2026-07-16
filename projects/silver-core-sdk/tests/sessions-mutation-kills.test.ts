@@ -304,5 +304,16 @@ describe('MirroringSessionStore: read-side fallbacks (the sessionStore consumer 
     const p = jsonlMirror.filePath('sess-x');
     expect(typeof p).toBe('string');
     expect(p).toContain('sess-x');
+
+    // The InMemory-local half the title promises: an InMemorySessionStore has no
+    // filePath, so the duck-typed passthrough must return undefined (previously
+    // this branch had zero coverage). filePath probes the local's method
+    // existence, so it needs no prior append.
+    const memMirror = new MirroringSessionStore(new InMemorySessionStore(), new ReadSpy(), {
+      projectKey: PK,
+      flush: 'eager',
+      backoffBaseMs: 1,
+    });
+    expect(memMirror.filePath('sess-x')).toBeUndefined();
   });
 });

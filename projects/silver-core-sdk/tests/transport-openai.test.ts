@@ -612,6 +612,23 @@ describe('OpenAIStreamTranslator', () => {
     expect(msg.usage.cache_read_input_tokens).toBe(40);
   });
 
+  it('bug-fix: an empty tool_call placeholder emits no bogus tool_use block', () => {
+    // `{index:1}` with no id/name/args is a placeholder (contentSeen ignores it);
+    // finish() must NOT flush it as a tool_use block with an empty name.
+    const t = new OpenAIStreamTranslator('m');
+    const events = [
+      ...t.feed({ id: 'c', choices: [{ delta: { content: 'hi' } }] }),
+      ...t.feed({ choices: [{ delta: { tool_calls: [{ index: 1 }] } }] }),
+      ...t.feed({ choices: [{ index: 0, delta: {}, finish_reason: 'stop' }] }),
+      ...t.finish(),
+    ];
+    const acc = new MessageAccumulator();
+    for (const ev of events) acc.feed(ev);
+    const msg = acc.finalize();
+    expect(msg.content.some((b) => b.type === 'tool_use')).toBe(false);
+    expect(msg.stop_reason).toBe('end_turn');
+  });
+
   it('translates tool_calls (two indices) into tool_use blocks with json deltas', () => {
     const t = new OpenAIStreamTranslator('m');
     const events = [

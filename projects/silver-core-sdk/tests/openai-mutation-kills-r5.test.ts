@@ -325,7 +325,7 @@ describe('stream completion and resilience error fields', () => {
     expect(events.at(-1)?.type).toBe('message_stop');
   });
 
-  it('an idle stall with ZERO chunks is replay-safe; after chunks it is a mid-stream truncation', async () => {
+  it('an idle stall with ZERO chunks is replay-safe; after chunks it is NOT replay-safe (truncation flag stays unset)', async () => {
     vi.stubGlobal('fetch', vi.fn(async () => sseOf([], { hang: true })));
     const e1 = (await errOf(drainT(makeT({ streamIdleTimeoutMs: 60 }).stream(REQ)))) as APIConnectionError & {
       turnReplaySafe?: boolean;
@@ -401,5 +401,15 @@ describe('parseRetryAfterMs edges', () => {
     expect(parseRetryAfterMs('-1')).toBe(0);
     expect(parseRetryAfterMs('soon')).toBeUndefined();
     expect(parseRetryAfterMs(null)).toBeUndefined();
+  });
+
+  it('bug-fix: a whitespace-only / non-decimal header is ignored, not a 0 backoff', () => {
+    // Number('') is 0, so a whitespace-only Retry-After previously returned 0
+    // (retry immediately) instead of falling through to be ignored.
+    expect(parseRetryAfterMs('   ')).toBeUndefined();
+    expect(parseRetryAfterMs('')).toBeUndefined();
+    // Number() over-accepts these hex/exponent forms; they are not delta-seconds.
+    expect(parseRetryAfterMs('0x1f')).toBeUndefined();
+    expect(parseRetryAfterMs('1e3')).toBeUndefined();
   });
 });

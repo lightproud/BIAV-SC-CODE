@@ -194,7 +194,14 @@ export class DefaultMcpRegistry implements McpRegistry {
     try {
       return await entry.connection.callTool(toolName, args, signal);
     } catch (err) {
-      if (isAbortError(err)) throw err;
+      // The ONLY reason to abort the whole run is a genuine CALLER abort (the
+      // passed signal). An AbortError raised while the signal is NOT aborted
+      // means the connection was closed mid-call (setServers/reconnect) — the
+      // HTTP path throws AbortError('...closed') there, unlike stdio which
+      // throws a plain McpError. Degrade it to an isError result like the stdio
+      // close does, rather than tearing down the entire agent run over one
+      // tool call. (Contract: "call failures become isError results — never
+      // thrown, aborts excepted".)
       if (signal.aborted) throw new AbortError();
       return errorResult(`MCP tool '${qualifiedName}' failed: ${errMessage(err)}`);
     }

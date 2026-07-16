@@ -112,7 +112,14 @@ export const monitorTool: BuiltinTool = {
       };
     }
     const persistent = input['persistent'] === true;
-    const timeoutMs = typeof rawTimeout === 'number' ? rawTimeout : DEFAULT_MONITOR_TIMEOUT_MS;
+    // Clamp to Node's 32-bit setTimeout ceiling: a larger delay silently
+    // overflows to 1ms, firing the kill timer ~immediately and killing the
+    // just-launched watch — the exact opposite of a long-lived watch request.
+    const MAX_TIMER_MS = 2_147_483_647;
+    const timeoutMs = Math.min(
+      typeof rawTimeout === 'number' ? rawTimeout : DEFAULT_MONITOR_TIMEOUT_MS,
+      MAX_TIMER_MS,
+    );
 
     const shellsMgr = ctx.shells;
     if (shellsMgr === undefined) {

@@ -167,6 +167,7 @@ describe('query() e2e - happy path', () => {
       output_tokens: 7,
       cache_creation_input_tokens: 0,
       cache_read_input_tokens: 0,
+      web_search_requests: 0,
     });
     expect(result.permission_denials).toEqual([]);
 

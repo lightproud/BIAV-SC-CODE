@@ -16,6 +16,233 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.62.6 — 2026-07-16
+
+Bug-fix — a subagent could forge task-notification structure
+(`subagents/runtime.ts`): `formatTaskNotification` embedded the child-controlled
+`summary` and `result` free-text VERBATIM inside the `<task-notification>` XML
+block. A subagent whose returned text contained `</result><task-notification>…`
+(reachable when the child processed untrusted data) injected fake block
+structure — a forged status or instructions — into the parent coordinator's
+view. The official harness XML-escapes these fields before embedding them (the
+`&gt;`/`&amp;` seen in real notifications), so this is both a faithfulness fix
+and a prompt-injection defense: `&`/`<`/`>` in `summary` and `result` are now
+escaped. SDK-controlled fields (agentId, status, usage) are unaffected.
+Regression added in `tests/sendmessage.test.ts` (a forged closing tag yields
+exactly one real `</task-notification>` and is neutralized to entities).
+
+## 0.62.5 — 2026-07-15
+
+Bug-fix sweep, round 4 (final) — a cross-cutting sweep (numeric coercion,
+boundary/comparison, truthiness, parsing) plus a safe fix for one round-3
+deferral. The cross-cutting pass confirmed the codebase is exceptionally
+hardened against these classes: it surfaced ONE genuine defect (in a
+deliberately-mirrored twin), which is the signal to conclude the sweep.
+
+- **A whitespace-only Retry-After caused a zero-backoff retry**
+  (`transport/openai.ts`, `transport/anthropic.ts` — byte-aligned twins):
+  `Number('')` is 0, not NaN, so a header of only spaces passed the
+  `isFinite && >= 0` gate and returned 0 (retry immediately) instead of falling
+  through to be ignored (the doc's "anything else is ignored"). `Number()` also
+  over-accepted `'0x1f'`/`'1e3'`. Gated the delta-seconds branch behind a plain
+  decimal shape so malformed headers fall through to the HTTP-date parse and
+  ultimately `undefined` (exponential backoff), preserving every previously
+  blessed case (`' 5 '`, `'0'`, `'-1'`, `'soon'`, `null`).
+- **version-bump guard false-failed on a devDependency-only change**
+  (`scripts/check-version-bump.mjs`): the deps check pattern-matched a flat
+  patch where `"dependencies"` is also a substring of `"devDependencies"`, so
+  bumping a dev tool (vitest/typescript) with no src change forced an
+  unnecessary version bump. Now it compares the PARSED `dependencies` object of
+  the two revisions (via `git show`), ignoring devDependencies as the guard's
+  own docstring intends.
+
+Coverage: parseRetryAfterMs whitespace/hex/exponent regressions in
+`tests/openai-mutation-kills-r5.test.ts`; twin-drift test confirms the two
+transport arms stay byte-aligned. Full vitest green.
+
+## 0.62.4 — 2026-07-15
+
+Bug-fix sweep, round 3 — a third audit (3 readers over query/session-manager/
+subagents, mcp/tool-dispatch/config, and scripts + the test suite's own
+correctness). 4 runtime defects + 1 test-title correction fixed; deferred as
+keeper design calls: two accounting-completeness gaps (a memory session-end
+round's spend and a late background subagent's usage never surface on a yielded
+result — query.ts), a devDependency-only false-fail in the version-bump guard,
+an MCP `ping`→-32601 spec question locked by a test, and a handful of weak/
+vacuous test assertions (test-hardening backlog).
+
+- **HTTP MCP close aborted the whole run** (`mcp/registry.ts`): a tool call
+  in flight when the connection is closed (setServers/reconnect) threw
+  AbortError, which `registry.call` re-threw, tearing down the entire agent run
+  — the stdio path degrades the identical close to an isError result. Now the
+  registry only propagates an abort when the CALLER's signal is actually
+  aborted; a mid-call close becomes an isError result, restoring the documented
+  "call failures never thrown, aborts excepted" contract and stdio/http parity.
+- **compare-reports reported "0 unrecovered" with no transport signal**
+  (`reporting/compare-reports.ts`): `unrecovered` was a plain 0 even on a day
+  whose records carry no `transport_health`, while `transportFaultTotal` (the
+  same absent signal) correctly read 无数据. Made `unrecovered` `number | null`
+  so absence is a fact, not a zero — matching the file's own principle.
+- **Aborted tool calls were undercounted in perTool metrics**
+  (`engine/tool-dispatch.ts`): the abort path rethrew before `recordTool`, so a
+  tool aborted mid-execution was logged by the S3 onToolRecord audit ('[aborted]')
+  but missing from the perTool call/error ledger — the two disagreed on the same
+  dispatch. Record the aborted dispatch before rethrowing.
+- **Subagent tool calls lost their attribution** (`subagents/runtime.ts`): the
+  onToolRecord wrapper stamped `parentToolUseId: params.toolUseId`, but the Agent
+  tool always passes `''`, so child tool records persisted an empty parent id
+  instead of the child agentId — defeating the audit trail's child-attribution.
+  Use the same agentId fallback childConfig already uses.
+- **Test-title correction** (`tests/openai-mutation-kills-r5.test.ts`): a title
+  claimed a post-chunk idle stall "is a mid-stream truncation" while the body
+  asserts the opposite (not replay-safe, truncation flag unset); renamed to
+  match the real contract.
+
+Coverage: regressions in `tests/compare-reports.test.ts` (unrecovered null on
+no-transport days). Full vitest green.
+
+## 0.62.3 — 2026-07-15
+
+Bug-fix sweep, round 2 — a second, deeper audit (4 readers over the areas the
+first pass ranked below its cutoff) surfaced 14 candidates; 12 verified and
+fixed, 2 deferred (an OpenAI tool_call whose fragments split id-vs-index across
+deltas — a low-likelihood hot-path edge; and non-standard finish_reason
+aliases — speculative). One candidate that would have overridden the M-5
+explicit-finish_reason design was rejected on sight.
+
+Security / correctness:
+- **JSON-Schema validation walked the prototype chain**
+  (`engine/structured-output.ts`): property presence used the `in` operator, so
+  a schema property named like an `Object.prototype` member (`constructor`,
+  `toString`, `__proto__`, …) was always "present" — a `required:['constructor']`
+  went unflagged and a `properties:{toString}` rejected a valid `{}`. Switched
+  to own-property checks (also in `resolveRef` for `#/constructor`-style refs).
+- **Accumulator silently corrupted a thinking signature**
+  (`engine/accumulator.ts`): only `input_json_delta` had the S3 field-omit
+  guard; a `signature_delta` missing its field appended the literal
+  `"undefined"`, wedging every later turn with a 400 "Invalid signature".
+  Guarded `signature_delta`/`text_delta`/`thinking_delta` too.
+
+Robustness / recovery:
+- **Bash crashed on a NUL byte in the command** (`tools/bash.ts`): the
+  foreground `spawn()` was unguarded, so Node's SYNCHRONOUS `ERR_INVALID_ARG_VALUE`
+  escaped as a raw TypeError instead of the spawn-error → ConfigurationError
+  contract the background path already honored.
+- **Monitor / stall-watchdog timeouts overflowed the 32-bit timer**
+  (`tools/monitor.ts`, `transport/stall-watchdog.ts`): a timeout above
+  2147483647ms silently became a 1ms delay, so a long watch was killed ~instantly
+  and a relaxed stall timeout aborted every background subagent ~instantly.
+  Clamped both to the setTimeout ceiling.
+- **ShellManager.kill armed a stray SIGKILL timer** (`tools/shells.ts`): kill()
+  ran with no running-guard and overwrote the escalation timer without clearing
+  it, so a late/duplicate kill could SIGKILL a recycled process group — the L1
+  hazard the module guards. Guard on status + replace, never leak, the timer.
+- **Checkpoint index had no torn-tail heal** (`sessions/checkpoints.ts`): a
+  crash-torn `index.jsonl` glued the next record onto the partial line, losing
+  BOTH on read and leaving a just-written blob unreferenced/unrewindable.
+  Ported the M-9 self-heal (both append sites).
+- **Structured-output extraction gave up on a wrong-type bracket in prose**
+  (`engine/structured-output.ts`): `Sure [see below]: {"answer":42}` let the
+  `[` capture the scan; it now resumes past a failed span to the real JSON.
+- **Session-title generation returned an array-wrapped object verbatim**
+  (`generators/runtime.ts`): `[{...}]` short-circuited the fast path, so the
+  literal array text became the title; unwrap to the inner object.
+
+Sessions data integrity:
+- **Audit/export read path lacked null-message + uuid-dedup guards**
+  (`sessions/session-functions.ts`): a `{message:null}` line crashed consumers
+  doing `.message.content`, and a double-materialized transcript returned doubled
+  messages — which `forkSession` baked in PERMANENTLY (fresh uuids). Mirror the
+  shape check and H2 uuid-dedup the resume path already applies.
+- **loadInfo's sidechain guard missed a leading blank line**
+  (`sessions/store.ts`): a sidechain transcript whose first physical line was
+  blank surfaced as a resumable main session, disagreeing with
+  `isSidechainFile`/`latestSessionId`. Skip blanks before the record-1 check.
+
+Coverage: regressions in `tests/structured-output.test.ts` (prototype props +
+prose bracket), `tests/generators.test.ts` (array unwrap), `tests/bash-dx.test.ts`
+(NUL byte). Full vitest green.
+
+## 0.62.2 — 2026-07-15
+
+Bug-fix sweep — a multi-module audit (6 parallel readers over `src/`) surfaced
+~19 candidates; 12 verified as genuine defects and fixed here, 2 rejected as
+false positives that contradicted intentional test-locked behavior (an explicit
+OpenAI `finish_reason='stop'` is deliberately NOT overridden by open tool
+blocks, M-5; and `auto` mode deliberately routes a classifier 'prompt' verdict
+PAST allow rules to canUseTool, gate.ts mutation-kill), and 4 deferred as design
+calls for the keeper (see below).
+
+Security / permissions:
+- **Scoped rules never reached WebFetch/WebSearch/MultiEdit/NotebookEdit**
+  (`permissions/rules.ts`): these builtins were absent from `PRIMARY_ARG_FIELD`,
+  so a specifier rule (e.g. the SSRF deny `WebFetch(http://169.254.169.254*)`)
+  was matched against the JSON blob `{"url":...}` — which starts with `{` and
+  never prefix-matches — so the deny silently never fired. Mapped each to its
+  primary field. This is the security-relevant half; the `auto`-mode allow-rule
+  finding it shipped alongside was rejected (intentional, see above).
+- **A fully-denied MCP tool still showed in `statuses()`** (`mcp/tool-filter.ts`):
+  the decorator hid it from allTools()/has() but advertised it in each server's
+  per-tool status list. Filtered statuses() to match.
+
+Correctness:
+- **`ModelUsage.webSearchRequests` was permanently 0** (`engine/loop.ts`,
+  `engine/pricing.ts`, `types.ts`): `normalizeUsage` stripped `server_tool_use`
+  before `recordUsage` could read it, and recordUsage only carried the prior
+  value. Carried `web_search_requests` through normalizeUsage/addUsage and
+  summed it in the per-model ledger.
+- **OpenAI empty tool_call placeholder emitted a bogus tool_use block**
+  (`transport/openai.ts`): a `{index:N}` chunk with no id/name/args created a
+  buffer that finish() flushed as a tool_use with an empty name. Skip pure
+  placeholders in the flush loop (mirrors the contentSeen guard), and infer
+  `tool_use` on a missing finish_reason only from a REAL buffered tool.
+- **Compaction summary 400'd on an orphan tool_use** (`engine/compaction.ts`):
+  the summarization prefix kept tool_use blocks, so a prefix cut ending on an
+  assistant tool_use turn (result beyond the cut) sent an unpaired tool_use →
+  400 → silent degrade + a wasted call. Strip orphan tool_use blocks (mirrors
+  the C6 filter in loop.ts).
+- **Compaction under-counted a CJK system prompt ~4x** (`engine/loop.ts`): the
+  overhead estimate used a flat `charLen/4` instead of the CJK-aware
+  `estimateTextTokens` used elsewhere, so a Chinese system prompt could defer
+  the fold past a "prompt too long" 400. Use the shared estimator.
+- **runtime-report divided by zero** (`reporting/runtime-report.ts`): the tool
+  failure-rate cell computed `errors/calls` with no guard (calls:0 is a valid
+  ledger shape from external producers), rendering `NaN%`/`Infinity%`. Guarded
+  like the sibling in compare-reports.ts.
+
+Robustness / resource:
+- **WebFetch leaked the response socket on reject-without-read paths**
+  (`tools/webfetch.ts`): the HTTP-status / content-type / Content-Length error
+  returns never cancelled `response.body` (the redirect branch does), holding
+  the socket open until the 30s abort. Cancel on those paths too.
+- **listSessions aborted on a stray non-directory entry**
+  (`sessions/file-store.ts`): only ENOENT was tolerated stat-ing
+  `<entry>/main.jsonl`, so a plain file (e.g. `.DS_Store`) in the project dir
+  threw ENOTDIR and killed the whole listing. Treat ENOTDIR as "not a session".
+- **Grep's bare `*.ext` glob missed nested files** (`tools/grep.ts`): fast-glob
+  anchors `*.ts` to the search root while ripgrep (the interface this tool
+  reproduces, and its own `*.js` example) matches at any depth. Prepend a
+  globstar to a slash-less positive pattern.
+- **Cross-host session fallbacks leaked subagent sidechains**
+  (`sessions/store-adapter.ts`): the external `list()`/`latestSessionId()`
+  fallbacks bypassed the sidechain guard the local store applies, so a mirrored
+  `<agentId>` child transcript could surface as a resumable session or be picked
+  as the newest to resume. Apply the same guard in both.
+
+Deferred (real, but the fix is a keeper design call): an unsigned-thinking strip
+that can empty an assistant message (anthropic.ts, alters role alternation); the
+task-notification XML embedding child text un-escaped (runtime.ts, conformance
+vs. hardening); duplicate `sidechain_start` markers across SendMessage
+continuations (runtime.ts, marker-lifecycle redesign); and content-scoped
+specifiers never matching arbitrary MCP tools (rules.ts JSON fallback, a fuzzy
+match with its own misfire risk).
+
+Coverage: regressions across `tests/engine.test.ts` (web_search_requests),
+`tests/transport-openai.test.ts` (placeholder), `tests/permissions-gate-fixes.test.ts`
+(WebFetch/WebSearch specifier + SSRF deny), `tests/runtime-report.test.ts`
+(calls=0), `tests/file-store.test.ts` (ENOTDIR), `tests/grep-opt.test.ts`
+(nested glob), and a new `tests/tool-filter.test.ts` (statuses filtering).
+
 ## 0.62.1 — 2026-07-15
 
 Bug fix (usability) — MultiEdit's not-found error now diagnoses WHY instead of

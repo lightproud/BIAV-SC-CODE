@@ -179,3 +179,36 @@ describe('OPT: -o (only-matching) content mode', () => {
     expect(lines.every((l) => l.endsWith('m.txt:1:foo'))).toBe(true);
   });
 });
+
+describe('bug-fix: bare *.ext glob matches nested files (ripgrep depth semantics)', () => {
+  it('glob "*.ts" finds a nested src/foo.ts, not just root-level files', async () => {
+    const dir = await mkdtemp(path.join(os.tmpdir(), 'grep-glob-'));
+    sandboxes.push(dir);
+    await mkdir(path.join(dir, 'src'), { recursive: true });
+    await writeFile(path.join(dir, 'root.ts'), 'NEEDLE\n');
+    await writeFile(path.join(dir, 'src', 'foo.ts'), 'NEEDLE\n');
+    const res = contentOf(
+      await grepTool.execute(
+        { pattern: 'NEEDLE', path: dir, glob: '*.ts', output_mode: 'files_with_matches' },
+        makeCtx(dir),
+      ),
+    );
+    // Pre-fix fast-glob anchored `*.ts` to the root and missed src/foo.ts.
+    expect(res).toContain('root.ts');
+    expect(res).toContain(path.join('src', 'foo.ts'));
+  });
+
+  it('an explicit **/*.ts is unaffected (already depth-spanning)', async () => {
+    const dir = await mkdtemp(path.join(os.tmpdir(), 'grep-glob2-'));
+    sandboxes.push(dir);
+    await mkdir(path.join(dir, 'src'), { recursive: true });
+    await writeFile(path.join(dir, 'src', 'foo.ts'), 'NEEDLE\n');
+    const res = contentOf(
+      await grepTool.execute(
+        { pattern: 'NEEDLE', path: dir, glob: '**/*.ts', output_mode: 'files_with_matches' },
+        makeCtx(dir),
+      ),
+    );
+    expect(res).toContain(path.join('src', 'foo.ts'));
+  });
+});

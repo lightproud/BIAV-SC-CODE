@@ -544,15 +544,27 @@ export const webFetchTool: BuiltinTool = {
         return errorResult(`WebFetch failed: too many redirects (>${MAX_REDIRECTS}).`);
       }
 
+      // Reject-without-reading paths must release the response stream (and, on
+      // the pinned path, its underlying socket) the same way the redirect
+      // branch above does — otherwise the socket is held open until the 30s
+      // abort timeout fires.
+      const rejectUnread = (message: string): ToolResultPayload => {
+        const body = response!.body;
+        if (body !== null && typeof body.cancel === 'function') {
+          void body.cancel().catch(() => {});
+        }
+        return errorResult(message);
+      };
+
       if (response.status < 200 || response.status >= 300) {
-        return errorResult(
+        return rejectUnread(
           `WebFetch failed: request returned HTTP ${response.status} ${response.statusText}.`,
         );
       }
 
       const contentType = response.headers.get('content-type') ?? '';
       if (!isTextualContentType(contentType)) {
-        return errorResult(
+        return rejectUnread(
           `WebFetch failed: unsupported content type "${contentType || 'unknown'}" (only text, JSON, and XML are supported).`,
         );
       }
@@ -562,7 +574,7 @@ export const webFetchTool: BuiltinTool = {
       // gate above is not a size guard).
       const declaredLen = Number(response.headers.get('content-length'));
       if (Number.isFinite(declaredLen) && declaredLen > MAX_BODY_BYTES) {
-        return errorResult(
+        return rejectUnread(
           `WebFetch failed: response body too large (Content-Length ${declaredLen} bytes exceeds ${MAX_BODY_BYTES}-byte cap).`,
         );
       }

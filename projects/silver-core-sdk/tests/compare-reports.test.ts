@@ -84,6 +84,21 @@ describe('aggregateDay', () => {
     expect(agg.transportFaultTotal).toBeNull();
     expect(agg.tokens).toBeNull();
     expect(agg.tools).toBeNull();
+    expect(agg.unrecovered).toBeNull();
+  });
+
+  it('bug-fix: records WITHOUT transport signal report unrecovered as 无数据 (null), not 0', async () => {
+    // A day with records but no transport_health has NO transport signal, so
+    // unrecovered must mirror transportFaultTotal's absence (null), not claim a
+    // concrete "0 unrecovered".
+    await seedDay('2026-07-08', [
+      line({ ts: '2026-07-08T10:00:00.000Z' }),
+      line({ ts: '2026-07-08T11:00:00.000Z', session_id: 'sess-b' }),
+    ]);
+    const agg = await aggregateDay(dir, '2026-07-08');
+    expect(agg.records).toBe(2);
+    expect(agg.transportFaultTotal).toBeNull();
+    expect(agg.unrecovered).toBeNull();
   });
 });
 

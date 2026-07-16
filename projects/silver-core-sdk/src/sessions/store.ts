@@ -559,6 +559,12 @@ export class JsonlSessionStore implements SessionStore {
       for await (const rawLine of rl) {
         const line = rawLine.trim();
         if (firstLine) {
+          // Record 1 is the first NON-EMPTY line (mirror isSidechainFile): a
+          // leading blank must not consume the firstLine check, or a sidechain
+          // transcript whose first physical line is blank would slip past this
+          // guard and surface as a resumable main session while latestSessionId
+          // (via isSidechainFile) correctly hides it.
+          if (line.length === 0) continue;
           firstLine = false;
           // A subagent sidechain transcript ({"type":"sidechain_start",...}) is
           // NOT a listable main session — hide it from list()/getSessionInfo so

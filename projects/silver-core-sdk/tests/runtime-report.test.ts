@@ -265,6 +265,33 @@ describe('generateRuntimeReport', () => {
     expect(report.markdown.match(/无数据/g)!.length).toBeGreaterThanOrEqual(4);
   });
 
+  it('bug-fix: a tool with calls=0 renders 无数据, never NaN%/Infinity%', async () => {
+    // isRunLogRecord accepts calls:0 (external producers emit it), and the
+    // failure-rate cell divided errors/calls with no zero guard — unlike the
+    // guarded sibling in compare-reports.ts.
+    const logDir = await seedLedger([
+      {
+        ts: '2026-07-11T11:00:00Z',
+        usage: {
+          input_tokens: 1,
+          output_tokens: 1,
+          cache_read_input_tokens: 0,
+          cache_creation_input_tokens: 0,
+        },
+        total_cost_usd: 0,
+        per_tool: [
+          { name: 'NeverCalled', calls: 0, errors: 0 },
+          { name: 'ZeroWithErr', calls: 0, errors: 2 },
+        ],
+      },
+    ]);
+    const report = await generateRuntimeReport({ logDir, now: T0, outDir: null });
+    expect(report.markdown).not.toContain('NaN');
+    expect(report.markdown).not.toContain('Infinity');
+    expect(report.markdown).toContain('| NeverCalled | 0 | 0 | 无数据 |');
+    expect(report.markdown).toContain('| ZeroWithErr | 0 | 2 | 无数据 |');
+  });
+
   it('window filtering drops records outside the rolling window', async () => {
     const inWin = { ...buildRunLogRecord(resultFixture(), { incognito: false }), ts: '2026-07-11T11:30:00Z' };
     const outWin = { ...buildRunLogRecord(resultFixture(), { incognito: false }), ts: '2026-07-09T11:30:00Z' };

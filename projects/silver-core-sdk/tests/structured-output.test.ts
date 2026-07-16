@@ -85,6 +85,13 @@ describe('JSON extraction (via evaluateStructuredOutput)', () => {
     const text = 'first {"a":1} then {"b":2}';
     expect(expectValid(evaluateStructuredOutput(text, anySchema))).toEqual({ a: 1 });
   });
+
+  it('bug-fix: a stray wrong-type bracket in prose does not hide the real JSON', () => {
+    // firstOpener finds the '[' in '[see below]'; its span fails to parse, and
+    // the scan must resume to the real object instead of giving up.
+    const text = 'Sure [see below]: {"answer": 42}';
+    expect(expectValid(evaluateStructuredOutput(text, anySchema))).toEqual({ answer: 42 });
+  });
 });
 
 describe('validation — type keyword', () => {
@@ -154,6 +161,27 @@ describe('validation — required / properties / nesting', () => {
     if (outcome.status === 'invalid') {
       expect(outcome.summary).toContain('address.city');
     }
+  });
+
+  it('bug-fix: property presence uses OWN properties, not the prototype chain', () => {
+    // A property named like an Object.prototype member must not be seen as
+    // always-present (`in` walks the prototype chain; hasOwnProperty does not).
+    const protoProps = {
+      type: 'object',
+      properties: { toString: { type: 'string' } },
+    } as unknown as JSONSchema;
+    // {} is valid: it has no OWN 'toString', so the string constraint on the
+    // inherited function must NOT fire.
+    expect(evaluateStructuredOutput('{}', protoProps).status).toBe('valid');
+
+    const protoRequired = {
+      type: 'object',
+      required: ['constructor'],
+    } as unknown as JSONSchema;
+    // {} is MISSING an own 'constructor' -> must be flagged, not silently passed.
+    const outcome = evaluateStructuredOutput('{}', protoRequired);
+    expect(outcome.status).toBe('invalid');
+    if (outcome.status === 'invalid') expect(outcome.summary).toContain('constructor');
   });
 });
 
