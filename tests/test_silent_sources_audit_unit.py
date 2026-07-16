@@ -552,10 +552,17 @@ def test_build_leaf_report_folded_source_leaves(dirs):
 
 
 def test_write_health_embeds_stalled_leaves(dirs):
+    # build_report() 用真实当日（UTC+8）判定，夹具日期必须相对当日生成：
+    # global 写到当日（永不 stalled），jp 固定 2026-06 旧档（永远 stalled）。
+    # 写死 2026-07 固定日期的旧夹具是日期定时炸弹（2026-07-14 起自然变红）。
+    from datetime import datetime, timedelta, timezone
     _, adir, _ = dirs
+    today = datetime.now(timezone.utc) + timedelta(hours=8)
     for d in range(1, 11):
         _write_leaf_day(adir, "appstore/jp", f"2026-06-{d:02d}")
-        _write_leaf_day(adir, "appstore/global", f"2026-07-{d:02d}")
+    for i in range(10):
+        day = (today - timedelta(days=9 - i)).strftime("%Y-%m-%d")
+        _write_leaf_day(adir, "appstore/global", day)
     report = ssa.build_report()
     ssa.write_health(report)
     health = json.loads(ssa.HEALTH_PATH.read_text(encoding="utf-8"))
