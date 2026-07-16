@@ -1,8 +1,8 @@
 {
   "date": "2026-07-17",
-  "archived_at": "2026-07-16T19:09:39.819804+00:00",
+  "archived_at": "2026-07-16T22:04:53.494476+00:00",
   "source": "youtube",
-  "item_count": 5,
+  "item_count": 8,
   "items": [
     {
       "title": "[SPEEDPAINT] Saya &amp; Leonora | Morimens",
@@ -56,6 +56,23 @@
       "archive_subtype": "video"
     },
     {
+      "title": "망각전야 Morimens - 어쩌고 S급 미소녀의 안녕하살법",
+      "summary": "사실 죽이지 못했으니 살법은 아니었다고 한다.",
+      "source": "youtube",
+      "time": "2026-07-16T22:00:36Z",
+      "url": "https://www.youtube.com/watch?v=mY1hgQ_DdHU",
+      "engagement": 4,
+      "is_hot": false,
+      "author": "때까치",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/mY1hgQ_DdHU/hqdefault.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    },
+    {
       "title": "[Morimens] Older, no ring Pontos Alert 5 Wave 4 Discard  comp no cheese from the stream",
       "summary": "https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord ...",
       "source": "youtube",
@@ -68,6 +85,40 @@
       "lang": "",
       "platform_region": "global",
       "media_url": "https://i.ytimg.com/vi/1ZT8tGukfb4/hqdefault.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    },
+    {
+      "title": "Defeating Jenkin &amp; Uncovering The Secrets | Morimens Ep. 4",
+      "summary": "Episode 4 of our MORIMENS journey is here, and things just got intense! In this episode, we face off against Jenkin in a series of ...",
+      "source": "youtube",
+      "time": "2026-07-16T22:00:30Z",
+      "url": "https://www.youtube.com/watch?v=bosu_T2XsDA",
+      "engagement": 2,
+      "is_hot": false,
+      "author": "Dread Tmrw",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/bosu_T2XsDA/hqdefault.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    },
+    {
+      "title": "망각전야 Morimens - 피리를 몇 번이나 부는 걸까?",
+      "summary": "성신편 H3-4 보스전.",
+      "source": "youtube",
+      "time": "2026-07-16T22:00:04Z",
+      "url": "https://www.youtube.com/watch?v=sjnzqVPNHi0",
+      "engagement": 2,
+      "is_hot": false,
+      "author": "때까치",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/sjnzqVPNHi0/hqdefault.jpg",
       "content_type": "video",
       "region": "global",
       "archive_subtype": "video"
