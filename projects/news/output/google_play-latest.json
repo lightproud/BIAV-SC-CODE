@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-16T05:40:06.060857+00:00",
+  "collected_at": "2026-07-16T08:11:57.056069+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 106,
+  "item_count": 107,
   "items": [
     {
       "source": "google_play",
@@ -233,6 +233,16 @@
       "summary": "觉得还行",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=zh_CN#gp-57f4f9db-558e-4842-b184-3a7e848970ad",
       "author": "元气豆芽（YQBean）",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-15T06:53:10",
+      "lang": "en",
+      "title": "[Google Play 好评] ★5 Hyper fixation activation. Amazing gamep",
+      "summary": "Hyper fixation activation. Amazing gameplay and art style, love the story and the voice acting. Would give it six stars but there are only 5. So far my favourite group characters in design are the Aequor peeps, but for game play I lean towards the Ultra faction. Just having an entire turn to command a possibly losing battle and still win is just so appealing and exhilarating.",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-a247c6f3-2f8c-4f83-9446-94196408fdac",
+      "author": "Ashton Teoh",
       "engagement": 0
     },
     {
