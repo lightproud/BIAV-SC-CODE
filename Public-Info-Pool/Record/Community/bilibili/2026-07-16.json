@@ -1,8 +1,8 @@
 {
   "date": "2026-07-16",
-  "archived_at": "2026-07-16T13:47:41.235699+00:00",
+  "archived_at": "2026-07-16T16:19:46.176422+00:00",
   "source": "bilibili",
-  "item_count": 12,
+  "item_count": 13,
   "items": [
     {
       "title": "[忘却前夜]7月最新兑换码，五百个银芯和五个无垢，截止时间至7月27号，庞托斯用下来还行吧，不是很强，但也不能说特别弱，目前看来诞墨女王还是你游最高的峰",
@@ -46,6 +46,29 @@
         "danmaku": 0
       },
       "media_url": "https://i1.hdslb.com/bfs/archive/8707d18877505cc69ceb47b5eba7c639e9eb31d8.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "沙耶：听说有boss成长性很强我就来了",
+      "summary": "",
+      "source": "bilibili",
+      "time": "2026-07-16T13:50:05+00:00",
+      "url": "https://www.bilibili.com/video/BV131KV6rEqA",
+      "engagement": 124,
+      "is_hot": false,
+      "author": "海希利因浮士德",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 124,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/a52e879e05b6dc75df32044beee275bee15f34da.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

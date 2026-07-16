@@ -1,10 +1,25 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-16T13:46:51.838053+00:00",
+  "collected_at": "2026-07-16T16:19:01.392266+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 2,
+  "item_count": 3,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-07-16T14:11:25+00:00",
+      "lang": "schinese",
+      "title": "[正面] a游两年之后我的box居然还能玩下去 可以可以\n希望多卖一点图鲁墨菲...深海父女加油\n以及移动端p...",
+      "summary": "a游两年之后我的box居然还能玩下去 可以可以\n希望多卖一点图鲁墨菲...深海父女加油\n以及移动端pc端互通好舒服啊",
+      "url": "https://steamcommunity.com/profiles/76561198990916634/recommended/3052450",
+      "author": "76561198990916634",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "a游两年之后我的box居然还能玩下去 可以可以\n希望多卖一点图鲁墨菲...深海父女加油\n以及移动端pc端互通好舒服啊",
+      "timestamp_created": 1784211085,
+      "playtime_forever": 139
+    },
     {
       "source": "steam",
       "time": "2026-07-16T08:28:12+00:00",
