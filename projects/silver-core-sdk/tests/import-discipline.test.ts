@@ -8,9 +8,10 @@
  * this guard, the import rule existed only as prose and had decayed into 13
  * unguarded violations including an engine<->subagents package cycle.
  *
- * Everywhere-allowed: src/types.ts, src/errors.ts, src/version.ts, anything
- * under src/internal/, and files inside the importer's own top-level module.
- * Composition roots (query.ts, session-manager.ts, index.ts) import freely.
+ * Everywhere-allowed: src/types.ts, src/errors.ts, src/version.ts,
+ * src/error-normalize.ts, anything under src/internal/, and files inside the
+ * importer's own top-level module. Composition roots (query.ts,
+ * session-manager.ts, index.ts) import freely.
  */
 
 import { readFileSync, readdirSync, statSync } from 'node:fs';
@@ -25,7 +26,12 @@ const archDoc = readFileSync(
 );
 
 const COMPOSITION_ROOTS = new Set(['query.ts', 'session-manager.ts', 'index.ts']);
-const ALWAYS_ALLOWED_FILES = new Set(['types.ts', 'errors.ts', 'version.ts']);
+const ALWAYS_ALLOWED_FILES = new Set([
+  'types.ts',
+  'errors.ts',
+  'version.ts',
+  'error-normalize.ts',
+]);
 
 /** Parse the "Import edges" table: `src/x/` -> set of allowed `src/y/`. */
 function parseEdges(doc: string): Map<string, Set<string>> {

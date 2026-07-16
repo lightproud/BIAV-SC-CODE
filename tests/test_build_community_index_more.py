@@ -132,14 +132,11 @@ def test_discord_outer_exception_swallowed(tmp_path, monkeypatch):
     monkeypatch.setattr(bci, "COMMUNITY_NEW", data / "__no_such_new__")
     monkeypatch.setattr(bci, "DATA_OLD", data)
 
-    real_open = Path.open
+    # discord 读路走 archive_layout.open_archive_text（冷热分层统一开档），桩打在它身上
+    def _boom_open(path, *a, **k):
+        raise OSError("simulated discord read failure")
 
-    def _boom_open(self, *a, **k):
-        if self.name.endswith(".jsonl") and "discord" in str(self):
-            raise OSError("simulated discord read failure")
-        return real_open(self, *a, **k)
-
-    monkeypatch.setattr(Path, "open", _boom_open)
+    monkeypatch.setattr(bci.archive_layout, "open_archive_text", _boom_open)
     recs = list(bci.iter_records())
     assert not any(r[0] == "discord" for r in recs)
 
@@ -157,14 +154,15 @@ def test_comments_outer_exception_swallowed(tmp_path, monkeypatch):
     monkeypatch.setattr(bci, "COMMUNITY_NEW", data / "__no_such_new__")
     monkeypatch.setattr(bci, "DATA_OLD", data)
 
-    real_open = Path.open
+    # comments 读路走 archive_layout.open_archive_text（冷热分层统一开档），桩打在它身上
+    real_opener = bci.archive_layout.open_archive_text
 
-    def _boom_open(self, *a, **k):
-        if "x_comments" in str(self):
+    def _boom_open(path, *a, **k):
+        if "x_comments" in str(path):
             raise OSError("simulated comments read failure")
-        return real_open(self, *a, **k)
+        return real_opener(path, *a, **k)
 
-    monkeypatch.setattr(Path, "open", _boom_open)
+    monkeypatch.setattr(bci.archive_layout, "open_archive_text", _boom_open)
     recs = list(bci.iter_records())
     assert not any(r[0] == "x_comments" for r in recs)
 

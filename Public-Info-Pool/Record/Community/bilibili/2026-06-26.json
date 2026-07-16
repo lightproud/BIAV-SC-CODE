@@ -1,8 +1,8 @@
 {
   "date": "2026-06-26",
-  "archived_at": "2026-06-27T15:14:33.463868+00:00",
+  "archived_at": "2026-07-12T03:52:12.072080+00:00",
   "source": "bilibili",
-  "item_count": 22,
+  "item_count": 24,
   "items": [
     {
       "title": "忘却前夜丨广播剧《瘾》（CV：诹访部顺一）",
@@ -509,6 +509,36 @@
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
+    },
+    {
+      "title": "【忘却前夜】大家好啊，我是弥撒格校猫",
+      "summary": "在融蚀裂隙里剪出来的视频",
+      "source": "bilibili",
+      "platform_region": "cn",
+      "lang": "zh",
+      "time": "2026-06-26T13:59:15+00:00",
+      "url": "http://www.bilibili.com/video/av116816751888194",
+      "engagement": 1903,
+      "is_hot": false,
+      "author": "充气兔子",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "忘却前夜丨广播剧《瘾》（CV：诹访部顺一）",
+      "summary": "「越是污秽的痛苦，越是会成为你们这些脏东西的奖励。」\n「你们卑劣的救主不会来了......跪下，将自己献给海洋。」\n✦ 庞托斯CV：诹访部顺一\n\n——✦——✦—— ✦✦✦ ——✦——✦——\n\n✦ 官方玩家交流群\n⑭群：205243114\n⑦群：700587004",
+      "source": "bilibili",
+      "platform_region": "cn",
+      "lang": "zh",
+      "time": "2026-06-26T12:10:43+00:00",
+      "url": "http://www.bilibili.com/video/av116816332459317",
+      "engagement": 33696,
+      "is_hot": true,
+      "author": "忘却前夜Morimens",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
     }
   ]
 }

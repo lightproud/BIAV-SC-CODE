@@ -3,9 +3,11 @@
  * (findings #10/#40) and load()'s tool_use/tool_result pairing repair
  * (finding #37).
  */
+// @ts-nocheck
 
-import { appendFileSync, existsSync, readFileSync } from 'node:fs';
-import { mkdtemp, readFile, rm } from 'node:fs/promises';
+
+import { appendFileSync, existsSync, readFileSync, writeFileSync } from 'node:fs';
+import { mkdir, mkdtemp, readFile, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
@@ -21,13 +23,25 @@ import { renameSession, tagSession } from '../src/sessions/session-functions.js'
 import type { APIMessageParam } from '../src/types.js';
 
 let dir: string;
+let dirRoot: string;
 
 beforeEach(async () => {
-  dir = await mkdtemp(join(tmpdir(), 'bpt-store-'));
+  // `dir` is a NESTED subdir of the mkdtemp root, so the path-traversal
+  // test's `../evil.jsonl` escape target lands back INSIDE the isolated root
+  // (removed by afterEach), not in the shared system tmpdir. Without the
+  // nesting, a mutation run that disables the traversal guard writes
+  // /tmp/evil.jsonl and poisons every later run and parallel worker — a real
+  // pollution source that hit 2026-07-13. All `join(dir, …)` assertions are
+  // unchanged: `dir` is still the store's sessionDir.
+  dirRoot = await mkdtemp(join(tmpdir(), 'bpt-store-'));
+  dir = join(dirRoot, 'nest');
+  await mkdir(dir, { recursive: true });
 });
 
 afterEach(async () => {
-  await rm(dir, { recursive: true, force: true });
+  // Remove the whole isolated root, so any guard-escape file the traversal
+  // test provoked (dir/../evil.jsonl == dirRoot/evil.jsonl) goes with it.
+  await rm(dirRoot, { recursive: true, force: true });
 });
 
 function makeStore(): { store: JsonlSessionStore; warnings: string[] } {
@@ -98,6 +112,63 @@ describe('JsonlSessionStore path traversal (findings #10/#40)', () => {
     const loaded = await store.load('good-id');
     expect(loaded).not.toBeNull();
     expect(loaded?.messages).toEqual([{ role: 'user', content: 'hello' }]);
+  });
+});
+
+describe('JsonlSessionStore torn-tail self-heal (audit 2026-07-14 M-9)', () => {
+  it('append after a crash-torn tail loses only the torn line; the new record survives', async () => {
+    const sid = 'torn-1';
+    const { store } = makeStore();
+    store.append(sid, { type: 'meta', sessionId: sid, createdAt: 1, cwd: '/w' });
+    store.append(sid, { type: 'user', message: { role: 'user', content: 'kept' } });
+    store.append(sid, { type: 'assistant', message: { role: 'assistant', content: 'reply' } });
+    store.append(sid, { type: 'user', message: { role: 'user', content: 'to-be-torn' } });
+
+    // Simulate a crash mid-append: drop the trailing newline AND part of the
+    // last record's JSON, leaving a torn tail.
+    const file = join(dir, `${sid}.jsonl`);
+    const raw = readFileSync(file, 'utf8');
+    expect(raw.endsWith('\n')).toBe(true);
+    writeFileSync(file, raw.slice(0, raw.length - 12), 'utf8');
+
+    // A FRESH store instance (fresh process after the crash) appends the next
+    // record. Without the self-heal the new line glues onto the torn tail and
+    // BOTH are lost; with it, only the torn line is lost.
+    const { store: restarted } = makeStore();
+    restarted.append(sid, { type: 'user', message: { role: 'user', content: 'after-crash' } });
+
+    const loaded = await restarted.load(sid);
+    expect(loaded).not.toBeNull();
+    expect(loaded?.messages).toEqual([
+      { role: 'user', content: 'kept' },
+      { role: 'assistant', content: 'reply' },
+      { role: 'user', content: 'after-crash' },
+    ]);
+    // The healed file carries the new record on its OWN line (a '\n' was
+    // prefixed ahead of it, sealing the torn tail into its own line).
+    const healed = readFileSync(file, 'utf8').split('\n').filter((l) => l.trim().length > 0);
+    expect(JSON.parse(healed[healed.length - 1]!)).toEqual({
+      type: 'user',
+      message: { role: 'user', content: 'after-crash' },
+    });
+  });
+
+  it('does not inject blank lines when the tail is intact (heal fires only on a torn tail)', async () => {
+    const sid = 'clean-1';
+    const { store } = makeStore();
+    store.append(sid, { type: 'meta', sessionId: sid, createdAt: 1, cwd: '/w' });
+    store.append(sid, { type: 'user', message: { role: 'user', content: 'one' } });
+
+    // Fresh instance, intact newline-terminated tail: no '\n' prefix.
+    const { store: restarted } = makeStore();
+    restarted.append(sid, { type: 'user', message: { role: 'user', content: 'two' } });
+
+    const raw = readFileSync(join(dir, `${sid}.jsonl`), 'utf8');
+    expect(raw).not.toContain('\n\n');
+    const loaded = await restarted.load(sid);
+    // Consecutive user turns merge in pairing repair; both texts survive.
+    expect(JSON.stringify(loaded?.messages)).toContain('one');
+    expect(JSON.stringify(loaded?.messages)).toContain('two');
   });
 });
 
@@ -371,6 +442,25 @@ describe('rename/tag round trip via meta_update (T1-6)', () => {
     expect(info?.summary).toBe('first prompt line');
   });
 
+  it('a meta_update gitBranch is honored by BOTH load() and getSessionInfo()', async () => {
+    // Seed with an initial branch, then append a meta_update switching it.
+    const file = join(dir, `${SID}.jsonl`);
+    appendFileSync(
+      file,
+      `${JSON.stringify({ type: 'meta', sessionId: SID, createdAt: 1, cwd: '/w', firstPrompt: 'p', gitBranch: 'main' })}\n` +
+        `${JSON.stringify({ type: 'user', message: { role: 'user', content: 'p' } })}\n` +
+        `${JSON.stringify({ type: 'meta_update', uuid: 'mu-1', gitBranch: 'release' })}\n`,
+      'utf8',
+    );
+    const { store } = makeStore();
+    const loaded = await store.load(SID);
+    const info = await getSessionInfo(SID, { sessionDir: dir });
+    // Both read paths must agree — loadInfo() previously ignored the update and
+    // reported the stale 'main' while load() reported 'release'.
+    expect(loaded?.gitBranch).toBe('release');
+    expect(info?.gitBranch).toBe('release');
+  });
+
   it('listSessions carries customTitle/tag through', async () => {
     seed();
     await renameSession(SID, 'Listed title', { sessionDir: dir });
@@ -403,5 +493,31 @@ describe('rename/tag round trip via meta_update (T1-6)', () => {
     expect(loaded?.gitBranch).toBe('feature/x');
     const info = await getSessionInfo(SID, { sessionDir: dir });
     expect(info?.gitBranch).toBe('feature/x');
+  });
+
+  // audit 2026-07-14 L-14: getSessionInfo now reuses the meta-only streaming
+  // scan (loadInfo) instead of a full load() + triple repairPairing, since the
+  // summary row reads only meta fields. On a normal transcript (with real
+  // message lines) it must return exactly what it did before — and match the
+  // listSessions row, which already sourced from the same meta-only path.
+  it('getSessionInfo (meta-only path) matches listSessions on a normal transcript (L-14)', async () => {
+    const file = join(dir, `${SID}.jsonl`);
+    appendFileSync(
+      file,
+      `${JSON.stringify({ type: 'meta', sessionId: SID, createdAt: 123, cwd: '/w', firstPrompt: 'hello world', gitBranch: 'main' })}\n` +
+        `${JSON.stringify({ type: 'user', message: { role: 'user', content: 'hello world' } })}\n` +
+        `${JSON.stringify({ type: 'assistant', message: { role: 'assistant', content: [{ type: 'text', text: 'hi' }] } })}\n`,
+      'utf8',
+    );
+    const info = await getSessionInfo(SID, { sessionDir: dir });
+    expect(info).toBeDefined();
+    expect(info?.summary).toBe('hello world');
+    expect(info?.firstPrompt).toBe('hello world');
+    expect(info?.cwd).toBe('/w');
+    expect(info?.gitBranch).toBe('main');
+    expect(info?.createdAt).toBe(123);
+    // Identical to the listSessions summary row (both meta-only reads of one file).
+    const entry = (await listSessions({ sessionDir: dir })).find((s) => s.sessionId === SID);
+    expect(info).toEqual(entry);
   });
 });

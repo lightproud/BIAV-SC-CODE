@@ -3,22 +3,22 @@
 > 本文件由 `scripts/build_capability_registry.py` 自动生成，**请勿手改**。
 > 中文用途补注请改 `memory/capability-annotations.json`；机器权威数据见 `memory/capability-registry.json`。
 
-- 生成日期：2026-07-12
-- 功能总数：**129**
-- 脚本可达性：活 71 / 仅测试 0 / 孤儿 0
+- 生成日期：2026-07-14
+- 功能总数：**136**
+- 脚本可达性：活 75 / 仅测试 0 / 孤儿 0
 
 ## 总览
 
 | 功能层 | 数量 |
 |------|------|
-| CI 自动化工作流（编排入口·定时/事件平面） | 32 |
-| 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 36 |
-| news 采集器脚本 | 29 |
+| CI 自动化工作流（编排入口·定时/事件平面） | 36 |
+| 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 37 |
+| news 采集器脚本 | 32 |
 | wiki 数据脚本 | 6 |
 | MCP 知识层工具（编排入口·AI 动态平面） | 11 |
 | Slash 命令（编排入口·人工平面） | 4 |
-| 仓内技能 | 4 |
-| 子项目 | 7 |
+| 仓内技能 | 5 |
+| 子项目 | 5 |
 
 ## 动态编排与可达性
 
@@ -34,7 +34,7 @@
 
 可达性 = 从活编排入口沿 Python import 图传递闭包。`孤儿` = 无任何活入口可达，建议隔离待裁（§3.1 裁撤属守密人决策，工具只检测不删除）。
 
-## CI 自动化工作流（编排入口·定时/事件平面）（32）
+## CI 自动化工作流（编排入口·定时/事件平面）（36）
 
 - **`Backfill Data Gap`** _[manual]_ — 手动回填指定时间段的数据缺口。  
   `.github/workflows/backfill-gap.yml`
@@ -60,6 +60,8 @@
   `.github/workflows/collect-comments.yml`
 - **`Collect Fan Art`** _[schedule/manual]_ — 定时采集同人图。  
   `.github/workflows/collect-fanart.yml`
+- **`Community Cold Compress`** _[schedule/manual]_ —   
+  `.github/workflows/community-cold-compress.yml`
 - **`Conformance pin drift sentinel`** _[schedule/manual]_ —   
   `.github/workflows/conformance-drift.yml`
 - **`Consolidate Releases`** _[manual]_ —   
@@ -74,6 +76,8 @@
   `.github/workflows/discord-archive-volunteer.yml`
 - **`Discord Archive`** _[schedule/manual]_ — 定时归档主 Discord 数据。  
   `.github/workflows/discord-archive.yml`
+- **`Discord Cold Compress`** _[schedule/manual]_ —   
+  `.github/workflows/discord-cold-compress.yml`
 - **`Discord Discover Guilds`** _[manual]_ — 定时发现新的 Discord 服务器。  
   `.github/workflows/discord-discover-guilds.yml`
 - **`Discord History Backfill`** _[schedule/manual]_ — 定时回填 Discord 历史消息。  
@@ -90,6 +94,8 @@
   `.github/workflows/recover-fanart.yml`
 - **`Refresh Claude Code Prompts`** _[schedule/manual]_ —   
   `.github/workflows/refresh-claude-code-prompts.yml`
+- **`SDK Mutation Ratchet (weekly)`** _[schedule/manual]_ —   
+  `.github/workflows/sdk-mutation-ratchet.yml`
 - **`Silver Core SDK`** _[schedule/push/pull_request/manual]_ —   
   `.github/workflows/silver-core-sdk.yml`
 - **`Test All Data Collectors`** _[manual]_ — 运行采集器单元测试。  
@@ -100,8 +106,10 @@
   `.github/workflows/update-news.yml`
 - **`Validate Wiki Data`** _[push/pull_request/manual]_ — 校验 wiki JSON 数据（push/PR 触发）。  
   `.github/workflows/validate-data.yml`
+- **`Weekly Heavy-Deps Test`** _[schedule/manual]_ —   
+  `.github/workflows/weekly-heavy-deps-test.yml`
 
-## 顶层脚本（记忆 / 做梦 / 解包 / 运营）（36）
+## 顶层脚本（记忆 / 做梦 / 解包 / 运营）（37）
 
 - **`build_capability_registry.py`** _[活:cli+workflow]_ — build_capability_registry.py — 银芯功能目录 + 动态编排可达性分析器  
   `scripts/build_capability_registry.py`
@@ -151,6 +159,8 @@
   `scripts/lua_parse.py`
 - **`mcp_server.py`** _[活:cli+mcp]_ — MCP 服务端 biav-sc-memory，暴露 4 个平台互补工具。  
   `scripts/mcp_server.py`
+- **`memory_freshness.py`** _[活:cli+command]_ — memory_freshness.py — 记忆档案保鲜巡检器（确定性零 ML 零常驻）。  
+  `scripts/memory_freshness.py`
 - **`okf_pointer_layers.py`** _[活:workflow]_ — okf_pointer_layers.py — 全仓知识组织：OKF bundle 新增指针概念层（import-only 库）。  
   `scripts/okf_pointer_layers.py`
 - **`parse_awaker_config.py`** _[活:cli]_ — [CLI 手动] 解析 AwakerConfig.lua 为角色档案 JSON（wiki 数据流水线）。  
@@ -176,7 +186,7 @@
 - **`silver_tokenizer.py`** _[活:import]_ — 银芯静态索引共用分词器:领域词典 + 正向最大匹配（FMM）。  
   `scripts/silver_tokenizer.py`
 
-## news 采集器脚本（29）
+## news 采集器脚本（32）
 
 - **`aggregator.py`** _[活:cli+command+workflow]_ — 忘却前夜 Morimens - 社区热点聚合器  
   `projects/news/scripts/aggregator.py`
@@ -210,14 +220,20 @@
   `projects/news/scripts/collect_video_comments.py`
 - **`collection_state.py`** _[活:import]_ — collection_state.py — Adaptive time window for news collection pipeline.  
   `projects/news/scripts/collection_state.py`
+- **`community_cold_compress.py`** _[活:cli+workflow]_ — community_cold_compress.py — Community 全量档案月度压冷总入口（甲案推广，2026-07-12）。  
+  `projects/news/scripts/community_cold_compress.py`
 - **`data_quality.py`** _[活:cli]_ — 数据质量增强模块  
   `projects/news/scripts/data_quality.py`
 - **`discord_archiver.py`** _[活:cli+workflow]_ — Discord 全量数据归档器 v2 — 双轨并行 + 断点续传 + JSONL 去重  
   `projects/news/scripts/discord_archiver.py`
+- **`discord_cold_compress.py`** _[活:cli+workflow]_ — discord_cold_compress.py — discord 归档月度压冷（守密人 2026-07-12 甲案裁定）。  
+  `projects/news/scripts/discord_cold_compress.py`
 - **`discord_compact.py`** _[活:command]_ — Discord 记录紧凑 schema — 单一权威定义（归档器写盘 + 存量批量重写器共用此一份）  
   `projects/news/scripts/discord_compact.py`
 - **`discord_list_guilds.py`** _[活:cli+workflow]_ — Discord 服务器清单探测 — 列出 bot 当前加入的所有服务器（guild）  
   `projects/news/scripts/discord_list_guilds.py`
+- **`discord_reconcile.py`** _[活:cli]_ — discord_reconcile.py — channel_index 与归档目录的一致性对账（T35，守密人 2026-07-12 点火）。  
+  `projects/news/scripts/discord_reconcile.py`
 - **`download_media.py`** _[活:cli+workflow]_ — download_media.py — 全平台媒体资源下载器  
   `projects/news/scripts/download_media.py`
 - **`global_collectors.py`** _[活:import]_ — 忘却前夜 Morimens - 全球信息收集器  
@@ -288,7 +304,7 @@
 - **`validate-data`** — 校验 wiki 数据库全部 JSON 数据文件。  
   `.claude/commands/validate-data.md`
 
-## 仓内技能（4）
+## 仓内技能（5）
 
 - **`anysearch`** — 实时网络检索（多区社区情报 CN/JP/TW），AnySearch API 封装，失败回退内置 WebSearch。  
   `.claude/skills/anysearch/SKILL.md`
@@ -298,13 +314,11 @@
   `.claude/skills/grill/SKILL.md`
 - **`grilling`** — Interview the keeper relentlessly about a plan or design before building. Use when the keeper wants to stress-test a plan, sharpen a vague idea, or uses any 'grill' / 拷问 / 质询 / 对齐 trigger phrase.  
   `.claude/skills/grilling/SKILL.md`
+- **`intel-weekly`** — Generate the Morimens weekly community intelligence report (社区情报周报) from the full archive layer. Use when asked for the weekly report, 周报, community intel digest, or a windowed community summary. Produces a fixed-skeleton Chinese report (trend + role routing + business topics with embedded risk sentinels + bug list + player request list + credited fanart gallery + volume map) rendered as mobile PDF in brand themes.  
+  `.claude/skills/intel-weekly/SKILL.md`
 
-## 子项目（7）
+## 子项目（5）
 
-- **`bpt-pm`** — BPT PM：**单网页项目排期工作台**。一份 JSON 描述一个项目（锚点日期 + 工作日历 +  
-  `projects/bpt-pm/`
-- **`bpt-v2t`** — BPT-V2T:银芯**语音代替输入**(voice-as-input)工具。按热键说话 → 转成文字 →  
-  `projects/bpt-v2t/`
 - **`game`** — 衍生游戏，退出主线，守密人个人兴趣，不主线派发。  
   `projects/game/`
 - **`news`** — 使命#1 黑池信息入口：采集器 + 全量档案层 + 输出展示层，单向送黑池。  

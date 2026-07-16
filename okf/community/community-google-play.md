@@ -4,7 +4,7 @@ title: "google_play 社区全量档案"
 description: "google_play 平台全量档案层（分析镜头）：千级条（精确值见指针本体）/ 32 个月。长窗口分析 / 情感长尾 / 完整性审计走此全量层。"
 resource: "/Public-Info-Pool/Record/Community/google_play/global/"
 tags: ["data_layer:full_archive", "platform:google_play", "lens:analysis"]
-timestamp: "2026-07-12"
+timestamp: "2026-07-16"
 ---
 
 # 指针概念

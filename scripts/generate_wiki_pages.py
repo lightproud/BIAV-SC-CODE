@@ -1566,10 +1566,18 @@ def generate_panel_text():
 
 
 def generate_update_notices():
-    """Generate update notices timeline page from update_notices.json."""
+    """Generate update notices timeline page from update_notices.json.
+
+    数据档 2026-07-12 守密人裁定删除（wiki 冻结精简，git 历史可追）——
+    源缺席时跳过生成，站点导航已同步去页。
+    """
     import re as _re
 
-    with open(f'{PROCESSED_DIR}/update_notices.json', 'r', encoding='utf-8') as f:
+    src = f'{PROCESSED_DIR}/update_notices.json'
+    if not os.path.exists(src):
+        print('update_notices.json absent (deleted per 2026-07-12 ruling) — skip')
+        return
+    with open(src, 'r', encoding='utf-8') as f:
         data = json.load(f)
 
     meta = data['_meta']

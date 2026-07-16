@@ -1,7 +1,7 @@
 """backfill_gap 纯逻辑 + 各平台回溯函数（网络全打桩）单测。
 
 requests / global_collectors._get / subprocess (curl) 一律 mock；归档写入
-monkeypatch PLATFORMS_DIR 到 tmp 目录，绝不污染真实 data/platforms、绝不触网。
+monkeypatch ARCHIVE_DIR 到 tmp 目录，绝不污染真实 Community 归档、绝不触网。
 """
 
 import json
@@ -41,7 +41,7 @@ class TestGapBound(unittest.TestCase):
 
 class TestArchiveItems(unittest.TestCase):
     def _patch_dir(self, d):
-        return mock.patch.object(backfill_gap, "PLATFORMS_DIR", Path(d))
+        return mock.patch.object(backfill_gap, "ARCHIVE_DIR", Path(d))
 
     def test_buckets_by_utc8_date(self):
         with tempfile.TemporaryDirectory() as d:
@@ -103,7 +103,7 @@ class TestCleanupEmptyPlaceholders(unittest.TestCase):
                 {"_gap_repaired": True, "items": [{"url": "x"}]}), encoding="utf-8")
             (sdir / "2026-04-17.json").write_text(json.dumps(
                 {"items": []}), encoding="utf-8")  # not repaired flag
-            with mock.patch.object(backfill_gap, "PLATFORMS_DIR", Path(d)):
+            with mock.patch.object(backfill_gap, "ARCHIVE_DIR", Path(d)):
                 removed = backfill_gap.cleanup_empty_placeholders()
             self.assertEqual(removed, 1)
             self.assertFalse((sdir / "2026-04-15.json").exists())
@@ -113,7 +113,7 @@ class TestCleanupEmptyPlaceholders(unittest.TestCase):
     def test_ignores_non_directories(self):
         with tempfile.TemporaryDirectory() as d:
             (Path(d) / "loose.txt").write_text("x")
-            with mock.patch.object(backfill_gap, "PLATFORMS_DIR", Path(d)):
+            with mock.patch.object(backfill_gap, "ARCHIVE_DIR", Path(d)):
                 self.assertEqual(backfill_gap.cleanup_empty_placeholders(), 0)
 
 
@@ -132,7 +132,7 @@ class TestBackfillReddit(unittest.TestCase):
     def test_collects_items_in_gap(self):
         in_gap = backfill_gap.GAP_START.timestamp() + 3600
         with tempfile.TemporaryDirectory() as d, \
-                mock.patch.object(backfill_gap, "PLATFORMS_DIR", Path(d)), \
+                mock.patch.object(backfill_gap, "ARCHIVE_DIR", Path(d)), \
                 mock.patch.object(backfill_gap, "time") as t:
             t.sleep = lambda *_: None
             import requests as _req
@@ -178,7 +178,7 @@ class TestBackfillYoutube(unittest.TestCase):
         ]}
         with tempfile.TemporaryDirectory() as d, \
                 mock.patch.dict(backfill_gap.os.environ, {"YOUTUBE_API_KEY": "k"}), \
-                mock.patch.object(backfill_gap, "PLATFORMS_DIR", Path(d)):
+                mock.patch.object(backfill_gap, "ARCHIVE_DIR", Path(d)):
             import global_collectors as gc
             with mock.patch.object(gc, "_get", side_effect=[search_resp, stats_resp] * 3):
                 n = backfill_gap.backfill_youtube()
@@ -204,7 +204,7 @@ class TestBackfillBilibili(unittest.TestCase):
              "arcurl": "url", "play": 20000, "favorites": 1, "author": "a"}
         ]}}
         with tempfile.TemporaryDirectory() as d, \
-                mock.patch.object(backfill_gap, "PLATFORMS_DIR", Path(d)), \
+                mock.patch.object(backfill_gap, "ARCHIVE_DIR", Path(d)), \
                 mock.patch.object(backfill_gap, "time") as t:
             t.sleep = lambda *_: None
             import global_collectors as gc
@@ -229,7 +229,7 @@ class TestBackfillWeibo(unittest.TestCase):
         empty.json.return_value = {"data": {"cards": []}}
         with tempfile.TemporaryDirectory() as d, \
                 mock.patch.dict(backfill_gap.os.environ, {}, clear=True), \
-                mock.patch.object(backfill_gap, "PLATFORMS_DIR", Path(d)), \
+                mock.patch.object(backfill_gap, "ARCHIVE_DIR", Path(d)), \
                 mock.patch.object(backfill_gap, "time") as t:
             t.sleep = lambda *_: None
             import requests as _req
@@ -254,7 +254,7 @@ class TestBackfillSteam(unittest.TestCase):
         empty.returncode = 0
         empty.stdout = json.dumps({"reviews": [], "cursor": "next2"})
         with tempfile.TemporaryDirectory() as d, \
-                mock.patch.object(backfill_gap, "PLATFORMS_DIR", Path(d)), \
+                mock.patch.object(backfill_gap, "ARCHIVE_DIR", Path(d)), \
                 mock.patch.object(backfill_gap, "time") as t:
             t.sleep = lambda *_: None
             import subprocess as sp

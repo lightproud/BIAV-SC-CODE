@@ -4,7 +4,7 @@ title: "挂账台账（待办 / 待裁唯一权威）"
 description: "*建档：2026-07-10 全仓扫描清点（`rg \"待守密人|待裁|挂账\"` + 逐条溯源实证），艾瑞卡会话。*"
 resource: "/memory/todo.md"
 tags: ["memory", "data_layer:curated"]
-timestamp: "2026-07-12"
+timestamp: "2026-07-16"
 ---
 
 # 记忆层指针

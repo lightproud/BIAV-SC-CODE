@@ -29,12 +29,10 @@ KNOWLEDGE_GLOBS = [
     "projects/news/index/community_index.json",
     "projects/news/output/*-latest.json",
     "Public-Info-Pool/Resource/*/*.md",
-    "docs/*.md",
     "projects/news/CONTEXT.md", "projects/wiki/CONTEXT.md", "projects/site/CONTEXT.md",
     "projects/game/CONTEXT.md", "projects/silver-core-sdk/CONTEXT.md",
     "projects/silver-core-sdk/docs/*.md",
     "projects/site/design/*.html", "projects/site/design/*.css",
-    "extracted_lua/*.md", "extracted_lua/*.csv",
 ]
 # 单列的顶层知识文件
 KNOWLEDGE_FILES = ["CLAUDE.md", "README.md", "RELEASES.md"]

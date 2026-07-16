@@ -232,6 +232,23 @@ describe('S4 tool-claim verification', () => {
     expect(readOnly).toHaveLength(1);
   });
 
+  it('a consumer detector with a `g`-flag claimPattern flags EVERY unbacked text', () => {
+    // A global/sticky RegExp is STATEFUL: exec() advances lastIndex, so without a
+    // per-text reset the second text resumes mid-string and its genuine claim is
+    // missed. Two texts, both unbacked -> both must be flagged (indices 0 and 1).
+    const detector = {
+      id: 'wrote-file-claim',
+      claimPattern: /wrote .* to disk/g, // note the `g` flag
+      backedBy: () => false,
+    };
+    const findings = auditToolClaims({
+      assistantTexts: ['I wrote config to disk.', 'Then I wrote data to disk.'],
+      toolCalls: [],
+      detectors: [detector],
+    });
+    expect(findings.map((f) => f.messageIndex)).toEqual([0, 1]);
+  });
+
   it('exposes the detector building blocks for consumer-defined detectors', () => {
     expect(DEFAULT_TOOL_CLAIM_DETECTORS).toContain(MEMORY_WRITE_CLAIM_DETECTOR);
     expect(MEMORY_WRITE_CLAIM_DETECTOR.id).toBe('memory-write-claim');

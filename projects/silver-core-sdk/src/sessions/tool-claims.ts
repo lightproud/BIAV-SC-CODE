@@ -114,6 +114,12 @@ export function auditToolClaims(args: AuditToolClaimsArgs): ToolClaimFinding[] {
     if (backed) continue;
     for (const [i, entry] of args.assistantTexts.entries()) {
       const text = typeof entry === 'string' ? entry : entry.text;
+      // Reset before each exec: a consumer-supplied detector whose claimPattern
+      // carries the `g`/`y` flag is STATEFUL — exec() advances lastIndex, so
+      // without this reset matching resumes mid-string on the next text and a
+      // genuinely-unbacked claim is silently missed (the one failure this audit
+      // must minimize). Harmless for the default non-global detectors.
+      detector.claimPattern.lastIndex = 0;
       const match = detector.claimPattern.exec(text);
       if (match === null) continue;
       const lineStart = text.lastIndexOf('\n', match.index) + 1;

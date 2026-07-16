@@ -1,8 +1,8 @@
 {
   "date": "2026-07-05",
-  "archived_at": "2026-07-06T10:05:06.893143+00:00",
+  "archived_at": "2026-07-12T03:50:58.543508+00:00",
   "source": "youtube",
-  "item_count": 26,
+  "item_count": 27,
   "items": [
     {
       "title": "Unc likes maids guys idk 🤷🤷‍♀️🤷🏻‍♂️ #vtuber #morimens #shorts #vtuberclips",
@@ -445,8 +445,21 @@
       "content_type": "video",
       "region": "global",
       "archive_subtype": "video"
+    },
+    {
+      "title": "忘卻前夜 艾瑞卡打大蟲子 癲狂列車",
+      "summary": "這個副手最好應該是帶隱沒的痛楚或藏品但孩子沒那麼高級的東西好玩時至今日艾瑞卡助戰列表依舊是0 背景音樂：Offenbach ...",
+      "source": "youtube",
+      "platform_region": "global",
+      "lang": "",
+      "time": "2026-07-05T11:07:49Z",
+      "url": "https://www.youtube.com/watch?v=z0IxdtKlQgw",
+      "engagement": 65,
+      "is_hot": false,
+      "author": "海之心",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
     }
-  ],
-  "region": "global",
-  "content_subtype": "video"
+  ]
 }

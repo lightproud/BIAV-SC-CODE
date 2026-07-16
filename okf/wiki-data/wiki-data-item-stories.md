@@ -4,7 +4,7 @@ title: "item_stories"
 description: "Item.lua (runtime memory extraction) · total_with_story=375 · 生成 2026-04-12"
 resource: "/projects/wiki/data/processed/item_stories.json"
 tags: ["data_layer:curated", "unpacked-bootstrap", "domain:story"]
-timestamp: "2026-07-12"
+timestamp: "2026-07-16"
 ---
 
 # 指针概念

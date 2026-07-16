@@ -12,6 +12,7 @@ import fs from 'node:fs';
 import {
   createShellManager,
   bashOutputTool,
+  forkShellSession,
   killShellTool,
   taskOutputTool,
   taskStopTool,
@@ -319,5 +320,99 @@ describe('Bash persistent cwd/env state', () => {
     await bashTool.execute({ command: `cd '${sub}'` }, ctx);
     const out = await bashTool.execute({ command: 'pwd' }, ctx);
     expect(text(out.content).trim()).toBe(fs.realpathSync(sandbox));
+  });
+});
+
+describe('forkShellSession — per-subagent persistent-state fork (audit 2026-07-14 M-10)', () => {
+  const firstLine = (r: { content: unknown }): string =>
+    text(r.content).trim().split('\n')[0] ?? '';
+
+  it('two forked children do not inherit each other\'s cd; both see the parent cwd as of spawn', async () => {
+    const ctx = makeCtx(true);
+    const parentDir = path.join(sandbox, 'parent-dir');
+    const aDir = path.join(sandbox, 'a-dir');
+    fs.mkdirSync(parentDir);
+    fs.mkdirSync(aDir);
+    // Parent records a persistent cwd BEFORE the spawns.
+    await bashTool.execute({ command: `cd '${parentDir}'` }, ctx);
+
+    const ctxA: ToolContext = { ...ctx, shells: forkShellSession(manager!) };
+    const ctxB: ToolContext = { ...ctx, shells: forkShellSession(manager!) };
+
+    // A child sees the parent's persistent cwd that existed at spawn time.
+    expect(firstLine(await bashTool.execute({ command: 'pwd' }, ctxA))).toBe(
+      fs.realpathSync(parentDir),
+    );
+    // A cd's away; B's SUBSEQUENT Bash call must NOT inherit A's cwd.
+    await bashTool.execute({ command: `cd '${aDir}'` }, ctxA);
+    expect(firstLine(await bashTool.execute({ command: 'pwd' }, ctxB))).toBe(
+      fs.realpathSync(parentDir),
+    );
+    // ... and A keeps its own cwd across its own calls.
+    expect(firstLine(await bashTool.execute({ command: 'pwd' }, ctxA))).toBe(
+      fs.realpathSync(aDir),
+    );
+    // The parent's next foreground Bash is untouched by A's cd.
+    expect(firstLine(await bashTool.execute({ command: 'pwd' }, ctx))).toBe(
+      fs.realpathSync(parentDir),
+    );
+  });
+
+  it('a child export does not leak to the parent; the child sees parent exports from spawn time', async () => {
+    const ctx = makeCtx(true);
+    await bashTool.execute({ command: 'export BPT_FORK_SEED=fromparent' }, ctx);
+    const childCtx: ToolContext = { ...ctx, shells: forkShellSession(manager!) };
+    // Seeded: the child sees the parent's exported env as of spawn.
+    const seed = await bashTool.execute(
+      { command: 'echo "seed=$BPT_FORK_SEED"' },
+      childCtx,
+    );
+    expect(text(seed.content)).toContain('seed=fromparent');
+    // The child's own export stays in its namespace.
+    await bashTool.execute({ command: 'export BPT_FORK_LEAK=child' }, childCtx);
+    const parentOut = await bashTool.execute(
+      { command: 'echo "leak=${BPT_FORK_LEAK:-none}"' },
+      ctx,
+    );
+    expect(text(parentOut.content)).toContain('leak=none');
+  });
+
+  it('background shells stay query-wide through a fork (get/kill delegate to the shared manager)', async () => {
+    const ctx = makeCtx(true);
+    const child = forkShellSession(manager!);
+    const childCtx: ToolContext = { ...ctx, shells: child };
+    const launch = await bashTool.execute(
+      { command: 'echo bg-through-fork', run_in_background: true },
+      childCtx,
+    );
+    const idMatch = /id: (bash_\d+)/.exec(text(launch.content));
+    expect(idMatch).not.toBeNull();
+    const id = idMatch![1]!;
+    // Registered on the QUERY-WIDE manager, visible from both sides.
+    await until(() => manager!.get(id)!.status !== 'running');
+    expect(manager!.get(id)!.stdout).toContain('bg-through-fork');
+    expect(child.get(id)).toBe(manager!.get(id));
+  });
+
+  it('fork dirs nest under the parent state dir and die with the query-wide dispose()', () => {
+    makeCtx(true);
+    const child = forkShellSession(manager!);
+    expect(child.stateDir).not.toBe(manager!.stateDir);
+    expect(child.stateDir.startsWith(manager!.stateDir)).toBe(true);
+    expect(fs.existsSync(child.stateDir)).toBe(true);
+    manager!.dispose();
+    expect(fs.existsSync(child.stateDir)).toBe(false);
+    manager = undefined;
+  });
+
+  it('a stateless parent (no state dir) is returned as-is — nothing to fork or pollute', () => {
+    const stateless: ShellManager = {
+      stateDir: '',
+      spawnBackground: () => ({ error: 'unused' }),
+      get: () => undefined,
+      kill: () => false,
+      dispose: () => {},
+    };
+    expect(forkShellSession(stateless)).toBe(stateless);
   });
 });

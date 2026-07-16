@@ -13,44 +13,48 @@ import {
   errorCodeOf,
   isAbortError,
 } from '../errors.js';
+import {
+  normalizeProviderError,
+  normalizeRetry,
+  type NormalizedProviderError,
+} from '../error-normalize.js';
 import type {
   APIAssistantMessage,
   APIMessageParam,
   APIToolDefinitionParam,
-  CallToolResult,
   ContentBlock,
-  DocumentBlockParam,
-  ImageBlockParam,
+  JSONSchema,
   ModelUsage,
   NonNullableUsage,
   RawMessageStreamEvent,
   SDKMessage,
-  SDKPermissionDeniedMessage,
   SDKResultMessage,
   SDKRunMetrics,
   SDKToolMetrics,
   SDKTransportHealth,
   SDKTurnMetrics,
   StopReason,
-  TextBlockParam,
   ToolResultBlockParam,
   ToolUseBlock,
 } from '../types.js';
 import type {
-  AggregatedHookResult,
   EngineConfig,
   EngineDeps,
   RetryInfo,
   StreamRequest,
-  ToolResultPayload,
 } from '../internal/contracts.js';
 import { MessageAccumulator } from './accumulator.js';
 import { addUsage, estimateCostUsd, normalizeUsage } from './pricing.js';
 import { contextWindowFor } from './context-window.js';
-import { createToolDispatcher, mkToolError, type ToolExecOutcome } from './tool-dispatch.js';
+import {
+  createToolDispatcher,
+  mkToolError,
+  toAbortError,
+  type ToolExecOutcome,
+} from './tool-dispatch.js';
 import { deriveSystemField } from './system-field.js';
 import { supportsAdaptiveThinking } from './thinking-model.js';
-import { estimateToolDefsTokens } from './tokens.js';
+import { estimateToolDefsTokens, estimateTextTokens } from './tokens.js';
 import {
   maybeAutoCompact,
   runManualCompact,
@@ -71,6 +75,9 @@ import {
 } from './thinking-provenance.js';
 
 const DEFAULT_THINKING_BUDGET = 10_000;
+/** Messages API floor for an enabled thinking budget (pre-adaptive wire form):
+ *  `thinking.budget_tokens` must be >= 1024 or the request 400s. */
+const MIN_THINKING_BUDGET = 1_024;
 
 /** Resilience P0-1: per-turn budget for replay-safe turn replays. Bounded and
  *  small on purpose — replays fight transient link faults (a cut socket, a
@@ -95,17 +102,16 @@ function replayBackoff(attempt: number, signal: AbortSignal): Promise<void> {
       signal.removeEventListener('abort', onAbort);
       resolve();
     }, delay);
-    (timer as { unref?: () => void }).unref?.();
+    // Deliberately ref'd: an in-flight replay backoff IS active work. This
+    // fires exactly when the connection just died — often the process's LAST
+    // live handle — and an unref'd timer here drains the event loop, so a
+    // plain-script consumer exits mid-recovery with Node's code 13 (unsettled
+    // top-level await). Vitest's own handles masked this; the first LIVE eval
+    // round (2026-07-12, run 29178257816) died on it. unref() belongs to idle
+    // watchdogs and pooled sockets (stall-watchdog.ts, node-http.ts), never
+    // to a pending retry.
     signal.addEventListener('abort', onAbort, { once: true });
   });
-}
-
-/** Wrap any abort-shaped error into this SDK's AbortError. */
-function toAbortError(err: unknown): AbortError {
-  if (err instanceof AbortError) return err;
-  const message =
-    err instanceof Error ? err.message : 'The operation was aborted';
-  return new AbortError(message);
 }
 
 /** Fallback-eligible API statuses: rate limit and server-side failures. */
@@ -357,6 +363,12 @@ export async function* runAgentLoop(
     // CODE rather than by parsing errorMessage. Absent for non-SDK / codeless
     // failures. Additive; does not touch the request wire.
     errorCode?: string,
+    // Unified normalized upstream error (error normalization 2026-07-14): a
+    // stable, host-consumable shape so BPT can read status/code/provider/model/
+    // requestId/retryable without parsing errorMessage or duck-typing the raw
+    // error. Present only when the run ended on an actual provider/transport
+    // failure (the outer catch); absent for max-turns/budget/refusal stops.
+    providerError?: NormalizedProviderError,
   ): SDKResultMessage => ({
     type: 'result',
     subtype,
@@ -367,6 +379,7 @@ export async function* runAgentLoop(
     stop_reason: lastStopReason,
     ...(apiErrorStatus !== undefined ? { api_error_status: apiErrorStatus } : {}),
     ...(errorCode !== undefined ? { error_code: errorCode } : {}),
+    ...(providerError !== undefined ? { providerError } : {}),
     ...resultBase(),
     // Official-surface parallel: the reference SDK reports error text as a
     // string[]. Placed AFTER the resultBase spread so the fatal message wins
@@ -393,7 +406,7 @@ export async function* runAgentLoop(
         (prev?.cacheReadInputTokens ?? 0) + usage.cache_read_input_tokens,
       cacheCreationInputTokens:
         (prev?.cacheCreationInputTokens ?? 0) + usage.cache_creation_input_tokens,
-      webSearchRequests: prev?.webSearchRequests ?? 0,
+      webSearchRequests: (prev?.webSearchRequests ?? 0) + (usage.web_search_requests ?? 0),
       costUSD: (prev?.costUSD ?? 0) + cost,
       // Official ModelUsage fields (T2-4): the static public window table
       // (an estimate, same provenance as the price table) and the ACTUAL
@@ -460,16 +473,49 @@ export async function* runAgentLoop(
    *  here so its schema is not written this turn; it reappears the turn after
    *  a ToolSearch load. Absent isBuiltinDeferred -> every built-in is inline
    *  (exact pre-unification behavior). */
+  /** A tools[] entry with a missing/invalid input_schema (null, array,
+   *  primitive — seen from lax MCP servers) makes the gateway reject the
+   *  ENTIRE request (`tools.N.custom.input_schema: Field required`, BPT
+   *  2026-07-13), killing every conversation that shares the tool list.
+   *  Normalize such schemas to the safe empty-object schema and say so in
+   *  the debug log, instead of letting one bad tool take the request down. */
+  const normalizeInputSchema = (name: string, schema: unknown): JSONSchema => {
+    if (typeof schema === 'object' && schema !== null && !Array.isArray(schema)) {
+      return schema as JSONSchema;
+    }
+    deps.debug(
+      `engine: tool "${name}" has ${
+        schema === undefined || schema === null ? 'no input schema' : 'a non-object input schema'
+      }; normalized to the empty object schema`,
+    );
+    return { type: 'object', properties: {} };
+  };
+  /** Server-declared typed entries are sent WITHOUT input_schema — only
+   *  types the API defines server-side (e.g. memory_20250818) may do that.
+   *  A `type:'custom'` (or type-less) entry is a misconfiguration: the API
+   *  reads it as a custom tool and 400s the whole request on the missing
+   *  input_schema, so it is skipped loudly rather than advertised. */
+  const isValidServerTool = (st: { type: string; name: string }): boolean =>
+    typeof st.type === 'string' && st.type.length > 0 && st.type !== 'custom';
   const buildToolDefs = (): APIToolDefinitionParam[] => {
     const defs: APIToolDefinitionParam[] = [];
+    const serverToolEntries = (config.serverTools ?? []).filter((st) => {
+      if (isValidServerTool(st)) return true;
+      deps.debug(
+        `engine: serverTools entry "${st.name}" (type ${JSON.stringify(st.type)}) ` +
+          'is not a server-defined tool type and would be rejected as a custom ' +
+          'tool without input_schema; entry skipped',
+      );
+      return false;
+    });
     // Server-declared tool entries (config.serverTools, e.g. the native-mode
     // memory tool): the typed entry is advertised verbatim and a builtin of
     // the SAME name is skipped from schema advertisement — that builtin is
     // the execution loop for the server-declared tool, not a second
-    // definition of it.
+    // definition of it. Skipped-invalid entries do NOT suppress a builtin.
     const serverDeclared =
-      config.serverTools !== undefined && config.serverTools.length > 0
-        ? new Set(config.serverTools.map((t) => t.name))
+      serverToolEntries.length > 0
+        ? new Set(serverToolEntries.map((t) => t.name))
         : undefined;
     for (const tool of deps.builtinTools.values()) {
       if (serverDeclared?.has(tool.name) === true) continue;
@@ -477,20 +523,18 @@ export async function* runAgentLoop(
       defs.push({
         name: tool.name,
         description: tool.description,
-        input_schema: tool.inputSchema,
+        input_schema: normalizeInputSchema(tool.name, tool.inputSchema),
       });
     }
     for (const entry of deps.mcp.allTools()) {
       defs.push({
         name: entry.qualifiedName,
         description: entry.description,
-        input_schema: entry.inputSchema,
+        input_schema: normalizeInputSchema(entry.qualifiedName, entry.inputSchema),
       });
     }
-    if (config.serverTools !== undefined) {
-      for (const st of config.serverTools) {
-        defs.push({ type: st.type, name: st.name });
-      }
+    for (const st of serverToolEntries) {
+      defs.push({ type: st.type, name: st.name });
     }
     return defs;
   };
@@ -532,15 +576,35 @@ export async function* runAgentLoop(
       return { type: 'adaptive', ...(display !== undefined ? { display } : {}) };
     }
     // Pre-adaptive model: enabled + clamped budget. The Messages API requires
-    // budget_tokens < max_tokens or it 400s; the default budget (10000) exceeds
-    // the default max_tokens (8192), so clamp below max_tokens and warn.
+    // 1024 <= budget_tokens < max_tokens or it 400s; the default budget (10000)
+    // exceeds the default max_tokens (8192), so clamp below max_tokens and warn.
     const ceiling = config.maxOutputTokens - 1;
-    const budget_tokens = requested > ceiling ? ceiling : requested;
+    // If max_tokens leaves no room for even the 1024 floor, thinking cannot be
+    // validly enabled — emitting budget_tokens < 1024 (or >= max_tokens) 400s
+    // the turn, and then every turn (config is re-read each turn). Disable it.
+    if (ceiling < MIN_THINKING_BUDGET) {
+      deps.debug(
+        `engine: thinking disabled: max_tokens ${config.maxOutputTokens} leaves ` +
+          `no room for the API's ${MIN_THINKING_BUDGET}-token budget floor`,
+      );
+      return undefined;
+    }
+    let budget_tokens = requested > ceiling ? ceiling : requested;
     if (budget_tokens < requested) {
       deps.debug(
         `engine: thinking budget_tokens ${requested} >= max_tokens ` +
           `${config.maxOutputTokens}; clamped to ${budget_tokens} to satisfy the API`,
       );
+    }
+    // Lower-bound clamp: a positive-but-sub-1024 budget (e.g. maxThinkingTokens:
+    // 500) previously passed straight through and 400'd the request. Raise it to
+    // the floor, which fits since ceiling >= MIN_THINKING_BUDGET here.
+    if (budget_tokens < MIN_THINKING_BUDGET) {
+      deps.debug(
+        `engine: thinking budget_tokens ${budget_tokens} below the API's ` +
+          `${MIN_THINKING_BUDGET}-token floor; raised to ${MIN_THINKING_BUDGET}`,
+      );
+      budget_tokens = MIN_THINKING_BUDGET;
     }
     return {
       type: 'enabled',
@@ -558,11 +622,16 @@ export async function* runAgentLoop(
   // System-prompt term = stable prefix + volatile (cwd) tail, OR the caller's
   // segment blocks when present; all are sent every request, so all count
   // toward the compaction overhead estimate.
-  const systemCharLen =
+  // CJK-aware token estimate (finding): a flat charLen/4 undercounts a
+  // CJK-heavy system prompt ~4x (estimateTextTokens charges 1 token per Han/
+  // kana/Hangul char), so a Chinese system prompt could defer compaction past
+  // the point the first request 400s "prompt too long". Use the same estimator
+  // the rest of the engine (and analyzeRequestComposition) uses.
+  const systemPromptTokens =
     config.systemBlocks !== undefined
-      ? config.systemBlocks.reduce((n, b) => n + (b.text?.length ?? 0), 0)
-      : (config.systemPrompt?.length ?? 0) + (config.systemPromptSuffix?.length ?? 0);
-  const systemPromptTokens = Math.ceil(systemCharLen / 4);
+      ? config.systemBlocks.reduce((n, b) => n + estimateTextTokens(b.text ?? ''), 0)
+      : estimateTextTokens(config.systemPrompt ?? '') +
+        estimateTextTokens(config.systemPromptSuffix ?? '');
   // Tool-def token estimate, cached by the tool-NAME set: the estimate walks
   // a JSON.stringify of every schema, and the def list only changes when the
   // advertised tool set changes (ToolSearch load / MCP setServers) — which
@@ -570,7 +639,7 @@ export async function* runAgentLoop(
   let toolDefsEstimateKey: string | undefined;
   let toolDefsEstimate = 0;
   const currentOverheadTokens = (defs: APIToolDefinitionParam[]): number => {
-    const key = defs.map((d) => d.name).join(' ');
+    const key = defs.map((d) => d.name).join('\x00');
     if (key !== toolDefsEstimateKey) {
       toolDefsEstimate = estimateToolDefsTokens(defs);
       toolDefsEstimateKey = key;
@@ -600,6 +669,15 @@ export async function* runAgentLoop(
         transportHealth.httpRetries += 1;
       }
       const base = { uuid: randomUUID(), session_id: config.sessionId };
+      // Unified normalized error for THIS retry (error normalization 2026-07-14):
+      // a retry proves the failure was retryable, so it carries a full
+      // NormalizedProviderError (provider/model/status/code/requestId) on both
+      // the rate_limit_event and api_retry arms — the host reads one shape.
+      const providerError = normalizeRetry(info, {
+        provider: config.providerLabel,
+        model: useModel,
+      });
+      const retryRemaining = Math.max(0, info.maxRetries - info.attempt);
       if (info.status === 429) {
         retryMessages.push({
           type: 'rate_limit_event',
@@ -616,6 +694,7 @@ export async function* runAgentLoop(
           // Deprecated dual-track flat fields, still populated.
           retry_after_ms: info.retryAfterMs ?? 0,
           limit_type: 'api',
+          providerError,
         });
       } else {
         retryMessages.push({
@@ -625,6 +704,19 @@ export async function* runAgentLoop(
           max_retries: info.maxRetries,
           ...(info.status !== undefined ? { status: info.status } : {}),
           ...(info.errorType !== undefined ? { reason: info.errorType } : {}),
+          // Additive unified-error fields (do not break existing consumers).
+          retryable: true,
+          retry_remaining: retryRemaining,
+          retry_reason:
+            info.errorType ??
+            (info.kind === 'empty_stream'
+              ? 'empty_stream'
+              : info.kind === 'network'
+                ? 'network'
+                : info.status !== undefined
+                  ? `http_${info.status}`
+                  : 'retry'),
+          providerError,
         });
       }
     };
@@ -744,7 +836,8 @@ export async function* runAgentLoop(
       if (
         err instanceof APIConnectionError &&
         err.midStreamTruncation === true &&
-        !signal.aborted
+        !signal.aborted &&
+        config.salvageMode !== 'continue'
       ) {
         const salvaged = accumulator.salvageTruncated();
         if (salvaged !== undefined) {
@@ -772,7 +865,7 @@ export async function* runAgentLoop(
   // 2026-07-10 F5): hooks -> gate -> execute -> hooks, plus read-only
   // classification. Touches no streaming state — a per-run factory bound to
   // this loop's deps/hook fields/metrics recorder.
-  const { isReadOnlyTool, executeToolUse } = createToolDispatcher({
+  const { isParallelSafeTool, executeToolUse } = createToolDispatcher({
     deps,
     sessionId: config.sessionId,
     baseHookFields,
@@ -934,7 +1027,15 @@ export async function* runAgentLoop(
           assistant = yield* streamAttempt(model, turnToolDefs, firstSink);
           break;
         } catch (err) {
-          if (isAbortError(err)) throw toAbortError(err);
+          if (isAbortError(err)) {
+            // audit 2026-07-14 L-6: the aborted attempt may already have
+            // billed tokens (input tokens on its message_start). Fold them
+            // into the run totals so the outer catch can hand the partial
+            // accounting to the query layer — without this, a turn-level
+            // interrupt() silently lost the aborted turn's spend.
+            if (firstSink.usage !== undefined) recordUsage(model, firstSink.usage);
+            throw toAbortError(err);
+          }
           if (
             err instanceof APIConnectionError &&
             !signal.aborted &&
@@ -961,6 +1062,13 @@ export async function* runAgentLoop(
               attempt: replayN,
               max_retries: TURN_REPLAY_LIMIT,
               reason: `turn_replay:${err.code}`,
+              retryable: true,
+              retry_remaining: turnReplaysLeft,
+              retry_reason: `turn_replay:${err.code}`,
+              providerError: normalizeProviderError(err, {
+                provider: config.providerLabel,
+                model,
+              }),
             };
             await replayBackoff(replayN, signal);
             // A mid-run setModel()/latched fallback applies to the replay too.
@@ -1012,14 +1120,15 @@ export async function* runAgentLoop(
             // The fallback attempt gets its own usage sink: if IT fails too,
             // the tokens it burned (its message_start already billed the
             // prompt) must reach the totals the terminal error result reports,
-            // exactly as the first attempt's sink was folded above. A caller
-            // abort keeps the plain throw-through — no result is produced, so
-            // there is no report to keep honest.
+            // exactly as the first attempt's sink was folded above. An abort
+            // folds too (audit 2026-07-14 L-6): no result is produced, but the
+            // outer catch now hands the run's partial accounting to the query
+            // layer on the thrown AbortError, so these tokens are reportable.
             const fallbackSink: UsageSink = {};
             try {
               assistant = yield* streamAttempt(model, turnToolDefs, fallbackSink);
             } catch (fallbackErr) {
-              if (!isAbortError(fallbackErr) && fallbackSink.usage !== undefined) {
+              if (fallbackSink.usage !== undefined) {
                 recordUsage(model, fallbackSink.usage);
               }
               throw fallbackErr; // 2nd failure -> outer catch
@@ -1152,6 +1261,16 @@ export async function* runAgentLoop(
           yield errorResult('error_max_turns', `Reached maxTurns limit (${config.maxTurns})`);
           return;
         }
+        // The continuation re-issues a billable API call: honor the same
+        // budget gate as the tool-continue / structured-retry / bg-drain /
+        // stop-hook-block paths (audit 2026-07-14 M-8 — this was the one
+        // continuation branch that checked only maxTurns, so a paused turn
+        // could keep billing past maxBudgetUsd).
+        const pauseBudgetStop = budgetStopReason();
+        if (pauseBudgetStop !== undefined) {
+          yield errorResult('error_max_budget_usd', pauseBudgetStop);
+          return;
+        }
         deps.debug('engine: turn paused (stop_reason: pause_turn); continuing the turn');
         continue;
       }
@@ -1181,14 +1300,16 @@ export async function* runAgentLoop(
         let batchStop: ToolExecOutcome['stop'];
         let batchDefer: ToolExecOutcome['defer'];
         // Execute in content order, but run a maximal run of >= 2 consecutive
-        // read-only tools CONCURRENTLY (they have no side effects and are
-        // order-independent). Non-read-only and lone read-only tools run
-        // sequentially, exactly as before. Results stay in tool_use order (the
-        // API pairs by id; history keeps them ordered). A stop/defer from any
-        // executed tool suppresses all LATER tools with a "Not executed"
-        // placeholder. "Read-only" covers builtins (readOnly flag) and MCP
-        // tools whose server annotation sets readOnlyHint (isReadOnlyTool).
-        const isReadOnly = (b: ToolUseBlock): boolean => isReadOnlyTool(b.name);
+        // parallel-safe tools CONCURRENTLY (order-independent within a batch).
+        // Other tools and lone parallel-safe tools run sequentially, exactly
+        // as before. Results stay in tool_use order (the API pairs by id;
+        // history keeps them ordered). A stop/defer from any executed tool
+        // suppresses all LATER tools with a "Not executed" placeholder.
+        // "Parallel-safe" covers read-only builtins (readOnly flag), MCP tools
+        // whose server annotation sets readOnlyHint, and builtins explicitly
+        // marked parallelSafe (Agent — batched foreground subagents must
+        // overlap, not serialize; each child runs in its own isolated loop).
+        const isParallelSafe = (b: ToolUseBlock): boolean => isParallelSafeTool(b.name);
         let ti = 0;
         while (ti < toolUses.length) {
           if (batchStop !== undefined || batchDefer !== undefined) {
@@ -1204,16 +1325,18 @@ export async function* runAgentLoop(
             continue;
           }
           let groupEnd = ti;
-          while (groupEnd < toolUses.length && isReadOnly(toolUses[groupEnd]!)) groupEnd += 1;
+          while (groupEnd < toolUses.length && isParallelSafe(toolUses[groupEnd]!)) groupEnd += 1;
           const outcomes: ToolExecOutcome[] =
             groupEnd - ti >= 2
               ? await Promise.all(toolUses.slice(ti, groupEnd).map((b) => executeToolUse(b)))
               : [await executeToolUse(toolUses[ti]!)];
           // Process outcomes in tool_use order. Once one stops/defers the run,
           // OVERRIDE the rest of this concurrent group with the skip marker so
-          // the observable contract matches sequential execution: the group
-          // already ran, but its members are read-only, so that was
-          // side-effect-free. Later GROUPS are skipped by the outer guard.
+          // the observable contract matches sequential execution. For read-only
+          // members that is side-effect-free; a parallelSafe member (Agent) DID
+          // run its child to completion — only its RESULT is masked, a
+          // documented trade-off of batching agents with an interrupting call.
+          // Later GROUPS are skipped by the outer guard.
           let stoppedInGroup = false;
           for (let g = 0; g < outcomes.length; g += 1) {
             if (stoppedInGroup) {
@@ -1434,7 +1557,20 @@ export async function* runAgentLoop(
       // assistant message already carried the raw content).
       const naturalEndContent = assistant.content.filter((b) => b.type !== 'tool_use');
       pushAssistant(naturalEndContent, assistant.model);
-      if (deps.hooks.hasHooks('Stop')) {
+      // ROOT LOOP ONLY: the Stop hook fires exclusively for the root loop; a
+      // subagent's natural end is governed by SubagentStop (runtime-level). The
+      // gate wraps the hook's INVOCATION, not merely its 'block' decision
+      // (audit 2026-07-15): a Stop hook such as /goal's onStop MUTATES
+      // session-goal state as a side effect (clears the goal on "met"/
+      // "impossible", bumps the block counter on "not met", and spends an
+      // evaluator LLM call). Running it on a CHILD's transcript would let any
+      // subagent's natural end clear or pollute the ROOT goal — the very
+      // conversation-loses-stop-state bug this gate must prevent. Guarding only
+      // the block branch (the pre-fix shape) stopped children being trapped but
+      // left those side effects leaking. parentToolUseId marks child loops.
+      const isRootLoop =
+        config.parentToolUseId === undefined || config.parentToolUseId === null;
+      if (isRootLoop && deps.hooks.hasHooks('Stop')) {
         const stopAgg = await deps.hooks.run(
           'Stop',
           { ...baseHookFields, hook_event_name: 'Stop', stop_hook_active: stopHookActive },
@@ -1447,12 +1583,8 @@ export async function* runAgentLoop(
         // PREVENTS the stop — the reason is fed back as a user turn and the
         // loop runs another assistant turn (the /goal goal-gating primitive).
         // `continue:false` forces the stop and WINS over block (official
-        // precedence). ROOT LOOP ONLY: a subagent's natural end is governed
-        // by SubagentStop (runtime-level), so a goal-gate registered on Stop
-        // must not capture every child (parentToolUseId marks child loops).
-        const isRootLoop =
-          config.parentToolUseId === undefined || config.parentToolUseId === null;
-        if (isRootLoop && stopAgg.continue && stopAgg.decision === 'deny') {
+        // precedence).
+        if (stopAgg.continue && stopAgg.decision === 'deny') {
           const reason =
             stopAgg.decisionReason ?? 'Stop hook blocked stopping (no reason given)';
           deps.debug(`engine: Stop hook blocked the stop; continuing (${reason})`);
@@ -1490,11 +1622,46 @@ export async function* runAgentLoop(
       return;
     }
   } catch (err) {
-    if (isAbortError(err)) throw toAbortError(err);
-    const message = err instanceof Error ? err.message : String(err);
-    deps.debug(`engine: error during execution: ${message}`);
-    const apiStatus = err instanceof APIStatusError ? err.status : undefined;
-    yield errorResult('error_during_execution', message, apiStatus, errorCodeOf(err));
+    if (isAbortError(err)) {
+      // audit 2026-07-14 L-6: an aborted run yields NO result message, so the
+      // usage it already billed (this turn's message_start input tokens folded
+      // above, plus any completed intermediate turns of the tool loop) would
+      // silently vanish from session accounting. Attach the run's partial
+      // accounting to the thrown AbortError; the query layer folds it into
+      // SessionAccounting in its abort path. When the same AbortError bubbles
+      // through nested loops each loop overwrites with ITS OWN scope — the
+      // outermost (root) loop wins, which is the scope the root query folds.
+      const aborted = toAbortError(err);
+      aborted.abortedRunAccounting = {
+        usage: { ...totalUsage },
+        totalCostUsd,
+        durationApiMs,
+        numTurns,
+        modelUsage: Object.fromEntries(
+          Object.entries(modelUsage).map(([k, v]) => [k, { ...v }]),
+        ),
+      };
+      throw aborted;
+    }
+    // Unified normalization: map ANY thrown upstream failure — an APIStatusError,
+    // an APIConnectionError, or a bare gateway error object that穿透ed
+    // un-classified — into a stable NormalizedProviderError so the host never
+    // receives a raw object or an opaque exception. The readable normalized
+    // message is the surfaced errorMessage (never [object Object]).
+    const providerError = normalizeProviderError(err, {
+      provider: config.providerLabel,
+      model: fallbackModel ?? config.model,
+    });
+    deps.debug(`engine: error during execution: ${providerError.message}`);
+    const apiStatus =
+      err instanceof APIStatusError ? err.status : providerError.status;
+    yield errorResult(
+      'error_during_execution',
+      providerError.message,
+      apiStatus,
+      errorCodeOf(err),
+      providerError,
+    );
     return;
   }
 }

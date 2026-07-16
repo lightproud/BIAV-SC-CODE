@@ -590,6 +590,65 @@ describe('AnthropicTransport retries', () => {
     expect(elapsed).toBeLessThan(450);
   });
 
+  // audit 2026-07-14 L-2: the explicit Retry-After delay is jittered UP (never
+  // earlier than the server asked) so a concurrent fan-out does not all wake at
+  // the same instant. Two retries carrying the SAME Retry-After header must
+  // therefore back off for DIFFERENT durations, each within [header, header*1.25].
+  describe('retry-after jitter (L-2 thundering-herd spread)', () => {
+    function backoffMsFrom(debugLines: string[]): number {
+      const line = debugLines.find((l) => /backing off \d+ms/.test(l));
+      if (line === undefined) throw new Error('no backoff debug line captured');
+      return Number(/backing off (\d+)ms/.exec(line)![1]);
+    }
+
+    async function runRetryAfter(headerSeconds: string): Promise<number> {
+      const debugLines: string[] = [];
+      const fetchMock = stubFetch([
+        () =>
+          new Response(
+            JSON.stringify({
+              type: 'error',
+              error: { type: 'rate_limit_error', message: 'slow down' },
+            }),
+            { status: 429, headers: { 'retry-after': headerSeconds } },
+          ),
+        () => sseResponse(okSse()),
+      ]);
+      const t = new AnthropicTransport({
+        provider: { apiKey: 'k' },
+        env: { BPT_HTTP_CLIENT: 'fetch' },
+        debug: (m) => debugLines.push(m),
+      });
+      await collect(t.stream(baseReq()));
+      expect(fetchMock).toHaveBeenCalledTimes(2);
+      return backoffMsFrom(debugLines);
+    }
+
+    it('same Retry-After header -> different delays, each within [header, header*1.25]', async () => {
+      // backoff() draws Math.random TWICE per call: the exponential jitter
+      // (unused on the retry-after path) then the retry-after multiplier. Feed
+      // four values so the two retry-after multipliers (2nd + 4th draw) differ.
+      vi.spyOn(Math, 'random')
+        .mockReturnValueOnce(0.0)
+        .mockReturnValueOnce(0.2)
+        .mockReturnValueOnce(0.0)
+        .mockReturnValueOnce(0.8);
+      const headerMs = 200; // 'retry-after: 0.2' seconds -> a short real sleep
+      const d1 = await runRetryAfter('0.2');
+      const d2 = await runRetryAfter('0.2');
+      // Jitter is actually applied (not a fixed value).
+      expect(d1).not.toBe(d2);
+      // Never earlier than the server asked; never more than 25% late.
+      for (const d of [d1, d2]) {
+        expect(d).toBeGreaterThanOrEqual(headerMs);
+        expect(d).toBeLessThanOrEqual(Math.ceil(headerMs * 1.25));
+      }
+      // Concretely: 0.2 -> 200*1.05 = 210, 0.8 -> 200*1.20 = 240.
+      expect(d1).toBe(210);
+      expect(d2).toBe(240);
+    });
+  });
+
   it('400 -> APIStatusError immediately with exactly 1 fetch call', async () => {
     const fetchMock = stubFetch([
       () =>
@@ -963,6 +1022,48 @@ describe('AnthropicTransport empty-stream retry', () => {
     const err = await captureError(collect(t.stream(baseReq({ signal: ac.signal, onRetry }))));
     expect(err).toBeInstanceOf(AbortError);
     expect(fetchMock).toHaveBeenCalledTimes(1); // never reached the retry fetch
+  });
+
+  // BPT 2026-07-13 "空 stopReason 轮次" (keeper ruling C): a started stream
+  // (message_start seen) that delivers NO content AND no terminal stop_reason —
+  // WITH a message_stop frame — is a degraded 200 (the API always sends
+  // message_delta.stop_reason before message_stop). It must fail fast with a
+  // diagnosable empty_message error, NOT be retried (a started stream is not
+  // replay-safe) and NOT be finalized as a silent empty success. The S1 variant
+  // (no message_stop) is locked in transport-anthropic-mutation-kills-r2.
+  it('a started stream with message_stop but no content and no stop_reason is empty_message (not retried, not replay-flagged)', async () => {
+    const startOnly: RawMessageStreamEvent = {
+      type: 'message_start',
+      message: {
+        id: 'msg_degraded',
+        type: 'message',
+        role: 'assistant',
+        model: 'claude-test-1',
+        content: [],
+        stop_reason: null,
+        stop_sequence: null,
+        usage: {
+          input_tokens: 5,
+          output_tokens: 0,
+          cache_creation_input_tokens: 0,
+          cache_read_input_tokens: 0,
+        },
+      },
+    } as RawMessageStreamEvent;
+    const fetchMock = stubFetch([
+      () => sseResponse(eventsToSse([startOnly, { type: 'message_stop' } as RawMessageStreamEvent])),
+    ]);
+    const t = makeTransport({ provider: { apiKey: 'k', maxRetries: 3 } });
+    const err = (await captureError(collect(t.stream(baseReq())))) as APIConnectionError & {
+      turnReplaySafe?: boolean;
+      midStreamTruncation?: boolean;
+    };
+    expect(err).toBeInstanceOf(APIConnectionError);
+    expect((err as APIConnectionError).code).toBe('empty_message');
+    expect(err.message).toMatch(/no content and no stop_reason/);
+    expect(fetchMock).toHaveBeenCalledTimes(1); // NOT retried
+    expect(err.turnReplaySafe).not.toBe(true);
+    expect(err.midStreamTruncation).not.toBe(true);
   });
 });
 

@@ -102,29 +102,42 @@ const PRIMARY_ARG_FIELD: Readonly<Record<string, string>> = {
   Read: 'file_path',
   Write: 'file_path',
   Edit: 'file_path',
+  MultiEdit: 'file_path',
   Glob: 'pattern',
   Grep: 'pattern',
+  // Without these, a scoped rule (e.g. the SSRF deny `WebFetch(http://169.254.169.254*)`)
+  // falls to the JSON fallback and compares the specifier against `{"url":...}`,
+  // which starts with `{` and never prefix-matches the URL — the deny silently
+  // never fires. Map each builtin to the field its specifier rules target.
+  WebFetch: 'url',
+  WebSearch: 'query',
+  NotebookEdit: 'notebook_path',
 };
 
 /**
  * Extract the primary string argument of a tool call for specifier matching.
- * Returns undefined when a known tool's primary field is missing or not a
- * string (a specifier can then never match - the conservative outcome).
+ * Returns undefined — so the specifier never matches (the conservative outcome)
+ * — when the tool has no registered primary field, or its field is missing or
+ * not a string.
+ *
+ * A content specifier is only meaningful for tools with a KNOWN primary arg
+ * (PRIMARY_ARG_FIELD). A non-tabled tool — an MCP `mcp__server__tool`, Task, … —
+ * has a server-defined input schema with no universal primary arg, so a
+ * specifier cannot be resolved to a field and MUST NOT be guessed (待裁③ —
+ * keeper 2026-07-16). The former `JSON.stringify(input)` fallback compared the
+ * specifier against `{...}` and silently never matched anyway; returning
+ * undefined makes that explicit and consistent. Bare-name rules
+ * (`mcp__server__tool` with no specifier) are the supported way to allow/deny
+ * MCP tools and are unaffected (ruleMatches short-circuits before this).
  */
 function primaryArg(
   toolName: string,
   input: Record<string, unknown>,
 ): string | undefined {
   const field = PRIMARY_ARG_FIELD[toolName];
-  if (field !== undefined) {
-    const value = input[field];
-    return typeof value === 'string' ? value : undefined;
-  }
-  try {
-    return JSON.stringify(input);
-  } catch {
-    return undefined; // circular input can never match a specifier
-  }
+  if (field === undefined) return undefined;
+  const value = input[field];
+  return typeof value === 'string' ? value : undefined;
 }
 
 /**

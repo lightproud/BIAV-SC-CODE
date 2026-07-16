@@ -269,6 +269,18 @@ describe('FileSessionStore listSubkeys/listSessions/delete', () => {
     expect(await s.listSessions('never-seen')).toEqual([]);
   });
 
+  it('bug-fix: a stray non-directory entry (ENOTDIR) is skipped, not fatal', async () => {
+    const s = fileSessionStore(tmp);
+    await s.append({ projectKey: PK, sessionId: 'real' }, [entry('a')]);
+    // The project dir is the single directory created under tmp; drop a stray
+    // regular file beside the session dir so stat(stray/main.jsonl) -> ENOTDIR.
+    const encoded = (await readdir(tmp))[0]!;
+    await appendFile(join(tmp, encoded, '.DS_Store'), 'junk');
+    // Pre-fix this threw ENOTDIR and aborted the whole listing.
+    const list = await s.listSessions(PK);
+    expect(list.map((e) => e.sessionId)).toEqual(['real']);
+  });
+
   it('delete of the main key cascades to subkeys; subkey delete is scoped', async () => {
     const s = fileSessionStore(tmp);
     const main: SessionKey = { projectKey: PK, sessionId: 'a' };

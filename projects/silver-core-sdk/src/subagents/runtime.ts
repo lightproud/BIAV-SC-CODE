@@ -22,12 +22,7 @@
  * (context isolation).
  */
 
-import { execFile } from 'node:child_process';
 import { randomUUID } from 'node:crypto';
-import { mkdtemp, rm } from 'node:fs/promises';
-import { tmpdir } from 'node:os';
-import { join } from 'node:path';
-import { promisify } from 'node:util';
 
 import { isAbortError } from '../errors.js';
 import type {
@@ -47,6 +42,10 @@ import type {
   SDKTaskStartedMessage,
   SDKTaskUpdatedMessage,
   TextBlockParam,
+  ProviderConfig,
+  SubagentTransportHandle,
+  SubagentTransportResolution,
+  SubagentTransportResolver,
 } from '../types.js';
 import type {
   BuiltinTool,
@@ -67,6 +66,7 @@ import type {
 } from '../internal/contracts.js';
 import type { CanUseTool } from '../types.js';
 import { DefaultPermissionGate } from '../permissions/gate.js';
+import { forkShellSession } from '../tools/shells.js';
 import { runAgentLoop } from '../engine/loop.js';
 import { matchToolName, parseRule } from '../permissions/rules.js';
 import { addUsage } from '../engine/pricing.js';
@@ -91,8 +91,14 @@ export type SubagentUsageLedger = {
 };
 
 export interface SubagentRuntime {
-  /** SpawnSubagentFn bound to a nesting depth (root ToolContext uses depth 0). */
-  makeSpawnFn(depth: number): SpawnSubagentFn;
+  /**
+   * SpawnSubagentFn bound to a nesting depth (root ToolContext uses depth 0).
+   * `parentShells` is the SPAWNING context's shell session — each spawned
+   * child forks its persistent cwd/env namespace from it (audit 2026-07-14
+   * M-10), so nested children seed from their immediate parent, not the root.
+   * Omitted -> the runtime's query-wide manager (the root loop's session).
+   */
+  makeSpawnFn(depth: number, parentShells?: ShellManager): SpawnSubagentFn;
   /** Pull + clear completed background-subagent result notes (root loop drains). */
   drainCompletedResults(): TextBlockParam[];
   /** Pull + reset the accumulated child usage/cost/modelUsage. */
@@ -150,6 +156,17 @@ export type SubagentRuntimeOptions = {
   disallowedTools?: string[];
   /** Live parent engine config (model/thinking read at spawn time). */
   engineConfig: EngineConfig;
+  /** The query's provider config: resolver-callback context + the parent
+   *  protocol on the spawn transport log line. */
+  provider?: ProviderConfig;
+  /** Cross-protocol transport routing (Options.resolveSubagentTransport):
+   *  consulted once per ISOLATED spawn after the child model resolves; forks
+   *  never consult it. Absent -> children share the parent transport. */
+  resolveSubagentTransport?: SubagentTransportResolver;
+  /** Query-composed engine-internal routing (compaction summarizer inside a
+   *  child loop); forwarded into every childDeps verbatim. Owned-transport
+   *  disposal belongs to the query layer that composed it. */
+  transportForModel?: EngineDeps['transportForModel'];
   /** Transcript store; child transcripts persist under {agentId} when set. */
   store?: SessionStore;
   persist?: boolean;
@@ -167,7 +184,10 @@ export type SubagentRuntimeOptions = {
    *  encoding since v0.7) are pushed here (the runtime cannot yield);
    *  the query layer drains them into the SDKMessage stream. */
   emitObservability?: (msg: SDKMessage) => void;
-  /** v0.5 query-wide shell session (shared with children's ToolContext). */
+  /** v0.5 query-wide shell session. The BACKGROUND-shell registry is shared
+   *  with children's ToolContext as-is; the PERSISTENT cwd/env namespace is
+   *  forked per spawned child (audit 2026-07-14 M-10), seeded from the
+   *  spawning context's snapshot at spawn time. */
   shells?: ShellManager;
   /** v0.6 sandbox context (shared with children's ToolContext). */
   sandbox?: SandboxContext;
@@ -176,6 +196,14 @@ export type SubagentRuntimeOptions = {
   readFilePaths?: Set<string>;
   /** Formal per-query WeakMap key threaded into child contexts (F6). */
   sessionKey?: object;
+  /** Checkpoint pre-image recorder, resolved at SPAWN time (the checkpoint
+   *  store binds after this runtime is constructed). Children thread it into
+   *  their ToolContext so subagent Write/Edit pre-images land in the SAME
+   *  per-turn checkpoint index as the root loop's — without it, rewind()
+   *  reports success while child edits stay un-rolled-back (audit 2026-07-14
+   *  H-3). Returns undefined while checkpoints are off, so child fs tools
+   *  skip pre-image capture exactly like the root context does. */
+  getRecordFileChange?: () => ((absPath: string, preImage: string | null) => void) | undefined;
   /** Aggregate agent-tree budget ceiling (P0 fix): the SAME object the root
    *  loop holds, threaded into every child loop so the whole family shares one
    *  spend total and one cap — a child cannot spend past the family ceiling
@@ -271,8 +299,6 @@ export function buildForkSeed(
   return seed;
 }
 
-const execFileP = promisify(execFile);
-
 /**
  * Worktree isolation (Agent tool `isolation: 'worktree'`, E7-02): create a
  * temporary DETACHED git worktree of the repository at `repoCwd` for a child
@@ -316,17 +342,32 @@ class ChildMcpFilter implements McpRegistry {
   readResource(server: string, uri: string, signal: AbortSignal): Promise<McpResourceContent[]> {
     return this.inner.readResource(server, uri, signal);
   }
+  readResourceDir(server: string, uri: string, signal: AbortSignal): Promise<McpResource[]> {
+    return this.inner.readResourceDir(server, uri, signal);
+  }
   reconnect(serverName: string): Promise<void> {
+    // Reconnect is shared RECOVERY (a failed server is failed for every
+    // borrower; reconnecting fixes it for all), not a per-session preference —
+    // safe to pass through, same as SharedMcpRegistry.
     return this.inner.reconnect(serverName);
   }
-  setEnabled(serverName: string, enabled: boolean): void {
-    this.inner.setEnabled(serverName, enabled);
+  // Finding L1 — the child view narrows tool VISIBILITY only; it must not carry
+  // a subagent's lifecycle mutations into the registry the parent and every
+  // sibling subagent share. setEnabled would blank a server for all of them,
+  // setServers closes every connection before swapping the set, and closeAll
+  // tears the shared pool down mid-conversation — so these are inert on a child
+  // view. Teardown/reconfiguration authority stays with the query/manager that
+  // owns the registry.
+  setEnabled(): void {
+    // no-op: a subagent cannot toggle a shared server for its siblings.
   }
-  setServers(servers: Parameters<McpRegistry['setServers']>[0]) {
-    return this.inner.setServers(servers);
+  setServers(): Promise<void> {
+    // no-op: a subagent cannot swap the shared server set.
+    return Promise.resolve();
   }
   closeAll(): Promise<void> {
-    return this.inner.closeAll();
+    // no-op: a subagent cannot tear down the shared connection pool.
+    return Promise.resolve();
   }
 }
 
@@ -355,6 +396,28 @@ export function createSubagentRuntime(
     emitObservability,
   } = opts;
   const persist = opts.persist === true && store !== undefined;
+  // Wire protocol of the parent transport (spawn log + resolver input). The
+  // provider protocol field is the same single switch point factory.ts uses.
+  const parentProtocol: 'anthropic' | 'openai-chat' =
+    opts.provider?.protocol === 'openai-chat' ? 'openai-chat' : 'anthropic';
+  // Transports handed over with `owned: true` by resolveSubagentTransport.
+  // Children survive their runs for SendMessage continuation, so per-child
+  // disposal would kill a revivable worker's transport — owned transports are
+  // released once, at query teardown (settleAll), after every child settled.
+  const ownedTransports = new Set<Transport>();
+  const disposeOwnedTransports = (): void => {
+    for (const t of ownedTransports) {
+      try {
+        t.dispose?.();
+      } catch (err) {
+        debug(
+          `subagent transport dispose failed (ignored): ` +
+            `${err instanceof Error ? err.message : String(err)}`,
+        );
+      }
+    }
+    ownedTransports.clear();
+  };
 
   // --- Task-lifecycle observability (v0.4) ----------------------------------
   const emitTask = (
@@ -394,6 +457,15 @@ export function createSubagentRuntime(
    * reproduced coordinator preset's Results contract holds verbatim.
    * `<result>` and `<usage>` are optional sections, exactly as documented.
    */
+  // XML-escape the CHILD-controlled free-text fields (summary carries the task
+  // description + a result preview; result is the child's returned text). The
+  // official harness escapes these before embedding them, so a child whose
+  // output contains `</result>` / `<task-notification>` cannot forge block
+  // structure into the parent's view (a prompt-injection vector when the child
+  // processed untrusted data). `&` first so already-escaped output is not
+  // double-mangled inconsistently. agentId/status/usage are SDK-controlled.
+  const escapeXmlText = (s: string): string =>
+    s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   const formatTaskNotification = (p: {
     agentId: string;
     status: 'completed' | 'failed' | 'killed';
@@ -405,10 +477,10 @@ export function createSubagentRuntime(
       '<task-notification>',
       `<task-id>${p.agentId}</task-id>`,
       `<status>${p.status}</status>`,
-      `<summary>${p.summary}</summary>`,
+      `<summary>${escapeXmlText(p.summary)}</summary>`,
     ];
     if (p.result !== undefined && p.result.length > 0) {
-      lines.push(`<result>${p.result}</result>`);
+      lines.push(`<result>${escapeXmlText(p.result)}</result>`);
     }
     if (p.usage !== undefined) {
       lines.push(
@@ -690,6 +762,29 @@ export function createSubagentRuntime(
   };
   const childRegistry = new Map<string, ChildRecord>();
 
+  // Sidechain marker lifecycle (待裁② — keeper 2026-07-16 "只初次写 start + 重构
+  // end"): ONE sidechain_start at the child's birth and ONE sidechain_end at its
+  // final teardown, bracketing every SendMessage continuation episode in
+  // between — instead of a fresh start/end pair per run. `finalizeSidechain`
+  // (called from killAgent + settleAll) writes the single end idempotently.
+  const sidechainStarted = new Set<string>();
+  const sidechainEnded = new Set<string>();
+  const sidechainLastError = new Map<string, boolean>();
+  const sidechainMeta = new Map<string, { agentType: string; fork: boolean }>();
+  function finalizeSidechain(agentId: string, opts?: { error?: boolean }): void {
+    if (!persist || store === undefined) return;
+    if (!sidechainStarted.has(agentId) || sidechainEnded.has(agentId)) return;
+    sidechainEnded.add(agentId);
+    const meta = sidechainMeta.get(agentId);
+    store.append(agentId, {
+      type: 'sidechain_end',
+      timestamp: new Date().toISOString(),
+      agent_type: meta?.agentType ?? '',
+      fork: meta?.fork ?? false,
+      is_error: opts?.error ?? sidechainLastError.get(agentId) ?? false,
+    });
+  }
+
   async function runChildToCompletion(
     history: APIMessageParam[],
     deps: EngineDeps,
@@ -721,17 +816,25 @@ export function createSubagentRuntime(
     const recordSidechain = persist && store !== undefined;
     const parentToolUseId = sidechain.parentToolUseId ?? null;
     if (recordSidechain && store !== undefined) {
-      store.append(agentId, {
-        type: 'sidechain_start',
-        timestamp: new Date().toISOString(),
-        agent_type: sidechain.agentType,
-        fork: sidechain.fork,
-        parent_session_id: sessionId(),
-        parent_tool_use_id: parentToolUseId,
-        seeded_messages: history.length,
-      });
-      // Append the seed's final (delegated task) user turn so the recorded
-      // sidechain is self-contained.
+      // sidechain_start ONCE, at the child's birth (待裁②). A SendMessage
+      // continuation re-enters this function but must NOT write a second start;
+      // the single end is written by finalizeSidechain at teardown.
+      if (!sidechainStarted.has(agentId)) {
+        sidechainStarted.add(agentId);
+        sidechainMeta.set(agentId, { agentType: sidechain.agentType, fork: sidechain.fork });
+        store.append(agentId, {
+          type: 'sidechain_start',
+          timestamp: new Date().toISOString(),
+          agent_type: sidechain.agentType,
+          fork: sidechain.fork,
+          parent_session_id: sessionId(),
+          parent_tool_use_id: parentToolUseId,
+          seeded_messages: history.length,
+        });
+      }
+      // Record THIS episode's triggering user turn EVERY run — the delegated
+      // task on the initial run, or the continuation message on a continuation —
+      // so the single-bracket transcript stays self-contained across episodes.
       const seedTurn = history[history.length - 1];
       if (seedTurn !== undefined) {
         store.append(agentId, {
@@ -744,11 +847,11 @@ export function createSubagentRuntime(
       }
     }
 
-    // The sidechain transcript's terminal marker MUST be written on EVERY exit
-    // path — including an abort or a thrown error mid-run — or an aborted
-    // child's transcript is missing its `sidechain_end` and the settleAll M4
-    // contract (which waits for it) is broken. Track the terminal error state
-    // and write the marker in a finally.
+    // Track this run episode's terminal error state (pessimistic until a clean
+    // result is computed). It is stashed in the finally; the single
+    // sidechain_end is emitted at the child's teardown by finalizeSidechain,
+    // which settleAll invokes for every started child before it resolves — so
+    // the M4 "transcript complete before the child settles" contract still holds.
     let result: { text: string; isError: boolean; usage: ChildRunUsage };
     let sidechainErrored = true; // pessimistic until a clean result is computed
     try {
@@ -828,21 +931,24 @@ export function createSubagentRuntime(
     }
     sidechainErrored = result.isError;
     } finally {
+      // Do NOT write sidechain_end per run (待裁② — keeper 2026-07-16): a
+      // SendMessage continuation would revive this child, so the terminal marker
+      // belongs to the child's final teardown, not each episode. Record this
+      // episode's error state; finalizeSidechain (killAgent + settleAll) emits
+      // the single end idempotently.
       if (recordSidechain && store !== undefined) {
-        store.append(agentId, {
-          type: 'sidechain_end',
-          timestamp: new Date().toISOString(),
-          agent_type: sidechain.agentType,
-          fork: sidechain.fork,
-          is_error: sidechainErrored,
-        });
+        sidechainLastError.set(agentId, sidechainErrored);
       }
     }
     return result;
   }
 
   // --- The spawn closure factory -------------------------------------------
-  function makeSpawnFn(depth: number): SpawnSubagentFn {
+  function makeSpawnFn(depth: number, parentShells?: ShellManager): SpawnSubagentFn {
+    // The shell session this spawner's CALLER runs on: children fork their
+    // persistent cwd/env namespace from it (audit 2026-07-14 M-10). The root
+    // loop's spawner (depth 0, no override) forks from the query-wide manager.
+    const sessionShells = parentShells ?? opts.shells;
     return async function spawn(
       params: SpawnSubagentParams,
     ): Promise<SpawnSubagentResult> {
@@ -1016,12 +1122,112 @@ export function createSubagentRuntime(
             'ignored in fork mode (fork inherits the parent model)',
         );
       }
+      // Fork inherits the parent model; isolated resolves the per-call
+      // override, then agentDef.model, through the same alias path.
+      const childModel = forkActive
+        ? engineConfig.model
+        : resolveModelAlias(params.model ?? agentDef.model, engineConfig.model);
+
+      // --- Cross-protocol transport routing (P0, 2026-07-13) ---------------
+      // An isolated child whose resolved model is only served on a different
+      // wire protocol must not ride the parent transport (the gateway 400s
+      // "model not found" on the wrong route). The host's
+      // resolveSubagentTransport callback owns the model->protocol policy;
+      // absent (or returning undefined) the child shares the parent transport
+      // — byte-for-byte the previous behavior. Forks NEVER consult it: a
+      // fork's whole point is the parent's cached prefix, which requires the
+      // parent model and transport.
+      let childTransport: Transport = transport;
+      let resolution: SubagentTransportResolution | undefined;
+      if (!forkActive && opts.resolveSubagentTransport !== undefined) {
+        try {
+          resolution = await opts.resolveSubagentTransport({
+            model: childModel,
+            purpose: 'subagent',
+            parentModel: engineConfig.model,
+            parentProtocol,
+            parentTransport: transport as SubagentTransportHandle,
+            parentProvider: opts.provider,
+            env,
+            fork: false,
+            debug,
+          });
+        } catch (err) {
+          // Fail the spawn honestly: a child sent through a transport the
+          // host failed to resolve would hit the exact wrong-route 400 this
+          // hook exists to prevent.
+          const message = err instanceof Error ? err.message : String(err);
+          await releaseWorktree().catch(() => undefined);
+          emitTask({
+            type: 'system',
+            subtype: 'task_updated',
+            task_id: agentId,
+            patch: {
+              status: 'failed',
+              end_time: Date.now(),
+              error: resultPreview(`transport resolution failed: ${message}`),
+            },
+          });
+          return {
+            content: `Agent failed: subagent transport resolution failed: ${message}`,
+            isError: true,
+            agentId,
+            background: false,
+          };
+        }
+      }
+      if (
+        resolution !== undefined &&
+        (resolution.transport as unknown as Transport) !== transport
+      ) {
+        childTransport = resolution.transport as unknown as Transport;
+        if (resolution.owned === true) ownedTransports.add(childTransport);
+      }
+      const transportSwitched = childTransport !== transport;
+      const transportMode = !transportSwitched
+        ? 'shared-parent'
+        : resolution?.owned === true
+          ? 'child-owned'
+          : 'resolver-shared';
+      const childProtocol = transportSwitched
+        ? resolution?.protocol
+        : parentProtocol;
+      debug(
+        `subagent ${agentId}: transport ${JSON.stringify({
+          parentModel: engineConfig.model,
+          childModel,
+          parentProtocol,
+          ...(childProtocol !== undefined ? { childProtocol } : {}),
+          transportMode,
+        })}`,
+      );
+      // Thinking must be re-derived for a transport-switched child: the
+      // engine already re-fits the WIRE FORM per live model (computeThinking,
+      // adaptive vs budget_tokens), but its capability check only knows
+      // Claude generations — an unknown model id defaults to adaptive, and a
+      // Claude-shaped `thinking` param sent to a non-Claude model is
+      // gateway-rejected more often than honored. Resolution values win;
+      // otherwise a switched child whose model id is not Claude-family drops
+      // the inherited config (safe degradation), and a shared-transport child
+      // inherits unchanged (existing behavior).
+      const degradeThinking =
+        transportSwitched &&
+        resolution?.thinking === undefined &&
+        !/claude/i.test(childModel);
+      const childThinking =
+        resolution?.thinking ?? (degradeThinking ? undefined : engineConfig.thinking);
+      const childMaxThinkingTokens =
+        resolution?.maxThinkingTokens ??
+        (degradeThinking ? undefined : engineConfig.maxThinkingTokens);
+      if (degradeThinking && engineConfig.thinking !== undefined) {
+        debug(
+          `subagent ${agentId}: inherited thinking config dropped for ` +
+            `non-Claude child model "${childModel}" on a switched transport`,
+        );
+      }
+
       const childConfig: EngineConfig = {
-        // Fork inherits the parent model; isolated resolves the per-call
-        // override, then agentDef.model, through the same alias path.
-        model: forkActive
-          ? engineConfig.model
-          : resolveModelAlias(params.model ?? agentDef.model, engineConfig.model),
+        model: childModel,
         fallbackModel,
         maxOutputTokens: engineConfig.maxOutputTokens,
         // Fork inherits the parent system prompt (prefix match); isolated uses
@@ -1037,9 +1243,11 @@ export function createSubagentRuntime(
           engineConfig.maxTurns ??
           DEFAULT_SUBAGENT_MAX_TURNS,
         maxBudgetUsd: engineConfig.maxBudgetUsd,
-        thinking: engineConfig.thinking,
-        maxThinkingTokens: engineConfig.maxThinkingTokens,
-        promptCaching: engineConfig.promptCaching,
+        // Re-derived above for transport-switched children (resolution wins,
+        // non-Claude models degrade safely); inherited unchanged otherwise.
+        thinking: childThinking,
+        maxThinkingTokens: childMaxThinkingTokens,
+        promptCaching: resolution?.promptCaching ?? engineConfig.promptCaching,
         // Children estimate cost with the same custom price entries as the
         // parent, so subagent spend counts toward maxBudgetUsd on non-Claude
         // models too (audit 2026-07-10 P1-4).
@@ -1090,25 +1298,39 @@ export function createSubagentRuntime(
       const childController = new AbortController();
       const parentSignal = isBackground ? outerSignal : params.signal;
       const childSignal = AbortSignal.any([parentSignal, childController.signal]);
+      // Persistent shell state is FORKED per spawned child (audit 2026-07-14
+      // M-10): the child's namespace is seeded from the parent's cwd/env
+      // snapshot as of spawn time (it still sees the parent's persistent
+      // state), but its own cd/exports stay private — they never replay into
+      // concurrent batch-mates' Bash calls nor back into the parent's next
+      // foreground Bash. The BACKGROUND-shell registry stays query-wide:
+      // forkShellSession delegates spawnBackground/get/kill to the shared
+      // manager, so BashOutput/KillShell see the same shells everywhere.
+      const childShells =
+        sessionShells !== undefined ? forkShellSession(sessionShells) : undefined;
       const childToolContext: ToolContext = {
         cwd: childCwd,
         additionalDirectories,
         env,
         signal: childSignal,
         debug,
-        spawnSubagent: makeSpawnFn(childDepth),
-        // One shell session per query: children see the same background
-        // shells and persistent cwd/env as the root loop. KNOWN LIMIT for
-        // worktree isolation: the shared persistent-state replay may `cd` a
-        // child Bash call back to the last recorded cwd (outside the
-        // worktree); Read/Write/Edit and childConfig.cwd stay confined.
-        shells: opts.shells,
+        // Nested spawns fork their shell namespace from THIS child's session
+        // (lineage seeding), not from the root manager.
+        spawnSubagent: makeSpawnFn(childDepth, childShells),
+        // KNOWN LIMIT for worktree isolation: the SEED is the parent's last
+        // recorded cwd, which may lie outside the worktree, so the child's
+        // first Bash call can still start outside it (its later cds are its
+        // own); Read/Write/Edit and childConfig.cwd stay confined.
+        shells: childShells,
         // Children inherit the same sandbox as the root loop.
         sandbox: opts.sandbox,
         // Same SESSION for the read-before-write gate: a parent Read
         // satisfies a child's Write gate and vice versa.
         readFilePaths: opts.readFilePaths,
         sessionKey: opts.sessionKey,
+        // Same per-turn checkpoint index as the root loop: child Write/Edit
+        // pre-images must be captured, or rewind() silently skips them.
+        recordFileChange: opts.getRecordFileChange?.(),
       };
       // ExitPlanMode bridge: the child flips ITS OWN gate (childGate), never
       // the parent's. Attached via the tool's context extension because the
@@ -1116,7 +1338,13 @@ export function createSubagentRuntime(
       childToolContext.permissionGate =
         childGate;
       const childDeps: EngineDeps = {
-        transport,
+        // Parent transport, or the resolver's cross-protocol replacement.
+        transport: childTransport,
+        // Child compaction may route ITS summary model cross-protocol too
+        // (query-composed closure; owned disposal stays with the composer).
+        ...(opts.transportForModel !== undefined
+          ? { transportForModel: opts.transportForModel }
+          : {}),
         builtinTools: childBuiltins,
         mcp: childMcp,
         permissions: childGate,
@@ -1134,7 +1362,14 @@ export function createSubagentRuntime(
         ...(opts.onToolRecord !== undefined
           ? {
               onToolRecord: (rec: ToolDispatchRecord): void =>
-                opts.onToolRecord!({ ...rec, parentToolUseId: params.toolUseId }),
+                // Use the SAME stable correlation id childConfig uses: the Agent
+                // tool always passes toolUseId '' , so stamp the child agentId as
+                // the fallback — otherwise the audit trail records an empty
+                // parent_tool_use_id and cannot attribute the child's tool calls.
+                opts.onToolRecord!({
+                  ...rec,
+                  parentToolUseId: params.toolUseId !== '' ? params.toolUseId : agentId,
+                }),
             }
           : {}),
       };
@@ -1187,32 +1422,40 @@ export function createSubagentRuntime(
               sidechainInfo,
               stallWatchdog,
             );
-            record.status = result.isError ? 'failed' : 'completed';
-            completedBuffer.push({
-              type: 'text',
-              text: formatTaskNotification({
-                agentId,
+            // Finding (killAgent race) — only report completion if the task is
+            // still RUNNING. If stopTask()/killAgent raced in first (status now
+            // 'killed'), respect that terminal decision: do NOT overwrite the
+            // status back to completed nor emit a 'completed' notification that
+            // contradicts the 'stopped' one the kill site already sent. Mirrors
+            // the catch arm's existing `status === 'running'` guard.
+            if (record.status === 'running') {
+              record.status = result.isError ? 'failed' : 'completed';
+              completedBuffer.push({
+                type: 'text',
+                text: formatTaskNotification({
+                  agentId,
+                  status: result.isError ? 'failed' : 'completed',
+                  summary: `Agent "${taskDescription}" ${
+                    result.isError
+                      ? `failed: ${resultPreview(result.text)}`
+                      : 'completed'
+                  }`,
+                  result: result.text,
+                  usage: result.usage,
+                }),
+              });
+              emitTaskFinished(agentId, result);
+              emitTask({
+                type: 'system',
+                subtype: 'task_notification',
+                task_id: agentId,
+                ...(params.toolUseId !== '' ? { tool_use_id: params.toolUseId } : {}),
                 status: result.isError ? 'failed' : 'completed',
-                summary: `Agent "${taskDescription}" ${
-                  result.isError
-                    ? `failed: ${resultPreview(result.text)}`
-                    : 'completed'
-                }`,
-                result: result.text,
-                usage: result.usage,
-              }),
-            });
-            emitTaskFinished(agentId, result);
-            emitTask({
-              type: 'system',
-              subtype: 'task_notification',
-              task_id: agentId,
-              ...(params.toolUseId !== '' ? { tool_use_id: params.toolUseId } : {}),
-              status: result.isError ? 'failed' : 'completed',
-              // No task output files in this engine (official field, required).
-              output_file: '',
-              summary: `background subagent '${resolved.type}' ${result.isError ? 'failed' : 'completed'}`,
-            });
+                // No task output files in this engine (official field, required).
+                output_file: '',
+                summary: `background subagent '${resolved.type}' ${result.isError ? 'failed' : 'completed'}`,
+              });
+            }
           } catch (err) {
             if (record.status === 'running') record.status = 'failed';
             debug(
@@ -1310,14 +1553,54 @@ export function createSubagentRuntime(
       try {
         result = await run;
       } catch (err) {
-        record.status = 'failed';
+        // Do not clobber a terminal status: killAgent may have set 'killed'
+        // before this catch runs — same guard as the background path (audit
+        // 2026-07-14 M-11a).
+        if (record.status === 'running') record.status = 'failed';
+        // killAgent on a FOREGROUND child aborts only that child: resolve the
+        // spawn to an error result so the Agent tool returns "stopped" and
+        // the PARENT loop continues — rethrowing the AbortError here would
+        // propagate through the Agent tool and kill the whole parent query
+        // (audit 2026-07-14 M-11c). A genuine parent-side abort (the spawning
+        // tool call's signal or the query-wide signal) still rethrows: the
+        // parent itself is being cancelled, and swallowing that would fake a
+        // completed turn.
+        if (
+          isAbortError(err) &&
+          record.status === 'killed' &&
+          !params.signal.aborted &&
+          !outerSignal.aborted
+        ) {
+          // The child is done (stopped); fire its stop hook like every other
+          // terminal path, with a fresh signal, never gating the return.
+          await fireSubagentStop(
+            agentId,
+            resolved.type,
+            new AbortController().signal,
+          ).catch(() => undefined);
+          return {
+            content: `Subagent was stopped before completing (agentId: ${agentId}).`,
+            isError: true,
+            agentId,
+            background: false,
+          };
+        }
         throw err;
       } finally {
         await releaseWorktree().catch(() => undefined);
       }
       record.status = result.isError ? 'failed' : 'completed';
       emitTaskFinished(agentId, result);
-      await fireSubagentStop(agentId, resolved.type, params.signal);
+      // Fire the stop hook with a FRESH signal and swallow its errors, mirroring
+      // the background path: the child has already finished (result + usage are
+      // computed), so an outer abort landing during the stop-hook await must not
+      // reject spawn() and DISCARD the completed answer. The hook is a
+      // notification here, not a gate on returning the result.
+      await fireSubagentStop(
+        agentId,
+        resolved.type,
+        new AbortController().signal,
+      ).catch(() => undefined);
       return {
         content: `${result.text}\n\nagentId: ${agentId}`,
         isError: result.isError,
@@ -1341,6 +1624,7 @@ export function createSubagentRuntime(
     if (record.controller.signal.aborted) {
       record.controller = new AbortController();
     }
+    const contController = record.controller;
     record.status = 'running';
     record.history.push({ role: 'user', content: params.message });
     // Fresh signal composition: the spawn-time ToolContext signal belonged to
@@ -1350,12 +1634,21 @@ export function createSubagentRuntime(
     const contSignal = AbortSignal.any([
       outerSignal,
       params.signal,
-      record.controller.signal,
+      contController.signal,
     ]);
     const contDeps: EngineDeps = {
       ...record.deps,
       toolContext: { ...record.deps.toolContext, signal: contSignal },
     };
+    // Stall watchdog for the continuation too (twin of the initial background
+    // launch). Without it a SendMessage continuation whose stream goes silent
+    // never aborts, so `turn` never settles, the background delivery promise
+    // never pushes its <task-notification>, and a coordinator waiting on the
+    // reply hangs until whole-query teardown. touch() rides every stream event.
+    const stallWatchdog = new StallWatchdog({
+      timeoutMs: resolveStallTimeoutMs(env),
+      onStall: () => contController.abort(),
+    });
     try {
       const result = await runChildToCompletion(
         record.history,
@@ -1363,29 +1656,66 @@ export function createSubagentRuntime(
         record.config,
         agentId,
         record.sidechain,
+        stallWatchdog,
       );
       record.status = result.isError ? 'failed' : 'completed';
       emitTaskFinished(agentId, result);
       return result;
     } catch (err) {
       if (record.status === 'running') record.status = 'failed';
+      // A stall-watchdog abort has NO cancellation site (unlike stopTask/close,
+      // whose notes are emitted at the kill site). Surface it as an error RESULT
+      // rather than throwing: for a BACKGROUND continuation the delivery promise
+      // only pushes a <task-notification> on the .then (success/error result),
+      // so a thrown abort is swallowed by its .catch and the coordinator polling
+      // completedBuffer never learns the continuation died. Returning an error
+      // result routes through the .then and surfaces a FAILED note — mirroring
+      // the initial background run's stallWatchdog.stalled handling.
+      if (stallWatchdog.stalled) {
+        const message =
+          `stalled: no stream event for ${resolveStallTimeoutMs(env)}ms; ` +
+          `aborted by the stall watchdog`;
+        emitTaskFinished(agentId, { text: message, isError: true });
+        return { text: message, isError: true, usage: { totalTokens: 0, toolUses: 0, durationMs: 0 } };
+      }
       throw err;
+    } finally {
+      stallWatchdog.dispose();
     }
   }
 
   /** Shared kill path for stopTask (Query API) and stopAgent (TaskStop bridge). */
   function killAgent(
     taskId: string,
-  ): { outcome: 'stopped' } | { outcome: 'not_running'; status: string } | { outcome: 'unknown' } {
+  ):
+    | { outcome: 'stopped'; kind: 'foreground' | 'background' }
+    | { outcome: 'not_running'; status: string }
+    | { outcome: 'unknown' } {
     const task = backgroundTasks.get(taskId);
     const record = childRegistry.get(taskId);
     if (task === undefined && record === undefined) return { outcome: 'unknown' };
-    if (task === undefined && record !== undefined && record.status !== 'running') {
+    // Finding (killAgent race) — if the record already reached a TERMINAL status
+    // (the child finished, or a prior kill landed), do not abort/clobber it or
+    // emit a contradictory 'stopped' notification. This covers the completed→
+    // kill direction (the child's completion continuation ran first); the
+    // completion body covers the kill→completed direction. Clean up any stale
+    // task entry either way.
+    if (record !== undefined && record.status !== 'running') {
+      backgroundTasks.delete(taskId);
       return { outcome: 'not_running', status: record.status };
     }
+    // Word the kill honestly by the record (audit 2026-07-14 M-11b): this
+    // path also stops FOREGROUND children (their agentId is registered too),
+    // and the old text hardcoded "background". A bare backgroundTasks entry
+    // with no record is by construction background.
+    const kind: 'foreground' | 'background' =
+      record !== undefined && !record.background ? 'foreground' : 'background';
     (task?.controller ?? record?.controller)?.abort();
     backgroundTasks.delete(taskId);
     if (record !== undefined) record.status = 'killed';
+    // A killed child is torn down here: emit its single sidechain_end now
+    // (is_error: true), idempotently (待裁②). settleAll catches non-killed ones.
+    finalizeSidechain(taskId, { error: true });
     // Official patch.status vocabulary has 'killed' (not 'cancelled') for an
     // externally stopped task; the paired notification uses 'stopped'.
     emitTask({
@@ -1400,10 +1730,10 @@ export function createSubagentRuntime(
       task_id: taskId,
       status: 'stopped',
       output_file: '',
-      summary: `background subagent "${taskId}" stopped via stopTask`,
+      summary: `${kind} subagent "${taskId}" stopped via stopTask`,
     });
-    debug(`stopTask: aborted background subagent "${taskId}"`);
-    return { outcome: 'stopped' };
+    debug(`stopTask: aborted ${kind} subagent "${taskId}"`);
+    return { outcome: 'stopped', kind };
   }
 
   return {
@@ -1416,7 +1746,7 @@ export function createSubagentRuntime(
     stopTask(taskId: string): void {
       const res = killAgent(taskId);
       if (res.outcome === 'unknown') {
-        debug(`stopTask: no background subagent with id "${taskId}"`);
+        debug(`stopTask: no subagent with id "${taskId}"`);
       } else if (res.outcome === 'not_running') {
         debug(`stopTask: subagent "${taskId}" already ${res.status}`);
       }
@@ -1427,7 +1757,8 @@ export function createSubagentRuntime(
       if (res.outcome === 'not_running') {
         return `Subagent ${taskId} already ${res.status}.`;
       }
-      return `Stopped background subagent ${taskId}.`;
+      // Honest wording per record (audit 2026-07-14 M-11b).
+      return `Stopped ${res.kind} subagent ${taskId}.`;
     },
     async sendMessage(params: {
       to: string;
@@ -1516,14 +1847,24 @@ export function createSubagentRuntime(
       }
     },
     async settleAll(timeoutMs = 2_000): Promise<void> {
-      if (allBackgroundPromises.length === 0) return;
-      await Promise.race([
-        Promise.allSettled(allBackgroundPromises),
-        new Promise<void>((resolve) => {
-          const t = setTimeout(resolve, timeoutMs);
-          (t as { unref?: () => void }).unref?.();
-        }),
-      ]);
+      if (allBackgroundPromises.length > 0) {
+        await Promise.race([
+          Promise.allSettled(allBackgroundPromises),
+          new Promise<void>((resolve) => {
+            const t = setTimeout(resolve, timeoutMs);
+            (t as { unref?: () => void }).unref?.();
+          }),
+        ]);
+      }
+      // Query teardown: every started sidechain is now truly done (no further
+      // SendMessage continuation can revive it past this point), so emit each
+      // child's single sidechain_end (待裁②). Idempotent — a child already
+      // finalized by killAgent is skipped.
+      for (const agentId of sidechainStarted) finalizeSidechain(agentId);
+      // Release transports the resolver handed over with owned: true (AFTER the
+      // children settled — a SendMessage continuation can revive a finished
+      // child any time before this point).
+      disposeOwnedTransports();
     },
     abortAll(): void {
       for (const { controller } of backgroundTasks.values()) {

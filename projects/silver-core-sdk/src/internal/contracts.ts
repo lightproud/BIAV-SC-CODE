@@ -54,6 +54,13 @@ export type RetryInfo = {
   /** Disconnect-taxonomy class of this retry (resilience P0-2): what kind of
    *  failure triggered it, so the loop can count retries by cause. */
   kind?: 'network' | 'http_status' | 'empty_stream';
+  /** Redacted upstream error message, when the body carried one (error
+   *  normalization 2026-07-14) — lets a retry event carry a readable cause. */
+  message?: string;
+  /** Upstream request id (body or header), when known. */
+  requestId?: string;
+  /** Provider/gateway machine code slug from the error body, when present. */
+  code?: string;
 };
 
 export type StreamRequest = {
@@ -90,6 +97,14 @@ export interface Transport {
   stream(req: StreamRequest): AsyncGenerator<RawMessageStreamEvent, void>;
   /** Where the credential came from (for the init message). */
   apiKeySource(): ApiKeySource;
+  /**
+   * Optional resource release (idle connection pools etc.). The built-in
+   * transports do not implement it — their keep-alive sockets are unref'd
+   * with a bounded idle TTL, so an abandoned instance self-cleans. The
+   * subagent runtime calls it at query teardown on transports a
+   * `resolveSubagentTransport` resolution returned with `owned: true`.
+   */
+  dispose?(): void;
 }
 
 // ---------------------------------------------------------------------------
@@ -157,10 +172,15 @@ export type ToolContext = {
   mcpResources?: {
     list(server: string | undefined, signal: AbortSignal): Promise<McpResource[]>;
     read(server: string, uri: string, signal: AbortSignal): Promise<McpResourceContent[]>;
+    /** List the direct children of a directory resource (resources/directory/read). */
+    readDir(server: string, uri: string, signal: AbortSignal): Promise<McpResource[]>;
   };
   /** v0.2 WebFetch escape hatch for localhost/private hosts (default false). */
   allowPrivateWebFetch?: boolean;
-  /** Injectable fetch for tests; defaults to globalThis.fetch when undefined. */
+  /** Injectable fetch for tests. When undefined, WebFetch uses its DNS-pinned
+   *  node:https path (audit 2026-07-14 M-3); an injected impl still passes the
+   *  per-hop SSRF guard but does its own connection handling and therefore
+   *  BYPASSES DNS pinning. */
   fetchImpl?: typeof fetch;
   /**
    * File-checkpoint recorder. When enableFileCheckpointing is on, fs tools
@@ -268,6 +288,14 @@ export interface BuiltinTool {
   readOnly: boolean;
   /** Mutates files; auto-approved under acceptEdits. */
   isFileEdit?: boolean;
+  /**
+   * Safe to run concurrently with the other tools of the same assistant
+   * batch even though it is NOT readOnly — its side effects are contained in
+   * an independent context (e.g. Agent: each subagent runs its own isolated
+   * loop). Feeds ONLY the engine's parallel grouping; permission semantics
+   * (plan-mode allow, default-mode auto-approve) still key off readOnly.
+   */
+  parallelSafe?: boolean;
   execute(
     input: Record<string, unknown>,
     ctx: ToolContext,
@@ -458,6 +486,8 @@ export interface McpRegistry {
   listResources(server: string | undefined, signal: AbortSignal): Promise<McpResource[]>;
   /** Read one resource's contents from a named server. */
   readResource(server: string, uri: string, signal: AbortSignal): Promise<McpResourceContent[]>;
+  /** List the direct children of a directory resource on a named server. */
+  readResourceDir(server: string, uri: string, signal: AbortSignal): Promise<McpResource[]>;
   reconnect(serverName: string): Promise<void>;
   setEnabled(serverName: string, enabled: boolean): void;
   /** Replace the live server set at runtime; callers read statuses() for
@@ -521,6 +551,10 @@ export type SystemComposition = {
 export type EngineConfig = {
   model: string;
   fallbackModel?: string;
+  /** Provider/protocol label ('anthropic' | 'openai') carried onto normalized
+   *  provider errors so a host knows WHICH backend failed (error normalization
+   *  2026-07-14). Derived from provider.protocol; defaults to 'anthropic'. */
+  providerLabel?: string;
   maxOutputTokens: number;
   /** Stable system-prompt prefix (cache-worthy; byte-identical across runs). */
   systemPrompt: string;
@@ -548,6 +582,13 @@ export type EngineConfig = {
   toolChoice?: ToolChoice;
   /** Context-compaction tunables; absent -> never compact. */
   compaction?: CompactionConfig;
+  /** E3 salvage mode (BPT-EXTENSION, resilience). Default 'accept': a
+   *  mid-stream truncation keeps the whole blocks delivered so far as the
+   *  turn's answer (official 2.1.201 semantics, drop-in). 'continue': the
+   *  partial is NOT accepted as final — the turn falls through to the bounded
+   *  replay so the model produces a complete answer (a fresh turn, so no
+   *  duplicated prefix). Opt-in; the default is byte-for-byte the old path. */
+  salvageMode?: 'accept' | 'continue';
   /** Structured-output schema; when set the engine validates + re-prompts. */
   outputFormat?: OutputFormatConfig;
   /** Bound on structured-output re-prompts (default 2). */
@@ -604,6 +645,17 @@ export type EngineConfig = {
 
 export type EngineDeps = {
   transport: Transport;
+  /**
+   * Cross-protocol routing for engine-internal calls that target a model
+   * OTHER than the session model (currently: the compaction summarizer).
+   * Returns the transport that model should drive; absent -> `transport`.
+   * Composed by the query layer from Options.resolveSubagentTransport;
+   * owned-transport disposal is the composer's responsibility.
+   */
+  transportForModel?: (
+    model: string,
+    purpose: 'utility' | 'compaction',
+  ) => Transport | Promise<Transport>;
   builtinTools: Map<string, BuiltinTool>;
   mcp: McpRegistry;
   permissions: PermissionGate;

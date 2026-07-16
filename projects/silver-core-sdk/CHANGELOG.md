@@ -16,6 +16,1237 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.62.7 — 2026-07-16
+
+Deferred-design adjudications — the 5 items filed as `memory/todo.md` T40 (real
+defects from the five-round sweep whose fixes needed a design decision) were
+adjudicated one-by-one by the keeper (2026-07-16) and all landed here.
+
+- **① anthropic empty message** (`transport/anthropic.ts`): stripping unsigned
+  thinking blocks could leave an assistant message with empty content (which the
+  API 400s). Keeper: drop the whole turn when filtering empties it (an
+  all-unsigned-thinking turn carries no resendable content; the API tolerates the
+  resulting consecutive same-role messages).
+- **② duplicate sidechain_start** (`subagents/runtime.ts`): every SendMessage
+  continuation re-wrote a `sidechain_start`, producing multiple start/end pairs
+  in one child transcript. Keeper: write start ONCE at birth, record each
+  episode's user turn, and emit the single `sidechain_end` at teardown via a new
+  idempotent `finalizeSidechain` (called from killAgent + settleAll) — one clean
+  bracket per child. settleAll still guarantees the transcript is terminated
+  before the child settles.
+- **③ MCP-tool content specifier** (`permissions/rules.ts`): a scoped specifier
+  on a non-tabled tool (MCP `mcp__server__tool`, Task) compared against
+  `JSON.stringify(input)` and silently never matched. Keeper: explicit no-match
+  (drop the fallback; `primaryArg` returns undefined) — MCP tools are gated by
+  bare-name rules, documented. No fuzzy-match misfire risk.
+- **④ OpenAI tool_call id/index split** (`transport/openai.ts`): a non-conforming
+  gateway that splits one call across an id-only and an index-only fragment
+  produced a real block with empty input plus a nameless ghost. Keeper: a
+  conservative finish()-time repair — merge an args-only orphan (no id, no name)
+  into the most-recent emitted tool_use block instead of opening a ghost. Off the
+  streaming hot path.
+- **⑤ session-end / late-subagent usage under-report** (`query.ts`): the
+  session-end memory round's spend, and background-subagent usage recorded during
+  settleAll, grew the session totals AFTER the last result was yielded — so the
+  final result under-reported. Keeper (完整修): a terminal
+  `foldSubagentUsage(drainUsageLedger())` after settleAll, plus ONE corrected
+  final result (num_turns 0, zero per-turn usage, complete cumulative
+  cost/modelUsage) emitted at the very end of teardown — but ONLY when the totals
+  actually grew, so a zero-cost run still emits exactly one result.
+
+Coverage: regressions in conversation-stability (empty-turn drop),
+subagents/sendmessage (single sidechain bracket), permissions-hooks (MCP
+specifier no-match), transport-openai (orphan merge), and memory-m2 (corrected
+final result on cost / none at zero cost). Full vitest green (2470).
+
+## 0.62.6 — 2026-07-16
+
+Bug-fix — a subagent could forge task-notification structure
+(`subagents/runtime.ts`): `formatTaskNotification` embedded the child-controlled
+`summary` and `result` free-text VERBATIM inside the `<task-notification>` XML
+block. A subagent whose returned text contained `</result><task-notification>…`
+(reachable when the child processed untrusted data) injected fake block
+structure — a forged status or instructions — into the parent coordinator's
+view. The official harness XML-escapes these fields before embedding them (the
+`&gt;`/`&amp;` seen in real notifications), so this is both a faithfulness fix
+and a prompt-injection defense: `&`/`<`/`>` in `summary` and `result` are now
+escaped. SDK-controlled fields (agentId, status, usage) are unaffected.
+Regression added in `tests/sendmessage.test.ts` (a forged closing tag yields
+exactly one real `</task-notification>` and is neutralized to entities).
+
+## 0.62.5 — 2026-07-15
+
+Bug-fix sweep, round 4 (final) — a cross-cutting sweep (numeric coercion,
+boundary/comparison, truthiness, parsing) plus a safe fix for one round-3
+deferral. The cross-cutting pass confirmed the codebase is exceptionally
+hardened against these classes: it surfaced ONE genuine defect (in a
+deliberately-mirrored twin), which is the signal to conclude the sweep.
+
+- **A whitespace-only Retry-After caused a zero-backoff retry**
+  (`transport/openai.ts`, `transport/anthropic.ts` — byte-aligned twins):
+  `Number('')` is 0, not NaN, so a header of only spaces passed the
+  `isFinite && >= 0` gate and returned 0 (retry immediately) instead of falling
+  through to be ignored (the doc's "anything else is ignored"). `Number()` also
+  over-accepted `'0x1f'`/`'1e3'`. Gated the delta-seconds branch behind a plain
+  decimal shape so malformed headers fall through to the HTTP-date parse and
+  ultimately `undefined` (exponential backoff), preserving every previously
+  blessed case (`' 5 '`, `'0'`, `'-1'`, `'soon'`, `null`).
+- **version-bump guard false-failed on a devDependency-only change**
+  (`scripts/check-version-bump.mjs`): the deps check pattern-matched a flat
+  patch where `"dependencies"` is also a substring of `"devDependencies"`, so
+  bumping a dev tool (vitest/typescript) with no src change forced an
+  unnecessary version bump. Now it compares the PARSED `dependencies` object of
+  the two revisions (via `git show`), ignoring devDependencies as the guard's
+  own docstring intends.
+
+Coverage: parseRetryAfterMs whitespace/hex/exponent regressions in
+`tests/openai-mutation-kills-r5.test.ts`; twin-drift test confirms the two
+transport arms stay byte-aligned. Full vitest green.
+
+## 0.62.4 — 2026-07-15
+
+Bug-fix sweep, round 3 — a third audit (3 readers over query/session-manager/
+subagents, mcp/tool-dispatch/config, and scripts + the test suite's own
+correctness). 4 runtime defects + 1 test-title correction fixed; deferred as
+keeper design calls: two accounting-completeness gaps (a memory session-end
+round's spend and a late background subagent's usage never surface on a yielded
+result — query.ts), a devDependency-only false-fail in the version-bump guard,
+an MCP `ping`→-32601 spec question locked by a test, and a handful of weak/
+vacuous test assertions (test-hardening backlog).
+
+- **HTTP MCP close aborted the whole run** (`mcp/registry.ts`): a tool call
+  in flight when the connection is closed (setServers/reconnect) threw
+  AbortError, which `registry.call` re-threw, tearing down the entire agent run
+  — the stdio path degrades the identical close to an isError result. Now the
+  registry only propagates an abort when the CALLER's signal is actually
+  aborted; a mid-call close becomes an isError result, restoring the documented
+  "call failures never thrown, aborts excepted" contract and stdio/http parity.
+- **compare-reports reported "0 unrecovered" with no transport signal**
+  (`reporting/compare-reports.ts`): `unrecovered` was a plain 0 even on a day
+  whose records carry no `transport_health`, while `transportFaultTotal` (the
+  same absent signal) correctly read 无数据. Made `unrecovered` `number | null`
+  so absence is a fact, not a zero — matching the file's own principle.
+- **Aborted tool calls were undercounted in perTool metrics**
+  (`engine/tool-dispatch.ts`): the abort path rethrew before `recordTool`, so a
+  tool aborted mid-execution was logged by the S3 onToolRecord audit ('[aborted]')
+  but missing from the perTool call/error ledger — the two disagreed on the same
+  dispatch. Record the aborted dispatch before rethrowing.
+- **Subagent tool calls lost their attribution** (`subagents/runtime.ts`): the
+  onToolRecord wrapper stamped `parentToolUseId: params.toolUseId`, but the Agent
+  tool always passes `''`, so child tool records persisted an empty parent id
+  instead of the child agentId — defeating the audit trail's child-attribution.
+  Use the same agentId fallback childConfig already uses.
+- **Test-title correction** (`tests/openai-mutation-kills-r5.test.ts`): a title
+  claimed a post-chunk idle stall "is a mid-stream truncation" while the body
+  asserts the opposite (not replay-safe, truncation flag unset); renamed to
+  match the real contract.
+
+Coverage: regressions in `tests/compare-reports.test.ts` (unrecovered null on
+no-transport days). Full vitest green.
+
+## 0.62.3 — 2026-07-15
+
+Bug-fix sweep, round 2 — a second, deeper audit (4 readers over the areas the
+first pass ranked below its cutoff) surfaced 14 candidates; 12 verified and
+fixed, 2 deferred (an OpenAI tool_call whose fragments split id-vs-index across
+deltas — a low-likelihood hot-path edge; and non-standard finish_reason
+aliases — speculative). One candidate that would have overridden the M-5
+explicit-finish_reason design was rejected on sight.
+
+Security / correctness:
+- **JSON-Schema validation walked the prototype chain**
+  (`engine/structured-output.ts`): property presence used the `in` operator, so
+  a schema property named like an `Object.prototype` member (`constructor`,
+  `toString`, `__proto__`, …) was always "present" — a `required:['constructor']`
+  went unflagged and a `properties:{toString}` rejected a valid `{}`. Switched
+  to own-property checks (also in `resolveRef` for `#/constructor`-style refs).
+- **Accumulator silently corrupted a thinking signature**
+  (`engine/accumulator.ts`): only `input_json_delta` had the S3 field-omit
+  guard; a `signature_delta` missing its field appended the literal
+  `"undefined"`, wedging every later turn with a 400 "Invalid signature".
+  Guarded `signature_delta`/`text_delta`/`thinking_delta` too.
+
+Robustness / recovery:
+- **Bash crashed on a NUL byte in the command** (`tools/bash.ts`): the
+  foreground `spawn()` was unguarded, so Node's SYNCHRONOUS `ERR_INVALID_ARG_VALUE`
+  escaped as a raw TypeError instead of the spawn-error → ConfigurationError
+  contract the background path already honored.
+- **Monitor / stall-watchdog timeouts overflowed the 32-bit timer**
+  (`tools/monitor.ts`, `transport/stall-watchdog.ts`): a timeout above
+  2147483647ms silently became a 1ms delay, so a long watch was killed ~instantly
+  and a relaxed stall timeout aborted every background subagent ~instantly.
+  Clamped both to the setTimeout ceiling.
+- **ShellManager.kill armed a stray SIGKILL timer** (`tools/shells.ts`): kill()
+  ran with no running-guard and overwrote the escalation timer without clearing
+  it, so a late/duplicate kill could SIGKILL a recycled process group — the L1
+  hazard the module guards. Guard on status + replace, never leak, the timer.
+- **Checkpoint index had no torn-tail heal** (`sessions/checkpoints.ts`): a
+  crash-torn `index.jsonl` glued the next record onto the partial line, losing
+  BOTH on read and leaving a just-written blob unreferenced/unrewindable.
+  Ported the M-9 self-heal (both append sites).
+- **Structured-output extraction gave up on a wrong-type bracket in prose**
+  (`engine/structured-output.ts`): `Sure [see below]: {"answer":42}` let the
+  `[` capture the scan; it now resumes past a failed span to the real JSON.
+- **Session-title generation returned an array-wrapped object verbatim**
+  (`generators/runtime.ts`): `[{...}]` short-circuited the fast path, so the
+  literal array text became the title; unwrap to the inner object.
+
+Sessions data integrity:
+- **Audit/export read path lacked null-message + uuid-dedup guards**
+  (`sessions/session-functions.ts`): a `{message:null}` line crashed consumers
+  doing `.message.content`, and a double-materialized transcript returned doubled
+  messages — which `forkSession` baked in PERMANENTLY (fresh uuids). Mirror the
+  shape check and H2 uuid-dedup the resume path already applies.
+- **loadInfo's sidechain guard missed a leading blank line**
+  (`sessions/store.ts`): a sidechain transcript whose first physical line was
+  blank surfaced as a resumable main session, disagreeing with
+  `isSidechainFile`/`latestSessionId`. Skip blanks before the record-1 check.
+
+Coverage: regressions in `tests/structured-output.test.ts` (prototype props +
+prose bracket), `tests/generators.test.ts` (array unwrap), `tests/bash-dx.test.ts`
+(NUL byte). Full vitest green.
+
+## 0.62.2 — 2026-07-15
+
+Bug-fix sweep — a multi-module audit (6 parallel readers over `src/`) surfaced
+~19 candidates; 12 verified as genuine defects and fixed here, 2 rejected as
+false positives that contradicted intentional test-locked behavior (an explicit
+OpenAI `finish_reason='stop'` is deliberately NOT overridden by open tool
+blocks, M-5; and `auto` mode deliberately routes a classifier 'prompt' verdict
+PAST allow rules to canUseTool, gate.ts mutation-kill), and 4 deferred as design
+calls for the keeper (see below).
+
+Security / permissions:
+- **Scoped rules never reached WebFetch/WebSearch/MultiEdit/NotebookEdit**
+  (`permissions/rules.ts`): these builtins were absent from `PRIMARY_ARG_FIELD`,
+  so a specifier rule (e.g. the SSRF deny `WebFetch(http://169.254.169.254*)`)
+  was matched against the JSON blob `{"url":...}` — which starts with `{` and
+  never prefix-matches — so the deny silently never fired. Mapped each to its
+  primary field. This is the security-relevant half; the `auto`-mode allow-rule
+  finding it shipped alongside was rejected (intentional, see above).
+- **A fully-denied MCP tool still showed in `statuses()`** (`mcp/tool-filter.ts`):
+  the decorator hid it from allTools()/has() but advertised it in each server's
+  per-tool status list. Filtered statuses() to match.
+
+Correctness:
+- **`ModelUsage.webSearchRequests` was permanently 0** (`engine/loop.ts`,
+  `engine/pricing.ts`, `types.ts`): `normalizeUsage` stripped `server_tool_use`
+  before `recordUsage` could read it, and recordUsage only carried the prior
+  value. Carried `web_search_requests` through normalizeUsage/addUsage and
+  summed it in the per-model ledger.
+- **OpenAI empty tool_call placeholder emitted a bogus tool_use block**
+  (`transport/openai.ts`): a `{index:N}` chunk with no id/name/args created a
+  buffer that finish() flushed as a tool_use with an empty name. Skip pure
+  placeholders in the flush loop (mirrors the contentSeen guard), and infer
+  `tool_use` on a missing finish_reason only from a REAL buffered tool.
+- **Compaction summary 400'd on an orphan tool_use** (`engine/compaction.ts`):
+  the summarization prefix kept tool_use blocks, so a prefix cut ending on an
+  assistant tool_use turn (result beyond the cut) sent an unpaired tool_use →
+  400 → silent degrade + a wasted call. Strip orphan tool_use blocks (mirrors
+  the C6 filter in loop.ts).
+- **Compaction under-counted a CJK system prompt ~4x** (`engine/loop.ts`): the
+  overhead estimate used a flat `charLen/4` instead of the CJK-aware
+  `estimateTextTokens` used elsewhere, so a Chinese system prompt could defer
+  the fold past a "prompt too long" 400. Use the shared estimator.
+- **runtime-report divided by zero** (`reporting/runtime-report.ts`): the tool
+  failure-rate cell computed `errors/calls` with no guard (calls:0 is a valid
+  ledger shape from external producers), rendering `NaN%`/`Infinity%`. Guarded
+  like the sibling in compare-reports.ts.
+
+Robustness / resource:
+- **WebFetch leaked the response socket on reject-without-read paths**
+  (`tools/webfetch.ts`): the HTTP-status / content-type / Content-Length error
+  returns never cancelled `response.body` (the redirect branch does), holding
+  the socket open until the 30s abort. Cancel on those paths too.
+- **listSessions aborted on a stray non-directory entry**
+  (`sessions/file-store.ts`): only ENOENT was tolerated stat-ing
+  `<entry>/main.jsonl`, so a plain file (e.g. `.DS_Store`) in the project dir
+  threw ENOTDIR and killed the whole listing. Treat ENOTDIR as "not a session".
+- **Grep's bare `*.ext` glob missed nested files** (`tools/grep.ts`): fast-glob
+  anchors `*.ts` to the search root while ripgrep (the interface this tool
+  reproduces, and its own `*.js` example) matches at any depth. Prepend a
+  globstar to a slash-less positive pattern.
+- **Cross-host session fallbacks leaked subagent sidechains**
+  (`sessions/store-adapter.ts`): the external `list()`/`latestSessionId()`
+  fallbacks bypassed the sidechain guard the local store applies, so a mirrored
+  `<agentId>` child transcript could surface as a resumable session or be picked
+  as the newest to resume. Apply the same guard in both.
+
+Deferred (real, but the fix is a keeper design call): an unsigned-thinking strip
+that can empty an assistant message (anthropic.ts, alters role alternation); the
+task-notification XML embedding child text un-escaped (runtime.ts, conformance
+vs. hardening); duplicate `sidechain_start` markers across SendMessage
+continuations (runtime.ts, marker-lifecycle redesign); and content-scoped
+specifiers never matching arbitrary MCP tools (rules.ts JSON fallback, a fuzzy
+match with its own misfire risk).
+
+Coverage: regressions across `tests/engine.test.ts` (web_search_requests),
+`tests/transport-openai.test.ts` (placeholder), `tests/permissions-gate-fixes.test.ts`
+(WebFetch/WebSearch specifier + SSRF deny), `tests/runtime-report.test.ts`
+(calls=0), `tests/file-store.test.ts` (ENOTDIR), `tests/grep-opt.test.ts`
+(nested glob), and a new `tests/tool-filter.test.ts` (statuses filtering).
+
+## 0.62.1 — 2026-07-15
+
+Bug fix (usability) — MultiEdit's not-found error now diagnoses WHY instead of
+one undifferentiated message. Field report (BPT, same day as 0.61.0): repeated
+`MultiEdit failed at edit #3: old_string was not found` loops — the model
+authors every old_string from one Read of the ORIGINAL file, but edits apply
+sequentially, so an old_string that overlaps an earlier edit's region (usually
+context lines added for uniqueness) no longer exists when its turn comes; the
+generic error gave no way to tell this self-inflicted case from a genuinely
+stale old_string, so retries repeated the same mistake.
+
+- **Not-found triage** (`src/tools/multiedit.ts`): the tool holds the original
+  text, so it now tells the two causes apart. Absent from the original too →
+  "does not appear in the original file either — Re-Read the file". Present in
+  the original but gone at apply time → the already-validated preceding edits
+  are replayed to NAME the culprit ("edit #1 in this call already rewrote that
+  text") and the remedy is stated: merge overlapping edits into one, or author
+  the later old_string against the post-edit text.
+- **Overlap rule in the description** (`src/tools/descriptions.ts`): edits
+  whose regions share any line or text must be merged into a single edit;
+  authoring a later old_string against post-edit text is for intended
+  dependencies only. Preventive guidance so the model stops writing the trap.
+- **COMPAT.md drift fixed**: the tools table still carried the pre-0.61.0
+  `NotebookEdit / MultiEdit | UNSUPPORTED | … retired upstream` row,
+  contradicting this ledger; MultiEdit now has its own FULL row (SDK-original,
+  no official parity target), NotebookEdit stays UNSUPPORTED.
+- Coverage: `tests/multiedit.test.ts` +2 cases (absent-from-original triage;
+  overlap triage naming the culprit edit, atomic rollback intact).
+
+## 0.62.0 — 2026-07-15
+
+Tool-parity audit (2026-07-15): closed the remaining clean gaps against the
+official Claude Code CLI tool surface, and added a backstop so future gaps
+red the build.
+
+- **EnterPlanMode** built-in (`src/tools/enterplanmode.ts`) — the mirror of
+  the already-shipped ExitPlanMode. Flips the session permission mode to
+  'plan' through the same `ctx.permissionGate` handle; readOnly (entering
+  plan mode only ever restricts). Faithful description reproduced from the
+  archive fragment. Was a gap: the SDK shipped the "exit" half of the pair
+  but not the "enter" half.
+- **ReadMcpResourceDirTool** built-in (`src/tools/resources.ts`) — lists the
+  direct children of an MCP directory resource (`resources/directory/read`),
+  completing the MCP resource family (List / Read / **ReadDir**). Threaded
+  `readResourceDir` through the whole MCP registry chain (contract, registry,
+  stdio/http/sdk-server connections, and every delegating wrapper). Non-
+  recursive; errors from servers without directory support propagate as an
+  error result.
+- **Tool-parity ledger** (`docs/TOOL-PARITY.md`) + backstop test
+  (`tests/tool-parity.test.ts`): the ledger enumerates official CLI tools ×
+  shipped? × why-not (including deliberate exclusions like LSP/NotebookEdit
+  and host-facing candidates SendUserFile/ListAgents for when the host layer
+  grows); the test pins the default built-in set so adding/removing a tool
+  reds until the ledger is updated. This is the mechanism that would have
+  caught the MultiEdit / EnterPlanMode gaps.
+- Coverage: EnterPlanMode cases in `tests/tools-planmode-worktree-monitor.
+  test.ts`; ReadMcpResourceDirTool cases in `tests/tools-v2.test.ts`.
+
+## 0.61.0 — 2026-07-15
+
+New capability: **MultiEdit** — several exact-string replacements to ONE file
+in a single atomic tool step (`src/tools/multiedit.ts`), registered as a
+default built-in.
+
+- Collapses the `Read → Edit → Edit → …` tool loop into `Read → MultiEdit`
+  for same-file changes: fewer tool round-trips, and each avoided round-trip
+  also avoids re-feeding a tool result into context.
+- Edits apply SEQUENTIALLY on one in-memory snapshot — edit N sees edit
+  N-1's result — so an intra-file dependent chain (rename a symbol, then edit
+  a line that now holds the new name) is one call. Cross-file edits and edits
+  whose text depends on an intervening tool result still use separate Edit
+  calls.
+- ATOMIC: any edit whose `old_string` is not found, or is non-unique without
+  `replace_all`, aborts the whole call — nothing is written and the failing
+  edit is named by index. A single pre-image (the original text, captured
+  before any edit) is recorded for `Query.rewindFiles()`, so a rewind
+  restores the true prior state, never a half-applied one.
+- Same Read-before-write gate as Edit/Write; registers the path on success.
+- Description is SDK-original (`faithful:false`): the official MultiEdit is
+  not in the reproduction archive, so the text is authored for the semantics
+  this SDK ships, not reproduced. `MultiEdit` removed from the red-line
+  unshipped-tool denylist (it now ships).
+- Coverage: `tests/multiedit.test.ts` (13 cases — sequential application,
+  intra-file dependent chain, `replace_all`, atomic rollback on a mid-batch
+  failure, read-before-write gate, single-pre-image rewind, binary/abort/
+  missing-file/empty-array guards).
+
+## 0.60.1 — 2026-07-15
+
+Bug fix — a subagent's natural end no longer clears or pollutes the root
+session goal (the 0.60.0 `/goal` primitive):
+
+- **Stop-hook root-only gate widened to the invocation itself**
+  (`src/engine/loop.ts`). A `/goal` goal-gate is a session-scoped Stop hook,
+  and a subagent's child loop shares the parent HookRunner. Pre-fix, the
+  `isRootLoop` gate guarded only the Stop hook's *block decision*, so a
+  child's natural end still *invoked* the Stop hook against the child's
+  transcript — and `session-goal.onStop` mutates state as a side effect
+  (clears the goal on a "met"/"impossible" verdict, bumps the block counter
+  on "not met", and spends an evaluator LLM call). The result: any subagent
+  finishing could clear the root goal, so the root conversation stopped even
+  though the goal was never actually met (a conversation-loses-stop-state
+  bug). The gate now wraps the whole Stop-hook block — child loops
+  (parentToolUseId set) skip Stop entirely and are governed by SubagentStop
+  at the runtime level, matching the module's documented intent. Also
+  eliminates the wasted evaluator call per subagent.
+- Regression coverage (`tests/stop-hook-block.test.ts`): a child loop never
+  invokes the Stop hook (`stopInputs` empty), and an end-to-end test with the
+  real `createSessionGoal` + a stubbed "met" evaluator confirms a child's
+  natural end leaves an armed root goal intact (both tests fail against the
+  pre-fix engine).
+
+## 0.60.0 — 2026-07-14
+
+New capability: `/goal` session-goal primitive (`src/hooks/session-goal.ts`,
+BPT-EXTENSION) — the surface companion to the engine's Stop-hook block
+semantics (v0.39) and the stop-variant condition evaluator (v0.6), both of
+which already shipped; without this surface a `/goal <condition>` invocation
+fell through as a one-shot plain prompt exactly like the /loop gap.
+
+- `parseGoalCommand`: single source of truth for `/goal <condition>` /
+  `/goal clear` (three-way result like parseLoopCommand; bare `/goal`
+  errors loudly, `clear <text>` is a condition, multiline preserved).
+- `createSessionGoal`: goal manager producing a Stop matcher via
+  `.hooks()` — "not met" verdict blocks the stop (reason fed back as a user
+  turn by the existing engine path; maxTurns/maxBudgetUsd still cap),
+  "met" auto-clears, `impossible` escape hatch auto-clears. `set`/`clear`/
+  `handleCommand` one-call host bridge, `onEvent` lifecycle notifications,
+  optional `maxBlocks` host-policy cap, bounded transcript-tail context
+  (32 KiB default, `context` override).
+- INVERTED failure direction vs the generic hook-condition gate, documented
+  and tested: an errored / unparseable / context-less evaluation ALLOWS the
+  stop and keeps the goal armed — a broken judge must never trap the agent
+  in a forced loop. Never judges blind (no transcript → no evaluator call).
+- `GOAL_SLASH_COMMAND` menu metadata; NOT an engine built-in (same honesty
+  red line as /loop). ConfigurationError on invalid options (whitelist row).
+- +20 tests (`tests/session-goal.test.ts`); engine chain already locked by
+  `tests/stop-hook-block.test.ts` + hook-runner aggregation tests.
+
+## 0.59.1 — 2026-07-14
+
+Audit 2026-07-14 P2 batch — low-severity hygiene + a lint gate:
+
+- **Lint gate**: `noUnusedLocals` enabled in tsconfig (so `npm run
+  typecheck` now reds on dead imports/vars); cleaned the extraction-leftover
+  dead type imports it surfaced in query.ts / engine/loop.ts /
+  subagents/runtime.ts / tools/toolsearch.ts. (`noUnusedParameters`
+  deliberately NOT enabled — it flags idiomatic unused destructured params.)
+- **L-1**: engine/loop.ts tool-defs cache key no longer embeds a raw NUL
+  byte (now the `\x00` escape) — behavior identical, but the source file is
+  plain text again instead of being flagged binary by grep et al.
+- **L-2**: explicit Retry-After now gets bounded upward jitter (never
+  earlier than the server floor) in both transport twins — a subagent
+  fan-out sharing one Retry-After no longer retries in the same instant.
+- **L-3**: the stream idle watchdog now measures server silence, not
+  consumer progress — a slow/paused consumer holding a yielded event past
+  idleMs no longer trips a false `stream_idle_timeout` (both twins). A
+  genuine mid-pause server stall is still killed, at worst ~2x idleMs late
+  (documented trade; no unbounded buffering).
+- **L-4**: utility model calls (generators/runtime.ts) memoize the transport
+  per provider-config reference (WeakMap), so the concurrency gate and any
+  BPT_PRECONNECT probe take effect ONCE across calls instead of per call;
+  injected transports still bypass the cache.
+- **L-6**: a turn interrupted by interrupt() no longer loses its already-
+  billed usage — the engine attaches the aborted run's accounting
+  (usage/cost/apiMs/turns/modelUsage) to the AbortError and the query layer
+  folds it into the session ledger (incl. settled subagents), so
+  maxBudgetUsd accounting no longer under-counts on repeated interrupts.
+- **L-7**: transparent auto-resume suppresses the duplicate system/init that
+  the re-driven query would emit, so a consumer modeling "one init per
+  stream" no longer sees a phantom new session after a recovery.
+- **L-5**: mcp/stdio.ts marks the connection closed on a spawn 'error'
+  (ENOENT) so later requests fail fast with mcp_not_connected instead of
+  hanging to the 60s timeout.
+- **L-9**: removed dead imports/vars (loop.ts extraction leftovers,
+  duplicate toAbortError now shared from tool-dispatch, a dead `closed`
+  var in generators/runtime.ts).
+- **L-10**: the process-tree kill closure (duplicated in bash.ts and
+  shells.ts) is unified into `createTreeKiller` in tools/kill-plan.ts.
+- **L-14**: getSessionInfo reuses the meta-only scan (loadInfo) instead of
+  a full load()+repairPairing when it only needs title/timestamps.
+- **L-16**: run-log day file is named from the record's own ts, not the
+  flush-time clock, so a record observed at 23:59 and flushed at 00:00
+  lands in the correct day.
+- **L-19b**: deleteSession emits a debug line when the external store has
+  no delete capability, instead of silently resolving as success.
+
+L-13 (monitor kill-timer registration) deliberately skipped — the timer is
+already unref'd (harmless) and wiring it into the private killTimers map
+risks colliding with the SIGTERM->SIGKILL upgrade timer keyed on the same
+id; not worth it for a no-op leak.
+## 0.59.0 — 2026-07-14
+
+New capability: `/loop` interval-loop primitive (`src/prompt-loop.ts`,
+BPT-EXTENSION). Closes the 2026-07-14 gap report — `/loop 10m <task>` in BPT
+passed through as a one-shot plain prompt and the recurrence semantics were
+silently lost.
+
+- `parseLoopCommand`: single source of truth for the
+  `/loop [<interval>] <task>` grammar (units s|m|h + aliases, decimals,
+  default 10m). Three-way result: null (not /loop — route as usual),
+  `{ok:false, error}` (IS /loop but unusable — hosts must surface the error,
+  never pass through), `{ok:true, directive}`. Fail-closed on digit-leading
+  non-interval tokens; bounds [1s, 2^31-1 ms] (Node setTimeout overflow
+  fires immediately — a real hot-loop hazard above the ceiling).
+- `createPromptLoop`: fixed-delay controller over a host-owned `run`
+  callback — immediate first run, next run `intervalMs` after the previous
+  SETTLES (never overlaps), `maxIterations` / `AbortSignal` / `onError`
+  ('stop' default | 'continue' | per-error callback), `done` summary promise
+  (never rejects).
+- `LOOP_SLASH_COMMAND` menu metadata; deliberately NOT an engine built-in
+  (the engine cannot re-invoke itself over wall-clock time; advertising a
+  command the engine would swallow as plain text breaks the honesty red
+  line). README section documents the thin host bridge.
+- +24 tests (`tests/prompt-loop.test.ts`).
+
+## 0.58.0 — 2026-07-14
+
+Audit 2026-07-14 P1 batch — all 13 MEDIUM findings, each with regressions:
+
+- **M-1 (hooks)**: per-matcher `failureMode: 'open' | 'closed'` override (a
+  crashed security hook can now be made blocking per matcher); global
+  default stays 'open' for official drop-in parity; fail-open discards now
+  log loudly.
+- **M-2 (tools)**: shared ReDoS guard (`src/internal/regex-guard.ts`,
+  extracted from hooks/matcher) now also protects Grep patterns and
+  BashOutput filters — catastrophic patterns are rejected with a readable
+  tool error instead of freezing the event loop.
+- **M-3 (webfetch)**: DNS pinning — the default fetch path now dials only
+  the SSRF-guard-validated addresses (node lookup override, Host/SNI
+  preserved), closing the rebinding window; per-hop re-validation on
+  redirects. An injected fetchImpl still bypasses pinning (documented).
+- **M-4 (mcp)**: registry entries are retired on closeAll()/setServers();
+  in-flight handshakes are awaited and their connections closed instead of
+  leaking zombie child processes.
+- **M-5 (openai)**: a stream ending without finish_reason after tool_call
+  deltas now infers stop_reason 'tool_use' — non-conformant gateways no
+  longer silently drop tool calls.
+- **M-6 (transport)**: with proxy env vars set and no explicit httpClient
+  choice, the default resolves to 'fetch' (proxy-capable) instead of the
+  proxy-blind 'node' adapter.
+- **M-7 (session-manager)**: auto-resume folds pre-resume total_cost_usd /
+  modelUsage into a base offset — mgr.usage() reports the sum, not just
+  post-resume spend.
+- **M-8 (engine)**: pause_turn continuation now checks budgetStopReason()
+  like every other continuation path — maxBudgetUsd can no longer be
+  bypassed by repeated server pause_turn.
+- **M-9 (sessions)**: JsonlSessionStore.append heals a crash-torn tail
+  (missing trailing newline) exactly like file-store — a torn line no
+  longer swallows the next record with it.
+- **M-10 (subagents)**: concurrent foreground subagents fork their own
+  persistent shell cwd/env namespace (seeded from the parent's snapshot) —
+  batch-mate cd/export no longer cross-pollutes; background-shell registry
+  stays query-wide.
+- **M-11 (subagents)**: foreground kill path — 'killed' status no longer
+  clobbered to 'failed'; notifications word foreground/background
+  correctly; stopping a foreground child resolves an isError tool result
+  instead of aborting the whole parent query.
+- **M-12 (reporting)**: run-log lines are shape-validated at the shared
+  readWindow choke point — a well-formed-JSON-but-wrong-shape line counts
+  as a bad line instead of killing the whole report.
+- **M-13 (workflow)**: resume cache lookup is now (hash, occurrence)-keyed
+  instead of global-sequence-keyed — parallel-branch timing permutations no
+  longer silently disable prefix caching; old journals stay resumable.
+
+## 0.57.3 — 2026-07-14
+
+Audit 2026-07-14 P0 batch — the three HIGH findings, each with regressions:
+
+- **H-1 (transport, both twins)**: a non-2xx error body is now drained with
+  the abort listeners still attached (caller interrupt / request timeout can
+  cancel it) and capped by `ERROR_BODY_TIMEOUT_MS` (10s, falls back to the
+  status line). Before, a gateway that sent error headers and then stalled
+  the body hung the conversation forever, uninterruptibly (the default
+  'node' http client has no body timeout).
+- **H-2 (session-manager)**: transparent auto-resume now retires the
+  abandoned query (`q.return()`) BEFORE re-driving, so its run() teardown —
+  background-shell kill, sandbox tmpdir removal, subagent settle, SessionEnd
+  hooks, session-store flush — actually executes; the flush lands before the
+  resumed query re-reads persisted history. Before, each resume leaked all
+  of that.
+- **H-3 (subagents)**: child ToolContext now threads the checkpoint
+  recorder (`getRecordFileChange`, resolved at spawn time), so subagent
+  Write/Edit pre-images land in the same per-turn checkpoint index as the
+  root loop's and `rewindConversation` actually restores child edits.
+  Before, rewind reported success while child edits stayed in place.
+
+## 0.57.2 — 2026-07-14
+
+**Directory-full memory error now carries self-rescue guidance (keeper ruling
+2026-07-14).** BPT reported that when a `/memories` directory hit the
+`maxFilesPerDirectory` cap (default 64), the model would loop on `create` and
+effectively stop recording — it had no idea the directory was full only for
+*new* files, nor how to reorganize. Root cause was purely the terse error
+string: `directoryFullError` said "already contains the maximum number of
+memory files (N)" and nothing else. The message now appends actionable
+guidance — the cap is per-directory and blocks only new-file creation
+(str_replace / insert / delete / rename on existing files still work), and the
+three ways to make room: consolidate related files, delete stale files, or
+create under a new subdirectory (each subdirectory has its own limit). No
+default, limit, or enforcement change; the reference prefix is preserved
+verbatim so existing substring assertions hold. Test: `memory-m2.test.ts` (the
+per-directory cap case now also asserts the guidance and the edit/delete/
+re-create recovery path).
+
+## 0.57.1 — 2026-07-14
+
+**Unified upstream-error normalization: no more bare 500s穿透ing to the host
+(BPT P1, keeper ruling 2026-07-14).** BPT saw a raw
+`{ error: { message: "Internal server error", code: null, status: 500 } }`
+object reach the host un-classified — it bypassed the retry / error chain, so
+the user got an opaque 500 with no way to tell provider, retryability, or
+request id. Root cause: the Anthropic arm's SSE error detector only recognized
+the native `type: 'error'` frame, so a gateway that wrapped the failure as a
+bare top-level `{ error: {...} }` / `{ message, status }` data frame (no
+`event: error` name, no `type` discriminator) was neither caught as an error
+nor a valid stream event — it穿透ed. New unified layer
+(`src/error-normalize.ts`):
+
+- **`NormalizedProviderError`** — one STABLE shape every upstream failure maps
+  to: `name`, `message` (readable, never `[object Object]`), `status`, `code`,
+  `provider`, `model`, `requestId`, `retryable`, `retryAfterMs`, `phase`,
+  `rawType`. `normalizeProviderError()` maps an `APIStatusError`,
+  `APIConnectionError`, a bare gateway error object, a plain `Error`, or an
+  opaque value; `normalizeRetry()` builds one for a retry-in-progress.
+- **Detection widened** — both transports now recognize the wrapped
+  `{ error: {...} }` and bare `{ message, status }` shapes (`looksLikeErrorObject`
+  cannot swallow a real stream event: those always carry a known `type`).
+- **Richer extraction** — `APIStatusError` gained `providerErrorCode` +
+  `retryAfterMs`; transports lift `code` / `status` / `request_id` from the body
+  (accepting `request_id` / `requestId` / `x-request-id` / `X-Request-Id`
+  spellings, header preferred), for the Anthropic Messages API, the
+  OpenAI-compatible Chat Completions protocol, SSE in-stream error frames, and
+  non-streaming HTTP paths alike.
+- **Retry policy** (status-based, so it never string-matches "quota"/
+  "allocation" to force a non-retry): 408/429 and every 5xx retryable; other
+  4xx (400/401/403/404/…) not. `APIConnectionError` honors the existing
+  replay-safe contract (a started stream is not blind-retried).
+- **Host surfaces** — the `error_during_execution` result, the `api_retry`
+  message (now also carrying `retryable` / `retry_remaining` / `retry_reason`),
+  and the `rate_limit_event` all carry `providerError`. A 500 with no assistant
+  content is surfaced as an error, never a silent empty success.
+- **Redaction (硬约束)** — the normalized message is bounded (2 KB) and scrubs
+  API keys / Bearer tokens / Authorization; the raw error object is never
+  attached.
+
+Additive-only (drop-in surface gains fields, never changes existing ones).
+New tests: 24 normalizer unit + 11 transport/end-to-end integration; the two
+mandated integration shapes (JSON `{error:{…,request_id:"test-500"}}` and
+`text/plain` 500) both assert the host gets `status: 500` / readable message /
+`retryable: true` / `requestId` / an explicit error event.
+
+## 0.57.0 — 2026-07-14
+
+**openai-chat default maxOutputTokens 8192 -> 128000 (BPT ruling 2026-07-14).**
+The global 8192 default rode onto every OpenAI-compatible request as
+`max_tokens: 8192`, starving agentic turns on large-output gateway models. The
+default is now PROTOCOL-AWARE: 128000 on `openai-chat`, 8192 unchanged on
+`anthropic` (that API 400s a max_tokens above the model's output ceiling —
+e.g. claude-sonnet-4-5 caps at 64000 — and no per-model output table is
+bundled, so a blanket 128000 would have killed default Claude sessions on
+turn 1). `provider.maxOutputTokens` overrides either default, both directions.
+Boundary behavior locked by tests (`tests/max-output-tokens-default.test.ts`):
+128000 is sendable (incl. via `maxTokensParam` rename); a gateway whose model
+caps lower rejects with a clear surfaced `APIStatusError` (HTTP 400,
+`invalid_request_error`, the server's own message preserved verbatim, exactly
+one POST — 400 is never retried). Cross-protocol subagent caveat documented in
+OPENAI-PROTOCOL.md. Removed a dead duplicate `DEFAULT_MAX_OUTPUT_TOKENS` in
+query.ts. BPT: passing an explicit 128000 keeps working and is now redundant
+on openai-chat.
+
+## 0.56.0 — 2026-07-13
+
+**openai-chat image input: hardened translation + tool_result fan-out + PDF
+`file` parts + MCP mimeType whitelist (keeper ruling 2026-07-13).** Four
+related gaps closed in one capability bump. (1) Base64 image blocks already
+translated to `image_url` data URLs but rode through UNVALIDATED — an
+unsupported media_type, empty/line-wrapped base64, or a nested `data:` prefix
+produced a malformed data URL gateways reject opaquely at their
+image-processing stage (`image_moderation_server_error`). The translator now
+enforces the Messages API four-type whitelist (JPEG/PNG/GIF/WebP), normalizes
+media_type case and base64 whitespace, and throws a locatable
+`ConfigurationError` (block path + media_type, never image bytes) for empty /
+double-prefixed / non-base64 data BEFORE any network call. (2) Images / base64
+PDFs inside a tool_result — a screenshot an MCP tool returned, an image file
+Read produced — previously degraded to a text placeholder on openai-chat (the
+`tool` role is text-only): the model never saw them. They now FAN OUT into the
+user message following the tool messages, each labeled with its tool_call_id;
+a malformed tool-OUTPUT attachment degrades to an explicit omission marker
+(never bricks the turn) while user-turn blocks stay fail-fast. (3) Base64 PDF
+`document` blocks translate to the official Chat Completions `file` content
+part (data URL in `file_data`) instead of a placeholder; URL documents keep
+the honest placeholder. (4) The MCP result mapper whitelists image mimeTypes
+against the shared vocabulary (`src/internal/media.ts`) — an off-vocabulary
+type (image/bmp, …) becomes an explicit text marker at the dispatch seam
+instead of 400-ing the whole next request on the Anthropic protocol. One
+byte-free debug summary line per request (protocol, image/file counts, MIME
+types, base64 lengths, outcome). Anthropic-protocol wire shape untouched
+(fixture-locked). Docs: OPENAI-PROTOCOL.md "Image input".
+
+## 0.55.2 — 2026-07-13
+
+**OpenAI arm: metadata-only stream + `[DONE]` no longer billed as a silent
+success (BPT idealab "turn stop / hasAssistantMessage:false", 2026-07-13).**
+0.55.1 fixed the Anthropic arm's degraded-200 shape and asserted the OpenAI arm
+"already self-heals its analog" — true only for the ZERO-chunk case (the
+empty-stream retry). The metadata-then-`[DONE]` case was still mis-routed: an
+HTTP 200 that streamed only role-only / usage-only chunks (so `chunkCount > 0`)
+and then closed with a bare `data: [DONE]`, carrying NO `delta.content`, NO
+`reasoning_content`, NO `tool_calls` and NO `finish_reason`, satisfied the old
+`chunkCount > 0 && (doneSeen || sawFinishReason())` success gate and was
+finalized as an empty assistant with `stop_reason: null` — the exact idealab
+"turn stop, hasAssistantMessage:false, lastAssistantMessage:''" log shape.
+Fix: the translator now tracks VALID assistant content (`sawContent()`)
+separately from the raw chunk count — flipped only by a non-empty text /
+reasoning delta or a tool_call fragment bearing an id/name/arguments — and
+`finish_reason` counts only when a non-empty string. The transport now
+completes only on an explicit `finish_reason` (protocol semantics preserved,
+incl. an empty-text `finish_reason:'stop'`) OR a `[DONE]` paired with valid
+content; a `[DONE]` with neither throws a diagnosable `empty_message`
+`APIConnectionError` (not `turnReplaySafe`/`midStreamTruncation`, so NOT
+retried — a started stream is not replay-safe), which the engine surfaces as
+`error_during_execution` (error_code `empty_message`). Preserved unchanged:
+zero-chunk `empty_stream` retry, partial-content-without-terminator truncation
+salvage, and the honest empty-text-with-`finish_reason` path (all existing
+mutation-lock suites still pass without re-baselining). +12 test cases
+(transport: role-only, usage-only, empty-first-delta, no-terminator truncation,
+empty-text-finish_reason, tool_call-fragment; translator content tracking x3;
+engine end-to-end error_code x3); docs/OPENAI-PROTOCOL.md updated.
+## 0.55.1 — 2026-07-13
+
+**Degraded empty stream no longer billed as a silent success (BPT "空 stopReason
+轮次", 2026-07-13; keeper ruling C).** A degraded HTTP 200 that emitted
+`message_start` but delivered NO content block AND no terminal
+`message_delta.stop_reason` (a gateway hiccup / proxy buffering cutoff — the API
+always sends stop_reason before message_stop) fell between the transport's
+no-message_start empty-retry and its mid-stream-truncation salvage. The engine
+then finalized an EMPTY assistant and billed a `subtype:'success'` result with
+`stop_reason: null` — the exact "round ended, no assistant message, empty stop"
+shape BPT reported (five in a row = the gateway hiccuping five times, each
+silently accepted). Fix: the Anthropic arm now detects `message_start` seen +
+no content + no stop_reason at BOTH stream-exit points (message_stop present and
+natural close) and throws a diagnosable `empty_message` `APIConnectionError`. It
+is NOT flagged `turnReplaySafe`/`midStreamTruncation` and is NOT retried inside
+the transport — honoring the deliberate "a started stream is not replay-safe /
+no phantom empty-retry" contract — so the engine surfaces it as
+`error_during_execution` (error_code `empty_message`) instead of a silent empty
+success. The OpenAI arm already self-heals its analog (zero-chunk retry +
+synthesized stop_reason), so it is unchanged. +5 tests (transport S1/S2, engine
+end-to-end, re-baselined mutation lock); the honest empty end_turn
+(stop_reason present) and partial-content paths are untouched.
+
+## 0.55.0 — 2026-07-13
+
+**Cross-protocol routing extended to utility + compaction calls (closes the
+0.54.0 gap's siblings).** The two remaining engine-internal call sites that
+target a NON-session model had the same wrong-route failure mode as
+subagents: utility generator calls (hook `condition` evaluation on the
+default Haiku-tier model) built their transport from the single session
+provider, and the compaction summarizer (`compaction.model`) streamed through
+the session transport unconditionally. Both now route through the SAME
+`Options.resolveSubagentTransport` policy, distinguished by a new required
+`purpose` field on the resolver input (`'subagent' | 'utility' |
+'compaction'`). Plumbing: the query layer composes one `transportForModel`
+closure (owned-resolution disposal at query teardown, alongside the subagent
+runtime's own set); `EngineDeps.transportForModel` carries it to the
+compaction summarizer in the root loop AND every child loop;
+`UtilityCallOptions.resolveTransport` (public, host-usable) carries it into
+`runUtilityCall` with precedence explicit `transport` >
+`resolveTransport(model)` > provider-built default. Resolver absent -> every
+call keeps its previous transport path byte-for-byte. The standard resolver
+ignores `purpose` (routes purely by model), so 0.54.0 hosts only rebuild.
++4 tests (utility precedence x2, compaction routed/same-model x2).
+
+## 0.54.2 — 2026-07-13
+
+Official chase 0.3.205 → 0.3.207 (empirical diff report
+`Public-Info-Pool/Resource/repo-engineering/silver-core-sdk-vs-official-diff-20260713.md`;
+keeper ruling 「追」). A type-surface diff of the official tarballs found the
+pinned 0.3.205 baseline drifted 2 patch versions behind npm latest `0.3.207`
+(published after the 0.3.205 pin) with **zero exported-symbol change** (232 =
+232) — the drift is entirely field-level/additive:
+
+- **`TerminalReason` union +6 members** — `api_error`,
+  `malformed_tool_use_exhausted`, `budget_exhausted`,
+  `structured_output_retry_exhausted`, `tool_deferred_unavailable`,
+  `turn_setup_failed`. Added to the type for drop-in exhaustiveness;
+  typed-not-populated (this field has no engine emission site here). Exhaustive
+  lock in `tests/b2c-alignment.test.ts` (12 → 18).
+- **N/A-by-design additive fields registered in the COMPAT ledger** (no code):
+  `mcp_call` staging (`input_files`/`output_files`/`expires_at`/`timeout_ms`,
+  Cowork file-lane) rides the control_request protocol this headless engine
+  does not implement; the PostToolUse-family structured-tool-output field and
+  the `SDKModelRefusalNoFallbackMessage` per-category-routing doc refinement
+  are additive-optional. docs/COMPAT.md pin bumped to 0.3.207.
+
+## 0.54.1 — 2026-07-13
+
+**MCP stdio shutdown reaps the server process TREE (BPT stability, 2026-07-13).**
+`StdioMcpConnection` spawned the server WITHOUT `detached:true` and terminated
+it with a bare `child.kill('SIGTERM'/'SIGKILL')`, which signals only the direct
+child PID. Real MCP servers are launched through a wrapper (`npx`/`cmd /c`/
+`uvx`/`python -m`/`node launcher`) whose actual, long-lived server is a
+GRANDCHILD — so on abort/close the wrapper died but the server was orphaned,
+and its inherited stdio handles could keep the host from exiting within the
+teardown grace window (force-kill fallback). On Windows the whole tree survived
+(`child.kill()` = single-PID TerminateProcess). Fix: spawn `detached:true` (a
+POSIX process-group leader) and terminate via the shared `planProcessKill`
+planner — POSIX `process.kill(-pid)` group kill / Windows `taskkill /PID <pid>
+/T /F` — the same tree-safe posture `bash.ts` / `shells.ts` already use. The
+planner moved to `internal/process-kill.ts` (single source of truth; re-exported
+from `tools/kill-plan.ts` for existing consumers) so `mcp/` can reuse it within
+the import-discipline rules. +1 regression test (grandchild-orphan, POSIX-CI).
+
+## 0.54.0 — 2026-07-13
+
+**Cross-protocol subagent transport routing (BPT P0).** An isolated subagent
+whose resolved model is served on a different wire protocol than the parent
+(e.g. an `openai-chat` parent whose Haiku-tier children map to a model only
+on the gateway's Anthropic route) previously rode the parent transport
+unconditionally and 400'd "model not found" on the wrong endpoint. New
+`Options.resolveSubagentTransport` callback (host-owned model→protocol
+policy) is consulted once per isolated spawn after the child model resolves:
+a resolution routes the child through its own transport; `undefined` (or
+omitting the option) shares the parent transport — byte-for-byte the previous
+behavior, so single-protocol consumers are unchanged. Forks never consult it
+(a fork's cached prefix requires the parent model + transport).
+`createSubagentTransportResolver()` ships the standard implementation:
+per-protocol transport memoization through the same
+`createProviderTransport()` switch point the root query uses, with
+protocol-agnostic provider knobs (retries / timeouts / fetch / httpClient /
+preconnect / pricing) carried from the parent and protocol-SPECIFIC fields
+(baseUrl / credentials / apiVersion / openai.\*) deliberately NOT copied —
+the two protocols append different URL suffixes and resolve different env
+chains, so a blind copy mis-routes. Thinking is re-derived for
+transport-switched children: resolution values win; otherwise a non-Claude
+child model drops the inherited config (safe degradation — a Claude-shaped
+`thinking` param on a non-Claude model is gateway-rejected more often than
+honored); shared-transport children inherit unchanged. Resolutions with
+`owned: true` are disposed once at query teardown (after every child settled
+— SendMessage can revive a finished child until then); `Transport.dispose?()`
+added as an optional contract member (the built-ins self-clean and implement
+none). The spawn debug log now records `{parentModel, childModel,
+parentProtocol, childProtocol, transportMode}` per child. +18 tests (routing
+matrix, fork inheritance, concurrency model-integrity, owned disposal,
+thinking degradation, resolver provider derivation).
+
+## 0.53.8 — 2026-07-13
+
+**Foreground Agent batch serialization fix (child-agent serialization report,
+2026-07-13).** Independent foreground `Agent` calls issued in one assistant
+batch ran strictly one-after-another (three 5s timer children showed zero
+overlap, ~12s start-to-start gaps), while `run_in_background: true` overlapped
+fine — the engine's concurrent tool grouping admitted only read-only tools,
+and Agent is `readOnly: false`, so every foreground spawn fell into the
+sequential branch. Root cause was the loop's grouping predicate, not the
+transport (the request semaphore defaults to unlimited) and not the subagent
+runtime (no global lock). Fix: a new `BuiltinTool.parallelSafe` flag — set on
+Agent, whose children each run their own isolated loop — widens ONLY the
+engine's parallel grouping (`isParallelSafeTool` = readOnly OR parallelSafe);
+permission semantics (plan-mode allow, default-mode auto-approve) still key
+off `readOnly` untouched. Batched foreground agents now start together under
+one `Promise.all`, results stay in tool_use order, and mutating tools keep
+the strict sequential contract. +5 tests (engine grouping 3: Agent×2 overlap /
+mixed Read+Agent group / non-parallelSafe still serial; runtime concurrent
+spawn overlap 1; Agent tool metadata 1). Docs: SUBAGENTS.md + CONCURRENCY.md
+now state the foreground-batch concurrency contract.
+
+## 0.53.7 — 2026-07-13
+
+**Second multi-subsystem audit batch: 5 verified fixes across subagents, MCP
+tools, and sessions (BPT stability, 2026-07-13).** A three-cluster audit
+(subagents/task runtime, sessions/accumulator, workflow/misc tools) surfaced
+five more concrete defects, each with a regression test. Ranked:
+
+- **Background SendMessage continuations had no stall watchdog (subagents).**
+  The initial background launch wraps the child in a `StallWatchdog` that aborts
+  a silent stream; `runContinuation` (the SendMessage follow-up path) constructed
+  none, so a continuation whose stream went silent never aborted — `turn` never
+  settled, the background delivery promise never pushed its `<task-notification>`,
+  and a coordinator waiting on the reply hung until whole-query teardown. Fix:
+  wire the same watchdog into the continuation, AND return a stalled continuation
+  as an error RESULT (not a thrown abort) so the delivery path surfaces a FAILED
+  note to the coordinator instead of swallowing it in its `.catch`.
+- **Foreground child result discarded if the SubagentStop hook aborted
+  (subagents).** The foreground path awaited `fireSubagentStop(…, params.signal)`
+  bare; an outer abort landing during that await made the hook throw and rejected
+  spawn(), discarding the child's already-computed answer. The background path
+  already fired the stop hook with a fresh signal and a `.catch`; the foreground
+  path now mirrors it (the child has finished — the hook is a notification, not a
+  gate on returning the result).
+- **`readCappedBody` off-by-one flagged an exactly-cap body as truncated
+  (webfetch).** The streaming path used `value.byteLength >= remaining`, so a
+  body exactly `MAX_BODY_BYTES` long (or a chunk landing right on the boundary)
+  was marked overflow though nothing was dropped — appending a misleading
+  `[truncated]`. The non-stream fallback correctly used `> cap`. Fix: `>` in the
+  streaming path too; an exactly-cap chunk is taken whole and the next read()'s
+  `done` distinguishes "exactly cap" from "more follows".
+- **`auditToolClaims` reused a stateful RegExp across texts (sessions).** A
+  consumer-supplied detector whose `claimPattern` carries the `g`/`y` flag is
+  stateful; exec() advanced `lastIndex`, so matching resumed mid-string on the
+  next assistant text and a genuinely-unbacked claim was silently missed. Fix:
+  reset `lastIndex` before each exec.
+- **`list()`/`getSessionInfo` dropped a meta_update gitBranch (sessions).**
+  `load()` honored an updated `gitBranch` on a `meta_update` record; the
+  `loadInfo()` scan behind `list()`/`listSessions()` read only `customTitle`/`tag`,
+  so the two read paths reported different branches for the same session. Fix:
+  read `gitBranch` in `loadInfo` too.
+
++4 regression tests (the foreground stop-hook fix mirrors the already-tested
+background path). Full suite 2175 passing + 2 skipped; typecheck + build clean.
+
+## 0.53.6 — 2026-07-13
+
+**Multi-subsystem audit batch: 5 verified fixes across MCP, hooks, permissions,
+grep, and the engine (BPT stability, 2026-07-13).** A four-cluster audit
+(permissions/hooks, file/shell tools, engine/transport, MCP/sessions/subagents)
+surfaced (and this release fixes) five concrete defects, each with a regression
+test. Ranked:
+
+- **ReDoS guard was bypassable by a nested group (hooks matcher).** The
+  catastrophic-backtracking detector used `[^()]` around the inner quantifier,
+  so it only recognized a nested quantifier when the quantified group held no
+  further parens — `((a+))+$` and `(a(b+))+$` evaded it, reached
+  `new RegExp().test()`, and froze the event loop synchronously (confirmed: a
+  33-char value ran past a 5s timeout). Fix: replaced the flat regex with a
+  paren-stack star-height walk that flags any repetition-bearing group that is
+  itself quantified, at any nesting depth; safe linear patterns
+  (`(foo|bar)+`, `Edit.*`, `^mcp__`) keep working.
+- **auto-mode classifier `deny` was bypassed by an ask route (permissions
+  gate).** The auto classifier lived inside the `!routeToPrompt` mode switch, so
+  any active ask route (hook `ask`, session ask rule, requiresUserInteraction,
+  sandboxEscape) skipped it and routed a classifier-DENY call to `canUseTool` —
+  which could ALLOW it, inverting the module's own documented deny > ask
+  invariant. Fix: the classifier `deny` verdict is now evaluated as its own
+  guard, regardless of the ask route (a hook `allow` still outranks it); the
+  `allow`/`prompt` verdicts stay behind the ask route so it still prompts.
+  Bites consumers who inject a custom classifier.
+- **stdio elicitation reply could leak an unhandled rejection (MCP).** The
+  server-initiated `elicitation/create` reply chain had only two `.then/.catch`
+  links; when the connection was closing, the fallback decline `write()` threw
+  again with no terminal catch → unhandled rejection → process crash under a
+  strict policy. The HTTP arm already had the terminal `.catch` (finding 15);
+  it was missed on the stdio arm. Fix: mirror the terminal `.catch`.
+- **`grep` multiline + `-o` reported "No matches found" for a matching file.**
+  In only-matching mode the substring extraction ran the regex per-line, so a
+  `multiline` pattern whose match spans a newline extracted nothing and
+  fell through to the empty-result guard — a false negative, while
+  `files_with_matches`/`count` correctly reported the match. Fix: multiline `-o`
+  scans the reconstructed whole content and emits each match with its starting
+  line number (ripgrep -oU semantics).
+- **`grep -o` emitted spurious empty output lines for a zero-length pattern.**
+  A pattern that can match the empty string (e.g. `x*`) pushed a blank entry at
+  every offset. Fix: skip zero-length matches (ripgrep omits them).
+- **thinking `budget_tokens` could be emitted below the API's 1024 floor
+  (engine).** For pre-adaptive models the code guarded only the upper bound
+  (`< max_tokens`), so a positive-but-sub-1024 budget (e.g.
+  `maxThinkingTokens: 500`) passed straight through and 400'd the turn — then
+  every turn. Fix: clamp up to the 1024 floor; when `max_tokens` cannot fit the
+  floor, disable thinking rather than emit a guaranteed-400 request.
+
++11 regression tests. Full suite 2171 passing + 2 skipped; typecheck + build clean.
+## 0.53.5 — 2026-07-13
+
+**Conversation-stability follow-up: the three deferred light items from 0.53.4
+(BPT stability, 2026-07-13).** Keeper asked the remaining trio be closed out.
+
+- **T2 — retry-budget amplification (both transports).** The empty-stream
+  re-issue counter was INDEPENDENT of `requestWithRetries`' own attempt counter,
+  each bounded by `maxRetries` — so a gateway alternating errors and empty-200s
+  under fan-out throttle could burn ~`maxRetries²` POSTs on an already-struggling
+  endpoint. Fix: one `{ used }` budget threaded through BOTH the request-phase
+  retries and the empty-stream re-issues, capping the total extra POSTs at
+  `maxRetries` (so `maxRetries+1` attempts overall). Anthropic + OpenAI arms.
+- **killAgent status race (subagent runtime).** `stopTask`/`killAgent` racing a
+  child's completion could emit a `stopped` notification contradicting a
+  `completed` one and flip `record.status` between the two. Fix: killAgent no
+  longer clobbers a record that already reached a terminal status (the
+  completed→kill direction), and the completion body only reports completion
+  while the record is still `running` (the kill→completed direction) — mirroring
+  the catch arm's existing guard. Both directions now resolve to one consistent
+  terminal signal.
+- **T3 — pre-message_start ping "leak" — assessed WAI, left unchanged.** A ping
+  keep-alive is yielded to the consumer as it arrives BY DESIGN: live ping
+  delivery is load-bearing (the idle-watchdog / hard-cap / progress paths and
+  their tests depend on the consumer seeing keep-alives in real time). The
+  theoretical leak of a discarded empty-retry attempt's pings is harmless (pings
+  carry no content; the accumulator ignores them), so buffering them — which
+  would degrade live delivery — is not worth it. Documented in-code.
+
++2 regression tests (`tests/conversation-stability-followups.test.ts`, T2 bound).
+Full suite 2160 passing + 2 skipped; typecheck + build clean.
+
+## 0.53.4 — 2026-07-13
+
+**Conversation-stability audit batch: 13 verified fixes across compaction,
+sessions, transport, accumulator, MCP (BPT stability, 2026-07-13).** A
+four-subsystem audit surfaced (and this release fixes) a set of defects that
+could crash, corrupt, or silently degrade conversations — several specific to
+running MULTIPLE conversations over shared state. Ranked:
+
+- **H1 — compaction was a no-op for pure tool-loops (default-path, highest
+  blast radius).** `partitionForCompaction` only accepted GENUINE user turns as
+  cut points, so a single string prompt driving an autonomous
+  assistant↔tool_result loop (the SDK's headline shape) had zero valid cut
+  points after index 0 → compaction never folded → context grew unbounded until
+  a `prompt too long` 400 with no retry. Fix: fall back to ASSISTANT-turn
+  boundaries (pairing-safe) with a user-TERMINATED fold, so such loops compact
+  while role alternation stays valid. Compaction is on by default, so this hit
+  the most common long-running run.
+- **H2 — concurrent cross-host resume double-materialized the transcript.**
+  `MirroringSessionStore.load` appended the external transcript per racing
+  loader and `JsonlSessionStore.load` did no uuid dedup, so two workers resuming
+  one session replayed the whole conversation TWICE (compounding every turn).
+  Fix: read-time uuid dedup (cross-process backstop) + in-process load
+  coalescing + a post-fetch re-check.
+- **M1 — an unmodeled content-block type crashed the turn.** The accumulator's
+  `content_block_start` handled only text/thinking/redacted_thinking/tool_use;
+  a `server_tool_use` (or any future block) left its index unregistered and the
+  next `content_block_delta` threw. Fix: register unknown blocks opaquely,
+  ignore their deltas, round-trip them into the message.
+- **M2 — the Anthropic arm silently accepted a truncated turn.** A clean EOF
+  after partial content with no `message_stop`/terminal `stop_reason` was
+  finalized as a complete, billed success (asymmetric with the OpenAI arm). Fix:
+  surface `midStreamTruncation` so E3 salvage runs and the fault shows in the
+  result's `errors` — but only when partial CONTENT was delivered and no
+  stop_reason arrived (a start-only or stop_reason-carrying stream still
+  completes normally).
+- **M3 — concurrent same-session file checkpoints collided on the blob path.**
+  `seq` was recovered per-instance, so two stores bound to one session wrote the
+  same `{seq}.blob`, and a later rewind restored the WRONG file's bytes. Fix:
+  qualify blob names with a per-instance token (collision-free; the index stores
+  the full name so rewind reads the exact pre-image).
+- **M4 — MCP `connectEntry` double-spawned under a connect/reconnect race.**
+  `entry.connection` was published only after the up-to-60s handshake, so a
+  concurrent connect/reconnect passed the guard and spawned a second child
+  process (the loser leaked). Fix: an in-flight connect latch coalesces callers.
+- **M5 — a retained suffix could exceed the budget and re-fold forever.** When
+  even the minimal viable suffix overflowed, compaction re-folded a tiny prefix
+  and still 400'd. Fix: pre-tier-shed the retained suffix's oversized string
+  tool_results (pairing-preserving) so the request fits the window.
+- **L1** — the subagent `ChildMcpFilter` forwarded lifecycle MUTATORS
+  (setEnabled/setServers/closeAll) to the shared registry, so one subagent could
+  disrupt its siblings; these are now inert on a child view (reconnect, a shared
+  recovery, still passes through).
+- **L2** — the free-socket TTL destroy raced socket reuse; the dying socket is
+  now evicted from the agent's `freeSockets` BEFORE `destroy()`.
+- **L3** — the CJK token estimator omitted CJK Symbols & Punctuation, Fullwidth
+  Forms, and Enclosed CJK (the primary workload's punctuation), biasing the
+  compaction trigger late; those ranges now count ~1 token/codepoint.
+- **L4** — file rewind could only target turns that changed a file; `beginTurn`
+  now writes a (seq-free) turn-position marker so a chat-only turn is a valid
+  rewind target.
+- **L5** — a thinking block with an EMPTY signature (malformed/gateway-rewritten
+  upstream) 400'd every later Anthropic request on resend; such blocks are now
+  stripped from the wire body (no-op / byte-identical on well-formed requests).
+- **L6** — `JsonlSessionStore.loadInfo` leaked a file descriptor on the
+  sidechain early-return and error paths; the read stream is now destroyed in a
+  `finally` (mirrors `isSidechainFile`).
+
++12 regression tests (`tests/conversation-stability-fixes.test.ts`); two
+existing mutation-kill tests updated for the new checkpoint marker + Anthropic
+truncation surface. Full suite 2157 passing + 3 skipped. Deferred (noted, not
+fixed): the nested empty-stream retry budget (bounded ~maxRetries², not
+infinite), cross-attempt ping replay (benign), and a narrow killAgent status
+race (reporting only).
+
+## 0.53.3 — 2026-07-13
+
+**Free-socket idle TTL: keep-alive pool no longer accumulates zombie
+sockets (BPT stability, 2026-07-13).** Symptom: turns hang with NO output
+— worst with several concurrent conversations — on gateway deployments
+(azure/* and friends). Root cause: the default node HTTP client (0.45.0)
+held pooled sockets "until the SERVER closes it", but middleboxes
+(Azure LB, ALB, nginx, corporate proxies) drop idle flows SILENTLY — no
+FIN/RST — so the pool filled with sockets that look alive to node.
+A request written onto one stalls for the full request-phase timeout
+(default 600s), and each retry can pick the NEXT zombie; concurrency
+multiplies exposure (more sockets idling between turns). The pre-0.45
+undici client recycled pooled connections after ~4s idle, which had
+masked the entire class. Fix: a free socket is destroyed after 55s of
+pool idleness (`FREE_SOCKET_TTL_MS`, under the common 60s middlebox idle
+floor; timer unref'd, cleared + re-armed on reuse) — an expired socket
+costs one fresh TCP+TLS handshake (~100-300ms, TLS session resumption
+intact), never a 600s stall. Agents also pin `scheduling: 'lifo'`
+(node's default, now explicit: most-recently-used socket first minimizes
+zombie-pick odds inside the TTL window). `createNodeFetch()` accepts
+`{ freeSocketTtlMs }` for tests/tuning. Consumer escape hatches
+unchanged (`provider.httpClient: 'fetch'` / `BPT_HTTP_CLIENT=fetch`).
++2 tests (TTL destroy + reuse re-arm).
+
+## 0.53.2 — 2026-07-13
+
+**Tool schema boundary validation (BPT P0, 2026-07-13).** Symptom: on
+`azure/*` (OpenAI Chat Completions-compatible) gateways, whole
+conversations died at request time with
+`tools.N.custom.input_schema: Field required` — one tools[] entry with a
+missing/invalid `input_schema` (a lax MCP server, or a misconfigured
+`serverTools: [{type:'custom',...}]` entry) fails the ENTIRE model call
+before generation. Root cause: the SDK assembled and encoded tool
+definitions without validating schemas at either boundary. Fix, three
+layers: (1) agent loop (`src/engine/loop.ts`) — builtin/MCP
+`inputSchema` values that are not plain objects (missing, null, array,
+primitive) are normalized to the safe empty-object schema
+`{type:'object',properties:{}}` with a tool-name-bearing debug line;
+(2) server-declared tools — `serverTools` entries whose type is
+`'custom'` (or empty) are skipped with a diagnostic instead of being
+advertised schema-less; a skipped entry no longer suppresses the
+same-named builtin; Anthropic-typed entries (e.g. `memory_20250818`)
+pass through verbatim, unchanged; (3) OpenAI wire encoder
+(`src/transport/openai.ts`) — last-line filter keeps only tools whose
+`input_schema` is a non-array object, so no schema-less entry can reach
+a Chat Completions body; valid tools translate byte-identically as
+before. +10 tests (loop normalization x6, encoder filter x4).
+
+## 0.53.1 — 2026-07-13
+
+**Corpus-sync re-sync to upstream ccVersion 2.1.205.** The weekly
+claude-code-system-prompts refresh advanced the archived upstream prompts
+(2.1.129 → 2.1.205) and drifted two faithfully-reproduced surfaces:
+- **Background-agent state classifier** (`src/generators/prompts.ts`): eight
+  example/schema lines were reworded upstream. Re-synced verbatim — six
+  `detail` example strings (`dedicated column beats a composite index…`,
+  `localhost:4000 restarted on local CCR`, `venn.png + scripts/venn.R`,
+  `~16K/min notif drop confirmed`, `option B: reuses the table…`, `added at
+  the logging call site`), the OUTPUT schema (`<one line, ≤64 chars>`), and
+  the `detail` guidance clause (`…phone lock screen and as the one-line status
+  column in a session list…`). Note: the `generators.test.ts` guard is a
+  first-60-char substring check, so only two of these tripped it; all eight
+  were still drift and are now fixed.
+- **Bash sandbox note** (`src/tools/descriptions.ts`): upstream deleted the
+  standalone `-user-permission-prompt` archive fragment. The SDK keeps the
+  sentence "This will prompt the user for permission" as its own framing (the
+  escape hatch does gate on a prompt here) but reclassified it `faithful:
+  false` / `slug: ''` — never claim verbatim provenance for text upstream
+  dropped. Assembled sandbox-note output is byte-unchanged.
+
+No behavior change beyond the reproduced prompt text. Full vitest green.
+
+## 0.53.0 — 2026-07-13
+
+**Persist message uuids at write time (keeper ruling 2026-07-13).** The
+property-fuzz campaign surfaced that user/assistant transcript records
+carried no identity: `getSessionMessages` minted RANDOM uuids on every
+read, so two reads of the same file disagreed and anything keyed on
+message uuid (fork reconciliation, external consumers) silently
+mismatched. Now every user/assistant record is written WITH a uuid, and
+the streamed SDKMessage and the persisted record share ONE identity
+(the yield-time uuid is threaded into the persist call). Fork copies
+mint fresh identities (fork semantics). Backward tolerant: legacy
+records without a uuid still read fine - the read path keeps its
+mint-on-miss fallback, so old transcripts stay non-idempotent (only
+newly written turns gain stable identity). Session JSONL stays
+append-only; no schema version change. +5 tests.
+
+## 0.52.1 — 2026-07-13
+
+**Dev-only: overnight quality-campaign harness (shipped runtime unchanged).**
+No `src/` behavior change beyond the version constant; this bump exists
+because the version guard rightly counts dependency-manifest changes as
+shipped-content changes. Added devDependencies: `@stryker-mutator/core` +
+`@stryker-mutator/vitest-runner` (mutation testing, `stryker.conf.json`,
+in-place mode so corpus-sync tests keep their repo-root archive paths) and
+`fast-check` (property tests). New test assets: property suites for the SSE
+parser (byte-level chunking/noise/truncation invariance), the permission
+gate partial order (deny-dominance metamorphic + ask-routing + totality),
+and session JSONL corruption robustness; 39 mutation-kill tests for the
+permissions module (Stryker score 79.97% -> 92.87%, no-coverage 36 -> 0);
+keyless emulator soak probes (`tests/integration/soak-emulator.mjs` +
+`soak-report.mjs`) for long-run leak curves. +48 tests (full suite 1968
+passed + 2 skipped).
+
+## 0.52.0 — 2026-07-12
+
+**`options.resilience.salvageMode` (E3 continue-after-truncation) + exact
+byte sizes in prompt composition.** Two keeper rulings from the loop-1
+retrospective. (1) `resilience: { salvageMode: 'continue' }` (default
+`'accept'`, drop-in): a mid-stream truncation is re-driven through the
+bounded turn replay to a COMPLETE answer instead of accepting the partial
+blocks — a fresh turn, so no duplicated prefix; a persistently truncating
+turn still degrades to the error path once replays exhaust. `'accept'`
+keeps the official 2.1.201 salvage semantics byte-for-byte. The dc-03 eval
+harness turns it on. (2) `promptComposition.bytes` (`system` / `toolDefs` /
+`messages` / `total`): EXACT UTF-8 byte sizes of the assembled request,
+complementary to the existing token estimates — what a host sizing against
+a byte envelope (the tok-06 measurement anchor) or a byte-precise context
+panel needs. Computed from the wire content; no new estimator. +5 tests.
+
+## 0.51.2 — 2026-07-12
+
+**Fix: run-log appends are serialized (ledger order = arrival order) +
+`RunLogSink.flush()`.** Two fire-and-forget `appendFile` calls could land
+out of arrival order — surfaced as a CI flake in the sink's own ordering
+test, and a consumer reading `runlog-*.jsonl` as a timeline would see the
+same inversion. Appends now ride one promise chain (each link swallows its
+own failure, so a bad append never wedges the chain; still fire-and-forget
+for the run). `flush()` resolves once everything observed so far is
+appended — tests and shutdown paths await durability instead of sleeping.
+
+## 0.51.1 — 2026-07-12
+
+**Fix: replay-backoff timer no longer unref'd — headless consumers survive
+disconnect recovery.** The engine's turn-replay backoff (loop.ts) ran on an
+unref'd timer; it fires exactly when the dead connection was often the
+process's last live handle, so a plain-script (top-level-await) consumer's
+event loop drained mid-recovery and node exited with code 13. Found by the
+first LIVE eval round with the Phase 2 fault harness (run 29178257816,
+zero output); invisible under vitest, whose runner handles keep the loop
+alive. The timer is now deliberately ref'd — an in-flight retry IS active
+work; unref() stays for idle watchdogs and pooled sockets only. Regression
+guard: `tests/replay-backoff-process-exit.test.ts` spawns a real child node
+process (separate emulator process, dc-02-parity client-side stream cut)
+and asserts exit 0 + turnReplays >= 1 (negative control re-adding unref
+reproduces exit 13). Eval-side (non-runtime): the harness stream cutter
+errors before a fire-and-forget cancel (an awaited cross-process cancel can
+hang a pull), and mem-06's mount spec used `access` where the SDK contract
+is `mode` — the question had ERRORed in every LIVE round; scenario/rubric
+byte-identical, manifest re-signed. +1 test.
+
+## 0.51.0 — 2026-07-12
+
+**Self-improvement loop: REQ-1.2 trend deltas + Phase 2 eval harness +
+REQ-2.2 regression gate.** `compareReports(dateA, dateB, {logDir})`
+re-aggregates the run-signal ledger per UTC day and returns key-metric
+`b - a` deltas (records/sessions, transport faults total + per cause,
+unrecovered, failures, tokens, cache-hit pp, cost, tool calls/failure-rate
+pp) with an agent-readable Markdown table; a data-less day reads as explicit
+nulls / 无数据, never zeros. `aggregateDay` exported alongside.
+`generateRuntimeReport` now prunes `runtime-report-*.md` older than
+`retentionDays` (default 30, `0` disables); the raw ledger is only pruned on
+explicit `ledgerRetentionDays` opt-in. Eval side (scripts, outside the
+shipped runtime): `scripts/eval-harnesses.mjs` registers Phase 2 runners for
+all 8 `driver:"manual"` questions — request-phase/mid-stream/permanent fault
+injection at the provider.fetch seam (byte-precise SSE cuts), hard-kill +
+session-resume (dc-04), compaction pressure with R7 flush evidence
+(mem-03/tok-04) — question files stay byte-identical (governance boundary);
+run-evals.mjs gains the registry dispatch plus a `--judge-batches` lane
+(Message Batches API, the 50% nightly judge rate; same pinned params as
+inline). `scripts/check-eval-regression.mjs` (REQ-2.2): dimension-mean drop
+> 0.5 vs the committed `evals-baseline.json` emits `::warning::` only —
+no baseline → explicit SKIP; `--write-baseline` seeds from a LIVE report;
+wired into the run-evals-live job (run_evals input is now a choice:
+false/inline/batches — GitHub's 10-input dispatch cap). +17 tests.
+
+## 0.50.0 — 2026-07-12
+
+**Self-improvement loop 1 signal side (SCS-REQ-002 REQ-1.1).**
+`options.runLog` mirrors every consumer-facing result message as one
+facts-only JSONL line (`runlog-{date}.jsonl`: subtype, counters, usage,
+cache ratio, cost, transportHealth ledger, per-tool calls/errors, model
+ids — no conversation content; incognito records keep transport/token
+stats but no identity/tag/error per spec §6.4; fire-and-forget appends
+never break the run; observed at the Query-wrapper choke point so every
+result path is covered). `generateRuntimeReport()` folds a rolling
+window (default 24h) of ledger lines into `runtime-report-{date}.md`
+with the four spec sections (传输健康 + 未恢复清单 / token 消耗按场景 /
+工具调用×失败率 / 失败会话仅事实); absent signals render explicit 无数据
+markers, lists are capped with the cap stated, a missing log dir degrades
+instead of throwing. New `docs/REPORTING.md`; +8 tests. REQ-1.2
+compareReports stays pending (P1).
+
 ## 0.49.0 — 2026-07-11
 
 **Self-improvement loop Phase 0 + Phase 1 landing (SCS-REQ-002).** Phase 0

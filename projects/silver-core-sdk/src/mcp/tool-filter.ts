@@ -32,7 +32,14 @@ export class ToolFilterMcpRegistry implements McpRegistry {
     return this.inner.connectAll();
   }
   statuses(): McpServerStatus[] {
-    return this.inner.statuses();
+    // A fully-denied tool is hidden from allTools()/has(); drop it from each
+    // server's per-tool status list too, or the status would advertise a tool
+    // whose execution refuses. Qualified name is `mcp__<server>__<tool>`.
+    return this.inner.statuses().map((s) =>
+      s.tools === undefined
+        ? s
+        : { ...s, tools: s.tools.filter((t) => !this.hidden(`mcp__${s.name}__${t.name}`)) },
+    );
   }
   allTools(): McpToolEntry[] {
     return this.inner.allTools().filter((t) => !this.hidden(t.qualifiedName));
@@ -53,6 +60,9 @@ export class ToolFilterMcpRegistry implements McpRegistry {
   }
   readResource(server: string, uri: string, signal: AbortSignal): Promise<McpResourceContent[]> {
     return this.inner.readResource(server, uri, signal);
+  }
+  readResourceDir(server: string, uri: string, signal: AbortSignal): Promise<McpResource[]> {
+    return this.inner.readResourceDir(server, uri, signal);
   }
   reconnect(serverName: string): Promise<void> {
     return this.inner.reconnect(serverName);

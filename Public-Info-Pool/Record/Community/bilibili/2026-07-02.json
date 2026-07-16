@@ -1,8 +1,8 @@
 {
   "date": "2026-07-02",
-  "archived_at": "2026-07-03T15:08:13.142059+00:00",
+  "archived_at": "2026-07-12T03:52:12.061991+00:00",
   "source": "bilibili",
-  "item_count": 18,
+  "item_count": 21,
   "items": [
     {
       "title": "我们都是肉做的 | 原创编舞",
@@ -417,6 +417,51 @@
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
+    },
+    {
+      "title": "船长还在C",
+      "summary": "一局预组能打8min半 不愧是我\n船长的3屏障穿透是真真阴啊",
+      "source": "bilibili",
+      "platform_region": "cn",
+      "lang": "zh",
+      "time": "2026-07-02T10:10:54+00:00",
+      "url": "http://www.bilibili.com/video/av116849836690709",
+      "engagement": 221,
+      "is_hot": false,
+      "author": "游商不是商",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "〖忘却前夜/takeme〗“当爱意生长出血肉。”",
+      "summary": "〖忘却前夜/takeme〗“当爱意生长出血肉。”",
+      "source": "bilibili",
+      "platform_region": "cn",
+      "lang": "zh",
+      "time": "2026-07-02T03:40:15+00:00",
+      "url": "http://www.bilibili.com/video/av116848293120388",
+      "engagement": 442,
+      "is_hot": false,
+      "author": "萝塔娜蒙-德洛斯丽尔",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "【忘却前夜】庞托斯 2t 5-5",
+      "summary": "海を前にして、倒さない敵はいない!",
+      "source": "bilibili",
+      "platform_region": "cn",
+      "lang": "zh",
+      "time": "2026-07-01T16:17:42+00:00",
+      "url": "http://www.bilibili.com/video/av116845608699025",
+      "engagement": 404,
+      "is_hot": false,
+      "author": "璃っ亓",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
     }
   ]
 }

@@ -16,12 +16,17 @@
 
 import {
   appendFileSync,
+  closeSync,
+  fstatSync,
   mkdirSync,
+  openSync,
   readFileSync,
+  readSync,
   writeFileSync,
 } from 'node:fs';
 import { mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
+import { randomUUID } from 'node:crypto';
 
 import type { RewindFilesResult } from '../types.js';
 import { ConfigurationError } from '../errors.js';
@@ -55,8 +60,20 @@ export class FileCheckpointStore {
 
   private dir: string | null = null;
   private seq = 0;
+  /** Whether this instance already checked the index tail for a torn append
+   *  (M-9 self-heal, mirrors JsonlSessionStore.append). */
+  private indexTailChecked = false;
   private seenThisTurn = new Set<string>();
   private currentTurnId: string | null = null;
+  // Finding M3 — per-instance blob token. `seq` is recovered from the index at
+  // bind() and advanced only in-process, so two FileCheckpointStores bound to
+  // the SAME session (two concurrent local queries with file checkpointing)
+  // both start at the same seq and would write the same `{seq}.blob` path —
+  // one overwriting the other, so a later rewind restored the WRONG file's
+  // bytes. Qualifying the blob name with an instance-unique token makes writes
+  // collision-free; the index line stores the full name, so rewind still reads
+  // the exact pre-image it recorded.
+  private readonly token = randomUUID().slice(0, 8);
 
   constructor(cfg: FileCheckpointStoreConfig = {}) {
     this.baseDir = join(resolveSessionsDir(cfg.sessionDir, cfg.env), 'checkpoints');
@@ -82,6 +99,25 @@ export class FileCheckpointStore {
   beginTurn(userMessageId: string): void {
     this.currentTurnId = userMessageId;
     this.seenThisTurn = new Set();
+    // Finding L4 — record a turn-position marker so a turn that changes NO file
+    // still has a place in the timeline. Without it, rewind(userMessageId)
+    // could only target turns that happened to mutate a file, so a user could
+    // not roll back to the state as-of a chat-only turn. The marker carries no
+    // absPath, so readIndex() (which requires one) excludes it from the restore
+    // plan; it exists purely for positioning. The marker does NOT consume a seq
+    // — it records the seq the turn's FIRST file-change will take, so the record
+    // seq space (0,1,2,…) is unperturbed and rewind's `seq >= markerSeq` window
+    // still starts exactly at this turn. Best-effort, never throws.
+    if (this.dir === null) return;
+    const seq = this.seq;
+    try {
+      mkdirSync(this.dir, { recursive: true });
+      this.appendIndexLine(
+        `${JSON.stringify({ userMessageId, seq, marker: 'turn_start' })}\n`,
+      );
+    } catch (err) {
+      this.debug(`checkpoint turn marker failed: ${errMessage(err)}`);
+    }
   }
 
   /**
@@ -101,7 +137,7 @@ export class FileCheckpointStore {
       if (preImage !== null) {
         const blobs = this.blobsDir();
         mkdirSync(blobs, { recursive: true });
-        blobName = `${seq}.blob`;
+        blobName = `${seq}-${this.token}.blob`;
         writeFileSync(join(blobs, blobName), preImage, 'utf8');
       }
       const line: FileChange = {
@@ -110,7 +146,7 @@ export class FileCheckpointStore {
         blob: blobName,
         seq,
       };
-      appendFileSync(this.indexPath(), `${JSON.stringify(line)}\n`, 'utf8');
+      this.appendIndexLine(`${JSON.stringify(line)}\n`);
     } catch (err) {
       this.debug(`checkpoint record failed for ${absPath}: ${errMessage(err)}`);
     }
@@ -132,8 +168,11 @@ export class FileCheckpointStore {
       throw new ConfigurationError('File rewinding is not enabled');
     }
     const changes = this.readIndex();
-    const startIdx = changes.findIndex((c) => c.userMessageId === userMessageId);
-    if (startIdx === -1) {
+    // Position the target turn: prefer its own earliest file-change seq; if the
+    // turn changed no file (finding L4), fall back to its turn_start marker.
+    const direct = changes.find((c) => c.userMessageId === userMessageId);
+    const startSeq = direct !== undefined ? direct.seq : this.turnMarkerSeq(userMessageId);
+    if (startSeq === null) {
       // Official soft-fail shape: an unknown checkpoint resolves with
       // canRewind:false + error (T2-2) instead of throwing. Configuration
       // misuse (store not bound) still throws above.
@@ -146,7 +185,9 @@ export class FileCheckpointStore {
         dryRun,
       };
     }
-    const window = changes.slice(startIdx);
+    // changes is seq-sorted; every change at or after the target's position is
+    // undone (a no-file-change target simply yields an empty, valid plan).
+    const window = changes.filter((c) => c.seq >= startSeq);
     const plan = new Map<string, string | null>();
     for (const c of window) {
       if (!plan.has(c.absPath)) plan.set(c.absPath, c.blob);
@@ -198,6 +239,44 @@ export class FileCheckpointStore {
     return join(this.dir as string, 'index.jsonl');
   }
 
+  /**
+   * Append one already-newline-terminated line to index.jsonl with the M-9
+   * torn-tail self-heal (mirrors JsonlSessionStore.append): the FIRST append
+   * per instance checks the file's last byte and, if a previous process died
+   * mid-append leaving no trailing newline, prefixes this line with '\n' so the
+   * fresh record does not glue onto the torn tail (which would lose BOTH lines
+   * on readIndex and leave a just-written blob unreferenced/unrewindable).
+   * The index file survives across processes on purpose (see the file header).
+   */
+  private appendIndexLine(line: string): void {
+    const file = this.indexPath();
+    let out = line;
+    if (!this.indexTailChecked) {
+      this.indexTailChecked = true;
+      if (this.endsWithoutNewlineSync(file)) out = `\n${line}`;
+    }
+    appendFileSync(file, out, 'utf8');
+  }
+
+  /** True when `file` exists, is non-empty, and its last byte is not '\n'. */
+  private endsWithoutNewlineSync(file: string): boolean {
+    let fd: number;
+    try {
+      fd = openSync(file, 'r');
+    } catch {
+      return false; // ENOENT etc.: nothing to heal
+    }
+    try {
+      const size = fstatSync(fd).size;
+      if (size === 0) return false;
+      const buf = Buffer.alloc(1);
+      readSync(fd, buf, 0, 1, size - 1);
+      return buf[0] !== 0x0a;
+    } finally {
+      closeSync(fd);
+    }
+  }
+
   private blobsDir(): string {
     return join(this.dir as string, 'blobs');
   }
@@ -221,6 +300,36 @@ export class FileCheckpointStore {
       }
     }
     return max + 1;
+  }
+
+  /** Finding L4 — earliest turn_start marker seq for a user message, or null.
+   *  Lets rewind() position a turn that recorded no file change. */
+  private turnMarkerSeq(userMessageId: string): number | null {
+    let raw: string;
+    try {
+      raw = readFileSync(this.indexPath(), 'utf8');
+    } catch {
+      return null;
+    }
+    let min: number | null = null;
+    for (const line of raw.split('\n')) {
+      const t = line.trim();
+      if (t.length === 0) continue;
+      try {
+        const o = JSON.parse(t) as { userMessageId?: unknown; seq?: unknown; marker?: unknown };
+        if (
+          o.marker === 'turn_start' &&
+          o.userMessageId === userMessageId &&
+          typeof o.seq === 'number' &&
+          (min === null || o.seq < min)
+        ) {
+          min = o.seq;
+        }
+      } catch {
+        // Skip corrupt lines.
+      }
+    }
+    return min;
   }
 
   private readIndex(): FileChange[] {

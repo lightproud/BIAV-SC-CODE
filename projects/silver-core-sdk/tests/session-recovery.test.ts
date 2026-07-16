@@ -195,11 +195,72 @@ describe('supervised auto-resume', () => {
     // Two fetch calls: the failure, then the successful redrive.
     expect(calls()).toBe(2);
 
+    // audit 2026-07-14 L-7: the resumed query re-emits its own system/init,
+    // but the supervisor promised ONE continuous session — exactly one init
+    // reaches the consumer across the transparent resume (a second one would
+    // render a ghost "new session" in init-as-boundary UIs).
+    const inits = messages.filter((m) => m.type === 'system' && m.subtype === 'init');
+    expect(inits).toHaveLength(1);
+
     // The write-ahead checkpoint left a trace, and the redrive settled it.
     const sid = initSessionId(messages);
     const types = (await transcript(sid)).map((e) => e.type);
     expect(types).toContain('pending_turn');
     expect(types).toContain('turn_complete');
+
+    await mgr.close();
+  });
+
+  it('①b retires the abandoned query (full teardown) BEFORE re-driving (audit 2026-07-14 H-2)', async () => {
+    // Before the fix, scheduleResume only swapped `q = start(...)`: the old
+    // query generator stayed suspended at the yield that surfaced the error
+    // result, so its run() finally — background-shell teardown, store flush,
+    // SessionEnd hooks — never executed (a leak per resume). The SessionEnd
+    // hook is the observable for that finally having run.
+    const store = new InMemorySessionStore();
+    const { fn } = scriptedFetch(['crash', textReplyEvents('recovered')]);
+    vi.stubGlobal('fetch', fn);
+
+    const events: string[] = [];
+    const mgr = createBptSession(
+      managerOptions({
+        sessionStore: store,
+        recovery: { autoResume: true, maxResumes: 2 },
+        hooks: {
+          SessionEnd: [
+            {
+              hooks: [
+                async () => {
+                  events.push('session-end');
+                  return {};
+                },
+              ],
+            },
+          ],
+        },
+      }),
+    );
+    for await (const m of mgr.query({ prompt: 'hello keeper' })) {
+      if (
+        m.type === 'system' &&
+        (m as any).subtype === 'status' &&
+        (m as any).status === 'auto-resume'
+      ) {
+        events.push('resume-observation');
+      }
+      if (m.type === 'result') events.push('result');
+    }
+
+    // Retired query's teardown ran, and it ran BEFORE the consumer saw the
+    // resume observation (i.e. before the re-drive) — the store flush must
+    // land before the resumed query re-reads persisted history. The second
+    // session-end is the final query's own natural teardown.
+    expect(events).toEqual([
+      'session-end',
+      'resume-observation',
+      'result',
+      'session-end',
+    ]);
 
     await mgr.close();
   });
@@ -225,6 +286,87 @@ describe('supervised auto-resume', () => {
     expect(resumeObservations(messages)).toHaveLength(2);
     // Initial attempt + 2 resumes = 3 fetch calls.
     expect(calls()).toBe(3);
+    // audit 2026-07-14 L-7: two resumes re-emitted two more inits internally;
+    // still exactly ONE init reaches the consumer.
+    expect(messages.filter((m) => m.type === 'system' && m.subtype === 'init')).toHaveLength(1);
+
+    await mgr.close();
+  });
+
+  // -------------------------------------------------------------------------
+  // ⑩ auto-resume must not lose the pre-resume spend (audit 2026-07-14 M-7)
+  // -------------------------------------------------------------------------
+  it('⑩ mgr.usage() sums spend across an auto-resume instead of keeping only the post-resume snapshot', async () => {
+    // total_cost_usd / modelUsage are cumulative PER QUERY RUN. The resumed
+    // run restarts its accumulator at 0, so before the M-7 fix the success
+    // result's snapshot OVERWROTE the swallowed run's spend in the ledger and
+    // mgr.usage().totalCostUsd under-reported by exactly the attempt-1 cost.
+    const counter = { n: 0 };
+    const ping = tool(
+      'ping',
+      'count invocations',
+      {},
+      async () => {
+        counter.n += 1;
+        return { content: [{ type: 'text', text: 'pong' }] };
+      },
+    );
+    const srv = createSdkMcpServer({ name: 'c', tools: [ping] });
+    const store = new InMemorySessionStore();
+
+    // Attempt 1: a PRICED tool_use turn (spend lands in the run accumulator),
+    // then the follow-up request crashes -> recoverable error RESULT carrying
+    // attempt 1's cumulative cost. Resume: a priced text turn completes ->
+    // success result carrying ONLY the resumed run's own cost.
+    const { fn, calls } = scriptedFetch([
+      toolUseReplyEvents('mcp__c__ping', {}, { id: 'toolu_m7' }),
+      'crash',
+      textReplyEvents('recovered'),
+    ]);
+    vi.stubGlobal('fetch', fn);
+
+    const mgr = createBptSession(
+      managerOptions({
+        sessionStore: store,
+        recovery: { autoResume: true, maxResumes: 2 },
+        mcpServers: { c: srv } as unknown as Options['mcpServers'],
+        permissionMode: 'bypassPermissions',
+        allowDangerouslySkipPermissions: true,
+        provider: {
+          apiKey: 'test-key',
+          promptCaching: false,
+          maxRetries: 0,
+          // The mock replies report model 'claude-test-1' (not in the static
+          // price table); price it explicitly so both runs carry real cost.
+          // 100 USD/MTok makes the figures round: attempt 1 = (25 in + 11 out)
+          // tokens = $0.0036; the resumed run = (25 in + 7 out) = $0.0032.
+          pricing: { 'claude-test-1': { input: 100, output: 100 } },
+        },
+      }),
+    );
+    const messages = await collect(mgr.query({ prompt: 'use the tool' }));
+
+    // Sanity: the scenario really exercised swallow + resume + fresh run.
+    const last = lastResult(messages);
+    expect(last.subtype).toBe('success');
+    expect(resumeObservations(messages)).toHaveLength(1);
+    expect(calls()).toBe(3);
+    expect(counter.n).toBe(1);
+    // The success result is the resumed run's OWN snapshot (accumulator
+    // restarted at 0) — before the fix this became the whole ledger.
+    expect(last.total_cost_usd).toBeCloseTo(0.0032, 9);
+
+    const u = mgr.usage();
+    // KEY (M-7): the ledger is the SUM of both runs, not the last snapshot.
+    expect(u.totalCostUsd).toBeCloseTo(0.0036 + 0.0032, 9);
+    // modelUsage folds the swallowed run's figures under the same model id.
+    expect(u.modelUsage['claude-test-1']!.costUSD).toBeCloseTo(0.0068, 9);
+    expect(u.modelUsage['claude-test-1']!.inputTokens).toBe(50);
+    expect(u.modelUsage['claude-test-1']!.outputTokens).toBe(18);
+    // `usage` was ALREADY summed per result before the fix (each result's
+    // usage covers only its own run) — verify the fix did not break that.
+    expect(u.usage.input_tokens).toBe(50);
+    expect(u.usage.output_tokens).toBe(18);
 
     await mgr.close();
   });

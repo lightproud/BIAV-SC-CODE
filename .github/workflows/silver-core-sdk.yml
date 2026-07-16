@@ -60,10 +60,11 @@ on:
         options: ['v2', 'v3', 'v4', 'v5']
         default: 'v5'
       run_evals:
-        description: 'Run the two-layer eval suite LIVE (SCS-REQ-002 loop 2: scenario runs on the real API + claude-sonnet-5 judging; keeper budget cap $30/month)'
+        description: 'Run the two-layer eval suite LIVE (SCS-REQ-002 loop 2: real-API scenarios + claude-sonnet-5 judging; $30/month judge cap). inline = judge per question; batches = Message Batches API at the 50% nightly rate (slower, job polls). GitHub caps dispatch inputs at 10, so the lane rides this choice instead of a new flag.'
         required: false
-        type: boolean
-        default: false
+        type: choice
+        options: ['false', 'inline', 'batches']
+        default: 'false'
       prompt_tasks:
         description: 'Task ids for the prompt A/B (e.g. 10,11 = the hard discriminating tasks; empty = all)'
         required: false
@@ -237,13 +238,18 @@ jobs:
 
   run-evals-live:
     # SCS-REQ-002 loop 2, LIVE round: the two-layer eval suite with the
-    # behavior layer driving the real API (12 prompt-session questions) and
-    # claude-sonnet-5 judging against the pinned evals/judge-prompt.md.
-    # Manual dispatch with run_evals=true only — spends API budget (keeper
-    # cap: $30/month judge-side; nightly Batches wiring is Phase 2).
-    if: github.event_name == 'workflow_dispatch' && github.event.inputs.run_evals == 'true'
+    # behavior layer driving the real API (12 prompt-session questions + the
+    # 8 Phase 2 harness questions: fault injection / resume / compaction
+    # pressure) and claude-sonnet-5 judging against the pinned
+    # evals/judge-prompt.md. Manual dispatch with run_evals=inline|batches
+    # only — spends API budget (keeper cap: $30/month judge-side;
+    # run_evals=batches judges via the Message Batches API at the 50% nightly
+    # rate). After the round,
+    # the REQ-2.2 regression gate compares dimension means against the
+    # committed baseline — warnings only, never a hard block.
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.run_evals != 'false' && github.event.inputs.run_evals != ''
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v7
         with:
@@ -262,7 +268,10 @@ jobs:
       - name: runEvals (two-layer, LIVE)
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: node scripts/run-evals.mjs --out evals-reports
+        run: node scripts/run-evals.mjs --out evals-reports ${{ github.event.inputs.run_evals == 'batches' && '--judge-batches' || '' }}
+      - name: Regression gate (REQ-2.2, advisory)
+        if: always()
+        run: node scripts/check-eval-regression.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:

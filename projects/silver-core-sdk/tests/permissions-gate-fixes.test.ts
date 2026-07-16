@@ -701,3 +701,92 @@ describe('sandbox escape is gated as its own ask (never piggybacks a command app
     expect(spy).not.toHaveBeenCalled(); // allowed by rule, no prompt
   });
 });
+
+// ---------------------------------------------------------------------------
+// auto-classifier DENY must survive an active ask route (deny > ask). An ask
+// route (hook 'ask' / session ask rule) previously skipped the mode switch that
+// held the classifier, routing a classifier-DENY call to canUseTool — which
+// could ALLOW it, inverting the documented deny > ask precedence.
+// ---------------------------------------------------------------------------
+
+describe('auto mode: classifier deny is not bypassed by an ask route', () => {
+  const denyAll: ToolClassifier = () => 'deny';
+  const allowingCanUse: CanUseTool = async () => ({ behavior: 'allow' }) as PermissionResult;
+
+  it('hook ask + classifier deny => deny (not allow via canUseTool)', async () => {
+    const spy = vi.fn(allowingCanUse);
+    const gate = makeGate({ mode: 'auto', classifier: denyAll, canUseTool: spy });
+    const res = await gate.check(
+      'Bash',
+      { command: 'rm -rf /' },
+      checkOpts({ hook: { decision: 'ask' } }),
+    );
+    expect(res.decision).toBe('deny');
+    expect(spy).not.toHaveBeenCalled();
+  });
+
+  it('session ask rule + classifier deny => deny (not allow via canUseTool)', async () => {
+    const spy = vi.fn(allowingCanUse);
+    const gate = makeGate({ mode: 'auto', classifier: denyAll, canUseTool: spy });
+    gate.applyUpdates([
+      { type: 'addRules', behavior: 'ask', rules: [{ toolName: 'Bash' }], destination: 'session' },
+    ]);
+    const res = await gate.check('Bash', { command: 'rm -rf /' }, checkOpts());
+    expect(res.decision).toBe('deny');
+    expect(spy).not.toHaveBeenCalled();
+  });
+
+  it('hook ask + classifier ALLOW still prompts (ask route is not widened away)', async () => {
+    const allowAll: ToolClassifier = () => 'allow';
+    const spy = vi.fn(allowingCanUse);
+    const gate = makeGate({ mode: 'auto', classifier: allowAll, canUseTool: spy });
+    const res = await gate.check(
+      'Bash',
+      { command: 'ls' },
+      checkOpts({ hook: { decision: 'ask' } }),
+    );
+    // classifier 'allow' must NOT short-circuit past the ask route: canUseTool
+    // decides, and here it allows — but it WAS consulted (the prompt happened).
+    expect(res.decision).toBe('allow');
+    expect(spy).toHaveBeenCalledTimes(1);
+  });
+
+  it('classifier deny with NO ask route still denies (regression control)', async () => {
+    const spy = vi.fn(allowingCanUse);
+    const gate = makeGate({ mode: 'auto', classifier: denyAll, canUseTool: spy });
+    const res = await gate.check('Bash', { command: 'rm -rf /' }, checkOpts());
+    expect(res.decision).toBe('deny');
+    expect(spy).not.toHaveBeenCalled();
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Bug-fix round 2026-07-15 — scoped rule specifier reaches builtin primary args
+// ---------------------------------------------------------------------------
+
+describe('scoped rules match WebFetch/WebSearch by their primary arg (PRIMARY_ARG_FIELD)', () => {
+  it('a WebFetch SSRF deny specifier matches the url field (not the JSON blob)', () => {
+    const rule = parseRule('WebFetch(http://169.254.169.254*)');
+    expect(
+      ruleMatches(rule, 'WebFetch', { url: 'http://169.254.169.254/latest/meta-data', prompt: 'x' }),
+    ).toBe(true);
+    // A different host is not caught by the specifier.
+    expect(ruleMatches(rule, 'WebFetch', { url: 'https://example.com', prompt: 'x' })).toBe(false);
+  });
+
+  it('the SSRF deny actually fires at the gate now', async () => {
+    const gate = makeGate({ disallowedTools: ['WebFetch(http://169.254.169.254*)'] });
+    const res = await gate.check(
+      'WebFetch',
+      { url: 'http://169.254.169.254/latest/meta-data', prompt: 'x' },
+      checkOpts({ readOnly: false }),
+    );
+    expect(res.decision).toBe('deny');
+  });
+
+  it('a WebSearch specifier matches the query field', () => {
+    const rule = parseRule('WebSearch(secret*)');
+    expect(ruleMatches(rule, 'WebSearch', { query: 'secret plans' })).toBe(true);
+    expect(ruleMatches(rule, 'WebSearch', { query: 'public info' })).toBe(false);
+  });
+});

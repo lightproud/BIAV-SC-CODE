@@ -19,13 +19,14 @@ import { z } from 'zod';
 
 import { createSdkMcpServer, SdkMcpConnection, tool } from '../src/mcp/sdk-server.js';
 import { HttpMcpConnection } from '../src/mcp/http.js';
-import { parseResourcesList, parseResourceContents } from '../src/mcp/stdio.js';
+import { parseResourcesList, parseResourceContents, StdioMcpConnection } from '../src/mcp/stdio.js';
 import { DefaultMcpRegistry } from '../src/mcp/registry.js';
-import type { CallToolResult, SdkMcpToolDefinition } from '../src/types.js';
+import type { CallToolResult, ElicitationHandler, SdkMcpToolDefinition } from '../src/types.js';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const ECHO_FIXTURE = path.join(HERE, 'fixtures', 'mcp-echo-server.mjs');
 const HTTP_FIXTURE = path.join(HERE, 'fixtures', 'mcp-http-server.mjs');
+const ELICIT_FIXTURE = path.join(HERE, 'fixtures', 'mcp-elicit-server.mjs');
 
 /** Fresh non-aborted signal for registry calls. */
 function liveSignal(): AbortSignal {
@@ -489,6 +490,52 @@ describe('StdioMcpConnection via DefaultMcpRegistry (echo fixture)', () => {
     expect(await waitForPidExit(pid)).toBe(true);
     expect(reg.statuses()[0]?.status).toBe('pending');
     expect(reg.allTools()).toEqual([]);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// stdio elicitation reply teardown: the fallback decline write must not leak
+// an unhandled rejection when the connection is closing (twin of the HTTP
+// "finding 15" guard in tools-v2.test.ts; the terminal .catch was applied to
+// http.ts but originally missed on stdio.ts).
+// ---------------------------------------------------------------------------
+
+describe('StdioMcpConnection elicitation reply teardown', () => {
+  it('does not emit an unhandled rejection when both reply writes fail on a closing connection', async () => {
+    const unhandled: unknown[] = [];
+    const onUnhandled = (reason: unknown): void => {
+      unhandled.push(reason);
+    };
+    process.on('unhandledRejection', onUnhandled);
+
+    let conn: StdioMcpConnection | undefined;
+    // Closing the connection while resolving the elicitation makes BOTH the
+    // result write AND the fallback decline write throw McpError (not open).
+    const handler: ElicitationHandler = async () => {
+      await conn?.close();
+      return { action: 'accept', content: { name: 'x' } };
+    };
+
+    try {
+      conn = new StdioMcpConnection(
+        { type: 'stdio', command: process.execPath, args: [ELICIT_FIXTURE] },
+        { name: 'elicit', elicitation: handler },
+      );
+      await conn.connect();
+      try {
+        await conn.callTool('ask', {});
+      } catch {
+        // callTool rejects once close() fails all pending; not the point.
+      }
+      // Give the detached decline-write time to throw and surface (if unhandled).
+      for (let i = 0; i < 6; i++) {
+        await new Promise((r) => setTimeout(r, 10));
+      }
+      expect(unhandled).toEqual([]);
+    } finally {
+      process.off('unhandledRejection', onUnhandled);
+      await conn?.close().catch(() => {});
+    }
   });
 });
 

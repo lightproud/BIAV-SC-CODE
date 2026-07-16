@@ -32,25 +32,30 @@ import {
 } from '../src/subagents/runtime.js';
 import { DefaultHookRunner } from '../src/hooks/runner.js';
 import { DefaultPermissionGate } from '../src/permissions/gate.js';
+import { createShellManager } from '../src/tools/shells.js';
 import { AbortError } from '../src/errors.js';
 import type {
   BuiltinTool,
   EngineConfig,
   McpRegistry,
   SessionStore,
+  ShellManager,
   SpawnSubagentParams,
   StoredSession,
+  StreamRequest,
   ToolContext,
   Transport,
 } from '../src/internal/contracts.js';
 import type {
   AgentDefinition,
+  ApiKeySource,
   APIMessageParam,
   CallToolResult,
   HookInput,
   McpServerStatus,
   Options,
   RawMessageStreamEvent,
+  SDKMessage,
 } from '../src/types.js';
 import {
   MockTransport,
@@ -161,6 +166,12 @@ function makeRuntime(cfg: {
   env?: Record<string, string | undefined>;
   /** Transport override (for a hanging stream that trips the stall watchdog). */
   transport?: MockTransport | Transport;
+  /** Spawn-time checkpoint recorder resolver (audit 2026-07-14 H-3). */
+  getRecordFileChange?: SubagentRuntimeOptions['getRecordFileChange'];
+  /** Query-wide shell session (per-child persistent-state fork, M-10). */
+  shells?: ShellManager;
+  /** Task lifecycle sink (task_started/... observability messages). */
+  emitObservability?: (msg: SDKMessage) => void;
 }): RuntimeHarness {
   const transport = (cfg.transport ?? new MockTransport(cfg.scripts)) as MockTransport;
   const starts: string[] = [];
@@ -220,6 +231,9 @@ function makeRuntime(cfg: {
     sessionId: () => engineConfig.sessionId,
     debug: () => {},
     familyBudget: cfg.familyBudget,
+    getRecordFileChange: cfg.getRecordFileChange,
+    shells: cfg.shells,
+    emitObservability: cfg.emitObservability,
   };
   return { runtime: createSubagentRuntime(opts), transport, starts, stops, stopInputs };
 }
@@ -328,6 +342,10 @@ describe('createAgentTool', () => {
     expect(tool.name).toBe('Agent');
     expect(tool.readOnly).toBe(false);
     expect(tool.isFileEdit).toBe(false);
+    // Batched foreground Agent calls join the engine's concurrent tool group
+    // (child-agent serialization fix): each child runs in its own isolated
+    // loop, so parallel batch-mates must overlap instead of serializing.
+    expect(tool.parallelSafe).toBe(true);
     // Official required set: subagent_type is optional (defaults to
     // general-purpose in execute()).
     expect(tool.inputSchema.required).toEqual(['description', 'prompt']);
@@ -592,6 +610,78 @@ describe('subagent runtime — foreground', () => {
     const second = h.runtime.drainUsageLedger();
     expect(second.usage.input_tokens).toBe(0);
     expect(second.cost).toBe(0);
+  });
+
+  it('threads the checkpoint recorder into the child ToolContext (audit 2026-07-14 H-3)', async () => {
+    // Before the fix, childToolContext carried no recordFileChange, so child
+    // Write/Edit pre-images never reached the checkpoint index and rewind()
+    // reported success while child edits stayed un-rolled-back.
+    const recorded: Array<[string, string | null]> = [];
+    const sawRecorder: boolean[] = [];
+    const probe: BuiltinTool = {
+      name: 'Probe',
+      description: 'records ctx.recordFileChange presence',
+      inputSchema: { type: 'object', properties: {} },
+      readOnly: true,
+      async execute(_input, ctx) {
+        sawRecorder.push(typeof ctx.recordFileChange === 'function');
+        ctx.recordFileChange?.('/tmp/sub-test/x.txt', 'pre-image');
+        return { content: 'probed' };
+      },
+    };
+    const h = makeRuntime({
+      scripts: [
+        toolUseReplyEvents('Probe', {}, { model: 'claude-sonnet-4-5' }),
+        textReplyEvents('done', { model: 'claude-sonnet-4-5' }),
+      ],
+      baseBuiltins: new Map([['Probe', probe]]),
+      agents: { prober: { description: 'p', prompt: 'probe things', tools: ['Probe'] } },
+      getRecordFileChange: () => (abs, pre) => {
+        recorded.push([abs, pre]);
+      },
+    });
+    const res = await h.runtime.makeSpawnFn(0)(baseParams({ subagentType: 'prober' }));
+    expect(res.isError).toBe(false);
+    expect(sawRecorder).toEqual([true]);
+    expect(recorded).toEqual([['/tmp/sub-test/x.txt', 'pre-image']]);
+  });
+
+  it('two concurrent foreground spawns overlap (no runtime-level serialization)', async () => {
+    // Guards the runtime half of the child-agent serialization fix: the
+    // engine may await a batch of Agent execute()s via Promise.all, so the
+    // runtime must not hold a global lock that would re-serialize them.
+    const order: string[] = [];
+    class SlowTransport implements Transport {
+      readonly requests: StreamRequest[] = [];
+      apiKeySource(): ApiKeySource {
+        return 'user';
+      }
+      async *stream(req: StreamRequest): AsyncGenerator<RawMessageStreamEvent, void> {
+        this.requests.push(req);
+        const label = lastUserContent(req.messages).includes('alpha') ? 'alpha' : 'beta';
+        order.push(`start:${label}`);
+        await new Promise((r) => setTimeout(r, 10));
+        order.push(`end:${label}`);
+        for (const ev of textReplyEvents(`${label} done`, { model: 'claude-sonnet-4-5' })) {
+          yield ev;
+        }
+      }
+    }
+    const h = makeRuntime({ scripts: [], transport: new SlowTransport() });
+    const spawn = h.runtime.makeSpawnFn(0);
+    const [a, b] = await Promise.all([
+      spawn(baseParams({ prompt: 'alpha task' })),
+      spawn(baseParams({ prompt: 'beta task' })),
+    ]);
+
+    expect(a.isError).toBe(false);
+    expect(b.isError).toBe(false);
+    expect(a.content).toContain('alpha done');
+    expect(b.content).toContain('beta done');
+    // Both children START before either ENDS: execution windows overlap.
+    expect(order).toHaveLength(4);
+    expect(order.slice(0, 2).every((s) => s.startsWith('start:'))).toBe(true);
+    expect(order.slice(2).every((s) => s.startsWith('end:'))).toBe(true);
   });
 
   it('restricts the child tool set via agentDef.tools (Bash absent)', async () => {
@@ -1057,6 +1147,8 @@ describe('subagent runtime — FORK mode', () => {
     const res = await h.runtime.makeSpawnFn(0)(
       baseParams({ fork: true, parentHistory: parentCtx(), prompt: 'do it' }),
     );
+    // The single sidechain_end is emitted at teardown (待裁②), not per run.
+    await h.runtime.settleAll();
     const entries = store.entries.get(res.agentId) ?? [];
     const start = entries.find((e) => e['type'] === 'sidechain_start');
     expect(start).toBeDefined();
@@ -1070,17 +1162,20 @@ describe('subagent runtime — FORK mode', () => {
     expect(
       entries.some((e) => e['type'] === 'assistant' && e['isSidechain'] === true),
     ).toBe(true);
-    const end = entries.find((e) => e['type'] === 'sidechain_end');
-    expect(end).toBeDefined();
-    expect(end?.['is_error']).toBe(false);
+    // Exactly ONE start and ONE end bracket the whole child life.
+    expect(entries.filter((e) => e['type'] === 'sidechain_start')).toHaveLength(1);
+    const ends = entries.filter((e) => e['type'] === 'sidechain_end');
+    expect(ends).toHaveLength(1);
+    expect(ends[0]?.['is_error']).toBe(false);
     // The parent session transcript received ZERO entries.
     expect(store.entries.get('parent-sess')).toBeUndefined();
   });
 
-  it('writes sidechain_end even when the child ABORTS mid-run (finally, not post-loop)', async () => {
-    // The terminal marker must be persisted on every exit path — settleAll's M4
-    // contract waits for it. A child aborted mid-stream previously skipped the
-    // post-loop write, leaving its transcript unterminated.
+  it('emits sidechain_end at teardown even when the child ABORTS mid-run (待裁②)', async () => {
+    // The single terminal marker is written by finalizeSidechain at settleAll,
+    // and an aborted child (never a clean result) carries is_error: true. This
+    // guarantees the transcript is terminated once the query settles, on every
+    // exit path including a mid-stream abort.
     class AbortingTransport implements Transport {
       apiKeySource(): 'user' {
         return 'user';
@@ -1100,11 +1195,13 @@ describe('subagent runtime — FORK mode', () => {
     // The spawn may reject or return an error result on abort; either way the
     // transcript's terminal marker must be present.
     await h.runtime.makeSpawnFn(0)(baseParams({ subagentType: 'general-purpose' })).catch(() => undefined);
+    // Teardown emits the single end (待裁②).
+    await h.runtime.settleAll();
     const agentIds = [...store.entries.keys()].filter((k) => k !== 'parent-sess');
     const entries = store.entries.get(agentIds[0]!) ?? [];
-    const end = entries.find((e) => e['type'] === 'sidechain_end');
-    expect(end).toBeDefined();
-    expect(end?.['is_error']).toBe(true); // aborted -> pessimistic error marker
+    const ends = entries.filter((e) => e['type'] === 'sidechain_end');
+    expect(ends).toHaveLength(1);
+    expect(ends[0]?.['is_error']).toBe(true); // aborted -> pessimistic error marker
   });
 
   it('records a sidechain for an isolated child too (fork:false marker)', async () => {
@@ -1398,6 +1495,164 @@ describe('subagent runtime — task control', () => {
       },
     });
     expect(h.runtime.agentNames()).toEqual(['a', 'b', 'general-purpose']);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Per-child persistent shell-state fork (audit 2026-07-14 M-10)
+// ---------------------------------------------------------------------------
+
+describe('subagent runtime — per-child shell-state fork (audit 2026-07-14 M-10)', () => {
+  it('each spawned child gets a FORKED persistent namespace seeded from the parent snapshot', async () => {
+    const parentShells = createShellManager(() => {});
+    expect(parentShells.stateDir).not.toBe('');
+    writeFileSync(join(parentShells.stateDir, 'cwd'), '/tmp/parent-was-here');
+    const seen: Array<ShellManager | undefined> = [];
+    const probe: BuiltinTool = {
+      name: 'Probe',
+      description: 'captures ctx.shells',
+      inputSchema: { type: 'object', properties: {} },
+      readOnly: true,
+      async execute(_input, ctx) {
+        seen.push(ctx.shells);
+        return { content: 'ok' };
+      },
+    };
+    try {
+      const h = makeRuntime({
+        scripts: [
+          toolUseReplyEvents('Probe', {}, { model: 'claude-sonnet-4-5' }),
+          textReplyEvents('done A', { model: 'claude-sonnet-4-5' }),
+          toolUseReplyEvents('Probe', {}, { model: 'claude-sonnet-4-5' }),
+          textReplyEvents('done B', { model: 'claude-sonnet-4-5' }),
+        ],
+        baseBuiltins: new Map([['Probe', probe]]),
+        shells: parentShells,
+      });
+      await h.runtime.makeSpawnFn(0)(baseParams());
+      await h.runtime.makeSpawnFn(0)(baseParams());
+      expect(seen).toHaveLength(2);
+      const [a, b] = seen;
+      // Each child got its OWN namespace — not the parent's, not a sibling's.
+      expect(a!.stateDir).not.toBe('');
+      expect(a!.stateDir).not.toBe(parentShells.stateDir);
+      expect(b!.stateDir).not.toBe(parentShells.stateDir);
+      expect(a!.stateDir).not.toBe(b!.stateDir);
+      // Seeded from the parent's snapshot as of spawn time.
+      expect(readFileSync(join(a!.stateDir, 'cwd'), 'utf8')).toBe('/tmp/parent-was-here');
+      expect(readFileSync(join(b!.stateDir, 'cwd'), 'utf8')).toBe('/tmp/parent-was-here');
+      // A child-side mutation stays in ITS namespace: the parent's next
+      // foreground Bash and the sibling both keep the original snapshot.
+      writeFileSync(join(a!.stateDir, 'cwd'), '/tmp/child-a-moved');
+      expect(readFileSync(join(parentShells.stateDir, 'cwd'), 'utf8')).toBe(
+        '/tmp/parent-was-here',
+      );
+      expect(readFileSync(join(b!.stateDir, 'cwd'), 'utf8')).toBe('/tmp/parent-was-here');
+    } finally {
+      parentShells.dispose();
+    }
+  });
+
+  it('no shell manager wired -> children still get no shells (no phantom fork)', async () => {
+    const seen: Array<ShellManager | undefined> = [];
+    const probe: BuiltinTool = {
+      name: 'Probe',
+      description: 'captures ctx.shells',
+      inputSchema: { type: 'object', properties: {} },
+      readOnly: true,
+      async execute(_input, ctx) {
+        seen.push(ctx.shells);
+        return { content: 'ok' };
+      },
+    };
+    const h = makeRuntime({
+      scripts: [
+        toolUseReplyEvents('Probe', {}, { model: 'claude-sonnet-4-5' }),
+        textReplyEvents('done', { model: 'claude-sonnet-4-5' }),
+      ],
+      baseBuiltins: new Map([['Probe', probe]]),
+    });
+    await h.runtime.makeSpawnFn(0)(baseParams());
+    expect(seen).toEqual([undefined]);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Foreground kill path (audit 2026-07-14 M-11)
+// ---------------------------------------------------------------------------
+
+/** Transport whose stream hangs until the request signal aborts. */
+class HangUntilAbortTransport implements Transport {
+  apiKeySource(): ApiKeySource {
+    return 'user';
+  }
+  async *stream(req: StreamRequest): AsyncGenerator<RawMessageStreamEvent, void> {
+    await new Promise<void>((_, reject) => {
+      const sig = req.signal;
+      if (sig?.aborted) {
+        reject(new AbortError());
+        return;
+      }
+      sig?.addEventListener('abort', () => reject(new AbortError()), { once: true });
+    });
+  }
+}
+
+describe('subagent runtime — foreground kill path (audit 2026-07-14 M-11)', () => {
+  it('killAgent on a running foreground child: status killed (not failed), foreground wording, spawn resolves isError', async () => {
+    const emitted: SDKMessage[] = [];
+    const h = makeRuntime({
+      scripts: [],
+      transport: new HangUntilAbortTransport(),
+      emitObservability: (m) => emitted.push(m),
+    });
+    const pending = h.runtime.makeSpawnFn(0)(baseParams());
+    // Discover the agentId from the task_started observability message, then
+    // stop it mid-run via the TaskStop bridge (poll: the child registers in
+    // the registry just after task_started fires).
+    let agentId: string | undefined;
+    for (let i = 0; i < 200 && agentId === undefined; i++) {
+      await tick(1);
+      const started = emitted.find(
+        (m) => 'subtype' in m && m.subtype === 'task_started',
+      );
+      if (started !== undefined) agentId = (started as { task_id: string }).task_id;
+    }
+    expect(agentId).toBeDefined();
+    let stopped: string | undefined;
+    for (let i = 0; i < 200 && stopped === undefined; i++) {
+      stopped = h.runtime.stopAgent(agentId!);
+      if (stopped === undefined) await tick(1);
+    }
+    // (b) honest wording: this record is FOREGROUND, not background.
+    expect(stopped).toBe(`Stopped foreground subagent ${agentId}.`);
+    const note = emitted.find(
+      (m) => 'subtype' in m && m.subtype === 'task_notification',
+    ) as { summary: string } | undefined;
+    expect(note?.summary).toContain('foreground subagent');
+    expect(note?.summary).not.toContain('background');
+    // (c) the spawn RESOLVES to an isError result — the AbortError must not
+    // propagate through the Agent tool and kill the whole parent query.
+    const res = await pending;
+    expect(res.isError).toBe(true);
+    expect(res.content).toContain('stopped');
+    expect(res.background).toBe(false);
+    expect(res.agentId).toBe(agentId);
+    // (a) the record's terminal status stayed 'killed' — the foreground catch
+    // did not clobber it to 'failed' (observable via the TaskStop bridge).
+    expect(h.runtime.stopAgent(agentId!)).toBe(`Subagent ${agentId} already killed.`);
+  });
+
+  it('a genuine parent-signal abort still rethrows AbortError from a foreground spawn', async () => {
+    const h = makeRuntime({
+      scripts: [],
+      transport: new HangUntilAbortTransport(),
+    });
+    const ac = new AbortController();
+    const pending = h.runtime.makeSpawnFn(0)(baseParams({ signal: ac.signal }));
+    await tick(5);
+    ac.abort();
+    await expect(pending).rejects.toBeInstanceOf(AbortError);
   });
 });
 

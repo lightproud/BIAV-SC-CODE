@@ -11,6 +11,8 @@ import { describe, expect, it } from 'vitest';
 
 import { runAgentLoop } from '../src/engine/loop.js';
 import { DefaultPermissionGate } from '../src/permissions/gate.js';
+import { DefaultHookRunner } from '../src/hooks/runner.js';
+import { createSessionGoal } from '../src/hooks/session-goal.js';
 import type {
   AggregatedHookResult,
   EngineConfig,
@@ -192,7 +194,13 @@ describe('Stop-hook block semantics', () => {
     expect(lastResult(messages).subtype).toBe('success');
   });
 
-  it('child loops (parentToolUseId set) ignore Stop-hook blocks', async () => {
+  it('child loops (parentToolUseId set) never INVOKE the Stop hook', async () => {
+    // Regression (audit 2026-07-15): a child's natural end must not fire the
+    // Stop hook AT ALL — not merely have its 'block' decision ignored. A Stop
+    // hook such as /goal's onStop mutates session-goal state as a side effect,
+    // so invoking it on a child's transcript would let the child clear or
+    // pollute the ROOT goal (conversation loses stop state). The gate now
+    // wraps the invocation, so the hook is never consulted for a child.
     const transport = new MockTransport([textReplyEvents('child answer')]);
     const hooks = new ScriptedStopHooks([
       { decision: 'deny', decisionReason: 'goal gate must not capture children' },
@@ -206,6 +214,45 @@ describe('Stop-hook block semantics', () => {
     );
     expect(transport.requests).toHaveLength(1);
     expect(lastResult(messages).subtype).toBe('success');
+    // The heart of the fix: the child never reached the Stop hook, so no
+    // onStop side effect (goal clear / block-counter bump / evaluator call)
+    // could have run against the child's transcript.
+    expect(hooks.stopInputs).toHaveLength(0);
+  });
+
+  it('a child goal-gate that would "clear on met" leaves the armed root goal intact', async () => {
+    // End-to-end shape of the bug: wire the REAL /goal primitive as a
+    // session-scoped Stop hook, arm a root goal, then run a CHILD loop to
+    // natural end. The evaluator is stubbed to return a MET verdict, so if the
+    // child's natural end reached onStop AT ALL it would clear the root goal
+    // (pre-fix behavior). Post-fix the child never invokes Stop, so the goal
+    // stays armed. Discriminating and network-free (injected transport).
+    const metEvaluator = new MockTransport([
+      textReplyEvents('{"ok": true, "reason": "child subtask done"}'),
+    ]);
+    const goal = createSessionGoal({
+      context: () => 'the child finished its subtask',
+      utility: { transport: metEvaluator },
+    });
+    goal.set('the ROOT task is fully complete');
+    const beforeCondition = goal.condition;
+
+    const transport = new MockTransport([textReplyEvents('child answer')]);
+    const hooks = new DefaultHookRunner({ hooks: goal.hooks(), debug: () => {} });
+    const messages = await collect(
+      runAgentLoop(
+        [{ role: 'user', content: 'child subtask' }],
+        makeDeps(transport, hooks),
+        makeConfig({ parentToolUseId: 'toolu_parent_2' }),
+      ),
+    );
+    expect(lastResult(messages).subtype).toBe('success');
+    // The root goal is untouched by the child's natural end; the stubbed
+    // evaluator was never consulted (would have cleared the goal if it had).
+    expect(goal.condition).toBe(beforeCondition);
+    expect(goal.condition).not.toBeNull();
+    expect(goal.blocks).toBe(0);
+    expect(metEvaluator.requests).toHaveLength(0);
   });
 
   it('a stubborn block still honors maxTurns', async () => {

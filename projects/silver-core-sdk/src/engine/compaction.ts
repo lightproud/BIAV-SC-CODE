@@ -298,42 +298,69 @@ export function partitionForCompaction(
     const msg = messages[i];
     if (msg !== undefined && isGenuineUserTurn(msg)) genuine.push(i);
   }
-  if (genuine.length === 0) return null; // cannot compact safely
-
-  // Candidates are the genuine user turns ONLY. The former degenerate
-  // empty-suffix candidate (i = messages.length) could — under an explicit
-  // `minRecentTurns: 0` — fold the JUST-SUBMITTED prompt into the summary and
-  // leave the request ending on an assistant turn (audit 2026-07-10 L3). The
-  // most aggressive safe cut is the LAST genuine user turn: it keeps at least
-  // the current prompt verbatim under any configuration.
-  const candidates = [...genuine];
-  const evaluated = candidates.map((i) => {
-    const suffix = messages.slice(i);
-    return {
-      i,
-      tokens: estimateMessagesTokens(suffix),
-      turns: countGenuineUserTurns(suffix),
-    };
-  });
-
-  const both = evaluated.filter(
-    (c) => c.tokens <= keepBudget && c.turns >= cfg.minRecentTurns,
-  );
   let chosen: number;
-  if (both.length > 0) {
-    // Largest cut index within budget that still keeps minRecentTurns -> the
-    // minimal viable suffix, maximizing the fold.
-    chosen = Math.max(...both.map((c) => c.i));
-  } else {
-    const withTurns = evaluated.filter((c) => c.turns >= cfg.minRecentTurns);
-    if (withTurns.length > 0) {
-      // minRecentTurns cannot fit in keepBudget: honor minRecentTurns anyway.
-      chosen = Math.max(...withTurns.map((c) => c.i));
+  if (genuine.length > 0) {
+    // Candidates are the genuine user turns ONLY. The former degenerate
+    // empty-suffix candidate (i = messages.length) could — under an explicit
+    // `minRecentTurns: 0` — fold the JUST-SUBMITTED prompt into the summary and
+    // leave the request ending on an assistant turn (audit 2026-07-10 L3). The
+    // most aggressive safe cut is the LAST genuine user turn: it keeps at least
+    // the current prompt verbatim under any configuration.
+    const candidates = [...genuine];
+    const evaluated = candidates.map((i) => {
+      const suffix = messages.slice(i);
+      return {
+        i,
+        tokens: estimateMessagesTokens(suffix),
+        turns: countGenuineUserTurns(suffix),
+      };
+    });
+
+    const both = evaluated.filter(
+      (c) => c.tokens <= keepBudget && c.turns >= cfg.minRecentTurns,
+    );
+    if (both.length > 0) {
+      // Largest cut index within budget that still keeps minRecentTurns -> the
+      // minimal viable suffix, maximizing the fold.
+      chosen = Math.max(...both.map((c) => c.i));
     } else {
-      // Not enough genuine user turns exist to satisfy minRecentTurns: keep as
-      // much as possible (smallest genuine cut index).
-      chosen = Math.min(...genuine);
+      const withTurns = evaluated.filter((c) => c.turns >= cfg.minRecentTurns);
+      if (withTurns.length > 0) {
+        // minRecentTurns cannot fit in keepBudget: honor minRecentTurns anyway.
+        chosen = Math.max(...withTurns.map((c) => c.i));
+      } else {
+        // Not enough genuine user turns exist to satisfy minRecentTurns: keep as
+        // much as possible (smallest genuine cut index).
+        chosen = Math.min(...genuine);
+      }
     }
+  } else {
+    // Pure tool-loop (finding H1): a single string prompt drives an autonomous
+    // assistant<->tool_result loop, so index 0 is the ONLY genuine user turn and
+    // it is excluded as a cut point. The old code returned null HERE and never
+    // compacted such a history, so context grew unbounded until a 'prompt too
+    // long' 400 — with compaction on by default, this silently killed the SDK's
+    // headline workload. Fall back to ASSISTANT-turn boundaries: cutting just
+    // before an assistant turn whose predecessor is a user turn (a complete
+    // tool_result or the prompt) splits no tool_use/tool_result pair, and —
+    // paired with a user-TERMINATED fold in performCompaction — keeps role
+    // alternation valid (the suffix leads with that assistant turn). Keep as
+    // much recent context as fits the keep budget.
+    const asstCuts: number[] = [];
+    for (let i = 2; i < messages.length; i += 1) {
+      if (messages[i]?.role === 'assistant' && messages[i - 1]?.role === 'user') {
+        asstCuts.push(i);
+      }
+    }
+    if (asstCuts.length === 0) return null; // no safe boundary to fold at
+    const fitting = asstCuts.filter(
+      (i) => estimateMessagesTokens(messages.slice(i)) <= keepBudget,
+    );
+    // Smallest fitting cut = MOST recent context retained under budget. If even
+    // the smallest suffix overflows the keep budget, fall to the largest cut
+    // (best-effort minimal suffix); performCompaction's suffix pre-tier then
+    // sheds the remaining bulk so the request still fits the window.
+    chosen = fitting.length > 0 ? Math.min(...fitting) : Math.max(...asstCuts);
   }
 
   const prefix = messages.slice(0, chosen);
@@ -502,16 +529,36 @@ async function foldViaApi(
   // on the foreign signatures (previously caught + silently degraded to the
   // deterministic fold, so useApiSummary never worked with a distinct model).
   // The summary is mechanical and needs no thinking, so strip it unconditionally.
-  const summaryPrefix = prefix.map((m) =>
-    m.role === 'assistant' && Array.isArray(m.content)
-      ? {
-          ...m,
-          content: m.content.filter(
-            (b) => b.type !== 'thinking' && b.type !== 'redacted_thinking',
-          ),
-        }
-      : m,
-  );
+  // Every tool_use id that has a paired tool_result inside the prefix. A
+  // tool_use WITHOUT one (reachable when the prefix cut lands right after an
+  // assistant tool_use turn, so its result sits beyond the cut) makes the
+  // summary request 400 "tool_use ids without tool_result" — caught below and
+  // silently degraded to the deterministic fold, wasting the API call. Strip
+  // such orphan tool_use blocks (mirrors the C6 orphan filter in loop.ts).
+  const pairedResultIds = new Set<string>();
+  for (const m of prefix) {
+    if (!Array.isArray(m.content)) continue;
+    for (const b of m.content) {
+      if (b.type === 'tool_result') pairedResultIds.add(b.tool_use_id);
+    }
+  }
+  const summaryPrefix = prefix
+    .map((m) =>
+      m.role === 'assistant' && Array.isArray(m.content)
+        ? {
+            ...m,
+            content: m.content.filter(
+              (b) =>
+                b.type !== 'thinking' &&
+                b.type !== 'redacted_thinking' &&
+                (b.type !== 'tool_use' || pairedResultIds.has(b.id)),
+            ),
+          }
+        : m,
+    )
+    // An assistant turn left empty by the strip would itself 400 (empty
+    // content); drop it — the summary is mechanical and loses nothing.
+    .filter((m) => !Array.isArray(m.content) || m.content.length > 0);
   const req: StreamRequest = {
     model: summaryModel,
     max_tokens: Math.min(4096, config.maxOutputTokens),
@@ -522,10 +569,19 @@ async function foldViaApi(
     ],
     signal,
   };
+  // Cross-protocol routing (v0.55.0): compaction.model may be served on a
+  // different wire protocol than the session model (the exact subagent-routing
+  // failure mode — right model, wrong route, 400 "model not found"). Consult
+  // the query-composed transportForModel when the summary model differs;
+  // same-model (or no composer) keeps the session transport unchanged.
+  const summaryTransport =
+    deps.transportForModel !== undefined && summaryModel !== config.model
+      ? await deps.transportForModel(summaryModel, 'compaction')
+      : deps.transport;
   const started = Date.now();
   try {
     const acc = new MessageAccumulator();
-    for await (const ev of deps.transport.stream(req)) {
+    for await (const ev of summaryTransport.stream(req)) {
       if (signal.aborted) throw new AbortError();
       acc.feed(ev);
     }
@@ -739,12 +795,45 @@ async function* performCompaction(
   // this only shrinks what the summarizer / recap SEE, never what persists.
   const shedPrefix = preTierPrefix(part.prefix, cfg);
 
-  const synthetic = cfg.useApiSummary
+  let synthetic = cfg.useApiSummary
     ? await foldViaApi(shedPrefix, deps, config, effectiveInstructions, signal, onSummaryCall)
     : foldDeterministic(shedPrefix, effectiveInstructions);
 
+  // Finding H1 — user-terminated fold for pure tool-loop compaction. When the
+  // retained suffix leads with an assistant turn (the only shape reachable via
+  // partitionForCompaction's assistant-boundary fallback), the normal
+  // [user(prompt), assistant(recap)] fold would put TWO assistant turns back to
+  // back on the wire (recap + the suffix's first turn) and 400. Collapse it to
+  // ONE user turn carrying the labeled recap text, so the sequence stays
+  // user(summary) -> assistant(tool_use) -> user(tool_result) … Genuine-turn
+  // folds (suffix leads with a user turn) keep the exact [user, assistant]
+  // shape the byte-golden tests pin.
+  if (part.suffix[0]?.role === 'assistant') {
+    const recap = textOf(synthetic[synthetic.length - 1]?.content ?? []);
+    synthetic = [{ role: 'user', content: recap }];
+  }
+
   // In-place front replacement keeps the query layer's reference valid.
   view.messages.splice(0, part.prefix.length, ...synthetic);
+
+  // Finding M5 — retained-suffix pre-tier. When even the minimal viable suffix
+  // still overflows the input budget (two very large recent tool_results, or a
+  // pure tool-loop whose smallest safe fold does not fit), shed the RETAINED
+  // suffix's oversized string tool_results too, so the next request fits the
+  // window instead of re-folding an already-tiny prefix forever and still 400ing.
+  // preTierPrefix preserves message count and tool_use/tool_result pairing (it
+  // only shrinks string tool_result CONTENT), so this stays boundary-safe.
+  if (cfg.preTier) {
+    const inputBudget = window - config.maxOutputTokens;
+    if (estimateMessagesTokens(view.messages) > inputBudget) {
+      const suffixStart = synthetic.length;
+      const suffixMsgs = view.messages.slice(suffixStart);
+      const shedSuffix = preTierPrefix(suffixMsgs, cfg);
+      if (shedSuffix !== suffixMsgs) {
+        view.messages.splice(suffixStart, suffixMsgs.length, ...shedSuffix);
+      }
+    }
+  }
 
   const boundary: SDKCompactBoundaryMessage = {
     type: 'system',

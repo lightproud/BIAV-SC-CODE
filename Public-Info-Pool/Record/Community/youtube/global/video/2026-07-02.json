@@ -1,8 +1,8 @@
 {
   "date": "2026-07-02",
-  "archived_at": "2026-07-03T12:06:37.918847+00:00",
+  "archived_at": "2026-07-12T03:50:58.545636+00:00",
   "source": "youtube",
-  "item_count": 26,
+  "item_count": 27,
   "items": [
     {
       "title": "[Morimens] Pontos  - &quot;Short&quot; more comp testing, stripping pontos bare, then maybe pulling",
@@ -445,8 +445,21 @@
       "content_type": "video",
       "region": "global",
       "archive_subtype": "video"
+    },
+    {
+      "title": "忘卻前夜 潘打樂園 癲狂列車",
+      "summary": "為什麼...沒有知無不言... 總感覺臭腳回合卡的不太好背景音樂：Johann Strauss II - \"The Blue Danube Waltz\" ...",
+      "source": "youtube",
+      "platform_region": "global",
+      "lang": "",
+      "time": "2026-07-02T12:29:00Z",
+      "url": "https://www.youtube.com/watch?v=kNYLPU7G1Ds",
+      "engagement": 51,
+      "is_hot": false,
+      "author": "海之心",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
     }
-  ],
-  "region": "global",
-  "content_subtype": "video"
+  ]
 }

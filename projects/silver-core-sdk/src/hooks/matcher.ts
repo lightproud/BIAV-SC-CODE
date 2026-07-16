@@ -21,23 +21,21 @@
  * closed (treat as no-match) by (a) capping the pattern and value lengths fed
  * to the engine and (b) refusing patterns with a nested quantifier. This never
  * throws; on a guard trip it returns false and emits an optional debug warning.
+ *
+ * The heuristic itself lives in src/internal/regex-guard.ts since the audit
+ * 2026-07-14 M-2 batch (Grep and BashOutput compile model-supplied patterns
+ * over far larger inputs and now share the exact same defense); this module's
+ * observable behavior is unchanged.
  */
+
+import { hasNestedQuantifier, MAX_REGEX_PATTERN_LENGTH } from '../internal/regex-guard.js';
 
 /** Charset that selects exact-set semantics instead of regex semantics. */
 const EXACT_SET_RE = /^[A-Za-z0-9_\-, |]*$/;
 
 /** Regex-path input ceilings. Tool names are short; these are generous. */
-const MAX_MATCHER_LENGTH = 1024;
-const MAX_VALUE_LENGTH = 1024;
-
-/**
- * Detects a repetition quantifier applied to a group whose body already
- * contains a repetition (star height >= 2), the classic catastrophic-
- * backtracking signature: `(a+)+`, `(a*)+`, `(a+)*`, `(.*x)+`, `(a+){2,}`, ...
- * Intentionally conservative: safe linear patterns like `(foo|bar)+`, `Edit.*`
- * or `^mcp__` do not match and keep working.
- */
-const NESTED_QUANTIFIER_RE = /\([^()]*[*+][^()]*\)\s*[*+{]/;
+const MAX_MATCHER_LENGTH = MAX_REGEX_PATTERN_LENGTH;
+const MAX_VALUE_LENGTH = MAX_REGEX_PATTERN_LENGTH;
 
 export function matcherMatches(
   matcher: string | undefined,
@@ -64,7 +62,7 @@ export function matcherMatches(
     );
     return false;
   }
-  if (NESTED_QUANTIFIER_RE.test(matcher)) {
+  if (hasNestedQuantifier(matcher)) {
     debug?.(
       `hooks matcher: pattern "${matcher}" has a nested quantifier ` +
         `(catastrophic-backtracking risk); treated as no-match`,

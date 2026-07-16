@@ -1,8 +1,8 @@
 {
   "date": "2026-06-23",
-  "archived_at": "2026-06-24T13:17:56.200967+00:00",
+  "archived_at": "2026-07-12T03:52:12.075380+00:00",
   "source": "bilibili",
-  "item_count": 33,
+  "item_count": 37,
   "items": [
     {
       "title": "沙耶之歌 虚渊玄 全一卷 有声小说 科幻 猎奇 黑暗 恋爱",
@@ -762,6 +762,66 @@
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
+    },
+    {
+      "title": "忘卻前夜 Morimens 融灾6.22-7.6 超低配400 拼好队",
+      "summary": "除了淡墨超限，没有超过3启的限定\n\n前4p拼好队第一第二关过程痛苦各种操作失误，后3关乱杀，淡墨和末夏还是太超模了",
+      "source": "bilibili",
+      "platform_region": "cn",
+      "lang": "zh",
+      "time": "2026-06-23T12:20:04+00:00",
+      "url": "http://www.bilibili.com/video/av116799370760403",
+      "engagement": 2171,
+      "is_hot": false,
+      "author": "party",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "沙耶水船太强辣",
+      "summary": "-",
+      "source": "bilibili",
+      "platform_region": "cn",
+      "lang": "zh",
+      "time": "2026-06-23T03:01:45+00:00",
+      "url": "http://www.bilibili.com/video/av116797189660161",
+      "engagement": 359,
+      "is_hot": false,
+      "author": "三花喵喵虫",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "我必须马上发动“狂战士之魂”",
+      "summary": "一个路过的xp选手，整活娱乐向 （模仿须谨慎以免误导！）滑稽\n这集依旧是我们的老朋友希洛，这期深海戒指属实是给我上强度了（流汗jpg）",
+      "source": "bilibili",
+      "platform_region": "cn",
+      "lang": "zh",
+      "time": "2026-06-22T17:24:11+00:00",
+      "url": "http://www.bilibili.com/video/av116794907957931",
+      "engagement": 209,
+      "is_hot": false,
+      "author": "Tsubasa小狼",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "凯蒂古拉：融于万物的真理",
+      "summary": "每一次开启凯蒂古拉的超限爆发都会觉得莫\n名的太燃太帅了，于是做了这个简单的视频\n「融于万物的真理——吾乃永不遗忘的爆燃\n之主!宣告！万物将亡！」",
+      "source": "bilibili",
+      "platform_region": "cn",
+      "lang": "zh",
+      "time": "2026-06-22T16:59:08+00:00",
+      "url": "http://www.bilibili.com/video/av116794807289808",
+      "engagement": 82,
+      "is_hot": false,
+      "author": "咕咕阿姨",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
     }
   ]
 }

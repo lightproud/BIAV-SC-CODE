@@ -9,7 +9,7 @@
 
 import { spawn } from 'node:child_process';
 import { resolvePosixShells, SHELL_NOT_FOUND_GUIDANCE } from './shell-resolve.js';
-import { planProcessKill } from './kill-plan.js';
+import { createTreeKiller } from './kill-plan.js';
 import { AbortError, ConfigurationError } from '../errors.js';
 import { BASH_DESCRIPTION, BASH_WIN32_NOTE, buildBashSandboxNote } from './descriptions.js';
 import { planShellSpawn } from '../sandbox/backend.js';
@@ -82,12 +82,24 @@ function runShell(
     // detached:true puts the shell (or bwrap, which becomes the group leader)
     // in its own process group so termination can signal the WHOLE tree, not
     // just the direct child. --unshare-pid + SIGKILL escalation still reap it.
-    const child = spawn(plan.command, plan.args, {
-      cwd: ctx.cwd,
-      env: { ...(ctx.env as NodeJS.ProcessEnv), ...plan.envOverlay },
-      stdio: ['ignore', 'pipe', 'pipe'],
-      detached: true,
-    });
+    // spawn() throws SYNCHRONOUSLY for some invalid argv (e.g. a NUL byte in
+    // the command -> ERR_INVALID_ARG_VALUE) rather than emitting an async
+    // 'error' event, so it must be guarded or the throw rejects this executor
+    // and escapes runShell (which "never rejects"). The background path
+    // (shells.ts spawnBackground) already guards this; fold the throw into the
+    // existing spawn-error outcome so execute() surfaces a ConfigurationError.
+    let child: ReturnType<typeof spawn>;
+    try {
+      child = spawn(plan.command, plan.args, {
+        cwd: ctx.cwd,
+        env: { ...(ctx.env as NodeJS.ProcessEnv), ...plan.envOverlay },
+        stdio: ['ignore', 'pipe', 'pipe'],
+        detached: true,
+      });
+    } catch (error) {
+      resolve({ kind: 'spawn-error', error: error as NodeJS.ErrnoException });
+      return;
+    }
 
     const stdout = new CappedStream();
     const stderr = new CappedStream();
@@ -101,31 +113,11 @@ function runShell(
     let killTimer: NodeJS.Timeout | undefined;
     let flushTimer: NodeJS.Timeout | undefined;
 
-    // Terminate the shell's whole tree, platform-correctly (planProcessKill):
-    // POSIX signals the process group (-pid); Windows uses taskkill /T /F
-    // (process groups/negative-pid do nothing there - the same latent bug the
-    // background KillShell had, surfaced by the posix-hazard guard 2026-07-05).
-    let winKilled = false;
-    const killGroup = (sig: NodeJS.Signals): void => {
-      const plan = planProcessKill(child.pid, sig);
-      try {
-        if (plan.kind === 'group') {
-          process.kill(-plan.pid, plan.signal as NodeJS.Signals); // win-ok: posix branch of planProcessKill
-        } else if (plan.kind === 'child') {
-          child.kill(plan.signal as NodeJS.Signals);
-        } else {
-          if (winKilled) return;
-          winKilled = true;
-          const tk = spawn('taskkill', ['/PID', String(plan.pid), '/T', '/F'], { stdio: 'ignore' });
-          tk.on('error', (e) => ctx.debug(`Bash: taskkill failed for pid ${plan.pid}: ${e.message}`));
-          tk.unref();
-        }
-      } catch (err) {
-        // Benign when the tree already exited; anything else goes to debug
-        // rather than being swallowed (the old empty catch hid Windows misses).
-        ctx.debug(`Bash: kill(${sig}) failed: ${err instanceof Error ? err.message : String(err)}`);
-      }
-    };
+    // Terminate the shell's whole tree, platform-correctly: POSIX signals the
+    // process group (-pid); Windows uses one taskkill /T /F pass. Shared
+    // executor createTreeKiller (kill-plan.ts) — dedup with shells.ts
+    // spawnBackground, audit 2026-07-14 L-10.
+    const killGroup = createTreeKiller(child, ctx.debug);
 
     // SIGTERM first; escalate to SIGKILL after a grace period. Both target the
     // process group so no descendant survives.
@@ -246,6 +238,12 @@ function formatStreams(stdout: string, stderr: string): string {
  * its exported env. After it (EXIT trap, so `exit N` still persists): capture
  * cwd + `export -p`. Functions/aliases/unexported vars do NOT persist — this
  * is a state-file replay, not a long-lived shell process (docs/COMPAT.md).
+ *
+ * `stateDir` is the caller's PER-CONTEXT namespace: the root loop replays the
+ * query-wide dir, while each spawned subagent's ToolContext carries a forked
+ * dir seeded from its parent at spawn time (shells.ts forkShellSession), so
+ * concurrent batch-mates never replay each other's cd/exports and a child's
+ * mutations never reach the parent's next call (audit 2026-07-14 M-10).
  *
  * The state dir comes from mkdtemp, so single-quoting it is safe against word
  * splitting. But on Windows mkdtemp returns a BACKSLASH path

@@ -46,6 +46,7 @@ from pathlib import Path
 # Reuse the archiver's API + state machinery
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from discord_archiver import DiscordArchiver, resolve_data_dir
+import archive_layout  # noqa: E402  冷热分层统一开档（2026-07-12 甲案）
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(message)s')
 logger = logging.getLogger(__name__)
@@ -85,17 +86,18 @@ def already_has_starter(forum_channel_id: str, date_str: str, msg_id: str) -> bo
     """Check if the forum channel's daily jsonl already contains this starter id."""
     # forum channel directory uses last 8 digits of channel_id
     ch_dir = DATA_DIR / 'channels' / forum_channel_id[-8:]
-    jsonl_path = ch_dir / f'{date_str}.jsonl'
-    if not jsonl_path.exists():
-        return False
-    with open(jsonl_path, 'r', encoding='utf-8') as f:
-        for line in f:
-            try:
-                m = json.loads(line)
-                if m.get('id') == msg_id:
-                    return True
-            except json.JSONDecodeError:
-                continue
+    # 冷热分层：冷月已压 .gz，裸旁车可能并存，两处都查（2026-07-12 甲案）
+    for jsonl_path in (ch_dir / f'{date_str}.jsonl', ch_dir / f'{date_str}.jsonl.gz'):
+        if not jsonl_path.exists():
+            continue
+        with archive_layout.open_archive_text(jsonl_path) as f:
+            for line in f:
+                try:
+                    m = json.loads(line)
+                    if m.get('id') == msg_id:
+                        return True
+                except json.JSONDecodeError:
+                    continue
     return False
 
 

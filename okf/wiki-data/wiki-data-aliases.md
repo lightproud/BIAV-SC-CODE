@@ -4,7 +4,7 @@ title: "aliases"
 description: "aliases 数据集"
 resource: "/projects/wiki/data/processed/aliases.json"
 tags: ["data_layer:curated", "unpacked-bootstrap", "domain:index"]
-timestamp: "2026-07-12"
+timestamp: "2026-07-16"
 ---
 
 # 指针概念

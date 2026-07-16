@@ -4,28 +4,44 @@
  *
  * One command, both layers, structured report (JSON + Markdown summary):
  *   node scripts/run-evals.mjs [--baseline-only|--behavior-only] [--out <dir>]
+ *                              [--judge-batches]
  *
  * Layer 1 (baseline, "don't get worse"): the full deterministic vitest suite,
  * pass/fail. Layer 2 (behavior, "get better"): the maintainer-curated 20-
  * question set in evals/, executed per-question by its harness driver and
  * graded 1-5 by the PINNED judge (claude-sonnet-5, evals/judge-prompt.md —
- * keeper ruling 2026-07-11; judge-side budget cap $30/month, nightly runs
- * should move to the Batches API once scheduled — TODO Phase 2 wiring).
+ * keeper ruling 2026-07-11; judge-side budget cap $30/month). With
+ * --judge-batches the judging stage rides the Message Batches API (the 50%
+ * nightly-rate lane from the keeper's budget ruling) instead of inline
+ * requests — same pinned model/prompt, same scores, half the judge bill.
  *
- * Modes (no silent caps — everything not fully run is named in the report):
- *  - LIVE (ANTHROPIC_API_KEY set): 'prompt-session' questions execute against
- *    the real API via the built SDK (dist/), then get judged. 'manual'
- *    questions report PENDING_HARNESS (fault-injection harness lands in
- *    Phase 2) and are excluded from the score denominator.
- *  - STUB (no key): no API calls; the pipeline (loading, harness-spec
- *    validation, report shape) still runs end to end and every behavior
- *    question reports STUB with no score. Baseline layer runs either way.
+ * Harness drivers (no silent caps — everything not fully run is named):
+ *  - 'prompt-session' questions execute against the real API via the built
+ *    SDK (dist/), then get judged.
+ *  - 'manual' questions run through the Phase 2 harness registry
+ *    (scripts/eval-harnesses.mjs: fault-injection at the provider.fetch seam,
+ *    process-kill + resume, compaction pressure). A manual question WITHOUT a
+ *    registered runner still reports PENDING_HARNESS and stays out of the
+ *    score denominator.
+ *  - STUB mode (no ANTHROPIC_API_KEY): no API calls; the pipeline (loading,
+ *    harness-spec validation, report shape) still runs end to end and every
+ *    behavior question reports STUB with no score. Baseline runs either way.
  */
 import { spawnSync } from 'node:child_process';
-import { mkdirSync, mkdtempSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+
+import { dumpMemory, getHarnessRunner, seedWorkspace } from './eval-harnesses.mjs';
+import {
+  classifyJudgeError,
+  computeDimensionMeans,
+  diagnoseJudgeMessage,
+  isValidVerdict,
+  parseJudgeMessage,
+  trimEvidence,
+} from './eval-scoring.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const JUDGE_MODEL = 'claude-sonnet-5'; // PINNED — keeper ruling 2026-07-11.
@@ -34,33 +50,12 @@ const API_URL = 'https://api.anthropic.com/v1/messages';
 const args = process.argv.slice(2);
 const baselineOnly = args.includes('--baseline-only');
 const behaviorOnly = args.includes('--behavior-only');
+const judgeBatches = args.includes('--judge-batches');
 const outDir = args.includes('--out')
   ? args[args.indexOf('--out') + 1]
   : join(root, 'evals-reports');
 const apiKey = process.env['ANTHROPIC_API_KEY'] ?? '';
 const live = apiKey.length > 0;
-
-/* ---------------------------------------------------------------- fixtures */
-
-/** Expand "GENERATE:" fixture markers into deterministic content. */
-function expandFixture(value) {
-  if (!value.startsWith('GENERATE:')) return value;
-  const spec = value.slice('GENERATE:'.length);
-  if (spec.includes('500-line')) {
-    return (
-      '# Memory index (oversized fixture)\n' +
-      Array.from({ length: 499 }, (_, i) => `- fact ${i + 1}: fixture line for cap testing`).join(
-        '\n',
-      ) +
-      '\n'
-    );
-  }
-  if (spec.includes('2000-word')) {
-    const filler = Array.from({ length: 2000 }, (_, i) => `word${i + 1}`).join(' ');
-    return `${filler}\nCONCLUSION: adopt plan B.\n`;
-  }
-  throw new Error(`unknown GENERATE fixture: ${spec}`);
-}
 
 /* ------------------------------------------------------------ layer 1 */
 
@@ -96,21 +91,6 @@ function runBaseline() {
 
 /* ------------------------------------------------------------ layer 2 */
 
-/** Seed harness files. seedMemory paths are /memories/... under baseDir. */
-function seedWorkspace(harness) {
-  const cwd = mkdtempSync(join(tmpdir(), 'evals-ws-'));
-  const memBase = join(cwd, '.eval-memory');
-  for (const [rel, content] of Object.entries(harness.seedFiles ?? {})) {
-    writeFileSync(join(cwd, rel), expandFixture(content));
-  }
-  for (const [vpath, content] of Object.entries(harness.seedMemory ?? {})) {
-    const p = join(memBase, vpath.replace(/^\//, ''));
-    mkdirSync(dirname(p), { recursive: true });
-    writeFileSync(p, expandFixture(content));
-  }
-  return { cwd, memBase };
-}
-
 /** Run one prompt-session phase via the built SDK; returns evidence. */
 async function runPhase(sdk, phase, ws, defaults) {
   const options = { ...(defaults ?? {}), ...(phase.options ?? {}) };
@@ -137,84 +117,171 @@ async function runPhase(sdk, phase, ws, defaults) {
   return { transcript, result: resultMsg };
 }
 
-/** Dump the seeded memory tree after a run (evidence for the judge). */
-function dumpMemory(ws) {
-  const out = {};
-  const walk = (dir, prefix) => {
-    for (const entry of readdirSyncSafe(dir)) {
-      const p = join(dir, entry.name);
-      const v = `${prefix}/${entry.name}`;
-      if (entry.isDirectory()) walk(p, v);
-      else {
-        try {
-          out[v] = readFileSync(p, 'utf8').slice(0, 8192);
-        } catch {
-          out[v] = '<unreadable>';
-        }
-      }
-    }
-  };
-  walk(join(ws.memBase, 'memories'), '/memories');
-  return out;
-}
-
-function readdirSyncSafe(dir) {
-  try {
-    return readdirSync(dir, { withFileTypes: true });
-  } catch {
-    return [];
-  }
-}
-
-/** Grade one question with the pinned judge. */
-async function judge(question, evidence, judgePrompt) {
+/** Messages API params for one judge call — shared by the inline and
+ *  Batches lanes so the two can never grade differently. */
+function judgeParams(question, evidence, judgePrompt) {
   const prompt = judgePrompt
     .replace('{{QUESTION_JSON}}', JSON.stringify(question, null, 2))
     .replace('{{EVIDENCE_JSON}}', JSON.stringify(evidence, null, 2));
-  const res = await fetch(API_URL, {
-    method: 'POST',
-    headers: {
-      'content-type': 'application/json',
-      'x-api-key': apiKey,
-      'anthropic-version': '2023-06-01',
-    },
-    body: JSON.stringify({
-      model: JUDGE_MODEL,
-      max_tokens: 2048,
-      messages: [{ role: 'user', content: prompt }],
-      output_config: {
-        format: {
-          type: 'json_schema',
-          schema: {
-            type: 'object',
-            properties: {
-              score: { type: 'integer', enum: [1, 2, 3, 4, 5] },
-              verdict: { type: 'string' },
-              rubric_findings: {
-                type: 'array',
-                items: {
-                  type: 'object',
-                  properties: {
-                    point: { type: 'string' },
-                    met: { type: 'boolean' },
-                    evidence: { type: 'string' },
-                  },
-                  required: ['point', 'met', 'evidence'],
-                  additionalProperties: false,
+  return {
+    model: JUDGE_MODEL,
+    // 4096 since self-improve #4: at 2048 evidence-heavy questions hit the
+    // cap mid-JSON (5/20 scoreless verdicts in the 2026-07-12 branch round —
+    // truncated rubric_findings evidence strings). Output budget is runner
+    // plumbing; the PINNED judge model + prompt are untouched.
+    max_tokens: 4096,
+    messages: [{ role: 'user', content: prompt }],
+    output_config: {
+      format: {
+        type: 'json_schema',
+        schema: {
+          type: 'object',
+          properties: {
+            score: { type: 'integer', enum: [1, 2, 3, 4, 5] },
+            verdict: { type: 'string' },
+            rubric_findings: {
+              type: 'array',
+              items: {
+                type: 'object',
+                properties: {
+                  point: { type: 'string' },
+                  met: { type: 'boolean' },
+                  evidence: { type: 'string' },
                 },
+                required: ['point', 'met', 'evidence'],
+                additionalProperties: false,
               },
             },
-            required: ['score', 'verdict', 'rubric_findings'],
-            additionalProperties: false,
           },
+          required: ['score', 'verdict', 'rubric_findings'],
+          additionalProperties: false,
         },
       },
-    }),
+    },
+  };
+}
+
+const API_HEADERS = () => ({
+  'content-type': 'application/json',
+  'x-api-key': apiKey,
+  'anthropic-version': '2023-06-01',
+});
+
+/** Grade one question with the pinned judge (inline lane). */
+async function judgeOnce(question, evidence, judgePrompt) {
+  const res = await fetch(API_URL, {
+    method: 'POST',
+    headers: API_HEADERS(),
+    body: JSON.stringify(judgeParams(question, evidence, judgePrompt)),
   });
-  if (!res.ok) throw new Error(`judge HTTP ${res.status}: ${(await res.text()).slice(0, 300)}`);
+  if (!res.ok) {
+    // Classify (self-improve #7): terminal request errors (billing/auth/
+    // malformed) carry retryable:false so judge() skips a doomed re-POST, and
+    // the note front-loads the API's own message for the 90-char report cell.
+    const cls = classifyJudgeError(res.status, await res.text());
+    const err = new Error(cls.note);
+    err.retryable = cls.retryable;
+    err.judgeErrorKind = cls.kind;
+    throw err;
+  }
   const body = await res.json();
-  const text = (body.content ?? []).find((b) => b.type === 'text')?.text ?? '{}';
-  return { ...JSON.parse(text), judgeUsage: body.usage };
+  const verdict = parseJudgeMessage(body);
+  // 深挖一单 (keeper 2026-07-12): when the verdict has no valid score, carry
+  // the API-level diagnostic so one LIVE round reveals WHY (truncation vs
+  // no-text-block vs missing field) instead of another blind retry.
+  if (!isValidVerdict(verdict)) verdict._diag = diagnoseJudgeMessage(body);
+  return verdict;
+}
+
+/** Judge with ONE retry on an invalid/unparseable verdict (self-improve #4):
+ *  scoreless or truncated judge replies are transient — a single fresh call
+ *  usually yields a valid verdict; a second failure surfaces as ERROR. */
+async function judge(question, evidence, judgePrompt) {
+  let first;
+  try {
+    first = await judgeOnce(question, evidence, judgePrompt);
+    if (isValidVerdict(first)) return first;
+  } catch (err) {
+    // Terminal request errors (billing/auth/malformed, retryable:false) can't
+    // be fixed by an identical re-POST — surface immediately instead of
+    // burning a doomed retry (self-improve #7). Transient throws (network /
+    // 5xx / 429, retryable undefined or true) still get their one retry.
+    if (err.retryable === false) throw err;
+    console.log(`judge retry for ${question.id}: first attempt threw (${String(err).slice(0, 120)})`);
+    return judgeOnce(question, evidence, judgePrompt);
+  }
+  console.log(
+    `judge retry for ${question.id}: first verdict invalid (score=${JSON.stringify(first.score)})`,
+  );
+  return judgeOnce(question, evidence, judgePrompt);
+}
+
+/** Grade every pending question in ONE Message Batch (50% nightly lane).
+ *  Returns Map<question id, graded | {error}>. */
+async function judgeViaBatches(items, judgePrompt) {
+  const BATCHES_URL = 'https://api.anthropic.com/v1/messages/batches';
+  const requests = items.map(({ question, evidence }) => ({
+    custom_id: question.id,
+    params: judgeParams(question, evidence, judgePrompt),
+  }));
+  const create = await fetch(BATCHES_URL, {
+    method: 'POST',
+    headers: API_HEADERS(),
+    body: JSON.stringify({ requests }),
+  });
+  if (!create.ok) {
+    throw new Error(`batch create HTTP ${create.status}: ${(await create.text()).slice(0, 300)}`);
+  }
+  let batch = await create.json();
+  console.log(`judge batch ${batch.id} submitted (${requests.length} requests); polling…`);
+  const deadline = Date.now() + 55 * 60_000;
+  while (batch.processing_status !== 'ended') {
+    if (Date.now() > deadline) {
+      throw new Error(
+        `judge batch ${batch.id} still ${batch.processing_status} after 55min — ` +
+          'fetch its results later via the API and re-run scoring',
+      );
+    }
+    await new Promise((r) => setTimeout(r, 20_000));
+    const poll = await fetch(`${BATCHES_URL}/${batch.id}`, { headers: API_HEADERS() });
+    if (!poll.ok) throw new Error(`batch poll HTTP ${poll.status}`);
+    batch = await poll.json();
+  }
+  const res = await fetch(batch.results_url, { headers: API_HEADERS() });
+  if (!res.ok) throw new Error(`batch results HTTP ${res.status}`);
+  const graded = new Map();
+  for (const line of (await res.text()).split('\n')) {
+    if (line.trim().length === 0) continue;
+    const entry = JSON.parse(line);
+    if (entry.result?.type === 'succeeded') {
+      try {
+        graded.set(entry.custom_id, parseJudgeMessage(entry.result.message));
+      } catch (err) {
+        graded.set(entry.custom_id, { error: `judge parse: ${String(err).slice(0, 200)}` });
+      }
+    } else {
+      graded.set(entry.custom_id, {
+        error: `batch result ${entry.result?.type ?? 'missing'}`,
+      });
+    }
+  }
+  return graded;
+}
+
+/** ERROR result for a scoreless verdict, with the 深挖一单 diagnostic folded
+ *  into the note (so it shows in the CI log, not only the JSON artifact). */
+function invalidVerdictResult(base, verdict) {
+  const d = verdict._diag;
+  const diagStr =
+    d !== undefined
+      ? ` [diag: stop=${d.stop_reason}, blocks=${d.block_types.join('+') || 'none'}, text_len=${d.text_len}, out_tok=${d.output_tokens}]`
+      : '';
+  return {
+    ...base,
+    outcome: 'ERROR',
+    note: `judge verdict missing/invalid score (got ${JSON.stringify(verdict.score)})${diagStr}`,
+    ...(d !== undefined ? { judgeDiag: d } : {}),
+  };
 }
 
 async function runBehavior() {
@@ -229,14 +296,34 @@ async function runBehavior() {
       throw new Error('live mode needs the built SDK: run `npm run build` first');
     }
   }
+  // ---- execution stage: gather evidence per question -----------------------
+  const toJudge = []; // { question, base, evidence } awaiting the judge
   for (const question of doc.questions) {
     const base = { id: question.id, dimension: question.dimension, status: question.status };
-    if (question.harness.driver === 'manual') {
+    const manual = question.harness.driver === 'manual';
+    const runner = manual ? getHarnessRunner(question.id) : null;
+    if (manual && runner === null) {
       results.push({ ...base, outcome: 'PENDING_HARNESS', note: question.harness.pending });
       continue;
     }
     if (!live) {
       results.push({ ...base, outcome: 'STUB', note: 'no ANTHROPIC_API_KEY; pipeline-only run' });
+      continue;
+    }
+    if (manual) {
+      // Phase 2 harness (eval-harnesses.mjs): fault injection at the
+      // provider.fetch seam / resume / compaction pressure. The runner owns
+      // its workspace; we clean it up once the evidence is captured.
+      let ws = null;
+      try {
+        const out = await runner({ sdk });
+        ws = out.ws;
+        toJudge.push({ question, base, evidence: trimEvidence(out.evidence) });
+      } catch (err) {
+        results.push({ ...base, outcome: 'ERROR', note: String(err).slice(0, 500) });
+      } finally {
+        if (ws !== null) rmSync(ws.cwd, { recursive: true, force: true });
+      }
       continue;
     }
     const ws = seedWorkspace(question.harness);
@@ -246,8 +333,17 @@ async function runBehavior() {
       for (const phase of phases) {
         // Headless run: no permission callback exists, so tool calls must not
         // stall on approval — the scenarios only touch seeded temp workspaces.
+        // The SDK gates bypassPermissions behind the explicit opt-in flag
+        // (first LIVE round 2026-07-12 run #58 caught the missing pair).
         const { transcript, result } = await runPhase(sdk, phase, ws, {
           permissionMode: 'bypassPermissions',
+          allowDangerouslySkipPermissions: true,
+          // Envelope questions (e.g. tok-06) judge measured prompt size, not
+          // vibes: surface the SDK's own per-request composition estimate
+          // (system/prompt_composition rides the transcript into evidence).
+          ...(question.harness.envelope !== undefined && question.harness.envelope !== null
+            ? { includePromptComposition: true }
+            : {}),
         });
         evidence.phases.push({
           transcript: transcript.slice(0, 200),
@@ -255,14 +351,61 @@ async function runBehavior() {
         });
       }
       evidence.memoryDump = dumpMemory(ws);
-      const graded = await judge(question, evidence, judgePrompt);
-      results.push({ ...base, outcome: 'SCORED', ...graded });
+      toJudge.push({ question, base, evidence: trimEvidence(evidence) });
     } catch (err) {
       results.push({ ...base, outcome: 'ERROR', note: String(err).slice(0, 500) });
     } finally {
       rmSync(ws.cwd, { recursive: true, force: true });
     }
   }
+
+  // ---- judging stage: inline (default) or one Message Batch (--judge-batches)
+  if (judgeBatches && toJudge.length > 0) {
+    try {
+      const graded = await judgeViaBatches(toJudge, judgePrompt);
+      for (const { question, base, evidence } of toJudge) {
+        let g = graded.get(question.id);
+        // A verdict without a valid 1-5 score is NOT a score (self-improve
+        // #2). Batch-lane misses fall back to ONE inline retry (self-improve
+        // #4) before surfacing as ERROR.
+        if (g === undefined || g.error !== undefined || !isValidVerdict(g)) {
+          try {
+            console.log(`judge retry (inline) for ${question.id}: batch verdict missing/invalid`);
+            g = await judgeOnce(question, evidence, judgePrompt);
+          } catch (err) {
+            g = { error: String(err).slice(0, 300) };
+          }
+        }
+        if (g.error !== undefined) {
+          results.push({ ...base, outcome: 'ERROR', note: g.error });
+        } else if (!isValidVerdict(g)) {
+          results.push(invalidVerdictResult(base, g));
+        } else {
+          results.push({ ...base, outcome: 'SCORED', ...g });
+        }
+      }
+    } catch (err) {
+      for (const { base } of toJudge) {
+        results.push({ ...base, outcome: 'ERROR', note: String(err).slice(0, 500) });
+      }
+    }
+  } else {
+    for (const { question, base, evidence } of toJudge) {
+      try {
+        const graded = await judge(question, evidence, judgePrompt);
+        if (!isValidVerdict(graded)) {
+          results.push(invalidVerdictResult(base, graded));
+        } else {
+          results.push({ ...base, outcome: 'SCORED', ...graded });
+        }
+      } catch (err) {
+        results.push({ ...base, outcome: 'ERROR', note: String(err).slice(0, 500) });
+      }
+    }
+  }
+  // Report in question order regardless of judging lane.
+  const order = new Map(doc.questions.map((q, i) => [q.id, i]));
+  results.sort((a, b) => (order.get(a.id) ?? 99) - (order.get(b.id) ?? 99));
   return results;
 }
 
@@ -270,13 +413,7 @@ async function runBehavior() {
 
 function summarize(baseline, behavior) {
   const scored = behavior.filter((r) => r.outcome === 'SCORED');
-  const byDim = {};
-  for (const r of scored) {
-    (byDim[r.dimension] ??= []).push(r.score);
-  }
-  const dimMeans = Object.fromEntries(
-    Object.entries(byDim).map(([d, s]) => [d, +(s.reduce((a, b) => a + b, 0) / s.length).toFixed(2)]),
-  );
+  const dimMeans = computeDimensionMeans(behavior);
   return {
     generator: 'run-evals.mjs (SCS-REQ-002 REQ-2.1)',
     mode: live ? 'LIVE' : 'STUB',

@@ -23,8 +23,15 @@
  *  - `cache_control` breakpoints are stripped (OpenAI-side caching is
  *    automatic); cached prompt tokens are read back from
  *    `usage.prompt_tokens_details.cached_tokens`.
- *  - image blocks translate to `image_url` parts; PDF/document blocks have no
- *    Chat Completions equivalent and degrade to an honest text placeholder.
+ *  - image blocks translate to `image_url` parts (base64 -> data URL, with a
+ *    media-type whitelist + base64 hygiene checks so a bad image fails with a
+ *    locatable error HERE instead of an opaque gateway image-processing
+ *    error); base64-PDF document blocks translate to the official `file`
+ *    part (data URL in file_data); URL documents keep an honest placeholder.
+ *  - images/PDFs inside a tool_result are FANNED OUT into the user message
+ *    following the tool messages (the OpenAI `tool` role is text-only), each
+ *    labeled with its tool_call_id; the tool body keeps a forward-reference
+ *    marker.
  *
  * The HTTP retry/backoff/watchdog policy mirrors AnthropicTransport (the
  * resolve* helpers and semaphore are imported from it); the request loop is
@@ -39,6 +46,7 @@ import {
   ConfigurationError,
   isAbortError,
 } from '../errors.js';
+import { extractProviderErrorObject } from '../error-normalize.js';
 import type {
   APIMessageParam,
   APIToolDefinition,
@@ -70,6 +78,10 @@ import {
   resolveStreamIdleMs,
   resolveStreamMaxMs,
 } from './anthropic.js';
+import {
+  SUPPORTED_IMAGE_MEDIA_TYPES,
+  SUPPORTED_IMAGE_MEDIA_TYPES_LIST,
+} from '../internal/media.js';
 
 const DEFAULT_BASE_URL = 'https://api.openai.com/v1';
 const DEFAULT_TIMEOUT_MS = 600_000;
@@ -77,6 +89,12 @@ const USER_AGENT = SDK_USER_AGENT;
 const BACKOFF_BASE_MS = 1_000;
 const BACKOFF_FACTOR = 2;
 const BACKOFF_MAX_MS = 60_000;
+/** Bounded jitter applied ON TOP of an explicit Retry-After delay (audit
+ *  2026-07-14 L-2): the delay is multiplied by [1.0, 1.0 + this factor], so a
+ *  concurrent fan-out (subagent fleets) does not retry at the same instant.
+ *  Never retries EARLIER than the server asked; the jittered total stays
+ *  capped at RETRY_AFTER_MAX_MS (the same ceiling the parser applies). */
+const RETRY_AFTER_JITTER = 0.25;
 
 /** Normalized (Anthropic-vocabulary) error type per HTTP status, so engine-
  *  side handling keyed on Messages API error types works unchanged. */
@@ -105,7 +123,9 @@ type TransportConfig = {
 
 type OpenAIContentPart =
   | { type: 'text'; text: string }
-  | { type: 'image_url'; image_url: { url: string } };
+  | { type: 'image_url'; image_url: { url: string } }
+  /** Official Chat Completions PDF-input part (base64 data URL in file_data). */
+  | { type: 'file'; file: { filename: string; file_data: string } };
 
 type OpenAIToolCall = {
   id: string;
@@ -129,33 +149,158 @@ function encodeSystem(system: string | TextBlockParam[] | undefined): string | u
   return text.length > 0 ? text : undefined;
 }
 
-function imagePartUrl(block: ImageBlockParam): string {
-  return block.source.type === 'base64'
-    ? `data:${block.source.media_type};base64,${block.source.data}`
-    : block.source.url;
+/** Per-request attachment-translation stats for the debug channel. Log
+ *  hygiene: carries ONLY MIME types and base64 character counts — never
+ *  image/document bytes, credentials, or any slice of the request body. */
+type ImageStats = { mediaTypes: string[]; dataChars: number[] };
+
+/** RFC 4648 alphabet (padding allowed only at the end). Catches garbage that
+ *  would otherwise ride into the data URL and fail server-side. */
+const BASE64_RE = /^[A-Za-z0-9+/]+={0,2}$/;
+
+/** Whitespace-normalize + validate base64 payload for a data URL. Raw
+ *  newlines (line-wrapped file encoders), an accidental nested `data:` prefix
+ *  and off-alphabet bytes are exactly the malformed shapes gateways reject
+ *  opaquely at their media-processing stage (e.g.
+ *  `image_moderation_server_error`) — fail HERE, locatably, instead. All
+ *  error messages are byte-free (never include the payload). */
+function cleanBase64(raw: string, where: string, what: string): string {
+  const data = raw.replace(/\s+/g, '');
+  if (data.length === 0) {
+    throw new ConfigurationError(
+      `openai-chat: empty base64 ${what} data at ${where}; ` +
+        `supply the ${what} bytes or drop the block`,
+    );
+  }
+  if (data.startsWith('data:')) {
+    throw new ConfigurationError(
+      `openai-chat: ${what} data at ${where} already carries a "data:" URL prefix; ` +
+        `pass RAW base64 in source.data (or use source.type 'url' for a full URL)`,
+    );
+  }
+  if (!BASE64_RE.test(data)) {
+    throw new ConfigurationError(
+      `openai-chat: ${what} data at ${where} is not valid base64 (${data.length} chars)`,
+    );
+  }
+  return data;
 }
 
+function imagePartUrl(block: ImageBlockParam, where: string, stats?: ImageStats): string {
+  if (block.source.type !== 'base64') {
+    // http(s) or ready-made data URL: the Chat Completions image_url part
+    // takes it verbatim.
+    stats?.mediaTypes.push('url');
+    stats?.dataChars.push(block.source.url.length);
+    return block.source.url;
+  }
+  const mediaType = block.source.media_type.trim().toLowerCase();
+  if (!SUPPORTED_IMAGE_MEDIA_TYPES.has(mediaType)) {
+    throw new ConfigurationError(
+      `openai-chat: unsupported image media_type "${block.source.media_type}" at ${where}; ` +
+        `supported: ${SUPPORTED_IMAGE_MEDIA_TYPES_LIST}`,
+    );
+  }
+  const data = cleanBase64(block.source.data, where, 'image');
+  stats?.mediaTypes.push(mediaType);
+  stats?.dataChars.push(data.length);
+  return `data:${mediaType};base64,${data}`;
+}
+
+/** Translate a document block into an OpenAI content part. Base64 PDFs map to
+ *  the official Chat Completions `file` part (data URL in `file_data`,
+ *  v0.56.0 — previously an honest text placeholder); text sources inline
+ *  their text; URL sources have no Chat Completions equivalent and keep the
+ *  honest placeholder. */
+function documentPart(
+  block: DocumentBlockParam,
+  where: string,
+  stats?: ImageStats,
+): OpenAIContentPart {
+  if (block.source.type === 'text') return { type: 'text', text: block.source.data };
+  if (block.source.type === 'url') {
+    return {
+      type: 'text',
+      text: `[document "${block.title ?? block.source.url}" omitted: URL documents have no Chat Completions equivalent]`,
+    };
+  }
+  const data = cleanBase64(block.source.data, where, 'document');
+  stats?.mediaTypes.push('application/pdf');
+  stats?.dataChars.push(data.length);
+  return {
+    type: 'file',
+    file: {
+      filename: block.title ?? 'document.pdf',
+      file_data: `data:application/pdf;base64,${data}`,
+    },
+  };
+}
+
+/** An image/document lifted out of a tool_result and carried into the user
+ *  message that follows the tool messages (fan-out, v0.56.0): the OpenAI
+ *  `tool` role is text-only, so without the carry the model NEVER sees a
+ *  screenshot an MCP tool returned or an image file Read produced. The label
+ *  ties the attachment back to its tool call. */
+type CarriedAttachment = { label: string; part: OpenAIContentPart };
+
 /** Flatten a tool_result's content to the string an OpenAI `tool` message
- *  carries. Non-text blocks degrade to honest placeholders (never dropped
- *  silently). An `is_error` tool_result gets a deterministic textual marker:
- *  the OpenAI `tool` role has no is_error field, so without it the model can
- *  no longer tell a failed tool call (a non-zero Bash exit, a builtin error)
- *  from a successful one — it would treat the error text as a normal result. */
-function flattenToolResultContent(block: ToolResultBlockParam): string {
+ *  carries. Images and base64-PDF documents are lifted into `carry` (see
+ *  CarriedAttachment) with a forward-reference marker left in the tool body;
+ *  an attachment that fails validation degrades to an explicit omission
+ *  marker with the reason (never a thrown error — a malformed tool OUTPUT
+ *  must not brick the turn the way a malformed caller INPUT should; user-turn
+ *  blocks stay strict). An `is_error` tool_result gets a deterministic
+ *  textual marker: the OpenAI `tool` role has no is_error field, so without
+ *  it the model can no longer tell a failed tool call (a non-zero Bash exit,
+ *  a builtin error) from a successful one — it would treat the error text as
+ *  a normal result. */
+function flattenToolResultContent(
+  block: ToolResultBlockParam,
+  where: string,
+  carry: CarriedAttachment[],
+  stats?: ImageStats,
+): string {
   const content = block.content;
+  let imageNo = 0;
+  let documentNo = 0;
   const body =
     content === undefined
       ? ''
       : typeof content === 'string'
         ? content
         : content
-            .map((item) =>
-              item.type === 'text'
-                ? item.text
-                : item.type === 'image'
-                  ? '[image content omitted: not representable in an OpenAI tool result]'
-                  : documentFallbackText(item),
-            )
+            .map((item, j) => {
+              if (item.type === 'text') return item.text;
+              if (item.type === 'image') {
+                imageNo += 1;
+                try {
+                  const url = imagePartUrl(item, `${where}.content[${j}]`, stats);
+                  carry.push({
+                    label: `[image #${imageNo} from tool call ${block.tool_use_id}]`,
+                    part: { type: 'image_url', image_url: { url } },
+                  });
+                  return `[image #${imageNo}: attached in the user message after the tool results]`;
+                } catch (err) {
+                  return `[image #${imageNo} omitted: ${errorMessage(err)}]`;
+                }
+              }
+              // document
+              try {
+                const part = documentPart(item, `${where}.content[${j}]`, stats);
+                // documentPart returns text (inline/placeholder) or file only.
+                if (part.type !== 'file') {
+                  return part.type === 'text' ? part.text : '';
+                }
+                documentNo += 1;
+                carry.push({
+                  label: `[document #${documentNo} ("${part.file.filename}") from tool call ${block.tool_use_id}]`,
+                  part,
+                });
+                return `[document #${documentNo} ("${part.file.filename}"): attached in the user message after the tool results]`;
+              } catch (err) {
+                return `[document omitted: ${errorMessage(err)}]`;
+              }
+            })
             .join('\n');
   return block.is_error === true
     ? body.length > 0
@@ -164,17 +309,15 @@ function flattenToolResultContent(block: ToolResultBlockParam): string {
     : body;
 }
 
-function documentFallbackText(block: DocumentBlockParam): string {
-  if (block.source.type === 'text') return block.source.data;
-  const label = block.title ?? (block.source.type === 'url' ? block.source.url : 'PDF');
-  return `[document "${label}" omitted: no Chat Completions equivalent]`;
-}
-
 /** Translate one Anthropic message-param into its OpenAI message(s). A user
  *  turn carrying tool_result blocks fans out into `tool` role messages (which
  *  must directly follow the assistant tool_calls turn), then any remaining
  *  user content. */
-function encodeMessage(msg: APIMessageParam): OpenAIChatMessage[] {
+function encodeMessage(
+  msg: APIMessageParam,
+  where = 'messages[?]',
+  stats?: ImageStats,
+): OpenAIChatMessage[] {
   if (typeof msg.content === 'string') {
     return msg.role === 'user'
       ? [{ role: 'user', content: msg.content }]
@@ -208,31 +351,48 @@ function encodeMessage(msg: APIMessageParam): OpenAIChatMessage[] {
   // remaining text/image parts as one user message.
   const out: OpenAIChatMessage[] = [];
   const parts: OpenAIContentPart[] = [];
-  for (const block of msg.content as ContentBlockParam[]) {
+  const carry: CarriedAttachment[] = [];
+  const blocks = msg.content as ContentBlockParam[];
+  for (let i = 0; i < blocks.length; i += 1) {
+    const block = blocks[i]!;
     switch (block.type) {
       case 'tool_result':
         out.push({
           role: 'tool',
           tool_call_id: block.tool_use_id,
-          content: flattenToolResultContent(block),
+          content: flattenToolResultContent(block, `${where}.content[${i}]`, carry, stats),
         });
         break;
       case 'text':
         parts.push({ type: 'text', text: block.text });
         break;
       case 'image':
-        parts.push({ type: 'image_url', image_url: { url: imagePartUrl(block) } });
+        parts.push({
+          type: 'image_url',
+          image_url: { url: imagePartUrl(block, `${where}.content[${i}]`, stats) },
+        });
         break;
       default:
         if ((block as { type?: string }).type === 'document') {
-          parts.push({
-            type: 'text',
-            text: documentFallbackText(block as unknown as DocumentBlockParam),
-          });
+          parts.push(
+            documentPart(
+              block as unknown as DocumentBlockParam,
+              `${where}.content[${i}]`,
+              stats,
+            ),
+          );
         }
         // tool_use / thinking blocks never appear in user turns.
         break;
     }
+  }
+  // Carried tool_result attachments ride in the user message FOLLOWING the
+  // tool messages (protocol adjacency: tool messages must directly follow the
+  // assistant tool_calls turn). Each is preceded by its text label so the
+  // model can tie it back to the tool call; appended AFTER any genuine user
+  // content so original block order within the turn is preserved.
+  for (const { label, part } of carry) {
+    parts.push({ type: 'text', text: label }, part);
   }
   if (parts.length > 0) {
     const onlyText = parts.every((p) => p.type === 'text');
@@ -270,22 +430,43 @@ function encodeToolChoice(
 
 /**
  * Encode one StreamRequest as a Chat Completions request body. Exported for
- * unit tests (pure function, no I/O).
+ * unit tests (pure function, no I/O; the optional `debug` sink receives one
+ * image-translation summary line — MIME types and base64 lengths only, never
+ * image bytes / credentials / body content).
  */
 export function encodeOpenAIRequest(
   req: Omit<StreamRequest, 'signal' | 'onRetry'>,
   opts: OpenAIProtocolOptions = {},
+  debug?: (m: string) => void,
 ): Record<string, unknown> {
   const messages: OpenAIChatMessage[] = [];
   const system = encodeSystem(req.system);
   if (system !== undefined) messages.push({ role: 'system', content: system });
-  for (const msg of req.messages) messages.push(...encodeMessage(msg));
+  const imageStats: ImageStats = { mediaTypes: [], dataChars: [] };
+  for (let i = 0; i < req.messages.length; i += 1) {
+    messages.push(...encodeMessage(req.messages[i]!, `messages[${i}]`, imageStats));
+  }
+  if (imageStats.mediaTypes.length > 0) {
+    const files = imageStats.mediaTypes.filter((t) => t === 'application/pdf').length;
+    debug?.(
+      `openai transport: protocol=openai-chat images=${imageStats.mediaTypes.length - files} ` +
+        `files=${files} types=[${imageStats.mediaTypes.join(', ')}] ` +
+        `data_chars=[${imageStats.dataChars.join(', ')}] -> image_url/file parts (ok)`,
+    );
+  }
 
   // Server-declared typed entries (no input_schema, e.g. memory_20250818)
   // have no Chat Completions equivalent and are dropped honestly — the query
   // layer never assembles them on this protocol (memory runs in custom mode).
+  // Last line of defense (BPT 2026-07-13): a tool whose input_schema is
+  // missing or not a plain object (null, array, primitive) would 400 the
+  // whole request at the gateway (`tools.N.custom.input_schema: Field
+  // required`), so only wire-safe schemas make it into `tools`.
+  const isWireSafeSchema = (s: unknown): boolean =>
+    typeof s === 'object' && s !== null && !Array.isArray(s);
   const customTools = (req.tools ?? []).filter(
-    (t): t is APIToolDefinition => 'input_schema' in t,
+    (t): t is APIToolDefinition =>
+      'input_schema' in t && isWireSafeSchema(t.input_schema),
   );
   const tools =
     customTools.length > 0
@@ -407,6 +588,17 @@ export class OpenAIStreamTranslator {
   private usage: NonNullable<OpenAIChunk['usage']> | null = null;
   private done = false;
   /**
+   * Whether any delta carried VALID assistant content — as opposed to the
+   * role-only / usage-only metadata chunks a gateway may stream before it
+   * closes with a bare [DONE]. Tracked SEPARATELY from the transport's raw
+   * chunk count: `chunkCount > 0` proves a frame arrived, not that the model
+   * produced anything. Flips true on a non-empty text/reasoning delta or a
+   * tool_call fragment bearing an id/name/arguments (see feed()). Used by the
+   * transport to reject the "empty finish" shape (metadata + [DONE], no
+   * content, no finish_reason) instead of fabricating an empty success.
+   */
+  private contentSeen = false;
+  /**
    * Per-tool-call buffered state so a fragmented gateway does not lose the id
    * or the name. Some OpenAI-compatible gateways stream the id in a LATER chunk
    * than the one that opens the tool call, or split `function.name` across
@@ -431,6 +623,15 @@ export class OpenAIStreamTranslator {
    *  end-of-message marker; used by the transport's truncation heuristic). */
   sawFinishReason(): boolean {
     return this.finishReason !== null;
+  }
+
+  /** True once any delta carried VALID assistant content — non-empty text,
+   *  non-empty reasoning, or a tool_call fragment carrying an id/name/arguments.
+   *  Role-only and usage-only metadata chunks do NOT flip this, so it separates
+   *  a real (if short) message from the "empty finish" shape the transport must
+   *  reject as an `empty_message` failure. */
+  sawContent(): boolean {
+    return this.contentSeen;
   }
 
   /** True once the first chunk arrived (message_start was emitted). */
@@ -459,7 +660,10 @@ export class OpenAIStreamTranslator {
     if (chunk.usage !== undefined && chunk.usage !== null) this.usage = chunk.usage;
     const choice = chunk.choices?.[0];
     if (choice === undefined) return events;
-    if (choice.finish_reason !== undefined && choice.finish_reason !== null) {
+    // Only a non-empty finish_reason string counts as an explicit terminal
+    // marker: the requirement's "empty finish" shape may carry finish_reason:''
+    // (or null), which must NOT be read as a real end-of-message.
+    if (typeof choice.finish_reason === 'string' && choice.finish_reason.length > 0) {
       this.finishReason = choice.finish_reason;
     }
     const delta = choice.delta;
@@ -467,6 +671,7 @@ export class OpenAIStreamTranslator {
 
     const reasoning = delta.reasoning_content ?? delta.reasoning;
     if (typeof reasoning === 'string' && reasoning.length > 0) {
+      this.contentSeen = true;
       const index = this.openBlock(events, 'reasoning', {
         type: 'thinking',
         thinking: '',
@@ -479,6 +684,7 @@ export class OpenAIStreamTranslator {
       });
     }
     if (typeof delta.content === 'string' && delta.content.length > 0) {
+      this.contentSeen = true;
       const index = this.openBlock(events, 'text', { type: 'text', text: '' });
       events.push({
         type: 'content_block_delta',
@@ -487,6 +693,17 @@ export class OpenAIStreamTranslator {
       });
     }
     for (const tc of delta.tool_calls ?? []) {
+      // A tool_call fragment is VALID assistant content the moment it carries
+      // an id, a function name, or argument bytes — even before the block can
+      // be emitted (a fragmented-id gateway holds the block open). An empty
+      // `{index:0}` placeholder alone does not count.
+      if (
+        (typeof tc.id === 'string' && tc.id.length > 0) ||
+        (typeof tc.function?.name === 'string' && tc.function.name.length > 0) ||
+        (typeof tc.function?.arguments === 'string' && tc.function.arguments.length > 0)
+      ) {
+        this.contentSeen = true;
+      }
       // Key by index when present (the normal case); fall back to id, then a
       // last-resort constant. Keying an index-less call by its id keeps two
       // distinct id-bearing calls from colliding on `tool:0`.
@@ -553,8 +770,39 @@ export class OpenAIStreamTranslator {
     // id (best effort) so a fragmented-id gateway still yields a callable
     // tool_use block rather than silently dropping the call. Ordered by first
     // appearance for stable indices.
+    // The most-recent already-emitted tool_use block, to merge an args-only
+    // orphan into (待裁④ — keeper 2026-07-16) rather than opening a bogus
+    // empty-name block for it.
+    let lastEmittedToolIndex: number | undefined;
+    for (const b of this.toolBuffers.values()) {
+      if (b.emitted && b.index !== undefined) {
+        lastEmittedToolIndex =
+          lastEmittedToolIndex === undefined ? b.index : Math.max(lastEmittedToolIndex, b.index);
+      }
+    }
     for (const [key, buf] of this.toolBuffers) {
       if (buf.emitted) continue;
+      // Skip a pure placeholder buffer (`{index:N}` with no id, name, or
+      // argument bytes ever received): it carries no callable tool, and
+      // emitting it would yield a tool_use block with an empty name and a
+      // synthetic id. Mirrors the contentSeen placeholder guard in feed().
+      if (buf.id === undefined && buf.name === '' && buf.args === '') continue;
+      // 待裁④: an args-only orphan (has argument bytes but NO id and NO name) is
+      // almost certainly a stray fragment of an already-emitted call whose
+      // id/name arrived on a sibling key — a non-conforming gateway that split
+      // one call across an id-only and an index-only fragment. Merge its bytes
+      // into the most-recent emitted tool_use block instead of opening a new
+      // empty-name block (which would never dispatch). Only when such a block
+      // exists; otherwise fall through to the synthetic-id emit below.
+      if (buf.id === undefined && buf.name === '' && lastEmittedToolIndex !== undefined) {
+        events.push({
+          type: 'content_block_delta',
+          index: lastEmittedToolIndex,
+          delta: { type: 'input_json_delta', partial_json: buf.args },
+        });
+        buf.emitted = true; // consumed into the sibling block; no standalone block
+        continue;
+      }
       buf.index = this.openBlock(events, key, {
         type: 'tool_use',
         id: buf.id ?? `call_${this.nextIndex}`,
@@ -576,9 +824,25 @@ export class OpenAIStreamTranslator {
     this.open.clear();
     const cached = this.usage?.prompt_tokens_details?.cached_tokens ?? 0;
     const prompt = this.usage?.prompt_tokens ?? 0;
+    // Missing finish_reason + real tool calls => infer 'tool_use' (audit
+    // 2026-07-14 M-5): some gateways end a tool-call stream with a bare [DONE]
+    // (or EOF) and never send finish_reason='tool_calls'. mapFinishReason(null)
+    // defaults to 'end_turn', which makes the engine treat the turn as FINAL
+    // and silently drop the model's tool calls. If this message opened/buffered
+    // at least one REAL tool_use block, the only honest stop_reason is
+    // 'tool_use'. An EXPLICIT finish_reason (including 'stop') is respected
+    // regardless of open tool blocks — deliberate M-5 semantics. A pure
+    // placeholder buffer does not count (same guard as the flush loop above).
+    const hasRealTool = [...this.toolBuffers.values()].some(
+      (b) => b.emitted || b.id !== undefined || b.name !== '' || b.args !== '',
+    );
+    const stopReason: StopReason =
+      this.finishReason === null && hasRealTool
+        ? 'tool_use'
+        : mapFinishReason(this.finishReason);
     events.push({
       type: 'message_delta',
-      delta: { stop_reason: mapFinishReason(this.finishReason), stop_sequence: null },
+      delta: { stop_reason: stopReason, stop_sequence: null },
       // OpenAI prompt_tokens INCLUDES cached tokens; Anthropic input_tokens
       // excludes cache reads — split so pricing/usage semantics line up.
       usage: {
@@ -712,9 +976,17 @@ export class OpenAIChatTransport implements Transport {
           `or set the model explicitly.`,
       );
     }
-    const bodyJson = JSON.stringify(
-      encodeOpenAIRequest({ ...requestBody, model: mappedModel }, opts),
-    );
+    let bodyJson: string;
+    try {
+      bodyJson = JSON.stringify(
+        encodeOpenAIRequest({ ...requestBody, model: mappedModel }, opts, this.debug),
+      );
+    } catch (err) {
+      // The encode error is already locatable and byte-free (media_type +
+      // block path only); mirror it on the debug channel and surface as-is.
+      this.debug(`openai transport: request encoding failed (${errorMessage(err)})`);
+      throw err;
+    }
     const headers = this.buildHeaders(this.credential);
     const timeoutMs = this.provider.timeoutMs ?? DEFAULT_TIMEOUT_MS;
     const maxRetries = resolveMaxRetries(this.provider, this.env);
@@ -741,6 +1013,10 @@ export class OpenAIChatTransport implements Transport {
     // ERROR mid-stream (parseSSE throws) still routes through the catch below
     // and is NEVER retried, empty or not.
     let emptyStreamRetries = 0;
+    // Finding T2 — one retry budget shared by request-phase retries AND
+    // empty-stream re-issues (see the Anthropic arm), so the total is bounded by
+    // maxRetries rather than maxRetries per re-issue on a struggling gateway.
+    const retryBudget = { used: 0 };
     for (;;) {
       // ---- request phase: retries allowed ---------------------------------
       const { response, signal, timeoutSignal, detachRequestTimeout, releaseSignals } =
@@ -750,6 +1026,7 @@ export class OpenAIChatTransport implements Transport {
           callerSignal,
           timeoutMs,
           maxRetries,
+          retryBudget,
           onRetry,
         );
 
@@ -788,11 +1065,20 @@ export class OpenAIChatTransport implements Transport {
       // the remaining gap and still aborts idleMs after the LAST event.
       let idleTimer: ReturnType<typeof setTimeout> | undefined;
       let lastEventAt = 0;
+      // audit 2026-07-14 L-3 (twin of the anthropic arm): the watchdog
+      // measures SERVER progress, not consumer progress — while the consumer
+      // holds a yielded event the expiry check re-arms instead of aborting;
+      // the clock restarts when the consumer resumes (resetIdle after the
+      // yield). Stall detection during a long consumer pause is deferred
+      // until the consumer resumes (worst case ~2x idleMs).
+      let consumerHolds = false;
       const armIdle = (delay: number): void => {
         idleTimer = setTimeout(() => {
           const remaining = idleMs - (Date.now() - lastEventAt);
-          if (remaining <= 0) idleController!.abort();
-          else armIdle(remaining);
+          if (remaining <= 0) {
+            if (consumerHolds) armIdle(idleMs);
+            else idleController!.abort();
+          } else armIdle(remaining);
         }, delay);
         (idleTimer as { unref?: () => void }).unref?.();
       };
@@ -831,15 +1117,23 @@ export class OpenAIChatTransport implements Transport {
             // a mid-stream rate-limit / quota / auth error must classify as
             // 429 / 401 etc. so the engine's fallback + the caller see the right
             // class (the Anthropic arm likewise maps its in-stream error type).
+            // A `status` the gateway put in the body wins over the derived one.
             throw new APIStatusError(
-              statusForOpenAIErrorType(info.type),
+              info.status ?? statusForOpenAIErrorType(info.type),
               info.type,
               info.message,
-              requestId,
+              info.requestId ?? requestId,
+              info.code !== undefined ? { providerErrorCode: info.code } : undefined,
             );
           }
           chunkCount += 1;
+          // audit 2026-07-14 L-3: mark the consumer-hold window around the
+          // yield so the idle watchdog never counts a paused consumer as a
+          // stalled connection; restart the idle clock when it resumes.
+          consumerHolds = true;
           yield* translator.feed(parsed);
+          consumerHolds = false;
+          resetIdle();
         }
       } catch (err) {
         throw mapStreamError(err, {
@@ -859,21 +1153,55 @@ export class OpenAIChatTransport implements Transport {
         releaseSignals();
       }
 
-      // The stream ended without throwing. A [DONE] terminator or any
-      // finish_reason means the message reached its end-of-message marker:
-      // synthesize the terminal message_delta/message_stop and finish. Guard on
-      // chunkCount > 0: a stream that delivered ZERO content chunks but a bare
-      // `[DONE]` (an overloaded gateway that accepts the request then closes it
-      // with only the terminator) is NOT a completed message — translator
-      // never started, so finish() would throw a raw, non-replay-safe error
-      // and the engine's turn-replay could not catch it. Fall through to the
-      // empty-stream retry below instead, so this zero-consumption shape
-      // self-heals exactly like the Anthropic arm's (a finish_reason chunk
-      // always increments chunkCount first, so sawFinishReason implies > 0).
-      if (chunkCount > 0 && (doneSeen || translator.sawFinishReason())) {
+      // The stream ended without throwing. Decide the outcome from THREE
+      // independent facts, not the raw chunk count alone: whether a terminator
+      // arrived (doneSeen), whether an explicit finish_reason arrived
+      // (sawFinishReason), and whether any VALID assistant content arrived
+      // (sawContent). `chunkCount > 0` only proves a frame was delivered — a
+      // gateway can stream role-only / usage-only metadata then close with a
+      // bare [DONE], which is NOT a completed message. (BPT 2026-07-13: idealab
+      // "turn stop / hasAssistantMessage:false" — an empty message billed as a
+      // null-stop_reason success.)
+      const sawContent = translator.sawContent();
+      const sawFinish = translator.sawFinishReason();
+
+      // Completed message, case 1: an explicit finish_reason is BOTH a
+      // terminator and — per the Chat Completions protocol — a real
+      // end-of-message, even when the text is empty (finish_reason:'stop' with
+      // no content is a legitimate, if unusual, response). Keep its protocol
+      // semantics; a finish_reason chunk always incremented chunkCount first.
+      if (chunkCount > 0 && sawFinish) {
         yield* translator.finish();
         this.debug(`openai transport: stream completed after ${chunkCount} chunk(s)`);
         return;
+      }
+      // Completed message, case 2: a [DONE] terminator paired with valid
+      // assistant content (text / reasoning / tool_calls) is the normal
+      // completion path.
+      if (chunkCount > 0 && doneSeen && sawContent) {
+        yield* translator.finish();
+        this.debug(`openai transport: stream completed after ${chunkCount} chunk(s)`);
+        return;
+      }
+      // The "empty finish": a [DONE] arrived (chunkCount > 0, so metadata frames
+      // WERE delivered — role-only / usage-only), but with NO valid assistant
+      // content AND NO finish_reason. This is exactly the shape that produced
+      // the idealab empty turns. It is NOT a completed message: never fabricate
+      // a stop_reason:null / subtype:'success' / empty assistant message from
+      // it. A started (chunkCount > 0) stream is not replay-safe, so it is NOT
+      // retried; surface a diagnosable, non-replay-safe `empty_message`
+      // APIConnectionError (no turnReplaySafe / midStreamTruncation flags) so
+      // the engine reports error_during_execution with error_code
+      // 'empty_message'. Twin of AnthropicTransport's message_stop guard.
+      if (chunkCount > 0 && doneSeen && !sawContent) {
+        if (callerSignal?.aborted) throw new AbortError();
+        throw new APIConnectionError(
+          `OpenAI Chat Completions stream received [DONE] after ${chunkCount} chunk(s) ` +
+            `with no valid assistant content and no finish_reason; treating as a failed ` +
+            `turn (empty message)`,
+          undefined,
+          'empty_message',
+        );
       }
 
       // No end-of-message marker (or a bare [DONE] with no chunks). ZERO chunks
@@ -882,16 +1210,17 @@ export class OpenAIChatTransport implements Transport {
       // caller abort observed here wins.
       if (chunkCount === 0) {
         if (callerSignal?.aborted) throw new AbortError();
-        if (emptyStreamRetries < maxRetries) {
+        if (retryBudget.used < maxRetries) {
+          retryBudget.used += 1;
           emptyStreamRetries += 1;
           this.debug(
             `openai transport: empty stream (HTTP 200, zero SSE chunks); ` +
-              `retry ${emptyStreamRetries}/${maxRetries}`,
+              `retry ${retryBudget.used}/${maxRetries}`,
           );
           // Surface it like a network-level retry (no HTTP status) so the loop
           // emits an api_retry observability message, same as a dropped socket.
-          onRetry?.({ attempt: emptyStreamRetries, maxRetries, kind: 'empty_stream' });
-          await this.backoff(emptyStreamRetries, undefined, callerSignal);
+          onRetry?.({ attempt: retryBudget.used, maxRetries, kind: 'empty_stream' });
+          await this.backoff(retryBudget.used, undefined, callerSignal);
           continue;
         }
         throw new APIConnectionError(
@@ -925,6 +1254,8 @@ export class OpenAIChatTransport implements Transport {
     callerSignal: AbortSignal | undefined,
     timeoutMs: number,
     maxRetries: number,
+    // Finding T2 — shared retry budget (see streamRequest / the Anthropic arm).
+    retryBudget: { used: number },
     onRetry?: (info: RetryInfo) => void,
   ): Promise<{
     response: Response;
@@ -938,7 +1269,6 @@ export class OpenAIChatTransport implements Transport {
      *  a long-lived caller signal does not accumulate one listener per turn. */
     releaseSignals: () => void;
   }> {
-    let attempt = 0;
     for (;;) {
       if (callerSignal?.aborted) throw new AbortError();
       // Fresh timeout per attempt, propagated into a DEDICATED per-attempt
@@ -966,7 +1296,7 @@ export class OpenAIChatTransport implements Transport {
       let response: Response;
       try {
         this.debug(
-          `openai transport: POST ${this.endpoint} (attempt ${attempt + 1}/${maxRetries + 1})`,
+          `openai transport: POST ${this.endpoint} (attempt ${retryBudget.used + 1}/${maxRetries + 1})`,
         );
         response = await (this.fetchFn ?? fetch)(this.endpoint, {
           method: 'POST',
@@ -978,13 +1308,18 @@ export class OpenAIChatTransport implements Transport {
         releaseSignals();
         if (callerSignal?.aborted) throw new AbortError();
         // Connection failure or per-attempt timeout: retryable.
-        if (attempt < maxRetries) {
-          attempt += 1;
+        if (retryBudget.used < maxRetries) {
+          retryBudget.used += 1;
           this.debug(
-            `openai transport: network error (${errorMessage(err)}); retry ${attempt}/${maxRetries}`,
+            `openai transport: network error (${errorMessage(err)}); retry ${retryBudget.used}/${maxRetries}`,
           );
-          onRetry?.({ attempt, maxRetries, kind: 'network' });
-          await this.backoff(attempt, undefined, callerSignal);
+          onRetry?.({
+            attempt: retryBudget.used,
+            maxRetries,
+            kind: 'network',
+            message: errorMessage(err),
+          });
+          await this.backoff(retryBudget.used, undefined, callerSignal);
           continue;
         }
         throw new APIConnectionError(
@@ -996,30 +1331,51 @@ export class OpenAIChatTransport implements Transport {
       if (response.ok) {
         return { response, signal, timeoutSignal, detachRequestTimeout, releaseSignals };
       }
-      releaseSignals();
 
-      const requestId = response.headers.get('x-request-id') ?? response.headers.get('request-id') ?? undefined;
-      const info = await readOpenAIErrorInfo(response);
+      // Request id: prefer the response header, fall back to a request_id the
+      // gateway put in the error body.
+      const requestId =
+        response.headers.get('x-request-id') ?? response.headers.get('request-id') ?? undefined;
+      // Keep the abort listeners attached while draining the error body: the
+      // per-attempt signal is wired into the response stream, so a caller
+      // interrupt (or the request timeout) can still cancel a gateway that
+      // sent error headers and then stalled the body; the drain itself is
+      // additionally capped by ERROR_BODY_TIMEOUT_MS (audit 2026-07-14 H-1).
+      const info = await readOpenAIErrorInfo(response, signal).finally(releaseSignals);
+      if (callerSignal?.aborted) throw new AbortError();
+      const resolvedRequestId = requestId ?? info.requestId;
+      const retryAfterMs = parseRetryAfterMs(response.headers.get('retry-after'));
       const retryable =
         response.status === 408 || response.status === 429 || response.status >= 500;
-      if (retryable && attempt < maxRetries) {
-        attempt += 1;
-        const retryAfterMs = parseRetryAfterMs(response.headers.get('retry-after'));
+      if (retryable && retryBudget.used < maxRetries) {
+        retryBudget.used += 1;
         this.debug(
-          `openai transport: HTTP ${response.status} (${info.type}); retry ${attempt}/${maxRetries}`,
+          `openai transport: HTTP ${response.status} (${info.type}); retry ${retryBudget.used}/${maxRetries}`,
         );
         onRetry?.({
-          attempt,
+          attempt: retryBudget.used,
           maxRetries,
           status: response.status,
           errorType: info.type,
           kind: 'http_status',
+          message: info.message,
+          ...(resolvedRequestId !== undefined ? { requestId: resolvedRequestId } : {}),
+          ...(info.code !== undefined ? { code: info.code } : {}),
           ...(retryAfterMs !== undefined ? { retryAfterMs } : {}),
         });
-        await this.backoff(attempt, retryAfterMs, callerSignal);
+        await this.backoff(retryBudget.used, retryAfterMs, callerSignal);
         continue;
       }
-      throw new APIStatusError(response.status, info.type, info.message, requestId);
+      throw new APIStatusError(
+        response.status,
+        info.type,
+        info.message,
+        resolvedRequestId,
+        {
+          ...(info.code !== undefined ? { providerErrorCode: info.code } : {}),
+          ...(retryAfterMs !== undefined ? { retryAfterMs } : {}),
+        },
+      );
     }
   }
 
@@ -1030,10 +1386,17 @@ export class OpenAIChatTransport implements Transport {
     signal: AbortSignal | undefined,
   ): Promise<void> {
     const exponential = BACKOFF_BASE_MS * BACKOFF_FACTOR ** (attempt - 1);
+    // Bounded jitter in [0.5, 1.0] x the exponential delay.
     const jittered = exponential * (0.5 + Math.random() * 0.5);
-    // Honor an explicit retry-after as given (parser-bounded); cap only the
-    // exponential fallback — clamping "wait 90s" to 60s retries early.
-    const delay = retryAfterMs ?? Math.min(jittered, BACKOFF_MAX_MS);
+    // audit 2026-07-14 L-2: jitter the explicit Retry-After path too. Without
+    // it a fan-out of subagents that all receive the same "Retry-After: 30"
+    // wake in the SAME instant (thundering herd). Spread UP only — never
+    // EARLIER than the server asked — then re-cap at the parser's ceiling so a
+    // jittered value can never exceed RETRY_AFTER_MAX_MS.
+    const delay =
+      retryAfterMs !== undefined
+        ? Math.min(retryAfterMs * (1 + Math.random() * RETRY_AFTER_JITTER), RETRY_AFTER_MAX_MS)
+        : Math.min(jittered, BACKOFF_MAX_MS);
     this.debug(`openai transport: backing off ${Math.round(delay)}ms`);
     await sleep(delay, signal);
   }
@@ -1107,37 +1470,130 @@ function statusForOpenAIErrorType(type: string): number {
   }
 }
 
-function extractOpenAIError(error: unknown): { type: string; message: string } {
+/** Diagnostic fields lifted from an OpenAI-protocol error payload. */
+type OpenAIErrorInfo = {
+  type: string;
+  message: string;
+  code?: string;
+  status?: number;
+  requestId?: string;
+};
+
+function extractOpenAIError(error: unknown): OpenAIErrorInfo {
   if (typeof error === 'object' && error !== null) {
-    const type = (error as { type?: unknown }).type;
-    const message = (error as { message?: unknown }).message;
-    return {
+    const e = error as Record<string, unknown>;
+    const type = e.type;
+    const message = e.message;
+    // Meta (status/code/request_id) is lifted via the shared extractor by
+    // wrapping the error object in an `error` envelope; the MESSAGE keeps the
+    // historical semantics (string message, else JSON.stringify) so existing
+    // consumers and mutation-kill tests see the exact same text.
+    const meta = extractProviderErrorObject({ error: e });
+    const out: OpenAIErrorInfo = {
       type: typeof type === 'string' ? type : 'api_error',
       message: typeof message === 'string' ? message : JSON.stringify(error),
     };
+    if (meta?.code !== undefined) out.code = meta.code;
+    if (meta?.status !== undefined) out.status = meta.status;
+    if (meta?.requestId !== undefined) out.requestId = meta.requestId;
+    return out;
   }
   return { type: 'api_error', message: String(error) };
 }
 
+/** Additive meta fields (code/status/requestId) of an OpenAIErrorInfo, spread
+ *  into a returned info without touching type/message. */
+function meta(info: OpenAIErrorInfo): Partial<OpenAIErrorInfo> {
+  return {
+    ...(info.code !== undefined ? { code: info.code } : {}),
+    ...(info.status !== undefined ? { status: info.status } : {}),
+    ...(info.requestId !== undefined ? { requestId: info.requestId } : {}),
+  };
+}
+
 /** Read a non-2xx body; normalize the error type to Anthropic vocabulary by
- *  status (engine-side handling switches on those), keep the server message. */
+ *  status (engine-side handling switches on those), keep the server message.
+ *  A non-JSON body (a plain-text 5xx page) yields a readable message. */
+/** Hard cap on draining a non-2xx error body. A gateway that returns error
+ *  headers and then stalls the body must not hang the retry loop forever —
+ *  the default 'node' http client has no body timeout of its own. On expiry
+ *  the body is cancelled best-effort and the status-line fallback is used
+ *  (audit 2026-07-14 H-1). */
+const ERROR_BODY_TIMEOUT_MS = 10_000;
+
+/** Read a response body as text, bounded by ERROR_BODY_TIMEOUT_MS and the
+ *  given abort signal. Rejection means "body unavailable" — callers fall
+ *  back to the status line. */
+function readBodyTextBounded(
+  response: Response,
+  signal: AbortSignal | undefined,
+): Promise<string> {
+  return new Promise<string>((resolve, reject) => {
+    let settled = false;
+    const settle = (fn: () => void): void => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(timer);
+      signal?.removeEventListener('abort', onAbort);
+      fn();
+    };
+    const cancelBody = (): void => {
+      void response.body?.cancel().catch(() => {});
+    };
+    const onAbort = (): void => {
+      cancelBody();
+      settle(() => reject(new AbortError()));
+    };
+    const timer = setTimeout(() => {
+      cancelBody();
+      settle(() => reject(new APIConnectionError('error body read timed out')));
+    }, ERROR_BODY_TIMEOUT_MS);
+    (timer as { unref?: () => void }).unref?.();
+    if (signal?.aborted) {
+      onAbort();
+      return;
+    }
+    signal?.addEventListener('abort', onAbort, { once: true });
+    response.text().then(
+      (text) => settle(() => resolve(text)),
+      (err) => settle(() => reject(err instanceof Error ? err : new Error(String(err)))),
+    );
+  });
+}
+
 async function readOpenAIErrorInfo(
   response: Response,
-): Promise<{ type: string; message: string }> {
+  signal?: AbortSignal,
+): Promise<OpenAIErrorInfo> {
   const normalizedType =
     STATUS_ERROR_TYPE[response.status] ??
     (response.status >= 500 ? 'api_error' : 'invalid_request_error');
   let text = '';
   try {
-    text = await response.text();
+    text = await readBodyTextBounded(response, signal);
   } catch {
-    // Body unavailable; fall through to the fallback.
+    // Body unavailable (aborted / half-closed / stalled past the drain cap);
+    // fall through to the fallback.
   }
   if (text) {
     try {
       const parsed = JSON.parse(text) as { error?: unknown };
       if (parsed.error !== undefined && parsed.error !== null) {
-        return { type: normalizedType, message: extractOpenAIError(parsed.error).message };
+        // Keep the historical message derivation (incl. a STRING error member
+        // -> String(error)); meta (status/code/request_id) is additive.
+        const info = extractOpenAIError(parsed.error);
+        return { type: normalizedType, message: info.message, ...meta(info) };
+      }
+      // A bare top-level { message, status } (no error envelope).
+      const bare = extractProviderErrorObject(parsed);
+      if (bare !== null) {
+        return {
+          type: normalizedType,
+          message: bare.message,
+          ...(bare.code !== undefined ? { code: bare.code } : {}),
+          ...(bare.status !== undefined ? { status: bare.status } : {}),
+          ...(bare.requestId !== undefined ? { requestId: bare.requestId } : {}),
+        };
       }
     } catch {
       // Not JSON; use raw text below.
@@ -1159,9 +1615,15 @@ const RETRY_AFTER_MAX_MS = 120_000;
 export function parseRetryAfterMs(header: string | null): number | undefined {
   if (!header) return undefined;
   const trimmed = header.trim();
-  const seconds = Number(trimmed);
-  if (Number.isFinite(seconds) && seconds >= 0) {
-    return Math.min(seconds * 1_000, RETRY_AFTER_MAX_MS);
+  // Only a plain decimal is the delta-seconds form. Number('') is 0 (not NaN),
+  // so a whitespace-only header would otherwise return 0 (retry immediately)
+  // instead of falling through to be ignored; Number() also over-accepts
+  // '0x1f'/'1e3'. A numeric-shape gate keeps those out of the seconds branch.
+  if (/^\d+(?:\.\d+)?$/.test(trimmed)) {
+    const seconds = Number(trimmed);
+    if (Number.isFinite(seconds) && seconds >= 0) {
+      return Math.min(seconds * 1_000, RETRY_AFTER_MAX_MS);
+    }
   }
   // HTTP-date form (RFC 7231) — proxies/CDNs emit it; previously dropped.
   const dateMs = Date.parse(trimmed);

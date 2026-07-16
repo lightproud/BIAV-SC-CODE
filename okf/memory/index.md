@@ -1,4 +1,4 @@
-# 银芯记忆层指针 (48)
+# 银芯记忆层指针 (50)
 
 每张卡是一份**指针** concept，正文权威在 `memory/**`，此处不复刻。核心 10 份 + 全层扩展。
 
@@ -25,8 +25,10 @@
 * [Discord 数据归档系统设计方案](/memory/memory-ext-discord-archiver-design.md) - 忘却前夜 Discord 服务器数据量远超预期——单个频道历史消息达 **76 万条**。纯 git 存储不可持续，需要设计分级存储 + 增
 * [卡帕西编码行为原则（Andrej Karpathy CLAUDE.md, forrestchang 整理版）](/memory/memory-ext-karpathy-coding-principles.md) - Behavioral guidelines to reduce common LLM coding mistakes. Merge with
 * [银芯知识层设计哲学 —— 神经符号白盒骨架（North Star）](/memory/memory-ext-knowledge-layer-design.md) - 它既不是「搜索」（在知识之内找某样东西），也不是「神经网络」（把知识化成不可读的分布式权重）。
+* [踩坑记录归档层](/memory/memory-ext-lessons-archive.md) - 1. BIAV-SC.md §知识模块索引拆分为「全量档案层 / 输出展示层」两段，明确语义（4-26 完成）
 * [Best Game Wiki Features & UX Patterns Research](/memory/memory-ext-research-best-wiki-features.md) - **Core Info Block (Infobox)**
 * [技能写作审计标尺](/memory/memory-ext-skill-authoring-standard.md) - 技能存在的唯一目的：**从随机的 AI 里榨出确定性（predictability）——同样的「过程」，而非同样的「输出」**。下文每条杠杆
+* [银芯测试策略 — 分层质量护栏](/memory/memory-ext-testing-strategy.md) - 银芯的测试不靠单一数字护城。三层护栏各管一件事，互相补盲：
 * [挂账台账（待办 / 待裁唯一权威）](/memory/memory-ext-todo.md) - *建档：2026-07-10 全仓扫描清点（`rg "待守密人|待裁|挂账"` + 逐条溯源实证），艾瑞卡会话。*
 * [Wiki characters.json Schema v1.0.1](/memory/memory-ext-wiki-characters-schema-v1.md) - 1. 覆盖 72 角色全部可预见字段，并为 B3 揭露的四类缺口留有表达位：技能引导、背景故事、命轮、立绘
 * [Wiki Phase 2 缺口清单](/memory/memory-ext-wiki-phase-2-gap-inventory.md) - 艾瑞卡在扫描仓库时检测到**严重的记忆-现实脱节**：

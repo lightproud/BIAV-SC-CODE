@@ -4,7 +4,7 @@ title: "bpt-sdk-session-manager-20260706"
 description: "**痛点一：连接浪费（无共享）。** 现状每个 `query()` 自带一份 `AnthropicTransport`（格式：md）"
 resource: "/Public-Info-Pool/Resource/proposal/bpt-sdk-session-manager-20260706.md"
 tags: ["data_layer:curated", "deliverable", "topic:proposal"]
-timestamp: "2026-07-12"
+timestamp: "2026-07-16"
 ---
 
 # 指针概念

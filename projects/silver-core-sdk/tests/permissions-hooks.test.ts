@@ -293,10 +293,20 @@ describe('ruleMatches', () => {
     expect(ruleMatches(parseRule('Bash'), 'Bash', {})).toBe(true);
   });
 
-  it('unknown tools fall back to the JSON serialization of the input', () => {
-    const rule = parseRule('CustomTool({"url":"https://x"})');
-    expect(ruleMatches(rule, 'CustomTool', { url: 'https://x' })).toBe(true);
-    expect(ruleMatches(rule, 'CustomTool', { url: 'https://y' })).toBe(false);
+  it('a specifier on an unknown / MCP tool never matches (待裁③); bare-name still does', () => {
+    // Non-tabled tools have no resolvable primary arg, so a content specifier
+    // cannot match (keeper 2026-07-16: explicit no-match, not the old
+    // JSON.stringify fallback that compared the specifier against `{...}`).
+    const scoped = parseRule('CustomTool({"url":"https://x"})');
+    expect(ruleMatches(scoped, 'CustomTool', { url: 'https://x' })).toBe(false);
+    expect(ruleMatches(scoped, 'CustomTool', { url: 'https://y' })).toBe(false);
+    // An MCP tool with a specifier likewise never matches (would-be silent
+    // fail-open of `mcp__shell__exec(rm*)` is now an honest no-match)...
+    const mcpScoped = parseRule('mcp__shell__exec(rm*)');
+    expect(ruleMatches(mcpScoped, 'mcp__shell__exec', { command: 'rm -rf /' })).toBe(false);
+    // ...but the BARE-NAME rule DOES match — the supported way to gate MCP tools.
+    const bare = parseRule('mcp__shell__exec');
+    expect(ruleMatches(bare, 'mcp__shell__exec', { command: 'rm -rf /' })).toBe(true);
   });
 });
 
@@ -839,6 +849,18 @@ describe('matcherMatches', () => {
     expect(matcherMatches('(a+){2,}', value)).toBe(false);
   });
 
+  // The original flat-regex detector used [^()] around the inner quantifier, so
+  // a quantified group wrapping ANOTHER group evaded it and still froze the
+  // event loop. These deeper-nested shapes must also be flagged, fast.
+  it('flags DEEPLY nested quantifier shapes and returns quickly', () => {
+    const evil = 'a'.repeat(40) + 'b';
+    for (const pat of ['((a+))+$', '(a(b+))+$', '((a|b)+)+$', '(x(y+)z)*$']) {
+      const started = Date.now();
+      expect(matcherMatches(pat, evil)).toBe(false);
+      expect(Date.now() - started).toBeLessThan(100);
+    }
+  });
+
   it('caps an over-long regex input value as no-match (#24)', () => {
     expect(matcherMatches('x.*', 'x'.repeat(5000))).toBe(false);
   });
@@ -1261,16 +1283,19 @@ describe('DefaultHookRunner', () => {
     expect(agg.decision).toBe('deny');
   });
 
-  it('updatedInput comes from the LAST allow output in completion order', async () => {
+  it('updatedInput comes from the LAST allow output in REGISTRATION order (not completion order)', async () => {
     const r = makeRunner({
       PreToolUse: [
         {
           matcher: '*',
           hooks: [
-            // completes first
-            async () => decisionOutput('allow', undefined, { updatedInput: { first: true } }),
-            // completes last -> its updatedInput wins
-            delayedHook(decisionOutput('allow', undefined, { updatedInput: { second: true } }), 60),
+            // registered FIRST but completes LAST (60ms): under completion-order
+            // folding its updatedInput would win — registration-order must not
+            // let it, so this setup actually distinguishes the two rules (the
+            // prior setup had the winner both registered-last AND completing-last).
+            delayedHook(decisionOutput('allow', undefined, { updatedInput: { first: true } }), 60),
+            // registered LAST, completes FIRST -> still the last-wins value.
+            async () => decisionOutput('allow', undefined, { updatedInput: { second: true } }),
           ],
         },
       ],
@@ -1512,5 +1537,138 @@ describe('DefaultHookRunner', () => {
     await expect(
       r.run('PreToolUse', PRE_TOOL_INPUT, 'toolu_r16', 'Bash', controller.signal),
     ).rejects.toBeInstanceOf(AbortError);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Per-matcher failureMode override + loud fail-open notice (audit 2026-07-14 M-1)
+// ---------------------------------------------------------------------------
+
+describe('DefaultHookRunner per-matcher failureMode (audit 2026-07-14 M-1)', () => {
+  it("matcher failureMode 'closed' denies a crashing PreToolUse hook while the global default stays 'open'", async () => {
+    // No runner-level failureMode: the global default is 'open'. The security
+    // matcher opts into 'closed' for itself only.
+    const r = new DefaultHookRunner({
+      hooks: {
+        PreToolUse: [
+          {
+            matcher: '*',
+            failureMode: 'closed',
+            hooks: [
+              async function securityHook() {
+                throw new Error('policy backend down');
+              },
+            ],
+          },
+        ],
+      },
+      debug: () => {},
+    });
+    const agg = await r.run('PreToolUse', PRE_TOOL_INPUT, 'toolu_m1a', 'Bash', freshSignal());
+    expect(agg.decision).toBe('deny');
+    expect(agg.decisionReason).toContain('securityHook');
+    expect(agg.decisionReason).toContain('policy backend down');
+  });
+
+  it("matcher failureMode 'closed' denies a timed-out hook under the global default", async () => {
+    const r = new DefaultHookRunner({
+      hooks: {
+        PreToolUse: [
+          {
+            matcher: '*',
+            failureMode: 'closed',
+            timeout: 0.05, // 50ms
+            hooks: [
+              async () => {
+                await new Promise((resolve) => setTimeout(resolve, 5_000).unref?.());
+                return decisionOutput('deny', 'should have denied');
+              },
+            ],
+          },
+        ],
+      },
+      debug: () => {},
+    });
+    const agg = await r.run('PreToolUse', PRE_TOOL_INPUT, 'toolu_m1b', 'Bash', freshSignal());
+    expect(agg.decision).toBe('deny');
+  });
+
+  it("matcher failureMode 'open' wins over a global 'closed' (override works both ways)", async () => {
+    const r = new DefaultHookRunner({
+      hooks: {
+        PreToolUse: [
+          {
+            matcher: '*',
+            failureMode: 'open',
+            hooks: [
+              async () => {
+                throw new Error('best-effort hook, failure tolerated');
+              },
+            ],
+          },
+        ],
+      },
+      debug: () => {},
+      failureMode: 'closed',
+    });
+    const agg = await r.run('PreToolUse', PRE_TOOL_INPUT, 'toolu_m1c', 'Bash', freshSignal());
+    expect(agg.decision).toBeUndefined();
+  });
+
+  it('the override is scoped to ITS matcher: a sibling matcher still follows the global default', async () => {
+    const r = new DefaultHookRunner({
+      hooks: {
+        PreToolUse: [
+          {
+            matcher: '*',
+            failureMode: 'closed',
+            hooks: [
+              async function guardedHook() {
+                throw new Error('guarded matcher down');
+              },
+            ],
+          },
+          {
+            matcher: '*',
+            hooks: [
+              async () => {
+                throw new Error('default matcher down');
+              },
+            ],
+          },
+        ],
+      },
+      debug: () => {},
+    });
+    const agg = await r.run('PreToolUse', PRE_TOOL_INPUT, 'toolu_m1d', 'Bash', freshSignal());
+    // The 'closed' matcher contributes the deny; the sibling stays neutral
+    // under the global 'open' default (registration order keeps the reason).
+    expect(agg.decision).toBe('deny');
+    expect(agg.decisionReason).toContain('guardedHook');
+  });
+
+  it("a failure resolved fail-open emits a LOUD debug line saying the outcome was discarded", async () => {
+    const lines: string[] = [];
+    const r = makeRunner(
+      {
+        PreToolUse: [
+          {
+            matcher: '*',
+            hooks: [
+              async function fragileHook() {
+                throw new Error('boom');
+              },
+            ],
+          },
+        ],
+      },
+      (m) => lines.push(m),
+    );
+    const agg = await r.run('PreToolUse', PRE_TOOL_INPUT, 'toolu_m1e', 'Bash', freshSignal());
+    expect(agg.decision).toBeUndefined();
+    const loud = lines.find((l) => l.includes('DISCARDED fail-open'));
+    expect(loud).toBeDefined();
+    expect(loud).toContain('fragileHook');
+    expect(loud).toContain("failureMode 'closed'"); // points at the remedy
   });
 });

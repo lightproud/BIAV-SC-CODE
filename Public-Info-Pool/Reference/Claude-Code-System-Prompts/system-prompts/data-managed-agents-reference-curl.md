@@ -1,7 +1,7 @@
 <!--
 name: 'Data: Managed Agents reference — cURL'
 description: Provides cURL and raw HTTP request examples for the Managed Agents API including environment, agent, and session lifecycle operations
-ccVersion: 2.1.198
+ccVersion: 2.1.203
 -->
 # Managed Agents — cURL / Raw HTTP
 
@@ -83,7 +83,7 @@ curl -X POST https://api.anthropic.com/v1/sessions \
     "environment_id": "env_abc123"
   }'
 # → { "id": "sesn_abc123", ... }
-# Trace: https://platform.claude.com/workspaces/default/sessions/sesn_abc123
+# Trace: https://platform.claude.com/workspaces/default/sessions/sesn_abc123  (swap 'default' for your workspace ID if the API key is not in the Default workspace)
 ```
 
 ### With system prompt, custom tools, and GitHub repo

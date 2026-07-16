@@ -25,10 +25,12 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(me
 logger = logging.getLogger(__name__)
 
 _REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
-PLATFORMS_DIR = _REPO_ROOT / 'projects' / 'news' / 'data' / 'platforms'
+# 4R 迁移后全量档案层现址（旧 projects/news/data/platforms 已废，2026-07-12 修复）
+ARCHIVE_DIR = _REPO_ROOT / 'Public-Info-Pool' / 'Record' / 'Community'
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import news_common  # 日志脱敏单一真源（H3）
+import archive_layout  # noqa: E402  归档布局单一真相源（2026-07-02 P0-1）
 
 
 def _gap_bound(env_name: str, default: datetime, end_of_day: bool) -> datetime:
@@ -68,9 +70,9 @@ def _archive_items(source: str, items: list[dict]):
             continue
 
     for date_str, date_items in by_date.items():
-        out_dir = PLATFORMS_DIR / source
-        out_dir.mkdir(parents=True, exist_ok=True)
-        out_path = out_dir / f'{date_str}.json'
+        platform, region, subtype = archive_layout.resolve_write_layout(source)
+        out_path = ARCHIVE_DIR / archive_layout.build_relpath(platform, region, subtype, date_str)
+        out_path.parent.mkdir(parents=True, exist_ok=True)
 
         existing = []
         if out_path.exists():
@@ -455,11 +457,15 @@ def backfill_steam_reviews():
 def cleanup_empty_placeholders():
     """Remove empty placeholder files created by repair_gaps.py for the gap period."""
     removed = 0
-    for source_dir in sorted(PLATFORMS_DIR.iterdir()):
+    gap_dates = []
+    d = GAP_START
+    while d.date() <= GAP_END.date():
+        gap_dates.append(d.strftime('%Y-%m-%d'))
+        d += timedelta(days=1)
+    for source_dir in sorted(ARCHIVE_DIR.iterdir()):
         if not source_dir.is_dir():
             continue
-        for day in range(13, 26):
-            date_str = f'2026-04-{day:02d}'
+        for date_str in gap_dates:
             path = source_dir / f'{date_str}.json'
             if not path.exists():
                 continue
