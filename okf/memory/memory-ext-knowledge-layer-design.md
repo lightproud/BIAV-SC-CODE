@@ -4,7 +4,7 @@ title: "银芯知识层设计哲学 —— 神经符号白盒骨架（North Star
 description: "它既不是「搜索」（在知识之内找某样东西），也不是「神经网络」（把知识化成不可读的分布式权重）。"
 resource: "/memory/knowledge-layer-design.md"
 tags: ["memory", "data_layer:curated"]
-timestamp: "2026-07-15"
+timestamp: "2026-07-16"
 ---
 
 # 记忆层指针
