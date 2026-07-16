@@ -1,8 +1,8 @@
 {
   "generated": "2026-07-16",
   "stats": {
-    "nodes": 355,
-    "edges": 409
+    "nodes": 356,
+    "edges": 419
   },
   "nodes": [
     {
@@ -3234,6 +3234,17 @@
       "tier": "search"
     },
     {
+      "id": "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "type": "documentation",
+      "title": "scs-req-repositioning-loop-support-20260717",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
       "id": "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "type": "documentation",
       "title": "sdk-cross-protocol-routing-bpt-handoff-20260713",
@@ -3554,7 +3565,7 @@
       "tags": [
         "data_layer:full_archive",
         "platform:weixin",
-        "health:active"
+        "health:degraded"
       ],
       "tier": "skeleton",
       "url": "news/"
@@ -4402,14 +4413,26 @@
     },
     {
       "source": "/community/community-steam.md",
-      "target": "/characters/130226.md",
-      "rel": "提及:Saya",
+      "target": "/characters/15563.md",
+      "rel": "提及:图鲁",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-steam.md",
+      "target": "/characters/15576.md",
+      "rel": "提及:墨菲",
       "rel_type": "mention"
     },
     {
       "source": "/community/community-weibo.md",
       "target": "/characters/15567.md",
       "rel": "提及:血链·希洛",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-weibo.md",
+      "target": "/characters/15582.md",
+      "rel": "提及:弥利亚姆",
       "rel_type": "mention"
     },
     {
@@ -4434,6 +4457,18 @@
       "source": "/community/community-weibo.md",
       "target": "/characters/77922.md",
       "rel": "提及:克珀珊特",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-weibo.md",
+      "target": "/characters/54117.md",
+      "rel": "提及:哈姆林",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-weibo.md",
+      "target": "/characters/15563.md",
+      "rel": "提及:图鲁",
       "rel_type": "mention"
     },
     {
@@ -4504,8 +4539,14 @@
     },
     {
       "source": "/community/community-youtube.md",
+      "target": "/characters/54117.md",
+      "rel": "提及:哈姆林",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-youtube.md",
       "target": "/characters/130226.md",
-      "rel": "提及:沙耶",
+      "rel": "提及:Saya",
       "rel_type": "mention"
     },
     {
@@ -5770,14 +5811,26 @@
     },
     {
       "source": "/sources/steam.md",
-      "target": "/characters/130226.md",
-      "rel": "提及:Saya",
+      "target": "/characters/15563.md",
+      "rel": "提及:图鲁",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/steam.md",
+      "target": "/characters/15576.md",
+      "rel": "提及:墨菲",
       "rel_type": "mention"
     },
     {
       "source": "/sources/weibo.md",
       "target": "/characters/15567.md",
       "rel": "提及:血链·希洛",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/weibo.md",
+      "target": "/characters/15582.md",
+      "rel": "提及:弥利亚姆",
       "rel_type": "mention"
     },
     {
@@ -5806,6 +5859,18 @@
     },
     {
       "source": "/sources/weibo.md",
+      "target": "/characters/54117.md",
+      "rel": "提及:哈姆林",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/weibo.md",
+      "target": "/characters/15563.md",
+      "rel": "提及:图鲁",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/weibo.md",
       "target": "/characters/15576.md",
       "rel": "提及:墨菲",
       "rel_type": "mention"
@@ -5830,8 +5895,14 @@
     },
     {
       "source": "/sources/youtube.md",
+      "target": "/characters/54117.md",
+      "rel": "提及:哈姆林",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/youtube.md",
       "target": "/characters/130226.md",
-      "rel": "提及:沙耶",
+      "rel": "提及:Saya",
       "rel_type": "mention"
     },
     {
