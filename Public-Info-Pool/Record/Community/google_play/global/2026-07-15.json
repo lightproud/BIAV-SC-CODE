@@ -1,8 +1,8 @@
 {
   "date": "2026-07-15",
-  "archived_at": "2026-07-16T08:12:42.326396+00:00",
+  "archived_at": "2026-07-16T11:00:45.816993+00:00",
   "source": "google_play",
-  "item_count": 1,
+  "item_count": 3,
   "items": [
     {
       "title": "[Google Play 好评] ★5 Hyper fixation activation. Amazing gamep",
@@ -16,6 +16,34 @@
       "tags": [],
       "lang": "en",
       "platform_region": "us",
+      "region": "global"
+    },
+    {
+      "title": "[Google Play 好评] ★5 This game has been an emotional rollerco",
+      "summary": "This game has been an emotional rollercoaster that has genuinely brought me to tears. The storyline is nothing short of breathtaking-it’s rare to find a narrative this moving, with twists that hit hard and characters you’ll fall in love with instantly. I’m not exaggerating when I say I’ve been playing for days straight. It’s that addictive. And the visuals?Dont even get me started, bro. They're absolutely gorgeous. The character designs are stunning, with so much detail and personality.",
+      "source": "google_play",
+      "time": "2026-07-15T08:32:48",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-f78bec77-760e-4337-95f7-876bd58411d4",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "strobery",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "us",
+      "region": "global"
+    },
+    {
+      "title": "[Google Play 好评] ★5 лучший гача своим вайбом",
+      "summary": "лучший гача своим вайбом",
+      "source": "google_play",
+      "time": "2026-07-15T08:24:32",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=ru#gp-c75eef49-f23b-41d1-bccc-126d9ffe00dd",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "Ismail Khamidov",
+      "tags": [],
+      "lang": "ru",
+      "platform_region": "ru",
       "region": "global"
     }
   ],

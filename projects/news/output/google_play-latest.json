@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-16T08:11:57.056069+00:00",
+  "collected_at": "2026-07-16T10:59:53.328148+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 107,
+  "item_count": 109,
   "items": [
     {
       "source": "google_play",
@@ -233,6 +233,16 @@
       "summary": "觉得还行",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=zh_CN#gp-57f4f9db-558e-4842-b184-3a7e848970ad",
       "author": "元气豆芽（YQBean）",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-15T08:32:48",
+      "lang": "en",
+      "title": "[Google Play 好评] ★5 This game has been an emotional rollerco",
+      "summary": "This game has been an emotional rollercoaster that has genuinely brought me to tears. The storyline is nothing short of breathtaking-it’s rare to find a narrative this moving, with twists that hit hard and characters you’ll fall in love with instantly. I’m not exaggerating when I say I’ve been playing for days straight. It’s that addictive. And the visuals?Dont even get me started, bro. They're absolutely gorgeous. The character designs are stunning, with so much detail and personality.",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-f78bec77-760e-4337-95f7-876bd58411d4",
+      "author": "strobery",
       "engagement": 0
     },
     {
@@ -893,6 +903,16 @@
       "summary": "5 stelle perché è un gioco multilingue compreso l'italiano cosa che ormai dovrebbero fare tutti giochi grazie all'IA",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=it#gp-d2764bc5-5216-46e4-9594-094a54585b86",
       "author": "Daniele",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-15T08:24:32",
+      "lang": "ru",
+      "title": "[Google Play 好评] ★5 лучший гача своим вайбом",
+      "summary": "лучший гача своим вайбом",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=ru#gp-c75eef49-f23b-41d1-bccc-126d9ffe00dd",
+      "author": "Ismail Khamidov",
       "engagement": 0
     },
     {

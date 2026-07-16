@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-16T08:11:57.056069+00:00",
+  "collected_at": "2026-07-16T10:59:53.328148+00:00",
   "source": "youtube",
   "data_layer": "output",
-  "item_count": 16,
+  "item_count": 17,
   "items": [
     {
       "source": "youtube",
@@ -13,7 +13,7 @@
       "summary": "https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord ...",
       "url": "https://www.youtube.com/watch?v=7os6Ty1G-Ec",
       "author": "Flares117",
-      "engagement": 560,
+      "engagement": 686,
       "media_url": "https://i.ytimg.com/vi/7os6Ty1G-Ec/hqdefault.jpg",
       "content_type": "video"
     },
@@ -43,25 +43,13 @@
     },
     {
       "source": "youtube",
-      "time": "2026-07-15T15:53:21Z",
-      "lang": "",
-      "title": "【Morimens】Katanya Game Ini Bangkit Dari Kubur?? AKU NAK MBG  [Vtuber Indonesia LIVE]",
-      "summary": "Dukung aku melalui link berikut! Trakteer: https://trakteer.id/raynards_himmelregn/gift https://sociabuzz.com/rain_a_lot ...",
-      "url": "https://www.youtube.com/watch?v=EvKy7forIh4",
-      "author": "Rain a lot",
-      "engagement": 63,
-      "media_url": "https://i.ytimg.com/vi/EvKy7forIh4/hqdefault.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "youtube",
       "time": "2026-07-15T23:39:19Z",
       "lang": "",
       "title": "Directo relax Morimens | A subirse al tren!",
       "summary": "No olviden unirse al discord :). https://discord.gg/UgmMCae3Sg.",
       "url": "https://www.youtube.com/watch?v=0_LXnZHmYHM",
       "author": "OcteKG",
-      "engagement": 54,
+      "engagement": 58,
       "media_url": "https://i.ytimg.com/vi/0_LXnZHmYHM/hqdefault.jpg",
       "content_type": "video"
     },
@@ -73,7 +61,7 @@
       "summary": "",
       "url": "https://www.youtube.com/watch?v=f39zwQqZANo",
       "author": "Koka",
-      "engagement": 48,
+      "engagement": 47,
       "media_url": "https://i.ytimg.com/vi/f39zwQqZANo/hqdefault.jpg",
       "content_type": "video"
     },
@@ -87,6 +75,18 @@
       "author": "Dehcbf",
       "engagement": 46,
       "media_url": "https://i.ytimg.com/vi/L5pDi7ggC8Q/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-07-16T09:08:52Z",
+      "lang": "",
+      "title": "Start of the FINAL Chapter... | Morimens: Ark 2 - CH5",
+      "summary": "Morimens until I'm KoG TTV: https://www.twitch.tv/lowlivve Disc: https://discord.gg/KWB3yD6HeW #morimens #忘却前夜 #忘卻 ...",
+      "url": "https://www.youtube.com/watch?v=GgDJFUVtxTc",
+      "author": "LowLivve",
+      "engagement": 16,
+      "media_url": "https://i.ytimg.com/vi/GgDJFUVtxTc/hqdefault.jpg",
       "content_type": "video"
     },
     {
@@ -151,6 +151,18 @@
     },
     {
       "source": "youtube",
+      "time": "2026-07-16T07:11:42Z",
+      "lang": "",
+      "title": "【忘却前夜】イベント「決戦：原初の影」原初共闘「ソナニール号・狂気の視線」",
+      "summary": "忘却前夜 よければお使いください。 招待コード：GCWESC27JR.",
+      "url": "https://www.youtube.com/watch?v=WlJnlZMy4kI",
+      "author": "霏憂【ひゅう】",
+      "engagement": 1,
+      "media_url": "https://i.ytimg.com/vi/WlJnlZMy4kI/hqdefault.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "youtube",
       "time": "2026-07-16T00:01:04Z",
       "lang": "",
       "title": "Finishing Chapter 3 of Morimens",
@@ -187,14 +199,14 @@
     },
     {
       "source": "youtube",
-      "time": "2026-07-16T07:11:42Z",
+      "time": "2026-07-16T10:50:14Z",
       "lang": "",
-      "title": "【忘却前夜】イベント「決戦：原初の影」原初共闘「ソナニール号・狂気の視線」",
-      "summary": "忘却前夜 よければお使いください。 招待コード：GCWESC27JR.",
-      "url": "https://www.youtube.com/watch?v=WlJnlZMy4kI",
-      "author": "霏憂【ひゅう】",
+      "title": "【#忘却前夜  】守秘者のみんな！！！！楽しいレイド戦だーーー！！！#4【#推し活】",
+      "summary": "忘却前夜やっていきます！ トゥルーくんが好きな初心者守秘者です！ ふれんどよければなりましょー！ UID：200148472 まだの ...",
+      "url": "https://www.youtube.com/watch?v=DX6AlnhSam8",
+      "author": "卯咲乃ぬい",
       "engagement": 0,
-      "media_url": "https://i.ytimg.com/vi/WlJnlZMy4kI/hqdefault.jpg",
+      "media_url": "https://i.ytimg.com/vi/DX6AlnhSam8/hqdefault_live.jpg",
       "content_type": "video"
     }
   ]

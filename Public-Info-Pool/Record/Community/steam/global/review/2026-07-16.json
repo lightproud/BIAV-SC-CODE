@@ -1,8 +1,8 @@
 {
   "date": "2026-07-16",
-  "archived_at": "2026-07-16T08:12:42.221868+00:00",
+  "archived_at": "2026-07-16T11:00:45.709629+00:00",
   "source": "steam",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "title": "[负面] seems unpolished, starts off boring, story didn't...",
@@ -22,6 +22,30 @@
         "playtime_forever": 13,
         "votes_up": 0,
         "timestamp_created": 1784164777
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 打牌爽",
+      "summary": "打牌爽",
+      "source": "steam_review",
+      "time": "2026-07-16T08:28:12+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199097093660/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199097093660",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 2548,
+        "votes_up": 0,
+        "timestamp_created": 1784190492
       },
       "region": "global",
       "archive_subtype": "review",
