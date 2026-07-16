@@ -1,11 +1,11 @@
 {
   "date": "2026-07-16",
-  "messages": 527,
+  "messages": 542,
   "unique_authors": 31,
-  "reactions_total": 177,
-  "attachments": 46,
+  "reactions_total": 179,
+  "attachments": 48,
   "channel_activity": {
-    "なんでも雑談": 237,
+    "なんでも雑談": 252,
     "美術2でも絵が描ける守秘者になりたい！": 2,
     "ニムフィーアの毒パ研究日誌": 5,
     "つぶやき": 95,
@@ -20,6 +20,9 @@
     "動画制作協力CH": 5
   },
   "hourly_activity": {
+    "17": 9,
+    "18": 1,
+    "19": 5,
     "14": 48,
     "15": 72,
     "16": 8,
@@ -39,8 +42,8 @@
     "0": 4
   },
   "message_types": {
-    "0": 97,
-    "19": 9
+    "0": 11,
+    "19": 4
   },
   "top_reacted_messages": [
     {
