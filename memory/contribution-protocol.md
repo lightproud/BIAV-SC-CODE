@@ -1,8 +1,15 @@
-# 缸中之脑社区贡献流程 v1.0
+# 缸中之脑社区贡献流程 v1.0（已退役）
 
-> 最后更新：2026-04-26 by 主控台（艾瑞卡 opus4.7 长期战略锚点，守密人 Q1-Q5 逐项裁决后落档）
+> **状态：已退役（守密人 2026-07-10 裁定「取消社区贡献。单方面社区可读即可」，
+> 见 `memory/decisions.md` 同日条目）。** 社区贡献通道整体关闭：银芯对社区为
+> **单向可读**——社区可自由读取全部公开信息并派生使用，银芯不接收社区回写。
+> 本档案整体留存仅供历史追溯，下文任何通道 / 流程 / 裁决均不再生效。
+> M7 验收「贡献流程跑顺 ≥ 1 轮」项随本裁定作废。
 >
-> **状态：v1.0 正式版。** 守密人 2026-04-26 裁决记录见第七节。
+> 最后更新：2026-04-26 by 主控台（艾瑞卡 opus4.7 长期战略锚点，守密人 Q1-Q5 逐项裁决后落档）；
+> 2026-07-10 加退役横幅（正文未改，历史原样）。
+>
+> ~~**状态：v1.0 正式版。** 守密人 2026-04-26 裁决记录见第七节。~~
 >
 > 上游依据：
 > - `memory/strategic-plan-2026.md` v2.0 第二使命「社区共建知识底座」
@@ -45,12 +52,12 @@
 | 步骤 | 动作 |
 |------|------|
 | 1 | 贡献者 fork 仓库 |
-| 2 | 编辑 `projects/wiki/data/db/*.json` 或对应 markdown |
-| 3 | 本地跑 `python projects/wiki/scripts/validate_data.py` 通过 |
+| 2 | 编辑 `projects/wiki/data/processed/characters.json`（W2 可信基线）或 `processed/story/` 等对应档案（原 `data/db/` 层 2026-06-15 守密人裁定整层清空，本行 2026-07-10 对账刷新） |
+| 3 | 本地跑 `python projects/wiki/scripts/validate_data.py` 通过（或会话内 `/validate-data`） |
 | 4 | 提 PR，base=main |
 | 5 | `validate-data.yml` workflow 自动校验 schema |
 | 6 | 守密人 / 验收方人工 review（数据真实性 + 来源标注） |
-| 7 | 合入 main → `deploy-site.yml` 自动部署到 wiki |
+| 7 | 合入 main → 会话跑 `scripts/generate_wiki_pages.py` 重生成角色页 → `deploy-site.yml` 部署 |
 
 **强制要求**：贡献的数据必须标注来源（`source` 字段：`fandom` / `bilibili-wiki` / `gamekee` / `ingame-screenshot` 等）。
 
@@ -127,7 +134,7 @@
 | 里程碑 | 节点 | 产物 |
 |---|---|---|
 | M1（4-27 → 5-10） | 本协议 v1.0 落档 ✅ | `memory/contribution-protocol.md` v1.0 |
-| M1 末 | Issue / PR 模板落档 ✅ | `.github/ISSUE_TEMPLATE/{bug,data-gap,config}.yml` + `.github/PULL_REQUEST_TEMPLATE.md`（Code-site 2026-04-26 实施） |
+| M1 末 | Issue / PR 模板落档 ✅ | `.github/ISSUE_TEMPLATE/{bug,data-gap,config}.yml` + `.github/PULL_REQUEST_TEMPLATE.md`（Code-site 2026-04-26 实施；**2026-07-10 退役裁定④已删 bug/data-gap 模板，仅存 config.yml 联络导流 + PR 模板改内部用途**） |
 | M2（5-11 → 6-10） | **双入口**：仓库根 `CONTRIBUTING.md` + 主站「贡献者入口」镜像页（守密人 Q5 裁决 b） | 派 Code-site 双轨实施 |
 | M3（6-11 → 7-10） | **至少 1 轮真实贡献跑通**（验收节点） | 1 个外部 PR 从提交到合并完整经历流程 |
 | M4（7-11 → 7-19） | 战略验收 | 使命#2 出口标准核验 |

@@ -52,7 +52,7 @@ BPT 不是规划中的产品，是**有真实用户的在产工具**；一切引
 原设想「工具层由他人做、我们只使用」已被守密人废止。理由为结构性外部条件：
 大集团大公司跨国技术商业竞争与地缘政治交错、数据主权宣示、集团内部技术路线
 摇摆与重复造轮子、乃至**公司本身可能被交易导致基建整体更换**。这些条件下
-「依赖外部工具」本身就是定位级风险——净室自有引擎（bpt-agent-sdk）是主权的
+「依赖外部工具」本身就是定位级风险——净室自有引擎（silver-core-sdk，原名 bpt-agent-sdk）是主权的
 必然，2026-07-03 禁令只是提前引爆点，不是原因。
 
 ### 5. 模型可替换性 = 定位硬承诺
@@ -66,7 +66,7 @@ BPT 不是规划中的产品，是**有真实用户的在产工具**；一切引
 
 - 双系统角色与消费通道：`memory/bpt-guidance-protocol.md`（v0.3：黑池 fetch
   银芯仓库为主消费通道，对话搬运收窄为战略裁定 + 回流过滤）。
-- 引擎定位：`projects/bpt-agent-sdk/docs/POSITIONING.md`（2026-07-04 三处修订：
+- 引擎定位：`projects/silver-core-sdk/docs/POSITIONING.md`（2026-07-04 三处修订：
   主权叙事 / 参照系固定靶 / provider 升格）。
 - 元知识层方法论导读（治「知识结构混乱」的 A 类输出，面向黑池会话）：
   `Public-Info-Pool/Resource/methodology/knowledge-engineering-primer-20260704.md`。

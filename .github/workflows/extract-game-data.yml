@@ -31,6 +31,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v7
+        with:
+          ssh-key: ${{ secrets.BOT_DEPLOY_KEY }}
 
       - name: Download game data from Release
         env:

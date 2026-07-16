@@ -1046,7 +1046,7 @@ class TestReadDiscordJsonl(unittest.TestCase):
         import tempfile
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
-            ch_dir = root / "projects" / "news" / "data" / "discord" / "channels" / "suffixA"
+            ch_dir = root / "Public-Info-Pool" / "Record" / "Community" / "discord" / "global" / "channels" / "suffixA"
             ch_dir.mkdir(parents=True)
             (ch_dir / "2026-06-10.jsonl").write_text(
                 json.dumps({"id": "1", "content": "hi"}) + "\n"
@@ -1055,7 +1055,7 @@ class TestReadDiscordJsonl(unittest.TestCase):
                 encoding="utf-8",
             )
             # channel_index.json 把 suffixA 映射到频道名
-            index_dir = root / "projects" / "news" / "data" / "discord"
+            index_dir = root / "Public-Info-Pool" / "Record" / "Community" / "discord" / "global"
             (index_dir / "channel_index.json").write_text(
                 json.dumps({"cid9": {"name": "general", "dir": "suffixA"}}), encoding="utf-8")
             with mock.patch.object(ac, "REPO_ROOT", root):
@@ -1067,7 +1067,7 @@ class TestReadDiscordJsonl(unittest.TestCase):
         import tempfile
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
-            ch_dir = root / "projects" / "news" / "data" / "discord" / "channels" / "suffixB"
+            ch_dir = root / "Public-Info-Pool" / "Record" / "Community" / "discord" / "global" / "channels" / "suffixB"
             ch_dir.mkdir(parents=True)
             (ch_dir / "2026-06-09.jsonl").write_text("{}\n", encoding="utf-8")
             with mock.patch.object(ac, "REPO_ROOT", root):
@@ -1078,7 +1078,7 @@ class TestReadDiscordJsonl(unittest.TestCase):
         import tempfile
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
-            ch_dir = root / "projects" / "news" / "data" / "discord" / "channels" / "suffixC"
+            ch_dir = root / "Public-Info-Pool" / "Record" / "Community" / "discord" / "global" / "channels" / "suffixC"
             ch_dir.mkdir(parents=True)
             (ch_dir / "2026-06-10.jsonl").write_text("{bad json\n", encoding="utf-8")
             with mock.patch.object(ac, "REPO_ROOT", root):

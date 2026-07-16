@@ -459,3 +459,124 @@ def test_fresh_drops_file_honoured(tmp_path, monkeypatch):
                              "by_source": {"taptap_review": 108}}), encoding="utf-8")
     monkeypatch.setattr(ssa, "DROPS_PATH", p)
     assert ssa.drop_alarms() == ["taptap_review(108)"]
+
+
+# ── 叶级下钻（区服/类型粒度，2026-07-10）────────────────────────────────────
+
+def _write_leaf_day(adir, relpath, date_str, item_count=1):
+    leaf = adir / relpath
+    leaf.mkdir(parents=True, exist_ok=True)
+    (leaf / f"{date_str}.json").write_text(
+        json.dumps({"item_count": item_count, "items": []}), encoding="utf-8"
+    )
+
+
+def test_leaf_cadence_days_daily():
+    dates = [f"2026-06-{d:02d}" for d in range(1, 11)]
+    assert ssa.leaf_cadence_days(dates) == 1
+
+
+def test_leaf_cadence_days_sparse():
+    assert ssa.leaf_cadence_days(["2026-05-01", "2026-05-11", "2026-05-21"]) == 10
+
+
+def test_leaf_cadence_days_insufficient():
+    assert ssa.leaf_cadence_days(["2026-05-01"]) is None
+    assert ssa.leaf_cadence_days([]) is None
+
+
+def test_leaf_stall_threshold():
+    assert ssa.leaf_stall_threshold(1) == ssa.DEGRADED_THRESHOLD  # 日更叶 7 天即报
+    assert ssa.leaf_stall_threshold(10) == 30                     # 稀疏叶 3 倍节拍放宽
+    assert ssa.leaf_stall_threshold(None) == ssa.DORMANT_THRESHOLD
+
+
+def test_audit_leaves_flat_source_returns_empty(dirs):
+    """单叶平铺源无下钻价值（与平台级重复），返回空表。"""
+    _, adir, _ = dirs
+    _write_platform_day(adir, "reddit", "2026-07-01", 3)
+    assert ssa.audit_leaves("reddit") == []
+
+
+def test_audit_leaves_layered_source(dirs):
+    _, adir, _ = dirs
+    _write_leaf_day(adir, "appstore/global", "2026-07-01")
+    _write_leaf_day(adir, "appstore/global", "2026-07-02")
+    _write_leaf_day(adir, "appstore/jp", "2026-06-01")
+    leaves = ssa.audit_leaves("appstore")
+    assert {l["leaf"] for l in leaves} == {"appstore/global", "appstore/jp"}
+    jp = next(l for l in leaves if l["leaf"] == "appstore/jp")
+    assert jp["last_archive_date"] == "2026-06-01"
+    assert jp["days_archived"] == 1
+
+
+def test_build_leaf_report_flags_stalled_daily_leaf(dirs):
+    """appstore/jp 形态复现：日更叶骤停 30 天必须告警，活跃叶不告警。"""
+    _, adir, _ = dirs
+    for d in range(1, 11):
+        _write_leaf_day(adir, "appstore/jp", f"2026-06-{d:02d}")
+        _write_leaf_day(adir, "appstore/global", f"2026-07-{d:02d}")
+    rows = ssa.build_leaf_report("2026-07-10")
+    by_leaf = {r["leaf"]: r for r in rows}
+    assert by_leaf["appstore/jp"]["stalled"] is True
+    assert by_leaf["appstore/jp"]["cadence_days"] == 1
+    assert by_leaf["appstore/global"]["stalled"] is False
+
+
+def test_build_leaf_report_sparse_leaf_not_false_alarmed(dirs):
+    """稀疏叶（节拍 10 天）沉默 20 天 < 3 倍节拍，不得误报。"""
+    _, adir, _ = dirs
+    for d in ["2026-05-01", "2026-05-11", "2026-05-21", "2026-06-01",
+              "2026-06-10", "2026-06-20"]:
+        _write_leaf_day(adir, "google_play/jp", d)
+    for d in range(1, 11):
+        _write_leaf_day(adir, "google_play/global", f"2026-07-{d:02d}")
+    rows = ssa.build_leaf_report("2026-07-10")
+    jp = next(r for r in rows if r["leaf"] == "google_play/jp")
+    assert jp["silent_days"] == 20
+    assert jp["stalled"] is False  # 阈值 = 3 x ~10d 节拍
+
+
+def test_build_leaf_report_folded_source_leaves(dirs):
+    """折叠源（official → steam/*/news）的叶按宿主路径下钻且能告警。"""
+    _, adir, _ = dirs
+    for d in range(1, 11):
+        _write_leaf_day(adir, "steam/global/news", f"2026-06-{d:02d}")
+    for d in ["2026-05-01", "2026-06-01", "2026-07-01"]:
+        _write_leaf_day(adir, "steam/jp/news", d)
+    rows = ssa.build_leaf_report("2026-07-10")
+    news_rows = {r["leaf"]: r for r in rows if r["source"] == "official"}
+    assert set(news_rows) == {"steam/global/news", "steam/jp/news"}
+    assert news_rows["steam/global/news"]["stalled"] is True   # 日更叶停 30 天
+    assert news_rows["steam/jp/news"]["stalled"] is False      # 月更叶沉默 9 天
+
+
+def test_write_health_embeds_stalled_leaves(dirs):
+    _, adir, _ = dirs
+    for d in range(1, 11):
+        _write_leaf_day(adir, "appstore/jp", f"2026-06-{d:02d}")
+        _write_leaf_day(adir, "appstore/global", f"2026-07-{d:02d}")
+    report = ssa.build_report()
+    ssa.write_health(report)
+    health = json.loads(ssa.HEALTH_PATH.read_text(encoding="utf-8"))
+    stalled = {l["leaf"] for l in health["stalled_leaves"]}
+    assert "appstore/jp" in stalled
+    assert "appstore/global" not in stalled
+
+
+def test_window_floor_clamps_content_dated_noise(dirs):
+    """weixin 2016 老文（内容日期落桶）不得把审计窗口拉到数千天。"""
+    _, adir, _ = dirs
+    _write_platform_day(adir, "weixin", "2016-02-03", 1)
+    _write_platform_day(adir, "weixin", "2026-07-01", 2)
+    report = ssa.build_report()
+    assert report["window_start"] == ssa.AUDIT_WINDOW_FLOOR
+    assert report["window_clamped"] is True
+
+
+def test_window_not_clamped_when_within_floor(dirs):
+    _, adir, _ = dirs
+    _write_platform_day(adir, "reddit", "2026-07-01", 2)
+    report = ssa.build_report()
+    assert report["window_clamped"] is False
+    assert report["window_start"] == "2026-07-01"

@@ -4,7 +4,7 @@ title: "输出展示层 · twitter 最新快照"
 description: "twitter 输出展示层最新快照（抽样选样，非全量）。长窗口分析 / 完整性审计 / 情感长尾须改用全量档案层（见 community/ 与 sources/ 的 full_archive 指针，lesson #30）。"
 resource: "/projects/news/output/twitter-latest.json"
 tags: ["data_layer:output", "platform:twitter", "sampled"]
-timestamp: "2026-07-05"
+timestamp: "2026-07-16"
 ---
 
 # 指针概念

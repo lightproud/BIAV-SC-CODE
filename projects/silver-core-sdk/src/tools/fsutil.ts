@@ -1,0 +1,115 @@
+/**
+ * Shared filesystem helpers for the built-in FS tools (Read / Write / Edit).
+ *
+ * Path model (2026-07-05, keeper ruling on BPT report #2): NO hard containment
+ * fence. A path is resolved cwd-relative and used as-is - the same posture as
+ * official Claude Code, where Read/Write/Edit reach any path the process can
+ * and the PERMISSION GATE (permissionMode) is the sole access control, not a
+ * second filesystem fence. The old cwd+additionalDirectories fence (v0.1) was
+ * BPT-specific, inconsistent (Grep/Glob/Bash never had it) and - with Bash in
+ * the tool set - never a real security boundary anyway, only a false sense of
+ * one. additionalDirectories retains its real role: sandbox writablePaths.
+ * (History: resolveWithin removed here; see CHANGELOG 0.6.4.)
+ */
+
+import * as path from 'node:path';
+
+/** Number of leading bytes sniffed when deciding whether a file is binary. */
+const BINARY_SNIFF_BYTES = 8192;
+
+/** Default maximum characters kept per line in cat -n style output. */
+export const MAX_LINE_CHARS = 2000;
+
+/**
+ * Default cap on the TOTAL characters one Read returns (BPT request 2026-07-06).
+ * The line limit (2000) and per-line cap (2000) bound rows and row-width but
+ * not the AGGREGATE — a 2000-line file of medium-length lines can still flood
+ * the context. This cap is applied on a LINE BOUNDARY (never mid-line) during
+ * formatting; because every line is already <= MAX_LINE_CHARS, 50000 > 2000
+ * guarantees at least ~25 lines are emitted, so the output is never empty and
+ * an offset continuation never dead-loops. ~50K aligns with the WebFetch cap.
+ */
+export const MAX_READ_OUTPUT_CHARS = 50000;
+
+/** Width of the right-aligned line-number column. */
+const LINE_NUMBER_WIDTH = 6;
+
+/** Structured result of formatCatN: the text plus what bounded it, so the Read
+ *  tool can build a footer that reflects the cap that actually took effect. */
+export type FormatCatNResult = {
+  /** The assembled cat -n output. */
+  text: string;
+  /** How many of the input lines were emitted (< lines.length when the total-
+   *  character cap stopped assembly early on a line boundary). */
+  linesEmitted: number;
+  /** True when the total-character cap stopped assembly before all input lines
+   *  fit (distinct from the caller's line-count limit). */
+  charCapped: boolean;
+  /** Count of emitted lines that exceeded the per-line cap and were truncated
+   *  (each carries a `…[line truncated: N chars total]` marker). */
+  truncatedLines: number;
+};
+
+/**
+ * Resolve `p` (absolute or cwd-relative) to an absolute path. No containment
+ * fence (keeper ruling 2026-07-05, BPT #2): the permission gate is the access
+ * control, aligning with official Claude Code. `additional` is accepted for a
+ * stable signature but does not gate access here.
+ */
+export function resolveAbs(cwd: string, p: string): string {
+  return path.resolve(cwd, p);
+}
+
+/** Heuristic binary sniff: any NUL byte within the first 8KB. */
+export function looksBinary(buf: Buffer): boolean {
+  const end = Math.min(buf.length, BINARY_SNIFF_BYTES);
+  for (let i = 0; i < end; i++) {
+    if (buf[i] === 0) {
+      return true;
+    }
+  }
+  return false;
+}
+
+/**
+ * Format lines in `cat -n` style: right-aligned 6-char line number, a tab, then
+ * the line text. Two caps apply: each line is truncated at `maxLineChars` (a
+ * `…[line truncated: N chars total]` marker replaces the silent slice so the
+ * model knows the row is incomplete), and the TOTAL output is capped at
+ * `maxOutputChars` on a line boundary (never mid-line). The first line is
+ * always emitted, so the result is never empty even if that line alone exceeds
+ * the total cap. Returns what bounded the output so the caller can footer it.
+ */
+export function formatCatN(
+  lines: string[],
+  startLine: number,
+  opts?: { maxLineChars?: number; maxOutputChars?: number },
+): FormatCatNResult {
+  const maxLineChars = opts?.maxLineChars ?? MAX_LINE_CHARS;
+  const maxOutputChars = opts?.maxOutputChars ?? MAX_READ_OUTPUT_CHARS;
+  const out: string[] = [];
+  let running = 0;
+  let truncatedLines = 0;
+  let charCapped = false;
+  for (let i = 0; i < lines.length; i++) {
+    const raw = lines[i] ?? '';
+    let text: string;
+    if (raw.length > maxLineChars) {
+      text = `${raw.slice(0, maxLineChars)}…[line truncated: ${raw.length} chars total]`;
+      truncatedLines += 1;
+    } else {
+      text = raw;
+    }
+    const formatted = `${String(startLine + i).padStart(LINE_NUMBER_WIDTH)}\t${text}`;
+    // Cost of appending this line = the '\n' join separator (none before the
+    // first line) + the formatted text. The first line always goes in.
+    const addition = (out.length === 0 ? 0 : 1) + formatted.length;
+    if (out.length > 0 && running + addition > maxOutputChars) {
+      charCapped = true;
+      break;
+    }
+    out.push(formatted);
+    running += addition;
+  }
+  return { text: out.join('\n'), linesEmitted: out.length, charCapped, truncatedLines };
+}

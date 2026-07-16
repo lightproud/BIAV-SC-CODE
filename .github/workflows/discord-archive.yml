@@ -3,7 +3,7 @@ name: Discord Archive
 on:
   schedule:
     # Incremental: daily at 18:00 UTC (per news/CONTEXT.md 2026-04-11 policy)
-    - cron: '0 18 * * *'
+    - cron: '0 7 * * *'
     # Monthly cleanup: 1st of each month at 06:00 UTC
     - cron: '0 6 1 * *'
   workflow_dispatch:
@@ -31,6 +31,8 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v7
+        with:
+          ssh-key: ${{ secrets.BOT_DEPLOY_KEY }}
 
       - uses: actions/setup-python@v5
         with:

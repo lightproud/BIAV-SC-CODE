@@ -1,8 +1,8 @@
 {
   "date": "2026-07-04",
-  "archived_at": "2026-07-05T02:35:49.080025+00:00",
+  "archived_at": "2026-07-12T03:50:58.544474+00:00",
   "source": "youtube",
-  "item_count": 25,
+  "item_count": 28,
   "items": [
     {
       "title": "Paint on your sketch layer, trust me ‼️‼️ #commission #speedpaint #morimens #anime",
@@ -428,8 +428,51 @@
       "content_type": "video",
       "region": "global",
       "archive_subtype": "video"
+    },
+    {
+      "title": "殘月公主 EclipseYuki 0703 忘卻前夜 Morimens 水母 警報V 龐托斯測試",
+      "summary": "在Twitch 上實況直播-- 前往https://www.twitch.tv/eclipseyuki1 觀看直播.",
+      "source": "youtube",
+      "platform_region": "global",
+      "lang": "",
+      "time": "2026-07-03T16:13:46Z",
+      "url": "https://www.youtube.com/watch?v=CUin4EgrgaA",
+      "engagement": 8,
+      "is_hot": false,
+      "author": "殘月公主",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "【忘卻前夜】休閒ヾ(•ω•`)o | 休閒 | 非技術|",
+      "summary": "Hi 我是曉牧Shaomu✦ ❤️如果喜歡我的影片，歡迎【訂閱】！ 如有需要改進的地方歡迎留言、我會斟酌改進✦喜歡的話別忘了訂閱 ...",
+      "source": "youtube",
+      "platform_region": "global",
+      "lang": "",
+      "time": "2026-07-03T18:11:50Z",
+      "url": "https://www.youtube.com/watch?v=ELKk_burNHQ",
+      "engagement": 1,
+      "is_hot": false,
+      "author": "曉牧Shaomu ch.",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "殘月公主 EclipseYuki 0703 忘卻前夜 Morimens 水母 警報V 龐托斯測試",
+      "summary": "在Twitch 上實況直播-- 前往https://www.twitch.tv/eclipseyuki1 觀看直播.",
+      "source": "youtube",
+      "platform_region": "global",
+      "lang": "",
+      "time": "2026-07-03T16:13:46Z",
+      "url": "https://www.youtube.com/watch?v=CUin4EgrgaA",
+      "engagement": 8,
+      "is_hot": false,
+      "author": "殘月公主",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
     }
-  ],
-  "region": "global",
-  "content_subtype": "video"
+  ]
 }

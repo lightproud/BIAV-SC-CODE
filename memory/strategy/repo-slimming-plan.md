@@ -186,7 +186,7 @@ git push --force origin main
 与 §9 历史压缩正交、互补：§10 缩小当前树，§9 缩小 .git 历史。
 
 - **依据**：全量 721 万条实测 91.8% 字节是元数据 + 重复 JSON key，content 正文仅 8.2%；
-  7 个字段近 100% 恒为默认值（测量器 `scripts/measure_discord_compaction.py` 出账）。
+  7 个字段近 100% 恒为默认值（测量器 `scripts/measure_discord_compaction.py` 出账；该一次性测量器已退役删除，见 decisions.md 2026-07-02 条）。
 - **方案（变体 A）**：紧凑 schema「缺字段=默认值」契约，删恒定/空值字段，恒留
   id/channel_id/author_id/author_name/content/timestamp，非空才留可选容器；**保留 channel_id**
   （不取变体 B 多省 250MB，换 grep 自足、不寄生 channel_index.json）。

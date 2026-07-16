@@ -1,6 +1,0 @@
-node_modules/
-dist/
-*.tsbuildinfo
-.vitest-cache/
-conformance-l1.json
-ab-report-*.json

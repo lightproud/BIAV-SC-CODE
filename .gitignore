@@ -52,6 +52,11 @@ assets/data/memory-utility.json
 assets/data/precomputed-cache.json
 projects/news/output/alerts.json
 
+# 向量检索腿索引本体（kb_vector，§八「厚锚撑向量」，2026-07-05 反转零 ML 引入）。
+# 可 MB→GB，放指针不放本体：不进 git，CI 构建后上传 Release community-assets，
+# 运行时经 scripts/restore_release_data.py 同源还原（§1.1-HC 无涉，银芯自有公开档案）。
+okf/kb_vectors.json.gz
+
 # session digests — layer-B auto-capture loop retired 2026-06-14
 # (memory positioning returned to platform-native: CLAUDE.md + curated
 # memory/*.md). The whole dir stays local; nothing here is committed.
@@ -78,3 +83,6 @@ projects/news/data/media/
 mutants/
 .mutmut-cache
 mutmut-stats.json
+
+# Node deps (root-level tooling caches; subprojects have their own)
+node_modules/

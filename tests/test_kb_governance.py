@@ -108,7 +108,7 @@ def test_memory_extension_disjoint_from_whitelist():
 
 def test_all_declared_layers_present_and_nonempty():
     """okf_pointer_layers.build_all 声明的每层都必须在 bundle 里有概念。"""
-    declared = ["assets", "wiki-data", "community", "news-output", "unpacked", "extracted", "resource", "projects"]
+    declared = ["assets", "wiki-data", "community", "news-output", "resource", "projects"]  # unpacked/extracted 层 2026-07-12 随源删除退役
     empty = [layer for layer in declared if not _concepts(layer)]
     assert empty == [], f"声明的层为空（生成器静默丢层）：{empty}"
 
@@ -162,10 +162,35 @@ def test_committed_bundle_structure_matches_sources(tmp_path, monkeypatch):
     bok.build_visualizer(graph)
     bki.build_kb_index()
 
-    fresh = bok.structural_fingerprint(tmp_bundle)
-    committed = bok.structural_fingerprint(REPO / "okf")
-    assert fresh == committed, (
-        "committed okf/ 的结构与源重建不一致——请 `python3 scripts/build_okf_bundle.py` 重建并提交"
+    # 守密人 2026-07-06「乙+丙」裁定：sources 层派生自每小时更新的社区档案，fresh 重建可
+    # 合法地比 committed 多出概念/边（新平台/新档案），定时重建（丙，build-okf-bundle.yml
+    # 的每日 cron）随后把 committed 同步上来。故本测试从「整包精确相等」放宽为**子集**比对：
+    # 容忍源集增长（committed ⊆ fresh），但仍抓真回归——committed 概念从 fresh 缺失
+    # （丢失/改名）、公共概念结构不一致（type/resource/tags 变、生成器非幂等）、committed
+    # 边从 fresh 缺失。锁「已有不丢/不变」，不锁「不许新增」。
+    fresh_c, fresh_e = bok.structural_parts(tmp_bundle)
+    committed_c, committed_e = bok.structural_parts(REPO / "okf")
+
+    dropped = sorted(k for k in committed_c if k not in fresh_c)
+    assert not dropped, (
+        "committed 概念在源重建中消失（丢失/改名）——需 `python3 scripts/build_okf_bundle.py` "
+        f"重建并提交：{dropped[:10]}"
+    )
+    changed = sorted(
+        k for k in committed_c if k in fresh_c and committed_c[k] != fresh_c[k]
+    )
+    assert not changed, (
+        "committed 概念结构与源重建不一致（type/resource/tags 变或生成器非幂等）——需重建："
+        f"{changed[:10]}"
+    )
+    # `mention` 边（community/sources → 角色）是内容派生的：哪个角色被社区文本提及随每小时
+    # 档案更新而双向 churn（掉几条、长几条），不是结构。故边子集检查排除 mention，只锁
+    # **结构边**（层骨架 / 角色关系 / 抽样自 / 聚合自 等）不丢。
+    committed_stable_e = {e for e in committed_e if e[2] != "mention"}
+    fresh_stable_e = {e for e in fresh_e if e[2] != "mention"}
+    dropped_edges = sorted(committed_stable_e - fresh_stable_e)
+    assert not dropped_edges, (
+        f"committed 结构边在源重建中消失——需 `python3 scripts/build_okf_bundle.py` 重建：{dropped_edges[:10]}"
     )
 
 

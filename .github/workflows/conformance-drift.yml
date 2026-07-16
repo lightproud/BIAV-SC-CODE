@@ -1,0 +1,109 @@
+name: Conformance pin drift sentinel
+
+# Drift sentinel (conformance suite M3; P3 upgrade 2026-07-06): weekly check of
+# whether upstream @anthropic-ai/claude-agent-sdk / @anthropic-ai/claude-code
+# have published past the dual pins in
+# projects/silver-core-sdk/tests/conformance/pins.json.
+#
+# Standing rule (选择性追踪) UNCHANGED: the pins move ONLY by keeper ruling
+# after a conformance re-run against the candidate versions. This workflow
+# still NEVER commits to main, NEVER bumps the live pins, NEVER auto-merges.
+#
+# P3 upgrade — "report" becomes "report + auto-draft an alignment PR": when
+# clean-lookup drift is detected, the sentinel opens (or refreshes) ONE DRAFT
+# PR on a fixed bot branch that proposes chasing to the candidate versions
+# (pins.json bumped, PROPOSED-not-ratified comment). The draft ratifies
+# nothing — it is a filled-in order form on the keeper's desk. Merging it IS
+# the ruling, and the PR body instructs: do not merge until the conformance
+# suite has run green against the candidates. Because the draft's pins.json is
+# already the candidates, triggering the `conformance` job on that branch runs
+# the re-run for free. Drift is information (job stays green); only a lookup
+# failure fails the job (exit 2).
+
+on:
+  schedule:
+    - cron: '7 5 * * 1'   # Mondays 05:07 UTC - hour/minute distinct from all other repo crons
+  workflow_dispatch:
+
+permissions:
+  contents: write        # push the bot/conformance-drift-chase branch
+  pull-requests: write   # open/refresh the draft alignment PR
+
+defaults:
+  run:
+    working-directory: projects/silver-core-sdk
+
+jobs:
+  drift-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          # Sparse checkout excludes the 2.4G archive/reference layers so the
+          # Node job only pulls the ~100MB of code it needs.
+          sparse-checkout: |
+            /*
+            !/Public-Info-Pool/Record/
+            !/Public-Info-Pool/Reference/
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Check pinned vs latest published versions (report + drift facts)
+        id: drift
+        run: |
+          node tests/conformance/drift-check.mjs \
+            --out=drift-report.md \
+            --github-output \
+            --emit-proposed-pins=proposed-pins.json \
+            --emit-pr-body=proposed-pr-body.md
+      - name: Publish report to the run summary
+        if: always()
+        run: |
+          if [ -f drift-report.md ]; then
+            cat drift-report.md >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "drift-check produced no report (lookup failed before writing)" >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: conformance-drift-report
+          path: projects/silver-core-sdk/drift-report.md
+          if-no-files-found: ignore
+
+      # --- P3: open/refresh the draft alignment PR ONLY on clean-lookup drift.
+      - name: Draft the alignment PR (draft only; ratifies nothing)
+        if: steps.drift.outputs.drift == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BRANCH: bot/conformance-drift-chase
+          AGENT_SDK_LATEST: ${{ steps.drift.outputs.agent_sdk_latest }}
+          CLAUDE_CODE_LATEST: ${{ steps.drift.outputs.claude_code_latest }}
+        working-directory: ${{ github.workspace }}
+        run: |
+          set -euo pipefail
+          test -f projects/silver-core-sdk/proposed-pins.json
+          test -f projects/silver-core-sdk/proposed-pr-body.md
+
+          git config user.name "biav-drift-sentinel[bot]"
+          git config user.email "biav-drift-sentinel@users.noreply.github.com"
+
+          # Apply the proposed pins over the live ones and stage ONLY that file.
+          cp projects/silver-core-sdk/proposed-pins.json \
+             projects/silver-core-sdk/tests/conformance/pins.json
+
+          git checkout -B "$BRANCH"
+          git add projects/silver-core-sdk/tests/conformance/pins.json
+          git commit -m "chore(silver-core-sdk): [drift] propose chasing to agent-sdk ${AGENT_SDK_LATEST} / claude-code ${CLAUDE_CODE_LATEST} (PROPOSED, keeper ruling pending)"
+          git push -f origin "HEAD:${BRANCH}"
+
+          if [ -z "$(gh pr list --head "$BRANCH" --state open --json number --jq '.[].number')" ]; then
+            gh pr create --draft \
+              --base main --head "$BRANCH" \
+              --title "chore(silver-core-sdk): [drift] chase agent-sdk ${AGENT_SDK_LATEST} / claude-code ${CLAUDE_CODE_LATEST} (draft, keeper ruling pending)" \
+              --body-file projects/silver-core-sdk/proposed-pr-body.md
+          else
+            echo "draft PR already open for $BRANCH; force-push refreshed it to the latest candidates."
+          fi

@@ -1,8 +1,8 @@
 {
   "date": "2026-06-20",
-  "archived_at": "2026-06-21T13:06:38.151353+00:00",
+  "archived_at": "2026-07-12T03:52:12.078751+00:00",
   "source": "bilibili",
-  "item_count": 25,
+  "item_count": 26,
   "items": [
     {
       "title": "沙雪耶老师",
@@ -542,6 +542,21 @@
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
+    },
+    {
+      "title": "今天玩忘却篇居然突然加了一个打到100回合直接结算。以后应该没办法这样叠伤害了吧。",
+      "summary": "昨天都还能打上千个回合，今天居然直接限制到只能打100回合。",
+      "source": "bilibili",
+      "platform_region": "cn",
+      "lang": "zh",
+      "time": "2026-06-20T10:43:55+00:00",
+      "url": "http://www.bilibili.com/video/av116782006340524",
+      "engagement": 1026,
+      "is_hot": false,
+      "author": "芬香失节",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
     }
   ]
 }

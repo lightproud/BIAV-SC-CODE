@@ -1,7 +1,7 @@
 <!--
-本模板基于 memory/contribution-protocol.md v1.0。
-社区贡献者（C3）/ Studio 团队成员（C2）必须填写所有勾选项。
-AI 会话（C1）按既定政策直推 main，不走此模板。
+内部（守密人 / AI 会话）PR 模板。社区贡献已取消（守密人 2026-07-10 裁定，
+对社区单向可读）——本仓库不受理外部 PR，外部提交将被直接关闭。
+原贡献协议历史档案见 memory/contribution-protocol.md（已退役）。
 -->
 
 ## 概述

@@ -4,6 +4,7 @@ projects/wiki/data/processed/ 下非角色结构化数据集与 schema 契约的
 
 ## 概念
 
+* [aliases](/wiki-data/wiki-data-aliases.md) - aliases 数据集
 * [banners_by_character](/wiki-data/wiki-data-banners-by-character.md) - 生成 2026-04-26T15:18:18+00:00
 * [cg_gallery](/wiki-data/wiki-data-cg-gallery.md) - art_assets/manifest.json (UnityPy extraction) · total_cg=404 · 生成 2026-04-12
 * [character_index](/wiki-data/wiki-data-character-index.md) - 生成 2026-06-17
@@ -17,7 +18,6 @@ projects/wiki/data/processed/ 下非角色结构化数据集与 schema 契约的
 * [story_character_map](/wiki-data/wiki-data-story-character-map.md) - CollectionHall.lua · total_entries=1026 · 生成 2026-06-16
 * [summon](/wiki-data/wiki-data-summon.md) - Summon.lua (runtime memory extraction) · total_banners=366 · 生成 2026-04-25
 * [tasks](/wiki-data/wiki-data-tasks.md) - Task.lua (runtime memory extraction) · total_tasks=6317 · 生成 2026-04-25
-* [update_notices](/wiki-data/wiki-data-update-notices.md) - UpdateNotices.lua (game update/maintenance notices) · total_entries=2697 · 生成 20
 * [voice_character_map](/wiki-data/wiki-data-voice-character-map.md) - Voice.lua + AwakerConfig.lua text matching · total_voice_entries=2562 · 生成 2026
 * [voice_lines](/wiki-data/wiki-data-voice-lines.md) - Voice.lua (runtime memory extraction) · total_lines=2543 · 生成 2026-04-12
 * [world_lore](/wiki-data/wiki-data-world-lore.md) - CollectionHall.lua (runtime memory extraction) · total_entries=1026 · 生成 2026-04

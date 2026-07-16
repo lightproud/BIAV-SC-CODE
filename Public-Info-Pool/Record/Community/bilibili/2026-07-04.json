@@ -1,8 +1,8 @@
 {
   "date": "2026-07-04",
-  "archived_at": "2026-07-05T02:35:49.081585+00:00",
+  "archived_at": "2026-07-05T15:11:49.768415+00:00",
   "source": "bilibili",
-  "item_count": 16,
+  "item_count": 17,
   "items": [
     {
       "title": "【忘却前夜】神秘海洋尤乌......",
@@ -23,6 +23,29 @@
         "danmaku": 3
       },
       "media_url": "https://i1.hdslb.com/bfs/archive/acf705a633d154c616e307bcaf03db0f4be955a5.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "【771OvO1】我的最新作品，快来一睹为快！",
+      "summary": "-\n  └ 萊羽千梦 (2赞): 妈妈好美，喜欢你喵[香奈美·追寻那道光 应援装扮_打call]\n  └ Coldkalewisp (2赞): 刷了一天肉块终于看到人类了[嘟嘟]\n  └ 钩的鹅天黑是我 (1赞): [打call]",
+      "source": "bilibili",
+      "time": "2026-07-04T10:07:07+00:00",
+      "url": "https://www.bilibili.com/video/BV1MTMA6yEE3",
+      "engagement": 238,
+      "is_hot": false,
+      "author": "老鼠药大王77",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 218,
+        "comment_count": 20,
+        "comments_fetched": 3,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/edf1c2007aa0e004372c4b5218b2049d61d62160.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

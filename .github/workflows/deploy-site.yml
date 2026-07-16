@@ -1,4 +1,4 @@
-# Auto-deploy site + wiki + news + bpt-web to GitHub Pages
+# Auto-deploy site + wiki + news to GitHub Pages
 # Art assets downloaded from Release at build time (not stored in git)
 name: Deploy Site
 

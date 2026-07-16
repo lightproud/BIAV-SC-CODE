@@ -3,21 +3,21 @@
 > 本文件由 `scripts/build_capability_registry.py` 自动生成，**请勿手改**。
 > 中文用途补注请改 `memory/capability-annotations.json`；机器权威数据见 `memory/capability-registry.json`。
 
-- 生成日期：2026-07-05
-- 功能总数：**119**
-- 脚本可达性：活 66 / 仅测试 0 / 孤儿 0
+- 生成日期：2026-07-14
+- 功能总数：**136**
+- 脚本可达性：活 75 / 仅测试 0 / 孤儿 0
 
 ## 总览
 
 | 功能层 | 数量 |
 |------|------|
-| CI 自动化工作流（编排入口·定时/事件平面） | 31 |
-| 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 32 |
-| news 采集器脚本 | 28 |
+| CI 自动化工作流（编排入口·定时/事件平面） | 36 |
+| 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 37 |
+| news 采集器脚本 | 32 |
 | wiki 数据脚本 | 6 |
-| MCP 知识层工具（编排入口·AI 动态平面） | 9 |
+| MCP 知识层工具（编排入口·AI 动态平面） | 11 |
 | Slash 命令（编排入口·人工平面） | 4 |
-| 仓内技能 | 4 |
+| 仓内技能 | 5 |
 | 子项目 | 5 |
 
 ## 动态编排与可达性
@@ -34,7 +34,7 @@
 
 可达性 = 从活编排入口沿 Python import 图传递闭包。`孤儿` = 无任何活入口可达，建议隔离待裁（§3.1 裁撤属守密人决策，工具只检测不删除）。
 
-## CI 自动化工作流（编排入口·定时/事件平面）（31）
+## CI 自动化工作流（编排入口·定时/事件平面）（36）
 
 - **`Backfill Data Gap`** _[manual]_ — 手动回填指定时间段的数据缺口。  
   `.github/workflows/backfill-gap.yml`
@@ -42,13 +42,13 @@
   `.github/workflows/backfill-media.yml`
 - **`Backfill Historical News`** _[schedule/manual]_ — 定时回填历史社区新闻。  
   `.github/workflows/backfill-news.yml`
-- **`BPT Agent SDK`** _[push/pull_request/manual]_ —   
-  `.github/workflows/bpt-agent-sdk.yml`
 - **`Build Analysis Index`** _[schedule/manual]_ —   
   `.github/workflows/build-analysis-index.yml`
 - **`Build Capability Registry`** _[push/manual]_ — 功能源变动时自动重生成银芯功能目录。  
   `.github/workflows/build-capability-registry.yml`
-- **`Build OKF Bundle`** _[push/manual]_ —   
+- **`Build Community Vectors`** _[manual]_ —   
+  `.github/workflows/build-community-vectors.yml`
+- **`Build OKF Bundle`** _[schedule/push/manual]_ —   
   `.github/workflows/build-okf-bundle.yml`
 - **`Check Morimens Version Updates`** _[schedule/manual]_ — 定时检测 Morimens 客户端版本更新。  
   `.github/workflows/check-version.yml`
@@ -60,6 +60,10 @@
   `.github/workflows/collect-comments.yml`
 - **`Collect Fan Art`** _[schedule/manual]_ — 定时采集同人图。  
   `.github/workflows/collect-fanart.yml`
+- **`Community Cold Compress`** _[schedule/manual]_ —   
+  `.github/workflows/community-cold-compress.yml`
+- **`Conformance pin drift sentinel`** _[schedule/manual]_ —   
+  `.github/workflows/conformance-drift.yml`
 - **`Consolidate Releases`** _[manual]_ —   
   `.github/workflows/consolidate-releases.yml`
 - **`Delete Release`** _[manual]_ —   
@@ -72,6 +76,8 @@
   `.github/workflows/discord-archive-volunteer.yml`
 - **`Discord Archive`** _[schedule/manual]_ — 定时归档主 Discord 数据。  
   `.github/workflows/discord-archive.yml`
+- **`Discord Cold Compress`** _[schedule/manual]_ —   
+  `.github/workflows/discord-cold-compress.yml`
 - **`Discord Discover Guilds`** _[manual]_ — 定时发现新的 Discord 服务器。  
   `.github/workflows/discord-discover-guilds.yml`
 - **`Discord History Backfill`** _[schedule/manual]_ — 定时回填 Discord 历史消息。  
@@ -80,16 +86,18 @@
   `.github/workflows/edit-release.yml`
 - **`Extract Game Data from Client`** _[push/manual]_ — 解包提取客户端游戏数据（wiki 数据源）。  
   `.github/workflows/extract-game-data.yml`
-- **`Fanart Archive`** _[schedule/manual]_ —   
-  `.github/workflows/fanart-archive.yml`
-- **`Migrate to Public-Info-Pool`** _[manual]_ —   
-  `.github/workflows/migrate-to-public-info-pool.yml`
+- **`KB Semantic Proof`** _[manual]_ —   
+  `.github/workflows/kb-semantic-proof.yml`
 - **`Mutation Test (manual)`** _[manual]_ —   
   `.github/workflows/mutation-test.yml`
 - **`Recover Fan Art`** _[manual]_ — 恢复丢失的同人图。  
   `.github/workflows/recover-fanart.yml`
 - **`Refresh Claude Code Prompts`** _[schedule/manual]_ —   
   `.github/workflows/refresh-claude-code-prompts.yml`
+- **`SDK Mutation Ratchet (weekly)`** _[schedule/manual]_ —   
+  `.github/workflows/sdk-mutation-ratchet.yml`
+- **`Silver Core SDK`** _[schedule/push/pull_request/manual]_ —   
+  `.github/workflows/silver-core-sdk.yml`
 - **`Test All Data Collectors`** _[manual]_ — 运行采集器单元测试。  
   `.github/workflows/test-collectors.yml`
 - **`Run Tests`** _[push/pull_request/manual]_ — 运行全量 pytest 单元测试。  
@@ -98,15 +106,19 @@
   `.github/workflows/update-news.yml`
 - **`Validate Wiki Data`** _[push/pull_request/manual]_ — 校验 wiki JSON 数据（push/PR 触发）。  
   `.github/workflows/validate-data.yml`
+- **`Weekly Heavy-Deps Test`** _[schedule/manual]_ —   
+  `.github/workflows/weekly-heavy-deps-test.yml`
 
-## 顶层脚本（记忆 / 做梦 / 解包 / 运营）（32）
+## 顶层脚本（记忆 / 做梦 / 解包 / 运营）（37）
 
 - **`build_capability_registry.py`** _[活:cli+workflow]_ — build_capability_registry.py — 银芯功能目录 + 动态编排可达性分析器  
   `scripts/build_capability_registry.py`
 - **`build_community_index.py`** _[活:cli+workflow]_ — Build a static community-discussion analysis index over the FULL archive.  
   `scripts/build_community_index.py`
-- **`build_kb_index.py`** _[活:cli]_ — build_kb_index.py — 银芯知识库运行时导航索引（KB navigation index）生成器。  
+- **`build_kb_index.py`** _[活:cli+workflow]_ — build_kb_index.py — 银芯知识库运行时导航索引（KB navigation index）生成器。  
   `scripts/build_kb_index.py`
+- **`build_kb_vectors.py`** _[活:cli+workflow]_ — build_kb_vectors.py — 构建银芯长尾向量索引（§八「厚锚撑向量」参照实现）。  
+  `scripts/build_kb_vectors.py`
 - **`build_okf_bundle.py`** _[活:cli+workflow]_ — Build an Open Knowledge Format (OKF v0.1) bundle for 银芯 (BIAV-SC).  
   `scripts/build_okf_bundle.py`
 - **`build_story_index.py`** _[活:cli+workflow]_ — Build a static story/lore search index over the unpacked story layer.  
@@ -121,10 +133,14 @@
   `scripts/compact_discord_archive.py`
 - **`deliverable_path.py`** _[活:cli+command]_ — deliverable_path.py — 银芯产物路径生成器 / 注册表守卫  
   `scripts/deliverable_path.py`
+- **`extract_aliases.py`** _[活:cli]_ — extract_aliases.py — 厚锚别名生成期工作面（AI 自动识别的落表 CLI）。  
+  `scripts/extract_aliases.py`
 - **`generate_wiki_pages.py`** _[活:cli+workflow]_ — Generate VitePress Markdown pages from processed JSON data.  
   `scripts/generate_wiki_pages.py`
 - **`kb_ab.py`** _[活:cli]_ — kb_ab.py — 知识库 vs 朴素搜索 反事实 A/B（北极星评判体系 #3）。  
   `scripts/kb_ab.py`
+- **`kb_anchor.py`** _[活:mcp]_ — kb_anchor.py — 先锚后扩合流（§八 8.3「厚锚撑向量」检索侧合流，import-only 库）。  
+  `scripts/kb_anchor.py`
 - **`kb_eval.py`** _[活:cli]_ — kb_eval.py — 知识库需求侧有效性评分器（北极星评判体系 #1，黄金问题集）。  
   `scripts/kb_eval.py`
 - **`kb_golden_gen.py`** _[活:cli]_ — kb_golden_gen.py — 图驱动黄金集自动生成器（评判体系 #1 扩容）。  
@@ -133,17 +149,19 @@
   `scripts/kb_navigator.py`
 - **`kb_qual.py`** _[活:cli]_ — kb_qual.py — 知识库质性能力 probe（评判体系 #4：测 grep 给不了知识的维度）。  
   `scripts/kb_qual.py`
+- **`kb_semantic_ab.py`** _[活:cli]_ — kb_semantic_ab.py — 向量腿语义铁证 harness（paraphrase-recall，§八「厚锚撑向量」）。  
+  `scripts/kb_semantic_ab.py`
 - **`kb_telemetry.py`** _[活:cli+mcp]_ — kb_telemetry.py — 知识库使用遥测（北极星评判体系 #2，「追踪」的地基）。  
   `scripts/kb_telemetry.py`
+- **`kb_vector.py`** _[活:mcp]_ — kb_vector.py — 银芯向量检索腿（长尾语义召回后端，import-only 库）。  
+  `scripts/kb_vector.py`
 - **`lua_parse.py`** _[活:import]_ — 解包 Lua 表 dump 的共享解析库，供各 parse_* CLI 工具调用。  
   `scripts/lua_parse.py`
 - **`mcp_server.py`** _[活:cli+mcp]_ — MCP 服务端 biav-sc-memory，暴露 4 个平台互补工具。  
   `scripts/mcp_server.py`
-- **`migrate_flat_archives_to_layout.py`** _[活:cli]_ — migrate_flat_archives_to_layout.py — 平级历史归档一次性归位到区服/类型分层。  
-  `scripts/migrate_flat_archives_to_layout.py`
-- **`migrate_unpacked_to_git.py`** _[活:cli+workflow]_ — 把 unpacked-data release 的 **text 部分** 迁入 git（二进制留 Releases）。  
-  `scripts/migrate_unpacked_to_git.py`
-- **`okf_pointer_layers.py`** _[活:import]_ — okf_pointer_layers.py — 全仓知识组织：OKF bundle 新增指针概念层（import-only 库）。  
+- **`memory_freshness.py`** _[活:cli+command]_ — memory_freshness.py — 记忆档案保鲜巡检器（确定性零 ML 零常驻）。  
+  `scripts/memory_freshness.py`
+- **`okf_pointer_layers.py`** _[活:workflow]_ — okf_pointer_layers.py — 全仓知识组织：OKF bundle 新增指针概念层（import-only 库）。  
   `scripts/okf_pointer_layers.py`
 - **`parse_awaker_config.py`** _[活:cli]_ — [CLI 手动] 解析 AwakerConfig.lua 为角色档案 JSON（wiki 数据流水线）。  
   `scripts/parse_awaker_config.py`
@@ -161,12 +179,14 @@
   `scripts/report_render.py`
 - **`restore_release_data.py`** _[活:cli+workflow]_ — 构建期从 GitHub Releases 临时还原全量档案到工作树（用完即弃，不进 git）。  
   `scripts/restore_release_data.py`
+- **`silver_aliases.py`** _[活:import]_ — silver_aliases.py — 厚锚别名侧表读取层（import-only 库）。  
+  `scripts/silver_aliases.py`
 - **`silver_memory_tools.py`** _[活:cli+mcp]_ — 记忆写入工具库（current_continuity / record_decision / record_lesson），由 mcp_server 注册。  
   `scripts/silver_memory_tools.py`
 - **`silver_tokenizer.py`** _[活:import]_ — 银芯静态索引共用分词器:领域词典 + 正向最大匹配（FMM）。  
   `scripts/silver_tokenizer.py`
 
-## news 采集器脚本（28）
+## news 采集器脚本（32）
 
 - **`aggregator.py`** _[活:cli+command+workflow]_ — 忘却前夜 Morimens - 社区热点聚合器  
   `projects/news/scripts/aggregator.py`
@@ -190,6 +210,8 @@
   `projects/news/scripts/backfill_media.py`
 - **`backfill_platforms.py`** _[活:cli+workflow]_ — backfill_platforms.py — 多平台历史数据回溯采集  
   `projects/news/scripts/backfill_platforms.py`
+- **`collect_arca_daily.py`** _[活:cli]_ — collect_arca_daily.py — arca_live 日采单脚本（银芯 CC 例程专用，方案 2 过渡桥）。  
+  `projects/news/scripts/collect_arca_daily.py`
 - **`collect_fanart.py`** _[活:cli+workflow]_ — 同人图采集器 — 把某日各信息源的玩家二创图抓到本地，供日报附录嵌图。  
   `projects/news/scripts/collect_fanart.py`
 - **`collect_global.py`** _[活:cli]_ — collect_global.py — 全球社区采集桥接脚本  
@@ -198,14 +220,20 @@
   `projects/news/scripts/collect_video_comments.py`
 - **`collection_state.py`** _[活:import]_ — collection_state.py — Adaptive time window for news collection pipeline.  
   `projects/news/scripts/collection_state.py`
+- **`community_cold_compress.py`** _[活:cli+workflow]_ — community_cold_compress.py — Community 全量档案月度压冷总入口（甲案推广，2026-07-12）。  
+  `projects/news/scripts/community_cold_compress.py`
 - **`data_quality.py`** _[活:cli]_ — 数据质量增强模块  
   `projects/news/scripts/data_quality.py`
 - **`discord_archiver.py`** _[活:cli+workflow]_ — Discord 全量数据归档器 v2 — 双轨并行 + 断点续传 + JSONL 去重  
   `projects/news/scripts/discord_archiver.py`
+- **`discord_cold_compress.py`** _[活:cli+workflow]_ — discord_cold_compress.py — discord 归档月度压冷（守密人 2026-07-12 甲案裁定）。  
+  `projects/news/scripts/discord_cold_compress.py`
 - **`discord_compact.py`** _[活:command]_ — Discord 记录紧凑 schema — 单一权威定义（归档器写盘 + 存量批量重写器共用此一份）  
   `projects/news/scripts/discord_compact.py`
 - **`discord_list_guilds.py`** _[活:cli+workflow]_ — Discord 服务器清单探测 — 列出 bot 当前加入的所有服务器（guild）  
   `projects/news/scripts/discord_list_guilds.py`
+- **`discord_reconcile.py`** _[活:cli]_ — discord_reconcile.py — channel_index 与归档目录的一致性对账（T35，守密人 2026-07-12 点火）。  
+  `projects/news/scripts/discord_reconcile.py`
 - **`download_media.py`** _[活:cli+workflow]_ — download_media.py — 全平台媒体资源下载器  
   `projects/news/scripts/download_media.py`
 - **`global_collectors.py`** _[活:import]_ — 忘却前夜 Morimens - 全球信息收集器  
@@ -240,7 +268,7 @@
 - **`validate_data.py`** _[活:cli+command+workflow]_ — 校验 wiki 数据库全部 JSON。  
   `projects/wiki/scripts/validate_data.py`
 
-## MCP 知识层工具（编排入口·AI 动态平面）（9）
+## MCP 知识层工具（编排入口·AI 动态平面）（11）
 
 - **`character_persona`** — 激活角色人格模式，让AI以游戏角色的语气进行对话。  
   `scripts/mcp_server.py`
@@ -260,6 +288,10 @@
   `scripts/mcp_server.py`
 - **`kb_overview`** — 知识库总览（LLMwiki 楼层平面图）：分区 / 类型分布 / 各分区入口索引 / 用法。  
   `scripts/mcp_server.py`
+- **`kb_vector_search`** — 长尾语义召回（§八「厚锚撑向量」的向量腿）：对社区全量档案做模糊语义检索。  
+  `scripts/mcp_server.py`
+- **`kb_anchor`** — 先锚后扩合流（§八 8.3「厚锚撑向量」）：脊柱锚定 + 别名扩词 + 向量捞长尾一次给全。  
+  `scripts/mcp_server.py`
 
 ## Slash 命令（编排入口·人工平面）（4）
 
@@ -272,7 +304,7 @@
 - **`validate-data`** — 校验 wiki 数据库全部 JSON 数据文件。  
   `.claude/commands/validate-data.md`
 
-## 仓内技能（4）
+## 仓内技能（5）
 
 - **`anysearch`** — 实时网络检索（多区社区情报 CN/JP/TW），AnySearch API 封装，失败回退内置 WebSearch。  
   `.claude/skills/anysearch/SKILL.md`
@@ -282,15 +314,17 @@
   `.claude/skills/grill/SKILL.md`
 - **`grilling`** — Interview the keeper relentlessly about a plan or design before building. Use when the keeper wants to stress-test a plan, sharpen a vague idea, or uses any 'grill' / 拷问 / 质询 / 对齐 trigger phrase.  
   `.claude/skills/grilling/SKILL.md`
+- **`intel-weekly`** — Generate the Morimens weekly community intelligence report (社区情报周报) from the full archive layer. Use when asked for the weekly report, 周报, community intel digest, or a windowed community summary. Produces a fixed-skeleton Chinese report (trend + role routing + business topics with embedded risk sentinels + bug list + player request list + credited fanart gallery + volume map) rendered as mobile PDF in brand themes.  
+  `.claude/skills/intel-weekly/SKILL.md`
 
 ## 子项目（5）
 
-- **`bpt-agent-sdk`** — BPT Agent SDK：净室（clean-room）实现的 TypeScript agent 框架，公开调用面  
-  `projects/bpt-agent-sdk/`
 - **`game`** — 衍生游戏，退出主线，守密人个人兴趣，不主线派发。  
   `projects/game/`
 - **`news`** — 使命#1 黑池信息入口：采集器 + 全量档案层 + 输出展示层，单向送黑池。  
   `projects/news/`
+- **`silver-core-sdk`** — Silver Core SDK：独立重实现（independent reimplementation）的 TypeScript agent 框架，公开调用面  
+  `projects/silver-core-sdk/`
 - **`site`** — 对外门户：静态站 public/ + 设计令牌 design/。  
   `projects/site/`
 - **`wiki`** — 使命#2 社区知识底座：VitePress 站点 + 72 角色数据库（客户端解包自举）。  

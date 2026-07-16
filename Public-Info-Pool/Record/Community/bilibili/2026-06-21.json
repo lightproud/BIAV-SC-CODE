@@ -1,8 +1,8 @@
 {
   "date": "2026-06-21",
-  "archived_at": "2026-06-22T12:44:54.700539+00:00",
+  "archived_at": "2026-07-12T03:52:12.077924+00:00",
   "source": "bilibili",
-  "item_count": 10,
+  "item_count": 11,
   "items": [
     {
       "title": "[忘却前夜]六月又一兑换码，截至7月4号，五百银芯和五个无垢",
@@ -233,6 +233,21 @@
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
+    },
+    {
+      "title": "saya～",
+      "summary": "-",
+      "source": "bilibili",
+      "platform_region": "cn",
+      "lang": "zh",
+      "time": "2026-06-21T06:44:15+00:00",
+      "url": "http://www.bilibili.com/video/av116786737450293",
+      "engagement": 369,
+      "is_hot": false,
+      "author": "AAA木柴批发",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
     }
   ]
 }

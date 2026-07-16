@@ -1,4 +1,6 @@
 """Parse CollectionHall.lua into structured JSON for world lore encyclopedia."""
+# NOTE: 源数据层 Public-Info-Pool/Reference/Game-Unpacked/ 已于 2026-07-12 守密人裁定整层删除
+#       （wiki 冻结后解析管线停派）。重跑本脚本前先从 git 历史或 Releases「解包」桶还原源数据。
 import json
 
 from lua_parse import parse_lua_blocks
@@ -87,7 +89,7 @@ def parse_collection_hall(path):
 
 
 if __name__ == '__main__':
-    src = 'projects/wiki/data/extracted/lua_tables/CollectionHall.lua'
+    src = 'Public-Info-Pool/Reference/Game-Unpacked/Lua表还原/CollectionHall.lua'
     dst = 'projects/wiki/data/processed/world_lore.json'
     data = parse_collection_hall(src)
     with open(dst, 'w', encoding='utf-8') as f:

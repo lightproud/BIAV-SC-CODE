@@ -105,3 +105,55 @@ def test_non_date_files_filtered(tmp_path):
     (pdir / "state.json").write_text("{}", encoding="utf-8")
     (pdir / "2026-07-01.json").write_text("{}", encoding="utf-8")
     assert [f.name for f in al.dated_files("appstore", tmp_path)] == ["2026-07-01.json"]
+
+
+# ── discord 布局（2026-07-10 方案甲收编 SSOT）───────────────────────────────
+
+def _write_discord_msg(root: Path, region: str, ch: str, date: str) -> Path:
+    p = root / region / "channels" / ch / f"{date}.jsonl"
+    p.parent.mkdir(parents=True, exist_ok=True)
+    p.write_text('{"id":"1","content":"x"}\n', encoding="utf-8")
+    return p
+
+
+def test_discord_write_read_roundtrip(tmp_path):
+    """归档器经 discord_region_dir 落的文件，iter_discord_message_files 必能读回。"""
+    for gid, region in al.DISCORD_GUILD_REGIONS.items():
+        d = al.discord_region_dir(tmp_path, gid)
+        assert d == tmp_path / region
+        f = d / "channels" / "12345678" / "2026-07-10.jsonl"
+        f.parent.mkdir(parents=True, exist_ok=True)
+        f.write_text('{"id":"1"}\n', encoding="utf-8")
+    found = set(al.iter_discord_message_files(tmp_path))
+    assert len(found) == 3
+    jp_only = set(al.iter_discord_message_files(tmp_path, region="jp"))
+    assert jp_only == {tmp_path / "jp" / "channels" / "12345678" / "2026-07-10.jsonl"}
+
+
+def test_discord_unregistered_guild_fails_loud(tmp_path):
+    """未登记 guild 归档必须响亮失败，杜绝匿名新服静默落根。"""
+    with pytest.raises(KeyError, match="unregistered discord guild"):
+        al.discord_region_dir(tmp_path, "9999999999")
+
+
+def test_discord_legacy_layout_fallback(tmp_path):
+    """未迁移克隆（Global 挂根、其余在 guilds/）读方仍能找回全部三服。"""
+    (tmp_path / "channels" / "aaaa1111").mkdir(parents=True)
+    (tmp_path / "channels" / "aaaa1111" / "2026-07-01.jsonl").write_text("{}\n")
+    for gid in ("1377475512716234902", "1402537664619479100"):
+        d = tmp_path / "guilds" / gid / "channels" / "bbbb2222"
+        d.mkdir(parents=True)
+        (d / "2026-07-01.jsonl").write_text("{}\n")
+    roots = al.discord_region_roots(tmp_path)
+    assert set(roots) == {"global", "jp", "volunteer"}
+    assert roots["global"] == tmp_path.resolve()
+    assert len(list(al.iter_discord_message_files(tmp_path))) == 3
+
+
+def test_discord_new_layout_wins_over_legacy(tmp_path):
+    """新旧布局并存时（迁移过渡期）以新布局为准，不双计。"""
+    _write_discord_msg(tmp_path, "global", "cccc3333", "2026-07-02")
+    (tmp_path / "channels" / "cccc3333").mkdir(parents=True)
+    (tmp_path / "channels" / "cccc3333" / "2026-07-01.jsonl").write_text("{}\n")
+    files = list(al.iter_discord_message_files(tmp_path, region="global"))
+    assert files == [tmp_path / "global" / "channels" / "cccc3333" / "2026-07-02.jsonl"]

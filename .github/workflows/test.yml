@@ -84,6 +84,13 @@ jobs:
         # stance), so it now caps ~87% here instead of ~56%.
         # Branch coverage is ON via .coveragerc `branch = True` (P6): statement
         # coverage alone hid executed-but-never-forked error/degradation
-        # branches. The 85 floor is unchanged — the dial got honest, not
-        # tighter. Measurement scope is pinned in .coveragerc.
-        run: pytest tests/ -v --cov=scripts --cov=projects/news/scripts --cov=projects/wiki/scripts --cov-report=term --cov-fail-under=85
+        # branches — the dial got honest, not tighter. Measurement scope is
+        # pinned in .coveragerc.
+        # Gate 85 -> 92 (2026-07-11, keeper-approved coverage proposal): the
+        # P0/P1 gap-fill sweep (arca daily bridge, MCP error branches, alias
+        # extractor, KB evaluator CLIs, prompt-refresh sync) lifted TOTAL to
+        # ~96% locally, and a floor 11pp under actual would let 5+pp regress
+        # silently. 92 keeps ~2-4pp breathing room for cross-env variance and
+        # the network-bound collector layer; the 2026-06-21 anti-over-mocking
+        # stance stands — the floor chases actual coverage, never leads it.
+        run: pytest tests/ -v --cov=scripts --cov=projects/news/scripts --cov=projects/wiki/scripts --cov-report=term --cov-fail-under=92

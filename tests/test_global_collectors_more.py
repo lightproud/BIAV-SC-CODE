@@ -349,31 +349,24 @@ class TestFetchPixivExtra(unittest.TestCase):
 # ─── bahamut extra branches ────────────────────────────────
 
 class TestFetchBahamutExtra(unittest.TestCase):
-    def test_bsn_json_value_error_handled(self):
-        # bsn 路径 .json() 抛 ValueError → except (ValueError,KeyError) pass（lines 942-943）
-        # 搜索路径同样失败 → 整体空
-        def fake_get(url, *a, **k):
-            return FakeResp(text="not json", status_code=200)
+    # 2026-07-10 重写：采集器改解析专板 B.php 列表页（旧 ajax/search 双路径退役）。
+    def test_non_row_html_returns_empty(self):
+        with mock.patch.dict(gc.os.environ, {}, clear=True), \
+                mock.patch.object(gc, "_get",
+                                  return_value=FakeResp(text="not a board page", status_code=200)):
+            self.assertEqual(gc.fetch_bahamut(), [])
 
-        with mock.patch.dict(gc.os.environ, {"BAHAMUT_BSN": "9"}, clear=True), \
-                mock.patch.object(gc, "_get", side_effect=fake_get):
-            items = gc.fetch_bahamut()
-        # bsn json 失败被吞，搜索 html 无匹配 → []
-        self.assertEqual(items, [])
-
-    def test_bsn_request_exception_handled(self):
-        # bsn 路径 _get 抛异常 → warning（lines 945-946）；搜索路径也抛异常
-        with mock.patch.dict(gc.os.environ, {"BAHAMUT_BSN": "9"}, clear=True), \
+    def test_request_exception_handled(self):
+        with mock.patch.dict(gc.os.environ, {}, clear=True), \
                 mock.patch.object(gc, "_get", side_effect=RuntimeError("down")):
             self.assertEqual(gc.fetch_bahamut(), [])
 
-    def test_search_html_empty_title_skipped(self):
-        # 搜索 HTML 匹配到 anchor 但 title strip 后为空 → 跳过（line 995）
-        html = ('<a href="C.php?bsn=1&snA=2"><img></a>')
+    def test_row_without_title_skipped(self):
+        html = ('<tr class="b-list__row b-list-item">'
+                '<a href="C.php?bsn=78829&amp;snA=2&amp;tnum=1"><img></a></tr>')
         with mock.patch.dict(gc.os.environ, {}, clear=True), \
                 mock.patch.object(gc, "_get", return_value=FakeResp(text=html, status_code=200)):
-            items = gc.fetch_bahamut()
-        self.assertEqual(items, [])
+            self.assertEqual(gc.fetch_bahamut(), [])
 
 
 # ─── weixin extra branches ─────────────────────────────────
@@ -434,8 +427,14 @@ class TestFetchWeixinExtra(unittest.TestCase):
 
 class TestFetchNoteComExtra(unittest.TestCase):
     def test_request_exception_handled(self):
-        # _get_cf 抛异常 → warning（lines 1168-1169）
-        with mock.patch.object(gc, "_get_cf", side_effect=RuntimeError("blocked")):
+        # RSS 路径 _get 抛异常 → warning 后返回空（2026-07-10 改走 hashtag RSS）
+        with mock.patch.object(gc, "_get", side_effect=RuntimeError("blocked")):
+            self.assertEqual(gc.fetch_note_com(), [])
+
+    def test_missing_hashtag_404_is_quiet(self):
+        # 标签不存在 → 404 归 info（正常态），返回空不告警
+        with mock.patch.object(gc, "_get",
+                               side_effect=RuntimeError("404 Client Error: Not Found")):
             self.assertEqual(gc.fetch_note_com(), [])
 
 

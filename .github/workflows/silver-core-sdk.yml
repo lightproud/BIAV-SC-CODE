@@ -1,0 +1,512 @@
+name: Silver Core SDK
+
+# Node/TypeScript CI for projects/silver-core-sdk (the repo-wide `test.yml` is
+# Python-only and never touches this package).
+#
+# - `unit` runs on every SDK change (keyless): typecheck + build + the full
+#   vitest suite, including the emulator-backed end-to-end integration test
+#   that drives the real SDK stack over real HTTP against a local Messages-API
+#   emulator. No secret, no external network, no API budget.
+# - `live-smoke` runs ONLY on manual dispatch: it exercises the real
+#   api.anthropic.com with the ANTHROPIC_API_KEY repository secret. The key
+#   value never enters the repo — it is injected into the runner at run time.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'projects/silver-core-sdk/**'
+      - '.github/workflows/silver-core-sdk.yml'
+  pull_request:
+    paths:
+      - 'projects/silver-core-sdk/**'
+      - '.github/workflows/silver-core-sdk.yml'
+  schedule:
+    # Monthly L5 real-API round (audit 2026-07-10 P2-7/F): the emulator-based
+    # conformance jobs catch OUR regressions on every push, but real API
+    # server-side behavior drift (new stop_reasons, cache billing, stream
+    # grammar) was only visible on manual dispatch. One scheduled round a
+    # month (~$1.5 on haiku, capped by --max-budget) closes that blind spot.
+    - cron: '17 6 1 * *'
+  workflow_dispatch:
+    inputs:
+      model:
+        description: 'Model id for the live real-API smoke test'
+        required: false
+        default: 'claude-haiku-4-5-20251001'
+      ab_benchmark:
+        description: 'Also run the A/B efficiency benchmark (7 tasks, spends more budget)'
+        required: false
+        type: boolean
+        default: false
+      vs_official:
+        description: 'Head-to-head vs @anthropic-ai/claude-agent-sdk (speed + correctness; installs the official pkg --no-save, never a repo dependency)'
+        required: false
+        type: boolean
+        default: false
+      repeat:
+        description: 'Repeat each benchmark task N times and report the median (denoises single-sample outliers)'
+        required: false
+        default: '3'
+      prompt_ab:
+        description: 'A/B this SDK''s harness prompt v1 vs a candidate (cheap probe: cache/cost/turns/pass-rate; no official arm)'
+        required: false
+        type: boolean
+        default: false
+      prompt_candidate:
+        description: 'Candidate harness-prompt variant for the prompt A/B baseline (v1) to run against (v5 = comprehensive official-prompt reproduction)'
+        required: false
+        type: choice
+        options: ['v2', 'v3', 'v4', 'v5']
+        default: 'v5'
+      run_evals:
+        description: 'Run the two-layer eval suite LIVE (SCS-REQ-002 loop 2: real-API scenarios + claude-sonnet-5 judging; $30/month judge cap). inline = judge per question; batches = Message Batches API at the 50% nightly rate (slower, job polls). GitHub caps dispatch inputs at 10, so the lane rides this choice instead of a new flag.'
+        required: false
+        type: choice
+        options: ['false', 'inline', 'batches']
+        default: 'false'
+      prompt_tasks:
+        description: 'Task ids for the prompt A/B (e.g. 10,11 = the hard discriminating tasks; empty = all)'
+        required: false
+        default: '10,11'
+      cache_probe:
+        description: 'Controlled per-turn prompt-cache probe (one task run back-to-back N times; prints per-turn write/read)'
+        required: false
+        type: boolean
+        default: false
+      cache_probe_variant:
+        description: 'Harness-prompt variant for the cache probe (v5 = comprehensive official reproduction; needs systemPrompt preset — pass via the probe)'
+        required: false
+        type: choice
+        options: ['v1', 'v4', 'v5']
+        default: 'v1'
+      conformance_l5:
+        description: 'Run the L5 five-dimension real-API round with gate B enforced (dual-arm, spends budget ~$1.5/round on haiku)'
+        required: false
+        type: boolean
+        default: false
+      l5_repeat:
+        description: 'L5 repeats per task per engine (blueprint nominal 5; gate B takes the aggregate)'
+        required: false
+        default: '5'
+      l5_thinking:
+        description: 'Fix-2 variable isolation: pin maxThinkingTokens to this SAME budget on BOTH arms (empty = each engine its own default)'
+        required: false
+        default: ''
+      l5_budget:
+        description: 'L5 spend cap in USD (default 1.5; a full 18-task round projects ~$1.55, so raise this to reach the later code/longconv tasks before the budget-abort)'
+        required: false
+        default: '1.5'
+
+concurrency:
+  group: silver-core-sdk-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    working-directory: projects/silver-core-sdk
+
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          # Sparse checkout excludes the 2.4G archive/reference layers so the
+          # Node job only pulls the ~100MB of code it needs.
+          sparse-checkout: |
+            /*
+            !/Public-Info-Pool/Record/
+            !/Public-Info-Pool/Reference/
+          sparse-checkout-cone-mode: false
+          # fetch-depth 2: the version-bump guard diffs HEAD~1 (squash merge =
+          # one commit; the guard skips gracefully when no parent exists).
+          fetch-depth: 2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: npm ci
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Build
+        run: npm run build
+      - name: Test (keyless, includes emulator e2e)
+        run: npm test
+      - name: Version-bump guard (BPT tarball pinning, 2026-07-05)
+        run: node scripts/check-version-bump.mjs
+
+  conformance:
+    # Conformance suite M1-M3 (design final 2026-07-05): the full L1-L4
+    # differential — L1 stream grammar, L2 options semantics, L3 tool_result
+    # content, L4 fault injection — plus the M3 scoreboard ratchet and the
+    # keyless L5 harness smoke. Keyless AND free — both engines talk only to
+    # a local content-blind emulator (zero api.anthropic.com traffic). The
+    # official arm installs the DUAL-PINNED packages transiently (--no-save,
+    # never a repo dependency; pins in tests/conformance/pins.json).
+    # Semantics: a DIVERGENT verdict is informational at the runner level,
+    # but the RATCHET IS A GATE — any scoreboard regression against the
+    # committed tests/conformance/baseline.json (green only grows) fails the
+    # job; a BPT-arm check failure fails the job (our own engine regression).
+    # Clean-room: the emulator never reads request bodies (standing decision
+    # 2026-07-05 净室观测边界 r2), and every runner self-audits its artifact.
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          sparse-checkout: |
+            /*
+            !/Public-Info-Pool/Record/
+            !/Public-Info-Pool/Reference/
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: Install pinned official arm (transient, --no-save, never a repo dep)
+        run: |
+          PINS=$(node -e "const p=require('./tests/conformance/pins.json');process.stdout.write('@anthropic-ai/claude-agent-sdk@'+p.agentSdk+' @anthropic-ai/claude-code@'+p.claudeCode)")
+          npm i --no-save $PINS
+      - name: L1 stream-grammar differential (content-blind emulator)
+        run: node tests/conformance/run-l1.mjs --out=conformance-l1.json
+      - name: L2 options-semantics differential
+        run: node tests/conformance/run-l2.mjs --out=conformance-l2.json
+      - name: L3 tool-behavior differential
+        run: node tests/conformance/run-l3.mjs --out=conformance-l3.json
+      - name: L4 fault-injection differential
+        run: node tests/conformance/run-l4.mjs --out=conformance-l4.json
+      - name: L3.5 subagent-lifecycle vocabulary differential (report-only — KD-L35 triage, never a gate; wired 2026-07-11, todo T16)
+        run: node tests/conformance/run-l35.mjs --arm=both --out=conformance-l35.json
+      - name: Scoreboard ratchet (M3 GATE — green only grows vs committed baseline.json)
+        run: node tests/conformance/ratchet.mjs conformance-l1.json conformance-l2.json conformance-l3.json conformance-l4.json
+      - name: L5 harness smoke (keyless — scripted emulator round proves the M4 harness end-to-end)
+        run: node tests/conformance/run-l5.mjs --smoke
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: conformance-matrix
+          path: |
+            projects/silver-core-sdk/conformance-l1.json
+            projects/silver-core-sdk/conformance-l2.json
+            projects/silver-core-sdk/conformance-l3.json
+            projects/silver-core-sdk/conformance-l4.json
+            projects/silver-core-sdk/conformance-l35.json
+            projects/silver-core-sdk/conformance-l5.json
+          if-no-files-found: ignore
+
+  live-smoke:
+    # Real api.anthropic.com run. Manual only — spends API budget.
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          sparse-checkout: |
+            /*
+            !/Public-Info-Pool/Record/
+            !/Public-Info-Pool/Reference/
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: Live real-API smoke test
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node tests/integration/live-real-api.mjs "${{ github.event.inputs.model }}"
+      - name: Official memory-tool wire capture (T20, conformance memory axis)
+        # Two tiny real calls through the OFFICIAL @anthropic-ai/sdk with the
+        # memory tool; prints the captured request bodies (headers whitelisted,
+        # no credentials) between markers for fixture retrieval from this log.
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          npm install --no-save @anthropic-ai/sdk
+          node tests/integration/capture-official-memory-wire.mjs "${{ github.event.inputs.model }}"
+
+  run-evals-live:
+    # SCS-REQ-002 loop 2, LIVE round: the two-layer eval suite with the
+    # behavior layer driving the real API (12 prompt-session questions + the
+    # 8 Phase 2 harness questions: fault injection / resume / compaction
+    # pressure) and claude-sonnet-5 judging against the pinned
+    # evals/judge-prompt.md. Manual dispatch with run_evals=inline|batches
+    # only — spends API budget (keeper cap: $30/month judge-side;
+    # run_evals=batches judges via the Message Batches API at the 50% nightly
+    # rate). After the round,
+    # the REQ-2.2 regression gate compares dimension means against the
+    # committed baseline — warnings only, never a hard block.
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.run_evals != 'false' && github.event.inputs.run_evals != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          sparse-checkout: |
+            /*
+            !/Public-Info-Pool/Record/
+            !/Public-Info-Pool/Reference/
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: runEvals (two-layer, LIVE)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/run-evals.mjs --out evals-reports ${{ github.event.inputs.run_evals == 'batches' && '--judge-batches' || '' }}
+      - name: Regression gate (REQ-2.2, advisory)
+        if: always()
+        run: node scripts/check-eval-regression.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: evals-report
+          path: projects/silver-core-sdk/evals-reports/
+
+  ab-benchmark:
+    # POSITIONING.md §7 measurement mandate: the representative-task efficiency
+    # benchmark. Manual dispatch with ab_benchmark=true only — spends real
+    # budget across 7 tasks. The JSON report uploads as a run artifact.
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.ab_benchmark == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          sparse-checkout: |
+            /*
+            !/Public-Info-Pool/Record/
+            !/Public-Info-Pool/Reference/
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: A/B efficiency benchmark (this SDK)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node tests/integration/ab-benchmark.mjs --engine=bpt "--model=${{ github.event.inputs.model }}" --out=ab-report-bpt.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ab-report
+          path: projects/silver-core-sdk/ab-report-*.json
+          if-no-files-found: ignore
+
+  vs-official:
+    # Head-to-head bare comparison against the OFFICIAL @anthropic-ai/
+    # claude-agent-sdk: same model, same 7 tasks, both engines. Measures the
+    # two objectively-comparable axes — response speed (wall-clock / API ms /
+    # TTFT) and output correctness (same check() pass-rate). Quality is NOT
+    # judged here (that axis is confounded by the proprietary system prompt —
+    # see docs/POSITIONING.md §2/§4).
+    #
+    # Clean-room discipline: the official package is installed with
+    # `npm i --no-save` for this run ONLY. It never enters package.json /
+    # package-lock.json and is never a dependency of this SDK. The official
+    # engine is treated purely as a black box we time and check — we read its
+    # INPUT/OUTPUT behavior, never its prompt text.
+    #
+    # The official SDK spawns the Claude Code CLI as its engine. If it cannot
+    # start headless, the official arm skips (exit 2) and the job reports the
+    # BPT numbers plus "official engine could not start" — itself a finding.
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.vs_official == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          sparse-checkout: |
+            /*
+            !/Public-Info-Pool/Record/
+            !/Public-Info-Pool/Reference/
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: Install the official SDK (transient, --no-save, not a repo dep)
+        run: npm i --no-save @anthropic-ai/claude-agent-sdk @anthropic-ai/claude-code || echo "official install failed; the official arm will skip"
+      - name: Bare comparison — this SDK (9 tasks incl. 2 long-conversation, median of N)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node tests/integration/ab-benchmark.mjs --engine=bpt "--model=${{ github.event.inputs.model }}" "--repeat=${{ github.event.inputs.repeat }}" --out=ab-report-bpt.json
+      - name: Bare comparison — official SDK (black box; may skip if CLI cannot start)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        continue-on-error: true
+        run: node tests/integration/ab-benchmark.mjs --engine=official "--model=${{ github.event.inputs.model }}" "--repeat=${{ github.event.inputs.repeat }}" --out=ab-report-official.json
+      - name: Compare (skips gracefully if the official report is missing)
+        run: |
+          if [ -f ab-report-official.json ]; then
+            node tests/integration/ab-benchmark.mjs --compare ab-report-bpt.json ab-report-official.json
+          else
+            echo "No official report produced — the official engine did not run headless. BPT-only numbers are in ab-report-bpt.json."
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: vs-official-report
+          path: projects/silver-core-sdk/ab-report-*.json
+          if-no-files-found: ignore
+
+  prompt-ab:
+    # Cheap probe: A/B this SDK's OWN harness prompt v1 vs a candidate (default
+    # v3; no official arm). Answers whether the richer candidate prompt improves
+    # the pass-rate on the hard discriminating tasks (10/11, which verify the
+    # produced code by executing it) and what it costs in cache/cost/turns.
+    # Dispatch with prompt_ab=true; prompt_candidate picks v2 or v3, prompt_tasks
+    # scopes the task set. Both variants run back-to-back in one job so
+    # cache/network conditions are shared.
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.prompt_ab == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      CAND: ${{ github.event.inputs.prompt_candidate }}
+      TASKS_ARG: ${{ github.event.inputs.prompt_tasks != '' && format('--tasks={0}', github.event.inputs.prompt_tasks) || '' }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          sparse-checkout: |
+            /*
+            !/Public-Info-Pool/Record/
+            !/Public-Info-Pool/Reference/
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: Prompt A/B — v1 (current default)
+        # A hard task failing is a real result (v1 may not verify), not a job
+        # failure — keep going so the candidate runs and the compare fires.
+        continue-on-error: true
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node tests/integration/ab-benchmark.mjs --engine=bpt --variant=v1 $TASKS_ARG "--model=${{ github.event.inputs.model }}" "--repeat=${{ github.event.inputs.repeat }}" --out=ab-report-v1.json
+      - name: Prompt A/B — candidate ($CAND)
+        continue-on-error: true
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node tests/integration/ab-benchmark.mjs --engine=bpt "--variant=$CAND" $TASKS_ARG "--model=${{ github.event.inputs.model }}" "--repeat=${{ github.event.inputs.repeat }}" --out=ab-report-cand.json
+      - name: Compare v1 vs candidate
+        run: node tests/integration/ab-benchmark.mjs --compare ab-report-v1.json ab-report-cand.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: prompt-ab-report
+          path: |
+            projects/silver-core-sdk/ab-report-v1.json
+            projects/silver-core-sdk/ab-report-cand.json
+          if-no-files-found: ignore
+
+  conformance-l5:
+    # Conformance suite M4: the L5 five-dimension task-library round against
+    # the REAL api.anthropic.com, both arms, with gate B ENFORCED (--gate):
+    # aggregate pass-rate non-inferiority, ours >= official minus 5pp,
+    # repeat median semantics per the blueprint (~$1.5/round on haiku).
+    # Manual dispatch with conformance_l5=true only — spends real budget.
+    # The official arm installs the dual-pinned packages transiently
+    # (--no-save, never a repo dependency; pins in tests/conformance/
+    # pins.json). L6 rides along at zero marginal cost: every official-arm
+    # PUBLIC SDKMessage stream is retained under l5-traces/ (content-blind
+    # audited — never request bodies) and uploaded as a run artifact.
+    if: >-
+      github.event_name == 'schedule' ||
+      (github.event_name == 'workflow_dispatch' && github.event.inputs.conformance_l5 == 'true')
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          sparse-checkout: |
+            /*
+            !/Public-Info-Pool/Record/
+            !/Public-Info-Pool/Reference/
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: Install pinned official arm (transient, --no-save, never a repo dep)
+        run: |
+          PINS=$(node -e "const p=require('./tests/conformance/pins.json');process.stdout.write('@anthropic-ai/claude-agent-sdk@'+p.agentSdk+' @anthropic-ai/claude-code@'+p.claudeCode)")
+          npm i --no-save $PINS
+      - name: L5 dual-arm real-API round (gate B enforced)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        # Schedule-safe arg building: on the monthly cron github.event.inputs
+        # is empty, so pass flags only when a value exists (run-l5.mjs defaults
+        # kick in: haiku model, repeat 5, $1.5 budget cap).
+        run: >-
+          node tests/conformance/run-l5.mjs --gate
+          ${{ github.event.inputs.model != '' && github.event.inputs.model != null && format('--model={0}', github.event.inputs.model) || '' }}
+          ${{ github.event.inputs.l5_repeat != '' && github.event.inputs.l5_repeat != null && format('--repeat={0}', github.event.inputs.l5_repeat) || '' }}
+          ${{ github.event.inputs.l5_budget != '' && github.event.inputs.l5_budget != null && format('--budget-usd={0}', github.event.inputs.l5_budget) || '' }}
+          ${{ github.event.inputs.l5_thinking != '' && github.event.inputs.l5_thinking != null && format('--thinking={0}', github.event.inputs.l5_thinking) || '' }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: conformance-l5-report
+          path: |
+            projects/silver-core-sdk/conformance-l5.json
+            projects/silver-core-sdk/l5-traces/
+          if-no-files-found: ignore
+
+  cache-probe:
+    # Controlled per-turn prompt-cache probe: one task run back-to-back N times,
+    # printing per-turn cache write/read to settle whether the stable prefix is
+    # reused across turns/runs (the A/B could only show aggregate 0%). Dispatch
+    # with cache_probe=true.
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.cache_probe == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          sparse-checkout: |
+            /*
+            !/Public-Info-Pool/Record/
+            !/Public-Info-Pool/Reference/
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: Cache probe — normal prefix (per-turn write/read, back-to-back)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node tests/integration/cache-probe.mjs "--model=${{ github.event.inputs.model }}" --runs=3 "--variant=${{ github.event.inputs.cache_probe_variant }}"
+      - name: Cache probe — BIG prefix (isolates marginal-size zone from a deeper defect)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node tests/integration/cache-probe.mjs "--model=${{ github.event.inputs.model }}" --runs=3 --big

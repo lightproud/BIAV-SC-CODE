@@ -55,6 +55,8 @@ jobs:
           fi
 
       - uses: actions/checkout@v7
+        with:
+          ssh-key: ${{ secrets.BOT_DEPLOY_KEY }}
         if: steps.check.outputs.skip != 'true'
 
       - uses: actions/setup-python@v5
@@ -88,7 +90,9 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add projects/news/data/
+          # backfill_platforms.py writes archives to Public-Info-Pool (4R layout);
+          # projects/news/data/ still holds state files
+          git add Public-Info-Pool/Record/Community/ projects/news/data/
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else

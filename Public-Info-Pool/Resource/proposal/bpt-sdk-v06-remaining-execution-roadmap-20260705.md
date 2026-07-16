@@ -1,0 +1,96 @@
+# BPT Agent SDK v0.6 剩余 —— 执行路线图（ultracode 工作流产出）
+
+> 类型：proposal ｜ 日期：2026-07-05 ｜ 作者：艾瑞卡会话（ultracode 8 代理工作流：6 设计 + 综合 + 红线批判）
+> 定位：`bpt-sdk-roadmap-20260705.md`（版本总览）之下、`bpt-sdk-reproduction-scope-ledger-20260704.md`（全做台账）之上的**剩余 backlog 执行分解**——把 Tier 1 残项 + Tier 2/3 拆成可实现增量、按依赖排序、逐项过红线。守密人 2026-07-05「ultracode 推进 V0.6 剩余」裁定下产出。
+> 贯穿硬边界：§1.1-HC 黑池防火墙 · 拒真内部泄漏 · 不描述未发货能力（能力与提示词一并发货）· 净室观测边界 · 不测不宣胜负 · 无 emoji。
+> 红线批判裁定：**ADJUST**（唯一调整：G-VERIFY 默认模型 sonnet→haiku 对齐已发货 utility 默认，避「更会验证」未测赌注；已采纳落地）。
+
+**首批（本会话）已实现并全绿**：G-VERIFY（三态验证器）+ G-SUMMARY（摘要安全守卫 + away-summary）。详见下「## 已落」。
+
+---
+
+# BPT SDK v0.6 — Execution Roadmap (remaining backlog)
+
+## Classification
+
+### Ship-now (Tier 1: faithful direct-reproduction, real caller exists, finishable-to-green)
+| Item | Effort | Real caller | Blast radius |
+|---|---|---|---|
+| **G-VERIFY** — `adversarialVerify` three-state verdict (CONFIRMED/PLAUSIBLE/REFUTED), recall-biased, fail-closed | M | new exported SDK fn; the /code-review flow calls it per candidate | **None** — greenfield `src/verifier/`, only adds exports |
+| **G-SUMMARY** — summarizer no-tools + verbatim-preservation guards; `generateAwaySummary` generator | M | `foldViaApi` (shipped API-summary path) + new exported fn | **Low** — additive; `SUMMARIZER_SYSTEM` untouched, guards in separate constants, `extractSummaryFromReply` is a strict superset |
+| **G-HOOKCOND** — hook-condition evaluator + stop variant (pair only) | M | condition-gated `HookCallbackMatcher`, wired in `hooks/runner.ts` same change | **Medium** — introduces a bounded model call into the previously-deterministic hook runner + `query.ts` credential threading; fails CLOSED |
+| **G-SANDBOX** — bwrap default-on bash sandbox + faithful sandbox guidance | L | shipped Bash built-in + DefaultPermissionGate | **High** — 11 files incl. `permissions/gate.ts` routing + `bash.ts`/`shells.ts` spawn plumbing |
+
+All four depend only on the confirmed-shipped v0.6 utility runtime (`runUtilityCall`/`extractJsonObject` at `src/generators/runtime.ts`) — no reinvented transport, no cross-dependency, so ordering is by risk, not need.
+
+### Design-only (Tier 2/3: need a tool body or a keeper/caller decision before any prompt is reproduced)
+- **O-B1/B2/B3 orchestration** — plan-mode read-only gate; SendMessage + MessageRouter; cross-session peer firewall. Each needs its tool body to land *before* its prompt (unshipped-capability red line).
+- **T1 Workflow DSL engine** — needs keeper sandbox-strategy decision (node:vm vs embedded interpreter vs QuickJS) *and* a confirmed BPT Desktop consumer. Deterministic-replay is the crux (XL).
+- **T2 Loop/Cron/Monitor/Task** — Loop is a pure-prompt skill; reproduce it only after Cron + Monitor + Task* bodies ship.
+- **T3 Skills system** — registry + Skill tool body before `tool-description-skill` reproduction.
+- **Excluded / reference-only (never reproduce as shipped):** ~~the 3 hook classifiers (context-tip-selector, tip-reception-evaluator, memory-file-attach)~~ — **REVERSED by the keeper「补！」ruling: their consuming subsystems were BUILT (Batch 2 below), so they now ship**; all cloud slugs (schedule-slash-command, cloud-first-scheduling, SearchSkills/SuggestSkills, managed-agents `/v1/skills`) remain reference-only — this SDK is a local embeddable engine and must not fabricate cloud surfaces (their legitimate local forms belong to the Track 2/3 tool bodies).
+
+## Recommended first batch (THIS turn)
+**G-VERIFY + G-SUMMARY.** Both are additive utility-call surfaces over the shipped runtime, each ships its prompt *with* a runnable exported caller (no unshipped-capability risk), and each carries a corpus-sync guard against its cited archive slug (all target slugs verified present in `Public-Info-Pool/Reference/Claude-Code-System-Prompts/system-prompts/`). G-VERIFY has zero regression surface (greenfield); G-SUMMARY is a guarded superset of current fold behavior. If maximally conservative, ship **G-VERIFY alone** — it is the only item with literally no touch to existing runtime behavior.
+
+**Measurement discipline is satisfied per item:** G-VERIFY — the fail-closed unit table (garbled/ambiguous/empty -> REFUTED, never `keep:true`) is the before/after proof. G-SUMMARY — a system-contains assertion (guard actually sent) + an analysis-leak fold test (`<analysis>secret</analysis>` never enters the summary). Both keep the existing corpus-sync provenance guard green (G-SUMMARY must bump the provenance count 5->6).
+
+## Dependency-ordered sequence for the rest
+1. **Batch 2 (ship-now, more surface):** G-HOOKCOND (pair only; wire the condition-gated matcher in the same change) **and** the **O-B0 preset carve-out** — register `worker-fork` + `coordinator-worker` AgentDefinition presets onto the *already-shipped* `forkActive` branch (confirmed live at `subagents/runtime.ts:699`), consumed by the existing Agent/Task tool with no runtime change. O-B0 is genuinely ship-now and should be extracted from the Tier-2 orchestration spec.
+2. **Batch 3 (ship-now, isolate):** G-SANDBOX alone, so gate/spawn changes don't entangle Batches 1–2. Injected-backend tests run everywhere; real-isolation tests behind `it.runIf(hasBwrap)` for CI images.
+3. **Orchestration bodies (strict chain):** O-B1 (plan-mode read-only gate + staged-pipeline example) -> O-B2 (SendMessage + intra-session router) -> O-B3 (cross-session peer + structural firewall, gated behind a passing escalation-rejection red-team: the receiving gate's mode + allow/deny lists byte-identical before/after ingesting a peer escalation attempt). O-B3 deliberately does **not** reuse fork's privilege inheritance — that is the precise line between same-session fork (consent flows down) and cross-session peer (consent must not cross the boundary).
+4. **Track 2/3 bodies (reuse-first):** Phase A parallel — Task* CRUD + Monitor (v0.4 sink + v0.5 ShellManager) and Skills registry+tool; Phase B — Cron idle-gated scheduler; Phase C — Loop skill prompts (only after A+B); Phase D — Workflow engine (last, behind keeper sandbox + caller decision). Per-track prompt reproduction is always the terminal sub-step.
+5. **Standing guard:** add the red-line regression test — no reproduced prompt may reference a tool absent from the builtin registry at that version — so a future contributor cannot silently add an unshipped-capability prompt.
+
+## Red-line posture (all items clear)
+- **Feature+prompt together:** every ship-now item lands its capability in the same change as its prompt; the 3 hook classifiers and cloud slugs stay design-only precisely because their subsystems don't exist.
+- **Open-info reproduction:** all reproductions cite exact archive slugs (all confirmed present), mark faithful-vs-adapted, and add corpus-sync drift guards; no leaked-source derivatives.
+- **§1.1-HC firewall / net-observation:** untouched — pure 银芯->黑池-direction SDK engineering; no black-pool inflow; no reading/persisting the official arm's request body (explicitly re-stated in the peer-inbox module header for O-B3).
+- **No emoji anywhere.**
+
+---
+
+## 已落（本会话，Batch 1）
+
+- **G-VERIFY**（`src/verifier/`）：三态验证器 CONFIRMED/PLAUSIBLE/REFUTED + recall-biased 忠实复现（part-4/part-5/skill keep-rule，3 面 provenance + corpus-sync）；`adversarialVerify(finding)` 公开 API；`parseVerdict` **fail-closed**（乱码/歧义/空→REFUTED、keep:false）；默认 haiku、可覆盖；23 单测。
+- **G-SUMMARY**：① compaction 摘要器追加 no-tools 守卫 + verbatim 安全保全条（忠实复现，SUMMARIZER_SYSTEM 字节不变、旧金标/provenance 测试保绿）+ `extractSummaryFromReply`（认 `<analysis>/<summary>` 契约、旧行为严格超集）；② `generateAwaySummary`（第 6 面生成器，「回来了」<40 词回顾）。
+- 验证：`npx vitest run` **881 全绿**（+43）、`tsc --noEmit` + `build` exit 0；对抗审查随后拷问实现。
+
+## 已落（本会话，Batch 2 —— 补 hook 分类器子系统）
+
+守密人「这意味着我们内部没有实现对应的功能，补！」裁定：反转原批判的「3 hook 分类器降级 design-only」——降级**唯一原因是「无消费子系统」**，故建子系统、让分类器「功能与提示词一并发货」，红线自然满足。
+
+- **上下文提示子系统**（`src/tips/`）：情境目录注册表（忠实复现 manual-polling / persistent-memory 两条、可扩展）+ `selectContextTip`（忠实复现 context-tip-selector；**fail-safe** 默认 no-tip、只返回 eligible∩catalog 内 feature_id、幻觉/越权 id 丢弃）+ `evaluateTipReception`（忠实复现 reception-evaluator；默认 unknown/neutral）。
+- **记忆文件选择**（生成器族第 7 面）：`selectMemoryFilesToAttach`（忠实复现 determine-which-memory-files-to-attach；接 settingSources/记忆加载路径；**≤5、只返回可用集内文件名（幻觉丢弃）、去重、fail-safe 空表**、无文件零调用短路）。
+- 5 条新复现**字节级与归档一致**（reverse-diff 确认）。**930 单测全绿（+55）**。**云端 slug**（schedule-slash-command / cloud-first-scheduling / SearchSkills+SuggestSkills / managed-agents `/v1/skills`）仍 reference-only：本 SDK 为本地可嵌入引擎，凭空造云面=描述不存在能力（反成红线）；其可落的本地形态（本地 Skills 注册表 search/suggest、本地 Cron/schedule）归 Track 2/3 工具本体。
+
+## 已落（本会话，Batch 2 续 —— G-HOOKCOND + O-B0）
+
+- **G-HOOKCOND**：`HookCallbackMatcher.condition` 自然语言条件门控——runner 触发回调前用忠实复现的 hook-condition 评估器（base + stop 双变体，Stop/SubagentStop 自动 stop 变体、支持 `impossible`）做一次有界调用判定；**fail-closed**（不满足/乱码/评估出错含无凭据→跳过回调）；无 condition 零模型调用（存量行为逐字节不变）；凭据经 query.ts 线程。
+- **O-B0 worker-fork preset**：`WORKER_FORK_FRAMING`（忠实复现，AGENT_TOOL_NAME→Agent 适配）+ `buildWorkerForkPrompt`（framing 骑 fork 任务轮、不动缓存前缀，与官方装配一致）+ `WORKER_FORK_AGENT`（fork:true / maxTurns 200，挂 G4 fork 机制、runtime 零改动）。**coordinator/teams 刻意不发**（预设 SendMessage 本体，归 O-B2）。
+- 3 条新复现字节级一致（reverse-diff）。**952 单测全绿（+22）**。
+
+## 已落（本会话，Batch 3 —— G-SANDBOX + 卫生批）
+
+- **G-SANDBOX**（守密人「G-SANDBOX 推荐 / 网络默认断网」裁定，已落）：默认开启的 Bash 沙箱、**可插拔后端**。① `src/sandbox/`：`resolveSandboxBackend`（Linux+bwrap→BwrapBackend，否则 null 优雅降级 + 诚实 debug；注入式后端接缝）+ `BwrapBackend`（纯 argv：`--ro-bind / /` + writablePath 逐条 rw-bind + `--unshare-net`（默认断网）+ `$TMPDIR` 重定向；限制范围只做归档描述的写盘/网络/tmpdir，不发明读隐藏/seccomp）+ `detectSandboxEvidence`/`sandboxFailureHint`（沙箱致败签名→`[sandbox]` 证据 + 重试路径）。② 双 spawn 位（前台 bash.ts / 后台 shells.ts）经 `planShellSpawn` 同一接缝；持久 cwd/env 在沙箱内仍工作（stateDir rw-bind）。③ `dangerouslyDisableSandbox` 经权限门走 ask（Bash 非只读天然不自动放行，除 bypass/allow 规则）；mandatory 模式（`allowEscape:false`）政策拒绝。④ 描述/schema 门控：未激活字节不变、无 param、不含 "sandbox"；激活加忠实指引（17 片段 provenance + corpus-sync 字节对齐）+ param；断网默认才装网络证据片段（红线）。⑤ **Windows/macOS 无后端→如实降级、不假装隔离**（同官方 CC Windows 姿态）。⑥ 卫生批：**红线常驻守卫** `tests/red-line-tool-names.test.ts`（任何复现提示词不得引用当版缺席工具）+ plan 注释修正。**conformance/emulator 钉 `sandbox:false`** 保确定性（不依赖 CI 机器 bwrap）。**1026 单测全绿 + 2 skipped（真 bwrap 隔离测试无 bwrap 时跳过）**。
+- **测量基建 G-cmp（任务#17）对账**：一致性套件 M1-M4 早已封顶（L1 流语法 / L2 选项 16 锁 / L3 工具差分 / L4 故障注入 / L5 五维真机 + 棘轮门 + 漂移哨兵），#17 陈旧 pending 标记订正为 completed（代码早已落，非缺口）。
+
+## 已落（后续会话，引擎对齐批 E1–E5）
+
+- **来源**：L5 首轮真跑解剖交接档 `Public-Info-Pool/Resource/repo-engineering/bpt-sdk-engine-alignment-handoff-20260705.md`（PR #456）。五条引擎侧官方对齐全部落地，关键行对**真官方臂**双臂实测收敛：
+- **E1** `claude_code` preset 默认开思考（4096 我方选定值、COMPAT 登记 KD；显式关闭口；非 preset 零变化；最终验收待守密人派一轮真 L5）。
+- **E4** Write 读前写门（逐字官方错误文案；`readFilePaths` 每 query 一份、子代理同引用；**L3-WRITE-02 官方臂 CONTENT_MATCH、KD-L3-06 退役**）。
+- **E5** maxBudgetUsd 执行前截停（工具零执行、无 tool_result 用户轮；**L2 s12 转 MATCH、engineFinding 退役**）。
+- **E3** 截断轮优雅降级（整块挽救；完整 tool_use 照常执行 + 续轮；未闭合绝不执行；**L4 三条保红行全清、KD-L4-04 退役、KD-L4-02 收窄 errorPresent**）。
+- **E2** result 口径对齐（num_turns/usage 逐 result、cost/apiMs 累计；**破坏性** MIGRATION 5e；run-l5 聚合并轨、**KD-L5-04 退役**）。
+
+## 未落（按上文依赖链推进，需守密人裁或先建工具本体）
+- **编排链**（严格顺序，各需工具本体先落）：O-B1 plan-mode 只读门（门已在、补分阶段流水线范例）→ O-B2 SendMessage + 会话内路由 → O-B3 跨会话对等 + 结构化同意不可转述防火墙（过 escalation-rejection red-team 才接线；**刻意不复用 fork 特权继承**）。
+- **Track 2/3 本体**（复用优先）：Task* CRUD + Monitor（v0.4 通知汇 + v0.5 ShellManager）· Skills 注册表+工具 · Cron 空闲门调度 · Loop skill 提示词（A+B 后）· Workflow DSL 引擎（最后，待守密人沙箱策略裁 + 确认 BPT Desktop 消费方；确定性重放为核心难点）。
+- **永不发货（reference-only）**：全部云端 slug——本 SDK 为本地可嵌入引擎，不发云面。红线回归守卫**已建**（`tests/red-line-tool-names.test.ts`）。
+
+## 依据档
+
+- 版本总览：`Public-Info-Pool/Resource/proposal/bpt-sdk-roadmap-20260705.md`
+- 全做范围台账：`Public-Info-Pool/Resource/proposal/bpt-sdk-reproduction-scope-ledger-20260704.md`
+- 子项目实时状态：`memory/project-status.md`「## BPT Agent SDK」+ `projects/bpt-agent-sdk/CONTEXT.md`

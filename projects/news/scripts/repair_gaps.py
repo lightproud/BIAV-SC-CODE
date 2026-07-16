@@ -51,7 +51,8 @@ def detect_gaps(since: date | None = None) -> dict[str, list[str]]:
         dates: list[date] = []
         for f in archive_layout.dated_files(source, ARCHIVE_DIR):
             try:
-                dates.append(date.fromisoformat(f.stem))
+                # 冷压 .gz 的 Path.stem 残留 .json，日期一律经 date_stem（甲案推广）
+                dates.append(date.fromisoformat(archive_layout.date_stem(f)))
             except ValueError:
                 continue
         dates = sorted(set(dates))  # 分层后同日可有多区服文件，去重再判连续性

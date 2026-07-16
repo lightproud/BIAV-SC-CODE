@@ -66,8 +66,9 @@ def test_main_uses_frontmatter_title_and_meta(tmp_path, monkeypatch, capsys):
 
     captured = {}
 
-    def fake_render(s, title, subtitle, meta, cover_note):
-        captured.update(title=title, subtitle=subtitle, meta=meta, note=cover_note)
+    def fake_render(s, title, subtitle, meta, cover_note, mobile=False, theme='dark'):
+        captured.update(title=title, subtitle=subtitle, meta=meta, note=cover_note,
+                        mobile=mobile, theme=theme)
         return ("out.html", "out.pdf", 3, 4096)
 
     monkeypatch.setattr(rr, "render", fake_render)
@@ -79,6 +80,7 @@ def test_main_uses_frontmatter_title_and_meta(tmp_path, monkeypatch, capsys):
     # meta assembled from basis + 产出：author · generated
     assert "基于X" in captured["meta"]
     assert "产出：艾瑞卡 · 2026-06-21" in captured["meta"]
+    assert captured["mobile"] is False and captured["theme"] == "dark"  # CLI 默认
     out = capsys.readouterr().out
     assert "out.pdf" in out and "4096 bytes" in out
 
@@ -89,7 +91,7 @@ def test_main_cli_overrides_take_precedence(tmp_path, monkeypatch):
 
     captured = {}
     monkeypatch.setattr(rr, "render",
-                        lambda s, t, sub, m, n: captured.update(
+                        lambda s, t, sub, m, n, mobile=False, theme='dark': captured.update(
                             title=t, subtitle=sub, meta=m, note=n) or ("h", "p", 0, 1))
     monkeypatch.setattr(sys, "argv", [
         "report_render.py", str(src),
@@ -111,7 +113,7 @@ def test_main_defaults_when_frontmatter_empty(tmp_path, monkeypatch):
 
     captured = {}
     monkeypatch.setattr(rr, "render",
-                        lambda s, t, sub, m, n: captured.update(
+                        lambda s, t, sub, m, n, mobile=False, theme='dark': captured.update(
                             title=t, subtitle=sub, meta=m) or ("h", "p", 0, 1))
     monkeypatch.setattr(sys, "argv", ["report_render.py", str(src)])
     rr.main()

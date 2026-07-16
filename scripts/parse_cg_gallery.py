@@ -1,4 +1,6 @@
 """Parse art_assets manifest.json to extract CG gallery data grouped by chapter."""
+# NOTE: 源数据 projects/wiki/data/extracted/（art_assets 清单）已于 2026-07-12 守密人裁定整删
+#       （目录规范化 + wiki 冻结）。重跑前先从 git 历史或 Releases 美术桶还原源数据。
 import json
 import re
 

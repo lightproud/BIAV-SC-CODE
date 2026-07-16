@@ -1,8 +1,8 @@
 {
   "date": "2026-06-24",
-  "archived_at": "2026-06-25T11:38:20.208593+00:00",
+  "archived_at": "2026-07-12T03:52:12.074379+00:00",
   "source": "bilibili",
-  "item_count": 14,
+  "item_count": 15,
   "items": [
     {
       "title": "【忘却前夜】我去，金人小卖部开门了嗷",
@@ -325,6 +325,21 @@
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
+    },
+    {
+      "title": "6.22前的第一次融灾400留念（这次融灾的怪好阴间啊，深海戒指达不到400了）之1-4",
+      "summary": "这个分p别折磨我了，一个个上传我还要不要用手机了",
+      "source": "bilibili",
+      "platform_region": "cn",
+      "lang": "zh",
+      "time": "2026-06-24T13:14:04+00:00",
+      "url": "http://www.bilibili.com/video/av116805242724308",
+      "engagement": 186,
+      "is_hot": false,
+      "author": "临溺渾",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
     }
   ]
 }

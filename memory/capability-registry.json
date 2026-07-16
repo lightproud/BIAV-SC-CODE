@@ -1,23 +1,23 @@
 {
   "meta": {
-    "generated_at": "2026-07-05",
+    "generated_at": "2026-07-14",
     "generated_by": "scripts/build_capability_registry.py (自动扫描 + 可达性分析)",
     "do_not_hand_edit": "本文件由 CI 自动重生成；人工中文用途请改 memory/capability-annotations.json",
     "scope": "BIAV-SC 银芯（公开信息层）全功能盘点 + 动态编排可达性",
     "reachability_method": "从活编排入口（工作流/MCP/命令/钩子/CLI 手动入口）沿 Python 模块级 import 图做传递闭包；带 __main__ 的脚本计为 cli 手动平面。status=orphaned 表示无任何活入口可达，建议隔离待裁，非自动删除。",
     "counts": {
-      "workflows": 31,
-      "scripts_top": 32,
-      "scripts_news": 28,
+      "workflows": 36,
+      "scripts_top": 37,
+      "scripts_news": 32,
       "scripts_wiki": 6,
-      "mcp_tools": 9,
+      "mcp_tools": 11,
       "commands": 4,
-      "skills": 4,
+      "skills": 5,
       "projects": 5,
-      "total": 119
+      "total": 136
     },
     "reachability": {
-      "live": 66,
+      "live": 75,
       "test-only": 0,
       "orphaned": 0
     }
@@ -53,16 +53,6 @@
       "note_zh": "定时回填历史社区新闻。"
     },
     {
-      "id": "bpt-agent-sdk.yml",
-      "name": "BPT Agent SDK",
-      "path": ".github/workflows/bpt-agent-sdk.yml",
-      "triggers": [
-        "push",
-        "pull_request",
-        "manual"
-      ]
-    },
-    {
       "id": "build-analysis-index.yml",
       "name": "Build Analysis Index",
       "path": ".github/workflows/build-analysis-index.yml",
@@ -82,10 +72,19 @@
       "note_zh": "功能源变动时自动重生成银芯功能目录。"
     },
     {
+      "id": "build-community-vectors.yml",
+      "name": "Build Community Vectors",
+      "path": ".github/workflows/build-community-vectors.yml",
+      "triggers": [
+        "manual"
+      ]
+    },
+    {
       "id": "build-okf-bundle.yml",
       "name": "Build OKF Bundle",
       "path": ".github/workflows/build-okf-bundle.yml",
       "triggers": [
+        "schedule",
         "push",
         "manual"
       ]
@@ -136,6 +135,24 @@
         "manual"
       ],
       "note_zh": "定时采集同人图。"
+    },
+    {
+      "id": "community-cold-compress.yml",
+      "name": "Community Cold Compress",
+      "path": ".github/workflows/community-cold-compress.yml",
+      "triggers": [
+        "schedule",
+        "manual"
+      ]
+    },
+    {
+      "id": "conformance-drift.yml",
+      "name": "Conformance pin drift sentinel",
+      "path": ".github/workflows/conformance-drift.yml",
+      "triggers": [
+        "schedule",
+        "manual"
+      ]
     },
     {
       "id": "consolidate-releases.yml",
@@ -194,6 +211,15 @@
       "note_zh": "定时归档主 Discord 数据。"
     },
     {
+      "id": "discord-cold-compress.yml",
+      "name": "Discord Cold Compress",
+      "path": ".github/workflows/discord-cold-compress.yml",
+      "triggers": [
+        "schedule",
+        "manual"
+      ]
+    },
+    {
       "id": "discord-discover-guilds.yml",
       "name": "Discord Discover Guilds",
       "path": ".github/workflows/discord-discover-guilds.yml",
@@ -231,18 +257,9 @@
       "note_zh": "解包提取客户端游戏数据（wiki 数据源）。"
     },
     {
-      "id": "fanart-archive.yml",
-      "name": "Fanart Archive",
-      "path": ".github/workflows/fanart-archive.yml",
-      "triggers": [
-        "schedule",
-        "manual"
-      ]
-    },
-    {
-      "id": "migrate-to-public-info-pool.yml",
-      "name": "Migrate to Public-Info-Pool",
-      "path": ".github/workflows/migrate-to-public-info-pool.yml",
+      "id": "kb-semantic-proof.yml",
+      "name": "KB Semantic Proof",
+      "path": ".github/workflows/kb-semantic-proof.yml",
       "triggers": [
         "manual"
       ]
@@ -270,6 +287,26 @@
       "path": ".github/workflows/refresh-claude-code-prompts.yml",
       "triggers": [
         "schedule",
+        "manual"
+      ]
+    },
+    {
+      "id": "sdk-mutation-ratchet.yml",
+      "name": "SDK Mutation Ratchet (weekly)",
+      "path": ".github/workflows/sdk-mutation-ratchet.yml",
+      "triggers": [
+        "schedule",
+        "manual"
+      ]
+    },
+    {
+      "id": "silver-core-sdk.yml",
+      "name": "Silver Core SDK",
+      "path": ".github/workflows/silver-core-sdk.yml",
+      "triggers": [
+        "schedule",
+        "push",
+        "pull_request",
         "manual"
       ]
     },
@@ -313,6 +350,15 @@
         "manual"
       ],
       "note_zh": "校验 wiki JSON 数据（push/PR 触发）。"
+    },
+    {
+      "id": "weekly-heavy-deps-test.yml",
+      "name": "Weekly Heavy-Deps Test",
+      "path": ".github/workflows/weekly-heavy-deps-test.yml",
+      "triggers": [
+        "schedule",
+        "manual"
+      ]
     }
   ],
   "scripts_top": [
@@ -341,7 +387,18 @@
       "path": "scripts/build_kb_index.py",
       "summary": "build_kb_index.py — 银芯知识库运行时导航索引（KB navigation index）生成器。",
       "planes": [
-        "cli"
+        "cli",
+        "workflow"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "build_kb_vectors.py",
+      "path": "scripts/build_kb_vectors.py",
+      "summary": "build_kb_vectors.py — 构建银芯长尾向量索引（§八「厚锚撑向量」参照实现）。",
+      "planes": [
+        "cli",
+        "workflow"
       ],
       "status": "live"
     },
@@ -414,6 +471,15 @@
       "status": "live"
     },
     {
+      "id": "extract_aliases.py",
+      "path": "scripts/extract_aliases.py",
+      "summary": "extract_aliases.py — 厚锚别名生成期工作面（AI 自动识别的落表 CLI）。",
+      "planes": [
+        "cli"
+      ],
+      "status": "live"
+    },
+    {
       "id": "generate_wiki_pages.py",
       "path": "scripts/generate_wiki_pages.py",
       "summary": "Generate VitePress Markdown pages from processed JSON data.",
@@ -429,6 +495,15 @@
       "summary": "kb_ab.py — 知识库 vs 朴素搜索 反事实 A/B（北极星评判体系 #3）。",
       "planes": [
         "cli"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "kb_anchor.py",
+      "path": "scripts/kb_anchor.py",
+      "summary": "kb_anchor.py — 先锚后扩合流（§八 8.3「厚锚撑向量」检索侧合流，import-only 库）。",
+      "planes": [
+        "mcp"
       ],
       "status": "live"
     },
@@ -469,11 +544,29 @@
       "status": "live"
     },
     {
+      "id": "kb_semantic_ab.py",
+      "path": "scripts/kb_semantic_ab.py",
+      "summary": "kb_semantic_ab.py — 向量腿语义铁证 harness（paraphrase-recall，§八「厚锚撑向量」）。",
+      "planes": [
+        "cli"
+      ],
+      "status": "live"
+    },
+    {
       "id": "kb_telemetry.py",
       "path": "scripts/kb_telemetry.py",
       "summary": "kb_telemetry.py — 知识库使用遥测（北极星评判体系 #2，「追踪」的地基）。",
       "planes": [
         "cli",
+        "mcp"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "kb_vector.py",
+      "path": "scripts/kb_vector.py",
+      "summary": "kb_vector.py — 银芯向量检索腿（长尾语义召回后端，import-only 库）。",
+      "planes": [
         "mcp"
       ],
       "status": "live"
@@ -500,21 +593,12 @@
       "note_zh": "MCP 服务端 biav-sc-memory，暴露 4 个平台互补工具。"
     },
     {
-      "id": "migrate_flat_archives_to_layout.py",
-      "path": "scripts/migrate_flat_archives_to_layout.py",
-      "summary": "migrate_flat_archives_to_layout.py — 平级历史归档一次性归位到区服/类型分层。",
-      "planes": [
-        "cli"
-      ],
-      "status": "live"
-    },
-    {
-      "id": "migrate_unpacked_to_git.py",
-      "path": "scripts/migrate_unpacked_to_git.py",
-      "summary": "把 unpacked-data release 的 **text 部分** 迁入 git（二进制留 Releases）。",
+      "id": "memory_freshness.py",
+      "path": "scripts/memory_freshness.py",
+      "summary": "memory_freshness.py — 记忆档案保鲜巡检器（确定性零 ML 零常驻）。",
       "planes": [
         "cli",
-        "workflow"
+        "command"
       ],
       "status": "live"
     },
@@ -523,7 +607,7 @@
       "path": "scripts/okf_pointer_layers.py",
       "summary": "okf_pointer_layers.py — 全仓知识组织：OKF bundle 新增指针概念层（import-only 库）。",
       "planes": [
-        "import"
+        "workflow"
       ],
       "status": "live"
     },
@@ -605,6 +689,15 @@
       "planes": [
         "cli",
         "workflow"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "silver_aliases.py",
+      "path": "scripts/silver_aliases.py",
+      "summary": "silver_aliases.py — 厚锚别名侧表读取层（import-only 库）。",
+      "planes": [
+        "import"
       ],
       "status": "live"
     },
@@ -739,6 +832,15 @@
       "status": "live"
     },
     {
+      "id": "collect_arca_daily.py",
+      "path": "projects/news/scripts/collect_arca_daily.py",
+      "summary": "collect_arca_daily.py — arca_live 日采单脚本（银芯 CC 例程专用，方案 2 过渡桥）。",
+      "planes": [
+        "cli"
+      ],
+      "status": "live"
+    },
+    {
       "id": "collect_fanart.py",
       "path": "projects/news/scripts/collect_fanart.py",
       "summary": "同人图采集器 — 把某日各信息源的玩家二创图抓到本地，供日报附录嵌图。",
@@ -777,6 +879,16 @@
       "status": "live"
     },
     {
+      "id": "community_cold_compress.py",
+      "path": "projects/news/scripts/community_cold_compress.py",
+      "summary": "community_cold_compress.py — Community 全量档案月度压冷总入口（甲案推广，2026-07-12）。",
+      "planes": [
+        "cli",
+        "workflow"
+      ],
+      "status": "live"
+    },
+    {
       "id": "data_quality.py",
       "path": "projects/news/scripts/data_quality.py",
       "summary": "数据质量增强模块",
@@ -789,6 +901,16 @@
       "id": "discord_archiver.py",
       "path": "projects/news/scripts/discord_archiver.py",
       "summary": "Discord 全量数据归档器 v2 — 双轨并行 + 断点续传 + JSONL 去重",
+      "planes": [
+        "cli",
+        "workflow"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "discord_cold_compress.py",
+      "path": "projects/news/scripts/discord_cold_compress.py",
+      "summary": "discord_cold_compress.py — discord 归档月度压冷（守密人 2026-07-12 甲案裁定）。",
       "planes": [
         "cli",
         "workflow"
@@ -811,6 +933,15 @@
       "planes": [
         "cli",
         "workflow"
+      ],
+      "status": "live"
+    },
+    {
+      "id": "discord_reconcile.py",
+      "path": "projects/news/scripts/discord_reconcile.py",
+      "summary": "discord_reconcile.py — channel_index 与归档目录的一致性对账（T35，守密人 2026-07-12 点火）。",
+      "planes": [
+        "cli"
       ],
       "status": "live"
     },
@@ -1011,6 +1142,16 @@
       "id": "kb_overview",
       "module": "scripts/mcp_server.py",
       "summary": "知识库总览（LLMwiki 楼层平面图）：分区 / 类型分布 / 各分区入口索引 / 用法。"
+    },
+    {
+      "id": "kb_vector_search",
+      "module": "scripts/mcp_server.py",
+      "summary": "长尾语义召回（§八「厚锚撑向量」的向量腿）：对社区全量档案做模糊语义检索。"
+    },
+    {
+      "id": "kb_anchor",
+      "module": "scripts/mcp_server.py",
+      "summary": "先锚后扩合流（§八 8.3「厚锚撑向量」）：脊柱锚定 + 别名扩词 + 向量捞长尾一次给全。"
     }
   ],
   "commands": [
@@ -1029,7 +1170,7 @@
     {
       "id": "sync-memory",
       "path": ".claude/commands/sync-memory.md",
-      "summary": "Check all sub-project actual file states and sync shared memory files",
+      "summary": "Memory audit + sync playbook（记忆巡检手册，守密人 2026-07-12 裁定升级）。",
       "note_zh": "核对各子项目实际文件状态，同步共享记忆文件。"
     },
     {
@@ -1064,14 +1205,15 @@
       "path": ".claude/skills/grilling/SKILL.md",
       "name": "grilling",
       "summary": "Interview the keeper relentlessly about a plan or design before building. Use when the keeper wants to stress-test a plan, sharpen a vague idea, or uses any 'grill' / 拷问 / 质询 / 对齐 trigger phrase."
+    },
+    {
+      "id": "intel-weekly",
+      "path": ".claude/skills/intel-weekly/SKILL.md",
+      "name": "intel-weekly",
+      "summary": "Generate the Morimens weekly community intelligence report (社区情报周报) from the full archive layer. Use when asked for the weekly report, 周报, community intel digest, or a windowed community summary. Produces a fixed-skeleton Chinese report (trend + role routing + business topics with embedded risk sentinels + bug list + player request list + credited fanart gallery + volume map) rendered as mobile PDF in brand themes."
     }
   ],
   "projects": [
-    {
-      "id": "bpt-agent-sdk",
-      "path": "projects/bpt-agent-sdk/",
-      "summary": "BPT Agent SDK：净室（clean-room）实现的 TypeScript agent 框架，公开调用面"
-    },
     {
       "id": "game",
       "path": "projects/game/",
@@ -1085,6 +1227,11 @@
       "note_zh": "使命#1 黑池信息入口：采集器 + 全量档案层 + 输出展示层，单向送黑池。"
     },
     {
+      "id": "silver-core-sdk",
+      "path": "projects/silver-core-sdk/",
+      "summary": "Silver Core SDK：独立重实现（independent reimplementation）的 TypeScript agent 框架，公开调用面"
+    },
+    {
       "id": "site",
       "path": "projects/site/",
       "summary": "> 最后更新：2026-07-02 by 艾瑞卡会话（档案漂移修复：对外两页使命段由「三新使命」",
@@ -1093,7 +1240,7 @@
     {
       "id": "wiki",
       "path": "projects/wiki/",
-      "summary": "> 最后更新：2026-07-02 by 艾瑞卡会话（档案漂移全面修复：正文重写为现行新链状态。",
+      "summary": "> **⚠ 解包 text 层已删除（守密人 2026-07-12 裁定）**：原 `Public-Info-Pool/Reference/Game-Unpacked/`",
       "note_zh": "使命#2 社区知识底座：VitePress 站点 + 72 角色数据库（客户端解包自举）。"
     }
   ]

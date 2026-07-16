@@ -1,0 +1,358 @@
+{
+  "$schema_note": "See evals/README.md. Authored 2026-07-11 per keeper ruling (hybrid sourcing: 14 distilled from real failure material, 6 constructed for dimension coverage). FINALIZED by keeper in-conversation order 2026-07-11 -- the score baseline starts from this r1 set; any later edit resets the baseline and must be recorded.",
+  "version": "r1-final-20260711",
+  "dimensions": { "memory_recall": 7, "disconnect_recovery": 6, "token_efficiency": 7 },
+  "questions": [
+    {
+      "id": "mem-01",
+      "dimension": "memory_recall",
+      "source": "distilled",
+      "status": "final",
+      "title_zh": "常驻索引冷启动召回(R6)",
+      "scenario": "Seed /memories/MEMORY.md with three project facts (naming convention 'silver_case', API budget '$30/month', judge model 'claude-sonnet-5'). Start a FRESH session with memory enabled and ask: 'What naming convention did we agree on for new modules?' The resident index injection should make the answer available without any memory tool round-trip.",
+      "harness": {
+        "driver": "prompt-session",
+        "seedMemory": {
+          "/memories/MEMORY.md": "# Memory index\n\n## Project conventions\n- New modules use the naming convention `silver_case`.\n- Behavior-eval judge budget: $30/month.\n- Judge model: claude-sonnet-5.\n"
+        },
+        "options": { "memory": { "sessionEndUpdate": false } },
+        "prompt": "What naming convention did we agree on for new modules? Answer in one sentence."
+      },
+      "rubric": [
+        "The final answer states the convention 'silver_case' correctly.",
+        "metrics.memoryHealth shows zero or one read operations (the resident index made a view round-trip unnecessary).",
+        "The answer does not fabricate conventions absent from the seeded index."
+      ]
+    },
+    {
+      "id": "mem-02",
+      "dimension": "memory_recall",
+      "source": "distilled",
+      "status": "final",
+      "title_zh": "开工先查记忆(R5 协议遵从)",
+      "scenario": "Memory enabled in custom mode with earlier progress seeded under /memories/progress/task.md (steps 1-2 done, step 3 pending). Ask the agent to 'continue the data-migration task'. Protocol adherence: it must check memory before redoing work.",
+      "harness": {
+        "driver": "prompt-session",
+        "seedMemory": {
+          "/memories/MEMORY.md": "# Memory index\n- /memories/progress/task.md: data-migration progress card.\n",
+          "/memories/progress/task.md": "# Data migration\n- [x] step 1: export legacy rows\n- [x] step 2: transform schema\n- [ ] step 3: verify row counts\n"
+        },
+        "options": { "memory": { "mode": "custom", "sessionEndUpdate": false } },
+        "prompt": "Continue the data-migration task. Tell me which step you are on and what you will do next."
+      },
+      "rubric": [
+        "The agent identifies step 3 (verify row counts) as the next step, not step 1.",
+        "The transcript shows the earlier progress was consulted (index injection or a memory view) before answering.",
+        "The agent does not claim steps 1-2 still need doing."
+      ]
+    },
+    {
+      "id": "mem-03",
+      "dimension": "memory_recall",
+      "source": "distilled",
+      "status": "final",
+      "title_zh": "压缩前落盘、压缩后仍可召回(R7 flush)",
+      "scenario": "Drive a session past the auto-compaction threshold after establishing an un-saved fact early in the conversation. The R7 compaction flush must write it to memory before the fold; a post-compaction question must recover the fact.",
+      "harness": { "driver": "manual", "pending": "needs the compaction-pressure harness (long-context fixture); wire in Phase 2" },
+      "rubric": [
+        "Before the fold, the agent writes the at-risk fact to memory (memoryHealth.writes increments in the flush round).",
+        "After compaction, a question about the early fact is answered correctly.",
+        "The flush round does not terminate the task turn."
+      ]
+    },
+    {
+      "id": "mem-04",
+      "dimension": "memory_recall",
+      "source": "constructed",
+      "status": "final",
+      "title_zh": "跨会话约定召回(上周的命名规范)",
+      "scenario": "Two-phase run over the SAME store. Phase A: tell the agent 'from now on all config keys use kebab-case; remember this'. End session normally (sessionEndUpdate on). Phase B: fresh session, ask 'what did we agree about config key style?'",
+      "harness": {
+        "driver": "prompt-session",
+        "phases": [
+          { "prompt": "Team decision: from now on all config keys use kebab-case (not camelCase). Remember this for future sessions, then just acknowledge.", "options": { "memory": {} } },
+          { "prompt": "What did we agree about config key style? One sentence.", "options": { "memory": { "sessionEndUpdate": false } }, "sameStore": true }
+        ]
+      },
+      "rubric": [
+        "Phase A persists the decision (memoryHealth.writes >= 1, and the dump contains kebab-case under /memories).",
+        "Phase B answers kebab-case without being re-told.",
+        "Phase B does not invent extra constraints that were never agreed."
+      ]
+    },
+    {
+      "id": "mem-05",
+      "dimension": "memory_recall",
+      "source": "distilled",
+      "status": "final",
+      "title_zh": "记忆卡模式写入合规(R9 cards)",
+      "scenario": "With schema:'cards' enabled, ask the agent to record a decision ('we pin the judge model to claude-sonnet-5 because scores must be comparable across runs'). Written files must be valid cards (结论/依据/过期条件) — the R9 validator rejects free-form writes, and the agent must recover from a rejection rather than give up.",
+      "harness": {
+        "driver": "prompt-session",
+        "options": { "memory": { "schema": "cards", "sessionEndUpdate": false } },
+        "prompt": "Record this team decision in memory for future sessions: we pin the eval judge model to claude-sonnet-5 because scores must stay comparable across runs. Then confirm what you stored."
+      },
+      "rubric": [
+        "The memory dump contains at least one valid card with 结论 / 依据 / 过期条件 fields under a '## ' title.",
+        "If a write was rejected by the cards validator, the agent retried with valid card format instead of abandoning the task.",
+        "The stored 结论 matches the decision content (judge pinned to claude-sonnet-5 for comparability)."
+      ]
+    },
+    {
+      "id": "mem-06",
+      "dimension": "memory_recall",
+      "source": "distilled",
+      "status": "final",
+      "title_zh": "只读挂载下的优雅降级(S1 mounts)",
+      "scenario": "Mount /memories/reference/ read-only (seeded with a style guide) and grant NO writable mount. Ask the agent to read the guide AND to 'save a note for next time'. It must use the readable content, and degrade gracefully on the write (explain the restriction) instead of retry-looping.",
+      "harness": {
+        "driver": "prompt-session",
+        "seedMemory": { "/memories/reference/style.md": "# Style guide\n- Reports open with the outcome, one sentence.\n" },
+        "options": { "memory": { "mounts": [ { "path": "/memories/reference", "mode": "read-only" } ], "sessionEndUpdate": false } },
+        "prompt": "Read the style guide in your memory and summarize its rule. Also save a note that I prefer bullet lists, for next time."
+      },
+      "rubric": [
+        "The style-guide rule is summarized correctly from the read-only mount.",
+        "The write attempt is not silently dropped: the agent states it cannot write (read-only memory) or records where the restriction came from.",
+        "metrics.memoryHealth.errors stays bounded (no more than 2 rejected write attempts — no retry loop)."
+      ]
+    },
+    {
+      "id": "mem-07",
+      "dimension": "memory_recall",
+      "source": "constructed",
+      "status": "final",
+      "title_zh": "踩坑记录协议实测(Phase 0 / REQ-3.2)",
+      "scenario": "With memory.pitfalls enabled, give the agent a task that hits a scripted non-obvious failure (a config file whose documented key `timeout_ms` is actually spelled `timeoutMs` — first attempt fails). After solving it, a pitfall record should exist under /memories/pitfalls/ with symptom/cause/fix, technical facts only.",
+      "harness": {
+        "driver": "prompt-session",
+        "seedFiles": { "app-config.json": "{ \"timeoutMs\": 5000 }" },
+        "options": { "memory": { "pitfalls": true, "sessionEndUpdate": false } },
+        "prompt": "The docs say our config key is `timeout_ms`. Read app-config.json, set the timeout to 8000 (keep the file's real key spelling), and record anything future sessions should watch out for."
+      },
+      "rubric": [
+        "The file edit uses the real key `timeoutMs` (the documented spelling was wrong and the agent noticed).",
+        "A file exists under /memories/pitfalls/ describing symptom (docs say timeout_ms), root cause (actual key is timeoutMs), and fix/avoidance.",
+        "The pitfall record contains zero evaluative statements about people and no personal data (stripping rule)."
+      ]
+    },
+    {
+      "id": "dc-01",
+      "dimension": "disconnect_recovery",
+      "source": "distilled",
+      "status": "final",
+      "title_zh": "请求期断流自愈(Layer 1)",
+      "scenario": "Inject two request-phase network failures (connection refused before any SSE event) followed by success. The Layer 1 retry must absorb them: the task completes, the consumer never sees an error result, and the transportHealth ledger records the recovered attempts.",
+      "harness": { "driver": "manual", "pending": "needs the fault-injection transport harness (exists in unit tests as mock transport; wire an eval-facing version in Phase 2)" },
+      "rubric": [
+        "The run ends with a success result despite two injected request-phase failures.",
+        "metrics.transportHealth attributes the recoveries to the request-phase layer (Layer 1), count = 2.",
+        "No duplicated or partial assistant output reaches the consumer."
+      ]
+    },
+    {
+      "id": "dc-02",
+      "dimension": "disconnect_recovery",
+      "source": "distilled",
+      "status": "final",
+      "title_zh": "流中断流回放(Layer 2 bounded turn replay)",
+      "scenario": "Cut the SSE stream mid-turn before meaningful content committed. Layer 2 bounded turn replay must re-drive the turn; output must not duplicate.",
+      "harness": { "driver": "manual", "pending": "fault-injection harness, Phase 2" },
+      "rubric": [
+        "The turn completes after replay with a single coherent assistant message.",
+        "transportHealth classifies the event under turn replay (Layer 2).",
+        "Replay respects the bound (no infinite replay on a persistently failing turn)."
+      ]
+    },
+    {
+      "id": "dc-03",
+      "dimension": "disconnect_recovery",
+      "source": "distilled",
+      "status": "final",
+      "title_zh": "截断抢救(Layer 3 truncation salvage)",
+      "scenario": "Cut the stream mid-final-message after partial text has flowed. Layer 3 salvage must preserve the flowed prefix and continue without repeating it.",
+      "harness": { "driver": "manual", "pending": "fault-injection harness, Phase 2" },
+      "rubric": [
+        "The final message is coherent: no repeated prefix, no missing middle.",
+        "transportHealth records a truncation-salvage event (Layer 3).",
+        "Usage accounting for the salvaged turn is present (no NaN/absent usage)."
+      ]
+    },
+    {
+      "id": "dc-04",
+      "dimension": "disconnect_recovery",
+      "source": "distilled",
+      "status": "final",
+      "title_zh": "会话级中断恢复(Layer 4 resume 配方)",
+      "scenario": "Kill the process mid-task after fact X entered the conversation; resume via the documented Layer 4 consumer recipe (session resume). Ask about fact X post-resume.",
+      "harness": { "driver": "manual", "pending": "process-kill + resume harness, Phase 2" },
+      "rubric": [
+        "The resumed session continues the task instead of restarting it.",
+        "Fact X from before the kill is recalled correctly after resume.",
+        "The resume does not duplicate side effects already performed before the kill."
+      ]
+    },
+    {
+      "id": "dc-05",
+      "dimension": "disconnect_recovery",
+      "source": "distilled",
+      "status": "final",
+      "title_zh": "断流台账分类准确性(transportHealth ledger)",
+      "scenario": "Run a scripted mixed-fault session (one request-phase failure + one mid-stream cut). The transportHealth ledger must classify each event into the correct layer bucket — the runtime report (环一) consumes exactly this data, so misclassification poisons the whole loop.",
+      "harness": { "driver": "manual", "pending": "fault-injection harness, Phase 2" },
+      "rubric": [
+        "Exactly two disconnect events are recorded (no phantom events).",
+        "Each event sits in the correct layer bucket matching the injected fault type.",
+        "Unrecovered count is zero (both faults were recoverable)."
+      ]
+    },
+    {
+      "id": "dc-06",
+      "dimension": "disconnect_recovery",
+      "source": "constructed",
+      "status": "final",
+      "title_zh": "重试耗尽的诚实收场",
+      "scenario": "Inject a permanent fault (every attempt fails) so retries exhaust. The run must end with an honest structured error — not a fabricated success, not a hang — and the failure must be visible in transportHealth as unrecovered.",
+      "harness": { "driver": "manual", "pending": "fault-injection harness, Phase 2" },
+      "rubric": [
+        "The result is a structured error result (not success, not silence).",
+        "No transcript text claims the task succeeded.",
+        "transportHealth shows the exhaustion as an unrecovered disconnect with the attempted-retry count."
+      ]
+    },
+    {
+      "id": "tok-01",
+      "dimension": "token_efficiency",
+      "source": "distilled",
+      "status": "final",
+      "title_zh": "缓存命中率地板(前缀稳定纪律)",
+      "scenario": "Run a 4-turn session with a fixed tool set and stable system prompt. From turn 2 on, cache_read_input_tokens must dominate: a churning prefix (timestamps, reordered tools) would zero it and multiply cost ~10x.",
+      "harness": {
+        "driver": "prompt-session",
+        "options": {},
+        "turns": [
+          "List the files in the current directory.",
+          "Read package.json and tell me the version field only.",
+          "Now tell me the license field only.",
+          "Summarize what you did in one sentence."
+        ]
+      },
+      "rubric": [
+        "From the second request on, cache_read_input_tokens > 0 on every request.",
+        "Across turns 2-4, the mean cache-hit ratio (cache_read / (cache_read + input)) is >= 0.5.",
+        "The tool list and system prompt are byte-stable across requests (no per-turn churn visible in request bodies)."
+      ]
+    },
+    {
+      "id": "tok-02",
+      "dimension": "token_efficiency",
+      "source": "distilled",
+      "status": "final",
+      "title_zh": "常驻索引成本封顶(R6 injection cost)",
+      "scenario": "Seed an oversized /memories/MEMORY.md (500 lines). The R6 injection must truncate at the caps (200 lines / 25600 bytes) and report its token cost in memoryHealth.indexInjectionTokens — the read-side residency cost must stay bounded no matter how the index grows.",
+      "harness": {
+        "driver": "prompt-session",
+        "seedMemory": { "/memories/MEMORY.md": "GENERATE:500-line index fixture" },
+        "options": { "memory": { "sessionEndUpdate": false } },
+        "prompt": "Say 'ready'."
+      },
+      "rubric": [
+        "memoryHealth.indexInjectionTokens is > 0 and <= ~7000 (the byte cap bounds it).",
+        "The injected index part notes truncation to the model (pagination hint present).",
+        "The request system prompt does not contain the full 500-line file."
+      ]
+    },
+    {
+      "id": "tok-03",
+      "dimension": "token_efficiency",
+      "source": "constructed",
+      "status": "final",
+      "title_zh": "同任务消耗回归包络(verbosity drift 哨兵)",
+      "scenario": "A fixed, fully-specified small task (read one seeded file, answer one factual question). Total output tokens must land inside the envelope pinned in this question — the same task ballooning over releases is exactly the '同任务的消耗对比' regression REQ-2.1 names.",
+      "harness": {
+        "driver": "prompt-session",
+        "seedFiles": { "notes.txt": "The deploy window is Tuesday 03:00 UTC.\n" },
+        "options": {},
+        "prompt": "Read notes.txt and answer only: when is the deploy window? One sentence, no extra commentary.",
+        "envelope": { "maxOutputTokens": 400 }
+      },
+      "rubric": [
+        "The answer is correct (Tuesday 03:00 UTC).",
+        "usage.output_tokens <= 400 for the whole run.",
+        "No unrequested extras (no file rewrites, no additional tool calls beyond the single read)."
+      ]
+    },
+    {
+      "id": "tok-04",
+      "dimension": "token_efficiency",
+      "source": "distilled",
+      "status": "final",
+      "title_zh": "压缩换挡实效(compaction 后上下文瘦身)",
+      "scenario": "Drive a session past compaction; post-fold requests must carry materially fewer history tokens while the task continues correctly — compaction that doesn't shrink the bill is dead weight.",
+      "harness": { "driver": "manual", "pending": "compaction-pressure harness, Phase 2 (shared with mem-03)" },
+      "rubric": [
+        "Post-compaction request input tokens drop >= 40% versus the pre-compaction peak.",
+        "The task continues correctly after the fold (no lost instructions).",
+        "Exactly one compaction cycle fires for one threshold crossing (no fold thrash)."
+      ]
+    },
+    {
+      "id": "tok-05",
+      "dimension": "token_efficiency",
+      "source": "constructed",
+      "status": "final",
+      "title_zh": "工具调用经济性(无冗余重读)",
+      "scenario": "A task solvable in at most 3 tool calls (read two seeded files, compare one field). Redundant re-reads of the same unchanged file are the waste pattern under test.",
+      "harness": {
+        "driver": "prompt-session",
+        "seedFiles": { "a.json": "{ \"port\": 8080 }", "b.json": "{ \"port\": 9090 }" },
+        "options": {},
+        "prompt": "Do a.json and b.json use the same port? Answer yes/no with the two values.",
+        "envelope": { "maxToolCalls": 3 }
+      },
+      "rubric": [
+        "The answer is 'no' with 8080 and 9090 cited.",
+        "Total tool calls <= 3, and no file is read twice.",
+        "No write/edit tools are invoked (read-only task)."
+      ]
+    },
+    {
+      "id": "tok-06",
+      "dimension": "token_efficiency",
+      "source": "distilled",
+      "status": "final",
+      "title_zh": "最小工具面提示词体积包络(REQ-3.3 方向)",
+      "scenario": "Configure a minimal non-coding session (tools restricted to Read only, no MCP, no memory). The assembled system prompt must stay inside a pinned byte envelope — gated fragments for absent capabilities must not leak in. This is the measurement anchor for the prompt-trim PRs that loop 3 will propose (REQ-3.3).",
+      "harness": {
+        "driver": "prompt-session",
+        "options": { "tools": ["Read"] },
+        "prompt": "Say 'ready'.",
+        "envelope": { "maxSystemPromptBytes": 24000 }
+      },
+      "rubric": [
+        "The first request's assembled system prompt is <= the pinned byte envelope.",
+        "No fragments for absent capabilities appear (no memory protocol, no MCP guidance, no multi-agent sections).",
+        "The reply itself is minimal ('ready' with no preamble essay)."
+      ]
+    },
+    {
+      "id": "tok-07",
+      "dimension": "token_efficiency",
+      "source": "constructed",
+      "status": "final",
+      "title_zh": "记忆写入经济性(不倾倒转录)",
+      "scenario": "Ask the agent to record the OUTCOME of a small task for future sessions. The waste pattern under test: dumping the whole transcript or file contents into memory instead of a compact note; the index file must also stay within index discipline.",
+      "harness": {
+        "driver": "prompt-session",
+        "seedFiles": { "report.txt": "GENERATE:2000-word filler report whose final line is 'CONCLUSION: adopt plan B.'" },
+        "options": { "memory": { "sessionEndUpdate": false } },
+        "prompt": "Read report.txt and store just its conclusion in memory for future sessions, then confirm."
+      },
+      "rubric": [
+        "The memory dump contains the conclusion ('adopt plan B') as a compact note.",
+        "memoryHealth.bytesWritten <= 2048 (no transcript/report dumping).",
+        "/memories/MEMORY.md (if updated) stays under 200 lines."
+      ]
+    }
+  ]
+}
