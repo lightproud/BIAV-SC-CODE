@@ -441,7 +441,9 @@ MCP 服务端 `biav-sc-memory`（`scripts/mcp_server.py`）对接知识层工具
 
 `.claude/commands/`：`/biav-report` `/daily-news` `/sync-memory` `/validate-data`；
 `.claude/skills/`：`anysearch`（实时网络检索）、`grill`（拷问对齐并落档，user-invoked）、
-`grilling`（核心拷问循环）、`domain-modeling`（术语锐化 + 决策落档）。技能写作审计标尺见
+`grilling`（核心拷问循环）、`domain-modeling`（术语锐化 + 决策落档）、`intel-weekly`
+（社区情报周报生产线：全量档案层取数、固定骨架 + 风险哨兵、移动端 PDF 渲染；
+首期范例 2026-07-12 定稿）。技能写作审计标尺见
 `memory/skill-authoring-standard.md`。详见各自定义文件。
 
 ### §7.6 分支与提交
