@@ -1273,16 +1273,19 @@ describe('DefaultHookRunner', () => {
     expect(agg.decision).toBe('deny');
   });
 
-  it('updatedInput comes from the LAST allow output in completion order', async () => {
+  it('updatedInput comes from the LAST allow output in REGISTRATION order (not completion order)', async () => {
     const r = makeRunner({
       PreToolUse: [
         {
           matcher: '*',
           hooks: [
-            // completes first
-            async () => decisionOutput('allow', undefined, { updatedInput: { first: true } }),
-            // completes last -> its updatedInput wins
-            delayedHook(decisionOutput('allow', undefined, { updatedInput: { second: true } }), 60),
+            // registered FIRST but completes LAST (60ms): under completion-order
+            // folding its updatedInput would win — registration-order must not
+            // let it, so this setup actually distinguishes the two rules (the
+            // prior setup had the winner both registered-last AND completing-last).
+            delayedHook(decisionOutput('allow', undefined, { updatedInput: { first: true } }), 60),
+            // registered LAST, completes FIRST -> still the last-wins value.
+            async () => decisionOutput('allow', undefined, { updatedInput: { second: true } }),
           ],
         },
       ],
