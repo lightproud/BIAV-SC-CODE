@@ -770,6 +770,16 @@ export class OpenAIStreamTranslator {
     // id (best effort) so a fragmented-id gateway still yields a callable
     // tool_use block rather than silently dropping the call. Ordered by first
     // appearance for stable indices.
+    // The most-recent already-emitted tool_use block, to merge an args-only
+    // orphan into (待裁④ — keeper 2026-07-16) rather than opening a bogus
+    // empty-name block for it.
+    let lastEmittedToolIndex: number | undefined;
+    for (const b of this.toolBuffers.values()) {
+      if (b.emitted && b.index !== undefined) {
+        lastEmittedToolIndex =
+          lastEmittedToolIndex === undefined ? b.index : Math.max(lastEmittedToolIndex, b.index);
+      }
+    }
     for (const [key, buf] of this.toolBuffers) {
       if (buf.emitted) continue;
       // Skip a pure placeholder buffer (`{index:N}` with no id, name, or
@@ -777,6 +787,22 @@ export class OpenAIStreamTranslator {
       // emitting it would yield a tool_use block with an empty name and a
       // synthetic id. Mirrors the contentSeen placeholder guard in feed().
       if (buf.id === undefined && buf.name === '' && buf.args === '') continue;
+      // 待裁④: an args-only orphan (has argument bytes but NO id and NO name) is
+      // almost certainly a stray fragment of an already-emitted call whose
+      // id/name arrived on a sibling key — a non-conforming gateway that split
+      // one call across an id-only and an index-only fragment. Merge its bytes
+      // into the most-recent emitted tool_use block instead of opening a new
+      // empty-name block (which would never dispatch). Only when such a block
+      // exists; otherwise fall through to the synthetic-id emit below.
+      if (buf.id === undefined && buf.name === '' && lastEmittedToolIndex !== undefined) {
+        events.push({
+          type: 'content_block_delta',
+          index: lastEmittedToolIndex,
+          delta: { type: 'input_json_delta', partial_json: buf.args },
+        });
+        buf.emitted = true; // consumed into the sibling block; no standalone block
+        continue;
+      }
       buf.index = this.openBlock(events, key, {
         type: 'tool_use',
         id: buf.id ?? `call_${this.nextIndex}`,

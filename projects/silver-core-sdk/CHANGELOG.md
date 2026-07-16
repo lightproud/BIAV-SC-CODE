@@ -16,6 +16,49 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.62.7 — 2026-07-16
+
+Deferred-design adjudications — the 5 items filed as `memory/todo.md` T40 (real
+defects from the five-round sweep whose fixes needed a design decision) were
+adjudicated one-by-one by the keeper (2026-07-16) and all landed here.
+
+- **① anthropic empty message** (`transport/anthropic.ts`): stripping unsigned
+  thinking blocks could leave an assistant message with empty content (which the
+  API 400s). Keeper: drop the whole turn when filtering empties it (an
+  all-unsigned-thinking turn carries no resendable content; the API tolerates the
+  resulting consecutive same-role messages).
+- **② duplicate sidechain_start** (`subagents/runtime.ts`): every SendMessage
+  continuation re-wrote a `sidechain_start`, producing multiple start/end pairs
+  in one child transcript. Keeper: write start ONCE at birth, record each
+  episode's user turn, and emit the single `sidechain_end` at teardown via a new
+  idempotent `finalizeSidechain` (called from killAgent + settleAll) — one clean
+  bracket per child. settleAll still guarantees the transcript is terminated
+  before the child settles.
+- **③ MCP-tool content specifier** (`permissions/rules.ts`): a scoped specifier
+  on a non-tabled tool (MCP `mcp__server__tool`, Task) compared against
+  `JSON.stringify(input)` and silently never matched. Keeper: explicit no-match
+  (drop the fallback; `primaryArg` returns undefined) — MCP tools are gated by
+  bare-name rules, documented. No fuzzy-match misfire risk.
+- **④ OpenAI tool_call id/index split** (`transport/openai.ts`): a non-conforming
+  gateway that splits one call across an id-only and an index-only fragment
+  produced a real block with empty input plus a nameless ghost. Keeper: a
+  conservative finish()-time repair — merge an args-only orphan (no id, no name)
+  into the most-recent emitted tool_use block instead of opening a ghost. Off the
+  streaming hot path.
+- **⑤ session-end / late-subagent usage under-report** (`query.ts`): the
+  session-end memory round's spend, and background-subagent usage recorded during
+  settleAll, grew the session totals AFTER the last result was yielded — so the
+  final result under-reported. Keeper (完整修): a terminal
+  `foldSubagentUsage(drainUsageLedger())` after settleAll, plus ONE corrected
+  final result (num_turns 0, zero per-turn usage, complete cumulative
+  cost/modelUsage) emitted at the very end of teardown — but ONLY when the totals
+  actually grew, so a zero-cost run still emits exactly one result.
+
+Coverage: regressions in conversation-stability (empty-turn drop),
+subagents/sendmessage (single sidechain bracket), permissions-hooks (MCP
+specifier no-match), transport-openai (orphan merge), and memory-m2 (corrected
+final result on cost / none at zero cost). Full vitest green (2470).
+
 ## 0.62.6 — 2026-07-16
 
 Bug-fix — a subagent could forge task-notification structure

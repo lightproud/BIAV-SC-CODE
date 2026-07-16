@@ -307,7 +307,11 @@ describe('SubagentRuntime.sendMessage — foreground continuation', () => {
     expect(ledger.usage.output_tokens).toBe(7);
   });
 
-  it('persists each continuation as its own sidechain episode', async () => {
+  it('brackets all continuation episodes in ONE sidechain start/end (待裁②)', async () => {
+    // Keeper 2026-07-16: a SendMessage continuation must NOT open a second
+    // sidechain_start. The child's whole life — initial run + every continuation
+    // — sits inside a single start...end, with each episode's triggering user
+    // turn recorded and the single end emitted at teardown.
     const store = new FakeStore();
     const transport = new MockTransport([
       textReplyEvents('first'),
@@ -320,10 +324,11 @@ describe('SubagentRuntime.sendMessage — foreground continuation', () => {
       message: 'continue please',
       signal: new AbortController().signal,
     });
-    const entries = store.entries.get(spawned.agentId) ?? [];
-    const kinds = entries.map((e) => e['type']);
-    expect(kinds.filter((k) => k === 'sidechain_start')).toHaveLength(2);
-    expect(kinds.filter((k) => k === 'sidechain_end')).toHaveLength(2);
+    // Before teardown: exactly one start, no end yet (child still revivable).
+    let entries = store.entries.get(spawned.agentId) ?? [];
+    expect(entries.filter((e) => e['type'] === 'sidechain_start')).toHaveLength(1);
+    expect(entries.filter((e) => e['type'] === 'sidechain_end')).toHaveLength(0);
+    // The continuation's triggering user turn IS recorded (not lost).
     expect(
       entries.some(
         (e) =>
@@ -331,6 +336,17 @@ describe('SubagentRuntime.sendMessage — foreground continuation', () => {
           JSON.stringify(e['message']).includes('continue please'),
       ),
     ).toBe(true);
+    // Both episodes' assistant replies are present inside the one bracket.
+    const assistantText = JSON.stringify(
+      entries.filter((e) => e['type'] === 'assistant').map((e) => e['message']),
+    );
+    expect(assistantText).toContain('first');
+    expect(assistantText).toContain('second');
+
+    await runtime.settleAll();
+    entries = store.entries.get(spawned.agentId) ?? [];
+    expect(entries.filter((e) => e['type'] === 'sidechain_start')).toHaveLength(1);
+    expect(entries.filter((e) => e['type'] === 'sidechain_end')).toHaveLength(1);
   });
 });
 

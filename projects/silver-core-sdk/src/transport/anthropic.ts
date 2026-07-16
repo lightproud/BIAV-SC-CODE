@@ -737,12 +737,26 @@ function stripUnsignedThinking(messages: APIMessageParam[]): APIMessageParam[] {
       (b as { signature: string }).signature.length === 0);
 
   let changed = false;
-  const out = messages.map((msg) => {
-    if (msg.role !== 'assistant' || !Array.isArray(msg.content)) return msg;
-    if (!msg.content.some(isUnsignedThinking)) return msg;
+  const out: APIMessageParam[] = [];
+  for (const msg of messages) {
+    if (
+      msg.role !== 'assistant' ||
+      !Array.isArray(msg.content) ||
+      !msg.content.some(isUnsignedThinking)
+    ) {
+      out.push(msg);
+      continue;
+    }
     changed = true;
-    return { ...msg, content: msg.content.filter((b) => !isUnsignedThinking(b)) };
-  });
+    const filtered = msg.content.filter((b) => !isUnsignedThinking(b));
+    // If filtering emptied the turn (an assistant message that was ONLY
+    // unsigned thinking — e.g. a turn interrupted mid-thought before any text
+    // or tool_use, never signed), DROP the whole message. Sending an empty
+    // content array 400s the API; the turn carries no resendable content, and
+    // the Messages API tolerates the resulting consecutive same-role messages.
+    if (filtered.length === 0) continue;
+    out.push({ ...msg, content: filtered });
+  }
   return changed ? out : messages;
 }
 

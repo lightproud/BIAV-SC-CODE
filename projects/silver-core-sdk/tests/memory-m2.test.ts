@@ -343,6 +343,40 @@ describe('R7: session-end progress-card round (query level)', () => {
     );
   });
 
+  it('待裁⑤: a session-end round that adds cost yields a corrected final result', async () => {
+    // Priced RESPONSE model so the round accrues real cost. The round's result
+    // is absorbed, but its spend grows the session totals past what the task's
+    // own (already-yielded) result reported — so a corrected final result is
+    // emitted carrying the COMPLETE cumulative cost (keeper 2026-07-16 完整修).
+    const stub = makeSSEFetch([
+      textReplyEvents('the answer', { model: 'claude-sonnet-4-5', usage: { input_tokens: 100 } }),
+      textReplyEvents('progress saved', { model: 'claude-sonnet-4-5', usage: { input_tokens: 900 } }),
+    ]);
+    const messages = await collectQuery('do the task', baseOptions(stub, { memory: {} }));
+    const results = messages.filter((m): m is SDKResultMessage => m.type === 'result');
+    expect(results).toHaveLength(2); // task's own + accounting-corrected final
+    const [first, corrected] = results;
+    expect(first!.subtype).toBe('success');
+    if (first!.subtype === 'success') expect(first!.result).toBe('the answer');
+    // Complete cumulative cost (round's spend now included), no new per-turn usage.
+    expect(corrected!.total_cost_usd).toBeGreaterThan(first!.total_cost_usd);
+    expect(corrected!.num_turns).toBe(0);
+    expect(corrected!.usage.input_tokens).toBe(0);
+    // The corrected result is the LAST message on the stream.
+    expect(messages[messages.length - 1]!.type).toBe('result');
+  });
+
+  it('a zero-cost session-end round adds NO corrected result (exactly one)', async () => {
+    // Unpriced responses -> acct.cost stays 0 -> nothing to correct -> the
+    // "exactly one public result" invariant is preserved when there is no delta.
+    const stub = makeSSEFetch([
+      textReplyEvents('the answer'),
+      textReplyEvents('progress saved'),
+    ]);
+    const messages = await collectQuery('do the task', baseOptions(stub, { memory: {} }));
+    expect(messages.filter((m) => m.type === 'result')).toHaveLength(1);
+  });
+
   it('sessionEndUpdate: false -> exactly one request, no extra round', async () => {
     const stub = makeSSEFetch([textReplyEvents('answer')]);
     const messages = await collectQuery(

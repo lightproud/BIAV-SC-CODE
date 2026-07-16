@@ -612,6 +612,26 @@ describe('OpenAIStreamTranslator', () => {
     expect(msg.usage.cache_read_input_tokens).toBe(40);
   });
 
+  it('bug-fix (待裁④): an args-only orphan fragment merges into its sibling, not a ghost block', () => {
+    // A non-conforming gateway splits ONE call: fragment 1 carries id+name but
+    // no index; fragment 2 carries index+args but no id. finish() must merge the
+    // orphan args into the emitted block, yielding ONE complete tool_use — not a
+    // real block with empty input plus a nameless ghost.
+    const t = new OpenAIStreamTranslator('m');
+    const events = [
+      ...t.feed({ id: 'c', choices: [{ delta: { tool_calls: [{ id: 'call_A', function: { name: 'foo' } }] } }] }),
+      ...t.feed({ choices: [{ delta: { tool_calls: [{ index: 0, function: { arguments: '{"x":1}' } }] } }] }),
+      ...t.feed({ choices: [{ index: 0, delta: {}, finish_reason: 'tool_calls' }] }),
+      ...t.finish(),
+    ];
+    const acc = new MessageAccumulator();
+    for (const ev of events) acc.feed(ev);
+    const msg = acc.finalize();
+    const toolUses = msg.content.filter((b) => b.type === 'tool_use');
+    expect(toolUses).toHaveLength(1);
+    expect(toolUses[0]).toMatchObject({ name: 'foo', input: { x: 1 } });
+  });
+
   it('bug-fix: an empty tool_call placeholder emits no bogus tool_use block', () => {
     // `{index:1}` with no id/name/args is a placeholder (contentSeen ignores it);
     // finish() must NOT flush it as a tool_use block with an empty name.

@@ -891,6 +891,11 @@ export function query(args: {
     // Session accounting extracted to query-accounting.ts (audit 2026-07-10
     // P2-3A): additive counters + the single ModelUsage merge rule.
     const acct = new SessionAccounting();
+    // 待裁⑤: the last result yielded to the consumer. The session-end memory
+    // round and any late background-subagent usage grow `acct` AFTER this was
+    // yielded, so a corrected final result is emitted at teardown when the
+    // totals moved past what this result reported.
+    let lastYieldedResult: SDKResultMessage | undefined;
 
     // Common fields for QUERY-LAYER synthetic results (hook-block, pre-turn
     // session-cap stop, interrupt): no engine turn ran for THIS result, so the
@@ -1194,7 +1199,9 @@ export function query(args: {
               // the result is rewritten so subagent tokens/cost are reported.
               acct.foldSubagentUsage(subagentRuntime.drainUsageLedger());
               acct.accumulateResult(msg);
-              yield rewriteResult(msg);
+              const rewritten = rewriteResult(msg);
+              lastYieldedResult = rewritten;
+              yield rewritten;
             } else {
               yield msg;
             }
@@ -1590,6 +1597,12 @@ export function query(args: {
         acct.turns > 0 &&
         !lifeSignal.aborted
       ) {
+        // The round's own result is ABSORBED (below), so it must not count as
+        // the last consumer-visible result — driveTurn sets lastYieldedResult
+        // via its internal yield regardless. Save the pre-round pointer and
+        // restore it after, so the corrected final result (待裁⑤) still sees
+        // that acct grew past what the consumer last actually received.
+        const preRoundResult = lastYieldedResult;
         try {
           const endParam: APIMessageParam = {
             role: 'user',
@@ -1614,6 +1627,11 @@ export function query(args: {
           debug(
             `memory: session-end update failed (non-fatal): ${err instanceof Error ? err.message : String(err)}`,
           );
+        } finally {
+          // Restore: the round's result was absorbed, so the last CONSUMER-
+          // visible result is still the pre-round one. acct keeps the round's
+          // added cost, so the corrected final result (待裁⑤) now fires.
+          lastYieldedResult = preRoundResult;
         }
       }
     } catch (err) {
@@ -1652,6 +1670,11 @@ export function query(args: {
       // only an unref'd debounce timer left to deliver them (audit 2026-07-10
       // M4). Bounded + never throws, so teardown cannot hang on a stuck child.
       await subagentRuntime.settleAll();
+      // 待裁⑤: a background subagent can record usage DURING settleAll (its
+      // finalizers / a late completion), after the last result was yielded.
+      // Drain it into the session totals so the corrected final result at the
+      // end of teardown reports it (the per-result folds at 1195/1234 miss it).
+      acct.foldSubagentUsage(subagentRuntime.drainUsageLedger());
       // Release cross-protocol transports the resolver handed the QUERY layer
       // with owned: true (utility/compaction routing); the subagent runtime
       // disposed its own set inside settleAll() above.
@@ -1697,6 +1720,23 @@ export function query(args: {
             `mcp closeAll failed: ${err instanceof Error ? err.message : String(err)}`,
           );
         }
+      }
+      // 待裁⑤ (keeper 2026-07-16, "完整修"): the session-end memory round and any
+      // late background-subagent usage grew the cumulative totals AFTER the last
+      // result was yielded. On a NORMAL completion, emit ONE corrected final
+      // result carrying the complete accounting (num_turns:0 / usage zero — no
+      // new engine turn, so per-turn sums are not double-counted — but the
+      // cumulative total_cost_usd/modelUsage are now whole). Emitted at the very
+      // END of teardown so a consumer that stops early cannot skip the resource
+      // cleanup above. Skipped on abort/error (those throw their own terminal).
+      if (
+        endReason !== 'abort' &&
+        endReason !== 'error' &&
+        !lifeSignal.aborted &&
+        lastYieldedResult !== undefined &&
+        acct.cost > lastYieldedResult.total_cost_usd
+      ) {
+        yield { ...lastYieldedResult, uuid: randomUUID(), ...resultCommon() };
       }
     }
   }
