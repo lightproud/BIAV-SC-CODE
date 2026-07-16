@@ -762,6 +762,29 @@ export function createSubagentRuntime(
   };
   const childRegistry = new Map<string, ChildRecord>();
 
+  // Sidechain marker lifecycle (待裁② — keeper 2026-07-16 "只初次写 start + 重构
+  // end"): ONE sidechain_start at the child's birth and ONE sidechain_end at its
+  // final teardown, bracketing every SendMessage continuation episode in
+  // between — instead of a fresh start/end pair per run. `finalizeSidechain`
+  // (called from killAgent + settleAll) writes the single end idempotently.
+  const sidechainStarted = new Set<string>();
+  const sidechainEnded = new Set<string>();
+  const sidechainLastError = new Map<string, boolean>();
+  const sidechainMeta = new Map<string, { agentType: string; fork: boolean }>();
+  function finalizeSidechain(agentId: string, opts?: { error?: boolean }): void {
+    if (!persist || store === undefined) return;
+    if (!sidechainStarted.has(agentId) || sidechainEnded.has(agentId)) return;
+    sidechainEnded.add(agentId);
+    const meta = sidechainMeta.get(agentId);
+    store.append(agentId, {
+      type: 'sidechain_end',
+      timestamp: new Date().toISOString(),
+      agent_type: meta?.agentType ?? '',
+      fork: meta?.fork ?? false,
+      is_error: opts?.error ?? sidechainLastError.get(agentId) ?? false,
+    });
+  }
+
   async function runChildToCompletion(
     history: APIMessageParam[],
     deps: EngineDeps,
@@ -793,17 +816,25 @@ export function createSubagentRuntime(
     const recordSidechain = persist && store !== undefined;
     const parentToolUseId = sidechain.parentToolUseId ?? null;
     if (recordSidechain && store !== undefined) {
-      store.append(agentId, {
-        type: 'sidechain_start',
-        timestamp: new Date().toISOString(),
-        agent_type: sidechain.agentType,
-        fork: sidechain.fork,
-        parent_session_id: sessionId(),
-        parent_tool_use_id: parentToolUseId,
-        seeded_messages: history.length,
-      });
-      // Append the seed's final (delegated task) user turn so the recorded
-      // sidechain is self-contained.
+      // sidechain_start ONCE, at the child's birth (待裁②). A SendMessage
+      // continuation re-enters this function but must NOT write a second start;
+      // the single end is written by finalizeSidechain at teardown.
+      if (!sidechainStarted.has(agentId)) {
+        sidechainStarted.add(agentId);
+        sidechainMeta.set(agentId, { agentType: sidechain.agentType, fork: sidechain.fork });
+        store.append(agentId, {
+          type: 'sidechain_start',
+          timestamp: new Date().toISOString(),
+          agent_type: sidechain.agentType,
+          fork: sidechain.fork,
+          parent_session_id: sessionId(),
+          parent_tool_use_id: parentToolUseId,
+          seeded_messages: history.length,
+        });
+      }
+      // Record THIS episode's triggering user turn EVERY run — the delegated
+      // task on the initial run, or the continuation message on a continuation —
+      // so the single-bracket transcript stays self-contained across episodes.
       const seedTurn = history[history.length - 1];
       if (seedTurn !== undefined) {
         store.append(agentId, {
@@ -816,11 +847,11 @@ export function createSubagentRuntime(
       }
     }
 
-    // The sidechain transcript's terminal marker MUST be written on EVERY exit
-    // path — including an abort or a thrown error mid-run — or an aborted
-    // child's transcript is missing its `sidechain_end` and the settleAll M4
-    // contract (which waits for it) is broken. Track the terminal error state
-    // and write the marker in a finally.
+    // Track this run episode's terminal error state (pessimistic until a clean
+    // result is computed). It is stashed in the finally; the single
+    // sidechain_end is emitted at the child's teardown by finalizeSidechain,
+    // which settleAll invokes for every started child before it resolves — so
+    // the M4 "transcript complete before the child settles" contract still holds.
     let result: { text: string; isError: boolean; usage: ChildRunUsage };
     let sidechainErrored = true; // pessimistic until a clean result is computed
     try {
@@ -900,14 +931,13 @@ export function createSubagentRuntime(
     }
     sidechainErrored = result.isError;
     } finally {
+      // Do NOT write sidechain_end per run (待裁② — keeper 2026-07-16): a
+      // SendMessage continuation would revive this child, so the terminal marker
+      // belongs to the child's final teardown, not each episode. Record this
+      // episode's error state; finalizeSidechain (killAgent + settleAll) emits
+      // the single end idempotently.
       if (recordSidechain && store !== undefined) {
-        store.append(agentId, {
-          type: 'sidechain_end',
-          timestamp: new Date().toISOString(),
-          agent_type: sidechain.agentType,
-          fork: sidechain.fork,
-          is_error: sidechainErrored,
-        });
+        sidechainLastError.set(agentId, sidechainErrored);
       }
     }
     return result;
@@ -1683,6 +1713,9 @@ export function createSubagentRuntime(
     (task?.controller ?? record?.controller)?.abort();
     backgroundTasks.delete(taskId);
     if (record !== undefined) record.status = 'killed';
+    // A killed child is torn down here: emit its single sidechain_end now
+    // (is_error: true), idempotently (待裁②). settleAll catches non-killed ones.
+    finalizeSidechain(taskId, { error: true });
     // Official patch.status vocabulary has 'killed' (not 'cancelled') for an
     // externally stopped task; the paired notification uses 'stopped'.
     emitTask({
@@ -1823,9 +1856,14 @@ export function createSubagentRuntime(
           }),
         ]);
       }
-      // Query teardown: release transports the resolver handed over with
-      // owned: true (AFTER the children settled — a SendMessage continuation
-      // can revive a finished child any time before this point).
+      // Query teardown: every started sidechain is now truly done (no further
+      // SendMessage continuation can revive it past this point), so emit each
+      // child's single sidechain_end (待裁②). Idempotent — a child already
+      // finalized by killAgent is skipped.
+      for (const agentId of sidechainStarted) finalizeSidechain(agentId);
+      // Release transports the resolver handed over with owned: true (AFTER the
+      // children settled — a SendMessage continuation can revive a finished
+      // child any time before this point).
       disposeOwnedTransports();
     },
     abortAll(): void {

@@ -293,10 +293,20 @@ describe('ruleMatches', () => {
     expect(ruleMatches(parseRule('Bash'), 'Bash', {})).toBe(true);
   });
 
-  it('unknown tools fall back to the JSON serialization of the input', () => {
-    const rule = parseRule('CustomTool({"url":"https://x"})');
-    expect(ruleMatches(rule, 'CustomTool', { url: 'https://x' })).toBe(true);
-    expect(ruleMatches(rule, 'CustomTool', { url: 'https://y' })).toBe(false);
+  it('a specifier on an unknown / MCP tool never matches (待裁③); bare-name still does', () => {
+    // Non-tabled tools have no resolvable primary arg, so a content specifier
+    // cannot match (keeper 2026-07-16: explicit no-match, not the old
+    // JSON.stringify fallback that compared the specifier against `{...}`).
+    const scoped = parseRule('CustomTool({"url":"https://x"})');
+    expect(ruleMatches(scoped, 'CustomTool', { url: 'https://x' })).toBe(false);
+    expect(ruleMatches(scoped, 'CustomTool', { url: 'https://y' })).toBe(false);
+    // An MCP tool with a specifier likewise never matches (would-be silent
+    // fail-open of `mcp__shell__exec(rm*)` is now an honest no-match)...
+    const mcpScoped = parseRule('mcp__shell__exec(rm*)');
+    expect(ruleMatches(mcpScoped, 'mcp__shell__exec', { command: 'rm -rf /' })).toBe(false);
+    // ...but the BARE-NAME rule DOES match — the supported way to gate MCP tools.
+    const bare = parseRule('mcp__shell__exec');
+    expect(ruleMatches(bare, 'mcp__shell__exec', { command: 'rm -rf /' })).toBe(true);
   });
 });
 

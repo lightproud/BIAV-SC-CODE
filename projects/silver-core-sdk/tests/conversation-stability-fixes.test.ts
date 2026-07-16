@@ -306,4 +306,33 @@ describe('L5 — unsigned thinking never reaches the wire', () => {
     expect(thinking).toHaveLength(1);
     expect(thinking[0].signature).toBe('sig-abc');
   });
+
+  it('drops the WHOLE assistant turn when stripping empties its content (待裁①)', async () => {
+    // An assistant message that is ONLY unsigned thinking becomes empty after
+    // the strip; sending an empty content array 400s, so the turn is dropped
+    // entirely (keeper 2026-07-16: 滤空则整条丢弃).
+    const captured: string[] = [];
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(async (_url: unknown, init: { body?: string }) => {
+        captured.push(init.body ?? '');
+        return sse(MSG_START + frame('message_delta', { type: 'message_delta', delta: { stop_reason: 'end_turn', stop_sequence: null }, usage: { output_tokens: 1 } }) + frame('message_stop', { type: 'message_stop' }));
+      }),
+    );
+    const messages = [
+      { role: 'user', content: 'q' },
+      { role: 'assistant', content: [{ type: 'thinking', thinking: 'only-unsigned', signature: '' }] },
+      { role: 'user', content: 'again' },
+    ];
+    await drain(makeTransport().stream({ model: 'claude-test', max_tokens: 10, messages } as never));
+    const body = JSON.parse(captured[0]!);
+    // The emptied assistant turn is gone; no empty-content message on the wire.
+    expect(body.messages).toHaveLength(2);
+    expect(body.messages.every((m: { role: string }) => m.role === 'user')).toBe(true);
+    expect(
+      body.messages.some(
+        (m: { content?: unknown }) => Array.isArray(m.content) && m.content.length === 0,
+      ),
+    ).toBe(false);
+  });
 });

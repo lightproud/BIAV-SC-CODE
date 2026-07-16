@@ -1147,6 +1147,8 @@ describe('subagent runtime — FORK mode', () => {
     const res = await h.runtime.makeSpawnFn(0)(
       baseParams({ fork: true, parentHistory: parentCtx(), prompt: 'do it' }),
     );
+    // The single sidechain_end is emitted at teardown (待裁②), not per run.
+    await h.runtime.settleAll();
     const entries = store.entries.get(res.agentId) ?? [];
     const start = entries.find((e) => e['type'] === 'sidechain_start');
     expect(start).toBeDefined();
@@ -1160,17 +1162,20 @@ describe('subagent runtime — FORK mode', () => {
     expect(
       entries.some((e) => e['type'] === 'assistant' && e['isSidechain'] === true),
     ).toBe(true);
-    const end = entries.find((e) => e['type'] === 'sidechain_end');
-    expect(end).toBeDefined();
-    expect(end?.['is_error']).toBe(false);
+    // Exactly ONE start and ONE end bracket the whole child life.
+    expect(entries.filter((e) => e['type'] === 'sidechain_start')).toHaveLength(1);
+    const ends = entries.filter((e) => e['type'] === 'sidechain_end');
+    expect(ends).toHaveLength(1);
+    expect(ends[0]?.['is_error']).toBe(false);
     // The parent session transcript received ZERO entries.
     expect(store.entries.get('parent-sess')).toBeUndefined();
   });
 
-  it('writes sidechain_end even when the child ABORTS mid-run (finally, not post-loop)', async () => {
-    // The terminal marker must be persisted on every exit path — settleAll's M4
-    // contract waits for it. A child aborted mid-stream previously skipped the
-    // post-loop write, leaving its transcript unterminated.
+  it('emits sidechain_end at teardown even when the child ABORTS mid-run (待裁②)', async () => {
+    // The single terminal marker is written by finalizeSidechain at settleAll,
+    // and an aborted child (never a clean result) carries is_error: true. This
+    // guarantees the transcript is terminated once the query settles, on every
+    // exit path including a mid-stream abort.
     class AbortingTransport implements Transport {
       apiKeySource(): 'user' {
         return 'user';
@@ -1190,11 +1195,13 @@ describe('subagent runtime — FORK mode', () => {
     // The spawn may reject or return an error result on abort; either way the
     // transcript's terminal marker must be present.
     await h.runtime.makeSpawnFn(0)(baseParams({ subagentType: 'general-purpose' })).catch(() => undefined);
+    // Teardown emits the single end (待裁②).
+    await h.runtime.settleAll();
     const agentIds = [...store.entries.keys()].filter((k) => k !== 'parent-sess');
     const entries = store.entries.get(agentIds[0]!) ?? [];
-    const end = entries.find((e) => e['type'] === 'sidechain_end');
-    expect(end).toBeDefined();
-    expect(end?.['is_error']).toBe(true); // aborted -> pessimistic error marker
+    const ends = entries.filter((e) => e['type'] === 'sidechain_end');
+    expect(ends).toHaveLength(1);
+    expect(ends[0]?.['is_error']).toBe(true); // aborted -> pessimistic error marker
   });
 
   it('records a sidechain for an isolated child too (fork:false marker)', async () => {
