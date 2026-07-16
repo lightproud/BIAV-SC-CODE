@@ -457,6 +457,15 @@ export function createSubagentRuntime(
    * reproduced coordinator preset's Results contract holds verbatim.
    * `<result>` and `<usage>` are optional sections, exactly as documented.
    */
+  // XML-escape the CHILD-controlled free-text fields (summary carries the task
+  // description + a result preview; result is the child's returned text). The
+  // official harness escapes these before embedding them, so a child whose
+  // output contains `</result>` / `<task-notification>` cannot forge block
+  // structure into the parent's view (a prompt-injection vector when the child
+  // processed untrusted data). `&` first so already-escaped output is not
+  // double-mangled inconsistently. agentId/status/usage are SDK-controlled.
+  const escapeXmlText = (s: string): string =>
+    s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   const formatTaskNotification = (p: {
     agentId: string;
     status: 'completed' | 'failed' | 'killed';
@@ -468,10 +477,10 @@ export function createSubagentRuntime(
       '<task-notification>',
       `<task-id>${p.agentId}</task-id>`,
       `<status>${p.status}</status>`,
-      `<summary>${p.summary}</summary>`,
+      `<summary>${escapeXmlText(p.summary)}</summary>`,
     ];
     if (p.result !== undefined && p.result.length > 0) {
-      lines.push(`<result>${p.result}</result>`);
+      lines.push(`<result>${escapeXmlText(p.result)}</result>`);
     }
     if (p.usage !== undefined) {
       lines.push(

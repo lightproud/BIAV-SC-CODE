@@ -16,6 +16,21 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.62.6 — 2026-07-16
+
+Bug-fix — a subagent could forge task-notification structure
+(`subagents/runtime.ts`): `formatTaskNotification` embedded the child-controlled
+`summary` and `result` free-text VERBATIM inside the `<task-notification>` XML
+block. A subagent whose returned text contained `</result><task-notification>…`
+(reachable when the child processed untrusted data) injected fake block
+structure — a forged status or instructions — into the parent coordinator's
+view. The official harness XML-escapes these fields before embedding them (the
+`&gt;`/`&amp;` seen in real notifications), so this is both a faithfulness fix
+and a prompt-injection defense: `&`/`<`/`>` in `summary` and `result` are now
+escaped. SDK-controlled fields (agentId, status, usage) are unaffected.
+Regression added in `tests/sendmessage.test.ts` (a forged closing tag yields
+exactly one real `</task-notification>` and is neutralized to entities).
+
 ## 0.62.5 — 2026-07-15
 
 Bug-fix sweep, round 4 (final) — a cross-cutting sweep (numeric coercion,
