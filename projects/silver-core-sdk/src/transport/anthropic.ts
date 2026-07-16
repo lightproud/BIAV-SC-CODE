@@ -14,8 +14,14 @@ import {
   ConfigurationError,
   isAbortError,
 } from '../errors.js';
+import {
+  extractProviderErrorObject,
+  looksLikeErrorObject,
+} from '../error-normalize.js';
 import type {
+  APIMessageParam,
   ApiKeySource,
+  ContentBlockParam,
   ProviderConfig,
   RawMessageStreamEvent,
 } from '../types.js';
@@ -46,6 +52,12 @@ const USER_AGENT = SDK_USER_AGENT;
 const BACKOFF_BASE_MS = 1_000;
 const BACKOFF_FACTOR = 2;
 const BACKOFF_MAX_MS = 60_000;
+/** Bounded jitter applied ON TOP of an explicit Retry-After delay (audit
+ *  2026-07-14 L-2): the delay is multiplied by [1.0, 1.0 + this factor], so a
+ *  concurrent fan-out (subagent fleets) does not retry at the same instant.
+ *  Never retries EARLIER than the server asked; the jittered total stays
+ *  capped at RETRY_AFTER_MAX_MS (the same ceiling the parser applies). */
+const RETRY_AFTER_JITTER = 0.25;
 
 /**
  * Plausible HTTP statuses for in-stream error payloads. An SSE `error` event
@@ -163,10 +175,23 @@ export class AnthropicTransport implements Transport {
     const { signal: callerSignal, onRetry, ...requestBody } = req;
     if (callerSignal?.aborted) throw new AbortError();
 
+    // Finding L5 — drop any thinking block that carries an EMPTY signature
+    // before it reaches the wire. A prior malformed/gateway-rewritten stream
+    // can finalize a thinking block without its signature_delta; re-sending
+    // that block 400s the Messages API ("invalid thinking signature") and kills
+    // every later turn of the conversation. Well-formed streams always sign
+    // their thinking, so this is a NO-OP (byte-identical body) on every normal
+    // and conformance path — it only activates on the rare unsigned case.
+    const sanitizedMessages = stripUnsignedThinking(requestBody.messages);
+    const wireBody =
+      sanitizedMessages === requestBody.messages
+        ? requestBody
+        : { ...requestBody, messages: sanitizedMessages };
+
     // JSON.stringify drops undefined-valued fields, satisfying "omit
     // undefined fields" without manual pruning. onRetry (a function) is
     // destructured out above so it never reaches the body.
-    const bodyJson = JSON.stringify({ ...requestBody, stream: true });
+    const bodyJson = JSON.stringify({ ...wireBody, stream: true });
     const headers = this.buildHeaders(this.credential);
     const timeoutMs = this.provider.timeoutMs ?? DEFAULT_TIMEOUT_MS;
     const maxRetries = resolveMaxRetries(this.provider, this.env);
@@ -195,6 +220,13 @@ export class AnthropicTransport implements Transport {
     // stream and letting the engine fall through to accumulator.finalize()'s
     // raw `Protocol error: finalize before message_start`.
     let emptyStreamRetries = 0;
+    // Finding T2 — ONE retry budget shared by the request-phase retries AND the
+    // empty-stream re-issues. Previously each empty-stream re-issue called
+    // requestWithRetries afresh with the FULL maxRetries, so a gateway that
+    // alternates errors and empty-200s could burn ~maxRetries² POSTs on an
+    // already-struggling endpoint. Threading one `{ used }` counter caps the
+    // total extra POSTs at maxRetries (so maxRetries+1 attempts overall).
+    const retryBudget = { used: 0 };
     for (;;) {
       // ---- request phase: retries allowed ---------------------------------
       const { response, signal, timeoutSignal, detachRequestTimeout, releaseSignals } =
@@ -204,6 +236,7 @@ export class AnthropicTransport implements Transport {
           callerSignal,
           timeoutMs,
           maxRetries,
+          retryBudget,
           onRetry,
         );
 
@@ -257,11 +290,24 @@ export class AnthropicTransport implements Transport {
       // event.
       let idleTimer: ReturnType<typeof setTimeout> | undefined;
       let lastEventAt = 0;
+      // audit 2026-07-14 L-3: the watchdog measures SERVER progress, not
+      // consumer progress. While the consumer holds a yielded event this
+      // generator is suspended at the yield through no fault of the
+      // connection, so the expiry check re-arms instead of aborting; the
+      // clock restarts when the consumer resumes (resetIdle after the yield).
+      // A genuine stall (silent server while WE await the next frame) still
+      // aborts exactly as before; detection of a stall that begins during a
+      // long consumer pause is deferred until the consumer resumes (worst
+      // case ~2x idleMs), which trades delay for never killing a healthy
+      // stream under a slow consumer.
+      let consumerHolds = false;
       const armIdle = (delay: number): void => {
         idleTimer = setTimeout(() => {
           const remaining = idleMs - (Date.now() - lastEventAt);
-          if (remaining <= 0) idleController!.abort();
-          else armIdle(remaining);
+          if (remaining <= 0) {
+            if (consumerHolds) armIdle(idleMs);
+            else idleController!.abort();
+          } else armIdle(remaining);
         }, delay);
         // Don't let the watchdog alone keep the process alive.
         (idleTimer as { unref?: () => void }).unref?.();
@@ -273,6 +319,15 @@ export class AnthropicTransport implements Transport {
       };
       let eventCount = 0;
       let sawMessageStart = false;
+      // Finding M2 — whether a terminal message_delta.stop_reason arrived. If
+      // it did, the message content is complete even without the trailing
+      // message_stop frame; if it did not and CONTENT was already delivered,
+      // the server dropped mid-generation (a truncation, not a completion).
+      let sawStopReason = false;
+      // Whether any content_block_start arrived: distinguishes a start-only
+      // stream (empty, benign — returns normally, the deliberate existing
+      // behavior) from one that delivered a PARTIAL answer then dropped.
+      let sawContentBlock = false;
       try {
         resetIdle();
         for await (const frame of parseSSE(response.body, streamSignal)) {
@@ -308,11 +363,15 @@ export class AnthropicTransport implements Transport {
               type: 'api_error',
               message: frame.data,
             };
+            // An in-stream error frame carries no HTTP status (the response was
+            // 200). Prefer a `status` the gateway put IN the body (the wrapped
+            // { error: { status } } shape), else derive one from the error type.
             throw new APIStatusError(
-              statusForErrorType(info.type),
+              info.status ?? statusForErrorType(info.type),
               info.type,
               info.message,
-              requestId,
+              info.requestId ?? requestId,
+              info.code !== undefined ? { providerErrorCode: info.code } : undefined,
             );
           }
           eventCount += 1;
@@ -325,13 +384,50 @@ export class AnthropicTransport implements Transport {
           if ((parsed as { type?: string }).type === 'message_start') {
             sawMessageStart = true;
           }
+          // Finding M2 — a message_delta with a non-null stop_reason marks the
+          // content as complete (message_stop merely closes the SSE channel).
+          const parsedType = (parsed as { type?: string }).type;
+          if (parsedType === 'content_block_start') sawContentBlock = true;
+          if (parsedType === 'message_delta') {
+            const sr = (parsed as { delta?: { stop_reason?: unknown } }).delta?.stop_reason;
+            if (sr !== null && sr !== undefined) sawStopReason = true;
+          }
+          // T3 (NOT changed — WAI): a ping keep-alive is yielded to the consumer
+          // as it arrives, deliberately. Live ping delivery is load-bearing (the
+          // idle-watchdog / hard-cap / progress paths and their tests rely on the
+          // consumer seeing keep-alives in real time). The theoretical "a
+          // discarded empty-retry attempt's pings reach the consumer" leak is
+          // harmless (pings carry no content; the accumulator ignores them), so
+          // it is not worth buffering pings and degrading live delivery.
+          // audit 2026-07-14 L-3: mark the consumer-hold window around the
+          // yield so the idle watchdog never counts a paused consumer as a
+          // stalled connection; restart the idle clock when it resumes.
+          consumerHolds = true;
           yield parsed as RawMessageStreamEvent;
+          consumerHolds = false;
+          resetIdle();
           // The Messages API streams exactly one message; message_stop is its
           // terminal event. Stop consuming here - official-client lifecycle -
           // so trailing gateway appendices (e.g. `data: [DONE]`) are never
           // parsed at all and the connection is released promptly. parseSSE's
           // finally cancels the underlying reader on early return.
           if ((parsed as { type?: string }).type === 'message_stop') {
+            // C (keeper ruling 2026-07-13): a message_stop preceded by NO
+            // terminal stop_reason AND no content is a degraded 200 — the API
+            // always emits message_delta.stop_reason before message_stop. Do
+            // NOT accept it as a complete empty success (the BPT "空 stopReason
+            // 轮次" shape) and do NOT retry it (a started stream is not
+            // replay-safe). Surface a diagnosable, NON-replay-safe error
+            // (no turnReplaySafe / midStreamTruncation flags) so the engine
+            // reports error_during_execution instead of a silent empty turn.
+            if (sawMessageStart && !sawStopReason && !sawContentBlock) {
+              throw new APIConnectionError(
+                `Messages API sent message_stop after message_start with no content ` +
+                  `and no stop_reason (${eventCount} event(s)); treating as a failed turn`,
+                undefined,
+                'empty_message',
+              );
+            }
             this.debug(
               `transport: stream completed at message_stop after ${eventCount} event(s)`,
             );
@@ -365,16 +461,17 @@ export class AnthropicTransport implements Transport {
       // Any caller abort observed here wins over the retry.
       if (!sawMessageStart) {
         if (callerSignal?.aborted) throw new AbortError();
-        if (emptyStreamRetries < maxRetries) {
+        if (retryBudget.used < maxRetries) {
+          retryBudget.used += 1;
           emptyStreamRetries += 1;
           this.debug(
             `transport: empty stream (HTTP 200, no message_start); ` +
-              `retry ${emptyStreamRetries}/${maxRetries}`,
+              `retry ${retryBudget.used}/${maxRetries}`,
           );
           // Surface it like a network-level retry (no HTTP status) so the loop
           // emits an api_retry observability message, same as a dropped socket.
-          onRetry?.({ attempt: emptyStreamRetries, maxRetries, kind: 'empty_stream' });
-          await this.backoff(emptyStreamRetries, undefined, callerSignal);
+          onRetry?.({ attempt: retryBudget.used, maxRetries, kind: 'empty_stream' });
+          await this.backoff(retryBudget.used, undefined, callerSignal);
           continue;
         }
         throw new APIConnectionError(
@@ -385,9 +482,44 @@ export class AnthropicTransport implements Transport {
         );
       }
 
+      // C (keeper ruling 2026-07-13): message_start arrived but the stream
+      // closed with NO content AND no terminal stop_reason — the degraded 200
+      // that produced the BPT "空 stopReason 轮次" (an empty assistant billed as
+      // a null-stop_reason success). Surface a diagnosable, NON-replay-safe
+      // error instead; a started stream is not replay-safe, so it is NOT
+      // retried (respecting the "no phantom empty-retry" contract). This sits
+      // between the no-message_start empty-retry above (sawMessageStart is
+      // guaranteed true here) and the mid-stream-truncation salvage below
+      // (which needs sawContentBlock).
+      if (!sawStopReason && !sawContentBlock) {
+        if (callerSignal?.aborted) throw new AbortError();
+        throw new APIConnectionError(
+          `Messages API stream started (message_start) but delivered no content ` +
+            `and no stop_reason (${eventCount} event(s)); treating as a failed turn`,
+          undefined,
+          'empty_message',
+        );
+      }
+
       // A non-empty stream that ended without message_stop (server closed after
-      // delivering some events): complete normally — the engine finalizes /
-      // salvages whatever arrived. Unchanged from the original single attempt.
+      // delivering some events). Finding M2: if PARTIAL CONTENT was delivered
+      // and no terminal message_delta.stop_reason arrived, the server dropped
+      // MID-GENERATION — surface a truncated turn (midStreamTruncation) so the
+      // engine's E3 salvage runs and the fault shows up in the result's
+      // `errors`, matching the OpenAI arm, instead of silently accepting a
+      // half-received answer as a complete, billed success. A start-only stream
+      // (no content_block) or one whose stop_reason DID arrive (only the
+      // trailing message_stop frame was lost) is complete enough — finalize
+      // normally, preserving the deliberate existing behavior.
+      if (sawContentBlock && !sawStopReason) {
+        if (callerSignal?.aborted) throw new AbortError();
+        const failure = new APIConnectionError(
+          `Messages API stream ended without message_stop after ${eventCount} event(s); ` +
+            `treating as a truncated turn`,
+        );
+        failure.midStreamTruncation = true;
+        throw failure;
+      }
       this.debug(`transport: stream completed after ${eventCount} event(s)`);
       return;
     }
@@ -406,6 +538,10 @@ export class AnthropicTransport implements Transport {
     callerSignal: AbortSignal | undefined,
     timeoutMs: number,
     maxRetries: number,
+    // Finding T2 — shared retry budget (see streamRequest). Both request-phase
+    // retries here and empty-stream re-issues in the caller draw from it, so the
+    // total is bounded by maxRetries rather than maxRetries per re-issue.
+    retryBudget: { used: number },
     onRetry?: (info: RetryInfo) => void,
   ): Promise<{
     response: Response;
@@ -419,7 +555,6 @@ export class AnthropicTransport implements Transport {
      *  a long-lived caller signal does not accumulate one listener per turn. */
     releaseSignals: () => void;
   }> {
-    let attempt = 0;
     for (;;) {
       if (callerSignal?.aborted) throw new AbortError();
       // Fresh timeout per attempt, propagated into a DEDICATED per-attempt
@@ -447,7 +582,7 @@ export class AnthropicTransport implements Transport {
       let response: Response;
       try {
         this.debug(
-          `transport: POST ${this.endpoint} (attempt ${attempt + 1}/${maxRetries + 1})`,
+          `transport: POST ${this.endpoint} (attempt ${retryBudget.used + 1}/${maxRetries + 1})`,
         );
         response = await (this.fetchFn ?? fetch)(this.endpoint, {
           method: 'POST',
@@ -459,13 +594,18 @@ export class AnthropicTransport implements Transport {
         releaseSignals();
         if (callerSignal?.aborted) throw new AbortError();
         // Connection failure or per-attempt timeout: retryable.
-        if (attempt < maxRetries) {
-          attempt += 1;
+        if (retryBudget.used < maxRetries) {
+          retryBudget.used += 1;
           this.debug(
-            `transport: network error (${errorMessage(err)}); retry ${attempt}/${maxRetries}`,
+            `transport: network error (${errorMessage(err)}); retry ${retryBudget.used}/${maxRetries}`,
           );
-          onRetry?.({ attempt, maxRetries, kind: 'network' });
-          await this.backoff(attempt, undefined, callerSignal);
+          onRetry?.({
+            attempt: retryBudget.used,
+            maxRetries,
+            kind: 'network',
+            message: errorMessage(err),
+          });
+          await this.backoff(retryBudget.used, undefined, callerSignal);
           continue;
         }
         throw new APIConnectionError(
@@ -477,37 +617,60 @@ export class AnthropicTransport implements Transport {
       if (response.ok) {
         return { response, signal, timeoutSignal, detachRequestTimeout, releaseSignals };
       }
-      releaseSignals();
 
-      const requestId = response.headers.get('request-id') ?? undefined;
-      const info = await readErrorInfo(response);
+      // Request id: prefer the response header, fall back to a request_id the
+      // gateway put in the error body.
+      const requestId =
+        response.headers.get('request-id') ?? undefined;
+      // Keep the abort listeners attached while draining the error body: the
+      // per-attempt signal is wired into the response stream, so a caller
+      // interrupt (or the request timeout) can still cancel a gateway that
+      // sent error headers and then stalled the body; the drain itself is
+      // additionally capped by ERROR_BODY_TIMEOUT_MS (audit 2026-07-14 H-1).
+      const info = await readErrorInfo(response, signal).finally(releaseSignals);
+      if (callerSignal?.aborted) throw new AbortError();
+      const resolvedRequestId = requestId ?? info.requestId;
+      const retryAfterMs = parseRetryAfterMs(response.headers.get('retry-after'));
       const retryable =
         response.status === 408 || response.status === 429 || response.status >= 500;
-      if (retryable && attempt < maxRetries) {
-        attempt += 1;
-        const retryAfterMs = parseRetryAfterMs(response.headers.get('retry-after'));
+      if (retryable && retryBudget.used < maxRetries) {
+        retryBudget.used += 1;
         this.debug(
-          `transport: HTTP ${response.status} (${info.type}); retry ${attempt}/${maxRetries}`,
+          `transport: HTTP ${response.status} (${info.type}); retry ${retryBudget.used}/${maxRetries}`,
         );
         onRetry?.({
-          attempt,
+          attempt: retryBudget.used,
           maxRetries,
           status: response.status,
           errorType: info.type,
           kind: 'http_status',
+          message: info.message,
+          ...(resolvedRequestId !== undefined ? { requestId: resolvedRequestId } : {}),
+          ...(info.code !== undefined ? { code: info.code } : {}),
           ...(retryAfterMs !== undefined ? { retryAfterMs } : {}),
         });
-        await this.backoff(attempt, retryAfterMs, callerSignal);
+        await this.backoff(retryBudget.used, retryAfterMs, callerSignal);
         continue;
       }
-      throw new APIStatusError(response.status, info.type, info.message, requestId);
+      throw new APIStatusError(
+        response.status,
+        info.type,
+        info.message,
+        resolvedRequestId,
+        {
+          ...(info.code !== undefined ? { providerErrorCode: info.code } : {}),
+          ...(retryAfterMs !== undefined ? { retryAfterMs } : {}),
+        },
+      );
     }
   }
 
-  /** Exponential backoff (base 1s, factor 2) with jitter; an explicit
-   *  retry-after wins and is honored AS GIVEN (already bounded by the parser).
-   *  Only the exponential fallback is capped at BACKOFF_MAX_MS — clamping an
-   *  explicit "wait 90s" down to 60s just retries early into the same limit. */
+  /** Exponential backoff (base 1s, factor 2) with jitter. An explicit
+   *  retry-after is honored as the FLOOR (never retried earlier) but jittered
+   *  UP by RETRY_AFTER_JITTER so a concurrent fan-out does not all wake at the
+   *  same instant, then re-capped at RETRY_AFTER_MAX_MS. Only the exponential
+   *  fallback is capped at BACKOFF_MAX_MS — clamping an explicit "wait 90s"
+   *  down to 60s just retries early into the same limit. */
   private async backoff(
     attempt: number,
     retryAfterMs: number | undefined,
@@ -516,7 +679,15 @@ export class AnthropicTransport implements Transport {
     const exponential = BACKOFF_BASE_MS * BACKOFF_FACTOR ** (attempt - 1);
     // Bounded jitter in [0.5, 1.0] x the exponential delay.
     const jittered = exponential * (0.5 + Math.random() * 0.5);
-    const delay = retryAfterMs ?? Math.min(jittered, BACKOFF_MAX_MS);
+    // audit 2026-07-14 L-2: jitter the explicit Retry-After path too. Without
+    // it a fan-out of subagents that all receive the same "Retry-After: 30"
+    // wake in the SAME instant (thundering herd). Spread UP only — never
+    // EARLIER than the server asked — then re-cap at the parser's ceiling so a
+    // jittered value can never exceed RETRY_AFTER_MAX_MS.
+    const delay =
+      retryAfterMs !== undefined
+        ? Math.min(retryAfterMs * (1 + Math.random() * RETRY_AFTER_JITTER), RETRY_AFTER_MAX_MS)
+        : Math.min(jittered, BACKOFF_MAX_MS);
     this.debug(`transport: backing off ${Math.round(delay)}ms`);
     await sleep(delay, signal);
   }
@@ -549,6 +720,44 @@ export class AnthropicTransport implements Transport {
 
 function nonEmpty(value: string | undefined): string | undefined {
   return value !== undefined && value.length > 0 ? value : undefined;
+}
+
+/**
+ * Finding L5 — drop assistant `thinking` blocks whose signature is empty before
+ * they hit the Anthropic wire (an unsigned thinking block 400s on resend). Pure
+ * and reference-preserving: returns the SAME array when no block needs removing,
+ * so a well-formed request (every thinking block signed) is byte-identical and
+ * the conformance/byte-diff suites are untouched. Only the rare unsigned block —
+ * produced by a malformed/gateway-rewritten upstream stream — is stripped.
+ */
+function stripUnsignedThinking(messages: APIMessageParam[]): APIMessageParam[] {
+  const isUnsignedThinking = (b: ContentBlockParam): boolean =>
+    b.type === 'thinking' &&
+    (typeof (b as { signature?: unknown }).signature !== 'string' ||
+      (b as { signature: string }).signature.length === 0);
+
+  let changed = false;
+  const out: APIMessageParam[] = [];
+  for (const msg of messages) {
+    if (
+      msg.role !== 'assistant' ||
+      !Array.isArray(msg.content) ||
+      !msg.content.some(isUnsignedThinking)
+    ) {
+      out.push(msg);
+      continue;
+    }
+    changed = true;
+    const filtered = msg.content.filter((b) => !isUnsignedThinking(b));
+    // If filtering emptied the turn (an assistant message that was ONLY
+    // unsigned thinking — e.g. a turn interrupted mid-thought before any text
+    // or tool_use, never signed), DROP the whole message. Sending an empty
+    // content array 400s the API; the turn carries no resendable content, and
+    // the Messages API tolerates the resulting consecutive same-role messages.
+    if (filtered.length === 0) continue;
+    out.push({ ...msg, content: filtered });
+  }
+  return changed ? out : messages;
 }
 
 function envInt(value: string | undefined): number | undefined {
@@ -718,26 +927,62 @@ function resolveCredential(
   return null;
 }
 
+/** True for an SSE frame payload that is actually an ERROR — the native
+ *  `{ type: 'error' }` frame OR a gateway that wrapped an upstream failure as a
+ *  bare `{ error: {...} }` / `{ message, status }` object with no `type:'error'`
+ *  discriminator (the穿透 case this normalization work closes). A real stream
+ *  event always carries a known `type`, so `looksLikeErrorObject` cannot swallow
+ *  one (it requires either a nested `error` object or a `type`-less body). */
 function isErrorPayload(parsed: unknown): boolean {
-  return (
+  if (
     typeof parsed === 'object' &&
     parsed !== null &&
     (parsed as { type?: unknown }).type === 'error'
-  );
+  ) {
+    return true;
+  }
+  return looksLikeErrorObject(parsed);
 }
 
-/** Extract `{ error: { type, message } }` from an API error payload. */
-function extractErrorPayload(
-  parsed: unknown,
-): { type: string; message: string } | null {
+/** Diagnostic fields lifted from an API error payload. `status`/`code`/
+ *  `requestId` are present only when the body carried them. */
+type ErrorPayloadInfo = {
+  type: string;
+  message: string;
+  status?: number;
+  code?: string;
+  requestId?: string;
+};
+
+/** Extract `{ error: { type, message, code, status, request_id } }` (or the bare
+ *  top-level `{ message, status, code, request_id }`) from an API error payload. */
+function extractErrorPayload(parsed: unknown): ErrorPayloadInfo | null {
   if (typeof parsed !== 'object' || parsed === null) return null;
-  const error = (parsed as { error?: unknown }).error;
-  if (typeof error !== 'object' || error === null) return null;
-  const type = (error as { type?: unknown }).type;
-  const message = (error as { message?: unknown }).message;
+  const top = parsed as Record<string, unknown>;
+  const error =
+    typeof top.error === 'object' && top.error !== null
+      ? (top.error as Record<string, unknown>)
+      : undefined;
+  // The `type` slug (Anthropic vocabulary) lives on the error envelope when
+  // present, else on the top-level object.
+  const typeSrc = error?.type ?? top.type;
+  const type =
+    typeof typeSrc === 'string' && typeSrc !== 'error' ? typeSrc : 'api_error';
+  // Delegate message/status/code/request_id extraction to the shared, redacting
+  // normalizer helper so both arms agree on the field spellings.
+  const obj = extractProviderErrorObject(parsed);
+  if (obj === null) {
+    // Neither a nested error nor a usable message: keep the old behavior of
+    // stringifying the error envelope (bounded by the normalizer elsewhere).
+    if (error === undefined) return null;
+    return { type, message: JSON.stringify(error) };
+  }
   return {
-    type: typeof type === 'string' ? type : 'api_error',
-    message: typeof message === 'string' ? message : JSON.stringify(error),
+    type,
+    message: obj.message,
+    ...(obj.status !== undefined ? { status: obj.status } : {}),
+    ...(obj.code !== undefined ? { code: obj.code } : {}),
+    ...(obj.requestId !== undefined ? { requestId: obj.requestId } : {}),
   };
 }
 
@@ -745,15 +990,66 @@ function statusForErrorType(errorType: string): number {
   return ERROR_TYPE_STATUS[errorType] ?? 500;
 }
 
-/** Read and classify a non-2xx response body (best effort, never throws). */
+/** Read and classify a non-2xx response body (best effort, never throws). A
+ *  non-JSON body (e.g. a plain-text "Internal server error" 500 page) yields a
+ *  readable message rather than an opaque object. */
+/** Hard cap on draining a non-2xx error body. A gateway that returns error
+ *  headers and then stalls the body must not hang the retry loop forever —
+ *  the default 'node' http client has no body timeout of its own. On expiry
+ *  the body is cancelled best-effort and the status-line fallback is used
+ *  (audit 2026-07-14 H-1). */
+const ERROR_BODY_TIMEOUT_MS = 10_000;
+
+/** Read a response body as text, bounded by ERROR_BODY_TIMEOUT_MS and the
+ *  given abort signal. Rejection means "body unavailable" — callers fall
+ *  back to the status line. */
+function readBodyTextBounded(
+  response: Response,
+  signal: AbortSignal | undefined,
+): Promise<string> {
+  return new Promise<string>((resolve, reject) => {
+    let settled = false;
+    const settle = (fn: () => void): void => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(timer);
+      signal?.removeEventListener('abort', onAbort);
+      fn();
+    };
+    const cancelBody = (): void => {
+      void response.body?.cancel().catch(() => {});
+    };
+    const onAbort = (): void => {
+      cancelBody();
+      settle(() => reject(new AbortError()));
+    };
+    const timer = setTimeout(() => {
+      cancelBody();
+      settle(() => reject(new APIConnectionError('error body read timed out')));
+    }, ERROR_BODY_TIMEOUT_MS);
+    (timer as { unref?: () => void }).unref?.();
+    if (signal?.aborted) {
+      onAbort();
+      return;
+    }
+    signal?.addEventListener('abort', onAbort, { once: true });
+    response.text().then(
+      (text) => settle(() => resolve(text)),
+      (err) => settle(() => reject(err instanceof Error ? err : new Error(String(err)))),
+    );
+  });
+}
+
 async function readErrorInfo(
   response: Response,
-): Promise<{ type: string; message: string }> {
+  signal?: AbortSignal,
+): Promise<ErrorPayloadInfo> {
   let text = '';
   try {
-    text = await response.text();
+    text = await readBodyTextBounded(response, signal);
   } catch {
-    // Body unavailable (aborted/half-closed); fall through to the fallback.
+    // Body unavailable (aborted / half-closed / stalled past the drain cap);
+    // fall through to the fallback.
   }
   if (text) {
     try {
@@ -778,10 +1074,15 @@ const RETRY_AFTER_MAX_MS = 120_000;
 function parseRetryAfterMs(header: string | null): number | undefined {
   if (!header) return undefined;
   const trimmed = header.trim();
-  // delta-seconds form (the common case).
-  const seconds = Number(trimmed);
-  if (Number.isFinite(seconds) && seconds >= 0) {
-    return Math.min(seconds * 1_000, RETRY_AFTER_MAX_MS);
+  // delta-seconds form (the common case). Only a plain decimal qualifies:
+  // Number('') is 0 (not NaN), so a whitespace-only header would otherwise
+  // return 0 (retry immediately) instead of being ignored; Number() also
+  // over-accepts '0x1f'/'1e3'. A numeric-shape gate keeps those out.
+  if (/^\d+(?:\.\d+)?$/.test(trimmed)) {
+    const seconds = Number(trimmed);
+    if (Number.isFinite(seconds) && seconds >= 0) {
+      return Math.min(seconds * 1_000, RETRY_AFTER_MAX_MS);
+    }
   }
   // HTTP-date form (RFC 7231, e.g. "Wed, 21 Oct 2026 07:28:00 GMT") — proxies
   // and CDNs commonly emit it; the wait is the delta from now. Was previously

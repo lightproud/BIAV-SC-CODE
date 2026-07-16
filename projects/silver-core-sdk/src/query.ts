@@ -13,15 +13,9 @@ import type {
   AgentInfo,
   APIMessageParam,
   APIUserMessage,
-  CallToolResult,
-  ContentBlock,
-  McpResource,
-  McpResourceContent,
   McpServerConfig,
-  McpServerStatus,
   McpSetServersResult,
   ModelInfo,
-  ModelUsage,
   NonNullableUsage,
   Options,
   PermissionMode,
@@ -35,16 +29,13 @@ import type {
   SDKSystemMessage,
   SDKUserMessage,
   SlashCommand,
+  SubagentTransportHandle,
   TextBlockParam,
 } from './types.js';
 import type {
   BuiltinTool,
-  EngineConfig,
   EngineDeps,
   McpRegistry,
-  McpToolEntry,
-  SystemComposition,
-  SystemCompositionPart,
   ToolContext,
   ToolDispatchRecord,
   Transport,
@@ -74,7 +65,7 @@ import { estimateTextTokens } from './engine/tokens.js';
 import { MEMORY_TOOL_NAME, resolveMemoryRuntime } from './tools/memory/index.js';
 import { createSessionPersistence } from './sessions/persistence.js';
 import { createRunLogSink } from './reporting/run-log.js';
-import { AsyncQueue, createDeferred, type Deferred } from './internal/async.js';
+import { AsyncQueue, createDeferred } from './internal/async.js';
 import { ToolFilterMcpRegistry } from './mcp/tool-filter.js';
 import { SDK_VERSION } from './version.js';
 import { JsonlSessionStore, resolveTranscriptPath } from './sessions/store.js';
@@ -99,7 +90,6 @@ import { createAgentTool } from './subagents/agent-tool.js';
 import { loadProjectMcpServers } from './mcp/project-config.js';
 
 const DEFAULT_MODEL = 'claude-sonnet-4-5';
-const DEFAULT_MAX_OUTPUT_TOKENS = 8192;
 /** S3 tool-call record: cap on the persisted input JSON (the full input lives
  *  in the assistant message's tool_use block with the same tool_use_id). */
 const TOOL_RECORD_INPUT_MAX_CHARS = 2048;
@@ -447,6 +437,57 @@ export function query(args: {
   // readFilePaths Set's identity.
   const toolSessionKey: object = {};
 
+  // Cross-protocol routing for engine-internal non-session-model calls
+  // (v0.55.0): utility generator calls (hook `condition` evaluation) and the
+  // compaction summarizer route through the same Options.resolveSubagentTransport
+  // policy as isolated subagents, distinguished by `purpose`. Absent resolver
+  // -> undefined -> every call keeps its previous transport path unchanged.
+  // Owned resolutions are tracked here and disposed at query teardown. NOTE
+  // the closure reads `engineConfig` (declared below) lazily — it only runs
+  // during hook/compaction evaluation, long after query init completes.
+  const queryOwnedTransports = new Set<Transport>();
+  const disposeQueryOwnedTransports = (): void => {
+    for (const t of queryOwnedTransports) {
+      try {
+        t.dispose?.();
+      } catch (err) {
+        debug(
+          `transportForModel dispose failed (ignored): ` +
+            `${err instanceof Error ? err.message : String(err)}`,
+        );
+      }
+    }
+    queryOwnedTransports.clear();
+  };
+  const transportForModel =
+    options.resolveSubagentTransport === undefined
+      ? undefined
+      : async (
+          model: string,
+          purpose: 'utility' | 'compaction',
+        ): Promise<Transport> => {
+          const resolution = await options.resolveSubagentTransport!({
+            model,
+            purpose,
+            parentModel: engineConfig.model,
+            parentProtocol:
+              options.provider?.protocol === 'openai-chat'
+                ? 'openai-chat'
+                : 'anthropic',
+            parentTransport: transport as SubagentTransportHandle,
+            parentProvider: options.provider,
+            env,
+            fork: false,
+            debug,
+          });
+          if (resolution === undefined) return transport;
+          const resolved = resolution.transport as unknown as Transport;
+          if (resolved !== transport && resolution.owned === true) {
+            queryOwnedTransports.add(resolved);
+          }
+          return resolved;
+        };
+
   const hooks = new DefaultHookRunner({
     hooks: options.hooks,
     debug,
@@ -454,7 +495,16 @@ export function query(args: {
     // v0.6 condition-gated matchers: thread the session credentials so a
     // matcher's `condition` can be evaluated (bounded single-shot call). A
     // matcher without a condition never triggers a call.
-    conditionOptions: { provider: options.provider, betas: options.betas, env, debug },
+    conditionOptions: {
+      provider: options.provider,
+      betas: options.betas,
+      env,
+      debug,
+      // Cross-protocol routing for the condition call's utility model.
+      ...(transportForModel !== undefined
+        ? { resolveTransport: (m: string) => transportForModel(m, 'utility') }
+        : {}),
+    },
     failureMode: options.hookFailureMode,
   });
 
@@ -597,7 +647,7 @@ export function query(args: {
   // EngineConfig assembly extracted to engine/config-builder.ts (audit
   // 2026-07-10 P2-3C): structured-output normalization, system-prompt shapes
   // + composition breakdown, preset thinking default, the config literal.
-  const { engineConfig, outputFormat, sessionGitBranch, isClaudeCodePreset } = buildEngineConfig({
+  const { engineConfig, sessionGitBranch, isClaudeCodePreset } = buildEngineConfig({
     options,
     cwd,
     initialModel,
@@ -673,6 +723,9 @@ export function query(args: {
     allowedTools: options.allowedTools,
     disallowedTools: options.disallowedTools,
     engineConfig,
+    provider: options.provider,
+    resolveSubagentTransport: options.resolveSubagentTransport,
+    transportForModel,
     store,
     persist,
     cwd,
@@ -687,6 +740,13 @@ export function query(args: {
     sandbox: sandboxCtx,
     readFilePaths,
     sessionKey: toolSessionKey,
+    // Resolved at spawn time: checkpointStore is declared (and bound) further
+    // down, after this runtime is constructed; spawns only ever happen once
+    // the query is running, so the closure reads the live binding (H-3).
+    getRecordFileChange: () =>
+      checkpointStore
+        ? (abs, pre): void => checkpointStore!.record(abs, pre)
+        : undefined,
     familyBudget,
     onToolRecord: persistToolRecord,
   });
@@ -831,6 +891,11 @@ export function query(args: {
     // Session accounting extracted to query-accounting.ts (audit 2026-07-10
     // P2-3A): additive counters + the single ModelUsage merge rule.
     const acct = new SessionAccounting();
+    // 待裁⑤: the last result yielded to the consumer. The session-end memory
+    // round and any late background-subagent usage grow `acct` AFTER this was
+    // yielded, so a corrected final result is emitted at teardown when the
+    // totals moved past what this result reported.
+    let lastYieldedResult: SDKResultMessage | undefined;
 
     // Common fields for QUERY-LAYER synthetic results (hook-block, pre-turn
     // session-cap stop, interrupt): no engine turn ran for THIS result, so the
@@ -1021,6 +1086,7 @@ export function query(args: {
           mcpResources: {
             list: (server, signal) => mcpEff.listResources(server, signal),
             read: (server, uri, signal) => mcpEff.readResource(server, uri, signal),
+            readDir: (server, uri, signal) => mcpEff.readResourceDir(server, uri, signal),
           },
           allowPrivateWebFetch: options.allowPrivateWebFetch === true,
           recordFileChange: checkpointStore
@@ -1036,6 +1102,8 @@ export function query(args: {
         toolContext.permissionGate = gate;
         const deps: EngineDeps = {
           transport,
+          // Cross-protocol routing for the compaction summarizer (v0.55.0).
+          ...(transportForModel !== undefined ? { transportForModel } : {}),
           builtinTools: mainLoopBuiltins,
           mcp: mcpEff,
           permissions: gate,
@@ -1072,10 +1140,13 @@ export function query(args: {
             // Assistant entries are persisted at their own yield time; only the
             // engine-appended tool_result user turns need surfacing here.
             if (entry !== undefined && entry.role === 'user') {
-              persistParam(sess.sessionId, entry);
+              // One identity for the streamed message AND the persisted record
+              // (keeper ruling 2026-07-13: message uuids persist at write time).
+              const entryUuid = randomUUID();
+              persistParam(sess.sessionId, entry, entryUuid);
               yield {
                 type: 'user',
-                uuid: randomUUID(),
+                uuid: entryUuid,
                 session_id: sess.sessionId,
                 message: { role: 'user', content: entry.content },
                 parent_tool_use_id: null,
@@ -1114,7 +1185,7 @@ export function query(args: {
             yield* drainMirror();
             yield* drainObs();
             if (msg.type === 'assistant') {
-              persistAssistant(sess.sessionId, msg.message.content);
+              persistAssistant(sess.sessionId, msg.message.content, msg.uuid);
               yield msg;
             } else if (msg.type === 'result') {
               if (msg.is_error === true) {
@@ -1128,7 +1199,9 @@ export function query(args: {
               // the result is rewritten so subagent tokens/cost are reported.
               acct.foldSubagentUsage(subagentRuntime.drainUsageLedger());
               acct.accumulateResult(msg);
-              yield rewriteResult(msg);
+              const rewritten = rewriteResult(msg);
+              lastYieldedResult = rewritten;
+              yield rewritten;
             } else {
               yield msg;
             }
@@ -1156,6 +1229,16 @@ export function query(args: {
             }
           }
           if (isAbortError(err)) {
+            // audit 2026-07-14 L-6: an aborted engine run emits no result, so
+            // its already-billed partial usage (message_start input tokens,
+            // completed intermediate turns) rides the AbortError instead. Fold
+            // it — plus any completed subagent usage — into the session
+            // accounting BEFORE deciding the abort's fate, so both the
+            // interrupt terminal result below and a later session summary
+            // report the true spend instead of under-counting.
+            const partial = err instanceof AbortError ? err.abortedRunAccounting : undefined;
+            if (partial !== undefined) acct.accumulateAborted(partial);
+            acct.foldSubagentUsage(subagentRuntime.drainUsageLedger());
             // A caller abort OR a close() (life) ends the whole run; only a
             // per-turn interrupt() (turnController, neither of the above) is a
             // recoverable turn-level cancel.
@@ -1463,7 +1546,7 @@ export function query(args: {
         const userParam: APIMessageParam = { role: 'user', content: message.content };
         history.push(userParam);
         requestView.messages.push(userParam);
-        persistParam(sess.sessionId, userParam);
+        persistParam(sess.sessionId, userParam, userUuid);
         yield echoed;
 
         // 4. Enforce session-wide limits BEFORE the turn, and arm the engine
@@ -1514,6 +1597,12 @@ export function query(args: {
         acct.turns > 0 &&
         !lifeSignal.aborted
       ) {
+        // The round's own result is ABSORBED (below), so it must not count as
+        // the last consumer-visible result — driveTurn sets lastYieldedResult
+        // via its internal yield regardless. Save the pre-round pointer and
+        // restore it after, so the corrected final result (待裁⑤) still sees
+        // that acct grew past what the consumer last actually received.
+        const preRoundResult = lastYieldedResult;
         try {
           const endParam: APIMessageParam = {
             role: 'user',
@@ -1538,6 +1627,11 @@ export function query(args: {
           debug(
             `memory: session-end update failed (non-fatal): ${err instanceof Error ? err.message : String(err)}`,
           );
+        } finally {
+          // Restore: the round's result was absorbed, so the last CONSUMER-
+          // visible result is still the pre-round one. acct keeps the round's
+          // added cost, so the corrected final result (待裁⑤) now fires.
+          lastYieldedResult = preRoundResult;
         }
       }
     } catch (err) {
@@ -1576,6 +1670,15 @@ export function query(args: {
       // only an unref'd debounce timer left to deliver them (audit 2026-07-10
       // M4). Bounded + never throws, so teardown cannot hang on a stuck child.
       await subagentRuntime.settleAll();
+      // 待裁⑤: a background subagent can record usage DURING settleAll (its
+      // finalizers / a late completion), after the last result was yielded.
+      // Drain it into the session totals so the corrected final result at the
+      // end of teardown reports it (the per-result folds at 1195/1234 miss it).
+      acct.foldSubagentUsage(subagentRuntime.drainUsageLedger());
+      // Release cross-protocol transports the resolver handed the QUERY layer
+      // with owned: true (utility/compaction routing); the subagent runtime
+      // disposed its own set inside settleAll() above.
+      disposeQueryOwnedTransports();
       // Kill background shells + drop the persistent cwd/env snapshot: shell
       // sessions live and die with the query.
       shells.dispose();
@@ -1617,6 +1720,23 @@ export function query(args: {
             `mcp closeAll failed: ${err instanceof Error ? err.message : String(err)}`,
           );
         }
+      }
+      // 待裁⑤ (keeper 2026-07-16, "完整修"): the session-end memory round and any
+      // late background-subagent usage grew the cumulative totals AFTER the last
+      // result was yielded. On a NORMAL completion, emit ONE corrected final
+      // result carrying the complete accounting (num_turns:0 / usage zero — no
+      // new engine turn, so per-turn sums are not double-counted — but the
+      // cumulative total_cost_usd/modelUsage are now whole). Emitted at the very
+      // END of teardown so a consumer that stops early cannot skip the resource
+      // cleanup above. Skipped on abort/error (those throw their own terminal).
+      if (
+        endReason !== 'abort' &&
+        endReason !== 'error' &&
+        !lifeSignal.aborted &&
+        lastYieldedResult !== undefined &&
+        acct.cost > lastYieldedResult.total_cost_usd
+      ) {
+        yield { ...lastYieldedResult, uuid: randomUUID(), ...resultCommon() };
       }
     }
   }

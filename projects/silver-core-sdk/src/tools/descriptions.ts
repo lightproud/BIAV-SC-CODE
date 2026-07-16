@@ -14,7 +14,8 @@
  *    TodoWrite (legacy, behind CLAUDE_CODE_ENABLE_TASKS=0 — see tools/index.ts),
  *    WebFetch, WebSearch, AskUserQuestion, Monitor, ExitPlanMode, EnterWorktree
  *    (B4b batch), Workflow (B4c batch).
- *    No Agent-in-descriptions, NotebookEdit, MultiEdit, Skill, etc.
+ *    Edit's batch sibling MultiEdit (SDK-original description, 2026-07-15).
+ *    No Agent-in-descriptions, NotebookEdit, Skill, etc.
  *  - ExitPlanMode: the archive fragment's plan-FILE mechanics (write plan to the
  *    plan file, tool reads it back) do not ship here — this SDK has a plan
  *    permission MODE but no plan-file machinery, so those clauses are adapted
@@ -248,6 +249,23 @@ Usage:
 - Prefer the Edit tool for modifying existing files — it only sends the diff. Only use this tool to create new files or for complete rewrites.
 - NEVER create documentation files (*.md) or README files unless explicitly requested by the User.
 - Only use emojis if the user explicitly requests it. Avoid writing emojis to files unless asked.`;
+
+// MultiEdit (SDK-original, faithful:false): the official Claude Code MultiEdit
+// is not in the reproduction archive, so this description is authored for the
+// semantics this SDK actually ships (src/tools/multiedit.ts) rather than
+// reproduced. Keeps the corpus-sync anchor guard scoped to genuine repros.
+export const MULTIEDIT_DESCRIPTION = `Applies several exact string replacements to a SINGLE file in one atomic step.
+
+When to use: several edits to the SAME file — prefer this over issuing separate Edit calls, which each cost a tool round-trip and re-feed the tool result into context. For one change use Edit. For cross-file changes, or an edit whose text depends on an intervening tool result, keep using separate Edit calls.
+
+Usage:
+- You must use your Read tool on the file at least once in the conversation before editing. This tool will error if you attempt to edit a file you have not read.
+- Provide \`file_path\` and an ordered \`edits\` array; each edit carries \`old_string\`, \`new_string\`, and an optional \`replace_all\` (default false).
+- Edits apply SEQUENTIALLY on one snapshot: each edit matches the file as left by the preceding edits, so you can rename a symbol and then edit a line that now contains the new name — in the same call.
+- ATOMIC: if any edit's \`old_string\` is not found (or is not unique without \`replace_all\`), NOTHING is written and the failing edit is named by index. Order your edits so an earlier one does not break a later one's match.
+- OVERLAP RULE: edits whose regions overlap — share any line or text, including context lines added for uniqueness — must be MERGED into a single edit. An earlier edit rewrites the text a later \`old_string\` was copied from, and the later edit then fails to match. Author a later \`old_string\` against the post-edit text only when the dependency is intended (e.g. rename a symbol, then edit a line that now holds the new name).
+- Each \`old_string\` must be unique in the file at the point it applies unless \`replace_all\` is true. Preserve exact indentation as it appears in the Read output, excluding the line-number prefix.
+- \`new_string\` must differ from \`old_string\`. Only use emojis if the user explicitly requests it.`;
 
 export const GREP_DESCRIPTION = `A powerful search tool built on ripgrep
 
@@ -534,6 +552,34 @@ Usage notes:
 - Users will always be able to select "Other" to provide custom text input
 - Use multiSelect: true to allow multiple answers to be selected for a question
 - If you recommend a specific option, make that the first option in the list and add "(Recommended)" at the end of the label`;
+
+export const ENTERPLANMODE_DESCRIPTION = `Use this tool proactively when you're about to start a non-trivial implementation task. Getting user sign-off on your approach before writing code prevents wasted effort and ensures alignment. This tool transitions you into plan mode where you can explore the codebase and design an implementation approach for user approval.
+
+## When to Use This Tool
+
+Prefer using EnterPlanMode for implementation tasks unless they're simple. Use it when ANY of these conditions apply:
+
+1. New Feature Implementation: Adding meaningful new functionality.
+2. Multiple Valid Approaches: The task can be solved in several different ways.
+3. Code Modifications: Changes that affect existing behavior or structure.
+4. Architectural Decisions: The task requires choosing between patterns or technologies.
+5. Multi-File Changes: The task will likely touch more than 2-3 files.
+6. Unclear Requirements: You need to explore before understanding the full scope.
+7. User Preferences Matter: The implementation could reasonably go multiple ways. If you would use AskUserQuestion to clarify the approach, use EnterPlanMode instead — plan mode lets you explore first, then present options with context.
+
+## When NOT to Use This Tool
+
+Only skip EnterPlanMode for simple tasks:
+- Single-line or few-line fixes (typos, obvious bugs, small tweaks)
+- Adding a single function with clear requirements
+- Tasks where the user has given very specific, detailed instructions
+- Pure research/exploration tasks (use the Agent tool instead)
+
+## Important Notes
+
+- This tool REQUIRES user approval - they must consent to entering plan mode
+- If unsure whether to use it, err on the side of planning - it's better to get alignment upfront than to redo work
+- Users appreciate being consulted before significant changes are made to their codebase`;
 
 export const EXITPLANMODE_DESCRIPTION = `Use this tool when you are in plan mode and have finished presenting your plan and are ready for user approval to begin implementing.
 
@@ -844,6 +890,10 @@ export const TOOL_DESCRIPTION_PROVENANCE: ToolDescriptionProvenance[] = [
   { tool: 'Read', faithful: true, slugs: ['tool-description-readfile'] },
   { tool: 'Edit', faithful: true, slugs: ['tool-description-edit'] },
   { tool: 'Write', faithful: true, slugs: ['tool-description-write', 'tool-description-write-read-existing-file-first'] },
+  // SDK-original (see MULTIEDIT_DESCRIPTION doc comment): no archive fragment,
+  // so faithful:false and the slug is the sdk-original sentinel — the anchor
+  // guard skips it, the presence guard still requires description text.
+  { tool: 'MultiEdit', faithful: false, slugs: ['sdk-original'] },
   { tool: 'Grep', faithful: true, slugs: ['tool-description-grep'] },
   { tool: 'Glob', faithful: true, slugs: ['tool-description-glob'] },
   { tool: 'TodoWrite', faithful: true, slugs: ['tool-description-todowrite'] },
@@ -854,6 +904,7 @@ export const TOOL_DESCRIPTION_PROVENANCE: ToolDescriptionProvenance[] = [
   { tool: 'WebFetch', faithful: true, slugs: ['tool-description-webfetch'] },
   { tool: 'WebSearch', faithful: true, slugs: ['tool-description-websearch'] },
   { tool: 'AskUserQuestion', faithful: true, slugs: ['tool-description-askuserquestion'] },
+  { tool: 'EnterPlanMode', faithful: true, slugs: ['tool-description-enterplanmode'] },
   { tool: 'ExitPlanMode', faithful: true, slugs: ['tool-description-exitplanmode'] },
   { tool: 'EnterWorktree', faithful: true, slugs: ['tool-description-enterworktree'] },
   {
@@ -878,6 +929,7 @@ export const TOOL_DESCRIPTION_TEXT: Record<string, string> = {
   Read: READ_DESCRIPTION,
   Edit: EDIT_DESCRIPTION,
   Write: WRITE_DESCRIPTION,
+  MultiEdit: MULTIEDIT_DESCRIPTION,
   Grep: GREP_DESCRIPTION,
   Glob: GLOB_DESCRIPTION,
   TodoWrite: TODOWRITE_DESCRIPTION,
@@ -888,6 +940,7 @@ export const TOOL_DESCRIPTION_TEXT: Record<string, string> = {
   WebFetch: WEBFETCH_DESCRIPTION,
   WebSearch: WEBSEARCH_DESCRIPTION,
   AskUserQuestion: ASKUSERQUESTION_DESCRIPTION,
+  EnterPlanMode: ENTERPLANMODE_DESCRIPTION,
   ExitPlanMode: EXITPLANMODE_DESCRIPTION,
   EnterWorktree: ENTERWORKTREE_DESCRIPTION,
   Monitor: MONITOR_DESCRIPTION,
@@ -934,9 +987,15 @@ export const BASH_SANDBOX_FRAGMENTS: SandboxNoteFragment[] = [
     text: 'The user explicitly asks you to run a command outside the sandbox.',
   },
   {
+    // ADAPTED (was faithful): upstream ccVersion 2.1.205 removed the archive's
+    // -user-permission-prompt fragment (it deleted the standalone "This will
+    // prompt the user for permission" line). The SDK keeps the sentence as its
+    // own framing because the escape hatch does gate on a permission prompt
+    // here — but it no longer has an upstream source, so it is no longer marked
+    // faithful (red line: never claim verbatim provenance for text upstream dropped).
     id: 'user-permission-prompt',
-    slug: 'tool-description-bash-sandbox-user-permission-prompt',
-    faithful: true,
+    slug: '',
+    faithful: false,
     text: 'This will prompt the user for permission',
   },
   {

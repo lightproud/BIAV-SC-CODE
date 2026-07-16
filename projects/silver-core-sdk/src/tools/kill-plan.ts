@@ -7,25 +7,72 @@
  * Windows, with the failure swallowed by an empty catch. Result on Windows:
  * KillShell was a no-op that lied.
  *
- * These two pure functions isolate the platform + honesty decisions so both
- * are unit-testable on any host (the Windows branch cannot spawn taskkill on
- * Linux CI, so it is planned here and executed by the caller).
+ * `terminalStatus` isolates the exit-honesty decision so it is unit-testable
+ * on any host. The platform kill planner it used to define moved to
+ * `internal/process-kill.ts` (so `mcp/` can reuse the same source of truth);
+ * it is re-exported here unchanged for the existing tool-layer consumers.
+ * `createTreeKiller` is the tool-layer EXECUTOR of that plan (audit 2026-07-14
+ * L-10): foreground Bash and the background ShellManager used to carry two
+ * near-identical `killGroup` closures; they now share this one.
  */
 
-/** How to terminate a child, chosen by platform + pid availability. */
-export type KillPlan =
-  | { kind: 'group'; pid: number; signal: string } // POSIX: signal the whole process group (-pid)
-  | { kind: 'taskkill'; pid: number } // Windows: taskkill /PID <pid> /T /F (tree, forced)
-  | { kind: 'child'; signal: string }; // no pid: best-effort direct child.kill
+import { spawn } from 'node:child_process';
+import { planProcessKill } from '../internal/process-kill.js';
 
-export function planProcessKill(
-  pid: number | undefined,
-  signal: string,
-  platform: NodeJS.Platform = process.platform,
-): KillPlan {
-  if (pid === undefined) return { kind: 'child', signal };
-  if (platform === 'win32') return { kind: 'taskkill', pid };
-  return { kind: 'group', pid, signal };
+export { planProcessKill };
+export type { KillPlan } from '../internal/process-kill.js';
+
+/** The minimal child surface the killer needs (satisfied by ChildProcess). */
+type KillableChild = {
+  pid?: number | undefined;
+  kill(signal: NodeJS.Signals): boolean;
+};
+
+/**
+ * Build a kill function that terminates `child`'s WHOLE process tree,
+ * platform-correctly (executes the planProcessKill plan): POSIX signals the
+ * process group (-pid, valid because every consumer spawns `detached:true`);
+ * Windows fires ONE `taskkill /PID <pid> /T /F` pass — tree + forced — so the
+ * SIGTERM->SIGKILL escalation collapses to a single call (the closure's
+ * `winKilled` latch makes the second a no-op). Extracted from the duplicated
+ * `killGroup` closures in bash.ts (foreground) and shells.ts
+ * (spawnBackground) — audit 2026-07-14 L-10.
+ *
+ * Failures are best-effort by design: benign when the tree already exited,
+ * anything else goes to `debug` rather than being swallowed (the old empty
+ * catch hid the Windows miss that made KillShell a silent no-op).
+ * `killFailContext` is appended verbatim to the kill-failure debug line
+ * (e.g. ` for shell bash_1`) so per-shell attribution survives the dedup.
+ */
+export function createTreeKiller(
+  child: KillableChild,
+  debug: (msg: string) => void,
+  killFailContext = '',
+): (sig: string) => void {
+  let winKilled = false;
+  return (sig: string): void => {
+    const plan = planProcessKill(child.pid, sig);
+    try {
+      if (plan.kind === 'group') {
+        process.kill(-plan.pid, plan.signal as NodeJS.Signals); // win-ok: posix branch of planProcessKill
+      } else if (plan.kind === 'child') {
+        child.kill(plan.signal as NodeJS.Signals);
+      } else {
+        // taskkill (Windows): fire once, best-effort, never blocks.
+        if (winKilled) return;
+        winKilled = true;
+        const tk = spawn('taskkill', ['/PID', String(plan.pid), '/T', '/F'], {
+          stdio: 'ignore',
+        });
+        tk.on('error', (e) => debug(`Bash: taskkill failed for pid ${plan.pid}: ${e.message}`));
+        tk.unref();
+      }
+    } catch (err) {
+      debug(
+        `Bash: kill(${sig}) failed${killFailContext}: ${err instanceof Error ? err.message : String(err)}`,
+      );
+    }
+  };
 }
 
 /**

@@ -23,6 +23,7 @@ import type {
   EngineDeps,
   HookRunner,
   McpRegistry,
+  McpToolEntry,
   PermissionCheckResult,
   PermissionGate,
   StreamRequest,
@@ -598,12 +599,14 @@ describe('pricing', () => {
       output_tokens: 3,
       cache_creation_input_tokens: 0,
       cache_read_input_tokens: 0,
+      web_search_requests: 0,
     });
     expect(normalizeUsage({ input_tokens: 1, output_tokens: 2 })).toEqual({
       input_tokens: 1,
       output_tokens: 2,
       cache_creation_input_tokens: 0,
       cache_read_input_tokens: 0,
+      web_search_requests: 0,
     });
   });
 
@@ -625,7 +628,25 @@ describe('pricing', () => {
       output_tokens: 22,
       cache_creation_input_tokens: 33,
       cache_read_input_tokens: 44,
+      web_search_requests: 0,
     });
+  });
+
+  it('bug-fix: web_search_requests flows through normalizeUsage and addUsage', () => {
+    // Pre-fix normalizeUsage stripped server_tool_use, so the count was lost
+    // before recordUsage and ModelUsage.webSearchRequests was permanently 0.
+    const n = normalizeUsage({
+      input_tokens: 1,
+      output_tokens: 1,
+      server_tool_use: { web_search_requests: 3 },
+    });
+    expect(n.web_search_requests).toBe(3);
+    const summed = addUsage(n, normalizeUsage({
+      input_tokens: 1,
+      output_tokens: 1,
+      server_tool_use: { web_search_requests: 2 },
+    }));
+    expect(summed.web_search_requests).toBe(5);
   });
 });
 
@@ -705,6 +726,7 @@ describe('runAgentLoop', () => {
       output_tokens: 7,
       cache_creation_input_tokens: 0,
       cache_read_input_tokens: 0,
+      web_search_requests: 0,
     });
     // modelUsage keyed by the RESPONSE model id (claude-test-1 is unpriced).
     expect(Object.keys(result.modelUsage)).toEqual(['claude-test-1']);
@@ -1191,6 +1213,53 @@ describe('runAgentLoop', () => {
     });
   });
 
+  it('raises a sub-1024 thinking budget to the 1024 API floor (pre-adaptive)', async () => {
+    const transport = new MockTransport([textReplyEvents('ok')]);
+    const deps = makeDeps(transport);
+    const history: APIMessageParam[] = [{ role: 'user', content: 'go' }];
+
+    await collect(
+      runAgentLoop(
+        history,
+        deps,
+        // 500 is positive (not "off") but below the API's 1024 floor: previously
+        // sent verbatim -> 400 "budget_tokens must be >= 1024" -> every turn dies.
+        makeConfig({
+          model: 'claude-haiku-4-5',
+          maxOutputTokens: 8192,
+          thinking: { type: 'enabled', budget_tokens: 500 },
+        }),
+      ),
+    );
+
+    expect(transport.requests[0]!.thinking).toEqual({
+      type: 'enabled',
+      budget_tokens: 1024,
+    });
+  });
+
+  it('disables thinking when max_tokens cannot fit the 1024 floor (pre-adaptive)', async () => {
+    const transport = new MockTransport([textReplyEvents('ok')]);
+    const deps = makeDeps(transport);
+    const history: APIMessageParam[] = [{ role: 'user', content: 'go' }];
+
+    await collect(
+      runAgentLoop(
+        history,
+        deps,
+        // max_tokens 900 => ceiling 899 < 1024: no valid budget exists, so emit
+        // NO thinking param rather than a guaranteed-400 request.
+        makeConfig({
+          model: 'claude-haiku-4-5',
+          maxOutputTokens: 900,
+          thinking: { type: 'enabled', budget_tokens: 2000 },
+        }),
+      ),
+    );
+
+    expect(transport.requests[0]!.thinking).toBeUndefined();
+  });
+
   it('a resolved thinking budget of 0 sends NO thinking param (E1 live-disable guard)', async () => {
     // thinking {type:'enabled'} with maxThinkingTokens 0 is what a live
     // setMaxThinkingTokens(0) produces under the preset default (which injects
@@ -1526,6 +1595,104 @@ describe('runAgentLoop', () => {
     expect(toolResults.map((r) => r.tool_use_id)).toEqual(['toolu_a', 'toolu_b']);
   });
 
+  // ----- child-agent serialization fix: parallelSafe joins the concurrent
+  // group (foreground Agent batches must overlap, not serialize) -----
+
+  /** Start/end probe: under concurrent execution every member STARTS before
+   *  any member ENDS; sequential execution interleaves start/end/start/end. */
+  function timingProbe(
+    name: string,
+    order: string[],
+    opts: { readOnly: boolean; parallelSafe?: boolean } = { readOnly: false },
+  ): BuiltinTool {
+    return {
+      name,
+      description: `${name} timing probe`,
+      inputSchema: { type: 'object', properties: { file_path: { type: 'string' } } },
+      readOnly: opts.readOnly,
+      ...(opts.parallelSafe !== undefined ? { parallelSafe: opts.parallelSafe } : {}),
+      async execute(input) {
+        const p = (input as { file_path: string }).file_path;
+        order.push(`start:${p}`);
+        await new Promise((r) => setTimeout(r, 10));
+        order.push(`end:${p}`);
+        return { content: `${name} ${p}` };
+      },
+    };
+  }
+
+  function twoToolBatch(nameA: string, nameB: string): RawMessageStreamEvent[] {
+    return [
+      messageStart(),
+      { type: 'content_block_start', index: 0, content_block: { type: 'tool_use', id: 'toolu_a', name: nameA, input: {} } },
+      { type: 'content_block_delta', index: 0, delta: { type: 'input_json_delta', partial_json: '{"file_path":"/a"}' } },
+      { type: 'content_block_stop', index: 0 },
+      { type: 'content_block_start', index: 1, content_block: { type: 'tool_use', id: 'toolu_b', name: nameB, input: {} } },
+      { type: 'content_block_delta', index: 1, delta: { type: 'input_json_delta', partial_json: '{"file_path":"/b"}' } },
+      { type: 'content_block_stop', index: 1 },
+      { type: 'message_delta', delta: { stop_reason: 'tool_use', stop_sequence: null }, usage: { output_tokens: 5 } },
+      { type: 'message_stop' },
+    ];
+  }
+
+  it('runs consecutive parallelSafe tools (foreground Agent batch) concurrently, results in order', async () => {
+    const transport = new MockTransport([twoToolBatch('Agent', 'Agent'), textReplyEvents('done')]);
+    const order: string[] = [];
+    const deps = makeDeps(transport, {
+      builtinTools: new Map<string, BuiltinTool>([
+        ['Agent', timingProbe('Agent', order, { readOnly: false, parallelSafe: true })],
+      ]),
+    });
+    const history: APIMessageParam[] = [{ role: 'user', content: 'go' }];
+
+    await collect(runAgentLoop(history, deps, makeConfig()));
+
+    // Both agents START before either ENDS: the execution windows overlap
+    // (the reported bug had them strictly serial: start/end/start/end).
+    expect(order).toHaveLength(4);
+    expect(order.slice(0, 2).every((s) => s.startsWith('start:'))).toBe(true);
+    expect(order.slice(2).every((s) => s.startsWith('end:'))).toBe(true);
+
+    // tool_results stay in tool_use order (API pairs by id).
+    const userTurn = history.find((m) => m.role === 'user' && Array.isArray(m.content));
+    const toolResults = userTurn!.content as ToolResultBlockParam[];
+    expect(toolResults.map((r) => r.tool_use_id)).toEqual(['toolu_a', 'toolu_b']);
+  });
+
+  it('groups a read-only tool and a parallelSafe tool into one concurrent group', async () => {
+    const transport = new MockTransport([twoToolBatch('Read', 'Agent'), textReplyEvents('done')]);
+    const order: string[] = [];
+    const deps = makeDeps(transport, {
+      builtinTools: new Map<string, BuiltinTool>([
+        ['Read', timingProbe('Read', order, { readOnly: true })],
+        ['Agent', timingProbe('Agent', order, { readOnly: false, parallelSafe: true })],
+      ]),
+    });
+    const history: APIMessageParam[] = [{ role: 'user', content: 'go' }];
+
+    await collect(runAgentLoop(history, deps, makeConfig()));
+
+    expect(order).toHaveLength(4);
+    expect(order.slice(0, 2).every((s) => s.startsWith('start:'))).toBe(true);
+    expect(order.slice(2).every((s) => s.startsWith('end:'))).toBe(true);
+  });
+
+  it('still serializes consecutive tools that are neither readOnly nor parallelSafe', async () => {
+    const transport = new MockTransport([twoToolBatch('Write', 'Write'), textReplyEvents('done')]);
+    const order: string[] = [];
+    const deps = makeDeps(transport, {
+      builtinTools: new Map<string, BuiltinTool>([
+        ['Write', timingProbe('Write', order, { readOnly: false })],
+      ]),
+    });
+    const history: APIMessageParam[] = [{ role: 'user', content: 'go' }];
+
+    await collect(runAgentLoop(history, deps, makeConfig()));
+
+    // Mutating tools keep the strict sequential contract.
+    expect(order).toEqual(['start:/a', 'end:/a', 'start:/b', 'end:/b']);
+  });
+
   // ----- finding #5: fallback retry folds the failed attempt's usage -----
 
   it('folds the failed attempt usage into totals before a fallback retry (#5)', async () => {
@@ -1731,6 +1898,36 @@ describe('runAgentLoop', () => {
     const history: APIMessageParam[] = [{ role: 'user', content: 'go' }];
     const messages = await collect(runAgentLoop(history, deps, makeConfig({ maxTurns: 2 })));
     expect(lastResult(messages).subtype).toBe('error_max_turns');
+  });
+
+  it('C4: a pause_turn continuation is gated by maxBudgetUsd like every other continuation (audit 2026-07-14 M-8)', async () => {
+    // Before the fix the pause_turn branch checked only maxTurns before
+    // re-issuing a billed API call — the ONE continuation path without the
+    // budget gate the tool-continue / structured-retry / bg-drain /
+    // stop-hook-block paths all share.
+    const transport = new MockTransport([
+      textReplyEvents('partial…', {
+        stopReason: 'pause_turn',
+        model: 'claude-sonnet-4-5',
+        usage: { input_tokens: 1000 }, // $0.003105 > the cap below
+      }),
+      textReplyEvents('should never run'),
+    ]);
+    const deps = makeDeps(transport);
+    const history: APIMessageParam[] = [{ role: 'user', content: 'go' }];
+    const messages = await collect(
+      runAgentLoop(history, deps, makeConfig({ maxBudgetUsd: 0.000001 })),
+    );
+
+    // No second billed call was issued past the cap.
+    expect(transport.requests).toHaveLength(1);
+    // Same result shaping as the other budget-gated continuation paths.
+    const result = lastResult(messages);
+    expect(result.subtype).toBe('error_max_budget_usd');
+    expect(result.is_error).toBe(true);
+    if (result.subtype === 'error_max_budget_usd') {
+      expect(result.errorMessage).toContain('maxBudgetUsd');
+    }
   });
 
   it('C5: refusal surfaces as an ERROR result (not success) with error_code refusal', async () => {
@@ -2275,6 +2472,34 @@ describe('engine loop - bounded turn replay (P0-1) + transport health ledger (P0
       turnReplays: 0,
     });
   });
+
+  it('salvageMode "continue": a salvageable truncation is re-driven to a complete answer, not accepted partial', async () => {
+    // Call 1 is salvageable (partial text, would normally be accepted); with
+    // salvageMode 'continue' the engine declines the partial and replays to a
+    // clean full answer on call 2 (keeper ruling 2026-07-12, option 乙).
+    const truncated = textReplyEvents('PARTIAL').slice(0, -1);
+    const transport = new TruncatingTransport(
+      [truncated, textReplyEvents('COMPLETE ANSWER')],
+      1,
+    );
+    const deps = makeDeps(transport as unknown as MockTransport);
+    const history = [{ role: 'user' as const, content: 'go' }];
+
+    const messages = await collect(
+      runAgentLoop(history, deps, makeConfig({ salvageMode: 'continue' })),
+    );
+
+    expect(transport.requests).toHaveLength(2); // declined partial -> replayed
+    const result = lastResult(messages);
+    expect(result.subtype).toBe('success');
+    if (result.subtype === 'success') expect(result.result).toBe('COMPLETE ANSWER');
+    // Recorded as a replay (Layer 2), not a salvage-accept (Layer 3).
+    expect(result.metrics?.transportHealth).toMatchObject({
+      midStreamDrops: 1,
+      turnsSalvaged: 0,
+      turnReplays: 1,
+    });
+  });
 });
 
 // ---------------------------------------------------------------------------
@@ -2378,5 +2603,146 @@ describe('P2: PostToolBatch tool_calls[]', () => {
     expect(input.tool_calls).toEqual([
       { tool_name: 'Read', tool_input: { file_path: '/a.txt' }, tool_use_id: 'toolu_x' },
     ]);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Tool schema boundary hardening (BPT 2026-07-13): a tools[] entry with a
+// missing/invalid input_schema 400s the ENTIRE request at OpenAI-compatible
+// gateways (`tools.N.custom.input_schema: Field required`). The loop must
+// normalize bad builtin/MCP schemas and never emit a schema-less custom entry.
+// ---------------------------------------------------------------------------
+
+/** FakeMcp variant that reports a scripted tool list. */
+class FakeMcpWithTools implements McpRegistry {
+  constructor(private readonly tools: McpToolEntry[]) {}
+  async connectAll(): Promise<void> {}
+  statuses(): McpServerStatus[] {
+    return [];
+  }
+  allTools(): McpToolEntry[] {
+    return this.tools;
+  }
+  has(qualifiedName: string): boolean {
+    return this.tools.some((t) => t.qualifiedName === qualifiedName);
+  }
+  async call(): Promise<CallToolResult> {
+    return { content: [{ type: 'text', text: 'unexpected mcp call' }], isError: true };
+  }
+  async reconnect(_serverName: string): Promise<void> {}
+  setEnabled(_serverName: string, _enabled: boolean): void {}
+  async closeAll(): Promise<void> {}
+}
+
+describe('runAgentLoop tool schema normalization', () => {
+  function mcpEntry(name: string, inputSchema: unknown): McpToolEntry {
+    return {
+      qualifiedName: `mcp__srv__${name}`,
+      serverName: 'srv',
+      toolName: name,
+      description: `mcp tool ${name}`,
+      inputSchema: inputSchema as McpToolEntry['inputSchema'],
+    };
+  }
+
+  async function runWithTools(opts: {
+    mcpTools?: McpToolEntry[];
+    builtinTools?: Map<string, BuiltinTool>;
+    serverTools?: Array<{ type: string; name: string }>;
+  }): Promise<{ tools: unknown[]; debugLines: string[] }> {
+    const transport = new MockTransport([textReplyEvents('ok')]);
+    const debugLines: string[] = [];
+    const deps: EngineDeps = {
+      ...makeDeps(transport, { builtinTools: opts.builtinTools }),
+      mcp: new FakeMcpWithTools(opts.mcpTools ?? []),
+      debug: (m) => debugLines.push(m),
+    };
+    const config = makeConfig(
+      opts.serverTools !== undefined ? { serverTools: opts.serverTools } : {},
+    );
+    await collect(runAgentLoop([{ role: 'user' as const, content: 'go' }], deps, config));
+    expect(transport.requests).toHaveLength(1);
+    return { tools: (transport.requests[0]!.tools ?? []) as unknown[], debugLines };
+  }
+
+  it('normalizes a missing MCP inputSchema to the empty object schema and logs the tool name', async () => {
+    const { tools, debugLines } = await runWithTools({
+      mcpTools: [mcpEntry('broken', undefined)],
+    });
+    expect(tools).toEqual([
+      {
+        name: 'mcp__srv__broken',
+        description: 'mcp tool broken',
+        input_schema: { type: 'object', properties: {} },
+      },
+    ]);
+    expect(debugLines.some((l) => l.includes('mcp__srv__broken') && l.includes('normalized'))).toBe(
+      true,
+    );
+  });
+
+  it('normalizes null / array / primitive MCP inputSchema values', async () => {
+    const { tools } = await runWithTools({
+      mcpTools: [
+        mcpEntry('nullish', null),
+        mcpEntry('arrayish', []),
+        mcpEntry('stringish', 'not a schema'),
+      ],
+    });
+    for (const t of tools as Array<{ input_schema: unknown }>) {
+      expect(t.input_schema).toEqual({ type: 'object', properties: {} });
+    }
+  });
+
+  it('leaves a valid MCP schema and builtin schemas untouched', async () => {
+    const executed: Array<Record<string, unknown>> = [];
+    const { tools, debugLines } = await runWithTools({
+      builtinTools: new Map([['Read', makeFakeReadTool(executed)]]),
+      mcpTools: [mcpEntry('fine', { type: 'object', properties: { q: { type: 'string' } } })],
+    });
+    expect(tools).toEqual([
+      {
+        name: 'Read',
+        description: 'fake read tool',
+        input_schema: { type: 'object', properties: { file_path: { type: 'string' } } },
+      },
+      {
+        name: 'mcp__srv__fine',
+        description: 'mcp tool fine',
+        input_schema: { type: 'object', properties: { q: { type: 'string' } } },
+      },
+    ]);
+    expect(debugLines.filter((l) => l.includes('normalized'))).toEqual([]);
+  });
+
+  it("skips a serverTools entry of type 'custom' instead of emitting a schema-less tool", async () => {
+    const { tools, debugLines } = await runWithTools({
+      serverTools: [{ type: 'custom', name: 'some_tool' }],
+    });
+    expect(tools).toEqual([]);
+    expect(debugLines.some((l) => l.includes('some_tool') && l.includes('skipped'))).toBe(true);
+  });
+
+  it("a skipped 'custom' serverTools entry does not suppress the builtin of the same name", async () => {
+    const executed: Array<Record<string, unknown>> = [];
+    const { tools } = await runWithTools({
+      builtinTools: new Map([['Read', makeFakeReadTool(executed)]]),
+      serverTools: [{ type: 'custom', name: 'Read' }],
+    });
+    expect(tools).toEqual([
+      {
+        name: 'Read',
+        description: 'fake read tool',
+        input_schema: { type: 'object', properties: { file_path: { type: 'string' } } },
+      },
+    ]);
+  });
+
+  it('keeps Anthropic-typed server tools (memory_20250818) verbatim and schema-less', async () => {
+    const { tools, debugLines } = await runWithTools({
+      serverTools: [{ type: 'memory_20250818', name: 'memory' }],
+    });
+    expect(tools).toEqual([{ type: 'memory_20250818', name: 'memory' }]);
+    expect(debugLines.filter((l) => l.includes('skipped'))).toEqual([]);
   });
 });

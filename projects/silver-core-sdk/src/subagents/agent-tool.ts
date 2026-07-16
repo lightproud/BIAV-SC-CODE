@@ -48,6 +48,16 @@ export function createAgentTool(agentNames: string[]): BuiltinTool {
       'cache, more privileged) rather than a fresh isolated one.',
     readOnly: false,
     isFileEdit: false,
+    // Foreground Agent calls batched in one assistant turn must run
+    // concurrently (official parity: "send them in a single message with
+    // multiple tool uses so they run concurrently"). Each child runs in its
+    // own isolated loop/session, and the runtime forks the persistent Bash
+    // cwd/env namespace per child — seeded from the parent's snapshot at
+    // spawn, mutations private (audit 2026-07-14 M-10) — so batch-mates
+    // share no mutable state here. Deliberately still shared: the
+    // background-shell registry (query-wide by design, append-only ids) and
+    // the read-before-write path Set (monotonic adds, no replay hazard).
+    parallelSafe: true,
     inputSchema: {
       type: 'object',
       properties: {

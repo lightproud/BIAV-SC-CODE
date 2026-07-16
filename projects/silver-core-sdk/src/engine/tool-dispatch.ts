@@ -31,6 +31,10 @@ import type {
   ToolDispatchRecord,
   ToolResultPayload,
 } from '../internal/contracts.js';
+import {
+  normalizeImageMediaType,
+  SUPPORTED_IMAGE_MEDIA_TYPES_LIST,
+} from '../internal/media.js';
 
 /** Wrap any abort-shaped error into this SDK's AbortError. */
 function toAbortError(err: unknown): AbortError {
@@ -68,20 +72,37 @@ export type ToolExecOutcome = {
   observability?: SDKMessage[];
 };
 
-/** Map an MCP CallToolResult into a builtin-style tool result payload. */
-function mapMcpResult(res: CallToolResult): ToolResultPayload {
+/** Map an MCP CallToolResult into a builtin-style tool result payload.
+ *  Exported for unit tests (pure function, no I/O). */
+export function mapMcpResult(res: CallToolResult): ToolResultPayload {
   const parts: Array<TextBlockParam | ImageBlockParam> = [];
   for (const part of res.content) {
     switch (part.type) {
       case 'text':
         parts.push({ type: 'text', text: part.text });
         break;
-      case 'image':
-        parts.push({
-          type: 'image',
-          source: { type: 'base64', media_type: part.mimeType, data: part.data },
-        });
+      case 'image': {
+        // Whitelist the mimeType HERE (v0.56.0): an MCP server is free to
+        // label anything (image/bmp, image/tiff, ...), and an off-vocabulary
+        // media_type riding into the next API request 400s the WHOLE turn on
+        // the Anthropic protocol (and is unrepresentable on openai-chat).
+        // Degrade to an explicit text marker instead — never dropped silently.
+        const mediaType = normalizeImageMediaType(part.mimeType);
+        parts.push(
+          mediaType !== undefined
+            ? {
+                type: 'image',
+                source: { type: 'base64', media_type: mediaType, data: part.data },
+              }
+            : {
+                type: 'text',
+                text:
+                  `[image omitted: unsupported media type "${part.mimeType}"; ` +
+                  `supported: ${SUPPORTED_IMAGE_MEDIA_TYPES_LIST}]`,
+              },
+        );
         break;
+      }
       case 'audio':
         parts.push({ type: 'text', text: `[audio ${part.mimeType}]` });
         break;
@@ -124,7 +145,7 @@ function appendContext(
   return [...content, ...extra.map((text): TextBlockParam => ({ type: 'text', text }))];
 }
 
-export { mkToolError };
+export { mkToolError, toAbortError };
 
 export type ToolDispatcherConfig = {
   deps: Pick<
@@ -165,6 +186,7 @@ function summarizeResultContent(
 
 export function createToolDispatcher(cfg: ToolDispatcherConfig): {
   isReadOnlyTool: (name: string) => boolean;
+  isParallelSafeTool: (name: string) => boolean;
   executeToolUse: (block: ToolUseBlock) => Promise<ToolExecOutcome>;
 } {
   const { deps, sessionId, baseHookFields, signal, recordTool, onToolRecord } = cfg;
@@ -179,6 +201,13 @@ export function createToolDispatcher(cfg: ToolDispatcherConfig): {
       .allTools()
       .some((t) => t.qualifiedName === name && t.annotations?.readOnlyHint === true);
   };
+
+  /** A tool may join a concurrent batch group if it is read-only OR a builtin
+   * explicitly marked parallelSafe (Agent: children run in isolated contexts,
+   * so batched foreground spawns must overlap, not serialize). Grouping only —
+   * the permission gate's readOnly flag is NOT widened by this. */
+  const isParallelSafeTool = (name: string): boolean =>
+    isReadOnlyTool(name) || deps.builtinTools.get(name)?.parallelSafe === true;
 
   /** S3 wrapper: time the whole dispatch and emit one structured record per
    *  block, including error/deny/stop outcomes. An abort still records (with
@@ -351,7 +380,14 @@ export function createToolDispatcher(cfg: ToolDispatcherConfig): {
         return { result: errorToolResult(`No such tool: ${toolName}`) };
       }
     } catch (err) {
-      if (isAbortError(err)) throw toAbortError(err);
+      if (isAbortError(err)) {
+        // Record the aborted dispatch in the perTool metrics too: the S3
+        // onToolRecord path logs it as '[aborted]' (so "the audit trail never
+        // loses a dispatched call"), and the metrics ledger must not silently
+        // undercount aborted work relative to that same-dispatch record.
+        recordTool(toolName, Date.now() - execStart, true);
+        throw toAbortError(err);
+      }
       const message = err instanceof Error ? err.message : String(err);
       if (deps.hooks.hasHooks('PostToolUseFailure')) {
         await deps.hooks.run(
@@ -435,5 +471,5 @@ export function createToolDispatcher(cfg: ToolDispatcherConfig): {
     return { result, stop };
   }
 
-  return { isReadOnlyTool, executeToolUse };
+  return { isReadOnlyTool, isParallelSafeTool, executeToolUse };
 }

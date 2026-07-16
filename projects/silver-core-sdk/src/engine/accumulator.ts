@@ -25,7 +25,14 @@ type PendingBlock =
       partialJson: string;
       /** Parsed final input, set at content_block_stop. */
       input?: Record<string, unknown>;
-    };
+    }
+  // Finding M1 — forward-compatibility: a block type this accumulator does not
+  // model (e.g. server_tool_use / web_search_tool_result, or any future type)
+  // is kept VERBATIM instead of leaving its index unregistered, which made the
+  // block's first content_block_delta throw "delta for unopened block index"
+  // and kill an otherwise-healthy turn. Deltas on an opaque block are ignored;
+  // the raw block round-trips into the finalized message.
+  | { type: 'opaque'; raw: ContentBlock };
 
 export class MessageAccumulator {
   private message: APIAssistantMessage | undefined;
@@ -74,8 +81,12 @@ export class MessageAccumulator {
               partialJson: '',
             });
             return;
+          default:
+            // Finding M1 — unmodeled block type: register it opaquely so its
+            // later deltas do not throw, and it survives into the message.
+            this.blocks.set(event.index, { type: 'opaque', raw: cb as ContentBlock });
+            return;
         }
-        return;
       }
 
       case 'content_block_delta': {
@@ -85,6 +96,9 @@ export class MessageAccumulator {
             `Protocol error: content_block_delta for unopened block index ${event.index}`,
           );
         }
+        // Finding M1 — deltas targeting an opaque (unmodeled) block are ignored
+        // rather than mismatched against a known delta type.
+        if (block.type === 'opaque') return;
         const delta = event.delta;
         // S2 (BPT audit 2026-07-07): citations arrive as their own delta type
         // (not in the typed union) and must be collected onto the text block
@@ -103,19 +117,25 @@ export class MessageAccumulator {
             if (block.type !== 'text') {
               throw this.mismatch(event.index, block.type, delta.type);
             }
-            block.text += delta.text;
+            // S3 (BPT audit 2026-07-07): a field-omitting / gateway-rewritten
+            // frame must be a no-op append, not `+= undefined` (which writes the
+            // literal "undefined"). The same guard as input_json_delta below.
+            block.text += delta.text ?? '';
             return;
           case 'thinking_delta':
             if (block.type !== 'thinking') {
               throw this.mismatch(event.index, block.type, delta.type);
             }
-            block.thinking += delta.thinking;
+            block.thinking += delta.thinking ?? '';
             return;
           case 'signature_delta':
             if (block.type !== 'thinking') {
               throw this.mismatch(event.index, block.type, delta.type);
             }
-            block.signature += delta.signature;
+            // A missing signature here is the WORST case: `+= undefined` poisons
+            // the thinking block's signature and the API 400s "Invalid signature"
+            // on every subsequent replay — the wedged conversation this guards.
+            block.signature += delta.signature ?? '';
             return;
           case 'input_json_delta':
             if (block.type !== 'tool_use') {
@@ -228,6 +248,10 @@ export class MessageAccumulator {
             input: block.input ?? this.parseToolInput(index, block),
           });
           break;
+        case 'opaque':
+          // Finding M1 — round-trip the unmodeled block verbatim.
+          content.push(block.raw);
+          break;
       }
     }
     msg.content = content;
@@ -285,6 +309,11 @@ export class MessageAccumulator {
               input: block.input,
             });
           }
+          break;
+        case 'opaque':
+          // Finding M1 — keep an unmodeled block only if it arrived WHOLE
+          // (content_block_stop seen), mirroring the closed-block salvage rule.
+          if (closed) content.push(block.raw);
           break;
       }
     }

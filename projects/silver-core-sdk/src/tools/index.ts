@@ -34,6 +34,7 @@ import type { BuiltinTool } from '../internal/contracts.js';
 import { createReadTool, readTool } from './read.js';
 import { writeTool } from './write.js';
 import { editTool } from './edit.js';
+import { multiEditTool } from './multiedit.js';
 import { bashTool, createBashTool } from './bash.js';
 import type { JSONSchema, ReadLimits, SandboxContext } from '../types.js';
 import { globTool } from './glob.js';
@@ -43,10 +44,11 @@ import { webSearchTool } from './websearch.js';
 import { askUserQuestionTool } from './askuserquestion.js';
 import { todoWriteTool } from './todo.js';
 import { taskTools } from './task.js';
-import { listMcpResourcesTool, readMcpResourceTool } from './resources.js';
+import { listMcpResourcesTool, readMcpResourceTool, readMcpResourceDirTool } from './resources.js';
 import { bashOutputTool, killShellTool, taskOutputTool, taskStopTool } from './shells.js';
 import { monitorTool } from './monitor.js';
 import { exitPlanModeTool } from './exitplanmode.js';
+import { enterPlanModeTool } from './enterplanmode.js';
 import { enterWorktreeTool } from './enterworktree.js';
 import { workflowTool } from './workflow.js';
 import { sendMessageTool } from './sendmessage.js';
@@ -70,6 +72,7 @@ export function createBuiltinTools(cfg?: {
     cfg?.readLimits !== undefined ? createReadTool(cfg.readLimits) : readTool,
     writeTool,
     editTool,
+    multiEditTool,
     cfg?.sandbox !== undefined ? createBashTool(cfg.sandbox) : bashTool,
     bashOutputTool,
     killShellTool,
@@ -84,6 +87,8 @@ export function createBuiltinTools(cfg?: {
     ...(legacyTodo ? [todoWriteTool] : taskTools),
     listMcpResourcesTool,
     readMcpResourceTool,
+    readMcpResourceDirTool,
+    enterPlanModeTool,
     exitPlanModeTool,
     enterWorktreeTool,
     workflowTool,

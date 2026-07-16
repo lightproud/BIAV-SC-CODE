@@ -1,6 +1,6 @@
 # Silver Core SDK — Compatibility Matrix
 
-Target surface: `@anthropic-ai/claude-agent-sdk` public API (npm 0.3.205; chased from the 0.3.201 baseline 2026-07-10, keeper ruling, zero conformance drift — 0.3.199 -> 0.3.201 chased 2026-07-05) as
+Target surface: `@anthropic-ai/claude-agent-sdk` public API (npm 0.3.207; chased from 0.3.205 2026-07-13, keeper ruling 「追」, zero exported-symbol drift — 0.3.201 -> 0.3.205 chased 2026-07-10, 0.3.199 -> 0.3.201 chased 2026-07-05) as
 documented at code.claude.com/docs/en/agent-sdk/* (fetched 2026-07-03).
 
 For a full 146-row completion audit against the latest official surface
@@ -13,6 +13,36 @@ including the drop-in breaking-gap list and the NEW-IN-DOCS ledger
 (post-0.3.199 surface), see
 `Public-Info-Pool/Resource/repo-engineering/bpt-sdk-official-docs-interface-audit-20260705.md`.
 Stale rows flagged there were corrected in this file on 2026-07-05.
+
+## 0.3.205 -> 0.3.207 chase (2026-07-13, keeper ruling 「追」)
+
+An empirical type-surface diff of the official tarballs (0.3.205 vs 0.3.207,
+`sdk.d.ts` parsed via the TS compiler API — full report
+`Public-Info-Pool/Resource/repo-engineering/silver-core-sdk-vs-official-diff-20260713.md`)
+found the pinned 0.3.205 baseline drifted 2 patch versions behind npm latest
+`0.3.207` with **zero exported-symbol change (232 = 232, none added/removed)**.
+The drift is entirely field-level/additive:
+
+- **`TerminalReason` union +6 members** — `api_error`,
+  `malformed_tool_use_exhausted`, `budget_exhausted`,
+  `structured_output_retry_exhausted`, `tool_deferred_unavailable`,
+  `turn_setup_failed`. IMPLEMENTED: added to the union (`src/types.ts`) for
+  drop-in exhaustiveness; **typed-not-populated** (this field has no engine
+  emission site here — grep-verified). Exhaustive lock in
+  `tests/b2c-alignment.test.ts` (12 → 18).
+- **`mcp_call` staging fields** (`input_files`/`output_files`/`expires_at`/`timeout_ms`,
+  Cowork synced-file lane) — **N/A-BY-DESIGN**: these ride the `control_request`
+  wire protocol this headless direct-API engine does not implement (same posture
+  as `get_plan`/`get_workspace_diff`/`reinitialize`). No code; registered here to
+  prevent drift-misjudgement.
+- **PostToolUse-family structured-tool-output field** (`AgentToolCompletedOutput`
+  shape) — additive-optional on the hook-output shapes; not populated (no hook
+  emission of the full typed Output object here).
+- **`SDKModelRefusalNoFallbackMessage`** doc refinement (per-category routing
+  declines the retry) — documentation-only; no interface change.
+
+No package `version` change to the tracked-Claude-Code number (this SDK keeps
+its own independent version, 0.53.7 — see CHANGELOG).
 
 ## 0.3.201 -> 0.3.205 chase (2026-07-10, keeper ruling 「追」)
 
@@ -128,6 +158,7 @@ Per-row detail lives in the sections below; this is the at-a-glance table.
 | `enumerateBuiltinToolMetadata` | BPT-EXTENSION | built-in tool defs are internal to the CLI; no public read API | zero-side-effect read-only projection of the default built-in tools as `{ name, description, inputJsonSchema }` (MCP-metadata-shaped), so a host can size the built-in tool block instead of estimating it as a residual (v0.11.0) |
 | `provider.protocol: 'openai-chat'` + `provider.openai` | BPT-EXTENSION | Anthropic-only (the wrapped CLI speaks the Messages API) | translating transport drives any OpenAI-compatible Chat Completions endpoint; engine keeps Messages API shapes, translation at the wire boundary only (see docs/OPENAI-PROTOCOL.md) (v0.35.0) |
 | `provider.pricing` | BPT-EXTENSION | static internal price table | USD-per-MTok overrides keyed by model-id prefix (win over the static table); makes cost metrics + `maxBudgetUsd` enforceable on non-Claude models (v0.37.0) |
+| `resolveSubagentTransport` + `createSubagentTransportResolver` | BPT-EXTENSION | single Anthropic protocol; no per-subagent transport concept | cross-protocol subagent routing: host callback resolves the transport an ISOLATED child drives when its model needs a different wire protocol than the parent (absent -> children share the parent transport, the previous behavior; forks never consult it); standard implementation memoizes one transport per protocol and derives the child provider from protocol-agnostic parent knobs + the child protocol's own env chain (see docs/OPENAI-PROTOCOL.md "Cross-protocol subagents") (v0.54.0); since v0.55.0 the same callback also routes utility generator calls and the compaction summarizer, distinguished by a `purpose` field (`subagent`/`utility`/`compaction`) |
 | `hookFailureMode` | BPT-EXTENSION | hook failures are logged and ignored | `'closed'` turns a throwing/timed-out hook into a deny so hook-enforced policy fails safe; default `'open'` keeps official-parity behavior (v0.37.0) |
 | `provider.cacheTtl` | BPT-EXTENSION | no cache-TTL knob (CLI decides 5m/1h internally; only reports the split in usage) | caller picks `'5m'`/`'1h'` per query (v0.7.1) |
 | `provider.fetch` | BPT-EXTENSION | HTTP stack is internal to the wrapped CLI | custom fetch used for EVERY transport request (both protocols, retries included); highest-priority override — the proxy/mTLS/instrumentation seam (recipes: docs/PERFORMANCE.md) (v0.44.0) |
@@ -342,7 +373,8 @@ SDK implements the agent loop directly against the public Messages API:
 | WebFetch / WebSearch | FULL | registered in v0.2 |
 | TodoWrite | PARTIAL | v0.7: OFF by default (Task quadruplet is the default surface); `CLAUDE_CODE_ENABLE_TASKS=0` reverts to TodoWrite-only, per official 0.3.142 |
 | Agent | PARTIAL | the subagent spawn tool; v0.7 gains `model`/`isolation:'worktree'` and the official required set [description, prompt] (subagent_type defaults to general-purpose). Residual param delta = our BPT-only `fork` extension |
-| NotebookEdit / MultiEdit | UNSUPPORTED | deliberately untracked (BPT has no notebook surface; MultiEdit retired upstream) |
+| MultiEdit | FULL | v0.61.0 (SDK-original): same-file atomic batch edit — edits apply sequentially on one snapshot, all-or-nothing write, single pre-image for rewind, same read-before-write gate as Edit. No official parity target (retired upstream), so FULL is vs our own documented semantics and the description is authored, not reproduced (`faithful:false`). v0.62.1: not-found errors are triaged against the original text — "absent from the file (re-Read)" vs "consumed by an earlier edit in this call" (culprit edit named; overlap rule added to the description) |
+| NotebookEdit | UNSUPPORTED | deliberately untracked (BPT has no notebook surface) |
 
 ## SDKMessage stream
 

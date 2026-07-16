@@ -73,6 +73,49 @@ function fmtPct(x: number): string {
   return `${(x * 100).toFixed(1)}%`;
 }
 
+/**
+ * Shape guard for one parsed ledger line (audit 2026-07-14 M-12): a
+ * well-formed-JSON-but-wrong-shape line (external producer, schema drift)
+ * must land in the bad-line counter, not throw out of the aggregation —
+ * "bad lines are counted, not fatal". Checks exactly the fields the
+ * aggregations dereference (in this file AND in compare-reports.ts, which
+ * consumes the same guarded readWindow): `ts` string; `usage` object with
+ * the four numeric token counters; `total_cost_usd` number;
+ * `transport_health`, when present, an object (Object.entries target);
+ * `per_tool`, when present, an array of objects with numeric calls/errors.
+ * Unknown record types / extra fields pass through untouched — they cannot
+ * crash the aggregation.
+ */
+function isRunLogRecord(x: unknown): x is RunLogRecord {
+  if (typeof x !== 'object' || x === null || Array.isArray(x)) return false;
+  const r = x as Record<string, unknown>;
+  if (typeof r['ts'] !== 'string') return false;
+  const usage = r['usage'];
+  if (typeof usage !== 'object' || usage === null || Array.isArray(usage)) return false;
+  const u = usage as Record<string, unknown>;
+  for (const k of [
+    'input_tokens',
+    'output_tokens',
+    'cache_read_input_tokens',
+    'cache_creation_input_tokens',
+  ]) {
+    if (typeof u[k] !== 'number') return false;
+  }
+  if (typeof r['total_cost_usd'] !== 'number') return false;
+  const th = r['transport_health'];
+  if (th !== undefined && (typeof th !== 'object' || th === null)) return false;
+  const pt = r['per_tool'];
+  if (pt !== undefined) {
+    if (!Array.isArray(pt)) return false;
+    for (const t of pt) {
+      if (typeof t !== 'object' || t === null) return false;
+      const tool = t as Record<string, unknown>;
+      if (typeof tool['calls'] !== 'number' || typeof tool['errors'] !== 'number') return false;
+    }
+  }
+  return true;
+}
+
 /** Parse every ledger line in the window (bad lines are counted, not fatal).
  *  Internal contract shared with compare-reports.ts — not part of the
  *  public package surface. */
@@ -99,7 +142,14 @@ export async function readWindow(
     for (const line of text.split('\n')) {
       if (line.trim().length === 0) continue;
       try {
-        const rec = JSON.parse(line) as RunLogRecord;
+        const rec: unknown = JSON.parse(line);
+        // Shape guard (audit 2026-07-14 M-12): wrong-shape lines join the
+        // torn/non-JSON lines in the bad-line counter instead of throwing
+        // later when the aggregation dereferences rec.usage.* etc.
+        if (!isRunLogRecord(rec)) {
+          badLines += 1;
+          continue;
+        }
         const t = new Date(rec.ts).getTime();
         if (t >= from.getTime() && t <= to.getTime()) records.push(rec);
       } catch {
@@ -281,7 +331,9 @@ export async function generateRuntimeReport(
   } else {
     lines.push('| tool | calls | errors | failure rate |', '|---|---|---|---|');
     for (const t of tools.slice(0, Math.max(topN * 2, 10))) {
-      lines.push(`| ${t.name} | ${t.calls} | ${t.errors} | ${fmtPct(t.errors / t.calls)} |`);
+      lines.push(
+        `| ${t.name} | ${t.calls} | ${t.errors} | ${t.calls > 0 ? fmtPct(t.errors / t.calls) : '无数据'} |`,
+      );
     }
     if (tools.length > Math.max(topN * 2, 10)) {
       lines.push('', `…共 ${tools.length} 个工具(截断)。`);

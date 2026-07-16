@@ -343,6 +343,40 @@ describe('R7: session-end progress-card round (query level)', () => {
     );
   });
 
+  it('待裁⑤: a session-end round that adds cost yields a corrected final result', async () => {
+    // Priced RESPONSE model so the round accrues real cost. The round's result
+    // is absorbed, but its spend grows the session totals past what the task's
+    // own (already-yielded) result reported — so a corrected final result is
+    // emitted carrying the COMPLETE cumulative cost (keeper 2026-07-16 完整修).
+    const stub = makeSSEFetch([
+      textReplyEvents('the answer', { model: 'claude-sonnet-4-5', usage: { input_tokens: 100 } }),
+      textReplyEvents('progress saved', { model: 'claude-sonnet-4-5', usage: { input_tokens: 900 } }),
+    ]);
+    const messages = await collectQuery('do the task', baseOptions(stub, { memory: {} }));
+    const results = messages.filter((m): m is SDKResultMessage => m.type === 'result');
+    expect(results).toHaveLength(2); // task's own + accounting-corrected final
+    const [first, corrected] = results;
+    expect(first!.subtype).toBe('success');
+    if (first!.subtype === 'success') expect(first!.result).toBe('the answer');
+    // Complete cumulative cost (round's spend now included), no new per-turn usage.
+    expect(corrected!.total_cost_usd).toBeGreaterThan(first!.total_cost_usd);
+    expect(corrected!.num_turns).toBe(0);
+    expect(corrected!.usage.input_tokens).toBe(0);
+    // The corrected result is the LAST message on the stream.
+    expect(messages[messages.length - 1]!.type).toBe('result');
+  });
+
+  it('a zero-cost session-end round adds NO corrected result (exactly one)', async () => {
+    // Unpriced responses -> acct.cost stays 0 -> nothing to correct -> the
+    // "exactly one public result" invariant is preserved when there is no delta.
+    const stub = makeSSEFetch([
+      textReplyEvents('the answer'),
+      textReplyEvents('progress saved'),
+    ]);
+    const messages = await collectQuery('do the task', baseOptions(stub, { memory: {} }));
+    expect(messages.filter((m) => m.type === 'result')).toHaveLength(1);
+  });
+
   it('sessionEndUpdate: false -> exactly one request, no extra round', async () => {
     const stub = makeSSEFetch([textReplyEvents('answer')]);
     const messages = await collectQuery(
@@ -432,8 +466,20 @@ describe('R8: limits in the store engine', () => {
     await expect(store.create('/memories/d/c.txt', '3')).rejects.toThrow(
       'Error: Directory /memories/d already contains the maximum number of memory files (2)',
     );
+    // The error carries self-rescue guidance so a model can reorganize instead
+    // of looping on create: it names the three routes and clarifies the cap is
+    // per-directory and blocks only new-file creation.
+    await expect(store.create('/memories/d/c.txt', '3')).rejects.toThrow(
+      /blocks only new-file creation/,
+    );
+    await expect(store.create('/memories/d/c.txt', '3')).rejects.toThrow(/subdirectory/);
     // Other directories are unaffected.
     await expect(store.create('/memories/e/a.txt', '1')).resolves.toContain('successfully');
+    // An existing file in the full directory can still be edited and deleted.
+    await expect(store.strReplace('/memories/d/a.txt', '1', '11')).resolves.toContain('edited');
+    await expect(store.delete('/memories/d/b.txt')).resolves.toContain('deleted');
+    // With a file removed, a new create in the same directory succeeds again.
+    await expect(store.create('/memories/d/c.txt', '3')).resolves.toContain('successfully');
   });
 
   it('view output beyond maxViewChars truncates on a line boundary with the pagination hint', async () => {

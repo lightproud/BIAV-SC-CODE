@@ -1,7 +1,7 @@
 """backfill_gap 补充覆盖：异常分支 / 边界过滤 / 分页短路 / main 编排。
 
 补 tests/test_backfill_gap.py 未触及的错误/边界路径。网络全打桩，归档写入
-monkeypatch PLATFORMS_DIR 到 tmp，绝不触网、绝不污染真实 data/platforms。
+monkeypatch ARCHIVE_DIR 到 tmp，绝不触网、绝不污染真实 Community 归档。
 """
 
 import json
@@ -19,7 +19,7 @@ import backfill_gap  # noqa: E402
 
 class TestArchiveItemsEdge(unittest.TestCase):
     def _patch_dir(self, d):
-        return mock.patch.object(backfill_gap, "PLATFORMS_DIR", Path(d))
+        return mock.patch.object(backfill_gap, "ARCHIVE_DIR", Path(d))
 
     def test_gap_repaired_placeholder_existing_cleared(self):
         # 已有文件标记 _gap_repaired 且 items 为空 → existing 被清空，新条目正常合并 (81-83)
@@ -58,13 +58,13 @@ def _reddit_resp(children, after=None, status=200):
 
 class TestBackfillRedditEdge(unittest.TestCase):
     # backfill_reddit() archives collected in-gap posts via _archive_items, which
-    # writes under PLATFORMS_DIR. Redirect it to a tmp dir for EVERY test in this
+    # writes under ARCHIVE_DIR. Redirect it to a tmp dir for EVERY test in this
     # class so an in-gap collection (e.g. test_pagination_sleep_and_continue) can
     # never leak a real file into projects/news/data/platforms/ (test isolation).
     def setUp(self):
         self._tmp = tempfile.TemporaryDirectory()
         self._patch = mock.patch.object(
-            backfill_gap, "PLATFORMS_DIR", Path(self._tmp.name))
+            backfill_gap, "ARCHIVE_DIR", Path(self._tmp.name))
         self._patch.start()
         self.addCleanup(self._tmp.cleanup)
         self.addCleanup(self._patch.stop)
@@ -130,7 +130,7 @@ class TestBackfillBilibiliEdge(unittest.TestCase):
         empty = mock.MagicMock()
         empty.json.return_value = {"data": {"result": []}}
         with tempfile.TemporaryDirectory() as d, \
-                mock.patch.object(backfill_gap, "PLATFORMS_DIR", Path(d)), \
+                mock.patch.object(backfill_gap, "ARCHIVE_DIR", Path(d)), \
                 mock.patch.object(backfill_gap, "time") as t:
             t.sleep = lambda *_: None
             import global_collectors as gc
@@ -141,7 +141,7 @@ class TestBackfillBilibiliEdge(unittest.TestCase):
     def test_exception_sleeps_and_breaks(self):
         # _get 抛异常 → except: time.sleep(5); break (280-283)
         with tempfile.TemporaryDirectory() as d, \
-                mock.patch.object(backfill_gap, "PLATFORMS_DIR", Path(d)), \
+                mock.patch.object(backfill_gap, "ARCHIVE_DIR", Path(d)), \
                 mock.patch.object(backfill_gap, "time") as t:
             t.sleep = lambda *_: None
             import global_collectors as gc
@@ -165,7 +165,7 @@ class TestBackfillWeiboEdge(unittest.TestCase):
         empty.json.return_value = {"data": {"cards": []}}
         with tempfile.TemporaryDirectory() as d, \
                 mock.patch.dict(backfill_gap.os.environ, {"WEIBO_COOKIE": "SUB=abc"}), \
-                mock.patch.object(backfill_gap, "PLATFORMS_DIR", Path(d)), \
+                mock.patch.object(backfill_gap, "ARCHIVE_DIR", Path(d)), \
                 mock.patch.object(backfill_gap, "time") as t:
             t.sleep = lambda *_: None
             import requests as _req
@@ -186,7 +186,7 @@ class TestBackfillWeiboEdge(unittest.TestCase):
         empty.json.return_value = {"data": {"cards": []}}
         with tempfile.TemporaryDirectory() as d, \
                 mock.patch.dict(backfill_gap.os.environ, {}, clear=True), \
-                mock.patch.object(backfill_gap, "PLATFORMS_DIR", Path(d)), \
+                mock.patch.object(backfill_gap, "ARCHIVE_DIR", Path(d)), \
                 mock.patch.object(backfill_gap, "time") as t:
             t.sleep = lambda *_: None
             import requests as _req
@@ -209,7 +209,7 @@ class TestBackfillWeiboEdge(unittest.TestCase):
         empty.json.return_value = {"data": {"cards": []}}
         with tempfile.TemporaryDirectory() as d, \
                 mock.patch.dict(backfill_gap.os.environ, {}, clear=True), \
-                mock.patch.object(backfill_gap, "PLATFORMS_DIR", Path(d)), \
+                mock.patch.object(backfill_gap, "ARCHIVE_DIR", Path(d)), \
                 mock.patch.object(backfill_gap, "time") as t:
             t.sleep = lambda *_: None
             import requests as _req
@@ -223,7 +223,7 @@ class TestBackfillWeiboEdge(unittest.TestCase):
         # requests.get 抛异常 → except break (356-358)
         with tempfile.TemporaryDirectory() as d, \
                 mock.patch.dict(backfill_gap.os.environ, {}, clear=True), \
-                mock.patch.object(backfill_gap, "PLATFORMS_DIR", Path(d)), \
+                mock.patch.object(backfill_gap, "ARCHIVE_DIR", Path(d)), \
                 mock.patch.object(backfill_gap, "time") as t:
             t.sleep = lambda *_: None
             import requests as _req
@@ -258,7 +258,7 @@ class TestBackfillSteamEdge(unittest.TestCase):
             {"timestamp_created": before_gap, "review": "y", "author": {"steamid": "s2"}},
         ], "cursor": "next"})
         with tempfile.TemporaryDirectory() as d, \
-                mock.patch.object(backfill_gap, "PLATFORMS_DIR", Path(d)), \
+                mock.patch.object(backfill_gap, "ARCHIVE_DIR", Path(d)), \
                 mock.patch.object(backfill_gap, "time") as t:
             t.sleep = lambda *_: None
             import subprocess as sp
@@ -274,7 +274,7 @@ class TestBackfillSteamEdge(unittest.TestCase):
              "author": {"steamid": "s1"}, "votes_up": 5},
         ], "cursor": "*"})  # 与初始 cursor '*' 相同 → break
         with tempfile.TemporaryDirectory() as d, \
-                mock.patch.object(backfill_gap, "PLATFORMS_DIR", Path(d)), \
+                mock.patch.object(backfill_gap, "ARCHIVE_DIR", Path(d)), \
                 mock.patch.object(backfill_gap, "time") as t:
             t.sleep = lambda *_: None
             import subprocess as sp
@@ -299,7 +299,7 @@ class TestCleanupEdge(unittest.TestCase):
             sdir = Path(d) / "reddit"
             sdir.mkdir(parents=True)
             (sdir / "2026-04-15.json").write_text("{broken", encoding="utf-8")
-            with mock.patch.object(backfill_gap, "PLATFORMS_DIR", Path(d)):
+            with mock.patch.object(backfill_gap, "ARCHIVE_DIR", Path(d)):
                 removed = backfill_gap.cleanup_empty_placeholders()
         self.assertEqual(removed, 0)
 

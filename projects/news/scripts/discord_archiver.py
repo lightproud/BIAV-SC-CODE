@@ -204,11 +204,20 @@ class DiscordArchiver:
         return self.data_dir / 'channels' / str(channel_id)[-8:]
 
     def _file_ids(self, file_path: Path) -> set:
-        """Cached set of message IDs already present in a JSONL file (dedup support)."""
+        """Cached set of message IDs already present for this daily file (dedup support).
+
+        gz-aware (2026-07-12 cold-layer ruling): if the date was already
+        cold-compressed to `{date}.jsonl.gz`, its IDs count too — history
+        backfill re-walking a cold month must not duplicate messages into
+        the raw sidecar it appends to.
+        """
         if file_path not in self._file_ids_cache:
             ids: set = set()
-            if file_path.exists():
-                with open(file_path, 'r', encoding='utf-8') as f:
+            gz_path = file_path.with_suffix('.jsonl.gz')
+            for path in (file_path, gz_path):
+                if not path.exists():
+                    continue
+                with archive_layout.open_archive_text(path) as f:
                     for line in f:
                         line = line.strip()
                         if line:
@@ -268,25 +277,40 @@ class DiscordArchiver:
 
     def _save_channel_index(self, channels: list):
         """
-        channel_index.json: full ID → {name (with emoji), type, dir} mapping.
+        channel_index.json: full ID → {name (with emoji), type, dir, status} mapping.
         Full channel names (including emoji) live ONLY here, not in filesystem paths.
+
+        Merge-update (T35, 2026-07-12): entries for channels no longer online are
+        preserved with status 'offline' instead of being dropped — overwrite-style
+        saves were how 498 archive dirs became unindexable orphans.
         """
-        index = {}
+        import discord_reconcile
+        current = {}
         for ch in channels:
             ch_id = str(ch.get('id', ''))
             ch_type = ch.get('type', 0)
             type_label = {0: 'text', 5: 'announcement', 15: 'forum'}.get(ch_type, 'other')
-            index[ch_id] = {
+            current[ch_id] = {
                 'name': ch.get('name', ''),
                 'type': type_label,
                 'parent_id': str(ch.get('parent_id') or ''),
                 'dir': ch_id[-8:],   # quick reference: the storage directory name
             }
         index_path = self.data_dir / 'channel_index.json'
+        existing = {}
+        if index_path.exists():
+            try:
+                existing = json.loads(index_path.read_text(encoding='utf-8'))
+            except (OSError, json.JSONDecodeError):
+                logger.warning('channel_index.json unreadable, rebuilding from scratch')
+        index = discord_reconcile.merge_channel_index(existing, current)
         index_path.parent.mkdir(parents=True, exist_ok=True)
         with open(index_path, 'w', encoding='utf-8') as f:
             json.dump(index, f, ensure_ascii=False, indent=2)
-        logger.info(f'Channel index saved: {len(index)} entries')
+        offline = sum(1 for v in index.values() if v.get('status') == 'offline')
+        orphan = sum(1 for v in index.values() if v.get('status') == 'orphan')
+        logger.info(f'Channel index saved: {len(index)} entries '
+                    f'({len(current)} active / {offline} offline / {orphan} orphan)')
 
     # ── Message processing ───────────────────────────────────────────────────
 
@@ -931,9 +955,14 @@ class DiscordArchiver:
                 'top_reacted_messages': top_reacted,
             }
             file_path = stats_dir / f'{date_str}.json'
-            if file_path.exists():
+            # 冷热分层（2026-07-12）：冷月统计已压 .gz 时以其为底续加——写出的裸旁车
+            # 已含 gz 计数，压冷器对 activity_daily 按「raw 胜出」重压覆盖。
+            existing_path = file_path if file_path.exists() else (
+                file_path.with_suffix('.json.gz')
+                if file_path.with_suffix('.json.gz').exists() else None)
+            if existing_path is not None:
                 try:
-                    with open(file_path, 'r', encoding='utf-8') as f:
+                    with archive_layout.open_archive_text(existing_path) as f:
                         existing = json.load(f)
                     output['messages'] += existing.get('messages', 0)
                     output['unique_authors'] = max(

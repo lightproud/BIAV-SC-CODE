@@ -108,6 +108,58 @@ describe('node-http adapter (unit)', () => {
     }
   });
 
+  it('destroys a free socket after the idle TTL (silent middlebox drops must not leave zombies)', async () => {
+    let connections = 0;
+    const server = createServer((req, res) => {
+      res.writeHead(200);
+      res.end('ok');
+    });
+    server.on('connection', () => { connections += 1; });
+    const base = await listen(server);
+    const nodeFetch = createNodeFetch({ freeSocketTtlMs: 60 });
+    try {
+      await (await nodeFetch(base, {})).text();
+      await new Promise((r) => setTimeout(r, 20));
+      expect((Object.values(nodeFetch.agents.http.freeSockets).flat() as Socket[]).length).toBe(1);
+
+      // Past the TTL the pooled socket is proactively destroyed...
+      await new Promise((r) => setTimeout(r, 120));
+      expect((Object.values(nodeFetch.agents.http.freeSockets).flat() as Socket[]).length).toBe(0);
+
+      // ...and the next request simply opens a fresh connection.
+      await (await nodeFetch(base, {})).text();
+      expect(connections).toBe(2);
+    } finally {
+      await close(server);
+    }
+  });
+
+  it('reuse within the TTL re-arms the timer instead of killing an active line', async () => {
+    let connections = 0;
+    const server = createServer((req, res) => {
+      res.writeHead(200);
+      res.end('ok');
+    });
+    server.on('connection', () => { connections += 1; });
+    const base = await listen(server);
+    const nodeFetch = createNodeFetch({ freeSocketTtlMs: 150 });
+    try {
+      await (await nodeFetch(base, {})).text();
+      await new Promise((r) => setTimeout(r, 80)); // inside the TTL window
+      await (await nodeFetch(base, {})).text(); // reuse: same socket, timer cleared + re-armed
+      expect(connections).toBe(1);
+
+      // The clock restarts from the SECOND release: still alive 80ms later...
+      await new Promise((r) => setTimeout(r, 80));
+      expect((Object.values(nodeFetch.agents.http.freeSockets).flat() as Socket[]).length).toBe(1);
+      // ...and gone once the re-armed TTL lapses.
+      await new Promise((r) => setTimeout(r, 120));
+      expect((Object.values(nodeFetch.agents.http.freeSockets).flat() as Socket[]).length).toBe(0);
+    } finally {
+      await close(server);
+    }
+  });
+
   it('propagates AbortSignal: pre-flight abort rejects, mid-stream abort errors the body', async () => {
     let res: import('node:http').ServerResponse | undefined;
     const server = createServer((req, r) => {
@@ -145,6 +197,33 @@ describe('node-http adapter (unit)', () => {
     expect(resolvePreconnect({ preconnect: false }, { BPT_PRECONNECT: '1' })).toBe(false);
     expect(resolvePreconnect({ preconnect: true }, {})).toBe(true);
     expect(getNodeFetch()).toBe(getNodeFetch()); // process-wide singleton
+  });
+
+  it('proxy env autodetect resolves to fetch unless an explicit choice overrides it (audit 2026-07-14 M-6)', () => {
+    // The node adapter ignores proxy env vars, so a proxy-only environment
+    // must default to the proxiable global fetch (NODE_USE_ENV_PROXY /
+    // setGlobalDispatcher path). Every conventional variable, both cases:
+    for (const name of [
+      'HTTPS_PROXY',
+      'https_proxy',
+      'HTTP_PROXY',
+      'http_proxy',
+      'ALL_PROXY',
+      'all_proxy',
+    ]) {
+      expect(resolveHttpClient({}, { [name]: 'http://proxy:8080' })).toBe('fetch');
+    }
+    // Explicit overrides always win over the autodetect.
+    expect(
+      resolveHttpClient({ httpClient: 'node' }, { HTTPS_PROXY: 'http://proxy:8080' }),
+    ).toBe('node');
+    expect(
+      resolveHttpClient({}, { BPT_HTTP_CLIENT: 'node', HTTPS_PROXY: 'http://proxy:8080' }),
+    ).toBe('node');
+    // Empty-string proxy vars do not count as "set".
+    expect(resolveHttpClient({}, { HTTPS_PROXY: '', http_proxy: '' })).toBe('node');
+    // No proxy vars: the default stays 'node'.
+    expect(resolveHttpClient({}, {})).toBe('node');
   });
 });
 

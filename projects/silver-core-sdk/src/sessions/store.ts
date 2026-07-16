@@ -16,7 +16,16 @@
  * damaged transcript never blocks a resume.
  */
 
-import { appendFileSync, createReadStream, mkdirSync } from 'node:fs';
+import { Buffer } from 'node:buffer';
+import {
+  appendFileSync,
+  closeSync,
+  createReadStream,
+  fstatSync,
+  mkdirSync,
+  openSync,
+  readSync,
+} from 'node:fs';
 import { readFile, readdir, stat } from 'node:fs/promises';
 import { homedir } from 'node:os';
 import { join } from 'node:path';
@@ -254,6 +263,9 @@ export class JsonlSessionStore implements SessionStore {
    *  streaming hot path, 4-5 calls per turn). Reset-and-retried on failure so
    *  an externally removed directory still self-heals. */
   private dirEnsured = false;
+  /** Files whose tail byte was already verified by this instance (torn-tail
+   *  self-heal below — audit 2026-07-14 M-9, mirrors FileSessionStore). */
+  private readonly tailChecked = new Set<string>();
 
   constructor(cfg: JsonlSessionStoreConfig = {}) {
     this.dir = resolveSessionsDir(cfg.sessionDir, cfg.env);
@@ -263,6 +275,30 @@ export class JsonlSessionStore implements SessionStore {
   /** Absolute path of one session's transcript file. */
   filePath(sessionId: string): string {
     return join(this.dir, `${sessionId}${JSONL_EXT}`);
+  }
+
+  /**
+   * True when the file exists, is non-empty and does NOT end in a newline —
+   * i.e. a previous process crashed mid-append and left a torn tail.
+   * Reads ONLY the last byte (append sits on the streaming hot path; never
+   * read the whole file here). Sync twin of FileSessionStore's check.
+   */
+  private endsWithoutNewlineSync(file: string): boolean {
+    let fd: number;
+    try {
+      fd = openSync(file, 'r');
+    } catch {
+      return false; // ENOENT etc.: nothing to heal
+    }
+    try {
+      const size = fstatSync(fd).size;
+      if (size === 0) return false;
+      const buf = Buffer.alloc(1);
+      readSync(fd, buf, 0, 1, size - 1);
+      return buf[0] !== 0x0a;
+    } finally {
+      closeSync(fd);
+    }
   }
 
   /**
@@ -276,20 +312,33 @@ export class JsonlSessionStore implements SessionStore {
       );
       return;
     }
-    const line = `${JSON.stringify(entry)}\n`;
+    const file = this.filePath(sessionId);
+    let line = `${JSON.stringify(entry)}\n`;
     try {
       if (!this.dirEnsured) {
         mkdirSync(this.dir, { recursive: true });
         this.dirEnsured = true;
       }
-      appendFileSync(this.filePath(sessionId), line, 'utf8');
+      // Torn-tail self-heal (audit 2026-07-14 M-9, ported from
+      // FileSessionStore.append): the FIRST append to each file per store
+      // instance checks the file's last byte and, when it is not a newline
+      // (a previous process died mid-append), prefixes this line with '\n'.
+      // Otherwise the fresh record would glue onto the torn tail and BOTH
+      // lines would be lost on load — this way the crash corrupts only
+      // itself, never the next record. A racing double check at worst writes
+      // an extra blank line, which load() skips.
+      if (!this.tailChecked.has(file)) {
+        this.tailChecked.add(file);
+        if (this.endsWithoutNewlineSync(file)) line = `\n${line}`;
+      }
+      appendFileSync(file, line, 'utf8');
     } catch {
       // The directory may have been removed after we ensured it: re-ensure
       // and retry ONCE before giving up (append must never throw).
       try {
         mkdirSync(this.dir, { recursive: true });
         this.dirEnsured = true;
-        appendFileSync(this.filePath(sessionId), line, 'utf8');
+        appendFileSync(file, line, 'utf8');
       } catch (err) {
         this.debug(
           `session store: append failed for ${sessionId}: ${err instanceof Error ? err.message : String(err)}`,
@@ -324,6 +373,15 @@ export class JsonlSessionStore implements SessionStore {
     // segment, turn_complete settles it. Insertion order is preserved so the
     // LAST unsettled entry is the most recent interruption.
     const openPending = new Map<string, string | undefined>();
+    // Finding H2 — read-time uuid dedup (mirrors FileSessionStore.load). A
+    // concurrent cross-host resume can double-materialize the external
+    // transcript into one JSONL (MirroringSessionStore.load appends N entries
+    // per racing loader), which without this dedup replayed the whole
+    // conversation TWICE — the model resumed on a verbatim doubled history and
+    // every later turn compounded it. Every entry carries a unique uuid at
+    // write time, so this is a no-op on a healthy transcript and collapses the
+    // duplicates otherwise (first occurrence wins).
+    const seenUuids = new Set<string>();
 
     const lines = raw.split('\n');
     for (let i = 0; i < lines.length; i += 1) {
@@ -346,6 +404,12 @@ export class JsonlSessionStore implements SessionStore {
         continue;
       }
       const entry = parsed as Record<string, unknown>;
+
+      // Finding H2 — drop a repeated uuid (double-materialized transcript).
+      if (typeof entry.uuid === 'string') {
+        if (seenUuids.has(entry.uuid)) continue;
+        seenUuids.add(entry.uuid);
+      }
 
       if (entry.type === 'meta') {
         if (typeof entry.createdAt === 'number') createdAt = entry.createdAt;
@@ -468,8 +532,12 @@ export class JsonlSessionStore implements SessionStore {
     return sessions;
   }
 
-  /** Meta-only transcript scan backing list(); see the list() doc. */
-  private async loadInfo(sessionId: string): Promise<LoadedSession | null> {
+  /** Meta-only transcript scan backing list() AND getSessionInfo (audit
+   *  2026-07-14 L-14). Public because getSessionInfo only needs the summary-row
+   *  meta (title / timestamps / cwd / tag / branch), never `messages`, so it
+   *  must not pay for load()'s full parse + triple repairPairing. Returns
+   *  `messages: []`; resume paths still go through load(). */
+  async loadInfo(sessionId: string): Promise<LoadedSession | null> {
     if (!isSafeSessionId(sessionId)) return null;
     const file = this.filePath(sessionId);
     let createdAt: number | undefined;
@@ -491,6 +559,12 @@ export class JsonlSessionStore implements SessionStore {
       for await (const rawLine of rl) {
         const line = rawLine.trim();
         if (firstLine) {
+          // Record 1 is the first NON-EMPTY line (mirror isSidechainFile): a
+          // leading blank must not consume the firstLine check, or a sidechain
+          // transcript whose first physical line is blank would slip past this
+          // guard and surface as a resumable main session while latestSessionId
+          // (via isSidechainFile) correctly hides it.
+          if (line.length === 0) continue;
           firstLine = false;
           // A subagent sidechain transcript ({"type":"sidechain_start",...}) is
           // NOT a listable main session — hide it from list()/getSessionInfo so
@@ -520,6 +594,11 @@ export class JsonlSessionStore implements SessionStore {
           if (typeof entry.customTitle === 'string') customTitle = entry.customTitle;
           if (typeof entry.tag === 'string') tag = entry.tag;
           else if (entry.tag === null) tag = undefined;
+          // Mirror load(): a meta_update may carry an updated gitBranch (a
+          // documented meta_update field). Omitting it here made list()/
+          // getSessionInfo report a stale branch while load() reported the new
+          // one for the same session.
+          if (typeof entry.gitBranch === 'string') gitBranch = entry.gitBranch;
         } else if (entry.type === 'pending_turn' && typeof entry.uuid === 'string') {
           openPending.set(
             entry.uuid,
@@ -534,6 +613,12 @@ export class JsonlSessionStore implements SessionStore {
       }
     } catch {
       return null;
+    } finally {
+      // Finding L6 — destroy the read stream on EVERY exit (the sidechain
+      // early-return and the catch both leave readline's underlying fd open;
+      // list() calls loadInfo per *.jsonl, so a dir of sidechain transcripts
+      // leaked one fd each toward the process limit). Mirrors isSidechainFile.
+      stream.destroy();
     }
     let lastModified = createdAt ?? Date.now();
     try {
@@ -708,7 +793,11 @@ export async function getSessionInfo(
   options: SessionListOptions = {},
 ): Promise<SDKSessionInfo | undefined> {
   const store = new JsonlSessionStore(resolveSessionDir(options));
-  const loaded = await store.load(sessionId);
+  // audit 2026-07-14 L-14: the summary row (toSessionInfo) reads only meta
+  // fields, never `messages`, so use the meta-only streaming scan instead of a
+  // full load() + triple repairPairing. Aligns with listSessions, which
+  // already sources its rows from loadInfo.
+  const loaded = await store.loadInfo(sessionId);
   if (loaded === null) return undefined;
   let fileSize: number | undefined;
   try {

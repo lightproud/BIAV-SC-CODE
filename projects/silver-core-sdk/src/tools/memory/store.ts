@@ -93,7 +93,18 @@ export function fileTooLargeError(path: string, maxFileBytes: number): string {
   return `Error: File ${path} would exceed the maximum memory file size (${maxFileBytes} bytes)`;
 }
 export function directoryFullError(dir: string, maxFiles: number): string {
-  return `Error: Directory ${dir} already contains the maximum number of memory files (${maxFiles})`;
+  // The reference prefix is preserved verbatim; the guidance tail is appended
+  // so a model that hits the cap knows how to self-organize instead of retrying
+  // create in a loop. The limit is per-directory and blocks ONLY new-file
+  // creation — spelling that out here is the point (edits/deletes still work).
+  return (
+    `Error: Directory ${dir} already contains the maximum number of memory files ` +
+    `(${maxFiles}). This limit is per-directory and blocks only new-file creation; ` +
+    `str_replace, insert, delete, and rename on existing files still work. To make ` +
+    `room: consolidate related files into fewer entries, delete stale files, or ` +
+    `create this file under a new subdirectory of ${dir} (each subdirectory has its ` +
+    `own separate limit).`
+  );
 }
 export function viewTruncationNotice(maxViewChars: number): string {
   return `[Output truncated at ${maxViewChars} characters. Use the view_range parameter to view the rest of the file.]`;

@@ -25,7 +25,7 @@ export type DayAggregate = {
   /** Fault counters summed by cause; null when no record carried the ledger. */
   transport: Record<string, number> | null;
   transportFaultTotal: number | null;
-  unrecovered: number;
+  unrecovered: number | null;
   tokens: {
     input: number;
     output: number;
@@ -67,6 +67,12 @@ export async function aggregateDay(logDir: string, date: string): Promise<DayAgg
   }
   const from = new Date(`${date}T00:00:00.000Z`);
   const to = new Date(`${date}T23:59:59.999Z`);
+  // Shape safety (audit 2026-07-14 M-12): this aggregation duplicates
+  // runtime-report.ts's (L-7) and dereferences the same nested fields
+  // (r.usage.*, r.total_cost_usd, r.transport_health, r.per_tool). Both
+  // consumers are guarded at the shared readWindow choke point — its
+  // isRunLogRecord() validator diverts wrong-shape lines into the bad-line
+  // counter, so every record that reaches this loop is safe to dereference.
   const { records } = await readWindow(logDir, from, to);
 
   const named = records.filter((r) => r.incognito !== true);
@@ -74,9 +80,13 @@ export async function aggregateDay(logDir: string, date: string): Promise<DayAgg
 
   const transportRecords = records.filter((r) => r.transport_health !== undefined);
   let transport: Record<string, number> | null = null;
-  let unrecovered = 0;
+  // Absence is a fact, not a zero: with no transport signal, unrecovered is
+  // 无数据 (null), NOT "0 unrecovered" — mirroring transportFaultTotal, which
+  // this same block leaves null when there are no transport records.
+  let unrecovered: number | null = null;
   if (transportRecords.length > 0) {
     transport = {};
+    unrecovered = 0;
     for (const r of transportRecords) {
       let faults = 0;
       for (const [k, v] of Object.entries(r.transport_health!)) {

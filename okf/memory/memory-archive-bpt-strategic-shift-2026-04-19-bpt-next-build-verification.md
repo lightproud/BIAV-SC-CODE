@@ -4,7 +4,7 @@ title: "BPT-NEXT 构建与诊断验证报告"
 description: "cd projects/bpt-next/rust"
 resource: "/memory/archive/bpt-strategic-shift-2026-04-19/bpt-next-build-verification.md"
 tags: ["memory", "data_layer:curated", "archive", "frozen-snapshot", "bpt"]
-timestamp: "2026-07-12"
+timestamp: "2026-07-16"
 ---
 
 # 记忆层指针

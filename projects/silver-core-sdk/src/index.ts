@@ -26,6 +26,40 @@ export type {
 // SessionManagerOptions / SessionManagerUsage types ride the types.js export).
 export { createBptSession, runConcurrent } from './session-manager.js';
 export type { ManagedTask, RunConcurrentOutcome } from './session-manager.js';
+// BPT-EXTENSION: /loop interval-loop primitive (parser is the grammar's
+// single source of truth; the controller drives a host-owned runner on a
+// fixed-delay cadence — see src/prompt-loop.ts module header).
+export {
+  createPromptLoop,
+  parseLoopCommand,
+  DEFAULT_LOOP_INTERVAL_MS,
+  DEFAULT_LOOP_INTERVAL_LABEL,
+  MIN_LOOP_INTERVAL_MS,
+  MAX_LOOP_INTERVAL_MS,
+  LOOP_SLASH_COMMAND,
+} from './prompt-loop.js';
+export type {
+  LoopCommandParse,
+  LoopDirective,
+  LoopErrorDecision,
+  LoopStopReason,
+  PromptLoopController,
+  PromptLoopOptions,
+  PromptLoopSummary,
+} from './prompt-loop.js';
+// BPT-EXTENSION: /goal session-goal primitive (the surface companion to the
+// engine's Stop-hook block semantics — parser + goal manager producing the
+// Stop matcher; see src/hooks/session-goal.ts module header for the deliberately
+// inverted failure direction).
+export { createSessionGoal, parseGoalCommand, GOAL_SLASH_COMMAND } from './hooks/session-goal.js';
+export type {
+  GoalCommandAction,
+  GoalCommandOutcome,
+  GoalCommandParse,
+  SessionGoal,
+  SessionGoalEvent,
+  SessionGoalOptions,
+} from './hooks/session-goal.js';
 // Built-in durable session store (SM-乙a): fileSessionStore(dir) for the
 // SessionManager's `store` option and options.sessionStore recovery.
 export { FileSessionStore, fileSessionStore } from './sessions/file-store.js';
@@ -231,6 +265,12 @@ export {
   COORDINATOR_WORKER_PROVENANCE,
 } from './subagents/agents.js';
 export {
+  // Cross-protocol subagent transport routing (2026-07-13): the standard
+  // Options.resolveSubagentTransport implementation.
+  createSubagentTransportResolver,
+} from './subagents/transport-resolver.js';
+export type { SubagentTransportResolverOptions } from './subagents/transport-resolver.js';
+export {
   AbortError,
   APIConnectionError,
   APIStatusError,
@@ -241,6 +281,18 @@ export {
   isAbortError,
 } from './errors.js';
 export type { ErrorCode, McpErrorCode, McpPhase, McpTransportKind } from './errors.js';
+export {
+  normalizeProviderError,
+  normalizeRetry,
+  isRetryableHttpStatus,
+  extractProviderErrorObject,
+  looksLikeErrorObject,
+} from './error-normalize.js';
+export type {
+  NormalizedProviderError,
+  NormalizeContext,
+  RetryLike,
+} from './error-normalize.js';
 export type * from './types.js';
 // Official tool input/output schema types (ToolInputSchemas / ToolOutputSchemas
 // and their members) — the drop-in consumer surface for typed tool interactions.

@@ -1,8 +1,8 @@
 {
   "date": "2026-06-27",
-  "archived_at": "2026-06-28T15:16:52.960042+00:00",
+  "archived_at": "2026-07-12T03:52:12.071008+00:00",
   "source": "bilibili",
-  "item_count": 20,
+  "item_count": 22,
   "items": [
     {
       "title": "【忘却前夜】2.5.2版本福利&amp;活动&amp;卡池&amp;氪金杂谈",
@@ -463,6 +463,36 @@
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
+    },
+    {
+      "title": "【忘却前夜】羊皮珊1t容灾5-5",
+      "summary": "把墨菲优化了，打单t盾会溢出，长线请坚持选择我们的小蛋糕",
+      "source": "bilibili",
+      "platform_region": "cn",
+      "lang": "zh",
+      "time": "2026-06-27T06:39:49+00:00",
+      "url": "http://www.bilibili.com/video/av116820694534436",
+      "engagement": 251,
+      "is_hot": false,
+      "author": "璃っ亓",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "【忘却前夜】7.13-8.10三相池抽取建议",
+      "summary": "别看了，这里还是什么都没有喵",
+      "source": "bilibili",
+      "platform_region": "cn",
+      "lang": "zh",
+      "time": "2026-06-26T18:31:00+00:00",
+      "url": "http://www.bilibili.com/video/av116817825700698",
+      "engagement": 10268,
+      "is_hot": true,
+      "author": "花岚天音Amane",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
     }
   ]
 }

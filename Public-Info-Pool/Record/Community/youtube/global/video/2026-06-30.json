@@ -1,8 +1,8 @@
 {
   "date": "2026-06-30",
-  "archived_at": "2026-07-01T09:37:16.199239+00:00",
+  "archived_at": "2026-07-12T03:50:58.546974+00:00",
   "source": "youtube",
-  "item_count": 38,
+  "item_count": 39,
   "items": [
     {
       "title": "[Morimens] Pontos  - Stream after video",
@@ -649,8 +649,21 @@
       "content_type": "video",
       "region": "global",
       "archive_subtype": "video"
+    },
+    {
+      "title": "忘卻前夜 歡愉專列 困難 尾王 超維之蛹 龐托斯血海隊",
+      "summary": "",
+      "source": "youtube",
+      "platform_region": "global",
+      "lang": "",
+      "time": "2026-06-29T20:20:20Z",
+      "url": "https://www.youtube.com/watch?v=gu1AJCgKBIE",
+      "engagement": 28,
+      "is_hot": false,
+      "author": "clicking",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
     }
-  ],
-  "region": "global",
-  "content_subtype": "video"
+  ]
 }

@@ -92,6 +92,21 @@ Pick the mode by the shape of the work — this mirrors how Claude Code delegate
 | Long-running work; don't block the main turn | **background** (depth-0 only) | `run_in_background: true`; the result arrives on a later turn |
 | Several agents that MUTATE files in parallel without clobbering each other | **worktree** | `isolation: 'worktree'` — each gets a temporary git worktree, auto-removed if left unchanged |
 
+Foreground `Agent` calls batched in one assistant turn run **concurrently**:
+the tool is `parallelSafe` (each child runs its own isolated loop), so the
+engine groups the batch under one `Promise.all` like read-only tools instead
+of awaiting one child at a time. Background exists to not block the *turn* —
+it is not a prerequisite for parallelism within the batch.
+
+Each spawned child also gets its **own persistent Bash cwd/env namespace**,
+seeded from the parent's snapshot at spawn time (audit 2026-07-14 M-10): the
+child starts where the parent's last foreground Bash left off, but its own
+`cd` / `export` mutations stay private — they never replay into a concurrent
+batch-mate's next Bash call, nor back into the parent's. The
+**background-shell registry stays query-wide** on purpose: children list,
+read (`BashOutput`/`TaskOutput`) and stop (`KillShell`/`TaskStop`) the same
+background shells as the root loop.
+
 Delegation discipline (reproduced from the official main-loop prompt — have your
 host follow it):
 
@@ -148,6 +163,13 @@ non-existent capability.
   isolated child with a `tools` allowlist for that.
 - **The child sees only the `prompt`,** not the conversation. An underspecified
   prompt yields an underspecified result.
+- **Stopping a FOREGROUND child** (`query.stopTask(agentId)` or `TaskStop`
+  with its agentId) aborts only that child: its record reads `killed`, the
+  notification says "foreground subagent ... stopped", and the spawning
+  `Agent` call resolves to an error tool result ("stopped") so the parent
+  turn continues (audit 2026-07-14 M-11). A parent-side abort
+  (`interrupt()` / query close) still propagates as an abort — it cancels
+  the parent, not just the child.
 - **Bare model aliases 400 on your gateway** (§3). Pass full ids.
 
 ## 7. Worked example

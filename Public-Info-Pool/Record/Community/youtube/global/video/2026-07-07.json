@@ -1,8 +1,8 @@
 {
   "date": "2026-07-07",
-  "archived_at": "2026-07-08T12:23:29.235076+00:00",
+  "archived_at": "2026-07-12T03:50:58.542153+00:00",
   "source": "youtube",
-  "item_count": 34,
+  "item_count": 35,
   "items": [
     {
       "title": "Morimens \\\\ Прохождение д-зоны от 06.07.26",
@@ -581,8 +581,21 @@
       "content_type": "video",
       "region": "global",
       "archive_subtype": "video"
+    },
+    {
+      "title": "忘卻前夜 融災首領戰2回合爆打觸鬚頭大法師",
+      "summary": "",
+      "source": "youtube",
+      "platform_region": "global",
+      "lang": "",
+      "time": "2026-07-07T02:36:43Z",
+      "url": "https://www.youtube.com/watch?v=m7ztm1VlNbo",
+      "engagement": 12,
+      "is_hot": false,
+      "author": "黃金大西瓜",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
     }
-  ],
-  "region": "global",
-  "content_subtype": "video"
+  ]
 }

@@ -8,6 +8,10 @@
  * never rename or reuse a published code.
  */
 
+// Type-only import (erased at emit): carries no runtime dependency, so the
+// errors module stays import-cycle-free.
+import type { ModelUsage, NonNullableUsage } from './types.js';
+
 /** Stable machine-readable codes for MCP subsystem failures (`McpError`). */
 export type McpErrorCode =
   /** A server did not finish connect+listTools within the connect timeout. */
@@ -53,16 +57,46 @@ export type ErrorCode =
    *  concurrent fan-out). The transport retries internally; this code surfaces
    *  only after the retry budget is exhausted. */
   | 'empty_stream'
+  /** HTTP 200 that emitted message_start but delivered NO content AND no
+   *  terminal message_delta.stop_reason (the API always sends stop_reason
+   *  before message_stop). A degraded turn: NOT retried (a started stream is
+   *  not replay-safe) and NOT finalized as a silent empty success — surfaced
+   *  so the engine reports error_during_execution (keeper ruling 2026-07-13,
+   *  BPT "空 stopReason 轮次"). */
+  | 'empty_message'
   | 'api_status_error'
   | 'not_implemented'
   | 'config_invalid'
   | 'memory_tool_error'
   | McpErrorCode;
 
+/**
+ * audit 2026-07-14 L-6: partial accounting of an engine run that an abort cut
+ * short. The aborted run's already-billed usage (message_start input tokens,
+ * any completed intermediate turns) never reaches a result message — results
+ * are not emitted on abort — so the engine loop attaches what it knows at
+ * abort time and the query layer folds it into its SessionAccounting.
+ */
+export type AbortedRunAccounting = {
+  usage: NonNullableUsage;
+  totalCostUsd: number;
+  durationApiMs: number;
+  numTurns: number;
+  modelUsage: Record<string, ModelUsage>;
+};
+
 /** Thrown when an operation is aborted via AbortController/interrupt(). */
 export class AbortError extends Error {
   override name = 'AbortError';
   readonly code: ErrorCode = 'aborted';
+  /**
+   * audit 2026-07-14 L-6: set by the engine loop when a run is aborted after
+   * usage was already billed (e.g. a turn-level interrupt() that lands after
+   * message_start reported input tokens). Absent when nothing was billed or
+   * the abort happened outside an engine run. The query layer folds this into
+   * its session accounting so an interrupted turn's spend is not lost.
+   */
+  abortedRunAccounting?: AbortedRunAccounting;
   constructor(message = 'The operation was aborted') {
     super(message);
   }
@@ -98,6 +132,7 @@ export class APIConnectionError extends Error {
       | 'stream_idle_timeout'
       | 'stream_max_duration'
       | 'empty_stream'
+      | 'empty_message'
     > = 'api_connection_failed',
   ) {
     super(message);
@@ -105,18 +140,41 @@ export class APIConnectionError extends Error {
   }
 }
 
-/** Non-2xx response from the Messages API. */
+/** Non-2xx response from the Messages API (or an in-stream error frame). */
 export class APIStatusError extends Error {
   override name = 'APIStatusError';
   readonly code: ErrorCode = 'api_status_error';
+  /**
+   * The provider/gateway's OWN machine code slug when the error body carried
+   * one — e.g. a gateway `{ error: { code: 'model_overloaded' } }`. Distinct
+   * from `errorType` (the Anthropic-vocabulary type the transport normalizes
+   * to) and from `code` (this SDK's stable ErrorCode). Append-only field; the
+   * error-normalization layer prefers it over `errorType` when present.
+   */
+  readonly providerErrorCode?: string;
+  /**
+   * Milliseconds the server asked us to wait before retrying (parsed
+   * Retry-After), carried onto the terminal error so the normalized error can
+   * surface `retryAfterMs` even after the transport's retry budget is spent.
+   */
+  readonly retryAfterMs?: number;
   constructor(
     readonly status: number,
     readonly errorType: string,
     message: string,
-    readonly requestId?: string,
+    requestId?: string,
+    extra?: { providerErrorCode?: string; retryAfterMs?: number },
   ) {
     super(message);
+    this.requestId = requestId;
+    if (extra?.providerErrorCode !== undefined) {
+      this.providerErrorCode = extra.providerErrorCode;
+    }
+    if (extra?.retryAfterMs !== undefined) this.retryAfterMs = extra.retryAfterMs;
   }
+
+  /** Upstream request id (body `request_id`/`requestId` or `x-request-id` header). */
+  readonly requestId?: string;
 }
 
 /** Feature accepted for type compatibility but not implemented in this version. */

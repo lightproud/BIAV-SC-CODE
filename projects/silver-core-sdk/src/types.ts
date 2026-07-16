@@ -13,6 +13,12 @@
 
 import type { Readable, Writable } from 'node:stream';
 
+import type { NormalizedProviderError } from './error-normalize.js';
+
+/** Re-export so consumers can `import type { NormalizedProviderError }` from the
+ *  package root alongside the rest of the SDK message surface. */
+export type { NormalizedProviderError } from './error-normalize.js';
+
 // ---------------------------------------------------------------------------
 // Anthropic Messages API wire types (minimal independent subset)
 // ---------------------------------------------------------------------------
@@ -39,6 +45,14 @@ export type NonNullableUsage = {
   output_tokens: number;
   cache_creation_input_tokens: number;
   cache_read_input_tokens: number;
+  /**
+   * Server-side web-search call count carried through from the wire
+   * `usage.server_tool_use.web_search_requests` (normalizeUsage populates it).
+   * Optional so the various zeroUsage() factories can omit it (treated as 0);
+   * without this field the count is stripped before recordUsage and the
+   * official-surface ModelUsage.webSearchRequests is permanently 0.
+   */
+  web_search_requests?: number;
 };
 
 export type ModelUsage = {
@@ -61,7 +75,8 @@ export type ModelUsage = {
   /**
    * Max output tokens in force for requests to this model (REQUIRED on the
    * official surface). This engine reports the ACTUAL per-request `max_tokens`
-   * cap it sends (provider.maxOutputTokens ?? 8192) — an honest runtime value,
+   * cap it sends (provider.maxOutputTokens, defaulting by protocol: 8192 on
+   * 'anthropic', 128000 on 'openai-chat') — an honest runtime value,
    * NOT the model's theoretical output ceiling (no public per-model
    * max-output table is bundled). Optional during the transition (same
    * subagent-ledger caveat as contextWindow).
@@ -750,6 +765,18 @@ export type HookCallbackMatcher = {
    * path, zero model calls.
    */
   condition?: string;
+  /**
+   * BPT-EXTENSION (audit 2026-07-14 M-1): per-matcher failure policy for THIS
+   * matcher's callbacks, overriding Options.hookFailureMode when set. The
+   * global default stays 'open' (official drop-in parity), which means a
+   * crashed or timed-out callback is treated as "no opinion" — a security
+   * PreToolUse hook that WOULD have denied silently stops denying. Marking
+   * the security-critical matcher 'closed' turns its callback failures into a
+   * deny (fail safe) without changing behavior for every other hook; 'open'
+   * likewise wins over a global 'closed' for a best-effort matcher. Omitted
+   * -> the global setting applies.
+   */
+  failureMode?: 'open' | 'closed';
   hooks: HookCallback[];
   /** Timeout in seconds for each callback (default 60). */
   timeout?: number;
@@ -1099,6 +1126,18 @@ export type ProviderConfig = {
    * source); no credential rides the probe.
    */
   preconnect?: boolean;
+  /**
+   * Per-request output-token cap (`max_tokens` / the configured
+   * maxTokensParam on the wire). Default is protocol-aware: 8192 on
+   * 'anthropic' (that API 400s a cap above the model's output ceiling and no
+   * per-model table is bundled), 128000 on 'openai-chat' (BPT ruling
+   * 2026-07-14 — agentic turns on large-output gateway models were starved
+   * at 8192). A model/gateway whose ceiling is lower rejects the request
+   * with a clear surfaced APIStatusError; set this explicitly to match your
+   * endpoint. Note: compaction budgets derive from `contextWindow -
+   * maxOutputTokens`, so a cap at/above the model's context window disables
+   * compaction (logged, not silent).
+   */
   maxOutputTokens?: number;
   /** Automatic prompt caching via cache_control breakpoints; default true. */
   promptCaching?: boolean;
@@ -1112,6 +1151,106 @@ export type ProviderConfig = {
    */
   cacheTtl?: '5m' | '1h';
 };
+
+/**
+ * Opaque handle to the SDK's internal Transport contract (BPT-EXTENSION,
+ * cross-protocol subagent routing 2026-07-13). The public type surface cannot
+ * import `internal/contracts.ts` (contracts imports types.ts — a cycle), so
+ * this structural stand-in carries transports across the
+ * `resolveSubagentTransport` boundary. Treat values as opaque: obtain them
+ * from `input.parentTransport` or `createSubagentTransportResolver()`; the
+ * real internal Transport satisfies this shape.
+ */
+export interface SubagentTransportHandle {
+  stream(req: never): AsyncGenerator<unknown, void>;
+  apiKeySource(): ApiKeySource;
+  /** Optional resource release (idle connection pools etc.). The built-in
+   *  transports self-clean (unref'd keep-alive sockets with a TTL) and do not
+   *  implement it; a custom transport may. Called by the subagent runtime at
+   *  query teardown for resolutions returned with `owned: true`. */
+  dispose?(): void;
+}
+
+/**
+ * What `resolveSubagentTransport` returns for one isolated-subagent spawn
+ * (BPT-EXTENSION, cross-protocol subagent routing 2026-07-13).
+ */
+export type SubagentTransportResolution = {
+  /** Transport the child loop must drive. Return the parent's own instance
+   *  (or `undefined` from the resolver) to share it. */
+  transport: SubagentTransportHandle;
+  /**
+   * True hands the transport's lifecycle to the subagent runtime: its
+   * `dispose()` (when implemented) is called once at query teardown, after
+   * every child settled. False (default) means the host owns it — e.g. an
+   * instance memoized across spawns. Children NEVER dispose a shared parent
+   * transport regardless of this flag.
+   */
+  owned?: boolean;
+  /** Wire protocol of `transport`, for the spawn log line only. */
+  protocol?: 'anthropic' | 'openai-chat';
+  /**
+   * Thinking config for the child. Omitted + transport SWITCHED + child model
+   * id without 'claude' -> the runtime safely drops the inherited thinking
+   * config (a Claude-shaped `thinking` param sent to a non-Claude model is
+   * gateway-rejected more often than honored). Omitted + transport shared ->
+   * the parent config is inherited unchanged (existing behavior). NOTE this
+   * value is the config-level INTENT: the engine still fits the wire form to
+   * the live child model per turn (computeThinking — adaptive vs
+   * budget_tokens), exactly as it does for the main loop's Options.thinking.
+   */
+  thinking?: ThinkingConfigParam;
+  /** Child maxThinkingTokens; same defaulting rules as `thinking`. */
+  maxThinkingTokens?: number;
+  /** Child promptCaching; inherited from the parent when omitted. */
+  promptCaching?: boolean;
+};
+
+/** Input handed to `resolveSubagentTransport` for one internal model call. */
+export type SubagentTransportRequest = {
+  /** Fully resolved child model id (per-call override / agentDef.model /
+   *  parent fallback, aliases expanded). */
+  model: string;
+  /**
+   * Which internal call is asking (v0.55.0): 'subagent' (isolated child
+   * spawn), 'utility' (generator calls, e.g. hook `condition` evaluation on
+   * the default Haiku-tier utility model), or 'compaction' (the summarizer
+   * when `compaction.model` differs from the session model). The standard
+   * resolver routes purely by model; hosts may branch on this for logging or
+   * per-purpose policy.
+   */
+  purpose: 'subagent' | 'utility' | 'compaction';
+  /** The live parent model id. */
+  parentModel: string;
+  /** Wire protocol of the parent transport. */
+  parentProtocol: 'anthropic' | 'openai-chat';
+  parentTransport: SubagentTransportHandle;
+  /** The query's provider config (undefined when the caller passed none). */
+  parentProvider?: ProviderConfig;
+  /** The query's resolved env (credential/base-URL fallback chains). */
+  env: Record<string, string | undefined>;
+  /** Always false in v1: forks NEVER consult the resolver (a fork's cached
+   *  prefix requires the parent model + transport). Field kept so the shape
+   *  is forward-compatible should that ever loosen. */
+  fork: boolean;
+  debug: (msg: string) => void;
+};
+
+/**
+ * Host callback resolving the transport an ISOLATED subagent drives
+ * (BPT-EXTENSION, cross-protocol subagent routing 2026-07-13). Called once
+ * per isolated spawn AFTER the child model is resolved; never called for
+ * forks. Return `undefined` to share the parent transport (the default when
+ * the option is absent — existing single-protocol behavior is unchanged).
+ * `createSubagentTransportResolver()` builds the common implementation from a
+ * model->protocol routing table with per-protocol transport memoization.
+ */
+export type SubagentTransportResolver = (
+  input: SubagentTransportRequest,
+) =>
+  | SubagentTransportResolution
+  | undefined
+  | Promise<SubagentTransportResolution | undefined>;
 
 /**
  * Bash sandbox configuration (BPT-shaped object form of Options.sandbox).
@@ -1548,6 +1687,8 @@ export type Options = {
    * silently stops denying. 'closed': the failure contributes a deny, so
    * hook-enforced policy fails safe (tool calls block while the hook is
    * broken). Cancellation via the caller's signal is never treated as a deny.
+   * A matcher-level HookCallbackMatcher.failureMode overrides this global
+   * setting for that matcher's callbacks (audit 2026-07-14 M-1).
    */
   hookFailureMode?: 'open' | 'closed';
   /** v0.4: surface hook execution as system/hook_started + system/
@@ -1608,6 +1749,21 @@ export type Options = {
   persistSession?: boolean;
   /** BPT extension: direct Messages API connection settings. */
   provider?: ProviderConfig;
+  /**
+   * BPT-EXTENSION (cross-protocol subagent routing, 2026-07-13): resolve the
+   * transport an ISOLATED subagent drives when its resolved model needs a
+   * different wire protocol than the parent (e.g. an openai-chat parent
+   * spawning a child model only served on the gateway's Anthropic route —
+   * previously the child rode the parent transport unconditionally and the
+   * gateway 400'd "model not found"). Absent -> children share the parent
+   * transport (existing behavior). Forks never consult it. See
+   * `createSubagentTransportResolver()` for the standard implementation.
+   * Since v0.55.0 the same callback also routes the OTHER internal calls that
+   * target a non-session model — utility generator calls (hook `condition`
+   * evaluation) and the compaction summarizer — distinguished by
+   * `input.purpose`.
+   */
+  resolveSubagentTransport?: SubagentTransportResolver;
   /**
    * Bash sandbox (G-SANDBOX). Default ON when a backend resolves (bubblewrap
    * on Linux); on platforms with no backend (win32/darwin) Bash runs
@@ -1715,6 +1871,8 @@ export type Options = {
   debugFile?: string;
   /** BPT extension: context-compaction tuning (see docs/COMPAT.md). */
   compaction?: CompactionOptions;
+  /** BPT extension: disconnect-resilience tuning (see docs/RESILIENCE.md). */
+  resilience?: ResilienceOptions;
   /** Require the final answer to be JSON validating against a JSON Schema;
    *  the validated object is returned on the result as `structured_output`. */
   outputFormat?: OutputFormatConfig;
@@ -1986,7 +2144,17 @@ export type TerminalReason =
   | 'rapid_refill_breaker'
   | 'prompt_too_long'
   | 'image_error'
-  | 'model_error';
+  | 'model_error'
+  // NEW-IN-DOCS (official 0.3.207 chase, 2026-07-13): the union gained six
+  // members with zero exported-symbol change on the tarball. Typed for
+  // drop-in exhaustiveness; typed-not-populated here (this field carries no
+  // engine emission site — see the grep in the 0.3.207 diff report).
+  | 'api_error'
+  | 'malformed_tool_use_exhausted'
+  | 'budget_exhausted'
+  | 'structured_output_retry_exhausted'
+  | 'tool_deferred_unavailable'
+  | 'turn_setup_failed';
 
 /** NEW-IN-DOCS: fast-mode state on the result. typed-not-populated. */
 export type FastModeState = 'on' | 'off' | 'cooldown';
@@ -2070,6 +2238,15 @@ export type SDKResultMessage =
        * Absent for codeless failures and on non-error results.
        */
       error_code?: string;
+      /**
+       * Unified normalized upstream error (error normalization 2026-07-14).
+       * Present when the run ended on an actual provider/transport failure
+       * (`error_during_execution`); carries status / code / provider / model /
+       * requestId / retryable in a STABLE shape so a host never has to parse
+       * errorMessage or duck-type a raw gateway object. Absent for
+       * max-turns / budget / refusal / structured-retry stops.
+       */
+      providerError?: NormalizedProviderError;
       /** Time to first token (ms); only present when a token actually arrived. */
       ttft_ms?: number;
       ttft_stream_ms?: number;
@@ -2393,6 +2570,10 @@ export type SDKRateLimitEvent = {
   limit_type?: 'api' | 'token' | 'requests';
   /** @deprecated Pre-alignment flat field; never populated. */
   requests_remaining?: number;
+  /** Unified normalized upstream error for this 429 (error normalization
+   *  2026-07-14): stable status/code/provider/model/requestId/retryAfterMs the
+   *  host can consume without parsing. Additive. */
+  providerError?: NormalizedProviderError;
 };
 
 /** @deprecated Use the official export name SDKRateLimitEvent (v0.7 spelling
@@ -2400,7 +2581,8 @@ export type SDKRateLimitEvent = {
 export type SDKRateLimitEventMessage = SDKRateLimitEvent;
 
 /** An API call is being retried. EMITTED (v0.3) via the transport's onRetry
- *  observer on each non-429 (5xx/network) retry. */
+ *  observer on each non-429 (5xx/network) retry, and by the engine's bounded
+ *  turn-replay. */
 export type SDKAPIRetryMessage = {
   type: 'api_retry';
   uuid: string;
@@ -2409,6 +2591,19 @@ export type SDKAPIRetryMessage = {
   max_retries: number;
   status?: number;
   reason?: string;
+  /** Whether the failure being retried is retryable (always true on an emitted
+   *  api_retry — a retry is in progress). Additive (error normalization
+   *  2026-07-14). */
+  retryable?: boolean;
+  /** Retries left in this budget after the current one. Additive. */
+  retry_remaining?: number;
+  /** Short machine reason for the retry (error type / kind / http_<status> /
+   *  turn_replay:<code>). Additive. */
+  retry_reason?: string;
+  /** Unified normalized upstream error for this retry: stable status / code /
+   *  provider / model / requestId the host can consume without parsing.
+   *  Additive. */
+  providerError?: NormalizedProviderError;
 };
 
 /** @deprecated Use the official export name SDKAPIRetryMessage (v0.7
@@ -2542,6 +2737,12 @@ export type PromptComposition = {
   messages: { estTokens: number; count: number };
   /** Sum of every bucket above. */
   totalEstTokens: number;
+  /** EXACT wire-content byte sizes (UTF-8), complementary to the token
+   *  estimates above (BPT-EXTENSION 2026-07-12). Unlike estTokens these are
+   *  not estimates — they measure the assembled request's actual bytes, which
+   *  a host sizing against a byte envelope (or a byte-precise panel) needs.
+   *  `system` is the whole system field; `total` is system+toolDefs+messages. */
+  bytes: { system: number; toolDefs: number; messages: number; total: number };
 };
 
 /** 需求 B: one cache_control breakpoint and the estimated size of the prefix
@@ -2720,6 +2921,23 @@ export type OutputFormatConfig = {
   /** Also send the schema on the wire as `output_config.format` (server-side
    *  guarantee, supported models only). Absent/false -> local-only (default). */
   native?: boolean;
+};
+
+/** BPT extension: disconnect-resilience tuning (docs/RESILIENCE.md). */
+export type ResilienceOptions = {
+  /**
+   * How a MID-STREAM truncation (a connection drop after partial content, or
+   * the streamMaxDurationMs hard cap) is resolved:
+   * - 'accept' (default): keep the whole blocks delivered so far as the turn's
+   *   answer — the official 2.1.201 salvage semantics (drop-in). A truncated
+   *   final message surfaces as a partial answer.
+   * - 'continue': do NOT accept the partial; re-drive the turn through the
+   *   bounded replay so the model produces a COMPLETE answer. Because the
+   *   replay is a fresh turn there is no duplicated prefix. Costs one (or more)
+   *   extra turn(s) within TURN_REPLAY_LIMIT; a persistently truncating turn
+   *   still degrades to the error path once replays exhaust.
+   */
+  salvageMode?: 'accept' | 'continue';
 };
 
 /** BPT extension: context-compaction tuning. When the running request

@@ -11,6 +11,7 @@ import fg from 'fast-glob';
 import { promises as fs } from 'node:fs';
 import * as path from 'node:path';
 import { AbortError } from '../errors.js';
+import { guardRegexPattern } from '../internal/regex-guard.js';
 import { GREP_DESCRIPTION } from './descriptions.js';
 import type {
   BuiltinTool,
@@ -75,6 +76,18 @@ function extensionsForType(patterns: string[]): Set<string> {
     if (dot >= 0) exts.add(p.slice(dot).toLowerCase());
   }
   return exts;
+}
+
+// ripgrep glob semantics: a pattern with no slash matches at ANY depth
+// (gitignore-style), so `-g '*.ts'` finds nested files. fast-glob instead
+// anchors a bare `*.ts` to the search root, silently missing nested matches —
+// the exact `*.js`-style example this tool's own description advertises. So a
+// slash-less positive pattern gets a globstar prefix to restore ripgrep depth
+// semantics; patterns that already carry a slash, or a leading `!` negation,
+// are left as authored.
+function normalizeGlobDepth(glob: string): string {
+  if (glob.includes('/') || glob.startsWith('!')) return glob;
+  return `**/${glob}`;
 }
 
 /** Offsets (into the raw text) where each line starts. */
@@ -337,6 +350,18 @@ export const grepTool: BuiltinTool = {
     let flags = 'm';
     if (caseInsensitive) flags += 'i';
     if (multiline) flags += 's';
+    // ReDoS guard (audit 2026-07-14 M-2, shared with hooks/matcher.ts): the
+    // model-supplied pattern runs synchronously over up to 10MB per file, so a
+    // catastrophic-backtracking pattern would freeze the event loop with no
+    // timeout or AbortSignal able to interrupt it. Rejected patterns come back
+    // as a descriptive tool error the model can rephrase — never a throw.
+    const guardReason = guardRegexPattern(pattern);
+    if (guardReason !== null) {
+      return {
+        content: `Grep: unsafe regular expression rejected: ${guardReason}.`,
+        isError: true,
+      };
+    }
     try {
       void new RegExp(pattern, flags);
     } catch (err) {
@@ -359,7 +384,9 @@ export const grepTool: BuiltinTool = {
     }
     const rawGlob = input['glob'];
     const globPattern =
-      typeof rawGlob === 'string' && rawGlob.length > 0 ? rawGlob : undefined;
+      typeof rawGlob === 'string' && rawGlob.length > 0
+        ? normalizeGlobDepth(rawGlob)
+        : undefined;
 
     // --- File enumeration ---------------------------------------------------
     const rawPath = input['path'];
@@ -438,16 +465,39 @@ export const grepTool: BuiltinTool = {
       if (onlyMatching) {
         // Print each matched substring on its own line; context is ignored.
         const re = new RegExp(pattern, flags.includes('g') ? flags : `${flags}g`);
+        if (multiline) {
+          // A multiline pattern's match can SPAN newlines, so a per-line exec
+          // would extract nothing and report "No matches found" for a file the
+          // scanner already flagged as matching. Scan the reconstructed whole
+          // content instead and emit each match with its STARTING line number
+          // (ripgrep -oU semantics).
+          const text = scan.lines.join('\n');
+          const offsets = lineStartOffsets(text);
+          let m: RegExpExecArray | null;
+          while ((m = re.exec(text)) !== null) {
+            if (m[0].length === 0) {
+              re.lastIndex++; // zero-length match: advance, emit nothing
+              continue;
+            }
+            if (out.length >= collectCap) break;
+            const lineNo = showLineNumbers ? `${lineIndexAt(offsets, m.index) + 1}:` : '';
+            out.push(`${file}:${lineNo}${clipLine(m[0])}`);
+          }
+          continue;
+        }
         for (const i of scan.matches) {
           if (out.length >= collectCap) break;
           const line = scan.lines[i] ?? '';
           re.lastIndex = 0;
           let m: RegExpExecArray | null;
           while ((m = re.exec(line)) !== null) {
+            if (m[0].length === 0) {
+              re.lastIndex++; // zero-length match: advance without emitting a
+              continue; //       spurious empty line (ripgrep omits empty matches)
+            }
             if (out.length >= collectCap) break;
             const lineNo = showLineNumbers ? `${i + 1}:` : '';
             out.push(`${file}:${lineNo}${clipLine(m[0])}`);
-            if (m[0].length === 0) re.lastIndex++; // avoid zero-length loop
           }
         }
         continue;

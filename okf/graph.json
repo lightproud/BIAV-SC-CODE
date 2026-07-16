@@ -1,8 +1,8 @@
 {
-  "generated": "2026-07-12",
+  "generated": "2026-07-16",
   "stats": {
-    "nodes": 360,
-    "edges": 411
+    "nodes": 355,
+    "edges": 409
   },
   "nodes": [
     {
@@ -1012,6 +1012,28 @@
       "tier": "skeleton"
     },
     {
+      "id": "/community/community-arca-live.md",
+      "type": "dataset",
+      "title": "arca_live 社区全量档案",
+      "tags": [
+        "data_layer:full_archive",
+        "platform:arca_live",
+        "lens:analysis"
+      ],
+      "tier": "skeleton"
+    },
+    {
+      "id": "/community/community-bahamut.md",
+      "type": "dataset",
+      "title": "bahamut 社区全量档案",
+      "tags": [
+        "data_layer:full_archive",
+        "platform:bahamut",
+        "lens:analysis"
+      ],
+      "tier": "skeleton"
+    },
+    {
       "id": "/community/community-bilibili.md",
       "type": "dataset",
       "title": "bilibili 社区全量档案",
@@ -1052,6 +1074,17 @@
         "data_layer:full_archive",
         "kind:analysis-index",
         "zero-ml"
+      ],
+      "tier": "skeleton"
+    },
+    {
+      "id": "/community/community-note-com.md",
+      "type": "dataset",
+      "title": "note_com 社区全量档案",
+      "tags": [
+        "data_layer:full_archive",
+        "platform:note_com",
+        "lens:analysis"
       ],
       "tier": "skeleton"
     },
@@ -1175,40 +1208,6 @@
         "lens:analysis"
       ],
       "tier": "skeleton"
-    },
-    {
-      "id": "/extracted/extracted-art-assets.md",
-      "type": "dataset",
-      "title": "art_assets",
-      "tags": [
-        "data_layer:full_archive",
-        "first-hand-unpack",
-        "upstream-of:processed",
-        "content:art-assets"
-      ],
-      "tier": "search"
-    },
-    {
-      "id": "/extracted/extracted-categorized.md",
-      "type": "dataset",
-      "title": "categorized",
-      "tags": [
-        "data_layer:full_archive",
-        "first-hand-unpack",
-        "upstream-of:processed",
-        "content:categorized"
-      ],
-      "tier": "search"
-    },
-    {
-      "id": "/extracted/extracted-readme.md",
-      "type": "documentation",
-      "title": "extracted 说明",
-      "tags": [
-        "data_layer:curated",
-        "documentation"
-      ],
-      "tier": "search"
     },
     {
       "id": "/memory/capability-index.md",
@@ -1589,6 +1588,16 @@
       "tier": "search"
     },
     {
+      "id": "/memory/memory-ext-lessons-archive.md",
+      "type": "knowledge-pointer",
+      "title": "踩坑记录归档层",
+      "tags": [
+        "memory",
+        "data_layer:curated"
+      ],
+      "tier": "search"
+    },
+    {
       "id": "/memory/memory-ext-research-best-wiki-features.md",
       "type": "knowledge-pointer",
       "title": "Best Game Wiki Features & UX Patterns Research",
@@ -1613,6 +1622,16 @@
       "id": "/memory/memory-ext-skill-authoring-standard.md",
       "type": "knowledge-pointer",
       "title": "技能写作审计标尺",
+      "tags": [
+        "memory",
+        "data_layer:curated"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/memory/memory-ext-testing-strategy.md",
+      "type": "knowledge-pointer",
+      "title": "银芯测试策略 — 分层质量护栏",
       "tags": [
         "memory",
         "data_layer:curated"
@@ -2027,27 +2046,6 @@
       "tier": "search"
     },
     {
-      "id": "/projects/extracted-lua-inventory.md",
-      "type": "dataset",
-      "title": "解包 lua 清单",
-      "tags": [
-        "data_layer:curated",
-        "manifest",
-        "binary-assets-pointer"
-      ],
-      "tier": "search"
-    },
-    {
-      "id": "/projects/extracted-lua-readme.md",
-      "type": "documentation",
-      "title": "解包提取说明",
-      "tags": [
-        "data_layer:curated",
-        "engineering-doc"
-      ],
-      "tier": "search"
-    },
-    {
       "id": "/projects/news-archive-sources-registry.md",
       "type": "dataset",
       "title": "archive_sources.json（归档注册表）",
@@ -2191,6 +2189,17 @@
       "tier": "search"
     },
     {
+      "id": "/projects/silver-core-sdk-doc-migration-0-3x-to-0-52.md",
+      "type": "documentation",
+      "title": "silver-core-sdk MIGRATION-0.3x-to-0.52",
+      "tags": [
+        "data_layer:curated",
+        "design-doc",
+        "sub-project:silver-core-sdk"
+      ],
+      "tier": "search"
+    },
+    {
       "id": "/projects/silver-core-sdk-doc-migration.md",
       "type": "documentation",
       "title": "silver-core-sdk MIGRATION",
@@ -2271,6 +2280,17 @@
       "id": "/projects/silver-core-sdk-doc-subagents.md",
       "type": "documentation",
       "title": "silver-core-sdk SUBAGENTS",
+      "tags": [
+        "data_layer:curated",
+        "design-doc",
+        "sub-project:silver-core-sdk"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/projects/silver-core-sdk-doc-tool-parity.md",
+      "type": "documentation",
+      "title": "silver-core-sdk TOOL-PARITY",
       "tags": [
         "data_layer:curated",
         "design-doc",
@@ -2400,72 +2420,6 @@
       "tier": "search"
     },
     {
-      "id": "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "type": "documentation",
-      "title": "morimens-daily-20260601-r2",
-      "tags": [
-        "data_layer:curated",
-        "deliverable",
-        "topic:daily-news"
-      ],
-      "tier": "search"
-    },
-    {
-      "id": "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "type": "documentation",
-      "title": "morimens-daily-20260601",
-      "tags": [
-        "data_layer:curated",
-        "deliverable",
-        "topic:daily-news"
-      ],
-      "tier": "search"
-    },
-    {
-      "id": "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "type": "documentation",
-      "title": "morimens-daily-20260602-r2",
-      "tags": [
-        "data_layer:curated",
-        "deliverable",
-        "topic:daily-news"
-      ],
-      "tier": "search"
-    },
-    {
-      "id": "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "type": "documentation",
-      "title": "morimens-daily-full-20260602",
-      "tags": [
-        "data_layer:curated",
-        "deliverable",
-        "topic:daily-news"
-      ],
-      "tier": "search"
-    },
-    {
-      "id": "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "type": "documentation",
-      "title": "morimens-period-20260512-0603",
-      "tags": [
-        "data_layer:curated",
-        "deliverable",
-        "topic:daily-news"
-      ],
-      "tier": "search"
-    },
-    {
-      "id": "/resource/resource-daily-news-morimens-window-20260602.md",
-      "type": "documentation",
-      "title": "morimens-window-20260602",
-      "tags": [
-        "data_layer:curated",
-        "deliverable",
-        "topic:daily-news"
-      ],
-      "tier": "search"
-    },
-    {
       "id": "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "type": "documentation",
       "title": "bpt-sdk-comparison-baseline-20260705",
@@ -2543,6 +2497,17 @@
       "tier": "search"
     },
     {
+      "id": "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
+      "type": "documentation",
+      "title": "weixin-noise-cleanup-20260712",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:data-diagnostics"
+      ],
+      "tier": "search"
+    },
+    {
       "id": "/resource/resource-data-diagnostics-wiki-data-gap-registry-20260602.md",
       "type": "documentation",
       "title": "wiki-data-gap-registry-20260602",
@@ -2576,6 +2541,17 @@
       "tier": "search"
     },
     {
+      "id": "/resource/resource-intel-weekly-morimens-intel-20260712.md",
+      "type": "documentation",
+      "title": "morimens-intel-20260712",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:intel-weekly"
+      ],
+      "tier": "search"
+    },
+    {
       "id": "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "type": "documentation",
       "title": "knowledge-engineering-primer-20260704",
@@ -2601,6 +2577,28 @@
       "id": "/resource/resource-proposal-biav-project-plan-202603.md",
       "type": "documentation",
       "title": "biav-project-plan-202603",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:proposal"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-proposal-bpt-context-architecture-20260712.md",
+      "type": "documentation",
+      "title": "bpt-context-architecture-20260712",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:proposal"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
+      "type": "documentation",
+      "title": "bpt-cowork-product-design-20260713",
       "tags": [
         "data_layer:curated",
         "deliverable",
@@ -2730,6 +2728,17 @@
       "tier": "search"
     },
     {
+      "id": "/resource/resource-proposal-news-push-format-20260712.md",
+      "type": "documentation",
+      "title": "news-push-format-20260712",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:proposal"
+      ],
+      "tier": "search"
+    },
+    {
       "id": "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "type": "documentation",
       "title": "silver-core-maintenance-cadence-20260702",
@@ -2807,6 +2816,17 @@
       "tier": "search"
     },
     {
+      "id": "/resource/resource-repo-engineering-bpt-demo-residue-scan-20260712.md",
+      "type": "documentation",
+      "title": "bpt-demo-residue-scan-20260712",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
       "id": "/resource/resource-repo-engineering-bpt-desktop-builtin-commands-batch1-20260711.md",
       "type": "documentation",
       "title": "bpt-desktop-builtin-commands-batch1-20260711",
@@ -2854,6 +2874,17 @@
       "id": "/resource/resource-repo-engineering-bpt-desktop-ui-roadmap-20260705.md",
       "type": "documentation",
       "title": "bpt-desktop-ui-roadmap-20260705",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
+      "type": "documentation",
+      "title": "bpt-loop-goal-primitives-note-20260714",
       "tags": [
         "data_layer:curated",
         "deliverable",
@@ -3093,6 +3124,17 @@
       "tier": "search"
     },
     {
+      "id": "/resource/resource-repo-engineering-memory-tool-usage-prompt-20260714.md",
+      "type": "documentation",
+      "title": "memory-tool-usage-prompt-20260714",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
       "id": "/resource/resource-repo-engineering-news-collector-merge-plan-202606.md",
       "type": "documentation",
       "title": "news-collector-merge-plan-202606",
@@ -3192,6 +3234,28 @@
       "tier": "search"
     },
     {
+      "id": "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
+      "type": "documentation",
+      "title": "sdk-cross-protocol-routing-bpt-handoff-20260713",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
+      "type": "documentation",
+      "title": "silver-core-sdk-code-quality-audit-20260714",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
       "id": "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "type": "documentation",
       "title": "silver-core-sdk-command-consumer-manual-20260710",
@@ -3203,9 +3267,42 @@
       "tier": "search"
     },
     {
+      "id": "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
+      "type": "documentation",
+      "title": "silver-core-sdk-overnight-quality-campaign-20260713",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
       "id": "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "type": "documentation",
       "title": "silver-core-sdk-rename-review-20260710",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md",
+      "type": "documentation",
+      "title": "silver-core-sdk-vs-official-diff-20260713",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-repo-engineering-stop-hook-git-check-fixed-20260712.md",
+      "type": "documentation",
+      "title": "stop-hook-git-check-fixed-20260712",
       "tags": [
         "data_layer:curated",
         "deliverable",
@@ -3619,162 +3716,6 @@
       "url": "wiki/story"
     },
     {
-      "id": "/unpacked/unpacked-config.md",
-      "type": "dataset",
-      "title": "config",
-      "tags": [
-        "data_layer:full_archive",
-        "content:config",
-        "encoding:luac",
-        "first-hand-unpack"
-      ],
-      "tier": "search"
-    },
-    {
-      "id": "/unpacked/unpacked-ejoysdk-lua.md",
-      "type": "dataset",
-      "title": "ejoysdk_lua",
-      "tags": [
-        "data_layer:full_archive",
-        "content:ejoysdk-lua",
-        "encoding:luac",
-        "first-hand-unpack"
-      ],
-      "tier": "search"
-    },
-    {
-      "id": "/unpacked/unpacked-foundation.md",
-      "type": "dataset",
-      "title": "foundation",
-      "tags": [
-        "data_layer:full_archive",
-        "content:foundation",
-        "encoding:luac",
-        "first-hand-unpack"
-      ],
-      "tier": "search"
-    },
-    {
-      "id": "/unpacked/unpacked-game-data-all.md",
-      "type": "dataset",
-      "title": "全部游戏数据",
-      "tags": [
-        "data_layer:full_archive",
-        "content:game-data-all",
-        "encoding:text",
-        "first-hand-unpack"
-      ],
-      "tier": "search"
-    },
-    {
-      "id": "/unpacked/unpacked-game-text.md",
-      "type": "dataset",
-      "title": "游戏文本",
-      "tags": [
-        "data_layer:full_archive",
-        "content:game-text",
-        "encoding:text",
-        "first-hand-unpack"
-      ],
-      "tier": "search"
-    },
-    {
-      "id": "/unpacked/unpacked-gamelauncher.md",
-      "type": "dataset",
-      "title": "gamelauncher",
-      "tags": [
-        "data_layer:full_archive",
-        "content:gamelauncher",
-        "encoding:luac",
-        "first-hand-unpack"
-      ],
-      "tier": "search"
-    },
-    {
-      "id": "/unpacked/unpacked-gamescript.md",
-      "type": "dataset",
-      "title": "gamescript",
-      "tags": [
-        "data_layer:full_archive",
-        "content:gamescript",
-        "encoding:luac",
-        "first-hand-unpack"
-      ],
-      "tier": "search"
-    },
-    {
-      "id": "/unpacked/unpacked-gameupdate.md",
-      "type": "dataset",
-      "title": "gameupdate",
-      "tags": [
-        "data_layer:full_archive",
-        "content:gameupdate",
-        "encoding:text",
-        "first-hand-unpack"
-      ],
-      "tier": "search"
-    },
-    {
-      "id": "/unpacked/unpacked-lua-tables.md",
-      "type": "dataset",
-      "title": "Lua表还原",
-      "tags": [
-        "data_layer:full_archive",
-        "content:lua-tables",
-        "encoding:text",
-        "first-hand-unpack"
-      ],
-      "tier": "search"
-    },
-    {
-      "id": "/unpacked/unpacked-share.md",
-      "type": "dataset",
-      "title": "share",
-      "tags": [
-        "data_layer:full_archive",
-        "content:share",
-        "encoding:luac",
-        "first-hand-unpack"
-      ],
-      "tier": "search"
-    },
-    {
-      "id": "/unpacked/unpacked-sproto.md",
-      "type": "dataset",
-      "title": "sproto",
-      "tags": [
-        "data_layer:full_archive",
-        "content:sproto",
-        "encoding:text",
-        "first-hand-unpack"
-      ],
-      "tier": "search"
-    },
-    {
-      "id": "/unpacked/unpacked-text-cn.md",
-      "type": "dataset",
-      "title": "text_cn",
-      "tags": [
-        "data_layer:full_archive",
-        "content:text-cn",
-        "encoding:luac",
-        "first-hand-unpack"
-      ],
-      "tier": "search"
-    },
-    {
-      "id": "/unpacked/unpacked-vue.md",
-      "type": "dataset",
-      "title": "vue",
-      "tags": [
-        "data_layer:full_archive",
-        "content:vue",
-        "encoding:luac",
-        "first-hand-unpack"
-      ],
-      "tier": "search"
-    },
-    {
       "id": "/wiki-data/wiki-data-aliases.md",
       "type": "dataset",
       "title": "aliases",
@@ -3937,17 +3878,6 @@
         "data_layer:curated",
         "unpacked-bootstrap",
         "domain:gameplay"
-      ],
-      "tier": "search"
-    },
-    {
-      "id": "/wiki-data/wiki-data-update-notices.md",
-      "type": "dataset",
-      "title": "update_notices",
-      "tags": [
-        "data_layer:curated",
-        "unpacked-bootstrap",
-        "domain:localization"
       ],
       "tier": "search"
     },
@@ -4339,9 +4269,57 @@
       "rel_type": "mention"
     },
     {
+      "source": "/community/community-bahamut.md",
+      "target": "/characters/77922.md",
+      "rel": "提及:克珀珊特",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bahamut.md",
+      "target": "/characters/54117.md",
+      "rel": "提及:哈姆林",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bahamut.md",
+      "target": "/characters/77926.md",
+      "rel": "提及:皮克曼",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bahamut.md",
+      "target": "/characters/15576.md",
+      "rel": "提及:墨菲",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bahamut.md",
+      "target": "/characters/15587.md",
+      "rel": "提及:希洛",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bahamut.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/15599.md",
-      "rel": "提及:萨尔瓦多",
+      "target": "/characters/15566.md",
+      "rel": "提及:希莱斯特",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/15582.md",
+      "rel": "提及:弥利亚姆",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/77917.md",
+      "rel": "提及:波吕克斯",
       "rel_type": "mention"
     },
     {
@@ -4352,14 +4330,38 @@
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/15562.md",
-      "rel": "提及:莉兹",
+      "target": "/characters/15577.md",
+      "rel": "提及:菲茵特",
       "rel_type": "mention"
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/15570.md",
-      "rel": "提及:朵尔",
+      "target": "/characters/15583.md",
+      "rel": "提及:奥尔拉",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/15595.md",
+      "rel": "提及:拉蒙娜",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/54117.md",
+      "rel": "提及:哈姆林",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/15563.md",
+      "rel": "提及:图鲁",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/15569.md",
+      "rel": "提及:萝坦",
       "rel_type": "mention"
     },
     {
@@ -4370,26 +4372,8 @@
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/15604.md",
-      "rel": "提及:莱克",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/94450.md",
-      "rel": "提及:茉夏",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/130226.md",
-      "rel": "提及:沙耶",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/15602.md",
-      "rel": "提及:熔朵",
+      "target": "/characters/15581.md",
+      "rel": "提及:莉莉",
       "rel_type": "mention"
     },
     {
@@ -4399,9 +4383,9 @@
       "rel_type": "mention"
     },
     {
-      "source": "/community/community-reddit.md",
-      "target": "/characters/15560.md",
-      "rel": "提及:Pandia",
+      "source": "/community/community-note-com.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:沙耶",
       "rel_type": "mention"
     },
     {
@@ -4419,13 +4403,25 @@
     {
       "source": "/community/community-steam.md",
       "target": "/characters/130226.md",
-      "rel": "提及:沙耶",
+      "rel": "提及:Saya",
       "rel_type": "mention"
     },
     {
       "source": "/community/community-weibo.md",
-      "target": "/characters/15582.md",
-      "rel": "提及:弥利亚姆",
+      "target": "/characters/15567.md",
+      "rel": "提及:血链·希洛",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-weibo.md",
+      "target": "/characters/15599.md",
+      "rel": "提及:萨尔瓦多",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-weibo.md",
+      "target": "/characters/77917.md",
+      "rel": "提及:波吕克斯",
       "rel_type": "mention"
     },
     {
@@ -4436,8 +4432,20 @@
     },
     {
       "source": "/community/community-weibo.md",
+      "target": "/characters/77922.md",
+      "rel": "提及:克珀珊特",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-weibo.md",
       "target": "/characters/15576.md",
       "rel": "提及:墨菲",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-weibo.md",
+      "target": "/characters/15587.md",
+      "rel": "提及:希洛",
       "rel_type": "mention"
     },
     {
@@ -4497,7 +4505,7 @@
     {
       "source": "/community/community-youtube.md",
       "target": "/characters/130226.md",
-      "rel": "提及:Saya",
+      "rel": "提及:沙耶",
       "rel_type": "mention"
     },
     {
@@ -4582,78 +4590,6 @@
       "source": "/memory/decisions.md",
       "target": "/characters/15560.md",
       "rel": "提及:Pandia",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/memory/lessons-learned.md",
-      "target": "/characters/77914.md",
-      "rel": "提及:兰提戈斯",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/memory/lessons-learned.md",
-      "target": "/characters/77918.md",
-      "rel": "提及:阿拉克涅",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/memory/lessons-learned.md",
-      "target": "/characters/77924.md",
-      "rel": "提及:夏塔克鸟",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/memory/lessons-learned.md",
-      "target": "/characters/122587.md",
-      "rel": "提及:本源萝坦",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/memory/lessons-learned.md",
-      "target": "/characters/130384.md",
-      "rel": "提及:撒托古亚",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/memory/lessons-learned.md",
-      "target": "/characters/15603.md",
-      "rel": "提及:艾瑞卡",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/memory/lessons-learned.md",
-      "target": "/characters/77927.md",
-      "rel": "提及:黑法老",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/memory/lessons-learned.md",
-      "target": "/characters/130375.md",
-      "rel": "提及:诺登斯",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/memory/lessons-learned.md",
-      "target": "/characters/15563.md",
-      "rel": "提及:图鲁",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/memory/lessons-learned.md",
-      "target": "/characters/15569.md",
-      "rel": "提及:萝坦",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/memory/lessons-learned.md",
-      "target": "/characters/77911.md",
-      "rel": "提及:秃鹫",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/memory/lessons-learned.md",
-      "target": "/characters/130226.md",
-      "rel": "提及:沙耶",
       "rel_type": "mention"
     },
     {
@@ -4810,6 +4746,36 @@
       "source": "/memory/memory-ext-knowledge-layer-design.md",
       "target": "/characters/130226.md",
       "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-ext-lessons-archive.md",
+      "target": "/characters/77918.md",
+      "rel": "提及:阿拉克涅",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-ext-lessons-archive.md",
+      "target": "/characters/122587.md",
+      "rel": "提及:本源萝坦",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-ext-lessons-archive.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-ext-lessons-archive.md",
+      "target": "/characters/15563.md",
+      "rel": "提及:图鲁",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/memory-ext-lessons-archive.md",
+      "target": "/characters/15569.md",
+      "rel": "提及:萝坦",
       "rel_type": "mention"
     },
     {
@@ -5329,204 +5295,6 @@
       "rel_type": "mention"
     },
     {
-      "source": "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "target": "/characters/15603.md",
-      "rel": "提及:艾瑞卡",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/resource/resource-daily-news-morimens-daily-20260601-r2.md",
-      "target": "/characters/130226.md",
-      "rel": "提及:沙耶",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "target": "/characters/15573.md",
-      "rel": "提及:奥瑞塔",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "target": "/characters/15603.md",
-      "rel": "提及:艾瑞卡",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "target": "/characters/130226.md",
-      "rel": "提及:沙耶",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "target": "/characters/15560.md",
-      "rel": "提及:Pandia",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/resource/resource-daily-news-morimens-daily-20260601.md",
-      "target": "/characters/15595.md",
-      "rel": "提及:Ramona",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "target": "/characters/15603.md",
-      "rel": "提及:艾瑞卡",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "target": "/characters/54116.md",
-      "rel": "提及:塔薇",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/resource/resource-daily-news-morimens-daily-20260602-r2.md",
-      "target": "/characters/130226.md",
-      "rel": "提及:沙耶",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "target": "/characters/77918.md",
-      "rel": "提及:阿拉克涅",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "target": "/characters/15603.md",
-      "rel": "提及:艾瑞卡",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "target": "/characters/15570.md",
-      "rel": "提及:朵尔",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "target": "/characters/15604.md",
-      "rel": "提及:莱克",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "target": "/characters/54116.md",
-      "rel": "提及:塔薇",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "target": "/characters/130226.md",
-      "rel": "提及:沙耶",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "target": "/characters/15560.md",
-      "rel": "提及:Pandia",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/resource/resource-daily-news-morimens-daily-full-20260602.md",
-      "target": "/characters/15595.md",
-      "rel": "提及:Ramona",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "target": "/characters/15599.md",
-      "rel": "提及:萨尔瓦多",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "target": "/characters/15600.md",
-      "rel": "提及:阿格里帕",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "target": "/characters/77918.md",
-      "rel": "提及:阿拉克涅",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "target": "/characters/15583.md",
-      "rel": "提及:奥尔拉",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "target": "/characters/15596.md",
-      "rel": "提及:泰旖丝",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "target": "/characters/15603.md",
-      "rel": "提及:艾瑞卡",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "target": "/characters/77926.md",
-      "rel": "提及:皮克曼",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "target": "/characters/15563.md",
-      "rel": "提及:图鲁",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "target": "/characters/15576.md",
-      "rel": "提及:墨菲",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "target": "/characters/15581.md",
-      "rel": "提及:莉莉",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "target": "/characters/15587.md",
-      "rel": "提及:希洛",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/resource/resource-daily-news-morimens-period-20260512-0603.md",
-      "target": "/characters/54116.md",
-      "rel": "提及:塔薇",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/resource/resource-daily-news-morimens-window-20260602.md",
-      "target": "/characters/15603.md",
-      "rel": "提及:艾瑞卡",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/resource/resource-daily-news-morimens-window-20260602.md",
-      "target": "/characters/15604.md",
-      "rel": "提及:莱克",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/resource/resource-daily-news-morimens-window-20260602.md",
-      "target": "/characters/130226.md",
-      "rel": "提及:沙耶",
-      "rel_type": "mention"
-    },
-    {
       "source": "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
@@ -5546,6 +5314,12 @@
     },
     {
       "source": "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
       "rel_type": "mention"
@@ -5623,6 +5397,48 @@
       "rel_type": "mention"
     },
     {
+      "source": "/resource/resource-intel-weekly-morimens-intel-20260712.md",
+      "target": "/characters/15598.md",
+      "rel": "提及:尤乌哈希",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-intel-weekly-morimens-intel-20260712.md",
+      "target": "/characters/15594.md",
+      "rel": "提及:凯刻斯",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-intel-weekly-morimens-intel-20260712.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-intel-weekly-morimens-intel-20260712.md",
+      "target": "/characters/77926.md",
+      "rel": "提及:皮克曼",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-intel-weekly-morimens-intel-20260712.md",
+      "target": "/characters/15587.md",
+      "rel": "提及:希洛",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-intel-weekly-morimens-intel-20260712.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
       "source": "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
@@ -5671,6 +5487,12 @@
       "rel_type": "mention"
     },
     {
+      "source": "/resource/resource-proposal-news-push-format-20260712.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
       "source": "/resource/resource-proposal-silver-core-maintenance-cadence-20260702.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
@@ -5678,6 +5500,12 @@
     },
     {
       "source": "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-repo-engineering-bpt-demo-residue-scan-20260712.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
       "rel_type": "mention"
@@ -5696,6 +5524,12 @@
     },
     {
       "source": "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/resource/resource-repo-engineering-bpt-loop-goal-primitives-note-20260714.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
       "rel_type": "mention"
@@ -5785,6 +5619,12 @@
       "rel_type": "mention"
     },
     {
+      "source": "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:沙耶",
+      "rel_type": "mention"
+    },
+    {
       "source": "/resource/resource-repo-engineering-silver-core-sdk-rename-review-20260710.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
@@ -5834,8 +5674,20 @@
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/15599.md",
-      "rel": "提及:萨尔瓦多",
+      "target": "/characters/15566.md",
+      "rel": "提及:希莱斯特",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/15582.md",
+      "rel": "提及:弥利亚姆",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/77917.md",
+      "rel": "提及:波吕克斯",
       "rel_type": "mention"
     },
     {
@@ -5846,14 +5698,38 @@
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/15562.md",
-      "rel": "提及:莉兹",
+      "target": "/characters/15577.md",
+      "rel": "提及:菲茵特",
       "rel_type": "mention"
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/15570.md",
-      "rel": "提及:朵尔",
+      "target": "/characters/15583.md",
+      "rel": "提及:奥尔拉",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/15595.md",
+      "rel": "提及:拉蒙娜",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/54117.md",
+      "rel": "提及:哈姆林",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/15563.md",
+      "rel": "提及:图鲁",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/15569.md",
+      "rel": "提及:萝坦",
       "rel_type": "mention"
     },
     {
@@ -5864,26 +5740,8 @@
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/15604.md",
-      "rel": "提及:莱克",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/94450.md",
-      "rel": "提及:茉夏",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/130226.md",
-      "rel": "提及:沙耶",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/15602.md",
-      "rel": "提及:熔朵",
+      "target": "/characters/15581.md",
+      "rel": "提及:莉莉",
       "rel_type": "mention"
     },
     {
@@ -5893,9 +5751,9 @@
       "rel_type": "mention"
     },
     {
-      "source": "/sources/reddit.md",
-      "target": "/characters/15560.md",
-      "rel": "提及:Pandia",
+      "source": "/sources/note_com.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:沙耶",
       "rel_type": "mention"
     },
     {
@@ -5913,13 +5771,25 @@
     {
       "source": "/sources/steam.md",
       "target": "/characters/130226.md",
-      "rel": "提及:沙耶",
+      "rel": "提及:Saya",
       "rel_type": "mention"
     },
     {
       "source": "/sources/weibo.md",
-      "target": "/characters/15582.md",
-      "rel": "提及:弥利亚姆",
+      "target": "/characters/15567.md",
+      "rel": "提及:血链·希洛",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/weibo.md",
+      "target": "/characters/15599.md",
+      "rel": "提及:萨尔瓦多",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/weibo.md",
+      "target": "/characters/77917.md",
+      "rel": "提及:波吕克斯",
       "rel_type": "mention"
     },
     {
@@ -5930,8 +5800,20 @@
     },
     {
       "source": "/sources/weibo.md",
+      "target": "/characters/77922.md",
+      "rel": "提及:克珀珊特",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/weibo.md",
       "target": "/characters/15576.md",
       "rel": "提及:墨菲",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/weibo.md",
+      "target": "/characters/15587.md",
+      "rel": "提及:希洛",
       "rel_type": "mention"
     },
     {
@@ -5949,7 +5831,7 @@
     {
       "source": "/sources/youtube.md",
       "target": "/characters/130226.md",
-      "rel": "提及:Saya",
+      "rel": "提及:沙耶",
       "rel_type": "mention"
     },
     {
@@ -6229,6 +6111,18 @@
       "rel_type": "cross"
     },
     {
+      "source": "/community/community-arca-live.md",
+      "target": "/community/community-index.md",
+      "rel": "聚合于",
+      "rel_type": "cross"
+    },
+    {
+      "source": "/community/community-bahamut.md",
+      "target": "/community/community-index.md",
+      "rel": "聚合于",
+      "rel_type": "cross"
+    },
+    {
       "source": "/community/community-bilibili.md",
       "target": "/community/community-index.md",
       "rel": "聚合于",
@@ -6242,6 +6136,12 @@
     },
     {
       "source": "/community/community-google-play.md",
+      "target": "/community/community-index.md",
+      "rel": "聚合于",
+      "rel_type": "cross"
+    },
+    {
+      "source": "/community/community-note-com.md",
       "target": "/community/community-index.md",
       "rel": "聚合于",
       "rel_type": "cross"
@@ -6319,9 +6219,21 @@
       "rel_type": "cross"
     },
     {
+      "source": "/community/community-arca-live.md",
+      "target": "/sources/arca_live.md",
+      "rel": "同平台",
+      "rel_type": "cross"
+    },
+    {
       "source": "/news-output/news-output-arca-live.md",
       "target": "/sources/arca_live.md",
       "rel": "抽样自",
+      "rel_type": "cross"
+    },
+    {
+      "source": "/community/community-bahamut.md",
+      "target": "/sources/bahamut.md",
+      "rel": "同平台",
       "rel_type": "cross"
     },
     {
@@ -6364,6 +6276,12 @@
       "source": "/news-output/news-output-google-play.md",
       "target": "/sources/google_play.md",
       "rel": "抽样自",
+      "rel_type": "cross"
+    },
+    {
+      "source": "/community/community-note-com.md",
+      "target": "/sources/note_com.md",
+      "rel": "同平台",
       "rel_type": "cross"
     },
     {

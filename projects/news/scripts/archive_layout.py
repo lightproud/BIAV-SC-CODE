@@ -20,9 +20,10 @@ collect_video_comments 写旧读新、backfill 写平级与分层写方对冲的
 """
 from __future__ import annotations
 
+import gzip
 import re
 from pathlib import Path
-from typing import Iterator
+from typing import Iterator, TextIO
 
 # 归档文件名 = 日期；state.json / manifest 等辅助文件不参与日期语义
 DATE_STEM = re.compile(r'^\d{4}-\d{2}-\d{2}$')
@@ -96,37 +97,54 @@ def resolve_write_layout(source: str, region: str | None = None,
     return platform, region, subtype
 
 
+def date_stem(path: Path | str) -> str:
+    """归档文件的日期茎：剥掉 .json/.jsonl 及冷压 .gz 双重后缀。
+
+    冷热分层后 `2026-04-01.json.gz` 的 Path.stem 是 '2026-04-01.json'——
+    直接拿 stem 解析日期会把整个冷层误判成非日期文件 / 缺口，日期一律经本函数。
+    """
+    name = Path(path).name
+    for suf in ('.json.gz', '.jsonl.gz', '.json', '.jsonl'):
+        if name.endswith(suf):
+            return name[:-len(suf)]
+    return Path(path).stem
+
+
 def iter_source_files(source: str, archive_dir: Path) -> Iterator[Path]:
     """读方唯一遍历：产出某源的全部归档日期文件（平铺旧布局 + 分层新布局）。
 
     折叠源：本源旧平级目录 + 宿主平台 <任意区服>/<类型>/ 下的文件。
     普通源：源目录递归，但跳过被其他折叠源认领的类型子目录。
     discord 不经本函数（独立归档器与目录语义，调用方自理）。
+    冷热分层（2026-07-12 甲案推广）：冷月为 .json.gz，与裸文件一并产出。
     """
     if source in FOLDED_SOURCE_LAYOUT:
         legacy = archive_dir / source
         if legacy.exists():
             yield from legacy.glob('*.json')
+            yield from legacy.glob('*.json.gz')
         platform, subtype = FOLDED_SOURCE_LAYOUT[source]
         base = archive_dir / platform
         if base.exists():
             yield from base.glob(f'*/{subtype}/*.json')
+            yield from base.glob(f'*/{subtype}/*.json.gz')
         return
     pdir = archive_dir / source
     if not pdir.exists():
         return
     claimed = CLAIMED_SUBTYPES.get(source, set())
-    for f in pdir.rglob('*.json'):
-        if f.parent.name in claimed:
-            continue
-        yield f
+    for pattern in ('*.json', '*.json.gz'):
+        for f in pdir.rglob(pattern):
+            if f.parent.name in claimed:
+                continue
+            yield f
 
 
 def dated_files(source: str, archive_dir: Path) -> list[Path]:
-    """某源全部日期文件，按日期（stem）升序；过滤 state/manifest 类非日期文件。"""
+    """某源全部日期文件，按日期升序；过滤 state/manifest 类非日期文件。"""
     return sorted((f for f in iter_source_files(source, archive_dir)
-                   if DATE_STEM.match(f.stem)),
-                  key=lambda f: f.stem)
+                   if DATE_STEM.match(date_stem(f))),
+                  key=date_stem)
 
 
 # ── discord 布局（守密人 2026-07-10 批准方案甲，收编 SSOT）───────────────────
@@ -176,12 +194,30 @@ def discord_region_roots(discord_root: Path) -> dict[str, Path]:
     return roots
 
 
+def open_archive_text(path: Path | str, mode: str = 'rt') -> TextIO:
+    """归档文本统一开档：裸 .jsonl/.json 与 .jsonl.gz/.json.gz 透明双开。
+
+    冷热分层（守密人 2026-07-12 甲案裁定）：上上个月及更早的 discord dated 文件
+    按月压成 .gz（`discord_cold_compress.py` 月度压冷），当月 + 上月保持裸文本热层。
+    读方一律经本函数开档，冷热无感；gzip 为标准库，零新依赖。
+    """
+    p = str(path)
+    if p.endswith('.gz'):
+        return gzip.open(p, mode if 't' in mode else mode + 't', encoding='utf-8')
+    return open(p, mode.replace('t', '') or 'r', encoding='utf-8')
+
+
 def iter_discord_message_files(discord_root: Path,
                                region: str | None = None) -> Iterator[Path]:
-    """读方唯一遍历：channels/{id_suffix}/{date}.jsonl；region=None 遍历全部区服。"""
+    """读方唯一遍历：channels/{id_suffix}/{date}.jsonl[.gz]；region=None 遍历全部区服。
+
+    冷热分层后裸与 .gz 并存皆产出；同日期「冷 .gz + 裸旁车」并存（冷月被历史回填
+    追加时产生）由写方 gz 感知去重保证无重复行，读方两个都读即全量。
+    """
     for r, root in discord_region_roots(discord_root).items():
         if region is not None and r != region:
             continue
         base = root / 'channels'
         if base.exists():
             yield from base.glob('*/*.jsonl')
+            yield from base.glob('*/*.jsonl.gz')

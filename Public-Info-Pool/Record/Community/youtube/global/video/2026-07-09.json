@@ -1,8 +1,8 @@
 {
   "date": "2026-07-09",
-  "archived_at": "2026-07-10T13:09:47.387064+00:00",
+  "archived_at": "2026-07-12T03:50:58.540681+00:00",
   "source": "youtube",
-  "item_count": 25,
+  "item_count": 26,
   "items": [
     {
       "title": "망각전야Morimens) (대리뽑,상담시청가능) 이번융재 설명회",
@@ -428,8 +428,21 @@
       "content_type": "video",
       "region": "global",
       "archive_subtype": "video"
+    },
+    {
+      "title": "忘卻前夜 鳥弟1t 融災5-5於麗的狗",
+      "summary": "不知道亂打的背景音樂：0 K - \"Avontuure\" https://youtu.be/L-ra5hMYsw8?si=ZiRcCmKHKxO2A6A2.",
+      "source": "youtube",
+      "platform_region": "global",
+      "lang": "",
+      "time": "2026-07-09T02:52:36Z",
+      "url": "https://www.youtube.com/watch?v=Y5T5u83zk_E",
+      "engagement": 44,
+      "is_hot": false,
+      "author": "海之心",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
     }
-  ],
-  "region": "global",
-  "content_subtype": "video"
+  ]
 }

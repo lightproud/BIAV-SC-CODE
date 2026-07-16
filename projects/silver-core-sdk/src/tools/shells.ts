@@ -14,13 +14,14 @@
  */
 
 import { spawn } from 'node:child_process';
-import { mkdtempSync, rmSync } from 'node:fs';
+import { copyFileSync, mkdtempSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
 import { AbortError } from '../errors.js';
+import { guardRegexPattern } from '../internal/regex-guard.js';
 import { planShellSpawn } from '../sandbox/backend.js';
-import { planProcessKill, terminalStatus } from './kill-plan.js';
+import { createTreeKiller, terminalStatus } from './kill-plan.js';
 import { detectSandboxEvidence, sandboxFailureHint } from '../sandbox/evidence.js';
 import type {
   BackgroundShell,
@@ -87,34 +88,11 @@ export function createShellManager(debug: (msg: string) => void): ShellManager {
         return { error: err instanceof Error ? err.message : String(err) };
       }
 
-      // Windows has no POSIX process groups/signals: taskkill /T /F is one
-      // forcible pass over the whole tree, so the SIGTERM->SIGKILL escalation
-      // collapses to a single call (a second is a harmless no-op once gone).
-      let winKilled = false;
-      const killGroup = (sig: string): void => {
-        const plan = planProcessKill(child.pid, sig);
-        try {
-          if (plan.kind === 'group') {
-            process.kill(-plan.pid, plan.signal as NodeJS.Signals); // win-ok: posix branch of planProcessKill
-          } else if (plan.kind === 'child') {
-            child.kill(plan.signal as NodeJS.Signals);
-          } else {
-            // taskkill (Windows): fire once, best-effort, never blocks.
-            if (winKilled) return;
-            winKilled = true;
-            const tk = spawn('taskkill', ['/PID', String(plan.pid), '/T', '/F'], {
-              stdio: 'ignore',
-            });
-            tk.on('error', (e) => debug(`Bash: taskkill failed for pid ${plan.pid}: ${e.message}`));
-            tk.unref();
-          }
-        } catch (err) {
-          // Benign when the process/group already exited; surface anything
-          // else to debug instead of swallowing it (the old empty catch hid
-          // the Windows failure that made KillShell a silent no-op).
-          debug(`Bash: kill(${sig}) failed for shell ${id}: ${err instanceof Error ? err.message : String(err)}`);
-        }
-      };
+      // Terminate the shell's whole tree, platform-correctly: POSIX signals
+      // the process group (-pid); Windows uses one taskkill /T /F pass.
+      // Shared executor createTreeKiller (kill-plan.ts) — dedup with bash.ts
+      // foreground killGroup, audit 2026-07-14 L-10.
+      const killGroup = createTreeKiller(child, debug, ` for shell ${id}`);
 
       const rec: BackgroundShell = {
         id,
@@ -185,11 +163,22 @@ export function createShellManager(debug: (msg: string) => void): ShellManager {
     kill(id) {
       const rec = shells.get(id);
       if (rec === undefined) return false;
+      // Never signal a shell that already reached a terminal state: its PGID may
+      // have been recycled to an unrelated process, and a SIGKILL-escalation
+      // timer armed AFTER exit is never cleared by the exit handler (it only
+      // clears timers armed before exit) — so it would fire on the recycled
+      // group, the exact L1 hazard this module guards against.
+      if (rec.status !== 'running') return false;
       // Record intent only; the terminal status is set by the exit handler
       // (terminalStatus) from what actually happens - not forced to 'killed'
       // here before the signal has even landed.
       rec.killRequested = true;
       rec.kill('SIGTERM');
+      // Replace (never leak) any in-flight escalation timer: a second kill()
+      // — e.g. a Monitor timeout racing an explicit KillShell — would otherwise
+      // orphan the first timer and mis-delete the wrong entry when one fires.
+      const existing = killTimers.get(id);
+      if (existing !== undefined) clearTimeout(existing);
       const t = setTimeout(() => {
         killTimers.delete(id);
         rec.kill('SIGKILL');
@@ -224,6 +213,67 @@ export function createShellManager(debug: (msg: string) => void): ShellManager {
 }
 
 // ---------------------------------------------------------------------------
+// Per-subagent persistent-state fork (audit 2026-07-14 M-10)
+// ---------------------------------------------------------------------------
+
+/**
+ * Fork the PERSISTENT-STATE namespace of a shell session for one spawned
+ * subagent (audit 2026-07-14 M-10). Before this, every concurrent foreground
+ * subagent shared the query's single cwd/env state file, so one batch-mate's
+ * `cd`/`export` replayed into its siblings' (and the parent's) next Bash call
+ * — cross-pollution plus a write race on the shared file. The fork:
+ *   - creates a child state dir SEEDED from the parent's current cwd/env
+ *     snapshot, so the child still sees the parent's persistent state as it
+ *     was at spawn time, but its own mutations stay in its namespace and
+ *     never leak to siblings or back to the parent;
+ *   - nests the child dir UNDER the parent state dir, so the query-wide
+ *     dispose() removes every fork with no extra lifecycle plumbing (a
+ *     SendMessage continuation between-times still finds its state intact);
+ *   - scopes ONLY the persistent state: spawnBackground/get/kill delegate to
+ *     the query-wide manager, so children list, read and stop the SAME
+ *     background shells as the root loop.
+ * A parent with no state dir (persistence already degraded to stateless) has
+ * nothing to fork or pollute and is returned as-is; a fork whose own mkdtemp
+ * fails degrades that child to stateless ('' state dir) rather than falling
+ * back onto the shared parent file.
+ */
+export function forkShellSession(parent: ShellManager): ShellManager {
+  if (parent.stateDir === '') return parent;
+  let childDir = '';
+  try {
+    childDir = mkdtempSync(join(parent.stateDir, 'fork-'));
+    for (const name of ['cwd', 'env']) {
+      try {
+        copyFileSync(join(parent.stateDir, name), join(childDir, name));
+      } catch {
+        // No parent snapshot for this file yet (no foreground Bash ran
+        // before the spawn) — the child simply starts without one.
+      }
+    }
+  } catch {
+    childDir = ''; // degrade to stateless, never back to the shared file
+  }
+  return {
+    stateDir: childDir,
+    spawnBackground: (shell, command, ctx, disableSandbox) =>
+      parent.spawnBackground(shell, command, ctx, disableSandbox),
+    get: (id) => parent.get(id),
+    kill: (id) => parent.kill(id),
+    // Scoped dispose: drop only this fork's namespace. Background shells
+    // belong to the query-wide manager and are disposed there.
+    dispose: () => {
+      if (childDir !== '') {
+        try {
+          rmSync(childDir, { recursive: true, force: true });
+        } catch {
+          /* best-effort */
+        }
+      }
+    },
+  };
+}
+
+// ---------------------------------------------------------------------------
 // BashOutput / KillShell built-in tools
 // ---------------------------------------------------------------------------
 
@@ -240,7 +290,11 @@ function describeStatus(rec: BackgroundShell): string {
   return `status: ${rec.status} (${exit})`;
 }
 
-/** Apply an optional per-line regex filter to an output chunk. */
+/** Apply an optional per-line regex filter to an output chunk.
+ *  Callers must pre-screen `filter` with guardRegexPattern (audit 2026-07-14
+ *  M-2): this helper only handles SYNTACTIC invalidity (passes everything);
+ *  ReDoS-risky patterns are rejected at the tool boundary with a descriptive
+ *  error so the model can rephrase. */
 function filterLines(chunk: string, filter: string | undefined): string {
   if (filter === undefined || filter.length === 0 || chunk.length === 0) {
     return chunk;
@@ -296,6 +350,21 @@ export const bashOutputTool: BuiltinTool = {
       return { content: `BashOutput: no background shell with id "${id}".`, isError: true };
     }
     const filter = typeof input['filter'] === 'string' ? input['filter'] : undefined;
+    // ReDoS guard (audit 2026-07-14 M-2, shared with Grep and hooks/matcher):
+    // the filter regex runs per line over up to 500K chars of accumulated
+    // shell output, synchronously. Reject risky patterns with a message the
+    // model can act on, BEFORE the cursors advance (so no output is lost).
+    if (filter !== undefined) {
+      const guardReason = guardRegexPattern(filter);
+      if (guardReason !== null) {
+        return {
+          content:
+            `BashOutput: unsafe "filter" regular expression rejected: ` +
+            `${guardReason}. Retry with a simpler filter (or none).`,
+          isError: true,
+        };
+      }
+    }
     const newOut = rec.stdout.slice(rec.cursorOut);
     const newErr = rec.stderr.slice(rec.cursorErr);
     rec.cursorOut = rec.stdout.length;

@@ -64,6 +64,10 @@ export type RunLogRecord = {
 export type RunLogSink = {
   /** Observe one consumer-facing message; mirrors result messages. */
   observe(msg: SDKMessage): void;
+  /** Resolves once every record observed SO FAR has been appended (or its
+   *  append failed and was swallowed). Lets tests and shutdown paths await
+   *  durability instead of sleeping. */
+  flush(): Promise<void>;
 };
 
 /** UTC day file name for a timestamp. */
@@ -132,6 +136,14 @@ export function createRunLogSink(args: {
     dirReady ??= mkdir(runLog.dir, { recursive: true }).then(() => undefined);
     return dirReady;
   };
+  // Appends are SERIALIZED on one promise chain: two concurrent fire-and-
+  // forget appendFile calls can land out of arrival order (surfaced as a CI
+  // flake in the sink's own ordering test, 2026-07-12 — and a consumer
+  // reading the ledger as a timeline would see the same inversion). Each
+  // link swallows its own failure so one bad append never wedges the chain;
+  // still fire-and-forget from the caller's view (observability never breaks
+  // the run).
+  let tail: Promise<void> = Promise.resolve();
   return {
     observe(msg: SDKMessage): void {
       if (msg.type !== 'result') return;
@@ -140,9 +152,17 @@ export function createRunLogSink(args: {
         ...(runLog.scenario !== undefined ? { scenario: runLog.scenario } : {}),
       });
       const line = `${JSON.stringify(record)}\n`;
-      void ensureDir()
-        .then(() => appendFile(join(runLog.dir, runLogFileName(new Date())), line, 'utf8'))
+      tail = tail
+        .then(() => ensureDir())
+        // audit 2026-07-14 L-16: derive the day file from the RECORD'S ts (set
+        // at observe time), not the flush-time clock — a record observed at
+        // 23:59:59 and appended at 00:00:01 otherwise lands in the wrong day
+        // file, where readWindow's filename-based day prefilter can miss it.
+        .then(() => appendFile(join(runLog.dir, runLogFileName(new Date(record.ts))), line, 'utf8'))
         .catch((err) => debug(`runLog: append failed (ignored): ${String(err)}`));
+    },
+    flush(): Promise<void> {
+      return tail;
     },
   };
 }

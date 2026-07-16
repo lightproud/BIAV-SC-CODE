@@ -81,6 +81,7 @@ def _iter_archive_files(source: str):
     """产出某源的全部归档日期文件——遍历逻辑在 archive_layout（布局单一真相源）。"""
     if source == 'discord':
         yield from DISCORD_ARCHIVE_DIR.glob('*.json')
+        yield from DISCORD_ARCHIVE_DIR.glob('*.json.gz')
         return
     yield from archive_layout.iter_source_files(source, ARCHIVE_DIR)
 
@@ -99,15 +100,16 @@ def audit_source(source: str) -> dict:
         'first_archive_date': None,
     }
     files = sorted((f for f in _iter_archive_files(source)
-                    if _DATE_STEM.match(f.stem)),
-                   key=lambda f: f.stem)
+                    if _DATE_STEM.match(archive_layout.date_stem(f))),
+                   key=archive_layout.date_stem)
     if not files:
         return result
 
     total = 0
     for f in files:
         try:
-            data = json.loads(f.read_text(encoding='utf-8'))
+            with archive_layout.open_archive_text(f) as fh:
+                data = json.load(fh)
             if source == 'discord':
                 # discord_archiver 输出 {messages: [...], ...}，list 长度 = 当日消息数
                 msgs = data.get('messages', 0)
@@ -121,10 +123,10 @@ def audit_source(source: str) -> dict:
             continue
 
     # 区服分层后同一日期可有多文件（global/jp），归档天数按去重日期计
-    result['days_archived'] = len({f.stem for f in files})
+    result['days_archived'] = len({archive_layout.date_stem(f) for f in files})
     result['total_items'] = total
-    result['first_archive_date'] = files[0].stem
-    result['last_archive_date'] = files[-1].stem
+    result['first_archive_date'] = archive_layout.date_stem(files[0])
+    result['last_archive_date'] = archive_layout.date_stem(files[-1])
     return result
 
 
@@ -155,8 +157,9 @@ def audit_leaves(source: str) -> list[dict]:
     """某源的叶级（目录粒度）统计；单叶源返回空表（与平台级重复，无下钻价值）。"""
     by_dir: dict[Path, list[str]] = {}
     for f in _iter_archive_files(source):
-        if _DATE_STEM.match(f.stem):
-            by_dir.setdefault(f.parent, []).append(f.stem)
+        ds = archive_layout.date_stem(f)
+        if _DATE_STEM.match(ds):
+            by_dir.setdefault(f.parent, []).append(ds)
     if len(by_dir) <= 1:
         return []
     leaves = []

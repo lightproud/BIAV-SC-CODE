@@ -86,3 +86,44 @@ export const readMcpResourceTool: BuiltinTool = {
     }
   },
 };
+
+export const readMcpResourceDirTool: BuiltinTool = {
+  name: 'ReadMcpResourceDirTool',
+  description:
+    'List the direct children of a directory resource on an MCP server ' +
+    '(resources/directory/read). The listing is NOT recursive: each entry ' +
+    'carries its own uri, and a subdirectory appears with a directory mimeType ' +
+    '— call this tool again on that uri to descend. Only usable against a ' +
+    'server that has declared support for directory listing; others return an ' +
+    'error. Returns the child resource descriptors as JSON.',
+  readOnly: true,
+  inputSchema: {
+    type: 'object',
+    properties: {
+      server: { type: 'string', description: 'The MCP server to read from.' },
+      uri: { type: 'string', description: 'The URI of the directory resource.' },
+    },
+    required: ['server', 'uri'],
+  },
+  async execute(input: Record<string, unknown>, ctx: ToolContext): Promise<ToolResultPayload> {
+    if (ctx.signal.aborted) throw new AbortError();
+    if (!ctx.mcpResources) {
+      return errorResult('ReadMcpResourceDirTool: no MCP servers are configured.');
+    }
+    const server = input['server'];
+    const uri = input['uri'];
+    if (typeof server !== 'string' || server.length === 0) {
+      return errorResult('ReadMcpResourceDirTool: "server" must be a non-empty string.');
+    }
+    if (typeof uri !== 'string' || uri.length === 0) {
+      return errorResult('ReadMcpResourceDirTool: "uri" must be a non-empty string.');
+    }
+    try {
+      const children = await ctx.mcpResources.readDir(server, uri, ctx.signal);
+      return { content: JSON.stringify(children) };
+    } catch (e) {
+      if (isAbortError(e)) throw new AbortError('ReadMcpResourceDirTool was aborted');
+      return errorResult(`ReadMcpResourceDirTool failed: ${(e as Error).message}`);
+    }
+  },
+};

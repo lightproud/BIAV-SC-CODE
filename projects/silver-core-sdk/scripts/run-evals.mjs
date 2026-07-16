@@ -34,6 +34,14 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
 import { dumpMemory, getHarnessRunner, seedWorkspace } from './eval-harnesses.mjs';
+import {
+  classifyJudgeError,
+  computeDimensionMeans,
+  diagnoseJudgeMessage,
+  isValidVerdict,
+  parseJudgeMessage,
+  trimEvidence,
+} from './eval-scoring.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const JUDGE_MODEL = 'claude-sonnet-5'; // PINNED — keeper ruling 2026-07-11.
@@ -117,7 +125,11 @@ function judgeParams(question, evidence, judgePrompt) {
     .replace('{{EVIDENCE_JSON}}', JSON.stringify(evidence, null, 2));
   return {
     model: JUDGE_MODEL,
-    max_tokens: 2048,
+    // 4096 since self-improve #4: at 2048 evidence-heavy questions hit the
+    // cap mid-JSON (5/20 scoreless verdicts in the 2026-07-12 branch round —
+    // truncated rubric_findings evidence strings). Output budget is runner
+    // plumbing; the PINNED judge model + prompt are untouched.
+    max_tokens: 4096,
     messages: [{ role: 'user', content: prompt }],
     output_config: {
       format: {
@@ -155,20 +167,53 @@ const API_HEADERS = () => ({
   'anthropic-version': '2023-06-01',
 });
 
-function parseJudgeMessage(body) {
-  const text = (body.content ?? []).find((b) => b.type === 'text')?.text ?? '{}';
-  return { ...JSON.parse(text), judgeUsage: body.usage };
-}
-
 /** Grade one question with the pinned judge (inline lane). */
-async function judge(question, evidence, judgePrompt) {
+async function judgeOnce(question, evidence, judgePrompt) {
   const res = await fetch(API_URL, {
     method: 'POST',
     headers: API_HEADERS(),
     body: JSON.stringify(judgeParams(question, evidence, judgePrompt)),
   });
-  if (!res.ok) throw new Error(`judge HTTP ${res.status}: ${(await res.text()).slice(0, 300)}`);
-  return parseJudgeMessage(await res.json());
+  if (!res.ok) {
+    // Classify (self-improve #7): terminal request errors (billing/auth/
+    // malformed) carry retryable:false so judge() skips a doomed re-POST, and
+    // the note front-loads the API's own message for the 90-char report cell.
+    const cls = classifyJudgeError(res.status, await res.text());
+    const err = new Error(cls.note);
+    err.retryable = cls.retryable;
+    err.judgeErrorKind = cls.kind;
+    throw err;
+  }
+  const body = await res.json();
+  const verdict = parseJudgeMessage(body);
+  // 深挖一单 (keeper 2026-07-12): when the verdict has no valid score, carry
+  // the API-level diagnostic so one LIVE round reveals WHY (truncation vs
+  // no-text-block vs missing field) instead of another blind retry.
+  if (!isValidVerdict(verdict)) verdict._diag = diagnoseJudgeMessage(body);
+  return verdict;
+}
+
+/** Judge with ONE retry on an invalid/unparseable verdict (self-improve #4):
+ *  scoreless or truncated judge replies are transient — a single fresh call
+ *  usually yields a valid verdict; a second failure surfaces as ERROR. */
+async function judge(question, evidence, judgePrompt) {
+  let first;
+  try {
+    first = await judgeOnce(question, evidence, judgePrompt);
+    if (isValidVerdict(first)) return first;
+  } catch (err) {
+    // Terminal request errors (billing/auth/malformed, retryable:false) can't
+    // be fixed by an identical re-POST — surface immediately instead of
+    // burning a doomed retry (self-improve #7). Transient throws (network /
+    // 5xx / 429, retryable undefined or true) still get their one retry.
+    if (err.retryable === false) throw err;
+    console.log(`judge retry for ${question.id}: first attempt threw (${String(err).slice(0, 120)})`);
+    return judgeOnce(question, evidence, judgePrompt);
+  }
+  console.log(
+    `judge retry for ${question.id}: first verdict invalid (score=${JSON.stringify(first.score)})`,
+  );
+  return judgeOnce(question, evidence, judgePrompt);
 }
 
 /** Grade every pending question in ONE Message Batch (50% nightly lane).
@@ -223,6 +268,22 @@ async function judgeViaBatches(items, judgePrompt) {
   return graded;
 }
 
+/** ERROR result for a scoreless verdict, with the 深挖一单 diagnostic folded
+ *  into the note (so it shows in the CI log, not only the JSON artifact). */
+function invalidVerdictResult(base, verdict) {
+  const d = verdict._diag;
+  const diagStr =
+    d !== undefined
+      ? ` [diag: stop=${d.stop_reason}, blocks=${d.block_types.join('+') || 'none'}, text_len=${d.text_len}, out_tok=${d.output_tokens}]`
+      : '';
+  return {
+    ...base,
+    outcome: 'ERROR',
+    note: `judge verdict missing/invalid score (got ${JSON.stringify(verdict.score)})${diagStr}`,
+    ...(d !== undefined ? { judgeDiag: d } : {}),
+  };
+}
+
 async function runBehavior() {
   const doc = JSON.parse(readFileSync(join(root, 'evals', 'behavior', 'questions.json'), 'utf8'));
   const judgePrompt = readFileSync(join(root, 'evals', 'judge-prompt.md'), 'utf8');
@@ -257,7 +318,7 @@ async function runBehavior() {
       try {
         const out = await runner({ sdk });
         ws = out.ws;
-        toJudge.push({ question, base, evidence: out.evidence });
+        toJudge.push({ question, base, evidence: trimEvidence(out.evidence) });
       } catch (err) {
         results.push({ ...base, outcome: 'ERROR', note: String(err).slice(0, 500) });
       } finally {
@@ -277,6 +338,12 @@ async function runBehavior() {
         const { transcript, result } = await runPhase(sdk, phase, ws, {
           permissionMode: 'bypassPermissions',
           allowDangerouslySkipPermissions: true,
+          // Envelope questions (e.g. tok-06) judge measured prompt size, not
+          // vibes: surface the SDK's own per-request composition estimate
+          // (system/prompt_composition rides the transcript into evidence).
+          ...(question.harness.envelope !== undefined && question.harness.envelope !== null
+            ? { includePromptComposition: true }
+            : {}),
         });
         evidence.phases.push({
           transcript: transcript.slice(0, 200),
@@ -284,7 +351,7 @@ async function runBehavior() {
         });
       }
       evidence.memoryDump = dumpMemory(ws);
-      toJudge.push({ question, base, evidence });
+      toJudge.push({ question, base, evidence: trimEvidence(evidence) });
     } catch (err) {
       results.push({ ...base, outcome: 'ERROR', note: String(err).slice(0, 500) });
     } finally {
@@ -296,10 +363,23 @@ async function runBehavior() {
   if (judgeBatches && toJudge.length > 0) {
     try {
       const graded = await judgeViaBatches(toJudge, judgePrompt);
-      for (const { question, base } of toJudge) {
-        const g = graded.get(question.id);
-        if (g === undefined || g.error !== undefined) {
-          results.push({ ...base, outcome: 'ERROR', note: g?.error ?? 'missing batch result' });
+      for (const { question, base, evidence } of toJudge) {
+        let g = graded.get(question.id);
+        // A verdict without a valid 1-5 score is NOT a score (self-improve
+        // #2). Batch-lane misses fall back to ONE inline retry (self-improve
+        // #4) before surfacing as ERROR.
+        if (g === undefined || g.error !== undefined || !isValidVerdict(g)) {
+          try {
+            console.log(`judge retry (inline) for ${question.id}: batch verdict missing/invalid`);
+            g = await judgeOnce(question, evidence, judgePrompt);
+          } catch (err) {
+            g = { error: String(err).slice(0, 300) };
+          }
+        }
+        if (g.error !== undefined) {
+          results.push({ ...base, outcome: 'ERROR', note: g.error });
+        } else if (!isValidVerdict(g)) {
+          results.push(invalidVerdictResult(base, g));
         } else {
           results.push({ ...base, outcome: 'SCORED', ...g });
         }
@@ -313,7 +393,11 @@ async function runBehavior() {
     for (const { question, base, evidence } of toJudge) {
       try {
         const graded = await judge(question, evidence, judgePrompt);
-        results.push({ ...base, outcome: 'SCORED', ...graded });
+        if (!isValidVerdict(graded)) {
+          results.push(invalidVerdictResult(base, graded));
+        } else {
+          results.push({ ...base, outcome: 'SCORED', ...graded });
+        }
       } catch (err) {
         results.push({ ...base, outcome: 'ERROR', note: String(err).slice(0, 500) });
       }
@@ -329,13 +413,7 @@ async function runBehavior() {
 
 function summarize(baseline, behavior) {
   const scored = behavior.filter((r) => r.outcome === 'SCORED');
-  const byDim = {};
-  for (const r of scored) {
-    (byDim[r.dimension] ??= []).push(r.score);
-  }
-  const dimMeans = Object.fromEntries(
-    Object.entries(byDim).map(([d, s]) => [d, +(s.reduce((a, b) => a + b, 0) / s.length).toFixed(2)]),
-  );
+  const dimMeans = computeDimensionMeans(behavior);
   return {
     generator: 'run-evals.mjs (SCS-REQ-002 REQ-2.1)',
     mode: live ? 'LIVE' : 'STUB',

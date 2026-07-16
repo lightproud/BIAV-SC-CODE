@@ -67,6 +67,61 @@ src/
 
 ## 当前状态
 
+**v0.60.0（2026-07-14）：/goal 会话目标原语（同日守密人「把 goal 命令也给实现了吧」派单）**——
+`/goal <条件>` 布防会话级 Stop 门：引擎 Stop-hook block 语义（v0.39）与 stop 变体条件评估器（v0.6）
+早已发货，缺的只是 `/goal` 表面。新公开模块 `src/hooks/session-goal.ts`：`parseGoalCommand`（set / clear
+双动作三态返回）+ `createSessionGoal`（目标管理器出 Stop matcher——「未达成」判决 block 停止、
+理由回喂用户轮续跑（maxTurns / maxBudgetUsd 照常封顶）、「已达成」自动撤防、`impossible` 逃生口
+撤防防死循环；`handleCommand` 一调用桥接、`onEvent` 生命周期通知、`maxBlocks` 宿主策略帽、
+transcript 尾部有界上下文）。**失败方向与通用 hook 条件门刻意反向**：评估器故障 / 乱码 / 零上下文
+一律放行停止、目标保持布防——坏裁判绝不把 agent 困进强制循环；零上下文不盲判（不调评估器）。
+`GOAL_SLASH_COMMAND` 仅菜单元数据不进内建（同 /loop 诚实红线）。+20 测试。
+
+**v0.59.0（2026-07-14）：/loop 区间循环原语（BPT /loop 缺口收口，守密人同日裁定「SDK 侧加循环原语」）**——
+BPT 中 `/loop 10m <任务>` 原样透传为一次性 prompt、周期语义静默丢失（缺口调查同日）。新公开模块
+`src/prompt-loop.ts`：`parseLoopCommand`（`/loop [<interval>] <task>` 语法唯一真相源，s/m/h + 别名 + 小数，
+缺省 10m；三态返回 null / `{ok:false,error}` / `{ok:true,directive}`，数字开头非法区间 fail-closed，
+界 [1s, 2^31-1ms] 防 Node setTimeout 溢出热循环）+ `createPromptLoop`（宿主自有 runner 上的固定延迟
+控制器：立即首跑、上次**结清**后隔 intervalMs 再跑绝不重叠、maxIterations / AbortSignal / onError
+三态策略、done 摘要 promise 永不 reject）+ `LOOP_SLASH_COMMAND` 菜单元数据（**刻意不进引擎内建**——
+引擎环无法跨墙钟自唤起，广告吞字命令踩诚实红线）。非法配置按层白名单掷 `ConfigurationError`
+（ARCHITECTURE.md 表补行）。+24 测试，全量 2384 绿 + 2 skipped。「循环/调度」自 v0.5 续期推迟清单转正落地（Tier 2 首件）。
+
+**v0.53.8（2026-07-13）：前台子代理批量调用串行化修复（子代理串行化报告）**——同一 assistant
+批次内多个互不依赖的前台 `Agent` 调用被逐个 await（三个 5 秒计时子代理零重叠、启动间隔约 12 秒），
+后台模式却正常并发。根因唯一：`engine/loop.ts` 并发分组谓词只收「只读工具」，Agent `readOnly: false`
+落入串行支路；传输层信号量默认无限额、runtime 无全局锁，均排除。修复：契约新增
+`BuiltinTool.parallelSafe`（Agent 置真——每个子代理跑自己的隔离环，批内互不共享可变态），
+调度器暴露 `isParallelSafeTool`（= readOnly 或 parallelSafe）供分组用；权限门的 readOnly 判定
+（plan 放行 / default 自动批准）不放宽。前台批次现与只读组同样走 `Promise.all` 并发启动，
+tool_result 保持 tool_use 顺序，可变工具维持严格串行契约。+5 测试（引擎分组 3 + runtime 并发
+spawn 1 + 工具元数据 1）；SUBAGENTS.md / CONCURRENCY.md 补记前台批次并发契约。
+
+**v0.53.2（2026-07-13）：工具 Schema 边界校验（BPT P0，PR #665）**——azure/*（OpenAI 兼容）网关
+对缺失/非法 `input_schema` 的 tools[] 条目拒绝整个请求（`tools.N.custom.input_schema: Field required`），
+对话在生成前即死。三层修复：① `engine/loop.ts` 组装层——内置/MCP 非对象 inputSchema（缺失/null/
+数组/原始值）归一化为空对象 Schema + 带工具名 debug 诊断，单个坏 MCP 工具不再拖垮请求；
+② serverTools 层——`type:'custom'`（或空 type）条目诊断后跳过、绝不上线缆，跳过条目不再抑制同名
+内置工具，原生 typed 条目（memory_20250818）字节直通；③ `transport/openai.ts` 末道防线——
+`encodeOpenAIRequest()` 只放行 `input_schema` 为非数组对象的工具，合法工具翻译字节不变。
++10 测试（loop 归一化 6 + 编码器过滤 4），全量 2144 绿 + 2 skipped。0.53.1 号被同日 #667
+（corpus-sync 对齐上游 2.1.205）占用，本修复按台账纪律编 0.53.2。
+
+**0.3x→0.52 消费方迁移战役（2026-07-12 通宵批，docs/tests/scripts-only、零 src 改动不 bump）**——
+黑池 BPT 明日将把 pin 从 0.3x 线拉到 0.52，本批把升级要踩的坑先趟完：① 旧消费面冻结
+`tests/fixtures/legacy-0-3x-surface.json`（0.30.0=8c709f068 / 0.39.0=cf67a6e56 双端点，
+TypeScript 编译器精确枚举：值导出/类型导出/Options 字段）；② 编译器级差分结论——**0.39.0 全面
+零缺失、0.30.0 仅缺 `harnessPromptVariant`**（0.33.0 收梯裁定移除），导出面 0.3x→0.52 纯增量；
+③ 迁移文档 `docs/MIGRATION-0.3x-to-0.52.md`（零改码收益/推荐选入/破坏点三节：更名 0.41.0、
+task-notification XML 0.42.0、变体旋钮 0.33.0、Stop-hook block 0.39.0、五项默认语义迁移）；
+④ legacy-consumer 常驻一致性测试 `tests/legacy-consumer-0-3x.test.ts`（11 测：表面锁 + 0.3x
+调用姿势仿真器实跑，进 `npm test`）；⑤ day-one 金丝雀 `scripts/canary-day-one.mjs`（单文件可拷走，
+仿真器零钥四查 C1-C4 全绿：导入/首会话/工具落盘/断线自愈上账，`--live` 同查打真 API）。
+**追加批（同日，守密人补充实 pin=0.37.1）**：fixture 加第三端点 0.37.1（cbdbfa184）——对 0.52.0
+仍零缺失；迁移文档增 §0-pre「实 pin 专属清单」（适用=更名/XML/Stop-hook block/默认语义迁移 +
+跨 0.38 斜杠展开；不适用=变体旋钮）+ **同名双胞胎构建鉴别法**（0.38.0 功能体版本常量误带 0.37.1
+上线，两构建导出面已双双枚举核实全等，`dist/engine/slash-commands.js` 在否即可分辨）。
+
 **v0.51.0(2026-07-12):自我改进闭环推进批**——① REQ-1.2 `compareReports(dateA,dateB,{logDir})`
 按 UTC 日重聚合台账出关键指标差值 + Markdown 表(无数据日显式 null,绝不伪装零),
 `generateRuntimeReport` 报告 30 天滚动剪除(原始台账默认永不剪、`ledgerRetentionDays`

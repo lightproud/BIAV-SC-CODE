@@ -4,7 +4,7 @@ title: "bpt-sdk-conformance-campaign-report-20260705"
 description: "元数据之上；官方请求体零读取零持久化（`assertContentBlind` 逐产物自审）（格式：md）"
 resource: "/Public-Info-Pool/Resource/repo-engineering/bpt-sdk-conformance-campaign-report-20260705.md"
 tags: ["data_layer:curated", "deliverable", "topic:repo-engineering"]
-timestamp: "2026-07-12"
+timestamp: "2026-07-16"
 ---
 
 # 指针概念

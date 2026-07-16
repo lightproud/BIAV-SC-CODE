@@ -11,7 +11,7 @@
 import { mkdtemp, readFile, readdir, rm, writeFile, mkdir } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { afterEach, beforeEach, describe, expect, it } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { query } from '../src/query.js';
 import {
@@ -136,12 +136,42 @@ describe('createRunLogSink', () => {
     sink.observe({ type: 'system', subtype: 'init' } as never);
     sink.observe(resultFixture() as never);
     sink.observe(resultFixture({ session_id: 'sess-9' } as never) as never);
-    await new Promise((r) => setTimeout(r, 50));
+    // flush() (v0.51.2) resolves once all observed records are appended —
+    // appends are serialized, so line order IS arrival order (the old 50ms
+    // sleep raced two independent append chains and flaked in CI).
+    await sink.flush();
     const lines = (await readFile(join(logDir, runLogFileName(new Date())), 'utf8'))
       .trim()
       .split('\n');
     expect(lines).toHaveLength(2);
+    expect(JSON.parse(lines[0]!).session_id).toBe('sess-1');
     expect(JSON.parse(lines[1]!).session_id).toBe('sess-9');
+  });
+
+  // audit 2026-07-14 L-16: the day file is derived from the RECORD'S ts (set at
+  // observe time), not the flush-time clock. A record observed at 23:59:59 and
+  // flushed after midnight must still land in the earlier day's file.
+  it('writes to the record ts day file, not the flush-time clock (L-16)', async () => {
+    vi.useFakeTimers();
+    try {
+      const logDir = join(dir, 'sink-l16');
+      const sink = createRunLogSink({
+        runLog: { dir: logDir },
+        incognito: false,
+        debug: () => {},
+      });
+      // Observe just before midnight on day A -> record.ts is day A.
+      vi.setSystemTime(new Date('2026-07-14T23:59:59.000Z'));
+      sink.observe(resultFixture() as never);
+      // The append lands "later" — the wall clock is now day B.
+      vi.setSystemTime(new Date('2026-07-15T00:00:01.000Z'));
+      await sink.flush();
+      const files = await readdir(logDir);
+      // Belongs to day A (its observe-time ts), NOT day B (the flush clock).
+      expect(files).toEqual(['runlog-2026-07-14.jsonl']);
+    } finally {
+      vi.useRealTimers();
+    }
   });
 });
 
@@ -235,6 +265,33 @@ describe('generateRuntimeReport', () => {
     expect(report.markdown.match(/无数据/g)!.length).toBeGreaterThanOrEqual(4);
   });
 
+  it('bug-fix: a tool with calls=0 renders 无数据, never NaN%/Infinity%', async () => {
+    // isRunLogRecord accepts calls:0 (external producers emit it), and the
+    // failure-rate cell divided errors/calls with no zero guard — unlike the
+    // guarded sibling in compare-reports.ts.
+    const logDir = await seedLedger([
+      {
+        ts: '2026-07-11T11:00:00Z',
+        usage: {
+          input_tokens: 1,
+          output_tokens: 1,
+          cache_read_input_tokens: 0,
+          cache_creation_input_tokens: 0,
+        },
+        total_cost_usd: 0,
+        per_tool: [
+          { name: 'NeverCalled', calls: 0, errors: 0 },
+          { name: 'ZeroWithErr', calls: 0, errors: 2 },
+        ],
+      },
+    ]);
+    const report = await generateRuntimeReport({ logDir, now: T0, outDir: null });
+    expect(report.markdown).not.toContain('NaN');
+    expect(report.markdown).not.toContain('Infinity');
+    expect(report.markdown).toContain('| NeverCalled | 0 | 0 | 无数据 |');
+    expect(report.markdown).toContain('| ZeroWithErr | 0 | 2 | 无数据 |');
+  });
+
   it('window filtering drops records outside the rolling window', async () => {
     const inWin = { ...buildRunLogRecord(resultFixture(), { incognito: false }), ts: '2026-07-11T11:30:00Z' };
     const outWin = { ...buildRunLogRecord(resultFixture(), { incognito: false }), ts: '2026-07-09T11:30:00Z' };
@@ -245,6 +302,29 @@ describe('generateRuntimeReport', () => {
     );
     const report = await generateRuntimeReport({ logDir, now: T0, outDir: null });
     expect(report.summary.records).toBe(1);
+  });
+
+  it('wrong-shape JSON lines count as bad lines, never kill the report (audit 2026-07-14 M-12)', async () => {
+    const good = {
+      ...buildRunLogRecord(resultFixture(), { incognito: false, scenario: 'coding' }),
+      ts: '2026-07-11T11:00:00Z',
+    };
+    const logDir = join(dir, 'ledger');
+    await mkdir(logDir, { recursive: true });
+    await writeFile(
+      join(logDir, 'runlog-2026-07-11.jsonl'),
+      `${JSON.stringify(good)}\n` +
+        // well-formed JSON, wrong shape: no usage object at all
+        '{"ts":"2026-07-11T11:00:00Z"}\n' +
+        // well-formed JSON, wrong-typed usage
+        `${JSON.stringify({ ...good, usage: 'nonsense' })}\n`,
+    );
+
+    const report = await generateRuntimeReport({ logDir, now: T0, outDir: null });
+    // Succeeds; aggregates ONLY the valid record and counts the 2 bad lines.
+    expect(report.summary.records).toBe(1);
+    expect(report.summary.tokens?.input).toBe(100);
+    expect(report.markdown).toContain('2 unparseable lines skipped');
   });
 
   it('missing log directory degrades to an all-无数据 report, not a throw', async () => {

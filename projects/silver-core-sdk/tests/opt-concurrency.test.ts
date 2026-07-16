@@ -154,7 +154,18 @@ describe('OPT-4: transport honors maxConcurrentRequests', () => {
       active -= 1;
       const body = new ReadableStream<Uint8Array>({
         start(c) {
+          // A minimally COMPLETE stream: message_start + a terminal
+          // message_delta(stop_reason) + message_stop. The stop_reason matters
+          // since the transport now rejects a started stream that ends with no
+          // content AND no stop_reason as a degraded turn (empty_message).
           c.enqueue(encodeSSEFrame({ type: 'message_start' }));
+          c.enqueue(
+            encodeSSEFrame({
+              type: 'message_delta',
+              delta: { stop_reason: 'end_turn', stop_sequence: null },
+              usage: { output_tokens: 1 },
+            }),
+          );
           c.enqueue(encodeSSEFrame({ type: 'message_stop' }));
           c.close();
         },

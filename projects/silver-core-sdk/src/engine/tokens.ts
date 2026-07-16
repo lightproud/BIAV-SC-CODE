@@ -32,11 +32,13 @@ const CHARS_PER_TOKEN = 4;
  */
 function isCjkCodePoint(cp: number): boolean {
   return (
+    (cp >= 0x3000 && cp <= 0x303f) || // CJK Symbols & Punctuation (、。「」《》…) — finding L3
     (cp >= 0x3040 && cp <= 0x30ff) || // Hiragana + Katakana
+    (cp >= 0x3200 && cp <= 0x33ff) || // Enclosed CJK Letters/Months + Compatibility — finding L3
     (cp >= 0x3400 && cp <= 0x4dbf) || // CJK Unified Ideographs Ext A
     (cp >= 0x4e00 && cp <= 0x9fff) || // CJK Unified Ideographs
     (cp >= 0xf900 && cp <= 0xfaff) || // CJK Compatibility Ideographs
-    (cp >= 0xff66 && cp <= 0xff9d) || // Halfwidth Katakana
+    (cp >= 0xff00 && cp <= 0xffef) || // Halfwidth & Fullwidth Forms (fullwidth ASCII/punct) — finding L3
     (cp >= 0x1100 && cp <= 0x11ff) || // Hangul Jamo
     (cp >= 0x3130 && cp <= 0x318f) || // Hangul Compatibility Jamo
     (cp >= 0xac00 && cp <= 0xd7a3) || // Hangul Syllables

@@ -1,6 +1,14 @@
 # 项目状态一览
 
-> 最后更新：2026-07-11 by 自我改进闭环需求归档会话（同会话三批：① SCS-REQ-002 草案落
+> 最后更新：2026-07-12 by Phase 2 收口三条裁定会话（守密人三条裁定落档：① **Phase 2 提前收口
+> 判定「基本达成」**——M7 验收①基础设施齐备✅②自动化跑稳✅、③贡献流程项随 wiki 使命取消作废，
+> 即时生效不待 07-19；② **wiki 使命取消 + 银芯定位第三次收敛**——二使命 = 黑池信息入口（news）
+> + 通用 AI 底层能力开发基地（silver-core-sdk 事实使命转正），wiki 子项目冻结（成果保留不删
+> 不派发），社区数据采集必要性重估同日续批裁定「维持现状」销案（#T36，触发线站岗）；③ **银芯即时进入稳态维护期** + 过时 demo 清理令（续批已裁：deploy-site.yml「+ bpt-web」注释订正、清理令闭环）
+> （扫描已执行：Releases 与 Public-Info-Pool 演示性残留为零，仅 1 处活文档注释候选待守密人裁，
+> 报告落 `Public-Info-Pool/Resource/repo-engineering/`），news 推送形态挂账 #T37。裁定全文
+> `memory/decisions.md` 同日三条；下方子项目表 wiki / silver-core-sdk 两行已同步）。
+> 前批 2026-07-11 by 自我改进闭环需求归档会话（同会话三批：① SCS-REQ-002 草案落
 > `memory/active/self-improvement-requirements.md`、阻塞项挂账 #T25/#T26；② 守密人四裁定落
 > `memory/decisions.md` 并销 T25/T26——评分模型 Sonnet 5 / 预算帽 $30/月 / 题目来源混合 /
 > 沙箱独立 checkout，Phase 1 解锁；③ Phase 0+1 实装落地 v0.49.0——`options.memory.pitfalls`
@@ -61,13 +69,13 @@
 |--------|------|---------|--------|
 | site（主站 + 部署 + 视觉） | 已部署，维护模式 | Code-site | 无新任务 |
 | news（新闻聚合 + 报告系统） | 自动化持续运行（采集 / 回填 / 评论 / 同人图） | Code-news | M2 信息齐备期任务见 `projects/news/CONTEXT.md`；dependabot #136-140 实际状态待核 |
-| wiki（数据集 + Wiki 站点） | **W2 基线已重建 + 数据桥已接回（2026-07-02）**：可信基线 `data/processed/characters.json`（72 真实角色，一手解包）→ 58 真实唤醒体页 + 运行时数据桥 `characters.runtime.json`（生成器单点产出）→ `characters.ts` 消费，CharacterGrid（72 卡片、界域/类目/搜索筛选）挂载图鉴页，SSR 构建验证通过 | 艾瑞卡会话 | 真实字段缺口推进（skills/命轮/立绘/三语）见 `wiki-phase-2-gap-inventory.md`；贡献流程 2026-07-10 裁定取消（社区单向可读，见 decisions.md） |
+| wiki（数据集 + Wiki 站点） | **已冻结（守密人 2026-07-12 裁定：原使命#2「社区共建知识底座」取消，wiki 不再承载正式使命）**。已建成果保留不删不派发：可信基线 `data/processed/characters.json`（72 真实角色，一手解包）→ 58 真实唤醒体页 + 运行时数据桥 `characters.runtime.json` → `characters.ts` 消费，CharacterGrid 挂载图鉴页，SSR 构建验证通过（2026-07-02 冻结前状态）。站点随 deploy-site.yml 继续对外可读 | 艾瑞卡会话 | 无（冻结，不派发）。原字段缺口任务（skills/命轮/立绘/三语，见 `wiki-phase-2-gap-inventory.md`）随冻结停派；社区数据采集必要性重估已裁维持现状（T36 销案 2026-07-12，见 `memory/todo.md` 已清节） |
 | game（衍生游戏） | 暂缓 | 待创建 | 不主线派发 |
-| **silver-core-sdk**（原名 bpt-agent-sdk，2026-07-10 更名 · Claude Agent SDK 公开信息再现 · 银芯→黑池单向输出物） | **v0.51.0（2026-07-12 自我改进闭环推进：REQ-1.2 趋势比对 + Phase 2 harness 全 8 题解锁 + REQ-2.2 回归门禁；0.43–0.50 历程见专节逐条）**：TypeScript 重实现（公开信息再现、自研引擎），直驱 Anthropic Messages API（fetch+SSE，无 CLI 子进程），**1885 单测全绿 + 2 skipped、tsc/build exit 0**（0712 实录；v0.49.0 时点为 1848+2）；对官方 SDK **0.3.205** 约 90%+ 表面等价（对标基线 2026-07-10 由 0.3.201 追齐至 0.3.205，见 `docs/COMPAT.md`「0.3.201 -> 0.3.205 chase」；v0.40.0 落 7 个新类型 + interrupt 收据 + parent_agent_id，全类型化、诚实源外 typed-not-emitted），一致性金字塔 L1–L5 全封顶、首轮真 API L5 两臂打平 88.9%。**评估 backlog P2/P3/P4 全落（2026-07-06）**：**P2**（PR #501）逐条过 COMPAT 39 项 PARTIAL 分诊——~14 行「文档滞后」收敛为 FULL + 8 个真缺口闭合各带测试（Edit 读前写门 / stream_event ttft_ms / PostToolBatch tool_calls[] / SubagentStop agent_transcript_path / thinking.display / debugFile / mcpServerStatus scope / maxThinkingTokens @deprecated；notebook·sse 显式暂缓）；**P3** 漂移哨兵升「报+自动开草稿 PR」（`conformance-drift.yml` + `drift-check.mjs --emit-*`，选择性追踪纪律不动、绝不自动改基线）；**P4** `docs/ONBOARDING.md` 新维护者 30 分钟上手（降总线因子）。中间里程碑（v0.4→v0.11）详见下方专节 | 艾瑞卡会话 | 无阻塞待办；评估全文 `Public-Info-Pool/Resource/repo-engineering/bpt-agent-sdk-evaluation-20260706.md`；**动手前必读** `projects/silver-core-sdk/CONTEXT.md` + `docs/ONBOARDING.md`，定位见 `docs/POSITIONING.md` |
-| **bpt-pm**（项目排期工作台 · 非使命线工程产物） | **v1 首版已建（2026-07-05）**：单网页 `index.html` 零依赖零后端，数据协议 `bpt-pm/v1`（`schema/task-schema.json`），CPM 前向/后向自动排期 + 临界路径 + 4 依赖类型（FS/SS/FF/SF）+ 工作日历 + SNET/MSO 约束 + 基线比对甘特图；File System Access 读写回写。CPM 离线复算 + 无头 Chromium 冒烟均通过。**Notion 数据源已端到端实测（2026-07-05）**：适配器 `docs/notion-adapter.md` + CLI `scripts/schedule.mjs`，对真实工作区跑通建库→拉取→CPM→写回→抽验闭环。**本地 Notion 代理已建**（`proxy/server.mjs` 持 token 跑 localhost，网页按钮直连 Notion，端到端 12 项契约通过）。**v2-A 资源冲突可视化已落（2026-07-05，面向 60 人内容团队痛点）**：协议加 `resources`（人/外包 + 并发产能），引擎算逐日负载 + 超载检测，网页资源×日热力图（超载红/满载绿），`tests/resource_load.mjs` 全过。**v2 B/C/D 三特性已实现（2026-07-05，全部 additive 向后兼容，CPM 主算法不改）**：B 版本周期守护（任务级 `deadline` 软截止 → `late`/`lateDays`/顶层 `lateCount`）/ C 流水线模板+返修回环（项目级 `templates` + 纯函数 `instantiateTemplate`，stage FS 链 + R 轮审核→返修）/ D 外包发单对象（项目级 `orders` + 纯函数 `analyzeOrders` → `atRisk`/顶层 `ordersAtRisk`）；三函数在 `scripts/schedule.mjs` 导出、`index.html` 内联同实现，回归 `tests/v2_bcd.mjs`（15 断言全过）。**v3 引擎四组已实现（2026-07-05，工作流编排，全 additive）**：① 完备性（自由浮动 `freeSlack` + 约束补齐 8 型 ALAP/SNLT/FNET/FNLT/MFO + 从完成日倒排 `scheduleFrom=finish`）/ ② 资源错峰建议（纯函数 `suggestLeveling` 贪心串行，残余超载消解）/ ③ WBS 层级摘要（`parent` + 卷积 `isSummary`/`depth`/`childIds`，摘要排除出 CPM/资源/错峰）/ ④ 冲突显式告警（`warnings`/`warningCount`：constraint-conflict/negative-slack/infeasible-window）；引擎两处同实现，回归 `tests/v3.mjs`（20 断言全过）。UI 全部收尾：自由浮动列/8约束/调度方向切换/告警面板/#btnSampleV3/错峰视图/**WBS 折叠三角+甘特摘要条**/**错峰应用建议按钮**（实测超载 3→0）。**表格格式协议 bpt-pm/table-v1 已加（2026-07-05）**：`docs/table-formats.md`（5 张数据源无关标准表：项目/任务/资源/外包单/模板，列名即协议、标输入vs写回）+ 生成器 `scripts/gen_tables.mjs`（空表模板/样例 CSV）+ `tests/tables.mjs`；服务阿里 AI 表格/Notion/飞书多维表等任意 base 建新格式 | 艾瑞卡会话 | 无阻塞待办；可选：消费上限恢复后重跑 v3 对抗验证工作流二次背书；**动手前必读** `projects/bpt-pm/CONTEXT.md` |
+| **silver-core-sdk**（原名 bpt-agent-sdk，2026-07-10 更名 · Claude Agent SDK 公开信息再现 · **正式使命#2「通用 AI 底层能力开发基地」核心载体**，守密人 2026-07-12 裁定由「非使命线」事实使命转正 · 银芯→黑池单向输出物） | **v0.51.0（2026-07-12 自我改进闭环推进：REQ-1.2 趋势比对 + Phase 2 harness 全 8 题解锁 + REQ-2.2 回归门禁；0.43–0.50 历程见专节逐条）**：TypeScript 重实现（公开信息再现、自研引擎），直驱 Anthropic Messages API（fetch+SSE，无 CLI 子进程），**1885 单测全绿 + 2 skipped、tsc/build exit 0**（0712 实录；v0.49.0 时点为 1848+2）；对官方 SDK **0.3.205** 约 90%+ 表面等价（对标基线 2026-07-10 由 0.3.201 追齐至 0.3.205，见 `docs/COMPAT.md`「0.3.201 -> 0.3.205 chase」；v0.40.0 落 7 个新类型 + interrupt 收据 + parent_agent_id，全类型化、诚实源外 typed-not-emitted），一致性金字塔 L1–L5 全封顶、首轮真 API L5 两臂打平 88.9%。**评估 backlog P2/P3/P4 全落（2026-07-06）**：**P2**（PR #501）逐条过 COMPAT 39 项 PARTIAL 分诊——~14 行「文档滞后」收敛为 FULL + 8 个真缺口闭合各带测试（Edit 读前写门 / stream_event ttft_ms / PostToolBatch tool_calls[] / SubagentStop agent_transcript_path / thinking.display / debugFile / mcpServerStatus scope / maxThinkingTokens @deprecated；notebook·sse 显式暂缓）；**P3** 漂移哨兵升「报+自动开草稿 PR」（`conformance-drift.yml` + `drift-check.mjs --emit-*`，选择性追踪纪律不动、绝不自动改基线）；**P4** `docs/ONBOARDING.md` 新维护者 30 分钟上手（降总线因子）。中间里程碑（v0.4→v0.11）详见下方专节 | 艾瑞卡会话 | 无阻塞待办；评估全文 `Public-Info-Pool/Resource/repo-engineering/bpt-agent-sdk-evaluation-20260706.md`；**动手前必读** `projects/silver-core-sdk/CONTEXT.md` + `docs/ONBOARDING.md`，定位见 `docs/POSITIONING.md` |
+| **bpt-pm**（项目排期工作台 · 非使命线） | **已删除（2026-07-12 守密人裁定，模块盘点逐个问答：已不使用）**。原单网页 CPM 排期工作台（协议 bpt-pm/v1，v1→v3 引擎 + Notion 适配 + 表格协议均曾落盘），全部代码与文档 git 历史可追 | 艾瑞卡会话 | 无 |
 
 > BPT 战线（bpt-web / bpt-desktop / bpt-next / graphify-ext / occ-local）已于 2026-04-19 战略转向中从银芯仓库删除，不再在银芯内部开发。银芯转为 BPT 指导者，协议见 `memory/bpt-guidance-protocol.md`。
-> **例外辨析（勿混淆）**：上表 `silver-core-sdk`（原名 bpt-agent-sdk） **不属**上述被删 BPT 产品战线，**亦非**「银芯内部开发 BPT 产品」。它是银芯自有的**工程产物**（公开信息层），作为**银芯→黑池单向输出物**供 BPT Desktop 消费（令其脱离被禁的 `claude.exe` 子进程引擎）——方向与 §1.1-HC 防火墙一致（银芯→黑池单向输出），黑池数据从不回流。
+> **例外辨析（勿混淆）**：上表 `silver-core-sdk`（原名 bpt-agent-sdk） **不属**上述被删 BPT 产品战线，**亦非**「银芯内部开发 BPT 产品」。它是银芯自有的**工程产物**（公开信息层），作为**银芯→黑池单向输出物**供 BPT Desktop 消费——方向与 §1.1-HC 防火墙一致（银芯→黑池单向输出），黑池数据从不回流。**定性升级（守密人 2026-07-12 裁定）**：由「非使命线工程产物」转正为**正式使命#2「通用 AI 底层能力开发基地」核心载体**（事实使命转正：20+ 真实消费者、BPT 在产）；背景事实——黑池侧已完全弃用 Claude Code、全面换装自有技术栈（BPT + silver-core-sdk 0.3x pin），SDK 存在理由由「应急替代」升格「常态底座」。
 
 ## News 新闻聚合 + 报告系统
 
@@ -191,6 +199,104 @@
 > 银芯→黑池单向输出物，与 §1.1-HC 防火墙同向，非 BPT 产品内部开发。
 
 - **动手前必读**：`projects/silver-core-sdk/CONTEXT.md`（会话上下文 + 当前 milestone）
+- **v0.60.0（2026-07-14，`/goal` 会话目标原语，守密人「把 goal 命令也给实现了吧」派单）**：
+  与 /loop 同类表面缺口——引擎 Stop-hook block 语义（v0.39）与 stop 变体条件评估器（v0.6）早已
+  发货，`/goal` 却无人解析。新模块 `src/hooks/session-goal.ts`（BPT-EXTENSION）：`parseGoalCommand`
+  （set / clear）+ `createSessionGoal`（Stop matcher：未达成 block 停止并回喂理由续跑、达成自动
+  撤防、impossible 逃生口撤防；`handleCommand` 一调用桥接、`onEvent` 通知、`maxBlocks` 帽、
+  transcript 尾部有界上下文）。失败方向与通用条件门**刻意反向**：坏裁判（评估器故障 / 乱码 /
+  零上下文）一律放行停止、目标保持布防，绝不困死 agent；零上下文不盲判。+20 测试。
+- **v0.59.0（2026-07-14，BPT `/loop` 缺口收口，守密人同日裁定「SDK 侧加循环原语」）**：
+  BPT 调查确认 `/loop 10m <任务>` 未被任何层解释、原样透传为一次性 prompt（GUI 未注册 /loop、
+  SDK 斜杠层仅 /compact 内建 + markdown 展开、周期语义静默丢失）。新公开模块 `src/prompt-loop.ts`
+  （BPT-EXTENSION）：`parseLoopCommand` 语法唯一真相源（`/loop [<interval>] <task>`，s/m/h + 别名 +
+  小数，缺省 10m，三态返回、数字开头非法区间 fail-closed、界 [1s, 2^31-1ms] 防 setTimeout 溢出）+
+  `createPromptLoop` 固定延迟控制器（立即首跑、结清后再计时绝不重叠、maxIterations / AbortSignal /
+  onError 策略、done 摘要永不 reject）+ `LOOP_SLASH_COMMAND` 菜单元数据（刻意不进引擎内建，守诚实
+  红线）。BPT 侧只余十行桥接（README 附范本）。+24 测试，全量 **2384 绿 + 2 skipped**；
+  「循环/调度」自 v0.5 推迟清单转正落地。
+- **v0.53.3（2026-07-13，BPT 稳定性《keep-alive 空闲 socket TTL》）**：修复黑池升 pin 后
+  「回合卡住无输出、并发对话越多越易发」——0.45.0 默认 node HTTP 客户端把池化 socket 握到
+  「服务端来关」为止，但 azure/* 等网关中间设备**静默丢弃**空闲连接（不发 FIN/RST），池内积累
+  僵尸 socket；写上去的请求要等满请求阶段超时（默认 600 秒），重试还可能摸到下一条僵尸；
+  0.45 之前 undici 约 4 秒回收空闲连接、掩盖了整类问题。修复：空闲 socket 55 秒 TTL 主动销毁
+  （`FREE_SOCKET_TTL_MS`，压在常见 60 秒中间设备空闲底线之下；计时器 unref、复用即清零重计），
+  过期只花一次 TCP+TLS 重握手（约 100–300 毫秒，TLS 会话恢复不受影响）；Agent 显式钉
+  `scheduling:'lifo'`。逃生口不变（`provider.httpClient:'fetch'` / `BPT_HTTP_CLIENT=fetch`）。
+  +2 测试，全量 **2145 绿 + 3 skipped**（多出的 1 个 skip 为 `replay-backoff-process-exit`
+  在云容器的环境性跳过，非本改动引起）；tarball `silver-core-sdk-0.53.3.tgz`（809,430 B，
+  sha1 `d5dc13c03a7b43daaa21d72285faebce8cb9150e`）已干净目录装机 + 导入冒烟。
+  **消费侧速判三则**（黑池工具快照对不上源码登记 ≠ 版本不同步）：`memory` 工具仅在传
+  `options.memory` 时才广告（`query.ts`）、`ToolSearch` 仅在 `toolSearch:true` 或工具总数
+  >50 自动激活时出现（`toolsearch.ts` `shouldActivate`）、`SendMessage` 自 0.42.0 起默认在列
+  ——宿主权限表须显式登记（迁移文档 §1.5 已预警）。
+- **v0.53.2（2026-07-13，BPT P0《工具 Schema 边界校验与协议安全》，PR #665）**：修复 azure/*（OpenAI
+  Chat Completions 兼容）网关整请求被拒（`tools.N.custom.input_schema: Field required`——单个缺失/非法
+  `input_schema` 的工具条目令整段对话无法开始）。三层收口：① 组装层（`engine/loop.ts`）内置/MCP
+  非对象 Schema（缺失/null/数组/原始值）归一化为 `{type:'object',properties:{}}` + 带工具名 debug 诊断；
+  ② `serverTools` 中 `type:'custom'`（或空 type）条目记诊断跳过、不再抑制同名内置工具，Anthropic 原生
+  typed 条目（`memory_20250818`）直通不变；③ OpenAI 传输层 `encodeOpenAIRequest()` 末道过滤只放行
+  非数组对象 Schema。+10 测试，全量 **2144 绿 + 2 skipped**；tarball `silver-core-sdk-0.53.2.tgz`
+  （807,371 B，sha1 `223aaf8242b020572954d0810e82d45e86a8bc86`）已干净目录装机 + 导入冒烟。
+  版本 0.53.1→0.53.2（0.53.1 已被同日 #667 提示词对齐批占用，按台账纪律重编号）。
+- **0.3x→0.52 消费方迁移战役（2026-07-12 通宵批，为黑池次日 pin 升级预趟坑；docs/tests/scripts-only 零 src 改动）**：
+  编译器级冻结双端点旧消费面（fixture `tests/fixtures/legacy-0-3x-surface.json`：0.30.0/0.39.0 全导出 + Options 字段）——
+  结论 **0.39.0 pin 零缺失、0.30.0 pin 仅缺 `harnessPromptVariant`（0.33.0 移除）**，导出面纯增量；
+  迁移文档 `docs/MIGRATION-0.3x-to-0.52.md`（收益/选入/破坏点三节，破坏点=更名 0.41 / drain-note XML 0.42 /
+  变体旋钮 0.33 / Stop-hook block 0.39 + 五项默认语义迁移）+ legacy-consumer 常驻测试 11 条进 `npm test` +
+  day-one 金丝雀 `scripts/canary-day-one.mjs`（零钥四查全绿，`--live` 可打真 API）；
+  **同日追加批（守密人补充实 pin=0.37.1）**：第三端点入 fixture（对 0.52.0 零缺失）、迁移文档增实 pin
+  专属清单 §0-pre + 0.37.1/0.38.0 同名双胞胎构建鉴别法（版本常量事故遗产，导出面核实全等）
+- **环三首轮自改循环收官（2026-07-12，守密人「循环自改、合并自断」授权，6 单全并）**：
+  self-improve **#1–#6** 当日走完六个完整「定位→修复→分支 LIVE 验证→合并」周期——
+  #1 tok-06 接线修复（PR #622，管线验收单）/ #2 判卷校验闸（#624）/ #3 确定性切流
+  `cutAfterTextDeltas`（#625）/ #4 judge 预算 4096+重试（#627）/ #5 runlog 追加序列化
+  （#630，**v0.51.2** 发货修复：台账顺序=到达顺序 + `flush()`）/ #6 判卷证据瘦身
+  `trimEvidence`（#631）。判卷成功率 15/20 → 18-19/20，四轮门禁全 PASS，末轮
+  （run [29194232519](https://github.com/lightproud/brain-in-a-vat/actions/runs/29194232519)）
+  9 作业全绿、维度均分 memory **5.00** / token 4.57 / disconnect 3.80。**停机判定**（授权终点）：
+  基础设施四层无已知可修缺陷；残余三类——① **dc-03 语义冲突待守密人裁**（引擎「半截话作答」
+  忠实复刻官方 E3 vs rubric 期待续写，两轮稳定 1 分，改 rubric=基线重置专权）；② mem-03/dc-05
+  顽固无分对子转观察（3 轮 5 次 judge 结构化输出失败）；③ judge 方差（mem-01 零改动 2→5 实证）
+  与 estBytes 等收益递减项不再专门烧轮。判卷侧当日约 $15（$30/月帽内）。裁定全文
+  `memory/decisions.md` 同日「自改循环授权 + 首轮循环收官」条。
+- **self-improve #7：判卷 HTTP 错误分类（2026-07-12，判卷无关硬化，收官后补一单）**：
+  收官后点火的确诊轮（run [29196113106](https://github.com/lightproud/brain-in-a-vat/actions/runs/29196113106)）
+  20 题全 judge HTTP 400——完整报文是 **`invalid_request_error: Your credit balance is too low`**
+  （API 账户余额耗尽，非代码缺陷，与 2026-07-07 v0.14.0 余额耗尽轮同类「无效不可采信」）。
+  基础设施**正确降级**（20 题全记 ERROR、维度均值空、REQ-2.2 只发 advisory 警告不误报假回归——
+  self-improve #2 均值防毒化在判卷全线中断下按设计工作的铁证）。但暴露两个判卷无关缺陷：① 账单/鉴权
+  类 400 被当瞬时错误盲目重试一次（注定失败、白烧已耗尽余额）；② 报告 90 字备注格被 JSON 信封前缀
+  `…"message":"` 占满，真因得钻原始 CI 日志才见。**修复**：`classifyJudgeError()`（`scripts/eval-scoring.mjs`
+  纯函数）按状态码 + 报文分诊——billing/auth/permission/其他 4xx 为终态 `retryable:false`（judge() 不再
+  空重试），429/5xx/529 仍为瞬时可重试；备注前置 `[kind]` + API 原文，截断格也读得出「billing: Your
+  credit balance is too low」。+4 测试（`tests/eval-scoring.test.ts`，**1905 全绿 + 2 skipped**）。
+  仅改 scripts/ + tests/（非 shipped `src/**`），版本升号守卫豁免、无需升版。**判卷侧证分待守密人为
+  API 账户充值后重跑**（dc-03 续写旗分数复核 + mem-03/dc-05 深挖一单 judgeDiag 收集均阻塞于此）。
+- **无钥替代：dc-05 双桶台账确定性断言（2026-07-12，充值阻塞下的免费推进）**：守密人 API 暂无法充值，
+  遂把被判卷阻塞的机械内核转成无钥断言（`tests/eval-harness-faults.test.ts` 本地 SSE 模拟器驱真引擎，
+  零 API 零成本）。**结论**：① **dc-03 续写旗机械核早已无钥覆盖**（`engine.test.ts:2279`
+  断言 `salvageMode:'continue'`→`turnsSalvaged:0,turnReplays:1`），不真阻塞；② **dc-05「只记一个桶」被
+  证伪**——新增混合故障断言（网络错 POST#1 + 流中切断 POST#2 同处一轮）实测 `networkRetries≥1` **且**
+  drop/recovery 桶 `≥1` **同时成立**，引擎台账双桶各记一笔、并未漏记；judge 那句 2 分说的是喂它的证据只
+  浮现一个桶（呈现/rubric 层面），**非引擎缺陷**。价值 = 免费永久 CI 双桶回归锁 + 无需判卷即判明 dc-05
+  工程无罪。**判卷侧真剩项**（确须付费判卷、无钥不可复现）：mem-03/dc-05 judge 结构化输出偶发失败的
+  深挖，属判卷官模型行为、待充值后收 judgeDiag。**1906 全绿 + 2 skipped**（+1 混合故障断言）、仅改 tests/。
+- **首份全量 LIVE 评估基线（2026-07-12，run [29178972282](https://github.com/lightproud/brain-in-a-vat/actions/runs/29178972282)，v0.51.1）**：
+  20 题全执行（8 题 Phase 2 harness 首次真跑真判），**19 判卷成功 / 1 judge 解析错误（tok-02，偶发）**；
+  维度均分 memory_recall **4.86** / disconnect_recovery **4.00** / token_efficiency **4.33**，
+  已播种 `projects/silver-core-sdk/evals-baseline.json`（REQ-2.2 回归门禁自此有基可比）。
+  **三项真发现 = 环三首批改进候选**：① tok-06 得 1 分——`allowedTools:['Read']` 时系统提示词仍
+  装配全 22 工具描述（token 效率真缺口）；② dc-05 得 2 分——混合故障中流中切断的台账归因不全
+  （transportHealth 只记到一个事件桶）；③ dc-03 得 3 分——截断抢救的计数器归因与预期不符。
+  低分不修不遮：正是评估轮的产出物，按压缩后节拍进环三处理。**基线轮点火史**：首次点火
+  run 29178257816 以 exit 13 失败、当场揪出并修掉引擎回放退避 unref 缺陷（v0.51.1 + 踩坑 #50），
+  重点火即绿——评估环第一天就抓到一个发货级缺陷，闭环价值自证。
+- **阶段时间压缩裁定（2026-07-12，守密人「压缩到最短」口谕）**：SCS-REQ-002 日历等待全压——
+  Phase 0 观察并行不阻塞、**Phase 3（环三改进执行）即日启动**（先提示词类，首 PR 合并即放开
+  代码类）、「夜间」改按需触发、Phase 4 复盘改「累计 5 个自改 PR」触发；首轮 LIVE 基线轮
+  同日点火（$30/月判卷帽内），分数播种 `evals-baseline.json` 后 REQ-2.2 门禁上岗。
+  裁定全文 `memory/decisions.md` 同日条 + 需求书归档注。
 - **自我改进闭环推进批（v0.51.0，2026-07-12，守密人「全面推进剩余的工作」派发）**：四件一 PR 收口。
   ① **REQ-1.2 报告归档与趋势**——`compareReports(dateA, dateB, {logDir})` 按 UTC 日重聚合台账、
   出关键指标 b-a 差值（记录/会话/传输故障总量+按因/未恢复/失败/输入输出 token/缓存命中 pp/成本/
@@ -709,24 +815,11 @@
 - **中文 i18n 成本调查收官（2026-07-08，守密人「测试最新 haiku L5」→ 追查 +50% 成本）**：main 升到 **v0.28.0**（#523–#533 Chinese i18n 战役,工具描述 + 系统提示 + 分类器提示全译中文）。v0.28.0 Haiku L5：**gate B bpt 87/90 (96.7%) vs 官方 70/90 (77.8%),+18.9pp PASS,未回归**（bpt 仅 code-01 3/5→2/5,已知残余）;但**花 $3.28 vs v0.18.2 $2.19(+50%)**。两个 `count_tokens` 探针($0)+ L5 per-run 缓存明细追查,**两次假设翻掉**:①「Haiku 旧分词器、换新模型省」**证伪**(跨模型探针:Haiku 中文 1.75 tok/字反比新分词器 1.89 更省);②「中文提示大 → 前缀翻 3 倍」**证伪**(逐文件 count_tokens:8 译文文件全 1.2–1.45×,缓存前缀合计**仅 1.41×**)。**定位**:1.41× 内容膨胀解释不了 3.2× 缓存读——差值在**每轮重读的对话上下文**(document-01 同任务同轮数、ZH 历史读量 ~6× EN),**主嫌=中文思考/输出累积**(preset 默认开思考、中文 token 越滚越厚)。**优化方向**(待裁定 + L5 复验):内部系统提示可留英文(模型照懂、用户输出仍中文),砍思考累积大头。诊断报告 [`bpt-sdk-i18n-cost-investigation-20260708.md`](https://github.com/lightproud/brain-in-a-vat/blob/main/Public-Info-Pool/Resource/data-diagnostics/bpt-sdk-i18n-cost-investigation-20260708.md);探针 `tests/integration/token-probe{,-perfile}.mjs`(#535/#536)。纯测试+诊断,零 src。
 - **T4 点火：真 L5 一轮（2026-07-11，守密人 2026-07-10 已裁点火，艾瑞卡会话执行；run [29134399453](https://github.com/lightproud/brain-in-a-vat/actions/runs/29134399453)，head `1783b0dc`=v0.43.0，haiku，`$1.5` 帽，`conformance_l5=true` 余默认）**：作业全绿、净室自审 PASS，但**主目标 code-01 复验未达成**。预算守卫按投影（$0.59 实花→投影 $1.56 > $1.5）在 **79/180 runs** 干净中止，停在 document-01 之后——**code/longconv 整段未触达**（`aborted=true`）。**Gate B `INCONCLUSIVE-PARTIAL`**（预算停，明示**非破线**、exit 0）：跑到的 8 任务（chat×3+retrieval×4+document-01）**bpt 40/40 (100%) == 官方 39/39 (100%)、delta 0.0pp**，即前排在 0.28→0.43 全部变更后**零回归**；两臂缓存均 scenario a；L6 官方迹 39/我方 0（设计如此）；效率旁证 bpt 检索/文档更省 token+更少 turns（reported-only 非门禁）。**根因非基建非行为、是预算射程不足**：`$1.5`+`repeat=5` 结构上到不了 code 维度（历史触达 code-01 的全量干净轮用 `$5` 帽、花 $2.19–3.28 跑满 180）。**红行不遮蔽**：未把 8 任务全过粉饰为轮次通过、未把 code-01 未触达写成已复验、未动任何基线。code-01 复验 → 新账 **T17**（$5 全量轮 / 降 repeat / 加 `l5_tasks` shard 输入，均待守密人裁）；run-l35 KD-L35-02 无 CI 入口 → 新账 **T16**。诊断报告 [`silver-core-sdk-l5-round-20260711.md`](https://github.com/lightproud/brain-in-a-vat/blob/main/Public-Info-Pool/Resource/data-diagnostics/silver-core-sdk-l5-round-20260711.md)。
 
-## BPT-V2T 语音代替输入（`projects/bpt-v2t/`）
+## BPT-V2T 语音代替输入（已删除）
 
-> **一句话**：本地「语音代替键盘输入」工具——按热键说话 → 转文字 → 注入正在打字处，
-> 用《忘却前夜》专名词典提升识别率。**非使命线**工程子项目。
-
-- **动手前必读**：`projects/bpt-v2t/CONTEXT.md`
-- **派发 + 三连降维（守密人 2026-07-05）**：原诉求「持续录音 + 声纹录入识别 + 专名增益、
-  对标钉钉听记」，同会话守密人降维——① 转录引擎重决策（FunASR/云/sherpa）**暂缓**；
-  ② 交付层收敛为**仅语音代替输入**（不做持续会议转录/听记完整体验）；③ 声纹**暂不做**。
-- **首期已落盘（2026-07-05）**：`projects/bpt-v2t/` 骨架。内核（云端可测）+ 本地薄壳两分：
-  内核 `hotwords.py`（复用 `scripts/silver_tokenizer.domain_dict()`，热词 **125 词**、
-  偏置串按世界观词→角色名优先级填 whisper `initial_prompt`）+ 可插拔后端 `backends/`
-  （`fake` 测试后端 + `faster-whisper` 默认离线引擎，惰性加载、注册表可 `register` 挂 FunASR）；
-  外壳 `recorder.py`（麦克风）/`injector.py`（print/clipboard/type）/`cli.py`（推挽循环），须本机跑。
-  **验证**：`pytest projects/bpt-v2t/tests -v` **13/13 全绿**（仅依赖内核 + 假后端，无需麦克风/真模型）。
-- **硬事实**：云端容器无麦克风，故内核云端可建可测、录音+注入外壳只能守密人本机跑。
-- **后续轮次候选**（守密人裁定后再动）：换/加真引擎（FunASR 热词+流式/云 API）、声纹录入识别、
-  持续录音+实时字幕+说话人分离（听记级）、VAD 断句 + 托盘壳 + 全局快捷键。
+> **2026-07-12 守密人裁定删除**（模块盘点逐个问答：非使命线、已不使用）。原为本地语音代替
+> 输入工具 + 专名热词桥（2026-07-05 首期落盘，13/13 单测绿）。全部代码 git 历史可追
+>（删除前最后版本见本档案历史与 PR #646）。
 
 ## 当前阶段
 

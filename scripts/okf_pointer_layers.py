@@ -286,7 +286,6 @@ _WIKI_DOMAIN = {
     "character_index": "index",
     "aliases": "index",  # 厚锚别名侧表（chunk3）：角色索引的 sibling 扩展
     "language_config": "localization", "panel_text": "localization",
-    "update_notices": "localization",
 }
 
 
@@ -503,7 +502,7 @@ def build_extracted() -> list[dict]:
         nfiles = sum(1 for _ in d.rglob("*") if _.is_file())
         entries.append({
             "id": f"extracted-{slug(d.name)}", "type": "dataset", "title": d.name,
-            "description": f"一手可读解包源 wiki 侧独占件「{d.name}」：{nfiles} 文件 / {_size_of(d)}。与 Game-Unpacked 重复的主体已于 2026-07-11 去重（唯一本体见 unpacked 层），此处仅余 Game-Unpacked 没有的独占内容。",
+            "description": f"一手可读解包源 wiki 侧独占件「{d.name}」：{nfiles} 文件 / {_size_of(d)}。解包 text 主体层（原 Game-Unpacked）已于 2026-07-12 守密人裁定整层删除（git 历史可追），此处为仅存的解包独占内容。",
             "resource": _rel(d) + "/",
             "tags": ["data_layer:full_archive", "first-hand-unpack", "upstream-of:processed", f"content:{slug(d.name)}"],
         })
@@ -517,7 +516,7 @@ def build_extracted() -> list[dict]:
         })
     return write_layer("extracted", entries, "解包一手可读源（wiki 侧独占残件）",
                        "projects/wiki/data/extracted/ wiki 侧独占解包件指针（art_assets 清单 + categorized 独占 txt）；"
-                       "lua_tables / categorized 主体 2026-07-11 去重后唯一本体在 Public-Info-Pool/Reference/Game-Unpacked/（unpacked 层）。")
+                       "解包 text 主体层（原 Game-Unpacked，2026-07-11 去重唯一本体）已于 2026-07-12 守密人裁定整层删除，追溯走 git 历史 / Releases「解包」桶。")
 
 
 # ---------------------------------------------------------------------------
@@ -613,10 +612,9 @@ def build_projects() -> list[dict]:
             "description": blurb or "仓内藏宝图：指向只存在于 GitHub Releases 的二进制本体（立绘/音视频/lua 字节码/fanart）。",
             "resource": _rel(rel_md), "tags": ["data_layer:curated", "treasure-map", "binary-assets-pointer"],
         })
-    # engineering docs
+    # engineering docs（extracted_lua 说明与清单已随 2026-07-12 目录规范化裁定整删）
     for p, cid, title in [
-        (REPO / "docs" / "testing-strategy.md", "doc-testing-strategy", "测试策略"),
-        (REPO / "extracted_lua" / "README_提取说明.md", "extracted-lua-readme", "解包提取说明"),
+        (REPO / "memory" / "testing-strategy.md", "doc-testing-strategy", "测试策略"),
     ]:
         if p.exists():
             _t, blurb = md_title_blurb(p)
@@ -625,20 +623,6 @@ def build_projects() -> list[dict]:
                 "description": blurb or title, "resource": _rel(p),
                 "tags": ["data_layer:curated", "engineering-doc"],
             })
-    # lua inventory csv (manifest of .luac bodies in Releases)
-    csvp = REPO / "extracted_lua" / "lua_scripts_inventory.csv"
-    if csvp.exists():
-        n = 0
-        try:
-            with csvp.open(encoding="utf-8", errors="ignore") as fh:
-                n = max(0, sum(1 for _ in csv.reader(fh)) - 1)
-        except OSError:
-            pass
-        entries.append({
-            "id": "extracted-lua-inventory", "type": "dataset", "title": "解包 lua 清单",
-            "description": f"逐条列 .luac 本体位置的清单（{n} 条），字节码本体在 Releases「解包」桶。",
-            "resource": _rel(csvp), "tags": ["data_layer:curated", "manifest", "binary-assets-pointer"],
-        })
     return write_layer("projects", entries, "入口文档 + 子项目上下文 + 藏宝图 + 设计/工程文档",
                        "仓库最高权威入口（CLAUDE.md / README.md）+ 各子项目 CONTEXT.md（动手前必读）+ "
                        "RELEASES.md 藏宝图 + silver-core-sdk/site 设计文档 + 工程文档 + 归档注册表的导航指针。")

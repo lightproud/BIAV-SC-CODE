@@ -128,12 +128,24 @@ function runGuard() {
     // pathspec silently matches nothing (empty patch -> false negative).
     const patch = git('diff HEAD~1 HEAD -- ":(top)projects/silver-core-sdk/package.json"');
     versionChanged = /^[+-]\s*"version":/m.test(patch);
-    depsChanged = /^[+-]\s*"[^"]+":\s*"[^"]+"/m.test(
-      patch
-        .split('\n')
-        .filter((l) => /"(dependencies|devDependencies)"/.test(l) || /^[+-]/.test(l))
-        .join('\n'),
-    ) && /"dependencies"|"devDependencies"/.test(patch);
+    // Consumer-affecting deps are the runtime "dependencies" ONLY: devDependencies
+    // ship in no tarball and are never installed by a consumer, so a devDep-only
+    // change (e.g. bumping vitest/typescript) must NOT force a version bump.
+    // Compare the PARSED `dependencies` object across the two revisions instead
+    // of pattern-matching a flat patch — where "dependencies" is also a
+    // substring of "devDependencies" and the two blocks' +/- lines are
+    // indistinguishable, so a devDep-only change false-failed the guard.
+    const runtimeDepsOf = (rev) => {
+      try {
+        const json = JSON.parse(git(`show ${rev}:projects/silver-core-sdk/package.json`));
+        return JSON.stringify(json.dependencies ?? {});
+      } catch {
+        return null; // revision/file unavailable (shallow clone): unknown
+      }
+    };
+    const depsBefore = runtimeDepsOf('HEAD~1');
+    const depsAfter = runtimeDepsOf('HEAD');
+    depsChanged = depsBefore !== null && depsAfter !== null && depsBefore !== depsAfter;
   }
 
   if (!runtimeChanged && !depsChanged) {

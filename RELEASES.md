@@ -1,5 +1,9 @@
 # Releases 索引
 
+> **⚠ 解包 text 层已删除（守密人 2026-07-12 裁定）**：原 `Public-Info-Pool/Reference/Game-Unpacked/`
+> 整层（224M / 3,694 文件）已删——wiki 冻结后消费场景消失；追溯走 git 历史，二进制本体仍在
+> Releases「解包」桶（可重解 text）。下文对该层的引用按历史状态理解。
+
 > 用途：让人与 AI 定位 GitHub Releases 中的档案。本索引是仓内的「藏宝图」。
 >
 > **2026-06-21 数据本体重构（决策见 `memory/decisions.md` 2 条 2026-06-21 裁定）**：

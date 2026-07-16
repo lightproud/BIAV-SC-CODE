@@ -26,7 +26,11 @@ export function resolveStallTimeoutMs(
   const raw = env.CLAUDE_ASYNC_AGENT_STALL_TIMEOUT_MS;
   if (raw !== undefined && raw.trim() !== '') {
     const n = Number(raw);
-    if (Number.isInteger(n) && n >= 0) return n;
+    // Clamp to Node's 32-bit setTimeout ceiling (0 stays "disabled"): a larger
+    // value overflows to a 1ms delay, so a config meant to RELAX the timeout
+    // would instead fire the watchdog immediately and abort every background
+    // subagent ~1ms after launch.
+    if (Number.isInteger(n) && n >= 0) return Math.min(n, 2_147_483_647);
   }
   return DEFAULT_ASYNC_AGENT_STALL_TIMEOUT_MS;
 }

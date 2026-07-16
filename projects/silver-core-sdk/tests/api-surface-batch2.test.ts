@@ -180,10 +180,12 @@ describe('Options.sessionStoreFlush', () => {
     await drain(query({ prompt: 'hi', options: baseOptions({ sessionStore: batched.store, sessionStoreFlush: 'batched' }) }));
 
     // Eager mirrors each entry as it lands; batched coalesces. Both must have
-    // persisted at least once, and eager must not flush fewer times.
+    // persisted at least once, and eager must flush STRICTLY more often — the
+    // whole point of the mode distinction (a >= would pass even if the two
+    // modes were broken into behaving identically).
     expect(eager.appendCalls).toBeGreaterThan(0);
     expect(batched.appendCalls).toBeGreaterThan(0);
-    expect(eager.appendCalls).toBeGreaterThanOrEqual(batched.appendCalls);
+    expect(eager.appendCalls).toBeGreaterThan(batched.appendCalls);
   });
 });
 

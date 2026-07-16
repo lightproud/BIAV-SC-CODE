@@ -37,6 +37,10 @@ export type SessionMutationOptions = {
   sessionStore?: ExternalSessionStore;
   /** Working dir used to derive the external project key. Default process.cwd(). */
   cwd?: string;
+  /** Optional diagnostic sink (audit 2026-07-14 L-19b). Used to surface
+   *  no-op mutations a host might otherwise read as success — e.g. a
+   *  deleteSession against an external store that exposes no `delete`. */
+  debug?: (msg: string) => void;
 };
 
 export type GetSessionMessagesOptions = SessionMutationOptions & {
@@ -70,12 +74,25 @@ async function readLocalEntries(
     return [];
   }
   const out: Record<string, unknown>[] = [];
+  // Finding H2 read-time uuid dedup (mirrors JsonlSessionStore.load): a
+  // concurrent cross-host resume can double-materialize a transcript, and this
+  // audit/export/fork read path must collapse it too — otherwise forkSession
+  // rewrites each duplicate to a DISTINCT fresh uuid, baking the doubling in
+  // permanently so load()'s own dedup can never collapse it again.
+  const seenUuids = new Set<string>();
   for (const line of raw.split('\n')) {
     const t = line.trim();
     if (t.length === 0) continue;
     try {
       const o = JSON.parse(t);
-      if (o !== null && typeof o === 'object') out.push(o as Record<string, unknown>);
+      if (o !== null && typeof o === 'object') {
+        const rec = o as Record<string, unknown>;
+        if (typeof rec.uuid === 'string') {
+          if (seenUuids.has(rec.uuid)) continue;
+          seenUuids.add(rec.uuid);
+        }
+        out.push(rec);
+      }
     } catch {
       // Skip corrupt lines.
     }
@@ -89,7 +106,11 @@ function entryToSessionMessage(
 ): SessionMessage | null {
   const type = e.type;
   if (type !== 'user' && type !== 'assistant') return null;
-  if (e.message === undefined) return null;
+  // Reject a missing OR malformed message (null / non-object): the resume path
+  // (store.ts load) shape-checks message before use, but this audit/export path
+  // fed `message` straight through, so a `{message:null}` line crashed any
+  // consumer doing `.message.content` (e.g. auditSessionToolClaims).
+  if (e.message === null || typeof e.message !== 'object') return null;
   return {
     type,
     uuid: typeof e.uuid === 'string' ? e.uuid : randomUUID(),
@@ -105,9 +126,16 @@ function entryToSessionMessage(
 }
 
 /**
- * Return the persisted transcript as SessionMessage[]. When a compaction
- * summary chain is present the post-compaction view is followed; otherwise the
- * raw user/assistant sequence is returned.
+ * Return the persisted transcript as SessionMessage[], in write order.
+ *
+ * This returns the FULL persisted user/assistant sequence. Compaction operates
+ * on the live in-memory request view (engine/compaction.ts) and does NOT
+ * rewrite the durable transcript — the folded-away messages stay on disk — so
+ * there is no post-compaction chain to follow here, and audit/synthesis
+ * consumers (e.g. auditSessionToolClaims) deliberately see the complete
+ * history rather than the trimmed view a given turn happened to send.
+ * (Corrected 2026-07-13: the prior doc claimed a post-compaction view was
+ * followed, which the body never did.)
  */
 export async function getSessionMessages(
   sessionId: string,
@@ -208,6 +236,15 @@ export async function deleteSession(
   if (options.sessionStore !== undefined) {
     if (options.sessionStore.delete !== undefined) {
       await options.sessionStore.delete(mainKey(sessionId, options));
+    } else {
+      // audit 2026-07-14 L-19b: the external store has no delete capability, so
+      // nothing was removed. Resolve (do NOT throw — that would break the
+      // local-only happy path), but emit a debug line so a host is not misled
+      // into believing the session's private data was actually deleted.
+      options.debug?.(
+        `deleteSession: external store exposes no delete(); session '${sessionId}' ` +
+          `was NOT removed (no-op)`,
+      );
     }
     return;
   }

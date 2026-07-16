@@ -23,6 +23,7 @@ import { DefaultPermissionGate } from '../src/permissions/gate.js';
 import { createShellManager } from '../src/tools/shells.js';
 import { createBuiltinTools } from '../src/tools/index.js';
 import { exitPlanModeTool } from '../src/tools/exitplanmode.js';
+import { enterPlanModeTool } from '../src/tools/enterplanmode.js';
 import type { ToolContextWithPermissionGate } from '../src/tools/exitplanmode.js';
 import { enterWorktreeTool, peekWorktreeSession } from '../src/tools/enterworktree.js';
 import { DEFAULT_MONITOR_TIMEOUT_MS, monitorTool } from '../src/tools/monitor.js';
@@ -180,6 +181,57 @@ describe('ExitPlanMode', () => {
     }
     // Invalid input never flips the mode.
     expect(gate.getMode()).toBe('plan');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// EnterPlanMode (mirror of ExitPlanMode; audit 2026-07-15 tool-parity gap)
+// ---------------------------------------------------------------------------
+
+describe('EnterPlanMode', () => {
+  function gateCtx(mode: 'plan' | 'default' | 'acceptEdits' = 'default'): {
+    ctx: ToolContext;
+    gate: DefaultPermissionGate;
+  } {
+    const gate = new DefaultPermissionGate({ debug: () => {}, mode });
+    const ctx = makeCtx() as ToolContextWithPermissionGate;
+    ctx.permissionGate = gate;
+    return { ctx, gate };
+  }
+
+  it('registers by default and is readOnly (only ever restricts)', () => {
+    expect(createBuiltinTools({ env: {} }).has('EnterPlanMode')).toBe(true);
+    expect(enterPlanModeTool.readOnly).toBe(true);
+  });
+
+  it('enters plan mode through the wired permission gate', async () => {
+    const { ctx, gate } = gateCtx('default');
+    const r = await enterPlanModeTool.execute({}, ctx);
+    expect(r.isError).toBeUndefined();
+    expect(text(r)).toContain('default -> plan');
+    expect(gate.getMode()).toBe('plan');
+  });
+
+  it('errors (mode untouched) when the session is already in plan mode', async () => {
+    const { ctx, gate } = gateCtx('plan');
+    const r = await enterPlanModeTool.execute({}, ctx);
+    expect(r.isError).toBe(true);
+    expect(text(r)).toMatch(/already in plan mode/);
+    expect(gate.getMode()).toBe('plan');
+  });
+
+  it('errors when no permission gate is wired (mode cannot be changed)', async () => {
+    const r = await enterPlanModeTool.execute({}, makeCtx());
+    expect(r.isError).toBe(true);
+    expect(text(r)).toMatch(/no permission-mode controller is wired/);
+  });
+
+  it('round-trips with ExitPlanMode (enter from default, exit back to default)', async () => {
+    const { ctx, gate } = gateCtx('default');
+    await enterPlanModeTool.execute({}, ctx);
+    expect(gate.getMode()).toBe('plan');
+    await exitPlanModeTool.execute({}, ctx);
+    expect(gate.getMode()).toBe('default');
   });
 });
 
