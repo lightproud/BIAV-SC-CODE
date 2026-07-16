@@ -126,7 +126,7 @@ jobs:
           # fetch-depth 2: the version-bump guard diffs HEAD~1 (squash merge =
           # one commit; the guard skips gracefully when no parent exists).
           fetch-depth: 2
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: '20'
       - name: Install dependencies
@@ -164,7 +164,7 @@ jobs:
             !/Public-Info-Pool/Record/
             !/Public-Info-Pool/Reference/
           sparse-checkout-cone-mode: false
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: '20'
       - name: Install dependencies
@@ -215,7 +215,7 @@ jobs:
             !/Public-Info-Pool/Record/
             !/Public-Info-Pool/Reference/
           sparse-checkout-cone-mode: false
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: '20'
       - name: Install dependencies
@@ -258,7 +258,7 @@ jobs:
             !/Public-Info-Pool/Record/
             !/Public-Info-Pool/Reference/
           sparse-checkout-cone-mode: false
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: '20'
       - name: Install dependencies
@@ -293,7 +293,7 @@ jobs:
             !/Public-Info-Pool/Record/
             !/Public-Info-Pool/Reference/
           sparse-checkout-cone-mode: false
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: '20'
       - name: Install dependencies
@@ -339,7 +339,7 @@ jobs:
             !/Public-Info-Pool/Record/
             !/Public-Info-Pool/Reference/
           sparse-checkout-cone-mode: false
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: '20'
       - name: Install dependencies
@@ -393,7 +393,7 @@ jobs:
             !/Public-Info-Pool/Record/
             !/Public-Info-Pool/Reference/
           sparse-checkout-cone-mode: false
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: '20'
       - name: Install dependencies
@@ -447,7 +447,7 @@ jobs:
             !/Public-Info-Pool/Record/
             !/Public-Info-Pool/Reference/
           sparse-checkout-cone-mode: false
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: '20'
       - name: Install dependencies
@@ -495,7 +495,7 @@ jobs:
             !/Public-Info-Pool/Record/
             !/Public-Info-Pool/Reference/
           sparse-checkout-cone-mode: false
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: '20'
       - name: Install dependencies
