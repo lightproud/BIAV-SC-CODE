@@ -1,8 +1,8 @@
 {
   "date": "2026-07-15",
-  "archived_at": "2026-07-16T02:25:26.461008+00:00",
+  "archived_at": "2026-07-16T05:40:51.677173+00:00",
   "source": "bilibili",
-  "item_count": 20,
+  "item_count": 22,
   "items": [
     {
       "title": "【忘却前夜】强力输出！波吕克斯详细攻略",
@@ -92,6 +92,29 @@
         "danmaku": 1
       },
       "media_url": "https://i1.hdslb.com/bfs/archive/204178e7a04c70dae5a8cf2ccbf0b29eee4b4d7d.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "7.6-7.19融灾425留档",
+      "summary": "给尤乌打了个榜，借人和出场率我们会赢吗\n  └ 静寂夏至 (0赞): 大佬喵[星星眼]",
+      "source": "bilibili",
+      "time": "2026-07-15T09:26:52+00:00",
+      "url": "https://www.bilibili.com/video/BV19eNq6GEo6",
+      "engagement": 169,
+      "is_hot": false,
+      "author": "Abs-K-",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 168,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/df03984c61ea5fc9799bd7cf181ce5419a0a7bed.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
@@ -276,6 +299,29 @@
         "danmaku": 0
       },
       "media_url": "https://i0.hdslb.com/bfs/archive/542691403f1dfddb4c5ad14be867fa4826130b08.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "【忘卻前夜】低配大招流庞塔道中老头大招狂K11头0死扛0复活一镜到底融灾禁区5-5忠犬",
+      "summary": "老头没专造，走余波体系的话充不了大招，王关频繁开大带来的触伤，生存，双发非常可观\n道中为了给老头K头，王关boss有反击，你塔全程没打伤害，伤害其实是不低的，大招找的过牌算力回狂生存也相当有用",
+      "source": "bilibili",
+      "time": "2026-07-15T06:00:58+00:00",
+      "url": "https://www.bilibili.com/video/BV1NMNv6pEbS",
+      "engagement": 100,
+      "is_hot": false,
+      "author": "小肠在蠕动",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 100,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/8b0b19d8c3e4eeab6f5f968cdc3c75d1ca636c99.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
