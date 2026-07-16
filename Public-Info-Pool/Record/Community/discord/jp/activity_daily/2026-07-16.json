@@ -1,13 +1,13 @@
 {
   "date": "2026-07-16",
-  "messages": 542,
+  "messages": 564,
   "unique_authors": 31,
-  "reactions_total": 179,
-  "attachments": 48,
+  "reactions_total": 194,
+  "attachments": 54,
   "channel_activity": {
-    "なんでも雑談": 252,
+    "なんでも雑談": 273,
+    "ニムフィーアの毒パ研究日誌": 6,
     "美術2でも絵が描ける守秘者になりたい！": 2,
-    "ニムフィーアの毒パ研究日誌": 5,
     "つぶやき": 95,
     "🔰初心者質問": 159,
     "誰でも質問": 12,
@@ -20,6 +20,9 @@
     "動画制作協力CH": 5
   },
   "hourly_activity": {
+    "20": 4,
+    "21": 16,
+    "22": 2,
     "17": 9,
     "18": 1,
     "19": 5,
@@ -42,8 +45,8 @@
     "0": 4
   },
   "message_types": {
-    "0": 11,
-    "19": 4
+    "0": 20,
+    "19": 2
   },
   "top_reacted_messages": [
     {
@@ -52,6 +55,14 @@
       "content": "縮んだ",
       "author": "sugoitsubasanohaetaop",
       "reactions": 9,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1527433492089016413",
+      "channel_id": "1377478664609857647",
+      "content": "8章終わりました！<:sukisuki:1390952918903160892>",
+      "author": "partycatss.",
+      "reactions": 8,
       "channel": "なんでも雑談"
     },
     {
@@ -195,14 +206,6 @@
       "channel_id": "1458760640351965361",
       "content": "そういえば限定は全員自動的にマックスになってたな🤔",
       "author": "suzuri9701",
-      "reactions": 3,
-      "channel": "つぶやき"
-    },
-    {
-      "id": "1527173781469270138",
-      "channel_id": "1458760640351965361",
-      "content": "||これからはキャラ最強にするためにヘブンズコア300個必要なんですか…？||",
-      "author": "yasaizujusu",
       "reactions": 3,
       "channel": "つぶやき"
     }
