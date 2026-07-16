@@ -1,39 +1,57 @@
 {
   "date": "2026-07-15",
-  "messages": 2914,
-  "unique_authors": 190,
-  "reactions_total": 365,
-  "attachments": 163,
+  "messages": 7904,
+  "unique_authors": 261,
+  "reactions_total": 944,
+  "attachments": 382,
   "channel_activity": {
-    "🔸綜合討論": 196,
-    "🔸阵容构建": 21,
+    "🔸綜合討論": 1208,
+    "🔸阵容构建": 22,
+    "🔸剧情交流": 2,
+    "🔸课间休息闲聊": 71,
+    "🔸한국어-채팅방": 8,
+    "🔸chaîne-française": 45,
+    "🔸русский-канал": 363,
+    "🔸phòng-chat-tiếng-việt": 491,
+    "🔸canal-español": 46,
+    "🔸canal-português": 13,
+    "🔸ruang-obrolan-indonesia": 430,
+    "🔸ห้องสนทนาภาษาไทย": 36,
+    "🔸traphase": 115,
+    "🔸lore-chat": 1289,
+    "🔸lets-count": 11,
+    "🔸频道建议┊server-suggestions": 1,
+    "🔸team-building": 573,
+    "🔸邀请码互助┊swap-invitation-codes": 15,
+    "🔸game-question": 2865,
+    "🔸机器人命令┊bot-commands": 40,
+    "《沙耶之歌》名场面复刻┊song-of-saya-speak-for-them-before-she-arrives": 2,
+    "Pontos fan-made skin": 1,
+    "我寫了一個神渾沌": 3,
+    "这个那个": 7,
+    "Possible Traphase changes": 5,
+    "加強龐托斯": 3,
+    "Corposant OE \"bug\"": 23,
+    "A few humble suggestions regarding D-Effect Zone": 4,
+    "Downloadable CG Gallery": 1,
+    "V2.5.2.3 在线维护公告": 11,
+    "V2.5.1.0 停服维护公告": 16,
+    "Corposant doodle": 2,
+    "Arsen's Doodle corner": 3,
+    "Khar's Morimens Skethbook": 2,
+    "morimens team generator!!": 22,
+    "V2.5.1 《沙耶之歌》名场面复刻┊Song of Saya: speak for them before she arrives!": 2,
+    "想問深海 感謝": 8,
+    "Help with Train (Madness)": 4,
+    "In need of guidance": 20,
+    "Helpppp": 8,
     "🔸相位对弈": 12,
-    "🔸课间休息闲聊": 22,
-    "🔸한국어-채팅방": 3,
     "🔸deutscher-chatraum": 5,
-    "🔸chaîne-française": 3,
-    "🔸русский-канал": 10,
-    "🔸phòng-chat-tiếng-việt": 158,
-    "🔸canal-español": 7,
-    "🔸canal-português": 4,
-    "🔸ruang-obrolan-indonesia": 119,
-    "🔸ห้องสนทนาภาษาไทย": 8,
-    "🔸traphase": 45,
-    "🔸lore-chat": 271,
     "🔸服务器公告┊server-announcement": 1,
-    "🔸lets-count": 3,
-    "🔸team-building": 245,
-    "🔸邀请码互助┊swap-invitation-codes": 7,
-    "🔸game-question": 1626,
     "🔸游戏问题": 1,
-    "🔸机器人命令┊bot-commands": 12,
-    "《沙耶之歌》名场面复刻┊song-of-saya-speak-for-them-before-she-arrives": 1,
-    "我寫了一個神渾沌": 1,
     "願這把銀鑰引領我們 || 一週年紀念": 2,
-    "Corposant OE \"bug\"": 22,
     "✅「Answered」PvP Bug Exploitation and Community Management Concern": 15,
     "✅「已解决」关于游戏剧情结束时程序卡死": 2,
-    "A few humble suggestions regarding D-Effect Zone": 2,
     "Quadra / 4-Realm Rerun Banners": 4,
     "✅「Resolved」Game Non-operational after Story chapters": 2,
     "✅「Answered」Awakener Concept": 1,
@@ -45,17 +63,28 @@
     "✅「已解决」怪物懂得影分身之術！？": 3,
     "Potential improvements for Hameln": 1,
     "Please rework how Propagation Caro works for the future units": 1,
-    "V2.5.2.3 在线维护公告": 8,
-    "V2.5.1.0 停服维护公告": 5,
     "Ramona 🤍": 1,
     "May the silver key guide us || 1 Year anniversary": 1,
     "William posting": 36,
-    "V2.5.1 《沙耶之歌》名场面复刻┊Song of Saya: speak for them before she arrives!": 1,
     "V2.5.0 命运剧院┊Theater of Fate": 1,
-    "想要問一下配隊": 7,
-    "In need of guidance": 1
+    "想要問一下配隊": 7
   },
   "hourly_activity": {
+    "9": 253,
+    "10": 431,
+    "11": 263,
+    "12": 372,
+    "13": 353,
+    "14": 443,
+    "15": 445,
+    "16": 359,
+    "17": 152,
+    "18": 241,
+    "19": 414,
+    "22": 210,
+    "21": 202,
+    "20": 436,
+    "23": 432,
     "1": 93,
     "2": 302,
     "3": 351,
@@ -64,14 +93,14 @@
     "6": 379,
     "7": 385,
     "8": 361,
-    "9": 16,
     "0": 355
   },
   "message_types": {
-    "0": 2129,
-    "19": 765,
-    "20": 8,
-    "4": 12
+    "0": 3642,
+    "19": 1318,
+    "20": 28,
+    "6": 1,
+    "4": 1
   },
   "top_reacted_messages": [
     {
@@ -83,12 +112,44 @@
       "channel": "🔸服务器公告┊server-announcement"
     },
     {
+      "id": "1526917288463302706",
+      "channel_id": "1526917288463302706",
+      "content": "",
+      "author": "hericium.e.",
+      "reactions": 16,
+      "channel": "Corposant doodle"
+    },
+    {
+      "id": "1527004202205839410",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "annabelle0868",
+      "reactions": 12,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1526791961971785848",
       "channel_id": "1445556242381672559",
       "content": "... soo ugh my twitter tl flashbanged me with that cloud strife in a dress figur",
       "author": "zzio_",
       "reactions": 9,
       "channel": "William posting"
+    },
+    {
+      "id": "1526894442135552100",
+      "channel_id": "1131839817982947429",
+      "content": "有利玩家才是bug\n別的不用修",
+      "author": "fool6692",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1526992688950284348",
+      "channel_id": "1131839817982947429",
+      "content": "輸光\n佬都能說出國就出國...",
+      "author": "yusi4172",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1526833062732627988",
@@ -105,6 +166,54 @@
       "author": "nirski",
       "reactions": 8,
       "channel": "Corposant OE \"bug\""
+    },
+    {
+      "id": "1526900173060440074",
+      "channel_id": "1131839817982947429",
+      "content": "~~突然在思考，貓會不會做紀念喚醒體<:Brown_think:1459080117308620996> 比如說一個有貢獻的玩家嘎了然後生前非常喜歡玩忘卻……想",
+      "author": "shostakovich524",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1527072605415276665",
+      "channel_id": "1131839817982947429",
+      "content": "玩了7天不小心31鳥弟還有救嗎😭😭😭\n||我也是歪很慘🫠🫠🫠不要一直來會偷東西的妹妹了好嗎😭😭😭||",
+      "author": "paopao_00533",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1526907883264938006",
+      "channel_id": "1131839817982947429",
+      "content": "那個不穿褲子的女人",
+      "author": "heikwok",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1526975548096647382",
+      "channel_id": "1131839817982947429",
+      "content": "早起的狗兒有人草",
+      "author": "ahuahuahua",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1526986007193587842",
+      "channel_id": "1131839817982947429",
+      "content": "# 能不能加強銀芯變成1銀芯一抽啊？",
+      "author": "coleerouo",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1526949736194637895",
+      "channel_id": "1300659603993923644",
+      "content": "Mình rất vui khi ai đó nói “chơi Mrms vì bài này”",
+      "author": "anicillia",
+      "reactions": 6,
+      "channel": "🔸phòng-chat-tiếng-việt"
     },
     {
       "id": "1526821680708845589",
@@ -139,100 +248,20 @@
       "channel": "🔸lore-chat"
     },
     {
-      "id": "1526821162045407292",
+      "id": "1526901894830882877",
       "channel_id": "1131839817982947429",
-      "content": "融天使",
-      "author": "ernest_heart",
-      "reactions": 4,
+      "content": "~~我會倒模自己的py然後掛上校貓的名字賣，直到他願意出(？)~~",
+      "author": "shostakovich524",
+      "reactions": 5,
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1526840580179492905",
+      "id": "1526928765547057274",
       "channel_id": "1131839817982947429",
-      "content": "嚇暈",
-      "author": "ahuahuahua",
-      "reactions": 4,
+      "content": "破防了",
+      "author": "cwz.io",
+      "reactions": 5,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1526840831959629864",
-      "channel_id": "1131839817982947429",
-      "content": "大佬我可以草死你嗎",
-      "author": "a_wei3797",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1526741126243942471",
-      "channel_id": "1326453763355185215",
-      "content": "fieldwork for you<:Ramona_duel:1356053112292511815>",
-      "author": "nikolazuli",
-      "reactions": 4,
-      "channel": "🔸lore-chat"
-    },
-    {
-      "id": "1526786499239088229",
-      "channel_id": "1525166808351379647",
-      "content": "我要看<:Brown_think:1459080117308620996>",
-      "author": "morimensstaff06",
-      "reactions": 4,
-      "channel": "可以把通關記錄刪掉嗎"
-    },
-    {
-      "id": "1526843283610013736",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "._.aahh",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1526848113589878905",
-      "channel_id": "1131839817982947429",
-      "content": "~~我真的觉得我帐号的练度是可以的~~\n除了超限没办法\n大部分都有启灵~~除了老头~~\n而且我有一半的常驻命轮是+12的",
-      "author": "ling_an_",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1526853941093203991",
-      "channel_id": "1131839817982947429",
-      "content": "~~這期簡單（？）的原因不是因為血肉戒嗎~~",
-      "author": "foxcatfurry",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1526840695816454184",
-      "channel_id": "1180850818509971466",
-      "content": "幻象也能复制",
-      "author": "kpkp784755247",
-      "reactions": 3,
-      "channel": "🔸相位对弈"
-    },
-    {
-      "id": "1526826914894053457",
-      "channel_id": "1300659525812097026",
-      "content": "",
-      "author": "wei1901",
-      "reactions": 3,
-      "channel": "🔸deutscher-chatraum"
-    },
-    {
-      "id": "1526845390484279306",
-      "channel_id": "1326453763355185215",
-      "content": "fun trivia, as shown in the audio dramas before the brainwashing Pollux used \"Bo",
-      "author": "hallowednebulae",
-      "reactions": 3,
-      "channel": "🔸lore-chat"
-    },
-    {
-      "id": "1526866205372186706",
-      "channel_id": "1526866205372186706",
-      "content": "守密人你好：\n       弥萨格大学校务处将于7月15日16:20(UTC+8) 进行校内设施修复，更新完成后您将得到通知，重新进入游戏。对于更新可能给大家带",
-      "author": "morimensstaff03",
-      "reactions": 3,
-      "channel": "V2.5.2.3 在线维护公告"
     }
   ]
 }

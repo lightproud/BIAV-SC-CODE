@@ -1,10 +1,11 @@
 {
   "date": "2026-07-13",
-  "messages": 10590,
+  "messages": 10640,
   "unique_authors": 317,
-  "reactions_total": 1345,
-  "attachments": 672,
+  "reactions_total": 1346,
+  "attachments": 677,
   "channel_activity": {
+    "🔸general-chat": 50,
     "🔸綜合討論": 928,
     "🔸阵容构建": 245,
     "🔸剧情交流": 6,
@@ -74,6 +75,7 @@
     "General guide on how to proceed with account.": 4
   },
   "hourly_activity": {
+    "0": 653,
     "10": 624,
     "11": 563,
     "12": 588,
@@ -88,7 +90,6 @@
     "21": 452,
     "22": 187,
     "23": 186,
-    "0": 603,
     "1": 552,
     "2": 369,
     "3": 685,
@@ -100,10 +101,8 @@
     "9": 687
   },
   "message_types": {
-    "0": 3522,
-    "19": 1235,
-    "46": 1,
-    "20": 36
+    "19": 20,
+    "0": 30
   },
   "top_reacted_messages": [
     {
