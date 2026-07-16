@@ -72,6 +72,26 @@ export function textReplyEvents(
   ];
 }
 
+/**
+ * A PRICED text reply: a response model the pricing table charges for, plus real
+ * input-token usage, so ACCOUNTING-class assertions (total_cost_usd / usage
+ * deltas) are actually exercised. The default `textReplyEvents` model
+ * (`claude-test-1`) is unpriced, so cost stays 0 and under-reporting bugs are
+ * invisible — the exact blind spot behind the 0.62.2 `webSearchRequests`=0 and
+ * 0.62.7 session-end-usage defects (the fixes were only observable once a test
+ * used a priced model). Reach for this in any test that asserts cost/usage.
+ */
+export function pricedReplyEvents(
+  text: string,
+  opts: { inputTokens?: number; model?: string; stopReason?: StopReason } = {},
+): RawMessageStreamEvent[] {
+  return textReplyEvents(text, {
+    model: opts.model ?? 'claude-sonnet-4-5',
+    usage: { input_tokens: opts.inputTokens ?? 100 },
+    ...(opts.stopReason !== undefined ? { stopReason: opts.stopReason } : {}),
+  });
+}
+
 /** Build the event sequence for a reply containing one tool_use block. */
 export function toolUseReplyEvents(
   toolName: string,

@@ -43,7 +43,12 @@ import type {
   ToolContext,
   APIMessageParam,
 } from '../src/internal/contracts.js';
-import { MockTransport, textReplyEvents, toolUseReplyEvents } from './helpers/mock-transport.js';
+import {
+  MockTransport,
+  pricedReplyEvents,
+  textReplyEvents,
+  toolUseReplyEvents,
+} from './helpers/mock-transport.js';
 import { makeSSEFetch, type SSEFetchStub } from './helpers/sse-fetch.js';
 
 // ---------------------------------------------------------------------------
@@ -349,8 +354,8 @@ describe('R7: session-end progress-card round (query level)', () => {
     // own (already-yielded) result reported — so a corrected final result is
     // emitted carrying the COMPLETE cumulative cost (keeper 2026-07-16 完整修).
     const stub = makeSSEFetch([
-      textReplyEvents('the answer', { model: 'claude-sonnet-4-5', usage: { input_tokens: 100 } }),
-      textReplyEvents('progress saved', { model: 'claude-sonnet-4-5', usage: { input_tokens: 900 } }),
+      pricedReplyEvents('the answer', { inputTokens: 100 }),
+      pricedReplyEvents('progress saved', { inputTokens: 900 }),
     ]);
     const messages = await collectQuery('do the task', baseOptions(stub, { memory: {} }));
     const results = messages.filter((m): m is SDKResultMessage => m.type === 'result');
@@ -358,6 +363,9 @@ describe('R7: session-end progress-card round (query level)', () => {
     const [first, corrected] = results;
     expect(first!.subtype).toBe('success');
     if (first!.subtype === 'success') expect(first!.result).toBe('the answer');
+    // The fixture is genuinely PRICED — if it silently reverted to an unpriced
+    // model, cost would be 0 and this whole accounting assertion would be vacuous.
+    expect(first!.total_cost_usd).toBeGreaterThan(0);
     // Complete cumulative cost (round's spend now included), no new per-turn usage.
     expect(corrected!.total_cost_usd).toBeGreaterThan(first!.total_cost_usd);
     expect(corrected!.num_turns).toBe(0);
