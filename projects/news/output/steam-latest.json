@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-16T10:59:53.328148+00:00",
+  "collected_at": "2026-07-16T13:46:51.838053+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 3,
+  "item_count": 2,
   "items": [
     {
       "source": "steam",
@@ -34,21 +34,6 @@
       "review": "seems unpolished, starts off boring, story didn't grab me. characters are very small on the screen for such nice artwork, starting attacks are uninterresting. Spend a few minutes with slay the spire and you will see what I mean.",
       "timestamp_created": 1784164777,
       "playtime_forever": 13
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-15T13:21:39+00:00",
-      "lang": "english",
-      "title": "[正面] sts styled gachaslop, i enjoyed it for the tentacl...",
-      "summary": "sts styled gachaslop, i enjoyed it for the tentacles",
-      "url": "https://steamcommunity.com/profiles/76561198984737465/recommended/3052450",
-      "author": "76561198984737465",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "sts styled gachaslop, i enjoyed it for the tentacles",
-      "timestamp_created": 1784121699,
-      "playtime_forever": 5752
     }
   ]
 }
