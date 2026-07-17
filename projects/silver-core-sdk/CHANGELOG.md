@@ -16,6 +16,24 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.64.7 — 2026-07-17
+
+T50 batch F: engine compaction/accounting safety net — 8 fixes from the
+second-pass audit
+(`Public-Info-Pool/Resource/repo-engineering/silver-core-sdk-bug-audit-r2-20260717.md`):
+D1 unmodeled content blocks no longer NaN-poison the history estimate (which
+silently disabled auto-compaction AND the prompt-floor 400 safety net); D2 the
+M5 post-fold overflow check now charges system/tool-defs overhead, so a
+still-oversized view sheds instead of 400ing; D3 a summary API call that fails
+mid-stream books its already-billed partial usage into totals/budget; D4 recap
+truncation is surrogate-safe (no more permanent U+FFFD in folds); D5
+tool-definition overhead estimates are CJK-aware; D6 web_search server-tool
+calls are priced ($10/1k) into estimateCostUsd/maxBudgetUsd; D7
+context-window/output-ceiling tables normalize Bedrock/Vertex model ids; C2
+accumulator seeds omitted start-frame fields as empty strings (no
+"undefinedfoo" / finalize crash). Regression locks in
+`tests/audit-t50-batch-f.test.ts` (20 tests, D2/D3 mutation-checked).
+
 ## 0.64.6 — 2026-07-17
 
 T50 batch G: fs/exec hang & corruption fixes (9 items, P0-availability) from

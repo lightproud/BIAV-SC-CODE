@@ -107,6 +107,16 @@ function estimateBlockTokens(block: ContentBlockParam): number {
       return estimateToolResultTokens(block.content);
     case 'image':
       return IMAGE_TOKENS;
+    default:
+      // D1 (audit r2 2026-07-17): a block type this switch does not model
+      // (server_tool_use / web_search_tool_result / any future type — the
+      // accumulator deliberately round-trips them verbatim) used to fall out
+      // with `undefined`, and `overhead + undefined` turned the WHOLE history
+      // estimate into NaN. `NaN >= triggerAt` is always false, so one such
+      // block silently disabled auto-compaction, the knownPromptFloor 400
+      // safety net, and the memory flush at once. Estimate the serialized
+      // block instead — conservative but finite.
+      return estimateTextTokens(JSON.stringify(block));
   }
 }
 
@@ -183,8 +193,11 @@ export function estimateMessagesTokens(messages: APIMessageParam[]): number {
   return total;
 }
 
-/** Estimate tokens for the serialized tool-definition schemas. */
+/** Estimate tokens for the serialized tool-definition schemas. D5 (audit r2
+ *  2026-07-17): flat len/4 undercounted CJK tool descriptions ~4x (the same
+ *  blind spot the text estimator fixed); route through the language-aware
+ *  estimator so CJK-described tools charge the overhead they actually cost. */
 export function estimateToolDefsTokens(defs: APIToolDefinitionParam[]): number {
   if (defs.length === 0) return 0;
-  return Math.ceil(JSON.stringify(defs).length / CHARS_PER_TOKEN);
+  return estimateTextTokens(JSON.stringify(defs));
 }

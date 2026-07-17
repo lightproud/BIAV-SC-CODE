@@ -586,8 +586,8 @@ async function foldViaApi(
       ? await deps.transportForModel(summaryModel, 'compaction')
       : deps.transport;
   const started = Date.now();
+  const acc = new MessageAccumulator();
   try {
-    const acc = new MessageAccumulator();
     for await (const ev of summaryTransport.stream(req)) {
       if (signal.aborted) throw new AbortError();
       acc.feed(ev);
@@ -609,6 +609,16 @@ async function foldViaApi(
       { role: 'assistant', content: [{ type: 'text', text }] },
     ];
   } catch (err) {
+    // D3 (audit r2 2026-07-17): a summary stream that dies AFTER message_start
+    // has already billed its input tokens (~ the whole folded prefix, easily
+    // 100k+), but the sink only fired on the success path — the spend vanished
+    // from totals and maxBudgetUsd. Account whatever usage the stream reported
+    // before failing (message_start seed + any message_delta merges); a
+    // request-phase failure has no message yet and books nothing.
+    const partialUsage = acc.usageSnapshot();
+    if (partialUsage !== undefined) {
+      onSummaryCall?.(summaryModel, normalizeUsage(partialUsage), Date.now() - started);
+    }
     // Never fall back on abort: propagate cancellation as AbortError.
     if (isAbortError(err)) throw err instanceof AbortError ? err : new AbortError();
     deps.debug(
@@ -844,7 +854,14 @@ async function* performCompaction(
       knownPromptFloor !== undefined && preTokens > 0 && knownPromptFloor > preTokens - overheadTokens
         ? knownPromptFloor / Math.max(1, preTokens - overheadTokens)
         : 1;
-    if (Math.round(rawPre * cal) > inputBudget) {
+    // D2 (audit r2 2026-07-17): the next request's prompt is messages PLUS the
+    // system/tool-defs overhead — the trigger (shouldAutoCompact) and preTokens
+    // both add overheadTokens, but this post-fold overflow check compared the
+    // bare message estimate against the full input budget. With a large
+    // system+tools overhead the check believed an overflowing view fit, the
+    // suffix shed never fired, and the next request 400ed "prompt too long" —
+    // the exact failure M5 exists to prevent. Charge the overhead here too.
+    if (Math.round(rawPre * cal) + overheadTokens > inputBudget) {
       const suffixStart = synthetic.length;
       const suffixMsgs = view.messages.slice(suffixStart);
       const shedSuffix = preTierPrefix(suffixMsgs, cfg);
@@ -905,7 +922,7 @@ function buildRecap(prefix: APIMessageParam[]): string {
   }
   const body = lines.join('\n');
   if (body.length <= RECAP_CHAR_CAP) return body;
-  return body.slice(0, RECAP_CHAR_CAP) + '…[truncated]';
+  return sliceSurrogateSafe(body, RECAP_CHAR_CAP) + '…[truncated]';
 }
 
 function recapLines(msg: APIMessageParam): string[] {
@@ -966,5 +983,20 @@ function toolUses(
 }
 
 function firstChars(s: string, n: number): string {
-  return s.length <= n ? s : s.slice(0, n) + '…';
+  return s.length <= n ? s : sliceSurrogateSafe(s, n) + '…';
+}
+
+/**
+ * D4 (audit r2 2026-07-17): truncate to at most n UTF-16 units WITHOUT
+ * splitting a surrogate pair. A bare .slice() cutting an astral codepoint
+ * (emoji, CJK Ext-B) in half writes a lone surrogate into the fold text, which
+ * serializes as U+FFFD on every subsequent wire request — permanently, since
+ * the fold persists. shedToolResultContent is already codepoint-safe; this
+ * closes the recap-cap and per-line paths.
+ */
+function sliceSurrogateSafe(s: string, n: number): string {
+  const cut = s.slice(0, n);
+  const last = cut.charCodeAt(cut.length - 1);
+  // A trailing HIGH surrogate means the cut landed mid-pair: drop it.
+  return last >= 0xd800 && last <= 0xdbff ? cut.slice(0, -1) : cut;
 }

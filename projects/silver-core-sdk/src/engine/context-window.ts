@@ -12,6 +12,8 @@
  * enable it override the window via CompactionOptions.contextWindowTokens.
  */
 
+import { normalizeModelId } from './pricing.js';
+
 /** Returned for any model id not matched by the table below. */
 export const DEFAULT_CONTEXT_WINDOW = 200_000;
 
@@ -50,9 +52,14 @@ const OUTPUT_CEILING_TABLE: readonly WindowEntry[] = [
 
 /** Output-token ceiling for a model id, or undefined when unknown. */
 export function outputCeilingFor(model: string): number | undefined {
+  // D7 (audit r2 2026-07-17): normalize cloud-provider ids (Bedrock
+  // `us.anthropic.claude-…`, Vertex `claude-…@…`) back to canonical form the
+  // same way pricing.ts does — without it those ids never matched a prefix, so
+  // fallback clamping / any non-default window row silently never applied.
+  const normalized = normalizeModelId(model);
   let best: WindowEntry | undefined;
   for (const entry of OUTPUT_CEILING_TABLE) {
-    if (model.startsWith(entry.prefix)) {
+    if (normalized.startsWith(entry.prefix)) {
       if (best === undefined || entry.prefix.length > best.prefix.length) {
         best = entry;
       }
@@ -66,9 +73,14 @@ export function outputCeilingFor(model: string): number | undefined {
  * unknown models return DEFAULT_CONTEXT_WINDOW.
  */
 export function contextWindowFor(model: string): number {
+  // D7: same cloud-id normalization as outputCeilingFor. Today every table row
+  // equals DEFAULT_CONTEXT_WINDOW so the miss was masked; the first non-default
+  // row (e.g. a 1M-window model) would have silently never matched Bedrock /
+  // Vertex ids without this.
+  const normalized = normalizeModelId(model);
   let best: WindowEntry | undefined;
   for (const entry of WINDOW_TABLE) {
-    if (model.startsWith(entry.prefix)) {
+    if (normalized.startsWith(entry.prefix)) {
       if (best === undefined || entry.prefix.length > best.prefix.length) {
         best = entry;
       }
