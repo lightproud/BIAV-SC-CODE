@@ -16,6 +16,19 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.64.4 — 2026-07-17
+
+MultiEdit DEPRECATED — align with upstream (keeper 2026-07-17). Official Claude
+Code retired MultiEdit, consolidating on repeated `Edit` calls (each applied to
+the file's live state, which avoids the snapshot-ambiguity failure modes that
+MultiEdit's own v0.62.1 not-found triage exists to explain). This SDK keeps the
+tool shipping and working — a NON-breaking soft retirement — but its description
+now leads with a DEPRECATED notice steering the model to separate `Edit` calls,
+and `docs/COMPAT.md` marks it DEPRECATED. Full removal is a future-major
+follow-up, gated on confirming no consumer depends on it (`src/tools/index.ts`
+still registers it in the default builtin set). Files: `src/tools/descriptions.ts`
+(MULTIEDIT_DESCRIPTION), `docs/COMPAT.md`.
+
 ## 0.64.3 — 2026-07-17
 
 T49 batch D: 65 low-severity fixes from the 100-defect audit
