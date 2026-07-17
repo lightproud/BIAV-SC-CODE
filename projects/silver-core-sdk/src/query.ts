@@ -283,6 +283,13 @@ export function query(args: {
         'session persists nothing)',
     );
   }
+  // R2 budget events: the threshold ratio is a fraction of maxBudgetUsd.
+  if (
+    options.budgetThresholdRatio !== undefined &&
+    !(options.budgetThresholdRatio > 0 && options.budgetThresholdRatio <= 1)
+  ) {
+    throw new ConfigurationError('budgetThresholdRatio must be in (0, 1]');
+  }
   const persist = !incognito && options.persistSession !== false;
   if (options.sessionStore !== undefined && !persist) {
     throw new ConfigurationError(

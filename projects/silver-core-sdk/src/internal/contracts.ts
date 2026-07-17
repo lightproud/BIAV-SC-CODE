@@ -588,6 +588,9 @@ export type EngineConfig = {
   systemBlocks?: TextBlockParam[];
   maxTurns?: number;
   maxBudgetUsd?: number;
+  /** R2 budget events: fraction of maxBudgetUsd at which the one-shot
+   *  `budget:threshold` hook fires (root loop only). Default 0.8. */
+  budgetThresholdRatio?: number;
   thinking?: ThinkingConfigParam;
   maxThinkingTokens?: number;
   /** Messages API `tool_choice` steer/constraint; forwarded to each request

@@ -438,6 +438,77 @@ export async function* runAgentLoop(
     return undefined;
   };
 
+  // --- R2 budget event stream (SCS-REQ-REPOS-01 §3). ------------------------
+  // Two one-shot, ROOT-LOOP-ONLY hook events on top of the maxBudgetUsd gate:
+  // `budget:threshold` when cumulative cost crosses maxBudgetUsd *
+  // budgetThresholdRatio (checked where the turn's usage is recorded), and
+  // `budget:exhausted` at the first budget stop, carrying the structured
+  // closeout report. Informational only — aggregate outputs are ignored, so
+  // the events can never change engine behavior (hook contract: the engine
+  // owns when; stopping is already decided by budgetStopReason).
+  const isRootBudgetScope =
+    config.parentToolUseId === undefined || config.parentToolUseId === null;
+  let budgetThresholdFired = false;
+  let budgetExhaustedFired = false;
+  const maybeFireBudgetThreshold = async (): Promise<void> => {
+    if (budgetThresholdFired || !isRootBudgetScope) return;
+    if (config.maxBudgetUsd === undefined) return;
+    const ratio = config.budgetThresholdRatio ?? 0.8;
+    if (totalCostUsd < config.maxBudgetUsd * ratio) return;
+    budgetThresholdFired = true;
+    if (!deps.hooks.hasHooks('budget:threshold')) return;
+    await deps.hooks.run(
+      'budget:threshold',
+      {
+        ...baseHookFields,
+        hook_event_name: 'budget:threshold',
+        cumulative_cost_usd: totalCostUsd,
+        max_budget_usd: config.maxBudgetUsd,
+        threshold_ratio: ratio,
+      },
+      undefined,
+      undefined,
+      signal,
+    );
+  };
+  const lastAssistantSummary = (): string => {
+    for (let i = history.length - 1; i >= 0; i -= 1) {
+      const m = history[i];
+      if (m?.role !== 'assistant') continue;
+      const text =
+        typeof m.content === 'string'
+          ? m.content
+          : m.content
+              .filter((b) => b.type === 'text')
+              .map((b) => (b as { type: 'text'; text: string }).text)
+              .join(' ');
+      return text.length > 500 ? text.slice(0, 500) + '…' : text;
+    }
+    return '';
+  };
+  const fireBudgetExhausted = async (reason: string): Promise<void> => {
+    if (budgetExhaustedFired || !isRootBudgetScope) return;
+    budgetExhaustedFired = true;
+    if (!deps.hooks.hasHooks('budget:exhausted')) return;
+    await deps.hooks.run(
+      'budget:exhausted',
+      {
+        ...baseHookFields,
+        hook_event_name: 'budget:exhausted',
+        reason,
+        report: {
+          cumulative_cost_usd: totalCostUsd,
+          max_budget_usd: config.maxBudgetUsd ?? deps.familyBudget?.capUsd ?? 0,
+          num_turns: numTurns,
+          last_assistant_summary: lastAssistantSummary(),
+        },
+      },
+      undefined,
+      undefined,
+      signal,
+    );
+  };
+
   /**
    * Append the assistant turn to history, dropping empty text blocks first.
    * An all-empty assistant message is skipped entirely: persisting a
@@ -1179,6 +1250,9 @@ export async function* runAgentLoop(
 
       // --- Usage/cost tracking per response model. --------------------------
       recordUsage(assistant.model, normalizeUsage(assistant.usage));
+      // R2: the turn's spend is on the books — fire the one-shot threshold
+      // event when this crossing tipped maxBudgetUsd * budgetThresholdRatio.
+      await maybeFireBudgetThreshold();
       // Ground-truth prompt-size floor for the compaction trigger (audit
       // 2026-07-10 P1-1/D): input + cache read/creation is the REAL prompt
       // size of the request just billed — a hard lower bound on the current
@@ -1268,6 +1342,7 @@ export async function* runAgentLoop(
         // could keep billing past maxBudgetUsd).
         const pauseBudgetStop = budgetStopReason();
         if (pauseBudgetStop !== undefined) {
+          await fireBudgetExhausted(pauseBudgetStop);
           yield errorResult('error_max_budget_usd', pauseBudgetStop);
           return;
         }
@@ -1293,6 +1368,7 @@ export async function* runAgentLoop(
             `engine: budget pre-stop - ${toolUses.length} requested tool call(s) ` +
               `not executed (${preToolBudgetStop})`,
           );
+          await fireBudgetExhausted(preToolBudgetStop);
           yield errorResult('error_max_budget_usd', preToolBudgetStop);
           return;
         }
@@ -1450,6 +1526,7 @@ export async function* runAgentLoop(
         // billable API call (a completed answer above is never voided here).
         const continueBudgetStop = budgetStopReason();
         if (continueBudgetStop !== undefined) {
+          await fireBudgetExhausted(continueBudgetStop);
           yield errorResult('error_max_budget_usd', continueBudgetStop);
           return;
         }
@@ -1490,6 +1567,7 @@ export async function* runAgentLoop(
           }
           const budgetStop = budgetStopReason();
           if (budgetStop !== undefined) {
+            await fireBudgetExhausted(budgetStop);
             yield errorResult('error_max_budget_usd', budgetStop);
             return;
           }
@@ -1538,6 +1616,7 @@ export async function* runAgentLoop(
           }
           const budgetStop = budgetStopReason();
           if (budgetStop !== undefined) {
+            await fireBudgetExhausted(budgetStop);
             yield errorResult('error_max_budget_usd', budgetStop);
             return;
           }
@@ -1604,6 +1683,7 @@ export async function* runAgentLoop(
           }
           const budgetStop = budgetStopReason();
           if (budgetStop !== undefined) {
+            await fireBudgetExhausted(budgetStop);
             yield errorResult('error_max_budget_usd', budgetStop);
             return;
           }

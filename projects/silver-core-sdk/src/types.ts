@@ -463,7 +463,13 @@ export type HookEvent =
   | 'TaskCompleted'
   | 'ConfigChange'
   | 'WorktreeCreate'
-  | 'WorktreeRemove';
+  | 'WorktreeRemove'
+  // BPT-EXTENSION (SCS-REQ-REPOS-01 §3 R2): structured budget event stream on
+  // top of maxBudgetUsd. Root loop only; informational (aggregate hook outputs
+  // carry no decision semantics for these events). Hosts subscribe instead of
+  // polling result metrics.
+  | 'budget:threshold'
+  | 'budget:exhausted';
 
 export type BaseHookInput = {
   session_id: string;
@@ -705,7 +711,44 @@ export type HookInput =
   | TaskCompletedHookInput
   | ConfigChangeHookInput
   | WorktreeCreateHookInput
-  | WorktreeRemoveHookInput;
+  | WorktreeRemoveHookInput
+  | BudgetThresholdHookInput
+  | BudgetExhaustedHookInput;
+
+/**
+ * R2 closeout report: handed to the host on `budget:exhausted` as a
+ * structured object (SCS-REQ-REPOS-01 §3 R2) — cumulative cost, turn count,
+ * and a bounded last-state summary, so an unattended loop's runner can log
+ * the shutdown without replaying the stream.
+ */
+export type BudgetCloseoutReport = {
+  /** Estimated cumulative cost of the run (static price table). */
+  cumulative_cost_usd: number;
+  /** The cap that was hit. */
+  max_budget_usd: number;
+  /** Engine turns completed when the cap fired. */
+  num_turns: number;
+  /** Text of the last assistant turn, bounded to 500 chars. */
+  last_assistant_summary: string;
+};
+
+/** `budget:threshold` — fired ONCE when cumulative cost crosses
+ *  `maxBudgetUsd * budgetThresholdRatio` (default 0.8). */
+export type BudgetThresholdHookInput = BaseHookInput & {
+  hook_event_name: 'budget:threshold';
+  cumulative_cost_usd: number;
+  max_budget_usd: number;
+  threshold_ratio: number;
+};
+
+/** `budget:exhausted` — fired ONCE when the engine stops on the budget cap
+ *  (after the in-flight turn completes; no further billable call is made). */
+export type BudgetExhaustedHookInput = BaseHookInput & {
+  hook_event_name: 'budget:exhausted';
+  /** The engine's budget-stop reason string (matches the terminal result). */
+  reason: string;
+  report: BudgetCloseoutReport;
+};
 
 export type HookPermissionDecision = 'allow' | 'deny' | 'ask' | 'defer';
 
@@ -1728,6 +1771,13 @@ export type Options = {
    */
   incognito?: boolean;
   maxBudgetUsd?: number;
+  /**
+   * BPT-EXTENSION (SCS-REQ-REPOS-01 §3 R2): the fraction of `maxBudgetUsd` at
+   * which the one-shot `budget:threshold` hook event fires (root loop only).
+   * Default 0.8. Must be in (0, 1]; only meaningful with `maxBudgetUsd` set
+   * and a `budget:threshold` hook subscribed.
+   */
+  budgetThresholdRatio?: number;
   /**
    * @deprecated Official docs mark `maxThinkingTokens` deprecated in favor of
    * the structured `thinking` config. Still honored here as a budget fallback

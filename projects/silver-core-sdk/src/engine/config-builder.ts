@@ -248,6 +248,7 @@ export function buildEngineConfig(args: {
     ...(systemBlocks !== undefined ? { systemBlocks } : {}),
     maxTurns: options.maxTurns,
     maxBudgetUsd: options.maxBudgetUsd,
+    budgetThresholdRatio: options.budgetThresholdRatio,
     thinking: thinkingConfig,
     maxThinkingTokens: maxThinkingTokensConfig,
     // tool_choice steer/constraint; forwarded to each request when tools are
