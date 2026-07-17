@@ -382,6 +382,13 @@ export function query(args: {
     debug('memory: configured but disabled (enabled:false or bare-name disallowed)');
   }
 
+  // Registered MCP server names, read lazily so a `mcp__server__*` rule resolves
+  // the tool's server exactly even when the tool segment contains `__` (I2), and
+  // so servers added later via setMcpServers are reflected. `realMcp` is defined
+  // below; this closure is only invoked at check time, well after construction.
+  const knownMcpServers = (): ReadonlySet<string> =>
+    new Set(realMcp.statuses().map((s) => s.name));
+
   const gate = new DefaultPermissionGate({
     mode: options.permissionMode,
     allowedTools:
@@ -390,6 +397,11 @@ export function query(args: {
         : options.allowedTools,
     disallowedTools: options.disallowedTools,
     canUseTool: options.canUseTool,
+    cwd,
+    knownMcpServers,
+    // RP3: a canUseTool `setMode:'bypassPermissions'` update is honored only when
+    // bypass was explicitly unlocked, matching the initial-mode interlock above.
+    allowDangerousBypass,
     debug,
   });
   // v0.4 observability queue: the subagent runtime (task_* lifecycle) and the
@@ -557,8 +569,10 @@ export function query(args: {
   const bareDisallowed: string[] = (options.disallowedTools ?? []).filter(
     (raw) => parseRule(raw).specifier === undefined,
   );
-  const isBareDisallowed = (toolName: string): boolean =>
-    bareDisallowed.some((pattern) => matchToolName(pattern, toolName));
+  const isBareDisallowed = (toolName: string): boolean => {
+    const servers = knownMcpServers();
+    return bareDisallowed.some((pattern) => matchToolName(pattern, toolName, servers));
+  };
 
   // Merge project .mcp.json servers (when settingSources includes 'project')
   // under the explicit options.mcpServers (which win on key collision).

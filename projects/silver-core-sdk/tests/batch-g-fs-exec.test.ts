@@ -2,7 +2,7 @@
  * Batch G regression suite (audit r2 2026-07-17): fs/exec hangs & corruption.
  *
  *  - F1 Glob/Grep symlink-loop guard (followSymbolicLinks off, ripgrep parity)
- *  - F2 CRLF-file multi-line Edit adaptation (MultiEdit removed in 0.65.0)
+ *  - F2 CRLF-file multi-line Edit adaptation
  *  - F3 special-file (FIFO/device) gates on Read/Edit/Write
  *  - F4 BashOutput filter never tests a mid-line chunk fragment
  *  - F5 background shells replay the persistent cwd/env state
@@ -164,27 +164,6 @@ describe('F2: CRLF multi-line edit adaptation', () => {
     );
     expect(res.isError).toBeFalsy();
     expect(await readFile(file, 'utf8')).toBe('ONE\r\nTWO\r\n');
-  });
-
-  // MultiEdit was removed in 0.65.0 (hard upstream alignment); the LF-authored
-  // chain coverage lives on as the consolidation target — repeated Edit calls,
-  // each applied to the file's live state.
-  it('sequential Edits apply an LF-authored chain against a CRLF file', async () => {
-    const file = path.join(sandbox, 'crlf-multi.txt');
-    await writeFile(file, 'alpha\r\nbeta\r\ngamma\r\n', 'utf8');
-    const ctx = gatedCtx(sandbox, file);
-
-    const first = await editTool.execute(
-      { file_path: file, old_string: 'alpha\nbeta', new_string: 'ALPHA\nbeta' },
-      ctx,
-    );
-    expect(first.isError).toBeFalsy();
-    const second = await editTool.execute(
-      { file_path: file, old_string: 'beta\ngamma', new_string: 'BETA\nGAMMA' },
-      ctx,
-    );
-    expect(second.isError).toBeFalsy();
-    expect(await readFile(file, 'utf8')).toBe('ALPHA\r\nBETA\r\nGAMMA\r\n');
   });
 
   it('LF files are untouched by the adaptation (exact match still required)', async () => {

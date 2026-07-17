@@ -11,9 +11,28 @@
  * that server).
  */
 
+import * as path from 'node:path';
+
 import type { PermissionUpdate } from '../types.js';
 
 export type ParsedRule = { toolName: string; specifier?: string };
+
+/**
+ * Optional context that lets rule matching reflect what a tool call will
+ * ACTUALLY do, rather than the raw model-supplied strings:
+ *   - `cwd`: the working directory a path-primary tool resolves its file_path
+ *     against (`path.resolve(cwd, file_path)`, collapsing `.`/`..`). Passing it
+ *     makes a path-scoped allow/deny compare against that resolved path, so a
+ *     `..` segment can neither escape an allow nor tunnel into a deny (RP1).
+ *   - `knownServers`: the set of registered MCP server names, so a
+ *     `mcp__server__*` pattern resolves the tool's server EXACTLY even when the
+ *     tool segment itself contains `__` (I2). Absent, matching falls back to the
+ *     last-`__` heuristic (unchanged legacy behavior).
+ */
+export type MatchContext = {
+  cwd?: string;
+  knownServers?: ReadonlySet<string>;
+};
 
 /**
  * Parse a raw rule string (`Tool` or `Tool(spec)`).
@@ -59,6 +78,45 @@ function splitMcpName(qualified: string): { server: string; tool: string } | und
 }
 
 /**
+ * Resolve the MCP server a qualified tool name belongs to.
+ *
+ * A `mcp__{server}__{tool}` name is ambiguous when the TOOL segment itself
+ * contains `__` (e.g. `mcp__a__get__thing` could be server `a` / tool
+ * `get__thing`, or server `a__get` / tool `thing`). The last-`__` heuristic in
+ * splitMcpName picks `a__get`, so a server-wide rule scoped to `a`
+ * (`mcp__a__*`) silently fails to match a tool of server `a` whose name
+ * contains `__` — a deny fail-open (I2).
+ *
+ * When the registered server names are known, disambiguate exactly: the tool
+ * belongs to the LONGEST registered server `S` such that the name starts with
+ * `mcp__{S}__`. Longest-match settles `a` vs `a__b` deterministically (a tool
+ * of `a__b` starts with both `mcp__a__` and `mcp__a__b__`; the longer, more
+ * specific server wins) and, because tool names are only ever built from a
+ * registered (server, tool) pair, is always correct. Absent a registry
+ * (`knownServers` undefined/empty, or no registered prefix matches), fall back
+ * to the last-`__` heuristic so legacy behavior is preserved.
+ */
+function resolveMcpServer(
+  toolName: string,
+  knownServers?: ReadonlySet<string>,
+): string | undefined {
+  if (!toolName.startsWith('mcp__')) return undefined;
+  if (knownServers !== undefined && knownServers.size > 0) {
+    let best: string | undefined;
+    for (const server of knownServers) {
+      if (
+        toolName.startsWith(`mcp__${server}__`) &&
+        (best === undefined || server.length > best.length)
+      ) {
+        best = server;
+      }
+    }
+    if (best !== undefined) return best;
+  }
+  return splitMcpName(toolName)?.server;
+}
+
+/**
  * Match a tool-name pattern from allowedTools/disallowedTools entries.
  *
  * Supported forms:
@@ -73,7 +131,11 @@ function splitMcpName(qualified: string): { server: string; tool: string } | und
  * tools of a distinct server `a__b`, and a server whose name contains `__`
  * (e.g. `a__b`) is reachable via `mcp__a__b` / `mcp__a__b__*`.
  */
-export function matchToolName(pattern: string, toolName: string): boolean {
+export function matchToolName(
+  pattern: string,
+  toolName: string,
+  knownServers?: ReadonlySet<string>,
+): boolean {
   if (pattern === toolName) return true;
   // Global glob: matches every tool. Primarily a deny-position form
   // (disallowedTools: ['*']); matchToolName is shared, so it works in allow
@@ -89,8 +151,8 @@ export function matchToolName(pattern: string, toolName: string): boolean {
     : pattern.slice('mcp__'.length); // bare 'mcp__server'
   if (patternServer.length === 0 || patternServer.includes('*')) return false;
 
-  const parsed = splitMcpName(toolName);
-  return parsed !== undefined && parsed.server === patternServer;
+  const server = resolveMcpServer(toolName, knownServers);
+  return server !== undefined && server === patternServer;
 }
 
 /**
@@ -165,6 +227,89 @@ function specifierMatches(spec: string, value: string): boolean {
 }
 
 /**
+ * Tools whose primary argument is a FILESYSTEM PATH the tool resolves with
+ * `path.resolve(cwd, arg)` before touching disk. Their specifier is a path (or
+ * path prefix), so it must be compared against that resolved path — not the raw
+ * model string. Glob/Grep are intentionally absent: their primary arg is a glob
+ * pattern / regex, not a path to resolve.
+ */
+const PATH_PRIMARY_TOOLS: ReadonlySet<string> = new Set([
+  'Read',
+  'Write',
+  'Edit',
+  'NotebookEdit',
+]);
+
+/**
+ * Resolve `p` to the absolute, `.`/`..`-collapsed form a path-primary tool will
+ * actually access. With `cwd` this mirrors the tool's own `path.resolve(cwd, p)`
+ * exactly; without it, an absolute path is still normalized (best effort — the
+ * gate always supplies cwd in production).
+ */
+function resolvePath(p: string, cwd: string | undefined): string {
+  return cwd !== undefined ? path.resolve(cwd, p) : path.normalize(p);
+}
+
+/**
+ * Specifier match for a path-primary tool. Both the specifier and the tool's
+ * value are resolved to their real on-disk paths before comparison, closing two
+ * fail-open holes in the naive string-prefix matcher:
+ *   - RP1: a `..` segment can no longer slip a call past an allow scope
+ *     (`/workspace/*` no longer matches `/workspace/../../etc/shadow`) nor dodge
+ *     a deny scope (`/etc/*` now matches `/tmp/../etc/passwd`), because both
+ *     sides fold `..` the same way the tool does.
+ *   - RP2: a trailing `**` (gitignore-style "everything under") is honored — the
+ *     literal directory prefix before the FIRST `*` anchors the match — instead
+ *     of the old `slice(-1)` leaving a dead literal `*` that matched nothing.
+ *
+ * Wildcard semantics stay the SDK's historical "trailing wildcard = path
+ * prefix": the literal text before the first `*` is the prefix, re-anchored to a
+ * directory boundary when the pattern ended the prefix with a separator so
+ * `/workspace/*` never matches `/workspace-secret/...`.
+ */
+function pathSpecifierMatches(spec: string, value: string, cwd: string | undefined): boolean {
+  const nvalue = resolvePath(value, cwd);
+  const starIdx = spec.indexOf('*');
+  if (starIdx === -1) {
+    // No wildcard: compare the resolved paths directly (still delegating below
+    // would also work, but exact resolved-path equality is the clearest form).
+    return specifierMatches(resolvePath(spec, cwd), nvalue);
+  }
+  // Split at the first '*': normalize the literal prefix (collapse '.'/'..'),
+  // preserving a trailing separator so `dir/*` stays segment-anchored, then hand
+  // the reassembled spec to the shared matcher so exact / trailing-'*' prefix /
+  // `:*`-base semantics all still apply — now on the real on-disk paths.
+  const rawPrefix = spec.slice(0, starIdx);
+  const boundary = rawPrefix.endsWith('/');
+  let prefix = rawPrefix === '' ? '' : resolvePath(rawPrefix, cwd);
+  if (boundary && !prefix.endsWith(path.sep)) prefix += path.sep;
+  // Collapse a leading '**' run in the suffix to a single '*' so a gitignore
+  // style `dir/**` is honored as a prefix instead of leaving a dead literal '*'
+  // that matches nothing (RP2).
+  const suffix = spec.slice(starIdx).replace(/^\*+/, '*');
+  return specifierMatches(prefix + suffix, nvalue);
+}
+
+/**
+ * Leading `NAME=value ` shell environment assignments (`FOO=1 BAR=2 cmd`). A
+ * command run with such a prefix is still that command, so a deny/ask rule
+ * scoped to it must see the real command, not the assignment (M2-2), and a
+ * suggestion built from it must key off the command, not `FOO=1` (M2-4).
+ * Requires trailing whitespace so a bare `FOO=1` (no command) is left intact.
+ */
+const ENV_ASSIGN_PREFIX = /^\s*[A-Za-z_][A-Za-z0-9_]*=(?:"[^"]*"|'[^']*'|[^\s]*)\s+/;
+
+/** Strip a run of leading environment assignments from a shell command. */
+function stripEnvAssignments(command: string): string {
+  let s = command;
+  for (;;) {
+    const next = s.replace(ENV_ASSIGN_PREFIX, '');
+    if (next === s) return s;
+    s = next;
+  }
+}
+
+/**
  * Command-injection constructs that let a shell run an embedded command a
  * prefix rule never inspects (command / process substitution, unbraced/braced
  * expansions). Their presence must BLOCK an allow-rule match: `Bash(git:*)`
@@ -216,8 +361,9 @@ export function ruleMatches(
   toolName: string,
   input: Record<string, unknown>,
   segmentMode?: 'all' | 'any',
+  ctx?: MatchContext,
 ): boolean {
-  if (!matchToolName(rule.toolName, toolName)) return false;
+  if (!matchToolName(rule.toolName, toolName, ctx?.knownServers)) return false;
   const spec = rule.specifier;
   if (spec === undefined) return true;
   const value = primaryArg(toolName, input);
@@ -225,10 +371,22 @@ export function ruleMatches(
   if (toolName === 'Bash' && segmentMode !== undefined) {
     const { segments, hasInjection } = decomposeBashCommand(value);
     if (segmentMode === 'all') {
+      // Allow position: fail-closed. A leading env prefix is NOT stripped here —
+      // it must not let `GIT_SSH_COMMAND=evil git ...` ride an allow scoped to
+      // `git:*`; the unstripped segment fails to match and the call falls
+      // through to prompting.
       if (hasInjection) return false;
       return segments.every((seg) => specifierMatches(spec, seg));
     }
-    return segments.some((seg) => specifierMatches(spec, seg));
+    // Deny/ask position: fail-closed the other way. Match on the raw segment OR
+    // its env-stripped form, so `Bash(rm:*)` denies `FOO=1 rm -rf /` (M2-2).
+    return segments.some(
+      (seg) =>
+        specifierMatches(spec, seg) || specifierMatches(spec, stripEnvAssignments(seg)),
+    );
+  }
+  if (PATH_PRIMARY_TOOLS.has(toolName)) {
+    return pathSpecifierMatches(spec, value, ctx?.cwd);
   }
   return specifierMatches(spec, value);
 }
@@ -262,7 +420,11 @@ export function buildPermissionSuggestions(
   if (field !== undefined) {
     const value = input[field];
     if (typeof value === 'string' && value.length > 0) {
-      const ruleContent = toolName === 'Bash' ? `${firstToken(value)}:*` : value;
+      // For Bash, skip leading `NAME=value ` env assignments so a `VAR=x npm run
+      // build` command suggests `Bash(npm:*)`, not the absurd `Bash(VAR=x:*)`
+      // (M2-4).
+      const ruleContent =
+        toolName === 'Bash' ? `${firstToken(stripEnvAssignments(value))}:*` : value;
       suggestions.push({
         type: 'addRules',
         rules: [{ toolName, ruleContent }],
