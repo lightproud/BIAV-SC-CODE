@@ -258,6 +258,17 @@ Input field names are part of the compat surface (hooks read them):
 
 ## E — Permissions + hooks
 
+**Hook contract principle (POSITIONING §1.2 — applies to every existing and
+future hook).** The engine owns the *when* and the *contract*: which lifecycle
+points invoke a callback, what it can see, what it may return, and how the
+return value affects engine behavior. The host owns the *what*: the callback
+body, which the engine neither knows nor cares about. A callback's lifecycle
+MUST NOT outlive the query it is embedded in — parking a wall clock inside a
+hook, or blocking a hook on the outside world changing state, smuggles the
+runner layer's clock into the engine and is a positioning violation. (The
+per-callback timeout below is the mechanical backstop; the principle is the
+design rule.)
+
 `permissions/rules.ts`
 - `export type ParsedRule = { toolName: string; specifier?: string }`
 - `parseRule(raw: string): ParsedRule` — `Tool`, `Tool(spec)`.

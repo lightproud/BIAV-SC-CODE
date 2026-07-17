@@ -1,7 +1,28 @@
-# Silver Core SDK — Compatibility Matrix
+# Silver Core SDK — Official-SDK Reference Notes(参照笔记)
 
-Target surface: `@anthropic-ai/claude-agent-sdk` public API (npm 0.3.207; chased from 0.3.205 2026-07-13, keeper ruling 「追」, zero exported-symbol drift — 0.3.201 -> 0.3.205 chased 2026-07-10, 0.3.199 -> 0.3.201 chased 2026-07-05) as
-documented at code.claude.com/docs/en/agent-sdk/* (fetched 2026-07-03).
+**What this document is.** A reference record of how the official
+`@anthropic-ai/claude-agent-sdk` behaves, kept as **design input** for this
+engine's own decisions. It is NOT an obligations ledger: an official field,
+method, or message variant that this engine lacks is a recorded fact, not a
+work item. The engine's host-side API evolves by BPT need
+(`docs/POSITIONING.md` §1); the model-side surface (tool names, parameter
+schemas, prompt idioms) stays near the model's training distribution, and
+these notes are the evidence base for that.
+
+**Chase policy** (POSITIONING §2): official-surface observation runs on
+exactly two triggers — (a) a new model release (the model-side distribution
+may have moved), (b) this engine designing a new model-side surface (consult
+the official homework first). There is no standing chase task.
+
+**Tier vocabulary** (per-row markers below): descriptive relationships to the
+official reference, not TODO states. FULL = matching documented semantics;
+PARTIAL = a documented behavioral subset/difference; ACCEPTED =
+type-compatible, accepted and ignored; UNSUPPORTED = absent;
+BPT-EXTENSION / HONEST-SUBSET / KEPT-DIVERGENCE / N/A-BY-DESIGN = deliberate
+differences (see the divergence ledger).
+
+Last recorded official reference: npm 0.3.207 (type-surface diff 2026-07-13);
+docs at code.claude.com/docs/en/agent-sdk/* (fetched 2026-07-03).
 
 For a full 146-row completion audit against the latest official surface
 (including the unmodeled subsystems and the roadmap), see
@@ -91,9 +112,10 @@ subprocess/CLI/ripgrep/PDF-dep/plugins); (c) REAL-GAP — implementable. This pa
 - **`debugFile`** — debug lines are now appended to it (was accepted-ignored).
 - **mcpServerStatus `scope`** — provenance ('project'/'local'/'dynamic') tracked.
 
-Deferred (honest, non-structural, not yet done): Read `.ipynb` cell rendering
-(currently returned as raw JSON — usable, not cell-formatted) and the legacy
-`sse` MCP transport (being retired upstream). Structural PARTIALs (continue,
+Absent by choice (honest, non-structural): Read `.ipynb` cell rendering
+(returned as raw JSON — usable, not cell-formatted) and the legacy
+`sse` MCP transport (being retired upstream); neither is a work item — they
+would become one only via a real consumer need. Structural PARTIALs (continue,
 agents name/POST, permissionMode auto-heuristic, stderr, sandbox platform
 backends, Monitor/Workflow push channel, Grep no-ripgrep, Read PDF-slice,
 accountInfo, supportedCommands) stay PARTIAL by design.
@@ -325,7 +347,7 @@ SDK implements the agent loop directly against the public Messages API:
 | `maxBudgetUsd` | PARTIAL | based on estimated cost (a static price table, not billing truth); stop ORDERING matches official 2.1.201 (E5, 2026-07-05): a turn requesting tools past the cap stops BEFORE any tool executes (zero side effects, no tool_result user turn, terminal `error_max_budget_usd`), while a naturally ending turn still yields its completed success result (conformance run-l2 s12 converged) |
 | `maxThinkingTokens` / `thinking` | FULL | **Model-gated wire form (v0.8.1)**: `computeThinking` emits `{type:'adaptive'}` on 4.6+ models and `{type:'enabled', budget_tokens}` on pre-4.6 models — recomputed each turn from the live model, since the two forms 400 on the wrong tier (root-cause fix for the v0.7 haiku 400-storm, run 28753349435). On the `claude_code` preset path thinking is DEFAULT-ON like the official CLI (opt out with `maxThinkingTokens: 0` or `thinking: {type:'disabled'}`); off the preset path `maxThinkingTokens` alone is only a budget fallback and sends no thinking param on its own. The official `budgetTokens` field name IS accepted (alongside the `budget_tokens`/`budget` aliases). **P2**: the official `display` sub-option ('summarized'\|'omitted') is now forwarded onto the wire thinking param (adaptive + enabled forms; test engine.test.ts), and `maxThinkingTokens` now carries the official `@deprecated` tag |
 | `maxTurns` | FULL | |
-| `mcpServers` | PARTIAL | stdio/http/sdk FULL; `sse` legacy transport UNSUPPORTED (throws NotImplementedError → `failed` status). P2 re-audit: `sse` is being retired upstream — implementable (an SSE MCP client, src/mcp/http.ts) but deferred; the three modern transports are complete |
+| `mcpServers` | PARTIAL | stdio/http/sdk FULL; `sse` legacy transport UNSUPPORTED (throws NotImplementedError → `failed` status). `sse` is being retired upstream — implementable (an SSE MCP client, src/mcp/http.ts), absent by choice; the three modern transports are complete |
 | `model` | FULL | default `ANTHROPIC_MODEL` env or `claude-sonnet-4-5` |
 | `permissionMode` | PARTIAL | all 6 values incl. `auto` (the old "`auto` not offered" note was stale — offered since v0.2, docs-audit 2026-07-05); our `auto` is a HEURISTIC classifier while the official docs describe a model-driven classifier (semantics differ). `bypassPermissions` requires the `allowDangerouslySkipPermissions` interlock (below) |
 | `allowDangerouslySkipPermissions` | FULL | safety interlock: `bypassPermissions` (initial or via `setPermissionMode`) throws `ConfigurationError` unless this is `true`. BPT-only strictness: official 0.3.199/2.1.201 does NOT enforce the interlock live - it proceeds to the model without the flag (conformance run-l2 s6-bypass-interlock-refusal, 2026-07-05) |
@@ -355,7 +377,7 @@ SDK implements the agent loop directly against the public Messages API:
 
 | Tool | Tier | Notes |
 |---|---|---|
-| Read | PARTIAL | text files (cat -n) + images (PNG/JPEG/GIF/WebP → image block) + PDF (→ base64 `document` block; the API's handle-tool-calls docs allow `document` inside tool_result, though the base64 source there is supported-but-not-explicitly-demonstrated); all magic-byte sniffed (task #17); notebooks returned as raw JSON text — cells not rendered individually (P2: a closable, NON-structural sub-gap — deferred, not yet done); oversized files (>50MB) rejected with a Grep hint rather than buffered. v0.7: official `pages` param (PDF page range) validated to contract (1-based, ascending, ≤20); PDF page-slicing itself is HONEST-unsupported (no PDF dep) — a `pages` read of a PDF errors clearly rather than silently returning the whole document, and `pages` on a non-PDF errors. Path fence removed (#483 keeper ruling): resolves to any location the process can reach, permission gate is the sole access control |
+| Read | PARTIAL | text files (cat -n) + images (PNG/JPEG/GIF/WebP → image block) + PDF (→ base64 `document` block; the API's handle-tool-calls docs allow `document` inside tool_result, though the base64 source there is supported-but-not-explicitly-demonstrated); all magic-byte sniffed (task #17); notebooks returned as raw JSON text — cells not rendered individually (closable, NON-structural; absent by choice); oversized files (>50MB) rejected with a Grep hint rather than buffered. v0.7: official `pages` param (PDF page range) validated to contract (1-based, ascending, ≤20); PDF page-slicing itself is HONEST-unsupported (no PDF dep) — a `pages` read of a PDF errors clearly rather than silently returning the whole document, and `pages` on a non-PDF errors. Path fence removed (#483 keeper ruling): resolves to any location the process can reach, permission gate is the sole access control |
 | Write / Edit | FULL | same input field names (`file_path`, `old_string`, …); BOTH enforce the official read-before-write gate — a bare Write/Edit over an existing un-read file errors with the verbatim official text and leaves the file untouched; new files pass (Write); a successful Read unlocks (Write E4 2026-07-05 pinned live L5 code-03 r1 vs r2; **Edit gate added in P2** to match the official Edit tool — behavioral change, MIGRATION §P2; test tools-fs.test.ts). OUR chosen extensions where the pinned evidence is silent: a successful Write/Edit also registers its path (create-then-revise does not self-block), and the gate spans subagents (one read-set per query). Success/error wording differs elsewhere (KD-L3-05/07/08). Path fence removed (#483) — same posture as Read |
 | Bash | PARTIAL | Windows: shell resolved via `CLAUDE_CODE_GIT_BASH_PATH` -> Git-for-Windows standard locations (official-parity posture; actionable error when absent, bare `bash`/WSL never tried; foreground+background termination route through planProcessKill so win32 taskkill is used, #482/#484). v0.5: `cd` + exported env persist across calls (state-file replay — functions/aliases/unexported vars do NOT persist; not a long-lived shell process) and `run_in_background` launches a detached shell whose id feeds BashOutput/KillShell. v0.6: sandboxed by default when a backend resolves (see the `sandbox` option row); foreground and background both wrap through the backend and run in their own process group (timeout/abort reap the whole group; `--unshare-pid` + SIGKILL escalation reaps across the sandbox pid namespace). v0.7: `dangerouslyDisableSandbox` is ALWAYS in the schema (official parity); it is a no-op without a sandbox and CANNOT bypass the gate (escape still needs sandbox active + allowEscape + an independent ask) |
 | Task quadruplet (TaskCreate/TaskGet/TaskUpdate/TaskList) | FULL | v0.7: the DEFAULT task surface (official 0.3.142: TodoWrite off by default, `CLAUDE_CODE_ENABLE_TASKS=0` reverts to TodoWrite-only). Symmetric dependency edges (blocks/blockedBy), owner/status workflow, session-shared store (parent + subagents see one list); TaskGet unknown-id returns null (not error) per official |
@@ -369,7 +391,7 @@ SDK implements the agent loop directly against the public Messages API:
 | TaskStop | FULL | v0.31.0 (2026-07-08): official-named successor to KillShell — SIGTERM→SIGKILL on the background shell's process group. Takes `task_id` (or deprecated `shell_id`); already-terminal tasks report their status without re-killing. v0.42.0 (O-B2): `task_id` ALSO accepts a subagent agentId (official v2.1.198 semantics) — checked against the subagent registry before falling through to shells; a non-running subagent reports its status without kill events |
 | SendMessage | PARTIAL | v0.42.0 (O-B2): continue a previously spawned subagent with its FULL transcript intact (the runtime retains every child's live history for the query's life; per-agent serialization; stopped workers revivable). `{to, summary?, message}` — `to` is an agentId ONLY: teammate NAMES, the `"main"` address and peer-origin message emission belong to the agent-teams naming machinery this SDK does not ship (SDKMessageOrigin `peer`/`coordinator` + TeammateIdle stay typed-not-emitted). Foreground children reply as the tool result; background children ack + reply on a later drained turn as official `<task-notification>` XML (drain format aligned to the archive shape in the same batch). Root-loop-only: isolated children never see the tool; fork children keep the schema (prefix byte-match) and get an honest error. Coordinator presets ship alongside (COORDINATOR_MODE_PROMPT adapted + COORDINATOR_WORKER_AGENT faithful, agents.ts) |
 | Glob | PARTIAL | fast-glob, mtime-sorted newest-first; official 2.1.201 emitted ASCENDING order under ascending-utimes pins, so ordering parity with the live engine is not established - path sets agree (conformance run-l3 L3-GLOB-01, KD-L3-20, 2026-07-05) |
-| Grep | PARTIAL | pure-JS regex engine (no ripgrep binary); large-repo perf caveat (crossover diagnostic 2026-07-07). v0.13.0 fixed the silent 250-cap truncation: `count`/`files_with_matches` default COMPLETE, all modes announce truncation, `grep.scan` debug telemetry added. The ripgrep-vs-pure-JS decision itself is pending (keeper) |
+| Grep | PARTIAL | pure-JS regex engine (no ripgrep binary); large-repo perf caveat (crossover diagnostic 2026-07-07). v0.13.0 fixed the silent 250-cap truncation: `count`/`files_with_matches` default COMPLETE, all modes announce truncation, `grep.scan` debug telemetry added. Pure-JS is the standing choice; ripgrep would enter only via a keeper ruling |
 | WebFetch / WebSearch | FULL | registered in v0.2 |
 | TodoWrite | PARTIAL | v0.7: OFF by default (Task quadruplet is the default surface); `CLAUDE_CODE_ENABLE_TASKS=0` reverts to TodoWrite-only, per official 0.3.142 |
 | Agent | PARTIAL | the subagent spawn tool; v0.7 gains `model`/`isolation:'worktree'` and the official required set [description, prompt] (subagent_type defaults to general-purpose). Residual param delta = our BPT-only `fork` extension |
