@@ -43,7 +43,7 @@ import type {
   RetryInfo,
   StreamRequest,
 } from '../internal/contracts.js';
-import { MessageAccumulator } from './accumulator.js';
+import { MessageAccumulator, toolInputTruncationOf } from './accumulator.js';
 import { addUsage, estimateCostUsd, normalizeUsage } from './pricing.js';
 import { contextWindowFor } from './context-window.js';
 import {
@@ -611,7 +611,13 @@ export async function* runAgentLoop(
   // mid-run setMaxThinkingTokens() — which mutates the shared config object —
   // takes effect on the next assistant sub-turn, mirroring the per-turn re-read
   // of config.model below (finding #12).
-  const computeThinking = (): StreamRequest['thinking'] => {
+  // H2 (audit T49): the wire form is resolved from the model the REQUEST is
+  // actually sent to (`useModel`, threaded in by streamAttempt), NOT from
+  // config.model — after a fallback switch those differ, and a cross-generation
+  // main/fallback pair (adaptive-gen main, pre-adaptive fallback or vice versa)
+  // would send the wrong thinking form to the fallback model and 400 every
+  // fallback attempt, making the fallback permanently useless.
+  const computeThinking = (liveModel: string): StreamRequest['thinking'] => {
     const t = config.thinking;
     if (t === undefined || t.type === 'disabled') {
       return undefined; // unset / explicitly disabled -> omit the param entirely
@@ -641,7 +647,7 @@ export async function* runAgentLoop(
     // 400 on `adaptive`. Emit whichever form the LIVE model accepts, regardless
     // of which the caller/preset expressed. Recomputed per turn, so a mid-run
     // setModel() to a different generation is handled. See thinking-model.ts.
-    if (supportsAdaptiveThinking(config.model)) {
+    if (supportsAdaptiveThinking(liveModel)) {
       return { type: 'adaptive', ...(display !== undefined ? { display } : {}) };
     }
     // Pre-adaptive model: enabled + clamped budget. The Messages API requires
@@ -821,7 +827,7 @@ export async function* runAgentLoop(
             },
           }
         : {}),
-      thinking: computeThinking(),
+      thinking: computeThinking(useModel),
       signal,
       onRetry,
     };
@@ -1256,7 +1262,17 @@ export async function* runAgentLoop(
         assistant.stop_reason === 'tool_use' || turnTruncated
           ? assistant.content.filter((b): b is ToolUseBlock => b.type === 'tool_use')
           : [];
-
+      // H4 (audit T49): a tool_use whose input JSON was truncated across delta
+      // chunks is finalized with input:{} + a non-enumerable stamp (see
+      // accumulator.ts) instead of killing the turn at content_block_stop.
+      // Such a block must NEVER execute — its parameters are not what the
+      // model wrote (and a coincidentally-parseable prefix would be worse:
+      // e.g. a Write with half its content). On a stop_reason:'tool_use' turn
+      // that leaves no honest continuation, so fail the turn diagnosably
+      // BEFORE any tool in the batch runs. Non-tool_use stops (max_tokens —
+      // the routine producer of this shape) never reach here (toolUses is
+      // empty) and now complete normally, with the C6 orphan filters dropping
+      // the stamped block from persisted history.
       // v0.3: record this turn's isolated metrics (usage/cost/apiMs/toolCalls).
       {
         const turnUsage = normalizeUsage(assistant.usage);
@@ -1269,6 +1285,24 @@ export async function* runAgentLoop(
           stopReason: assistant.stop_reason,
           toolCalls: toolUses.length,
         });
+      }
+      const truncatedTool = toolUses.find((b) => toolInputTruncationOf(b) !== undefined);
+      if (truncatedTool !== undefined) {
+        // Same C6 orphan filter as the refusal path below: keep text/thinking
+        // context, never persist the unexecutable tool_use unpaired.
+        pushAssistant(
+          assistant.content.filter((b) => b.type !== 'tool_use'),
+          assistant.model,
+        );
+        yield errorResult(
+          'error_during_execution',
+          `Tool call "${truncatedTool.name}" (${truncatedTool.id}) arrived with ` +
+            `truncated input JSON and was not executed: ` +
+            `${toolInputTruncationOf(truncatedTool)}`,
+          undefined,
+          'tool_input_truncated',
+        );
+        return;
       }
       // C5 (refusal, BPT audit 2026-07-07): a safety decline (Fable 5 / newer
       // models) returns stop_reason 'refusal' on a 200 with possibly-empty /

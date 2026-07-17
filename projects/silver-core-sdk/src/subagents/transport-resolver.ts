@@ -8,8 +8,12 @@
  *
  *   - same protocol as the parent -> `undefined` (share the parent transport;
  *     byte-for-byte the no-option behavior),
- *   - different protocol -> ONE memoized transport per protocol, built through
- *     the same `createProviderTransport()` switch point the root query uses.
+ *   - different protocol -> ONE memoized transport per TENANT IDENTITY
+ *     (protocol + derived provider config + credential/endpoint env chain +
+ *     function-knob identity; M17, audit T49 — protocol-only memoization let
+ *     a resolver shared across differently-credentialed queries hand tenant
+ *     B's subagents tenant A's API key), built through the same
+ *     `createProviderTransport()` switch point the root query uses.
  *
  * Provider derivation is deliberately NOT a blind copy of the parent config:
  * the two protocols append different URL suffixes (`/v1/messages` vs
@@ -83,34 +87,89 @@ function buildChildProvider(
 }
 
 /**
+ * Env vars a child transport of the given protocol resolves its credential /
+ * endpoint from (M17: these are part of the transport's TENANT IDENTITY).
+ * Mirrors the resolution chains in transport/anthropic.ts (resolveCredential,
+ * baseUrl) and transport/openai.ts (resolveOpenAICredential, baseUrl).
+ */
+const IDENTITY_ENV_KEYS: Record<WireProtocol, readonly string[]> = {
+  anthropic: ['ANTHROPIC_API_KEY', 'ANTHROPIC_AUTH_TOKEN', 'ANTHROPIC_BASE_URL'],
+  'openai-chat': ['OPENAI_API_KEY', 'OPENAI_BASE_URL'],
+};
+
+/**
+ * M17 (audit T49) — memo key carrying the transport's full tenant identity,
+ * not just its protocol. The previous cache was keyed by protocol alone, so a
+ * resolver shared across queries (the documented usage) handed tenant B's
+ * subagents the transport built with tenant A's credentials/endpoint —
+ * cross-tenant credential mixing. The key covers everything that feeds the
+ * transport's identity: the derived child provider's serializable config
+ * (credentials, baseUrl, apiVersion, headers, openai.*), the per-protocol
+ * credential/endpoint env chain, and the identity of any function-valued
+ * knobs (fetch/httpClient) carried over from the parent. The key stays
+ * in-process only (never logged) — it holds the same secrets the transport
+ * itself holds in memory.
+ */
+function transportIdentityKey(
+  protocol: WireProtocol,
+  child: ProviderConfig,
+  env: Record<string, string | undefined>,
+  fnIdentity: (fn: unknown) => string,
+): string {
+  const cfg: Record<string, unknown> = {};
+  for (const [k, v] of Object.entries(child)) {
+    cfg[k] = typeof v === 'function' ? fnIdentity(v) : v;
+  }
+  const envSlice: Record<string, string | undefined> = {};
+  for (const k of IDENTITY_ENV_KEYS[protocol]) envSlice[k] = env[k];
+  return JSON.stringify([protocol, cfg, envSlice]);
+}
+
+/**
  * Build the standard cross-protocol subagent transport resolver. Pass the
  * result as `Options.resolveSubagentTransport`.
  */
 export function createSubagentTransportResolver(
   opts: SubagentTransportResolverOptions,
 ): SubagentTransportResolver {
-  const cache = new Map<WireProtocol, Transport>();
+  const cache = new Map<string, Transport>();
+  // Stable per-resolver identity for function-valued provider knobs: two
+  // different fetch/httpClient implementations must never collapse onto one
+  // cached transport, while the same function object always maps to one id.
+  const fnIds = new WeakMap<object, number>();
+  let nextFnId = 0;
+  const fnIdentity = (fn: unknown): string => {
+    const key = fn as object;
+    let id = fnIds.get(key);
+    if (id === undefined) {
+      id = nextFnId++;
+      fnIds.set(key, id);
+    }
+    return `fn#${id}`;
+  };
   return (input) => {
     // Forks never switch (the runtime never consults the resolver for them;
     // this guard keeps the helper safe under direct calls too).
     if (input.fork) return undefined;
     const protocol = opts.protocolForModel(input.model);
     if (protocol === input.parentProtocol) return undefined;
-    let transport = cache.get(protocol);
+    const child = buildChildProvider(
+      protocol,
+      input.parentProvider,
+      opts.providers?.[protocol],
+    );
+    const cacheKey = transportIdentityKey(protocol, child, input.env, fnIdentity);
+    let transport = cache.get(cacheKey);
     if (transport === undefined) {
       transport = createProviderTransport({
-        provider: buildChildProvider(
-          protocol,
-          input.parentProvider,
-          opts.providers?.[protocol],
-        ),
+        provider: child,
         env: input.env,
         debug: input.debug,
         ...(protocol === 'anthropic' && opts.betas !== undefined
           ? { betas: opts.betas }
           : {}),
       });
-      cache.set(protocol, transport);
+      cache.set(cacheKey, transport);
     }
     return {
       transport: transport as SubagentTransportHandle,

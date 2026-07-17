@@ -28,7 +28,7 @@ import type {
   ToolResultPayload,
 } from '../internal/contracts.js';
 import { AbortError, isAbortError } from '../errors.js';
-import { looksBinary, resolveAbs } from './fsutil.js';
+import { isLossyUtf8, looksBinary, resolveAbs } from './fsutil.js';
 import { MULTIEDIT_DESCRIPTION } from './descriptions.js';
 
 function errorResult(message: string): ToolResultPayload {
@@ -227,6 +227,16 @@ export const multiEditTool: BuiltinTool = {
       if (looksBinary(buf)) {
         return errorResult(
           `MultiEdit failed: "${abs}" appears to be a binary file and cannot be edited as text.`,
+        );
+      }
+      // H1 (audit T49): same non-UTF-8 corruption guard as Edit — a lossy
+      // decode + rewrite would replace every invalid byte in the file with
+      // U+FFFD, far beyond the edit sites. Refuse instead.
+      if (isLossyUtf8(buf)) {
+        return errorResult(
+          `MultiEdit failed: "${abs}" is not valid UTF-8 text. Editing it would ` +
+            `corrupt its non-UTF-8 bytes; convert the file to UTF-8 first ` +
+            `(e.g. iconv) or edit it with a byte-safe tool.`,
         );
       }
       const original = buf.toString('utf8');

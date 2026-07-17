@@ -16,6 +16,65 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.63.1 — 2026-07-17
+
+T49 batch B — the 6 P0 existing-code high/security findings of the 100-defect
+audit (`Public-Info-Pool/Resource/repo-engineering/silver-core-sdk-bug-audit-20260717.md`),
+regression-locked by `tests/t49-batch-b.test.ts` (21 tests):
+
+- **H1 — Edit/MultiEdit corrupted non-UTF-8 text files.** Both tools decoded
+  with lossy `toString('utf8')` and wrote the result back, baking U+FFFD over
+  EVERY invalid byte in the file (GBK/Shift-JIS/Latin-1 text passes the NUL
+  sniff). New `isLossyUtf8()` guard (fsutil, `node:buffer.isUtf8`) refuses the
+  edit with a convert-first error; file bytes stay untouched. Also moots L15's
+  Edit-side mojibake pre-image (the checkpoint recorder is never reached).
+- **H2 — thinking wire form followed `config.model`, not the live model.**
+  After a fallback switch to a different model generation, every fallback
+  attempt sent the wrong on-form (`adaptive` vs `budget_tokens`) and 400'd —
+  the fallback was permanently useless across generations. `computeThinking`
+  now takes the attempt's `useModel`.
+- **H3 — OpenAI arm voided a complete turn when the gateway dangled the
+  post-`finish_reason` tail.** Unlike the Anthropic arm (returns at
+  `message_stop`), this arm kept reading for `[DONE]`/usage; an idle-watchdog
+  abort or a reset in that window discarded the fully received answer (and a
+  replayed turn re-runs its side effects). A connection-layer failure after
+  `finish_reason` now COMPLETES the received turn (logged; the trailing
+  include_usage chunk may be lost — accepted degradation). In-stream error
+  frames and caller aborts still propagate.
+- **H4 — tool-arg JSON truncated across delta chunks killed the whole turn.**
+  A routine max_tokens cut mid-arguments made the accumulator THROW at
+  `content_block_stop` ("Failed to parse tool_use input JSON"), voiding the
+  turn on both arms (the OpenAI arm's `finish_reason:'length'` closes blocks
+  via `translator.finish()` into the same parse). The block now finalizes with
+  `input:{}` plus a non-enumerable truncation stamp (never serialized): a
+  max_tokens turn completes as an honest success (C6 filters drop the orphan
+  from persisted history; salvage already excluded it), and a
+  `stop_reason:'tool_use'` turn carrying one fails diagnosably with new
+  `error_code: 'tool_input_truncated'` BEFORE any tool executes — a truncated
+  (or coincidentally-parseable prefix) input never reaches a tool. The
+  audit's stated byte-split mechanism (multibyte char cut at the SSE chunk
+  boundary) was probed and REFUTED — the streaming TextDecoder already
+  reassembles split sequences; the probe is locked in the test file.
+- **H5 — structured-output extraction was schema-blind.** It validated only
+  the FIRST parseable JSON span, so a leading "legal but wrong" JSON in prose
+  (`{"note":"x"}` before `{"answer":42}`) failed the turn and burned the
+  bounded retries. Extraction is now schema-aware: every lenient candidate
+  (direct / fenced / each balanced span) is validated in order and the first
+  schema-valid one wins; when none validates, the first candidate's violations
+  drive the corrective re-prompt. The module moved to
+  `internal/structured-output.ts` (shared-kernel) with an engine facade, so
+  the workflow engine's `agent()` opts.schema path (previously a shallow
+  required-keys check — schema-blind to types/nesting) now runs the same full
+  validator: a type-violating reply yields null instead of masquerading as
+  validated.
+- **M17 — cross-protocol subagent transports memoized per protocol only.**
+  A `createSubagentTransportResolver` shared across differently-credentialed
+  queries (the documented usage) handed tenant B's subagents the transport
+  built with tenant A's key/endpoint. The memo key now carries the full
+  tenant identity: derived child provider config, the protocol's
+  credential/endpoint env chain, and function-knob (fetch/httpClient)
+  identity. Same identity keeps the warm-pool memoization.
+
 ## 0.63.0 — 2026-07-17
 
 SCS-REQ-REPOS-01 (keeper-adjudicated requirement, archived at
