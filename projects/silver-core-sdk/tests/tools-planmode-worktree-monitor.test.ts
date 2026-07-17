@@ -444,11 +444,27 @@ describe('internal/worktree helpers', () => {
     const repo = makeGitRepo();
     const wt = await addWorktree(repo);
     expect('dir' in wt, JSON.stringify(wt)).toBe(true);
-    const dir = (wt as { dir: string }).dir;
+    const { dir, baseHead } = wt as { dir: string; baseHead?: string };
     tempDirs.push(dir);
     expect(existsSync(join(dir, 'seed.txt'))).toBe(true);
-    expect(await removeWorktreeIfClean(repo, dir)).toBe('removed');
+    // Thread the recorded baseHead as the real runtime callers do: a clean tree
+    // whose HEAD is still baseHead (no commit) is safe to remove. Without a
+    // baseHead the helper conservatively KEEPS (audit 2026-07-17 P2) — covered
+    // separately in audit-t50-batch-l.test.ts.
+    expect(baseHead).toBeTypeOf('string');
+    expect(await removeWorktreeIfClean(repo, dir, baseHead)).toBe('removed');
     expect(existsSync(dir)).toBe(false);
+  });
+
+  it('removeWorktreeIfClean KEEPS a clean worktree when baseHead is unknown (commit-safety, audit P2)', async () => {
+    const repo = makeGitRepo();
+    const wt = await addWorktree(repo);
+    const dir = (wt as { dir: string }).dir;
+    tempDirs.push(dir);
+    // No baseHead supplied: a clean `git status` cannot prove the child left no
+    // commits (commits don't show in porcelain), so removal could orphan work.
+    expect(await removeWorktreeIfClean(repo, dir, undefined)).toBe('kept');
+    expect(existsSync(dir)).toBe(true);
   });
 
   it('removeWorktreeIfClean KEEPS a dirty worktree (never destroys work)', async () => {

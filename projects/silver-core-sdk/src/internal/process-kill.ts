@@ -32,7 +32,12 @@ export function planProcessKill(
   signal: string,
   platform: NodeJS.Platform = process.platform,
 ): KillPlan {
-  if (pid === undefined) return { kind: 'child', signal };
+  // pid 0 is NOT a real child: POSIX `process.kill(-0, sig)` / `process.kill(0)`
+  // signals the CALLER's own process group, and Windows `taskkill /PID 0` is
+  // equally wrong. A live child.pid is always positive, so treat 0 (and any
+  // non-positive value) as "no pid" and fall back to best-effort child.kill
+  // (latent — child.pid is normally positive; audit 2026-07-17 P4).
+  if (pid === undefined || pid <= 0) return { kind: 'child', signal };
   if (platform === 'win32') return { kind: 'taskkill', pid };
   return { kind: 'group', pid, signal };
 }

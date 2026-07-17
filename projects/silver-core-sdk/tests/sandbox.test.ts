@@ -109,8 +109,14 @@ describe('BwrapBackend.wrap (argv)', () => {
   it('assembles the ro-root + rw-binds + chdir + terminal shell', () => {
     const plan = new BwrapBackend().wrap({ ...base, allowNetwork: false });
     expect(plan.command).toBe('bwrap');
-    expect(plan.args.slice(0, 8)).toEqual(['--ro-bind', '/', '/', '--dev', '/dev', '--proc', '/proc', '--unshare-pid']);
+    // ro-root and the namespace flags lead; --dev/--proc are emitted AFTER the
+    // writable binds so a pathological rw bind of `/` cannot re-expose the host
+    // /proc /dev over them (audit 2026-07-17 Q5). Assert order, not fixed slots.
+    expect(plan.args.slice(0, 4)).toEqual(['--ro-bind', '/', '/', '--unshare-pid']);
     expect(plan.args).toContain('--unshare-net');
+    const lastBindTry = plan.args.lastIndexOf('--bind-try');
+    expect(plan.args.indexOf('--dev')).toBeGreaterThan(lastBindTry);
+    expect(plan.args.indexOf('--proc')).toBeGreaterThan(lastBindTry);
     // --bind-try (not --bind): a missing writable path is skipped, never bricks.
     expect(plan.args.join(' ')).toContain('--bind-try /work /work');
     expect(plan.args.join(' ')).toContain('--bind-try /data /data');

@@ -35,6 +35,12 @@ const MODEL_ALIASES: Readonly<Record<string, string>> = {
  * `aliases` wins over the built-in table key-by-key (a host can remap just
  * `sonnet` and keep the rest), and may introduce new keys (including remapping
  * a full id). It cannot rebind 'inherit' — inheritance resolves first.
+ *
+ * Lookups use Object.hasOwn, never plain `tbl[model]`: a `model` colliding with
+ * an Object.prototype key ('toString' / 'constructor' / '__proto__') would
+ * otherwise resolve to the INHERITED function/object instead of undefined,
+ * threading a non-string into the wire `model` field and corrupting the request
+ * (Agent-tool model input is not runtime-validated; audit 2026-07-17 P1).
  */
 export function resolveModelAlias(
   model: string | undefined,
@@ -42,5 +48,9 @@ export function resolveModelAlias(
   aliases?: Readonly<Record<string, string>>,
 ): string {
   if (model === undefined || model === 'inherit') return parentModel;
-  return aliases?.[model] ?? MODEL_ALIASES[model] ?? model;
+  // `as string`: Object.hasOwn guarantees the key is present, but under
+  // noUncheckedIndexedAccess the index read is still typed `string | undefined`.
+  if (aliases !== undefined && Object.hasOwn(aliases, model)) return aliases[model] as string;
+  if (Object.hasOwn(MODEL_ALIASES, model)) return MODEL_ALIASES[model] as string;
+  return model;
 }

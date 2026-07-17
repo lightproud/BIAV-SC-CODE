@@ -35,18 +35,32 @@ export type {
 /** Injectable bwrap probe (tests override); true when bwrap is runnable. */
 export type BwrapProbe = () => boolean;
 
+/**
+ * Argv the functional probe spawns. It exercises the SAME namespaces/mounts a
+ * real BwrapBackend.wrap() emits (--dev/--proc and the net namespace used for
+ * network-off commands): probing a narrower feature set would pass here yet
+ * abort at spawn time on a kernel that allows pid namespaces but not net/dev —
+ * a probe/spawn mismatch (audit 2026-07-17 Q2). Exported so a regression test
+ * can assert the parity against wrap()'s output.
+ */
+export const BWRAP_PROBE_ARGS: readonly string[] = [
+  '--ro-bind', '/', '/',
+  '--dev', '/dev',
+  '--proc', '/proc',
+  '--unshare-pid',
+  '--unshare-net',
+  '--die-with-parent',
+  'true',
+];
+
 const defaultBwrapProbe: BwrapProbe = () => {
   try {
     // FUNCTIONAL probe, not just `--version`: on hardened kernels with
     // unprivileged user namespaces disabled, bwrap is installed and
-    // `--version` exits 0 but every real spawn fails at namespace setup. Run a
-    // trivial sandbox that exercises the same namespaces wrap() uses; only a
-    // 0 exit means real sandboxing works here.
-    return (
-      spawnSync('bwrap', ['--ro-bind', '/', '/', '--unshare-pid', '--die-with-parent', 'true'], {
-        stdio: 'ignore',
-      }).status === 0
-    );
+    // `--version` exits 0 but every real spawn fails at namespace setup. Only a
+    // 0 exit from a probe that matches wrap()'s namespace set means real
+    // sandboxing works here (see BWRAP_PROBE_ARGS).
+    return spawnSync('bwrap', [...BWRAP_PROBE_ARGS], { stdio: 'ignore' }).status === 0;
   } catch {
     return false;
   }
