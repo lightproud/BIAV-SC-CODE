@@ -253,10 +253,17 @@ Usage:
 // MultiEdit (SDK-original, faithful:false): the official Claude Code MultiEdit
 // is not in the reproduction archive, so this description is authored for the
 // semantics this SDK actually ships (src/tools/multiedit.ts) rather than
-// reproduced. Keeps the corpus-sync anchor guard scoped to genuine repros.
-export const MULTIEDIT_DESCRIPTION = `Applies several exact string replacements to a SINGLE file in one atomic step.
+// reproduced. DEPRECATED (keeper 2026-07-17): official Claude Code RETIRED
+// MultiEdit, consolidating on repeated Edit calls (each against the file's live
+// state, which sidesteps the snapshot-ambiguity failure modes triaged in
+// v0.62.1). This SDK is aligning: the description now steers the model to Edit,
+// the tool still ships (non-breaking for existing consumers) and will be removed
+// in a future major. Keeps the corpus-sync anchor guard scoped to genuine repros.
+export const MULTIEDIT_DESCRIPTION = `DEPRECATED — the official Claude Code retired MultiEdit and this SDK is aligning with upstream. PREFER separate Edit calls: each Edit applies to the file's CURRENT state, so there is no snapshot-ambiguity ("was old_string absent, or consumed by an earlier edit in this batch?"). MultiEdit still works for now but will be removed in a future major — do not reach for it in new work.
 
-When to use: several edits to the SAME file — prefer this over issuing separate Edit calls, which each cost a tool round-trip and re-feed the tool result into context. For one change use Edit. For cross-file changes, or an edit whose text depends on an intervening tool result, keep using separate Edit calls.
+Applies several exact string replacements to a SINGLE file in one atomic step.
+
+When to use (legacy): several edits to the SAME file. Prefer separate Edit calls instead. For one change use Edit. For cross-file changes, or an edit whose text depends on an intervening tool result, use separate Edit calls.
 
 Usage:
 - You must use your Read tool on the file at least once in the conversation before editing. This tool will error if you attempt to edit a file you have not read.
