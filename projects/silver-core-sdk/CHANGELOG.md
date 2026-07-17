@@ -16,6 +16,26 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.64.0 — 2026-07-17
+
+Model-alias mapping (BPT production 400 root-cause fix: a subagent spawned
+with bare `'sonnet'` resolved through the SDK's built-in table onto
+`claude-sonnet-4-5`, which the gateway rejected as an unknown model):
+
+- **Built-in alias table refreshed**: `sonnet → claude-sonnet-5` (was the
+  prior-generation `claude-sonnet-4-5`); `opus`/`haiku`/`fable` already
+  current, unchanged. Pricing / context-window / thinking-capability tables
+  all match by prefix or denylist, so the new id needs no companion entries.
+- **`options.modelAliases` (BPT-EXTENSION)**: host overrides for the short
+  aliases (or any id), winning over the built-in table key-by-key — a gateway
+  serving non-Anthropic ids maps `sonnet → azure/...` once instead of passing
+  full ids at every seam. Threaded to all three `resolveModelAlias` consumers:
+  subagent spawn (`engineConfig.modelAliases`), the compaction summarizer, and
+  utility calls (`UtilityCallOptions.modelAliases`, fed by query() for hook
+  `condition` evaluation). `'inherit'` resolves before the override table and
+  is never remappable. Closes the docs/SUBAGENTS.md §3 "until
+  options.modelAliases ships" debt.
+
 ## 0.63.1 — 2026-07-17
 
 T49 batch B — the 6 P0 existing-code high/security findings of the 100-defect
@@ -74,7 +94,6 @@ regression-locked by `tests/t49-batch-b.test.ts` (21 tests):
   tenant identity: derived child provider config, the protocol's
   credential/endpoint env chain, and function-knob (fetch/httpClient)
   identity. Same identity keeps the warm-pool memoization.
-
 ## 0.63.0 — 2026-07-17
 
 SCS-REQ-REPOS-01 (keeper-adjudicated requirement, archived at

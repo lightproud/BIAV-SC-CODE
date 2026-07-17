@@ -37,6 +37,12 @@ export interface UtilityCallOptions {
   betas?: string[];
   /** Model override (alias or full id). Default: DEFAULT_UTILITY_MODEL. */
   model?: string;
+  /**
+   * Host overrides for the short model aliases (same shape and precedence as
+   * Options.modelAliases): applied when resolving `model` (or the default
+   * alias) onto a concrete id. BPT-EXTENSION (model-alias mapping, 2026-07-17).
+   */
+  modelAliases?: Readonly<Record<string, string>>;
   /** Max output tokens for the call. Sensible per-feature defaults apply. */
   maxTokens?: number;
   /** Cancellation. */
@@ -119,7 +125,11 @@ export async function runUtilityCall(
   opts: UtilityCallOptions,
   maxTokensDefault: number,
 ): Promise<string> {
-  const model = resolveModelAlias(opts.model ?? DEFAULT_UTILITY_MODEL, DEFAULT_UTILITY_MODEL);
+  const model = resolveModelAlias(
+    opts.model ?? DEFAULT_UTILITY_MODEL,
+    DEFAULT_UTILITY_MODEL,
+    opts.modelAliases,
+  );
   // Transport precedence: explicit injection (tests) > cross-protocol
   // resolver keyed by the resolved model (v0.55.0) > provider-built default.
   const transport =

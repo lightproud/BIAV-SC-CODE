@@ -521,6 +521,11 @@ export function query(args: {
       betas: options.betas,
       env,
       debug,
+      // Host alias overrides also govern the condition call's utility model
+      // (same table as subagent spawn / compaction summarizer).
+      ...(options.modelAliases !== undefined
+        ? { modelAliases: options.modelAliases }
+        : {}),
       // Cross-protocol routing for the condition call's utility model.
       ...(transportForModel !== undefined
         ? { resolveTransport: (m: string) => transportForModel(m, 'utility') }

@@ -1126,7 +1126,11 @@ export function createSubagentRuntime(
       // override, then agentDef.model, through the same alias path.
       const childModel = forkActive
         ? engineConfig.model
-        : resolveModelAlias(params.model ?? agentDef.model, engineConfig.model);
+        : resolveModelAlias(
+            params.model ?? agentDef.model,
+            engineConfig.model,
+            engineConfig.modelAliases,
+          );
 
       // --- Cross-protocol transport routing (P0, 2026-07-13) ---------------
       // An isolated child whose resolved model is only served on a different
