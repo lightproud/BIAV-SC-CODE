@@ -1,8 +1,8 @@
 {
   "date": "2026-07-16",
-  "archived_at": "2026-07-17T05:44:19.906192+00:00",
+  "archived_at": "2026-07-17T08:09:18.528349+00:00",
   "source": "google_play",
-  "item_count": 3,
+  "item_count": 4,
   "items": [
     {
       "title": "[Google Play 好评] ★5 Es un muy buen juego gacha; definitivame",
@@ -44,6 +44,20 @@
       "tags": [],
       "lang": "en",
       "platform_region": "us",
+      "region": "global"
+    },
+    {
+      "title": "[Google Play 好评] ★5 It was so fun! i usually get bored but t",
+      "summary": "It was so fun! i usually get bored but this game is so greatt!!!~~",
+      "source": "google_play",
+      "time": "2026-07-16T07:05:58",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=th#gp-fe7c92c1-7523-4fb9-a2ad-05667b6e3b5a",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "พิชชา พีช",
+      "tags": [],
+      "lang": "th",
+      "platform_region": "th",
       "region": "global"
     }
   ],

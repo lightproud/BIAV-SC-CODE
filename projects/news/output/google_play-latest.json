@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-17T05:43:24.414145+00:00",
+  "collected_at": "2026-07-17T08:08:33.191850+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 111,
+  "item_count": 112,
   "items": [
     {
       "source": "google_play",
@@ -593,6 +593,16 @@
       "summary": "재밌긴한데 스토리 영상 보고오면 화면이 멈춰요. 그것만 고쳐주세요",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=ko#gp-ea3efa69-914f-40ac-b463-299e5cf194f2",
       "author": "김나연",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-16T07:05:58",
+      "lang": "th",
+      "title": "[Google Play 好评] ★5 It was so fun! i usually get bored but t",
+      "summary": "It was so fun! i usually get bored but this game is so greatt!!!~~",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=th#gp-fe7c92c1-7523-4fb9-a2ad-05667b6e3b5a",
+      "author": "พิชชา พีช",
       "engagement": 0
     },
     {
