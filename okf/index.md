@@ -15,7 +15,7 @@
 * [输出展示 news-output](/news-output/index.md) - 23 concept · 抽样展示层（output）
 * [解包 unpacked](/unpacked/index.md) - 0 concept · 客户端一手 text 指针（full_archive）
 * [解包上游 extracted](/extracted/index.md) - 0 concept · processed 权威上游（full_archive）
-* [产物 resource](/resource/index.md) - 95 concept · 银芯正式报告/分析指针
+* [产物 resource](/resource/index.md) - 96 concept · 银芯正式报告/分析指针
 * [子项目 projects](/projects/index.md) - 28 concept · CONTEXT/藏宝图/工程文档指针
 
 ## 运行时导航（LLM 可动态导航）

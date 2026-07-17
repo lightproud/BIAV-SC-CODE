@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 357,
-    "edges": 420,
+    "concepts": 358,
+    "edges": 427,
     "terms": 6428,
     "by_type": {
       "character": 72,
       "dataset": 94,
-      "documentation": 124,
+      "documentation": 125,
       "knowledge-pointer": 47,
       "reference": 17,
       "research": 3
@@ -25,14 +25,14 @@
       "memory": 50,
       "news-output": 23,
       "projects": 28,
-      "resource": 95,
+      "resource": 96,
       "sources": 20,
       "story": 11,
       "wiki-data": 26
     },
     "by_tier": {
       "skeleton": 134,
-      "search": 223
+      "search": 224
     }
   },
   "sections": {
@@ -62,7 +62,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 95
+      "count": 96
     },
     "sources": {
       "index": "/sources/index.md",
@@ -295,7 +295,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 31
+      "degree": 33
     },
     "/characters/130375.md": {
       "type": "character",
@@ -817,7 +817,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 3
+      "degree": 5
     },
     "/characters/15594.md": {
       "type": "character",
@@ -958,7 +958,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 95
+      "degree": 96
     },
     "/characters/15604.md": {
       "type": "character",
@@ -1000,7 +1000,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 8
+      "degree": 10
     },
     "/characters/77911.md": {
       "type": "character",
@@ -1436,7 +1436,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 4
+      "degree": 6
     },
     "/community/community-stopgame.md": {
       "type": "dataset",
@@ -1520,7 +1520,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 9
+      "degree": 10
     },
     "/community/community-youtube.md": {
       "type": "dataset",
@@ -4154,6 +4154,20 @@
       "tier": "search",
       "degree": 1
     },
+    "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md": {
+      "type": "documentation",
+      "title": "silver-core-sdk-bug-audit-r2-20260717",
+      "description": "repo-engineering 交付物（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/repo-engineering/silver-core-sdk-bug-audit-r2-20260717.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 1
+    },
     "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md": {
       "type": "documentation",
       "title": "silver-core-sdk-code-quality-audit-20260714",
@@ -4311,7 +4325,7 @@
     "/sources/bahamut.md": {
       "type": "dataset",
       "title": "bahamut 社区数据源",
-      "description": "bahamut 平台采集档案，全量 158 条，健康度 active。",
+      "description": "bahamut 平台采集档案，全量 182 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bahamut/",
       "tags": [
         "data_layer:full_archive",
@@ -4325,7 +4339,7 @@
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 2916 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 2921 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -4339,7 +4353,7 @@
     "/sources/discord.md": {
       "type": "dataset",
       "title": "discord 社区数据源",
-      "description": "discord 平台采集档案，全量 8087351 条，健康度 active。",
+      "description": "discord 平台采集档案，全量 8102285 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/discord/",
       "tags": [
         "data_layer:full_archive",
@@ -4437,7 +4451,7 @@
     "/sources/steam.md": {
       "type": "dataset",
       "title": "steam 社区数据源",
-      "description": "steam 平台采集档案，全量 5231 条，健康度 active。",
+      "description": "steam 平台采集档案，全量 5235 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4446,12 +4460,12 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 4
+      "degree": 6
     },
     "/sources/steam_discussion.md": {
       "type": "dataset",
       "title": "steam_discussion 社区数据源",
-      "description": "steam_discussion 平台采集档案，全量 111 条，健康度 active。",
+      "description": "steam_discussion 平台采集档案，全量 113 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/discussion/",
       "tags": [
         "data_layer:full_archive",
@@ -4493,7 +4507,7 @@
     "/sources/taptap_review.md": {
       "type": "dataset",
       "title": "taptap_review 社区数据源",
-      "description": "taptap_review 平台采集档案，全量 1526 条，健康度 active。",
+      "description": "taptap_review 平台采集档案，全量 1542 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/taptap/cn/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4507,7 +4521,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 10389 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 10416 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -4521,7 +4535,7 @@
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 10552 条，健康度 degraded。",
+      "description": "weixin 平台采集档案，全量 10592 条，健康度 degraded。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -4535,7 +4549,7 @@
     "/sources/youtube.md": {
       "type": "dataset",
       "title": "youtube 社区数据源",
-      "description": "youtube 平台采集档案，全量 2914 条，健康度 active。",
+      "description": "youtube 平台采集档案，全量 2920 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -4549,7 +4563,7 @@
     "/sources/youtube_comments.md": {
       "type": "dataset",
       "title": "youtube_comments 社区数据源",
-      "description": "youtube_comments 平台采集档案，全量 2144 条，健康度 active。",
+      "description": "youtube_comments 平台采集档案，全量 2153 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube_comments/",
       "tags": [
         "data_layer:full_archive",
@@ -4558,7 +4572,7 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 8
+      "degree": 9
     },
     "/story/STORY_RESEARCH.md": {
       "type": "research",
@@ -5154,6 +5168,11 @@
         "mention"
       ],
       [
+        "/community/community-steam.md",
+        "提及:Saya",
+        "mention"
+      ],
+      [
         "/community/community-weibo.md",
         "提及:沙耶",
         "mention"
@@ -5265,6 +5284,11 @@
       ],
       [
         "/sources/reddit.md",
+        "提及:Saya",
+        "mention"
+      ],
+      [
+        "/sources/steam.md",
         "提及:Saya",
         "mention"
       ],
@@ -6165,12 +6189,22 @@
         "cv"
       ],
       [
+        "/community/community-steam.md",
+        "提及:詹金",
+        "mention"
+      ],
+      [
         "/memory/decisions-archive.md",
         "提及:詹金",
         "mention"
       ],
       [
         "/memory/memory-ext-wiki-characters-schema-v1.md",
+        "提及:詹金",
+        "mention"
+      ],
+      [
+        "/sources/steam.md",
         "提及:詹金",
         "mention"
       ]
@@ -6843,6 +6877,11 @@
         "mention"
       ],
       [
+        "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
         "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
         "提及:艾瑞卡",
         "mention"
@@ -6924,6 +6963,11 @@
         "mention"
       ],
       [
+        "/community/community-youtube-comments.md",
+        "提及:哈姆林",
+        "mention"
+      ],
+      [
         "/community/community-youtube.md",
         "提及:哈姆林",
         "mention"
@@ -6945,6 +6989,11 @@
       ],
       [
         "/sources/youtube.md",
+        "提及:哈姆林",
+        "mention"
+      ],
+      [
+        "/sources/youtube_comments.md",
         "提及:哈姆林",
         "mention"
       ]
@@ -7567,6 +7616,16 @@
         "mention"
       ],
       [
+        "/characters/15593.md",
+        "提及:詹金",
+        "mention"
+      ],
+      [
+        "/characters/130226.md",
+        "提及:Saya",
+        "mention"
+      ],
+      [
         "/community/community-index.md",
         "聚合于",
         "cross"
@@ -7689,6 +7748,11 @@
       [
         "/characters/15603.md",
         "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/characters/54117.md",
+        "提及:哈姆林",
         "mention"
       ],
       [
@@ -9064,6 +9128,13 @@
         "mention"
       ]
     ],
+    "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
     "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md": [
       [
         "/characters/15603.md",
@@ -9341,6 +9412,16 @@
         "mention"
       ],
       [
+        "/characters/15593.md",
+        "提及:詹金",
+        "mention"
+      ],
+      [
+        "/characters/130226.md",
+        "提及:Saya",
+        "mention"
+      ],
+      [
         "/community/community-steam.md",
         "同平台",
         "cross"
@@ -9499,6 +9580,11 @@
       [
         "/characters/15603.md",
         "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/characters/54117.md",
+        "提及:哈姆林",
         "mention"
       ],
       [
@@ -10022,6 +10108,7 @@
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -10417,6 +10504,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md"
     ],
     "authoring": [
@@ -10728,7 +10816,8 @@
     "bug": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
-      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md"
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md"
     ],
     "build": [
       "/README.md",
@@ -11262,6 +11351,7 @@
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -11412,6 +11502,7 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -11619,6 +11710,7 @@
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -11948,6 +12040,7 @@
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -12132,6 +12225,7 @@
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -12422,6 +12516,7 @@
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -13186,6 +13281,7 @@
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -13681,6 +13777,7 @@
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -14195,6 +14292,7 @@
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -14914,6 +15012,7 @@
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -15329,6 +15428,7 @@
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -15403,7 +15503,8 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
-      "/resource/resource-repo-engineering-repo-audit-20260603-r2.md"
+      "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md"
     ],
     "r3": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md"
@@ -15628,6 +15729,7 @@
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -15769,6 +15871,7 @@
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -16025,6 +16128,7 @@
       "/resource/resource-repo-engineering-oss-cc-engine-designs-survey-20260704.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -16108,6 +16212,7 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -16752,6 +16857,7 @@
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -17844,6 +17950,7 @@
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -18113,6 +18220,7 @@
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -18442,6 +18550,7 @@
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -19379,7 +19488,8 @@
     ],
     "交付": [
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
-      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md"
     ],
     "交流": [
       "/characters/77925.md"
@@ -19734,6 +19844,7 @@
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -19948,7 +20059,8 @@
     ],
     "付物": [
       "/resource/resource-data-diagnostics-weixin-noise-cleanup-20260712.md",
-      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md"
+      "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md"
     ],
     "付费": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md"
@@ -20704,6 +20816,7 @@
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -20975,6 +21088,7 @@
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -22932,6 +23046,7 @@
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -26268,6 +26383,7 @@
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -27073,6 +27189,7 @@
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -27701,6 +27818,7 @@
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -31665,6 +31783,7 @@
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -32243,6 +32362,7 @@
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -32587,6 +32707,7 @@
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -33014,6 +33135,7 @@
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -33304,6 +33426,7 @@
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -35064,6 +35187,7 @@
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -35508,6 +35632,7 @@
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -36144,6 +36269,7 @@
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -36363,6 +36489,7 @@
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -36892,6 +37019,7 @@
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -37285,6 +37413,7 @@
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -44512,6 +44641,7 @@
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -45225,6 +45355,7 @@
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -46268,6 +46399,7 @@
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -46527,6 +46659,7 @@
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -47891,6 +48024,7 @@
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md"
     ],
     "authority": [
@@ -48030,7 +48164,8 @@
     ],
     "bug": [
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
-      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md"
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md"
     ],
     "builtin": [
       "/resource/resource-repo-engineering-bpt-desktop-builtin-commands-batch1-20260711.md"
@@ -48221,6 +48356,7 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -48421,6 +48557,7 @@
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -48743,6 +48880,7 @@
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -48914,6 +49052,7 @@
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -49122,6 +49261,7 @@
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -49668,6 +49808,7 @@
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -50327,7 +50468,8 @@
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-bpt-sdk-conformance-suite-design-20260705-r2.md",
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md",
-      "/resource/resource-repo-engineering-repo-audit-20260603-r2.md"
+      "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md"
     ],
     "r3": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r3.md"
@@ -50419,6 +50561,7 @@
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -50613,6 +50756,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-prompt-corpus-20260708.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -50659,6 +50803,7 @@
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -50938,6 +51083,7 @@
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
       "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",

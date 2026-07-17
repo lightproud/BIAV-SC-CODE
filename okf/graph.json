@@ -1,8 +1,8 @@
 {
   "generated": "2026-07-17",
   "stats": {
-    "nodes": 357,
-    "edges": 420
+    "nodes": 358,
+    "edges": 427
   },
   "nodes": [
     {
@@ -3267,6 +3267,17 @@
       "tier": "search"
     },
     {
+      "id": "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
+      "type": "documentation",
+      "title": "silver-core-sdk-bug-audit-r2-20260717",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
       "id": "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "type": "documentation",
       "title": "silver-core-sdk-code-quality-audit-20260714",
@@ -4435,6 +4446,18 @@
       "rel_type": "mention"
     },
     {
+      "source": "/community/community-steam.md",
+      "target": "/characters/15593.md",
+      "rel": "提及:詹金",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-steam.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:Saya",
+      "rel_type": "mention"
+    },
+    {
       "source": "/community/community-weibo.md",
       "target": "/characters/15567.md",
       "rel": "提及:血链·希洛",
@@ -4510,6 +4533,12 @@
       "source": "/community/community-youtube-comments.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-youtube-comments.md",
+      "target": "/characters/54117.md",
+      "rel": "提及:哈姆林",
       "rel_type": "mention"
     },
     {
@@ -5671,6 +5700,12 @@
       "rel_type": "mention"
     },
     {
+      "source": "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
       "source": "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
@@ -5839,6 +5874,18 @@
       "rel_type": "mention"
     },
     {
+      "source": "/sources/steam.md",
+      "target": "/characters/15593.md",
+      "rel": "提及:詹金",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/steam.md",
+      "target": "/characters/130226.md",
+      "rel": "提及:Saya",
+      "rel_type": "mention"
+    },
+    {
       "source": "/sources/weibo.md",
       "target": "/characters/15567.md",
       "rel": "提及:血链·希洛",
@@ -5926,6 +5973,12 @@
       "source": "/sources/youtube_comments.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/youtube_comments.md",
+      "target": "/characters/54117.md",
+      "rel": "提及:哈姆林",
       "rel_type": "mention"
     },
     {
