@@ -4,7 +4,7 @@ title: "index.json"
 description: "章节↔lore↔关卡↔角色聚合索引"
 resource: "/projects/wiki/data/processed/story/index.json"
 tags: ["story", "pointer", "data_layer:full_archive"]
-timestamp: "2026-07-16"
+timestamp: "2026-07-17"
 ---
 
 # 剧情结构层指针

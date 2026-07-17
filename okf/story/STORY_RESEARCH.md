@@ -4,7 +4,7 @@ title: "STORY_RESEARCH.md"
 description: "剧情/世界观/神话原型深度研究综述（社区源，带置信标签）"
 resource: "/projects/wiki/data/processed/story/STORY_RESEARCH.md"
 tags: ["story", "pointer", "research"]
-timestamp: "2026-07-16"
+timestamp: "2026-07-17"
 ---
 
 # 剧情结构层指针

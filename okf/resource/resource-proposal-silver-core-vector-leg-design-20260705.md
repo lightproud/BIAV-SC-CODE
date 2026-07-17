@@ -4,7 +4,7 @@ title: "silver-core-vector-leg-design-20260705"
 description: "守密人 2026-07-05 裁定 **(A)**：银芯**解除「零 ML 红线」**、自建一条向量检索腿，嵌入源选 **Voyage API**。（格式：md）"
 resource: "/Public-Info-Pool/Resource/proposal/silver-core-vector-leg-design-20260705.md"
 tags: ["data_layer:curated", "deliverable", "topic:proposal"]
-timestamp: "2026-07-16"
+timestamp: "2026-07-17"
 ---
 
 # 指针概念

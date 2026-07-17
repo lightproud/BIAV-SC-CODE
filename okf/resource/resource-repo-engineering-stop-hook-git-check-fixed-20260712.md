@@ -4,7 +4,7 @@ title: "stop-hook-git-check-fixed-20260712"
 description: "repo-engineering 产物（sh）（格式：sh）"
 resource: "/Public-Info-Pool/Resource/repo-engineering/stop-hook-git-check-fixed-20260712.sh"
 tags: ["data_layer:curated", "deliverable", "topic:repo-engineering"]
-timestamp: "2026-07-16"
+timestamp: "2026-07-17"
 ---
 
 # 指针概念

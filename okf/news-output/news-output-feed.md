@@ -4,7 +4,7 @@ title: "输出展示层 · RSS/Atom 订阅"
 description: "24h 热点 RSS 2.0 订阅源。 抽样/展示用途，非全量档案层。"
 resource: "/projects/news/output/feed.xml"
 tags: ["data_layer:output", "aggregate", "sampled"]
-timestamp: "2026-07-16"
+timestamp: "2026-07-17"
 ---
 
 # 指针概念

@@ -4,7 +4,7 @@ title: "silver-core-sdk MIGRATION-0.3x-to-0.52"
 description: "Audience: a consumer (BPT Desktop) pinned on the **0.3x tarball line**"
 resource: "/projects/silver-core-sdk/docs/MIGRATION-0.3x-to-0.52.md"
 tags: ["data_layer:curated", "design-doc", "sub-project:silver-core-sdk"]
-timestamp: "2026-07-16"
+timestamp: "2026-07-17"
 ---
 
 # 指针概念

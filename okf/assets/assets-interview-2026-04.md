@@ -4,7 +4,7 @@ title: "interview-2026-04"
 description: "interview-2026-04 事实数据（total_questions=53）"
 resource: "/assets/data/interview-2026-04.json"
 tags: ["data_layer:curated", "fact-bible"]
-timestamp: "2026-07-16"
+timestamp: "2026-07-17"
 ---
 
 # 指针概念

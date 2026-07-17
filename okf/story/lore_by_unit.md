@@ -4,7 +4,7 @@ title: "lore_by_unit.json"
 description: "剧情单元 -> lore id 列表"
 resource: "/projects/wiki/data/processed/story/lore_by_unit.json"
 tags: ["story", "dataset", "data_layer:full_archive"]
-timestamp: "2026-07-16"
+timestamp: "2026-07-17"
 ---
 
 # 剧情结构层指针

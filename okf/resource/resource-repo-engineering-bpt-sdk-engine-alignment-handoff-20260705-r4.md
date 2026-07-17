@@ -4,7 +4,7 @@ title: "bpt-sdk-engine-alignment-handoff-20260705-r4"
 description: "（PR #453 / #463 / #466 / #467 / #469），不在此单。（格式：md）"
 resource: "/Public-Info-Pool/Resource/repo-engineering/bpt-sdk-engine-alignment-handoff-20260705-r4.md"
 tags: ["data_layer:curated", "deliverable", "topic:repo-engineering"]
-timestamp: "2026-07-16"
+timestamp: "2026-07-17"
 ---
 
 # 指针概念
