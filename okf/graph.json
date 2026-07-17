@@ -4334,12 +4334,6 @@
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/15582.md",
-      "rel": "提及:弥利亚姆",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
       "target": "/characters/77917.md",
       "rel": "提及:波吕克斯",
       "rel_type": "mention"
@@ -4376,12 +4370,6 @@
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/15583.md",
-      "rel": "提及:奥尔拉",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
       "target": "/characters/15595.md",
       "rel": "提及:拉蒙娜",
       "rel_type": "mention"
@@ -4394,8 +4382,20 @@
     },
     {
       "source": "/community/community-bilibili.md",
+      "target": "/characters/77926.md",
+      "rel": "提及:皮克曼",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
       "target": "/characters/15563.md",
       "rel": "提及:图鲁",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/15576.md",
+      "rel": "提及:墨菲",
       "rel_type": "mention"
     },
     {
@@ -5738,12 +5738,6 @@
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/15582.md",
-      "rel": "提及:弥利亚姆",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
       "target": "/characters/77917.md",
       "rel": "提及:波吕克斯",
       "rel_type": "mention"
@@ -5780,12 +5774,6 @@
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/15583.md",
-      "rel": "提及:奥尔拉",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
       "target": "/characters/15595.md",
       "rel": "提及:拉蒙娜",
       "rel_type": "mention"
@@ -5798,8 +5786,20 @@
     },
     {
       "source": "/sources/bilibili.md",
+      "target": "/characters/77926.md",
+      "rel": "提及:皮克曼",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
       "target": "/characters/15563.md",
       "rel": "提及:图鲁",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/15576.md",
+      "rel": "提及:墨菲",
       "rel_type": "mention"
     },
     {

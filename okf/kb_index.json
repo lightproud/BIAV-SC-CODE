@@ -578,7 +578,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 10
+      "degree": 12
     },
     "/characters/15577.md": {
       "type": "character",
@@ -662,7 +662,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 7
+      "degree": 5
     },
     "/characters/15583.md": {
       "type": "character",
@@ -676,7 +676,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 4
+      "degree": 2
     },
     "/characters/15584.md": {
       "type": "character",
@@ -1154,7 +1154,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 3
+      "degree": 5
     },
     "/characters/77927.md": {
       "type": "character",
@@ -4325,7 +4325,7 @@
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 2904 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 2912 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -4409,7 +4409,7 @@
     "/sources/reddit.md": {
       "type": "dataset",
       "title": "reddit 社区数据源",
-      "description": "reddit 平台采集档案，全量 3640 条，健康度 active。",
+      "description": "reddit 平台采集档案，全量 3647 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/reddit/",
       "tags": [
         "data_layer:full_archive",
@@ -4437,7 +4437,7 @@
     "/sources/steam.md": {
       "type": "dataset",
       "title": "steam 社区数据源",
-      "description": "steam 平台采集档案，全量 5230 条，健康度 active。",
+      "description": "steam 平台采集档案，全量 5231 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4507,7 +4507,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 10361 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 10375 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -4521,7 +4521,7 @@
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 10512 条，健康度 degraded。",
+      "description": "weixin 平台采集档案，全量 10532 条，健康度 degraded。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -4535,7 +4535,7 @@
     "/sources/youtube.md": {
       "type": "dataset",
       "title": "youtube 社区数据源",
-      "description": "youtube 平台采集档案，全量 2908 条，健康度 active。",
+      "description": "youtube 平台采集档案，全量 2911 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -5767,6 +5767,11 @@
         "mention"
       ],
       [
+        "/community/community-bilibili.md",
+        "提及:墨菲",
+        "mention"
+      ],
+      [
         "/community/community-steam.md",
         "提及:墨菲",
         "mention"
@@ -5788,6 +5793,11 @@
       ],
       [
         "/sources/bahamut.md",
+        "提及:墨菲",
+        "mention"
+      ],
+      [
+        "/sources/bilibili.md",
         "提及:墨菲",
         "mention"
       ],
@@ -5957,22 +5967,12 @@
     ],
     "/characters/15582.md": [
       [
-        "/community/community-bilibili.md",
-        "提及:弥利亚姆",
-        "mention"
-      ],
-      [
         "/community/community-weibo.md",
         "提及:弥利亚姆",
         "mention"
       ],
       [
         "/memory/memory-ext-wiki-phase-2-gap-inventory.md",
-        "提及:弥利亚姆",
-        "mention"
-      ],
-      [
-        "/sources/bilibili.md",
         "提及:弥利亚姆",
         "mention"
       ],
@@ -5999,17 +5999,7 @@
         "cv"
       ],
       [
-        "/community/community-bilibili.md",
-        "提及:奥尔拉",
-        "mention"
-      ],
-      [
         "/memory/morimens-context.md",
-        "提及:奥尔拉",
-        "mention"
-      ],
-      [
-        "/sources/bilibili.md",
         "提及:奥尔拉",
         "mention"
       ]
@@ -7149,12 +7139,22 @@
         "mention"
       ],
       [
+        "/community/community-bilibili.md",
+        "提及:皮克曼",
+        "mention"
+      ],
+      [
         "/resource/resource-intel-weekly-morimens-intel-20260712.md",
         "提及:皮克曼",
         "mention"
       ],
       [
         "/sources/bahamut.md",
+        "提及:皮克曼",
+        "mention"
+      ],
+      [
+        "/sources/bilibili.md",
         "提及:皮克曼",
         "mention"
       ]
@@ -7311,11 +7311,6 @@
         "mention"
       ],
       [
-        "/characters/15582.md",
-        "提及:弥利亚姆",
-        "mention"
-      ],
-      [
         "/characters/77917.md",
         "提及:波吕克斯",
         "mention"
@@ -7346,11 +7341,6 @@
         "mention"
       ],
       [
-        "/characters/15583.md",
-        "提及:奥尔拉",
-        "mention"
-      ],
-      [
         "/characters/15595.md",
         "提及:拉蒙娜",
         "mention"
@@ -7361,8 +7351,18 @@
         "mention"
       ],
       [
+        "/characters/77926.md",
+        "提及:皮克曼",
+        "mention"
+      ],
+      [
         "/characters/15563.md",
         "提及:图鲁",
+        "mention"
+      ],
+      [
+        "/characters/15576.md",
+        "提及:墨菲",
         "mention"
       ],
       [
@@ -9165,11 +9165,6 @@
         "mention"
       ],
       [
-        "/characters/15582.md",
-        "提及:弥利亚姆",
-        "mention"
-      ],
-      [
         "/characters/77917.md",
         "提及:波吕克斯",
         "mention"
@@ -9200,11 +9195,6 @@
         "mention"
       ],
       [
-        "/characters/15583.md",
-        "提及:奥尔拉",
-        "mention"
-      ],
-      [
         "/characters/15595.md",
         "提及:拉蒙娜",
         "mention"
@@ -9215,8 +9205,18 @@
         "mention"
       ],
       [
+        "/characters/77926.md",
+        "提及:皮克曼",
+        "mention"
+      ],
+      [
         "/characters/15563.md",
         "提及:图鲁",
+        "mention"
+      ],
+      [
+        "/characters/15576.md",
+        "提及:墨菲",
         "mention"
       ],
       [
