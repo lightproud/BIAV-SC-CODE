@@ -11,17 +11,27 @@
  */
 
 import { ConfigurationError } from '../errors.js';
+import { escapeTagAttr, neutralizeClosingTag } from '../internal/inert-text.js';
 import type { RetainedRegion } from '../types.js';
 
 /** Default total byte cap across all retained regions (rendered form). */
 export const DEFAULT_RETAINED_REGION_MAX_BYTES = 16_384;
 
-/** The exact text a region contributes to the post-compaction context. */
+/** The exact text a region contributes to the post-compaction context.
+ *
+ * L2-8 (audit 2026-07-17): region content routinely derives from EXTERNAL
+ * event data (e.g. a ledger digest), and the engine re-stamps this rendering
+ * verbatim on every fold. An id/title containing `"` would break out of the
+ * attribute, and content containing `</retained-context>` would close the
+ * region early and plant forged text outside the retained boundary — so the
+ * attributes are entity-escaped and the content's terminator is neutralized.
+ * The stored region itself stays verbatim; only this rendering escapes. */
 export function renderRetainedRegion(region: RetainedRegion): string {
-  const title = region.title !== undefined ? ` title="${region.title}"` : '';
+  const title =
+    region.title !== undefined ? ` title="${escapeTagAttr(region.title)}"` : '';
   return (
-    `<retained-context id="${region.id}"${title}>\n` +
-    region.content +
+    `<retained-context id="${escapeTagAttr(region.id)}"${title}>\n` +
+    neutralizeClosingTag(region.content, 'retained-context') +
     '\n</retained-context>'
   );
 }

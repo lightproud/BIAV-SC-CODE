@@ -16,6 +16,7 @@ import {
   runUtilityCall,
   type UtilityCallOptions,
 } from '../generators/runtime.js';
+import { neutralizeClosingTag } from '../internal/inert-text.js';
 import {
   CONTEXT_TIP_CATALOG,
   renderCatalog,
@@ -84,8 +85,12 @@ export async function selectContextTip(
 /** Assemble the selector user turn (transcript + eligibility + metadata). */
 export function buildSelectorUserTurn(input: SelectContextTipInput): string {
   const meta = input.sessionMetadata ?? {};
+  // N9 (audit 2026-07-17): the transcript is UNTRUSTED text sitting right
+  // before the structured eligibility blocks — unfenced, it can forge its own
+  // <eligible_ids> block and steer the selection. Fence it and neutralize the
+  // terminator so it can neither escape nor impersonate the blocks below.
   const parts = [
-    `Transcript:\n${input.transcript}`,
+    `Transcript:\n<transcript>\n${neutralizeClosingTag(input.transcript, 'transcript')}\n</transcript>`,
     `<eligible_ids>${input.eligibleIds.join(', ')}</eligible_ids>`,
     `<ineligible_ids>${(input.ineligibleIds ?? []).join(', ')}</ineligible_ids>`,
     `session_metadata: ${JSON.stringify(meta)}`,

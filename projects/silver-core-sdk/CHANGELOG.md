@@ -16,6 +16,45 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.65.1 — 2026-07-17
+
+T50 batch J: 15 fixes from the second-pass audit
+(`Public-Info-Pool/Resource/repo-engineering/silver-core-sdk-bug-audit-r2-20260717.md`)
+— the injection/unescaped family plus the 0.63.0 new-code protocol defects.
+No new surfaces beyond one internal helper module and `AsyncQueue.pending()`.
+
+- **injection family** (new shared `internal/inert-text.ts` helpers): the
+  verifier neutralizes `</context>` in code under review and its system
+  prompt declares fence content inert data (N1); `generateSessionTitle`
+  neutralizes `</session>` (N8); the tips selector fences the transcript in
+  `<transcript>` so it cannot forge the eligibility blocks (N9); ledger
+  digests collapse keys/summaries to one line so external event data cannot
+  forge "already reported" entries (L2-7); retained-region rendering
+  entity-escapes id/title attributes and neutralizes an embedded
+  `</retained-context>` terminator (L2-8).
+- **query generator protocol**: teardown drains and the corrected final
+  result no longer yield at a consumer that already left via return()/break/
+  close(), which suspended the generator in its finally forever (L2-1); the
+  session-end memory round closes its inner driveTurn generator on every
+  exit and no longer swallows a consumer-injected throw() as a fake success
+  (L2-2); return()/throw()/close() invalidate the primed first result so a
+  post-close next() reports done instead of replaying a stale init message
+  (L2-3); UserPromptSubmit hook lifecycle events and pre-turn terminal exits
+  drain the observability/mirror queues instead of dropping them (L2-4);
+  interrupt() reports the uuid-stamped user messages still buffered in the
+  streaming-input queue instead of hardcoding `still_queued: []` (L2-5);
+  `ReportLedger.record()` returns false when capacity eviction expels the
+  new entry itself (L2-6); Stop hook input now carries
+  `last_assistant_message`, so goal evaluators stay sighted under
+  incognito/persistSession:false (L2-10).
+- **engine**: the in-flight tool-loop turn stays thinking-protected when a
+  memory-flush user turn trails the tool_result turn — pre-fix the
+  de-protection stripped API-required thinking and 400'd the session on
+  fallback switch or unstamped resume (E1); segments-path cache breakpoints
+  honor `promptCaching: false` and stamp `cacheTtl: '1h'` on the baked
+  markers (E2); the structured-output instruction is sent even when every
+  caller segment filters to empty, instead of shipping `system: []` with no
+  schema (E3).
 ## 0.65.0 — 2026-07-17
 
 **BREAKING** — MultiEdit REMOVED (keeper 2026-07-17, hard alignment with

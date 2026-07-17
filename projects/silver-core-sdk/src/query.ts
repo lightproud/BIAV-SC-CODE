@@ -851,6 +851,13 @@ export function query(args: {
   let turnController: AbortController | null = null;
   let interruptRequested = false;
   let closed = false;
+  // L2-1 (audit 2026-07-17): set when the CONSUMER ends iteration (return() /
+  // for-await break / close()). run()'s finally then resumes as a `return`
+  // completion, where any yield would be handed back as {done:false} and leave
+  // the generator suspended in the finally FOREVER (the consumer never calls
+  // next() again). The teardown drains + corrected final result are for a
+  // consumer that is still consuming; this flag skips them for one that left.
+  let consumerFinished = false;
   let sessionEndFired = false;
   let resolvedSessionId = '';
   let checkpointStore: FileCheckpointStore | null = null;
@@ -1591,6 +1598,12 @@ export function query(args: {
             lifeSignal,
           );
           for (const m of agg.systemMessages) debug(`UserPromptSubmit hook: ${m}`);
+          // L2-4 (audit 2026-07-17): the hook run just queued its lifecycle
+          // events (hook_started/hook_response). The loop top only drains the
+          // MIRROR queue, so on the block/skip paths below these would sit in
+          // obsQueue until some later turn — or forever. Deliver them now,
+          // before any branch.
+          yield* drainObs();
           if (!agg.continue || agg.decision === 'deny') {
             const reason =
               agg.stopReason ??
@@ -1666,6 +1679,17 @@ export function query(args: {
         // 4. Enforce session-wide limits BEFORE the turn, and arm the engine
         //    with the REMAINING budget/turns so it also stops mid-turn once the
         //    session cap is hit (finding #33).
+        // L2-4 (audit 2026-07-17): the two pre-turn terminal exits below used
+        // to skip both drains, silently dropping queued mirror errors and hook
+        // lifecycle events. Drain before deciding, so a terminal result is the
+        // LAST thing the consumer sees on those paths.
+        if (
+          (options.maxBudgetUsd !== undefined && acct.cost >= options.maxBudgetUsd) ||
+          (options.maxTurns !== undefined && acct.turns >= options.maxTurns)
+        ) {
+          yield* drainMirror();
+          yield* drainObs();
+        }
         if (options.maxBudgetUsd !== undefined) {
           if (acct.cost >= options.maxBudgetUsd) {
             yield terminalResult(
@@ -1730,39 +1754,66 @@ export function query(args: {
         // restore it after, so the corrected final result (待裁⑤) still sees
         // that acct grew past what the consumer last actually received.
         const preRoundResult = lastYieldedResult;
+        // L2-2 (audit 2026-07-17): this round hand-drives driveTurn, so the
+        // iterator-protocol duties the for-await sugar normally covers are
+        // explicit here. Two rules: (1) only errors thrown BY the round
+        // (gen.next() rejecting) are "non-fatal memory failure" — an exception
+        // injected by the CONSUMER (q.throw()) lands at the `yield msg` below
+        // and must propagate, never be swallowed into a fake success; (2) on
+        // EVERY exit the inner generator is closed via gen.return(), so
+        // driveTurn/runAgentLoop finalizers run and no pending_turn dangles.
+        let gen: AsyncGenerator<SDKMessage, 'stop' | 'continue'> | undefined;
         try {
-          const endParam: APIMessageParam = {
-            role: 'user',
-            content: [{ type: 'text', text: MEMORY_SESSION_END_PROMPT }],
-          };
-          history.push(endParam);
-          requestView.messages.push(endParam);
-          persistParam(sess.sessionId, endParam);
-          // Bound the round: a progress card is a couple of tool turns, not
-          // a task — and never more budget than the session cap has left.
-          engineConfig.maxTurns = 4;
-          if (sessionEndRemainingUsd !== undefined) {
-            engineConfig.maxBudgetUsd = sessionEndRemainingUsd;
-            engineConfig.budgetCostBaselineUsd = acct.cost;
+          try {
+            const endParam: APIMessageParam = {
+              role: 'user',
+              content: [{ type: 'text', text: MEMORY_SESSION_END_PROMPT }],
+            };
+            history.push(endParam);
+            requestView.messages.push(endParam);
+            persistParam(sess.sessionId, endParam);
+            // Bound the round: a progress card is a couple of tool turns, not
+            // a task — and never more budget than the session cap has left.
+            engineConfig.maxTurns = 4;
+            if (sessionEndRemainingUsd !== undefined) {
+              engineConfig.maxBudgetUsd = sessionEndRemainingUsd;
+              engineConfig.budgetCostBaselineUsd = acct.cost;
+            }
+            debug('memory: running session-end progress-card round');
+            gen = driveTurn(randomUUID());
+          } catch (err) {
+            if (isAbortError(err)) throw err;
+            debug(
+              `memory: session-end update failed (non-fatal): ${err instanceof Error ? err.message : String(err)}`,
+            );
           }
-          debug('memory: running session-end progress-card round');
-          const gen = driveTurn(randomUUID());
-          for (;;) {
-            const it = await gen.next();
-            if (it.done === true) break;
-            const msg = it.value;
-            if (msg.type !== 'result') yield msg;
+          if (gen !== undefined) {
+            for (;;) {
+              let it: IteratorResult<SDKMessage, 'stop' | 'continue'>;
+              try {
+                it = await gen.next();
+              } catch (err) {
+                if (isAbortError(err)) throw err;
+                debug(
+                  `memory: session-end update failed (non-fatal): ${err instanceof Error ? err.message : String(err)}`,
+                );
+                break;
+              }
+              if (it.done === true) break;
+              const msg = it.value;
+              // A consumer-injected throw()/return() resumes AT this yield and
+              // propagates out of the round (through the finally below).
+              if (msg.type !== 'result') yield msg;
+            }
           }
-        } catch (err) {
-          if (isAbortError(err)) throw err;
-          debug(
-            `memory: session-end update failed (non-fatal): ${err instanceof Error ? err.message : String(err)}`,
-          );
         } finally {
           // Restore: the round's result was absorbed, so the last CONSUMER-
           // visible result is still the pre-round one. acct keeps the round's
           // added cost, so the corrected final result (待裁⑤) now fires.
           lastYieldedResult = preRoundResult;
+          if (gen !== undefined) {
+            await gen.return('continue').catch(() => undefined);
+          }
         }
       }
     } catch (err) {
@@ -1860,7 +1911,19 @@ export function query(args: {
       // cumulative total_cost_usd/modelUsage are now whole). Emitted at the very
       // END of teardown so a consumer that stops early cannot skip the resource
       // cleanup above. Skipped on abort/error (those throw their own terminal).
-      if (endReason !== 'abort' && endReason !== 'error' && !lifeSignal.aborted) {
+      // L2-1 (audit 2026-07-17): when the consumer initiated the exit
+      // (return() / break / close()), this finally is running inside a
+      // `return` completion — a yield here would be misdelivered as
+      // {done:false, value} and suspend the generator in the finally forever,
+      // violating the iterator return contract. Everything above (queue close,
+      // subagent teardown, store flush) already ran; only the yields are
+      // skipped for a consumer that already left.
+      if (
+        endReason !== 'abort' &&
+        endReason !== 'error' &&
+        !lifeSignal.aborted &&
+        !consumerFinished
+      ) {
         // L59 (audit 2026-07-17): settleAll() above ran the aborted children's
         // finalizers, which queue trailing observability events (SubagentStop
         // hooks, mirror-error notices) AFTER the last in-turn drain — without
@@ -1928,9 +1991,18 @@ export function query(args: {
       return inner.next(...nextArgs);
     },
     return(value: void | PromiseLike<void>): Promise<IteratorResult<SDKMessage, void>> {
+      // L2-1: run()'s finally must not yield back at a consumer that is
+      // leaving; L2-3: the primed first result is stale after return() — a
+      // later next() must see the generator's real (done) state, not a
+      // buffered {done:false} from before the close.
+      consumerFinished = true;
+      primedFirst = null;
       return inner.return(value);
     },
     throw(err?: unknown): Promise<IteratorResult<SDKMessage, void>> {
+      // L2-3: same staleness rule as return() — after throw() the buffered
+      // first message must never be replayed as a live {done:false}.
+      primedFirst = null;
       return inner.throw(err);
     },
     [Symbol.asyncIterator](): Query {
@@ -1947,9 +2019,17 @@ export function query(args: {
       } else {
         interruptRequested = true;
       }
-      // Official interrupt receipt (0.3.205). This engine keeps no uuid-stamped
-      // async message queue that survives an abort, so nothing is still queued.
-      return { still_queued: [] };
+      // Official interrupt receipt (0.3.205). L2-5 (audit 2026-07-17): in
+      // streaming-input mode the input queue CAN hold buffered user messages
+      // that survive this interrupt and will drive future turns — report the
+      // uuid-stamped ones honestly instead of hardcoding an empty receipt.
+      // Messages pushed without a uuid cannot be listed by uuid and are
+      // omitted (the receipt lists ids, it is not a count).
+      const stillQueued = queue
+        .pending()
+        .map((m) => m.uuid)
+        .filter((u): u is string => typeof u === 'string' && u.length > 0);
+      return { still_queued: stillQueued };
     },
     async setPermissionMode(mode: PermissionMode): Promise<void> {
       assertBypassUnlocked(mode);
@@ -2087,6 +2167,10 @@ export function query(args: {
     close(): void {
       if (closed) return;
       closed = true;
+      // L2-1/L2-3: close() is a consumer-initiated exit too — skip the
+      // teardown yields and drop the stale primed first result.
+      consumerFinished = true;
+      primedFirst = null;
       const reason = new AbortError('The query was closed');
       turnController?.abort(reason);
       // Settle a still-pending initializationResult() synchronously so an
