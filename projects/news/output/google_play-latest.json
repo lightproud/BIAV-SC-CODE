@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-17T13:24:17.639408+00:00",
+  "collected_at": "2026-07-17T16:15:49.313548+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 111,
+  "item_count": 112,
   "items": [
     {
       "source": "google_play",
@@ -243,6 +243,16 @@
       "summary": "觉得还行",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=zh_CN#gp-57f4f9db-558e-4842-b184-3a7e848970ad",
       "author": "元气豆芽（YQBean）",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-16T15:19:15",
+      "lang": "en",
+      "title": "[Google Play 好评] ★4 love this game. Top tier storyline(s) an",
+      "summary": "love this game. Top tier storyline(s) and characters, and fun n interesting gameplay to boot. The only tiny problem I might have is the lagginess despite being on performance settings, but other than that a solid 9/10 game.",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-dad586e7-db5e-404f-b85b-b97a151e3b83",
+      "author": "kjs",
       "engagement": 0
     },
     {

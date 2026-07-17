@@ -1,8 +1,8 @@
 {
   "date": "2026-07-17",
-  "archived_at": "2026-07-17T13:25:00.890797+00:00",
+  "archived_at": "2026-07-17T16:16:38.316183+00:00",
   "source": "bilibili",
-  "item_count": 16,
+  "item_count": 19,
   "items": [
     {
       "title": "Fire(燃尽版)",
@@ -23,6 +23,29 @@
         "danmaku": 0
       },
       "media_url": "https://i2.hdslb.com/bfs/archive/562f46518f02efe336fe8a628b4ce30b60cd999e.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "【忘却前夜】法洛思是过牌女王有人懂吗",
+      "summary": "-\n  └ 烟已归 (0赞): 我了\n  └ 嘎啦嘎啦果 (0赞): 3叠汀克特专给一张灵感 而且打击还铁定能过牌 还怪好用的 不过这局并不精彩\n  └ 嘎啦嘎啦果 (0赞): 和法洛思没关系，1费保留帮忙压缩牌库罢了[doge]",
+      "source": "bilibili",
+      "time": "2026-07-17T14:10:22+00:00",
+      "url": "https://www.bilibili.com/video/BV1TENR67E3C",
+      "engagement": 131,
+      "is_hot": false,
+      "author": "嘎啦嘎啦果",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 126,
+        "comment_count": 5,
+        "comments_fetched": 3,
+        "danmaku": 0
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/9588c4a8ba344eb39fb7be80acff3737f1695b59.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
@@ -69,6 +92,29 @@
         "danmaku": 0
       },
       "media_url": "https://i2.hdslb.com/bfs/archive/b219f029fe53f7cf76f3072d2beb7b58dfd52a19.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "沙耶：老大在说什么啊怎么听不懂？",
+      "summary": "《从你的全世界路过》\n  └ 哈基沙大玉 (1赞): [鸣潮2周年同人绘画_看你]\n  └ 耕司青海瑶 (0赞): [doge]",
+      "source": "bilibili",
+      "time": "2026-07-16T17:53:02+00:00",
+      "url": "https://www.bilibili.com/video/BV1CNKj6vErp",
+      "engagement": 106,
+      "is_hot": false,
+      "author": "小龙猫大能力",
+      "tags": [
+        "动画综合"
+      ],
+      "metadata": {
+        "play": 102,
+        "comment_count": 4,
+        "comments_fetched": 2,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/c6a6d924e9550b029a86d069587a8a67f2b5a3c3.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
@@ -322,6 +368,29 @@
         "danmaku": 0
       },
       "media_url": "https://i2.hdslb.com/bfs/archive/7f2e3336fa458eaa7f4b277bc6501895a75ba227.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "第四届N厨杯-第二十五日录播",
+      "summary": "第二十五日直播录播\n1P由备用备用主播绘奇旅代播，各类问题还请多多包涵。",
+      "source": "bilibili",
+      "time": "2026-07-17T15:47:56+00:00",
+      "url": "https://www.bilibili.com/video/BV1FnNZ6CE3S",
+      "engagement": 1,
+      "is_hot": false,
+      "author": "God7777",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 1,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/2df3521d8a74a5b8e6bdd4fecc3893f7b6567536.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

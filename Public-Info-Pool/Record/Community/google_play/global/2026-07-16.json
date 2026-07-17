@@ -1,8 +1,8 @@
 {
   "date": "2026-07-16",
-  "archived_at": "2026-07-17T13:25:01.056197+00:00",
+  "archived_at": "2026-07-17T16:16:38.531182+00:00",
   "source": "google_play",
-  "item_count": 4,
+  "item_count": 5,
   "items": [
     {
       "title": "[Google Play 好评] ★5 Es un muy buen juego gacha; definitivame",
@@ -58,6 +58,20 @@
       "tags": [],
       "lang": "th",
       "platform_region": "th",
+      "region": "global"
+    },
+    {
+      "title": "[Google Play 好评] ★4 love this game. Top tier storyline(s) an",
+      "summary": "love this game. Top tier storyline(s) and characters, and fun n interesting gameplay to boot. The only tiny problem I might have is the lagginess despite being on performance settings, but other than that a solid 9/10 game.",
+      "source": "google_play",
+      "time": "2026-07-16T15:19:15",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-dad586e7-db5e-404f-b85b-b97a151e3b83",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "kjs",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "us",
       "region": "global"
     }
   ],
