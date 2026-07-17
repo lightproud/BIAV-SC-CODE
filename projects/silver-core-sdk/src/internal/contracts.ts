@@ -590,6 +590,16 @@ export type EngineConfig = {
   /** R2 budget events: fraction of maxBudgetUsd at which the one-shot
    *  `budget:threshold` hook fires (root loop only). Default 0.8. */
   budgetThresholdRatio?: number;
+  /** R2 budget events: session cost already spent BEFORE this engine run.
+   *  The query layer re-arms maxBudgetUsd to the remaining budget per turn,
+   *  so budget events must judge/report against the session cap
+   *  (= baseline + maxBudgetUsd), not this run's own counters (audit
+   *  2026-07-17 M18). Absent -> 0. */
+  budgetCostBaselineUsd?: number;
+  /** R2 budget events: one-shot latches shared across every engine run one
+   *  query drives (multi-turn streaming re-enters runAgentLoop per turn).
+   *  Absent -> per-run latches (standalone loop usage). */
+  budgetEventState?: { thresholdFired: boolean; exhaustedFired: boolean };
   thinking?: ThinkingConfigParam;
   maxThinkingTokens?: number;
   /** Messages API `tool_choice` steer/constraint; forwarded to each request

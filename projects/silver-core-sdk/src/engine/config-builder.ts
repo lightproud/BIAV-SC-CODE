@@ -249,6 +249,10 @@ export function buildEngineConfig(args: {
     maxTurns: options.maxTurns,
     maxBudgetUsd: options.maxBudgetUsd,
     budgetThresholdRatio: options.budgetThresholdRatio,
+    // R2 one-shot latches live on the CONFIG (one per query) so multi-turn
+    // streaming — which re-enters runAgentLoop per turn — keeps the budget
+    // events once-per-session, not once-per-turn (audit 2026-07-17 M18).
+    budgetEventState: { thresholdFired: false, exhaustedFired: false },
     thinking: thinkingConfig,
     maxThinkingTokens: maxThinkingTokensConfig,
     // tool_choice steer/constraint; forwarded to each request when tools are

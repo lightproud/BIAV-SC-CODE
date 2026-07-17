@@ -16,6 +16,61 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.64.1 — 2026-07-17
+
+Bug-fix sweep, audit 2026-07-17 (T49) **batch A**: all 9 defects the same-day
+100-defect audit found in the 0.63.0 new code
+(`Public-Info-Pool/Resource/repo-engineering/silver-core-sdk-bug-audit-20260717.md`),
+each with a regression test that reds against the pre-fix source (verified by
+stash-run: 17 red).
+
+- **M18 (R2)**: `budget:threshold` judged each turn against the re-armed
+  REMAINING budget instead of the original `maxBudgetUsd`, drifting the
+  threshold in multi-turn streaming sessions — and its per-run latch made the
+  "one-shot" event fire once per TURN. The engine now receives
+  `budgetCostBaselineUsd` (session cost already spent before the run) and a
+  query-lifetime `budgetEventState` latch; both budget events judge and
+  report session-anchored figures (`budget:exhausted`'s closeout report cap /
+  cumulative included).
+- **L57 (R1)**: the session-end memory round ran on the LAST turn's stale
+  budget re-arm (that turn's own spend uncounted), letting the round overspend
+  the cap; it now re-arms from real session state and is skipped outright when
+  the cap is spent.
+- **L58 (R1)**: an interrupted turn's already-billed partial spend was folded
+  into the in-memory accumulators only — no `accounting` record — so
+  `getSessionAccounting` under-counted every interrupted turn. The abort path
+  now persists a cost/turns delta record.
+- **L59**: the abort/error path and end-of-run teardown never drained the
+  observability/mirror queues — SubagentStop / hook-lifecycle / mirror-error
+  events produced during an interrupted turn's teardown or settleAll were
+  queued forever. Drained now on the turn-interrupt path (before the terminal
+  result) and at the end of a normal completion's teardown.
+- **L60 (R1)**: a prelude block missing `content` rendered the literal string
+  "undefined" into the model's first prompt; `options.prelude` is now
+  validated at construction (string content; string title when present).
+- **L62 (R3)**: the retained-region byte cap summed per-region renders but
+  `renderBlocks()` joins with `\n\n` — N regions could exceed the cap by
+  2·(N−1) bytes. The joiner bytes are now budgeted.
+- **L63 (R4)**: `ReportLedger.deserialize` re-recorded entries through
+  `record()`, whose per-insert age eviction (new entry's `at` as "now") made
+  the round-trip lossy under `maxAgeMs` + non-monotonic timestamps. Revival
+  now reproduces the serialized entries verbatim (capacity invariant still
+  enforced; age pruning left to an explicit host `prune(now)`).
+- **L75 (R4)**: `record()` accepted non-finite timestamps (NaN/Infinity),
+  making `digest()` throw `RangeError` inside `toPrelude`/`toRetainedRegion`
+  (the latter mid-compaction) and breaking the serialize round-trip. Finite
+  `at` is now enforced at the write and at deserialize.
+- **L32 (goal)**: the Stop-gate evaluator's transcript-tail read ignored
+  `readSync`'s actual byte count — a short read padded the evaluator context
+  with trailing NULs. Only the bytes actually read are decoded now.
+
+Validation (re-run after rebasing onto the batch-B/0.64.0 main): vitest
+2503 passed (147 files) with 24 new regression tests
+across `bug-sweep-t49-batch-a` / `budget-events` / `loop-support-ledger` /
+`compaction-retention` / `goal-tail-read`; `tsc` + `build` clean; the
+`loop-support` mutation-ratchet target re-measured at 94.35 and its only-up
+floor raised 93.73 -> 94.35.
+
 ## 0.64.0 — 2026-07-17
 
 Model-alias mapping (BPT production 400 root-cause fix: a subagent spawned
@@ -93,8 +148,7 @@ regression-locked by `tests/t49-batch-b.test.ts` (21 tests):
   built with tenant A's key/endpoint. The memo key now carries the full
   tenant identity: derived child provider config, the protocol's
   credential/endpoint env chain, and function-knob (fetch/httpClient)
-  identity. Same identity keeps the warm-pool memoization.
-## 0.63.0 — 2026-07-17
+  identity. Same identity keeps the warm-pool memoization.## 0.63.0 — 2026-07-17
 
 SCS-REQ-REPOS-01 (keeper-adjudicated requirement, archived at
 `Public-Info-Pool/Resource/repo-engineering/scs-req-repositioning-loop-support-20260717.md`):

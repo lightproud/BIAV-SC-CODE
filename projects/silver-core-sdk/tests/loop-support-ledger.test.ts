@@ -233,3 +233,107 @@ describe('ReportLedger — R1/R3 adapters', () => {
     expect(custom.title).toBe('T');
   });
 });
+
+// ---------------------------------------------------------------------------
+// Audit 2026-07-17 batch A: L63 (deserialize idempotence) + L75 (finite `at`)
+// ---------------------------------------------------------------------------
+
+describe('ReportLedger — non-finite timestamps are rejected at the write (L75)', () => {
+  it('record() throws ConfigurationError on NaN / Infinity / -Infinity `at`', () => {
+    const ledger = new ReportLedger();
+    for (const bad of [Number.NaN, Number.POSITIVE_INFINITY, Number.NEGATIVE_INFINITY]) {
+      expect(() => ledger.record('k', { at: bad })).toThrow(ConfigurationError);
+      expect(() => ledger.record('k', { at: bad })).toThrow(/finite/);
+    }
+    // The failed writes left no entry behind: the adapters stay usable.
+    expect(ledger.has('k')).toBe(false);
+    expect(ledger.size).toBe(0);
+    expect(() => ledger.toPrelude()).not.toThrow();
+    expect(() => ledger.toRetainedRegion()).not.toThrow();
+  });
+
+  it('the adapters never throw after valid writes (digest stays renderable)', () => {
+    const ledger = new ReportLedger();
+    ledger.record('ok', { at: 1_700_000_000_000 });
+    expect(ledger.toPrelude().content).toContain('ok');
+    expect(ledger.toRetainedRegion().content).toContain('ok');
+  });
+
+  it('deserialize rejects a payload whose `at` parses to Infinity (1e999)', () => {
+    const raw = '{"v":1,"config":{},"entries":[{"key":"k","at":1e999}]}';
+    expect(() => ReportLedger.deserialize(raw)).toThrow(ConfigurationError);
+    expect(() => ReportLedger.deserialize(raw)).toThrow(/malformed entry/);
+  });
+});
+
+describe('ReportLedger — deserialize is a faithful, idempotent revival (L63)', () => {
+  it('round-trips a maxAgeMs ledger with non-monotonic timestamps', () => {
+    // Original insertion order: newer first, then older. Both entries are
+    // LIVE in the source ledger (record()-time pruning never crossed them).
+    const ledger = new ReportLedger({ maxAgeMs: 500 });
+    ledger.record('new', { at: 1000 });
+    ledger.record('old', { at: 100 });
+    expect(ledger.size).toBe(2);
+
+    // Before the fix, revival re-recorded oldest-first: inserting 'new'
+    // (at=1000) ran age eviction with now=1000 and pruned the still-live
+    // 'old' (cutoff 500) — the round-trip silently lost an entry.
+    const revived = ReportLedger.deserialize(ledger.serialize());
+    expect(revived.has('old')).toBe(true);
+    expect(revived.has('new')).toBe(true);
+    expect(revived.size).toBe(2);
+
+    // Fixed point: serialize(deserialize(s)) === s.
+    expect(revived.serialize()).toBe(ledger.serialize());
+  });
+
+  it('revival does NOT apply age pruning (no meaningful "now" at revive time)', () => {
+    // Handcraft a payload whose entries are far apart: a faithful revival
+    // keeps both; the host prunes explicitly when it has a real clock.
+    const raw = JSON.stringify({
+      v: 1,
+      config: { maxAgeMs: 10 },
+      entries: [
+        { key: 'a', at: 100 },
+        { key: 'b', at: 9_999 },
+      ],
+    });
+    const revived = ReportLedger.deserialize(raw);
+    expect(revived.size).toBe(2);
+    // prune() still works as declared after revival.
+    expect(revived.prune(10_000)).toBe(1);
+    expect(revived.has('a')).toBe(false);
+    expect(revived.has('b')).toBe(true);
+  });
+
+  it('revival still enforces the capacity invariant on hand-crafted payloads', () => {
+    const raw = JSON.stringify({
+      v: 1,
+      config: { maxEntries: 2 },
+      entries: [
+        { key: 'oldest', at: 1 },
+        { key: 'mid', at: 2 },
+        { key: 'newest', at: 3 },
+      ],
+    });
+    const revived = ReportLedger.deserialize(raw);
+    expect(revived.size).toBe(2);
+    expect(revived.has('oldest')).toBe(false);
+    expect(revived.has('mid')).toBe(true);
+    expect(revived.has('newest')).toBe(true);
+  });
+
+  it('duplicate keys in a payload keep the FIRST occurrence (dedup semantics)', () => {
+    const raw = JSON.stringify({
+      v: 1,
+      config: {},
+      entries: [
+        { key: 'k', at: 1, summary: 'first' },
+        { key: 'k', at: 2, summary: 'second' },
+      ],
+    });
+    const revived = ReportLedger.deserialize(raw);
+    expect(revived.size).toBe(1);
+    expect(revived.entries()[0]).toEqual({ key: 'k', at: 1, summary: 'first' });
+  });
+});

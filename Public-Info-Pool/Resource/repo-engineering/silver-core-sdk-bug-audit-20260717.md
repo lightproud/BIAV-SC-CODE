@@ -198,6 +198,8 @@
 
 - **优先修（新代码真缺陷，艾瑞卡自造 9 项）**：M18(R2 阈值漂移) · L57/L58/L59/L60(R1 边界) · L62(R3 帽) · L63/L75(R4 deserialize + NaN 时间戳) · L32(goal 短读)。
   均低/中危、边界性，建议一并修 + 补测试。
+  **→ 已修（T49 批A 销案，2026-07-17 同日）**：silver-core-sdk 0.64.1 全 9 项修复 + 24 条回归测试
+  （负控实证：git stash 还原旧源码后 17 例转红）；loop-support 变异地板 93.73 → 94.35。明细见 SDK `CHANGELOG.md` 0.64.1。
 - **高危优先（存量）**：H1(Edit 非 UTF-8 损坏)、H2(thinking fallback)、H3(openai idle 重放)、H5(结构化输出 schema-blind)。
 - **安全相关**：M17(跨协议凭据串号，多租户场景)。
 - Tier [A] 逐条实测升 [V]（分批）。

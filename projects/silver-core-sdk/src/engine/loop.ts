@@ -446,22 +446,34 @@ export async function* runAgentLoop(
   // owns when; stopping is already decided by budgetStopReason).
   const isRootBudgetScope =
     config.parentToolUseId === undefined || config.parentToolUseId === null;
-  let budgetThresholdFired = false;
-  let budgetExhaustedFired = false;
+  // SESSION-anchored figures (audit 2026-07-17 M18): in multi-turn streaming
+  // mode the query layer re-arms config.maxBudgetUsd to the REMAINING budget
+  // before every turn, so this run's own counters drift off the session cap.
+  // budgetCostBaselineUsd carries the session cost already spent before this
+  // run (0 in string single-shot mode), and budgetEventState carries the
+  // one-shot latches across every run the same query drives — without it the
+  // per-run flags would reset each turn and the "one-shot" contract would
+  // fire once per TURN, not once per session.
+  const budgetCostBaselineUsd = config.budgetCostBaselineUsd ?? 0;
+  const budgetEventState = config.budgetEventState ?? {
+    thresholdFired: false,
+    exhaustedFired: false,
+  };
   const maybeFireBudgetThreshold = async (): Promise<void> => {
-    if (budgetThresholdFired || !isRootBudgetScope) return;
+    if (budgetEventState.thresholdFired || !isRootBudgetScope) return;
     if (config.maxBudgetUsd === undefined) return;
     const ratio = config.budgetThresholdRatio ?? 0.8;
-    if (totalCostUsd < config.maxBudgetUsd * ratio) return;
-    budgetThresholdFired = true;
+    const sessionCapUsd = budgetCostBaselineUsd + config.maxBudgetUsd;
+    if (budgetCostBaselineUsd + totalCostUsd < sessionCapUsd * ratio) return;
+    budgetEventState.thresholdFired = true;
     if (!deps.hooks.hasHooks('budget:threshold')) return;
     await deps.hooks.run(
       'budget:threshold',
       {
         ...baseHookFields,
         hook_event_name: 'budget:threshold',
-        cumulative_cost_usd: totalCostUsd,
-        max_budget_usd: config.maxBudgetUsd,
+        cumulative_cost_usd: budgetCostBaselineUsd + totalCostUsd,
+        max_budget_usd: sessionCapUsd,
         threshold_ratio: ratio,
       },
       undefined,
@@ -485,8 +497,8 @@ export async function* runAgentLoop(
     return '';
   };
   const fireBudgetExhausted = async (reason: string): Promise<void> => {
-    if (budgetExhaustedFired || !isRootBudgetScope) return;
-    budgetExhaustedFired = true;
+    if (budgetEventState.exhaustedFired || !isRootBudgetScope) return;
+    budgetEventState.exhaustedFired = true;
     if (!deps.hooks.hasHooks('budget:exhausted')) return;
     await deps.hooks.run(
       'budget:exhausted',
@@ -495,8 +507,11 @@ export async function* runAgentLoop(
         hook_event_name: 'budget:exhausted',
         reason,
         report: {
-          cumulative_cost_usd: totalCostUsd,
-          max_budget_usd: config.maxBudgetUsd ?? deps.familyBudget?.capUsd ?? 0,
+          cumulative_cost_usd: budgetCostBaselineUsd + totalCostUsd,
+          max_budget_usd:
+            config.maxBudgetUsd !== undefined
+              ? budgetCostBaselineUsd + config.maxBudgetUsd
+              : (deps.familyBudget?.capUsd ?? 0),
           num_turns: numTurns,
           last_assistant_summary: lastAssistantSummary(),
         },
