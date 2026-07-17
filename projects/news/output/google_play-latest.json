@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-16T22:04:10.252901+00:00",
+  "collected_at": "2026-07-17T02:28:47.905757+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 110,
+  "item_count": 112,
   "items": [
     {
       "source": "google_play",
@@ -243,6 +243,26 @@
       "summary": "觉得还行",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=zh_CN#gp-57f4f9db-558e-4842-b184-3a7e848970ad",
       "author": "元气豆芽（YQBean）",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-16T02:02:05",
+      "lang": "en",
+      "title": "[Google Play 中评] ★3 i wanna like this game so bad. interesti",
+      "summary": "i wanna like this game so bad. interesting world, good writing, amazing music but the gotcha mechanics ruin the atmosphere for me. here's a cut scene with the story character you don't use cuz why would you after getting the better units?",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-ba3028ec-82d8-4a12-86d0-b1931c96a3a8",
+      "author": "Austin Vincent",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-16T00:51:37",
+      "lang": "en",
+      "title": "[Google Play 差评] ★1 Started off with a promising gender rati",
+      "summary": "Started off with a promising gender ratio, but now it's waifu-slop with lazy designs.",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-f3d961b6-7173-43e8-96b4-7d2736b72de2",
+      "author": "Anno Domini",
       "engagement": 0
     },
     {

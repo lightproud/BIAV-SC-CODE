@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-16T22:04:10.252901+00:00",
+  "collected_at": "2026-07-17T02:28:47.905757+00:00",
   "source": "steam",
   "data_layer": "output",
-  "item_count": 4,
+  "item_count": 3,
   "items": [
     {
       "source": "steam",
@@ -49,21 +49,6 @@
       "review": "打牌爽",
       "timestamp_created": 1784190492,
       "playtime_forever": 2548
-    },
-    {
-      "source": "steam",
-      "time": "2026-07-16T01:19:37+00:00",
-      "lang": "english",
-      "title": "[负面] seems unpolished, starts off boring, story didn't...",
-      "summary": "seems unpolished, starts off boring, story didn't grab me. characters are very small on the screen for such nice artwork, starting attacks are uninterresting. Spend a few minutes with slay the spire and you will see what I mean.",
-      "url": "https://steamcommunity.com/profiles/76561197968408875/recommended/3052450",
-      "author": "76561197968408875",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": false,
-      "review": "seems unpolished, starts off boring, story didn't grab me. characters are very small on the screen for such nice artwork, starting attacks are uninterresting. Spend a few minutes with slay the spire and you will see what I mean.",
-      "timestamp_created": 1784164777,
-      "playtime_forever": 13
     }
   ]
 }

@@ -1,8 +1,8 @@
 {
   "date": "2026-07-16",
-  "archived_at": "2026-07-16T22:04:53.735480+00:00",
+  "archived_at": "2026-07-17T02:29:27.149021+00:00",
   "source": "google_play",
-  "item_count": 1,
+  "item_count": 3,
   "items": [
     {
       "title": "[Google Play 好评] ★5 Es un muy buen juego gacha; definitivame",
@@ -16,6 +16,34 @@
       "tags": [],
       "lang": "es",
       "platform_region": "es",
+      "region": "global"
+    },
+    {
+      "title": "[Google Play 中评] ★3 i wanna like this game so bad. interesti",
+      "summary": "i wanna like this game so bad. interesting world, good writing, amazing music but the gotcha mechanics ruin the atmosphere for me. here's a cut scene with the story character you don't use cuz why would you after getting the better units?",
+      "source": "google_play",
+      "time": "2026-07-16T02:02:05",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-ba3028ec-82d8-4a12-86d0-b1931c96a3a8",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "Austin Vincent",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "us",
+      "region": "global"
+    },
+    {
+      "title": "[Google Play 差评] ★1 Started off with a promising gender rati",
+      "summary": "Started off with a promising gender ratio, but now it's waifu-slop with lazy designs.",
+      "source": "google_play",
+      "time": "2026-07-16T00:51:37",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-f3d961b6-7173-43e8-96b4-7d2736b72de2",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "Anno Domini",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "us",
       "region": "global"
     }
   ],
