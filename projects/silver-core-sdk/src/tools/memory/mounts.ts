@@ -6,7 +6,10 @@
  * path validation, BEFORE the store is called — never via prompt discipline:
  *
  *  - a write command whose target is not inside a read-write mount is
- *    rejected with a structured, model-readable error;
+ *    rejected with a structured, model-readable error; the MOST SPECIFIC
+ *    containing mount decides, so a read-only mount nested inside a
+ *    read-write one keeps its subtree protected, and a recursive delete /
+ *    rename whose subtree contains a read-only mount is rejected too;
  *  - a path inside no mount at all is rejected for reads too;
  *  - a directory that is a strict ANCESTOR of a mount stays viewable so the
  *    model can navigate to its mounts, but its listing is FILTERED down to
@@ -101,10 +104,48 @@ export function mountReadAccess(
   return null;
 }
 
-/** True when writes to `path` are allowed (inside a read-write mount). */
+/** Most specific mount containing `path`: the longest mount path wins
+ *  (nesting); duplicate declarations of the same path with conflicting modes
+ *  resolve read-only (restrictive). */
+function governingMount(
+  mounts: ResolvedMemoryMount[],
+  path: string,
+): ResolvedMemoryMount | null {
+  let best: ResolvedMemoryMount | null = null;
+  for (const m of mounts) {
+    if (!within(path, m.path)) continue;
+    if (
+      best === null ||
+      m.path.length > best.path.length ||
+      (m.path.length === best.path.length && m.mode === 'read-only')
+    ) {
+      best = m;
+    }
+  }
+  return best;
+}
+
+/** True when writes to `path` are allowed. The MOST SPECIFIC containing mount
+ *  decides: a read-only mount nested inside a read-write one protects its
+ *  subtree instead of being overridden by the ancestor (audit 2026-07-17
+ *  H2-3), and a read-write mount nested inside a read-only one keeps working
+ *  — the two nesting directions are symmetric. */
 export function mountAllowsWrite(mounts: ResolvedMemoryMounts, path: string): boolean {
   if (mounts === null) return true;
-  return mounts.some((m) => m.mode === 'read-write' && within(path, m.path));
+  const governing = governingMount(mounts, path);
+  return governing !== null && governing.mode === 'read-write';
+}
+
+/** True when the subtree rooted at `path` contains a read-only mount — a
+ *  recursive delete (or rename-away) of `path` would destroy read-only
+ *  territory nested below it even though `path` itself sits in read-write
+ *  territory (audit 2026-07-17 H2-3, recursive branch). */
+export function subtreeContainsReadOnlyMount(
+  mounts: ResolvedMemoryMounts,
+  path: string,
+): boolean {
+  if (mounts === null) return false;
+  return mounts.some((m) => m.mode === 'read-only' && within(m.path, path));
 }
 
 /** Human/model-readable list of the configured mounts for error messages. */
@@ -133,6 +174,23 @@ export function readOnlyMountError(mounts: ResolvedMemoryMount[], path: string):
             .join(', ')
         : '(none)'
     }`
+  );
+}
+
+/** Structured error for a recursive write (delete / rename source) whose
+ *  target subtree contains read-only mounts. */
+export function subtreeReadOnlyMountError(
+  mounts: ResolvedMemoryMount[],
+  path: string,
+): string {
+  const ro = mounts
+    .filter((m) => m.mode === 'read-only' && within(m.path, path))
+    .map((m) => m.path)
+    .join(', ');
+  return (
+    `Error: ${path} contains read-only memory areas in this session (${ro}) — ` +
+    `delete and rename cannot remove them. Operate on paths outside the ` +
+    `read-only areas instead.`
   );
 }
 

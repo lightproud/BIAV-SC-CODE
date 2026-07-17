@@ -122,6 +122,33 @@ const CHECKS: Check[] = [
     },
   },
   {
+    // Audit 2026-07-17 H2-5: a negative end other than -1 must be rejected,
+    // not leak JS slice negative-index semantics (silently dropping tail
+    // lines). An end beyond the file stays tolerated (clamped).
+    name: 'view: invalid view_range values are rejected, not slice-wrapped',
+    run: async (s) => {
+      await s.create('/memories/vr.txt', 'l1\nl2\nl3\nl4\nl5');
+      const negative = await expectThrow(
+        () => s.view('/memories/vr.txt', [1, -3]),
+        'view_range negative end',
+      );
+      assertEq(
+        negative,
+        'Error: Invalid `view_range` parameter: [1, -3]. It should be ' +
+          '[start_line, end_line] with start_line within the range of lines of ' +
+          'the file: [1, 5], and end_line >= start_line, or -1 for the end of the file.',
+        'negative view_range message',
+      );
+      await expectThrow(() => s.view('/memories/vr.txt', [0, 2]), 'view_range start 0');
+      await expectThrow(() => s.view('/memories/vr.txt', [3, 2]), 'view_range end < start');
+      assertEq(
+        await s.view('/memories/vr.txt', [4, 99]),
+        "Here's the content of /memories/vr.txt with line numbers:\n     4\tl4\n     5\tl5",
+        'view_range end beyond file clamps',
+      );
+    },
+  },
+  {
     name: 'view: missing path returns the reference message',
     run: async (s) => {
       const msg = await expectThrow(() => s.view('/memories/absent.txt'), 'view-missing');
@@ -238,6 +265,67 @@ const CHECKS: Check[] = [
         'No replacement was performed. Multiple occurrences of old_str `dup` in lines: 1, 3. ' +
           'Please ensure it is unique',
         'multiple message',
+      );
+    },
+  },
+  {
+    // Audit 2026-07-17 H2-1/H2-6: a per-line matcher can never find a
+    // multi-line old_str; the contract requires full-content matching.
+    name: 'str_replace: multi-line old_str replaces across lines',
+    run: async (s) => {
+      await s.create('/memories/ml.txt', 'l1\nAAA\nBBB\nl4');
+      assertEq(
+        await s.strReplace('/memories/ml.txt', 'AAA\nBBB', 'CCC'),
+        'The memory file has been edited. Here is the snippet showing the change ' +
+          '(with line numbers):\n     1\tl1\n     2\tCCC\n     3\tl4',
+        'multi-line str_replace result',
+      );
+      assertEq(
+        await s.view('/memories/ml.txt'),
+        "Here's the content of /memories/ml.txt with line numbers:\n" +
+          '     1\tl1\n     2\tCCC\n     3\tl4',
+        'multi-line str_replace persisted',
+      );
+    },
+  },
+  {
+    // Audit 2026-07-17 H2-2/H2-6: uniqueness counts OCCURRENCES, not lines —
+    // two occurrences on one line must be rejected, listing the line twice.
+    name: 'str_replace: same-line duplicate occurrences are rejected',
+    run: async (s) => {
+      await s.create('/memories/sd.txt', 'dup dup');
+      const msg = await expectThrow(
+        () => s.strReplace('/memories/sd.txt', 'dup', 'x'),
+        'str_replace-same-line-dup',
+      );
+      assertEq(
+        msg,
+        'No replacement was performed. Multiple occurrences of old_str `dup` in lines: 1, 1. ' +
+          'Please ensure it is unique',
+        'same-line duplicate message',
+      );
+    },
+  },
+  {
+    // Audit 2026-07-17 H2-4: empty old_str must be rejected consistently, not
+    // silently prepend on single-line files.
+    name: 'str_replace: empty old_str is rejected',
+    run: async (s) => {
+      await s.create('/memories/e.txt', 'one line');
+      const msg = await expectThrow(
+        () => s.strReplace('/memories/e.txt', '', 'x'),
+        'str_replace-empty-old',
+      );
+      assertEq(
+        msg,
+        'No replacement was performed, old_str is empty. Provide the exact text to ' +
+          'replace in /memories/e.txt.',
+        'empty old_str message',
+      );
+      assertEq(
+        await s.view('/memories/e.txt'),
+        "Here's the content of /memories/e.txt with line numbers:\n     1\tone line",
+        'file unchanged after rejected empty old_str',
       );
     },
   },

@@ -255,11 +255,29 @@ export function createMemoryStore(
       }
       let displayLines = lines;
       let startNum = 1;
-      if (viewRange !== undefined && viewRange.length === 2) {
-        const startLine = Math.max(1, viewRange[0]) - 1;
-        const endLine = viewRange[1] === -1 ? lines.length : viewRange[1];
-        displayLines = lines.slice(startLine, endLine);
-        startNum = startLine + 1;
+      if (viewRange !== undefined) {
+        // A negative end other than -1 would silently drop tail lines through
+        // JS slice semantics (audit 2026-07-17 H2-5) — validate instead. An
+        // end beyond the file is tolerated (slice clamps), matching the R6
+        // resident-index read of [1, maxLines + 1].
+        const [start, end] = viewRange;
+        const invalid =
+          viewRange.length !== 2 ||
+          !Number.isInteger(start) ||
+          !Number.isInteger(end) ||
+          start < 1 ||
+          start > lines.length ||
+          (end !== -1 && end < start);
+        if (invalid) {
+          throw new MemoryToolError(
+            `Error: Invalid \`view_range\` parameter: [${viewRange.join(', ')}]. ` +
+              `It should be [start_line, end_line] with start_line within the ` +
+              `range of lines of the file: [1, ${lines.length}], and end_line >= ` +
+              `start_line, or -1 for the end of the file.`,
+          );
+        }
+        displayLines = lines.slice(start - 1, end === -1 ? lines.length : end);
+        startNum = start;
       }
       return (
         `Here's the content of ${path} with line numbers:\n` +
@@ -303,31 +321,61 @@ export function createMemoryStore(
           `Error: The path ${path} does not exist. Please provide a valid path.`,
         );
       }
+      // An empty old_str matches everywhere: single-line files silently
+      // prepended new_str while multi-line files errored (audit 2026-07-17
+      // H2-4) — reject it consistently before any matching.
+      if (oldStr === '') {
+        throw new MemoryToolError(
+          `No replacement was performed, old_str is empty. Provide the exact ` +
+            `text to replace in ${path}.`,
+        );
+      }
       const content = await ops.read(path);
-      const lines = content.split('\n');
-      const matchingLines: number[] = [];
-      lines.forEach((line, index) => {
-        if (line.includes(oldStr)) matchingLines.push(index + 1);
-      });
-      if (matchingLines.length === 0) {
+      // Occurrences are counted over the FULL content, not per line: a
+      // per-line scan made every multi-line old_str fail as not-found
+      // (audit 2026-07-17 H2-1) and let a same-line duplicate slip past the
+      // uniqueness guard (H2-2). Each occurrence reports the line its match
+      // STARTS on; non-overlapping scan, like the single replacement itself.
+      const matchStarts: number[] = [];
+      const matchLines: number[] = [];
+      for (
+        let idx = content.indexOf(oldStr);
+        idx !== -1;
+        idx = content.indexOf(oldStr, idx + oldStr.length)
+      ) {
+        matchStarts.push(idx);
+        matchLines.push(content.slice(0, idx).split('\n').length);
+      }
+      if (matchStarts.length === 0) {
         throw new MemoryToolError(
           `No replacement was performed, old_str \`${oldStr}\` did not appear verbatim in ${path}.`,
         );
       }
-      if (matchingLines.length > 1) {
+      if (matchStarts.length > 1) {
         throw new MemoryToolError(
           `No replacement was performed. Multiple occurrences of old_str \`${oldStr}\` ` +
-            `in lines: ${matchingLines.join(', ')}. Please ensure it is unique`,
+            `in lines: ${matchLines.join(', ')}. Please ensure it is unique`,
         );
       }
-      const newContent = content.replace(oldStr, newStr ?? '');
+      // Splice by index — String.replace would interpret `$&`-style patterns
+      // in new_str as replacement directives and corrupt the write.
+      const matchStart = matchStarts[0]!;
+      const newContent =
+        content.slice(0, matchStart) + (newStr ?? '') + content.slice(matchStart + oldStr.length);
       checkWrite(path, newContent);
       await ops.write(path, newContent);
 
       const newLines = newContent.split('\n');
-      const changedLineIndex = matchingLines[0]! - 1;
+      const changedLineIndex = matchLines[0]! - 1;
+      // The snippet spans the whole replacement (multi-line new_str) plus the
+      // reference ±2 lines of context; single-line new_str reduces to the
+      // original reference window.
+      const replacementLineSpan = (newStr ?? '').split('\n').length;
       const contextStart = Math.max(0, changedLineIndex - SNIPPET_CONTEXT_LINES);
-      const contextEnd = Math.min(newLines.length, changedLineIndex + SNIPPET_CONTEXT_LINES + 1);
+      const contextEnd = Math.min(
+        newLines.length,
+        changedLineIndex + replacementLineSpan - 1 + SNIPPET_CONTEXT_LINES + 1,
+      );
       const snippet = numberLines(
         newLines.slice(contextStart, contextEnd),
         contextStart + 1,

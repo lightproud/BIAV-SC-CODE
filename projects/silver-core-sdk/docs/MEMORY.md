@@ -132,16 +132,24 @@ highlights:
 
 - `view` file: `Here's the content of {path} with line numbers:` + lines as
   6-character right-aligned numbers, tab separator; `view_range` paginates;
-  \>999,999 lines returns the docs line-limit error.
+  \>999,999 lines returns the docs line-limit error. A malformed `view_range`
+  (start < 1 or beyond the file, end < start, negative end other than -1) is
+  rejected with a structured error instead of leaking JS negative-slice
+  semantics; an end beyond the file clamps.
 - `view` directory: the docs header, then `{size}\t{path}` lines, 2 levels
   deep, hidden items and `node_modules` excluded, directories with a trailing
   `/`, du-style sizes.
 - `create`: `File created successfully at: {path}`; existing file returns
   `Error: File {path} already exists` (reference default) — set
   `createOverwrite: true` to overwrite instead (docs-sanctioned choice).
-- `str_replace`: `The memory file has been edited.` + a ±2-line numbered
-  snippet; unique-occurrence enforcement with the docs' not-found / multiple-
-  occurrence strings; omitted `new_str` deletes.
+- `str_replace`: `The memory file has been edited.` + a numbered snippet
+  spanning the replacement ±2 context lines; unique-occurrence enforcement
+  with the docs' not-found / multiple-occurrence strings; omitted `new_str`
+  deletes. Matching runs over the FULL content (multi-line `old_str` works;
+  occurrences are counted, not lines — two hits on one line are rejected as
+  multiple, each reported by the line its match starts on); empty `old_str`
+  is rejected; `$&`-style replacement patterns in `new_str` are written
+  literally.
 - `insert` / `delete` / `rename`: docs strings verbatim, including root
   protection (`/memories` itself can never be deleted or renamed).
 

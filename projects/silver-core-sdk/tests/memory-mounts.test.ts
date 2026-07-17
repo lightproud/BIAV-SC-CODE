@@ -30,6 +30,8 @@ import {
   outsideMountsError,
   readOnlyMountError,
   resolveMemoryMounts,
+  subtreeContainsReadOnlyMount,
+  subtreeReadOnlyMountError,
 } from '../src/tools/memory/index.js';
 import { resolveMemoryRuntime } from '../src/tools/memory/index.js';
 import { ConfigurationError } from '../src/errors.js';
@@ -309,6 +311,91 @@ describe('S1/S5: per-call mount instantiation over one store', () => {
       toolCtx(),
     );
     expect(read.content).toContain('yes');
+  });
+});
+
+describe('S1: nested mounts — most specific wins (audit 2026-07-17 H2-3)', () => {
+  const RW_WITH_RO_ISLAND = resolveMemoryMounts([
+    { path: '/memories', mode: 'read-write' },
+    { path: '/memories/team/policy', mode: 'read-only' },
+  ]);
+
+  it('a read-only mount nested inside a read-write one protects its subtree', () => {
+    expect(mountAllowsWrite(RW_WITH_RO_ISLAND, '/memories/team/notes.md')).toBe(true);
+    expect(mountAllowsWrite(RW_WITH_RO_ISLAND, '/memories/team/policy')).toBe(false);
+    expect(mountAllowsWrite(RW_WITH_RO_ISLAND, '/memories/team/policy/rules.md')).toBe(false);
+    // The symmetric direction (rw nested in ro) keeps working.
+    const roWithRwIsland = resolveMemoryMounts([
+      { path: '/memories/team', mode: 'read-only' },
+      { path: '/memories/team/scratch', mode: 'read-write' },
+    ]);
+    expect(mountAllowsWrite(roWithRwIsland, '/memories/team/x.md')).toBe(false);
+    expect(mountAllowsWrite(roWithRwIsland, '/memories/team/scratch/x.md')).toBe(true);
+  });
+
+  it('duplicate declarations of the same path resolve read-only (restrictive)', () => {
+    const dup = resolveMemoryMounts([
+      { path: '/memories/team', mode: 'read-write' },
+      { path: '/memories/team', mode: 'read-only' },
+    ]);
+    expect(mountAllowsWrite(dup, '/memories/team/x.md')).toBe(false);
+  });
+
+  it('writes and deletes inside the nested read-only mount are rejected at the tool layer', async () => {
+    const seeded = createMemoryTool(store, { mounts: null });
+    await seeded.execute(
+      { command: 'create', path: '/memories/team/policy/rules.md', file_text: 'x' },
+      toolCtx(),
+    );
+    const tool = createMemoryTool(store, { mounts: RW_WITH_RO_ISLAND });
+    const write = await exec(tool, {
+      command: 'create',
+      path: '/memories/team/policy/new.md',
+      file_text: 'x',
+    });
+    expect(write.isError).toBe(true);
+    expect(write.content).toContain('read-only in this session');
+    const del = await exec(tool, {
+      command: 'delete',
+      path: '/memories/team/policy',
+    });
+    expect(del.isError).toBe(true);
+    expect(del.content).toContain('read-only in this session');
+  });
+
+  it('recursive delete / rename of an ANCESTOR of the read-only mount is rejected', async () => {
+    expect(subtreeContainsReadOnlyMount(RW_WITH_RO_ISLAND, '/memories/team')).toBe(true);
+    expect(subtreeContainsReadOnlyMount(RW_WITH_RO_ISLAND, '/memories/users')).toBe(false);
+    // The structured error names every protected area under the target.
+    expect(subtreeReadOnlyMountError(RW_WITH_RO_ISLAND!, '/memories/team')).toBe(
+      'Error: /memories/team contains read-only memory areas in this session ' +
+        '(/memories/team/policy) — delete and rename cannot remove them. ' +
+        'Operate on paths outside the read-only areas instead.',
+    );
+    const seeded = createMemoryTool(store, { mounts: null });
+    await seeded.execute(
+      { command: 'create', path: '/memories/team/policy/rules.md', file_text: 'x' },
+      toolCtx(),
+    );
+    const tool = createMemoryTool(store, { mounts: RW_WITH_RO_ISLAND });
+    const del = await exec(tool, { command: 'delete', path: '/memories/team' });
+    expect(del.isError).toBe(true);
+    expect(del.content).toContain('contains read-only memory areas');
+    expect(del.content).toContain('/memories/team/policy');
+    const ren = await exec(tool, {
+      command: 'rename',
+      old_path: '/memories/team',
+      new_path: '/memories/attic',
+    });
+    expect(ren.isError).toBe(true);
+    expect(ren.content).toContain('contains read-only memory areas');
+    // Sibling subtrees are untouched by the guard.
+    await seeded.execute(
+      { command: 'create', path: '/memories/users/alice/a.md', file_text: 'x' },
+      toolCtx(),
+    );
+    const ok = await exec(tool, { command: 'delete', path: '/memories/users/alice' });
+    expect(ok.isError).not.toBe(true);
   });
 });
 
