@@ -38,6 +38,7 @@ import type {
   StreamRequest,
 } from '../internal/contracts.js';
 import { resolveModelAlias } from '../internal/model-alias.js';
+import { RetentionStore } from '../loop-support/retention.js';
 import { MessageAccumulator } from './accumulator.js';
 import { contextWindowFor } from './context-window.js';
 import { normalizeUsage } from './pricing.js';
@@ -211,6 +212,13 @@ export function buildCompactionConfig(
     preTier: opt?.preTier ?? true,
     preTierMaxToolResultChars:
       opt?.preTierMaxToolResultChars ?? PRE_TIER_DEFAULT_MAX_TOOL_RESULT_CHARS,
+    // R3 retained regions: the store is created HERE (config build) so a bad
+    // initial declaration fails the query up front, and shared by reference
+    // with the query layer's setRetainedRegion/removeRetainedRegion.
+    retention: new RetentionStore(
+      opt?.retainedRegionMaxBytes,
+      opt?.retainedRegions,
+    ),
   };
 }
 
@@ -811,6 +819,22 @@ async function* performCompaction(
   if (part.suffix[0]?.role === 'assistant') {
     const recap = textOf(synthetic[synthetic.length - 1]?.content ?? []);
     synthetic = [{ role: 'user', content: recap }];
+  }
+
+  // R3 retained regions: re-stamp every host-declared region VERBATIM into
+  // the fold's leading user turn, so region semantics (e.g. a dedup ledger)
+  // never depend on the lossy summary. Runs AFTER the H1 collapse so the
+  // stamp survives both synthetic shapes; a fold with no declared regions is
+  // byte-identical to before (the pinned golden shapes hold).
+  const retention = cfg.retention;
+  if (retention !== undefined && !retention.isEmpty) {
+    const first = synthetic[0];
+    if (first !== undefined && typeof first.content === 'string') {
+      synthetic = [
+        { role: first.role, content: first.content + '\n\n' + retention.renderBlocks() },
+        ...synthetic.slice(1),
+      ];
+    }
   }
 
   // In-place front replacement keeps the query layer's reference valid.

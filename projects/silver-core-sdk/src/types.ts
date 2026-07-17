@@ -2943,6 +2943,21 @@ export type ResilienceOptions = {
 /** BPT extension: context-compaction tuning. When the running request
  *  history's estimated token count approaches the model context window,
  *  older turns are folded into a synthetic summary. `enabled` defaults true. */
+/**
+ * A structured context region that must survive automatic compaction VERBATIM
+ * (SCS-REQ-REPOS-01 R3). The engine re-stamps every declared region into the
+ * post-fold context on each compaction; regions live under a total byte cap
+ * and an over-cap declaration throws instead of truncating.
+ */
+export type RetainedRegion = {
+  /** Host-chosen stable identifier (declaring the same id replaces). */
+  id: string;
+  /** Optional human-readable label rendered on the region block. */
+  title?: string;
+  /** The verbatim content to preserve across folds. */
+  content: string;
+};
+
 export type CompactionOptions = {
   enabled?: boolean;
   /** Fraction of the (window - reserved output) budget at which auto-compaction fires. Default 0.85. */
@@ -2983,6 +2998,19 @@ export type CompactionOptions = {
    * identical results still runs).
    */
   preTierMaxToolResultChars?: number;
+  /**
+   * Structured context regions that survive every automatic compaction
+   * VERBATIM (R3): each fold re-stamps the declared regions into the
+   * post-compaction context. Mutable at runtime via
+   * `Query.setRetainedRegion` / `Query.removeRetainedRegion`.
+   */
+  retainedRegions?: RetainedRegion[];
+  /**
+   * Total byte cap across all retained regions (rendered form). A declaration
+   * that would exceed it THROWS (`ConfigurationError`) — the engine never
+   * silently truncates a retained region. Default 16384.
+   */
+  retainedRegionMaxBytes?: number;
 };
 
 /**
@@ -3276,6 +3304,15 @@ export interface Query extends AsyncGenerator<SDKMessage, void> {
   rewindFiles(userMessageId: string, options?: { dryRun?: boolean }): Promise<RewindFilesResult>;
   /** Stop a background subagent task by id (no-op + debug warn when unknown). */
   stopTask(taskId: string): Promise<void>;
+  /**
+   * Declare (or replace, by id) a compaction retained region (R3): its content
+   * survives every automatic compaction verbatim. Throws `ConfigurationError`
+   * when the declaration would push the regions over
+   * `compaction.retainedRegionMaxBytes` — never silently truncated.
+   */
+  setRetainedRegion(region: RetainedRegion): void;
+  /** Remove a retained region by id; false when no such region exists. */
+  removeRetainedRegion(id: string): boolean;
   /** Push an additional user-message stream into a streaming-input session. */
   streamInput(stream: AsyncIterable<SDKUserMessage>): Promise<void>;
   close(): void;

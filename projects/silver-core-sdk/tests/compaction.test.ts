@@ -281,7 +281,8 @@ describe('context-window.ts', () => {
 describe('buildCompactionConfig', () => {
   it('applies all defaults when undefined', () => {
     const cfg = buildCompactionConfig(undefined);
-    expect(cfg).toEqual({
+    const { retention, ...scalar } = cfg;
+    expect(scalar).toEqual({
       enabled: true,
       autoThresholdRatio: 0.85,
       keepRatio: 0.3,
@@ -292,7 +293,11 @@ describe('buildCompactionConfig', () => {
       contextWindowTokens: undefined,
       preTier: true,
       preTierMaxToolResultChars: 4000,
+      model: undefined,
     });
+    // R3: the retained-region store exists by default, empty, default cap.
+    expect(retention?.isEmpty).toBe(true);
+    expect(retention?.maxBytes).toBe(16_384);
   });
 
   it('honors overrides and enabled:false passthrough', () => {

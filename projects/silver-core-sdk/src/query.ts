@@ -27,6 +27,7 @@ import type {
   SDKMirrorErrorMessage,
   SDKResultMessage,
   SDKSystemMessage,
+  RetainedRegion,
   SDKUserMessage,
   SlashCommand,
   SubagentTransportHandle,
@@ -1917,6 +1918,21 @@ export function query(args: {
     },
     async stopTask(taskId: string): Promise<void> {
       subagentRuntime.stopTask(taskId);
+    },
+    // R3 retained regions (SCS-REQ-REPOS-01): host declarations flow into the
+    // live store the compaction engine re-stamps on every fold. Synchronous —
+    // the over-cap error must surface at the declaration site.
+    setRetainedRegion(region: RetainedRegion): void {
+      const store = engineConfig.compaction?.retention;
+      if (store === undefined) {
+        throw new ConfigurationError(
+          'retained regions require compaction (options.compaction) on this query',
+        );
+      }
+      store.set(region);
+    },
+    removeRetainedRegion(id: string): boolean {
+      return engineConfig.compaction?.retention?.remove(id) ?? false;
     },
     async streamInput(stream: AsyncIterable<SDKUserMessage>): Promise<void> {
       if (!streamingMode) {

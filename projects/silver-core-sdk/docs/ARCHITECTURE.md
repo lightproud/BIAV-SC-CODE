@@ -66,7 +66,8 @@ table; an import not covered here turns the build red. Composition roots
 
 | From | May import from |
 |------|-----------------|
-| `src/engine/` | (everywhere-allowed only) |
+| `src/engine/` | `src/loop-support/` |
+| `src/loop-support/` | (everywhere-allowed only) |
 | `src/transport/` | (everywhere-allowed only) |
 | `src/tools/` | `src/sandbox/` |
 | `src/hooks/` | `src/generators/` |

@@ -12,6 +12,7 @@ import type {
   ApiKeySource,
   CallToolResult,
   DocumentBlockParam,
+  RetainedRegion,
   HookEvent,
   HookInput,
   ImageBlockParam,
@@ -518,6 +519,18 @@ export type CompactionConfig = {
   /** Byte budget (chars) for a single string tool_result in the pre-tier; 0
    *  disables truncation (dedupe still runs). Default 4000. */
   preTierMaxToolResultChars: number;
+  /** R3 retained regions (SCS-REQ-REPOS-01): live store shared by reference
+   *  between the query layer (host declarations) and performCompaction
+   *  (re-stamped into every fold). Structural type so this contract carries
+   *  no import edge; the implementation is loop-support/retention.ts. */
+  retention?: {
+    set(region: RetainedRegion): void;
+    remove(id: string): boolean;
+    regions(): RetainedRegion[];
+    renderBlocks(): string;
+    readonly isEmpty: boolean;
+    readonly maxBytes: number;
+  };
 };
 
 /** Role of a system-prompt part in the prompt-composition decomposition
