@@ -262,7 +262,8 @@ export function errorCodeOf(err: unknown): ErrorCode | undefined {
     err instanceof APIStatusError ||
     err instanceof NotImplementedError ||
     err instanceof ConfigurationError ||
-    err instanceof McpError
+    err instanceof McpError ||
+    err instanceof MemoryToolError
   ) {
     return err.code;
   }
