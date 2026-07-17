@@ -457,7 +457,12 @@ export class DefaultMcpRegistry implements McpRegistry {
       entry.baseStatus = 'connected';
       this.debug(`[mcp] connected '${entry.name}' (${entry.tools.length} tools)`);
     } catch (err) {
-      entry.baseStatus = 'failed';
+      // 'needs-auth' is a declared public status (types.ts McpServerStatus)
+      // that previously had NO producing path — an HTTP 401/403 handshake
+      // failure collapsed into 'failed', so a consumer's auth flow could
+      // never observe that authentication (not the server) is what's missing.
+      const httpStatus = err instanceof McpError ? err.context.httpStatus : undefined;
+      entry.baseStatus = httpStatus === 401 || httpStatus === 403 ? 'needs-auth' : 'failed';
       entry.error = errMessage(err);
       entry.connection = null;
       this.debug(`[mcp] failed to connect '${entry.name}': ${entry.error}`);

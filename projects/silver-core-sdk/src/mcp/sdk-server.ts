@@ -17,7 +17,7 @@ import type {
   SdkMcpToolDefinition,
   ToolAnnotations,
 } from '../types.js';
-import { AbortError, isAbortError } from '../errors.js';
+import { AbortError, ConfigurationError, isAbortError } from '../errors.js';
 
 /**
  * Resolve tool()'s fifth parameter, which is accepted in two forms:
@@ -76,6 +76,19 @@ export function tool<S extends z.ZodRawShape>(
   handler: (args: z.infer<z.ZodObject<S>>, extra: unknown) => Promise<CallToolResult>,
   annotationsOrExtras?: ToolAnnotations | { annotations?: ToolAnnotations },
 ): SdkMcpToolDefinition<z.infer<z.ZodObject<S>>> {
+  // S2: the Messages API only accepts tool names matching
+  // ^[a-zA-Z0-9_-]{1,128}$ AND the qualified `mcp__<server>__<name>` form must
+  // itself fit. A non-conforming name (CJK, spaces, over-long) is not rejected
+  // tool-by-tool at the API — it 400s the ENTIRE request, poisoning every
+  // other tool in the turn. Fail fast at definition time with the actual
+  // constraint instead.
+  if (!/^[a-zA-Z0-9_-]{1,128}$/.test(name)) {
+    throw new ConfigurationError(
+      `SDK MCP tool name '${name}' is invalid: tool names must match ` +
+        `^[a-zA-Z0-9_-]{1,128}$ (ASCII letters, digits, '_', '-') to be ` +
+        `advertisable to the Messages API`,
+    );
+  }
   const annotations = resolveToolAnnotations(annotationsOrExtras);
   const schema = z.object(inputSchema);
   // io: 'input' generates the INPUT-side JSON schema, which is what both the
@@ -91,8 +104,15 @@ export function tool<S extends z.ZodRawShape>(
     io: 'input',
     unrepresentable: 'any',
   }) as unknown as Record<string, unknown>;
-  const { $schema: _discard, ...inputJsonSchema } = raw;
+  const { $schema: _discard, ...stripped } = raw;
   void _discard;
+  // S1: $schema is stripped above, but z.lazy() / recursive shapes /
+  // .meta({id}) make zod emit `{ "$ref": "#/$defs/...", "$defs": {...} }` —
+  // a root that is nothing but a pointer. Consumers that do not resolve $ref
+  // (strict API-side validators, simpler MCP clients) then see a schema with
+  // no type/properties at all. Inline the root pointer; $defs stays so
+  // NESTED $refs (genuine recursion) remain resolvable.
+  const inputJsonSchema = inlineRootRef(stripped);
 
   const wrappedHandler = async (args: unknown, extra: unknown): Promise<CallToolResult> => {
     const parsed = schema.safeParse(args ?? {});
@@ -117,6 +137,20 @@ export function tool<S extends z.ZodRawShape>(
   };
 }
 
+/** Inline a root-level `#/$defs/...` pointer (see the S1 note at the call
+ *  site). Non-pointer roots and unresolvable refs pass through untouched. */
+function inlineRootRef(schema: Record<string, unknown>): Record<string, unknown> {
+  const ref = schema.$ref;
+  if (typeof ref !== 'string' || !ref.startsWith('#/$defs/')) return schema;
+  const defs = schema.$defs;
+  if (defs === null || typeof defs !== 'object') return schema;
+  const target = (defs as Record<string, unknown>)[ref.slice('#/$defs/'.length)];
+  if (target === null || typeof target !== 'object' || Array.isArray(target)) return schema;
+  const { $ref: _drop, ...rest } = schema;
+  void _drop;
+  return { ...(target as Record<string, unknown>), ...rest };
+}
+
 /**
  * Build an in-process SDK MCP server config, suitable for Options.mcpServers.
  * Duplicate tool names follow Map semantics: the last definition wins.
@@ -131,6 +165,18 @@ export function createSdkMcpServer(options: {
 }): McpSdkServerConfigWithInstance {
   const tools = new Map<string, SdkMcpToolDefinition>();
   for (const def of options.tools ?? []) {
+    // S2 (server-side half): the wire name is `mcp__<server>__<tool>` and the
+    // Messages API caps tool names at 128 chars — an over-long combination
+    // 400s the whole request, not just this tool. The server name is only
+    // known here, so the combined check lives here.
+    const qualified = `mcp__${options.name}__${def.name}`;
+    if (qualified.length > 128) {
+      throw new ConfigurationError(
+        `SDK MCP tool '${def.name}' on server '${options.name}' produces the ` +
+          `qualified name '${qualified}' (${qualified.length} chars), over the ` +
+          `Messages API's 128-char tool-name limit`,
+      );
+    }
     tools.set(def.name, def as SdkMcpToolDefinition);
   }
   const instance: SdkMcpServerInstance = {
