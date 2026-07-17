@@ -82,6 +82,21 @@ describe('memory golden: view', () => {
     );
   });
 
+  it('negative / inverted view_range is rejected, end beyond file clamps (audit 2026-07-17 H2-5)', async () => {
+    await ok({ command: 'create', path: '/memories/vr.txt', file_text: 'l1\nl2\nl3\nl4\nl5' });
+    expect(await err({ command: 'view', path: '/memories/vr.txt', view_range: [1, -3] })).toBe(
+      'Error: Invalid `view_range` parameter: [1, -3]. It should be ' +
+        '[start_line, end_line] with start_line within the range of lines of ' +
+        'the file: [1, 5], and end_line >= start_line, or -1 for the end of the file.',
+    );
+    await err({ command: 'view', path: '/memories/vr.txt', view_range: [0, 2] });
+    await err({ command: 'view', path: '/memories/vr.txt', view_range: [3, 2] });
+    await err({ command: 'view', path: '/memories/vr.txt', view_range: [6, 7] });
+    expect(await ok({ command: 'view', path: '/memories/vr.txt', view_range: [4, 99] })).toBe(
+      "Here's the content of /memories/vr.txt with line numbers:\n     4\tl4\n     5\tl5",
+    );
+  });
+
   it('directory listing: docs header, du-style size + tab + path lines', async () => {
     await ok({ command: 'create', path: '/memories/a.txt', file_text: 'x'.repeat(1536) });
     await ok({ command: 'create', path: '/memories/b.txt', file_text: 'y'.repeat(2048) });
@@ -238,6 +253,69 @@ describe('memory golden: str_replace', () => {
     expect(
       await err({ command: 'str_replace', path: '/memories/dir', old_str: 'a', new_str: 'b' }),
     ).toBe('Error: The path /memories/dir does not exist. Please provide a valid path.');
+  });
+
+  it('multi-line old_str matches and replaces (audit 2026-07-17 H2-1)', async () => {
+    await ok({
+      command: 'create',
+      path: '/memories/ml.txt',
+      file_text: 'l1\nAAA\nBBB\nl4',
+    });
+    expect(
+      await ok({
+        command: 'str_replace',
+        path: '/memories/ml.txt',
+        old_str: 'AAA\nBBB',
+        new_str: 'X\nY\nZ',
+      }),
+    ).toBe(
+      'The memory file has been edited. Here is the snippet showing the change ' +
+        '(with line numbers):\n' +
+        '     1\tl1\n     2\tX\n     3\tY\n     4\tZ\n     5\tl4',
+    );
+    expect(await ok({ command: 'view', path: '/memories/ml.txt' })).toBe(
+      "Here's the content of /memories/ml.txt with line numbers:\n" +
+        '     1\tl1\n     2\tX\n     3\tY\n     4\tZ\n     5\tl4',
+    );
+  });
+
+  it('same-line duplicates are rejected as multiple occurrences (audit 2026-07-17 H2-2)', async () => {
+    await ok({ command: 'create', path: '/memories/sd.txt', file_text: 'dup dup' });
+    expect(
+      await err({ command: 'str_replace', path: '/memories/sd.txt', old_str: 'dup', new_str: 'x' }),
+    ).toBe(
+      'No replacement was performed. Multiple occurrences of old_str `dup` in lines: 1, 1. ' +
+        'Please ensure it is unique',
+    );
+    expect(await ok({ command: 'view', path: '/memories/sd.txt' })).toBe(
+      "Here's the content of /memories/sd.txt with line numbers:\n     1\tdup dup",
+    );
+  });
+
+  it('empty old_str is rejected without touching the file (audit 2026-07-17 H2-4)', async () => {
+    await ok({ command: 'create', path: '/memories/e.txt', file_text: 'one line' });
+    expect(
+      await err({ command: 'str_replace', path: '/memories/e.txt', old_str: '', new_str: 'x' }),
+    ).toBe(
+      'No replacement was performed, old_str is empty. Provide the exact text to ' +
+        'replace in /memories/e.txt.',
+    );
+    expect(await ok({ command: 'view', path: '/memories/e.txt' })).toBe(
+      "Here's the content of /memories/e.txt with line numbers:\n     1\tone line",
+    );
+  });
+
+  it('replacement-pattern characters in new_str are written literally, not expanded', async () => {
+    await ok({ command: 'create', path: '/memories/rp.txt', file_text: 'price: OLD' });
+    await ok({
+      command: 'str_replace',
+      path: '/memories/rp.txt',
+      old_str: 'OLD',
+      new_str: '$& and $1 and $$',
+    });
+    expect(await ok({ command: 'view', path: '/memories/rp.txt' })).toBe(
+      "Here's the content of /memories/rp.txt with line numbers:\n     1\tprice: $& and $1 and $$",
+    );
   });
 });
 

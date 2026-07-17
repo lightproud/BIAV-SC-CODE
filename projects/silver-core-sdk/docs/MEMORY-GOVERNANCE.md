@@ -45,6 +45,14 @@ prompt):
   returns an error naming all mounts, so the model can reroute.
 - **rename is gated at both ends** — moving a file OUT of read-only territory
   is a write there too.
+- **Nesting: the most specific mount decides** (audit 2026-07-17 H2-3). A
+  read-only mount nested inside a read-write one protects its subtree —
+  the read-write ancestor does not override it — and, symmetrically, a
+  read-write mount nested inside a read-only one keeps working. Duplicate
+  declarations of the same path resolve read-only (restrictive). A recursive
+  delete (or rename-away) whose target subtree CONTAINS a read-only mount is
+  rejected with a structured error naming the protected areas, so read-only
+  territory cannot be destroyed by deleting its ancestor.
 - **Reads** must land inside a mount. A strict ANCESTOR directory of a mount
   (e.g. `/memories` itself) stays viewable so the protocol's "view your memory
   directory first" navigation works, but its listing is FILTERED to entries on
@@ -68,6 +76,8 @@ Acceptance mapping (tests: `tests/memory-mounts.test.ts`):
 - [x] `../` / absolute escapes → rejected (R4 stacks under S1)
 - [x] enforcement at the SDK layer, zero prompt dependence
 - [x] user A cannot read or write user B's directory (incl. filtered listings)
+- [x] nested ro-in-rw mounts protected (most-specific precedence + subtree
+      delete/rename guard, audit 2026-07-17 H2-3)
 
 ## S2 — Incognito session primitive (P0, shipped)
 

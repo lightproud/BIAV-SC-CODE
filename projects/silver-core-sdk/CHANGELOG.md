@@ -16,6 +16,43 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.64.5 — 2026-07-17
+
+T50 batch H: memory-tool correctness, all 6 defects from the second-pass audit
+(`Public-Info-Pool/Resource/repo-engineering/silver-core-sdk-bug-audit-r2-20260717.md`
+§H). Pure bug fixes plus one adjacent hardening; no new surfaces beyond two
+exported mount helpers.
+
+- **str_replace matches the FULL content, not per line** (H2-1 high): a
+  multi-line `old_str` previously always failed as verbatim-not-found because
+  the matcher scanned line-by-line; multi-line replacement now works, and the
+  success snippet spans the whole replacement ±2 context lines.
+- **uniqueness counts occurrences, not matching lines** (H2-2): two
+  occurrences on one line ("dup dup") previously slipped past the guard and
+  only the first was replaced, stranding a stale copy; now rejected as
+  multiple occurrences, each reported by the line its match starts on.
+- **nested mounts: most specific wins** (H2-3): a read-only mount nested
+  inside a read-write one was fully writable (and recursively deletable)
+  through the ancestor; `mountAllowsWrite` now resolves the most specific
+  containing mount (duplicate paths resolve read-only), and delete /
+  rename-source additionally reject a target whose subtree contains a
+  read-only mount (new `subtreeContainsReadOnlyMount` /
+  `subtreeReadOnlyMountError` exports).
+- **empty old_str rejected** (H2-4): previously single-line files silently
+  PREPENDED `new_str` and reported success while multi-line files errored;
+  now consistently rejected before matching.
+- **view_range validated** (H2-5): a negative end other than -1 (e.g.
+  `[1, -3]`) previously leaked JS negative-slice semantics and silently
+  dropped tail lines; malformed ranges (start < 1 / beyond the file, end <
+  start, non-integers) now return a structured error; end beyond the file
+  still clamps (the R6 resident-index read depends on that).
+- **contract-suite coverage** (H2-6): four new checks pin multi-line
+  replacement, same-line duplicates, empty old_str and view_range validation
+  for every MemoryStore implementation.
+- Adjacent hardening: the single replacement is spliced by index instead of
+  `String.replace`, so `$&`-style replacement patterns in `new_str` are
+  written literally instead of expanding.
+
 ## 0.64.4 — 2026-07-17
 
 MultiEdit DEPRECATED — align with upstream (keeper 2026-07-17). Official Claude

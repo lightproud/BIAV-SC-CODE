@@ -95,6 +95,8 @@ export {
   readOnlyMountError,
   resolveMemoryMounts,
   runMemoryStoreContractSuite,
+  subtreeContainsReadOnlyMount,
+  subtreeReadOnlyMountError,
   truncateViewBody,
   validateCardsContent,
   validateMemoryPath,

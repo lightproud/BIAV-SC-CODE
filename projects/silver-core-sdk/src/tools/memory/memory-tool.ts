@@ -43,6 +43,8 @@ import {
   filterAncestorListing,
   mountAllowsWrite,
   mountReadAccess,
+  subtreeContainsReadOnlyMount,
+  subtreeReadOnlyMountError,
   outsideMountsError,
   readOnlyMountError,
   type ResolvedMemoryMounts,
@@ -208,13 +210,22 @@ export function createMemoryTool(
   const mounts: ResolvedMemoryMounts = toolOptions.mounts ?? null;
   const bytesOf = (s: string): number => Buffer.byteLength(s, 'utf8');
   /** S1/S2 write gate: incognito first (session-wide rule), then mount
-   *  routing. Returns the structured error message, or null when allowed. */
-  const writeDenial = (path: string): string | null => {
+   *  routing. Returns the structured error message, or null when allowed.
+   *  `subtree: true` (delete / rename source — commands that take a whole
+   *  subtree with them) additionally rejects a target whose subtree contains
+   *  a read-only mount (audit 2026-07-17 H2-3). */
+  const writeDenial = (path: string, opts?: { subtree?: boolean }): string | null => {
     if (toolOptions.incognitoReadOnly === true) return INCOGNITO_MEMORY_ERROR;
-    if (mounts === null || mountAllowsWrite(mounts, path)) return null;
-    return mountReadAccess(mounts, path) === null
-      ? outsideMountsError(mounts, path)
-      : readOnlyMountError(mounts, path);
+    if (mounts === null) return null;
+    if (!mountAllowsWrite(mounts, path)) {
+      return mountReadAccess(mounts, path) === null
+        ? outsideMountsError(mounts, path)
+        : readOnlyMountError(mounts, path);
+    }
+    if (opts?.subtree === true && subtreeContainsReadOnlyMount(mounts, path)) {
+      return subtreeReadOnlyMountError(mounts, path);
+    }
+    return null;
   };
   return {
     name: MEMORY_TOOL_NAME,
@@ -333,7 +344,7 @@ export function createMemoryTool(
                 `Error: Cannot delete the ${MEMORY_ROOT} directory itself`,
               ));
             }
-            const denied = writeDenial(path);
+            const denied = writeDenial(path, { subtree: true });
             if (denied !== null) return done(errorResult(denied));
             const deleted = await store.delete(path);
             if (health !== undefined) health.writes += 1;
@@ -350,8 +361,10 @@ export function createMemoryTool(
                 `Error: Cannot rename the ${MEMORY_ROOT} directory itself`,
               ));
             }
-            // S1: a rename is a write at BOTH ends (removal + creation).
-            const denied = writeDenial(oldPath) ?? writeDenial(newPath);
+            // S1: a rename is a write at BOTH ends (removal + creation); the
+            // source side moves its whole subtree away, so it takes the
+            // subtree read-only guard.
+            const denied = writeDenial(oldPath, { subtree: true }) ?? writeDenial(newPath);
             if (denied !== null) return done(errorResult(denied));
             const renamed = await store.rename(oldPath, newPath);
             if (health !== undefined) health.writes += 1;

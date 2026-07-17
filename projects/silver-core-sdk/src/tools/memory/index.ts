@@ -25,6 +25,8 @@ export {
   outsideMountsError,
   readOnlyMountError,
   resolveMemoryMounts,
+  subtreeContainsReadOnlyMount,
+  subtreeReadOnlyMountError,
   type MountReadAccess,
   type ResolvedMemoryMount,
   type ResolvedMemoryMounts,
