@@ -1,6 +1,6 @@
 # 项目状态一览
 
-> 最后更新：2026-07-17 by SCS-REQ-REPOS-01 实现会话（silver-core-sdk 0.63.0：引擎层定位改写 + 循环支撑接口面 R1–R6 + 斜杠退役一刀切净 + goal 结构化 + 装配验收收口；子项目表 silver-core-sdk 行已同步，T41–T48 销案）。前批 2026-07-12 by Phase 2 收口三条裁定会话（守密人三条裁定落档：① **Phase 2 提前收口
+> 最后更新：2026-07-17 by T49 批B 修复会话（silver-core-sdk 0.63.1：审计六项 P0 存量高危+安全修复 H1–H5+M17，回归锁 21 测、vitest 2476 绿；T49 批B 销案标注入 todo）。前批同日 by SCS-REQ-REPOS-01 实现会话（silver-core-sdk 0.63.0：引擎层定位改写 + 循环支撑接口面 R1–R6 + 斜杠退役一刀切净 + goal 结构化 + 装配验收收口；子项目表 silver-core-sdk 行已同步，T41–T48 销案）。前批 2026-07-12 by Phase 2 收口三条裁定会话（守密人三条裁定落档：① **Phase 2 提前收口
 > 判定「基本达成」**——M7 验收①基础设施齐备✅②自动化跑稳✅、③贡献流程项随 wiki 使命取消作废，
 > 即时生效不待 07-19；② **wiki 使命取消 + 银芯定位第三次收敛**——二使命 = 黑池信息入口（news）
 > + 通用 AI 底层能力开发基地（silver-core-sdk 事实使命转正），wiki 子项目冻结（成果保留不删
@@ -71,7 +71,7 @@
 | news（新闻聚合 + 报告系统） | 自动化持续运行（采集 / 回填 / 评论 / 同人图） | Code-news | M2 信息齐备期任务见 `projects/news/CONTEXT.md`；dependabot #136-140 实际状态待核 |
 | wiki（数据集 + Wiki 站点） | **已冻结（守密人 2026-07-12 裁定：原使命#2「社区共建知识底座」取消，wiki 不再承载正式使命）**。已建成果保留不删不派发：可信基线 `data/processed/characters.json`（72 真实角色，一手解包）→ 58 真实唤醒体页 + 运行时数据桥 `characters.runtime.json` → `characters.ts` 消费，CharacterGrid 挂载图鉴页，SSR 构建验证通过（2026-07-02 冻结前状态）。站点随 deploy-site.yml 继续对外可读 | 艾瑞卡会话 | 无（冻结，不派发）。原字段缺口任务（skills/命轮/立绘/三语，见 `wiki-phase-2-gap-inventory.md`）随冻结停派；社区数据采集必要性重估已裁维持现状（T36 销案 2026-07-12，见 `memory/todo.md` 已清节） |
 | game（衍生游戏） | 暂缓 | 待创建 | 不主线派发 |
-| **silver-core-sdk**（原名 bpt-agent-sdk，2026-07-10 更名 · Claude Agent SDK 公开信息再现 · **正式使命#2「通用 AI 底层能力开发基地」核心载体**，守密人 2026-07-12 裁定由「非使命线」事实使命转正 · 银芯→黑池单向输出物） | **v0.63.0（2026-07-17 SCS-REQ-REPOS-01 整天目标循环全量落地，守密人驱动令）：引擎层定位改写（POSITIONING 三否定一肯定 + 扩展面三缝 + 钩子契约总则、COMPAT 降级参照笔记、decisions 两条覆盖注）+ 循环支撑接口面 R1–R6（prelude/getSessionAccounting、budget 事件流带收尾报告、压缩保留区、ReportLedger、LoopControl 提议工具、declareEngineSurface）+ 斜杠退役一刀切净（/loop /goal 文本面与自定义命令展开层整体删除、goal 改 options.goal 结构化唯一入口宿主注入评估器、透传回归锁 + 源码残留 grep 守卫）+ §7.1 装配验收（仅公开接口拼 loop 全五断言、零真实钟）；vitest 2456 绿 + tsc/build 干净，变异新靶 loop-support 五轮 72.41→93.73 入棋轮；T41–T48 全销，CHANGELOG 0.63.0 单条入账；前批 v0.51.0（2026-07-12 自我改进闭环推进：REQ-1.2 趋势比对 + Phase 2 harness 全 8 题解锁 + REQ-2.2 回归门禁；0.43–0.62 历程见专节逐条）**：TypeScript 重实现（公开信息再现、自研引擎），直驱 Anthropic Messages API（fetch+SSE，无 CLI 子进程），**1885 单测全绿 + 2 skipped、tsc/build exit 0**（0712 实录；v0.49.0 时点为 1848+2）；对官方 SDK **0.3.205** 约 90%+ 表面等价（对标基线 2026-07-10 由 0.3.201 追齐至 0.3.205，见 `docs/COMPAT.md`「0.3.201 -> 0.3.205 chase」；v0.40.0 落 7 个新类型 + interrupt 收据 + parent_agent_id，全类型化、诚实源外 typed-not-emitted），一致性金字塔 L1–L5 全封顶、首轮真 API L5 两臂打平 88.9%。**评估 backlog P2/P3/P4 全落（2026-07-06）**：**P2**（PR #501）逐条过 COMPAT 39 项 PARTIAL 分诊——~14 行「文档滞后」收敛为 FULL + 8 个真缺口闭合各带测试（Edit 读前写门 / stream_event ttft_ms / PostToolBatch tool_calls[] / SubagentStop agent_transcript_path / thinking.display / debugFile / mcpServerStatus scope / maxThinkingTokens @deprecated；notebook·sse 显式暂缓）；**P3** 漂移哨兵升「报+自动开草稿 PR」（`conformance-drift.yml` + `drift-check.mjs --emit-*`，选择性追踪纪律不动、绝不自动改基线）；**P4** `docs/ONBOARDING.md` 新维护者 30 分钟上手（降总线因子）。中间里程碑（v0.4→v0.11）详见下方专节 | 艾瑞卡会话 | 无阻塞待办；评估全文 `Public-Info-Pool/Resource/repo-engineering/bpt-agent-sdk-evaluation-20260706.md`；**动手前必读** `projects/silver-core-sdk/CONTEXT.md` + `docs/ONBOARDING.md`，定位见 `docs/POSITIONING.md` |
+| **silver-core-sdk**（原名 bpt-agent-sdk，2026-07-10 更名 · Claude Agent SDK 公开信息再现 · **正式使命#2「通用 AI 底层能力开发基地」核心载体**，守密人 2026-07-12 裁定由「非使命线」事实使命转正 · 银芯→黑池单向输出物） | **v0.63.1（2026-07-17 T49 批B · P0 存量高危+安全 6 项修复：H1 Edit 非 UTF-8 拒改 / H2 thinking 按实发模型 / H3 openai 尾窗收束 / H4 截断工具参数降级拒执行 / H5 结构化输出 schema-aware / M17 transport 租户身份键；回归锁 21 测、vitest 2476 绿，详见下方专节）；前批 v0.63.0（2026-07-17 SCS-REQ-REPOS-01 整天目标循环全量落地，守密人驱动令）：引擎层定位改写（POSITIONING 三否定一肯定 + 扩展面三缝 + 钩子契约总则、COMPAT 降级参照笔记、decisions 两条覆盖注）+ 循环支撑接口面 R1–R6（prelude/getSessionAccounting、budget 事件流带收尾报告、压缩保留区、ReportLedger、LoopControl 提议工具、declareEngineSurface）+ 斜杠退役一刀切净（/loop /goal 文本面与自定义命令展开层整体删除、goal 改 options.goal 结构化唯一入口宿主注入评估器、透传回归锁 + 源码残留 grep 守卫）+ §7.1 装配验收（仅公开接口拼 loop 全五断言、零真实钟）；vitest 2456 绿 + tsc/build 干净，变异新靶 loop-support 五轮 72.41→93.73 入棋轮；T41–T48 全销，CHANGELOG 0.63.0 单条入账；前批 v0.51.0（2026-07-12 自我改进闭环推进：REQ-1.2 趋势比对 + Phase 2 harness 全 8 题解锁 + REQ-2.2 回归门禁；0.43–0.62 历程见专节逐条）**：TypeScript 重实现（公开信息再现、自研引擎），直驱 Anthropic Messages API（fetch+SSE，无 CLI 子进程），**1885 单测全绿 + 2 skipped、tsc/build exit 0**（0712 实录；v0.49.0 时点为 1848+2）；对官方 SDK **0.3.205** 约 90%+ 表面等价（对标基线 2026-07-10 由 0.3.201 追齐至 0.3.205，见 `docs/COMPAT.md`「0.3.201 -> 0.3.205 chase」；v0.40.0 落 7 个新类型 + interrupt 收据 + parent_agent_id，全类型化、诚实源外 typed-not-emitted），一致性金字塔 L1–L5 全封顶、首轮真 API L5 两臂打平 88.9%。**评估 backlog P2/P3/P4 全落（2026-07-06）**：**P2**（PR #501）逐条过 COMPAT 39 项 PARTIAL 分诊——~14 行「文档滞后」收敛为 FULL + 8 个真缺口闭合各带测试（Edit 读前写门 / stream_event ttft_ms / PostToolBatch tool_calls[] / SubagentStop agent_transcript_path / thinking.display / debugFile / mcpServerStatus scope / maxThinkingTokens @deprecated；notebook·sse 显式暂缓）；**P3** 漂移哨兵升「报+自动开草稿 PR」（`conformance-drift.yml` + `drift-check.mjs --emit-*`，选择性追踪纪律不动、绝不自动改基线）；**P4** `docs/ONBOARDING.md` 新维护者 30 分钟上手（降总线因子）。中间里程碑（v0.4→v0.11）详见下方专节 | 艾瑞卡会话 | 无阻塞待办；评估全文 `Public-Info-Pool/Resource/repo-engineering/bpt-agent-sdk-evaluation-20260706.md`；**动手前必读** `projects/silver-core-sdk/CONTEXT.md` + `docs/ONBOARDING.md`，定位见 `docs/POSITIONING.md` |
 | **bpt-pm**（项目排期工作台 · 非使命线） | **已删除（2026-07-12 守密人裁定，模块盘点逐个问答：已不使用）**。原单网页 CPM 排期工作台（协议 bpt-pm/v1，v1→v3 引擎 + Notion 适配 + 表格协议均曾落盘），全部代码与文档 git 历史可追 | 艾瑞卡会话 | 无 |
 
 > BPT 战线（bpt-web / bpt-desktop / bpt-next / graphify-ext / occ-local）已于 2026-04-19 战略转向中从银芯仓库删除，不再在银芯内部开发。银芯转为 BPT 指导者，协议见 `memory/bpt-guidance-protocol.md`。
@@ -199,6 +199,19 @@
 > 银芯→黑池单向输出物，与 §1.1-HC 防火墙同向，非 BPT 产品内部开发。
 
 - **动手前必读**：`projects/silver-core-sdk/CONTEXT.md`（会话上下文 + 当前 milestone）
+- **v0.63.1（2026-07-17，T49 批B · P0 存量高危+安全 6 项修复）**：H1 Edit/MultiEdit 非 UTF-8
+  拒改守卫（`isUtf8`，防未编辑字节全文变 U+FFFD，顺带钝化 L15 Edit 侧）；H2 thinking 线型改按
+  实发模型（`computeThinking(useModel)`，跨世代 fallback 不再必 400）；H3 openai 臂
+  finish_reason 后网关挂尾巴——尾窗连接层错误按完成收束、不再丢弃完整轮（include_usage 尾块
+  可能丢失，诚实记录的可接受降级）；H4 工具参数 JSON 跨 delta 块截断（max_tokens 常规切）由
+  「accumulator 抛错灭整轮」降级为「input:{} + 不可枚举截断戳」——max_tokens 轮照常成功收尾
+  （C6 滤孤儿）、tool_use 轮带新 `error_code: 'tool_input_truncated'` 可诊断失败且**绝不执行**
+  截断参数；审计所述「UTF-8 多字节被块边界切断」机制经探针**证伪**（流式 TextDecoder 本就跨块
+  重组）并锁进测试；H5 结构化输出提取改 schema-aware（逐候选验证取首个有效跨度，前导「合法但错」
+  JSON 不再抢占），验证器下沉 `internal/structured-output.ts`（引擎门面转发），workflow
+  `agent()` opts.schema 由「顶层 required 浅检」换装同一真验证器；M17 跨协议子代理 transport
+  记忆键补齐**租户身份**（协议+派生配置+凭据 env 链+函数按引用），多租户共享 resolver 不再串号。
+  回归锁 `tests/t49-batch-b.test.ts` 21 测；全量 vitest 2476 绿 + tsc 干净。
 - **v0.60.0（2026-07-14，`/goal` 会话目标原语，守密人「把 goal 命令也给实现了吧」派单）**：
   与 /loop 同类表面缺口——引擎 Stop-hook block 语义（v0.39）与 stop 变体条件评估器（v0.6）早已
   发货，`/goal` 却无人解析。新模块 `src/hooks/session-goal.ts`（BPT-EXTENSION）：`parseGoalCommand`

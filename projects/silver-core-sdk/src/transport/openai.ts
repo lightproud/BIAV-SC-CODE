@@ -1136,6 +1136,34 @@ export class OpenAIChatTransport implements Transport {
           resetIdle();
         }
       } catch (err) {
+        // H3 (audit T49): once an explicit finish_reason has arrived the
+        // message is COMPLETE per the Chat Completions protocol — but unlike
+        // the Anthropic arm (which returns at message_stop, its true terminal
+        // frame), this arm keeps reading for a `[DONE]` / usage tail that a
+        // gateway may never send while holding the connection open. A
+        // connection-layer failure in that tail window (the idle watchdog
+        // firing on the dangling socket, a reset while waiting for [DONE])
+        // previously DISCARDED the fully received turn as a stream error —
+        // and a retried turn re-runs whatever side effects it carried.
+        // Complete the turn instead: the CONTENT is whole by protocol. The
+        // trailing include_usage chunk (sent after finish_reason) may be
+        // lost, under-reporting this turn's tokens — an accepted, logged
+        // degradation, strictly better than voiding the whole answer. A real
+        // in-stream error frame (APIStatusError) and a caller abort still
+        // propagate.
+        if (
+          translator.sawFinishReason() &&
+          !(err instanceof APIStatusError) &&
+          callerSignal?.aborted !== true
+        ) {
+          this.debug(
+            `openai transport: stream errored after finish_reason ` +
+              `(${chunkCount} chunk(s)); completing the received turn ` +
+              `instead of discarding it (${errorMessage(err)})`,
+          );
+          yield* translator.finish();
+          return;
+        }
         throw mapStreamError(err, {
           callerSignal,
           timeoutSignal,

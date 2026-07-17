@@ -6,7 +6,7 @@
 
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
-import { MessageAccumulator } from '../src/engine/accumulator.js';
+import { MessageAccumulator, toolInputTruncationOf } from '../src/engine/accumulator.js';
 import { AnthropicTransport } from '../src/transport/anthropic.js';
 import {
   addUsage,
@@ -443,7 +443,11 @@ describe('MessageAccumulator', () => {
     ).toThrow(APIConnectionError);
   });
 
-  it('throws APIConnectionError when accumulated tool input JSON is malformed', () => {
+  it('degrades malformed accumulated tool input JSON to a stamped {}-input block (H4, audit T49)', () => {
+    // Previously this THREW APIConnectionError at content_block_stop, killing
+    // the whole turn for the ROUTINE case (max_tokens cutting the args JSON
+    // mid-stream). Now the block finalizes with input:{} plus a non-enumerable
+    // truncation stamp the engine uses to refuse execution.
     const acc = new MessageAccumulator();
     acc.feed(startEvent());
     acc.feed({
@@ -452,7 +456,13 @@ describe('MessageAccumulator', () => {
       content_block: { type: 'tool_use', id: 'toolu_4', name: 'Read', input: {} },
     });
     acc.feed({ type: 'content_block_delta', index: 0, delta: { type: 'input_json_delta', partial_json: '{"a":' } });
-    expect(() => acc.feed({ type: 'content_block_stop', index: 0 })).toThrow(APIConnectionError);
+    expect(() => acc.feed({ type: 'content_block_stop', index: 0 })).not.toThrow();
+    const msg = acc.finalize();
+    const block = msg.content[0]!;
+    expect(block).toEqual({ type: 'tool_use', id: 'toolu_4', name: 'Read', input: {} });
+    expect(toolInputTruncationOf(block)).toContain('did not parse');
+    // The stamp never serializes onto the wire / transcript.
+    expect(JSON.parse(JSON.stringify(block))).toEqual(block);
   });
 
   it('throws APIConnectionError on finalize without message_start', () => {
