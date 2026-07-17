@@ -62,9 +62,11 @@ import {
   MEMORY_PROTOCOL_FRAGMENT,
   MEMORY_SESSION_END_PROMPT,
 } from './engine/prompt-fragments.js';
-import { estimateTextTokens } from './engine/tokens.js';
+import { estimateMessagesTokens, estimateTextTokens } from './engine/tokens.js';
 import { MEMORY_TOOL_NAME, resolveMemoryRuntime } from './tools/memory/index.js';
 import { createSessionPersistence } from './sessions/persistence.js';
+import { readSessionEntries } from './sessions/session-functions.js';
+import type { SessionMutationOptions } from './sessions/session-functions.js';
 import { createRunLogSink } from './reporting/run-log.js';
 import { AsyncQueue, createDeferred } from './internal/async.js';
 import { ToolFilterMcpRegistry } from './mcp/tool-filter.js';
@@ -1026,6 +1028,10 @@ export function query(args: {
 
       const history = sess.history;
       let needMeta = sess.needMeta;
+      // R1: the structured prelude rides the FIRST genuine prompt only.
+      let preludePending = true;
+      // R1: cumulative-cost floor for the per-result accounting delta records.
+      let lastPersistedCostUsd = 0;
 
       // File checkpointing: bind the disk-backed store to this session so
       // Write/Edit pre-images are captured and Query.rewindFiles() can restore.
@@ -1209,6 +1215,24 @@ export function query(args: {
               acct.accumulateResult(msg);
               const rewritten = rewriteResult(msg);
               lastYieldedResult = rewritten;
+              // R1 accounting record (SCS-REQ-REPOS-01): persist this result's
+              // cost DELTA so getSessionAccounting can sum a session's true
+              // cumulative cost across every query/injection that drove it
+              // (total_cost_usd on the result is only THIS query's running
+              // total and is never persisted otherwise).
+              if (persist) {
+                const delta = rewritten.total_cost_usd - lastPersistedCostUsd;
+                lastPersistedCostUsd = rewritten.total_cost_usd;
+                store.append(sess.sessionId, {
+                  type: 'accounting',
+                  uuid: randomUUID(),
+                  session_id: sess.sessionId,
+                  timestamp: Date.now(),
+                  cost_delta_usd: delta > 0 ? delta : 0,
+                  total_cost_usd: rewritten.total_cost_usd,
+                  num_turns: rewritten.num_turns,
+                });
+              }
               yield rewritten;
             } else {
               yield msg;
@@ -1526,6 +1550,30 @@ export function query(args: {
             debug(`query: expanded custom slash command /${expansion.name}`);
             message = { role: 'user', content: expansion.expanded };
           }
+        }
+        // R1 structured prelude (SCS-REQ-REPOS-01): prepend the host's
+        // declared blocks to the FIRST genuine prompt as <system-reminder>
+        // blocks. Hooks above saw the raw typed text (same posture as slash
+        // expansion); history/persistence carry the composed text so a resume
+        // replays exactly what the model saw.
+        if (preludePending && options.prelude !== undefined && options.prelude.length > 0) {
+          preludePending = false;
+          const blocks = options.prelude
+            .map(
+              (p) =>
+                '<system-reminder>\n' +
+                (p.title !== undefined ? p.title + '\n\n' : '') +
+                p.content +
+                '\n</system-reminder>',
+            )
+            .join('\n\n');
+          message =
+            typeof message.content === 'string'
+              ? { ...message, content: blocks + '\n\n' + message.content }
+              : {
+                  ...message,
+                  content: [{ type: 'text', text: blocks }, ...message.content],
+                };
         }
         message = appendContextLines(message, extraLines);
 
@@ -1994,4 +2042,64 @@ export function query(args: {
   };
 
   return q;
+}
+
+// ---------------------------------------------------------------------------
+// R1 pre-injection accounting (SCS-REQ-REPOS-01 §3 R1)
+// ---------------------------------------------------------------------------
+
+/** What a host reads BEFORE injecting the next turn into a session. */
+export type SessionUsageSnapshot = {
+  /** Sum of persisted per-result cost deltas across every query that drove
+   *  this session (estimated, static price table). */
+  cumulativeCostUsd: number;
+  /** Sum of persisted per-result turn counts. */
+  cumulativeTurns: number;
+  /** Token estimate of the persisted transcript — the context a resume would
+   *  re-send BEFORE auto-compaction refolds it. Excludes system-prompt and
+   *  tool-definition overhead (request-time concerns). */
+  estimatedContextTokens: number;
+  /** Persisted user+assistant message count. */
+  messageCount: number;
+  /** Number of accounting records seen (== results persisted so far). */
+  resultCount: number;
+};
+
+/**
+ * Read a session's accounting BEFORE injecting the next turn (R1): cumulative
+ * cost and turn count come from the per-result accounting records this SDK
+ * persists alongside the transcript; context occupancy is estimated over the
+ * persisted messages a resume would load. Pure read — never mutates the
+ * session; an unknown/empty session reports zeros.
+ */
+export async function getSessionAccounting(
+  sessionId: string,
+  options: SessionMutationOptions = {},
+): Promise<SessionUsageSnapshot> {
+  const entries = await readSessionEntries(sessionId, options);
+  let cumulativeCostUsd = 0;
+  let cumulativeTurns = 0;
+  let resultCount = 0;
+  const messages: APIMessageParam[] = [];
+  for (const e of entries) {
+    if (e.type === 'accounting') {
+      resultCount += 1;
+      if (typeof e.cost_delta_usd === 'number') cumulativeCostUsd += e.cost_delta_usd;
+      if (typeof e.num_turns === 'number') cumulativeTurns += e.num_turns;
+      continue;
+    }
+    if ((e.type === 'user' || e.type === 'assistant') && e.message !== null && typeof e.message === 'object') {
+      const m = e.message as { role?: unknown; content?: unknown };
+      if ((m.role === 'user' || m.role === 'assistant') && m.content !== undefined) {
+        messages.push({ role: m.role, content: m.content } as APIMessageParam);
+      }
+    }
+  }
+  return {
+    cumulativeCostUsd,
+    cumulativeTurns,
+    estimatedContextTokens: estimateMessagesTokens(messages),
+    messageCount: messages.length,
+    resultCount,
+  };
 }

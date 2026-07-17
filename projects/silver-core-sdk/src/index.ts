@@ -166,6 +166,11 @@ export {
   deleteSession,
   forkSession,
 } from './sessions/session-functions.js';
+// R1 pre-injection accounting (SCS-REQ-REPOS-01 §3): read a session's
+// cumulative cost / turns / context estimate BEFORE injecting the next turn
+// via query({ prompt, options: { resume } }).
+export { getSessionAccounting } from './query.js';
+export type { SessionUsageSnapshot } from './query.js';
 // Tool-claim verification (BPT-EXTENSION, governance spec S4): flag assistant
 // turns that CLAIM a tool action with no backing record in the S3 structured
 // tool-call log. Heuristic by design — findings go to human review.

@@ -126,6 +126,22 @@ function entryToSessionMessage(
 }
 
 /**
+ * Read every persisted entry (raw objects) for a session — local JSONL or the
+ * external store. The shared low-level read under getSessionMessages /
+ * getSessionToolCalls / getSessionAccounting (R1).
+ */
+export async function readSessionEntries(
+  sessionId: string,
+  options: SessionMutationOptions = {},
+): Promise<Record<string, unknown>[]> {
+  if (options.sessionStore !== undefined) {
+    const loaded = await options.sessionStore.load(mainKey(sessionId, options));
+    return (loaded ?? []) as Record<string, unknown>[];
+  }
+  return readLocalEntries(sessionId, options);
+}
+
+/**
  * Return the persisted transcript as SessionMessage[], in write order.
  *
  * This returns the FULL persisted user/assistant sequence. Compaction operates

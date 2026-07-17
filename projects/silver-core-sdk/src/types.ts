@@ -1770,6 +1770,15 @@ export type Options = {
    * Write/Edit/Bash are the user's own actions and are out of scope.
    */
   incognito?: boolean;
+  /**
+   * BPT-EXTENSION (SCS-REQ-REPOS-01 §3 R1): structured content prepended to
+   * this query's FIRST genuine prompt, rendered as `<system-reminder>`
+   * blocks ahead of the prompt text. The turn-injection seam for host-built
+   * loops: pass `ledger.toPrelude()` (R4) here so the dedup digest rides
+   * every injected turn. Hooks (UserPromptSubmit) see the RAW typed prompt;
+   * history and persistence carry the composed text.
+   */
+  prelude?: StructuredPrelude[];
   maxBudgetUsd?: number;
   /**
    * BPT-EXTENSION (SCS-REQ-REPOS-01 §3 R2): the fraction of `maxBudgetUsd` at
@@ -2993,6 +3002,14 @@ export type ResilienceOptions = {
 /** BPT extension: context-compaction tuning. When the running request
  *  history's estimated token count approaches the model context window,
  *  older turns are folded into a synthetic summary. `enabled` defaults true. */
+/** One structured prelude block for `Options.prelude` (R1 turn injection). */
+export type StructuredPrelude = {
+  /** Optional label rendered as the block's first line. */
+  title?: string;
+  /** The block body, rendered verbatim inside the system-reminder. */
+  content: string;
+};
+
 /**
  * A structured context region that must survive automatic compaction VERBATIM
  * (SCS-REQ-REPOS-01 R3). The engine re-stamps every declared region into the
