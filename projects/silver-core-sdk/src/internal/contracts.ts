@@ -616,6 +616,11 @@ export type EngineConfig = {
   /** Custom model pricing overrides (ProviderConfig.pricing) threaded into
    *  every cost estimate this loop makes. BPT-EXTENSION (audit 2026-07-10). */
   pricing?: Record<string, PriceOverride>;
+  /** Host overrides for the short model aliases (Options.modelAliases),
+   *  consumed wherever this config's models resolve through
+   *  resolveModelAlias — subagent spawn and the compaction summarizer.
+   *  BPT-EXTENSION (model-alias mapping, 2026-07-17). */
+  modelAliases?: Readonly<Record<string, string>>;
   /** tool_use id of the spawning Agent call; stamped on this loop's messages
    *  so subagent messages thread. Root loop leaves it undefined -> null. */
   parentToolUseId?: string | null;

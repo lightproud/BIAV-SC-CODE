@@ -270,12 +270,31 @@ async function tick(n: number): Promise<void> {
 describe('resolveModelAlias', () => {
   it('maps short aliases and passes full ids / inherit through', () => {
     expect(resolveModelAlias('opus', 'parent')).toBe('claude-opus-4-8');
-    expect(resolveModelAlias('sonnet', 'parent')).toBe('claude-sonnet-4-5');
+    expect(resolveModelAlias('sonnet', 'parent')).toBe('claude-sonnet-5');
     expect(resolveModelAlias('haiku', 'parent')).toBe('claude-haiku-4-5');
     expect(resolveModelAlias('fable', 'parent')).toBe('claude-fable-5');
     expect(resolveModelAlias('inherit', 'parent-model')).toBe('parent-model');
     expect(resolveModelAlias(undefined, 'parent-model')).toBe('parent-model');
     expect(resolveModelAlias('claude-custom-9', 'parent')).toBe('claude-custom-9');
+  });
+
+  it('host alias overrides win key-by-key over the built-in table', () => {
+    const aliases = { sonnet: 'azure/gw-sonnet', custom: 'gw-custom-1' };
+    // Overridden key -> host id; untouched keys keep the built-in mapping.
+    expect(resolveModelAlias('sonnet', 'parent', aliases)).toBe('azure/gw-sonnet');
+    expect(resolveModelAlias('opus', 'parent', aliases)).toBe('claude-opus-4-8');
+    // New keys resolve too (a host may name its own aliases).
+    expect(resolveModelAlias('custom', 'parent', aliases)).toBe('gw-custom-1');
+    // Full ids can be remapped, unknown ids still pass through verbatim.
+    expect(
+      resolveModelAlias('claude-sonnet-5', 'parent', { 'claude-sonnet-5': 'gw-s5' }),
+    ).toBe('gw-s5');
+    expect(resolveModelAlias('claude-custom-9', 'parent', aliases)).toBe('claude-custom-9');
+    // 'inherit' resolves BEFORE the override table — never remappable.
+    expect(resolveModelAlias('inherit', 'parent-model', { inherit: 'hijack' })).toBe(
+      'parent-model',
+    );
+    expect(resolveModelAlias(undefined, 'parent-model', aliases)).toBe('parent-model');
   });
 });
 
@@ -721,6 +740,19 @@ describe('subagent runtime — foreground', () => {
     });
     await h.runtime.makeSpawnFn(0)(baseParams({ subagentType: 'big' }));
     expect(h.transport.requests[0]?.model).toBe('claude-opus-4-8');
+  });
+
+  it('engineConfig.modelAliases remaps a bare alias onto the host gateway id', async () => {
+    const h = makeRuntime({
+      scripts: [textReplyEvents('ok', { model: 'azure/gw-sonnet' })],
+      agents: {
+        med: { description: 'm', prompt: 'use sonnet', model: 'sonnet' },
+      },
+      engineConfig: { modelAliases: { sonnet: 'azure/gw-sonnet' } },
+    });
+    await h.runtime.makeSpawnFn(0)(baseParams({ subagentType: 'med' }));
+    // The host override, NOT the built-in claude-sonnet-5 mapping.
+    expect(h.transport.requests[0]?.model).toBe('azure/gw-sonnet');
   });
 
   it('per-call model override beats agentDef.model for an isolated child (E7-02)', async () => {

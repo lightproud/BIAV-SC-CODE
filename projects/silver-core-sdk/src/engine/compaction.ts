@@ -508,7 +508,11 @@ async function foldViaApi(
     .join('\n\n');
   // Summarization is cheap and mechanical: route it to compaction.model (e.g.
   // Haiku) when set, resolving a short alias, else the session model.
-  const summaryModel = resolveModelAlias(config.compaction?.model, config.model);
+  const summaryModel = resolveModelAlias(
+    config.compaction?.model,
+    config.model,
+    config.modelAliases,
+  );
   // C7 (BPT audit 2026-07-07): the prefix carries assistant turns whose thinking
   // blocks were signed by the SESSION model. This summary request routes to
   // summaryModel — deliberately a DIFFERENT model (e.g. Haiku) — which would 400

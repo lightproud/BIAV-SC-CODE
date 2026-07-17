@@ -273,6 +273,12 @@ export function buildEngineConfig(args: {
     // Custom price entries (BPT-EXTENSION, audit 2026-07-10): make cost
     // metrics + maxBudgetUsd work for non-Claude models (openai protocol).
     pricing: options.provider?.pricing,
+    // Host alias overrides (BPT-EXTENSION, model-alias mapping 2026-07-17):
+    // remap `opus`/`sonnet`/`haiku`/`fable` (or any id) to the gateway's ids
+    // for subagent spawn and the compaction summarizer.
+    ...(options.modelAliases !== undefined
+      ? { modelAliases: options.modelAliases }
+      : {}),
     includePartialMessages: options.includePartialMessages === true,
     // Prompt-composition observability (BPT-EXTENSION): emit a per-request
     // system/prompt_composition message; off by default (zero cost, wire

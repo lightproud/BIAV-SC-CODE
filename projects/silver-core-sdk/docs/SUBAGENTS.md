@@ -63,23 +63,33 @@ vs not"; it branches on the STRING shape:
 | `model` value | resolves to |
 |---|---|
 | unset / `'inherit'` | the parent (main-loop) model — safe; runs what the main loop runs |
-| one of `opus` / `sonnet` / `haiku` / `fable` | a **hardcoded** id in the SDK's built-in table (e.g. `sonnet → claude-sonnet-4-5`) |
+| a key in `options.modelAliases` | the **host's** id for that key (wins over the built-in table) |
+| one of `opus` / `sonnet` / `haiku` / `fable` | the current Anthropic-official id in the SDK's built-in table (e.g. `sonnet → claude-sonnet-5`) |
 | any other string (a full id) | **passed through verbatim** |
 
-The four short aliases map to Anthropic-official ids that may NOT match your
-gateway (idealab), and one (`sonnet → claude-sonnet-4-5`) is a generation stale.
+The four short aliases map to current Anthropic-official ids (built-in table
+refreshed 2026-07-17 — `sonnet` previously pointed a generation back at
+`claude-sonnet-4-5`, which gateways serving only current models 400'd). They
+still may not match YOUR gateway's ids (idealab serves its own names).
 
-**Rule for the host: always put a FULL gateway id** in `AgentDefinition.model`
-(or the Agent tool's `model` param) — never a bare alias — until
-`options.modelAliases` ships. A bare `'sonnet'` resolves to the stale
-`claude-sonnet-4-5`; your gateway rejects it and the subagent 400s. A full id is
-passed through untouched and works.
+**Rule for the host: on a non-Anthropic gateway, set `options.modelAliases`**
+so bare aliases resolve to ids your gateway serves:
 
-> Note: this same table backs the compaction summarizer and the utility-call /
-> verifier defaults (which hardcode `claude-haiku-4-5`). The proper fix is an
-> `options.modelAliases` injection point so bare aliases and stale defaults map
-> to your ids in one place; until then, pass full ids at every `model` / `opts.model`
-> seam.
+```ts
+query({ ..., options: { modelAliases: {
+  opus: 'azure/gw-opus', sonnet: 'azure/gw-sonnet', haiku: 'gw-flash',
+} } });
+```
+
+Overrides win key-by-key (remap just `sonnet` and keep the rest), may add new
+keys, and may even remap a full id; `'inherit'` resolves first and is never
+remappable. Absent the option, a full gateway id in `AgentDefinition.model`
+(or the Agent tool's `model` param) is still passed through untouched.
+
+> Note: the same table + override pair backs the compaction summarizer
+> (`compaction.model`) and the utility-call defaults (which hardcode
+> `claude-haiku-4-5`): `options.modelAliases` flows to all three seams, and
+> hosts calling generators directly pass `opts.modelAliases`.
 
 ## 4. Invocation patterns (Claude Code style)
 
