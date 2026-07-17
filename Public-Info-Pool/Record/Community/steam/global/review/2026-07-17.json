@@ -1,8 +1,8 @@
 {
   "date": "2026-07-17",
-  "archived_at": "2026-07-17T08:09:18.448069+00:00",
+  "archived_at": "2026-07-17T10:48:03.692916+00:00",
   "source": "steam",
-  "item_count": 2,
+  "item_count": 3,
   "items": [
     {
       "title": "[正面] am i playing... peak?",
@@ -46,6 +46,30 @@
         "playtime_forever": 671,
         "votes_up": 0,
         "timestamp_created": 1784248634
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] Very fun game. Haven't played too long yet but the...",
+      "summary": "Very fun game. Haven't played too long yet but the general gameplay loop has been very addicting! Artstyle/general visuals are amazing as well.",
+      "source": "steam_review",
+      "time": "2026-07-17T08:53:05+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198836044276/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198836044276",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 458,
+        "votes_up": 0,
+        "timestamp_created": 1784278385
       },
       "region": "global",
       "archive_subtype": "review",

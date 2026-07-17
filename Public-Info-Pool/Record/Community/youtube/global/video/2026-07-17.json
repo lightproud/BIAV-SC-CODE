@@ -1,8 +1,8 @@
 {
   "date": "2026-07-17",
-  "archived_at": "2026-07-17T08:09:18.409203+00:00",
+  "archived_at": "2026-07-17T10:48:03.574755+00:00",
   "source": "youtube",
-  "item_count": 16,
+  "item_count": 17,
   "items": [
     {
       "title": "【#忘却前夜  】守秘者のみんな！！！！楽しいレイド戦だーーー！！！#4【#推し活】",
@@ -238,6 +238,23 @@
       "lang": "",
       "platform_region": "global",
       "media_url": "https://i.ytimg.com/vi/Jrs13uDYvG0/hqdefault.jpg",
+      "content_type": "video",
+      "region": "global",
+      "archive_subtype": "video"
+    },
+    {
+      "title": "#忘卻前夜 #morimens Regional D-Effect Zone Wave 1:Alert V! 融災1-5 Boss戰的部分",
+      "summary": "忘卻前夜#morimens 7月6日~7月20日融災更新. Regional D-Effect Zone Update (July 6 – July 20). 影片中的鳥弟是波呂克斯(Pollux) ...",
+      "source": "youtube",
+      "time": "2026-07-17T10:00:26Z",
+      "url": "https://www.youtube.com/watch?v=Fa7U16c-Ufw",
+      "engagement": 1,
+      "is_hot": false,
+      "author": "Noir",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global",
+      "media_url": "https://i.ytimg.com/vi/Fa7U16c-Ufw/hqdefault.jpg",
       "content_type": "video",
       "region": "global",
       "archive_subtype": "video"

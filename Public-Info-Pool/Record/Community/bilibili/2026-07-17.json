@@ -1,8 +1,8 @@
 {
   "date": "2026-07-17",
-  "archived_at": "2026-07-17T08:09:18.410235+00:00",
+  "archived_at": "2026-07-17T10:48:03.576817+00:00",
   "source": "bilibili",
-  "item_count": 11,
+  "item_count": 14,
   "items": [
     {
       "title": "Fire(燃尽版)",
@@ -166,6 +166,29 @@
       "platform_region": "cn"
     },
     {
+      "title": "【忘却前夜/混剪×夏天尽头的我们】",
+      "summary": "当初听到这首歌的时候就感觉很般配，有种青春回忆的感觉，不过你忘可能更适合剪调查中这一类的曲子（可惜有人做过了）",
+      "source": "bilibili",
+      "time": "2026-07-17T10:15:58+00:00",
+      "url": "https://www.bilibili.com/video/BV1uiNd69Ehy",
+      "engagement": 31,
+      "is_hot": false,
+      "author": "孤影站在黑暗中",
+      "tags": [
+        "小剧场"
+      ],
+      "metadata": {
+        "play": 31,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/2483f6b8c7bd4ef522287b0c7372326e728f05cd.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
       "title": "依旧瞎捣鼓AM做出来的",
       "summary": "-\n  └ 哈基沙大玉 (0赞): [鸣潮2周年同人绘画_看你]",
       "source": "bilibili",
@@ -184,6 +207,52 @@
         "danmaku": 0
       },
       "media_url": "https://i0.hdslb.com/bfs/archive/7b3798cd818ef8f86a096f663cf0b2fe60fb1ba3.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "容灾混沌塔潘开创者，保姆级混沌塔潘配队与实战教学",
+      "summary": "",
+      "source": "bilibili",
+      "time": "2026-07-17T10:42:18+00:00",
+      "url": "https://www.bilibili.com/video/BV1VbNd6bE7w",
+      "engagement": 5,
+      "is_hot": false,
+      "author": "忘却安卓佬",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 5,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/46823111a8dff6edf2370027743625f8e632ce71.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "《忘却前夜》第二章以蜡像之名P4",
+      "summary": "",
+      "source": "bilibili",
+      "time": "2026-07-17T09:30:00+00:00",
+      "url": "https://www.bilibili.com/video/BV182Nj6CEnH",
+      "engagement": 4,
+      "is_hot": false,
+      "author": "不可燃抹茶果冻",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 4,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/9aa4ff5f36e8ffc8c92e5065e483b986dff09cc0.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
