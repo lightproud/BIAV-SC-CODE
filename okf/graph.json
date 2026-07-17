@@ -1,8 +1,8 @@
 {
   "generated": "2026-07-17",
   "stats": {
-    "nodes": 356,
-    "edges": 419
+    "nodes": 357,
+    "edges": 420
   },
   "nodes": [
     {
@@ -3256,6 +3256,17 @@
       "tier": "search"
     },
     {
+      "id": "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "type": "documentation",
+      "title": "silver-core-sdk-bug-audit-20260717",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
       "id": "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "type": "documentation",
       "title": "silver-core-sdk-code-quality-audit-20260714",
@@ -4341,6 +4352,12 @@
     },
     {
       "source": "/community/community-bilibili.md",
+      "target": "/characters/77925.md",
+      "rel": "提及:克莱门汀",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
       "target": "/characters/15565.md",
       "rel": "提及:诺缔拉",
       "rel_type": "mention"
@@ -4379,12 +4396,6 @@
       "source": "/community/community-bilibili.md",
       "target": "/characters/15563.md",
       "rel": "提及:图鲁",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/15569.md",
-      "rel": "提及:萝坦",
       "rel_type": "mention"
     },
     {
@@ -5654,6 +5665,12 @@
       "rel_type": "mention"
     },
     {
+      "source": "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "target": "/characters/15603.md",
+      "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
       "source": "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
@@ -5739,6 +5756,12 @@
     },
     {
       "source": "/sources/bilibili.md",
+      "target": "/characters/77925.md",
+      "rel": "提及:克莱门汀",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
       "target": "/characters/15565.md",
       "rel": "提及:诺缔拉",
       "rel_type": "mention"
@@ -5777,12 +5800,6 @@
       "source": "/sources/bilibili.md",
       "target": "/characters/15563.md",
       "rel": "提及:图鲁",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/15569.md",
-      "rel": "提及:萝坦",
       "rel_type": "mention"
     },
     {
