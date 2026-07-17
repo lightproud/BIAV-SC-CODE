@@ -51,10 +51,15 @@ export class RetentionStore {
       throw new ConfigurationError('retained region id must be a non-empty string');
     }
     let prospective = Buffer.byteLength(renderRetainedRegion(region), 'utf8');
+    let regionCount = 1;
     for (const [id, existing] of this.byId) {
       if (id === region.id) continue; // replaced — not counted twice
       prospective += Buffer.byteLength(renderRetainedRegion(existing), 'utf8');
+      regionCount += 1;
     }
+    // The cap guards the JOINED rendered form renderBlocks() actually emits:
+    // its '\n\n' joiners add 2 bytes per gap, which a per-region sum misses.
+    prospective += 2 * (regionCount - 1);
     if (prospective > this.maxBytes) {
       throw new ConfigurationError(
         `retained regions would total ${prospective} bytes, over the ` +

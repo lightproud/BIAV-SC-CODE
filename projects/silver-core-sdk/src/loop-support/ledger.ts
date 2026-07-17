@@ -86,6 +86,14 @@ export class ReportLedger {
     }
     if (this.byKey.has(key)) return false;
     const at = opts?.at ?? Date.now();
+    // A non-finite timestamp (NaN/Infinity) would make digest() throw
+    // (Date#toISOString RangeError) inside toPrelude/toRetainedRegion — the
+    // latter mid-compaction — and break the serialize/deserialize round-trip
+    // (JSON turns NaN into null, which deserialize rejects). Fail loud here,
+    // at the write, instead of deep in a fold.
+    if (!Number.isFinite(at)) {
+      throw new ConfigurationError('ledger entry timestamp (at) must be a finite number');
+    }
     const entry: LedgerEntry = { key, at };
     if (opts?.summary !== undefined) entry.summary = opts.summary;
     this.byKey.set(key, entry);
@@ -154,14 +162,28 @@ export class ReportLedger {
         typeof entry.key !== 'string' ||
         entry.key.length === 0 ||
         typeof entry.at !== 'number' ||
+        !Number.isFinite(entry.at) ||
         (entry.summary !== undefined && typeof entry.summary !== 'string')
       ) {
         throw new ConfigurationError('ledger payload carries a malformed entry');
       }
-      const opts: { at: number; summary?: string } = { at: entry.at };
-      if (entry.summary !== undefined) opts.summary = entry.summary;
-      ledger.record(entry.key, opts);
+      // Insert directly instead of via record(): every serialized entry was
+      // LIVE at serialize() time, so revival must reproduce it verbatim.
+      // record() runs age eviction per insert with the inserted `at` as "now",
+      // which is not idempotent under maxAgeMs + non-monotonic timestamps
+      // (a later-inserted large-`at` entry would prune earlier live ones the
+      // original ledger still held). Age pruning at revival has no meaningful
+      // "now" — the host calls prune(now) explicitly when it wants one.
+      if (!ledger.byKey.has(entry.key)) {
+        const revived: LedgerEntry = { key: entry.key, at: entry.at };
+        if (entry.summary !== undefined) revived.summary = entry.summary;
+        ledger.byKey.set(entry.key, revived);
+      }
     }
+    // Hold the capacity invariant for hand-crafted payloads that carry more
+    // entries than their own declared maxEntries (a real serialize() never
+    // does); oldest-first, same policy as record().
+    ledger.evictOverCapacity();
     return ledger;
   }
 
@@ -197,6 +219,11 @@ export class ReportLedger {
   /** Capacity + age eviction, oldest-first. */
   private evict(now: number): void {
     if (this.maxAgeMs !== undefined) this.prune(now);
+    this.evictOverCapacity();
+  }
+
+  /** Capacity-only eviction, oldest-first (no age pruning). */
+  private evictOverCapacity(): void {
     if (this.maxEntries === undefined) return;
     while (this.byKey.size > this.maxEntries) {
       let oldest: LedgerEntry | undefined;
