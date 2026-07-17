@@ -118,6 +118,13 @@ function clipLine(s: string): string {
 }
 
 type FileScan = {
+  /** CRLF-normalized file content (`\r\n` -> `\n`) — the single text every
+   *  scan phase runs on (F6, audit 2026-07-17: detection used to scan the RAW
+   *  text while -o extraction scanned a CR-stripped rebuild, so a pattern
+   *  crossing a CRLF boundary was detected yet extracted zero matches — the
+   *  file silently vanished from the output — and `$`-anchor behavior
+   *  flipped between the two phases). */
+  text: string;
   /** File content split into lines (trailing empty line dropped). */
   lines: string[];
   /** Sorted, de-duplicated 0-based indices of matching lines. */
@@ -147,8 +154,12 @@ async function scanFile(
   }
   if (looksBinary(buf)) return null;
 
-  const text = buf.toString('utf8');
-  const lines = text.split(/\r?\n/);
+  // CRLF-normalize ONCE so line splitting, multiline detection and -o
+  // extraction all see the same text (F6). Lone `\r` was never a separator
+  // before and still is not.
+  const raw = buf.toString('utf8');
+  const text = raw.includes('\r') ? raw.replace(/\r\n/g, '\n') : raw;
+  const lines = text.split('\n');
   if (lines.length > 0 && lines[lines.length - 1] === '') lines.pop();
 
   const matchSet = new Set<number>();
@@ -174,7 +185,7 @@ async function scanFile(
       if (re.test(lines[i] ?? '')) matchSet.add(i);
     }
   }
-  return { lines, matches: [...matchSet].sort((a, b) => a - b) };
+  return { text, lines, matches: [...matchSet].sort((a, b) => a - b) };
 }
 
 type Hunk = { start: number; end: number };
@@ -420,6 +431,10 @@ export const grepTool: BuiltinTool = {
         onlyFiles: true,
         ignore: IGNORE_PATTERNS,
         suppressErrors: true,
+        // F1 (audit 2026-07-17): same symlink-loop guard as Glob — fast-glob
+        // follows directory symlinks with no cycle detection (2^depth blowup
+        // on sibling loop links, uninterruptible). ripgrep default parity.
+        followSymbolicLinks: false,
       });
       if (globPattern && typePatterns) {
         // glob narrowed further by type extensions.
@@ -472,10 +487,11 @@ export const grepTool: BuiltinTool = {
         if (multiline) {
           // A multiline pattern's match can SPAN newlines, so a per-line exec
           // would extract nothing and report "No matches found" for a file the
-          // scanner already flagged as matching. Scan the reconstructed whole
-          // content instead and emit each match with its STARTING line number
-          // (ripgrep -oU semantics).
-          const text = scan.lines.join('\n');
+          // scanner already flagged as matching. Scan the SAME normalized text
+          // the detection pass ran on (F6: a rebuilt approximation diverged
+          // from it on CRLF files) and emit each match with its STARTING line
+          // number (ripgrep -oU semantics).
+          const text = scan.text;
           const offsets = lineStartOffsets(text);
           let m: RegExpExecArray | null;
           while ((m = re.exec(text)) !== null) {

@@ -7,7 +7,16 @@
  */
 
 import { Buffer } from 'node:buffer';
-import { mkdir, readFile, stat, writeFile } from 'node:fs/promises';
+import { randomBytes } from 'node:crypto';
+import {
+  mkdir,
+  readFile,
+  realpath,
+  rename,
+  stat,
+  unlink,
+  writeFile,
+} from 'node:fs/promises';
 import * as path from 'node:path';
 import type {
   BuiltinTool,
@@ -63,6 +72,7 @@ export const writeTool: BuiltinTool = {
 
       // Determine created-vs-overwritten before writing; reject directories.
       let existedBefore = false;
+      let priorMode: number | undefined;
       try {
         const st = await stat(abs);
         if (st.isDirectory()) {
@@ -70,7 +80,16 @@ export const writeTool: BuiltinTool = {
             `Write failed: "${abs}" is a directory; cannot write file content over it.`,
           );
         }
+        // F3/F8 (audit 2026-07-17): writing "over" a FIFO/device/socket either
+        // blocks forever (FIFO with no reader) or clobbers a device node; the
+        // atomic rename below would silently REPLACE the special file. Refuse.
+        if (!st.isFile()) {
+          return errorResult(
+            `Write failed: "${abs}" is not a regular file (FIFO/device/socket); refusing to write over it.`,
+          );
+        }
         existedBefore = true;
+        priorMode = st.mode & 0o7777;
       } catch (e) {
         if ((e as NodeJS.ErrnoException).code !== 'ENOENT') {
           throw e;
@@ -130,7 +149,41 @@ export const writeTool: BuiltinTool = {
       }
 
       await mkdir(path.dirname(abs), { recursive: true });
-      await writeFile(abs, content, { encoding: 'utf8', signal: ctx.signal });
+
+      // F8 (audit 2026-07-17): atomic write via tmp + rename. The old direct
+      // O_TRUNC open destroyed the previous content the moment the file was
+      // opened, so an abort/crash between open and write-complete left the
+      // file EMPTY with no result reported (and, without a checkpoint, no
+      // pre-image to recover from). Writing a sibling tmp file and renaming
+      // it over the target makes the swap all-or-nothing: readers see either
+      // the old content or the new, never a torn half. An existing SYMLINK
+      // target is resolved first so the write still lands through the link
+      // (rename would otherwise replace the link itself with a regular file).
+      // Known tradeoff of rename-based atomicity: a multi-hard-link target
+      // gets a fresh inode (the other links keep the old content).
+      let target = abs;
+      if (existedBefore) {
+        try {
+          target = await realpath(abs);
+        } catch {
+          target = abs; // best-effort; fall back to the literal path
+        }
+      }
+      const tmp = path.join(
+        path.dirname(target),
+        `.${path.basename(target)}.${process.pid}.${randomBytes(6).toString('hex')}.tmp`,
+      );
+      try {
+        await writeFile(tmp, content, {
+          encoding: 'utf8',
+          signal: ctx.signal,
+          ...(priorMode !== undefined ? { mode: priorMode } : {}),
+        });
+        await rename(tmp, target);
+      } catch (e) {
+        await unlink(tmp).catch(() => {});
+        throw e;
+      }
 
       const bytes = Buffer.byteLength(content, 'utf8');
       // The session knows the bytes it just wrote: register the path so a

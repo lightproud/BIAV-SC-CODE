@@ -33,6 +33,7 @@ import type {
 } from '../internal/contracts.js';
 import { AbortError } from '../errors.js';
 import { resolvePosixShells, SHELL_NOT_FOUND_GUIDANCE } from './shell-resolve.js';
+import { withStateReplay } from './bash.js';
 import { MONITOR_DESCRIPTION } from './descriptions.js';
 
 /** Default watch timeout (ms) when `timeout_ms` is omitted (this SDK's default). */
@@ -131,11 +132,15 @@ export const monitorTool: BuiltinTool = {
       };
     }
 
+    // F5: the watch sees the persistent cwd/env state ("same shell
+    // environment"), replay-only — same wrapper as Bash run_in_background.
+    const watchCommand =
+      shellsMgr.stateDir !== '' ? withStateReplay(command, shellsMgr.stateDir) : command;
     // Same Windows-aware shell resolution + launch path as Bash run_in_background.
     const candidates = resolvePosixShells(ctx.env as Record<string, string | undefined>);
     let launched: { id: string } | { error: string } = { error: SHELL_NOT_FOUND_GUIDANCE };
     for (const shell of candidates) {
-      launched = await shellsMgr.spawnBackground(shell, command, ctx);
+      launched = await shellsMgr.spawnBackground(shell, watchCommand, ctx);
       if (!('error' in launched)) break;
     }
     if ('error' in launched) {

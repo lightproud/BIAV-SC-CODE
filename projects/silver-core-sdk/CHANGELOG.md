@@ -16,6 +16,54 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.64.6 — 2026-07-17
+
+T50 batch G: fs/exec hang & corruption fixes (9 items, P0-availability) from
+the second-round audit
+(`Public-Info-Pool/Resource/repo-engineering/silver-core-sdk-bug-audit-r2-20260717.md`).
+No new surfaces; pure bug fixes + regression suite `tests/batch-g-fs-exec.test.ts`.
+(The MultiEdit fixes below land on a tool that 0.64.4 soft-deprecated — it
+still ships and works, so it still must not corrupt.)
+
+- **F1** Glob/Grep no longer follow directory symlinks (`followSymbolicLinks:
+  false`, ripgrep default parity): a self-referential or sibling-pair loop
+  symlink used to blow enumeration up to 2^depth — an uninterruptible
+  measured hang.
+- **F2** CRLF files are editable again: Edit/MultiEdit adapt an LF-authored
+  multi-line `old_string` (the only form the model can produce from Read's
+  CR-stripped view) to the file's `\r\n` style, preserving its line endings
+  (`fsutil.adaptEditToLineEndings`). Before, every multi-line edit of a CRLF
+  file failed identically and unrecoverably.
+- **F3** Read/Edit/MultiEdit/Write now require a REGULAR file: a FIFO passed
+  the directory-only stat gate and `readFile` blocked forever (abort could
+  not settle it); size-0 char devices (`/dev/zero`) bypassed the byte cap.
+- **F4** BashOutput with a `filter` holds back the trailing partial line of a
+  running shell's window, so the line-anchored regex never tests a chunk
+  fragment ("ERR" + "OR: x" both failing `/^ERROR/` — the line was dropped
+  forever). Terminal/truncated streams still drain fully.
+- **F5** Background launches (Bash `run_in_background`, Monitor) now replay
+  the persistent cwd/env state (`withStateReplay`, replay-only — no EXIT-trap
+  capture-back, which would clobber foreground state at arbitrary later
+  times). Before, a prior foreground `cd`/`export` silently did not apply,
+  contradicting the tool descriptions.
+- **F6** Grep multiline detection and `-o` extraction now scan the SAME
+  CRLF-normalized text: a pattern crossing a CRLF boundary was detected but
+  extracted zero matches (file silently absent from output), and `$`-anchor
+  behavior flipped between phases.
+- **F7** A `CLAUDE_CODE_GIT_BASH_PATH` override containing a path separator
+  is existence-probed and pinned absolute (spawn does no PATH resolution for
+  separator-bearing names — the old exemption of all non-absolute overrides
+  handed spawn a doomed relative path).
+- **F8** Write is atomic: sibling tmp file + rename (mode preserved, symlink
+  targets resolved so the write still lands through the link). The old
+  direct O_TRUNC open destroyed the previous content the moment the file was
+  opened — an abort/crash mid-write left it empty with no pre-image.
+- **C3** tool-dispatch decides `sandboxEscape` from the FINAL input: a
+  PreToolUse/canUseTool rewrite that added `dangerouslyDisableSandbox: true`
+  AFTER the permission check used to run the command outside the sandbox
+  without the dedicated escape ask; the smuggled flag is now stripped
+  (trusted-side rewrite) and logged.
+
 ## 0.64.5 — 2026-07-17
 
 T50 batch H: memory-tool correctness, all 6 defects from the second-pass audit
@@ -52,7 +100,6 @@ exported mount helpers.
 - Adjacent hardening: the single replacement is spliced by index instead of
   `String.replace`, so `$&`-style replacement patterns in `new_str` are
   written literally instead of expanding.
-
 ## 0.64.4 — 2026-07-17
 
 MultiEdit DEPRECATED — align with upstream (keeper 2026-07-17). Official Claude

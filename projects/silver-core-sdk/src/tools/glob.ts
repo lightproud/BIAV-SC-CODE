@@ -82,6 +82,13 @@ export const globTool: BuiltinTool = {
       ignore: IGNORE_PATTERNS,
       stats: true,
       suppressErrors: true,
+      // F1 (audit 2026-07-17): fast-glob follows directory symlinks by
+      // default with NO cycle guard — a self-referential link returns the
+      // same file dozens of times, and two sibling loop links blow up
+      // enumeration to 2^depth (measured: >20s, and the AbortSignal is only
+      // checked after the await, so the hang is uninterruptible). ripgrep
+      // does not follow symlinks by default either; match that.
+      followSymbolicLinks: false,
     });
     if (ctx.signal.aborted) throw new AbortError();
 

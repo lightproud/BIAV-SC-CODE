@@ -71,6 +71,38 @@ export function isLossyUtf8(buf: Buffer): boolean {
   return !isUtf8(buf);
 }
 
+/**
+ * CRLF adaptation for exact-string edits (F2, audit 2026-07-17). Read strips
+ * the `\r` from every displayed line, so a multi-line old_string the model
+ * copied from a Read of a CRLF file carries bare `\n` separators and can NEVER
+ * match the raw `\r\n` content — every retry fails identically. When the
+ * direct match misses on a CRLF file, retry with the needle's newlines
+ * converted to `\r\n` (and the replacement normalized to `\r\n` so the file's
+ * line-ending style is preserved). A needle that already contains `\r\n` was
+ * authored against the raw bytes and is left alone.
+ */
+export function adaptEditToLineEndings(
+  text: string,
+  oldString: string,
+  newString: string,
+): { oldString: string; newString: string } {
+  if (
+    !text.includes(oldString) &&
+    text.includes('\r\n') &&
+    oldString.includes('\n') &&
+    !oldString.includes('\r\n')
+  ) {
+    const crlfOld = oldString.replace(/\n/g, '\r\n');
+    if (text.includes(crlfOld)) {
+      return {
+        oldString: crlfOld,
+        newString: newString.replace(/\r?\n/g, '\r\n'),
+      };
+    }
+  }
+  return { oldString, newString };
+}
+
 /** Heuristic binary sniff: any NUL byte anywhere in the buffer. The old
  *  first-8KB sniff passed files whose NUL bytes sit past the head (text
  *  header + binary tail) and Edit then corrupted the tail (audit 2026-07-17

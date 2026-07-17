@@ -12,7 +12,13 @@ import type {
   ToolResultPayload,
 } from '../internal/contracts.js';
 import { AbortError, isAbortError } from '../errors.js';
-import { formatCatN, isLossyUtf8, looksBinary, resolveAbs } from './fsutil.js';
+import {
+  adaptEditToLineEndings,
+  formatCatN,
+  isLossyUtf8,
+  looksBinary,
+  resolveAbs,
+} from './fsutil.js';
 import { EDIT_DESCRIPTION } from './descriptions.js';
 
 /** Context lines shown around the first edit site in the success snippet. */
@@ -125,6 +131,14 @@ export const editTool: BuiltinTool = {
         if (st.isDirectory()) {
           return errorResult(`Edit failed: "${abs}" is a directory, not a file.`);
         }
+        // F3 (audit 2026-07-17): a FIFO / device / socket passes the directory
+        // check but readFile on it blocks forever (FIFO with no writer) and
+        // abort cannot settle it. Only regular files are editable.
+        if (!st.isFile()) {
+          return errorResult(
+            `Edit failed: "${abs}" is not a regular file (FIFO/device/socket); editing it is not supported.`,
+          );
+        }
       } catch (e) {
         if ((e as NodeJS.ErrnoException).code === 'ENOENT') {
           return errorResult(`Edit failed: file does not exist: "${abs}".`);
@@ -162,7 +176,15 @@ export const editTool: BuiltinTool = {
       }
       const text = buf.toString('utf8');
 
-      const count = countOccurrences(text, oldString);
+      // F2 (audit 2026-07-17): Read strips `\r` per line, so a multi-line
+      // old_string copied from a Read of a CRLF file can never match the raw
+      // content — adapt both strings to the file's `\r\n` style when the
+      // direct match misses (fsutil.adaptEditToLineEndings).
+      const adapted = adaptEditToLineEndings(text, oldString, newString);
+      const effOld = adapted.oldString;
+      const effNew = adapted.newString;
+
+      const count = countOccurrences(text, effOld);
       if (count === 0) {
         return errorResult(
           `Edit failed: old_string was not found in "${abs}". It must match the file contents exactly, including whitespace and indentation.`,
@@ -176,12 +198,12 @@ export const editTool: BuiltinTool = {
 
       // String-based splicing on purpose: String.prototype.replace would
       // interpret $-patterns in the replacement text.
-      const firstIdx = text.indexOf(oldString);
+      const firstIdx = text.indexOf(effOld);
       const updated = replaceAll
-        ? text.split(oldString).join(newString)
+        ? text.split(effOld).join(effNew)
         : text.slice(0, firstIdx) +
-          newString +
-          text.slice(firstIdx + oldString.length);
+          effNew +
+          text.slice(firstIdx + effOld.length);
 
       // Capture the pre-image BEFORE mutating so Query.rewindFiles() can
       // restore it. `text` is the original content already read for the edit.
@@ -206,7 +228,7 @@ export const editTool: BuiltinTool = {
       // so a follow-up Write is not blocked.
       ctx.readFilePaths?.add(abs);
       ctx.debug(`Edit: ${abs} replaced ${replaced} occurrence(s)`);
-      const snippet = buildSnippet(updated, firstIdx, newString);
+      const snippet = buildSnippet(updated, firstIdx, effNew);
       return {
         content:
           `Replaced ${replaced} occurrence${replaced === 1 ? '' : 's'} of old_string in "${abs}".\n` +

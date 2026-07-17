@@ -266,11 +266,8 @@ function formatStreams(stdout: string, stderr: string): string {
  * No-op on POSIX (mkdtemp paths have no backslashes there).
  */
 export function withPersistentState(command: string, stateDir: string): string {
-  const bashStateDir = stateDir.replace(/\\/g, '/');
   return [
-    `__bpt_state='${bashStateDir}'`,
-    'if [ -f "$__bpt_state/cwd" ]; then cd -- "$(cat "$__bpt_state/cwd")" 2>/dev/null || true; fi',
-    'if [ -f "$__bpt_state/env" ]; then { . "$__bpt_state/env"; } 2>/dev/null || true; fi',
+    ...stateReplayPrologue(stateDir),
     '__bpt_persist() {',
     '  pwd > "$__bpt_state/cwd" 2>/dev/null || true',
     '  export -p > "$__bpt_state/env" 2>/dev/null || true',
@@ -278,6 +275,30 @@ export function withPersistentState(command: string, stateDir: string): string {
     'trap __bpt_persist EXIT',
     command,
   ].join('\n');
+}
+
+/** Shared replay prologue: restore the previous foreground call's cwd + env. */
+function stateReplayPrologue(stateDir: string): string[] {
+  const bashStateDir = stateDir.replace(/\\/g, '/');
+  return [
+    `__bpt_state='${bashStateDir}'`,
+    'if [ -f "$__bpt_state/cwd" ]; then cd -- "$(cat "$__bpt_state/cwd")" 2>/dev/null || true; fi',
+    'if [ -f "$__bpt_state/env" ]; then { . "$__bpt_state/env"; } 2>/dev/null || true; fi',
+  ];
+}
+
+/**
+ * Replay-ONLY variant for background launches (F5, audit 2026-07-17). A
+ * background command used to run with no persistent-state wrapper at all, so
+ * a prior foreground `cd`/`export` silently did not apply — directly
+ * contradicting the tool description ("working directory persists") and
+ * Monitor's "same shell environment". Background shells now REPLAY the state
+ * snapshot at launch but never capture back: a background process exits at an
+ * arbitrary later time, and an EXIT trap there would clobber state persisted
+ * by foreground commands that ran in between.
+ */
+export function withStateReplay(command: string, stateDir: string): string {
+  return [...stateReplayPrologue(stateDir), command].join('\n');
 }
 
 /**
@@ -466,6 +487,12 @@ async function execute(
           isError: true,
         };
       }
+      // F5: background commands see the persistent cwd/env state too —
+      // replay-only (no capture-back; see withStateReplay).
+      const bgCommand =
+        ctx.shells.stateDir !== ''
+          ? withStateReplay(command, ctx.shells.stateDir)
+          : command;
       // Windows-aware shell resolution (see shell-resolve.ts): candidates are
       // tried in order; an empty list means no POSIX shell on this host.
       const bgShells = resolvePosixShells(ctx.env as Record<string, string | undefined>);
@@ -473,7 +500,7 @@ async function execute(
         error: SHELL_NOT_FOUND_GUIDANCE,
       };
       for (const shell of bgShells) {
-        launched = await ctx.shells.spawnBackground(shell, command, ctx, disableSandbox);
+        launched = await ctx.shells.spawnBackground(shell, bgCommand, ctx, disableSandbox);
         if (!('error' in launched)) break;
       }
       if ('error' in launched) {

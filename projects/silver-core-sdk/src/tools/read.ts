@@ -230,6 +230,16 @@ export function createReadTool(limits?: ReadLimits): BuiltinTool {
             `Read failed: "${abs}" is a directory, not a file. Use the Glob tool to list its contents.`,
           );
         }
+        // F3 (audit 2026-07-17): the directory check alone lets special files
+        // through — reading a FIFO with no writer blocks FOREVER (and abort
+        // cannot settle the pending fs read; only SIGKILL frees the process),
+        // and a size-0 char device like /dev/zero slips past the byte-cap
+        // pre-check into an unbounded read. Only regular files are readable.
+        if (!st.isFile()) {
+          return errorResult(
+            `Read failed: "${abs}" is not a regular file (FIFO/device/socket); reading it could block indefinitely.`,
+          );
+        }
         if (st.size > MAX_READ_BYTES) {
           return errorResult(
             `Read failed: "${abs}" is ${st.size} bytes, larger than the ${MAX_READ_BYTES}-byte (${Math.floor(
