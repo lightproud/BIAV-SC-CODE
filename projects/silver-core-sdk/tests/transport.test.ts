@@ -853,16 +853,22 @@ describe('AnthropicTransport streaming', () => {
     expect(events).toEqual([{ type: 'ping' }]);
     expect(error).toBeInstanceOf(APIConnectionError);
     expect((error as Error).message).toMatch(/idle for 120ms/);
-    // One event was delivered: not replay-safe, and an idle stall is not a
-    // salvageable truncation either.
-    expect((error as APIConnectionError).turnReplaySafe).toBe(false);
+    // Audit r2 A1 (assertion flipped): the only delivered event is a `ping`
+    // keep-alive — no message_start, so NOTHING of the message was consumed.
+    // Ping-only silence must classify like zero-event silence: replay-safe,
+    // and an idle stall is not a salvageable truncation either.
+    expect((error as APIConnectionError).turnReplaySafe).toBe(true);
     expect((error as APIConnectionError).midStreamTruncation).toBeUndefined();
   });
 
   it('streamMaxDurationMs hard cap cuts a flowing stream; delivered blocks stay salvageable', async () => {
+    // Audit r2 A1: replay/salvage flags now key on message_start, not the raw
+    // frame count — deliver a real message_start (not just a ping) so the cut
+    // stream genuinely has salvageable progress, preserving this test's intent.
+    const started = textReplyEvents('x').slice(0, 1);
     stubFetch([
       () =>
-        new Response(hangingStream(eventsToSse([{ type: 'ping' }])), {
+        new Response(hangingStream(eventsToSse([...started, { type: 'ping' }])), {
           status: 200,
         }),
     ]);
@@ -875,7 +881,7 @@ describe('AnthropicTransport streaming', () => {
       },
     });
     const { events, error } = await collectWithError(t.stream(baseReq()));
-    expect(events).toEqual([{ type: 'ping' }]);
+    expect(events).toEqual([...started, { type: 'ping' }]);
     expect(error).toBeInstanceOf(APIConnectionError);
     expect((error as APIConnectionError).code).toBe('stream_max_duration');
     expect((error as Error).message).toMatch(/hard cap \(40ms\)/);
@@ -925,11 +931,13 @@ describe('AnthropicTransport streaming', () => {
     const { error } = await collectWithError(t.stream(baseReq()));
     expect(error).toBeInstanceOf(APIConnectionError);
     // Both body governors off -> the whole-request timeout is the terminal
-    // cause (never-unbounded invariant), and P1 salvage-on-timeout marks the
-    // delivered event as a salvageable truncation.
+    // cause (never-unbounded invariant). Audit r2 A1 (assertions flipped):
+    // only a ping keep-alive was delivered — no message_start — so there is
+    // nothing to salvage and the turn is replay-safe, exactly as if the
+    // stream had been silent from the first byte.
     expect((error as Error).message).toMatch(/timed out after 40ms/);
-    expect((error as APIConnectionError).midStreamTruncation).toBe(true);
-    expect((error as APIConnectionError).turnReplaySafe).toBe(false);
+    expect((error as APIConnectionError).midStreamTruncation).toBe(false);
+    expect((error as APIConnectionError).turnReplaySafe).toBe(true);
   });
 });
 

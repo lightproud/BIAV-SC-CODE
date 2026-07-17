@@ -31,6 +31,9 @@ import { SDK_VERSION } from '../version.js';
 const MCP_PROTOCOL_VERSION = '2025-06-18';
 const CLIENT_INFO = { name: 'silver-core-sdk', version: SDK_VERSION } as const;
 const DEFAULT_REQUEST_TIMEOUT_MS = 60_000;
+/** Bound on the best-effort session-termination DELETE in close(): a dead or
+ *  unresponsive server must never stall teardown. */
+const SESSION_DELETE_TIMEOUT_MS = 2_000;
 /** Safety cap on tools/list pagination to avoid a misbehaving-server loop. */
 const MAX_LIST_PAGES = 100;
 
@@ -173,8 +176,32 @@ export class HttpMcpConnection {
     return parseResourcesList(result);
   }
 
-  /** Cancel all in-flight requests; further calls fail with AbortError. */
+  /** Terminate the server-side session (spec SHOULD: HTTP DELETE with the
+   *  session id), then cancel all in-flight requests; further calls fail with
+   *  AbortError. The DELETE is best-effort — servers MAY answer 405, and a
+   *  dead server must never make close() hang or throw — but skipping it
+   *  leaked one live server-side session per teardown until expiry. */
   async close(): Promise<void> {
+    if (this.closeController.signal.aborted) return;
+    if (this.sessionId !== undefined && this.initialized) {
+      try {
+        const controller = new AbortController();
+        const timer = setTimeout(() => controller.abort(), SESSION_DELETE_TIMEOUT_MS);
+        if (typeof timer.unref === 'function') timer.unref();
+        try {
+          const response = await fetch(this.url, {
+            method: 'DELETE',
+            headers: this.buildHeaders(),
+            signal: controller.signal,
+          });
+          await drainBody(response);
+        } finally {
+          clearTimeout(timer);
+        }
+      } catch {
+        // Best-effort only: the server may not support explicit termination.
+      }
+    }
     this.closeController.abort();
   }
 
@@ -200,6 +227,8 @@ export class HttpMcpConnection {
     payload: Record<string, unknown>,
     expectId: JsonRpcId | null,
     signal?: AbortSignal,
+    /** True on the single retry after a 404 session-expiry re-initialize. */
+    retriedAfterSessionLoss = false,
   ): Promise<unknown> {
     if (this.closeController.signal.aborted) {
       throw new AbortError(`MCP HTTP connection '${this.label}' closed`);
@@ -243,6 +272,33 @@ export class HttpMcpConnection {
       // Track and echo the server-assigned session id.
       const newSession = response.headers.get('mcp-session-id');
       if (newSession) this.sessionId = newSession;
+
+      // Session-expiry recovery (spec 2025-06-18: a request with a stale
+      // Mcp-Session-Id MUST get 404, and the client MUST start a NEW session
+      // with a fresh InitializeRequest). Previously the stale id was neither
+      // cleared nor re-initialized, so every later call kept echoing it and
+      // the connection stayed bricked until a manual reconnect. Recover once
+      // per request: drop the session, re-run the handshake, replay the call.
+      if (
+        !response.ok &&
+        response.status === 404 &&
+        this.sessionId !== undefined &&
+        !retriedAfterSessionLoss &&
+        // Never recover the handshake's own messages: a 404 inside connect()
+        // would recurse connect() -> post() -> connect() unboundedly.
+        payload.method !== 'initialize' &&
+        payload.method !== 'notifications/initialized'
+      ) {
+        await drainBody(response);
+        this.debug(
+          `[mcp:${this.label}] HTTP 404 with a session id — session expired; ` +
+            `re-initializing and retrying once`,
+        );
+        this.sessionId = undefined;
+        this.initialized = false;
+        await this.connect(signal);
+        return await this.post(payload, expectId, signal, true);
+      }
 
       if (!response.ok) {
         const detail = await safeReadText(response);
@@ -373,15 +429,15 @@ export class HttpMcpConnection {
           // missing handler to { action: 'decline' } (the documented auto-decline);
           // guarding here made that branch dead and replied -32601 instead
           // (found by the batch-3 onElicitation test, 2026-07-05).
+          // Handler failure and DELIVERY failure are distinct (audit r2 I7):
+          // a thrown handler falls back to the documented auto-decline payload
+          // BEFORE the single reply POST; a failed POST is only logged — never
+          // answered again, since a second reply to the same JSON-RPC id
+          // (e.g. decline after the accept POST failed mid-flight) violates
+          // JSON-RPC and can contradict a reply the server already received.
           void resolveElicitation(msg.params, this.elicitation, this.closeController.signal)
+            .catch(() => ({ action: 'decline' as const }))
             .then((result) => this.post({ jsonrpc: '2.0', id: replyId, result }, null))
-            .catch(() =>
-              this.post({ jsonrpc: '2.0', id: replyId, result: { action: 'decline' } }, null),
-            )
-            // The fallback decline POST can ITSELF reject (e.g. the connection
-            // is already closing -> post() throws AbortError). Without this
-            // terminal catch that second rejection is unhandled and can crash
-            // the process under a strict unhandledRejection policy.
             .catch((err: unknown) => {
               this.debug(
                 `[mcp:${this.label}] elicitation reply failed: ${

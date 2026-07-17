@@ -103,11 +103,20 @@ function boundMessage(text: string): string {
   return scrubbed.length > 2_000 ? `${scrubbed.slice(0, 2_000)}…` : scrubbed;
 }
 
-/** Pull a numeric HTTP status out of an arbitrary error-ish object. */
+/** Pull a numeric HTTP status out of an arbitrary error-ish object. Some
+ *  gateways serialize the status as a JSON STRING ("503"); a pure 3-digit
+ *  string is unambiguous, so accept it too (T5) — otherwise a retryable 5xx
+ *  classified as non-retryable purely for arriving quoted. */
 function pickStatus(obj: Record<string, unknown>): number | undefined {
   const candidates = [obj.status, obj.statusCode, obj.status_code, obj.code];
   for (const c of candidates) {
-    if (typeof c === 'number' && Number.isFinite(c) && c >= 100 && c < 600) return c;
+    const n =
+      typeof c === 'number'
+        ? c
+        : typeof c === 'string' && /^\d{3}$/.test(c.trim())
+          ? Number(c.trim())
+          : undefined;
+    if (n !== undefined && Number.isFinite(n) && n >= 100 && n < 600) return n;
   }
   return undefined;
 }
@@ -322,8 +331,44 @@ export function normalizeProviderError(
     });
   }
 
-  // 4) A raw gateway error object that reached us un-classified (the穿透 case).
-  const obj = extractProviderErrorObject(err);
+  // 4) An Error that reached us un-classified. Its OWN name / errorCodeOf are
+  // the truth (T1: extractProviderErrorObject used to run first, and since any
+  // Error has a string .message it swallowed EVERY Error — name was forced to
+  // 'ProviderError' and rawType to 'provider_error_object', so e.g. McpError
+  // lost its identity and the plain-Error branch was dead code). Provider-
+  // shaped extras (status / code / requestId, possibly from a nested envelope
+  // a gateway hung on the Error) are still harvested — guarded, because the
+  // extraction stringifies nested envelopes and a circular one would throw,
+  // violating the "never throws" contract (T2).
+  if (err instanceof Error) {
+    let obj: ReturnType<typeof extractProviderErrorObject> = null;
+    try {
+      obj = extractProviderErrorObject(err);
+    } catch {
+      obj = null;
+    }
+    const sdkCode = errorCodeOf(err);
+    const status = obj?.status;
+    return base({
+      name: err.name || 'Error',
+      message: boundMessage(err.message || String(err)),
+      status,
+      code: obj?.code ?? sdkCode,
+      requestId: obj?.requestId,
+      retryable: status !== undefined ? isRetryableHttpStatus(status) : false,
+      ...(status !== undefined ? { phase: 'response' as const } : {}),
+      rawType: sdkCode,
+    });
+  }
+
+  // 5) A raw gateway error object that reached us un-classified (the穿透
+  // case). Guarded for the same T2 reason as the Error branch above.
+  let obj: ReturnType<typeof extractProviderErrorObject> = null;
+  try {
+    obj = extractProviderErrorObject(err);
+  } catch {
+    obj = null;
+  }
   if (obj !== null) {
     const status = obj.status;
     return base({
@@ -335,16 +380,6 @@ export function normalizeProviderError(
       retryable: status !== undefined ? isRetryableHttpStatus(status) : false,
       phase: 'response',
       rawType: 'provider_error_object',
-    });
-  }
-
-  // 5) A plain Error with no upstream shape.
-  if (err instanceof Error) {
-    return base({
-      name: err.name || 'Error',
-      message: boundMessage(err.message || String(err)),
-      retryable: false,
-      rawType: errorCodeOf(err),
     });
   }
 

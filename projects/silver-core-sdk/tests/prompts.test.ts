@@ -6,9 +6,12 @@
 import { describe, expect, it } from 'vitest';
 import { buildSystemPromptParts, buildSystemPrompt } from '../src/engine/prompts.js';
 
+// Audit r2 E4: the dedicated-tool redirect fragments are now session-gated on
+// the tools they name, so the default context ships the full quintet (plus
+// Bash) — the 'Use Grep (NOT grep or rg)' assertions below require it.
 const ctx = () => ({
   cwd: '/tmp/run-xyz',
-  toolNames: ['Read', 'Write', 'Bash'],
+  toolNames: ['Read', 'Write', 'Edit', 'Grep', 'Glob', 'Bash'],
 });
 const preset = { type: 'preset' as const, preset: 'claude_code' as const };
 

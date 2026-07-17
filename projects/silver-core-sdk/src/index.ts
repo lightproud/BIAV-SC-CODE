@@ -275,6 +275,7 @@ export {
   APIStatusError,
   ConfigurationError,
   McpError,
+  MemoryToolError,
   NotImplementedError,
   errorCodeOf,
   isAbortError,

@@ -786,6 +786,20 @@ export async function runWorkflow(opts: WorkflowRunOptions): Promise<WorkflowRun
         pushProgress(`[agent#${index}] ${display}: failed (${res.content.slice(0, 120)})`);
         return null;
       }
+      // G1 (audit r2): `runInBackground: false` above is a REQUEST, not a
+      // guarantee — an opts.agentType resolving to an AgentDefinition with
+      // background:true forces a detached launch, and `res.content` is then a
+      // launch ACK, not the agent's output. Caching that ack as a completed
+      // journal result would permanently replace the real result (including
+      // across resumes). Workflow agents are synchronous by contract, so a
+      // background launch here is a script error, surfaced honestly.
+      if (res.background) {
+        pushProgress(
+          `[agent#${index}] ${display}: failed (agentType resolves to a background ` +
+            `agent definition; workflow agent() requires a synchronous agent)`,
+        );
+        return null;
+      }
       let value: unknown = res.content;
       if (agentOpts.schema !== undefined) {
         value = parseStructured(res.content, agentOpts.schema);

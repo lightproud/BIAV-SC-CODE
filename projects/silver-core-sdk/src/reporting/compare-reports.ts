@@ -35,7 +35,12 @@ export type DayAggregate = {
     costUsd: number;
   } | null;
   tools: { calls: number; errors: number; failureRate: number | null } | null;
-  failures: number;
+  /** Named-session error results; null on an empty-ledger day (N2: absence is
+   *  a fact — a 0 here forged a fake "-N failures" improvement delta). */
+  failures: number | null;
+  /** Lines readWindow rejected as wrong-shape (N5: a half-corrupt ledger must
+   *  not silently read as a traffic drop — REQ-1.1 "absence is a fact"). */
+  badLines: number;
 };
 
 export type MetricDelta = {
@@ -67,13 +72,22 @@ export async function aggregateDay(logDir: string, date: string): Promise<DayAgg
   }
   const from = new Date(`${date}T00:00:00.000Z`);
   const to = new Date(`${date}T23:59:59.999Z`);
+  // N6 (audit r2): the shape regex admits calendar-invalid dates (2026-02-30),
+  // which parse to Invalid Date and blew up later as an uncontrolled
+  // RangeError. The round-trip check rejects them with the same typed error
+  // as the shape guard.
+  if (Number.isNaN(from.getTime()) || from.toISOString().slice(0, 10) !== date) {
+    throw new ConfigurationError(
+      `compareReports: "${date}" is not a valid calendar date`,
+    );
+  }
   // Shape safety (audit 2026-07-14 M-12): this aggregation duplicates
   // runtime-report.ts's (L-7) and dereferences the same nested fields
   // (r.usage.*, r.total_cost_usd, r.transport_health, r.per_tool). Both
   // consumers are guarded at the shared readWindow choke point — its
   // isRunLogRecord() validator diverts wrong-shape lines into the bad-line
   // counter, so every record that reaches this loop is safe to dereference.
-  const { records } = await readWindow(logDir, from, to);
+  const { records, badLines } = await readWindow(logDir, from, to);
 
   const named = records.filter((r) => r.incognito !== true);
   const sessions = new Set(named.map((r) => r.session_id));
@@ -142,7 +156,11 @@ export async function aggregateDay(logDir: string, date: string): Promise<DayAgg
     unrecovered,
     tokens,
     tools,
-    failures: named.filter((r) => r.is_error).length,
+    // N2: an empty ledger day has no failure count at all — reporting 0 made
+    // the day-over-day delta fabricate an improvement (`-5`) out of missing
+    // data, violating the explicit-null contract every sibling metric obeys.
+    failures: records.length > 0 ? named.filter((r) => r.is_error).length : null,
+    badLines,
   };
 }
 
@@ -195,8 +213,8 @@ export async function compareReports(
   const lines: string[] = [
     `# compareReports — ${dateA} → ${dateB}`,
     '',
-    `- A: ${dateA} — ${a.records} records (${a.sessions} sessions${a.records === 0 ? ', 无数据' : ''})`,
-    `- B: ${dateB} — ${b.records} records (${b.sessions} sessions${b.records === 0 ? ', 无数据' : ''})`,
+    `- A: ${dateA} — ${a.records} records (${a.sessions} sessions${a.records === 0 ? ', 无数据' : ''}${a.badLines > 0 ? `, ${a.badLines} 坏行被剔` : ''})`,
+    `- B: ${dateB} — ${b.records} records (${b.sessions} sessions${b.records === 0 ? ', 无数据' : ''}${b.badLines > 0 ? `, ${b.badLines} 坏行被剔` : ''})`,
     '',
     '| metric | A | B | delta (B-A) |',
     '|---|---|---|---|',

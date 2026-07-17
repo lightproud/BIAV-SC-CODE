@@ -169,6 +169,16 @@ export class StdioMcpConnection {
       this.debug(
         `[mcp:${this.label}] process exited (code=${String(code)}, signal=${String(sig)})`,
       );
+      // Fail fast for NEW requests, but do NOT reject pending ones yet
+      // (audit r2 I3): a server that writes its final response and exits
+      // immediately may still have that response sitting in the stdout pipe
+      // buffer when 'exit' fires. 'close' fires only after the stdio streams
+      // have flushed, so deferring the rejection there lets the buffered
+      // response reach its waiter instead of being rejected as
+      // mcp_server_exited and then dropped as an unknown late line.
+      this.closed = true;
+    });
+    child.on('close', () => {
       this.closed = true;
       this.failAllPending(
         new McpError(
@@ -361,13 +371,15 @@ export class StdioMcpConnection {
         // guarding here made that branch dead and replied -32601 instead
         // (found by the batch-3 onElicitation test, 2026-07-05).
         const replyId = msg.id as JsonRpcId;
+        // Handler failure and DELIVERY failure are distinct (audit r2 I7):
+        // a thrown handler falls back to the documented auto-decline payload
+        // BEFORE the single reply write; a failed write is only logged —
+        // never answered again, since a second reply to the same JSON-RPC id
+        // violates JSON-RPC and can contradict an already-delivered reply.
+        // Mirrors http.ts.
         void resolveElicitation(msg.params, this.elicitation, this.lifeController.signal)
+          .catch(() => ({ action: 'decline' as const }))
           .then((result) => this.write({ jsonrpc: '2.0', id: replyId, result }))
-          .catch(() => this.write({ jsonrpc: '2.0', id: replyId, result: { action: 'decline' } }))
-          // The fallback decline write can ITSELF throw (e.g. the connection is
-          // already closing -> write() throws McpError). Without this terminal
-          // catch that second rejection is unhandled and can crash the process
-          // under a strict unhandledRejection policy. Mirrors http.ts.
           .catch((err: unknown) => {
             this.debug(
               `[mcp:${this.label}] elicitation reply failed: ${

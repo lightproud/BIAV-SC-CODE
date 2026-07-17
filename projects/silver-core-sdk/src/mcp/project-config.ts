@@ -30,6 +30,7 @@ export function loadProjectMcpServers(
   cwd: string,
   settingSources: SettingSource[] | undefined,
   debug: (msg: string) => void,
+  env: Record<string, string | undefined> = process.env,
 ): Record<string, McpServerConfig> {
   if (!resolveSettingSources(settingSources).includes('project')) {
     return {};
@@ -74,7 +75,35 @@ export function loadProjectMcpServers(
       debug(`project-config: skipping malformed server entry "${name}"`);
       continue;
     }
-    out[name] = value as McpServerConfig;
+    out[name] = expandEnvVars(value, env) as McpServerConfig;
   }
   return out;
+}
+
+/**
+ * Expand `${VAR}` / `${VAR:-default}` references in every string value of a
+ * server entry (command, args, env, url, headers, ...), mirroring the
+ * reference CLI's .mcp.json semantics. Without this, a config like
+ * `"Authorization": "Bearer ${TOKEN}"` went to the wire verbatim and the
+ * child env received the literal `${...}` — a silent 401. An undefined
+ * variable with no default is left unexpanded so the failure stays visible
+ * in error messages instead of collapsing to an empty string.
+ */
+function expandEnvVars(
+  value: unknown,
+  env: Record<string, string | undefined>,
+): unknown {
+  if (typeof value === 'string') {
+    return value.replace(
+      /\$\{([A-Za-z_][A-Za-z0-9_]*)(?::-([^}]*))?\}/g,
+      (match, name: string, def: string | undefined) => env[name] ?? def ?? match,
+    );
+  }
+  if (Array.isArray(value)) return value.map((v) => expandEnvVars(v, env));
+  if (value !== null && typeof value === 'object') {
+    const out: Record<string, unknown> = {};
+    for (const [k, v] of Object.entries(value)) out[k] = expandEnvVars(v, env);
+    return out;
+  }
+  return value;
 }

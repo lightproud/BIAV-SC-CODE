@@ -24,15 +24,26 @@
  * regression test in thinking-model.test.ts locks the mapping.
  */
 
-/** Pre-4.6 model families that reject `{type:'adaptive'}` and take budget_tokens. */
+/** Pre-4.6 model families that reject `{type:'adaptive'}` and take budget_tokens.
+ *  The `(?:opus|sonnet|haiku)-4(?!-?\d)` alternative catches the BARE family id
+ *  (`claude-opus-4`, `claude-opus-4-v1:0`) without swallowing versioned ids —
+ *  a digit after `-4` defers to the explicit minor-version alternatives, so
+ *  4.6+ ids still fall through to adaptive. */
 const PRE_ADAPTIVE_THINKING =
-  /(haiku-4-5|sonnet-4-5|sonnet-4-0|sonnet-4-2|opus-4-5|opus-4-1|opus-4-0|opus-4-2|claude-3|claude-2|instant)/i;
+  /(haiku-4-5|sonnet-4-5|sonnet-4-0|sonnet-4-2|opus-4-5|opus-4-1|opus-4-0|opus-4-2|(?:opus|sonnet|haiku)-4(?!-?\d)|claude-3|claude-2|instant)/i;
 
 /**
  * True when `model` accepts `{type:'adaptive'}` thinking (4.6-generation and
  * later). False for the known pre-adaptive families, which require
  * `{type:'enabled', budget_tokens}` instead.
+ *
+ * E7 (audit r2): provider spellings are normalized before the match — Vertex
+ * ids separate the date with `@` (`claude-opus-4@20250514`) and some surfaces
+ * use dots (`claude-4.5-...`); the hyphen-keyed denylist never matched those,
+ * so a pre-adaptive model on Vertex fell through to adaptive and 400'd every
+ * request (exactly the haiku-storm this module exists to prevent).
  */
 export function supportsAdaptiveThinking(model: string): boolean {
-  return !PRE_ADAPTIVE_THINKING.test(model);
+  const normalized = model.toLowerCase().replace(/[@.]/g, '-');
+  return !PRE_ADAPTIVE_THINKING.test(normalized);
 }

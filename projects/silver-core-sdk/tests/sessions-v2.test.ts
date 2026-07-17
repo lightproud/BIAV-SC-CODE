@@ -687,10 +687,20 @@ describe('session helpers (external store)', () => {
   });
 
   it('renameSession appends a meta_update through the store', async () => {
+    // Audit r2 J3: the session must EXIST first — renaming a nonexistent id
+    // used to blind-append and conjure a ghost session.
+    await store.append({ projectKey: PK, sessionId: 'e2' }, [
+      { type: 'user', uuid: 'u-e2', session_id: 'e2', message: { role: 'user', content: 'hi' } },
+    ]);
     await renameSession('e2', 'T', opts());
     const entries = await store.load({ projectKey: PK, sessionId: 'e2' });
-    expect(entries?.[0]?.type).toBe('meta_update');
-    expect(entries?.[0]?.customTitle).toBe('T');
+    const meta = entries?.find((e) => e.type === 'meta_update');
+    expect(meta?.customTitle).toBe('T');
+  });
+
+  it('renameSession/tagSession on a nonexistent session throw instead of creating a ghost (audit r2 J3)', async () => {
+    await expect(renameSession('no-such', 'T', opts())).rejects.toThrow(/does not exist/);
+    expect(await store.load({ projectKey: PK, sessionId: 'no-such' })).toBeNull();
   });
 
   it('deleteSession cascades via store.delete', async () => {

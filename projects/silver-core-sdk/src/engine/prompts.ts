@@ -175,15 +175,22 @@ export function buildSystemPromptParts(
     };
   }
   // Segments form is composed by the caller and handled upstream (query.ts);
-  // if it ever reaches here, flatten it defensively rather than throw.
+  // if it ever reaches here, flatten it defensively rather than throw. E8
+  // (audit r2): "defensively" must include the segments themselves — a null
+  // entry or a missing/non-string `text` made this self-described no-throw
+  // path throw a TypeError (config-builder applies the same filter).
   if (opt !== undefined && opt.type === 'segments') {
-    const stable = opt.segments.map((s) => s.text).join('\n\n');
+    const segments = (Array.isArray(opt.segments) ? opt.segments : []).filter(
+      (s): s is (typeof opt.segments)[number] =>
+        s !== null && typeof s === 'object' && typeof s.text === 'string' && s.text.length > 0,
+    );
+    const stable = segments.map((s) => s.text).join('\n\n');
     return {
       stable,
       base: stable,
       project: '',
       volatile: '',
-      parts: opt.segments.map((s) => ({
+      parts: segments.map((s) => ({
         role: 'segment',
         label: s.label,
         estTokens: estimateTextTokens(s.text),

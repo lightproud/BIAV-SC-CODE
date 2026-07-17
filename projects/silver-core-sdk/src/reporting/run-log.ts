@@ -133,7 +133,18 @@ export function createRunLogSink(args: {
   const { runLog, incognito, debug } = args;
   let dirReady: Promise<void> | null = null;
   const ensureDir = (): Promise<void> => {
-    dirReady ??= mkdir(runLog.dir, { recursive: true }).then(() => undefined);
+    // N4 (audit r2): memoize only SUCCESS. Caching a rejected mkdir promise
+    // meant one transient failure (ENOSPC, a permissions blip) permanently
+    // killed the ledger for the rest of the process — every later append
+    // re-awaited the same cached rejection and the self-improvement loop's
+    // signal source went silently dark.
+    dirReady ??= mkdir(runLog.dir, { recursive: true }).then(
+      () => undefined,
+      (err) => {
+        dirReady = null;
+        throw err;
+      },
+    );
     return dirReady;
   };
   // Appends are SERIALIZED on one promise chain: two concurrent fire-and-

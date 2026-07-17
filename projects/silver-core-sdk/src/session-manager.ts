@@ -710,9 +710,17 @@ export function createBptSession(options: SessionManagerOptions = {}): SessionMa
             // input stream lets the resumed query's §5.2 redrive continue the
             // interrupted turn, then end.
             prompt: resume !== undefined ? emptyInputStream() : queryArgs.prompt,
+            // J1 (audit r2): forkSession must NOT survive into the resume
+            // re-drive. The caller's forkSession applies to the ORIGINAL
+            // query; carried into supervision it turned every recovery attempt
+            // into a fork — a fresh transcript copy per attempt (fork-of-fork
+            // compounding), no §5.2 redrive of the interrupted turn (a fork
+            // has no dangling checkpoint), and with the empty input stream the
+            // "recovered" run simply ended, leaving the consumer's stream
+            // silently un-resumed.
             options:
               resume !== undefined
-                ? { ...effective, resume: resume.sessionId }
+                ? { ...effective, resume: resume.sessionId, forkSession: false }
                 : effective,
             _internal: { transport, mcpRegistry: shared },
           }),

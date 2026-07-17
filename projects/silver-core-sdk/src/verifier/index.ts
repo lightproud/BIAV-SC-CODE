@@ -124,7 +124,18 @@ export async function adversarialVerify(
 /** Pure parser for the verdict reply (unit-testable, no I/O). FAILS CLOSED. */
 export function parseVerdict(raw: string): VerificationResult {
   const obj = extractJsonObject(raw);
-  if (obj !== null && typeof obj === 'object') {
+  // N3 (audit r2): an extracted object counts as the model's JSON REPLY only
+  // when it carries a `verdict` field or the raw text shows an object-literal
+  // signature (`{"` — a brace opening a quoted key). Braces are routine in
+  // code-talk ("the `{}` initializer"), and treating any scavengeable object
+  // as authoritative forced a clear bare CONFIRMED down to REFUTED because
+  // the incidental `{}` had no verdict field.
+  const attemptedJson = /\{\s*"/.test(raw);
+  if (
+    obj !== null &&
+    typeof obj === 'object' &&
+    (attemptedJson || typeof (obj as Record<string, unknown>).verdict === 'string')
+  ) {
     // A JSON reply is AUTHORITATIVE: the verdict is only what the `verdict`
     // field says. An absent/invalid verdict fails CLOSED to REFUTED — we must
     // NOT scavenge a verdict word out of the rationale prose (a rationale that
@@ -138,12 +149,11 @@ export function parseVerdict(raw: string): VerificationResult {
       typeof rec.confirms === 'string' && rec.confirms.length > 0 ? rec.confirms : undefined;
     return buildResult(verdict, quote, rationale, confirms);
   }
-  // extractJsonObject found nothing parseable. If the reply ATTEMPTED JSON (it
-  // contains a brace), a parse failure — e.g. a reply truncated at max_tokens
-  // right after a valid token — fails CLOSED rather than scavenging a word out
-  // of the broken JSON. Only a reply with no brace at all is treated as a
-  // genuine bare-word verdict.
-  if (raw.includes('{')) {
+  // No authoritative JSON reply. If the reply ATTEMPTED one (the `{"` object-
+  // literal signature — see the N3 note above), a parse failure — e.g. a reply
+  // truncated at max_tokens right after a valid token — fails CLOSED rather
+  // than scavenging a word out of the broken JSON.
+  if (attemptedJson) {
     return { ...buildResult(SAFE_VERDICT, undefined, '', undefined), parseFailed: true };
   }
   const bare = parseBareVerdict(raw);

@@ -16,6 +16,71 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.65.4 — 2026-07-17
+
+T50 batch K: 38 mid-severity (P1) fixes from the second-round 105-defect
+audit (`Public-Info-Pool/Resource/repo-engineering/silver-core-sdk-bug-audit-r2-20260717.md`)
+— transport / MCP / sessions / error-normalization / prompts / reporting.
+No new surfaces; pure bug fixes plus one documented WONTFIX-candidate. By
+module:
+
+- **transport (A1/A2/B1/B2/B4; B3 documented)**: replay-safety and salvage
+  flags key on `message_start`, not the raw frame count — ping-only silence
+  classifies like zero-event silence in both arms (A1); timeout/watchdog
+  resolutions clamp to the 32-bit setTimeout ceiling so an "unbounded"
+  config no longer overflows into a ~1ms killer (A2); tool-call
+  `content_block_start` defers to the first argument bytes so name fragments
+  arriving after the id chunk survive (B1); permanent `insufficient_quota`
+  429s skip the retry budget (B2, twin-parity both arms); an unrecognized
+  `finish_reason` (vLLM `abort`, DeepSeek resource-exhaustion) surfaces as a
+  truncated turn instead of a forged clean `end_turn` (B4); `json_schema`
+  without `strict:true` documented as deliberate best-effort pending a
+  keeper ruling (B3, WONTFIX candidate).
+- **mcp (I1/I3/I4/I5/I6/I7, S1/S2)**: HTTP 404 with a session id clears the
+  stale session, re-initializes, and replays once per spec 2025-06-18 (I1);
+  stdio defers pending-rejection from `exit` to `close` so a final buffered
+  response reaches its waiter (I3); `.mcp.json` values expand
+  `${VAR}`/`${VAR:-default}` (I4); `close()` sends the spec-SHOULD session
+  DELETE, bounded at 2s (I5); 401/403 handshakes surface as `needs-auth`
+  (I6); elicitation replies separate handler failure (auto-decline) from
+  delivery failure (log-only) — never two replies per JSON-RPC id (I7);
+  root-level `$ref` schemas from zod are inlined (S1); SDK tool names are
+  validated at definition time — charset + 128-char qualified cap (S2).
+- **sessions (J1–J4)**: supervised auto-resume strips `forkSession` from
+  the re-drive (no more fork-per-recovery-attempt, the interrupted turn is
+  actually redriven); checkpoint `bind()` re-arms the torn-tail self-heal
+  per session; rename/tag/fork of a nonexistent session throw instead of
+  conjuring ghost/phantom sessions.
+- **errors (T1/T2/T3/T5, M2-3)**: `normalizeProviderError` checks Error
+  instances before the raw-object branch, so real names/codes survive
+  (McpError identity restored) and never throws on circular envelopes;
+  string HTTP statuses (`"503"`) classify retryable; `MemoryToolError` is
+  exported from the barrel and covered by `errorCodeOf`.
+- **prompts (E4–E8)**: dedicated-tool redirect fragments are session-gated
+  on the tools they name (E4, minimal-set golden regenerated); injected
+  system parts keep wire order in the labeled composition (E5); `<env>`
+  Today's date is host-local (E6); the pre-adaptive thinking denylist
+  understands Vertex `@`-dates and bare family ids (E7); segments flatten
+  filters null/textless entries (E8).
+- **reporting/verifier/generators (N2–N7)**: empty-ledger days report
+  `failures: null` and carry `badLines` (N2/N5); `parseVerdict` only treats
+  an object-literal signature as attempted JSON — code-talk braces no
+  longer force REFUTED (N3); a transient mkdir failure no longer
+  permanently kills the run-log (N4); calendar-invalid dates get the typed
+  error (N6); title generators never leak a JSON blob as a title (N7).
+- **engine/tools (C1/C4, G1/G2)**: a non-abort mid-tool-batch crash
+  persists the assistant turn + completed results + placeholders before
+  rethrowing, so resume cannot re-execute side-effectful tools (C1);
+  `message_delta` cannot reset a delivered stop_reason (C4); workflow
+  `agent()` rejects a background-forced launch ack instead of caching it as
+  the result (G1); WebFetch decodes per declared charset with UTF-8
+  fallback (G2).
+
+Regression locks: `tests/audit-t50-batch-k.test.ts` (23) + flipped/updated
+assertions in transport.test.ts / sessions-v2.test.ts / prompts.test.ts and
+the regenerated minimal-set v5 golden (each previously locking an
+audit-confirmed defect).
+
 ## 0.65.3 — 2026-07-17
 
 T50 batch E: permission & path-security hardening (6 items, P0-security) from
