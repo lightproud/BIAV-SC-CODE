@@ -40,8 +40,9 @@ import type {
 
 const DEFAULT_TRANSCRIPT_TAIL_BYTES = 32_768;
 
-/** Bounded tail read; any I/O trouble degrades to ''. */
-function readFileTail(path: string, maxBytes: number): string {
+/** Bounded tail read; any I/O trouble degrades to ''. Shared with the hook
+ *  runner's Stop-condition context (M12). */
+export function readFileTail(path: string, maxBytes: number): string {
   let fd: number | undefined;
   try {
     fd = openSync(path, 'r');

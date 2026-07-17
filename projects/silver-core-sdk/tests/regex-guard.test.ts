@@ -171,7 +171,7 @@ describe('BashOutput filter guard (audit 2026-07-14 M-2)', () => {
   it("rejects a '(a+)+$' filter with a clear error and does NOT advance the cursors", async () => {
     const dir = await makeCorpus();
     const ctx = makeCtx(dir, true);
-    const launched = manager!.spawnBackground('bash', 'echo keep-me', ctx) as { id: string };
+    const launched = await manager!.spawnBackground('bash', 'echo keep-me', ctx) as { id: string };
     const id = launched.id;
     await until(() => manager!.get(id)!.status !== 'running');
 
@@ -189,7 +189,7 @@ describe('BashOutput filter guard (audit 2026-07-14 M-2)', () => {
   it('a normal filter still applies per line', async () => {
     const dir = await makeCorpus();
     const ctx = makeCtx(dir, true);
-    const launched = manager!.spawnBackground(
+    const launched = await manager!.spawnBackground(
       'bash',
       'echo keep-alpha; echo drop-beta',
       ctx,

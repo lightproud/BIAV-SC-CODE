@@ -1164,6 +1164,10 @@ export async function* runAgentLoop(
                   `tool-loop turn is signed by the failing model ${model} and its thinking ` +
                   `is API-required; surfacing the original error to avoid an invalid-signature 400`,
               );
+              // M9 (audit 2026-07-17): terminal throw still folds the doomed
+              // attempt's billed tokens (its message_start already carried
+              // input tokens), matching the abort / replay / fallback paths.
+              if (firstSink.usage !== undefined) recordUsage(model, firstSink.usage);
               throw err;
             }
             deps.debug(
@@ -1200,6 +1204,11 @@ export async function* runAgentLoop(
             }
             break;
           }
+          // M9 (audit 2026-07-17): the plain terminal path (no abort, no
+          // replay, no fallback) was the ONE exit that dropped the failed
+          // attempt's already-billed tokens; fold them so the error-path cost
+          // totals stay honest, exactly as every sibling exit above does.
+          if (firstSink.usage !== undefined) recordUsage(model, firstSink.usage);
           throw err;
         }
       }

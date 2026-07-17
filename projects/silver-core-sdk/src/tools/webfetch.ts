@@ -562,6 +562,20 @@ export const webFetchTool: BuiltinTool = {
         );
       }
 
+      // M20 (audit 2026-07-17): 204 No Content / 205 Reset Content are bodyless
+      // SUCCESSES — they carry no content-type, so falling through to the gate
+      // below misreported them as `unsupported content type "unknown"`. Report
+      // the empty success honestly instead.
+      if (response.status === 204 || response.status === 205) {
+        const emptyBody = response.body;
+        if (emptyBody !== null && typeof emptyBody.cancel === 'function') {
+          void emptyBody.cancel().catch(() => {});
+        }
+        return {
+          content: `HTTP ${response.status} ${response.statusText || 'No Content'}: the request succeeded and returned no content.`,
+        };
+      }
+
       const contentType = response.headers.get('content-type') ?? '';
       if (!isTextualContentType(contentType)) {
         return rejectUnread(

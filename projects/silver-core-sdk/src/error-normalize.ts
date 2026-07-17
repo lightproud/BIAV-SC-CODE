@@ -149,7 +149,13 @@ export function extractProviderErrorObject(value: unknown): {
       ? (top.error as Record<string, unknown>)
       : undefined;
 
-  const messageSrc = nested?.message ?? top.message;
+  // Some gateways put a bare STRING in `error` ({ error: 'rate limited',
+  // status: 503 }) — treat it as the message so the sibling status/code are
+  // not lost to the generic fallback (which would report retryable:false).
+  const errString =
+    typeof top.error === 'string' && top.error.length > 0 ? top.error : undefined;
+
+  const messageSrc = nested?.message ?? top.message ?? errString;
   // A bare object with neither a message nor an error envelope is not one of the
   // error shapes we own — let the caller fall back to its own handling.
   if (nested === undefined && typeof messageSrc !== 'string') return null;
@@ -195,6 +201,17 @@ export function looksLikeErrorObject(value: unknown): boolean {
   const obj = value as Record<string, unknown>;
   // Nested { error: {...} } envelope.
   if (typeof obj.error === 'object' && obj.error !== null) return true;
+  // String-error form { error: 'rate limited', status: 503 } — same guard as
+  // below: a real stream event always carries a `type` discriminator, and we
+  // additionally require a status so plain content objects are never swallowed.
+  if (
+    obj.type === undefined &&
+    typeof obj.error === 'string' &&
+    obj.error.length > 0 &&
+    typeof pickStatus(obj) === 'number'
+  ) {
+    return true;
+  }
   // Bare { message, status } with no stream-event `type` (real stream events
   // ALWAYS carry a known `type` discriminator, so this cannot swallow one).
   return (

@@ -74,6 +74,12 @@ type ServerEntry = {
    *  connection instead of publishing it onto the abandoned entry, where the
    *  child process would leak forever (nothing closes it again). */
   retired?: boolean;
+  /** M19 (audit 2026-07-17) — per-entry reconnect serialization chain. Two
+   *  concurrent reconnect() calls used to interleave close/reset/connect: one
+   *  suspended in close() could resume AFTER the other had already published a
+   *  fresh connection, null it out, and orphan its child process. Reconnects
+   *  for the same server now queue onto this chain. */
+  reconnecting?: Promise<void> | null;
 };
 
 export class DefaultMcpRegistry implements McpRegistry {
@@ -268,27 +274,49 @@ export class DefaultMcpRegistry implements McpRegistry {
     return await entry.connection.readResourceDir(uri, signal);
   }
 
-  /** Tear down and re-establish one server's connection. Never throws. */
+  /** Tear down and re-establish one server's connection. Never throws.
+   *  Concurrent calls for the same server run one after another (M19): the
+   *  close/reset/connect sequence is not interleave-safe, so each caller
+   *  queues onto the entry's reconnect chain. */
   async reconnect(serverName: string): Promise<void> {
     const entry = this.entries.find((e) => e.name === serverName);
     if (!entry) {
       this.debug(`[mcp] reconnect: unknown server '${serverName}'`);
       return;
     }
-    if (entry.connection) {
-      try {
-        await entry.connection.close();
-      } catch (err) {
-        this.debug(`[mcp] error closing '${entry.name}': ${errMessage(err)}`);
+    const run = async (): Promise<void> => {
+      // Let any in-flight connect publish (or fail) first, so the close below
+      // sees the real current connection instead of racing its publication.
+      if (entry.connecting) {
+        try {
+          await entry.connecting;
+        } catch {
+          // connectEntry never rejects; belt-and-braces only.
+        }
       }
-      entry.connection = null;
+      if (entry.connection) {
+        try {
+          await entry.connection.close();
+        } catch (err) {
+          this.debug(`[mcp] error closing '${entry.name}': ${errMessage(err)}`);
+        }
+        entry.connection = null;
+      }
+      entry.tools = [];
+      entry.serverInfo = undefined;
+      entry.error = undefined;
+      entry.baseStatus = 'pending';
+      if (!entry.enabled) return; // Stays disconnected until re-enabled.
+      await this.connectEntry(entry);
+    };
+    const prev = entry.reconnecting ?? Promise.resolve();
+    const next = prev.then(run, run);
+    entry.reconnecting = next;
+    try {
+      await next;
+    } finally {
+      if (entry.reconnecting === next) entry.reconnecting = null;
     }
-    entry.tools = [];
-    entry.serverInfo = undefined;
-    entry.error = undefined;
-    entry.baseStatus = 'pending';
-    if (!entry.enabled) return; // Stays disconnected until re-enabled.
-    await this.connectEntry(entry);
   }
 
   setEnabled(serverName: string, enabled: boolean): void {

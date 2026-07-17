@@ -434,6 +434,16 @@ export class HttpMcpConnection {
           // event:/id:/retry: fields are irrelevant for response extraction.
         }
       }
+      // M10 (audit 2026-07-17): a final `data:` line with NO trailing newline
+      // never left `buffer` (the line loop only consumes up to '\n'), so a
+      // server omitting the last newline had its whole response dropped as
+      // mcp_invalid_response. The stream is over — treat the remnant as a
+      // complete line at EOF.
+      let tailLine = buffer;
+      if (tailLine.endsWith('\r')) tailLine = tailLine.slice(0, -1);
+      if (tailLine.startsWith('data:')) {
+        dataLines.push(tailLine.slice(5).replace(/^ /, ''));
+      }
       // Flush a trailing frame in case the stream ended without a blank line.
       if (dataLines.length > 0) {
         const outcome = handleEvent(dataLines.join('\n'));

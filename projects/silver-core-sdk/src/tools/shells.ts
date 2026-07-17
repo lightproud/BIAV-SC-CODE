@@ -70,7 +70,7 @@ export function createShellManager(debug: (msg: string) => void): ShellManager {
   return {
     stateDir,
 
-    spawnBackground(shell, command, ctx, disableSandbox = false) {
+    async spawnBackground(shell, command, ctx, disableSandbox = false) {
       const id = `bash_${nextId++}`;
       // Wrap through the sandbox backend (default-on) unless unsandboxed or the
       // escape hatch is engaged for this launch.
@@ -86,6 +86,26 @@ export function createShellManager(debug: (msg: string) => void): ShellManager {
         });
       } catch (err) {
         return { error: err instanceof Error ? err.message : String(err) };
+      }
+
+      // M11 (audit 2026-07-17): a detached spawn reports ENOENT ASYNCHRONOUSLY
+      // (the 'error' event), so the try/catch above never sees a missing shell
+      // — the launch was acked as running and only later flipped to 'failed',
+      // silently. Wait for the spawn/error race (exactly one fires, promptly)
+      // so a missing `bash` is a RETURNED error the caller's candidate chain
+      // (bash -> sh, Windows Git Bash resolution) can fall through on.
+      const spawnFailure = await new Promise<Error | null>((resolve) => {
+        child.once('spawn', () => resolve(null));
+        child.once('error', (err: Error) => resolve(err));
+      });
+      if (spawnFailure !== null) {
+        const errno = spawnFailure as NodeJS.ErrnoException;
+        return {
+          error:
+            errno.code === 'ENOENT'
+              ? `spawn ${plan.command} ENOENT`
+              : spawnFailure.message,
+        };
       }
 
       // Terminate the shell's whole tree, platform-correctly: POSIX signals

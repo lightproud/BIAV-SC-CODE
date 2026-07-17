@@ -135,7 +135,7 @@ export const monitorTool: BuiltinTool = {
     const candidates = resolvePosixShells(ctx.env as Record<string, string | undefined>);
     let launched: { id: string } | { error: string } = { error: SHELL_NOT_FOUND_GUIDANCE };
     for (const shell of candidates) {
-      launched = shellsMgr.spawnBackground(shell, command, ctx);
+      launched = await shellsMgr.spawnBackground(shell, command, ctx);
       if (!('error' in launched)) break;
     }
     if ('error' in launched) {

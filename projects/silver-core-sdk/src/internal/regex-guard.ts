@@ -39,44 +39,129 @@ export const MAX_REGEX_PATTERN_LENGTH = 1024;
 export function hasNestedQuantifier(pattern: string): boolean {
   const isRepeatQuant = (c: string | undefined): boolean =>
     c === '*' || c === '+' || c === '{';
-  // Per open group: does its body (at ANY depth) contain a repetition quantifier?
-  const bodyHasRepeat: boolean[] = [];
-  const markAllOpenGroups = (): void => {
-    for (let k = 0; k < bodyHasRepeat.length; k += 1) bodyHasRepeat[k] = true;
+  // Per open group: does its body (at ANY depth) contain a repetition
+  // quantifier? Alongside (M2, audit 2026-07-17): the first atom of each
+  // top-level branch inside the group, so a quantified group whose alternation
+  // branches OVERLAP — `(a|a)+`, `(a|ab)+`, `(\d|\d\d)+` — is flagged too.
+  // Star height 1 is enough for catastrophic backtracking when the branches
+  // are ambiguous: every input position doubles the match paths. Branch-first
+  // comparison keeps the guard conservative: `(foo|bar)+` (disjoint first
+  // atoms) and unquantified alternations keep working. First-atom descriptors:
+  //   'L<ch>' literal · 'C<class>' \d/\w/[...]-style class · 'A' bare dot ·
+  //   null unknown (subgroup / anchor — never treated as overlapping).
+  type GroupState = {
+    bodyHasRepeat: boolean;
+    branchFirsts: (string | null)[];
+    expectingFirst: boolean;
+    hasAmbiguousAlt: boolean;
+  };
+  const groups: GroupState[] = [];
+  const markAllOpenRepeat = (): void => {
+    for (const g of groups) g.bodyHasRepeat = true;
+  };
+  const recordFirst = (desc: string | null): void => {
+    const top = groups[groups.length - 1];
+    if (top !== undefined && top.expectingFirst) {
+      top.branchFirsts.push(desc);
+      top.expectingFirst = false;
+    }
+  };
+  const overlaps = (a: string | null, b: string | null): boolean => {
+    if (a === null || b === null) return false;
+    if (a === 'A' || b === 'A') return true; // bare '.' matches anything
+    return a === b;
+  };
+  const anyBranchOverlap = (firsts: (string | null)[]): boolean => {
+    for (let x = 0; x < firsts.length; x += 1) {
+      for (let y = x + 1; y < firsts.length; y += 1) {
+        if (overlaps(firsts[x] ?? null, firsts[y] ?? null)) return true;
+      }
+    }
+    return false;
   };
   for (let i = 0; i < pattern.length; i += 1) {
     const ch = pattern[i];
     if (ch === '\\') {
+      const next = pattern[i + 1];
+      // Class-shorthand escapes keep their class identity; any other escape is
+      // a literal atom of that character (`\.` is a literal dot, never 'A').
+      recordFirst(
+        next === undefined
+          ? null
+          : /[wdsWDS]/.test(next)
+            ? `C\\${next}`
+            : `L${next}`,
+      );
       i += 1; // escaped metachar is a literal atom; skip it
       continue;
     }
     if (ch === '[') {
       // character class: consume to the closing ']' so parens/quantifier chars
       // inside it are treated as literals, not structure.
+      const start = i;
       i += 1;
       while (i < pattern.length && pattern[i] !== ']') {
         if (pattern[i] === '\\') i += 1;
         i += 1;
       }
+      recordFirst(`C${pattern.slice(start, i + 1)}`);
       continue;
     }
     if (ch === '(') {
-      bodyHasRepeat.push(false);
+      recordFirst(null); // a subgroup is an opaque first atom for the parent
+      groups.push({
+        bodyHasRepeat: false,
+        branchFirsts: [],
+        expectingFirst: true,
+        hasAmbiguousAlt: false,
+      });
+      // Skip non-capturing / named / lookaround prefixes ('?:', '?<name>',
+      // '?=', '?!', '?<=', '?<!') so they are not read as branch atoms.
+      if (pattern[i + 1] === '?') {
+        i += 1;
+        if (pattern[i + 1] === '<' && pattern[i + 2] !== '=' && pattern[i + 2] !== '!') {
+          while (i < pattern.length && pattern[i] !== '>') i += 1;
+        } else if (pattern[i + 1] === ':' || pattern[i + 1] === '=' || pattern[i + 1] === '!') {
+          i += 1;
+        } else if (pattern[i + 1] === '<') {
+          i += 2; // '<=' or '<!'
+        }
+      }
       continue;
     }
     if (ch === ')') {
-      const closedBodyRepeat = bodyHasRepeat.pop() ?? false;
+      const closed = groups.pop();
+      const closedBodyRepeat = closed?.bodyHasRepeat ?? false;
+      const closedAmbiguous =
+        (closed !== undefined && anyBranchOverlap(closed.branchFirsts)) ||
+        (closed?.hasAmbiguousAlt ?? false);
       // Look past optional whitespace for a quantifier applied to THIS group.
       let j = i + 1;
       while (j < pattern.length && /\s/.test(pattern[j] ?? '')) j += 1;
       const outerQuantified = isRepeatQuant(pattern[j]);
       // A repetition-bearing group that is itself repeated = star height >= 2.
       if (outerQuantified && closedBodyRepeat) return true;
+      // A quantified group whose branches overlap = exponential ambiguity.
+      if (outerQuantified && closedAmbiguous) return true;
+      // Ambiguity survives nesting: `((a|a))+` is as bad as `(a|a)+`.
+      const parent = groups[groups.length - 1];
+      if (parent !== undefined && closedAmbiguous) parent.hasAmbiguousAlt = true;
       // A quantified group counts as a repetition within its parent's body.
-      if (outerQuantified) markAllOpenGroups();
+      if (outerQuantified) markAllOpenRepeat();
       continue;
     }
-    if (isRepeatQuant(ch)) markAllOpenGroups(); // in-body repetition at this depth
+    if (ch === '|') {
+      const top = groups[groups.length - 1];
+      if (top !== undefined) top.expectingFirst = true;
+      continue;
+    }
+    if (isRepeatQuant(ch)) {
+      markAllOpenRepeat(); // in-body repetition at this depth
+      continue;
+    }
+    // Anchors and other zero-width syntax are unknown first atoms; a bare dot
+    // matches anything ('A'); ordinary characters are literal first atoms.
+    recordFirst(ch === '^' || ch === '$' ? null : ch === '.' ? 'A' : `L${ch}`);
   }
   return false;
 }
@@ -99,8 +184,10 @@ export function guardRegexPattern(pattern: string): string | null {
   if (hasNestedQuantifier(pattern)) {
     return (
       'pattern applies a repetition quantifier to a group that already ' +
-      'contains a repetition (nested quantifier, e.g. "(a+)+"), which risks ' +
-      'catastrophic backtracking; rewrite it without repeating a repeated group'
+      'contains a repetition (nested quantifier, e.g. "(a+)+") or whose ' +
+      'alternation branches overlap (e.g. "(a|ab)+"), which risks ' +
+      'catastrophic backtracking; rewrite it without repeating a repeated ' +
+      'or ambiguous group'
     );
   }
   return null;

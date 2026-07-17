@@ -333,7 +333,11 @@ export interface ShellManager {
   /** Directory holding the persistent foreground cwd/env snapshot ('' when
    *  no tmp dir was available — persistence then degrades to stateless). */
   readonly stateDir: string;
-  /** Spawn a detached background shell; returns its bash id immediately.
+  /** Spawn a detached background shell; resolves with its bash id once the
+   *  process has ACTUALLY spawned (a detached spawn reports ENOENT only via
+   *  the async 'error' event, so resolution waits for the spawn/error race —
+   *  a missing shell is a returned error the caller's candidate chain can
+   *  fall through on, never a silent post-ack failure).
    *  `disableSandbox` engages the escape hatch (skip the sandbox wrap) for
    *  this launch; ignored when no sandbox is active on the context. */
   spawnBackground(
@@ -341,7 +345,7 @@ export interface ShellManager {
     command: string,
     ctx: Pick<ToolContext, 'cwd' | 'env' | 'sandbox'>,
     disableSandbox?: boolean,
-  ): { id: string } | { error: string };
+  ): Promise<{ id: string } | { error: string }>;
   get(id: string): BackgroundShell | undefined;
   /** Kill one background shell (SIGTERM, then SIGKILL after a grace). */
   kill(id: string): boolean;

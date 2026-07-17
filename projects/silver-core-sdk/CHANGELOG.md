@@ -16,6 +16,79 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.64.2 — 2026-07-17
+
+T49 batch C (the 2026-07-17 100-defect audit, keeper-fired): all 18 P1
+medium-severity legacy defects — M1–M16 + M19/M20 (M17 → batch B, M18 →
+batch A). 16 code fixes, 2 audit-entry re-adjudications, regression tests in
+`tests/audit-t49-batch-c.test.ts` (+ M15/M16 in `tests/subagents.test.ts`):
+
+- **M1** transport/node-http: `firePreconnect` now DRAINS the probe response
+  instead of `body.cancel()` — cancel destroyed the freshly warmed socket on
+  the node adapter, so the first real request re-dialed and the probe's
+  entire benefit was lost.
+- **M2** internal/regex-guard: `hasNestedQuantifier` also flags quantified
+  groups whose alternation branches OVERLAP (`(a|a)+`, `(a|ab)+`,
+  `(\d|\d\d)+`, nested `((a|a))+`, `(.|x)*`) — star-height-1 exponential
+  ambiguity the old detector missed; `(foo|bar)+`-style disjoint alternations
+  keep working.
+- **M3** error-normalize: the string-error gateway shape
+  `{ error: 'rate limited', status: 503 }` is now detected and extracted —
+  it used to fall through to the generic branch as `retryable:false`,
+  discarding a retryable 503.
+- **M4** engine/compaction: the pure-tool-loop (H1) collapsed fold now
+  carries customInstructions + PreCompact additionalContext into the
+  collapsed user turn — both were silently dropped on every such fold.
+- **M5** engine/compaction: partition guards are calibrated by
+  `knownPromptFloor` (real previous prompt size ÷ estimate) — an
+  under-counted history used to trigger the fold and then have the
+  estimate-based guards decline it, guaranteeing the next 'prompt too
+  long' 400.
+- **M6** engine/prompt-fragments: the webfetch-websearch fragment split into
+  per-tool-gated fragments (+ a shared URL-discipline clause) — with one of
+  the pair disallowed, the prompt described an unregistered tool (red-line).
+- **M7** transport Retry-After HTTP-date: already fixed in source (0.62.5
+  twin alignment) but had zero test coverage — now locked by tests
+  (delta-seconds, future/past HTTP-date, cap, garbage).
+- **M8** transport/sse: re-adjudicated NOT a defect — `join('\n')` is
+  mathematically equivalent to the WHATWG append+strip form; semantics
+  pinned by tests.
+- **M9** engine/loop: the plain terminal error path (no abort, no replay,
+  no fallback — including the withheld-fallback throw) now folds the doomed
+  attempt's already-billed usage, matching every sibling exit.
+- **M10** mcp/http: an SSE response whose final `data:` line has no trailing
+  newline is delivered instead of dropped as mcp_invalid_response.
+- **M11** tools/shells+bash: `spawnBackground` awaits the spawn/error race —
+  a detached spawn reports ENOENT asynchronously, so a missing `bash` was
+  acked as running and silently flipped to 'failed'; now it is a returned
+  error the bash→sh candidate chain falls through on (interface change:
+  `ShellManager.spawnBackground` returns a Promise).
+- **M12** hooks/runner: Stop/SubagentStop condition evaluation now appends a
+  bounded transcript TAIL to the evaluator context — it only ever saw
+  `transcript_path` (a path string), so content conditions were never met
+  and conditioned Stop callbacks never fired.
+- **M13** hooks: "could not evaluate" (evaluator unavailable / unparseable
+  reply) is now distinct from a clean negative verdict
+  (`HookConditionResult.evaluationFailed`), and under the matcher's
+  effective `failureMode:'closed'` it ADMITS the matcher (a conditioned deny
+  hook still denies) instead of silently failing open.
+- **M14** subagents/runtime: the foreground success path no longer clobbers
+  a terminal 'killed' status set during the releaseWorktree await window
+  (same running-guard as every sibling path; no contradictory task event).
+- **M15** subagents/runtime: the transport-resolution failure early-exit now
+  fires SubagentStop — SubagentStart had already fired, leaking one unit per
+  failure for hosts that pair Start/Stop for resource accounting.
+- **M16** subagents/runtime: a SendMessage continuation to a
+  worktree-isolated child whose clean worktree was auto-removed now
+  RE-provisions a fresh worktree (and releases it clean-only afterwards) —
+  the continuation used to run its tools against the deleted phantom path.
+- **M19** mcp/registry: `reconnect()` serializes per server — two concurrent
+  reconnects could interleave close/reset/connect and orphan a freshly
+  published connection (live child process, nothing ever closing it).
+- **M20** tools/webfetch: 204/205 are reported as honest bodyless successes
+  instead of `unsupported content type "unknown"` errors.
+
+
 ## 0.64.1 — 2026-07-17
 
 Bug-fix sweep, audit 2026-07-17 (T49) **batch A**: all 9 defects the same-day
@@ -148,7 +221,9 @@ regression-locked by `tests/t49-batch-b.test.ts` (21 tests):
   built with tenant A's key/endpoint. The memo key now carries the full
   tenant identity: derived child provider config, the protocol's
   credential/endpoint env chain, and function-knob (fetch/httpClient)
-  identity. Same identity keeps the warm-pool memoization.## 0.63.0 — 2026-07-17
+  identity. Same identity keeps the warm-pool memoization.
+
+## 0.63.0 — 2026-07-17
 
 SCS-REQ-REPOS-01 (keeper-adjudicated requirement, archived at
 `Public-Info-Pool/Resource/repo-engineering/scs-req-repositioning-loop-support-20260717.md`):
