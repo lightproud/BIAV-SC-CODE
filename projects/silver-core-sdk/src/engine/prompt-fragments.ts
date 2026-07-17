@@ -203,6 +203,12 @@ export const MAIN_LOOP_BODY: PromptFragment[] = [
     id: 'prefer-dedicated-tools',
     slug: 'adapted',
     faithful: false, // adapted: dedicated-tool redirects reference only shipped tools
+    // E4 (audit r2): the text redirects Bash usage to five named dedicated
+    // tools — with any of them filtered out of the session it described
+    // unregistered capability (red line), telling the model to "use Read"
+    // it cannot call. Ship-level presence is not session-level presence.
+    gate: (has) =>
+      has('Bash') && has('Read') && has('Grep') && has('Glob') && has('Edit') && has('Write'),
     text:
       'IMPORTANT: Avoid using the Bash tool to run find, grep, cat, head, tail, sed, awk, echo, or ls commands, unless explicitly instructed or after you have verified that a dedicated tool cannot accomplish your task. Instead, use the appropriate dedicated tool as this will provide a much better experience for the user:\n' +
       '- Read files: Use Read (NOT cat/head/tail)\n' +
@@ -215,6 +221,9 @@ export const MAIN_LOOP_BODY: PromptFragment[] = [
     id: 'read-before-edit',
     slug: 'adapted',
     faithful: false, // adapted to this SDK's Read/Write/Edit semantics
+    // E4 (audit r2): names Read/Write/Edit — same session-level gate rule as
+    // prefer-dedicated-tools above.
+    gate: (has) => has('Read') && has('Edit') && has('Write'),
     text: "Read a file before editing it, and read an existing file before overwriting it with Write; overwriting a file you have not read will fail. Use Write for creating a new file or fully replacing one you have already read, and Edit for partial changes. Keep an Edit's old_string minimal — usually 1-3 lines, only enough to be unique in the file; including excess context wastes tokens. The edit will FAIL if old_string is not unique, so add the minimum extra context needed for uniqueness, or use replace_all to change every instance.",
   },
   // --- tool-gated clauses (exact official position) ---

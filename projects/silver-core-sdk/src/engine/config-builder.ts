@@ -161,8 +161,13 @@ export function buildEngineConfig(args: {
     // here because it needs I/O the pure prompt module avoids; both degrade to
     // empty on any failure and never block query construction.
     const includeEnv = options.includeEnvironmentContext !== false;
+    // E6 (audit r2): "Today's date" must be the HOST'S calendar day, not the
+    // UTC one — toISOString() told a UTC+8 host yesterday's date every day
+    // from 00:00 to 08:00 local.
+    const now = new Date();
+    const localToday = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
     const environment = includeEnv
-      ? gatherEnvironment(cwd, initialModel, new Date().toISOString().slice(0, 10))
+      ? gatherEnvironment(cwd, initialModel, localToday)
       : undefined;
     sessionGitBranch = environment?.gitBranch;
     const projectInstructions = loadProjectInstructions(cwd, options.settingSources);
@@ -344,10 +349,25 @@ export function appendSystemInjection(
           ? `${engineConfig.systemPrompt}\n\n${part.text}`
           : part.text;
     }
-    engineConfig.systemComposition?.parts.push({
-      role: 'append',
-      label: part.label,
-      estTokens: estimateTextTokens(part.text),
-    });
+    const composition = engineConfig.systemComposition;
+    if (composition !== undefined) {
+      const appended = {
+        role: 'append' as const,
+        label: part.label,
+        estTokens: estimateTextTokens(part.text),
+      };
+      // E5 (audit r2): on the string/preset path the injected TEXT lands in
+      // the stable prompt, i.e. BEFORE the volatile env tail
+      // (systemPromptSuffix) on the wire — so the labeled breakdown must
+      // place it before the trailing 'environment' part too, or the
+      // composition violates its wire-order invariant. The segments path has
+      // no 'environment' part and keeps plain push semantics.
+      const envIdx =
+        engineConfig.systemBlocks === undefined
+          ? composition.parts.findIndex((p) => p.role === 'environment')
+          : -1;
+      if (envIdx >= 0) composition.parts.splice(envIdx, 0, appended);
+      else composition.parts.push(appended);
+    }
   }
 }
