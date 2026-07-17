@@ -138,12 +138,14 @@ export function parseVerdict(raw: string): VerificationResult {
       typeof rec.confirms === 'string' && rec.confirms.length > 0 ? rec.confirms : undefined;
     return buildResult(verdict, quote, rationale, confirms);
   }
-  // extractJsonObject found nothing parseable. If the reply ATTEMPTED JSON (it
-  // contains a brace), a parse failure — e.g. a reply truncated at max_tokens
-  // right after a valid token — fails CLOSED rather than scavenging a word out
-  // of the broken JSON. Only a reply with no brace at all is treated as a
-  // genuine bare-word verdict.
-  if (raw.includes('{')) {
+  // extractJsonObject found nothing parseable. If the reply ATTEMPTED JSON, a
+  // parse failure — e.g. a reply truncated at max_tokens right after a valid
+  // token — fails CLOSED rather than scavenging a word out of the broken JSON.
+  // N3 (audit r2): "attempted JSON" means an object-literal signature (`{"` —
+  // a brace opening a quoted key), NOT any brace at all: braces are routine in
+  // code-talk ("the `{}` initializer"), and the old any-brace test forced a
+  // clear bare CONFIRMED with a code brace in its prose down to REFUTED.
+  if (/\{\s*"/.test(raw)) {
     return { ...buildResult(SAFE_VERDICT, undefined, '', undefined), parseFailed: true };
   }
   const bare = parseBareVerdict(raw);

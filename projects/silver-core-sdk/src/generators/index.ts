@@ -209,8 +209,12 @@ export async function generateSessionTitle(
   const raw = await runUtilityCall(SESSION_TITLE_SYSTEM, user, opts, 128);
   const obj = extractJsonObject(raw);
   const title = readStringField(obj, 'title');
-  // Fall back to a trimmed raw reply if the model returned a bare string.
-  return title ?? stripToPlain(raw);
+  if (title !== null) return title;
+  // N7 (audit r2): the raw-reply fallback is for a BARE-STRING reply only. A
+  // JSON reply missing the expected field must not leak the serialized blob
+  // (`{"name":"..."}`) as a user-visible title.
+  if (obj !== null) return 'Untitled session';
+  return stripToPlain(raw);
 }
 
 // ---------------------------------------------------------------------------
@@ -247,7 +251,11 @@ export async function generateTitleAndBranch(
     200,
   );
   const obj = extractJsonObject(raw);
-  const title = readStringField(obj, 'title') ?? stripToPlain(raw);
+  // N7: same rule as generateSessionTitle — never surface a JSON blob as the
+  // title when the reply parsed but lacked the field.
+  const title =
+    readStringField(obj, 'title') ??
+    (obj !== null ? 'Untitled session' : stripToPlain(raw));
   const rawBranch = readStringField(obj, 'branch') ?? '';
   return { title, branch: normalizeBranch(rawBranch, title) };
 }
