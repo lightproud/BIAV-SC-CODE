@@ -7,13 +7,13 @@
     "tokenizer": "silver_tokenizer FMM（领域词典，零 ML）"
   },
   "stats": {
-    "concepts": 359,
-    "edges": 422,
-    "terms": 6432,
+    "concepts": 360,
+    "edges": 423,
+    "terms": 6449,
     "by_type": {
       "character": 72,
       "dataset": 94,
-      "documentation": 126,
+      "documentation": 127,
       "knowledge-pointer": 47,
       "reference": 17,
       "research": 3
@@ -25,14 +25,14 @@
       "memory": 50,
       "news-output": 23,
       "projects": 28,
-      "resource": 97,
+      "resource": 98,
       "sources": 20,
       "story": 11,
       "wiki-data": 26
     },
     "by_tier": {
       "skeleton": 134,
-      "search": 225
+      "search": 226
     }
   },
   "sections": {
@@ -62,7 +62,7 @@
     },
     "resource": {
       "index": "/resource/index.md",
-      "count": 97
+      "count": 98
     },
     "sources": {
       "index": "/sources/index.md",
@@ -958,7 +958,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 97
+      "degree": 98
     },
     "/characters/15604.md": {
       "type": "character",
@@ -4182,6 +4182,20 @@
       "tier": "search",
       "degree": 1
     },
+    "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md": {
+      "type": "documentation",
+      "title": "silver-core-sdk-bug-audit-r4-20260717",
+      "description": "第四轮是**「修复回归审计 + 深度穷尽精读」双引擎**的一轮。与前三轮「铺开找新面」不同，本轮抓住（格式：md）",
+      "resource": "/Public-Info-Pool/Resource/repo-engineering/silver-core-sdk-bug-audit-r4-20260717.md",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "section": "resource",
+      "tier": "search",
+      "degree": 1
+    },
     "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md": {
       "type": "documentation",
       "title": "silver-core-sdk-code-quality-audit-20260714",
@@ -6891,6 +6905,11 @@
         "mention"
       ],
       [
+        "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
+        "提及:艾瑞卡",
+        "mention"
+      ],
+      [
         "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
         "提及:艾瑞卡",
         "mention"
@@ -9116,6 +9135,13 @@
         "mention"
       ]
     ],
+    "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md": [
+      [
+        "/characters/15603.md",
+        "提及:艾瑞卡",
+        "mention"
+      ]
+    ],
     "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md": [
       [
         "/characters/15603.md",
@@ -10076,6 +10102,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -10472,6 +10499,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md"
     ],
     "authoring": [
@@ -10785,7 +10813,8 @@
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
-      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md"
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md"
     ],
     "build": [
       "/README.md",
@@ -11321,6 +11350,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -11473,6 +11503,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -11682,6 +11713,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -12013,6 +12045,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -12200,6 +12233,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -12492,6 +12526,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -13258,6 +13293,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -13755,6 +13791,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -14271,6 +14308,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -14992,6 +15030,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -15409,6 +15448,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -15492,7 +15532,8 @@
     ],
     "r4": [
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
-      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md"
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md"
     ],
     "r5": [
       "/resource/resource-repo-engineering-bpt-desktop-command-impl-plan-20260710.md",
@@ -15712,6 +15753,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -15855,6 +15897,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -16113,6 +16156,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -16198,6 +16242,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -16844,6 +16889,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -17432,7 +17478,8 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md"
     ],
     "一轮": [
-      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
+      "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md"
     ],
     "一遍": [
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
@@ -17512,6 +17559,9 @@
     ],
     "三语": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md"
+    ],
+    "三轮": [
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md"
     ],
     "三轴": [
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
@@ -17702,7 +17752,8 @@
       "/characters/15601.md",
       "/characters/77926.md",
       "/memory/memory-archive-bpt-guidance-log.md",
-      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
+      "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md"
     ],
     "不吐": [
       "/projects/entry-claude-md.md"
@@ -17941,6 +17992,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -18212,6 +18264,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -18365,6 +18418,9 @@
     ],
     "与冗": [
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
+    ],
+    "与前": [
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md"
     ],
     "与复": [
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
@@ -18543,6 +18599,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -19838,6 +19895,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -20811,6 +20869,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -21084,6 +21143,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -21523,7 +21583,8 @@
     "修复": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
-      "/resource/resource-repo-engineering-repo-audit-20260603-r2.md"
+      "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md"
     ],
     "修角": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md"
@@ -23046,6 +23107,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -23090,7 +23152,8 @@
       "/characters/15602.md"
     ],
     "前三": [
-      "/resource/resource-proposal-discord-layout-unification-20260710.md"
+      "/resource/resource-proposal-discord-layout-unification-20260710.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md"
     ],
     "前为": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md"
@@ -23973,6 +24036,9 @@
     "双向": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-community-analysis-saya-collab-community-report-20260603.md"
+    ],
+    "双引": [
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md"
     ],
     "双指": [
       "/memory/memory-ext-active-silver-blackpool-interface.md"
@@ -25453,6 +25519,9 @@
     "四语": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md"
     ],
+    "四轮": [
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md"
+    ],
     "回元": [
       "/README.md"
     ],
@@ -25480,7 +25549,8 @@
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md",
       "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
-      "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md"
+      "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md"
     ],
     "回排": [
       "/README.md"
@@ -26384,6 +26454,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -26434,6 +26505,9 @@
       "/characters/15571.md",
       "/characters/15594.md",
       "/characters/15602.md"
+    ],
+    "复回": [
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md"
     ],
     "复大": [
       "/characters/15570.md"
@@ -27191,6 +27265,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -27822,6 +27897,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -28026,6 +28102,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-repo-audit-20260603.md",
       "/resource/resource-repo-engineering-retired-modules-audit-202606.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/sources/appstore.md",
       "/sources/arca_live.md",
       "/sources/bahamut.md",
@@ -28394,6 +28471,9 @@
     ],
     "尽的": [
       "/characters/15599.md"
+    ],
+    "尽精": [
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md"
     ],
     "尾债": [
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md"
@@ -29400,6 +29480,9 @@
     "度研": [
       "/story/STORY_RESEARCH.md"
     ],
+    "度穷": [
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md"
+    ],
     "康度": [
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md",
       "/resource/resource-repo-engineering-repo-wide-orchestrated-review-20260609.md",
@@ -29501,6 +29584,9 @@
     "开扇": [
       "/characters/125346.md"
     ],
+    "开找": [
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md"
+    ],
     "开放": [
       "/README.md"
     ],
@@ -29592,7 +29678,8 @@
       "/resource/resource-proposal-bpt-sdk-roadmap-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md",
-      "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md"
+      "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md"
     ],
     "引流": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
@@ -29686,7 +29773,8 @@
       "/characters/15580.md"
     ],
     "归审": [
-      "/resource/resource-repo-engineering-repo-audit-20260603-r2.md"
+      "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md"
     ],
     "归档": [
       "/memory/decisions-archive.md",
@@ -31138,6 +31226,9 @@
     "扰下": [
       "/assets/assets-chat-onboarding-snippet.md"
     ],
+    "找新": [
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md"
+    ],
     "找最": [
       "/characters/54116.md"
     ],
@@ -31193,6 +31284,9 @@
     ],
     "抑郁": [
       "/characters/15601.md"
+    ],
+    "抓住": [
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md"
     ],
     "抓取": [
       "/memory/memory-ext-discord-archiver-design.md"
@@ -31788,6 +31882,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -32368,6 +32463,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -32714,6 +32810,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -33143,6 +33240,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -33435,6 +33533,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -34006,6 +34105,9 @@
     "新翻": [
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
+    ],
+    "新面": [
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md"
     ],
     "方为": [
       "/memory/memory-ext-collab-event-playbook.md"
@@ -35197,6 +35299,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -35345,7 +35448,8 @@
       "/resource/resource-repo-engineering-repo-health-assessment-20260602.md"
     ],
     "本轮": [
-      "/resource/resource-repo-engineering-repo-audit-20260603-r2.md"
+      "/resource/resource-repo-engineering-repo-audit-20260603-r2.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md"
     ],
     "本都": [
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md"
@@ -35643,6 +35747,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -36281,6 +36386,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -36502,6 +36608,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -37033,6 +37140,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -37428,6 +37536,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -38075,6 +38184,7 @@
       "/memory/memory-ext-biav-info-classification.md"
     ],
     "深度": [
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/story/STORY_RESEARCH.md"
     ],
     "深海": [
@@ -39717,7 +39827,8 @@
     "的一": [
       "/characters/15577.md",
       "/characters/15592.md",
-      "/characters/77925.md"
+      "/characters/77925.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md"
     ],
     "的上": [
       "/resource/resource-proposal-bpt-context-architecture-20260712.md"
@@ -41290,6 +41401,9 @@
     "究者": [
       "/characters/15602.md"
     ],
+    "穷尽": [
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md"
+    ],
     "穷极": [
       "/characters/54116.md"
     ],
@@ -41439,6 +41553,9 @@
     "符号": [
       "/memory/memory-ext-knowledge-layer-design.md",
       "/resource/resource-repo-engineering-silver-core-sdk-vs-official-diff-20260713.md"
+    ],
+    "第四": [
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md"
     ],
     "笼中": [
       "/characters/15574.md"
@@ -41601,6 +41718,9 @@
     ],
     "精英": [
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
+    ],
+    "精读": [
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md"
     ],
     "糊的": [
       "/characters/15575.md"
@@ -44663,6 +44783,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -44884,6 +45005,12 @@
     ],
     "转输": [
       "/characters/15599.md"
+    ],
+    "轮抓": [
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md"
+    ],
+    "轮是": [
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md"
     ],
     "轮真": [
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
@@ -45378,6 +45505,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -46423,6 +46551,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -46684,6 +46813,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -46774,6 +46904,9 @@
     ],
     "银钥": [
       "/characters/54116.md"
+    ],
+    "铺开": [
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md"
     ],
     "链之": [
       "/characters/15567.md"
@@ -48049,6 +48182,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md"
     ],
     "authority": [
@@ -48190,7 +48324,8 @@
       "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
-      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md"
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md"
     ],
     "builtin": [
       "/resource/resource-repo-engineering-bpt-desktop-builtin-commands-batch1-20260711.md"
@@ -48383,6 +48518,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -48585,6 +48721,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -48909,6 +49046,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -49083,6 +49221,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -49293,6 +49432,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -49841,6 +49981,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -50508,7 +50649,8 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md"
     ],
     "r4": [
-      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md"
+      "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r4.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md"
     ],
     "r5": [
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md"
@@ -50596,6 +50738,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -50792,6 +50935,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -50840,6 +50984,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
@@ -51121,6 +51266,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r2-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r3-20260717.md",
+      "/resource/resource-repo-engineering-silver-core-sdk-bug-audit-r4-20260717.md",
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md",
       "/resource/resource-repo-engineering-silver-core-sdk-command-consumer-manual-20260710.md",
       "/resource/resource-repo-engineering-silver-core-sdk-overnight-quality-campaign-20260713.md",
