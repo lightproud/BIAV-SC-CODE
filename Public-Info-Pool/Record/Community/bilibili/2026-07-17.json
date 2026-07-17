@@ -1,8 +1,8 @@
 {
   "date": "2026-07-17",
-  "archived_at": "2026-07-17T10:48:03.576817+00:00",
+  "archived_at": "2026-07-17T13:25:00.890797+00:00",
   "source": "bilibili",
-  "item_count": 14,
+  "item_count": 16,
   "items": [
     {
       "title": "Fire(燃尽版)",
@@ -23,6 +23,29 @@
         "danmaku": 0
       },
       "media_url": "https://i2.hdslb.com/bfs/archive/562f46518f02efe336fe8a628b4ce30b60cd999e.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "全12竞速排行榜，非正常容灾强度",
+      "summary": "-\n  └ 玖玖_子 (0赞): 像氨神学习…\n  └ 忘却安卓佬 (0赞): 手机忘记开翻转了，这下尴尬了[笑哭]\n  └ 愛吃郭子的小孩 (0赞): 暗捉佬神了[打call]",
+      "source": "bilibili",
+      "time": "2026-07-17T12:56:57+00:00",
+      "url": "https://www.bilibili.com/video/BV1dyNR6bE5i",
+      "engagement": 130,
+      "is_hot": false,
+      "author": "忘却安卓佬",
+      "tags": [
+        "手机游戏"
+      ],
+      "metadata": {
+        "play": 126,
+        "comment_count": 4,
+        "comments_fetched": 3,
+        "danmaku": 1
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/1eb03e9595fbf6076569af97333a1aa799821b5a.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
@@ -184,6 +207,29 @@
         "danmaku": 0
       },
       "media_url": "https://i0.hdslb.com/bfs/archive/2483f6b8c7bd4ef522287b0c7372326e728f05cd.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "【忘却前夜】uw1t融灾5-5 阴影的忠犬",
+      "summary": "补了三叠骑士诗打着玩玩 其实完全不会用沙耶不过数值神力说是）造物狗运了也没怎么凹\n  └ 跳段木偶舞 (1赞): 强强强！",
+      "source": "bilibili",
+      "time": "2026-07-17T12:35:50+00:00",
+      "url": "https://www.bilibili.com/video/BV1v1NR6ZEu4",
+      "engagement": 13,
+      "is_hot": false,
+      "author": "CyaneuS_ky",
+      "tags": [
+        "同人·手书"
+      ],
+      "metadata": {
+        "play": 11,
+        "comment_count": 2,
+        "comments_fetched": 1,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/11e1b5a8cd7fc42074e4cea18641a4642d1d9450.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
