@@ -43,6 +43,17 @@ const PRICE_TABLE: readonly PriceEntry[] = [
 
 const MTOK = 1_000_000;
 
+/**
+ * USD per web_search server-tool call (public pricing: $10 per 1,000 searches,
+ * token costs billed separately and already covered by the table above). Same
+ * estimate-only discipline as the token price table. D6 (audit r2 2026-07-17):
+ * the count was tracked end-to-end (normalizeUsage/addUsage) but never priced,
+ * so web-search-heavy sessions under-reported totalCostUsd and maxBudgetUsd
+ * under-enforced. Model-independent, so it is charged even for model ids the
+ * token table does not know.
+ */
+const WEB_SEARCH_USD_PER_CALL = 10 / 1000;
+
 /** Longest-prefix match over caller overrides (normalized id). */
 function matchOverride(
   normalized: string,
@@ -130,14 +141,19 @@ export function estimateCostUsd(
       }
     }
   }
-  if (best === undefined) return 0;
+  // D6: server-tool (web_search) calls are priced per REQUEST, not per token,
+  // and independently of the model — charge them on both branches below.
+  const serverToolCost =
+    (usage.web_search_requests ?? 0) * WEB_SEARCH_USD_PER_CALL;
+  if (best === undefined) return serverToolCost;
   const cacheWriteRate = cacheTtl === '1h' ? best.input * 2 : best.cacheWrite;
   return (
     (usage.input_tokens * best.input +
       usage.output_tokens * best.output +
       usage.cache_creation_input_tokens * cacheWriteRate +
       usage.cache_read_input_tokens * best.cacheRead) /
-    MTOK
+      MTOK +
+    serverToolCost
   );
 }
 

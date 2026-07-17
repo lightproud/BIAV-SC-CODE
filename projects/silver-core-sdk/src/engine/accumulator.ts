@@ -8,6 +8,7 @@ import type {
   APIAssistantMessage,
   ContentBlock,
   RawMessageStreamEvent,
+  Usage,
 } from '../types.js';
 
 /**
@@ -91,20 +92,26 @@ export class MessageAccumulator {
         this.requireMessage('content_block_start');
         const cb = event.content_block;
         switch (cb.type) {
+          // C2 (audit r2 2026-07-17): seed fields get the same field-omission
+          // guard the delta handlers already have (`?? ''`). A gateway-rewritten
+          // / non-conformant start frame that omits text/thinking/data would
+          // otherwise seed `undefined`, so the first delta produced the literal
+          // "undefinedfoo" and finalize handed downstream a poisoned block
+          // (signature/input were guarded; these three were not).
           case 'text':
-            this.blocks.set(event.index, { type: 'text', text: cb.text });
+            this.blocks.set(event.index, { type: 'text', text: cb.text ?? '' });
             return;
           case 'thinking':
             this.blocks.set(event.index, {
               type: 'thinking',
-              thinking: cb.thinking,
+              thinking: cb.thinking ?? '',
               signature: cb.signature ?? '',
             });
             return;
           case 'redacted_thinking':
             this.blocks.set(event.index, {
               type: 'redacted_thinking',
-              data: cb.data,
+              data: cb.data ?? '',
             });
             return;
           case 'tool_use':
@@ -248,6 +255,16 @@ export class MessageAccumulator {
         // payloads are surfaced by the transport, never fed here.
         return;
     }
+  }
+
+  /**
+   * Usage reported by the stream so far (message_start seed merged with any
+   * message_delta updates), or undefined when message_start never arrived.
+   * D3 (audit r2 2026-07-17): lets a caller account a billed-but-failed
+   * stream's partial spend instead of silently dropping it.
+   */
+  usageSnapshot(): Usage | undefined {
+    return this.message?.usage;
   }
 
   /** Produce the final assistant message after the stream ends. */
