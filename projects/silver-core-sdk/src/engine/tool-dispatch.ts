@@ -353,15 +353,20 @@ export function createToolDispatcher(cfg: ToolDispatcherConfig): {
       return { result: errorToolResult(check.message) };
     }
     if (check.decision === 'defer') {
+      // The deferred payload must carry the hook-rewritten input when a
+      // PreToolUse hook supplied one: `input` is still the raw block.input
+      // here (the allow-path reassignment below never runs on defer), so the
+      // out-of-band executor would otherwise act on the pre-rewrite call.
+      const deferredInput = pre?.updatedInput ?? input;
       return {
         result: errorToolResult(check.message),
         defer: {
           id: block.id,
           name: toolName,
-          input,
+          input: deferredInput,
           tool_use_id: block.id,
           tool_name: toolName,
-          tool_input: input,
+          tool_input: deferredInput,
         },
       };
     }

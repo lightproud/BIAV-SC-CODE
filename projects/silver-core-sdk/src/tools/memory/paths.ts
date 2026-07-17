@@ -88,6 +88,14 @@ export function validateMemoryPath(raw: unknown): string {
         `Error: Path ${raw} would escape the ${MEMORY_ROOT} directory`,
       );
     }
+    // Control characters (TAB / LF / CR / other C0, DEL) would pollute the
+    // tab/newline-delimited directory-listing grammar — a filename carrying
+    // them forges extra listing rows/columns (audit 2026-07-17 L28).
+    if (/[\u0000-\u001f\u007f]/.test(seg)) {
+      throw new MemoryPathError(
+        `Error: Path segments must not contain control characters, got: ${raw}`,
+      );
+    }
     kept.push(seg);
   }
   return kept.length === 0 ? MEMORY_ROOT : `${MEMORY_ROOT}/${kept.join('/')}`;

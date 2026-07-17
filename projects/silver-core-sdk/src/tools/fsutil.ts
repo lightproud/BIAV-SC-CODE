@@ -14,9 +14,6 @@
 
 import * as path from 'node:path';
 
-/** Number of leading bytes sniffed when deciding whether a file is binary. */
-const BINARY_SNIFF_BYTES = 8192;
-
 /** Default maximum characters kept per line in cat -n style output. */
 export const MAX_LINE_CHARS = 2000;
 
@@ -60,15 +57,12 @@ export function resolveAbs(cwd: string, p: string): string {
   return path.resolve(cwd, p);
 }
 
-/** Heuristic binary sniff: any NUL byte within the first 8KB. */
+/** Heuristic binary sniff: any NUL byte anywhere in the buffer. The old
+ *  first-8KB sniff passed files whose NUL bytes sit past the head (text
+ *  header + binary tail) and Edit then corrupted the tail (audit 2026-07-17
+ *  L20). Full scan is native memchr — ~ms even at the 50MB read cap. */
 export function looksBinary(buf: Buffer): boolean {
-  const end = Math.min(buf.length, BINARY_SNIFF_BYTES);
-  for (let i = 0; i < end; i++) {
-    if (buf[i] === 0) {
-      return true;
-    }
-  }
-  return false;
+  return buf.includes(0);
 }
 
 /**

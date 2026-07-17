@@ -225,6 +225,12 @@ export class HttpMcpConnection {
     };
     signal?.addEventListener('abort', onCallerAbort, { once: true });
     this.closeController.signal.addEventListener('abort', onClose, { once: true });
+    // Re-check AFTER registration: 'abort' never fires retroactively for an
+    // already-aborted signal, so an abort landing between the top guards and
+    // the registrations above would leave this request uncancellable until
+    // requestTimeoutMs (audit 2026-07-17 L35).
+    if (signal?.aborted) onCallerAbort();
+    else if (this.closeController.signal.aborted) onClose();
 
     try {
       const response = await fetch(this.url, {
@@ -434,6 +440,18 @@ export class HttpMcpConnection {
           // event:/id:/retry: fields are irrelevant for response extraction.
         }
       }
+      // Final decoder flush (audit 2026-07-17 L68): a multi-byte UTF-8
+      // character split across the LAST chunk boundary sits buffered inside
+      // the TextDecoder and was silently dropped without this.
+      buffer += decoder.decode();
+      // A last line with NO trailing newline never entered the line loop:
+      // fold the residual buffer in as a final data: line (also the fix for
+      // audit M10 — the lost "no trailing newline at all" last frame).
+      let tail = buffer;
+      if (tail.endsWith('\r')) tail = tail.slice(0, -1);
+      if (tail.startsWith('data:')) {
+        dataLines.push(tail.slice(5).replace(/^ /, ''));
+      }
       // Flush a trailing frame in case the stream ended without a blank line.
       if (dataLines.length > 0) {
         const outcome = handleEvent(dataLines.join('\n'));
@@ -585,11 +603,21 @@ function normalizeContentItem(item: unknown): CallToolResultContent {
       return out;
     }
     if (t.type === 'resource' && t.resource && typeof t.resource === 'object') {
-      const r = t.resource as { uri?: unknown; mimeType?: unknown; text?: unknown };
+      const r = t.resource as {
+        uri?: unknown;
+        mimeType?: unknown;
+        text?: unknown;
+        blob?: unknown;
+      };
       if (typeof r.uri === 'string') {
-        const resource: { uri: string; mimeType?: string; text?: string } = { uri: r.uri };
+        const resource: { uri: string; mimeType?: string; text?: string; blob?: string } = {
+          uri: r.uri,
+        };
         if (typeof r.mimeType === 'string') resource.mimeType = r.mimeType;
         if (typeof r.text === 'string') resource.text = r.text;
+        // BlobResourceContents (MCP spec): base64 binary payload — dropping it
+        // silently emptied embedded binary resources (audit 2026-07-17 L36).
+        if (typeof r.blob === 'string') resource.blob = r.blob;
         return { type: 'resource', resource };
       }
     }

@@ -85,6 +85,9 @@ import {
 
 const DEFAULT_BASE_URL = 'https://api.openai.com/v1';
 const DEFAULT_TIMEOUT_MS = 600_000;
+/** setTimeout's signed-32-bit ceiling — the "effectively disabled" stand-in
+ *  for timeoutMs:0 (AbortSignal.timeout has no "never" value). */
+const MAX_TIMEOUT_MS = 2_147_483_647;
 const USER_AGENT = SDK_USER_AGENT;
 const BACKOFF_BASE_MS = 1_000;
 const BACKOFF_FACTOR = 2;
@@ -669,7 +672,13 @@ export class OpenAIStreamTranslator {
     const delta = choice.delta;
     if (delta === undefined) return events;
 
-    const reasoning = delta.reasoning_content ?? delta.reasoning;
+    // Prefer whichever reasoning field actually carries text: `??` alone let a
+    // present-but-empty `reasoning_content: ''` mask a populated `reasoning`
+    // in the same delta (dual-field gateways emit both).
+    const reasoning =
+      typeof delta.reasoning_content === 'string' && delta.reasoning_content.length > 0
+        ? delta.reasoning_content
+        : (delta.reasoning ?? delta.reasoning_content);
     if (typeof reasoning === 'string' && reasoning.length > 0) {
       this.contentSeen = true;
       const index = this.openBlock(events, 'reasoning', {
@@ -988,7 +997,13 @@ export class OpenAIChatTransport implements Transport {
       throw err;
     }
     const headers = this.buildHeaders(this.credential);
-    const timeoutMs = this.provider.timeoutMs ?? DEFAULT_TIMEOUT_MS;
+    // timeoutMs: 0 disables the whole-request timeout, consistent with the
+    // idle-watchdog / stream-hard-cap "0 = disabled" convention (previously 0
+    // armed AbortSignal.timeout(0) and instantly aborted every request).
+    // AbortSignal.timeout cannot express "never", so 0 maps to the setTimeout
+    // ceiling (~24.8 days — effectively unbounded for a single request).
+    const configuredTimeoutMs = this.provider.timeoutMs ?? DEFAULT_TIMEOUT_MS;
+    const timeoutMs = configuredTimeoutMs > 0 ? configuredTimeoutMs : MAX_TIMEOUT_MS;
     const maxRetries = resolveMaxRetries(this.provider, this.env);
     // Body-governance rule (resilience P1): same composite rule as the
     // Anthropic arm — request timeout governs connect->headers; the flowing
@@ -1039,6 +1054,10 @@ export class OpenAIChatTransport implements Transport {
         response.headers.get('request-id') ??
         undefined;
       if (!response.body) {
+        // Mirror of the Anthropic arm: a body-less 2xx bypasses the stream
+        // teardown, so detach the caller/timeout abort listeners before
+        // throwing or they leak one pair per turn.
+        releaseSignals();
         throw new APIConnectionError('Chat Completions response has no body');
       }
       const idleMs = resolveStreamIdleMs(this.provider, this.env);
@@ -1228,6 +1247,22 @@ export class OpenAIChatTransport implements Transport {
             `after ${emptyStreamRetries + 1} attempt(s)`,
           undefined,
           'empty_stream',
+        );
+      }
+
+      // Metadata-only close WITHOUT any terminator: role-/usage-only frames,
+      // then the connection ended. There is no half-received answer to
+      // salvage, so this is the same "empty message" failure as the [DONE]
+      // variant above — flagging it midStreamTruncation made the engine run
+      // E3 salvage on an empty turn. Started streams are never replayed.
+      if (!sawContent) {
+        if (callerSignal?.aborted) throw new AbortError();
+        throw new APIConnectionError(
+          `Chat Completions stream closed after ${chunkCount} metadata-only chunk(s) ` +
+            `with no valid assistant content, no finish_reason, and no [DONE]; ` +
+            `treating as a failed turn (empty message)`,
+          undefined,
+          'empty_message',
         );
       }
 

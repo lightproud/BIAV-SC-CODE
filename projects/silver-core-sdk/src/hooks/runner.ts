@@ -267,15 +267,24 @@ export class DefaultHookRunner implements HookRunner {
       typeof (input as { session_id?: unknown }).session_id === 'string'
         ? (input as { session_id: string }).session_id
         : '';
-    this.onLifecycleEvent?.({
-      type: 'system',
-      subtype: 'hook_started',
-      uuid: randomUUID(),
-      session_id: sessionId,
-      hook_id: hookId,
-      hook_name: hookName,
-      hook_event: event,
-    });
+    // Lifecycle emission is observability, never control flow: a THROWING
+    // host sink must not abort the hook batch (the runner's never-rejects
+    // contract; audit 2026-07-17 L31) — swallow to a debug line.
+    try {
+      this.onLifecycleEvent?.({
+        type: 'system',
+        subtype: 'hook_started',
+        uuid: randomUUID(),
+        session_id: sessionId,
+        hook_id: hookId,
+        hook_name: hookName,
+        hook_event: event,
+      });
+    } catch (err) {
+      this.debug(
+        `hooks(${event}): lifecycle sink threw on hook_started (ignored): ${String(err)}`,
+      );
+    }
     // Official hook_response payload: `output` carries the (bounded JSON)
     // callback output, a failure lands on `stderr` with outcome 'error' /
     // 'cancelled'. stdout is always '' and exit_code absent — in-process
@@ -285,19 +294,28 @@ export class DefaultHookRunner implements HookRunner {
       stderr?: string;
       outcome: 'success' | 'error' | 'cancelled';
     }): void => {
-      this.onLifecycleEvent?.({
-        type: 'system',
-        subtype: 'hook_response',
-        uuid: randomUUID(),
-        session_id: sessionId,
-        hook_id: hookId,
-        hook_name: hookName,
-        hook_event: event,
-        output: fields.output,
-        stdout: '',
-        stderr: fields.stderr ?? '',
-        outcome: fields.outcome,
-      });
+      // Same never-rejects shield as hook_started: a throwing sink inside the
+      // callback try-block would otherwise be misread as a callback failure
+      // (and the second respond() would throw again, escaping the runner).
+      try {
+        this.onLifecycleEvent?.({
+          type: 'system',
+          subtype: 'hook_response',
+          uuid: randomUUID(),
+          session_id: sessionId,
+          hook_id: hookId,
+          hook_name: hookName,
+          hook_event: event,
+          output: fields.output,
+          stdout: '',
+          stderr: fields.stderr ?? '',
+          outcome: fields.outcome,
+        });
+      } catch (err) {
+        this.debug(
+          `hooks(${event}): lifecycle sink threw on hook_response (ignored): ${String(err)}`,
+        );
+      }
     };
     try {
       // The race bounds callbacks that ignore their signal: when the combined
@@ -403,9 +421,17 @@ export class DefaultHookRunner implements HookRunner {
       let reason = hso?.permissionDecisionReason ?? out.reason;
       if (out.decision === 'block') {
         // Legacy block -> deny; pair the recorded reason with the DENY source,
-        // not any allow rationale the same output also carried (#25).
+        // not any allow rationale the same output also carried (#25). The
+        // hso reason only qualifies when hso itself is a (or no) deny: on a
+        // contradictory output (block + permissionDecision:'allow') with no
+        // out.reason, falling back to the hso reason recorded the ALLOW
+        // rationale as the deny reason (audit 2026-07-17 L30).
         decision = 'deny';
-        reason = out.reason ?? hso?.permissionDecisionReason;
+        reason =
+          out.reason ??
+          (hso?.permissionDecision === undefined || hso.permissionDecision === 'deny'
+            ? hso?.permissionDecisionReason
+            : undefined);
       } else if (out.decision === 'approve' && decision === undefined) {
         // Legacy approve -> allow, symmetric to block. Only when the output
         // carries no explicit (more specific) permissionDecision (#15).

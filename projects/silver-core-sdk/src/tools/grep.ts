@@ -439,6 +439,10 @@ export const grepTool: BuiltinTool = {
     // the pure-JS vs ripgrep cost — see the crossover diagnostic 2026-07-07).
     let scannedFiles = 0;
     let scanStoppedEarly = false;
+    // L16 (audit 2026-07-17): an inner per-file loop hitting the cap mid-file
+    // has CERTAIN pending output (a match/hunk was about to be emitted); the
+    // top-of-loop early-stop alone missed a cut inside the LAST scanned file.
+    let matchesCut = false;
 
     for (const file of files) {
       if (ctx.signal.aborted) throw new AbortError();
@@ -479,14 +483,20 @@ export const grepTool: BuiltinTool = {
               re.lastIndex++; // zero-length match: advance, emit nothing
               continue;
             }
-            if (out.length >= collectCap) break;
+            if (out.length >= collectCap) {
+              matchesCut = true;
+              break;
+            }
             const lineNo = showLineNumbers ? `${lineIndexAt(offsets, m.index) + 1}:` : '';
             out.push(`${file}:${lineNo}${clipLine(m[0])}`);
           }
           continue;
         }
         for (const i of scan.matches) {
-          if (out.length >= collectCap) break;
+          if (out.length >= collectCap) {
+            matchesCut = true;
+            break;
+          }
           const line = scan.lines[i] ?? '';
           re.lastIndex = 0;
           let m: RegExpExecArray | null;
@@ -495,7 +505,10 @@ export const grepTool: BuiltinTool = {
               re.lastIndex++; // zero-length match: advance without emitting a
               continue; //       spurious empty line (ripgrep omits empty matches)
             }
-            if (out.length >= collectCap) break;
+            if (out.length >= collectCap) {
+              matchesCut = true;
+              break;
+            }
             const lineNo = showLineNumbers ? `${i + 1}:` : '';
             out.push(`${file}:${lineNo}${clipLine(m[0])}`);
           }
@@ -512,12 +525,18 @@ export const grepTool: BuiltinTool = {
         Math.max(scan.lines.length - 1, 0),
       );
       for (let h = 0; h < hunks.length; h++) {
-        if (out.length >= collectCap) break;
+        if (out.length >= collectCap) {
+          matchesCut = true;
+          break;
+        }
         const hunk = hunks[h];
         if (hunk === undefined) continue;
         if (useContext && h > 0) out.push('--');
         for (let i = hunk.start; i <= hunk.end; i++) {
-          if (out.length >= collectCap) break;
+          if (out.length >= collectCap) {
+            matchesCut = true;
+            break;
+          }
           const isMatch = matchSet.has(i);
           const sep = isMatch ? ':' : '-';
           const lineNo = showLineNumbers ? `${i + 1}${sep}` : '';
@@ -543,17 +562,35 @@ export const grepTool: BuiltinTool = {
       ? out.slice(offset, offset + headLimit)
       : out.slice(offset);
     if (capped.length === 0) {
-      return { content: 'No matches found' };
+      // Zero collected rows despite anyMatch: only zero-length matches (which
+      // emit nothing, ripgrep semantics) — genuinely no reportable matches.
+      if (out.length === 0) {
+        return { content: 'No matches found' };
+      }
+      // L17 (audit 2026-07-17): matches DO exist, the offset just skipped
+      // past all of them — "No matches found" masked real hits.
+      return {
+        content:
+          `No results in the requested window: offset=${offset} skips all ` +
+          `${out.length} collected result(s). Matches exist — lower offset.`,
+      };
     }
     // OPT-1: never truncate silently. When the head_limit cap cut the scan or
     // the display short, say so, so a caller does not mistake a partial listing
-    // (or a partial per-file count) for the complete result.
+    // (or a partial per-file count) for the complete result. Certain cuts
+    // (rows we collected or were mid-emitting) say "exist"; a mere early scan
+    // stop (unscanned files remain, L21) only says "may exist".
     const displayTruncated = limited && out.length > offset + headLimit;
     let content = capped.join('\n');
-    if (scanStoppedEarly || displayTruncated) {
+    if (displayTruncated || matchesCut) {
       content +=
-        `\n(results truncated at head_limit=${headLimit}; more matches may exist` +
+        `\n(results truncated at head_limit=${headLimit}; more matches exist` +
         ` — raise head_limit or set head_limit=0 for the complete result)`;
+    } else if (scanStoppedEarly) {
+      content +=
+        `\n(scan stopped after collecting head_limit=${headLimit} result(s); ` +
+        `${files.length - scannedFiles} file(s) not scanned — more matches may exist;` +
+        ` raise head_limit or set head_limit=0 for the complete result)`;
     }
     return { content };
   },

@@ -71,6 +71,10 @@ export async function resolveElicitation(
   signal: AbortSignal,
 ): Promise<ElicitationJsonRpcResult> {
   if (!handler) return { action: 'decline' };
+  // Fail-closed on an ALREADY-aborted signal, as documented: without this
+  // short-circuit a disconnected/tore-down session still invoked the host
+  // handler (audit 2026-07-17 L33).
+  if (signal.aborted) return { action: 'decline' };
   try {
     const request = parseElicitationParams(params);
     const result: ElicitationResult = await handler(request, { signal });

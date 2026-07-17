@@ -535,9 +535,25 @@ describe('pricing', () => {
       cache_read_input_tokens: 0,
     };
     expect(estimateCostUsd('gpt-4o', usage)).toBe(0);
-    // Old-style id does not match the documented 'claude-opus-' prefix.
-    expect(estimateCostUsd('claude-3-opus-latest', usage)).toBe(0);
     expect(estimateCostUsd('', usage)).toBe(0);
+  });
+
+  it('L6 (audit 2026-07-17): legacy generation-first ids are priced, not $0', () => {
+    const usage: NonNullableUsage = {
+      input_tokens: 1_000_000,
+      output_tokens: 1_000_000,
+      cache_creation_input_tokens: 0,
+      cache_read_input_tokens: 0,
+    };
+    // claude-3-opus: $15 in + $75 out per MTok.
+    expect(estimateCostUsd('claude-3-opus-latest', usage)).toBe(90);
+    // claude-3-5-sonnet: $3 in + $15 out per MTok.
+    expect(estimateCostUsd('claude-3-5-sonnet-20241022', usage)).toBe(18);
+    // claude-3-5-haiku: $0.8 in + $4 out per MTok.
+    expect(estimateCostUsd('claude-3-5-haiku-20241022', usage)).toBeCloseTo(4.8, 10);
+    // Longest prefix wins: the legacy entries never shadow generation-last ids.
+    expect(estimateCostUsd('claude-sonnet-4-5', usage)).toBe(18);
+    expect(hasPriceFor('claude-3-haiku-20240307')).toBe(true);
   });
 
   // ----- BPT audit 2026-07-07: pricing fixes (C1 / S1 / S5) -----

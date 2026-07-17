@@ -214,8 +214,18 @@ export function resolveMemoryRuntime(args: {
       // The contract-fixed view format is `header\n{6-char number}\t{line}`*;
       // strip the header and the line-number gutter to recover raw content.
       const numbered = viewed.split('\n').slice(1);
-      let lines = numbered.map((l) => l.replace(/^\s*\d+\t/, ''));
       let truncated = false;
+      // The store's own char-cap pagination notice is view CHROME, not memory
+      // content: without this strip it leaked into the injected index block
+      // verbatim (audit 2026-07-17 L27).
+      if (
+        numbered.length > 0 &&
+        /^\[Output truncated at \d+ characters\./.test(numbered[numbered.length - 1] as string)
+      ) {
+        numbered.pop();
+        truncated = true;
+      }
+      let lines = numbered.map((l) => l.replace(/^\s*\d+\t/, ''));
       if (lines.length > maxLines) {
         lines = lines.slice(0, maxLines);
         truncated = true;

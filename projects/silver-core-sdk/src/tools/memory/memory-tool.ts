@@ -292,33 +292,37 @@ export function createMemoryTool(
               const invalid = validateCardsContent(cmd.file_text, cardsCfg);
               if (invalid !== null) return done(errorResult(invalid));
             }
+            // L24 (audit 2026-07-17): count the write AFTER the store call
+            // succeeds — pre-incrementing booked failed writes into
+            // memoryHealth.
+            const created = await store.create(path, cmd.file_text);
             if (health !== undefined) {
               health.writes += 1;
               health.bytesWritten += bytesOf(cmd.file_text);
             }
-            return done({ content: await store.create(path, cmd.file_text) });
+            return done({ content: created });
           }
           case 'str_replace': {
             const path = validateMemoryPath(cmd.path);
             const denied = writeDenial(path);
             if (denied !== null) return done(errorResult(denied));
+            const replacedContent = await store.strReplace(path, cmd.old_str, cmd.new_str);
             if (health !== undefined) {
               health.writes += 1;
               health.bytesWritten += bytesOf(cmd.new_str ?? '');
             }
-            return done({ content: await store.strReplace(path, cmd.old_str, cmd.new_str) });
+            return done({ content: replacedContent });
           }
           case 'insert': {
             const path = validateMemoryPath(cmd.path);
             const denied = writeDenial(path);
             if (denied !== null) return done(errorResult(denied));
+            const inserted = await store.insert(path, cmd.insert_line, cmd.insert_text);
             if (health !== undefined) {
               health.writes += 1;
               health.bytesWritten += bytesOf(cmd.insert_text);
             }
-            return done({
-              content: await store.insert(path, cmd.insert_line, cmd.insert_text),
-            });
+            return done({ content: inserted });
           }
           case 'delete': {
             const path = validateMemoryPath(cmd.path);
@@ -331,13 +335,17 @@ export function createMemoryTool(
             }
             const denied = writeDenial(path);
             if (denied !== null) return done(errorResult(denied));
+            const deleted = await store.delete(path);
             if (health !== undefined) health.writes += 1;
-            return done({ content: await store.delete(path) });
+            return done({ content: deleted });
           }
           case 'rename': {
             const oldPath = validateMemoryPath(cmd.old_path);
             const newPath = validateMemoryPath(cmd.new_path);
-            if (oldPath === MEMORY_ROOT) {
+            // L26 (audit 2026-07-17): the root is protected at BOTH ends —
+            // renaming TO the root would overwrite it via a store that does
+            // not re-check.
+            if (oldPath === MEMORY_ROOT || newPath === MEMORY_ROOT) {
               return done(errorResult(
                 `Error: Cannot rename the ${MEMORY_ROOT} directory itself`,
               ));
@@ -345,8 +353,9 @@ export function createMemoryTool(
             // S1: a rename is a write at BOTH ends (removal + creation).
             const denied = writeDenial(oldPath) ?? writeDenial(newPath);
             if (denied !== null) return done(errorResult(denied));
+            const renamed = await store.rename(oldPath, newPath);
             if (health !== undefined) health.writes += 1;
-            return done({ content: await store.rename(oldPath, newPath) });
+            return done({ content: renamed });
           }
         }
       } catch (e) {

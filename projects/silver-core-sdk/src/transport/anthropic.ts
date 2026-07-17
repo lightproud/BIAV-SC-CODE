@@ -38,6 +38,9 @@ import { SDK_USER_AGENT } from '../version.js';
 const DEFAULT_BASE_URL = 'https://api.anthropic.com';
 const DEFAULT_API_VERSION = '2023-06-01';
 const DEFAULT_TIMEOUT_MS = 600_000;
+/** setTimeout's signed-32-bit ceiling — the "effectively disabled" stand-in
+ *  for timeoutMs:0 (AbortSignal.timeout has no "never" value). */
+const MAX_TIMEOUT_MS = 2_147_483_647;
 /** Default idle watchdog: abort a stalled stream after this gap with no event.
  *  Official default AND minimum for the env override (CLAUDE_STREAM_IDLE_TIMEOUT_MS
  *  "defaults to 300000 and is clamped to that minimum"); provider option
@@ -193,7 +196,13 @@ export class AnthropicTransport implements Transport {
     // destructured out above so it never reaches the body.
     const bodyJson = JSON.stringify({ ...wireBody, stream: true });
     const headers = this.buildHeaders(this.credential);
-    const timeoutMs = this.provider.timeoutMs ?? DEFAULT_TIMEOUT_MS;
+    // timeoutMs: 0 disables the whole-request timeout, consistent with the
+    // idle-watchdog / stream-hard-cap "0 = disabled" convention (previously 0
+    // armed AbortSignal.timeout(0) and instantly aborted every request).
+    // AbortSignal.timeout cannot express "never", so 0 maps to the setTimeout
+    // ceiling (~24.8 days — effectively unbounded for a single request).
+    const configuredTimeoutMs = this.provider.timeoutMs ?? DEFAULT_TIMEOUT_MS;
+    const timeoutMs = configuredTimeoutMs > 0 ? configuredTimeoutMs : MAX_TIMEOUT_MS;
     const maxRetries = resolveMaxRetries(this.provider, this.env);
 
     // Body-governance rule (resilience P1, keeper ruling 2026-07-10): the
@@ -243,6 +252,10 @@ export class AnthropicTransport implements Transport {
       // ---- streaming phase: NEVER retried once an event is delivered -------
       const requestId = response.headers.get('request-id') ?? undefined;
       if (!response.body) {
+        // A body-less 2xx never reaches the stream teardown below, so the
+        // caller/timeout abort listeners must be detached here or they leak
+        // one pair per turn on a long-lived caller signal.
+        releaseSignals();
         throw new APIConnectionError('Messages API response has no body');
       }
       // Idle watchdog: abort a silently-stalled stream after `idleMs` with no

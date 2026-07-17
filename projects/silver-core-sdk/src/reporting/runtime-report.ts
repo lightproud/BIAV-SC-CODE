@@ -138,7 +138,15 @@ export async function readWindow(
   for (const name of names.sort()) {
     const day = name.slice('runlog-'.length, -'.jsonl'.length);
     if (day < fromDay || day > toDay) continue;
-    const text = await readFile(join(logDir, name), 'utf8');
+    // A day file can vanish between readdir and this read (concurrent
+    // pruneDayFiles / external cleanup); observability reads never throw
+    // (audit 2026-07-17 L42) — skip the missing file.
+    let text: string;
+    try {
+      text = await readFile(join(logDir, name), 'utf8');
+    } catch {
+      continue;
+    }
     for (const line of text.split('\n')) {
       if (line.trim().length === 0) continue;
       try {
@@ -151,6 +159,13 @@ export async function readWindow(
           continue;
         }
         const t = new Date(rec.ts).getTime();
+        // An unparseable timestamp ("2026-13-99") produced NaN and fell out
+        // of the window silently — it is a BAD line, count it (audit
+        // 2026-07-17 L43).
+        if (Number.isNaN(t)) {
+          badLines += 1;
+          continue;
+        }
         if (t >= from.getTime() && t <= to.getTime()) records.push(rec);
       } catch {
         badLines += 1;

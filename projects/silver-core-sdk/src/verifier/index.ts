@@ -58,6 +58,12 @@ export interface VerificationResult {
   rationale: string;
   /** PLAUSIBLE only: what would confirm it. */
   confirms?: string;
+  /** True when this REFUTED did NOT come from the model's judgement but from
+   *  a garbled/unparseable reply collapsing to the fail-closed verdict. The
+   *  keep rule is unchanged (still dropped), but a caller can now tell a
+   *  transient bad reply from a real refute and choose to retry/log instead
+   *  of silently discarding a valid finding (audit 2026-07-17 L46). */
+  parseFailed?: boolean;
 }
 
 /** Assemble the user turn for one candidate finding (omits absent fields). */
@@ -131,9 +137,14 @@ export function parseVerdict(raw: string): VerificationResult {
   // right after a valid token — fails CLOSED rather than scavenging a word out
   // of the broken JSON. Only a reply with no brace at all is treated as a
   // genuine bare-word verdict.
-  if (raw.includes('{')) return buildResult(SAFE_VERDICT, undefined, '', undefined);
-  const verdict = parseBareVerdict(raw) ?? SAFE_VERDICT;
-  return buildResult(verdict, undefined, '', undefined);
+  if (raw.includes('{')) {
+    return { ...buildResult(SAFE_VERDICT, undefined, '', undefined), parseFailed: true };
+  }
+  const bare = parseBareVerdict(raw);
+  if (bare === undefined) {
+    return { ...buildResult(SAFE_VERDICT, undefined, '', undefined), parseFailed: true };
+  }
+  return buildResult(bare, undefined, '', undefined);
 }
 
 /** Assemble a VerificationResult, encoding the keep rule + PLAUSIBLE-only confirms. */

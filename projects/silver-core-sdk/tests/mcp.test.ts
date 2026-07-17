@@ -139,7 +139,8 @@ describe('mcp/sdk-server tool()', () => {
     expect(bare.annotations).toEqual({ readOnlyHint: true, title: 'Bare' });
 
     // Detection rule: an object carrying an 'annotations' key is always the
-    // wrapper, even when the inner object is empty.
+    // wrapper. An EMPTY inner object carries no information and normalizes to
+    // undefined, symmetric with the bare `{}` form (audit 2026-07-17 L64).
     const wrappedEmpty = tool(
       'wrapped-empty',
       'wrapper with empty annotations',
@@ -147,7 +148,7 @@ describe('mcp/sdk-server tool()', () => {
       async () => ({ content: [] }),
       { annotations: {} },
     );
-    expect(wrappedEmpty.annotations).toEqual({});
+    expect(wrappedEmpty.annotations).toBeUndefined();
   });
 
   it('passes zod-validated args (defaults applied) to the handler', async () => {

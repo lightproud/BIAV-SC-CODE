@@ -5,7 +5,7 @@
  * surface — hooks and permission rules match on them.
  */
 
-import { readFile, stat } from 'node:fs/promises';
+import { open, stat } from 'node:fs/promises';
 import type {
   BuiltinTool,
   ToolContext,
@@ -38,6 +38,37 @@ const MAX_PDF_PAGES_PER_READ = 20;
  * bounded tool (Grep) rather than crashing the run.
  */
 const MAX_READ_BYTES = 50 * 1024 * 1024;
+
+/**
+ * Read `abs` while enforcing `maxBytes` DURING the read, not just before it:
+ * the stat-based pre-check races a concurrent writer (TOCTOU — the file can
+ * grow past the cap between stat and read, audit 2026-07-17 L22). Chunked fd
+ * reads keep peak allocation at cap+64KB worst case and stop the moment the
+ * cap is crossed. Returns null when the file exceeds the cap.
+ */
+async function readFileBounded(
+  abs: string,
+  maxBytes: number,
+  signal: AbortSignal,
+): Promise<Buffer | null> {
+  const fh = await open(abs, 'r');
+  try {
+    const chunks: Buffer[] = [];
+    let total = 0;
+    for (;;) {
+      if (signal.aborted) throw new AbortError('Read was aborted');
+      const chunk = Buffer.allocUnsafe(64 * 1024);
+      const { bytesRead } = await fh.read(chunk, 0, chunk.length, -1);
+      if (bytesRead === 0) break;
+      total += bytesRead;
+      if (total > maxBytes) return null;
+      chunks.push(chunk.subarray(0, bytesRead));
+    }
+    return Buffer.concat(chunks);
+  } finally {
+    await fh.close();
+  }
+}
 
 function errorResult(message: string): ToolResultPayload {
   return { content: message, isError: true };
@@ -213,7 +244,15 @@ export function createReadTool(limits?: ReadLimits): BuiltinTool {
         throw e;
       }
 
-      const buf = await readFile(abs, { signal: ctx.signal });
+      const bounded = await readFileBounded(abs, MAX_READ_BYTES, ctx.signal);
+      if (bounded === null) {
+        return errorResult(
+          `Read failed: "${abs}" exceeds the ${MAX_READ_BYTES}-byte (${Math.floor(
+            MAX_READ_BYTES / (1024 * 1024),
+          )}MB) read cap. Reading it whole would exhaust memory. Use the Grep tool to search it, or split the file into smaller pieces.`,
+        );
+      }
+      const buf = bounded;
 
       const isPdf = buf.length >= 5 && buf.toString('latin1', 0, 5) === '%PDF-';
 

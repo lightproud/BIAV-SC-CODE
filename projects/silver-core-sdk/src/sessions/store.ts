@@ -215,6 +215,15 @@ export type StoredSessionMeta = {
 /** What JsonlSessionStore.load actually returns: StoredSession plus meta. */
 export type LoadedSession = StoredSession & StoredSessionMeta;
 
+/** Whitespace-tolerant first-record / control-line probes (audit 2026-07-17
+ *  L54): our writers serialize compactly with `type` first, but EXTERNAL
+ *  transcripts (mirrored stores, hand-edited files) may carry spaces —
+ *  `{ "type": "meta" }` — and the old exact startsWith probes skipped them,
+ *  making loadInfo/list disagree with load (which full-parses every line). */
+const SIDECHAIN_PROBE_RE = /^\{\s*"type"\s*:\s*"sidechain_start"/;
+const CONTROL_LINE_PROBE_RE =
+  /^\{\s*"type"\s*:\s*"(?:meta|meta_update|pending_turn|turn_complete)"/;
+
 export type JsonlSessionStoreConfig = {
   /** Explicit directory override (options.sessionDir). */
   sessionDir?: string;
@@ -382,6 +391,7 @@ export class JsonlSessionStore implements SessionStore {
     // write time, so this is a no-op on a healthy transcript and collapses the
     // duplicates otherwise (first occurrence wins).
     const seenUuids = new Set<string>();
+    const accountingRecords: Array<Record<string, unknown>> = [];
 
     const lines = raw.split('\n');
     for (let i = 0; i < lines.length; i += 1) {
@@ -452,12 +462,28 @@ export class JsonlSessionStore implements SessionStore {
         const message = entry.message as { content?: unknown } | undefined;
         const content = message?.content;
         if (typeof content === 'string' || Array.isArray(content)) {
+          // Drop empty turns ('' / []) at read time too: legacy transcripts
+          // (written before the persistParam guard) carry them, repairPairing
+          // does not clean them, and replaying one 400s the API (audit
+          // 2026-07-17 L53).
+          if (content.length === 0) {
+            this.debug(
+              `session store: dropping empty ${entry.type} turn at line ${i + 1} in ${sessionId}${JSONL_EXT}`,
+            );
+            continue;
+          }
           messages.push({
             role: entry.type,
             content: content as string | ContentBlockParam[],
           });
           continue;
         }
+      }
+
+      // R1 accounting records ride along so a fork can copy them (L51).
+      if (entry.type === 'accounting') {
+        accountingRecords.push(entry);
+        continue;
       }
 
       this.debug(
@@ -494,6 +520,7 @@ export class JsonlSessionStore implements SessionStore {
       customTitle,
       tag,
       gitBranch,
+      ...(accountingRecords.length > 0 ? { accountingRecords } : {}),
       ...(pendingTurnUuid !== undefined
         ? {
             pendingTurnInterrupted: true,
@@ -570,11 +597,11 @@ export class JsonlSessionStore implements SessionStore {
           // NOT a listable main session — hide it from list()/getSessionInfo so
           // it never surfaces as a resumable conversation (it holds only
           // assistant turns behind the marker).
-          if (line.startsWith('{"type":"sidechain_start"')) return null;
+          if (SIDECHAIN_PROBE_RE.test(line)) return null;
         }
         // Exact for our writers ('type' is always serialized first); a foreign
         // line simply contributes nothing to the summary row.
-        if (!line.startsWith('{"type":"met') && !line.startsWith('{"type":"pending_turn"') && !line.startsWith('{"type":"turn_complete"')) {
+        if (!CONTROL_LINE_PROBE_RE.test(line)) {
           continue;
         }
         let parsed: unknown;
@@ -624,6 +651,12 @@ export class JsonlSessionStore implements SessionStore {
     try {
       const st = await stat(file);
       lastModified = st.mtimeMs;
+      // Same fallback chain as load() (audit 2026-07-17 L56): a transcript
+      // with no meta createdAt previously reported birthtime via load() but
+      // mtime here, so the two APIs disagreed on the session's creation time.
+      if (createdAt === undefined) {
+        createdAt = st.birthtimeMs > 0 ? st.birthtimeMs : st.mtimeMs;
+      }
     } catch {
       // stat raced a deletion; keep the fallback.
     }
@@ -698,7 +731,7 @@ export class JsonlSessionStore implements SessionStore {
       for await (const rawLine of rl) {
         const line = rawLine.trim();
         if (line.length === 0) continue;
-        return line.startsWith('{"type":"sidechain_start"');
+        return SIDECHAIN_PROBE_RE.test(line);
       }
       return false; // empty file
     } catch {

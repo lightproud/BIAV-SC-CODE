@@ -30,6 +30,15 @@ const PRICE_TABLE: readonly PriceEntry[] = [
   { prefix: 'claude-haiku-', input: 1, output: 5, cacheWrite: 1.25, cacheRead: 0.1 },
   // S5 (BPT audit 2026-07-07): claude-fable-* matched no prefix -> cost 0.
   { prefix: 'claude-fable-', input: 10, output: 50, cacheWrite: 12.5, cacheRead: 1.0 },
+  // Audit 2026-07-17 L6: legacy generation-first ids (claude-3-5-sonnet-20241022
+  // etc.) matched no prefix -> cost 0 -> maxBudgetUsd silently unenforced for
+  // callers pinned to older models. Longest prefix wins, so these never shadow
+  // the generation-last entries above.
+  { prefix: 'claude-3-opus-', input: 15, output: 75, cacheWrite: 18.75, cacheRead: 1.5 },
+  { prefix: 'claude-3-7-sonnet-', input: 3, output: 15, cacheWrite: 3.75, cacheRead: 0.3 },
+  { prefix: 'claude-3-5-sonnet-', input: 3, output: 15, cacheWrite: 3.75, cacheRead: 0.3 },
+  { prefix: 'claude-3-5-haiku-', input: 0.8, output: 4, cacheWrite: 1, cacheRead: 0.08 },
+  { prefix: 'claude-3-haiku-', input: 0.25, output: 1.25, cacheWrite: 0.3125, cacheRead: 0.025 },
 ];
 
 const MTOK = 1_000_000;

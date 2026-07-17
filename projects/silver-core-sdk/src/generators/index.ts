@@ -94,7 +94,13 @@ export function parseCommandPrefix(raw: string): CommandPrefixResult {
   // ("command_injection_detected." / "None") so a lightly-garbled sentinel
   // still fails closed / maps to none instead of leaking through as a prefix.
   const sentinel = token.toLowerCase().replace(/[.!,;:\s]+$/g, '');
-  if (sentinel === COMMAND_INJECTION_TOKEN) return { kind: 'injection' };
+  // Prefix-match, not equality: a DECORATED sentinel ("command_injection_
+  // detected (chained curl)") slipped past the exact compare and was returned
+  // as a runnable prefix (audit 2026-07-17 L71). startsWith keeps the honest
+  // distinction: the sentinel is the reply's ANSWER (leads the line), while a
+  // genuine command that merely CONTAINS the word ("echo command_injection_
+  // detected") leads with its command and stays a prefix.
+  if (sentinel.startsWith(COMMAND_INJECTION_TOKEN)) return { kind: 'injection' };
   if (sentinel === 'none') return { kind: 'none' };
   // A genuine prefix is returned VERBATIM (case-sensitive: env-var prefixes like
   // `GOEXPERIMENT=synctest go test` must not be lowercased).
@@ -314,11 +320,16 @@ export function parseAwaySummary(raw: string): string {
     .replace(/```[a-z]*\n?/gi, '')
     .replace(/```/g, '')
     .replace(/^\s*#{1,6}\s+/gm, '')
-    // Strip markdown emphasis/code markers but NOT underscores: underscores are
-    // far more likely to be snake_case identifiers or file paths (run_query,
-    // db_client.py) in a plain recap than markdown emphasis, and blanket-
-    // stripping them silently corrupts real content.
-    .replace(/[*`]+/g, '')
+    // Strip markdown emphasis/code markers but NOT underscores: underscores
+    // are far more likely to be snake_case identifiers or file paths
+    // (run_query, db_client.py) in a plain recap than markdown emphasis, and
+    // blanket-stripping them silently corrupts real content. The same logic
+    // now protects UNPAIRED asterisks/backticks too (`ran tests on *.ts` was
+    // silently losing its glob star — audit 2026-07-17 L70): only PAIRED
+    // markers (**bold**, *emph*, `code`) are unwrapped.
+    .replace(/\*\*([^*]+)\*\*/g, '$1')
+    .replace(/\*([^*\s][^*]*)\*/g, '$1')
+    .replace(/`([^`]+)`/g, '$1')
     // Trim wrapping quotes, incl. both smart double AND smart single quotes.
     .replace(/^["'“”‘’]+|["'“”‘’]+$/g, '')
     .replace(/\s*\n+\s*/g, ' ')
@@ -390,41 +401,49 @@ export function parseMemoryFileSelection(raw: string, availableFilenames: string
 /** Parse a JSON array of strings from a reply, or null. */
 function tryParseArray(raw: string): string[] | null {
   const trimmed = raw.trim().replace(/```[a-z]*\n?/gi, '').replace(/```/g, '').trim();
-  const start = trimmed.indexOf('[');
-  if (start < 0) return null;
-  // Find the FIRST balanced ']' (honoring string literals) rather than the last
-  // ']' in the text — otherwise trailing prose like `["db.md"] (see config[env])`
-  // would extend the slice past the real array end and fail to parse.
-  let depth = 0;
-  let inString = false;
-  let escaped = false;
-  let end = -1;
-  for (let i = start; i < trimmed.length; i += 1) {
-    const ch = trimmed[i];
-    if (inString) {
-      if (escaped) escaped = false;
-      else if (ch === '\\') escaped = true;
-      else if (ch === '"') inString = false;
-      continue;
-    }
-    if (ch === '"') inString = true;
-    else if (ch === '[') depth += 1;
-    else if (ch === ']') {
-      depth -= 1;
-      if (depth === 0) {
-        end = i;
-        break;
+  // Scan every '[' candidate: a leading balanced-but-unparseable group in
+  // prose (`[note] ["db.md"]`) previously aborted the whole parse and lost
+  // the real array — extractJsonObject already retries this way, this parser
+  // did not (audit 2026-07-17 L69).
+  let start = trimmed.indexOf('[');
+  while (start >= 0) {
+    // Find the FIRST balanced ']' (honoring string literals) rather than the
+    // last ']' in the text — otherwise trailing prose like `["db.md"] (see
+    // config[env])` would extend the slice past the real array end.
+    let depth = 0;
+    let inString = false;
+    let escaped = false;
+    let end = -1;
+    for (let i = start; i < trimmed.length; i += 1) {
+      const ch = trimmed[i];
+      if (inString) {
+        if (escaped) escaped = false;
+        else if (ch === '\\') escaped = true;
+        else if (ch === '"') inString = false;
+        continue;
+      }
+      if (ch === '"') inString = true;
+      else if (ch === '[') depth += 1;
+      else if (ch === ']') {
+        depth -= 1;
+        if (depth === 0) {
+          end = i;
+          break;
+        }
       }
     }
+    if (end < 0) return null; // never balanced: no later top-level candidate
+    try {
+      const arr = JSON.parse(trimmed.slice(start, end + 1)) as unknown;
+      if (Array.isArray(arr)) {
+        return arr.filter((x): x is string => typeof x === 'string').map((s) => s.trim());
+      }
+    } catch {
+      // Balanced but unparseable -> try the next '[' candidate.
+    }
+    start = trimmed.indexOf('[', start + 1);
   }
-  if (end < 0) return null;
-  try {
-    const arr = JSON.parse(trimmed.slice(start, end + 1)) as unknown;
-    if (!Array.isArray(arr)) return null;
-    return arr.filter((x): x is string => typeof x === 'string').map((s) => s.trim());
-  } catch {
-    return null;
-  }
+  return null;
 }
 
 // ---------------------------------------------------------------------------

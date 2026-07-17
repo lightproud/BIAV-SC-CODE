@@ -477,18 +477,23 @@ export class DefaultMcpRegistry implements McpRegistry {
     }
   }
 
-  /** Longest-server-name match, so names containing '__' resolve correctly. */
+  /** Longest-server-name match, so names containing '__' resolve correctly.
+   *  When SEVERAL server names prefix-match the same qualified name (pathological
+   *  '__' collisions like server 'a' tool 'b__c' vs server 'a__b' tool 'c'),
+   *  prefer the candidate that actually SERVES the residual tool — bare
+   *  longest-match made the shorter server's tool permanently unreachable
+   *  (audit 2026-07-17 L37). Falls back to the longest match so the existing
+   *  disabled/disconnected error paths keep their attribution. */
   private entryForQualifiedName(qualifiedName: string): ServerEntry | undefined {
-    let best: ServerEntry | undefined;
-    for (const entry of this.entries) {
-      if (
-        qualifiedName.startsWith(`mcp__${entry.name}__`) &&
-        (!best || entry.name.length > best.name.length)
-      ) {
-        best = entry;
-      }
+    const candidates = this.entries
+      .filter((e) => qualifiedName.startsWith(`mcp__${e.name}__`))
+      .sort((a, b) => b.name.length - a.name.length);
+    if (candidates.length <= 1) return candidates[0];
+    for (const entry of candidates) {
+      const toolName = qualifiedName.slice(`mcp__${entry.name}__`.length);
+      if (entry.tools.some((t) => t.toolName === toolName)) return entry;
     }
-    return best;
+    return candidates[0];
   }
 }
 

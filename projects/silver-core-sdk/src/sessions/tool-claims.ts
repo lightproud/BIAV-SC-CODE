@@ -114,28 +114,36 @@ export function auditToolClaims(args: AuditToolClaimsArgs): ToolClaimFinding[] {
     if (backed) continue;
     for (const [i, entry] of args.assistantTexts.entries()) {
       const text = typeof entry === 'string' ? entry : entry.text;
-      // Reset before each exec: a consumer-supplied detector whose claimPattern
-      // carries the `g`/`y` flag is STATEFUL — exec() advances lastIndex, so
-      // without this reset matching resumes mid-string on the next text and a
-      // genuinely-unbacked claim is silently missed (the one failure this audit
-      // must minimize). Harmless for the default non-global detectors.
-      detector.claimPattern.lastIndex = 0;
-      const match = detector.claimPattern.exec(text);
-      if (match === null) continue;
-      const lineStart = text.lastIndexOf('\n', match.index) + 1;
-      const lineEndRaw = text.indexOf('\n', match.index);
-      const lineEnd = lineEndRaw === -1 ? text.length : lineEndRaw;
-      findings.push({
-        detectorId: detector.id,
-        messageIndex: i,
-        ...(typeof entry !== 'string' && entry.uuid !== undefined
-          ? { messageUuid: entry.uuid }
-          : {}),
-        snippet: text.slice(lineStart, lineEnd).trim(),
-        reason:
-          `Assistant text matches '${detector.id}' but the session's ` +
-          `structured tool-call records contain no backing call`,
-      });
+      // Run against a FRESH global copy of the pattern: (a) statelessness — a
+      // consumer-supplied `g`/`y` detector regex advances lastIndex across
+      // texts and silently skips claims; (b) completeness — a single exec()
+      // reported at most ONE claim per assistant text, so a message carrying
+      // two unbacked claims under-reported (audit 2026-07-17 L52). One
+      // finding per claim LINE (multiple matches on one line collapse).
+      const flags = detector.claimPattern.flags.includes('g')
+        ? detector.claimPattern.flags
+        : `${detector.claimPattern.flags}g`;
+      const re = new RegExp(detector.claimPattern.source, flags);
+      const seenLineStarts = new Set<number>();
+      for (const match of text.matchAll(re)) {
+        const idx = match.index ?? 0;
+        const lineStart = text.lastIndexOf('\n', idx) + 1;
+        if (seenLineStarts.has(lineStart)) continue;
+        seenLineStarts.add(lineStart);
+        const lineEndRaw = text.indexOf('\n', idx);
+        const lineEnd = lineEndRaw === -1 ? text.length : lineEndRaw;
+        findings.push({
+          detectorId: detector.id,
+          messageIndex: i,
+          ...(typeof entry !== 'string' && entry.uuid !== undefined
+            ? { messageUuid: entry.uuid }
+            : {}),
+          snippet: text.slice(lineStart, lineEnd).trim(),
+          reason:
+            `Assistant text matches '${detector.id}' but the session's ` +
+            `structured tool-call records contain no backing call`,
+        });
+      }
     }
   }
   return findings;

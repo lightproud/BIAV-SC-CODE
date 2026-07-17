@@ -77,6 +77,18 @@ function renderResults(results: WebSearchResult[]): string {
   return blocks.join('\n');
 }
 
+/** Diagnosable message for ANY thrown value (audit 2026-07-17 L74): a
+ *  non-Error throw (string / object) rendered "failed: undefined" via the
+ *  blind `(e as Error).message` cast, losing the diagnostic. */
+function thrownMessage(e: unknown): string {
+  if (e instanceof Error) return e.message;
+  if (e !== null && typeof e === 'object') {
+    const m = (e as { message?: unknown }).message;
+    if (typeof m === 'string') return m;
+  }
+  return String(e);
+}
+
 export const webSearchTool: BuiltinTool = {
   name: 'WebSearch',
   description: WEBSEARCH_DESCRIPTION,
@@ -129,7 +141,7 @@ export const webSearchTool: BuiltinTool = {
       });
     } catch (e) {
       if (isAbortError(e)) throw new AbortError('WebSearch was aborted');
-      return errorResult(`WebSearch failed: ${(e as Error).message}`);
+      return errorResult(`WebSearch failed: ${thrownMessage(e)}`);
     }
 
     if (typeof raw === 'string') {

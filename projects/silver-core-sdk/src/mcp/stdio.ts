@@ -139,6 +139,10 @@ export class StdioMcpConnection {
     child.stdin.on('error', (err: Error) => {
       this.debug(`[mcp:${this.label}] stdin error: ${err.message}`);
     });
+    let everSpawned = false;
+    child.once('spawn', () => {
+      everSpawned = true;
+    });
     child.on('error', (err: Error) => {
       // audit 2026-07-14 L-5: a spawn failure (ENOENT etc.) fires 'error' but
       // NOT 'exit', so without flipping closed state here the connection stays
@@ -147,7 +151,12 @@ export class StdioMcpConnection {
       // 'exit' handler) and drop the child so subsequent request()/write()
       // fail FAST with mcp_not_connected.
       this.closed = true;
-      this.child = null;
+      // Drop the handle ONLY when the process never spawned: a post-spawn
+      // 'error' (e.g. a kill() failure) can fire with the process still
+      // alive, and nulling the handle then would defeat close()'s killTree
+      // and orphan the server (audit 2026-07-17 L34 — the 'exit' handler
+      // deliberately keeps the handle for the same reason).
+      if (!everSpawned) this.child = null;
       this.failAllPending(
         new McpError(
           'mcp_process_error',
@@ -624,11 +633,21 @@ function normalizeContentItem(item: unknown): CallToolResultContent {
       return out;
     }
     if (t.type === 'resource' && t.resource && typeof t.resource === 'object') {
-      const r = t.resource as { uri?: unknown; mimeType?: unknown; text?: unknown };
+      const r = t.resource as {
+        uri?: unknown;
+        mimeType?: unknown;
+        text?: unknown;
+        blob?: unknown;
+      };
       if (typeof r.uri === 'string') {
-        const resource: { uri: string; mimeType?: string; text?: string } = { uri: r.uri };
+        const resource: { uri: string; mimeType?: string; text?: string; blob?: string } = {
+          uri: r.uri,
+        };
         if (typeof r.mimeType === 'string') resource.mimeType = r.mimeType;
         if (typeof r.text === 'string') resource.text = r.text;
+        // BlobResourceContents (MCP spec): base64 binary payload — dropping it
+        // silently emptied embedded binary resources (audit 2026-07-17 L36).
+        if (typeof r.blob === 'string') resource.blob = r.blob;
         return { type: 'resource', resource };
       }
     }

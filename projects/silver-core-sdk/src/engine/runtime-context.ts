@@ -77,9 +77,48 @@ export function loadProjectInstructions(
     }
   }
   const joined = parts.join('\n\n');
-  return joined.length > PROJECT_INSTRUCTIONS_CAP
-    ? `${joined.slice(0, PROJECT_INSTRUCTIONS_CAP)}\n\n[...truncated]`
-    : joined;
+  if (Buffer.byteLength(joined, 'utf8') <= PROJECT_INSTRUCTIONS_CAP) return joined;
+  // Over cap. Two fixes over the old `joined.slice(0, CAP)`:
+  //  - The cap counts BYTES (its documented unit): the UTF-16 code-unit slice
+  //    let CJK-heavy instructions run ~3x over the cap and could cut a
+  //    surrogate pair in half.
+  //  - Keep the MOST SPECIFIC instructions: parts are ordered root-most ->
+  //    nearest-cwd, and head-slicing kept the least specific files while
+  //    dropping the nearest-cwd CLAUDE.md. Drop root-ward parts first.
+  const marker = '[...truncated: earlier instruction files omitted to fit the cap]';
+  const budget = PROJECT_INSTRUCTIONS_CAP - Buffer.byteLength(`${marker}\n\n`, 'utf8');
+  const kept: string[] = [];
+  let used = 0;
+  for (let i = parts.length - 1; i >= 0; i -= 1) {
+    const part = parts[i] as string;
+    const size = Buffer.byteLength(part, 'utf8') + (kept.length > 0 ? 2 : 0);
+    if (used + size > budget) {
+      if (kept.length === 0) {
+        // Even the single most specific part exceeds the cap: keep its head.
+        kept.unshift(truncateUtf8(part, budget));
+      }
+      break;
+    }
+    kept.unshift(part);
+    used += size;
+  }
+  return `${marker}\n\n${kept.join('\n\n')}`;
+}
+
+/** Truncate to at most `maxBytes` of UTF-8 without splitting a multi-byte
+ *  sequence (a raw byte cut mid-sequence decodes to U+FFFD mojibake). */
+function truncateUtf8(s: string, maxBytes: number): string {
+  const buf = Buffer.from(s, 'utf8');
+  if (buf.length <= maxBytes) return s;
+  let end = Math.max(0, maxBytes);
+  let i = end - 1;
+  while (i >= 0 && ((buf[i] as number) & 0xc0) === 0x80) i -= 1;
+  if (i >= 0) {
+    const lead = buf[i] as number;
+    const seqLen = lead >= 0xf0 ? 4 : lead >= 0xe0 ? 3 : lead >= 0xc0 ? 2 : 1;
+    if (i + seqLen > end) end = i; // drop the incomplete tail sequence
+  }
+  return buf.subarray(0, end).toString('utf8');
 }
 
 /** Instruction files from the filesystem root down to cwd (most specific last). */

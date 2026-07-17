@@ -109,6 +109,8 @@ export class FileCheckpointStore {
     // seq space (0,1,2,…) is unperturbed and rewind's `seq >= markerSeq` window
     // still starts exactly at this turn. Best-effort, never throws.
     if (this.dir === null) return;
+    // Same sibling-instance re-sync as record() (audit 2026-07-17 L49).
+    this.seq = Math.max(this.seq, this.nextSeqFromIndex());
     const seq = this.seq;
     try {
       mkdirSync(this.dir, { recursive: true });
@@ -129,6 +131,12 @@ export class FileCheckpointStore {
     if (this.dir === null) return;
     if (this.seenThisTurn.has(absPath)) return;
     this.seenThisTurn.add(absPath);
+    // Re-sync against the on-disk index before taking a number: a SECOND
+    // store instance bound to the same session appends to the same index,
+    // and two instance-local counters would hand out duplicate seq numbers —
+    // a rewind then restores the wrong instance's pre-image on the tie
+    // (audit 2026-07-17 L49).
+    this.seq = Math.max(this.seq, this.nextSeqFromIndex());
     const seq = this.seq;
     this.seq += 1;
     let blobName: string | null = null;
@@ -213,7 +221,10 @@ export class FileCheckpointStore {
           try {
             await rm(absPath, { force: true });
           } catch (err) {
+            // Same soft-fail as the restore branch: a failed rm must not be
+            // reported as deleted (audit 2026-07-17 L48).
             this.debug(`checkpoint delete failed for ${absPath}: ${errMessage(err)}`);
+            continue;
           }
         }
         deletedFiles.push(absPath);
@@ -279,6 +290,34 @@ export class FileCheckpointStore {
 
   private blobsDir(): string {
     return join(this.dir as string, 'blobs');
+  }
+
+  /** The next seq the on-disk index implies. Unlike reconstructSeq (which
+   *  bind() uses and which treats EVERY line's seq as consumed), this
+   *  distinguishes turn_start MARKERS: a marker records the seq its turn's
+   *  first file-change WILL take (unconsumed), so it caps `next` at its own
+   *  value rather than value+1 — keeping marker == first-change-seq alignment
+   *  while still fencing off a sibling instance's appended records (L49). */
+  private nextSeqFromIndex(): number {
+    let raw: string;
+    try {
+      raw = readFileSync(this.indexPath(), 'utf8');
+    } catch {
+      return 0;
+    }
+    let next = 0;
+    for (const line of raw.split('\n')) {
+      const t = line.trim();
+      if (t.length === 0) continue;
+      try {
+        const o = JSON.parse(t) as { seq?: unknown; marker?: unknown };
+        if (typeof o.seq !== 'number') continue;
+        next = Math.max(next, o.marker === 'turn_start' ? o.seq : o.seq + 1);
+      } catch {
+        // Skip corrupt lines.
+      }
+    }
+    return next;
   }
 
   private reconstructSeq(): number {

@@ -17,6 +17,18 @@ function errorResult(message: string): ToolResultPayload {
   return { content: message, isError: true };
 }
 
+/** Diagnosable message for ANY thrown value (audit 2026-07-17 L74): a
+ *  non-Error throw (string / object) rendered "failed: undefined" via the
+ *  blind `(e as Error).message` cast, losing the diagnostic. */
+function thrownMessage(e: unknown): string {
+  if (e instanceof Error) return e.message;
+  if (e !== null && typeof e === 'object') {
+    const m = (e as { message?: unknown }).message;
+    if (typeof m === 'string') return m;
+  }
+  return String(e);
+}
+
 export const listMcpResourcesTool: BuiltinTool = {
   name: 'ListMcpResourcesTool',
   description:
@@ -45,7 +57,7 @@ export const listMcpResourcesTool: BuiltinTool = {
       return { content: JSON.stringify(resources) };
     } catch (e) {
       if (isAbortError(e)) throw new AbortError('ListMcpResourcesTool was aborted');
-      return errorResult(`ListMcpResourcesTool failed: ${(e as Error).message}`);
+      return errorResult(`ListMcpResourcesTool failed: ${thrownMessage(e)}`);
     }
   },
 };
@@ -82,7 +94,7 @@ export const readMcpResourceTool: BuiltinTool = {
       return { content: JSON.stringify(contents) };
     } catch (e) {
       if (isAbortError(e)) throw new AbortError('ReadMcpResourceTool was aborted');
-      return errorResult(`ReadMcpResourceTool failed: ${(e as Error).message}`);
+      return errorResult(`ReadMcpResourceTool failed: ${thrownMessage(e)}`);
     }
   },
 };
@@ -123,7 +135,7 @@ export const readMcpResourceDirTool: BuiltinTool = {
       return { content: JSON.stringify(children) };
     } catch (e) {
       if (isAbortError(e)) throw new AbortError('ReadMcpResourceDirTool was aborted');
-      return errorResult(`ReadMcpResourceDirTool failed: ${(e as Error).message}`);
+      return errorResult(`ReadMcpResourceDirTool failed: ${thrownMessage(e)}`);
     }
   },
 };

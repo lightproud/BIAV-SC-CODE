@@ -672,6 +672,7 @@ export async function* maybeAutoCompact(
     overheadTokens,
     signal,
     onSummaryCall,
+    knownPromptFloor,
   );
 }
 
@@ -687,12 +688,20 @@ async function* performCompaction(
   overheadTokens: number,
   signal: AbortSignal,
   onSummaryCall: SummaryCallSink | undefined,
+  knownPromptFloor?: number,
 ): AsyncGenerator<SDKMessage, boolean> {
   if (signal.aborted) throw new AbortError();
   const cfg = config.compaction;
   if (cfg === undefined) return false;
 
-  const preTokens = estimateMessagesTokens(view.messages) + overheadTokens;
+  // pre_tokens must report the same number the trigger judged: when the
+  // API-reported prompt floor exceeds the heuristic estimate (the floor is
+  // what fired the fold), reporting the bare estimate understated the
+  // boundary's pre_tokens.
+  const preTokens = Math.max(
+    estimateMessagesTokens(view.messages) + overheadTokens,
+    knownPromptFloor ?? 0,
+  );
   let effectiveInstructions = customInstructions;
 
   // PreCompact hooks: may veto (continue:false) or contribute extra guidance.

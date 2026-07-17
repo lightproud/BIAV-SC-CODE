@@ -217,7 +217,11 @@ export class DefaultPermissionGate implements PermissionGate {
     // deliberate escape hatch resolved just above) still outranks it. The 'allow'
     // / 'prompt' verdicts stay in the mode step so an ask route still prompts.
     if (this.mode === 'auto' && !hookAllow) {
-      const cls = this.classifier(toolName, input, { readOnly, isFileEdit });
+      // Classify the input that will actually execute: a hook rewrite
+      // (effectiveInput) could otherwise slip a classifier-DENY payload past
+      // the classifier, which was still judging the pre-rewrite call (audit
+      // 2026-07-17 L29). Identical to `input` when no hook rewrote.
+      const cls = this.classifier(toolName, effectiveInput, { readOnly, isFileEdit });
       if (cls === 'deny') {
         return this.deny(toolName, toolUseID, input, 'auto classifier');
       }

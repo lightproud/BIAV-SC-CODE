@@ -140,6 +140,11 @@ export async function runUtilityCall(
     signal: opts.signal,
   };
   const acc = new MessageAccumulator();
+  // Fail loud on a PRE-aborted signal too: the in-loop check below never runs
+  // when the stream yields zero events, so an already-cancelled call could
+  // return a (empty) classification instead of rejecting (audit 2026-07-17
+  // L45 — security-sensitive classifiers must never answer after abort).
+  if (opts.signal?.aborted) throw new AbortError();
   for await (const ev of transport.stream(req)) {
     // Fail LOUD on abort: a mid-stream cancellation must reject, never return
     // the partial text accumulated so far. Silently returning a truncated reply
@@ -185,6 +190,7 @@ export function extractJsonObject(text: string): unknown {
     let depth = 0;
     let inString = false;
     let escaped = false;
+    let closed = false;
     for (let i = searchFrom; i < trimmed.length; i += 1) {
       const ch = trimmed[i];
       if (inString) {
@@ -198,14 +204,20 @@ export function extractJsonObject(text: string): unknown {
       else if (ch === '}') {
         depth -= 1;
         if (depth === 0) {
+          closed = true;
           const parsed = tryParse(trimmed.slice(searchFrom, i + 1));
           if (parsed !== undefined) return parsed;
           break; // balanced but unparseable -> try the next '{' (audit 2026-07-14 L-9c)
         }
       }
     }
-    // Whether the group closed-but-failed or never balanced, advance to the
-    // next candidate '{' after the current start.
+    // A candidate that ran off the END of the text (never balanced) swallows
+    // everything after it: any later '{' is NESTED inside the truncated
+    // object, and returning it would violate the "first TOP-LEVEL object"
+    // contract (audit 2026-07-17 L67 — truncated reply yielded an inner
+    // fragment). No further top-level candidate can exist; stop.
+    if (!closed) return null;
+    // The group closed but failed to parse: advance to the next candidate '{'.
     searchFrom = trimmed.indexOf('{', searchFrom + 1);
   }
   return null;
