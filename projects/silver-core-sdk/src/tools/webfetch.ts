@@ -416,6 +416,31 @@ function isTextualContentType(contentType: string): boolean {
   );
 }
 
+/**
+ * G2 (audit r2): decode the body per its DECLARED charset instead of assuming
+ * UTF-8 — a Shift_JIS / GBK / ISO-8859-1 page (routine in the CN/JP fetch
+ * paths this SDK serves) decoded as UTF-8 is silent mojibake. Priority:
+ * Content-Type `charset=` > an HTML `<meta charset>` sniffed from the first
+ * 1024 bytes (ASCII-compatible prefix, safe for every supported encoding) >
+ * UTF-8. An unrecognized label falls back to UTF-8 rather than failing the
+ * fetch.
+ */
+function decodeBody(buf: Buffer, contentType: string): string {
+  let charset = /charset\s*=\s*"?([\w.-]+)"?/i.exec(contentType)?.[1];
+  if (charset === undefined) {
+    const head = buf.subarray(0, 1024).toString('latin1');
+    charset =
+      /<meta[^>]+charset\s*=\s*["']?([\w.-]+)/i.exec(head)?.[1] ??
+      /<\?xml[^>]+encoding\s*=\s*["']([\w.-]+)["']/i.exec(head)?.[1];
+  }
+  if (charset === undefined || /^utf-?8$/i.test(charset)) return buf.toString('utf8');
+  try {
+    return new TextDecoder(charset).decode(buf);
+  } catch {
+    return buf.toString('utf8');
+  }
+}
+
 function normalizeUrl(raw: string): { ok: true; url: URL } | { ok: false; message: string } {
   let url: URL;
   try {
@@ -596,7 +621,7 @@ export const webFetchTool: BuiltinTool = {
       // Stream with a running byte cap so a body that lies about (or omits) its
       // length can never buffer more than MAX_BODY_BYTES into memory.
       const { buf, overflow } = await readCappedBody(response, MAX_BODY_BYTES);
-      const bodyText = buf.toString('utf8');
+      const bodyText = decodeBody(buf, contentType);
 
       const isHtml =
         contentType.toLowerCase().includes('html') || /^\s*<(?:!doctype|html)\b/i.test(bodyText);

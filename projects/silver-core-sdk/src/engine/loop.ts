@@ -1432,6 +1432,7 @@ export async function* runAgentLoop(
         // overlap, not serialize; each child runs in its own isolated loop).
         const isParallelSafe = (b: ToolUseBlock): boolean => isParallelSafeTool(b.name);
         let ti = 0;
+        try {
         while (ti < toolUses.length) {
           if (batchStop !== undefined || batchDefer !== undefined) {
             // A prior block asked to stop/defer: every remaining tool_use still
@@ -1490,6 +1491,34 @@ export async function* runAgentLoop(
           // (foreground subagent task_*, hook_started/hook_response) before
           // the next group runs.
           yield* drainObs();
+        }
+        } catch (err) {
+          // C1 (audit r2): a mid-batch throw must not erase the turn. Tools
+          // 1..k already RAN — their side effects exist — but pushAssistant /
+          // history.push only happened after the whole batch, so a non-abort
+          // crash left no transcript trace: the query kept a dangling pending
+          // turn and a resume re-drove the model into re-executing the same
+          // side-effectful tools (and re-billing the turn). Persist the
+          // assistant tool_use turn, the completed results, and "Not
+          // executed" placeholders for the remainder (complete pairing, so
+          // repairPairing/redrive cannot re-run them), then rethrow. A caller
+          // ABORT keeps its existing semantics (the abort path owns its own
+          // persistence decisions).
+          if (!isAbortError(err)) {
+            for (let k = results.length; k < toolUses.length; k += 1) {
+              results.push(
+                mkToolError(
+                  toolUses[k]!.id,
+                  'Not executed: the tool batch failed mid-run',
+                ),
+              );
+            }
+            pushAssistant(assistant.content, assistant.model);
+            const crashTurn: APIMessageParam = { role: 'user', content: results };
+            history.push(crashTurn);
+            mirror(crashTurn);
+          }
+          throw err;
         }
         pushAssistant(assistant.content, assistant.model);
         const userTurn: APIMessageParam = { role: 'user', content: results };

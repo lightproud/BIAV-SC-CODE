@@ -210,8 +210,13 @@ export class MessageAccumulator {
 
       case 'message_delta': {
         const msg = this.requireMessage('message_delta');
-        msg.stop_reason = event.delta.stop_reason;
-        msg.stop_sequence = event.delta.stop_sequence;
+        // C4 (audit r2): never let a field-omitting frame RESET an already
+        // delivered terminal fact. The API streams exactly one terminal
+        // message_delta, but a usage-only / gateway-rewritten extra frame with
+        // stop_reason omitted would overwrite the delivered stop_reason with
+        // undefined and flip the finalize/salvage classification.
+        msg.stop_reason = event.delta.stop_reason ?? msg.stop_reason;
+        msg.stop_sequence = event.delta.stop_sequence ?? msg.stop_sequence;
         // Usage merge: output_tokens replace; input-side fields keep max
         // (the API may re-report cumulative input counts).
         const u = msg.usage;
