@@ -185,7 +185,18 @@ export const editTool: BuiltinTool = {
 
       // Capture the pre-image BEFORE mutating so Query.rewindFiles() can
       // restore it. `text` is the original content already read for the edit.
-      ctx.recordFileChange?.(abs, text);
+      // Same lossless-roundtrip guard as Write (write.ts): the checkpoint blob
+      // pipeline is UTF-8, so a non-roundtripping (non-UTF-8) pre-image would
+      // make rewind restore U+FFFD mojibake — record nothing instead.
+      if (ctx.recordFileChange !== undefined) {
+        if (Buffer.from(text, 'utf8').equals(buf)) {
+          ctx.recordFileChange(abs, text);
+        } else {
+          ctx.debug(
+            `Edit: skipping non-restorable checkpoint for non-UTF-8 file ${abs}`,
+          );
+        }
+      }
 
       await writeFile(abs, updated, { encoding: 'utf8', signal: ctx.signal });
 

@@ -116,8 +116,18 @@ function parseQuestions(raw: unknown): ParseOk | ParseErr {
 
 function renderAnswers(answers: UserQuestionAnswer[]): string {
   if (answers.length === 0) return 'No answers provided.';
+  // Per-element shape validation (audit 2026-07-17 L72): the host handler is
+  // untrusted input here — an element missing its `answers` array threw an
+  // uncaught TypeError (`undefined.join`) OUTSIDE the execute try/catch and
+  // crashed into the engine, while every sibling path degrades to isError.
   return answers
-    .map((a) => `${a.header}: ${a.answers.join(', ')}`)
+    .map((a) => {
+      const header = typeof a?.header === 'string' ? a.header : '(missing header)';
+      const list = Array.isArray(a?.answers)
+        ? a.answers.filter((x): x is string => typeof x === 'string').join(', ')
+        : '(malformed answer)';
+      return `${header}: ${list}`;
+    })
     .join('\n');
 }
 

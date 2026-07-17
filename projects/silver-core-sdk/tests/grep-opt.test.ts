@@ -71,7 +71,11 @@ describe('OPT-1: count / files_with_matches are complete by default', () => {
       await grepTool.execute({ pattern: 'NEEDLE', path: dir, output_mode: 'count', head_limit: 10 }, makeCtx(dir)),
     );
     expect(c.split('\n').filter((l) => /:\d+$/.test(l))).toHaveLength(10);
-    expect(c).toContain('truncated at head_limit=10');
+    // L21 (audit 2026-07-17): an early scan stop is announced as "not scanned /
+    // may exist" — a certainty-honest footer — not as certain truncation.
+    expect(c).toContain('head_limit=10');
+    expect(c).toContain('not scanned');
+    expect(c).toContain('more matches may exist');
     expect(c).toContain('head_limit=0 for the complete result');
   });
 });
@@ -82,7 +86,9 @@ describe('OPT-1: content mode keeps the 250 flood guard + honest footer', () => 
     const c = contentOf(await grepTool.execute({ pattern: 'NEEDLE', path: dir, output_mode: 'content' }, makeCtx(dir)));
     const bodyLines = c.split('\n').filter((l) => l.includes('NEEDLE'));
     expect(bodyLines.length).toBeLessThanOrEqual(250);
-    expect(c).toContain('truncated at head_limit=250');
+    // Early scan stop (files remain unscanned): certainty-honest footer.
+    expect(c).toContain('head_limit=250');
+    expect(c).toMatch(/not scanned|truncated at head_limit=250/);
   });
 
   it('a small complete content result has no footer', async () => {

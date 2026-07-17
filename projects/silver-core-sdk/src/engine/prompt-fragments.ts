@@ -226,7 +226,11 @@ export const MAIN_LOOP_BODY: PromptFragment[] = [
     id: 'task-tools',
     slug: 'system-prompt-tool-usage-task-management',
     faithful: false, // adapted: ${TODOWRITE_TOOL_NAME} resolved to the shipped Task tools
-    gate: (has) => has('TaskCreate'),
+    // The text names all four task tools, so the gate must require all four:
+    // gating on TaskCreate alone described tools a disallowedTools filter had
+    // removed (red line: never describe an unregistered capability).
+    gate: (has) =>
+      has('TaskCreate') && has('TaskGet') && has('TaskUpdate') && has('TaskList'),
     text: 'Break down and manage your work with the TaskCreate, TaskGet, TaskUpdate, and TaskList tools. These tools are helpful for planning your work and helping the user track your progress. Use them proactively for multi-step work: create tasks with both subject (imperative) and activeForm (present continuous), mark a task as in_progress before starting it, and set up dependencies with addBlocks/addBlockedBy when order matters. Mark each task as completed as soon as you are done with the task. Do not batch up multiple tasks before marking them as completed.',
   },
   {

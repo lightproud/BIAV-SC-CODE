@@ -145,7 +145,15 @@ function runShell(
 
     const cleanup = (): void => {
       clearTimeout(timeoutTimer);
-      if (killTimer !== undefined) clearTimeout(killTimer);
+      if (killTimer !== undefined) {
+        clearTimeout(killTimer);
+        // The direct shell exited with the SIGTERM->SIGKILL escalation still
+        // armed: SIGTERM-ignoring descendants in the group may survive it.
+        // Fire the SIGKILL now, while live members pin the PGID against
+        // recycling (empty group -> ESRCH no-op); the delayed timer variant
+        // risked the recycled-PGID hazard (audit 2026-07-17 L23).
+        killGroup('SIGKILL');
+      }
       if (flushTimer !== undefined) clearTimeout(flushTimer);
       ctx.signal.removeEventListener('abort', onAbort);
     };

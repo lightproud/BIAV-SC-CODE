@@ -152,7 +152,18 @@ const messageTokenCache = new WeakMap<
 >();
 
 function contentLen(content: APIMessageParam['content']): number {
-  return content.length; // string length or block count — either detects the known mutation
+  if (typeof content === 'string') return content.length;
+  // Block count alone missed a same-count in-place TEXT rewrite (a 4-char
+  // block growing to 4,000 chars kept returning the stale ~1-token estimate).
+  // Fingerprint per-block text sizes too — still O(blocks) per validation,
+  // no full codepoint rescan.
+  let n = content.length;
+  for (const block of content) {
+    const b = block as { text?: unknown; thinking?: unknown };
+    if (typeof b.text === 'string') n += b.text.length;
+    else if (typeof b.thinking === 'string') n += b.thinking.length;
+  }
+  return n;
 }
 
 /** Estimate tokens for a list of messages (additive; per-message cached). */

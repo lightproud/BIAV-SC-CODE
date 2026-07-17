@@ -279,6 +279,22 @@ export function createBptSession(options: SessionManagerOptions = {}): SessionMa
   // --- Manager state ---------------------------------------------------------
   let closed = false;
   const ledgers: QueryLedger[] = [];
+  // L61 (audit 2026-07-17): ledgers of FINISHED queries fold into this settled
+  // aggregate and are evicted, so a long-lived manager's memory no longer
+  // grows with its lifetime query count. usage() = settled + live ledgers.
+  let settledCount = 0;
+  let settledCostUsd = 0;
+  let settledUsage = zeroUsage();
+  const settledModelUsage: Record<string, ModelUsage> = {};
+  const settleLedger = (ledger: QueryLedger): void => {
+    const idx = ledgers.indexOf(ledger);
+    if (idx === -1) return; // already settled (done fires once, but be safe)
+    ledgers.splice(idx, 1);
+    settledCount += 1;
+    settledCostUsd += ledger.costUsd;
+    settledUsage = addUsage(settledUsage, ledger.usage);
+    mergeModelUsage(settledModelUsage, ledger.modelUsage);
+  };
 
   /** Validate + assemble the effective options for one managed query.
    *  Per-query options override per-conversation knobs; provider/mcpServers
@@ -324,13 +340,25 @@ export function createBptSession(options: SessionManagerOptions = {}): SessionMa
       next: async (
         ...nextArgs: [] | [unknown]
       ): Promise<IteratorResult<SDKMessage, void>> => {
-        const r = await q.next(...nextArgs);
-        if (r.done !== true && r.value.type === 'result') {
+        let r: IteratorResult<SDKMessage, void>;
+        try {
+          r = await q.next(...nextArgs);
+        } catch (err) {
+          settleLedger(ledger); // the generator is finished (threw)
+          throw err;
+        }
+        if (r.done === true) {
+          settleLedger(ledger);
+        } else if (r.value.type === 'result') {
           record(ledger, r.value);
         }
         return r;
       },
-      return: (value) => q.return(value),
+      return: async (value) => {
+        const r = await q.return(value);
+        settleLedger(ledger);
+        return r;
+      },
       throw: (err?: unknown) => q.throw(err),
       [Symbol.asyncIterator](): Query {
         return wrapped;
@@ -499,10 +527,29 @@ export function createBptSession(options: SessionManagerOptions = {}): SessionMa
       try {
         await q.return(undefined);
       } catch (err) {
-        debug(
-          `[session-manager] retiring the interrupted query failed: ` +
-            `${err instanceof Error ? err.message : String(err)}`,
-        );
+        // Retiring failed: the abandoned run's finally (session-store flush
+        // included) may NOT have completed, so the "flush before the resumed
+        // query re-reads history" guarantee (audit 2026-07-14 H-2) is not
+        // assured for this resume. A debug line alone hid that from the
+        // consumer (audit 2026-07-17 L73) — surface a status observation so
+        // the host can see the resume ran degraded.
+        const msg = err instanceof Error ? err.message : String(err);
+        debug(`[session-manager] retiring the interrupted query failed: ${msg}`);
+        observations.push({
+          type: 'system',
+          subtype: 'status',
+          uuid: randomUUID(),
+          session_id: sessionId!,
+          status: 'auto-resume-degraded',
+          details: {
+            attempt: attempts,
+            maxResumes,
+            code: 'teardown_failed',
+            reason:
+              `retiring the interrupted query failed (${msg}); the resumed ` +
+              `history may miss that run's final flush`,
+          },
+        });
       }
       // No prompt is re-sent (the resumed query's §5.2 redrive continues the
       // interrupted turn against the persisted history).
@@ -533,13 +580,17 @@ export function createBptSession(options: SessionManagerOptions = {}): SessionMa
               );
               continue;
             }
+            settleLedger(ledger); // terminal throw: the run is finished
             if (attempts > 0 && err !== null && typeof err === 'object') {
               throw Object.assign(err, { resumeAttempts: attempts });
             }
             throw err;
           }
 
-          if (r.done === true) return r;
+          if (r.done === true) {
+            settleLedger(ledger);
+            return r;
+          }
 
           const v = r.value;
           if (v.type === 'system' && v.subtype === 'init') {
@@ -594,7 +645,11 @@ export function createBptSession(options: SessionManagerOptions = {}): SessionMa
       // reassigned on each transparent resume), so a consumer that calls
       // return()/throw()/interrupt()/... after a resume reaches the live query,
       // not the abandoned one.
-      return: (value) => q.return(value),
+      return: async (value) => {
+        const r = await q.return(value);
+        settleLedger(ledger);
+        return r;
+      },
       throw: (err?: unknown) => q.throw(err),
       [Symbol.asyncIterator](): Query {
         return wrapped;
@@ -667,15 +722,21 @@ export function createBptSession(options: SessionManagerOptions = {}): SessionMa
     },
 
     usage(): SessionManagerUsage {
-      let totalCostUsd = 0;
-      let usage = zeroUsage();
+      let totalCostUsd = settledCostUsd;
+      let usage = addUsage(zeroUsage(), settledUsage);
       const modelUsage: Record<string, ModelUsage> = {};
+      mergeModelUsage(modelUsage, settledModelUsage);
       for (const ledger of ledgers) {
         totalCostUsd += ledger.costUsd;
         usage = addUsage(usage, ledger.usage);
         mergeModelUsage(modelUsage, ledger.modelUsage);
       }
-      return { totalCostUsd, usage, modelUsage, queries: ledgers.length };
+      return {
+        totalCostUsd,
+        usage,
+        modelUsage,
+        queries: settledCount + ledgers.length,
+      };
     },
 
     async close(): Promise<void> {

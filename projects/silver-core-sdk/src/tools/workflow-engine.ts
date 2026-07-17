@@ -502,8 +502,14 @@ const PRELUDE = `'use strict';
 class Semaphore {
   private inUse = 0;
   private readonly queue: Array<() => void> = [];
+  private readonly max: number;
 
-  constructor(private readonly max: number) {}
+  constructor(max: number) {
+    // A non-positive cap can never grant a slot: the first acquire() queues
+    // forever and the workflow deadlocks silently (audit 2026-07-17 L39 —
+    // a caller-supplied maxConcurrentAgents:0). Clamp to serial execution.
+    this.max = Math.max(1, max);
+  }
 
   acquire(): Promise<() => void> {
     return new Promise((resolve) => {
@@ -552,7 +558,25 @@ function stableStringify(value: unknown): string {
 }
 
 function errorMessage(err: unknown): string {
-  return err instanceof Error ? err.message : String(err);
+  // Duck-typed, not instanceof: a script throw is a VM-REALM Error whose
+  // prototype chain does not satisfy the outer realm's `instanceof Error`,
+  // which turned every script error message into "Error: boom" via String()
+  // (audit 2026-07-17 L38).
+  if (err instanceof Error) return err.message;
+  if (err !== null && typeof err === 'object') {
+    const msg = (err as { message?: unknown }).message;
+    if (typeof msg === 'string') return msg;
+  }
+  return String(err);
+}
+
+/** Duck-typed stack extraction (same VM-realm rationale as errorMessage). */
+function errorStack(err: unknown): string | undefined {
+  if (err !== null && typeof err === 'object') {
+    const stack = (err as { stack?: unknown }).stack;
+    if (typeof stack === 'string') return stack;
+  }
+  return undefined;
 }
 
 /** Framing appended to every workflow agent prompt (the tool description's
@@ -976,7 +1000,7 @@ export async function runWorkflow(opts: WorkflowRunOptions): Promise<WorkflowRun
     if (!started) {
       return { ok: false, stage: 'syntax', error: errorMessage(err), ...base };
     }
-    const stack = err instanceof Error && err.stack !== undefined ? err.stack : undefined;
+    const stack = errorStack(err);
     return {
       ok: false,
       stage: 'runtime',

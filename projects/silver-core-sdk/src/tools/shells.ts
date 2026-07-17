@@ -143,13 +143,18 @@ export function createShellManager(debug: (msg: string) => void): ShellManager {
         }
       });
       child.on('exit', (code, signal) => {
-        // Cancel any pending SIGTERM->SIGKILL escalation: the process is gone,
-        // and firing the timer later would signal -pgid after the PGID could
-        // have been recycled to an unrelated process group (audit 2026-07-10 L1).
+        // Cancel any pending SIGTERM->SIGKILL escalation timer: firing it
+        // LATER would signal -pgid after the PGID could have been recycled to
+        // an unrelated process group (audit 2026-07-10 L1). But a silent
+        // cancel orphaned SIGTERM-ignoring descendants when only the DIRECT
+        // shell died — so fire the SIGKILL NOW instead: live group members
+        // pin the PGID against recycling, and an empty group is an ESRCH
+        // no-op (audit 2026-07-17 L23).
         const pending = killTimers.get(id);
         if (pending !== undefined) {
           clearTimeout(pending);
           killTimers.delete(id);
+          killGroup('SIGKILL');
         }
         rec.exitCode = code;
         rec.exitSignal = signal;
@@ -381,6 +386,21 @@ export const bashOutputTool: BuiltinTool = {
           content:
             `BashOutput: unsafe "filter" regular expression rejected: ` +
             `${guardReason}. Retry with a simpler filter (or none).`,
+          isError: true,
+        };
+      }
+      // Syntactic validity must ALSO be checked before the cursors advance:
+      // filterLines' catch used to pass everything through unfiltered while
+      // the cursor moved on — the model believed the output was filtered and
+      // the raw window was unrecoverable (audit 2026-07-17 L18).
+      try {
+        new RegExp(filter);
+      } catch (e) {
+        return {
+          content:
+            `BashOutput: invalid "filter" regular expression: ` +
+            `${(e as Error).message}. Fix the pattern and retry — no output ` +
+            `was consumed.`,
           isError: true,
         };
       }

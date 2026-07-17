@@ -922,7 +922,10 @@ export type CallToolResultContent =
       description?: string;
       mimeType?: string;
     }
-  | { type: 'resource'; resource: { uri: string; mimeType?: string; text?: string } };
+  | {
+      type: 'resource';
+      resource: { uri: string; mimeType?: string; text?: string; blob?: string };
+    };
 
 export type CallToolResult = {
   content: CallToolResultContent[];

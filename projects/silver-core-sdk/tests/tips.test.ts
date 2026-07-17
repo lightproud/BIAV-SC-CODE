@@ -121,8 +121,8 @@ describe('parseTipReception (fails SAFE)', () => {
   it('garbled reply -> acted_on false, reception unknown', () => {
     expect(parseTipReception('no idea')).toEqual({ actedOn: false, reception: 'unknown' });
   });
-  it('unrecognized reception -> neutral (the prompt default)', () => {
-    expect(parseTipReception('{"acted_on":false,"reception":"meh"}').reception).toBe('neutral');
+  it('unrecognized reception -> unknown (fail-safe, audit 2026-07-17 L66)', () => {
+    expect(parseTipReception('{"acted_on":false,"reception":"meh"}').reception).toBe('unknown');
   });
   it('is case-insensitive on reception', () => {
     expect(parseTipReception('{"acted_on":false,"reception":"NEGATIVE"}').reception).toBe('negative');

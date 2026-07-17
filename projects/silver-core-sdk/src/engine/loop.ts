@@ -45,7 +45,7 @@ import type {
 } from '../internal/contracts.js';
 import { MessageAccumulator, toolInputTruncationOf } from './accumulator.js';
 import { addUsage, estimateCostUsd, normalizeUsage } from './pricing.js';
-import { contextWindowFor } from './context-window.js';
+import { contextWindowFor, outputCeilingFor } from './context-window.js';
 import {
   createToolDispatcher,
   mkToolError,
@@ -627,12 +627,17 @@ export async function* runAgentLoop(
   // takes effect on the next assistant sub-turn, mirroring the per-turn re-read
   // of config.model below (finding #12).
   // H2 (audit T49): the wire form is resolved from the model the REQUEST is
-  // actually sent to (`useModel`, threaded in by streamAttempt), NOT from
+  // actually sent to (`liveModel` = streamAttempt's useModel), NOT from
   // config.model — after a fallback switch those differ, and a cross-generation
-  // main/fallback pair (adaptive-gen main, pre-adaptive fallback or vice versa)
-  // would send the wrong thinking form to the fallback model and 400 every
-  // fallback attempt, making the fallback permanently useless.
-  const computeThinking = (liveModel: string): StreamRequest['thinking'] => {
+  // main/fallback pair would send the wrong thinking form and 400 every
+  // fallback attempt. L9 (same audit): `effectiveMaxTokens` is the max_tokens
+  // the request will actually carry (config.maxOutputTokens, re-clamped for
+  // the live model on fallback) — the budget ceiling must track it or
+  // budget_tokens >= max_tokens 400s.
+  const computeThinking = (
+    liveModel: string,
+    effectiveMaxTokens: number,
+  ): StreamRequest['thinking'] => {
     const t = config.thinking;
     if (t === undefined || t.type === 'disabled') {
       return undefined; // unset / explicitly disabled -> omit the param entirely
@@ -668,13 +673,13 @@ export async function* runAgentLoop(
     // Pre-adaptive model: enabled + clamped budget. The Messages API requires
     // 1024 <= budget_tokens < max_tokens or it 400s; the default budget (10000)
     // exceeds the default max_tokens (8192), so clamp below max_tokens and warn.
-    const ceiling = config.maxOutputTokens - 1;
+    const ceiling = effectiveMaxTokens - 1;
     // If max_tokens leaves no room for even the 1024 floor, thinking cannot be
     // validly enabled — emitting budget_tokens < 1024 (or >= max_tokens) 400s
     // the turn, and then every turn (config is re-read each turn). Disable it.
     if (ceiling < MIN_THINKING_BUDGET) {
       deps.debug(
-        `engine: thinking disabled: max_tokens ${config.maxOutputTokens} leaves ` +
+        `engine: thinking disabled: max_tokens ${effectiveMaxTokens} leaves ` +
           `no room for the API's ${MIN_THINKING_BUDGET}-token budget floor`,
       );
       return undefined;
@@ -683,7 +688,7 @@ export async function* runAgentLoop(
     if (budget_tokens < requested) {
       deps.debug(
         `engine: thinking budget_tokens ${requested} >= max_tokens ` +
-          `${config.maxOutputTokens}; clamped to ${budget_tokens} to satisfy the API`,
+          `${effectiveMaxTokens}; clamped to ${budget_tokens} to satisfy the API`,
       );
     }
     // Lower-bound clamp: a positive-but-sub-1024 budget (e.g. maxThinkingTokens:
@@ -815,9 +820,18 @@ export async function* runAgentLoop(
     // the pairing is pinned by tests/system-field.test.ts.
     const cachingOn = config.promptCaching === true;
     const derived = deriveSystemField(config);
+    // Re-clamp max_tokens for the LIVE model: a fallback switch to a model
+    // with a lower output ceiling (e.g. sonnet 64k cap -> opus 32k) would
+    // otherwise replay the primary model's cap and 400. Unknown models get no
+    // clamp (outputCeilingFor returns undefined — conservative).
+    const liveCeiling = outputCeilingFor(useModel);
+    const effectiveMaxTokens =
+      liveCeiling !== undefined && liveCeiling < config.maxOutputTokens
+        ? liveCeiling
+        : config.maxOutputTokens;
     const request: StreamRequest = {
       model: useModel,
-      max_tokens: config.maxOutputTokens,
+      max_tokens: effectiveMaxTokens,
       system: derived.system,
       // Strip cross-model thinking signatures from CLOSED history turns before
       // they replay (BPT 2026-07-07): same-model turns pass through untouched
@@ -842,7 +856,7 @@ export async function* runAgentLoop(
             },
           }
         : {}),
-      thinking: computeThinking(useModel),
+      thinking: computeThinking(useModel, effectiveMaxTokens),
       signal,
       onRetry,
     };

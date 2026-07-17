@@ -615,10 +615,13 @@ describe('Grep tool', () => {
       makeCtx(dir),
     );
     const file = path.join(dir, 'many.txt');
+    // L16 (audit 2026-07-17): a cut inside the LAST scanned file is now
+    // announced instead of silently dropped.
     expect(text(res).split('\n')).toEqual([
       `${file}:1:match line 1`,
       `${file}:2:match line 2`,
       `${file}:3:match line 3`,
+      '(results truncated at head_limit=3; more matches exist — raise head_limit or set head_limit=0 for the complete result)',
     ]);
   });
 
@@ -634,8 +637,10 @@ describe('Grep tool', () => {
       makeCtx(dir),
     );
     const lines = text(res).split('\n');
-    expect(lines).toHaveLength(250);
+    // 250 result rows + the L16 honest-truncation footer.
+    expect(lines).toHaveLength(251);
     expect(lines[249]).toBe(`${path.join(dir, 'many.txt')}:250:match line 250`);
+    expect(lines[250]).toContain('truncated at head_limit=250');
   });
 
   it('head_limit 0 means unlimited', async () => {
@@ -675,13 +680,15 @@ describe('Grep tool', () => {
       },
       makeCtx(dir),
     );
+    // Rows 4-5 of 10: more matches exist past the window, and L16 says so.
     expect(text(res).split('\n')).toEqual([
       `${file}:4:match line 4`,
       `${file}:5:match line 5`,
+      '(results truncated at head_limit=2; more matches exist — raise head_limit or set head_limit=0 for the complete result)',
     ]);
   });
 
-  it('offset past the last match yields no matches', async () => {
+  it('offset past the last match names the skipped matches (L17)', async () => {
     const dir = await makeDir('grep-offset-past');
     await writeFile(path.join(dir, 'few.txt'), 'match a\nmatch b\n');
     const res = await grepTool.execute(
@@ -693,7 +700,10 @@ describe('Grep tool', () => {
       },
       makeCtx(dir),
     );
-    expect(text(res)).toBe('No matches found');
+    // L17 (audit 2026-07-17): matches exist — say so instead of the
+    // misleading "No matches found".
+    expect(text(res)).toContain('offset=5 skips all 2 collected result(s)');
+    expect(text(res)).toContain('Matches exist');
   });
 
   it('-o prints only the matched substrings, one per match', async () => {

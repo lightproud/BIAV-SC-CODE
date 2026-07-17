@@ -110,11 +110,21 @@ export function viewTruncationNotice(maxViewChars: number): string {
   return `[Output truncated at ${maxViewChars} characters. Use the view_range parameter to view the rest of the file.]`;
 }
 
+/** Matches a trailing viewTruncationNotice regardless of which layer's char
+ *  cap produced it (the two layers can be configured with different caps). */
+const TRUNCATION_NOTICE_RE =
+  /\[Output truncated at \d+ characters\. Use the view_range parameter to view the rest of the file\.\]$/;
+
 /** Truncate a numbered view body at a whole-line boundary under the char cap,
  *  appending the pagination notice. Shared by the store engine and the tool
- *  layer (which re-applies it for directly-implemented stores). */
+ *  layer (which re-applies it for directly-implemented stores). IDEMPOTENT:
+ *  engine output that already ends with the notice is returned as-is — the
+ *  tool layer re-applies this over header-carrying engine output whose header
+ *  pushes it past the cap, and a second cut chopped real lines and stacked a
+ *  second, misleading pagination notice (audit 2026-07-17 L25). */
 export function truncateViewBody(body: string, maxViewChars: number): string {
   if (body.length <= maxViewChars) return body;
+  if (TRUNCATION_NOTICE_RE.test(body)) return body;
   const cut = body.lastIndexOf('\n', maxViewChars);
   const kept = cut > 0 ? body.slice(0, cut) : body.slice(0, maxViewChars);
   return `${kept}\n${viewTruncationNotice(maxViewChars)}`;

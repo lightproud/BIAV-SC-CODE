@@ -16,6 +16,91 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.64.3 — 2026-07-17
+
+T49 batch D: 65 low-severity fixes from the 100-defect audit
+(`Public-Info-Pool/Resource/repo-engineering/silver-core-sdk-bug-audit-20260717.md`),
+covering every L-label except batch A's 8 (L32/L57–L60/L62/L63/L75). No new
+surfaces; pure bug fixes. Highlights by module:
+
+- **transport**: body-less 2xx no longer leaks abort listeners (L1);
+  `timeoutMs: 0` now means "disabled" like the other body governors instead
+  of instantly aborting every request (L2); a metadata-only clean close is an
+  `empty_message` failure, not a salvageable truncation (L3); an empty
+  `reasoning_content` no longer masks a populated `reasoning` (L4).
+- **engine**: token cache invalidates on in-place text growth (L5); legacy
+  generation-first model ids (`claude-3-5-sonnet-…`) are priced instead of
+  $0-and-budget-blind (L6); compact_boundary.pre_tokens honors the known
+  prompt floor (L7); cache-breakpoint labels align with the labeled system
+  composition (L8); max_tokens re-clamps for the live model on fallback via a
+  new static output-ceiling table, and the thinking budget tracks it (L9);
+  project-instructions cap now counts BYTES and keeps the most specific
+  (nearest-cwd) files when over cap (L10/L11); the task-tools prompt fragment
+  gates on all four tools it names (L12); EnterPlanMode description no longer
+  references the unshipped Agent tool (L13); a deferred tool call carries the
+  hook-rewritten input (L14).
+- **fs/exec tools**: Edit/MultiEdit checkpoint pre-images get the same
+  UTF-8-roundtrip guard as Write (L15); grep announces a cut inside the last
+  scanned file, distinguishes certain truncation from an early scan stop, and
+  an offset past all results names the real match count instead of "No
+  matches found" (L16/L17/L21); BashOutput rejects a syntactically invalid
+  filter BEFORE consuming the cursor (L18); a net-zero MultiEdit chain is a
+  no-op success (L19); the binary sniff scans the whole buffer (L20); Read
+  enforces its 50MB cap during the read (TOCTOU, L22); a pending
+  SIGTERM→SIGKILL escalation fires immediately on direct-shell exit instead
+  of orphaning SIGTERM-ignoring descendants (L23).
+- **memory**: write counters book only after the store call succeeds (L24);
+  truncateViewBody is idempotent (L25); rename guards the root at BOTH ends
+  (L26); the resident index strips the store's pagination notice (L27);
+  memory paths refuse control characters (L28).
+- **permissions/hooks**: the auto classifier judges the hook-rewritten input
+  (L29); a contradictory hook output never records an allow rationale as the
+  deny reason (L30); a throwing lifecycle sink can no longer abort the hook
+  batch (L31).
+- **mcp/workflow**: elicitation short-circuits on a pre-aborted signal (L33);
+  a post-spawn 'error' keeps the child handle so close() can still killTree
+  (L34); post() re-checks abort after listener registration (L35); embedded
+  resource `blob` passes through (L36); '__'-collision server names resolve
+  to the entry that serves the tool (L37); script errors keep message+stack
+  across the VM realm (L38); Semaphore clamps a non-positive cap (L39); the
+  SSE reader flushes the TextDecoder and folds a no-trailing-newline last
+  data: line (L68, also fixes audit M10).
+- **subagents/reporting/tips**: continuation success no longer overwrites a
+  terminal 'killed' status (L40); an aborted SubagentStart closes the
+  task_started pair (L41); runtime-report survives a file vanishing mid-read
+  and counts unparseable timestamps as bad lines (L42/L43); utility calls
+  fail loud on pre-aborted signals (L45); fail-closed verdicts from garbled
+  verifier replies are marked `parseFailed` (L46); tips feature ids match
+  case-insensitively and return the canonical id (L47); unknown tip reception
+  maps to 'unknown', not 'neutral' (L66).
+- **sessions**: rewind's delete branch reports failures honestly (L48);
+  checkpoint seq re-syncs against the on-disk index so sibling store
+  instances never tie (L49); adapter list() fetches each external transcript
+  ONCE (L50; the materialize-on-load cache is documented as deliberate, L55);
+  an in-query fork copies accounting records (L51); auditToolClaims reports
+  every claim in a text (L52); empty user turns are dropped at write AND read
+  time (L53); loadInfo/list probes tolerate whitespace-formatted transcripts
+  (L54); loadInfo's createdAt fallback matches load() (L56).
+- **query/session-manager/generators/misc**: finished query ledgers fold into
+  a settled aggregate instead of growing forever (L61); sdk-server tool()
+  normalizes empty wrapped annotations and degrades on primitive extras
+  (L64/L65); extractJsonObject refuses a nested fragment of a truncated
+  object (L67); tryParseArray retries past a leading unparseable bracket
+  group (L69); parseAwaySummary keeps literal `*`/unpaired backticks (L70);
+  a decorated injection sentinel fails closed via prefix-match (L71);
+  AskUserQuestion validates handler answer shapes instead of crashing (L72);
+  a failed pre-resume teardown surfaces an `auto-resume-degraded` status
+  observation (L73); resources/websearch error paths render non-Error throws
+  (L74).
+
+Honest exclusions: **L44** (compare-reports parseFloat) does not exist in the
+audited source — no string-number parsing anywhere in reporting/; recorded as
+not-reproducible rather than "fixed". **L55** ruled deliberate (local cache),
+documented in code. +19 regression tests (`tests/audit-t49-batch-d.test.ts`);
+5 existing assertions that had LOCKED audited-defective behavior updated
+(grep silent truncation, offset masking, tips neutral fallback, legacy
+pricing-to-$0, empty wrapped annotations).
+
 ## 0.64.2 — 2026-07-17
 
 T49 batch C (the 2026-07-17 100-defect audit, keeper-fired): all 18 P1

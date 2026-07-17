@@ -263,15 +263,32 @@ export const multiEditTool: BuiltinTool = {
       }
 
       if (text === original) {
-        // Every edit was a structural no-op relative to the file — cannot
-        // happen given the per-edit old!==new guard, but keep the invariant
-        // explicit rather than writing an identical file.
-        return errorResult('MultiEdit failed: the edits produced no change to the file.');
+        // A net-zero chain (edit #1 A->B, edit #2 B->A) is a legitimate
+        // outcome: every edit applied, the final content equals the original.
+        // Report an honest no-op SUCCESS — the old error discarded a call
+        // that had worked and sent the model into a retry loop (audit
+        // 2026-07-17 L19). Nothing is written and no checkpoint is recorded.
+        ctx.readFilePaths?.add(abs);
+        return {
+          content:
+            `Applied ${edits.length} edit${edits.length === 1 ? '' : 's'} to "${abs}"; ` +
+            `the edits cancel out (net zero) — file content unchanged, nothing written.`,
+        };
       }
 
       // Capture the pre-image (ORIGINAL, pre-any-edit) exactly once so
       // Query.rewindFiles() restores the true prior state, not a partial one.
-      ctx.recordFileChange?.(abs, original);
+      // Same lossless-roundtrip guard as Write/Edit: a non-UTF-8 pre-image
+      // would make rewind restore mojibake — record nothing instead.
+      if (ctx.recordFileChange !== undefined) {
+        if (Buffer.from(original, 'utf8').equals(buf)) {
+          ctx.recordFileChange(abs, original);
+        } else {
+          ctx.debug(
+            `MultiEdit: skipping non-restorable checkpoint for non-UTF-8 file ${abs}`,
+          );
+        }
+      }
 
       await writeFile(abs, text, { encoding: 'utf8', signal: ctx.signal });
 

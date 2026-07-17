@@ -30,6 +30,38 @@ const WINDOW_TABLE: readonly WindowEntry[] = [
 ];
 
 /**
+ * Static per-model OUTPUT-token ceiling table (same provenance discipline as
+ * the window table: estimates from public model documentation). Used to
+ * re-clamp max_tokens when a FALLBACK switch lands on a model whose output
+ * ceiling is lower than the configured cap — sending the primary model's cap
+ * would 400. Longest matching prefix wins; unknown ids return undefined
+ * (no clamp — conservative).
+ */
+const OUTPUT_CEILING_TABLE: readonly WindowEntry[] = [
+  { prefix: 'claude-opus-', window: 32_000 },
+  { prefix: 'claude-sonnet-', window: 64_000 },
+  { prefix: 'claude-haiku-', window: 64_000 },
+  { prefix: 'claude-3-7-sonnet-', window: 64_000 },
+  { prefix: 'claude-3-5-sonnet-', window: 8_192 },
+  { prefix: 'claude-3-5-haiku-', window: 8_192 },
+  { prefix: 'claude-3-opus-', window: 4_096 },
+  { prefix: 'claude-3-haiku-', window: 4_096 },
+];
+
+/** Output-token ceiling for a model id, or undefined when unknown. */
+export function outputCeilingFor(model: string): number | undefined {
+  let best: WindowEntry | undefined;
+  for (const entry of OUTPUT_CEILING_TABLE) {
+    if (model.startsWith(entry.prefix)) {
+      if (best === undefined || entry.prefix.length > best.prefix.length) {
+        best = entry;
+      }
+    }
+  }
+  return best?.window;
+}
+
+/**
  * Maximum context window (tokens) for a model id. Longest-prefix match;
  * unknown models return DEFAULT_CONTEXT_WINDOW.
  */

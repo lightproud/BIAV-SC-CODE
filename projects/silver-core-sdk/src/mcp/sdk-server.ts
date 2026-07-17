@@ -32,11 +32,17 @@ function resolveToolAnnotations(
   arg?: ToolAnnotations | { annotations?: ToolAnnotations },
 ): ToolAnnotations | undefined {
   if (arg === undefined) return undefined;
-  if ('annotations' in arg) {
-    return (arg as { annotations?: ToolAnnotations }).annotations;
-  }
-  const bare = arg as ToolAnnotations;
-  return Object.keys(bare).length === 0 ? undefined : bare;
+  // A primitive fifth argument is JS misuse, but `'annotations' in arg` threw
+  // a TypeError at tool-DEFINITION time — degrade gracefully to "no
+  // annotations" instead (audit 2026-07-17 L65).
+  if (typeof arg !== 'object' || arg === null) return undefined;
+  const unwrapped =
+    'annotations' in arg ? (arg as { annotations?: ToolAnnotations }).annotations : (arg as ToolAnnotations);
+  // Empty carries no information in EITHER form: the bare `{}` already
+  // normalized to undefined but the wrapped `{annotations: {}}` leaked `{}`
+  // through — asymmetric output for identical meaning (audit 2026-07-17 L64).
+  if (unwrapped === undefined || Object.keys(unwrapped).length === 0) return undefined;
+  return unwrapped;
 }
 
 /**

@@ -61,6 +61,10 @@ export function createSessionPersistence(
 
   function persistParam(sessionId: string, m: APIMessageParam, uuid?: string): void {
     if (!persist) return;
+    // Mirror persistAssistant's empty guard (audit 2026-07-17 L53): an empty
+    // turn ('' or []) persisted here survives every repair pass and 400s the
+    // API on each later resume replay.
+    if (m.content.length === 0) return;
     store.append(sessionId, {
       type: m.role,
       // Persist a STABLE message identity (keeper ruling 2026-07-13): when the
@@ -183,6 +187,17 @@ export function createSessionPersistence(
                 uuid: randomUUID(),
                 timestamp: new Date().toISOString(),
                 message: m,
+              });
+            }
+            // Copy the source's R1 accounting records too: dropping them made
+            // getSessionAccounting on the fork report zero cumulative cost,
+            // contradicting standalone forkSession which copies every entry
+            // (audit 2026-07-17 L51). Fresh uuids, fork's session id.
+            for (const rec of stored.accountingRecords ?? []) {
+              store.append(newId, {
+                ...rec,
+                uuid: randomUUID(),
+                session_id: newId,
               });
             }
           }

@@ -1045,6 +1045,14 @@ export function createSubagentRuntime(
       try {
         await fireSubagentStart(agentId, params.subagentType, params.signal);
       } catch (err) {
+        // task_started was already emitted above: close the observability
+        // pair with a terminal task_updated before propagating, or the host's
+        // task tracker shows this agent as running forever (audit 2026-07-17
+        // L41).
+        emitTaskFinished(agentId, {
+          text: `SubagentStart hook aborted/failed before the agent ran: ${String(err)}`,
+          isError: true,
+        });
         await releaseWorktree().catch(() => undefined);
         throw err;
       }
@@ -1727,8 +1735,14 @@ export function createSubagentRuntime(
         record.sidechain,
         stallWatchdog,
       );
-      record.status = result.isError ? 'failed' : 'completed';
-      emitTaskFinished(agentId, result);
+      // Terminal-status guard (same as this catch and the killAgent race
+      // note): a kill that landed while the continuation was settling set
+      // 'killed' and emitted its own note — overwriting to 'completed' here
+      // published two contradictory terminal events (audit 2026-07-17 L40).
+      if (record.status === 'running') {
+        record.status = result.isError ? 'failed' : 'completed';
+        emitTaskFinished(agentId, result);
+      }
       return result;
     } catch (err) {
       if (record.status === 'running') record.status = 'failed';

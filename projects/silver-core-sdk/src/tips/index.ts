@@ -109,13 +109,18 @@ export function parseContextTip(
   // A tip must name a feature_id that is BOTH eligible AND in the catalog, and
   // carry non-empty tip text. Anything else -> stay silent (never surface an
   // ineligible or hallucinated id).
-  const eligible = eligibleIds.includes(featureId);
-  const entry = catalog.find((s) => s.featureId === featureId);
+  // Case-insensitive id matching (audit 2026-07-17 L47): the model routinely
+  // re-cases ids ("Manual-Polling" -> "manual-polling"), and a case-sensitive
+  // compare silently dropped valid selections. The CANONICAL id (catalog
+  // casing) is what gets returned, never the model's spelling.
+  const featureIdLower = featureId.toLowerCase();
+  const eligible = eligibleIds.some((id) => id.toLowerCase() === featureIdLower);
+  const entry = catalog.find((s) => s.featureId.toLowerCase() === featureIdLower);
   if (tip.length === 0 || !eligible || entry === undefined) return { hasTip: false };
   // Use the catalog's AUTHORITATIVE action for the chosen feature, not the
   // model's free-text `action` field — a host may display/run this, so it must
   // be the vetted catalog command, never unvalidated model output.
-  return { hasTip: true, tip, featureId, action: entry.action };
+  return { hasTip: true, tip, featureId: entry.featureId, action: entry.action };
 }
 
 // ---------------------------------------------------------------------------
@@ -162,9 +167,11 @@ export function parseTipReception(raw: string): TipReceptionResult {
   }
   const rec = obj as Record<string, unknown>;
   const r = typeof rec.reception === 'string' ? rec.reception.trim().toLowerCase() : '';
-  // Unrecognized reception -> 'neutral' (the prompt's expected default); a
-  // garbled reply never fabricates positive/negative.
-  const reception: TipReception = RECEPTIONS.has(r) ? (r as TipReception) : 'neutral';
+  // Unrecognized/garbled reception -> 'unknown', the documented fail-safe:
+  // mapping it to 'neutral' over-counted neutral in host aggregations and
+  // made bad replies indistinguishable from real neutrals (audit 2026-07-17
+  // L66). A garbled reply never fabricates positive/negative/neutral.
+  const reception: TipReception = RECEPTIONS.has(r) ? (r as TipReception) : 'unknown';
   return { actedOn: rec.acted_on === true, reception };
 }
 

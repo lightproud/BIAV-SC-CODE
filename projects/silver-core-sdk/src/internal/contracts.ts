@@ -790,6 +790,11 @@ export type StoredSession = {
    * tool_result records made it to disk).
    */
   pendingTurnInterrupted?: boolean;
+  /** R1 accounting records (cost deltas) parsed from the transcript, in file
+   *  order. Carried so a fork can copy them — dropping them made
+   *  getSessionAccounting on an in-query fork report zero cumulative cost
+   *  (audit 2026-07-17 L51; standalone forkSession copies ALL entries). */
+  accountingRecords?: Array<Record<string, unknown>>;
   /** uuid of the dangling pending_turn (the recovery re-drive settles it). */
   pendingTurnUuid?: string;
   /** turn_ref of the dangling pending_turn (the interrupted user turn's uuid). */

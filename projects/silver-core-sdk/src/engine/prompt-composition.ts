@@ -156,11 +156,23 @@ export function analyzeRequestComposition(
   }
   const sys = wire.system;
   if (Array.isArray(sys)) {
+    // Breakpoint labels come from the LABELED composition when it aligns with
+    // the wire blocks 1:1. The bare `i === 0 ? base : append[i-1]` heuristic
+    // mislabels whenever the composition has no 'base' part (every append
+    // label then shifts by one) — bucket misassignment in the cache map.
+    let appendIdx = 0;
+    const wireLabels =
+      system !== undefined && system.parts.length === sys.length
+        ? system.parts.map((p) =>
+            p.role === 'base' ? 'systemBase' : `systemAppend[${appendIdx++}]`,
+          )
+        : undefined;
     sys.forEach((block, i) => {
       prefix += estimateTextTokens(block.text);
       if (hasCache(block.cache_control)) {
         cacheBreakpoints.push({
-          afterPart: i === 0 ? 'systemBase' : `systemAppend[${i - 1}]`,
+          afterPart:
+            wireLabels?.[i] ?? (i === 0 ? 'systemBase' : `systemAppend[${i - 1}]`),
           prefixEstTokens: prefix,
         });
       }
