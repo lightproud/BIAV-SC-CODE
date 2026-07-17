@@ -1789,6 +1789,13 @@ export type Options = {
   loopControl?: {
     onProposal?: (proposal: LoopStopProposal) => void;
   };
+  /**
+   * BPT-EXTENSION (SCS-REQ-REPOS-01 §4.3): structured session goal — a
+   * stricter stopping condition over the engine's Stop-gate mechanism, with
+   * a HOST-INJECTED evaluator. This structured config is the goal's ONLY
+   * entrance; the engine recognizes no goal text convention.
+   */
+  goal?: GoalConfig;
   maxBudgetUsd?: number;
   /**
    * BPT-EXTENSION (SCS-REQ-REPOS-01 §3 R2): the fraction of `maxBudgetUsd` at
@@ -3023,6 +3030,65 @@ export type LoopStopProposal = {
   reason: string;
 };
 
+/**
+ * The host-injected goal evaluator's verdict (SCS-REQ-REPOS-01 §4.3).
+ * `not_achieved` blocks the stop and re-drives the loop with `reason`;
+ * `achieved` and `impossible` (the judged escape hatch) allow the stop and
+ * disarm the goal.
+ */
+export type GoalVerdict = {
+  status: 'achieved' | 'not_achieved' | 'impossible';
+  reason?: string;
+};
+
+/** What the goal evaluator sees at each natural stop. */
+export type GoalEvaluationContext = {
+  /** The configured goal description. */
+  goal: string;
+  /** Bounded engine-assembled evidence: last assistant message + transcript
+   *  tail (may be '' — a pure-function evaluator checking external state,
+   *  e.g. running tests, needs none of it). */
+  context: string;
+  /** Consecutive blocked stops so far for this goal. */
+  blocks: number;
+  signal: AbortSignal;
+};
+
+/** Host-observable goal lifecycle notifications. */
+export type GoalEvent =
+  | { kind: 'achieved'; goal: string; reason: string }
+  | { kind: 'impossible'; goal: string; reason: string }
+  | { kind: 'blocked'; goal: string; reason: string; blocks: number }
+  | { kind: 'evaluator_error'; goal: string; reason: string }
+  | { kind: 'block_limit'; goal: string; blocks: number };
+
+/**
+ * Structured session goal (`options.goal`) — the goal's ONLY entrance. Arms
+ * a Stop gate: the loop may not stop naturally until the HOST-INJECTED
+ * evaluator judges the goal achieved (or impossible — the escape hatch).
+ * The evaluator is a pure function (deterministic judge: run tests /
+ * assertions — preferred) or the host's own judge-model call; the engine
+ * hardcodes no model choice. Evaluator failure ALLOWS the stop (a broken
+ * judge must never trap the loop). maxTurns / maxBudgetUsd still cap a
+ * stubborn goal.
+ */
+export type GoalConfig = {
+  /** The goal description (shown to the evaluator and in feedback turns). */
+  goal: string;
+  /** Host-injected judge, called at each natural stop while armed. */
+  evaluator: (
+    ctx: GoalEvaluationContext,
+  ) => GoalVerdict | Promise<GoalVerdict>;
+  /** Escape policy: after this many consecutive blocked stops, allow the
+   *  stop (goal stays armed). Default unbounded — the engine's own caps
+   *  (maxTurns / maxBudgetUsd) are the safety net. */
+  maxBlocks?: number;
+  /** Bounded transcript-tail read for the evaluator context (default 32768). */
+  transcriptTailBytes?: number;
+  /** Lifecycle notifications (UI badges, runner logs). */
+  onEvent?: (event: GoalEvent) => void;
+};
+
 /** One structured prelude block for `Options.prelude` (R1 turn injection). */
 export type StructuredPrelude = {
   /** Optional label rendered as the block's first line. */
@@ -3064,8 +3130,6 @@ export type CompactionOptions = {
    * Default: the session model.
    */
   model?: string;
-  /** Treat a user turn whose text is `/compact [instructions]` as a manual compaction. Default true. */
-  recognizeCommand?: boolean;
   /** Extra guidance appended to the summarizer instructions. */
   customInstructions?: string;
   /** Override the model context window (e.g. for a 1M-context beta). */

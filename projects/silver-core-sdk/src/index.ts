@@ -26,40 +26,6 @@ export type {
 // SessionManagerOptions / SessionManagerUsage types ride the types.js export).
 export { createBptSession, runConcurrent } from './session-manager.js';
 export type { ManagedTask, RunConcurrentOutcome } from './session-manager.js';
-// BPT-EXTENSION: /loop interval-loop primitive (parser is the grammar's
-// single source of truth; the controller drives a host-owned runner on a
-// fixed-delay cadence — see src/prompt-loop.ts module header).
-export {
-  createPromptLoop,
-  parseLoopCommand,
-  DEFAULT_LOOP_INTERVAL_MS,
-  DEFAULT_LOOP_INTERVAL_LABEL,
-  MIN_LOOP_INTERVAL_MS,
-  MAX_LOOP_INTERVAL_MS,
-  LOOP_SLASH_COMMAND,
-} from './prompt-loop.js';
-export type {
-  LoopCommandParse,
-  LoopDirective,
-  LoopErrorDecision,
-  LoopStopReason,
-  PromptLoopController,
-  PromptLoopOptions,
-  PromptLoopSummary,
-} from './prompt-loop.js';
-// BPT-EXTENSION: /goal session-goal primitive (the surface companion to the
-// engine's Stop-hook block semantics — parser + goal manager producing the
-// Stop matcher; see src/hooks/session-goal.ts module header for the deliberately
-// inverted failure direction).
-export { createSessionGoal, parseGoalCommand, GOAL_SLASH_COMMAND } from './hooks/session-goal.js';
-export type {
-  GoalCommandAction,
-  GoalCommandOutcome,
-  GoalCommandParse,
-  SessionGoal,
-  SessionGoalEvent,
-  SessionGoalOptions,
-} from './hooks/session-goal.js';
 // Loop-support interface surface (SCS-REQ-REPOS-01 §3): primitives for a
 // HOST-BUILT unattended loop. The engine never becomes the loop — the clock
 // and the assembly belong to the runner layer; these exports make that loop

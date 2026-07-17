@@ -29,6 +29,7 @@ import type {
   SDKSystemMessage,
   RetainedRegion,
   SDKUserMessage,
+  HookEvent,
   SlashCommand,
   SubagentTransportHandle,
   TextBlockParam,
@@ -44,16 +45,11 @@ import type {
 import { createProviderTransport } from './transport/factory.js';
 import { DefaultPermissionGate } from './permissions/gate.js';
 import { DefaultHookRunner } from './hooks/runner.js';
+import { createGoalStopHooks } from './hooks/goal.js';
 import { DefaultMcpRegistry } from './mcp/registry.js';
 import { matchToolName, parseRule } from './permissions/rules.js';
 import { runAgentLoop } from './engine/loop.js';
 import { hasPriceFor } from './engine/pricing.js';
-import {
-  expandSlashCommand,
-  loadSlashCommands,
-  pureTextOf,
-  slashCommandInfos,
-} from './engine/slash-commands.js';
 import { SessionAccounting } from './query-accounting.js';
 import { appendSystemInjection, buildEngineConfig } from './engine/config-builder.js';
 import {
@@ -502,8 +498,19 @@ export function query(args: {
           return resolved;
         };
 
+  // Structured goal (SCS-REQ-REPOS-01 §4.3): merge the goal's Stop gate into
+  // the effective hook set. The goal's ONLY entrance is options.goal.
+  let effectiveHooks = options.hooks;
+  if (options.goal !== undefined) {
+    const goalHooks = createGoalStopHooks(options.goal);
+    effectiveHooks = { ...(options.hooks ?? {}) };
+    for (const [ev, matchers] of Object.entries(goalHooks)) {
+      const key = ev as HookEvent;
+      effectiveHooks[key] = [...(options.hooks?.[key] ?? []), ...(matchers ?? [])];
+    }
+  }
   const hooks = new DefaultHookRunner({
-    hooks: options.hooks,
+    hooks: effectiveHooks,
     debug,
     onLifecycleEvent: options.includeHookEvents === true ? emitObs : undefined,
     // v0.6 condition-gated matchers: thread the session credentials so a
@@ -561,10 +568,6 @@ export function query(args: {
       mcpScopeByName.set(name, 'local');
   }
 
-  // Custom slash commands (.claude/commands, project + user per settingSources),
-  // loaded ONCE at query construction — the set is static for the query's
-  // lifetime, so commands_changed still has no source event (docs/COMPAT.md).
-  const customSlashCommands = loadSlashCommands(cwd, options.settingSources);
   const realMcp: McpRegistry =
     injected?.mcpRegistry ??
     new DefaultMcpRegistry({
@@ -1389,7 +1392,9 @@ export function query(args: {
           .map((s) => ({ name: s.name, status: s.status })),
         model: engineConfig.model,
         permissionMode: gate.getMode(),
-        slash_commands: slashCommandInfos(customSlashCommands).map((c) => c.name),
+        // Slash retirement (SCS-REQ-REPOS-01 §4): the engine recognizes no
+        // slash convention, so it advertises none.
+        slash_commands: [],
         output_style: 'default',
         agents: wantAgent ? Object.keys(agentDefs) : [],
         claude_code_version: CLAUDE_CODE_VERSION,
@@ -1398,7 +1403,7 @@ export function query(args: {
         plugins: [],
       };
       initDeferred.resolve({
-        commands: slashCommandInfos(customSlashCommands),
+        commands: [],
         agents: Object.keys(agentDefs).map((name) => ({ name })),
         output_style: 'default',
         available_output_styles: ['default'],
@@ -1552,22 +1557,6 @@ export function query(args: {
           extraLines.push(...agg.additionalContext);
         }
 
-        // Custom slash-command expansion (.claude/commands): a PURE-TEXT
-        // `/name [args]` prompt becomes the command body with $ARGUMENTS /
-        // $1..$9 substituted. Hooks above saw the raw typed text; history and
-        // persistence carry the EXPANDED body (that is what the model sees,
-        // so resume replays correctly). Unknown names pass through as plain
-        // text; the built-in /compact is never shadowed (engine handles it
-        // downstream via detectManualCompact).
-        if (customSlashCommands.length > 0) {
-          const pure = pureTextOf(message);
-          const expansion =
-            pure === null ? null : expandSlashCommand(pure, customSlashCommands);
-          if (expansion !== null) {
-            debug(`query: expanded custom slash command /${expansion.name}`);
-            message = { role: 'user', content: expansion.expanded };
-          }
-        }
         // R1 structured prelude (SCS-REQ-REPOS-01): prepend the host's
         // declared blocks to the FIRST genuine prompt as <system-reminder>
         // blocks. Hooks above saw the raw typed text (same posture as slash
@@ -1919,7 +1908,8 @@ export function query(args: {
       return initDeferred.promise;
     },
     async supportedCommands(): Promise<SlashCommand[]> {
-      return slashCommandInfos(customSlashCommands);
+      // Slash retirement (§4): the engine knows no commands.
+      return [];
     },
     async supportedModels(): Promise<ModelInfo[]> {
       return SUPPORTED_MODELS.map((m) => ({ ...m }));

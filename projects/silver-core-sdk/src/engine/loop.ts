@@ -57,8 +57,6 @@ import { supportsAdaptiveThinking } from './thinking-model.js';
 import { estimateToolDefsTokens, estimateTextTokens } from './tokens.js';
 import {
   maybeAutoCompact,
-  runManualCompact,
-  detectManualCompact,
   wouldAutoCompact,
 } from './compaction.js';
 import {
@@ -981,31 +979,6 @@ export async function* runAgentLoop(
           durationApiMs += apiMs;
         };
         if (cfg !== undefined) {
-          const manual = cfg.recognizeCommand
-            ? detectManualCompact(deps.requestView.messages, cfg)
-            : null;
-          if (manual !== null) {
-            yield* runManualCompact(
-              deps.requestView,
-              manual.customInstructions,
-              deps,
-              config,
-              overheadTokens,
-              signal,
-              onSummaryCall,
-            );
-            // Manual /compact consumes the turn (no model call): emit a success
-            // result so the query layer advances to the next input.
-            yield {
-              type: 'result',
-              subtype: 'success',
-              is_error: false,
-              result: '',
-              stop_reason: 'end_turn',
-              ...resultBase(),
-            };
-            return;
-          }
           // Memory spec R7: when the auto trigger WOULD fire, first inject
           // ONE memory-write opportunity and fold on the following check, so
           // un-saved progress can reach the store before it is summarized

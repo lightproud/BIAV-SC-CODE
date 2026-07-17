@@ -24,14 +24,20 @@ import {
   TIP_RECEPTION_PROVENANCE,
   TIP_RECEPTION_SYSTEM,
 } from '../src/tips/prompts.js';
-import {
-  SITUATION_MANUAL_POLLING,
-  SITUATION_PERSISTENT_MEMORY,
-} from '../src/tips/catalog.js';
+import { SITUATION_PERSISTENT_MEMORY } from '../src/tips/catalog.js';
 import { MockTransport, textReplyEvents } from './helpers/mock-transport.js';
 
-const CATALOG = CONTEXT_TIP_CATALOG;
-const ELIGIBLE = ['manual-polling', 'persistent-memory'];
+// The retired manual-polling archive entry is replaced by a host-extension
+// style situation (the catalog is host-extensible at call time) so the
+// selector MECHANISM stays fully exercised without the engine advertising a
+// capability it no longer has (slash retirement, SCS-REQ-REPOS-01 §4).
+const WATCH_SITUATION = {
+  featureId: 'watch-mode',
+  action: 'enable watch mode',
+  situation: 'User keeps re-checking the same status manually.',
+};
+const CATALOG = [...CONTEXT_TIP_CATALOG, WATCH_SITUATION];
+const ELIGIBLE = ['watch-mode', 'persistent-memory'];
 
 // ---------------------------------------------------------------------------
 // parseContextTip — fails SAFE to no-tip
@@ -40,15 +46,15 @@ const ELIGIBLE = ['manual-polling', 'persistent-memory'];
 describe('parseContextTip (fails SAFE to no-tip)', () => {
   it('accepts a well-formed eligible tip', () => {
     const r = parseContextTip(
-      '{"has_tip":true,"tip":"You are polling — /loop can watch it for you.","feature_id":"manual-polling","action":"/loop"}',
+      '{"has_tip":true,"tip":"You are polling — watch mode can do it for you.","feature_id":"watch-mode","action":"enable watch mode"}',
       ELIGIBLE,
       CATALOG,
     );
     expect(r).toEqual({
       hasTip: true,
-      tip: 'You are polling — /loop can watch it for you.',
-      featureId: 'manual-polling',
-      action: '/loop',
+      tip: 'You are polling — watch mode can do it for you.',
+      featureId: 'watch-mode',
+      action: 'enable watch mode',
     });
   });
   it('has_tip false -> no tip', () => {
@@ -61,7 +67,7 @@ describe('parseContextTip (fails SAFE to no-tip)', () => {
   it('drops an INELIGIBLE feature_id (not in eligible set) -> no tip', () => {
     const r = parseContextTip(
       '{"has_tip":true,"tip":"x","feature_id":"persistent-memory","action":"#"}',
-      ['manual-polling'], // persistent-memory NOT eligible this call
+      ['watch-mode'], // persistent-memory NOT eligible this call
       CATALOG,
     );
     expect(r).toEqual({ hasTip: false });
@@ -76,7 +82,7 @@ describe('parseContextTip (fails SAFE to no-tip)', () => {
   });
   it('drops a tip with empty text -> no tip', () => {
     const r = parseContextTip(
-      '{"has_tip":true,"tip":"","feature_id":"manual-polling","action":"/loop"}',
+      '{"has_tip":true,"tip":"","feature_id":"watch-mode","action":"enable watch mode"}',
       ELIGIBLE,
       CATALOG,
     );
@@ -84,20 +90,20 @@ describe('parseContextTip (fails SAFE to no-tip)', () => {
   });
   it('coerces a non-boolean has_tip (string/number) to no-tip', () => {
     expect(
-      parseContextTip('{"has_tip":"true","tip":"x","feature_id":"manual-polling","action":"/loop"}', ELIGIBLE, CATALOG),
+      parseContextTip('{"has_tip":"true","tip":"x","feature_id":"watch-mode","action":"y"}', ELIGIBLE, CATALOG),
     ).toEqual({ hasTip: false });
     expect(
-      parseContextTip('{"has_tip":1,"tip":"x","feature_id":"manual-polling","action":"/loop"}', ELIGIBLE, CATALOG),
+      parseContextTip('{"has_tip":1,"tip":"x","feature_id":"watch-mode","action":"y"}', ELIGIBLE, CATALOG),
     ).toEqual({ hasTip: false });
   });
   it("returns the catalog's authoritative action, not the model's free-text action", () => {
     const r = parseContextTip(
-      '{"has_tip":true,"tip":"try it","feature_id":"manual-polling","action":"rm -rf / #model junk"}',
+      '{"has_tip":true,"tip":"try it","feature_id":"watch-mode","action":"rm -rf / #model junk"}',
       ELIGIBLE,
       CATALOG,
     );
-    // manual-polling's catalog action is '/loop' — the model's action is ignored.
-    expect(r).toEqual({ hasTip: true, tip: 'try it', featureId: 'manual-polling', action: '/loop' });
+    // watch-mode's catalog action wins — the model's action is ignored.
+    expect(r).toEqual({ hasTip: true, tip: 'try it', featureId: 'watch-mode', action: 'enable watch mode' });
   });
 });
 
@@ -134,17 +140,22 @@ describe('parseTipReception (fails SAFE)', () => {
 describe('context-tips over a mock transport', () => {
   it('selectContextTip renders the catalog into the system prompt and returns the decision', async () => {
     const t = new MockTransport([
-      textReplyEvents('{"has_tip":true,"tip":"You keep polling — /loop watches for you.","feature_id":"manual-polling","action":"/loop"}'),
+      textReplyEvents('{"has_tip":true,"tip":"You keep polling — watch mode does it for you.","feature_id":"watch-mode","action":"enable watch mode"}'),
     ]);
     const r = await selectContextTip(
-      { transcript: 'is the deploy done? check CI again. any update?', eligibleIds: ELIGIBLE, sessionMetadata: { numStartups: 8 } },
+      {
+        transcript: 'is the deploy done? check CI again. any update?',
+        eligibleIds: ELIGIBLE,
+        sessionMetadata: { numStartups: 8 },
+        catalog: CATALOG, // host extension at call time (see WATCH_SITUATION)
+      },
       { transport: t },
     );
     expect(r.hasTip).toBe(true);
     const system = t.requests[0]?.system as string;
     // The catalog situation text is rendered into the <situations> block.
-    expect(system).toContain('manual-polling');
-    expect(system).toContain('They are manually polling.');
+    expect(system).toContain('watch-mode');
+    expect(system).toContain('re-checking the same status manually');
     expect(t.requests[0]?.temperature).toBe(0);
   });
   it('inserts a catalog situation containing $ sequences LITERALLY (no replace-macro)', async () => {
@@ -162,7 +173,7 @@ describe('context-tips over a mock transport', () => {
   it('evaluateTipReception returns a structured verdict', async () => {
     const t = new MockTransport([textReplyEvents('{"acted_on":true,"reception":"positive"}')]);
     const r = await evaluateTipReception(
-      { tip: 'try /loop', action: '/loop', transcriptAfter: 'User: nice, /loop worked!' },
+      { tip: 'try watch mode', action: 'enable watch mode', transcriptAfter: 'User: nice, watch mode worked!' },
       { transport: t },
     );
     expect(r).toEqual({ actedOn: true, reception: 'positive' });
@@ -206,7 +217,6 @@ describe('context-tip prompt provenance (corpus-sync guard, Track B parity)', ()
     expect(faithful(TIP_RECEPTION_SYSTEM, TIP_RECEPTION_PROVENANCE.slug)).toEqual([]);
   });
   it.runIf(existsSync(archive))('catalog situations are faithful to their archive', () => {
-    expect(faithful(SITUATION_MANUAL_POLLING, 'data-context-tip-situation-manual-polling')).toEqual([]);
     expect(faithful(SITUATION_PERSISTENT_MEMORY, 'data-context-tip-situation-persistent-memory')).toEqual([]);
   });
 });

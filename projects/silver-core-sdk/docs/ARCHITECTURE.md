@@ -55,6 +55,7 @@ richer internal/ without the map following.)
 | I sandbox | `sandbox/` (backend, bwrap, evidence) | `SandboxBackend`; consumed by tools |
 | J generators | `generators/` (utility LLM runtime + prompts) | single-shot utility calls; consumed by hooks (condition), tips, verifier |
 | K tips + verifier | `tips/`, `verifier/` | context-tip / adversarial-verify features over generators |
+| L loop-support | `loop-support/` (ledger, retention, loop-control) | SCS-REQ-REPOS-01 §3 primitives for host-built loops; consumed by engine (retention) + query assembly |
 | shared kernel | `internal/` (contracts, model-alias, worktree, setting-sources), `types.ts`, `errors.ts`, `version.ts`, `error-normalize.ts` | importable by every module |
 
 ## Import edges
@@ -304,6 +305,16 @@ design rule.)
   split on `|`/`,`, trim, exact compare. Otherwise unanchored `new RegExp`.
   Invalid regex → false + never throw. `value === undefined` → true.
 
+`hooks/goal.ts`
+- `export function createGoalStopHooks(config: GoalConfig): Partial<Record<HookEvent, HookCallbackMatcher[]>>`
+  — the structured session goal (SCS-REQ-REPOS-01 §4.3): a Stop gate whose
+  judge is the HOST-injected `config.evaluator` (pure function or the host's
+  own judge-model call; the engine makes no model call here). `not_achieved`
+  blocks the stop and feeds the reason back (engine Stop-block semantics);
+  `achieved`/`impossible` allow the stop and disarm; evaluator failure allows
+  the stop (a broken judge must never trap the loop). Wired by query assembly
+  from `options.goal` — the goal's ONLY entrance; no text spelling exists.
+
 `hooks/runner.ts`
 - `export class DefaultHookRunner implements HookRunner` — constructor
   `{ hooks: Options['hooks'], debug }`. `run()` collects matching callbacks,
@@ -451,8 +462,7 @@ build red.
 | `src/sessions/` | `ConfigurationError` |
 | `src/query.ts` | `ConfigurationError` |
 | `src/session-manager.ts` | `ConfigurationError` |
-| `src/prompt-loop.ts` | `ConfigurationError` |
-| `src/hooks/session-goal.ts` | `ConfigurationError` |
+| `src/hooks/goal.ts` | `ConfigurationError` |
 | `src/loop-support/` | `ConfigurationError` |
 | `src/tools/bash.ts` | `ConfigurationError` |
 | `src/tools/memory/` | `MemoryToolError`, `ConfigurationError` |

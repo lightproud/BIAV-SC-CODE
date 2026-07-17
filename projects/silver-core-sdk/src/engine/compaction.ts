@@ -205,7 +205,6 @@ export function buildCompactionConfig(
     keepRatio: opt?.keepRatio ?? 0.3,
     minRecentTurns: opt?.minRecentTurns ?? 2,
     useApiSummary: opt?.useApiSummary ?? false,
-    recognizeCommand: opt?.recognizeCommand ?? true,
     customInstructions: opt?.customInstructions,
     contextWindowTokens: opt?.contextWindowTokens,
     model: opt?.model,
@@ -259,27 +258,6 @@ export function shouldAutoCompact(
   return preTokens >= triggerAt ? { preTokens } : null;
 }
 
-/**
- * Recognize a trailing `/compact [instructions]` user turn as a manual
- * compaction request. Returns the parsed instructions, or null when the last
- * message is not a plain-text `/compact` command.
- */
-export function detectManualCompact(
-  messages: APIMessageParam[],
-  _cfg: CompactionConfig,
-): { customInstructions: string | null } | null {
-  const last = messages[messages.length - 1];
-  if (last === undefined || last.role !== 'user') return null;
-  const text = plainTextIfPureText(last.content);
-  if (text === null) return null;
-  const trimmed = text.trim();
-  if (trimmed === '/compact') return { customInstructions: null };
-  if (trimmed.startsWith('/compact ')) {
-    const rest = trimmed.slice('/compact '.length).trim();
-    return { customInstructions: rest.length > 0 ? rest : null };
-  }
-  return null;
-}
 
 // ---------------------------------------------------------------------------
 // Partitioning (pairing-preserving)
@@ -697,37 +675,6 @@ export async function* maybeAutoCompact(
   );
 }
 
-/**
- * Manual `/compact` compaction: first drop the trailing command turn (it is
- * never sent to the model), then attempt the fold. Because performCompaction
- * produces a fresh spliced array, view.messages diverges from the full
- * `history` transcript, which keeps the command.
- */
-export async function* runManualCompact(
-  view: { messages: APIMessageParam[] },
-  customInstructions: string | null,
-  deps: EngineDeps,
-  config: EngineConfig,
-  overheadTokens: number,
-  signal: AbortSignal,
-  onSummaryCall?: SummaryCallSink,
-): AsyncGenerator<SDKMessage, boolean> {
-  const cfg = config.compaction;
-  if (cfg === undefined) return false;
-  // Remove the trailing '/compact' command so it never reaches the model.
-  view.messages.pop();
-  const instr = customInstructions ?? cfg.customInstructions ?? null;
-  return yield* performCompaction(
-    view,
-    'manual',
-    instr,
-    deps,
-    config,
-    overheadTokens,
-    signal,
-    onSummaryCall,
-  );
-}
 
 /** Shared compaction core: PreCompact hook -> partition -> fold -> boundary.
  *  Returns true when a fold actually mutated the view (a boundary was emitted). */
@@ -899,16 +846,6 @@ function countGenuineUserTurns(messages: APIMessageParam[]): number {
   return n;
 }
 
-/** Plain text of a user turn, or null when the content has non-text blocks. */
-function plainTextIfPureText(content: string | ContentBlockParam[]): string | null {
-  if (typeof content === 'string') return content;
-  const parts: string[] = [];
-  for (const block of content) {
-    if (block.type !== 'text') return null;
-    parts.push(block.text);
-  }
-  return parts.join('');
-}
 
 /** Structural, deterministic recap of the folded prefix (capped). */
 function buildRecap(prefix: APIMessageParam[]): string {

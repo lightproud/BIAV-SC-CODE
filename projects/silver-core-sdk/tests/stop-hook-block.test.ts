@@ -12,7 +12,7 @@ import { describe, expect, it } from 'vitest';
 import { runAgentLoop } from '../src/engine/loop.js';
 import { DefaultPermissionGate } from '../src/permissions/gate.js';
 import { DefaultHookRunner } from '../src/hooks/runner.js';
-import { createSessionGoal } from '../src/hooks/session-goal.js';
+import { createGoalStopHooks } from '../src/hooks/goal.js';
 import type {
   AggregatedHookResult,
   EngineConfig,
@@ -221,24 +221,25 @@ describe('Stop-hook block semantics', () => {
   });
 
   it('a child goal-gate that would "clear on met" leaves the armed root goal intact', async () => {
-    // End-to-end shape of the bug: wire the REAL /goal primitive as a
-    // session-scoped Stop hook, arm a root goal, then run a CHILD loop to
-    // natural end. The evaluator is stubbed to return a MET verdict, so if the
-    // child's natural end reached onStop AT ALL it would clear the root goal
-    // (pre-fix behavior). Post-fix the child never invokes Stop, so the goal
-    // stays armed. Discriminating and network-free (injected transport).
-    const metEvaluator = new MockTransport([
-      textReplyEvents('{"ok": true, "reason": "child subtask done"}'),
-    ]);
-    const goal = createSessionGoal({
-      context: () => 'the child finished its subtask',
-      utility: { transport: metEvaluator },
+    // End-to-end shape of the bug: wire the REAL structured goal gate as a
+    // session-scoped Stop hook, then run a CHILD loop to natural end. The
+    // host evaluator is stubbed to return an ACHIEVED verdict, so if the
+    // child's natural end reached the gate AT ALL it would disarm the goal
+    // (pre-fix behavior). Post-fix the child never invokes Stop, so the
+    // evaluator is never consulted. Discriminating and network-free.
+    let evaluatorCalls = 0;
+    const events: string[] = [];
+    const goalHooks = createGoalStopHooks({
+      goal: 'the ROOT task is fully complete',
+      evaluator: () => {
+        evaluatorCalls += 1;
+        return { status: 'achieved', reason: 'child subtask done' };
+      },
+      onEvent: (e) => events.push(e.kind),
     });
-    goal.set('the ROOT task is fully complete');
-    const beforeCondition = goal.condition;
 
     const transport = new MockTransport([textReplyEvents('child answer')]);
-    const hooks = new DefaultHookRunner({ hooks: goal.hooks(), debug: () => {} });
+    const hooks = new DefaultHookRunner({ hooks: goalHooks, debug: () => {} });
     const messages = await collect(
       runAgentLoop(
         [{ role: 'user', content: 'child subtask' }],
@@ -247,12 +248,10 @@ describe('Stop-hook block semantics', () => {
       ),
     );
     expect(lastResult(messages).subtype).toBe('success');
-    // The root goal is untouched by the child's natural end; the stubbed
-    // evaluator was never consulted (would have cleared the goal if it had).
-    expect(goal.condition).toBe(beforeCondition);
-    expect(goal.condition).not.toBeNull();
-    expect(goal.blocks).toBe(0);
-    expect(metEvaluator.requests).toHaveLength(0);
+    // The root goal is untouched by the child's natural end: the host
+    // evaluator was never consulted and no lifecycle event fired.
+    expect(evaluatorCalls).toBe(0);
+    expect(events).toEqual([]);
   });
 
   it('a stubborn block still honors maxTurns', async () => {

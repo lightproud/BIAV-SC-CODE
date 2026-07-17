@@ -220,7 +220,7 @@ Per-row detail lives in the sections below; this is the at-a-glance table.
 v0.2 implemented most of the P0/P1 gaps the audit flagged. Now **FULL / PARTIAL**
 (were MISSING/ACCEPTED in v0.1):
 
-- **Context compaction** — auto threshold + `/compact` + PreCompact hook +
+- **Context compaction** — auto threshold + PreCompact hook +
   `compact_boundary` emission (tokenizer-free, CJK-aware estimator). BPT
   extension `compaction.model` routes the summarization call to a cheap model
   (e.g. `'haiku'`, alias-resolved) to cut compaction cost; the summary usage is
@@ -407,12 +407,12 @@ SDK implements the agent loop directly against the public Messages API:
 
 | Variant | Tier | Notes |
 |---|---|---|
-| `system/init` | PARTIAL | apiKeySource, tools, mcp_servers, model, permissionMode, agents, claude_code_version, betas, skills, plugins ALL emitted (the old "claude_code_version/betas/skills/plugins absent" note was stale — docs-audit 2026-07-05); `slash_commands` REAL since v0.38 (bare names: built-in `compact` + custom `.claude/commands` — see "Custom slash commands" below; official CC lists its full host command set, ours only what this engine can honor); `skills` always `[]`; `plugins` element shape is `string[]` vs official `{name, path}[]`; `claude_code_version`/`skills`/`plugins` typed optional where official requires them |
+| `system/init` | PARTIAL | apiKeySource, tools, mcp_servers, model, permissionMode, agents, claude_code_version, betas, skills, plugins ALL emitted (the old "claude_code_version/betas/skills/plugins absent" note was stale — docs-audit 2026-07-05); `slash_commands` always `[]` (slash retirement, SCS-REQ-REPOS-01 §4: the engine recognizes no slash convention — command UX belongs to the client layer); `skills` always `[]`; `plugins` element shape is `string[]` vs official `{name, path}[]`; `claude_code_version`/`skills`/`plugins` typed optional where official requires them |
 | `assistant` | FULL | full `APIAssistantMessage` |
 | `user` (echo + tool results) | FULL | prompt echo and tool_result user turns both yielded and persisted in order |
 | `stream_event` | FULL | behind `includePartialMessages`; **P2**: `SDKPartialAssistantMessage` now carries the official `ttft_ms?` field, attached from the event that latches the first token onward (test engine.test.ts) |
 | `result` success / error_max_turns / error_during_execution / `error_max_budget_usd` / `error_max_structured_output_retries` | PARTIAL | success arm carries ttft_ms + structured_output + deferred_tool_use + v0.3 `metrics`; error arm carries both `errorMessage: string` and the official-parallel `errors: string[]` (v0.4). Mid-stream SSE truncation degrades gracefully like official 2.1.201 (E3, 2026-07-05): the blocks the wire delivered whole are salvaged - partial text becomes the `success` answer, complete tool_use blocks EXECUTE (at either cut depth, with or without stop_reason) and the loop re-requests to deliver the tool_result; the connection error rides `errors` as a non-fatal note on the terminal result (former KD-L4-04 + all three truncation engine findings retired; residual KD-L4-02: official also appends the error as assistant text and throws from the iterator post-result - deliberately not replicated). An UNCLOSED tool_use (mid-transmission input) never executes; nothing salvageable falls back to `error_during_execution`. Remaining fault-path divergence: on a terminal non-retryable 400 ours ends with a clean `result/error_during_execution` where official surfaces the error as assistant text plus `result/success` then throws (KD-L4-01; run-l4 l4-http400-non-retryable, l4-script-exhausted-400-terminal). Reporting semantics on streamed multi-turn input match official (E2, 2026-07-05, KD-L5-04 retired): `num_turns`/`usage` are PER-RESULT (that turn's own figures), `total_cost_usd`/`duration_api_ms` are session-cumulative; `modelUsage` stays session-cumulative (official per-result semantics unobserved - our choice); internal `maxTurns`/`maxBudgetUsd` enforcement remains session-wide. Query-layer synthetic results (hook-block / pre-turn cap stop / interrupt) report `num_turns: 0` + zero `usage` (no engine turn ran for them; official shape unobserved) |
-| `system/compact_boundary` | FULL | emitted on manual `/compact` + auto-compaction (v0.2) |
+| `system/compact_boundary` | FULL | emitted on auto-compaction (the official manual `/compact` text command has no engine equivalent — slash retirement §4; the `trigger` union keeps `manual` for stream-shape parity) |
 | `system/mirror_error` | FULL | emitted on a session-store mirror failure |
 | `active_goal` | TYPED | NEW-IN-DOCS 0.3.205; no persistent goal/condition loop in a headless engine (`value:null` clears) |
 | `conversation_reset` | TYPED | NEW-IN-DOCS 0.3.205; a new conversation is a new `query()`/session here, not an in-stream boundary |
@@ -452,26 +452,17 @@ prompt_suggestion) are unemitted-typed. `SDKRateLimitEvent` gains the official
 | `system/control_request_progress` | TYPED | NEW-IN-DOCS 0.3.205; no control_request wire protocol (N/A-by-design) so no in-flight control request to report progress for |
 | `system/prompt_composition` | FULL (emitted, v0.32.0) | **BPT-EXTENSION**; behind `options.includePromptComposition` (default off): one message per request, just before it is sent, carrying `promptComposition` (需求 A per-part estimate) + `cacheBreakpoints` (需求 B cache-prefix map) + `model`. Read-only — the wire request is never affected |
 
-## Custom slash commands (`.claude/commands`) — v0.38
+## Slash commands — retired from the engine (SCS-REQ-REPOS-01 §4)
 
-Open reproduction of the official custom-command surface, SDK-side subset
-(`src/engine/slash-commands.ts`). Loading follows `settingSources` ('project' →
-`<cwd>/.claude/commands/`, 'user' → `~/.claude/commands/`), one `*.md` file per
-command, subdirectories namespace with ':' (`frontend/component.md` →
-`/frontend:component`), project wins over user on collision, built-in names
-(`compact`) reserved. A PURE-TEXT `/name [args]` user turn is expanded to the
-command body with `$ARGUMENTS` / `$1`..`$9` substituted (args appended after a
-blank line when the body has no placeholder); history and persistence carry the
-EXPANDED body, `UserPromptSubmit` hooks see the RAW typed text, and the
-`firstPrompt` session meta stays raw.
-
-| Aspect | Tier | Notes |
-|---|---|---|
-| Load + list + expand (`$ARGUMENTS`, `$1`..`$9`, frontmatter `description`/`argument-hint`, ':' namespacing) | FULL | commands load once at query construction; unknown `/name` passes through as plain text (official CLI raises a local "Unknown command" error instead — no engine-honest equivalent) |
-| `!command` inline-bash execution | UNSUPPORTED | would need the permission gate wired into command PREPROCESSING (a pre-turn execution surface this engine does not have); declared, not silent |
-| `@file` references | UNSUPPORTED | same preprocessing surface; use the model's Read tool instead |
-| frontmatter `allowed-tools` / `model` / `disable-model-invocation` | UNSUPPORTED | parsed keys are ignored (no per-turn tool/model scoping surface); `description`/`argument-hint` are the consumed subset |
-| `SlashCommand` tool (model-invoked commands) | UNSUPPORTED | official gives the MODEL a SlashCommand tool; here expansion is input-side only |
+The official CLI parses and expands `/name` text commands (custom
+`.claude/commands`, `!command` inline bash, `@file` references, the model-side
+SlashCommand tool, built-ins like `/compact`). This engine deliberately
+recognizes NONE of them: a prompt starting with `/` passes through to the wire
+verbatim (locked by tests/slash-retirement.test.ts, including a
+source-residue grep guard). Input parsing is a CLIENT-layer UX concern — a
+host that wants text commands implements them where its UX lives. Loop and
+goal behavior are structured surfaces instead: the loop-support interface
+(R1–R6 rows above) and `options.goal` (see the Stop hook row).
 
 ## Hooks
 
@@ -484,11 +475,11 @@ EXPANDED body, `UserPromptSubmit` hooks see the RAW typed text, and the
 | UserPromptSubmit | FULL | additionalContext appended; a block skips the prompt in streaming mode / ends the run in string mode (one prompt to skip — matches official semantics; P2 re-audit — tests query.test.ts) |
 | MessageDisplay | PARTIAL | v0.7: official 5-field incremental protocol emitted (turn_id/message_id/index/final/delta); fires once per completed message (so `final` is always true, `delta` is the whole message), not per true delta; `message_text` kept deprecated |
 | Setup / TeammateIdle / TaskCompleted / ConfigChange / WorktreeCreate / WorktreeRemove | TYPED (v0.7) | NEW-IN-DOCS hook events typed into HookEvent/HookInput but typed-not-fired — no natural runtime hook point in a headless engine (no setup phase / teammates / settings-merge engine; worktree + task-completed lifecycles have no honest hook site here) |
-| Stop | FULL | fired at natural end of a run. **v0.39**: official BLOCK semantics honored (the pre-0.39 "FULL" overstated — fired but log-only): a `decision: 'block'` PREVENTS the stop, the reason is fed back as a user turn and the loop runs another assistant turn (`stop_hook_active` true on subsequent Stop inputs; the /goal goal-gating primitive); `continue: false` forces the stop and wins over block. ROOT LOOP ONLY — child loops (parentToolUseId set) are governed by SubagentStop, so a goal gate never captures subagents; a stubborn block still honors maxTurns/maxBudgetUsd (test stop-hook-block.test.ts) |
+| Stop | FULL | fired at natural end of a run. **v0.39**: official BLOCK semantics honored (the pre-0.39 "FULL" overstated — fired but log-only): a `decision: 'block'` PREVENTS the stop, the reason is fed back as a user turn and the loop runs another assistant turn (`stop_hook_active` true on subsequent Stop inputs; `options.goal` — the structured goal gate with a HOST-injected evaluator — builds on this); `continue: false` forces the stop and wins over block. ROOT LOOP ONLY — child loops (parentToolUseId set) are governed by SubagentStop, so a goal gate never captures subagents; a stubborn block still honors maxTurns/maxBudgetUsd (test stop-hook-block.test.ts) |
 | SessionStart / SessionEnd | FULL | |
 | Notification | ACCEPTED | never fired in v0.1 (no code path emits it) |
 | SubagentStart / SubagentStop | PARTIAL | fire since v0.2 (the old "never fire" note was stale — docs-audit 2026-07-05); **P2**: SubagentStop now populates the official-required `agent_transcript_path` for a path-backed persisted store (absent for a non-path store — test subagents.test.ts). **v0.18.3**: the official base `transcript_path` (the MAIN session's transcript) is now populated on SubagentStart/Stop too, distinct from `agent_transcript_path` (the subagent's). v0.7: input types gain optional `background_tasks`/`session_crons`/`last_assistant_message` (NEW-IN-DOCS, typed-not-populated — no headless source, keeps this row PARTIAL) |
-| PreCompact | FULL | fires on manual `/compact` + auto-compaction since v0.2 (the old "never fires" note was stale — docs-audit 2026-07-05) |
+| PreCompact | FULL | fires on auto-compaction (manual `/compact` retired with the slash cut — §4) |
 | PermissionRequest | ACCEPTED | never fires in v0.1 |
 | `defer` permission decision | FULL | end-to-end since v0.2. v0.7: `deferred_tool_use` carries the official `id`/`name`/`input` field names alongside the deprecated `tool_use_id`/`tool_name`/`tool_input` (dual-track), and the official `stop_reason: "tool_deferred"` IS modeled; an unrecognized `permissionDecision` fails closed as deny (P2 re-audit — effectively full; test tool-types.test.ts) |
 | legacy `decision: 'approve'`/`'block'` | FULL | mapped to allow/deny in aggregation (allow only when no explicit `permissionDecision` on the same output) |
@@ -502,7 +493,7 @@ EXPANDED body, `UserPromptSubmit` hooks see the RAW typed text, and the
 |---|---|---|
 | `interrupt()` | FULL | 0.3.205: returns the official `SDKControlInterruptResponse` receipt (`{ still_queued }`) instead of `void`; this engine keeps no uuid-stamped async message queue surviving an abort, so the receipt is always `{ still_queued: [] }`. Source-compatible for callers that ignore the return |
 | `setPermissionMode()` / `setModel()` / `setMaxThinkingTokens()` | FULL | |
-| `initializationResult()` / `supportedModels()` / `supportedCommands()` / `supportedAgents()` | PARTIAL | P2 re-audit: `supportedModels` returns a real known-model list, `supportedAgents` returns the configured agents, `initializationResult` returns real agents/models/account — all NON-empty. `supportedCommands` REAL since v0.38 (the old "genuinely `[]` — structural" note is retired): built-in `compact` + loaded custom commands in the official `SlashCommand` shape (`name`/`description`/`argumentHint`). Still PARTIAL as a row: official lists the full CC host command set (`/clear`, `/help`, …) that has no engine equivalent here |
+| `initializationResult()` / `supportedModels()` / `supportedCommands()` / `supportedAgents()` | PARTIAL | P2 re-audit: `supportedModels` returns a real known-model list, `supportedAgents` returns the configured agents, `initializationResult` returns real agents/models/account — all NON-empty. `supportedCommands` returns `[]` (slash retirement §4 — the engine knows no commands; official lists the full CC host command set) |
 | `mcpServerStatus()` | FULL | carries `config` (echoed back) + per-server `tools[]` when connected; **P2**: `scope` now tracked — 'project' (`.mcp.json`) / 'local' (programmatic `options.mcpServers`) / 'dynamic' (added via `setMcpServers`); test query.test.ts. v0.7: `tools` is the official OBJECT array (`{name, description?, annotations{readOnly/destructive/openWorld}?}`), assembled at the registry |
 | `accountInfo()` | PARTIAL | apiKeySource only |
 | `streamInput()` | FULL | streaming-input mode |

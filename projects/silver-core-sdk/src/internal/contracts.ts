@@ -508,7 +508,6 @@ export type CompactionConfig = {
   keepRatio: number;
   minRecentTurns: number;
   useApiSummary: boolean;
-  recognizeCommand: boolean;
   customInstructions?: string;
   contextWindowTokens?: number;
   /** Model for the summarization call; absent -> the session model. */
