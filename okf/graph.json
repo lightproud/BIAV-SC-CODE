@@ -2,7 +2,7 @@
   "generated": "2026-07-17",
   "stats": {
     "nodes": 358,
-    "edges": 427
+    "edges": 421
   },
   "nodes": [
     {
@@ -3395,7 +3395,7 @@
       "tags": [
         "data_layer:full_archive",
         "platform:arca_live",
-        "health:active"
+        "health:degraded"
       ],
       "tier": "skeleton",
       "url": "news/"
@@ -4309,24 +4309,6 @@
     },
     {
       "source": "/community/community-bahamut.md",
-      "target": "/characters/54117.md",
-      "rel": "提及:哈姆林",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bahamut.md",
-      "target": "/characters/77926.md",
-      "rel": "提及:皮克曼",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bahamut.md",
-      "target": "/characters/15576.md",
-      "rel": "提及:墨菲",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bahamut.md",
       "target": "/characters/15587.md",
       "rel": "提及:希洛",
       "rel_type": "mention"
@@ -4375,6 +4357,12 @@
     },
     {
       "source": "/community/community-bilibili.md",
+      "target": "/characters/15575.md",
+      "rel": "提及:法洛思",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
       "target": "/characters/15577.md",
       "rel": "提及:菲茵特",
       "rel_type": "mention"
@@ -4401,12 +4389,6 @@
       "source": "/community/community-bilibili.md",
       "target": "/characters/15563.md",
       "rel": "提及:图鲁",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
-      "target": "/characters/15576.md",
-      "rel": "提及:墨菲",
       "rel_type": "mention"
     },
     {
@@ -5737,24 +5719,6 @@
     },
     {
       "source": "/sources/bahamut.md",
-      "target": "/characters/54117.md",
-      "rel": "提及:哈姆林",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bahamut.md",
-      "target": "/characters/77926.md",
-      "rel": "提及:皮克曼",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bahamut.md",
-      "target": "/characters/15576.md",
-      "rel": "提及:墨菲",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bahamut.md",
       "target": "/characters/15587.md",
       "rel": "提及:希洛",
       "rel_type": "mention"
@@ -5803,6 +5767,12 @@
     },
     {
       "source": "/sources/bilibili.md",
+      "target": "/characters/15575.md",
+      "rel": "提及:法洛思",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
       "target": "/characters/15577.md",
       "rel": "提及:菲茵特",
       "rel_type": "mention"
@@ -5829,12 +5799,6 @@
       "source": "/sources/bilibili.md",
       "target": "/characters/15563.md",
       "rel": "提及:图鲁",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
-      "target": "/characters/15576.md",
-      "rel": "提及:墨菲",
       "rel_type": "mention"
     },
     {

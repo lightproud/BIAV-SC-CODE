@@ -8,7 +8,7 @@
   },
   "stats": {
     "concepts": 358,
-    "edges": 427,
+    "edges": 421,
     "terms": 6428,
     "by_type": {
       "character": 72,
@@ -564,7 +564,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 1
+      "degree": 3
     },
     "/characters/15576.md": {
       "type": "character",
@@ -578,7 +578,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 12
+      "degree": 8
     },
     "/characters/15577.md": {
       "type": "character",
@@ -1000,7 +1000,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 10
+      "degree": 8
     },
     "/characters/77911.md": {
       "type": "character",
@@ -1154,7 +1154,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 5
+      "degree": 3
     },
     "/characters/77927.md": {
       "type": "character",
@@ -1310,7 +1310,7 @@
       ],
       "section": "community",
       "tier": "skeleton",
-      "degree": 8
+      "degree": 5
     },
     "/community/community-bilibili.md": {
       "type": "dataset",
@@ -4311,12 +4311,12 @@
     "/sources/arca_live.md": {
       "type": "dataset",
       "title": "arca_live 社区数据源",
-      "description": "arca_live 平台采集档案，全量 104 条，健康度 active。",
+      "description": "arca_live 平台采集档案，全量 104 条，健康度 degraded。",
       "resource": "/Public-Info-Pool/Record/Community/arca_live/",
       "tags": [
         "data_layer:full_archive",
         "platform:arca_live",
-        "health:active"
+        "health:degraded"
       ],
       "section": "sources",
       "tier": "skeleton",
@@ -4325,7 +4325,7 @@
     "/sources/bahamut.md": {
       "type": "dataset",
       "title": "bahamut 社区数据源",
-      "description": "bahamut 平台采集档案，全量 182 条，健康度 active。",
+      "description": "bahamut 平台采集档案，全量 206 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bahamut/",
       "tags": [
         "data_layer:full_archive",
@@ -4334,12 +4334,12 @@
       ],
       "section": "sources",
       "tier": "skeleton",
-      "degree": 8
+      "degree": 5
     },
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 2921 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 2924 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -4367,7 +4367,7 @@
     "/sources/google_play.md": {
       "type": "dataset",
       "title": "google_play 社区数据源",
-      "description": "google_play 平台采集档案，全量 2250 条，健康度 active。",
+      "description": "google_play 平台采集档案，全量 2251 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/google_play/global/",
       "tags": [
         "data_layer:full_archive",
@@ -4423,7 +4423,7 @@
     "/sources/reddit.md": {
       "type": "dataset",
       "title": "reddit 社区数据源",
-      "description": "reddit 平台采集档案，全量 3647 条，健康度 active。",
+      "description": "reddit 平台采集档案，全量 3654 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/reddit/",
       "tags": [
         "data_layer:full_archive",
@@ -4479,7 +4479,7 @@
     "/sources/stopgame.md": {
       "type": "dataset",
       "title": "stopgame 社区数据源",
-      "description": "stopgame 平台采集档案，全量 89 条，健康度 active。",
+      "description": "stopgame 平台采集档案，全量 90 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/stopgame/",
       "tags": [
         "data_layer:full_archive",
@@ -4507,7 +4507,7 @@
     "/sources/taptap_review.md": {
       "type": "dataset",
       "title": "taptap_review 社区数据源",
-      "description": "taptap_review 平台采集档案，全量 1542 条，健康度 active。",
+      "description": "taptap_review 平台采集档案，全量 1583 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/taptap/cn/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4521,7 +4521,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 10416 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 10433 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -4535,7 +4535,7 @@
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 10592 条，健康度 degraded。",
+      "description": "weixin 平台采集档案，全量 10612 条，健康度 degraded。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -5777,6 +5777,16 @@
         "/characters/15566.md",
         "CV:藤崎桃子",
         "cv"
+      ],
+      [
+        "/community/community-bilibili.md",
+        "提及:法洛思",
+        "mention"
+      ],
+      [
+        "/sources/bilibili.md",
+        "提及:法洛思",
+        "mention"
       ]
     ],
     "/characters/15576.md": [
@@ -5784,16 +5794,6 @@
         "/characters/15589.md",
         "变体",
         "variant"
-      ],
-      [
-        "/community/community-bahamut.md",
-        "提及:墨菲",
-        "mention"
-      ],
-      [
-        "/community/community-bilibili.md",
-        "提及:墨菲",
-        "mention"
       ],
       [
         "/community/community-steam.md",
@@ -5812,16 +5812,6 @@
       ],
       [
         "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
-        "提及:墨菲",
-        "mention"
-      ],
-      [
-        "/sources/bahamut.md",
-        "提及:墨菲",
-        "mention"
-      ],
-      [
-        "/sources/bilibili.md",
         "提及:墨菲",
         "mention"
       ],
@@ -6948,11 +6938,6 @@
     ],
     "/characters/54117.md": [
       [
-        "/community/community-bahamut.md",
-        "提及:哈姆林",
-        "mention"
-      ],
-      [
         "/community/community-bilibili.md",
         "提及:哈姆林",
         "mention"
@@ -6969,11 +6954,6 @@
       ],
       [
         "/community/community-youtube.md",
-        "提及:哈姆林",
-        "mention"
-      ],
-      [
-        "/sources/bahamut.md",
         "提及:哈姆林",
         "mention"
       ],
@@ -7183,22 +7163,12 @@
     ],
     "/characters/77926.md": [
       [
-        "/community/community-bahamut.md",
-        "提及:皮克曼",
-        "mention"
-      ],
-      [
         "/community/community-bilibili.md",
         "提及:皮克曼",
         "mention"
       ],
       [
         "/resource/resource-intel-weekly-morimens-intel-20260712.md",
-        "提及:皮克曼",
-        "mention"
-      ],
-      [
-        "/sources/bahamut.md",
         "提及:皮克曼",
         "mention"
       ],
@@ -7318,21 +7288,6 @@
         "mention"
       ],
       [
-        "/characters/54117.md",
-        "提及:哈姆林",
-        "mention"
-      ],
-      [
-        "/characters/77926.md",
-        "提及:皮克曼",
-        "mention"
-      ],
-      [
-        "/characters/15576.md",
-        "提及:墨菲",
-        "mention"
-      ],
-      [
         "/characters/15587.md",
         "提及:希洛",
         "mention"
@@ -7385,6 +7340,11 @@
         "mention"
       ],
       [
+        "/characters/15575.md",
+        "提及:法洛思",
+        "mention"
+      ],
+      [
         "/characters/15577.md",
         "提及:菲茵特",
         "mention"
@@ -7407,11 +7367,6 @@
       [
         "/characters/15563.md",
         "提及:图鲁",
-        "mention"
-      ],
-      [
-        "/characters/15576.md",
-        "提及:墨菲",
         "mention"
       ],
       [
@@ -9194,21 +9149,6 @@
         "mention"
       ],
       [
-        "/characters/54117.md",
-        "提及:哈姆林",
-        "mention"
-      ],
-      [
-        "/characters/77926.md",
-        "提及:皮克曼",
-        "mention"
-      ],
-      [
-        "/characters/15576.md",
-        "提及:墨菲",
-        "mention"
-      ],
-      [
         "/characters/15587.md",
         "提及:希洛",
         "mention"
@@ -9261,6 +9201,11 @@
         "mention"
       ],
       [
+        "/characters/15575.md",
+        "提及:法洛思",
+        "mention"
+      ],
+      [
         "/characters/15577.md",
         "提及:菲茵特",
         "mention"
@@ -9283,11 +9228,6 @@
       [
         "/characters/15563.md",
         "提及:图鲁",
-        "mention"
-      ],
-      [
-        "/characters/15576.md",
-        "提及:墨菲",
         "mention"
       ],
       [
@@ -10211,7 +10151,6 @@
       "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -12135,6 +12074,7 @@
       "/projects/silver-core-sdk-doc-performance.md"
     ],
     "degraded": [
+      "/sources/arca_live.md",
       "/sources/official.md",
       "/sources/weixin.md"
     ],
@@ -47833,7 +47773,6 @@
       "/memory/memory-ext-active-self-improvement-requirements.md",
       "/memory/memory-ext-active-silver-blackpool-interface.md",
       "/sources/appstore.md",
-      "/sources/arca_live.md",
       "/sources/bahamut.md",
       "/sources/bilibili.md",
       "/sources/discord.md",
@@ -48962,6 +48901,7 @@
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
     ],
     "degraded": [
+      "/sources/arca_live.md",
       "/sources/official.md",
       "/sources/weixin.md"
     ],

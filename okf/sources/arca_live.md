@@ -1,10 +1,10 @@
 ---
 type: "dataset"
 title: "arca_live 社区数据源"
-description: "arca_live 平台采集档案，全量 104 条，健康度 active。"
+description: "arca_live 平台采集档案，全量 104 条，健康度 degraded。"
 resource: "/Public-Info-Pool/Record/Community/arca_live/"
-tags: ["data_layer:full_archive", "platform:arca_live", "health:active"]
-timestamp: "2026-07-17T13:25:01.739658+00:00"
+tags: ["data_layer:full_archive", "platform:arca_live", "health:degraded"]
+timestamp: "2026-07-17T16:16:39.458107+00:00"
 ---
 
 # 数据层指针
@@ -17,7 +17,7 @@ timestamp: "2026-07-17T13:25:01.739658+00:00"
 | 全量档案层（本体） | `Public-Info-Pool/Record/Community/arca_live/` |
 | 输出展示层（抽样） | `projects/news/output/arca_live-latest.json` |
 | 全量条数 | 104 |
-| 采集健康度 | active |
+| 采集健康度 | degraded |
 | 最后成功 | 2026-07-11 |
 
 # 数据纪律（硬约束）
