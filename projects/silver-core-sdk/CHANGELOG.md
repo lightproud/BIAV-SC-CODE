@@ -16,6 +16,28 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.65.0 — 2026-07-17
+
+**BREAKING** — MultiEdit REMOVED (keeper 2026-07-17, hard alignment with
+upstream). The soft deprecation in 0.64.4 is now a full removal: MultiEdit was
+an SDK-original re-add (0.61.0), but official Claude Code retired it in favour of
+repeated `Edit` calls — each applied to the file's LIVE state, which sidesteps
+the snapshot-ambiguity failure modes MultiEdit's own not-found triage existed to
+explain. Multi-edit is now done by issuing several `Edit` calls.
+
+Removed: `src/tools/multiedit.ts` + its registration in the default builtin set
+(`src/tools/index.ts`), the `MULTIEDIT_DESCRIPTION` + faithfulness-registry
+entry (`src/tools/descriptions.ts`), the `MultiEdit` primary-arg permission
+mapping (`src/permissions/rules.ts`), and `tests/multiedit.test.ts`. Docs/guards
+updated: `docs/COMPAT.md` (→ removed), `docs/TOOL-PARITY.md` (moved to
+"Deliberately excluded"), the tool-parity + red-line + tool-description guards,
+and the two T49-audit tests that exercised MultiEdit (their Edit cases stay).
+
+Migration: replace a `MultiEdit({file_path, edits:[...]})` call with one `Edit`
+call per change (or `Edit` with `replace_all` for a repeated string). Consumers
+that never referenced MultiEdit are unaffected — it was model-facing tool
+surface, not a public API export.
+
 ## 0.64.7 — 2026-07-17
 
 T50 batch F: engine compaction/accounting safety net — 8 fixes from the

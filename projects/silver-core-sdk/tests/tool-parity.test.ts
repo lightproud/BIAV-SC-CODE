@@ -27,7 +27,6 @@ const EXPECTED_DEFAULT = [
   'KillShell',
   'ListMcpResourcesTool',
   'Monitor',
-  'MultiEdit',
   'Read',
   'ReadMcpResourceDirTool',
   'ReadMcpResourceTool',

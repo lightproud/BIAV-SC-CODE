@@ -60,7 +60,7 @@ export function resolveAbs(cwd: string, p: string): string {
 
 /**
  * True when `buf` is NOT valid UTF-8 (H1, audit T49). The read-modify-write
- * tools (Edit / MultiEdit) decode with Buffer.toString('utf8'), which replaces
+ * tools (Edit) decode with Buffer.toString('utf8'), which replaces
  * every invalid sequence with U+FFFD — writing that back re-encodes the
  * replacement characters and permanently corrupts EVERY non-UTF-8 byte in the
  * file, including bytes nowhere near the edit site (GBK / Shift-JIS / Latin-1

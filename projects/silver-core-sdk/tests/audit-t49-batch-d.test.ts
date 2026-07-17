@@ -22,7 +22,6 @@ import { auditToolClaims } from '../src/sessions/tool-claims.js';
 import { extractJsonObject } from '../src/generators/runtime.js';
 import { parseAwaySummary, parseCommandPrefix } from '../src/generators/index.js';
 import { readWindow } from '../src/reporting/runtime-report.js';
-import { multiEditTool } from '../src/tools/multiedit.js';
 import { grepTool } from '../src/tools/grep.js';
 import type { ToolContext } from '../src/internal/contracts.js';
 
@@ -193,28 +192,6 @@ describe('L43: runtime-report counts unparseable timestamps as bad lines', () =>
     );
     expect(win.records).toHaveLength(0);
     expect(win.badLines).toBe(1);
-  });
-});
-
-describe('L19: MultiEdit net-zero chain is a no-op success', () => {
-  it('A->B then B->A succeeds without writing', async () => {
-    const dir = await tempDir();
-    const file = join(dir, 'f.txt');
-    await writeFile(file, 'hello A world', 'utf8');
-    const ctx = makeCtx(dir);
-    (ctx.readFilePaths as Set<string>).add(file);
-    const res = await multiEditTool.execute(
-      {
-        file_path: file,
-        edits: [
-          { old_string: 'A', new_string: 'B' },
-          { old_string: 'B', new_string: 'A' },
-        ],
-      },
-      ctx,
-    );
-    expect(res.isError).not.toBe(true);
-    expect(String(res.content)).toContain('net zero');
   });
 });
 
