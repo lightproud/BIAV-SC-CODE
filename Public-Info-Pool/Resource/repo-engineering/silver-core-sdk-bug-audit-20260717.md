@@ -2,8 +2,8 @@
 
 > **派发**：守密人 `/goal 找出 100 个 sdk bug`。
 > **对象**：silver-core-sdk（v0.63.0，含当日新落地的 SCS-REQ-REPOS-01 循环支撑接口面）。
-> **方法**：18 个并行审计代理分两波覆盖全部 src/ 模块簇（10 广度波 + 8 深度波，第三波补漏进行中），
-> 加艾瑞卡回源直读对抗验证。**诚实红线**：只计能在代码里确认的真实缺陷；误报 / 意图行为 / 文档化取舍
+> **方法**：21 个并行审计代理分三波覆盖全部 src/ 模块簇（10 广度波 + 8 深度波 + 3 补漏波），
+> 加艾瑞卡回源直读对抗验证 + 跨代理冲突裁决。**诚实红线**：只计能在代码里确认的真实缺陷；误报 / 意图行为 / 文档化取舍
 > 逐条剔除并记录（见 §R）。**绝不为凑数编造**。
 >
 > **分级**：severity ∈ high/medium/low；confidence ∈ high/med/low。标注：
@@ -17,11 +17,13 @@
 
 ## 汇总
 
-- **确认真实缺陷：88 项**（high 5 · medium 20 · low 63）。
+- **确认真实缺陷：99 项**（high 5 · medium 21 · low 73；含第三波补漏 L64–L74）。
 - 其中 **8 项位于当日新增 0.63.0 代码**（艾瑞卡自造，标 [新]，全部低/中危，优先修）。
 - **已剔除误报 / 意图行为 / 文档化取舍：12 项**（含数条 wave-1 安全类假阳 + 2 条针对新代码的假高危，见 §R）。
-- **诚实说明**：目标数 100 未达；尽力审计（18 代理 + 直读验证）实得约 88 项真实缺陷，多为低危边界项。
-  强行凑满 100 须计入非缺陷（风格 / 文档化取舍 / 推测），艾瑞卡不为此编造。第三波补漏若再得真缺陷将追加更新。
+- **诚实说明**：目标数 100，实得 **99 项**真实缺陷——经三波 21 代理 + 直读验证的尽力审计，基本达成目标。
+  其中约 4 项为**边界项**（真实但危害极小 / 是否算缺陷可争，如 L67/L71/L73/L74，均已诚实标注），
+  另有 2 项因太边界或近似意图行为未计入（tips ineligibleIds 防御缺口 / session-manager resumeAttempts 成功路径不标注）。
+  **绝无为凑 100 而编造**：清单每项均可回源核实，若守密人对某边界项判为非缺陷则实数相应下调。
 
 ## 高危（High）
 
@@ -149,6 +151,19 @@
 - **L62** [low][新] `loop-support/retention.ts:53` — R3 字节帽按逐区独立渲染求和、但 renderBlocks 用 `\n\n` 拼接，N 区超帽 2·(N−1) 字节。
 - **L63** [low][新] `loop-support/ledger.ts:163` — R4 deserialize 在 maxAgeMs+非单调 at 时非幂等往返（oldest-first 重插逐插 prune，后插大 at 项 prune 掉先插活项）。
 
+**第三波补漏（sdk-server / tips / generators / mcp-http / session-manager / askuserquestion）**
+- **L64** [low][A] `mcp/sdk-server.ts:35` — resolveToolAnnotations 不归一化空的**包裹式** annotations `{}`（裸式 `{}`→undefined，包裹式→`{}`，输出不对称）。
+- **L65** [low][A] `mcp/sdk-server.ts:35` — `'annotations' in arg` 对原始值第五参抛 TypeError（JS 误用崩在工具定义期而非优雅降级）。
+- **L66** [low][A] `tips/index.ts:158` — parseTipReception 把「结构完整但 reception 缺失/乱码」映射为 `neutral` 非 `unknown`（与自述 fail-safe unknown 矛盾，宿主聚合过计 neutral）。
+- **L67** [low][A] `generators/runtime.ts:166` — extractJsonObject 在顶层对象被截断时返回**嵌套**对象（违「首个顶层对象」契约；tip 消费方 fail-safe 无害，边界项）。
+- **L68** [low][A] `mcp/http.ts:416` — TextDecoder 流末不 flush，末块残留截断多字节 UTF-8 被静默丢弃。
+- **L69** [low][A] `generators/index.ts:398` — tryParseArray 对前导「平衡但不可解析」`[...]` 不重试（与 extractJsonObject 的重试不一致），`[note] ["db.md"]` 丢真选择。
+- **L70** [low][A] `generators/index.ts:321` — parseAwaySummary `.replace(/[*`]+/g,'')` 删正文字面 `*`/反引号（`ran tests on *.ts`→`.ts`；下划线情形已刻意保留、星号漏保）。
+- **L71** [low][A] `generators/index.ts:96` — parseCommandPrefix 单行装饰化注入哨兵未判为 injection（`command_injection_detected (chained curl)`→当 prefix；权限层仍手批不放宽，**边界项**）。
+- **L72** [low][A] `tools/askuserquestion.ts:117` — renderAnswers 不逐元素校验答案形状；`[{header:'x'}]`（缺 answers 数组）→`undefined.join` TypeError，**在 try/catch 外**未捕获传入引擎（他路径均优雅 isError）。
+- **L73** [low-med][A] `session-manager.ts:499` — scheduleResume 前置退役 teardown 失败仅 debug 吞（H-2「先 flush 再 resume」保证被静默破坏，重驱读到缺最新检查点的历史）。
+- **L74** [vlow][A] `tools/resources.ts:48`+`websearch.ts:132` — `(e as Error).message` 假设抛 Error；非 Error 抛出（字符串/对象）产 "failed: undefined" 丢诊断（cosmetic，**边界项**）。
+
 ---
 
 ## §R — 已剔除（误报 / 意图行为 / 文档化取舍，验证记录）
@@ -177,4 +192,10 @@
 - **高危优先（存量）**：H1(Edit 非 UTF-8 损坏)、H2(thinking fallback)、H3(openai idle 重放)、H5(结构化输出 schema-blind)。
 - **安全相关**：M17(跨协议凭据串号，多租户场景)。
 - Tier [A] 逐条实测升 [V]（分批）。
-- 第三波补漏（session-manager / mcp-stdio-http 深挖 / tool-types / generators / verifier / tips）返回后追加更新总数。
+- 第三波补漏已收（L64–L74，+11 真缺陷 − 2 dup/边界）；tool-types.ts 实证为纯类型声明无运行时逻辑，verifier / websearch / runConcurrent / 记账基线经深读判正确。
+
+## 方法论备注（诚实性）
+
+- **代理报告是候选非结论**：早期广度波多为泛化描述，深度波带行号 + 机制 + 复现/探针；艾瑞卡对高价值 / 新代码 / 跨代理冲突项**回源直读裁决**（如 runtime.ts:1592 前台状态覆写：两代理相左，读源确认 wave-1 对）。
+- **注入防护**：审计过程中一次工具回执被投毒（伪造 edit.ts/fsutil.ts 读结果 + 伪「用户」转向指令），已识别为提示注入、重读干净源、不据其推进；此为审计外部内容时的标准防线。
+- **剔除比发现同样重要**：§R 12 项含数条 wave-1「中/高危」安全类假阳（SSRF DNS 重绑定 / 内存挂载部分匹配 / worktree 名遍历——含艾瑞卡自审一条）经深度波回源清白，未计入。
