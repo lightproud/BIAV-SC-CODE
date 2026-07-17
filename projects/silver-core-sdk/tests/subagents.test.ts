@@ -172,6 +172,8 @@ function makeRuntime(cfg: {
   shells?: ShellManager;
   /** Task lifecycle sink (task_started/... observability messages). */
   emitObservability?: (msg: SDKMessage) => void;
+  /** Cross-protocol transport resolver (M15 Start/Stop pairing test). */
+  resolveSubagentTransport?: SubagentRuntimeOptions['resolveSubagentTransport'];
 }): RuntimeHarness {
   const transport = (cfg.transport ?? new MockTransport(cfg.scripts)) as MockTransport;
   const starts: string[] = [];
@@ -234,6 +236,7 @@ function makeRuntime(cfg: {
     getRecordFileChange: cfg.getRecordFileChange,
     shells: cfg.shells,
     emitObservability: cfg.emitObservability,
+    resolveSubagentTransport: cfg.resolveSubagentTransport,
   };
   return { runtime: createSubagentRuntime(opts), transport, starts, stops, stopInputs };
 }
@@ -950,6 +953,68 @@ describe('subagent runtime — worktree isolation (E7-02)', () => {
     expect(res.content).toContain('worktree');
     // No child loop ever started (no transport calls).
     expect(h.transport.requests).toHaveLength(0);
+  });
+
+  it('M16 (audit 2026-07-17): a SendMessage continuation re-provisions the removed worktree', async () => {
+    // First run leaves the tree CLEAN -> worktree auto-removed. The record's
+    // cwd then points at a deleted path; before the fix a continuation ran its
+    // tools against that phantom directory.
+    const repo = makeGitRepo();
+    const probes: Array<{ cwd: string; existed: boolean }> = [];
+    const probe: BuiltinTool = {
+      name: 'Probe',
+      description: 'records ctx.cwd and whether it exists',
+      inputSchema: { type: 'object', properties: {} },
+      readOnly: true,
+      async execute(_input, ctx) {
+        probes.push({ cwd: ctx.cwd, existed: existsSync(ctx.cwd) });
+        return { content: 'probed' };
+      },
+    };
+    const h = makeRuntime({
+      scripts: [
+        ...isolationScripts(),
+        toolUseReplyEvents('Probe', {}, { model: 'claude-sonnet-4-5' }),
+        textReplyEvents('done again', { model: 'claude-sonnet-4-5' }),
+      ],
+      baseBuiltins: new Map([['Probe', probe]]),
+      cwd: repo,
+    });
+    const res = await h.runtime.makeSpawnFn(0)(baseParams({ isolation: 'worktree' }));
+    expect(res.isError).toBe(false);
+    const firstCwd = probes[0]!.cwd;
+    expect(existsSync(firstCwd)).toBe(false); // clean -> removed
+
+    const cont = await h.runtime.sendMessage({
+      to: res.agentId,
+      message: 'do it once more',
+      signal: new AbortController().signal,
+    });
+    expect(cont.isError).toBe(false);
+    expect(probes).toHaveLength(2);
+    // The continuation ran in a REAL directory (a fresh worktree), never the
+    // deleted phantom path.
+    expect(probes[1]!.existed).toBe(true);
+    expect(probes[1]!.cwd).not.toBe(firstCwd);
+    if (existsSync(probes[1]!.cwd)) tempDirs.push(probes[1]!.cwd);
+  });
+});
+
+describe('M15 (audit 2026-07-17): transport-resolution failure closes the Start/Stop pair', () => {
+  it('a throwing resolver still fires SubagentStop after SubagentStart', async () => {
+    const h = makeRuntime({
+      scripts: [],
+      withStartStopHooks: true,
+      resolveSubagentTransport: () => {
+        throw new Error('no route to model');
+      },
+    });
+    const res = await h.runtime.makeSpawnFn(0)(baseParams());
+    expect(res.isError).toBe(true);
+    expect(res.content).toContain('transport resolution failed');
+    // The pair is closed: every Start has its Stop, same agent id.
+    expect(h.starts).toHaveLength(1);
+    expect(h.stops).toEqual(h.starts);
   });
 });
 

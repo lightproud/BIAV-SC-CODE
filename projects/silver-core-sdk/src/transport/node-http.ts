@@ -337,8 +337,13 @@ export function firePreconnect(
   debug: (m: string) => void,
 ): void {
   void fetchFn(endpoint, { method: 'HEAD' })
-    .then((res) => {
-      void res.body?.cancel().catch(() => undefined);
+    .then(async (res) => {
+      // Drain, never cancel: on the node adapter cancel() destroys the
+      // freshly warmed socket instead of returning it to the keep-alive
+      // pool, so the first real request would open a new TCP connection
+      // and the probe's entire purpose is lost. A HEAD body is empty, so
+      // draining costs nothing on any adapter.
+      await res.arrayBuffer().catch(() => undefined);
       debug(`transport: preconnect completed (HTTP ${res.status})`);
     })
     .catch((err) => {
