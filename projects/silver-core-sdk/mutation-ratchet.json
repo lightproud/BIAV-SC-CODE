@@ -5,7 +5,8 @@
     "tolerance_pp": 0.75,
     "history": {
       "2026-07-13": "seeded from the overnight quality campaign: permissions round 2 (92.87), openai dedicated rounds 1-6 (85.55); transport-anthropic seeded at 77.42 (measurement round, pre-kill-batch); transport-anthropic raised 77.42 -> 82.97 (kill batch 2, 14 tests); sessions seeded at 68.16 (baseline round); sessions raised 68.16 -> 71.24 (kill batch 1, 19 tests: tool-claims + store-adapter read fallbacks)",
-      "2026-07-13 sessions re-baseline (keeper ruling, option A)": "sessions gains ignoreStatic:true and its floor moves 71.24 -> 67.66 (de-noised re-measure, 14m47s vs ~40min noisy). NOT a quality regression: the old score counted 444 store.ts static mutants (module-load code) that any test kills by merely importing the module -- free points that inflated the package score AND injected load-variance noise across rounds. 67.66 is the honest behavioural-mutant score (post kill-batch-2: checkpoints 72.89, file-store 72.55, tool-claims 73.33, store.ts 61.43 = next dig target). Floor decrease sanctioned by the keeper ruling; from here only-up applies on the de-noised basis."
+      "2026-07-13 sessions re-baseline (keeper ruling, option A)": "sessions gains ignoreStatic:true and its floor moves 71.24 -> 67.66 (de-noised re-measure, 14m47s vs ~40min noisy). NOT a quality regression: the old score counted 444 store.ts static mutants (module-load code) that any test kills by merely importing the module -- free points that inflated the package score AND injected load-variance noise across rounds. 67.66 is the honest behavioural-mutant score (post kill-batch-2: checkpoints 72.89, file-store 72.55, tool-claims 73.33, store.ts 61.43 = next dig target). Floor decrease sanctioned by the keeper ruling; from here only-up applies on the de-noised basis.",
+      "2026-07-17 loop-support seeded": "ledger.ts (SCS-REQ-REPOS-01 R4, pure dedup-ledger logic) seeded at 92.12 after three kill rounds (72.41 -> 89.16 -> 91.63 -> 92.12; 186 killed). The 16 survivors are a documented equivalence class: unique-Map-key `<` vs `<=` ties, stable-sort 1-vs-0 comparator tails, JSON.stringify dropping undefined config fields, NaN cutoff no-ops behind removed early-returns, and unreachable guards."
     }
   },
   "targets": [
@@ -29,6 +30,11 @@
       "mutate": "src/sessions/**/*.ts",
       "floor": 67.66,
       "ignoreStatic": true
+    },
+    {
+      "name": "loop-support",
+      "mutate": "src/loop-support/**/*.ts",
+      "floor": 92.12
     }
   ]
 }

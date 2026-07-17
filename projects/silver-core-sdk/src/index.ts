@@ -60,6 +60,17 @@ export type {
   SessionGoalEvent,
   SessionGoalOptions,
 } from './hooks/session-goal.js';
+// Loop-support interface surface (SCS-REQ-REPOS-01 §3): primitives for a
+// HOST-BUILT unattended loop. The engine never becomes the loop — the clock
+// and the assembly belong to the runner layer; these exports make that loop
+// externally buildable with zero engine patches.
+export { ReportLedger } from './loop-support/ledger.js';
+export type {
+  LedgerConfig,
+  LedgerEntry,
+  LedgerPrelude,
+  LedgerRegion,
+} from './loop-support/ledger.js';
 // Built-in durable session store (SM-乙a): fileSessionStore(dir) for the
 // SessionManager's `store` option and options.sessionStore recovery.
 export { FileSessionStore, fileSessionStore } from './sessions/file-store.js';

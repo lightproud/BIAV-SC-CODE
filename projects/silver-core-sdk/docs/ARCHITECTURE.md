@@ -452,6 +452,7 @@ build red.
 | `src/session-manager.ts` | `ConfigurationError` |
 | `src/prompt-loop.ts` | `ConfigurationError` |
 | `src/hooks/session-goal.ts` | `ConfigurationError` |
+| `src/loop-support/` | `ConfigurationError` |
 | `src/tools/bash.ts` | `ConfigurationError` |
 | `src/tools/memory/` | `MemoryToolError`, `ConfigurationError` |
 | `src/reporting/` | `ConfigurationError` |
