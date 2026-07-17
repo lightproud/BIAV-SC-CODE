@@ -93,6 +93,13 @@ export class FileCheckpointStore {
     this.seq = this.reconstructSeq();
     this.seenThisTurn = new Set();
     this.currentTurnId = null;
+    // J2 (audit r2): the torn-tail check is per BOUND SESSION, not per
+    // instance — rebinding this store to a second session must re-arm the
+    // M-9 self-heal, or a torn tail in the NEW session's index (crashed
+    // writer) survives untouched: the first append glues onto the torn line,
+    // readIndex then drops both, and the just-written blob can't be rewound.
+    // (JsonlSessionStore keeps a per-FILE Set for exactly this reason.)
+    this.indexTailChecked = false;
   }
 
   /** Start a new turn keyed by the user-message UUID; clear the per-turn set. */

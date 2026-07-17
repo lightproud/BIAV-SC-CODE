@@ -235,10 +235,27 @@ async function appendMeta(
   fields: Record<string, unknown>,
   options: SessionMutationOptions,
 ): Promise<void> {
+  // J3 (audit r2): appending metadata to a NONEXISTENT session must fail, not
+  // conjure a ghost transcript. A blind append materialized a `{id}.jsonl`
+  // (or store key) holding a single meta_update — listSessions then showed a
+  // phantom session with an empty firstPrompt, and the caller's typo'd id was
+  // reported as a success.
   const entry = { type: 'meta_update', uuid: randomUUID(), ...fields };
   if (options.sessionStore !== undefined) {
+    const existing = await options.sessionStore.load(mainKey(sessionId, options));
+    if (existing === null || existing.length === 0) {
+      throw new ConfigurationError(
+        `session '${sessionId}' does not exist; refusing to create a ghost session`,
+      );
+    }
     await options.sessionStore.append(mainKey(sessionId, options), [entry as SessionStoreEntry]);
     return;
+  }
+  const existing = await readLocalEntries(sessionId, options);
+  if (existing.length === 0) {
+    throw new ConfigurationError(
+      `session '${sessionId}' does not exist; refusing to create a ghost session`,
+    );
   }
   const store = new JsonlSessionStore({ sessionDir: sessionDirOf(options), env: options.env });
   store.append(sessionId, entry);
@@ -281,7 +298,17 @@ export async function forkSession(
   const newId = randomUUID();
   if (options.sessionStore !== undefined) {
     const store = options.sessionStore;
-    const loaded = (await store.load(mainKey(sessionId, options))) ?? [];
+    const loaded = await store.load(mainKey(sessionId, options));
+    // J4 (audit r2): forking a NONEXISTENT session must fail, not materialize
+    // a phantom. Appending an empty batch made InMemory-style stores mint the
+    // main key with a fresh mtime — the phantom empty session then sorted as
+    // the LATEST (continue:true would pick it) — while FileSessionStore's
+    // empty-batch early-return skipped it: two store impls, two behaviors.
+    if (loaded === null || loaded.length === 0) {
+      throw new ConfigurationError(
+        `session '${sessionId}' does not exist; nothing to fork`,
+      );
+    }
     const entries = rewriteEntries(
       loaded as unknown as Record<string, unknown>[],
       sessionId,
@@ -291,6 +318,11 @@ export async function forkSession(
     return newId;
   }
   const entries = await readLocalEntries(sessionId, options);
+  if (entries.length === 0) {
+    throw new ConfigurationError(
+      `session '${sessionId}' does not exist; nothing to fork`,
+    );
+  }
   const store = new JsonlSessionStore({ sessionDir: sessionDirOf(options), env: options.env });
   for (const e of rewriteEntries(entries, sessionId, newId)) {
     store.append(newId, e);
