@@ -30,7 +30,10 @@
  * model to BashOutput / KillShell). See src/tools/shells.ts.
  */
 
+import { createHash } from 'node:crypto';
+
 import type { BuiltinTool } from '../internal/contracts.js';
+import { SDK_VERSION } from '../version.js';
 import { createReadTool, readTool } from './read.js';
 import { writeTool } from './write.js';
 import { editTool } from './edit.js';
@@ -211,5 +214,53 @@ export function silverCoreToolOptions(opts: { disableWorktree?: boolean } = {}):
   return {
     toolSearch: true,
     ...(disableWorktree ? { disallowedTools: ['EnterWorktree'] } : {}),
+  };
+}
+
+// ---------------------------------------------------------------------------
+// R6 engine surface declaration (SCS-REQ-REPOS-01 §3 R6)
+// ---------------------------------------------------------------------------
+
+/** One tool's surface version: a deterministic content hash. */
+export type ToolSurfaceVersion = {
+  name: string;
+  /** sha256 (first 12 hex chars) over the tool's advertised description +
+   *  input schema — changes exactly when the model-visible surface changes. */
+  version: string;
+};
+
+/** What `declareEngineSurface` reports (R6). */
+export type EngineSurfaceDeclaration = {
+  /** The engine's own version (single source: src/version.ts). */
+  engine: string;
+  /** Advertised built-in tool surface, name + content-hash version each. */
+  tools: ToolSurfaceVersion[];
+};
+
+/**
+ * Runtime-queryable engine surface declaration (R6): the load-time
+ * compatibility anchor for hot-updatable capability layers (skill markdown,
+ * MCP manifests). A capability declares what it needs (e.g. an engine semver
+ * range, or specific tool-surface hashes); its loader compares against this
+ * declaration BEFORE activating it. Tool versions are deterministic content
+ * hashes — no bookkeeping, no drift: a hash changes exactly when the
+ * model-visible surface (description or schema) changes. `cfg` mirrors
+ * enumerateBuiltinToolMetadata so the declared set matches what the host
+ * actually runs (task-surface env gate, sandbox-aware Bash form).
+ */
+export function declareEngineSurface(cfg?: {
+  sandbox?: SandboxContext;
+  env?: Record<string, string | undefined>;
+  readLimits?: ReadLimits;
+}): EngineSurfaceDeclaration {
+  return {
+    engine: SDK_VERSION,
+    tools: enumerateBuiltinToolMetadata(cfg).map((t) => ({
+      name: t.name,
+      version: createHash('sha256')
+        .update(JSON.stringify({ d: t.description, s: t.inputJsonSchema }))
+        .digest('hex')
+        .slice(0, 12),
+    })),
   };
 }

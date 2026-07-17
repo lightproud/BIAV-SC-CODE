@@ -89,6 +89,14 @@ export { tool, createSdkMcpServer } from './mcp/sdk-server.js';
 // same way it sizes MCP tools.
 export { enumerateBuiltinToolMetadata } from './tools/index.js';
 export type { BuiltinToolMetadata } from './tools/index.js';
+// R6 engine surface declaration (SCS-REQ-REPOS-01 §3): the load-time compat
+// anchor for hot-updatable capability layers (skill md, MCP manifests) —
+// engine version + per-tool content-hash surface versions.
+export { declareEngineSurface } from './tools/index.js';
+export type {
+  EngineSurfaceDeclaration,
+  ToolSurfaceVersion,
+} from './tools/index.js';
 // Unified tool-search (lazy loading): the default cold built-in set (schemas
 // deferred behind the ToolSearch builtin when options.toolSearch === true) and
 // the 银芯/SVN-world variant options bundle. The faithful createBuiltinTools()
