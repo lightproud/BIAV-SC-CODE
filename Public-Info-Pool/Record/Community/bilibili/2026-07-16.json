@@ -1,8 +1,8 @@
 {
   "date": "2026-07-16",
-  "archived_at": "2026-07-17T02:29:26.913951+00:00",
+  "archived_at": "2026-07-17T05:44:19.731910+00:00",
   "source": "bilibili",
-  "item_count": 16,
+  "item_count": 17,
   "items": [
     {
       "title": "[忘却前夜]7月最新兑换码，五百个银芯和五个无垢，截止时间至7月27号，庞托斯用下来还行吧，不是很强，但也不能说特别弱，目前看来诞墨女王还是你游最高的峰",
@@ -115,6 +115,29 @@
         "danmaku": 0
       },
       "media_url": "https://i1.hdslb.com/bfs/archive/90c8176d3e779edc2d62ad4c3c71454226dc3aff.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "最后一秒有惊喜",
+      "summary": "-\n  └ 哈基沙大玉 (0赞): [鸣潮2周年同人绘画_看你]",
+      "source": "bilibili",
+      "time": "2026-07-16T07:30:31+00:00",
+      "url": "https://www.bilibili.com/video/BV1TgKV6vEEQ",
+      "engagement": 117,
+      "is_hot": false,
+      "author": "最讨厌鹦鹉了",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 116,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      },
+      "media_url": "https://i0.hdslb.com/bfs/archive/c5ec6bfd39e2b876867b73bdb07be264122b45be.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"

@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-17T02:28:47.905757+00:00",
+  "collected_at": "2026-07-17T05:43:24.414145+00:00",
   "source": "bilibili",
   "data_layer": "output",
-  "item_count": 10,
+  "item_count": 18,
   "items": [
     {
       "source": "bilibili",
@@ -13,32 +13,14 @@
       "summary": "-\n  └ iq2233 (5赞): 驱散VS毒，你造吗\n  └ 枯井戒 (4赞): 被主播狙击了[doge]，up太强了[打call]\n  └ 迯词 (3赞): 倒数第二波集火杀了哈姆0赢得更稳，被麻痹的铁t瓦只能失去全部力气和手段[嘟嘟]",
       "url": "https://www.bilibili.com/video/BV12GKV6PEiN",
       "author": "莱星Ligh",
-      "engagement": 562,
+      "engagement": 628,
       "media_url": "https://i2.hdslb.com/bfs/archive/a099f41d6bacef80fa9f954247a59cc582822475.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 557,
-        "comment_count": 5,
+        "play": 622,
+        "comment_count": 6,
         "comments_fetched": 3,
         "danmaku": 4
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-07-16T13:50:05+00:00",
-      "lang": "zh",
-      "title": "沙耶：听说有boss成长性很强我就来了",
-      "summary": "",
-      "url": "https://www.bilibili.com/video/BV131KV6rEqA",
-      "author": "海希利因浮士德",
-      "engagement": 329,
-      "media_url": "https://i0.hdslb.com/bfs/archive/a52e879e05b6dc75df32044beee275bee15f34da.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 329,
-        "comment_count": 0,
-        "comments_fetched": 0,
-        "danmaku": 0
       }
     },
     {
@@ -49,13 +31,31 @@
       "summary": "本二创基于动画《BanG Dream! It‘s MyGO!!!!!》《BanG Dream! Ave Mujica》及游戏《沙耶の唄》进行创作，所有内容均为虚构，不涉及和反映任何现实内容，请勿过度解读。\n一定程度上脱离原著设定，OOC（Out Of Character）致歉！\n如使用素材（疑似）存在授权问题，请务必及时告知，感谢！！\n制作使用工具：\nWebGAL – 邻家码农真昼酱\nWebGAL MyGO专版 – 文韬_武略\n部分灵感来源：\n哔哩哔哩 【mygo!!!!!X沙耶の唄】假如千早爱音出了车祸\n  └ 某科学世纪的大学生 (3赞): 还有吗，上一个已经够绝望了这次一定要是he啊[Mygo表情包_那我呢？]\n  └ 橙汁澄之空 (3赞): 又有个爱音x沙耶之歌的了，这次爱音也是郁纪位？[Mygo表情包_探头]\n  └ 天堂の勇士Offical (2赞): 好耶😨😨😨",
       "url": "https://www.bilibili.com/video/BV18rK36iEiH",
       "author": "冰山风雪",
-      "engagement": 325,
+      "engagement": 352,
       "media_url": "https://i2.hdslb.com/bfs/archive/4a1c5b1e8b673f1afe60c5579fbaf4125a6705a1.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 307,
+        "play": 334,
         "comment_count": 18,
         "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-07-16T13:50:05+00:00",
+      "lang": "zh",
+      "title": "沙耶：听说有boss成长性很强我就来了",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV131KV6rEqA",
+      "author": "海希利因浮士德",
+      "engagement": 330,
+      "media_url": "https://i0.hdslb.com/bfs/archive/a52e879e05b6dc75df32044beee275bee15f34da.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 330,
+        "comment_count": 0,
+        "comments_fetched": 0,
         "danmaku": 0
       }
     },
@@ -67,11 +67,11 @@
       "summary": "。\n  └ 小肠在蠕动 (0赞): 这个配置下刚需遗落的祭祀刀，必须刷一个出来，不然打不了，不刷也可以打本期的2-5和4-5，或者提高配置\n  └ 小肠在蠕动 (0赞): 命轮配的不好，黑印掉落溢出了，应该带一个伏于夜色的，拖到50无底创痕可以有共计200的死扛，爆至少2次收益是很高的\n  └ 小肠在蠕动 (0赞): 落地战要被凝视1-2回合刷虚弱症状，同时攒一个凯克斯超限，每个小关第一回合开凯克斯超限，拖到第六回合用梦游仙境诺蒂拉超限收尾，同时为下一关攒一个凯克斯超限，5-5有20万血量的小怪，反击队被凝视了没有伤害手段",
       "url": "https://www.bilibili.com/video/BV1qKKg66Ei4",
       "author": "小肠在蠕动",
-      "engagement": 320,
+      "engagement": 329,
       "media_url": "https://i2.hdslb.com/bfs/archive/644adfe4a8521b2f81bcd527ad59e1690c494e4e.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 316,
+        "play": 325,
         "comment_count": 4,
         "comments_fetched": 3,
         "danmaku": 0
@@ -82,16 +82,16 @@
       "time": "2026-07-16T06:02:54+00:00",
       "lang": "zh",
       "title": "【沙耶之歌】bloom - there are no angels（sayacore × breakcore）",
-      "summary": "https://soundcloud.com/therearenoangels/bloom\n喜欢请支持原作者 主页：\nhttps://soundcloud.com/therearenoangels\n  └ chikoi31 (1赞): 你做得很好👍\n  └ 耕司青海瑶 (1赞): [doge]",
+      "summary": "https://soundcloud.com/therearenoangels/bloom\n喜欢请支持原作者 主页：\nhttps://soundcloud.com/therearenoangels\n  └ -昆扬 (1赞): [魔法少女的魔女审判表情包_探头]\n  └ chikoi31 (1赞): 你做得很好👍\n  └ 耕司青海瑶 (1赞): [doge]",
       "url": "https://www.bilibili.com/video/BV1vMKg6uEQd",
       "author": "柘榴ちゃんは天使だ",
-      "engagement": 227,
+      "engagement": 236,
       "media_url": "https://i0.hdslb.com/bfs/archive/dadbe9c1fefcfb3b8e8d30584926469b58ea38d9.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 225,
-        "comment_count": 2,
-        "comments_fetched": 2,
+        "play": 233,
+        "comment_count": 3,
+        "comments_fetched": 3,
         "danmaku": 0
       }
     },
@@ -100,16 +100,16 @@
       "time": "2026-07-16T11:58:30+00:00",
       "lang": "zh",
       "title": "【忘却前夜】拼尽全力无法单回合战胜3只490k大眼",
-      "summary": "",
+      "summary": "-\n  └ 浪沫之翻涌 (0赞): 这个剧情杀可以不用打的",
       "url": "https://www.bilibili.com/video/BV1baK56uEBa",
       "author": "一位惊鸿客",
-      "engagement": 155,
+      "engagement": 180,
       "media_url": "https://i2.hdslb.com/bfs/archive/095cf7b3966e83682233512d650dcf038d7dd820.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 155,
-        "comment_count": 0,
-        "comments_fetched": 0,
+        "play": 179,
+        "comment_count": 1,
+        "comments_fetched": 1,
         "danmaku": 0
       }
     },
@@ -121,11 +121,11 @@
       "summary": "疯狂蠕动...\n\n背景音乐：Johann Strauss II - &quot;The Blue Danube Waltz&quot;\n  └ 夢遊遊遊遊 (4赞): 有两次死抗是因为半路撞上恐怖暗流女了\n  └ 上好佳薯片丶 (1赞): 我了菲神\n  └ LeeHanse (1赞): 梦游佬我可以呼吸了吗🥺🥺",
       "url": "https://www.bilibili.com/video/BV1i9KG6jEo6",
       "author": "夢遊遊遊遊",
-      "engagement": 151,
+      "engagement": 171,
       "media_url": "https://i1.hdslb.com/bfs/archive/557527c9fce91717f2919c467a9730db21d508bc.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 148,
+        "play": 168,
         "comment_count": 3,
         "comments_fetched": 3,
         "danmaku": 0
@@ -133,19 +133,19 @@
     },
     {
       "source": "bilibili",
-      "time": "2026-07-16T11:33:39+00:00",
+      "time": "2026-07-16T20:22:19+00:00",
       "lang": "zh",
-      "title": "克莱门汀繁衍狂热（医生太美了！！！）【忘却前夜】",
-      "summary": "",
-      "url": "https://www.bilibili.com/video/BV1tvK56TEs8",
-      "author": "一位惊鸿客",
-      "engagement": 121,
-      "media_url": "https://i1.hdslb.com/bfs/archive/90c8176d3e779edc2d62ad4c3c71454226dc3aff.jpg",
+      "title": "Fire(燃尽版)",
+      "summary": "为了剪此视频我的oppoa5要爆炸了呀(bushi)\n剪映你就继续卡吧╮(￣⊿￣)╭\n  └ 并非顾聿 (0赞): 双声道好耶！\n  └ 蹈海者 (0赞): 着急可以从00：42开始🌚\n  └ 梦游惊奇 (0赞): [打call][打call][打call]",
+      "url": "https://www.bilibili.com/video/BV13NKL62E2H",
+      "author": "蹈海者",
+      "engagement": 159,
+      "media_url": "https://i2.hdslb.com/bfs/archive/562f46518f02efe336fe8a628b4ce30b60cd999e.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 121,
-        "comment_count": 0,
-        "comments_fetched": 0,
+        "play": 156,
+        "comment_count": 3,
+        "comments_fetched": 3,
         "danmaku": 0
       }
     },
@@ -157,13 +157,85 @@
       "summary": "-\n  └ 寒末殇燕灵 (0赞): up你有直播吗 在哪里啊[微笑]\n我要去看你直播[doge]",
       "url": "https://www.bilibili.com/video/BV1u2Nj6yEt1",
       "author": "不可燃抹茶果冻",
-      "engagement": 115,
+      "engagement": 142,
       "media_url": "https://i2.hdslb.com/bfs/archive/11de75122e4acc4e1952dc6ac43396a6dc674d89.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 114,
+        "play": 141,
         "comment_count": 1,
         "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-07-16T11:33:39+00:00",
+      "lang": "zh",
+      "title": "克莱门汀繁衍狂热（医生太美了！！！）【忘却前夜】",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV1tvK56TEs8",
+      "author": "一位惊鸿客",
+      "engagement": 131,
+      "media_url": "https://i1.hdslb.com/bfs/archive/90c8176d3e779edc2d62ad4c3c71454226dc3aff.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 131,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-07-16T07:30:31+00:00",
+      "lang": "zh",
+      "title": "最后一秒有惊喜",
+      "summary": "-\n  └ 哈基沙大玉 (0赞): [鸣潮2周年同人绘画_看你]",
+      "url": "https://www.bilibili.com/video/BV1TgKV6vEEQ",
+      "author": "最讨厌鹦鹉了",
+      "engagement": 117,
+      "media_url": "https://i0.hdslb.com/bfs/archive/c5ec6bfd39e2b876867b73bdb07be264122b45be.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 116,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-07-17T01:27:15+00:00",
+      "lang": "zh",
+      "title": "大学规则 1. 不要直视灯... 忘却前夜 癫狂列车熔朵",
+      "summary": "你这家伙！竟敢直视弥萨格最强台灯！\n\n背景音乐：MASSIMO FARAÒ - &quot;Take the A train (feat. Sandy Patton)&quot;\n  └ 上好佳薯片丶 (0赞): 我了梦游神\n  └ 耳背的梨子 (0赞): 还有爵士乐",
+      "url": "https://www.bilibili.com/video/BV1WaKJ6yEvj",
+      "author": "夢遊遊遊遊",
+      "engagement": 106,
+      "media_url": "https://i2.hdslb.com/bfs/archive/b219f029fe53f7cf76f3072d2beb7b58dfd52a19.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 104,
+        "comment_count": 2,
+        "comments_fetched": 2,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-07-17T03:02:59+00:00",
+      "lang": "zh",
+      "title": "7.6-7.19无超限限定唤醒体425",
+      "summary": "心血来潮\n收米人等级比较高，很多角色实际上练度也会比较高，主要限制点还是在于手上的超限角色很多都很强，因为不能用超限导致这些角色上不了，但自身其实本身也就11个超限往上，余下的其实也还有好多强力角色能用。\n本期哈姆林，TV，诞墨，皮克曼，鸟弟，茉夏，米粒，阿拉科涅，熔朵，莱克，神父没有被邀请\n15uw练度高点或者换别的输出过道中会好打很多，进王关才140死扛\n35水船最后爆发没怒涛都过了美晕\n45珊死扛掉再第二个boss，王关如果能保证清掉后面召唤的小怪就无所谓，清不掉的话就尽量别掉血，有这个造物回转太舒\n  └ 唬隌洳鄞 (0赞): 最后三个好像没声音...\n  └ 幽缀 (0赞): 狗哥别吓我\n  └ Git122 (0赞): 好久不发，一发就是和耄耋竞争嘛[doge]",
+      "url": "https://www.bilibili.com/video/BV1SJKJ6XE4s",
+      "author": "唬隌洳鄞",
+      "engagement": 86,
+      "media_url": "https://i1.hdslb.com/bfs/archive/600026b67d158aef8974b7b282c17fd5638f2450.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 82,
+        "comment_count": 4,
+        "comments_fetched": 3,
         "danmaku": 0
       }
     },
@@ -172,14 +244,86 @@
       "time": "2026-07-16T12:35:25+00:00",
       "lang": "zh",
       "title": "我想制作一款攻略哥布林的国产galgame！",
-      "summary": "",
+      "summary": "-\n  └ 哈基沙大玉 (0赞): [Ave Mujica_诶]",
       "url": "https://www.bilibili.com/video/BV1wyK56wEtp",
       "author": "你有点可笑",
-      "engagement": 14,
+      "engagement": 17,
       "media_url": "https://i1.hdslb.com/bfs/archive/fa4cfcfd0a05ff6673dd7dd6ca5f2572045925f7.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 14,
+        "play": 16,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-07-17T03:39:21+00:00",
+      "lang": "zh",
+      "title": "依旧瞎捣鼓AM做出来的",
+      "summary": "-\n  └ 哈基沙大玉 (0赞): [鸣潮2周年同人绘画_看你]",
+      "url": "https://www.bilibili.com/video/BV1xCKE67ESh",
+      "author": "玩游戏的小优",
+      "engagement": 9,
+      "media_url": "https://i0.hdslb.com/bfs/archive/7b3798cd818ef8f86a096f663cf0b2fe60fb1ba3.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 8,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-07-17T05:19:44+00:00",
+      "lang": "zh",
+      "title": "【没想好的初玩实况】余悸偷生丨沙耶之歌 The Song of Saya #24",
+      "summary": "感谢您的观看，我是一个游戏实况主，名字没想好。\n游戏名字：沙耶之歌 The Song of Saya\n游戏平台：Steam",
+      "url": "https://www.bilibili.com/video/BV1YhKE6xEQx",
+      "author": "没想好哦MeiXiangHAO",
+      "engagement": 1,
+      "media_url": "https://i2.hdslb.com/bfs/archive/7f2e3336fa458eaa7f4b277bc6501895a75ba227.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 1,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-07-17T05:40:41+00:00",
+      "lang": "zh",
+      "title": "既不纯爱，也没什么过誉的悲剧故事——沙耶之歌",
+      "summary": "这期视频好低气压啊，下次做个开心点的",
+      "url": "https://www.bilibili.com/video/BV1iuKH6MEiY",
+      "author": "山本有病",
+      "engagement": 0,
+      "media_url": "https://i0.hdslb.com/bfs/archive/9136f074757afa84fc2503490d8ffdac2a77f1ee.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 0,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-07-17T05:28:44+00:00",
+      "lang": "zh",
+      "title": "沙耶之歌",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV1iWKE6cEVV",
+      "author": "主要批发厂",
+      "engagement": 0,
+      "media_url": "https://i0.hdslb.com/bfs/archive/669b6129f3fc5c2efd93083c52b39d57185d062a.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 0,
         "comment_count": 0,
         "comments_fetched": 0,
         "danmaku": 0

@@ -1,8 +1,8 @@
 {
   "date": "2026-07-17",
-  "archived_at": "2026-07-17T02:29:27.035435+00:00",
+  "archived_at": "2026-07-17T05:44:19.797142+00:00",
   "source": "steam",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "title": "[正面] am i playing... peak?",
@@ -22,6 +22,30 @@
         "playtime_forever": 518,
         "votes_up": 0,
         "timestamp_created": 1784232848
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] There is a good story buried in the mire of bad AI...",
+      "summary": "There is a good story buried in the mire of bad AI translation but you'd be able to understand it.\r\nGood music par with artwork and a card battle game like slay the spire or Chaos Zero Nightmare.\r\nIts free, give it a try",
+      "source": "steam_review",
+      "time": "2026-07-17T00:37:14+00:00",
+      "url": "https://steamcommunity.com/profiles/76561197978733167/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561197978733167",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 671,
+        "votes_up": 0,
+        "timestamp_created": 1784248634
       },
       "region": "global",
       "archive_subtype": "review",
