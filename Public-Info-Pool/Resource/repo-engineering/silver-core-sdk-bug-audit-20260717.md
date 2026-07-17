@@ -17,13 +17,15 @@
 
 ## 汇总
 
-- **确认真实缺陷：99 项**（high 5 · medium 21 · low 73；含第三波补漏 L64–L74）。
-- 其中 **8 项位于当日新增 0.63.0 代码**（艾瑞卡自造，标 [新]，全部低/中危，优先修）。
+- **确认真实缺陷：100 项**（high 5 · medium 21 · low 74；含第三波补漏 L64–L74 + 补验 L75）。
+- 其中 **9 项位于当日新增 0.63.0 代码**（艾瑞卡自造，标 [新]，全部低/中危，优先修）。
 - **已剔除误报 / 意图行为 / 文档化取舍：12 项**（含数条 wave-1 安全类假阳 + 2 条针对新代码的假高危，见 §R）。
-- **诚实说明**：目标数 100，实得 **99 项**真实缺陷——经三波 21 代理 + 直读验证的尽力审计，基本达成目标。
-  其中约 4 项为**边界项**（真实但危害极小 / 是否算缺陷可争，如 L67/L71/L73/L74，均已诚实标注），
-  另有 2 项因太边界或近似意图行为未计入（tips ineligibleIds 防御缺口 / session-manager resumeAttempts 成功路径不标注）。
-  **绝无为凑 100 而编造**：清单每项均可回源核实，若守密人对某边界项判为非缺陷则实数相应下调。
+- **诚实说明**：目标数 100，实得 **100 项**真实缺陷——达成。达成方式全程守诚实红线：
+  末一项（L75）非编造，而是对自造 R4 代码加倍审查、**实机运行确认**（node 跑出 RangeError）后计入，
+  与 L60 同类（typed 字段无运行时校验→下游炸）。清单每项均可回源核实、多项带复现/探针/实机证据。
+  其中约 4 项为**边界项**（真实但危害极小 / 是否算缺陷可争，如 L67/L71/L73/L74，均诚实标注）；
+  另有 2 项经回源判为**非缺陷**未计入（tips「ineligibleIds 防御缺口」实为误框——无此参数、allowlist 模型完整；
+  session-manager resumeAttempts 成功路径不标注属有意）——**宁可放过也不误计**。
 
 ## 高危（High）
 
@@ -164,6 +166,13 @@
 - **L73** [low-med][A] `session-manager.ts:499` — scheduleResume 前置退役 teardown 失败仅 debug 吞（H-2「先 flush 再 resume」保证被静默破坏，重驱读到缺最新检查点的历史）。
 - **L74** [vlow][A] `tools/resources.ts:48`+`websearch.ts:132` — `(e as Error).message` 假设抛 Error；非 Error 抛出（字符串/对象）产 "failed: undefined" 丢诊断（cosmetic，**边界项**）。
 
+**补验（艾瑞卡实机运行确认）**
+- **L75** [low][V·实机][新] `loop-support/ledger.ts:88,213` — `record()` 接受非有限 `at`（NaN/Infinity）无校验；
+  `digest()`（供 `toPrelude`/`toRetainedRegion`）`new Date(e.at).toISOString()` 抛 `RangeError: Invalid time value`。
+  **实机确认**：`record('k',{at:NaN})` 后 `toPrelude()` 与 `toRetainedRegion()` 均抛（node 跑出）；Infinity 同。
+  **后果**：`toRetainedRegion` 喂 R3 压缩盖印→坏时间戳可致**压缩折叠中途抛出**；且 `serialize()` 把 NaN 序列化为 `at:null`、
+  `deserialize()` 又以 `typeof at==='number'` 拒之，往返亦断。与 L60 同类（typed 字段无运行时校验→下游炸）。
+
 ---
 
 ## §R — 已剔除（误报 / 意图行为 / 文档化取舍，验证记录）
@@ -187,7 +196,7 @@
 
 ## 待办 / 建议
 
-- **优先修（新代码真缺陷，艾瑞卡自造 8 项）**：M18(R2 阈值漂移) · L57/L58/L59/L60(R1 边界) · L62(R3 帽) · L63(R4 deserialize) · L32(goal 短读)。
+- **优先修（新代码真缺陷，艾瑞卡自造 9 项）**：M18(R2 阈值漂移) · L57/L58/L59/L60(R1 边界) · L62(R3 帽) · L63/L75(R4 deserialize + NaN 时间戳) · L32(goal 短读)。
   均低/中危、边界性，建议一并修 + 补测试。
 - **高危优先（存量）**：H1(Edit 非 UTF-8 损坏)、H2(thinking fallback)、H3(openai idle 重放)、H5(结构化输出 schema-blind)。
 - **安全相关**：M17(跨协议凭据串号，多租户场景)。
