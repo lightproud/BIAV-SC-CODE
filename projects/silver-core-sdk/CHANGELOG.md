@@ -16,6 +16,61 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.65.2 — 2026-07-17
+
+T50 batch I: subagent lifecycle — 10 fixes from the second-pass audit
+(`Public-Info-Pool/Resource/repo-engineering/silver-core-sdk-bug-audit-r2-20260717.md`),
+K1–K9 + M2-1, almost entirely in `subagents/runtime.ts`. Pure bug fixes, no
+new surfaces.
+
+- **K1** [high]: TaskStop on a BLOCKING foreground SendMessage continuation
+  now resolves the call to a "stopped" error result instead of rethrowing the
+  AbortError through the parent loop and killing the whole parent query — the
+  same M-11c guard the foreground Agent-spawn path already had. A genuine
+  parent-side abort (the call's own signal / query-wide signal) still rethrows.
+- **K2**: a SendMessage continuation repairs the transcript tail before
+  appending the message: a worker whose last episode pre-stopped on an
+  unpaired assistant tool_use turn (budget/turn gate) no longer produces an
+  API-invalid assistant(tool_use)+user(text) request that 400s on every retry
+  (same guard buildForkSeed already applied; trailing user turns merge instead
+  of stacking).
+- **K3**: a BACKGROUND continuation no longer chains the acking turn's
+  signal — the detached run used to be silently killed when the parent turn
+  ended, with the coordinator never told (the initial background spawn already
+  composed from outerSignal for exactly this reason).
+- **K4**: a killed/interrupted/watchdog-aborted child's already-billed spend
+  now reaches the subagent usage ledger: all three runtime abort catches fold
+  the AbortError's attached abortedRunAccounting (previously only the root
+  query folded it, so every stopped child's tokens and cost vanished from
+  session accounting).
+- **K5**: TaskStop can no longer be silently revoked by a SendMessage that was
+  already queued behind the killed run — a kill bumps the record's epoch and
+  a continuation enqueued before the kill is dropped with an honest "stopped
+  before this message was delivered" note. A SendMessage issued AFTER the
+  kill still revives the worker (official semantics preserved).
+- **K6**: kill-then-continue keeps the single sidechain bracket: killAgent no
+  longer writes the terminal sidechain_end early (revived turns used to land
+  OUTSIDE the bracket, unrecoverable because the end marker is idempotent);
+  it records the episode error state and the single end lands at settleAll.
+- **K7**: AgentDefinition.tools matches BUILTIN names with the same pattern
+  semantics as the MCP filter (matchToolName) — `tools: ['*']` used to strip
+  every builtin while exposing every MCP tool.
+- **K8**: SubagentStart reports the RESOLVED agent type (matching every
+  SubagentStop site), so a request that falls back to general-purpose no
+  longer shows matcher-scoped hooks an unbalanced Start/Stop pair; the
+  transport-resolution failure path's Stop now uses the resolved type too.
+- **K9**: resolveAgentDefinition guards the agents lookup with hasOwnProperty
+  — prototype-inherited names ("constructor"/"__proto__") now take the
+  documented general-purpose fallback instead of a hard prompt-check error.
+- **M2-1**: a worktree-isolated child's sandbox writablePaths now include its
+  worktree (spawn AND the M16 continuation re-provision path) — the inherited
+  root writablePaths made bwrap ro-bind the worktree, so every git
+  commit/build/write inside it failed EROFS/EPERM.
+
++12 regression tests (`tests/audit-t50-batch-i.test.ts`); negative control:
+reverting the src fixes turns 10/12 red (the 2 green are deliberate
+behavior-preservation arms).
+
 ## 0.65.1 — 2026-07-17
 
 T50 batch J: 15 fixes from the second-pass audit

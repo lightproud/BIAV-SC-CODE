@@ -514,7 +514,13 @@ export function resolveAgentDefinition(
   agents: Record<string, AgentDefinition>,
   debug: (msg: string) => void,
 ): ResolvedAgent | { error: string } {
-  const named = agents[type];
+  // K9 (audit r2 2026-07-17): own-property guard — `agents["constructor"]`
+  // (or "__proto__"/"toString") resolves through the object prototype to a
+  // function, which then fails the prompt check as a HARD error instead of
+  // taking the documented unknown-type fallback to general-purpose.
+  const named = Object.prototype.hasOwnProperty.call(agents, type)
+    ? agents[type]
+    : undefined;
   if (named !== undefined) {
     if (typeof named.prompt !== 'string' || named.prompt.length === 0) {
       return {
