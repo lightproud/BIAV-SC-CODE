@@ -67,6 +67,10 @@ import { MEMORY_TOOL_NAME, resolveMemoryRuntime } from './tools/memory/index.js'
 import { createSessionPersistence } from './sessions/persistence.js';
 import { readSessionEntries } from './sessions/session-functions.js';
 import type { SessionMutationOptions } from './sessions/session-functions.js';
+import {
+  LOOP_CONTROL_TOOL_NAME,
+  createLoopControlTool,
+} from './loop-support/loop-control.js';
 import { createRunLogSink } from './reporting/run-log.js';
 import { AsyncQueue, createDeferred } from './internal/async.js';
 import { ToolFilterMcpRegistry } from './mcp/tool-filter.js';
@@ -635,6 +639,19 @@ export function query(args: {
     !isBareDisallowed('Agent') &&
     (!Array.isArray(options.tools) || options.tools.includes('Agent'));
   if (wantAgent) builtinTools.set('Agent', createAgentTool(agentNames));
+
+  // R5 LoopControl (SCS-REQ-REPOS-01): opt-in model-side loop surface —
+  // registered ONLY when the host wires options.loopControl at assembly.
+  const wantLoopControl =
+    options.loopControl !== undefined &&
+    !isBareDisallowed(LOOP_CONTROL_TOOL_NAME) &&
+    (!Array.isArray(options.tools) || options.tools.includes(LOOP_CONTROL_TOOL_NAME));
+  if (wantLoopControl && options.loopControl !== undefined) {
+    builtinTools.set(
+      LOOP_CONTROL_TOOL_NAME,
+      createLoopControlTool(options.loopControl),
+    );
+  }
 
   // Unified tool-search: register the cold built-in set on the deferred registry
   // so the ONE ToolSearch builtin can lazily load them. Only when the caller

@@ -71,6 +71,13 @@ export type {
   LedgerPrelude,
   LedgerRegion,
 } from './loop-support/ledger.js';
+// R5 LoopControl: the model-side loop surface, exported for hosts that build
+// their own tool assemblies; normal wiring is options.loopControl.
+export {
+  LOOP_CONTROL_TOOL_NAME,
+  createLoopControlTool,
+} from './loop-support/loop-control.js';
+export type { LoopControlOptions } from './loop-support/loop-control.js';
 // Built-in durable session store (SM-乙a): fileSessionStore(dir) for the
 // SessionManager's `store` option and options.sessionStore recovery.
 export { FileSessionStore, fileSessionStore } from './sessions/file-store.js';

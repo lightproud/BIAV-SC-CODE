@@ -1779,6 +1779,16 @@ export type Options = {
    * history and persistence carry the composed text.
    */
   prelude?: StructuredPrelude[];
+  /**
+   * BPT-EXTENSION (SCS-REQ-REPOS-01 §3 R5): opt-in registration of the
+   * LoopControl tool (model-side loop surface). When set, the model can
+   * PROPOSE stopping the host's loop; each proposal arrives at `onProposal`
+   * as a structured event. The engine's behavior never changes on a
+   * proposal — continuing is the host's decision alone.
+   */
+  loopControl?: {
+    onProposal?: (proposal: LoopStopProposal) => void;
+  };
   maxBudgetUsd?: number;
   /**
    * BPT-EXTENSION (SCS-REQ-REPOS-01 §3 R2): the fraction of `maxBudgetUsd` at
@@ -3002,6 +3012,17 @@ export type ResilienceOptions = {
 /** BPT extension: context-compaction tuning. When the running request
  *  history's estimated token count approaches the model context window,
  *  older turns are folded into a synthetic summary. `enabled` defaults true. */
+/**
+ * A LoopControl stop proposal (R5): the structured event delivered to the
+ * host when the model calls the LoopControl tool. The model can only
+ * PROPOSE; the host decides whether its loop continues, and the engine's
+ * behavior never changes on a proposal.
+ */
+export type LoopStopProposal = {
+  action: 'propose_stop';
+  reason: string;
+};
+
 /** One structured prelude block for `Options.prelude` (R1 turn injection). */
 export type StructuredPrelude = {
   /** Optional label rendered as the block's first line. */
