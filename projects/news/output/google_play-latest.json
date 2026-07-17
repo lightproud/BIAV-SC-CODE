@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-17T19:05:59.825732+00:00",
+  "collected_at": "2026-07-17T21:53:19.578741+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 112,
+  "item_count": 113,
   "items": [
     {
       "source": "google_play",
@@ -123,6 +123,16 @@
       "summary": "The conversations between phases of bosses in story are annoying, add a skip for that please, and also add that in replay too, thanks. And please have guide for teams.",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-81b13ca9-e065-49df-90ff-be632967802f",
       "author": "Nauth",
+      "engagement": 1
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-09T14:14:47",
+      "lang": "en",
+      "title": "[Google Play 好评] ★5 Awesome gameplay. The mechanics got me h",
+      "summary": "Awesome gameplay. The mechanics got me hook. Awesome visual. Very F2P player friendly. Haven't got into the story yet (I've skipped most of the cutscenes), but from what I've heard it's good so I'll definitely catch up later. Though, I've stumbled graphical glitches where some enemies health bar weren't supposed to be where they should and overlapped with other enemies healthbar. I recommend this to casuals turn based rpg enjoyer. 👌👌👌",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-187574e2-f0b7-4255-a28f-8716356d002e",
+      "author": "Osman Yusuf",
       "engagement": 1
     },
     {
@@ -363,16 +373,6 @@
       "summary": "So great and kind! Here for Pontos 💙",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-ff93a09f-c26a-4b39-b107-353ed1db73af",
       "author": "Joshua RGT",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-07-09T14:14:47",
-      "lang": "en",
-      "title": "[Google Play 好评] ★5 Awesome gameplay. The mechanics got me h",
-      "summary": "Awesome gameplay. The mechanics got me hook. Awesome visual. Very F2P player friendly. Haven't got into the story yet (I've skipped most of the cutscenes), but from what I've heard it's good so I'll definitely catch up later. Though, I've stumbled graphical glitches where some enemies health bar weren't supposed to be where they should and overlapped with other enemies healthbar. I recommend this to casuals turn based rpg enjoyer. 👌👌👌",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-187574e2-f0b7-4255-a28f-8716356d002e",
-      "author": "Osman Yusuf",
       "engagement": 0
     },
     {
@@ -933,6 +933,16 @@
       "summary": "5 stelle perché è un gioco multilingue compreso l'italiano cosa che ormai dovrebbero fare tutti giochi grazie all'IA",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=it#gp-d2764bc5-5216-46e4-9594-094a54585b86",
       "author": "Daniele",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-16T20:07:51",
+      "lang": "ru",
+      "title": "[Google Play 好评] ★5 Советую эту игру всем любителям мрачной",
+      "summary": "Советую эту игру всем любителям мрачной эстетики и необычных гача-механик)) Сама скачала её ради коллаборации с новеллой Saya no Uta, но в итоге влюбилась в геймплей: боевая система на картах требует тактического мышления и действительно затягивает. К ф2п игрокам тут относятся на удивление лояльно — донат не давит, играется комфортно. На фоне однотипных проектов вроде игр Хойоверс эта игра стала для меня настоящим глотком свежего воздуха!!",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=ru#gp-5c05a9f6-bc60-4266-a7b3-46ceb449d3f4",
+      "author": "Тома",
       "engagement": 0
     },
     {
