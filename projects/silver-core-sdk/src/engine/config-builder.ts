@@ -93,15 +93,26 @@ export function buildEngineConfig(args: {
   let systemComposition: SystemComposition | undefined;
   const sp = options.systemPrompt;
   if (sp !== null && typeof sp === 'object' && 'type' in sp && sp.type === 'segments') {
+    // E2 (audit 2026-07-17): segment breakpoints are baked at config-build
+    // time, and the runtime cache shaper runs in 'preserve' mode for this
+    // path — so the provider knobs must be honored HERE. promptCaching:false
+    // means NO breakpoints at all (a baked marker would still buy cache-write
+    // premium), and cacheTtl:'1h' must stamp the segment markers too (a bare
+    // marker next to 1h tools/messages markers silently downgraded the TTL).
+    const segmentCachingEnabled = options.provider?.promptCaching !== false;
+    const segmentMarker: TextBlockParam['cache_control'] =
+      options.provider?.cacheTtl === '1h'
+        ? { type: 'ephemeral', ttl: '1h' }
+        : { type: 'ephemeral' };
     // 4 API breakpoints total; reserve 1 for the tool schemas -> up to 3 here.
     let budget = 3;
     systemBlocks = (Array.isArray(sp.segments) ? sp.segments : [])
       .filter((s) => s !== null && typeof s.text === 'string' && s.text.length > 0)
       .map((s) => {
         const block: TextBlockParam = { type: 'text', text: s.text };
-        if (s.cache === true) {
+        if (s.cache === true && segmentCachingEnabled) {
           if (budget > 0) {
-            block.cache_control = { type: 'ephemeral' };
+            block.cache_control = { ...segmentMarker };
             budget -= 1;
           } else {
             debug(
@@ -113,7 +124,11 @@ export function buildEngineConfig(args: {
         return block;
       });
     // Structured-output requirement rides as a trailing (uncached) block.
-    if (outputFormat !== undefined && systemBlocks.length > 0) {
+    // E3 (audit 2026-07-17): pushed even when every caller segment filtered
+    // to empty — otherwise the wire carried system:[] and the model was never
+    // told the required JSON shape (first attempt blind, only the correction
+    // round carried the schema).
+    if (outputFormat !== undefined) {
       systemBlocks.push({
         type: 'text',
         text: buildStructuredOutputInstruction(outputFormat.schema),
@@ -129,7 +144,9 @@ export function buildEngineConfig(args: {
         label: s.label,
         estTokens: estimateTextTokens(s.text),
       }));
-    if (outputFormat !== undefined && segParts.length > 0) {
+    // Mirrors the E3 fix above: the composition breakdown reports the block
+    // whenever it is actually sent, segments or none.
+    if (outputFormat !== undefined) {
       segParts.push({
         role: 'structured-output',
         label: 'structured-output',

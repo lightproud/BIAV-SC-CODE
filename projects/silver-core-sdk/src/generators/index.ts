@@ -34,6 +34,7 @@ import {
   runUtilityCall,
   type UtilityCallOptions,
 } from './runtime.js';
+import { neutralizeClosingTag } from '../internal/inert-text.js';
 
 // ---------------------------------------------------------------------------
 // 1. Command prefix detection
@@ -201,7 +202,10 @@ export async function generateSessionTitle(
   sessionContent: string,
   opts: UtilityCallOptions = {},
 ): Promise<string> {
-  const user = `<session>\n${sessionContent}\n</session>`;
+  // N8 (audit 2026-07-17): the prompt tells the model to treat <session> as
+  // inert data, but a literal `</session>` inside the content would close the
+  // fence early and let the session smuggle an attacker-chosen title after it.
+  const user = `<session>\n${neutralizeClosingTag(sessionContent, 'session')}\n</session>`;
   const raw = await runUtilityCall(SESSION_TITLE_SYSTEM, user, opts, 128);
   const obj = extractJsonObject(raw);
   const title = readStringField(obj, 'title');

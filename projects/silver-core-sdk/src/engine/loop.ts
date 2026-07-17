@@ -1695,9 +1695,18 @@ export async function* runAgentLoop(
       const isRootLoop =
         config.parentToolUseId === undefined || config.parentToolUseId === null;
       if (isRootLoop && deps.hooks.hasHooks('Stop')) {
+        // L2-10 (audit 2026-07-17): populate the official last_assistant_message
+        // field from the turn's final text. Under incognito/persistSession:false
+        // there is no transcript_path, and a Stop consumer such as the goal
+        // evaluator was judging an EMPTY context — a blind judge on every stop.
         const stopAgg = await deps.hooks.run(
           'Stop',
-          { ...baseHookFields, hook_event_name: 'Stop', stop_hook_active: stopHookActive },
+          {
+            ...baseHookFields,
+            hook_event_name: 'Stop',
+            stop_hook_active: stopHookActive,
+            ...(text.length > 0 ? { last_assistant_message: text } : {}),
+          },
           undefined,
           undefined,
           signal,

@@ -77,6 +77,12 @@ export class AsyncQueue<T> {
     return this.closed;
   }
 
+  /** Snapshot of items pushed but not yet consumed (L2-5: interrupt() reports
+   *  these as still queued instead of hardcoding an empty receipt). */
+  pending(): readonly T[] {
+    return [...this.items];
+  }
+
   async next(): Promise<IteratorResult<T, undefined>> {
     const item = this.items.shift();
     if (item !== undefined) return { done: false, value: item };

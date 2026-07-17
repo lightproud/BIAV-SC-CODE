@@ -591,7 +591,9 @@ export type SessionCronSummary = {
 export type StopHookInput = BaseHookInput & {
   hook_event_name: 'Stop';
   stop_hook_active: boolean;
-  /** NEW-IN-DOCS. typed-not-populated. */
+  /** NEW-IN-DOCS. Populated on root-loop natural stops with the final
+   *  assistant text (L2-10: keeps Stop consumers — e.g. the goal evaluator —
+   *  sighted even when incognito omits transcript_path). */
   last_assistant_message?: string;
   /** NEW-IN-DOCS. typed-not-populated. */
   background_tasks?: BackgroundTaskSummary[];
@@ -3421,13 +3423,11 @@ export type SDKControlGetWorkspaceDiffRequest = {
  *
  *  `still_queued` lists the uuids of async user messages that survive the
  *  interrupt (queued commands, plus a batch already dequeued for the imminent
- *  turn). In this direct-API engine there is no uuid-stamped async message
- *  queue surviving an abort — interrupt() aborts the active turn (or arms the
- *  next-turn cancel) and there is nothing left queued — so the receipt is
- *  always `{ still_queued: [] }`. The field is present for drop-in consumers
- *  that read it; an empty array does not mean "nothing will run" (per the
- *  official coverage caveat), it means this engine tracks no surviving async
- *  messages by uuid. */
+ *  turn). In this engine (L2-5, audit 2026-07-17) it reports the uuid-stamped
+ *  user messages still buffered in the streaming-input queue — those survive
+ *  the interrupt and will drive future turns. Messages pushed without a uuid
+ *  cannot be listed by uuid and are omitted, so an empty array does not mean
+ *  "nothing will run" (per the official coverage caveat). */
 export type SDKControlInterruptResponse = {
   still_queued: string[];
 };
@@ -3441,10 +3441,10 @@ export interface Query extends AsyncGenerator<SDKMessage, void> {
    * interrupt-requested flag when no turn is currently active.
    *
    * Returns the official interrupt receipt (0.3.205): `still_queued` lists the
-   * uuids of async user messages that survive the interrupt. This engine keeps
-   * no uuid-stamped async message queue, so the receipt is always
-   * `{ still_queued: [] }` (see SDKControlInterruptResponse). Callers that
-   * `await q.interrupt()` and ignore the result are unaffected.
+   * uuids of async user messages that survive the interrupt — here, the
+   * uuid-stamped user messages still buffered in the streaming-input queue
+   * (see SDKControlInterruptResponse). Callers that `await q.interrupt()` and
+   * ignore the result are unaffected.
    */
   interrupt(): Promise<SDKControlInterruptResponse>;
   setPermissionMode(mode: PermissionMode): Promise<void>;

@@ -53,18 +53,32 @@ function contentHasThinking(content: APIMessageParam['content']): boolean {
 
 /**
  * Index of the in-flight assistant turn whose thinking must NOT be stripped:
- * only when the request is a tool-loop continuation (its last message is a
- * user turn carrying tool_result blocks) is the preceding assistant turn
+ * only when the request is a tool-loop continuation — a user turn carrying
+ * tool_result blocks follows the last assistant turn — is that assistant turn
  * "open" and its thinking API-required. A fresh user prompt closes the prior
  * assistant turn, so nothing is protected. Returns -1 when none is protected.
+ *
+ * E1 (audit 2026-07-17): the tool_result turn is NOT always the literal last
+ * message — the R7 memory-flush path appends a plain user turn AFTER the
+ * tool_result turn (relying on API-side coalescing). Checking only the last
+ * message de-protected the in-flight turn there, and stripStaleThinking then
+ * removed API-required thinking → 400 on the very next request (both on a
+ * fallback model switch and on an unstamped same-model resume). So: find the
+ * last assistant turn, and protect it iff ANY later user turn carries a
+ * tool_result.
  */
 export function protectedTurnIndex(messages: APIMessageParam[]): number {
-  const last = messages[messages.length - 1];
-  if (last === undefined || last.role !== 'user' || !contentHasToolResult(last.content)) {
-    return -1;
-  }
+  let lastAssistant = -1;
   for (let i = messages.length - 1; i >= 0; i--) {
-    if (messages[i]!.role === 'assistant') return i;
+    if (messages[i]!.role === 'assistant') {
+      lastAssistant = i;
+      break;
+    }
+  }
+  if (lastAssistant === -1) return -1;
+  for (let i = lastAssistant + 1; i < messages.length; i++) {
+    const m = messages[i]!;
+    if (m.role === 'user' && contentHasToolResult(m.content)) return lastAssistant;
   }
   return -1;
 }

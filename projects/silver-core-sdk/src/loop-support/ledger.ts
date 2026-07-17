@@ -19,6 +19,7 @@
  */
 
 import { ConfigurationError } from '../errors.js';
+import { singleLine } from '../internal/inert-text.js';
 
 /** One reported event. */
 export type LedgerEntry = {
@@ -76,9 +77,12 @@ export class ReportLedger {
   }
 
   /**
-   * Record a reported event. Returns true when the key is NEW; false on a
-   * duplicate (the first record wins — dedup semantics, not last-write).
-   * Capacity and age eviction run after a successful insert.
+   * Record a reported event. Returns true when the key is NEW and is still
+   * held after eviction; false on a duplicate (the first record wins — dedup
+   * semantics, not last-write) OR when capacity eviction expelled the new
+   * entry itself (at max capacity an entry older than everything held is
+   * evicted immediately — L2-6, audit 2026-07-17: returning true there lied
+   * to callers who then trusted `has(key)` for exactly-once semantics).
    */
   record(key: string, opts?: { at?: number; summary?: string }): boolean {
     if (key.length === 0) {
@@ -98,7 +102,8 @@ export class ReportLedger {
     if (opts?.summary !== undefined) entry.summary = opts.summary;
     this.byKey.set(key, entry);
     this.evict(at);
-    return true;
+    // The insert only "took" if the entry survived its own eviction pass.
+    return this.byKey.has(key);
   }
 
   /**
@@ -211,7 +216,12 @@ export class ReportLedger {
     const lines = ['Events reported so far (do not re-report):'];
     for (const e of all) {
       const when = new Date(e.at).toISOString();
-      lines.push(`- ${e.key} (${when})` + (e.summary ? ` — ${e.summary}` : ''));
+      // L2-7 (audit 2026-07-17): keys/summaries derive from EXTERNAL event
+      // data — an embedded newline would forge extra "already reported" lines
+      // and suppress real reports. One line per entry, enforced here.
+      lines.push(
+        `- ${singleLine(e.key)} (${when})` + (e.summary ? ` — ${singleLine(e.summary)}` : ''),
+      );
     }
     return lines.join('\n');
   }

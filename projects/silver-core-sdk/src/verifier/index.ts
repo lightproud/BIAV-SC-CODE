@@ -19,6 +19,7 @@ import {
   runUtilityCall,
   type UtilityCallOptions,
 } from '../generators/runtime.js';
+import { neutralizeClosingTag } from '../internal/inert-text.js';
 import { VERIFY_VERDICT_SYSTEM } from './prompts.js';
 
 /** The three possible verdicts for a candidate finding. */
@@ -70,7 +71,12 @@ export interface VerificationResult {
 export function buildVerifierUserTurn(f: Finding): string {
   const parts: string[] = [];
   if (f.context !== undefined && f.context.length > 0) {
-    parts.push(`Diff / relevant code:\n<context>\n${f.context}\n</context>`);
+    // N1 (audit 2026-07-17): the code under review is ADVERSARIAL input — a
+    // literal `</context>` inside it would close the fence and let the code
+    // dictate its own verdict. Neutralize the terminator; the system prompt's
+    // inert-data rule covers instruction-like text that stays inside.
+    const inert = neutralizeClosingTag(f.context, 'context');
+    parts.push(`Diff / relevant code:\n<context>\n${inert}\n</context>`);
   }
   const location =
     f.file !== undefined

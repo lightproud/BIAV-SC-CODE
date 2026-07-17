@@ -112,7 +112,9 @@ describe('buildSelectorUserTurn', () => {
       ineligibleIds: ['c'],
       sessionMetadata: { numStartups: 7 },
     });
-    expect(turn).toContain('Transcript:\nT-LINE');
+    // N9 (audit 2026-07-17): the transcript rides inside a <transcript> fence
+    // so it can no longer forge the structured blocks that follow it.
+    expect(turn).toContain('Transcript:\n<transcript>\nT-LINE\n</transcript>');
     expect(turn).toContain('<eligible_ids>a, b</eligible_ids>');
     expect(turn).toContain('<ineligible_ids>c</ineligible_ids>');
     expect(turn).toContain('numStartups: 7');
