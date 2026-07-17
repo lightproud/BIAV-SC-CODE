@@ -614,6 +614,8 @@ export function createBptSession(options: SessionManagerOptions = {}): SessionMa
       setMcpServers: (servers) => q.setMcpServers(servers),
       rewindFiles: (id, opts) => q.rewindFiles(id, opts),
       stopTask: (taskId) => q.stopTask(taskId),
+      setRetainedRegion: (region) => q.setRetainedRegion(region),
+      removeRetainedRegion: (id) => q.removeRetainedRegion(id),
       streamInput: (stream) => q.streamInput(stream),
       close: () => q.close(),
     };

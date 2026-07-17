@@ -26,40 +26,24 @@ export type {
 // SessionManagerOptions / SessionManagerUsage types ride the types.js export).
 export { createBptSession, runConcurrent } from './session-manager.js';
 export type { ManagedTask, RunConcurrentOutcome } from './session-manager.js';
-// BPT-EXTENSION: /loop interval-loop primitive (parser is the grammar's
-// single source of truth; the controller drives a host-owned runner on a
-// fixed-delay cadence — see src/prompt-loop.ts module header).
+// Loop-support interface surface (SCS-REQ-REPOS-01 §3): primitives for a
+// HOST-BUILT unattended loop. The engine never becomes the loop — the clock
+// and the assembly belong to the runner layer; these exports make that loop
+// externally buildable with zero engine patches.
+export { ReportLedger } from './loop-support/ledger.js';
+export type {
+  LedgerConfig,
+  LedgerEntry,
+  LedgerPrelude,
+  LedgerRegion,
+} from './loop-support/ledger.js';
+// R5 LoopControl: the model-side loop surface, exported for hosts that build
+// their own tool assemblies; normal wiring is options.loopControl.
 export {
-  createPromptLoop,
-  parseLoopCommand,
-  DEFAULT_LOOP_INTERVAL_MS,
-  DEFAULT_LOOP_INTERVAL_LABEL,
-  MIN_LOOP_INTERVAL_MS,
-  MAX_LOOP_INTERVAL_MS,
-  LOOP_SLASH_COMMAND,
-} from './prompt-loop.js';
-export type {
-  LoopCommandParse,
-  LoopDirective,
-  LoopErrorDecision,
-  LoopStopReason,
-  PromptLoopController,
-  PromptLoopOptions,
-  PromptLoopSummary,
-} from './prompt-loop.js';
-// BPT-EXTENSION: /goal session-goal primitive (the surface companion to the
-// engine's Stop-hook block semantics — parser + goal manager producing the
-// Stop matcher; see src/hooks/session-goal.ts module header for the deliberately
-// inverted failure direction).
-export { createSessionGoal, parseGoalCommand, GOAL_SLASH_COMMAND } from './hooks/session-goal.js';
-export type {
-  GoalCommandAction,
-  GoalCommandOutcome,
-  GoalCommandParse,
-  SessionGoal,
-  SessionGoalEvent,
-  SessionGoalOptions,
-} from './hooks/session-goal.js';
+  LOOP_CONTROL_TOOL_NAME,
+  createLoopControlTool,
+} from './loop-support/loop-control.js';
+export type { LoopControlOptions } from './loop-support/loop-control.js';
 // Built-in durable session store (SM-乙a): fileSessionStore(dir) for the
 // SessionManager's `store` option and options.sessionStore recovery.
 export { FileSessionStore, fileSessionStore } from './sessions/file-store.js';
@@ -71,6 +55,14 @@ export { tool, createSdkMcpServer } from './mcp/sdk-server.js';
 // same way it sizes MCP tools.
 export { enumerateBuiltinToolMetadata } from './tools/index.js';
 export type { BuiltinToolMetadata } from './tools/index.js';
+// R6 engine surface declaration (SCS-REQ-REPOS-01 §3): the load-time compat
+// anchor for hot-updatable capability layers (skill md, MCP manifests) —
+// engine version + per-tool content-hash surface versions.
+export { declareEngineSurface } from './tools/index.js';
+export type {
+  EngineSurfaceDeclaration,
+  ToolSurfaceVersion,
+} from './tools/index.js';
 // Unified tool-search (lazy loading): the default cold built-in set (schemas
 // deferred behind the ToolSearch builtin when options.toolSearch === true) and
 // the 银芯/SVN-world variant options bundle. The faithful createBuiltinTools()
@@ -155,6 +147,11 @@ export {
   deleteSession,
   forkSession,
 } from './sessions/session-functions.js';
+// R1 pre-injection accounting (SCS-REQ-REPOS-01 §3): read a session's
+// cumulative cost / turns / context estimate BEFORE injecting the next turn
+// via query({ prompt, options: { resume } }).
+export { getSessionAccounting } from './query.js';
+export type { SessionUsageSnapshot } from './query.js';
 // Tool-claim verification (BPT-EXTENSION, governance spec S4): flag assistant
 // turns that CLAIM a tool action with no backing record in the S3 structured
 // tool-call log. Heuristic by design — findings go to human review.

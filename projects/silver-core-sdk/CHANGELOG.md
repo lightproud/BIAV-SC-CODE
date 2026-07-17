@@ -16,6 +16,70 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.63.0 — 2026-07-17
+
+SCS-REQ-REPOS-01 (keeper-adjudicated requirement, archived at
+`Public-Info-Pool/Resource/repo-engineering/scs-req-repositioning-loop-support-20260717.md`):
+engine-layer repositioning + the loop-support interface surface. BREAKING —
+the slash retirement is a one-shot clean cut with no deprecation period.
+
+New surfaces (§3 R1–R6, for host-built unattended loops):
+
+- **R1 turn injection**: `options.prelude` (structured `<system-reminder>`
+  blocks ahead of the injected prompt) + `getSessionAccounting()` /
+  `SessionUsageSnapshot` (pre-injection read of cumulative cost, turns, and a
+  persisted-context token estimate; every result now persists a cost-delta
+  `accounting` record).
+- **R2 budget events**: one-shot root-loop hook events `budget:threshold`
+  (at `maxBudgetUsd * budgetThresholdRatio`, new Options field, default 0.8)
+  and `budget:exhausted` (at the budget stop, carrying the structured
+  closeout report: cumulative cost / turns / bounded last-state summary).
+- **R3 compaction retained regions**: `compaction.retainedRegions` /
+  `retainedRegionMaxBytes` + `Query.setRetainedRegion` /
+  `removeRetainedRegion` — host-declared regions re-stamped VERBATIM into
+  every fold; over-cap declarations THROW (never silent truncation).
+- **R4 ledger primitive**: `ReportLedger` — pure dedup-ledger logic
+  (record/has/evict by capacity+age/serialize) with one-line adapters onto
+  the R1 prelude and R3 retained-region shapes.
+- **R5 LoopControl tool**: opt-in via `options.loopControl` —
+  `{ action: "propose_stop", reason }`; the model can only PROPOSE, the
+  proposal reaches the host as a structured event, engine behavior never
+  changes. Shape self-designed (no official command-tool corpus in the
+  archive), marked 待对齐 in the COMPAT reference notes.
+- **R6 engine surface declaration**: `declareEngineSurface()` — engine
+  version + per-tool content-hash surface versions, the load-time compat
+  anchor for hot-updatable capability layers (companion frontmatter norm in
+  `memory/skill-authoring-standard.md` §5).
+
+BREAKING — slash retirement (§4, one version, no dual path):
+
+- The engine no longer recognizes ANY text starting with `/`: prompts pass
+  through to the wire verbatim (regression-locked, incl. a source-residue
+  grep guard in tests/slash-retirement.test.ts).
+- DELETED: `parseLoopCommand` / `createPromptLoop` / `LOOP_SLASH_COMMAND`
+  (+ types) — src/prompt-loop.ts; `parseGoalCommand` / `createSessionGoal` /
+  `GOAL_SLASH_COMMAND` — src/hooks/session-goal.ts; the custom
+  `.claude/commands` expansion layer — src/engine/slash-commands.ts; the
+  manual `/compact` text recognition (`detectManualCompact` /
+  `runManualCompact` / `compaction.recognizeCommand`). Input parsing belongs
+  to the client layer.
+- `system/init.slash_commands` is now always `[]`; `supportedCommands()`
+  returns `[]`; `initializationResult().commands` is `[]`.
+- **Goal mechanism stays, structured-only**: `options.goal`
+  (`GoalConfig` — goal text + HOST-injected evaluator + `maxBlocks` escape
+  policy) arms the Stop gate; `not_achieved` blocks the stop and re-drives
+  the loop with the evaluator's reason; `achieved` / `impossible` (judged
+  escape hatch) disarm; evaluator failure allows the stop. The engine makes
+  no judge-model call of its own.
+- The tips catalog's manual-polling situation (which advertised the retired
+  loop command) is removed; hosts re-add their own spelling at call time.
+
+Docs: POSITIONING rewritten to the adjudicated engine-layer terminal state
+(three negations + extension-surface three-seams + hook contract principle);
+COMPAT demoted to official-SDK reference notes (chase = two triggers only).
+Mutation: new only-up ratchet target `loop-support` seeded and raised to
+93.73 over five kill rounds. Tests: 2453 passing.
+
 ## 0.62.7 — 2026-07-16
 
 Deferred-design adjudications — the 5 items filed as `memory/todo.md` T40 (real

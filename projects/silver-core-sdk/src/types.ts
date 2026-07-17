@@ -463,7 +463,13 @@ export type HookEvent =
   | 'TaskCompleted'
   | 'ConfigChange'
   | 'WorktreeCreate'
-  | 'WorktreeRemove';
+  | 'WorktreeRemove'
+  // BPT-EXTENSION (SCS-REQ-REPOS-01 §3 R2): structured budget event stream on
+  // top of maxBudgetUsd. Root loop only; informational (aggregate hook outputs
+  // carry no decision semantics for these events). Hosts subscribe instead of
+  // polling result metrics.
+  | 'budget:threshold'
+  | 'budget:exhausted';
 
 export type BaseHookInput = {
   session_id: string;
@@ -705,7 +711,44 @@ export type HookInput =
   | TaskCompletedHookInput
   | ConfigChangeHookInput
   | WorktreeCreateHookInput
-  | WorktreeRemoveHookInput;
+  | WorktreeRemoveHookInput
+  | BudgetThresholdHookInput
+  | BudgetExhaustedHookInput;
+
+/**
+ * R2 closeout report: handed to the host on `budget:exhausted` as a
+ * structured object (SCS-REQ-REPOS-01 §3 R2) — cumulative cost, turn count,
+ * and a bounded last-state summary, so an unattended loop's runner can log
+ * the shutdown without replaying the stream.
+ */
+export type BudgetCloseoutReport = {
+  /** Estimated cumulative cost of the run (static price table). */
+  cumulative_cost_usd: number;
+  /** The cap that was hit. */
+  max_budget_usd: number;
+  /** Engine turns completed when the cap fired. */
+  num_turns: number;
+  /** Text of the last assistant turn, bounded to 500 chars. */
+  last_assistant_summary: string;
+};
+
+/** `budget:threshold` — fired ONCE when cumulative cost crosses
+ *  `maxBudgetUsd * budgetThresholdRatio` (default 0.8). */
+export type BudgetThresholdHookInput = BaseHookInput & {
+  hook_event_name: 'budget:threshold';
+  cumulative_cost_usd: number;
+  max_budget_usd: number;
+  threshold_ratio: number;
+};
+
+/** `budget:exhausted` — fired ONCE when the engine stops on the budget cap
+ *  (after the in-flight turn completes; no further billable call is made). */
+export type BudgetExhaustedHookInput = BaseHookInput & {
+  hook_event_name: 'budget:exhausted';
+  /** The engine's budget-stop reason string (matches the terminal result). */
+  reason: string;
+  report: BudgetCloseoutReport;
+};
 
 export type HookPermissionDecision = 'allow' | 'deny' | 'ask' | 'defer';
 
@@ -1727,7 +1770,40 @@ export type Options = {
    * Write/Edit/Bash are the user's own actions and are out of scope.
    */
   incognito?: boolean;
+  /**
+   * BPT-EXTENSION (SCS-REQ-REPOS-01 §3 R1): structured content prepended to
+   * this query's FIRST genuine prompt, rendered as `<system-reminder>`
+   * blocks ahead of the prompt text. The turn-injection seam for host-built
+   * loops: pass `ledger.toPrelude()` (R4) here so the dedup digest rides
+   * every injected turn. Hooks (UserPromptSubmit) see the RAW typed prompt;
+   * history and persistence carry the composed text.
+   */
+  prelude?: StructuredPrelude[];
+  /**
+   * BPT-EXTENSION (SCS-REQ-REPOS-01 §3 R5): opt-in registration of the
+   * LoopControl tool (model-side loop surface). When set, the model can
+   * PROPOSE stopping the host's loop; each proposal arrives at `onProposal`
+   * as a structured event. The engine's behavior never changes on a
+   * proposal — continuing is the host's decision alone.
+   */
+  loopControl?: {
+    onProposal?: (proposal: LoopStopProposal) => void;
+  };
+  /**
+   * BPT-EXTENSION (SCS-REQ-REPOS-01 §4.3): structured session goal — a
+   * stricter stopping condition over the engine's Stop-gate mechanism, with
+   * a HOST-INJECTED evaluator. This structured config is the goal's ONLY
+   * entrance; the engine recognizes no goal text convention.
+   */
+  goal?: GoalConfig;
   maxBudgetUsd?: number;
+  /**
+   * BPT-EXTENSION (SCS-REQ-REPOS-01 §3 R2): the fraction of `maxBudgetUsd` at
+   * which the one-shot `budget:threshold` hook event fires (root loop only).
+   * Default 0.8. Must be in (0, 1]; only meaningful with `maxBudgetUsd` set
+   * and a `budget:threshold` hook subscribed.
+   */
+  budgetThresholdRatio?: number;
   /**
    * @deprecated Official docs mark `maxThinkingTokens` deprecated in favor of
    * the structured `thinking` config. Still honored here as a budget fallback
@@ -2943,6 +3019,99 @@ export type ResilienceOptions = {
 /** BPT extension: context-compaction tuning. When the running request
  *  history's estimated token count approaches the model context window,
  *  older turns are folded into a synthetic summary. `enabled` defaults true. */
+/**
+ * A LoopControl stop proposal (R5): the structured event delivered to the
+ * host when the model calls the LoopControl tool. The model can only
+ * PROPOSE; the host decides whether its loop continues, and the engine's
+ * behavior never changes on a proposal.
+ */
+export type LoopStopProposal = {
+  action: 'propose_stop';
+  reason: string;
+};
+
+/**
+ * The host-injected goal evaluator's verdict (SCS-REQ-REPOS-01 §4.3).
+ * `not_achieved` blocks the stop and re-drives the loop with `reason`;
+ * `achieved` and `impossible` (the judged escape hatch) allow the stop and
+ * disarm the goal.
+ */
+export type GoalVerdict = {
+  status: 'achieved' | 'not_achieved' | 'impossible';
+  reason?: string;
+};
+
+/** What the goal evaluator sees at each natural stop. */
+export type GoalEvaluationContext = {
+  /** The configured goal description. */
+  goal: string;
+  /** Bounded engine-assembled evidence: last assistant message + transcript
+   *  tail (may be '' — a pure-function evaluator checking external state,
+   *  e.g. running tests, needs none of it). */
+  context: string;
+  /** Consecutive blocked stops so far for this goal. */
+  blocks: number;
+  signal: AbortSignal;
+};
+
+/** Host-observable goal lifecycle notifications. */
+export type GoalEvent =
+  | { kind: 'achieved'; goal: string; reason: string }
+  | { kind: 'impossible'; goal: string; reason: string }
+  | { kind: 'blocked'; goal: string; reason: string; blocks: number }
+  | { kind: 'evaluator_error'; goal: string; reason: string }
+  | { kind: 'block_limit'; goal: string; blocks: number };
+
+/**
+ * Structured session goal (`options.goal`) — the goal's ONLY entrance. Arms
+ * a Stop gate: the loop may not stop naturally until the HOST-INJECTED
+ * evaluator judges the goal achieved (or impossible — the escape hatch).
+ * The evaluator is a pure function (deterministic judge: run tests /
+ * assertions — preferred) or the host's own judge-model call; the engine
+ * hardcodes no model choice. Evaluator failure ALLOWS the stop (a broken
+ * judge must never trap the loop). maxTurns / maxBudgetUsd still cap a
+ * stubborn goal.
+ */
+export type GoalConfig = {
+  /** The goal description (shown to the evaluator and in feedback turns). */
+  goal: string;
+  /** Host-injected judge, called at each natural stop while armed. */
+  evaluator: (
+    ctx: GoalEvaluationContext,
+  ) => GoalVerdict | Promise<GoalVerdict>;
+  /** Escape policy: after this many consecutive blocked stops, allow the
+   *  stop (goal stays armed). Default unbounded — the engine's own caps
+   *  (maxTurns / maxBudgetUsd) are the safety net. */
+  maxBlocks?: number;
+  /** Bounded transcript-tail read for the evaluator context (default 32768). */
+  transcriptTailBytes?: number;
+  /** Lifecycle notifications (UI badges, runner logs). */
+  onEvent?: (event: GoalEvent) => void;
+};
+
+/** One structured prelude block for `Options.prelude` (R1 turn injection). */
+export type StructuredPrelude = {
+  /** Optional label rendered as the block's first line. */
+  title?: string;
+  /** The block body, rendered verbatim inside the system-reminder. */
+  content: string;
+};
+
+/**
+ * A structured context region that must survive automatic compaction VERBATIM
+ * (SCS-REQ-REPOS-01 R3). The engine re-stamps every declared region into the
+ * post-fold context on each compaction; regions live under a total byte cap
+ * and an over-cap declaration throws instead of truncating.
+ */
+export type RetainedRegion = {
+  /** Host-chosen stable identifier (declaring the same id replaces). */
+  id: string;
+  /** Optional human-readable label rendered on the region block. */
+  title?: string;
+  /** The verbatim content to preserve across folds. */
+  content: string;
+};
+
 export type CompactionOptions = {
   enabled?: boolean;
   /** Fraction of the (window - reserved output) budget at which auto-compaction fires. Default 0.85. */
@@ -2961,8 +3130,6 @@ export type CompactionOptions = {
    * Default: the session model.
    */
   model?: string;
-  /** Treat a user turn whose text is `/compact [instructions]` as a manual compaction. Default true. */
-  recognizeCommand?: boolean;
   /** Extra guidance appended to the summarizer instructions. */
   customInstructions?: string;
   /** Override the model context window (e.g. for a 1M-context beta). */
@@ -2983,6 +3150,19 @@ export type CompactionOptions = {
    * identical results still runs).
    */
   preTierMaxToolResultChars?: number;
+  /**
+   * Structured context regions that survive every automatic compaction
+   * VERBATIM (R3): each fold re-stamps the declared regions into the
+   * post-compaction context. Mutable at runtime via
+   * `Query.setRetainedRegion` / `Query.removeRetainedRegion`.
+   */
+  retainedRegions?: RetainedRegion[];
+  /**
+   * Total byte cap across all retained regions (rendered form). A declaration
+   * that would exceed it THROWS (`ConfigurationError`) — the engine never
+   * silently truncates a retained region. Default 16384.
+   */
+  retainedRegionMaxBytes?: number;
 };
 
 /**
@@ -3276,6 +3456,15 @@ export interface Query extends AsyncGenerator<SDKMessage, void> {
   rewindFiles(userMessageId: string, options?: { dryRun?: boolean }): Promise<RewindFilesResult>;
   /** Stop a background subagent task by id (no-op + debug warn when unknown). */
   stopTask(taskId: string): Promise<void>;
+  /**
+   * Declare (or replace, by id) a compaction retained region (R3): its content
+   * survives every automatic compaction verbatim. Throws `ConfigurationError`
+   * when the declaration would push the regions over
+   * `compaction.retainedRegionMaxBytes` — never silently truncated.
+   */
+  setRetainedRegion(region: RetainedRegion): void;
+  /** Remove a retained region by id; false when no such region exists. */
+  removeRetainedRegion(id: string): boolean;
   /** Push an additional user-message stream into a streaming-input session. */
   streamInput(stream: AsyncIterable<SDKUserMessage>): Promise<void>;
   close(): void;

@@ -27,7 +27,9 @@ import type {
   SDKMirrorErrorMessage,
   SDKResultMessage,
   SDKSystemMessage,
+  RetainedRegion,
   SDKUserMessage,
+  HookEvent,
   SlashCommand,
   SubagentTransportHandle,
   TextBlockParam,
@@ -43,16 +45,11 @@ import type {
 import { createProviderTransport } from './transport/factory.js';
 import { DefaultPermissionGate } from './permissions/gate.js';
 import { DefaultHookRunner } from './hooks/runner.js';
+import { createGoalStopHooks } from './hooks/goal.js';
 import { DefaultMcpRegistry } from './mcp/registry.js';
 import { matchToolName, parseRule } from './permissions/rules.js';
 import { runAgentLoop } from './engine/loop.js';
 import { hasPriceFor } from './engine/pricing.js';
-import {
-  expandSlashCommand,
-  loadSlashCommands,
-  pureTextOf,
-  slashCommandInfos,
-} from './engine/slash-commands.js';
 import { SessionAccounting } from './query-accounting.js';
 import { appendSystemInjection, buildEngineConfig } from './engine/config-builder.js';
 import {
@@ -61,9 +58,15 @@ import {
   MEMORY_PROTOCOL_FRAGMENT,
   MEMORY_SESSION_END_PROMPT,
 } from './engine/prompt-fragments.js';
-import { estimateTextTokens } from './engine/tokens.js';
+import { estimateMessagesTokens, estimateTextTokens } from './engine/tokens.js';
 import { MEMORY_TOOL_NAME, resolveMemoryRuntime } from './tools/memory/index.js';
 import { createSessionPersistence } from './sessions/persistence.js';
+import { readSessionEntries } from './sessions/session-functions.js';
+import type { SessionMutationOptions } from './sessions/session-functions.js';
+import {
+  LOOP_CONTROL_TOOL_NAME,
+  createLoopControlTool,
+} from './loop-support/loop-control.js';
 import { createRunLogSink } from './reporting/run-log.js';
 import { AsyncQueue, createDeferred } from './internal/async.js';
 import { ToolFilterMcpRegistry } from './mcp/tool-filter.js';
@@ -282,6 +285,13 @@ export function query(args: {
         'session persists nothing)',
     );
   }
+  // R2 budget events: the threshold ratio is a fraction of maxBudgetUsd.
+  if (
+    options.budgetThresholdRatio !== undefined &&
+    !(options.budgetThresholdRatio > 0 && options.budgetThresholdRatio <= 1)
+  ) {
+    throw new ConfigurationError('budgetThresholdRatio must be in (0, 1]');
+  }
   const persist = !incognito && options.persistSession !== false;
   if (options.sessionStore !== undefined && !persist) {
     throw new ConfigurationError(
@@ -488,8 +498,19 @@ export function query(args: {
           return resolved;
         };
 
+  // Structured goal (SCS-REQ-REPOS-01 §4.3): merge the goal's Stop gate into
+  // the effective hook set. The goal's ONLY entrance is options.goal.
+  let effectiveHooks = options.hooks;
+  if (options.goal !== undefined) {
+    const goalHooks = createGoalStopHooks(options.goal);
+    effectiveHooks = { ...(options.hooks ?? {}) };
+    for (const [ev, matchers] of Object.entries(goalHooks)) {
+      const key = ev as HookEvent;
+      effectiveHooks[key] = [...(options.hooks?.[key] ?? []), ...(matchers ?? [])];
+    }
+  }
   const hooks = new DefaultHookRunner({
-    hooks: options.hooks,
+    hooks: effectiveHooks,
     debug,
     onLifecycleEvent: options.includeHookEvents === true ? emitObs : undefined,
     // v0.6 condition-gated matchers: thread the session credentials so a
@@ -547,10 +568,6 @@ export function query(args: {
       mcpScopeByName.set(name, 'local');
   }
 
-  // Custom slash commands (.claude/commands, project + user per settingSources),
-  // loaded ONCE at query construction — the set is static for the query's
-  // lifetime, so commands_changed still has no source event (docs/COMPAT.md).
-  const customSlashCommands = loadSlashCommands(cwd, options.settingSources);
   const realMcp: McpRegistry =
     injected?.mcpRegistry ??
     new DefaultMcpRegistry({
@@ -625,6 +642,19 @@ export function query(args: {
     !isBareDisallowed('Agent') &&
     (!Array.isArray(options.tools) || options.tools.includes('Agent'));
   if (wantAgent) builtinTools.set('Agent', createAgentTool(agentNames));
+
+  // R5 LoopControl (SCS-REQ-REPOS-01): opt-in model-side loop surface —
+  // registered ONLY when the host wires options.loopControl at assembly.
+  const wantLoopControl =
+    options.loopControl !== undefined &&
+    !isBareDisallowed(LOOP_CONTROL_TOOL_NAME) &&
+    (!Array.isArray(options.tools) || options.tools.includes(LOOP_CONTROL_TOOL_NAME));
+  if (wantLoopControl && options.loopControl !== undefined) {
+    builtinTools.set(
+      LOOP_CONTROL_TOOL_NAME,
+      createLoopControlTool(options.loopControl),
+    );
+  }
 
   // Unified tool-search: register the cold built-in set on the deferred registry
   // so the ONE ToolSearch builtin can lazily load them. Only when the caller
@@ -1018,6 +1048,10 @@ export function query(args: {
 
       const history = sess.history;
       let needMeta = sess.needMeta;
+      // R1: the structured prelude rides the FIRST genuine prompt only.
+      let preludePending = true;
+      // R1: cumulative-cost floor for the per-result accounting delta records.
+      let lastPersistedCostUsd = 0;
 
       // File checkpointing: bind the disk-backed store to this session so
       // Write/Edit pre-images are captured and Query.rewindFiles() can restore.
@@ -1201,6 +1235,24 @@ export function query(args: {
               acct.accumulateResult(msg);
               const rewritten = rewriteResult(msg);
               lastYieldedResult = rewritten;
+              // R1 accounting record (SCS-REQ-REPOS-01): persist this result's
+              // cost DELTA so getSessionAccounting can sum a session's true
+              // cumulative cost across every query/injection that drove it
+              // (total_cost_usd on the result is only THIS query's running
+              // total and is never persisted otherwise).
+              if (persist) {
+                const delta = rewritten.total_cost_usd - lastPersistedCostUsd;
+                lastPersistedCostUsd = rewritten.total_cost_usd;
+                store.append(sess.sessionId, {
+                  type: 'accounting',
+                  uuid: randomUUID(),
+                  session_id: sess.sessionId,
+                  timestamp: Date.now(),
+                  cost_delta_usd: delta > 0 ? delta : 0,
+                  total_cost_usd: rewritten.total_cost_usd,
+                  num_turns: rewritten.num_turns,
+                });
+              }
               yield rewritten;
             } else {
               yield msg;
@@ -1340,7 +1392,9 @@ export function query(args: {
           .map((s) => ({ name: s.name, status: s.status })),
         model: engineConfig.model,
         permissionMode: gate.getMode(),
-        slash_commands: slashCommandInfos(customSlashCommands).map((c) => c.name),
+        // Slash retirement (SCS-REQ-REPOS-01 §4): the engine recognizes no
+        // slash convention, so it advertises none.
+        slash_commands: [],
         output_style: 'default',
         agents: wantAgent ? Object.keys(agentDefs) : [],
         claude_code_version: CLAUDE_CODE_VERSION,
@@ -1349,7 +1403,7 @@ export function query(args: {
         plugins: [],
       };
       initDeferred.resolve({
-        commands: slashCommandInfos(customSlashCommands),
+        commands: [],
         agents: Object.keys(agentDefs).map((name) => ({ name })),
         output_style: 'default',
         available_output_styles: ['default'],
@@ -1503,21 +1557,29 @@ export function query(args: {
           extraLines.push(...agg.additionalContext);
         }
 
-        // Custom slash-command expansion (.claude/commands): a PURE-TEXT
-        // `/name [args]` prompt becomes the command body with $ARGUMENTS /
-        // $1..$9 substituted. Hooks above saw the raw typed text; history and
-        // persistence carry the EXPANDED body (that is what the model sees,
-        // so resume replays correctly). Unknown names pass through as plain
-        // text; the built-in /compact is never shadowed (engine handles it
-        // downstream via detectManualCompact).
-        if (customSlashCommands.length > 0) {
-          const pure = pureTextOf(message);
-          const expansion =
-            pure === null ? null : expandSlashCommand(pure, customSlashCommands);
-          if (expansion !== null) {
-            debug(`query: expanded custom slash command /${expansion.name}`);
-            message = { role: 'user', content: expansion.expanded };
-          }
+        // R1 structured prelude (SCS-REQ-REPOS-01): prepend the host's
+        // declared blocks to the FIRST genuine prompt as <system-reminder>
+        // blocks. Hooks above saw the raw typed text (same posture as slash
+        // expansion); history/persistence carry the composed text so a resume
+        // replays exactly what the model saw.
+        if (preludePending && options.prelude !== undefined && options.prelude.length > 0) {
+          preludePending = false;
+          const blocks = options.prelude
+            .map(
+              (p) =>
+                '<system-reminder>\n' +
+                (p.title !== undefined ? p.title + '\n\n' : '') +
+                p.content +
+                '\n</system-reminder>',
+            )
+            .join('\n\n');
+          message =
+            typeof message.content === 'string'
+              ? { ...message, content: blocks + '\n\n' + message.content }
+              : {
+                  ...message,
+                  content: [{ type: 'text', text: blocks }, ...message.content],
+                };
         }
         message = appendContextLines(message, extraLines);
 
@@ -1846,7 +1908,8 @@ export function query(args: {
       return initDeferred.promise;
     },
     async supportedCommands(): Promise<SlashCommand[]> {
-      return slashCommandInfos(customSlashCommands);
+      // Slash retirement (§4): the engine knows no commands.
+      return [];
     },
     async supportedModels(): Promise<ModelInfo[]> {
       return SUPPORTED_MODELS.map((m) => ({ ...m }));
@@ -1918,6 +1981,21 @@ export function query(args: {
     async stopTask(taskId: string): Promise<void> {
       subagentRuntime.stopTask(taskId);
     },
+    // R3 retained regions (SCS-REQ-REPOS-01): host declarations flow into the
+    // live store the compaction engine re-stamps on every fold. Synchronous —
+    // the over-cap error must surface at the declaration site.
+    setRetainedRegion(region: RetainedRegion): void {
+      const store = engineConfig.compaction?.retention;
+      if (store === undefined) {
+        throw new ConfigurationError(
+          'retained regions require compaction (options.compaction) on this query',
+        );
+      }
+      store.set(region);
+    },
+    removeRetainedRegion(id: string): boolean {
+      return engineConfig.compaction?.retention?.remove(id) ?? false;
+    },
     async streamInput(stream: AsyncIterable<SDKUserMessage>): Promise<void> {
       if (!streamingMode) {
         throw new ConfigurationError(
@@ -1971,4 +2049,64 @@ export function query(args: {
   };
 
   return q;
+}
+
+// ---------------------------------------------------------------------------
+// R1 pre-injection accounting (SCS-REQ-REPOS-01 §3 R1)
+// ---------------------------------------------------------------------------
+
+/** What a host reads BEFORE injecting the next turn into a session. */
+export type SessionUsageSnapshot = {
+  /** Sum of persisted per-result cost deltas across every query that drove
+   *  this session (estimated, static price table). */
+  cumulativeCostUsd: number;
+  /** Sum of persisted per-result turn counts. */
+  cumulativeTurns: number;
+  /** Token estimate of the persisted transcript — the context a resume would
+   *  re-send BEFORE auto-compaction refolds it. Excludes system-prompt and
+   *  tool-definition overhead (request-time concerns). */
+  estimatedContextTokens: number;
+  /** Persisted user+assistant message count. */
+  messageCount: number;
+  /** Number of accounting records seen (== results persisted so far). */
+  resultCount: number;
+};
+
+/**
+ * Read a session's accounting BEFORE injecting the next turn (R1): cumulative
+ * cost and turn count come from the per-result accounting records this SDK
+ * persists alongside the transcript; context occupancy is estimated over the
+ * persisted messages a resume would load. Pure read — never mutates the
+ * session; an unknown/empty session reports zeros.
+ */
+export async function getSessionAccounting(
+  sessionId: string,
+  options: SessionMutationOptions = {},
+): Promise<SessionUsageSnapshot> {
+  const entries = await readSessionEntries(sessionId, options);
+  let cumulativeCostUsd = 0;
+  let cumulativeTurns = 0;
+  let resultCount = 0;
+  const messages: APIMessageParam[] = [];
+  for (const e of entries) {
+    if (e.type === 'accounting') {
+      resultCount += 1;
+      if (typeof e.cost_delta_usd === 'number') cumulativeCostUsd += e.cost_delta_usd;
+      if (typeof e.num_turns === 'number') cumulativeTurns += e.num_turns;
+      continue;
+    }
+    if ((e.type === 'user' || e.type === 'assistant') && e.message !== null && typeof e.message === 'object') {
+      const m = e.message as { role?: unknown; content?: unknown };
+      if ((m.role === 'user' || m.role === 'assistant') && m.content !== undefined) {
+        messages.push({ role: m.role, content: m.content } as APIMessageParam);
+      }
+    }
+  }
+  return {
+    cumulativeCostUsd,
+    cumulativeTurns,
+    estimatedContextTokens: estimateMessagesTokens(messages),
+    messageCount: messages.length,
+    resultCount,
+  };
 }

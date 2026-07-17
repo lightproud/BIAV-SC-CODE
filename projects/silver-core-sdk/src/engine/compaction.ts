@@ -38,6 +38,7 @@ import type {
   StreamRequest,
 } from '../internal/contracts.js';
 import { resolveModelAlias } from '../internal/model-alias.js';
+import { RetentionStore } from '../loop-support/retention.js';
 import { MessageAccumulator } from './accumulator.js';
 import { contextWindowFor } from './context-window.js';
 import { normalizeUsage } from './pricing.js';
@@ -204,13 +205,19 @@ export function buildCompactionConfig(
     keepRatio: opt?.keepRatio ?? 0.3,
     minRecentTurns: opt?.minRecentTurns ?? 2,
     useApiSummary: opt?.useApiSummary ?? false,
-    recognizeCommand: opt?.recognizeCommand ?? true,
     customInstructions: opt?.customInstructions,
     contextWindowTokens: opt?.contextWindowTokens,
     model: opt?.model,
     preTier: opt?.preTier ?? true,
     preTierMaxToolResultChars:
       opt?.preTierMaxToolResultChars ?? PRE_TIER_DEFAULT_MAX_TOOL_RESULT_CHARS,
+    // R3 retained regions: the store is created HERE (config build) so a bad
+    // initial declaration fails the query up front, and shared by reference
+    // with the query layer's setRetainedRegion/removeRetainedRegion.
+    retention: new RetentionStore(
+      opt?.retainedRegionMaxBytes,
+      opt?.retainedRegions,
+    ),
   };
 }
 
@@ -251,27 +258,6 @@ export function shouldAutoCompact(
   return preTokens >= triggerAt ? { preTokens } : null;
 }
 
-/**
- * Recognize a trailing `/compact [instructions]` user turn as a manual
- * compaction request. Returns the parsed instructions, or null when the last
- * message is not a plain-text `/compact` command.
- */
-export function detectManualCompact(
-  messages: APIMessageParam[],
-  _cfg: CompactionConfig,
-): { customInstructions: string | null } | null {
-  const last = messages[messages.length - 1];
-  if (last === undefined || last.role !== 'user') return null;
-  const text = plainTextIfPureText(last.content);
-  if (text === null) return null;
-  const trimmed = text.trim();
-  if (trimmed === '/compact') return { customInstructions: null };
-  if (trimmed.startsWith('/compact ')) {
-    const rest = trimmed.slice('/compact '.length).trim();
-    return { customInstructions: rest.length > 0 ? rest : null };
-  }
-  return null;
-}
 
 // ---------------------------------------------------------------------------
 // Partitioning (pairing-preserving)
@@ -689,37 +675,6 @@ export async function* maybeAutoCompact(
   );
 }
 
-/**
- * Manual `/compact` compaction: first drop the trailing command turn (it is
- * never sent to the model), then attempt the fold. Because performCompaction
- * produces a fresh spliced array, view.messages diverges from the full
- * `history` transcript, which keeps the command.
- */
-export async function* runManualCompact(
-  view: { messages: APIMessageParam[] },
-  customInstructions: string | null,
-  deps: EngineDeps,
-  config: EngineConfig,
-  overheadTokens: number,
-  signal: AbortSignal,
-  onSummaryCall?: SummaryCallSink,
-): AsyncGenerator<SDKMessage, boolean> {
-  const cfg = config.compaction;
-  if (cfg === undefined) return false;
-  // Remove the trailing '/compact' command so it never reaches the model.
-  view.messages.pop();
-  const instr = customInstructions ?? cfg.customInstructions ?? null;
-  return yield* performCompaction(
-    view,
-    'manual',
-    instr,
-    deps,
-    config,
-    overheadTokens,
-    signal,
-    onSummaryCall,
-  );
-}
 
 /** Shared compaction core: PreCompact hook -> partition -> fold -> boundary.
  *  Returns true when a fold actually mutated the view (a boundary was emitted). */
@@ -813,6 +768,22 @@ async function* performCompaction(
     synthetic = [{ role: 'user', content: recap }];
   }
 
+  // R3 retained regions: re-stamp every host-declared region VERBATIM into
+  // the fold's leading user turn, so region semantics (e.g. a dedup ledger)
+  // never depend on the lossy summary. Runs AFTER the H1 collapse so the
+  // stamp survives both synthetic shapes; a fold with no declared regions is
+  // byte-identical to before (the pinned golden shapes hold).
+  const retention = cfg.retention;
+  if (retention !== undefined && !retention.isEmpty) {
+    const first = synthetic[0];
+    if (first !== undefined && typeof first.content === 'string') {
+      synthetic = [
+        { role: first.role, content: first.content + '\n\n' + retention.renderBlocks() },
+        ...synthetic.slice(1),
+      ];
+    }
+  }
+
   // In-place front replacement keeps the query layer's reference valid.
   view.messages.splice(0, part.prefix.length, ...synthetic);
 
@@ -875,16 +846,6 @@ function countGenuineUserTurns(messages: APIMessageParam[]): number {
   return n;
 }
 
-/** Plain text of a user turn, or null when the content has non-text blocks. */
-function plainTextIfPureText(content: string | ContentBlockParam[]): string | null {
-  if (typeof content === 'string') return content;
-  const parts: string[] = [];
-  for (const block of content) {
-    if (block.type !== 'text') return null;
-    parts.push(block.text);
-  }
-  return parts.join('');
-}
 
 /** Structural, deterministic recap of the folded prefix (capped). */
 function buildRecap(prefix: APIMessageParam[]): string {

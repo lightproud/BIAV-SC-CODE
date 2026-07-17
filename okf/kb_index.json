@@ -9,7 +9,7 @@
   "stats": {
     "concepts": 356,
     "edges": 419,
-    "terms": 6431,
+    "terms": 6409,
     "by_type": {
       "character": 72,
       "dataset": 94,
@@ -2715,7 +2715,7 @@
     "/projects/silver-core-sdk-doc-compat.md": {
       "type": "documentation",
       "title": "silver-core-sdk COMPAT",
-      "description": "Target surface: `@anthropic-ai/claude-agent-sdk` public API (npm 0.3.207; chased from 0.3.205 2026-07-13, keeper ruling 「追」, zero exported-symbol drift — 0.3.201 -> 0.3.205 chased 2026-07-10, 0.3.199 -> 0.3.201 chased 2026-07-05) as",
+      "description": "**What this document is.** A reference record of how the official",
       "resource": "/projects/silver-core-sdk/docs/COMPAT.md",
       "tags": [
         "data_layer:curated",
@@ -2855,7 +2855,7 @@
     "/projects/silver-core-sdk-doc-positioning.md": {
       "type": "documentation",
       "title": "silver-core-sdk POSITIONING",
-      "description": "**Silver Core SDK = 一套稳定兼容的调用「表面」 + 一个我们完全掌控、比原版更简单更可靠的独立「引擎」。**",
+      "description": "Silver Core SDK(BIAV-SC 引擎)是黑池五层介质架构中的**引擎层**:最慢的介质、",
       "resource": "/projects/silver-core-sdk/docs/POSITIONING.md",
       "tags": [
         "data_layer:curated",
@@ -10121,7 +10121,6 @@
       "/memory/memory-ext-bpt-positioning.md",
       "/projects/project-silver-core-sdk.md",
       "/projects/silver-core-sdk-doc-architecture.md",
-      "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-tool-parity.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md",
@@ -10149,7 +10148,6 @@
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/silver-core-sdk-doc-architecture.md",
-      "/projects/silver-core-sdk-doc-compat.md",
       "/resource/resource-proposal-ai-collaboration-method-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md"
@@ -10210,7 +10208,6 @@
     ],
     "anthropic": [
       "/projects/silver-core-sdk-doc-architecture.md",
-      "/projects/silver-core-sdk-doc-compat.md",
       "/resource/resource-proposal-silver-core-sdk-memory-consumer-kit-20260711.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md"
     ],
@@ -10219,7 +10216,6 @@
     ],
     "api": [
       "/memory/memory-ext-workflow-api-key-audit.md",
-      "/projects/silver-core-sdk-doc-compat.md",
       "/resource/resource-proposal-silver-core-vector-leg-design-20260705.md"
     ],
     "appstore": [
@@ -10461,6 +10457,7 @@
     "biav": [
       "/memory/memory-ext-biav-info-classification.md",
       "/memory/memory-ext-lessons-archive.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
       "/resource/resource-proposal-biav-project-plan-202603.md",
       "/resource/resource-proposal-internal-ai-platform-plan-202604.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md"
@@ -10781,9 +10778,6 @@
       "/wiki-data/wiki-schema-characters-processed-schema.md",
       "/wiki-data/wiki-schema-characters-schema.md"
     ],
-    "chased": [
-      "/projects/silver-core-sdk-doc-compat.md"
-    ],
     "chat": [
       "/assets/assets-chat-onboarding-snippet.md",
       "/projects/silver-core-sdk-doc-openai-protocol.md",
@@ -10810,7 +10804,6 @@
       "/projects/entry-claude-md.md",
       "/projects/project-site.md",
       "/projects/silver-core-sdk-doc-architecture.md",
-      "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-subagents.md",
       "/projects/silver-core-sdk-doc-tool-parity.md",
       "/resource/resource-proposal-bpt-prompt-assembly-layer-design-20260705.md",
@@ -12277,6 +12270,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-official-docs-interface-audit-20260705.md"
     ],
     "document": [
+      "/projects/silver-core-sdk-doc-compat.md",
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
     ],
     "documentation": [
@@ -12312,9 +12306,6 @@
     ],
     "dreams": [
       "/resource/resource-repo-engineering-repo-slim-audit-20260711.md"
-    ],
-    "drift": [
-      "/projects/silver-core-sdk-doc-compat.md"
     ],
     "drive": [
       "/projects/silver-core-sdk-doc-openai-protocol.md"
@@ -12449,9 +12440,6 @@
     ],
     "experience": [
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md"
-    ],
-    "exported": [
-      "/projects/silver-core-sdk-doc-compat.md"
     ],
     "external": [
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md"
@@ -12925,6 +12913,9 @@
     "host": [
       "/projects/silver-core-sdk-doc-subagents.md"
     ],
+    "how": [
+      "/projects/silver-core-sdk-doc-compat.md"
+    ],
     "hub": [
       "/memory/memory-archive-contribution-protocol-hub.md",
       "/memory/memory-ext-active-mission-v2-0-three-pillars.md",
@@ -13360,7 +13351,6 @@
       "/resource/resource-repo-engineering-kb-vector-remaining-handoff-20260705.md"
     ],
     "keeper": [
-      "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-memory-governance.md"
     ],
     "key": [
@@ -14434,7 +14424,6 @@
       "/story/story_research_notes.md"
     ],
     "npm": [
-      "/projects/silver-core-sdk-doc-compat.md",
       "/resource/resource-repo-engineering-cc-engine-external-commands-20260710.md"
     ],
     "o07cardkeyword": [
@@ -14448,6 +14437,7 @@
     ],
     "official": [
       "/news-output/news-output-official.md",
+      "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-migration.md",
       "/resource/resource-repo-engineering-bpt-sdk-l5-failure-dissection-20260705.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
@@ -15208,7 +15198,6 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
-      "/projects/silver-core-sdk-doc-compat.md",
       "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
       "/resource/resource-community-analysis-jp-discord-insights-202606.md",
       "/resource/resource-community-analysis-light-selfreport-crosscheck-20260705.md",
@@ -15472,6 +15461,7 @@
       "/community/community-weixin.md",
       "/community/community-youtube-comments.md",
       "/community/community-youtube.md",
+      "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-memory-governance.md",
       "/sources/appstore.md",
       "/sources/arca_live.md",
@@ -15507,6 +15497,7 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-desktop-design-spec-ref.md"
     ],
     "reference": [
+      "/projects/silver-core-sdk-doc-compat.md",
       "/resource/resource-repo-engineering-bpt-desktop-ui-reference-20260704-r2.md",
       "/resource/resource-repo-engineering-cc-command-behavior-observations-20260710.md"
     ],
@@ -15813,9 +15804,6 @@
     "rss": [
       "/news-output/news-output-feed.md"
     ],
-    "ruling": [
-      "/projects/silver-core-sdk-doc-compat.md"
-    ],
     "ruliweb": [
       "/community/community-ruliweb.md",
       "/news-output/news-output-ruliweb.md",
@@ -15891,6 +15879,7 @@
     ],
     "sc": [
       "/memory/memory-ext-lessons-archive.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md"
     ],
     "scan": [
@@ -16487,7 +16476,6 @@
       "/projects/silver-core-sdk-doc-concurrency.md"
     ],
     "surface": [
-      "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-subagents.md"
     ],
     "survey": [
@@ -16499,9 +16487,6 @@
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
       "/resource/resource-proposal-bpt-context-architecture-20260712.md",
       "/resource/resource-proposal-bpt-prompt-layering-design-20260704.md"
-    ],
-    "symbol": [
-      "/projects/silver-core-sdk-doc-compat.md"
     ],
     "system": [
       "/assets/assets-card-system.md",
@@ -16536,9 +16521,6 @@
     "tarball": [
       "/README.md",
       "/projects/silver-core-sdk-doc-migration-0-3x-to-0-52.md"
-    ],
-    "target": [
-      "/projects/silver-core-sdk-doc-compat.md"
     ],
     "task": [
       "/wiki-data/wiki-data-tasks.md"
@@ -17105,7 +17087,6 @@
     "zero": [
       "/community/community-index.md",
       "/community/community-timeline.md",
-      "/projects/silver-core-sdk-doc-compat.md",
       "/projects/silver-core-sdk-doc-onboarding.md"
     ],
     "に固": [
@@ -17199,9 +17180,6 @@
     ],
     "一天": [
       "/characters/15577.md"
-    ],
-    "一套": [
-      "/projects/silver-core-sdk-doc-positioning.md"
     ],
     "一层": [
       "/characters/15565.md"
@@ -18642,9 +18620,6 @@
     "个忧": [
       "/resource/resource-repo-engineering-bpt-sdk-prompt-cache-milestone-20260704.md"
     ],
-    "个我": [
-      "/projects/silver-core-sdk-doc-positioning.md"
-    ],
     "个捣": [
       "/characters/15598.md"
     ],
@@ -18775,6 +18750,7 @@
       "/characters/15599.md",
       "/characters/77922.md",
       "/characters/94450.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md"
     ],
     "中积": [
@@ -19286,6 +19262,7 @@
       "/characters/15585.md"
     ],
     "五层": [
+      "/projects/silver-core-sdk-doc-positioning.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md"
     ],
     "五模": [
@@ -19770,6 +19747,7 @@
       "/resource/resource-repo-engineering-bpt-agent-sdk-evaluation-20260706.md"
     ],
     "介质": [
+      "/projects/silver-core-sdk-doc-positioning.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md"
     ],
     "仍原": [
@@ -20058,9 +20036,6 @@
     ],
     "仪模": [
       "/characters/15596.md"
-    ],
-    "们完": [
-      "/projects/silver-core-sdk-doc-positioning.md"
     ],
     "们工": [
       "/resource/resource-proposal-bpt-sdk-reproduction-scope-ledger-20260704.md"
@@ -21637,9 +21612,6 @@
     "全扫": [
       "/resource/resource-data-diagnostics-grep-ripgrep-crossover-20260707.md"
     ],
-    "全掌": [
-      "/projects/silver-core-sdk-doc-positioning.md"
-    ],
     "全档": [
       "/README.md",
       "/memory/memory-ext-active-policy-direct-push-main.md"
@@ -21951,7 +21923,6 @@
       "/characters/15603.md"
     ],
     "兼容": [
-      "/projects/silver-core-sdk-doc-positioning.md",
       "/resource/resource-proposal-bpt-sdk-openai-compat-wire-20260708.md"
     ],
     "兽吞": [
@@ -23503,9 +23474,6 @@
     "单文": [
       "/README.md"
     ],
-    "单更": [
-      "/projects/silver-core-sdk-doc-positioning.md"
-    ],
     "单本": [
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md"
     ],
@@ -23773,9 +23741,6 @@
     ],
     "原本": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md"
-    ],
-    "原版": [
-      "/projects/silver-core-sdk-doc-positioning.md"
     ],
     "原诚": [
       "/resource/resource-community-analysis-saya-collab-community-report-20260603-r2.md",
@@ -24458,8 +24423,7 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-design.md"
     ],
     "可靠": [
-      "/characters/15602.md",
-      "/projects/silver-core-sdk-doc-positioning.md"
+      "/characters/15602.md"
     ],
     "可预": [
       "/memory/memory-ext-wiki-characters-schema-v1.md"
@@ -26641,9 +26605,6 @@
     "套件": [
       "/resource/resource-repo-engineering-bpt-sdk-l5-fullround-report-20260705.md"
     ],
-    "套稳": [
-      "/projects/silver-core-sdk-doc-positioning.md"
-    ],
     "套银": [
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-master-plan.md"
     ],
@@ -27370,8 +27331,7 @@
       "/resource/resource-data-diagnostics-silver-core-sdk-l5-round-20260711.md"
     ],
     "完全": [
-      "/memory/memory-ext-active-self-improvement-requirements.md",
-      "/projects/silver-core-sdk-doc-positioning.md"
+      "/memory/memory-ext-active-self-improvement-requirements.md"
     ],
     "完工": [
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md"
@@ -27730,9 +27690,6 @@
       "/wiki-data/wiki-schema-stages-schema.md",
       "/wiki-data/wiki-schema-trinkets-schema.md"
     ],
-    "定兼": [
-      "/projects/silver-core-sdk-doc-positioning.md"
-    ],
     "定完": [
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md"
     ],
@@ -27932,9 +27889,6 @@
     ],
     "容忍": [
       "/resource/resource-data-diagnostics-bpt-sdk-l5-revalidation-v0182-20260707.md"
-    ],
-    "容的": [
-      "/projects/silver-core-sdk-doc-positioning.md"
     ],
     "容盲": [
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md"
@@ -28276,6 +28230,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "层介": [
+      "/projects/silver-core-sdk-doc-positioning.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md"
     ],
     "层公": [
@@ -30529,6 +30484,7 @@
       "/characters/77923.md"
     ],
     "慢的": [
+      "/projects/silver-core-sdk-doc-positioning.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md"
     ],
     "戈利亚": [
@@ -31924,8 +31880,7 @@
       "/characters/77923.md"
     ],
     "掌控": [
-      "/characters/77925.md",
-      "/projects/silver-core-sdk-doc-positioning.md"
+      "/characters/77925.md"
     ],
     "掌握": [
       "/characters/54116.md"
@@ -32611,6 +32566,7 @@
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
     "擎层": [
+      "/projects/silver-core-sdk-doc-positioning.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md"
     ],
     "擎改": [
@@ -34350,6 +34306,7 @@
     ],
     "是黑": [
       "/projects/entry-claude-md.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md"
     ],
@@ -34429,9 +34386,6 @@
       "/characters/15598.md",
       "/characters/15602.md"
     ],
-    "更可": [
-      "/projects/silver-core-sdk-doc-positioning.md"
-    ],
     "更多": [
       "/characters/15582.md",
       "/characters/77913.md"
@@ -34457,9 +34411,6 @@
     ],
     "更正": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
-    ],
-    "更简": [
-      "/projects/silver-core-sdk-doc-positioning.md"
     ],
     "更高": [
       "/characters/15562.md"
@@ -34511,6 +34462,7 @@
       "/resource/resource-repo-engineering-silver-core-sdk-code-quality-audit-20260714.md"
     ],
     "最慢": [
+      "/projects/silver-core-sdk-doc-positioning.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md"
     ],
     "最新": [
@@ -35735,6 +35687,7 @@
       "/resource/resource-community-analysis-volunteer-management-deep-dive-202606.md"
     ],
     "构中": [
+      "/projects/silver-core-sdk-doc-positioning.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md"
     ],
     "构周": [
@@ -35876,6 +35829,7 @@
       "/memory/memory-archive-bpt-strategic-shift-2026-04-19-bpt-next-design.md",
       "/memory/memory-ext-bpt-architecture-snapshot-2026-04-19.md",
       "/memory/memory-ext-bpt-guidance-protocol.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-arm-protocol-profile-20260705.md",
       "/resource/resource-repo-engineering-community-archive-strategy-review-20260710.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md",
@@ -37438,9 +37392,6 @@
     "毒连": [
       "/characters/15600.md"
     ],
-    "比原": [
-      "/projects/silver-core-sdk-doc-positioning.md"
-    ],
     "比喻": [
       "/resource/resource-repo-engineering-bpt-agent-sdk-completion-audit-20260703.md",
       "/resource/resource-repo-engineering-bpt-sdk-completion-inventory-20260705.md",
@@ -37543,6 +37494,7 @@
       "/resource/resource-proposal-bpt-context-architecture-20260712.md"
     ],
     "池五": [
+      "/projects/silver-core-sdk-doc-positioning.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md"
     ],
     "池任": [
@@ -38351,9 +38303,6 @@
     "版失": [
       "/resource/resource-repo-engineering-bpt-sdk-optimization-review-20260710.md"
     ],
-    "版更": [
-      "/projects/silver-core-sdk-doc-positioning.md"
-    ],
     "版本": [
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md",
@@ -38586,7 +38535,6 @@
     "独立": [
       "/README.md",
       "/projects/project-silver-core-sdk.md",
-      "/projects/silver-core-sdk-doc-positioning.md",
       "/resource/resource-repo-engineering-bpt-sdk-official-semantics-audit-20260707.md"
     ],
     "猎出": [
@@ -39556,6 +39504,7 @@
       "/characters/15596.md"
     ],
     "的介": [
+      "/projects/silver-core-sdk-doc-positioning.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md"
     ],
     "的伤": [
@@ -39932,8 +39881,7 @@
       "/characters/77926.md"
     ],
     "的独": [
-      "/characters/15586.md",
-      "/projects/silver-core-sdk-doc-positioning.md"
+      "/characters/15586.md"
     ],
     "的猎": [
       "/characters/15601.md"
@@ -40113,9 +40061,6 @@
     ],
     "的说": [
       "/README.md"
-    ],
-    "的调": [
-      "/projects/silver-core-sdk-doc-positioning.md"
     ],
     "的责": [
       "/characters/77922.md"
@@ -41073,8 +41018,7 @@
       "/memory/memory-ext-biav-info-classification.md"
     ],
     "稳定": [
-      "/characters/94450.md",
-      "/projects/silver-core-sdk-doc-positioning.md"
+      "/characters/94450.md"
     ],
     "穰之": [
       "/characters/15596.md"
@@ -41302,9 +41246,6 @@
     ],
     "签没": [
       "/resource/resource-repo-engineering-bpt-sdk-engine-alignment-handoff-20260705-r5.md"
-    ],
-    "简单": [
-      "/projects/silver-core-sdk-doc-positioning.md"
     ],
     "简默": [
       "/resource/resource-data-diagnostics-bpt-sdk-comparison-baseline-20260705.md"
@@ -43012,9 +42953,6 @@
     "表述": [
       "/resource/resource-repo-engineering-claude-desktop-ui-structure-20260704-r2.md"
     ],
-    "表面": [
-      "/projects/silver-core-sdk-doc-positioning.md"
-    ],
     "衰弱": [
       "/characters/15601.md"
     ],
@@ -43935,7 +43873,6 @@
     "调用": [
       "/memory/memory-ext-active-self-improvement-requirements.md",
       "/projects/project-silver-core-sdk.md",
-      "/projects/silver-core-sdk-doc-positioning.md",
       "/resource/resource-repo-engineering-official-cc-prompt-architecture-inference-20260704.md"
     ],
     "谕中": [
@@ -43992,6 +43929,7 @@
       "/resource/resource-repo-engineering-markdown-consistency-audit-20260628.md"
     ],
     "质架": [
+      "/projects/silver-core-sdk-doc-positioning.md",
       "/resource/resource-repo-engineering-scs-req-repositioning-loop-support-20260717.md"
     ],
     "质的": [
@@ -47161,9 +47099,6 @@
     "靠支": [
       "/characters/15602.md"
     ],
-    "靠的": [
-      "/projects/silver-core-sdk-doc-positioning.md"
-    ],
     "靠账": [
       "/memory/memory-ext-active-self-improvement-requirements.md"
     ],
@@ -47571,6 +47506,7 @@
       "/projects/entry-claude-md.md",
       "/projects/entry-readme.md",
       "/projects/project-news.md",
+      "/projects/silver-core-sdk-doc-positioning.md",
       "/resource/resource-methodology-knowledge-engineering-primer-20260704.md",
       "/resource/resource-proposal-bpt-cowork-product-design-20260713.md",
       "/resource/resource-proposal-bpt-desktop-cowork-experience-design-20260708.md",

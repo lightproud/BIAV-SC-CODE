@@ -1,7 +1,28 @@
-# Silver Core SDK — Compatibility Matrix
+# Silver Core SDK — Official-SDK Reference Notes(参照笔记)
 
-Target surface: `@anthropic-ai/claude-agent-sdk` public API (npm 0.3.207; chased from 0.3.205 2026-07-13, keeper ruling 「追」, zero exported-symbol drift — 0.3.201 -> 0.3.205 chased 2026-07-10, 0.3.199 -> 0.3.201 chased 2026-07-05) as
-documented at code.claude.com/docs/en/agent-sdk/* (fetched 2026-07-03).
+**What this document is.** A reference record of how the official
+`@anthropic-ai/claude-agent-sdk` behaves, kept as **design input** for this
+engine's own decisions. It is NOT an obligations ledger: an official field,
+method, or message variant that this engine lacks is a recorded fact, not a
+work item. The engine's host-side API evolves by BPT need
+(`docs/POSITIONING.md` §1); the model-side surface (tool names, parameter
+schemas, prompt idioms) stays near the model's training distribution, and
+these notes are the evidence base for that.
+
+**Chase policy** (POSITIONING §2): official-surface observation runs on
+exactly two triggers — (a) a new model release (the model-side distribution
+may have moved), (b) this engine designing a new model-side surface (consult
+the official homework first). There is no standing chase task.
+
+**Tier vocabulary** (per-row markers below): descriptive relationships to the
+official reference, not TODO states. FULL = matching documented semantics;
+PARTIAL = a documented behavioral subset/difference; ACCEPTED =
+type-compatible, accepted and ignored; UNSUPPORTED = absent;
+BPT-EXTENSION / HONEST-SUBSET / KEPT-DIVERGENCE / N/A-BY-DESIGN = deliberate
+differences (see the divergence ledger).
+
+Last recorded official reference: npm 0.3.207 (type-surface diff 2026-07-13);
+docs at code.claude.com/docs/en/agent-sdk/* (fetched 2026-07-03).
 
 For a full 146-row completion audit against the latest official surface
 (including the unmodeled subsystems and the roadmap), see
@@ -91,9 +112,10 @@ subprocess/CLI/ripgrep/PDF-dep/plugins); (c) REAL-GAP — implementable. This pa
 - **`debugFile`** — debug lines are now appended to it (was accepted-ignored).
 - **mcpServerStatus `scope`** — provenance ('project'/'local'/'dynamic') tracked.
 
-Deferred (honest, non-structural, not yet done): Read `.ipynb` cell rendering
-(currently returned as raw JSON — usable, not cell-formatted) and the legacy
-`sse` MCP transport (being retired upstream). Structural PARTIALs (continue,
+Absent by choice (honest, non-structural): Read `.ipynb` cell rendering
+(returned as raw JSON — usable, not cell-formatted) and the legacy
+`sse` MCP transport (being retired upstream); neither is a work item — they
+would become one only via a real consumer need. Structural PARTIALs (continue,
 agents name/POST, permissionMode auto-heuristic, stderr, sandbox platform
 backends, Monitor/Workflow push channel, Grep no-ripgrep, Read PDF-slice,
 accountInfo, supportedCommands) stay PARTIAL by design.
@@ -164,6 +186,11 @@ Per-row detail lives in the sections below; this is the at-a-glance table.
 | `provider.fetch` | BPT-EXTENSION | HTTP stack is internal to the wrapped CLI | custom fetch used for EVERY transport request (both protocols, retries included); highest-priority override — the proxy/mTLS/instrumentation seam (recipes: docs/PERFORMANCE.md) (v0.44.0) |
 | `provider.httpClient` + built-in node adapter | BPT-EXTENSION | HTTP stack is internal to the wrapped CLI | default 'node' since v0.45.0: zero-dependency node:http(s) keep-alive client (connections survive slow tool runs instead of re-paying a ~100-300ms TCP+TLS handshake at undici's ~4s idle cliff; TLS session resumption; idle sockets unref'd). 'fetch' restores the pre-v0.45 late-bound global fetch (env `BPT_HTTP_CLIENT`) (v0.45.0) |
 | `provider.preconnect` | BPT-EXTENSION | no preconnect concept | opt-in fire-and-forget unauthenticated HEAD at transport construction; warms DNS+TCP+TLS in parallel with query init (~100-300ms off first-turn TTFT); env `BPT_PRECONNECT=1` (v0.45.0) |
+| `LoopControl` tool + `options.loopControl` (loop-support R5) | BPT-EXTENSION | official ships a SlashCommand tool for model-invoked host commands; no propose-stop loop surface is documented, and no command-tool schema corpus is in the archive | opt-in model-side tool `LoopControl { action: "propose_stop", reason }`: the model can only PROPOSE stopping the host's loop; the proposal reaches the host as a structured event and the engine's behavior never changes. Shape is SELF-DESIGNED per the requirement draft — **待对齐**: revisit against the official command-tool surface when a corpus lands (new-model-release chase trigger) (SCS-REQ-REPOS-01) |
+| `options.prelude` + `getSessionAccounting` + persisted `accounting` records (loop-support R1) | BPT-EXTENSION | resume exists; no structured injection prelude, no pre-injection accounting read (cost lives only on the live result stream) | turn injection IS query({resume}) — no second abstraction; `prelude` rides the injected turn as `<system-reminder>` blocks (hooks see the raw prompt); every result persists a cost-DELTA accounting record so `getSessionAccounting` sums true cross-query cost/turns and estimates the persisted-context tokens before the next injection (SCS-REQ-REPOS-01) |
+| `budget:threshold` / `budget:exhausted` hook events + `budgetThresholdRatio` (loop-support R2) | BPT-EXTENSION | no budget event surface (cost signals ride result messages only) | two one-shot root-loop hook events over the maxBudgetUsd gate: threshold at maxBudgetUsd*ratio (default 0.8), exhausted at the budget stop with a structured closeout report (cumulative cost / turns / bounded last-state summary); informational — never change engine behavior (SCS-REQ-REPOS-01) |
+| `ReportLedger` (loop-support R4) | BPT-EXTENSION | no dedup-ledger primitive (loops live in the CLI host) | pure dedup-ledger logic for host-built unattended loops: record/has/evict/serialize + one-line adapters onto the R1 prelude and R3 retained-region shapes (SCS-REQ-REPOS-01) |
+| `compaction.retainedRegions` + `Query.setRetainedRegion`/`removeRetainedRegion` (loop-support R3) | BPT-EXTENSION | compaction is CLI-internal, no retention contract | host-declared structured context regions re-stamped VERBATIM into every compaction fold; hard byte cap that THROWS instead of truncating (SCS-REQ-REPOS-01) |
 | `options.memory` (memory system) | BPT-EXTENSION | memory rides the CLI host / API-side memory_20250818 only | `memory_20250818`-equivalent six-command tool with CLIENT-INJECTED storage (`MemoryStore` contract + `MemoryFileOps` primitives + `createMemoryStore` reference-format engine + local-fs default + publishable contract suite). Mode `native` sends the official typed entry (Anthropic protocol; API injects definition + protocol prompt); mode `custom` advertises an SDK-defined equivalent tool + injects the docs-verbatim protocol fragment (works on `openai-chat` too). SDK-layer path-traversal validation on every command; resident `/memories/MEMORY.md` head injected at session start (line/byte-capped). Official naming kept where one exists (`memory` tool name, command set, reference return strings); see docs/MEMORY.md for the mapping + migration notes (v0.46.0; M2 in v0.47.0 adds R7 write-timing rounds `flushOnCompaction`/`sessionEndUpdate`, R8 `limits` + `metrics.memoryHealth`, R9 `schema:'cards'`) |
 | `provider.promptCaching` | BPT-EXTENSION | no toggle (caching is internal) | caller can turn the whole breakpoint layer off |
 | tool-block cache breakpoint | KEPT-DIVERGENCE | 0 breakpoints on tool blocks | 1 (last tool) — measured to only ever gain cache hits on system-prompt divergence, never lose (E7-03) |
@@ -193,7 +220,7 @@ Per-row detail lives in the sections below; this is the at-a-glance table.
 v0.2 implemented most of the P0/P1 gaps the audit flagged. Now **FULL / PARTIAL**
 (were MISSING/ACCEPTED in v0.1):
 
-- **Context compaction** — auto threshold + `/compact` + PreCompact hook +
+- **Context compaction** — auto threshold + PreCompact hook +
   `compact_boundary` emission (tokenizer-free, CJK-aware estimator). BPT
   extension `compaction.model` routes the summarization call to a cheap model
   (e.g. `'haiku'`, alias-resolved) to cut compaction cost; the summary usage is
@@ -325,7 +352,7 @@ SDK implements the agent loop directly against the public Messages API:
 | `maxBudgetUsd` | PARTIAL | based on estimated cost (a static price table, not billing truth); stop ORDERING matches official 2.1.201 (E5, 2026-07-05): a turn requesting tools past the cap stops BEFORE any tool executes (zero side effects, no tool_result user turn, terminal `error_max_budget_usd`), while a naturally ending turn still yields its completed success result (conformance run-l2 s12 converged) |
 | `maxThinkingTokens` / `thinking` | FULL | **Model-gated wire form (v0.8.1)**: `computeThinking` emits `{type:'adaptive'}` on 4.6+ models and `{type:'enabled', budget_tokens}` on pre-4.6 models — recomputed each turn from the live model, since the two forms 400 on the wrong tier (root-cause fix for the v0.7 haiku 400-storm, run 28753349435). On the `claude_code` preset path thinking is DEFAULT-ON like the official CLI (opt out with `maxThinkingTokens: 0` or `thinking: {type:'disabled'}`); off the preset path `maxThinkingTokens` alone is only a budget fallback and sends no thinking param on its own. The official `budgetTokens` field name IS accepted (alongside the `budget_tokens`/`budget` aliases). **P2**: the official `display` sub-option ('summarized'\|'omitted') is now forwarded onto the wire thinking param (adaptive + enabled forms; test engine.test.ts), and `maxThinkingTokens` now carries the official `@deprecated` tag |
 | `maxTurns` | FULL | |
-| `mcpServers` | PARTIAL | stdio/http/sdk FULL; `sse` legacy transport UNSUPPORTED (throws NotImplementedError → `failed` status). P2 re-audit: `sse` is being retired upstream — implementable (an SSE MCP client, src/mcp/http.ts) but deferred; the three modern transports are complete |
+| `mcpServers` | PARTIAL | stdio/http/sdk FULL; `sse` legacy transport UNSUPPORTED (throws NotImplementedError → `failed` status). `sse` is being retired upstream — implementable (an SSE MCP client, src/mcp/http.ts), absent by choice; the three modern transports are complete |
 | `model` | FULL | default `ANTHROPIC_MODEL` env or `claude-sonnet-4-5` |
 | `permissionMode` | PARTIAL | all 6 values incl. `auto` (the old "`auto` not offered" note was stale — offered since v0.2, docs-audit 2026-07-05); our `auto` is a HEURISTIC classifier while the official docs describe a model-driven classifier (semantics differ). `bypassPermissions` requires the `allowDangerouslySkipPermissions` interlock (below) |
 | `allowDangerouslySkipPermissions` | FULL | safety interlock: `bypassPermissions` (initial or via `setPermissionMode`) throws `ConfigurationError` unless this is `true`. BPT-only strictness: official 0.3.199/2.1.201 does NOT enforce the interlock live - it proceeds to the model without the flag (conformance run-l2 s6-bypass-interlock-refusal, 2026-07-05) |
@@ -355,7 +382,7 @@ SDK implements the agent loop directly against the public Messages API:
 
 | Tool | Tier | Notes |
 |---|---|---|
-| Read | PARTIAL | text files (cat -n) + images (PNG/JPEG/GIF/WebP → image block) + PDF (→ base64 `document` block; the API's handle-tool-calls docs allow `document` inside tool_result, though the base64 source there is supported-but-not-explicitly-demonstrated); all magic-byte sniffed (task #17); notebooks returned as raw JSON text — cells not rendered individually (P2: a closable, NON-structural sub-gap — deferred, not yet done); oversized files (>50MB) rejected with a Grep hint rather than buffered. v0.7: official `pages` param (PDF page range) validated to contract (1-based, ascending, ≤20); PDF page-slicing itself is HONEST-unsupported (no PDF dep) — a `pages` read of a PDF errors clearly rather than silently returning the whole document, and `pages` on a non-PDF errors. Path fence removed (#483 keeper ruling): resolves to any location the process can reach, permission gate is the sole access control |
+| Read | PARTIAL | text files (cat -n) + images (PNG/JPEG/GIF/WebP → image block) + PDF (→ base64 `document` block; the API's handle-tool-calls docs allow `document` inside tool_result, though the base64 source there is supported-but-not-explicitly-demonstrated); all magic-byte sniffed (task #17); notebooks returned as raw JSON text — cells not rendered individually (closable, NON-structural; absent by choice); oversized files (>50MB) rejected with a Grep hint rather than buffered. v0.7: official `pages` param (PDF page range) validated to contract (1-based, ascending, ≤20); PDF page-slicing itself is HONEST-unsupported (no PDF dep) — a `pages` read of a PDF errors clearly rather than silently returning the whole document, and `pages` on a non-PDF errors. Path fence removed (#483 keeper ruling): resolves to any location the process can reach, permission gate is the sole access control |
 | Write / Edit | FULL | same input field names (`file_path`, `old_string`, …); BOTH enforce the official read-before-write gate — a bare Write/Edit over an existing un-read file errors with the verbatim official text and leaves the file untouched; new files pass (Write); a successful Read unlocks (Write E4 2026-07-05 pinned live L5 code-03 r1 vs r2; **Edit gate added in P2** to match the official Edit tool — behavioral change, MIGRATION §P2; test tools-fs.test.ts). OUR chosen extensions where the pinned evidence is silent: a successful Write/Edit also registers its path (create-then-revise does not self-block), and the gate spans subagents (one read-set per query). Success/error wording differs elsewhere (KD-L3-05/07/08). Path fence removed (#483) — same posture as Read |
 | Bash | PARTIAL | Windows: shell resolved via `CLAUDE_CODE_GIT_BASH_PATH` -> Git-for-Windows standard locations (official-parity posture; actionable error when absent, bare `bash`/WSL never tried; foreground+background termination route through planProcessKill so win32 taskkill is used, #482/#484). v0.5: `cd` + exported env persist across calls (state-file replay — functions/aliases/unexported vars do NOT persist; not a long-lived shell process) and `run_in_background` launches a detached shell whose id feeds BashOutput/KillShell. v0.6: sandboxed by default when a backend resolves (see the `sandbox` option row); foreground and background both wrap through the backend and run in their own process group (timeout/abort reap the whole group; `--unshare-pid` + SIGKILL escalation reaps across the sandbox pid namespace). v0.7: `dangerouslyDisableSandbox` is ALWAYS in the schema (official parity); it is a no-op without a sandbox and CANNOT bypass the gate (escape still needs sandbox active + allowEscape + an independent ask) |
 | Task quadruplet (TaskCreate/TaskGet/TaskUpdate/TaskList) | FULL | v0.7: the DEFAULT task surface (official 0.3.142: TodoWrite off by default, `CLAUDE_CODE_ENABLE_TASKS=0` reverts to TodoWrite-only). Symmetric dependency edges (blocks/blockedBy), owner/status workflow, session-shared store (parent + subagents see one list); TaskGet unknown-id returns null (not error) per official |
@@ -369,7 +396,7 @@ SDK implements the agent loop directly against the public Messages API:
 | TaskStop | FULL | v0.31.0 (2026-07-08): official-named successor to KillShell — SIGTERM→SIGKILL on the background shell's process group. Takes `task_id` (or deprecated `shell_id`); already-terminal tasks report their status without re-killing. v0.42.0 (O-B2): `task_id` ALSO accepts a subagent agentId (official v2.1.198 semantics) — checked against the subagent registry before falling through to shells; a non-running subagent reports its status without kill events |
 | SendMessage | PARTIAL | v0.42.0 (O-B2): continue a previously spawned subagent with its FULL transcript intact (the runtime retains every child's live history for the query's life; per-agent serialization; stopped workers revivable). `{to, summary?, message}` — `to` is an agentId ONLY: teammate NAMES, the `"main"` address and peer-origin message emission belong to the agent-teams naming machinery this SDK does not ship (SDKMessageOrigin `peer`/`coordinator` + TeammateIdle stay typed-not-emitted). Foreground children reply as the tool result; background children ack + reply on a later drained turn as official `<task-notification>` XML (drain format aligned to the archive shape in the same batch). Root-loop-only: isolated children never see the tool; fork children keep the schema (prefix byte-match) and get an honest error. Coordinator presets ship alongside (COORDINATOR_MODE_PROMPT adapted + COORDINATOR_WORKER_AGENT faithful, agents.ts) |
 | Glob | PARTIAL | fast-glob, mtime-sorted newest-first; official 2.1.201 emitted ASCENDING order under ascending-utimes pins, so ordering parity with the live engine is not established - path sets agree (conformance run-l3 L3-GLOB-01, KD-L3-20, 2026-07-05) |
-| Grep | PARTIAL | pure-JS regex engine (no ripgrep binary); large-repo perf caveat (crossover diagnostic 2026-07-07). v0.13.0 fixed the silent 250-cap truncation: `count`/`files_with_matches` default COMPLETE, all modes announce truncation, `grep.scan` debug telemetry added. The ripgrep-vs-pure-JS decision itself is pending (keeper) |
+| Grep | PARTIAL | pure-JS regex engine (no ripgrep binary); large-repo perf caveat (crossover diagnostic 2026-07-07). v0.13.0 fixed the silent 250-cap truncation: `count`/`files_with_matches` default COMPLETE, all modes announce truncation, `grep.scan` debug telemetry added. Pure-JS is the standing choice; ripgrep would enter only via a keeper ruling |
 | WebFetch / WebSearch | FULL | registered in v0.2 |
 | TodoWrite | PARTIAL | v0.7: OFF by default (Task quadruplet is the default surface); `CLAUDE_CODE_ENABLE_TASKS=0` reverts to TodoWrite-only, per official 0.3.142 |
 | Agent | PARTIAL | the subagent spawn tool; v0.7 gains `model`/`isolation:'worktree'` and the official required set [description, prompt] (subagent_type defaults to general-purpose). Residual param delta = our BPT-only `fork` extension |
@@ -380,12 +407,12 @@ SDK implements the agent loop directly against the public Messages API:
 
 | Variant | Tier | Notes |
 |---|---|---|
-| `system/init` | PARTIAL | apiKeySource, tools, mcp_servers, model, permissionMode, agents, claude_code_version, betas, skills, plugins ALL emitted (the old "claude_code_version/betas/skills/plugins absent" note was stale — docs-audit 2026-07-05); `slash_commands` REAL since v0.38 (bare names: built-in `compact` + custom `.claude/commands` — see "Custom slash commands" below; official CC lists its full host command set, ours only what this engine can honor); `skills` always `[]`; `plugins` element shape is `string[]` vs official `{name, path}[]`; `claude_code_version`/`skills`/`plugins` typed optional where official requires them |
+| `system/init` | PARTIAL | apiKeySource, tools, mcp_servers, model, permissionMode, agents, claude_code_version, betas, skills, plugins ALL emitted (the old "claude_code_version/betas/skills/plugins absent" note was stale — docs-audit 2026-07-05); `slash_commands` always `[]` (slash retirement, SCS-REQ-REPOS-01 §4: the engine recognizes no slash convention — command UX belongs to the client layer); `skills` always `[]`; `plugins` element shape is `string[]` vs official `{name, path}[]`; `claude_code_version`/`skills`/`plugins` typed optional where official requires them |
 | `assistant` | FULL | full `APIAssistantMessage` |
 | `user` (echo + tool results) | FULL | prompt echo and tool_result user turns both yielded and persisted in order |
 | `stream_event` | FULL | behind `includePartialMessages`; **P2**: `SDKPartialAssistantMessage` now carries the official `ttft_ms?` field, attached from the event that latches the first token onward (test engine.test.ts) |
 | `result` success / error_max_turns / error_during_execution / `error_max_budget_usd` / `error_max_structured_output_retries` | PARTIAL | success arm carries ttft_ms + structured_output + deferred_tool_use + v0.3 `metrics`; error arm carries both `errorMessage: string` and the official-parallel `errors: string[]` (v0.4). Mid-stream SSE truncation degrades gracefully like official 2.1.201 (E3, 2026-07-05): the blocks the wire delivered whole are salvaged - partial text becomes the `success` answer, complete tool_use blocks EXECUTE (at either cut depth, with or without stop_reason) and the loop re-requests to deliver the tool_result; the connection error rides `errors` as a non-fatal note on the terminal result (former KD-L4-04 + all three truncation engine findings retired; residual KD-L4-02: official also appends the error as assistant text and throws from the iterator post-result - deliberately not replicated). An UNCLOSED tool_use (mid-transmission input) never executes; nothing salvageable falls back to `error_during_execution`. Remaining fault-path divergence: on a terminal non-retryable 400 ours ends with a clean `result/error_during_execution` where official surfaces the error as assistant text plus `result/success` then throws (KD-L4-01; run-l4 l4-http400-non-retryable, l4-script-exhausted-400-terminal). Reporting semantics on streamed multi-turn input match official (E2, 2026-07-05, KD-L5-04 retired): `num_turns`/`usage` are PER-RESULT (that turn's own figures), `total_cost_usd`/`duration_api_ms` are session-cumulative; `modelUsage` stays session-cumulative (official per-result semantics unobserved - our choice); internal `maxTurns`/`maxBudgetUsd` enforcement remains session-wide. Query-layer synthetic results (hook-block / pre-turn cap stop / interrupt) report `num_turns: 0` + zero `usage` (no engine turn ran for them; official shape unobserved) |
-| `system/compact_boundary` | FULL | emitted on manual `/compact` + auto-compaction (v0.2) |
+| `system/compact_boundary` | FULL | emitted on auto-compaction (the official manual `/compact` text command has no engine equivalent — slash retirement §4; the `trigger` union keeps `manual` for stream-shape parity) |
 | `system/mirror_error` | FULL | emitted on a session-store mirror failure |
 | `active_goal` | TYPED | NEW-IN-DOCS 0.3.205; no persistent goal/condition loop in a headless engine (`value:null` clears) |
 | `conversation_reset` | TYPED | NEW-IN-DOCS 0.3.205; a new conversation is a new `query()`/session here, not an in-stream boundary |
@@ -425,26 +452,17 @@ prompt_suggestion) are unemitted-typed. `SDKRateLimitEvent` gains the official
 | `system/control_request_progress` | TYPED | NEW-IN-DOCS 0.3.205; no control_request wire protocol (N/A-by-design) so no in-flight control request to report progress for |
 | `system/prompt_composition` | FULL (emitted, v0.32.0) | **BPT-EXTENSION**; behind `options.includePromptComposition` (default off): one message per request, just before it is sent, carrying `promptComposition` (需求 A per-part estimate) + `cacheBreakpoints` (需求 B cache-prefix map) + `model`. Read-only — the wire request is never affected |
 
-## Custom slash commands (`.claude/commands`) — v0.38
+## Slash commands — retired from the engine (SCS-REQ-REPOS-01 §4)
 
-Open reproduction of the official custom-command surface, SDK-side subset
-(`src/engine/slash-commands.ts`). Loading follows `settingSources` ('project' →
-`<cwd>/.claude/commands/`, 'user' → `~/.claude/commands/`), one `*.md` file per
-command, subdirectories namespace with ':' (`frontend/component.md` →
-`/frontend:component`), project wins over user on collision, built-in names
-(`compact`) reserved. A PURE-TEXT `/name [args]` user turn is expanded to the
-command body with `$ARGUMENTS` / `$1`..`$9` substituted (args appended after a
-blank line when the body has no placeholder); history and persistence carry the
-EXPANDED body, `UserPromptSubmit` hooks see the RAW typed text, and the
-`firstPrompt` session meta stays raw.
-
-| Aspect | Tier | Notes |
-|---|---|---|
-| Load + list + expand (`$ARGUMENTS`, `$1`..`$9`, frontmatter `description`/`argument-hint`, ':' namespacing) | FULL | commands load once at query construction; unknown `/name` passes through as plain text (official CLI raises a local "Unknown command" error instead — no engine-honest equivalent) |
-| `!command` inline-bash execution | UNSUPPORTED | would need the permission gate wired into command PREPROCESSING (a pre-turn execution surface this engine does not have); declared, not silent |
-| `@file` references | UNSUPPORTED | same preprocessing surface; use the model's Read tool instead |
-| frontmatter `allowed-tools` / `model` / `disable-model-invocation` | UNSUPPORTED | parsed keys are ignored (no per-turn tool/model scoping surface); `description`/`argument-hint` are the consumed subset |
-| `SlashCommand` tool (model-invoked commands) | UNSUPPORTED | official gives the MODEL a SlashCommand tool; here expansion is input-side only |
+The official CLI parses and expands `/name` text commands (custom
+`.claude/commands`, `!command` inline bash, `@file` references, the model-side
+SlashCommand tool, built-ins like `/compact`). This engine deliberately
+recognizes NONE of them: a prompt starting with `/` passes through to the wire
+verbatim (locked by tests/slash-retirement.test.ts, including a
+source-residue grep guard). Input parsing is a CLIENT-layer UX concern — a
+host that wants text commands implements them where its UX lives. Loop and
+goal behavior are structured surfaces instead: the loop-support interface
+(R1–R6 rows above) and `options.goal` (see the Stop hook row).
 
 ## Hooks
 
@@ -457,11 +475,11 @@ EXPANDED body, `UserPromptSubmit` hooks see the RAW typed text, and the
 | UserPromptSubmit | FULL | additionalContext appended; a block skips the prompt in streaming mode / ends the run in string mode (one prompt to skip — matches official semantics; P2 re-audit — tests query.test.ts) |
 | MessageDisplay | PARTIAL | v0.7: official 5-field incremental protocol emitted (turn_id/message_id/index/final/delta); fires once per completed message (so `final` is always true, `delta` is the whole message), not per true delta; `message_text` kept deprecated |
 | Setup / TeammateIdle / TaskCompleted / ConfigChange / WorktreeCreate / WorktreeRemove | TYPED (v0.7) | NEW-IN-DOCS hook events typed into HookEvent/HookInput but typed-not-fired — no natural runtime hook point in a headless engine (no setup phase / teammates / settings-merge engine; worktree + task-completed lifecycles have no honest hook site here) |
-| Stop | FULL | fired at natural end of a run. **v0.39**: official BLOCK semantics honored (the pre-0.39 "FULL" overstated — fired but log-only): a `decision: 'block'` PREVENTS the stop, the reason is fed back as a user turn and the loop runs another assistant turn (`stop_hook_active` true on subsequent Stop inputs; the /goal goal-gating primitive); `continue: false` forces the stop and wins over block. ROOT LOOP ONLY — child loops (parentToolUseId set) are governed by SubagentStop, so a goal gate never captures subagents; a stubborn block still honors maxTurns/maxBudgetUsd (test stop-hook-block.test.ts) |
+| Stop | FULL | fired at natural end of a run. **v0.39**: official BLOCK semantics honored (the pre-0.39 "FULL" overstated — fired but log-only): a `decision: 'block'` PREVENTS the stop, the reason is fed back as a user turn and the loop runs another assistant turn (`stop_hook_active` true on subsequent Stop inputs; `options.goal` — the structured goal gate with a HOST-injected evaluator — builds on this); `continue: false` forces the stop and wins over block. ROOT LOOP ONLY — child loops (parentToolUseId set) are governed by SubagentStop, so a goal gate never captures subagents; a stubborn block still honors maxTurns/maxBudgetUsd (test stop-hook-block.test.ts) |
 | SessionStart / SessionEnd | FULL | |
 | Notification | ACCEPTED | never fired in v0.1 (no code path emits it) |
 | SubagentStart / SubagentStop | PARTIAL | fire since v0.2 (the old "never fire" note was stale — docs-audit 2026-07-05); **P2**: SubagentStop now populates the official-required `agent_transcript_path` for a path-backed persisted store (absent for a non-path store — test subagents.test.ts). **v0.18.3**: the official base `transcript_path` (the MAIN session's transcript) is now populated on SubagentStart/Stop too, distinct from `agent_transcript_path` (the subagent's). v0.7: input types gain optional `background_tasks`/`session_crons`/`last_assistant_message` (NEW-IN-DOCS, typed-not-populated — no headless source, keeps this row PARTIAL) |
-| PreCompact | FULL | fires on manual `/compact` + auto-compaction since v0.2 (the old "never fires" note was stale — docs-audit 2026-07-05) |
+| PreCompact | FULL | fires on auto-compaction (manual `/compact` retired with the slash cut — §4) |
 | PermissionRequest | ACCEPTED | never fires in v0.1 |
 | `defer` permission decision | FULL | end-to-end since v0.2. v0.7: `deferred_tool_use` carries the official `id`/`name`/`input` field names alongside the deprecated `tool_use_id`/`tool_name`/`tool_input` (dual-track), and the official `stop_reason: "tool_deferred"` IS modeled; an unrecognized `permissionDecision` fails closed as deny (P2 re-audit — effectively full; test tool-types.test.ts) |
 | legacy `decision: 'approve'`/`'block'` | FULL | mapped to allow/deny in aggregation (allow only when no explicit `permissionDecision` on the same output) |
@@ -475,7 +493,7 @@ EXPANDED body, `UserPromptSubmit` hooks see the RAW typed text, and the
 |---|---|---|
 | `interrupt()` | FULL | 0.3.205: returns the official `SDKControlInterruptResponse` receipt (`{ still_queued }`) instead of `void`; this engine keeps no uuid-stamped async message queue surviving an abort, so the receipt is always `{ still_queued: [] }`. Source-compatible for callers that ignore the return |
 | `setPermissionMode()` / `setModel()` / `setMaxThinkingTokens()` | FULL | |
-| `initializationResult()` / `supportedModels()` / `supportedCommands()` / `supportedAgents()` | PARTIAL | P2 re-audit: `supportedModels` returns a real known-model list, `supportedAgents` returns the configured agents, `initializationResult` returns real agents/models/account — all NON-empty. `supportedCommands` REAL since v0.38 (the old "genuinely `[]` — structural" note is retired): built-in `compact` + loaded custom commands in the official `SlashCommand` shape (`name`/`description`/`argumentHint`). Still PARTIAL as a row: official lists the full CC host command set (`/clear`, `/help`, …) that has no engine equivalent here |
+| `initializationResult()` / `supportedModels()` / `supportedCommands()` / `supportedAgents()` | PARTIAL | P2 re-audit: `supportedModels` returns a real known-model list, `supportedAgents` returns the configured agents, `initializationResult` returns real agents/models/account — all NON-empty. `supportedCommands` returns `[]` (slash retirement §4 — the engine knows no commands; official lists the full CC host command set) |
 | `mcpServerStatus()` | FULL | carries `config` (echoed back) + per-server `tools[]` when connected; **P2**: `scope` now tracked — 'project' (`.mcp.json`) / 'local' (programmatic `options.mcpServers`) / 'dynamic' (added via `setMcpServers`); test query.test.ts. v0.7: `tools` is the official OBJECT array (`{name, description?, annotations{readOnly/destructive/openWorld}?}`), assembled at the registry |
 | `accountInfo()` | PARTIAL | apiKeySource only |
 | `streamInput()` | FULL | streaming-input mode |

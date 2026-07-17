@@ -12,6 +12,7 @@ import type {
   ApiKeySource,
   CallToolResult,
   DocumentBlockParam,
+  RetainedRegion,
   HookEvent,
   HookInput,
   ImageBlockParam,
@@ -507,7 +508,6 @@ export type CompactionConfig = {
   keepRatio: number;
   minRecentTurns: number;
   useApiSummary: boolean;
-  recognizeCommand: boolean;
   customInstructions?: string;
   contextWindowTokens?: number;
   /** Model for the summarization call; absent -> the session model. */
@@ -518,6 +518,18 @@ export type CompactionConfig = {
   /** Byte budget (chars) for a single string tool_result in the pre-tier; 0
    *  disables truncation (dedupe still runs). Default 4000. */
   preTierMaxToolResultChars: number;
+  /** R3 retained regions (SCS-REQ-REPOS-01): live store shared by reference
+   *  between the query layer (host declarations) and performCompaction
+   *  (re-stamped into every fold). Structural type so this contract carries
+   *  no import edge; the implementation is loop-support/retention.ts. */
+  retention?: {
+    set(region: RetainedRegion): void;
+    remove(id: string): boolean;
+    regions(): RetainedRegion[];
+    renderBlocks(): string;
+    readonly isEmpty: boolean;
+    readonly maxBytes: number;
+  };
 };
 
 /** Role of a system-prompt part in the prompt-composition decomposition
@@ -575,6 +587,9 @@ export type EngineConfig = {
   systemBlocks?: TextBlockParam[];
   maxTurns?: number;
   maxBudgetUsd?: number;
+  /** R2 budget events: fraction of maxBudgetUsd at which the one-shot
+   *  `budget:threshold` hook fires (root loop only). Default 0.8. */
+  budgetThresholdRatio?: number;
   thinking?: ThinkingConfigParam;
   maxThinkingTokens?: number;
   /** Messages API `tool_choice` steer/constraint; forwarded to each request

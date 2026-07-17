@@ -16,7 +16,7 @@ import { describe, expect, it, vi } from 'vitest';
 import { createSubagentRuntime, type SubagentRuntimeOptions } from '../src/subagents/runtime.js';
 import { createSubagentTransportResolver } from '../src/subagents/transport-resolver.js';
 import { runUtilityCall } from '../src/generators/runtime.js';
-import { buildCompactionConfig, runManualCompact } from '../src/engine/compaction.js';
+import { buildCompactionConfig, maybeAutoCompact } from '../src/engine/compaction.js';
 import { AnthropicTransport } from '../src/transport/anthropic.js';
 import { OpenAIChatTransport } from '../src/transport/openai.js';
 import { DefaultHookRunner } from '../src/hooks/runner.js';
@@ -541,7 +541,7 @@ describe('compaction summary transport routing (deps.transportForModel)', () => 
       hooks: new DefaultHookRunner({ hooks: {}, debug: () => {} }),
       toolContext: {} as never,
       debug: () => {},
-    }) as unknown as Parameters<typeof runManualCompact>[2];
+    }) as unknown as Parameters<typeof maybeAutoCompact>[1];
 
   const drive = async (
     sessionTransport: Transport,
@@ -560,11 +560,10 @@ describe('compaction summary transport routing (deps.transportForModel)', () => 
         useApiSummary: true,
         ...(summaryModel !== undefined ? { model: summaryModel } : {}),
       }),
-    } as unknown as Parameters<typeof runManualCompact>[3];
-    const view = { messages: [...bigHistory(10), userMsg('/compact')] };
-    const gen = runManualCompact(
+    } as unknown as Parameters<typeof maybeAutoCompact>[2];
+    const view = { messages: bigHistory(24) };
+    const gen = maybeAutoCompact(
       view,
-      null,
       compactionDeps(sessionTransport, transportForModel),
       config,
       0,

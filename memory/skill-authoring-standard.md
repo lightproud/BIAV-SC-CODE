@@ -50,3 +50,24 @@
 - 无 §3 五病症
 - 引用上游须保留 MIT 署名（见各文件页脚）
 - 涉术语/决策落档的技能须走 `/domain-modeling`，且 `memory/decisions.md` 写入受 CLAUDE.md §3.1 守密人/主控台权限门控
+
+## 5. 引擎兼容声明（SCS-REQ-REPOS-01 R6 配套，2026-07-17）
+
+面向 **silver-core-sdk 引擎**消费的技能（热更新能力层：技能 md / MCP 清单），frontmatter
+可增引擎兼容声明字段，供加载器在激活前对照引擎的运行时声明面
+（`declareEngineSurface()` → `{ engine, tools: [{name, version}] }`）做兼容校验：
+
+```yaml
+engine-compat:
+  engine: "silver-core-sdk"        # 目标引擎标识（必填）
+  range: ">=0.63 <1"               # semver 范围，对照 declaration.engine（必填）
+  tools:                            # 可选：钉具体工具面哈希（对照 tools[].version）
+    Bash: "1a2b3c4d5e6f"
+```
+
+- **语义**：range 不匹配 → 加载器拒绝激活并明示原因（不静默降级）；`tools` 哈希
+  不匹配 → 加载器至少警告（该工具的模型可见面已变，技能对其的假设可能失效）。
+- **省略即无门**：不写本字段 = 技能不声明引擎依赖，加载器不做校验（现状兼容）。
+- **哈希来源**：`tools[].version` 为引擎侧对「工具描述 + 输入 schema」的确定性内容
+  哈希（sha256 前 12 位）——引擎模型面一变哈希即变，零人工记账。
+- 本条目只规范**声明格式**；校验执行属加载器（宿主/黑池侧）职责，引擎只出声明面。

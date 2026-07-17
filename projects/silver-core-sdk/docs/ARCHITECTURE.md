@@ -55,6 +55,7 @@ richer internal/ without the map following.)
 | I sandbox | `sandbox/` (backend, bwrap, evidence) | `SandboxBackend`; consumed by tools |
 | J generators | `generators/` (utility LLM runtime + prompts) | single-shot utility calls; consumed by hooks (condition), tips, verifier |
 | K tips + verifier | `tips/`, `verifier/` | context-tip / adversarial-verify features over generators |
+| L loop-support | `loop-support/` (ledger, retention, loop-control) | SCS-REQ-REPOS-01 §3 primitives for host-built loops; consumed by engine (retention) + query assembly |
 | shared kernel | `internal/` (contracts, model-alias, worktree, setting-sources), `types.ts`, `errors.ts`, `version.ts`, `error-normalize.ts` | importable by every module |
 
 ## Import edges
@@ -66,7 +67,8 @@ table; an import not covered here turns the build red. Composition roots
 
 | From | May import from |
 |------|-----------------|
-| `src/engine/` | (everywhere-allowed only) |
+| `src/engine/` | `src/loop-support/` |
+| `src/loop-support/` | (everywhere-allowed only) |
 | `src/transport/` | (everywhere-allowed only) |
 | `src/tools/` | `src/sandbox/` |
 | `src/hooks/` | `src/generators/` |
@@ -258,6 +260,17 @@ Input field names are part of the compat surface (hooks read them):
 
 ## E — Permissions + hooks
 
+**Hook contract principle (POSITIONING §1.2 — applies to every existing and
+future hook).** The engine owns the *when* and the *contract*: which lifecycle
+points invoke a callback, what it can see, what it may return, and how the
+return value affects engine behavior. The host owns the *what*: the callback
+body, which the engine neither knows nor cares about. A callback's lifecycle
+MUST NOT outlive the query it is embedded in — parking a wall clock inside a
+hook, or blocking a hook on the outside world changing state, smuggles the
+runner layer's clock into the engine and is a positioning violation. (The
+per-callback timeout below is the mechanical backstop; the principle is the
+design rule.)
+
 `permissions/rules.ts`
 - `export type ParsedRule = { toolName: string; specifier?: string }`
 - `parseRule(raw: string): ParsedRule` — `Tool`, `Tool(spec)`.
@@ -291,6 +304,16 @@ Input field names are part of the compat surface (hooks read them):
   — omitted/`''`/`'*'` → true. Exact-set charset `[A-Za-z0-9_\-, |]` →
   split on `|`/`,`, trim, exact compare. Otherwise unanchored `new RegExp`.
   Invalid regex → false + never throw. `value === undefined` → true.
+
+`hooks/goal.ts`
+- `export function createGoalStopHooks(config: GoalConfig): Partial<Record<HookEvent, HookCallbackMatcher[]>>`
+  — the structured session goal (SCS-REQ-REPOS-01 §4.3): a Stop gate whose
+  judge is the HOST-injected `config.evaluator` (pure function or the host's
+  own judge-model call; the engine makes no model call here). `not_achieved`
+  blocks the stop and feeds the reason back (engine Stop-block semantics);
+  `achieved`/`impossible` allow the stop and disarm; evaluator failure allows
+  the stop (a broken judge must never trap the loop). Wired by query assembly
+  from `options.goal` — the goal's ONLY entrance; no text spelling exists.
 
 `hooks/runner.ts`
 - `export class DefaultHookRunner implements HookRunner` — constructor
@@ -439,8 +462,8 @@ build red.
 | `src/sessions/` | `ConfigurationError` |
 | `src/query.ts` | `ConfigurationError` |
 | `src/session-manager.ts` | `ConfigurationError` |
-| `src/prompt-loop.ts` | `ConfigurationError` |
-| `src/hooks/session-goal.ts` | `ConfigurationError` |
+| `src/hooks/goal.ts` | `ConfigurationError` |
+| `src/loop-support/` | `ConfigurationError` |
 | `src/tools/bash.ts` | `ConfigurationError` |
 | `src/tools/memory/` | `MemoryToolError`, `ConfigurationError` |
 | `src/reporting/` | `ConfigurationError` |
