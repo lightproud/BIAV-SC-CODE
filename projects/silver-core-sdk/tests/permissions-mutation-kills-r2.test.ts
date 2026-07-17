@@ -157,14 +157,23 @@ describe('post-allow deny-recheck names its stage (gate.ts:313)', () => {
 });
 
 describe('setMode rides applyUpdates (gate.ts:337 case-guard integrity)', () => {
-  it('a setMode update changes the live mode and only that', async () => {
-    const gate = makeGate({ mode: 'default' });
+  it('a setMode update changes the live mode and only that (bypass unlocked)', async () => {
+    // RP3: escalating to bypassPermissions via applyUpdates now requires the
+    // same interlock the public setPermissionMode() enforces. Unlocked here so
+    // the case-guard integrity assertion (mode actually changes) still holds.
+    const gate = makeGate({ mode: 'default', allowDangerousBypass: true });
     gate.applyUpdates([{ type: 'setMode', mode: 'bypassPermissions', destination: 'session' }]);
     expect(gate.getMode()).toBe('bypassPermissions');
     // bypass now allows a write outright (no handler present)
     expect(
       (await gate.check('Write', { file_path: '/tmp/a', content: 'x' }, checkOpts(false))).decision,
     ).toBe('allow');
+  });
+
+  it('a setMode to a non-bypass mode changes the live mode without any interlock', () => {
+    const gate = makeGate({ mode: 'default' });
+    gate.applyUpdates([{ type: 'setMode', mode: 'plan', destination: 'session' }]);
+    expect(gate.getMode()).toBe('plan');
   });
 });
 

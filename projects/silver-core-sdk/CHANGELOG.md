@@ -16,6 +16,44 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.65.3 — 2026-07-17
+
+T50 batch E: permission & path-security hardening (6 items, P0-security) from
+the second-round audit
+(`Public-Info-Pool/Resource/repo-engineering/silver-core-sdk-bug-audit-r2-20260717.md`).
+Shared root: the permission matcher inspected raw model strings instead of the
+resolved reality. No new surfaces; pure hardening + regression suite
+`tests/audit-r2-batch-e.test.ts` (21 cases).
+
+- **RP1** Path traversal no longer bypasses a path-scoped allow/deny. The
+  file-path tools (Read/Write/Edit/NotebookEdit) resolve their arg
+  with `path.resolve(cwd, arg)` before touching disk; rule matching now resolves
+  both the specifier and the value the same way, so a `..` segment can neither
+  escape an allow scope (`/workspace/*` vs `/workspace/../../etc/shadow`) nor
+  tunnel into a deny scope (`/etc/*` vs `/tmp/../etc/passwd`). The gate is
+  threaded the query `cwd` for this.
+- **RP2** A `**` deny no longer fails open. `/etc/**` used to leave a dead
+  literal `*` (only the last `*` was stripped) and match nothing; a trailing
+  `**` run is now collapsed to a single `*` prefix so gitignore-style
+  "everything under" rules fire.
+- **RP3** A canUseTool `setMode:'bypassPermissions'` update is refused in
+  `applyUpdates` unless `allowDangerouslySkipPermissions` unlocked bypass —
+  interlock parity with the public `setPermissionMode()`. A step-6 allow can no
+  longer escalate the whole session to auto-allow-everything.
+- **M2-2** A leading `NAME=val` env prefix no longer bypasses a Bash deny.
+  Deny/ask (`any`) matching strips leading assignments so `Bash(rm:*)` catches
+  `FOO=1 rm -rf /`. Allow (`all`) matching deliberately does NOT strip
+  (fail-closed: `GIT_SSH_COMMAND=evil git ...` won't ride a `git:*` allow — it
+  falls through to prompting).
+- **M2-4** `buildPermissionSuggestions` skips leading env assignments, so
+  `VAR=x npm run build` suggests `Bash(npm:*)`, not the absurd `Bash(VAR=x:*)`.
+- **I2** A `mcp__server__*` allow/deny no longer fails open when the tool
+  segment itself contains `__`. `matchToolName`/`ruleMatches` accept the
+  registered MCP server set (supplied by `query.ts` and the subagent runtime)
+  and resolve the tool's server by longest registered prefix, so `mcp__a__*`
+  catches a tool of server `a` named `get__thing`. Without a registry the legacy
+  exact-server (#22) behavior is preserved.
+
 ## 0.65.2 — 2026-07-17
 
 T50 batch I: subagent lifecycle — 10 fixes from the second-pass audit

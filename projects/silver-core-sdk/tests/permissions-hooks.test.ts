@@ -733,7 +733,10 @@ describe('DefaultPermissionGate denials / updates / mode', () => {
   });
 
   it('applyUpdates setMode (session) switches the mode', async () => {
-    const gate = makeGate({ mode: 'default' });
+    // RP3: a setMode->bypassPermissions update is honored only when bypass was
+    // unlocked via allowDangerousBypass (interlock parity with the public
+    // setPermissionMode()).
+    const gate = makeGate({ mode: 'default', allowDangerousBypass: true });
     gate.applyUpdates([
       { type: 'setMode', mode: 'bypassPermissions', destination: 'session' },
     ]);

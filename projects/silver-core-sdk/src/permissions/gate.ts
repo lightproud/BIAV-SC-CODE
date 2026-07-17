@@ -51,6 +51,7 @@ import {
   parseRule,
   requiresUserInteraction,
   ruleMatches,
+  type MatchContext,
   type ParsedRule,
 } from './rules.js';
 import { defaultAutoClassifier, type ToolClassifier } from './classifier.js';
@@ -65,6 +66,18 @@ export type PermissionGateConfig = {
   /** Classifier consulted under permissionMode 'auto'. Defaults to the static
    *  defaultAutoClassifier (no model call). */
   classifier?: ToolClassifier;
+  /** Working directory path-primary tools resolve their file_path against.
+   *  Threaded into rule matching so a path-scoped allow/deny compares against
+   *  the same `..`-collapsed absolute path the tool will access (RP1/RP2). */
+  cwd?: string;
+  /** Provider of the currently-registered MCP server names, for exact
+   *  server-segment resolution of `mcp__server__*` rules (I2). A getter (not a
+   *  snapshot) so servers added via setMcpServers are reflected at check time. */
+  knownMcpServers?: () => ReadonlySet<string>;
+  /** Whether `allowDangerouslySkipPermissions` unlocked bypass. When false, a
+   *  canUseTool-supplied `setMode:'bypassPermissions'` update is refused rather
+   *  than silently escalating the whole session (RP3). */
+  allowDangerousBypass?: boolean;
   debug: (msg: string) => void;
 };
 
@@ -86,6 +99,9 @@ export class DefaultPermissionGate implements PermissionGate {
   private mode: PermissionMode;
   private readonly canUseTool: CanUseTool | undefined;
   private readonly classifier: ToolClassifier;
+  private readonly cwd: string | undefined;
+  private readonly knownMcpServers: (() => ReadonlySet<string>) | undefined;
+  private readonly allowDangerousBypass: boolean;
   private readonly debug: (msg: string) => void;
 
   /** Rules provided at construction time (options.allowed/disallowedTools). */
@@ -112,6 +128,9 @@ export class DefaultPermissionGate implements PermissionGate {
     this.mode = cfg.mode ?? 'default';
     this.canUseTool = cfg.canUseTool;
     this.classifier = cfg.classifier ?? defaultAutoClassifier;
+    this.cwd = cfg.cwd;
+    this.knownMcpServers = cfg.knownMcpServers;
+    this.allowDangerousBypass = cfg.allowDangerousBypass ?? false;
     this.debug = cfg.debug;
     this.baseAllowRules = (cfg.allowedTools ?? []).map(parseRule);
     this.baseDenyRules = (cfg.disallowedTools ?? []).map(parseRule);
@@ -197,7 +216,9 @@ export class DefaultPermissionGate implements PermissionGate {
       escapeForcesPrompt ||
       // ask routes toward prompting, so a Bash chain routes if ANY sub-command
       // matches the ask specifier ('any').
-      this.sessionAskRules.some((r) => ruleMatches(r, toolName, effectiveInput, 'any')) ||
+      this.sessionAskRules.some((r) =>
+        ruleMatches(r, toolName, effectiveInput, 'any', this.matchCtx()),
+      ) ||
       (requiresUserInteraction(toolName) && this.canUseTool !== undefined);
 
     if (hookAllow && !routeToPrompt) {
@@ -373,6 +394,19 @@ export class DefaultPermissionGate implements PermissionGate {
           break;
         }
         case 'setMode': {
+          // RP3: entering bypassPermissions requires the same
+          // allowDangerouslySkipPermissions interlock the public
+          // setPermissionMode() enforces. A canUseTool result (step 6) that
+          // returns `{setMode:'bypassPermissions'}` must NOT be able to escalate
+          // the whole session to auto-allow-everything when bypass was never
+          // unlocked; refuse it and keep the current mode.
+          if (update.mode === 'bypassPermissions' && !this.allowDangerousBypass) {
+            this.debug(
+              'permissions: refusing setMode "bypassPermissions" update - ' +
+                'allowDangerouslySkipPermissions was not set (interlock)',
+            );
+            break;
+          }
           this.mode = update.mode;
           break;
         }
@@ -475,10 +509,17 @@ export class DefaultPermissionGate implements PermissionGate {
     input: Record<string, unknown>,
     segmentMode?: 'all' | 'any',
   ): boolean {
+    const ctx = this.matchCtx();
     return (
-      base.some((r) => ruleMatches(r, toolName, input, segmentMode)) ||
-      session.some((r) => ruleMatches(r, toolName, input, segmentMode))
+      base.some((r) => ruleMatches(r, toolName, input, segmentMode, ctx)) ||
+      session.some((r) => ruleMatches(r, toolName, input, segmentMode, ctx))
     );
+  }
+
+  /** Match context (cwd for path normalization, MCP server registry for exact
+   *  server scoping) shared by every rule evaluation this gate performs. */
+  private matchCtx(): MatchContext {
+    return { cwd: this.cwd, knownServers: this.knownMcpServers?.() };
   }
 
   private sessionRulesFor(behavior: 'allow' | 'deny' | 'ask'): ParsedRule[] {

@@ -719,13 +719,17 @@ export function createSubagentRuntime(
     ];
     if (allowList === undefined && bareDeny.length === 0) return mcp;
     const hidden = (qualifiedName: string): boolean => {
+      // Resolve the tool's MCP server exactly against the live registry so a
+      // `mcp__server__*` allow/deny scopes correctly even when the tool segment
+      // contains `__` (I2).
+      const servers = new Set(mcp.statuses().map((s) => s.name));
       if (
         allowList !== undefined &&
-        !allowList.some((entry) => matchToolName(entry, qualifiedName))
+        !allowList.some((entry) => matchToolName(entry, qualifiedName, servers))
       ) {
         return true;
       }
-      return bareDeny.some((p) => matchToolName(p, qualifiedName));
+      return bareDeny.some((p) => matchToolName(p, qualifiedName, servers));
     };
     return new ChildMcpFilter(mcp, hidden);
   }
