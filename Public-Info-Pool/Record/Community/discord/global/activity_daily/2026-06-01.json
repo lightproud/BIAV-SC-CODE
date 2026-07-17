@@ -1,10 +1,11 @@
 {
   "date": "2026-06-01",
-  "messages": 36230,
+  "messages": 38258,
   "unique_authors": 755,
-  "reactions_total": 4538,
-  "attachments": 1832,
+  "reactions_total": 4753,
+  "attachments": 1962,
   "channel_activity": {
+    "🔸morimens-game-chat": 2028,
     "🔸general-chat": 6103,
     "🔸綜合討論": 6788,
     "🔸阵容构建": 150,
@@ -110,6 +111,11 @@
     "1510928325239898163": 1
   },
   "hourly_activity": {
+    "0": 1355,
+    "1": 2069,
+    "2": 2071,
+    "3": 2367,
+    "4": 2477,
     "6": 1326,
     "7": 1408,
     "8": 1176,
@@ -128,17 +134,11 @@
     "21": 1423,
     "22": 1443,
     "23": 2041,
-    "0": 877,
-    "1": 1491,
-    "2": 1711,
-    "3": 2086,
-    "4": 2146,
     "5": 1455
   },
   "message_types": {
-    "19": 957,
-    "0": 2966,
-    "23": 1
+    "0": 1254,
+    "19": 774
   },
   "top_reacted_messages": [
     {
@@ -270,6 +270,14 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1510796451004022785",
+      "channel_id": "1170692781216378960",
+      "content": "kath in general got no home",
+      "author": "bagels5899",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1511010630994497627",
       "channel_id": "1131839817982947429",
       "content": "我的想法是這樣啦",
@@ -286,20 +294,12 @@
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1511071299269824605",
-      "channel_id": "1400750050208125010",
-      "content": "",
-      "author": "cerixxix",
+      "id": "1510852155454787727",
+      "channel_id": "1170692781216378960",
+      "content": "this game is going to give me an aneurysm trying to figure out how to team build",
+      "author": "predator8you",
       "reactions": 6,
-      "channel": "🔸general-chat"
-    },
-    {
-      "id": "1511016039930925148",
-      "channel_id": "1131839817982947429",
-      "content": "黑子不打籃球去當醫生了嗎",
-      "author": "l1nnnnnnn",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }
