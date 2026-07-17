@@ -24,7 +24,7 @@
 
 import { randomUUID } from 'node:crypto';
 
-import { isAbortError } from '../errors.js';
+import { AbortError, isAbortError } from '../errors.js';
 import type {
   AgentDefinition,
   APIMessageParam,
@@ -542,6 +542,23 @@ export function createSubagentRuntime(
     }
   };
 
+  /**
+   * K4 (audit r2 2026-07-17): fold an aborted child run's already-billed spend
+   * into the subagent ledger. The engine loop attaches partial accounting to
+   * the AbortError it throws, expecting the CATCHER to fold it; only the root
+   * query did — the runtime's abort catches dropped every stopped/interrupted/
+   * watchdog-killed child's tokens and cost from session accounting. No
+   * double-count on rethrow: a parent loop that re-catches the error
+   * overwrites abortedRunAccounting with its OWN scope (which never includes
+   * child usage — that lives in this ledger).
+   */
+  const foldAbortedAccounting = (err: unknown): void => {
+    if (err instanceof AbortError && err.abortedRunAccounting !== undefined) {
+      const acc = err.abortedRunAccounting;
+      recordUsage(acc.usage, acc.totalCostUsd, acc.modelUsage);
+    }
+  };
+
   const drainUsageLedger = (): SubagentUsageLedger => {
     const out: SubagentUsageLedger = {
       usage: { ...ledgerUsage },
@@ -660,11 +677,16 @@ export function createSubagentRuntime(
   ): Map<string, BuiltinTool> {
     const childBuiltins = new Map(baseBuiltins);
 
-    // tools: explicit allowlist (intersection).
+    // tools: explicit allowlist (intersection). K7 (audit r2 2026-07-17):
+    // match with the SAME pattern semantics the MCP filter below uses
+    // (matchToolName), not an exact-name Set — otherwise `tools: ['*']`
+    // stripped every builtin while exposing every MCP tool.
     if (Array.isArray(agentDef.tools)) {
-      const allow = new Set(agentDef.tools);
+      const allow = agentDef.tools;
       for (const name of [...childBuiltins.keys()]) {
-        if (!allow.has(name)) childBuiltins.delete(name);
+        if (!allow.some((entry) => matchToolName(entry, name))) {
+          childBuiltins.delete(name);
+        }
       }
     }
 
@@ -761,6 +783,13 @@ export function createSubagentRuntime(
     sidechain: SidechainInfo;
     controller: AbortController;
     queue: Promise<unknown>;
+    /** K5 (audit r2 2026-07-17): kill epoch. killAgent increments it; a queued
+     *  SendMessage continuation snapshots the epoch at ENQUEUE time and is
+     *  dropped at dequeue when a kill landed in between — the old dequeue path
+     *  minted a fresh controller and silently revived the agent the host had
+     *  just been told was stopped. A SendMessage issued AFTER the kill sees
+     *  the post-kill epoch and legitimately revives (official semantics). */
+    epoch: number;
     /** M16: set for a worktree-isolated child — the repo root its worktree was
      *  cut from, so a SendMessage continuation can RE-provision one when the
      *  previous episode's clean worktree was auto-removed on exit (the record's
@@ -1043,7 +1072,11 @@ export function createSubagentRuntime(
       // worktree AND its `git worktree list` registration. Release it (clean =
       // removed) before propagating.
       try {
-        await fireSubagentStart(agentId, params.subagentType, params.signal);
+        // K8 (audit r2 2026-07-17): report the RESOLVED type, matching every
+        // fireSubagentStop site — a raw unknown params.subagentType here made
+        // matcher-scoped hooks see unbalanced Start/Stop pairs whenever the
+        // request fell back to general-purpose.
+        await fireSubagentStart(agentId, resolved.type, params.signal);
       } catch (err) {
         // task_started was already emitted above: close the observability
         // pair with a terminal task_updated before propagating, or the host's
@@ -1180,7 +1213,7 @@ export function createSubagentRuntime(
           // M15 (audit 2026-07-17): SubagentStart already fired above — a host
           // that pairs Start/Stop for per-agent resource accounting leaked one
           // unit per failed resolution. Close the pair on this early exit too.
-          await fireSubagentStop(agentId, params.subagentType, params.signal).catch(
+          await fireSubagentStop(agentId, resolved.type, params.signal).catch(
             () => undefined,
           );
           emitTask({
@@ -1347,8 +1380,18 @@ export function createSubagentRuntime(
         // first Bash call can still start outside it (its later cds are its
         // own); Read/Write/Edit and childConfig.cwd stay confined.
         shells: childShells,
-        // Children inherit the same sandbox as the root loop.
-        sandbox: opts.sandbox,
+        // Children inherit the same sandbox as the root loop. M2-1 (audit r2
+        // 2026-07-17): a worktree-isolated child must be able to WRITE its
+        // worktree — the root writablePaths cover only the root cwd, so bwrap
+        // ro-bound the worktree and every git commit/build inside it hit
+        // EROFS/EPERM.
+        sandbox:
+          worktreeDir !== undefined && opts.sandbox !== undefined
+            ? {
+                ...opts.sandbox,
+                writablePaths: [...opts.sandbox.writablePaths, worktreeDir],
+              }
+            : opts.sandbox,
         // Same SESSION for the read-before-write gate: a parent Read
         // satisfies a child's Write gate and vice versa.
         readFilePaths: opts.readFilePaths,
@@ -1426,6 +1469,7 @@ export function createSubagentRuntime(
         sidechain: sidechainInfo,
         controller: childController,
         queue: Promise.resolve(),
+        epoch: 0,
         ...(worktreeDir !== undefined ? { worktreeRepoRoot: cwd } : {}),
       };
       childRegistry.set(agentId, record);
@@ -1483,6 +1527,7 @@ export function createSubagentRuntime(
               });
             }
           } catch (err) {
+            foldAbortedAccounting(err); // K4: keep the killed run's spend
             if (record.status === 'running') record.status = 'failed';
             debug(
               `background subagent ${agentId} failed: ` +
@@ -1579,6 +1624,7 @@ export function createSubagentRuntime(
       try {
         result = await run;
       } catch (err) {
+        foldAbortedAccounting(err); // K4: keep the aborted run's spend
         // Do not clobber a terminal status: killAgent may have set 'killed'
         // before this catch runs — same guard as the background path (audit
         // 2026-07-14 M-11a).
@@ -1686,7 +1732,20 @@ export function createSubagentRuntime(
       record.config = { ...record.config, cwd: wt.dir };
       record.deps = {
         ...record.deps,
-        toolContext: { ...record.deps.toolContext, cwd: wt.dir },
+        toolContext: {
+          ...record.deps.toolContext,
+          cwd: wt.dir,
+          // M2-1: the fresh worktree must be sandbox-writable too (the old
+          // dir in the previous episode's list no longer exists).
+          ...(opts.sandbox !== undefined
+            ? {
+                sandbox: {
+                  ...opts.sandbox,
+                  writablePaths: [...opts.sandbox.writablePaths, wt.dir],
+                },
+              }
+            : {}),
+        },
       };
       const episodeDir = wt.dir;
       const episodeBase = wt.baseHead;
@@ -1703,16 +1762,39 @@ export function createSubagentRuntime(
     }
 
     record.status = 'running';
-    record.history.push({ role: 'user', content: params.message });
+    // K2 (audit r2 2026-07-17): repair the transcript tail BEFORE appending
+    // the continuation message. A worker whose last episode pre-stopped on an
+    // unpaired assistant tool_use turn (budget/turn gate fires before the tool
+    // runs) would otherwise send assistant(tool_use) + user(text) — an
+    // API-invalid pairing that 400s on every retry, and every retry appended
+    // another user turn. Same guard buildForkSeed applies to fork seeds: drop
+    // a genuinely dangling trailing tool_use turn, and merge into a trailing
+    // user turn rather than stacking consecutive user turns.
+    const tail = record.history[record.history.length - 1];
+    if (tail !== undefined && tail.role === 'assistant' && hasToolUse(tail)) {
+      record.history.pop();
+    }
+    const prevTail = record.history[record.history.length - 1];
+    if (prevTail !== undefined && prevTail.role === 'user') {
+      record.history[record.history.length - 1] = appendUserText(
+        prevTail,
+        params.message,
+      );
+    } else {
+      record.history.push({ role: 'user', content: params.message });
+    }
     // Fresh signal composition: the spawn-time ToolContext signal belonged to
     // the ORIGINAL Agent call's turn. A continuation aborts with ITS OWN call
     // signal, the child's controller (stopTask/stopAgent), and the query-wide
     // signal — never the stale spawn-turn signal.
-    const contSignal = AbortSignal.any([
-      outerSignal,
-      params.signal,
-      contController.signal,
-    ]);
+    // K3 (audit r2 2026-07-17): a BACKGROUND continuation must NOT chain the
+    // acking turn's signal — the ack returns immediately and the continuation
+    // runs detached, so the parent turn ending would silently kill it with the
+    // coordinator never told (the initial background spawn composes from
+    // outerSignal for exactly this reason).
+    const contSignal = record.background
+      ? AbortSignal.any([outerSignal, contController.signal])
+      : AbortSignal.any([outerSignal, params.signal, contController.signal]);
     const contDeps: EngineDeps = {
       ...record.deps,
       toolContext: { ...record.deps.toolContext, signal: contSignal },
@@ -1745,6 +1827,7 @@ export function createSubagentRuntime(
       }
       return result;
     } catch (err) {
+      foldAbortedAccounting(err); // K4: keep the aborted continuation's spend
       if (record.status === 'running') record.status = 'failed';
       // A stall-watchdog abort has NO cancellation site (unlike stopTask/close,
       // whose notes are emitted at the kill site). Surface it as an error RESULT
@@ -1796,10 +1879,19 @@ export function createSubagentRuntime(
       record !== undefined && !record.background ? 'foreground' : 'background';
     (task?.controller ?? record?.controller)?.abort();
     backgroundTasks.delete(taskId);
-    if (record !== undefined) record.status = 'killed';
-    // A killed child is torn down here: emit its single sidechain_end now
-    // (is_error: true), idempotently (待裁②). settleAll catches non-killed ones.
-    finalizeSidechain(taskId, { error: true });
+    if (record !== undefined) {
+      record.status = 'killed';
+      // K5: invalidate every continuation already queued behind the run this
+      // kill just aborted (see ChildRecord.epoch).
+      record.epoch += 1;
+    }
+    // K6 (audit r2 2026-07-17): do NOT write the terminal sidechain_end here.
+    // Official semantics let a later SendMessage REVIVE a killed child, and
+    // turns appended after an end marker fall outside the single bracket (the
+    // idempotence guard means a second end is never written). Record the kill
+    // as this episode's error state instead; the single end lands at final
+    // teardown (settleAll), past which no revival is possible (待裁②).
+    if (persist && store !== undefined) sidechainLastError.set(taskId, true);
     // Official patch.status vocabulary has 'killed' (not 'cancelled') for an
     // externally stopped task; the paired notification uses 'stopped'.
     emitTask({
@@ -1863,9 +1955,21 @@ export function createSubagentRuntime(
         };
       }
       // Serialize per agent: queue behind the active run + earlier messages.
-      const turn = record.queue.then(() =>
-        runContinuation(agentId, record, params),
-      );
+      // K5: snapshot the kill epoch at ENQUEUE time — a kill landing while
+      // this message waits in the queue must win (see ChildRecord.epoch).
+      const epochAtEnqueue = record.epoch;
+      const turn = record.queue.then(() => {
+        if (record.epoch !== epochAtEnqueue) {
+          return {
+            text:
+              `Subagent was stopped before this message was delivered ` +
+              `(agentId: ${agentId}).`,
+            isError: true,
+            usage: { totalTokens: 0, toolUses: 0, durationMs: 0 },
+          };
+        }
+        return runContinuation(agentId, record, params);
+      });
       record.queue = turn.then(
         () => undefined,
         () => undefined,
@@ -1919,8 +2023,26 @@ export function createSubagentRuntime(
         const result = await turn;
         return { content: result.text, isError: result.isError };
       } catch (err) {
-        // Aborts propagate (same contract as a foreground Agent spawn); real
-        // failures degrade to an honest error result.
+        // K1 (audit r2 2026-07-17): a TaskStop/stopTask kill of THIS child
+        // aborts the blocking continuation — resolve to a "stopped" error
+        // result so the PARENT loop survives, the exact M-11c guard the
+        // foreground Agent-spawn path already has (rethrowing every abort
+        // killed the whole parent query). A genuine parent-side abort (this
+        // SendMessage call's own signal, or the query-wide signal) still
+        // rethrows: the parent itself is being cancelled.
+        if (
+          isAbortError(err) &&
+          record.status === 'killed' &&
+          !params.signal.aborted &&
+          !outerSignal.aborted
+        ) {
+          return {
+            content: `Subagent was stopped before completing (agentId: ${agentId}).`,
+            isError: true,
+          };
+        }
+        // Other aborts propagate (same contract as a foreground Agent spawn);
+        // real failures degrade to an honest error result.
         if (isAbortError(err)) throw err;
         return {
           content: `SendMessage: continuation failed: ${

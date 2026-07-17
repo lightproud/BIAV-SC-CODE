@@ -2,8 +2,8 @@
  * Batch G regression suite (audit r2 2026-07-17): fs/exec hangs & corruption.
  *
  *  - F1 Glob/Grep symlink-loop guard (followSymbolicLinks off, ripgrep parity)
- *  - F2 CRLF-file multi-line Edit/MultiEdit adaptation
- *  - F3 special-file (FIFO/device) gates on Read/Edit/MultiEdit/Write
+ *  - F2 CRLF-file multi-line Edit adaptation (MultiEdit removed in 0.65.0)
+ *  - F3 special-file (FIFO/device) gates on Read/Edit/Write
  *  - F4 BashOutput filter never tests a mid-line chunk fragment
  *  - F5 background shells replay the persistent cwd/env state
  *  - F6 Grep multiline detection and -o extraction scan the SAME text
@@ -33,7 +33,6 @@ import { globTool } from '../src/tools/glob.js';
 import { grepTool } from '../src/tools/grep.js';
 import { readTool } from '../src/tools/read.js';
 import { editTool } from '../src/tools/edit.js';
-import { multiEditTool } from '../src/tools/multiedit.js';
 import { writeTool } from '../src/tools/write.js';
 import {
   bashTool,
@@ -167,21 +166,24 @@ describe('F2: CRLF multi-line edit adaptation', () => {
     expect(await readFile(file, 'utf8')).toBe('ONE\r\nTWO\r\n');
   });
 
-  it('MultiEdit applies an LF-authored chain against a CRLF file', async () => {
+  // MultiEdit was removed in 0.65.0 (hard upstream alignment); the LF-authored
+  // chain coverage lives on as the consolidation target — repeated Edit calls,
+  // each applied to the file's live state.
+  it('sequential Edits apply an LF-authored chain against a CRLF file', async () => {
     const file = path.join(sandbox, 'crlf-multi.txt');
     await writeFile(file, 'alpha\r\nbeta\r\ngamma\r\n', 'utf8');
+    const ctx = gatedCtx(sandbox, file);
 
-    const res = await multiEditTool.execute(
-      {
-        file_path: file,
-        edits: [
-          { old_string: 'alpha\nbeta', new_string: 'ALPHA\nbeta' },
-          { old_string: 'beta\ngamma', new_string: 'BETA\nGAMMA' },
-        ],
-      },
-      gatedCtx(sandbox, file),
+    const first = await editTool.execute(
+      { file_path: file, old_string: 'alpha\nbeta', new_string: 'ALPHA\nbeta' },
+      ctx,
     );
-    expect(res.isError).toBeFalsy();
+    expect(first.isError).toBeFalsy();
+    const second = await editTool.execute(
+      { file_path: file, old_string: 'beta\ngamma', new_string: 'BETA\nGAMMA' },
+      ctx,
+    );
+    expect(second.isError).toBeFalsy();
     expect(await readFile(file, 'utf8')).toBe('ALPHA\r\nBETA\r\nGAMMA\r\n');
   });
 
@@ -217,7 +219,7 @@ describe('F3: non-regular-file gates', () => {
     expect(String(res.content)).toContain('not a regular file');
   });
 
-  posixIt('Edit / MultiEdit / Write refuse a FIFO', async () => {
+  posixIt('Edit / Write refuse a FIFO', async () => {
     const fifo = path.join(sandbox, 'pipe2');
     expect(spawnSync('mkfifo', [fifo]).status).toBe(0);
     const ctx = gatedCtx(sandbox, fifo);
@@ -228,13 +230,6 @@ describe('F3: non-regular-file gates', () => {
     );
     expect(e.isError).toBe(true);
     expect(String(e.content)).toContain('not a regular file');
-
-    const m = await multiEditTool.execute(
-      { file_path: fifo, edits: [{ old_string: 'a', new_string: 'b' }] },
-      ctx,
-    );
-    expect(m.isError).toBe(true);
-    expect(String(m.content)).toContain('not a regular file');
 
     const w = await writeTool.execute({ file_path: fifo, content: 'x' }, ctx);
     expect(w.isError).toBe(true);
