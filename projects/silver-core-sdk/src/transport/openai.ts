@@ -498,6 +498,13 @@ export function encodeOpenAIRequest(
     ...(opts.reasoningEffort !== undefined
       ? { reasoning_effort: opts.reasoningEffort }
       : {}),
+    // Deliberately WITHOUT `strict: true` (audit r2 B3, documented WONTFIX
+    // pending a keeper ruling): OpenAI strict mode rejects any schema outside
+    // its subset (every property required, additionalProperties:false, no
+    // unsupported keywords), which would 400 arbitrary caller schemas that
+    // work today. Best-effort schema adherence + the engine's validate-and-
+    // retry corrective loop is the chosen trade-off; flipping this on must be
+    // a deliberate decision, not a silent hardening.
     ...(req.output_config !== undefined
       ? {
           response_format: {
@@ -552,6 +559,18 @@ type OpenAIChunk = {
   } | null;
   error?: unknown;
 };
+
+/** The finish_reason values with a known, clean Anthropic mapping. Anything
+ *  else (vLLM 'abort', DeepSeek 'insufficient_system_resource', ...) signals
+ *  the GATEWAY cut the generation — treating it as end_turn would forge a
+ *  clean success out of a partial answer (see ChunkTranslator.finish). */
+const KNOWN_FINISH_REASONS = new Set([
+  'stop',
+  'length',
+  'tool_calls',
+  'function_call',
+  'content_filter',
+]);
 
 function mapFinishReason(reason: string | null): StopReason {
   switch (reason) {
@@ -729,36 +748,34 @@ export class OpenAIStreamTranslator {
       }
       if (typeof tc.id === 'string' && tc.id.length > 0) buf.id = tc.id;
       if (typeof tc.function?.name === 'string') buf.name += tc.function.name;
-      // Emit the block start as soon as an id is known, flushing any argument
-      // deltas that arrived before it. Conforming gateways hit this on the
-      // first delta (id present), so nothing is actually deferred for them.
-      if (!buf.emitted && buf.id !== undefined) {
-        buf.index = this.openBlock(events, key, {
-          type: 'tool_use',
-          id: buf.id,
-          name: buf.name,
-          input: {},
-        });
-        buf.emitted = true;
-        if (buf.args.length > 0) {
+      const args = tc.function?.arguments;
+      if (typeof args === 'string' && args.length > 0) buf.args += args;
+      // Defer content_block_start until the first ARGUMENT bytes arrive (or
+      // finish() flushes an argument-less call): the block_start carries the
+      // tool NAME verbatim and the Anthropic event model has no name-correction
+      // event, so emitting at id-time would freeze a truncated name when a
+      // fragmenting gateway delivers name fragments in chunks AFTER the
+      // id-bearing one (chunk1 {id, name:"get_"}, chunk2 {name:"weather"}).
+      // Gateways always complete the name before argument bytes begin, so
+      // first-args is the earliest safe emission point; conforming single-chunk
+      // senders (id + full name + args together) see no deferral at all.
+      if (buf.id !== undefined && buf.args.length > 0) {
+        if (!buf.emitted) {
+          buf.index = this.openBlock(events, key, {
+            type: 'tool_use',
+            id: buf.id,
+            name: buf.name,
+            input: {},
+          });
+          buf.emitted = true;
+        }
+        if (buf.index !== undefined) {
           events.push({
             type: 'content_block_delta',
             index: buf.index,
             delta: { type: 'input_json_delta', partial_json: buf.args },
           });
           buf.args = '';
-        }
-      }
-      const args = tc.function?.arguments;
-      if (typeof args === 'string' && args.length > 0) {
-        if (buf.emitted && buf.index !== undefined) {
-          events.push({
-            type: 'content_block_delta',
-            index: buf.index,
-            delta: { type: 'input_json_delta', partial_json: args },
-          });
-        } else {
-          buf.args += args; // hold until the id arrives (or finish() flushes it)
         }
       }
     }
@@ -773,6 +790,20 @@ export class OpenAIStreamTranslator {
       throw new APIConnectionError(
         'Chat Completions stream ended before any chunk arrived',
       );
+    }
+    // An unrecognized non-empty finish_reason is a gateway-side abort (vLLM
+    // 'abort', DeepSeek 'insufficient_system_resource', ...), NOT a clean
+    // end-of-message: mapping it to end_turn would report a successful final
+    // turn containing only the pre-abort fragment. Surface a truncated turn
+    // instead — salvageable (midStreamTruncation) when content was delivered,
+    // a plain failure otherwise. Started streams are never replayed.
+    if (this.finishReason !== null && !KNOWN_FINISH_REASONS.has(this.finishReason)) {
+      const failure = new APIConnectionError(
+        `Chat Completions stream ended with unrecognized finish_reason ` +
+          `"${this.finishReason}"; treating as a truncated turn, not a clean completion`,
+      );
+      failure.midStreamTruncation = this.contentSeen;
+      throw failure;
     }
     const events: RawMessageStreamEvent[] = [];
     // Flush any tool buffer that never received an id: emit it with a synthetic
@@ -789,29 +820,14 @@ export class OpenAIStreamTranslator {
           lastEmittedToolIndex === undefined ? b.index : Math.max(lastEmittedToolIndex, b.index);
       }
     }
+    // Pass 1 — flush unemitted REAL calls (an id or a name arrived): B1 defers
+    // block emission until the first argument bytes, so an argument-less call
+    // (or one whose id never arrived) reaches finish() unemitted and is opened
+    // here, with a synthetic id as the best-effort fallback. Runs before the
+    // orphan pass so a late-flushed sibling is a valid merge target.
     for (const [key, buf] of this.toolBuffers) {
       if (buf.emitted) continue;
-      // Skip a pure placeholder buffer (`{index:N}` with no id, name, or
-      // argument bytes ever received): it carries no callable tool, and
-      // emitting it would yield a tool_use block with an empty name and a
-      // synthetic id. Mirrors the contentSeen placeholder guard in feed().
-      if (buf.id === undefined && buf.name === '' && buf.args === '') continue;
-      // 待裁④: an args-only orphan (has argument bytes but NO id and NO name) is
-      // almost certainly a stray fragment of an already-emitted call whose
-      // id/name arrived on a sibling key — a non-conforming gateway that split
-      // one call across an id-only and an index-only fragment. Merge its bytes
-      // into the most-recent emitted tool_use block instead of opening a new
-      // empty-name block (which would never dispatch). Only when such a block
-      // exists; otherwise fall through to the synthetic-id emit below.
-      if (buf.id === undefined && buf.name === '' && lastEmittedToolIndex !== undefined) {
-        events.push({
-          type: 'content_block_delta',
-          index: lastEmittedToolIndex,
-          delta: { type: 'input_json_delta', partial_json: buf.args },
-        });
-        buf.emitted = true; // consumed into the sibling block; no standalone block
-        continue;
-      }
+      if (buf.id === undefined && buf.name === '') continue; // orphans: pass 2
       buf.index = this.openBlock(events, key, {
         type: 'tool_use',
         id: buf.id ?? `call_${this.nextIndex}`,
@@ -826,6 +842,45 @@ export class OpenAIStreamTranslator {
           delta: { type: 'input_json_delta', partial_json: buf.args },
         });
       }
+      lastEmittedToolIndex =
+        lastEmittedToolIndex === undefined
+          ? buf.index
+          : Math.max(lastEmittedToolIndex, buf.index);
+    }
+    // Pass 2 — 待裁④: an args-only orphan (argument bytes but NO id and NO
+    // name) is almost certainly a stray fragment of an already-emitted call
+    // whose id/name arrived on a sibling key — a non-conforming gateway that
+    // split one call across an id-only and an index-only fragment. Merge its
+    // bytes into the most-recent emitted tool_use block instead of opening a
+    // new empty-name block (which would never dispatch). A pure placeholder
+    // buffer (`{index:N}` with nothing ever received) is skipped outright,
+    // mirroring the contentSeen placeholder guard in feed().
+    for (const [key, buf] of this.toolBuffers) {
+      if (buf.emitted) continue;
+      if (buf.args === '') continue; // pure placeholder
+      if (lastEmittedToolIndex !== undefined) {
+        events.push({
+          type: 'content_block_delta',
+          index: lastEmittedToolIndex,
+          delta: { type: 'input_json_delta', partial_json: buf.args },
+        });
+        buf.emitted = true; // consumed into the sibling block; no standalone block
+        continue;
+      }
+      // No sibling exists anywhere: emit standalone (empty-name, synthetic id)
+      // rather than silently dropping received argument bytes.
+      buf.index = this.openBlock(events, key, {
+        type: 'tool_use',
+        id: `call_${this.nextIndex}`,
+        name: buf.name,
+        input: {},
+      });
+      buf.emitted = true;
+      events.push({
+        type: 'content_block_delta',
+        index: buf.index,
+        delta: { type: 'input_json_delta', partial_json: buf.args },
+      });
     }
     for (const index of [...this.open.values()].sort((a, b) => a - b)) {
       events.push({ type: 'content_block_stop', index });
@@ -1003,7 +1058,12 @@ export class OpenAIChatTransport implements Transport {
     // AbortSignal.timeout cannot express "never", so 0 maps to the setTimeout
     // ceiling (~24.8 days — effectively unbounded for a single request).
     const configuredTimeoutMs = this.provider.timeoutMs ?? DEFAULT_TIMEOUT_MS;
-    const timeoutMs = configuredTimeoutMs > 0 ? configuredTimeoutMs : MAX_TIMEOUT_MS;
+    // Clamp to Node's 32-bit setTimeout ceiling (A2 parity with the Anthropic
+    // arm): an over-ceiling value overflows to ~1ms and kills every request.
+    const timeoutMs =
+      configuredTimeoutMs > 0
+        ? Math.min(configuredTimeoutMs, MAX_TIMEOUT_MS)
+        : MAX_TIMEOUT_MS;
     const maxRetries = resolveMaxRetries(this.provider, this.env);
     // Body-governance rule (resilience P1): same composite rule as the
     // Anthropic arm — request timeout governs connect->headers; the flowing
@@ -1189,6 +1249,7 @@ export class OpenAIChatTransport implements Transport {
           timeoutMs,
           timeoutGovernsBody: !timeoutDetached,
           chunkCount,
+          sawMessageStart: translator.hasStarted(),
           idleSignal: idleController?.signal,
           idleMs,
           maxSignal: maxController?.signal,
@@ -1408,8 +1469,20 @@ export class OpenAIChatTransport implements Transport {
       if (callerSignal?.aborted) throw new AbortError();
       const resolvedRequestId = requestId ?? info.requestId;
       const retryAfterMs = parseRetryAfterMs(response.headers.get('retry-after'));
+      // A 429 whose machine code says the QUOTA is exhausted (OpenAI
+      // `insufficient_quota`) is permanent for this key — no amount of backoff
+      // revives a spent billing account. Burning the full retry budget on it
+      // (minutes of futile 429→backoff rounds) delays the actionable error;
+      // the in-stream arm already classifies quota separately, so the
+      // request-phase gate must too. This keys on the documented machine code,
+      // not fuzzy message matching (isRetryableHttpStatus's philosophy holds:
+      // an ordinary 429 stays retryable).
+      const permanentQuota =
+        response.status === 429 &&
+        (info.code === 'insufficient_quota' || info.type === 'insufficient_quota');
       const retryable =
-        response.status === 408 || response.status === 429 || response.status >= 500;
+        !permanentQuota &&
+        (response.status === 408 || response.status === 429 || response.status >= 500);
       if (retryable && retryBudget.used < maxRetries) {
         retryBudget.used += 1;
         this.debug(
@@ -1704,6 +1777,7 @@ type StreamErrorContext = {
   timeoutMs: number;
   timeoutGovernsBody: boolean;
   chunkCount: number;
+  sawMessageStart: boolean;
   idleSignal?: AbortSignal;
   idleMs?: number;
   maxSignal?: AbortSignal;
@@ -1711,14 +1785,19 @@ type StreamErrorContext = {
 };
 
 function mapStreamError(err: unknown, ctx: StreamErrorContext): Error {
-  const { callerSignal, timeoutSignal, timeoutMs, chunkCount } = ctx;
+  const { callerSignal, timeoutSignal, timeoutMs, chunkCount, sawMessageStart } = ctx;
   // Disconnect-taxonomy flags (resilience P0/P1): every terminal stream error
   // carries the pair the engine acts on — `midStreamTruncation` (events were
   // delivered whole; salvage may apply) and `turnReplaySafe` (NOTHING was
   // delivered, so re-issuing the turn cannot double-consume content or tool
   // side effects; the engine may replay within its bounded budget).
+  // Both key on sawMessageStart, not raw eventCount: a `ping` keep-alive is a
+  // processed frame but carries no message content, so a ping-only stream that
+  // then dies is byte-for-byte the same silence as a zero-event one — it must
+  // classify identically (replay-safe, nothing to salvage) instead of getting
+  // the opposite disposition because a keep-alive happened to arrive first.
   const flag = (failure: APIConnectionError): APIConnectionError => {
-    failure.turnReplaySafe = chunkCount === 0;
+    failure.turnReplaySafe = !sawMessageStart;
     return failure;
   };
   if (err instanceof APIStatusError) return err;
@@ -1751,7 +1830,7 @@ function mapStreamError(err: unknown, ctx: StreamErrorContext): Error {
         'stream_max_duration',
       ),
     );
-    failure.midStreamTruncation = chunkCount > 0;
+    failure.midStreamTruncation = sawMessageStart;
     return failure;
   }
   // Whole-request timeout during the body: only reachable in the fallback
@@ -1764,7 +1843,7 @@ function mapStreamError(err: unknown, ctx: StreamErrorContext): Error {
         err,
       ),
     );
-    failure.midStreamTruncation = chunkCount > 0;
+    failure.midStreamTruncation = sawMessageStart;
     return failure;
   }
   if (err instanceof APIConnectionError) return err;
@@ -1780,7 +1859,7 @@ function mapStreamError(err: unknown, ctx: StreamErrorContext): Error {
   // E3: a connection that dropped after delivering events is a TRUNCATED
   // turn - the engine may salvage the completed blocks (official 2.1.201
   // does; conformance run-l4 KD-L4-02/04).
-  failure.midStreamTruncation = chunkCount > 0;
+  failure.midStreamTruncation = sawMessageStart;
   return failure;
 }
 

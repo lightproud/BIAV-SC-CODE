@@ -202,7 +202,13 @@ export class AnthropicTransport implements Transport {
     // AbortSignal.timeout cannot express "never", so 0 maps to the setTimeout
     // ceiling (~24.8 days — effectively unbounded for a single request).
     const configuredTimeoutMs = this.provider.timeoutMs ?? DEFAULT_TIMEOUT_MS;
-    const timeoutMs = configuredTimeoutMs > 0 ? configuredTimeoutMs : MAX_TIMEOUT_MS;
+    // Clamp to Node's 32-bit setTimeout ceiling: a larger value (e.g.
+    // MAX_SAFE_INTEGER meant as "unbounded") overflows to a ~1ms delay and
+    // kills every request instantly instead of never.
+    const timeoutMs =
+      configuredTimeoutMs > 0
+        ? Math.min(configuredTimeoutMs, MAX_TIMEOUT_MS)
+        : MAX_TIMEOUT_MS;
     const maxRetries = resolveMaxRetries(this.provider, this.env);
 
     // Body-governance rule (resilience P1, keeper ruling 2026-07-10): the
@@ -454,6 +460,7 @@ export class AnthropicTransport implements Transport {
           timeoutMs,
           timeoutGovernsBody: !timeoutDetached,
           eventCount,
+          sawMessageStart,
           idleSignal: idleController?.signal,
           idleMs,
           maxSignal: maxController?.signal,
@@ -644,8 +651,19 @@ export class AnthropicTransport implements Transport {
       if (callerSignal?.aborted) throw new AbortError();
       const resolvedRequestId = requestId ?? info.requestId;
       const retryAfterMs = parseRetryAfterMs(response.headers.get('retry-after'));
+      // A 429 whose machine code says the QUOTA is exhausted (OpenAI-compat
+      // gateways surface `insufficient_quota`) is permanent for this key — no
+      // amount of backoff revives a spent billing account, so burning the full
+      // retry budget on it only delays the actionable error. Keys on the
+      // documented machine code, not fuzzy message matching (an ordinary 429
+      // stays retryable); native Anthropic errors never carry this code, so
+      // this is a no-op for them.
+      const permanentQuota =
+        response.status === 429 &&
+        (info.code === 'insufficient_quota' || info.type === 'insufficient_quota');
       const retryable =
-        response.status === 408 || response.status === 429 || response.status >= 500;
+        !permanentQuota &&
+        (response.status === 408 || response.status === 429 || response.status >= 500);
       if (retryable && retryBudget.used < maxRetries) {
         retryBudget.used += 1;
         this.debug(
@@ -891,12 +909,18 @@ export function resolveStreamIdleMs(
   provider: ProviderConfig,
   env: Record<string, string | undefined>,
 ): number {
+  // Upper clamp (as in resolveStallTimeoutMs): past Node's 32-bit setTimeout
+  // ceiling the timer overflows to ~1ms, so a value meant to RELAX the
+  // watchdog would instead kill the stream (idle) or re-arm every second
+  // (wake) immediately. 0 stays "disabled".
   if (provider.streamIdleTimeoutMs !== undefined) {
-    return Math.max(0, provider.streamIdleTimeoutMs);
+    return Math.min(Math.max(0, provider.streamIdleTimeoutMs), MAX_TIMEOUT_MS);
   }
   if (env.CLAUDE_ENABLE_STREAM_WATCHDOG === '0') return 0;
   const fromEnv = envInt(env.CLAUDE_STREAM_IDLE_TIMEOUT_MS);
-  if (fromEnv !== undefined) return Math.max(fromEnv, DEFAULT_STREAM_IDLE_MS);
+  if (fromEnv !== undefined) {
+    return Math.min(Math.max(fromEnv, DEFAULT_STREAM_IDLE_MS), MAX_TIMEOUT_MS);
+  }
   return DEFAULT_STREAM_IDLE_MS;
 }
 
@@ -909,10 +933,13 @@ export function resolveStreamMaxMs(
   provider: ProviderConfig,
   env: Record<string, string | undefined>,
 ): number {
+  // Same 32-bit setTimeout clamp as resolveStreamIdleMs: an over-ceiling
+  // "effectively unlimited" cap must not overflow into a ~1ms stream killer.
   if (provider.streamMaxDurationMs !== undefined) {
-    return Math.max(0, provider.streamMaxDurationMs);
+    return Math.min(Math.max(0, provider.streamMaxDurationMs), MAX_TIMEOUT_MS);
   }
-  return envInt(env.BPT_STREAM_MAX_DURATION_MS) ?? 0;
+  const fromEnv = envInt(env.BPT_STREAM_MAX_DURATION_MS) ?? 0;
+  return Math.min(Math.max(0, fromEnv), MAX_TIMEOUT_MS);
 }
 
 /**
@@ -1121,6 +1148,7 @@ type StreamErrorContext = {
   timeoutMs: number;
   timeoutGovernsBody: boolean;
   eventCount: number;
+  sawMessageStart: boolean;
   idleSignal?: AbortSignal;
   idleMs?: number;
   maxSignal?: AbortSignal;
@@ -1128,14 +1156,19 @@ type StreamErrorContext = {
 };
 
 function mapStreamError(err: unknown, ctx: StreamErrorContext): Error {
-  const { callerSignal, timeoutSignal, timeoutMs, eventCount } = ctx;
+  const { callerSignal, timeoutSignal, timeoutMs, eventCount, sawMessageStart } = ctx;
   // Disconnect-taxonomy flags (resilience P0/P1): every terminal stream error
   // carries the pair the engine acts on — `midStreamTruncation` (events were
   // delivered whole; salvage may apply) and `turnReplaySafe` (NOTHING was
   // delivered, so re-issuing the turn cannot double-consume content or tool
   // side effects; the engine may replay within its bounded budget).
+  // Both key on sawMessageStart, not raw eventCount: a `ping` keep-alive is a
+  // processed frame but carries no message content, so a ping-only stream that
+  // then dies is byte-for-byte the same silence as a zero-event one — it must
+  // classify identically (replay-safe, nothing to salvage) instead of getting
+  // the opposite disposition because a keep-alive happened to arrive first.
   const flag = (failure: APIConnectionError): APIConnectionError => {
-    failure.turnReplaySafe = eventCount === 0;
+    failure.turnReplaySafe = !sawMessageStart;
     return failure;
   };
   if (err instanceof APIStatusError) return err;
@@ -1168,7 +1201,7 @@ function mapStreamError(err: unknown, ctx: StreamErrorContext): Error {
         'stream_max_duration',
       ),
     );
-    failure.midStreamTruncation = eventCount > 0;
+    failure.midStreamTruncation = sawMessageStart;
     return failure;
   }
   // Whole-request timeout during the body: only reachable in the fallback
@@ -1181,7 +1214,7 @@ function mapStreamError(err: unknown, ctx: StreamErrorContext): Error {
         err,
       ),
     );
-    failure.midStreamTruncation = eventCount > 0;
+    failure.midStreamTruncation = sawMessageStart;
     return failure;
   }
   if (err instanceof APIConnectionError) return err;
@@ -1197,7 +1230,7 @@ function mapStreamError(err: unknown, ctx: StreamErrorContext): Error {
   // E3: a connection that dropped after delivering events is a TRUNCATED
   // turn - the engine may salvage the completed blocks (official 2.1.201
   // does; conformance run-l4 KD-L4-02/04).
-  failure.midStreamTruncation = eventCount > 0;
+  failure.midStreamTruncation = sawMessageStart;
   return failure;
 }
 
