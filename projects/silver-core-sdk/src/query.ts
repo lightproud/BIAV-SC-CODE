@@ -292,6 +292,22 @@ export function query(args: {
   ) {
     throw new ConfigurationError('budgetThresholdRatio must be in (0, 1]');
   }
+  // R1 structured prelude: the blocks are rendered by string concatenation,
+  // so a missing/non-string content (typed but unchecked at runtime — L60,
+  // audit 2026-07-17) would inject the literal text "undefined" into the
+  // model's first prompt. Fail loud at construction instead.
+  for (const p of options.prelude ?? []) {
+    if (
+      p === null ||
+      typeof p !== 'object' ||
+      typeof p.content !== 'string' ||
+      (p.title !== undefined && typeof p.title !== 'string')
+    ) {
+      throw new ConfigurationError(
+        'options.prelude blocks must carry a string content (and, when present, a string title)',
+      );
+    }
+  }
   const persist = !incognito && options.persistSession !== false;
   if (options.sessionStore !== undefined && !persist) {
     throw new ConfigurationError(
@@ -521,6 +537,11 @@ export function query(args: {
       betas: options.betas,
       env,
       debug,
+      // Host alias overrides also govern the condition call's utility model
+      // (same table as subagent spawn / compaction summarizer).
+      ...(options.modelAliases !== undefined
+        ? { modelAliases: options.modelAliases }
+        : {}),
       // Cross-protocol routing for the condition call's utility model.
       ...(transportForModel !== undefined
         ? { resolveTransport: (m: string) => transportForModel(m, 'utility') }
@@ -1050,8 +1071,11 @@ export function query(args: {
       let needMeta = sess.needMeta;
       // R1: the structured prelude rides the FIRST genuine prompt only.
       let preludePending = true;
-      // R1: cumulative-cost floor for the per-result accounting delta records.
+      // R1: cumulative floors for the per-result accounting delta records
+      // (turns tracked too, so an interrupted turn's record — L58 — carries
+      // an honest turn delta and getSessionAccounting sums stay whole).
       let lastPersistedCostUsd = 0;
+      let lastPersistedTurns = 0;
 
       // File checkpointing: bind the disk-backed store to this session so
       // Write/Edit pre-images are captured and Query.rewindFiles() can restore.
@@ -1243,6 +1267,7 @@ export function query(args: {
               if (persist) {
                 const delta = rewritten.total_cost_usd - lastPersistedCostUsd;
                 lastPersistedCostUsd = rewritten.total_cost_usd;
+                lastPersistedTurns = acct.turns;
                 store.append(sess.sessionId, {
                   type: 'accounting',
                   uuid: randomUUID(),
@@ -1291,6 +1316,27 @@ export function query(args: {
             const partial = err instanceof AbortError ? err.abortedRunAccounting : undefined;
             if (partial !== undefined) acct.accumulateAborted(partial);
             acct.foldSubagentUsage(subagentRuntime.drainUsageLedger());
+            // L58 (audit 2026-07-17): an aborted run emits no result, so the
+            // per-result accounting record never fires for it — persist the
+            // interrupted turn's real spend as its own delta record here, or
+            // getSessionAccounting under-counts every interrupted turn.
+            if (persist) {
+              const costDelta = acct.cost - lastPersistedCostUsd;
+              const turnsDelta = acct.turns - lastPersistedTurns;
+              if (costDelta > 0 || turnsDelta > 0) {
+                lastPersistedCostUsd = acct.cost;
+                lastPersistedTurns = acct.turns;
+                store.append(sess.sessionId, {
+                  type: 'accounting',
+                  uuid: randomUUID(),
+                  session_id: sess.sessionId,
+                  timestamp: Date.now(),
+                  cost_delta_usd: costDelta > 0 ? costDelta : 0,
+                  total_cost_usd: acct.cost,
+                  num_turns: turnsDelta > 0 ? turnsDelta : 0,
+                });
+              }
+            }
             // A caller abort OR a close() (life) ends the whole run; only a
             // per-turn interrupt() (turnController, neither of the above) is a
             // recoverable turn-level cancel.
@@ -1309,6 +1355,12 @@ export function query(args: {
             // string mode ends the run WITH a terminal result so an awaiting
             // consumer is not left hanging with no explanation (finding #36).
             debug('query: turn interrupted');
+            // L59 (audit 2026-07-17): the interrupted turn's teardown queued
+            // observability events (SubagentStop hooks from aborted children,
+            // mirror-error notices) that the in-turn drains never reached —
+            // deliver them now; the consumer is still consuming on this path.
+            yield* drainMirror();
+            yield* drainObs();
             if (!streamingMode) {
               endReason = 'interrupt';
               yield terminalResult(
@@ -1624,6 +1676,10 @@ export function query(args: {
             return;
           }
           engineConfig.maxBudgetUsd = options.maxBudgetUsd - acct.cost;
+          // R2 budget events judge/report against the SESSION cap: tell the
+          // engine how much of it this re-arm already consumed (M18 — the
+          // remaining-budget re-arm otherwise drifts the threshold).
+          engineConfig.budgetCostBaselineUsd = acct.cost;
         }
         if (options.maxTurns !== undefined) {
           if (acct.turns >= options.maxTurns) {
@@ -1653,11 +1709,20 @@ export function query(args: {
       // driveTurn's iteration) so the task's own final result remains the
       // last result the consumer sees. Failures are logged, never fatal —
       // the user's answer has already been delivered.
+      // L57 (audit 2026-07-17): the round must run on the REAL remaining
+      // session budget — the last turn's re-arm predates that turn's own
+      // spend, so reusing it lets the round overspend maxBudgetUsd. Re-arm
+      // here exactly like the input loop does, and skip the round entirely
+      // when the cap is already spent (a progress card is never worth
+      // breaching the budget contract).
+      const sessionEndRemainingUsd =
+        options.maxBudgetUsd !== undefined ? options.maxBudgetUsd - acct.cost : undefined;
       if (
         memory !== null &&
         memory.sessionEndUpdate &&
         acct.turns > 0 &&
-        !lifeSignal.aborted
+        !lifeSignal.aborted &&
+        (sessionEndRemainingUsd === undefined || sessionEndRemainingUsd > 0)
       ) {
         // The round's own result is ABSORBED (below), so it must not count as
         // the last consumer-visible result — driveTurn sets lastYieldedResult
@@ -1674,8 +1739,12 @@ export function query(args: {
           requestView.messages.push(endParam);
           persistParam(sess.sessionId, endParam);
           // Bound the round: a progress card is a couple of tool turns, not
-          // a task. (driveTurn re-arms real budgets from session state.)
+          // a task — and never more budget than the session cap has left.
           engineConfig.maxTurns = 4;
+          if (sessionEndRemainingUsd !== undefined) {
+            engineConfig.maxBudgetUsd = sessionEndRemainingUsd;
+            engineConfig.budgetCostBaselineUsd = acct.cost;
+          }
           debug('memory: running session-end progress-card round');
           const gen = driveTurn(randomUUID());
           for (;;) {
@@ -1791,14 +1860,20 @@ export function query(args: {
       // cumulative total_cost_usd/modelUsage are now whole). Emitted at the very
       // END of teardown so a consumer that stops early cannot skip the resource
       // cleanup above. Skipped on abort/error (those throw their own terminal).
-      if (
-        endReason !== 'abort' &&
-        endReason !== 'error' &&
-        !lifeSignal.aborted &&
-        lastYieldedResult !== undefined &&
-        acct.cost > lastYieldedResult.total_cost_usd
-      ) {
-        yield { ...lastYieldedResult, uuid: randomUUID(), ...resultCommon() };
+      if (endReason !== 'abort' && endReason !== 'error' && !lifeSignal.aborted) {
+        // L59 (audit 2026-07-17): settleAll() above ran the aborted children's
+        // finalizers, which queue trailing observability events (SubagentStop
+        // hooks, mirror-error notices) AFTER the last in-turn drain — without
+        // this they sit in the queue forever. Same guard as the corrected
+        // result below: only a consumer that is still consuming gets them.
+        yield* drainMirror();
+        yield* drainObs();
+        if (
+          lastYieldedResult !== undefined &&
+          acct.cost > lastYieldedResult.total_cost_usd
+        ) {
+          yield { ...lastYieldedResult, uuid: randomUUID(), ...resultCommon() };
+        }
       }
     }
   }

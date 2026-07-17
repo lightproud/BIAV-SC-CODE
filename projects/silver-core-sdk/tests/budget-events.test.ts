@@ -229,3 +229,83 @@ describe('budgetThresholdRatio validation', () => {
     }
   });
 });
+
+// ---------------------------------------------------------------------------
+// Audit 2026-07-17 batch A: M18 — session-anchored judgment + one-shot latch
+// ---------------------------------------------------------------------------
+
+describe('budget events judge against the SESSION cap (M18)', () => {
+  it('budgetCostBaselineUsd anchors the threshold to the original cap, not the re-armed remainder', async () => {
+    const hooks = new BudgetEventRecorder();
+    // Session picture: cap $0.01, $0.003 already spent by earlier turns, so
+    // this run is re-armed with the $0.007 REMAINDER. The turn spends ~$0.0031:
+    // session cumulative ~$0.0061 crosses 0.5 * $0.01 = $0.005. The pre-fix
+    // per-run judgment (0.0031 < 0.007 * 0.5) stayed silent.
+    const transport = new MockTransport([textReplyEvents('done', TURN_USAGE)]);
+    await collect(
+      runAgentLoop(
+        [{ role: 'user', content: 'go' }],
+        makeDeps(transport, hooks),
+        makeConfig({
+          maxBudgetUsd: 0.007,
+          budgetCostBaselineUsd: 0.003,
+          budgetThresholdRatio: 0.5,
+        }),
+      ),
+    );
+    const thresholds = hooks.events.filter((e) => e.event === 'budget:threshold');
+    expect(thresholds).toHaveLength(1);
+    const input = thresholds[0]?.input as BudgetThresholdHookInput;
+    // The payload reports SESSION figures: original cap and true cumulative.
+    expect(input.max_budget_usd).toBeCloseTo(0.01, 12);
+    expect(input.cumulative_cost_usd).toBeGreaterThanOrEqual(0.005);
+    expect(input.cumulative_cost_usd).toBeGreaterThan(0.003); // baseline included
+  });
+
+  it('a shared budgetEventState keeps the threshold one-shot ACROSS engine runs', async () => {
+    const hooks = new BudgetEventRecorder();
+    const budgetEventState = { thresholdFired: false, exhaustedFired: false };
+    // Two runs of the same session (multi-turn streaming re-enters the loop
+    // per turn); both cross the threshold on their own. Pre-fix the per-run
+    // latch reset each turn and the "one-shot" event fired once per TURN.
+    for (let turn = 0; turn < 2; turn += 1) {
+      const transport = new MockTransport([textReplyEvents('done', TURN_USAGE)]);
+      await collect(
+        runAgentLoop(
+          [{ role: 'user', content: 'go' }],
+          makeDeps(transport, hooks),
+          makeConfig({
+            maxBudgetUsd: 1.0,
+            budgetThresholdRatio: 0.001,
+            budgetEventState,
+          }),
+        ),
+      );
+    }
+    expect(
+      hooks.events.filter((e) => e.event === 'budget:threshold'),
+    ).toHaveLength(1);
+    expect(budgetEventState.thresholdFired).toBe(true);
+  });
+
+  it('budget:exhausted reports session figures too (baseline + original cap)', async () => {
+    const hooks = new BudgetEventRecorder();
+    // Re-armed remainder is tiny; the baseline carries the earlier spend.
+    const transport = new MockTransport([
+      toolUseReplyEvents('Read', { file_path: '/a.txt' }, TURN_USAGE),
+      textReplyEvents('never reached'),
+    ]);
+    await collect(
+      runAgentLoop(
+        [{ role: 'user', content: 'go' }],
+        makeDeps(transport, hooks),
+        makeConfig({ maxBudgetUsd: 0.000001, budgetCostBaselineUsd: 0.5 }),
+      ),
+    );
+    const exhausted = hooks.events.filter((e) => e.event === 'budget:exhausted');
+    expect(exhausted).toHaveLength(1);
+    const input = exhausted[0]?.input as BudgetExhaustedHookInput;
+    expect(input.report.max_budget_usd).toBeCloseTo(0.500001, 12);
+    expect(input.report.cumulative_cost_usd).toBeGreaterThan(0.5);
+  });
+});

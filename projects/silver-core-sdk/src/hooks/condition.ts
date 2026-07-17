@@ -80,6 +80,11 @@ export interface HookConditionResult {
   reason: string;
   /** Stop variant only: the condition can never be satisfied this session. */
   impossible?: boolean;
+  /** M13 (audit 2026-07-17): true when NO verdict was reached (evaluator
+   *  unavailable / unparseable reply) — distinct from a clean `ok:false`
+   *  verdict, so a failure-mode-'closed' matcher can treat "could not
+   *  evaluate" as "run the callbacks" instead of silently failing open. */
+  evaluationFailed?: boolean;
 }
 
 /** Input for one condition evaluation. */
@@ -111,7 +116,11 @@ export async function evaluateHookCondition(
   } catch (err) {
     if (opts.signal?.aborted) throw err; // abort propagates, never a verdict
     const msg = err instanceof Error ? err.message : String(err);
-    return { ok: false, reason: `condition evaluator unavailable: ${msg}` };
+    return {
+      ok: false,
+      reason: `condition evaluator unavailable: ${msg}`,
+      evaluationFailed: true,
+    };
   }
   return parseHookCondition(raw);
 }
@@ -120,7 +129,11 @@ export async function evaluateHookCondition(
 export function parseHookCondition(raw: string): HookConditionResult {
   const obj = extractJsonObject(raw);
   if (obj === null || typeof obj !== 'object') {
-    return { ok: false, reason: 'unparseable condition-evaluator reply' };
+    return {
+      ok: false,
+      reason: 'unparseable condition-evaluator reply',
+      evaluationFailed: true,
+    };
   }
   const rec = obj as Record<string, unknown>;
   // STRICT boolean true: "true"/1 or an absent ok field must not fire a hook.

@@ -13,6 +13,7 @@
  */
 
 import * as path from 'node:path';
+import { isUtf8 } from 'node:buffer';
 
 /** Default maximum characters kept per line in cat -n style output. */
 export const MAX_LINE_CHARS = 2000;
@@ -55,6 +56,19 @@ export type FormatCatNResult = {
  */
 export function resolveAbs(cwd: string, p: string): string {
   return path.resolve(cwd, p);
+}
+
+/**
+ * True when `buf` is NOT valid UTF-8 (H1, audit T49). The read-modify-write
+ * tools (Edit / MultiEdit) decode with Buffer.toString('utf8'), which replaces
+ * every invalid sequence with U+FFFD — writing that back re-encodes the
+ * replacement characters and permanently corrupts EVERY non-UTF-8 byte in the
+ * file, including bytes nowhere near the edit site (GBK / Shift-JIS / Latin-1
+ * text passes the NUL sniff below but is not UTF-8). Such files must be
+ * refused, not silently mangled.
+ */
+export function isLossyUtf8(buf: Buffer): boolean {
+  return !isUtf8(buf);
 }
 
 /** Heuristic binary sniff: any NUL byte anywhere in the buffer. The old

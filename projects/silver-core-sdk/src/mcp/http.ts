@@ -444,13 +444,15 @@ export class HttpMcpConnection {
       // character split across the LAST chunk boundary sits buffered inside
       // the TextDecoder and was silently dropped without this.
       buffer += decoder.decode();
-      // A last line with NO trailing newline never entered the line loop:
-      // fold the residual buffer in as a final data: line (also the fix for
-      // audit M10 — the lost "no trailing newline at all" last frame).
-      let tail = buffer;
-      if (tail.endsWith('\r')) tail = tail.slice(0, -1);
-      if (tail.startsWith('data:')) {
-        dataLines.push(tail.slice(5).replace(/^ /, ''));
+      // M10 (audit 2026-07-17): a final `data:` line with NO trailing newline
+      // never left `buffer` (the line loop only consumes up to '\n'), so a
+      // server omitting the last newline had its whole response dropped as
+      // mcp_invalid_response. The stream is over — treat the remnant as a
+      // complete line at EOF.
+      let tailLine = buffer;
+      if (tailLine.endsWith('\r')) tailLine = tailLine.slice(0, -1);
+      if (tailLine.startsWith('data:')) {
+        dataLines.push(tailLine.slice(5).replace(/^ /, ''));
       }
       // Flush a trailing frame in case the stream ended without a blank line.
       if (dataLines.length > 0) {

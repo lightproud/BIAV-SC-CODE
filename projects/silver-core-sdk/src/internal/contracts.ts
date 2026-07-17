@@ -333,7 +333,11 @@ export interface ShellManager {
   /** Directory holding the persistent foreground cwd/env snapshot ('' when
    *  no tmp dir was available — persistence then degrades to stateless). */
   readonly stateDir: string;
-  /** Spawn a detached background shell; returns its bash id immediately.
+  /** Spawn a detached background shell; resolves with its bash id once the
+   *  process has ACTUALLY spawned (a detached spawn reports ENOENT only via
+   *  the async 'error' event, so resolution waits for the spawn/error race —
+   *  a missing shell is a returned error the caller's candidate chain can
+   *  fall through on, never a silent post-ack failure).
    *  `disableSandbox` engages the escape hatch (skip the sandbox wrap) for
    *  this launch; ignored when no sandbox is active on the context. */
   spawnBackground(
@@ -341,7 +345,7 @@ export interface ShellManager {
     command: string,
     ctx: Pick<ToolContext, 'cwd' | 'env' | 'sandbox'>,
     disableSandbox?: boolean,
-  ): { id: string } | { error: string };
+  ): Promise<{ id: string } | { error: string }>;
   get(id: string): BackgroundShell | undefined;
   /** Kill one background shell (SIGTERM, then SIGKILL after a grace). */
   kill(id: string): boolean;
@@ -590,6 +594,16 @@ export type EngineConfig = {
   /** R2 budget events: fraction of maxBudgetUsd at which the one-shot
    *  `budget:threshold` hook fires (root loop only). Default 0.8. */
   budgetThresholdRatio?: number;
+  /** R2 budget events: session cost already spent BEFORE this engine run.
+   *  The query layer re-arms maxBudgetUsd to the remaining budget per turn,
+   *  so budget events must judge/report against the session cap
+   *  (= baseline + maxBudgetUsd), not this run's own counters (audit
+   *  2026-07-17 M18). Absent -> 0. */
+  budgetCostBaselineUsd?: number;
+  /** R2 budget events: one-shot latches shared across every engine run one
+   *  query drives (multi-turn streaming re-enters runAgentLoop per turn).
+   *  Absent -> per-run latches (standalone loop usage). */
+  budgetEventState?: { thresholdFired: boolean; exhaustedFired: boolean };
   thinking?: ThinkingConfigParam;
   maxThinkingTokens?: number;
   /** Messages API `tool_choice` steer/constraint; forwarded to each request
@@ -616,6 +630,11 @@ export type EngineConfig = {
   /** Custom model pricing overrides (ProviderConfig.pricing) threaded into
    *  every cost estimate this loop makes. BPT-EXTENSION (audit 2026-07-10). */
   pricing?: Record<string, PriceOverride>;
+  /** Host overrides for the short model aliases (Options.modelAliases),
+   *  consumed wherever this config's models resolve through
+   *  resolveModelAlias — subagent spawn and the compaction summarizer.
+   *  BPT-EXTENSION (model-alias mapping, 2026-07-17). */
+  modelAliases?: Readonly<Record<string, string>>;
   /** tool_use id of the spawning Agent call; stamped on this loop's messages
    *  so subagent messages thread. Root loop leaves it undefined -> null. */
   parentToolUseId?: string | null;

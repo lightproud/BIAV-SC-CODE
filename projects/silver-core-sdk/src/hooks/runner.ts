@@ -45,9 +45,14 @@ import { AbortError } from '../errors.js';
 import type { AggregatedHookResult, HookRunner } from '../internal/contracts.js';
 import type { UtilityCallOptions } from '../generators/runtime.js';
 import { evaluateHookCondition } from './condition.js';
+import { readFileTail } from './goal.js';
 import { matcherMatches } from './matcher.js';
 
 const DEFAULT_TIMEOUT_SECONDS = 60;
+
+/** Bounded transcript tail appended to a Stop-condition's context (M12) —
+ *  same default the structured-goal gate uses for its evaluator. */
+const CONDITION_TRANSCRIPT_TAIL_BYTES = 32_768;
 
 /** hook_response.output carries a bounded JSON preview of the callback output. */
 const HOOK_RESULT_PREVIEW_CHARS = 500;
@@ -215,7 +220,26 @@ export class DefaultHookRunner implements HookRunner {
       return matched; // deterministic fast path: zero model calls
     }
     const stop = event === 'Stop' || event === 'SubagentStop';
-    const context = JSON.stringify(input);
+    let context = JSON.stringify(input);
+    // M12 (audit 2026-07-17): a Stop condition's judging material is the
+    // TRANSCRIPT, but the hook input carries only transcript_path — the
+    // evaluator saw a path string, could never find evidence, and (failing
+    // closed) skipped the callbacks on every stop. Append a bounded tail of
+    // the transcript so content conditions are actually decidable.
+    if (stop) {
+      const tp = (input as { transcript_path?: unknown }).transcript_path;
+      if (typeof tp === 'string' && tp !== '') {
+        const tail = readFileTail(tp, CONDITION_TRANSCRIPT_TAIL_BYTES);
+        if (tail !== '') context += `\n\nTranscript tail:\n${tail}`;
+      }
+    }
+    // M13 (audit 2026-07-17): "could not evaluate" is NOT a verdict. Under
+    // the matcher's effective failureMode 'closed' an evaluation failure
+    // ADMITS the matcher (a conditioned deny hook still denies); only a clean
+    // negative verdict skips. 'open' (the drop-in default) keeps the old
+    // skip-on-failure behavior.
+    const failedAdmits = (m: HookCallbackMatcher): boolean =>
+      (m.failureMode ?? this.failureMode) === 'closed';
     const verdicts = await Promise.all(
       matched.map(async (m) => {
         if (typeof m.condition !== 'string' || m.condition.length === 0) return true;
@@ -224,6 +248,16 @@ export class DefaultHookRunner implements HookRunner {
             { condition: m.condition, context, stop },
             { ...this.conditionOptions, signal },
           );
+          if (r.evaluationFailed === true) {
+            const admit = failedAdmits(m);
+            this.debug(
+              `hooks(${event}): condition evaluation failed (${r.reason}); ` +
+                (admit
+                  ? "failureMode 'closed': callbacks admitted"
+                  : 'callbacks skipped'),
+            );
+            return admit;
+          }
           if (!r.ok) {
             this.debug(
               `hooks(${event}): condition not met, callbacks skipped ` +
@@ -232,12 +266,17 @@ export class DefaultHookRunner implements HookRunner {
           }
           return r.ok;
         } catch (err) {
-          // Abort propagates as cancellation of the whole run; anything else
-          // fails CLOSED (skip) so a hook never fires on an unverified condition.
+          // Abort propagates as cancellation of the whole run; any other
+          // failure is routed by the matcher's failureMode exactly like the
+          // in-band evaluationFailed path above.
           if (signal.aborted) throw err;
           const msg = err instanceof Error ? err.message : String(err);
-          this.debug(`hooks(${event}): condition evaluation failed, callbacks skipped (${msg})`);
-          return false;
+          const admit = failedAdmits(m);
+          this.debug(
+            `hooks(${event}): condition evaluation failed (${msg}); ` +
+              (admit ? "failureMode 'closed': callbacks admitted" : 'callbacks skipped'),
+          );
+          return admit;
         }
       }),
     );

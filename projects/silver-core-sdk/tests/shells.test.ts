@@ -61,7 +61,7 @@ function text(content: unknown): string {
 describe('ShellManager', () => {
   it('runs a background command to completion and accumulates output', async () => {
     const ctx = makeCtx(true);
-    const launched = manager!.spawnBackground('bash', 'echo bg-hello', ctx);
+    const launched = await manager!.spawnBackground('bash', 'echo bg-hello', ctx);
     expect('id' in launched).toBe(true);
     const id = (launched as { id: string }).id;
     await until(() => manager!.get(id)!.status !== 'running');
@@ -73,7 +73,7 @@ describe('ShellManager', () => {
 
   it('kill() terminates a running shell and marks it killed', async () => {
     const ctx = makeCtx(true);
-    const { id } = manager!.spawnBackground('bash', 'sleep 30', ctx) as { id: string };
+    const { id } = await manager!.spawnBackground('bash', 'sleep 30', ctx) as { id: string };
     expect(manager!.get(id)!.status).toBe('running');
     expect(manager!.kill(id)).toBe(true);
     await until(() => manager!.get(id)!.exitSignal !== null || manager!.get(id)!.exitCode !== null);
@@ -82,7 +82,7 @@ describe('ShellManager', () => {
 
   it('kill() AFTER the process already completed reports completed, not a false killed (BPT incident #3)', async () => {
     const ctx = makeCtx(true);
-    const { id } = manager!.spawnBackground('bash', 'echo quick', ctx) as { id: string };
+    const { id } = await manager!.spawnBackground('bash', 'echo quick', ctx) as { id: string };
     // Let it finish on its own first.
     await until(() => manager!.get(id)!.status === 'completed');
     expect(manager!.get(id)!.exitCode).toBe(0);
@@ -129,7 +129,7 @@ describe('Bash run_in_background + BashOutput + KillShell', () => {
 
   it('BashOutput filter applies per line to NEW output only', async () => {
     const ctx = makeCtx(true);
-    const { id } = manager!.spawnBackground(
+    const { id } = await manager!.spawnBackground(
       'bash',
       'echo keep-me; echo drop-me',
       ctx,
@@ -143,7 +143,7 @@ describe('Bash run_in_background + BashOutput + KillShell', () => {
 
   it('KillShell stops a running background shell', async () => {
     const ctx = makeCtx(true);
-    const { id } = manager!.spawnBackground('bash', 'sleep 30', ctx) as { id: string };
+    const { id } = await manager!.spawnBackground('bash', 'sleep 30', ctx) as { id: string };
     const killed = await killShellTool.execute({ shell_id: id }, ctx);
     expect(killed.isError).not.toBe(true);
     expect(text(killed.content)).toContain(`Killed background shell ${id}`);
@@ -176,7 +176,7 @@ describe('Bash run_in_background + BashOutput + KillShell', () => {
 describe('TaskOutput / TaskStop (official-name background-task surface)', () => {
   it('TaskOutput reads new output + status, then advances the cursor', async () => {
     const ctx = makeCtx(true);
-    const { id } = manager!.spawnBackground('bash', 'echo alpha; echo beta', ctx) as { id: string };
+    const { id } = await manager!.spawnBackground('bash', 'echo alpha; echo beta', ctx) as { id: string };
     await until(() => manager!.get(id)!.status !== 'running');
 
     const read1 = await taskOutputTool.execute({ task_id: id }, ctx);
@@ -192,7 +192,7 @@ describe('TaskOutput / TaskStop (official-name background-task surface)', () => 
 
   it('TaskOutput has NO filter param (official schema); a filter is ignored, not applied', async () => {
     const ctx = makeCtx(true);
-    const { id } = manager!.spawnBackground('bash', 'echo keep-me; echo drop-me', ctx) as {
+    const { id } = await manager!.spawnBackground('bash', 'echo keep-me; echo drop-me', ctx) as {
       id: string;
     };
     await until(() => manager!.get(id)!.status !== 'running');
@@ -205,7 +205,7 @@ describe('TaskOutput / TaskStop (official-name background-task surface)', () => 
 
   it('TaskOutput block:true returns quickly when new output arrives', async () => {
     const ctx = makeCtx(true);
-    const { id } = manager!.spawnBackground('bash', 'sleep 0.15; echo late', ctx) as { id: string };
+    const { id } = await manager!.spawnBackground('bash', 'sleep 0.15; echo late', ctx) as { id: string };
     const read = await taskOutputTool.execute({ task_id: id, block: true, timeout: 5000 }, ctx);
     expect(read.isError).not.toBe(true);
     expect(text(read.content)).toContain('late');
@@ -213,7 +213,7 @@ describe('TaskOutput / TaskStop (official-name background-task surface)', () => 
 
   it('TaskOutput block:true honors timeout on an idle running task', async () => {
     const ctx = makeCtx(true);
-    const { id } = manager!.spawnBackground('bash', 'echo now; sleep 30', ctx) as { id: string };
+    const { id } = await manager!.spawnBackground('bash', 'echo now; sleep 30', ctx) as { id: string };
     await until(() => manager!.get(id)!.stdout.includes('now'));
     // Drain the initial output.
     await taskOutputTool.execute({ task_id: id }, ctx);
@@ -228,7 +228,7 @@ describe('TaskOutput / TaskStop (official-name background-task surface)', () => 
     const ctx = makeCtx(true);
     const controller = new AbortController();
     const abortableCtx = { ...ctx, signal: controller.signal };
-    const { id } = manager!.spawnBackground('bash', 'echo now; sleep 30', abortableCtx) as {
+    const { id } = await manager!.spawnBackground('bash', 'echo now; sleep 30', abortableCtx) as {
       id: string;
     };
     await until(() => manager!.get(id)!.stdout.includes('now'));
@@ -246,7 +246,7 @@ describe('TaskOutput / TaskStop (official-name background-task surface)', () => 
 
   it('TaskStop stops a running task by task_id', async () => {
     const ctx = makeCtx(true);
-    const { id } = manager!.spawnBackground('bash', 'sleep 30', ctx) as { id: string };
+    const { id } = await manager!.spawnBackground('bash', 'sleep 30', ctx) as { id: string };
     const stopped = await taskStopTool.execute({ task_id: id }, ctx);
     expect(stopped.isError).not.toBe(true);
     expect(text(stopped.content)).toContain(`Stopped background task ${id}`);
@@ -256,7 +256,7 @@ describe('TaskOutput / TaskStop (official-name background-task surface)', () => 
 
   it('TaskStop accepts the deprecated shell_id alias', async () => {
     const ctx = makeCtx(true);
-    const { id } = manager!.spawnBackground('bash', 'sleep 30', ctx) as { id: string };
+    const { id } = await manager!.spawnBackground('bash', 'sleep 30', ctx) as { id: string };
     const stopped = await taskStopTool.execute({ shell_id: id }, ctx);
     expect(stopped.isError).not.toBe(true);
     expect(text(stopped.content)).toContain(`Stopped background task ${id}`);
@@ -264,7 +264,7 @@ describe('TaskOutput / TaskStop (official-name background-task surface)', () => 
 
   it('TaskStop on an already-terminal task reports status without erroring', async () => {
     const ctx = makeCtx(true);
-    const { id } = manager!.spawnBackground('bash', 'echo done', ctx) as { id: string };
+    const { id } = await manager!.spawnBackground('bash', 'echo done', ctx) as { id: string };
     await until(() => manager!.get(id)!.status === 'completed');
     const stopped = await taskStopTool.execute({ task_id: id }, ctx);
     expect(stopped.isError).not.toBe(true);
@@ -408,7 +408,7 @@ describe('forkShellSession — per-subagent persistent-state fork (audit 2026-07
   it('a stateless parent (no state dir) is returned as-is — nothing to fork or pollute', () => {
     const stateless: ShellManager = {
       stateDir: '',
-      spawnBackground: () => ({ error: 'unused' }),
+      spawnBackground: async () => ({ error: 'unused' }),
       get: () => undefined,
       kill: () => false,
       dispose: () => {},

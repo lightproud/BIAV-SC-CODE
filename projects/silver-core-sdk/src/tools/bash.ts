@@ -469,11 +469,11 @@ async function execute(
       // Windows-aware shell resolution (see shell-resolve.ts): candidates are
       // tried in order; an empty list means no POSIX shell on this host.
       const bgShells = resolvePosixShells(ctx.env as Record<string, string | undefined>);
-      let launched: ReturnType<typeof ctx.shells.spawnBackground> | { error: string } = {
+      let launched: Awaited<ReturnType<typeof ctx.shells.spawnBackground>> = {
         error: SHELL_NOT_FOUND_GUIDANCE,
       };
       for (const shell of bgShells) {
-        launched = ctx.shells.spawnBackground(shell, command, ctx, disableSandbox);
+        launched = await ctx.shells.spawnBackground(shell, command, ctx, disableSandbox);
         if (!('error' in launched)) break;
       }
       if ('error' in launched) {

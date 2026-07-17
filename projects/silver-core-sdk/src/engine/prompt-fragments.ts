@@ -254,12 +254,31 @@ export const MAIN_LOOP_BODY: PromptFragment[] = [
     gate: (has) => has('AskUserQuestion'),
     text: "Reserve the AskUserQuestion tool for decisions where the user's answer changes what you do next — not for choices with a conventional default or facts you can verify in the codebase yourself. In those cases pick the obvious option, mention it in your response, and proceed.",
   },
+  // M6 (audit 2026-07-17): formerly ONE fragment gated on WebFetch||WebSearch
+  // whose body described BOTH tools — with one of the pair disallowed, the
+  // prompt described an unregistered capability (red-line violation). Split so
+  // each tool's description is gated on that tool alone; the shared URL
+  // discipline stays under the either-present gate.
   {
-    id: 'webfetch-websearch',
+    id: 'webfetch',
+    slug: 'adapted',
+    faithful: false,
+    gate: (has) => has('WebFetch'),
+    text: 'WebFetch fetches a URL, converts the page to markdown, and answers a prompt against it. It fails on authenticated or private URLs. HTTP is upgraded to HTTPS, and cross-host redirects are returned to you rather than followed — call again with the redirect URL.',
+  },
+  {
+    id: 'websearch',
+    slug: 'adapted',
+    faithful: false,
+    gate: (has) => has('WebSearch'),
+    text: 'WebSearch searches the web and returns result blocks with titles and URLs; after answering from results, end with a "Sources:" list of the URLs you used as markdown links.',
+  },
+  {
+    id: 'web-url-discipline',
     slug: 'adapted',
     faithful: false,
     gate: (has) => has('WebFetch') || has('WebSearch'),
-    text: 'WebFetch fetches a URL, converts the page to markdown, and answers a prompt against it. It fails on authenticated or private URLs. HTTP is upgraded to HTTPS, and cross-host redirects are returned to you rather than followed — call again with the redirect URL. WebSearch searches the web and returns result blocks with titles and URLs; after answering from results, end with a "Sources:" list of the URLs you used as markdown links. Never generate or guess URLs unless you are confident they help the user with programming; prefer URLs the user provided or that appear in local files.',
+    text: 'Never generate or guess URLs unless you are confident they help the user with programming; prefer URLs the user provided or that appear in local files.',
   },
   // --- resume ungated ---
   {

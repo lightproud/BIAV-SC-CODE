@@ -40,8 +40,9 @@ import type {
 
 const DEFAULT_TRANSCRIPT_TAIL_BYTES = 32_768;
 
-/** Bounded tail read; any I/O trouble degrades to ''. */
-function readFileTail(path: string, maxBytes: number): string {
+/** Bounded tail read; any I/O trouble degrades to ''. Shared with the hook
+ *  runner's Stop-condition context (M12). */
+export function readFileTail(path: string, maxBytes: number): string {
   let fd: number | undefined;
   try {
     fd = openSync(path, 'r');
@@ -49,8 +50,11 @@ function readFileTail(path: string, maxBytes: number): string {
     const want = Math.min(size, maxBytes);
     if (want === 0) return '';
     const buf = Buffer.alloc(want);
-    readSync(fd, buf, 0, want, size - want);
-    return buf.toString('utf8');
+    // A short read (file shrank between fstat and read, or the OS returned
+    // fewer bytes) must not surface the buffer's zero-fill: decode only what
+    // was actually read, or the transcript tail ends in NUL padding.
+    const bytesRead = readSync(fd, buf, 0, want, size - want);
+    return buf.toString('utf8', 0, bytesRead);
   } catch {
     return '';
   } finally {

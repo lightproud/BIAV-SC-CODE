@@ -272,9 +272,26 @@ export function partitionForCompaction(
   messages: APIMessageParam[],
   effectiveInputBudget: number,
   cfg: CompactionConfig,
+  knownPromptFloor?: number,
 ): { prefix: APIMessageParam[]; suffix: APIMessageParam[] } | null {
   const keepBudget = Math.floor(effectiveInputBudget * cfg.keepRatio);
   const minFoldTokens = Math.floor(effectiveInputBudget * MIN_FOLD_RATIO);
+
+  // M5 (audit 2026-07-17): the trigger fires on max(estimate, knownPromptFloor)
+  // but every budget comparison below used the RAW estimate. On a history the
+  // heuristic under-counts (code/base64/CJK dense), the floor forces a trigger
+  // yet the estimate-based guards decline the fold — so nothing shrinks and the
+  // next request 400s "prompt too long" again. Calibrate the estimates by the
+  // ground-truth ratio (real previous prompt size / estimated size) so the
+  // guards see reality: an under-counted prefix passes minFoldTokens, and an
+  // under-counted suffix is no longer believed to fit the keep budget.
+  const rawTotal = estimateMessagesTokens(messages);
+  const calibration =
+    knownPromptFloor !== undefined && rawTotal > 0 && knownPromptFloor > rawTotal
+      ? knownPromptFloor / rawTotal
+      : 1;
+  const estimate = (msgs: APIMessageParam[]): number =>
+    Math.round(estimateMessagesTokens(msgs) * calibration);
 
   // Candidate cut points: indices of GENUINE user turns (a real prompt, i.e.
   // a user message that is NOT a tool_result-only turn). i=0 is excluded
@@ -297,7 +314,7 @@ export function partitionForCompaction(
       const suffix = messages.slice(i);
       return {
         i,
-        tokens: estimateMessagesTokens(suffix),
+        tokens: estimate(suffix),
         turns: countGenuineUserTurns(suffix),
       };
     });
@@ -340,7 +357,7 @@ export function partitionForCompaction(
     }
     if (asstCuts.length === 0) return null; // no safe boundary to fold at
     const fitting = asstCuts.filter(
-      (i) => estimateMessagesTokens(messages.slice(i)) <= keepBudget,
+      (i) => estimate(messages.slice(i)) <= keepBudget,
     );
     // Smallest fitting cut = MOST recent context retained under budget. If even
     // the smallest suffix overflows the keep budget, fall to the largest cut
@@ -360,7 +377,7 @@ export function partitionForCompaction(
   if (prefix.length <= SYNTHETIC_FOLD_LENGTH) return null;
   // Prefix too small to be worth folding: avoids re-folding an already-tiny
   // summarized prefix and stops per-iteration churn / boundary spam.
-  if (estimateMessagesTokens(prefix) < minFoldTokens) return null;
+  if (estimate(prefix) < minFoldTokens) return null;
   return { prefix, suffix };
 }
 
@@ -508,7 +525,11 @@ async function foldViaApi(
     .join('\n\n');
   // Summarization is cheap and mechanical: route it to compaction.model (e.g.
   // Haiku) when set, resolving a short alias, else the session model.
-  const summaryModel = resolveModelAlias(config.compaction?.model, config.model);
+  const summaryModel = resolveModelAlias(
+    config.compaction?.model,
+    config.model,
+    config.modelAliases,
+  );
   // C7 (BPT audit 2026-07-07): the prefix carries assistant turns whose thinking
   // blocks were signed by the SESSION model. This summary request routes to
   // summaryModel — deliberately a DIFFERENT model (e.g. Haiku) — which would 400
@@ -746,7 +767,7 @@ async function* performCompaction(
     return false; // no boundary, no mutation.
   }
   const budget = window - config.maxOutputTokens;
-  const part = partitionForCompaction(view.messages, budget, cfg);
+  const part = partitionForCompaction(view.messages, budget, cfg, knownPromptFloor);
   if (part === null) {
     deps.debug('compaction: nothing safe to fold');
     return false; // no boundary, no mutation.
@@ -774,7 +795,16 @@ async function* performCompaction(
   // shape the byte-golden tests pin.
   if (part.suffix[0]?.role === 'assistant') {
     const recap = textOf(synthetic[synthetic.length - 1]?.content ?? []);
-    synthetic = [{ role: 'user', content: recap }];
+    // M4 (audit 2026-07-17): the fold's leading user turn is the ONLY carrier
+    // of customInstructions + PreCompact additionalContext; collapsing to just
+    // the recap silently dropped both on every pure-tool-loop fold. Carry them
+    // into the collapsed turn as a labeled block (genuine-turn folds keep the
+    // exact [user, assistant] shape the byte-golden tests pin — untouched).
+    const collapsed =
+      effectiveInstructions !== null && effectiveInstructions.length > 0
+        ? `${recap}\n\n[Compaction instructions: ${effectiveInstructions}]`
+        : recap;
+    synthetic = [{ role: 'user', content: collapsed }];
   }
 
   // R3 retained regions: re-stamp every host-declared region VERBATIM into
@@ -805,7 +835,16 @@ async function* performCompaction(
   // only shrinks string tool_result CONTENT), so this stays boundary-safe.
   if (cfg.preTier) {
     const inputBudget = window - config.maxOutputTokens;
-    if (estimateMessagesTokens(view.messages) > inputBudget) {
+    // Same M5 calibration as partitionForCompaction: when the previous request's
+    // REAL size proves the estimator under-counts, judge the post-fold view by
+    // the calibrated estimate, so a still-oversized request sheds here instead
+    // of being believed to fit and 400ing again.
+    const rawPre = estimateMessagesTokens(view.messages);
+    const cal =
+      knownPromptFloor !== undefined && preTokens > 0 && knownPromptFloor > preTokens - overheadTokens
+        ? knownPromptFloor / Math.max(1, preTokens - overheadTokens)
+        : 1;
+    if (Math.round(rawPre * cal) > inputBudget) {
       const suffixStart = synthetic.length;
       const suffixMsgs = view.messages.slice(suffixStart);
       const shedSuffix = preTierPrefix(suffixMsgs, cfg);

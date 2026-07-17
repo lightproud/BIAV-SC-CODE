@@ -43,7 +43,7 @@ import type {
   RetryInfo,
   StreamRequest,
 } from '../internal/contracts.js';
-import { MessageAccumulator } from './accumulator.js';
+import { MessageAccumulator, toolInputTruncationOf } from './accumulator.js';
 import { addUsage, estimateCostUsd, normalizeUsage } from './pricing.js';
 import { contextWindowFor, outputCeilingFor } from './context-window.js';
 import {
@@ -446,22 +446,34 @@ export async function* runAgentLoop(
   // owns when; stopping is already decided by budgetStopReason).
   const isRootBudgetScope =
     config.parentToolUseId === undefined || config.parentToolUseId === null;
-  let budgetThresholdFired = false;
-  let budgetExhaustedFired = false;
+  // SESSION-anchored figures (audit 2026-07-17 M18): in multi-turn streaming
+  // mode the query layer re-arms config.maxBudgetUsd to the REMAINING budget
+  // before every turn, so this run's own counters drift off the session cap.
+  // budgetCostBaselineUsd carries the session cost already spent before this
+  // run (0 in string single-shot mode), and budgetEventState carries the
+  // one-shot latches across every run the same query drives — without it the
+  // per-run flags would reset each turn and the "one-shot" contract would
+  // fire once per TURN, not once per session.
+  const budgetCostBaselineUsd = config.budgetCostBaselineUsd ?? 0;
+  const budgetEventState = config.budgetEventState ?? {
+    thresholdFired: false,
+    exhaustedFired: false,
+  };
   const maybeFireBudgetThreshold = async (): Promise<void> => {
-    if (budgetThresholdFired || !isRootBudgetScope) return;
+    if (budgetEventState.thresholdFired || !isRootBudgetScope) return;
     if (config.maxBudgetUsd === undefined) return;
     const ratio = config.budgetThresholdRatio ?? 0.8;
-    if (totalCostUsd < config.maxBudgetUsd * ratio) return;
-    budgetThresholdFired = true;
+    const sessionCapUsd = budgetCostBaselineUsd + config.maxBudgetUsd;
+    if (budgetCostBaselineUsd + totalCostUsd < sessionCapUsd * ratio) return;
+    budgetEventState.thresholdFired = true;
     if (!deps.hooks.hasHooks('budget:threshold')) return;
     await deps.hooks.run(
       'budget:threshold',
       {
         ...baseHookFields,
         hook_event_name: 'budget:threshold',
-        cumulative_cost_usd: totalCostUsd,
-        max_budget_usd: config.maxBudgetUsd,
+        cumulative_cost_usd: budgetCostBaselineUsd + totalCostUsd,
+        max_budget_usd: sessionCapUsd,
         threshold_ratio: ratio,
       },
       undefined,
@@ -485,8 +497,8 @@ export async function* runAgentLoop(
     return '';
   };
   const fireBudgetExhausted = async (reason: string): Promise<void> => {
-    if (budgetExhaustedFired || !isRootBudgetScope) return;
-    budgetExhaustedFired = true;
+    if (budgetEventState.exhaustedFired || !isRootBudgetScope) return;
+    budgetEventState.exhaustedFired = true;
     if (!deps.hooks.hasHooks('budget:exhausted')) return;
     await deps.hooks.run(
       'budget:exhausted',
@@ -495,8 +507,11 @@ export async function* runAgentLoop(
         hook_event_name: 'budget:exhausted',
         reason,
         report: {
-          cumulative_cost_usd: totalCostUsd,
-          max_budget_usd: config.maxBudgetUsd ?? deps.familyBudget?.capUsd ?? 0,
+          cumulative_cost_usd: budgetCostBaselineUsd + totalCostUsd,
+          max_budget_usd:
+            config.maxBudgetUsd !== undefined
+              ? budgetCostBaselineUsd + config.maxBudgetUsd
+              : (deps.familyBudget?.capUsd ?? 0),
           num_turns: numTurns,
           last_assistant_summary: lastAssistantSummary(),
         },
@@ -611,10 +626,18 @@ export async function* runAgentLoop(
   // mid-run setMaxThinkingTokens() — which mutates the shared config object —
   // takes effect on the next assistant sub-turn, mirroring the per-turn re-read
   // of config.model below (finding #12).
-  // `effectiveMaxTokens` is the max_tokens the request will actually carry
-  // (config.maxOutputTokens, re-clamped for the live model on fallback) — the
-  // budget ceiling must track it or budget_tokens >= max_tokens 400s.
-  const computeThinking = (effectiveMaxTokens: number): StreamRequest['thinking'] => {
+  // H2 (audit T49): the wire form is resolved from the model the REQUEST is
+  // actually sent to (`liveModel` = streamAttempt's useModel), NOT from
+  // config.model — after a fallback switch those differ, and a cross-generation
+  // main/fallback pair would send the wrong thinking form and 400 every
+  // fallback attempt. L9 (same audit): `effectiveMaxTokens` is the max_tokens
+  // the request will actually carry (config.maxOutputTokens, re-clamped for
+  // the live model on fallback) — the budget ceiling must track it or
+  // budget_tokens >= max_tokens 400s.
+  const computeThinking = (
+    liveModel: string,
+    effectiveMaxTokens: number,
+  ): StreamRequest['thinking'] => {
     const t = config.thinking;
     if (t === undefined || t.type === 'disabled') {
       return undefined; // unset / explicitly disabled -> omit the param entirely
@@ -644,7 +667,7 @@ export async function* runAgentLoop(
     // 400 on `adaptive`. Emit whichever form the LIVE model accepts, regardless
     // of which the caller/preset expressed. Recomputed per turn, so a mid-run
     // setModel() to a different generation is handled. See thinking-model.ts.
-    if (supportsAdaptiveThinking(config.model)) {
+    if (supportsAdaptiveThinking(liveModel)) {
       return { type: 'adaptive', ...(display !== undefined ? { display } : {}) };
     }
     // Pre-adaptive model: enabled + clamped budget. The Messages API requires
@@ -833,7 +856,7 @@ export async function* runAgentLoop(
             },
           }
         : {}),
-      thinking: computeThinking(effectiveMaxTokens),
+      thinking: computeThinking(useModel, effectiveMaxTokens),
       signal,
       onRetry,
     };
@@ -1155,6 +1178,10 @@ export async function* runAgentLoop(
                   `tool-loop turn is signed by the failing model ${model} and its thinking ` +
                   `is API-required; surfacing the original error to avoid an invalid-signature 400`,
               );
+              // M9 (audit 2026-07-17): terminal throw still folds the doomed
+              // attempt's billed tokens (its message_start already carried
+              // input tokens), matching the abort / replay / fallback paths.
+              if (firstSink.usage !== undefined) recordUsage(model, firstSink.usage);
               throw err;
             }
             deps.debug(
@@ -1191,6 +1218,11 @@ export async function* runAgentLoop(
             }
             break;
           }
+          // M9 (audit 2026-07-17): the plain terminal path (no abort, no
+          // replay, no fallback) was the ONE exit that dropped the failed
+          // attempt's already-billed tokens; fold them so the error-path cost
+          // totals stay honest, exactly as every sibling exit above does.
+          if (firstSink.usage !== undefined) recordUsage(model, firstSink.usage);
           throw err;
         }
       }
@@ -1268,7 +1300,17 @@ export async function* runAgentLoop(
         assistant.stop_reason === 'tool_use' || turnTruncated
           ? assistant.content.filter((b): b is ToolUseBlock => b.type === 'tool_use')
           : [];
-
+      // H4 (audit T49): a tool_use whose input JSON was truncated across delta
+      // chunks is finalized with input:{} + a non-enumerable stamp (see
+      // accumulator.ts) instead of killing the turn at content_block_stop.
+      // Such a block must NEVER execute — its parameters are not what the
+      // model wrote (and a coincidentally-parseable prefix would be worse:
+      // e.g. a Write with half its content). On a stop_reason:'tool_use' turn
+      // that leaves no honest continuation, so fail the turn diagnosably
+      // BEFORE any tool in the batch runs. Non-tool_use stops (max_tokens —
+      // the routine producer of this shape) never reach here (toolUses is
+      // empty) and now complete normally, with the C6 orphan filters dropping
+      // the stamped block from persisted history.
       // v0.3: record this turn's isolated metrics (usage/cost/apiMs/toolCalls).
       {
         const turnUsage = normalizeUsage(assistant.usage);
@@ -1281,6 +1323,24 @@ export async function* runAgentLoop(
           stopReason: assistant.stop_reason,
           toolCalls: toolUses.length,
         });
+      }
+      const truncatedTool = toolUses.find((b) => toolInputTruncationOf(b) !== undefined);
+      if (truncatedTool !== undefined) {
+        // Same C6 orphan filter as the refusal path below: keep text/thinking
+        // context, never persist the unexecutable tool_use unpaired.
+        pushAssistant(
+          assistant.content.filter((b) => b.type !== 'tool_use'),
+          assistant.model,
+        );
+        yield errorResult(
+          'error_during_execution',
+          `Tool call "${truncatedTool.name}" (${truncatedTool.id}) arrived with ` +
+            `truncated input JSON and was not executed: ` +
+            `${toolInputTruncationOf(truncatedTool)}`,
+          undefined,
+          'tool_input_truncated',
+        );
+        return;
       }
       // C5 (refusal, BPT audit 2026-07-07): a safety decline (Fable 5 / newer
       // models) returns stop_reason 'refusal' on a 200 with possibly-empty /

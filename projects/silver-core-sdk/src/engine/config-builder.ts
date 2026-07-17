@@ -249,6 +249,10 @@ export function buildEngineConfig(args: {
     maxTurns: options.maxTurns,
     maxBudgetUsd: options.maxBudgetUsd,
     budgetThresholdRatio: options.budgetThresholdRatio,
+    // R2 one-shot latches live on the CONFIG (one per query) so multi-turn
+    // streaming — which re-enters runAgentLoop per turn — keeps the budget
+    // events once-per-session, not once-per-turn (audit 2026-07-17 M18).
+    budgetEventState: { thresholdFired: false, exhaustedFired: false },
     thinking: thinkingConfig,
     maxThinkingTokens: maxThinkingTokensConfig,
     // tool_choice steer/constraint; forwarded to each request when tools are
@@ -273,6 +277,12 @@ export function buildEngineConfig(args: {
     // Custom price entries (BPT-EXTENSION, audit 2026-07-10): make cost
     // metrics + maxBudgetUsd work for non-Claude models (openai protocol).
     pricing: options.provider?.pricing,
+    // Host alias overrides (BPT-EXTENSION, model-alias mapping 2026-07-17):
+    // remap `opus`/`sonnet`/`haiku`/`fable` (or any id) to the gateway's ids
+    // for subagent spawn and the compaction summarizer.
+    ...(options.modelAliases !== undefined
+      ? { modelAliases: options.modelAliases }
+      : {}),
     includePartialMessages: options.includePartialMessages === true,
     // Prompt-composition observability (BPT-EXTENSION): emit a per-request
     // system/prompt_composition message; off by default (zero cost, wire

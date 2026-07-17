@@ -184,12 +184,13 @@ describe('error payloads and request ids (both error paths)', () => {
     expect(e3.message).toHaveLength(2000);
     vi.unstubAllGlobals();
 
-    // Twin nuance vs the openai arm: a non-object `error` member is NOT
-    // unwrapped here (extractErrorPayload requires an object) - the raw JSON
-    // body flows through as the message.
+    // M3 (audit 2026-07-17) closed the twin nuance: a STRING `error` member
+    // ({ error: 'plain words' }) is now unwrapped as the message on this arm
+    // too, matching the openai arm — the raw JSON body no longer leaks
+    // through as the message text.
     vi.stubGlobal('fetch', vi.fn(async () => new Response(JSON.stringify({ error: 'plain words' }), { status: 400 })));
     const e4 = (await errOf(collect(makeT().stream(baseReq())))) as APIStatusError;
-    expect(e4.message).toBe('{"error":"plain words"}');
+    expect(e4.message).toBe('plain words');
   });
 
   it('a mid-stream error frame with a non-string message stringifies the error object', async () => {

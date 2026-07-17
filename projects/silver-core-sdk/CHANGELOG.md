@@ -16,7 +16,7 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
-## 0.63.1 — 2026-07-17
+## 0.64.3 — 2026-07-17
 
 T49 batch D: 65 low-severity fixes from the 100-defect audit
 (`Public-Info-Pool/Resource/repo-engineering/silver-core-sdk-bug-audit-20260717.md`),
@@ -100,6 +100,213 @@ documented in code. +19 regression tests (`tests/audit-t49-batch-d.test.ts`);
 5 existing assertions that had LOCKED audited-defective behavior updated
 (grep silent truncation, offset masking, tips neutral fallback, legacy
 pricing-to-$0, empty wrapped annotations).
+
+## 0.64.2 — 2026-07-17
+
+T49 batch C (the 2026-07-17 100-defect audit, keeper-fired): all 18 P1
+medium-severity legacy defects — M1–M16 + M19/M20 (M17 → batch B, M18 →
+batch A). 16 code fixes, 2 audit-entry re-adjudications, regression tests in
+`tests/audit-t49-batch-c.test.ts` (+ M15/M16 in `tests/subagents.test.ts`):
+
+- **M1** transport/node-http: `firePreconnect` now DRAINS the probe response
+  instead of `body.cancel()` — cancel destroyed the freshly warmed socket on
+  the node adapter, so the first real request re-dialed and the probe's
+  entire benefit was lost.
+- **M2** internal/regex-guard: `hasNestedQuantifier` also flags quantified
+  groups whose alternation branches OVERLAP (`(a|a)+`, `(a|ab)+`,
+  `(\d|\d\d)+`, nested `((a|a))+`, `(.|x)*`) — star-height-1 exponential
+  ambiguity the old detector missed; `(foo|bar)+`-style disjoint alternations
+  keep working.
+- **M3** error-normalize: the string-error gateway shape
+  `{ error: 'rate limited', status: 503 }` is now detected and extracted —
+  it used to fall through to the generic branch as `retryable:false`,
+  discarding a retryable 503.
+- **M4** engine/compaction: the pure-tool-loop (H1) collapsed fold now
+  carries customInstructions + PreCompact additionalContext into the
+  collapsed user turn — both were silently dropped on every such fold.
+- **M5** engine/compaction: partition guards are calibrated by
+  `knownPromptFloor` (real previous prompt size ÷ estimate) — an
+  under-counted history used to trigger the fold and then have the
+  estimate-based guards decline it, guaranteeing the next 'prompt too
+  long' 400.
+- **M6** engine/prompt-fragments: the webfetch-websearch fragment split into
+  per-tool-gated fragments (+ a shared URL-discipline clause) — with one of
+  the pair disallowed, the prompt described an unregistered tool (red-line).
+- **M7** transport Retry-After HTTP-date: already fixed in source (0.62.5
+  twin alignment) but had zero test coverage — now locked by tests
+  (delta-seconds, future/past HTTP-date, cap, garbage).
+- **M8** transport/sse: re-adjudicated NOT a defect — `join('\n')` is
+  mathematically equivalent to the WHATWG append+strip form; semantics
+  pinned by tests.
+- **M9** engine/loop: the plain terminal error path (no abort, no replay,
+  no fallback — including the withheld-fallback throw) now folds the doomed
+  attempt's already-billed usage, matching every sibling exit.
+- **M10** mcp/http: an SSE response whose final `data:` line has no trailing
+  newline is delivered instead of dropped as mcp_invalid_response.
+- **M11** tools/shells+bash: `spawnBackground` awaits the spawn/error race —
+  a detached spawn reports ENOENT asynchronously, so a missing `bash` was
+  acked as running and silently flipped to 'failed'; now it is a returned
+  error the bash→sh candidate chain falls through on (interface change:
+  `ShellManager.spawnBackground` returns a Promise).
+- **M12** hooks/runner: Stop/SubagentStop condition evaluation now appends a
+  bounded transcript TAIL to the evaluator context — it only ever saw
+  `transcript_path` (a path string), so content conditions were never met
+  and conditioned Stop callbacks never fired.
+- **M13** hooks: "could not evaluate" (evaluator unavailable / unparseable
+  reply) is now distinct from a clean negative verdict
+  (`HookConditionResult.evaluationFailed`), and under the matcher's
+  effective `failureMode:'closed'` it ADMITS the matcher (a conditioned deny
+  hook still denies) instead of silently failing open.
+- **M14** subagents/runtime: the foreground success path no longer clobbers
+  a terminal 'killed' status set during the releaseWorktree await window
+  (same running-guard as every sibling path; no contradictory task event).
+- **M15** subagents/runtime: the transport-resolution failure early-exit now
+  fires SubagentStop — SubagentStart had already fired, leaking one unit per
+  failure for hosts that pair Start/Stop for resource accounting.
+- **M16** subagents/runtime: a SendMessage continuation to a
+  worktree-isolated child whose clean worktree was auto-removed now
+  RE-provisions a fresh worktree (and releases it clean-only afterwards) —
+  the continuation used to run its tools against the deleted phantom path.
+- **M19** mcp/registry: `reconnect()` serializes per server — two concurrent
+  reconnects could interleave close/reset/connect and orphan a freshly
+  published connection (live child process, nothing ever closing it).
+- **M20** tools/webfetch: 204/205 are reported as honest bodyless successes
+  instead of `unsupported content type "unknown"` errors.
+
+
+## 0.64.1 — 2026-07-17
+
+Bug-fix sweep, audit 2026-07-17 (T49) **batch A**: all 9 defects the same-day
+100-defect audit found in the 0.63.0 new code
+(`Public-Info-Pool/Resource/repo-engineering/silver-core-sdk-bug-audit-20260717.md`),
+each with a regression test that reds against the pre-fix source (verified by
+stash-run: 17 red).
+
+- **M18 (R2)**: `budget:threshold` judged each turn against the re-armed
+  REMAINING budget instead of the original `maxBudgetUsd`, drifting the
+  threshold in multi-turn streaming sessions — and its per-run latch made the
+  "one-shot" event fire once per TURN. The engine now receives
+  `budgetCostBaselineUsd` (session cost already spent before the run) and a
+  query-lifetime `budgetEventState` latch; both budget events judge and
+  report session-anchored figures (`budget:exhausted`'s closeout report cap /
+  cumulative included).
+- **L57 (R1)**: the session-end memory round ran on the LAST turn's stale
+  budget re-arm (that turn's own spend uncounted), letting the round overspend
+  the cap; it now re-arms from real session state and is skipped outright when
+  the cap is spent.
+- **L58 (R1)**: an interrupted turn's already-billed partial spend was folded
+  into the in-memory accumulators only — no `accounting` record — so
+  `getSessionAccounting` under-counted every interrupted turn. The abort path
+  now persists a cost/turns delta record.
+- **L59**: the abort/error path and end-of-run teardown never drained the
+  observability/mirror queues — SubagentStop / hook-lifecycle / mirror-error
+  events produced during an interrupted turn's teardown or settleAll were
+  queued forever. Drained now on the turn-interrupt path (before the terminal
+  result) and at the end of a normal completion's teardown.
+- **L60 (R1)**: a prelude block missing `content` rendered the literal string
+  "undefined" into the model's first prompt; `options.prelude` is now
+  validated at construction (string content; string title when present).
+- **L62 (R3)**: the retained-region byte cap summed per-region renders but
+  `renderBlocks()` joins with `\n\n` — N regions could exceed the cap by
+  2·(N−1) bytes. The joiner bytes are now budgeted.
+- **L63 (R4)**: `ReportLedger.deserialize` re-recorded entries through
+  `record()`, whose per-insert age eviction (new entry's `at` as "now") made
+  the round-trip lossy under `maxAgeMs` + non-monotonic timestamps. Revival
+  now reproduces the serialized entries verbatim (capacity invariant still
+  enforced; age pruning left to an explicit host `prune(now)`).
+- **L75 (R4)**: `record()` accepted non-finite timestamps (NaN/Infinity),
+  making `digest()` throw `RangeError` inside `toPrelude`/`toRetainedRegion`
+  (the latter mid-compaction) and breaking the serialize round-trip. Finite
+  `at` is now enforced at the write and at deserialize.
+- **L32 (goal)**: the Stop-gate evaluator's transcript-tail read ignored
+  `readSync`'s actual byte count — a short read padded the evaluator context
+  with trailing NULs. Only the bytes actually read are decoded now.
+
+Validation (re-run after rebasing onto the batch-B/0.64.0 main): vitest
+2503 passed (147 files) with 24 new regression tests
+across `bug-sweep-t49-batch-a` / `budget-events` / `loop-support-ledger` /
+`compaction-retention` / `goal-tail-read`; `tsc` + `build` clean; the
+`loop-support` mutation-ratchet target re-measured at 94.35 and its only-up
+floor raised 93.73 -> 94.35.
+
+## 0.64.0 — 2026-07-17
+
+Model-alias mapping (BPT production 400 root-cause fix: a subagent spawned
+with bare `'sonnet'` resolved through the SDK's built-in table onto
+`claude-sonnet-4-5`, which the gateway rejected as an unknown model):
+
+- **Built-in alias table refreshed**: `sonnet → claude-sonnet-5` (was the
+  prior-generation `claude-sonnet-4-5`); `opus`/`haiku`/`fable` already
+  current, unchanged. Pricing / context-window / thinking-capability tables
+  all match by prefix or denylist, so the new id needs no companion entries.
+- **`options.modelAliases` (BPT-EXTENSION)**: host overrides for the short
+  aliases (or any id), winning over the built-in table key-by-key — a gateway
+  serving non-Anthropic ids maps `sonnet → azure/...` once instead of passing
+  full ids at every seam. Threaded to all three `resolveModelAlias` consumers:
+  subagent spawn (`engineConfig.modelAliases`), the compaction summarizer, and
+  utility calls (`UtilityCallOptions.modelAliases`, fed by query() for hook
+  `condition` evaluation). `'inherit'` resolves before the override table and
+  is never remappable. Closes the docs/SUBAGENTS.md §3 "until
+  options.modelAliases ships" debt.
+
+## 0.63.1 — 2026-07-17
+
+T49 batch B — the 6 P0 existing-code high/security findings of the 100-defect
+audit (`Public-Info-Pool/Resource/repo-engineering/silver-core-sdk-bug-audit-20260717.md`),
+regression-locked by `tests/t49-batch-b.test.ts` (21 tests):
+
+- **H1 — Edit/MultiEdit corrupted non-UTF-8 text files.** Both tools decoded
+  with lossy `toString('utf8')` and wrote the result back, baking U+FFFD over
+  EVERY invalid byte in the file (GBK/Shift-JIS/Latin-1 text passes the NUL
+  sniff). New `isLossyUtf8()` guard (fsutil, `node:buffer.isUtf8`) refuses the
+  edit with a convert-first error; file bytes stay untouched. Also moots L15's
+  Edit-side mojibake pre-image (the checkpoint recorder is never reached).
+- **H2 — thinking wire form followed `config.model`, not the live model.**
+  After a fallback switch to a different model generation, every fallback
+  attempt sent the wrong on-form (`adaptive` vs `budget_tokens`) and 400'd —
+  the fallback was permanently useless across generations. `computeThinking`
+  now takes the attempt's `useModel`.
+- **H3 — OpenAI arm voided a complete turn when the gateway dangled the
+  post-`finish_reason` tail.** Unlike the Anthropic arm (returns at
+  `message_stop`), this arm kept reading for `[DONE]`/usage; an idle-watchdog
+  abort or a reset in that window discarded the fully received answer (and a
+  replayed turn re-runs its side effects). A connection-layer failure after
+  `finish_reason` now COMPLETES the received turn (logged; the trailing
+  include_usage chunk may be lost — accepted degradation). In-stream error
+  frames and caller aborts still propagate.
+- **H4 — tool-arg JSON truncated across delta chunks killed the whole turn.**
+  A routine max_tokens cut mid-arguments made the accumulator THROW at
+  `content_block_stop` ("Failed to parse tool_use input JSON"), voiding the
+  turn on both arms (the OpenAI arm's `finish_reason:'length'` closes blocks
+  via `translator.finish()` into the same parse). The block now finalizes with
+  `input:{}` plus a non-enumerable truncation stamp (never serialized): a
+  max_tokens turn completes as an honest success (C6 filters drop the orphan
+  from persisted history; salvage already excluded it), and a
+  `stop_reason:'tool_use'` turn carrying one fails diagnosably with new
+  `error_code: 'tool_input_truncated'` BEFORE any tool executes — a truncated
+  (or coincidentally-parseable prefix) input never reaches a tool. The
+  audit's stated byte-split mechanism (multibyte char cut at the SSE chunk
+  boundary) was probed and REFUTED — the streaming TextDecoder already
+  reassembles split sequences; the probe is locked in the test file.
+- **H5 — structured-output extraction was schema-blind.** It validated only
+  the FIRST parseable JSON span, so a leading "legal but wrong" JSON in prose
+  (`{"note":"x"}` before `{"answer":42}`) failed the turn and burned the
+  bounded retries. Extraction is now schema-aware: every lenient candidate
+  (direct / fenced / each balanced span) is validated in order and the first
+  schema-valid one wins; when none validates, the first candidate's violations
+  drive the corrective re-prompt. The module moved to
+  `internal/structured-output.ts` (shared-kernel) with an engine facade, so
+  the workflow engine's `agent()` opts.schema path (previously a shallow
+  required-keys check — schema-blind to types/nesting) now runs the same full
+  validator: a type-violating reply yields null instead of masquerading as
+  validated.
+- **M17 — cross-protocol subagent transports memoized per protocol only.**
+  A `createSubagentTransportResolver` shared across differently-credentialed
+  queries (the documented usage) handed tenant B's subagents the transport
+  built with tenant A's key/endpoint. The memo key now carries the full
+  tenant identity: derived child provider config, the protocol's
+  credential/endpoint env chain, and function-knob (fetch/httpClient)
+  identity. Same identity keeps the warm-pool memoization.
 
 ## 0.63.0 — 2026-07-17
 

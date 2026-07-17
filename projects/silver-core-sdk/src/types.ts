@@ -1844,6 +1844,17 @@ export type Options = {
    */
   resolveSubagentTransport?: SubagentTransportResolver;
   /**
+   * BPT-EXTENSION (model-alias mapping, 2026-07-17): host overrides for the
+   * short model aliases (`opus` / `sonnet` / `haiku` / `fable`) that
+   * AgentDefinition.model, compaction.model, and utility calls may use. The
+   * built-in table maps them to Anthropic-official ids, which a gateway
+   * serving different ids rejects (a bare `'sonnet'` then 400s the subagent).
+   * Entries here win over the built-in table key-by-key and may add new keys
+   * (including remapping a full id); `'inherit'` is not remappable. Absent ->
+   * the built-in table alone (previous behavior).
+   */
+  modelAliases?: Readonly<Record<string, string>>;
+  /**
    * Bash sandbox (G-SANDBOX). Default ON when a backend resolves (bubblewrap
    * on Linux); on platforms with no backend (win32/darwin) Bash runs
    * unsandboxed and no sandbox guidance is emitted — the SDK never pretends

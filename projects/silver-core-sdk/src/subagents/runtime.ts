@@ -75,6 +75,8 @@ import {
   StallWatchdog,
   resolveStallTimeoutMs,
 } from '../transport/stall-watchdog.js';
+import { existsSync } from 'node:fs';
+
 import { addWorktree, removeWorktreeIfClean } from '../internal/worktree.js';
 import {
   DEFAULT_SUBAGENT_MAX_TURNS,
@@ -759,6 +761,11 @@ export function createSubagentRuntime(
     sidechain: SidechainInfo;
     controller: AbortController;
     queue: Promise<unknown>;
+    /** M16: set for a worktree-isolated child — the repo root its worktree was
+     *  cut from, so a SendMessage continuation can RE-provision one when the
+     *  previous episode's clean worktree was auto-removed on exit (the record's
+     *  cwd then points at a deleted path). */
+    worktreeRepoRoot?: string;
   };
   const childRegistry = new Map<string, ChildRecord>();
 
@@ -1134,7 +1141,11 @@ export function createSubagentRuntime(
       // override, then agentDef.model, through the same alias path.
       const childModel = forkActive
         ? engineConfig.model
-        : resolveModelAlias(params.model ?? agentDef.model, engineConfig.model);
+        : resolveModelAlias(
+            params.model ?? agentDef.model,
+            engineConfig.model,
+            engineConfig.modelAliases,
+          );
 
       // --- Cross-protocol transport routing (P0, 2026-07-13) ---------------
       // An isolated child whose resolved model is only served on a different
@@ -1166,6 +1177,12 @@ export function createSubagentRuntime(
           // hook exists to prevent.
           const message = err instanceof Error ? err.message : String(err);
           await releaseWorktree().catch(() => undefined);
+          // M15 (audit 2026-07-17): SubagentStart already fired above — a host
+          // that pairs Start/Stop for per-agent resource accounting leaked one
+          // unit per failed resolution. Close the pair on this early exit too.
+          await fireSubagentStop(agentId, params.subagentType, params.signal).catch(
+            () => undefined,
+          );
           emitTask({
             type: 'system',
             subtype: 'task_updated',
@@ -1409,6 +1426,7 @@ export function createSubagentRuntime(
         sidechain: sidechainInfo,
         controller: childController,
         queue: Promise.resolve(),
+        ...(worktreeDir !== undefined ? { worktreeRepoRoot: cwd } : {}),
       };
       childRegistry.set(agentId, record);
 
@@ -1597,8 +1615,16 @@ export function createSubagentRuntime(
       } finally {
         await releaseWorktree().catch(() => undefined);
       }
-      record.status = result.isError ? 'failed' : 'completed';
-      emitTaskFinished(agentId, result);
+      // M14 (audit 2026-07-17): killAgent can flip the record to 'killed'
+      // inside the releaseWorktree await window above; the success path (unlike
+      // its catch sibling) then clobbered the terminal status back to
+      // 'completed' AND emitted a contradictory task_updated event on top of
+      // the kill site's own. Same guard as every other terminal path. The
+      // computed result is still returned — the work did finish.
+      if (record.status === 'running') {
+        record.status = result.isError ? 'failed' : 'completed';
+        emitTaskFinished(agentId, result);
+      }
       // Fire the stop hook with a FRESH signal and swallow its errors, mirroring
       // the background path: the child has already finished (result + usage are
       // computed), so an outer abort landing during the stop-hook await must not
@@ -1633,6 +1659,49 @@ export function createSubagentRuntime(
       record.controller = new AbortController();
     }
     const contController = record.controller;
+
+    // M16 (audit 2026-07-17): a worktree-isolated child that left its tree
+    // CLEAN had the worktree auto-removed when its previous episode ended —
+    // this record's cwd then points at a deleted path, and every continuation
+    // tool call would read/write a phantom directory (the exact coordinator
+    // "research -> implement" flow). Re-provision a fresh worktree from the
+    // same repo root and rewire the record's cwd for this and later episodes;
+    // the episode-end release below mirrors the spawn path (clean = removed,
+    // work = kept).
+    let releaseEpisodeWorktree: (() => Promise<void>) | undefined;
+    if (record.worktreeRepoRoot !== undefined && !existsSync(record.config.cwd)) {
+      const repoRoot = record.worktreeRepoRoot;
+      const wt = await addWorktree(repoRoot);
+      if ('error' in wt) {
+        const message =
+          `could not re-provision the isolation worktree for continuation: ${wt.error}`;
+        record.status = 'failed';
+        emitTaskFinished(agentId, { text: message, isError: true });
+        return {
+          text: message,
+          isError: true,
+          usage: { totalTokens: 0, toolUses: 0, durationMs: 0 },
+        };
+      }
+      record.config = { ...record.config, cwd: wt.dir };
+      record.deps = {
+        ...record.deps,
+        toolContext: { ...record.deps.toolContext, cwd: wt.dir },
+      };
+      const episodeDir = wt.dir;
+      const episodeBase = wt.baseHead;
+      releaseEpisodeWorktree = async () => {
+        const outcome = await removeWorktreeIfClean(repoRoot, episodeDir, episodeBase);
+        if (outcome === 'kept') {
+          debug(
+            `subagent ${agentId}: continuation worktree ${episodeDir} kept ` +
+              '(uncommitted changes, committed work, or git failure)',
+          );
+        }
+      };
+      debug(`subagent ${agentId}: continuation worktree re-provisioned at ${episodeDir}`);
+    }
+
     record.status = 'running';
     record.history.push({ role: 'user', content: params.message });
     // Fresh signal composition: the spawn-time ToolContext signal belonged to
@@ -1695,6 +1764,7 @@ export function createSubagentRuntime(
       throw err;
     } finally {
       stallWatchdog.dispose();
+      await releaseEpisodeWorktree?.().catch(() => undefined);
     }
   }
 

@@ -12,7 +12,7 @@ import type {
   ToolResultPayload,
 } from '../internal/contracts.js';
 import { AbortError, isAbortError } from '../errors.js';
-import { formatCatN, looksBinary, resolveAbs } from './fsutil.js';
+import { formatCatN, isLossyUtf8, looksBinary, resolveAbs } from './fsutil.js';
 import { EDIT_DESCRIPTION } from './descriptions.js';
 
 /** Context lines shown around the first edit site in the success snippet. */
@@ -147,6 +147,17 @@ export const editTool: BuiltinTool = {
       if (looksBinary(buf)) {
         return errorResult(
           `Edit failed: "${abs}" appears to be a binary file and cannot be edited as text.`,
+        );
+      }
+      // H1 (audit T49): a non-UTF-8 text file (GBK / Shift-JIS / Latin-1)
+      // passes the NUL sniff but decodes lossily — toString('utf8') turns every
+      // invalid sequence into U+FFFD, and the write below would bake those
+      // replacement bytes into the WHOLE file, not just the edit site. Refuse.
+      if (isLossyUtf8(buf)) {
+        return errorResult(
+          `Edit failed: "${abs}" is not valid UTF-8 text. Editing it would ` +
+            `corrupt its non-UTF-8 bytes; convert the file to UTF-8 first ` +
+            `(e.g. iconv) or edit it with a byte-safe tool.`,
         );
       }
       const text = buf.toString('utf8');

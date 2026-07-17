@@ -276,3 +276,61 @@ describe('Query.setRetainedRegion / removeRetainedRegion', () => {
     for await (const _m of q) void _m;
   });
 });
+
+// ---------------------------------------------------------------------------
+// Audit 2026-07-17 batch A: L62 — the cap must measure the JOINED render
+// ---------------------------------------------------------------------------
+
+describe('RetentionStore byte cap covers renderBlocks() joiners (L62)', () => {
+  it('counts the 2-byte \\n\\n joiner between regions toward the cap', () => {
+    const a = { id: 'a', content: 'x' };
+    const b = { id: 'b', content: 'y' };
+    const rendered = (r: { id: string; content: string }) =>
+      Buffer.byteLength(renderRetainedRegion(r), 'utf8');
+    // Cap set to EXACTLY the two independent renders: before the fix this
+    // admitted both regions while renderBlocks() emitted 2 bytes more.
+    const exactSum = rendered(a) + rendered(b);
+    const store = new RetentionStore(exactSum, [a]);
+    expect(() => store.set(b)).toThrow(ConfigurationError);
+    expect(() => store.set(b)).toThrow(/never truncates/);
+    // With the joiner budgeted, both fit — and the emitted form obeys the cap.
+    const roomy = new RetentionStore(exactSum + 2, [a]);
+    roomy.set(b);
+    expect(Buffer.byteLength(roomy.renderBlocks(), 'utf8')).toBeLessThanOrEqual(
+      roomy.maxBytes,
+    );
+    expect(Buffer.byteLength(roomy.renderBlocks(), 'utf8')).toBe(exactSum + 2);
+  });
+
+  it('holds the invariant for N regions (2·(N−1) joiner bytes)', () => {
+    const regions = ['a', 'b', 'c', 'd'].map((id) => ({ id, content: id.repeat(3) }));
+    const sum = regions.reduce(
+      (acc, r) => acc + Buffer.byteLength(renderRetainedRegion(r), 'utf8'),
+      0,
+    );
+    const cap = sum + 2 * (regions.length - 1);
+    const store = new RetentionStore(cap, regions);
+    expect(Buffer.byteLength(store.renderBlocks(), 'utf8')).toBe(cap);
+    // One byte less than the true joined size must throw at declaration.
+    expect(() => new RetentionStore(cap - 1, regions)).toThrow(ConfigurationError);
+  });
+
+  it('a single region carries no joiner surcharge', () => {
+    const solo = { id: 'solo', content: 'z'.repeat(10) };
+    const exact = Buffer.byteLength(renderRetainedRegion(solo), 'utf8');
+    const store = new RetentionStore(exact, [solo]);
+    expect(Buffer.byteLength(store.renderBlocks(), 'utf8')).toBe(exact);
+  });
+
+  it('replacement re-measures the joiner count correctly (no double surcharge)', () => {
+    const a = { id: 'a', content: 'aaa' };
+    const b = { id: 'b', content: 'bbb' };
+    const bigger = { id: 'b', content: 'bbbb' };
+    const size = (r: { id: string; content: string }) =>
+      Buffer.byteLength(renderRetainedRegion(r), 'utf8');
+    const cap = size(a) + size(bigger) + 2;
+    const store = new RetentionStore(cap, [a, b]);
+    store.set(bigger); // replaces b; still two regions, one joiner
+    expect(Buffer.byteLength(store.renderBlocks(), 'utf8')).toBe(cap);
+  });
+});

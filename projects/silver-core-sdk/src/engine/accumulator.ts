@@ -10,6 +10,38 @@ import type {
   RawMessageStreamEvent,
 } from '../types.js';
 
+/**
+ * H4 (audit T49) — truncated tool-input marker. A tool_use whose accumulated
+ * input_json_delta fragments do not parse was CUT ACROSS CHUNKS in transit
+ * (the routine case: a max_tokens stop mid-arguments; the OpenAI arm's
+ * finish_reason:'length' closes blocks through translator.finish() the same
+ * way). Throwing at content_block_stop — the previous behavior — killed the
+ * WHOLE turn with a protocol error for an ordinary max_tokens event. Instead
+ * the block is finalized with `input: {}` and stamped with this NON-ENUMERABLE
+ * marker (never serialized to the wire or the transcript); the engine treats
+ * marked blocks as non-executable: they are dropped by the C6 orphan filters
+ * on natural-end paths, and a stop_reason:'tool_use' turn carrying one fails
+ * with a diagnosable `tool_input_truncated` error instead of executing a tool
+ * on truncated (or worse, coincidentally-parseable prefix) parameters.
+ */
+const TRUNCATED_TOOL_INPUT = Symbol('scs.truncatedToolInput');
+
+/** Stamp a finalized tool_use block as carrying truncated input (see above). */
+function stampTruncatedInput(block: ContentBlock, reason: string): ContentBlock {
+  Object.defineProperty(block, TRUNCATED_TOOL_INPUT, {
+    value: reason,
+    enumerable: false, // never reaches JSON.stringify -> never on the wire
+    configurable: true,
+    writable: true,
+  });
+  return block;
+}
+
+/** The truncation reason of a tool_use block, or undefined when intact. */
+export function toolInputTruncationOf(block: ContentBlock): string | undefined {
+  return (block as { [TRUNCATED_TOOL_INPUT]?: string })[TRUNCATED_TOOL_INPUT];
+}
+
 /** In-progress content block state, keyed by stream index. */
 type PendingBlock =
   | { type: 'text'; text: string; citations?: unknown[] }
@@ -25,6 +57,9 @@ type PendingBlock =
       partialJson: string;
       /** Parsed final input, set at content_block_stop. */
       input?: Record<string, unknown>;
+      /** H4: parse-failure reason when the accumulated JSON was truncated in
+       *  transit; such a block never gets `input` and never executes. */
+      truncated?: string;
     }
   // Finding M1 — forward-compatibility: a block type this accumulator does not
   // model (e.g. server_tool_use / web_search_tool_result, or any future type)
@@ -158,7 +193,9 @@ export class MessageAccumulator {
           );
         }
         if (block.type === 'tool_use') {
-          block.input = this.parseToolInput(event.index, block);
+          const parsed = this.parseToolInput(block);
+          if (parsed.ok) block.input = parsed.value;
+          else block.truncated = parsed.reason;
         }
         this.closedIndices.add(event.index);
         return;
@@ -238,16 +275,30 @@ export class MessageAccumulator {
         case 'redacted_thinking':
           content.push({ type: 'redacted_thinking', data: block.data });
           break;
-        case 'tool_use':
-          content.push({
+        case 'tool_use': {
+          // Missing content_block_stop (truncated stream): parse whatever
+          // JSON accumulated so far rather than dropping the block. H4: a
+          // parse failure — here or at content_block_stop — means the input
+          // was truncated across delta chunks (typically a max_tokens cut);
+          // emit the block with `input:{}` and the truncation stamp instead
+          // of throwing, so the turn survives with honest semantics (the
+          // engine never executes a stamped block).
+          let input = block.input;
+          let truncated = block.truncated;
+          if (input === undefined && truncated === undefined) {
+            const parsed = this.parseToolInput(block);
+            if (parsed.ok) input = parsed.value;
+            else truncated = parsed.reason;
+          }
+          const out: ContentBlock = {
             type: 'tool_use',
             id: block.id,
             name: block.name,
-            // Missing content_block_stop (truncated stream): parse whatever
-            // JSON accumulated so far rather than dropping the block.
-            input: block.input ?? this.parseToolInput(index, block),
-          });
+            input: input ?? {},
+          };
+          content.push(truncated === undefined ? out : stampTruncatedInput(out, truncated));
           break;
+        }
         case 'opaque':
           // Finding M1 — round-trip the unmodeled block verbatim.
           content.push(block.raw);
@@ -326,21 +377,26 @@ export class MessageAccumulator {
   }
 
   private parseToolInput(
-    index: number,
     block: Extract<PendingBlock, { type: 'tool_use' }>,
-  ): Record<string, unknown> {
+  ):
+    | { ok: true; value: Record<string, unknown> }
+    | { ok: false; reason: string } {
     if (block.partialJson === '') {
       // No deltas at all: keep whatever content_block_start seeded ({}).
-      return block.initialInput;
+      return { ok: true, value: block.initialInput };
     }
     try {
-      return JSON.parse(block.partialJson) as Record<string, unknown>;
+      return { ok: true, value: JSON.parse(block.partialJson) as Record<string, unknown> };
     } catch (err) {
+      // H4: not a throw — a truncated input must degrade (see module header
+      // marker docs), not void the turn. Reason is byte-bounded for logs.
       const snippet = block.partialJson.slice(0, 200);
-      throw new APIConnectionError(
-        `Failed to parse tool_use input JSON for tool "${block.name}" (block ${index}): ${snippet}`,
-        err,
-      );
+      return {
+        ok: false,
+        reason:
+          `tool_use input JSON for tool "${block.name}" did not parse ` +
+          `(${(err as Error).message}); accumulated prefix: ${snippet}`,
+      };
     }
   }
 

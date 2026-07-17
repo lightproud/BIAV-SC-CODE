@@ -36,9 +36,14 @@
  *  - agent() opts.effort has no backing capability on this SDK's subagent
  *    spawn contract; it is accepted, ignored, and noted in the progress log.
  *  - agent() opts.schema appends a structured-output instruction to the
- *    prompt and JSON-parses the reply (shallow required-keys check); there is
- *    no forced StructuredOutput tool call nor retry-on-mismatch — an
- *    unparsable reply yields null (same null semantics as a dead agent).
+ *    prompt and validates the reply against the FULL JSON-Schema subset the
+ *    engine's structured-output validator supports (type / required /
+ *    properties / items / enum / const / $ref / bounds — H5, audit T49: the
+ *    previous shallow required-keys check was schema-blind to types and
+ *    nesting, so `{"bugs":"none"}` passed a schema demanding an array and
+ *    crashed the consuming script); there is no forced StructuredOutput tool
+ *    call nor retry-on-mismatch — an unparsable or non-conforming reply
+ *    yields null (same null semantics as a dead agent).
  *
  * Resume: each run journals its agent() calls in invocation order as
  * (input-hash, result) pairs. Resume lookup is ORDER-INDEPENDENT (audit
@@ -56,6 +61,8 @@
 import * as os from 'node:os';
 import * as vm from 'node:vm';
 import { AbortError } from '../errors.js';
+import { evaluateStructuredOutput } from '../internal/structured-output.js';
+import type { JSONSchema } from '../types.js';
 import type { SpawnSubagentFn } from '../internal/contracts.js';
 
 // ---------------------------------------------------------------------------
@@ -572,13 +579,6 @@ function errorStack(err: unknown): string | undefined {
   return undefined;
 }
 
-/** Strip a markdown code fence around a JSON reply, if present. */
-function stripFences(text: string): string {
-  const trimmed = text.trim();
-  const m = /^```[a-zA-Z]*\n([\s\S]*?)\n?```$/.exec(trimmed);
-  return m !== undefined && m !== null ? m[1]! : trimmed;
-}
-
 /** Framing appended to every workflow agent prompt (the tool description's
  *  "subagents are told their final text IS the return value" claim). */
 const RETURN_FRAMING =
@@ -595,25 +595,13 @@ function schemaInstruction(schema: unknown): string {
 }
 
 /** Parse a structured (schema) agent reply. Returns undefined when the reply
- *  is not valid JSON or misses a top-level required key. */
+ *  is not valid JSON or does not validate against the schema (H5, audit T49:
+ *  full-subset validation via the engine's structured-output validator —
+ *  lenient extraction included, which subsumes the old fence-stripping — so a
+ *  type-/nesting-violating reply can no longer masquerade as "validated"). */
 function parseStructured(text: string, schema: Record<string, unknown>): unknown {
-  let parsed: unknown;
-  try {
-    parsed = JSON.parse(stripFences(text));
-  } catch {
-    return undefined;
-  }
-  // Shallow required-keys check (simplification; see module header).
-  const required = schema['required'];
-  if (Array.isArray(required) && required.length > 0) {
-    if (parsed === null || typeof parsed !== 'object' || Array.isArray(parsed)) return undefined;
-    for (const key of required) {
-      if (typeof key === 'string' && !(key in (parsed as Record<string, unknown>))) {
-        return undefined;
-      }
-    }
-  }
-  return parsed;
+  const outcome = evaluateStructuredOutput(text, schema as JSONSchema);
+  return outcome.status === 'valid' ? outcome.value : undefined;
 }
 
 type AgentOpts = {
