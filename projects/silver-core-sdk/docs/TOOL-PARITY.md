@@ -1,12 +1,14 @@
 # Tool parity ledger
 
 Why this file exists: the SDK reproduces the **Claude Code CLI agent** tool
-surface. Twice a tool that official Claude Code has went unshipped for no real
+surface. A tool that official Claude Code ships can go unshipped for no real
 reason — just a coverage gap in the community system-prompt reconstruction the
 SDK cross-references (`Public-Info-Pool/Reference/Claude-Code-System-Prompts/`):
-**MultiEdit** (added 2026-07-15) and **EnterPlanMode** (added 2026-07-15). The
-root cause was that nothing enumerated "official CLI tools × shipped? × why
-not" in one place, so a miss had no backstop.
+**EnterPlanMode** was one such gap (added 2026-07-15). The root cause was that
+nothing enumerated "official CLI tools × shipped? × why not" in one place, so a
+miss had no backstop. (The ledger cuts both ways: **MultiEdit** was re-added as
+an SDK-original in 2026-07-15, then RETIRED in 0.65.0 once it was confirmed
+official had dropped it — see "Deliberately excluded".)
 
 This ledger is that backstop. `tests/tool-parity.test.ts` pins the shipped
 default-builtin set to the **Shipped** table below: adding or removing a tool
@@ -29,7 +31,6 @@ Registered by `createBuiltinTools` (`src/tools/index.ts`).
 | Read | `read.ts` | |
 | Write | `write.ts` | |
 | Edit | `edit.ts` | |
-| MultiEdit | `multiedit.ts` | added 2026-07-15 (was a gap); atomic same-file batch |
 | Bash / BashOutput / KillShell | `bash.ts` / `shells.ts` | |
 | Glob | `glob.ts` | |
 | Grep | `grep.ts` | |
@@ -60,6 +61,7 @@ Registered by `createBuiltinTools` (`src/tools/index.ts`).
 
 | Tool | Why not shipped |
 |------|-----------------|
+| MultiEdit | RETIRED UPSTREAM. Was an SDK-original re-add (0.61.0–0.64.4); official Claude Code retired it in favour of repeated `Edit` calls (each against live state, avoiding the snapshot-ambiguity MultiEdit's own not-found triage existed to explain). Removed in 0.65.0 (keeper 2026-07-17) to align: deprecated 0.64.4, hard-removed 0.65.0. Multi-edit is done by issuing several `Edit` calls. |
 | NotebookEdit / NotebookRead | need a Jupyter subsystem the SDK has no counterpart for |
 | PowerShell | Windows-shell variant of Bash; out of scope |
 | ExitWorktree | references worktree machinery this SDK does not ship (EnterWorktree adapts around it) |

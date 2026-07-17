@@ -14,8 +14,7 @@
  *    TodoWrite (legacy, behind CLAUDE_CODE_ENABLE_TASKS=0 — see tools/index.ts),
  *    WebFetch, WebSearch, AskUserQuestion, Monitor, ExitPlanMode, EnterWorktree
  *    (B4b batch), Workflow (B4c batch).
- *    Edit's batch sibling MultiEdit (SDK-original description, 2026-07-15).
- *    No Agent-in-descriptions, NotebookEdit, Skill, etc.
+ *    No Agent-in-descriptions, NotebookEdit, MultiEdit (retired 0.65.0), Skill, etc.
  *  - ExitPlanMode: the archive fragment's plan-FILE mechanics (write plan to the
  *    plan file, tool reads it back) do not ship here — this SDK has a plan
  *    permission MODE but no plan-file machinery, so those clauses are adapted
@@ -249,30 +248,6 @@ Usage:
 - Prefer the Edit tool for modifying existing files — it only sends the diff. Only use this tool to create new files or for complete rewrites.
 - NEVER create documentation files (*.md) or README files unless explicitly requested by the User.
 - Only use emojis if the user explicitly requests it. Avoid writing emojis to files unless asked.`;
-
-// MultiEdit (SDK-original, faithful:false): the official Claude Code MultiEdit
-// is not in the reproduction archive, so this description is authored for the
-// semantics this SDK actually ships (src/tools/multiedit.ts) rather than
-// reproduced. DEPRECATED (keeper 2026-07-17): official Claude Code RETIRED
-// MultiEdit, consolidating on repeated Edit calls (each against the file's live
-// state, which sidesteps the snapshot-ambiguity failure modes triaged in
-// v0.62.1). This SDK is aligning: the description now steers the model to Edit,
-// the tool still ships (non-breaking for existing consumers) and will be removed
-// in a future major. Keeps the corpus-sync anchor guard scoped to genuine repros.
-export const MULTIEDIT_DESCRIPTION = `DEPRECATED — the official Claude Code retired MultiEdit and this SDK is aligning with upstream. PREFER separate Edit calls: each Edit applies to the file's CURRENT state, so there is no snapshot-ambiguity ("was old_string absent, or consumed by an earlier edit in this batch?"). MultiEdit still works for now but will be removed in a future major — do not reach for it in new work.
-
-Applies several exact string replacements to a SINGLE file in one atomic step.
-
-When to use (legacy): several edits to the SAME file. Prefer separate Edit calls instead. For one change use Edit. For cross-file changes, or an edit whose text depends on an intervening tool result, use separate Edit calls.
-
-Usage:
-- You must use your Read tool on the file at least once in the conversation before editing. This tool will error if you attempt to edit a file you have not read.
-- Provide \`file_path\` and an ordered \`edits\` array; each edit carries \`old_string\`, \`new_string\`, and an optional \`replace_all\` (default false).
-- Edits apply SEQUENTIALLY on one snapshot: each edit matches the file as left by the preceding edits, so you can rename a symbol and then edit a line that now contains the new name — in the same call.
-- ATOMIC: if any edit's \`old_string\` is not found (or is not unique without \`replace_all\`), NOTHING is written and the failing edit is named by index. Order your edits so an earlier one does not break a later one's match.
-- OVERLAP RULE: edits whose regions overlap — share any line or text, including context lines added for uniqueness — must be MERGED into a single edit. An earlier edit rewrites the text a later \`old_string\` was copied from, and the later edit then fails to match. Author a later \`old_string\` against the post-edit text only when the dependency is intended (e.g. rename a symbol, then edit a line that now holds the new name).
-- Each \`old_string\` must be unique in the file at the point it applies unless \`replace_all\` is true. Preserve exact indentation as it appears in the Read output, excluding the line-number prefix.
-- \`new_string\` must differ from \`old_string\`. Only use emojis if the user explicitly requests it.`;
 
 export const GREP_DESCRIPTION = `A powerful search tool built on ripgrep
 
@@ -897,10 +872,6 @@ export const TOOL_DESCRIPTION_PROVENANCE: ToolDescriptionProvenance[] = [
   { tool: 'Read', faithful: true, slugs: ['tool-description-readfile'] },
   { tool: 'Edit', faithful: true, slugs: ['tool-description-edit'] },
   { tool: 'Write', faithful: true, slugs: ['tool-description-write', 'tool-description-write-read-existing-file-first'] },
-  // SDK-original (see MULTIEDIT_DESCRIPTION doc comment): no archive fragment,
-  // so faithful:false and the slug is the sdk-original sentinel — the anchor
-  // guard skips it, the presence guard still requires description text.
-  { tool: 'MultiEdit', faithful: false, slugs: ['sdk-original'] },
   { tool: 'Grep', faithful: true, slugs: ['tool-description-grep'] },
   { tool: 'Glob', faithful: true, slugs: ['tool-description-glob'] },
   { tool: 'TodoWrite', faithful: true, slugs: ['tool-description-todowrite'] },
@@ -936,7 +907,6 @@ export const TOOL_DESCRIPTION_TEXT: Record<string, string> = {
   Read: READ_DESCRIPTION,
   Edit: EDIT_DESCRIPTION,
   Write: WRITE_DESCRIPTION,
-  MultiEdit: MULTIEDIT_DESCRIPTION,
   Grep: GREP_DESCRIPTION,
   Glob: GLOB_DESCRIPTION,
   TodoWrite: TODOWRITE_DESCRIPTION,

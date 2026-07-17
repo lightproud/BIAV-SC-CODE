@@ -3,7 +3,7 @@
  * of the 2026-07-17 100-defect audit
  * (Public-Info-Pool/Resource/repo-engineering/silver-core-sdk-bug-audit-20260717.md):
  *
- *   H1  Edit/MultiEdit corrupt the un-edited bytes of non-UTF-8 text files.
+ *   H1  Edit corrupt the un-edited bytes of non-UTF-8 text files.
  *   H2  thinking wire form computed from config.model, not the live (fallback)
  *       model — cross-generation fallback 400s forever.
  *   H3  OpenAI arm keeps reading after finish_reason; a gateway dangling the
@@ -24,7 +24,6 @@ import * as path from 'node:path';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { editTool } from '../src/tools/edit.js';
-import { multiEditTool } from '../src/tools/multiedit.js';
 import { runAgentLoop } from '../src/engine/loop.js';
 import { MessageAccumulator, toolInputTruncationOf } from '../src/engine/accumulator.js';
 import { evaluateStructuredOutput } from '../src/engine/structured-output.js';
@@ -145,10 +144,10 @@ function lastResult(messages: SDKMessage[]): SDKResultMessage {
 }
 
 // ---------------------------------------------------------------------------
-// H1 — Edit/MultiEdit refuse non-UTF-8 text files instead of corrupting them
+// H1 — Edit refuse non-UTF-8 text files instead of corrupting them
 // ---------------------------------------------------------------------------
 
-describe('H1: Edit/MultiEdit non-UTF-8 corruption guard', () => {
+describe('H1: Edit non-UTF-8 corruption guard', () => {
   let sandbox: string;
 
   beforeEach(async () => {
@@ -180,18 +179,6 @@ describe('H1: Edit/MultiEdit non-UTF-8 corruption guard', () => {
     await writeFile(file, LATIN1);
     const res = await editTool.execute(
       { file_path: file, old_string: 'hello', new_string: 'goodbye' },
-      ctx(),
-    );
-    expect(res.isError).toBe(true);
-    expect(String(res.content)).toContain('not valid UTF-8');
-    expect((await readFile(file)).equals(LATIN1)).toBe(true);
-  });
-
-  it('MultiEdit refuses a Latin-1 file and leaves its bytes untouched', async () => {
-    const file = path.join(sandbox, 'latin1.txt');
-    await writeFile(file, LATIN1);
-    const res = await multiEditTool.execute(
-      { file_path: file, edits: [{ old_string: 'hello', new_string: 'goodbye' }] },
       ctx(),
     );
     expect(res.isError).toBe(true);
