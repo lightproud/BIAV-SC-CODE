@@ -20,7 +20,7 @@
  */
 
 import { existsSync } from 'node:fs';
-import { isAbsolute } from 'node:path';
+import * as path from 'node:path';
 
 /**
  * Explicit backslash join: these are WINDOWS-ONLY paths, and building them
@@ -65,14 +65,27 @@ export function resolvePosixShells(
   const out: string[] = [];
   const override = env['CLAUDE_CODE_GIT_BASH_PATH'];
   if (typeof override === 'string' && override.length > 0) {
-    // Skip an ABSOLUTE override that does not exist, so the resolver falls
-    // through to the platform defaults (bash/sh, or the Git Bash probes) rather
-    // than handing a doomed path to spawn. This matters most for the BACKGROUND
-    // shell path, which cannot fall back on its own — spawn's ENOENT is async
-    // and fires after spawnBackground has already returned a shell id, so a
-    // misconfigured override there is reported "launched" yet never runs. A
-    // bare-name override (no separator) is kept as-is (PATH-resolved by spawn).
-    if (!isAbsolute(override) || probe(override)) out.push(override);
+    // Probe any override that names a PATH-BEARING location before handing it
+    // to spawn, so the resolver falls through to the platform defaults
+    // (bash/sh, or the Git Bash probes) rather than spawning a doomed path.
+    // F7 (audit 2026-07-17): the old check exempted every non-absolute
+    // override, but spawn does NO PATH resolution for a name containing a
+    // separator (`tools/bash`) — it resolves against the child cwd and fails
+    // ENOENT asynchronously, after the launch was already acked. So: a bare
+    // name (no separator) is kept as-is (genuinely PATH-resolved by spawn);
+    // anything with a separator is resolved to an absolute path (pinning the
+    // ambient-cwd interpretation) and must pass the existence probe.
+    if (!/[/\\]/.test(override)) {
+      out.push(override);
+    } else {
+      // Host-independent absoluteness: a `D:\...` override must stay verbatim
+      // even when this resolver runs on a POSIX host (unit tests, WSL-side
+      // tooling) — path.resolve there would mangle it into a relative name.
+      const isAbs =
+        path.posix.isAbsolute(override) || path.win32.isAbsolute(override);
+      const resolved = isAbs ? override : path.resolve(override);
+      if (probe(resolved)) out.push(resolved);
+    }
   }
   if (platform !== 'win32') {
     out.push('bash', 'sh');

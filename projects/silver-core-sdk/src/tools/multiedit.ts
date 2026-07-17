@@ -28,7 +28,12 @@ import type {
   ToolResultPayload,
 } from '../internal/contracts.js';
 import { AbortError, isAbortError } from '../errors.js';
-import { isLossyUtf8, looksBinary, resolveAbs } from './fsutil.js';
+import {
+  adaptEditToLineEndings,
+  isLossyUtf8,
+  looksBinary,
+  resolveAbs,
+} from './fsutil.js';
 import { MULTIEDIT_DESCRIPTION } from './descriptions.js';
 
 function errorResult(message: string): ToolResultPayload {
@@ -207,6 +212,14 @@ export const multiEditTool: BuiltinTool = {
         if (st.isDirectory()) {
           return errorResult(`MultiEdit failed: "${abs}" is a directory, not a file.`);
         }
+        // F3 (audit 2026-07-17): a FIFO / device / socket passes the directory
+        // check but readFile on it blocks forever. Only regular files are
+        // editable (same gate as Read/Edit).
+        if (!st.isFile()) {
+          return errorResult(
+            `MultiEdit failed: "${abs}" is not a regular file (FIFO/device/socket); editing it is not supported.`,
+          );
+        }
       } catch (e) {
         if ((e as NodeJS.ErrnoException).code === 'ENOENT') {
           return errorResult(`MultiEdit failed: file does not exist: "${abs}".`);
@@ -246,7 +259,12 @@ export const multiEditTool: BuiltinTool = {
       let text = original;
       const perEdit: number[] = [];
       for (let i = 0; i < edits.length; i++) {
-        const edit = edits[i]!;
+        // F2 (audit 2026-07-17): same CRLF adaptation as Edit, applied per
+        // step against the EVOLVING snapshot (a needle authored from Read's
+        // CR-stripped view can never match raw `\r\n` content directly).
+        const raw = edits[i]!;
+        const adapted = adaptEditToLineEndings(text, raw.oldString, raw.newString);
+        const edit: ParsedEdit = { ...raw, ...adapted };
         const label = `edit #${i + 1}`;
         const count = countOccurrences(text, edit.oldString);
         if (count === 0) {

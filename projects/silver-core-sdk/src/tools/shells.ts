@@ -336,6 +336,29 @@ function filterLines(chunk: string, filter: string | undefined): string {
     .join('\n');
 }
 
+/**
+ * Consume a stream window for a FILTERED read (F4, audit 2026-07-17). The
+ * cursor is a raw char offset, so a poll can land MID-LINE: the line-anchored
+ * filter then tests both fragments ("ERR" now, "OR: x" next poll) and a line
+ * matching `/^ERROR/` is dropped forever. When a filter is active on a
+ * still-running shell, only complete lines (up to the last '\n') are consumed
+ * — the trailing partial line stays unconsumed and is re-tested whole on the
+ * next poll. Once the shell is terminal (or the stream hit its accumulation
+ * cap, i.e. no more data is coming), everything is consumed.
+ */
+function consumeWindow(
+  data: string,
+  cursor: number,
+  holdPartialTail: boolean,
+): { chunk: string; nextCursor: number } {
+  if (!holdPartialTail) {
+    return { chunk: data.slice(cursor), nextCursor: data.length };
+  }
+  const lastNl = data.lastIndexOf('\n');
+  const end = lastNl >= cursor ? lastNl + 1 : cursor;
+  return { chunk: data.slice(cursor, end), nextCursor: end };
+}
+
 export const bashOutputTool: BuiltinTool = {
   name: 'BashOutput',
   description:
@@ -405,14 +428,25 @@ export const bashOutputTool: BuiltinTool = {
         };
       }
     }
-    const newOut = rec.stdout.slice(rec.cursorOut);
-    const newErr = rec.stderr.slice(rec.cursorErr);
-    rec.cursorOut = rec.stdout.length;
-    rec.cursorErr = rec.stderr.length;
+    // F4: with an active filter on a running shell, hold back the trailing
+    // partial line so the line-anchored regex never tests a chunk fragment.
+    const holding = filter !== undefined && rec.status === 'running';
+    const winOut = consumeWindow(
+      rec.stdout,
+      rec.cursorOut,
+      holding && !rec.stdoutTruncated,
+    );
+    const winErr = consumeWindow(
+      rec.stderr,
+      rec.cursorErr,
+      holding && !rec.stderrTruncated,
+    );
+    rec.cursorOut = winOut.nextCursor;
+    rec.cursorErr = winErr.nextCursor;
 
     const parts: string[] = [describeStatus(rec)];
-    const out = filterLines(newOut, filter);
-    const err = filterLines(newErr, filter);
+    const out = filterLines(winOut.chunk, filter);
+    const err = filterLines(winErr.chunk, filter);
     if (out.length > 0) parts.push(out);
     if (err.length > 0) parts.push(`[stderr]\n${err}`);
     if (out.length === 0 && err.length === 0) parts.push('(no new output)');

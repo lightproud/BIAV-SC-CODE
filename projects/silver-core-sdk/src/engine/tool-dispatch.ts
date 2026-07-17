@@ -372,6 +372,29 @@ export function createToolDispatcher(cfg: ToolDispatcherConfig): {
     }
     input = check.updatedInput; // union now narrows to {decision:'allow'; updatedInput}
 
+    // C3 (audit 2026-07-17): the sandboxEscape ask above was decided from the
+    // PRE-rewrite input. A PreToolUse hook / canUseTool rewrite that ADDS
+    // `dangerouslyDisableSandbox: true` in its updatedInput lands here AFTER
+    // the gate ran without the dedicated escape ask — the command would run
+    // outside the sandbox with no escape-specific authorization. Trusted-side
+    // rewrite: strip the smuggled flag (the rewriter can re-issue the call
+    // with the flag set up front to get the proper ask). The reverse rewrite
+    // (removing the flag after an escape ask) only over-asks and is safe.
+    if (
+      toolName === 'Bash' &&
+      !sandboxEscape &&
+      input['dangerouslyDisableSandbox'] === true &&
+      sbx !== undefined &&
+      sbx.allowEscape
+    ) {
+      input = { ...input };
+      delete input['dangerouslyDisableSandbox'];
+      deps.debug(
+        'tool-dispatch: dropped dangerouslyDisableSandbox added by an input ' +
+          'rewrite after the sandbox-escape check (escape requires its own ask)',
+      );
+    }
+
     // 3. Execute: builtin -> MCP. Existence was verified at step 0, so exactly
     //    one branch runs; the final else is an unreachable safety net.
     const execStart = Date.now();
