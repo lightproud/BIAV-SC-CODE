@@ -64,6 +64,18 @@ describe('examples smoke + message-shape drift guard', () => {
         expect(declaredSubtypes.has(s), `subtype '${s}' not declared`).toBe(true);
       }
     });
+
+    it(`${file} that uses bypassPermissions also sets allowDangerouslySkipPermissions (WX1-1)`, () => {
+      // node --check only catches syntax; a bypassPermissions example WITHOUT
+      // allowDangerouslySkipPermissions crashes at runtime (query() throws a
+      // ConfigurationError synchronously). Static-guard the pairing.
+      if (source.includes("permissionMode: 'bypassPermissions'")) {
+        expect(
+          source.includes('allowDangerouslySkipPermissions'),
+          `${file} uses bypassPermissions without allowDangerouslySkipPermissions`,
+        ).toBe(true);
+      }
+    });
   }
 
   it('electron-host.mjs uses the v0.7 task lifecycle encoding (no retired fields)', () => {

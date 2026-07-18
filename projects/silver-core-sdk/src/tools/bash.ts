@@ -135,6 +135,11 @@ function runShell(
     };
 
     const timeoutTimer = setTimeout(() => {
+      // WV5-1 (audit r3): the process may have already EXITED and only be
+      // waiting on the flush-grace window; setting timedOut then would mislabel
+      // a successful command as timed out. Only fire when the child is still
+      // genuinely running.
+      if (settled || exited) return;
       timedOut = true;
       terminate();
     }, timeoutMs);

@@ -522,9 +522,18 @@ export class DefaultMcpRegistry implements McpRegistry {
       .filter((e) => qualifiedName.startsWith(`mcp__${e.name}__`))
       .sort((a, b) => b.name.length - a.name.length);
     if (candidates.length <= 1) return candidates[0];
-    for (const entry of candidates) {
+    const serves = (entry: ServerEntry): boolean => {
       const toolName = qualifiedName.slice(`mcp__${entry.name}__`.length);
-      if (entry.tools.some((t) => t.toolName === toolName)) return entry;
+      return entry.tools.some((t) => t.toolName === toolName);
+    };
+    // WV4-10 (audit r3): prefer an ENABLED+connected server that serves the
+    // tool. A disabled server keeps its stale `tools`, so under a `__` name
+    // collision it could shadow a live server and make the tool unreachable.
+    for (const entry of candidates) {
+      if (entry.enabled && entry.baseStatus === 'connected' && serves(entry)) return entry;
+    }
+    for (const entry of candidates) {
+      if (serves(entry)) return entry;
     }
     return candidates[0];
   }

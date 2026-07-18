@@ -29,8 +29,16 @@
  *  (`claude-opus-4`, `claude-opus-4-v1:0`) without swallowing versioned ids —
  *  a digit after `-4` defers to the explicit minor-version alternatives, so
  *  4.6+ ids still fall through to adaptive. */
+// WV4-5 (audit r3): each explicit minor needs a right boundary `(?!\d)` — the
+// substring `opus-4-1` otherwise matches a future `opus-4-10`, misjudging it
+// pre-adaptive and 400ing on the enabled/budget thinking form. The right
+// boundary also un-matches the DATED 4.0 ids (`sonnet-4-20250514`), which used
+// to classify pre-adaptive only by the coincidental `-4-2` date-prefix; the
+// `(?:opus|sonnet|haiku)-4-\d{8}` alternative re-anchors them explicitly (a
+// YYYYMMDD date is 8 digits, so a single/double-digit minor like `-6`/`-50`
+// can never reach it and still falls through to adaptive).
 const PRE_ADAPTIVE_THINKING =
-  /(haiku-4-5|sonnet-4-5|sonnet-4-0|sonnet-4-2|opus-4-5|opus-4-1|opus-4-0|opus-4-2|(?:opus|sonnet|haiku)-4(?!-?\d)|claude-3|claude-2|instant)/i;
+  /(haiku-4-5(?!\d)|sonnet-4-5(?!\d)|sonnet-4-0(?!\d)|sonnet-4-2(?!\d)|opus-4-5(?!\d)|opus-4-1(?!\d)|opus-4-0(?!\d)|opus-4-2(?!\d)|(?:opus|sonnet|haiku)-4-\d{8}|(?:opus|sonnet|haiku)-4(?!-?\d)|claude-3|claude-2|instant)/i;
 
 /**
  * True when `model` accepts `{type:'adaptive'}` thinking (4.6-generation and

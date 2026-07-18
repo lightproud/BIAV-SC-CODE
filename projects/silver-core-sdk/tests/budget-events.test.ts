@@ -191,9 +191,12 @@ describe('budget:exhausted', () => {
     expect(input.report.num_turns).toBe(1);
     expect(typeof input.report.last_assistant_summary).toBe('string');
     // The threshold latch was implicitly crossed too, in the same recording.
+    // W1-3 (audit r3): the assertion expects EXACTLY one threshold event; a
+    // `<= 1` upper bound also passed on 0 (threshold never fired = a
+    // regression). Pin it to 1.
     expect(
       hooks.events.filter((e) => e.event === 'budget:threshold').length,
-    ).toBeLessThanOrEqual(1);
+    ).toBe(1);
   });
 
   it('is ROOT LOOP ONLY: a child loop (parentToolUseId) fires no budget events', async () => {

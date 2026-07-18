@@ -33,6 +33,7 @@ import type {
   ToolContext,
   ToolResultPayload,
 } from '../internal/contracts.js';
+import { sliceSurrogateSafe } from '../internal/text.js';
 import { AbortError, isAbortError } from '../errors.js';
 import { SDK_USER_AGENT } from '../version.js';
 import { WEBFETCH_DESCRIPTION } from './descriptions.js';
@@ -629,7 +630,9 @@ export const webFetchTool: BuiltinTool = {
 
       let truncated = overflow;
       if (text.length > MAX_OUTPUT_CHARS) {
-        text = text.slice(0, MAX_OUTPUT_CHARS);
+        // WV5-5 (audit r3): surrogate-safe slice so the output cap never leaves
+        // a lone surrogate at the boundary.
+        text = sliceSurrogateSafe(text, MAX_OUTPUT_CHARS);
         truncated = true;
       }
       if (truncated) {
@@ -639,7 +642,15 @@ export const webFetchTool: BuiltinTool = {
       ctx.debug(`WebFetch: ${current.toString()} -> ${text.length} chars (${contentType})`);
       return { content: text };
     } catch (e) {
-      if (isAbortError(e)) throw new AbortError('WebFetch was aborted');
+      // WV5-3 (audit r3): the fetch signal merges the turn signal with a 30s
+      // per-request timeout. A REAL turn cancel (ctx.signal aborted) rethrows
+      // AbortError to unwind the whole turn; the tool's OWN request timeout
+      // (ctx.signal not aborted) is a graceful per-fetch failure — surface it
+      // as an isError result, not a turn-killing abort.
+      if (isAbortError(e)) {
+        if (ctx.signal.aborted) throw new AbortError('WebFetch was aborted');
+        return errorResult(`WebFetch failed: request timed out after ${FETCH_TIMEOUT_MS}ms`);
+      }
       return errorResult(`WebFetch failed: ${(e as Error).message}`);
     }
   },

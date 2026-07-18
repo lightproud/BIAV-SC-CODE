@@ -6,7 +6,8 @@
 // cache tokens, so cacheHitRatio stays 0 here — real cache savings surface when
 // you point this at api.anthropic.com (set ANTHROPIC_API_KEY and BASE below).
 //
-//   node examples/ab-metrics.mjs        # emulator
+//   npm run build && node examples/ab-metrics.mjs   # emulator (build first:
+//                                                    #  this imports ../dist)
 //   (edit REAL=true + export ANTHROPIC_API_KEY for a real A/B)
 
 import http from 'node:http';
@@ -52,7 +53,11 @@ async function run(label, promptCaching) {
     prompt: 'run the task',
     options: {
       provider: { apiKey: 'test-key', baseUrl, promptCaching },
-      cwd: sandbox, persistSession: false, permissionMode: 'bypassPermissions', model: 'claude-sonnet-4-5',
+      // WX1-1 (audit r3): bypassPermissions requires the explicit
+      // allowDangerouslySkipPermissions flag, or query() throws a
+      // ConfigurationError synchronously and the first run crashes.
+      cwd: sandbox, persistSession: false, permissionMode: 'bypassPermissions',
+      allowDangerouslySkipPermissions: true, model: 'claude-sonnet-4-5',
     },
   });
   let result;

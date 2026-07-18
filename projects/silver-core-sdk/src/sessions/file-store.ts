@@ -212,16 +212,25 @@ export class FileSessionStore implements SessionStore {
    */
   async append(key: SessionKey, entries: SessionStoreEntry[]): Promise<void> {
     if (entries.length === 0) return;
-    const file = this.filePath(key);
-    await mkdir(dirname(file), { recursive: true });
-    let prefix = '';
-    if (!this.tailChecked.has(file)) {
-      this.tailChecked.add(file);
-      if (await this.endsWithoutNewline(file)) prefix = '\n';
+    // WV3-3 (audit r3): the sibling stores (InMemory / Jsonl) never throw from
+    // append, and callers (forkSession copy loop / appendMeta / delete) invoke
+    // it unguarded. An fs error here (ENAMETOOLONG / EACCES / ENOSPC) would
+    // break those paths asymmetrically, so this best-effort transcript store
+    // matches the non-throwing contract (same posture as FileCheckpointStore).
+    try {
+      const file = this.filePath(key);
+      await mkdir(dirname(file), { recursive: true });
+      let prefix = '';
+      if (!this.tailChecked.has(file)) {
+        this.tailChecked.add(file);
+        if (await this.endsWithoutNewline(file)) prefix = '\n';
+      }
+      let payload = prefix;
+      for (const e of entries) payload += `${JSON.stringify(e)}\n`;
+      await appendFile(file, payload, { encoding: 'utf8', flag: 'a' });
+    } catch {
+      // best-effort: a transcript write failure must not break the caller.
     }
-    let payload = prefix;
-    for (const e of entries) payload += `${JSON.stringify(e)}\n`;
-    await appendFile(file, payload, { encoding: 'utf8', flag: 'a' });
   }
 
   /**

@@ -72,6 +72,27 @@ export function normalizeOutputFormat(
 // ---------------------------------------------------------------------------
 
 /**
+ * WV4-9 (audit r3): a caller-supplied circular schema makes `JSON.stringify`
+ * throw `TypeError: Converting circular structure to JSON` — and these run
+ * while assembling the system prompt in query(), so the whole query crashes at
+ * construction before any turn. Degrade to a placeholder instead of throwing;
+ * the schema is still enforced by the validator, only the human-readable echo
+ * is lost.
+ */
+/** WV4-9 (audit r3): every schema-embedding call site went through a bare
+ *  `JSON.stringify(schema)` that throws on a circular/self-referential schema,
+ *  taking the whole instruction/correction build down with it. Guard it once
+ *  here; `pretty` preserves the two distinct on-wire formats (the persistent
+ *  instruction is pretty-printed, the retry corrections are compact). */
+function safeStringifySchema(schema: JSONSchema, pretty = false): string {
+  try {
+    return pretty ? JSON.stringify(schema, null, 2) : JSON.stringify(schema);
+  } catch {
+    return '[schema could not be serialized (circular reference)]';
+  }
+}
+
+/**
  * Build the persistent system-prompt directive appended by query(). Lives in
  * the system prompt (not a user turn) so it survives message-history compaction
  * and is present on every turn.
@@ -84,7 +105,7 @@ export function buildStructuredOutputInstruction(schema: JSONSchema): string {
     'markdown code fences. You may use tools first; the JSON must be your last ' +
     'message.\n\n' +
     'JSON Schema:\n' +
-    JSON.stringify(schema, null, 2)
+    safeStringifySchema(schema, true)
   );
 }
 
@@ -139,7 +160,7 @@ export function evaluateStructuredOutput(
       `The response could not be parsed as JSON: ${notJsonReason}\n` +
       '\nRespond with ONLY a single JSON value conforming to this JSON Schema ' +
       '(no prose, no code fences):\n' +
-      JSON.stringify(schema);
+      safeStringifySchema(schema);
     return { status: 'invalid', correction, summary };
   }
 
@@ -154,7 +175,7 @@ export function evaluateStructuredOutput(
     firstErrors.map((e) => `- ${e.path === '' ? '(root)' : e.path}: ${e.message}`).join('\n') +
     '\n\nRespond with ONLY a single JSON value conforming to this JSON Schema ' +
     '(no prose, no code fences):\n' +
-    JSON.stringify(schema);
+    safeStringifySchema(schema);
   return { status: 'invalid', correction, summary };
 }
 
@@ -210,8 +231,14 @@ function* jsonCandidates(
     if (scanned.span !== null) {
       const parsed = tryParse(scanned.span);
       if (parsed.ok) yield parsed;
+      // WV4-1 (audit r3): advance PAST the produced span, not one char into it.
+      // Resuming at start+1 descended into the object just yielded, so every
+      // nested `{…}` fragment was re-yielded as a candidate — a prose-wrapped
+      // nested fragment could then win over the real outer answer (H5 residual).
+      from = scanned.start + scanned.span.length;
+    } else {
+      from = scanned.start + 1;
     }
-    from = scanned.start + 1;
   }
 }
 
@@ -292,6 +319,13 @@ type ValidationError = { path: string; message: string };
  * minLength/maxLength, minimum/maximum. Unknown keywords are lenient
  * (no constraint). `refDepth` bounds $ref recursion against cyclic schemas.
  */
+/** Public thin wrapper: true when `value` satisfies `schema` (the documented
+ *  common subset). Used by the MCP elicitation gate (WV4-3) to reject
+ *  accepted content that violates the request's requestedSchema. */
+export function valueMatchesSchema(value: unknown, schema: JSONSchema): boolean {
+  return validateValue(value, schema, schema, '', 0).length === 0;
+}
+
 function validateValue(
   value: unknown,
   schema: unknown,

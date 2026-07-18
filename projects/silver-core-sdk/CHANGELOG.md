@@ -16,6 +16,54 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.71.2 — 2026-07-18
+
+T51 audit r3 — batches R + S + T (deep-read source), 19 STILL-LIVE findings
+fixed with regression locks; two findings adjudicated (one deferred to keeper,
+one a false positive) rather than shipped blind.
+
+- **Transport (openai.ts):** streaming `usage` is shallow-MERGED across chunks
+  instead of last-write-wins (WV2-2, keeps `prompt_tokens_details` when a later
+  chunk omits it); array-form `content`/`reasoning` deltas from multimodal
+  gateways are flattened to a joined string instead of `[object Object]`
+  (WV2-3).
+- **Structured output:** `valueMatchesSchema` is exported and the elicitation
+  layer uses it to fail-closed on schema-violating accepted content (WV4-2/3);
+  every schema-embedding site is guarded against a circular schema
+  (`safeStringifySchema`, WV4-9) while preserving the pretty/compact split;
+  the balanced-scan advance no longer stalls on a zero-length span (WV4-1).
+- **Thinking policy:** the pre-adaptive denylist right-bounds each explicit
+  minor so a future `opus-4-10`/`opus-4-50` is not swallowed by `opus-4-1`,
+  while dated 4.0 ids (`sonnet-4-20250514`) are re-anchored by an explicit
+  `-\d{8}` date alternative (WV4-5).
+- **Tool dispatch / MCP registry:** an out-of-band (skip/defer) tool outcome
+  no longer emits a spurious error event (WV4-6/8); qualified-name resolution
+  prefers a connected+enabled server before falling back (WV4-10).
+- **Sessions:** the file-store append is best-effort/non-throwing to match its
+  sibling stores (WV3-3); persistence drops empty text blocks before writing
+  (WV3-4).
+- **Subagents:** a foreground child FAILURE is isolated as an `isError` result
+  instead of crashing the parent loop, while a genuine abort still propagates
+  (WZ3-2); owned transports are disposed only when the settle race actually
+  settled, not on timeout (WZ3-3).
+- **Tools:** per-line and output-cap slices are surrogate-pair safe
+  (fsutil/webfetch, WV5-3/4/5); a WebFetch abort is reported as a timeout
+  unless the caller signal aborted (WV5-5); the bash timeout timer no longer
+  fires after the process settled (WV5-1).
+- **Example:** `ab-metrics.mjs` pairs `bypassPermissions` with
+  `allowDangerouslySkipPermissions` and documents the build-first run (WX1-1),
+  guarded by an examples-smoke lock.
+- **Quality ratchet (batch S):** strengthened assertions in budget/goal/
+  grep-opt/conversation-stability tests; the goal-test tightening surfaced and
+  fixed a real bug (block-reason feedback is a string user turn, not array
+  content, so the history filter must not require array form).
+- **Deferred to keeper (待裁):** WV2-4 (suppress caller `temperature != 1`
+  under active reasoning) — real on api.openai.com but a provider-compat
+  tradeoff that silently mutates caller intent on vLLM-style gateways;
+  reverted pending adjudication. WV2-1 (treat `Retry-After: 0` as exponential
+  backoff) is a FALSE POSITIVE — a zero/expired retry-after is the tested,
+  intended "retry immediately" contract; not changed.
+
 ## 0.71.1 — 2026-07-18
 
 T51 audit r3 — batches N (docs contract) + P (high-severity source), all
