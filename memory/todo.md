@@ -16,6 +16,7 @@
 
 | ID | 账目 | 类别 | 源出处 | 状态 |
 |----|------|------|--------|------|
+| T56 | **Maestro SDK 500 bug 审计修复 + 集成测试完善(守密人 2026-07-18「设置目标:审核查证 500 个 bug 并修复,完善集成测试」口谕)**:多波代理审计(模块深读 + 横切面猎手)→ 对抗查证 → 分批修复配回归锁 → 集成测试补强。**诚实红线**:审计面 src 1,769 行 + 全包 ~5.3k 行、经两轮对抗审查与四变异靶加固,500 为目标上限、挖到连续枯竭为止,真实数如实报账绝不编造(T51 先例)。进度随战报落 `Public-Info-Pool/Resource/repo-engineering/`。**第一轮已收官(2026-07-18,0.69.0)**:17 猎手 + 对抗查证,原始 50 → 去重 36 → **确认 29**(1 P1 + 11 P2 + 17 P3),29/29 全处置(27 修复 + 2 显式记档),每项配 fail-on-old 回归锁;集成测试两套件 8 例落地;测试 171→231;变异地板全保持;战报 `silver-core-maestro-sdk-bug-audit-r1-20260718.md`。累计真缺陷 34(含前两轮对抗审查 5 项)。后续轮次换法续挖至枯竭 | 预算 | 守密人 2026-07-18 口谕;T49/T51/T52 审计纪律先例 | 开 |
 | T54 | store-patrol 首次定时跑核验:CI `store-patrol.yml` 每日北京 15:15(07:15 UTC)首轮自动跑需核 Actions 日志——sparse 纳回 / npm ci+build / 巡检 / 快照提交推送四步全绿即销(本地真跑与 sparse check-rules 已实证,余 Actions 环境一跑) | 观察 | `memory/decisions.md` 2026-07-18 第二战条 + `.github/workflows/store-patrol.yml` | 开 |
 | T5 | /goal 提示词快照待上游露出（每周参照刷新 CI `refresh-claude-code-prompts.yml` 自动观察） | 观察 | `memory/project-status.md` v0.38 段挂账注 | 开 |
 | T6 | 测试长尾：L3.5 双臂升门禁（自注「版本稳定后」）+ MCP 差分第二批（schema 语义 / annotations / stdio-http 传输） | 观察 | `memory/project-status.md` 一致性测试段 | 开 |
