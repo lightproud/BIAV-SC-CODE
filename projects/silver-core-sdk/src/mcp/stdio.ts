@@ -32,6 +32,11 @@ const DEFAULT_REQUEST_TIMEOUT_MS = 60_000;
 const KILL_GRACE_MS = 2_000;
 /** Safety cap on tools/list pagination to avoid a misbehaving-server loop. */
 const MAX_LIST_PAGES = 100;
+/** W8-2 (audit r3): max bytes an unterminated stdout line may accumulate
+ *  before we treat the stream as hostile. One JSON-RPC message per line; a
+ *  server (or MITM) that never emits `\n` would otherwise grow the buffer
+ *  without bound → OOM. 16 MiB is far above any legitimate MCP message. */
+const MAX_STDOUT_LINE_BYTES = 16 * 1024 * 1024;
 
 type JsonRpcId = string | number;
 
@@ -348,6 +353,17 @@ export class StdioMcpConnection {
 
   private onStdout(chunk: string): void {
     this.stdoutBuffer += chunk;
+    // W8-2: an unterminated line past the cap means the server is streaming
+    // without a message boundary — drop the runaway buffer and log, rather
+    // than accumulating to OOM. (A legitimate message is orders of magnitude
+    // smaller; the next real `\n` re-syncs parsing.)
+    if (this.stdoutBuffer.length > MAX_STDOUT_LINE_BYTES && !this.stdoutBuffer.includes('\n')) {
+      this.debug(
+        `[mcp:${this.label}] dropping ${this.stdoutBuffer.length}-byte stdout line with no newline (cap ${MAX_STDOUT_LINE_BYTES})`,
+      );
+      this.stdoutBuffer = '';
+      return;
+    }
     // One JSON object per line; tolerate multiple or partial lines per chunk.
     let newlineIdx: number;
     while ((newlineIdx = this.stdoutBuffer.indexOf('\n')) !== -1) {

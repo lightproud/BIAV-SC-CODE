@@ -12,6 +12,14 @@ discipline as the agent SDK: every merge that changes shipped runtime code
 bumps BOTH versions and adds one line here (a lockstep-alignment line when
 this package itself is untouched).
 
+## 0.71.1 — 2026-07-18
+
+Lockstep alignment only — no maestro code change. The agent SDK landed T51
+audit r3 batches N (docs contract) + P (high-severity source: a session-id
+path-traversal into hook file reads, a compaction 400 mis-calibration, an
+auto-resume control-plane revert, WebFetch capability claims, a Glob
+hidden-dir miss, unbounded MCP buffers); the family clock bumps as one.
+
 ## 0.71.0 — 2026-07-18
 
 Testbed gap adoption (keeper ruling 2026-07-18, option 甲: all four gaps from

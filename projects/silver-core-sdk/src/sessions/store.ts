@@ -32,6 +32,7 @@ import { join } from 'node:path';
 import { createInterface } from 'node:readline';
 
 import { sliceSurrogateSafe } from '../internal/text.js';
+import { ConfigurationError } from '../errors.js';
 import type {
   APIMessageParam,
   ContentBlockParam,
@@ -269,6 +270,12 @@ export function resolveTranscriptPath(
   store: unknown,
   sessionId: string,
 ): string | undefined {
+  // W8-1 (audit r3, SECURITY): this path populates the official hook fields
+  // `transcript_path` / `agent_transcript_path`, which hooks then READ. A
+  // traversal id (`../../../../etc/passwd`) must never escape the store root
+  // into a hook file read — even though append/load already guard themselves,
+  // this resolution path did not. Fail closed on an unsafe id.
+  if (!isSafeSessionId(sessionId)) return undefined;
   const fn = (store as { filePath?: (id: string) => string } | undefined)?.filePath;
   return typeof fn === 'function' ? fn.call(store, sessionId) : undefined;
 }
@@ -290,8 +297,15 @@ export class JsonlSessionStore implements SessionStore {
     this.debug = cfg.debug ?? (() => undefined);
   }
 
-  /** Absolute path of one session's transcript file. */
+  /** Absolute path of one session's transcript file. Defense in depth
+   *  (W8-1): the single path constructor rejects an unsafe id rather than
+   *  building a traversal path — append/load already guard, and
+   *  resolveTranscriptPath guards before calling this, so a well-formed id is
+   *  unaffected. */
   filePath(sessionId: string): string {
+    if (!isSafeSessionId(sessionId)) {
+      throw new ConfigurationError(`unsafe session id: ${JSON.stringify(sessionId)}`);
+    }
     return join(this.dir, `${sessionId}${JSONL_EXT}`);
   }
 

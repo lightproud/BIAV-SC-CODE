@@ -748,8 +748,16 @@ async function* performCompaction(
   // API-reported prompt floor exceeds the heuristic estimate (the floor is
   // what fired the fold), reporting the bare estimate understated the
   // boundary's pre_tokens.
+  // WZ1-1 (audit r3): capture the UNCLAMPED pre-fold message estimate now,
+  // while view.messages is still the pre-fold conversation. The post-fold M5
+  // overflow guard below must calibrate against this (real / estimate ratio),
+  // NOT against the floor-clamped preTokens — clamping makes the denominator
+  // ≈ knownPromptFloor in the exact under-estimate case the guard exists for,
+  // collapsing the calibration to ≈1 so the suffix shed never fires and the
+  // next request 400s. Mirrors partitionForCompaction's raw denominator.
+  const rawPreFoldTokens = estimateMessagesTokens(view.messages);
   const preTokens = Math.max(
-    estimateMessagesTokens(view.messages) + overheadTokens,
+    rawPreFoldTokens + overheadTokens,
     knownPromptFloor ?? 0,
   );
   let effectiveInstructions = customInstructions;
@@ -869,9 +877,12 @@ async function* performCompaction(
     // the calibrated estimate, so a still-oversized request sheds here instead
     // of being believed to fit and 400ing again.
     const rawPre = estimateMessagesTokens(view.messages);
+    // WZ1-1: calibrate against the UNCLAMPED pre-fold estimate (rawPreFoldTokens),
+    // so a genuine under-estimate yields cal >> 1 and the shed fires. Using the
+    // floor-clamped preTokens here made cal ≈ 1 and defeated the guard.
     const cal =
-      knownPromptFloor !== undefined && preTokens > 0 && knownPromptFloor > preTokens - overheadTokens
-        ? knownPromptFloor / Math.max(1, preTokens - overheadTokens)
+      knownPromptFloor !== undefined && rawPreFoldTokens > 0 && knownPromptFloor > rawPreFoldTokens
+        ? knownPromptFloor / rawPreFoldTokens
         : 1;
     // D2 (audit r2 2026-07-17): the next request's prompt is messages PLUS the
     // system/tool-defs overhead — the trigger (shouldAutoCompact) and preTokens

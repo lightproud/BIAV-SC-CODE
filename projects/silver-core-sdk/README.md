@@ -173,14 +173,19 @@ directory (`options.sessionDir` > `$BPT_AGENT_HOME/sessions` >
 
 ## Built-in tools
 
-22 default built-ins: the core six (`Read`, `Write`, `Edit`, `Bash`, `Glob`,
-`Grep`) plus `WebFetch`, `WebSearch`, `AskUserQuestion`, `TodoWrite`,
-`NotebookEdit`, `ExitPlanMode`, `EnterWorktree`, background-task tools
-(`Bash run_in_background`, `BashOutput`, `KillShell`, `TaskOutput`,
-`TaskStop`, `Monitor`), `Agent` (when subagents are configured), `Workflow`,
-`ListMcpResources` / `ReadMcpResource`, and `ToolSearch` (when deferral is
-active). The authoritative list is `enumerateBuiltinToolMetadata()` /
-`src/tools/index.ts`. Restrict with
+26 default built-ins: the core six (`Read`, `Write`, `Edit`, `Bash`, `Glob`,
+`Grep`) plus `WebFetch`, `WebSearch`, `AskUserQuestion`, the task quartet
+(`TaskCreate`, `TaskGet`, `TaskUpdate`, `TaskList`), `ExitPlanMode`,
+`EnterPlanMode`, `EnterWorktree`, background-task tools (`Bash
+run_in_background`, `BashOutput`, `KillShell`, `TaskOutput`, `TaskStop`,
+`Monitor`), `Workflow`, `SendMessage`, and the MCP resource trio
+(`ListMcpResourcesTool`, `ReadMcpResourceTool`, `ReadMcpResourceDirTool`).
+`TodoWrite` replaces the task quartet only under the legacy flag
+`CLAUDE_CODE_ENABLE_TASKS=0` (23 tools then); `Agent` is registered on the
+subagent path (not by the default registry); `ToolSearch` is added when the
+`toolSearch` option defers cold schemas. `NotebookEdit` is NOT shipped (no
+notebook surface — COMPAT.md marks it UNSUPPORTED). The authoritative list is
+`enumerateBuiltinToolMetadata()` / `src/tools/index.ts`. Restrict with
 `options.tools: ['Read', 'Grep']`, gate with `allowedTools` /
 `disallowedTools` rules (including `Bash(npm run:*)`-style specifiers),
 `permissionMode`, hooks and `canUseTool`. Add your own tools with
@@ -198,71 +203,36 @@ and injects the docs-verbatim protocol itself — same consuming code, identical
 store artifacts. The head of `/memories/MEMORY.md` is auto-injected at session
 start (capped; lazily `view` the rest). See [docs/MEMORY.md](./docs/MEMORY.md).
 
-## /loop interval loops (BPT-EXTENSION)
+## Session goals (`options.goal`, BPT-EXTENSION)
 
-The official SDK has no recurring-prompt facility, so an unrecognized
-`/loop 10m <task>` would fall through slash-command expansion as a ONE-SHOT
-plain prompt and the recurrence would be silently lost. `parseLoopCommand`
-is the single source of truth for the `/loop [<interval>] <task>` grammar
-(units `s|m|h`, default `10m`), and `createPromptLoop` drives a host-owned
-runner on a fixed-delay cadence (next run scheduled `intervalMs` after the
-previous one settles — runs never overlap). The host bridge is thin:
-
-```ts
-import { parseLoopCommand, createPromptLoop, LOOP_SLASH_COMMAND } from 'silver-core-agent-sdk';
-
-const parsed = parseLoopCommand(userInput);
-if (parsed) {
-  if (!parsed.ok) return showError(parsed.error); // never pass through as a prompt
-  const loop = createPromptLoop({
-    ...parsed.directive,                // intervalMs + prompt
-    run: (prompt) => submitTurn(prompt), // host-owned: e.g. a new query() turn
-    onError: 'stop',                    // default; 'continue' or a callback
-    signal: sessionAbort.signal,
-  });
-  loop.start();                         // immediate first run, then fixed-delay
-  await loop.done;                      // { iterations, stopReason, error? }
-}
-```
-
-`LOOP_SLASH_COMMAND` is menu metadata for hosts that wire this bridge; it is
-deliberately NOT an engine built-in — the engine loop cannot re-invoke itself
-over wall-clock time, and advertising a command the engine would swallow as
-plain text is the honesty red line.
-
-## /goal session goals (BPT-EXTENSION)
-
-`/goal <condition>` arms a session-scoped Stop gate: when the agent tries to
-stop, the faithful stop-variant condition evaluator judges the transcript;
-"not met" blocks the stop (the reason is fed back as a user turn and the
-loop keeps working — engine `maxTurns` / `maxBudgetUsd` still cap it), "met"
-auto-clears, and the evaluator's `impossible` escape hatch clears without
-looping forever. `/goal clear` disarms early. The engine's Stop-hook block
-semantics (v0.39) and the evaluator prompt already shipped; this module is
-the missing surface. Host bridge:
+`options.goal` arms a session-scoped Stop gate: when the agent tries to stop,
+a host-injected evaluator judges the transcript against the goal. "not met"
+blocks the stop (the reason is fed back as a user turn and the loop keeps
+working — engine `maxTurns` / `maxBudgetUsd` still cap it); "met" and the
+`impossible` escape hatch both disarm; an errored / unparseable / context-less
+evaluation ALLOWS the stop and keeps the goal armed — a broken judge must
+never trap the agent in a forced loop. Wire it once into a query:
 
 ```ts
-import { createSessionGoal, GOAL_SLASH_COMMAND } from 'silver-core-agent-sdk';
-
-const goal = createSessionGoal({
-  utility: { provider },              // evaluator credentials (Haiku default)
-  onEvent: (e) => updateBadge(e),     // set/met/blocked/impossible/...
+const q = query({
+  prompt,
+  options: {
+    goal: {
+      goal: 'all tests pass and the changelog is updated',
+      evaluate: async (transcript) => ({ met: false, reason: 'changelog not touched' }),
+      maxBlocks: 5, // safety cap on consecutive re-drives
+    },
+  },
 });
-// wire ONCE into every query of the session:
-const q = query({ prompt, options: { hooks: { ...goal.hooks() } } });
-// route user input BEFORE submitting it as a prompt:
-const outcome = goal.handleCommand(userInput);
-if (outcome.handled) {
-  return outcome.ok ? showInfo(outcome.message) : showError(outcome.error);
-}
 ```
 
-Failure direction is deliberately INVERTED from the generic hook-condition
-gate: there the dangerous act is firing a hook (unverified → don't fire);
-here the dangerous act is BLOCKING the stop, so an errored/unparseable/
-context-less evaluation ALLOWS the stop and keeps the goal armed — a broken
-judge must never trap the agent in a forced loop. `GOAL_SLASH_COMMAND` is
-menu metadata only, not an engine built-in (same honesty red line as /loop).
+Note on the slash retirement (0.63.0): the engine no longer parses `/`-prefixed
+text, and the former `/loop` and `/goal` host bridges — `parseLoopCommand`,
+`createPromptLoop`, `LOOP_SLASH_COMMAND`, `createSessionGoal`,
+`GOAL_SLASH_COMMAND` — were deleted. Recurrence loops now belong to the host
+runner (or the `silver-core-maestro-sdk` scheduler); goals live in
+`options.goal`. Input parsing is the client layer's job.
+
 
 ## Examples
 

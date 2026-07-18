@@ -211,6 +211,34 @@ describe('supervised auto-resume', () => {
     await mgr.close();
   });
 
+  it('WV3-1: a runtime setModel override survives a transparent auto-resume', async () => {
+    // Before the fix, scheduleResume rebuilt the query from the ORIGINAL
+    // options, silently reverting any control-plane override the consumer set
+    // (setModel / setPermissionMode / setMaxThinkingTokens / retained regions).
+    // Here the consumer overrides the model BEFORE the crash; the redrive must
+    // send the OVERRIDDEN model, not the base 'claude-sonnet-4-5'.
+    const store = new InMemorySessionStore();
+    const { fn, calls } = scriptedFetch(['crash', textReplyEvents('recovered')]);
+    vi.stubGlobal('fetch', fn);
+
+    const mgr = createBptSession(
+      managerOptions({ sessionStore: store, recovery: { autoResume: true, maxResumes: 2 } }),
+    );
+    const q = mgr.query({ prompt: 'hello keeper' });
+    q.setModel('claude-opus-4-1'); // runtime override, before the crash
+    await collect(q);
+
+    expect(calls()).toBe(2); // crash, then redrive
+    const bodyOf = (i: number): { model?: string } =>
+      JSON.parse(String((fn.mock.calls[i]?.[1] as RequestInit | undefined)?.body ?? '{}'));
+    // Attempt 1 (pre-resume) already carries the override...
+    expect(bodyOf(0).model).toBe('claude-opus-4-1');
+    // ...and the resumed redrive MUST still carry it (not revert to base).
+    expect(bodyOf(1).model).toBe('claude-opus-4-1');
+
+    await mgr.close();
+  });
+
   it('①b retires the abandoned query (full teardown) BEFORE re-driving (audit 2026-07-14 H-2)', async () => {
     // Before the fix, scheduleResume only swapped `q = start(...)`: the old
     // query generator stayed suspended at the yield that surfaced the error
