@@ -10,6 +10,52 @@ orchestrator-sdk §2): the two packages never bump in lockstep. Same ledger
 discipline as the agent SDK: every merge that changes shipped runtime code
 bumps the version and adds one line here.
 
+## 0.4.0 — 2026-07-18
+
+Campaigns 3-6 in one release (keeper order: implement the remaining campaigns
+via dynamic multi-agent orchestration — four file-disjoint implementation
+agents + two adversarial reviewers, then single-brain integration):
+
+- **Schedule** (campaign 3, §3/§6.2): pure core `validateSpec` / `nextFireAt`
+  / `firesBetween` (UTC dailyAt + anchored intervals; capped missed-fire
+  windows keep the LATEST fires) + dispatch-only `Scheduler` — fire
+  bookkeeping lives IN the ledger (`sched:{id}:{fireAt}` idempotent keys), so
+  restart recovery scans the store; catch-up policy `latest` (default) /
+  `all`. Example 2 `examples/schedule-loop.mjs` proves 定点触发 + 错过补偿 +
+  跨重启恢复 end to end.
+- **Workflow graph executor** (campaign 4, §3/§6.3): graph definition is DATA
+  — pure core `validateGraph` (duplicates / unknown deps / self-deps / cycles
+  with exact cycle-path reporting) / `readyNodes` / `graphStatus` (fail-fast)
+  + `WorkflowRun` (nodes are ledger sessions `wf:{graph}:{run}:{node}`;
+  idempotent dispatch IS resume; join nodes receive upstream ok-summaries in
+  their payload). Example 3 `examples/workflow-fanout.mjs`: fan-out workers
+  converging into a merge node.
+- **Goal chaser** (campaign 5, §3): cross-query re-initiation — rounds are
+  ledger sessions `goal:{id}:round-{n}`, the host-injected evaluator judges
+  each round, feedback re-enters the next round's payload; engine-side goal
+  (agent SDK) keeps within-one-query attainment; goal semantics stay in
+  payload, the ledger schema is untouched. `nextGoalAction` pure core
+  (done / continue / impossible / exhausted).
+- **Delivery contract** (campaign 6, §5): `DeliverySink` host-injected seam +
+  `createDeliveryChannel` — every deliver() rides the normal session
+  lifecycle as its audit record (audit-before-send: a store failure aborts
+  before the sink is called; sink failure lands in the receipt AND the
+  ledger, never thrown).
+- **Ledger hardening from the adversarial review** (4 major + 1 minor, all
+  fixed and pinned): typed `DuplicateSessionError` (idempotent dispatchers
+  swallow exactly it — a message match also swallowed coincidental EEXIST
+  store errors and dropped fires permanently); new `TaskLedger.claimSession`
+  (surgical claim-one; the delivery channel no longer steals co-resident due
+  sessions via claimDue and concurrent delivers are safe); ':' banned in
+  schedule spec ids / graph + node ids / runId / goal ids (colon is the
+  session-key separator — embedded colons collided distinct runs onto one
+  record); `GoalChaser` drain timeout escape hatch (a stopped driver no
+  longer hangs chase() forever).
+- Mutation ratchet: three new pure-core targets seeded — schedule-spec
+  **100.00**, workflow-graph **97.14** (3 documented equivalence-class
+  survivors), goal-decision **100.00**; weekly CI matrix extended.
+- Tests 50 -> 171 (15 files); typecheck clean.
+
 ## 0.3.0 — 2026-07-18
 
 Family naming finalized (keeper ruling, conductor direction -> maestro): npm
