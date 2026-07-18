@@ -47,7 +47,12 @@ jobs:
         run: npm ci
       - name: Build maestro SDK (patrol host dependency)
         run: npm run build --workspace silver-core-maestro-sdk
+      # A partial patrol failure (one storefront down) must not discard the
+      # SUCCESSFUL targets' snapshots + ledger state (audit H5): capture the
+      # exit code, always commit, and only then fail the job.
       - name: Run store patrol (ledger + driver)
+        id: patrol
+        continue-on-error: true
         run: RUN_STORE_PATROL=1 node projects/silver-core-maestro-sdk/examples/store-patrol.mjs
       - name: Commit and push if changed
         run: |
@@ -74,3 +79,10 @@ jobs:
             echo "All push attempts failed"
             exit 1
           fi
+      # Deferred failure: the commit step above has already persisted whatever
+      # the patrol did manage to collect; now surface the partial failure.
+      - name: Fail the job if the patrol failed
+        if: steps.patrol.outcome == 'failure'
+        run: |
+          echo "Store patrol exited non-zero (partial failure); snapshots for successful targets were committed above."
+          exit 1
