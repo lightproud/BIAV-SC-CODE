@@ -241,6 +241,13 @@ export const taskGetTool: BuiltinTool = {
       `Blocks: ${idList(task.blocks)}`,
       `Blocked by: ${idList(task.blockedBy)}`,
     ];
+    if (task.owner !== undefined) lines.push(`Owner: ${task.owner}`);
+    // Metadata round-trip (audit r4 Z5-3): TaskCreate/TaskUpdate accept
+    // metadata but no reader ever surfaced it — write-only storage. Rendered
+    // here (TaskGet is the detail view; TaskList stays a compact summary).
+    if (Object.keys(task.metadata).length > 0) {
+      lines.push(`Metadata: ${JSON.stringify(task.metadata)}`);
+    }
     return { content: lines.join('\n') };
   },
 };

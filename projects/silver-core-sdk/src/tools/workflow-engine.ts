@@ -41,9 +41,11 @@
  *    properties / items / enum / const / $ref / bounds — H5, audit T49: the
  *    previous shallow required-keys check was schema-blind to types and
  *    nesting, so `{"bugs":"none"}` passed a schema demanding an array and
- *    crashed the consuming script); there is no forced StructuredOutput tool
- *    call nor retry-on-mismatch — an unparsable or non-conforming reply
- *    yields null (same null semantics as a dead agent).
+ *    crashed the consuming script). Extraction is STRICT — direct parse or
+ *    fenced block only, no prose-span scanning (audit r4 Z1-1); there is no
+ *    forced StructuredOutput tool call nor retry-on-mismatch — an unparsable
+ *    or non-conforming reply yields null (same null semantics as a dead
+ *    agent).
  *
  * Resume: each run journals its agent() calls in invocation order as
  * (input-hash, result) pairs. Resume lookup is ORDER-INDEPENDENT (audit
@@ -325,7 +327,31 @@ class LiteralParser {
           this.i += 2;
           continue;
         }
+        // Line continuation (backslash-newline): contributes nothing, like JS.
+        if (next === '\n' || next === '\r') {
+          this.i += next === '\r' && this.src[this.i + 2] === '\n' ? 3 : 2;
+          continue;
+        }
+        if (next === 'x') {
+          const hex = this.src.slice(this.i + 2, this.i + 4);
+          if (!/^[0-9a-fA-F]{2}$/.test(hex)) this.fail('meta string: bad \\x escape');
+          out += String.fromCharCode(parseInt(hex, 16));
+          this.i += 4;
+          continue;
+        }
         if (next === 'u') {
+          // Code-point form \u{...} (legal JS the old parser hard-rejected,
+          // audit r4 Z5-1), then the fixed four-digit \uXXXX form.
+          if (this.src[this.i + 2] === '{') {
+            const close = this.src.indexOf('}', this.i + 3);
+            const hex = close === -1 ? '' : this.src.slice(this.i + 3, close);
+            if (!/^[0-9a-fA-F]{1,6}$/.test(hex) || parseInt(hex, 16) > 0x10ffff) {
+              this.fail('meta string: bad \\u{...} escape');
+            }
+            out += String.fromCodePoint(parseInt(hex, 16));
+            this.i = close + 1;
+            continue;
+          }
           const hex = this.src.slice(this.i + 2, this.i + 6);
           if (!/^[0-9a-fA-F]{4}$/.test(hex)) this.fail('meta string: bad \\u escape');
           out += String.fromCharCode(parseInt(hex, 16));
@@ -344,10 +370,30 @@ class LiteralParser {
   }
 
   private parseNumber(): number {
-    const m = /^-?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?/.exec(this.src.slice(this.i));
-    if (m === null || m[0] === '-') this.fail('meta number: malformed number literal');
-    this.i += m[0].length;
-    return Number(m[0]);
+    // All legal JS number-literal forms (audit r4 Z5-1: the old decimal-only
+    // regex hard-rejected hex/octal/binary and numeric separators, so a legal
+    // pure-literal meta never ran): radix literals first, then decimal, all
+    // with optional `_` separators. BigInt (`123n`) is rejected EXPLICITLY —
+    // meta values must be JSON-representable — instead of failing cryptically
+    // at the trailing `n`.
+    const rest = this.src.slice(this.i);
+    const negative = rest.startsWith('-');
+    const body = negative ? rest.slice(1) : rest;
+    const m =
+      /^0[xX][0-9a-fA-F](?:_?[0-9a-fA-F])*/.exec(body) ??
+      /^0[oO][0-7](?:_?[0-7])*/.exec(body) ??
+      /^0[bB][01](?:_?[01])*/.exec(body) ??
+      /^(?:\d(?:_?\d)*(?:\.(?:\d(?:_?\d)*)?)?|\.\d(?:_?\d)*)(?:[eE][+-]?\d(?:_?\d)*)?/.exec(body);
+    if (m === null || m[0] === '') this.fail('meta number: malformed number literal');
+    const consumed = (negative ? 1 : 0) + m[0].length;
+    if (rest[consumed] === 'n') {
+      this.fail(
+        'meta number: BigInt literals are not supported in meta (values must be JSON-representable)',
+      );
+    }
+    this.i += consumed;
+    const value = Number(m[0].replace(/_/g, ''));
+    return negative ? -value : value;
   }
 }
 
@@ -480,6 +526,22 @@ const PRELUDE = `'use strict';
   };
   Math.random = banned('Math.random()', 'vary agent prompts/labels by index instead.');
   Date.now = banned('Date.now()', 'pass timestamps in via args.');
+  // GC observation is just as nondeterministic as a clock read (audit r4
+  // Z5-4): a script branching on whether a WeakRef target was collected (or
+  // on a finalizer firing) diverges between the original run and a resume.
+  // A plain function (not an arrow) so \`new WeakRef(x)\` reaches the body and
+  // throws the determinism error instead of "not a constructor".
+  const bannedCtor = (what, hint) =>
+    function () {
+      throw new WorkflowDeterminismError(
+        what + ' is unavailable in workflow scripts (it would break resume); ' + hint,
+      );
+    };
+  globalThis.WeakRef = bannedCtor('WeakRef', 'GC observation is nondeterministic.');
+  globalThis.FinalizationRegistry = bannedCtor(
+    'FinalizationRegistry',
+    'GC observation is nondeterministic.',
+  );
   const RealDate = Date;
   globalThis.Date = new Proxy(RealDate, {
     construct(target, argList, newTarget) {
@@ -539,6 +601,13 @@ class WorkflowSyntaxError extends Error {}
 /** Script-facing operational failures (caps, missing runtime, resolution). */
 class WorkflowScriptError extends Error {}
 
+/** Run-terminating limit violations (the lifetime-agent runaway backstop).
+ *  Unlike ordinary per-item failures, parallel()/pipeline() must NOT swallow
+ *  this to null (audit r4 Z5-2): a workflow that hit the backstop inside a
+ *  fan-out otherwise completes "ok" with null items and the runaway control
+ *  flow is never reported. Rethrown alongside abort in the per-item catches. */
+class WorkflowLimitError extends Error {}
+
 /** Script-facing call-shape errors (wrong argument types to the hooks). */
 class WorkflowTypeError extends TypeError {}
 
@@ -546,15 +615,31 @@ function isAbort(err: unknown): boolean {
   return err instanceof AbortError || (err instanceof Error && err.name === 'AbortError');
 }
 
-/** Deterministic stringify (sorted object keys) for agent-call hashing. */
-function stableStringify(value: unknown): string {
+/** Deterministic stringify (sorted object keys) for agent-call hashing.
+ *  Total over hashable inputs (audit r4 R7j-5): a circular reference throws a
+ *  clean WorkflowTypeError instead of blowing the stack, and BigInt gets a
+ *  deterministic `<digits>n` rendering instead of JSON.stringify's TypeError
+ *  (validateAgentOpts rejects both up front for the agent() path; this keeps
+ *  the hasher itself safe). */
+function stableStringify(value: unknown, seen = new Set<object>()): string {
+  if (typeof value === 'bigint') return `${value.toString()}n`;
   if (value === null || typeof value !== 'object') return JSON.stringify(value) ?? 'undefined';
-  if (Array.isArray(value)) return `[${value.map(stableStringify).join(',')}]`;
-  const entries = Object.entries(value as Record<string, unknown>)
-    .filter(([, v]) => v !== undefined)
-    .sort(([a], [b]) => (a < b ? -1 : 1))
-    .map(([k, v]) => `${JSON.stringify(k)}:${stableStringify(v)}`);
-  return `{${entries.join(',')}}`;
+  if (seen.has(value)) {
+    throw new WorkflowTypeError('agent() options are not hashable: circular reference.');
+  }
+  seen.add(value);
+  try {
+    if (Array.isArray(value)) {
+      return `[${value.map((v) => stableStringify(v, seen)).join(',')}]`;
+    }
+    const entries = Object.entries(value as Record<string, unknown>)
+      .filter(([, v]) => v !== undefined)
+      .sort(([a], [b]) => (a < b ? -1 : 1))
+      .map(([k, v]) => `${JSON.stringify(k)}:${stableStringify(v, seen)}`);
+    return `{${entries.join(',')}}`;
+  } finally {
+    seen.delete(value);
+  }
 }
 
 function errorMessage(err: unknown): string {
@@ -596,11 +681,14 @@ function schemaInstruction(schema: unknown): string {
 
 /** Parse a structured (schema) agent reply. Returns undefined when the reply
  *  is not valid JSON or does not validate against the schema (H5, audit T49:
- *  full-subset validation via the engine's structured-output validator —
- *  lenient extraction included, which subsumes the old fence-stripping — so a
- *  type-/nesting-violating reply can no longer masquerade as "validated"). */
+ *  full-subset validation via the engine's structured-output validator).
+ *  Extraction is STRICT (audit r4 Z1-1): only a direct parse of the whole
+ *  reply or a fenced block counts — H5's switch to the shared validator had
+ *  silently inherited its lenient prose-span scanning, so a wrong embedded
+ *  object in a chatty reply could validate and poison the script's data with
+ *  no retry channel to catch it. */
 function parseStructured(text: string, schema: Record<string, unknown>): unknown {
-  const outcome = evaluateStructuredOutput(text, schema as JSONSchema);
+  const outcome = evaluateStructuredOutput(text, schema as JSONSchema, { extraction: 'strict' });
   return outcome.status === 'valid' ? outcome.value : undefined;
 }
 
@@ -628,11 +716,20 @@ function validateAgentOpts(raw: unknown): AgentOpts {
   if (o['isolation'] !== undefined && o['isolation'] !== 'worktree') {
     throw new WorkflowTypeError('agent() opts.isolation must be "worktree" when provided.');
   }
-  if (
-    o['schema'] !== undefined &&
-    (o['schema'] === null || typeof o['schema'] !== 'object' || Array.isArray(o['schema']))
-  ) {
-    throw new WorkflowTypeError('agent() opts.schema must be a JSON Schema object.');
+  if (o['schema'] !== undefined) {
+    if (o['schema'] === null || typeof o['schema'] !== 'object' || Array.isArray(o['schema'])) {
+      throw new WorkflowTypeError('agent() opts.schema must be a JSON Schema object.');
+    }
+    // One up-front serializability gate (audit r4 R7j-5): a circular or
+    // BigInt-carrying schema would otherwise surface as a raw TypeError from
+    // the prompt-instruction JSON.stringify deep inside agent().
+    try {
+      JSON.stringify(o['schema']);
+    } catch (err) {
+      throw new WorkflowTypeError(
+        `agent() opts.schema must be JSON-serializable (${errorMessage(err)}).`,
+      );
+    }
   }
   return o as AgentOpts;
 }
@@ -702,7 +799,7 @@ export async function runWorkflow(opts: WorkflowRunOptions): Promise<WorkflowRun
     const index = seq;
     seq += 1;
     if (index >= limits.maxTotalAgents) {
-      throw new WorkflowScriptError(
+      throw new WorkflowLimitError(
         `Workflow agent limit reached: at most ${limits.maxTotalAgents} agent() calls ` +
           'are allowed across a workflow\'s lifetime (runaway-loop backstop).',
       );
@@ -840,13 +937,15 @@ export async function runWorkflow(opts: WorkflowRunOptions): Promise<WorkflowRun
       }
     });
     // Barrier: awaits ALL thunks. A thunk that throws resolves to null in the
-    // result array — the call itself never rejects (abort excepted).
+    // result array — the call itself never rejects (abort and the lifetime
+    // backstop excepted: swallowing the backstop to null reported a runaway
+    // workflow as ok:true, audit r4 Z5-2).
     return Promise.all(
       thunksRaw.map((thunk, i) =>
         Promise.resolve()
           .then(() => (thunk as () => unknown)())
           .catch((err: unknown) => {
-            if (isAbort(err)) throw err;
+            if (isAbort(err) || err instanceof WorkflowLimitError) throw err;
             pushProgress(`[parallel] item ${i} failed -> null (${errorMessage(err)})`);
             return null;
           }),
@@ -868,7 +967,9 @@ export async function runWorkflow(opts: WorkflowRunOptions): Promise<WorkflowRun
       if (typeof s !== 'function') throw new WorkflowTypeError(`pipeline() stage ${i} is not a function.`);
     });
     // NO barrier between stages: each item runs through all stages on its own
-    // chain. A stage that throws drops that item to null and skips the rest.
+    // chain. A stage that throws drops that item to null and skips the rest
+    // (abort and the lifetime backstop excepted — audit r4 Z5-2, as in
+    // parallel() above).
     return Promise.all(
       itemsRaw.map(async (item, index) => {
         let prev: unknown = item;
@@ -880,7 +981,7 @@ export async function runWorkflow(opts: WorkflowRunOptions): Promise<WorkflowRun
               index,
             );
           } catch (err) {
-            if (isAbort(err)) throw err;
+            if (isAbort(err) || err instanceof WorkflowLimitError) throw err;
             pushProgress(
               `[pipeline] item ${index} dropped at stage ${s} -> null (${errorMessage(err)})`,
             );

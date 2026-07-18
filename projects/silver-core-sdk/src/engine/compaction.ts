@@ -38,6 +38,7 @@ import type {
   StreamRequest,
 } from '../internal/contracts.js';
 import { resolveModelAlias } from '../internal/model-alias.js';
+import { sliceSurrogateSafe } from '../internal/text.js';
 import { RetentionStore } from '../loop-support/retention.js';
 import { MessageAccumulator } from './accumulator.js';
 import { contextWindowFor } from './context-window.js';
@@ -982,21 +983,10 @@ function toolUses(
   );
 }
 
+// D4 (audit r2 2026-07-17): the fold persists, so a lone surrogate written
+// here serializes as U+FFFD on every subsequent wire request — permanently.
+// shedToolResultContent is already codepoint-safe; sliceSurrogateSafe (now
+// shared via internal/text.ts) closes the recap-cap and per-line paths.
 function firstChars(s: string, n: number): string {
   return s.length <= n ? s : sliceSurrogateSafe(s, n) + '…';
-}
-
-/**
- * D4 (audit r2 2026-07-17): truncate to at most n UTF-16 units WITHOUT
- * splitting a surrogate pair. A bare .slice() cutting an astral codepoint
- * (emoji, CJK Ext-B) in half writes a lone surrogate into the fold text, which
- * serializes as U+FFFD on every subsequent wire request — permanently, since
- * the fold persists. shedToolResultContent is already codepoint-safe; this
- * closes the recap-cap and per-line paths.
- */
-function sliceSurrogateSafe(s: string, n: number): string {
-  const cut = s.slice(0, n);
-  const last = cut.charCodeAt(cut.length - 1);
-  // A trailing HIGH surrogate means the cut landed mid-pair: drop it.
-  return last >= 0xd800 && last <= 0xdbff ? cut.slice(0, -1) : cut;
 }
