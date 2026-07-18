@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { TaskLedger } from '../src/ledger/ledger.js';
+import { TaskLedger, DuplicateSessionError } from '../src/ledger/ledger.js';
 import { InvalidTransitionError } from '../src/ledger/state.js';
 import type { LedgerStore, SessionFilter } from '../src/ledger/store.js';
 import type { QueryRecord, SessionRecord } from '../src/ledger/types.js';
@@ -229,5 +229,36 @@ describe('TaskLedger.recordOutcome', () => {
     await expect(
       ledger.recordOutcome(s.id, { outcome: 'ok', startedAt: 0, endedAt: 1 }),
     ).rejects.toThrowError(InvalidTransitionError); // pending, not running
+  });
+});
+
+describe('TaskLedger.claimSession + DuplicateSessionError (review hardening 2026-07-18)', () => {
+  it('claims exactly the named session and nothing else', async () => {
+    const clock = testClock(1_000);
+    const ledger = new TaskLedger({ store: memoryStore(), clock });
+    const a = await ledger.dispatch({ intent: 'a' });
+    const b = await ledger.dispatch({ intent: 'b' }); // due too — must NOT be claimed
+    const claimed = await ledger.claimSession(a.id);
+    expect(claimed).toMatchObject({ id: a.id, state: 'running', attempts: 1, nextRunAt: null });
+    expect((await ledger.getSession(b.id))?.state).toBe('pending');
+  });
+  it('throws on unknown id and on non-claimable states', async () => {
+    const clock = testClock(1_000);
+    const ledger = new TaskLedger({ store: memoryStore(), clock });
+    await expect(ledger.claimSession('nope')).rejects.toThrow(/unknown session/);
+    const s = await ledger.dispatch({ intent: 'a' });
+    await ledger.claimSession(s.id);
+    await expect(ledger.claimSession(s.id)).rejects.toThrowError(InvalidTransitionError);
+  });
+  it('duplicate dispatch throws the TYPED DuplicateSessionError carrying the id', async () => {
+    const ledger = new TaskLedger({ store: memoryStore(), clock: testClock() });
+    await ledger.dispatch({ intent: 'x', id: 'dup' });
+    try {
+      await ledger.dispatch({ intent: 'y', id: 'dup' });
+      expect.unreachable('must throw');
+    } catch (e) {
+      expect(e).toBeInstanceOf(DuplicateSessionError);
+      expect((e as DuplicateSessionError).sessionId).toBe('dup');
+    }
   });
 });

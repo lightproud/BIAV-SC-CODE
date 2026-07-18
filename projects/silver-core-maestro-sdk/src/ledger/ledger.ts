@@ -47,6 +47,22 @@ const outcomeEvent = {
   timeout: 'attempt:timeout',
 } as const;
 
+/**
+ * Thrown by dispatch() on a duplicate explicit id. A TYPED error, so
+ * idempotent dispatchers (scheduler, workflow run) can swallow exactly this
+ * and nothing else — matching /already exists/ on the message would also
+ * swallow coincidental store failures (e.g. a file store's EEXIST) and drop
+ * fires permanently (review finding 2026-07-18).
+ */
+export class DuplicateSessionError extends Error {
+  readonly sessionId: string;
+  constructor(sessionId: string) {
+    super(`dispatch: session '${sessionId}' already exists`);
+    this.name = 'DuplicateSessionError';
+    this.sessionId = sessionId;
+  }
+}
+
 export class TaskLedger {
   readonly #store: LedgerStore;
   readonly #clock: Pick<Clock, 'now'>;
@@ -72,7 +88,7 @@ export class TaskLedger {
     if (input.id !== undefined) {
       const existing = await this.#store.getSession(input.id);
       if (existing !== null) {
-        throw new Error(`dispatch: session '${input.id}' already exists`);
+        throw new DuplicateSessionError(input.id);
       }
     }
     const now = this.#clock.now();
@@ -115,6 +131,31 @@ export class TaskLedger {
       claimed.push(updated);
     }
     return claimed;
+  }
+
+  /**
+   * Claim ONE session by id for an attempt (state -> running, attempts += 1).
+   * The surgical sibling of claimDue for callers that execute inline (the
+   * delivery channel) — claimDue would claim EVERY due session in the store
+   * and steal a co-resident driver's work (review finding 2026-07-18).
+   * Unlike claimDue this claims regardless of nextRunAt: the caller created
+   * the session and is executing it now.
+   */
+  async claimSession(sessionId: string, now: number = this.#clock.now()): Promise<SessionRecord> {
+    const session = await this.#store.getSession(sessionId);
+    if (session === null) {
+      throw new Error(`claimSession: unknown session '${sessionId}'`);
+    }
+    const next = transition(session.state, 'claim', session);
+    const updated: SessionRecord = {
+      ...session,
+      state: next,
+      attempts: session.attempts + 1,
+      nextRunAt: null,
+      updatedAt: now,
+    };
+    await this.#store.putSession(updated);
+    return { ...updated };
   }
 
   /**

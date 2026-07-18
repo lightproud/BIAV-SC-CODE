@@ -103,7 +103,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        target: [ledger-state]
+        target: [ledger-state, schedule-spec, workflow-graph, goal-decision]
     steps:
       - name: Skip when a single target was requested and this is not it
         if: github.event.inputs.target != '' && github.event.inputs.target != matrix.target

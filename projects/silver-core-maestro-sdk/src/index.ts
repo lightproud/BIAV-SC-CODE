@@ -22,7 +22,7 @@
  * LedgerDriver.
  */
 
-export const MAESTRO_SDK_VERSION = '0.3.0';
+export const MAESTRO_SDK_VERSION = '0.4.0';
 
 // Clock seam
 export type { Clock } from './clock.js';
@@ -51,7 +51,7 @@ export type { SessionEvent, TransitionContext, RetryPolicy } from './ledger/stat
 export type { LedgerStore, SessionFilter } from './ledger/store.js';
 
 // Ledger API
-export { TaskLedger } from './ledger/ledger.js';
+export { TaskLedger, DuplicateSessionError } from './ledger/ledger.js';
 export type { TaskLedgerOptions, DispatchInput, OutcomeInput } from './ledger/ledger.js';
 
 // Driver (live component; host holds life-and-death)
@@ -63,3 +63,43 @@ export type {
   ExecutorResult,
   ExecutorContext,
 } from './driver.js';
+
+// Schedule (campaign 3: 定点触发 + 错过补偿 + 跨重启恢复)
+export { ScheduleSpecError, validateSpec, nextFireAt, firesBetween } from './schedule/spec.js';
+export type { ScheduleSpec } from './schedule/spec.js';
+export { Scheduler } from './schedule/scheduler.js';
+export type { SchedulerOptions, SchedulerEvent } from './schedule/scheduler.js';
+
+// Workflow graph executor (campaign 4: 声明式图,图定义是数据)
+export { GraphError, validateGraph, readyNodes, graphStatus } from './workflow/graph.js';
+export type { WorkflowNode, WorkflowGraph, WorkflowStatus } from './workflow/graph.js';
+export { WorkflowRun, workflowSessionId } from './workflow/run.js';
+export type {
+  WorkflowRunOptions,
+  WorkflowRunResult,
+  WorkflowNodeContext,
+  WorkflowNodePayload,
+} from './workflow/run.js';
+
+// Goal chaser (campaign 5: 跨 query 重发起,记账为多 session)
+export { nextGoalAction } from './goal/decision.js';
+export type { GoalVerdict, GoalAction } from './goal/decision.js';
+export { GoalChaser, goalRoundSessionId } from './goal/chaser.js';
+export type {
+  GoalRunConfig,
+  GoalRoundPayload,
+  GoalEvaluator,
+  GoalChaserEvent,
+  GoalChaserOptions,
+  GoalChaseResult,
+} from './goal/chaser.js';
+
+// Delivery contract (campaign 6: 送达缝宿主注入 + 台账审计)
+export { createDeliveryChannel } from './delivery/channel.js';
+export type {
+  DeliveryMessage,
+  DeliverySink,
+  DeliveryReceipt,
+  DeliveryChannel,
+  DeliveryChannelOptions,
+} from './delivery/channel.js';
