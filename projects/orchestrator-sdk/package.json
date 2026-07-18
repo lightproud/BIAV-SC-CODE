@@ -1,7 +1,7 @@
 {
-  "name": "@biav/agent-sdk",
-  "version": "0.66.0",
-  "description": "BIAV agent SDK (Silver Core) - independent agent harness with a claude-agent-sdk compatible surface, driving the Anthropic Messages API directly (no bundled CLI binary).",
+  "name": "@biav/orchestrator-sdk",
+  "version": "0.1.0",
+  "description": "BIAV orchestrator SDK (Silver Core) - reusable parts for agents that outlive a single call: clock, cross-session state, session assembly (task ledger, driver, loop/schedule/workflow scaffolds). A library, not a framework: the host owns main().",
   "license": "MIT",
   "type": "module",
   "main": "./dist/index.js",
@@ -27,24 +27,23 @@
     "test": "vitest run",
     "test:watch": "vitest"
   },
-  "dependencies": {
-    "fast-glob": "^3.3.2",
-    "zod": "^4.0.0"
+  "peerDependencies": {
+    "@biav/agent-sdk": ">=0.66.0 <1.0.0"
   },
   "devDependencies": {
+    "@biav/agent-sdk": "*",
     "@stryker-mutator/core": "^9.6.1",
     "@stryker-mutator/vitest-runner": "^9.6.1",
     "@types/node": "^22.0.0",
-    "fast-check": "^4.9.0",
     "typescript": "^5.6.0",
     "vitest": "^3.0.0"
   },
   "keywords": [
     "agent",
+    "orchestration",
     "sdk",
-    "anthropic",
-    "messages-api",
-    "mcp",
+    "task-ledger",
+    "scheduler",
     "bpt"
   ]
 }

@@ -16,10 +16,14 @@ on:
     branches: [main]
     paths:
       - 'projects/silver-core-sdk/**'
+      - 'package.json'
+      - 'package-lock.json'
       - '.github/workflows/silver-core-sdk.yml'
   pull_request:
     paths:
       - 'projects/silver-core-sdk/**'
+      - 'package.json'
+      - 'package-lock.json'
       - '.github/workflows/silver-core-sdk.yml'
   schedule:
     # Monthly L5 real-API round (audit 2026-07-10 P2-7/F): the emulator-based
