@@ -1061,6 +1061,23 @@ export type OpenAIProtocolOptions = {
    * e.g. `{ enable_thinking: false }`). Translator-owned keys win on conflict.
    */
   extraBody?: Record<string, unknown>;
+  /**
+   * OPT-IN (default false): send `strict: true` on the `response_format`
+   * `json_schema` for structured-output requests. When set, api.openai.com
+   * uses constrained decoding to GUARANTEE the model's output matches the
+   * schema — eliminating the engine-side validate-and-retry churn that a
+   * best-effort (non-strict) schema incurs (audit r2 2026-07-17 B3).
+   *
+   * Left off by default because strict mode is NOT free: OpenAI requires the
+   * schema to satisfy the strict subset (`additionalProperties: false` on every
+   * object, every property listed in `required`, supported keywords only) and
+   * REJECTS a non-conforming schema with a request-time 400 — worse than the
+   * silent best-effort degrade. Many OpenAI-compatible gateways (older vLLM,
+   * one-api variants) also do not implement strict. Enable this ONLY when the
+   * endpoint supports strict mode AND every structured-output schema you pass
+   * is strict-compatible.
+   */
+  strictStructuredOutput?: boolean;
 };
 
 /**
@@ -1327,6 +1344,28 @@ export type SandboxOptions = {
    * Seatbelt implementation). When set it is used verbatim, no probing.
    */
   backend?: SandboxBackend;
+  /**
+   * OPT-IN (default off): restrict the environment a SANDBOXED command inherits.
+   * By default the sandbox does NOT isolate the environment — a sandboxed
+   * command reads the whole `options.env ?? process.env`, including every host
+   * secret (API keys, cloud credentials), since bubblewrap does not scrub env
+   * (audit r2 2026-07-17 Q1). This matters because the sandbox exists to
+   * contain model-driven commands, and `options.env` cannot be scrubbed on its
+   * own to hide secrets — the API transport resolves its credential from that
+   * SAME env, so scrubbing it there breaks auth unless `provider.apiKey` is set.
+   *
+   *  - `true`         → keep only a built-in set of non-secret essentials
+   *                     (PATH/HOME/USER/LOGNAME/SHELL/LANG/LANGUAGE/TERM/TZ/PWD),
+   *                     dropping everything else. The one-liner "hide my
+   *                     secrets from sandboxed commands" switch.
+   *  - `{ allow }`    → keep ONLY the listed keys (the host owns the full set;
+   *                     the sandbox `$TMPDIR` overlay is always applied after).
+   *  - unset / false  → current behavior: the full env is inherited (parity).
+   *
+   * The scrub applies to sandboxed spawns only; an unsandboxed / escaped
+   * command (which makes no containment claim) always inherits the full env.
+   */
+  envScrub?: boolean | { allow?: readonly string[] };
 };
 
 /** One shell invocation a sandbox backend wraps (foreground and background). */
@@ -1365,6 +1404,12 @@ export type SandboxContext = {
   allowNetwork: boolean;
   /** false = mandatory mode: dangerouslyDisableSandbox is disabled by policy. */
   allowEscape: boolean;
+  /**
+   * Resolved from SandboxOptions.envScrub (audit r2 2026-07-17 Q1). When set,
+   * a sandboxed spawn inherits ONLY these env keys (the sandbox $TMPDIR overlay
+   * is still applied on top); undefined = inherit the full env (default parity).
+   */
+  envAllowlist?: readonly string[];
 };
 
 /** NEW-IN-DOCS: how reasoning content is surfaced (Options.thinking `display`).

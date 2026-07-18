@@ -120,6 +120,14 @@ export interface SubagentRuntime {
   sendMessage(params: {
     to: string;
     message: string;
+    /**
+     * Optional short recap of the OUTGOING message (SendMessage `summary`),
+     * surfaced on the background delivery's task_notification `summary` so a
+     * host progress display can label the exchange — the schema's stated
+     * purpose (audit r2 2026-07-17 G4). Ignored for a foreground child, whose
+     * reply returns inline with no async progress surface.
+     */
+    summary?: string;
     signal: AbortSignal;
   }): Promise<{ content: string; isError: boolean }>;
   /**
@@ -1943,9 +1951,18 @@ export function createSubagentRuntime(
     async sendMessage(params: {
       to: string;
       message: string;
+      summary?: string;
       signal: AbortSignal;
     }): Promise<{ content: string; isError: boolean }> {
       const agentId = params.to;
+      // G4 (audit r2 2026-07-17): the OUTGOING recap the caller supplied, if
+      // any, prefixes the background delivery notification's summary so a host
+      // progress display labels the exchange (the SendMessage schema's stated
+      // "for progress display" purpose).
+      const outgoingRecap =
+        typeof params.summary === 'string' && params.summary.length > 0
+          ? params.summary
+          : undefined;
       const record = childRegistry.get(agentId);
       if (record === undefined) {
         const known = [...childRegistry.keys()];
@@ -1983,12 +2000,13 @@ export function createSubagentRuntime(
         // reply arrives on a later drained turn as a <task-notification>.
         const delivery = turn
           .then((result) => {
+            const recapPrefix = outgoingRecap !== undefined ? `"${outgoingRecap}" — ` : '';
             completedBuffer.push({
               type: 'text',
               text: formatTaskNotification({
                 agentId,
                 status: result.isError ? 'failed' : 'completed',
-                summary: `Agent "${record.description}" ${
+                summary: `${recapPrefix}Agent "${record.description}" ${
                   result.isError
                     ? `failed: ${resultPreview(result.text)}`
                     : 'replied'
@@ -2003,7 +2021,7 @@ export function createSubagentRuntime(
               task_id: agentId,
               status: result.isError ? 'failed' : 'completed',
               output_file: '',
-              summary: `background subagent '${record.agentType}' ${
+              summary: `${recapPrefix}background subagent '${record.agentType}' ${
                 result.isError ? 'failed' : 'replied'
               }`,
             });

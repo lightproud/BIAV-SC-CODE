@@ -16,6 +16,100 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.65.7 — 2026-07-17
+
+T50 batch L — the three WONTFIX candidates, resolved per keeper ruling
+(2026-07-17, "按你建议推进"). All three were real but "is-it-a-bug" calls that
+needed adjudication; the fixes are opt-in / additive, changing no default
+behavior. Deeper re-investigation before implementing revised two reads:
+
+- **Q1 (env not scrubbed) — opt-in `SandboxOptions.envScrub`.** By default a
+  sandboxed command inherits the full `options.env ?? process.env`, host
+  secrets included (bubblewrap ships no `--clearenv`). A closer look confirmed
+  `options.env` is NOT a clean lever on its own: the API transport resolves its
+  credential from that SAME env, so scrubbing it there breaks auth unless
+  `provider.apiKey` is set. Added a sandbox-specific opt-in: `envScrub: true`
+  keeps a built-in non-secret essentials allowlist (PATH/HOME/USER/LOGNAME/
+  SHELL/LANG/LANGUAGE/TERM/TZ/PWD); `{ allow: [...] }` keeps only those keys;
+  unset/false = full env (parity). Applied at both spawn sites via
+  `resolveSpawnEnv`; unsandboxed/escaped commands always inherit the full env.
+  Documented in COMPAT + the bwrap docstring. Kept opt-in because a blanket
+  `--clearenv` breaks commands needing PATH/HOME and diverges from official.
+- **B3 (json_schema not strict) — opt-in `provider.openai.strictStructuredOutput`.**
+  The OpenAI transport passed `response_format.json_schema` without
+  `strict:true`, so OpenAI treated the schema as a suggestion and the engine
+  paid validate-and-retry churn. Verified the transport does NO schema
+  normalization, so an unconditional `strict:true` would 400 any schema not
+  meeting OpenAI's strict subset (additionalProperties:false + all-required) —
+  worse than the best-effort degrade, and unimplemented on many gateways.
+  Added the flag (default off): when set, `strict:true` rides the json_schema.
+- **G4 (SendMessage summary dropped) — forwarded to the delivery notification.**
+  The tool validated `summary` then dropped it. A first read concluded "nowhere
+  to forward"; re-investigation reversed that — the background delivery already
+  emits a `task_notification` with a host-consumed `summary` slot. The outgoing
+  recap now prefixes that summary (`"<recap>" — Agent "X" replied`), honoring
+  the schema's "for progress display" purpose. Threaded through the SendMessage
+  tool, the ToolContext.subagents bridge, and the runtime `sendMessage`;
+  foreground replies (which return inline, no async progress surface) are
+  unaffected.
+
+Regression lock: `tests/audit-t50-batch-l-wontfix.test.ts` (7 cases: envScrub
+resolution + spawn-env filtering + strict on/off) + a G4 case in
+`tests/sendmessage.test.ts`. Full vitest 2724 green (post-rebase onto batches E–K, T52); typecheck clean.
+
+## 0.65.6 — 2026-07-17
+
+T50 batch L (kernel-latency / boundary / cosmetic) from the second-round
+105-defect audit
+(`Public-Info-Pool/Resource/repo-engineering/silver-core-sdk-bug-audit-r2-20260717.md`).
+Nine adjudicated code/doc fixes; the three WONTFIX candidates (Q1 env-scrub,
+B3 json_schema strict, G4 SendMessage summary) resolved separately in 0.65.7.
+No API-surface change — pure hardening of latent/boundary paths.
+
+- **internal/model-alias (P1)**: `resolveModelAlias` now looks up both the host
+  and built-in alias tables with `Object.hasOwn`, so a model name colliding
+  with an `Object.prototype` key (`toString` / `constructor` / `__proto__`) is
+  passed through as a string instead of resolving to the inherited member and
+  corrupting the wire `model` field.
+- **internal/worktree (P2)**: `removeWorktreeIfClean` now KEEPS a clean worktree
+  whenever `baseHead` is unknown — a clean `git status` cannot prove the child
+  left no commits, so removal could orphan committed work. The prior form
+  skipped the moved-HEAD check entirely when baseHead was unknown.
+- **internal/async (P3)**: `AsyncQueue.next()` gates on queue length, not on
+  `shift() !== undefined`, so a legitimately enqueued `undefined` turn is
+  delivered rather than swallowed as "empty" (latent — only SDKUserMessage
+  instances are pushed today).
+- **internal/process-kill (P4)**: `planProcessKill` treats pid 0 (and any
+  non-positive pid) as "no pid" and falls back to a direct child kill, never a
+  process-group signal that would hit the caller's own group (latent —
+  child.pid is normally positive).
+- **sandbox/backend (Q2)**: the functional bwrap probe now exercises the same
+  namespaces/mounts a real `wrap()` emits (`--dev`/`--proc`/`--unshare-net`),
+  closing the probe/spawn gap where a hardened kernel passed the probe but
+  aborted every network-off command at namespace setup. Probe argv exported as
+  `BWRAP_PROBE_ARGS`.
+- **sandbox/bwrap (Q5)**: `--dev`/`--proc` are emitted AFTER the writable binds
+  so a pathological rw bind of `/` cannot re-expose the host `/proc` and `/dev`
+  rw over the hardened mounts.
+- **tools/bash (Q3, cosmetic)**: a sandboxed signal death (bwrap exits 128+N
+  with no Node signal) now carries a soft note naming the likely signal, so the
+  failure report is not silently divergent from the unsandboxed `signal SIGxxx`
+  path. Additive only — the exit code is never overridden.
+- **sandbox/bwrap + COMPAT (Q4, boundary)**: documented that the
+  SIGTERM->SIGKILL grace window is effectively a hard kill for sandboxed
+  commands (bwrap does not forward SIGTERM; `--die-with-parent` SIGKILLs).
+  Teardown correctness is unaffected; only cooperative graceful shutdown is
+  lost. No in-sandbox signal-forwarding surface exists to fix it in code.
+- **query-accounting (T4)**: `addUsage`/`zeroUsage` carry
+  `web_search_requests` through the fold, so `SessionAccounting.usage` no longer
+  diverges from pricing and `modelUsage.webSearchRequests` (latent — query.ts
+  reads modelUsage today, not this flat field).
+
+Regression lock: `tests/audit-t50-batch-l.test.ts` (21 cases) plus two existing
+assertions realigned to the fixed behavior (sandbox argv order; worktree
+baseHead-unknown keep). Full vitest green (post-rebase onto batches E–K +
+0.65.0 MultiEdit removal).
+
 ## 0.65.5 — 2026-07-18
 
 T52 dynamic-orchestration cluster: 7 fixes in the Workflow / Task
@@ -347,7 +441,6 @@ still ships and works, so it still must not corrupt.)
   AFTER the permission check used to run the command outside the sandbox
   without the dedicated escape ask; the smuggled flag is now stripped
   (trusted-side rewrite) and logged.
-
 ## 0.64.5 — 2026-07-17
 
 T50 batch H: memory-tool correctness, all 6 defects from the second-pass audit
@@ -396,7 +489,6 @@ and `docs/COMPAT.md` marks it DEPRECATED. Full removal is a future-major
 follow-up, gated on confirming no consumer depends on it (`src/tools/index.ts`
 still registers it in the default builtin set). Files: `src/tools/descriptions.ts`
 (MULTIEDIT_DESCRIPTION), `docs/COMPAT.md`.
-
 ## 0.64.3 — 2026-07-17
 
 T49 batch D: 65 low-severity fixes from the 100-defect audit

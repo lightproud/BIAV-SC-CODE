@@ -35,18 +35,32 @@ export type {
 /** Injectable bwrap probe (tests override); true when bwrap is runnable. */
 export type BwrapProbe = () => boolean;
 
+/**
+ * Argv the functional probe spawns. It exercises the SAME namespaces/mounts a
+ * real BwrapBackend.wrap() emits (--dev/--proc and the net namespace used for
+ * network-off commands): probing a narrower feature set would pass here yet
+ * abort at spawn time on a kernel that allows pid namespaces but not net/dev —
+ * a probe/spawn mismatch (audit 2026-07-17 Q2). Exported so a regression test
+ * can assert the parity against wrap()'s output.
+ */
+export const BWRAP_PROBE_ARGS: readonly string[] = [
+  '--ro-bind', '/', '/',
+  '--dev', '/dev',
+  '--proc', '/proc',
+  '--unshare-pid',
+  '--unshare-net',
+  '--die-with-parent',
+  'true',
+];
+
 const defaultBwrapProbe: BwrapProbe = () => {
   try {
     // FUNCTIONAL probe, not just `--version`: on hardened kernels with
     // unprivileged user namespaces disabled, bwrap is installed and
-    // `--version` exits 0 but every real spawn fails at namespace setup. Run a
-    // trivial sandbox that exercises the same namespaces wrap() uses; only a
-    // 0 exit means real sandboxing works here.
-    return (
-      spawnSync('bwrap', ['--ro-bind', '/', '/', '--unshare-pid', '--die-with-parent', 'true'], {
-        stdio: 'ignore',
-      }).status === 0
-    );
+    // `--version` exits 0 but every real spawn fails at namespace setup. Only a
+    // 0 exit from a probe that matches wrap()'s namespace set means real
+    // sandboxing works here (see BWRAP_PROBE_ARGS).
+    return spawnSync('bwrap', [...BWRAP_PROBE_ARGS], { stdio: 'ignore' }).status === 0;
   } catch {
     return false;
   }
@@ -75,6 +89,63 @@ export function resolveSandboxBackend(
       'Windows either). Sandbox guidance prompts are not emitted.',
   );
   return null;
+}
+
+/**
+ * Non-secret environment essentials kept when `SandboxOptions.envScrub: true`.
+ * Enough for a typical shell command to run (find the shell, resolve $HOME,
+ * honor locale/timezone) while dropping every host secret. A host that needs a
+ * different set uses the `{ allow: [...] }` form instead (audit r2 Q1).
+ */
+export const DEFAULT_SANDBOX_ENV_ALLOWLIST: readonly string[] = [
+  'PATH',
+  'HOME',
+  'USER',
+  'LOGNAME',
+  'SHELL',
+  'LANG',
+  'LANGUAGE',
+  'TERM',
+  'TZ',
+  'PWD',
+];
+
+/**
+ * Resolve `SandboxOptions.envScrub` to the concrete allowlist stored on
+ * SandboxContext (undefined = inherit the full env, the default). Exported for
+ * the query-layer sandbox-context assembly and its regression test.
+ */
+export function resolveEnvAllowlist(
+  envScrub: boolean | { allow?: readonly string[] } | undefined,
+): readonly string[] | undefined {
+  if (envScrub === undefined || envScrub === false) return undefined;
+  if (envScrub === true) return DEFAULT_SANDBOX_ENV_ALLOWLIST;
+  return envScrub.allow ?? DEFAULT_SANDBOX_ENV_ALLOWLIST;
+}
+
+/**
+ * Build the environment a shell spawn actually runs with. When the command is
+ * sandboxed AND an env allowlist is configured, the inherited base env is
+ * filtered to the allowlist before the sandbox overlay ($TMPDIR) is applied;
+ * otherwise the full base env passes through (default parity). An unsandboxed
+ * or escaped command always inherits the full base env — it makes no
+ * containment claim (audit r2 2026-07-17 Q1).
+ */
+export function resolveSpawnEnv(
+  baseEnv: NodeJS.ProcessEnv,
+  overlay: Record<string, string>,
+  sandbox: SandboxContext | undefined,
+  disableSandbox: boolean,
+): NodeJS.ProcessEnv {
+  const sandboxed = sandbox !== undefined && !disableSandbox;
+  const allow = sandboxed ? sandbox.envAllowlist : undefined;
+  if (allow === undefined) return { ...baseEnv, ...overlay };
+  const allowSet = new Set(allow);
+  const filtered: NodeJS.ProcessEnv = {};
+  for (const key of Object.keys(baseEnv)) {
+    if (allowSet.has(key)) filtered[key] = baseEnv[key];
+  }
+  return { ...filtered, ...overlay };
 }
 
 /**

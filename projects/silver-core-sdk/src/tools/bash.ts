@@ -12,7 +12,7 @@ import { resolvePosixShells, SHELL_NOT_FOUND_GUIDANCE } from './shell-resolve.js
 import { createTreeKiller } from './kill-plan.js';
 import { AbortError, ConfigurationError } from '../errors.js';
 import { BASH_DESCRIPTION, BASH_WIN32_NOTE, buildBashSandboxNote } from './descriptions.js';
-import { planShellSpawn } from '../sandbox/backend.js';
+import { planShellSpawn, resolveSpawnEnv } from '../sandbox/backend.js';
 import { detectSandboxEvidence, sandboxFailureHint } from '../sandbox/evidence.js';
 import type { SandboxContext } from '../types.js';
 import type {
@@ -92,7 +92,12 @@ function runShell(
     try {
       child = spawn(plan.command, plan.args, {
         cwd: ctx.cwd,
-        env: { ...(ctx.env as NodeJS.ProcessEnv), ...plan.envOverlay },
+        env: resolveSpawnEnv(
+          ctx.env as NodeJS.ProcessEnv,
+          plan.envOverlay,
+          ctx.sandbox,
+          disableSandbox,
+        ),
         stdio: ['ignore', 'pipe', 'pipe'],
         detached: true,
       });
@@ -359,6 +364,44 @@ export function windowsCmdHint(command: string, exitCode: number | null): string
 }
 
 /**
+ * Common `128 + signal` exit codes -> POSIX signal name. Under bwrap the inner
+ * command's signal death does not propagate as a Node `signal` on the outer
+ * process (bwrap exits 128+N with its own signal=null), so a sandboxed segfault
+ * surfaces as "exit code 139" while the SAME command unsandboxed reports
+ * "signal SIGSEGV" — a cosmetic sandbox/non-sandbox divergence (audit
+ * 2026-07-17 Q3).
+ */
+const SANDBOX_SIGNAL_BY_CODE: Readonly<Record<number, string>> = {
+  130: 'SIGINT',
+  131: 'SIGQUIT',
+  132: 'SIGILL',
+  134: 'SIGABRT',
+  135: 'SIGBUS',
+  136: 'SIGFPE',
+  137: 'SIGKILL',
+  139: 'SIGSEGV',
+  141: 'SIGPIPE',
+  143: 'SIGTERM',
+};
+
+/**
+ * When a SANDBOXED command reports no Node signal but exits with a recognized
+ * `128 + N` code, return a soft note naming the likely signal. Deliberately
+ * additive (never overrides the reported exit code): a program can legitimately
+ * `exit(139)`, so we clarify rather than assert. Empty for unsandboxed calls
+ * (their signal deaths already surface as a real `signal`) and unrecognized
+ * codes.
+ */
+export function sandboxSignalHint(code: number | null, sandboxed: boolean): string {
+  if (!sandboxed || code === null) return '';
+  const sig = SANDBOX_SIGNAL_BY_CODE[code];
+  return sig === undefined
+    ? ''
+    : `\n\n(exit code ${code} under the sandbox typically means termination by ` +
+        `${sig}; bwrap reports a signalled child as 128+signal rather than as a signal.)`;
+}
+
+/**
  * Build the Bash tool, gated on the active sandbox (G-SANDBOX):
  *   - description: BASH_DESCRIPTION alone when unsandboxed; + the faithful
  *     sandbox note (default/mandatory mode) when a sandbox is active.
@@ -588,8 +631,14 @@ async function execute(
     // gets a one-line steer to the POSIX spellings. Checked against the
     // MODEL's command, not the persistent-state wrapper.
     const cmdHint = windowsCmdHint(command, outcome.code);
+    // Sandboxed signal deaths arrive as 128+N with no Node signal; name the
+    // likely signal so the report matches the unsandboxed path (audit Q3).
+    const sigHint =
+      outcome.signal === null
+        ? sandboxSignalHint(outcome.code, ctx.sandbox !== undefined && !disableSandbox)
+        : '';
     return {
-      content: failure + (streams.length > 0 ? `\n${streams}` : '') + hint + cmdHint,
+      content: failure + (streams.length > 0 ? `\n${streams}` : '') + hint + cmdHint + sigHint,
       isError: true,
     };
 }

@@ -67,16 +67,22 @@ export async function addWorktree(
  * KEPT — never destroy child work, committed or not, since a detached
  * worktree's commits go unreferenced (and are eventually gc'd) the instant the
  * worktree is removed. Any git failure also keeps it (fail-safe toward
- * preservation). When `baseHead` is unknown (the add-time probe failed), a
- * clean-tree worktree whose HEAD is unreadable is kept, and a readable HEAD is
- * only removed when it is a real, non-empty sha (still commit-safe). The caller
- * logs a 'kept' outcome.
+ * preservation). When `baseHead` is unknown (the add-time probe failed) the
+ * worktree is ALWAYS kept: without the starting HEAD there is no way to prove
+ * the child did not commit, and a clean `git status` says nothing (commits
+ * don't show in porcelain), so removal could orphan real work — preservation
+ * wins over reclaiming a temp dir (audit 2026-07-17 P2; the prior form skipped
+ * the moved-HEAD check entirely and removed any clean worktree whenever
+ * baseHead was unknown, silently discarding a committed child's work). The
+ * caller logs a 'kept' outcome.
  */
 export async function removeWorktreeIfClean(
   repoCwd: string,
   dir: string,
   baseHead?: string,
 ): Promise<'removed' | 'kept'> {
+  // No known starting HEAD -> cannot verify the child left no commits -> keep.
+  if (baseHead === undefined) return 'kept';
   try {
     const { stdout } = await execFileP('git', ['-C', dir, 'status', '--porcelain']);
     if (stdout.trim().length > 0) return 'kept'; // uncommitted work
@@ -89,9 +95,7 @@ export async function removeWorktreeIfClean(
     } catch {
       head = undefined;
     }
-    if (baseHead !== undefined) {
-      if (head === undefined || head !== baseHead) return 'kept'; // committed / unreadable
-    }
+    if (head === undefined || head !== baseHead) return 'kept'; // committed / unreadable
     await execFileP('git', ['worktree', 'remove', dir], { cwd: repoCwd });
     return 'removed';
   } catch {

@@ -84,8 +84,14 @@ export class AsyncQueue<T> {
   }
 
   async next(): Promise<IteratorResult<T, undefined>> {
-    const item = this.items.shift();
-    if (item !== undefined) return { done: false, value: item };
+    // Gate on queue LENGTH, not on `shift() !== undefined`: a legitimately
+    // enqueued `undefined` value is indistinguishable from an empty queue under
+    // the shift-sentinel form, so a buffered `undefined` turn would be swallowed
+    // and the consumer would stall (latent — only SDKUserMessage instances are
+    // pushed today, never undefined; audit 2026-07-17 P3).
+    if (this.items.length > 0) {
+      return { done: false, value: this.items.shift() as T };
+    }
     if (this.failure !== null) throw this.failure.err;
     if (this.closed) return { done: true, value: undefined };
     return new Promise((resolve, reject) => {

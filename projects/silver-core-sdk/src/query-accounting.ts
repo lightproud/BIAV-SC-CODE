@@ -19,6 +19,7 @@ function zeroUsage(): NonNullableUsage {
     output_tokens: 0,
     cache_creation_input_tokens: 0,
     cache_read_input_tokens: 0,
+    web_search_requests: 0,
   };
 }
 
@@ -29,6 +30,12 @@ function addUsage(a: NonNullableUsage, b: NonNullableUsage): NonNullableUsage {
     cache_creation_input_tokens:
       a.cache_creation_input_tokens + b.cache_creation_input_tokens,
     cache_read_input_tokens: a.cache_read_input_tokens + b.cache_read_input_tokens,
+    // Carry the server-tool web-search count through the fold too: dropping it
+    // here kept SessionAccounting.usage.web_search_requests permanently 0,
+    // diverging from pricing.ts and modelUsage.webSearchRequests, which do
+    // count it (latent — query.ts reads modelUsage today, not this flat field;
+    // audit 2026-07-17 T4).
+    web_search_requests: (a.web_search_requests ?? 0) + (b.web_search_requests ?? 0),
   };
 }
 

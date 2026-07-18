@@ -84,7 +84,15 @@ export const sendMessageTool: BuiltinTool = {
         isError: true,
       };
     }
-    const result = await bridge.send({ to, message, signal: ctx.signal });
+    // G4 (audit r2 2026-07-17): forward the validated `summary` so a background
+    // delivery's task_notification can label the exchange for a host progress
+    // display — the schema's stated purpose. Previously validated then dropped.
+    const result = await bridge.send({
+      to,
+      message,
+      summary: typeof summary === 'string' ? summary : undefined,
+      signal: ctx.signal,
+    });
     return { content: result.content, isError: result.isError };
   },
 };

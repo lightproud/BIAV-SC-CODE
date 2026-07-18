@@ -86,7 +86,7 @@ import { join } from 'node:path';
 import { createBuiltinTools, DEFAULT_DEFERRED_BUILTINS } from './tools/index.js';
 import { createShellManager } from './tools/shells.js';
 import { peekWorktreeSession } from './tools/enterworktree.js';
-import { resolveSandboxBackend } from './sandbox/backend.js';
+import { resolveEnvAllowlist, resolveSandboxBackend } from './sandbox/backend.js';
 import type { SandboxContext } from './types.js';
 import { createSubagentRuntime } from './subagents/runtime.js';
 import { createAgentTool } from './subagents/agent-tool.js';
@@ -446,6 +446,7 @@ export function query(args: {
       writablePaths,
       allowNetwork: sbxOpt?.allowNetwork === true,
       allowEscape: sbxOpt?.allowEscape !== false,
+      envAllowlist: resolveEnvAllowlist(sbxOpt?.envScrub),
     };
     debug(
       `sandbox: ACTIVE (backend=${sandboxBackend.name}, network=` +

@@ -148,6 +148,9 @@ export type ToolContext = {
     send(params: {
       to: string;
       message: string;
+      /** Outgoing-message recap surfaced on a background delivery notification
+       *  for host progress display (SendMessage `summary`; audit r2 G4). */
+      summary?: string;
       signal: AbortSignal;
     }): Promise<{ content: string; isError: boolean }>;
     /**
