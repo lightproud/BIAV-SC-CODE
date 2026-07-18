@@ -4,7 +4,7 @@ title: "character_story_links.json"
 description: "角色↔剧情关联"
 resource: "/projects/wiki/data/processed/story/character_story_links.json"
 tags: ["story", "pointer", "data_layer:full_archive"]
-timestamp: "2026-07-17"
+timestamp: "2026-07-18"
 ---
 
 # 剧情结构层指针

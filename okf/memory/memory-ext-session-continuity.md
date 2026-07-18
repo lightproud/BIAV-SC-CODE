@@ -4,7 +4,7 @@ title: "session-continuity.json"
 description: "session-continuity 机器权威数据"
 resource: "/memory/session-continuity.json"
 tags: ["memory", "data_layer:curated", "machine-authority"]
-timestamp: "2026-07-17"
+timestamp: "2026-07-18"
 ---
 
 # 记忆层指针

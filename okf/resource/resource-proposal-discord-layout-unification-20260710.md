@@ -4,7 +4,7 @@ title: "discord-layout-unification-20260710"
 description: "当前三服布局不一致（历史原因：Global 先建、后来的 guild 走 `guilds/` 分层）：（格式：md）"
 resource: "/Public-Info-Pool/Resource/proposal/discord-layout-unification-20260710.md"
 tags: ["data_layer:curated", "deliverable", "topic:proposal"]
-timestamp: "2026-07-17"
+timestamp: "2026-07-18"
 ---
 
 # 指针概念

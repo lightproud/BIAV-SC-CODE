@@ -4,7 +4,7 @@ title: "bpt-demo-residue-scan-20260712"
 description: "**演示性残留（demo 构建物 / 演示视频 / 截图包 / 网页 demo 压缩包）近乎零残留。**（格式：md）"
 resource: "/Public-Info-Pool/Resource/repo-engineering/bpt-demo-residue-scan-20260712.md"
 tags: ["data_layer:curated", "deliverable", "topic:repo-engineering"]
-timestamp: "2026-07-17"
+timestamp: "2026-07-18"
 ---
 
 # 指针概念
