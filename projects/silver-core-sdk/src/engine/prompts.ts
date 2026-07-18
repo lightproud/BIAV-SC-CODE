@@ -51,6 +51,13 @@ export type PromptContext = {
    * runtime carries codebase instructions.
    */
   projectInstructions?: string;
+  /**
+   * Arm the automation-continuation fragment on the default harness (keeper
+   * memo 2026-07-18 §3): resolved by the caller from
+   * `options.continuationPrompt` with a protocol-gated default (openai-chat
+   * on, anthropic off). Appended last, so unarmed output is byte-unchanged.
+   */
+  continuation?: boolean;
 };
 
 /**
@@ -158,7 +165,10 @@ function volatileTail(ctx: PromptContext): string {
 function defaultHarnessStable(ctx: PromptContext): string {
   // Composed by the fragment-store assembler (assembleMainLoop) from
   // prompt-fragments.ts; byte-locked by prompt-assembler.test / v5-mainloop-golden.
-  return assembleMainLoop({ toolNames: ctx.toolNames });
+  return assembleMainLoop({
+    toolNames: ctx.toolNames,
+    ...(ctx.continuation === true ? { continuation: true } : {}),
+  });
 }
 
 /**

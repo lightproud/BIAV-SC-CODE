@@ -1,11 +1,39 @@
 /**
  * Campaign 4 acceptance: example 3 — the declarative fan-out/converge
- * workflow — runs end to end with real short timers, importing ONLY the
+ * workflow — runs end to end on FAKE timers (clock discipline audit
+ * 2026-07-18: the test drives time, no real clock), importing ONLY the
  * package name (host shape). Skipped with a visible marker while WorkflowRun
  * is not yet wired into the package export (index.ts wiring is a separate
  * integration step); the assertions below are final either way.
  */
-import { describe, it, expect } from 'vitest';
+import { afterEach, beforeEach, describe, it, expect, vi } from 'vitest';
+
+beforeEach(() => {
+  vi.useFakeTimers();
+});
+afterEach(() => {
+  vi.useRealTimers();
+});
+
+/** Drive fake time until the run settles (bounded — a hang fails the test). */
+async function drive<T>(run: Promise<T>): Promise<T> {
+  let settled = false;
+  const tracked = run.then(
+    (v) => {
+      settled = true;
+      return v;
+    },
+    (e) => {
+      settled = true;
+      throw e;
+    },
+  );
+  for (let i = 0; i < 4000 && !settled; i += 1) {
+    await vi.advanceTimersByTimeAsync(25);
+  }
+  expect(settled, 'run did not settle within the driven fake-time budget').toBe(true);
+  return tracked;
+}
 
 // Package-name import gate: the example imports 'silver-core-maestro-sdk',
 // so it can only load once the built package exports WorkflowRun.
@@ -15,12 +43,12 @@ const pkg: Record<string, unknown> | null = await import('silver-core-maestro-sd
 );
 const wired = pkg !== null && typeof pkg['WorkflowRun'] === 'function';
 
-describe('workflow fan-out example (e2e, real timers)', () => {
+describe('workflow fan-out example (e2e, fake timers)', () => {
   it.skipIf(!wired)('three word-count workers converge into the join summary', async () => {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore — plain-JS example module, no type declarations by design
     const { runWorkflowFanout } = await import('../examples/workflow-fanout.mjs');
-    const result = await runWorkflowFanout({ pollIntervalMs: 10, drainTimeoutMs: 15_000 });
+    const result = await drive(runWorkflowFanout({ pollIntervalMs: 10, drainTimeoutMs: 15_000 }));
 
     expect(result.status).toBe('done');
     expect(result.states).toEqual({
@@ -41,9 +69,9 @@ describe('workflow fan-out example (e2e, real timers)', () => {
     // @ts-ignore — plain-JS example module, no type declarations by design
     const { runWorkflowFanout, memoryLedgerStore } = await import('../examples/workflow-fanout.mjs');
     const store = memoryLedgerStore();
-    const first = await runWorkflowFanout({ store, runId: 'e2e-r1', pollIntervalMs: 10, drainTimeoutMs: 15_000 });
+    const first = await drive(runWorkflowFanout({ store, runId: 'e2e-r1', pollIntervalMs: 10, drainTimeoutMs: 15_000 }));
     expect(first.status).toBe('done');
-    const again = await runWorkflowFanout({ store, runId: 'e2e-r1', pollIntervalMs: 10, drainTimeoutMs: 15_000 });
+    const again = await drive(runWorkflowFanout({ store, runId: 'e2e-r1', pollIntervalMs: 10, drainTimeoutMs: 15_000 }));
     expect(again.status).toBe('done');
     expect(again.merged.totalWords).toBe(17);
     const merge = await store.getSession('wf:wordcount-fanout:e2e-r1:merge');

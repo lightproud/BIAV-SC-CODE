@@ -3,16 +3,40 @@
  * the ledger + driver — runs end to end against a local fake storefront:
  * baseline snapshot, change detection across days, HTTP-failure retry into
  * done, hung-endpoint timeout into failed, and ledger persistence across
- * runs through the host's file store.
+ * runs through the host's file store. FAKE timers throughout (clock
+ * discipline audit 2026-07-18): the test drives time, real HTTP I/O flows
+ * between advances.
  */
 import http from 'node:http';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import { describe, it, expect, beforeEach, afterEach } from 'vitest';
+import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore — plain-JS example module, no type declarations by design
 import { runStorePatrol } from '../examples/store-patrol.mjs';
+
+/** Drive fake time until the run settles (clock discipline audit 2026-07-18:
+ *  no real clock — the test advances time; real HTTP I/O still flows because
+ *  every advance yields to the event loop). Bounded — a hang fails the test. */
+async function drive<T>(run: Promise<T>): Promise<T> {
+  let settled = false;
+  const tracked = run.then(
+    (v) => {
+      settled = true;
+      return v;
+    },
+    (e) => {
+      settled = true;
+      throw e;
+    },
+  );
+  for (let i = 0; i < 4000 && !settled; i += 1) {
+    await vi.advanceTimersByTimeAsync(25);
+  }
+  expect(settled, 'run did not settle within the driven fake-time budget').toBe(true);
+  return tracked;
+}
 
 let server: http.Server;
 let baseUrl: string;
@@ -29,6 +53,7 @@ const storefront = {
 };
 
 beforeEach(async () => {
+  vi.useFakeTimers();
   sandbox = fs.mkdtempSync(path.join(os.tmpdir(), 'store-patrol-'));
   storefront.flakyRemaining = 0;
   storefront.hangRequests = [];
@@ -62,6 +87,7 @@ beforeEach(async () => {
   });
 });
 afterEach(async () => {
+  vi.useRealTimers();
   for (const res of storefront.hangRequests) res.destroy();
   await new Promise<void>((r) => server.close(() => r()));
   fs.rmSync(sandbox, { recursive: true, force: true });
@@ -76,12 +102,12 @@ const fastOpts = { pollIntervalMs: 20, retryBaseMs: 30, queryTimeoutMs: 400, dra
 
 describe('store patrol on the ledger + driver (real HTTP, fake storefront)', () => {
   it('baseline day: snapshots + change log seeded, sessions done, ledger persisted', async () => {
-    const result = await runStorePatrol({
+    const result = await drive(runStorePatrol({
       targets: targetsFor(baseUrl),
       archiveDir: sandbox,
       today: '2026-07-18',
       ...fastOpts,
-    });
+    }));
     expect(result.failures).toHaveLength(0);
     expect(result.sessions.map((s: { state: string }) => s.state)).toEqual(['done', 'done']);
     // Archive layout: latest + dated snapshot + baseline change (from null).
@@ -99,9 +125,9 @@ describe('store patrol on the ledger + driver (real HTTP, fake storefront)', () 
   });
 
   it('next day with a moved store: change detected and appended; unchanged target stays quiet', async () => {
-    await runStorePatrol({ targets: targetsFor(baseUrl), archiveDir: sandbox, today: '2026-07-18', ...fastOpts });
+    await drive(runStorePatrol({ targets: targetsFor(baseUrl), archiveDir: sandbox, today: '2026-07-18', ...fastOpts }));
     storefront.reviews.query_summary = { ...storefront.reviews.query_summary, total_positive: 150, total_reviews: 160 };
-    const day2 = await runStorePatrol({ targets: targetsFor(baseUrl), archiveDir: sandbox, today: '2026-07-19', ...fastOpts });
+    const day2 = await drive(runStorePatrol({ targets: targetsFor(baseUrl), archiveDir: sandbox, today: '2026-07-19', ...fastOpts }));
     expect(day2.failures).toHaveLength(0);
     expect(day2.changes).toHaveLength(1); // reviews moved, appdetails did not
     expect(day2.changes[0].target).toBe('steam-review-summary');
@@ -112,7 +138,7 @@ describe('store patrol on the ledger + driver (real HTTP, fake storefront)', () 
     const appdetailsChanges = fs.readFileSync(path.join(sandbox, 'steam-appdetails', 'changes.jsonl'), 'utf8').trim().split('\n');
     expect(appdetailsChanges).toHaveLength(1); // baseline only
     // Same-day rerun is idempotent: sessions already done, nothing re-runs.
-    const rerun = await runStorePatrol({ targets: targetsFor(baseUrl), archiveDir: sandbox, today: '2026-07-19', ...fastOpts });
+    const rerun = await drive(runStorePatrol({ targets: targetsFor(baseUrl), archiveDir: sandbox, today: '2026-07-19', ...fastOpts }));
     expect(rerun.changes).toHaveLength(0);
     const ledgerFile = JSON.parse(fs.readFileSync(path.join(sandbox, 'state', 'ledger.json'), 'utf8'));
     expect(ledgerFile.queries).toHaveLength(4); // 2 days x 2 targets; rerun added none
@@ -120,7 +146,7 @@ describe('store patrol on the ledger + driver (real HTTP, fake storefront)', () 
 
   it('flaky endpoint: 500 then 200 -> retry path lands in done with 2 attempts', async () => {
     storefront.flakyRemaining = 1;
-    const result = await runStorePatrol({ targets: targetsFor(baseUrl), archiveDir: sandbox, today: '2026-07-18', ...fastOpts });
+    const result = await drive(runStorePatrol({ targets: targetsFor(baseUrl), archiveDir: sandbox, today: '2026-07-18', ...fastOpts }));
     expect(result.failures).toHaveLength(0);
     const reviews = result.sessions.find((s: { id: string }) => s.id.includes('steam-review-summary'));
     expect(reviews.state).toBe('done');
@@ -133,7 +159,7 @@ describe('store patrol on the ledger + driver (real HTTP, fake storefront)', () 
 
   it('hung endpoint: driver timeout x maxAttempts -> failed, exit surface reports it', async () => {
     const targets = [{ id: 'steam-appdetails', url: `${baseUrl}/hang`, extract: 'steam-appdetails', key: '77' }];
-    const result = await runStorePatrol({ targets, archiveDir: sandbox, today: '2026-07-18', ...fastOpts });
+    const result = await drive(runStorePatrol({ targets, archiveDir: sandbox, today: '2026-07-18', ...fastOpts }));
     expect(result.failures).toHaveLength(1);
     expect(result.failures[0].state).toBe('failed');
     expect(result.failures[0].attempts).toBe(3);
@@ -141,12 +167,12 @@ describe('store patrol on the ledger + driver (real HTTP, fake storefront)', () 
     expect(ledgerFile.queries.map((q: { outcome: string }) => q.outcome)).toEqual(['timeout', 'timeout', 'timeout']);
     // A rerun the same day opens a fresh :rN retry session (failed is terminal).
     storefront.hangRequests.forEach((r) => r.destroy());
-    const retry = await runStorePatrol({
+    const retry = await drive(runStorePatrol({
       targets: [{ id: 'steam-appdetails', url: `${baseUrl}/appdetails`, extract: 'steam-appdetails', key: '77' }],
       archiveDir: sandbox,
       today: '2026-07-18',
       ...fastOpts,
-    });
+    }));
     expect(retry.failures).toHaveLength(0);
     expect(retry.sessions[0].id).toBe('patrol:steam-appdetails:2026-07-18:r2');
     expect(retry.sessions[0].state).toBe('done');

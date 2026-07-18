@@ -16,6 +16,54 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.69.0 — 2026-07-18
+
+Keeper todo batch 2026-07-18 (SDK-side items 1–3): migration doc refresh +
+memory memo trio + provider capability declaration & continuation fragment.
+
+- **Migration doc refreshed to the 0.68 terminus**: `docs/MIGRATION-0.3x-to-0.68.md`
+  supersedes (and removes) `MIGRATION-0.3x-to-0.52.md` — full 0.3x→0.68
+  channel: slash retirement (0.63.0), MultiEdit arc (0.61.0→0.65.0, net zero
+  for 0.3x pins), npm rename chain (0.66.0/0.67.0, runtime brand unchanged),
+  family lockstep + maestro peer range (0.68.0), new default-semantics shifts
+  (openai 128k output / `sonnet`→claude-sonnet-5 / proxy-env httpClient), and
+  a 13-step black-pool upgrade checklist. Live references (canary, legacy
+  suite, fixture) repointed.
+- **Memory memo trio (keeper memo 2026-07-18)**: ① COMPAT.md memory row
+  carries the upstream check record (official SDK 0.112.3 declares only
+  memory_20250818 — no alignment debt); ② the storage contract declares its
+  concurrency semantics — single-command atomicity + last-write-wins, NO new
+  machinery (no version tokens) — with two executable contract-suite checks
+  (parallel writes never interleave-corrupt; a stale `str_replace` fails
+  instead of clobbering) and a docs/MEMORY.md section; ③ **store health
+  assessment** `assessMemoryStoreHealth(ops)` (public API): deep scan behind
+  the black-pool dream trigger — per-directory waterlines (soft 48 warning),
+  rot (requires backend mtimes; `MemoryEntryStat/MemoryDirEntry.mtimeMs` new
+  OPTIONAL fields, local-fs backend populates them; marked unavailable when
+  absent, never fabricated), capacity headroom, supersede-chain integrity
+  (S6 frontmatter convention), read/write ratio from the R8 counters, bounded
+  scan with an explicit truncation flag.
+- **Provider capability declaration** `provider.capabilities` (BPT-EXTENSION):
+  structured per-endpoint declaration of usage precision / promptCaching
+  semantics / thinking / parallelToolCalls; the engine degrades per
+  declaration at the wire boundary (anthropic: strips `thinking` +
+  `cache_control`, forces `disable_parallel_tool_use`; openai-chat:
+  suppresses `reasoning_effort`, sends `parallel_tool_calls: false`; usage
+  surfaces an informational at startup) — with a debug line per degradation,
+  never silently. Omitted declaration keeps today's bytes exactly. The
+  "model surface profile" mechanism stays deliberately un-chartered.
+- **Automation-continuation fragment** `options.continuationPrompt`
+  (BPT-EXTENSION): sdk-original fragment appended LAST to the default
+  harness ("finish ALL the work before ending the turn, no mid-task
+  reports") — default protocol-gated ON for openai-chat (mainline
+  non-Anthropic models measurably stall mid-run), OFF for anthropic;
+  explicit boolean overrides. Unarmed output is byte-unchanged (goldens
+  untouched). Verified end-to-end against fake endpoints on BOTH protocols.
+
+Tests: 3021 passing + 2 skipped after rebasing onto 0.68.2 (19 new here: capability degradation unit+wire +
+fragment e2e both protocols 11, health assessment 8; the two concurrency
+contract checks ride the existing contract-suite drivers).
+
 ## 0.68.2 — 2026-07-18
 
 Z8-2 / Rdt-4 (audit r4, keeper ruling 2026-07-18 「剩下一个低危站岗也要修」):

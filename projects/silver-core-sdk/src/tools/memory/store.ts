@@ -40,14 +40,23 @@ import {
   type MemoryCardsConfig,
 } from './cards.js';
 
-/** stat() result for one existing entry. */
-export type MemoryEntryStat = { kind: 'file' | 'directory'; sizeBytes: number };
+/** stat() result for one existing entry. `mtimeMs` is OPTIONAL — backends
+ *  that can cheaply provide a last-modified timestamp should (the built-in
+ *  local-fs backend does); the health assessment marks staleness
+ *  unavailable when a backend cannot. */
+export type MemoryEntryStat = {
+  kind: 'file' | 'directory';
+  sizeBytes: number;
+  mtimeMs?: number;
+};
 
-/** One immediate child in a directory listing. */
+/** One immediate child in a directory listing (`mtimeMs` optional, as on
+ *  MemoryEntryStat). */
 export type MemoryDirEntry = {
   name: string;
   kind: 'file' | 'directory';
   sizeBytes: number;
+  mtimeMs?: number;
 };
 
 /**

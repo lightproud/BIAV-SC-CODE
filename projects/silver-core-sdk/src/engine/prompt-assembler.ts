@@ -13,6 +13,7 @@
  */
 
 import {
+  CONTINUATION_FRAGMENT,
   MAIN_LOOP_INTRO,
   MAIN_LOOP_BODY,
   type PromptFragment,
@@ -20,6 +21,9 @@ import {
 
 export interface AssembleContext {
   toolNames: string[];
+  /** Arm the automation-continuation fragment (keeper memo 2026-07-18 §3).
+   *  Appended LAST so the shared prefix bytes are unchanged when unarmed. */
+  continuation?: boolean;
 }
 
 /** Fragments selected for this context, in order (intro first). Useful for provenance/audit. */
@@ -30,6 +34,7 @@ export function selectMainLoopFragments(ctx: AssembleContext): PromptFragment[] 
     if (f.gate && !f.gate(has)) continue;
     out.push(f);
   }
+  if (ctx.continuation === true) out.push(CONTINUATION_FRAGMENT);
   return out;
 }
 
@@ -48,5 +53,6 @@ export function assembleMainLoop(ctx: AssembleContext): string {
     if (f.gate && !f.gate(has)) continue;
     blocks.push(f.text);
   }
+  if (ctx.continuation === true) blocks.push(CONTINUATION_FRAGMENT.text);
   return blocks.join('\n\n');
 }

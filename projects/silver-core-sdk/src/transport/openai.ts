@@ -56,6 +56,7 @@ import type {
   DocumentBlockParam,
   ImageBlockParam,
   OpenAIProtocolOptions,
+  ProviderCapabilities,
   ProviderConfig,
   RawMessageStreamEvent,
   StopReason,
@@ -458,6 +459,7 @@ export function encodeOpenAIRequest(
   req: Omit<StreamRequest, 'signal' | 'onRetry'>,
   opts: OpenAIProtocolOptions = {},
   debug?: (m: string) => void,
+  caps?: ProviderCapabilities,
 ): Record<string, unknown> {
   const messages: OpenAIChatMessage[] = [];
   const system = encodeSystem(req.system);
@@ -520,6 +522,25 @@ export function encodeOpenAIRequest(
     }
   }
 
+  // Capability degradation (keeper memo 2026-07-18 §3): an endpoint DECLARED
+  // without thinking support never receives reasoning_effort, whatever the
+  // openai tuning says; declared without parallel tool calls, it is asked for
+  // at most one call per turn. Reported, never silent.
+  const reasoningEffort = caps?.thinking === false ? undefined : opts.reasoningEffort;
+  if (caps?.thinking === false && opts.reasoningEffort !== undefined) {
+    debug?.(
+      'openai transport: capability degradation — reasoning_effort suppressed ' +
+        '(capabilities.thinking: false)',
+    );
+  }
+  const forceSerialTools = caps?.parallelToolCalls === false && tools !== undefined;
+  if (forceSerialTools) {
+    debug?.(
+      'openai transport: capability degradation — parallel_tool_calls: false ' +
+        '(capabilities.parallelToolCalls: false)',
+    );
+  }
+
   // reasoning_effort is accepted only by reasoning models (o-series, gpt-5
   // reasoning), which REJECT `max_tokens` and require `max_completion_tokens`.
   // When a caller asks for reasoning but did not pin the token param, default it
@@ -527,7 +548,7 @@ export function encodeOpenAIRequest(
   // maxTokensParam still wins. (audit r4 Soa-2.)
   const maxTokensParam =
     opts.maxTokensParam ??
-    (opts.reasoningEffort !== undefined ? 'max_completion_tokens' : 'max_tokens');
+    (reasoningEffort !== undefined ? 'max_completion_tokens' : 'max_tokens');
   return {
     // Gateway-specific extras first: translator-owned keys win on conflict.
     ...(opts.extraBody ?? {}),
@@ -538,9 +559,10 @@ export function encodeOpenAIRequest(
     ...(req.tool_choice !== undefined && tools !== undefined
       ? encodeToolChoice(req.tool_choice)
       : {}),
+    ...(forceSerialTools ? { parallel_tool_calls: false } : {}),
     ...(req.temperature !== undefined ? { temperature: req.temperature } : {}),
-    ...(opts.reasoningEffort !== undefined
-      ? { reasoning_effort: opts.reasoningEffort }
+    ...(reasoningEffort !== undefined
+      ? { reasoning_effort: reasoningEffort }
       : {}),
     // Deliberately WITHOUT `strict: true` (audit r2 B3, documented WONTFIX
     // pending a keeper ruling): OpenAI strict mode rejects any schema outside
@@ -1146,7 +1168,12 @@ export class OpenAIChatTransport implements Transport {
     let bodyJson: string;
     try {
       bodyJson = JSON.stringify(
-        encodeOpenAIRequest({ ...requestBody, model: mappedModel }, opts, this.debug),
+        encodeOpenAIRequest(
+          { ...requestBody, model: mappedModel },
+          opts,
+          this.debug,
+          this.provider.capabilities,
+        ),
       );
     } catch (err) {
       // The encode error is already locatable and byte-free (media_type +

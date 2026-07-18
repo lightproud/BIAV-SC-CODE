@@ -101,6 +101,7 @@ export function createLocalMemoryFileOps(memoryRootDir: string): MemoryFileOps {
         return {
           kind: st.isDirectory() ? 'directory' : 'file',
           sizeBytes: st.size,
+          mtimeMs: st.mtimeMs,
         };
       } catch (err) {
         if ((err as NodeJS.ErrnoException).code === 'ENOENT') return null;
@@ -118,6 +119,7 @@ export function createLocalMemoryFileOps(memoryRootDir: string): MemoryFileOps {
             name,
             kind: st.isDirectory() ? 'directory' : 'file',
             sizeBytes: st.size,
+            mtimeMs: st.mtimeMs,
           });
         } catch {
           // Entry vanished between readdir and stat; skip it.

@@ -16,12 +16,26 @@ agent 所需的脏活(循环、调度、重试、恢复、台账)做成可复用
 
 需求全文:`Public-Info-Pool/Resource/repo-engineering/scs-req-orchestrator-sdk-20260717.md`
 
+## 身份声明(as-is)
+
+本仓为一个游戏项目的**副产品**,按 as-is 提供:**无支持承诺,issue / PR 可能
+不被处理**。回贡仅收**契约套件全绿**的 PR(`npm test` 全量通过 + 涉及变异棘轮
+目标时分数不破地板);其余一概不设期待。English: this repository is a game
+project's by-product, provided as-is with no support commitment; PRs may go
+unanswered, and contributions are only considered with the full test suite
+green.
+
 ## 状态
 
-第零战(monorepo 迁移)+ 第一战(任务台账 + 驱动器,0.2.0)落地。已有能力面:
-封闭状态机台账(`TaskLedger` + `LedgerStore` 宿主注入缝)、持钟驱动器
-(`LedgerDriver`)、例程一最小 loop(`examples/minimal-loop.ts`)。
-后续战役:schedule、workflow 图、goal 追逐器、送达契约。
+五个模块族全部落地(与代理包锁步同版,版本见 `package.json`):封闭状态机台账
+(`TaskLedger` + `LedgerStore` 宿主注入缝)、持钟驱动器(`LedgerDriver`)、
+调度器(`Scheduler`,定点触发 + 错过补偿 + 跨重启恢复)、workflow 图
+(`validateGraph` / `WorkflowRun` + `loadWorkflowGraphFile` 声明式 md/json
+加载、坏文件降级跳过)、goal 追逐器(`GoalChaser`)、送达契约
+(`createDeliveryChannel`)。例程四份:最小 loop / schedule loop /
+workflow 扇出 / 记忆综合整理(`examples/memory-tidy.mjs`,黑池做梦例程原型),
+均只 import 两包公开面。生产循环:商店巡检(`examples/store-patrol.mjs`,
+每日 CI)。实时进度以 `memory/project-status.md` 为唯一权威。
 
 ## 安装与家族结构
 

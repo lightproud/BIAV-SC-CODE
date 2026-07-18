@@ -115,6 +115,29 @@ export const MEMORY_SESSION_END_PROMPT =
   'immediate next steps. Record any other durable facts or decisions from this session ' +
   'in appropriate memory files. Keep it concise; then reply with a one-line confirmation.';
 
+/**
+ * Automation-continuation fragment (BPT-EXTENSION, keeper memo 2026-07-18
+ * §3, sdk-original): appended to the default harness when the run is
+ * declared an unattended automation loop. Default-on for the openai-chat
+ * protocol (mainline non-Anthropic models measurably stall mid-run on
+ * agentic tasks), default-off on anthropic whose harness already carries the
+ * act-when-ready discipline; `options.continuationPrompt` overrides either
+ * way. Appended AFTER the main body so the shared cached prefix stays
+ * byte-identical whether or not it is armed.
+ */
+export const CONTINUATION_FRAGMENT: PromptFragment = {
+  id: 'automation-continuation',
+  slug: 'sdk-original',
+  faithful: false,
+  text:
+    'You are running inside an automated loop with no interactive user watching. ' +
+    'Complete ALL of the requested work before ending your turn: keep calling tools ' +
+    'until every part of the task is done, and do not stop midway to report interim ' +
+    'progress or ask for confirmation — no one is there to answer. End the turn only ' +
+    'when the task is fully complete, or genuinely blocked on something outside your ' +
+    'control (say exactly what is missing).',
+};
+
 /** The identity intro (always first). */
 export const MAIN_LOOP_INTRO: PromptFragment = {
   id: 'intro',

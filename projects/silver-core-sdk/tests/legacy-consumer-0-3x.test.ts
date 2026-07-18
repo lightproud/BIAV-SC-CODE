@@ -18,7 +18,7 @@
  *
  * If a change reds a case here, it is a drop-in break for a 0.3x-pinned
  * consumer: either restore compatibility or document it as a breaking entry
- * in docs/MIGRATION-0.3x-to-0.52.md (and re-freeze deliberately).
+ * in docs/MIGRATION-0.3x-to-0.68.md (and re-freeze deliberately).
  */
 
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
@@ -143,7 +143,7 @@ describe('legacy 0.3x surface lock (fixture: legacy-0-3x-surface.json)', () => {
       expect(current.optionsFields.has(field)).toBe(false);
     }
     // If this ever flips (the field returns), the migration doc's "breaking"
-    // entry is stale — update docs/MIGRATION-0.3x-to-0.52.md and the fixture.
+    // entry is stale — update docs/MIGRATION-0.3x-to-0.68.md and the fixture.
   });
 });
 

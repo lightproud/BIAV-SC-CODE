@@ -136,7 +136,11 @@ describe('createDeliveryChannel.deliver', () => {
     const { store, channel } = setup(sink);
     const put = vi.spyOn(store, 'putSession');
 
-    await expect(channel.deliver({ body: '' })).rejects.toThrow(TypeError);
+    // Byte-exact message pin (mutation-kill: a blanked/reworded guard message
+    // must fail this assertion, not just the error type).
+    await expect(channel.deliver({ body: '' })).rejects.toThrow(
+      'deliver: message.body must be a non-empty string',
+    );
     // Non-string body rejected too (runtime guard behind the type).
     await expect(
       channel.deliver({ body: 42 as unknown as string }),
