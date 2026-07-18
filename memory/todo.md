@@ -16,6 +16,7 @@
 
 | ID | 账目 | 类别 | 源出处 | 状态 |
 |----|------|------|--------|------|
+| T54 | store-patrol 首次定时跑核验:CI `store-patrol.yml` 每日北京 15:15(07:15 UTC)首轮自动跑需核 Actions 日志——sparse 纳回 / npm ci+build / 巡检 / 快照提交推送四步全绿即销(本地真跑与 sparse check-rules 已实证,余 Actions 环境一跑) | 观察 | `memory/decisions.md` 2026-07-18 第二战条 + `.github/workflows/store-patrol.yml` | 开 |
 | T5 | /goal 提示词快照待上游露出（每周参照刷新 CI `refresh-claude-code-prompts.yml` 自动观察） | 观察 | `memory/project-status.md` v0.38 段挂账注 | 开 |
 | T6 | 测试长尾：L3.5 双臂升门禁（自注「版本稳定后」）+ MCP 差分第二批（schema 语义 / annotations / stdio-http 传输） | 观察 | `memory/project-status.md` 一致性测试段 | 开 |
 | T7 | Desktop UI 路线 M0–M4 升 r2：待守密人回填 BPT 现状（存量可跑件 / 团队人力） | 黑池输入 | `Public-Info-Pool/Resource/repo-engineering/bpt-desktop-ui-roadmap-20260705.md` 假设声明 | 开 |
