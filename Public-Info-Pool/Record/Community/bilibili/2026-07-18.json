@@ -1,8 +1,8 @@
 {
   "date": "2026-07-18",
-  "archived_at": "2026-07-18T05:26:07.809010+00:00",
+  "archived_at": "2026-07-18T07:47:39.792402+00:00",
   "source": "bilibili",
-  "item_count": 3,
+  "item_count": 4,
   "items": [
     {
       "title": "器官。",
@@ -46,6 +46,29 @@
         "danmaku": 0
       },
       "media_url": "https://i2.hdslb.com/bfs/archive/c22b3cb18e990ab9805aa6bdd151175663a81881.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "［相位］双枪流地瓜卡组构筑思路详解",
+      "summary": "-\n  └ 仁爱主教 (1赞): 咕咕嘎嘎\n  └ yi36403 (1赞): 严肃学习[脱单doge]\n  └ 东方云心 (1赞): 第一\n[星绘·沐春灼华 应援装扮_铸币大头]",
+      "source": "bilibili",
+      "time": "2026-07-18T05:52:25+00:00",
+      "url": "https://www.bilibili.com/video/BV1VBKw62EkT",
+      "engagement": 164,
+      "is_hot": false,
+      "author": "莱星Ligh",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 157,
+        "comment_count": 7,
+        "comments_fetched": 3,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/f70c13c89ef16bfa74f0a1fda46afeebb363987a.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
