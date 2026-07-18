@@ -8,9 +8,9 @@
  *  A. The agent SDK (projects/silver-core-sdk) must never import the
  *     orchestrator package, by name or by relative path, anywhere (src,
  *     tests, examples, scripts). It must not even know it exists.
- *  B. The orchestrator SDK (projects/orchestrator-sdk) may import ONLY the
- *     agent package's public surface: the bare specifier '@biav/agent-sdk'.
- *     Deep subpath imports ('@biav/agent-sdk/dist/...'), the retired npm name
+ *  B. The maestro SDK (projects/silver-core-maestro-sdk) may import ONLY the
+ *     agent package's public surface: the bare specifier 'silver-core-agent-sdk'.
+ *     Deep subpath imports ('silver-core-agent-sdk/dist/...'), retired npm names
  *     ('silver-core-sdk'), and relative paths that escape into the agent
  *     package's sources are privileged channels — hard property §1.2 says any
  *     such need is a hole in the agent-side R1-R5 surface, to be fixed there.
@@ -26,7 +26,7 @@ import { join, relative, resolve, dirname, sep } from 'node:path';
 
 const ROOT = resolve(dirname(new URL(import.meta.url).pathname), '..', '..');
 const AGENT_DIR = join(ROOT, 'projects', 'silver-core-sdk');
-const ORCH_DIR = join(ROOT, 'projects', 'orchestrator-sdk');
+const MAESTRO_DIR = join(ROOT, 'projects', 'silver-core-maestro-sdk');
 
 const SOURCE_EXT = /\.(mts|cts|ts|tsx|mjs|cjs|js)$/;
 const SKIP_DIRS = new Set(['node_modules', 'dist', '.stryker-tmp', 'coverage']);
@@ -76,25 +76,30 @@ function flag(file, spec, why) {
 for (const file of walk(AGENT_DIR)) {
   const text = readFileSync(file, 'utf8');
   for (const spec of specifiersOf(text)) {
-    if (spec === '@biav/orchestrator-sdk' || spec.startsWith('@biav/orchestrator-sdk/')) {
+    if (spec === 'silver-core-maestro-sdk' || spec.startsWith('silver-core-maestro-sdk/')) {
       flag(file, spec, 'agent SDK importing the orchestrator (reverse dependency)');
     } else if (spec.startsWith('.')) {
       const target = resolve(dirname(file), spec);
-      if ((target + sep).startsWith(ORCH_DIR + sep) || target === ORCH_DIR) {
+      if ((target + sep).startsWith(MAESTRO_DIR + sep) || target === MAESTRO_DIR) {
         flag(file, spec, 'agent SDK reaching into the orchestrator package by path');
       }
     }
   }
 }
 
-// B. Orchestrator side: bare '@biav/agent-sdk' only.
-for (const file of walk(ORCH_DIR)) {
+// B. Orchestrator side: bare 'silver-core-agent-sdk' only.
+for (const file of walk(MAESTRO_DIR)) {
   const text = readFileSync(file, 'utf8');
   for (const spec of specifiersOf(text)) {
-    if (spec.startsWith('@biav/agent-sdk/')) {
-      flag(file, spec, "deep import into the agent package (public surface = bare '@biav/agent-sdk' only)");
-    } else if (spec === 'silver-core-sdk' || spec.startsWith('silver-core-sdk/')) {
-      flag(file, spec, 'retired npm name (renamed @biav/agent-sdk in monorepo phase 0)');
+    if (spec.startsWith('silver-core-agent-sdk/')) {
+      flag(file, spec, "deep import into the agent package (public surface = bare 'silver-core-agent-sdk' only)");
+    } else if (
+      spec === 'silver-core-sdk' ||
+      spec.startsWith('silver-core-sdk/') ||
+      spec === '@biav/agent-sdk' ||
+      spec.startsWith('@biav/agent-sdk/')
+    ) {
+      flag(file, spec, 'retired npm name (renamed silver-core-agent-sdk, keeper ruling 2026-07-18)');
     } else if (spec.startsWith('.')) {
       const target = resolve(dirname(file), spec);
       if ((target + sep).startsWith(AGENT_DIR + sep) || target === AGENT_DIR) {
@@ -107,8 +112,8 @@ for (const file of walk(ORCH_DIR)) {
 // C. Agent package.json: no dependency block may name the orchestrator.
 const agentPkg = JSON.parse(readFileSync(join(AGENT_DIR, 'package.json'), 'utf8'));
 for (const block of ['dependencies', 'devDependencies', 'peerDependencies', 'optionalDependencies']) {
-  if (agentPkg[block] && '@biav/orchestrator-sdk' in agentPkg[block]) {
-    violations.push(`projects/silver-core-sdk/package.json ${block}: declares @biav/orchestrator-sdk (reverse dependency)`);
+  if (agentPkg[block] && 'silver-core-maestro-sdk' in agentPkg[block]) {
+    violations.push(`projects/silver-core-sdk/package.json ${block}: declares silver-core-maestro-sdk (reverse dependency)`);
   }
 }
 

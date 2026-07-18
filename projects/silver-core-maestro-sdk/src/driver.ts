@@ -26,7 +26,7 @@ export type ExecutorResult = {
 };
 
 /**
- * The host's work function — typically wrapping a @biav/agent-sdk query()
+ * The host's work function — typically wrapping a silver-core-agent-sdk query()
  * call. A rejection is recorded as an 'error' outcome; the driver never
  * crashes on executor failure.
  */

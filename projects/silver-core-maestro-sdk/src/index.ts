@@ -1,5 +1,5 @@
 /**
- * @biav/orchestrator-sdk — reusable parts for agents that outlive a single
+ * silver-core-maestro-sdk — reusable parts for agents that outlive a single
  * call: clock, cross-session state, session assembly.
  *
  * Three hard properties (SCS-REQ orchestrator-sdk §1, keeper ruling
@@ -9,7 +9,7 @@
  *    taken alone, combined freely, or skipped entirely. No host is ever
  *    required to grow into a shape this package dictates.
  * 2. No privileged channel into the agent SDK. Everything this package does
- *    must be achievable by hand through @biav/agent-sdk's public surface
+ *    must be achievable by hand through silver-core-agent-sdk's public surface
  *    (R1-R5). If a feature ever needs to reach inside the engine, that is a
  *    hole in R1-R5 — fix the agent-side requirements, never open a back door
  *    here. CI enforces the one-way dependency orchestrator -> agent.
@@ -22,7 +22,7 @@
  * LedgerDriver.
  */
 
-export const ORCHESTRATOR_SDK_VERSION = '0.2.0';
+export const MAESTRO_SDK_VERSION = '0.3.0';
 
 // Clock seam
 export type { Clock } from './clock.js';

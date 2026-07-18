@@ -18,8 +18,8 @@
  * The e2e test drives runMinimalLoop() against a local emulator instead.)
  */
 
-import { query } from '@biav/agent-sdk';
-import type { BudgetCloseoutReport, Options } from '@biav/agent-sdk';
+import { query } from 'silver-core-agent-sdk';
+import type { BudgetCloseoutReport, Options } from 'silver-core-agent-sdk';
 import {
   TaskLedger,
   LedgerDriver,
@@ -28,7 +28,7 @@ import {
   type QueryRecord,
   type SessionFilter,
   type SessionRecord,
-} from '@biav/orchestrator-sdk';
+} from 'silver-core-maestro-sdk';
 
 /** Host-side storage battery (the SDK ships none — §7 non-goals). */
 export function memoryLedgerStore(): LedgerStore {

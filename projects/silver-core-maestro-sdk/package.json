@@ -1,7 +1,7 @@
 {
-  "name": "@biav/orchestrator-sdk",
-  "version": "0.2.0",
-  "description": "BIAV orchestrator SDK (Silver Core) - reusable parts for agents that outlive a single call: clock, cross-session state, session assembly (task ledger, driver, loop/schedule/workflow scaffolds). A library, not a framework: the host owns main().",
+  "name": "silver-core-maestro-sdk",
+  "version": "0.3.0",
+  "description": "Silver Core Maestro SDK - reusable parts for agents that outlive a single call: clock, cross-session state, session assembly (task ledger, driver, loop/schedule/workflow scaffolds). A library, not a framework: the host owns main().",
   "license": "MIT",
   "type": "module",
   "main": "./dist/index.js",
@@ -28,10 +28,10 @@
     "test:watch": "vitest"
   },
   "peerDependencies": {
-    "@biav/agent-sdk": ">=0.66.0 <1.0.0"
+    "silver-core-agent-sdk": ">=0.67.0 <1.0.0"
   },
   "devDependencies": {
-    "@biav/agent-sdk": "*",
+    "silver-core-agent-sdk": "*",
     "@stryker-mutator/core": "^9.6.1",
     "@stryker-mutator/vitest-runner": "^9.6.1",
     "@types/node": "^22.0.0",

@@ -1,9 +1,25 @@
-# Changelog — @biav/orchestrator-sdk
+# Changelog — silver-core-maestro-sdk
 
-Own semver clock, decoupled from @biav/agent-sdk by requirement (SCS-REQ
+Renamed from **@biav/orchestrator-sdk** as of 0.3.0 (keeper ruling 2026-07-18:
+the family is two independent SDKs, Silver Core Agent SDK + Silver Core
+Maestro SDK — the conductor direction). Entries below 0.3.0 keep the
+historical name as shipped; this ledger is not rewritten retroactively.
+
+Own semver clock, decoupled from silver-core-agent-sdk by requirement (SCS-REQ
 orchestrator-sdk §2): the two packages never bump in lockstep. Same ledger
 discipline as the agent SDK: every merge that changes shipped runtime code
 bumps the version and adds one line here.
+
+## 0.3.0 — 2026-07-18
+
+Family naming finalized (keeper ruling, conductor direction -> maestro): npm
+package renamed **@biav/orchestrator-sdk -> `silver-core-maestro-sdk`**, brand
+name **Silver Core Maestro SDK**, directory moved `projects/orchestrator-sdk/`
+-> `projects/silver-core-maestro-sdk/` (directory mirrors the npm name). The
+peer/agent package is renamed `silver-core-agent-sdk` (>=0.67.0) in the same
+ruling; the public version constant follows the brand
+(`ORCHESTRATOR_SDK_VERSION` -> `MAESTRO_SDK_VERSION` — pre-consumer, no
+deprecation alias). No behavior changes.
 
 ## 0.2.0 — 2026-07-18
 

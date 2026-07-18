@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "what": "Mutation-score ratchet baselines for @biav/orchestrator-sdk (same discipline as the agent SDK's mutation-ratchet.json, keeper order 2026-07-13: floors are only-up; lowering one requires a keeper ruling). The weekly sdk-mutation-ratchet workflow re-measures each target and REDS below floor.",
+    "what": "Mutation-score ratchet baselines for silver-core-maestro-sdk (same discipline as the agent SDK's mutation-ratchet.json, keeper order 2026-07-13: floors are only-up; lowering one requires a keeper ruling). The weekly sdk-mutation-ratchet workflow re-measures each target and REDS below floor.",
     "score": "Stryker mutation score = (killed + timeout) / (killed + timeout + survived + noCoverage) * 100; compile/runtime-error mutants excluded",
     "tolerance_pp": 0.75,
     "history": {
