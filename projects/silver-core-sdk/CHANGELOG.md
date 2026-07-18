@@ -16,6 +16,15 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.74.0 — 2026-07-18
+
+Lockstep alignment only — no agent-SDK code change. The maestro SDK landed
+audit round 5 of the T56 campaign (6 confirmed defects fixed: backfill-branch
+fencing and retrying/unfenced backfill repair, read-surface serialization
+behind settle-then-append, delivery-channel lease-race receipt absorption,
+driver stranded-signal accuracy, fractional-fireAt scheduler recovery). See
+the maestro CHANGELOG 0.74.0.
+
 ## 0.73.0 — 2026-07-18
 
 Lockstep alignment only — no agent-SDK code change. The maestro SDK landed

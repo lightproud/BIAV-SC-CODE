@@ -315,18 +315,22 @@ describe('R4-C2: one query row per attempt', () => {
     }
   });
 
-  it('ledger.listQueries canonicalizes cross-host duplicate rows to one per attempt (first wins)', async () => {
+  it('ledger.listQueries canonicalizes cross-host duplicate rows to one per attempt (last wins, r5)', async () => {
     const store = memoryStore();
     const ledger = new TaskLedger({ store, clock: { now: () => T0 } });
     await ledger.dispatch({ id: 's1', intent: 'w', runAt: T0 });
     // Simulate the cross-host double-append a plain putSession store permits.
+    // LAST wins (r5): in the reproduced duplicate case — a rival's unfenced
+    // backfill inside the settle winner's put->append gap — the winner's own
+    // row lands second, so last-wins is the pick consistent with the
+    // session's settled record (r4 shipped first-wins).
     store.raw().queries.push(
       { id: 'q1', sessionId: 's1', attempt: 1, startedAt: T0, endedAt: T0, outcome: 'ok' },
       { id: 'q2', sessionId: 's1', attempt: 1, startedAt: T0, endedAt: T0, outcome: 'error', error: 'dup' },
       { id: 'q3', sessionId: 's1', attempt: 2, startedAt: T0, endedAt: T0, outcome: 'ok' },
     );
     const rows = await ledger.listQueries('s1');
-    expect(rows.map((q) => q.id)).toEqual(['q1', 'q3']);
+    expect(rows.map((q) => q.id)).toEqual(['q2', 'q3']);
   });
 });
 

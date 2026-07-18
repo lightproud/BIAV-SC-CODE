@@ -449,20 +449,43 @@ export class TaskLedger {
       }
       const existing = await this.#store.listQueries(sessionId);
       const committed = existing.find((q) => q.attempt === session.attempts);
-      // Terminal branch: the attempt is already settled. A consistent late
-      // caller (a retry after the settle put succeeded but the row append
-      // crashed) BACKFILLS the missing audit row; anything else — including
-      // a lease sweep racing a settled session, or a divergent late outcome
-      // — throws exactly as the transition graph dictates (terminal states
-      // accept no event), and never touches the store.
+      // Backfill eligibility (audit r4, hardened in r5): a caller retry after
+      // the settle put succeeded but the row append crashed may repair the
+      // missing audit row. Conditions: no committed row; the caller settles
+      // the CURRENT attempt (an omitted attempt is assumed current, per the
+      // OutcomeInput doc — r5); and the payload is CONSISTENT with what the
+      // settle recorded — outcome kind must match the settled state, and for
+      // failure kinds the error text must equal the session's lastError (r5:
+      // without the error-match gate, a rival host inside the winner's
+      // put->append gap could backfill a DIVERGENT row with no CAS to stop
+      // it). An ok-kind backfill has no recorded text to cross-check —
+      // residual trust in the caller, documented.
+      const backfillable = (settledAs: 'ok' | 'failure'): boolean =>
+        committed === undefined &&
+        (result.attempt ?? session.attempts) === session.attempts &&
+        (settledAs === 'ok'
+          ? result.outcome === 'ok'
+          : result.outcome !== 'ok' &&
+            (result.error ?? result.outcome) === session.lastError);
+      // Terminal branch: the attempt is already settled; backfill or throw
+      // exactly as the transition graph dictates (terminal states accept no
+      // event) — never both, and a rejected call never touches the store.
       if (session.state === 'done' || session.state === 'failed') {
-        const consistent =
-          session.state === 'done' ? result.outcome === 'ok' : result.outcome !== 'ok';
-        if (committed === undefined && result.attempt === session.attempts && consistent) {
+        if (backfillable(session.state === 'done' ? 'ok' : 'failure')) {
           await this.#store.appendQuery(this.#queryRow(sessionId, session.attempts, result));
           return { ...session };
         }
         throw new InvalidTransitionError(session.state, outcomeEvent[result.outcome]);
+      }
+      // Retrying backfill (r5): a failure settle that landed in 'retrying'
+      // has the same put->append crash window as a terminal one, and the
+      // documented repair contract ("a consistent caller retry backfills the
+      // missing row") must hold there too — without this branch the retry
+      // detonated on transition('retrying', attempt:*) and the row was lost
+      // for good once the next attempt was claimed.
+      if (session.state === 'retrying' && backfillable('failure')) {
+        await this.#store.appendQuery(this.#queryRow(sessionId, session.attempts, result));
+        return { ...session };
       }
       // A committed row for the CURRENT attempt is the truth (audit r4): a
       // caller retry — or a lease sweep arriving with a fabricated error —
@@ -526,9 +549,22 @@ export class TaskLedger {
   // not promise defensive copies, and handing back live store rows would let
   // a host mutate ledger state through a read. (payload stays a shared
   // reference by design — it is host-owned opaque data.)
+  //
+  // Per-session reads take the session's mutex (r5): recordOutcome's
+  // settle-then-append makes the terminal state briefly visible BEFORE its
+  // query row lands, and a same-instance reader in that window saw
+  // 'done' + zero rows — WorkflowRun then persisted a null dep summary and
+  // GoalChaser judged a verdict on missing data. Serializing reads behind
+  // in-flight mutations of the SAME ledger instance closes that window
+  // where it was reproduced; a reader on a DIFFERENT instance/process can
+  // still land inside another host's put->append gap (treat 'terminal but
+  // row missing' as 'row not yet readable' if that matters to you).
+  // listSessions is store-wide and takes no lock.
   async getSession(id: string): Promise<SessionRecord | null> {
-    const row = await this.#store.getSession(id);
-    return row === null ? null : { ...row };
+    return this.#withLock(id, async () => {
+      const row = await this.#store.getSession(id);
+      return row === null ? null : { ...row };
+    });
   }
 
   async listSessions(filter?: SessionFilter): Promise<SessionRecord[]> {
@@ -537,21 +573,21 @@ export class TaskLedger {
 
   /**
    * A session's query rows in append order, canonicalized to ONE row per
-   * attempt (first committed wins). In-process duplicates are impossible (the
-   * per-session mutex serializes recordOutcome), but two HOSTS on a plain
-   * putSession store can both pass the idempotency check and double-append
-   * (audit r4) — an append-only store cannot retract, so the read surface
-   * enforces the "one row per round" contract instead. Raw rows remain
-   * available via the store directly.
+   * attempt. Among duplicates the LAST committed row wins (r5): duplicates
+   * only arise from cross-host races, and there the later append is the one
+   * consistent with the session's settled record — the reproduced case is a
+   * rival's unfenced backfill landing inside the settle winner's put->append
+   * gap, where the winner's own row arrives second. (r4 shipped first-wins;
+   * in the plain-store double-append race the pick was arbitrary either
+   * way.) Raw rows remain available via the store directly.
    */
   async listQueries(sessionId: string): Promise<QueryRecord[]> {
-    const seen = new Set<number>();
-    const rows: QueryRecord[] = [];
-    for (const row of await this.#store.listQueries(sessionId)) {
-      if (seen.has(row.attempt)) continue;
-      seen.add(row.attempt);
-      rows.push({ ...row });
-    }
-    return rows;
+    return this.#withLock(sessionId, async () => {
+      const byAttempt = new Map<number, QueryRecord>();
+      for (const row of await this.#store.listQueries(sessionId)) {
+        byAttempt.set(row.attempt, row);
+      }
+      return [...byAttempt.values()].map((row) => ({ ...row }));
+    });
   }
 }

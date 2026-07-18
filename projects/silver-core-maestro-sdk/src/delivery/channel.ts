@@ -20,7 +20,9 @@
 
 import type { Clock } from '../clock.js';
 import { systemClock } from '../clock.js';
-import type { TaskLedger } from '../ledger/ledger.js';
+import type { OutcomeInput, TaskLedger } from '../ledger/ledger.js';
+import { ClaimConflictError } from '../ledger/ledger.js';
+import { InvalidTransitionError } from '../ledger/state.js';
 
 /** Data-plane message shape; rendering/formatting is host-side (§7). */
 export interface DeliveryMessage {
@@ -91,13 +93,41 @@ export function createDeliveryChannel(opts: DeliveryChannelOptions): DeliveryCha
       // driver's work and racing concurrent deliver() calls; review finding
       // 2026-07-18, fixed by the ledger's claimSession API). With runAt: null
       // above, claimSession is also the ONLY way this session can start.
-      const claimed = await opts.ledger.claimSession(session.id, clock.now());
+      let claimed;
+      try {
+        claimed = await opts.ledger.claimSession(session.id, clock.now());
+      } catch (err) {
+        // A lost store-level CAS (rival writer on a putSessionIf store) means
+        // the audit claim did not land — nothing was sent, and throwing an
+        // internal state-machine error at the host would violate the receipt
+        // contract (r5). The un-started audit session remains for host-side
+        // cleanup (it is manual-claim, invisible to claimDue).
+        if (err instanceof ClaimConflictError) {
+          return { sessionId: session.id, delivered: false, error: err.message };
+        }
+        throw err;
+      }
       const startedAt = clock.now();
+      // Post-claim bookkeeping is best-effort (r5): a co-resident driver's
+      // lease sweep can settle the audit session mid-send (lease semantics —
+      // the send outran its lease), making our recordOutcome a fenced late
+      // write that throws InvalidTransitionError. The message's fate is
+      // decided by the SINK, not the bookkeeping; absorb the lease-race
+      // rejection into the receipt instead of rejecting deliver() after a
+      // send that actually happened.
+      const record = async (input: OutcomeInput): Promise<void> => {
+        try {
+          await opts.ledger.recordOutcome(session.id, input);
+        } catch (err) {
+          if (err instanceof InvalidTransitionError || err instanceof ClaimConflictError) return;
+          throw err;
+        }
+      };
       try {
         await opts.sink(message);
       } catch (err) {
         const text = err instanceof Error ? err.message : String(err);
-        await opts.ledger.recordOutcome(session.id, {
+        await record({
           outcome: 'error',
           error: text,
           startedAt,
@@ -106,7 +136,7 @@ export function createDeliveryChannel(opts: DeliveryChannelOptions): DeliveryCha
         });
         return { sessionId: session.id, delivered: false, error: text };
       }
-      await opts.ledger.recordOutcome(session.id, {
+      await record({
         outcome: 'ok',
         startedAt,
         endedAt: clock.now(),

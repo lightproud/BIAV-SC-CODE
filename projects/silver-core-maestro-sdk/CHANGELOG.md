@@ -12,6 +12,59 @@ discipline as the agent SDK: every merge that changes shipped runtime code
 bumps BOTH versions and adds one line here (a lockstep-alignment line when
 this package itself is untouched).
 
+## 0.74.0 — 2026-07-18
+
+Audit round 5 of the 500-bug campaign (T56): three lenses over the NEW r4
+concurrency code (adversarial line-review / upper-layer concurrency /
+store-variant model-based sweep — the last ran 1,200 op sequences over six
+store configs and falsified nothing) confirmed **6 real defects**
+(3 P2 + 3 P3), all fixed with fail-on-old locks; the store-variant property
+sweep is adopted as a permanent test. Battle report
+(`.../silver-core-maestro-sdk-bug-audit-r5-20260718.md`) is the detail
+authority.
+
+Backfill-branch hardening (the r4 settle-then-append repair path was new
+code and all three new-code findings landed in it):
+
+- A rival host's backfill inside the settle winner's put->append gap could
+  append a DIVERGENT row with no CAS to stop it (two contradictory rows for
+  one attempt, canonical row contradicting lastError). Backfill now requires
+  the failure payload's error text to equal the session's recorded lastError
+  — the true crashed winner's retry heals, a divergent rival is rejected.
+  listQueries canonicalization flips to LAST-row-wins (the pick consistent
+  with the settled record in the reproduced race; r4's first-wins was
+  arbitrary in the legacy race it served).
+- A crash in the put->append window of a RETRYING settle had no repair path
+  (the documented consistent-retry backfill only covered terminal states):
+  the retry detonated on transition('retrying', attempt:*) and the audit row
+  was lost for good. Retrying-state backfill added, same consistency gate.
+- An attempt-OMITTED consistent retry couldn't backfill either (the guard
+  demanded an explicit matching attempt, contradicting the "omitted = current
+  attempt assumed" doc). Omitted now assumes the current attempt.
+
+Upper-layer fixes:
+
+- Same-instance reads (getSession / listQueries) now take the per-session
+  mutex: the settle-then-append window briefly exposed 'done' with zero
+  rows, and WorkflowRun persisted a null dep summary / GoalChaser judged a
+  verdict on missing data from exactly that read. (A reader on a DIFFERENT
+  process can still land in another host's gap — documented.)
+- Delivery channel: a co-resident driver's lease sweep settling the audit
+  session mid-send made deliver() REJECT with InvalidTransitionError — the
+  receipt was lost and a delivered message was audited as failed. Post-claim
+  bookkeeping is now best-effort: lease-race rejections
+  (InvalidTransitionError / ClaimConflictError) are absorbed into the
+  receipt; genuine store failures still rethrow. A claimSession CAS loss
+  returns a failed receipt instead of throwing.
+- Driver: the driver:error "stranded session, repair me" signal fired for
+  healthy self-healing sessions (late fenced outcome after a lease sweep)
+  and carried a stale 'running' snapshot. The driver now re-reads the store:
+  the event carries the CURRENT record only when it still reads 'running';
+  otherwise it emits without a session.
+- Scheduler recovery accepts fractional fireAt suffixes (validateSpec allows
+  fractional `every`, so such footprints legally exist; the digits-only
+  parse silently re-anchored a restarted scheduler).
+
 ## 0.73.0 — 2026-07-18
 
 Audit round 4 of the 500-bug campaign (T56): 4 fault-injection lenses
