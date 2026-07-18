@@ -1,0 +1,12 @@
+{
+  "name": "biav-sdk-workspace",
+  "private": true,
+  "description": "npm workspace root for the BIAV (Silver Core) SDK family. Two workspaces, one-way dependency orchestrator -> agent, independent semver clocks (SCS-REQ orchestrator-sdk §2). The rest of this repository (news/wiki/site/memory/...) is not part of the npm workspace.",
+  "workspaces": [
+    "projects/silver-core-sdk",
+    "projects/orchestrator-sdk"
+  ],
+  "scripts": {
+    "check-dep-direction": "node .github/scripts/check-dep-direction.mjs"
+  }
+}
