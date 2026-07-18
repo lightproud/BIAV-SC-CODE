@@ -1,0 +1,79 @@
+name: Orchestrator SDK
+
+# Node/TypeScript CI for projects/orchestrator-sdk (@biav/orchestrator-sdk)
+# plus the monorepo dependency-direction guard (SCS-REQ orchestrator-sdk §2:
+# orchestrator -> agent one-way, machine-enforced). The guard also watches
+# agent-SDK changes, because a reverse import would appear on that side.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'projects/orchestrator-sdk/**'
+      - 'projects/silver-core-sdk/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/orchestrator-sdk.yml'
+      - '.github/scripts/check-dep-direction.mjs'
+  pull_request:
+    paths:
+      - 'projects/orchestrator-sdk/**'
+      - 'projects/silver-core-sdk/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/orchestrator-sdk.yml'
+      - '.github/scripts/check-dep-direction.mjs'
+
+concurrency:
+  group: orchestrator-sdk-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  dep-direction:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          sparse-checkout: |
+            /*
+            !/Public-Info-Pool/Record/
+            !/Public-Info-Pool/Reference/
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '20'
+      - name: Dependency-direction guard (orchestrator -> agent one-way)
+        run: node .github/scripts/check-dep-direction.mjs
+
+  unit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          sparse-checkout: |
+            /*
+            !/Public-Info-Pool/Record/
+            !/Public-Info-Pool/Reference/
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '20'
+      - name: Install dependencies (workspace root)
+        run: npm ci
+      - name: Build agent SDK (workspace dependency)
+        run: npm run build --workspace @biav/agent-sdk
+      - name: Typecheck
+        run: npm run typecheck --workspace @biav/orchestrator-sdk
+      - name: Build
+        run: npm run build --workspace @biav/orchestrator-sdk
+      - name: Test
+        run: npm test --workspace @biav/orchestrator-sdk
+      - name: Publishability (dry-run pack, both packages independently)
+        run: |
+          npm pack --dry-run --workspace @biav/agent-sdk
+          npm pack --dry-run --workspace @biav/orchestrator-sdk
