@@ -16,6 +16,26 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.70.1 — 2026-07-18
+
+Permission deny-bypass — audit r3 batch M (T51 first fire): a bare subshell
+`(rm -rf x)` or brace group `{ rm -rf x; }` was a DENY fail-open — the
+segment starts with `(`/`{`, so a `Bash(rm:*)` deny never matched and a bare
+`Bash` allow auto-ran it (empirically confirmed on 0.69.0). Fix: a new
+`stripGroupWrappers` peels leading `(`/`{`/space and trailing `)`/`}`/`;`
+runs, and `denyMatchCandidates` now seeds its unwrap walk from BOTH the raw
+segment and its group-stripped form — so a grouped (and grouped-then-wrapped,
+`(sudo rm …)`) command reaches the inner command word for deny/ask. Deny/ask
+position only: the allow branch stays strict (a grouped command still falls
+through to prompting, never rides an allow). The two sibling r3 vectors —
+W9-1 TAB separator and M2-2 leading env prefix — were verified already closed
+in the T52 r4 pass and are now pinned as living regression locks so the whole
+deny-bypass family stays shut. +5 tests (`tests/audit-r4-permissions.test.ts`
+W10-1 block); full vitest 3026 passed + 2 skipped. Local permissions mutation
+re-measure deferred to the weekly isolated CI ratchet (an in-place local run
+instruments the working tree); the new `stripGroupWrappers` / seed branches
+are covered by the W10-1 kill-tests.
+
 ## 0.70.0 — 2026-07-18
 
 Lockstep alignment with silver-core-maestro-sdk 0.70.0 (maestro audit
