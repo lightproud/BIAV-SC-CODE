@@ -141,19 +141,25 @@ def record_decision(summary: str, scope: str, rationale: str = "") -> str:
 
 
 @mcp.tool()
-def record_lesson(summary: str, context: str = "") -> str:
+def record_lesson(summary: str, context: str = "",
+                  principle: str = "", guard: str = "") -> str:
     """追加教训条目到 memory/lessons-learned.md 末尾。
 
+    格式为守密人 2026-07-12 裁定的「准则清单体」：坑 / 准则 / 防护。
+
     Args:
-        summary: 教训摘要
-        context: 触发场景（可选）
+        summary:   坑本质（教训摘要一句）
+        context:   触发场景（可选，折进坑句）
+        principle: 准则（触发信号 → 动作，可选）
+        guard:     防护 / 案卷指针（可选）
 
     Returns:
         JSON: {"status": "ok|error", "lesson_id": "..."}
     """
     from silver_memory_tools import record_lesson as _rl
 
-    return json.dumps(_rl(summary, context), ensure_ascii=False, indent=2)
+    return json.dumps(_rl(summary, context, principle, guard),
+                      ensure_ascii=False, indent=2)
 
 
 @mcp.tool()
