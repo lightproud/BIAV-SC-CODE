@@ -102,7 +102,11 @@ export function parseCommandPrefix(raw: string): CommandPrefixResult {
   // genuine command that merely CONTAINS the word ("echo command_injection_
   // detected") leads with its command and stays a prefix.
   if (sentinel.startsWith(COMMAND_INJECTION_TOKEN)) return { kind: 'injection' };
-  if (sentinel === 'none') return { kind: 'none' };
+  // Symmetric with the injection sentinel above (audit r4 Sgen-2): a DECORATED
+  // "none" ("None (no prefix)") must map to none, not fall through and leak the
+  // decorated text as a runnable prefix. A word boundary keeps a real command
+  // like `nonexistent` from being misread as none.
+  if (/^none\b/.test(sentinel)) return { kind: 'none' };
   // A genuine prefix is returned VERBATIM (case-sensitive: env-var prefixes like
   // `GOEXPERIMENT=synctest go test` must not be lowercased).
   return { kind: 'prefix', prefix: token };
@@ -146,10 +150,15 @@ export async function classifyBackgroundState(
   input: { tail: string; previousState?: BackgroundRunState },
   opts: UtilityCallOptions = {},
 ): Promise<BackgroundStateResult> {
+  // Rpr-1 (audit r4): the tail is untrusted agent output. Fence + neutralize it
+  // (like the sibling generators) so a tail that mimics an example line — or
+  // forges `</transcript>` to break out — cannot steer the classifier into a
+  // false "blocked" ping or a suppressed real block.
+  const fencedTail = `<transcript>\n${neutralizeClosingTag(input.tail, 'transcript')}\n</transcript>`;
   const user =
     input.previousState !== undefined
-      ? `Previous state: ${input.previousState}\n\nTranscript tail:\n${input.tail}`
-      : input.tail;
+      ? `Previous state: ${input.previousState}\n\nTranscript tail:\n${fencedTail}`
+      : fencedTail;
   const raw = await runUtilityCall(BACKGROUND_STATE_SYSTEM, user, opts, 512);
   return parseBackgroundState(raw);
 }
@@ -238,10 +247,16 @@ export async function generateTitleAndBranch(
   description: string,
   opts: UtilityCallOptions = {},
 ): Promise<TitleAndBranch> {
+  // Z7-1 (audit r4): the description is interpolated into a `<description>`
+  // fence INSIDE the system prompt, so a literal `</description>` would close
+  // that fence in the system layer and let the description inject instructions.
+  // Neutralize the closing tag first.
   // Function-form replacement: the return value is inserted LITERALLY, so a
   // description containing `$$` / `$&` / `$\`` is not misread as a replacement
   // macro (which would silently drop a `$` or splice the prompt prefix in).
-  const system = TITLE_AND_BRANCH_SYSTEM.replace('{description}', () => description);
+  const system = TITLE_AND_BRANCH_SYSTEM.replace('{description}', () =>
+    neutralizeClosingTag(description, 'description'),
+  );
   // The description is already embedded in the (interpolated) system prompt;
   // the user turn just triggers generation.
   const raw = await runUtilityCall(
@@ -292,12 +307,25 @@ export async function generateSessionName(
   conversation: string,
   opts: UtilityCallOptions = {},
 ): Promise<string> {
-  const raw = await runUtilityCall(SESSION_NAME_SYSTEM, conversation, opts, 64);
+  // Rpr-3 (audit r4): fence + neutralize the conversation like the sibling
+  // generators — untrusted context must not steer the name via a forged
+  // `</conversation>` or a mimicked instruction line.
+  const user = `<conversation>\n${neutralizeClosingTag(conversation, 'conversation')}\n</conversation>`;
+  const raw = await runUtilityCall(SESSION_NAME_SYSTEM, user, opts, 64);
   const obj = extractJsonObject(raw);
-  const name = readStringField(obj, 'name') ?? stripToPlain(raw);
+  // Sgen-3 (audit r4): the bare-string fallback must not slugify a broken JSON
+  // object's KEYS into a clean-looking name ({"name":"my sess -> "name-my-sess"),
+  // which would hide that the reply was truncated/garbled. When the reply is
+  // JSON-shaped but yielded no usable `name` field, fall through to the safe
+  // default instead of baking the structure into the slug.
+  const name =
+    readStringField(obj, 'name') ?? (looksLikeJson(raw) ? '' : stripToPlain(raw));
+  // Z7-3 (audit r4): preserve Unicode letters/digits so a CJK / Korean /
+  // Japanese name is not stripped to nothing and collapsed to "session"
+  // (the SESSION_TITLE prompt explicitly supports non-Latin names).
   const slug = name
     .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/[^\p{L}\p{N}]+/gu, '-')
     .replace(/^-+|-+$/g, '');
   return slug.length > 0 ? slug : 'session';
 }
@@ -316,7 +344,12 @@ export async function generateAwaySummary(
   tail: string,
   opts: UtilityCallOptions = {},
 ): Promise<string> {
-  const raw = await runUtilityCall(AWAY_SUMMARY_SYSTEM, tail, opts, 128);
+  // Rpr-2 (audit r4): fence + neutralize the transcript tail before it rides
+  // into the utility prompt, mirroring the Rpr-1/Rpr-3 sibling generators — a
+  // raw tail let a line like `<summary>welcome back</summary>` forge the recap
+  // shown to the user.
+  const user = `<transcript>\n${neutralizeClosingTag(tail, 'transcript')}\n</transcript>`;
+  const raw = await runUtilityCall(AWAY_SUMMARY_SYSTEM, user, opts, 128);
   return parseAwaySummary(raw);
 }
 
@@ -340,7 +373,11 @@ export function parseAwaySummary(raw: string): string {
     // silently losing its glob star — audit 2026-07-17 L70): only PAIRED
     // markers (**bold**, *emph*, `code`) are unwrapped.
     .replace(/\*\*([^*]+)\*\*/g, '$1')
-    .replace(/\*([^*\s][^*]*)\*/g, '$1')
+    // audit r4 Z7-2: require a non-space char at BOTH ends of the span so TWO
+    // globs on one line ("ran tests on *.ts and *.js") are not swallowed as a
+    // single *…* pair (the L70 fix only covered a lone unpaired star). Only a
+    // true `*emph*` — no whitespace adjacent to either delimiter — is unwrapped.
+    .replace(/\*([^*\s](?:[^*]*[^*\s])?)\*/g, '$1')
     .replace(/`([^`]+)`/g, '$1')
     // Trim wrapping quotes, incl. both smart double AND smart single quotes.
     .replace(/^["'“”‘’]+|["'“”‘’]+$/g, '')
@@ -399,7 +436,16 @@ export function parseMemoryFileSelection(raw: string, availableFilenames: string
       .replace(/```[a-z]*\n?/gi, '')
       .replace(/```/g, '')
       .split(/[\n,]/)
-      .map((s) => s.replace(/^[\s*\-•]+/, '').replace(/^["'`]+|["'`]+$/g, '').trim())
+      // audit r4 Sgen-1: also strip a leading `[` / trailing `]` so a bracket
+      // stuck to the first/last name in a non-JSON list ("[db.md, style.md]"
+      // that failed JSON.parse) does not cause a silent mismatch-and-drop.
+      .map((s) =>
+        s
+          .replace(/^[\s*\-•[]+/, '')
+          .replace(/[\s\]]+$/, '')
+          .replace(/^["'`]+|["'`]+$/g, '')
+          .trim(),
+      )
       .filter((s) => s.length > 0);
   }
   const out: string[] = [];
@@ -467,6 +513,19 @@ function readStringField(obj: unknown, field: string): string | null {
   if (obj === null || typeof obj !== 'object') return null;
   const v = (obj as Record<string, unknown>)[field];
   return typeof v === 'string' && v.trim().length > 0 ? v.trim() : null;
+}
+
+/**
+ * True when a reply is JSON-shaped (first non-fence char is `{` or `[`). Used to
+ * refuse the bare-string fallback for a broken JSON object whose keys would
+ * otherwise be slugified into a clean-looking name (audit r4 Sgen-3).
+ */
+function looksLikeJson(raw: string): boolean {
+  const t = raw
+    .replace(/```[a-z]*\n?/gi, '')
+    .replace(/```/g, '')
+    .trim();
+  return t.startsWith('{') || t.startsWith('[');
 }
 
 /** Strip code fences and quotes from a bare-string fallback reply. */

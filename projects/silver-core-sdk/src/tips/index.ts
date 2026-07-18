@@ -85,6 +85,14 @@ export async function selectContextTip(
 /** Assemble the selector user turn (transcript + eligibility + metadata). */
 export function buildSelectorUserTurn(input: SelectContextTipInput): string {
   const meta = input.sessionMetadata ?? {};
+  // R7j-6 (audit r4): session_metadata is UNTRUSTED (a host may pass user- or
+  // team-derived values) and sits unfenced among the structural blocks below.
+  // JSON.stringify escapes quotes but NOT angle brackets, so a value carrying
+  // `</transcript>` or a forged `<eligible_ids>` block would enter the selector
+  // prompt verbatim and impersonate structure. Defang every pseudo-XML tag by
+  // escaping the brackets; JSON has no angle brackets in its grammar, so the
+  // serialized shape the model reads stays intact.
+  const metaJson = JSON.stringify(meta).replace(/[<>]/g, (c) => (c === '<' ? '&lt;' : '&gt;'));
   // N9 (audit 2026-07-17): the transcript is UNTRUSTED text sitting right
   // before the structured eligibility blocks — unfenced, it can forge its own
   // <eligible_ids> block and steer the selection. Fence it and neutralize the
@@ -93,7 +101,7 @@ export function buildSelectorUserTurn(input: SelectContextTipInput): string {
     `Transcript:\n<transcript>\n${neutralizeClosingTag(input.transcript, 'transcript')}\n</transcript>`,
     `<eligible_ids>${input.eligibleIds.join(', ')}</eligible_ids>`,
     `<ineligible_ids>${(input.ineligibleIds ?? []).join(', ')}</ineligible_ids>`,
-    `session_metadata: ${JSON.stringify(meta)}`,
+    `session_metadata: ${metaJson}`,
   ];
   if (typeof meta.numStartups === 'number') parts.push(`numStartups: ${meta.numStartups}`);
   return parts.join('\n\n');
@@ -159,7 +167,13 @@ export async function evaluateTipReception(
   opts: UtilityCallOptions = {},
 ): Promise<TipReceptionResult> {
   const system = TIP_RECEPTION_SYSTEM + '\n\n' + TIP_RECEPTION_OUTPUT_CONTRACT;
-  const user = `Tip shown: ${input.tip}\nSuggested action: ${input.action}\n\nTranscript after the tip:\n${input.transcriptAfter}`;
+  // audit r4 U6-1: transcriptAfter is UNTRUSTED text (what the user/model did
+  // after the tip) and directly steers the verdict — unfenced, it can forge a
+  // "reception":"positive" line and fabricate a favorable judgement. Fence it
+  // and neutralize the terminator like the sibling selector (buildSelectorUserTurn).
+  const user =
+    `Tip shown: ${input.tip}\nSuggested action: ${input.action}\n\n` +
+    `Transcript after the tip:\n<transcript>\n${neutralizeClosingTag(input.transcriptAfter, 'transcript')}\n</transcript>`;
   const raw = await runUtilityCall(system, user, opts, 128);
   return parseTipReception(raw);
 }

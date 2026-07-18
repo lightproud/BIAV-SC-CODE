@@ -40,10 +40,16 @@ export function escapeTagAttr(value: string): string {
 }
 
 /**
- * Collapse a value to one line (CR/LF runs become a single space) for
- * line-oriented digests where each line is a separate record: embedded
+ * Collapse a value to one line (any run of line breaks becomes a single space)
+ * for line-oriented digests where each line is a separate record: embedded
  * newlines are how a key/summary forges extra records.
+ *
+ * audit r4 U6-3: `[\r\n]` alone left the NON-ASCII line terminators — NEL
+ * (U+0085), LINE SEPARATOR (U+2028), PARAGRAPH SEPARATOR (U+2029) plus VT/FF —
+ * intact, and a model/renderer that treats any of them as a line break sees a
+ * forged extra record (a fake "already reported" ledger line suppressing a real
+ * report). Collapse the full Unicode line-break set, not just CR/LF.
  */
 export function singleLine(text: string): string {
-  return text.replace(/[\r\n]+/g, ' ');
+  return text.replace(/[\r\n\v\f\u0085\u2028\u2029]+/g, ' ');
 }

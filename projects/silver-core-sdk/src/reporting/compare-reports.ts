@@ -104,7 +104,11 @@ export async function aggregateDay(logDir: string, date: string): Promise<DayAgg
     for (const r of transportRecords) {
       let faults = 0;
       for (const [k, v] of Object.entries(r.transport_health!)) {
-        const n = typeof v === 'number' ? v : 0;
+        // audit r4 U7-4: a fault counter is non-negative — a negative (or NaN)
+        // value from a corrupt/external ledger line must clamp to 0, not sum
+        // in. Left unclamped it could drag `faults` to <= 0 and silently
+        // suppress the unrecovered classification below.
+        const n = typeof v === 'number' && v > 0 ? v : 0;
         transport[k] = (transport[k] ?? 0) + n;
         faults += n;
       }
@@ -120,7 +124,11 @@ export async function aggregateDay(logDir: string, date: string): Promise<DayAgg
     const output = records.reduce((a, r) => a + r.usage.output_tokens, 0);
     const cacheRead = records.reduce((a, r) => a + r.usage.cache_read_input_tokens, 0);
     const cacheCreation = records.reduce((a, r) => a + r.usage.cache_creation_input_tokens, 0);
-    const denom = input + cacheRead;
+    // audit r4 U7-1/U7-3: include cache_creation in the cache-hit denominator
+    // — cache_read / (input + cache_read + cache_creation) — matching the
+    // authoritative SDKRunMetrics.cacheHitRatio definition; omitting it
+    // inflated the rate and zeroed the denom on cold-cache days.
+    const denom = input + cacheRead + cacheCreation;
     tokens = {
       input,
       output,
@@ -234,10 +242,15 @@ export async function compareReports(
   if (causes.size > 0) {
     lines.push('', '## 传输故障按因差值', '', '| cause | A | B | delta |', '|---|---|---|---|');
     for (const cause of [...causes].sort()) {
-      const av = a.transport?.[cause] ?? 0;
-      const bv = b.transport?.[cause] ?? 0;
-      if (av === 0 && bv === 0) continue;
-      lines.push(`| ${cause} | ${av} | ${bv} | ${fmtDelta(bv - av)} |`);
+      // audit r4 U7-2: a side with no transport ledger at all (transport ===
+      // null) is 无数据, not 0. Reading null as 0 forged a "+N" per-cause delta
+      // that contradicted the summary table's "—" for transport_faults on the
+      // very same report.
+      const av = a.transport === null ? null : (a.transport[cause] ?? 0);
+      const bv = b.transport === null ? null : (b.transport[cause] ?? 0);
+      if ((av ?? 0) === 0 && (bv ?? 0) === 0) continue;
+      const d = av === null || bv === null ? null : bv - av;
+      lines.push(`| ${cause} | ${fmt(av)} | ${fmt(bv)} | ${fmtDelta(d)} |`);
     }
   }
   lines.push('');

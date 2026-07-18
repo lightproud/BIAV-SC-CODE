@@ -43,6 +43,7 @@ import type {
 } from '../types.js';
 import { AbortError } from '../errors.js';
 import type { AggregatedHookResult, HookRunner } from '../internal/contracts.js';
+import { sliceSurrogateSafe } from '../internal/text.js';
 import type { UtilityCallOptions } from '../generators/runtime.js';
 import { evaluateHookCondition } from './condition.js';
 import { readFileTail } from './goal.js';
@@ -50,12 +51,25 @@ import { matcherMatches } from './matcher.js';
 
 const DEFAULT_TIMEOUT_SECONDS = 60;
 
+/** Node's setTimeout / AbortSignal.timeout silently overflow a delay above the
+ *  signed-32-bit ceiling to ~1ms (audit r4 Rnum-1). Clamp matcher.timeout so a
+ *  huge value bounds the callback at ~24.8 days instead of aborting it almost
+ *  immediately. */
+const MAX_TIMER_MS = 2_147_483_647;
+
 /** Bounded transcript tail appended to a Stop-condition's context (M12) —
  *  same default the structured-goal gate uses for its evaluator. */
 const CONDITION_TRANSCRIPT_TAIL_BYTES = 32_768;
 
 /** hook_response.output carries a bounded JSON preview of the callback output. */
 const HOOK_RESULT_PREVIEW_CHARS = 500;
+
+/** Upper bound on the JSON-serialized hook input appended to a condition's
+ *  judging context (audit r4 V1-2): an unbounded tool_input would balloon the
+ *  evaluator call, and a failed evaluation under the default failureMode 'open'
+ *  silently SKIPS a conditioned deny. Bound it so oversized inputs still
+ *  decide. */
+const CONDITION_INPUT_MAX_CHARS = 32_768;
 
 export type HookRunnerConfig = {
   hooks: Options['hooks'];
@@ -96,8 +110,40 @@ function previewJson(value: unknown): string {
   } catch {
     text = '[non-serializable hook output]';
   }
+  // audit r4 R7s-9: surrogate-safe cut so the bounded preview never emits a
+  // lone surrogate into the (persisted, model-visible) hook_response.output.
   return text.length > HOOK_RESULT_PREVIEW_CHARS
-    ? `${text.slice(0, HOOK_RESULT_PREVIEW_CHARS)}...`
+    ? `${sliceSurrogateSafe(text, HOOK_RESULT_PREVIEW_CHARS)}...`
+    : text;
+}
+
+/**
+ * Serialize a HookInput for a condition's judging context: circular-safe and
+ * bounded (audit r4 R7j-1 / V1-2). A bare JSON.stringify(input) throws on a
+ * circular tool_input/tool_response — and that throw sat OUTSIDE the
+ * per-matcher try/catch below, crashing the entire hook dispatch — while an
+ * unbounded result balloons the evaluation. Never throws.
+ */
+function stringifyConditionInput(input: HookInput): string {
+  let text: string;
+  try {
+    const seen = new WeakSet<object>();
+    text =
+      JSON.stringify(input, (_key, val: unknown) => {
+        if (typeof val === 'bigint') return `${val}n`;
+        if (typeof val === 'object' && val !== null) {
+          if (seen.has(val)) return '[Circular]';
+          seen.add(val);
+        }
+        return val;
+      }) ?? 'null';
+  } catch {
+    // Any residual serializer failure still fails the CONDITION, not the whole
+    // dispatch: hand the evaluator a safe descriptor and let it decide.
+    text = '[unserializable hook input]';
+  }
+  return text.length > CONDITION_INPUT_MAX_CHARS
+    ? sliceSurrogateSafe(text, CONDITION_INPUT_MAX_CHARS)
     : text;
 }
 
@@ -170,7 +216,9 @@ export class DefaultHookRunner implements HookRunner {
       // the global default keeps official drop-in parity ('open').
       const failureMode = matcher.failureMode ?? this.failureMode;
       for (const cb of matcher.hooks) {
-        tasks.push({ cb, timeoutMs: seconds * 1000, failureMode });
+        // audit r4 Rnum-1: clamp to the 32-bit timer ceiling so a huge
+        // matcher.timeout bounds the callback instead of overflowing to ~1ms.
+        tasks.push({ cb, timeoutMs: Math.min(seconds * 1000, MAX_TIMER_MS), failureMode });
       }
     }
 
@@ -220,7 +268,8 @@ export class DefaultHookRunner implements HookRunner {
       return matched; // deterministic fast path: zero model calls
     }
     const stop = event === 'Stop' || event === 'SubagentStop';
-    let context = JSON.stringify(input);
+    // audit r4 V1-2 / R7j-1: circular-safe + size-bounded, never throws.
+    let context = stringifyConditionInput(input);
     // M12 (audit 2026-07-17): a Stop condition's judging material is the
     // TRANSCRIPT, but the hook input carries only transcript_path — the
     // evaluator saw a path string, could never find evidence, and (failing

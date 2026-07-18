@@ -24,6 +24,9 @@ import { planProcessKill } from '../internal/process-kill.js';
 import { SDK_VERSION } from '../version.js';
 
 const MCP_PROTOCOL_VERSION = '2025-06-18';
+/** Protocol revisions this clean-room client can speak; a server negotiating
+ *  anything outside this set fails connect (audit r4 Z6-2). Mirrors http.ts. */
+const SUPPORTED_PROTOCOL_VERSIONS = ['2025-06-18', '2025-03-26', '2024-11-05'];
 const CLIENT_INFO = { name: 'silver-core-sdk', version: SDK_VERSION } as const;
 const DEFAULT_REQUEST_TIMEOUT_MS = 60_000;
 const KILL_GRACE_MS = 2_000;
@@ -180,6 +183,14 @@ export class StdioMcpConnection {
     });
     child.on('close', () => {
       this.closed = true;
+      // Rmcp-1 (audit r4): a server that writes its final response WITHOUT a
+      // trailing newline then exits leaves that response in stdoutBuffer — the
+      // onStdout line loop only consumes up to '\n'. 'close' fires after stdio
+      // has flushed, so parse the remnant as a complete final line here, BEFORE
+      // failing pending, letting an already-delivered response resolve its
+      // waiter instead of being rejected as mcp_server_exited (the http SSE
+      // path got this as M10; stdio lacked it).
+      this.flushStdout();
       this.failAllPending(
         new McpError(
           'mcp_server_exited',
@@ -199,6 +210,19 @@ export class StdioMcpConnection {
       signal,
     );
     this.info = extractServerInfo(initResult);
+    // audit r4 Z6-2: verify the negotiated protocol version is one we can speak
+    // (spec: the client SHOULD disconnect otherwise). An absent version is
+    // tolerated (keep our advertised default); an explicit unsupported one
+    // fails connect, which connectEntry surfaces as a 'failed' status.
+    const negotiated = extractProtocolVersion(initResult);
+    if (negotiated !== undefined && !SUPPORTED_PROTOCOL_VERSIONS.includes(negotiated)) {
+      throw new McpError(
+        'mcp_invalid_response',
+        `MCP server '${this.label}' negotiated unsupported protocol version '${negotiated}' ` +
+          `(client supports ${SUPPORTED_PROTOCOL_VERSIONS.join(', ')})`,
+        { serverLabel: this.label, transport: 'stdio', phase: 'connect' },
+      );
+    }
     this.sendNotification('notifications/initialized');
   }
 
@@ -440,8 +464,13 @@ export class StdioMcpConnection {
         this.pending.delete(id);
         fn();
       };
-      const onAbort = (): void => finish(() => reject(new AbortError()));
+      const onAbort = (): void => {
+        // Rmcp-2 (audit r4): tell the server to stop before we walk away.
+        if (!settled) this.sendCancellation(id, method);
+        finish(() => reject(new AbortError()));
+      };
       const timer = setTimeout(() => {
+        if (!settled) this.sendCancellation(id, method);
         finish(() =>
           reject(
             new McpError(
@@ -489,6 +518,40 @@ export class StdioMcpConnection {
     child.stdin.write(`${JSON.stringify(msg)}\n`);
   }
 
+  /** Best-effort MCP cancellation (Rmcp-2, audit r4): tell the server to stop
+   *  working on a request we abandoned (timeout/abort) so it does not keep
+   *  computing and then emit a late response that lands on no waiter. The
+   *  initialize request MUST NOT be cancelled this way (MCP spec); a dead child
+   *  is skipped. */
+  private sendCancellation(id: JsonRpcId, method: string): void {
+    if (method === 'initialize' || this.closed || !this.child) return;
+    try {
+      this.write({
+        jsonrpc: '2.0',
+        method: 'notifications/cancelled',
+        params: { requestId: id, reason: 'client cancelled the request' },
+      });
+    } catch {
+      // Best-effort: the child may already be gone.
+    }
+  }
+
+  /** Parse any newline-less remnant left in stdoutBuffer as one final line
+   *  (Rmcp-1, audit r4). Idempotent: an empty buffer is a no-op. */
+  private flushStdout(): void {
+    const line = this.stdoutBuffer.trim();
+    this.stdoutBuffer = '';
+    if (!line) return;
+    let msg: JsonRpcMessage;
+    try {
+      msg = JSON.parse(line) as JsonRpcMessage;
+    } catch {
+      this.debug(`[mcp:${this.label}] ignoring non-JSON stdout remnant at EOF`);
+      return;
+    }
+    this.dispatch(msg);
+  }
+
   private failAllPending(err: Error): void {
     const entries = [...this.pending.values()];
     this.pending.clear();
@@ -508,6 +571,16 @@ function extractServerInfo(result: unknown): { name: string; version: string } |
         version: typeof version === 'string' ? version : 'unknown',
       };
     }
+  }
+  return undefined;
+}
+
+/** The non-empty string protocolVersion from an initialize result, else
+ *  undefined (audit r4 Z6-2). */
+function extractProtocolVersion(result: unknown): string | undefined {
+  if (result && typeof result === 'object') {
+    const pv = (result as { protocolVersion?: unknown }).protocolVersion;
+    if (typeof pv === 'string' && pv.length > 0) return pv;
   }
   return undefined;
 }

@@ -588,6 +588,11 @@ async function foldViaApi(
       : deps.transport;
   const started = Date.now();
   const acc = new MessageAccumulator();
+  // audit r4 Y2-1: guard the summary sink against double-billing. The success
+  // path books usage below; if any POST-bill step ever throws, the catch must
+  // NOT re-book the same call. Latent today (the post-bill steps are pure/sync)
+  // but the catch previously billed unconditionally, so this is structural.
+  let billed = false;
   try {
     for await (const ev of summaryTransport.stream(req)) {
       if (signal.aborted) throw new AbortError();
@@ -596,6 +601,7 @@ async function foldViaApi(
     const final = acc.finalize();
     const apiMs = Date.now() - started;
     onSummaryCall?.(summaryModel, normalizeUsage(final.usage), apiMs);
+    billed = true; // audit r4 Y2-1: this call is booked; the catch must not re-book.
     const rawSummary = final.content
       .filter((b): b is { type: 'text'; text: string; citations?: unknown[] | null } => b.type === 'text')
       .map((b) => b.text)
@@ -610,17 +616,29 @@ async function foldViaApi(
       { role: 'assistant', content: [{ type: 'text', text }] },
     ];
   } catch (err) {
+    // audit r4 Y2-2 NOT APPLIED (deliberate, prior-audit-locked): the audit
+    // proposed skipping the partial-usage sink on abort so a cancelled summary
+    // books nothing, but batch-F D3 (tests/audit-t50-batch-f.test.ts "books
+    // partial usage before rethrowing an abort") deliberately books the
+    // message_start seed on abort so a cancelled-mid-stream attempt's real
+    // token spend stays honest in totals/maxBudgetUsd. The two premises
+    // conflict; the established D3 accounting wins.
     // D3 (audit r2 2026-07-17): a summary stream that dies AFTER message_start
     // has already billed its input tokens (~ the whole folded prefix, easily
     // 100k+), but the sink only fired on the success path — the spend vanished
     // from totals and maxBudgetUsd. Account whatever usage the stream reported
     // before failing (message_start seed + any message_delta merges); a
-    // request-phase failure has no message yet and books nothing.
-    const partialUsage = acc.usageSnapshot();
-    if (partialUsage !== undefined) {
-      onSummaryCall?.(summaryModel, normalizeUsage(partialUsage), Date.now() - started);
+    // request-phase failure has no message yet and books nothing. audit r4 Y2-1:
+    // skip when the success path already billed, so a post-bill throw cannot
+    // double-record the same call.
+    if (!billed) {
+      const partialUsage = acc.usageSnapshot();
+      if (partialUsage !== undefined) {
+        onSummaryCall?.(summaryModel, normalizeUsage(partialUsage), Date.now() - started);
+      }
     }
-    // Never fall back on abort: propagate cancellation as AbortError.
+    // Never fall back on abort: propagate cancellation as AbortError (after the
+    // partial-usage booking above, per batch-F D3).
     if (isAbortError(err)) throw err instanceof AbortError ? err : new AbortError();
     deps.debug(
       `compaction: summary API call failed, using deterministic fold: ${String(err)}`,
@@ -948,7 +966,11 @@ function recapLines(msg: APIMessageParam): string[] {
   if (calls.length > 0) {
     const names = calls.map((c) => c.name).join(', ');
     const args = calls
-      .map((c) => firstChars(JSON.stringify(c.input), RECAP_ARGS_CHARS))
+      // audit r4 R7j-4: a tool_use with absent/undefined input makes
+      // JSON.stringify return undefined; firstChars(undefined) then throws on
+      // .length and crashes the whole recap/fold. Coerce a missing input to an
+      // empty-object literal so the recap stays a string.
+      .map((c) => firstChars(JSON.stringify(c.input) ?? '{}', RECAP_ARGS_CHARS))
       .join(' | ');
     out.push('Assistant called: ' + names + (args ? ' — ' + args : ''));
   }

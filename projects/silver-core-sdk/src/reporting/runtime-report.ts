@@ -22,6 +22,7 @@
 
 import { readdir, readFile, mkdir, rm, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
+import { ConfigurationError } from '../errors.js';
 import type { RunLogRecord } from './run-log.js';
 
 export type RuntimeReportOptions = {
@@ -71,6 +72,13 @@ export type RuntimeReportResult = {
 
 function fmtPct(x: number): string {
   return `${(x * 100).toFixed(1)}%`;
+}
+
+/** Deterministic code-unit string order — a stable secondary sort key so
+ *  equal-primary-key rows keep one fixed relative order across runs instead of
+ *  reshuffling at a slice() cutoff (audit r4 Rst-1/Rst-2). */
+function cmpStr(a: string, b: string): number {
+  return a < b ? -1 : a > b ? 1 : 0;
 }
 
 /**
@@ -204,7 +212,18 @@ export async function generateRuntimeReport(
   options: RuntimeReportOptions,
 ): Promise<RuntimeReportResult> {
   const now = options.now ?? new Date();
-  const windowMs = (options.windowHours ?? 24) * 3_600_000;
+  // audit r4 Rdt-3: an unvalidated windowHours poisoned the window — NaN /
+  // Infinity produced an Invalid Date whose toISOString() later threw a
+  // RangeError, and a negative value silently reported "no activity" from a
+  // backwards window. Reject non-finite / non-positive windows with the same
+  // typed error the sibling aggregateDay() uses for bad dates.
+  const windowHours = options.windowHours ?? 24;
+  if (!Number.isFinite(windowHours) || windowHours <= 0) {
+    throw new ConfigurationError(
+      `generateRuntimeReport: windowHours must be a positive finite number, got ${String(windowHours)}`,
+    );
+  }
+  const windowMs = windowHours * 3_600_000;
   const from = new Date(now.getTime() - windowMs);
   const topN = options.topN ?? 5;
   const { records, badLines } = await readWindow(options.logDir, from, now);
@@ -244,7 +263,13 @@ export async function generateRuntimeReport(
     const output = records.reduce((a, r) => a + r.usage.output_tokens, 0);
     const cacheRead = records.reduce((a, r) => a + r.usage.cache_read_input_tokens, 0);
     const cacheCreation = records.reduce((a, r) => a + r.usage.cache_creation_input_tokens, 0);
-    const denom = input + cacheRead;
+    // audit r4 U7-1/U7-3: the cache-hit denominator must include
+    // cache_creation — cache_read / (input + cache_read + cache_creation) —
+    // matching the authoritative SDKRunMetrics.cacheHitRatio definition.
+    // Omitting it inflated the rate (98% vs true 49.5%) and, on a cold-cache
+    // day (all cache_creation, zero read/input), collapsed the denom to 0 →
+    // rendered 无数据 despite real input-side spend.
+    const denom = input + cacheRead + cacheCreation;
     tokens = {
       input,
       output,
@@ -276,7 +301,9 @@ export async function generateRuntimeReport(
     toolAgg.size > 0
       ? [...toolAgg.entries()]
           .map(([name, v]) => ({ name, ...v }))
-          .sort((a, b) => b.calls - a.calls)
+          // audit r4 Rst-2: tiebreak by name so equal-calls rows at the
+          // slice() cutoff are deterministic across runs.
+          .sort((a, b) => b.calls - a.calls || cmpStr(a.name, b.name))
       : null;
 
   // 4. failures (named records only — incognito is excluded by construction)
@@ -295,7 +322,7 @@ export async function generateRuntimeReport(
   const lines: string[] = [
     `# Runtime report — ${date}`,
     '',
-    `- window: ${from.toISOString()} → ${now.toISOString()} (${options.windowHours ?? 24}h)`,
+    `- window: ${from.toISOString()} → ${now.toISOString()} (${windowHours}h)`,
     `- records: ${records.length} (${sessions.size} sessions, ${records.length - named.length} incognito${badLines > 0 ? `, ${badLines} unparseable lines skipped` : ''})`,
     '',
     '## 1. 传输健康 (transportHealth)',
@@ -330,7 +357,13 @@ export async function generateRuntimeReport(
     if (byScenario.size === 0) lines.push('无数据(窗口内无具名记录)。');
     for (const [scenario, rs] of byScenario) {
       const top = [...rs]
-        .sort((a, b) => b.usage.output_tokens - a.usage.output_tokens)
+        // audit r4 Rst-1: tiebreak by session_id so equal-output sessions at
+        // the topN cutoff appear deterministically across runs.
+        .sort(
+          (a, b) =>
+            b.usage.output_tokens - a.usage.output_tokens ||
+            cmpStr(a.session_id ?? '', b.session_id ?? ''),
+        )
         .slice(0, topN);
       lines.push(`- **${scenario}**(${rs.length} 条):`);
       for (const r of top) {

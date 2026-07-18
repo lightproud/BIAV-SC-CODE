@@ -19,6 +19,7 @@
 
 import { appendFile, mkdir } from 'node:fs/promises';
 import { join } from 'node:path';
+import { sliceSurrogateSafe } from '../internal/text.js';
 import type {
   RunLogOptions,
   SDKMessage,
@@ -113,13 +114,22 @@ export function buildRunLogRecord(
   }
   if (opts.incognito) {
     // §6.4: transport/token stats stay; identity, tags and content-adjacent
-    // fields go.
+    // fields go. audit r4 Sls-3 NOT APPLIED (deliberate, test-locked): the
+    // audit argued per_tool/models leak activity and should be stripped, but
+    // §6.4's established contract deliberately KEEPS aggregate transport/token
+    // stats (per_tool is a name→count map, not session-identifying) and
+    // runtime-report.test.ts locks the incognito record contributing to the
+    // aggregate tools table. Generic tool names in an aggregate reveal no
+    // identity, so the established design wins over the audit's premise.
     record.incognito = true;
   } else {
     record.session_id = m.session_id;
     if (opts.scenario !== undefined) record.scenario = opts.scenario;
     if (m.is_error === true && typeof m.errorMessage === 'string') {
-      record.error = m.errorMessage.split('\n')[0]!.slice(0, 300);
+      // audit r4 R7s-10: surrogate-safe truncation — a bare slice(0,300) can
+      // sever a surrogate pair, persisting a lone surrogate into the run-log
+      // error field (audit-facing, and replayed on resume).
+      record.error = sliceSurrogateSafe(m.errorMessage.split('\n')[0]!, 300);
     }
   }
   return record;
@@ -158,18 +168,31 @@ export function createRunLogSink(args: {
   return {
     observe(msg: SDKMessage): void {
       if (msg.type !== 'result') return;
-      const record = buildRunLogRecord(msg, {
-        incognito,
-        ...(runLog.scenario !== undefined ? { scenario: runLog.scenario } : {}),
-      });
-      const line = `${JSON.stringify(record)}\n`;
-      tail = tail
-        .then(() => ensureDir())
+      // audit r4 Sls-2: record construction runs SYNCHRONOUSLY here. A
+      // malformed result (e.g. one missing `usage`) made buildRunLogRecord
+      // throw straight out of observe(), and the caller's un-wrapped .then
+      // broke the run — violating "a ledger fault never breaks the run". Any
+      // construction fault is now swallowed exactly like an append fault.
+      let line: string;
+      let fileName: string;
+      try {
+        const record = buildRunLogRecord(msg, {
+          incognito,
+          ...(runLog.scenario !== undefined ? { scenario: runLog.scenario } : {}),
+        });
+        line = `${JSON.stringify(record)}\n`;
         // audit 2026-07-14 L-16: derive the day file from the RECORD'S ts (set
         // at observe time), not the flush-time clock — a record observed at
         // 23:59:59 and appended at 00:00:01 otherwise lands in the wrong day
         // file, where readWindow's filename-based day prefilter can miss it.
-        .then(() => appendFile(join(runLog.dir, runLogFileName(new Date(record.ts))), line, 'utf8'))
+        fileName = runLogFileName(new Date(record.ts));
+      } catch (err) {
+        debug(`runLog: record build failed (ignored): ${String(err)}`);
+        return;
+      }
+      tail = tail
+        .then(() => ensureDir())
+        .then(() => appendFile(join(runLog.dir, fileName), line, 'utf8'))
         .catch((err) => debug(`runLog: append failed (ignored): ${String(err)}`));
     },
     flush(): Promise<void> {

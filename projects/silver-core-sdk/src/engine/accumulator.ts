@@ -70,6 +70,56 @@ type PendingBlock =
   // the raw block round-trips into the finalized message.
   | { type: 'opaque'; raw: ContentBlock };
 
+/**
+ * The `usage` payload of a message_delta frame. The base MessageDeltaEvent type
+ * models only output/input tokens, but the wire also carries cumulative
+ * cache_creation/cache_read counts — read here through a widened shape so the
+ * fold below never silently drops them (V8-1).
+ */
+export type DeltaUsage = Partial<{
+  output_tokens: number;
+  input_tokens: number;
+  cache_creation_input_tokens: number | null;
+  cache_read_input_tokens: number | null;
+}>;
+
+/**
+ * V8-1 (audit r4) — fold one message_delta's `usage` into `u` IN PLACE. Single
+ * source of truth shared with the loop's failed-attempt recovery fold, which
+ * dropped the two cache fields and so under-reported cache-token spend on a
+ * salvaged/retried attempt. output_tokens REPLACES; the three input-side fields
+ * keep the running MAX (the API re-reports cumulative input-side counts).
+ * U1-4 (audit r4): a frame that OMITS `usage` entirely is a no-op, never a
+ * TypeError from dereferencing undefined.
+ */
+export function foldMessageDeltaUsage(u: Usage, deltaUsage: DeltaUsage | undefined): void {
+  if (deltaUsage === undefined) return;
+  if (deltaUsage.output_tokens !== undefined) {
+    u.output_tokens = deltaUsage.output_tokens;
+  }
+  if (deltaUsage.input_tokens !== undefined && deltaUsage.input_tokens !== null) {
+    u.input_tokens = Math.max(u.input_tokens ?? 0, deltaUsage.input_tokens);
+  }
+  if (
+    deltaUsage.cache_creation_input_tokens !== undefined &&
+    deltaUsage.cache_creation_input_tokens !== null
+  ) {
+    u.cache_creation_input_tokens = Math.max(
+      u.cache_creation_input_tokens ?? 0,
+      deltaUsage.cache_creation_input_tokens,
+    );
+  }
+  if (
+    deltaUsage.cache_read_input_tokens !== undefined &&
+    deltaUsage.cache_read_input_tokens !== null
+  ) {
+    u.cache_read_input_tokens = Math.max(
+      u.cache_read_input_tokens ?? 0,
+      deltaUsage.cache_read_input_tokens,
+    );
+  }
+}
+
 export class MessageAccumulator {
   private message: APIAssistantMessage | undefined;
   private readonly blocks = new Map<number, PendingBlock>();
@@ -90,6 +140,13 @@ export class MessageAccumulator {
 
       case 'content_block_start': {
         this.requireMessage('content_block_start');
+        // U1-2 (audit r4): a DUPLICATE content_block_start for an index already
+        // opened (or already closed) must not wholesale-overwrite the pending
+        // block — that discards accumulated text/JSON and strands a stale
+        // closedIndices entry, so the "reopened" block would be treated as
+        // already closed. Indices are assigned once per message on both arms,
+        // so a repeat is a non-conformant frame: keep the first registration.
+        if (this.blocks.has(event.index)) return;
         const cb = event.content_block;
         switch (cb.type) {
           // C2 (audit r2 2026-07-17): seed fields get the same field-omission
@@ -138,6 +195,12 @@ export class MessageAccumulator {
             `Protocol error: content_block_delta for unopened block index ${event.index}`,
           );
         }
+        // U1-1 (audit r4): a delta for an index whose content_block_stop already
+        // arrived must NOT mutate the finalized block (E3: closed = whole). The
+        // opening guard above never covered a re-delta on a CLOSED index, so a
+        // late/duplicate fragment silently corrupted a closed text/tool_use
+        // block (appending after the answer, or after the input parsed). Drop it.
+        if (this.closedIndices.has(event.index)) return;
         // Finding M1 — deltas targeting an opaque (unmodeled) block are ignored
         // rather than mismatched against a known delta type.
         if (block.type === 'opaque') return;
@@ -217,39 +280,12 @@ export class MessageAccumulator {
         // undefined and flip the finalize/salvage classification.
         msg.stop_reason = event.delta.stop_reason ?? msg.stop_reason;
         msg.stop_sequence = event.delta.stop_sequence ?? msg.stop_sequence;
-        // Usage merge: output_tokens replace; input-side fields keep max
-        // (the API may re-report cumulative input counts).
-        const u = msg.usage;
-        const du = event.usage as Partial<{
-          output_tokens: number;
-          input_tokens: number;
-          cache_creation_input_tokens: number | null;
-          cache_read_input_tokens: number | null;
-        }>;
-        if (du.output_tokens !== undefined) {
-          u.output_tokens = du.output_tokens;
-        }
-        if (du.input_tokens !== undefined && du.input_tokens !== null) {
-          u.input_tokens = Math.max(u.input_tokens ?? 0, du.input_tokens);
-        }
-        if (
-          du.cache_creation_input_tokens !== undefined &&
-          du.cache_creation_input_tokens !== null
-        ) {
-          u.cache_creation_input_tokens = Math.max(
-            u.cache_creation_input_tokens ?? 0,
-            du.cache_creation_input_tokens,
-          );
-        }
-        if (
-          du.cache_read_input_tokens !== undefined &&
-          du.cache_read_input_tokens !== null
-        ) {
-          u.cache_read_input_tokens = Math.max(
-            u.cache_read_input_tokens ?? 0,
-            du.cache_read_input_tokens,
-          );
-        }
+        // Usage merge (V8-1 / U1-4): output_tokens replace; input-side fields
+        // (including BOTH cache fields) keep max — the API may re-report
+        // cumulative input counts. Folded through the shared helper so this
+        // path and the loop's recovery fold cannot drift; the helper is a
+        // no-op when a non-conformant frame omits `usage` (U1-4).
+        foldMessageDeltaUsage(msg.usage, event.usage as DeltaUsage | undefined);
         return;
       }
 

@@ -35,6 +35,7 @@ import {
   normalizeImageMediaType,
   SUPPORTED_IMAGE_MEDIA_TYPES_LIST,
 } from '../internal/media.js';
+import { sliceSurrogateSafe } from '../internal/text.js';
 
 /** Wrap any abort-shaped error into this SDK's AbortError. */
 function toAbortError(err: unknown): AbortError {
@@ -112,10 +113,36 @@ export function mapMcpResult(res: CallToolResult): ToolResultPayload {
           text: part.name ? `[resource ${part.name}: ${part.uri}]` : `[resource ${part.uri}]`,
         });
         break;
-      case 'resource':
-        // Embedded resources are flattened to text (uri fallback).
-        parts.push({ type: 'text', text: part.resource.text ?? part.resource.uri });
+      case 'resource': {
+        // Embedded resource. A text payload inlines as-is. A BINARY blob must
+        // NOT silently flatten to a bare URI (audit r4 Rtd-1: payload lost,
+        // mimeType unmarked): decode a recognized image mimeType into an image
+        // block (same whitelist as above), otherwise emit an explicit marker
+        // that keeps the uri + mimeType so nothing is dropped unmarked.
+        const { uri, mimeType, text: resText, blob } = part.resource;
+        if (resText !== undefined) {
+          parts.push({ type: 'text', text: resText });
+        } else if (blob !== undefined) {
+          const imageType =
+            mimeType !== undefined ? normalizeImageMediaType(mimeType) : undefined;
+          parts.push(
+            imageType !== undefined
+              ? {
+                  type: 'image',
+                  source: { type: 'base64', media_type: imageType, data: blob },
+                }
+              : {
+                  type: 'text',
+                  text:
+                    `[resource ${uri}${mimeType !== undefined ? ` (${mimeType})` : ''}: ` +
+                    `binary contents omitted]`,
+                },
+          );
+        } else {
+          parts.push({ type: 'text', text: `[resource ${uri}]` });
+        }
         break;
+      }
     }
   }
   // Surface a structuredContent payload as trailing JSON text so the model
@@ -130,7 +157,12 @@ export function mapMcpResult(res: CallToolResult): ToolResultPayload {
       // Non-serializable payload: skip rather than throw.
     }
   }
-  return { content: parts.length > 0 ? parts : '', isError: res.isError === true };
+  // Drop empty text blocks: an MCP server can return `{type:'text',text:''}`,
+  // and an empty text block riding into the next request 400s the whole turn
+  // on the Anthropic protocol (audit r4 Rtd-2). Collapse an all-empty result
+  // to '' (the same empty representation the length check below already uses).
+  const cleaned = parts.filter((p) => !(p.type === 'text' && p.text.length === 0));
+  return { content: cleaned.length > 0 ? cleaned : '', isError: res.isError === true };
 }
 
 /** Append hook additionalContext entries after existing tool_result content. */
@@ -166,6 +198,15 @@ export type ToolDispatcherConfig = {
 
 const RECORD_SUMMARY_MAX_CHARS = 500;
 
+/** Per-dispatch mutable state the S3 wrapper threads into the pipeline.
+ *  `recorded`: the pipeline already charged a perTool metric for this block
+ *  (audit r4 Rtd-4). `executedInput`: the input the tool actually ran with
+ *  after any hook/gate rewrite (audit r4 Rtd-5). */
+type DispatchContext = {
+  recorded: boolean;
+  executedInput: Record<string, unknown>;
+};
+
 /** Head of a tool_result's content for the S3 record; non-text blocks appear
  *  as their type tag so the record stays small and text-only. */
 function summarizeResultContent(
@@ -179,8 +220,11 @@ function summarizeResultContent(
         : content
             .map((b) => (b.type === 'text' ? b.text : `[${b.type}]`))
             .join(' ');
+  // Surrogate-safe truncation: a bare slice can cut an astral codepoint in
+  // half, leaving a lone surrogate in the persisted result_summary that
+  // serializes as U+FFFD on every replay (audit r4 R7s-2).
   return text.length > RECORD_SUMMARY_MAX_CHARS
-    ? `${text.slice(0, RECORD_SUMMARY_MAX_CHARS)}…[truncated]`
+    ? `${sliceSurrogateSafe(text, RECORD_SUMMARY_MAX_CHARS)}…[truncated]`
     : text;
 }
 
@@ -217,12 +261,17 @@ export function createToolDispatcher(cfg: ToolDispatcherConfig): {
     if (onToolRecord === undefined) return dispatchToolUse(block);
     const startedAt = new Date().toISOString();
     const t0 = Date.now();
+    // Per-dispatch context threaded into the pipeline: `recorded` tracks
+    // whether the pipeline already charged a perTool metric for this block
+    // (audit r4 Rtd-4), and `executedInput` carries the input the tool
+    // ACTUALLY ran with after any hook/gate rewrite (audit r4 Rtd-5).
+    const ctx: DispatchContext = { recorded: false, executedInput: block.input };
     const emit = (status: 'ok' | 'error', resultSummary: string): void => {
       try {
         onToolRecord({
           toolUseId: block.id,
           toolName: block.name,
-          input: block.input,
+          input: ctx.executedInput,
           startedAt,
           durationMs: Date.now() - t0,
           status,
@@ -234,8 +283,16 @@ export function createToolDispatcher(cfg: ToolDispatcherConfig): {
     };
     let outcome: ToolExecOutcome;
     try {
-      outcome = await dispatchToolUse(block);
+      outcome = await dispatchToolUse(block, ctx);
     } catch (err) {
+      // audit r4 Rtd-4: an abort inside a hook never reaches the execute-path
+      // metrics charge, so the S3 record below would exist with no matching
+      // perTool entry. Charge it here to keep the two ledgers in lockstep —
+      // but only if the pipeline did not already record (an abort caught at
+      // execute sets ctx.recorded, so this never double-counts).
+      if (isAbortError(err) && !ctx.recorded) {
+        recordTool(block.name, Date.now() - t0, true);
+      }
       emit('error', isAbortError(err) ? '[aborted]' : String(err));
       throw err;
     }
@@ -246,12 +303,22 @@ export function createToolDispatcher(cfg: ToolDispatcherConfig): {
     return outcome;
   }
 
-  async function dispatchToolUse(block: ToolUseBlock): Promise<ToolExecOutcome> {
+  async function dispatchToolUse(
+    block: ToolUseBlock,
+    ctx?: DispatchContext,
+  ): Promise<ToolExecOutcome> {
     const toolName = block.name;
     let input = block.input;
 
     const errorToolResult = (message: string): ToolResultBlockParam =>
       mkToolError(block.id, message);
+
+    // Charge a perTool metric and mark it on the dispatch context so the S3
+    // wrapper does not double-count an abort it also observes (audit r4 Rtd-4).
+    const record = (ms: number, isError: boolean): void => {
+      recordTool(toolName, ms, isError);
+      if (ctx !== undefined) ctx.recorded = true;
+    };
 
     // 0. Existence check FIRST. A hallucinated tool name is a "No such tool"
     //    error, NOT a permission denial: running unknown names through the
@@ -395,6 +462,11 @@ export function createToolDispatcher(cfg: ToolDispatcherConfig): {
       );
     }
 
+    // Record the input the tool actually executes with (post hook/gate/C3
+    // rewrite) so the S3 audit trail answers "what actually ran", not the raw
+    // block.input (audit r4 Rtd-5).
+    if (ctx !== undefined) ctx.executedInput = input;
+
     // 3. Execute: builtin -> MCP. Existence was verified at step 0, so exactly
     //    one branch runs; the final else is an unreachable safety net.
     const execStart = Date.now();
@@ -413,7 +485,7 @@ export function createToolDispatcher(cfg: ToolDispatcherConfig): {
         // onToolRecord path logs it as '[aborted]' (so "the audit trail never
         // loses a dispatched call"), and the metrics ledger must not silently
         // undercount aborted work relative to that same-dispatch record.
-        recordTool(toolName, Date.now() - execStart, true);
+        record(Date.now() - execStart, true);
         throw toAbortError(err);
       }
       const message = err instanceof Error ? err.message : String(err);
@@ -434,11 +506,11 @@ export function createToolDispatcher(cfg: ToolDispatcherConfig): {
           signal,
         );
       }
-      recordTool(toolName, Date.now() - execStart, true);
+      record(Date.now() - execStart, true);
       return { result: errorToolResult(`Tool ${toolName} failed: ${message}`) };
     }
     const durationMs = Date.now() - execStart;
-    recordTool(toolName, durationMs, payload.isError === true);
+    record(durationMs, payload.isError === true);
 
     // 4. PostToolUse hooks (fires for completed calls, including isError
     //    payloads such as a non-zero Bash exit; only thrown errors go to
@@ -490,10 +562,15 @@ export function createToolDispatcher(cfg: ToolDispatcherConfig): {
       }
     }
 
+    // Normalize an empty content array to '': a builtin may return
+    // `content: []` (and a PostToolUse hook may empty it), and an empty
+    // content array riding into the next request 400s the whole turn on the
+    // Anthropic protocol. The MCP path already collapses this in mapMcpResult;
+    // the builtin path did not (audit r4 Rtd-3).
     const result: ToolResultBlockParam = {
       type: 'tool_result',
       tool_use_id: block.id,
-      content,
+      content: Array.isArray(content) && content.length === 0 ? '' : content,
     };
     if (payload.isError === true) result.is_error = true;
     return { result, stop };

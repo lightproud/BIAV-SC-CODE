@@ -10,9 +10,12 @@
  * placeholder stands in for the official `${FORMAT_CONTEXT_TIP_SITUATIONS_FN(
  * CONTEXT_TIP_FEATURES)}` variable — filled at call time by rendering the
  * catalog. The JSON output contract at the end of each system prompt is ADAPTED
- * glue (the official examples show a `Decision:` shape, not JSON) and carries no
- * archive provenance. Corpus-sync (tests/tips.test.ts) holds the faithful body
- * to its archived source.
+ * glue and carries no archive provenance. audit r4 Rpr-4: the few-shot examples'
+ * OUTPUT lines are likewise rendered in that adapted JSON shape (the archive's
+ * `Decision: prose` shorthand would coach the model into a format the appended
+ * contract forbids and the parser drops as no-tip); the situation/guidance prose
+ * around them stays verbatim. Corpus-sync (tests/tips.test.ts) holds the faithful
+ * prose body to its archived source (JSON glue is exempt by design).
  */
 
 export interface TipProvenance {
@@ -23,7 +26,9 @@ export interface TipProvenance {
 /**
  * Context-tip selector — verbatim body of agent-prompt-context-tip-selector,
  * with `{situations}` where the official renders the catalog. Filled at call
- * time; the ADAPTED JSON output contract is appended separately.
+ * time; the ADAPTED JSON output contract is appended separately. audit r4 Rpr-4:
+ * the example OUTPUT lines emit that same JSON so the demonstration agrees with
+ * the contract the parser enforces (was the archive's `Decision: prose`).
  */
 export const CONTEXT_TIP_SELECTOR_SYSTEM = `You are watching someone use Claude Code. Occasionally — very occasionally — you may notice a moment where a brief suggestion would genuinely help them.
 
@@ -72,22 +77,22 @@ tip with team stats.
 Example 1 — tip (Claude says it lacks prior context):
 Transcript: User: Can you continue the refactor from yesterday? Assistant: I don't have context from our earlier conversation — could you describe what we were working on?
 numStartups: 8
-Decision: has_tip=true, tip="Looks like you're picking up previous work — claude --resume lets you continue with full context.", feature_id="previous-session-reference", action="claude --resume"
+Output: {"has_tip":true,"tip":"Looks like you're picking up previous work — claude --resume lets you continue with full context.","feature_id":"previous-session-reference","action":"claude --resume"}
 
 Example 2 — no tip (user in productive flow):
 Transcript: User: Fix the login validation. Assistant: [reads file, makes changes]. User: Great, now add tests.
 numStartups: 30
-Decision: has_tip=false. User is getting things done. No friction. No tip needed.
+Output: {"has_tip":false}
 
 Example 3 — no tip (no situation matches):
 Transcript: User: Use a subagent to explore the payment module. Assistant: [spawns agent]. User: Now /compact and let's refactor.
 numStartups: 150
-Decision: has_tip=false. Productive flow; nothing in the catalog describes this transcript.
+Output: {"has_tip":false}
 
 Example 4 — tip (correction spiral):
 Transcript: User: Refactor auth. Assistant: [makes changes]. User: No, keep the middleware. Assistant: [revises]. User: That's still wrong, I want both to work.
 numStartups: 25
-Decision: has_tip=true, tip="We've been going back and forth on this. Starting fresh with /clear and a more specific prompt usually converges faster.", feature_id="correction-spiral", action="/clear"`;
+Output: {"has_tip":true,"tip":"We've been going back and forth on this. Starting fresh with /clear and a more specific prompt usually converges faster.","feature_id":"correction-spiral","action":"/clear"}`;
 
 /** ADAPTED output contract appended to the selector system prompt. */
 export const CONTEXT_TIP_SELECTOR_OUTPUT_CONTRACT =

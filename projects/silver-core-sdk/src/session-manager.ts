@@ -359,7 +359,22 @@ export function createBptSession(options: SessionManagerOptions = {}): SessionMa
         settleLedger(ledger);
         return r;
       },
-      throw: (err?: unknown) => q.throw(err),
+      throw: async (err?: unknown): Promise<IteratorResult<SDKMessage, void>> => {
+        // audit r4 Y8-3: q.throw() is the THIRD generator exit (besides
+        // next()-done and return()) and must settle the ledger too — otherwise
+        // a consumer that terminates a managed query via throw() leaks its
+        // ledger forever: usage().queries keeps counting it live and the
+        // settled-aggregate eviction never runs.
+        let r: IteratorResult<SDKMessage, void>;
+        try {
+          r = await q.throw(err);
+        } catch (e) {
+          settleLedger(ledger); // the generator is finished (re-threw)
+          throw e;
+        }
+        if (r.done === true) settleLedger(ledger);
+        return r;
+      },
       [Symbol.asyncIterator](): Query {
         return wrapped;
       },
@@ -650,7 +665,20 @@ export function createBptSession(options: SessionManagerOptions = {}): SessionMa
         settleLedger(ledger);
         return r;
       },
-      throw: (err?: unknown) => q.throw(err),
+      throw: async (err?: unknown): Promise<IteratorResult<SDKMessage, void>> => {
+        // audit r4 Y8-3: settle on the throw() exit too (see instrumentUsage).
+        // `q` is the CURRENT query (reassigned across supervised resumes), so
+        // this reaches the live generator, not an abandoned one.
+        let r: IteratorResult<SDKMessage, void>;
+        try {
+          r = await q.throw(err);
+        } catch (e) {
+          settleLedger(ledger);
+          throw e;
+        }
+        if (r.done === true) settleLedger(ledger);
+        return r;
+      },
       [Symbol.asyncIterator](): Query {
         return wrapped;
       },
