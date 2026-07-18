@@ -8,7 +8,7 @@
   },
   "stats": {
     "concepts": 361,
-    "edges": 423,
+    "edges": 424,
     "terms": 6475,
     "by_type": {
       "character": 72,
@@ -394,7 +394,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 13
+      "degree": 11
     },
     "/characters/15564.md": {
       "type": "character",
@@ -620,7 +620,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 4
+      "degree": 6
     },
     "/characters/15580.md": {
       "type": "character",
@@ -648,7 +648,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 4
+      "degree": 6
     },
     "/characters/15582.md": {
       "type": "character",
@@ -817,7 +817,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 5
+      "degree": 7
     },
     "/characters/15594.md": {
       "type": "character",
@@ -845,7 +845,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 17
+      "degree": 15
     },
     "/characters/15596.md": {
       "type": "character",
@@ -1000,7 +1000,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 8
+      "degree": 9
     },
     "/characters/77911.md": {
       "type": "character",
@@ -1056,7 +1056,7 @@
       ],
       "section": "characters",
       "tier": "skeleton",
-      "degree": 5
+      "degree": 3
     },
     "/characters/77918.md": {
       "type": "character",
@@ -1586,7 +1586,7 @@
       ],
       "section": "memory",
       "tier": "search",
-      "degree": 9
+      "degree": 10
     },
     "/memory/lessons-learned.md": {
       "type": "knowledge-pointer",
@@ -4381,7 +4381,7 @@
     "/sources/bilibili.md": {
       "type": "dataset",
       "title": "bilibili 社区数据源",
-      "description": "bilibili 平台采集档案，全量 2926 条，健康度 active。",
+      "description": "bilibili 平台采集档案，全量 2930 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/bilibili/",
       "tags": [
         "data_layer:full_archive",
@@ -4507,7 +4507,7 @@
     "/sources/steam_discussion.md": {
       "type": "dataset",
       "title": "steam_discussion 社区数据源",
-      "description": "steam_discussion 平台采集档案，全量 113 条，健康度 active。",
+      "description": "steam_discussion 平台采集档案，全量 114 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/steam/global/discussion/",
       "tags": [
         "data_layer:full_archive",
@@ -4549,7 +4549,7 @@
     "/sources/taptap_review.md": {
       "type": "dataset",
       "title": "taptap_review 社区数据源",
-      "description": "taptap_review 平台采集档案，全量 1607 条，健康度 active。",
+      "description": "taptap_review 平台采集档案，全量 1615 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/taptap/cn/review/",
       "tags": [
         "data_layer:full_archive",
@@ -4563,7 +4563,7 @@
     "/sources/weibo.md": {
       "type": "dataset",
       "title": "weibo 社区数据源",
-      "description": "weibo 平台采集档案，全量 10473 条，健康度 active。",
+      "description": "weibo 平台采集档案，全量 10486 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/weibo/",
       "tags": [
         "data_layer:full_archive",
@@ -4577,7 +4577,7 @@
     "/sources/weixin.md": {
       "type": "dataset",
       "title": "weixin 社区数据源",
-      "description": "weixin 平台采集档案，全量 10672 条，健康度 degraded。",
+      "description": "weixin 平台采集档案，全量 10692 条，健康度 degraded。",
       "resource": "/Public-Info-Pool/Record/Community/weixin/",
       "tags": [
         "data_layer:full_archive",
@@ -4591,7 +4591,7 @@
     "/sources/youtube.md": {
       "type": "dataset",
       "title": "youtube 社区数据源",
-      "description": "youtube 平台采集档案，全量 2925 条，健康度 active。",
+      "description": "youtube 平台采集档案，全量 2927 条，健康度 active。",
       "resource": "/Public-Info-Pool/Record/Community/youtube/global/video/",
       "tags": [
         "data_layer:full_archive",
@@ -5462,11 +5462,6 @@
         "cv"
       ],
       [
-        "/community/community-bilibili.md",
-        "提及:图鲁",
-        "mention"
-      ],
-      [
         "/community/community-steam.md",
         "提及:图鲁",
         "mention"
@@ -5498,11 +5493,6 @@
       ],
       [
         "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
-        "提及:图鲁",
-        "mention"
-      ],
-      [
-        "/sources/bilibili.md",
         "提及:图鲁",
         "mention"
       ],
@@ -5989,6 +5979,11 @@
         "mention"
       ],
       [
+        "/community/community-bilibili.md",
+        "提及:温柯尔",
+        "mention"
+      ],
+      [
         "/memory/memory-research-community-analysis-2026-05-18-26.md",
         "提及:温柯尔",
         "mention"
@@ -5997,9 +5992,19 @@
         "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
         "提及:温柯尔",
         "mention"
+      ],
+      [
+        "/sources/bilibili.md",
+        "提及:温柯尔",
+        "mention"
       ]
     ],
     "/characters/15581.md": [
+      [
+        "/community/community-bilibili.md",
+        "提及:莉莉",
+        "mention"
+      ],
       [
         "/community/community-youtube-comments.md",
         "提及:莉莉",
@@ -6012,6 +6017,11 @@
       ],
       [
         "/resource/resource-community-analysis-community-deep-analysis-20260518-26.md",
+        "提及:莉莉",
+        "mention"
+      ],
+      [
+        "/sources/bilibili.md",
         "提及:莉莉",
         "mention"
       ],
@@ -6221,6 +6231,11 @@
         "cv"
       ],
       [
+        "/community/community-bilibili.md",
+        "提及:詹金",
+        "mention"
+      ],
+      [
         "/community/community-steam.md",
         "提及:詹金",
         "mention"
@@ -6232,6 +6247,11 @@
       ],
       [
         "/memory/memory-ext-wiki-characters-schema-v1.md",
+        "提及:詹金",
+        "mention"
+      ],
+      [
+        "/sources/bilibili.md",
         "提及:詹金",
         "mention"
       ],
@@ -6268,11 +6288,6 @@
         "/characters/15569.md",
         "同篇提及",
         "lore"
-      ],
-      [
-        "/community/community-bilibili.md",
-        "提及:拉蒙娜",
-        "mention"
       ],
       [
         "/community/community-reddit.md",
@@ -6316,11 +6331,6 @@
       ],
       [
         "/resource/resource-game-analysis-bug-fault-report-20260518-26.md",
-        "提及:拉蒙娜",
-        "mention"
-      ],
-      [
-        "/sources/bilibili.md",
         "提及:拉蒙娜",
         "mention"
       ],
@@ -7010,6 +7020,11 @@
         "mention"
       ],
       [
+        "/memory/decisions.md",
+        "提及:哈姆林",
+        "mention"
+      ],
+      [
         "/sources/bilibili.md",
         "提及:哈姆林",
         "mention"
@@ -7068,17 +7083,7 @@
     ],
     "/characters/77917.md": [
       [
-        "/community/community-bilibili.md",
-        "提及:波吕克斯",
-        "mention"
-      ],
-      [
         "/community/community-weibo.md",
-        "提及:波吕克斯",
-        "mention"
-      ],
-      [
-        "/sources/bilibili.md",
         "提及:波吕克斯",
         "mention"
       ],
@@ -7367,11 +7372,6 @@
         "mention"
       ],
       [
-        "/characters/77917.md",
-        "提及:波吕克斯",
-        "mention"
-      ],
-      [
         "/characters/77918.md",
         "提及:阿拉克涅",
         "mention"
@@ -7402,8 +7402,8 @@
         "mention"
       ],
       [
-        "/characters/15595.md",
-        "提及:拉蒙娜",
+        "/characters/15579.md",
+        "提及:温柯尔",
         "mention"
       ],
       [
@@ -7417,8 +7417,13 @@
         "mention"
       ],
       [
-        "/characters/15563.md",
-        "提及:图鲁",
+        "/characters/15593.md",
+        "提及:詹金",
+        "mention"
+      ],
+      [
+        "/characters/15581.md",
+        "提及:莉莉",
         "mention"
       ],
       [
@@ -7880,6 +7885,11 @@
       [
         "/characters/15603.md",
         "提及:艾瑞卡",
+        "mention"
+      ],
+      [
+        "/characters/54117.md",
+        "提及:哈姆林",
         "mention"
       ],
       [
@@ -9242,11 +9252,6 @@
         "mention"
       ],
       [
-        "/characters/77917.md",
-        "提及:波吕克斯",
-        "mention"
-      ],
-      [
         "/characters/77918.md",
         "提及:阿拉克涅",
         "mention"
@@ -9277,8 +9282,8 @@
         "mention"
       ],
       [
-        "/characters/15595.md",
-        "提及:拉蒙娜",
+        "/characters/15579.md",
+        "提及:温柯尔",
         "mention"
       ],
       [
@@ -9292,8 +9297,13 @@
         "mention"
       ],
       [
-        "/characters/15563.md",
-        "提及:图鲁",
+        "/characters/15593.md",
+        "提及:詹金",
+        "mention"
+      ],
+      [
+        "/characters/15581.md",
+        "提及:莉莉",
         "mention"
       ],
       [

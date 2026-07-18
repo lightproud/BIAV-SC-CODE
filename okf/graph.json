@@ -2,7 +2,7 @@
   "generated": "2026-07-18",
   "stats": {
     "nodes": 361,
-    "edges": 423
+    "edges": 424
   },
   "nodes": [
     {
@@ -4360,12 +4360,6 @@
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/77917.md",
-      "rel": "提及:波吕克斯",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/community/community-bilibili.md",
       "target": "/characters/77918.md",
       "rel": "提及:阿拉克涅",
       "rel_type": "mention"
@@ -4402,8 +4396,8 @@
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/15595.md",
-      "rel": "提及:拉蒙娜",
+      "target": "/characters/15579.md",
+      "rel": "提及:温柯尔",
       "rel_type": "mention"
     },
     {
@@ -4420,8 +4414,14 @@
     },
     {
       "source": "/community/community-bilibili.md",
-      "target": "/characters/15563.md",
-      "rel": "提及:图鲁",
+      "target": "/characters/15593.md",
+      "rel": "提及:詹金",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/community/community-bilibili.md",
+      "target": "/characters/15581.md",
+      "rel": "提及:莉莉",
       "rel_type": "mention"
     },
     {
@@ -4662,6 +4662,12 @@
       "source": "/memory/decisions.md",
       "target": "/characters/15603.md",
       "rel": "提及:艾瑞卡",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/memory/decisions.md",
+      "target": "/characters/54117.md",
+      "rel": "提及:哈姆林",
       "rel_type": "mention"
     },
     {
@@ -5782,12 +5788,6 @@
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/77917.md",
-      "rel": "提及:波吕克斯",
-      "rel_type": "mention"
-    },
-    {
-      "source": "/sources/bilibili.md",
       "target": "/characters/77918.md",
       "rel": "提及:阿拉克涅",
       "rel_type": "mention"
@@ -5824,8 +5824,8 @@
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/15595.md",
-      "rel": "提及:拉蒙娜",
+      "target": "/characters/15579.md",
+      "rel": "提及:温柯尔",
       "rel_type": "mention"
     },
     {
@@ -5842,8 +5842,14 @@
     },
     {
       "source": "/sources/bilibili.md",
-      "target": "/characters/15563.md",
-      "rel": "提及:图鲁",
+      "target": "/characters/15593.md",
+      "rel": "提及:詹金",
+      "rel_type": "mention"
+    },
+    {
+      "source": "/sources/bilibili.md",
+      "target": "/characters/15581.md",
+      "rel": "提及:莉莉",
       "rel_type": "mention"
     },
     {
