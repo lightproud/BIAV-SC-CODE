@@ -4,21 +4,21 @@
 > 中文用途补注请改 `memory/capability-annotations.json`；机器权威数据见 `memory/capability-registry.json`。
 
 - 生成日期：2026-07-18
-- 功能总数：**139**
+- 功能总数：**141**
 - 脚本可达性：活 75 / 仅测试 0 / 孤儿 0
 
 ## 总览
 
 | 功能层 | 数量 |
 |------|------|
-| CI 自动化工作流（编排入口·定时/事件平面） | 38 |
+| CI 自动化工作流（编排入口·定时/事件平面） | 39 |
 | 顶层脚本（记忆 / 做梦 / 解包 / 运营） | 37 |
 | news 采集器脚本 | 32 |
 | wiki 数据脚本 | 6 |
 | MCP 知识层工具（编排入口·AI 动态平面） | 11 |
 | Slash 命令（编排入口·人工平面） | 4 |
 | 仓内技能 | 5 |
-| 子项目 | 6 |
+| 子项目 | 7 |
 
 ## 动态编排与可达性
 
@@ -34,7 +34,7 @@
 
 可达性 = 从活编排入口沿 Python import 图传递闭包。`孤儿` = 无任何活入口可达，建议隔离待裁（§3.1 裁撤属守密人决策，工具只检测不删除）。
 
-## CI 自动化工作流（编排入口·定时/事件平面）（38）
+## CI 自动化工作流（编排入口·定时/事件平面）（39）
 
 - **`Backfill Data Gap`** _[manual]_ — 手动回填指定时间段的数据缺口。  
   `.github/workflows/backfill-gap.yml`
@@ -106,6 +106,8 @@
   `.github/workflows/test-collectors.yml`
 - **`Run Tests`** _[push/pull_request/manual]_ — 运行全量 pytest 单元测试。  
   `.github/workflows/test.yml`
+- **`Testbed Patrol`** _[schedule/manual]_ —   
+  `.github/workflows/testbed-patrol.yml`
 - **`Update Community News`** _[schedule/manual]_ — 每小时采集社区新闻并更新输出层。  
   `.github/workflows/update-news.yml`
 - **`Validate Wiki Data`** _[push/pull_request/manual]_ — 校验 wiki JSON 数据（push/PR 触发）。  
@@ -321,7 +323,7 @@
 - **`intel-weekly`** — Generate the Morimens weekly community intelligence report (社区情报周报) from the full archive layer. Use when asked for the weekly report, 周报, community intel digest, or a windowed community summary. Produces a fixed-skeleton Chinese report (trend + role routing + business topics with embedded risk sentinels + bug list + player request list + credited fanart gallery + volume map) rendered as mobile PDF in brand themes.  
   `.claude/skills/intel-weekly/SKILL.md`
 
-## 子项目（6）
+## 子项目（7）
 
 - **`game`** — 衍生游戏，退出主线，守密人个人兴趣，不主线派发。  
   `projects/game/`
@@ -331,6 +333,8 @@
   `projects/silver-core-maestro-sdk/`
 - **`silver-core-sdk`** — Silver Core SDK：独立重实现（independent reimplementation）的 TypeScript agent 框架，公开调用面  
   `projects/silver-core-sdk/`
+- **`silver-core-testbed`** — > 施工封面（建成什么样的唯一权威）：守密人 2026-07-18「silver-core-testbed 施工封面」  
+  `projects/silver-core-testbed/`
 - **`site`** — 对外门户：静态站 public/ + 设计令牌 design/。  
   `projects/site/`
 - **`wiki`** — 使命#2 社区知识底座：VitePress 站点 + 72 角色数据库（客户端解包自举）。  

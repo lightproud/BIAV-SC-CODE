@@ -6,15 +6,15 @@
     "scope": "BIAV-SC 银芯（公开信息层）全功能盘点 + 动态编排可达性",
     "reachability_method": "从活编排入口（工作流/MCP/命令/钩子/CLI 手动入口）沿 Python 模块级 import 图做传递闭包；带 __main__ 的脚本计为 cli 手动平面。status=orphaned 表示无任何活入口可达，建议隔离待裁，非自动删除。",
     "counts": {
-      "workflows": 38,
+      "workflows": 39,
       "scripts_top": 37,
       "scripts_news": 32,
       "scripts_wiki": 6,
       "mcp_tools": 11,
       "commands": 4,
       "skills": 5,
-      "projects": 6,
-      "total": 139
+      "projects": 7,
+      "total": 141
     },
     "reachability": {
       "live": 75,
@@ -347,6 +347,15 @@
         "manual"
       ],
       "note_zh": "运行全量 pytest 单元测试。"
+    },
+    {
+      "id": "testbed-patrol.yml",
+      "name": "Testbed Patrol",
+      "path": ".github/workflows/testbed-patrol.yml",
+      "triggers": [
+        "schedule",
+        "manual"
+      ]
     },
     {
       "id": "update-news.yml",
@@ -1253,6 +1262,11 @@
       "id": "silver-core-sdk",
       "path": "projects/silver-core-sdk/",
       "summary": "Silver Core SDK：独立重实现（independent reimplementation）的 TypeScript agent 框架，公开调用面"
+    },
+    {
+      "id": "silver-core-testbed",
+      "path": "projects/silver-core-testbed/",
+      "summary": "> 施工封面（建成什么样的唯一权威）：守密人 2026-07-18「silver-core-testbed 施工封面」"
     },
     {
       "id": "site",
