@@ -12,6 +12,13 @@ discipline as the agent SDK: every merge that changes shipped runtime code
 bumps BOTH versions and adds one line here (a lockstep-alignment line when
 this package itself is untouched).
 
+## 0.72.1 — 2026-07-18
+
+Lockstep alignment only — no maestro code change. The agent SDK resolved WV2-4
+(keeper ruling T60): the OpenAI transport suppresses a caller `temperature != 1`
+only on a declared reasoning endpoint (`capabilities.thinking === true`), never
+on an unknown or `thinking: false` gateway. See the agent SDK CHANGELOG 0.72.1.
+
 ## 0.72.0 — 2026-07-18
 
 Audit round 2 of the 500-bug campaign (T56): 6 changed-lens finders
@@ -54,6 +61,7 @@ type-honesty) + adversarial verification confirmed **16 real defects**
   (correction-loop-absorbed estimates, performance-only fast-forward,
   regex-$). Floor adjustment awaits a keeper ruling (ratchet discipline);
   until ruled the weekly ratchet run may red on these two targets.
+
 ## 0.71.3 — 2026-07-18
 
 Packaging fix + lockstep alignment. This package carried the same batch-Q
