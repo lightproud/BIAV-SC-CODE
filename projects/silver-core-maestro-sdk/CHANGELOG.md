@@ -40,6 +40,12 @@ same let-the-number-go discipline as agent 0.53.2:
   (the `sched:{id}:{fireAt}` format was a doc-comment-only contract;
   workflow's workflowSessionId had a public constructor all along).
 
+## 0.70.1 — 2026-07-18
+
+Lockstep alignment only — no maestro code change. The agent SDK closed a
+permission deny-bypass (audit r3 batch M / T51: subshell + brace-group
+grouping bypassed a `Bash(rm:*)` deny); the family clock bumps as one.
+
 ## 0.70.0 — 2026-07-18
 
 Audit round 1 of the keeper's 500-bug campaign (T56): 17 finder agents +

@@ -202,6 +202,51 @@ describe('V4-2 wrapper commands are unwrapped for deny/ask', () => {
 });
 
 // ---------------------------------------------------------------------------
+// W10-1 (audit r3 batch M) — shell GROUP wrappers are unwrapped for deny/ask
+// A bare subshell `(rm -rf x)` or brace group `{ rm -rf x; }` was deny
+// fail-open: the segment starts with `(`/`{`, so `Bash(rm:*)` never matched
+// and a bare `Bash` allow auto-ran it. (Sibling r3 vectors W9-1 TAB-separator
+// and M2-2 env-prefix were already closed in the T52 r4 pass — asserted here
+// as living regression locks so the whole deny-bypass family stays shut.)
+// ---------------------------------------------------------------------------
+
+describe('W10-1 group wrappers are unwrapped for deny/ask', () => {
+  const deny = parseRule('Bash(rm:*)');
+
+  it('deny fires through a bare subshell and a brace group', () => {
+    expect(ruleMatches(deny, 'Bash', { command: '(rm -rf /tmp/x)' }, 'any')).toBe(true);
+    expect(ruleMatches(deny, 'Bash', { command: '{ rm -rf /tmp/x; }' }, 'any')).toBe(true);
+    // Nested groups collapse in one pass.
+    expect(ruleMatches(deny, 'Bash', { command: '((rm -rf /tmp/x))' }, 'any')).toBe(true);
+    // A group wrapping a WRAPPED command still reaches the inner command.
+    expect(ruleMatches(deny, 'Bash', { command: '(sudo rm -rf /tmp/x)' }, 'any')).toBe(true);
+  });
+
+  it('sibling family vectors stay closed: TAB separator (W9-1) and env prefix (M2-2)', () => {
+    expect(ruleMatches(deny, 'Bash', { command: 'rm\t-rf /tmp/x' }, 'any')).toBe(true);
+    expect(ruleMatches(deny, 'Bash', { command: 'FOO=1 rm -rf /tmp/x' }, 'any')).toBe(true);
+  });
+
+  it('does not false-deny a grouped command that merely mentions rm', () => {
+    expect(ruleMatches(deny, 'Bash', { command: '(echo please rm later)' }, 'any')).toBe(false);
+    expect(ruleMatches(deny, 'Bash', { command: '{ cp rm.txt /dst; }' }, 'any')).toBe(false);
+  });
+
+  it('allow position stays STRICT: a grouped command does not ride an allow', () => {
+    const allow = parseRule('Bash(git:*)');
+    expect(ruleMatches(allow, 'Bash', { command: '(git status)' }, 'all')).toBe(false);
+    // and a grouped foreign command certainly does not ride a git allow.
+    expect(ruleMatches(allow, 'Bash', { command: '(rm -rf /)' }, 'all')).toBe(false);
+  });
+
+  it('the gate denies a grouped command end to end', async () => {
+    const gate = makeGate({ mode: 'bypassPermissions', disallowedTools: ['Bash(rm:*)'] });
+    const res = await gate.check('Bash', { command: '(rm -rf /tmp/x)' }, checkOpts());
+    expect(res.decision).toBe('deny');
+  });
+});
+
+// ---------------------------------------------------------------------------
 // V4-3 — arithmetic expansion is not command injection
 // ---------------------------------------------------------------------------
 
