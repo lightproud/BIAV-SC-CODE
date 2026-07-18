@@ -34,10 +34,11 @@
     "silver-core-agent-sdk": ">=0.71.0 <1.0.0"
   },
   "devDependencies": {
-    "silver-core-agent-sdk": "*",
     "@stryker-mutator/core": "^9.6.1",
     "@stryker-mutator/vitest-runner": "^9.6.1",
     "@types/node": "^22.0.0",
+    "fast-check": "^4.9.0",
+    "silver-core-agent-sdk": "*",
     "typescript": "^5.6.0",
     "vitest": "^3.0.0"
   },
