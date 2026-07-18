@@ -21,6 +21,12 @@
 
 ## §2 家族结构与依赖契约(碑文)
 
+> **版本钟覆盖注(守密人 2026-07-18 裁定,施工回填)**:本节「各自 semver / 两包版本钟
+> 永不同步」条款**作废**——守密人同日裁定两包**锁步同版**(家族整体 bump,视作一个
+> 整体银芯 SDK 的两个子模块),0.68.0 起生效,CI 守卫版本相等(`check-dep-direction`
+> 段 D,红证实测)。其余条款(依赖单向 / 不做伞包等)不变。裁定记录见
+> `memory/decisions.md` 2026-07-18 锁步条。
+>
 > **命名覆盖注(守密人 2026-07-18 裁定,施工回填)**:两包定名 **Silver Core Agent SDK**
 > (npm `silver-core-agent-sdk`,目录 `projects/silver-core-sdk/` 维持 2026-07-10 裁定不动)与
 > **Silver Core Maestro SDK**(npm `silver-core-maestro-sdk`,乐队指挥意象,目录

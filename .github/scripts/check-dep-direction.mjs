@@ -117,6 +117,17 @@ for (const block of ['dependencies', 'devDependencies', 'peerDependencies', 'opt
   }
 }
 
+// D. Lockstep version clock (keeper ruling 2026-07-18, overriding the §2
+// independent-clocks clause): the two packages must always carry the SAME
+// version — any merge bumping one without the other reds here.
+const maestroPkg = JSON.parse(readFileSync(join(MAESTRO_DIR, 'package.json'), 'utf8'));
+if (agentPkg.version !== maestroPkg.version) {
+  violations.push(
+    `lockstep version clock broken: silver-core-agent-sdk ${agentPkg.version} != ` +
+      `silver-core-maestro-sdk ${maestroPkg.version} (keeper ruling 2026-07-18: the family bumps as one)`,
+  );
+}
+
 if (violations.length > 0) {
   console.error('dep-direction: FAIL — the orchestrator -> agent one-way contract is violated:\n');
   for (const v of violations) console.error('  ' + v);

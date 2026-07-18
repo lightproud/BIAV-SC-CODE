@@ -208,6 +208,8 @@
 > （类型化 DuplicateSessionError / claimSession 单会话认领 / 四处 id 冒号封禁 / goal 排水超时）；
 > 变异靶四处（ledger-state 100 / schedule-spec 100 / workflow-graph 97.14 / goal-decision 100）；测试 171。
 > **未做**：周报 loop 生产切换（机制已备，待 T37 推送形态裁定）。
+> **版本钟**：2026-07-18 守密人裁定两包**锁步同版**（覆盖需求档 §2 双钟制），0.68.0 起同号、
+> CI 守卫相等；此后本节版本号即家族版本号。
 
 ## Silver Core SDK（`projects/silver-core-sdk/`，原名 BPT Agent SDK，2026-07-10 守密人裁定更名；npm 名 `silver-core-agent-sdk`，2026-07-18 定名，品牌名 Silver Core Agent SDK）
 
