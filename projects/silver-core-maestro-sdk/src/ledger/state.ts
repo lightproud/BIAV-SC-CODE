@@ -111,13 +111,26 @@ export const DEFAULT_RETRY_POLICY: RetryPolicy = {
 /**
  * Delay before the NEXT attempt, given that `attempt` attempts have already
  * failed: baseDelayMs * factor^(attempt-1), capped at maxDelayMs. A non-finite
- * blowup (factor overflow) lands on the cap, never on Infinity/NaN.
+ * blowup of the COMPUTED value (factor overflow) lands on the cap, never on
+ * Infinity/NaN — but the policy numbers themselves must be finite and >= 0:
+ * a non-finite cap (e.g. `{ maxDelayMs: undefined }` smuggled through a
+ * Partial merge) poisons Math.min AND the fallback, so the poisoned cap would
+ * be returned verbatim, making nextRunAt NaN and wedging the session in
+ * 'retrying' permanently. Rejected loudly where the numbers enter.
  */
 export function backoffDelayMs(attempt: number, policy: RetryPolicy = DEFAULT_RETRY_POLICY): number {
   if (!Number.isFinite(attempt) || attempt < 1) {
     throw new RangeError(`backoffDelayMs: attempt must be a finite number >= 1, got ${attempt}`);
   }
+  for (const key of ['baseDelayMs', 'factor', 'maxDelayMs'] as const) {
+    const value = policy[key];
+    if (!Number.isFinite(value) || value < 0) {
+      throw new RangeError(`backoffDelayMs: policy.${key} must be a finite number >= 0, got ${value}`);
+    }
+  }
   const raw = policy.baseDelayMs * Math.pow(policy.factor, attempt - 1);
   const capped = Math.min(raw, policy.maxDelayMs);
-  return Number.isFinite(capped) && capped >= 0 ? capped : policy.maxDelayMs;
+  // With validated inputs, raw can still be NaN (0 * Infinity when factor
+  // overflows with a zero base) — that lands on the finite cap.
+  return Number.isFinite(capped) ? capped : policy.maxDelayMs;
 }

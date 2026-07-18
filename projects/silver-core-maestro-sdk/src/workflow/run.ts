@@ -52,7 +52,11 @@ export interface WorkflowRunOptions {
 
 export interface WorkflowRunResult {
   status: 'done' | 'failed';
-  /** Per-node session state at settle time (undefined = never dispatched). */
+  /**
+   * Per-node session state at settle time (undefined = never dispatched).
+   * Null-prototype object: keys are node ids, which may collide with
+   * Object.prototype member names (audit D4).
+   */
   states: Record<string, SessionState | undefined>;
 }
 
@@ -91,7 +95,13 @@ export class WorkflowRun {
   }
 
   async #readStates(): Promise<Record<string, SessionState | undefined>> {
-    const states: Record<string, SessionState | undefined> = {};
+    // Null prototype: node ids are host data, and states['__proto__'] = ...
+    // on a plain object would silently set the prototype instead of recording
+    // the state, leaving the node forever undispatchable (audit D4).
+    const states: Record<string, SessionState | undefined> = Object.create(null) as Record<
+      string,
+      SessionState | undefined
+    >;
     for (const node of this.#graph.nodes) {
       const session = await this.#ledger.getSession(this.sessionId(node.id));
       states[node.id] = session?.state;
@@ -101,7 +111,12 @@ export class WorkflowRun {
 
   /** Summary of each dep's last ok query row (null when it carried none). */
   async #depSummaries(deps: readonly string[]): Promise<Record<string, string | null>> {
-    const out: Record<string, string | null> = {};
+    // Null prototype for the same reason as #readStates: a dep id like
+    // '__proto__' must land as an own key of the convergence map.
+    const out: Record<string, string | null> = Object.create(null) as Record<
+      string,
+      string | null
+    >;
     for (const depId of deps) {
       const rows = await this.#ledger.listQueries(this.sessionId(depId));
       let summary: string | null = null;
@@ -164,6 +179,17 @@ export class WorkflowRun {
    * must be running for the loop to make progress.
    */
   async run(opts: { drainTimeoutMs?: number } = {}): Promise<WorkflowRunResult> {
+    // A NaN drainTimeoutMs makes the deadline comparison always false and
+    // silently disables the timeout; Infinity and <= 0 are equally
+    // meaningless as a drain budget (audit D3).
+    if (
+      opts.drainTimeoutMs !== undefined &&
+      (!Number.isFinite(opts.drainTimeoutMs) || opts.drainTimeoutMs <= 0)
+    ) {
+      throw new RangeError(
+        `WorkflowRun: drainTimeoutMs must be a finite number > 0, got ${opts.drainTimeoutMs}`,
+      );
+    }
     const deadline =
       opts.drainTimeoutMs !== undefined ? this.#clock.now() + opts.drainTimeoutMs : null;
     for (;;) {

@@ -8,6 +8,7 @@ import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { TaskLedger } from '../src/ledger/ledger.js';
 import type { LedgerStore, SessionFilter } from '../src/ledger/store.js';
 import type { QueryRecord, SessionRecord } from '../src/ledger/types.js';
+import type { Clock } from '../src/clock.js';
 import { Scheduler, type SchedulerEvent } from '../src/schedule/scheduler.js';
 import { ScheduleSpecError, type ScheduleSpec } from '../src/schedule/spec.js';
 
@@ -312,5 +313,97 @@ describe('Scheduler firing (fake timers)', () => {
     expect(await ledger.listSessions()).toHaveLength(2);
     expect(scheduler.isRunning()).toBe(true);
     await scheduler.stop();
+  });
+});
+
+describe('audit C3 (2026-07-18): start() during an unsettled stop() must not fork the poll chain', () => {
+  it('start() while stop() awaits a blocked tick leaves exactly one poll chain', async () => {
+    const store = memoryStore();
+    let release: (() => void) | undefined;
+    let blockNext = true;
+    const gatedStore: LedgerStore = {
+      ...store,
+      async listSessions(filter?: SessionFilter) {
+        // First recovery scan parks until the test releases it, keeping the
+        // first tick in flight across the stop()/start() overlap.
+        if (blockNext) {
+          blockNext = false;
+          await new Promise<void>((resolve) => {
+            release = resolve;
+          });
+        }
+        return store.listSessions(filter);
+      },
+    };
+    let timeoutsScheduled = 0;
+    const countingClock: Clock = {
+      now: () => Date.now(),
+      setTimeout: (fn, ms) => {
+        timeoutsScheduled += 1;
+        return setTimeout(fn, ms);
+      },
+      clearTimeout: (handle) => clearTimeout(handle as Parameters<typeof clearTimeout>[0]),
+    };
+    const ledger = new TaskLedger({ store: gatedStore });
+    const scheduler = new Scheduler({
+      ledger,
+      specs: [jobSpec()],
+      clock: countingClock,
+      pollIntervalMs: 100,
+    });
+
+    scheduler.start();
+    await vi.advanceTimersByTimeAsync(0); // first tick enters recovery and parks on the gate
+    expect(release).toBeDefined();
+    const stopPromise = scheduler.stop(); // unsettled: awaiting the parked tick
+    scheduler.start(); // re-enter while stop() is still pending
+    release!(); // old tick resumes; on old code it reschedules a SECOND chain
+    await stopPromise;
+    expect(scheduler.isRunning()).toBe(true); // the re-entrant start() run survives
+
+    timeoutsScheduled = 0;
+    await vi.advanceTimersByTimeAsync(1_000);
+    // One chain at 100 ms cadence schedules ~10-11 timers across 1000 ms; the
+    // old forked-chain bug schedules ~20+. Exact-single-chain bound:
+    expect(timeoutsScheduled).toBeGreaterThanOrEqual(9);
+    expect(timeoutsScheduled).toBeLessThanOrEqual(12);
+
+    // The surviving run still fires normally (no lost cadence after overlap).
+    const ids = (await ledger.listSessions()).map((s) => s.id);
+    expect(ids).toContain(`sched:job:${T0 + 1000}`);
+    await scheduler.stop();
+  });
+
+  it('stop() resolves only after the parked in-flight tick settles', async () => {
+    const store = memoryStore();
+    let release: (() => void) | undefined;
+    let blockNext = true;
+    const gatedStore: LedgerStore = {
+      ...store,
+      async listSessions(filter?: SessionFilter) {
+        if (blockNext) {
+          blockNext = false;
+          await new Promise<void>((resolve) => {
+            release = resolve;
+          });
+        }
+        return store.listSessions(filter);
+      },
+    };
+    const ledger = new TaskLedger({ store: gatedStore });
+    const scheduler = new Scheduler({ ledger, specs: [jobSpec()], pollIntervalMs: 100 });
+    scheduler.start();
+    await vi.advanceTimersByTimeAsync(0);
+    expect(release).toBeDefined();
+    let stopped = false;
+    const stopPromise = scheduler.stop().then(() => {
+      stopped = true;
+    });
+    await vi.advanceTimersByTimeAsync(0);
+    expect(stopped).toBe(false); // tick still parked: stop() must not resolve
+    release!();
+    await stopPromise;
+    expect(stopped).toBe(true);
+    expect(scheduler.isRunning()).toBe(false);
   });
 });

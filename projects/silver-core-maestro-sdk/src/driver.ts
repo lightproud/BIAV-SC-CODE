@@ -9,7 +9,7 @@
 
 import type { Clock } from './clock.js';
 import { systemClock } from './clock.js';
-import type { TaskLedger } from './ledger/ledger.js';
+import type { OutcomeInput, TaskLedger } from './ledger/ledger.js';
 import type { QueryOutcome, SessionRecord } from './ledger/types.js';
 
 export interface ExecutorContext {
@@ -36,7 +36,14 @@ export type DriverEvent =
   | { type: 'attempt:start'; session: SessionRecord }
   | { type: 'attempt:settle'; session: SessionRecord; outcome: QueryOutcome; error?: string }
   | { type: 'session:terminal'; session: SessionRecord }
-  | { type: 'driver:error'; error: unknown };
+  /**
+   * Poll or bookkeeping failure. `session` is present when the failure
+   * strands a specific session: recordOutcome failed twice (once + one
+   * immediate retry), leaving the record in 'running'. That stranding is BY
+   * DESIGN — the store is the source of truth, so the driver never invents
+   * state to paper over a failing store; the host repairs from the event.
+   */
+  | { type: 'driver:error'; error: unknown; session?: SessionRecord };
 
 export interface LedgerDriverOptions {
   ledger: TaskLedger;
@@ -59,7 +66,16 @@ export class LedgerDriver {
   readonly #onEvent: ((event: DriverEvent) => void) | undefined;
 
   #running = false;
+  /**
+   * Poll-chain generation. start() opens a new generation; every scheduled
+   * tick carries the generation it was born under and refuses to reschedule
+   * once it no longer matches. This guarantees at most ONE live poll chain
+   * even across stop()-then-start() while a tick is still in flight.
+   */
+  #generation = 0;
   #pollHandle: unknown = null;
+  /** The currently in-flight tick, if any; stop() awaits it (see stop()). */
+  #tickPromise: Promise<void> | null = null;
   readonly #inflight = new Set<Promise<void>>();
   readonly #controllers = new Set<AbortController>();
 
@@ -82,14 +98,21 @@ export class LedgerDriver {
   start(): void {
     if (this.#running) return;
     this.#running = true;
+    // New generation: a tick still in flight from a previous run can no
+    // longer reschedule, so restart never forks a second poll chain.
+    this.#generation += 1;
     // First poll on the next tick (delay 0): start() itself stays synchronous.
-    this.#scheduleTick(0);
+    this.#scheduleTick(0, this.#generation);
   }
 
   /**
    * Stop polling, abort in-flight attempts, and wait for their bookkeeping
    * to settle. Aborted attempts are recorded as 'error' outcomes, so a
    * stopped-then-restarted driver resumes them through the normal retry path.
+   *
+   * A tick whose claimDue is already in flight cannot be cancelled, so stop()
+   * awaits it first: sessions that claim lands are parked through the abort
+   * path below BEFORE stop() resolves — nothing is claimed or executed after.
    */
   async stop(): Promise<void> {
     this.#running = false;
@@ -97,6 +120,7 @@ export class LedgerDriver {
       this.#clock.clearTimeout(this.#pollHandle);
       this.#pollHandle = null;
     }
+    if (this.#tickPromise !== null) await this.#tickPromise;
     for (const controller of this.#controllers) controller.abort();
     await Promise.allSettled([...this.#inflight]);
   }
@@ -114,17 +138,22 @@ export class LedgerDriver {
     }
   }
 
-  #scheduleTick(delayMs: number): void {
-    if (!this.#running) return;
+  #scheduleTick(delayMs: number, generation: number): void {
+    // Generation gate: a tick born under an older start() must not extend
+    // its chain — only the current generation's chain may schedule.
+    if (!this.#running || generation !== this.#generation) return;
     this.#pollHandle = this.#clock.setTimeout(() => {
-      void this.#tick();
+      this.#tickPromise = this.#tick(generation);
     }, delayMs);
   }
 
-  async #tick(): Promise<void> {
-    if (!this.#running) return;
+  async #tick(generation: number): Promise<void> {
+    if (!this.#running || generation !== this.#generation) return;
     try {
       const claimed = await this.#ledger.claimDue(this.#clock.now());
+      // Attempts are started even if stop() began while claimDue was in
+      // flight: stop() awaits this tick and then aborts them, so the claims
+      // settle into 'retrying' (resumable) instead of stranding in 'running'.
       for (const session of claimed) {
         const attempt = this.#runAttempt(session);
         const tracked: Promise<void> = attempt.finally(() => {
@@ -135,7 +164,7 @@ export class LedgerDriver {
     } catch (error) {
       this.#emit({ type: 'driver:error', error });
     }
-    this.#scheduleTick(this.#pollIntervalMs);
+    this.#scheduleTick(this.#pollIntervalMs, generation);
   }
 
   async #runAttempt(session: SessionRecord): Promise<void> {
@@ -167,25 +196,39 @@ export class LedgerDriver {
       this.#controllers.delete(controller);
     }
     const outcome: QueryOutcome = timedOut ? 'timeout' : result.outcome === 'ok' ? 'ok' : 'error';
+    // One payload, reused verbatim on retry: the executor result must not be
+    // discarded just because the first bookkeeping write failed.
+    const payload: OutcomeInput = {
+      outcome,
+      ...(result.error !== undefined ? { error: result.error } : {}),
+      ...(result.summary !== undefined ? { summary: result.summary } : {}),
+      startedAt,
+      endedAt: this.#clock.now(),
+    };
+    let updated: SessionRecord;
     try {
-      const updated = await this.#ledger.recordOutcome(session.id, {
-        outcome,
-        ...(result.error !== undefined ? { error: result.error } : {}),
-        ...(result.summary !== undefined ? { summary: result.summary } : {}),
-        startedAt,
-        endedAt: this.#clock.now(),
-      });
-      this.#emit({
-        type: 'attempt:settle',
-        session: updated,
-        outcome,
-        ...(result.error !== undefined ? { error: result.error } : {}),
-      });
-      if (updated.state === 'done' || updated.state === 'failed') {
-        this.#emit({ type: 'session:terminal', session: updated });
+      updated = await this.#ledger.recordOutcome(session.id, payload);
+    } catch {
+      // One immediate retry absorbs a transient store failure.
+      try {
+        updated = await this.#ledger.recordOutcome(session.id, payload);
+      } catch (error) {
+        // Both writes failed: the session stays 'running' in the store BY
+        // DESIGN — the store is the source of truth, and inventing state
+        // driver-side would fork it. The event carries the session so the
+        // host can see exactly which record is stranded and repair it.
+        this.#emit({ type: 'driver:error', error, session });
+        return;
       }
-    } catch (error) {
-      this.#emit({ type: 'driver:error', error });
+    }
+    this.#emit({
+      type: 'attempt:settle',
+      session: updated,
+      outcome,
+      ...(result.error !== undefined ? { error: result.error } : {}),
+    });
+    if (updated.state === 'done' || updated.state === 'failed') {
+      this.#emit({ type: 'session:terminal', session: updated });
     }
   }
 }

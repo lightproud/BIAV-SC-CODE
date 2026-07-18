@@ -274,3 +274,83 @@ describe('mutation kill round (2026-07-18)', () => {
     expect(firesBetween(spec, 0, 350, 1)).toEqual([300]);
   });
 });
+
+describe('audit C1 (2026-07-18): fractional every float guard', () => {
+  it('nextFireAt is strictly greater than after even when float rounding lands on it (every 0.1, anchor 1, after 1.2)', () => {
+    // Old code: floor((1.2-1)/0.1) = floor(1.9999999999999996) = 1 -> steps 2
+    // -> 1 + 2*0.1 === 1.2 exactly, returning t == after (contract violation).
+    const spec = everySpec({ every: 0.1, anchorAt: 1 });
+    const next = nextFireAt(spec, 1.2);
+    expect(next).toBeGreaterThan(1.2);
+    expect(next).toBeCloseTo(1.3, 9);
+  });
+
+  it('walking fractional fire points always makes strict progress (no stall)', () => {
+    const spec = everySpec({ every: 0.1, anchorAt: 0 });
+    // Old code stalls at t = 4.3 (iteration 43): nextFireAt(4.3) === 4.3.
+    let t = 0;
+    for (let i = 0; i < 200; i++) {
+      const n = nextFireAt(spec, t);
+      expect(n).toBeGreaterThan(t);
+      t = n;
+    }
+  });
+
+  it('firesBetween terminates, ascending and in range, over a window that stalled before', () => {
+    // Old code: infinite loop at the 1.2 fire point (lastFired never advances).
+    const spec = everySpec({ every: 0.1, anchorAt: 1 });
+    const fires = firesBetween(spec, 1, 2);
+    expect(fires.length).toBeGreaterThanOrEqual(9);
+    expect(fires.length).toBeLessThanOrEqual(11);
+    for (let i = 1; i < fires.length; i++) {
+      expect(fires[i]!).toBeGreaterThan(fires[i - 1]!);
+    }
+    for (const f of fires) {
+      expect(f).toBeGreaterThan(1);
+      expect(f).toBeLessThanOrEqual(2);
+    }
+  });
+
+  it('every below float resolution at huge t throws RangeError instead of spinning', () => {
+    // ulp(1e15) = 0.125 > 0.001: no representable strictly-greater fire point.
+    const spec = everySpec({ every: 0.001, anchorAt: 0 });
+    expect(() => nextFireAt(spec, 1e15)).toThrow(RangeError);
+    expect(() => nextFireAt(spec, 1e15)).toThrow(/below float resolution/);
+  });
+});
+
+describe('audit C2 (2026-07-18): dailyAt beyond the JS Date range', () => {
+  it('throws RangeError instead of returning NaN for |after| beyond 8.64e15', () => {
+    // Old code: new Date(8.65e15) is invalid -> Date.UTC(NaN, ...) -> NaN out.
+    expect(() => nextFireAt(dailySpec(12, 0), 8.65e15)).toThrow(RangeError);
+    expect(() => nextFireAt(dailySpec(12, 0), 8.65e15)).toThrow(/JS Date range/);
+    expect(() => nextFireAt(dailySpec(0, 0), -8.65e15)).toThrow(RangeError);
+  });
+
+  it('still computes finite fire points just inside the Date range', () => {
+    const nearMax = 8.64e15 - 2 * 86_400_000;
+    const fire = nextFireAt(dailySpec(0, 0), nearMax);
+    expect(Number.isFinite(fire)).toBe(true);
+    expect(fire).toBeGreaterThan(nearMax);
+  });
+});
+
+describe('float-resolution refusal + overflow (integration kill round 2026-07-18)', () => {
+  it('refuses when every is below float resolution at the target magnitude', () => {
+    // At |t| = 2^53 the float ULP is 2; every = 0.5 can never advance the
+    // candidate, so the flatness detector must refuse instead of spinning.
+    const spec = { id: 's', intent: 'x', every: 0.5, anchorAt: 0 };
+    expect(() => nextFireAt(spec, 2 ** 53)).toThrow(/below float resolution/);
+  });
+  it('refuses when the computed fire time overflows to Infinity', () => {
+    const spec = { id: 's', intent: 'x', every: 1e308, anchorAt: 0 };
+    expect(() => nextFireAt(spec, 1e308)).toThrow(/overflowed/);
+  });
+  it('normal fractional bumping still lands on the exact next lattice point', () => {
+    // The C1 reproduction: candidate first computes EXACTLY equal to after.
+    const spec = { id: 's', intent: 'x', every: 0.1, anchorAt: 1 };
+    const next = nextFireAt(spec, 1.2);
+    expect(next).toBeGreaterThan(1.2);
+    expect(next).toBeCloseTo(1.3, 10);
+  });
+});

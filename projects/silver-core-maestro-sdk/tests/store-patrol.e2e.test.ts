@@ -42,21 +42,24 @@ let server: http.Server;
 let baseUrl: string;
 let sandbox: string;
 
-// Mutable fake storefront state (the "Steam" the patrol sees).
-const storefront = {
+// Mutable fake storefront state (the "Steam" the patrol sees). Built fresh
+// per test (audit H3): tests mutate it (the "moved store" day-2 scenario), so
+// a shared instance order-couples the suite. The factory returns a brand-new
+// object graph — a FULL deep reset, not a field patch.
+const freshStorefront = () => ({
   appdetails: {
     '77': { success: true, data: { name: 'Morimens', type: 'game', is_free: true, release_date: { date: '1 Nov, 2025', coming_soon: false } } },
   },
   reviews: { query_summary: { num_reviews: 0, review_score: 8, review_score_desc: 'Very Positive', total_positive: 100, total_negative: 10, total_reviews: 110 } },
   flakyRemaining: 0,
   hangRequests: [] as http.ServerResponse[],
-};
+});
+let storefront = freshStorefront();
 
 beforeEach(async () => {
   vi.useFakeTimers();
   sandbox = fs.mkdtempSync(path.join(os.tmpdir(), 'store-patrol-'));
-  storefront.flakyRemaining = 0;
-  storefront.hangRequests = [];
+  storefront = freshStorefront();
   server = http.createServer((req, res) => {
     const url = req.url ?? '';
     if (url.startsWith('/appdetails')) {
@@ -144,6 +147,23 @@ describe('store patrol on the ledger + driver (real HTTP, fake storefront)', () 
     expect(ledgerFile.queries).toHaveLength(4); // 2 days x 2 targets; rerun added none
   });
 
+  it('fixture isolation: each test starts from the pristine storefront (H3 regression)', async () => {
+    // MUST run after the 'moved store' test above, which rewrites
+    // reviews.query_summary (110 -> 160). Without the beforeEach deep reset
+    // this baseline patrol observes the mutated store and the suite becomes
+    // order-coupled.
+    const result = await runStorePatrol({
+      targets: targetsFor(baseUrl),
+      archiveDir: sandbox,
+      today: '2026-07-18',
+      ...fastOpts,
+    });
+    expect(result.failures).toHaveLength(0);
+    const latest = JSON.parse(fs.readFileSync(path.join(sandbox, 'steam-review-summary', 'latest.json'), 'utf8'));
+    expect(latest.signature.total_reviews).toBe(110);
+    expect(latest.signature.total_positive).toBe(100);
+  });
+
   it('flaky endpoint: 500 then 200 -> retry path lands in done with 2 attempts', async () => {
     storefront.flakyRemaining = 1;
     const result = await drive(runStorePatrol({ targets: targetsFor(baseUrl), archiveDir: sandbox, today: '2026-07-18', ...fastOpts }));
@@ -176,5 +196,55 @@ describe('store patrol on the ledger + driver (real HTTP, fake storefront)', () 
     expect(retry.failures).toHaveLength(0);
     expect(retry.sessions[0].id).toBe('patrol:steam-appdetails:2026-07-18:r2');
     expect(retry.sessions[0].state).toBe('done');
+  }, 15_000);
+
+  it('crash-orphaned running session is swept into the retry path and recovered (G1)', async () => {
+    // A previous run that crashed mid-attempt leaves the session in 'running':
+    // the id is taken, the state is not terminal, and claimDue never re-claims
+    // running sessions — without the orphan sweep every rerun of that day's
+    // patrol hangs until drain timeout.
+    const targets = [
+      { id: 'steam-appdetails', url: `${baseUrl}/appdetails`, extract: 'steam-appdetails', key: '77' },
+    ];
+    const id = 'patrol:steam-appdetails:2026-07-18';
+    const now = Date.now();
+    const ledgerPath = path.join(sandbox, 'state', 'ledger.json');
+    fs.mkdirSync(path.dirname(ledgerPath), { recursive: true });
+    fs.writeFileSync(
+      ledgerPath,
+      JSON.stringify({
+        sessions: {
+          [id]: {
+            id,
+            intent: 'store-patrol steam-appdetails 2026-07-18',
+            payload: { target: targets[0] },
+            state: 'running',
+            attempts: 1,
+            maxAttempts: 3,
+            createdAt: now - 60_000,
+            updatedAt: now - 60_000,
+            nextRunAt: null,
+          },
+        },
+        queries: [],
+      }) + '\n',
+    );
+
+    const result = await runStorePatrol({
+      targets,
+      archiveDir: sandbox,
+      today: '2026-07-18',
+      ...fastOpts,
+    });
+    expect(result.failures).toHaveLength(0);
+    // The SAME session recovered through the normal retry path (no :rN fork):
+    // sweep closes the interrupted attempt as an error, retry lands in done.
+    expect(result.sessions[0].id).toBe(id);
+    expect(result.sessions[0].state).toBe('done');
+    expect(result.sessions[0].attempts).toBe(2);
+    const ledgerFile = JSON.parse(fs.readFileSync(ledgerPath, 'utf8'));
+    const rows = ledgerFile.queries.filter((q: { sessionId: string }) => q.sessionId === id);
+    expect(rows.map((q: { outcome: string }) => q.outcome)).toEqual(['error', 'ok']);
+    expect(rows[0].error).toBe('orphaned by previous run');
   }, 15_000);
 });

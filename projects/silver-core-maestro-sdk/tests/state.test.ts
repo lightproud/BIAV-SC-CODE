@@ -130,16 +130,12 @@ describe('backoffDelayMs', () => {
     expect(backoffDelayMs(5, policy)).toBe(1_000); // raw 1600 -> cap
     expect(backoffDelayMs(50, policy)).toBe(1_000);
   });
-  it('a non-finite blowup lands on the cap, never Infinity/NaN', () => {
+  it('a non-finite blowup of the COMPUTED value lands on the cap, never Infinity/NaN', () => {
     const explosive: RetryPolicy = { maxAttempts: 9, baseDelayMs: 1, factor: Number.MAX_VALUE, maxDelayMs: 7 };
     expect(backoffDelayMs(3, explosive)).toBe(7);
-    const nan: RetryPolicy = { maxAttempts: 9, baseDelayMs: NaN, factor: 2, maxDelayMs: 7 };
-    expect(backoffDelayMs(2, nan)).toBe(7);
-  });
-  it('a negative computed delay (pathological policy) lands on the cap, not below zero', () => {
-    const negative: RetryPolicy = { maxAttempts: 3, baseDelayMs: -100, factor: 2, maxDelayMs: 50 };
-    expect(backoffDelayMs(1, negative)).toBe(50);
-    expect(backoffDelayMs(2, negative)).toBe(50);
+    // 0 * Infinity overflow = NaN raw from valid inputs — still the cap.
+    const zeroTimesInf: RetryPolicy = { maxAttempts: 9, baseDelayMs: 0, factor: Number.MAX_VALUE, maxDelayMs: 7 };
+    expect(backoffDelayMs(3, zeroTimesInf)).toBe(7);
   });
   it('a zero base delay is a legal immediate retry (returns 0, not the cap)', () => {
     const zero: RetryPolicy = { maxAttempts: 3, baseDelayMs: 0, factor: 2, maxDelayMs: 50 };
@@ -152,6 +148,44 @@ describe('backoffDelayMs', () => {
     expect(() => backoffDelayMs(NaN, policy)).toThrowError(RangeError);
     expect(() => backoffDelayMs(Infinity, policy)).toThrowError(RangeError);
     expect(() => backoffDelayMs(0, policy)).toThrowError(/attempt must be a finite number >= 1/);
+  });
+  // A1 (audit 2026-07-18): a poisoned policy previously flowed straight
+  // through — Math.min(raw, NaN/undefined) = NaN, and the fallback returned
+  // the poisoned cap verbatim -> nextRunAt NaN -> permanent 'retrying' wedge.
+  it('throws RangeError on a non-finite maxDelayMs instead of returning it verbatim (A1)', () => {
+    const nanCap: RetryPolicy = { maxAttempts: 3, baseDelayMs: 100, factor: 2, maxDelayMs: NaN };
+    expect(() => backoffDelayMs(1, nanCap)).toThrowError(RangeError);
+    const undefCap = { maxAttempts: 3, baseDelayMs: 100, factor: 2, maxDelayMs: undefined } as unknown as RetryPolicy;
+    expect(() => backoffDelayMs(1, undefCap)).toThrowError(RangeError);
+    const infCap: RetryPolicy = { maxAttempts: 3, baseDelayMs: 100, factor: 2, maxDelayMs: Infinity };
+    expect(() => backoffDelayMs(1, infCap)).toThrowError(RangeError);
+  });
+  it('throws RangeError on non-finite baseDelayMs / factor (A1)', () => {
+    expect(() => backoffDelayMs(2, { maxAttempts: 3, baseDelayMs: NaN, factor: 2, maxDelayMs: 7 })).toThrowError(
+      RangeError,
+    );
+    expect(() => backoffDelayMs(2, { maxAttempts: 3, baseDelayMs: 1, factor: NaN, maxDelayMs: 7 })).toThrowError(
+      RangeError,
+    );
+    expect(() =>
+      backoffDelayMs(2, { maxAttempts: 3, baseDelayMs: Infinity, factor: 2, maxDelayMs: 7 }),
+    ).toThrowError(RangeError);
+  });
+  it('throws RangeError on negative policy numbers (A1)', () => {
+    expect(() => backoffDelayMs(1, { maxAttempts: 3, baseDelayMs: -100, factor: 2, maxDelayMs: 50 })).toThrowError(
+      RangeError,
+    );
+    expect(() => backoffDelayMs(1, { maxAttempts: 3, baseDelayMs: 100, factor: -2, maxDelayMs: 50 })).toThrowError(
+      RangeError,
+    );
+    expect(() => backoffDelayMs(1, { maxAttempts: 3, baseDelayMs: 100, factor: 2, maxDelayMs: -1 })).toThrowError(
+      RangeError,
+    );
+  });
+  it('names the offending policy field in the error message (A1)', () => {
+    expect(() => backoffDelayMs(1, { maxAttempts: 3, baseDelayMs: 100, factor: 2, maxDelayMs: NaN })).toThrow(
+      /policy\.maxDelayMs must be a finite number >= 0, got NaN/,
+    );
   });
   it('defaults to DEFAULT_RETRY_POLICY', () => {
     expect(backoffDelayMs(1)).toBe(DEFAULT_RETRY_POLICY.baseDelayMs);

@@ -2,9 +2,9 @@
  * Campaign 4 acceptance: example 3 — the declarative fan-out/converge
  * workflow — runs end to end on FAKE timers (clock discipline audit
  * 2026-07-18: the test drives time, no real clock), importing ONLY the
- * package name (host shape). Skipped with a visible marker while WorkflowRun
- * is not yet wired into the package export (index.ts wiring is a separate
- * integration step); the assertions below are final either way.
+ * package name (host shape). Imports are STATIC (audit H2): the former
+ * dynamic-import skipIf guard turned any package-load failure into a silent
+ * skip; a broken export now FAILS the suite at collection time.
  */
 import { afterEach, beforeEach, describe, it, expect, vi } from 'vitest';
 
@@ -35,19 +35,18 @@ async function drive<T>(run: Promise<T>): Promise<T> {
   return tracked;
 }
 
-// Package-name import gate: the example imports 'silver-core-maestro-sdk',
-// so it can only load once the built package exports WorkflowRun.
-const pkg: Record<string, unknown> | null = await import('silver-core-maestro-sdk').then(
-  (m) => m as unknown as Record<string, unknown>,
-  () => null,
-);
-const wired = pkg !== null && typeof pkg['WorkflowRun'] === 'function';
+import { WorkflowRun } from 'silver-core-maestro-sdk';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore — plain-JS example module, no type declarations by design
+import { runWorkflowFanout } from '../examples/workflow-fanout.mjs';
 
 describe('workflow fan-out example (e2e, fake timers)', () => {
-  it.skipIf(!wired)('three word-count workers converge into the join summary', async () => {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore — plain-JS example module, no type declarations by design
-    const { runWorkflowFanout } = await import('../examples/workflow-fanout.mjs');
+  it('package exports WorkflowRun (static import: a broken export reds the suite)', () => {
+    expect(typeof WorkflowRun).toBe('function');
+    expect(typeof runWorkflowFanout).toBe('function');
+  });
+
+  it('three word-count workers converge into the join summary', async () => {
     const result = await drive(runWorkflowFanout({ pollIntervalMs: 10, drainTimeoutMs: 15_000 }));
 
     expect(result.status).toBe('done');
@@ -64,7 +63,7 @@ describe('workflow fan-out example (e2e, fake timers)', () => {
     });
   });
 
-  it.skipIf(!wired)('a resumed run over the same store is idempotent (single attempt per node)', async () => {
+  it('a resumed run over the same store is idempotent (single attempt per node)', async () => {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore — plain-JS example module, no type declarations by design
     const { runWorkflowFanout, memoryLedgerStore } = await import('../examples/workflow-fanout.mjs');
