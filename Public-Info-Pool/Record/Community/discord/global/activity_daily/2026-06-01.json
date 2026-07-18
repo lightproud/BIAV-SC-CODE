@@ -1,11 +1,11 @@
 {
   "date": "2026-06-01",
-  "messages": 38258,
+  "messages": 43258,
   "unique_authors": 755,
-  "reactions_total": 4753,
-  "attachments": 1962,
+  "reactions_total": 5235,
+  "attachments": 2178,
   "channel_activity": {
-    "🔸morimens-game-chat": 2028,
+    "🔸morimens-game-chat": 7028,
     "🔸general-chat": 6103,
     "🔸綜合討論": 6788,
     "🔸阵容构建": 150,
@@ -111,20 +111,21 @@
     "1510928325239898163": 1
   },
   "hourly_activity": {
+    "4": 2645,
+    "5": 2118,
+    "6": 2155,
+    "7": 1712,
+    "8": 1509,
+    "9": 1564,
+    "10": 1689,
+    "11": 2783,
+    "12": 2328,
+    "13": 1692,
+    "14": 1983,
     "0": 1355,
     "1": 2069,
     "2": 2071,
     "3": 2367,
-    "4": 2477,
-    "6": 1326,
-    "7": 1408,
-    "8": 1176,
-    "9": 1273,
-    "10": 1011,
-    "11": 2060,
-    "12": 1646,
-    "13": 1397,
-    "14": 1949,
     "15": 2088,
     "16": 1972,
     "17": 1210,
@@ -133,12 +134,11 @@
     "20": 1025,
     "21": 1423,
     "22": 1443,
-    "23": 2041,
-    "5": 1455
+    "23": 2041
   },
   "message_types": {
-    "0": 1254,
-    "19": 774
+    "0": 2917,
+    "19": 2083
   },
   "top_reacted_messages": [
     {
@@ -270,6 +270,14 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1510898749604630613",
+      "channel_id": "1170692781216378960",
+      "content": "eat these rats",
+      "author": "fishhazardthewizard",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1510796451004022785",
       "channel_id": "1170692781216378960",
       "content": "kath in general got no home",
@@ -292,14 +300,6 @@
       "author": "nemu_s_t_a_r",
       "reactions": 7,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1510852155454787727",
-      "channel_id": "1170692781216378960",
-      "content": "this game is going to give me an aneurysm trying to figure out how to team build",
-      "author": "predator8you",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
     }
   ]
 }
