@@ -1,0 +1,48 @@
+{
+  "date": "2026-07-18",
+  "messages": 29,
+  "unique_authors": 11,
+  "reactions_total": 4,
+  "attachments": 9,
+  "channel_activity": {
+    "なんでも雑談": 21,
+    "誰でも質問": 7,
+    "ニムフィーアの毒パ研究日誌": 1
+  },
+  "hourly_activity": {
+    "1": 6,
+    "2": 4,
+    "3": 16,
+    "0": 3
+  },
+  "message_types": {
+    "0": 25,
+    "19": 4
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1527872990417653770",
+      "channel_id": "1377478664609857647",
+      "content": "美味いと思う醤油ラーメンって久しぶりに食べたかも",
+      "author": "ecstasyrb",
+      "reactions": 2,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1527868037720576040",
+      "channel_id": "1377478664609857647",
+      "content": "トゥルのペチ攻撃featヘロット\n強そう(小並)",
+      "author": "sugoitsubasanohaetaop",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    },
+    {
+      "id": "1527880438578937928",
+      "channel_id": "1377478664609857647",
+      "content": "",
+      "author": "8106ne",
+      "reactions": 1,
+      "channel": "なんでも雑談"
+    }
+  ]
+}
