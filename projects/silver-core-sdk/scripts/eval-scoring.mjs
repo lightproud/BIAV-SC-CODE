@@ -157,3 +157,53 @@ export function computeDimensionMeans(results) {
     ]),
   );
 }
+
+/**
+ * Per-dimension SAMPLE COUNTS alongside the mean (audit r4 V7-1). The mean
+ * alone hides its denominator: a dimension where 15 of 20 questions ERRORED
+ * still reports a healthy mean over the 5 survivors, and a gate that compares
+ * means only cannot see that three-quarters of the dimension collapsed — an
+ * ERROR-shaped regression moves no mean, and a fully-collapsed dimension just
+ * vanishes from computeDimensionMeans' map. This returns, for every dimension
+ * PRESENT in `results`, the honest denominator:
+ *   scored  - records with a valid integer score 1..5 (the ones fed the mean)
+ *   invalid - SCORED outcome but no valid score (the 2026-07-12 poisoned kind)
+ *   errored - ERROR outcome
+ *   total   - all records tagged with the dimension (any outcome)
+ *   mean    - mean over `scored`, or null when scored === 0 (a fully collapsed
+ *             dimension stays VISIBLE here instead of disappearing).
+ * computeDimensionMeans keeps its numeric-only contract for existing consumers
+ * (the regression gate + baseline file); a gate that ALSO reads these counts
+ * can flag a scored-count drop the mean would mask. See sharedFileChangesNeeded
+ * for the run-evals / check-eval-regression wiring that activates it.
+ */
+export function computeDimensionStats(results) {
+  const byDim = {};
+  for (const r of results) {
+    if (r === null || typeof r !== 'object' || typeof r.dimension !== 'string') continue;
+    const c = (byDim[r.dimension] ??= { scored: 0, invalid: 0, errored: 0, total: 0, sum: 0 });
+    c.total += 1;
+    if (r.outcome === 'ERROR') {
+      c.errored += 1;
+    } else if (r.outcome === 'SCORED') {
+      if (Number.isInteger(r.score) && r.score >= 1 && r.score <= 5) {
+        c.scored += 1;
+        c.sum += r.score;
+      } else {
+        c.invalid += 1;
+      }
+    }
+  }
+  return Object.fromEntries(
+    Object.entries(byDim).map(([d, c]) => [
+      d,
+      {
+        mean: c.scored > 0 ? +(c.sum / c.scored).toFixed(2) : null,
+        scored: c.scored,
+        invalid: c.invalid,
+        errored: c.errored,
+        total: c.total,
+      },
+    ]),
+  );
+}

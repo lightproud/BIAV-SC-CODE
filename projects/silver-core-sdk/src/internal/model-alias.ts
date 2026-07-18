@@ -48,9 +48,27 @@ export function resolveModelAlias(
   aliases?: Readonly<Record<string, string>>,
 ): string {
   if (model === undefined || model === 'inherit') return parentModel;
+  // audit r4 U5-3: resolve aliases transitively. A single pass returned the
+  // literal value of a host override even when that value is itself an alias —
+  // `{sonnet:'opus'}` yielded the bare string 'opus' (still an alias, not a
+  // concrete id), which the wire rejects with a 400. Walk override-then-built-in
+  // until the current token is no longer a known alias key. A visited-set guards
+  // against a cyclic config (`{a:'b',b:'a'}`) looping forever — on a repeat it
+  // stops and returns the token rather than hanging.
   // `as string`: Object.hasOwn guarantees the key is present, but under
   // noUncheckedIndexedAccess the index read is still typed `string | undefined`.
-  if (aliases !== undefined && Object.hasOwn(aliases, model)) return aliases[model] as string;
-  if (Object.hasOwn(MODEL_ALIASES, model)) return MODEL_ALIASES[model] as string;
-  return model;
+  const seen = new Set<string>();
+  let current = model;
+  for (;;) {
+    if (seen.has(current)) return current;
+    seen.add(current);
+    let next: string | undefined;
+    if (aliases !== undefined && Object.hasOwn(aliases, current)) {
+      next = aliases[current] as string;
+    } else if (Object.hasOwn(MODEL_ALIASES, current)) {
+      next = MODEL_ALIASES[current] as string;
+    }
+    if (next === undefined || next === current) return current;
+    current = next;
+  }
 }

@@ -16,6 +16,70 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.67.2 — 2026-07-18
+
+T52 r4 audit — Tier 3 (low / cosmetic + eval + descriptions) fix campaign:
+**23 defects fixed** (20 by 9 parallel workflow agents + 3 completed at
+integration), the remainder honestly deferred / documented / adjudicated.
+This closes the r4 backlog: all 205 items are now either fixed or documented
+with a precise reason.
+
+- **planmode-monitor (exitplanmode / monitor.ts) — 3**: ExitPlanMode restores
+  the pre-plan permission mode (acceptEdits/dontAsk survive an enter/exit
+  round trip) instead of hard-setting default (U3-1); Monitor rejects a
+  non-boolean `persistent` loudly instead of silently coercing it false
+  (U3-2); the non-persistent kill timer is cleared on query teardown so its
+  closure isn't pinned for ~24 days (Stim-2).
+- **prompt-assembly (system-field / runtime-context.ts) — 2**: the split/dual
+  system array carries the volatile block's leading `\n` so toggling
+  promptCaching no longer changes the system bytes the model sees (Z8-1);
+  osVersion uses os.type() for the capitalized OS name ('Linux 6.x') matching
+  the official `<env>` reproduction (Z8-3).
+- **sandbox-async (async.ts / query.ts) — 2**: AsyncQueue.next() is guarded
+  against a between-turns raw abort producing an orphan user turn (Sq-3);
+  sandbox writable roots are realpath-resolved before binding so a symlinked
+  writable root isn't shadowed by `--ro-bind / /` into EROFS (U8-1).
+- **error-normalize (error-normalize.ts) — 3**: the err.cause chain /
+  AggregateError.errors are inspected so a wrapped ECONNREFUSED keeps its
+  retryable detail (Y6-2); the "never throws" contract is honored even for a
+  circular error object (R7j-2); bound-message truncation surrogate-safe
+  (R7s-7).
+- **pricing (pricing / model-alias.ts) — 3**: the claude-3-sonnet prefix and
+  a corrected Haiku cache multiplier are in the price table so cost/budget
+  are honest (U5-1/U5-2); model-alias resolves chained aliases (U5-3).
+- **misc (media / structured-output / ledger.ts + index.ts barrel) — 4**:
+  image media-type parameter stripped so `image/png; charset=binary` still
+  decodes (Y6-3); minLength/maxLength count codepoints not UTF-16 units so an
+  astral char isn't double-counted (U6-2); the ledger RangeError guard checks
+  the Date ±8.64e15 bound (Rdt-2); SessionMutationOptions re-exported from the
+  barrel so consumers can name the `{sessionDir}` bag (R7c-1).
+- **eval (eval-scoring / eval-harnesses / normalize-l3.mjs) — 3**:
+  per-dimension means carry a sample-count denominator so a zero-scored
+  dimension can't hide a regression (V7-1); the process-kill+resume harness
+  removes its seed file so a broken engine can't pass by re-reading it (V7-2);
+  the L3 trailing-whitespace normalization no longer masks a fidelity
+  divergence (V7-3).
+- **descriptions (websearch.ts + COMPAT.md) — 2 + fidelity doc**: WebSearch
+  renders results with markdown-hyperlink links matching its description
+  (Sd-1, impl fix); MultiEdit's removal is corrected in COMPAT (Y5-3). The
+  faithful-but-divergent tool descriptions (Sd-2..Sd-7 web/bash/ask/plan
+  clauses, Z4-1 EnterPlanMode) are documented in a new COMPAT.md
+  "Tool-description ↔ implementation fidelity" section rather than rewriting
+  the corpus-locked reproductions.
+
+**Deferred / not-defects (documented):** Z8-2 + Rdt-4 (per-turn `<env>`
+re-render for fallback-model/local-midnight staleness — low severity, defers
+to avoid a cache-prefix regression), U8-3 (pgid-escape is unfixable by a
+planner), U8-4 (a rare post-teardown background finalizer — optional),
+V7-4 (cumulative-vs-per-result apiMs is correct, not a defect), Z4-2 (the
+corrected-final-result teardown is a keeper-ruled feature 待裁⑤, a keeper
+adjudication item — not a defect to revert).
+
+Regression tests: `tests/audit-r4-{planmode-monitor,prompt-assembly,sandbox-async,error-normalize,pricing,misc,eval,descriptions}.test.ts`
+plus Z8-1/Z8-3 realignments in system-field/engine/prompt-assembly tests.
+Full vitest 2997 passed / 3 skipped; repo pytest 2975 passed; tsc + build
+clean.
+
 ## 0.67.1 — 2026-07-18
 
 T52 r4 audit — Tier 2 (medium) fix campaign: **65 defects fixed, 15 honestly

@@ -49,6 +49,18 @@ const SERIAL_VERSION = 1;
 const DEFAULT_REGION_ID = 'reported-events-ledger';
 const DEFAULT_TITLE = 'Previously reported events';
 
+/**
+ * ECMAScript time-value range: ±8.64e15 ms from epoch (±271,821 years). A
+ * finite `at` outside this window still passes Number.isFinite but makes
+ * new Date(at).toISOString() throw RangeError inside digest() (audit r4 Rdt-2).
+ */
+const MAX_TIMESTAMP_MS = 8_640_000_000_000_000;
+
+/** A number usable as a ledger `at`: finite AND a representable Date value. */
+function isValidTimestamp(at: number): boolean {
+  return Number.isFinite(at) && Math.abs(at) <= MAX_TIMESTAMP_MS;
+}
+
 /** Dedup ledger for already-reported events. Pure logic, no I/O, no clock. */
 export class ReportLedger {
   private readonly byKey = new Map<string, LedgerEntry>();
@@ -90,13 +102,16 @@ export class ReportLedger {
     }
     if (this.byKey.has(key)) return false;
     const at = opts?.at ?? Date.now();
-    // A non-finite timestamp (NaN/Infinity) would make digest() throw
+    // A non-finite timestamp (NaN/Infinity) OR one outside the representable
+    // Date range (±8.64e15, audit r4 Rdt-2) would make digest() throw
     // (Date#toISOString RangeError) inside toPrelude/toRetainedRegion — the
     // latter mid-compaction — and break the serialize/deserialize round-trip
     // (JSON turns NaN into null, which deserialize rejects). Fail loud here,
     // at the write, instead of deep in a fold.
-    if (!Number.isFinite(at)) {
-      throw new ConfigurationError('ledger entry timestamp (at) must be a finite number');
+    if (!isValidTimestamp(at)) {
+      throw new ConfigurationError(
+        'ledger entry timestamp (at) must be a finite epoch-ms within the representable Date range',
+      );
     }
     const entry: LedgerEntry = { key, at };
     if (opts?.summary !== undefined) entry.summary = opts.summary;
@@ -167,7 +182,7 @@ export class ReportLedger {
         typeof entry.key !== 'string' ||
         entry.key.length === 0 ||
         typeof entry.at !== 'number' ||
-        !Number.isFinite(entry.at) ||
+        !isValidTimestamp(entry.at) || // finite AND representable Date (audit r4 Rdt-2)
         (entry.summary !== undefined && typeof entry.summary !== 'string')
       ) {
         throw new ConfigurationError('ledger payload carries a malformed entry');

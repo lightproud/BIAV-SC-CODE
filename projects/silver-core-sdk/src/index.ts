@@ -149,6 +149,12 @@ export {
   deleteSession,
   forkSession,
 } from './sessions/session-functions.js';
+// The options bag shared by the seven session-mutation functions above; without
+// this a consumer cannot name `{ sessionDir, ... }` (audit r4 R7c-1: TS2305).
+export type {
+  SessionMutationOptions,
+  GetSessionMessagesOptions,
+} from './sessions/session-functions.js';
 // R1 pre-injection accounting (SCS-REQ-REPOS-01 §3): read a session's
 // cumulative cost / turns / context estimate BEFORE injecting the next turn
 // via query({ prompt, options: { resume } }).

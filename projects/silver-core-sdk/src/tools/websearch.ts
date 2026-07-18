@@ -69,12 +69,19 @@ function filterResults(
 
 function renderResults(results: WebSearchResult[]): string {
   if (results.length === 0) return 'No results.';
+  // audit r4 Sd-1: the description advertises results "formatted as search
+  // result blocks, including links as markdown hyperlinks". Render each result's
+  // link as a markdown hyperlink (the URL line used to be bare text — not a
+  // hyperlink) and separate results into blocks with a blank line. The native
+  // API `web_search_result` content-block form is a host-callback subset (text),
+  // recorded honestly in docs/COMPAT.md ("Tool-description ↔ implementation
+  // fidelity").
   const blocks = results.map((r, i) => {
-    const lines = [`${i + 1}. ${r.title}`, `   ${r.url}`];
+    const lines = [`${i + 1}. ${r.title}`, `   [${r.url}](${r.url})`];
     if (r.snippet && r.snippet.length > 0) lines.push(`   ${r.snippet}`);
     return lines.join('\n');
   });
-  return blocks.join('\n');
+  return blocks.join('\n\n');
 }
 
 /** Diagnosable message for ANY thrown value (audit 2026-07-17 L74): a

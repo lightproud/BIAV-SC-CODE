@@ -27,6 +27,7 @@ import {
   AbortError,
   errorCodeOf,
 } from './errors.js';
+import { sliceSurrogateSafe } from './internal/text.js';
 
 /**
  * The stable, host-consumable shape every upstream failure normalizes to.
@@ -100,7 +101,10 @@ function redact(text: string): string {
 function boundMessage(text: string): string {
   const trimmed = text.trim();
   const scrubbed = redact(trimmed);
-  return scrubbed.length > 2_000 ? `${scrubbed.slice(0, 2_000)}…` : scrubbed;
+  // audit r4 R7s-7: surrogate-safe cut so truncating mid astral codepoint
+  // (emoji / CJK Ext-B) in a giant error page cannot leave a lone surrogate on
+  // the surface (which would serialize to U+FFFD on every replay).
+  return scrubbed.length > 2_000 ? `${sliceSurrogateSafe(scrubbed, 2_000)}…` : scrubbed;
 }
 
 /** Pull a numeric HTTP status out of an arbitrary error-ish object. Some
@@ -126,6 +130,19 @@ function pickStatus(obj: Record<string, unknown>): number | undefined {
 function pickCode(obj: Record<string, unknown>): string | undefined {
   const raw = obj.code ?? obj.type ?? obj.error_code;
   return typeof raw === 'string' && raw.length > 0 ? raw : undefined;
+}
+
+/** JSON.stringify that upholds this layer's "never throws" contract: a circular
+ *  envelope, a BigInt field, or a throwing getter would otherwise raise (audit
+ *  r4 R7j-2 — reachable via a live-throwing object). Falls back to a
+ *  de-identified shape summary. */
+function safeStringify(obj: Record<string, unknown>): string {
+  try {
+    const s = JSON.stringify(obj);
+    return typeof s === 'string' ? s : summarizeObject(obj);
+  } catch {
+    return summarizeObject(obj);
+  }
 }
 
 /** Request-id under any of the accepted spellings, top-level or nested. */
@@ -175,9 +192,10 @@ export function extractProviderErrorObject(value: unknown): {
       : nested !== undefined
         ? // Nested error object with a non-string message: stringify the error
           // envelope (bounded + secret-scrubbed by boundMessage below), matching
-          // the historical extractErrorPayload behavior.
-          JSON.stringify(nested)
-        : JSON.stringify(top);
+          // the historical extractErrorPayload behavior. safeStringify keeps the
+          // "never throws" contract for a circular/BigInt envelope (audit r4 R7j-2).
+          safeStringify(nested)
+        : safeStringify(top);
 
   const status = (nested && pickStatus(nested)) ?? pickStatus(top);
   const code = (nested && pickCode(nested)) ?? pickCode(top);
@@ -256,6 +274,107 @@ function connectionPhase(err: APIConnectionError): NormalizedProviderError['phas
   // class-default code; only a pre-stream connect failure is 'transport'.
   if (err.midStreamTruncation === true) return 'stream';
   return err.code === 'api_connection_failed' ? 'transport' : 'stream';
+}
+
+/** Transient transport-level Node / undici error codes. A fetch that failed at
+ *  the socket layer consumed no response body, so re-issuing the whole request
+ *  is safe — the same replay-safe class as a pre-stream APIConnectionError. */
+const RETRYABLE_NETWORK_CODES = new Set<string>([
+  'ECONNRESET',
+  'ECONNREFUSED',
+  'ETIMEDOUT',
+  'EPIPE',
+  'EAI_AGAIN',
+  'ENETUNREACH',
+  'EHOSTUNREACH',
+  'UND_ERR_CONNECT_TIMEOUT',
+  'UND_ERR_SOCKET',
+  'UND_ERR_HEADERS_TIMEOUT',
+  'UND_ERR_BODY_TIMEOUT',
+]);
+
+/** A retryability/status signal recovered from a nested (cause / aggregated)
+ *  sub-error by signalFromNested. */
+interface NestedErrorSignal {
+  status?: number;
+  code?: string;
+  requestId?: string;
+  retryable: boolean;
+  phase?: NormalizedProviderError['phase'];
+}
+
+/**
+ * audit r4 Y6-2: the plain-Error branch classified only the TOP-LEVEL error, so
+ * the real fault a runtime hides underneath was lost — undici wraps it as
+ * `err.cause` (`TypeError('fetch failed', { cause: <ECONNREFUSED> })`) and
+ * `AggregateError` buckets several into `err.errors` (`AggregateError([<429>])`).
+ * The wrapper carries no status and no network code of its own, so the turn was
+ * mis-reported as terminal (retryable:false) when the buried cause was in fact a
+ * retryable transport failure or a 429/5xx. Walk the cause + aggregate graph
+ * (breadth-first, cycle-guarded via `seen`, depth-bounded) for the first
+ * sub-error that carries a real signal. Never throws (mirrors the module
+ * contract); extraction is guarded and only `.cause`/`.errors` are traversed.
+ */
+function signalFromNested(root: unknown): NestedErrorSignal | null {
+  const seen = new Set<unknown>();
+  const stack: Array<{ value: unknown; depth: number }> = [{ value: root, depth: 0 }];
+  while (stack.length > 0) {
+    const item = stack.shift();
+    if (item === undefined) break;
+    const { value, depth } = item;
+    if (value === null || value === undefined || seen.has(value) || depth > 8) continue;
+    seen.add(value);
+
+    // A typed status / connection sub-error is authoritative.
+    if (value instanceof APIStatusError) {
+      return {
+        status: value.status,
+        code: value.providerErrorCode ?? value.errorType,
+        requestId: value.requestId,
+        retryable: isRetryableHttpStatus(value.status),
+        phase: 'response',
+      };
+    }
+    if (value instanceof APIConnectionError) {
+      return {
+        code: value.code,
+        retryable: connectionRetryable(value),
+        phase: connectionPhase(value),
+      };
+    }
+
+    // A raw gateway error object a runtime hung on the cause, carrying a status.
+    let obj: ReturnType<typeof extractProviderErrorObject> = null;
+    try {
+      obj = extractProviderErrorObject(value);
+    } catch {
+      obj = null;
+    }
+    if (obj?.status !== undefined) {
+      return {
+        status: obj.status,
+        code: obj.code,
+        requestId: obj.requestId,
+        retryable: isRetryableHttpStatus(obj.status),
+        phase: 'response',
+      };
+    }
+
+    // A transient Node/undici transport error (the ECONNREFUSED case).
+    if (typeof value === 'object') {
+      const nodeCode = (value as { code?: unknown }).code;
+      if (typeof nodeCode === 'string' && RETRYABLE_NETWORK_CODES.has(nodeCode)) {
+        return { code: nodeCode, retryable: true, phase: 'transport' };
+      }
+      const agg = (value as { errors?: unknown }).errors;
+      if (Array.isArray(agg)) {
+        for (const e of agg) stack.push({ value: e, depth: depth + 1 });
+      }
+      const cause = (value as { cause?: unknown }).cause;
+      if (cause !== undefined) stack.push({ value: cause, depth: depth + 1 });
+    }
+  }
+  return null;
 }
 
 /**
@@ -348,15 +467,34 @@ export function normalizeProviderError(
       obj = null;
     }
     const sdkCode = errorCodeOf(err);
-    const status = obj?.status;
+    let status = obj?.status;
+    let code = obj?.code ?? sdkCode;
+    let requestId = obj?.requestId;
+    let retryable = status !== undefined ? isRetryableHttpStatus(status) : false;
+    let phase: NormalizedProviderError['phase'] | undefined =
+      status !== undefined ? 'response' : undefined;
+    // audit r4 Y6-2: when the wrapper itself yielded no status/retryable signal,
+    // adopt the most informative buried cause / AggregateError member so a
+    // `fetch failed`(cause:ECONNREFUSED) stays retryable and an
+    // AggregateError([429]) is not mis-reported as terminal.
+    if (status === undefined && !retryable) {
+      const nested = signalFromNested(err);
+      if (nested !== null) {
+        status = nested.status ?? status;
+        code = code ?? nested.code;
+        requestId = requestId ?? nested.requestId;
+        retryable = nested.retryable;
+        phase = phase ?? nested.phase;
+      }
+    }
     return base({
       name: err.name || 'Error',
       message: boundMessage(err.message || String(err)),
       status,
-      code: obj?.code ?? sdkCode,
-      requestId: obj?.requestId,
-      retryable: status !== undefined ? isRetryableHttpStatus(status) : false,
-      ...(status !== undefined ? { phase: 'response' as const } : {}),
+      code,
+      requestId,
+      retryable,
+      ...(phase !== undefined ? { phase } : {}),
       rawType: sdkCode,
     });
   }

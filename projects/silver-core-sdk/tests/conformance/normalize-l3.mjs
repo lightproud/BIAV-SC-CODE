@@ -10,7 +10,10 @@
  *                         CLI canonicalizes /tmp symlinks); the outside dir
  *                         of containment cases -> <OUTSIDE>.
  *   N2 whitespace       - CRLF -> LF, strip trailing whitespace per line,
- *                         drop trailing blank lines.
+ *                         drop trailing blank lines. The per-line trailing-
+ *                         whitespace strip is opt-OUT (flags.preserveTrailingSpace)
+ *                         so a case probing trailing-whitespace FIDELITY can
+ *                         observe a real per-arm divergence (audit r4 V7-3).
  *   N3 timing mask      - "after <N>ms/s/m" -> "after <T>", ONLY in cases
  *                         flagged maskTiming (never bare numbers - exit codes
  *                         and line numbers must survive). maskTimestamps
@@ -42,7 +45,8 @@ function reEscape(s) {
 /**
  * Normalize one tool_result text. env carries the per-arm run facts
  * ({ cwd, realCwd, outsideDir, realOutsideDir, shellId }); flags are the
- * per-case opt-ins ({ maskTiming, maskTimestamps, sortLines }).
+ * per-case opt-ins ({ maskTiming, maskTimestamps, sortLines,
+ * preserveTrailingSpace }).
  * Returns { text, applied } where applied is the set of KD-relevant rewrite
  * tags that actually fired ('gutter-tab' | 'gutter-arrow' | 'system-reminder'
  * | 'shell-id') so the comparator can report them.
@@ -99,10 +103,13 @@ export function normalizeToolResult(rawText, env = {}, flags = {}) {
     );
   }
 
-  // N2: per-line rstrip + trailing blank lines.
-  text = text
-    .split('\n')
-    .map((l) => l.replace(/[ \t]+$/, ''))
+  // N2: per-line rstrip + trailing blank lines. The per-line trailing-
+  // whitespace strip is opt-OUT (flags.preserveTrailingSpace) so a case probing
+  // trailing-whitespace FIDELITY (e.g. L3-READ-01's 'third line   ') can observe
+  // a real per-arm divergence instead of having it normalized away on BOTH arms
+  // (audit r4 V7-3). CRLF->LF (top) and trailing-blank-line drop still apply.
+  const n2Lines = text.split('\n');
+  text = (flags.preserveTrailingSpace === true ? n2Lines : n2Lines.map((l) => l.replace(/[ \t]+$/, '')))
     .join('\n')
     .replace(/\n+$/, '');
 

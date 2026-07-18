@@ -385,7 +385,7 @@ SDK implements the agent loop directly against the public Messages API:
 |---|---|---|
 | Read | PARTIAL | text files (cat -n) + images (PNG/JPEG/GIF/WebP → image block) + PDF (→ base64 `document` block; the API's handle-tool-calls docs allow `document` inside tool_result, though the base64 source there is supported-but-not-explicitly-demonstrated); all magic-byte sniffed (task #17); notebooks returned as raw JSON text — cells not rendered individually (closable, NON-structural; absent by choice); oversized files (>50MB) rejected with a Grep hint rather than buffered. v0.7: official `pages` param (PDF page range) validated to contract (1-based, ascending, ≤20); PDF page-slicing itself is HONEST-unsupported (no PDF dep) — a `pages` read of a PDF errors clearly rather than silently returning the whole document, and `pages` on a non-PDF errors. Path fence removed (#483 keeper ruling): resolves to any location the process can reach, permission gate is the sole access control |
 | Write / Edit | FULL | same input field names (`file_path`, `old_string`, …); BOTH enforce the official read-before-write gate — a bare Write/Edit over an existing un-read file errors with the verbatim official text and leaves the file untouched; new files pass (Write); a successful Read unlocks (Write E4 2026-07-05 pinned live L5 code-03 r1 vs r2; **Edit gate added in P2** to match the official Edit tool — behavioral change, MIGRATION §P2; test tools-fs.test.ts). OUR chosen extensions where the pinned evidence is silent: a successful Write/Edit also registers its path (create-then-revise does not self-block), and the gate spans subagents (one read-set per query). Success/error wording differs elsewhere (KD-L3-05/07/08). Path fence removed (#483) — same posture as Read |
-| Bash | PARTIAL | Windows: shell resolved via `CLAUDE_CODE_GIT_BASH_PATH` -> Git-for-Windows standard locations (official-parity posture; actionable error when absent, bare `bash`/WSL never tried; foreground+background termination route through planProcessKill so win32 taskkill is used, #482/#484). v0.5: `cd` + exported env persist across calls (state-file replay — functions/aliases/unexported vars do NOT persist; not a long-lived shell process) and `run_in_background` launches a detached shell whose id feeds BashOutput/KillShell. v0.6: sandboxed by default when a backend resolves (see the `sandbox` option row); foreground and background both wrap through the backend and run in their own process group (timeout/abort reap the whole group; `--unshare-pid` + SIGKILL escalation reaps across the sandbox pid namespace). v0.7: `dangerouslyDisableSandbox` is ALWAYS in the schema (official parity); it is a no-op without a sandbox and CANNOT bypass the gate (escape still needs sandbox active + allowEscape + an independent ask). **Sandbox kill caveat (audit Q4):** bwrap does not forward SIGTERM into the wrapped command and `--die-with-parent` tears it down with SIGKILL, so the SIGTERM->SIGKILL grace window is a hard kill for sandboxed commands — a command trapping SIGTERM for graceful flush gets no grace under the sandbox (teardown correctness unaffected; only cooperative shutdown is lost). **Signal-death reporting (audit Q3):** a sandboxed command killed by signal N surfaces as `exit code 128+N` with no Node signal (bwrap's own exit), unlike the unsandboxed `signal SIGxxx`; the failure message names the likely signal for the common codes. |
+| Bash | PARTIAL | Windows: shell resolved via `CLAUDE_CODE_GIT_BASH_PATH` -> Git-for-Windows standard locations (official-parity posture; actionable error when absent, bare `bash`/WSL never tried; foreground+background termination route through planProcessKill so win32 taskkill is used, #482/#484). v0.5: `cd` + exported env persist across calls (state-file replay — functions/aliases/unexported vars do NOT persist; not a long-lived shell process) and `run_in_background` launches a detached shell whose id feeds BashOutput/KillShell. v0.6: sandboxed by default when a backend resolves (see the `sandbox` option row); foreground and background both wrap through the backend and run in their own process group (timeout/abort reap the whole group; `--unshare-pid` + SIGKILL escalation reaps across the sandbox pid namespace). v0.7: `dangerouslyDisableSandbox` is ALWAYS in the schema (official parity); it is a no-op without a sandbox and CANNOT bypass the gate (escape still needs sandbox active + allowEscape + an independent ask). **Sandbox kill caveat (audit Q4):** bwrap does not forward SIGTERM into the wrapped command and `--die-with-parent` tears it down with SIGKILL, so the SIGTERM->SIGKILL grace window is a hard kill for sandboxed commands — a command trapping SIGTERM for graceful flush gets no grace under the sandbox (teardown correctness unaffected; only cooperative shutdown is lost). **Signal-death reporting (audit Q3):** a sandboxed command killed by signal N surfaces as `exit code 128+N` with no Node signal (bwrap's own exit), unlike the unsandboxed `signal SIGxxx`; the failure message names the likely signal for the common codes. **Profile init (audit r4 Sd-5):** the reproduced description's "initialized from the user's profile" is faithful official text, but this SDK runs a non-login, non-interactive `bash -c` that does NOT source `~/.bash_profile`/`~/.bashrc`/`~/.zshrc`/`~/.profile` — cross-call `cwd`+exported-env continuity is the state-file replay above (not profile sourcing); see "Tool-description ↔ implementation fidelity" below. |
 | Task quadruplet (TaskCreate/TaskGet/TaskUpdate/TaskList) | FULL | v0.7: the DEFAULT task surface (official 0.3.142: TodoWrite off by default, `CLAUDE_CODE_ENABLE_TASKS=0` reverts to TodoWrite-only). Symmetric dependency edges (blocks/blockedBy), owner/status workflow, session-shared store (parent + subagents see one list); TaskGet unknown-id returns null (not error) per official |
 | ExitPlanMode | FULL | v0.7: really flips the permission gate plan→default (main loop and subagents each flip their own gate); `allowedPrompts` echoed not applied (no NL prompt rules in this gate); honest errors when unbridged or not in plan mode |
 | EnterWorktree | FULL | v0.7: creates/enters named worktrees under `.claude/worktrees`; in-place cwd switch survives turn-boundary rebuilds (fs tools + subagent spawns; Bash follows via persistent state). `worktree.baseRef` not shipped (HEAD base) |
@@ -398,11 +398,82 @@ SDK implements the agent loop directly against the public Messages API:
 | SendMessage | PARTIAL | v0.42.0 (O-B2): continue a previously spawned subagent with its FULL transcript intact (the runtime retains every child's live history for the query's life; per-agent serialization; stopped workers revivable). `{to, summary?, message}` — `to` is an agentId ONLY: teammate NAMES, the `"main"` address and peer-origin message emission belong to the agent-teams naming machinery this SDK does not ship (SDKMessageOrigin `peer`/`coordinator` + TeammateIdle stay typed-not-emitted). Foreground children reply as the tool result; background children ack + reply on a later drained turn as official `<task-notification>` XML (drain format aligned to the archive shape in the same batch). Root-loop-only: isolated children never see the tool; fork children keep the schema (prefix byte-match) and get an honest error. Coordinator presets ship alongside (COORDINATOR_MODE_PROMPT adapted + COORDINATOR_WORKER_AGENT faithful, agents.ts) |
 | Glob | PARTIAL | fast-glob, mtime-sorted newest-first; official 2.1.201 emitted ASCENDING order under ascending-utimes pins, so ordering parity with the live engine is not established - path sets agree (conformance run-l3 L3-GLOB-01, KD-L3-20, 2026-07-05) |
 | Grep | PARTIAL | pure-JS regex engine (no ripgrep binary); large-repo perf caveat (crossover diagnostic 2026-07-07). v0.13.0 fixed the silent 250-cap truncation: `count`/`files_with_matches` default COMPLETE, all modes announce truncation, `grep.scan` debug telemetry added. Pure-JS is the standing choice; ripgrep would enter only via a keeper ruling |
-| WebFetch / WebSearch | FULL | registered in v0.2 |
+| WebFetch / WebSearch | PARTIAL | registered in v0.2. Host-callback / direct-API subsets of the official server-side tools (audit r4 Sd-1..Sd-4) — see "Tool-description ↔ implementation fidelity" below. WebSearch is a host callback (`options.webSearch`, not an in-API search, no US-only gate) rendering `WebSearchResult[]` to text with markdown-hyperlink links; WebFetch hard-truncates oversized content to 100000 chars rather than model-summarizing (no summarizer model) |
 | TodoWrite | PARTIAL | v0.7: OFF by default (Task quadruplet is the default surface); `CLAUDE_CODE_ENABLE_TASKS=0` reverts to TodoWrite-only, per official 0.3.142 |
 | Agent | PARTIAL | the subagent spawn tool; v0.7 gains `model`/`isolation:'worktree'` and the official required set [description, prompt] (subagent_type defaults to general-purpose). Residual param delta = our BPT-only `fork` extension |
-| MultiEdit | DEPRECATED | v0.61.0 (SDK-original): same-file atomic batch edit — edits apply sequentially on one snapshot, all-or-nothing write, single pre-image for rewind, same read-before-write gate as Edit. No official parity target (retired upstream), so support was vs our own documented semantics and the description is authored, not reproduced (`faithful:false`). v0.62.1: not-found errors are triaged against the original text — "absent from the file (re-Read)" vs "consumed by an earlier edit in this call" (culprit edit named; overlap rule added to the description). **v0.64.4 (keeper 2026-07-17): DEPRECATED — aligning with upstream, which retired MultiEdit in favour of repeated Edit calls (each against live state, avoiding the snapshot-ambiguity this tool's own not-found triage exists to explain). The tool still ships and works (non-breaking); its description now steers the model to Edit; slated for removal in a future major once no consumer depends on it.** |
+| MultiEdit | REMOVED | SDK-original v0.61.0–0.64.4 (same-file atomic batch edit — edits applied sequentially on one snapshot, all-or-nothing write, single pre-image for rewind, same read-before-write gate as Edit; never had an official parity target — upstream retired MultiEdit in favour of repeated Edit calls, so support was vs our own documented semantics with an authored, not reproduced, description). **v0.65.0: REMOVED (audit r4 Y5-3, keeper alignment) — the tool no longer ships. It is absent from `createBuiltinTools` (tests/tool-parity.test.ts pins the shipped set) and is once again a red-line token that no SHIPPED description may reference (tests/red-line-tool-names.test.ts; `descriptions.ts` header lists it under "retired 0.65.0"). Lifecycle: shipped 2026-07-15, DEPRECATED-but-shipping in v0.64.4, hard-removed in v0.65.0. Consumers use repeated Edit calls (each against live file state, avoiding the snapshot-ambiguity MultiEdit's own not-found triage existed to explain); recoverable from git history if a real consumer need resurfaces.** |
 | NotebookEdit | UNSUPPORTED | deliberately untracked (BPT has no notebook surface) |
+
+## Tool-description ↔ implementation fidelity (audit r4, 2026-07-18)
+
+The model-side tool descriptions in `src/tools/descriptions.ts` are FAITHFUL
+reproductions of the official Claude Code tool descriptions (corpus-locked, guarded
+by `tests/tool-descriptions-provenance.test.ts` + the red-line token guard). SDK red
+line: never rewrite a faithful reproduction to paper over a divergence, and never
+describe a capability that does not exist. Where a faithful clause describes a
+capability or restriction this direct-API / host-callback engine legitimately
+differs on, the honest record lives HERE rather than in the locked text. Audit r4
+reconciled the following (impl-side fixes noted; the rest are documented
+divergences):
+
+- **WebSearch — "search result blocks, including links as markdown hyperlinks"
+  (Sd-1, FIXED in impl).** The official WebSearch returns server-side
+  `web_search_result` content blocks. This SDK routes to a host callback
+  (`options.webSearch`) and renders the returned `WebSearchResult[]` to text, so
+  the native content-block form is a HONEST-SUBSET (text). The "markdown
+  hyperlinks" clause is now honest: `websearch.ts renderResults` emits each result
+  link as a markdown hyperlink `[url](url)` (was a bare-URL line, plain text) and
+  separates results into blank-line-delimited blocks. A pre-rendered string backend
+  result is still passed through verbatim.
+- **WebSearch — "Web search is only available in the US" (Sd-2, KEPT-DIVERGENCE).**
+  Faithful official text describing the server-side tool's geo restriction. This
+  SDK imposes NO geographic gating — `webSearchTool` calls the host backend
+  unconditionally; any regional restriction is the host backend's concern, not the
+  SDK's. The clause is retained verbatim (corpus-lock); the SDK enforces no such
+  limit and never suppresses a call on geographic grounds.
+- **WebSearch — "Searches are performed automatically within a single API call"
+  (Sd-4, HONEST-SUBSET).** Faithful text describing the official in-API server-side
+  search. Here WebSearch is a HOST CALLBACK (`options.webSearch` → `ctx.webSearch`),
+  not an in-API search; `modelUsage.webSearchRequests` is not incremented (it is
+  not a billed server-side tool).
+- **WebFetch — "Results may be summarized if the content is very large" (Sd-3,
+  HONEST-SUBSET).** Faithful text describing the official small-model summarizer.
+  This direct-API engine has NO summarizer model: `webFetchTool` returns the
+  converted page text HARD-TRUNCATED to 100000 chars (`MAX_OUTPUT_CHARS`) with a
+  `[truncated]` marker, never a model-authored summary. The `prompt` input is
+  consumed by the model's own next turn over the returned text (see the webfetch.ts
+  header).
+- **Bash — "The shell environment is initialized from the user's profile" (Sd-5,
+  KEPT-DIVERGENCE).** Faithful official text. This SDK spawns a NON-login,
+  NON-interactive `bash -c` (see `bash.ts runShell`), which does not source
+  `~/.bash_profile` / `~/.bashrc` / `~/.zshrc` / `~/.profile` — deliberate, for
+  determinism and sandbox safety. Cross-call `cwd` + exported-env continuity comes
+  from the state-file replay (`withPersistentState`), not profile sourcing;
+  functions/aliases/unexported vars do not persist.
+- **AskUserQuestion — "Users will always be able to select 'Other'" (Sd-6,
+  HOST-DEPENDENT).** Faithful official text describing the CLI host UI. This SDK
+  passes the question verbatim to the host (`canUseTool` / AskUserQuestion
+  callback) and does NOT synthesize or guarantee an "Other" affordance — presenting
+  it is the host UI's responsibility (`src/tools/askuserquestion.ts`; the
+  description is corpus-locked, so the divergence is recorded here).
+- **ExitPlanMode — "on user approval ... exits plan mode" (Sd-7, adapted repro).**
+  The "approval" is the permission-gate approval of the ExitPlanMode tool CALL; on
+  execute the tool flips the gate plan→default. The description's own adaptation
+  note (descriptions.ts header) already discloses this ("exiting switches the
+  permission gate out of plan mode; hosts veto via PreToolUse hooks /
+  disallowedTools"). The impl-level gap — ExitPlanMode hard-set `default` rather
+  than restoring the pre-plan mode — is FIXED as audit r4 U3-1
+  (`src/tools/exitplanmode.ts`): EnterPlanMode records the pre-plan mode and
+  ExitPlanMode restores it, so an acceptEdits/dontAsk session survives an
+  enter/exit round trip.
+- **EnterPlanMode — "This tool REQUIRES user approval" (Z4-1, KEPT-DIVERGENCE).**
+  Faithful official text, but `EnterPlanMode` is `readOnly:true` by deliberate
+  design (`enterplanmode.ts` header: entering plan mode only ever RESTRICTS what
+  the agent may do, so the gate auto-allows entry without a per-call
+  `canUseTool` prompt). The description is not rewritten (corpus-locked); the
+  honest mechanism is that hosts veto ENTRY via a `PreToolUse` hook or a
+  `disallowedTools: ['EnterPlanMode']` rule — the same veto posture disclosed
+  for ExitPlanMode above — rather than an inline approval prompt.
 
 ## SDKMessage stream
 

@@ -2179,7 +2179,9 @@ describe('dual system cache breakpoint', () => {
     expect(system).toHaveLength(3);
     expect(system[0]!.text).toBe(BASE);
     expect(system[1]!.text).toBe(TAIL);
-    expect(system[2]!.text).toBe(CWD);
+    // audit r4 Z8-1: the volatile cwd block carries a leading '\n' to match the
+    // flat-path byte layout; the cached stable blocks (BASE/TAIL) are unchanged.
+    expect(system[2]!.text).toBe('\n' + CWD);
     expect(system[0]!.cache_control).toEqual({ type: 'ephemeral' });
     expect(system[1]!.cache_control).toEqual({ type: 'ephemeral' });
     expect(system[2]!.cache_control).toBeUndefined();
@@ -2201,7 +2203,8 @@ describe('dual system cache breakpoint', () => {
     const system = transport.requests[0]!.system as TextBlockParam[];
     expect(system).toHaveLength(2);
     expect(system[0]!.text).toBe(BASE + TAIL);
-    expect(system[1]!.text).toBe(CWD);
+    // audit r4 Z8-1: volatile cwd block carries a leading '\n' (see above).
+    expect(system[1]!.text).toBe('\n' + CWD);
     expect(system[0]!.cache_control).toEqual({ type: 'ephemeral' });
     expect(system[1]!.cache_control).toBeUndefined();
   });

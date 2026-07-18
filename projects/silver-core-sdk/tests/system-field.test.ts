@@ -46,7 +46,10 @@ describe('system assembly <-> derivation contract', () => {
     // the invariant that breaks when an append lands before the baseLen offset.
     const stableJoined = blocks.slice(0, blocks.length - 1).join('');
     expect(stableJoined).toBe(engineConfig.systemPrompt);
-    expect(blocks.at(-1)).toBe(engineConfig.systemPromptSuffix);
+    // audit r4 Z8-1: the volatile block carries a leading '\n' so the split
+    // path's wire bytes match the flat path (which joins stable+suffix with
+    // '\n'); the stable prefix above is unchanged.
+    expect(blocks.at(-1)).toBe('\n' + engineConfig.systemPromptSuffix);
     expect(derived.boundary).toBe(
       engineConfig.systemPromptBaseLen !== undefined &&
         engineConfig.systemPromptBaseLen > 0 &&
@@ -125,7 +128,8 @@ describe('system assembly <-> derivation contract', () => {
       engineConfig.systemPromptSuffix !== undefined ? 'first' : 'last',
     );
     if (engineConfig.systemPromptSuffix !== undefined) {
-      expect(blocks).toEqual([engineConfig.systemPrompt, engineConfig.systemPromptSuffix]);
+      // audit r4 Z8-1: volatile block carries a leading '\n' (see above).
+      expect(blocks).toEqual([engineConfig.systemPrompt, '\n' + engineConfig.systemPromptSuffix]);
     }
   });
 });
