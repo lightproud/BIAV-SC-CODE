@@ -1,7 +1,7 @@
 {
-  "name": "@biav/agent-sdk",
-  "version": "0.66.1",
-  "description": "BIAV agent SDK (Silver Core) - independent agent harness with a claude-agent-sdk compatible surface, driving the Anthropic Messages API directly (no bundled CLI binary).",
+  "name": "silver-core-agent-sdk",
+  "version": "0.67.0",
+  "description": "Silver Core Agent SDK - independent agent harness with a claude-agent-sdk compatible surface, driving the Anthropic Messages API directly (no bundled CLI binary).",
   "license": "MIT",
   "type": "module",
   "main": "./dist/index.js",

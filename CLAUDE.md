@@ -298,8 +298,8 @@ brain-in-a-vat/
 │   ├── wiki/   # 已冻结（2026-07-12 原使命#2 取消，成果保留）：VitePress 站点 + 72 角色数据库
 │   ├── site/   # 对外门户：静态站（public/）+ 设计令牌（design/）
 │   ├── game/   # 衍生游戏（退主线，守密人个人兴趣，不主线派发）
-│   ├── silver-core-sdk/  # 使命#2 通用 AI 底层开发基地（2026-07-12 转正）· 银芯→黑池单向输出物：Claude Agent SDK 干净重实现（原名 bpt-agent-sdk，2026-07-10 更名；npm 名 @biav/agent-sdk，2026-07-18 monorepo 更名映射），见 project-status「## Silver Core SDK」
-│   └── orchestrator-sdk/ # 使命#2 编排 SDK（@biav/orchestrator-sdk）：钟 / 跨会话状态 / 会话装配零件（任务台账等），依赖单向 编排→代理，需求档 scs-req-orchestrator-sdk-20260717.md
+│   ├── silver-core-sdk/  # 使命#2 通用 AI 底层开发基地（2026-07-12 转正）· 银芯→黑池单向输出物：Silver Core Agent SDK——Claude Agent SDK 干净重实现（原名 bpt-agent-sdk，2026-07-10 更名；npm 名 silver-core-agent-sdk，2026-07-18 定名），见 project-status「## Silver Core SDK」
+│   └── silver-core-maestro-sdk/ # 使命#2 Silver Core Maestro SDK（npm 名 silver-core-maestro-sdk，乐队指挥意象）：钟 / 跨会话状态 / 会话装配零件（任务台账等），依赖单向 maestro→agent，需求档 scs-req-orchestrator-sdk-20260717.md
 ├── memory/                        # 银芯记忆层（决策 / 方法论 / 踩坑 / active hub）
 │   ├── active/                    # 主题入口卡（4 个高频 hub，优先读这里再下钻）
 │   ├── archive/ research/ strategy/

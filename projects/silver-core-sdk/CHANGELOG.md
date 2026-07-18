@@ -16,6 +16,19 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.67.0 — 2026-07-18
+
+Family naming finalized (keeper ruling 2026-07-18, superseding the same-day
+@biav spelling): the npm package is renamed **@biav/agent-sdk ->
+`silver-core-agent-sdk`**, brand name **Silver Core Agent SDK**. The sibling
+orchestrator package is `silver-core-hamelin-sdk` (Silver Core Hamelin SDK,
+named after the Morimens conductor-awakened). Rename scope is unchanged from
+0.66.0: npm identity ONLY — runtime brand strings (User-Agent
+`silver-core-sdk/<version>`, error prefixes, conformance labels) and the
+directory `projects/silver-core-sdk/` stay put. `npm pack` output becomes
+`silver-core-agent-sdk-<version>.tgz` from this version on. No feature or
+behavior changes.
+
 ## 0.66.1 — 2026-07-18
 
 T52 r4 audit — Tier 1 (P0 / security / high) fix campaign: **64 defects

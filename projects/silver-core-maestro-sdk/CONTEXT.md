@@ -1,4 +1,4 @@
-# CONTEXT — @biav/orchestrator-sdk(银芯编排 SDK)
+# CONTEXT — silver-core-maestro-sdk(银芯编排 SDK)
 
 > 动手前先读本档。需求裁定书(建成什么样的唯一权威):
 > `Public-Info-Pool/Resource/repo-engineering/scs-req-orchestrator-sdk-20260717.md`
@@ -8,13 +8,13 @@
 ## 定位
 
 编排 SDK 持有分子:钟、跨会话状态、会话装配。代理 SDK(`projects/silver-core-sdk/`,
-npm 名 `@biav/agent-sdk`)持有原子:一次结构化调用。判别式:节点要活得比父调用久、
+npm 名 `silver-core-agent-sdk`)持有原子:一次结构化调用。判别式:节点要活得比父调用久、
 或要等墙钟/外部事件 → 编排;否则 → 代理引擎内。
 
 三条硬性质(红线,违规推倒重来):
 
 1. 库不是框架——宿主持有 main(),零件可单独拿取。
-2. 对代理 SDK 无特权通道——只准 import `@biav/agent-sdk` 公开面;深路径 / 相对路径
+2. 对代理 SDK 无特权通道——只准 import `silver-core-agent-sdk` 公开面;深路径 / 相对路径
    伸进代理源码 = 违规。CI `check-dep-direction` 机器执法(反向 import 亦红)。
 3. 数据面在 SDK、渲染在宿主——送达/显示只定契约缝,实现宿主注入。
 

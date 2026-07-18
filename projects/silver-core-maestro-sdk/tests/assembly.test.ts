@@ -17,7 +17,7 @@ import {
   type SessionFilter,
   type SessionRecord,
   type SessionState,
-} from '@biav/orchestrator-sdk';
+} from 'silver-core-maestro-sdk';
 
 /** The host's own storage battery, written against the public seam only. */
 function hostStore(): LedgerStore {
