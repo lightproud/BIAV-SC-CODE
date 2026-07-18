@@ -1,8 +1,8 @@
 {
   "date": "2026-07-18",
-  "archived_at": "2026-07-18T13:10:25.459069+00:00",
+  "archived_at": "2026-07-18T15:57:11.056357+00:00",
   "source": "steam",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "title": "[正面] Lovecraft+beach episode, collab of the century",
@@ -22,6 +22,30 @@
         "playtime_forever": 845,
         "votes_up": 0,
         "timestamp_created": 1784325036
+      },
+      "region": "global",
+      "archive_subtype": "review",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 太好玩了我一口气狂玩六小时",
+      "summary": "太好玩了我一口气狂玩六小时",
+      "source": "steam_review",
+      "time": "2026-07-18T12:31:51+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199019429221/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199019429221",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 386,
+        "votes_up": 0,
+        "timestamp_created": 1784377911
       },
       "region": "global",
       "archive_subtype": "review",

@@ -1,8 +1,8 @@
 {
   "date": "2026-07-17",
-  "archived_at": "2026-07-18T13:10:25.559851+00:00",
+  "archived_at": "2026-07-18T15:57:11.164522+00:00",
   "source": "google_play",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "title": "[Google Play 好评] ★5 Советую эту игру всем любителям мрачной",
@@ -16,6 +16,20 @@
       "tags": [],
       "lang": "ru",
       "platform_region": "ru",
+      "region": "global"
+    },
+    {
+      "title": "[Google Play 好评] ★5 I love this game! 10/10 But although it'",
+      "summary": "I love this game! 10/10 But although it's a wonderful game, I suggest re-writing the old and rushed chapters due to the game almost hitting EOS. Like chapter 7 & 8. I also recommend buffing the old characters like daffodil and buff the ultra realm.",
+      "source": "google_play",
+      "time": "2026-07-17T13:19:56",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-9499052d-7197-4179-a623-55626662f8ee",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "Eulyn Lolol",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "us",
       "region": "global"
     }
   ],

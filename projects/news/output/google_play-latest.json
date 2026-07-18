@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-18T13:09:45.119639+00:00",
+  "collected_at": "2026-07-18T15:56:20.073937+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 111,
+  "item_count": 110,
   "items": [
     {
       "source": "google_play",
@@ -273,6 +273,16 @@
       "summary": "觉得还行",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=zh_CN#gp-57f4f9db-558e-4842-b184-3a7e848970ad",
       "author": "元气豆芽（YQBean）",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-07-17T13:19:56",
+      "lang": "en",
+      "title": "[Google Play 好评] ★5 I love this game! 10/10 But although it'",
+      "summary": "I love this game! 10/10 But although it's a wonderful game, I suggest re-writing the old and rushed chapters due to the game almost hitting EOS. Like chapter 7 & 8. I also recommend buffing the old characters like daffodil and buff the ultra realm.",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-9499052d-7197-4179-a623-55626662f8ee",
+      "author": "Eulyn Lolol",
       "engagement": 0
     },
     {
@@ -587,16 +597,6 @@
     },
     {
       "source": "google_play",
-      "time": "2026-06-18T13:34:40",
-      "lang": "en",
-      "title": "[Google Play 好评] ★5 I love it 😭",
-      "summary": "I love it 😭",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-b123e316-4bf2-48ae-8ff3-93f0a483f409",
-      "author": "hanagashi Mitsuki",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
       "time": "2026-07-06T12:21:34",
       "lang": "ko",
       "title": "[Google Play 好评] ★4 재밌긴한데 스토리 영상 보고오면 화면이 멈춰요. 그것만 고쳐주세요",
@@ -783,16 +783,6 @@
       "summary": "suka sama desain karakter nya namun belum terlalu banyak karakter nya, namun game ini memiliki banyak potensi yang dapat di kembangkan kedepannya",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=id#gp-1417f247-8f77-4107-aa8c-76e8cbcd9038",
       "author": "Ryrvfiv",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-06-18T14:00:07",
-      "lang": "id",
-      "title": "[Google Play 好评] ★5 best game I ever played, I hope the Devs",
-      "summary": "best game I ever played, I hope the Devs can keep it up for the best!",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=id#gp-74d2c632-46bf-47a0-a8f6-dcb324649514",
-      "author": "Afrizal putra Purwanto",
       "engagement": 0
     },
     {
