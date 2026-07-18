@@ -1,0 +1,27 @@
+{
+  "date": "2026-07-18",
+  "archived_at": "2026-07-18T05:26:07.875923+00:00",
+  "source": "steam",
+  "item_count": 1,
+  "items": [
+    {
+      "title": "[Steam论坛] HHHII",
+      "summary": "L",
+      "source": "steam_discussion",
+      "time": "2026-07-18T03:10:01+00:00",
+      "url": "https://steamcommunity.com/app/3052450/discussions/0/578299159633945795/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "李",
+      "tags": [
+        "steam_forum"
+      ],
+      "region": "global",
+      "archive_subtype": "discussion",
+      "lang": "en",
+      "platform_region": "global"
+    }
+  ],
+  "region": "global",
+  "content_subtype": "discussion"
+}

@@ -1,9 +1,9 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-18T02:12:36.015284+00:00",
+  "collected_at": "2026-07-18T05:25:24.531082+00:00",
   "source": "google_play",
   "data_layer": "output",
-  "item_count": 113,
+  "item_count": 111,
   "items": [
     {
       "source": "google_play",
@@ -597,16 +597,6 @@
     },
     {
       "source": "google_play",
-      "time": "2026-06-18T05:16:11",
-      "lang": "en",
-      "title": "[Google Play 好评] ★5 Peak!!! I love everything, the story, de",
-      "summary": "Peak!!! I love everything, the story, designs, characters, and boss designs, plus super generous!!!! definitely worth playing!!!",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en#gp-3e03e6a9-9ce9-48fc-9858-40f7107c775a",
-      "author": "Shanika Oyales",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
       "time": "2026-07-06T12:21:34",
       "lang": "ko",
       "title": "[Google Play 好评] ★4 재밌긴한데 스토리 영상 보고오면 화면이 멈춰요. 그것만 고쳐주세요",
@@ -653,16 +643,6 @@
       "summary": "\"การผจญภัยแห่งดวงดาว!\"",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=th#gp-32e549ce-efd3-47c1-8fc1-9fb2535d404f",
       "author": "Shi Wouldgrave",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-06-18T04:00:53",
-      "lang": "th",
-      "title": "[Google Play 好评] ★5 ชอบเกมนี้มากๆเลยครับ 5 ดาวไปเลย :DDDD",
-      "summary": "ชอบเกมนี้มากๆเลยครับ 5 ดาวไปเลย :DDDD",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=th#gp-b790cb16-d367-4426-b648-333e6f90f982",
-      "author": "Thanabodi Ronkrathok",
       "engagement": 0
     },
     {

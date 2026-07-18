@@ -1,8 +1,8 @@
 {
   "date": "2026-07-17",
-  "archived_at": "2026-07-18T02:13:18.693962+00:00",
+  "archived_at": "2026-07-18T05:26:07.806418+00:00",
   "source": "bilibili",
-  "item_count": 21,
+  "item_count": 22,
   "items": [
     {
       "title": "【忘却前夜】相位鸟弟还是太超模啦！",
@@ -46,6 +46,29 @@
         "danmaku": 0
       },
       "media_url": "https://i2.hdslb.com/bfs/archive/562f46518f02efe336fe8a628b4ce30b60cd999e.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "摸鱼存档",
+      "summary": "-\n  └ 仟伍佰 (1赞): 来支持了妹子[打call][打call]\n  └ Kzi99-XmvxiaL (1赞): 依旧前期草稿寻找人类…主要是跟明信片团没抢到你朵的有点急哭",
+      "source": "bilibili",
+      "time": "2026-07-17T11:44:20+00:00",
+      "url": "https://www.bilibili.com/video/BV1xPNd61EGT",
+      "engagement": 150,
+      "is_hot": false,
+      "author": "Kzi99-XmvxiaL",
+      "tags": [
+        "绘画"
+      ],
+      "metadata": {
+        "play": 147,
+        "comment_count": 3,
+        "comments_fetched": 2,
+        "danmaku": 0
+      },
+      "media_url": "https://i1.hdslb.com/bfs/archive/4dd158a12fa93db2177d519e3ef09e123c13c3e0.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
