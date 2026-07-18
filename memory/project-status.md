@@ -211,6 +211,29 @@
 > **版本钟**：2026-07-18 守密人裁定两包**锁步同版**（覆盖需求档 §2 双钟制），0.68.0 起同号、
 > CI 守卫相等；此后本节版本号即家族版本号。
 
+## Silver Core Testbed（`projects/silver-core-testbed/`，试金石，2026-07-18 施工封面立项）
+
+> **一句话**：两包效果验证床——以「无宿主世界观的第二消费者」身份（private / 永不发布 /
+> 锁步豁免 / 仅公开导出面）自举巡检本仓，台账即评测数据源；漏缝清单为一等产出。
+> 权威档：`projects/silver-core-testbed/CONTEXT.md` + `GAPS.md` + `SOAK.md`。
+>
+> **进度**（2026-07-18 施工日，四战一次落成）：① 骨架——workspace 注册（消费者豁免注
+> 入根 package.json）、JSON 文件台账店、**LedgerStore 契约套件 14 例自写全绿**（验收 1；
+> SDK 未随包交付契约套件 = 漏缝 G1）、driverctl 启停脚本；② 巡检集——四巡检器
+> （CI 状态 / 文档死链 / 版本锁步 / 变异棘轮地板对账）目标清单全热层 json + 每日做梦
+> 归并卡（R9 三段卡经 agent SDK 校验器准入、R6 常驻索引、R8 保留剪除；记忆工具+台账+
+> 调度三件套全真实使用），首轮生产真跑 5 会话全 done；③ 浸泡演练（真实钟，封面明示
+> 反向豁免 fake-timer 纪律）——kill -9 恢复（慢 tick 保证在飞孤儿，崩溃自扫送回重试路径）
+> + 停机补偿（latest 恰 1 发 / all 逐点补齐）10 检查全 PASS，报告落 `state/drills/`；
+> ④ 首份效果基线 `testbed-baseline.json` 入库（完成率 1.0 / 熄火 0 / tokens 诚实 null
+> 留三配置实验槽）。CI `testbed-patrol.yml` 每日北京 15:20 无人值守（cron 刻意晚于
+> fire point，**每天走一遍错过补偿路径**）。**漏缝四条实缝**（G1 契约套件缺交付 /
+> G2 认领无租约 kill -9 孤儿靠宿主自扫 / G3 Scheduler 短命宿主零号日死锁 + sched id
+> 无公开构造器 / G4 memory 无原样读回），全走公开面绕行、无一触碰非公开面。
+> **等待真实时间**：验收 2「连续 7 天无人值守」自 CI 首轮起算；72h 连续长跑需常驻宿主
+> （跑法 `SOAK.md`）。首日真实发现：agent SDK `mutation-ratchet.json` 的 loop-support 靶
+> （地板 94.35）不在周检矩阵、从未被实测（ratchet 巡检器每日盯防此类缺口）。
+
 ## Silver Core SDK（`projects/silver-core-sdk/`，原名 BPT Agent SDK，2026-07-10 守密人裁定更名；npm 名 `silver-core-agent-sdk`，2026-07-18 定名，品牌名 Silver Core Agent SDK）
 
 > **更名注**：包名 `bpt-agent-sdk` → `silver-core-sdk`（0.41.0 起，含目录 / UA / clientInfo /
