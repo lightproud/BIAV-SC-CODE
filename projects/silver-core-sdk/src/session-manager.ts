@@ -481,6 +481,27 @@ export function createBptSession(options: SessionManagerOptions = {}): SessionMa
       return instrumentUsage(q, ledger);
     }
 
+    // WV3-1 (audit r3): transparent auto-resume rebuilds `q` from the ORIGINAL
+    // options, so a consumer's runtime control-plane tightening
+    // (setPermissionMode / setModel / setMaxThinkingTokens / retained regions)
+    // was silently reverted to base on every redrive — new tool calls then ran
+    // at the base permission mode. Record the latest value of each override as
+    // the wrapper forwards it, and replay them onto the fresh query after a
+    // resume. Retained regions are an accumulated set (adds minus removes).
+    const pending: {
+      permissionMode?: Parameters<Query['setPermissionMode']>[0];
+      model?: Parameters<Query['setModel']>[0];
+      maxThinkingTokens?: Parameters<Query['setMaxThinkingTokens']>[0];
+      maxThinkingTokensSet: boolean;
+      retainedRegions: Map<string, Parameters<Query['setRetainedRegion']>[0]>;
+    } = { retainedRegions: new Map(), maxThinkingTokensSet: false };
+    const replayControlPlane = (): void => {
+      if (pending.permissionMode !== undefined) q.setPermissionMode(pending.permissionMode);
+      if (pending.model !== undefined) q.setModel(pending.model);
+      if (pending.maxThinkingTokensSet) q.setMaxThinkingTokens(pending.maxThinkingTokens!);
+      for (const region of pending.retainedRegions.values()) q.setRetainedRegion(region);
+    };
+
     const maxResumes = recovery?.maxResumes ?? 2;
     let sessionId: string | undefined;
     let attempts = 0;
@@ -569,6 +590,9 @@ export function createBptSession(options: SessionManagerOptions = {}): SessionMa
       // No prompt is re-sent (the resumed query's §5.2 redrive continues the
       // interrupted turn against the persisted history).
       q = start({ sessionId: sessionId! });
+      // WV3-1: re-apply the runtime control-plane overrides the consumer set on
+      // the retired query, so the resumed query does not silently drop to base.
+      replayControlPlane();
     };
 
     const wrapped: Query = {
@@ -683,9 +707,20 @@ export function createBptSession(options: SessionManagerOptions = {}): SessionMa
         return wrapped;
       },
       interrupt: () => q.interrupt(),
-      setPermissionMode: (mode) => q.setPermissionMode(mode),
-      setModel: (model) => q.setModel(model),
-      setMaxThinkingTokens: (n) => q.setMaxThinkingTokens(n),
+      // WV3-1: record each override so a resume can replay it (see replayControlPlane).
+      setPermissionMode: (mode) => {
+        pending.permissionMode = mode;
+        return q.setPermissionMode(mode);
+      },
+      setModel: (model) => {
+        pending.model = model;
+        return q.setModel(model);
+      },
+      setMaxThinkingTokens: (n) => {
+        pending.maxThinkingTokens = n;
+        pending.maxThinkingTokensSet = true;
+        return q.setMaxThinkingTokens(n);
+      },
       initializationResult: () => q.initializationResult(),
       supportedCommands: () => q.supportedCommands(),
       supportedModels: () => q.supportedModels(),
@@ -697,8 +732,16 @@ export function createBptSession(options: SessionManagerOptions = {}): SessionMa
       setMcpServers: (servers) => q.setMcpServers(servers),
       rewindFiles: (id, opts) => q.rewindFiles(id, opts),
       stopTask: (taskId) => q.stopTask(taskId),
-      setRetainedRegion: (region) => q.setRetainedRegion(region),
-      removeRetainedRegion: (id) => q.removeRetainedRegion(id),
+      setRetainedRegion: (region) => {
+        // Region carries its own id; a re-set overwrites, matching the query's
+        // own last-write-wins semantics for a given region id.
+        pending.retainedRegions.set(region.id, region);
+        return q.setRetainedRegion(region);
+      },
+      removeRetainedRegion: (id) => {
+        pending.retainedRegions.delete(id);
+        return q.removeRetainedRegion(id);
+      },
       streamInput: (stream) => q.streamInput(stream),
       close: () => q.close(),
     };

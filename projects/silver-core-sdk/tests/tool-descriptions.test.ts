@@ -67,6 +67,19 @@ describe('faithful tool descriptions', () => {
     }
   });
 
+  it('RED LINE (W7-1/W7-2): WebFetch does not claim an AI summarizer or a cache it lacks', () => {
+    // The direct-API WebFetch returns converted+truncated page text; there is
+    // no sub-model summarizer and no URL cache (webfetch.ts). The description
+    // must not narrate either, or the model expects a summarized answer /
+    // cached speed it never gets.
+    const wf = D.WEBFETCH_DESCRIPTION;
+    expect(wf).not.toMatch(/processes it using an AI model/i);
+    expect(wf).not.toMatch(/using a small, fast model/i);
+    expect(wf).not.toMatch(/Returns the model's response/i);
+    expect(wf).not.toMatch(/cache/i);
+    expect(wf).not.toMatch(/\bsummariz/i);
+  });
+
   it('Workflow description states the honest synchronous adaptation and the shipped caps', () => {
     // The official tool is async (task-notification delivery); ours runs the
     // workflow synchronously inside the tool call — the description must say

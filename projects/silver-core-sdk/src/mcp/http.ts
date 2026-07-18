@@ -42,6 +42,12 @@ const DEFAULT_REQUEST_TIMEOUT_MS = 60_000;
 const SESSION_DELETE_TIMEOUT_MS = 2_000;
 /** Safety cap on tools/list pagination to avoid a misbehaving-server loop. */
 const MAX_LIST_PAGES = 100;
+/** W8-2 (audit r3): max bytes the SSE reader may accumulate — for a single
+ *  unterminated line (no `\n`) OR across the data lines of one event — before
+ *  treating the stream as hostile. A server/MITM that never emits a boundary
+ *  would otherwise grow the buffer without bound → OOM. 16 MiB dwarfs any real
+ *  JSON-RPC response. */
+const MAX_SSE_BUFFER_BYTES = 16 * 1024 * 1024;
 
 type JsonRpcId = string | number;
 
@@ -512,6 +518,20 @@ export class HttpMcpConnection {
         const { done, value } = await reader.read();
         if (done) break;
         buffer += decoder.decode(value, { stream: true });
+        // W8-2: bound both the unterminated-line buffer and the accumulated
+        // event data. Past the cap with no newline in sight, the server is not
+        // framing messages — abort rather than grow to OOM.
+        if (
+          buffer.length > MAX_SSE_BUFFER_BYTES ||
+          dataLines.reduce((n, l) => n + l.length, 0) > MAX_SSE_BUFFER_BYTES
+        ) {
+          throw new McpError(
+            'mcp_invalid_response',
+            `MCP server '${this.label}' SSE stream exceeded ${MAX_SSE_BUFFER_BYTES} bytes ` +
+              `without a complete message; aborting`,
+            { serverLabel: this.label, transport: 'http', phase: 'request' },
+          );
+        }
         let newlineIdx: number;
         while ((newlineIdx = buffer.indexOf('\n')) !== -1) {
           let line = buffer.slice(0, newlineIdx);

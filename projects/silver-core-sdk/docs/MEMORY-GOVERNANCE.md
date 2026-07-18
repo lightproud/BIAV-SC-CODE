@@ -86,7 +86,9 @@ one-flag SDK guarantee:
 
 1. **Memory degrades to read-only** — `view` stays available ("knows you,
    doesn't record you"), the five write commands return the exported
-   `INCOGNITO_MEMORY_ERROR` constant. RATIFIED (keeper ruling
+   `INCOGNITO_MEMORY_ERROR` constant (the sole exception is a `delete`/`rename`
+   targeting the `/memories` root itself, where the root-protection error is
+   returned first — the write is still refused). RATIFIED (keeper ruling
    2026-07-12 Beijing, todo T27): read-kept IS the settled default. The
    de-personalization variant ("don't even read memory this time") stays a
    consumer-side option — `disallowedTools: ['memory']` or

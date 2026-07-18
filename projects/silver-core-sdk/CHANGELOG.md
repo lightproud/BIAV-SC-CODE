@@ -16,6 +16,61 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.71.1 — 2026-07-18
+
+T51 audit r3 — batches N (docs contract) + P (high-severity source), all
+verified STILL-LIVE at 0.71.0 (the audit ran on 0.64.3) and fixed with
+regression locks.
+
+Batch N — docs↔code contract (W5-1..9):
+- README documented the DELETED slash-bridge exports (`parseLoopCommand`,
+  `createPromptLoop`, `LOOP_SLASH_COMMAND`, `createSessionGoal`,
+  `GOAL_SLASH_COMMAND`) as importable — a copy-paste TypeError. The `## /loop`
+  and `## /goal` sections are replaced with a truthful `options.goal` section
+  plus a slash-retirement note. New `tests/readme-export-contract.test.ts`
+  fails if the README ever again imports a non-existent export.
+- Built-in tools section corrected: 26 defaults (was "22"), NotebookEdit
+  removed (never shipped), TodoWrite marked legacy-only, MCP resource tools
+  renamed to their real `…Tool` names + `ReadMcpResourceDirTool` added,
+  `EnterPlanMode` / `SendMessage` added.
+- OPENAI-PROTOCOL.md: Bearer is no longer called "the only scheme"
+  (`authHeaderName` supports Azure `api-key`); the `stream_options` caller
+  override is documented as the exception to "translator keys win".
+- MEMORY-GOVERNANCE.md: the incognito write-error claim notes the
+  root-protection edge case.
+
+Batch P — high-severity source (W7/W8/WZ1-1/WV3-1):
+- **W8-1 (SECURITY)**: a traversal session id reaching `resolveTranscriptPath`
+  / `filePath` could produce a `transcript_path` outside the store root that
+  hooks then READ. Both now fail closed on an unsafe id (return undefined /
+  throw ConfigurationError).
+- **WZ1-1**: the post-fold M5 overflow guard calibrated against the
+  floor-clamped `preTokens`, collapsing the calibration to ≈1 in the exact
+  under-estimate case it exists for — the suffix shed never fired and the next
+  request 400'd. Now calibrates against the UNCLAMPED pre-fold estimate
+  (mirrors `partitionForCompaction`).
+- **WV3-1**: transparent auto-resume rebuilt the query from the ORIGINAL
+  options, silently reverting a consumer's runtime control-plane overrides
+  (`setModel` / `setPermissionMode` / `setMaxThinkingTokens` / retained
+  regions). The wrapper now records each override and replays it onto the
+  resumed query.
+- **W7-1/W7-2**: the WebFetch description claimed an AI-model summarizer and a
+  "15-minute cache" — neither ships (webfetch.ts returns converted+truncated
+  text). Adapted to actual behavior; provenance flipped to `faithful:false`
+  (the reproduction doctrine's own "omit unshipped features" rule). Red-line
+  test extended to forbid the capability claims.
+- **W7-3**: `Glob` passed `dot:false`, so `**` silently skipped files under
+  hidden directories — `Glob('**/*.yml')` missed `.github/workflows/*.yml`.
+  Now `dot:true` (`.git` / `node_modules` still excluded via IGNORE_PATTERNS).
+- **W8-2**: the MCP stdio stdout accumulator and the HTTP SSE reader had no
+  frame-size cap — a stream with no newline grew unbounded → OOM. Both now
+  bound at 16 MiB (stdout drops the runaway line; SSE throws McpError).
+
++regression locks (`tests/audit-r3-batch-p.test.ts` + additions to
+tool-descriptions / compaction / session-recovery / readme-export-contract);
+full vitest 3042 passed + 2 skipped. Batches N+P cleared; T51 batches O/Q/R/S/T
+remain open.
+
 ## 0.71.0 — 2026-07-18
 
 Testbed gap adoption, agent-side slice (keeper ruling 2026-07-18, option 甲;

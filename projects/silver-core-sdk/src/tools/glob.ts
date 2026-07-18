@@ -77,7 +77,11 @@ export const globTool: BuiltinTool = {
     const entries = await fg(pattern, {
       cwd: baseDir,
       absolute: true,
-      dot: false,
+      // W7-3 (audit r3): `dot: false` made `**` silently skip files under
+      // hidden directories, so `Glob('**/*.yml')` returned "No files found"
+      // for `.github/workflows/*.yml`. Official Claude Code Glob matches
+      // dotfiles; `.git` / `node_modules` stay excluded via IGNORE_PATTERNS.
+      dot: true,
       // Y5-1 (audit r4): the F1 loop guard set followSymbolicLinks:false, but
       // with onlyFiles:true fast-glob ALSO drops symlinks that point to a
       // regular file (a non-followed symlink's dirent is a symlink, not a file),

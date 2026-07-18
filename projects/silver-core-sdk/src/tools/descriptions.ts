@@ -484,11 +484,10 @@ Returns a summary of each task:
 
 Use TaskGet with a specific task ID to view full details including description.`;
 
-export const WEBFETCH_DESCRIPTION = `- Fetches content from a specified URL and processes it using an AI model
+export const WEBFETCH_DESCRIPTION = `- Fetches content from a specified URL and returns it as text for you to analyze
 - Takes a URL and a prompt as input
-- Fetches the URL content, converts HTML to markdown
-- Processes the content with the prompt using a small, fast model
-- Returns the model's response about the content
+- Fetches the URL content and converts HTML to markdown-style text
+- Returns the page text (truncated if very large) so you can extract what the prompt asks for on your next turn
 - Use this tool when you need to retrieve and analyze web content
 
 Usage notes:
@@ -497,8 +496,7 @@ Usage notes:
 - HTTP URLs will be automatically upgraded to HTTPS
 - The prompt should describe what information you want to extract from the page
 - This tool is read-only and does not modify any files
-- Results may be summarized if the content is very large
-- Includes a self-cleaning 15-minute cache for faster responses when repeatedly accessing the same URL
+- Very large pages are truncated; narrow the URL or re-fetch a more specific page if the part you need was cut off
 - When a URL redirects to a different host, the tool will inform you and provide the redirect URL in a special format. You should then make a new WebFetch request with the redirect URL to fetch the content.
 - For GitHub URLs, prefer using the gh CLI via Bash instead (e.g., gh pr view, gh issue view, gh api).`;
 
@@ -879,7 +877,15 @@ export const TOOL_DESCRIPTION_PROVENANCE: ToolDescriptionProvenance[] = [
   { tool: 'TaskGet', faithful: true, slugs: ['tool-description-task-get'] },
   { tool: 'TaskUpdate', faithful: true, slugs: ['tool-description-taskupdate'] },
   { tool: 'TaskList', faithful: true, slugs: ['tool-description-tasklist'] },
-  { tool: 'WebFetch', faithful: true, slugs: ['tool-description-webfetch'] },
+  // ADAPTED (audit r3 W7-1/W7-2): the official WebFetch description narrates a
+  // sub-model summarizer ("processes it using an AI model", "Returns the
+  // model's response") and a "15-minute cache" — neither ships in this
+  // direct-API design (webfetch.ts returns converted+truncated page text; no
+  // cache). The reproduction doctrine's own rule is to OMIT clauses referencing
+  // features this SDK does not ship (never describe an unshipped capability),
+  // so the description is adapted to actual behavior; faithful:false keeps
+  // corpus-sync from holding it to the official byte-for-byte text.
+  { tool: 'WebFetch', faithful: false, slugs: ['tool-description-webfetch'] },
   { tool: 'WebSearch', faithful: true, slugs: ['tool-description-websearch'] },
   { tool: 'AskUserQuestion', faithful: true, slugs: ['tool-description-askuserquestion'] },
   { tool: 'EnterPlanMode', faithful: true, slugs: ['tool-description-enterplanmode'] },

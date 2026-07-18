@@ -460,6 +460,68 @@ describe('maybeAutoCompact', () => {
     });
   });
 
+  it('WZ1-1: a severe under-estimate (high knownPromptFloor) triggers the post-fold suffix shed', async () => {
+    // preTier on, with a large tool_result sitting in the retained suffix so
+    // preTierPrefix has something to shed. The post-fold ESTIMATE fits the
+    // budget, so with the OLD floor-clamped calibration (cal≈1) the guard
+    // believed the view fit and shed nothing. Calibrating on the UNCLAMPED
+    // pre-fold estimate makes cal≫1 when the real size (floor) dwarfs the
+    // estimate, so the shed fires. Drive the SAME input twice — floor 0 vs a
+    // huge floor — and assert the huge-floor run sheds strictly more.
+    // Large window so the post-fold ESTIMATE comfortably fits the input budget
+    // (no shed at cal≈1), while a huge foldable prefix still trips the fold
+    // trigger even at floor 0.
+    const preTierCfg = buildCompactionConfig({
+      contextWindowTokens: 20_000,
+      preTier: true,
+      preTierMaxToolResultChars: 200,
+    });
+    const bigToolResult = 'R'.repeat(6000); // >> preTierMaxToolResultChars
+    const makeViewWithSuffix = () => ({
+      messages: [
+        ...bigHistory(200), // huge prefix: folds even at knownPromptFloor 0
+        asstTool('Bash', { command: 'cat huge.log' }, 'tu_wz1'),
+        userToolResult('tu_wz1', bigToolResult),
+      ],
+    });
+
+    const remainingToolResultLen = (msgs: APIMessageParam[]): number => {
+      for (let i = msgs.length - 1; i >= 0; i -= 1) {
+        const c = msgs[i]!.content;
+        if (Array.isArray(c)) {
+          const tr = c.find((b) => (b as { type?: string }).type === 'tool_result');
+          if (tr) {
+            const content = (tr as { content?: unknown }).content;
+            return typeof content === 'string' ? content.length : -1;
+          }
+        }
+      }
+      return -1;
+    };
+
+    const noFloorView = makeViewWithSuffix();
+    await collect(
+      maybeAutoCompact(noFloorView, makeDeps({}), makeConfig(preTierCfg), 0, new AbortController().signal),
+    );
+    const highFloorView = makeViewWithSuffix();
+    await collect(
+      maybeAutoCompact(
+        highFloorView,
+        makeDeps({}),
+        makeConfig(preTierCfg),
+        500_000, // real prompt size dwarfs the heuristic estimate
+        new AbortController().signal,
+      ),
+    );
+
+    const noFloorLen = remainingToolResultLen(noFloorView.messages);
+    const highFloorLen = remainingToolResultLen(highFloorView.messages);
+    // The calibrated (high-floor) run sheds the oversized tool_result down to
+    // the preTier cap; the un-calibrated run leaves it whole.
+    expect(noFloorLen).toBe(bigToolResult.length);
+    expect(highFloorLen).toBeLessThan(bigToolResult.length);
+  });
+
   it('PreCompact continue:false vetoes compaction (view unchanged, no boundary)', async () => {
     const deps = makeDeps({ hooks: makeHooks({ has: true, result: { continue: false } }) });
     const config = makeConfig(smallWindow);
