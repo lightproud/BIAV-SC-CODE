@@ -4,13 +4,29 @@
     "score": "Stryker mutation score = (killed + timeout) / (killed + timeout + survived + noCoverage) * 100; compile/runtime-error mutants excluded",
     "tolerance_pp": 0.75,
     "history": {
-      "2026-07-18 ledger-state seeded": "state.ts (task-ledger pure core: closed transition graph + retry arithmetic, SCS-REQ orchestrator-sdk §4) seeded at 100.00 after one kill round (92.77 -> 100.00: error-message byte pins + negative/zero/non-finite backoff-policy boundary tests; 83 killed, 0 survived)."
+      "2026-07-18 ledger-state seeded": "state.ts (task-ledger pure core: closed transition graph + retry arithmetic, SCS-REQ orchestrator-sdk §4) seeded at 100.00 after one kill round (92.77 -> 100.00: error-message byte pins + negative/zero/non-finite backoff-policy boundary tests; 83 killed, 0 survived).",
+      "2026-07-18 campaigns 3-6 seeded": "schedule-spec seeded at 100.00 (kill round: empty-id own-guard message pin + cap=1 boundary; 173 killed). workflow-graph seeded at 97.14 (kill round: exact cycle-path message pin killed the prefix-slice mutant; 3 survivors are a documented equivalence class: path-array seed junk is always stripped by the slice, finished-set memoization is performance-only in a DAG, optional chaining guards a validated-present map hit). goal-decision seeded at 100.00 (guard-message byte pin; 22 killed)."
     }
   },
   "targets": [
     {
       "name": "ledger-state",
       "mutate": "src/ledger/state.ts",
+      "floor": 100.0
+    },
+    {
+      "name": "schedule-spec",
+      "mutate": "src/schedule/spec.ts",
+      "floor": 100.0
+    },
+    {
+      "name": "workflow-graph",
+      "mutate": "src/workflow/graph.ts",
+      "floor": 97.14
+    },
+    {
+      "name": "goal-decision",
+      "mutate": "src/goal/decision.ts",
       "floor": 100.0
     }
   ]
