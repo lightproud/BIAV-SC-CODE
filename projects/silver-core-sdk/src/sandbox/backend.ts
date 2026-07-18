@@ -92,6 +92,63 @@ export function resolveSandboxBackend(
 }
 
 /**
+ * Non-secret environment essentials kept when `SandboxOptions.envScrub: true`.
+ * Enough for a typical shell command to run (find the shell, resolve $HOME,
+ * honor locale/timezone) while dropping every host secret. A host that needs a
+ * different set uses the `{ allow: [...] }` form instead (audit r2 Q1).
+ */
+export const DEFAULT_SANDBOX_ENV_ALLOWLIST: readonly string[] = [
+  'PATH',
+  'HOME',
+  'USER',
+  'LOGNAME',
+  'SHELL',
+  'LANG',
+  'LANGUAGE',
+  'TERM',
+  'TZ',
+  'PWD',
+];
+
+/**
+ * Resolve `SandboxOptions.envScrub` to the concrete allowlist stored on
+ * SandboxContext (undefined = inherit the full env, the default). Exported for
+ * the query-layer sandbox-context assembly and its regression test.
+ */
+export function resolveEnvAllowlist(
+  envScrub: boolean | { allow?: readonly string[] } | undefined,
+): readonly string[] | undefined {
+  if (envScrub === undefined || envScrub === false) return undefined;
+  if (envScrub === true) return DEFAULT_SANDBOX_ENV_ALLOWLIST;
+  return envScrub.allow ?? DEFAULT_SANDBOX_ENV_ALLOWLIST;
+}
+
+/**
+ * Build the environment a shell spawn actually runs with. When the command is
+ * sandboxed AND an env allowlist is configured, the inherited base env is
+ * filtered to the allowlist before the sandbox overlay ($TMPDIR) is applied;
+ * otherwise the full base env passes through (default parity). An unsandboxed
+ * or escaped command always inherits the full base env — it makes no
+ * containment claim (audit r2 2026-07-17 Q1).
+ */
+export function resolveSpawnEnv(
+  baseEnv: NodeJS.ProcessEnv,
+  overlay: Record<string, string>,
+  sandbox: SandboxContext | undefined,
+  disableSandbox: boolean,
+): NodeJS.ProcessEnv {
+  const sandboxed = sandbox !== undefined && !disableSandbox;
+  const allow = sandboxed ? sandbox.envAllowlist : undefined;
+  if (allow === undefined) return { ...baseEnv, ...overlay };
+  const allowSet = new Set(allow);
+  const filtered: NodeJS.ProcessEnv = {};
+  for (const key of Object.keys(baseEnv)) {
+    if (allowSet.has(key)) filtered[key] = baseEnv[key];
+  }
+  return { ...filtered, ...overlay };
+}
+
+/**
  * Plan one shell spawn: identity args when unsandboxed or the escape hatch is
  * engaged for this call, else the backend's wrapped argv. Shared by the
  * foreground (bash.ts) and background (shells.ts) spawn sites so both are

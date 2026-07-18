@@ -512,6 +512,12 @@ export function encodeOpenAIRequest(
             json_schema: {
               name: 'structured_output',
               schema: req.output_config.format.schema,
+              // OPT-IN (provider.openai.strictStructuredOutput): constrained
+              // decoding guarantees a schema-valid answer, killing the engine's
+              // validate-and-retry churn. Off by default — strict mode 400s a
+              // non-conforming schema and is unimplemented on many gateways
+              // (audit r2 2026-07-17 B3).
+              ...(opts.strictStructuredOutput === true ? { strict: true } : {}),
             },
           },
         }

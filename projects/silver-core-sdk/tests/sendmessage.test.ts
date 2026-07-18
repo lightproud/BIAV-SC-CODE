@@ -419,6 +419,33 @@ describe('SubagentRuntime.sendMessage — background flow', () => {
     expect(notes[0]!.text).toContain('<summary>Agent "bg worker" replied</summary>');
   });
 
+  it('G4: the outgoing summary prefixes the background delivery notification (audit r2)', async () => {
+    const transport = new MockTransport([
+      textReplyEvents('bg done'),
+      textReplyEvents('bg reply'),
+    ]);
+    const runtime = makeRuntime({ transport });
+    const spawned = await runtime.makeSpawnFn(0)(
+      baseParams({ runInBackground: true, description: 'bg worker' }),
+    );
+    await runtime.settleAll();
+    runtime.drainCompletedResults();
+
+    const ack = await runtime.sendMessage({
+      to: spawned.agentId,
+      message: 'fix the null check you added',
+      summary: 'fix null check',
+      signal: new AbortController().signal,
+    });
+    expect(ack.isError).toBe(false);
+    await runtime.settleAll();
+    const notes = runtime.drainCompletedResults();
+    expect(notes).toHaveLength(1);
+    // The operator's recap now labels the exchange for a host progress display,
+    // instead of being validated then silently dropped.
+    expect(notes[0]!.text).toContain('<summary>"fix null check" — Agent "bg worker" replied</summary>');
+  });
+
   it('a stopped (killed) background worker can be continued — official semantics', async () => {
     let open!: () => void;
     const gate = new Promise<void>((r) => {

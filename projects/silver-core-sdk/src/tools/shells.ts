@@ -20,7 +20,7 @@ import { join } from 'node:path';
 
 import { AbortError } from '../errors.js';
 import { guardRegexPattern } from '../internal/regex-guard.js';
-import { planShellSpawn } from '../sandbox/backend.js';
+import { planShellSpawn, resolveSpawnEnv } from '../sandbox/backend.js';
 import { createTreeKiller, terminalStatus } from './kill-plan.js';
 import { detectSandboxEvidence, sandboxFailureHint } from '../sandbox/evidence.js';
 import type {
@@ -80,7 +80,12 @@ export function createShellManager(debug: (msg: string) => void): ShellManager {
       try {
         child = spawn(plan.command, plan.args, {
           cwd: ctx.cwd,
-          env: { ...(ctx.env as NodeJS.ProcessEnv), ...plan.envOverlay },
+          env: resolveSpawnEnv(
+            ctx.env as NodeJS.ProcessEnv,
+            plan.envOverlay,
+            ctx.sandbox,
+            disableSandbox,
+          ),
           stdio: ['ignore', 'pipe', 'pipe'],
           detached: true,
         });

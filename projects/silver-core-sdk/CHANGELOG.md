@@ -16,6 +16,47 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.65.7 — 2026-07-17
+
+T50 batch L — the three WONTFIX candidates, resolved per keeper ruling
+(2026-07-17, "按你建议推进"). All three were real but "is-it-a-bug" calls that
+needed adjudication; the fixes are opt-in / additive, changing no default
+behavior. Deeper re-investigation before implementing revised two reads:
+
+- **Q1 (env not scrubbed) — opt-in `SandboxOptions.envScrub`.** By default a
+  sandboxed command inherits the full `options.env ?? process.env`, host
+  secrets included (bubblewrap ships no `--clearenv`). A closer look confirmed
+  `options.env` is NOT a clean lever on its own: the API transport resolves its
+  credential from that SAME env, so scrubbing it there breaks auth unless
+  `provider.apiKey` is set. Added a sandbox-specific opt-in: `envScrub: true`
+  keeps a built-in non-secret essentials allowlist (PATH/HOME/USER/LOGNAME/
+  SHELL/LANG/LANGUAGE/TERM/TZ/PWD); `{ allow: [...] }` keeps only those keys;
+  unset/false = full env (parity). Applied at both spawn sites via
+  `resolveSpawnEnv`; unsandboxed/escaped commands always inherit the full env.
+  Documented in COMPAT + the bwrap docstring. Kept opt-in because a blanket
+  `--clearenv` breaks commands needing PATH/HOME and diverges from official.
+- **B3 (json_schema not strict) — opt-in `provider.openai.strictStructuredOutput`.**
+  The OpenAI transport passed `response_format.json_schema` without
+  `strict:true`, so OpenAI treated the schema as a suggestion and the engine
+  paid validate-and-retry churn. Verified the transport does NO schema
+  normalization, so an unconditional `strict:true` would 400 any schema not
+  meeting OpenAI's strict subset (additionalProperties:false + all-required) —
+  worse than the best-effort degrade, and unimplemented on many gateways.
+  Added the flag (default off): when set, `strict:true` rides the json_schema.
+- **G4 (SendMessage summary dropped) — forwarded to the delivery notification.**
+  The tool validated `summary` then dropped it. A first read concluded "nowhere
+  to forward"; re-investigation reversed that — the background delivery already
+  emits a `task_notification` with a host-consumed `summary` slot. The outgoing
+  recap now prefixes that summary (`"<recap>" — Agent "X" replied`), honoring
+  the schema's "for progress display" purpose. Threaded through the SendMessage
+  tool, the ToolContext.subagents bridge, and the runtime `sendMessage`;
+  foreground replies (which return inline, no async progress surface) are
+  unaffected.
+
+Regression lock: `tests/audit-t50-batch-l-wontfix.test.ts` (7 cases: envScrub
+resolution + spawn-env filtering + strict on/off) + a G4 case in
+`tests/sendmessage.test.ts`. Full vitest 2724 green (post-rebase onto batches E–K, T52); typecheck clean.
+
 ## 0.65.6 — 2026-07-17
 
 T50 batch L (kernel-latency / boundary / cosmetic) from the second-round

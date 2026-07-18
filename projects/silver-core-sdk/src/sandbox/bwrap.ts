@@ -13,6 +13,13 @@
  *     proxy layer is out of scope for v1, so network is binary on/off)
  *   - $TMPDIR redirected to a sandbox-writable dir (the -tmpdir fragment:
  *     "TMPDIR is automatically set to the correct sandbox-writable directory")
+ *   - ENVIRONMENT is NOT scrubbed by default (no --clearenv): the sandboxed
+ *     command inherits the full `options.env ?? process.env`, host secrets and
+ *     all (audit r2 2026-07-17 Q1). This matches the archived guidance (which
+ *     scopes isolation to filesystem writes + network, never env). A host that
+ *     must hide secrets from sandboxed commands opts in via
+ *     SandboxOptions.envScrub (resolveSpawnEnv applies the allowlist) — kept
+ *     opt-in because a blanket --clearenv breaks commands needing PATH/HOME/etc
  *   - NO --tmpfs /tmp: the shell state dir (persistent cwd/env replay) and the
  *     sandbox tmpDir both live under /tmp and are rw-bound individually; a
  *     tmpfs overlay would hide them and silently break persistence.

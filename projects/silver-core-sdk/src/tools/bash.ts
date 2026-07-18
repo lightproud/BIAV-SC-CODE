@@ -12,7 +12,7 @@ import { resolvePosixShells, SHELL_NOT_FOUND_GUIDANCE } from './shell-resolve.js
 import { createTreeKiller } from './kill-plan.js';
 import { AbortError, ConfigurationError } from '../errors.js';
 import { BASH_DESCRIPTION, BASH_WIN32_NOTE, buildBashSandboxNote } from './descriptions.js';
-import { planShellSpawn } from '../sandbox/backend.js';
+import { planShellSpawn, resolveSpawnEnv } from '../sandbox/backend.js';
 import { detectSandboxEvidence, sandboxFailureHint } from '../sandbox/evidence.js';
 import type { SandboxContext } from '../types.js';
 import type {
@@ -92,7 +92,12 @@ function runShell(
     try {
       child = spawn(plan.command, plan.args, {
         cwd: ctx.cwd,
-        env: { ...(ctx.env as NodeJS.ProcessEnv), ...plan.envOverlay },
+        env: resolveSpawnEnv(
+          ctx.env as NodeJS.ProcessEnv,
+          plan.envOverlay,
+          ctx.sandbox,
+          disableSandbox,
+        ),
         stdio: ['ignore', 'pipe', 'pipe'],
         detached: true,
       });
