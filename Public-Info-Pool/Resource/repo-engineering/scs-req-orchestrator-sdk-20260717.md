@@ -21,6 +21,13 @@
 
 ## §2 家族结构与依赖契约(碑文)
 
+> **命名覆盖注(守密人 2026-07-18 裁定,施工回填)**:两包定名 **Silver Core Agent SDK**
+> (npm `silver-core-agent-sdk`,目录 `projects/silver-core-sdk/` 维持 2026-07-10 裁定不动)与
+> **Silver Core Maestro SDK**(npm `silver-core-maestro-sdk`,乐队指挥意象,目录
+> `projects/silver-core-maestro-sdk/` 对齐 npm 名)。本节下文的 `@biav/agent-sdk` /
+> `@biav/orchestrator-sdk` 拼法为裁定书原文保留,以本注为准;其余条款(单向依赖 /
+> 版本钟 / 不做伞包等)全部不变。裁定记录见 `memory/decisions.md` 2026-07-18 定名条。
+
 - brain-in-a-vat 转 monorepo,两 workspace:`@biav/agent-sdk`(银芯代理 SDK,现 silver-core 更名承接)与 `@biav/orchestrator-sdk`(银芯编排 SDK)。
 - 各自 semver、各自发版节奏:代理慢(商品泵),编排快(跟宿主需求)。**两包版本钟永不同步,任何"顺手一起 bump"皆违规。**
 - **依赖单向:编排 → 代理。** 代理永不 import 编排、不感知其存在。共享代码只准下沉进代理 SDK 或独立第三包,禁止反向引用。CI 依赖方向检查机器执法。
