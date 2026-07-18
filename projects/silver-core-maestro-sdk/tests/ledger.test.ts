@@ -262,3 +262,76 @@ describe('TaskLedger.claimSession + DuplicateSessionError (review hardening 2026
     }
   });
 });
+
+describe('audit fixes 2026-07-18 (batch A)', () => {
+  // A1: an explicit-undefined override must fall back to the default, not
+  // override it — { maxDelayMs: undefined } previously poisoned the backoff
+  // arithmetic into nextRunAt NaN (a permanent 'retrying' wedge).
+  it('A1: constructor retry-merge drops undefined overrides so defaults apply', async () => {
+    const clock = testClock(0);
+    const ledger = new TaskLedger({
+      store: memoryStore(),
+      clock,
+      // Simulates { maxDelayMs: cfg.cap } with cfg.cap unset.
+      retry: { baseDelayMs: 100, factor: 1_000, maxDelayMs: undefined },
+    });
+    const s = await ledger.dispatch({ intent: 'a', maxAttempts: 3 });
+    await ledger.claimDue();
+    const r1 = await ledger.recordOutcome(s.id, { outcome: 'error', startedAt: 0, endedAt: 1 });
+    expect(r1.nextRunAt).toBe(clock.now() + 100);
+    clock.advance(100);
+    await ledger.claimDue();
+    // raw = 100 * 1000 = 100_000: must be capped by the DEFAULT maxDelayMs
+    // (60_000), not by undefined/NaN.
+    const r2 = await ledger.recordOutcome(s.id, { outcome: 'error', startedAt: 0, endedAt: 1 });
+    expect(r2.state).toBe('retrying');
+    expect(r2.nextRunAt).toBe(clock.now() + 60_000);
+  });
+
+  it('A2: dispatch rejects non-finite runAt with RangeError', async () => {
+    const ledger = new TaskLedger({ store: memoryStore(), clock: testClock() });
+    await expect(ledger.dispatch({ intent: 'x', runAt: NaN })).rejects.toThrowError(RangeError);
+    await expect(ledger.dispatch({ intent: 'x', runAt: Infinity })).rejects.toThrowError(RangeError);
+    await expect(ledger.dispatch({ intent: 'x', runAt: -Infinity })).rejects.toThrowError(RangeError);
+    await expect(ledger.dispatch({ intent: 'x', runAt: NaN })).rejects.toThrow(
+      /runAt must be a finite number or null/,
+    );
+  });
+
+  it('A2/A3: runAt null = manual-claim only — invisible to claimDue, started by claimSession', async () => {
+    const clock = testClock(1_000);
+    const ledger = new TaskLedger({ store: memoryStore(), clock });
+    const s = await ledger.dispatch({ intent: 'inline', runAt: null });
+    expect(s.nextRunAt).toBeNull();
+    expect(s.state).toBe('pending');
+    // A co-resident driver polling claimDue must never see it, at any time.
+    expect(await ledger.claimDue()).toHaveLength(0);
+    clock.advance(1_000_000);
+    expect(await ledger.claimDue()).toHaveLength(0);
+    // claimSession is the only way to start it.
+    const claimed = await ledger.claimSession(s.id);
+    expect(claimed).toMatchObject({ id: s.id, state: 'running', attempts: 1, nextRunAt: null });
+  });
+
+  // A4 (documented, not changed): the duplicate-id guard is get-then-put and
+  // assumes a single writer per idempotency key; a store that cannot show the
+  // racing row at get() time gets a last-write-wins put, not an error. True
+  // CAS belongs to the LedgerStore implementation. This pins that documented
+  // semantics.
+  it('A4: duplicate guard is get-then-put — an invisible racing row is overwritten, not rejected', async () => {
+    const store = memoryStore();
+    const blindStore: LedgerStore = {
+      ...store,
+      // Simulates the race window: the concurrent writer's row is not yet
+      // visible to the reader.
+      async getSession() {
+        return null;
+      },
+    };
+    const ledger = new TaskLedger({ store: blindStore, clock: testClock() });
+    await ledger.dispatch({ intent: 'first', id: 'race' });
+    const second = await ledger.dispatch({ intent: 'second', id: 'race' });
+    expect(second.intent).toBe('second');
+    expect(store.sessions.get('race')?.intent).toBe('second');
+  });
+});

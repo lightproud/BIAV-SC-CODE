@@ -169,6 +169,87 @@ describe("id hygiene (review hardening 2026-07-18): ':' banned in graph/node ids
   });
 });
 
+describe('audit D2: node id validation is GraphError, empty id rejected', () => {
+  it('rejects a missing (non-string) node id with GraphError, not a raw TypeError', () => {
+    const graph = { id: 'g', nodes: [{ id: undefined, intent: 'x' }] } as unknown as WorkflowGraph;
+    expect(() => validateGraph(graph)).toThrow(GraphError);
+    expect(() => validateGraph(graph)).toThrow(/node id must be a non-empty string/);
+  });
+
+  it('rejects a numeric node id with GraphError, not a raw TypeError', () => {
+    const graph = { id: 'g', nodes: [{ id: 42, intent: 'x' }] } as unknown as WorkflowGraph;
+    expect(() => validateGraph(graph)).toThrow(GraphError);
+  });
+
+  it('rejects an empty node id', () => {
+    expect(() => validateGraph({ id: 'g', nodes: [{ id: '', intent: 'x' }] })).toThrow(GraphError);
+    expect(() => validateGraph({ id: 'g', nodes: [{ id: '', intent: 'x' }] })).toThrow(
+      /node id must be a non-empty string/,
+    );
+  });
+});
+
+describe('audit D5: statically invalid node fields rejected up front', () => {
+  it('rejects an empty node intent', () => {
+    expect(() => validateGraph({ id: 'g', nodes: [{ id: 'a', intent: '' }] })).toThrow(GraphError);
+    expect(() => validateGraph({ id: 'g', nodes: [{ id: 'a', intent: '' }] })).toThrow(
+      /node 'a' intent must be a non-empty string/,
+    );
+  });
+
+  it('rejects a missing (non-string) node intent', () => {
+    const graph = { id: 'g', nodes: [{ id: 'a', intent: undefined }] } as unknown as WorkflowGraph;
+    expect(() => validateGraph(graph)).toThrow(GraphError);
+  });
+
+  it('rejects a non-integer maxAttempts', () => {
+    expect(() =>
+      validateGraph({ id: 'g', nodes: [{ id: 'a', intent: 'x', maxAttempts: 1.5 }] }),
+    ).toThrow(/node 'a' maxAttempts must be an integer >= 1/);
+  });
+
+  it('rejects maxAttempts < 1 and NaN', () => {
+    for (const bad of [0, -1, NaN]) {
+      expect(() =>
+        validateGraph({ id: 'g', nodes: [{ id: 'a', intent: 'x', maxAttempts: bad }] }),
+      ).toThrow(GraphError);
+    }
+  });
+
+  it('accepts maxAttempts: 1 and an undeclared maxAttempts', () => {
+    expect(() =>
+      validateGraph({ id: 'g', nodes: [{ id: 'a', intent: 'x', maxAttempts: 1 }] }),
+    ).not.toThrow();
+    expect(() => validateGraph({ id: 'g', nodes: [{ id: 'a', intent: 'x' }] })).not.toThrow();
+  });
+});
+
+describe('audit D1: prototype-chain hygiene in keyed state lookups', () => {
+  it("a node named 'toString' with no states is ready (no Object.prototype read)", () => {
+    const graph: WorkflowGraph = { id: 'g', nodes: [node('toString')] };
+    expect(readyNodes(graph, {})).toEqual(['toString']);
+  });
+
+  it("nodes named 'constructor' and 'hasOwnProperty' are ready from empty states", () => {
+    const graph: WorkflowGraph = { id: 'g', nodes: [node('constructor'), node('hasOwnProperty')] };
+    expect(readyNodes(graph, {})).toEqual(['constructor', 'hasOwnProperty']);
+  });
+
+  it("a dep named 'valueOf' that was never dispatched blocks its dependent (not fake-done)", () => {
+    const graph: WorkflowGraph = { id: 'g', nodes: [node('valueOf'), node('b', ['valueOf'])] };
+    expect(readyNodes(graph, {})).toEqual(['valueOf']);
+  });
+
+  it("graphStatus treats an undispatched 'toString' node as running, and done when own-keyed done", () => {
+    const graph: WorkflowGraph = { id: 'g', nodes: [node('toString')] };
+    expect(graphStatus(graph, {})).toBe('running');
+    const done = Object.create(null) as Record<string, SessionState | undefined>;
+    done['toString'] = 'done';
+    expect(graphStatus(graph, done)).toBe('done');
+    expect(readyNodes(graph, done)).toEqual([]);
+  });
+});
+
 describe('mutation kill round (2026-07-18): cycle path is EXACTLY the cycle', () => {
   it('strips the acyclic prefix and starts the report at the cycle entry', () => {
     const graph = {

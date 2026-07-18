@@ -143,6 +143,24 @@ export async function runStorePatrol(opts) {
     },
   });
 
+  // Orphan sweep: a previous run that crashed mid-attempt leaves its session
+  // wedged in 'running' — the id is taken, the state is not terminal, and
+  // claimDue never re-claims it (it only lists pending/retrying), so that
+  // day's patrol would hang until drain timeout on every rerun. Close the
+  // interrupted attempt out as an error so the session re-enters the normal
+  // retry/failed path; the :rN retry logic below then applies unchanged.
+  const orphans = await ledger.listSessions({ states: ['running'] });
+  for (const orphan of orphans) {
+    const now = Date.now();
+    await ledger.recordOutcome(orphan.id, {
+      outcome: 'error',
+      error: 'orphaned by previous run',
+      startedAt: now,
+      endedAt: now,
+    });
+    log(`recovered orphan ${orphan.id} (was running)`);
+  }
+
   const changes = [];
   const executor = async (session, { signal }) => {
     const target = session.payload.target;

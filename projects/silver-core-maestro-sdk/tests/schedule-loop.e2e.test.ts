@@ -67,6 +67,17 @@ describe('schedule loop e2e (fake timers, file-backed ledger)', () => {
     expect(result.phase2FiredIds.filter((id: string) => result.phase1FiredIds.includes(id))).toEqual([]);
     const lastPhase1 = Math.max(...result.phase1FiredIds.map(fireAtOf));
     expect(Math.min(...result.phase2FiredIds.map(fireAtOf))).toBeGreaterThan(lastPhase1);
+    // Audit H1: 'latest' must COLLAPSE the ~3 points missed in the 700ms gap
+    // to at most one compensation fire — an always-'all' regression fires >=2
+    // inside the down window.
+    const inDownWindow = result.phase2FiredIds
+      .map(fireAtOf)
+      .filter((at: number) => at <= lastPhase1 + 700);
+    expect(inDownWindow.length).toBeLessThanOrEqual(1);
+    // Grid alignment: every fire point sits on the anchored everyMs lattice.
+    for (const at of [...result.phase1FiredIds, ...result.phase2FiredIds].map(fireAtOf)) {
+      expect(at % 200).toBe(0);
+    }
     // Every fired session went through the driver into done, in ONE ledger file.
     const done = result.allSessions
       .filter((s: { state: string }) => s.state === 'done')
@@ -89,6 +100,11 @@ describe('schedule loop e2e (fake timers, file-backed ledger)', () => {
     }));
     expect(result.phase2FiredIds.length).toBeGreaterThanOrEqual(3);
     const fireAts = result.phase2FiredIds.map(fireAtOf);
+    // Audit H1: recovery resumed exactly from the ledger's last fire point —
+    // the first compensated point is lastPhase1 + everyMs, not re-anchored to
+    // "now" and not an epoch backfill.
+    const lastPhase1 = Math.max(...result.phase1FiredIds.map(fireAtOf));
+    expect(fireAts[0]).toBe(lastPhase1 + 200);
     expect([...fireAts].sort((a: number, b: number) => a - b)).toEqual(fireAts);
     // The compensated points are dense: consecutive multiples of everyMs.
     for (let i = 1; i < 3; i += 1) {

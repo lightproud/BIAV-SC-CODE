@@ -7,11 +7,15 @@
  * the injected sink DIRECTLY for immediacy — no polling, no driver. This is
  * the one component that executes inline by spec.
  *
- * Claiming: deliver() uses TaskLedger.claimSession (surgical, claims only its
- * own audit session), so the channel can safely share a ledger/store with a
- * driver and with concurrent deliver() calls. (An earlier draft used claimDue
- * and required a dedicated store partition; the review 2026-07-18 flagged the
- * steal/race and claimSession removed the constraint.)
+ * Claiming: deliver() dispatches the audit session with runAt: null
+ * (manual-claim only — nextRunAt persists as null, so claimDue never lists
+ * it) and then uses TaskLedger.claimSession (surgical, claims only its own
+ * audit session). Together these make the channel safe to share a
+ * ledger/store with a co-resident driver and with concurrent deliver()
+ * calls: even in the dispatch->claimSession window the session is invisible
+ * to a due-poll. (An earlier draft used claimDue and required a dedicated
+ * store partition; the review 2026-07-18 flagged the steal/race —
+ * claimSession plus runAt: null removed the constraint.)
  */
 
 import type { Clock } from '../clock.js';
@@ -45,7 +49,11 @@ export interface DeliveryChannel {
 }
 
 export interface DeliveryChannelOptions {
-  /** DEDICATED ledger — see the design constraint in the file-head comment. */
+  /**
+   * Ledger to audit into. Safe to SHARE with a driver: deliver() dispatches
+   * runAt: null (invisible to claimDue) and claims surgically via
+   * claimSession — no dedicated store partition required.
+   */
   ledger: TaskLedger;
   sink: DeliverySink;
   clock?: Pick<Clock, 'now'>;
@@ -68,16 +76,21 @@ export function createDeliveryChannel(opts: DeliveryChannelOptions): DeliveryCha
         throw new TypeError('deliver: message.body must be a non-empty string');
       }
       // Audit record = the full message, riding the normal session lifecycle.
+      // runAt: null = manual-claim only — a co-resident driver polling
+      // claimDue on the same store must never see this session, even in the
+      // dispatch->claimSession window (review finding 2026-07-18).
       const session = await opts.ledger.dispatch({
         id: `delivery:${idFactory()}`,
         intent: 'agent-delivery',
         maxAttempts: 1,
         payload: { message },
+        runAt: null,
       });
       // Surgical claim: claimSession takes ONLY the audit session — claimDue
       // would claim every due session in the store (stealing a co-resident
       // driver's work and racing concurrent deliver() calls; review finding
-      // 2026-07-18, fixed by the ledger's claimSession API).
+      // 2026-07-18, fixed by the ledger's claimSession API). With runAt: null
+      // above, claimSession is also the ONLY way this session can start.
       await opts.ledger.claimSession(session.id, clock.now());
       const startedAt = clock.now();
       try {

@@ -12,6 +12,7 @@
 import type { Clock } from '../clock.js';
 import { systemClock } from '../clock.js';
 import type { TaskLedger } from '../ledger/ledger.js';
+import { DuplicateSessionError } from '../ledger/ledger.js';
 import type { SessionRecord } from '../ledger/types.js';
 import type { GoalAction, GoalVerdict } from './decision.js';
 import { nextGoalAction } from './decision.js';
@@ -138,9 +139,14 @@ export class GoalChaser {
       throw new RangeError(`GoalChaser.chase: maxRounds must be an integer >= 1, got ${maxRounds}`);
     }
 
-    // Resume scan: contiguous existing rounds from 1 upward, one pass.
+    // Resume scan: contiguous existing rounds from 1 upward until the first
+    // gap. Deliberately UNBOUNDED by maxRounds: rounds beyond the budget can
+    // exist (a previous chase ran with a larger budget), and stopping the
+    // scan at maxRounds would re-judge a stale middle round as 'latest' while
+    // dropping the later ones from the result (review finding 2026-07-18).
+    // The exhaustion decision is applied against the true count below.
     const existing: SessionRecord[] = [];
-    for (let n = 1; n <= maxRounds; n += 1) {
+    for (let n = 1; ; n += 1) {
       const session = await this.#ledger.getSession(goalRoundSessionId(config.id, n));
       if (session === null) break;
       existing.push(session);
@@ -156,20 +162,34 @@ export class GoalChaser {
 
     for (;;) {
       if (pending === null) {
+        const sessionId = goalRoundSessionId(config.id, round);
         const payload: GoalRoundPayload = {
           goal: { id: config.id, description: config.description },
           data: config.payload,
           feedback,
           round,
         };
-        pending = await this.#ledger.dispatch({
-          id: goalRoundSessionId(config.id, round),
-          intent: `goal:${config.id}`,
-          payload,
-          ...(config.maxAttemptsPerRound !== undefined
-            ? { maxAttempts: config.maxAttemptsPerRound }
-            : {}),
-        });
+        try {
+          pending = await this.#ledger.dispatch({
+            id: sessionId,
+            intent: `goal:${config.id}`,
+            payload,
+            ...(config.maxAttemptsPerRound !== undefined
+              ? { maxAttempts: config.maxAttemptsPerRound }
+              : {}),
+          });
+        } catch (error) {
+          // A concurrent chase of the same goal id won the dispatch race for
+          // this round. Adopt-don't-crash: the existing session IS this round
+          // — await it like our own, so both chasers settle on the same round
+          // records and single-chase semantics are preserved (review finding
+          // 2026-07-18). Only the typed duplicate error is adopted; anything
+          // else (store failure) still escapes.
+          if (!(error instanceof DuplicateSessionError)) throw error;
+          const adopted = await this.#ledger.getSession(sessionId);
+          if (adopted === null) throw error;
+          pending = adopted;
+        }
       }
       const terminal = await this.#awaitTerminal(pending.id);
       pending = null;

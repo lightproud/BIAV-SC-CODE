@@ -249,3 +249,98 @@ describe("id hygiene (review hardening 2026-07-18): ':' banned in runId", () => 
     expect(() => new WorkflowRun({ ledger, graph, runId: 'a:b' })).toThrow(/must not contain ':'/);
   });
 });
+
+describe('audit D5: statically invalid node fields rejected at construction', () => {
+  it('an empty node intent throws GraphError up front, never dispatching anything', () => {
+    const ledger = new TaskLedger({ store: memoryStore() });
+    const graph: WorkflowGraph = {
+      id: 'g',
+      nodes: [
+        { id: 'a', intent: 'ok' },
+        { id: 'b', intent: '', deps: ['a'] },
+      ],
+    };
+    expect(() => new WorkflowRun({ ledger, graph, runId: 'r' })).toThrow(GraphError);
+  });
+
+  it('a non-integer node maxAttempts throws GraphError up front', () => {
+    const ledger = new TaskLedger({ store: memoryStore() });
+    const graph: WorkflowGraph = {
+      id: 'g',
+      nodes: [{ id: 'a', intent: 'x', maxAttempts: 2.5 }],
+    };
+    expect(() => new WorkflowRun({ ledger, graph, runId: 'r' })).toThrow(/maxAttempts/);
+  });
+});
+
+describe('audit D3: drainTimeoutMs validation', () => {
+  it.each([NaN, Infinity, -Infinity, 0, -5])(
+    'rejects %s with RangeError instead of silently disabling the timeout',
+    async (bad) => {
+      const { ledger } = harness(() => ({ outcome: 'ok' }));
+      const graph: WorkflowGraph = { id: 'g', nodes: [{ id: 'a', intent: 'x' }] };
+      const wf = new WorkflowRun({ ledger, graph, runId: 'r', pollIntervalMs: 10 });
+      await expect(wf.run({ drainTimeoutMs: bad })).rejects.toThrow(RangeError);
+    },
+  );
+
+  it('still waits indefinitely when drainTimeoutMs is omitted', async () => {
+    const { ledger, driver } = harness(() => ({ outcome: 'ok' }));
+    driver.start();
+    const graph: WorkflowGraph = { id: 'g', nodes: [{ id: 'a', intent: 'x' }] };
+    const wf = new WorkflowRun({ ledger, graph, runId: 'r', pollIntervalMs: 10 });
+    const resultP = wf.run();
+    await vi.advanceTimersByTimeAsync(2_000);
+    expect((await resultP).status).toBe('done');
+    await driver.stop();
+  });
+});
+
+describe("audit D1/D4: a '__proto__'-named node completes a run end-to-end", () => {
+  it("dispatches, records and converges a graph containing a '__proto__' node", async () => {
+    const graph: WorkflowGraph = {
+      id: 'pg',
+      nodes: [
+        { id: '__proto__', intent: 'work:proto' },
+        { id: 'join', intent: 'join', deps: ['__proto__'] },
+      ],
+    };
+    const { ledger, driver, calls } = harness(() => ({ outcome: 'ok', summary: 'psum' }));
+    driver.start();
+    const wf = new WorkflowRun({ ledger, graph, runId: 'r', pollIntervalMs: 10 });
+    // Old code wedges (the '__proto__' state write set the prototype instead
+    // of an own key), so a 5s budget makes the regression fail fast.
+    const resultP = wf.run({ drainTimeoutMs: 5_000 });
+    await vi.advanceTimersByTimeAsync(6_000);
+    const result = await resultP;
+    await driver.stop();
+
+    expect(result.status).toBe('done');
+    // Read own keys explicitly: an object-literal '__proto__' key in an
+    // expected value would itself trigger the prototype special case.
+    expect(Object.hasOwn(result.states, '__proto__')).toBe(true);
+    expect(result.states['__proto__']).toBe('done');
+    expect(result.states['join']).toBe('done');
+    expect(calls.map((c) => c.intent)).toEqual(['work:proto', 'join']);
+    expect(await ledger.getSession(workflowSessionId('pg', 'r', '__proto__'))).not.toBeNull();
+    // Convergence map keys the summary under the literal dep id.
+    expect(Object.hasOwn(calls[1]!.payload.workflow.deps, '__proto__')).toBe(true);
+    expect(calls[1]?.payload.workflow.deps['__proto__']).toBe('psum');
+  });
+
+  it("a node named 'toString' also runs to done (readyNodes own-property read)", async () => {
+    const graph: WorkflowGraph = {
+      id: 'tg',
+      nodes: [{ id: 'toString', intent: 'work:ts' }],
+    };
+    const { ledger, driver } = harness(() => ({ outcome: 'ok' }));
+    driver.start();
+    const wf = new WorkflowRun({ ledger, graph, runId: 'r', pollIntervalMs: 10 });
+    const resultP = wf.run({ drainTimeoutMs: 5_000 });
+    await vi.advanceTimersByTimeAsync(6_000);
+    const result = await resultP;
+    await driver.stop();
+    expect(result.status).toBe('done');
+    expect(result.states['toString']).toBe('done');
+  });
+});

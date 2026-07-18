@@ -42,9 +42,27 @@ export class GraphError extends Error {
 }
 
 /**
+ * Node ids are HOST DATA: 'toString', '__proto__', 'constructor' are all
+ * legal ids, so a bare states[id] read on a plain object would surface
+ * Object.prototype members (a function is !== undefined, so the node would
+ * never dispatch and the run would wedge). Every keyed state lookup goes
+ * through this own-property read (audit D1).
+ */
+function stateOf(
+  states: Record<string, SessionState | undefined>,
+  id: string,
+): SessionState | undefined {
+  return Object.hasOwn(states, id) ? states[id] : undefined;
+}
+
+/**
  * Throws GraphError unless the graph is well-formed: non-empty graph id, at
- * least one node, unique node ids, every dep referencing a declared node, no
- * self-dependency, no dependency cycle (one cycle path is named on failure).
+ * least one node, non-empty string node ids, unique node ids, non-empty node
+ * intents, integer maxAttempts >= 1 where declared, every dep referencing a
+ * declared node, no self-dependency, no dependency cycle (one cycle path is
+ * named on failure). Node intent/maxAttempts mirror the ledger's dispatch
+ * validation so a statically invalid node is rejected at WorkflowRun
+ * construction, not mid-flight after upstream nodes already ran (audit D5).
  */
 export function validateGraph(graph: WorkflowGraph): void {
   if (typeof graph.id !== 'string' || graph.id.length === 0) {
@@ -61,11 +79,27 @@ export function validateGraph(graph: WorkflowGraph): void {
   }
   const byId = new Map<string, WorkflowNode>();
   for (const node of graph.nodes) {
+    // GraphError (not a raw TypeError from a method call on undefined) for a
+    // missing/non-string id, and an empty id is rejected outright (audit D2).
+    if (typeof node.id !== 'string' || node.id.length === 0) {
+      throw new GraphError('node id must be a non-empty string');
+    }
     if (byId.has(node.id)) {
       throw new GraphError(`duplicate node id '${node.id}'`);
     }
     if (node.id.includes(':')) {
       throw new GraphError(`node id must not contain ':' (got '${node.id}')`);
+    }
+    if (typeof node.intent !== 'string' || node.intent.length === 0) {
+      throw new GraphError(`node '${node.id}' intent must be a non-empty string`);
+    }
+    if (
+      node.maxAttempts !== undefined &&
+      (!Number.isInteger(node.maxAttempts) || node.maxAttempts < 1)
+    ) {
+      throw new GraphError(
+        `node '${node.id}' maxAttempts must be an integer >= 1, got ${node.maxAttempts}`,
+      );
     }
     byId.set(node.id, node);
   }
@@ -118,8 +152,8 @@ export function readyNodes(
   return graph.nodes
     .filter(
       (node) =>
-        states[node.id] === undefined &&
-        (node.deps ?? []).every((dep) => states[dep] === 'done'),
+        stateOf(states, node.id) === undefined &&
+        (node.deps ?? []).every((dep) => stateOf(states, dep) === 'done'),
     )
     .map((node) => node.id);
 }
@@ -136,7 +170,7 @@ export function graphStatus(
 ): WorkflowStatus {
   let allDone = true;
   for (const node of graph.nodes) {
-    const state = states[node.id];
+    const state = stateOf(states, node.id);
     if (state === 'failed') return 'failed';
     if (state !== 'done') allDone = false;
   }

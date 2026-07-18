@@ -87,16 +87,53 @@ export function nextFireAt(spec: ScheduleSpec, after: number): number {
     const { hour, minute } = spec.dailyAt;
     const d = new Date(after);
     const sameDay = Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate(), hour, minute);
-    if (sameDay > after) return sameDay;
     // Date.UTC normalizes day overflow, so month/year rollover is exact.
-    return Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate() + 1, hour, minute);
+    const fire =
+      sameDay > after
+        ? sameDay
+        : Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate() + 1, hour, minute);
+    // Beyond the JS Date range (|after| > 8.64e15) the calendar math above is
+    // NaN; NaN would silently poison every downstream comparison, so refuse.
+    if (!Number.isFinite(fire)) {
+      throw new RangeError(`nextFireAt: fire time is outside the JS Date range for after=${after}`);
+    }
+    return fire;
   }
   // validateSpec pinned exactly-one-of, so reaching here means `every` is set.
   const every = spec.every as number;
   const anchor = spec.anchorAt ?? 0;
   if (after < anchor) return anchor;
   const steps = Math.floor((after - anchor) / every) + 1;
-  return anchor + steps * every;
+  let candidate = anchor + steps * every;
+  // Fractional `every` float guard: the division and the multiplication round
+  // independently, so the candidate can land EXACTLY on `after` (e.g. every
+  // 0.1, anchorAt 1, after 1.2 -> floor(0.19999.../0.1)=1 -> 1 + 2*0.1 ===
+  // 1.2). Returning t == after violates the strictly-greater contract and
+  // stalls firesBetween / the scheduler's lastFired forever. Advance whole
+  // steps until strictly greater; each step adds ~every, so one or two
+  // iterations suffice — unless `every` is below the float resolution at
+  // `after`'s magnitude, in which case no fire point is representable and we
+  // must refuse rather than spin.
+  let prevCandidate = candidate;
+  let extra = 0;
+  while (candidate <= after) {
+    extra += 1;
+    candidate = anchor + (steps + extra) * every;
+    // Flatness detection: each iteration adds a whole `every` step in exact
+    // arithmetic, so the ONLY way the float result fails to move is `every`
+    // below the float resolution at this magnitude — and then it will never
+    // move. Deterministic and testable, unlike an arbitrary iteration cap.
+    if (candidate === prevCandidate) {
+      throw new RangeError(
+        `nextFireAt: spec '${spec.id}': every=${every} is below float resolution at t=${after}; no representable next fire point`,
+      );
+    }
+    prevCandidate = candidate;
+  }
+  if (!Number.isFinite(candidate)) {
+    throw new RangeError(`nextFireAt: fire time overflowed for after=${after}`);
+  }
+  return candidate;
 }
 
 /**
@@ -120,6 +157,10 @@ export function firesBetween(
     throw new RangeError(`firesBetween: cap must be an integer >= 1, got ${cap}`);
   }
   const fires: number[] = [];
+  // Loop safety rests on nextFireAt's own contract: it returns STRICTLY
+  // greater than its input or throws (flatness detection) — pinned by its
+  // tests — so no separate non-advance guard is needed (an in-loop guard
+  // would be unreachable dead code).
   let t = nextFireAt(spec, afterExclusive);
   while (t <= untilInclusive) {
     fires.push(t);
