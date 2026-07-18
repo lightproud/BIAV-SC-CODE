@@ -41,6 +41,7 @@
 
 | ID | 账目 | 销案引 |
 |----|------|--------|
+| T53 | 编排 SDK 第一战接口设计挂账（施工封面 §2「设计先挂账」，签名级） | **2026-07-18 同日挂账同日销**：设计随第一战实现定稿（挂账为草案，两处实现偏差——事件集并入 claim / dispatch 不作流转事件——以定稿为准），全文见 `memory/decisions.md` 2026-07-18「编排 SDK 第一战」条；@biav/orchestrator-sdk 0.2.0 |
 | T41 | SCS-REQ-REPOS-01 §1/§2/§6 定位改写与文档落簿 | **2026-07-17 整天目标循环实现销案**（守密人驱动令）：POSITIONING 引擎层终态重写（三否定一肯定 + 扩展面三缝 + 钩子契约总则）、COMPAT 降级参照笔记（义务表述清零、chase 双触发）、decisions.md 两条覆盖注、钩子契约总则入 ARCHITECTURE §E；silver-core-sdk 0.63.0 |
 | T42 | SCS-REQ-REPOS-01 R1 续轮注入 API | 同上销案：注入即 query+resume（不另起抽象）+ `options.prelude` 结构化前置（system-reminder 块）+ `getSessionAccounting` 注入前读累计成本/轮次/上下文估算（result 落 accounting 增量记录）；0.63.0 |
 | T43 | SCS-REQ-REPOS-01 R2 预算事件流 | 同上销案：`budget:threshold`（可配比例，默认 0.8）/ `budget:exhausted`（带结构化收尾报告：累计成本/轮次/末态摘要）两级一次性根环钩子事件，走既有 hook 机制、不改停机语义；0.63.0 |

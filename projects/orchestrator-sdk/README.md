@@ -18,7 +18,10 @@ agent 所需的脏活(循环、调度、重试、恢复、台账)做成可复用
 
 ## 状态
 
-第零战(monorepo 迁移)落地:空包,能力面(任务台账/驱动器等)按战役逐个进驻。
+第零战(monorepo 迁移)+ 第一战(任务台账 + 驱动器,0.2.0)落地。已有能力面:
+封闭状态机台账(`TaskLedger` + `LedgerStore` 宿主注入缝)、持钟驱动器
+(`LedgerDriver`)、例程一最小 loop(`examples/minimal-loop.ts`)。
+后续战役:schedule、workflow 图、goal 追逐器、送达契约。
 
 ## 安装与家族结构
 
