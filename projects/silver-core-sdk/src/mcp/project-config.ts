@@ -75,7 +75,16 @@ export function loadProjectMcpServers(
       debug(`project-config: skipping malformed server entry "${name}"`);
       continue;
     }
-    out[name] = expandEnvVars(value, env) as McpServerConfig;
+    // Y7-3 (audit r4): a server literally named `__proto__` (crafted .mcp.json)
+    // would hit Object.prototype's `__proto__` setter under bracket assignment —
+    // silently DROPPING the entry AND polluting `out`'s prototype chain.
+    // defineProperty writes a real own data property for ANY key, setter-free.
+    Object.defineProperty(out, name, {
+      value: expandEnvVars(value, env) as McpServerConfig,
+      enumerable: true,
+      writable: true,
+      configurable: true,
+    });
   }
   return out;
 }

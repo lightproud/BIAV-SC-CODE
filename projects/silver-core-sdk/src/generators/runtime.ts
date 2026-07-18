@@ -221,12 +221,22 @@ export function extractJsonObject(text: string): unknown {
         }
       }
     }
-    // A candidate that ran off the END of the text (never balanced) swallows
-    // everything after it: any later '{' is NESTED inside the truncated
-    // object, and returning it would violate the "first TOP-LEVEL object"
-    // contract (audit 2026-07-17 L67 — truncated reply yielded an inner
-    // fragment). No further top-level candidate can exist; stop.
-    if (!closed) return null;
+    // A candidate that ran off the END of the text (never balanced) needs a
+    // distinction (audit r4 Z3-1 relaxes the blanket L67 stop):
+    //   - if this '{' looks like a genuine (truncated) object opening — its
+    //     first non-space char is a '"' key (or '}') — then any later '{' is
+    //     NESTED inside it, and returning one would violate the "first
+    //     TOP-LEVEL object" contract (audit 2026-07-17 L67 — truncated reply
+    //     yielded an inner fragment); stop.
+    //   - if this '{' is a STRAY brace in prose ("uses { as a delimiter, json
+    //     {\"x\":1}"), a real top-level object can still follow it; keep
+    //     scanning so a valid object after prose noise is not swallowed (Z3-1).
+    if (!closed) {
+      const rest = trimmed.slice(searchFrom + 1).replace(/^\s+/, '');
+      if (rest.startsWith('"') || rest.startsWith('}')) return null;
+      searchFrom = trimmed.indexOf('{', searchFrom + 1);
+      continue;
+    }
     // The group closed but failed to parse: advance to the next candidate '{'.
     searchFrom = trimmed.indexOf('{', searchFrom + 1);
   }

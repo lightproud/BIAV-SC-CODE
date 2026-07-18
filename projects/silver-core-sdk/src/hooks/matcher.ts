@@ -28,14 +28,22 @@
  * observable behavior is unchanged.
  */
 
-import { hasNestedQuantifier, MAX_REGEX_PATTERN_LENGTH } from '../internal/regex-guard.js';
+import {
+  hasNestedQuantifier,
+  MAX_REGEX_PATTERN_LENGTH,
+  MAX_REGEX_VALUE_LENGTH,
+} from '../internal/regex-guard.js';
 
 /** Charset that selects exact-set semantics instead of regex semantics. */
 const EXACT_SET_RE = /^[A-Za-z0-9_\-, |]*$/;
 
-/** Regex-path input ceilings. Tool names are short; these are generous. */
+// Regex-path input ceilings (audit r4 U8-2): the PATTERN cap and the VALUE cap
+// are DECOUPLED. A long-but-linear matcher (a long chain of `|` alternatives)
+// is safe to compile, so it rides the generous pattern cap; the SUBJECT length
+// is what actually drives catastrophic backtracking, so tool-name values keep
+// the tight ~1KB cap.
 const MAX_MATCHER_LENGTH = MAX_REGEX_PATTERN_LENGTH;
-const MAX_VALUE_LENGTH = MAX_REGEX_PATTERN_LENGTH;
+const MAX_VALUE_LENGTH = MAX_REGEX_VALUE_LENGTH;
 
 export function matcherMatches(
   matcher: string | undefined,

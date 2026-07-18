@@ -43,7 +43,12 @@ import type {
   RetryInfo,
   StreamRequest,
 } from '../internal/contracts.js';
-import { MessageAccumulator, toolInputTruncationOf } from './accumulator.js';
+import {
+  MessageAccumulator,
+  foldMessageDeltaUsage,
+  toolInputTruncationOf,
+  type DeltaUsage,
+} from './accumulator.js';
 import { addUsage, estimateCostUsd, normalizeUsage } from './pricing.js';
 import { contextWindowFor, outputCeilingFor } from './context-window.js';
 import {
@@ -151,21 +156,18 @@ function foldUsageEvent(sink: UsageSink, event: RawMessageStreamEvent): void {
   if (event.type === 'message_start') {
     sink.usage = normalizeUsage(event.message.usage);
   } else if (event.type === 'message_delta') {
+    // V8-1 (audit r4): delegate to the accumulator's shared fold so the two
+    // cache-token fields are carried (this branch previously folded only
+    // output/input, under-reporting cache spend on a salvaged/retried
+    // attempt); the helper also no-ops on an omitted `usage` (U1-4 analog).
     const base: NonNullableUsage = sink.usage ?? {
       input_tokens: 0,
       output_tokens: 0,
       cache_creation_input_tokens: 0,
       cache_read_input_tokens: 0,
     };
-    const du = event.usage;
-    sink.usage = {
-      ...base,
-      output_tokens: du.output_tokens ?? base.output_tokens,
-      input_tokens:
-        du.input_tokens !== undefined
-          ? Math.max(base.input_tokens, du.input_tokens)
-          : base.input_tokens,
-    };
+    sink.usage = base;
+    foldMessageDeltaUsage(base, event.usage as DeltaUsage | undefined);
   }
 }
 
@@ -385,6 +387,19 @@ export async function* runAgentLoop(
     errors: [errorMessage, ...streamErrors],
   });
 
+  /** The max_tokens this engine ACTUALLY sends for `model`: config.maxOutputTokens
+   *  re-clamped down to the model's known output ceiling. streamAttempt clamps
+   *  the wire request identically, so this is the single source both the request
+   *  and the ModelUsage.maxOutputTokens metric read (audit r4 V5-1: the metric
+   *  used the configured value, over-reporting the cap for any model whose
+   *  ceiling clamps it lower). Unknown models get no clamp (ceiling undefined). */
+  const effectiveMaxTokensFor = (model: string): number => {
+    const ceiling = outputCeilingFor(model);
+    return ceiling !== undefined && ceiling < config.maxOutputTokens
+      ? ceiling
+      : config.maxOutputTokens;
+  };
+
   /** Fold one attempt's usage into the running totals + per-model ledger. */
   const recordUsage = (responseModel: string, usage: NonNullableUsage): void => {
     totalUsage = addUsage(totalUsage, usage);
@@ -410,7 +425,9 @@ export async function* runAgentLoop(
       // (an estimate, same provenance as the price table) and the ACTUAL
       // per-request max_tokens cap this engine sends for this model.
       contextWindow: contextWindowFor(responseModel),
-      maxOutputTokens: config.maxOutputTokens,
+      // audit r4 V5-1: the ACTUAL per-request cap sent for this model, not the
+      // raw config value (they diverge when the model's ceiling clamps lower).
+      maxOutputTokens: effectiveMaxTokensFor(responseModel),
     };
   };
 
@@ -823,12 +840,9 @@ export async function* runAgentLoop(
     // Re-clamp max_tokens for the LIVE model: a fallback switch to a model
     // with a lower output ceiling (e.g. sonnet 64k cap -> opus 32k) would
     // otherwise replay the primary model's cap and 400. Unknown models get no
-    // clamp (outputCeilingFor returns undefined — conservative).
-    const liveCeiling = outputCeilingFor(useModel);
-    const effectiveMaxTokens =
-      liveCeiling !== undefined && liveCeiling < config.maxOutputTokens
-        ? liveCeiling
-        : config.maxOutputTokens;
+    // clamp (outputCeilingFor returns undefined — conservative). Shared with the
+    // ModelUsage.maxOutputTokens metric so the two never drift (audit r4 V5-1).
+    const effectiveMaxTokens = effectiveMaxTokensFor(useModel);
     const request: StreamRequest = {
       model: useModel,
       max_tokens: effectiveMaxTokens,
@@ -999,6 +1013,13 @@ export async function* runAgentLoop(
       // only change between turns (tool execution), never mid-turn.
       const turnToolDefs = buildToolDefs();
 
+      // audit r4 V5-3: anchor this turn's isolated apiMs BEFORE the compaction
+      // block. A summary API call folds its time into the global durationApiMs
+      // (onSummaryCall below); anchoring here attributes that time to a perTurn
+      // entry too, so sum(perTurn.apiMs) reconciles with the top-line
+      // durationApiMs instead of drifting below it by the compaction time.
+      const apiMsBefore = durationApiMs; // this turn's isolated apiMs metric
+
       // --- Context compaction (only when a shared request view exists). -----
       if (deps.requestView !== undefined && config.compaction?.enabled !== false) {
         const cfg = config.compaction;
@@ -1080,7 +1101,6 @@ export async function* runAgentLoop(
 
       // --- Stream one assistant turn (bounded replay + one-shot fallback). --
       let assistant: APIAssistantMessage;
-      const apiMsBefore = durationApiMs; // for this turn's isolated apiMs metric
       // ttft anchors as of BEFORE this turn's first attempt. If the attempt
       // fails and we retry on the fallback model, the failed attempt's
       // content_block_start may have already latched firstTokenAtMs /
@@ -1311,6 +1331,11 @@ export async function* runAgentLoop(
       // the routine producer of this shape) never reach here (toolUses is
       // empty) and now complete normally, with the C6 orphan filters dropping
       // the stamped block from persisted history.
+      // audit r4 Z1-2: a truncated tool_use fails the turn BELOW, BEFORE any
+      // tool in the batch runs — so the turn dispatches ZERO calls. Detect it
+      // here, ahead of the metric, and count 0 tool calls instead of letting the
+      // unexecuted block(s) inflate toolCalls.
+      const truncatedTool = toolUses.find((b) => toolInputTruncationOf(b) !== undefined);
       // v0.3: record this turn's isolated metrics (usage/cost/apiMs/toolCalls).
       {
         const turnUsage = normalizeUsage(assistant.usage);
@@ -1321,10 +1346,9 @@ export async function* runAgentLoop(
           costUsd: estimateCostUsd(assistant.model, turnUsage, config.cacheTtl, config.pricing),
           apiMs: durationApiMs - apiMsBefore,
           stopReason: assistant.stop_reason,
-          toolCalls: toolUses.length,
+          toolCalls: truncatedTool !== undefined ? 0 : toolUses.length,
         });
       }
-      const truncatedTool = toolUses.find((b) => toolInputTruncationOf(b) !== undefined);
       if (truncatedTool !== undefined) {
         // Same C6 orphan filter as the refusal path below: keep text/thinking
         // context, never persist the unexecutable tool_use unpaired.
@@ -1434,6 +1458,13 @@ export async function* runAgentLoop(
         let ti = 0;
         try {
         while (ti < toolUses.length) {
+          // audit r4 V5-2: re-check the abort signal between tool groups so an
+          // interrupt lands BEFORE the next group's side effects. A tool already
+          // in flight owns its own signal handling; this stops the loop from
+          // dispatching any further tool (2..N) after an interrupt. The abort
+          // path re-throws without persisting (its owner decides), matching the
+          // top-of-loop guard.
+          if (signal.aborted) throw new AbortError();
           if (batchStop !== undefined || batchDefer !== undefined) {
             // A prior block asked to stop/defer: every remaining tool_use still
             // needs a matching tool_result or the next API request would 400.

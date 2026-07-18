@@ -15,6 +15,18 @@ import { randomUUID } from 'node:crypto';
 import type { APIMessageParam, ContentBlock, Options } from '../types.js';
 import type { SessionStore } from '../internal/contracts.js';
 
+/** Extra fields the concrete JSONL store surfaces on a loaded session beyond the
+ *  internal StoredSession contract. Read structurally (not via the store type)
+ *  so a query-resume fork can copy them without coupling to the concrete store
+ *  (audit r4 V3-1): the standalone forkSession() copies EVERY raw entry, so
+ *  dropping tool_call telemetry and the title/tag here diverged the two forks —
+ *  getSessionToolCalls(fork) returned [] and the fork lost its title. */
+type ForkCopyExtras = {
+  customTitle?: string;
+  tag?: string;
+  toolCallRecords?: Array<Record<string, unknown>>;
+};
+
 export type ResolvedSession = {
   sessionId: string;
   history: APIMessageParam[];
@@ -170,6 +182,7 @@ export function createSessionPersistence(
           // The fork's future turns run under the CURRENT query's cwd, so the
           // fork meta records `cwd`, not the source session's cwd (finding #39).
           const newId = randomUUID();
+          const forkExtras = stored as ForkCopyExtras;
           if (persist) {
             store.append(newId, {
               type: 'meta',
@@ -198,6 +211,28 @@ export function createSessionPersistence(
                 ...rec,
                 uuid: randomUUID(),
                 session_id: newId,
+              });
+            }
+            // audit r4 V3-1: copy the S3 tool_call telemetry AND re-emit the
+            // title/tag, matching standalone forkSession() which copies every
+            // raw entry. Without this getSessionToolCalls(fork) returned [] and
+            // the fork lost its title (customTitle/tag live on meta_update
+            // records, which the selective copy above never carried).
+            for (const rec of forkExtras.toolCallRecords ?? []) {
+              store.append(newId, {
+                ...rec,
+                uuid: randomUUID(),
+                session_id: newId,
+              });
+            }
+            if (forkExtras.customTitle !== undefined || forkExtras.tag !== undefined) {
+              store.append(newId, {
+                type: 'meta_update',
+                uuid: randomUUID(),
+                ...(forkExtras.customTitle !== undefined
+                  ? { customTitle: forkExtras.customTitle }
+                  : {}),
+                ...(forkExtras.tag !== undefined ? { tag: forkExtras.tag } : {}),
               });
             }
           }

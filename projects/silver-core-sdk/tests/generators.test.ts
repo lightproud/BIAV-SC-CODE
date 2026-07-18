@@ -288,7 +288,12 @@ describe('generators over a mock transport', () => {
     const recap = await generateAwaySummary('...transcript tail...', { transport: t });
     expect(recap).toBe('Refactoring the auth module; next, run the test suite.');
     expect(t.requests[0]?.system).toBe(AWAY_SUMMARY_SYSTEM);
-    expect(t.requests[0]?.messages[0]).toEqual({ role: 'user', content: '...transcript tail...' });
+    // audit r4 Rpr-2: the tail is fenced + neutralized before it rides into the
+    // prompt (was raw, letting a forged </...> line inject the recap).
+    expect(t.requests[0]?.messages[0]).toEqual({
+      role: 'user',
+      content: '<transcript>\n...transcript tail...\n</transcript>',
+    });
     expect(t.requests[0]?.temperature).toBe(0);
     expect(t.requests[0]?.model).toBe('claude-haiku-4-5');
   });

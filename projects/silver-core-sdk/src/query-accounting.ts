@@ -13,6 +13,15 @@
 import type { ModelUsage, NonNullableUsage, SDKResultMessage } from './types.js';
 import type { AbortedRunAccounting } from './errors.js';
 
+/** Coerce a non-finite counter (a NaN/±Infinity total_cost_usd from a
+ *  malformed result or a provider arithmetic glitch) to 0. A single NaN cost
+ *  otherwise poisoned `acct.cost` permanently, and `NaN >= maxBudgetUsd` is
+ *  always false — the budget gate went silently dark for the whole session,
+ *  spending without a ceiling (audit r4 Sls-1). */
+function finite(n: number): number {
+  return Number.isFinite(n) ? n : 0;
+}
+
 function zeroUsage(): NonNullableUsage {
   return {
     input_tokens: 0,
@@ -73,9 +82,11 @@ export class SessionAccounting {
 
   /** Fold one engine-turn result's totals into the session accumulators. */
   accumulateResult(r: SDKResultMessage): void {
-    this.turns += r.num_turns;
-    this.cost += r.total_cost_usd;
-    this.apiMs += r.duration_api_ms;
+    // audit r4 Sls-1: finiteness guard so a NaN/Infinity counter can't poison
+    // the session totals (the budget gate reads acct.cost).
+    this.turns += finite(r.num_turns);
+    this.cost += finite(r.total_cost_usd);
+    this.apiMs += finite(r.duration_api_ms);
     this.usage = addUsage(this.usage, r.usage);
     for (const [modelId, mu] of Object.entries(r.modelUsage)) {
       mergeModelUsage(this.modelUsage, modelId, mu);
@@ -90,9 +101,10 @@ export class SessionAccounting {
    * under-count the session budget/summary.
    */
   accumulateAborted(p: AbortedRunAccounting): void {
-    this.turns += p.numTurns;
-    this.cost += p.totalCostUsd;
-    this.apiMs += p.durationApiMs;
+    // audit r4 Sls-1: same finiteness guard as accumulateResult.
+    this.turns += finite(p.numTurns);
+    this.cost += finite(p.totalCostUsd);
+    this.apiMs += finite(p.durationApiMs);
     this.usage = addUsage(this.usage, p.usage);
     for (const [modelId, mu] of Object.entries(p.modelUsage)) {
       mergeModelUsage(this.modelUsage, modelId, mu);
@@ -105,7 +117,9 @@ export class SessionAccounting {
     cost: number;
     modelUsage: Record<string, ModelUsage>;
   }): void {
-    this.cost += ledger.cost;
+    // audit r4 Sls-1: guard the subagent-ledger cost fold too — it feeds the
+    // same acct.cost the budget gate reads.
+    this.cost += finite(ledger.cost);
     this.usage = addUsage(this.usage, ledger.usage);
     for (const [modelId, mu] of Object.entries(ledger.modelUsage)) {
       mergeModelUsage(this.modelUsage, modelId, mu);

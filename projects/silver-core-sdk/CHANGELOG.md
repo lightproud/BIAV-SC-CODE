@@ -16,6 +16,94 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.67.1 — 2026-07-18
+
+T52 r4 audit — Tier 2 (medium) fix campaign: **65 defects fixed, 15 honestly
+skipped** across 12 file-disjoint clusters, run via the SDK's own
+dynamic-orchestration Workflow tool (12 parallel agents). Same
+re-verify-then-fix discipline as Tier 1; two agent fixes were reverted at
+integration because they conflicted with deliberate prior-audit test locks
+(documented as NOT-APPLIED, below).
+
+- **mcp (http / stdio / registry / sdk-server / project-config.ts) — 9**:
+  protocol-version negotiation validated on both transports (Z6-1/Z6-2);
+  plain-JSON bodies answer interleaved server requests (Z6-3); stdout EOF
+  flush so a newline-less final response resolves (Rmcp-1); timed-out stdio
+  requests send notifications/cancelled (Rmcp-2); null tool-annotation and
+  null tool-entry guarded at definition time (R7e-1/R7e-2); MCP error-detail
+  truncation surrogate-safe (R7s-8); `__proto__`-named server via
+  defineProperty (Y7-3).
+- **generators (index / runtime.ts) — 10**: `</description>` neutralized in
+  the title/branch fence (Z7-1); two globs on one line survive
+  parseAwaySummary (Z7-2); CJK session names preserved (Z7-3); a stray brace
+  before valid JSON no longer swallows it (Z3-1); bracket-glued memory-file
+  names recovered (Sgen-1); decorated "None" sentinel mapped to none
+  (Sgen-2); a broken-JSON reply is not slugified (Sgen-3); background-state,
+  away-summary and session-name generators fence + neutralize the untrusted
+  tail (Rpr-1/Rpr-2/Rpr-3).
+- **reporting (runtime-report / compare-reports / run-log / query-accounting.ts) — 10**:
+  cacheHitRate denominator includes cache_creation, so the rate is honest and
+  two cross-checked definitions agree (U7-1/U7-3); per-cause transport delta
+  and symbol handling fixed (U7-2/U7-4); top-consumer and tools sorts get
+  deterministic tiebreaks (Rst-1/Rst-2); windowHours validated (Rdt-3);
+  **query-accounting rejects a NaN cost so it can no longer poison the budget
+  gate into silently disabling maxBudgetUsd** (Sls-1); run-log record
+  construction can't throw synchronously and break the run (Sls-2); error
+  truncation surrogate-safe (R7s-10).
+- **accumulator (accumulator.ts) + loop (loop.ts) — 4 (+V8-1 both sides)**:
+  a delta on a closed block, a duplicate content_block_start, and a
+  usage-less message_delta are all handled without corrupting state or
+  throwing (U1-1/U1-2/U1-4); the shared foldMessageDeltaUsage now carries the
+  two cache-token fields on both the accumulator and the loop's
+  failed-attempt recovery path (V8-1).
+- **loop (loop.ts) — 4**: a truncated tool_use is not counted as executed
+  (Z1-2); modelUsage.maxOutputTokens reports the effective cap (V5-1); the
+  batch loop checks the abort signal between tools (V5-2); compaction API
+  time is attributed per-turn (V5-3).
+- **sessions (session-manager / persistence / store / checkpoints / file-store.ts) — 8**:
+  a q.throw()-terminated managed query settles its ledger (Y8-3); a
+  forkSession copies tool_call + meta so the fork is complete (V3-1);
+  tool_call lines are recognized on load, not warned (V3-2); rewind window
+  and restore-failure reporting fixed (V3-3/Sfs-3); list/dir sorts get
+  tiebreaks (Rst-3/Rst-4); session-info truncation surrogate-safe (R7s-4).
+- **hooks (matcher / runner.ts + regex-guard.ts) — 5**: unbounded
+  JSON.stringify in the condition path guarded (V1-2/R7j-1); hook timeout
+  clamped to the 32-bit ceiling (Rnum-1); preview truncation surrogate-safe
+  (R7s-9); **the regex value-length cap is decoupled from the pattern cap so
+  legitimate long linear Grep/hook patterns are no longer rejected** (U8-2).
+- **tool-dispatch (tool-dispatch.ts) — 6**: an embedded MCP resource blob
+  keeps its payload + mimeType (Rtd-1); empty MCP/builtin content is
+  normalized so it never 400s as an empty block (Rtd-2/Rtd-3); abort-during-
+  hook and the persisted raw-vs-effective input are recorded correctly
+  (Rtd-4/Rtd-5); result-summary truncation surrogate-safe (R7s-2).
+- **inert-text (inert-text.ts) — 1**: singleLine strips U+2028/2029/NEL so a
+  non-ASCII newline can't forge a ledger line (U6-3).
+- **compaction (compaction.ts) — 2**: the summary sink bills at most once per
+  fold (Y2-1); a tool_use with absent input no longer crashes the recap
+  (R7j-4).
+- **transport-misc (node-http / factory.ts + transport-resolver.ts) — 3**:
+  preconnect HEAD gets an abort/timeout (Y7-1); an unknown protocol typo is
+  rejected instead of silently defaulting to Anthropic wire (Y7-2); the
+  transport identity key includes behavior env so query B can't reuse query
+  A's retry/timeout config (Sag-1).
+- **tips (index / prompts.ts) — 3**: tip-reception transcript fenced +
+  neutralized (U6-1); few-shot prompt/parser contract aligned to JSON
+  (Rpr-4); session_metadata tag-neutralized in the selector prompt (R7j-6).
+
+**NOT APPLIED (2, deliberate — conflicted with prior-audit test locks):**
+Y2-2 (skip abort billing) contradicts batch-F D3's deliberate booking of the
+message_start seed on abort for honest cost accounting; Sls-3 (strip
+incognito per_tool/models) contradicts the §6.4 contract that keeps aggregate
+transport/token/tool stats on an incognito record (a name→count map is not
+session-identifying). Both reverted with a documented lock. **13 other items
+skipped** as already-fixed / not-reproducible / test-locked design (mcp
+Z6-4/Z6-5/Rmcp-3/Rmcp-4/Rst-5, hooks V1-1, accumulator U1-3, inert-text
+Y4-2/Y4-3/Y4-4, transport-misc Sag-2/R7env-3), each with a precise reason.
+
+Regression tests: `tests/audit-r4-{mcp,generators,reporting,accumulator,loop,sessions,hooks,tool-dispatch,inert-text,compaction,transport-misc,tips}.test.ts`.
+Full vitest 2933 passed / 3 skipped; repo pytest 2975 passed; tsc + build
+clean.
+
 ## 0.67.0 — 2026-07-18
 
 Family naming finalized (keeper ruling 2026-07-18, superseding the same-day
@@ -28,6 +116,7 @@ named after the Morimens conductor-awakened). Rename scope is unchanged from
 directory `projects/silver-core-sdk/` stay put. `npm pack` output becomes
 `silver-core-agent-sdk-<version>.tgz` from this version on. No feature or
 behavior changes.
+
 
 ## 0.66.1 — 2026-07-18
 

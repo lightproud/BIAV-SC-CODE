@@ -26,9 +26,15 @@ import type {
 import { AbortError, McpError, NotImplementedError } from '../errors.js';
 import { parseResourcesList, parseResourceContents } from './stdio.js';
 import { resolveElicitation } from './elicitation.js';
+import { sliceSurrogateSafe } from '../internal/text.js';
 import { SDK_VERSION } from '../version.js';
 
 const MCP_PROTOCOL_VERSION = '2025-06-18';
+/** Protocol revisions this clean-room client can speak. A server that
+ *  negotiates anything outside this set fails connect (spec: the client SHOULD
+ *  disconnect on an unsupported version) instead of having the unknown version
+ *  echoed into every later request header (audit r4 Z6-1). */
+const SUPPORTED_PROTOCOL_VERSIONS = ['2025-06-18', '2025-03-26', '2024-11-05'];
 const CLIENT_INFO = { name: 'silver-core-sdk', version: SDK_VERSION } as const;
 const DEFAULT_REQUEST_TIMEOUT_MS = 60_000;
 /** Bound on the best-effort session-termination DELETE in close(): a dead or
@@ -107,8 +113,20 @@ export class HttpMcpConnection {
     this.info = extractServerInfo(result);
     if (result && typeof result === 'object') {
       const pv = (result as { protocolVersion?: unknown }).protocolVersion;
-      // Echo the server-negotiated version in subsequent request headers.
-      if (typeof pv === 'string' && pv.length > 0) this.protocolVersion = pv;
+      if (typeof pv === 'string' && pv.length > 0) {
+        // audit r4 Z6-1: reject a negotiated version we cannot speak instead of
+        // echoing an unknown version into every later request header.
+        if (!SUPPORTED_PROTOCOL_VERSIONS.includes(pv)) {
+          throw new McpError(
+            'mcp_invalid_response',
+            `MCP server '${this.label}' negotiated unsupported protocol version '${pv}' ` +
+              `(client supports ${SUPPORTED_PROTOCOL_VERSIONS.join(', ')})`,
+            { serverLabel: this.label, transport: 'http', phase: 'connect' },
+          );
+        }
+        // Echo the server-negotiated version in subsequent request headers.
+        this.protocolVersion = pv;
+      }
     }
     this.initialized = true;
     await this.rpcNotify('notifications/initialized', undefined, signal);
@@ -344,6 +362,15 @@ export class HttpMcpConnection {
           { serverLabel: this.label, transport: 'http', phase: 'request' },
         );
       }
+      // audit r4 Z6-3: a plain-JSON body may interleave server-initiated
+      // requests (a JSON-RPC batch) alongside our response; answer them like
+      // the SSE path does so the server is not left waiting. Non-request
+      // messages (our response, notifications) are ignored by the helper.
+      for (const item of Array.isArray(data) ? data : [data]) {
+        if (item && typeof item === 'object') {
+          this.answerServerRequest(item as JsonRpcMessage);
+        }
+      }
       return extractResponse(data, expectId, this.label);
     } catch (err) {
       if (abortCause === 'caller' || signal?.aborted) throw new AbortError();
@@ -389,6 +416,59 @@ export class HttpMcpConnection {
   }
 
   /**
+   * Answer a server-initiated JSON-RPC request (method + non-null id):
+   * elicitation/create resolves via the host handler and POSTs back the action
+   * payload (fail-closed to 'decline'); any other method gets a fresh
+   * "method not found" POST. Returns true iff `msg` was such a request;
+   * responses and notifications return false. Shared by the SSE reader AND the
+   * plain-JSON body path so a server request delivered either way is answered
+   * rather than leaving the server to wait (audit r4 Z6-3).
+   */
+  private answerServerRequest(msg: JsonRpcMessage): boolean {
+    const method = msg.method;
+    if (typeof method !== 'string' || msg.id === undefined || msg.id === null) {
+      return false;
+    }
+    const replyId = msg.id;
+    if (method === 'elicitation/create') {
+      // NOTE: no `&& this.elicitation` guard - resolveElicitation itself maps a
+      // missing handler to { action: 'decline' } (the documented auto-decline);
+      // guarding here made that branch dead and replied -32601 instead
+      // (found by the batch-3 onElicitation test, 2026-07-05).
+      // Handler failure and DELIVERY failure are distinct (audit r2 I7): a
+      // thrown handler falls back to the documented auto-decline payload BEFORE
+      // the single reply POST; a failed POST is only logged — never answered
+      // again, since a second reply to the same JSON-RPC id violates JSON-RPC
+      // and can contradict a reply the server already received.
+      void resolveElicitation(msg.params, this.elicitation, this.closeController.signal)
+        .catch(() => ({ action: 'decline' as const }))
+        .then((result) => this.post({ jsonrpc: '2.0', id: replyId, result }, null))
+        .catch((err: unknown) => {
+          this.debug(
+            `[mcp:${this.label}] elicitation reply failed: ${
+              err instanceof Error ? err.message : String(err)
+            }`,
+          );
+        });
+      return true;
+    }
+    // This client implements no server-callable methods: answer method-not-
+    // found via a fresh POST, mirroring stdio.ts. Leaving it unanswered would
+    // make the server wait forever (and time out the in-flight call).
+    void this.post(
+      { jsonrpc: '2.0', id: replyId, error: { code: -32601, message: 'Method not found' } },
+      null,
+    ).catch((err: unknown) => {
+      this.debug(
+        `[mcp:${this.label}] failed to answer server request '${method}': ${
+          err instanceof Error ? err.message : String(err)
+        }`,
+      );
+    });
+    return true;
+  }
+
+  /**
    * Minimal private SSE parser: accumulates data: lines per event (events end
    * on a blank line), returns the JSON-RPC response matching the request id.
    * Other stream messages (server requests/notifications) are logged and
@@ -415,54 +495,10 @@ export class HttpMcpConnection {
         if (msg.error) throw rpcErrorToError(this.label, msg.error);
         return { hit: true, value: msg.result };
       }
-      // Server-initiated request (method + id): this client implements no
-      // server-callable methods, so answer with JSON-RPC "method not found"
-      // via a fresh POST, mirroring stdio.ts. Leaving it unanswered would make
-      // the server wait forever (and time out the in-flight call). Pure
-      // notifications (no id) stay ignored.
-      if (typeof msg.method === 'string' && msg.id !== undefined && msg.id !== null) {
-        const replyId = msg.id;
-        // Server-initiated elicitation/create: resolve via the host handler and
-        // POST back the resulting action payload (fail-closed to 'decline').
-        if (msg.method === 'elicitation/create') {
-          // NOTE: no `&& this.elicitation` guard - resolveElicitation itself maps a
-          // missing handler to { action: 'decline' } (the documented auto-decline);
-          // guarding here made that branch dead and replied -32601 instead
-          // (found by the batch-3 onElicitation test, 2026-07-05).
-          // Handler failure and DELIVERY failure are distinct (audit r2 I7):
-          // a thrown handler falls back to the documented auto-decline payload
-          // BEFORE the single reply POST; a failed POST is only logged — never
-          // answered again, since a second reply to the same JSON-RPC id
-          // (e.g. decline after the accept POST failed mid-flight) violates
-          // JSON-RPC and can contradict a reply the server already received.
-          void resolveElicitation(msg.params, this.elicitation, this.closeController.signal)
-            .catch(() => ({ action: 'decline' as const }))
-            .then((result) => this.post({ jsonrpc: '2.0', id: replyId, result }, null))
-            .catch((err: unknown) => {
-              this.debug(
-                `[mcp:${this.label}] elicitation reply failed: ${
-                  err instanceof Error ? err.message : String(err)
-                }`,
-              );
-            });
-          return undefined;
-        }
-        void this.post(
-          {
-            jsonrpc: '2.0',
-            id: replyId,
-            error: { code: -32601, message: 'Method not found' },
-          },
-          null,
-        ).catch((err: unknown) => {
-          this.debug(
-            `[mcp:${this.label}] failed to answer server request '${msg.method as string}': ${
-              err instanceof Error ? err.message : String(err)
-            }`,
-          );
-        });
-        return undefined;
-      }
+      // Server-initiated request (method + id): answer it (shared with the
+      // plain-JSON body path, audit r4 Z6-3). Pure notifications (no id) and
+      // other messages fall through to the debug log below.
+      if (this.answerServerRequest(msg)) return undefined;
       this.debug(
         `[mcp:${this.label}] ignoring SSE message${
           typeof msg.method === 'string' ? ` '${msg.method}'` : ''
@@ -715,5 +751,7 @@ async function drainBody(response: Response): Promise<void> {
 }
 
 function truncate(s: string, max = 300): string {
-  return s.length > max ? `${s.slice(0, max)}...` : s;
+  // Surrogate-safe: a bare slice could cut an astral codepoint in half and
+  // leave a lone surrogate in the MCP error detail (audit r4 R7s-8).
+  return s.length > max ? `${sliceSurrogateSafe(s, max)}...` : s;
 }

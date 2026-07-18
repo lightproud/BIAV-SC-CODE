@@ -183,10 +183,17 @@ export class FileCheckpointStore {
       throw new ConfigurationError('File rewinding is not enabled');
     }
     const changes = this.readIndex();
-    // Position the target turn: prefer its own earliest file-change seq; if the
-    // turn changed no file (finding L4), fall back to its turn_start marker.
+    // Position the target turn. audit r4 V3-3: prefer the turn_start MARKER seq
+    // (the turn's true timeline position) over its first file-change seq. A
+    // concurrent sibling instance's interleaved records can push the first
+    // file-change seq ABOVE the marker, which would then exclude those
+    // in-window records from the undo plan. The marker is always <= the first
+    // change seq (record() re-syncs upward from what beginTurn saw), so this
+    // only ever widens the window to the correct start. Fall back to the first
+    // file-change seq for turns with no marker (transcripts predating L4).
+    const markerSeq = this.turnMarkerSeq(userMessageId);
     const direct = changes.find((c) => c.userMessageId === userMessageId);
-    const startSeq = direct !== undefined ? direct.seq : this.turnMarkerSeq(userMessageId);
+    const startSeq = markerSeq ?? (direct !== undefined ? direct.seq : null);
     if (startSeq === null) {
       // Official soft-fail shape: an unknown checkpoint resolves with
       // canRewind:false + error (T2-2) instead of throwing. Configuration
@@ -210,6 +217,12 @@ export class FileCheckpointStore {
 
     const restoredFiles: string[] = [];
     const deletedFiles: string[] = [];
+    // audit r4 Sfs-3: a pre-image readFile / rm that throws is skipped (never
+    // counted as restored/deleted — L48), but a rewind that could not apply its
+    // whole plan must NOT still report canRewind:true, or the caller reads an
+    // INCOMPLETE rewind as success while the on-disk state silently diverges
+    // from the checkpoint.
+    const failedFiles: string[] = [];
     for (const [absPath, blob] of plan) {
       if (blob !== null) {
         if (!dryRun) {
@@ -219,6 +232,7 @@ export class FileCheckpointStore {
             await writeFile(absPath, content, 'utf8');
           } catch (err) {
             this.debug(`checkpoint restore failed for ${absPath}: ${errMessage(err)}`);
+            failedFiles.push(absPath);
             continue;
           }
         }
@@ -231,6 +245,7 @@ export class FileCheckpointStore {
             // Same soft-fail as the restore branch: a failed rm must not be
             // reported as deleted (audit 2026-07-17 L48).
             this.debug(`checkpoint delete failed for ${absPath}: ${errMessage(err)}`);
+            failedFiles.push(absPath);
             continue;
           }
         }
@@ -240,9 +255,19 @@ export class FileCheckpointStore {
 
     // Official fields lead (canRewind/filesChanged); insertions/deletions are
     // deliberately absent (no diff engine — see the type's JSDoc). The
-    // pre-alignment fields ride along as deprecated dual-track.
+    // pre-alignment fields ride along as deprecated dual-track. A partial
+    // failure (audit r4 Sfs-3) reports canRewind:false + an error so the
+    // incomplete rewind is not mistaken for a clean one.
+    const incomplete = failedFiles.length > 0;
     return {
-      canRewind: true,
+      canRewind: !incomplete,
+      ...(incomplete
+        ? {
+            error:
+              `rewind incomplete: ${failedFiles.length} file(s) could not be ` +
+              `restored or deleted (${failedFiles.join(', ')})`,
+          }
+        : {}),
       filesChanged: [...restoredFiles, ...deletedFiles],
       checkpointId: userMessageId,
       restoredFiles,

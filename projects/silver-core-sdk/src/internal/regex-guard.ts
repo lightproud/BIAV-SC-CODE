@@ -15,11 +15,23 @@
  */
 
 /**
- * Ceiling on the length of a pattern (and, for the hooks matcher, the value)
- * fed to the RegExp engine. Backtracking cost grows with input size; tool
- * patterns and tool names are far shorter than this in practice.
+ * Ceiling on the length of a PATTERN fed to the RegExp engine (audit r4 U8-2:
+ * raised from 1024, which hard-rejected legitimate long-but-linear patterns —
+ * a long chain of `|` alternatives or literals). The nested-quantifier
+ * heuristic below, NOT this length cap, is the actual ReDoS defense; a long
+ * linear pattern is safe to compile. Catastrophic-backtracking cost is driven
+ * by the SUBJECT length, capped separately by MAX_REGEX_VALUE_LENGTH.
  */
-export const MAX_REGEX_PATTERN_LENGTH = 1024;
+export const MAX_REGEX_PATTERN_LENGTH = 8192;
+
+/**
+ * Ceiling on the length of a VALUE (subject string) tested against a
+ * model/user-supplied pattern — the hooks matcher's subject is a tool name
+ * (audit r4 U8-2). Decoupled from and far tighter than the PATTERN cap: the
+ * subject length is the real driver of catastrophic backtracking, so it stays
+ * ~1KB while long linear patterns are let through.
+ */
+export const MAX_REGEX_VALUE_LENGTH = 1024;
 
 /**
  * Detects a repetition quantifier applied to a group whose body already

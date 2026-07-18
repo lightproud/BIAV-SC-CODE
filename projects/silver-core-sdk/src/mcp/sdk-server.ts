@@ -36,13 +36,18 @@ function resolveToolAnnotations(
   // a TypeError at tool-DEFINITION time — degrade gracefully to "no
   // annotations" instead (audit 2026-07-17 L65).
   if (typeof arg !== 'object' || arg === null) return undefined;
-  const unwrapped =
-    'annotations' in arg ? (arg as { annotations?: ToolAnnotations }).annotations : (arg as ToolAnnotations);
+  const unwrapped: unknown =
+    'annotations' in arg ? (arg as { annotations?: ToolAnnotations }).annotations : arg;
   // Empty carries no information in EITHER form: the bare `{}` already
   // normalized to undefined but the wrapped `{annotations: {}}` leaked `{}`
   // through — asymmetric output for identical meaning (audit 2026-07-17 L64).
-  if (unwrapped === undefined || Object.keys(unwrapped).length === 0) return undefined;
-  return unwrapped;
+  // A wrapped inner null (`{annotations: null}`) must NOT reach Object.keys,
+  // which threw a TypeError at tool-DEFINITION time — treat every non-object
+  // reading as "no annotations" (audit r4 R7e-1).
+  if (unwrapped === null || typeof unwrapped !== 'object' || Object.keys(unwrapped).length === 0) {
+    return undefined;
+  }
+  return unwrapped as ToolAnnotations;
 }
 
 /**
@@ -165,6 +170,17 @@ export function createSdkMcpServer(options: {
 }): McpSdkServerConfigWithInstance {
   const tools = new Map<string, SdkMcpToolDefinition>();
   for (const def of options.tools ?? []) {
+    // audit r4 R7e-2: a null/undefined entry (a `cond && tool(...)` that fell
+    // through to false, or a hole in the array) would throw a cryptic
+    // `Cannot read properties of null (reading 'name')` at server-construction
+    // time. Fail fast with an explanatory typed error instead.
+    const candidate: unknown = def;
+    if (candidate === null || typeof candidate !== 'object') {
+      throw new ConfigurationError(
+        `SDK MCP server '${options.name}' was given an invalid tool definition ` +
+          `(${candidate === null ? 'null' : typeof candidate}); each entry must be a tool() definition`,
+      );
+    }
     // S2 (server-side half): the wire name is `mcp__<server>__<tool>` and the
     // Messages API caps tool names at 128 chars — an over-long combination
     // 400s the whole request, not just this tool. The server name is only

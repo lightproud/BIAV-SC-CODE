@@ -283,7 +283,14 @@ export class FileSessionStore implements SessionStore {
         if (!isNotASessionDir(err)) throw err; // no main transcript -> not a session
       }
     }
-    out.sort((a, b) => b.mtime - a.mtime);
+    // audit r4 Rst-4: break mtime ties on the (unique) session id so the
+    // newest-first ordering is deterministic — same-mtimeMs sessions otherwise
+    // kept readdir order, an unspecified relative sequence across runs/hosts.
+    out.sort(
+      (a, b) =>
+        b.mtime - a.mtime ||
+        (a.sessionId < b.sessionId ? -1 : a.sessionId > b.sessionId ? 1 : 0),
+    );
     return out;
   }
 

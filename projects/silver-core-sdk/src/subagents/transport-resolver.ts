@@ -98,6 +98,36 @@ const IDENTITY_ENV_KEYS: Record<WireProtocol, readonly string[]> = {
 };
 
 /**
+ * audit r4 Sag-1 — behavior-tuning env vars the built transport reads at
+ * construction / stream time (retry count, concurrency cap, stream
+ * watchdog/hard-cap, HTTP-client selection + proxy autodetect, preconnect).
+ * These are protocol-agnostic and NOT credentials, but they DO shape the
+ * transport's wire behavior, so they belong to its identity: two queries with
+ * the SAME credentials but a different CLAUDE_CODE_MAX_RETRIES (etc.) must not
+ * collapse onto one memoized transport, or query B silently inherits query A's
+ * retry / timeout / HTTP-client policy. Mirrors the env reads in
+ * transport/anthropic.ts (resolveMaxRetries / resolveMaxConcurrent /
+ * resolveStreamIdleMs / resolveStreamMaxMs) and transport/node-http.ts
+ * (resolveHttpClient / resolvePreconnect).
+ */
+const BEHAVIOR_ENV_KEYS = [
+  'CLAUDE_CODE_MAX_RETRIES',
+  'BPT_MAX_CONCURRENT_REQUESTS',
+  'CLAUDE_ENABLE_STREAM_WATCHDOG',
+  'CLAUDE_STREAM_IDLE_TIMEOUT_MS',
+  'BPT_STREAM_MAX_DURATION_MS',
+  'BPT_HTTP_CLIENT',
+  'BPT_PRECONNECT',
+  'HTTPS_PROXY',
+  'https_proxy',
+  'HTTP_PROXY',
+  'http_proxy',
+  'ALL_PROXY',
+  'all_proxy',
+  'NODE_USE_ENV_PROXY',
+] as const;
+
+/**
  * M17 (audit T49) — memo key carrying the transport's full tenant identity,
  * not just its protocol. The previous cache was keyed by protocol alone, so a
  * resolver shared across queries (the documented usage) handed tenant B's
@@ -122,6 +152,8 @@ function transportIdentityKey(
   }
   const envSlice: Record<string, string | undefined> = {};
   for (const k of IDENTITY_ENV_KEYS[protocol]) envSlice[k] = env[k];
+  // audit r4 Sag-1: behavior-tuning env is part of the transport's identity too.
+  for (const k of BEHAVIOR_ENV_KEYS) envSlice[k] = env[k];
   return JSON.stringify([protocol, cfg, envSlice]);
 }
 

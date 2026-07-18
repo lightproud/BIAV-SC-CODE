@@ -31,6 +31,7 @@ import { homedir } from 'node:os';
 import { join } from 'node:path';
 import { createInterface } from 'node:readline';
 
+import { sliceSurrogateSafe } from '../internal/text.js';
 import type {
   APIMessageParam,
   ContentBlockParam,
@@ -213,7 +214,15 @@ export type StoredSessionMeta = {
 };
 
 /** What JsonlSessionStore.load actually returns: StoredSession plus meta. */
-export type LoadedSession = StoredSession & StoredSessionMeta;
+export type LoadedSession = StoredSession &
+  StoredSessionMeta & {
+    /** Raw `tool_call` records (governance spec S3) in file order, carried so a
+     *  query-resume fork can copy them (audit r4 V3-1) — mirrors
+     *  accountingRecords. Dropping them made getSessionToolCalls on the fork
+     *  return [] (and load() spammed a false "unrecognized line" warning per
+     *  record, audit r4 V3-2). */
+    toolCallRecords?: Array<Record<string, unknown>>;
+  };
 
 /** Whitespace-tolerant first-record / control-line probes (audit 2026-07-17
  *  L54): our writers serialize compactly with `type` first, but EXTERNAL
@@ -392,6 +401,7 @@ export class JsonlSessionStore implements SessionStore {
     // duplicates otherwise (first occurrence wins).
     const seenUuids = new Set<string>();
     const accountingRecords: Array<Record<string, unknown>> = [];
+    const toolCallRecords: Array<Record<string, unknown>> = [];
 
     const lines = raw.split('\n');
     for (let i = 0; i < lines.length; i += 1) {
@@ -486,6 +496,16 @@ export class JsonlSessionStore implements SessionStore {
         continue;
       }
 
+      // S3 tool_call telemetry rides along so a query-resume fork can copy it
+      // (audit r4 V3-1); recognizing the type here also stops load() from
+      // emitting a false "unrecognized line" warning per record (audit r4
+      // V3-2). These are transcript-control telemetry, not conversation
+      // messages, so they never enter the replayed `messages` list.
+      if (entry.type === 'tool_call') {
+        toolCallRecords.push(entry);
+        continue;
+      }
+
       this.debug(
         `session store: skipping unrecognized line ${i + 1} in ${sessionId}${JSONL_EXT}`,
       );
@@ -521,6 +541,7 @@ export class JsonlSessionStore implements SessionStore {
       tag,
       gitBranch,
       ...(accountingRecords.length > 0 ? { accountingRecords } : {}),
+      ...(toolCallRecords.length > 0 ? { toolCallRecords } : {}),
       ...(pendingTurnUuid !== undefined
         ? {
             pendingTurnInterrupted: true,
@@ -555,7 +576,15 @@ export class JsonlSessionStore implements SessionStore {
       const info = await this.loadInfo(name.slice(0, -JSONL_EXT.length));
       if (info !== null) sessions.push(info);
     }
-    sessions.sort((a, b) => b.lastModified - a.lastModified);
+    // audit r4 Rst-3: break lastModified ties on the (unique) session id so the
+    // limit/slice boundary is deterministic — without a tiebreak, same-ms
+    // sessions kept readdir order, and which ones survived a `limit` cap varied
+    // across runs and filesystems (user-visible).
+    sessions.sort(
+      (a, b) =>
+        b.lastModified - a.lastModified ||
+        (a.sessionId < b.sessionId ? -1 : a.sessionId > b.sessionId ? 1 : 0),
+    );
     return sessions;
   }
 
@@ -774,7 +803,10 @@ function toSessionInfo(s: LoadedSession, fileSize?: number): SDKSessionInfo {
   const firstLine = (s.firstPrompt ?? '').split('\n', 1)[0] ?? '';
   const fromPrompt =
     firstLine.length > SUMMARY_MAX_CHARS
-      ? `${firstLine.slice(0, SUMMARY_MAX_CHARS)}...`
+      ? // audit r4 R7s-4: a bare slice can bisect a surrogate pair, leaving a
+        // lone surrogate in the listSessions summary/title that serializes as
+        // U+FFFD — cut on a code-point boundary instead.
+        `${sliceSurrogateSafe(firstLine, SUMMARY_MAX_CHARS)}...`
       : firstLine;
   // Official summary priority: customTitle > auto-generated summary > first
   // prompt. This store keeps no auto-generated summaries, so the middle tier

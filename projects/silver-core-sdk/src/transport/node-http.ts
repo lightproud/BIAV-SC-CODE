@@ -327,6 +327,16 @@ export function resolvePreconnect(
 }
 
 /**
+ * Max lifetime of the in-flight preconnect probe (audit r4 Y7-1). The HEAD
+ * request holds a REF'd socket while in flight — only pooled/free sockets are
+ * unref'd — so a gateway that accepts the TCP+TLS connection but never answers
+ * the HEAD would keep that socket (and the event loop) alive indefinitely,
+ * blocking graceful process exit. The probe is only ever a first-turn latency
+ * optimization, so aborting a slow one costs nothing.
+ */
+export const PRECONNECT_TIMEOUT_MS = 30_000;
+
+/**
  * Fire the preconnect probe: any response (401/405 included) leaves the
  * pool warm; every failure is swallowed - this is an optimization, never a
  * failure source. No credential rides the probe.
@@ -335,8 +345,16 @@ export function firePreconnect(
   fetchFn: FetchLike,
   endpoint: string,
   debug: (m: string) => void,
+  timeoutMs: number = PRECONNECT_TIMEOUT_MS,
 ): void {
-  void fetchFn(endpoint, { method: 'HEAD' })
+  // audit r4 Y7-1: bound the in-flight probe so an unresponsive gateway cannot
+  // pin a ref'd socket open and block graceful exit. The timeout timer is
+  // itself unref'd (it must never be the thing keeping the loop alive) and is
+  // cleared the instant the probe settles.
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), Math.max(0, timeoutMs));
+  timer.unref();
+  void fetchFn(endpoint, { method: 'HEAD', signal: controller.signal })
     .then(async (res) => {
       // Drain, never cancel: on the node adapter cancel() destroys the
       // freshly warmed socket instead of returning it to the keep-alive
@@ -350,5 +368,6 @@ export function firePreconnect(
       debug(
         `transport: preconnect failed (ignored): ${err instanceof Error ? err.message : String(err)}`,
       );
-    });
+    })
+    .finally(() => clearTimeout(timer));
 }
