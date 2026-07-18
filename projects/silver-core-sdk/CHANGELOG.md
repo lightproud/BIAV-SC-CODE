@@ -16,6 +16,19 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.66.0 — 2026-07-18
+
+Monorepo phase 0 (SCS-REQ orchestrator-sdk §2, keeper ruling 2026-07-17): the
+npm package is renamed **silver-core-sdk → `@biav/agent-sdk`**. Rename scope is
+the npm identity ONLY — runtime brand strings (User-Agent
+`silver-core-sdk/<version>`, error prefixes, conformance labels) are unchanged
+in this release, so no model-side or wire-visible surface moves. `npm pack`
+output changes accordingly (`biav-agent-sdk-<version>.tgz`); consumers pinning
+tarballs adopt the new filename from this version on. The repo becomes an npm
+workspace root (single root lockfile) hosting this package and the new empty
+`@biav/orchestrator-sdk`; dependency direction orchestrator → agent is CI
+enforced. No feature or behavior changes.
+
 ## 0.65.7 — 2026-07-17
 
 T50 batch L — the three WONTFIX candidates, resolved per keeper ruling
