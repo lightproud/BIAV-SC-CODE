@@ -1,7 +1,7 @@
 {
   "generated": "2026-07-18",
   "stats": {
-    "nodes": 361,
+    "nodes": 362,
     "edges": 426
   },
   "nodes": [
@@ -3259,6 +3259,17 @@
       "id": "/resource/resource-repo-engineering-sdk-cross-protocol-routing-bpt-handoff-20260713.md",
       "type": "documentation",
       "title": "sdk-cross-protocol-routing-bpt-handoff-20260713",
+      "tags": [
+        "data_layer:curated",
+        "deliverable",
+        "topic:repo-engineering"
+      ],
+      "tier": "search"
+    },
+    {
+      "id": "/resource/resource-repo-engineering-silver-core-maestro-sdk-bug-audit-r1-20260718.md",
+      "type": "documentation",
+      "title": "silver-core-maestro-sdk-bug-audit-r1-20260718",
       "tags": [
         "data_layer:curated",
         "deliverable",
