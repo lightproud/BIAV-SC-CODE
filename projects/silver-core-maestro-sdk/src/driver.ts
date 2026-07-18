@@ -37,11 +37,15 @@ export type DriverEvent =
   | { type: 'attempt:settle'; session: SessionRecord; outcome: QueryOutcome; error?: string }
   | { type: 'session:terminal'; session: SessionRecord }
   /**
-   * Poll or bookkeeping failure. `session` is present when the failure
-   * strands a specific session: recordOutcome failed twice (once + one
-   * immediate retry), leaving the record in 'running'. That stranding is BY
+   * Poll or bookkeeping failure. `session` is present ONLY when the failure
+   * verifiably strands a specific session: recordOutcome failed twice (once
+   * + one immediate retry) AND the record still reads 'running' — the
+   * carried record is the CURRENT store row (r5). That stranding is BY
    * DESIGN — the store is the source of truth, so the driver never invents
    * state to paper over a failing store; the host repairs from the event.
+   * A bookkeeping rejection whose session was already settled elsewhere
+   * (e.g. a lease sweep — self-healing on the retry path) emits WITHOUT a
+   * session: there is nothing to repair.
    */
   | { type: 'driver:error'; error: unknown; session?: SessionRecord };
 
@@ -233,11 +237,26 @@ export class LedgerDriver {
       try {
         updated = await this.#ledger.recordOutcome(session.id, payload);
       } catch (error) {
-        // Both writes failed: the session stays 'running' in the store BY
-        // DESIGN — the store is the source of truth, and inventing state
-        // driver-side would fork it. The event carries the session so the
-        // host can see exactly which record is stranded and repair it.
-        this.#emit({ type: 'driver:error', error, session });
+        // Both writes failed. Distinguish two very different worlds before
+        // signaling (r5): if the record is still 'running' in the store, it
+        // is genuinely STRANDED (the store is the source of truth, the
+        // driver never invents state) and the event carries the CURRENT
+        // record so the host repairs the right thing. If it is anything
+        // else, a lease sweep already settled this attempt and the session
+        // is self-healing on the normal retry path — a session-carrying
+        // "repair me" signal here made hosts force-settle healthy records
+        // (the pre-r5 event also carried a stale 'running' snapshot).
+        let current: SessionRecord | null = null;
+        try {
+          current = await this.#ledger.getSession(session.id);
+        } catch {
+          current = null;
+        }
+        if (current !== null && current.state === 'running') {
+          this.#emit({ type: 'driver:error', error, session: current });
+        } else {
+          this.#emit({ type: 'driver:error', error });
+        }
         return;
       }
     }

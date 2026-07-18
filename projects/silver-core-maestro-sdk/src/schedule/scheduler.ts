@@ -184,10 +184,14 @@ export class Scheduler {
       for (const session of sessions) {
         if (!session.id.startsWith(prefix)) continue;
         const suffix = session.id.slice(prefix.length);
-        // Strict digits-only (audit r2): Number('') and Number('  ') are 0,
+        // Strict numeric-only (audit r2): Number('') and Number('  ') are 0,
         // so a malformed id like 'sched:x:' would recover lastFired = 0 and
-        // trigger a catastrophic epoch catch-up.
-        if (!/^\d+$/.test(suffix)) continue;
+        // trigger a catastrophic epoch catch-up. A fractional part is legal
+        // (r5): validateSpec allows fractional `every`, so fireAt — and the
+        // session id minted from it — can carry a decimal point; rejecting
+        // it here made a restarted scheduler lose the footprint and silently
+        // re-anchor.
+        if (!/^\d+(\.\d+)?$/.test(suffix)) continue;
         const fireAt = Number(suffix);
         // Digits beyond the representable epoch range (audit r4): one
         // poisoned row like 'sched:x:99…9' would otherwise pin lastFired in
