@@ -187,7 +187,21 @@
 - **已完成**：无
 - **待决策**：游戏类型、技术选型、美术方向
 
-## Silver Core SDK（`projects/silver-core-sdk/`，原名 BPT Agent SDK，2026-07-10 守密人裁定更名）
+## Orchestrator SDK（`projects/orchestrator-sdk/`，@biav/orchestrator-sdk，2026-07-18 立项施工）
+
+> **一句话**：银芯编排 SDK——持有分子（钟 / 跨会话状态 / 会话装配），把「活得比一次调用久」的
+> agent 脏活做成可复用零件交宿主装配；与代理 SDK 分界 = 代理持原子（一次结构化调用）、编排持分子。
+> 需求裁定书 `Public-Info-Pool/Resource/repo-engineering/scs-req-orchestrator-sdk-20260717.md`。
+>
+> **进度**（2026-07-18）：第零战 monorepo 迁移完成（仓库转 npm workspace 双包、silver-core-sdk
+> npm 名更为 `@biav/agent-sdk`（0.66.0）、依赖方向守卫 CI 执法（编排→代理单向，双向违规红证实测））；
+> 第一战任务台账 + 驱动器完成（0.2.0）：封闭状态机（pending/running/retrying/failed/done，定稿回填
+> 需求档 §4）+ `LedgerStore` 宿主注入缝 + `TaskLedger` + `LedgerDriver` 持钟活组件 + 例程一最小 loop
+> （消费代理侧 R2 预算事件流，e2e 对本地仿真器真跑）；纯核 state.ts **变异分 100%**（83/83，
+> 棘轮地板 100 入 `sdk-mutation-ratchet.yml` 周检）；测试 45。
+> **未做**：商店巡检场景接入（第二战）、周报 loop 迁入、schedule / workflow 图 / goal 追逐器 / 送达契约。
+
+## Silver Core SDK（`projects/silver-core-sdk/`，原名 BPT Agent SDK，2026-07-10 守密人裁定更名；npm 名 `@biav/agent-sdk`，2026-07-18 monorepo 更名映射）
 
 > **更名注**：包名 `bpt-agent-sdk` → `silver-core-sdk`（0.41.0 起，含目录 / UA / clientInfo /
 > 日志前缀 / CI 工作流 `silver-core-sdk.yml`）。本节及决策档中 2026-07-10 前的历史叙述保留旧名，

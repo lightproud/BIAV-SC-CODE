@@ -17,8 +17,49 @@
  *    (delivery, display) is a contract seam only; implementations are
  *    host-injected.
  *
- * Phase 0 (monorepo migration): empty package. Capability modules (task
- * ledger, driver, loop scaffold, ...) land in their own campaigns.
+ * Campaign 1 surface: the task ledger (§4) — record types, the closed state
+ * machine, the host-injected store seam, TaskLedger, and the clock-holding
+ * LedgerDriver.
  */
 
-export const ORCHESTRATOR_SDK_VERSION = '0.1.0';
+export const ORCHESTRATOR_SDK_VERSION = '0.2.0';
+
+// Clock seam
+export type { Clock } from './clock.js';
+export { systemClock } from './clock.js';
+
+// Ledger record shapes
+export type {
+  SessionState,
+  QueryOutcome,
+  SessionRecord,
+  QueryRecord,
+} from './ledger/types.js';
+
+// Pure state-machine core
+export {
+  SESSION_STATES,
+  TERMINAL_STATES,
+  InvalidTransitionError,
+  transition,
+  backoffDelayMs,
+  DEFAULT_RETRY_POLICY,
+} from './ledger/state.js';
+export type { SessionEvent, TransitionContext, RetryPolicy } from './ledger/state.js';
+
+// Storage seam (host-injected)
+export type { LedgerStore, SessionFilter } from './ledger/store.js';
+
+// Ledger API
+export { TaskLedger } from './ledger/ledger.js';
+export type { TaskLedgerOptions, DispatchInput, OutcomeInput } from './ledger/ledger.js';
+
+// Driver (live component; host holds life-and-death)
+export { LedgerDriver } from './driver.js';
+export type {
+  LedgerDriverOptions,
+  DriverEvent,
+  Executor,
+  ExecutorResult,
+  ExecutorContext,
+} from './driver.js';

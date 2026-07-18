@@ -45,6 +45,11 @@
 
 - **层级:session → query 两级。** session 为派发单位、携业务意图;query 为执行记录,每轮/每次重试一条。goal 不入表(场景层语义,如需串联由场景自理)。
 - **状态机:SDK 定死封闭状态集**(pending / running / retrying / failed / done 一类,实现时定稿),语义统一,挂 session 级;query 级只记轮次结果。重试 = session 处 retrying、新 query 记录追加,与两级结构自洽。
+  > **状态集定稿(2026-07-18 施工回填,授权见施工封面 §2)**:session 级封闭集 =
+  > `pending | running | retrying | failed | done`(terminal = done / failed;事件集
+  > `claim | attempt:ok | attempt:error | attempt:timeout`,重试复用 claim 事件);
+  > query 级轮次结果 = `ok | error | timeout`。裁定记录见 `memory/decisions.md`
+  > 2026-07-18「编排 SDK 第一战」条。
 - **存储:只定接口,实现全由宿主注入。** BPT 注入服务端 DB(五层架构第四层,本就是有状态重点守护区)。SDK 自身无状态、不带电池。
 - **驱动器:SDK 提供活组件。** 宿主启动后由它持钟自动调度重试/超时,推动状态流转;生杀权在宿主(启动/停止即宿主的裁量)。
 - 查询面跨场景通用(封闭状态集是前提):在跑什么、挂了什么、挂在哪,一套查询通吃五场景。

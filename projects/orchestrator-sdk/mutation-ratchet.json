@@ -1,0 +1,17 @@
+{
+  "_meta": {
+    "what": "Mutation-score ratchet baselines for @biav/orchestrator-sdk (same discipline as the agent SDK's mutation-ratchet.json, keeper order 2026-07-13: floors are only-up; lowering one requires a keeper ruling). The weekly sdk-mutation-ratchet workflow re-measures each target and REDS below floor.",
+    "score": "Stryker mutation score = (killed + timeout) / (killed + timeout + survived + noCoverage) * 100; compile/runtime-error mutants excluded",
+    "tolerance_pp": 0.75,
+    "history": {
+      "2026-07-18 ledger-state seeded": "state.ts (task-ledger pure core: closed transition graph + retry arithmetic, SCS-REQ orchestrator-sdk §4) seeded at 100.00 after one kill round (92.77 -> 100.00: error-message byte pins + negative/zero/non-finite backoff-policy boundary tests; 83 killed, 0 survived)."
+    }
+  },
+  "targets": [
+    {
+      "name": "ledger-state",
+      "mutate": "src/ledger/state.ts",
+      "floor": 100.0
+    }
+  ]
+}
