@@ -150,6 +150,10 @@ export class LedgerDriver {
   async #tick(generation: number): Promise<void> {
     if (!this.#running || generation !== this.#generation) return;
     try {
+      // Lease sweep first (gap G2): expired claims from a dead/overrunning
+      // driver re-enter the retry path and may be re-claimed this very tick.
+      // No-op on lease-less ledgers and lease-less records.
+      await this.#ledger.sweepExpiredLeases(this.#clock.now());
       const claimed = await this.#ledger.claimDue(this.#clock.now());
       // Attempts are started even if stop() began while claimDue was in
       // flight: stop() awaits this tick and then aborts them, so the claims

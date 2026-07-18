@@ -299,7 +299,8 @@ brain-in-a-vat/
 │   ├── site/   # 对外门户：静态站（public/）+ 设计令牌（design/）
 │   ├── game/   # 衍生游戏（退主线，守密人个人兴趣，不主线派发）
 │   ├── silver-core-sdk/  # 使命#2 通用 AI 底层开发基地（2026-07-12 转正）· 银芯→黑池单向输出物：Silver Core Agent SDK——Claude Agent SDK 干净重实现（原名 bpt-agent-sdk，2026-07-10 更名；npm 名 silver-core-agent-sdk，2026-07-18 定名），见 project-status「## Silver Core SDK」
-│   └── silver-core-maestro-sdk/ # 使命#2 Silver Core Maestro SDK（npm 名 silver-core-maestro-sdk，乐队指挥意象）：钟 / 跨会话状态 / 会话装配零件（任务台账等），依赖单向 maestro→agent，需求档 scs-req-orchestrator-sdk-20260717.md
+│   ├── silver-core-maestro-sdk/ # 使命#2 Silver Core Maestro SDK（npm 名 silver-core-maestro-sdk，乐队指挥意象）：钟 / 跨会话状态 / 会话装配零件（任务台账等），依赖单向 maestro→agent，需求档 scs-req-orchestrator-sdk-20260717.md
+│   └── silver-core-testbed/ # 试金石（2026-07-18 施工）：两包效果验证床——消费者非家族第三包（private / 永不发布 / 锁步豁免 / 仅公开面），自举巡检本仓 + 台账即评测数据源；漏缝清单 GAPS.md 为一等产出
 ├── memory/                        # 银芯记忆层（决策 / 方法论 / 踩坑 / active hub）
 │   ├── active/                    # 主题入口卡（4 个高频 hub，优先读这里再下钻）
 │   ├── archive/ research/ strategy/

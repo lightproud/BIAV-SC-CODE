@@ -16,6 +16,25 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.71.0 — 2026-07-18
+
+Testbed gap adoption, agent-side slice (keeper ruling 2026-07-18, option 甲;
+G1-G3 land in silver-core-maestro-sdk 0.71.0). Version note: authored as
+0.69.0, renumbered to 0.71.0 at merge time — 0.69.0/0.70.0 were taken on main
+by a parallel session (#743/#744), same let-the-number-go discipline as 0.53.2:
+
+- **G4 — `MemoryStore.read?(path)`** (BPT-EXTENSION, host-facing): OPTIONAL
+  raw accessor returning the exact stored content of an existing file — no
+  reference header, no line numbers, no truncation. NOT one of the six
+  model-facing memory commands (the reference tool surface is byte-for-byte
+  unchanged; models keep using view). Engine-built stores (createMemoryStore /
+  createLocalFilesystemMemoryStore) implement it with the same R4 path
+  validation as every command; a directory path or missing file throws the
+  usual MemoryToolError strings. Custom MemoryStore implementations may omit
+  it — consumers feature-detect. Closes the testbed finding that embedders
+  reading their own memory writes back had to strip view's decoration or
+  bypass the engine via the FileOps primitive layer.
+
 ## 0.70.1 — 2026-07-18
 
 Permission deny-bypass — audit r3 batch M (T51 first fire): a bare subshell

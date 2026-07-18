@@ -242,6 +242,19 @@ export function createMemoryStore(
   }
 
   return {
+    /** Host-facing raw accessor (gap G4, 0.71.0): exact stored bytes of an
+     *  existing FILE — no header, no line numbers, no truncation. Not a
+     *  model-facing command; the six-command reference surface is unchanged. */
+    async read(rawPath: string): Promise<string> {
+      const path = validateMemoryPath(rawPath);
+      const stat = await statOrNull(path);
+      if (stat === null) throw pathDoesNotExistView(path);
+      if (stat.kind === 'directory') {
+        throw new MemoryToolError(`Error: ${path} is a directory; read applies to files only.`);
+      }
+      return ops.read(path);
+    },
+
     async view(rawPath, viewRange): Promise<string> {
       const path = validateMemoryPath(rawPath);
       const stat = await statOrNull(path);

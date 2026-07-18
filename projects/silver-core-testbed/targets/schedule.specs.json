@@ -1,0 +1,44 @@
+{
+  "_meta": {
+    "what": "热层调度节拍 (hot layer): ScheduleSpec[] fed verbatim to the maestro Scheduler. Editing cadence = editing this file, zero code changes. Fire bookkeeping lives in the ledger (sched:{id}:{fireAt} idempotency keys), so the daily CI run recovers and compensates whatever it missed since the last run (catchUp latest).",
+    "clock": "dailyAt is UTC. 07:00 UTC = 北京 15:00 档; the testbed-patrol cron runs 07:20 UTC so the day's fire points are just-missed and compensated on arrival — deliberately exercising the missed-fire path every single day.",
+    "constraint": "spec ids must not contain ':' (session-id separator, validateSpec enforces)."
+  },
+  "specs": [
+    {
+      "id": "insp-ci-status",
+      "intent": "inspect:ci-status",
+      "dailyAt": { "hour": 7, "minute": 0 },
+      "catchUp": "latest",
+      "maxAttempts": 3
+    },
+    {
+      "id": "insp-doc-links",
+      "intent": "inspect:doc-links",
+      "dailyAt": { "hour": 7, "minute": 0 },
+      "catchUp": "latest",
+      "maxAttempts": 3
+    },
+    {
+      "id": "insp-lockstep",
+      "intent": "inspect:lockstep",
+      "dailyAt": { "hour": 7, "minute": 0 },
+      "catchUp": "latest",
+      "maxAttempts": 3
+    },
+    {
+      "id": "insp-ratchet",
+      "intent": "inspect:ratchet",
+      "dailyAt": { "hour": 7, "minute": 0 },
+      "catchUp": "latest",
+      "maxAttempts": 3
+    },
+    {
+      "id": "dream",
+      "intent": "dream",
+      "dailyAt": { "hour": 7, "minute": 10 },
+      "catchUp": "latest",
+      "maxAttempts": 2
+    }
+  ]
+}

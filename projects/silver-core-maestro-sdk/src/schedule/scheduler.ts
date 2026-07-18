@@ -18,12 +18,34 @@ export type SchedulerEvent =
   | { type: 'schedule:fire'; specId: string; fireAt: number; sessionId: string }
   | { type: 'schedule:error'; error: unknown };
 
+/**
+ * The ledger session id a Scheduler uses for one fire point (gap G3: this
+ * format was previously a doc-comment-only contract; the workflow side has
+ * had workflowSessionId all along). Hosts use it to pre-seed or audit fire
+ * bookkeeping without hand-formatting strings.
+ */
+export function scheduleSessionId(specId: string, fireAt: number): string {
+  return `sched:${specId}:${fireAt}`;
+}
+
 export interface SchedulerOptions {
   ledger: TaskLedger;
   specs: readonly ScheduleSpec[];
   clock?: Clock;
   /** Poll cadence for due fire points (default 1000 ms). */
   pollIntervalMs?: number;
+  /**
+   * Day-zero seeding for SHORT-LIVED hosts (gap G3). Recovery deliberately
+   * does no epoch backfill: a spec with no ledger footprint starts at `now`.
+   * Correct for a long-lived process, but a host that boots after the fire
+   * point and exits seconds later (a daily CI run) then never fires at all —
+   * every boot re-anchors at now and the footprint never appears. With
+   * seedFirstRun, a footprint-less spec starts one cadence back instead
+   * (every ?? 24 h), so its single most recent due point fires on the first
+   * tick under EITHER catchUp mode, and every later boot recovers normally.
+   * Default false (prior behavior byte-for-byte).
+   */
+  seedFirstRun?: boolean;
   /** Observability seam: data out, rendering host-side. Callback errors are swallowed. */
   onEvent?: (event: SchedulerEvent) => void;
 }
@@ -33,6 +55,7 @@ export class Scheduler {
   readonly #specs: ScheduleSpec[];
   readonly #clock: Clock;
   readonly #pollIntervalMs: number;
+  readonly #seedFirstRun: boolean;
   readonly #onEvent: ((event: SchedulerEvent) => void) | undefined;
 
   #running = false;
@@ -55,6 +78,7 @@ export class Scheduler {
     this.#specs = [...opts.specs];
     this.#clock = opts.clock ?? systemClock;
     this.#pollIntervalMs = opts.pollIntervalMs ?? 1_000;
+    this.#seedFirstRun = opts.seedFirstRun === true;
     this.#onEvent = opts.onEvent;
     if (!Number.isFinite(this.#pollIntervalMs) || this.#pollIntervalMs < 0) {
       throw new RangeError('Scheduler: pollIntervalMs must be a finite number >= 0');
@@ -163,7 +187,11 @@ export class Scheduler {
         if (!Number.isFinite(fireAt)) continue;
         if (latest === null || fireAt > latest) latest = fireAt;
       }
-      this.#lastFired.set(spec.id, latest ?? now);
+      // seedFirstRun (gap G3): a footprint-less spec starts one cadence back,
+      // so the window (lastFired, now] holds AT MOST its single most recent
+      // due point — identical fire set under catchUp 'latest' and 'all'.
+      const fallback = this.#seedFirstRun ? now - (spec.every ?? 86_400_000) : now;
+      this.#lastFired.set(spec.id, latest ?? fallback);
     }
   }
 
@@ -175,7 +203,7 @@ export class Scheduler {
     // its newest point; 'all' replays every due point (firesBetween cap applies).
     const due = (spec.catchUp ?? 'latest') === 'all' ? fires : fires.slice(-1);
     for (const fireAt of due) {
-      const sessionId = `sched:${spec.id}:${fireAt}`;
+      const sessionId = scheduleSessionId(spec.id, fireAt);
       try {
         await this.#ledger.dispatch({
           id: sessionId,

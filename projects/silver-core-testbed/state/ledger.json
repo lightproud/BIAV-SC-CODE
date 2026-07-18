@@ -1,0 +1,131 @@
+{
+  "sessions": {
+    "sched:insp-ci-status:1784358000000": {
+      "id": "sched:insp-ci-status:1784358000000",
+      "intent": "inspect:ci-status",
+      "payload": {
+        "schedule": {
+          "specId": "insp-ci-status",
+          "fireAt": 1784358000000
+        }
+      },
+      "state": "done",
+      "attempts": 1,
+      "maxAttempts": 3,
+      "createdAt": 1784365869715,
+      "updatedAt": 1784365870195,
+      "nextRunAt": null
+    },
+    "sched:insp-doc-links:1784358000000": {
+      "id": "sched:insp-doc-links:1784358000000",
+      "intent": "inspect:doc-links",
+      "payload": {
+        "schedule": {
+          "specId": "insp-doc-links",
+          "fireAt": 1784358000000
+        }
+      },
+      "state": "done",
+      "attempts": 1,
+      "maxAttempts": 3,
+      "createdAt": 1784365869716,
+      "updatedAt": 1784365869779,
+      "nextRunAt": null
+    },
+    "sched:insp-lockstep:1784358000000": {
+      "id": "sched:insp-lockstep:1784358000000",
+      "intent": "inspect:lockstep",
+      "payload": {
+        "schedule": {
+          "specId": "insp-lockstep",
+          "fireAt": 1784358000000
+        }
+      },
+      "state": "done",
+      "attempts": 1,
+      "maxAttempts": 3,
+      "createdAt": 1784365869716,
+      "updatedAt": 1784365869778,
+      "nextRunAt": null
+    },
+    "sched:insp-ratchet:1784358000000": {
+      "id": "sched:insp-ratchet:1784358000000",
+      "intent": "inspect:ratchet",
+      "payload": {
+        "schedule": {
+          "specId": "insp-ratchet",
+          "fireAt": 1784358000000
+        }
+      },
+      "state": "done",
+      "attempts": 1,
+      "maxAttempts": 3,
+      "createdAt": 1784365869717,
+      "updatedAt": 1784365870195,
+      "nextRunAt": null
+    },
+    "sched:dream:1784358600000": {
+      "id": "sched:dream:1784358600000",
+      "intent": "dream",
+      "payload": {
+        "schedule": {
+          "specId": "dream",
+          "fireAt": 1784358600000
+        }
+      },
+      "state": "done",
+      "attempts": 1,
+      "maxAttempts": 2,
+      "createdAt": 1784365869717,
+      "updatedAt": 1784365870785,
+      "nextRunAt": null
+    }
+  },
+  "queries": [
+    {
+      "id": "9273ed75-e08b-4ba0-83c6-41e487ee1449",
+      "sessionId": "sched:insp-lockstep:1784358000000",
+      "attempt": 1,
+      "startedAt": 1784365869748,
+      "endedAt": 1784365869777,
+      "outcome": "ok",
+      "summary": "lockstep: ok (0 findings) -> reports/lockstep/2026-07-18.md"
+    },
+    {
+      "id": "eeff806f-93c5-4566-96a2-fe881d12516e",
+      "sessionId": "sched:insp-doc-links:1784358000000",
+      "attempt": 1,
+      "startedAt": 1784365869734,
+      "endedAt": 1784365869778,
+      "outcome": "ok",
+      "summary": "doc-links: ok (0 findings) -> reports/doc-links/2026-07-18.md"
+    },
+    {
+      "id": "ec4be383-cc9d-497c-b3cf-98f6dd658dff",
+      "sessionId": "sched:insp-ratchet:1784358000000",
+      "attempt": 1,
+      "startedAt": 1784365869753,
+      "endedAt": 1784365870195,
+      "outcome": "ok",
+      "summary": "ratchet: blocked (1 findings) -> reports/ratchet/2026-07-18.md"
+    },
+    {
+      "id": "a320ac45-4f08-4252-8a27-c1724ead3115",
+      "sessionId": "sched:insp-ci-status:1784358000000",
+      "attempt": 1,
+      "startedAt": 1784365869722,
+      "endedAt": 1784365870195,
+      "outcome": "ok",
+      "summary": "ci-status: blocked (1 findings) -> reports/ci-status/2026-07-18.md"
+    },
+    {
+      "id": "4f0b3937-2265-45ed-8642-2695c95c86cc",
+      "sessionId": "sched:dream:1784358600000",
+      "attempt": 1,
+      "startedAt": 1784365869757,
+      "endedAt": 1784365870785,
+      "outcome": "ok",
+      "summary": "dream: merged 2026-07-18 (ci-status=blocked doc-links=ok lockstep=ok ratchet=blocked) worst=blocked"
+    }
+  ]
+}

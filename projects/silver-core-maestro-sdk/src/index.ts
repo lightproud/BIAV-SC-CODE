@@ -22,7 +22,7 @@
  * LedgerDriver.
  */
 
-export const MAESTRO_SDK_VERSION = '0.70.1';
+export const MAESTRO_SDK_VERSION = '0.71.0';
 
 // Clock seam
 export type { Clock } from './clock.js';
@@ -50,6 +50,17 @@ export type { SessionEvent, TransitionContext, RetryPolicy } from './ledger/stat
 // Storage seam (host-injected)
 export type { LedgerStore, SessionFilter } from './ledger/store.js';
 
+// Deliverable LedgerStore contract suite (gap G1, 0.69.0): a host validates
+// its injected store with runLedgerStoreContractSuite(() => makeStore()).
+export {
+  ledgerStoreContractCheckNames,
+  runLedgerStoreContractSuite,
+} from './ledger/contract-suite.js';
+export type {
+  LedgerStoreContractReport,
+  LedgerStoreContractResult,
+} from './ledger/contract-suite.js';
+
 // Ledger API
 export { TaskLedger, DuplicateSessionError } from './ledger/ledger.js';
 export type { TaskLedgerOptions, DispatchInput, OutcomeInput } from './ledger/ledger.js';
@@ -67,7 +78,7 @@ export type {
 // Schedule (campaign 3: 定点触发 + 错过补偿 + 跨重启恢复)
 export { ScheduleSpecError, validateSpec, nextFireAt, firesBetween } from './schedule/spec.js';
 export type { ScheduleSpec } from './schedule/spec.js';
-export { Scheduler } from './schedule/scheduler.js';
+export { Scheduler, scheduleSessionId } from './schedule/scheduler.js';
 export type { SchedulerOptions, SchedulerEvent } from './schedule/scheduler.js';
 
 // Workflow graph executor (campaign 4: 声明式图,图定义是数据)

@@ -1613,6 +1613,17 @@ export interface MemoryStore {
   insert(path: string, insertLine: number, insertText: string): Promise<string>;
   delete(path: string): Promise<string>;
   rename(oldPath: string, newPath: string): Promise<string>;
+  /**
+   * OPTIONAL host-facing raw accessor (BPT-EXTENSION, testbed gap G4,
+   * 0.71.0): the exact stored content of an EXISTING file — no header, no
+   * line numbers, no truncation. NOT one of the six model-facing memory
+   * commands (models keep using view); embedders that read their own memory
+   * writes back previously had to strip view's reference decoration or drop
+   * to the FileOps primitive layer. Engine-built stores (createMemoryStore /
+   * createLocalFilesystemMemoryStore) implement it; custom implementations
+   * may omit it — consumers feature-detect.
+   */
+  read?(path: string): Promise<string>;
 }
 
 /**

@@ -46,6 +46,15 @@ export interface SessionRecord {
   nextRunAt: number | null;
   /** Last attempt's error text (kept once set; cleared by nothing). */
   lastError?: string;
+  /**
+   * Claim lease (testbed gap G2, keeper adoption ruling 2026-07-18): when the
+   * ledger is configured with claimLeaseMs, a claim stamps the moment this
+   * attempt's claim expires. A `running` session whose lease has expired can
+   * be safely settled by ANY driver via sweepExpiredLeases — the claiming
+   * driver is dead or overrunning its lease. Absent/null = no lease (legacy
+   * records and lease-less ledgers are never swept).
+   */
+  leaseUntil?: number | null;
 }
 
 /** Query record: one execution attempt. Rounds are appended, never edited. */
