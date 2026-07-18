@@ -16,6 +16,53 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.65.5 — 2026-07-18
+
+T52 dynamic-orchestration cluster: 7 fixes in the Workflow / Task
+orchestration subsystem from the fourth-round audit
+(`Public-Info-Pool/Resource/repo-engineering/silver-core-sdk-bug-audit-r4-20260717.md`).
+
+- **Z5-1 (med, workflow-engine)**: the meta pure-literal parser hard-rejected
+  legal JS literals — `\u{...}` code-point escapes, `\xNN` escapes, hex /
+  octal / binary integers and `1_000` numeric separators — so a legal script
+  never ran. All forms now parse; line-continuation escapes contribute
+  nothing (JS semantics); BigInt literals are rejected with an explicit
+  "values must be JSON-representable" message instead of a cryptic offset
+  error.
+- **Z5-2 (med, workflow-engine)**: the 1000-agent lifetime backstop error was
+  swallowed to null by parallel()/pipeline() per-item catches, so a runaway
+  workflow completed `ok: true` with null items. The backstop now throws a
+  dedicated `WorkflowLimitError` rethrown alongside abort in both per-item
+  catches — the run fails honestly.
+- **Z5-3 (med, task)**: task metadata was write-only — TaskCreate/TaskUpdate
+  accepted it but neither TaskGet nor TaskList ever surfaced it. TaskGet (the
+  detail view) now renders a `Metadata:` line when non-empty, plus the
+  previously TaskList-only `Owner:` line; TaskList stays a compact summary.
+- **Z1-1 (low, workflow-engine + internal/structured-output)**: H5's switch
+  to the shared validator silently inherited lenient prose-span extraction,
+  so a wrong embedded JSON object in a chatty reply could validate and poison
+  the script's data (workflow agent() has no retry channel). The validator
+  gains an `extraction: 'strict'` mode (direct parse or fenced block only)
+  and workflow agent() uses it; the engine's structured-output turn keeps the
+  lenient default (it has bounded correction retries).
+- **Z5-4 (low, workflow-engine)**: the vm prelude banned Date/random but left
+  WeakRef / FinalizationRegistry usable — GC observation is nondeterministic
+  and breaks resume the same way a clock read does. Both now throw the same
+  determinism error as the existing bans.
+- **R7j-5 (low, workflow-engine)**: stableStringify (agent-call hashing) had
+  no cycle guard (stack overflow) and threw raw TypeError on BigInt. Now:
+  circular input throws a clean `WorkflowTypeError`, BigInt gets a
+  deterministic `<digits>n` rendering, and validateAgentOpts rejects
+  non-JSON-serializable schemas up front with a clear message.
+- **R7s-3 (high, workflow + engine/compaction + new internal/text)**: the
+  100k-char result truncation used a bare `.slice()` that could split a
+  surrogate pair, putting a lone surrogate (wire U+FFFD) into the tool
+  result. `sliceSurrogateSafe` is extracted from compaction.ts into shared
+  `internal/text.ts` (exported for the r4 P2 surrogate-family sweep) and the
+  Workflow result path now uses it; compaction behavior is byte-identical.
+
+Regression tests: `tests/audit-r4-orchestration.test.ts`.
+
 ## 0.65.4 — 2026-07-17
 
 T50 batch K: 38 mid-severity (P1) fixes from the second-round 105-defect

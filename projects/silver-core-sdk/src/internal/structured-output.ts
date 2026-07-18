@@ -103,12 +103,23 @@ export function buildStructuredOutputInstruction(schema: JSONSchema): string {
  * candidate validates, the invalid outcome reports the first candidate's
  * violations (the best anchor for the corrective re-prompt), or the
  * not-JSON reason when nothing parsed at all.
+ *
+ * `extraction` (audit r4 Z1-1): the engine's structured-output turn has a
+ * bounded correction-retry loop, so 'lenient' (the default) maximizes the
+ * chance of salvaging an answer. Callers with NO retry channel (workflow
+ * agent(), where an accepted-but-wrong span silently poisons the script's
+ * data) pass 'strict': only a direct parse of the whole reply or a fenced
+ * block is considered — prose is never scanned for embedded JSON spans.
  */
-export function evaluateStructuredOutput(text: string, schema: JSONSchema): StructuredOutcome {
+export function evaluateStructuredOutput(
+  text: string,
+  schema: JSONSchema,
+  opts?: { extraction?: 'lenient' | 'strict' },
+): StructuredOutcome {
   let firstErrors: ValidationError[] | undefined;
   let sawCandidate = false;
   let notJsonReason = 'empty response';
-  for (const candidate of jsonCandidates(text)) {
+  for (const candidate of jsonCandidates(text, opts?.extraction ?? 'lenient')) {
     if (!candidate.ok) {
       notJsonReason = candidate.reason;
       continue;
@@ -162,8 +173,15 @@ type ExtractResult = { ok: true; value: unknown } | { ok: false; reason: string 
  * the whole text is not JSON, so the caller can report why. The caller
  * validates candidates against the schema and takes the first VALID one (H5) —
  * this generator stays schema-agnostic.
+ *
+ * 'strict' mode (audit r4 Z1-1) stops after (a) and (b): balanced-span
+ * scanning over prose is skipped, so an embedded example object can never be
+ * mistaken for the reply.
  */
-function* jsonCandidates(text: string): Generator<ExtractResult> {
+function* jsonCandidates(
+  text: string,
+  extraction: 'lenient' | 'strict',
+): Generator<ExtractResult> {
   const trimmed = text.trim();
   if (trimmed === '') {
     yield { ok: false, reason: 'empty response' };
@@ -182,6 +200,8 @@ function* jsonCandidates(text: string): Generator<ExtractResult> {
     const parsed = tryParse(fenced);
     if (parsed.ok) yield parsed;
   }
+
+  if (extraction === 'strict') return;
 
   let from = 0;
   for (;;) {

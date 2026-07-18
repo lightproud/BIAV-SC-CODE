@@ -45,6 +45,7 @@ import {
   type WorkflowLimits,
 } from './workflow-engine.js';
 import { WORKFLOW_DESCRIPTION } from './descriptions.js';
+import { sliceSurrogateSafe } from '../internal/text.js';
 
 // ---------------------------------------------------------------------------
 // Per-session run registry (resume journals). WeakMap so a finished query's
@@ -136,7 +137,10 @@ function serializeValue(value: unknown): string {
     json = String(value);
   }
   if (json.length > MAX_RESULT_CHARS) {
-    return `${json.slice(0, MAX_RESULT_CHARS)}\n[...] result truncated at ${MAX_RESULT_CHARS} characters`;
+    // Surrogate-safe cut (audit r4 R7s-3): a bare .slice() landing inside an
+    // astral codepoint puts a lone surrogate into the tool result, which the
+    // wire then serializes as U+FFFD.
+    return `${sliceSurrogateSafe(json, MAX_RESULT_CHARS)}\n[...] result truncated at ${MAX_RESULT_CHARS} characters`;
   }
   return json;
 }
