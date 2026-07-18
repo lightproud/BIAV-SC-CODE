@@ -16,6 +16,11 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.70.0 — 2026-07-18
+
+Lockstep alignment with silver-core-maestro-sdk 0.70.0 (maestro audit
+round 1: 29 defects fixed + integration suites). No agent-side changes.
+
 ## 0.69.0 — 2026-07-18
 
 Keeper todo batch 2026-07-18 (SDK-side items 1–3): migration doc refresh +

@@ -12,6 +12,49 @@ discipline as the agent SDK: every merge that changes shipped runtime code
 bumps BOTH versions and adds one line here (a lockstep-alignment line when
 this package itself is untouched).
 
+## 0.70.0 — 2026-07-18
+
+Audit round 1 of the keeper's 500-bug campaign (T56): 17 finder agents +
+adversarial verification confirmed **29 real defects** (1 P1 + 11 P2 + 17 P3)
+across src, examples, tests, CI and docs — all 29 fixed or explicitly
+documented, each with a regression test that fails on the old code.
+Highlights:
+
+- **P1** schedule: fractional `every` float rounding could make `nextFireAt`
+  return t == after, spinning `firesBetween` forever; fixed with a bounded
+  advance re-derived deterministically (flatness detection — an `every` below
+  float resolution at the target magnitude now refuses loudly).
+- Ledger: `runAt` is now `number | null` — non-finite throws; `null` =
+  manual-claim-only (invisible to claimDue; the race-free
+  dispatch-then-claimSession inline pattern, used by the delivery channel);
+  retry-policy merge drops explicit-undefined overrides; `backoffDelayMs`
+  validates policy numbers (a poisoned cap previously wedged sessions in
+  'retrying' with nextRunAt NaN).
+- Driver + Scheduler: generation counters + stop() awaiting the in-flight
+  tick kill two stop/start races (claims landing after stop resolved;
+  stop-then-start forking two poll chains). Driver recordOutcome failure now
+  retries once, then emits `driver:error` WITH the stranded session.
+- Workflow: Map-backed lookups ('__proto__'/'toString' node ids now safe),
+  GraphError consistency + empty-id/node-field validation at construction,
+  drainTimeoutMs validated.
+- Goal: concurrent chase() of one goal id adopts the existing round instead
+  of crashing; resume scan finds the true latest round past maxRounds.
+- Examples: store-patrol sweeps crash-orphaned 'running' sessions at start;
+  minimal-loop budget reservations stop overlapping queries from each arming
+  the full remaining budget, caller-supplied budget hooks are merged, and
+  summary truncation is surrogate-safe.
+- CI: store-patrol.yml commits partial results before failing the job;
+  sdk-mutation-ratchet.yml single-target dispatch actually skips other
+  targets now.
+- **Integration suites** (the campaign's third deliverable):
+  `tests/integration-full-stack.test.ts` (scheduler + driver + workflow +
+  goal + delivery co-resident on ONE store, stop-safety, fake timers) and
+  `tests/integration-restart.test.ts` (file-store crash/restart:
+  exactly-once fires, workflow resume, goal resume, atomic ledger writes).
+- Tests 171 -> 231 (18 files); mutation floors hold (state 100 / spec 99.49
+  within tolerance, 1 documented equivalence survivor / graph 97.84 up from
+  97.14 / decision 100).
+
 ## 0.69.0 — 2026-07-18
 
 Keeper todo batch 2026-07-18 (SDK-side items 4–5): maestro fill-ins +
