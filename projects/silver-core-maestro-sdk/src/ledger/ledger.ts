@@ -20,6 +20,18 @@ export interface TaskLedgerOptions {
   idFactory?: () => string;
   /** Retry policy defaults for sessions that don't override maxAttempts. */
   retry?: Partial<RetryPolicy>;
+  /**
+   * Claim lease duration in ms (gap G2). When set, every claim stamps
+   * leaseUntil = now + claimLeaseMs, and sweepExpiredLeases() can settle
+   * `running` sessions whose lease has expired (dead driver / kill -9) back
+   * into the normal retry path — safe even with multiple drivers sharing the
+   * store, because only EXPIRED leases are touched. Set it comfortably above
+   * the worst-case attempt duration (driver queryTimeoutMs included): a live
+   * attempt that outruns its lease will be swept, and its late recordOutcome
+   * then fails with InvalidTransitionError (surfaced as driver:error).
+   * Unset = no leases (prior behavior byte-for-byte).
+   */
+  claimLeaseMs?: number;
 }
 
 export interface DispatchInput {
@@ -68,12 +80,22 @@ export class TaskLedger {
   readonly #clock: Pick<Clock, 'now'>;
   readonly #idFactory: () => string;
   readonly #retry: RetryPolicy;
+  readonly #claimLeaseMs: number | undefined;
 
   constructor(opts: TaskLedgerOptions) {
     this.#store = opts.store;
     this.#clock = opts.clock ?? systemClock;
     this.#idFactory = opts.idFactory ?? (() => crypto.randomUUID());
     this.#retry = { ...DEFAULT_RETRY_POLICY, ...opts.retry };
+    if (
+      opts.claimLeaseMs !== undefined &&
+      (!Number.isFinite(opts.claimLeaseMs) || opts.claimLeaseMs <= 0)
+    ) {
+      throw new RangeError(
+        `TaskLedger: claimLeaseMs must be a finite number > 0, got ${opts.claimLeaseMs}`,
+      );
+    }
+    this.#claimLeaseMs = opts.claimLeaseMs;
   }
 
   /** Create a session in `pending`, due immediately unless runAt says later. */
@@ -126,6 +148,7 @@ export class TaskLedger {
         attempts: session.attempts + 1,
         nextRunAt: null,
         updatedAt: now,
+        leaseUntil: this.#claimLeaseMs !== undefined ? now + this.#claimLeaseMs : null,
       };
       await this.#store.putSession(updated);
       claimed.push(updated);
@@ -153,9 +176,38 @@ export class TaskLedger {
       attempts: session.attempts + 1,
       nextRunAt: null,
       updatedAt: now,
+      leaseUntil: this.#claimLeaseMs !== undefined ? now + this.#claimLeaseMs : null,
     };
     await this.#store.putSession(updated);
     return { ...updated };
+  }
+
+  /**
+   * Settle every `running` session whose claim lease has expired (gap G2):
+   * the claiming driver is dead (kill -9, power loss) or overran its lease,
+   * so the attempt is recorded as an error and the session re-enters the
+   * normal retry/backoff path (or exhausts into failed). Sessions without a
+   * lease are NEVER touched — a lease-less ledger is a no-op, and legacy
+   * records stay under the host's own recovery policy. Returns the settled
+   * records. Safe with multiple drivers over one store; the LedgerDriver
+   * calls this each poll tick.
+   */
+  async sweepExpiredLeases(now: number = this.#clock.now()): Promise<SessionRecord[]> {
+    const running = await this.#store.listSessions({ states: ['running'] });
+    const swept: SessionRecord[] = [];
+    for (const session of running) {
+      if (session.leaseUntil === undefined || session.leaseUntil === null) continue;
+      if (session.leaseUntil > now) continue;
+      swept.push(
+        await this.recordOutcome(session.id, {
+          outcome: 'error',
+          error: `lease-expired: claim lease ran out at ${session.leaseUntil} (driver dead or overrunning)`,
+          startedAt: session.updatedAt,
+          endedAt: now,
+        }),
+      );
+    }
+    return swept;
   }
 
   /**
@@ -189,6 +241,8 @@ export class TaskLedger {
         next === 'retrying'
           ? now + backoffDelayMs(session.attempts, { ...this.#retry, maxAttempts: session.maxAttempts })
           : null,
+      // The attempt is settled either way — its claim lease is spent.
+      leaseUntil: null,
       ...(result.outcome !== 'ok'
         ? { lastError: result.error ?? result.outcome }
         : {}),

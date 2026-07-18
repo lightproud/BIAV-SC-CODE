@@ -12,6 +12,32 @@ discipline as the agent SDK: every merge that changes shipped runtime code
 bumps BOTH versions and adds one line here (a lockstep-alignment line when
 this package itself is untouched).
 
+## 0.69.0 — 2026-07-18
+
+Testbed gap adoption (keeper ruling 2026-07-18, option 甲: all four gaps from
+projects/silver-core-testbed/GAPS.md accepted; G1-G3 land here, G4 on the
+agent side):
+
+- **G1 — deliverable LedgerStore contract suite**: new public
+  `runLedgerStoreContractSuite(makeStore)` + `ledgerStoreContractCheckNames()`
+  (12 checks derived from the seam's documented contract notes; fresh store
+  per check, failures land in the report, never thrown) — the counterpart of
+  the agent SDK's memory contract suite, so a second consumer no longer
+  re-derives the contract from doc comments.
+- **G2 — claim leases**: `TaskLedgerOptions.claimLeaseMs` stamps
+  `SessionRecord.leaseUntil` on every claim; new
+  `TaskLedger.sweepExpiredLeases()` settles expired `running` claims (dead or
+  overrunning driver) back into the normal retry path — multi-driver safe,
+  because only EXPIRED leases are touched. The LedgerDriver sweeps each poll
+  tick. Lease-less ledgers and legacy records: byte-for-byte prior behavior.
+- **G3 — short-lived-host scheduling**: new `SchedulerOptions.seedFirstRun`
+  (a footprint-less spec starts one cadence back instead of `now`, so its
+  single most recent due point fires on the first tick — fixes the day-zero
+  deadlock where a boots-after-the-fire-point, exits-seconds-later host never
+  builds a footprint at all) + public `scheduleSessionId(specId, fireAt)`
+  (the `sched:{id}:{fireAt}` format was a doc-comment-only contract;
+  workflow's workflowSessionId had a public constructor all along).
+
 ## 0.68.0 — 2026-07-18
 
 Lockstep versioning begins (keeper ruling 2026-07-18): version jumps
