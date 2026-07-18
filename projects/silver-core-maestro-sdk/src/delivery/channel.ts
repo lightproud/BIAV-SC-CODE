@@ -91,7 +91,7 @@ export function createDeliveryChannel(opts: DeliveryChannelOptions): DeliveryCha
       // driver's work and racing concurrent deliver() calls; review finding
       // 2026-07-18, fixed by the ledger's claimSession API). With runAt: null
       // above, claimSession is also the ONLY way this session can start.
-      await opts.ledger.claimSession(session.id, clock.now());
+      const claimed = await opts.ledger.claimSession(session.id, clock.now());
       const startedAt = clock.now();
       try {
         await opts.sink(message);
@@ -102,6 +102,7 @@ export function createDeliveryChannel(opts: DeliveryChannelOptions): DeliveryCha
           error: text,
           startedAt,
           endedAt: clock.now(),
+          attempt: claimed.attempts,
         });
         return { sessionId: session.id, delivered: false, error: text };
       }
@@ -109,6 +110,7 @@ export function createDeliveryChannel(opts: DeliveryChannelOptions): DeliveryCha
         outcome: 'ok',
         startedAt,
         endedAt: clock.now(),
+        attempt: claimed.attempts,
       });
       return { sessionId: session.id, delivered: true };
     },

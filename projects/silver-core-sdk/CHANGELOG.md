@@ -16,6 +16,14 @@ entries at the bottom are likewise retroactive — reconstructed from the commit
 sequence (no per-merge ledger existed before the 0.6.2 discipline), so their
 granularity stops at the commit-title level.
 
+## 0.73.0 — 2026-07-18
+
+Lockstep alignment only — no agent-SDK code change. The maestro SDK landed
+audit round 4 of the T56 campaign (11 confirmed defects fixed: attempt
+fencing in recordOutcome, per-session mutex, optional putSessionIf CAS seam,
+settle-then-append commit ordering, hostile-input hardening). See the
+maestro CHANGELOG 0.73.0.
+
 ## 0.72.1 — 2026-07-18
 
 WV2-4 resolved (keeper ruling T60, option ③). The OpenAI transport now drops a

@@ -208,20 +208,75 @@ const CHECKS: Array<[string, Check]> = [
   ],
 ];
 
-/** The check names, in run order (for report display / count pinning). */
-export function ledgerStoreContractCheckNames(): string[] {
-  return CHECKS.map(([name]) => name);
+/**
+ * OPTIONAL putSessionIf checks (audit r4): run only when the store under test
+ * implements the conditional-put seam. A store without it is fully compliant
+ * with the base contract — these never count against it.
+ */
+const CAS_CHECKS: Array<[string, Check]> = [
+  [
+    'putSessionIf(record, null) creates iff absent',
+    async (store) => {
+      const created = await store.putSessionIf!(session({ revision: 1 }), null);
+      if (created !== true) fail('cas create', 'create-if-absent on an empty store returned false');
+      const again = await store.putSessionIf!(session({ revision: 1, intent: 'rival' }), null);
+      if (again !== false) fail('cas create', 'create-if-absent on an existing row returned true');
+      const got = await store.getSession('s1');
+      if (got?.intent !== 'contract') fail('cas create', 'losing create overwrote the row');
+    },
+  ],
+  [
+    'putSessionIf replaces iff the stored revision matches (stored.revision ?? 0)',
+    async (store) => {
+      await store.putSession(session({ revision: 1 }));
+      const won = await store.putSessionIf!(session({ state: 'running', revision: 2 }), 1);
+      if (won !== true) fail('cas replace', 'matching expected revision was rejected');
+      const lost = await store.putSessionIf!(session({ state: 'done', revision: 2 }), 1);
+      if (lost !== false) fail('cas replace', 'stale expected revision was accepted');
+      const got = await store.getSession('s1');
+      if (got?.state !== 'running') fail('cas replace', `losing write applied: state=${got?.state}`);
+    },
+  ],
+  [
+    'putSessionIf treats a legacy row without revision as revision 0',
+    async (store) => {
+      await store.putSession(session());
+      const won = await store.putSessionIf!(session({ state: 'running', revision: 1 }), 0);
+      if (won !== true) fail('cas legacy', 'expected revision 0 rejected for a legacy row');
+    },
+  ],
+];
+
+/** The check names, in run order (for report display / count pinning).
+ *  Base checks only; pass { withPutSessionIf: true } to include the optional
+ *  conditional-put checks appended when a store implements that seam. */
+export function ledgerStoreContractCheckNames(opts?: { withPutSessionIf?: boolean }): string[] {
+  const names = CHECKS.map(([name]) => name);
+  return opts?.withPutSessionIf === true
+    ? [...names, ...CAS_CHECKS.map(([name]) => name)]
+    : names;
 }
 
 /**
  * Run every contract check, each against a fresh store from the factory.
- * Never throws — implementation failures land in the report.
+ * Never throws — implementation failures land in the report. When the store
+ * implements putSessionIf, the optional conditional-put checks run too.
  */
 export async function runLedgerStoreContractSuite(
   makeStore: () => LedgerStore | Promise<LedgerStore>,
 ): Promise<LedgerStoreContractReport> {
+  // The probe must not violate the never-throws contract: a throwing factory
+  // falls back to the base checks, each of which lands the failure in the
+  // report through its own makeStore call.
+  let hasCas = false;
+  try {
+    hasCas = (await makeStore()).putSessionIf !== undefined;
+  } catch {
+    hasCas = false;
+  }
+  const checks = hasCas ? [...CHECKS, ...CAS_CHECKS] : CHECKS;
   const results: LedgerStoreContractResult[] = [];
-  for (const [name, check] of CHECKS) {
+  for (const [name, check] of checks) {
     try {
       await check(await makeStore());
       results.push({ name, ok: true });

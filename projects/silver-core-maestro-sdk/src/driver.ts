@@ -220,6 +220,10 @@ export class LedgerDriver {
       ...(result.summary !== undefined ? { summary: result.summary } : {}),
       startedAt,
       endedAt: this.#clock.now(),
+      // Fence on the claimed attempt (audit r4): if this attempt outran its
+      // lease, was swept, and the session was re-claimed, this write must
+      // throw instead of settling the session with a stale result.
+      attempt: session.attempts,
     };
     let updated: SessionRecord;
     try {

@@ -43,6 +43,12 @@
   （`SessionRecord.leaseUntil`）+ `TaskLedger.sweepExpiredLeases()`（只动过期租约，
   多驱动器共库安全），驱动器每 tick 自动清扫；无租约台账与存量记录逐字节旧行为。
   testbed 双层并用：租约（在线自愈）+ 开机自扫（重启即时恢复，单驱动器场景）。
+- **诚实修订（0.73.0，审计 r4）**：0.71.0 的「多驱动器共库安全」只对**清扫**成立，
+  对**认领独占**不成立——素 get-then-put 店上两台驱动器可在未过期租约内双认领同一
+  会话（300 种交错实测 295 次复现）。0.73.0 起：认领独占经店缝可选 `putSessionIf`
+  （CAS + `SessionRecord.revision`）达成；店不实现该缝则跨进程独占仍归宿主
+  （单认领驱动器/库）。迟到结果误记账另由 `OutcomeInput.attempt` 围栏根治。
+  testbed 文件店未实现 CAS，维持单驱动器共库口径不受影响。
 
 ## G3 · Scheduler 零号日死锁（短命宿主）+ sched id 无公开构造器
 
