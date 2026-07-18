@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-18T10:19:54.276332+00:00",
+  "updated_at": "2026-07-18T13:10:26.221086+00:00",
   "seeded_from": "silent_sources_audit",
   "audit_window": {
     "start": "2023-07-01",
@@ -7,7 +7,7 @@
     "days": 1114
   },
   "validation_drops": {
-    "generated_at": "2026-07-18T10:19:12.372288+00:00",
+    "generated_at": "2026-07-18T13:09:45.138929+00:00",
     "total_dropped": 0,
     "by_source": {}
   },
@@ -75,7 +75,7 @@
       "last_success_date": "2026-07-18",
       "last_check_date": "2026-07-18",
       "consecutive_silent_days": 0,
-      "total_items": 2929,
+      "total_items": 2932,
       "errors": []
     },
     "reddit": {
@@ -107,7 +107,7 @@
       "last_success_date": "2026-07-18",
       "last_check_date": "2026-07-18",
       "consecutive_silent_days": 0,
-      "total_items": 10514,
+      "total_items": 10528,
       "errors": []
     },
     "bahamut": {
@@ -115,7 +115,7 @@
       "last_success_date": "2026-07-18",
       "last_check_date": "2026-07-18",
       "consecutive_silent_days": 0,
-      "total_items": 209,
+      "total_items": 210,
       "errors": []
     },
     "arca_live": {
@@ -128,10 +128,10 @@
     },
     "appstore": {
       "level": "active",
-      "last_success_date": "2026-07-14",
+      "last_success_date": "2026-07-17",
       "last_check_date": "2026-07-18",
-      "consecutive_silent_days": 4,
-      "total_items": 1148,
+      "consecutive_silent_days": 1,
+      "total_items": 1149,
       "errors": []
     },
     "google_play": {
@@ -179,7 +179,7 @@
       "last_success_date": "2026-07-10",
       "last_check_date": "2026-07-18",
       "consecutive_silent_days": 8,
-      "total_items": 10732,
+      "total_items": 10752,
       "errors": []
     },
     "twitter": {
@@ -195,7 +195,7 @@
       "last_success_date": "2026-07-18",
       "last_check_date": null,
       "consecutive_silent_days": 0,
-      "total_items": 1631,
+      "total_items": 1639,
       "errors": []
     },
     "youtube_comments": {

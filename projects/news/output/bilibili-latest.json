@@ -1,60 +1,24 @@
 {
   "contract_version": 1,
-  "collected_at": "2026-07-18T10:19:12.348514+00:00",
+  "collected_at": "2026-07-18T13:09:45.119639+00:00",
   "source": "bilibili",
   "data_layer": "output",
-  "item_count": 14,
+  "item_count": 10,
   "items": [
-    {
-      "source": "bilibili",
-      "time": "2026-07-17T12:56:57+00:00",
-      "lang": "zh",
-      "title": "全12竞速排行榜，非正常容灾强度",
-      "summary": "-\n  └ 抡巴舞要抡嘴巴 (7赞): 脖子。。要扭断了。。。\n  └ 龢利喵 (6赞): 饿啊我的脖子[doge]，安神沙窝\n  └ 忘却安卓佬 (8赞): 手机忘记开翻转了，这下尴尬了[笑哭]",
-      "url": "https://www.bilibili.com/video/BV1dyNR6bE5i",
-      "author": "忘却安卓佬",
-      "engagement": 1391,
-      "media_url": "https://i2.hdslb.com/bfs/archive/1eb03e9595fbf6076569af97333a1aa799821b5a.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 1367,
-        "comment_count": 24,
-        "comments_fetched": 3,
-        "danmaku": 5
-      }
-    },
     {
       "source": "bilibili",
       "time": "2026-07-17T20:06:48+00:00",
       "lang": "zh",
       "title": "器官。",
-      "summary": "参考所有同名。\n  └ 42级精神病 (7赞): 是沙耶吗 ，感觉如果把器官换成肉块儿的话会更好一些 （（（只是单纯提建议，老师画的非常美，非常美，非常美 ！！这简直是神迹 ！！我从来没有见过如此之梦的沙耶！！简直就是一个香香软软的暗黑抹茶小蛋糕啊啊啊啊啊啊啊啊啊啊啊！！！！！\n  └ 黑兔梅酒轮椅王世一冷 (2赞): 其实我觉得可以火[打call]\n  └ 世界第一的沙耶小姐 (1赞): @哈基沙大玉",
+      "summary": "参考所有同名。\n  └ 42级精神病 (8赞): 是沙耶吗 ，感觉如果把器官换成肉块儿的话会更好一些 （（（只是单纯提建议，老师画的非常美，非常美，非常美 ！！这简直是神迹 ！！我从来没有见过如此之梦的沙耶！！简直就是一个香香软软的暗黑抹茶小蛋糕啊啊啊啊啊啊啊啊啊啊啊！！！！！\n  └ 黑兔梅酒轮椅王世一冷 (2赞): 其实我觉得可以火[打call]\n  └ 我的名字可不普通 (1赞): 沙耶器官有这么整齐吗[笑哭]",
       "url": "https://www.bilibili.com/video/BV14TKF6FEgU",
       "author": "hat_999",
-      "engagement": 641,
+      "engagement": 693,
       "media_url": "https://i2.hdslb.com/bfs/archive/966a45e77ceba123bfbf4df09cf053cee63362bb.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 625,
-        "comment_count": 16,
-        "comments_fetched": 3,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-07-17T10:42:18+00:00",
-      "lang": "zh",
-      "title": "容灾混沌塔潘开创者，保姆级混沌塔潘配队与实战教学",
-      "summary": "-\n  └ 蝶咏玉泉 (4赞): 参观安卓鸡\n  └ 星星月儿圆- (3赞): 在古代，掌握塔潘的奶龙有多厉害\n  └ 山䔑 (2赞): 大家好我是忘却的一个安卓佬",
-      "url": "https://www.bilibili.com/video/BV1VbNd6bE7w",
-      "author": "忘却安卓佬",
-      "engagement": 621,
-      "media_url": "https://i2.hdslb.com/bfs/archive/46823111a8dff6edf2370027743625f8e632ce71.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 588,
-        "comment_count": 33,
+        "play": 675,
+        "comment_count": 18,
         "comments_fetched": 3,
         "danmaku": 0
       }
@@ -67,11 +31,11 @@
       "summary": "-\n  └ 嘎啦嘎啦果 (1赞): 和法洛思没关系，1费保留帮忙压缩牌库罢了[doge]\n  └ 夜行性孩子 (0赞): 阿拉70级和80级是不是差很多？\n  └ 抱着狗狗不敢说话 (0赞): 哎我神海队，抽了一堆他的卡又没啥用，老卡我位置 我超限淡墨开大送不够三张卡 伤心 又不喜欢用鲨鱼，要是有个母鲨鱼就好了",
       "url": "https://www.bilibili.com/video/BV1TENR67E3C",
       "author": "嘎啦嘎啦果",
-      "engagement": 593,
+      "engagement": 620,
       "media_url": "https://i0.hdslb.com/bfs/archive/9588c4a8ba344eb39fb7be80acff3737f1695b59.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 586,
+        "play": 613,
         "comment_count": 7,
         "comments_fetched": 3,
         "danmaku": 0
@@ -82,14 +46,14 @@
       "time": "2026-07-18T05:52:25+00:00",
       "lang": "zh",
       "title": "［相位］双枪流地瓜卡组构筑思路详解",
-      "summary": "-\n  └ 一般杂鱼 (3赞): 严肃学习[脱单doge]\n  └ 活过一乔 (1赞): 我有一个地瓜稳定秒一人的方法，但是开大后秒一人[吃瓜]\n  └ 仁爱主教 (1赞): 咕咕嘎嘎",
+      "summary": "-\n  └ 一般杂鱼 (5赞): 严肃学习[脱单doge]\n  └ Git122 (2赞): 在三体人横行的时代，地瓜的单c爆发我玩的是真难受，动不动就给你整的动弹不得，又或者是伤害完全不够，这能变成无能的看着[大哭]\n  └ 活过一乔 (1赞): 我有一个地瓜稳定秒一人的方法，但是开大后秒一人[吃瓜]",
       "url": "https://www.bilibili.com/video/BV1VBKw62EkT",
       "author": "莱星Ligh",
-      "engagement": 407,
+      "engagement": 534,
       "media_url": "https://i2.hdslb.com/bfs/archive/f70c13c89ef16bfa74f0a1fda46afeebb363987a.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 398,
+        "play": 525,
         "comment_count": 9,
         "comments_fetched": 3,
         "danmaku": 0
@@ -103,11 +67,11 @@
       "summary": "郁纪又在外面胡乱交友了\n  └ Aann国服倒一捷风 (1赞): 完了\n  └ 尼古拉-凯菲尤丝 (1赞): 可爱捏~[星光咖啡馆与死神之蝶表情包_嘿嘿]",
       "url": "https://www.bilibili.com/video/BV1hRNo68Eox",
       "author": "小龙猫大能力",
-      "engagement": 300,
+      "engagement": 310,
       "media_url": "https://i2.hdslb.com/bfs/archive/c22b3cb18e990ab9805aa6bdd151175663a81881.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 296,
+        "play": 306,
         "comment_count": 4,
         "comments_fetched": 2,
         "danmaku": 0
@@ -121,11 +85,11 @@
       "summary": "-\n  └ 嘎啦嘎啦果 (3赞): 这个队没易伤，所以带莱克钥令，爆发回合鲨鱼必然有大，肯反复凹的话，必然会有易伤。\n刚需+12希莱斯特，带无垢是因为觉醒后回血能有临时触伤，而无垢的效果是开钥令回血。\n其他人都需要超限。\n鲨鱼的莉莉1680固定，能帮忙省下一个熔朵专，双持可以优化成红夫人专武，效果应该比皮克曼专更好？\n鲨鱼腾不开可以换成詹金，效果应该差挺多的，现在我还没试过。\n说句别的，现在一堆新角色，一百五、两百的基础狂气，其实都是在防温柯尔。",
       "url": "https://www.bilibili.com/video/BV1vYKF6GEwv",
       "author": "嘎啦嘎啦果",
-      "engagement": 221,
+      "engagement": 287,
       "media_url": "https://i2.hdslb.com/bfs/archive/9f4c1becd5f874da1ee27ffe04ac97ba3de39419.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 220,
+        "play": 286,
         "comment_count": 1,
         "comments_fetched": 1,
         "danmaku": 0
@@ -133,37 +97,19 @@
     },
     {
       "source": "bilibili",
-      "time": "2026-07-17T12:35:50+00:00",
+      "time": "2026-07-18T07:31:08+00:00",
       "lang": "zh",
-      "title": "【忘却前夜】uw1t融灾5-5 阴影的忠犬",
-      "summary": "补了三叠骑士诗打着玩玩 其实完全不会用沙耶不过数值神力说是）造物狗运了也没怎么凹\n  └ 跳段木偶舞 (1赞): 强强强！\n  └ 通往你幸福的花园 (0赞): ？！uw神！？",
-      "url": "https://www.bilibili.com/video/BV1v1NR6ZEu4",
-      "author": "CyaneuS_ky",
-      "engagement": 193,
-      "media_url": "https://i2.hdslb.com/bfs/archive/11e1b5a8cd7fc42074e4cea18641a4642d1d9450.jpg",
+      "title": "不进超维空间我就会死",
+      "summary": "融灾1-5\n  └ 燃え落ちない翼 (0赞): 麻了，都快打完主线了才发现不用干等五回合，直接用觉醒卡再放大也能追击[冬日树下_啊？][冬日树下_啊？]麻了，之前那五回合等的我真活不了，这下好了，就轻松一些了",
+      "url": "https://www.bilibili.com/video/BV1iaKw6DEvf",
+      "author": "上完大号按哪个键",
+      "engagement": 218,
+      "media_url": "https://i1.hdslb.com/bfs/archive/51874b7ed22d6da992e57e8fbed90176f8ccb142.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 189,
-        "comment_count": 4,
-        "comments_fetched": 2,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-07-17T11:44:20+00:00",
-      "lang": "zh",
-      "title": "摸鱼存档",
-      "summary": "-\n  └ 仟伍佰 (1赞): 来支持了妹子[打call][打call]\n  └ Kzi99-XmvxiaL (1赞): 依旧前期草稿寻找人类…主要是跟明信片团没抢到你朵的有点急哭",
-      "url": "https://www.bilibili.com/video/BV1xPNd61EGT",
-      "author": "Kzi99-XmvxiaL",
-      "engagement": 153,
-      "media_url": "https://i1.hdslb.com/bfs/archive/4dd158a12fa93db2177d519e3ef09e123c13c3e0.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 150,
-        "comment_count": 3,
-        "comments_fetched": 2,
+        "play": 217,
+        "comment_count": 1,
+        "comments_fetched": 1,
         "danmaku": 0
       }
     },
@@ -175,29 +121,11 @@
       "summary": "第二十五日直播录播\n1P由备用备用主播绘奇旅代播，各类问题还请多多包涵。",
       "url": "https://www.bilibili.com/video/BV1FnNZ6CE3S",
       "author": "God7777",
-      "engagement": 131,
+      "engagement": 132,
       "media_url": "https://i2.hdslb.com/bfs/archive/2df3521d8a74a5b8e6bdd4fecc3893f7b6567536.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 131,
-        "comment_count": 0,
-        "comments_fetched": 0,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-07-18T07:31:08+00:00",
-      "lang": "zh",
-      "title": "不进超维空间我就会死",
-      "summary": "融灾1-5",
-      "url": "https://www.bilibili.com/video/BV1iaKw6DEvf",
-      "author": "上完大号按哪个键",
-      "engagement": 111,
-      "media_url": "https://i1.hdslb.com/bfs/archive/51874b7ed22d6da992e57e8fbed90176f8ccb142.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 111,
+        "play": 132,
         "comment_count": 0,
         "comments_fetched": 0,
         "danmaku": 0
@@ -211,11 +139,11 @@
       "summary": "-\n  └ 耕司青海瑶 (1赞): [星星眼][星星眼][星星眼]\n  └ 是只鸽子罢了 (1赞): 哇，好可爱\n  └ 我是梶 (1赞): 好美。。。",
       "url": "https://www.bilibili.com/video/BV1yYNf6pE9t",
       "author": "fogsleeppp",
-      "engagement": 105,
+      "engagement": 109,
       "media_url": "https://i2.hdslb.com/bfs/archive/92f8c161a4951cbdc7d52d542615a84456becdb5.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 101,
+        "play": 105,
         "comment_count": 4,
         "comments_fetched": 3,
         "danmaku": 0
@@ -226,16 +154,16 @@
       "time": "2026-07-18T09:56:32+00:00",
       "lang": "zh",
       "title": "雪豹哲學與瓦爾德齊肯學派——聆聽織女的聲音",
-      "summary": "這一集有教育意義\n  └ 暮知藏 (0赞): 我喜欢你",
+      "summary": "這一集有教育意義\n  └ 龙鸣虚无 (0赞): 旧日古神低语，我的眼睛要聋了 ꒦ິ^꒦ິ\n  └ 梦依流苏_myls (0赞): 你喜欢我\n  └ 7yb_official (0赞): 反复观看2778遍还是没看懂[少女乐团派对_等一下]",
       "url": "https://www.bilibili.com/video/BV1uQKP61EPQ",
       "author": "密斯卡托尼克的银猫",
-      "engagement": 19,
+      "engagement": 73,
       "media_url": "https://i2.hdslb.com/bfs/archive/ad3230904cf66b7b553f54d828c3ab313cbfd637.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 18,
-        "comment_count": 1,
-        "comments_fetched": 1,
+        "play": 60,
+        "comment_count": 13,
+        "comments_fetched": 3,
         "danmaku": 0
       }
     },
@@ -247,11 +175,11 @@
       "summary": "",
       "url": "https://www.bilibili.com/video/BV172NL6REfa",
       "author": "不可燃抹茶果冻",
-      "engagement": 2,
+      "engagement": 19,
       "media_url": "https://i2.hdslb.com/bfs/archive/dc4ba35979082fb250fb8233fc26d78a68654924.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 2,
+        "play": 19,
         "comment_count": 0,
         "comments_fetched": 0,
         "danmaku": 0
