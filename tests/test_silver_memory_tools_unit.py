@@ -238,8 +238,12 @@ def test_record_lesson_increments_id_before_maintenance(sandbox):
     assert out["lesson_id"] == "31"
     text = smt.LESSONS_FILE.read_text(encoding="utf-8")
     assert "## 31. 抽样率失真" in text
-    assert "- **Context**：把输出层当全量" in text
-    assert "- **Problem**：抽样率失真" in text
+    # 守密人 2026-07-12 格式：坑句含 summary + 折入的触发场景；准则缺省待补
+    assert "- **坑**：抽样率失真（触发场景：把输出层当全量）" in text
+    assert "- **准则**：（待守密人补充）" in text
+    # 新条目不再产出旧四段字段（fixture 既有旧条目不算）
+    assert "- **Fix**" not in text
+    assert "- **Problem**：抽样率失真" not in text
     # Inserted before the maintenance block / separator
     lines = text.splitlines()
     new_idx = lines.index("## 31. 抽样率失真")
@@ -254,6 +258,30 @@ def test_record_lesson_default_context(sandbox):
     assert out["lesson_id"] == "6"
     text = smt.LESSONS_FILE.read_text(encoding="utf-8")
     assert "（待守密人补充）" in text
+
+
+def test_record_lesson_principle_and_guard(sandbox):
+    smt.LESSONS_FILE.write_text(LESSONS_NO_MAINTENANCE, encoding="utf-8")
+    out = smt.record_lesson(
+        "空跑无人察觉",
+        context="脚本重构后产出 0 条",
+        principle="数据脚本必带空结果守卫——0 条不覆盖、非零退出",
+        guard="已毕业迁 tests/test_aggregator.py",
+    )
+    assert out["status"] == "ok"
+    text = smt.LESSONS_FILE.read_text(encoding="utf-8")
+    assert "- **坑**：空跑无人察觉（触发场景：脚本重构后产出 0 条）" in text
+    assert "- **准则**：数据脚本必带空结果守卫——0 条不覆盖、非零退出" in text
+    assert "- **防护/案卷**：已毕业迁 tests/test_aggregator.py" in text
+
+
+def test_record_lesson_guard_omitted_when_empty(sandbox):
+    smt.LESSONS_FILE.write_text(LESSONS_NO_MAINTENANCE, encoding="utf-8")
+    smt.record_lesson("无防护条", principle="随手补的准则")
+    text = smt.LESSONS_FILE.read_text(encoding="utf-8")
+    assert "- **准则**：随手补的准则" in text
+    # guard 缺省时不落该行
+    assert "- **防护/案卷**" not in text
 
 
 def test_record_lesson_empty_file_starts_at_one(sandbox):

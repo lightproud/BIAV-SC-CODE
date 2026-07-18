@@ -202,19 +202,23 @@ def record_decision(summary: str, scope: str, rationale: str = "") -> dict:
 _LESSON_HEADING_RE = re.compile(r"^##\s+(\d+)\.\s+")
 
 
-def record_lesson(summary: str, context: str = "") -> dict:
+def record_lesson(summary: str, context: str = "",
+                  principle: str = "", guard: str = "") -> dict:
     """档案写入 —— 追加一条教训到 memory/lessons-learned.md 末尾。
 
     编号策略：扫描现有 `## <N>. <title>` 条目，取最大 N + 1 作为新教训 ID。
     插入位置：文件末尾的「维护说明」引言之前（若存在），否则文件末尾。
 
-    教训格式遵循现有约定：Context / Problem / Fix / Impact 四段。本函数仅填
-    Context 与 Problem（由 summary / context 提供），Fix 与 Impact 由守密人
-    日后手动补全。
+    教训格式遵循守密人 2026-07-12 裁定的「准则清单体」：每条 = **坑**（本质一句）
+    + **准则**（触发信号 → 动作）+ **防护/案卷**（指针，如有）。summary 落坑句，
+    context（触发场景，可选）折进坑句，principle / guard（可选）直填准则 / 防护行；
+    principle 缺省时留「（待守密人补充）」，guard 缺省时不落该行。
 
     Args:
-        summary: 教训标题 + 问题陈述
-        context: 触发场景描述，可选
+        summary:   坑本质（教训标题 + 问题陈述一句）
+        context:   触发场景描述，可选；给出则折进坑句
+        principle: 准则（触发信号 → 动作），可选；缺省留待守密人补充
+        guard:     防护措施 / 案卷指针，可选；缺省不落该行
 
     Returns:
         {
@@ -252,18 +256,23 @@ def record_lesson(summary: str, context: str = "") -> dict:
     new_id = max_id + 1
 
     title_line = f"## {new_id}. {summary.strip()}"
-    context_block = context.strip() if context.strip() else "（待守密人补充）"
+
+    # 守密人 2026-07-12 格式裁定：坑 / 准则 / 防护（防护行仅在给出时落）。
+    trap_line = summary.strip()
+    if context.strip():
+        trap_line = f"{trap_line}（触发场景：{context.strip()}）"
+    principle_line = principle.strip() if principle.strip() else "（待守密人补充）"
 
     block = [
         "",
         title_line,
         "",
-        f"- **Context**：{context_block}",
-        f"- **Problem**：{summary.strip()}",
-        "- **Fix**：（待补充）",
-        "- **Impact**：（待补充）",
-        "",
+        f"- **坑**：{trap_line}",
+        f"- **准则**：{principle_line}",
     ]
+    if guard.strip():
+        block.append(f"- **防护/案卷**：{guard.strip()}")
+    block.append("")
 
     # 定位「维护说明」引言块（以 `> **维护说明**` 开头）
     insert_at = len(lines)
