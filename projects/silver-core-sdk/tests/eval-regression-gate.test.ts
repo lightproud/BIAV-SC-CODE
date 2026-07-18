@@ -61,6 +61,21 @@ describe('compareToBaseline', () => {
     expect(rows).toHaveLength(1);
     expect(rows[0]).toMatchObject({ dimension: 'memory_recall', baseline: null });
   });
+
+  it('WX4-4: a -0.501 drop regresses even though it rounds to -0.50 for display', () => {
+    const baseline = { dimensionMeans: { memory_recall: 4.0 } };
+    const { warnings, rows } = compareToBaseline(baseline, report({ memory_recall: 3.499 }));
+    // Raw delta -0.501 is a real regression; the DISPLAY delta rounds to -0.5.
+    expect(warnings).toHaveLength(1);
+    const mem = rows.find((r: { dimension: string }) => r.dimension === 'memory_recall');
+    expect(mem).toMatchObject({ regressed: true, delta: -0.5 });
+  });
+
+  it('a drop of exactly -0.5 does NOT regress (strictly beyond the threshold)', () => {
+    const baseline = { dimensionMeans: { memory_recall: 4.0 } };
+    const { warnings } = compareToBaseline(baseline, report({ memory_recall: 3.5 }));
+    expect(warnings).toHaveLength(0);
+  });
 });
 
 describe('CLI behavior', () => {
@@ -84,6 +99,19 @@ describe('CLI behavior', () => {
     });
     expect(stub.status).toBe(0);
     expect(stub.stdout).toContain('SKIP: report is STUB');
+  });
+
+  it('WX4-5: a committed baseline with zero dimensions SKIPs, not vacuous PASS', async () => {
+    const rep = join(dir, 'evals-live.json');
+    await writeFile(rep, JSON.stringify(report({ memory_recall: 1.0 })), 'utf8');
+    const emptyBaseline = join(dir, 'empty-baseline.json');
+    await writeFile(emptyBaseline, JSON.stringify({ dimensionMeans: {} }), 'utf8');
+    const res = spawnSync('node', [script, '--report', rep, '--baseline', emptyBaseline], {
+      encoding: 'utf8',
+    });
+    expect(res.status).toBe(0);
+    expect(res.stdout).toContain('SKIP: committed baseline has zero scored dimensions');
+    expect(res.stdout).not.toContain('regression gate: PASS');
   });
 
   it('emits ::warning:: annotations on regression, exit 0 unless --strict', async () => {

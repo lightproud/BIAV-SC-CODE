@@ -55,6 +55,28 @@ describe('aggregateRunMetrics', () => {
     expect(m.subtype).toBe('success');
   });
 
+  it('W3-4: cacheCreationTokens is SUMMED, not first-only (sum != first fixture)', () => {
+    // The real longconv trace has cache_creation 253/0/0, where sum == first ==
+    // 253 — that assertion cannot tell a summing aggregator from a first-only
+    // one. This synthetic fixture puts non-zero cache_creation in later results
+    // so the two hypotheses diverge (sum 180 vs first 100).
+    const results = [100, 50, 30].map((cc, i) => ({
+      type: 'result' as const,
+      subtype: 'success' as const,
+      num_turns: 1,
+      total_cost_usd: 0.001 * (i + 1),
+      duration_api_ms: 1000 * (i + 1),
+      usage: {
+        input_tokens: 1,
+        output_tokens: 10,
+        cache_creation_input_tokens: cc,
+        cache_read_input_tokens: 0,
+      },
+    }));
+    const m = aggregateRunMetrics(results);
+    expect(m.cacheCreationTokens).toBe(180); // 100 + 50 + 30, NOT 100
+  });
+
   it('single-result run is unchanged by construction (sum-of-one == last-of-one)', () => {
     const only = OFFICIAL_LONGCONV_R1[2];
     const m = aggregateRunMetrics([only]);

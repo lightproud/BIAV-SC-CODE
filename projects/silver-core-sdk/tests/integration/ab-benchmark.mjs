@@ -365,7 +365,11 @@ async function runTask(task) {
     // cache_control not engaging server-side at all.
     cacheCreationTokens: cacheCreation,
     cacheReadTokens: cacheRead,
-    cacheHitRatio: m?.cacheHitRatio ?? (cacheable > 0 ? cacheRead / cacheable : 0),
+    // WX5-5 (audit r3): one definition for BOTH arms. Preferring the SDK's own
+    // `m.cacheHitRatio` for the bpt arm while the official arm fell back to the
+    // local `cacheRead / cacheable` compared two ratios with different
+    // denominators. Use the local formula uniformly so the A/B is apples-to-apples.
+    cacheHitRatio: cacheable > 0 ? cacheRead / cacheable : 0,
     wallMs: Date.now() - started,
     durationMs: resultMsg?.duration_ms ?? Date.now() - started,
     apiMs: resultMsg?.duration_api_ms ?? 0,

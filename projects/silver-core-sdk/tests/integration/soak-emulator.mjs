@@ -188,13 +188,17 @@ function baseOptions(extra = {}) {
 
 async function runOne(options, prompt) {
   let sid;
-  let sawCompaction = false;
+  // WX5-6/WX5-7 (audit r3): count EACH compact_boundary fold, not runs-that-saw-
+  // at-least-one. A boolean collapsed multiple folds within one run to 1, so the
+  // metric labelled "compactions" actually counted runs-with-a-fold and
+  // undercounted the real fold total.
+  let compactionEvents = 0;
   for await (const m of query({ prompt, options })) {
     if (m.type === 'system' && m.subtype === 'init') sid = m.session_id;
-    if (m.type === 'system' && m.subtype === 'compact_boundary') sawCompaction = true;
+    if (m.type === 'system' && m.subtype === 'compact_boundary') compactionEvents += 1;
     if (m.type === 'assistant') turns += 1;
   }
-  if (sawCompaction) compactions += 1;
+  compactions += compactionEvents;
   return sid;
 }
 

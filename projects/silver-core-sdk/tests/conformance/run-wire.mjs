@@ -42,7 +42,11 @@ const outPath = typeof args.out === 'string' ? args.out : join(HERE, '..', '..',
 
 // Tool-set size/name gaps are EXPECTED-SURFACE: the CLI advertises its own
 // product tools (Cron*/Task*/Workflow/Skills/...) the SDK deliberately omits.
-const EXPECTED_SURFACE = new Set(['toolNames', 'toolCount']);
+// topLevelKeys divergence (max_tokens/metadata/service_tier presence etc.) is a
+// KNOWN engine-shape difference — surfaced for visibility (WX3-1) but not an
+// alignment-candidate. A `model` mismatch, by contrast, stays a candidate: the
+// two arms are meant to hit the same model, so a difference is a real defect.
+const EXPECTED_SURFACE = new Set(['toolNames', 'toolCount', 'topLevelKeys']);
 
 async function loadQuery(armKind) {
   const mod = armKind === 'bpt' ? await import('../../dist/index.js') : await import('@anthropic-ai/claude-agent-sdk');

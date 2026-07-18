@@ -88,8 +88,14 @@ describe('import discipline (ARCHITECTURE.md "Import edges" is the authority)', 
       if (moduleOf(srcRel) === '' && COMPOSITION_ROOTS.has(fileName)) continue;
       const fromModule = moduleOf(srcRel);
       const source = readFileSync(file, 'utf8');
-      for (const m of source.matchAll(/from '(\.[^']+)'/g)) {
-        const spec = m[1] as string;
+      // W3-5 (audit r3): match BOTH static `from '...'` AND dynamic
+      // `import('...')` relative specifiers — a dynamic import into a
+      // disallowed module would otherwise escape the layering discipline.
+      const specifiers = [
+        ...[...source.matchAll(/from '(\.[^']+)'/g)].map((m) => m[1] as string),
+        ...[...source.matchAll(/\bimport\(\s*'(\.[^']+)'\s*\)/g)].map((m) => m[1] as string),
+      ];
+      for (const spec of specifiers) {
         const targetAbs = resolve(dirname(file), spec);
         const targetRel = relative(srcDir, targetAbs).replace(/\.js$/, '.ts');
         if (targetRel.startsWith('..')) continue; // outside src (should not happen)

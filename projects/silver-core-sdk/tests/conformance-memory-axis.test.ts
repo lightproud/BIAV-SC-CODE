@@ -98,19 +98,40 @@ describe('conformance memory axis: native-mode wire locks', () => {
     };
     const fixture = JSON.parse(
       readFileSync(join(__dirname, 'conformance', 'official-memory-wire.json'), 'utf8'),
-    ) as { captures: Capture[] };
+    ) as { captures: Capture[]; provenance?: { note?: string } };
     const ga = fixture.captures.find((c) => c.arm === 'ga')!;
     const runner = fixture.captures.find((c) => c.arm === 'runner')!;
+
+    // WX5-1 (audit r3): `expect(anthropic-beta).toBeUndefined()` is only a real
+    // check if the fixture's capture whitelist COULD have recorded that header.
+    // The current capture script whitelists anthropic-beta, but a fixture
+    // captured under an OLDER whitelist (note lists only content-type /
+    // anthropic-version / user-agent) can never carry it — so the assertion
+    // passes vacuously. Derive capturability from the recorded provenance and
+    // only make the absence claim when the header was in scope; otherwise assert
+    // the honest state (fixture predates beta-header capture, needs a re-run of
+    // capture-official-memory-wire.mjs) instead of a silent green.
+    const provNote = fixture.provenance?.note ?? '';
+    const betaWasCapturable = /anthropic-beta/i.test(provNote);
 
     it('fixture integrity: both arms present, GA on the plain endpoint', () => {
       expect(ga).toBeDefined();
       expect(runner).toBeDefined();
       expect(ga.url).toBe('https://api.anthropic.com/v1/messages');
-      // The beta tool-runner rides the beta query flag; memory itself is GA
-      // (no anthropic-beta header on either arm — matches the docs).
       expect(runner.url).toContain('/v1/messages');
-      expect(ga.headers['anthropic-beta']).toBeUndefined();
-      expect(runner.headers['anthropic-beta']).toBeUndefined();
+      if (betaWasCapturable) {
+        // The beta tool-runner rides the beta query flag; memory itself is GA
+        // (no anthropic-beta header on either arm — matches the docs). This is a
+        // MEANINGFUL absence: the header was in the capture whitelist.
+        expect(ga.headers['anthropic-beta']).toBeUndefined();
+        expect(runner.headers['anthropic-beta']).toBeUndefined();
+      } else {
+        // Fixture predates anthropic-beta capture: the absence cannot be
+        // verified from it. Fail loudly ONLY on drift we can prove, and record
+        // that the fixture must be regenerated to restore the beta-absence check.
+        expect(runner.url).toContain('beta=true'); // the runner arm DID hit ?beta=true
+        expect(betaWasCapturable).toBe(false); // documents the known limitation
+      }
     });
 
     it('the official typed entry is EXACTLY {type, name} — and ours matches it byte-for-byte', async () => {

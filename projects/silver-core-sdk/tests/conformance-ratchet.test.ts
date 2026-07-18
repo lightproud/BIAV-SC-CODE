@@ -27,7 +27,12 @@ import {
   compareRunner,
   buildRunners,
   serializeBaseline,
+  main,
 } from './conformance/ratchet.mjs';
+import { mkdtempSync, writeFileSync, rmSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join as pathJoin } from 'node:path';
+import { afterAll, beforeAll, vi } from 'vitest';
 
 type Entry = { verdict: string; kdIds: string[]; engineFinding: boolean };
 type Entries = Record<string, Entry>;
@@ -354,5 +359,75 @@ describe('committed baseline vs live extraction shape', () => {
         expect(typeof e.engineFinding).toBe('boolean');
       }
     }
+  });
+});
+
+// ---------------------------------------------------------------------------
+// W3-3 (audit r3): main()'s safety nets — zero-scoreboard refusal, missing
+// baseline, and the --update / green-pass path — were never exercised. Drive
+// main() over synthetic matrix/baseline files in a temp dir so a regression in
+// the refusal logic reds a test instead of shipping green.
+// ---------------------------------------------------------------------------
+describe('main() safety nets', () => {
+  let dir: string;
+  const logs: string[] = [];
+  const spies: Array<{ mockRestore: () => void }> = [];
+
+  beforeAll(() => {
+    dir = mkdtempSync(pathJoin(tmpdir(), 'ratchet-main-'));
+    for (const m of ['log', 'warn', 'error'] as const) {
+      spies.push(
+        vi.spyOn(console, m).mockImplementation((...a: unknown[]) => {
+          logs.push(a.join(' '));
+        }),
+      );
+    }
+  });
+  afterAll(() => {
+    for (const s of spies) s.mockRestore();
+    rmSync(dir, { recursive: true, force: true });
+  });
+
+  const matrix = (id: string, verdict: string) => ({
+    generated_for: 'conformance L1 (2026)',
+    scenarios: [{ id, verdict }],
+  });
+  const writeMatrix = (name: string, body: unknown) => {
+    const p = pathJoin(dir, name);
+    writeFileSync(p, JSON.stringify(body));
+    return p;
+  };
+
+  it('refuses a matrix that reduces to ZERO scoreboard entries (exit 1)', () => {
+    const empty = writeMatrix('empty.json', { generated_for: 'conformance L1', scenarios: [] });
+    const code = main([`--baseline=${pathJoin(dir, 'nope.json')}`, empty]);
+    expect(code).toBe(1);
+    expect(logs.some((l) => l.includes('ZERO scoreboard entries'))).toBe(true);
+  });
+
+  it('refuses when there is no baseline and no --update (exit 1)', () => {
+    const mp = writeMatrix('m1.json', matrix('s1', 'MATCH'));
+    const code = main([`--baseline=${pathJoin(dir, 'absent.json')}`, mp]);
+    expect(code).toBe(1);
+    expect(logs.some((l) => l.includes('no baseline at'))).toBe(true);
+  });
+
+  it('--update seeds a baseline, then a matching run passes green (exit 0)', () => {
+    const mp = writeMatrix('m2.json', matrix('s1', 'MATCH'));
+    const bp = pathJoin(dir, 'baseline.json');
+    expect(main(['--update', `--baseline=${bp}`, mp])).toBe(0);
+    expect(main([`--baseline=${bp}`, mp])).toBe(0);
+  });
+
+  it('RED-LOCK WARNING fires when --update baselines a regression', () => {
+    const bp = pathJoin(dir, 'baseline-red.json');
+    const green = writeMatrix('green.json', matrix('s1', 'MATCH'));
+    expect(main(['--update', `--baseline=${bp}`, green])).toBe(0);
+    // Re-baseline the SAME scenario now DIVERGENT: an explicit human --update
+    // still writes, but must shout the regression it is locking in.
+    logs.length = 0;
+    const red = writeMatrix('red.json', matrix('s1', 'DIVERGENT'));
+    expect(main(['--update', `--baseline=${bp}`, red])).toBe(0);
+    expect(logs.some((l) => l.includes('RED-LOCK WARNING'))).toBe(true);
   });
 });
